@@ -1,0 +1,56 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+artifacts/
+publish/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+.idea/
+*.swp
+
+# Test results and coverage
+[Tt]est[Rr]esult*/
+TestResults/
+*.trx
+coverage/
+*.coverage
+*.coveragexml
+coverage.*.xml
+*.lcov
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+.nuget/
+
+# .NET tooling
+*.log
+*.binlog
+*.dotCover
+.dotnet/
+BenchmarkDotNet.Artifacts/
+
+# Secrets and local config (constitution, principle V)
+.env
+.env.local
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pfx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code local state
+.claude/settings.local.json
