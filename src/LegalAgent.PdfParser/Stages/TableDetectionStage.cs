@@ -8,16 +8,17 @@ using LegalAgent.PdfParser.Text;
 namespace LegalAgent.PdfParser.Stages;
 
 /// <summary>
-/// Detects tables (FR-060 – FR-066): lines whose segments (cells, FR-060) line up in column bands form a table region,
-/// which becomes a <see cref="TableBlock"/> in <see cref="PipelineContext.Tables"/>; its lines get
-/// <see cref="LineRole.Table"/> and <see cref="LayoutAnnotations.TableIndex"/>.
+/// Detects tables (FR-060 – FR-066): lines whose segments (cells, FR-060) line up in column bands form a table region
+/// (or a ruled-grid fragment of at least two rows, e.g. the start of a table at the bottom of a page), which becomes a
+/// <see cref="TableBlock"/> in <see cref="PipelineContext.Tables"/>; its lines get <see cref="LineRole.Table"/> and
+/// <see cref="LayoutAnnotations.TableIndex"/>.
 /// </summary>
 /// <remarks>
 /// A region starts at a line with at least two cells and grows over the following body lines while the vertical gaps
 /// stay table-like; it is a table when it holds at least <see cref="TableOptions.MinRows"/> multi-cell lines. A list
 /// label followed by text („• tekst”) is one cell, and lines whose cells are all as wide as text columns are running
-/// text (FR-031), not table rows, and so are words of a justified line split on widened spaces. Column bands are the clusters of cell left edges shared by at least two rows, snapped
-/// to vertical rulings. Rows follow horizontal rulings when the region has a ruled grid; otherwise a line with a single
+/// text (FR-031), not table rows, and so are words of a justified line split on widened spaces. Column bands are the
+/// clusters of cell left edges shared by at least two rows, snapped to vertical rulings. Rows follow horizontal rulings when the region has a ruled grid; otherwise a line with a single
 /// partial cell close below the previous line continues the previous row (FR-062). Multi-cell lines with a varying
 /// number of cells, or two cells in one band, make the grid ambiguous: the table is kept line by line as a fallback
 /// with warning <c>TBL001_AmbiguousGrid</c> (FR-064). A table ending a page continues with a table starting the next
@@ -111,12 +112,6 @@ public sealed class TableDetectionStage : IPipelineStage
             }
 
             List<Row> region = GrowRegion(context, flow, start);
-            if (region.Count(r => r.IsMulti) < options.MinRows)
-            {
-                start++;
-                continue;
-            }
-
             Table? table = Build(context, page, region, flow.GetRange(free, start - free), tolerance, hyphenationExceptions);
             if (table is null)
             {
@@ -203,8 +198,10 @@ public sealed class TableDetectionStage : IPipelineStage
         TableOptions options = context.Options.Tables;
         IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
         var grid = new Grid(rulings, candidate);
-        List<Row> region = CutAtGridGap(TrimTrailingLines(candidate, page, options), grid);
-        if (region.Count(r => r.IsMulti) < options.MinRows)
+        List<Row> region = CutAtGridGap(TrimTrailingLines(candidate, options, grid), grid);
+        int multiCount = region.Count(r => r.IsMulti);
+        bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
+        if (multiCount < options.MinRows && !ruledFragment)
         {
             return null;
         }
@@ -230,7 +227,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         var clusters = ColumnClustering.ClusterLefts(multi.SelectMany(r => r.Cells.Select(c => c.Box.Left)), tolerance);
         List<double> lefts = clusters
-            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= MinBandSupport)
+            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count))
             .ToList();
         if (lefts.Count < 2)
         {
@@ -248,7 +245,8 @@ public sealed class TableDetectionStage : IPipelineStage
 
         // With a ruled grid the rulings define the rows, so lines of one row may carry different numbers of cells.
         List<double> horizontals = HorizontalRulings(rulings, region);
-        bool ruled = horizontals.Count >= 2;
+        bool inGrid = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
+        bool ruled = inGrid || horizontals.Count >= 2;
         bool ambiguous = (!ruled && multi.Select(r => r.Cells.Count).Distinct().Count() > 1)
             || multi.Any(r => r.Cells.Select(c => ColumnClustering.BandIndex(bands, c.Box.Left, tolerance)).Distinct().Count() < r.Cells.Count);
 
@@ -271,7 +269,7 @@ public sealed class TableDetectionStage : IPipelineStage
         if (ruled)
         {
             // Ruled grid: every line goes to the row between the rulings around its centre.
-            foreach (IGrouping<int, Row> group in region.GroupBy(r => horizontals.Count(y => y <= r.Line.Box.CenterY)))
+            foreach (IGrouping<int, Row> group in region.GroupBy(r => inGrid ? grid.RowIndex(r.Line.Box.CenterY) : horizontals.Count(y => y <= r.Line.Box.CenterY)))
             {
                 table.StartRow();
                 foreach (Row row in group)
@@ -307,16 +305,16 @@ public sealed class TableDetectionStage : IPipelineStage
     /// Keeps the lines up to the last multi-cell line plus the single-cell lines that still belong to the last row: inside
     /// the ruled grid, or close below and within one column (FR-062).
     /// </summary>
-    private static List<Row> TrimTrailingLines(List<Row> region, LayoutPage page, TableOptions options)
+    private static List<Row> TrimTrailingLines(List<Row> region, TableOptions options, Grid grid)
     {
         int lastMulti = region.FindLastIndex(r => r.IsMulti);
-        List<double> horizontals = HorizontalRulings(options.UseRulingLines ? page.Rulings : [], region);
         double rowGap = options.RowMergeGapFactor * TableLeading(region.Take(lastMulti + 1).ToList());
+        bool multiInGrid = grid.Contains(region[lastMulti].Line.Box.CenterY);
         int end = lastMulti;
         for (int i = lastMulti + 1; i < region.Count; i++)
         {
             LayoutLine line = region[i].Line;
-            bool insideGrid = horizontals.Count >= 2 && line.Box.CenterY > horizontals[0] && line.Box.CenterY < horizontals[^1];
+            bool insideGrid = multiInGrid && grid.Contains(line.Box.CenterY);
             bool closeBelow = line.Baseline - region[i - 1].Line.Baseline <= rowGap && region[i].Cells.Count == 1;
             if (!insideGrid && !closeBelow)
             {
@@ -407,6 +405,13 @@ public sealed class TableDetectionStage : IPipelineStage
     {
         private readonly List<double> _borders = HorizontalRulings(rulings, region, margin: double.MaxValue / 4);
         private readonly List<Segment> _verticals = rulings.Where(s => s.IsVertical).ToList();
+
+        /// <summary>Index of the band between horizontal borders that <paramref name="y"/> falls into.</summary>
+        public int RowIndex(double y) => _borders.Count(b => b <= y);
+
+        /// <summary>Number of distinct grid rows the lines of <paramref name="region"/> fall into.</summary>
+        public int Rows(List<Row> region) =>
+            region.Select(r => r.Line.Box.CenterY).Where(Contains).Select(y => _borders.Count(b => b <= y)).Distinct().Count();
 
         public bool Contains(double y)
         {
