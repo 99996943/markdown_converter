@@ -95,6 +95,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         var tables = new List<Table>();
         int start = 0;
+        int free = 0;
         while (start < flow.Count)
         {
             if (!flow[start].IsMulti)
@@ -110,7 +111,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 continue;
             }
 
-            Table? table = Build(context, page, region, tolerance, hyphenationExceptions);
+            Table? table = Build(context, page, region, flow.GetRange(free, start - free), tolerance, hyphenationExceptions);
             if (table is null)
             {
                 start++;
@@ -118,7 +119,8 @@ public sealed class TableDetectionStage : IPipelineStage
             }
 
             tables.Add(table);
-            start = flow.IndexOf(region[0]) + table.Lines.Count;
+            start = flow.FindIndex(r => ReferenceEquals(r.Line, table.Lines[^1])) + 1;
+            free = start;
         }
 
         return tables;
@@ -178,10 +180,45 @@ public sealed class TableDetectionStage : IPipelineStage
         return region;
     }
 
-    private static Table? Build(PipelineContext context, LayoutPage page, List<Row> candidate, double tolerance, string[] exceptions)
+    /// <param name="context">Pipeline context.</param>
+    /// <param name="page">The page.</param>
+    /// <param name="candidate">Lines from the seed on, as grown by <see cref="GrowRegion"/>.</param>
+    /// <param name="above">Free body lines above the seed (not taken by an earlier table), top to bottom.</param>
+    /// <param name="tolerance">Column tolerance in points.</param>
+    /// <param name="exceptions">Hyphenation exceptions.</param>
+    private static Table? Build(
+        PipelineContext context,
+        LayoutPage page,
+        List<Row> candidate,
+        List<Row> above,
+        double tolerance,
+        string[] exceptions)
     {
         TableOptions options = context.Options.Tables;
-        List<Row> region = TrimTrailingLines(candidate, page, options);
+        IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
+        var grid = new Grid(rulings, candidate);
+        List<Row> region = CutAtGridGap(TrimTrailingLines(candidate, page, options), grid);
+        if (region.Count(r => r.IsMulti) < options.MinRows)
+        {
+            return null;
+        }
+
+        // Lines of the first row's cells printed above the seed (a two-line header cell) belong to the table; inside a
+        // ruled grid only when they lie in it too.
+        double rowGap = options.RowMergeGapFactor * TableLeading(region);
+        bool seedInGrid = grid.Contains(region[0].Line.Box.CenterY);
+        for (int i = above.Count - 1; i >= 0; i--)
+        {
+            Row row = above[i];
+            double gap = region[0].Line.Baseline - row.Line.Baseline;
+            if (row.IsMulti || gap <= 0 || gap > rowGap || (seedInGrid && !grid.Contains(row.Line.Box.CenterY)))
+            {
+                break;
+            }
+
+            region.Insert(0, row);
+        }
+
         List<Row> multi = region.Where(r => r.IsMulti).ToList();
 
         var clusters = ColumnClustering.ClusterLefts(multi.SelectMany(r => r.Cells.Select(c => c.Box.Left)), tolerance);
@@ -197,7 +234,6 @@ public sealed class TableDetectionStage : IPipelineStage
         double bottom = region.Max(r => r.Line.Box.Bottom);
         double left = region.Min(r => r.Line.Box.Left);
         double right = region.Max(r => r.Line.Box.Right);
-        IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
         IEnumerable<double> verticals = rulings
             .Where(s => s.IsVertical && Math.Max(s.Y1, s.Y2) >= top - RulingSlack && Math.Min(s.Y1, s.Y2) <= bottom + RulingSlack)
             .Select(s => s.X1);
@@ -240,7 +276,6 @@ public sealed class TableDetectionStage : IPipelineStage
             return table;
         }
 
-        double rowGap = options.RowMergeGapFactor * TableLeading(region);
         Row? previous = null;
         foreach (Row row in region)
         {
@@ -291,13 +326,13 @@ public sealed class TableDetectionStage : IPipelineStage
     /// Distinct Y of horizontal rulings spanning a good part of the region width; collinear pieces (a border drawn cell
     /// by cell) are joined first.
     /// </summary>
-    private static List<double> HorizontalRulings(IEnumerable<Segment> rulings, List<Row> region)
+    private static List<double> HorizontalRulings(IEnumerable<Segment> rulings, List<Row> region, double margin = RulingSlack)
     {
-        double top = region.Min(r => r.Line.Box.Top);
-        double bottom = region.Max(r => r.Line.Box.Bottom);
+        double top = region.Min(r => r.Line.Box.Top) - margin;
+        double bottom = region.Max(r => r.Line.Box.Bottom) + margin;
         double width = region.Max(r => r.Line.Box.Right) - region.Min(r => r.Line.Box.Left);
         List<(double Y, double X1, double X2)> pieces = rulings
-            .Where(s => s.IsHorizontal && s.Y1 >= top - RulingSlack && s.Y1 <= bottom + RulingSlack)
+            .Where(s => s.IsHorizontal && s.Y1 >= top && s.Y1 <= bottom)
             .Select(s => (s.Y1, Math.Min(s.X1, s.X2), Math.Max(s.X1, s.X2)))
             .OrderBy(p => p.Item1)
             .ThenBy(p => p.Item2)
@@ -334,6 +369,49 @@ public sealed class TableDetectionStage : IPipelineStage
         }
 
         return distinct;
+    }
+
+    /// <summary>
+    /// With a ruled grid, the region ends before the first line that leaves it after an earlier line was inside: text
+    /// between two separately ruled tables, or below a ruled table.
+    /// </summary>
+    private static List<Row> CutAtGridGap(List<Row> region, Grid grid)
+    {
+        bool entered = false;
+        for (int j = 0; j < region.Count; j++)
+        {
+            bool inside = grid.Contains(region[j].Line.Box.CenterY);
+            if (entered && !inside)
+            {
+                return region.Take(j).ToList();
+            }
+
+            entered |= inside;
+        }
+
+        return region;
+    }
+
+    /// <summary>
+    /// The ruled grids of a page: a Y lies inside when it is between two consecutive horizontal borders (spanning a good
+    /// part of the region width) whose band a vertical ruling crosses.
+    /// </summary>
+    private sealed class Grid(IEnumerable<Segment> rulings, List<Row> region)
+    {
+        private readonly List<double> _borders = HorizontalRulings(rulings, region, margin: double.MaxValue / 4);
+        private readonly List<Segment> _verticals = rulings.Where(s => s.IsVertical).ToList();
+
+        public bool Contains(double y)
+        {
+            int k = _borders.Count(b => b <= y);
+            if (k == 0 || k == _borders.Count)
+            {
+                return false;
+            }
+
+            double middle = (_borders[k - 1] + _borders[k]) / 2;
+            return _verticals.Any(v => Math.Min(v.Y1, v.Y2) <= middle && Math.Max(v.Y1, v.Y2) >= middle);
+        }
     }
 
     /// <summary>Typical line distance inside a table: the lower quartile of the gaps between consecutive lines.</summary>
