@@ -105,7 +105,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 - [ ] T044 [US1] Implement `src/LegalAgent.PdfParser/Stages/ReadingOrderStage.cs` (Order 700; gutter detection, skips lines with `Role = Table`) to pass T031 (research R9)
 - [X] T045 [P] [US1] Implement `src/LegalAgent.PdfParser/Text/Hyphenation.cs` (join rules + `NormalizationOptions.HyphenationExceptions`)
 - [X] T046 [US1] Implement `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs` (Order 1000; paragraphs, cross-page continuation, `PageBreak` inlines, inline styles) to pass T032
-- [ ] T047 [US1] Implement minimal `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` (Order 1100): all blocks into `LegalDocument.Preamble`, `PageRange` per block, `SourceInfo`; sections added in US2
+- [X] T047 [US1] Implement minimal `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` (Order 1100): all blocks into `LegalDocument.Preamble`, `PageRange` per block, `SourceInfo`; sections added in US2
 - [X] T048 [US1] Implement `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` (`IMarkdownRenderer`; paragraphs, emphasis, page markers) to pass T033
 - [ ] T049 [US1] Implement facade `src/LegalAgent.PdfParser/PdfMarkdownConverter.cs` (`IPdfMarkdownConverter.ConvertAsync` + `CreateDefault(Action<PdfParserOptions>?)`: read input → open → build `PipelineContext` → `PipelineRunner` → render → `PdfConversionResult` with `IsComplete`, `Report.Elapsed`) and `src/LegalAgent.PdfParser/IPdfMarkdownConverter.cs`, `PdfConversionRequest.cs`, `ConversionProgress.cs` per contracts/public-api.md; make T034 and T035 pass
 
