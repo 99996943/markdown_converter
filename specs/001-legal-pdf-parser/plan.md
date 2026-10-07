@@ -180,8 +180,13 @@ zmiany heurystyk nie łamały kontraktu SemVer.
   winieta Dz.U., §, przypisy, wielostronicowa taryfa opłat (dobry przypadek dla US4).
 - `tests/LegalAgent.PdfParser.Tests/Corpus/private/mbank-regulamin-pdp.pdf` (ignorowany przez git): regulamin bez znaków
   spacji, tabela „Definicje | Wyjaśnienie”, listy punktowane (US3, US4).
-- `SlubaCywilna.pdf` w katalogu głównym — dodany przez właściciela pod koniec sesji, jeszcze nieprzejrzany; ustalić z
-  właścicielem charakter dokumentu (publiczny → `Corpus/acts/`, inny → `Corpus/private/`).
+- `tests/LegalAgent.PdfParser.Tests/Corpus/acts/ustawa-o-sluzbie-cywilnej.pdf` (publiczny, w repo): tekst ujednolicony ISAP,
+  71 stron — wzorcowa ustawa projektu. Pierwsza konwersja (po US2): 12 × `## Rozdział`, ~166 × `### Art.`, 12 przypisów.
+  Wykryte problemy do naprawy (test red → poprawka): (1) tytuł „USTAWA” złożony z rozstrzeleniem liter wychodzi jako
+  „U S TAWA” — sklejanie liter przy dużym światle międzyliterowym (FR-011) i przez to brak kotwicy tytułu z FR-043;
+  (2) nagłówek ISAP „Opracowano na podstawie: t.j. Dz. U. … poz. 590.” wychodzi jako `##` + rozbity akapit („Dz” / „. U.”);
+  (3) pojedyncze fałszywe nagłówki `### 2.`, `### 3)`, `### 4.`, `### cy`, `### po` — prawdopodobnie wyliczenia (US3)
+  i fragmenty przypisów; do analizy przy US3.
 - Szybki podgląd wyniku: mały projekt konsolowy poza repo z `ProjectReference` do `src/LegalAgent.PdfParser`, wywołujący
   `PdfMarkdownConverter.CreateDefault().ConvertAsync(File.OpenRead(pdf))` i zapisujący `Markdown` + `Report` (JSON) — do czasu CLI (T089–T090).
 
