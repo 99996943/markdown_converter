@@ -19,6 +19,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
     private const double SizeTolerance = 0.5;
     private const double MaxFirstLineOutdentInFontSizes = 4;
     private const double MinLeadingInFontSizes = 1.2;
+    private const double NoteLineGapInFontSizes = 1.8;
 
     /// <inheritdoc />
     public int Order => StageOrder.BlockAssembly;
@@ -31,6 +32,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
         var builder = new ParagraphBuilder(context.Options.Normalization.HyphenationExceptions.ToArray());
         Paragraph? current = null;
         ListAssembler? list = null;
+        var notes = new SideNoteBuffer(builder);
         LayoutLine? lastHeading = null;
         double previousColumnLeft = 0;
 
@@ -57,9 +59,16 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                // FR-034: side notes wait until the block they stand beside is finished.
+                if (line.Role == LineRole.SideNote)
+                {
+                    notes.Add(line, page.Number);
+                    continue;
+                }
+
                 if (line.Role is LineRole.ListItem or LineRole.ListContinuation)
                 {
-                    Finish(context, ref current);
+                    Finish(context, ref current, notes);
                     list ??= new ListAssembler(builder);
                     if (list.TryAdd(line, page.Number))
                     {
@@ -67,16 +76,16 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     }
 
                     // A line whose item is unknown (for example annotated by a custom stage) is kept as ordinary text.
-                    FinishList(context, ref list);
+                    FinishList(context, ref list, notes);
                 }
                 else
                 {
-                    FinishList(context, ref list);
+                    FinishList(context, ref list, notes);
                 }
 
                 if (line.Role == LineRole.Heading)
                 {
-                    Finish(context, ref current);
+                    Finish(context, ref current, notes);
                     lastHeading = line;
                     if (line.Heading is { } heading)
                     {
@@ -94,7 +103,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
                 if (line.Role is not (LineRole.Unknown or LineRole.Body or LineRole.ListItem or LineRole.ListContinuation))
                 {
-                    Finish(context, ref current);
+                    Finish(context, ref current, notes);
                     continue;
                 }
 
@@ -105,7 +114,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 }
                 else
                 {
-                    Finish(context, ref current);
+                    Finish(context, ref current, notes);
                     current = ParagraphBuilder.Start(line, page.Number, size);
                     current.FollowsHeadingOnItsLine = lastHeading is not null
                         && page.Lines.Contains(lastHeading)
@@ -120,11 +129,12 @@ public sealed class BlockAssemblyStage : IPipelineStage
             previousColumnLeft = columnLeft;
         }
 
-        Finish(context, ref current);
-        FinishList(context, ref list);
+        Finish(context, ref current, notes);
+        FinishList(context, ref list, notes);
+        notes.Flush(context);
     }
 
-    private static void FinishList(PipelineContext context, ref ListAssembler? list)
+    private static void FinishList(PipelineContext context, ref ListAssembler? list, SideNoteBuffer notes)
     {
         if (list is null)
         {
@@ -134,9 +144,10 @@ public sealed class BlockAssemblyStage : IPipelineStage
         ListBlock block = list.Build();
         context.Blocks.Add(new LayoutBlock(LayoutBlockKind.List, block.Pages) { List = block });
         list = null;
+        notes.Flush(context);
     }
 
-    private static void Finish(PipelineContext context, ref Paragraph? paragraph)
+    private static void Finish(PipelineContext context, ref Paragraph? paragraph, SideNoteBuffer notes)
     {
         if (paragraph is null)
         {
@@ -156,6 +167,62 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
         context.Blocks.Add(block);
         paragraph = null;
+        notes.Flush(context);
+    }
+
+    /// <summary>
+    /// Side-note lines (FR-034) collected while a block is open; flushed as paragraphs after it. Consecutive note lines of
+    /// one page closer than <see cref="NoteLineGapInFontSizes"/> font sizes form one note.
+    /// </summary>
+    private sealed class SideNoteBuffer(ParagraphBuilder builder)
+    {
+        private readonly List<(LayoutLine Line, int Page)> _lines = [];
+
+        public void Add(LayoutLine line, int page) => _lines.Add((line, page));
+
+        public void Flush(PipelineContext context)
+        {
+            Paragraph? note = null;
+            foreach ((LayoutLine line, int page) in _lines)
+            {
+                double size = DominantSize(line) is > 0 and var s ? s : line.Box.Height;
+                if (note is not null
+                    && page == note.LastPage
+                    && line.Baseline - note.LastLine.Baseline is > 0 and var gap
+                    && gap <= NoteLineGapInFontSizes * size)
+                {
+                    builder.AppendLine(note, line, page);
+                    continue;
+                }
+
+                Emit(context, note);
+                note = ParagraphBuilder.Start(line, page, size);
+            }
+
+            Emit(context, note);
+            _lines.Clear();
+        }
+
+        private static void Emit(PipelineContext context, Paragraph? note)
+        {
+            if (note is null)
+            {
+                return;
+            }
+
+            var block = new LayoutBlock(LayoutBlockKind.Paragraph, new PageRange(note.FirstPage, note.LastPage));
+            foreach (LayoutLine line in note.Lines)
+            {
+                block.Lines.Add(line);
+            }
+
+            foreach (Inline inline in note.Inlines.Complete())
+            {
+                block.Inlines.Add(inline);
+            }
+
+            context.Blocks.Add(block);
+        }
     }
 
     private static bool ContinuesParagraph(

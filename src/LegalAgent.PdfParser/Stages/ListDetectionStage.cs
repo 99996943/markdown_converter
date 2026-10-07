@@ -98,7 +98,7 @@ public sealed class ListDetectionStage : IPipelineStage
             double columnLeft = body.Count > 0 ? body.Min(l => l.Box.Left) : 0;
             foreach (LayoutLine line in page.Lines)
             {
-                if (line.Role is LineRole.Artifact or LineRole.Footnote || line.Words.Count == 0)
+                if (line.Role is LineRole.Artifact or LineRole.Footnote or LineRole.SideNote || line.Words.Count == 0)
                 {
                     continue;
                 }

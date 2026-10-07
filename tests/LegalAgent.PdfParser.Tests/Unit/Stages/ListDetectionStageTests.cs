@@ -348,12 +348,15 @@ public sealed class ListDetectionStageTests
     [Fact]
     public void SideNoteLines_DoNotBreakTheList_FR034()
     {
-        LayoutPage page = Page(
-            ("1) pierwszy punkt, ktory zawija sie", Margin),
-            ("Nowe brzmienie pkt 1", 480),
-            ("na druga linie,", Indent),
-            ("2) drugi punkt.", Margin));
-        page.Lines[1].Role = LineRole.SideNote;
+        LayoutLine note = LayoutFactory.Line("Nowe brzmienie pkt 1", 480, 110);
+        note.Role = LineRole.SideNote;
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("1) pierwszy punkt, ktory zawija sie", Margin, 100),
+            note,
+            LayoutFactory.Line("na druga linie,", Indent, 120),
+            LayoutFactory.Line("2) drugi punkt.", Margin, 140),
+        ]);
 
         PipelineContext context = Run(page);
 

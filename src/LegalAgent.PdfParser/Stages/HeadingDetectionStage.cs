@@ -67,7 +67,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             LayoutLine? previous = null;
             foreach (LayoutLine line in page.Lines)
             {
-                if (line.Role == LineRole.Artifact)
+                if (line.Role is LineRole.Artifact or LineRole.SideNote)
                 {
                     continue;
                 }

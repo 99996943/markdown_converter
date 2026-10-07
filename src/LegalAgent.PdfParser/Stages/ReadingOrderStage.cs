@@ -226,5 +226,5 @@ public sealed class ReadingOrderStage : IPipelineStage
         return part;
     }
 
-    private static bool IsFlowText(LayoutLine line) => line.Role is not (LineRole.Table or LineRole.Artifact);
+    private static bool IsFlowText(LayoutLine line) => line.Role is not (LineRole.Table or LineRole.Artifact or LineRole.SideNote);
 }

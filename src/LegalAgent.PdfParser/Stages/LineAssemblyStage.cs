@@ -7,7 +7,8 @@ namespace LegalAgent.PdfParser.Stages;
 
 /// <summary>
 /// Assembles glyphs into words and visual lines (FR-011, FR-030), splits lines into segments on large
-/// horizontal gaps (FR-060), assigns margin zones per page and computes the document body style.
+/// horizontal gaps (FR-060), assigns margin zones per page and computes the document body style. A narrow side-note
+/// column at the page edge (FR-034) is assembled separately and its lines get <see cref="LineRole.SideNote"/>.
 /// Lines are written to <see cref="LayoutPage.Lines"/> sorted top to bottom, then left to right.
 /// </summary>
 public sealed class LineAssemblyStage : IPipelineStage
@@ -25,6 +26,9 @@ public sealed class LineAssemblyStage : IPipelineStage
     private const double CoreSizeRatio = 0.9;
 
     private const double MaxLeadingInFontSizes = 3.0;
+
+    /// <summary>Minimum width (in ems of the page's main text size) of the empty band before a side-note column.</summary>
+    private const double SideNoteMinGapEm = 0.5;
 
     /// <inheritdoc />
     public int Order => StageOrder.LineAssembly;
@@ -58,15 +62,23 @@ public sealed class LineAssemblyStage : IPipelineStage
             return result;
         }
 
-        List<LineBuilder> builders = GroupIntoLines(page, options.Layout);
+        HashSet<int> notes = FindSideNotes(page, options);
+        IEnumerable<int> all = Enumerable.Range(0, page.Glyphs.Count);
+        List<LineBuilder> builders = GroupIntoLines(page, all.Where(i => !notes.Contains(i)), options.Layout);
+        List<LineBuilder> noteBuilders = GroupIntoLines(page, all.Where(notes.Contains), options.Layout);
         var assembled = new List<(LayoutLine Line, double Size, int Order)>();
 
-        foreach (LineBuilder builder in builders)
+        foreach (LineBuilder builder in builders.Concat(noteBuilders))
         {
             LayoutLine? line = BuildLine(builder, options.Tables.CellGapFactor, out double size, charsBySize);
             if (line is null)
             {
                 continue;
+            }
+
+            if (noteBuilders.Contains(builder))
+            {
+                line.Role = LineRole.SideNote;
             }
 
             ClassifyZone(line, page, options.Artifacts.MarginZoneRatio);
@@ -88,9 +100,104 @@ public sealed class LineAssemblyStage : IPipelineStage
 
     private static bool IsSpace(LayoutGlyph g) => string.IsNullOrWhiteSpace(g.Text);
 
-    private static List<LineBuilder> GroupIntoLines(LayoutPage page, LayoutOptions layout)
+    /// <summary>
+    /// FR-034: indices of the glyphs of a side-note column — the body-zone glyphs beyond the outermost empty vertical band
+    /// of the page when they form a narrow column (at most <see cref="LayoutOptions.SideNoteMaxWidthRatio"/> of the page
+    /// width) of at least two lines in a font clearly smaller than the main text. Empty when there is none.
+    /// </summary>
+    private static HashSet<int> FindSideNotes(LayoutPage page, PdfParserOptions options)
     {
-        int[] order = Enumerable.Range(0, page.Glyphs.Count)
+        var none = new HashSet<int>();
+        LayoutOptions layout = options.Layout;
+        if (!layout.DetectSideNotes)
+        {
+            return none;
+        }
+
+        double top = page.Height * options.Artifacts.MarginZoneRatio;
+        double bottom = page.Height * (1 - options.Artifacts.MarginZoneRatio);
+        List<int> body = Enumerable.Range(0, page.Glyphs.Count)
+            .Where(i => page.Glyphs[i].Box.Top >= top && page.Glyphs[i].Box.Bottom <= bottom)
+            .ToList();
+        List<int> ink = body.Where(i => !IsSpace(page.Glyphs[i])).OrderBy(i => page.Glyphs[i].Start).ThenBy(i => i).ToList();
+        if (ink.Count == 0)
+        {
+            return none;
+        }
+
+        var intervals = new List<(double Start, double End)>();
+        foreach (int i in ink)
+        {
+            LayoutGlyph g = page.Glyphs[i];
+            if (intervals.Count > 0 && g.Start <= intervals[^1].End)
+            {
+                intervals[^1] = (intervals[^1].Start, Math.Max(intervals[^1].End, g.End));
+            }
+            else
+            {
+                intervals.Add((g.Start, g.End));
+            }
+        }
+
+        // Word gaps inside the note column are empty bands too, so look for the outermost band wide enough.
+        double minGap = SideNoteMinGapEm * DominantSize(ink.Select(i => page.Glyphs[i]));
+        int rightGap = Enumerable.Range(1, intervals.Count - 1).LastOrDefault(k => intervals[k].Start - intervals[k - 1].End >= minGap);
+        if (rightGap > 0)
+        {
+            double edge = intervals[rightGap].Start;
+            HashSet<int> right = body.Where(i => page.Glyphs[i].Start >= edge).ToHashSet();
+            if (IsSideNoteColumn(page, right, ink, layout))
+            {
+                return right;
+            }
+        }
+
+        int leftGap = Enumerable.Range(1, intervals.Count - 1).FirstOrDefault(k => intervals[k].Start - intervals[k - 1].End >= minGap);
+        if (leftGap > 0)
+        {
+            double edge = intervals[leftGap - 1].End;
+            HashSet<int> left = body.Where(i => page.Glyphs[i].End <= edge).ToHashSet();
+            if (IsSideNoteColumn(page, left, ink, layout))
+            {
+                return left;
+            }
+        }
+
+        return none;
+    }
+
+    private static bool IsSideNoteColumn(LayoutPage page, HashSet<int> column, List<int> ink, LayoutOptions layout)
+    {
+        List<LayoutGlyph> note = ink.Where(column.Contains).Select(i => page.Glyphs[i]).ToList();
+        List<LayoutGlyph> main = ink.Where(i => !column.Contains(i)).Select(i => page.Glyphs[i]).ToList();
+        if (note.Count == 0 || note.Count >= main.Count)
+        {
+            return false;
+        }
+
+        double width = note.Max(g => g.End) - note.Min(g => g.Start);
+        int lines = note.Select(g => Math.Round(g.Baseline)).Distinct().Count();
+        return width <= layout.SideNoteMaxWidthRatio * page.Width
+            && lines >= 2
+            && DominantSize(note) <= layout.SideNoteMaxSizeRatio * DominantSize(main);
+    }
+
+    /// <summary>The most frequent glyph size (rounded to 0.5 pt, weighted by characters); ties go to the larger size.</summary>
+    private static double DominantSize(IEnumerable<LayoutGlyph> glyphs)
+    {
+        var chars = new SortedDictionary<double, int>();
+        foreach (LayoutGlyph g in glyphs)
+        {
+            double rounded = RoundHalf(g.PointSize);
+            chars[rounded] = chars.GetValueOrDefault(rounded) + g.Text.Length;
+        }
+
+        return chars.Count == 0 ? 0 : chars.OrderByDescending(kv => kv.Value).ThenByDescending(kv => kv.Key).First().Key;
+    }
+
+    private static List<LineBuilder> GroupIntoLines(LayoutPage page, IEnumerable<int> indices, LayoutOptions layout)
+    {
+        int[] order = indices
             .OrderByDescending(i => page.Glyphs[i].PointSize)
             .ThenBy(i => page.Glyphs[i].Baseline)
             .ThenBy(i => page.Glyphs[i].Box.Left)
