@@ -162,6 +162,39 @@ zmiany heurystyk nie łamały kontraktu SemVer.
 - **U4 (z /speckit-analyze)**: przed T093 przygotować niezależne dane referencyjne dla SC-003/SC-004 — `Corpus/acts/<nazwa>.structure.txt` (lista oznaczeń jednostek: działy, rozdziały, Art./§ w kolejności, spisana z ISAP/tekstu, nie z wyniku konwersji); T095 liczy metryki nagłówków względem tych plików.
 - Pozostałe uwagi niskiej wagi z analizy (C1 — fixture PDF z samymi ograniczeniami uprawnień w T023/T024, C3 — asercja `SourceId` w T034) uwzględnić przy odpowiednich zadaniach.
 
+## Stan prac i przekazanie (2026-10-07, koniec sesji)
+
+**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`). **Ukończone**: Phase 1–5 = Setup, Foundational, US1, US5, US2
+(T001–T065, 65 zadań `[X]`); `dotnet test LegalAgent.slnx -c Release` → 471/471, build bez ostrzeżeń.
+**Następne**: US3 (T066–T073, listy) i US4 (T074–T081, tabele) — niezależne; potem US6 (T082–T088), CLI (T089–T090), Polish (T091–T100).
+
+**Sposób pracy (uzgodniony z właścicielem projektu)**
+- Implementacja wyłącznie przez `/speckit-implement` z zakresem zadań w argumencie; po każdej fazie odhaczanie `[X]` w tasks.md.
+- TDD: osobny commit `test: … (red)` (test MUSI padać na asercji, nie na kompilacji — w razie potrzeby szkielet typów
+  rzucający `NotImplementedException`, niezarejestrowany w potoku), potem `feat: …` (green). Commity kończą się `Co-Authored-By`.
+- Po każdej historyjce: sprawdzenie na prawdziwych dokumentach (niżej) i poprawki znalezionych błędów również przez test red.
+- Zmiana zachowania sprzecznego ze spec → najpierw doprecyzowanie FR w spec.md (w tym samym commicie co test red).
+
+**Dokumenty testowe**
+- `tests/LegalAgent.PdfParser.Tests/Corpus/acts/dz-u-2026-1298-obwieszczenie-msz.pdf` (publiczny, w repo; opis w `SOURCES.md`):
+  winieta Dz.U., §, przypisy, wielostronicowa taryfa opłat (dobry przypadek dla US4).
+- `tests/LegalAgent.PdfParser.Tests/Corpus/private/mbank-regulamin-pdp.pdf` (ignorowany przez git): regulamin bez znaków
+  spacji, tabela „Definicje | Wyjaśnienie”, listy punktowane (US3, US4).
+- `SlubaCywilna.pdf` w katalogu głównym — dodany przez właściciela pod koniec sesji, jeszcze nieprzejrzany; ustalić z
+  właścicielem charakter dokumentu (publiczny → `Corpus/acts/`, inny → `Corpus/private/`).
+- Szybki podgląd wyniku: mały projekt konsolowy poza repo z `ProjectReference` do `src/LegalAgent.PdfParser`, wywołujący
+  `PdfMarkdownConverter.CreateDefault().ConvertAsync(File.OpenRead(pdf))` i zapisujący `Markdown` + `Report` (JSON) — do czasu CLI (T089–T090).
+
+**Znane ograniczenia do rozwiązania w kolejnych historyjkach**
+- US4: linie tabel (nagłówki kolumn, terminy z tabeli definicji, wiersze sekcji taryfy „II. Czynności…”) są dziś brane za
+  nagłówki typograficzne; po oznaczeniu `Role = Table` wypadną z detekcji (FR-047). `DocumentBuildStage`/renderer nie obsługują
+  jeszcze `TableBlock` (rzucają wyjątek) — do zrobienia w T080–T081.
+- US3: wcięcie wiszące (pierwsza linia wysunięta: etykiety list, cytowane przypisy „„2) …”) rozrywa akapit na dwa;
+  `MarkdownRenderer` rzuca dla `ListBlock` — do zrobienia w T072–T073.
+- Regulamin mBanku: podtytuł „obowiązuje od …” (inna czcionka pod tytułem) wychodzi jako `##`, przez co rozdziały mają `###`;
+  decyzja właściciela otwarta (czy dołączać do bloku tytułowego wszystko do pierwszego tekstu podstawowego).
+- Odnośnik przypisu w tytule dokumentu jest pomijany (tytuł to `string`); definicja trafia do przypisów preambuły.
+
 ## Complexity Tracking
 
 Brak naruszeń konstytucji wymagających uzasadnienia. Zależności ponad bibliotekę PDF są opisane w
