@@ -164,9 +164,30 @@ zmiany heurystyk nie łamały kontraktu SemVer.
 
 ## Stan prac i przekazanie (2026-10-07, koniec sesji)
 
-**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`). **Ukończone**: Phase 1–7 = Setup, Foundational, US1, US5, US2, US3, US4
-(T001–T081, 81 zadań `[X]`) + FR-034 (adnotacje boczne); `dotnet test LegalAgent.slnx -c Release` → 664/664, build bez ostrzeżeń.
-**Następne**: US6 (T082–T088, diagnostyka/strony pominięte), CLI (T089–T090), Polish (T091–T100).
+**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`; gałąź nie była wypychana). **Stan na 2026-10-07 (noc)**:
+99/100 zadań `[X]` — US1–US6, CLI, Polish. `dotnet build` 0 ostrzeżeń; `dotnet test LegalAgent.slnx -c Release` →
+758 zielonych + 1 pominięty (korpus prywatny bez `LEGALAGENT_PRIVATE_CORPUS`), w tym golden na 10 dokumentach,
+metryki SC-001 – SC-005, niezmienniki Markdown na korpusie i testy wydajności (114 stron ≈ 3,5 s).
+**Otwarte**: T100 — potwierdzenie CI na Linuksie (wymaga wypchnięcia gałęzi — decyzja właściciela); decyzje
+właściciela niżej.
+
+**Korpus i dane referencyjne** (`tests/.../Corpus`): 6 aktów publicznych (ISAP: ustawa o służbie cywilnej; Dziennik
+Ustaw: obwieszczenie MSZ, Prawo bankowe, usługi płatnicze, kredyt konsumencki, prawa konsumenta — ISAP blokuje
+pobieranie automatyczne, patrz `acts/SOURCES.md`), 4 syntetyczne dokumenty bankowe generowane w pamięci
+(`Fixtures/BankingCorpusGenerator` z danymi prawdy `Truth`), złote pliki `*.expected.md` z notatkami `Corpus/REVIEW.md`,
+referencje metryk `acts/*.structure.txt` (jednostki z surowego tekstu PdfPig) i `acts/*.artifacts.txt`.
+Aktualizacja złotych plików: `UPDATE_GOLDEN=1 dotnet test --filter "FullyQualifiedName~GoldenTests"` + przegląd diffu.
+
+**Decyzje przyjęte domyślnie (do potwierdzenia przez właściciela)**
+- Adnotacje boczne ISAP (FR-034): osobny akapit po bloku, obok którego stoją (decyzja właściciela: wariant b).
+- Podwójne brzmienie ISAP: `[Art. 31. …]` i `<Art. 31. …>` to dwie sekcje z nawiasem w nagłówku (`### \[Art. 31.`);
+  oznaczenie (`Designation`) bez nawiasu. Alternatywa: tylko brzmienie obowiązujące albo scalenie w jedną sekcję.
+- Podtytuł mBanku „obowiązuje od …” nadal jest nagłówkiem `##` (decyzja otwarta od poprzedniej sesji).
+
+**Znane ograniczenia** (szczegóły w `Corpus/REVIEW.md`): złożone tabele mBanku z wielopoziomowym nagłówkiem
+i tabela kroków BLIK — tryb awaryjny; wiersze sekcji taryfy MSZ w kolumnie, gdzie zaczyna się tekst; w załącznikach
+ustawy o kredycie konsumenckim pogrubione linie legendy wzoru jako nagłówki; w obwieszczeniach Dz. U. pojedyncze
+„Art. N.” z części obwieszczenia przed tekstem ustawy jako nagłówek (np. `## Art. 60.` w kredycie konsumenckim).
 
 **US4 — jak działają tabele (2026-10-07, noc)**
 - `TableDetectionStage` (600): komórki = segmenty linii (samotny punktor/„1)” łączony z następnym segmentem, samotny „–” zostaje
