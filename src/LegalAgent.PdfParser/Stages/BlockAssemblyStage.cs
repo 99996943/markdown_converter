@@ -31,6 +31,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
         var builder = new ParagraphBuilder(context.Options.Normalization.HyphenationExceptions.ToArray());
         Paragraph? current = null;
         ListAssembler? list = null;
+        LayoutLine? lastHeading = null;
         double previousColumnLeft = 0;
 
         foreach (LayoutPage page in context.Pages)
@@ -76,6 +77,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 if (line.Role == LineRole.Heading)
                 {
                     Finish(context, ref current);
+                    lastHeading = line;
                     if (line.Heading is { } heading)
                     {
                         var block = new LayoutBlock(LayoutBlockKind.Heading, new PageRange(page.Number, page.Number))
@@ -105,6 +107,9 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 {
                     Finish(context, ref current);
                     current = ParagraphBuilder.Start(line, page.Number, size);
+                    current.FollowsHeadingOnItsLine = lastHeading is not null
+                        && page.Lines.Contains(lastHeading)
+                        && Math.Abs(lastHeading.Baseline - line.Baseline) <= SizeTolerance;
                 }
 
                 current.LastPage = page.Number;
@@ -197,8 +202,10 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return false;
         }
 
+        // The first line may be indented; text after „Art. 5.” on the designation line may start far to the right (FR-045).
         if (indentDelta < -tolerance
-            && !(paragraph.Lines.Count == 1 && -indentDelta <= MaxFirstLineOutdentInFontSizes * size))
+            && !(paragraph.Lines.Count == 1
+                && (paragraph.FollowsHeadingOnItsLine || -indentDelta <= MaxFirstLineOutdentInFontSizes * size)))
         {
             return false;
         }
@@ -288,6 +295,9 @@ public sealed class BlockAssemblyStage : IPipelineStage
         public LayoutLine LastLine { get; set; } = first;
 
         public double LastSize { get; set; } = size;
+
+        /// <summary>The first line is the remainder of a heading line („Art. 5. Treść…”).</summary>
+        public bool FollowsHeadingOnItsLine { get; set; }
     }
 
     private sealed class ParagraphBuilder(string[] exceptions)
