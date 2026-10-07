@@ -37,6 +37,29 @@ public sealed class PdfInputReaderTests
     }
 
     [Fact]
+    public async Task ReadAsync_HeaderPrecededByJunkWithinFirst1024Bytes_IsAccepted()
+    {
+        // The PDF specification tolerates bytes before %PDF- (e.g. mail or HTTP artefacts) within the first 1024 bytes.
+        byte[] data = [.. Encoding.ASCII.GetBytes(new string('x', 500)), .. PdfLike(64)];
+        using var stream = new MemoryStream(data);
+
+        PdfInput input = await PdfInputReader.ReadAsync(stream, null, TestContext.Current.CancellationToken);
+
+        Assert.Equal(data.Length, input.ByteLength);
+    }
+
+    [Fact]
+    public async Task ReadAsync_HeaderAfterFirst1024Bytes_ThrowsNotPdf()
+    {
+        byte[] data = [.. Encoding.ASCII.GetBytes(new string('x', 1100)), .. PdfLike(64)];
+        using var stream = new MemoryStream(data);
+
+        InvalidPdfException ex = await Assert.ThrowsAsync<InvalidPdfException>(
+            () => PdfInputReader.ReadAsync(stream, null, TestContext.Current.CancellationToken));
+        Assert.Equal(InvalidPdfReason.NotPdf, ex.Reason);
+    }
+
+    [Fact]
     public async Task ReadAsync_ShortGarbageShorterThanHeader_ThrowsNotPdf()
     {
         using var stream = new MemoryStream(Encoding.ASCII.GetBytes("%PD"));
