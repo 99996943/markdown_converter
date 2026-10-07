@@ -116,6 +116,57 @@ public sealed class LineAssemblyStageTests
         Assert.Equal(["Ala", "ma", "kota"], line.Words.Select(w => w.Text).ToArray());
     }
 
+    /// <summary>
+    /// Glyphs of a large font without space characters: advance boxes touch inside a word, but the ink boxes
+    /// (side bearings) leave ~5 pt gaps between letters. Words are separated by a 0.33 em advance gap.
+    /// </summary>
+    private static List<LayoutGlyph> InkInsetText(string text, double x, double baseline, double size)
+    {
+        var glyphs = new List<LayoutGlyph>();
+        double cursor = x;
+        foreach (char c in text)
+        {
+            if (c == ' ')
+            {
+                cursor += 0.33 * size;
+                continue;
+            }
+
+            double advance = 0.7 * size;
+            double bearing = 0.08 * size;
+            glyphs.Add(new LayoutGlyph(
+                c.ToString(),
+                new Rect(cursor + bearing, baseline - (0.75 * size), cursor + advance - bearing, baseline),
+                baseline,
+                size,
+                true,
+                false,
+                cursor,
+                cursor + advance));
+            cursor += advance;
+        }
+
+        return glyphs;
+    }
+
+    [Fact]
+    public void Execute_SeparatesWordsByAdvanceGapsNotInkGaps_RelativeToTheLineFontSize()
+    {
+        // Real case (mBank terms): 32 pt Verdana title without space glyphs on a page of 9 pt body text.
+        List<LayoutGlyph> glyphs = InkInsetText("Regulamin podstawowego rachunku", 40, 80, 32);
+        for (int i = 0; i < 20; i++)
+        {
+            glyphs.AddRange(InkInsetText("tekst podstawowy strony", 40, 200 + (i * 12), 9));
+        }
+
+        LayoutPage page = Run(glyphs);
+
+        LayoutLine title = page.Lines[0];
+        Assert.Equal(["Regulamin", "podstawowego", "rachunku"], title.Words.Select(w => w.Text).ToArray());
+        Assert.Single(title.Segments);
+        Assert.All(page.Lines.Skip(1), l => Assert.Equal("tekst podstawowy strony", l.Text));
+    }
+
     [Fact]
     public void Execute_DoesNotSplitWordsWithSmallLetterSpacing()
     {
