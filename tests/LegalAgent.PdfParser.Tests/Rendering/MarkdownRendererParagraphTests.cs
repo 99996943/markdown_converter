@@ -20,7 +20,7 @@ public sealed class MarkdownRendererParagraphTests
     {
         var options = new RenderingOptions();
         configure?.Invoke(options);
-        IMarkdownRenderer renderer = new MarkdownRenderer();
+        var renderer = new MarkdownRenderer();
         return renderer.Render(doc, options);
     }
 
