@@ -145,4 +145,38 @@ public sealed class ReadingOrderStageTests
 
         Assert.Equal(Enumerable.Range(1, 6).SelectMany(i => new[] { $"L{N(i)}", $"R{N(i)}" }), order);
     }
+
+    /// <summary>A bullet line whose bullet is a separate narrow segment, as line assembly splits it on the gap.</summary>
+    private static LayoutLine BulletLine(string id, string text, double left, double top)
+    {
+        LayoutLine textLine = Line($"{id} {text}", left + 12, top);
+        var bullet = new LayoutWord([], new Rect(left, top, left + 2, top + LineHeight), "•", LegalAgent.PdfParser.Model.TextStyle.None);
+        var line = new LayoutLine([bullet, .. textLine.Words], bullet.Box.Union(textLine.Box), textLine.Baseline);
+        line.Segments.Add(new LineSegment([bullet], bullet.Box));
+        line.Segments.Add(textLine.Segments[0]);
+        return line;
+    }
+
+    [Fact]
+    public void RaggedColumnsWithBulletSegments_AreStillTwoColumns()
+    {
+        // Left-aligned (ragged) columns: lines of 150–200 pt in 240-pt columns, bullets as separate 2-pt segments and
+        // the right column's baselines offset from the left one's.
+        string[] lengths = ["Tekst lewej kolumny regulaminu ciagnie", "dalej krotsza linia akapitu", "Regulamin okresla zasady korzystania z"];
+        var lines = new List<LayoutLine>();
+        for (int i = 0; i < 9; i++)
+        {
+            string text = lengths[i % 3];
+            lines.Add(i % 3 == 1 ? BulletLine($"L{N(i)}", text, 72, 100 + (14 * i)) : Line($"L{N(i)} {text}", 72, 100 + (14 * i)));
+            lines.Add(i % 3 == 2 ? BulletLine($"R{N(i)}", text, 345, 107 + (14 * i)) : Line($"R{N(i)} {text}", 345, 107 + (14 * i)));
+        }
+
+        PipelineContext context = Context([Page(1, lines)]);
+        new ReadingOrderStage().Execute(context);
+        string[] order = context.Pages[0].Lines.Select(l => l.Words.First(w => w.Text != "•").Text).ToArray();
+
+        Assert.Equal(
+            Enumerable.Range(0, 9).Select(i => $"L{N(i)}").Concat(Enumerable.Range(0, 9).Select(i => $"R{N(i)}")),
+            order);
+    }
 }
