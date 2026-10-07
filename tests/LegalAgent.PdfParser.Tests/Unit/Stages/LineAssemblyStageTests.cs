@@ -443,4 +443,58 @@ public sealed class LineAssemblyStageTests
         Assert.Equal(11, h.Context.BodyStyle!.FontSize, 0.001);
         Assert.Equal(14, h.Context.BodyStyle.Leading, 0.5);
     }
+
+    // ---- FR-034: side-note column at the page edge ----
+
+    private static readonly string[] MainLines =
+    [
+        "Tresc glownego przepisu ustawy zajmuje cala szerokosc kolumny tekstu",
+        "glownego i jest wyjustowana do prawego marginesu kolumny tekstu ustawy",
+        "a obok niej na prawym marginesie stoja noty redakcyjne pisane mniejsza",
+        "czcionka ktore informuja o wejsciu w zycie zmian w poszczegolnych art",
+    ];
+
+    private static readonly string[] NoteLines = ["Nowe brzmienie pkt 1", "w art. 4 wejdzie w", "zycie po 7 dniach"];
+
+    private static List<LayoutGlyph> SideNotePage(double noteSize)
+    {
+        var glyphs = new List<LayoutGlyph>();
+        for (int i = 0; i < MainLines.Length; i++)
+        {
+            glyphs.AddRange(Text(MainLines[i], 71, 100 + (20 * i)));
+        }
+
+        // Note baselines fall between the main baselines, so ink boxes overlap vertically.
+        for (int i = 0; i < NoteLines.Length; i++)
+        {
+            glyphs.AddRange(Text(NoteLines[i], 480, 106 + (10 * i), noteSize, bold: true));
+        }
+
+        return glyphs;
+    }
+
+    [Fact]
+    public void SideNoteColumn_IsAssembledSeparatelyFromTheMainText_FR034()
+    {
+        LayoutPage page = Run(SideNotePage(noteSize: 8));
+
+        Assert.Equal(MainLines, page.Lines.Where(l => l.Role != LineRole.SideNote).Select(l => l.Text));
+        Assert.Equal(NoteLines, page.Lines.Where(l => l.Role == LineRole.SideNote).Select(l => l.Text));
+    }
+
+    [Fact]
+    public void NarrowColumnInTheBodyFontSize_IsNotASideNote_FR034()
+    {
+        LayoutPage page = Run(SideNotePage(noteSize: Size));
+
+        Assert.DoesNotContain(page.Lines, l => l.Role == LineRole.SideNote);
+    }
+
+    [Fact]
+    public void SideNoteDetection_CanBeDisabled_FR034()
+    {
+        LayoutPage page = Run(SideNotePage(noteSize: 8), configure: o => o.Layout.DetectSideNotes = false);
+
+        Assert.DoesNotContain(page.Lines, l => l.Role == LineRole.SideNote);
+    }
 }

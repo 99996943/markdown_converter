@@ -40,6 +40,8 @@ public sealed class PdfParserOptionsValidator : IValidateOptions<PdfParserOption
         Ratio(failures, "Layout.GutterMinWidthRatio", options.Layout.GutterMinWidthRatio);
         Ratio(failures, "Layout.GutterMinHeightRatio", options.Layout.GutterMinHeightRatio);
         Ratio(failures, "Layout.ColumnMinLineWidthRatio", options.Layout.ColumnMinLineWidthRatio);
+        Ratio(failures, "Layout.SideNoteMaxWidthRatio", options.Layout.SideNoteMaxWidthRatio);
+        Ratio(failures, "Layout.SideNoteMaxSizeRatio", options.Layout.SideNoteMaxSizeRatio);
 
         Positive(failures, "Headings.SizeRatio", options.Headings.SizeRatio);
         Positive(failures, "Headings.SizeClusterTolerance", options.Headings.SizeClusterTolerance);

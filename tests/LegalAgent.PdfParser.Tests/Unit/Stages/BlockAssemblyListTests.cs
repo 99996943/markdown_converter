@@ -197,4 +197,49 @@ public sealed class BlockAssemblyListTests
         Assert.Equal(1, footnote.Number);
         Assert.Equal(1, context.Report.ListCount);
     }
+
+    private static LayoutLine Note(string text, double top)
+    {
+        LayoutLine line = LayoutFactory.Line(text, 480, top, height: 8);
+        line.Role = LineRole.SideNote;
+        return line;
+    }
+
+    [Fact]
+    public void SideNoteLines_FormAParagraphAfterTheBlockTheyStandBeside_FR034()
+    {
+        PipelineContext context = Assemble(
+            LayoutFactory.Page(1,
+            [
+                LayoutFactory.Line("W rozumieniu ustawy pracownik oznacza osobe zatrudniona na podstawie", 71, 100),
+                Note("Nowe brzmienie pkt 1", 104),
+                LayoutFactory.Line("umowy o prace zgodnie z zasadami okreslonymi w ustawie oraz przepisach", 71, 120),
+                Note("wejdzie w zycie", 114),
+                LayoutFactory.Line("wykonawczych do ustawy", 71, 140),
+            ]),
+            LayoutFactory.Page(2, [LayoutFactory.Line("wydanych na jej podstawie.", 71, 100)]));
+
+        Assert.Equal([LayoutBlockKind.Paragraph, LayoutBlockKind.Paragraph], context.Blocks.Select(b => b.Kind));
+        Assert.Equal(
+            "W rozumieniu ustawy pracownik oznacza osobe zatrudniona na podstawie umowy o prace zgodnie z zasadami "
+                + "okreslonymi w ustawie oraz przepisach wykonawczych do ustawy [p2] wydanych na jej podstawie.",
+            Flat(context.Blocks[0].Inlines));
+        Assert.Equal("Nowe brzmienie pkt 1 wejdzie w zycie", Flat(context.Blocks[1].Inlines));
+        Assert.Equal(new PageRange(1, 1), context.Blocks[1].Pages);
+    }
+
+    [Fact]
+    public void SideNoteLines_DoNotSplitAList_FR034()
+    {
+        PipelineContext context = Assemble(LayoutFactory.Page(1,
+        [
+            Item("1) pierwszy punkt,", 71, 100, 1),
+            Note("Dodany pkt 2", 104),
+            Item("2) drugi punkt.", 71, 120, 2),
+        ]));
+
+        Assert.Equal([LayoutBlockKind.List, LayoutBlockKind.Paragraph], context.Blocks.Select(b => b.Kind));
+        Assert.Equal(2, context.Blocks[0].List!.Items.Count);
+        Assert.Equal("Dodany pkt 2", Flat(context.Blocks[1].Inlines));
+    }
 }

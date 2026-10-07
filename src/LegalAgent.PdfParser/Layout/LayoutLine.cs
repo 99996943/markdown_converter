@@ -39,6 +39,9 @@ public enum LineRole
 
     /// <summary>Ordinary body text.</summary>
     Body,
+
+    /// <summary>Line of a side-note column at the page edge (FR-034), set by line assembly.</summary>
+    SideNote,
 }
 
 /// <summary>A line of text.</summary>

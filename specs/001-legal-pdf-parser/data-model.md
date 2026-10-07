@@ -140,7 +140,7 @@ w (0, 1], liczby dodatnie, `MaxTypographicDepth` 1–6.
 | (root) | `AllowPartialResult` (false) | FR-009a |
 | `Normalization` | `HyphenationExceptions` (lista złożeń, np. „e-mail”, „biało-czerwony”), `DropRotatedText` (true), `DropInvisibleText` (true) | FR-010–013 |
 | `Artifacts` | `Enabled` (true), `MarginZoneRatio` (0,08), `MinPageRatio` (0,5), `MinPages` (3), `PositionTolerance` (0,02), `Similarity` (0,85), `SplitOddEven` (true), `RemovePageNumbers` (true) | FR-020–025 |
-| `Layout` | `LineOverlapRatio` (0,5), `BaselineToleranceRatio` (0,3), `ParagraphGapFactor` (1,5), `ShortLineRatio` (0,75), `DetectColumns` (true), `GutterMinWidthRatio` (0,02), `GutterMinHeightRatio` (0,6), `ColumnMinLineWidthRatio` (0,3) | FR-030–033 |
+| `Layout` | `LineOverlapRatio` (0,5), `BaselineToleranceRatio` (0,3), `ParagraphGapFactor` (1,5), `ShortLineRatio` (0,75), `DetectColumns` (true), `GutterMinWidthRatio` (0,02), `GutterMinHeightRatio` (0,6), `ColumnMinLineWidthRatio` (0,3), `DetectSideNotes` (true), `SideNoteMaxWidthRatio` (0,25), `SideNoteMaxSizeRatio` (0,9) | FR-030–034 |
 | `Headings` | `Enabled` (true), `SizeRatio` (1,15), `SizeClusterTolerance` (0,5 pt), `MaxLength` (120), `MaxLines` (2), `MaxTypographicDepth` (3), `GapFactor` (1,3), `CenterTolerance` (0,05), `DetectLegalUnits` (true) | FR-040–047, FR-043a |
 | `Lists` | `Enabled` (true), `IndentTolerance` (1,5 pt) | FR-050–054 |
 | `Tables` | `Enabled` (true), `CellGapFactor` (2,0), `MinRows` (3), `ColumnTolerance` (0,03), `RowMergeGapFactor` (1,2), `UseRulingLines` (true), `MergeAcrossPages` (true) | FR-060–066 |

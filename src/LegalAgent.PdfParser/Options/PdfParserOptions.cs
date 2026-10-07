@@ -108,6 +108,15 @@ public sealed class LayoutOptions
     /// <summary>Minimum line width as a fraction of page width for lines to count towards columns.</summary>
     public double ColumnMinLineWidthRatio { get; set; } = 0.3;
 
+    /// <summary>Separate a narrow side-note column at the page edge from the main text (FR-034).</summary>
+    public bool DetectSideNotes { get; set; } = true;
+
+    /// <summary>Maximum width of a side-note column as a fraction of page width.</summary>
+    public double SideNoteMaxWidthRatio { get; set; } = 0.25;
+
+    /// <summary>Maximum font size of side notes as a fraction of the main text size.</summary>
+    public double SideNoteMaxSizeRatio { get; set; } = 0.9;
+
     internal LayoutOptions Clone() => (LayoutOptions)MemberwiseClone();
 }
 

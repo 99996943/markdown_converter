@@ -344,4 +344,22 @@ public sealed class ListDetectionStageTests
 
         Assert.All(context.Pages[0].Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
     }
+
+    [Fact]
+    public void SideNoteLines_DoNotBreakTheList_FR034()
+    {
+        LayoutPage page = Page(
+            ("1) pierwszy punkt, ktory zawija sie", Margin),
+            ("Nowe brzmienie pkt 1", 480),
+            ("na druga linie,", Indent),
+            ("2) drugi punkt.", Margin));
+        page.Lines[1].Role = LineRole.SideNote;
+
+        PipelineContext context = Run(page);
+
+        LayoutLine item1 = Find(context, "1) pierwszy");
+        AssertContinues(Find(context, "na druga"), item1);
+        Assert.Equal(string.Empty, Parent(Find(context, "2) drugi")));
+        Assert.Equal(LineRole.SideNote, page.Lines[1].Role);
+    }
 }
