@@ -71,6 +71,7 @@ public class PageExtractionStage : IPipelineStage
             }
 
             context.Pages.Add(layoutPage);
+            context.ReportProgress(n);
         }
 
         if (pagesWithText == 0)

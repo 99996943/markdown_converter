@@ -31,6 +31,7 @@ public sealed class PipelineRunner
         {
             context.CancellationToken.ThrowIfCancellationRequested();
 
+            context.CurrentStage = stage.GetType().Name;
             try
             {
                 stage.Execute(context);

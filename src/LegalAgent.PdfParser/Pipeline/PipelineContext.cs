@@ -55,6 +55,20 @@ public sealed class PipelineContext
     /// <summary>Cancellation token of the conversion.</summary>
     public CancellationToken CancellationToken { get; }
 
+    /// <summary>Receiver of per-page progress reports; null when the caller did not ask for progress.</summary>
+    public IProgress<ConversionProgress>? Progress { get; init; }
+
+    /// <summary>Name of the stage currently executing; maintained by <see cref="PipelineRunner"/>.</summary>
+    public string CurrentStage { get; internal set; } = string.Empty;
+
+    /// <summary>
+    /// Reports that <paramref name="pageNumber"/> (1-based) has been processed by the current stage (FR-072).
+    /// Stages must call it in ascending page order.
+    /// </summary>
+    /// <param name="pageNumber">The processed page.</param>
+    public void ReportProgress(int pageNumber) =>
+        Progress?.Report(new ConversionProgress(pageNumber, Source.PageCount, CurrentStage));
+
     /// <summary>Body text metrics; set by the line assembly stage.</summary>
     public BodyStyle? BodyStyle { get; set; }
 
