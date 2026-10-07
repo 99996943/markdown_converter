@@ -394,4 +394,57 @@ public sealed class TableDetectionStageTests
             ],
             Cells(table.Rows));
     }
+
+    private static void Grid(LayoutPage page, double top, double bottom, params double[] rowBorders)
+    {
+        foreach (double y in rowBorders)
+        {
+            page.Rulings.Add(new Segment(C1 - 5, y, 560, y));
+        }
+
+        foreach (double x in new double[] { C1 - 5, C2 - 5, C3 - 5, 560 })
+        {
+            page.Rulings.Add(new Segment(x, top, x, bottom));
+        }
+    }
+
+    [Fact]
+    public void CellLineAboveTheFirstMultiCellLine_BelongsToTheHeaderRow()
+    {
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            Row(92, ("kiedy przyjmujemy", C2)),
+            Row(100, ("rodzaj wplaty", C1), ("kiedy uznamy", C3)),
+            Row(108, ("wplaty?", C2)),
+            Row(130, ("wplata w placowce", C1), ("w godzinach pracy", C2), ("natychmiast", C3)),
+            Row(160, ("wplata karta", C1), ("przez cala dobe", C2), ("natychmiast", C3)),
+        ]);
+        Grid(page, 80, 175, 80, 120, 150, 175);
+
+        TableBlock table = SingleTable(Run(page));
+
+        Assert.Equal(["rodzaj wplaty", "kiedy przyjmujemy wplaty?", "kiedy uznamy"], table.Rows[0].Cells.Select(Text));
+    }
+
+    [Fact]
+    public void ParagraphBetweenTwoRuledGrids_SeparatesTwoTables()
+    {
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            Row(100, ("wplata w placowce", C1), ("w godzinach pracy", C2), ("natychmiast", C3)),
+            Row(120, ("wplata karta", C1), ("przez cala dobe", C2), ("natychmiast", C3)),
+            Row(140, ("wplata BLIK", C1), ("przez cala dobe", C2), ("natychmiast", C3)),
+            LayoutFactory.Line("2) Rodzaje wyplat znajdziesz w tabeli:", C1, 160),
+            Row(180, ("wyplata w placowce", C1), ("w godzinach pracy", C2), ("natychmiast", C3)),
+            Row(200, ("wyplata karta", C1), ("przez cala dobe", C2), ("natychmiast", C3)),
+            Row(220, ("wyplata BLIK", C1), ("przez cala dobe", C2), ("natychmiast", C3)),
+        ]);
+        Grid(page, 92, 152, 92, 112, 132, 152);
+        Grid(page, 172, 232, 172, 192, 212, 232);
+
+        PipelineContext context = Run(page);
+
+        Assert.Equal(2, context.Tables.Count);
+        Assert.Equal(LineRole.Unknown, page.Lines[3].Role);
+    }
 }
