@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LegalAgent.PdfParser.Cli/LegalAgent.PdfParser.Cli.csproj" />
+    <Project Path="src/LegalAgent.PdfParser/LegalAgent.PdfParser.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LegalAgent.PdfParser.Tests/LegalAgent.PdfParser.Tests.csproj" />
+  </Folder>
+</Solution>

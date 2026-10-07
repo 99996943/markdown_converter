@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>LegalAgent.PdfParser.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
+    <ProjectReference Include="..\..\src\LegalAgent.PdfParser.Cli\LegalAgent.PdfParser.Cli.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fixtures\Fonts\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Fixtures\Fonts" />
+  </ItemGroup>
+</Project>

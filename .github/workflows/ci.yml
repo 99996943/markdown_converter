@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            9.0.x
+          global-json-file: global.json
+      - name: Build
+        run: dotnet build LegalAgent.slnx -c Release
+      - name: Test
+        run: dotnet test LegalAgent.slnx -c Release --no-build --filter "Category!=Performance"
+      - name: Performance tests
+        run: dotnet test LegalAgent.slnx -c Release --no-build --filter "Category=Performance"
