@@ -79,4 +79,18 @@ public sealed class TablesIntegrationTests
         Assert.Equal((3, 1), (result.Report.TableCount, result.Report.FallbackTableCount));
         Assert.Contains(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid" && w.PageNumber == 2);
     }
+
+    [Fact]
+    public async Task TwoColumnRegulation_IsReadColumnByColumnWithoutTables_FR031()
+    {
+        byte[] pdf = BankingCorpusGenerator.Documents().Single(d => d.Name == "regulamin-dwie-kolumny").Pdf;
+        using var stream = new MemoryStream(pdf);
+
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.Equal(0, result.Report.TableCount);
+        int leftColumn = result.Markdown.IndexOf("Regulamin określa zasady korzystania z", StringComparison.Ordinal);
+        int rightColumn = result.Markdown.IndexOf("Dyspozycje złożone w systemie są realizowane", StringComparison.Ordinal);
+        Assert.True(leftColumn >= 0 && rightColumn > leftColumn, "the left column must be read before the right one");
+    }
 }
