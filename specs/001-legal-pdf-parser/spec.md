@@ -207,7 +207,7 @@ zawiera ostrzeżenie wskazujące numer tej strony.
 
 - **FR-010**: Tekst MUSI być normalizowany do złożonej postaci Unicode (NFC), z rozwinięciem ligatur (np. „ﬁ” → „fi”), zamianą twardych spacji i spacji o zmiennej szerokości na zwykłe spacje oraz zachowaniem polskich znaków diakrytycznych.
 - **FR-011**: Odstępy między słowami MUSZĄ być odtwarzane na podstawie odległości między znakami, gdy plik nie zawiera jawnych spacji (próg względem szerokości znaku czcionki), tak aby nie powstawały zlepione ani rozstrzelone wyrazy.
-- **FR-012**: Wyraz podzielony na końcu linii łącznikiem MUSI zostać scalony, jeśli łącznik jest ostatnim znakiem linii, a następna linia zaczyna się małą literą; łącznik zostaje zachowany, gdy część przed nim jest skrótem lub rzeczownikiem z wielkiej litery, albo gdy połączenie tworzy znane złożenie z łącznikiem (konfigurowalna lista wyjątków).
+- **FR-012**: Wyraz podzielony na końcu linii łącznikiem MUSI zostać scalony, jeśli łącznik jest ostatnim znakiem linii, a następna linia zaczyna się małą literą; łącznik zostaje zachowany, gdy część przed nim jest skrótem pisanym wersalikami (np. „PKB-owski”), gdy część po nim zaczyna się wielką literą (nazwy złożone, np. „Bielsko-Biała”), gdy część przed nim jest jednoliterowa, albo gdy połączenie tworzy znane złożenie z łącznikiem (konfigurowalna lista wyjątków). Sama wielka litera na początku części przed łącznikiem NIE powoduje zachowania łącznika („Zagra-” + „nicznych” → „Zagranicznych”).
 - **FR-013**: Tekst obrócony względem orientacji strony oraz tekst niewidoczny (np. biały na białym, poza obszarem strony) MUSI zostać pominięty i odnotowany w raporcie.
 
 #### Usuwanie artefaktów stron (nagłówki, stopki, numery stron)
