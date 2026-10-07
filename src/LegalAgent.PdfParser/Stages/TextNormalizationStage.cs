@@ -33,6 +33,23 @@ public sealed partial class TextNormalizationStage : IPipelineStage
         {
             context.CancellationToken.ThrowIfCancellationRequested();
             Normalize(page);
+            ReportUnmapped(context, page);
+        }
+    }
+
+    /// <summary>
+    /// Glyphs without a Unicode mapping reach the text as U+FFFD or control characters; their number is reported per
+    /// page (FR-070, <c>TXT001_UnmappedGlyphs</c>) so that garbled text is never a silent success.
+    /// </summary>
+    private static void ReportUnmapped(PipelineContext context, LayoutPage page)
+    {
+        int unmapped = page.Glyphs.Count(g => g.Text.Any(c => c == '�' || (char.IsControl(c) && !char.IsWhiteSpace(c))));
+        if (unmapped > 0)
+        {
+            context.Report.AddWarning(
+                "TXT001_UnmappedGlyphs",
+                page.Number,
+                string.Create(CultureInfo.InvariantCulture, $"Na stronie {page.Number} {unmapped} znaków nie ma odwzorowania Unicode."));
         }
     }
 
