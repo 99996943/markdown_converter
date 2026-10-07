@@ -84,7 +84,7 @@ public sealed class BlockAssemblyStageTests
     public void Execute_ParagraphGapFactorComesFromOptions()
     {
         PipelineContext context = Run(
-            o => o.Layout.ParagraphGapFactor = 1.0,
+            o => o.Layout.ParagraphGapFactor = 0.9,
             new PageSketch().Line(Long1, 50, 100).Line(Long2, 50, 116));
 
         Assert.Equal(2, context.Blocks.Count);
@@ -229,7 +229,7 @@ public sealed class BlockAssemblyStageTests
         LayoutBlock block = Assert.Single(context.Blocks);
         Assert.Equal($"{Long1} w terminie do dnia zawarcia [p2] umowy przez strony.", Flat(block));
         Assert.Equal(new PageRange(1, 2), block.Pages);
-        Assert.Equal(1, block.Inlines.OfType<PageBreak>().Count());
+        Assert.Single(block.Inlines.OfType<PageBreak>());
     }
 
     [Fact]
