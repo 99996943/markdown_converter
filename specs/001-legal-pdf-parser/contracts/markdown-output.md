@@ -27,7 +27,9 @@ treści własnej i podsekcjach — dla Art./§ (liście) oznacza to koniec artyk
 | `PageBreak` (opcja `PageMarkers`) | `<!-- page: N -->`; na początku bloku — osobna linia przed blokiem; wewnątrz akapitu/pozycji — wstawiony między słowami ze spacjami | `… zawarcia <!-- page: 5 --> umowy …` |
 | `ListItem` | `- ` + oznaczenie z ucieczką + spacja + treść; poziom zagnieżdżenia = 2 spacje wcięcia | `- 1\) definicja` / `  - a\) lit.` |
 | `ListItem` z `Bullet` | `- ` + treść (znak punktora pominięty) | `- karta debetowa` |
-| `ListItem` z `Dash` (tiret) | `- – treść` | `- – w przypadku …` |
+| `ListItem` z `Dash` (tiret) | `- – treść`; dywiz `-` jako `\-` (by nie powstała lista zagnieżdżona) | `- – w przypadku …` |
+| `ListItem` — dzieci | zagnieżdżona lista: kolejne linie, wcięcie +2, bez pustej linii; akapit „części wspólnej”: pusta linia, treść z wcięciem, pusta linia przed kolejną pozycją | `  część wspólna` |
+| `ListItem` rozpoczęty na nowej stronie | `<!-- page: N -->` w osobnej linii (z wcięciem pozycji) przed pozycją, o ile N ≠ bieżąca strona | `  <!-- page: 5 -->` |
 | `TableBlock` | tabela GFM; nagłówek = `Header` lub pierwszy wiersz; separator `| --- |`; `|` w treści → `\|`; znaczniki stron w tabeli pominięte, znacznik kolejnej strony po tabeli | `| Usługa | Opłata |` |
 | `TableBlock` (fallback) | każdy wiersz wizualny jako osobny akapit (oddzielony pustą linią), komórki połączone ` \| ` (z ucieczką, by nie powstała tabela GFM) | `Prowadzenie rachunku \| 0 zł \| miesięcznie` |
 | `SkippedPageBlock` | `<!-- page N skipped: no-text-layer -->` / `<!-- page N skipped: read-error -->` | |
