@@ -330,4 +330,20 @@ public sealed class TableDetectionStageTests
 
         Assert.Empty(context.Tables);
     }
+
+    [Fact]
+    public void BulletInsideACell_StaysWithItsText_FR061()
+    {
+        PipelineContext context = Run(LayoutFactory.Page(1,
+        [
+            Row(100, ("Definicje", C1), ("Wyjasnienie", C2)),
+            Row(120, ("przelew", C1), ("•", C2), ("do banku lub", C2 + 15)),
+            Row(140, ("saldo", C1), ("ilosc pieniedzy na rachunku", C2)),
+            Row(160, ("regulamin", C1), ("ten regulamin", C2)),
+        ]));
+
+        TableBlock table = SingleTable(context);
+        Assert.False(table.IsFallback);
+        Assert.Equal(["przelew", "• do banku lub"], table.Rows[1].Cells.Select(Text));
+    }
 }
