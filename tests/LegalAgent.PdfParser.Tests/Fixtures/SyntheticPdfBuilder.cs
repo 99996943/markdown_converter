@@ -63,6 +63,45 @@ public sealed class SyntheticPdfBuilder
         return this;
     }
 
+    /// <summary>
+    /// Writes text whose font size is 1 pt and whose effective size (<c>PointSize</c>) comes from a scaling
+    /// transformation matrix, as ISAP-generated PDFs do.
+    /// </summary>
+    public SyntheticPdfBuilder ScaledText(double x, double yFromTop, string text, double scale)
+    {
+        Current.Draw.Add((ctx, page) =>
+        {
+            double originY = page.PageSize.Height - yFromTop;
+            page.CurrentStream.Operations.Add(Push.Value);
+            page.CurrentStream.Operations.Add(new ModifyCurrentTransformationMatrix([scale, 0, 0, scale, x, originY]));
+            page.AddText(text, 1, new PdfPoint(0, 0), ctx.Font(false, false));
+            page.CurrentStream.Operations.Add(Pop.Value);
+        });
+        return this;
+    }
+
+    /// <summary>Writes white text (fill colour 255,255,255).</summary>
+    public SyntheticPdfBuilder WhiteText(double x, double yFromTop, string text, double size = 11)
+    {
+        Current.Draw.Add((ctx, page) =>
+        {
+            page.SetTextAndFillColor(255, 255, 255);
+            page.AddText(text, size, new PdfPoint(x, page.PageSize.Height - yFromTop), ctx.Font(false, false));
+            page.SetTextAndFillColor(0, 0, 0);
+        });
+        return this;
+    }
+
+    /// <summary>Draws a filled rectangle with its top-left corner at (<paramref name="x"/>, <paramref name="yFromTop"/>).</summary>
+    public SyntheticPdfBuilder FilledRect(double x, double yFromTop, double width, double height)
+    {
+        Current.Draw.Add((_, page) =>
+        {
+            page.DrawRectangle(new PdfPoint(x, page.PageSize.Height - yFromTop - height), width, height, 1, true);
+        });
+        return this;
+    }
+
     /// <summary>Writes text with the invisible rendering mode (e.g. an OCR layer).</summary>
     public SyntheticPdfBuilder InvisibleText(double x, double yFromTop, string text, double size = 11)
     {

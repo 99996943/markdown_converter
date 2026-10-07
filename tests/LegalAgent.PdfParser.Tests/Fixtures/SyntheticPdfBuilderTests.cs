@@ -32,6 +32,34 @@ public sealed class SyntheticPdfBuilderTests
     }
 
     [Fact]
+    public void ScaledText_HasUnitFontSizeAndScaledPointSize()
+    {
+        byte[] bytes = new SyntheticPdfBuilder().Page().ScaledText(50, 100, "AB", 12).Build();
+        using PdfDocument doc = PdfDocument.Open(bytes);
+        var letter = doc.GetPage(1).Letters[0];
+        Assert.Equal(12, letter.PointSize, 0.01);
+        Assert.Equal(1, letter.FontSize, 0.01);
+    }
+
+    [Fact]
+    public void WhiteText_HasWhiteFillColor()
+    {
+        byte[] bytes = new SyntheticPdfBuilder().Page().WhiteText(50, 100, "AB").Text(50, 200, "CD").Build();
+        using PdfDocument doc = PdfDocument.Open(bytes);
+        var letters = doc.GetPage(1).Letters;
+        Assert.Equal(1.0, (double)letters[0].FillColor!.ToRGBValues().r, 0.01);
+        Assert.Equal(0.0, (double)letters[^1].FillColor!.ToRGBValues().r, 0.01);
+    }
+
+    [Fact]
+    public void FilledRect_ProducesFilledPath()
+    {
+        byte[] bytes = new SyntheticPdfBuilder().Page().FilledRect(50, 100, 200, 30).Text(60, 120, "x").Build();
+        using PdfDocument doc = PdfDocument.Open(bytes);
+        Assert.Contains(doc.GetPage(1).Paths, p => p.IsFilled);
+    }
+
+    [Fact]
     public void Page_DefaultsToA4()
     {
         byte[] bytes = new SyntheticPdfBuilder().Page().Text(50, 100, "x").Build();
