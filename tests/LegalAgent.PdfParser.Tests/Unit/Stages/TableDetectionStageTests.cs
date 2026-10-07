@@ -375,7 +375,11 @@ public sealed class TableDetectionStageTests
         ]);
         foreach (double y in new[] { 95, 120, 160, 190, 226 })
         {
-            page.Rulings.Add(new Segment(C1 - 5, y, 560, y));
+            // Each row border is drawn in short pieces, none of them spanning a good part of the table.
+            foreach (double x in new double[] { C1 - 5, 150, 250, 350, 450 })
+            {
+                page.Rulings.Add(new Segment(x, y, x + 99, y));
+            }
         }
 
         TableBlock table = SingleTable(Run(page));
