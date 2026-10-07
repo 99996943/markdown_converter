@@ -299,4 +299,32 @@ public sealed class TableDetectionStageTests
         Assert.Empty(context.Tables);
         Assert.All(context.Pages[0].Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
     }
+
+    [Fact]
+    public void JustifiedTextSplitIntoEvenlySpacedWords_IsNotATable()
+    {
+        // Wide justification spaces exceed the cell gap, so every word is its own segment; the gaps are all alike.
+        static LayoutLine Justified(double top, params string[] words)
+        {
+            var cells = new List<(string, double)>();
+            double x = 71;
+            foreach (string word in words)
+            {
+                cells.Add((word, x));
+                x += (word.Length * LayoutFactory.CharWidth) + 16;
+            }
+
+            return Row(top, cells.ToArray());
+        }
+
+        PipelineContext context = Run(LayoutFactory.Page(1,
+        [
+            Justified(100, "W", "celu", "zapewnienia", "zawodowego,", "rzetelnego,"),
+            Justified(120, "i", "politycznie", "neutralnego", "wykonywania", "zadan"),
+            Justified(140, "cywilna", "oraz", "okresla", "zasady", "dostepu"),
+            Justified(160, "funkcjonowania", "i", "rozwoju", "tej", "sluzby"),
+        ]));
+
+        Assert.Empty(context.Tables);
+    }
 }
