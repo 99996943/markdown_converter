@@ -164,9 +164,28 @@ zmiany heurystyk nie łamały kontraktu SemVer.
 
 ## Stan prac i przekazanie (2026-10-07, koniec sesji)
 
-**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`). **Ukończone**: Phase 1–6 = Setup, Foundational, US1, US5, US2, US3
-(T001–T073, 73 zadania `[X]`); `dotnet test LegalAgent.slnx -c Release` → 591/591, build bez ostrzeżeń.
-**Następne**: US4 (T074–T081, tabele); potem US6 (T082–T088), CLI (T089–T090), Polish (T091–T100).
+**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`). **Ukończone**: Phase 1–7 = Setup, Foundational, US1, US5, US2, US3, US4
+(T001–T081, 81 zadań `[X]`) + FR-034 (adnotacje boczne); `dotnet test LegalAgent.slnx -c Release` → 664/664, build bez ostrzeżeń.
+**Następne**: US6 (T082–T088, diagnostyka/strony pominięte), CLI (T089–T090), Polish (T091–T100).
+
+**US4 — jak działają tabele (2026-10-07, noc)**
+- `TableDetectionStage` (600): komórki = segmenty linii (samotny punktor/„1)” łączony z następnym segmentem, samotny „–” zostaje
+  wartością komórki). Linia jest wierszem tabeli tylko z prawdziwymi przerwami: ≥ 1 em i ≥ 2× odstęp między słowami, nie
+  wszystkie komórki szerokie jak kolumna tekstu, nie równe odstępy (≥ 4 segmenty w ±20% mediany = justowanie ISAP).
+  Region ≥ `MinRows` takich linii; pasy = klastry lewych krawędzi z poparciem ≥ 2 wierszy (`ColumnClustering`, Sonnet),
+  przyciągane do pionowych linii siatki. Wiersze: przy siatce (≥ 2 poziome krawędzie po złączeniu kawałków) wg krawędzi,
+  bez siatki reguła scalania FR-062. Siatka ogranicza tabelę (tekst poza nią kończy region) i dołącza linie nad pierwszym
+  wierszem (wiersze sekcji, górna linia nagłówka). Fallback (FR-064) przy zmiennej liczbie komórek bez siatki lub dwóch
+  komórkach w jednym pasie. Kontynuacja na następnej stronie (FR-065): tabela kończy stronę, następna ją zaczyna, każdy pas
+  kontynuacji mieści się w pasie poprzedniej; powtórzony nagłówek pomijany.
+- Tabele trafiają do `PipelineContext.Tables`, linie mają `Role = Table` + `LayoutAnnotations.TableIndex`; `BlockAssemblyStage`
+  wstawia tabelę przy jej pierwszej linii, `DocumentBuildStage` liczy `TableCount`/`FallbackTableCount`. Renderer (Sonnet,
+  przejrzany): GFM, `ColumnSpan` jako puste komórki, fallback ` \| `, brak znaczników stron w tabeli.
+- Weryfikacja: taryfa MSZ → 2 tabele po 3 strony, wiersze wieloliniowe i wiersze sekcji poprawne; mBank → tabela definicji
+  (3 strony, terminy wyśrodkowane w pionie) i tabele terminów wpłat/wypłat jako GFM; ustawa → 0 tabel (bez zmian w wyniku).
+- **Znane ograniczenia**: wiersz sekcji („I. Czynności…”) ląduje w kolumnie, w której zaczyna się wyśrodkowany tekst (nie w 1.);
+  3 tabele mBanku z wielopoziomowym nagłówkiem (macierz „Co i gdzie możesz zrobić”) są awaryjne; w obwieszczeniu „I. Obowiązująca…”
+  wychodzi jako pozycja listy, a „II. Obowiązująca…” jako nagłówek (niespójność list/nagłówków dla pogrubionych „I.”).
 
 **US3 — jak działają listy (sesja 2026-10-07, wieczór)**
 - `ListLabelPatterns` (Text) klasyfikuje oznaczenie = pierwsze słowo linii. `ListDetectionStage` (800) przechodzi linie ze stosem

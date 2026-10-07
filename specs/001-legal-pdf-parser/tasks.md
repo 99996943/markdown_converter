@@ -191,17 +191,17 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 
 ### Tests for User Story 4 ⚠️
 
-- [ ] T074 [P] [US4] Write `tests/LegalAgent.PdfParser.Tests/Unit/Layout/ColumnClusteringTests.cs`: left edges within 3% page width cluster into one column band; deterministic band ordering; ruling lines snap band boundaries
-- [ ] T075 [P] [US4] Write `tests/LegalAgent.PdfParser.Tests/Unit/Stages/TableDetectionStageTests.cs`: segments separated by gap > 2× mean space are cells (FR-060); ≥ 3 consecutive lines with ≥ 2 aligned segments → table region (FR-061); slight baseline jitter still one row; partial-column line with gap ≤ 1.2× table leading (`RowMergeGapFactor`) merged into previous row unless a horizontal ruling separates them (FR-062); bold top row → header; amounts `0,00 zł`, `1,5%`, `min. 10 zł` stay in one cell (FR-063); varying column count → `IsFallback = true` + warning `TBL001_AmbiguousGrid` (FR-064); continuation on next page with same bands merged and repeated header dropped (FR-065); cell text spanning two bands assigned to first column with `ColumnSpan` and no text lost (FR-066); `Tables.Enabled = false` disables
-- [ ] T076 [P] [US4] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererTableTests.cs`: GFM table with header and `| --- |` separator, `|` escaped in cells, no page markers inside table and next page marker after it; fallback rows as separate paragraphs with ` \| ` separators (no GFM table produced)
-- [ ] T077 [US4] Write integration test `tests/LegalAgent.PdfParser.Tests/Integration/TablesIntegrationTests.cs` with golden `Integration/Expected/us4-tables.expected.md`; also assert two-column text page next to a table is not split into columns (FR-031 vs tables)
+- [X] T074 [P] [US4] Write `tests/LegalAgent.PdfParser.Tests/Unit/Layout/ColumnClusteringTests.cs`: left edges within 3% page width cluster into one column band; deterministic band ordering; ruling lines snap band boundaries
+- [X] T075 [P] [US4] Write `tests/LegalAgent.PdfParser.Tests/Unit/Stages/TableDetectionStageTests.cs`: segments separated by gap > 2× mean space are cells (FR-060); ≥ 3 consecutive lines with ≥ 2 aligned segments → table region (FR-061); slight baseline jitter still one row; partial-column line with gap ≤ 1.2× table leading (`RowMergeGapFactor`) merged into previous row unless a horizontal ruling separates them (FR-062); bold top row → header; amounts `0,00 zł`, `1,5%`, `min. 10 zł` stay in one cell (FR-063); varying column count → `IsFallback = true` + warning `TBL001_AmbiguousGrid` (FR-064); continuation on next page with same bands merged and repeated header dropped (FR-065); cell text spanning two bands assigned to first column with `ColumnSpan` and no text lost (FR-066); `Tables.Enabled = false` disables
+- [X] T076 [P] [US4] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererTableTests.cs`: GFM table with header and `| --- |` separator, `|` escaped in cells, no page markers inside table and next page marker after it; fallback rows as separate paragraphs with ` \| ` separators (no GFM table produced)
+- [X] T077 [US4] Write integration test `tests/LegalAgent.PdfParser.Tests/Integration/TablesIntegrationTests.cs` with golden `Integration/Expected/us4-tables.expected.md`; also assert two-column text page next to a table is not split into columns (FR-031 vs tables)
 
 ### Implementation for User Story 4
 
-- [ ] T078 [P] [US4] Implement `src/LegalAgent.PdfParser/Layout/ColumnClustering.cs` to pass T074
-- [ ] T079 [US4] Implement `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs` (Order 600; sets `Role = Table`, builds table `LayoutBlock` with bands, rows, header, fallback flag, cross-page merge) to pass T075 (research R10)
-- [ ] T080 [US4] Extend `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` to emit `TableBlock` (`Header`, `Rows`, `ColumnCount`, `IsFallback`, `Pages`) and report `TableCount`/`FallbackTableCount`
-- [ ] T081 [US4] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with GFM and fallback tables to pass T076 and T077
+- [X] T078 [P] [US4] Implement `src/LegalAgent.PdfParser/Layout/ColumnClustering.cs` to pass T074
+- [X] T079 [US4] Implement `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs` (Order 600; sets `Role = Table`, builds table `LayoutBlock` with bands, rows, header, fallback flag, cross-page merge) to pass T075 (research R10)
+- [X] T080 [US4] Extend `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` to emit `TableBlock` (`Header`, `Rows`, `ColumnCount`, `IsFallback`, `Pages`) and report `TableCount`/`FallbackTableCount`
+- [X] T081 [US4] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with GFM and fallback tables to pass T076 and T077
 
 ---
 
