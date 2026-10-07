@@ -43,7 +43,7 @@ public sealed partial class TextNormalizationStage : IPipelineStage
     /// </summary>
     private static void ReportUnmapped(PipelineContext context, LayoutPage page)
     {
-        int unmapped = page.Glyphs.Count(g => g.Text.Any(c => c == '�' || (char.IsControl(c) && !char.IsWhiteSpace(c))));
+        int unmapped = page.Glyphs.Count(g => g.Text.Any(c => c == '\uFFFD' || (char.IsControl(c) && !char.IsWhiteSpace(c))));
         if (unmapped > 0)
         {
             context.Report.AddWarning(
