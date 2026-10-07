@@ -24,6 +24,14 @@ public sealed class SyntheticPdfBuilderTests
     }
 
     [Fact]
+    public void Title_IsStoredInDocumentInformation()
+    {
+        byte[] bytes = new SyntheticPdfBuilder().Title("Regulamin testowy").Page().Text(50, 100, "x").Build();
+        using PdfDocument doc = PdfDocument.Open(bytes);
+        Assert.Equal("Regulamin testowy", doc.Information.Title);
+    }
+
+    [Fact]
     public void Page_DefaultsToA4()
     {
         byte[] bytes = new SyntheticPdfBuilder().Page().Text(50, 100, "x").Build();

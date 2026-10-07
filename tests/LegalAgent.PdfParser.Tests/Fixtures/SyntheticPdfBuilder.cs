@@ -23,6 +23,7 @@ public sealed class SyntheticPdfBuilder
     private readonly List<PageSpec> _pages = [];
     private string? _headerTemplate;
     private string? _footerTemplate;
+    private string? _title;
 
     /// <summary>Starts a new page; subsequent drawing calls apply to it.</summary>
     public SyntheticPdfBuilder Page(double width = 595, double height = 842)
@@ -124,10 +125,22 @@ public sealed class SyntheticPdfBuilder
         return this;
     }
 
+    /// <summary>Sets the document title stored in the PDF /Info dictionary.</summary>
+    public SyntheticPdfBuilder Title(string title)
+    {
+        _title = title;
+        return this;
+    }
+
     /// <summary>Builds the PDF document.</summary>
     public byte[] Build()
     {
         using var builder = new PdfDocumentBuilder();
+        if (_title is not null)
+        {
+            builder.DocumentInformation.Title = _title;
+        }
+
         var ctx = new BuildContext(builder);
 
         for (int i = 0; i < _pages.Count; i++)

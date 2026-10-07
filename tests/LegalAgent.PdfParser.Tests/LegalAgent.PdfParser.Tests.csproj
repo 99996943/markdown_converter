@@ -20,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fixtures\Fonts\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Fixtures\Fonts" />
+    <Content Include="Corpus\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Corpus" />
   </ItemGroup>
 </Project>
