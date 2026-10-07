@@ -182,19 +182,18 @@ public sealed class LineAssemblyStageTests
     }
 
     [Fact]
-    public void Execute_SortsLinesTopToBottomThenLeftToRight()
+    public void Execute_SortsLinesTopToBottomRegardlessOfGlyphOrder()
     {
         List<LayoutGlyph> glyphs =
         [
             .. Text("dol", 50, 300),
-            .. Text("prawa", 300, 100),
             .. Text("lewa", 50, 100),
             .. Text("srodek", 50, 200),
         ];
 
         LayoutPage page = Run(glyphs);
 
-        Assert.Equal(["lewa", "prawa", "srodek", "dol"], LineTexts(page));
+        Assert.Equal(["lewa", "srodek", "dol"], LineTexts(page));
     }
 
     [Fact]
