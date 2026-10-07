@@ -127,7 +127,9 @@ public class PageExtractionStage : IPipelineStage
                 height - letter.StartBaseLine.Y,
                 letter.PointSize,
                 bold,
-                italic));
+                italic,
+                letter.StartBaseLine.X,
+                letter.EndBaseLine.X));
         }
 
         context.Report.AddDroppedText(dropped);

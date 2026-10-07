@@ -12,11 +12,14 @@ namespace LegalAgent.PdfParser.Stages;
 /// </summary>
 public sealed class LineAssemblyStage : IPipelineStage
 {
-    /// <summary>Space width as a fraction of the font size when a page has no explicit space glyphs.</summary>
+    /// <summary>Space width as a fraction of the line font size when the line has no explicit space glyphs.</summary>
     private const double FallbackSpaceEm = 0.26;
 
-    /// <summary>Gap (in mean space widths) above which glyphs of a line without space glyphs form separate words.</summary>
-    private const double ImplicitWordGapFactor = 0.6;
+    /// <summary>
+    /// Advance gap (in ems of the smaller of the two glyphs) above which adjacent glyphs belong to different words.
+    /// Advance positions are used rather than ink boxes, whose side bearings leave visible gaps inside words.
+    /// </summary>
+    private const double WordGapEm = 0.15;
 
     /// <summary>Glyphs at least this fraction of the seed size extend the core box of a line.</summary>
     private const double CoreSizeRatio = 0.9;
@@ -55,13 +58,12 @@ public sealed class LineAssemblyStage : IPipelineStage
             return result;
         }
 
-        double meanSpace = MeanSpaceWidth(page);
         List<LineBuilder> builders = GroupIntoLines(page, options.Layout);
         var assembled = new List<(LayoutLine Line, double Size, int Order)>();
 
         foreach (LineBuilder builder in builders)
         {
-            LayoutLine? line = BuildLine(builder, meanSpace, options.Tables.CellGapFactor, out double size, charsBySize);
+            LayoutLine? line = BuildLine(builder, options.Tables.CellGapFactor, out double size, charsBySize);
             if (line is null)
             {
                 continue;
@@ -82,28 +84,6 @@ public sealed class LineAssemblyStage : IPipelineStage
         }
 
         return result;
-    }
-
-    private static double MeanSpaceWidth(LayoutPage page)
-    {
-        double sum = 0;
-        int count = 0;
-        foreach (LayoutGlyph g in page.Glyphs)
-        {
-            if (IsSpace(g) && g.Box.Width > 0)
-            {
-                sum += g.Box.Width;
-                count++;
-            }
-        }
-
-        if (count > 0)
-        {
-            return sum / count;
-        }
-
-        double[] sizes = page.Glyphs.Select(g => g.PointSize).Order().ToArray();
-        return FallbackSpaceEm * sizes[sizes.Length / 2];
     }
 
     private static bool IsSpace(LayoutGlyph g) => string.IsNullOrWhiteSpace(g.Text);
@@ -153,7 +133,6 @@ public sealed class LineAssemblyStage : IPipelineStage
 
     private static LayoutLine? BuildLine(
         LineBuilder builder,
-        double meanSpace,
         double cellGapFactor,
         out double dominantSize,
         SortedDictionary<double, int> charsBySize)
@@ -163,9 +142,6 @@ public sealed class LineAssemblyStage : IPipelineStage
             .OrderBy(g => g.Glyph.Box.Left)
             .ThenBy(g => g.Index)
             .ToList();
-
-        bool hasSpaces = glyphs.Any(g => IsSpace(g.Glyph));
-        double wordGap = hasSpaces ? meanSpace : meanSpace * ImplicitWordGapFactor;
 
         var words = new List<LayoutWord>();
         var current = new List<LayoutGlyph>();
@@ -179,7 +155,9 @@ public sealed class LineAssemblyStage : IPipelineStage
                 continue;
             }
 
-            if (previous is not null && current.Count > 0 && glyph.Box.Left - previous.Box.Right > wordGap)
+            if (previous is not null
+                && current.Count > 0
+                && glyph.Start - previous.End > WordGapEm * Math.Min(previous.PointSize, glyph.PointSize))
             {
                 Flush(words, current);
             }
@@ -211,8 +189,26 @@ public sealed class LineAssemblyStage : IPipelineStage
         dominantSize = sizeChars.OrderByDescending(kv => kv.Value).ThenByDescending(kv => kv.Key).First().Key;
 
         var line = new LayoutLine(words, box, builder.Baseline);
-        AddSegments(line, words, meanSpace * cellGapFactor);
+        AddSegments(line, words, cellGapFactor * LineSpaceWidth(glyphs.Select(g => g.Glyph), dominantSize));
         return line;
+    }
+
+    /// <summary>Mean advance width of the line's own space glyphs, or a fraction of its font size when it has none.</summary>
+    private static double LineSpaceWidth(IEnumerable<LayoutGlyph> glyphs, double lineSize)
+    {
+        double sum = 0;
+        int count = 0;
+        foreach (LayoutGlyph g in glyphs)
+        {
+            double width = g.End - g.Start;
+            if (IsSpace(g) && width > 0)
+            {
+                sum += width;
+                count++;
+            }
+        }
+
+        return count > 0 ? sum / count : FallbackSpaceEm * lineSize;
     }
 
     private static void Flush(List<LayoutWord> words, List<LayoutGlyph> current)
@@ -263,7 +259,7 @@ public sealed class LineAssemblyStage : IPipelineStage
         var segmentWords = new List<LayoutWord> { words[0] };
         for (int i = 1; i < words.Count; i++)
         {
-            double gap = words[i].Box.Left - words[i - 1].Box.Right;
+            double gap = WordStart(words[i]) - WordEnd(words[i - 1]);
             if (gap > splitGap)
             {
                 line.Segments.Add(MakeSegment(segmentWords));
@@ -275,6 +271,10 @@ public sealed class LineAssemblyStage : IPipelineStage
 
         line.Segments.Add(MakeSegment(segmentWords));
     }
+
+    private static double WordStart(LayoutWord word) => word.Glyphs.Count > 0 ? word.Glyphs[0].Start : word.Box.Left;
+
+    private static double WordEnd(LayoutWord word) => word.Glyphs.Count > 0 ? word.Glyphs[^1].End : word.Box.Right;
 
     private static LineSegment MakeSegment(List<LayoutWord> words)
     {
