@@ -32,6 +32,9 @@ public static class LayoutAnnotations
     /// </summary>
     public const string ListCommonPart = "list.common";
 
+    /// <summary>Index into <see cref="Pipeline.PipelineContext.Tables"/> of the table a <see cref="LineRole.Table"/> line belongs to.</summary>
+    public const string TableIndex = "table.index";
+
     /// <summary>Stores a coordinate annotation in invariant round-trip format.</summary>
     public static void SetNumber(LayoutLine line, string key, double value)
     {

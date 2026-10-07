@@ -56,6 +56,12 @@ public sealed class PipelineContext
     /// </summary>
     public IList<FootnoteDraft> Footnotes { get; } = [];
 
+    /// <summary>
+    /// Tables found by table detection (blocks with <see cref="LayoutBlock.Table"/>); their lines carry
+    /// <see cref="LayoutAnnotations.TableIndex"/> with the index into this list and are emitted by block assembly.
+    /// </summary>
+    public IList<LayoutBlock> Tables { get; } = [];
+
     /// <summary>Report builder for warnings and statistics.</summary>
     public ReportBuilder Report { get; }
 
