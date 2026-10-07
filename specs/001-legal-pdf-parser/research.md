@@ -228,3 +228,34 @@ Każda pozycja: **Decyzja** / **Uzasadnienie** / **Rozważone alternatywy**.
 - **Decyzja**: Workflow GitHub Actions `ubuntu-latest`: `actions/setup-dotnet` (9.0.x runtime +
   SDK z `global.json`), `dotnet build LegalAgent.slnx -c Release`, `dotnet test LegalAgent.slnx`.
 - **Uzasadnienie**: Konstytucja (Linux), SC-006, weryfikacja ICU (R7).
+
+## Dostrojenie (T096, 2026-10-07)
+
+Progi dostrojono na korpusie publicznym (6 aktów: ISAP i Dziennik Ustaw, 9–147 stron; 4 syntetyczne dokumenty
+bankowe) i prywatnym (regulamin banku), tak aby przechodziły testy golden (T094) i metryki SC-001 – SC-005 (T095).
+Każda zmiana weszła przez test „red” na przypadku z korpusu.
+
+| Ustawienie | Było | Jest | Powód |
+|-----------|------|------|-------|
+| `Layout.ColumnMinLineWidthRatio` | 0,3 (średnia) | 0,25 (mediana linii po złączeniu segmentów jednej linii) | Kolumny wyrównane do lewej mają linie 150–200 pt przy kolumnie 240 pt; punktory jako osobne wąskie segmenty zaniżały średnią (FR-031). |
+| `Layout.DetectSideNotes`, `SideNoteMaxWidthRatio`, `SideNoteMaxSizeRatio` | — | true, 0,25, 0,9 | Nowe (FR-034): noty redakcyjne ISAP na prawym marginesie. |
+
+Zmiany heurystyk bez nowych opcji (stałe w kodzie, opisane w komentarzach klas):
+- **Składanie linii (FR-030)**: znak pełnej wielkości oddalony o > 3 em od linii dołącza tylko przy zgodnej linii
+  bazowej (sąsiednie kolumny z przesuniętą linią bazową); próg podziału na słowa liczony względem typowego odstępu
+  między literami linii (FR-011, tytuł z rozstrzeleniem „U S T A W A”).
+- **Kolumny (FR-031)**: wolność pasa mierzona na wysokości, gdzie tekst jest po obu stronach (kolumny różnej długości);
+  linia wyjustowana pocięta na słowa nie jest linią dwukolumnową (przerwa przy odstępie musi być ≥ 2× pozostałych).
+- **Tabele (FR-060 – FR-066)**: wiersz tabeli wymaga przerw ≥ 1 em i ≥ 2× odstęp między słowami, nierównych
+  (≥ 4 segmenty w ±20% mediany = justowanie); lista z wcięciem wiszącym i tekst dwukolumnowy (odstęp kolumn wg FR-031)
+  nie są tabelami; siatka linii (z łączeniem współliniowych kawałków) wyznacza wiersze, ogranicza tabelę, przyjmuje
+  fragment z dołu strony i linie nad pierwszym wierszem; kontynuacja na stronie następnej dopasowywana pasami.
+- **Listy (FR-050 – FR-054)**: oznaczenia z nawiasem zmian `[`/`<`; pary `[2.`/`<2.` nie przerywają numeracji; punkty,
+  litery, tirety i punktory oraz ustęp ze zdaniem kontynuowanym małą literą nie są nagłówkami nawet pogrubione.
+- **Nagłówki (FR-043, FR-044)**: blok tytułowy aktu dalej w dokumencie (załącznik obwieszczenia) to jeden nagłówek;
+  znacznik przypisu między liniami tytułu nie przerywa bloku; tytuł rozdziału pogrubiony pod zwykłym „Rozdział N”;
+  jednostki w notacji zmian (`[Art. 31.`, `<Art. 31.`) są jednostkami.
+
+Wyniki metryk po dostrojeniu (T095): SC-001 0 artefaktów w 6/6 aktach; SC-002 ≥ 99,5% słów w 6/6 aktach;
+SC-003 odnalezienie jednostek ≥ 95% i ≤ 2% fałszywych w 6/6; SC-004 ≥ 95% (listy w dokumentach bankowych);
+SC-005 100% kwot w wierszu usługi, ≥ 80% pełnych tabel GFM. SC-007: 114 stron w ok. 3,5 s.
