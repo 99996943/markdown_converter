@@ -394,4 +394,71 @@ public sealed class BlockAssemblyStageTests
 
         Assert.Throws<OperationCanceledException>(() => new BlockAssemblyStage().Execute(context));
     }
+
+    // ---- T065 wiring: heading blocks, footnote lines and reference markers (FR-026, FR-045) ----
+
+    private static PipelineContext RunPrepared(Action<PipelineContext> prepare, params PageSketch[] pages)
+    {
+        PipelineContext context = PageSketch.Assemble(null, pages);
+        prepare(context);
+        new BlockAssemblyStage().Execute(context);
+        return context;
+    }
+
+    [Fact]
+    public void Execute_HeadingLineBecomesAHeadingBlock_AndMergedTitleLinesAreSkipped()
+    {
+        PipelineContext context = RunPrepared(
+            c =>
+            {
+                LayoutLine designation = FindLine(c, "Rozdzial 3");
+                designation.Role = LineRole.Heading;
+                designation.Heading = new HeadingInfo(2, SectionKind.Chapter, "Rozdzial 3", "3", "Ochrona", "Rozdzial 3. Ochrona");
+                FindLine(c, "Ochrona").Role = LineRole.Heading;
+            },
+            new PageSketch()
+                .Line(Long1, 50, 100)
+                .Line("Rozdzial 3", 50, 130)
+                .Line("Ochrona", 50, 144)
+                .Line(Long2, 50, 170));
+
+        Assert.Equal(
+            [LayoutBlockKind.Paragraph, LayoutBlockKind.Heading, LayoutBlockKind.Paragraph],
+            context.Blocks.Select(b => b.Kind));
+        LayoutBlock heading = context.Blocks[1];
+        Assert.Equal("Rozdzial 3. Ochrona", heading.Heading!.Text);
+        Assert.Equal(2, heading.HeadingLevel);
+        Assert.Equal(new PageRange(1, 1), heading.Pages);
+    }
+
+    [Fact]
+    public void Execute_FootnoteLinesAreSkipped_WithoutBreakingAParagraphContinuedOnTheNextPage()
+    {
+        PipelineContext context = RunPrepared(
+            c => FindLine(c, "1) Tresc przypisu").Role = LineRole.Footnote,
+            new PageSketch(1).Line(Long1, 50, 700).Line("1) Tresc przypisu na dole strony.", 50, 780, size: 8),
+            new PageSketch(2).Line("ciag dalszy akapitu na drugiej stronie.", 50, 100));
+
+        Assert.Equal([$"{Long1} [p2] ciag dalszy akapitu na drugiej stronie."], Paragraphs(context));
+    }
+
+    [Fact]
+    public void Execute_FootnoteReferenceWord_BecomesAGluedFootnoteRef()
+    {
+        PipelineContext context = RunPrepared(
+            c =>
+            {
+                LayoutPage page = c.Pages[0];
+                LayoutLine line = page.Lines[0];
+                List<LayoutWord> words = [.. line.Words];
+                words[^1] = words[^1] with { FootnoteId = 7 };
+                page.Lines[0] = new LayoutLine(words, line.Box, line.Baseline);
+            },
+            new PageSketch().Line("Ustawa wdraza dyrektywe 1)", 50, 100));
+
+        LayoutBlock block = Assert.Single(context.Blocks);
+        Assert.Equal(
+            [new TextRun("Ustawa wdraza dyrektywe"), new FootnoteRef(7)],
+            block.Inlines.ToArray());
+    }
 }
