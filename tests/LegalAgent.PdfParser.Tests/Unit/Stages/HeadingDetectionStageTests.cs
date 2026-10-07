@@ -295,6 +295,22 @@ public sealed class HeadingDetectionStageTests
             prefix => Assert.Equal(LineRole.Unknown, LineStarting(context, prefix).Role));
     }
 
+    [Fact]
+    public void MultiLineTitleInTheSameLargeFont_IsOneTitle()
+    {
+        // mBank terms, page 1: a four-line, left-aligned 32 pt title.
+        PipelineContext context = Run(Page()
+            .Text("Regulamin podstawowego", size: 32, bold: true)
+            .Text("rachunku płatniczego", size: 32, bold: true)
+            .Text("w ramach bankowości", size: 32, bold: true)
+            .Text("detalicznej Banku S.A.", size: 32, bold: true)
+            .Gap().Paragraph(4));
+
+        HeadingInfo title = Assert.Single(Headings(context));
+        Assert.Equal(SectionKind.DocumentTitle, title.Kind);
+        Assert.Equal("Regulamin podstawowego rachunku płatniczego w ramach bankowości detalicznej Banku S.A.", title.Text);
+    }
+
     // (e) FR-044
     [Fact]
     public void DesignationLine_FollowedByShortTitleInSameStyle_IsMergedIntoOneHeading()
