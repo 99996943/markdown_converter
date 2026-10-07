@@ -53,4 +53,52 @@ public sealed class BankingCorpusGeneratorTests
             Assert.True(result.IsComplete, name);
         }
     }
+
+    [Fact]
+    public void Truth_IsDeterministic()
+    {
+        foreach (string name in ExpectedNames)
+        {
+            DocumentTruth a = BankingCorpusGenerator.Truth(name);
+            DocumentTruth b = BankingCorpusGenerator.Truth(name);
+            Assert.Equal(a.ListItems, b.ListItems);
+            Assert.Equal(a.TableRows, b.TableRows);
+        }
+    }
+
+    [Fact]
+    public void Truth_RegulaminRachunku_HasNestedListItems()
+    {
+        var items = BankingCorpusGenerator.Truth("regulamin-rachunku").ListItems;
+
+        Assert.Equal([0, 1, 2], items.Select(i => i.Depth).Distinct().Order());
+        Assert.All(items.Where(i => i.Depth == 0), i => Assert.Matches(@"^\d+\.$", i.Label));
+        Assert.All(items.Where(i => i.Depth == 1), i => Assert.Matches(@"^\d+\)$", i.Label));
+        Assert.All(items.Where(i => i.Depth == 2), i => Assert.Matches(@"^[a-z]\)$", i.Label));
+    }
+
+    [Theory]
+    [InlineData("taryfa-z-siatka")]
+    [InlineData("taryfa-bez-siatki")]
+    public void Truth_Tariffs_HaveRowsWithFees(string name)
+    {
+        var rows = BankingCorpusGenerator.Truth(name).TableRows;
+
+        Assert.True(rows.Count > 10, $"{name} has {rows.Count} rows");
+        Assert.All(rows, r =>
+        {
+            Assert.False(string.IsNullOrWhiteSpace(r.Service));
+            Assert.False(string.IsNullOrWhiteSpace(r.Fee));
+            Assert.False(string.IsNullOrWhiteSpace(r.Frequency));
+        });
+    }
+
+    [Fact]
+    public void Truth_TwoColumnRegulamin_HasBullets()
+    {
+        var items = BankingCorpusGenerator.Truth("regulamin-dwie-kolumny").ListItems;
+
+        Assert.NotEmpty(items);
+        Assert.All(items, i => Assert.Equal("•", i.Label));
+    }
 }

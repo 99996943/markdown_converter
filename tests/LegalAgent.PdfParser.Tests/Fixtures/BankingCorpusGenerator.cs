@@ -3,6 +3,12 @@ using System.Text;
 
 namespace LegalAgent.PdfParser.Tests.Fixtures;
 
+internal sealed record ListTruth(string Label, int Depth);
+
+internal sealed record TableRowTruth(string Service, string Fee, string Frequency);
+
+internal sealed record DocumentTruth(IReadOnlyList<ListTruth> ListItems, IReadOnlyList<TableRowTruth> TableRows);
+
 /// <summary>
 /// Deterministic, in-memory generator of four synthetic banking documents (generic names, no real
 /// bank branding) used by golden tests. Built only with <see cref="SyntheticPdfBuilder"/>.
@@ -18,23 +24,47 @@ internal static class BankingCorpusGenerator
 
     /// <summary>name (file stem) -> PDF bytes; stable order.</summary>
     public static IReadOnlyList<(string Name, byte[] Pdf)> Documents() =>
-    [
-        ("regulamin-rachunku", RegulaminRachunku()),
-        ("taryfa-z-siatka", TaryfaZSiatka()),
-        ("taryfa-bez-siatki", TaryfaBezSiatki()),
-        ("regulamin-dwie-kolumny", RegulaminDwieKolumny()),
-    ];
+        Names.Select(n => (n, Build(n).Pdf)).ToArray();
+
+    /// <summary>Ground truth recorded while the named document is generated.</summary>
+    public static DocumentTruth Truth(string name) => Build(name).Truth;
+
+    private static readonly string[] Names =
+        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny"];
+
+    private static (byte[] Pdf, DocumentTruth Truth) Build(string name)
+    {
+        var rec = new Recorder();
+        byte[] pdf = name switch
+        {
+            "regulamin-rachunku" => RegulaminRachunku(rec),
+            "taryfa-z-siatka" => TaryfaZSiatka(rec),
+            "taryfa-bez-siatki" => TaryfaBezSiatki(rec),
+            "regulamin-dwie-kolumny" => RegulaminDwieKolumny(rec),
+            _ => throw new ArgumentException("Unknown document: " + name, nameof(name)),
+        };
+        return (pdf, new DocumentTruth(rec.ListItems, rec.TableRows));
+    }
+
+    private sealed class Recorder
+    {
+        public List<ListTruth> ListItems { get; } = [];
+        public List<TableRowTruth> TableRows { get; } = [];
+
+        public void Row(string[] service, string fee, string freq) =>
+            TableRows.Add(new TableRowTruth(string.Join(' ', service), fee, freq));
+    }
 
     // ---------------------------------------------------------------- 1. regulamin-rachunku
 
-    private static byte[] RegulaminRachunku()
+    private static byte[] RegulaminRachunku(Recorder rec)
     {
         // Two passes: the first one only counts pages so "Strona {n} z {N}" can state the total.
-        int total = BuildRegulamin(0).Pages;
-        return BuildRegulamin(total).Pdf;
+        int total = BuildRegulamin(0, new Recorder()).Pages;
+        return BuildRegulamin(total, rec).Pdf;
     }
 
-    private static (byte[] Pdf, int Pages) BuildRegulamin(int total)
+    private static (byte[] Pdf, int Pages) BuildRegulamin(int total, Recorder rec)
     {
         var b = new SyntheticPdfBuilder()
             .Title("Regulamin rachunku")
@@ -42,7 +72,7 @@ internal static class BankingCorpusGenerator
             .PageNumberFooter("Strona {n} z " + total.ToString(CultureInfo.InvariantCulture));
 
         string? footnote = null;
-        var f = new Flow(b, [Left], Right - Left)
+        var f = new Flow(b, [Left], Right - Left, rec)
         {
             OnPageEnd = flow =>
             {
@@ -156,7 +186,7 @@ internal static class BankingCorpusGenerator
 
     // ---------------------------------------------------------------- 2. taryfa-z-siatka
 
-    private static byte[] TaryfaZSiatka()
+    private static byte[] TaryfaZSiatka(Recorder rec)
     {
         string[] cols = ["Usługa", "Opłata", "Częstotliwość"];
         double[] x = [72, 300, 420, 523];
@@ -197,7 +227,7 @@ internal static class BankingCorpusGenerator
 
         bool inTable = false;
         double tableTop = 0;
-        var f = new Flow(b, [Left], Right - Left);
+        var f = new Flow(b, [Left], Right - Left, rec);
 
         void DrawHeader(Flow flow)
         {
@@ -243,6 +273,7 @@ internal static class BankingCorpusGenerator
         DrawHeader(f);
         foreach ((string[] service, string fee, string freq) in rows)
         {
+            rec.Row(service, fee, freq);
             double h = (service.Length * 13) + 8;
             if (f.Y + h > Bottom)
             {
@@ -272,7 +303,7 @@ internal static class BankingCorpusGenerator
 
     // ---------------------------------------------------------------- 3. taryfa-bez-siatki
 
-    private static byte[] TaryfaBezSiatki()
+    private static byte[] TaryfaBezSiatki(Recorder rec)
     {
         double[] x = [72, 360, 450];
         (string Section, (string[] Service, string Fee, string Freq)[] Rows)[] sections =
@@ -320,7 +351,7 @@ internal static class BankingCorpusGenerator
             .PageNumberFooter("Strona {n}");
 
         bool inTable = false;
-        var f = new Flow(b, [Left], Right - Left);
+        var f = new Flow(b, [Left], Right - Left, rec);
 
         static void DrawHeader(Flow flow, double[] cx)
         {
@@ -357,6 +388,7 @@ internal static class BankingCorpusGenerator
 
             foreach ((string[] service, string fee, string freq) in rows)
             {
+                rec.Row(service, fee, freq);
                 double h = ((service.Length - 1) * 12) + 22;
                 if (f.Y + h > Bottom)
                 {
@@ -382,7 +414,7 @@ internal static class BankingCorpusGenerator
 
     // ---------------------------------------------------------------- 4. regulamin-dwie-kolumny
 
-    private static byte[] RegulaminDwieKolumny()
+    private static byte[] RegulaminDwieKolumny(Recorder rec)
     {
         double[] twoCols = [72, 343]; // each column 240 pt wide, 31 pt gutter
         var b = new SyntheticPdfBuilder()
@@ -390,7 +422,7 @@ internal static class BankingCorpusGenerator
             .RunningHeader("Regulamin bankowości elektronicznej – " + Bank)
             .PageNumberFooter("Strona {n}");
 
-        var f = new Flow(b, twoCols, 240);
+        var f = new Flow(b, twoCols, 240, rec);
 
         f.Line("Regulamin bankowości elektronicznej", 0, 12, true, leading: 18);
         f.Gap(4);
@@ -456,8 +488,11 @@ internal static class BankingCorpusGenerator
         private double _width;
         private int _column;
 
-        public Flow(SyntheticPdfBuilder builder, double[] columns, double width)
+        private readonly Recorder _rec;
+
+        public Flow(SyntheticPdfBuilder builder, double[] columns, double width, Recorder rec)
         {
+            _rec = rec;
             Builder = builder;
             _columns = columns;
             _width = width;
@@ -489,6 +524,11 @@ internal static class BankingCorpusGenerator
         public void Item(string marker, string text, double markerIndent, double textIndent, double size = 10.5)
         {
             const double leading = 14;
+            if (marker.Length > 0)
+            {
+                _rec.ListItems.Add(new ListTruth(marker, (int)(markerIndent / 18)));
+            }
+
             int chars = (int)((_width - textIndent) / (size * 0.54));
             bool first = true;
             foreach (string line in Wrap(text, chars))
