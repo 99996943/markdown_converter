@@ -184,6 +184,16 @@ Aktualizacja złotych plików: `UPDATE_GOLDEN=1 dotnet test --filter "FullyQuali
   oznaczenie (`Designation`) bez nawiasu. Alternatywa: tylko brzmienie obowiązujące albo scalenie w jedną sekcję.
 - Podtytuł mBanku „obowiązuje od …” nadal jest nagłówkiem `##` (decyzja otwarta od poprzedniej sesji).
 
+**Na następną sesję (rozmowa z właścicielem 2026-10-07)**: biblioteka ma oddawać Markdown, a chunking (podział po
+nagłówkach) robi osobny komponent — kluczowa jest precyzja nagłówków. Propozycje: (1) metryka nagłówków
+typograficznych dla dokumentów bankowych (np. względem spisu treści regulaminu: 46 sekcji) — dziś SC-003 mierzy tylko
+jednostki prawne, dlatego zawinięty tytuł „6. Jakie limity…” przeszedł niezauważony (naprawione: 7276db8);
+(2) zalecenia dla chunkera w README (dzielić po `#`, wycinać `<!-- page: N -->` jako metadane, `\[`/`\<` w nagłówku =
+wersje przepisu); (3) fałszywe nagłówki (`## Art. 60.` w części obwieszczenia, legenda wzoru w załączniku kredytu
+konsumenckiego) i niepołączone odnośniki przypisów („zm.11))” w ustawie o służbie cywilnej).
+Wyniki konwersji plików właściciela leżą (nieśledzone) w katalogu głównym repo: `Akt prawny - D20081505Lj.*`,
+`Regulamin … mBanku S.A. -.*`.
+
 **Znane ograniczenia** (szczegóły w `Corpus/REVIEW.md`): złożone tabele mBanku z wielopoziomowym nagłówkiem
 i tabela kroków BLIK — tryb awaryjny; wiersze sekcji taryfy MSZ w kolumnie, gdzie zaczyna się tekst; w załącznikach
 ustawy o kredycie konsumenckim pogrubione linie legendy wzoru jako nagłówki; w obwieszczeniach Dz. U. pojedyncze
