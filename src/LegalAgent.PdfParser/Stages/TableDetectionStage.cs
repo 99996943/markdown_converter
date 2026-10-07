@@ -287,21 +287,47 @@ public sealed class TableDetectionStage : IPipelineStage
         return region.Take(end + 1).ToList();
     }
 
-    /// <summary>Distinct Y of horizontal rulings across the region spanning a good part of its width.</summary>
+    /// <summary>
+    /// Distinct Y of horizontal rulings spanning a good part of the region width; collinear pieces (a border drawn cell
+    /// by cell) are joined first.
+    /// </summary>
     private static List<double> HorizontalRulings(IEnumerable<Segment> rulings, List<Row> region)
     {
         double top = region.Min(r => r.Line.Box.Top);
         double bottom = region.Max(r => r.Line.Box.Bottom);
         double width = region.Max(r => r.Line.Box.Right) - region.Min(r => r.Line.Box.Left);
+        List<(double Y, double X1, double X2)> pieces = rulings
+            .Where(s => s.IsHorizontal && s.Y1 >= top - RulingSlack && s.Y1 <= bottom + RulingSlack)
+            .Select(s => (s.Y1, Math.Min(s.X1, s.X2), Math.Max(s.X1, s.X2)))
+            .OrderBy(p => p.Item1)
+            .ThenBy(p => p.Item2)
+            .ToList();
+
         var distinct = new List<double>();
-        foreach (double y in rulings
-            .Where(s => s.IsHorizontal
-                && s.Y1 >= top - RulingSlack && s.Y1 <= bottom + RulingSlack
-                && Math.Abs(s.X2 - s.X1) >= RulingSpanRatio * width)
-            .Select(s => s.Y1)
-            .Order())
+        int i = 0;
+        while (i < pieces.Count)
         {
-            if (distinct.Count == 0 || y - distinct[^1] > RulingSlack)
+            double y = pieces[i].Y;
+            List<(double Y, double X1, double X2)> line = pieces.Skip(i).TakeWhile(p => p.Y - y <= RulingSlack).OrderBy(p => p.X1).ToList();
+            i += line.Count;
+
+            double longest = 0;
+            double start = line[0].X1;
+            double end = line[0].X2;
+            foreach ((double _, double x1, double x2) in line.Skip(1))
+            {
+                if (x1 - end <= RulingSlack)
+                {
+                    end = Math.Max(end, x2);
+                    continue;
+                }
+
+                longest = Math.Max(longest, end - start);
+                (start, end) = (x1, x2);
+            }
+
+            longest = Math.Max(longest, end - start);
+            if (longest >= RulingSpanRatio * width && (distinct.Count == 0 || y - distinct[^1] > RulingSlack))
             {
                 distinct.Add(y);
             }
