@@ -48,3 +48,5 @@ nie stał się nagłówkiem/listą. Oznaczenia list: `1)` → `1\)`, `2.` → `2
 4. Poziom nagłówka rośnie o co najwyżej 1 względem rodzica.
 5. Po usunięciu komentarzy `<!-- … -->` wynik jest identyczny z renderingiem `PageMarkers = false`
    (modulo pojedyncze spacje wokół znacznika).
+6. Numery w znacznikach `<!-- page: N -->` rosną: blok z wcześniejszej strony umieszczony po treści strony
+   późniejszej (np. adnotacja boczna, FR-034) nie dostaje znacznika.

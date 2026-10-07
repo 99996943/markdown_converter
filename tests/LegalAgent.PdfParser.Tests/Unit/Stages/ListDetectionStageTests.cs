@@ -383,4 +383,59 @@ public sealed class ListDetectionStageTests
         AssertItem(Find(context, "<1)"), "<1)", ListLabelKind.ArabicParen);
         AssertItem(Find(context, "2) korzysta"), "2)", ListLabelKind.ArabicParen);
     }
+
+    [Fact]
+    public void RepealedAndFutureWordingOfOneUstep_KeepTheSequence_FR051()
+    {
+        PipelineContext context = Run(Page(
+            ("1. Dyrektor generalny upowszechnia informacje.", Indent),
+            ("[2. Osoba nieposiadajaca obywatelstwa moze zostac zatrudniona.]", Indent),
+            ("<2. Osoba nieposiadajaca obywatelstwa moze zostac zatrudniona w sluzbie.", Indent),
+            ("<2a. Wymogu nie stosuje sie do osob posiadajacych Karte Polaka.>", Indent),
+            ("3. Prezes Rady Ministrow okresli rodzaje dokumentow.", Indent)));
+
+        Assert.All(context.Pages[0].Lines, l => Assert.Equal(LineRole.ListItem, l.Role));
+    }
+
+    [Fact]
+    public void BoldContinuationAtTheTopOfTheNextPage_ContinuesTheItem()
+    {
+        LayoutPage page1 = LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("1. Dyrektor generalny upowszechnia informacje.", Indent, 680),
+            Bold(LayoutFactory.Line("2b. Dyrektor generalny wskazuje stanowiska pracy, o ktore moga", Indent, 700)),
+            Bold(LayoutFactory.Line("ubiegac sie wylacznie osoby", Margin, 720)),
+        ]);
+        LayoutPage page2 = LayoutFactory.Page(2,
+        [
+            Bold(LayoutFactory.Line("posiadajace obywatelstwo polskie.>", Margin, 100)),
+            LayoutFactory.Line("3. Prezes Rady Ministrow okresli rodzaje dokumentow.", Indent, 120),
+        ]);
+
+        PipelineContext context = Run(page1, page2);
+
+        LayoutLine item = Find(context, "2b.");
+        AssertContinues(Find(context, "posiadajace"), item);
+        Assert.Equal(LineRole.ListItem, Find(context, "3. Prezes").Role);
+    }
+
+    [Fact]
+    public void BoldItemContinuingTheSequenceAtTheTopOfAPage_IsAnItem()
+    {
+        LayoutPage page1 = LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("1) zapewnia ochrone systemu;", Margin, 700),
+            LayoutFactory.Line("2) zapewnia integralnosc danych;", Margin, 720),
+        ]);
+        LayoutPage page2 = LayoutFactory.Page(2,
+        [
+            Bold(LayoutFactory.Line("3) zapewnia dostepnosc systemu;", Margin, 100)),
+            LayoutFactory.Line("4) przeciwdziala uszkodzeniom.", Margin, 120),
+        ]);
+
+        PipelineContext context = Run(page1, page2);
+
+        AssertItem(Find(context, "3) zapewnia"), "3)", ListLabelKind.ArabicParen);
+        Assert.Equal(string.Empty, Parent(Find(context, "4) przeciw")));
+    }
 }

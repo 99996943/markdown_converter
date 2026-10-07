@@ -244,4 +244,16 @@ public sealed class MarkdownRendererParagraphTests
 
         Assert.Equal(Render(doc), Render(doc));
     }
+
+    [Fact]
+    public void Render_PageMarkersNeverGoBack_WhenABlockFromAnEarlierPageFollows()
+    {
+        // A side note (FR-034) of page 2 placed after a paragraph that ended on page 3.
+        string md = Render(Doc(
+            Para(2, 3, new TextRun("Akapit"), new PageBreak(3), new TextRun("dalej.")),
+            Para(2, "Nota boczna."),
+            Para(3, "Kolejny akapit.")));
+
+        Assert.Equal("<!-- page: 2 -->\nAkapit <!-- page: 3 --> dalej.\n\nNota boczna.\n\nKolejny akapit.\n", md);
+    }
 }
