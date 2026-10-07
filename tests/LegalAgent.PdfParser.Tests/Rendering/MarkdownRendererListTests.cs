@@ -156,7 +156,7 @@ public sealed class MarkdownRendererListTests
     [Fact]
     public void Render_CommonPartParagraphStartingOnNewPageGetsIndentedMarker()
     {
-        ListBlock nested = List(1, 2, Letter("a)", "lit. a"));
+        ListBlock nested = List(Letter("a)", "lit. a"));
         var common = new ParagraphBlock(new PageRange(2, 2), [new PageBreak(2), new TextRun("część wspólna")]);
         string md = Render(Doc(List(1, 2, Num("1)", "w tym:", nested, common))), pageMarkers: true);
 
