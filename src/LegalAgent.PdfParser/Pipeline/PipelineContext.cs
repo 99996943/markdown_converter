@@ -37,6 +37,12 @@ public sealed class PipelineContext
     /// <summary>Source metadata.</summary>
     public SourceInfo Source { get; }
 
+    /// <summary>
+    /// The opened PdfPig document the extraction stage reads from. Set by the facade before the pipeline
+    /// runs; the facade owns and disposes it.
+    /// </summary>
+    public UglyToad.PdfPig.PdfDocument? SourceDocument { get; set; }
+
     /// <summary>Working pages.</summary>
     public IList<LayoutPage> Pages { get; } = [];
 

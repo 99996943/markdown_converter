@@ -16,10 +16,10 @@ internal sealed class StageHarness : IDisposable
 
     public PipelineContext Context { get; }
 
-    public static StageHarness Open(
-        byte[] pdf,
-        Action<PdfParserOptions>? configure = null,
-        CancellationToken cancellationToken = default)
+    public static StageHarness Open(byte[] pdf, Action<PdfParserOptions>? configure = null) =>
+        OpenWithToken(pdf, CancellationToken.None, configure);
+
+    public static StageHarness OpenWithToken(byte[] pdf, CancellationToken cancellationToken, Action<PdfParserOptions>? configure = null)
     {
         var options = new PdfParserOptions();
         configure?.Invoke(options);

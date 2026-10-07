@@ -236,7 +236,7 @@ public sealed class PageExtractionStageTests
     {
         byte[] pdf = new SyntheticPdfBuilder().Page().Text(50, 100, "Body").Build();
         using var cts = new CancellationTokenSource();
-        using StageHarness h = StageHarness.Open(pdf, cancellationToken: cts.Token);
+        using StageHarness h = StageHarness.OpenWithToken(pdf, cts.Token);
         cts.Cancel();
 
         Assert.Throws<OperationCanceledException>(() => h.Run(new PageExtractionStage()));
