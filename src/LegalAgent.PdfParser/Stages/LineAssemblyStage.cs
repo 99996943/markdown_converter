@@ -288,6 +288,7 @@ public sealed class LineAssemblyStage : IPipelineStage
         var words = new List<LayoutWord>();
         var current = new List<LayoutGlyph>();
         LayoutGlyph? previous = null;
+        double tracking = Tracking(glyphs.Select(g => g.Glyph).ToList());
 
         foreach ((LayoutGlyph glyph, int _) in glyphs)
         {
@@ -299,7 +300,7 @@ public sealed class LineAssemblyStage : IPipelineStage
 
             if (previous is not null
                 && current.Count > 0
-                && glyph.Start - previous.End > WordGapEm * Math.Min(previous.PointSize, glyph.PointSize))
+                && glyph.Start - previous.End > tracking + (WordGapEm * Math.Min(previous.PointSize, glyph.PointSize)))
             {
                 Flush(words, current);
             }
@@ -333,6 +334,22 @@ public sealed class LineAssemblyStage : IPipelineStage
         var line = new LayoutLine(words, box, builder.Baseline);
         AddSegments(line, words, cellGapFactor * LineSpaceWidth(glyphs.Select(g => g.Glyph), dominantSize));
         return line;
+    }
+
+    /// <summary>
+    /// Typical gap between adjacent letters of a line without space glyphs: the median advance gap (never negative). It
+    /// is about zero for ordinary text and positive for letter-spaced text such as a tracked title (FR-011); lines with
+    /// space glyphs split words on the spaces, so their tracking is zero.
+    /// </summary>
+    private static double Tracking(List<LayoutGlyph> glyphs)
+    {
+        if (glyphs.Any(IsSpace) || glyphs.Count < 3)
+        {
+            return 0;
+        }
+
+        List<double> gaps = glyphs.Zip(glyphs.Skip(1), (a, b) => b.Start - a.End).Order().ToList();
+        return Math.Max(0, gaps[gaps.Count / 2]);
     }
 
     /// <summary>Mean advance width of the line's own space glyphs, or a fraction of its font size when it has none.</summary>
