@@ -458,4 +458,34 @@ public sealed class ListDetectionStageTests
         AssertItem(Find(context, "2. Dostawca"), "2.", ListLabelKind.ArabicDot);
         AssertContinues(Find(context, "zaspokojenia"), Find(context, "2. Dostawca"));
     }
+
+    [Fact]
+    public void LargerBoldNumberedHeadingWrappedToALowercaseLine_IsLeftForHeadingDetection()
+    {
+        // A section title of a bank regulation (12 pt bold over 11 pt body) wrapped onto a second line.
+        var sketch = new PageSketch();
+        sketch.Line("5. Jak mozesz zmienic typ rachunku?", 43, 70, 12, bold: true);
+        double y = 100;
+        foreach (string line in new[] { "4) Po zmianie typu rachunku otrzymasz od nas potwierdzenie zmiany", "5) Nie zmieniamy innych rachunkow platniczych prowadzonych dla Ciebie." })
+        {
+            sketch.Line(line, 57, y, 11);
+            y += 15.4;
+        }
+
+        sketch.Line("6. Jakie limity dotyczace zlecen platniczych mozemy wprowadzic i jak moga", 43, y + 22, 12, bold: true);
+        sketch.Line("sie zmienic?", 43, y + 38.7, 12, bold: true);
+        sketch.Line("1) Mozemy wprowadzic limity, ktore dotycza:", 58, y + 60.4, 11);
+        sketch.Line("a) wysokosci przelewow,", 72, y + 75.8, 11);
+        for (int i = 0; i < 6; i++)
+        {
+            sketch.Line("Tresc zwyklego akapitu regulaminu w rozmiarze tekstu podstawowego dokumentu.", 72, y + 100 + (15.4 * i), 11);
+        }
+
+        sketch.Line("7. Jak mozesz skladac dyspozycje dotyczace rachunku?", 43, y + 220, 12, bold: true);
+
+        PipelineContext context = PageSketch.Assemble(null, sketch);
+        new ListDetectionStage().Execute(context);
+
+        Assert.Equal(LineRole.Unknown, Find(context, "6. Jakie").Role);
+    }
 }
