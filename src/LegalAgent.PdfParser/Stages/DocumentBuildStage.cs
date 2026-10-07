@@ -188,6 +188,7 @@ public sealed class DocumentBuildStage : IPipelineStage
     {
         ParagraphBlock paragraph => paragraph.Inlines,
         ListBlock list => list.Items.SelectMany(i => i.Inlines.Concat(i.Children.SelectMany(InlinesOf))),
+        TableBlock table => (table.Header?.Cells ?? []).Concat(table.Rows.SelectMany(r => r.Cells)).SelectMany(c => c.Inlines),
         _ => [],
     };
 
@@ -204,6 +205,10 @@ public sealed class DocumentBuildStage : IPipelineStage
             case LayoutBlockKind.List when block.List is { } list:
                 report.AddList();
                 return list;
+
+            case LayoutBlockKind.Table when block.Table is { } table:
+                report.AddTable(table.IsFallback);
+                return table;
 
             default:
                 throw new InvalidOperationException(

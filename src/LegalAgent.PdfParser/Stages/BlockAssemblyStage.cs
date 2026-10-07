@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using LegalAgent.PdfParser.Layout;
 using LegalAgent.PdfParser.Model;
@@ -11,7 +12,8 @@ namespace LegalAgent.PdfParser.Stages;
 /// line-end hyphenation (FR-012) and builds the inline content with <see cref="PageBreak"/> markers (FR-002a).
 /// Lines are consumed in the order they appear in <see cref="LayoutPage.Lines"/> (earlier stages may have
 /// reordered them); lines with role <see cref="LineRole.Artifact"/> or <see cref="LineRole.Footnote"/> are skipped,
-/// list item and continuation lines are assembled into <see cref="ListBlock"/> trees (FR-052 – FR-054), and lines with
+/// list item and continuation lines are assembled into <see cref="ListBlock"/> trees (FR-052 – FR-054), tables found by
+/// table detection are placed at their first line, and lines with
 /// any other role end the current paragraph or list and are left to the stage that owns them.
 /// </summary>
 public sealed class BlockAssemblyStage : IPipelineStage
@@ -33,6 +35,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
         Paragraph? current = null;
         ListAssembler? list = null;
         var notes = new SideNoteBuffer(builder);
+        var emittedTables = new HashSet<int>();
         LayoutLine? lastHeading = null;
         double previousColumnLeft = 0;
 
@@ -83,6 +86,22 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 else
                 {
                     FinishList(context, ref list, notes);
+                }
+
+                // A table (FR-063) is placed at its first line; its other lines, also on following pages, are skipped.
+                if (line.Role == LineRole.Table
+                    && line.Annotations.TryGetValue(LayoutAnnotations.TableIndex, out string? tableIndex)
+                    && int.TryParse(tableIndex, NumberStyles.None, CultureInfo.InvariantCulture, out int table)
+                    && table < context.Tables.Count)
+                {
+                    Finish(context, ref current, notes);
+                    if (emittedTables.Add(table))
+                    {
+                        context.Blocks.Add(context.Tables[table]);
+                        notes.Flush(context);
+                    }
+
+                    continue;
                 }
 
                 if (line.Role == LineRole.Heading)

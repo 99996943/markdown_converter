@@ -1,6 +1,6 @@
-<!-- page: 1 -->
 # Taryfa opłat
 
+<!-- page: 1 -->
 Tabela 1. Opłaty za prowadzenie rachunku.
 
 | **Usługa** | **Opłata** | **Częstotliwość** |

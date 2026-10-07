@@ -71,7 +71,8 @@ public sealed class TablesIntegrationTests
     {
         PdfConversionResult result = await ConvertAsync();
 
-        TableBlock[] tables = result.Document.Sections.SelectMany(s => s.Blocks).OfType<TableBlock>().ToArray();
+        TableBlock[] tables = result.Document.Preamble.OfType<TableBlock>().ToArray();
+        Assert.Equal("Taryfa opłat", result.Document.Title);
         Assert.Equal(3, tables.Length);
         Assert.Equal((new PageRange(1, 2), 4, false), (tables[1].Pages, tables[1].Rows.Count, tables[1].IsFallback));
         Assert.True(tables[2].IsFallback);
