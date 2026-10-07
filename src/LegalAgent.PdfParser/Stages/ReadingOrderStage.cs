@@ -6,7 +6,8 @@ namespace LegalAgent.PdfParser.Stages;
 /// <summary>
 /// Reorders the lines of two-column pages so that the left column is read before the right one (FR-031).
 /// A gutter is a vertical strip at least <see cref="LayoutOptions.GutterMinWidthRatio"/> of the page wide that is
-/// free of text over at least <see cref="LayoutOptions.GutterMinHeightRatio"/> of the text region height, with
+/// free of text over at least <see cref="LayoutOptions.GutterMinHeightRatio"/> of the height where text lies on both of
+/// its sides (columns may differ in length), with
 /// long lines (median ≥ <see cref="LayoutOptions.ColumnMinLineWidthRatio"/> of the page width) on both sides.
 /// Lines crossing the gutter and table lines stay in place and separate column bands. Pages without a gutter
 /// keep their order. Line assembly merges side-by-side column lines that share a baseline into one line with
@@ -61,15 +62,32 @@ public sealed class ReadingOrderStage : IPipelineStage
             return null;
         }
 
-        // Scan 1-pt bins between the outermost text edges and collect runs of "free" bins.
+        // Scan 1-pt bins between the outermost text edges and collect runs of "free" bins. A bin is measured over the
+        // height where text lies on both of its sides, so a shorter column (the last page) does not look free itself.
         int binCount = (int)Math.Ceiling(maxRight - minLeft);
         var free = new bool[binCount];
         for (int i = 0; i < binCount; i++)
         {
             double x0 = minLeft + i;
             double x1 = x0 + 1;
-            double covered = CoveredHeight(pieces.Where(p => p.Left < x1 && p.Right > x0));
-            free[i] = 1 - (covered / regionHeight) >= options.GutterMinHeightRatio;
+            List<Rect> left = pieces.Where(p => p.Right <= x0).ToList();
+            List<Rect> right = pieces.Where(p => p.Left >= x1).ToList();
+            if (left.Count == 0 || right.Count == 0)
+            {
+                continue;
+            }
+
+            double top = Math.Max(left.Min(p => p.Top), right.Min(p => p.Top));
+            double bottom = Math.Min(left.Max(p => p.Bottom), right.Max(p => p.Bottom));
+            if (bottom <= top)
+            {
+                continue;
+            }
+
+            double covered = CoveredHeight(pieces
+                .Where(p => p.Left < x1 && p.Right > x0 && p.Bottom > top && p.Top < bottom)
+                .Select(p => new Rect(p.Left, Math.Max(p.Top, top), p.Right, Math.Min(p.Bottom, bottom))));
+            free[i] = 1 - (covered / (bottom - top)) >= options.GutterMinHeightRatio;
         }
 
         double minWidth = options.GutterMinWidthRatio * page.Width;
