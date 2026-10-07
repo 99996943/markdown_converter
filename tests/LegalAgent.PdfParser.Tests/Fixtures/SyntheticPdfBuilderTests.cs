@@ -63,7 +63,7 @@ public sealed class SyntheticPdfBuilderTests
         byte[] bytes = new SyntheticPdfBuilder().Page()
             .Text(50, 100, "Plain")
             .Text(50, 120, "Strong", bold: true)
-            .Text(50, 140, "Slanted", italic: true)
+            .Text(50, 140, "Kursywa", italic: true)
             .Build();
 
         using PdfDocument doc = PdfDocument.Open(bytes);
@@ -72,7 +72,7 @@ public sealed class SyntheticPdfBuilderTests
 
         Assert.Contains("Regular", FontOf("P"), StringComparison.Ordinal);
         Assert.Contains("Bold", FontOf("S"), StringComparison.Ordinal);
-        Assert.Contains("Italic", FontOf("l"), StringComparison.Ordinal);
+        Assert.Contains("Italic", FontOf("K"), StringComparison.Ordinal);
     }
 
     [Fact]
@@ -118,7 +118,7 @@ public sealed class SyntheticPdfBuilderTests
         string all = TextOf(page);
         Assert.Contains("Hidden", all, StringComparison.Ordinal);
         Assert.Contains("Visible", all, StringComparison.Ordinal);
-        Assert.Contains(page.Letters, l => l.RenderingMode == UglyToad.PdfPig.Graphics.Core.TextRenderingMode.Neither);
+        Assert.Contains(page.Letters, l => l.RenderingMode == TextRenderingMode.Neither);
     }
 
     [Fact]
