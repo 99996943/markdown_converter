@@ -124,20 +124,39 @@ public sealed class TableDetectionStage : IPipelineStage
         return tables;
     }
 
-    /// <summary>Cells of a line: its segments, with a leading bullet or list label joined to the text it introduces.</summary>
+    /// <summary>Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces.</summary>
     private static List<LineSegment> CellsOf(LayoutLine line)
     {
-        List<LineSegment> cells = [.. line.Segments];
-        if (cells.Count == 2
-            && cells[0].Words.Count == 1
-            && ListLabelPatterns.TryMatch(cells[0].Text + " x", out ListLabelMatch? label)
-            && label.Kind is ListLabelKind.Bullet or ListLabelKind.Dash or ListLabelKind.ArabicParen or ListLabelKind.LetterParen)
+        var cells = new List<LineSegment>();
+        LineSegment? label = null;
+        foreach (LineSegment segment in line.Segments)
         {
-            return [new LineSegment([.. cells[0].Words, .. cells[1].Words], cells[0].Box.Union(cells[1].Box))];
+            if (label is not null)
+            {
+                cells.Add(new LineSegment([.. label.Words, .. segment.Words], label.Box.Union(segment.Box)));
+                label = null;
+            }
+            else if (segment.Words.Count == 1 && IsLabel(segment.Text))
+            {
+                label = segment;
+            }
+            else
+            {
+                cells.Add(segment);
+            }
+        }
+
+        if (label is not null)
+        {
+            cells.Add(label);
         }
 
         return cells;
     }
+
+    private static bool IsLabel(string text) =>
+        ListLabelPatterns.TryMatch(text + " x", out ListLabelMatch? label)
+        && label.Kind is ListLabelKind.Bullet or ListLabelKind.Dash or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
 
     /// <summary>Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>).</summary>
     private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start)
