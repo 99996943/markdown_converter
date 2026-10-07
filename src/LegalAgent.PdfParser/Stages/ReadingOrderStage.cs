@@ -127,9 +127,17 @@ public sealed class ReadingOrderStage : IPipelineStage
         var right = new List<double>();
         foreach (LayoutLine line in lines)
         {
-            List<Rect> pieces = PiecesOf(line).ToList();
-            AddWidth(left, pieces.Where(p => p.Right <= middle).ToList());
-            AddWidth(right, pieces.Where(p => p.Left >= middle).ToList());
+            List<Rect> pieces = PiecesOf(line).OrderBy(p => p.Left).ToList();
+            List<Rect> leftPieces = pieces.Where(p => p.Right <= middle).ToList();
+            List<Rect> rightPieces = pieces.Where(p => p.Left >= middle).ToList();
+            if (leftPieces.Count > 0 && rightPieces.Count > 0 && !GapIsWidest(pieces, leftPieces.Max(p => p.Right)))
+            {
+                // A justified line split into words: the gap at the gutter is just one of its stretched spaces.
+                continue;
+            }
+
+            AddWidth(left, leftPieces);
+            AddWidth(right, rightPieces);
         }
 
         double minLineWidth = options.ColumnMinLineWidthRatio * pageWidth;
@@ -137,6 +145,27 @@ public sealed class ReadingOrderStage : IPipelineStage
             && right.Count >= MinLinesPerColumn
             && Median(left) >= minLineWidth
             && Median(right) >= minLineWidth;
+    }
+
+    /// <summary>The gap after <paramref name="gapStart"/> is at least twice as wide as every other gap of the line.</summary>
+    private static bool GapIsWidest(List<Rect> pieces, double gapStart)
+    {
+        double gutterGap = 0;
+        double otherGap = 0;
+        for (int i = 1; i < pieces.Count; i++)
+        {
+            double gap = pieces[i].Left - pieces[i - 1].Right;
+            if (pieces[i - 1].Right == gapStart)
+            {
+                gutterGap = gap;
+            }
+            else
+            {
+                otherGap = Math.Max(otherGap, gap);
+            }
+        }
+
+        return gutterGap >= 2 * otherGap;
     }
 
     private static void AddWidth(List<double> widths, List<Rect> pieces)
