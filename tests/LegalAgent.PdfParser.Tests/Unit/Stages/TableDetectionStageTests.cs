@@ -300,18 +300,21 @@ public sealed class TableDetectionStageTests
         Assert.All(context.Pages[0].Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
     }
 
-    [Fact]
-    public void JustifiedTextSplitIntoWords_IsNotATable()
+    [Theory]
+    [InlineData(6)]
+    [InlineData(16)]
+    public void JustifiedTextSplitIntoWords_IsNotATable(double stretchedSpace)
     {
-        // Justification widens spaces past the cell threshold (here to 6 pt, 0.6 em), so every word is its own segment.
-        static LayoutLine Justified(double top, params string[] words)
+        // Justification widens spaces past the cell threshold, so every word is its own segment: slightly (0.6 em) or,
+        // in sparse ISAP lines, even beyond 1 em — but then all gaps of the line are alike.
+        LayoutLine Justified(double top, params string[] words)
         {
             var cells = new List<(string, double)>();
             double x = 71;
             foreach (string word in words)
             {
                 cells.Add((word, x));
-                x += (word.Length * LayoutFactory.CharWidth) + 6;
+                x += (word.Length * LayoutFactory.CharWidth) + stretchedSpace;
             }
 
             return Row(top, cells.ToArray());
