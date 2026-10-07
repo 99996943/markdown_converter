@@ -328,6 +328,18 @@ public sealed class HeadingDetectionStageTests
     }
 
     [Fact]
+    public void RegularDesignation_FollowedByBoldTitle_IsMerged_FR044()
+    {
+        // ISAP consolidated texts: „Rozdział 1” in the body font, the chapter title in bold.
+        PipelineContext context = Run(Page()
+            .Text("Rozdział 1")
+            .Text("Przepisy ogólne", bold: true)
+            .Text("Art. 1. Ustawa określa zasady."));
+
+        Assert.Equal("Przepisy ogólne", Heading(context, "Rozdział 1. Przepisy ogólne").Title);
+    }
+
+    [Fact]
     public void DivisionWithUppercaseTitle_IsMerged()
     {
         PipelineContext context = Run(Page()
