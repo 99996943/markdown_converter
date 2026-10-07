@@ -471,4 +471,22 @@ public sealed class TableDetectionStageTests
 
         Assert.Equal(new PageRange(1, 2), table.Pages);
     }
+
+    [Fact]
+    public void SectionRowAboveTheFirstMultiCellLineInsideTheGrid_BelongsToTheTable()
+    {
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            Row(100, ("VII. Czynnosci w sprawach stanu cywilnego", C2)),
+            Row(125, ("7.01", C1), ("Przygotowanie dokumentacji", C2), ("500", C3)),
+            Row(145, ("7.02", C1), ("Przyjecie i przekazanie", C2), ("50", C3)),
+            Row(165, ("7.03", C1), ("Wydanie zaswiadczenia", C2), ("50", C3)),
+        ]);
+        Grid(page, 92, 175, 92, 117, 137, 157, 175);
+
+        TableBlock table = SingleTable(Run(page));
+
+        Assert.Equal("VII. Czynnosci w sprawach stanu cywilnego", Text(table.Rows[0].Cells[1]));
+        Assert.All(page.Lines, l => Assert.Equal(LineRole.Table, l.Role));
+    }
 }
