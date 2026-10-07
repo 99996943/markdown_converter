@@ -201,4 +201,17 @@ public sealed class ReadingOrderStageTests
             Enumerable.Range(0, 14).Select(i => $"L{N(i)}").Concat(Enumerable.Range(0, 5).Select(i => $"R{N(i)}")),
             order);
     }
+
+    [Fact]
+    public void JustifiedSingleColumnPagesOfAnAct_HaveNoColumnGutter()
+    {
+        // ISAP justification splits lines into word segments; such pages must not look two-column (regression).
+        string pdf = Path.Combine(AppContext.BaseDirectory, "Corpus", "acts", "ustawa-o-sluzbie-cywilnej.pdf");
+        using var harness = LegalAgent.PdfParser.Tests.Fixtures.StageHarness.Open(File.ReadAllBytes(pdf));
+        harness.Run(new PageExtractionStage(), new TextNormalizationStage(), new LineAssemblyStage(), new ArtifactRemovalStage(), new FootnoteDetectionStage());
+
+        Assert.All(
+            harness.Context.Pages.Where(p => p.Number is 1 or 20),
+            p => Assert.Null(ReadingOrderStage.FindGutter(p, harness.Context.Options.Layout)));
+    }
 }
