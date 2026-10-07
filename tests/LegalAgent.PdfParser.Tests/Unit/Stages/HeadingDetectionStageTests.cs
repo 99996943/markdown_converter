@@ -499,4 +499,16 @@ public sealed class HeadingDetectionStageTests
         Assert.Contains(context.Pages[0].Lines, l => l.Text == "1)");
         Assert.Contains(Headings(context), h => h.Text == "USTAWA z dnia 30 maja 2014 r. o prawach konsumenta");
     }
+
+    [Fact]
+    public void ArticleInAmendmentNotation_IsAUnitWithTheBracketInItsHeading_FR043()
+    {
+        PipelineContext context = Run(Page()
+            .Text("[Art. 31. 1. Dyrektor generalny urzędu upowszechnia informację o wyniku naboru.]")
+            .Text("<Art. 31. 1. Dyrektor generalny urzędu zamieszcza ogłoszenie o wyniku naboru.>"));
+
+        List<HeadingInfo> articles = Headings(context).Where(h => h.Kind == SectionKind.Article).ToList();
+        Assert.Equal(["[Art. 31.", "<Art. 31."], articles.Select(h => h.Text));
+        Assert.All(articles, h => Assert.Equal("Art. 31", h.Designation));
+    }
 }

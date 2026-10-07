@@ -38,6 +38,16 @@ public sealed class LegalUnitPatternsTests
     }
 
     [Theory]
+    [InlineData("[Art. 31. 1. Dyrektor generalny urzędu upowszechnia", "[", "Art. 31", "1. Dyrektor generalny urzędu upowszechnia")]
+    [InlineData("<Art. 27a. Szef Służby Cywilnej prowadzi system", "<", "Art. 27a", "Szef Służby Cywilnej prowadzi system")]
+    [InlineData("<§ 4. Uchyla się", "<", "§ 4", "Uchyla się")]
+    public void TryMatch_AmendmentNotation_KeepsTheBracketAsPrefix_FR043(string line, string prefix, string designation, string rest)
+    {
+        Assert.True(LegalUnitPatterns.TryMatch(line, out LegalUnitMatch? match));
+        Assert.Equal((prefix, designation, rest), (match.Prefix, match.Designation, match.Rest));
+    }
+
+    [Theory]
     [InlineData("art. 5 ustawy stosuje się odpowiednio")] // lower-case reference
     [InlineData("zgodnie z § 7 regulaminu")] // not at the start of the line
     [InlineData("Art. 5 ust. 2 stosuje się odpowiednio.")] // reference: no period after the number

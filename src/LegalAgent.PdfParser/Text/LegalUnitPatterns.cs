@@ -9,7 +9,8 @@ namespace LegalAgent.PdfParser.Text;
 /// <param name="Designation">Designation without the trailing period, e.g. „Art. 12a”, „Rozdział 3”, „§ 5¹”.</param>
 /// <param name="Number">Number part, e.g. „12a”, „3”, „II”, „PIERWSZA”.</param>
 /// <param name="Rest">Text following the designation (and its separating period), trimmed; empty when none.</param>
-internal sealed record LegalUnitMatch(SectionKind Kind, string Designation, string Number, string Rest);
+/// <param name="Prefix">Amendment bracket printed before the unit („[” repealed, „&lt;” future wording), or empty.</param>
+internal sealed record LegalUnitMatch(SectionKind Kind, string Designation, string Number, string Rest, string Prefix = "");
 
 /// <summary>Recognition of Polish legal unit designations (Księga, Część, Dział, Rozdział, Oddział, Art., §).</summary>
 /// <remarks>
