@@ -346,4 +346,17 @@ public sealed class TableDetectionStageTests
         Assert.False(table.IsFallback);
         Assert.Equal(["przelew", "• do banku lub"], table.Rows[1].Cells.Select(Text));
     }
+
+    [Fact]
+    public void LoneDashCell_MeaningNoFee_StaysItsOwnCell()
+    {
+        PipelineContext context = Run(LayoutFactory.Page(1,
+        [
+            Row(100, ("Usluga", C1), ("Oplata", C2), ("Uwagi", C3)),
+            Row(120, ("Przelew", C1), ("–", C2), ("bez oplat", C3)),
+            Row(140, ("Wyplata", C1), ("5 zl", C2), ("bankomat", C3)),
+        ]));
+
+        Assert.Equal(["Przelew", "–", "bez oplat"], SingleTable(context).Rows[1].Cells.Select(Text));
+    }
 }
