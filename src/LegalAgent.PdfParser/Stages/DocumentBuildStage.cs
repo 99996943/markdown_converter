@@ -41,7 +41,7 @@ public sealed class DocumentBuildStage : IPipelineStage
 
             if (block.Kind != LayoutBlockKind.Heading)
             {
-                Current().Blocks.Add(Convert(block));
+                Current().Blocks.Add(Convert(block, context.Report));
                 continue;
             }
 
@@ -96,7 +96,7 @@ public sealed class DocumentBuildStage : IPipelineStage
                 inOrder.Add(section);
             }
 
-            foreach (FootnoteRef reference in section.Blocks.OfType<ParagraphBlock>().SelectMany(p => p.Inlines).OfType<FootnoteRef>())
+            foreach (FootnoteRef reference in section.Blocks.SelectMany(InlinesOf).OfType<FootnoteRef>())
             {
                 if (drafts.TryGetValue(reference.FootnoteNumber, out FootnoteDraft? draft) && !numbers.ContainsKey(draft.Id))
                 {
@@ -163,23 +163,53 @@ public sealed class DocumentBuildStage : IPipelineStage
     {
         ParagraphBlock paragraph when paragraph.Inlines.Any(i => i is FootnoteRef) => paragraph with
         {
-            Inlines = paragraph.Inlines
-                .Where(i => i is not FootnoteRef r || numbers.ContainsKey(r.FootnoteNumber))
-                .Select(i => i is FootnoteRef r ? new FootnoteRef(numbers[r.FootnoteNumber]) : i)
+            Inlines = Renumber(paragraph.Inlines, numbers),
+        },
+        ListBlock list when InlinesOf(list).Any(i => i is FootnoteRef) => list with
+        {
+            Items = list.Items
+                .Select(item => item with
+                {
+                    Inlines = Renumber(item.Inlines, numbers),
+                    Children = item.Children.Select(c => Renumber(c, numbers)).ToArray(),
+                })
                 .ToArray(),
         },
         _ => block,
     };
 
+    private static Inline[] Renumber(IReadOnlyList<Inline> inlines, Dictionary<int, int> numbers) => inlines
+        .Where(i => i is not FootnoteRef r || numbers.ContainsKey(r.FootnoteNumber))
+        .Select(i => i is FootnoteRef r ? new FootnoteRef(numbers[r.FootnoteNumber]) : i)
+        .ToArray();
+
+    /// <summary>Inline content of a block in reading order, including nested list items and common parts.</summary>
+    private static IEnumerable<Inline> InlinesOf(ContentBlock block) => block switch
+    {
+        ParagraphBlock paragraph => paragraph.Inlines,
+        ListBlock list => list.Items.SelectMany(i => i.Inlines.Concat(i.Children.SelectMany(InlinesOf))),
+        _ => [],
+    };
+
     private static SkippedPageBlock SkippedBlock((int Page, SkipReason Reason) skipped) =>
         new(new PageRange(skipped.Page, skipped.Page), skipped.Page, skipped.Reason);
 
-    private static ParagraphBlock Convert(LayoutBlock block) => block.Kind switch
+    private static ContentBlock Convert(LayoutBlock block, ReportBuilder report)
     {
-        LayoutBlockKind.Paragraph => new ParagraphBlock(block.Pages, block.Inlines.ToArray()),
-        _ => throw new InvalidOperationException(
-            $"Blok typu {block.Kind} nie jest jeszcze obsługiwany przez etap budowy dokumentu."),
-    };
+        switch (block.Kind)
+        {
+            case LayoutBlockKind.Paragraph:
+                return new ParagraphBlock(block.Pages, block.Inlines.ToArray());
+
+            case LayoutBlockKind.List when block.List is { } list:
+                report.AddList();
+                return list;
+
+            default:
+                throw new InvalidOperationException(
+                    $"Blok typu {block.Kind} nie jest jeszcze obsługiwany przez etap budowy dokumentu.");
+        }
+    }
 
     private sealed class SectionBuilder(HeadingInfo? heading, int firstPage)
     {

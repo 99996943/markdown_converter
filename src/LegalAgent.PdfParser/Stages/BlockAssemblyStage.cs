@@ -10,9 +10,9 @@ namespace LegalAgent.PdfParser.Stages;
 /// Joins consecutive lines into paragraphs (FR-032), continues paragraphs across pages (FR-033), resolves
 /// line-end hyphenation (FR-012) and builds the inline content with <see cref="PageBreak"/> markers (FR-002a).
 /// Lines are consumed in the order they appear in <see cref="LayoutPage.Lines"/> (earlier stages may have
-/// reordered them); lines with role <see cref="LineRole.Artifact"/> are skipped and lines with any role other than
-/// <see cref="LineRole.Unknown"/> or <see cref="LineRole.Body"/> end the current paragraph and are left to the
-/// stage that owns them.
+/// reordered them); lines with role <see cref="LineRole.Artifact"/> or <see cref="LineRole.Footnote"/> are skipped,
+/// list item and continuation lines are assembled into <see cref="ListBlock"/> trees (FR-052 – FR-054), and lines with
+/// any other role end the current paragraph or list and are left to the stage that owns them.
 /// </summary>
 public sealed class BlockAssemblyStage : IPipelineStage
 {
@@ -30,6 +30,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
         var builder = new ParagraphBuilder(context.Options.Normalization.HyphenationExceptions.ToArray());
         Paragraph? current = null;
+        ListAssembler? list = null;
         double previousColumnLeft = 0;
 
         foreach (LayoutPage page in context.Pages)
@@ -55,6 +56,23 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                if (line.Role is LineRole.ListItem or LineRole.ListContinuation)
+                {
+                    Finish(context, ref current);
+                    list ??= new ListAssembler(builder);
+                    if (list.TryAdd(line, page.Number))
+                    {
+                        continue;
+                    }
+
+                    // A line whose item is unknown (for example annotated by a custom stage) is kept as ordinary text.
+                    FinishList(context, ref list);
+                }
+                else
+                {
+                    FinishList(context, ref list);
+                }
+
                 if (line.Role == LineRole.Heading)
                 {
                     Finish(context, ref current);
@@ -72,7 +90,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
-                if (line.Role is not (LineRole.Unknown or LineRole.Body))
+                if (line.Role is not (LineRole.Unknown or LineRole.Body or LineRole.ListItem or LineRole.ListContinuation))
                 {
                     Finish(context, ref current);
                     continue;
@@ -98,6 +116,19 @@ public sealed class BlockAssemblyStage : IPipelineStage
         }
 
         Finish(context, ref current);
+        FinishList(context, ref list);
+    }
+
+    private static void FinishList(PipelineContext context, ref ListAssembler? list)
+    {
+        if (list is null)
+        {
+            return;
+        }
+
+        ListBlock block = list.Build();
+        context.Blocks.Add(new LayoutBlock(LayoutBlockKind.List, block.Pages) { List = block });
+        list = null;
     }
 
     private static void Finish(PipelineContext context, ref Paragraph? paragraph)
@@ -261,9 +292,14 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
     private sealed class ParagraphBuilder(string[] exceptions)
     {
-        public static Paragraph Start(LayoutLine line, int page, double size)
+        public static Paragraph Start(LayoutLine line, int page, double size, bool leadingPageBreak = false)
         {
             var inlines = new InlineAccumulator();
+            if (leadingPageBreak)
+            {
+                inlines.AddPageBreak(page);
+            }
+
             foreach (LayoutWord word in line.Words)
             {
                 inlines.Add(word, glue: false);
@@ -300,6 +336,142 @@ public sealed class BlockAssemblyStage : IPipelineStage
             }
 
             paragraph.Lines.Add(line);
+            paragraph.LastPage = page;
+            paragraph.LastLine = line;
+        }
+    }
+
+    /// <summary>
+    /// Builds one top-level list from the lines annotated by list detection: item lines open items under their parent
+    /// (consecutive child items share one nested list), continuation lines extend the owner's text, and common-part
+    /// lines form a paragraph placed among the owner's children after its nested list (FR-052 – FR-054). An item or
+    /// common part starting on a later page than the previous list line begins with a <see cref="PageBreak"/>.
+    /// </summary>
+    private sealed class ListAssembler(ParagraphBuilder builder)
+    {
+        private readonly Dictionary<string, ItemNode> _items = new(StringComparer.Ordinal);
+        private readonly List<ItemNode> _top = [];
+        private int _lastPage;
+        private ItemNode? _commonOwner;
+        private Paragraph? _common;
+
+        public bool TryAdd(LayoutLine line, int page)
+        {
+            bool newPage = _lastPage != 0 && page != _lastPage;
+            if (line.Role == LineRole.ListItem)
+            {
+                if (!AddItem(line, page, newPage))
+                {
+                    return false;
+                }
+            }
+            else if (!line.Annotations.TryGetValue(LayoutAnnotations.ListOwner, out string? ownerId)
+                || !_items.TryGetValue(ownerId, out ItemNode? owner))
+            {
+                return false;
+            }
+            else if (line.Annotations.TryGetValue(LayoutAnnotations.ListCommonPart, out string? common) && common == "1")
+            {
+                if (_common is not null && ReferenceEquals(_commonOwner, owner))
+                {
+                    builder.AppendLine(_common, line, page);
+                }
+                else
+                {
+                    _common = ParagraphBuilder.Start(line, page, 0, newPage);
+                    _commonOwner = owner;
+                    owner.Children.Add(_common);
+                }
+            }
+            else
+            {
+                builder.AppendLine(owner.Text, line, page);
+            }
+
+            _lastPage = page;
+            return true;
+        }
+
+        private bool AddItem(LayoutLine line, int page, bool newPage)
+        {
+            if (line.Words.Count < 2
+                || !line.Annotations.TryGetValue(LayoutAnnotations.ListItemId, out string? id)
+                || !Enum.TryParse(Annotation(line, LayoutAnnotations.ListKind), out ListLabelKind kind))
+            {
+                return false;
+            }
+
+            LayoutLine content = LineSlicer.Slice(line, line.Words.Skip(1).ToList());
+            string label = Annotation(line, LayoutAnnotations.ListLabel) ?? line.Words[0].Text;
+            var item = new ItemNode(label, kind, ParagraphBuilder.Start(content, page, 0, newPage));
+
+            string parentId = Annotation(line, LayoutAnnotations.ListParent) ?? string.Empty;
+            if (_items.TryGetValue(parentId, out ItemNode? parent))
+            {
+                if (parent.Children.Count > 0 && parent.Children[^1] is List<ItemNode> siblings)
+                {
+                    siblings.Add(item);
+                }
+                else
+                {
+                    parent.Children.Add(new List<ItemNode> { item });
+                }
+            }
+            else
+            {
+                _top.Add(item);
+            }
+
+            _items[id] = item;
+            _common = null;
+            _commonOwner = null;
+            return true;
+        }
+
+        public ListBlock Build() => BuildList(_top);
+
+        private static string? Annotation(LayoutLine line, string key) =>
+            line.Annotations.TryGetValue(key, out string? value) ? value : null;
+
+        private static ListBlock BuildList(List<ItemNode> items)
+        {
+            (ListItem Item, PageRange Pages)[] built = items.Select(BuildItem).ToArray();
+            return new ListBlock(
+                new PageRange(built.Min(b => b.Pages.First), built.Max(b => b.Pages.Last)),
+                built.Select(b => b.Item).ToArray());
+        }
+
+        private static (ListItem Item, PageRange Pages) BuildItem(ItemNode node)
+        {
+            var children = new List<ContentBlock>();
+            foreach (object child in node.Children)
+            {
+                children.Add(child switch
+                {
+                    List<ItemNode> nested => BuildList(nested),
+                    Paragraph paragraph => new ParagraphBlock(
+                        new PageRange(paragraph.FirstPage, paragraph.LastPage),
+                        paragraph.Inlines.Complete().ToArray()),
+                    _ => throw new InvalidOperationException("Nieznany element listy."),
+                });
+            }
+
+            int last = children.Select(c => c.Pages.Last).Append(node.Text.LastPage).Max();
+            return (
+                new ListItem(node.Label, node.Kind, node.Text.Inlines.Complete().ToArray(), children),
+                new PageRange(node.Text.FirstPage, last));
+        }
+
+        private sealed class ItemNode(string label, ListLabelKind kind, Paragraph text)
+        {
+            public string Label { get; } = label;
+
+            public ListLabelKind Kind { get; } = kind;
+
+            public Paragraph Text { get; } = text;
+
+            /// <summary>Nested item lists (<c>List&lt;ItemNode&gt;</c>) and common-part paragraphs in source order.</summary>
+            public List<object> Children { get; } = [];
         }
     }
 
