@@ -25,6 +25,8 @@ namespace LegalAgent.PdfParser.Stages;
 /// </remarks>
 public sealed class ListDetectionStage : IPipelineStage
 {
+    private const double SizeTolerance = 0.5;
+
     /// <inheritdoc />
     public int Order => StageOrder.ListDetection;
 
@@ -136,11 +138,13 @@ public sealed class ListDetectionStage : IPipelineStage
 
     /// <summary>
     /// A bold passage is not a run of headings: points, letters, tirets and bullets never number headings, and a
-    /// labelled line whose sentence runs on into the next line (starting lowercase) is a paragraph of a list.
+    /// labelled line whose sentence runs on into the next line (starting lowercase) is a paragraph of a list — unless it is
+    /// set as a title (bold and larger than the body text) wrapped onto a second line.
     /// </summary>
     private static void KeepLabelledBoldTextInLists(List<Entry> entries, PipelineContext context)
     {
         double gapFactor = context.Options.Layout.ParagraphGapFactor;
+        double bodySize = context.BodyStyle?.FontSize ?? 0;
         for (int i = 0; i < entries.Count; i++)
         {
             Entry entry = entries[i];
@@ -152,6 +156,7 @@ public sealed class ListDetectionStage : IPipelineStage
             Entry? next = i + 1 < entries.Count && entries[i + 1].Page == entry.Page ? entries[i + 1] : null;
             double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * entry.Line.Box.Height;
             bool runsOn = next is not null
+                && !IsTitleStyle(entry.Line, bodySize)
                 && next.Label is null
                 && next.Line.Baseline - entry.Line.Baseline <= gapFactor * leading
                 && StartsLowercase(next.Line.Text);
@@ -161,6 +166,16 @@ public sealed class ListDetectionStage : IPipelineStage
                 entry.HeadingLike = false;
             }
         }
+    }
+
+    /// <summary>Bold and larger than the body text: a title, even when it wraps (a passage merely set larger is not).</summary>
+    private static bool IsTitleStyle(LayoutLine line, double bodySize)
+    {
+        List<LayoutGlyph> glyphs = line.Words.SelectMany(w => w.Glyphs).ToList();
+        return bodySize > 0
+            && glyphs.Count > 0
+            && line.Words.All(w => w.Style.HasFlag(TextStyle.Bold))
+            && glyphs.Average(g => g.PointSize) > bodySize + SizeTolerance;
     }
 
     private static bool StartsLowercase(string text)
