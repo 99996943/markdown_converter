@@ -20,8 +20,8 @@ namespace LegalAgent.PdfParser.Stages;
 /// aligned with the text of an outer item, or a „–” line aligned with the labels of a finished enumeration, is the
 /// common part of the enclosing item (FR-054) — or, at the top level, an ordinary paragraph after the list.
 /// „N.” is a label only in a sequence of consecutive numbers at one indent or as the ustęp of an article (FR-051), and
-/// lines printed like headings (all bold or enlarged) are left to heading detection. An article line
-/// „Art. 5. 1. Treść…” is split into the designation (left for heading detection) and the first ustęp.
+/// lines printed like headings (all bold or enlarged, set off by a gap — FR-041) are left to heading detection. An
+/// article line „Art. 5. 1. Treść…” is split into the designation (left for heading detection) and the first ustęp.
 /// </remarks>
 public sealed class ListDetectionStage : IPipelineStage
 {
@@ -86,6 +86,7 @@ public sealed class ListDetectionStage : IPipelineStage
     {
         double bodySize = context.BodyStyle?.FontSize ?? 0;
         double sizeRatio = context.Options.Headings.SizeRatio;
+        double gapFactor = context.Options.Headings.GapFactor;
         var entries = new List<Entry>();
         foreach (LayoutPage page in context.Pages)
         {
@@ -96,6 +97,7 @@ public sealed class ListDetectionStage : IPipelineStage
 
             List<LayoutLine> body = page.Lines.Where(l => l.Role == LineRole.Unknown).ToList();
             double columnLeft = body.Count > 0 ? body.Min(l => l.Box.Left) : 0;
+            LayoutLine? previous = null;
             foreach (LayoutLine line in page.Lines)
             {
                 if (line.Role is LineRole.Artifact or LineRole.Footnote or LineRole.SideNote || line.Words.Count == 0)
@@ -105,13 +107,17 @@ public sealed class ListDetectionStage : IPipelineStage
 
                 var entry = new Entry(page, line, columnLeft);
                 entries.Add(entry);
+                LayoutLine? above = previous;
+                previous = line;
                 if (line.Role != LineRole.Unknown)
                 {
                     continue;
                 }
 
                 entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out _);
-                entry.HeadingLike = IsHeadingLike(line, bodySize, sizeRatio);
+                double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
+                bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
+                entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
                 if (!entry.LegalUnit
                     && !entry.HeadingLike
                     && ListLabelPatterns.TryMatch(line.Text, out ListLabelMatch? label)

@@ -66,6 +66,8 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                notes.ReadingAt(page.Number, line.Baseline);
+
                 if (line.Role is LineRole.ListItem or LineRole.ListContinuation)
                 {
                     Finish(context, ref current, notes);
@@ -131,7 +133,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
         Finish(context, ref current, notes);
         FinishList(context, ref list, notes);
-        notes.Flush(context);
+        notes.Flush(context, all: true);
     }
 
     private static void FinishList(PipelineContext context, ref ListAssembler? list, SideNoteBuffer notes)
@@ -171,37 +173,66 @@ public sealed class BlockAssemblyStage : IPipelineStage
     }
 
     /// <summary>
-    /// Side-note lines (FR-034) collected while a block is open; flushed as paragraphs after it. Consecutive note lines of
-    /// one page closer than <see cref="NoteLineGapInFontSizes"/> font sizes form one note.
+    /// Side-note lines (FR-034) collected while a block is open and flushed as paragraphs after it. Consecutive note lines
+    /// of one page closer than <see cref="NoteLineGapInFontSizes"/> font sizes form one note; a note whose next line may
+    /// still follow (reading has not passed its last line) waits for the next finished block, so it is never cut in two.
     /// </summary>
     private sealed class SideNoteBuffer(ParagraphBuilder builder)
     {
         private readonly List<(LayoutLine Line, int Page)> _lines = [];
+        private int _page;
+        private double _baseline;
 
         public void Add(LayoutLine line, int page) => _lines.Add((line, page));
 
-        public void Flush(PipelineContext context)
+        /// <summary>Records the position of the main-text line being read.</summary>
+        public void ReadingAt(int page, double baseline)
         {
+            _page = page;
+            _baseline = baseline;
+        }
+
+        public void Flush(PipelineContext context, bool all = false)
+        {
+            var notes = new List<(Paragraph Note, int Lines)>();
             Paragraph? note = null;
+            int count = 0;
             foreach ((LayoutLine line, int page) in _lines)
             {
-                double size = DominantSize(line) is > 0 and var s ? s : line.Box.Height;
                 if (note is not null
                     && page == note.LastPage
                     && line.Baseline - note.LastLine.Baseline is > 0 and var gap
-                    && gap <= NoteLineGapInFontSizes * size)
+                    && gap <= NoteLineGapInFontSizes * NoteSize(note.LastLine))
                 {
                     builder.AppendLine(note, line, page);
+                    notes[^1] = (note, ++count);
                     continue;
                 }
 
-                Emit(context, note);
-                note = ParagraphBuilder.Start(line, page, size);
+                note = ParagraphBuilder.Start(line, page, NoteSize(line));
+                count = 1;
+                notes.Add((note, count));
             }
 
-            Emit(context, note);
-            _lines.Clear();
+            if (!all && notes.Count > 0 && MayContinue(notes[^1].Note))
+            {
+                notes.RemoveAt(notes.Count - 1);
+            }
+
+            int emitted = notes.Sum(n => n.Lines);
+            foreach ((Paragraph complete, int _) in notes)
+            {
+                Emit(context, complete);
+            }
+
+            _lines.RemoveRange(0, emitted);
         }
+
+        private bool MayContinue(Paragraph note) =>
+            note.LastPage == _page
+            && _baseline <= note.LastLine.Baseline + (NoteLineGapInFontSizes * NoteSize(note.LastLine));
+
+        private static double NoteSize(LayoutLine line) => DominantSize(line) is > 0 and var size ? size : line.Box.Height;
 
         private static void Emit(PipelineContext context, Paragraph? note)
         {

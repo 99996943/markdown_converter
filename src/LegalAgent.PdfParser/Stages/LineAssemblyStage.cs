@@ -30,6 +30,9 @@ public sealed class LineAssemblyStage : IPipelineStage
     /// <summary>Minimum width (in ems of the page's main text size) of the empty band before a side-note column.</summary>
     private const double SideNoteMinGapEm = 0.5;
 
+    /// <summary>Maximum baseline distance (in note font sizes) between consecutive lines of one side-note column.</summary>
+    private const double SideNoteLineGapEm = 1.8;
+
     /// <inheritdoc />
     public int Order => StageOrder.LineAssembly;
 
@@ -148,7 +151,7 @@ public sealed class LineAssemblyStage : IPipelineStage
             HashSet<int> right = body.Where(i => page.Glyphs[i].Start >= edge).ToHashSet();
             if (IsSideNoteColumn(page, right, ink, layout))
             {
-                return right;
+                return ExtendIntoMarginZones(page, right, g => g.Start >= edge);
             }
         }
 
@@ -159,11 +162,43 @@ public sealed class LineAssemblyStage : IPipelineStage
             HashSet<int> left = body.Where(i => page.Glyphs[i].End <= edge).ToHashSet();
             if (IsSideNoteColumn(page, left, ink, layout))
             {
-                return left;
+                return ExtendIntoMarginZones(page, left, g => g.End <= edge);
             }
         }
 
         return none;
+    }
+
+    /// <summary>
+    /// Adds glyphs beyond the column edge in the header and footer zones whose baseline is within
+    /// <see cref="SideNoteLineGapEm"/> note sizes of a line already in the column (a note running into the margin).
+    /// </summary>
+    private static HashSet<int> ExtendIntoMarginZones(LayoutPage page, HashSet<int> column, Func<LayoutGlyph, bool> beyondEdge)
+    {
+        double reach = SideNoteLineGapEm * DominantSize(column.Select(i => page.Glyphs[i]).Where(g => !IsSpace(g)));
+        List<int> candidates = Enumerable.Range(0, page.Glyphs.Count)
+            .Where(i => !column.Contains(i) && beyondEdge(page.Glyphs[i]))
+            .ToList();
+        var baselines = new SortedSet<double>(column.Select(i => page.Glyphs[i].Baseline));
+
+        bool added = true;
+        while (added && candidates.Count > 0)
+        {
+            added = false;
+            for (int k = candidates.Count - 1; k >= 0; k--)
+            {
+                double baseline = page.Glyphs[candidates[k]].Baseline;
+                if (baselines.GetViewBetween(baseline - reach, baseline + reach).Count > 0)
+                {
+                    column.Add(candidates[k]);
+                    baselines.Add(baseline);
+                    candidates.RemoveAt(k);
+                    added = true;
+                }
+            }
+        }
+
+        return column;
     }
 
     private static bool IsSideNoteColumn(LayoutPage page, HashSet<int> column, List<int> ink, LayoutOptions layout)

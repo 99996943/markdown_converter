@@ -502,14 +502,17 @@ public sealed class LineAssemblyStageTests
     public void SideNoteColumnRunningIntoTheFooterZone_StaysOneColumn_FR034()
     {
         List<LayoutGlyph> glyphs = SideNotePage(noteSize: 8);
-        glyphs.AddRange(Text("profilu uzytkownika", 480, 790, 8, bold: true));
-        glyphs.AddRange(Text("systemu (Dz. U.)", 480, 800, 8, bold: true));
+        // The column runs down continuously: two lines in the body zone, two in the footer zone (below 774.6 pt).
+        glyphs.AddRange(Text("a takze zalozenie", 480, 760, 8, bold: true));
+        glyphs.AddRange(Text("profilu uzytkownika", 480, 770, 8, bold: true));
+        glyphs.AddRange(Text("systemu (Dz. U.)", 480, 780, 8, bold: true));
+        glyphs.AddRange(Text("poz. 1195).", 480, 790, 8, bold: true));
         glyphs.AddRange(Text("s. 2/71", 520, 40, 8));
 
         LayoutPage page = Run(glyphs);
 
         Assert.Contains(page.Lines, l => l.Role == LineRole.SideNote && l.Text == "systemu (Dz. U.)");
-        Assert.Contains(page.Lines, l => l.Role == LineRole.SideNote && l.Text == "profilu uzytkownika");
+        Assert.Contains(page.Lines, l => l.Role == LineRole.SideNote && l.Text == "poz. 1195).");
         Assert.Contains(page.Lines, l => l.Role != LineRole.SideNote && l.Text == "s. 2/71");
     }
 }

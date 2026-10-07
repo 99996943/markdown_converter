@@ -55,7 +55,10 @@ internal static partial class ListLabelPatterns
             return false;
         }
 
-        if (!Classify(label, out ListLabelKind kind, out int? ordinal))
+        // „[1)” and „<2a.” mark repealed and future wording in consolidated texts; the bracket stays in the label.
+        bool bracketed = label.Length > 1 && label[0] is '[' or '<';
+        if (!Classify(bracketed ? label[1..] : label, out ListLabelKind kind, out int? ordinal)
+            || (bracketed && kind is ListLabelKind.Bullet or ListLabelKind.Dash))
         {
             return false;
         }
