@@ -203,7 +203,10 @@ public sealed class TableDetectionStage : IPipelineStage
             .Select(s => s.X1);
         IReadOnlyList<ColumnBand> bands = ColumnClustering.Bands(lefts, right, verticals, tolerance);
 
-        bool ambiguous = multi.Select(r => r.Cells.Count).Distinct().Count() > 1
+        // With a ruled grid the rulings define the rows, so lines of one row may carry different numbers of cells.
+        List<double> horizontals = HorizontalRulings(rulings, region);
+        bool ruled = horizontals.Count >= 2;
+        bool ambiguous = (!ruled && multi.Select(r => r.Cells.Count).Distinct().Count() > 1)
             || multi.Any(r => r.Cells.Select(c => ColumnClustering.BandIndex(bands, c.Box.Left, tolerance)).Distinct().Count() < r.Cells.Count);
 
         var table = new Table(page.Number, bands, exceptions) { IsFallback = ambiguous };
@@ -222,9 +225,7 @@ public sealed class TableDetectionStage : IPipelineStage
             return table;
         }
 
-        List<double> horizontals = HorizontalRulings(rulings, region);
-
-        if (horizontals.Count >= 2)
+        if (ruled)
         {
             // Ruled grid: every line goes to the row between the rulings around its centre.
             foreach (IGrouping<int, Row> group in region.GroupBy(r => horizontals.Count(y => y <= r.Line.Box.CenterY)))
