@@ -156,8 +156,8 @@ internal static partial class ListLabelPatterns
     [GeneratedRegex(@"^\d+(\.\d+)+\.?$", RegexOptions.CultureInvariant)]
     private static partial Regex OutlineLabel();
 
-    // 1) 1a) 5¹) 1. 2a. 3¹. — at most three digits, so years („2024.”) are not labels.
-    [GeneratedRegex(@"^(?<n>\d{1,3})(?:[a-z]|[¹²³⁴⁵⁶⁷⁸⁹⁰]+)?(?<end>[).])$", RegexOptions.CultureInvariant)]
+    // 1) 1a) 4ba) 5¹) 1. 2a. 3¹. — at most three digits, so years („2024.”) are not labels.
+    [GeneratedRegex(@"^(?<n>\d{1,3})(?:[a-z]{1,2}|[¹²³⁴⁵⁶⁷⁸⁹⁰]+)?(?<end>[).])$", RegexOptions.CultureInvariant)]
     private static partial Regex ArabicLabel();
 
     [GeneratedRegex(@"^(?<r>[IVX]+)[.)]$", RegexOptions.CultureInvariant)]
