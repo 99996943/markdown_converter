@@ -177,8 +177,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     /// <summary>
     /// The document title (FR-043): a line of the first page starting with an act type in capitals („USTAWA”,
     /// „OBWIESZCZENIE”, …) — lines above it on that page (a journal masthead) stay plain text — or, without such a
-    /// line, the first line of the document when it is an enlarged heading of the top size class. Centred lines of
-    /// the title block directly below are joined to it.
+    /// line, the first line of the document when it is an enlarged heading of the top size class. Lines of the title
+    /// block directly below — centred, or in the title's own font (a multi-line title) — are joined to it.
     /// </summary>
     private static void DetectTitle(List<Entry> entries, HeadingOptions options, double leading, List<Detected> headings)
     {
@@ -204,8 +204,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             Entry next = entries[i];
             if (next.Page != first.Page
                 || next.Previous != last.Line
-                || next.Line.Baseline - last.Line.Baseline > TitleBlockGapFactor * leading
-                || !next.Centered
+                || next.Line.Baseline - last.Line.Baseline > TitleBlockGapFactor * Math.Max(leading, last.Size * 1.2)
+                || !(next.Centered || SameFont(next, first, options))
                 || next.Legal is not null
                 || next.Text.Length > options.MaxLength)
             {
@@ -221,6 +221,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         first.Consumed = true;
         headings.Add(title);
     }
+
+    private static bool SameFont(Entry a, Entry b, HeadingOptions options) =>
+        Math.Abs(a.Size - b.Size) <= options.SizeClusterTolerance && a.AllBold == b.AllBold;
 
     private static void DetectHeadings(List<Entry> entries, HeadingOptions options, double leading, List<Detected> headings)
     {
