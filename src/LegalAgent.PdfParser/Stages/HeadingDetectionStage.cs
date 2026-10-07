@@ -24,6 +24,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const int RankTitle = 0;
     private const int RankTypographicInLegal = 6;
     private const int RankUnit = 7;
+    private const int MaxMarkerLength = 4;
+    private const double MarkerSizeRatio = 0.8;
     private const int RankTypographicBase = 10;
 
     /// <inheritdoc />
@@ -207,11 +209,25 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     {
         Entry first = title.Entry;
         Entry last = first;
+        LayoutLine chain = first.Line;
         for (int i = entries.IndexOf(first) + 1; i < entries.Count; i++)
         {
             Entry next = entries[i];
+
+            // A footnote marker set apart from a title line (a title is plain text, so the marker is dropped).
+            if (next.Page == first.Page
+                && next.Previous == chain
+                && next.Text.Length <= MaxMarkerLength
+                && next.Size <= MarkerSizeRatio * last.Size)
+            {
+                title.Merged.Add(next);
+                next.Consumed = true;
+                chain = next.Line;
+                continue;
+            }
+
             if (next.Page != first.Page
-                || next.Previous != last.Line
+                || next.Previous != chain
                 || next.Line.Baseline - last.Line.Baseline > TitleBlockGapFactor * Math.Max(leading, last.Size * 1.2)
                 || !(next.Centered || SameFont(next, first, options))
                 || next.Legal is not null
@@ -224,6 +240,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             title.Text += " " + next.Text;
             next.Consumed = true;
             last = next;
+            chain = next.Line;
         }
 
         first.Consumed = true;
