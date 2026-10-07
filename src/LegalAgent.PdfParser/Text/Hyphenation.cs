@@ -40,7 +40,7 @@ internal static class Hyphenation
             return HyphenJoin.None;
         }
 
-        string prefix = TrailingLetters(end[..^1], out bool isFirstWordOfLine);
+        string prefix = TrailingLetters(end[..^1]);
         string nextWord = LeadingLetters(next);
         string compound = prefix + "-" + nextWord;
         foreach (string exception in exceptions)
@@ -56,12 +56,6 @@ internal static class Hyphenation
             return HyphenJoin.Keep;
         }
 
-        if (char.IsUpper(prefix[0]) && !isFirstWordOfLine)
-        {
-            // Capitalised noun or abbreviation in the middle of a sentence (Bielsko-biała, PKB-owski).
-            return HyphenJoin.Keep;
-        }
-
         if (prefix.Length <= MaxAbbreviationLength && prefix.All(char.IsUpper))
         {
             return HyphenJoin.Keep;
@@ -70,7 +64,7 @@ internal static class Hyphenation
         return HyphenJoin.Remove;
     }
 
-    private static string TrailingLetters(string text, out bool isFirstWordOfLine)
+    private static string TrailingLetters(string text)
     {
         int start = text.Length;
         while (start > 0 && char.IsLetter(text[start - 1]))
@@ -78,7 +72,6 @@ internal static class Hyphenation
             start--;
         }
 
-        isFirstWordOfLine = text[..start].All(c => !char.IsLetterOrDigit(c));
         return text[start..];
     }
 
