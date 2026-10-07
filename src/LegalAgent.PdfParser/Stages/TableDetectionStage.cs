@@ -30,6 +30,8 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
     private const double MinCellGapEm = 1.0;
+    private const double JustifiedGapSpread = 0.2;
+    private const int JustifiedMinSegments = 4;
 
     /// <inheritdoc />
     public int Order => StageOrder.TableDetection;
@@ -347,7 +349,27 @@ public sealed class TableDetectionStage : IPipelineStage
         /// At least two cells, not all of them as wide as a text column (two-column running text), separated by real cell
         /// gaps rather than the widened spaces of a justified line.
         /// </summary>
-        public bool IsMulti { get; } = cells.Count >= 2 && !cells.All(c => c.Box.Width >= wideCell) && HasCellGaps(cells);
+        public bool IsMulti { get; } = cells.Count >= 2
+            && !cells.All(c => c.Box.Width >= wideCell)
+            && HasCellGaps(cells)
+            && !IsEvenlySpaced(cells);
+
+        /// <summary>
+        /// A sparse justified line can stretch its spaces beyond 1 em, but then all of them alike:
+        /// <see cref="JustifiedMinSegments"/> or more segments whose gaps all lie within
+        /// <see cref="JustifiedGapSpread"/> of their median are words, not cells.
+        /// </summary>
+        private static bool IsEvenlySpaced(List<LineSegment> cells)
+        {
+            if (cells.Count < JustifiedMinSegments)
+            {
+                return false;
+            }
+
+            List<double> gaps = cells.Zip(cells.Skip(1), (a, b) => b.Box.Left - a.Box.Right).Order().ToList();
+            double median = gaps[gaps.Count / 2];
+            return median > 0 && gaps.All(g => Math.Abs(g - median) <= JustifiedGapSpread * median);
+        }
 
         /// <summary>
         /// Cell gaps are clearly wider than word spaces: the narrowest gap between segments is at least
