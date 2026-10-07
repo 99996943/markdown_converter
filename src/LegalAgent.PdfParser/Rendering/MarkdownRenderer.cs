@@ -55,7 +55,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
     {
         string heading = new string('#', Math.Clamp(section.Level, 1, 6)) + " " + MarkdownEscaper.EscapeText(section.HeadingText.Trim());
         state.Chunks.Add(MarkerLine(section.Pages.First, state) + heading);
-        state.CurrentPage = section.Pages.First;
+        state.CurrentPage = Math.Max(state.CurrentPage, section.Pages.First);
 
         RenderBlocks(section.Blocks, state);
         foreach (Section child in section.Children)
@@ -83,7 +83,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
             {
                 case ParagraphBlock paragraph:
                     string marker = MarkerLine(paragraph.Pages.First, state);
-                    state.CurrentPage = paragraph.Pages.First;
+                    state.CurrentPage = Math.Max(state.CurrentPage, paragraph.Pages.First);
                     string text = RenderInlines(paragraph.Inlines, state, trackPages: true);
                     state.CurrentPage = Math.Max(state.CurrentPage, paragraph.Pages.Last);
                     state.Chunks.Add(marker + text);
@@ -91,7 +91,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
 
                 case ListBlock list:
                     string listMarker = MarkerLine(list.Pages.First, state);
-                    state.CurrentPage = list.Pages.First;
+                    state.CurrentPage = Math.Max(state.CurrentPage, list.Pages.First);
                     var lines = new List<string>();
                     RenderListItems(list.Items, 0, lines, state);
                     state.CurrentPage = Math.Max(state.CurrentPage, list.Pages.Last);
@@ -103,7 +103,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                     state.Chunks.Add(string.Create(
                         CultureInfo.InvariantCulture,
                         $"<!-- page {skipped.PageNumber} skipped: {reason} -->"));
-                    state.CurrentPage = skipped.PageNumber;
+                    state.CurrentPage = Math.Max(state.CurrentPage, skipped.PageNumber);
                     break;
 
                 default:
@@ -179,12 +179,12 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
         int skip = 0;
         while (skip < inlines.Count && inlines[skip] is PageBreak leading)
         {
-            if (state.Options.PageMarkers && leading.PageNumber != state.CurrentPage)
+            if (state.Options.PageMarkers && leading.PageNumber > state.CurrentPage)
             {
                 lines.Add(indent + string.Create(CultureInfo.InvariantCulture, $"<!-- page: {leading.PageNumber} -->"));
             }
 
-            state.CurrentPage = leading.PageNumber;
+            state.CurrentPage = Math.Max(state.CurrentPage, leading.PageNumber);
             skip++;
         }
 
@@ -192,7 +192,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
     }
 
     private static string MarkerLine(int page, State state) =>
-        state.Options.PageMarkers && page != state.CurrentPage
+        state.Options.PageMarkers && page > state.CurrentPage
             ? string.Create(CultureInfo.InvariantCulture, $"<!-- page: {page} -->\n")
             : string.Empty;
 
@@ -212,12 +212,14 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                     break;
 
                 case PageBreak pageBreak:
+                    // Invariant 6: inside the page flow a marker never repeats or goes back.
+                    bool marker = state.Options.PageMarkers && (!trackPages || pageBreak.PageNumber > state.CurrentPage);
                     if (trackPages)
                     {
-                        state.CurrentPage = pageBreak.PageNumber;
+                        state.CurrentPage = Math.Max(state.CurrentPage, pageBreak.PageNumber);
                     }
 
-                    AppendPageBreak(sb, pageBreak.PageNumber, state.Options.PageMarkers);
+                    AppendPageBreak(sb, pageBreak.PageNumber, marker);
                     break;
             }
         }

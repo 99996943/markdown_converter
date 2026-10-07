@@ -118,8 +118,8 @@ public sealed class ListDetectionStage : IPipelineStage
                 double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
                 bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
                 entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
+                entry.FirstOnPage = above is null;
                 if (!entry.LegalUnit
-                    && !entry.HeadingLike
                     && ListLabelPatterns.TryMatch(line.Text, out ListLabelMatch? label)
                     && string.Equals(label.Label, line.Words[0].Text, StringComparison.Ordinal))
                 {
@@ -176,7 +176,7 @@ public sealed class ListDetectionStage : IPipelineStage
         }
 
         bool Follows(Entry previous, Entry next) =>
-            previous.Label!.Ordinal + 1 == next.Label!.Ordinal
+            NextInSequence(previous.Label!, next.Label!)
             && (previous.ArticleUstep || Math.Abs(previous.LabelX - next.LabelX) <= tolerance);
 
         for (int k = 0; k < candidates.Count; k++)
@@ -192,6 +192,18 @@ public sealed class ListDetectionStage : IPipelineStage
             e.Accepted = before || after;
         }
     }
+
+    /// <summary>
+    /// <paramref name="next"/> continues the numbering of <paramref name="previous"/>: the next number, or the same number
+    /// when one of them is bracketed (repealed „[2.” followed by the future wording „&lt;2.” or an added „&lt;2a.”).
+    /// </summary>
+    private static bool NextInSequence(ListLabelMatch previous, ListLabelMatch next) =>
+        previous.Kind == next.Kind
+        && previous.Ordinal is int p
+        && next.Ordinal is int n
+        && (n == p + 1 || (n == p && (Bracketed(previous.Label) || Bracketed(next.Label))));
+
+    private static bool Bracketed(string label) => label.Length > 1 && label[0] is '[' or '<';
 
     private static int? Rank(ListLabelKind kind) => kind switch
     {
@@ -231,10 +243,11 @@ public sealed class ListDetectionStage : IPipelineStage
         private void Visit(Entry entry, Entry? next)
         {
             LayoutLine line = entry.Line;
-            if (line.Role != LineRole.Unknown || entry.LegalUnit || entry.HeadingLike || !GapAllowsContinuation(entry))
+            bool headingLike = entry.HeadingLike && !ContinuesOpenList(entry);
+            if (line.Role != LineRole.Unknown || entry.LegalUnit || headingLike || !GapAllowsContinuation(entry))
             {
                 Reset();
-                if (line.Role != LineRole.Unknown || entry.LegalUnit || entry.HeadingLike)
+                if (line.Role != LineRole.Unknown || entry.LegalUnit || headingLike)
                 {
                     return;
                 }
@@ -255,6 +268,27 @@ public sealed class ListDetectionStage : IPipelineStage
             }
 
             VisitUnlabelled(entry);
+        }
+
+        /// <summary>
+        /// A line printed like a heading still belongs to an open list when it continues the numbering of an open item
+        /// (ISAP prints future wording in bold) or, unlabelled, when it is the first line of a page.
+        /// </summary>
+        private bool ContinuesOpenList(Entry entry)
+        {
+            if (_stack.Count == 0)
+            {
+                return false;
+            }
+
+            if (entry.Label is not { } label)
+            {
+                return entry.FirstOnPage;
+            }
+
+            bool continues = _stack.Any(o => Math.Abs(o.LabelX - entry.LabelX) <= _tolerance && NextInSequence(o.Label, label));
+            entry.Accepted |= continues;
+            return continues;
         }
 
         private void VisitDash(Entry entry, Entry? next)
@@ -369,7 +403,7 @@ public sealed class ListDetectionStage : IPipelineStage
             ListLabelMatch label = entry.Label!;
             var item = new OpenItem(
                 _nextId++,
-                label.Kind,
+                label,
                 entry.LabelX,
                 entry.Line.Words.Count > 1 ? entry.Line.Words[1].Box.Left : entry.Line.Box.Right);
 
@@ -447,6 +481,8 @@ public sealed class ListDetectionStage : IPipelineStage
 
         public bool HeadingLike { get; set; }
 
+        public bool FirstOnPage { get; set; }
+
         public ListLabelMatch? Label { get; set; }
 
         public bool ArticleUstep { get; set; }
@@ -454,11 +490,13 @@ public sealed class ListDetectionStage : IPipelineStage
         public bool Accepted { get; set; }
     }
 
-    private sealed class OpenItem(int id, ListLabelKind kind, double labelX, double textX)
+    private sealed class OpenItem(int id, ListLabelMatch label, double labelX, double textX)
     {
         public int Id { get; } = id;
 
-        public ListLabelKind Kind { get; } = kind;
+        public ListLabelMatch Label { get; } = label;
+
+        public ListLabelKind Kind => Label.Kind;
 
         public double LabelX { get; } = labelX;
 
