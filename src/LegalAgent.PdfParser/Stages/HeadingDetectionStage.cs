@@ -198,6 +198,14 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         }
 
         var title = new Detected(first, SectionKind.DocumentTitle) { Text = first.Text, Rank = RankTitle, Level = 1 };
+        MergeTitleBlock(title, entries, options, leading);
+        headings.Add(title);
+    }
+
+    /// <summary>Appends to a title the following lines of its block: close below, centred or in the title's font.</summary>
+    private static void MergeTitleBlock(Detected title, List<Entry> entries, HeadingOptions options, double leading)
+    {
+        Entry first = title.Entry;
         Entry last = first;
         for (int i = entries.IndexOf(first) + 1; i < entries.Count; i++)
         {
@@ -219,7 +227,6 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         }
 
         first.Consumed = true;
-        headings.Add(title);
     }
 
     private static bool SameFont(Entry a, Entry b, HeadingOptions options) =>
@@ -243,6 +250,15 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             {
                 headings.Add(LegalHeading(entry, unit, next, options, leading));
                 entry.Consumed = true;
+                continue;
+            }
+
+            // FR-043: the title block of an act further in the document (an act announced in an annex) is one heading.
+            if ((entry.Candidate || entry.Centered) && ActType().IsMatch(entry.Text))
+            {
+                var block = new Detected(entry, SectionKind.Typographic) { Text = entry.Text };
+                MergeTitleBlock(block, entries, options, leading);
+                headings.Add(block);
                 continue;
             }
 
