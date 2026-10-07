@@ -301,9 +301,9 @@ public sealed class TableDetectionStageTests
     }
 
     [Fact]
-    public void JustifiedTextSplitIntoEvenlySpacedWords_IsNotATable()
+    public void JustifiedTextSplitIntoWords_IsNotATable()
     {
-        // Wide justification spaces exceed the cell gap, so every word is its own segment; the gaps are all alike.
+        // Justification widens spaces past the cell threshold (here to 6 pt, 0.6 em), so every word is its own segment.
         static LayoutLine Justified(double top, params string[] words)
         {
             var cells = new List<(string, double)>();
@@ -311,7 +311,7 @@ public sealed class TableDetectionStageTests
             foreach (string word in words)
             {
                 cells.Add((word, x));
-                x += (word.Length * LayoutFactory.CharWidth) + 16;
+                x += (word.Length * LayoutFactory.CharWidth) + 6;
             }
 
             return Row(top, cells.ToArray());
