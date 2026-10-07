@@ -305,9 +305,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             && !next.Text.EndsWith('.')
             && !next.Text.EndsWith(',')
             && !next.Text.EndsWith(';')
-            && (next.AllBold == entry.AllBold || next.Caps))
+            && (next.AllBold == entry.AllBold || next.AllBold || next.Caps))
         {
-            // FR-044: „Rozdział 3” followed by its title line in the same style.
+            // FR-044: „Rozdział 3” followed by its title line in the same style, or in bold (ISAP).
             heading.Title = next.Text;
             heading.Merged.Add(next);
             next.Consumed = true;
