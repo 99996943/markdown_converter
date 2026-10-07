@@ -28,6 +28,8 @@ public sealed class ListLabelPatternsTests
     [InlineData("1) Treść", "1)", ListLabelKind.ArabicParen, 1, "Treść")]
     [InlineData("12) Treść", "12)", ListLabelKind.ArabicParen, 12, "Treść")]
     [InlineData("1a) Treść", "1a)", ListLabelKind.ArabicParen, 1, "Treść")]
+    [InlineData("4ba) Centralnym Biurze", "4ba)", ListLabelKind.ArabicParen, 4, "Centralnym Biurze")]
+    [InlineData("2ab. Treść", "2ab.", ListLabelKind.ArabicDot, 2, "Treść")]
     [InlineData("5¹) Treść", "5¹)", ListLabelKind.ArabicParen, 5, "Treść")]
     [InlineData("a) Treść", "a)", ListLabelKind.LetterParen, 1, "Treść")]
     [InlineData("z) Treść", "z)", ListLabelKind.LetterParen, 26, "Treść")]
