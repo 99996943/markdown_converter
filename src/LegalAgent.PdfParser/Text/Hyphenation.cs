@@ -20,9 +20,9 @@ internal static class Hyphenation
 
     /// <summary>
     /// Decides the join. The hyphen is removed when it is the last character of the line, follows a letter, and
-    /// the next line starts with a lowercase letter. It is kept when the first part is a one-letter prefix, an
-    /// abbreviation or a capitalised noun that is not the first word of the line, when the next line starts with an
-    /// uppercase letter, or when the result is on the exception list.
+    /// the next line starts with a lowercase letter. It is kept when the first part is a one-letter prefix or an
+    /// upper-case abbreviation (PKB-owski), when the next line starts with an uppercase letter (Bielsko-Biała), or when
+    /// the result is on the exception list. A capitalised first part alone does not keep it (Zagra-nicznych → Zagranicznych).
     /// </summary>
     /// <param name="lineEnd">Text of the line that ends with the hyphen.</param>
     /// <param name="nextLineStart">Text of the following line.</param>
