@@ -359,4 +359,35 @@ public sealed class TableDetectionStageTests
 
         Assert.Equal(["Przelew", "–", "bez oplat"], SingleTable(context).Rows[1].Cells.Select(Text));
     }
+
+    [Fact]
+    public void RuledGridWithVerticallyCentredCells_IsNotAmbiguous_FR064()
+    {
+        // Lines of one ruled row carry 2 or 3 cells because each cell is centred against the tallest one.
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            Row(100, ("rodzaj wplaty", C1), ("kiedy przyjmujemy", C2), ("kiedy uznamy", C3)),
+            Row(130, ("wplata karta", C1), ("w godzinach dostepnosci", C2)),
+            Row(142, ("we wplatomacie", C1), ("wplatomatow", C2), ("natychmiast", C3)),
+            Row(172, ("wplata w placowce", C1), ("w godzinach pracy", C2), ("natychmiast", C3)),
+            Row(202, ("inny rodzaj", C1), ("okreslamy", C3)),
+            Row(214, ("wplaty", C1), ("w regulaminach", C2), ("w regulaminach", C3)),
+        ]);
+        foreach (double y in new[] { 95, 120, 160, 190, 226 })
+        {
+            page.Rulings.Add(new Segment(C1 - 5, y, 560, y));
+        }
+
+        TableBlock table = SingleTable(Run(page));
+
+        Assert.False(table.IsFallback);
+        Assert.Equal(
+            [
+                ["rodzaj wplaty", "kiedy przyjmujemy", "kiedy uznamy"],
+                ["wplata karta we wplatomacie", "w godzinach dostepnosci wplatomatow", "natychmiast"],
+                ["wplata w placowce", "w godzinach pracy", "natychmiast"],
+                ["inny rodzaj wplaty", "w regulaminach", "okreslamy w regulaminach"],
+            ],
+            Cells(table.Rows));
+    }
 }
