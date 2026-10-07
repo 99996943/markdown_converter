@@ -181,10 +181,15 @@ zmiany heurystyk nie łamały kontraktu SemVer.
   linii z wcięciem pozycji).
 - Weryfikacja: ustawa o służbie cywilnej — Art. 2 z 4ba)/4bb) i częścią wspólną poprawnie zagnieżdżone przez granicę strony;
   mBank — 1) → a) → punktory i „- znajdziesz…” jako część wspólna; obwieszczenie MSZ — ustępy § jako listy.
-- **Otwarty problem (decyzja właściciela)**: boczne adnotacje redakcyjne ISAP na prawym marginesie (x≈480, pogrubione,
-  „Nowe brzmienie pkt 1 w art. 4 wejdzie w życie…”, „Dodany art. 28a…”) są składane w jedne linie z tekstem lub przeplatane
-  z nim; zrywają listy (pogrubienie = styl nagłówka) i dają fałszywe `### 3)`, `### 4.`, `### 2.` oraz wtrącenia w treści
-  Art. 3–5. Do rozstrzygnięcia: usuwać jako artefakt (z raportem) czy wydzielać jako osobny akapit/cytat po treści strony.
+- **Adnotacje boczne (FR-034, decyzja właściciela: wariant b)**: wąska kolumna mniejszą czcionką przy krawędzi strony jest
+  wydzielana już w `LineAssemblyStage` (rola `SideNote`, także gdy schodzi w strefę stopki), pomijana przez listy, nagłówki
+  i kolejność czytania, a w `BlockAssemblyStage` wypuszczana w całości jako osobny akapit po bloku, obok którego stoi.
+  Znaczniki stron nigdy się nie cofają (niezmiennik 6 kontraktu Markdown).
+- **Notacja zmian ISAP**: oznaczenia `[1)`, `<2a.` są rozpoznawane (FR-050), pary `[2.`/`<2.` nie przerywają numeracji,
+  pogrubione nowe brzmienie w otwartej liście nie jest nagłówkiem. **Znane ograniczenie**: artykuł w nawiasie zmian
+  (`[Art. 31. …]` / `<Art. 31. …>`) nie jest rozpoznawany jako jednostka — nowe brzmienie dokleja się do poprzedniej
+  pozycji, a jego ust. 2 wychodzi jako `### 2. …` (ustawa o służbie cywilnej, s. 21–22). Do decyzji: jak przedstawiać
+  podwójne brzmienie artykułu.
 - Drobne: w spisie treści mBanku zawinięta pozycja 25 (kontynuacja na wysokości oznaczenia) wychodzi jako akapit.
 
 **Sposób pracy (uzgodniony z właścicielem projektu)**
