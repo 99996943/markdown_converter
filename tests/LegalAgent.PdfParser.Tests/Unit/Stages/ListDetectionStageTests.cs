@@ -438,4 +438,24 @@ public sealed class ListDetectionStageTests
         AssertItem(Find(context, "3) zapewnia"), "3)", ListLabelKind.ArabicParen);
         Assert.Equal(string.Empty, Parent(Find(context, "4) przeciw")));
     }
+
+    [Fact]
+    public void BoldPassage_PointsAndRunOnUstepsAreItemsNotHeadings()
+    {
+        // A passage printed in bold: a point introducing letters, and an ustęp whose sentence runs on.
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("1. Dostawca informuje konsumenta o oplatach.", Indent, 100),
+            Bold(LayoutFactory.Line("1) zawarciem umowy:", Margin, 130)),
+            Bold(LayoutFactory.Line("a) rachunku platniczego,", Indent, 150)),
+            Bold(LayoutFactory.Line("2. Dostawca, o ktorym mowa w ust. 1, nie moze domagac sie", Indent, 180)),
+            Bold(LayoutFactory.Line("zaspokojenia roszczenia z tytulu zawarcia umowy.", Margin, 200)),
+        ]);
+
+        PipelineContext context = Run(page);
+
+        AssertItem(Find(context, "1) zawarciem"), "1)", ListLabelKind.ArabicParen);
+        AssertItem(Find(context, "2. Dostawca"), "2.", ListLabelKind.ArabicDot);
+        AssertContinues(Find(context, "zaspokojenia"), Find(context, "2. Dostawca"));
+    }
 }
