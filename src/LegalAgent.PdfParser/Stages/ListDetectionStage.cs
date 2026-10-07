@@ -45,6 +45,7 @@ public sealed class ListDetectionStage : IPipelineStage
         }
 
         List<Entry> entries = Collect(context, articleUsteps);
+        KeepLabelledBoldTextInLists(entries, context);
         AcceptArabicDotSequences(entries, context.Options.Lists.IndentTolerance);
         new Walker(context).Run(entries);
     }
@@ -131,6 +132,48 @@ public sealed class ListDetectionStage : IPipelineStage
         }
 
         return entries;
+    }
+
+    /// <summary>
+    /// A bold passage is not a run of headings: points, letters, tirets and bullets never number headings, and a
+    /// labelled line whose sentence runs on into the next line (starting lowercase) is a paragraph of a list.
+    /// </summary>
+    private static void KeepLabelledBoldTextInLists(List<Entry> entries, PipelineContext context)
+    {
+        double gapFactor = context.Options.Layout.ParagraphGapFactor;
+        for (int i = 0; i < entries.Count; i++)
+        {
+            Entry entry = entries[i];
+            if (!entry.HeadingLike || entry.Label is not { } label)
+            {
+                continue;
+            }
+
+            Entry? next = i + 1 < entries.Count && entries[i + 1].Page == entry.Page ? entries[i + 1] : null;
+            double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * entry.Line.Box.Height;
+            bool runsOn = next is not null
+                && next.Label is null
+                && next.Line.Baseline - entry.Line.Baseline <= gapFactor * leading
+                && StartsLowercase(next.Line.Text);
+            if (label.Kind is ListLabelKind.ArabicParen or ListLabelKind.LetterParen or ListLabelKind.Dash or ListLabelKind.Bullet
+                || runsOn)
+            {
+                entry.HeadingLike = false;
+            }
+        }
+    }
+
+    private static bool StartsLowercase(string text)
+    {
+        foreach (char c in text)
+        {
+            if (char.IsLetter(c))
+            {
+                return char.IsLower(c);
+            }
+        }
+
+        return false;
     }
 
     private static bool IsHeadingLike(LayoutLine line, double bodySize, double sizeRatio)
