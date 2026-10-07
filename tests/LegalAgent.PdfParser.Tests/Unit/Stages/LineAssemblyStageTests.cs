@@ -515,4 +515,25 @@ public sealed class LineAssemblyStageTests
         Assert.Contains(page.Lines, l => l.Role == LineRole.SideNote && l.Text == "poz. 1195).");
         Assert.Contains(page.Lines, l => l.Role != LineRole.SideNote && l.Text == "s. 2/71");
     }
+
+    [Fact]
+    public void LetterSpacedTitleWithoutSpaceGlyphs_IsOneWord_FR011()
+    {
+        // ISAP sets „USTAWA” with tracking: gaps of 0.11–0.23 em between letters and no space glyphs.
+        double[] gaps = [2.75, 2.81, 1.73, 1.42, 1.35];
+        var glyphs = new List<LayoutGlyph>();
+        double x = 237;
+        string word = "USTAWA";
+        for (int i = 0; i < word.Length; i++)
+        {
+            glyphs.AddRange(Text(word[i].ToString(), x, 196, 12));
+            x += (0.5 * 12) + (i < gaps.Length ? gaps[i] : 0);
+        }
+
+        glyphs.AddRange(Text("z dnia 21 listopada 2008 r.", 206, 222, 12, explicitSpaces: false));
+
+        LayoutPage page = Run(glyphs);
+
+        Assert.Equal(["USTAWA", "z dnia 21 listopada 2008 r."], LineTexts(page));
+    }
 }
