@@ -10,6 +10,9 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
   <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\src\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
     <ProjectReference Include="..\..\src\LegalAgent.PdfParser.Cli\LegalAgent.PdfParser.Cli.csproj" />
   </ItemGroup>
