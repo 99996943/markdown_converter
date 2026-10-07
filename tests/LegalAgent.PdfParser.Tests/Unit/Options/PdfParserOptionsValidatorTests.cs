@@ -61,7 +61,7 @@ public sealed class PdfParserOptionsValidatorTests
         Assert.Equal(0.75, o.Layout.ShortLineRatio);
         Assert.Equal(0.02, o.Layout.GutterMinWidthRatio);
         Assert.Equal(0.6, o.Layout.GutterMinHeightRatio);
-        Assert.Equal(0.3, o.Layout.ColumnMinLineWidthRatio);
+        Assert.Equal(0.25, o.Layout.ColumnMinLineWidthRatio);
         Assert.Equal(1.15, o.Headings.SizeRatio);
         Assert.Equal(1.3, o.Headings.GapFactor);
         Assert.Equal(0.05, o.Headings.CenterTolerance);

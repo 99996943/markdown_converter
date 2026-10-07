@@ -536,4 +536,17 @@ public sealed class LineAssemblyStageTests
 
         Assert.Equal(["USTAWA", "z dnia 21 listopada 2008 r."], LineTexts(page));
     }
+
+    [Fact]
+    public void OffsetLineOfTheOtherColumn_IsNotPulledIntoThisColumnsLine_FR030()
+    {
+        // Right-column baselines run 4 pt below the left ones: ink overlaps vertically, but the columns are far apart.
+        var glyphs = new List<LayoutGlyph>();
+        glyphs.AddRange(Text("Regulamin okresla zasady korzystania z", 73, 138, 10));
+        glyphs.AddRange(Text("dyspozycje do momentu jej przyjecia do", 344, 142, 10));
+
+        LayoutPage page = Run(glyphs);
+
+        Assert.Equal(["Regulamin okresla zasady korzystania z", "dyspozycje do momentu jej przyjecia do"], LineTexts(page));
+    }
 }
