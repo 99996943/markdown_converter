@@ -164,9 +164,28 @@ zmiany heurystyk nie łamały kontraktu SemVer.
 
 ## Stan prac i przekazanie (2026-10-07, koniec sesji)
 
-**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`). **Ukończone**: Phase 1–5 = Setup, Foundational, US1, US5, US2
-(T001–T065, 65 zadań `[X]`); `dotnet test LegalAgent.slnx -c Release` → 471/471, build bez ostrzeżeń.
-**Następne**: US3 (T066–T073, listy) i US4 (T074–T081, tabele) — niezależne; potem US6 (T082–T088), CLI (T089–T090), Polish (T091–T100).
+**Gałąź**: `001-legal-pdf-parser` (praca nigdy na `main`). **Ukończone**: Phase 1–6 = Setup, Foundational, US1, US5, US2, US3
+(T001–T073, 73 zadania `[X]`); `dotnet test LegalAgent.slnx -c Release` → 591/591, build bez ostrzeżeń.
+**Następne**: US4 (T074–T081, tabele); potem US6 (T082–T088), CLI (T089–T090), Polish (T091–T100).
+
+**US3 — jak działają listy (sesja 2026-10-07, wieczór)**
+- `ListLabelPatterns` (Text) klasyfikuje oznaczenie = pierwsze słowo linii. `ListDetectionStage` (800) przechodzi linie ze stosem
+  otwartych pozycji; drzewo zapisuje w adnotacjach linii (`LayoutAnnotations.List*`: id, rodzic, właściciel kontynuacji,
+  część wspólna). Zagnieżdżenie: oznaczenia prawne wg hierarchii ust. „1.” → pkt „1)” → lit. „a)” → tiret „–” (w ISAP punkty
+  ustępu stoją *na lewo* od ustępu), pozostałe wg wcięcia. Kontynuacja = linia wcięta dalej niż oznaczenie (wcięcie wiszące,
+  także na następnej stronie) albo powrót do marginesu ustępu ISAP (wcięcie pierwszej linii). Część wspólna = linia „– …”
+  na wysokości oznaczeń zamkniętego wyliczenia lub linia wyrównana do tekstu pozycji nadrzędnej. „Art. 5. 1. Treść” jest
+  dzielone na „Art. 5.” (dla nagłówków) i ustęp 1. Linie pogrubione/powiększone zostawiane są nagłówkom.
+- `BlockAssemblyStage` składa `ListBlock` (`LayoutBlock.List`), `DocumentBuildStage` numeruje przypisy w pozycjach i liczy
+  `ListCount`; renderer (Sonnet, przejrzany) — zasady w contracts/markdown-output.md (pozycja od nowej strony: znacznik w osobnej
+  linii z wcięciem pozycji).
+- Weryfikacja: ustawa o służbie cywilnej — Art. 2 z 4ba)/4bb) i częścią wspólną poprawnie zagnieżdżone przez granicę strony;
+  mBank — 1) → a) → punktory i „- znajdziesz…” jako część wspólna; obwieszczenie MSZ — ustępy § jako listy.
+- **Otwarty problem (decyzja właściciela)**: boczne adnotacje redakcyjne ISAP na prawym marginesie (x≈480, pogrubione,
+  „Nowe brzmienie pkt 1 w art. 4 wejdzie w życie…”, „Dodany art. 28a…”) są składane w jedne linie z tekstem lub przeplatane
+  z nim; zrywają listy (pogrubienie = styl nagłówka) i dają fałszywe `### 3)`, `### 4.`, `### 2.` oraz wtrącenia w treści
+  Art. 3–5. Do rozstrzygnięcia: usuwać jako artefakt (z raportem) czy wydzielać jako osobny akapit/cytat po treści strony.
+- Drobne: w spisie treści mBanku zawinięta pozycja 25 (kontynuacja na wysokości oznaczenia) wychodzi jako akapit.
 
 **Sposób pracy (uzgodniony z właścicielem projektu)**
 - Implementacja wyłącznie przez `/speckit-implement` z zakresem zadań w argumencie; po każdej fazie odhaczanie `[X]` w tasks.md.
@@ -194,8 +213,8 @@ zmiany heurystyk nie łamały kontraktu SemVer.
 - US4: linie tabel (nagłówki kolumn, terminy z tabeli definicji, wiersze sekcji taryfy „II. Czynności…”) są dziś brane za
   nagłówki typograficzne; po oznaczeniu `Role = Table` wypadną z detekcji (FR-047). `DocumentBuildStage`/renderer nie obsługują
   jeszcze `TableBlock` (rzucają wyjątek) — do zrobienia w T080–T081.
-- US3: wcięcie wiszące (pierwsza linia wysunięta: etykiety list, cytowane przypisy „„2) …”) rozrywa akapit na dwa;
-  `MarkdownRenderer` rzuca dla `ListBlock` — do zrobienia w T072–T073.
+- US3 (zrobione): wcięcie wiszące etykiet list obsługiwane przez listy; cytowane przypisy „„2) …” — do sprawdzenia;
+  renderer obsługuje `ListBlock`.
 - Regulamin mBanku: podtytuł „obowiązuje od …” (inna czcionka pod tytułem) wychodzi jako `##`, przez co rozdziały mają `###`;
   decyzja właściciela otwarta (czy dołączać do bloku tytułowego wszystko do pierwszego tekstu podstawowego).
 - Odnośnik przypisu w tytule dokumentu jest pomijany (tytuł to `string`); definicja trafia do przypisów preambuły.

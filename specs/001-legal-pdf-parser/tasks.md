@@ -169,17 +169,17 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T066 [P] [US3] Write `tests/LegalAgent.PdfParser.Tests/Unit/Text/ListLabelPatternsTests.cs` (FR-050): classifies `•`, `▪`, `◦`, `‣`, `–`, `—`, `-`, `*`, Symbol/Wingdings bullet glyphs (→ `Bullet`), `1)`, `1a)`, `a)`, `aa)`, `1.`, `IV.`, `iv)`, `1.2.3.`; requires following space/gap and text
-- [ ] T067 [P] [US3] Write `tests/LegalAgent.PdfParser.Tests/Unit/Stages/ListDetectionStageTests.cs`: `N.` is a list only in a sequence of ≥ 2 increasing numbers at same indent or as article ustęp; `2024 r. weszła…` stays a paragraph (FR-051); nesting by label X with 1.5 pt tolerance and legal hierarchy ust. → pkt → lit. → tiret (FR-052); wrapped lines aligned to item text are continuations, also across page break (FR-053); trailing common part aligned to parent text becomes paragraph after list (FR-054); `Lists.Enabled = false` disables
-- [ ] T068 [P] [US3] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererListTests.cs`: `- 1\) …`, nested 2-space indent `  - a\) …`, bullet char dropped `- karta debetowa`, tiret `- – …`, inline page marker inside item, blank lines between list and paragraphs
-- [ ] T069 [US3] Write integration test `tests/LegalAgent.PdfParser.Tests/Integration/ListsIntegrationTests.cs` with golden `Integration/Expected/us3-lists.expected.md`
+- [X] T066 [P] [US3] Write `tests/LegalAgent.PdfParser.Tests/Unit/Text/ListLabelPatternsTests.cs` (FR-050): classifies `•`, `▪`, `◦`, `‣`, `–`, `—`, `-`, `*`, Symbol/Wingdings bullet glyphs (→ `Bullet`), `1)`, `1a)`, `a)`, `aa)`, `1.`, `IV.`, `iv)`, `1.2.3.`; requires following space/gap and text
+- [X] T067 [P] [US3] Write `tests/LegalAgent.PdfParser.Tests/Unit/Stages/ListDetectionStageTests.cs`: `N.` is a list only in a sequence of ≥ 2 increasing numbers at same indent or as article ustęp; `2024 r. weszła…` stays a paragraph (FR-051); nesting by label X with 1.5 pt tolerance and legal hierarchy ust. → pkt → lit. → tiret (FR-052); wrapped lines aligned to item text are continuations, also across page break (FR-053); trailing common part aligned to parent text becomes paragraph after list (FR-054); `Lists.Enabled = false` disables
+- [X] T068 [P] [US3] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererListTests.cs`: `- 1\) …`, nested 2-space indent `  - a\) …`, bullet char dropped `- karta debetowa`, tiret `- – …`, inline page marker inside item, blank lines between list and paragraphs
+- [X] T069 [US3] Write integration test `tests/LegalAgent.PdfParser.Tests/Integration/ListsIntegrationTests.cs` with golden `Integration/Expected/us3-lists.expected.md`
 
 ### Implementation for User Story 3
 
-- [ ] T070 [P] [US3] Implement `src/LegalAgent.PdfParser/Text/ListLabelPatterns.cs` to pass T066
-- [ ] T071 [US3] Implement `src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs` (Order 800) to pass T067
-- [ ] T072 [US3] Extend `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs` to build `ListBlock`/`ListItem` (children, continuations, common part) from list roles
-- [ ] T073 [US3] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with lists to pass T068 and T069
+- [X] T070 [P] [US3] Implement `src/LegalAgent.PdfParser/Text/ListLabelPatterns.cs` to pass T066
+- [X] T071 [US3] Implement `src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs` (Order 800) to pass T067
+- [X] T072 [US3] Extend `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs` to build `ListBlock`/`ListItem` (children, continuations, common part) from list roles
+- [X] T073 [US3] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with lists to pass T068 and T069
 
 ---
 
