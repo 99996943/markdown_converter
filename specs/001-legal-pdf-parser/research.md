@@ -61,6 +61,16 @@ Każda pozycja: **Decyzja** / **Uzasadnienie** / **Rozważone alternatywy**.
   sieciowych (edge case) i daje egzekwowalny limit. Async dotyczy I/O; przetwarzanie stron jest
   CPU-bound i odbywa się na wątku wywołującego z kontrolą anulowania przed każdą stroną
   (biblioteka nie robi `Task.Run` — decyzję o odciążeniu wątku zostawia aplikacji).
+- **Decyzja T037**: `ParsingOptions.UseLenientParsing = true` (`SkipMissingFonts = false`).
+  Uzasadnienie: tryb ścisły odrzuca realne PDF z drobnymi defektami struktury (błędne offsety xref,
+  brak `endobj`), co dla generatorów bankowych dawałoby fałszywe `Corrupted`. Tryb łagodny naprawia
+  takie defekty, więc `InvalidPdfException(Corrupted)` (FR-009) oznacza plik, którego nie da się
+  otworzyć nawet po naprawie (zweryfikowane na `Corpus/errors/truncated.pdf`). Rozróżnienie z
+  FR-009a pozostaje ostre: błędy struktury pliku występują przy `PdfDocument.Open` (→ `Corrupted`,
+  zawsze błąd), a błędy treści pojedynczej strony przy `GetPage(n)`/odczycie liter (→ strona
+  pominięta lub `PdfPageReadException` wg `AllowPartialResult`). Etap ekstrakcji NIE ponawia
+  otwarcia w trybie ścisłym. Pliki z samymi ograniczeniami uprawnień (puste hasło użytkownika) są
+  otwierane normalnie (`Corpus/errors/permissions-only.pdf`).
 - **Alternatywy**: `PdfDocument.Open(Stream)` bezpośrednio — odrzucone (nieprzewijalne strumienie,
   brak limitu rozmiaru); `Task.Run` wewnątrz biblioteki — antywzorzec w bibliotekach.
 
