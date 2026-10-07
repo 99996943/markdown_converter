@@ -153,7 +153,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 
 - [X] T061 [P] [US2] Implement `src/LegalAgent.PdfParser/Text/LegalUnitPatterns.cs` to pass T055
 - [X] T062 [US2] Implement `src/LegalAgent.PdfParser/Stages/HeadingDetectionStage.cs` (Order 900) to pass T056
-- [ ] T063 [US2] Implement `src/LegalAgent.PdfParser/Stages/FootnoteDetectionStage.cs` (Order 500) to pass T057
+- [X] T063 [US2] Implement `src/LegalAgent.PdfParser/Stages/FootnoteDetectionStage.cs` (Order 500) to pass T057
 - [ ] T064 [US2] Extend `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` with section tree, `Path`, page ranges and footnote placement to pass T058
 - [ ] T065 [US2] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with headings and footnotes to pass T059 and T060
 
