@@ -322,7 +322,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
         if (unit.Kind is SectionKind.Article or SectionKind.Paragraph)
         {
-            heading.Text = unit.Designation + ".";
+            heading.Text = unit.Prefix + unit.Designation + ".";
             heading.SplitRest = unit.Rest.Length > 0;
             return heading;
         }

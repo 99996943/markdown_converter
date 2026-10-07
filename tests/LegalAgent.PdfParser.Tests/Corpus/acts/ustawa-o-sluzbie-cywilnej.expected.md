@@ -359,8 +359,9 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 - 2\. Nabór, o którym mowa w ust. 1, dotyczy także absolwentów Krajowej Szkoły Administracji Publicznej im. Prezydenta Rzeczypospolitej Polskiej Lecha Kaczyńskiego.
 - 3\. Nabór kandydatów do korpusu służby cywilnej na stanowiska związane z obronnością kraju odbywa się z uwzględnieniem pierwszeństwa w zatrudnieniu przysługującego osobom zwolnionym z zawodowej służby wojskowej, o których mowa w art. 235 ust. 1 ustawy z dnia 11 marca 2022 r. o obronie Ojczyzny (Dz. U. z 2025 r. poz. 825, 1014 i 1080 oraz z 2026 r. poz. 26 i 426).
 
-**\<Art. 26a. 1. Dyrektor generalny urzędu powołuje komisję, której zadaniem jest przeprowadzenie naboru w sposób gwarantujący zachowanie otwartości i konkurencyjności.**
+### \<Art. 26a.
 
+- 1\. **Dyrektor generalny urzędu powołuje komisję, której zadaniem jest przeprowadzenie naboru w sposób gwarantujący zachowanie otwartości i konkurencyjności.**
 - 2\. **W skład komisji wchodzą osoby, których wiedza i doświadczenie dają rękojmię wyłonienia najlepszych kandydatów.**
 - 3\. **Członek komisji ma obowiązek zachowania w tajemnicy uzyskanych w trakcie naboru informacji o kandydatach.\>**
 
@@ -368,7 +369,11 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 
 - 1\. Główny Lekarz Weterynarii organizuje nabór na stanowiska granicznego lekarza weterynarii i jego zastępcy.
 - 2\. (uchylony)
-- 3\. Do naboru, o którym mowa w ust. 1, stosuje się odpowiednio przepisy niniejszego rozdziału. **\<Art. 27a. 1. Szef Służby Cywilnej prowadzi system teleinformatyczny, który umożliwia:**
+- 3\. Do naboru, o którym mowa w ust. 1, stosuje się odpowiednio przepisy niniejszego rozdziału.
+
+### \<Art. 27a.
+
+- 1\. **Szef Służby Cywilnej prowadzi system teleinformatyczny, który umożliwia:**
   - 1\) **zamieszczanie ogłoszeń o naborze oraz o wyniku naboru;**
   - 2\) **składanie wymaganych dokumentów, po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia;**
   - 3\) **dokumentowanie przebiegu naboru, w tym oceny kandydatów;**
@@ -396,20 +401,22 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
   - 11\) **informacja o spełnianiu warunków, o których mowa w art. 4 pkt 2 i 3 i art. 4a, oraz warunków wynikających z przepisów szczególnych;**
   - 12\) **informacja o niepełnosprawności uzyskana na podstawie art. 28 ust. 5.**
 - 4\. **Szef Służby Cywilnej jako administrator danych przetwarza w systemie teleinformatycznym dane osobowe użytkowników tego systemu w celu realizacji czynności, o których mowa w ust. 1 pkt 1 i 4.**
-- 5\. **Czynności, o której mowa w ust. 1 pkt 3, dokonuje dyrektor generalny urzędu lub osoba przez niego upoważniona. Uwierzytelnienie w systemie teleinformatycznym następuje z wykorzystaniem loginu i hasła dostępowego do konta użytkownika po uprzednim uwierzytelnieniu tego konta z wykorzystaniem służbowego adresu poczty elektronicznej.\>** ***\[Art. 28.*** *1. Dyrektor generalny urzędu, z zastrzeżeniem art. 39, ma obowiązek upowszechniać informacje o wolnych stanowiskach pracy przez* <!-- page: 17 --> *umieszczenie ogłoszenia o naborze w miejscu powszechnie dostępnym w siedzibie urzędu, w Biuletynie Informacji Publicznej urzędu, zwanym dalej „Biuletynem urzędu”, oraz w Biuletynie Informacji Publicznej Kancelarii Prezesa Rady Ministrów, zwanym dalej „Biuletynem Kancelarii”.*
+- 5\. **Czynności, o której mowa w ust. 1 pkt 3, dokonuje dyrektor generalny urzędu lub osoba przez niego upoważniona. Uwierzytelnienie w systemie teleinformatycznym następuje z wykorzystaniem loginu i hasła dostępowego do konta użytkownika po uprzednim uwierzytelnieniu tego konta z wykorzystaniem służbowego adresu poczty elektronicznej.\>**
 
 **Dodany art. 26a i art. 27a wejdą w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatyczneg o, który umożliwia zamieszczanie ogłoszeń o naborze kandydatów do korpusu służby cywilnej oraz o wyniku naboru, składanie wymaganych dokumentów – po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia, dokumentowanie przebiegu naboru, w tym oceny kandydatów, a także założenie profilu użytkownika systemu teleinformatyczneg o (Dz. U. z 2023 r. poz. 1195).**
 
-*2. Ogłoszenie o naborze powinno zawierać:*
+### \[Art. 28.
 
-- 1\) *nazwę i adres urzędu;*
-- 2\) *określenie stanowiska pracy;*
-- 3\) *wymagania związane ze stanowiskiem pracy zgodnie z opisem danego stanowiska, ze wskazaniem, które z nich są niezbędne, a które dodatkowe;*
-- 4\) *zakres zadań wykonywanych na stanowisku pracy;*
-- 4a\) *informację o warunkach pracy na danym stanowisku pracy;*
-- 4b\) *informację, czy w miesiącu poprzedzającym datę upublicznienia ogłoszenia wskaźnik zatrudnienia osób niepełnosprawnych w urzędzie, w rozumieniu przepisów o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych, wynosi co najmniej 6 %;*
-- 5\) *wskazanie wymaganych dokumentów;*
-- 6\) *termin i miejsce składania dokumentów. 2a. Wymagania, o których mowa w ust. 2 pkt 3, określa się w sposób*
+- 1\. *Dyrektor generalny urzędu, z zastrzeżeniem art. 39, ma obowiązek upowszechniać informacje o wolnych stanowiskach pracy przez* <!-- page: 17 --> *umieszczenie ogłoszenia o naborze w miejscu powszechnie dostępnym w siedzibie urzędu, w Biuletynie Informacji Publicznej urzędu, zwanym dalej „Biuletynem urzędu”, oraz w Biuletynie Informacji Publicznej Kancelarii Prezesa Rady Ministrów, zwanym dalej „Biuletynem Kancelarii”.*
+- 2\. *Ogłoszenie o naborze powinno zawierać:*
+  - 1\) *nazwę i adres urzędu;*
+  - 2\) *określenie stanowiska pracy;*
+  - 3\) *wymagania związane ze stanowiskiem pracy zgodnie z opisem danego stanowiska, ze wskazaniem, które z nich są niezbędne, a które dodatkowe;*
+  - 4\) *zakres zadań wykonywanych na stanowisku pracy;*
+  - 4a\) *informację o warunkach pracy na danym stanowisku pracy;*
+  - 4b\) *informację, czy w miesiącu poprzedzającym datę upublicznienia ogłoszenia wskaźnik zatrudnienia osób niepełnosprawnych w urzędzie, w rozumieniu przepisów o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych, wynosi co najmniej 6 %;*
+  - 5\) *wskazanie wymaganych dokumentów;*
+  - 6\) *termin i miejsce składania dokumentów. 2a. Wymagania, o których mowa w ust. 2 pkt 3, określa się w sposób*
 
 *następujący:*
 
@@ -421,8 +428,9 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 <!-- page: 18 -->
 - 5\. *Umieszczenie ogłoszenia o naborze w Biuletynie Kancelarii jest bezpłatne.\]*
 
-**\<Art. 28. 1. Dyrektor generalny urzędu, z zastrzeżeniem art. 39, zamieszcza ogłoszenie o naborze w Biuletynie Informacji Publicznej Kancelarii Prezesa Rady Ministrów, zwanym dalej „Biuletynem Kancelarii”, z wykorzystaniem systemu teleinformatycznego, o którym mowa w art. 27a ust. 1, oraz w Biuletynie Informacji Publicznej urzędu, zwanym dalej „Biuletynem urzędu”. Zamieszczenie ogłoszenia o naborze w Biuletynie Kancelarii jest bezpłatne.**
+### \<Art. 28.
 
+- 1\. **Dyrektor generalny urzędu, z zastrzeżeniem art. 39, zamieszcza ogłoszenie o naborze w Biuletynie Informacji Publicznej Kancelarii Prezesa Rady Ministrów, zwanym dalej „Biuletynem Kancelarii”, z wykorzystaniem systemu teleinformatycznego, o którym mowa w art. 27a ust. 1, oraz w Biuletynie Informacji Publicznej urzędu, zwanym dalej „Biuletynem urzędu”. Zamieszczenie ogłoszenia o naborze w Biuletynie Kancelarii jest bezpłatne.**
 - 2\. **Ogłoszenie o naborze zawiera w szczególności:**
   - 1\) **nazwę i adres urzędu;**
   - 2\) **określenie stanowiska pracy;**
@@ -446,31 +454,32 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 
 **Nowe brzmienie art. 28 wejdzie w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatycznego , który umożliwia zamieszczanie ogłoszeń o naborze kandydatów do korpusu służby cywilnej oraz o wyniku naboru, składanie wymaganych dokumentów – po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia, dokumentowanie przebiegu naboru, w tym oceny kandydatów, a także założenie profilu użytkownika systemu teleinformatycznego (Dz. U. z 2023 r. poz. 1195).**
 
-**\<Art. 28a. 1. Kandydat składa dokumenty w systemie teleinformatycznym, o którym mowa w art. 27a ust. 1, po uwierzytelnieniu.**
+### \<Art. 28a.
 
+- 1\. **Kandydat składa dokumenty w systemie teleinformatycznym, o którym mowa w art. 27a ust. 1, po uwierzytelnieniu.**
 - 2\. **Uwierzytelnienie kandydata w systemie teleinformatycznym wymaga użycia profilu zaufanego, profilu osobistego albo innego środka identyfikacji elektronicznej wydanego w przyłączonym do węzła krajowego identyfikacji elektronicznej systemie identyfikacji elektronicznej, o którym mowa w art. 21a ust. 1 pkt 2 lit. a ustawy z dnia 5 września 2016 r. o usługach zaufania oraz identyfikacji elektronicznej (Dz. U. z 2024 r. poz. 1725 oraz z 2026 r. poz. 252).**
 - 3\. **Kandydat:**
   - 1\) **składa wymagane dokumenty w postaci dokumentu elektronicznego lub elektronicznej kopii dokumentu lub**
-  - 2\) **akceptuje treść wymaganego oświadczenia, co jest równoważne z jego złożeniem.** ***\[Art. 29.*** *Imiona i nazwiska kandydatów, którzy spełniają wymagania*
+  - 2\) **akceptuje treść wymaganego oświadczenia, co jest równoważne z jego złożeniem.**
 
 **Dodany art. 28a wejdzie w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatycznego , który umożliwia zamieszczanie ogłoszeń o naborze kandydatów do korpusu służby cywilnej oraz o wyniku naboru, składanie wymaganych dokumentów – po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia, dokumentowanie przebiegu naboru, w tym oceny kandydatów, a także założenie profilu użytkownika systemu teleinformatycznego (Dz. U. z 2023 r. poz. 1195).**
 
-*formalne, oraz wynik naboru stanowią informację publiczną w zakresie objętym*
+### \[Art. 29.
+
+*Imiona i nazwiska kandydatów, którzy spełniają wymagania formalne, oraz wynik naboru stanowią informację publiczną w zakresie objętym*
 
 *wymaganiami określonymi w ogłoszeniu o naborze.\]*
 
-***\[Art. 29a.*** *1. W toku naboru komisja, o której mowa w art. 30 ust. 2 pkt 5, wyłania niewięcej niż pięciu najlepszych kandydatów, spełniających wymagania* <!-- page: 20 --> *niezbędne oraz w największym stopniu spełniających wymagania dodatkowe, których przedstawia dyrektorowi generalnemu urzędu celem zatrudnienia wybranego kandydata.*
+### \[Art. 29a.
+
+- 1\. *W toku naboru komisja, o której mowa w art. 30 ust. 2 pkt 5, wyłania niewięcej niż pięciu najlepszych kandydatów, spełniających wymagania* <!-- page: 20 --> *niezbędne oraz w największym stopniu spełniających wymagania dodatkowe, których przedstawia dyrektorowi generalnemu urzędu celem zatrudnienia wybranego kandydata.*
+- 2\. *Jeżeli w urzędzie wskaźnik zatrudnienia osób niepełnosprawnych, w rozumieniu przepisów o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych, w miesiącu poprzedzającym datę upublicznienia ogłoszenia o naborze, jest niższy niż 6 %, pierwszeństwo w zatrudnieniu przysługuje osobie niepełnosprawnej, o ile znajduje się w gronie osób, o których mowa w ust. 1.\]*
 
 **Przepis uchylający art. 29 i nowe brzmienie art. 29a wejdzie w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatycznego, który umożliwia zamieszczanie ogłoszeń o naborze**
 
-*2. Jeżeli w urzędzie wskaźnik zatrudnienia osób niepełnosprawnych, w rozumieniu przepisów o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych, w miesiącu poprzedzającym datę upublicznienia ogłoszenia o naborze, jest niższy niż 6 %, pierwszeństwo w zatrudnieniu*
+### \<Art. 29a.
 
-*przysługuje osobie niepełnosprawnej, o ile znajduje się w gronie osób, o których*
-
-*mowa w ust. 1.\]*
-
-**\<Art. 29a. 1. Komisja przeprowadzająca nabór wyłania niewięcej niż pięciu najlepszych kandydatów spośród tych, którzy spełnili wymagania niezbędne, i przedstawia ich dyrektorowi generalnemu urzędu.**
-
+- 1\. **Komisja przeprowadzająca nabór wyłania niewięcej niż pięciu najlepszych kandydatów spośród tych, którzy spełnili wymagania niezbędne, i przedstawia ich dyrektorowi generalnemu urzędu.**
 - 2\. **Przy wyborze najlepszych kandydatów komisja bierze pod uwagę poziom spełniania wymagań niezbędnych i wymagań dodatkowych.**
 - 3\. **W przypadku naboru przeprowadzanego na więcej niż jedno takie samo stanowisko pracy liczba wyłanianych kandydatów, o której mowa w ust. 1, ulega zwiększeniu proporcjonalnie do liczby stanowisk pracy, na które jest przeprowadzany nabór.**
 - 4\. **Jeżeli w urzędzie wskaźnik zatrudnienia osób niepełnosprawnych w rozumieniu przepisów o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych w miesiącu poprzedzającym datę ogłoszenia naboru był niższy niż 6 %, pierwszeństwo w zatrudnieniu przysługuje osobie niepełnosprawnej, o ile znajduje się ona w gronie kandydatów, o których mowa w ust. 1.\>**
@@ -484,42 +493,51 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
   - 2\) *liczbę nadesłanych ofert, w tym liczbę ofert niespełniających wymogów formalnych;*
   - 3\) *informację o zastosowanych metodach i technikach naboru;*
   - 4\) *uzasadnienie dokonanego wyboru;*
-  - 5\) *skład komisji przeprowadzającej nabór.\]*
-- \<2\. **Protokół zawiera w szczególności:**
+  - 5\) *skład komisji przeprowadzającej nabór.\]* **\<2. Protokół zawiera w szczególności:**
   - 1\) **określenie stanowiska pracy, na które był przeprowadzany nabór;**
   - 2\) **określenie liczby nadesłanych ofert;**
   - 3\) **imiona i nazwiska wyłonionych kandydatów wraz ze wskazaniem kandydatów niepełnosprawnych, o ile do przeprowadzanego naboru stosuje się przepis art. 29a ust. 4;**
   - 4\) **informację o zastosowanych metodach i technikach naboru;**
   - 5\) **uzasadnienie dokonanego wyboru;**
-  - 6\) **określenie składu komisji przeprowadzającej nabór.\> \<Art. 30a. Imiona i nazwiska wyłonionych kandydatów oraz informacje**
+  - 6\) **określenie składu komisji przeprowadzającej nabór.\>**
 
 **Nowe brzmienie ust. 2 w art. 30 i dodany art. 30a wejdą w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatycznego, który umożliwia zamieszczanie ogłoszeń o naborze kandydatów do korpusu służby cywilnej oraz o wyniku naboru, składanie wymaganych dokumentów – po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia, dokumentowanie przebiegu naboru, w tym oceny kandydatów, a także założenie profilu użytkownika systemu teleinformatycznego (Dz. U. z 2023 r. poz. 1195).**
 
-**o nich, w zakresie objętym wymaganiami na dane stanowisko pracy, stanowią informację publiczną.\>**
+### \<Art. 30a.
 
-***\[Art. 31.*** *1. Dyrektor generalny urzędu niezwłocznie po przeprowadzonym naborze upowszechnia informację o wyniku naboru przez umieszczenie jej w miejscu powszechnie dostępnym w siedzibie urzędu, w Biuletynie urzędu oraz w Biuletynie Kancelarii.*
+**Imiona i nazwiska wyłonionych kandydatów oraz informacje o nich, w zakresie objętym wymaganiami na dane stanowisko pracy, stanowią informację publiczną.\>**
 
+### \[Art. 31.
+
+- 1\. *Dyrektor generalny urzędu niezwłocznie po przeprowadzonym naborze upowszechnia informację o wyniku naboru przez umieszczenie jej w miejscu powszechnie dostępnym w siedzibie urzędu, w Biuletynie urzędu oraz w Biuletynie Kancelarii.*
 - 2\. *Informacja, o której mowa w ust. 1, zawiera:*
   - 1\) *nazwę i adres urzędu;*
   - 2\) *określenie stanowiska pracy;*
-  - 3\) *imię i nazwisko wybranego kandydata oraz jego miejsce zamieszkania w rozumieniu przepisów Kodeksu cywilnego.\]* **\<Art. 31. 1. Dyrektor generalny urzędu niezwłocznie po zakończeniu**
+  - 3\) *imię i nazwisko wybranego kandydata oraz jego miejsce zamieszkania w rozumieniu przepisów Kodeksu cywilnego.\]*
 
-**naboru zamieszcza ogłoszenie o jego wyniku w Biuletynie Kancelarii z wykorzystaniem systemu teleinformatycznego, o którym mowa w art. 27a ust. 1, oraz w Biuletynie urzędu. Zamieszczenie ogłoszenia o wyniku naboru w Biuletynie Kancelarii jest bezpłatne.**
+### \<Art. 31.
 
-**Nowe brzmienie art. 31 i art. 33 oraz przepis uchylający art. 32 wejdą w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatycznego, który umożliwia zamieszczanie ogłoszeń o naborze kandydatów do korpusu służby cywilnej oraz o wyniku naboru, składanie wymaganych dokumentów – po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia, dokumentowanie przebiegu naboru, w tym oceny kandydatów, a także założenie profilu użytkownika systemu teleinformatycznego (Dz. U. z 2023 r. poz. 1195).**
-
+- 1\. **Dyrektor generalny urzędu niezwłocznie po zakończeniu naboru zamieszcza ogłoszenie o jego wyniku w Biuletynie Kancelarii z wykorzystaniem systemu teleinformatycznego, o którym mowa w art. 27a ust. 1, oraz w Biuletynie urzędu. Zamieszczenie ogłoszenia o wyniku naboru w Biuletynie Kancelarii jest bezpłatne.**
 <!-- page: 22 -->
 - 2\. **Ogłoszenie o wyniku naboru pozostaje dostępne w miejscach, o których mowa w ust. 1, przez 3 miesiące.**
 - 3\. **Ogłoszenie o wyniku naboru zawiera:**
   - 1\) **nazwę i adres urzędu;**
   - 2\) **określenie stanowiska pracy;**
-  - 3\) **imię i nazwisko wybranej osoby albo informację o zakończeniu naboru bez dokonania wyboru.\>** ***\[Art. 32.*** *Członek komisji, o której mowa w art. 30 ust. 2 pkt 5, ma obowiązek*
+  - 3\) **imię i nazwisko wybranej osoby albo informację o zakończeniu naboru bez dokonania wyboru.\>**
 
-*zachowania w tajemnicy, uzyskanych w trakcie naboru, informacji o kandydatach.\]*
+**Nowe brzmienie art. 31 i art. 33 oraz przepis uchylający art. 32 wejdą w życie po upływie 7 dni od dnia ogłoszenia w Dzienniku Ustaw Rzeczypospolitej Polskiej, na podstawie art. 14 wymienionej ustawy, komunikatu Prezesa Rady Ministrów o gotowości do uruchomienia systemu teleinformatycznego, który umożliwia zamieszczanie ogłoszeń o naborze kandydatów do korpusu służby cywilnej oraz o wyniku naboru, składanie wymaganych dokumentów – po zastosowaniu zapewnionych w systemie teleinformatycznym sposobów potwierdzenia pochodzenia, dokumentowanie przebiegu naboru, w tym oceny kandydatów, a także założenie profilu użytkownika systemu teleinformatycznego (Dz. U. z 2023 r. poz. 1195).**
 
-***\[Art. 33.*** *Jeżeli w ciągu 3 miesięcy od dnia nawiązania stosunku pracy z osobą wyłonioną w drodze naboru istnieje konieczność ponownego obsadzenia tego samego stanowiska pracy, dyrektor generalny urzędu może zatrudnić na tym samym stanowisku inną osobę spośród kandydatów, o których mowa w art. 29a ust. 1. Przepis art. 29a ust. 2 stosuje się odpowiednio.\]*
+### \[Art. 32.
 
-**\<Art. 33. Jeżeli w ciągu 3 miesięcy od dnia obsadzenia stanowiska pracy w drodze naboru powstanie konieczność ponownego obsadzenia tego samego stanowiska, dyrektor generalny urzędu może obsadzić to stanowisko inną osobą wybraną spośród wyłonionych kandydatów. Przepisy art. 29a ust. 4 i art. 31 stosuje się odpowiednio.\>**
+*Członek komisji, o której mowa w art. 30 ust. 2 pkt 5, ma obowiązek zachowania w tajemnicy, uzyskanych w trakcie naboru, informacji o kandydatach.\]*
+
+### \[Art. 33.
+
+*Jeżeli w ciągu 3 miesięcy od dnia nawiązania stosunku pracy z osobą wyłonioną w drodze naboru istnieje konieczność ponownego obsadzenia tego samego stanowiska pracy, dyrektor generalny urzędu może zatrudnić na tym samym stanowisku inną osobę spośród kandydatów, o których mowa w art. 29a ust. 1. Przepis art. 29a ust. 2 stosuje się odpowiednio.\]*
+
+### \<Art. 33.
+
+**Jeżeli w ciągu 3 miesięcy od dnia obsadzenia stanowiska pracy w drodze naboru powstanie konieczność ponownego obsadzenia tego samego stanowiska, dyrektor generalny urzędu może obsadzić to stanowisko inną osobą wybraną spośród wyłonionych kandydatów. Przepisy art. 29a ust. 4 i art. 31 stosuje się odpowiednio.\>**
 
 ### Art. 34.
 

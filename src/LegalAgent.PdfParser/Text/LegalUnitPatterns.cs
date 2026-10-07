@@ -33,18 +33,27 @@ internal static partial class LegalUnitPatterns
             return false;
         }
 
-        Match m = Article().Match(text);
+        // Consolidated texts mark repealed („[Art. 31. …]”) and future („<Art. 31. …>”) wording of articles and paragraphs.
+        string prefix = text.Length > 1 && text[0] is '[' or '<' ? text[..1] : string.Empty;
+        string unit = text[prefix.Length..];
+
+        Match m = Article().Match(unit);
         if (m.Success)
         {
-            match = Unit(SectionKind.Article, "Art. " + m.Groups["n"].Value, m.Groups["n"].Value, text[m.Length..]);
+            match = Unit(SectionKind.Article, "Art. " + m.Groups["n"].Value, m.Groups["n"].Value, unit[m.Length..]) with { Prefix = prefix };
             return true;
         }
 
-        m = Paragraph().Match(text);
+        m = Paragraph().Match(unit);
         if (m.Success)
         {
-            match = Unit(SectionKind.Paragraph, "§ " + m.Groups["n"].Value, m.Groups["n"].Value, text[m.Length..]);
+            match = Unit(SectionKind.Paragraph, "§ " + m.Groups["n"].Value, m.Groups["n"].Value, unit[m.Length..]) with { Prefix = prefix };
             return true;
+        }
+
+        if (prefix.Length > 0)
+        {
+            return false;
         }
 
         m = Structural().Match(text);
