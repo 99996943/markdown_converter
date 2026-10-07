@@ -263,6 +263,38 @@ public sealed class HeadingDetectionStageTests
         Assert.Equal(3, Heading(context, "Art. 1.").Level);
     }
 
+    [Fact]
+    public void ActTypeLine_IsTheTitle_AndTheJournalMastheadAboveItStaysPlainText()
+    {
+        // Dz. U. 2026 poz. 1298, page 1: a large-font masthead above a body-size, bold „OBWIESZCZENIE” title block.
+        static double Width(string text, double size) => text.Sum(c => c == ' ' ? 0.26 * size : 0.5 * size);
+        double centre = X + (Width(BodyText, Body) / 2);
+        double Centred(string text, double size = Body) => centre - (Width(text, size) / 2);
+
+        var sketch = new PageSketch();
+        sketch.Line("DZIENNIK USTAW", Centred("DZIENNIK USTAW", 30), 60, 30);
+        sketch.Line("RZECZYPOSPOLITEJ POLSKIEJ", Centred("RZECZYPOSPOLITEJ POLSKIEJ", 18), 95, 18);
+        sketch.Line("Warszawa, dnia 6 października 2026 r.", Centred("Warszawa, dnia 6 października 2026 r.", 14), 130, 14);
+        sketch.Line("Poz. 1298", Centred("Poz. 1298", 14), 155, 14);
+        sketch.Line("OBWIESZCZENIE", Centred("OBWIESZCZENIE"), 200, Body, bold: true);
+        sketch.Line("MINISTRA SPRAW ZAGRANICZNYCH", Centred("MINISTRA SPRAW ZAGRANICZNYCH"), 214, Body);
+        sketch.Line("z dnia 15 września 2026 r.", Centred("z dnia 15 września 2026 r."), 230, Body);
+        sketch.Line("w sprawie opłat konsularnych", Centred("w sprawie opłat konsularnych"), 252, Body, bold: true);
+        for (int i = 0; i < 6; i++)
+        {
+            sketch.Line(BodyText, X, 280 + (i * Leading), Body);
+        }
+
+        PipelineContext context = Run(new Flow(sketch));
+
+        HeadingInfo title = Assert.Single(Headings(context));
+        Assert.Equal(SectionKind.DocumentTitle, title.Kind);
+        Assert.Equal("OBWIESZCZENIE MINISTRA SPRAW ZAGRANICZNYCH z dnia 15 września 2026 r. w sprawie opłat konsularnych", title.Text);
+        Assert.All(
+            ["DZIENNIK USTAW", "RZECZYPOSPOLITEJ POLSKIEJ", "Warszawa, dnia", "Poz. 1298"],
+            prefix => Assert.Equal(LineRole.Unknown, LineStarting(context, prefix).Role));
+    }
+
     // (e) FR-044
     [Fact]
     public void DesignationLine_FollowedByShortTitleInSameStyle_IsMergedIntoOneHeading()
