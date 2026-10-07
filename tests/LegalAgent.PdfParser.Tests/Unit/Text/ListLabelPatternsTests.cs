@@ -32,7 +32,7 @@ public sealed class ListLabelPatternsTests
     [InlineData("a) Treść", "a)", ListLabelKind.LetterParen, 1, "Treść")]
     [InlineData("z) Treść", "z)", ListLabelKind.LetterParen, 26, "Treść")]
     [InlineData("aa) Treść", "aa)", ListLabelKind.LetterParen, 27, "Treść")]
-    [InlineData("zb) Treść", "zb)", ListLabelKind.LetterParen, 728, "Treść")]
+    [InlineData("zb) Treść", "zb)", ListLabelKind.LetterParen, 678, "Treść")]
     [InlineData("i) Treść", "i)", ListLabelKind.LetterParen, 9, "Treść")]
     [InlineData("1. Treść", "1.", ListLabelKind.ArabicDot, 1, "Treść")]
     [InlineData("12. Treść", "12.", ListLabelKind.ArabicDot, 12, "Treść")]
