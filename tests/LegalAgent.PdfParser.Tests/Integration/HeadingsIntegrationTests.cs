@@ -15,6 +15,7 @@ public sealed class HeadingsIntegrationTests
     /// <summary>Generous width estimate (0.62 em per character) so a reference marker never overlaps its word.</summary>
     private static double After(string text, double size = 11) => Left + (text.Length * 0.62 * size) + 1;
 
+    /// <remarks>The text column is 72–417 pt (centre ≈ 245 pt); the title block lines are centred on it.</remarks>
     internal static byte[] BuildUs2Pdf()
     {
         const string art2Line2 = "przez organy administracji publicznej.";
@@ -22,9 +23,9 @@ public sealed class HeadingsIntegrationTests
         var builder = new SyntheticPdfBuilder().PageNumberFooter("{n}");
 
         builder.Page()
-            .Text(270, 80, "USTAWA", 16, bold: true)
-            .Text(230, 100, "z dnia 1 stycznia 2026 r.")
-            .Text(240, 116, "o usługach testowych")
+            .Text(211, 80, "USTAWA", 16, bold: true)
+            .Text(184, 100, "z dnia 1 stycznia 2026 r.")
+            .Text(190, 116, "o usługach testowych")
             .Text(275, 150, "DZIAŁ I", bold: true)
             .Text(245, 164, "PRZEPISY OGÓLNE", bold: true)
             .Text(270, 190, "Rozdział 1", bold: true)

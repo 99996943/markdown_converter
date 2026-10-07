@@ -48,8 +48,27 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
             foreach (LayoutLine line in page.Lines)
             {
-                if (line.Role == LineRole.Artifact)
+                // Footnote definitions are collected by footnote detection; like artifacts they must not interrupt a
+                // paragraph that continues on the next page.
+                if (line.Role is LineRole.Artifact or LineRole.Footnote)
                 {
+                    continue;
+                }
+
+                if (line.Role == LineRole.Heading)
+                {
+                    Finish(context, ref current);
+                    if (line.Heading is { } heading)
+                    {
+                        var block = new LayoutBlock(LayoutBlockKind.Heading, new PageRange(page.Number, page.Number))
+                        {
+                            Heading = heading,
+                            HeadingLevel = heading.Level,
+                        };
+                        block.Lines.Add(line);
+                        context.Blocks.Add(block);
+                    }
+
                     continue;
                 }
 
@@ -247,7 +266,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
             var inlines = new InlineAccumulator();
             foreach (LayoutWord word in line.Words)
             {
-                inlines.AddWord(word.Text, word.Style, glue: false);
+                inlines.Add(word, glue: false);
             }
 
             return new Paragraph(line, page, size, inlines);
@@ -273,7 +292,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
             for (int i = 0; i < line.Words.Count; i++)
             {
                 LayoutWord word = line.Words[i];
-                paragraph.Inlines.AddWord(word.Text, word.Style, glue: i == 0 && glue);
+                paragraph.Inlines.Add(word, glue: i == 0 && glue);
                 if (i == 0 && breakAfterFirstWord)
                 {
                     paragraph.Inlines.AddPageBreak(page);
@@ -284,13 +303,39 @@ public sealed class BlockAssemblyStage : IPipelineStage
         }
     }
 
-    /// <summary>Builds text runs; a separating space belongs to the run before it and never touches a page break.</summary>
+    /// <summary>
+    /// Builds text runs; a separating space belongs to the run before it and never touches a page break. A footnote
+    /// reference is glued to the preceding word; the space after it opens the next run.
+    /// </summary>
     private sealed class InlineAccumulator
     {
         private readonly List<Inline> _inlines = [];
         private readonly StringBuilder _text = new();
         private TextStyle _style;
         private bool _hasRun;
+        private bool _spaceAfterReference;
+
+        public void Add(LayoutWord word, bool glue)
+        {
+            if (word.FootnoteId is int id)
+            {
+                FlushRun();
+                _inlines.Add(new FootnoteRef(id));
+                _spaceAfterReference = true;
+                return;
+            }
+
+            if (_spaceAfterReference && !_hasRun)
+            {
+                _spaceAfterReference = false;
+                _text.Clear().Append(glue ? string.Empty : " ").Append(word.Text);
+                _style = word.Style;
+                _hasRun = true;
+                return;
+            }
+
+            AddWord(word.Text, word.Style, glue);
+        }
 
         public void AddWord(string word, TextStyle style, bool glue)
         {
@@ -322,6 +367,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
         public void AddPageBreak(int page)
         {
             FlushRun();
+            _spaceAfterReference = false;
             _inlines.Add(new PageBreak(page));
         }
 

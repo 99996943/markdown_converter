@@ -11,7 +11,9 @@ internal static class BuiltInStages
         new TextNormalizationStage(),
         new LineAssemblyStage(),
         new ArtifactRemovalStage(),
+        new FootnoteDetectionStage(),
         new ReadingOrderStage(),
+        new HeadingDetectionStage(),
         new BlockAssemblyStage(),
         new DocumentBuildStage(),
     ];

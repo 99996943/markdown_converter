@@ -147,7 +147,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 - [X] T057 [P] [US2] Write `tests/LegalAgent.PdfParser.Tests/Unit/Stages/FootnoteDetectionStageTests.cs` (FR-026): small-font block (≤ 0.9× body) at page bottom after short rule or starting with marker matching a superscript reference → footnote with original label; footnote not removed as artifact and not merged into body text; reference in body becomes `FootnoteRef`; footnote without reference → `IsOrphan` + warning `FTN001_OrphanFootnote`; footnote continued on next page joined
 - [X] T058 [P] [US2] Write `tests/LegalAgent.PdfParser.Tests/Unit/Stages/DocumentBuildStageTests.cs`: section tree from heading levels (child level > parent); `Kind`, `Designation`, `Number`, `Title`, `HeadingText` filled; `Path` = ancestors' `HeadingText` + own; `Pages` spans heading to end incl. children; blocks before first heading → `Preamble`; footnote definitions attached to the smallest section where first referenced, global numbering by first reference order, repeated reference not duplicated, preamble refs → `PreambleFootnotes` (Clarifications Q5)
 - [X] T059 [P] [US2] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererSectionTests.cs`: `#`×Level + `HeadingText`; order heading → blocks → children → section footnotes; `[^n]` refs and `[^n]: …` definitions; invariants 3 and 4 of contracts/markdown-output.md
-- [ ] T060 [US2] Write integration test `tests/LegalAgent.PdfParser.Tests/Integration/HeadingsIntegrationTests.cs` with the Independent Test PDF and golden `Integration/Expected/us2-headings.expected.md` (hand-written first)
+- [X] T060 [US2] Write integration test `tests/LegalAgent.PdfParser.Tests/Integration/HeadingsIntegrationTests.cs` with the Independent Test PDF and golden `Integration/Expected/us2-headings.expected.md` (hand-written first)
 
 ### Implementation for User Story 2
 
@@ -155,7 +155,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 - [X] T062 [US2] Implement `src/LegalAgent.PdfParser/Stages/HeadingDetectionStage.cs` (Order 900) to pass T056
 - [X] T063 [US2] Implement `src/LegalAgent.PdfParser/Stages/FootnoteDetectionStage.cs` (Order 500) to pass T057
 - [X] T064 [US2] Extend `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` with section tree, `Path`, page ranges and footnote placement to pass T058
-- [ ] T065 [US2] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with headings and footnotes to pass T059 and T060
+- [X] T065 [US2] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with headings and footnotes to pass T059 and T060
 
 **Checkpoint**: Wszystkie historyjki P1 działają.
 
