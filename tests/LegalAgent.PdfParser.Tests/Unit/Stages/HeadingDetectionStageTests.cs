@@ -457,4 +457,27 @@ public sealed class HeadingDetectionStageTests
         // Without a 14 pt class in between, the bold heading follows its level-1 parent directly.
         Assert.Equal(2, Heading(context, "Wyjątki szczegółowe").Level);
     }
+
+    private static double Centred(string text, double size = Body) => 270 - (text.Length * 0.5 * size / 2);
+
+    [Fact]
+    public void ActTitleBlockInsideTheDocument_IsOneHeading_FR043()
+    {
+        // A consolidated text published as an annex of an announcement: the act's own title block follows the
+        // announcement and must not become three separate headings.
+        PipelineContext context = Run(Page()
+            .Text("OBWIESZCZENIE MARSZAŁKA SEJMU", 14, bold: true, x: Centred("OBWIESZCZENIE MARSZAŁKA SEJMU", 14))
+            .Paragraph(2)
+            .Gap()
+            .Text("USTAWA", bold: true, x: Centred("USTAWA"))
+            .Text("z dnia 29 sierpnia 1997 r.", x: Centred("z dnia 29 sierpnia 1997 r."))
+            .Text("Prawo bankowe", bold: true, x: Centred("Prawo bankowe"))
+            .Gap()
+            .Text("Art. 1. Ustawa określa zasady prowadzenia działalności bankowej.")
+            .Paragraph(2));
+
+        HeadingInfo act = Heading(context, "USTAWA z dnia 29 sierpnia 1997 r. Prawo bankowe");
+        Assert.Equal(SectionKind.Typographic, act.Kind);
+        Assert.DoesNotContain(Headings(context), h => h.Text == "Prawo bankowe");
+    }
 }
