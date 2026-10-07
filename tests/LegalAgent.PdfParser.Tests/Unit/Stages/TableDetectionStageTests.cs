@@ -529,4 +529,40 @@ public sealed class TableDetectionStageTests
             Cells(table.Rows));
         Assert.Equal(LineRole.Unknown, page1.Lines[0].Role);
     }
+
+    [Fact]
+    public void HangingIndentNumberedParagraphs_AreNotATable()
+    {
+        // „1.” in its own column, text 20 pt to the right, wrapped lines aligned to the text.
+        PipelineContext context = Run(LayoutFactory.Page(1,
+        [
+            Row(100, ("1.", 72), ("Regulamin okresla zasady otwierania i prowadzenia rachunkow", 95)),
+            Row(114, ("oszczednosciowo-rozliczeniowych dla konsumentow.", 95)),
+            Row(128, ("2.", 72), ("Ilekroc w Regulaminie jest mowa o Banku, nalezy przez to", 95)),
+            Row(142, ("rozumiec Bank Przykladowy S.A. z siedziba w Warszawie.", 95)),
+            Row(156, ("3.", 72), ("Bank moze odmowic zawarcia umowy bez podania przyczyny.", 95)),
+            Row(170, ("4.", 72), ("Regulamin wchodzi w zycie z dniem ogloszenia.", 95)),
+        ]));
+
+        Assert.Empty(context.Tables);
+    }
+
+    [Fact]
+    public void TwoTextColumnsWithShortLastLines_AreNotATable()
+    {
+        string left = "Tekst lewej kolumny regulaminu ciagnie sie";
+        string right = "Tekst prawej kolumny regulaminu ciagnie sie";
+        var lines = new List<LayoutLine>();
+        for (int i = 0; i < 9; i++)
+        {
+            // Every third line ends a paragraph in one of the columns, so one segment is short.
+            (string, double) l = i % 3 == 2 ? ("koniec akapitu.", 50) : (left, 50);
+            (string, double) r = i % 3 == 1 ? ("koniec.", 320) : (right, 320);
+            lines.Add(Row(100 + (14 * i), l, r));
+        }
+
+        PipelineContext context = Run(LayoutFactory.Page(1, lines));
+
+        Assert.Empty(context.Tables);
+    }
 }
