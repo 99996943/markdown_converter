@@ -489,4 +489,44 @@ public sealed class TableDetectionStageTests
         Assert.Equal("VII. Czynnosci w sprawach stanu cywilnego", Text(table.Rows[0].Cells[1]));
         Assert.All(page.Lines, l => Assert.Equal(LineRole.Table, l.Role));
     }
+
+    [Fact]
+    public void RuledFragmentEndingThePage_JoinsTheTableOnTheNextPage_FR061_FR065()
+    {
+        // Bottom of page 1: the header and one row whose term is centred between the lines of its explanation.
+        LayoutPage page1 = LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("To jest spis okreslen:", C1, 650),
+            Row(684, ("Definicje", C1), ("Wyjasnienie", C2)),
+            Row(706, ("bank, ktory zawiera umowy", C2)),
+            Row(722, ("z akceptantami", C2)),
+            Row(729, ("agent rozliczeniowy", C1)),
+            Row(737, ("transakcji BLIK.", C2)),
+        ]);
+        page1.Rulings.Add(new Segment(C1 - 5, 670, 560, 670));
+        page1.Rulings.Add(new Segment(C1 - 5, 694, 560, 694));
+        page1.Rulings.Add(new Segment(C1 - 5, 760, 560, 760));
+        page1.Rulings.Add(new Segment(C2 - 5, 670, C2 - 5, 760));
+        LayoutPage page2 = LayoutFactory.Page(2,
+        [
+            Row(60, ("Definicje", C1), ("Wyjasnienie", C2)),
+            Row(90, ("akceptant", C1), ("przedsiebiorca przyjmujacy platnosci", C2)),
+            Row(120, ("antena NFC", C1), ("urzadzenie w telefonie", C2)),
+            Row(150, ("autoryzacja", C1), ("zgoda na transakcje", C2)),
+        ]);
+
+        TableBlock table = SingleTable(Run(page1, page2));
+
+        Assert.Equal(new PageRange(1, 2), table.Pages);
+        Assert.Equal(
+            [
+                ["Definicje", "Wyjasnienie"],
+                ["agent rozliczeniowy", "bank, ktory zawiera umowy z akceptantami transakcji BLIK."],
+                ["akceptant", "przedsiebiorca przyjmujacy platnosci"],
+                ["antena NFC", "urzadzenie w telefonie"],
+                ["autoryzacja", "zgoda na transakcje"],
+            ],
+            Cells(table.Rows));
+        Assert.Equal(LineRole.Unknown, page1.Lines[0].Role);
+    }
 }
