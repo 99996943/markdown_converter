@@ -431,33 +431,11 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && match.Rest.Length == 0
                 && string.Equals(match.Designation, designation, StringComparison.Ordinal))
             {
-                return (SubLine(line, line.Words.Take(count).ToList()), SubLine(line, line.Words.Skip(count).ToList()));
+                return (LineSlicer.Slice(line, line.Words.Take(count).ToList()), LineSlicer.Slice(line, line.Words.Skip(count).ToList()));
             }
         }
 
         return null;
-    }
-
-    private static LayoutLine SubLine(LayoutLine line, List<LayoutWord> words)
-    {
-        Rect box = words.Skip(1).Aggregate(words[0].Box, (acc, w) => acc.Union(w.Box));
-        var part = new LayoutLine(words, box, line.Baseline) { Zone = line.Zone, Role = LineRole.Unknown };
-        var kept = new HashSet<LayoutWord>(words, ReferenceEqualityComparer.Instance);
-        foreach (LineSegment segment in line.Segments)
-        {
-            List<LayoutWord> inside = segment.Words.Where(kept.Contains).ToList();
-            if (inside.Count > 0)
-            {
-                part.Segments.Add(new LineSegment(inside, inside.Skip(1).Aggregate(inside[0].Box, (acc, w) => acc.Union(w.Box))));
-            }
-        }
-
-        foreach (KeyValuePair<string, string> annotation in line.Annotations)
-        {
-            part.Annotations[annotation.Key] = annotation.Value;
-        }
-
-        return part;
     }
 
     private static double DominantSize(List<LayoutWord> words)
