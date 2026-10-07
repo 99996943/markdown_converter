@@ -447,4 +447,28 @@ public sealed class TableDetectionStageTests
         Assert.Equal(2, context.Tables.Count);
         Assert.Equal(LineRole.Unknown, page.Lines[3].Role);
     }
+
+    [Fact]
+    public void ContinuationWhoseBandStartsLaterWithinTheSameColumn_IsMerged_FR065()
+    {
+        // Page 1: the header of the amount column starts left of the amounts and a ruling snaps the band to 404;
+        // page 2 has no header, so its amount band starts at the amounts (425) — still the same column.
+        LayoutPage page1 = LayoutFactory.Page(1,
+        [
+            Row(680, ("Poz.", C1), ("Rodzaj czynnosci", C2), ("Wysokosc", C3 - 8)),
+            Row(700, ("1.01", C1), ("Wydanie paszportu", C2), ("110", C3 + 5)),
+            Row(720, ("1.02", C1), ("Wydanie wizy", C2), ("35", C3 + 5)),
+        ]);
+        page1.Rulings.Add(new Segment(C3 - 16, 670, C3 - 16, 730));
+        LayoutPage page2 = LayoutFactory.Page(2,
+        [
+            Row(100, ("1.03", C1), ("Wydanie zaswiadczenia", C2), ("40", C3 + 5)),
+            Row(120, ("1.04", C1), ("Legalizacja dokumentu", C2), ("25", C3 + 5)),
+            Row(140, ("1.05", C1), ("Przyjecie oswiadczenia", C2), ("30", C3 + 5)),
+        ]);
+
+        TableBlock table = SingleTable(Run(page1, page2));
+
+        Assert.Equal(new PageRange(1, 2), table.Pages);
+    }
 }
