@@ -103,7 +103,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 - [ ] T042 [P] [US1] Implement `src/LegalAgent.PdfParser/Text/PageNumberPatterns.cs` (compiled regexes, invariant culture, offset detection) to pass T029
 - [ ] T043 [US1] Implement `src/LegalAgent.PdfParser/Stages/ArtifactRemovalStage.cs` (Order 400; zones, odd/even grouping, Y buckets, thresholds from `ArtifactOptions`, report entries) to pass T030 (research R8)
 - [ ] T044 [US1] Implement `src/LegalAgent.PdfParser/Stages/ReadingOrderStage.cs` (Order 700; gutter detection, skips lines with `Role = Table`) to pass T031 (research R9)
-- [ ] T045 [P] [US1] Implement `src/LegalAgent.PdfParser/Text/Hyphenation.cs` (join rules + `NormalizationOptions.HyphenationExceptions`)
+- [X] T045 [P] [US1] Implement `src/LegalAgent.PdfParser/Text/Hyphenation.cs` (join rules + `NormalizationOptions.HyphenationExceptions`)
 - [ ] T046 [US1] Implement `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs` (Order 1000; paragraphs, cross-page continuation, `PageBreak` inlines, inline styles) to pass T032
 - [ ] T047 [US1] Implement minimal `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` (Order 1100): all blocks into `LegalDocument.Preamble`, `PageRange` per block, `SourceInfo`; sections added in US2
 - [ ] T048 [US1] Implement `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` (`IMarkdownRenderer`; paragraphs, emphasis, page markers) to pass T033
