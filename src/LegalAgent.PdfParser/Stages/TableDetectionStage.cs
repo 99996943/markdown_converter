@@ -100,6 +100,7 @@ public sealed class TableDetectionStage : IPipelineStage
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();
 
+        (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
         var tables = new List<Table>();
         int start = 0;
         int free = 0;
@@ -112,7 +113,7 @@ public sealed class TableDetectionStage : IPipelineStage
             }
 
             List<Row> region = GrowRegion(context, flow, start);
-            Table? table = Build(context, page, region, flow.GetRange(free, start - free), tolerance, hyphenationExceptions);
+            Table? table = Build(context, page, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
             if (table is null)
             {
                 start++;
@@ -185,6 +186,7 @@ public sealed class TableDetectionStage : IPipelineStage
     /// <param name="page">The page.</param>
     /// <param name="candidate">Lines from the seed on, as grown by <see cref="GrowRegion"/>.</param>
     /// <param name="above">Free body lines above the seed (not taken by an earlier table), top to bottom.</param>
+    /// <param name="gutter">Column gutter of the page (FR-031), if any.</param>
     /// <param name="tolerance">Column tolerance in points.</param>
     /// <param name="exceptions">Hyphenation exceptions.</param>
     private static Table? Build(
@@ -192,6 +194,7 @@ public sealed class TableDetectionStage : IPipelineStage
         LayoutPage page,
         List<Row> candidate,
         List<Row> above,
+        (double Start, double End)? gutter,
         double tolerance,
         string[] exceptions)
     {
@@ -242,7 +245,7 @@ public sealed class TableDetectionStage : IPipelineStage
             .Where(s => s.IsVertical && Math.Max(s.Y1, s.Y2) >= top - RulingSlack && Math.Min(s.Y1, s.Y2) <= bottom + RulingSlack)
             .Select(s => s.X1);
         IReadOnlyList<ColumnBand> bands = ColumnClustering.Bands(lefts, right, verticals, tolerance);
-        if (IsHangingList(bands, multi) || IsTextColumns(bands, region, tolerance, context.Options.Layout.ColumnMinLineWidthRatio * page.Width))
+        if (IsHangingList(bands, multi) || IsTextColumns(region, gutter))
         {
             return null;
         }
@@ -311,20 +314,21 @@ public sealed class TableDetectionStage : IPipelineStage
         && multi.All(r => r.Cells.Count == 2 && r.Cells[0].Words.Count == 1 && ListLabelPatterns.TryMatch(r.Cells[0].Text + " x", out _));
 
     /// <summary>
-    /// Two bands each holding column-wide text in most lines: running text in two columns, left to reading order
-    /// (FR-031) even where a short last line of a paragraph makes a line look like a table row.
+    /// Running text in two columns is left to reading order (FR-031) even where lines of both columns share a baseline:
+    /// on a page with a column gutter, a region whose cells all lie on either side of it (none crossing) is not a table.
     /// </summary>
-    private static bool IsTextColumns(IReadOnlyList<ColumnBand> bands, List<Row> region, double tolerance, double wideCell)
+    private static bool IsTextColumns(List<Row> region, (double Start, double End)? gutter)
     {
-        if (bands.Count != 2)
+        if (gutter is not { } g)
         {
             return false;
         }
 
-        List<Row> split = region.Where(r => r.Cells.Count >= 2).ToList();
-        return Enumerable.Range(0, 2).All(band =>
-            2 * split.Count(r => r.Cells.Any(c => c.Box.Width >= wideCell && ColumnClustering.BandIndex(bands, c.Box.Left, tolerance) == band))
-            >= split.Count);
+        double middle = (g.Start + g.End) / 2;
+        List<LineSegment> cells = region.SelectMany(r => r.Cells).ToList();
+        return cells.All(c => c.Box.Right <= middle || c.Box.Left >= middle)
+            && cells.Any(c => c.Box.Right <= middle)
+            && cells.Any(c => c.Box.Left >= middle);
     }
 
     /// <summary>

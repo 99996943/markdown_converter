@@ -7,7 +7,7 @@ namespace LegalAgent.PdfParser.Stages;
 /// Reorders the lines of two-column pages so that the left column is read before the right one (FR-031).
 /// A gutter is a vertical strip at least <see cref="LayoutOptions.GutterMinWidthRatio"/> of the page wide that is
 /// free of text over at least <see cref="LayoutOptions.GutterMinHeightRatio"/> of the text region height, with
-/// long lines (average ≥ <see cref="LayoutOptions.ColumnMinLineWidthRatio"/> of the page width) on both sides.
+/// long lines (median ≥ <see cref="LayoutOptions.ColumnMinLineWidthRatio"/> of the page width) on both sides.
 /// Lines crossing the gutter and table lines stay in place and separate column bands. Pages without a gutter
 /// keep their order. Line assembly merges side-by-side column lines that share a baseline into one line with
 /// several segments, so the analysis works on segments and such lines are split at the gutter.
@@ -41,9 +41,11 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
     }
 
-    private static (double Start, double End)? FindGutter(LayoutPage page, LayoutOptions options)
+    /// <summary>The column gutter of a two-column page (FR-031), or null; also used by table detection.</summary>
+    internal static (double Start, double End)? FindGutter(LayoutPage page, LayoutOptions options)
     {
-        List<Rect> pieces = page.Lines.Where(IsFlowText).SelectMany(PiecesOf).ToList();
+        List<LayoutLine> flow = page.Lines.Where(IsFlowText).ToList();
+        List<Rect> pieces = flow.SelectMany(PiecesOf).ToList();
         if (pieces.Count < 2 * MinLinesPerColumn)
         {
             return null;
@@ -84,7 +86,7 @@ public sealed class ReadingOrderStage : IPipelineStage
             {
                 (double Start, double End) run = (minLeft + runStart, minLeft + i);
                 if (run.End - run.Start >= minWidth
-                    && IsColumnSplit(pieces, run, page.Width, options)
+                    && IsColumnSplit(flow, run, page.Width, options)
                     && (best is null || run.End - run.Start > best.Value.End - best.Value.Start))
                 {
                     best = run;
@@ -97,19 +99,40 @@ public sealed class ReadingOrderStage : IPipelineStage
         return best;
     }
 
-    private static bool IsColumnSplit(List<Rect> pieces, (double Start, double End) gutter, double pageWidth, LayoutOptions options)
+    private static bool IsColumnSplit(List<LayoutLine> lines, (double Start, double End) gutter, double pageWidth, LayoutOptions options)
     {
-        // The gutter edges may overlap a few protruding lines (only most of its height must be free), so lines are
-        // assigned to a column by the gutter's middle.
+        // The gutter edges may overlap a few protruding lines (only most of its height must be free), so line parts are
+        // assigned to a column by the gutter's middle; the parts of one line on one side (a bullet and its text) count
+        // as one line, and the median width is robust to short last lines of paragraphs.
         double middle = (gutter.Start + gutter.End) / 2;
-        List<Rect> left = pieces.Where(p => p.Right <= middle).ToList();
-        List<Rect> right = pieces.Where(p => p.Left >= middle).ToList();
-        double minLineWidth = options.ColumnMinLineWidthRatio * pageWidth;
+        var left = new List<double>();
+        var right = new List<double>();
+        foreach (LayoutLine line in lines)
+        {
+            List<Rect> pieces = PiecesOf(line).ToList();
+            AddWidth(left, pieces.Where(p => p.Right <= middle).ToList());
+            AddWidth(right, pieces.Where(p => p.Left >= middle).ToList());
+        }
 
+        double minLineWidth = options.ColumnMinLineWidthRatio * pageWidth;
         return left.Count >= MinLinesPerColumn
             && right.Count >= MinLinesPerColumn
-            && left.Average(p => p.Width) >= minLineWidth
-            && right.Average(p => p.Width) >= minLineWidth;
+            && Median(left) >= minLineWidth
+            && Median(right) >= minLineWidth;
+    }
+
+    private static void AddWidth(List<double> widths, List<Rect> pieces)
+    {
+        if (pieces.Count > 0)
+        {
+            widths.Add(pieces.Max(p => p.Right) - pieces.Min(p => p.Left));
+        }
+    }
+
+    private static double Median(List<double> values)
+    {
+        List<double> sorted = values.Order().ToList();
+        return sorted[sorted.Count / 2];
     }
 
     /// <summary>Total vertical extent covered by the boxes (overlapping intervals merged).</summary>

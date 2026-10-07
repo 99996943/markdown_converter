@@ -27,6 +27,9 @@ public sealed class LineAssemblyStage : IPipelineStage
 
     private const double MaxLeadingInFontSizes = 3.0;
 
+    /// <summary>Horizontal distance (in ems) within which a glyph may join a line by vertical overlap alone.</summary>
+    private const double NearGlyphEm = 3.0;
+
     /// <summary>Minimum width (in ems of the page's main text size) of the empty band before a side-note column.</summary>
     private const double SideNoteMinGapEm = 0.5;
 
@@ -524,6 +527,8 @@ public sealed class LineAssemblyStage : IPipelineStage
     {
         private readonly double _seedSize;
         private Rect _core;
+        private double _left = double.MaxValue;
+        private double _right = double.MinValue;
 
         public LineBuilder(LayoutGlyph seed, int index)
         {
@@ -547,6 +552,14 @@ public sealed class LineAssemblyStage : IPipelineStage
                 return true;
             }
 
+            // Vertical overlap catches raised or lowered glyphs (superscripts, footnote markers); a full-size glyph far to
+            // the side with another baseline belongs to a different line, e.g. of the other column (FR-030).
+            double distance = Math.Max(0, Math.Max(_left - glyph.Box.Right, glyph.Box.Left - _right));
+            if (distance > NearGlyphEm * smaller && glyph.PointSize >= CoreSizeRatio * _seedSize)
+            {
+                return false;
+            }
+
             double minHeight = Math.Min(_core.Height, glyph.Box.Height);
             return minHeight > 0 && _core.VerticalOverlap(glyph.Box) / minHeight >= layout.LineOverlapRatio;
         }
@@ -554,6 +567,8 @@ public sealed class LineAssemblyStage : IPipelineStage
         public void Add(LayoutGlyph glyph, int index)
         {
             Glyphs.Add((glyph, index));
+            _left = Math.Min(_left, glyph.Box.Left);
+            _right = Math.Max(_right, glyph.Box.Right);
             if (glyph.PointSize >= _seedSize * CoreSizeRatio)
             {
                 _core = _core.Union(glyph.Box);

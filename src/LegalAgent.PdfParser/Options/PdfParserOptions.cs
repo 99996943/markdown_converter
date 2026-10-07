@@ -106,7 +106,7 @@ public sealed class LayoutOptions
     public double GutterMinHeightRatio { get; set; } = 0.6;
 
     /// <summary>Minimum line width as a fraction of page width for lines to count towards columns.</summary>
-    public double ColumnMinLineWidthRatio { get; set; } = 0.3;
+    public double ColumnMinLineWidthRatio { get; set; } = 0.25;
 
     /// <summary>Separate a narrow side-note column at the page edge from the main text (FR-034).</summary>
     public bool DetectSideNotes { get; set; } = true;
