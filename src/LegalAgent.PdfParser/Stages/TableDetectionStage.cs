@@ -242,6 +242,10 @@ public sealed class TableDetectionStage : IPipelineStage
             .Where(s => s.IsVertical && Math.Max(s.Y1, s.Y2) >= top - RulingSlack && Math.Min(s.Y1, s.Y2) <= bottom + RulingSlack)
             .Select(s => s.X1);
         IReadOnlyList<ColumnBand> bands = ColumnClustering.Bands(lefts, right, verticals, tolerance);
+        if (IsHangingList(bands, multi) || IsTextColumns(bands, region, tolerance, context.Options.Layout.ColumnMinLineWidthRatio * page.Width))
+        {
+            return null;
+        }
 
         // With a ruled grid the rulings define the rows, so lines of one row may carry different numbers of cells.
         List<double> horizontals = HorizontalRulings(rulings, region);
@@ -299,6 +303,28 @@ public sealed class TableDetectionStage : IPipelineStage
         }
 
         return table;
+    }
+
+    /// <summary>Two bands whose first one holds only list labels („1.”, „a)”): numbered paragraphs with a hanging indent.</summary>
+    private static bool IsHangingList(IReadOnlyList<ColumnBand> bands, List<Row> multi) =>
+        bands.Count == 2
+        && multi.All(r => r.Cells.Count == 2 && r.Cells[0].Words.Count == 1 && ListLabelPatterns.TryMatch(r.Cells[0].Text + " x", out _));
+
+    /// <summary>
+    /// Two bands each holding column-wide text in most lines: running text in two columns, left to reading order
+    /// (FR-031) even where a short last line of a paragraph makes a line look like a table row.
+    /// </summary>
+    private static bool IsTextColumns(IReadOnlyList<ColumnBand> bands, List<Row> region, double tolerance, double wideCell)
+    {
+        if (bands.Count != 2)
+        {
+            return false;
+        }
+
+        List<Row> split = region.Where(r => r.Cells.Count >= 2).ToList();
+        return Enumerable.Range(0, 2).All(band =>
+            2 * split.Count(r => r.Cells.Any(c => c.Box.Width >= wideCell && ColumnClustering.BandIndex(bands, c.Box.Left, tolerance) == band))
+            >= split.Count);
     }
 
     /// <summary>
