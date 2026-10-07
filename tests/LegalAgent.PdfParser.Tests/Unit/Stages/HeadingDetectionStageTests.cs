@@ -480,4 +480,22 @@ public sealed class HeadingDetectionStageTests
         Assert.Equal(SectionKind.Typographic, act.Kind);
         Assert.DoesNotContain(Headings(context), h => h.Text == "Prawo bankowe");
     }
+
+    [Fact]
+    public void FootnoteMarkerBetweenTitleLines_DoesNotCutTheTitleBlock()
+    {
+        var sketch = new PageSketch();
+        sketch.Line(BodyText, X, 60);
+        sketch.Line("USTAWA", Centred("USTAWA"), 110, bold: true);
+        sketch.Line("z dnia 30 maja 2014 r.", Centred("z dnia 30 maja 2014 r."), 126);
+        sketch.Line("1)", 346, 140, size: 6.5);
+        sketch.Line("o prawach konsumenta", Centred("o prawach konsumenta"), 145, bold: true);
+        sketch.Line("Art. 1. Ustawa określa prawa przysługujące konsumentowi.", X, 175);
+        sketch.Line(BodyText, X, 189);
+
+        PipelineContext context = PageSketch.Assemble(null, sketch);
+        new HeadingDetectionStage().Execute(context);
+
+        Assert.Contains(Headings(context), h => h.Text == "USTAWA z dnia 30 maja 2014 r. o prawach konsumenta");
+    }
 }
