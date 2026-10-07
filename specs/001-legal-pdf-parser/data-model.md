@@ -160,6 +160,19 @@ w (0, 1], liczby dodatnie, `MaxTypographicDepth` 1–6.
 | `LayoutLine` | `Words`, `Box`, `Baseline`, `Segments: List<LineSegment>` (podział po dużych odstępach), `Zone` (Header/Body/Footer), `Role` (Unknown/Artifact/Footnote/Table/ListItem/Heading/Body), `Annotations` | LineAssembly → kolejne etapy |
 | `LayoutBlock` | `Kind`, `Lines`, `Pages`, dane specyficzne (pasy kolumn, oznaczenie listy, poziom nagłówka) | BlockAssembly / Table / List / Heading |
 
+### Kontrakty etapów US2 (nagłówki i przypisy, ustalone przy T055–T058)
+
+| Element | Kto ustawia | Kto czyta | Znaczenie |
+|---------|-------------|-----------|-----------|
+| `LegalUnitPatterns.TryMatch(line, out LegalUnitMatch)` | — | HeadingDetection | `LegalUnitMatch(Kind, Designation, Number, Rest)`; `Designation` bez kropki końcowej („Art. 12a”, „§ 5¹”), `Rest` = treść po oznaczeniu |
+| `HeadingInfo(Level, Kind, Designation, Number, Title, Text)` | HeadingDetection | BlockAssembly, DocumentBuild | `Text` = pełny `HeadingText` („Rozdział 3. Ochrona konsumenta”, „Art. 5.”) |
+| `LayoutLine.Heading` + `Role = Heading` | HeadingDetection | BlockAssembly | pierwsza linia nagłówka ma `Heading`; dołączone linie tytułu mają `Role = Heading`, `Heading = null` |
+| podział „Art. 5. Treść…” | HeadingDetection | BlockAssembly | linia zastąpiona w `page.Lines` dwiema: nagłówkową („Art. 5.”) i treściową (`Role = Unknown`, ta sama linia bazowa) |
+| `LayoutBlock(Kind = Heading).Heading` | BlockAssembly | DocumentBuild | blok nagłówka w kolejności treści |
+| `PipelineContext.Footnotes` (`FootnoteDraft`: `Id`, `Label`, `Page`, `Inlines`, `IsOrphan`) | FootnoteDetection | DocumentBuild | definicje w kolejności wykrycia; kontynuacje z kolejnych stron dołączone do poprzedniej definicji |
+| `LayoutWord.FootnoteId` | FootnoteDetection | BlockAssembly | wyraz-odnośnik (indeks górny odcięty od wyrazu bazowego) |
+| `FootnoteRef(n)` przed DocumentBuild | BlockAssembly | DocumentBuild | `n` = `FootnoteDraft.Id`; DocumentBuild zamienia na numer globalny wg pierwszego odnośnika |
+
 ### Przejścia stanu linii (`LayoutLine.Role`)
 
 ```text

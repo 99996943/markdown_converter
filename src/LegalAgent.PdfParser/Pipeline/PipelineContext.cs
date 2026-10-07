@@ -49,6 +49,13 @@ public sealed class PipelineContext
     /// <summary>Logical blocks produced by block-forming stages.</summary>
     public IList<LayoutBlock> Blocks { get; } = [];
 
+    /// <summary>
+    /// Footnote definitions found by footnote detection, in detection order. Until document build, a
+    /// <see cref="FootnoteRef"/> inline carries <see cref="FootnoteDraft.Id"/> in its number; document build
+    /// renumbers references globally by first occurrence (FR-026).
+    /// </summary>
+    public IList<FootnoteDraft> Footnotes { get; } = [];
+
     /// <summary>Report builder for warnings and statistics.</summary>
     public ReportBuilder Report { get; }
 

@@ -77,6 +77,12 @@ public sealed class LayoutLine
     /// <summary>Free-form annotations set by stages (for example a list label).</summary>
     public IDictionary<string, string> Annotations { get; } = new Dictionary<string, string>(StringComparer.Ordinal);
 
+    /// <summary>
+    /// Heading described by this line; set by heading detection on the first line of a heading. Further lines merged
+    /// into the same heading (e.g. a chapter title under „Rozdział 3”) have <see cref="Role"/> = Heading and no info.
+    /// </summary>
+    public HeadingInfo? Heading { get; set; }
+
     /// <summary>Line text with words joined by single spaces.</summary>
     public string Text => string.Join(' ', Words.Select(w => w.Text));
 }

@@ -56,4 +56,7 @@ public sealed class LayoutBlock
 
     /// <summary>Heading level, for heading blocks.</summary>
     public int? HeadingLevel { get; set; }
+
+    /// <summary>Heading described by a <see cref="LayoutBlockKind.Heading"/> block.</summary>
+    public HeadingInfo? Heading { get; set; }
 }
