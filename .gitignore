@@ -58,3 +58,5 @@ Thumbs.db
 # LegalAgent.PdfParser
 *.actual.md
 tests/LegalAgent.PdfParser.Tests/Corpus/private/
+.claude/worktrees/
+.claude/worktrees/

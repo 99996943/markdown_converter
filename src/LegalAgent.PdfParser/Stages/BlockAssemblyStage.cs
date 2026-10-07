@@ -153,6 +153,15 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return false;
         }
 
+        // On multi-column pages reading order records the column of each line; otherwise the page text block is the column.
+        double? annotatedLeft = LayoutAnnotations.GetNumber(previous, LayoutAnnotations.ColumnLeft);
+        double? annotatedRight = LayoutAnnotations.GetNumber(previous, LayoutAnnotations.ColumnRight);
+        if (annotatedLeft is double left && annotatedRight is double right)
+        {
+            columnLeft = left;
+            columnWidth = right - left;
+        }
+
         if (EndsWithPeriod(previous.Text)
             && previous.Box.Right - columnLeft < context.Options.Layout.ShortLineRatio * columnWidth)
         {

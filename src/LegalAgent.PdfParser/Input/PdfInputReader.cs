@@ -79,6 +79,9 @@ internal static class PdfInputReader
         return new PdfInput(bytes, total, Convert.ToHexStringLower(SHA256.HashData(bytes)));
     }
 
+    /// <summary>The PDF specification tolerates arbitrary bytes before the header within the first 1024 bytes.</summary>
+    private const int HeaderSearchWindow = 1024;
+
     private static bool HasHeader(byte[] bytes) =>
-        bytes.Length >= Header.Length && bytes.AsSpan(0, Header.Length).SequenceEqual(Header);
+        bytes.AsSpan(0, Math.Min(bytes.Length, HeaderSearchWindow + Header.Length)).IndexOf(Header) is >= 0 and <= HeaderSearchWindow;
 }
