@@ -154,9 +154,10 @@ public sealed class TableDetectionStage : IPipelineStage
         return cells;
     }
 
+    /// <summary>A bullet or „1)”/„a)” label; a lone dash is not one — in fee tables it is a value („no fee”).</summary>
     private static bool IsLabel(string text) =>
         ListLabelPatterns.TryMatch(text + " x", out ListLabelMatch? label)
-        && label.Kind is ListLabelKind.Bullet or ListLabelKind.Dash or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
+        && label.Kind is ListLabelKind.Bullet or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
 
     /// <summary>Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>).</summary>
     private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start)
