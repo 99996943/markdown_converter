@@ -16,7 +16,7 @@ namespace LegalAgent.PdfParser.Stages;
 /// A region starts at a line with at least two cells and grows over the following body lines while the vertical gaps
 /// stay table-like; it is a table when it holds at least <see cref="TableOptions.MinRows"/> multi-cell lines. A list
 /// label followed by text („• tekst”) is one cell, and lines whose cells are all as wide as text columns are running
-/// text (FR-031), not table rows. Column bands are the clusters of cell left edges shared by at least two rows, snapped
+/// text (FR-031), not table rows, and so are evenly spaced words of a justified line. Column bands are the clusters of cell left edges shared by at least two rows, snapped
 /// to vertical rulings. Rows follow horizontal rulings when the region has a ruled grid; otherwise a line with a single
 /// partial cell close below the previous line continues the previous row (FR-062). Multi-cell lines with a varying
 /// number of cells, or two cells in one band, make the grid ambiguous: the table is kept line by line as a fallback
@@ -29,6 +29,8 @@ public sealed class TableDetectionStage : IPipelineStage
     private const int MinBandSupport = 2;
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
+    private const double JustifiedGapSpread = 0.15;
+    private const int JustifiedMinSegments = 4;
 
     /// <inheritdoc />
     public int Order => StageOrder.TableDetection;
@@ -342,8 +344,27 @@ public sealed class TableDetectionStage : IPipelineStage
 
         public List<LineSegment> Cells { get; } = cells;
 
-        /// <summary>At least two cells, not all of them as wide as a text column (two-column running text).</summary>
-        public bool IsMulti { get; } = cells.Count >= 2 && !cells.All(c => c.Box.Width >= wideCell);
+        /// <summary>
+        /// At least two cells, not all of them as wide as a text column (two-column running text) and not evenly spaced
+        /// words of a justified line.
+        /// </summary>
+        public bool IsMulti { get; } = cells.Count >= 2 && !cells.All(c => c.Box.Width >= wideCell) && !IsJustified(cells);
+
+        /// <summary>
+        /// Justification widens every space of a line alike: <see cref="JustifiedMinSegments"/> or more segments whose
+        /// gaps all lie within <see cref="JustifiedGapSpread"/> of their median are words, not cells.
+        /// </summary>
+        private static bool IsJustified(List<LineSegment> cells)
+        {
+            if (cells.Count < JustifiedMinSegments)
+            {
+                return false;
+            }
+
+            List<double> gaps = cells.Zip(cells.Skip(1), (a, b) => b.Box.Left - a.Box.Right).Order().ToList();
+            double median = gaps[gaps.Count / 2];
+            return median > 0 && gaps.All(g => Math.Abs(g - median) <= JustifiedGapSpread * median);
+        }
     }
 
     /// <summary>A table under construction: rows of per-column word lists.</summary>
