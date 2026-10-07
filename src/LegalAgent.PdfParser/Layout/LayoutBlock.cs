@@ -51,6 +51,9 @@ public sealed class LayoutBlock
     /// <summary>Table column band boundaries (X coordinates), for table blocks.</summary>
     public IList<double> ColumnBands { get; } = [];
 
+    /// <summary>The assembled top-level list (items with nested lists and common parts), for list blocks.</summary>
+    public ListBlock? List { get; set; }
+
     /// <summary>Literal list label, for list blocks and items.</summary>
     public string? ListLabel { get; set; }
 
