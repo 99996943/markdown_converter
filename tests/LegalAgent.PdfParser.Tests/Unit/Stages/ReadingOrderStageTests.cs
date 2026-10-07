@@ -179,4 +179,26 @@ public sealed class ReadingOrderStageTests
             Enumerable.Range(0, 9).Select(i => $"L{N(i)}").Concat(Enumerable.Range(0, 9).Select(i => $"R{N(i)}")),
             order);
     }
+
+    [Fact]
+    public void UnbalancedColumns_LeftLongerThanRight_AreStillTwoColumns()
+    {
+        // As on the last page of a two-column document: the right column ends half-way down the page.
+        var lines = new List<LayoutLine>();
+        for (int i = 0; i < 14; i++)
+        {
+            lines.Add(Left(i, 100 + (14 * i)));
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            lines.Add(Right(i, 100 + (14 * i)));
+        }
+
+        IEnumerable<string> order = Run(Context([Page(1, lines)]));
+
+        Assert.Equal(
+            Enumerable.Range(0, 14).Select(i => $"L{N(i)}").Concat(Enumerable.Range(0, 5).Select(i => $"R{N(i)}")),
+            order);
+    }
 }
