@@ -497,4 +497,19 @@ public sealed class LineAssemblyStageTests
 
         Assert.DoesNotContain(page.Lines, l => l.Role == LineRole.SideNote);
     }
+
+    [Fact]
+    public void SideNoteColumnRunningIntoTheFooterZone_StaysOneColumn_FR034()
+    {
+        List<LayoutGlyph> glyphs = SideNotePage(noteSize: 8);
+        glyphs.AddRange(Text("profilu uzytkownika", 480, 790, 8, bold: true));
+        glyphs.AddRange(Text("systemu (Dz. U.)", 480, 800, 8, bold: true));
+        glyphs.AddRange(Text("s. 2/71", 520, 40, 8));
+
+        LayoutPage page = Run(glyphs);
+
+        Assert.Contains(page.Lines, l => l.Role == LineRole.SideNote && l.Text == "systemu (Dz. U.)");
+        Assert.Contains(page.Lines, l => l.Role == LineRole.SideNote && l.Text == "profilu uzytkownika");
+        Assert.Contains(page.Lines, l => l.Role != LineRole.SideNote && l.Text == "s. 2/71");
+    }
 }

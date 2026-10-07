@@ -242,4 +242,21 @@ public sealed class BlockAssemblyListTests
         Assert.Equal(2, context.Blocks[0].List!.Items.Count);
         Assert.Equal("Dodany pkt 2", Flat(context.Blocks[1].Inlines));
     }
+
+    [Fact]
+    public void SideNoteStandingBesideTwoBlocks_StaysOneParagraph_FR034()
+    {
+        PipelineContext context = Assemble(LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("W rozumieniu ustawy:", 71, 100),
+            Note("Nowe brzmienie pkt 1", 104),
+            Note("w art. 4 wejdzie w", 114),
+            Item("1) pracownik oznacza osobe zatrudniona,", 71, 120, 1),
+            Note("zycie po 7 dniach", 124),
+            Item("2) urzednik oznacza osobe mianowana.", 71, 140, 2),
+        ]));
+
+        Assert.Equal([LayoutBlockKind.Paragraph, LayoutBlockKind.List, LayoutBlockKind.Paragraph], context.Blocks.Select(b => b.Kind));
+        Assert.Equal("Nowe brzmienie pkt 1 w art. 4 wejdzie w zycie po 7 dniach", Flat(context.Blocks[2].Inlines));
+    }
 }

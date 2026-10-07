@@ -365,4 +365,22 @@ public sealed class ListDetectionStageTests
         Assert.Equal(string.Empty, Parent(Find(context, "2) drugi")));
         Assert.Equal(LineRole.SideNote, page.Lines[1].Role);
     }
+
+    [Fact]
+    public void BoldLabelledLineWithinTheListAtNormalLeading_IsAnItem()
+    {
+        LayoutPage page = LayoutFactory.Page(1,
+        [
+            LayoutFactory.Line("W sluzbie cywilnej moze byc zatrudniona osoba, ktora:", Margin, 100),
+            LayoutFactory.Line("[1) jest obywatelem polskim;]", Margin, 120),
+            Bold(LayoutFactory.Line("<1) jest obywatelem Unii Europejskiej;>", Margin, 140)),
+            LayoutFactory.Line("2) korzysta z pelni praw publicznych;", Margin, 160),
+        ]);
+
+        PipelineContext context = Run(page);
+
+        AssertItem(Find(context, "[1)"), "[1)", ListLabelKind.ArabicParen);
+        AssertItem(Find(context, "<1)"), "<1)", ListLabelKind.ArabicParen);
+        AssertItem(Find(context, "2) korzysta"), "2)", ListLabelKind.ArabicParen);
+    }
 }

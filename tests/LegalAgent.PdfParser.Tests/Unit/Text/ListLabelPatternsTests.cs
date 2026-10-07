@@ -26,6 +26,8 @@ public sealed class ListLabelPatternsTests
 
     [Theory]
     [InlineData("1) Treść", "1)", ListLabelKind.ArabicParen, 1, "Treść")]
+    [InlineData("[1) jest obywatelem polskim;]", "[1)", ListLabelKind.ArabicParen, 1, "jest obywatelem polskim;]")]
+    [InlineData("<2a. Wymogu nie stosuje się", "<2a.", ListLabelKind.ArabicDot, 2, "Wymogu nie stosuje się")]
     [InlineData("12) Treść", "12)", ListLabelKind.ArabicParen, 12, "Treść")]
     [InlineData("1a) Treść", "1a)", ListLabelKind.ArabicParen, 1, "Treść")]
     [InlineData("4ba) Centralnym Biurze", "4ba)", ListLabelKind.ArabicParen, 4, "Centralnym Biurze")]
