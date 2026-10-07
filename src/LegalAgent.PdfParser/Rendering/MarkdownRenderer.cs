@@ -9,8 +9,9 @@ namespace LegalAgent.PdfParser.Rendering;
 /// Deterministic Markdown renderer (contracts/markdown-output.md). Blocks are separated by exactly one blank
 /// line. A page marker <c>&lt;!-- page: N --&gt;</c> is written on its own line directly before the first block
 /// of a page and, inside a paragraph or list item, between words where the source switches page. Lists are
-/// rendered as tight nested Markdown lists; tables are rendered by the user story that introduces them, and
-/// encountering them here raises <see cref="NotSupportedException"/> instead of silently dropping content.
+/// rendered as tight nested Markdown lists; tables as GFM tables (or, for fallback tables, as one paragraph per
+/// row with escaped pipes) without page markers inside. Unknown block types raise
+/// <see cref="NotSupportedException"/> instead of silently dropping content.
 /// </summary>
 public sealed partial class MarkdownRenderer : IMarkdownRenderer
 {
@@ -98,6 +99,10 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                     state.Chunks.Add(listMarker + string.Join("\n", lines));
                     break;
 
+                case TableBlock table:
+                    RenderTable(table, state);
+                    break;
+
                 case SkippedPageBlock skipped:
                     string reason = skipped.Reason == SkipReason.NoTextLayer ? "no-text-layer" : "read-error";
                     state.Chunks.Add(string.Create(
@@ -111,6 +116,65 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                         $"Rendering of {block.GetType().Name} is not implemented in this stage of the library.");
             }
         }
+    }
+
+    private static void RenderTable(TableBlock table, State state)
+    {
+        string marker = MarkerLine(table.Pages.First, state);
+        List<TableRow> rows = table.Header is null ? [.. table.Rows] : [table.Header, .. table.Rows];
+        if (rows.Count > 0)
+        {
+            if (table.IsFallback)
+            {
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    var cells = new List<string>();
+                    foreach (TableCell cell in rows[i].Cells)
+                    {
+                        string text = RenderInlines(cell.Inlines, state, trackPages: false, inTable: true, lineStartEscape: cells.Count == 0);
+                        if (text.Length > 0)
+                        {
+                            cells.Add(text);
+                        }
+                    }
+
+                    state.Chunks.Add((i == 0 ? marker : string.Empty) + string.Join(" \\| ", cells));
+                }
+            }
+            else
+            {
+                int columns = Math.Max(table.ColumnCount, 1);
+                var lines = new List<string>();
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    var cells = new List<string>();
+                    foreach (TableCell cell in rows[i].Cells)
+                    {
+                        cells.Add(RenderInlines(cell.Inlines, state, trackPages: false, inTable: true, lineStartEscape: false));
+                        for (int s = 1; s < cell.ColumnSpan; s++)
+                        {
+                            cells.Add(string.Empty);
+                        }
+                    }
+
+                    while (cells.Count < columns)
+                    {
+                        cells.Add(string.Empty);
+                    }
+
+                    lines.Add(("| " + string.Join(" | ", cells) + " |").TrimEnd());
+                    if (i == 0)
+                    {
+                        lines.Add("|" + string.Concat(Enumerable.Repeat(" --- |", columns)));
+                    }
+                }
+
+                state.Chunks.Add(marker + string.Join("\n", lines));
+            }
+        }
+
+        // No markers are written inside the table: the next block on a later page gets its own marker.
+        state.CurrentPage = Math.Max(state.CurrentPage, table.Pages.First);
     }
 
     private static void RenderListItems(IReadOnlyList<ListItem> items, int depth, List<string> lines, State state)
@@ -196,7 +260,12 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
             ? string.Create(CultureInfo.InvariantCulture, $"<!-- page: {page} -->\n")
             : string.Empty;
 
-    private static string RenderInlines(IReadOnlyList<Inline> inlines, State state, bool trackPages)
+    private static string RenderInlines(
+        IReadOnlyList<Inline> inlines,
+        State state,
+        bool trackPages,
+        bool inTable = false,
+        bool lineStartEscape = true)
     {
         var sb = new StringBuilder();
         foreach (Inline inline in MergeRuns(inlines, state.Options.EmphasisInline))
@@ -204,7 +273,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
             switch (inline)
             {
                 case TextRun run:
-                    AppendRun(sb, run, state.Options.EmphasisInline);
+                    AppendRun(sb, run, state.Options.EmphasisInline, inTable, lineStartEscape);
                     break;
 
                 case FootnoteRef reference:
@@ -213,7 +282,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
 
                 case PageBreak pageBreak:
                     // Invariant 6: inside the page flow a marker never repeats or goes back.
-                    bool marker = state.Options.PageMarkers && (!trackPages || pageBreak.PageNumber > state.CurrentPage);
+                    bool marker = state.Options.PageMarkers && !inTable && (!trackPages || pageBreak.PageNumber > state.CurrentPage);
                     if (trackPages)
                     {
                         state.CurrentPage = Math.Max(state.CurrentPage, pageBreak.PageNumber);
@@ -254,7 +323,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
         return merged;
     }
 
-    private static void AppendRun(StringBuilder sb, TextRun run, bool emphasis)
+    private static void AppendRun(StringBuilder sb, TextRun run, bool emphasis, bool inTable = false, bool lineStartEscape = true)
     {
         bool atLineStart = IsBlank(sb) || sb[^1] == '\n';
         string text = run.Text;
@@ -266,7 +335,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                 text = text.TrimStart();
             }
 
-            sb.Append(MarkdownEscaper.EscapeText(text, atLineStart));
+            sb.Append(MarkdownEscaper.EscapeText(text, atLineStart && lineStartEscape, inTable));
             return;
         }
 
@@ -286,7 +355,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
             _ => "***",
         };
 
-        sb.Append(lead).Append(marker).Append(MarkdownEscaper.EscapeText(core)).Append(marker).Append(trail);
+        sb.Append(lead).Append(marker).Append(MarkdownEscaper.EscapeText(core, false, inTable)).Append(marker).Append(trail);
     }
 
     private static void AppendPageBreak(StringBuilder sb, int page, bool markers)
