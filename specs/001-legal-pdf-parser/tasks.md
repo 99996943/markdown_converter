@@ -62,8 +62,8 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 - [X] T017 [P] Create pipeline contracts in `src/LegalAgent.PdfParser/Pipeline/`: `IPipelineStage.cs` (`int Order`, `void Execute(PipelineContext)`), `PipelineContext.cs` (Options read-only, Source, Pages, Report, CancellationToken, BodyStyle, Document), `ReportBuilder.cs` (warnings, artifact counts, deterministic ordering on `Build()`), `StageOrder.cs` constants 100…1100 per data-model.md §4
 - [X] T018 Write tests `tests/LegalAgent.PdfParser.Tests/Unit/Pipeline/PipelineRunnerTests.cs`: stages run ascending by `Order`, ties broken by full type name ordinal; cancellation token checked before each stage; exception from stage that is not `PdfParserException` is wrapped preserving inner; `OperationCanceledException` propagates unchanged
 - [X] T019 Implement `src/LegalAgent.PdfParser/Pipeline/PipelineRunner.cs` to pass T018
-- [ ] T020 [P] Write tests `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownEscaperTests.cs` per contracts/markdown-output.md „Ucieczka znaków”: escapes `\ * _ [ ] < > `` ` ``; line-start `#`, `+`, `-`, `>`, `=`, `\d+[.)]` (`2024. r.` → `2024\. r.`); table mode escapes `|`; list labels `1)` → `1\)`, `2.` → `2\.`, `a)` → `a\)`
-- [ ] T021 Implement `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` to pass T020
+- [X] T020 [P] Write tests `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownEscaperTests.cs` per contracts/markdown-output.md „Ucieczka znaków”: escapes `\ * _ [ ] < > `` ` ``; line-start `#`, `+`, `-`, `>`, `=`, `\d+[.)]` (`2024. r.` → `2024\. r.`); table mode escapes `|`; list labels `1)` → `1\)`, `2.` → `2\.`, `a)` → `a\)`
+- [X] T021 Implement `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` to pass T020
 
 **Checkpoint**: Fundament gotowy — historyjki mogą startować.
 
