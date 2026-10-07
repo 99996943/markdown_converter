@@ -209,15 +209,16 @@ public sealed class TableDetectionStage : IPipelineStage
             return null;
         }
 
-        // Lines of the first row's cells printed above the seed (a two-line header cell) belong to the table; inside a
-        // ruled grid only when they lie in it too.
+        // Single-cell lines above the seed belong to the table: inside a ruled grid every line in the same grid (a
+        // section row), otherwise lines close above (the upper line of a two-line header cell).
         double rowGap = options.RowMergeGapFactor * TableLeading(region);
         bool seedInGrid = grid.Contains(region[0].Line.Box.CenterY);
         for (int i = above.Count - 1; i >= 0; i--)
         {
             Row row = above[i];
             double gap = region[0].Line.Baseline - row.Line.Baseline;
-            if (row.IsMulti || gap <= 0 || gap > rowGap || (seedInGrid && !grid.Contains(row.Line.Box.CenterY)))
+            bool belongs = seedInGrid ? grid.Contains(row.Line.Box.CenterY) : gap <= rowGap;
+            if (row.IsMulti || gap <= 0 || !belongs)
             {
                 break;
             }
