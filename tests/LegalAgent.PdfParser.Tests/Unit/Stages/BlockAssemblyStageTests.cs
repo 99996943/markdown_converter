@@ -432,6 +432,30 @@ public sealed class BlockAssemblyStageTests
     }
 
     [Fact]
+    public void Execute_TextAfterArticleDesignation_ContinuesAtTheMargin_FR045()
+    {
+        PipelineContext context = RunPrepared(
+            c =>
+            {
+                LayoutPage page = c.Pages[0];
+                LayoutLine line = FindLine(c, "Art. 1.");
+                LayoutLine designation = LineSlicer.Slice(line, line.Words.Take(2).ToList());
+                designation.Role = LineRole.Heading;
+                designation.Heading = new HeadingInfo(2, SectionKind.Article, "Art. 1", "1", null, "Art. 1.");
+                int index = page.Lines.IndexOf(line);
+                page.Lines[index] = designation;
+                page.Lines.Insert(index + 1, LineSlicer.Slice(line, line.Words.Skip(2).ToList()));
+            },
+            new PageSketch()
+                .Line("Art. 1. W celu zapewnienia rzetelnego i bezstronnego", 97, 100)
+                .Line("wykonywania zadan panstwa ustanawia sie sluzbe cywilna.", 50, 114));
+
+        Assert.Equal(
+            ["W celu zapewnienia rzetelnego i bezstronnego wykonywania zadan panstwa ustanawia sie sluzbe cywilna."],
+            context.Blocks.Where(b => b.Kind == LayoutBlockKind.Paragraph).Select(Flat));
+    }
+
+    [Fact]
     public void Execute_FootnoteLinesAreSkipped_WithoutBreakingAParagraphContinuedOnTheNextPage()
     {
         PipelineContext context = RunPrepared(
