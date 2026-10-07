@@ -213,16 +213,16 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 
 ### Tests for User Story 6 ⚠️
 
-- [ ] T082 [P] [US6] Add fixture `tests/LegalAgent.PdfParser.Tests/Corpus/errors/broken-page.pdf` (3 pages, page 2 content stream invalid so PdfPig throws when reading it) and document its production in `Corpus/errors/README.md`
-- [ ] T083 [P] [US6] Write `tests/LegalAgent.PdfParser.Tests/Integration/ErrorHandlingTests.cs`: image-only page → `SkippedPageBlock(NoTextLayer)`, warning `PDF001_NoTextLayer` with page, `IsComplete = false`, no exception (FR-071); fully blank page skipped silently; document with no text at all → `PdfNoTextException`; `broken-page.pdf` default → `PdfPageReadException(PageNumber = 2)`; with `AllowPartialResult = true` → `SkippedPageBlock(PageReadError)`, `IsComplete = false`, `Report.SkippedPages` lists page 2 with reason; all pages failing → exception even in partial mode; limit exceptions unaffected by partial mode (FR-009a, FR-009b)
-- [ ] T084 [P] [US6] Write `tests/LegalAgent.PdfParser.Tests/Unit/Pipeline/ConversionReportTests.cs` (FR-070): `PageCount`, `HeadingCounts` keys ascending, `ListCount`, `TableCount`, `FallbackTableCount`, `FootnoteCount`, `DroppedTextCount`, warnings sorted by page then code; unmapped glyphs → `TXT001_UnmappedGlyphs`; images present → `IMG001_ImagesIgnored`
-- [ ] T085 [P] [US6] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererSkippedPageTests.cs`: `<!-- page N skipped: no-text-layer -->` and `<!-- page N skipped: read-error -->` rendered at the page position
+- [X] T082 [P] [US6] Add fixture `tests/LegalAgent.PdfParser.Tests/Corpus/errors/broken-page.pdf` (3 pages, page 2 content stream invalid so PdfPig throws when reading it) and document its production in `Corpus/errors/README.md`
+- [X] T083 [P] [US6] Write `tests/LegalAgent.PdfParser.Tests/Integration/ErrorHandlingTests.cs`: image-only page → `SkippedPageBlock(NoTextLayer)`, warning `PDF001_NoTextLayer` with page, `IsComplete = false`, no exception (FR-071); fully blank page skipped silently; document with no text at all → `PdfNoTextException`; `broken-page.pdf` default → `PdfPageReadException(PageNumber = 2)`; with `AllowPartialResult = true` → `SkippedPageBlock(PageReadError)`, `IsComplete = false`, `Report.SkippedPages` lists page 2 with reason; all pages failing → exception even in partial mode; limit exceptions unaffected by partial mode (FR-009a, FR-009b)
+- [X] T084 [P] [US6] Write `tests/LegalAgent.PdfParser.Tests/Unit/Pipeline/ConversionReportTests.cs` (FR-070): `PageCount`, `HeadingCounts` keys ascending, `ListCount`, `TableCount`, `FallbackTableCount`, `FootnoteCount`, `DroppedTextCount`, warnings sorted by page then code; unmapped glyphs → `TXT001_UnmappedGlyphs`; images present → `IMG001_ImagesIgnored`
+- [X] T085 [P] [US6] Write `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererSkippedPageTests.cs`: `<!-- page N skipped: no-text-layer -->` and `<!-- page N skipped: read-error -->` rendered at the page position
 
 ### Implementation for User Story 6
 
-- [ ] T086 [US6] Extend `src/LegalAgent.PdfParser/Stages/PageExtractionStage.cs` with per-page try/catch, `AllowPartialResult` handling, image-only vs blank detection, unmapped glyph detection, warnings
-- [ ] T087 [US6] Extend `src/LegalAgent.PdfParser/Pipeline/ReportBuilder.cs` and `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` (`SkippedPageBlock`, counts, `PdfNoTextException` when no text in whole document) to pass T083 and T084
-- [ ] T088 [US6] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with skipped-page markers to pass T085
+- [X] T086 [US6] Extend `src/LegalAgent.PdfParser/Stages/PageExtractionStage.cs` with per-page try/catch, `AllowPartialResult` handling, image-only vs blank detection, unmapped glyph detection, warnings
+- [X] T087 [US6] Extend `src/LegalAgent.PdfParser/Pipeline/ReportBuilder.cs` and `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs` (`SkippedPageBlock`, counts, `PdfNoTextException` when no text in whole document) to pass T083 and T084
+- [X] T088 [US6] Extend `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` with skipped-page markers to pass T085
 
 ---
 
