@@ -14,7 +14,7 @@ namespace LegalAgent.PdfParser.Stages;
 /// (FR-047). A detected heading line gets <see cref="LineRole.Heading"/> and <see cref="LayoutLine.Heading"/>;
 /// lines merged into it (a chapter title under „Rozdział 3”, the title block under „USTAWA”) get the role only.
 /// </remarks>
-public sealed class HeadingDetectionStage : IPipelineStage
+public sealed partial class HeadingDetectionStage : IPipelineStage
 {
     private const double CenterMarginRatio = 0.10;
     private const double TitleBlockGapFactor = 2.0;
@@ -174,18 +174,32 @@ public sealed class HeadingDetectionStage : IPipelineStage
             ? (left, right)
             : page;
 
-    /// <summary>The document title: the first line of the document when it is an enlarged typographic heading.</summary>
+    /// <summary>
+    /// The document title (FR-043): a line of the first page starting with an act type in capitals („USTAWA”,
+    /// „OBWIESZCZENIE”, …) — lines above it on that page (a journal masthead) stay plain text — or, without such a
+    /// line, the first line of the document when it is an enlarged heading of the top size class. Centred lines of
+    /// the title block directly below are joined to it.
+    /// </summary>
     private static void DetectTitle(List<Entry> entries, HeadingOptions options, double leading, List<Detected> headings)
     {
-        Entry first = entries[0];
-        if (!first.Candidate || !first.Enlarged || entries.Any(e => e.Candidate && e.Enlarged && e.Size > first.Size + options.SizeClusterTolerance))
+        Entry first = entries.FirstOrDefault(e => e.Page == entries[0].Page && e.Legal is null && e.Isolated && ActType().IsMatch(e.Text))
+            ?? entries[0];
+        bool actTitle = first != entries[0] || ActType().IsMatch(first.Text);
+        if (actTitle)
+        {
+            foreach (Entry above in entries.TakeWhile(e => e != first))
+            {
+                above.Consumed = true;
+            }
+        }
+        else if (!first.Candidate || !first.Enlarged || entries.Any(e => e.Candidate && e.Enlarged && e.Size > first.Size + options.SizeClusterTolerance))
         {
             return;
         }
 
         var title = new Detected(first, SectionKind.DocumentTitle) { Text = first.Text, Rank = RankTitle, Level = 1 };
         Entry last = first;
-        for (int i = 1; i < entries.Count; i++)
+        for (int i = entries.IndexOf(first) + 1; i < entries.Count; i++)
         {
             Entry next = entries[i];
             if (next.Page != first.Page
@@ -473,6 +487,11 @@ public sealed class HeadingDetectionStage : IPipelineStage
 
         return letters >= MinCapsLetters;
     }
+
+    [System.Text.RegularExpressions.GeneratedRegex(
+        @"^(USTAWA|ROZPORZĄDZENIE|OBWIESZCZENIE|ZARZĄDZENIE|UCHWAŁA|POSTANOWIENIE|DECYZJA|KODEKS|REGULAMIN|KOMUNIKAT)(\s|$)",
+        System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex ActType();
 
     private static double RoundHalf(double value) => Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
 
