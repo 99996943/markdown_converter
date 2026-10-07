@@ -42,6 +42,12 @@ public sealed class LayoutBlock
     /// <summary>Lines of the block.</summary>
     public IList<LayoutLine> Lines { get; } = [];
 
+    /// <summary>
+    /// Inline content of paragraph blocks (text runs and page breaks), built by the block assembly stage
+    /// with hyphenation already resolved.
+    /// </summary>
+    public IList<Inline> Inlines { get; } = [];
+
     /// <summary>Table column band boundaries (X coordinates), for table blocks.</summary>
     public IList<double> ColumnBands { get; } = [];
 
