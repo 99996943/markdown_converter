@@ -112,6 +112,41 @@ internal static class BankingCorpusGenerator
         f.Item("2.", "Klient może wypowiedzieć umowę w każdym czasie ze skutkiem na koniec miesiąca kalendarzowego, w którym złożono wypowiedzenie, o ile nie ma na rachunku zaległych zobowiązań.", 0, 18);
         f.Item("3.", "Bank może wypowiedzieć umowę z ważnych powodów, w szczególności w razie rażącego naruszenia postanowień Regulaminu, podania nieprawdziwych danych lub prowadzenia rachunku w sposób sprzeczny z prawem. Wypowiedzenie następuje w formie pisemnej lub na trwałym nośniku, z podaniem przyczyny.", 0, 18);
         f.Item("4.", "Po rozwiązaniu umowy Bank wypłaca Klientowi środki zgromadzone na rachunku wraz z należnymi odsetkami, w terminie siedmiu dni roboczych od dnia złożenia dyspozycji.", 0, 18);
+        f.Gap(10);
+
+        f.Line("Rozdział 4", 0, 12, true, leading: 15);
+        f.Line("Zmiana regulaminu i rozwiązanie umowy", 0, 12, true, leading: 15);
+        f.Gap(6);
+        Paragraph(f, "§ 7.");
+        f.Item("1.", "Bank może dokonać zmiany Regulaminu w przypadku wystąpienia co najmniej jednej z następujących przyczyn:", 0, 18);
+        f.Item("1)", "zmiany powszechnie obowiązujących przepisów prawa mających wpływ na treść Regulaminu;", 18, 36);
+        f.Item("2)", "wydania orzeczeń sądów, decyzji lub zaleceń organów nadzoru dotyczących usług objętych Regulaminem;", 18, 36);
+        f.Item("3)", "rozszerzenia, zmiany lub wycofania usług oferowanych przez Bank, w tym zmiany funkcjonalności systemu bankowości internetowej;", 18, 36);
+        f.Item("4)", "zmian w zakresie bezpieczeństwa usług płatniczych wynikających z postępu technicznego.", 18, 36);
+        f.Item("2.", "O zmianie Regulaminu Bank zawiadamia Klienta na trwałym nośniku, w sposób ustalony w umowie, co najmniej na dwa miesiące przed proponowanym dniem wejścia w życie zmian, przekazując jednocześnie tekst jednolity Regulaminu wraz ze wskazaniem wprowadzanych zmian.", 0, 18);
+        f.Item("3.", "Klient może przed proponowanym dniem wejścia w życie zmian zgłosić sprzeciw wobec tych zmian albo wypowiedzieć umowę bez ponoszenia opłat. Brak sprzeciwu zgłoszonego w tym terminie oznacza, że Klient wyraził zgodę na zmiany.", 0, 18);
+        f.Gap(6);
+
+        Paragraph(f, "§ 8.");
+        f.Item("1.", "Zgłoszenie przez Klienta sprzeciwu, o którym mowa w § 7 ust. 3, bez jednoczesnego wypowiedzenia umowy, powoduje wygaśnięcie umowy z dniem poprzedzającym dzień wejścia w życie zmian, bez pobierania opłat z tego tytułu.", 0, 18);
+        f.Item("2.", "Bank informuje Klienta w zawiadomieniu o zmianie Regulaminu o skutkach braku sprzeciwu oraz o prawie do wypowiedzenia umowy.", 0, 18);
+        f.Item("3.", "Zmiana Regulaminu, która jest wyłącznie korzystna dla Klienta, może nastąpić bez zachowania terminu, o którym mowa w § 7 ust. 2, z dniem poinformowania Klienta o zmianie.", 0, 18);
+        f.Gap(6);
+
+        Paragraph(f, "§ 9.");
+        f.Item("1.", "Umowa rachunku ulega rozwiązaniu w następujących przypadkach:", 0, 18);
+        f.Item("1)", "upływu okresu wypowiedzenia umowy przez jedną ze stron;", 18, 36);
+        f.Item("2)", "śmierci Klienta, z zastrzeżeniem przepisów o dziedziczeniu środków zgromadzonych na rachunku;", 18, 36);
+        f.Item("3)", "wygaśnięcia umowy zgodnie z § 8 ust. 1;", 18, 36);
+        f.Item("4)", "zakończenia działalności Banku w zakresie prowadzenia rachunków, na zasadach określonych w przepisach prawa.", 18, 36);
+        f.Item("2.", "Rozwiązanie umowy nie wpływa na obowiązek uregulowania przez Klienta należności wynikających z umowy, które powstały przed dniem jej rozwiązania. Bank jest uprawniony do potrącenia tych należności ze środków zgromadzonych na rachunku, a pozostałą kwotę wypłaca lub przekazuje na wskazany przez Klienta rachunek.", 0, 18);
+        f.Gap(6);
+
+        Paragraph(f, "§ 10.");
+        f.Item("1.", "Klient może składać reklamacje dotyczące usług świadczonych przez Bank w formie pisemnej, ustnie, telefonicznie lub w postaci elektronicznej, w tym za pośrednictwem systemu bankowości internetowej.", 0, 18);
+        f.Item("2.", "Bank rozpatruje reklamację bez zbędnej zwłoki, nie później jednak niż w terminie 15 dni roboczych od dnia jej otrzymania. W szczególnie skomplikowanych przypadkach termin ten może zostać przedłużony do 35 dni roboczych, o czym Bank informuje Klienta.", 0, 18);
+        f.Item("3.", "Odpowiedź na reklamację Bank przekazuje w postaci papierowej albo, na wniosek Klienta, za pomocą innego trwałego nośnika.", 0, 18);
+        f.Item("4.", "W sprawach nieuregulowanych w Regulaminie stosuje się przepisy powszechnie obowiązującego prawa, w szczególności ustawy o usługach płatniczych oraz Kodeksu cywilnego.", 0, 18);
 
         f.Finish();
         return (b.Build(), f.Pages);
