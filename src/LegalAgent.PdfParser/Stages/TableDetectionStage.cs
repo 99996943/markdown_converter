@@ -66,7 +66,13 @@ public sealed class TableDetectionStage : IPipelineStage
         {
             int index = context.Tables.Count;
             TableBlock block = table.ToBlock();
-            context.Tables.Add(new LayoutBlock(LayoutBlockKind.Table, block.Pages) { Table = block });
+            var layoutBlock = new LayoutBlock(LayoutBlockKind.Table, block.Pages) { Table = block };
+            foreach (ColumnBand band in table.Bands)
+            {
+                layoutBlock.ColumnBands.Add(band.Left);
+            }
+
+            context.Tables.Add(layoutBlock);
             foreach (LayoutLine line in table.Lines)
             {
                 line.Role = LineRole.Table;
@@ -433,7 +439,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 && !table.IsFallback
                 && table.FirstPage == previous.LastPage + 1
                 && previous.Bands.Count == table.Bands.Count
-                && previous.Bands.Zip(table.Bands).All(p => Math.Abs(p.First.Left - p.Second.Left) <= context.Options.Tables.ColumnTolerance * PageWidth(context, table.FirstPage))
+                && SameColumns(previous.Bands, table.Bands, context.Options.Tables.ColumnTolerance * PageWidth(context, table.FirstPage))
                 && EndsPage(context, previous)
                 && StartsPage(context, table))
             {
@@ -446,6 +452,14 @@ public sealed class TableDetectionStage : IPipelineStage
 
         return merged;
     }
+
+    /// <summary>
+    /// Every band of the continuation starts inside the corresponding band of the table it continues (a header or a
+    /// ruling can move a band edge on one page only).
+    /// </summary>
+    private static bool SameColumns(IReadOnlyList<ColumnBand> previous, IReadOnlyList<ColumnBand> next, double tolerance) =>
+        previous.Count == next.Count
+        && next.Select((band, i) => ColumnClustering.BandIndex(previous, band.Left, tolerance) == i).All(match => match);
 
     private static double PageWidth(PipelineContext context, int page) => context.Pages.First(p => p.Number == page).Width;
 
