@@ -1,5 +1,6 @@
 using System.Globalization;
 using LegalAgent.PdfParser.Layout;
+using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Pipeline;
 using LegalAgent.PdfParser.Text;
 
@@ -24,6 +25,7 @@ public sealed class TableDocumentStage : IPipelineStage
     private const double EdgeCoverage = 0.9;
     private const double ParagraphGapFactor = 1.5;
     private const int MaxHeaderWords = 5;
+    private const double NameBreakFactor = 1.5;
 
     /// <inheritdoc />
     public int Order => StageOrder.TableDocument;
@@ -42,10 +44,11 @@ public sealed class TableDocumentStage : IPipelineStage
         foreach (List<PageFrame> region in Regions(context))
         {
             context.CancellationToken.ThrowIfCancellationRequested();
-            List<LogicalRow> rows = LogicalRows(region);
+            HashSet<FrameRow> headers = HeaderRows(region);
+            List<LogicalRow> rows = LogicalRows(region, headers);
             if (IsTableDocument(region, rows, pagesWithText, options))
             {
-                Apply(context, region, rows);
+                Apply(context, region, rows, headers);
             }
         }
     }
@@ -197,36 +200,94 @@ public sealed class TableDocumentStage : IPipelineStage
         && line.Box.CenterY > frame.Top && line.Box.CenterY < frame.Bottom
         && line.Box.Left >= frame.Left - Tolerance && line.Box.Right <= frame.Right + Tolerance;
 
-    /// <summary>Rows joined across page boundaries: a page's first row with an empty left cell continues the previous row.</summary>
-    private static List<LogicalRow> LogicalRows(List<PageFrame> region)
+    /// <summary>
+    /// The column-name row (R4): the region's first row when each cell is one short line, set in bold or repeated as the
+    /// first row of the next page, and its repeats — first rows of later pages with the same text.
+    /// </summary>
+    private static HashSet<FrameRow> HeaderRows(List<PageFrame> region)
+    {
+        var headers = new HashSet<FrameRow>(ReferenceEqualityComparer.Instance);
+        FrameRow? first = FirstRow(region[0]);
+        if (first is null || !IsHeaderLike(first))
+        {
+            return headers;
+        }
+
+        string fingerprint = Fingerprint(first);
+        bool repeated = region.Skip(1).Select(FirstRow).Any(r => r is not null && Fingerprint(r) == fingerprint);
+        if (!first.Lines.SelectMany(l => l.Words).All(w => w.Style.HasFlag(TextStyle.Bold)) && !repeated)
+        {
+            return headers;
+        }
+
+        headers.Add(first);
+        foreach (FrameRow? row in region.Skip(1).Select(FirstRow))
+        {
+            if (row is not null && IsHeaderLike(row) && Fingerprint(row) == fingerprint)
+            {
+                headers.Add(row);
+            }
+        }
+
+        return headers;
+    }
+
+    private static FrameRow? FirstRow(PageFrame frame) => frame.Rows.FirstOrDefault(r => r.Lines.Count > 0);
+
+    private static string Fingerprint(FrameRow row) =>
+        LineFingerprint.Compute(CellText(row.LeftWords)) + "|" + LineFingerprint.Compute(CellText(row.RightWords));
+
+    private static string CellText(IEnumerable<LayoutWord> words) => string.Join(' ', words.Select(w => w.Text));
+
+    /// <summary>
+    /// Rows joined across page boundaries: a page's first data row continues the previous row when its left cell is
+    /// empty, or when the previous row's name ends at the bottom of the frame (a name broken by the page boundary).
+    /// </summary>
+    private static List<LogicalRow> LogicalRows(List<PageFrame> region, HashSet<FrameRow> headers)
     {
         var rows = new List<LogicalRow>();
         foreach (PageFrame frame in region)
         {
-            for (int i = 0; i < frame.Rows.Count; i++)
+            bool first = true;
+            foreach (FrameRow row in frame.Rows.Where(r => r.Lines.Count > 0 && !headers.Contains(r)))
             {
-                FrameRow row = frame.Rows[i];
-                if (row.Lines.Count == 0)
-                {
-                    continue;
-                }
-
-                if (rows.Count > 0 && row.LeftWords.Count == 0 && (i == 0 || (i == 1 && IsHeaderLike(frame.Rows[0]))) && rows[^1].Parts[^1].Frame != frame)
+                FrameRow? previous = rows.Count > 0 ? rows[^1].Parts[^1] : null;
+                if (first && previous is not null && previous.Frame != frame
+                    && (row.LeftWords.Count == 0 || NameReachesFrameBottom(previous)))
                 {
                     rows[^1].Parts.Add(row);
-                    continue;
+                }
+                else
+                {
+                    rows.Add(new LogicalRow(row));
                 }
 
-                rows.Add(new LogicalRow(row));
+                first = false;
             }
         }
 
         return rows;
     }
 
+    /// <summary>True when the row is the last of its page and its name's last line lies within 1.5 line heights of the frame bottom.</summary>
+    private static bool NameReachesFrameBottom(FrameRow row)
+    {
+        List<LayoutWord> name = row.LeftWords;
+        if (name.Count == 0 || row.Frame.Rows.Last(r => r.Lines.Count > 0) != row)
+        {
+            return false;
+        }
+
+        LayoutWord last = name.MaxBy(w => w.Box.Bottom)!;
+        return row.Frame.Bottom - last.Box.Bottom <= NameBreakFactor * last.Box.Height;
+    }
+
     /// <summary>A row with one short line in each cell (the column-name row, e.g. „Definicje | Wyjaśnienie”).</summary>
     private static bool IsHeaderLike(FrameRow row) =>
-        row.Lines.Count == 1 && row.LeftWords.Count is > 0 and <= MaxHeaderWords && row.RightWords.Count is > 0 and <= MaxHeaderWords;
+        row.LeftWords.Count is > 0 and <= MaxHeaderWords
+        && row.RightWords.Count is > 0 and <= MaxHeaderWords
+        && row.Lines.Count(l => l.Words.Any(w => w.Box.CenterX < row.Frame.Divider)) == 1
+        && row.Lines.Count(l => l.Words.Any(w => w.Box.CenterX >= row.Frame.Divider)) == 1;
 
     private static bool IsTableDocument(List<PageFrame> region, List<LogicalRow> rows, int pagesWithText, TableOptions options)
     {
@@ -238,7 +299,7 @@ public sealed class TableDocumentStage : IPipelineStage
             return false;
         }
 
-        List<LogicalRow> named = rows.Where(r => r.Parts[0].LeftWords.Count > 0 && !IsHeaderLike(r.Parts[0])).ToList();
+        List<LogicalRow> named = rows.Where(r => r.Parts[0].LeftWords.Count > 0).ToList();
         if (named.Count == 0)
         {
             return false;
@@ -278,19 +339,105 @@ public sealed class TableDocumentStage : IPipelineStage
             || (leading > 0 && Gaps(lines).Any(g => g > ParagraphGapFactor * leading));
     }
 
-    private static void Apply(PipelineContext context, List<PageFrame> region, List<LogicalRow> rows)
+    /// <summary>
+    /// Marks the region (R4 – R7): column-name rows become artifacts, lines are split at the divider, section names
+    /// become level-2 headings and each page's frame lines are reordered row by row — name first, then content.
+    /// </summary>
+    private static void Apply(PipelineContext context, List<PageFrame> region, List<LogicalRow> rows, HashSet<FrameRow> headers)
     {
         int index = context.TableDocuments.Count;
         string key = index.ToString(CultureInfo.InvariantCulture);
         List<LayoutWord> content = rows.SelectMany(r => r.Parts).SelectMany(p => p.RightWords).ToList();
-        foreach (PageFrame frame in region)
+        double contentLeft = content.Count > 0 ? content.Min(w => w.Box.Left) : region[0].Divider;
+        double contentRight = content.Count > 0 ? content.Max(w => w.Box.Right) : region[0].Right;
+
+        var sections = new Dictionary<FrameRow, LogicalRow>(ReferenceEqualityComparer.Instance);
+        foreach (LogicalRow row in rows)
         {
-            foreach (LayoutLine line in frame.Rows.SelectMany(r => r.Lines))
+            foreach (FrameRow part in row.Parts)
             {
-                line.Annotations[LayoutAnnotations.TableDocumentIndex] = key;
+                sections[part] = row;
             }
         }
 
+        foreach (PageFrame frame in region)
+        {
+            context.CancellationToken.ThrowIfCancellationRequested();
+            var owned = new HashSet<LayoutLine>(frame.Rows.SelectMany(r => r.Lines), ReferenceEqualityComparer.Instance);
+            var framed = new List<LayoutLine>();
+            foreach (FrameRow row in frame.Rows)
+            {
+                if (headers.Contains(row))
+                {
+                    foreach (LayoutLine line in row.Lines)
+                    {
+                        line.Role = LineRole.Artifact;
+                        line.Annotations[LayoutAnnotations.TableDocumentIndex] = key;
+                        framed.Add(line);
+                    }
+
+                    continue;
+                }
+
+                var names = new List<LayoutLine>();
+                var texts = new List<LayoutLine>();
+                foreach (LayoutLine line in row.Lines)
+                {
+                    List<LayoutWord> left = line.Words.Where(w => w.Box.CenterX < frame.Divider).ToList();
+                    List<LayoutWord> right = line.Words.Where(w => w.Box.CenterX >= frame.Divider).ToList();
+                    if (left.Count > 0)
+                    {
+                        LayoutLine name = right.Count == 0 ? line : LineSlicer.Slice(line, left);
+                        name.Role = LineRole.Heading;
+                        name.Annotations[LayoutAnnotations.TableDocumentIndex] = key;
+                        names.Add(name);
+                    }
+
+                    if (right.Count > 0)
+                    {
+                        LayoutLine text = left.Count == 0 ? line : LineSlicer.Slice(line, right);
+                        text.Annotations[LayoutAnnotations.TableDocumentIndex] = key;
+                        LayoutAnnotations.SetNumber(text, LayoutAnnotations.ColumnLeft, contentLeft);
+                        LayoutAnnotations.SetNumber(text, LayoutAnnotations.ColumnRight, contentRight);
+                        texts.Add(text);
+                    }
+                }
+
+                if (names.Count > 0 && sections.TryGetValue(row, out LogicalRow? section) && section.Parts[0] == row)
+                {
+                    string title = string.Join(' ', section.Parts.SelectMany(p => p.Lines.OrderBy(l => l.Box.Top).Select(l => CellText(l.Words.Where(w => w.Box.CenterX < p.Frame.Divider)))).Where(t => t.Length > 0));
+                    names[0].Heading = new HeadingInfo(2, SectionKind.TableDocumentSection, null, null, title, title);
+                }
+
+                framed.AddRange(names.OrderBy(l => l.Box.Top));
+                framed.AddRange(texts.OrderBy(l => l.Box.Top));
+            }
+
+            var ordered = new List<LayoutLine>(frame.Page.Lines.Count + framed.Count);
+            bool emitted = false;
+            foreach (LayoutLine line in frame.Page.Lines)
+            {
+                if (!owned.Contains(line))
+                {
+                    ordered.Add(line);
+                }
+                else if (!emitted)
+                {
+                    ordered.AddRange(framed);
+                    emitted = true;
+                }
+            }
+
+            frame.Page.Lines.Clear();
+            foreach (LayoutLine line in ordered)
+            {
+                frame.Page.Lines.Add(line);
+            }
+        }
+
+        FrameRow? header = headers.FirstOrDefault(h => h.Frame == region[0]);
+        string? headerText = header is null ? null : CellText(header.LeftWords) + " | " + CellText(header.RightWords);
+        int sectionCount = rows.Count(r => r.Parts[0].LeftWords.Count > 0);
         PageFrame first = region[0];
         context.TableDocuments.Add(new TableDocumentRegion(
             index,
@@ -298,11 +445,12 @@ public sealed class TableDocumentStage : IPipelineStage
             region[^1].Page.Number,
             first.Top,
             first.Divider,
-            content.Count > 0 ? content.Min(w => w.Box.Left) : first.Divider,
-            content.Count > 0 ? content.Max(w => w.Box.Right) : first.Right,
-            rows.Count(r => r.Parts[0].LeftWords.Count > 0 && !IsHeaderLike(r.Parts[0])),
-            null,
-            0));
+            contentLeft,
+            contentRight,
+            sectionCount,
+            headerText,
+            headers.Count));
+        context.Report.AddTableDocument(first.Page.Number, region[^1].Page.Number, sectionCount, headerText, headers.Count);
     }
 
     /// <summary>The two-column frame of one page with its row edges (top to bottom) and rows.</summary>
