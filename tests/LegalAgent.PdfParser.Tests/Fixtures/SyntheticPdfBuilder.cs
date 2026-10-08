@@ -7,7 +7,7 @@ namespace LegalAgent.PdfParser.Tests.Fixtures;
 
 /// <summary>
 /// Fluent builder of synthetic PDF documents for tests. Text uses embedded Noto Sans TrueType
-/// fonts (Regular, Bold, Italic) so Polish diacritics are supported. Vertical coordinates are
+/// fonts (Regular, Bold, Italic, Mono) so Polish diacritics are supported. Vertical coordinates are
 /// given as the distance from the top edge of the page (Y grows downwards).
 /// </summary>
 public sealed class SyntheticPdfBuilder
@@ -43,7 +43,7 @@ public sealed class SyntheticPdfBuilder
     {
         Current.Draw.Add((ctx, page) =>
         {
-            page.AddText(text, size, new PdfPoint(x, page.PageSize.Height - yFromTop), ctx.Font(bold, italic));
+            page.AddText(text, size, new PdfPoint(x, page.PageSize.Height - yFromTop), mono ? ctx.Mono() : ctx.Font(bold, italic));
         });
         return this;
     }
@@ -231,10 +231,14 @@ public sealed class SyntheticPdfBuilder
     {
         private readonly Dictionary<string, PdfDocumentBuilder.AddedFont> _fonts = new(StringComparer.Ordinal);
 
-        public PdfDocumentBuilder.AddedFont Font(bool bold, bool italic)
-        {
+        public PdfDocumentBuilder.AddedFont Font(bool bold, bool italic) =>
             // There is no bold-italic face in the fixtures: bold wins.
-            string name = bold ? "NotoSans-Bold.ttf" : italic ? "NotoSans-Italic.ttf" : "NotoSans-Regular.ttf";
+            Load(bold ? "NotoSans-Bold.ttf" : italic ? "NotoSans-Italic.ttf" : "NotoSans-Regular.ttf");
+
+        public PdfDocumentBuilder.AddedFont Mono() => Load("NotoSansMono-Regular.ttf");
+
+        private PdfDocumentBuilder.AddedFont Load(string name)
+        {
             if (!_fonts.TryGetValue(name, out PdfDocumentBuilder.AddedFont? font))
             {
                 string path = Path.Combine(AppContext.BaseDirectory, "Fixtures", "Fonts", name);
