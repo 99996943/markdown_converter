@@ -7,7 +7,14 @@ internal sealed record ListTruth(string Label, int Depth);
 
 internal sealed record TableRowTruth(string Service, string Fee, string Frequency);
 
-internal sealed record DocumentTruth(IReadOnlyList<ListTruth> ListItems, IReadOnlyList<TableRowTruth> TableRows);
+internal sealed record DocumentTruth(IReadOnlyList<ListTruth> ListItems, IReadOnlyList<TableRowTruth> TableRows)
+{
+    /// <summary>Section names of a table-document (the left cells), in document order.</summary>
+    public IReadOnlyList<string> SectionNames { get; init; } = [];
+
+    /// <summary>Words of the dropped column-name row of a table-document.</summary>
+    public IReadOnlyList<string> HeaderRowWords { get; init; } = [];
+}
 
 /// <summary>
 /// Deterministic, in-memory generator of four synthetic banking documents (generic names, no real
@@ -25,6 +32,9 @@ internal static class BankingCorpusGenerator
     /// <summary>name (file stem) -> PDF bytes; stable order.</summary>
     public static IReadOnlyList<(string Name, byte[] Pdf)> Documents() =>
         Names.Select(n => (n, Build(n).Pdf)).ToArray();
+
+    /// <summary>PDF bytes of any generated document, including those not (yet) in the golden corpus.</summary>
+    public static byte[] Pdf(string name) => Build(name).Pdf;
 
     /// <summary>Ground truth recorded while the named document is generated.</summary>
     public static DocumentTruth Truth(string name) => Build(name).Truth;
