@@ -35,6 +35,15 @@ public static class LayoutAnnotations
     /// <summary>Index into <see cref="Pipeline.PipelineContext.Tables"/> of the table a <see cref="LineRole.Table"/> line belongs to.</summary>
     public const string TableIndex = "table.index";
 
+    /// <summary>
+    /// Document-wide index (invariant integer) of the step scheme (FR-067) a line belongs to: its step titles, its
+    /// explanation lines and its dropped column-name rows.
+    /// </summary>
+    public const string StepIndex = "step.scheme";
+
+    /// <summary>Number of the step (invariant integer, from 1 within a scheme) on <see cref="LineRole.StepTitle"/> lines.</summary>
+    public const string StepNumber = "step.number";
+
     /// <summary>Stores a coordinate annotation in invariant round-trip format.</summary>
     public static void SetNumber(LayoutLine line, string key, double value)
     {

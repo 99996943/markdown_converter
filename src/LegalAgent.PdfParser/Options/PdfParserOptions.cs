@@ -189,6 +189,9 @@ public sealed class TableOptions
     /// <summary>Merge tables continued across pages.</summary>
     public bool MergeAcrossPages { get; set; } = true;
 
+    /// <summary>Render step schemes (shaded step boxes with an explanation beside them) as a sequence of steps (FR-067).</summary>
+    public bool DetectStepSequences { get; set; } = true;
+
     internal TableOptions Clone() => (TableOptions)MemberwiseClone();
 }
 

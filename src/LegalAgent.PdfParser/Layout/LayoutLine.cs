@@ -42,6 +42,9 @@ public enum LineRole
 
     /// <summary>Line of a side-note column at the page edge (FR-034), set by line assembly.</summary>
     SideNote,
+
+    /// <summary>Line of a step name in a step scheme (FR-067), set by step sequence detection.</summary>
+    StepTitle,
 }
 
 /// <summary>A line of text.</summary>

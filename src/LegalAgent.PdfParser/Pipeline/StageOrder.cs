@@ -18,6 +18,9 @@ public static class StageOrder
     /// <summary>Footnote detection.</summary>
     public const int FootnoteDetection = 500;
 
+    /// <summary>Step schemes (FR-067).</summary>
+    public const int StepSequence = 550;
+
     /// <summary>Table detection.</summary>
     public const int TableDetection = 600;
 
