@@ -146,7 +146,7 @@ siatki, US3 (P2) brak fałszywych nagłówków, US4 (P1) brak regresji.
 - [X] T037 [P] Niezmienniki 7–9 z `contracts/markdown-output.md` w `tests/Rendering/MarkdownInvariantsTests.cs` (na korpusie syntetycznym)
 - [X] T038 Utwórz `tests/Corpus/private/mbank-reg3.expected.md` (poza git) po przeglądzie wyniku wg quickstart §2 (sprawdzenie kompletności słów względem surowego tekstu PdfPig); rozszerz `tests/Corpus/PrivateCorpusTests.cs` o asercje dla dokumentów z tabelą-dokumentem: 0 linii zaczynających się od `|`, 0 ` \| `, `Report.TableDocuments` niepuste
 - [X] T039 [P] Dokumentacja: README (opis tabeli-dokumentu, nowe opcje `Tables.DetectTableDocuments` i progi, `Headings.DetectImageCaptions`, `Headings.ValidityLineAsParagraph`, nowa wartość `SectionKind`, wskazówka dla chunkera), XML-doc nowych typów, `specs/001-legal-pdf-parser/contracts/public-api.md` — odnośnik do kontraktu 1.1.0, `tests/Corpus/REVIEW.md` — wpis dla nowych golden
-- [ ] T040 Pełny zestaw `dotnet test LegalAgent.slnx -c Release` (w tym `Performance`, `DeterminismTests`), CI Linux zielone (SC-017); notatki przekazania w `specs/002-table-document-sections/plan.md` („Stan prac i przekazanie”) i aktualizacja `tasks.md`
+- [X] T040 Pełny zestaw `dotnet test LegalAgent.slnx -c Release` (w tym `Performance`, `DeterminismTests`), CI Linux zielone (SC-017); notatki przekazania w `specs/002-table-document-sections/plan.md` („Stan prac i przekazanie”) i aktualizacja `tasks.md`
 
 ---
 

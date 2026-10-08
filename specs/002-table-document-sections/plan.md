@@ -223,8 +223,8 @@ SC-016 doprecyzowane — + poprawka daty w `reg2`); `PrivateCorpusTests` z `LEGA
 brak wierszy tabel w dokumentach z tabelą-dokumentem. README, XML-doc, odnośnik do kontraktu 1.1.0, wpis w REVIEW.md.
 
 Stan testów (jak w CI): `--filter "Category!=Performance"` 910 zielonych + 1 pominięty, `Category=Performance` 2/2.
-**Do zrobienia (T040)**: wypchnąć gałąź `002-table-document-sections` i potwierdzić zielone CI na Ubuntu (SC-017);
-gałąź nie była jeszcze wypychana.
+**T040 zrobione**: gałąź `002-table-document-sections` wypchnięta, CI na Ubuntu zielone dla `9296d21` (SC-017,
+run 37830745473). Spec 002 kompletna (40/40); PR do `main` do otwarcia przez właściciela.
 
 **Uwaga do pracy z gitem**: w katalogu głównym leżą nieśledzone pliki właściciela (`Akt prawny - …`, `Regulamin … mBanku …`
 — PDF banku); dodawać do commitów wyłącznie konkretne ścieżki, nigdy `git add -A`.
