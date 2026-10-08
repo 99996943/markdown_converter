@@ -195,6 +195,19 @@ oznaczenie konspektu (wzorzec konspektu: składowe 1–3 cyfr), adres URL złama
 Porównanie z `baseline/`: `mbank-regulamin-pdp`, `mbank-reg1` — bez zmian; `mbank-reg2` — jedyna różnica to poprawka daty
 („…na dzień 01.01.2025 r. wynosi…” w jednym akapicie zamiast fałszywej pozycji listy) — uwzględnić w T033.
 
+**2026-10-08 — US3 (T026–T031) i T034 zrobione.** `LayoutPage.ImageAreas` (PdfPig `BoundingBox`, Y w dół).
+`HeadingDetectionStage`: flaga `Plain` (nie kandydat, nie wyśrodkowany, nie dołączana do bloku tytułu ani do nagłówka
+wieloliniowego) dla linii od górnej krawędzi pierwszej tabeli-dokumentu (FR-087), podpisu obrazu (FR-088: na obrazie
+albo górna krawędź ≤ 3 wysokości linii pod nim, w szerokości obrazu ±10%) i linii `^obowiązuje\s+od\b` na pierwszej
+stronie (FR-093). `mbank-reg3`: nagłówki = tytuł + 9 nazw sekcji (SC-012); „Obowiązuje od …” akapit, „**mBank.pl**”,
+śródtytuły i „**MOJE OŚWIADCZENIA**” jako pogrubione akapity.
+
+**Do decyzji właściciela (blokuje T033)**: w `mbank-regulamin-pdp` i `mbank-reg1` poza linią FR-093 zmienia się poziom
+47 nagłówków (`###` → `##`) — linia „obowiązuje od” zajmowała dotąd klasę rozmiaru poziomu 2, po jej usunięciu nagłówki
+sekcji przesuwają się pod tytuł. Hierarchia jest teraz bez luki (`#` → `##`), ale to więcej niż „jedyna zmiana” z SC-016.
+`mbank-reg2`: to samo + poprawka daty (T024). T034 (`DetectTableDocuments=false` dla `mbank-reg3`): różnice względem
+`baseline/` wyłącznie z FR-088, FR-093 i tego samego przesunięcia poziomów; tabele i TBL001 jak w 001.
+
 **Test wydajności**: `PerformanceTests.HundredAndFourteenPageAct_ConvertsInUnderTenSeconds` pada w pełnym przebiegu lokalnie
 (10,9–12,4 s przy równoległych testach), osobno 3,6–3,9 s — tyle samo co przed spec 002 (zmierzone na 74843fd). Wrażliwy na
 obciążenie; do rozstrzygnięcia przy T040 (np. kolekcja bez równoległości), zanim CI zacznie padać.
