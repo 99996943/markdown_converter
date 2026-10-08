@@ -267,4 +267,43 @@ public sealed partial class TableDocumentsIntegrationTests
 
     private static IEnumerable<Section> Flatten(IEnumerable<Section> sections) =>
         sections.SelectMany(s => new[] { s }.Concat(Flatten(s.Children)));
+
+    // ---------------------------------------------------------------- US3 (T028)
+
+    [GeneratedRegex(@"^#+ (.+)$", RegexOptions.Multiline)]
+    private static partial Regex AnyHeading();
+
+    [Fact]
+    public async Task OnlyTheTitleAndSectionNames_AreHeadings()
+    {
+        DocumentTruth truth = BankingCorpusGenerator.Truth(Promotion);
+        string md = (await ConvertAsync(BankingCorpusGenerator.Pdf(Promotion))).Markdown;
+
+        List<string> expected = ["Regulamin promocji „Konto firmowe z korzyściami – edycja 1”", .. truth.SectionNames];
+        Assert.Equal(expected, AnyHeading().Matches(md).Select(m => m.Groups[1].Value.Trim()));
+    }
+
+    [Fact]
+    public async Task SubtitlesAndTheStatementsAfterTheTable_AreBoldParagraphsOfTheLastSections()
+    {
+        string md = (await ConvertAsync(BankingCorpusGenerator.Pdf(Promotion))).Markdown;
+        List<string> blocks = Blocks(md);
+
+        Assert.Contains("**Nie możesz uczestniczyć w promocji, jeśli:**", blocks);
+        Assert.Contains("**Korzyści obowiązujące przez pierwsze 24 miesiące od dnia otwarcia rachunku bieżącego:**", blocks);
+        string tail = md[md.IndexOf("## Jak możesz złożyć reklamację", StringComparison.Ordinal)..];
+        Assert.Matches(@"\*\*MOJE OŚWIADCZENIA\*\*\s+- 1\\\) Wiem,[^\n]*\n- 2\\\) Otrzymałem", tail);
+        Assert.EndsWith("data, miejsce i podpis Uczestnika promocji", md.TrimEnd(), StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task ValidityLineAndImageCaption_AreParagraphsOfThePreamble()
+    {
+        PdfConversionResult result = await ConvertAsync(BankingCorpusGenerator.Pdf(Promotion));
+
+        List<string> preamble = result.Document.Preamble.OfType<ParagraphBlock>()
+            .Select(p => string.Concat(p.Inlines.OfType<TextRun>().Select(r => r.Text)).Trim())
+            .ToList();
+        Assert.Equal(["Obowiązuje od 01.09.2026 r. do 30.11.2026 r.", "bank.example"], preamble);
+    }
 }
