@@ -640,6 +640,18 @@ public sealed class BlockAssemblyStageTests
     }
 
     [Fact]
+    public void WebAddressBrokenOverThreeLines_KeepsAllItsHyphens()
+    {
+        // FR-094: the middle piece has no „/” of its own; the address is recognised from the whole word built so far.
+        PipelineContext context = Run(new PageSketch()
+            .Line("adres: https://example.org/pdf/rozwijaj-", 50, 100)
+            .Line("firme-z-platnosciami-edycja-1-01-09-26-", 50, 114)
+            .Line("30-11-26.pdf", 50, 128));
+
+        Assert.Equal(["adres: https://example.org/pdf/rozwijaj-firme-z-platnosciami-edycja-1-01-09-26-30-11-26.pdf"], Paragraphs(context));
+    }
+
+    [Fact]
     public void LinesOutsideATableDocument_KeepAShortLineWithoutAPeriodInTheParagraph()
     {
         PipelineContext context = Run(new PageSketch()
