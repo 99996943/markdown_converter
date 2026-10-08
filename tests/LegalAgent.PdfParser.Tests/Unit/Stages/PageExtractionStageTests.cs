@@ -165,7 +165,7 @@ public sealed class PageExtractionStageTests
     {
         var madeUp = new UglyToad.PdfPig.Core.PdfRectangle(443.73, 788.34, 469.36, 797.44);
 
-        Rect box = PageExtractionStage.GlyphBox(" ", madeUp, 449.32, 451.82, 790.50, 842);
+        Rect box = PageExtractionStage.GlyphBox(" ", madeUp, 449.32, 451.82, 790.50, 842, 10.02);
 
         Assert.Equal(449.32, box.Left, 0.001);
         Assert.Equal(451.82, box.Right, 0.001);
@@ -173,12 +173,26 @@ public sealed class PageExtractionStageTests
         Assert.Equal(842 - 790.50, box.Bottom, 0.001);
     }
 
+    /// <summary>
+    /// FR-011a: without the font program PdfPig gives every letter the font's bounding box (25.7 pt wide, shifted left);
+    /// values of „z” in dz-u-2020-287 page 1 on Ubuntu. The horizontal extent then comes from the advance.
+    /// </summary>
+    [Fact]
+    public void GlyphBox_OfALetterWithTheFontBoundingBox_TakesItsWidthFromTheAdvance()
+    {
+        var fontBox = new UglyToad.PdfPig.Core.PdfRectangle(240.39, 556.42, 266.12, 565.52);
+
+        Rect box = PageExtractionStage.GlyphBox("z", fontBox, 246.08, 250.53, 558.58, 842, 10.02);
+
+        Assert.Equal(new Rect(246.08, 842 - 565.52, 250.53, 842 - 556.42), box);
+    }
+
     [Fact]
     public void GlyphBox_OfALetter_IsItsBoundingBox()
     {
         var bounds = new UglyToad.PdfPig.Core.PdfRectangle(444.56, 788.0, 448.95, 797.0);
 
-        Rect box = PageExtractionStage.GlyphBox("a", bounds, 444.10, 449.11, 790.50, 842);
+        Rect box = PageExtractionStage.GlyphBox("a", bounds, 444.10, 449.11, 790.50, 842, 10.02);
 
         Assert.Equal(new Rect(444.56, 842 - 797.0, 448.95, 842 - 788.0), box);
     }

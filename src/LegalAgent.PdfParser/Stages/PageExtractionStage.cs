@@ -116,7 +116,7 @@ public class PageExtractionStage : IPipelineStage
                 continue;
             }
 
-            Rect box = GlyphBox(letter.Value, letter.BoundingBox, letter.StartBaseLine.X, letter.EndBaseLine.X, letter.StartBaseLine.Y, height);
+            Rect box = GlyphBox(letter.Value, letter.BoundingBox, letter.StartBaseLine.X, letter.EndBaseLine.X, letter.StartBaseLine.Y, height, letter.PointSize);
             string fontName = letter.FontName ?? string.Empty;
             bool stroke = letter.RenderingMode == TextRenderingMode.FillThenStroke;
             bool bold = FontStyleDetector.IsBold(fontName, letter.FontDetails?.IsBold ?? false, stroke);
@@ -180,7 +180,7 @@ public class PageExtractionStage : IPipelineStage
     /// reports it so when the font program is available, but for a non-embedded font missing from the system (Times New
     /// Roman on Linux) it makes up a wide box that would reorder the letters of the line.
     /// </summary>
-    internal static Rect GlyphBox(string value, PdfRectangle bounds, double startX, double endX, double baselineY, double pageHeight)
+    internal static Rect GlyphBox(string value, PdfRectangle bounds, double startX, double endX, double baselineY, double pageHeight, double pointSize)
     {
         if (string.IsNullOrWhiteSpace(value))
         {
