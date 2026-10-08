@@ -20,6 +20,7 @@ public class PageExtractionStage : IPipelineStage
     private const double ThinRuleThickness = 1.5;
     private const double MinRuleLength = 3;
     private const double PageSizedRatio = 0.9;
+    private const double MaxGlyphOverhangEm = 0.4;
 
     /// <inheritdoc />
     public int Order => StageOrder.PageExtraction;
@@ -178,7 +179,8 @@ public class PageExtractionStage : IPipelineStage
     /// <summary>
     /// Top-down box of a letter. A whitespace glyph has no shape: its box is its advance on the baseline (FR-011a). PdfPig
     /// reports it so when the font program is available, but for a non-embedded font missing from the system (Times New
-    /// Roman on Linux) it makes up a wide box that would reorder the letters of the line.
+    /// Roman on Linux) it makes up a wide box that would reorder the letters of the line. For the same reason a letter whose
+    /// box overhangs its advance by more than <see cref="MaxGlyphOverhangEm"/> em takes its horizontal extent from the advance.
     /// </summary>
     internal static Rect GlyphBox(string value, PdfRectangle bounds, double startX, double endX, double baselineY, double pageHeight, double pointSize)
     {
@@ -188,7 +190,14 @@ public class PageExtractionStage : IPipelineStage
             return new Rect(Math.Min(startX, endX), y, Math.Max(startX, endX), y);
         }
 
-        return new Rect(bounds.Left, pageHeight - bounds.Top, bounds.Right, pageHeight - bounds.Bottom);
+        // Without the font program PdfPig boxes every letter with the font's bounding box, far wider than the letter.
+        double left = Math.Min(startX, endX);
+        double right = Math.Max(startX, endX);
+        double overhang = MaxGlyphOverhangEm * pointSize;
+        bool shapeless = left - bounds.Left > overhang || bounds.Right - right > overhang;
+        return shapeless
+            ? new Rect(left, pageHeight - bounds.Top, right, pageHeight - bounds.Bottom)
+            : new Rect(bounds.Left, pageHeight - bounds.Top, bounds.Right, pageHeight - bounds.Bottom);
     }
 
     private static bool IsWhite(IColor? color)
