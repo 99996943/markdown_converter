@@ -214,4 +214,23 @@ public sealed class ReadingOrderStageTests
             harness.Context.Pages.Where(p => p.Number is 1 or 20),
             p => Assert.Null(ReadingOrderStage.FindGutter(p, harness.Context.Options.Layout)));
     }
+
+    [Fact]
+    public void LinesOfATableDocument_AreNotAssignedToColumnsNorReordered()
+    {
+        var lines = new List<LayoutLine>();
+        lines.AddRange(TwoColumns(1, 8, 100));
+        List<LayoutLine> tableDocument = TwoColumns(9, 4, 300).ToList();
+        foreach (LayoutLine line in tableDocument)
+        {
+            line.Annotations[LayoutAnnotations.TableDocumentIndex] = "0";
+        }
+
+        lines.AddRange(tableDocument);
+
+        IEnumerable<string> order = Run(Context([Page(1, lines)]));
+
+        Assert.Equal(["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "L9", "R9", "L10", "R10", "L11", "R11", "L12", "R12"], order);
+        Assert.All(tableDocument, l => Assert.False(l.Annotations.ContainsKey(LayoutAnnotations.ColumnLeft) || l.Annotations.ContainsKey(LayoutAnnotations.ColumnRight), l.Text));
+    }
 }
