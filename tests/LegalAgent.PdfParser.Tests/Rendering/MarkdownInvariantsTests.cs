@@ -26,10 +26,6 @@ public sealed partial class MarkdownInvariantsTests
             data.Add("banking/" + doc);
         }
 
-        // Spec 002 documents are generated on demand, outside the golden corpus (BankingCorpusGenerator.Names).
-        data.Add("banking/" + TableDocument);
-        data.Add("banking/regulamin-z-tabela-definicji");
-
         return data;
     }
 
