@@ -254,7 +254,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 
 **Purpose**: Dwukolumnowe schematy kroków regulaminów (szare pola z nazwami kroków bez obramowania, strzałki-obrazki,
 wyjaśnienie z punktorami po prawej) dziś „rozsypują się”: linie obu kolumn przeplatają się, a wiersz „Kolejność działań
-Wyjaśnienie” wychodzi jako `###`. Wynik: sekwencja „**Krok N: nazwa**” + wyjaśnienie jako akapity/listy (spec FR-067,
+Wyjaśnienie” wychodzi jako `###`. Wynik: sekwencja „**nazwa kroku**” (oryginalny tekst, T108) + wyjaśnienie jako akapity/listy (spec FR-067,
 US4 scenariusz 6, Clarifications 2026-10-08). Weryfikacja na `Corpus/private/mbank-regulamin-pdp.pdf` (16 schematów,
 strony 9, 27–39, 46–47).
 
@@ -265,6 +265,8 @@ strony 9, 27–39, 46–47).
 - [X] T105 [US4] Write tests: `BlockAssemblyStageTests` — consecutive `StepTitle` lines of one step form one paragraph „Krok N: nazwa” in bold (hyphenation resolved), the explanation becomes ordinary paragraphs and lists; `ReadingOrderStageTests`/`TableDetectionStageTests` — scheme lines are neither a text column nor a table; `Integration/TablesIntegrationTests` — synthetic 2-page scheme (header row, 3 boxes with vertically centred titles, bullets on the right, continuation box with repeated header) renders as „**Krok 1: …**” … with no `#` heading, no table and no interleaved lines
 - [X] T106 [US4] Register `StepSequenceStage` in `BuiltInStages`, implement step titles in `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs` and the exclusions in `ReadingOrderStage`/`TableDetectionStage` to pass T105
 - [X] T107 [US4] Verify on `Corpus/private/mbank-regulamin-pdp.pdf` (all 16 schemes; fix defects test-first), run the full suite and goldens (no unintended changes in `Corpus/acts`, `Corpus/banking`), update `contracts/markdown-output.md`, `data-model.md`, README options table and the handoff in `plan.md`
+
+- [ ] T108 [US4] Step names render as their original text only (no added „Krok N:”, owner's correction 2026-10-08): update `BlockAssemblyStageTests` and `Integration/StepSchemesIntegrationTests` (red), then drop the prefix in `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs`; update `contracts/markdown-output.md`, README, `plan.md`, `Corpus/REVIEW.md`; re-verify on `Corpus/private/mbank-regulamin-pdp.pdf`
 
 ---
 
