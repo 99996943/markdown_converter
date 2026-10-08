@@ -103,7 +103,10 @@ public sealed class ListDetectionStage : IPipelineStage
             LayoutLine? previous = null;
             foreach (LayoutLine line in page.Lines)
             {
-                if (line.Role is LineRole.Artifact or LineRole.Footnote or LineRole.SideNote || line.Words.Count == 0)
+                // Spec 002, FR-083/FR-085: the rest of a section name broken by a page boundary belongs to the heading on
+                // the previous page and does not end the list of that section.
+                if (line.Role is LineRole.Artifact or LineRole.Footnote or LineRole.SideNote || line.Words.Count == 0
+                    || (line.Role == LineRole.Heading && line.Heading is null && line.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
                 {
                     continue;
                 }

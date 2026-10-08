@@ -34,8 +34,9 @@ public sealed partial class TableDocumentsIntegrationTests
         DocumentTruth truth = BankingCorpusGenerator.Truth(Promotion);
         string md = (await ConvertAsync(BankingCorpusGenerator.Pdf(Promotion))).Markdown;
 
-        Assert.Equal(truth.SectionNames, SectionHeading().Matches(md).Select(m => m.Groups[1].Value.Trim()));
+        // The cover (title block, caption) is US3 (FR-088, FR-093); here: the headings from the start of the table on.
         string body = md[md.IndexOf("## " + truth.SectionNames[0], StringComparison.Ordinal)..];
+        Assert.Equal(truth.SectionNames, SectionHeading().Matches(body).Select(m => m.Groups[1].Value.Trim()));
         Assert.DoesNotContain(body.Split('\n'), l => l.StartsWith('|'));
         Assert.All(truth.HeaderRowWords, w => Assert.DoesNotContain(w, md, StringComparison.Ordinal));
     }

@@ -360,7 +360,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return false;
         }
 
-        double indentDelta = line.Box.Left - previous.Box.Left;
+        double indentDelta = TextLeft(line) - TextLeft(previous);
         if (indentDelta > tolerance)
         {
             return false;
@@ -447,6 +447,15 @@ public sealed class BlockAssemblyStage : IPipelineStage
         double width = first.Text.Length == 1 && line.Words.Count > 1 ? line.Words[1].Box.Right - first.Box.Left : first.Box.Width;
         return previous.Box.Right + space + width <= right;
     }
+
+    /// <summary>
+    /// Left edge of a line for indentation: in table-document content the pen position of the first letter, so that a
+    /// letter whose ink overhangs to the left („J”) does not indent the line; elsewhere the ink box.
+    /// </summary>
+    private static double TextLeft(LayoutLine line) =>
+        InTableDocument(line) && line.Words.Count > 0 && line.Words[0].Glyphs.Count > 0
+            ? line.Words[0].Glyphs[0].Start
+            : line.Box.Left;
 
     private static bool AllBold(LayoutLine line) => line.Words.Count > 0 && line.Words.All(w => w.Style.HasFlag(TextStyle.Bold));
 
