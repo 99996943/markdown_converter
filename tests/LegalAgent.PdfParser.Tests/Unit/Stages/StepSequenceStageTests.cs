@@ -182,6 +182,35 @@ public sealed class StepSequenceStageTests
             Texts(context.Pages[1]));
     }
 
+    public static TheoryData<string> HeaderRowShapes() => ["names on two baselines", "arrow below the names", "name wrapped onto two lines"];
+
+    /// <summary>Column-name rows as printed in the mBank terms (pages 32, 33 and 47).</summary>
+    [Theory]
+    [MemberData(nameof(HeaderRowShapes))]
+    public void ColumnNameRow_IsRecognisedInItsPrintedShapes(string shape)
+    {
+        LayoutLine[] header = shape switch
+        {
+            "names on two baselines" => [Line("Wyjaśnienie", TextLeft, 118), Line("Kolejność działań", TitleLeft, 120)],
+            "arrow below the names" => [Header(94)],
+            _ => [Row(110, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)), Line("zmian", TitleLeft, 121)],
+        };
+        LayoutPage first = PageWith(
+            1,
+            [Line("Realizacja przelewu wygląda tak:", 90, 650), Header(670), Row(687, ("Wysyłasz prośbę", TitleLeft), ("Prośbę wyślesz w aplikacji.", TextLeft))],
+            Box(684, 760));
+        LayoutPage second = PageWith(
+            2,
+            [Line("Tak brzmi wstęp przed schematem:", 90, 90), .. header, Row(140, ("Płatnik akceptuje", TitleLeft), ("Poinformujemy Cię o tym.", TextLeft))],
+            Box(134, 175));
+
+        PipelineContext context = Run(Context([first, second]));
+
+        Assert.All(header, l => Assert.Equal(LineRole.Artifact, l.Role));
+        Assert.Equal(LineRole.Unknown, second.Lines.Single(l => l.Text.StartsWith("Tak brzmi", StringComparison.Ordinal)).Role);
+        Assert.Equal([("Wysyłasz prośbę", "1"), ("Płatnik akceptuje", "2")], Titles(context));
+    }
+
     [Fact]
     public void TextBetweenBoxes_StartsANewScheme()
     {
