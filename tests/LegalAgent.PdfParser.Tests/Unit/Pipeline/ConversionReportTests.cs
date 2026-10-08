@@ -41,6 +41,36 @@ public sealed class ConversionReportTests
     }
 
     [Fact]
+    public void TableDocuments_AreEmptyByDefault()
+    {
+        ConversionReport report = new ReportBuilder().Build(1, TimeSpan.Zero);
+
+        Assert.Empty(report.TableDocuments);
+    }
+
+    [Fact]
+    public void TableDocuments_AreReportedInPageOrder_WithoutCountingAsTables()
+    {
+        var builder = new ReportBuilder();
+        builder.AddTableDocument(9, 12, 3, null, 0);
+        builder.AddTableDocument(2, 6, 7, "Definicje | Wyjaśnienie", 4);
+
+        ConversionReport report = builder.Build(12, TimeSpan.Zero);
+
+        Assert.Equal(
+            [new TableDocumentSummary(2, 6, 7, "Definicje | Wyjaśnienie", 4), new TableDocumentSummary(9, 12, 3, null, 0)],
+            report.TableDocuments);
+        Assert.Equal((0, 0), (report.TableCount, report.FallbackTableCount));
+    }
+
+    [Fact]
+    public void SectionKind_TableDocumentSection_IsAddedLast()
+    {
+        Assert.Equal(SectionKind.TableDocumentSection, Enum.GetValues<SectionKind>()[^1]);
+        Assert.Equal(SectionKind.Typographic + 1, SectionKind.TableDocumentSection);
+    }
+
+    [Fact]
     public void Warnings_AreSortedByPageThenCode()
     {
         var builder = new ReportBuilder();

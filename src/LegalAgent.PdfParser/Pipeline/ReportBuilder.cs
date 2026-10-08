@@ -10,6 +10,7 @@ public sealed class ReportBuilder
     private readonly List<SkippedPage> _skipped = [];
     private readonly Dictionary<(ArtifactKind Kind, string Pattern), List<int>> _artifacts = [];
     private readonly SortedDictionary<int, int> _headings = [];
+    private readonly List<TableDocumentSummary> _tableDocuments = [];
 
     /// <summary>Number of letters dropped as rotated or invisible.</summary>
     public int DroppedTextCount { get; private set; }
@@ -88,6 +89,15 @@ public sealed class ReportBuilder
             FallbackTableCount++;
         }
     }
+
+    /// <summary>Records a recognised table-document (spec 002, FR-090).</summary>
+    /// <param name="firstPage">First page of the table.</param>
+    /// <param name="lastPage">Last page of the table.</param>
+    /// <param name="sectionCount">Number of sections.</param>
+    /// <param name="headerRowText">Text of the dropped column-name row, or null.</param>
+    /// <param name="droppedHeaderRows">Number of dropped occurrences of the column-name row.</param>
+    public void AddTableDocument(int firstPage, int lastPage, int sectionCount, string? headerRowText, int droppedHeaderRows) =>
+        _tableDocuments.Add(new TableDocumentSummary(firstPage, lastPage, sectionCount, headerRowText, droppedHeaderRows));
 
     /// <summary>Counts a footnote.</summary>
     public void AddFootnote() => FootnoteCount++;

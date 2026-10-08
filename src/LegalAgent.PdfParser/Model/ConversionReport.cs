@@ -32,6 +32,14 @@ public sealed record ArtifactSummary(string Pattern, ArtifactKind Kind, int Occu
 /// <param name="Message">Human-readable message.</param>
 public sealed record ConversionWarning(string Code, int? PageNumber, string Message);
 
+/// <summary>A table-document (a document made of one multi-page, two-column bordered table) recognised in the PDF.</summary>
+/// <param name="FirstPage">First page of the table.</param>
+/// <param name="LastPage">Last page of the table.</param>
+/// <param name="SectionCount">Number of sections (rows with a name in the left cell).</param>
+/// <param name="HeaderRowText">Text of the dropped column-name row, cells joined with „ | ”; null when the table has none.</param>
+/// <param name="DroppedHeaderRows">Number of dropped occurrences of the column-name row.</param>
+public sealed record TableDocumentSummary(int FirstPage, int LastPage, int SectionCount, string? HeaderRowText, int DroppedHeaderRows);
+
 /// <summary>Diagnostics of a conversion.</summary>
 /// <param name="PageCount">Number of pages in the PDF.</param>
 /// <param name="SkippedPages">Pages that were not converted.</param>
@@ -55,4 +63,8 @@ public sealed record ConversionReport(
     int FootnoteCount,
     int DroppedTextCount,
     IReadOnlyList<ConversionWarning> Warnings,
-    TimeSpan Elapsed);
+    TimeSpan Elapsed)
+{
+    /// <summary>Recognised table-documents in page order (spec 002, FR-090); empty when none.</summary>
+    public IReadOnlyList<TableDocumentSummary> TableDocuments { get; init; } = [];
+}

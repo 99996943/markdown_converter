@@ -29,6 +29,12 @@ public enum SectionKind
 
     /// <summary>Heading recognised only typographically.</summary>
     Typographic,
+
+    /// <summary>
+    /// Section of a table-document (spec 002, FR-083): the heading is the name in the left cell of a two-column bordered
+    /// table that makes up the document, the content the right cells, merged across rows and pages.
+    /// </summary>
+    TableDocumentSection,
 }
 
 /// <summary>A section of the document with its heading, content and subsections.</summary>
