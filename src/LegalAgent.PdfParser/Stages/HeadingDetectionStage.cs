@@ -27,6 +27,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const int MaxMarkerLength = 4;
     private const double MarkerSizeRatio = 0.8;
     private const int RankTypographicBase = 10;
+    private const double CaptionWidthMargin = 0.1;
+    private const double CaptionGapInLineHeights = 3;
+    private const double CaptionTolerance = 1;
 
     /// <inheritdoc />
     public int Order => StageOrder.HeadingDetection;
@@ -169,13 +172,35 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && (entry.Enlarged || entry.BoldSignal || entry.Caps || entry.Centered);
 
             entry.Plain = InTableDocumentPart(context, entry)
-                || (options.ValidityLineAsParagraph && entry.Page == entries[0].Page && ValidityLine().IsMatch(entry.Text));
+                || (options.ValidityLineAsParagraph && entry.Page == entries[0].Page && ValidityLine().IsMatch(entry.Text))
+                || (options.DetectImageCaptions && IsImageCaption(entry));
             if (entry.Plain)
             {
                 entry.Candidate = false;
                 entry.Centered = false;
             }
         }
+    }
+
+    /// <summary>
+    /// Spec 002, FR-088: a caption — a line lying on an image or whose top is at most three line heights below it, within
+    /// the image's width widened by 10% on each side (a logo with the publisher's address under it).
+    /// </summary>
+    private static bool IsImageCaption(Entry entry)
+    {
+        Rect line = entry.Line.Box;
+        foreach (Rect image in entry.Page.ImageAreas)
+        {
+            double margin = CaptionWidthMargin * image.Width;
+            bool below = line.Top >= image.Bottom - CaptionTolerance && line.Top - image.Bottom <= CaptionGapInLineHeights * line.Height;
+            bool on = line.Top < image.Bottom && line.Bottom > image.Top;
+            if ((on || below) && line.Left >= image.Left - margin && line.Right <= image.Right + margin)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /// <summary>
