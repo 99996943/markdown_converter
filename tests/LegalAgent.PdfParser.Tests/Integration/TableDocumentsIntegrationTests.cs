@@ -95,6 +95,166 @@ public sealed partial class TableDocumentsIntegrationTests
         Assert.Equal(0, result.Report.TableCount);
     }
 
+    // ---------------------------------------------------------------- T018: wide word gaps, link underlines, lowered names
+
+    private static readonly string[] GapLines =
+    [
+        "w EUR (SEPA)|do krajów|strefy euro|realizujemy w",
+        "ciągu jednego|dnia roboczego|od momentu|przyjęcia",
+    ];
+
+    private const string GapSentence = "w EUR (SEPA) do krajów strefy euro realizujemy w ciągu jednego dnia roboczego od momentu przyjęcia zlecenia.";
+
+    private static List<string> WrapWords(string text, double width)
+    {
+        var lines = new List<string>();
+        string line = string.Empty;
+        foreach (string word in text.Split(' '))
+        {
+            string candidate = line.Length == 0 ? word : line + " " + word;
+            if (line.Length > 0 && SyntheticPdfBuilder.TextWidth(candidate, 10) > width)
+            {
+                lines.Add(line);
+                line = word;
+            }
+            else
+            {
+                line = candidate;
+            }
+        }
+
+        lines.Add(line);
+        return lines;
+    }
+
+    private const string LongA = "Przelew krajowy w złotych zlecony w dniu roboczym do godziny granicznej jest realizowany jeszcze tego samego dnia, a zlecony po tej godzinie następnego dnia roboczego. Dyspozycję możesz złożyć w serwisie transakcyjnym, w aplikacji mobilnej lub w placówce, a o jej statusie informujemy w historii rachunku oraz w powiadomieniach.";
+
+    private const string LongB = "Przelew zlecony w dniu wolnym od pracy traktujemy tak, jakby wpłynął w pierwszym dniu roboczym. Aby uniknąć opóźnień, sprawdź poprawność numeru rachunku odbiorcy i tytułu przelewu przed zatwierdzeniem dyspozycji, ponieważ po jej wykonaniu nie możemy cofnąć środków bez zgody odbiorcy.";
+
+    private static byte[] WideGapsDocument()
+    {
+        var b = new SyntheticPdfBuilder().Title("Regulamin przelewów");
+
+        // Page 1: two rows. Names sit 1 pt lower than the content line beside them.
+        b.Page();
+        double y = 89;
+        double top = 72;
+        var edges = new List<double> { top };
+
+        void Name(double yy, params string[] words)
+        {
+            for (int i = 0; i < words.Length; i++)
+            {
+                b.Text(60, yy + 1 + (i * 15), words[i], 10, bold: true);
+            }
+        }
+
+        // Row 1: plain paragraph.
+        Name(y, "Przelewy", "krajowe");
+        foreach (string l in WrapWords(LongA, 343))
+        {
+            b.Text(186, y, l, 10);
+            y += 15;
+        }
+
+        edges.Add(y - 15 + 8);
+        y = edges[^1] + 17;
+
+        // Row 2: wide gaps lined up like false columns, a link line with three underlines and a gray box, a bullet.
+        double rowStart = y;
+        Name(y, "Przelewy", "walutowe");
+        double[] xs = [186, 272, 358, 444];
+        foreach (string line in GapLines)
+        {
+            string[] parts = line.Split('|');
+            for (int i = 0; i < parts.Length; i++)
+            {
+                b.Text(xs[i], y, parts[i], 10);
+            }
+
+            y += 15;
+        }
+
+        const string Tail = "zlecenia. Kursy walut publikujemy w tabeli dostępnej pod adresem https://example.org/przelewy/waluty/tabela-kursow oraz formularz zlecenia przelewu zagranicznego i regulamin usługi przelewów walutowych";
+        foreach (string l in WrapWords(Tail, 343))
+        {
+            if (l.Contains("https", StringComparison.Ordinal))
+            {
+                b.FilledRect(186, y - 9, 230, 12, 225);
+            }
+
+            b.Text(186, y, l, 10);
+            b.HLine(204, 474, y + 2, 0.5);
+            y += 15;
+        }
+
+        b.Text(190, y, "•", 10);
+        b.Text(208, y, "opłaty za przelewy zagraniczne zgodne z aktualną taryfą opłat i prowizji Banku.", 10);
+        y += 15;
+        _ = rowStart;
+        edges.Add(y - 15 + 8);
+
+        Frame(b, edges, 1);
+
+        // Page 2: one more row with a paragraph and a bullet list.
+        b.Page();
+        y = 89;
+        edges = [72];
+        Name(y, "Zasady", "bezpieczeństwa");
+        foreach (string l in WrapWords(LongB, 343))
+        {
+            b.Text(186, y, l, 10);
+            y += 15;
+        }
+
+        b.Text(190, y, "•", 10);
+        b.Text(208, y, "nie udostępniaj nikomu danych do logowania ani kodów autoryzacyjnych,", 10);
+        y += 15;
+        b.Text(190, y, "•", 10);
+        b.Text(208, y, "korzystaj wyłącznie z oficjalnej aplikacji i strony Banku.", 10);
+        y += 15;
+        edges.Add(y - 15 + 8);
+        Frame(b, edges, 2);
+
+        return b.Build();
+
+        static void Frame(SyntheticPdfBuilder pb, List<double> es, int number)
+        {
+            foreach (double e in es)
+            {
+                pb.HLine(55, 181, e, 0.75);
+                pb.HLine(181, 541, e, 0.75);
+            }
+
+            foreach (double x in new[] { 54.0, 181.0, 541.0 })
+            {
+                pb.VLine(x, 72, es[^1], 0.75);
+            }
+
+            pb.Text(517, 804, number + "/2", 8);
+        }
+    }
+
+    [Fact]
+    public async Task WideWordGapsAndLinkUnderlines_StayContinuousTextWithoutTablesOrWarnings()
+    {
+        PdfConversionResult result = await ConvertAsync(WideGapsDocument());
+        string md = result.Markdown;
+        string flat = md.Replace("\r\n", "\n", StringComparison.Ordinal).Replace('\n', ' ');
+
+        TableDocumentSummary summary = Assert.Single(result.Report.TableDocuments);
+        Assert.Equal(0, result.Report.FallbackTableCount);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
+        Assert.DoesNotContain(md.Split('\n'), l => l.StartsWith('|'));
+        Assert.DoesNotContain(" \\| ", md, StringComparison.Ordinal);
+        Assert.Contains(GapSentence, flat, StringComparison.Ordinal);
+        Assert.Contains("## Przelewy walutowe", md, StringComparison.Ordinal);
+        Assert.Contains("## Przelewy krajowe", md, StringComparison.Ordinal);
+        Assert.Contains("## Zasady bezpieczeństwa", md, StringComparison.Ordinal);
+        Assert.Contains("formularz zlecenia przelewu zagranicznego i regulamin usługi przelewów walutowych", flat, StringComparison.Ordinal);
+        Assert.Equal((1, 2, 3), (summary.FirstPage, summary.LastPage, summary.SectionCount));
+    }
+
     private static IEnumerable<Section> Flatten(IEnumerable<Section> sections) =>
         sections.SelectMany(s => new[] { s }.Concat(Flatten(s.Children)));
 }
