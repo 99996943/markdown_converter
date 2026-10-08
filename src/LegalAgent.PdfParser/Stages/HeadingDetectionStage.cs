@@ -167,7 +167,30 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && !entry.Text.EndsWith(',')
                 && !entry.Text.EndsWith(';')
                 && (entry.Enlarged || entry.BoldSignal || entry.Caps || entry.Centered);
+
+            entry.Plain = InTableDocumentPart(context, entry)
+                || (options.ValidityLineAsParagraph && entry.Page == entries[0].Page && ValidityLine().IsMatch(entry.Text));
+            if (entry.Plain)
+            {
+                entry.Candidate = false;
+                entry.Centered = false;
+            }
         }
+    }
+
+    /// <summary>
+    /// Spec 002, FR-086/FR-087: from the top of the first table-document to the end of the document only section names
+    /// (set by table-document detection) and legal units are headings.
+    /// </summary>
+    private static bool InTableDocumentPart(PipelineContext context, Entry entry)
+    {
+        if (context.TableDocuments.Count == 0)
+        {
+            return false;
+        }
+
+        TableDocumentRegion first = context.TableDocuments[0];
+        return entry.Page.Number > first.FirstPage || (entry.Page.Number == first.FirstPage && entry.Line.Box.CenterY > first.Top);
     }
 
     private static (double Left, double Right) ColumnOf(LayoutLine line, (double Left, double Right) page) =>
@@ -184,7 +207,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     /// </summary>
     private static void DetectTitle(List<Entry> entries, HeadingOptions options, double leading, List<Detected> headings)
     {
-        Entry first = entries.FirstOrDefault(e => e.Page == entries[0].Page && e.Legal is null && e.Isolated && ActType().IsMatch(e.Text))
+        Entry first = entries.FirstOrDefault(e => e.Page == entries[0].Page && e.Legal is null && !e.Plain && e.Isolated && ActType().IsMatch(e.Text))
             ?? entries[0];
         bool actTitle = first != entries[0] || ActType().IsMatch(first.Text);
         if (actTitle)
@@ -213,6 +236,10 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         for (int i = entries.IndexOf(first) + 1; i < entries.Count; i++)
         {
             Entry next = entries[i];
+            if (next.Plain)
+            {
+                break;
+            }
 
             // A footnote marker set apart from a title line (a title is plain text, so the marker is dropped).
             if (next.Page == first.Page
@@ -293,6 +320,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             {
                 Entry follower = entries[j];
                 if (follower.Page != entry.Page
+                    || follower.Plain
                     || follower.Previous != last.Line
                     || follower.Legal is not null
                     || !(entry.Enlarged || entry.BoldSignal)
@@ -507,6 +535,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
     private static partial System.Text.RegularExpressions.Regex ActType();
 
+    /// <summary>FR-093: the validity line of a title block („Obowiązuje od 01.09.2026 r. do …”).</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(
+        @"^obowiązuje\s+od\b",
+        System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex ValidityLine();
+
     private static double RoundHalf(double value) => Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
 
     private sealed class Entry(LayoutPage page, LayoutLine line, LayoutLine? previous, string text)
@@ -538,6 +572,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         public bool Candidate { get; set; }
 
         public bool Consumed { get; set; }
+
+        /// <summary>Plain text whatever its typography: table-document part, validity line or image caption (spec 002).</summary>
+        public bool Plain { get; set; }
 
         public LegalUnitMatch? Legal { get; set; }
     }
