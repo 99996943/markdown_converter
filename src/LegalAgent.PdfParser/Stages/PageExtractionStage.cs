@@ -6,6 +6,7 @@ using UglyToad.PdfPig;
 using UglyToad.PdfPig.Content;
 using UglyToad.PdfPig.Core;
 using UglyToad.PdfPig.Graphics;
+using UglyToad.PdfPig.Graphics.Colors;
 
 namespace LegalAgent.PdfParser.Stages;
 
@@ -18,6 +19,7 @@ public class PageExtractionStage : IPipelineStage
     private const double WhiteThreshold = 0.99;
     private const double ThinRuleThickness = 1.5;
     private const double MinRuleLength = 3;
+    private const double PageSizedRatio = 0.9;
 
     /// <inheritdoc />
     public int Order => StageOrder.PageExtraction;
@@ -174,6 +176,17 @@ public class PageExtractionStage : IPipelineStage
         return false;
     }
 
+    private static bool IsWhite(IColor? color)
+    {
+        if (color is null)
+        {
+            return false;
+        }
+
+        (double red, double green, double blue) = color.ToRGBValues();
+        return red >= WhiteThreshold && green >= WhiteThreshold && blue >= WhiteThreshold;
+    }
+
     private static void ExtractRulings(Page page, LayoutPage layout, double height)
     {
         foreach (PdfPath path in page.Paths)
@@ -194,6 +207,13 @@ public class PageExtractionStage : IPipelineStage
                 PdfRectangle b = bounds.Value;
                 double w = b.Right - b.Left;
                 double h = b.Top - b.Bottom;
+
+                // Shaded areas (e.g. table cells without borders); page-sized backgrounds carry no layout information.
+                if (path.IsFilled && w > ThinRuleThickness && h > ThinRuleThickness && !IsWhite(path.FillColor)
+                    && !(w >= PageSizedRatio * page.Width && h >= PageSizedRatio * page.Height))
+                {
+                    layout.FilledAreas.Add(new Rect(b.Left, height - b.Top, b.Right, height - b.Bottom));
+                }
 
                 if (h <= ThinRuleThickness && w >= MinRuleLength)
                 {
