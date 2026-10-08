@@ -564,6 +564,21 @@ public sealed class BlockAssemblyStageTests
     }
 
     [Fact]
+    public void TableDocument_LetterWhoseInkStartsLeftOfItsAdvance_DoesNotIndentTheLine()
+    {
+        // „J” in Verdana: the ink box starts 1.6 pt left of the pen position, more than the indent tolerance.
+        var sketch = new PageSketch()
+            .Line("Jesli spelnisz warunki promocji, otrzymasz do nowo otwartego", ContentLeft, 100)
+            .Line("biezacego:", ContentLeft, 114);
+        LayoutGlyph first = sketch.Page.Glyphs[0];
+        sketch.Page.Glyphs[0] = first with { Box = first.Box with { Left = first.Box.Left - 1.6 }, AdvanceStart = first.Box.Left, AdvanceEnd = first.Box.Right };
+
+        PipelineContext context = RunTableDocument(sketch);
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
     public void TableDocument_ChangeBetweenAllBoldAndNotAllBold_EndsTheParagraph()
     {
         PipelineContext context = RunTableDocument(new PageSketch()
