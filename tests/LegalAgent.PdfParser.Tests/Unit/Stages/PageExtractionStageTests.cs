@@ -155,6 +155,34 @@ public sealed class PageExtractionStageTests
         Assert.Equal("Banner", TextOf(h.Context.Pages[0]));
     }
 
+    /// <summary>
+    /// FR-011a: for a non-embedded font missing from the system (Times New Roman on Linux) PdfPig returns a made-up box for
+    /// the space glyph (values from dz-u-2020-287 page 1 on Ubuntu); the box must come from the advance on the baseline, as
+    /// PdfPig reports it when the font is installed.
+    /// </summary>
+    [Fact]
+    public void GlyphBox_OfASpace_ComesFromTheAdvanceOnTheBaseline()
+    {
+        var madeUp = new UglyToad.PdfPig.Core.PdfRectangle(443.73, 788.34, 469.36, 797.44);
+
+        Rect box = PageExtractionStage.GlyphBox(" ", madeUp, 449.32, 451.82, 790.50, 842);
+
+        Assert.Equal(449.32, box.Left, 0.001);
+        Assert.Equal(451.82, box.Right, 0.001);
+        Assert.Equal(842 - 790.50, box.Top, 0.001);
+        Assert.Equal(842 - 790.50, box.Bottom, 0.001);
+    }
+
+    [Fact]
+    public void GlyphBox_OfALetter_IsItsBoundingBox()
+    {
+        var bounds = new UglyToad.PdfPig.Core.PdfRectangle(444.56, 788.0, 448.95, 797.0);
+
+        Rect box = PageExtractionStage.GlyphBox("a", bounds, 444.10, 449.11, 790.50, 842);
+
+        Assert.Equal(new Rect(444.56, 842 - 797.0, 448.95, 842 - 788.0), box);
+    }
+
     [Fact]
     public void Execute_RecordsFilledNonWhiteAreasTopDown()
     {

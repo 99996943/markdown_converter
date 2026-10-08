@@ -116,8 +116,7 @@ public class PageExtractionStage : IPipelineStage
                 continue;
             }
 
-            PdfRectangle r = letter.BoundingBox;
-            var box = new Rect(r.Left, height - r.Top, r.Right, height - r.Bottom);
+            Rect box = GlyphBox(letter.Value, letter.BoundingBox, letter.StartBaseLine.X, letter.EndBaseLine.X, letter.StartBaseLine.Y, height);
             string fontName = letter.FontName ?? string.Empty;
             bool stroke = letter.RenderingMode == TextRenderingMode.FillThenStroke;
             bool bold = FontStyleDetector.IsBold(fontName, letter.FontDetails?.IsBold ?? false, stroke);
@@ -175,6 +174,10 @@ public class PageExtractionStage : IPipelineStage
 
         return false;
     }
+
+    /// <summary>Top-down box of a letter (FR-011a).</summary>
+    internal static Rect GlyphBox(string value, PdfRectangle bounds, double startX, double endX, double baselineY, double pageHeight) =>
+        new(bounds.Left, pageHeight - bounds.Top, bounds.Right, pageHeight - bounds.Bottom);
 
     private static bool IsWhite(IColor? color)
     {
