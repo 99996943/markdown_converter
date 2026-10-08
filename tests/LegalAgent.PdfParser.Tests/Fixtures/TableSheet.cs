@@ -27,8 +27,10 @@ internal sealed class TableSheet
     private readonly List<Rect> _filled = [];
     private double _y;
     private bool _open;
+    private double _pageDivider;
+    private double[] _pageVerticals = [];
 
-    /// <summary>X of the ruling between the columns on the pages started from now on.</summary>
+    /// <summary>X of the ruling between the columns on the pages started from now on (captured when a page starts).</summary>
     public double Divider { get; set; } = 181;
 
     /// <summary>Additional vertical rulings (e.g. a third column) on the pages started from now on.</summary>
@@ -39,6 +41,8 @@ internal sealed class TableSheet
     {
         EndPage();
         _open = true;
+        _pageDivider = Divider;
+        _pageVerticals = ExtraVerticals;
         _edges.Add(FrameTop);
         _y = FrameTop + 8;
         if (header)
@@ -175,11 +179,11 @@ internal sealed class TableSheet
         double bottom = _edges[^1];
         foreach (double edge in _edges)
         {
-            page.Rulings.Add(new Segment(FrameLeft + 1, edge, Divider, edge));
-            page.Rulings.Add(new Segment(Divider, edge, FrameRight, edge));
+            page.Rulings.Add(new Segment(FrameLeft + 1, edge, _pageDivider, edge));
+            page.Rulings.Add(new Segment(_pageDivider, edge, FrameRight, edge));
         }
 
-        foreach (double x in new[] { FrameLeft, Divider, FrameRight }.Concat(ExtraVerticals))
+        foreach (double x in new[] { FrameLeft, _pageDivider, FrameRight }.Concat(_pageVerticals))
         {
             page.Rulings.Add(new Segment(x, FrameTop, x, bottom));
         }
