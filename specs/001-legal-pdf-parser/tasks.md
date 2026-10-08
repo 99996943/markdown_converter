@@ -246,7 +246,7 @@ implementacja (Green), potem refaktoryzacja. Testy offline i deterministyczne.
 - [X] T097 [P] Write `tests/LegalAgent.PdfParser.Tests/PerformanceTests.cs` (`[Trait("Category","Performance")]`): 100-page corpus act converts in < 10 s; memory growth roughly linear (200 vs 100 pages peak working set ratio < 2.5) (SC-007)
 - [X] T098 [P] Write `README.md` at repo root: purpose, prerequisites (.NET SDK per `global.json`, runtime 9.0.x GA, ICU on Linux, no invariant globalization), library usage (3-line DI snippet from quickstart.md §4), options reference table, custom pipeline stages, CLI usage and exit codes, running tests incl. `UPDATE_GOLDEN`, `LEGALAGENT_PRIVATE_CORPUS`, Performance category (SC-008, constitution VII)
 - [X] T099 [P] Complete XML-doc on all public types in `src/LegalAgent.PdfParser/` (build with `GenerateDocumentationFile` must produce no CS1591 warnings)
-- [ ] T100 Run all validation steps from `specs/001-legal-pdf-parser/quickstart.md` (build, test, CLI scenarios, error scenarios) on Windows and confirm CI green on Linux; fix discrepancies — **Windows: wykonane 2026-10-07 (build 0 ostrzeżeń, 758 testów zielonych + 1 pominięty, scenariusze CLI i błędów zgodne); Linux CI: czeka na wypchnięcie gałęzi (decyzja właściciela)**
+- [X] T100 Run all validation steps from `specs/001-legal-pdf-parser/quickstart.md` (build, test, CLI scenarios, error scenarios) on Windows and confirm CI green on Linux; fix discrepancies — **Windows: wykonane 2026-10-07; Linux: CI GitHub zielone 2026-10-08 (run 37816736771, po poprawce FR-011a/T110)**
 
 ---
 
