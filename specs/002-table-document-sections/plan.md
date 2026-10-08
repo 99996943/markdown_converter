@@ -208,9 +208,10 @@ sekcji przesuwają się pod tytuł. Hierarchia jest teraz bez luki (`#` → `##`
 `mbank-reg2`: to samo + poprawka daty (T024). T034 (`DetectTableDocuments=false` dla `mbank-reg3`): różnice względem
 `baseline/` wyłącznie z FR-088, FR-093 i tego samego przesunięcia poziomów; tabele i TBL001 jak w 001.
 
-**Test wydajności**: `PerformanceTests.HundredAndFourteenPageAct_ConvertsInUnderTenSeconds` pada w pełnym przebiegu lokalnie
-(10,9–12,4 s przy równoległych testach), osobno 3,6–3,9 s — tyle samo co przed spec 002 (zmierzone na 74843fd). Wrażliwy na
-obciążenie; do rozstrzygnięcia przy T040 (np. kolekcja bez równoległości), zanim CI zacznie padać.
+**Test wydajności**: `PerformanceTests.HundredAndFourteenPageAct_ConvertsInUnderTenSeconds` pada lokalnie w pełnym
+przebiegu (10,9–16 s przy równoległych testach), osobno 3,6–3,9 s — tyle samo co przed spec 002 (zmierzone na 74843fd).
+CI uruchamia kategorię `Performance` osobno (`ci.yml`), więc lokalnie: `dotnet test … --filter "Category!=Performance"` +
+osobno `--filter "Category=Performance"`.
 
 **Uwaga do pracy z gitem**: w katalogu głównym leżą nieśledzone pliki właściciela (`Akt prawny - …`, `Regulamin … mBanku …`
 — PDF banku); dodawać do commitów wyłącznie konkretne ścieżki, nigdy `git add -A`.
