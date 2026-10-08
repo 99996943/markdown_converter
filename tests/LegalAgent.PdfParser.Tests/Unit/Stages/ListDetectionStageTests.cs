@@ -91,6 +91,28 @@ public sealed class ListDetectionStageTests
         Assert.Equal(LineRole.Unknown, Find(context, "Bank oferuje").Role);
     }
 
+    /// <summary>Check marks („✓” from a symbol font) are bullets: mBank schemes list conditions with them, also under „•”.</summary>
+    [Fact]
+    public void CheckMarkLines_AreBulletItems_NestedUnderABulletByIndent()
+    {
+        PipelineContext context = Run(Page(
+            ("• Złożenie wniosku nie jest zawarciem umowy, które wynikają:", Margin),
+            ("✓ z przepisów prawa lub", Indent),
+            ("✓ ze względów ostrożnościowych związanych", Indent),
+            ("z podejrzeniami działalności przestępczej", Indent + 12),
+            ("✔ z innych przyczyn.", Indent)));
+
+        LayoutLine parent = Find(context, "• Złożenie");
+        LayoutLine first = Find(context, "✓ z przepisów");
+        LayoutLine second = Find(context, "✓ ze względów");
+        AssertItem(first, "✓", ListLabelKind.Bullet);
+        AssertItem(second, "✓", ListLabelKind.Bullet);
+        AssertItem(Find(context, "✔ z innych"), "✔", ListLabelKind.Bullet);
+        Assert.Equal(Id(parent), Parent(first));
+        Assert.Equal(Id(parent), Parent(second));
+        Assert.Equal(Id(second), Owner(Find(context, "z podejrzeniami")));
+    }
+
     [Fact]
     public void HangingContinuation_BelongsToTheItem_FR053()
     {
