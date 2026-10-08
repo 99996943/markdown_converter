@@ -41,4 +41,15 @@ public sealed class HyphenationTests
     {
         Assert.Equal(HyphenJoin.Keep, Hyphenation.Decide("flaga biało-", "czerwony, a", Exceptions));
     }
+
+    [Theory]
+    [InlineData("więcej na mbank.pl/pierscien-platniczy-", "mastercard", HyphenJoin.Keep)]
+    [InlineData("strona www.example.org/a-", "b", HyphenJoin.Keep)]
+    [InlineData("zobacz https://x.pl/rozwijaj-", "firme", HyphenJoin.Keep)]
+    [InlineData("zobacz www.przyklad-", "bank.pl", HyphenJoin.Keep)]
+    [InlineData("Ministra Spraw Zagra-", "nicznych", HyphenJoin.Remove)]
+    public void Decide_KeepsHyphenInWebAddress(string lineEnd, string nextLineStart, HyphenJoin expected)
+    {
+        Assert.Equal(expected, Hyphenation.Decide(lineEnd, nextLineStart, Exceptions));
+    }
 }
