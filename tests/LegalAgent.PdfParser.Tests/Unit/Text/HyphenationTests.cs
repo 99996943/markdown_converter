@@ -47,6 +47,7 @@ public sealed class HyphenationTests
     [InlineData("strona www.example.org/a-", "b", HyphenJoin.Keep)]
     [InlineData("zobacz https://x.pl/rozwijaj-", "firme", HyphenJoin.Keep)]
     [InlineData("zobacz www.przyklad-", "bank.pl", HyphenJoin.Keep)]
+    [InlineData("https://example.org/pdf/promocja-01-09-26-", "30-11-26.pdf", HyphenJoin.Keep)]
     [InlineData("Ministra Spraw Zagra-", "nicznych", HyphenJoin.Remove)]
     public void Decide_KeepsHyphenInWebAddress(string lineEnd, string nextLineStart, HyphenJoin expected)
     {
