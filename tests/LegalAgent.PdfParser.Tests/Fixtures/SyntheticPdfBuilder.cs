@@ -35,8 +35,11 @@ public sealed class SyntheticPdfBuilder
     /// <summary>Adds a page without any content.</summary>
     public SyntheticPdfBuilder BlankPage(double width = 595, double height = 842) => Page(width, height);
 
-    /// <summary>Writes horizontal text whose baseline is <paramref name="yFromTop"/> from the top edge.</summary>
-    public SyntheticPdfBuilder Text(double x, double yFromTop, string text, double size = 11, bool bold = false, bool italic = false)
+    /// <summary>
+    /// Writes horizontal text whose baseline is <paramref name="yFromTop"/> from the top edge; <paramref name="mono"/>
+    /// selects the monospace face (like the Courier New „o” of second-level bullets in word processors).
+    /// </summary>
+    public SyntheticPdfBuilder Text(double x, double yFromTop, string text, double size = 11, bool bold = false, bool italic = false, bool mono = false)
     {
         Current.Draw.Add((ctx, page) =>
         {

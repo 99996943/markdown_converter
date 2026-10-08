@@ -112,6 +112,22 @@ public sealed class SyntheticPdfBuilderTests
     }
 
     [Fact]
+    public void Text_MonoSelectsMonospaceFont()
+    {
+        byte[] bytes = new SyntheticPdfBuilder().Page()
+            .Text(50, 100, "o", mono: true)
+            .Text(70, 100, "Plain")
+            .Build();
+
+        using PdfDocument doc = PdfDocument.Open(bytes);
+        IReadOnlyList<Letter> letters = doc.GetPage(1).Letters;
+        string FontOf(string value) => letters.First(l => l.Value == value).FontName ?? string.Empty;
+
+        Assert.Contains("NotoSansMono", FontOf("o"), StringComparison.Ordinal);
+        Assert.DoesNotContain("Mono", FontOf("P"), StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void HLineAndVLine_AppearAsPagePaths()
     {
         byte[] bytes = new SyntheticPdfBuilder().Page()
