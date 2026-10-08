@@ -17,10 +17,10 @@ internal sealed record DocumentTruth(IReadOnlyList<ListTruth> ListItems, IReadOn
 }
 
 /// <summary>
-/// Deterministic, in-memory generator of four synthetic banking documents (generic names, no real
+/// Deterministic, in-memory generator of synthetic banking documents (generic names, no real
 /// bank branding) used by golden tests. Built only with <see cref="SyntheticPdfBuilder"/>.
 /// </summary>
-internal static class BankingCorpusGenerator
+internal static partial class BankingCorpusGenerator
 {
     private const string Bank = "Bank Przykładowy S.A.";
     private const string Registry = "Bank Przykładowy S.A., ul. Przykładowa 1, 00-001 Warszawa, KRS 0000000000";
@@ -51,15 +51,19 @@ internal static class BankingCorpusGenerator
             "taryfa-z-siatka" => TaryfaZSiatka(rec),
             "taryfa-bez-siatki" => TaryfaBezSiatki(rec),
             "regulamin-dwie-kolumny" => RegulaminDwieKolumny(rec),
+            "regulamin-promocji-tabela" => RegulaminPromocjiTabela(rec),
+            "regulamin-z-tabela-definicji" => RegulaminZTabelaDefinicji(rec),
             _ => throw new ArgumentException("Unknown document: " + name, nameof(name)),
         };
-        return (pdf, new DocumentTruth(rec.ListItems, rec.TableRows));
+        return (pdf, new DocumentTruth(rec.ListItems, rec.TableRows) { SectionNames = rec.SectionNames, HeaderRowWords = rec.HeaderRowWords });
     }
 
     private sealed class Recorder
     {
         public List<ListTruth> ListItems { get; } = [];
         public List<TableRowTruth> TableRows { get; } = [];
+        public List<string> SectionNames { get; } = [];
+        public List<string> HeaderRowWords { get; } = [];
 
         public void Row(string[] service, string fee, string freq) =>
             TableRows.Add(new TableRowTruth(string.Join(' ', service), fee, freq));

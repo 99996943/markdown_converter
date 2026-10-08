@@ -217,6 +217,22 @@ public sealed class SyntheticPdfBuilder
         return builder.Build();
     }
 
+    /// <summary>Advance width in points of <paramref name="text"/> set in the given face, for laying out wrapped text.</summary>
+    public static double TextWidth(string text, double size = 11, bool bold = false, bool italic = false, bool mono = false)
+    {
+        if (text.Length == 0)
+        {
+            return 0;
+        }
+
+        lock (Measuring.Gate)
+        {
+            PdfDocumentBuilder.AddedFont font = mono ? Measuring.Context.Mono() : Measuring.Context.Font(bold, italic);
+            IReadOnlyList<UglyToad.PdfPig.Content.Letter> letters = Measuring.Page.MeasureText(text, size, new PdfPoint(0, 0), font);
+            return letters[^1].EndBaseLine.X - letters[0].StartBaseLine.X;
+        }
+    }
+
     private PageSpec Current =>
         _pages.Count > 0 ? _pages[^1] : throw new InvalidOperationException("Call Page() before drawing.");
 
@@ -225,6 +241,18 @@ public sealed class SyntheticPdfBuilder
         public double Width { get; } = width;
         public double Height { get; } = height;
         public List<Action<BuildContext, PdfPageBuilder>> Draw { get; } = [];
+    }
+
+    /// <summary>A never-built document whose fonts and page are used only to measure text.</summary>
+    private static class Measuring
+    {
+        private static readonly PdfDocumentBuilder Builder = new();
+
+        public static object Gate { get; } = new();
+
+        public static BuildContext Context { get; } = new(Builder);
+
+        public static PdfPageBuilder Page { get; } = Builder.AddPage(595, 842);
     }
 
     private sealed class BuildContext(PdfDocumentBuilder builder)
