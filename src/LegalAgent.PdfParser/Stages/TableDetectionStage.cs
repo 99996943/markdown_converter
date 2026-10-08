@@ -96,7 +96,7 @@ public sealed class TableDetectionStage : IPipelineStage
         double tolerance = options.ColumnTolerance * page.Width;
         double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * page.Width;
         List<Row> flow = page.Lines
-            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0)
+            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex))
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();
 

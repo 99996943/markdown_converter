@@ -9,7 +9,7 @@ namespace LegalAgent.PdfParser.Stages;
 /// free of text over at least <see cref="LayoutOptions.GutterMinHeightRatio"/> of the height where text lies on both of
 /// its sides (columns may differ in length), with
 /// long lines (median ≥ <see cref="LayoutOptions.ColumnMinLineWidthRatio"/> of the page width) on both sides.
-/// Lines crossing the gutter and table lines stay in place and separate column bands. Pages without a gutter
+/// Lines crossing the gutter, table lines and step scheme lines (FR-067) stay in place and separate column bands. Pages without a gutter
 /// keep their order. Line assembly merges side-by-side column lines that share a baseline into one line with
 /// several segments, so the analysis works on segments and such lines are split at the gutter.
 /// </summary>
@@ -296,5 +296,7 @@ public sealed class ReadingOrderStage : IPipelineStage
         return part;
     }
 
-    private static bool IsFlowText(LayoutLine line) => line.Role is not (LineRole.Table or LineRole.Artifact or LineRole.SideNote);
+    private static bool IsFlowText(LayoutLine line) =>
+        line.Role is not (LineRole.Table or LineRole.Artifact or LineRole.SideNote or LineRole.StepTitle)
+        && !line.Annotations.ContainsKey(LayoutAnnotations.StepIndex);
 }

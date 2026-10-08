@@ -55,7 +55,14 @@ public sealed partial class StepSchemesIntegrationTests
             .FilledRect(64, 132, 142, 18, Gray)
             .Text(Name, 145, "Odbierasz kartę", Size, bold: true)
             .Text(Text, 145, "Kartę wyślemy pocztą.", Size)
-            .Text(72, 190, "Więcej informacji znajdziesz na stronie internetowej.");
+            .Text(72, 190, "Więcej informacji znajdziesz na stronie internetowej.", Size);
+
+        // Ordinary running text, as in a real document: it sets the typical leading (the interleaved scheme lines alone
+        // would make it half a line).
+        for (int i = 0; i < 14; i++)
+        {
+            builder.Text(72, 220 + (15 * i), $"Wiersz {i + 1} zwykłego tekstu regulaminu o stałej długości.", Size);
+        }
 
         return builder.Build();
     }

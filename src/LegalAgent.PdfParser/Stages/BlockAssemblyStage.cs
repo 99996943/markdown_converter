@@ -37,6 +37,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
         var notes = new SideNoteBuffer(builder);
         var emittedTables = new HashSet<int>();
         LayoutLine? lastHeading = null;
+        string? currentStep = null;
         double previousColumnLeft = 0;
 
         foreach (LayoutPage page in context.Pages)
@@ -104,6 +105,31 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                // FR-067: the name lines of one step form one bold paragraph „Krok N: name”; nothing else joins it.
+                if (line.Role == LineRole.StepTitle)
+                {
+                    string step = StepKey(line);
+                    if (current is not null && currentStep == step)
+                    {
+                        builder.AppendLine(current, Bold(line), page.Number);
+                    }
+                    else
+                    {
+                        Finish(context, ref current, notes);
+                        current = ParagraphBuilder.Start(StepTitle(line), page.Number, DominantSize(line));
+                        currentStep = step;
+                    }
+
+                    current.LastPage = page.Number;
+                    continue;
+                }
+
+                if (currentStep is not null)
+                {
+                    Finish(context, ref current, notes);
+                    currentStep = null;
+                }
+
                 if (line.Role == LineRole.Heading)
                 {
                     Finish(context, ref current, notes);
@@ -154,6 +180,29 @@ public sealed class BlockAssemblyStage : IPipelineStage
         FinishList(context, ref list, notes);
         notes.Flush(context, all: true);
     }
+
+    private static string StepKey(LayoutLine line) =>
+        (line.Annotations.TryGetValue(LayoutAnnotations.StepIndex, out string? scheme) ? scheme : string.Empty) + ":"
+        + (line.Annotations.TryGetValue(LayoutAnnotations.StepNumber, out string? number) ? number : string.Empty);
+
+    /// <summary>The first name line of a step, in bold, prefixed with „Krok N:”.</summary>
+    private static LayoutLine StepTitle(LayoutLine line)
+    {
+        LayoutLine bold = Bold(line);
+        if (!line.Annotations.TryGetValue(LayoutAnnotations.StepNumber, out string? number))
+        {
+            return bold;
+        }
+
+        Rect at = new(line.Box.Left, line.Box.Top, line.Box.Left, line.Box.Bottom);
+        LayoutWord[] prefix = [new([], at, "Krok", TextStyle.Bold), new([], at, number + ":", TextStyle.Bold)];
+        return new LayoutLine([.. prefix, .. bold.Words], line.Box, line.Baseline);
+    }
+
+    private static LayoutLine Bold(LayoutLine line) =>
+        line.Words.All(w => w.Style.HasFlag(TextStyle.Bold))
+            ? line
+            : new LayoutLine(line.Words.Select(w => w with { Style = w.Style | TextStyle.Bold }).ToList(), line.Box, line.Baseline);
 
     private static void FinishList(PipelineContext context, ref ListAssembler? list, SideNoteBuffer notes)
     {
