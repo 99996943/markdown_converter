@@ -35,14 +35,14 @@ internal static class Hyphenation
 
         string end = lineEnd.TrimEnd();
         string next = nextLineStart.TrimStart();
+        if (end.Length >= 2 && end[^1] == '-' && next.Length > 0 && EndsInWebAddress(end))
+        {
+            return HyphenJoin.Keep;
+        }
+
         if (end.Length < 2 || end[^1] != '-' || !char.IsLetter(end[^2]) || next.Length == 0 || !char.IsLetter(next[0]))
         {
             return HyphenJoin.None;
-        }
-
-        if (EndsInWebAddress(end))
-        {
-            return HyphenJoin.Keep;
         }
 
         string prefix = TrailingLetters(end[..^1]);
