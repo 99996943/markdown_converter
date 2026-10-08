@@ -138,6 +138,7 @@ public class PageExtractionStage : IPipelineStage
         context.Report.AddDroppedText(dropped);
         layout.HasImages = page.NumberOfImages > 0;
         ExtractRulings(page, layout, height);
+        ExtractImageAreas(page, layout, height);
 
         if (layout.Glyphs.Count == 0 && layout.HasImages)
         {
@@ -210,6 +211,28 @@ public class PageExtractionStage : IPipelineStage
 
         (double red, double green, double blue) = color.ToRGBValues();
         return red >= WhiteThreshold && green >= WhiteThreshold && blue >= WhiteThreshold;
+    }
+
+    private static void ExtractImageAreas(Page page, LayoutPage layout, double height)
+    {
+        if (!layout.HasImages)
+        {
+            return;
+        }
+
+        try
+        {
+            foreach (IPdfImage image in page.GetImages())
+            {
+                PdfRectangle b = image.BoundingBox;
+                layout.ImageAreas.Add(new Rect(b.Left, height - b.Top, b.Right, height - b.Bottom));
+            }
+        }
+        catch (Exception ex) when (ex is not OperationCanceledException and not PdfParserException)
+        {
+            // Image areas are optional layout hints; a damaged image must not fail the page.
+            layout.ImageAreas.Clear();
+        }
     }
 
     private static void ExtractRulings(Page page, LayoutPage layout, double height)
