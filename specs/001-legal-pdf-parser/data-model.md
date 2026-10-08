@@ -143,7 +143,7 @@ w (0, 1], liczby dodatnie, `MaxTypographicDepth` 1–6.
 | `Layout` | `LineOverlapRatio` (0,5), `BaselineToleranceRatio` (0,3), `ParagraphGapFactor` (1,5), `ShortLineRatio` (0,75), `DetectColumns` (true), `GutterMinWidthRatio` (0,02), `GutterMinHeightRatio` (0,6), `ColumnMinLineWidthRatio` (0,25), `DetectSideNotes` (true), `SideNoteMaxWidthRatio` (0,25), `SideNoteMaxSizeRatio` (0,9) | FR-030–034 |
 | `Headings` | `Enabled` (true), `SizeRatio` (1,15), `SizeClusterTolerance` (0,5 pt), `MaxLength` (120), `MaxLines` (2), `MaxTypographicDepth` (3), `GapFactor` (1,3), `CenterTolerance` (0,05), `DetectLegalUnits` (true) | FR-040–047, FR-043a |
 | `Lists` | `Enabled` (true), `IndentTolerance` (1,5 pt) | FR-050–054 |
-| `Tables` | `Enabled` (true), `CellGapFactor` (2,0), `MinRows` (3), `ColumnTolerance` (0,03), `RowMergeGapFactor` (1,2), `UseRulingLines` (true), `MergeAcrossPages` (true) | FR-060–066 |
+| `Tables` | `Enabled` (true), `CellGapFactor` (2,0), `MinRows` (3), `ColumnTolerance` (0,03), `RowMergeGapFactor` (1,2), `UseRulingLines` (true), `MergeAcrossPages` (true), `DetectStepSequences` (true) | FR-060–067 |
 | `Rendering` | `PageMarkers` (true), `FootnotesPlacement` (`EndOfSection`), `EmphasisInline` (true) | FR-002a, FR-026, FR-046 |
 | `Footnotes` | `Enabled` (true), `MaxSizeRatio` (0,9) | FR-026 |
 
@@ -154,10 +154,10 @@ w (0, 1], liczby dodatnie, `MaxTypographicDepth` 1–6.
 | Typ | Pola kluczowe | Tworzony przez etap |
 |-----|---------------|---------------------|
 | `PipelineContext` | `Options`, `Source`, `Pages: List<LayoutPage>`, `Report: ReportBuilder`, `CancellationToken`, `BodyStyle?`, `Document?` | fasada |
-| `LayoutPage` | `Number`, `Width`, `Height`, `Lines: List<LayoutLine>`, `Rulings: List<Segment>`, `HasImages`, `Skipped?` | Extraction |
+| `LayoutPage` | `Number`, `Width`, `Height`, `Lines: List<LayoutLine>`, `Rulings: List<Segment>`, `FilledAreas: List<Rect>` (wypełnione, niebiałe kształty grubsze niż linia, bez tła strony), `HasImages`, `Skipped?` | Extraction |
 | `LayoutGlyph` | `Text`, `Box`, `Baseline`, `PointSize`, `IsBold`, `IsItalic` | Extraction |
 | `LayoutWord` | `Glyphs`, `Box`, `Text`, `Style` | LineAssembly |
-| `LayoutLine` | `Words`, `Box`, `Baseline`, `Segments: List<LineSegment>` (podział po dużych odstępach), `Zone` (Header/Body/Footer), `Role` (Unknown/Artifact/Footnote/Table/ListItem/Heading/Body), `Annotations` | LineAssembly → kolejne etapy |
+| `LayoutLine` | `Words`, `Box`, `Baseline`, `Segments: List<LineSegment>` (podział po dużych odstępach), `Zone` (Header/Body/Footer), `Role` (Unknown/Artifact/Footnote/Table/ListItem/ListContinuation/Heading/Body/SideNote/StepTitle), `Annotations` | LineAssembly → kolejne etapy |
 | `LayoutBlock` | `Kind`, `Lines`, `Pages`, dane specyficzne (pasy kolumn, oznaczenie listy, poziom nagłówka) | BlockAssembly / Table / List / Heading |
 
 ### Kontrakty etapów US2 (nagłówki i przypisy, ustalone przy T055–T058)
@@ -178,6 +178,7 @@ w (0, 1], liczby dodatnie, `MaxTypographicDepth` 1–6.
 ```text
 Unknown ──(ArtifactRemoval)──► Artifact (usuwana, liczona w raporcie)
 Unknown ──(FootnoteDetection)─► Footnote
+Unknown ──(StepSequence)──────► StepTitle (nazwa kroku) | Artifact (wiersz nazw kolumn); wyjaśnienie zostaje Unknown z `step.scheme`
 Unknown ──(TableDetection)────► Table
 Unknown ──(ListDetection)─────► ListItem | ListContinuation
 Unknown ──(HeadingDetection)──► Heading
@@ -196,6 +197,7 @@ Reguła: rola raz nadana inna niż `Unknown` nie jest zmieniana przez późniejs
 | 300 | `LineAssemblyStage` (słowa, linie, segmenty, strefy) | FR-011, FR-030 |
 | 400 | `ArtifactRemovalStage` | FR-020–025, FR-027 |
 | 500 | `FootnoteDetectionStage` | FR-026 |
+| 550 | `StepSequenceStage` (schematy kroków: pola z `FilledAreas`, numeracja, kolejność nazwa → wyjaśnienie) | FR-067 |
 | 600 | `TableDetectionStage` | FR-060–066 |
 | 700 | `ReadingOrderStage` (kolumny) | FR-031 |
 | 800 | `ListDetectionStage` | FR-050–054 |

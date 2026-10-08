@@ -108,6 +108,7 @@ Strumień nie jest zamykany przez bibliotekę; konwerter jest bezpieczny do wywo
 | `Tables` | `RowMergeGapFactor` | `1.2` | odstęp (w interliniach), do którego linie łączą się w jeden wielolinijkowy wiersz |
 | `Tables` | `UseRulingLines` | `true` | użycie linii siatki do wykrycia tabeli |
 | `Tables` | `MergeAcrossPages` | `true` | łączenie tabel ciągłych między stronami |
+| `Tables` | `DetectStepSequences` | `true` | schematy kroków (szare pola z nazwami kroków, wyjaśnienie obok) jako „**Krok N: …**” + treść (FR-067) |
 | `Rendering` | `PageMarkers` | `true` | znaczniki stron `<!-- page: N -->` |
 | `Rendering` | `FootnotesPlacement` | `EndOfSection` | miejsce definicji przypisów (jedyna wartość: po treści sekcji) |
 | `Rendering` | `EmphasisInline` | `true` | pogrubienie/kursywa jako `**` / `*` |
@@ -121,7 +122,7 @@ Opcje są walidowane (`OptionsValidationException` przy niepoprawnych wartościa
 Etap implementuje `IPipelineStage` (`int Order`, `void Execute(PipelineContext context)`); etapy są wykonywane
 rosnąco wg `Order`. Wbudowane wartości są w stałych `StageOrder` (przestrzeń nazw `LegalAgent.PdfParser.Pipeline`):
 `PageExtraction` 100, `TextNormalization` 200, `LineAssembly` 300, `ArtifactRemoval` 400, `FootnoteDetection` 500,
-`TableDetection` 600, `ReadingOrder` 700, `ListDetection` 800, `HeadingDetection` 900, `BlockAssembly` 1000,
+`StepSequence` 550, `TableDetection` 600, `ReadingOrder` 700, `ListDetection` 800, `HeadingDetection` 900, `BlockAssembly` 1000,
 `DocumentBuild` 1100. Etap musi być bezstanowy (stan wyłącznie w `PipelineContext`).
 
 ```csharp

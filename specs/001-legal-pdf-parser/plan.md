@@ -194,8 +194,21 @@ konsumenckiego) i niepołączone odnośniki przypisów („zm.11))” w ustawie 
 Wyniki konwersji plików właściciela leżą (nieśledzone) w katalogu głównym repo: `Akt prawny - D20081505Lj.*`,
 `Regulamin … mBanku S.A. -.*`.
 
+**Schematy kroków (FR-067, sesja 2026-10-08, T101–T107)**: dwukolumnowe schematy „Kolejność działań | Wyjaśnienie”
+(szare pola bez obramowania, strzałki-obrazki) rozsypywały się (przeplatane linie obu kolumn, `### Kolejność działań
+Wyjaśnienie`). `PageExtractionStage` zapisuje teraz `LayoutPage.FilledAreas`; `StepSequenceStage` (550) rozpoznaje pola
+(≤ 50% szerokości strony, tekst na prawo), łączy je w schematy (zgodne krawędzie ±3 pt, między polami tylko wiersz nazw
+kolumn/artefakty/przypisy, także przez stronę), dzieli linie na krawędzi pola i układa stronę: nazwa → wyjaśnienie;
+puste pole = kontynuacja kroku; wiersz nazw kolumn (także zawinięty, na dwóch liniach bazowych, nad strzałką) →
+`Artifact`. `BlockAssemblyStage` składa nazwę w pogrubiony akapit „Krok N: …”; wyjaśnienie przechodzi zwykłe listy
+i akapity; `ReadingOrderStage`/`TableDetectionStage` pomijają linie schematu. Przy okazji „✓”/„✔” są punktorami (FR-050).
+Weryfikacja na `Corpus/private/mbank-regulamin-pdp.pdf`: 12 schematów, 34 kroki (str. 9, 27–39, 46–47 — także
+„Zasady komunikacji zmian | Opis”), 13 fałszywych nagłówków mniej (62 → 49), listy „✓” zagnieżdżone; reszta bez zmian.
+Uwaga dla syntetycznych testów: mediana interlinii liczona jest przed przestawieniem linii, więc dokument złożony
+głównie ze schematu ma zaniżoną interlinię — test integracyjny ma akapit zwykłego tekstu.
+
 **Znane ograniczenia** (szczegóły w `Corpus/REVIEW.md`): złożone tabele mBanku z wielopoziomowym nagłówkiem
-i tabela kroków BLIK — tryb awaryjny; wiersze sekcji taryfy MSZ w kolumnie, gdzie zaczyna się tekst; w załącznikach
+— tryb awaryjny (tabela kroków BLIK naprawiona przez FR-067); wiersze sekcji taryfy MSZ w kolumnie, gdzie zaczyna się tekst; w załącznikach
 ustawy o kredycie konsumenckim pogrubione linie legendy wzoru jako nagłówki; w obwieszczeniach Dz. U. pojedyncze
 „Art. N.” z części obwieszczenia przed tekstem ustawy jako nagłówek (np. `## Art. 60.` w kredycie konsumenckim).
 
