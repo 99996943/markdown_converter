@@ -7,7 +7,7 @@ namespace LegalAgent.PdfParser.Tests.Fixtures;
 public sealed class BankingCorpusGeneratorTests
 {
     private static readonly string[] ExpectedNames =
-        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny"];
+        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny", "regulamin-promocji-tabela", "regulamin-z-tabela-definicji"];
 
     private static string[] PageTexts(byte[] pdf)
     {
@@ -24,7 +24,7 @@ public sealed class BankingCorpusGeneratorTests
         foreach ((string name, byte[] pdf) in docs)
         {
             int pages = PageTexts(pdf).Length;
-            Assert.True(pages is >= 2 and <= 4, $"{name} has {pages} pages");
+            Assert.True(pages is >= 2 and <= 6, $"{name} has {pages} pages");
         }
     }
 

@@ -40,7 +40,7 @@ internal static partial class BankingCorpusGenerator
     public static DocumentTruth Truth(string name) => Build(name).Truth;
 
     private static readonly string[] Names =
-        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny"];
+        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny", "regulamin-promocji-tabela", "regulamin-z-tabela-definicji"];
 
     private static (byte[] Pdf, DocumentTruth Truth) Build(string name)
     {
