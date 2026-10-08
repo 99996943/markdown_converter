@@ -34,6 +34,11 @@ public sealed class LayoutPage
     /// <summary>Horizontal and vertical ruling segments.</summary>
     public IList<Segment> Rulings { get; } = [];
 
+    /// <summary>
+    /// Filled, non-white shapes thicker than a rule (for example shaded table cells), excluding page-sized backgrounds.
+    /// </summary>
+    public IList<Rect> FilledAreas { get; } = [];
+
     /// <summary>True when the page contains images.</summary>
     public bool HasImages { get; set; }
 

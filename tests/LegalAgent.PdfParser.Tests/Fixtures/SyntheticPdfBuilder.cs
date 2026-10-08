@@ -92,12 +92,17 @@ public sealed class SyntheticPdfBuilder
         return this;
     }
 
-    /// <summary>Draws a filled rectangle with its top-left corner at (<paramref name="x"/>, <paramref name="yFromTop"/>).</summary>
-    public SyntheticPdfBuilder FilledRect(double x, double yFromTop, double width, double height)
+    /// <summary>
+    /// Draws a filled rectangle with its top-left corner at (<paramref name="x"/>, <paramref name="yFromTop"/>);
+    /// <paramref name="gray"/> is the fill level from 0 (black) to 255 (white), e.g. 217 for a light gray cell.
+    /// </summary>
+    public SyntheticPdfBuilder FilledRect(double x, double yFromTop, double width, double height, byte gray = 0)
     {
         Current.Draw.Add((_, page) =>
         {
+            page.SetTextAndFillColor(gray, gray, gray);
             page.DrawRectangle(new PdfPoint(x, page.PageSize.Height - yFromTop - height), width, height, 1, true);
+            page.SetTextAndFillColor(0, 0, 0);
         });
         return this;
     }

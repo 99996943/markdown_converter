@@ -156,6 +156,42 @@ public sealed class PageExtractionStageTests
     }
 
     [Fact]
+    public void Execute_RecordsFilledNonWhiteAreasTopDown()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page()
+            .FilledRect(64, 156, 142, 16, gray: 217)
+            .Text(70, 168, "Krok")
+            .Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        Rect area = Assert.Single(h.Context.Pages[0].FilledAreas);
+        Assert.Equal(64, area.Left, 0.5);
+        Assert.Equal(156, area.Top, 0.5);
+        Assert.Equal(206, area.Right, 0.5);
+        Assert.Equal(172, area.Bottom, 0.5);
+    }
+
+    [Fact]
+    public void Execute_DoesNotRecordWhiteFillsPageBackgroundsOrThinRules()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page()
+            .FilledRect(0, 0, 595, 842, gray: 200)
+            .FilledRect(64, 156, 142, 16, gray: 255)
+            .FilledRect(50, 300, 250, 1)
+            .Text(70, 168, "Tekst")
+            .Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        LayoutPage page = h.Context.Pages[0];
+        Assert.Empty(page.FilledAreas);
+        Assert.Contains(page.Rulings, s => s.IsHorizontal && Math.Abs(s.Y1 - 300.5) < 1 && Math.Abs(s.Length - 250) < 1);
+    }
+
+    [Fact]
     public void Execute_ExtractsHorizontalAndVerticalRulings()
     {
         byte[] pdf = new SyntheticPdfBuilder().Page()
