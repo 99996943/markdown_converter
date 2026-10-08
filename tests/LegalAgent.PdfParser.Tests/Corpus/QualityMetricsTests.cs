@@ -249,6 +249,172 @@ public sealed partial class QualityMetricsTests
         Assert.True(gfm >= 0.8, $"{name}: full GFM tables {gfm:P0} of {tables.Length}.");
     }
 
+    // ---------------------------------------------------------------- spec 002 (T036): table-document metrics
+
+    private const string TableDocument = "regulamin-promocji-tabela";
+
+    private static async Task<PdfConversionResult> ConvertTableDocumentAsync()
+    {
+        using var stream = new MemoryStream(Fixtures.BankingCorpusGenerator.Pdf(TableDocument));
+        return await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+    }
+
+    /// <summary>
+    /// Words of the PDF in content order, the column-name row removed, split into the section-name column (left cells
+    /// of pages 2 and later) and everything else (the cover and the right cells).
+    /// </summary>
+    private static (List<string> Names, List<string> Content) TableDocumentPdfWords()
+    {
+        HashSet<string> header = Fixtures.BankingCorpusGenerator.Truth(TableDocument).HeaderRowWords.Select(w => w.ToLowerInvariant()).ToHashSet(StringComparer.Ordinal);
+        using PdfDocument document = PdfDocument.Open(Fixtures.BankingCorpusGenerator.Pdf(TableDocument));
+        var names = new List<string>();
+        var content = new List<string>();
+        foreach (UglyToad.PdfPig.Content.Page page in document.GetPages())
+        {
+            foreach (UglyToad.PdfPig.Content.Word word in page.GetWords().Where(w => !PageNumberOfTotal().IsMatch(w.Text) && !IsSubBulletMarker(w)))
+            {
+                // The running page number ("2/5") is an artifact, removed by design (SC-001).
+                // The column-name row stands on pages 2, 3 and 5: drop every occurrence of its words.
+                foreach (string w in Words(word.Text).Where(w => !header.Contains(w)))
+                {
+                    (page.Number is >= 2 and <= 5 && word.BoundingBox.Left < 180 ? names : content).Add(w);
+                }
+            }
+        }
+
+        return (names, content);
+    }
+
+    /// <summary>Words of the Markdown without page markers, in output order: the headings (section names) and the rest.</summary>
+    private static (List<string> Names, List<string> Content) TableDocumentOutputWords(string markdown)
+    {
+        var names = new List<string>();
+        var content = new List<string>();
+        foreach (string line in PageMarkerComment().Replace(markdown, " ").Split('\n'))
+        {
+            bool section = line.StartsWith("## ", StringComparison.Ordinal);
+            (section ? names : content).AddRange(Words(Unescape(section ? line[3..] : line.TrimStart('#'))));
+        }
+
+        
+        return (names, content);
+    }
+
+    /// <summary>The "o" sub-bullet marker (set in a monospace font) becomes Markdown list syntax, not a word.</summary>
+    private static bool IsSubBulletMarker(UglyToad.PdfPig.Content.Word word) =>
+        word.Text == "o" && word.Letters.Any(l => (l.FontName ?? string.Empty).Contains("Mono", StringComparison.Ordinal));
+
+    [GeneratedRegex(@"^\d+/\d+$", RegexOptions.CultureInvariant)]
+    private static partial Regex PageNumberOfTotal();
+
+    [GeneratedRegex(@"<!-- page: \d+ -->", RegexOptions.CultureInvariant)]
+    private static partial Regex PageMarkerComment();
+
+    /// <summary>SC-010: every word of the PDF (except the column-name row) is in the Markdown, in order, and nothing else is.</summary>
+    [Fact]
+    public async Task TableDocument_KeepsEveryWordInOrderAndAddsNone_SC010()
+    {
+        PdfConversionResult result = await ConvertTableDocumentAsync();
+        (List<string> pdfNames, List<string> pdfContent) = TableDocumentPdfWords();
+        (List<string> outNames, List<string> outContent) = TableDocumentOutputWords(result.Markdown);
+
+        AssertSameWords("section names", pdfNames, outNames);
+        AssertSameWords("content", pdfContent, outContent);
+    }
+
+    private static void AssertSameWords(string what, List<string> pdf, List<string> output)
+    {
+        int common = 0;
+        while (common < pdf.Count && common < output.Count && pdf[common] == output[common])
+        {
+            common++;
+        }
+
+        string Context(List<string> w) => string.Join(' ', w.Skip(Math.Max(0, common - 3)).Take(10));
+        Assert.True(
+            pdf.Count == output.Count && common == pdf.Count,
+            $"{what}: PDF words ({pdf.Count}) and Markdown words ({output.Count}) differ from word {common}: PDF «{Context(pdf)}» / Markdown «{Context(output)}».");
+    }
+
+    private static string[] HeadingLines(string markdown) => markdown.Split('\n').Where(l => l.StartsWith('#')).ToArray();
+
+    /// <summary>SC-011: the section names are the level-2 headings, whole and in order, each before its content.</summary>
+    [Fact]
+    public async Task TableDocument_SectionNamesAreLevel2HeadingsBeforeTheirContent_SC011()
+    {
+        PdfConversionResult result = await ConvertTableDocumentAsync();
+        IReadOnlyList<string> names = Fixtures.BankingCorpusGenerator.Truth(TableDocument).SectionNames;
+
+        string[] level2 = HeadingLines(result.Markdown).Where(l => l.StartsWith("## ", StringComparison.Ordinal)).Select(l => l[3..].Trim()).ToArray();
+        Assert.Equal(names, level2);
+
+        // The first words of the content of each cell stand after its heading and before the next heading.
+        string[] firstContent =
+        [
+            "Promocję organizuje", "W promocji mogą uczestniczyć", "Bank – Bank Przykładowy", "Jeśli spełnisz warunki promocji",
+            "Jeśli spełnisz wszystkie warunki", "Reklamacje związane z uczestnictwem",
+        ];
+        int previous = -1;
+        for (int i = 0; i < names.Count; i++)
+        {
+            int heading = result.Markdown.IndexOf("## " + names[i] + "\n", StringComparison.Ordinal);
+            int content = result.Markdown.IndexOf(firstContent[i], StringComparison.Ordinal);
+            int next = i + 1 < names.Count ? result.Markdown.IndexOf("## " + names[i + 1] + "\n", StringComparison.Ordinal) : int.MaxValue;
+            Assert.True(heading > previous && heading < content && content < next, $"section «{names[i]}»: heading {heading}, content {content}, next heading {next}");
+            previous = heading;
+        }
+    }
+
+    /// <summary>SC-012: the only headings are the title and the section names.</summary>
+    [Fact]
+    public async Task TableDocument_OnlyTheTitleAndSectionNamesAreHeadings_SC012()
+    {
+        PdfConversionResult result = await ConvertTableDocumentAsync();
+        IReadOnlyList<string> names = Fixtures.BankingCorpusGenerator.Truth(TableDocument).SectionNames;
+
+        string[] headings = HeadingLines(result.Markdown);
+        Assert.Equal(names.Count + 1, headings.Length);
+        Assert.StartsWith("# ", headings[0], StringComparison.Ordinal);
+        Assert.Equal(names.Select(n => "## " + n), headings.Skip(1));
+    }
+
+    /// <summary>SC-013: no GFM tables, no " \| " separators, no TBL001 and no tables in the report.</summary>
+    [Fact]
+    public async Task TableDocument_HasNoTables_SC013()
+    {
+        PdfConversionResult result = await ConvertTableDocumentAsync();
+
+        Assert.DoesNotContain(result.Markdown.Split('\n'), l => l.TrimStart().StartsWith('|'));
+        Assert.DoesNotContain(" \\| ",result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code.StartsWith("TBL001", StringComparison.Ordinal));
+        Assert.Equal(0, result.Report.TableCount);
+    }
+
+    /// <summary>SC-014: cells crossing a page boundary are one fragment, with the page marker inside.</summary>
+    [Theory]
+    [InlineData("Warunki promocyjne terminala", "w każdej placówce Banku.")]
+    [InlineData("Jeśli spełnisz wszystkie warunki", "w aplikacji mobilnej.")]
+    public async Task TableDocument_CellCrossingAPageIsOneFragment_SC014(string phrase, string end)
+    {
+        PdfConversionResult result = await ConvertTableDocumentAsync();
+        string[] blocks = result.Markdown.Split("\n\n", StringSplitOptions.RemoveEmptyEntries);
+
+        string block = Assert.Single(blocks, b => b.Contains(phrase, StringComparison.Ordinal));
+        Assert.Matches(@"<!-- page: \d+ -->", block);
+        Assert.Contains(end, block, StringComparison.Ordinal);
+    }
+
+    /// <summary>SC-015: list labels and nesting depth of the right cells equal the ground truth.</summary>
+    [Fact]
+    public async Task TableDocument_ListLabelsAndDepthMatchTheTruth_SC015()
+    {
+        PdfConversionResult result = await ConvertTableDocumentAsync();
+        var truth = Fixtures.BankingCorpusGenerator.Truth(TableDocument).ListItems.Select(i => (i.Label, i.Depth)).ToList();
+        var items = ListItems(AllBlocks(result.Document), 0).ToList();
+
+        Assert.Equal(truth, items);
+    }
+
     private static int LongestCommonSubsequence(List<(string Label, int Depth)> a, List<(string Label, int Depth)> b)
     {
         var table = new int[a.Count + 1, b.Count + 1];

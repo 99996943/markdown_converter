@@ -26,14 +26,20 @@ public sealed partial class MarkdownInvariantsTests
             data.Add("banking/" + doc);
         }
 
+        // Spec 002 documents are generated on demand, outside the golden corpus (BankingCorpusGenerator.Names).
+        data.Add("banking/" + TableDocument);
+        data.Add("banking/regulamin-z-tabela-definicji");
+
         return data;
     }
+
+    private const string TableDocument = "regulamin-promocji-tabela";
 
     private static async Task<(string Markdown, string WithoutMarkers)> ConvertAsync(string id)
     {
         byte[] pdf = id.StartsWith("acts/", StringComparison.Ordinal)
             ? await File.ReadAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "Corpus", "acts", id[5..] + ".pdf"), TestContext.Current.CancellationToken)
-            : BankingCorpusGenerator.Documents().Single(d => d.Name == id[8..]).Pdf;
+            : BankingCorpusGenerator.Pdf(id[8..]);
         var converter = PdfMarkdownConverter.CreateDefault();
         using var first = new MemoryStream(pdf);
         PdfConversionResult result = await converter.ConvertAsync(first, cancellationToken: TestContext.Current.CancellationToken);
@@ -84,6 +90,37 @@ public sealed partial class MarkdownInvariantsTests
         stripped = Spaces().Replace(PageMarker().Replace(stripped, " "), " ");
         Assert.Equal(Spaces().Replace(withoutMarkers, " "), stripped);
     }
+
+    /// <summary>Invariants 7-9 of spec 002: no tables, no column-name row and only section names as headings after the first section.</summary>
+    [Fact]
+    public async Task TableDocumentMarkdown_KeepsTheTableDocumentInvariants_7to9()
+    {
+        DocumentTruth truth = BankingCorpusGenerator.Truth(TableDocument);
+        (string markdown, _) = await ConvertAsync("banking/" + TableDocument);
+        string[] lines = markdown.Split('\n');
+        int first = Array.FindIndex(lines, l => l == "## " + truth.SectionNames[0]);
+        Assert.True(first >= 0, "the first section name is not a heading");
+        string[] fromFirstSection = lines[first..];
+
+        // 7. Neither a GFM table nor a line with the " \| " separator from the first section heading to the end.
+        Assert.DoesNotContain(fromFirstSection, l => l.TrimStart().StartsWith('|'));
+        Assert.DoesNotContain(fromFirstSection, l => l.Contains(" \\| ",StringComparison.Ordinal));
+
+        // 8. The column-name row is not in the output (its words do not occur in the document content).
+        Assert.All(truth.HeaderRowWords, w => Assert.DoesNotContain(w, markdown, StringComparison.Ordinal));
+
+        // 9. Every heading after the first section is a section name or an editorial unit (FR-087).
+        foreach (string line in fromFirstSection.Where(l => HeadingLine().IsMatch(l)))
+        {
+            string text = line.TrimStart('#').Trim();
+            Assert.True(
+                truth.SectionNames.Contains(text) || EditorialUnit().IsMatch(text),
+                $"heading after the first section is neither a section name nor an editorial unit: {line}");
+        }
+    }
+
+    [GeneratedRegex(@"^(Art\.|§|Rozdział|Dział|Tytuł|Księga|Część|Oddział)\s", RegexOptions.CultureInvariant)]
+    private static partial Regex EditorialUnit();
 
     [GeneratedRegex(@"^\[\^(\d+)\]: ", RegexOptions.CultureInvariant)]
     private static partial Regex FootnoteDefinition();
