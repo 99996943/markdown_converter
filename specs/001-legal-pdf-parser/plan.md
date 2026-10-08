@@ -207,6 +207,12 @@ Weryfikacja na `Corpus/private/mbank-regulamin-pdp.pdf`: 12 schematów, 34 kroki
 Uwaga dla syntetycznych testów: mediana interlinii liczona jest przed przestawieniem linii, więc dokument złożony
 głównie ze schematu ma zaniżoną interlinię — test integracyjny ma akapit zwykłego tekstu.
 
+**Niezależność od systemu (FR-011a, T110, 2026-10-08)**: pierwsze CI na Linuksie wykazało, że dla nieosadzonej czcionki
+bez odpowiednika w systemie (Times New Roman na Ubuntu — 4 z 6 ustaw korpusu) PdfPig podaje prostokąt czcionki (FontBBox,
+~25,7 pt, przesunięty w lewo) zamiast kształtu litery, a dla spacji prostokąt zmyślony. `PageExtractionStage.GlyphBox`:
+znak biały → odcinek przesunięcia na linii bazowej; litera wystająca poza przesunięcie o > 0,4 em → poziomo przesunięcie,
+pionowo prostokąt. Na Windowsie wynik bez zmian; na Linuksie (WSL, czysty klon) cały zestaw zielony.
+
 **Znane ograniczenia** (szczegóły w `Corpus/REVIEW.md`): złożone tabele mBanku z wielopoziomowym nagłówkiem
 — tryb awaryjny (tabela kroków BLIK naprawiona przez FR-067); wiersze sekcji taryfy MSZ w kolumnie, gdzie zaczyna się tekst; w załącznikach
 ustawy o kredycie konsumenckim pogrubione linie legendy wzoru jako nagłówki; w obwieszczeniach Dz. U. pojedyncze
