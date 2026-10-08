@@ -306,4 +306,29 @@ public sealed partial class TableDocumentsIntegrationTests
             .ToList();
         Assert.Equal(["Obowiązuje od 01.09.2026 r. do 30.11.2026 r.", "bank.example"], preamble);
     }
+
+    // ---------------------------------------------------------------- US4 (T032)
+
+    [Fact]
+    public async Task DefinitionsTable_OfAnOrdinaryDocument_StaysATable()
+    {
+        PdfConversionResult result = await ConvertAsync(BankingCorpusGenerator.Pdf("regulamin-z-tabela-definicji"));
+
+        Assert.Empty(result.Report.TableDocuments);
+        Assert.Equal(1, result.Report.TableCount);
+        Assert.DoesNotContain(Flatten(result.Document.Sections), s => s.Kind == SectionKind.TableDocumentSection);
+        List<string> rows = result.Markdown.Split('\n')
+            .Where(l => l.StartsWith('|')).ToList();
+        Assert.Equal(12, rows.Count - 2);
+    }
+
+    [Fact]
+    public async Task DisabledDetection_KeepsTheTablesOfFeature001()
+    {
+        PdfConversionResult result = await ConvertAsync(BankingCorpusGenerator.Pdf(Promotion), o => o.Tables.DetectTableDocuments = false);
+
+        Assert.DoesNotContain(Flatten(result.Document.Sections), s => s.Kind == SectionKind.TableDocumentSection);
+        Assert.Empty(result.Report.TableDocuments);
+        Assert.True(result.Report.TableCount + result.Report.FallbackTableCount >= 1);
+    }
 }
