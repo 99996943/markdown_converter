@@ -131,7 +131,8 @@ public class PageExtractionStage : IPipelineStage
                 bold,
                 italic,
                 letter.StartBaseLine.X,
-                letter.EndBaseLine.X));
+                letter.EndBaseLine.X,
+                letter.FontName));
         }
 
         context.Report.AddDroppedText(dropped);
