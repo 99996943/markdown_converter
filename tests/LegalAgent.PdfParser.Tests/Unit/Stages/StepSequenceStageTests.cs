@@ -238,4 +238,61 @@ public sealed class StepSequenceStageTests
         Assert.All(page.Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
         Assert.All(page.Lines, l => Assert.False(l.Annotations.ContainsKey(LayoutAnnotations.StepIndex)));
     }
+
+    /// <summary>Two wide boxes with long step names and long explanation lines: without care they look like two text columns.</summary>
+    private static LayoutPage WideNamesPage()
+    {
+        const double right = 290;
+        const double text = 300;
+        const string explanation = "Tekst wyjaśnienia kroku o stałej długości linii";
+        var lines = new List<LayoutLine>();
+        foreach (double top in new[] { 100.0, 180.0 })
+        {
+            lines.Add(Line($"T{top} Sprawdzamy warunek zawarcia umowy", TitleLeft, top + 18));
+            lines.Add(Line($"U{top} oraz otwieramy rachunek klienta", TitleLeft, top + 30));
+            for (int i = 0; i < 5; i++)
+            {
+                lines.Add(Line($"E{top}.{i} {explanation}", text, top + (i * 12)));
+            }
+        }
+
+        return PageWith(1, lines, new Rect(BoxLeft, 98, right, 160), new Rect(BoxLeft, 178, right, 240));
+    }
+
+    [Fact]
+    public void SchemeLines_AreNotReadAsTwoTextColumns()
+    {
+        PipelineContext context = Run(Context([WideNamesPage()]));
+        List<string> stepwise = context.Pages[0].Lines.Select(l => l.Text).ToList();
+
+        new ReadingOrderStage().Execute(context);
+
+        Assert.Equal(stepwise, context.Pages[0].Lines.Select(l => l.Text));
+        Assert.StartsWith("T100", stepwise[0], StringComparison.Ordinal);
+        Assert.StartsWith("E100.0", stepwise[2], StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void SchemeExplanation_IsNotATable()
+    {
+        LayoutPage page = PageWith(
+            1,
+            [
+                Header(100),
+                Row(117, ("Pierwszy krok", TitleLeft), ("Opłata", TextLeft), ("0 zł", 450)),
+                Row(137, ("Prowizja", TextLeft), ("1 zł", 450)),
+                Row(157, ("Odsetki", TextLeft), ("2 zł", 450)),
+                Row(197, ("Drugi krok", TitleLeft), ("Opłata", TextLeft), ("5 zł", 450)),
+                Row(217, ("Prowizja", TextLeft), ("6 zł", 450)),
+            ],
+            Box(114, 170),
+            Box(194, 230));
+        PipelineContext context = Run(Context([page]));
+        context.BodyStyle = new BodyStyle(10, 20);
+
+        new TableDetectionStage().Execute(context);
+
+        Assert.Empty(context.Tables);
+        Assert.DoesNotContain(page.Lines, l => l.Role == LineRole.Table);
+    }
 }

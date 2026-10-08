@@ -340,6 +340,30 @@ public sealed class BlockAssemblyStageTests
     }
 
     [Fact]
+    public void Execute_StepTitleLinesFormABoldKrokParagraphFollowedByTheExplanation()
+    {
+        PipelineContext context = PageSketch.Assemble(null, new PageSketch()
+            .Line("Sprawdzamy warunek za-", 70, 100, bold: true)
+            .Line("warcia umowy", 70, 113, bold: true)
+            .Line("Przyjmujemy zlecenie", 70, 140, bold: true)
+            .Line("Sprawdzimy, czy numer PESEL nie jest zastrzeżony.", 212, 170));
+        foreach ((LayoutLine line, string number) in context.Pages[0].Lines.Take(3).Zip(["3", "3", "4"]))
+        {
+            line.Role = LineRole.StepTitle;
+            line.Annotations[LayoutAnnotations.StepIndex] = "0";
+            line.Annotations[LayoutAnnotations.StepNumber] = number;
+        }
+
+        new BlockAssemblyStage().Execute(context);
+
+        Assert.Equal(
+            ["Krok 3: Sprawdzamy warunek zawarcia umowy", "Krok 4: Przyjmujemy zlecenie", "Sprawdzimy, czy numer PESEL nie jest zastrzeżony."],
+            Paragraphs(context));
+        Assert.All(context.Blocks.Take(2), b => Assert.All(b.Inlines.OfType<TextRun>(), r => Assert.Equal(TextStyle.Bold, r.Style)));
+        Assert.All(context.Blocks, b => Assert.Equal(LayoutBlockKind.Paragraph, b.Kind));
+    }
+
+    [Fact]
     public void Execute_PreservesBoldAndItalicRunsAsTextStyle()
     {
         PipelineContext context = Run(new PageSketch()
