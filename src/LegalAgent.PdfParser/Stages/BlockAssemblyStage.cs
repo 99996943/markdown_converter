@@ -424,9 +424,10 @@ public sealed class BlockAssemblyStage : IPipelineStage
     private static bool InTableDocument(LayoutLine line) => line.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex);
 
     /// <summary>
-    /// R9 (spec 002, FR-085, FR-086): in table-document content a line ends its paragraph when the first word of the next
-    /// line — a one-letter word together with the word after it — would have fit before the column's right edge (the
-    /// break was intended, the text is ragged-right), or when the line is bold as a whole and the next one is not, or
+    /// R9 (spec 002, FR-085, FR-086): in table-document content a line ends its paragraph when the next line starts with
+    /// a capital letter and its first word — a one-letter word together with the word after it — would have fit before
+    /// the column's right edge (the break was intended, the text is ragged-right; a manual break inside a sentence is
+    /// followed by a lowercase word), or when the line is bold as a whole and the next one is not, or
     /// the other way round.
     /// </summary>
     private static bool EndsTableDocumentParagraph(LayoutLine previous, LayoutLine line, double size)
@@ -436,7 +437,9 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return true;
         }
 
-        if (LayoutAnnotations.GetNumber(previous, LayoutAnnotations.ColumnRight) is not double right || line.Words.Count == 0)
+        if (LayoutAnnotations.GetNumber(previous, LayoutAnnotations.ColumnRight) is not double right
+            || line.Words.Count == 0
+            || !char.IsUpper(line.Words[0].Text[0]))
         {
             return false;
         }
