@@ -255,6 +255,16 @@ public sealed partial class TableDocumentsIntegrationTests
         Assert.Equal((1, 2, 3), (summary.FirstPage, summary.LastPage, summary.SectionCount));
     }
 
+    [Fact]
+    public async Task BulletsUnderAParagraph_KeepTheirOrderInTheLastRow()
+    {
+        string md = (await ConvertAsync(WideGapsDocument())).Markdown;
+
+        Assert.Matches(@"(?m)^- nie udostępniaj nikomu[^
+]*
+- korzystaj wyłącznie z oficjalnej aplikacji", md);
+    }
+
     private static IEnumerable<Section> Flatten(IEnumerable<Section> sections) =>
         sections.SelectMany(s => new[] { s }.Concat(Flatten(s.Children)));
 }
