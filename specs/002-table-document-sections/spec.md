@@ -246,7 +246,10 @@ dwustronicowa) nadal wychodzi jako tabela GFM.
   np. „o” pod „•”, „1)”), wyróżnienia wewnątrz linii (FR-046) i adresy stron jako oryginalny tekst.
   Linia kończy akapit także bez kropki na końcu, gdy w wolnym miejscu do prawej krawędzi kolumny
   zmieściłoby się pierwsze słowo następnej linii (złamanie linii było zamierzone, a nie wymuszone
-  szerokością kolumny) — dzięki temu kolejne definicje „termin – objaśnienie” stają się osobnymi
+  szerokością kolumny); wyraz jednoliterowy na początku następnej linii („o”, „w”, „z”, „i” — polska
+  typografia przenosi je do kolejnej linii) mierzony jest razem z wyrazem, który po nim następuje.
+  Linia nazwy sekcji kontynuowanej na następnej stronie (FR-083) nie przerywa akapitu ani listy
+  prawej kolumny — dzięki temu kolejne definicje „termin – objaśnienie” stają się osobnymi
   akapitami z oryginalnym tekstem, bez punktorów listy i bez dodatkowego pogrubienia terminu. Znak „o”
   na początku linii złożony inną czcionką niż następujący po nim tekst (np. Courier New — drugi poziom
   list edytora tekstu) jest punktorem (FR-050); słowo „o” złożone czcionką tekstu punktorem nie jest.
