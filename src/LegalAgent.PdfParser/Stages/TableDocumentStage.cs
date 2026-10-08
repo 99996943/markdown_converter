@@ -12,5 +12,5 @@ public sealed class TableDocumentStage : IPipelineStage
     public int Order => StageOrder.TableDocument;
 
     /// <inheritdoc />
-    public void Execute(PipelineContext context) => throw new NotImplementedException();
+    public void Execute(PipelineContext context) => ArgumentNullException.ThrowIfNull(context);
 }
