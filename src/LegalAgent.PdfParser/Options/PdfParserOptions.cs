@@ -151,10 +151,10 @@ public sealed class HeadingOptions
     public bool DetectLegalUnits { get; set; } = true;
 
     /// <summary>A short caption in or right below an image is never a heading (spec 002, FR-088).</summary>
-    public bool DetectImageCaptions { get; set; }
+    public bool DetectImageCaptions { get; set; } = true;
 
     /// <summary>The „Obowiązuje od …” line of the title block is a paragraph, not a heading (spec 002, FR-093).</summary>
-    public bool ValidityLineAsParagraph { get; set; }
+    public bool ValidityLineAsParagraph { get; set; } = true;
 
     internal HeadingOptions Clone() => (HeadingOptions)MemberwiseClone();
 }
@@ -202,19 +202,19 @@ public sealed class TableOptions
     /// Render a document made of one multi-page, two-column bordered table as a sequence of sections (spec 002,
     /// FR-080): the left cell is the section heading, the right cell its content.
     /// </summary>
-    public bool DetectTableDocuments { get; set; }
+    public bool DetectTableDocuments { get; set; } = true;
 
     /// <summary>Maximum width of the left column of a table-document as a fraction of the table width (FR-080 b).</summary>
-    public double TableDocumentMaxLeftColumnRatio { get; set; }
+    public double TableDocumentMaxLeftColumnRatio { get; set; } = 0.35;
 
     /// <summary>Minimum number of pages a table-document spans (FR-080 c).</summary>
-    public int TableDocumentMinPages { get; set; }
+    public int TableDocumentMinPages { get; set; } = 2;
 
     /// <summary>Minimum share of the pages with text that a table-document spans (FR-080 c).</summary>
-    public double TableDocumentMinPageRatio { get; set; }
+    public double TableDocumentMinPageRatio { get; set; } = 0.5;
 
     /// <summary>Minimum median word count of the right cells of named rows (FR-080 e).</summary>
-    public int TableDocumentMinMedianWords { get; set; }
+    public int TableDocumentMinMedianWords { get; set; } = 40;
 
     internal TableOptions Clone() => (TableOptions)MemberwiseClone();
 }
