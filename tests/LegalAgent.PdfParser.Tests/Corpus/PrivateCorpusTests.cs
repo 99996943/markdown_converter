@@ -28,6 +28,15 @@ public sealed class PrivateCorpusTests
                 .ConvertAsync(stream, new PdfConversionRequest { SourceId = Path.GetFileName(pdf) }, TestContext.Current.CancellationToken);
 
             Assert.True(result.IsComplete, $"{Path.GetFileName(pdf)} converted incompletely.");
+
+            // Spec 002 (SC-013): a table-document becomes sections — no GFM table rows, no fallback „ | ” rows.
+            if (result.Report.TableDocuments.Count > 0)
+            {
+                string[] lines = result.Markdown.Split('\n');
+                Assert.DoesNotContain(lines, l => l.StartsWith('|'));
+                Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
+            }
+
             string expected = Path.ChangeExtension(pdf, ".expected.md");
             if (File.Exists(expected))
             {
