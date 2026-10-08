@@ -79,6 +79,8 @@ public sealed class ListLabelPatternsTests
     [InlineData("§ 3. Treść")]
     [InlineData("2024. Treść")]
     [InlineData("2024 r. weszła")]
+    [InlineData("01.01.2026 r. wynosi 170.103.364 złote.")]
+    [InlineData("1.09.2026 r. do 30.11.2026 r.")]
     [InlineData("ust. 2")]
     [InlineData("zł 100")]
     [InlineData("abc) Treść")]

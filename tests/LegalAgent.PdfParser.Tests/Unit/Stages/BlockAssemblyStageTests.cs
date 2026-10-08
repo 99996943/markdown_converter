@@ -543,6 +543,17 @@ public sealed class BlockAssemblyStageTests
     }
 
     [Fact]
+    public void TableDocument_ManualBreakInsideASentence_ContinuesTheParagraphWhenTheNextLineStartsLowercase()
+    {
+        // The reference document has manual line breaks inside sentences; definitions start with a capital letter.
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line("ul. Prostej 18, wpisany do rejestru", ContentLeft, 100)
+            .Line("przedsiebiorcow Krajowego Rejestru Sadowego przez Sad", ContentLeft, 114));
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
     public void TableDocument_RaggedLineAfterWhichTheNextWordWouldNotFit_ContinuesTheParagraph()
     {
         PipelineContext context = RunTableDocument(new PageSketch()
