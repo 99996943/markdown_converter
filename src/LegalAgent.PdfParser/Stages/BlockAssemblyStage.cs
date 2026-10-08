@@ -63,6 +63,13 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                // FR-083: the rest of a section name broken by a page boundary is part of the heading already placed on
+                // the previous page; it must not interrupt that section's content.
+                if (line.Role == LineRole.Heading && line.Heading is null && InTableDocument(line))
+                {
+                    continue;
+                }
+
                 // FR-034: side notes wait until the block they stand beside is finished.
                 if (line.Role == LineRole.SideNote)
                 {
@@ -326,6 +333,11 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return false;
         }
 
+        if (InTableDocument(previous) && InTableDocument(line) && EndsTableDocumentParagraph(previous, line, size))
+        {
+            return false;
+        }
+
         double tolerance = context.Options.Lists.IndentTolerance;
 
         if (page.Number != paragraph.LastPage)
@@ -408,6 +420,35 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
         return trimmed[..end];
     }
+
+    private static bool InTableDocument(LayoutLine line) => line.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex);
+
+    /// <summary>
+    /// R9 (spec 002, FR-085, FR-086): in table-document content a line ends its paragraph when the first word of the next
+    /// line — a one-letter word together with the word after it — would have fit before the column's right edge (the
+    /// break was intended, the text is ragged-right), or when the line is bold as a whole and the next one is not, or
+    /// the other way round.
+    /// </summary>
+    private static bool EndsTableDocumentParagraph(LayoutLine previous, LayoutLine line, double size)
+    {
+        if (AllBold(previous) != AllBold(line))
+        {
+            return true;
+        }
+
+        if (LayoutAnnotations.GetNumber(previous, LayoutAnnotations.ColumnRight) is not double right || line.Words.Count == 0)
+        {
+            return false;
+        }
+
+        List<double> gaps = previous.Words.Zip(previous.Words.Skip(1), (a, b) => b.Box.Left - a.Box.Right).Where(g => g > 0).Order().ToList();
+        double space = gaps.Count > 0 ? gaps[gaps.Count / 2] : 0.25 * size;
+        LayoutWord first = line.Words[0];
+        double width = first.Text.Length == 1 && line.Words.Count > 1 ? line.Words[1].Box.Right - first.Box.Left : first.Box.Width;
+        return previous.Box.Right + space + width <= right;
+    }
+
+    private static bool AllBold(LayoutLine line) => line.Words.Count > 0 && line.Words.All(w => w.Style.HasFlag(TextStyle.Bold));
 
     private static bool EndsWithPeriod(string text)
     {
