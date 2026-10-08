@@ -213,6 +213,19 @@ przebiegu (10,9–16 s przy równoległych testach), osobno 3,6–3,9 s — tyle
 CI uruchamia kategorię `Performance` osobno (`ci.yml`), więc lokalnie: `dotnet test … --filter "Category!=Performance"` +
 osobno `--filter "Category=Performance"`.
 
+**2026-10-08 — US4 i Polish (T032–T039) zrobione; T040 czeka na CI.** Golden `banking/regulamin-promocji-tabela` i
+`banking/regulamin-z-tabela-definicji` spisane ręcznie z tekstu generatora i spec (jedyna różnica przy pierwszym
+porównaniu: znacznik strony tabeli przechodzącej przez stronę stoi po tabeli — konwencja 001) i dodane do `Names`.
+Metryki SC-010 – SC-015 (`QualityMetricsTests`) i niezmienniki 7–9 (`MarkdownInvariantsTests`) zielone. Korpus prywatny:
+`*.expected.md` dla `mbank-reg3` (po przeglądzie i kontroli kompletności słów względem surowego tekstu PdfPig) oraz
+`mbank-regulamin-pdp`, `mbank-reg1`, `mbank-reg2` (baseline + FR-093 + przesunięcie poziomów — decyzja właściciela,
+SC-016 doprecyzowane — + poprawka daty w `reg2`); `PrivateCorpusTests` z `LEGALAGENT_PRIVATE_CORPUS` zielony i sprawdza
+brak wierszy tabel w dokumentach z tabelą-dokumentem. README, XML-doc, odnośnik do kontraktu 1.1.0, wpis w REVIEW.md.
+
+Stan testów (jak w CI): `--filter "Category!=Performance"` 910 zielonych + 1 pominięty, `Category=Performance` 2/2.
+**Do zrobienia (T040)**: wypchnąć gałąź `002-table-document-sections` i potwierdzić zielone CI na Ubuntu (SC-017);
+gałąź nie była jeszcze wypychana.
+
 **Uwaga do pracy z gitem**: w katalogu głównym leżą nieśledzone pliki właściciela (`Akt prawny - …`, `Regulamin … mBanku …`
 — PDF banku); dodawać do commitów wyłącznie konkretne ścieżki, nigdy `git add -A`.
 
