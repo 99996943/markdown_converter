@@ -19,7 +19,8 @@ public sealed class StepSequenceStage : IPipelineStage
     private const double EdgeTolerance = 3;
     private const double MaxBoxWidthRatio = 0.5;
     private const double MinBoxHeight = 8;
-    private const double HeaderGapFactor = 1.5;
+    private const double HeaderGapFactor = 4;
+    private const double HeaderLineGapFactor = 1.5;
     private const int MinBoxes = 2;
 
     /// <inheritdoc />
@@ -53,7 +54,7 @@ public sealed class StepSequenceStage : IPipelineStage
     }
 
     /// <summary>Shaded boxes of a page with text to their right, with the lines they own.</summary>
-    private static IEnumerable<StepBox> FindBoxes(LayoutPage page)
+    private static List<StepBox> FindBoxes(LayoutPage page)
     {
         List<Rect> areas = page.FilledAreas
             .Where(a => a.Width <= MaxBoxWidthRatio * page.Width && a.Height >= MinBoxHeight)
@@ -62,29 +63,47 @@ public sealed class StepSequenceStage : IPipelineStage
         List<Rect> outer = areas.Where(a => !areas.Any(o => o != a && Contains(o, a))).OrderBy(a => a.Top).ToList();
         List<LayoutLine> lines = page.Lines.Where(l => l.Role == LineRole.Unknown && l.Words.Count > 0).ToList();
 
-        foreach (Rect area in outer)
+        List<StepBox> boxes = outer
+            .Select(area => new StepBox(page, area, lines.Where(l => l.Box.CenterY >= area.Top - 1 && l.Box.CenterY <= area.Bottom + 1).ToList()))
+            .Where(b => b.Lines.Any(l => l.Words.Any(w => w.Box.CenterX >= b.Area.Right)))
+            .ToList();
+        var owned = new HashSet<LayoutLine>(boxes.SelectMany(b => b.Lines), ReferenceEqualityComparer.Instance);
+        foreach (StepBox box in boxes)
         {
-            List<LayoutLine> owned = lines
-                .Where(l => l.Box.CenterY >= area.Top - 1 && l.Box.CenterY <= area.Bottom + 1)
-                .ToList();
-            bool textRight = owned.Any(l => l.Words.Any(w => w.Box.CenterX >= area.Right));
-            if (!textRight)
-            {
-                continue;
-            }
-
-            var box = new StepBox(page, area, owned);
-            box.Header.AddRange(lines.Where(l => IsHeaderRow(l, area) && !owned.Contains(l)));
-            yield return box;
+            box.Header.AddRange(FindHeader(lines.Where(l => !owned.Contains(l)), box.Area));
         }
+
+        return boxes;
     }
 
-    /// <summary>A line right above the box with text both over the box and to its right (e.g. „Kolejność działań | Wyjaśnienie”).</summary>
-    private static bool IsHeaderRow(LayoutLine line, Rect box) =>
-        line.Box.Bottom <= box.Top + 1
-        && box.Top - line.Box.Bottom <= HeaderGapFactor * line.Box.Height
-        && line.Words.Any(w => w.Box.CenterX >= box.Left && w.Box.CenterX < box.Right)
-        && line.Words.Any(w => w.Box.CenterX >= box.Right);
+    /// <summary>
+    /// The column-name row above the box (e.g. „Kolejność działań | Wyjaśnienie”): the nearest lines above it (an arrow
+    /// may stand between), taken upwards while closely spaced until together they have text over the box and to its
+    /// right — the names may sit on slightly different baselines or wrap. Empty when no such row is found.
+    /// </summary>
+    private static List<LayoutLine> FindHeader(IEnumerable<LayoutLine> candidates, Rect box)
+    {
+        var header = new List<LayoutLine>();
+        double limit = box.Top + 1;
+        foreach (LayoutLine line in candidates.Where(l => l.Box.Bottom <= box.Top + 1).OrderByDescending(l => l.Box.Bottom))
+        {
+            double gap = header.Count == 0 ? HeaderGapFactor * line.Box.Height : HeaderLineGapFactor * line.Box.Height;
+            if (limit - line.Box.Bottom > gap || line.Words.Any(w => w.Box.CenterX < box.Left))
+            {
+                break;
+            }
+
+            header.Add(line);
+            limit = line.Box.Top;
+            List<LayoutWord> words = header.SelectMany(l => l.Words).ToList();
+            if (words.Any(w => w.Box.CenterX < box.Right) && words.Any(w => w.Box.CenterX >= box.Right))
+            {
+                return header;
+            }
+        }
+
+        return [];
+    }
 
     /// <summary>Consecutive boxes of one column with nothing but header rows, artifacts and footnotes between them.</summary>
     private static IEnumerable<List<StepBox>> GroupIntoSchemes(PipelineContext context, List<StepBox> boxes)

@@ -195,19 +195,21 @@ public sealed class StepSequenceStageTests
             "arrow below the names" => [Header(94)],
             _ => [Row(110, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)), Line("zmian", TitleLeft, 121)],
         };
-        LayoutPage first = PageWith(
+        LayoutPage page = PageWith(
             1,
-            [Line("Realizacja przelewu wygląda tak:", 90, 650), Header(670), Row(687, ("Wysyłasz prośbę", TitleLeft), ("Prośbę wyślesz w aplikacji.", TextLeft))],
-            Box(684, 760));
-        LayoutPage second = PageWith(
-            2,
-            [Line("Tak brzmi wstęp przed schematem:", 90, 90), .. header, Row(140, ("Płatnik akceptuje", TitleLeft), ("Poinformujemy Cię o tym.", TextLeft))],
-            Box(134, 175));
+            [
+                Line("Tak brzmi wstęp przed schematem:", 90, 70),
+                .. header,
+                Row(140, ("Wysyłasz prośbę", TitleLeft), ("Prośbę wyślesz w aplikacji.", TextLeft)),
+                Row(206, ("Płatnik akceptuje", TitleLeft), ("Poinformujemy Cię o tym.", TextLeft)),
+            ],
+            Box(134, 175),
+            Box(200, 240));
 
-        PipelineContext context = Run(Context([first, second]));
+        PipelineContext context = Run(Context([page]));
 
         Assert.All(header, l => Assert.Equal(LineRole.Artifact, l.Role));
-        Assert.Equal(LineRole.Unknown, second.Lines.Single(l => l.Text.StartsWith("Tak brzmi", StringComparison.Ordinal)).Role);
+        Assert.Equal(LineRole.Unknown, page.Lines.Single(l => l.Text.StartsWith("Tak brzmi", StringComparison.Ordinal)).Role);
         Assert.Equal([("Wysyłasz prośbę", "1"), ("Płatnik akceptuje", "2")], Titles(context));
     }
 
