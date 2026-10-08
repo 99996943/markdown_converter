@@ -194,11 +194,12 @@ public sealed class TableDocumentStage : IPipelineStage
         }
     }
 
+    /// <summary>A line starting inside the frame belongs to it, also when its end runs past the right edge.</summary>
     private static bool Inside(LayoutLine line, PageFrame frame) =>
         line.Words.Count > 0
         && line.Role != LineRole.Artifact
         && line.Box.CenterY > frame.Top && line.Box.CenterY < frame.Bottom
-        && line.Box.Left >= frame.Left - Tolerance && line.Box.Right <= frame.Right + Tolerance;
+        && line.Box.Left >= frame.Left - Tolerance && line.Box.Left < frame.Right;
 
     /// <summary>
     /// The column-name row (R4): the region's first row when each cell is one short line, set in bold or repeated as the
