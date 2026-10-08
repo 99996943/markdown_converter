@@ -32,7 +32,7 @@ treści własnej i podsekcjach — dla Art./§ (liście) oznacza to koniec artyk
 | `ListItem` rozpoczęty na nowej stronie | `<!-- page: N -->` w osobnej linii (z wcięciem pozycji) przed pozycją, o ile N ≠ bieżąca strona | `  <!-- page: 5 -->` |
 | `TableBlock` | tabela GFM; nagłówek = `Header` lub pierwszy wiersz; separator `| --- |`; `|` w treści → `\|`; znaczniki stron w tabeli pominięte, znacznik kolejnej strony po tabeli | `| Usługa | Opłata |` |
 | `TableBlock` (fallback) | każdy wiersz wizualny jako osobny akapit (oddzielony pustą linią), komórki połączone ` \| ` (z ucieczką, by nie powstała tabela GFM) | `Prowadzenie rachunku \| 0 zł \| miesięcznie` |
-| Schemat kroków (FR-067) | dla każdego kroku akapit `**Krok N: nazwa**` (pogrubiony, `ParagraphBlock`), po nim wyjaśnienie jako zwykłe akapity i listy; wiersz nazw kolumn pominięty; bez tabeli i bez nagłówka `#` | `**Krok 1: Składasz wniosek**` |
+| Schemat kroków (FR-067) | dla każdego kroku pogrubiony akapit z oryginalną nazwą kroku (`ParagraphBlock`, bez dopisanego tekstu), po nim wyjaśnienie jako zwykłe akapity i listy; wiersz nazw kolumn pominięty; bez tabeli i bez nagłówka `#` | `**Składasz wniosek**` |
 | `SkippedPageBlock` | `<!-- page N skipped: no-text-layer -->` / `<!-- page N skipped: read-error -->` | |
 
 ## Ucieczka znaków w tekście

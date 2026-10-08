@@ -25,6 +25,6 @@ słowo w słowo nie było wykonalne ręcznie — kompletność tekstu sprawdza m
 
 Prywatny korpus (`LEGALAGENT_PRIVATE_CORPUS`, np. `Corpus/private` z regulaminem mBanku) nie ma złotego pliku
 w repozytorium; test sprawdza tam kompletność konwersji. Schematy kroków „Kolejność działań | Wyjaśnienie”
-(12 schematów, w tym „Prośba o przelew BLIK” i „Zasady komunikacji zmian | Opis”) wychodzą jako „**Krok N: …**” + treść
+(12 schematów, w tym „Prośba o przelew BLIK” i „Zasady komunikacji zmian | Opis”) wychodzą jako pogrubiona nazwa kroku + treść
 (FR-067, 2026-10-08). Znane odchylenia regulaminu mBanku: trzy macierze „Co i gdzie możesz zrobić” wychodzą awaryjnie;
 podtytuł „obowiązuje od …” jest nagłówkiem `##` (decyzja właściciela otwarta).

@@ -108,7 +108,7 @@ Strumień nie jest zamykany przez bibliotekę; konwerter jest bezpieczny do wywo
 | `Tables` | `RowMergeGapFactor` | `1.2` | odstęp (w interliniach), do którego linie łączą się w jeden wielolinijkowy wiersz |
 | `Tables` | `UseRulingLines` | `true` | użycie linii siatki do wykrycia tabeli |
 | `Tables` | `MergeAcrossPages` | `true` | łączenie tabel ciągłych między stronami |
-| `Tables` | `DetectStepSequences` | `true` | schematy kroków (szare pola z nazwami kroków, wyjaśnienie obok) jako „**Krok N: …**” + treść (FR-067) |
+| `Tables` | `DetectStepSequences` | `true` | schematy kroków (szare pola z nazwami kroków, wyjaśnienie obok) jako pogrubiona nazwa kroku + treść (FR-067) |
 | `Rendering` | `PageMarkers` | `true` | znaczniki stron `<!-- page: N -->` |
 | `Rendering` | `FootnotesPlacement` | `EndOfSection` | miejsce definicji przypisów (jedyna wartość: po treści sekcji) |
 | `Rendering` | `EmphasisInline` | `true` | pogrubienie/kursywa jako `**` / `*` |

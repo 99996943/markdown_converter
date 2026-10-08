@@ -200,7 +200,7 @@ Wyjaśnienie`). `PageExtractionStage` zapisuje teraz `LayoutPage.FilledAreas`; `
 (≤ 50% szerokości strony, tekst na prawo), łączy je w schematy (zgodne krawędzie ±3 pt, między polami tylko wiersz nazw
 kolumn/artefakty/przypisy, także przez stronę), dzieli linie na krawędzi pola i układa stronę: nazwa → wyjaśnienie;
 puste pole = kontynuacja kroku; wiersz nazw kolumn (także zawinięty, na dwóch liniach bazowych, nad strzałką) →
-`Artifact`. `BlockAssemblyStage` składa nazwę w pogrubiony akapit „Krok N: …”; wyjaśnienie przechodzi zwykłe listy
+`Artifact`. `BlockAssemblyStage` składa nazwę w pogrubiony akapit z oryginalnym tekstem (bez dopisków — korekta właściciela, T108); wyjaśnienie przechodzi zwykłe listy
 i akapity; `ReadingOrderStage`/`TableDetectionStage` pomijają linie schematu. Przy okazji „✓”/„✔” są punktorami (FR-050).
 Weryfikacja na `Corpus/private/mbank-regulamin-pdp.pdf`: 12 schematów, 34 kroki (str. 9, 27–39, 46–47 — także
 „Zasady komunikacji zmian | Opis”), 13 fałszywych nagłówków mniej (62 → 49), listy „✓” zagnieżdżone; reszta bez zmian.
