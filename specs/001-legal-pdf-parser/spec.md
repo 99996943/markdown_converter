@@ -30,6 +30,10 @@ i metadanymi źródła), a Markdown jest jego deterministycznym renderingiem.
 - Q: Czy biblioteka ma sama ograniczać zasoby na dokument (rozmiar, strony, czas)? → A: Tak — limity wbudowane z domyślnymi wartościami 100 MB, 2000 stron, 120 s; każdy konfigurowalny lub wyłączalny; przekroczenie = dedykowany błąd.
 - Q: Gdzie w Markdown mają trafić przypisy dolne? → A: Na koniec najmniejszej sekcji (artykułu/paragrafu), w której pierwszy raz występuje odnośnik; numeracja `[^n]` globalna w dokumencie.
 
+### Session 2026-10-08
+
+- Q: Jak zapisywać schemat kroków z regulaminów (dwukolumnowa tabela „Kolejność działań | Wyjaśnienie”: szare pola z nazwami kroków po lewej, strzałki między nimi, wyjaśnienie po prawej)? → A: Jako sekwencję kroków, nie tabelę GFM: dla każdego kroku pogrubiony akapit „Krok N: nazwa kroku”, a pod nim wyjaśnienie jako zwykłe akapity i listy; wiersz nazw kolumn jest pomijany i nigdy nie staje się nagłówkiem dokumentu (FR-067).
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Czysty Markdown z PDF bez artefaktów stron (Priority: P1)
@@ -121,6 +125,7 @@ komórkami; sprawdzenie, że każda kwota występuje w tym samym wierszu co nazw
 3. **Given** komórka „Prowadzenie rachunku dla osób do 26 roku życia” zawinięta na 2 linie, **When** dokument zostanie skonwertowany, **Then** tekst komórki jest sklejony w jednej komórce tego samego wiersza, a nie tworzy nowego wiersza.
 4. **Given** tabela kontynuowana na następnej stronie z powtórzonym wierszem nagłówka, **When** dokument zostanie skonwertowany, **Then** tabela jest jedną tabelą, a powtórzony nagłówek pojawia się tylko raz.
 5. **Given** układ, którego nie da się jednoznacznie przypisać do siatki kolumn, **When** dokument zostanie skonwertowany, **Then** każdy wiersz wizualny jest zapisany jako jedna linia z komórkami rozdzielonymi separatorem, a w diagnostyce pojawia się ostrzeżenie o obniżonej pewności.
+6. **Given** schemat kroków „Kolejność działań | Wyjaśnienie” (nazwy kroków w szarych polach wyśrodkowane w pionie, wyjaśnienie z punktorami po prawej, schemat przechodzi na następną stronę z powtórzonym wierszem nazw kolumn), **When** dokument zostanie skonwertowany, **Then** wynik zawiera kolejno „**Krok 1: …**”, „**Krok 2: …**”… z wyjaśnieniem każdego kroku pod jego nazwą, bez przeplatania linii obu kolumn, bez nagłówka „Kolejność działań Wyjaśnienie” i bez tabeli.
 
 ---
 
@@ -183,6 +188,7 @@ zawiera ostrzeżenie wskazujące numer tej strony.
 - Bardzo duży dokument (ponad 1000 stron, w granicach limitów) → przetwarzanie bez wyczerpania pamięci przy stałym narzucie na stronę.
 - Plik przekraczający limit rozmiaru, liczby stron lub czasu (np. spreparowany PDF) → dedykowany błąd limitu (FR-009b), bez zawieszenia procesu i bez częściowego wyniku.
 - Nagłówek na samym dole strony, a jego treść na następnej → nagłówek pozostaje przed treścią, nie zostaje uznany za stopkę.
+- Krok schematu przerwany granicą strony (na następnej stronie puste szare pole i dalszy ciąg wyjaśnienia) → kontynuacja tego samego kroku, bez nowego numeru; akapit lub pozycja listy przerwana granicą strony jest kontynuowana (FR-067).
 
 ## Requirements *(mandatory)*
 
@@ -195,7 +201,7 @@ zawiera ostrzeżenie wskazujące numer tej strony.
 - **FR-002a**: Rendering Markdown MUSI domyślnie wstawiać znacznik strony źródłowej w postaci komentarza HTML `<!-- page: N -->` (N = numer fizycznej strony PDF, liczony od 1) w miejscu, w którym zaczyna się treść strony N: przed pierwszym blokiem strony albo — gdy akapit lub pozycja listy przechodzi przez granicę strony — wewnątrz tekstu na granicy słów. Wewnątrz tabeli Markdown znacznik NIE jest wstawiany (złamałby składnię); zakres stron tabeli jest dostępny w modelu, a znacznik następnej strony pojawia się po tabeli. Znaczniki MUSZĄ dać się wyłączyć w ustawieniach; niezależnie od tego każda sekcja i każdy blok w modelu zawiera zakres stron źródłowych.
 - **FR-003**: Operacja konwersji MUSI być asynchroniczna i MUSI obsługiwać żądanie anulowania, sprawdzane co najmniej przed przetworzeniem każdej strony.
 - **FR-004**: Biblioteka MUSI udostępniać rejestrację wszystkich swoich usług w kontenerze zależności jednym wywołaniem, z opcjonalnym przekazaniem ustawień.
-- **FR-005**: Wszystkie progi i przełączniki heurystyk (FR-010 – FR-066, w tym FR-031 i FR-043a) MUSZĄ być konfigurowalne z wartościami domyślnymi dostrojonymi do polskich aktów prawnych i regulaminów bankowych; każdy filtr MUSI dać się wyłączyć.
+- **FR-005**: Wszystkie progi i przełączniki heurystyk (FR-010 – FR-067, w tym FR-031 i FR-043a) MUSZĄ być konfigurowalne z wartościami domyślnymi dostrojonymi do polskich aktów prawnych i regulaminów bankowych; każdy filtr MUSI dać się wyłączyć.
 - **FR-006**: Potok przetwarzania MUSI składać się z uporządkowanych, niezależnie testowalnych etapów (ekstrakcja → normalizacja → usuwanie artefaktów → składanie linii i bloków → wykrywanie tabel → wykrywanie list → wykrywanie nagłówków → rendering), a programista MUSI móc dodać własny etap lub zastąpić istniejący poprzez kontener zależności.
 - **FR-007**: Biblioteka NIE MOŻE zawierać kodu ani reguł specyficznych dla konkretnego wydawcy (np. nazw banku czy adresów); wzorce domenowe (jednostki redakcyjne, typowe formaty numerów stron) są ogólne dla polskich dokumentów prawnych i finansowych.
 - **FR-008**: Ten sam strumień wejściowy i te same ustawienia MUSZĄ dawać identyczny wynik (model, Markdown i raport) przy każdym uruchomieniu.
@@ -258,6 +264,7 @@ zawiera ostrzeżenie wskazujące numer tej strony.
 - **FR-064**: Region, którego siatka nie jest jednoznaczna (zmienna liczba kolumn, nakładające się pasy), MUSI zostać wyrenderowany awaryjnie: jedna linia wynikowa na wiersz wizualny z komórkami rozdzielonymi separatorem „ | ” w kolejności od lewej do prawej, z ostrzeżeniem w raporcie. Gdy poziome linie siatki wyznaczają wiersze, zmienna liczba komórek w poszczególnych liniach wizualnych (komórki wyśrodkowane w pionie) nie czyni siatki niejednoznaczną.
 - **FR-065**: Tabela kontynuowana na następnej stronie (zgodna liczba i położenie kolumn, opcjonalnie powtórzony wiersz nagłówka) MUSI zostać połączona w jedną tabelę z pominięciem powtórzonego nagłówka.
 - **FR-066**: Komórki scalone poziomo (tekst przekraczający granicę kolumny) MUSZĄ zostać przypisane do pierwszej obejmowanej kolumny, a pozostałe pozostawione puste; treść nie może zostać zgubiona.
+- **FR-067**: Schemat kroków MUSI zostać zapisany jako sekwencja kroków. Polem kroku jest wypełniony, niebiały prostokąt (bez wymogu obramowania) o szerokości ≤ 50% szerokości strony, zawierający tekst nazwy kroku, z tekstem wyjaśnienia na prawo od pola na wysokości pola; prostokąty mniejsze leżące wewnątrz pola (cieniowanie pojedynczych linii) należą do pola. Schemat tworzą co najmniej dwa pola o zgodnych krawędziach lewej i prawej (tolerancja 3 pt), ułożone jedno pod drugim, między którymi nie ma tekstu spoza schematu (dopuszczalne strzałki-obrazki, artefakty stron, przypisy i powtórzony wiersz nazw kolumn), także przez granicę strony. Dla każdego pola z tekstem wynik zawiera pogrubiony akapit „Krok N: nazwa” (N od 1 w obrębie schematu), a po nim wyjaśnienie — linie na prawo od pola w kolejności z góry na dół, przetwarzane jak tekst ciągły (akapity, listy FR-050 – FR-054). Pole bez tekstu kontynuuje poprzedni krok. Linia tuż nad polem z tekstem w obu kolumnach (wiersz nazw kolumn, np. „Kolejność działań | Wyjaśnienie”) jest pomijana. Linie schematu nie są nagłówkami (FR-047), tabelami (FR-061) ani kolumnami tekstu (FR-031). Rozpoznawanie jest wyłączalne (FR-005).
 
 #### Diagnostyka
 
