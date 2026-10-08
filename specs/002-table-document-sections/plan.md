@@ -160,6 +160,29 @@ lokalne warunki oparte na adnotacji `tabledoc.index`, jak przy FR-067.
 6. **Polish**: metryki SC-010 – SC-015, niezmienniki 7–9, `PrivateCorpusTests`, README, kontrakt
    publiczny 1.1.0 w XML-doc, CI Linux (SC-017), notatki przekazania w tym planie.
 
+## Stan prac i przekazanie
+
+**2026-10-08 — T001–T012 (Setup + Foundational) zrobione** na gałęzi `002-table-document-sections` (utworzonej z
+`001-legal-pdf-parser`; nie wypchnięta). Pełny zestaw: 829 testów, 0 błędów, 1 pominięty (korpus prywatny bez zmiennej).
+Wynik biblioteki bez zmian — `TableDocumentStage` jeszcze niezarejestrowany (rejestracja w T023).
+
+- Punkt odniesienia: `tests/.../Corpus/private/baseline/*.md` + `*.report.json` (poza git) — identyczne z dotychczasowymi `*.md`.
+- `SyntheticPdfBuilder`: krój mono (Noto Sans Mono, OFL) i `TextWidth(...)` do łamania tekstu na zmierzonych szerokościach.
+- `BankingCorpusGenerator`: `regulamin-promocji-tabela` i `regulamin-z-tabela-definicji` (dostęp przez `Pdf(name)`/`Truth(name)`,
+  jeszcze nie w `Names` — golden w T035). Obecna biblioteka daje na dokumencie syntetycznym te same błędy co na `mbank-reg3`
+  (fałszywe kolumny, rozbita nazwa „Warunki/zasady … promocji”, `### bank.example`, `### MOJE OŚWIADCZENIA`).
+- `TableDocumentStage` rozpoznaje region (R2, R3): na `mbank-reg3` str. 2–12; na `mbank-regulamin-pdp`, `mbank-reg2`,
+  dokumencie z tabelą definicji i obwieszczeniu MSZ — brak regionu.
+- Pomocnik testów `Fixtures/TableSheet.cs` buduje strony tabeli-dokumentu bez PDF (linie siatki w dwóch kawałkach, wiersz
+  nazw kolumn, podkreślenia linków).
+
+**Do zrobienia przy T014 (R9, spec FR-085)**: polska typografia przenosi jednoliterowe wyrazy („o”, „w”, „z”, „i”) do
+następnej linii, więc reguła „zmieściłoby się pierwsze słowo następnej linii” musi traktować jednoliterowy wyraz razem z
+następnym (inaczej akapit pęka w środku zdania). Generator syntetyczny tak łamie tekst; doprecyzować FR-085 w commicie red T014.
+
+**Uwaga do pracy z gitem**: w katalogu głównym leżą nieśledzone pliki właściciela (`Akt prawny - …`, `Regulamin … mBanku …`
+— PDF banku); dodawać do commitów wyłącznie konkretne ścieżki, nigdy `git add -A`.
+
 ## Complexity Tracking
 
 Brak naruszeń konstytucji wymagających uzasadnienia.
