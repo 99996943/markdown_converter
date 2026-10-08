@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>LegalAgent.PdfParser.Tests</RootNamespace>
+    <!-- Test method names use Method_Scenario underscores. -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
+    <ProjectReference Include="..\..\src\LegalAgent.PdfParser.Cli\LegalAgent.PdfParser.Cli.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fixtures\Fonts\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Fixtures\Fonts" />
+    <Content Include="Corpus\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Corpus" />
+  </ItemGroup>
+</Project>

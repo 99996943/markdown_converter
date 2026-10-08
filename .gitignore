@@ -54,3 +54,9 @@ Thumbs.db
 
 # Claude Code local state
 .claude/settings.local.json
+
+# LegalAgent.PdfParser
+*.actual.md
+tests/LegalAgent.PdfParser.Tests/Corpus/private/
+.claude/worktrees/
+.claude/worktrees/
