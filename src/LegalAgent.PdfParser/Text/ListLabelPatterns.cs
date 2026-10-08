@@ -21,7 +21,7 @@ internal static partial class ListLabelPatterns
 {
     private static readonly HashSet<string> Bullets = new(StringComparer.Ordinal)
     {
-        "•", "▪", "◦", "‣", "*", "●", "■", "□", "○",
+        "•", "▪", "◦", "‣", "*", "●", "■", "□", "○", "✓", "✔",
         "", "", "", "", "", "", "",
     };
 
