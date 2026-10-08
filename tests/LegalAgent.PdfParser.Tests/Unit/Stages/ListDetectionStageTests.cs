@@ -113,6 +113,60 @@ public sealed class ListDetectionStageTests
         Assert.Equal(Id(second), Owner(Find(context, "z podejrzeniami")));
     }
 
+    /// <summary>Gives every word of <paramref name="line"/> one glyph set in the matching font (R10).</summary>
+    private static LayoutLine InFonts(LayoutLine line, params string[] fonts)
+    {
+        List<LayoutWord> words = line.Words
+            .Select((w, i) => w with
+            {
+                Glyphs = [new LayoutGlyph(w.Text[..1], w.Box, w.Box.Bottom, 10, false, false, FontName: fonts[Math.Min(i, fonts.Length - 1)])],
+            })
+            .ToList();
+        var result = new LayoutLine(words, line.Box, line.Baseline);
+        result.Segments.Add(new LineSegment(words, result.Box));
+        return result;
+    }
+
+    private static PipelineContext RunWithFonts(params (string Text, double Left, string[] Fonts)[] lines) =>
+        Run(LayoutFactory.Page(1, lines.Select((l, i) => InFonts(LayoutFactory.Line(l.Text, l.Left, 100 + (20 * i)), l.Fonts))));
+
+    [Fact]
+    public void SubBulletO_InAnotherFontFamily_IsABulletItem_NestedUnderABullet_R10()
+    {
+        PipelineContext context = RunWithFonts(
+            ("• Bank oferuje:", Margin, ["Verdana"]),
+            ("o rachunek oszczednosciowy", Indent, ["CourierNewPSMT", "Verdana"]),
+            ("o rachunek walutowy", Indent, ["ABCDEF+CourierNewPSMT", "ABCDEF+Verdana-Bold"]));
+
+        LayoutLine parent = Find(context, "• Bank");
+        LayoutLine first = Find(context, "o rachunek oszczednosciowy");
+        LayoutLine second = Find(context, "o rachunek walutowy");
+        AssertItem(first, "o", ListLabelKind.Bullet);
+        AssertItem(second, "o", ListLabelKind.Bullet);
+        Assert.Equal(Id(parent), Parent(first));
+        Assert.Equal(Id(parent), Parent(second));
+    }
+
+    [Fact]
+    public void WordO_InTheFontOfTheText_StaysAnOrdinaryWord_R10()
+    {
+        PipelineContext context = RunWithFonts(
+            ("o rachunek oszczednosciowy", Margin, ["Verdana"]),
+            ("o rachunek walutowy", Margin, ["ABCDEF+Verdana", "ABCDEF+Verdana-Bold"]));
+
+        Assert.All(context.Pages.SelectMany(p => p.Lines), l => Assert.Equal(LineRole.Unknown, l.Role));
+    }
+
+    [Fact]
+    public void LoneO_IsNotABullet_R10()
+    {
+        PipelineContext context = RunWithFonts(
+            ("• Bank oferuje:", Margin, ["Verdana"]),
+            ("o", Indent, ["CourierNewPSMT"]));
+
+        Assert.NotEqual(LineRole.ListItem, Find(context, "o").Role);
+    }
+
     [Fact]
     public void HangingContinuation_BelongsToTheItem_FR053()
     {
