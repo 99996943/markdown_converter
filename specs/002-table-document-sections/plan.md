@@ -176,9 +176,28 @@ Wynik biblioteki bez zmian — `TableDocumentStage` jeszcze niezarejestrowany (r
 - Pomocnik testów `Fixtures/TableSheet.cs` buduje strony tabeli-dokumentu bez PDF (linie siatki w dwóch kawałkach, wiersz
   nazw kolumn, podkreślenia linków).
 
-**Do zrobienia przy T014 (R9, spec FR-085)**: polska typografia przenosi jednoliterowe wyrazy („o”, „w”, „z”, „i”) do
-następnej linii, więc reguła „zmieściłoby się pierwsze słowo następnej linii” musi traktować jednoliterowy wyraz razem z
-następnym (inaczej akapit pęka w środku zdania). Generator syntetyczny tak łamie tekst; doprecyzować FR-085 w commicie red T014.
+**2026-10-08 — US1 + US2 (T013–T025) zrobione.** `TableDocumentStage` zarejestrowany (Order 560): wiersz nazw kolumn →
+artefakt, linie rozcinane na granicy kolumn, nazwy sekcji → `##` (`SectionKind.TableDocumentSection`), nazwa przerwana
+stroną → jeden nagłówek, kolejność „nazwa → treść” wiersz po wierszu, `column.left/right` regionu, raport `TableDocuments`.
+`TableDetection`/`ReadingOrder` pomijają linie z `tabledoc.index`. R9 w `BlockAssemblyStage` (tylko linie tabeli-dokumentu):
+koniec akapitu, gdy następna linia zaczyna się **wielką literą** i jej pierwsze słowo (jednoliterowe razem z następnym)
+zmieściłoby się do `column.right`; zmiana „cała linia pogrubiona”; wcięcie liczone od pozycji pióra pierwszej litery
+(obrys „J” wystaje 1,6 pt w lewo). Punktor „o” po rodzinie czcionki (`LayoutGlyph.FontName`, `Text/FontFamily.cs`),
+FR-094 (łącznik w adresie, także przed cyfrą i w adresie na 3 liniach — `Paragraph.LastWord`).
+
+Weryfikacja `mbank-reg3` (T024/T025): region str. 2–12, 9 sekcji `##`, 8 wierszy nazw kolumn pominiętych, 0 tabel GFM,
+0 awaryjnych, brak TBL001; definicje „Ważne pojęcia” jako osobne akapity; „o” zagnieżdżone; akapity i pozycje list przez
+granice stron z `<!-- page: N -->`. Błędy znalezione na prawdziwym PDF i poprawione test-first: ręczne złamania linii w
+środku zdania (FR-085 doprecyzowany: reguła tylko przed wielką literą), data „01.01.2026 r.” na początku linii brana za
+oznaczenie konspektu (wzorzec konspektu: składowe 1–3 cyfr), adres URL złamany przed cyfrą i na 3 liniach. Zostaje do US3:
+`## Obowiązuje od …`, `## mBank.pl`, `###` śródtytuły (`Korzyści obowiązujące…`, `Dodatkowo:`), `### MOJE OŚWIADCZENIA`.
+
+Porównanie z `baseline/`: `mbank-regulamin-pdp`, `mbank-reg1` — bez zmian; `mbank-reg2` — jedyna różnica to poprawka daty
+(„…na dzień 01.01.2025 r. wynosi…” w jednym akapicie zamiast fałszywej pozycji listy) — uwzględnić w T033.
+
+**Test wydajności**: `PerformanceTests.HundredAndFourteenPageAct_ConvertsInUnderTenSeconds` pada w pełnym przebiegu lokalnie
+(10,9–12,4 s przy równoległych testach), osobno 3,6–3,9 s — tyle samo co przed spec 002 (zmierzone na 74843fd). Wrażliwy na
+obciążenie; do rozstrzygnięcia przy T040 (np. kolekcja bez równoległości), zanim CI zacznie padać.
 
 **Uwaga do pracy z gitem**: w katalogu głównym leżą nieśledzone pliki właściciela (`Akt prawny - …`, `Regulamin … mBanku …`
 — PDF banku); dodawać do commitów wyłącznie konkretne ścieżki, nigdy `git add -A`.
