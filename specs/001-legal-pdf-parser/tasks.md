@@ -268,6 +268,7 @@ strony 9, 27–39, 46–47).
 
 - [X] T108 [US4] Step names render as their original text only (no added „Krok N:”, owner's correction 2026-10-08): update `BlockAssemblyStageTests` and `Integration/StepSchemesIntegrationTests` (red), then drop the prefix in `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs`; update `contracts/markdown-output.md`, README, `plan.md`, `Corpus/REVIEW.md`; re-verify on `Corpus/private/mbank-regulamin-pdp.pdf`
 - [X] T109 [US4] Column-name row of three lines („Zasady komunikacji” / „zmian” on the left, „Opis” vertically centred between them — `Corpus/private/mbank-reg2.pdf`, pages 8–10): write a red case in `StepSequenceStageTests.ColumnNameRow_IsRecognisedInItsPrintedShapes`, then in `StepSequenceStage` also take lines overlapping the collected row vertically; re-verify on `mbank-reg2.pdf` and the other private documents
+- [ ] T110 Platform-independent output (FR-011a, found by Linux CI on 2026-10-08): for a non-embedded font without a system font (Times New Roman on Ubuntu) PdfPig returns a garbage bounding box for the space glyph, so it sorts before the previous letter („konsument a”) and joins lines. Write a red unit test for the glyph box of whitespace letters in `PageExtractionStageTests`, then build whitespace glyph boxes from the advance on the baseline in `PageExtractionStage`; Windows goldens must stay unchanged; run the full suite on Linux (WSL, clean clone) and confirm GitHub CI green (closes T100)
 
 ---
 
