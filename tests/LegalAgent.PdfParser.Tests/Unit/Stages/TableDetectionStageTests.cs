@@ -605,7 +605,7 @@ public sealed class TableDetectionStageTests
         new TableDetectionStage().Execute(context);
 
         TableBlock table = SingleTable(context);
-        Assert.Equal("Usluga", Text(table.Rows[0].Cells[0]));
+        Assert.Equal("Prowadzenie rachunku", Text(table.Rows[0].Cells[0]));
         Assert.All(tariff, l => Assert.Equal(LineRole.Table, l.Role));
         Assert.All(page.Lines.Except(tariff), l => Assert.NotEqual(LineRole.Table, l.Role));
     }

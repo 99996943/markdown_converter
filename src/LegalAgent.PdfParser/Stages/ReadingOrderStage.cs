@@ -298,5 +298,6 @@ public sealed class ReadingOrderStage : IPipelineStage
 
     private static bool IsFlowText(LayoutLine line) =>
         line.Role is not (LineRole.Table or LineRole.Artifact or LineRole.SideNote or LineRole.StepTitle)
-        && !line.Annotations.ContainsKey(LayoutAnnotations.StepIndex);
+        && !line.Annotations.ContainsKey(LayoutAnnotations.StepIndex)
+        && !line.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex);
 }
