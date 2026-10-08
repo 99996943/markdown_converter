@@ -79,14 +79,28 @@ public sealed class StepSequenceStage : IPipelineStage
     /// <summary>
     /// The column-name row above the box (e.g. „Kolejność działań | Wyjaśnienie”): the nearest lines above it (an arrow
     /// may stand between), taken upwards while closely spaced until together they have text over the box and to its
-    /// right — the names may sit on slightly different baselines or wrap. Empty when no such row is found.
+    /// right — the names may sit on slightly different baselines or wrap — plus lines overlapping that row vertically (a
+    /// name centred beside a wrapped one). Empty when no such row is found.
     /// </summary>
     private static List<LayoutLine> FindHeader(IEnumerable<LayoutLine> candidates, Rect box)
     {
         var header = new List<LayoutLine>();
         double limit = box.Top + 1;
+        bool complete = false;
         foreach (LayoutLine line in candidates.Where(l => l.Box.Bottom <= box.Top + 1).OrderByDescending(l => l.Box.Bottom))
         {
+            if (complete)
+            {
+                // A name centred beside a wrapped one: the line above the wrapped name overlaps the collected row.
+                if (line.Box.Bottom <= header.Min(l => l.Box.Top) || line.Words.Any(w => w.Box.CenterX < box.Left))
+                {
+                    break;
+                }
+
+                header.Add(line);
+                continue;
+            }
+
             double gap = header.Count == 0 ? HeaderGapFactor * line.Box.Height : HeaderLineGapFactor * line.Box.Height;
             if (limit - line.Box.Bottom > gap || line.Words.Any(w => w.Box.CenterX < box.Left))
             {
@@ -96,13 +110,10 @@ public sealed class StepSequenceStage : IPipelineStage
             header.Add(line);
             limit = line.Box.Top;
             List<LayoutWord> words = header.SelectMany(l => l.Words).ToList();
-            if (words.Any(w => w.Box.CenterX < box.Right) && words.Any(w => w.Box.CenterX >= box.Right))
-            {
-                return header;
-            }
+            complete = words.Any(w => w.Box.CenterX < box.Right) && words.Any(w => w.Box.CenterX >= box.Right);
         }
 
-        return [];
+        return complete ? header : [];
     }
 
     /// <summary>Consecutive boxes of one column with nothing but header rows, artifacts and footnotes between them.</summary>

@@ -267,7 +267,7 @@ strony 9, 27–39, 46–47).
 - [X] T107 [US4] Verify on `Corpus/private/mbank-regulamin-pdp.pdf` (all 16 schemes; fix defects test-first), run the full suite and goldens (no unintended changes in `Corpus/acts`, `Corpus/banking`), update `contracts/markdown-output.md`, `data-model.md`, README options table and the handoff in `plan.md`
 
 - [X] T108 [US4] Step names render as their original text only (no added „Krok N:”, owner's correction 2026-10-08): update `BlockAssemblyStageTests` and `Integration/StepSchemesIntegrationTests` (red), then drop the prefix in `src/LegalAgent.PdfParser/Stages/BlockAssemblyStage.cs`; update `contracts/markdown-output.md`, README, `plan.md`, `Corpus/REVIEW.md`; re-verify on `Corpus/private/mbank-regulamin-pdp.pdf`
-- [ ] T109 [US4] Column-name row of three lines („Zasady komunikacji” / „zmian” on the left, „Opis” vertically centred between them — `Corpus/private/mbank-reg2.pdf`, pages 8–10): write a red case in `StepSequenceStageTests.ColumnNameRow_IsRecognisedInItsPrintedShapes`, then in `StepSequenceStage` also take lines overlapping the collected row vertically; re-verify on `mbank-reg2.pdf` and the other private documents
+- [X] T109 [US4] Column-name row of three lines („Zasady komunikacji” / „zmian” on the left, „Opis” vertically centred between them — `Corpus/private/mbank-reg2.pdf`, pages 8–10): write a red case in `StepSequenceStageTests.ColumnNameRow_IsRecognisedInItsPrintedShapes`, then in `StepSequenceStage` also take lines overlapping the collected row vertically; re-verify on `mbank-reg2.pdf` and the other private documents
 
 ---
 
