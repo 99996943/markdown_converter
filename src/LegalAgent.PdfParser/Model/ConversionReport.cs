@@ -32,7 +32,7 @@ public sealed record ArtifactSummary(string Pattern, ArtifactKind Kind, int Occu
 /// <param name="Message">Human-readable message.</param>
 public sealed record ConversionWarning(string Code, int? PageNumber, string Message);
 
-/// <summary>A table-document (a document made of one multi-page, two-column bordered table) recognised in the PDF.</summary>
+/// <summary>A table-document (a document made of one multi-page, two-column bordered table) recognised in the PDF (spec 002, FR-090).</summary>
 /// <param name="FirstPage">First page of the table.</param>
 /// <param name="LastPage">Last page of the table.</param>
 /// <param name="SectionCount">Number of sections (rows with a name in the left cell).</param>

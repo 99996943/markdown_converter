@@ -21,6 +21,8 @@ słowo w słowo nie było wykonalne ręcznie — kompletność tekstu sprawdza m
 | `banking/regulamin-rachunku` | całość | — |
 | `banking/taryfa-z-siatka` | całość | — |
 | `banking/taryfa-bez-siatki` | całość | Wiersze sekcji („I. Rachunki”) to pogrubiona pierwsza komórka, nie komórka scalona (tekst nie przekracza kolumny — zgodne z FR-066). |
+| `banking/regulamin-promocji-tabela` (syntetyczny, spec 002, T035) | wzorzec pisany ręcznie wg SC-012: tabela-dokument na kilku stronach → tytuł `#` i nazwy sekcji `##`, brak tabeli GFM, wiersz nazw kolumn pominięty, treść ciągła przez granice stron i wierszy, listy „•”/„o” zagnieżdżone, nazwa sekcji przerwana granicą strony jako jeden nagłówek, podpis pod obrazem i linia „Obowiązuje od …” jako akapity | — |
+| `banking/regulamin-z-tabela-definicji` (syntetyczny, spec 002, T035) | wzorzec pisany ręcznie: zwykły regulamin z krótką tabelą definicji (nie tabela-dokument) zostaje tabelą GFM, brak sekcji `TableDocumentSection` | — |
 | `banking/regulamin-dwie-kolumny` | całość | Dokument 2-stronicowy: nagłówek bieżący zostaje w tekście (FR-025 — w dokumentach < 3 stron usuwa się tylko numery stron). „Postanowienia końcowe” jest `###` (poniżej poprzedniego §). |
 
 Prywatny korpus (`LEGALAGENT_PRIVATE_CORPUS`, np. `Corpus/private` z regulaminem mBanku) nie ma złotego pliku

@@ -21,7 +21,7 @@ public static class StageOrder
     /// <summary>Step schemes (FR-067).</summary>
     public const int StepSequence = 550;
 
-    /// <summary>Table-documents: one multi-page, two-column bordered table making up the document (spec 002).</summary>
+    /// <summary>Table-documents: one multi-page, two-column bordered table making up the document (spec 002, FR-080, FR-083).</summary>
     public const int TableDocument = 560;
 
     /// <summary>Table detection.</summary>

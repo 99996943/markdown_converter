@@ -42,7 +42,7 @@ public static class LayoutAnnotations
     public const string StepIndex = "step.scheme";
 
     /// <summary>
-    /// Document-wide index (invariant integer) of the table-document (spec 002) a line belongs to: its section names,
+    /// Document-wide index (invariant integer) of the table-document (spec 002, FR-080) a line belongs to: its section names,
     /// its content lines and its dropped column-name rows.
     /// </summary>
     public const string TableDocumentIndex = "tabledoc.index";
