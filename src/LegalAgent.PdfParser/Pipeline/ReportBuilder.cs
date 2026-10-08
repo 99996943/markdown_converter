@@ -143,7 +143,10 @@ public sealed class ReportBuilder
             FootnoteCount,
             DroppedTextCount,
             warnings,
-            elapsed);
+            elapsed)
+        {
+            TableDocuments = _tableDocuments.OrderBy(t => t.FirstPage).ThenBy(t => t.LastPage).ToList(),
+        };
     }
 
     /// <inheritdoc />
