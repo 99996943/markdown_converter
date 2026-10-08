@@ -182,9 +182,10 @@ public sealed class StepSequenceStageTests
             Texts(context.Pages[1]));
     }
 
-    public static TheoryData<string> HeaderRowShapes() => ["names on two baselines", "arrow below the names", "name wrapped onto two lines"];
+    public static TheoryData<string> HeaderRowShapes() =>
+        ["names on two baselines", "arrow below the names", "name wrapped onto two lines", "name centred beside a wrapped name"];
 
-    /// <summary>Column-name rows as printed in the mBank terms (pages 32, 33 and 47).</summary>
+    /// <summary>Column-name rows as printed in the mBank terms (pages 32, 33 and 47; terms of deposits pages 8–10).</summary>
     [Theory]
     [MemberData(nameof(HeaderRowShapes))]
     public void ColumnNameRow_IsRecognisedInItsPrintedShapes(string shape)
@@ -193,7 +194,8 @@ public sealed class StepSequenceStageTests
         {
             "names on two baselines" => [Line("Wyjaśnienie", TextLeft, 118), Line("Kolejność działań", TitleLeft, 120)],
             "arrow below the names" => [Header(94)],
-            _ => [Row(110, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)), Line("zmian", TitleLeft, 121)],
+            "name wrapped onto two lines" => [Row(110, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)), Line("zmian", TitleLeft, 121)],
+            _ => [Line("Zasady komunikacji", TitleLeft, 103), Line("Opis", TextLeft, 111), Line("zmian", TitleLeft, 119)],
         };
         LayoutPage page = PageWith(
             1,
