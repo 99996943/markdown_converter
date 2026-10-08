@@ -397,6 +397,35 @@ public sealed class PageExtractionStageTests
                 ? throw new InvalidOperationException("boom")
                 : base.GetPage(document, pageNumber);
     }
+    [Fact]
+    public void Execute_ImageAreas_AreInTopDownLayoutCoordinates()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page()
+            .Text(50, 60, "Tekst", 11)
+            .Image(100, 200, 150, 80)
+            .Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        LayoutPage page = Assert.Single(h.Context.Pages);
+        Rect area = Assert.Single(page.ImageAreas);
+        Assert.Equal(100, area.Left, 1);
+        Assert.Equal(200, area.Top, 1);
+        Assert.Equal(250, area.Right, 1);
+        Assert.Equal(280, area.Bottom, 1);
+    }
+
+    [Fact]
+    public void Execute_PageWithoutImages_HasNoImageAreas()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page().Text(50, 60, "Tekst", 11).Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        Assert.Empty(Assert.Single(h.Context.Pages).ImageAreas);
+    }
 }
 
 public sealed class FontStyleDetectorTests
