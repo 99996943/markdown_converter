@@ -175,9 +175,21 @@ public class PageExtractionStage : IPipelineStage
         return false;
     }
 
-    /// <summary>Top-down box of a letter (FR-011a).</summary>
-    internal static Rect GlyphBox(string value, PdfRectangle bounds, double startX, double endX, double baselineY, double pageHeight) =>
-        new(bounds.Left, pageHeight - bounds.Top, bounds.Right, pageHeight - bounds.Bottom);
+    /// <summary>
+    /// Top-down box of a letter. A whitespace glyph has no shape: its box is its advance on the baseline (FR-011a). PdfPig
+    /// reports it so when the font program is available, but for a non-embedded font missing from the system (Times New
+    /// Roman on Linux) it makes up a wide box that would reorder the letters of the line.
+    /// </summary>
+    internal static Rect GlyphBox(string value, PdfRectangle bounds, double startX, double endX, double baselineY, double pageHeight)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            double y = pageHeight - baselineY;
+            return new Rect(Math.Min(startX, endX), y, Math.Max(startX, endX), y);
+        }
+
+        return new Rect(bounds.Left, pageHeight - bounds.Top, bounds.Right, pageHeight - bounds.Bottom);
+    }
 
     private static bool IsWhite(IColor? color)
     {
