@@ -576,4 +576,49 @@ public sealed class HeadingDetectionStageTests
 
         Assert.Contains("Obowiązuje od 01.09.2026 r.", Headings(context).Select(h => h.Text));
     }
+
+    // ---------------------------------------------------------------- spec 002: image captions (FR-088)
+
+    /// <summary>Title, an image at x 300–500 / y 150–350 and a bold „bank.example” at (<paramref name="x"/>, <paramref name="baseline"/>).</summary>
+    private static PipelineContext RunWithImage(double x, double baseline, Action<PdfParserOptions>? configure = null)
+    {
+        var sketch = new PageSketch()
+            .Line("Regulamin promocji", X, 100, 16, bold: true)
+            .Line("bank.example", x, baseline, Body, bold: true)
+            .Line(BodyText, X, 460, Body)
+            .Line(BodyText, X, 474, Body);
+        sketch.Page.ImageAreas.Add(new Rect(300, 150, 500, 350));
+        PipelineContext context = PageSketch.Assemble(configure, sketch);
+        new HeadingDetectionStage().Execute(context);
+        return context;
+    }
+
+    [Theory]
+    [InlineData(400, 375)] // 1.7 line heights under the image
+    [InlineData(400, 340)] // on the image
+    [InlineData(285, 375)] // starts within the image widened by 10%
+    public void ShortLineUnderOrOnAnImage_IsACaptionNotAHeading(double x, double baseline)
+    {
+        PipelineContext context = RunWithImage(x, baseline);
+
+        Assert.Equal(["Regulamin promocji"], Headings(context).Select(h => h.Text));
+    }
+
+    [Theory]
+    [InlineData(400, 408)] // 5 line heights under the image
+    [InlineData(X, 375)] // outside the image's width
+    public void LineFarFromTheImage_IsStillAHeading(double x, double baseline)
+    {
+        PipelineContext context = RunWithImage(x, baseline);
+
+        Assert.Contains("bank.example", Headings(context).Select(h => h.Text));
+    }
+
+    [Fact]
+    public void ImageCaptionsDisabled_KeepTheBehaviourOfFeature001()
+    {
+        PipelineContext context = RunWithImage(400, 375, o => o.Headings.DetectImageCaptions = false);
+
+        Assert.Contains("bank.example", Headings(context).Select(h => h.Text));
+    }
 }
