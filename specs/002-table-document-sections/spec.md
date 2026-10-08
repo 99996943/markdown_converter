@@ -332,8 +332,10 @@ przygotowanym wynikiem oczekiwanym) oraz ręcznie / testem opcjonalnym na prywat
   (pozycje „o” pod właściwą pozycją „•”).
 - **SC-016**: Brak regresji: 100% istniejących plików wzorcowych `Corpus/acts` i `Corpus/banking`
   przechodzi bez zmian, a wynik dla `mbank-regulamin-pdp.pdf`, `mbank-reg1.pdf` i `mbank-reg2.pdf`
-  jest identyczny z wynikiem sprzed zmiany — z jedynym dopuszczalnym wyjątkiem zamierzonej zmiany
-  FR-093 (linia „Obowiązuje od …” z `##` na akapit; poza tym diff pusty), o ile dotyczy danego pliku.
+  jest identyczny z wynikiem sprzed zmiany — z wyjątkiem zamierzonych skutków FR-093 (linia
+  „Obowiązuje od …” z `##` na akapit oraz — decyzja właściciela z 2026-10-08 — wynikające z tego
+  przesunięcie nagłówków o jeden poziom w górę, bo usunięta linia zajmowała dotąd poziom 2) i FR-085
+  (data „01.01.2025 r.” na początku linii nie jest oznaczeniem listy), o ile dotyczą danego pliku.
 - **SC-017**: Wynik dla korpusu jest identyczny na Windows i Linux (CI).
 
 ## Assumptions
