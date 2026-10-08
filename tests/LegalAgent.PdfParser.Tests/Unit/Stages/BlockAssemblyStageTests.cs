@@ -340,7 +340,7 @@ public sealed class BlockAssemblyStageTests
     }
 
     [Fact]
-    public void Execute_StepTitleLinesFormABoldKrokParagraphFollowedByTheExplanation()
+    public void Execute_StepTitleLinesFormOneBoldParagraphWithTheOriginalNameFollowedByTheExplanation()
     {
         PipelineContext context = PageSketch.Assemble(null, new PageSketch()
             .Line("Sprawdzamy warunek za-", 70, 100, bold: true)
@@ -357,7 +357,7 @@ public sealed class BlockAssemblyStageTests
         new BlockAssemblyStage().Execute(context);
 
         Assert.Equal(
-            ["Krok 3: Sprawdzamy warunek zawarcia umowy", "Krok 4: Przyjmujemy zlecenie", "Sprawdzimy, czy numer PESEL nie jest zastrzeżony."],
+            ["Sprawdzamy warunek zawarcia umowy", "Przyjmujemy zlecenie", "Sprawdzimy, czy numer PESEL nie jest zastrzeżony."],
             Paragraphs(context));
         Assert.All(context.Blocks.Take(2), b => Assert.All(b.Inlines.OfType<TextRun>(), r => Assert.Equal(TextStyle.Bold, r.Style)));
         Assert.All(context.Blocks, b => Assert.Equal(LayoutBlockKind.Paragraph, b.Kind));

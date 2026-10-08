@@ -17,7 +17,7 @@ public sealed partial class StepSchemesIntegrationTests
     private const byte Gray = 217;
 
     private static readonly string[] OrderedFragments =
-        ["Zawarcie umowy", "**Krok 1", "**Krok 2", "**Krok 3", "**Krok 4", "Więcej informacji"];
+        ["Zawarcie umowy", "**Składasz wniosek**", "**Potwierdzamy Twoją tożsamość**", "**Sprawdzamy warunek zawarcia umowy**", "**Odbierasz kartę**", "Więcej informacji"];
 
     internal static byte[] BuildSchemePdf()
     {
@@ -82,18 +82,18 @@ public sealed partial class StepSchemesIntegrationTests
     {
         string md = (await ConvertAsync()).Markdown;
 
-        Assert.Contains("**Krok 1: Składasz wniosek**\n\nSkładasz pisemny wniosek o otwarcie rachunku.\n", md, StringComparison.Ordinal);
+        Assert.Contains("**Składasz wniosek**\n\nSkładasz pisemny wniosek o otwarcie rachunku.\n", md, StringComparison.Ordinal);
         Assert.Contains(
-            "**Krok 2: Potwierdzamy Twoją tożsamość**\n\nZanim zawrzemy umowę, potwierdzimy Twoją tożsamość w sposób opisany w regulaminie obsługi klientów.\n",
+            "**Potwierdzamy Twoją tożsamość**\n\nZanim zawrzemy umowę, potwierdzimy Twoją tożsamość w sposób opisany w regulaminie obsługi klientów.\n",
             md,
             StringComparison.Ordinal);
         Assert.Contains(
-            "**Krok 3: Sprawdzamy warunek zawarcia umowy**\n\n- Złożenie wniosku nie oznacza zawarcia umowy.\n- Sprawdzimy, czy Twój numer PESEL nie jest zastrzeżony.\n",
+            "**Sprawdzamy warunek zawarcia umowy**\n\n- Złożenie wniosku nie oznacza zawarcia umowy.\n- Sprawdzimy, czy Twój numer PESEL nie jest zastrzeżony.\n",
             md,
             StringComparison.Ordinal);
         Assert.Matches(ItemAcrossPages(), md);
         Assert.Contains("- Po zawarciu umowy otworzymy rachunek.", md, StringComparison.Ordinal);
-        Assert.Contains("**Krok 4: Odbierasz kartę**\n\nKartę wyślemy pocztą.\n", md, StringComparison.Ordinal);
+        Assert.Contains("**Odbierasz kartę**\n\nKartę wyślemy pocztą.\n", md, StringComparison.Ordinal);
 
         int[] order = OrderedFragments
             .Select(s => md.IndexOf(s, StringComparison.Ordinal))
@@ -113,7 +113,7 @@ public sealed partial class StepSchemesIntegrationTests
         Assert.Equal(["# Regulamin rachunku"], md.Split('\n').Where(l => l.StartsWith('#')));
         Assert.DoesNotContain("|", md, StringComparison.Ordinal);
         Assert.Equal(0, result.Report.TableCount);
-        Assert.Equal(4, Regex.Count(md, @"\*\*Krok \d: "));
+        Assert.DoesNotContain("Krok", md, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -121,7 +121,7 @@ public sealed partial class StepSchemesIntegrationTests
     {
         string md = (await ConvertAsync(o => o.Tables.DetectStepSequences = false)).Markdown;
 
-        Assert.DoesNotContain("Krok 1", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("**Składasz wniosek**\n\nSkładasz pisemny", md, StringComparison.Ordinal);
         Assert.Contains("Składasz wniosek", md, StringComparison.Ordinal);
     }
 }
