@@ -501,6 +501,9 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
         public double LastSize { get; set; } = size;
 
+        /// <summary>The last word with the pieces glued to it from earlier lines (a hyphenated word or an address).</summary>
+        public string LastWord { get; set; } = first.Words.Count > 0 ? first.Words[^1].Text : string.Empty;
+
         /// <summary>The first line is the remainder of a heading line („Art. 5. Treść…”).</summary>
         public bool FollowsHeadingOnItsLine { get; set; }
     }
@@ -526,7 +529,10 @@ public sealed class BlockAssemblyStage : IPipelineStage
         public void AppendLine(Paragraph paragraph, LayoutLine line, int page)
         {
             LayoutLine previous = paragraph.LastLine;
-            HyphenJoin join = Hyphenation.Decide(previous.Text, line.Text, exceptions);
+
+            // A one-word line may be the middle of a word glued over several lines (FR-094: a long web address).
+            string lineEnd = previous.Words.Count == 1 ? paragraph.LastWord : previous.Text;
+            HyphenJoin join = Hyphenation.Decide(lineEnd, line.Text, exceptions);
             bool glue = join != HyphenJoin.None;
             if (join == HyphenJoin.Remove)
             {
@@ -548,6 +554,12 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 {
                     paragraph.Inlines.AddPageBreak(page);
                 }
+            }
+
+            if (line.Words.Count > 0)
+            {
+                string tail = join == HyphenJoin.Remove ? paragraph.LastWord[..^1] : paragraph.LastWord;
+                paragraph.LastWord = line.Words.Count == 1 && glue ? tail + line.Words[0].Text : line.Words[^1].Text;
             }
 
             paragraph.Lines.Add(line);
