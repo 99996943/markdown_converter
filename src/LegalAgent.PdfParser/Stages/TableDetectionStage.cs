@@ -340,7 +340,11 @@ public sealed class TableDetectionStage : IPipelineStage
         Row? previous = null;
         foreach (Row row in region)
         {
+            // A line with several segments starting in the first column opens a row even when its spacing made it
+            // look like a justified line (not multi-cell).
+            bool opensRow = row.Cells.Count >= 2 && ColumnClustering.BandIndex(bands, row.Cells[0].Box.Left, tolerance) == 0;
             bool continues = previous is not null
+                && !opensRow
                 && (!row.IsMulti || continuations.Contains(row))
                 && row.Line.Baseline - previous.Line.Baseline <= rowGap
                 && row.Cells.All(c => ColumnClustering.Span(bands, c.Box.Left, c.Box.Right, tolerance) <= 1)
@@ -485,7 +489,11 @@ public sealed class TableDetectionStage : IPipelineStage
                 continue;
             }
 
+            // A line whose segments all start in the table's columns is a row (spaced evenly by chance), not text.
+            bool aligned = row.Cells.Count >= 2
+                && row.Cells.All(c => rows.Any(r => r.Cells.Any(m => Math.Abs(m.Box.Left - c.Box.Left) <= tolerance)));
             if (multi >= context.Options.Tables.MinRows
+                && !aligned
                 && row.Line.Box.Right > second + tolerance
                 && Math.Abs(row.Line.Box.Left - left) <= tolerance)
             {

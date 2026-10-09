@@ -441,6 +441,10 @@ public sealed class CorpusLayoutsIntegrationTests
         Body(b, y + 30, 12);
 
         string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t083g.md"), md, TestContext.Current.CancellationToken);
+        }
 
         Assert.Contains("| 3. | Prowadzenie rachunku pomocniczego (każdy kolejny) | miesięcznie | 8,00 zł |", md, StringComparison.Ordinal);
         Assert.Contains("| 4. | Przelew natychmiastowy | za przelew | 5,00 zł |", md, StringComparison.Ordinal);
