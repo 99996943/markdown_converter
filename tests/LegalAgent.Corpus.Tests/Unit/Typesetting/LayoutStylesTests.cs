@@ -66,6 +66,7 @@ public sealed class LayoutStylesTests
         }
 
         Assert.Equal(2, result.Truth.Tables.Count);
+        Assert.Contains(new LegalAgent.Corpus.Truth.TruthHeading(2, null, "Historia zmian"), result.Truth.Headings);
     }
 
     [Fact]

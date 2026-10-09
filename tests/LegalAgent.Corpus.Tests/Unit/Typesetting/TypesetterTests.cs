@@ -131,6 +131,21 @@ public sealed class TypesetterTests
     }
 
     [Fact]
+    public void TwoDigitFootnoteLabel_IsSeparatedFromItsText()
+    {
+        IReadOnlyList<Inline> text = [new Inline("Zdanie z przypisem."), new Inline("10", Kind: InlineKind.FootnoteRef)];
+        var footnotes = new Dictionary<int, IReadOnlyList<Inline>> { [10] = T("Treść dziesiątego przypisu.") };
+
+        TypesetResult result = Typesetter.Typeset(Doc([new ParagraphElement(text)], footnotes), Style());
+
+        List<Word> words = PageWords(result.Pdf)[0];
+        Word label = words.First(w => w.Text.StartsWith("10)", StringComparison.Ordinal));
+        Assert.Equal("10)", label.Text);
+        Word first = words.First(w => w.Text == "Treść");
+        Assert.True(first.BoundingBox.Left - label.BoundingBox.Right >= 2, "a gap between the label and the text");
+    }
+
+    [Fact]
     public void TwoFootnotesOnOnePage_AreSeparateLabelledLines()
     {
         IReadOnlyList<Inline> text =
