@@ -21,9 +21,7 @@
 
 Niniejsza procedura określa zasady stosowania w Banku Przykładowym S.A. środków bezpieczeństwa finansowego wobec klientów, w tym identyfikacji i weryfikacji tożsamości, ustalania beneficjentów rzeczywistych, oceny ryzyka prania pieniędzy oraz finansowania terroryzmu, a także bieżącego monitorowania stosunków gospodarczych. Podstawę jej wydania stanowi ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
 
-Celem procedury jest zapewnienie jednolitego, udokumentowanego i weryfikowalnego sposobu postępowania we wszystkich jednostkach Banku, tak aby instytucja nie został wykorzystany do celów przestępczych, a obowiązki wynikające z przepisów — także z przepisów o tajemnicy bankowej (zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646)) — były wykonywane w sposób wzajemnie uzgodniony.
-
-Procedura wdraża podejście oparte na ocenie ryzyka: zakres i intensywność stosowanych środków zależą od poziomu ryzyka przypisanego klientowi, produktowi, kanałowi dostępu oraz położeniu geograficznemu. Procedura jest dokumentem wewnętrznym i nie jest przeznaczona dla klientów.
+Celem procedury jest zapewnienie jednolitego, udokumentowanego i weryfikowalnego sposobu postępowania we wszystkich jednostkach Banku, tak aby instytucja nie został wykorzystany do celów przestępczych, a obowiązki wynikające z przepisów — także z przepisów o tajemnicy bankowej (zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646)) — były wykonywane w sposób wzajemnie uzgodniony. Procedura wdraża podejście oparte na ocenie ryzyka: zakres i intensywność stosowanych środków zależą od poziomu ryzyka przypisanego klientowi, produktowi, kanałowi dostępu oraz położeniu geograficznemu. Procedura jest dokumentem wewnętrznym i nie jest przeznaczona dla klientów.
 
 ## 2. Zakres stosowania
 
@@ -35,9 +33,7 @@ Procedurę stosują pracownicy wszystkich jednostek Banku, którzy wykonując sw
 - 4\) zajmują się monitorowaniem transakcji, rozpatrywaniem alertów oraz przygotowywaniem zawiadomień dla organów państwa;
 - 5\) zarządzają dokumentacją klientów, jej archiwizacją oraz nadzorują jakość danych.
 
-Procedura obejmuje klientów będących osobami fizycznymi, osobami prawnymi i jednostkami organizacyjnymi niemającymi osobowości prawnej, w tym przedsiębiorców, fundacje, stowarzyszenia i wspólnoty mieszkaniowe, a także osoby działające w imieniu klienta na podstawie pełnomocnictwa lub przedstawicielstwa ustawowego.
-
-Dla poszczególnych produktów obowiązują ponadto warunki szczegółowe zawarte w dokumentach „Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.” oraz „Regulamin rachunków bankowych dla przedsiębiorców Bank Przykładowy S.A.”. W razie rozbieżności przewagę mają przepisy powszechnie obowiązujące, a następnie niniejsza procedura.
+Procedura obejmuje klientów będących osobami fizycznymi, osobami prawnymi i jednostkami organizacyjnymi niemającymi osobowości prawnej, w tym przedsiębiorców, fundacje, stowarzyszenia i wspólnoty mieszkaniowe, a także osoby działające w imieniu klienta na podstawie pełnomocnictwa lub przedstawicielstwa ustawowego. Dla poszczególnych produktów obowiązują ponadto warunki szczegółowe zawarte w dokumentach „Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.” oraz „Regulamin rachunków bankowych dla przedsiębiorców Bank Przykładowy S.A.”. W razie rozbieżności przewagę mają przepisy powszechnie obowiązujące, a następnie niniejsza procedura.
 
 Procedura nie reguluje zasad postępowania w sprawach reklamacyjnych; w tym zakresie pracownik stosuje procedurę obsługi reklamacji.
 
@@ -67,9 +63,7 @@ Dodatkowe obowiązki w zakresie przeciwdziałania praniu pieniędzy ciążą na 
 
 Obowiązki te nie zwalniają pracownika placówki z samodzielnej oceny sytuacji klienta; odpowiedzialności za rzetelne wypełnienie formularza F-AML-01 nie można przenieść na zatwierdzającego.
 
-W razie nieobecności osoby wskazanej w procedurze jej zadania wykonuje zastępca wyznaczony w drodze pisemnego upoważnienia. Upoważnienie określa zakres zastępstwa i czas jego trwania; kopię przekazuje się do komórki zgodności (Departament Zgodności).
-
-Przy zastępstwach obowiązują następujące ograniczenia:
+W razie nieobecności osoby wskazanej w procedurze jej zadania wykonuje zastępca wyznaczony w drodze pisemnego upoważnienia. Upoważnienie określa zakres zastępstwa i czas jego trwania; kopię przekazuje się do komórki zgodności (Departament Zgodności). Przy zastępstwach obowiązują następujące ograniczenia:
 
 - 1\) zastępca nie może zatwierdzać relacji, w których występuje konflikt interesów, w szczególności gdy klientem jest osoba z jego rodziny lub pracownik Banku;
 - 2\) zatwierdzenie relacji wysokiego ryzyka przez zastępcę wymaga akceptacji osoby na stanowisku „Koordynator ds. przeciwdziałania praniu pieniędzy”, a w jego nieobecności — członka zarządu;
@@ -463,9 +457,7 @@ W takich przypadkach:
 - 3\) umowę wypowiada się w terminie przewidzianym w regulaminie produktu, chyba że przepisy zezwalają na wypowiedzenie ze skutkiem natychmiastowym;
 - 4\) środki klienta zwraca się na rachunek wskazany przez klienta, jeżeli zostanie on pozytywnie zweryfikowany i nie ma przeszkód wynikających z przepisów lub żądań organów.
 
-Przy zwrocie środków na rachunek w innym banku sprawdź, czy rachunek należy do klienta; w razie wątpliwości zleć zwrot na rachunek, z którego środki wpłynęły.
-
-W sytuacjach nietypowych należy postępować następująco:
+Przy zwrocie środków na rachunek w innym banku sprawdź, czy rachunek należy do klienta; w razie wątpliwości zleć zwrot na rachunek, z którego środki wpłynęły. W sytuacjach nietypowych należy postępować następująco:
 
 - 1\) **Klient wycofuje wniosek po pytaniach o źródło środków** — odnotuj zdarzenie i przekaż informację do komórki analitycznej (Zespół Analiz Transakcji w Departamencie Zgodności); wycofanie wniosku nie wyłącza obowiązku analizy;
 - 2\) **Klient prosi o wypłatę gotówki w kwocie tuż poniżej progu** — poinformuj o obowiązujących zasadach i nie sugeruj sposobu ich obejścia;
@@ -488,9 +480,7 @@ Kontrola obejmuje w szczególności:
 - 3\) weryfikację jakości danych o beneficjentach rzeczywistych i aktualności dokumentów tożsamości;
 - 4\) ocenę poprawności zastosowania progów transakcyjnych i środków wzmocnionych.
 
-Wyniki kontroli są przedstawiane Zarządowi w sprawozdaniu rocznym sporządzanym przez osobę na stanowisku „Koordynator ds. przeciwdziałania praniu pieniędzy”. Stwierdzone uchybienia usuwa się według planu naprawczego z określonymi terminami; nieusunięcie uchybienia w terminie zgłasza się do organu zarządzającego (Zarząd Banku).
-
-Kontrola funkcjonalna w placówkach przebiega według następujących zasad:
+Wyniki kontroli są przedstawiane Zarządowi w sprawozdaniu rocznym sporządzanym przez osobę na stanowisku „Koordynator ds. przeciwdziałania praniu pieniędzy”. Stwierdzone uchybienia usuwa się według planu naprawczego z określonymi terminami; nieusunięcie uchybienia w terminie zgłasza się do organu zarządzającego (Zarząd Banku). Kontrola funkcjonalna w placówkach przebiega według następujących zasad:
 
 - 1\) kierownik placówki co miesiąc losuje z systemu próbkę pięciu nowo przyjętych klientów i sprawdza kompletność ich dokumentacji względem listy kontrolnej z załącznika;
 - 2\) wyniki kontroli wpisuje się do rejestru uchybień; uchybienia krytyczne (np. brak identyfikacji beneficjenta rzeczywistego) zgłasza się do komórki zgodności (Departament Zgodności) w ciągu 2 dni;
@@ -550,9 +540,7 @@ Przechowywaniu podlegają:
 <!-- page: 22 -->
 - 5\) ewidencja szkoleń i wyniki kontroli.
 
-Dokumentację przechowuje się w narzędziu informatycznym (system klasyfikacji klientów KYC-PRZYKŁAD) oraz w archiwum elektronicznym Banku, w sposób zapewniający jej integralność, dostępność dla uprawnionych osób i możliwość szybkiego przedstawienia organom państwa. Dokumentacji nie wolno niszczyć przed upływem okresu przechowywania, nawet na żądanie klienta; po jego upływie dokumenty niszczy się protokolarnie, o ile nie zachodzą podstawy do dłuższego przechowywania.
-
-Dane osobowe Klientów przetwarza się wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)) oraz z zasadą minimalizacji danych.
+Dokumentację przechowuje się w narzędziu informatycznym (system klasyfikacji klientów KYC-PRZYKŁAD) oraz w archiwum elektronicznym Banku, w sposób zapewniający jej integralność, dostępność dla uprawnionych osób i możliwość szybkiego przedstawienia organom państwa. Dokumentacji nie wolno niszczyć przed upływem okresu przechowywania, nawet na żądanie klienta; po jego upływie dokumenty niszczy się protokolarnie, o ile nie zachodzą podstawy do dłuższego przechowywania. Dane osobowe Klientów przetwarza się wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)) oraz z zasadą minimalizacji danych.
 
 Pracownik wykonujący czynności objęte procedurą jest obowiązany:
 
