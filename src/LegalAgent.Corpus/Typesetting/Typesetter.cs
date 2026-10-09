@@ -248,7 +248,7 @@ public static class Typesetter
 
         if (!w.AtTopOfColumn)
         {
-            w.Y += unit ? 4 : 10;
+            w.Y += unit ? 4 : s.ChapterSpaceAbove;
         }
 
         // Keep the heading with at least two lines of what follows.
