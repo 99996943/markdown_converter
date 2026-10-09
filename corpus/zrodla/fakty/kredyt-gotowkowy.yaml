@@ -1,0 +1,218 @@
+fakty:
+  # --- oprocentowanie, RRSO, prowizje
+  - id: oprocentowanie.kredyt-gotowkowy.stale
+    rodzaj: procent
+    wartosci:
+      - wartosc: 11.9
+      - od: 2027-01-01
+        wartosc: 10.9
+    alternatywy: [14.9, 9.9]
+  - id: oprocentowanie.kredyt-gotowkowy.promocyjne
+    rodzaj: procent
+    wartosci:
+      - wartosc: 8.9
+      - od: 2026-04-01
+        wartosc: 9.4
+    alternatywy: [6.9]
+  - id: rrso.kredyt-gotowkowy.przyklad
+    rodzaj: procent
+    wartosci:
+      - wartosc: 13.8
+      - od: 2027-01-01
+        wartosc: 12.6
+    alternatywy: [15.2, 17.9]
+  - id: prowizja.kredyt-gotowkowy.przygotowanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.0
+      - od: 2026-04-01
+        wartosc: 3.5
+    alternatywy: [0.0, 5.0]
+  - id: prowizja.kredyt-gotowkowy.przygotowanie-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [0.00, 150.00]
+  - id: prowizja.kredyt-gotowkowy.wczesna-splata-powyzej-roku
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [0.0, 2.0]
+  - id: prowizja.kredyt-gotowkowy.wczesna-splata-do-roku
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+    alternatywy: [0.0, 1.0]
+  - id: oplata.kredyt-gotowkowy.zmiana-harmonogramu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+      - od: 2027-01-01
+        wartosc: 60.00
+    alternatywy: [0.00, 100.00]
+  - id: oplata.kredyt-gotowkowy.duplikat-harmonogramu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.kredyt-gotowkowy.wezwanie-do-zaplaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+      - od: 2026-04-01
+        wartosc: 45.00
+    alternatywy: [0.00, 60.00]
+  - id: oplata.kredyt-gotowkowy.zawieszenie-splat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2027-01-01
+        wartosc: 30.00
+    alternatywy: [60.00]
+
+  # --- kwoty, okresy, progi
+  - id: limit.kredyt-gotowkowy.kwota-min
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [500.00, 2000.00]
+  - id: limit.kredyt-gotowkowy.kwota-max
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150000.00
+      - od: 2027-01-01
+        wartosc: 200000.00
+    alternatywy: [100000.00, 250000.00]
+  - id: limit.kredyt-gotowkowy.dochod-min
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2500.00
+      - od: 2027-01-01
+        wartosc: 3000.00
+    alternatywy: [2000.00, 4000.00]
+  - id: limit.kredyt-gotowkowy.wskaznik-obciazenia
+    rodzaj: procent
+    wartosci:
+      - wartosc: 50.0
+      - od: 2027-01-01
+        wartosc: 45.0
+    alternatywy: [40.0, 60.0]
+  - id: limit.kredyt-gotowkowy.wczesna-splata-prog
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 12000.00
+    alternatywy: [5000.00]
+  - id: okres.kredyt-gotowkowy.min
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 miesięcy"
+    alternatywy: ["3 miesiące", "12 miesięcy"]
+  - id: okres.kredyt-gotowkowy.max
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "120 miesięcy"
+      - od: 2027-01-01
+        wartosc: "96 miesięcy"
+    alternatywy: ["84 miesiące", "144 miesiące"]
+  - id: okres.kredyt-gotowkowy.zawieszenie-max
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "3 miesiące"
+    alternatywy: ["2 miesiące", "6 miesięcy"]
+  - id: limit.kredyt-gotowkowy.zawieszenia-liczba
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "dwukrotnie w całym okresie kredytowania"
+    alternatywy: ["jednokrotnie w całym okresie kredytowania"]
+
+  # --- terminy
+  - id: termin.kredyt-gotowkowy.rozpatrzenie-wniosku
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+      - od: 2026-04-01
+        wartosc: 5
+    alternatywy: [14, 3]
+  - id: termin.kredyt-gotowkowy.waznosc-decyzji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.kredyt-gotowkowy.wyplata
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [1, 5]
+  - id: termin.kredyt-gotowkowy.uruchomienie-umowy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.kredyt-gotowkowy.zwrot-po-odstapieniu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14]
+  - id: termin.kredyt-gotowkowy.rozliczenie-wczesnej-splaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.kredyt-gotowkowy.zgloszenie-wczesnej-splaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2027-01-01
+        wartosc: 2
+    alternatywy: [7]
+  - id: termin.kredyt-gotowkowy.zgloszenie-zmiany-danych
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.kredyt-gotowkowy.wezwanie-do-zaplaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 21]
+  - id: termin.kredyt-gotowkowy.wypowiedzenie-przez-bank
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.kredyt-gotowkowy.opoznienie-do-rejestru
+    rodzaj: termin
+    wartosci:
+      - wartosc: 60
+    alternatywy: [30, 90]
+  - id: termin.kredyt-gotowkowy.zawiadomienie-przed-rejestrem
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14]
+  - id: termin.kredyt-gotowkowy.ubezpieczenie-odstapienie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.kredyt-gotowkowy.zaswiadczenie-o-splacie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.kredyt-gotowkowy.restrukturyzacja-wniosek
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+
+  # --- ubezpieczenie
+  - id: ubezpieczenie.kredyt-gotowkowy.skladka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.5
+      - od: 2027-01-01
+        wartosc: 2.9
+    alternatywy: [0.0, 3.5]

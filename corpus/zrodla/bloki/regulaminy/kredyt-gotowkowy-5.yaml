@@ -1,0 +1,139 @@
+bloki:
+  - id: kredyt-gotowkowy-ogolne-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może w każdym czasie zażądać od Banku {nieodpłatnego|bezpłatnego} udzielenia informacji o stanie zadłużenia, wysokości najbliższej raty oraz saldzie kapitału pozostałego do spłaty. Informacje te Bank przekazuje w bankowości elektronicznej, a na żądanie Klienta — także w formie papierowej, w placówce."
+      - ustep: "Zestawienie wpłat i obciążeń z tytułu kredytu Bank udostępnia Klientowi bez opłat, nie rzadziej niż raz w roku. Dodatkowe zestawienia w formie papierowej Bank wydaje odpłatnie, zgodnie z {{ref:dokument:taryfa-kredyty}}."
+
+  - id: kredyt-gotowkowy-ogolne-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt gotówkowy nie może być przeznaczony na cele, które są sprzeczne z prawem, w szczególności na działalność zakazaną przepisami lub na zakup towarów i usług, których obrót jest ograniczony. Bank nie kontroluje celu wydatkowania środków, ale {może|ma prawo} wypowiedzieć umowę, jeżeli stwierdzi użycie kredytu w sposób sprzeczny z prawem."
+      - ustep: "Kredyt nie może być wykorzystany do spłaty zobowiązań wobec Banku, które w dniu zawarcia umowy są przeterminowane, chyba że Bank wyrazi na to zgodę w umowie jako refinansowanie zadłużenia."
+
+  - id: kredyt-gotowkowy-wniosek-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do oceny zdolności kredytowej Bank pozyskuje z biura informacji kredytowej raport zawierający informacje o zobowiązaniach Klienta i terminowości ich spłaty. Pobranie raportu odbywa się {wyłącznie|jedynie} w celu oceny wniosku i na podstawie przepisów prawa."
+      - ustep: "Klient ma prawo do jednokrotnego w roku bezpłatnego otrzymania od Banku informacji o danych przekazywanych do biura informacji kredytowej. Informacje te Klient może uzyskać w placówce Banku po złożeniu odpowiedniego wniosku."
+
+  - id: kredyt-gotowkowy-wniosek-7
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} zaproponować Klientowi, którego wniosek został oceniony negatywnie, zmianę parametrów kredytu, w szczególności:"
+        punkty:
+          - "obniżenie kwoty kredytu do poziomu odpowiadającego zdolności kredytowej;"
+          - "wydłużenie okresu kredytowania w celu obniżenia wysokości raty;"
+          - "przystąpienie do kredytu dodatkowego współkredytobiorcy lub poręczyciela."
+      - ustep: "Propozycja takiej zmiany nie stanowi nowej oferty w rozumieniu Kodeksu cywilnego do czasu jej pisemnego potwierdzenia przez Bank, a ostateczna decyzja podlega ponownej ocenie zdolności kredytowej."
+
+  - id: kredyt-gotowkowy-umowa-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Podpisując umowę kredytu, Klient potwierdza, że przed jej zawarciem otrzymał i zrozumiał informacje o warunkach kredytu. Klient {oświadcza|potwierdza} także, że dane podane we wniosku są prawdziwe, a jego sytuacja majątkowa nie uległa istotnej zmianie od dnia złożenia wniosku."
+      - ustep: "Jeżeli w dniu zawarcia umowy okaże się, że dane lub oświadczenia Klienta uległy zmianie, Bank {może|ma prawo} przeprowadzić ponowną ocenę zdolności kredytowej i — w razie jej negatywnego wyniku — odmówić zawarcia umowy."
+
+  - id: kredyt-gotowkowy-wyplata-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może wskazać w umowie, że część środków z kredytu zostanie przeznaczona na spłatę zobowiązań w innych bankach (konsolidacja). W takim przypadku Bank {przekazuje|przelewa} środki bezpośrednio na rachunki wierzycieli, na podstawie dokumentów przedstawionych przez Klienta."
+      - ustep: "Jeżeli kwota przekazana wierzycielom jest niższa niż wynikająca z dyspozycji, Bank wypłaca różnicę Klientowi na rachunek wskazany w umowie, a w razie braku takiej możliwości — zalicza ją na poczet spłaty kredytu."
+
+  - id: kredyt-gotowkowy-oprocentowanie-7
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Całkowitą kwotę do zapłaty oblicza się jako sumę kwoty kredytu i całkowitego kosztu kredytu. W formularzu informacyjnym Bank podaje tę kwotę, a także wysokość każdej raty i łączną liczbę rat. Wartości te są ustalone przy założeniu, że płatności będą dokonywane w terminach określonych w harmonogramie."
+      - ustep: "Jeżeli w trakcie obowiązywania umowy zmieni się harmonogram spłat lub okres kredytowania, Bank {informuje|powiadamia} Klienta o zmianie całkowitej kwoty do zapłaty oraz o zaktualizowanym RRSO, jeżeli zmiana ta wynika z postanowień aneksu."
+
+  - id: kredyt-gotowkowy-oprocentowanie-8
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Całkowity koszt kredytu nie może przekroczyć maksymalnej wysokości pozaodsetkowych kosztów kredytu określonej w przepisach. Jeżeli w wyniku zmiany przepisów dopuszczalna wysokość kosztów ulegnie obniżeniu, Bank {dostosuje|zmieni} warunki umów zawartych po dniu wejścia w życie zmiany, a umowy zawarte wcześniej — w zakresie wskazanym w przepisach przejściowych."
+      - ustep: "Zasady ustalania kosztów kredytu konsumenckiego i ich limity określa {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}."
+
+  - id: kredyt-gotowkowy-splata-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest zobowiązany zapewnić na rachunku, z którego pobierana jest rata, środki wystarczające do jej pokrycia w dniu płatności. Jeżeli na rachunku brakuje środków, Bank ponawia próbę pobrania raty w kolejnych dniach roboczych, przy czym nie czyni to Klienta wolnym od odpowiedzialności za opóźnienie."
+      - ustep: "Zmiana rachunku, z którego pobierane są raty, wymaga dyspozycji Klienta złożonej co najmniej na {{fakt:termin.kredyt-gotowkowy.zgloszenie-wczesnej-splaty}} przed dniem płatności najbliższej raty. Bank zmienia rachunek bez dodatkowych opłat."
+
+  - id: kredyt-gotowkowy-wczesna-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wczesna
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wcześniejsza spłata kredytu w całości nie wymaga zgody Banku, a ewentualne ograniczenia kwotowe nie mogą uniemożliwić Klientowi całkowitej spłaty. Klient może dokonać wcześniejszej spłaty w dowolnej liczbie wpłat, z tym że rekompensata, o której mowa w Regulaminie, nie jest należna w odniesieniu do spłat nieprzekraczających {{fakt:limit.kredyt-gotowkowy.wczesna-splata-prog}} w ciągu roku."
+      - ustep: "Jeżeli Klient dokonuje spłaty z własnych środków, a Bank nie jest w stanie zidentyfikować wpłaty jako wcześniejszej spłaty, Klient {może|jest uprawniony do} żądania w ciągu {{fakt:termin.kredyt-gotowkowy.rozliczenie-wczesnej-splaty}} skorygowania sposobu zaliczenia wpłaty."
+
+  - id: kredyt-gotowkowy-odstapienie-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-odstapienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {nie ponosi odpowiedzialności|nie odpowiada} za opóźnienie w doręczeniu oświadczenia o odstąpieniu, jeżeli oświadczenie zostało wysłane po upływie terminu. Dowodem zachowania terminu jest potwierdzenie nadania w placówce pocztowej, potwierdzenie złożenia w placówce Banku lub potwierdzenie wysłania w bankowości elektronicznej."
+      - ustep: "Jeżeli Klient nie jest pewien, czy dotrzymał terminu, może skontaktować się z Bankiem pod numerem {{fakt:kontakt.infolinia}}. Bank rozpatruje wątpliwości na korzyść Klienta, o ile nie sprzeciwiają się temu przepisy prawa."
+
+  - id: kredyt-gotowkowy-ubezpieczenie-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ubezpieczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ubezpieczenie jest dostępne dla osób, które w dniu przystąpienia do ubezpieczenia ukończyły 18 lat i nie przekroczyły wieku określonego w warunkach ubezpieczenia, są zdolne do pracy i nie przebywają na zwolnieniu lekarskim dłuższym niż miesiąc."
+      - ustep: "Zakład ubezpieczeń {może|ma prawo} odmówić wypłaty świadczenia, jeżeli zdarzenie nastąpiło w okresie karencji albo wynikło z okoliczności wyłączonych z odpowiedzialności. Wyłączenia i karencje są wskazane w ogólnych warunkach ubezpieczenia, które Klient otrzymuje przed zawarciem umowy ubezpieczenia."
+
+  - id: kredyt-gotowkowy-opoznienie-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Od zaległych odsetek umownych Bank nie nalicza odsetek za opóźnienie, o ile przepisy prawa tego zakazują. Łączna wysokość odsetek za opóźnienie naliczonych od jednej zaległości nie może przekroczyć wysokości ograniczenia przewidzianego w przepisach."
+      - ustep: "Bank {informuje|powiadamia} Klienta o wysokości zadłużenia przeterminowanego, na jego żądanie, w ciągu {{fakt:termin.kredyt-gotowkowy.rozliczenie-wczesnej-splaty}}. Informacja zawiera rozbicie na kapitał, odsetki umowne, odsetki za opóźnienie i opłaty."
+
+  - id: kredyt-gotowkowy-wypowiedzenie-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może wypowiedzieć umowę w dowolnym czasie, składając oświadczenie w formie pisemnej lub w bankowości elektronicznej. Wypowiedzenie umowy przez Klienta jest równoznaczne z żądaniem całkowitej spłaty kredytu i nie wymaga uzasadnienia."
+      - ustep: "Po otrzymaniu oświadczenia Bank wskazuje Klientowi kwotę niezbędną do całkowitej spłaty kredytu na dzień planowanej spłaty oraz informuje o prawie do rozliczenia kosztów kredytu zgodnie z {{ref:blok:kredyt-gotowkowy-wczesna-splata}}."
+
+  - id: kredyt-gotowkowy-koncowe-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank i Klient mogą doręczać sobie oświadczenia także w postaci elektronicznej, jeżeli zgodę na taką formę kontaktu Klient wyraził w umowie lub w bankowości elektronicznej. Oświadczenie uważa się za doręczone w dniu, w którym zostało udostępnione Klientowi w sposób umożliwiający zapoznanie się z jego treścią."
+      - ustep: "Klient może w każdym czasie odwołać zgodę na korespondencję elektroniczną; od dnia odwołania Bank doręcza korespondencję pisemnie, na ostatni znany adres Klienta, bez ponoszenia przez Klienta dodatkowych kosztów."

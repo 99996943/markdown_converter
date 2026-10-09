@@ -1,0 +1,208 @@
+bloki:
+  # ===== Rozdział: Oprocentowanie, RRSO i prowizje =====
+  - id: kredyt-gotowkowy-oprocentowanie-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wysokość oprocentowania zależy od kwoty kredytu, okresu kredytowania oraz oceny ryzyka kredytowego. Oprocentowanie ustalone w umowie {nie ulega zmianie|pozostaje niezmienne} przez cały okres kredytowania, z zastrzeżeniem zmian korzystnych dla Klienta."
+      - ustep: "Standardowa stopa oprocentowania {obowiązująca|wskazana} w dniu wejścia w życie Regulaminu wynosi {{fakt:oprocentowanie.kredyt-gotowkowy.stale}} w skali roku. Stopa ta jest wskazywana w formularzu informacyjnym i w umowie jako oprocentowanie nominalne."
+      - ustep: "Oprocentowanie nominalne nie obejmuje prowizji i innych opłat, dlatego rzeczywisty koszt kredytu jest wyższy i wyrażany jest przez RRSO."
+
+  - id: kredyt-gotowkowy-oprocentowanie-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "RRSO jest obliczana na podstawie wzoru określonego w przepisach, przy założeniu, że umowa będzie obowiązywać przez uzgodniony okres, a strony wywiążą się z obowiązków w terminach określonych w umowie. Obliczenie nie uwzględnia opłat, których Klient mógłby być obowiązany zapłacić w razie niewykonania zobowiązań."
+      - ustep: "RRSO dla reprezentatywnego przykładu wynosi {{fakt:rrso.kredyt-gotowkowy.przyklad}}.[^1] W umowie Bank podaje RRSO obliczoną {indywidualnie|dla konkretnego kredytu}, z uwzględnieniem kwoty, okresu i kosztów."
+    przypisy:
+      1: "Jest to wartość {przykładowa|reprezentatywna}; nie stanowi oferty ani gwarancji warunków dla Klienta."
+
+  - id: kredyt-gotowkowy-oprocentowanie-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przykładowy kredyt gotówkowy {przedstawiono|zaprezentowano} w poniższej tabeli. Wartości mają charakter {poglądowy|ilustracyjny}; wiążące dane Klient otrzymuje w formularzu informacyjnym."
+      - tabela:
+          kolumny:
+            - naglowek: "Parametr"
+              waga: 2
+            - naglowek: "Wartość"
+              waga: 2
+          wiersze:
+            - ["Oprocentowanie nominalne (stałe)", "{{fakt:oprocentowanie.kredyt-gotowkowy.stale}}"]
+            - ["Prowizja za udzielenie kredytu", "{{fakt:prowizja.kredyt-gotowkowy.przygotowanie}}"]
+            - ["RRSO dla przykładu reprezentatywnego", "{{fakt:rrso.kredyt-gotowkowy.przyklad}}"]
+            - ["Najniższa kwota kredytu", "{{fakt:limit.kredyt-gotowkowy.kwota-min}}"]
+            - ["Najwyższa kwota kredytu", "{{fakt:limit.kredyt-gotowkowy.kwota-max}}"]
+          siatka: true
+
+  - id: kredyt-gotowkowy-oprocentowanie-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Promocyjna stopa oprocentowania wynosząca {{fakt:oprocentowanie.kredyt-gotowkowy.promocyjne}} może być stosowana wyłącznie do kredytów zawartych przez Klientów spełniających warunki promocji, przy czym:"
+        punkty:
+          - "warunki promocji są wskazane w umowie i nie mogą zostać zmienione do czasu całkowitej spłaty kredytu;"
+          - "{utrata|niespełnienie} warunku promocji w trakcie obowiązywania umowy nie powoduje podwyższenia oprocentowania, o ile umowa nie stanowi inaczej;"
+          - "promocyjna stopa nie łączy się z innymi ofertami specjalnymi Banku."
+      - ustep: "Bank {informuje|przekazuje informację} o warunkach aktualnej promocji w placówkach oraz na stronie {{fakt:bank.strona}}."
+
+  - id: kredyt-gotowkowy-oprocentowanie-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prowizja za udzielenie kredytu jest naliczana od kwoty kredytu w dniu zawarcia umowy i ma charakter jednorazowy. W razie wcześniejszej spłaty kredytu Bank {zwraca|rozlicza} część prowizji w proporcji do okresu, o który skrócono umowę, w sposób przewidziany w {{ref:blok:kredyt-gotowkowy-wczesna-splata}}."
+      - ustep: "Klient może uniknąć prowizji w całości albo w części, jeżeli skorzysta z oferty specjalnej dostępnej w dniu składania wniosku. Wysokość prowizji obowiązującej w dniu zawarcia umowy jest wskazana w umowie i formularzu informacyjnym oraz w {{ref:dokument:taryfa-kredyty}}."
+
+  - id: kredyt-gotowkowy-oprocentowanie-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} wprowadzać zmiany wysokości opłat i prowizji niezwiązanych z oprocentowaniem w razie:"
+        punkty:
+          - "zmiany przepisów prawa wpływających na koszty obsługi kredytu;"
+          - "zmiany cen usług świadczonych przez podmioty trzecie, z którymi Bank współpracuje przy obsłudze kredytu, o istotną wartość, mającą wpływ na koszty ponoszone przez Bank;"
+          - "zmiany zakresu lub formy usług świadczonych Klientowi."
+      - ustep: "Zmiana opłat następuje w trybie określonym w {{ref:blok:wspolne-zmiany-regulamin}} i nie dotyczy opłat należnych za czynności wykonane przed dniem zmiany."
+
+  # ===== Rozdział: Harmonogram i spłata kredytu =====
+  - id: kredyt-gotowkowy-splata-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pierwsza rata jest płatna w {najbliższym|pierwszym} terminie spłaty wskazanym w harmonogramie, przypadającym po dniu wypłaty kredytu. Za okres od dnia wypłaty do dnia pierwszej raty Bank {nalicza|pobiera} odsetki w wysokości odpowiadającej liczbie dni, w których Klient korzystał z kredytu."
+      - ustep: "Odsetki za ten okres są wykazane w harmonogramie spłat jako {odrębna pozycja|osobna pozycja} i są zaliczane do całkowitego kosztu kredytu."
+
+  - id: kredyt-gotowkowy-splata-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może dokonywać spłat w następujący sposób:"
+        punkty:
+          - "przez {automatyczne|stałe} pobieranie raty z rachunku Klienta w Banku, na podstawie udzielonego zlecenia;"
+          - "przelewem z rachunku prowadzonego w innym banku na rachunek techniczny kredytu wskazany w umowie;"
+          - "wpłatą gotówkową w placówce Banku, za opłatą wskazaną w {{ref:dokument:taryfa-kredyty}}."
+      - ustep: "Wpłata, która nie wystarcza na pokrycie całej raty, jest zaliczana zgodnie z kolejnością wskazaną w Regulaminie, a niespłacona część raty pozostaje zaległością, od której Bank naliczy odsetki za opóźnienie."
+
+  - id: kredyt-gotowkowy-splata-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może złożyć wniosek o {zawieszenie|czasowe zawieszenie} spłaty kredytu na okres nie dłuższy niż {{fakt:okres.kredyt-gotowkowy.zawieszenie-max}}, {{fakt:limit.kredyt-gotowkowy.zawieszenia-liczba}}. W okresie zawieszenia odsetki od kapitału są naliczane i podlegają kapitalizacji, chyba że umowa stanowi inaczej."
+      - ustep: "Zawieszenie spłaty wymaga zgody Banku, który ocenia, czy nie zachodzą okoliczności wskazujące na brak możliwości spłaty kredytu. Za zawieszenie Bank pobiera opłatę w wysokości {{fakt:oplata.kredyt-gotowkowy.zawieszenie-splat}}."
+
+  - id: kredyt-gotowkowy-splata-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na wniosek Klienta Bank może zmienić harmonogram spłat, w szczególności przez zmianę dnia płatności raty albo okresu kredytowania. Zmiana harmonogramu jest odpłatna i wymaga zgody Banku, a opłata wynosi {{fakt:oplata.kredyt-gotowkowy.zmiana-harmonogramu}}."
+      - ustep: "Po zmianie harmonogramu Bank przekazuje Klientowi {nowy harmonogram|zaktualizowany harmonogram} na trwałym nośniku, wraz z informacją o wpływie zmiany na całkowity koszt kredytu."
+
+  - id: kredyt-gotowkowy-splata-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli termin spłaty raty przypada w dniu wolnym od pracy, rata staje się wymagalna w najbliższym dniu roboczym {następującym|po tym dniu}, a odsetki za dodatkowe dni są doliczane do kolejnej raty. Klient nie ponosi z tego tytułu żadnych dodatkowych kosztów."
+      - ustep: "Bank {powiadamia|przypomina} Klienta o zbliżającym się terminie płatności raty wiadomością SMS lub komunikatem w bankowości elektronicznej, na co najmniej dwa dni robocze przed terminem, jeżeli Klient wyraził zgodę na takie powiadomienia."
+
+  # ===== Rozdział: Wcześniejsza spłata kredytu =====
+  - id: kredyt-gotowkowy-wczesna-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wczesna
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wcześniejsza spłata całości kredytu obejmuje spłatę niespłaconego kapitału, odsetek naliczonych do dnia spłaty oraz innych należności wymagalnych w dniu spłaty. Bank informuje Klienta, na jego żądanie, o kwocie niezbędnej do całkowitej spłaty kredytu w danym dniu."
+      - ustep: "Informacja o kwocie do całkowitej spłaty jest udostępniana w bankowości elektronicznej oraz w placówkach Banku bez dodatkowych opłat. Jest ona ważna w dniu wskazanym w informacji, a po jego upływie wymaga {aktualizacji|ponownego wyliczenia}."
+
+  - id: kredyt-gotowkowy-wczesna-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wczesna
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Częściowa wcześniejsza spłata kredytu może zostać zaliczona, według wyboru Klienta wskazanego w dyspozycji:"
+        punkty:
+          - "na skrócenie okresu kredytowania, przy niezmienionej wysokości rat;"
+          - "na obniżenie wysokości kolejnych rat, przy niezmienionym okresie kredytowania."
+      - ustep: "Jeżeli Klient nie wskaże sposobu zaliczenia, Bank {zalicza|przeznacza} nadpłatę na skrócenie okresu kredytowania. Po dokonaniu częściowej spłaty Bank przekazuje Klientowi nowy harmonogram spłat w terminie {{fakt:termin.kredyt-gotowkowy.rozliczenie-wczesnej-splaty}}."
+
+  - id: kredyt-gotowkowy-wczesna-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wczesna
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy wcześniejszej spłacie Bank zwraca Klientowi koszty kredytu proporcjonalnie do okresu, o który skrócono umowę. Zwrot obejmuje w szczególności część prowizji za udzielenie kredytu, która odpowiada skróceniu okresu kredytowania, oraz część opłat o charakterze jednorazowym."
+      - ustep: "Zwrot kosztów jest zaliczany na poczet spłaty kredytu, a jeżeli kredyt został całkowicie spłacony — przekazywany na rachunek wskazany przez Klienta w terminie {{fakt:termin.zwrot-oplat}}. Bank nie zwraca opłat za czynności już wykonane, o ile wykonanie nie miało związku z długością okresu kredytowania."
+
+  - id: kredyt-gotowkowy-wczesna-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wczesna
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po całkowitej spłacie kredytu umowa wygasa, a Bank wydaje Klientowi na żądanie zaświadczenie o całkowitej spłacie kredytu w terminie {{fakt:termin.kredyt-gotowkowy.zaswiadczenie-o-splacie}}. Zaświadczenie jest wydawane {bezpłatnie|nieodpłatnie}, a każde kolejne — za opłatą {{fakt:oplata.zaswiadczenie}}."
+      - ustep: "Bank informuje biura informacji kredytowej o wygaśnięciu zobowiązania, a Klient {może|ma prawo} wystąpić o aktualizację danych o kredycie, jeżeli odpowiednie zmiany nie zostały odnotowane w terminie {{fakt:termin.kredyt-gotowkowy.rozliczenie-wczesnej-splaty}}."
+
+  # ===== Rozdział: Odstąpienie od umowy =====
+  - id: kredyt-gotowkowy-odstapienie-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-odstapienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank informuje Klienta o prawie odstąpienia od umowy w formularzu informacyjnym oraz w umowie. Informacja zawiera termin do odstąpienia, sposób złożenia oświadczenia oraz skutki odstąpienia, w tym obowiązek zwrotu kapitału i odsetek za okres korzystania z kredytu."
+      - ustep: "Do zachowania terminu wystarczy wysłanie oświadczenia przed jego upływem. Oświadczenie można złożyć na formularzu udostępnionym w {placówce|oddziale} lub w dowolnej formie pisemnej, o ile wynika z niego jednoznacznie wola odstąpienia."
+
+  - id: kredyt-gotowkowy-odstapienie-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-odstapienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient odstąpił od umowy przed wypłatą kredytu, umowa wygasa, a Bank nie wypłaca środków. Prowizja, którą Klient uiścił z własnych środków, zostaje zwrócona w terminie {{fakt:termin.kredyt-gotowkowy.zwrot-po-odstapieniu}} od dnia otrzymania oświadczenia."
+      - ustep: "Jeżeli kredyt został wypłacony, Klient zwraca kapitał wraz z odsetkami za okres od dnia wypłaty do dnia zwrotu. Dzienna kwota odsetek wynika z oprocentowania wskazanego w umowie i jest podana w informacji przekazanej Klientowi {po złożeniu|po otrzymaniu} oświadczenia o odstąpieniu."
+
+  - id: kredyt-gotowkowy-odstapienie-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-odstapienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów dodatkowych, jeżeli są one związane z kredytem, w szczególności:"
+        punkty:
+          - "umowa ubezpieczenia zawarta w związku z kredytem wygasa, a składka podlega zwrotowi na zasadach wskazanych w warunkach ubezpieczenia;"
+          - "pełnomocnictwa i zlecenia stałe udzielone w związku z kredytem tracą moc z dniem odstąpienia;"
+          - "zabezpieczenia kredytu podlegają zwolnieniu w terminie {{fakt:termin.kredyt-gotowkowy.zaswiadczenie-o-splacie}}."
+
+  - id: kredyt-gotowkowy-odstapienie-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-odstapienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawo odstąpienia od umowy nie przysługuje po upływie terminu wskazanego w {{ref:blok:kredyt-gotowkowy-odstapienie}}. Po jego upływie Klient może rozwiązać umowę przez wcześniejszą spłatę kredytu na zasadach określonych w Regulaminie."
+      - ustep: "Zasady odstąpienia od umowy kredytu zawartej na odległość mogą różnić się w drobnych szczegółach od zasad dotyczących umowy zawartej w placówce, ale zawsze {zapewniają|gwarantują} Klientowi termin nie krótszy niż {{fakt:termin.odstapienie-od-umowy}}."

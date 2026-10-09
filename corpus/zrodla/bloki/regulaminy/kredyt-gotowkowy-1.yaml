@@ -1,0 +1,315 @@
+bloki:
+  # ===== Rozdział: Postanowienia ogólne =====
+  - id: kredyt-gotowkowy-zakres
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin określa {zasady|warunki} udzielania przez {{param:bank}} kredytów gotówkowych osobom fizycznym, które zaciągają zobowiązanie w celu niezwiązanym bezpośrednio z ich działalnością gospodarczą lub zawodową (konsumentom), a także zasady obsługi i spłaty tych kredytów."
+      - ustep: "Kredyt gotówkowy jest kredytem konsumenckim udzielanym w {złotych polskich|walucie polskiej}, na {dowolny|każdy} cel konsumpcyjny wskazany przez Klienta we wniosku, bez obowiązku udokumentowania sposobu wykorzystania środków. Kwota kredytu wynosi od {{fakt:limit.kredyt-gotowkowy.kwota-min}} do {{fakt:limit.kredyt-gotowkowy.kwota-max}}, a okres kredytowania — {od|w przedziale od} {{fakt:okres.kredyt-gotowkowy.min}} do {{fakt:okres.kredyt-gotowkowy.max}}."
+      - ustep: "Regulamin stanowi {integralną część|nieodłączną część} umowy kredytu. W sprawach {nieuregulowanych|niepoddanych regulacji} w umowie i Regulaminie stosuje się przepisy prawa polskiego, w szczególności {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}} oraz {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+
+  - id: kredyt-gotowkowy-definicje
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Niezależnie od|Poza} określeniami wymienionymi w poprzednim paragrafie, w Regulaminie {użyto następujących pojęć dotyczących kredytu|przyjęto następujące pojęcia dotyczące kredytu}:"
+        punkty:
+          - "**Kredytobiorca** — Klient, który zawarł z Bankiem umowę kredytu gotówkowego, a {w przypadku|w razie zawarcia umowy przez} współkredytobiorców — każdy z nich;"
+          - "**Kwota kredytu** — suma wszystkich środków pieniężnych, które Bank oddaje do dyspozycji Kredytobiorcy na podstawie umowy, z wyłączeniem kosztów kredytu;"
+          - "**Całkowity koszt kredytu** — wszelkie koszty, które Kredytobiorca jest obowiązany ponieść w związku z umową, w szczególności odsetki, opłaty, prowizje i marże, z wyłączeniem opłat notarialnych;"
+          - "**RRSO** — rzeczywista roczna stopa oprocentowania, czyli całkowity koszt kredytu wyrażony jako wartość procentowa całkowitej kwoty kredytu w stosunku rocznym;"
+          - "**Całkowita kwota do zapłaty** — suma kwoty kredytu i całkowitego kosztu kredytu;"
+          - "**Rata** — kwota płatna cyklicznie na spłatę kredytu, składająca się z kapitału i odsetek;"
+          - "**Harmonogram spłat** — zestawienie terminów i wysokości rat wraz z podziałem na kapitał i odsetki;"
+          - "**Zdolność kredytowa** — zdolność do spłaty zaciągniętego kredytu wraz z odsetkami w terminach określonych w umowie."
+
+  - id: kredyt-gotowkowy-dokumenty
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawa i obowiązki stron wynikają z następujących dokumentów, które Bank {przekazuje|udostępnia} Klientowi na trwałym nośniku przed zawarciem umowy:"
+        punkty:
+          - "formularza informacyjnego dotyczącego kredytu konsumenckiego;"
+          - "umowy kredytu wraz z {harmonogramem spłat|załączonym harmonogramem spłat};"
+          - "niniejszego Regulaminu;"
+          - "taryfy opłat i prowizji, tj. dokumentu: {{ref:dokument:taryfa-kredyty}} (zwanej dalej „Taryfą”).[^1]"
+      - ustep: "W razie rozbieżności między postanowieniami umowy a Regulaminem {pierwszeństwo mają|rozstrzygające są} postanowienia umowy. Opłaty i prowizje {niewskazane|niewymienione} w umowie są pobierane {tylko|wyłącznie} wówczas, gdy ich wysokość i podstawa naliczania wynikają z Taryfy obowiązującej w dniu zawarcia umowy."
+    przypisy:
+      1: "Taryfa jest dostępna w {placówkach|oddziałach} Banku oraz na stronie {{fakt:bank.strona}}; opłaty związane z obsługą kredytu gotówkowego wskazano w odrębnych pozycjach Taryfy."
+
+  # ===== Rozdział: Wniosek i ocena zdolności kredytowej =====
+  - id: kredyt-gotowkowy-wniosek
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt gotówkowy {może otrzymać|udzielany jest} osobie fizycznej, która ukończyła 18 lat, ma {pełną|całkowitą} zdolność do czynności prawnych, zamieszkuje na terytorium Rzeczypospolitej Polskiej i uzyskuje regularne dochody w wysokości co najmniej {{fakt:limit.kredyt-gotowkowy.dochod-min}} miesięcznie."
+      - ustep: "Wniosek o kredyt {składa się|można złożyć} w {placówce|oddziale} Banku, w bankowości elektronicznej lub — po uzgodnieniu z doradcą — telefonicznie. Do wniosku Klient dołącza:"
+        punkty:
+          - "dokument tożsamości;"
+          - "dokumenty potwierdzające źródło i wysokość dochodów;"
+          - tekst: "oświadczenie o posiadanych zobowiązaniach finansowych, w tym o:"
+            litery:
+              - "kredytach i pożyczkach zaciągniętych w Banku i w innych instytucjach;"
+              - "poręczeniach i gwarancjach udzielonych osobom trzecim."
+      - ustep: "Bank rozpatruje wniosek w terminie {{fakt:termin.kredyt-gotowkowy.rozpatrzenie-wniosku}} od dnia złożenia kompletu dokumentów.[^1] O wyniku Bank {informuje|powiadamia} Klienta w sposób wskazany we wniosku, a pozytywna decyzja kredytowa jest {ważna|wiążąca} przez {{fakt:termin.kredyt-gotowkowy.waznosc-decyzji}}."
+    przypisy:
+      1: "Termin biegnie od dnia roboczego następującego po dniu złożenia kompletu dokumentów; jeżeli Bank {wezwie|poprosi} Klienta o uzupełnienie wniosku, bieg terminu zawiesza się do dnia otrzymania uzupełnienia."
+
+  - id: kredyt-gotowkowy-zdolnosc
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy Bank dokonuje {oceny|analizy} zdolności kredytowej Klienta na podstawie informacji uzyskanych od Klienta, danych {będących w posiadaniu|zgromadzonych przez} Bank oraz informacji pochodzących z baz danych, w tym z biura informacji kredytowej. {Ocena uwzględnia|Przy ocenie bierze się pod uwagę} w szczególności:"
+        punkty:
+          - "wysokość, stabilność i źródło dochodów;"
+          - "wydatki stałe oraz liczbę osób pozostających na utrzymaniu Klienta;"
+          - "dotychczasową historię spłat zobowiązań;"
+          - "wskaźnik obciążenia dochodu ratami, który nie może przekraczać {{fakt:limit.kredyt-gotowkowy.wskaznik-obciazenia}}."
+      - ustep: "Bank {odmawia|może odmówić} udzielenia kredytu, jeżeli ocena zdolności kredytowej jest {negatywna|niewystarczająca}, wnioskodawca przedstawił nieprawdziwe dane albo nie można zweryfikować jego tożsamości zgodnie z przepisami o przeciwdziałaniu praniu pieniędzy — zob. {{ref:akt:dz-u-2025-644-aml}}."
+      - ustep: "Jeżeli odmowa następuje na podstawie informacji z bazy danych, Bank {bezzwłocznie|niezwłocznie} i nieodpłatnie informuje o tym Klienta oraz o nazwie bazy. Na wniosek Klienta Bank wyjaśnia sposób dokonania oceny zdolności kredytowej, a gdy ocena została dokonana w sposób zautomatyzowany — umożliwia Klientowi uzyskanie interwencji pracownika Banku i zakwestionowanie decyzji.[^1]"
+    przypisy:
+      1: "Zasady wyjaśniania oceny i prawo do interwencji człowieka wynikają z przepisów o kredycie konsumenckim (zob. {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}) oraz z przepisów o ochronie danych osobowych."
+
+  # ===== Rozdział: Zawarcie umowy i formularz informacyjny =====
+  - id: kredyt-gotowkowy-formularz
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Zanim|Przed tym, jak} Klient zostanie związany umową lub ofertą, Bank {przekazuje|doręcza} mu na trwałym nośniku formularz informacyjny, który zawiera w szczególności:"
+        punkty:
+          - "rodzaj kredytu, całkowitą kwotę kredytu oraz okres kredytowania;"
+          - "stopę oprocentowania, warunki jej stosowania oraz — jeżeli są dostępne — indeksy lub stawki referencyjne;"
+          - "całkowity koszt kredytu, RRSO i całkowitą kwotę do zapłaty;"
+          - "liczbę, wysokość i częstotliwość płatności rat;"
+          - "informacje o prawie odstąpienia od umowy i o prawie wcześniejszej spłaty."
+      - ustep: "Reprezentatywna wartość RRSO kredytu gotówkowego wynosi {{fakt:rrso.kredyt-gotowkowy.przyklad}}.[^1] Przykład {obliczono|wyliczono} przy założeniu, że kredyt w wysokości 25 000 zł jest udzielany na okres 60 miesięcy, a koszty kredytu obejmują prowizję oraz odsetki naliczane według stałej stopy."
+      - ustep: "Klientowi przysługuje prawo do {bezpłatnego|nieodpłatnego} otrzymania projektu umowy, jeżeli Bank oceni zdolność kredytową jako wystarczającą do zawarcia umowy; projekt nie wiąże Banku po upływie terminu wskazanego w decyzji kredytowej."
+    przypisy:
+      1: "Rzeczywista wartość RRSO dla konkretnej umowy zależy od kwoty, okresu kredytowania, oprocentowania i kosztów, i jest podawana w umowie oraz w formularzu informacyjnym."
+
+  - id: kredyt-gotowkowy-umowa
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa kredytu jest {zawierana|zawierana przez strony} w formie pisemnej, a za zgodą Klienta — w postaci elektronicznej lub na odległość za pośrednictwem bankowości elektronicznej. Umowa zostaje zawarta z chwilą złożenia podpisów lub — w razie zawarcia na odległość — z chwilą złożenia przez Klienta oświadczenia woli w sposób przewidziany w umowie."
+      - ustep: "Umowa kredytu {określa|zawiera} w szczególności:"
+        punkty:
+          - "strony umowy oraz rodzaj kredytu;"
+          - "kwotę kredytu, okres kredytowania i sposób wypłaty środków;"
+          - "oprocentowanie, RRSO, całkowity koszt kredytu i całkowitą kwotę do zapłaty;"
+          - "terminy i sposób spłaty rat;"
+          - "zasady wcześniejszej spłaty, odstąpienia od umowy i jej wypowiedzenia;"
+          - tekst: "inne warunki, w tym:"
+            litery:
+              - "zasady naliczania odsetek za opóźnienie;"
+              - "informację o rachunku, z którego raty będą pobierane;"
+              - "dane organu nadzoru i właściwego rzecznika finansowego."
+      - ustep: "Bank {powiadamia|informuje} Klienta o zawarciu umowy i jej warunkach w terminie {{fakt:termin.kredyt-gotowkowy.uruchomienie-umowy}}, jeżeli umowę zawarto na odległość. Treść umowy podlega ochronie w zakresie danych osobowych na zasadach wskazanych w {{ref:blok:wspolne-ochrona-danych-regulamin}}."
+
+  # ===== Rozdział: Wypłata kredytu =====
+  - id: kredyt-gotowkowy-wyplata
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wypłaca|przekazuje} kredyt jednorazowo, na rachunek {wskazany|oznaczony} w umowie, w terminie {{fakt:termin.kredyt-gotowkowy.wyplata}} od dnia, w którym zostały spełnione warunki uruchomienia kredytu."
+      - ustep: "{Warunkami wypłaty kredytu są|Wypłata kredytu następuje pod warunkiem}:"
+        punkty:
+          - "zawarcie umowy kredytu;"
+          - "upływ terminu do odstąpienia od umowy, jeżeli Klient zażądał wypłaty dopiero po jego upływie, albo złożenie przez Klienta wniosku o wypłatę przed tym terminem;"
+          - tekst: "dostarczenie dokumentów dodatkowych, jeżeli były wymagane w decyzji kredytowej, tj.:"
+            litery:
+              - "aktualnego zaświadczenia o dochodach;"
+              - "dokumentów potwierdzających ustanowienie zabezpieczenia, jeżeli umowa je przewiduje;"
+          - "brak okoliczności wskazujących na utratę przez Klienta zdolności kredytowej."
+      - ustep: "Jeżeli Klient złożył wniosek o wypłatę kredytu przed upływem terminu do odstąpienia od umowy ({{ref:blok:kredyt-gotowkowy-odstapienie}}), jest obowiązany pamiętać, że w razie odstąpienia od umowy zwraca kapitał wraz z odsetkami za okres od dnia wypłaty.[^1]"
+    przypisy:
+      1: "Zasady zwrotu środków po odstąpieniu określa ustawa — zob. {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}."
+
+  # ===== Rozdział: Oprocentowanie, RRSO i prowizje =====
+  - id: kredyt-gotowkowy-oprocentowanie
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt gotówkowy jest oprocentowany według {stałej|niezmiennej w całym okresie kredytowania} stopy procentowej, której wysokość {wskazuje|określa} umowa. W dniu wejścia w życie Regulaminu {standardowe|podstawowe} oprocentowanie nominalne wynosi {{fakt:oprocentowanie.kredyt-gotowkowy.stale}} w skali roku."
+      - ustep: "Klienci, którzy przez co najmniej trzy miesiące przed złożeniem wniosku regularnie otrzymywali wynagrodzenie na rachunek osobisty prowadzony w Banku, mogą {skorzystać z promocyjnej stopy|uzyskać promocyjną stopę} {{fakt:oprocentowanie.kredyt-gotowkowy.promocyjne}} w skali roku; warunek ten Bank weryfikuje w dniu zawarcia umowy."
+      - ustep: "Odsetki {naliczane są|oblicza się} od kwoty niespłaconego kapitału za każdy dzień korzystania z kredytu, przy założeniu, że rok liczy 365 dni (366 w roku przestępnym), od dnia wypłaty do dnia poprzedzającego dzień całkowitej spłaty kredytu."
+      - ustep: "Odsetki za opóźnienie w spłacie naliczane są od kwoty zaległego kapitału według stopy {{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku, jednak nie wyższej niż wysokość odsetek maksymalnych za opóźnienie określona w przepisach prawa."
+
+  - id: kredyt-gotowkowy-koszty
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Całkowity koszt kredytu obejmuje odsetki, prowizje i inne opłaty, które Klient jest {obowiązany|zobowiązany} ponieść w związku z umową. Koszty niewliczane do całkowitego kosztu kredytu Bank wskazuje w umowie odrębnie, jeśli mogą wystąpić."
+      - ustep: "Za przygotowanie i udzielenie kredytu Bank {pobiera|nalicza} jednorazową prowizję w wysokości {{fakt:prowizja.kredyt-gotowkowy.przygotowanie}} kwoty kredytu, nie mniej jednak niż {{fakt:prowizja.kredyt-gotowkowy.przygotowanie-minimum}}.[^1] Prowizję można pokryć ze środków kredytu albo opłacić ze środków własnych Klienta przed wypłatą; sposób zapłaty wskazuje umowa."
+      - ustep: "Pozostałe opłaty związane z obsługą kredytu określa {{ref:dokument:taryfa-kredyty}}; Bank nie pobiera opłat, które nie zostały wskazane w umowie lub w Taryfie."
+    przypisy:
+      1: "Prowizja jest {wliczana|zaliczana} do całkowitego kosztu kredytu i uwzględniana w RRSO; w razie odstąpienia od umowy w terminie podlega rozliczeniu na zasadach określonych w {{ref:blok:kredyt-gotowkowy-odstapienie}}."
+
+  - id: kredyt-gotowkowy-koszty-tabela
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Wybrane|Najważniejsze} koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wysokość kosztów w dniu zawarcia umowy jest {wskazana|podana} w formularzu informacyjnym, a Klient {może|ma prawo} otrzymać jego wydruk w {placówce|oddziale} Banku."
+      - tabela:
+          kolumny:
+            - naglowek: "Pozycja kosztów"
+              waga: 3
+            - naglowek: "Wysokość"
+              waga: 2
+          wiersze:
+            - ["Prowizja za udzielenie kredytu", "{{fakt:prowizja.kredyt-gotowkowy.przygotowanie}} kwoty kredytu"]
+            - ["Minimalna kwota prowizji", "{{fakt:prowizja.kredyt-gotowkowy.przygotowanie-minimum}}"]
+            - ["Wezwanie do zapłaty", "{{fakt:oplata.kredyt-gotowkowy.wezwanie-do-zaplaty}}"]
+            - ["Zmiana harmonogramu spłat", "{{fakt:oplata.kredyt-gotowkowy.zmiana-harmonogramu}}"]
+            - ["Duplikat harmonogramu", "{{fakt:oplata.kredyt-gotowkowy.duplikat-harmonogramu}}"]
+          siatka: true
+
+  # ===== Rozdział: Harmonogram i spłata kredytu =====
+  - id: kredyt-gotowkowy-harmonogram
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt spłacany jest w ratach {równych|annuitetowych} (kapitałowo-odsetkowych), płatnych w terminach {określonych|wskazanych} w harmonogramie spłat. Dzień spłaty raty Klient wskazuje we wniosku; jeżeli przypada on na dzień wolny od pracy, termin płatności upływa w najbliższym dniu roboczym."
+      - ustep: "Harmonogram spłat {stanowi załącznik do umowy|jest załączony do umowy} i zawiera:"
+        punkty:
+          - "terminy płatności poszczególnych rat;"
+          - "wysokość każdej raty, z podziałem na część kapitałową i odsetkową;"
+          - "informację o saldzie kapitału po zapłacie każdej raty."
+      - ustep: "Klient ma prawo do {bezpłatnego|nieodpłatnego} otrzymania na żądanie, w dowolnym czasie trwania umowy, zestawienia spłat w formie tabeli amortyzacji. Duplikat harmonogramu w formie papierowej jest wydawany za opłatą {{fakt:oplata.kredyt-gotowkowy.duplikat-harmonogramu}}."
+
+  - id: kredyt-gotowkowy-splata
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Raty są {pobierane|ściągane} z rachunku wskazanego w umowie w dniu ich wymagalności. Klient jest obowiązany zapewnić na rachunku środki w wysokości umożliwiającej pobranie raty najpóźniej w dniu poprzedzającym termin spłaty."
+      - ustep: "Wpłaty Klienta {zaliczane są|zalicza się} na poczet zadłużenia w {następującej|poniższej} kolejności:"
+        punkty:
+          - "odsetki za opóźnienie;"
+          - "zaległe odsetki umowne;"
+          - "zaległy kapitał;"
+          - "odsetki bieżące i kapitał raty;"
+          - "opłaty i prowizje należne Bankowi."
+      - ustep: "Za dzień spłaty uważa się dzień uznania rachunku wskazanego w umowie. Klient może raz w trakcie umowy złożyć wniosek o zmianę dnia spłaty rat lub o zawieszenie spłaty rat na okres do {{fakt:okres.kredyt-gotowkowy.zawieszenie-max}} — {{fakt:limit.kredyt-gotowkowy.zawieszenia-liczba}}.[^1]"
+    przypisy:
+      1: "Zawieszenie spłaty rat wydłuża okres kredytowania i może zwiększyć całkowity koszt kredytu; za zmianę harmonogramu Bank pobiera opłatę zgodnie z Taryfą ({{fakt:oplata.kredyt-gotowkowy.zmiana-harmonogramu}})."
+
+  # ===== Rozdział: Wcześniejsza spłata kredytu =====
+  - id: kredyt-gotowkowy-wczesna-splata
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może {w każdym czasie|w dowolnym momencie} spłacić kredyt w całości lub w części przed terminem {określonym|wskazanym} w umowie. Zamiar wcześniejszej spłaty Klient zgłasza w {placówce|oddziale} Banku lub w bankowości elektronicznej, co najmniej na {{fakt:termin.kredyt-gotowkowy.zgloszenie-wczesnej-splaty}} przed planowaną datą wpłaty."
+      - ustep: "W razie wcześniejszej spłaty całości lub części kredytu całkowity koszt kredytu ulega obniżeniu o odsetki i opłaty dotyczące okresu, o który skrócono umowę. Bank {dokonuje rozliczenia|rozlicza spłatę} w terminie {{fakt:termin.kredyt-gotowkowy.rozliczenie-wczesnej-splaty}} od dnia wcześniejszej spłaty."
+      - ustep: "Bank {ma prawo|może} żądać od Klienta rekompensaty za koszty związane z wcześniejszą spłatą kredytu, w wysokości:"
+        punkty:
+          - "{{fakt:prowizja.kredyt-gotowkowy.wczesna-splata-powyzej-roku}} kwoty spłacanego kapitału — jeżeli do dnia wygaśnięcia umowy pozostało więcej niż rok;"
+          - "{{fakt:prowizja.kredyt-gotowkowy.wczesna-splata-do-roku}} kwoty spłacanego kapitału — jeżeli do dnia wygaśnięcia umowy pozostało nie więcej niż rok."
+      - ustep: "Rekompensata nie może {przekroczyć kwoty|być wyższa niż kwota} odsetek, które Klient zapłaciłby w okresie od dnia wcześniejszej spłaty do dnia wygaśnięcia umowy.[^1] Rekompensaty nie pobiera się, gdy spłata następuje ze środków ubezpieczenia kredytu."
+    przypisy:
+      1: "Limit rekompensaty wynika z przepisów — zob. {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}. Bank po całkowitej spłacie wydaje zaświadczenie o spłacie w terminie {{fakt:termin.kredyt-gotowkowy.zaswiadczenie-o-splacie}}."
+
+  # ===== Rozdział: Odstąpienie od umowy =====
+  - id: kredyt-gotowkowy-odstapienie
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może odstąpić od umowy kredytu {bez podawania przyczyn|bez wskazywania powodów} w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia zawarcia umowy, a jeżeli informacje wymagane przez przepisy zostały przekazane później — od dnia ich otrzymania. Termin uważa się za zachowany, jeżeli przed jego upływem oświadczenie zostało wysłane."
+      - ustep: "Oświadczenie o odstąpieniu {składa się|można złożyć} na piśmie, w bankowości elektronicznej albo w innej formie wskazanej w umowie. Do zachowania terminu wystarczy nadanie oświadczenia w placówce pocztowej lub jego złożenie w {placówce|oddziale} Banku."
+      - ustep: "W razie odstąpienia od umowy Klient jest {obowiązany|zobowiązany} niezwłocznie, nie później niż w terminie {{fakt:termin.kredyt-gotowkowy.zwrot-po-odstapieniu}} od dnia złożenia oświadczenia, zwrócić Bankowi kapitał wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, według stopy określonej w umowie. Bank nie może żądać zwrotu innych kosztów, z wyjątkiem opłat uiszczonych przez Bank organom administracji publicznej, których nie można odzyskać.[^1]"
+    przypisy:
+      1: "Prawo odstąpienia i skutki jego wykonania określa {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}; w zakresie umów zawieranych na odległość zob. także {{ref:akt:dz-u-2020-287-prawa-konsumenta}}."
+
+  # ===== Rozdział: Ubezpieczenie kredytu (opcjonalne) =====
+  - id: kredyt-gotowkowy-ubezpieczenie
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Zawarcie|Zawarcie przez Klienta} umowy ubezpieczenia na życie lub od utraty pracy nie jest warunkiem udzielenia kredytu ani warunkiem wypłaty jego środków. Ubezpieczenie jest {dobrowolne|oferowane Klientowi dodatkowo}, a jego brak nie wpływa na decyzję kredytową."
+      - ustep: "Klient, który {zdecyduje się na|wybierze} ubezpieczenie, opłaca jednorazową składkę w wysokości {{fakt:ubezpieczenie.kredyt-gotowkowy.skladka}} kwoty kredytu. Składkę można sfinansować ze środków kredytu, co zwiększa kwotę zadłużenia i całkowity koszt kredytu, o czym Bank informuje w formularzu informacyjnym.[^1]"
+      - ustep: "Klient może odstąpić od umowy ubezpieczenia w terminie {{fakt:termin.kredyt-gotowkowy.ubezpieczenie-odstapienie}} od dnia jej zawarcia. W razie odstąpienia składka podlega zwrotowi w całości; gdy składkę sfinansowano z kredytu, zwrot zalicza się na poczet kapitału."
+    przypisy:
+      1: "Informacje o zakresie ochrony, wyłączeniach odpowiedzialności i trybie zgłaszania roszczeń zawiera dokument informacyjny o produkcie ubezpieczeniowym, który Klient otrzymuje przed zawarciem umowy ubezpieczenia."
+
+  # ===== Rozdział: Opóźnienie w spłacie i windykacja =====
+  - id: kredyt-gotowkowy-opoznienie
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} Klient nie ureguluje raty w terminie, Bank {nalicza|pobiera} odsetki za opóźnienie od kwoty zaległego kapitału za okres od dnia następującego po terminie spłaty do dnia poprzedzającego dzień zapłaty. Odsetki te są wyższe od oprocentowania umownego i wynoszą {{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku."
+      - ustep: "O opóźnieniu Bank {informuje|powiadamia} Klienta w formie:"
+        punkty:
+          - "wiadomości SMS lub wiadomości w bankowości elektronicznej — od pierwszego dnia opóźnienia;"
+          - "upomnienia pisemnego, za które Bank pobiera opłatę {{fakt:oplata.upomnienie}};"
+          - "wezwania do zapłaty, wysłanego po upływie okresu opóźnienia wskazanego w umowie, za które Bank pobiera opłatę {{fakt:oplata.kredyt-gotowkowy.wezwanie-do-zaplaty}}."
+      - ustep: "Opłaty za upomnienie i wezwanie do zapłaty są {pobierane|naliczane} wyłącznie za czynności {faktycznie wykonane|rzeczywiście wykonane} przez Bank i nie mogą być naliczone więcej niż jeden raz w związku z tą samą zaległością."
+
+  - id: kredyt-gotowkowy-windykacja
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient {znajduje się|znalazł się} w trudnej sytuacji finansowej, może {złożyć|skierować} do Banku wniosek o zmianę warunków spłaty, w tym o wydłużenie okresu kredytowania, obniżenie raty lub zawieszenie spłaty. Bank rozpatruje wniosek w terminie {{fakt:termin.kredyt-gotowkowy.rozpatrzenie-wniosku}} i informuje Klienta o skutkach proponowanej zmiany dla kosztów kredytu."
+      - ustep: "Czynności windykacyjne {prowadzone są|prowadzi się} z poszanowaniem dóbr osobistych Klienta. Bank nie kontaktuje się z Klientem w porze nocnej ani w dni ustawowo wolne od pracy, o ile Klient nie wyraził na to zgody, i nie ujawnia osobom trzecim informacji objętych tajemnicą bankową."
+      - ustep: "Bank może {przekazać|udostępnić} informacje o zadłużeniu do biura informacji kredytowej, jeżeli opóźnienie w spłacie przekracza {{fakt:termin.kredyt-gotowkowy.opoznienie-do-rejestru}}, a od poinformowania Klienta o zamiarze przekazania danych upłynęło co najmniej {{fakt:termin.kredyt-gotowkowy.zawiadomienie-przed-rejestrem}}.[^1]"
+    przypisy:
+      1: "Zasady ujawniania informacji o zobowiązaniach reguluje {{ref:akt:dz-u-2024-1646-prawo-bankowe}}; ochrona danych — {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
+
+  # ===== Rozdział: Wypowiedzenie umowy =====
+  - id: kredyt-gotowkowy-wypowiedzenie
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank może wypowiedzieć umowę kredytu w razie {zaległości w spłacie|opóźnienia w spłacie}, po uprzednim wezwaniu Klienta do zapłaty w terminie {{fakt:termin.kredyt-gotowkowy.wezwanie-do-zaplaty}} od dnia otrzymania wezwania. Wezwanie zawiera pouczenie o możliwości złożenia w terminie {{fakt:termin.kredyt-gotowkowy.restrukturyzacja-wniosek}} wniosku o restrukturyzację zadłużenia."
+      - ustep: "Wypowiedzenie umowy przez Bank następuje {na piśmie|w formie pisemnej}, a okres wypowiedzenia wynosi {{fakt:termin.kredyt-gotowkowy.wypowiedzenie-przez-bank}}. W tym okresie Klient może spłacić zaległość i kontynuować umowę na dotychczasowych warunkach."
+      - ustep: "Klient może wypowiedzieć umowę kredytu {przez złożenie|składając} oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie {{fakt:termin.wypowiedzenie-przez-klienta}} od dnia otrzymania oświadczenia przez Bank.[^1]"
+      - ustep: "Po upływie okresu wypowiedzenia całość zadłużenia staje się wymagalna, a odsetki od zadłużenia przeterminowanego są naliczane według stopy odsetek za opóźnienie."
+    przypisy:
+      1: "Szczegółowy tryb wypowiedzenia umowy kredytu konsumenckiego określa {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}."
+
+  # ===== Rozdział: Postanowienia końcowe =====
+  - id: kredyt-gotowkowy-koncowe
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: wymagany-kredyt-gotowkowy
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest {obowiązany|zobowiązany} zawiadamiać Bank o zmianie danych kontaktowych, miejsca zamieszkania i źródła dochodów w terminie {{fakt:termin.kredyt-gotowkowy.zgloszenie-zmiany-danych}} od dnia ich zmiany. Korespondencję skierowaną na ostatni znany Bankowi adres uważa się za doręczoną."
+      - ustep: "Regulamin obowiązuje od dnia {{param:od}} i {ma zastosowanie|stosuje się} do umów zawartych od tego dnia. Do umów zawartych wcześniej stosuje się regulamin obowiązujący w dniu ich zawarcia, chyba że Klient zaakceptował nowe brzmienie."
+      - ustep: "Bank nie ponosi odpowiedzialności za szkody {wynikłe|powstałe} z przyczyn niezależnych od Banku, w szczególności z awarii systemów teleinformatycznych niezawinionych przez Bank oraz działań organów władzy publicznej."
