@@ -382,12 +382,12 @@ Korespondencję do Klienta wysyła się na adres wskazany w umowie albo w bankow
 Dla przesyłek niedoręczonych obowiązują zasady:
 
 - 1\) przesyłkę zwróconą odnotowuje się w dniu jej otrzymania;
-- 2\) po upływie 14 dni od pierwszego awizowania przesyłkę uznaje się za doręczoną;
+- 2\) po upływie 10 dni od pierwszego awizowania przesyłkę uznaje się za doręczoną;
 - 3\) w razie zmiany adresu ponowną wysyłkę uzgadnia się z Klientem.
 
 Korespondencję elektroniczną uznaje się za doręczoną w dniu udostępnienia Klientowi w bankowości elektronicznej.
 
-- 1\. Klient, który utracił dostęp do środków wskutek zajęcia, ma prawo złożyć w Banku reklamację dotyczącą sposobu wykonania zajęcia (nie zaś jego zasadności). Reklamację przyjmuje i rozpatruje Biuro Reklamacji w terminie 15 dni, o ile przepisy nie przewidują terminu odmiennego.
+- 1\. Klient, który utracił dostęp do środków wskutek zajęcia, ma prawo złożyć w Banku reklamację dotyczącą sposobu wykonania zajęcia (nie zaś jego zasadności). Reklamację przyjmuje i rozpatruje Biuro Reklamacji w terminie 12 dni, o ile przepisy nie przewidują terminu odmiennego.
 - 2\. Zarzuty dotyczące zasadności samego zajęcia, wysokości należności lub tytułu wykonawczego rozpatruje wyłącznie organ egzekucyjny lub sąd. Pracownik pouczy o tym Klienta i może wskazać adres organu na podstawie korespondencji.
 - 3\. W rozmowie telefonicznej z Klientem pod numerem 800 000 001 (codziennie przez całą dobę) udziela się wyłącznie informacji ogólnych; informacje o konkretnej sprawie zajęcia przekazuje się po pełnym uwierzytelnieniu Klienta.
 - 1\. Jeżeli Klient zgłosi się do placówki z pytaniem o zajęcie, pracownik udziela mu informacji wyłącznie po uwierzytelnieniu, w zakresie dotyczącym jego rachunków. Pracownik nie odczytuje treści zawiadomienia w całości ani nie udostępnia jego kopii, chyba że organ wyraźnie na to zezwolił; Klient może uzyskać dokumenty bezpośrednio od organu egzekucyjnego.

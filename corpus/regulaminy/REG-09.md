@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/REG/09 Wersja 1 Obowiązuje od 1 września 2025 r.
+BP/REG/09 Wersja 2 Obowiązuje od 1 września 2025 r.
 
 <!-- page: 2 -->
 ## Rozdział 1. Postanowienia ogólne
@@ -402,7 +402,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Kredytobiorca zapewnia na rachunku wskazanym w umowie środki wystarczające do pobrania raty w dniu jej płatności. Jeżeli środki są niewystarczające, Bank może obciążyć <!-- page: 17 --> inne rachunki Kredytobiorcy prowadzone w Banku, po uprzednim poinformowaniu go o tym zamiarze.
 - 2\. Potrącenie wierzytelności Banku z rachunków innych niż wskazane w umowie następuje na zasadach określonych w ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646). Bank nie potrąca środków wolnych od zajęcia ani środków pochodzących ze świadczeń, których potrącenie jest wyłączone przepisami.
-- 3\. Jeżeli rata została pobrana z rachunku prowadzonego w innej walucie niż złoty, Bank przelicza ją po kursie z tabeli Banku obowiązującej o godzinie 9:00 w dniu spłaty, z uwzględnieniem marży przeliczeń w wysokości 1,5%.
+- 3\. Jeżeli rata została pobrana z rachunku prowadzonego w innej walucie niż złoty, Bank przelicza ją po kursie z tabeli Banku obowiązującej o godzinie 8:30 w dniu spłaty, z uwzględnieniem marży przeliczeń w wysokości 1,3%.
 
 ## Rozdział 10. Ubezpieczenia
 
@@ -450,7 +450,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 46.
 
 - 1\. Kredytobiorca zawiadamia Bank o zmianie imienia, nazwiska, adresu zamieszkania, adresu korespondencyjnego, numeru telefonu i adresu poczty elektronicznej w terminie 14 dni od dnia zmiany, osobiście w placówce lub w bankowości elektronicznej.
-- 2\. Korespondencję wysłaną na ostatni znany Bankowi adres uznaje się za doręczoną po upływie 14 dni od dnia nadania, jeżeli Kredytobiorca nie zawiadomił o zmianie adresu.
+- 2\. Korespondencję wysłaną na ostatni znany Bankowi adres uznaje się za doręczoną po upływie 10 dni od dnia nadania, jeżeli Kredytobiorca nie zawiadomił o zmianie adresu.
 <!-- page: 19 -->
 - 3\. Bank nie odpowiada za skutki niepowiadomienia go o zmianie danych, w szczególności za doręczenie korespondencji pod nieaktualny adres.
 
@@ -471,7 +471,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Od kwoty zadłużenia przeterminowanego Bank pobiera odsetki za opóźnienie w wysokości odsetek maksymalnych za opóźnienie, nie wyższych niż 17% w skali roku, w okresie od dnia następującego po terminie płatności do dnia spłaty włącznie.
 - 2\. W razie opóźnienia Bank może:
   - 1\) wysłać Kredytobiorcy przypomnienie wiadomością elektroniczną lub telefonicznie;
-  - 2\) wezwać Kredytobiorcę do zapłaty zaległości, wyznaczając termin 14 dni, i pobrać opłatę za wezwanie w wysokości 15,00 zł;
+  - 2\) wezwać Kredytobiorcę do zapłaty zaległości, wyznaczając termin 14 dni, i pobrać opłatę za wezwanie w wysokości 20,00 zł;
   - 3\) zaproponować restrukturyzację zadłużenia, w tym zmianę harmonogramu spłat.
 - 3\. W wezwaniu do zapłaty Bank informuje Kredytobiorcę o skutkach braku płatności, w tym o możliwości wypowiedzenia umowy i wszczęcia postępowania egzekucyjnego, oraz o możliwości złożenia wniosku o restrukturyzację zadłużenia.
 - 4\. Informacje o zadłużeniu przeterminowanym Bank może przekazać do biur informacji gospodarczej na zasadach określonych w przepisach, po spełnieniu przewidzianych w nich warunków, w tym po uprzednim wezwaniu do zapłaty.
@@ -498,7 +498,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Bank informuje Kredytobiorcę o powstaniu zaległości w spłacie wiadomością SMS, e-mail lub telefonicznie, nie później niż w kolejnym dniu roboczym po upływie terminu płatności raty. Przypomnienie nie jest czynnością płatną.
 - 2\. Jeżeli zaległość nie zostanie uregulowana, Bank wysyła pisemne wezwanie do zapłaty, zawierające wskazanie kwoty zaległości, terminu jej zapłaty wynoszącego 14 dni oraz pouczenie o skutkach braku zapłaty.
-- 3\. Za wezwanie Bank pobiera opłatę określoną w Taryfie, nie wyższą niż 15,00 zł, oraz zwrot udokumentowanych kosztów przesyłki poleconej.
+- 3\. Za wezwanie Bank pobiera opłatę określoną w Taryfie, nie wyższą niż 20,00 zł, oraz zwrot udokumentowanych kosztów przesyłki poleconej.
 
 ## Rozdział 13. Postanowienia końcowe
 
@@ -510,9 +510,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja musi zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz żądany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację niezwłocznie, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli rozpatrzenie reklamacji w tych terminach nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli rozpatrzenie reklamacji w tych terminach nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 40 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 
 ### § 53.
 
@@ -523,7 +523,7 @@ Użyte w Regulaminie określenia oznaczają:
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank powiadamia Klienta na trwałym nośniku, nie później niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść proponowanych zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ### § 54.
 

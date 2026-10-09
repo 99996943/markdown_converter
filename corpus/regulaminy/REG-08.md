@@ -118,8 +118,8 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 13.
 
 - 1\. Umowa rachunku może zostać zawarta na odległość, bez jednoczesnej obecności stron, za pośrednictwem bankowości elektronicznej lub strony internetowej Banku. Przed zawarciem umowy Bank udostępnia Klientowi informacje wymagane przepisami o prawach konsumenta, w tym o głównych cechach usługi, łącznej cenie i sposobie odstąpienia od umowy.
-- 2\. Klient, który zawarł umowę na odległość, może od niej odstąpić bez podania przyczyny w terminie 14 dni od dnia zawarcia umowy lub od dnia otrzymania postanowień umowy i informacji, jeżeli nastąpiło to później. Zasady tego uprawnienia określa ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
-- 3\. Oświadczenie o odstąpieniu składa się w formie pisemnej lub w bankowości elektronicznej przed upływem terminu; wystarczy wysłanie oświadczenia przed jego upływem. W razie odstąpienia Bank zwraca Klientowi pobrane opłaty z wyjątkiem opłat za usługi faktycznie wykonane na wyraźne żądanie Klienta, w terminie 14 dni.
+- 2\. Klient, który zawarł umowę na odległość, może od niej odstąpić bez podania przyczyny w terminie 21 dni od dnia zawarcia umowy lub od dnia otrzymania postanowień umowy i informacji, jeżeli nastąpiło to później. Zasady tego uprawnienia określa ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
+- 3\. Oświadczenie o odstąpieniu składa się w formie pisemnej lub w bankowości elektronicznej przed upływem terminu; wystarczy wysłanie oświadczenia przed jego upływem. W razie odstąpienia Bank zwraca Klientowi pobrane opłaty z wyjątkiem opłat za usługi faktycznie wykonane na wyraźne żądanie Klienta, w terminie 10 dni.
 
 ## Rozdział 3. Dysponowanie rachunkiem
 
@@ -138,24 +138,24 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 15.
 
 - 1\. Wpłaty gotówkowe na rachunek można dokonywać w kasach placówek oraz we wpłatomatach Banku. Wpłata jest księgowana niezwłocznie po jej przyjęciu, nie później niż w dniu roboczym, w którym została dokonana, jeżeli została przyjęta przed godziną graniczną wskazaną w komunikatach Banku.
-- 2\. Wypłaty gotówkowe są dokonywane w kasach placówek w godzinach ich pracy, w bankomatach oraz w innych punktach akceptujących kartę debetową. Wypłata w kasie jednorazowo przekraczająca 10 000,00 zł wymaga wcześniejszego zgłoszenia (awizo) co najmniej na jeden dzień roboczy przed planowaną wypłatą.
+- 2\. Wypłaty gotówkowe są dokonywane w kasach placówek w godzinach ich pracy, w bankomatach oraz w innych punktach akceptujących kartę debetową. Wypłata w kasie jednorazowo przekraczająca 15 000,00 zł wymaga wcześniejszego zgłoszenia (awizo) co najmniej na jeden dzień roboczy przed planowaną wypłatą.
 - 3\. Bank nie jest obowiązany przyjąć wpłaty lub dokonać wypłaty w przypadku:
   - 1\) podejrzenia, że banknoty lub monety są sfałszowane albo uszkodzone w stopniu wykluczającym ich wymianę;
   - 2\) braku możliwości potwierdzenia tożsamości osoby dokonującej wpłaty lub wypłaty;
   - 3\) okoliczności uzasadniających zastosowanie przez Bank środków bezpieczeństwa finansowego.
-- 4\. Za wpłatę gotówki dokonaną w placówce Bank pobiera opłatę w wysokości 3,00 zł, o ile Taryfa nie przewiduje zwolnienia z opłaty dla danego rodzaju rachunku.
+- 4\. Za wpłatę gotówki dokonaną w placówce Bank pobiera opłatę w wysokości 3,50 zł, o ile Taryfa nie przewiduje zwolnienia z opłaty dla danego rodzaju rachunku.
 
 ### § 16.
 
 - 1\. Zgłoszenie zamiaru wypłaty gotówki (awizo) składa się w placówce, w której wypłata ma nastąpić, w bankowości elektronicznej albo na Infolinii pod numerem 800 000 001. Zgłoszenie określa kwotę, walutę oraz planowany dzień wypłaty i jest wiążące dla Klienta.
-- 2\. Wypłata gotówki wymagająca awizowania dotyczy kwot przekraczających 10 000,00 zł jednorazowo, a w przypadku kwot wyższych niż równowartość 15 000,00 zł Bank może wymagać wcześniejszego uzgodnienia terminu o więcej niż jeden dzień roboczy.
+- 2\. Wypłata gotówki wymagająca awizowania dotyczy kwot przekraczających 15 000,00 zł jednorazowo, a w przypadku kwot wyższych niż równowartość 15 000,00 zł Bank może wymagać wcześniejszego uzgodnienia terminu o więcej niż jeden dzień roboczy.
 - 3\. Jeżeli Klient nie zgłosi się po odbiór środków w dniu wskazanym w awizie albo w dniu następnym, zgłoszenie wygasa. Bank nie pobiera opłaty za wygaśnięcie awiza, o ile Klient nie dokonał wielokrotnego, nieuzasadnionego zgłaszania wypłat bez ich odbioru.
 - 4\. Wypłaty gotówki w walucie obcej są realizowane w placówkach, które prowadzą obsługę kasową w tej walucie, a w razie braku dostępnych nominałów Bank może wypłacić równowartość w złotych polskich po kursie z tabeli obowiązującej w dniu wypłaty.
 
 ### § 17.
 
 - 1\. Rachunek, na którym przez okres 24 miesięcy nie dokonano żadnej operacji z inicjatywy Posiadacza, uznaje się za nieaktywny. Do operacji tych nie zalicza się kapitalizacji odsetek ani pobrania opłat.
-- 2\. Bank informuje Posiadacza o zamiarze uznania rachunku za nieaktywny, na trwałym nośniku, z wyprzedzeniem 30 dni. Aby uniknąć skutków nieaktywności, Posiadacz powinien wykonać operację lub złożyć w Banku oświadczenie o zamiarze dalszego korzystania z rachunku.
+- 2\. Bank informuje Posiadacza o zamiarze uznania rachunku za nieaktywny, na trwałym nośniku, z wyprzedzeniem 21 dni. Aby uniknąć skutków nieaktywności, Posiadacz powinien wykonać operację lub złożyć w Banku oświadczenie o zamiarze dalszego korzystania z rachunku.
 - 3\. Na rachunku nieaktywnym Bank może zawiesić naliczanie opłaty za prowadzenie rachunku, jeżeli saldo wynosi zero. Jeżeli saldo jest niższe niż opłata, rachunek może <!-- page: 9 --> zostać zamknięty za wypowiedzeniem, a środki zostaną wypłacone Posiadaczowi lub przekazane do depozytu zgodnie z przepisami.
 
 ### § 18.
@@ -169,7 +169,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Za zgodą Banku Posiadacz może korzystać ze środków przekraczających saldo rachunku (debet) do wysokości przyznanego limitu, nie większego niż 10 000,00 zł. Przyznanie limitu poprzedza ocena zdolności kredytowej, zgodna z przepisami o kredycie konsumenckim.
 - 2\. Z tytułu wykorzystania limitu Bank pobiera odsetki według stopy 18,5% w stosunku rocznym, naliczane od kwoty faktycznie wykorzystanej, za każdy dzień korzystania. Wpływy na rachunek spłacają debet w pierwszej kolejności.
-- 3\. Posiadacz ma obowiązek spłacić debet w terminie wynikającym z umowy. W razie przekroczenia limitu (debetu nieautoryzowanego) Bank wzywa Posiadacza do niezwłocznej spłaty i może pobrać opłatę za upomnienie w wysokości 15,00 zł.
+- 3\. Posiadacz ma obowiązek spłacić debet w terminie wynikającym z umowy. W razie przekroczenia limitu (debetu nieautoryzowanego) Bank wzywa Posiadacza do niezwłocznej spłaty i może pobrać opłatę za upomnienie w wysokości 20,00 zł.
 - 4\. Bank może wypowiedzieć umowę o limit zadłużenia w przypadku istotnego pogorszenia zdolności kredytowej Posiadacza lub nieterminowej spłaty. Wypowiedzenie limitu nie powoduje wypowiedzenia umowy rachunku.
 
 ## Rozdział 4. Dyspozycje i zlecenia płatnicze
@@ -190,7 +190,7 @@ Użyte w Regulaminie określenia oznaczają:
     - a\) kodem wygenerowanym w aplikacji mobilnej;
     - b\) kodem jednorazowym przesłanym na zarejestrowany numer telefonu;
   - 3\) używając karty debetowej wraz z PIN lub w sposób zbliżeniowy.
-- 4\. Przelew krajowy zewnętrzny złożony w placówce podlega opłacie 8,00 zł, a przelew natychmiastowy — opłacie 5,00 zł.[^2]
+- 4\. Przelew krajowy zewnętrzny złożony w placówce podlega opłacie 8,00 zł, a przelew natychmiastowy — opłacie 3,50 zł.[^2]
 
 [^2]: Szczegółowe stawki oraz zwolnienia z opłat dla poszczególnych kanałów składania zleceń określa Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.
 
@@ -216,19 +216,19 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Jeżeli zlecenie zostało wykonane na podstawie błędnego unikatowego identyfikatora podanego przez Klienta, Bank nie ponosi odpowiedzialności za jego niewykonanie lub nienależyte wykonanie. Na wniosek Klienta Bank podejmuje jednak działania w celu odzyskania środków, o czym powiadamia Klienta.
 - 2\. W przypadku wykonania przelewu na rachunek niewłaściwego odbiorcy Bank przekazuje Klientowi, na jego pisemny wniosek, wszelkie dostępne informacje, w tym dane odbiorcy, niezbędne do dochodzenia roszczeń, jeżeli jest to dozwolone przepisami.
-- 3\. Środki wpłynięte na rachunek omyłkowo lub z naruszeniem prawa mogą zostać przez Bank zwrócone nadawcy bez zgody Posiadacza rachunku, jeżeli omyłka została stwierdzona w ciągu 15 dni od dnia uznania rachunku. O dokonaniu zwrotu Bank informuje Posiadacza, a w razie braku wystarczających środków — wzywa go do pokrycia kwoty ujemnego salda.
+- 3\. Środki wpłynięte na rachunek omyłkowo lub z naruszeniem prawa mogą zostać przez Bank zwrócone nadawcy bez zgody Posiadacza rachunku, jeżeli omyłka została stwierdzona w ciągu 14 dni od dnia uznania rachunku. O dokonaniu zwrotu Bank informuje Posiadacza, a w razie braku wystarczających środków — wzywa go do pokrycia kwoty ujemnego salda.
 
 ### § 24.
 
 - 1\. Przelew natychmiastowy jest przelewem krajowym w złotych polskich, który po otrzymaniu zlecenia jest realizowany przez Bank w trybie ciągłym, w dowolnym dniu i o dowolnej porze, jeżeli bank odbiorcy uczestniczy w takim systemie rozliczeń.
 - 2\. Limit jednej transakcji przelewu natychmiastowego wynosi 30 000,00 zł, a łączny dzienny limit przelewów — 20 000,00 zł. Przelew natychmiastowy może zostać przez Bank odmówiony z przyczyn technicznych albo z powodu ograniczeń po stronie banku odbiorcy; w takim wypadku Bank bez zbędnej zwłoki powiadamia Klienta.
-- 3\. Zlecenie przelewu natychmiastowego jest ostateczne po przekazaniu go do realizacji. Opłata za przelew natychmiastowy wynosi 5,00 zł i jest pobierana w dniu realizacji.
+- 3\. Zlecenie przelewu natychmiastowego jest ostateczne po przekazaniu go do realizacji. Opłata za przelew natychmiastowy wynosi 3,50 zł i jest pobierana w dniu realizacji.
 
 ## Rozdział 5. Oprocentowanie, opłaty i prowizje
 
 ### § 25.
 
-- 1\. Środki zgromadzone na rachunku są oprocentowane według zmiennej stopy procentowej w stosunku rocznym, która w dniu wejścia w życie Regulaminu wynosi 0,1%. Aktualne oprocentowanie jest podawane w placówkach oraz na stronie https://bank.example.
+- 1\. Środki zgromadzone na rachunku są oprocentowane według zmiennej stopy procentowej w stosunku rocznym, która w dniu wejścia w życie Regulaminu wynosi 0,15%. Aktualne oprocentowanie jest podawane w placówkach oraz na stronie https://bank.example.
 - 2\. Odsetki naliczane są od dnia wpływu środków na rachunek do dnia poprzedzającego dzień ich wypłaty, przy założeniu, że rok liczy 365 dni, a miesiąc — rzeczywistą liczbę dni. Odsetki są kapitalizowane w okresach odsetkowych: miesięczny, a podatek od odsetek jest pobierany zgodnie z obowiązującymi przepisami.
 <!-- page: 12 -->
 - 3\. Środki wykorzystane ponad saldo dostępne, w ramach zezwolonego limitu zadłużenia lub w razie niedozwolonego salda debetowego, są oprocentowane według stopy procentowej wynoszącej 18,5%. Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie według stopy nieprzekraczającej 17% w stosunku rocznym.
@@ -244,11 +244,11 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Za prowadzenie rachunku Bank pobiera miesięczną opłatę w wysokości 9,00 zł. Opłata jest pobierana z dołu z rachunku, a w razie braku wystarczających środków — jako zadłużenie na rachunku.[^3]
 - 3\. Pozostałe opłaty związane z rachunkiem obejmują w szczególności:
   - 1\) zlecenie stałe — 3,00 zł za każde wykonanie;
-  - 2\) polecenie zapłaty — 1,50 zł za każde wykonanie;
-  - 3\) przelew walutowy lub zagraniczny — 35,00 zł;
+  - 2\) polecenie zapłaty — 2,00 zł za każde wykonanie;
+  - 3\) przelew walutowy lub zagraniczny — 40,00 zł;
   - 4\) wydanie zaświadczenia o posiadaniu rachunku — 20,00 zł;
-  - 5\) wydanie duplikatu umowy — 30,00 zł.
-- 4\. Bank pobiera opłaty w dniu wykonania czynności albo w dniu wskazanym w Taryfie, obciążając rachunek. Jeżeli czynność, za którą pobrano opłatę, nie została wykonana z przyczyn leżących po stronie Banku, Bank zwraca opłatę w terminie 14 dni.
+  - 5\) wydanie duplikatu umowy — 35,00 zł.
+- 4\. Bank pobiera opłaty w dniu wykonania czynności albo w dniu wskazanym w Taryfie, obciążając rachunek. Jeżeli czynność, za którą pobrano opłatę, nie została wykonana z przyczyn leżących po stronie Banku, Bank zwraca opłatę w terminie 10 dni.
 - 5\. Bank nie może pobierać opłat za czynności, których wykonanie jest obowiązkiem Banku wynikającym z przepisów prawa, w szczególności za udzielanie informacji o operacjach płatniczych w zakresie wymaganym ustawą oraz za przyjęcie reklamacji.
 
 [^3]: Stawka opłaty za prowadzenie rachunku jest podawana w dokumencie: Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych; w przypadku różnicy między Regulaminem a Taryfą co do stawek pierwszeństwo ma Taryfa.
@@ -273,7 +273,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) odsetki za opóźnienie oraz odsetki od debetu;
   - 4\) kwoty wykorzystanego debetu.
 - 2\. Bank ma prawo potrącić należności wynikające z umowy z wierzytelnościami Posiadacza z tytułu salda dodatniego rachunku, po uprzednim zawiadomieniu Posiadacza, z zachowaniem przepisów dotyczących ochrony części środków zgromadzonych na rachunku przed zajęciem.
-- 3\. Za wysłanie wezwania do zapłaty zaległych należności Bank ma prawo pobrać opłatę w wysokości 15,00 zł, a od kwoty przeterminowanej nalicza odsetki za opóźnienie w stosunku rocznym w wysokości 17%.
+- 3\. Za wysłanie wezwania do zapłaty zaległych należności Bank ma prawo pobrać opłatę w wysokości 20,00 zł, a od kwoty przeterminowanej nalicza odsetki za opóźnienie w stosunku rocznym w wysokości 17%.
 
 ## Rozdział 6. Wyciągi i informacja o operacjach
 
@@ -330,12 +330,12 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) zaciągać zobowiązań z tytułu debetu ani zmieniać limitów transakcji;
   - 4\) dysponować środkami na wypadek śmierci Posiadacza.
 - 3\. Bank weryfikuje uprawnienia pełnomocnika przy każdej dyspozycji. W przypadku pełnomocnictw udzielonych w innej formie, w tym za granicą, Bank może zażądać dodatkowych dokumentów; rozpatrzenie takiego pełnomocnictwa trwa do 3 dni od dnia przedstawienia dokumentów.
-- 4\. Pełnomocnictwo wygasa z chwilą jego odwołania lub wypowiedzenia, śmierci Posiadacza albo pełnomocnika, a także z chwilą zamknięcia rachunku. Odwołanie jest skuteczne wobec Banku od dnia otrzymania przez Bank oświadczenia Posiadacza; Bank nie odpowiada za dyspozycje wykonane przed tą chwilą. Opłata za przyjęcie i zmianę pełnomocnictwa wynosi 0,00 zł.
+- 4\. Pełnomocnictwo wygasa z chwilą jego odwołania lub wypowiedzenia, śmierci Posiadacza albo pełnomocnika, a także z chwilą zamknięcia rachunku. Odwołanie jest skuteczne wobec Banku od dnia otrzymania przez Bank oświadczenia Posiadacza; Bank nie odpowiada za dyspozycje wykonane przed tą chwilą. Opłata za przyjęcie i zmianę pełnomocnictwa wynosi 10,00 zł.
 
 ### § 36.
 
 - 1\. Pełnomocnik oraz współposiadacz mogą składać dyspozycje dotyczące subkont walutowych prowadzonych do rachunku, w zakresie, w jakim mogą dysponować rachunkiem w złotych polskich, chyba że umowa lub pełnomocnictwo stanowią inaczej.
-- 2\. Przy dyspozycjach wymagających przewalutowania stosuje się kursy z tabeli Banku obowiązującej w chwili realizacji, a Bank informuje o zastosowanym kursie w potwierdzeniu transakcji. Marża Banku wynosi nie więcej niż 1,5% kursu średniego.
+- 2\. Przy dyspozycjach wymagających przewalutowania stosuje się kursy z tabeli Banku obowiązującej w chwili realizacji, a Bank informuje o zastosowanym kursie w potwierdzeniu transakcji. Marża Banku wynosi nie więcej niż 1,3% kursu średniego.
 - 3\. Współposiadacze mogą ustalić we wniosku sposób składania dyspozycji walutowych: samodzielnie przez każdego z nich lub łącznie przez wszystkich. Bank wykonuje dyspozycje zgodnie z ostatnio złożonym wspólnym oświadczeniem współposiadaczy.
 
 ### § 37.
@@ -365,7 +365,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) nie obejmuje środków przewidzianych w przepisach o dziedziczeniu jako część spadku w zakresie:
     - a\) wartości zachowku, o ile przysługuje uprawnionym osobom;
     - b\) zobowiązań Posiadacza wobec Banku z tytułu rachunku, które Bank ma prawo potrącić.
-- 4\. Wypłata następuje po przedstawieniu przez osobę uprawnioną odpisu skróconego aktu zgonu i dokumentu potwierdzającego jej tożsamość, nie później niż w terminie 30 dni od dnia dostarczenia dokumentów. Za przyjęcie, zmianę lub odwołanie dyspozycji Bank pobiera opłatę w wysokości 0,00 zł.
+- 4\. Wypłata następuje po przedstawieniu przez osobę uprawnioną odpisu skróconego aktu zgonu i dokumentu potwierdzającego jej tożsamość, nie później niż w terminie 30 dni od dnia dostarczenia dokumentów. Za przyjęcie, zmianę lub odwołanie dyspozycji Bank pobiera opłatę w wysokości 10,00 zł.
 - 5\. Po otrzymaniu informacji o śmierci Posiadacza Bank blokuje możliwość składania dyspozycji przez pełnomocnika i przez współposiadacza w zakresie wynikającym z tej śmierci, a rachunek jest dalej prowadzony do czasu wypłaty środków.
 
 ### § 40.
@@ -424,7 +424,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 46.
 
 - 1\. Posiadacz ma prawo żądać od Banku zwrotu kwoty autoryzowanej transakcji płatniczej zainicjowanej przez odbiorcę lub za jego pośrednictwem, jeżeli w chwili autoryzacji nie określono dokładnej kwoty, a kwota transakcji przewyższa kwotę, jakiej Posiadacz mógł się spodziewać z uwzględnieniem charakteru wcześniejszych transakcji i okoliczności.
-- 2\. Wniosek o zwrot należy złożyć w terminie 8 tygodni od dnia obciążenia rachunku. Bank w terminie 15 dni od dnia otrzymania wniosku dokonuje zwrotu pełnej kwoty transakcji albo podaje uzasadnienie odmowy wraz z informacją o możliwości odwołania się do właściwych organów.
+- 2\. Wniosek o zwrot należy złożyć w terminie 8 tygodni od dnia obciążenia rachunku. Bank w terminie 14 dni od dnia otrzymania wniosku dokonuje zwrotu pełnej kwoty transakcji albo podaje uzasadnienie odmowy wraz z informacją o możliwości odwołania się do właściwych organów.
 - 3\. Prawo do zwrotu nie przysługuje, jeżeli Posiadacz udzielił zgody na wykonanie transakcji bezpośrednio Bankowi, a informacja o przyszłej transakcji została mu przekazana co najmniej na 4 tygodnie przed jej wykonaniem w uzgodniony sposób, ani w odniesieniu do polecenia zapłaty w euro realizowanego w ramach jednolitego obszaru płatniczego, jeżeli przepisy wyłączają takie uprawnienie.
 
 ### § 47.
@@ -445,7 +445,7 @@ Użyte w Regulaminie określenia oznaczają:
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank informuje Klienta na trwałym nośniku, nie później niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść proponowanych zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ### § 49.
 
@@ -455,9 +455,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja powinna zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz żądany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację bez zbędnej zwłoki, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 40 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 
 ### § 50.
 
@@ -470,15 +470,15 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 51.
 
-- 1\. Umowa rachunku zostaje zawarta na czas nieokreślony. Posiadacz ma prawo ją wypowiedzieć w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego 30 dni, składając oświadczenie na piśmie lub w innej formie uzgodnionej z Bankiem.
-- 2\. Bank może wypowiedzieć umowę z zachowaniem terminu 60 dni, wyłącznie z ważnych przyczyn, do których zalicza się zwłaszcza:
+- 1\. Umowa rachunku zostaje zawarta na czas nieokreślony. Posiadacz ma prawo ją wypowiedzieć w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego 21 dni, składając oświadczenie na piśmie lub w innej formie uzgodnionej z Bankiem.
+- 2\. Bank może wypowiedzieć umowę z zachowaniem terminu 90 dni, wyłącznie z ważnych przyczyn, do których zalicza się zwłaszcza:
   - 1\) rażące naruszenie postanowień umowy lub Regulaminu przez Klienta;
   - 2\) podanie przez Klienta nieprawdziwych danych przy zawieraniu umowy;
   - 3\) wykorzystywanie rachunku do działań sprzecznych z prawem lub z zasadami współżycia społecznego;
   - 4\) brak operacji na rachunku w okresie 24 miesięcy przy saldzie niższym niż opłata za prowadzenie rachunku;
   - 5\) utratę przez Klienta zdolności do czynności prawnych bez ustanowienia przedstawiciela.
 - 3\. Wypowiedzenie umowy przez Bank następuje na piśmie lub na trwałym nośniku i zawiera uzasadnienie. W okresie wypowiedzenia Klient ma obowiązek rozliczyć wszystkie zobowiązania i wskazać rachunek, na który zostaną przekazane pozostałe środki.
-- 4\. Umowa wygasa w razie śmierci Posiadacza rachunku indywidualnego, z zastrzeżeniem przepisów dotyczących dyspozycji na wypadek śmierci. Umowa może być rozwiązana w każdym czasie za porozumieniem stron, a zamknięcie rachunku następuje bez opłat; opłata za zamknięcie wynosi 0,00 zł.
+- 4\. Umowa wygasa w razie śmierci Posiadacza rachunku indywidualnego, z zastrzeżeniem przepisów dotyczących dyspozycji na wypadek śmierci. Umowa może być rozwiązana w każdym czasie za porozumieniem stron, a zamknięcie rachunku następuje bez opłat; opłata za zamknięcie wynosi 10,00 zł.
 - 5\. Najpóźniej w terminie 14 dni od dnia rozwiązania umowy Bank rozlicza rachunek i wypłaca Klientowi pozostałe na nim środki, wraz z naliczonymi odsetkami, pomniejszone o należne Bankowi opłaty i zobowiązania.
 
 ### § 52.
@@ -493,7 +493,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 53.
 
-- 1\. Jeżeli w dniu rozwiązania umowy rachunek wykazuje saldo ujemne, Klient jest obowiązany niezwłocznie spłacić zadłużenie wraz z odsetkami i należnymi opłatami. Bank wzywa Klienta do spłaty na piśmie, wyznaczając termin nie krótszy niż 14 dni.
+- 1\. Jeżeli w dniu rozwiązania umowy rachunek wykazuje saldo ujemne, Klient jest obowiązany niezwłocznie spłacić zadłużenie wraz z odsetkami i należnymi opłatami. Bank wzywa Klienta do spłaty na piśmie, wyznaczając termin nie krótszy niż 10 dni.
 - 2\. Od należności przeterminowanych Bank oblicza odsetki w wysokości 17% w stosunku rocznym. Po bezskutecznym upływie terminu wyznaczonego w wezwaniu Bank może wszcząć postępowanie windykacyjne, a także przekazać informację o zadłużeniu do biura informacji gospodarczej na zasadach określonych w przepisach.
 - 3\. Zaległa należność może zostać pokryta w drodze potrącenia z innych wierzytelności Klienta wobec Banku, w tym z salda innych rachunków, w zakresie dopuszczalnym przez przepisy o ochronie środków przed zajęciem.
 

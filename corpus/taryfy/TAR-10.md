@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/TAR/10 Wersja 1 Obowiązuje od 1 czerwca 2025 r.
+BP/TAR/10 Wersja 2 Obowiązuje od 1 czerwca 2025 r.
 
 <!-- page: 2 -->
 ## I. Postanowienia ogólne
@@ -17,12 +17,12 @@ O zmianie Taryfy Bank informuje Klientów na trwałym nośniku nie później ni�
 
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego wykonywana jest czynność, w dniu realizacji, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank ma prawo pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane są oprocentowane odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca w terminie 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca w terminie 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się w górę do pełnego grosza.
 
 - 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest sporządzana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,5%.
+- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,3%.
 
 Przeliczeń między walutami obcymi Bank dokonuje za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -37,7 +37,7 @@ Opłaty za czynności wykonywane na wniosek Klienta, których Taryfa nie wymieni
 
 Niniejsza sekcja dotyczy kredytów gotówkowych i pożyczek ratalnych udzielanych osobom fizycznym niewykonującym działalności gospodarczej, w kwotach od 1 000,00 zł do 150 000,00 zł. Prowizję za przygotowanie i udzielenie kredytu Bank nalicza od kwoty przyznanego kredytu, nie niższą jednak niż 100,00 zł.
 
-Prowizja za udzielenie nie podlega zwrotowi w przypadku odstąpienia od umowy kredytu w terminie 14 dni, jeżeli kredyt został już uruchomiony i Klient nie zwrócił kapitału w terminie wynikającym z umowy; w pozostałych przypadkach Bank zwraca prowizję w terminie 14 dni.
+Prowizja za udzielenie nie podlega zwrotowi w przypadku odstąpienia od umowy kredytu w terminie 14 dni, jeżeli kredyt został już uruchomiony i Klient nie zwrócił kapitału w terminie wynikającym z umowy; w pozostałych przypadkach Bank zwraca prowizję w terminie 10 dni.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
@@ -53,14 +53,14 @@ Prowizja za udzielenie nie podlega zwrotowi w przypadku odstąpienia od umowy kr
 | 8. | Zmiana rachunku, z którego spłacany jest kredyt | za każdą zmianę | 30,00 zł |
 | 9. | Sporządzenie duplikatu harmonogramu spłat | za każdy dokument | 20,00 zł |
 | 10. | Zaświadczenie o spłacie kredytu lub o braku zadłużenia | za każde zaświadczenie | 20,00 zł |
-| 11. | Sporządzenie duplikatu umowy kredytu | za każdy dokument | 30,00 zł |
+| 11. | Sporządzenie duplikatu umowy kredytu | za każdy dokument | 35,00 zł |
 | 12. | Wniosek o restrukturyzację zadłużenia — rozpatrzenie | jednorazowo | 100,00 zł |
 | 13. | Wysłanie wyciągu lub harmonogramu w formie papierowej | za każdy dokument | 10,00 zł |
 | 14. | Wcześniejsza spłata całości kredytu w terminie odstąpienia od umowy | jednorazowo | bez opłat |
 | 15. | Rozpatrzenie wniosku o kredyt gotówkowy | jednorazowo | bez opłat |
-| 16. | Spłata kredytu w placówce Banku — wpłata gotówkowa na rachunek kredytowy | za każdą wpłatę | 3,00 zł |
+| 16. | Spłata kredytu w placówce Banku — wpłata gotówkowa na rachunek kredytowy | za każdą wpłatę | 3,50 zł |
 | 17. | Spłata raty przelewem z rachunku w innym banku | za każdy przelew | według taryfy banku Klienta |
-| 18. | Spłata raty przelewem natychmiastowym | za każdy przelew | 5,00 zł |
+| 18. | Spłata raty przelewem natychmiastowym | za każdy przelew | 4,00 zł |
 | 19. | Stałe zlecenie spłaty raty z rachunku osobistego w Banku | za każde zlecenie | bez opłat |
 | 20. | Spłata raty w punkcie partnerskim Banku | za każdą wpłatę | 4,00 zł |
 | 21. | Nadpłata raty ponad kwotę wymagalną — zarachowanie na poczet kapitału | za każdą nadpłatę | bez opłat |
@@ -99,7 +99,7 @@ Prowizja za udzielenie nie podlega zwrotowi w przypadku odstąpienia od umowy kr
 | 54. | Opłata za ponowne uruchomienie kredytu po wygaśnięciu terminu uruchomienia | jednorazowo | 100,00 zł |
 | 55. | Sporządzenie aneksu do umowy w formie dokumentowej | za każdy aneks | 150,00 zł, w tym 20,00 zł opłaty elektronicznej |
 | 56. | Wypłata kredytu na rachunek w innym banku w walucie obcej | od kwoty wypłaty | 0,2% min. 20,00 zł, max 150,00 zł |
-| 57. | Opłata za przeliczenie salda po kursie z Tabeli kursów walut | od kwoty przeliczenia | marża 1,5% |
+| 57. | Opłata za przeliczenie salda po kursie z Tabeli kursów walut | od kwoty przeliczenia | marża 1,3% |
 | 58. | Zmiana liczby rat — skrócenie okresu kredytowania | za każdą zmianę | bez opłat |
 | 59. | Zmiana rodzaju rat z równych na malejące | jednorazowo | 60,00 zł |
 | 60. | Zmiana rodzaju rat z malejących na równe | jednorazowo | 60,00 zł |
@@ -176,7 +176,7 @@ Niniejsza sekcja dotyczy kredytów zabezpieczonych hipoteką na nieruchomości m
 | 105. | Zaświadczenie o odsetkach zapłaconych w roku podatkowym | raz w roku | bez opłat |
 | 106. | Informacja o historii zmian oprocentowania kredytu | za każdą informację | 20,00 zł |
 | 107. | Zestawienie wszystkich spłat od dnia zawarcia umowy | za każde zestawienie | 40,00 zł |
-| 108. | Duplikat umowy kredytu hipotecznego wraz z załącznikami | za każdy dokument | 30,00 zł |
+| 108. | Duplikat umowy kredytu hipotecznego wraz z załącznikami | za każdy dokument | 35,00 zł |
 | 109. | Odpis aktu notarialnego z archiwum Banku | za każdy odpis | 50,00 zł |
 | 110. | Poświadczenie zgodności z oryginałem dokumentów kredytowych | za każdą stronę | 10,00 zł za stronę |
 | 111. | Wydanie kopii dokumentów kredytowych spadkobiercy kredytobiorcy | jednorazowo | bez opłat |
@@ -287,7 +287,7 @@ Od kwoty wykorzystanego limitu Bank pobiera odsetki według stopy wskazanej w um
 | 190. | Informacja o saldzie zadłużenia w limicie w placówce Banku | za każdą informację | bez opłat |
 | 191. | Informacja o saldzie zadłużenia w limicie telefonicznie | za każdą informację | bez opłat |
 | 192. | Opinia bankowa o sposobie obsługi limitu | za każdą opinię | 60,00 zł |
-| 193. | Duplikat umowy o limit | za każdy dokument | 30,00 zł |
+| 193. | Duplikat umowy o limit | za każdy dokument | 35,00 zł |
 | 194. | Sporządzenie aneksu do umowy o limit | za każdy aneks | 70,00 zł |
 | 195. | Weryfikacja zdolności kredytowej przy wniosku o podwyższenie limitu | jednorazowo | bez opłat |
 | 196. | Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość SMS | za każde powiadomienie | 2,00 zł |
@@ -302,7 +302,7 @@ Od kwoty wykorzystanego limitu Bank pobiera odsetki według stopy wskazanej w um
 | 205. | Opłata za przeniesienie limitu do nowego produktu rachunkowego | jednorazowo | bez opłat |
 | 206. | Zawieszenie możliwości korzystania z limitu na wniosek Klienta | za każde zawieszenie | bez opłat |
 | 207. | Odnowienie możliwości korzystania z limitu po zawieszeniu | za każde przywrócenie | bez opłat |
-| 208. | Opłata za brak spłaty minimalnej kwoty zadłużenia w terminie | za każdy miesiąc zaległości | 15,00 zł |
+| 208. | Opłata za brak spłaty minimalnej kwoty zadłużenia w terminie | za każdy miesiąc zaległości | 18,00 zł |
 | 209. | Odsetki od kwot przeterminowanych w limicie | rocznie, od kwoty zaległości | 17% |
 | 210. | Blokada karty kredytowej z powodu zaległości | jednorazowo | bez opłat |
 | 211. | Odblokowanie karty kredytowej po spłacie zaległości | jednorazowo | 20,00 zł |
@@ -417,16 +417,16 @@ Prowizję przygotowawczą Bank pobiera od kwoty kredytu, nie mniej niż 500,00 z
 | 296. | Przedłużenie terminu uruchomienia kredytu | za każde przedłużenie | 0,2% kwoty niewypłaconej min. 200,00 zł |
 | 297. | Rezygnacja z uruchomienia kredytu po zawarciu umowy | jednorazowo | 0,5% kwoty kredytu min. 300,00 zł |
 | 298. | Opłata za zmianę terminu płatności raty | za każdą zmianę | 100,00 zł |
-| 299. | Rozliczenie kredytu w walucie obcej — marża na przeliczeniu | od kwoty przeliczenia | 1,5% |
+| 299. | Rozliczenie kredytu w walucie obcej — marża na przeliczeniu | od kwoty przeliczenia | 1,3% |
 | 300. | Spłata kredytu walutowego w walucie innej niż waluta kredytu | od kwoty spłaty | 0,2% min. 20,00 zł |
-| 301. | Wpłata gotówkowa na rachunek kredytowy w placówce | za każdą wpłatę | 3,00 zł |
+| 301. | Wpłata gotówkowa na rachunek kredytowy w placówce | za każdą wpłatę | 3,50 zł |
 | 302. | Przelew spłaty raty z rachunku w innym banku | za każdy przelew | według taryfy banku przedsiębiorcy |
 | 303. | Promesa udzielenia kredytu (zobowiązanie do udzielenia kredytu) | jednorazowo | 0,3% kwoty promesy min. 300,00 zł |
 | 304. | Opinia bankowa o przedsiębiorcy dla kontrahentów | za każdą opinię | 100,00 zł |
 | 305. | Zaświadczenie o terminowej obsłudze zadłużenia | za każde zaświadczenie | 20,00 zł |
 | 306. | Zaświadczenie o posiadanych w Banku zobowiązaniach (wykaz kredytów) | za każde zaświadczenie | 60,00 zł |
 | 307. | Potwierdzenie salda kredytu dla biegłego rewidenta | za każde potwierdzenie | 80,00 zł |
-| 308. | Sporządzenie duplikatu umowy kredytu wraz z załącznikami | za każdy dokument | 30,00 zł |
+| 308. | Sporządzenie duplikatu umowy kredytu wraz z załącznikami | za każdy dokument | 35,00 zł |
 | 309. | Udostępnienie informacji o zadłużeniu osobom upoważnionym przez przedsiębiorcę | za każdą informację | bez opłat |
 | 310. | Dostęp do systemu bankowości elektronicznej w zakresie obsługi kredytów | miesięcznie | bez opłat |
 | 311. | Raport z wykorzystania kredytów w okresie sprawozdawczym | za każdy raport | 50,00 zł |
@@ -473,7 +473,7 @@ Bank nie pobiera opłat za informacje, które zgodnie z przepisami prawa udostę
 | 325. | Aneks do umowy kredytu dla przedsiębiorcy | za każdy aneks | 500,00 zł |
 | 326. | Zaświadczenie o spłacie kredytu, wydane w terminie 7 dni od wniosku | za każde zaświadczenie | 20,00 zł 1) |
 | 327. | Zaświadczenie o wysokości zadłużenia wg stanu na wskazany dzień | za każde zaświadczenie | 50,00 zł |
-| 328. | Duplikat umowy kredytu | za każdy dokument | 30,00 zł |
+| 328. | Duplikat umowy kredytu | za każdy dokument | 35,00 zł |
 | 329. | Kopia harmonogramu spłat | za każdy dokument | 20,00 zł |
 | 330. | Zmiana rachunku spłaty kredytu | za każdą zmianę | 30,00 zł |
 | 331. | Zmiana terminu spłaty raty | za każdą zmianę | 50,00 zł |
@@ -565,7 +565,7 @@ Pierwszy monit Bank kieruje do Klienta w terminie 3 dni od dnia wymagalności ra
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 398. | Monit pisemny w sprawie zaległości w spłacie | za każde upomnienie | 15,00 zł 1) |
+| 398. | Monit pisemny w sprawie zaległości w spłacie | za każde upomnienie | 18,00 zł 1) |
 | 399. | Monit SMS o zaległości w spłacie | za każdy monit | 3,00 zł |
 | 400. | Wezwanie do zapłaty przed wypowiedzeniem umowy | za każde wezwanie | 40,00 zł 2) |
 | 401. | Wizyta terenowa pracownika Banku w sprawie zaległości | za każdą wizytę | 120,00 zł 3) |
@@ -584,12 +584,12 @@ Pierwszy monit Bank kieruje do Klienta w terminie 3 dni od dnia wymagalności ra
 | 414. | Monit przesłany pocztą elektroniczną o zaległości w spłacie | za każdy monit | bez opłat |
 | 415. | Komunikat w aplikacji mobilnej o zaległości w spłacie | za każde powiadomienie | bez opłat |
 | 416. | Monit telefoniczny nagraną wiadomością | za każdy monit | bez opłat |
-| 417. | Drugi monit pisemny wysłany listem zwykłym | za każdy monit | 15,00 zł |
+| 417. | Drugi monit pisemny wysłany listem zwykłym | za każdy monit | 18,00 zł |
 | 418. | Trzeci monit pisemny nadany listem poleconym | za każdy monit | 25,00 zł |
 | 419. | Ostateczne wezwanie do zapłaty wysłane listem poleconym za potwierdzeniem odbioru | za każde wezwanie | 40,00 zł |
 | 420. | Ponowne doręczenie wezwania po zwrocie przesyłki (adres nieaktualny) | za każdą przesyłkę | 15,00 zł |
 | 421. | Ustalenie aktualnego adresu Klienta na podstawie rejestrów publicznych | za każde ustalenie | wg faktycznie poniesionych kosztów |
-| 422. | Opłata za wysłanie wezwania do współkredytobiorcy lub poręczyciela | za każde wezwanie | 15,00 zł |
+| 422. | Opłata za wysłanie wezwania do współkredytobiorcy lub poręczyciela | za każde wezwanie | 18,00 zł |
 | 423. | Rozłożenie zaległości na raty — ugoda do 6 miesięcy | jednorazowo | bez opłat |
 | 424. | Rozłożenie zaległości na raty — ugoda od 7 do 24 miesięcy | jednorazowo | 100,00 zł |
 | 425. | Rozłożenie zaległości na raty — ugoda powyżej 24 miesięcy | jednorazowo | 0,5% kwoty zaległości min. 200,00 zł |
@@ -639,7 +639,7 @@ Pierwszy monit Bank kieruje do Klienta w terminie 3 dni od dnia wymagalności ra
 | 469. | Okres wstrzymania czynności windykacyjnych na czas rozpatrzenia wniosku o restrukturyzację | za każdy wniosek | do 14 dni |
 | 470. | Opłata za przygotowanie planu spłaty po ustaniu zaległości | jednorazowo | bez opłat |
 | 471. | Opłata za ponowne wystawienie wezwania po uregulowaniu części zaległości | za każde wezwanie | 40,00 zł |
-| 472. | Opłata za zawiadomienie poręczyciela o zaległości kredytobiorcy | za każde zawiadomienie | 15,00 zł |
+| 472. | Opłata za zawiadomienie poręczyciela o zaległości kredytobiorcy | za każde zawiadomienie | 18,00 zł |
 
 <!-- page: 25 -->
 - 1\) Opłata za monit pisemny jest pobierana najwyżej raz w miesiącu kalendarzowym, w którym raty pozostają

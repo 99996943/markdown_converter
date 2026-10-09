@@ -366,7 +366,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 48.
 
 - 1\. Klient może w każdym czasie dokonać wcześniejszej spłaty całości lub części zadłużenia z tytułu karty. W razie wcześniejszej spłaty Bank nie pobiera prowizji ani innych opłat z tego tytułu.
-- 2\. Wpłaty dokonywane w placówkach Banku w gotówce na rachunek karty podlegają opłacie w wysokości 3,00 zł. Wpłaty przelewem z rachunku prowadzonego w Banku są bezpłatne.
+- 2\. Wpłaty dokonywane w placówkach Banku w gotówce na rachunek karty podlegają opłacie w wysokości 3,50 zł. Wpłaty przelewem z rachunku prowadzonego w Banku są bezpłatne.
 - 3\. Wpłata wpływająca na rachunek karty po godzinie granicznej wskazanej w komunikacie Banku jest księgowana w następnym dniu roboczym, a skutki opóźnienia ponosi Klient.
 
 ### § 49.
@@ -624,7 +624,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Jeżeli w terminie spłaty na rachunek karty nie wpłynie co najmniej minimalna kwota do zapłaty, Bank traktuje zadłużenie w niezapłaconej części jako przeterminowane i nalicza od niego odsetki za opóźnienie według stawki 17% w skali roku, od dnia następującego po upływie terminu spłaty.
 - 2\. W razie opóźnienia Bank może:
   - 1\) zablokować kartę, a także obniżyć lub zablokować limit kredytowy;
-  - 2\) wysłać Klientowi upomnienie, za które pobiera opłatę w wysokości 15,00 zł;
+  - 2\) wysłać Klientowi upomnienie, za które pobiera opłatę w wysokości 18,00 zł;
   - 3\) podjąć czynności zmierzające do odzyskania należności, w tym wezwać Klienta do zapłaty;
   - 4\) wpisać zobowiązanie do rejestru dłużników, na zasadach określonych w przepisach.
 - 3\. Opłaty za upomnienia i czynności windykacyjne odpowiadają rzeczywistym kosztom poniesionym przez Bank i nie mogą przekroczyć wysokości określonej w przepisach aktu prawnego: ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497). Bank nie pobiera kilku opłat za ten sam rodzaj czynności w tym samym okresie.
@@ -671,8 +671,8 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 91.
 
-- 1\. Klient może wypowiedzieć umowę o kartę kredytową w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego 30 dni, składając oświadczenie na piśmie lub na innym trwałym nośniku. Wypowiedzenie nie wymaga uzasadnienia.
-- 2\. Bank może wypowiedzieć umowę z zachowaniem 60 dni terminu wypowiedzenia, jeżeli zachodzi co najmniej jedna z następujących ważnych przyczyn:
+- 1\. Klient może wypowiedzieć umowę o kartę kredytową w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego 21 dni, składając oświadczenie na piśmie lub na innym trwałym nośniku. Wypowiedzenie nie wymaga uzasadnienia.
+- 2\. Bank może wypowiedzieć umowę z zachowaniem 30 dni terminu wypowiedzenia, jeżeli zachodzi co najmniej jedna z następujących ważnych przyczyn:
   - 1\) Klient naruszył istotne postanowienia umowy lub Regulaminu, w szczególności przez używanie karty niezgodnie z jej przeznaczeniem;
   - 2\) wystąpiła utrata zdolności kredytowej Klienta albo istotne jej zmniejszenie;
   - 3\) Klient podał nieprawdziwe informacje przy zawieraniu umowy;
@@ -694,7 +694,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. W okresie wypowiedzenia Klient może korzystać z karty na dotychczasowych zasadach, chyba że Bank wypowiedział umowę z powodu zaległości w spłacie lub zagrożenia bezpieczeństwa karty; w takim przypadku Bank może zablokować kartę od dnia doręczenia wypowiedzenia.
 - 2\. W okresie wypowiedzenia limit kredytowy nie ulega odnowieniu w zakresie, w jakim Klient spłaca zadłużenie, jeżeli Bank wypowiedział umowę. Klient spłaca zadłużenie w terminach określonych w zestawieniach transakcji, a po upływie okresu wypowiedzenia — w terminie wskazanym w piśmie rozliczającym umowę.
-- 3\. Po rozwiązaniu umowy Bank wystawia Klientowi, na jego żądanie, potwierdzenie spłaty zobowiązań i zamknięcia rachunku karty, w terminie 14 dni od dnia otrzymania żądania.
+- 3\. Po rozwiązaniu umowy Bank wystawia Klientowi, na jego żądanie, potwierdzenie spłaty zobowiązań i zamknięcia rachunku karty, w terminie 10 dni od dnia otrzymania żądania.
 
 ### § 94.
 
@@ -736,9 +736,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja powinna zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz oczekiwany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację bez zbędnej zwłoki, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank poinformuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank poinformuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 
 ### § 100.
 
@@ -750,7 +750,7 @@ Użyte w Regulaminie określenia oznaczają:
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank powiadamia Klienta na trwałym nośniku, nie później niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
 <!-- page: 24 -->
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ### § 101.
 
@@ -786,7 +786,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 Bankiem a Klientem jest język polski. Umowa oraz wszelka korespondencja są sporządzane w języku polskim, o ile strony nie postanowią <!-- page: 25 --> inaczej.
 
-- 2\. Klient może w każdym czasie zażądać udostępnienia mu treści umowy o kartę kredytową oraz Regulaminu w postaci umożliwiającej ich utrwalenie i odtworzenie. Za pierwszy duplikat umowy Bank nie pobiera opłaty, a za kolejne — pobiera opłatę w wysokości 30,00 zł.
+- 2\. Klient może w każdym czasie zażądać udostępnienia mu treści umowy o kartę kredytową oraz Regulaminu w postaci umożliwiającej ich utrwalenie i odtworzenie. Za pierwszy duplikat umowy Bank nie pobiera opłaty, a za kolejne — pobiera opłatę w wysokości 35,00 zł.
 - 3\. Klient będący konsumentem może zgłosić Bankowi sprzeciw wobec przetwarzania danych w celach marketingowych w każdym czasie, bez podawania przyczyn, a Bank niezwłocznie zaprzestaje takiego przetwarzania.
 
 ### § 106.

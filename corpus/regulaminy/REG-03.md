@@ -41,10 +41,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) za pośrednictwem bankowości elektronicznej, w formie elektronicznej, z wykorzystaniem środków uwierzytelnienia udostępnionych Klientowi;
   - 3\) telefonicznie, za pośrednictwem Infolinii, pod numerem 800 000 001, jeżeli Klient posiada już w Banku rachunek, a rozmowa kończy się potwierdzeniem warunków na trwałym nośniku.
 - 2\. Przed zawarciem umowy Bank przekazuje Klientowi na trwałym nośniku Regulamin, „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty” oraz formularz informacyjny dla deponenta, o którym mowa w § 41. Potwierdzenie zawarcia umowy Bank doręcza Klientowi w terminie 5 dni od jej zawarcia.[^2]
-- 3\. Klient będący konsumentem, który zawarł umowę na odległość, może od niej odstąpić bez podania przyczyny w terminie 14 dni od dnia jej zawarcia lub od dnia otrzymania postanowień umowy, jeżeli nastąpiło to później. Do zachowania terminu wystarcza wysłanie oświadczenia przed jego upływem.[^3]
+- 3\. Klient będący konsumentem, który zawarł umowę na odległość, może od niej odstąpić bez podania przyczyny w terminie 21 dni od dnia jej zawarcia lub od dnia otrzymania postanowień umowy, jeżeli nastąpiło to później. Do zachowania terminu wystarcza wysłanie oświadczenia przed jego upływem.[^3]
 - 4\. Umowa lokaty terminowej może zostać zawarta wyłącznie na okres wskazany w ofercie Banku obowiązującej w dniu jej zawarcia. Bank może odmówić zawarcia umowy z ważnych przyczyn, w szczególności gdy Klient nie przedstawi dokumentów wymaganych przez przepisy o przeciwdziałaniu praniu pieniędzy, w szczególności: ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
 
-[^2]: Za wydanie dodatkowego potwierdzenia lub duplikatu umowy Bank może pobrać opłatę w wysokości 30,00 zł, zgodnie z „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”.
+[^2]: Za wydanie dodatkowego potwierdzenia lub duplikatu umowy Bank może pobrać opłatę w wysokości 35,00 zł, zgodnie z „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”.
 
 [^3]: W razie odstąpienia od umowy lokaty Bank zwraca środki wraz z odsetkami naliczonymi do dnia odstąpienia, z zastrzeżeniem potrącenia podatku, o którym mowa w rozdziale o podatku od odsetek.
 
@@ -118,7 +118,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Jeżeli przez okres 365 dni na rachunku oszczędnościowym nie wystąpiła żadna operacja zainicjowana przez Klienta, a saldo rachunku wynosi zero, Bank może rozwiązać umowę za wypowiedzeniem, informując o tym Klienta na trwałym nośniku.
 - 2\. Za operację zainicjowaną przez Klienta nie uważa się kapitalizacji odsetek, pobrania opłat ani podatku.
-- 3\. Klient może w każdym czasie wypowiedzieć umowę rachunku oszczędnościowego z zachowaniem terminu wypowiedzenia wynoszącego 30 dni. Bank może wypowiedzieć umowę z ważnych powodów, z zachowaniem terminu 60 dni, do których zalicza się w szczególności:[^5]
+- 3\. Klient może w każdym czasie wypowiedzieć umowę rachunku oszczędnościowego z zachowaniem terminu wypowiedzenia wynoszącego 21 dni. Bank może wypowiedzieć umowę z ważnych powodów, z zachowaniem terminu 90 dni, do których zalicza się w szczególności:[^5]
   - 1\) podanie przez Klienta nieprawdziwych danych przy zawarciu umowy;
   - 2\) wykorzystywanie rachunku w sposób sprzeczny z prawem lub z Regulaminem;
   - 3\) brak możliwości zastosowania środków bezpieczeństwa finansowego wymaganych przepisami.
@@ -130,7 +130,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Klient może ustanowić zlecenie stałe, na podstawie którego Bank będzie przekazywał w określonych terminach kwotę z rachunku Klienta w innym banku lub w Banku na <!-- page: 7 --> rachunek oszczędnościowy. Zlecenie stałe może zostać zmienione lub odwołane w każdym czasie, najpóźniej na jeden dzień roboczy przed terminem wykonania.
 - 2\. Jeżeli w dniu wykonania zlecenia stałego na rachunku obciążanym brak środków wystarczających na jego wykonanie, Bank nie realizuje zlecenia, a o jego niewykonaniu informuje Klienta za pomocą wybranego kanału powiadomień. Bank nie ponawia próby wykonania zlecenia po terminie, chyba że umowa stanowi inaczej.
-- 3\. Opłata za realizację zlecenia stałego jest określona w „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”; w dniu wejścia Regulaminu w życie przelewy wewnętrzne na rachunek oszczędnościowy prowadzony w Banku są bezpłatne, natomiast przelew natychmiastowy z rachunku oszczędnościowego jest obciążony opłatą 5,00 zł.
+- 3\. Opłata za realizację zlecenia stałego jest określona w „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”; w dniu wejścia Regulaminu w życie przelewy wewnętrzne na rachunek oszczędnościowy prowadzony w Banku są bezpłatne, natomiast przelew natychmiastowy z rachunku oszczędnościowego jest obciążony opłatą 3,50 zł.
 
 ### § 13.
 
@@ -313,7 +313,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. W razie zerwania lokaty przed terminem Bank wypłaca Klientowi kwotę lokaty oraz odsetki naliczone według obniżonej stopy procentowej, wynoszącej 0,1% w skali roku, za okres od dnia założenia lokaty do dnia poprzedzającego dzień zerwania.[^8]
 - 2\. Jeżeli w wyniku zerwania lokaty wcześniej wypłacone odsetki przewyższają odsetki należne według stawki określonej w ust. 1, Bank potrąca różnicę z wypłacanej kwoty lokaty, a jeżeli kwota ta jest niewystarczająca — z innych środków Klienta w Banku, po uprzednim poinformowaniu go o tym.
-- 3\. Zerwanie lokaty w okresie pierwszych 14 dni od jej założenia, w przypadku lokaty zawartej na odległość, jest traktowane jako odstąpienie od umowy, jeżeli Klient złoży w tym zakresie oświadczenie; w takiej sytuacji odsetki naliczane są według stawki umownej do dnia odstąpienia.[^9]
+- 3\. Zerwanie lokaty w okresie pierwszych 21 dni od jej założenia, w przypadku lokaty zawartej na odległość, jest traktowane jako odstąpienie od umowy, jeżeli Klient złoży w tym zakresie oświadczenie; w takiej sytuacji odsetki naliczane są według stawki umownej do dnia odstąpienia.[^9]
 - 4\. Zerwanie lokaty przed terminem nie wpływa na wysokość odsetek naliczonych za poprzednie, w pełni zakończone okresy odsetkowe, o ile zostały one już skapitalizowane lub wypłacone zgodnie z umową, z zastrzeżeniem ust. 2.
 
 [^8]: Przykład: przy lokacie 10 000 zł założonej na rok, zerwanej po 100 dniach, odsetki brutto wynoszą 10 000 zł × stawka za zerwanie × 100 dni podzielone przez liczbę dni w roku odsetkowym.
@@ -347,7 +347,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) zdarzeniem losowym, w szczególności:
     - a\) pożarem, zalaniem lub innym zniszczeniem mienia;
     - b\) klęską żywiołową, na którą wskazuje decyzja organu administracji publicznej.
-- 2\. Wniosek o zastosowanie korzystniejszych zasad Klient składa w placówce Banku, wraz z dokumentami potwierdzającymi okoliczności, w terminie 5 dni od dnia zerwania lokaty. Bank rozpatruje wniosek w terminie 30 dni.
+- 2\. Wniosek o zastosowanie korzystniejszych zasad Klient składa w placówce Banku, wraz z dokumentami potwierdzającymi okoliczności, w terminie 5 dni od dnia zerwania lokaty. Bank rozpatruje wniosek w terminie 25 dni.
 - 3\. Zastosowanie wyjątku wymaga każdorazowo indywidualnej oceny przez Bank, a jego odmowa nie wyłącza prawa Klienta do złożenia reklamacji zgodnie z § 43.
 
 <!-- page: 16 -->
@@ -368,8 +368,8 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 39.
 
-- 1\. Jeżeli w wyniku korekty odsetek, błędu Banku lub zmiany interpretacji przepisów podatek od odsetek został pobrany w wysokości wyższej od należnej, Bank dokonuje zwrotu nadpłaty na rachunek Klienta w terminie 14 dni od dnia stwierdzenia nadpłaty.
-- 2\. Zwrot podatku pobranego w nieprawidłowej wysokości może nastąpić także na wniosek Klienta, który złoży dokumenty potwierdzające podstawę prawną żądania. Bank rozpatruje wniosek w terminie 30 dni i informuje Klienta o wyniku na trwałym nośniku.
+- 1\. Jeżeli w wyniku korekty odsetek, błędu Banku lub zmiany interpretacji przepisów podatek od odsetek został pobrany w wysokości wyższej od należnej, Bank dokonuje zwrotu nadpłaty na rachunek Klienta w terminie 10 dni od dnia stwierdzenia nadpłaty.
+- 2\. Zwrot podatku pobranego w nieprawidłowej wysokości może nastąpić także na wniosek Klienta, który złoży dokumenty potwierdzające podstawę prawną żądania. Bank rozpatruje wniosek w terminie 25 dni i informuje Klienta o wyniku na trwałym nośniku.
 - 3\. Bank nie odpowiada za rozliczenie podatku w zeznaniu rocznym Klienta, w szczególności za zaliczenie podatku pobranego od odsetek do zobowiązania podatkowego Klienta. Informacja przekazywana przez Bank nie stanowi porady <!-- page: 17 --> podatkowej.
 
 ### § 40.
@@ -412,9 +412,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja musi zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz oczekiwany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację bez zbędnej zwłoki, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli rozpatrzenie reklamacji w tych terminach nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli rozpatrzenie reklamacji w tych terminach nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 40 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 
 ### § 44.
 
@@ -440,7 +440,7 @@ Użyte w Regulaminie określenia oznaczają:
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank powiadamia Klienta na trwałym nośniku, z wyprzedzeniem nie krótszym niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść proponowanych zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient może także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient może także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ## Rozdział 10. Postanowienia końcowe
 
@@ -449,7 +449,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Regulamin wchodzi w życie w dniu wskazanym na okładce i stosuje się do umów zawartych od tego dnia. Do umów zawartych wcześniej stosuje się Regulamin w brzmieniu obowiązującym w dniu ich zawarcia, z zastrzeżeniem postanowień o zmianie Regulaminu.
 <!-- page: 20 -->
 - 2\. Bank prowadzi rachunki i lokaty w ramach Departament Produktów Oszczędnościowych. Informacji o produktach udziela Infolinia pod numerem 800 000 001, dostępna w dni robocze od 7:00 do 21:00, oraz placówki Banku.
-- 3\. Korespondencję do Klienta Bank kieruje na ostatni wskazany przez niego adres. Korespondencję uważa się za doręczoną po upływie 14 dni od jej nadania, jeżeli Klient nie podjął przesyłki. Szczegółowe zasady wykonywania usług płatniczych w związku z rachunkiem określają przepisy prawa, w szczególności: ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
+- 3\. Korespondencję do Klienta Bank kieruje na ostatni wskazany przez niego adres. Korespondencję uważa się za doręczoną po upływie 10 dni od jej nadania, jeżeli Klient nie podjął przesyłki. Szczegółowe zasady wykonywania usług płatniczych w związku z rachunkiem określają przepisy prawa, w szczególności: ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
 
 ### § 48.
 

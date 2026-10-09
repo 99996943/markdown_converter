@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/TAR/04 Wersja 1 Obowiązuje od 1 czerwca 2025 r.
+BP/TAR/04 Wersja 2 Obowiązuje od 1 czerwca 2025 r.
 
 <!-- page: 2 -->
 ## I. Postanowienia ogólne
@@ -23,12 +23,12 @@ Przepisy o usługach płatniczych, w tym o silnym uwierzytelnianiu klienta, okre
 
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego realizowana jest czynność, w dniu realizacji, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank może pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane podlegają oprocentowaniu odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca w terminie 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca w terminie 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się w górę do pełnego grosza.
 
 - 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest sporządzana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,5%.
+- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,3%.
 
 Przeliczeń między walutami obcymi dokonuje się za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -70,7 +70,7 @@ Pakiety rozszerzone są świadczone na wniosek Klienta i mogą być wypowiedzian
 | 10. | Wyciąg z rachunku w postaci elektronicznej | za wyciąg | 0,00 zł |
 | 11. | Wyciąg z rachunku w postaci papierowej doręczany pocztą | za wyciąg | 10,00 zł |
 | 12. | Przelew krajowy w złotych złożony w serwisie internetowym lub w aplikacji | za przelew | bez opłat |
-| 13. | Przelew natychmiastowy złożony w serwisie internetowym lub w aplikacji 3) | za przelew | 5,00 zł |
+| 13. | Przelew natychmiastowy złożony w serwisie internetowym lub w aplikacji 3) | za przelew | 4,00 zł |
 | 14. | Przelew krajowy złożony w placówce Banku | za przelew | 8,00 zł |
 | 15. | Przelew własny między rachunkami Klienta w Banku | za przelew | bez opłat |
 | 16. | Przelew do ZUS i urzędów skarbowych złożony w serwisie internetowym | za przelew | bez opłat |
@@ -166,8 +166,8 @@ Opłaty za przelewy wykonywane w bankowości elektronicznej dla firm wynikają z
 | 83. | Moduł rozliczeń walutowych i transakcji wymiany walut | miesięcznie | 39,00 zł |
 | 84. | Przelew w złotych w bankowości elektronicznej dla firm | za przelew | 0,40 zł |
 | 85. | Przelew w paczce przelewów masowych | za przelew w paczce | 0,25 zł |
-| 86. | Przelew wewnętrzny między rachunkami Banku | za przelew | 0,00 zł |
-| 87. | Przelew natychmiastowy 3) | za przelew | 5,00 zł |
+| 86. | Przelew wewnętrzny między rachunkami Banku | za przelew | 0,10 zł |
+| 87. | Przelew natychmiastowy 3) | za przelew | 4,00 zł |
 | 88. | Wyciąg w formacie MT940 dostarczany elektronicznie | miesięcznie | 25,00 zł |
 | 89. | Integracja systemu finansowo-księgowego Klienta z bankowością przez interfejs API | miesięcznie | 150,00 zł |
 | 90. | Aktywacja bankowości elektronicznej dla firm w trakcie otwarcia rachunku | jednorazowo | bez opłat |
@@ -189,7 +189,7 @@ Opłaty za przelewy wykonywane w bankowości elektronicznej dla firm wynikają z
 | 106. | Biała lista podatników VAT — weryfikacja rachunku odbiorcy przed przelewem | za weryfikację | bez opłat |
 | 107. | Zlecenie stałe w złotych w bankowości dla firm — ustanowienie | jednorazowo | bez opłat |
 | 108. | Przelew w paczce w sesji Express Elixir | za przelew w paczce | 0,25 zł |
-| 109. | Wpłata na rachunek firmowy przez serwis internetowy — zasilenie z innego rachunku | za wpłatę | 0,00 zł |
+| 109. | Wpłata na rachunek firmowy przez serwis internetowy — zasilenie z innego rachunku | za wpłatę | 0,10 zł |
 | 110. | Zlecenie wypłaty gotówki z awizo składane w serwisie dla kwot powyżej 20 000,00 zł | za awizo | bez opłat |
 | 111. | Przelew krajowy złożony w bankowości internetowej dla firm — do rachunku w innym banku | za przelew | 0,40 zł |
 | 112. | Przelew krajowy złożony w aplikacji mobilnej dla firm | za przelew | 0,40 zł |
@@ -199,7 +199,7 @@ Opłaty za przelewy wykonywane w bankowości elektronicznej dla firm wynikają z
 | 116. | Przelew w euro w systemie SEPA | za przelew | 5,00 zł |
 | 117. | Przelew zagraniczny złożony w bankowości elektronicznej dla firm | od kwoty przelewu | 0,2%, min. 20,00 zł, maks. 150,00 zł |
 | 118. | Przelew zagraniczny w trybie pilnym — dopłata | za przelew | 40,00 zł |
-| 119. | Przelew natychmiastowy do kwoty 50 000,00 zł | za przelew | 5,00 zł |
+| 119. | Przelew natychmiastowy do kwoty 50 000,00 zł | za przelew | 4,00 zł |
 | 120. | Odwołanie przelewu złożonego w bankowości elektronicznej po rozpoczęciu realizacji | za odwołanie | 25,00 zł |
 | 121. | Dzienny limit przelewów w bankowości internetowej dla firm — zmiana ponad poziom domyślny | za każdą zmianę | bez opłat |
 | 122. | Moduł przelewów masowych — import paczki do 100 000,00 zł łącznej wartości | za paczkę | wliczone w opłatę za moduł |
@@ -284,7 +284,7 @@ Klientami instytucjonalnymi są w rozumieniu Taryfy w szczególności jednostki 
 | 180. | Dostęp dla księgowego zewnętrznego bez prawa składania dyspozycji | miesięcznie | bez opłat |
 | 181. | Wniosek o zmianę zakresu uprawnień złożony w serwisie przez osobę reprezentującą | za wniosek | bez opłat |
 | 182. | Przelew do budżetu państwa złożony w bankowości elektronicznej | za przelew | 0,30 zł |
-| 183. | Przelew wewnętrzny między rachunkami jednostki | za przelew | 0,00 zł |
+| 183. | Przelew wewnętrzny między rachunkami jednostki | za przelew | 0,10 zł |
 | 184. | Przelew zbiorczy wynagrodzeń z listy płac | za przelew w paczce | 0,25 zł |
 | 185. | Polecenie przelewu do rachunku jednostki zagranicznej w euro (SEPA) | za przelew | 5,00 zł |
 | 186. | Potwierdzenie salda dla potrzeb audytu sprawozdania finansowego — w formie elektronicznej | za potwierdzenie | 100,00 zł |
@@ -306,7 +306,7 @@ Klientami instytucjonalnymi są w rozumieniu Taryfy w szczególności jednostki 
 | 202. | Pomoc zdalna konsultanta w godzinach pracy zespołu wsparcia | za zgłoszenie | bez opłat |
 | 203. | Sesja serwisowa z udostępnieniem ekranu poza godzinami pracy zespołu | za sesję | 49,00 zł |
 | 204. | Przygotowanie raportu na zamówienie jednostki | za raport | wg indywidualnej wyceny |
-| 205. | Przygotowanie opinii bankowej o obsłudze rachunków | za opinię | 80,00 zł |
+| 205. | Przygotowanie opinii bankowej o obsłudze rachunków | za opinię | 90,00 zł |
 | 206. | Rachunek wspólnoty mieszkaniowej — dostęp do bankowości elektronicznej dla zarządu | miesięcznie | 15,00 zł |
 | 207. | Dostęp do rachunku wspólnoty dla zarządcy nieruchomości | miesięcznie | bez opłat |
 | 208. | Dostęp do rachunku wspólnoty dla członka zarządu (do trzech osób) | miesięcznie | bez opłat |
@@ -504,7 +504,7 @@ Przelew do nowego odbiorcy podlega dodatkowemu limitowi 3 000,00 zł przez 24 go
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 338. | Przelew krajowy w złotych złożony w serwisie internetowym lub w aplikacji mobilnej | za przelew | bez opłat |
-| 339. | Przelew natychmiastowy złożony w serwisie internetowym lub w aplikacji 1) | za przelew | 5,00 zł |
+| 339. | Przelew natychmiastowy złożony w serwisie internetowym lub w aplikacji 1) | za przelew | 4,00 zł |
 | 340. | Przelew natychmiastowy zlecony przez konsultanta Infolinii lub w placówce Banku | za przelew | 9,00 zł |
 | 341. | Przelew pilny w systemie rozliczeń brutto | od kwoty przelewu | 0,1%, min. 15,00 zł |
 | 342. | Przelew krajowy zlecony przez konsultanta Infolinii | za przelew | 6,00 zł |
@@ -533,7 +533,7 @@ Przelew do nowego odbiorcy podlega dodatkowemu limitowi 3 000,00 zł przez 24 go
 | 365. | Przelew krajowy w złotych do nowego odbiorcy do kwoty 3 000,00 zł | za przelew | bez opłat |
 | 366. | Przelew z rachunku oszczędnościowego na rachunek osobisty Klienta | za przelew | bez opłat |
 | 367. | Przelew do ZUS i urzędu skarbowego | za przelew | bez opłat |
-| 368. | Przelew ekspresowy — realizacja w ciągu 15 minut w dni robocze | za przelew | 5,00 zł |
+| 368. | Przelew ekspresowy — realizacja w ciągu 15 minut w dni robocze | za przelew | 4,00 zł |
 | 369. | Przelew realizowany w sesji Elixir o godzinie granicznej 15:30 | za przelew | bez opłat |
 | 370. | Przelew złożony po godzinie granicznej — realizacja w kolejnym dniu roboczym | za przelew | bez opłat |
 | 371. | Przelew z kodem QR do płatności faktur lub rachunków | za przelew | bez opłat |
@@ -747,7 +747,7 @@ nie pobiera opłaty za dostęp tych podmiotów do danych w zakresie, w którym u
 
 - 1\. Użyte w Taryfie określenie „miesięcznie” oznacza opłatę naliczaną za każdy rozpoczęty miesiąc korzystania z usługi i pobieraną w ostatnim dniu miesiąca kalendarzowego; „za operację” i „za przelew” — opłatę pobieraną od każdej pojedynczej dyspozycji; „rocznie” — opłatę pobieraną z góry za dwanaście miesięcy.
 - 2\. Przez „kanały elektroniczne” rozumie się serwis internetowy, aplikację mobilną Bank Przykładowy Mobile oraz interfejsy programistyczne Banku. Dyspozycje składane przez Infolinię i w placówce Banku nie są dyspozycjami składanymi w kanałach elektronicznych, nawet jeżeli są realizowane z użyciem systemu bankowości elektronicznej.
-- 3\. Reklamacje dotyczące opłat pobranych za usługi bankowości elektronicznej Bank rozpatruje w terminie 15 dni, a w sprawach dotyczących usług płatniczych — w terminie 15 dni od dnia ich otrzymania. Reklamację można złożyć w serwisie internetowym, w placówce, na adres reklamacje@bank.example lub telefonicznie pod numerem 800 000 001.
+- 3\. Reklamacje dotyczące opłat pobranych za usługi bankowości elektronicznej Bank rozpatruje w terminie 12 dni, a w sprawach dotyczących usług płatniczych — w terminie 14 dni od dnia ich otrzymania. Reklamację można złożyć w serwisie internetowym, w placówce, na adres reklamacje@bank.example lub telefonicznie pod numerem 800 000 001.
 
 <!-- page: 29 -->
 Opłaty nie obejmują kosztów po stronie Klienta związanych z korzystaniem z usług, w tym opłat operatora telekomunikacyjnego za transmisję danych i wiadomości, które ustala operator zgodnie z własnym cennikiem.

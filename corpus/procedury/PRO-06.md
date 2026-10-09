@@ -1,21 +1,22 @@
 # Procedura stosowania środków bezpieczeństwa finansowego (AML/KYC)
 
 <!-- page: 1 -->
-*Bank Przykładowy S.A., BP/PRO/06, wersja 1, obowiązuje od 1 stycznia 2026 r.*
+*Bank Przykładowy S.A., BP/PRO/06, wersja 1, obowiązuje od 1 listopada 2024 r. do 31 marca 2026 r.*
 
 | **Oznaczenie** | BP/PRO/06 |
 | --- | --- |
 | **Wersja** | 1 |
 | **Właściciel** | Departament Zgodności |
 | **Zatwierdził** | Zarząd Banku Przykładowego S.A. |
-| **Data zatwierdzenia** | 11 grudnia 2025 r. |
-| **Obowiązuje od** | 1 stycznia 2026 r. |
+| **Data zatwierdzenia** | 11 października 2024 r. |
+| **Obowiązuje od** | 1 listopada 2024 r. |
+| **Obowiązuje do** | 31 marca 2026 r. |
 
 ## Historia zmian
 
 | **Wersja** | **Data** | **Opis zmian** |
 | --- | --- | --- |
-| 1 | 11 grudnia 2025 r. | Wydanie pierwsze. |
+| 1 | 11 października 2024 r. | Wydanie pierwsze. |
 
 ## 1. Cel
 
@@ -27,8 +28,9 @@ Celem procedury jest zapewnienie jednolitego, udokumentowanego i weryfikowalnego
 
 Procedurę stosują pracownicy wszystkich jednostek Banku, którzy wykonując swoje zadania:
 
+<!-- page: 2 -->
 - 1\) nawiązują stosunki gospodarcze z klientami, w szczególności przyjmują wnioski o otwarcie rachunków, lokat, kredytów i kart płatniczych;
-- 2\) przyjmują i realizują dyspozycje klientów, w tym wpłaty i wypłaty gotówkowe oraz <!-- page: 2 --> przelewy krajowe i zagraniczne;
+- 2\) przyjmują i realizują dyspozycje klientów, w tym wpłaty i wypłaty gotówkowe oraz przelewy krajowe i zagraniczne;
 - 3\) prowadzą klientów korporacyjnych i klientów bankowości prywatnej;
 - 4\) zajmują się monitorowaniem transakcji, rozpatrywaniem alertów oraz przygotowywaniem zawiadomień dla organów państwa;
 - 5\) zarządzają dokumentacją klientów, jej archiwizacją oraz nadzorują jakość danych.
@@ -47,8 +49,9 @@ Za prawidłowe stosowanie procedury odpowiadają następujący uczestnicy proces
 - 4\) **Departament Zgodności** — jest właścicielem procedury, prowadzi ocenę ryzyka Banku, zatwierdza stosunki o wysokim ryzyku, odpowiada za zawiadomienia dla organów państwa i kontakt z nadzorem;
 - 5\) **Koordynator ds. przeciwdziałania praniu pieniędzy** — nadzoruje stosowanie procedury w skali Banku, składa Zarządowi sprawozdania okresowe i jest osobą kontaktową dla organów;
 - 6\) **Zespół Analiz Transakcji w Departamencie Zgodności** — analizuje alerty z systemu monitorowania, przygotowuje rekomendacje i prowadzi rejestr transakcji podejrzanych;
+<!-- page: 3 -->
 - 7\) **Departament Operacji** — wykonuje blokady i zamrożenia w systemie centralnym CBS-PRZYKŁAD na polecenie komórki zgodności (Departament Zgodności);
-- 8\) **Zarząd Banku** — zatwierdza procedurę, wyznacza członka zarządu odpowiedzialnego za <!-- page: 3 --> przeciwdziałanie praniu pieniędzy i zapewnia zasoby potrzebne do jej stosowania.
+- 8\) **Zarząd Banku** — zatwierdza procedurę, wyznacza członka zarządu odpowiedzialnego za przeciwdziałanie praniu pieniędzy i zapewnia zasoby potrzebne do jej stosowania.
 
 Każdy pracownik jest obowiązany do niezwłocznego zgłoszenia podejrzenia, że transakcja lub okoliczność może wiązać się z praniem pieniędzy lub finansowaniem terroryzmu, bez względu na kwotę i stanowisko klienta. Zgłoszenie nie wymaga uprzedniej zgody przełożonego.
 
@@ -69,9 +72,8 @@ W razie nieobecności osoby wskazanej w procedurze jej zadania wykonuje zastępc
 - 2\) zatwierdzenie relacji wysokiego ryzyka przez zastępcę wymaga akceptacji osoby na stanowisku „Koordynator ds. przeciwdziałania praniu pieniędzy”, a w jego nieobecności — członka zarządu;
 - 3\) decyzje o zawiadomieniu Generalnego Inspektora Informacji Finansowej podejmuje wyłącznie osoba do tego upoważniona, a zastępstwo w tym zakresie jest ograniczone do dwóch osób wskazanych imiennie.
 
-Każdy pracownik odpowiada za działania wykonane w ramach zastępstwa tak samo jak za czynności własne. Konflikt interesów zgłasza się niezwłocznie przełożonemu i komórce zgodności (Departament Zgodności), a czynności w danej sprawie przejmuje inna osoba.
+Każdy pracownik odpowiada za działania wykonane w ramach zastępstwa tak samo jak za czynności własne. Konflikt interesów zgłasza się niezwłocznie przełożonemu i komórce <!-- page: 4 --> zgodności (Departament Zgodności), a czynności w danej sprawie przejmuje inna osoba.
 
-<!-- page: 4 -->
 ## 4. Definicje
 
 Użyte w procedurze określenia oznaczają:
@@ -96,8 +98,8 @@ Dodatkowo, na potrzeby procedury, użyte określenia oznaczają:
 - 6\) **Transakcja okazjonalna** — transakcja niewynikająca ze stosunków gospodarczych, np. jednorazowa wpłata gotówkowa na rzecz osoby niebędącej klientem;
 - 7\) **Scoring ryzyka** — zestaw kryteriów punktowych służący do przypisania klientowi poziomu ryzyka: niskiego, średniego albo wysokiego;
 - 8\) **Alert** — komunikat generowany przez narzędzie informatyczne (system monitorowania transakcji MON-AML) o transakcji lub zachowaniu klienta odbiegającym od przyjętych scenariuszy;
-- 9\) **Zawiadomienie** — informacja przekazywana przez Bank organowi państwa w razie uzasadnionego podejrzenia, że transakcja ma związek z praniem pieniędzy lub finansowaniem terroryzmu;
-- 10\) **GIIF** — organ właściwy w sprawach analizy informacji finansowych, określany <!-- page: 5 --> generycznie jako Generalny Inspektor Informacji Finansowej;
+- 9\) **Zawiadomienie** — informacja przekazywana przez Bank organowi państwa w razie uzasadnionego podejrzenia, że transakcja ma związek z praniem pieniędzy lub <!-- page: 5 --> finansowaniem terroryzmu;
+- 10\) **GIIF** — organ właściwy w sprawach analizy informacji finansowych, określany generycznie jako Generalny Inspektor Informacji Finansowej;
 - 11\) **Zamrożenie** — uniemożliwienie rozporządzania środkami lub zasobami gospodarczymi osoby objętej sankcjami, wykonywane przez Bank na podstawie przepisów o szczególnych środkach sankcyjnych;
 - 12\) **Wykaz sankcyjny** — urzędowy wykaz osób i podmiotów objętych środkami ograniczającymi, wczytywany do narzędzi Banku z uznanego dostawcy danych.
 

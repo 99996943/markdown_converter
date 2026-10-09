@@ -135,8 +135,8 @@ Rachunek zostaje wyłączony z obsługi w systemie, a Klient otrzymuje potwierdz
 Dokumentacja trafia do archiwum i jest zachowywana przez wymagany okres.
 
 - 1\. Umowa rachunku zawarta na czas nieokreślony może być rozwiązana:
-  - 1\) przez Klienta w drodze wypowiedzenia z zachowaniem terminu 30 dni, chyba że umowa przewiduje inny termin;
-  - 2\) przez Bank w drodze wypowiedzenia z zachowaniem terminu 60 dni, wyłącznie z przyczyn określonych w umowie i regulaminie;
+  - 1\) przez Klienta w drodze wypowiedzenia z zachowaniem terminu 21 dni, chyba że umowa przewiduje inny termin;
+  - 2\) przez Bank w drodze wypowiedzenia z zachowaniem terminu 90 dni, wyłącznie z przyczyn określonych w umowie i regulaminie;
   - 3\) za porozumieniem stron, w dniu uzgodnionym w porozumieniu;
   - 4\) z mocy prawa, w szczególności w razie śmierci Posiadacza rachunku indywidualnego lub ustania bytu prawnego Posiadacza niebędącego osobą fizyczną.
 
@@ -159,7 +159,7 @@ Skutki oświadczenia nie zależą od użycia słowa „wypowiedzenie”. Jeżeli
 
 **Wypowiedzenie przez Bank — zasady równego traktowania.** Wypowiedzenie umowy rachunku przez Bank stosuje się wyłącznie na podstawie obiektywnych, udokumentowanych przesłanek wymienionych w umowie. Pracownik nie może wnioskować o wypowiedzenie z powodów dotyczących osoby Klienta, takich jak jego wiek, pochodzenie, wyznanie, stan zdrowia lub poglądy, ani w związku ze złożeniem przez Klienta reklamacji. Wniosek o wypowiedzenie podlega ocenie przez dwie osoby: wnioskującego i zatwierdzającego.
 
-W każdej sprawie zachowuje się notatkę z oceny przesłanek. Notatka wskazuje okoliczności faktyczne, podstawę umowną, przyjęty termin wypowiedzenia (60 dni) oraz osoby, które podjęły decyzję.
+W każdej sprawie zachowuje się notatkę z oceny przesłanek. Notatka wskazuje okoliczności faktyczne, podstawę umowną, przyjęty termin wypowiedzenia (90 dni) oraz osoby, które podjęły decyzję.
 
 **Rozmowa z Klientem rezygnującym.** Pracownik może, nie dłużej niż w czasie przyjmowania oświadczenia, zapytać Klienta o powód rezygnacji oraz przedstawić jedną ofertę zmiany warunków prowadzenia rachunku, jeżeli taka oferta jest dostępna w placówce. Pracownik nie wywiera nacisku na Klienta, nie warunkuje przyjęcia <!-- page: 7 --> oświadczenia przeprowadzeniem rozmowy i nie wydłuża obsługi ponad czas niezbędny do wykonania czynności. Odmowa Klienta jest odnotowywana w uwagach sprawy i nie wymaga uzasadnienia.
 
@@ -177,7 +177,7 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
   - 6.2.2\. Przy rachunku osoby małoletniej oświadczenie składa przedstawiciel ustawowy; w razie braku zgody drugiego rodzica przekaż sprawę kierownikowi placówki.
   - 6.2.3\. Przy rachunku wspólnym i firmowym postępuj zgodnie z częścią „Przypadki szczególne”.
 - 6.3\. Poinformuj Klienta o terminie wypowiedzenia i skutkach rozwiązania umowy.
-  - 6.3.1\. Wskaż, że termin wypowiedzenia jest równy 30 dni, liczony od dnia doręczenia oświadczenia Bankowi, chyba że umowa stanowi inaczej.
+  - 6.3.1\. Wskaż, że termin wypowiedzenia jest równy 21 dni, liczony od dnia doręczenia oświadczenia Bankowi, chyba że umowa stanowi inaczej.
   - 6.3.2\. Poinformuj, że strony mają prawo uzgodnić krótszy termin lub rozwiązanie umowy za porozumieniem w wybranym przez Klienta dniu.
   - 6.3.3\. Przypomnij, że do dnia zamknięcia Klient ponosi opłaty za prowadzenie rachunku i produktów powiązanych oraz że po zamknięciu nie będzie mógł korzystać z kart, bankowości elektronicznej ani z historii rachunku w serwisie.
 - 6.4\. Wprowadź dyspozycję do systemu CBS-PRZYKŁAD i rejestr zamknięć RZR.
@@ -186,7 +186,7 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
 <!-- page: 8 -->
 - 6.5\. Zweryfikuj dyspozycję w terminie 2 dni od dnia jej przyjęcia.
   - 6.5.1\. Sprawdź kompletność formularza i zgodność podpisu z wzorem w aktach Klienta.
-  - 6.5.2\. W razie braków wezwij Klienta do uzupełnienia na trwałym nośniku, wyznaczając termin nie krótszy niż 14 dni; bieg terminu wypowiedzenia nie ulega zawieszeniu, jeżeli oświadczenie jest co do istoty skuteczne.
+  - 6.5.2\. W razie braków wezwij Klienta do uzupełnienia na trwałym nośniku, wyznaczając termin nie krótszy niż 10 dni; bieg terminu wypowiedzenia nie ulega zawieszeniu, jeżeli oświadczenie jest co do istoty skuteczne.
 - 6.6\. Zbadaj, czy na rachunku występują okoliczności wpływające na możliwość zamknięcia.
   - 6.6.1\. Sprawdź w rejestrze tytułów egzekucyjnych RTE, czy rachunek jest objęty zajęciem lub blokadą, i zapisz ich rodzaj oraz organ.
   - 6.6.2\. Ustal saldo, naliczone odsetki, opłaty niepobrane oraz ewentualne zadłużenie w rachunku (debet) lub z tytułu kart.
@@ -232,7 +232,7 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
   - 7.2.1\. Do przyczyn zalicza się w szczególności: rażące naruszenie umowy lub regulaminu, podanie nieprawdziwych danych, wykorzystywanie rachunku do <!-- page: 10 --> działań sprzecznych z prawem, brak operacji przez okres 24 miesięcy (rachunki osobiste) lub 12 miesięcy (rachunki firmowe) oraz utrata przez Klienta zdolności do czynności prawnych bez ustanowienia przedstawiciela.
   - 7.2.2\. Nie wypowiada się umowy z powodów niewymienionych w umowie ani z powodów dyskryminujących, a także w odpowiedzi na złożoną przez Klienta reklamację.
 - 7.3\. Ustal, czy zachowanie terminu wypowiedzenia nie jest wyłączone.
-  - 7.3.1\. Terminu 60 dni nie stosuje się w przypadkach przewidzianych w umowie dla rozwiązania bez zachowania terminu (m.in. ogłoszenie upadłości Posiadacza, nakaz organu publicznego) — wymagana jest wówczas opinia jednostki „Departament Prawny”.
+  - 7.3.1\. Terminu 90 dni nie stosuje się w przypadkach przewidzianych w umowie dla rozwiązania bez zachowania terminu (m.in. ogłoszenie upadłości Posiadacza, nakaz organu publicznego) — wymagana jest wówczas opinia jednostki „Departament Prawny”.
   - 7.3.2\. W przypadku wypowiedzenia z przyczyn AML decyzję podejmuje „Departament Zgodności” i nie informuje się Klienta o przyczynach, jeżeli ich ujawnienie byłoby sprzeczne z przepisami.
 - 7.4\. Zaakceptuj decyzję zgodnie z poziomami uprawnień.
   - 7.4.1\. Rachunki konsumenckie: kierownik właściwego zespołu w jednostce „Departament Operacji” z akceptacją jednostki „Departament Zgodności”.
@@ -243,7 +243,7 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
 - 7.6\. Doręcz wypowiedzenie Klientowi.
   - 7.6.1\. Doręczenie następuje listem poleconym na adres korespondencyjny Klienta albo, jeżeli Klient wyraził na to zgodę, na trwałym nośniku w bankowości elektronicznej.
   - 7.6.2\. Zabezpiecz dowód nadania i wpisz datę wysyłki w rejestrze zamknięć RZR; dalsze zasady doręczeń opisano w części „Postanowienia końcowe”.
-  - 7.6.3\. Termin wypowiedzenia 60 dni biegnie od dnia doręczenia wypowiedzenia Klientowi albo od dnia, w którym uznaje się je za doręczone (po upływie 14 dni od pierwszego awizowania).
+  - 7.6.3\. Termin wypowiedzenia 90 dni biegnie od dnia doręczenia wypowiedzenia Klientowi albo od dnia, w którym uznaje się je za doręczone (po upływie 10 dni od pierwszego awizowania).
 - 7.7\. Zablokuj możliwość zawierania nowych umów i zwiększania zobowiązań.
   - 7.7.1\. Od dnia doręczenia wypowiedzenia nie udziela się Klientowi nowych produktów związanych z rachunkiem ani nie podwyższa limitów.
   - 7.7.2\. Rachunek pozostaje czynny do dnia rozwiązania umowy, chyba że „Departament Bezpieczeństwa” lub „Departament Zgodności” zadecyduje o ograniczeniu dysponowania środkami na podstawie przepisów.
@@ -253,7 +253,7 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
   - 7.8.2\. Klient ma uregulować zobowiązania wobec Banku, w tym ewentualny debet.
   - 7.8.3\. Klient ma prawo skorzystać z usługi zmiany banku (zob. odrębną część procedury).
 - 7.9\. Gdy Klient kwestionuje wypowiedzenie, potraktuj jego pismo jako reklamację.
-  - 7.9.1\. Wpisz pismo w rejestrze reklamacji i poinformuj Klienta, że rozpatrzenie nastąpi w terminie 30 dni.
+  - 7.9.1\. Wpisz pismo w rejestrze reklamacji i poinformuj Klienta, że rozpatrzenie nastąpi w terminie 25 dni.
   - 7.9.2\. Przekaż sprawę wraz z notatką z oceny przesłanek do jednostki „Biuro Reklamacji”.
 - 7.10\. Zawieś dalsze czynności zmierzające do zamknięcia rachunku do czasu wydania stanowiska w reklamacji, jeżeli upływ terminu wypowiedzenia nie wymaga ich kontynuowania.
   - 7.10.1\. Uwzględnienie reklamacji powoduje cofnięcie wypowiedzenia i przywrócenie rachunku.
@@ -270,9 +270,9 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
   - 7.15.1\. Zarejestruj zwrot przesyłki w dniu jej otrzymania i sprawdź adres w systemie, w bankowości elektronicznej i w ostatniej korespondencji Klienta.
   - 7.15.2\. Jeżeli adres jest nieaktualny, spróbuj ustalić nowy adres w kontakcie telefonicznym lub poprzez wiadomość w bankowości elektronicznej; nie korzystaj z danych pozyskanych z nieoficjalnych źródeł.
 - 7.16\. Wyślij wypowiedzenie ponownie na ustalony adres albo udostępnij je w bankowości <!-- page: 12 --> elektronicznej, jeżeli Klient wyraził na to zgodę.
-  - 7.16.1\. W razie ponownego niedoręczenia po upływie 14 dni od pierwszego awizowania uznaj wypowiedzenie za doręczone, o ile Klient był obowiązany do zgłaszania zmiany adresu.
+  - 7.16.1\. W razie ponownego niedoręczenia po upływie 10 dni od pierwszego awizowania uznaj wypowiedzenie za doręczone, o ile Klient był obowiązany do zgłaszania zmiany adresu.
   - 7.16.2\. Okoliczności doręczenia opisz w notatce i przechowuj razem z przesyłką zwróconą.
-- 7.17\. Po upływie terminu wypowiedzenia 60 dni zamknij rachunek, a środki przenieś na rachunek techniczny i prowadź zgodnie z częścią dotyczącą środków niepodjętych.
+- 7.17\. Po upływie terminu wypowiedzenia 90 dni zamknij rachunek, a środki przenieś na rachunek techniczny i prowadź zgodnie z częścią dotyczącą środków niepodjętych.
 
 ## 8. Opis postępowania — produkty powiązane i rozliczenie rachunku
 
@@ -294,15 +294,15 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
   - 8.5.2\. Przed wyłączeniem poinformuj Klienta o możliwości pobrania wyciągów i historii rachunku; wyciąg papierowy za okres końcowy jest dostępny za opłatą 10,00 zł.
 - 8.6\. Oblicz saldo końcowe rachunku na dzień rozwiązania umowy.
   <!-- page: 13 -->
-  - 8.6.1\. Naliczone odsetki od środków na rachunku (stawka 0,1% w skali roku dla rachunków osobistych) dopisz do salda w dniu zamknięcia.
+  - 8.6.1\. Naliczone odsetki od środków na rachunku (stawka 0,15% w skali roku dla rachunków osobistych) dopisz do salda w dniu zamknięcia.
   - 8.6.2\. Zmniejsz saldo o należne opłaty, prowizje i zobowiązania wobec Banku, w tym opłatę za zamknięcie, jeżeli jest należna (rachunek osobisty: 0,00 zł, rachunek firmowy: 50,00 zł).
-  - 8.6.3\. Opłat okresowych pobranych z góry nie dzieli się proporcjonalnie, o ile umowa lub taryfa nie stanowi inaczej; opłaty podlegające zwrotowi Bank zwraca w terminie 14 dni.
+  - 8.6.3\. Opłat okresowych pobranych z góry nie dzieli się proporcjonalnie, o ile umowa lub taryfa nie stanowi inaczej; opłaty podlegające zwrotowi Bank zwraca w terminie 10 dni.
 - 8.7\. Rozlicz saldo dodatnie.
   - 8.7.1\. Saldo przekazuje się w terminie 14 dni (rachunki osobiste) lub 14 dni (rachunki firmowe) od dnia rozwiązania umowy; Bank zapewnia wypłatę w ciągu 3 dni od zgłoszenia przez Klienta dyspozycji wypłaty.
   - 8.7.2\. Wypłata następuje przelewem na rachunek wskazany przez Klienta (bez opłaty: 0,00 zł) lub w kasie placówki, gdy saldo nie przekracza 5 000,00 zł.
   - 8.7.3\. Wypłata powyżej 100 000,00 zł wymaga akceptacji drugiej osoby (zasada dwóch par oczu).
 - 8.8\. Rozlicz saldo ujemne.
-  - 8.8.1\. Wezwij Klienta do zapłaty w terminie 14 dni i poinformuj o odsetkach za opóźnienie (17% w skali roku) oraz o opłacie za upomnienie (15,00 zł).
+  - 8.8.1\. Wezwij Klienta do zapłaty w terminie 14 dni i poinformuj o odsetkach za opóźnienie (17% w skali roku) oraz o opłacie za upomnienie (20,00 zł).
   - 8.8.2\. Po bezskutecznym upływie terminu skieruj sprawę do jednostki „Departament Ryzyka”; rachunek zamknij technicznie, a należność przenieś na rachunek wierzytelności.
 - 8.9\. Zamknij rachunek w systemie.
   - 8.9.1\. Zamknięcie przeprowadza „Departament Operacji” po sprawdzeniu, że saldo wynosi zero, a produkty powiązane są zamknięte.
@@ -316,11 +316,11 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
   - 8.12.2\. Wpływy z tytułu świadczeń, które podlegają ochronie (np. świadczenia alimentacyjne), zwracaj lub przekazuj bezzwłocznie.
 - 8.13\. Jeżeli Klient wybrał przelew, zleć przelew salda na rachunek wskazany przez Klienta.
   - 8.13.1\. Numer rachunku odbiorcy sprawdź w formularzu F-OR-32; sprawdź, czy <!-- page: 14 --> rachunek jest prowadzony na dane Posiadacza.
-  - 8.13.2\. Przelew na rachunek prowadzony w innym banku wykonywany jest bez opłaty (0,00 zł), przy przelewie natychmiastowym stosuje się standardową stawkę 5,00 zł, jeżeli Klient go zażąda.
+  - 8.13.2\. Przelew na rachunek prowadzony w innym banku wykonywany jest bez opłaty (0,00 zł), przy przelewie natychmiastowym stosuje się standardową stawkę 4,00 zł, jeżeli Klient go zażąda.
 - 8.14\. Gdy Klient wskazał rachunek osoby trzeciej, zażądaj pisemnego oświadczenia i skonsultuj sprawę z kierownikiem placówki.
   - 8.14.1\. Przelew do osoby trzeciej wymaga dodatkowej weryfikacji pod kątem przeciwdziałania praniu pieniędzy.
   - 8.14.2\. Po przelewie zabezpiecz potwierdzenie transakcji.
-- 8.15\. Jeżeli Klient nie wskazał rachunku, poproś go na piśmie o wskazanie rachunku w terminie 14 dni i zachowaj dowód wysłania.
+- 8.15\. Jeżeli Klient nie wskazał rachunku, poproś go na piśmie o wskazanie rachunku w terminie 10 dni i zachowaj dowód wysłania.
 
 ## 9. Opis postępowania — przeniesienie rachunku do innego banku
 
@@ -357,7 +357,7 @@ Informacje o przyczynach rezygnacji wprowadza się do systemu w postaci zagregow
 Wobec rachunku nieaktywnego postępuje się w następujący sposób:
 
 - 1\) przed wypowiedzeniem umowy trzeba próbować nawiązać kontakt z Klientem co najmniej dwoma kanałami (korespondencja, wiadomość w bankowości elektronicznej, kontakt telefoniczny), a dowody prób kontaktu załącza się do sprawy;
-- 2\) o zamiarze wypowiedzenia umowy Klienta zawiadamia się na piśmie co najmniej na 30 dni przed upływem terminu wypowiedzenia 60 dni;
+- 2\) o zamiarze wypowiedzenia umowy Klienta zawiadamia się na piśmie co najmniej na 30 dni przed upływem terminu wypowiedzenia 90 dni;
 - 3\) jeżeli na rachunku znajdują się środki, a opłata za prowadzenie rachunku (9,00 zł miesięcznie) nie pochłania całego salda, rachunek nie jest zamykany do chwili ich wyczerpania, chyba że Klient zażąda zamknięcia;
 - 4\) saldo niższe niż 1,00 zł księguje się na rachunku technicznym bez dalszych czynności windykacyjnych.
 
@@ -468,7 +468,7 @@ Dokumenty elektroniczne kasuje się w sposób uniemożliwiający ich odtworzenie
 
 Dokumentację udostępnia się na wniosek:
 
-- 1\) byłego Posiadacza rachunku lub jego następcy prawnego — po potwierdzeniu tożsamości, za opłatą według taryfy (zob. np. 30,00 zł za duplikat umowy);
+- 1\) byłego Posiadacza rachunku lub jego następcy prawnego — po potwierdzeniu tożsamości, za opłatą według taryfy (zob. np. 35,00 zł za duplikat umowy);
 - 2\) organów publicznych — po zbadaniu podstawy prawnej i po akceptacji jednostki „Departament Prawny”;
 - 3\) audytorów i kontrolerów — na podstawie zawiadomienia o kontroli.
 
@@ -491,8 +491,8 @@ Reklamację rejestruje każdy pracownik Banku, niezależnie od formy jej złoże
   - 13.1.2\. Przy zgłoszeniu ustnym sporządź protokół i wydaj go Klientowi na jego żądanie.
 - 13.2\. Potwierdź Klientowi przyjęcie reklamacji na trwałym nośniku.
 <!-- page: 21 -->
-- 13.3\. Przekaż sprawę do rozpatrzenia i dotrzymaj termin odpowiedzi: 15 dni dla usług płatniczych oraz 30 dni dla pozostałych.
-  - 13.3.1\. Gdy termin jest zagrożony, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 35 dni.
+- 13.3\. Przekaż sprawę do rozpatrzenia i dotrzymaj termin odpowiedzi: 14 dni dla usług płatniczych oraz 25 dni dla pozostałych.
+  - 13.3.1\. Gdy termin jest zagrożony, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 40 dni.
 - 13.4\. Wyślij odpowiedź w trybie przewidzianym przepisami (zob. ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823)) i zamknij sprawę w rejestrze.
 
 Dane osobowe Klientów przetwarza się wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)) oraz z zasadą minimalizacji danych.
@@ -548,8 +548,8 @@ Zestawienie ma charakter pomocniczy; w razie rozbieżności z umową lub regulam
 
 | **Czynność lub zdarzenie** | **Termin lub opłata** |
 | --- | --- |
-| Termin wypowiedzenia umowy przez Klienta | 30 dni |
-| Termin wypowiedzenia umowy przez Bank | 60 dni |
+| Termin wypowiedzenia umowy przez Klienta | 21 dni |
+| Termin wypowiedzenia umowy przez Bank | 90 dni |
 | Potwierdzenie przyjęcia wypowiedzenia | 3 dni |
 | Rozliczenie rachunku osobistego po rozwiązaniu umowy | 14 dni |
 | Rozliczenie rachunku firmowego po rozwiązaniu umowy | 14 dni |

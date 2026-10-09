@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/TAR/08 Wersja 1 Obowiązuje od 1 lutego 2026 r.
+BP/TAR/08 Wersja 1 Obowiązuje od 1 kwietnia 2024 r. do 30 kwietnia 2026 r.
 
 <!-- page: 2 -->
 ## I. Postanowienia ogólne
@@ -46,7 +46,7 @@ Do wpływów uprawniających do zwolnienia z opłaty zalicza się przelewy przyc
 | 3. | Obsługa i prowadzenie rachunku osobistego Konto Standard | miesięcznie | 9,00 zł |
 | 3.1. | w miesiącu, w którym wpływy na rachunek wyniosły co najmniej kwotę progową 1) | miesięcznie | bez opłat |
 | 3.2. | w miesiącu, w którym wpływy nie osiągnęły kwoty progowej | miesięcznie | 9,00 zł |
-| 4. | Oprocentowanie środków na rachunku | w stosunku rocznym | 0,1% |
+| 4. | Oprocentowanie środków na rachunku | w stosunku rocznym | 0,2% |
 | 5. | Zmiana pakietu rachunku na inny pakiet Banku | jednorazowo | 0,00 zł |
 | 6. | Dostęp do bankowości elektronicznej i mobilnej | miesięcznie | bez opłat |
 | 7. | Wydanie pierwszej karty debetowej do rachunku | jednorazowo | 0,00 zł |
@@ -59,7 +59,7 @@ Do wpływów uprawniających do zwolnienia z opłaty zalicza się przelewy przyc
 | 14. | Przyznanie limitu zadłużenia w rachunku (debetu) | jednorazowo | 2% kwoty limitu, min. 30,00 zł |
 | 15. | Odsetki od zadłużenia w ramach limitu w rachunku | w stosunku rocznym | 18,5% |
 | 16. | Odsetki od zadłużenia przeterminowanego | w stosunku rocznym | 17% |
-| 17. | Wezwanie do zapłaty (upomnienie) w sprawie zadłużenia | za każdy dokument | 15,00 zł |
+| 17. | Wezwanie do zapłaty (upomnienie) w sprawie zadłużenia | za każdy dokument | 18,00 zł |
 | 18. | Wniosek o zawieszenie spłaty zadłużenia w rachunku | jednorazowo | bez opłat |
 | 19. | Powiadomienie SMS o saldzie i transakcjach | miesięcznie | 2,00 zł |
 | 20. | Powiadomienie push w aplikacji mobilnej | miesięcznie | bez opłat |
@@ -102,7 +102,7 @@ Do wpływów uprawniających do zwolnienia z opłaty zalicza się przelewy przyc
 | 57. | Rezygnacja z limitu zadłużenia w rachunku | jednorazowo | bez opłat |
 | 58. | Maksymalny limit zadłużenia w rachunku dla Klienta z wpływami na rachunek | jednorazowo | 10 000,00 zł |
 | 59. | Monit telefoniczny w sprawie przekroczenia limitu zadłużenia | za każdy kontakt | bez opłat |
-| 60. | Pisemne wezwanie do zapłaty zadłużenia przeterminowanego | za każdy dokument | 15,00 zł |
+| 60. | Pisemne wezwanie do zapłaty zadłużenia przeterminowanego | za każdy dokument | 18,00 zł |
 | 61. | Ugoda w sprawie spłaty zadłużenia — sporządzenie | jednorazowo | bez opłat |
 | 62. | Potwierdzenie braku zadłużenia w rachunku | za każdy dokument | 20,00 zł |
 | 63. | Informacja o saldzie rachunku udzielana telefonicznie po weryfikacji tożsamości | za operację | bez opłat |
@@ -217,7 +217,7 @@ Konto dla seniora jest pakietem rachunku osobistego w złotych dla Klientów, kt
 | --- | --- | --- | --- |
 | 128. | Otwarcie rachunku osobistego w pakiecie Konto dla seniora | jednorazowo | bez opłat |
 | 129. | Obsługa i prowadzenie rachunku osobistego Konto dla seniora | miesięcznie | 0,00 zł |
-| 130. | Oprocentowanie środków na rachunku | w stosunku rocznym | 0,1% |
+| 130. | Oprocentowanie środków na rachunku | w stosunku rocznym | 0,2% |
 | 131. | Wydanie karty debetowej do rachunku | jednorazowo | 0,00 zł |
 | 132. | Prowadzenie karty debetowej w pakiecie dla seniora | miesięcznie | 3,00 zł |
 | 133. | Wpłata gotówki w placówce na własny rachunek | za operację | bez opłat |

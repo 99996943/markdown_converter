@@ -22,12 +22,12 @@ Niniejsza Taryfa dotyczy przedsiębiorców, w tym osoby fizyczne prowadzące dzi
 - 3\. Bank weryfikuje przynależność do segmentu raz w roku. Zmiana segmentu skutkuje stosowanie stawek właściwych dla nowego segmentu od pierwszego dnia miesiąca następującego po dokonaniu zmiany.
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego wykonywana jest czynność, w dniu realizacji, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank może pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane są oprocentowane odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca nie później niż w ciągu 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca nie później niż w ciągu 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się do pełnego grosza.
 
-- 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest sporządzana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,5%.
+- 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest sporządzana w dni robocze o godzinie 8:30 i publikowana na stronie https://bank.example.
+- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 2,5%.
 
 Przeliczeń między walutami obcymi Bank dokonuje za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -45,7 +45,7 @@ Opłaty z tytułu czynności zleconych przez osobę upoważnioną obciążają r
 
 Bank nie pobiera opłat za czynności, które wykonuje z urzędu na podstawie przepisów prawa, w szczególności za przekazanie informacji organom uprawnionym do ich żądania, o ile przepisy nie stanowią inaczej.
 
-- 1\. Klient może wnioskować o przegląd stawek po upływie 12 miesięcy od zawarcia umowy lub od poprzedniego przeglądu. Bank rozpatruje wniosek w terminie 30 dni, uwzględniając obroty na rachunkach i wykorzystanie produktów.
+- 1\. Klient może wnioskować o przegląd stawek po upływie 12 miesięcy od zawarcia umowy lub od poprzedniego przeglądu. Bank rozpatruje wniosek w terminie 25 dni, uwzględniając obroty na rachunkach i wykorzystanie produktów.
 - 2\. Rezygnacja z usługi abonamentowej jest skuteczna z końcem miesiąca, w którym dyspozycję złożono, a opłata za ten miesiąc podlega pobraniu w pełnej wysokości.
 
 W razie rozwiązania umowy rachunku Bank pobiera należne opłaty z salda rachunku przed jego wypłatą, a ewentualne zadłużenie podlega rozliczeniu na zasadach określonych w umowie.
@@ -65,7 +65,7 @@ Do segmentu mikroprzedsiębiorstw należą przedsiębiorcy, którzy w ostatnim r
 | 5. | Przelew elektroniczny w złotych do innego banku | za przelew | 0,40 zł |
 | 5.1. | pierwsze 10 przelewów w miesiącu | miesięcznie | bez opłat |
 | 6. | Przelew do Zakładu Ubezpieczeń Społecznych lub urzędu skarbowego | za przelew | 0,30 zł |
-| 7. | Przelew natychmiastowy | za przelew | 5,00 zł |
+| 7. | Przelew natychmiastowy | za przelew | 4,00 zł |
 | 8. | Pakiet powiadomień SMS o operacjach na rachunku | miesięcznie | 2,00 zł |
 | 9. | Wyciąg z rachunku w formie papierowej | za każdy wyciąg | 10,00 zł |
 | 10. | Obsługa dyspozycji w ramach jednoosobowej działalności gospodarczej po śmierci przedsiębiorcy 2) | za dyspozycję | bez opłat |
@@ -110,12 +110,12 @@ Do segmentu małych i średnich przedsiębiorstw należą Klienci zatrudniający
 | 33. | Prowadzenie rachunku pomocniczego (każdy kolejny) | miesięcznie | 8,00 zł |
 | 34. | Przelew elektroniczny w złotych do innego banku | za przelew | 0,40 zł |
 | 34.1. | pierwsze 50 przelewów w miesiącu | miesięcznie | bez opłat |
-| 35. | Przelew między rachunkami Klienta w Banku | za przelew | 0,00 zł |
+| 35. | Przelew między rachunkami Klienta w Banku | za przelew | 0,10 zł |
 | 36. | Paczka przelewów importowana z systemu finansowo-księgowego | za każdy przelew w paczce | 0,25 zł |
 | 37. | Cash pooling — prowadzenie struktury rachunków skoncentrowanych 2) | miesięcznie | 250,00 zł |
 | 38. | Uruchomienie limitu w rachunku bieżącym (prowizja przygotowawcza) | jednorazowo | 1,0% kwoty limitu, min. 150,00 zł |
 | 39. | Odnowienie limitu w rachunku bieżącym | rocznie | 0,5% kwoty limitu, min. 100,00 zł |
-| 40. | Opinia bankowa o Kliencie | za dokument | 80,00 zł |
+| 40. | Opinia bankowa o Kliencie | za dokument | 90,00 zł |
 | 41. | Potwierdzenie salda dla potrzeb badania sprawozdania finansowego | za dokument | 100,00 zł |
 | 42. | Obsługa rachunku powierniczego — otwarcie | jednorazowo | 300,00 zł |
 | 43. | Opieka dedykowanego doradcy klienta | miesięcznie | bez opłat |
@@ -168,13 +168,13 @@ Segment obejmuje jednostki sektora finansów publicznych, fundacje, stowarzyszen
 | 72. | Obsługa zajęcia egzekucyjnego rachunku 2) | za każde zajęcie | 50,00 zł |
 | 73. | Zmiana osób uprawnionych do dysponowania rachunkiem po zmianie zarządu | za zmianę | 40,00 zł |
 | 74. | Obsługa wpłat czynszowych wspólnoty — tablica ewidencji lokali | miesięcznie | 15,00 zł |
-| 75. | Naliczanie odsetek od środków funduszu remontowego | rocznie | 0,1% w stosunku rocznym |
+| 75. | Naliczanie odsetek od środków funduszu remontowego | rocznie | 0,15% w stosunku rocznym |
 | 76. | Przelew z funduszu remontowego do wykonawcy robót | za przelew | 0,40 zł |
 | 77. | Wypłata zaliczki z rachunku wspólnoty w kasie placówki | od kwoty wypłaty | 0,5% kwoty, min. 8,00 zł |
 | 78. | Zestawienie wpłat właściciela lokalu za bieżący rok | za zestawienie | bez opłat |
 | 79. | Potwierdzenie salda rachunku wspólnoty dla potrzeb uchwały o wydatkach | za dokument | 20,00 zł |
 | 80. | Obsługa kredytu termomodernizacyjnego wspólnoty — rachunek obsługi | miesięcznie | 8,00 zł |
-| 81. | Udostępnienie kopii uchwał i dokumentów rachunkowych przekazanych Bankowi | za komplet | 30,00 zł |
+| 81. | Udostępnienie kopii uchwał i dokumentów rachunkowych przekazanych Bankowi | za komplet | 35,00 zł |
 | 82. | Przeniesienie rachunku wspólnoty do innego zarządcy | jednorazowo | bez opłat |
 | 83. | Przechowywanie środków w depozycie na czas sporu o zarząd | miesięcznie | 100,00 zł |
 | 84. | Prowadzenie rachunku jednostki budżetowej | miesięcznie | bez opłat |
@@ -210,12 +210,12 @@ Opłaty w tej części dotyczą czynności związanych z prowadzeniem rachunków
 | 95.3. | rachunek we frankach szwajcarskich lub funtach brytyjskich | miesięcznie | 15,00 zł |
 | 96. | Zamknięcie rachunku na wniosek Klienta | jednorazowo | 50,00 zł |
 | 97. | Zamknięcie rachunku w pierwszych 12 miesiącach od otwarcia | jednorazowo | 100,00 zł |
-| 98. | Oprocentowanie środków na rachunku bieżącym | rocznie | 0,1% w stosunku rocznym |
+| 98. | Oprocentowanie środków na rachunku bieżącym | rocznie | 0,15% w stosunku rocznym |
 | 99. | Odsetki od przekroczenia salda (debet nieuzgodniony) | rocznie | 17% w stosunku rocznym |
-| 100. | Upomnienie w sprawie zadłużenia na rachunku | za każde upomnienie | 15,00 zł |
+| 100. | Upomnienie w sprawie zadłużenia na rachunku | za każde upomnienie | 20,00 zł |
 | 101. | Wyciąg z rachunku w formie papierowej | za każdy wyciąg | 10,00 zł |
 | 102. | Duplikat wyciągu lub potwierdzenia operacji | za dokument | 15,00 zł |
-| 103. | Odpis umowy rachunku | za dokument | 30,00 zł |
+| 103. | Odpis umowy rachunku | za dokument | 35,00 zł |
 | 104. | Ustanowienie lub odwołanie pełnomocnictwa do rachunku | za dyspozycję | 40,00 zł |
 | 105. | Blokada środków na rachunku na wniosek Klienta (rachunek escrow) | jednorazowo | 0,10% blokowanej kwoty, min. 100,00 zł |
 | 106. | Ustanowienie rachunku powierniczego | jednorazowo | 300,00 zł |
@@ -252,10 +252,10 @@ Za przelewy krajowe w złotych uznaje się dyspozycje płatnicze realizowane w s
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 127. | Przelew krajowy złożony przez bankowość elektroniczną | za przelew | 0,40 zł |
-| 127.1. | do rachunku w Banku | za przelew | 0,00 zł |
+| 127.1. | do rachunku w Banku | za przelew | 0,10 zł |
 | 127.2. | do rachunku w innym banku | za przelew | 0,40 zł |
 | 128. | Przelew krajowy złożony w placówce Banku 1) | za przelew | 12,00 zł |
-| 129. | Przelew natychmiastowy | za przelew | 5,00 zł |
+| 129. | Przelew natychmiastowy | za przelew | 4,00 zł |
 | 130. | Przelew w systemie SORBNET (kwoty od 1 000 000,00 zł) | za przelew | 25,00 zł |
 | 131. | Przelew w mechanizmie podzielonej płatności | za przelew | 0,50 zł |
 | 132. | Przelew podatkowy do urzędu skarbowego lub składka do Zakładu Ubezpieczeń Społecznych | za przelew | 0,30 zł |
@@ -311,12 +311,12 @@ Przelewy zagraniczne obejmują przelewy w walutach obcych oraz przelewy w złoty
 | 166. | Przelew przychodzący w ramach SEPA | za przelew | bez opłat |
 | 167. | Zmiana lub odwołanie dyspozycji przelewu zagranicznego po jej wykonaniu | za dyspozycję | 60,00 zł |
 | 168. | Poszukiwanie przelewu zagranicznego na wniosek Klienta 2) | za wniosek | 80,00 zł |
-| 169. | Przeliczenie waluty przy przelewie według Tabeli kursów walut Banku | od kwoty przeliczenia | marża 1,5% |
+| 169. | Przeliczenie waluty przy przelewie według Tabeli kursów walut Banku | od kwoty przeliczenia | marża 2,5% |
 | 170. | Przelew w złotych na rachunek zagraniczny | za przelew | 5,00 zł |
 | 171. | Potwierdzenie wykonania przelewu zagranicznego w formie komunikatu SWIFT | za dokument | 30,00 zł |
 | 172. | Zaświadczenie dewizowe dla potrzeb organów celnych i statystycznych | za dokument | 20,00 zł |
 | 173. | Zlecenie kupna lub sprzedaży waluty po kursie negocjowanym (dealing) | od kwoty transakcji | wg umowy, minimalna kwota transakcji 10 000,00 EUR |
-| 174. | Transakcja natychmiastowa (spot) na platformie walutowej Banku | od kwoty transakcji | marża 1,5% |
+| 174. | Transakcja natychmiastowa (spot) na platformie walutowej Banku | od kwoty transakcji | marża 2,5% |
 | 175. | Zlecenie z limitem kursowym (stop-loss, take-profit) | za zlecenie | 50,00 zł |
 | 176. | Transakcja terminowa forward — wycena i zawarcie | jednorazowo | 0,10% wartości kontraktu, min. 100,00 zł |
 | 177. | Rolowanie transakcji terminowej | za każde rolowanie | 0,05% wartości kontraktu, min. 100,00 zł |
@@ -329,9 +329,9 @@ Przelewy zagraniczne obejmują przelewy w walutach obcych oraz przelewy w złoty
 | 184. | Przelew do kraju spoza Europejskiego Obszaru Gospodarczego w opcji SHA | od kwoty przelewu | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
 | 185. | Przelew w złotych do banku za granicą | za przelew | 5,00 zł |
 | 186. | Przelew w walucie obcej między rachunkami Klienta w Banku | za przelew | bez opłat |
-| 187. | Przelew w walucie obcej do innego klienta Banku | za przelew | 0,00 zł |
+| 187. | Przelew w walucie obcej do innego klienta Banku | za przelew | 0,10 zł |
 | 188. | Przelew zagraniczny złożony w placówce Banku | za przelew | dodatkowo 12,00 zł |
-| 189. | Przelew zagraniczny z rachunku złotowego w walucie obcej (konwersja) | od kwoty przeliczenia | marża 1,5% |
+| 189. | Przelew zagraniczny z rachunku złotowego w walucie obcej (konwersja) | od kwoty przeliczenia | marża 2,5% |
 | 190. | Przelew przychodzący z zagranicy w opcji OUR (zwrot kosztów zleceniodawcy) | za przelew | bez opłat |
 | 191. | Przelew przychodzący z kraju spoza EOG wymagający wyjaśnienia tytułu płatności | za przelew | 30,00 zł |
 | 192. | Anulowanie przelewu zagranicznego przed wysłaniem do banku pośredniczącego | za anulowanie | 25,00 zł |
@@ -344,7 +344,7 @@ pomniejszać kwotę wypłaconą odbiorcy w opcjach SHA i BEN.
 
 - 2\) Jeżeli poszukiwanie wykaże błąd po stronie Banku, opłata nie jest pobierana, a pobrana zostaje zwrócona
 
-w terminie 14 dni.
+w terminie 10 dni.
 
 ## VIII. Gotówka i wpłatomaty
 
@@ -353,9 +353,9 @@ Operacje gotówkowe są realizowane w wybranych placówkach Banku wyposażonych 
 <!-- page: 16 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 194. | Wpłata gotówkowa na rachunek w kasie placówki | od kwoty wpłaty | 0,3% kwoty, min. 6,00 zł |
-| 194.1. | wpłata na rachunek własny do kwoty 1 000,00 zł | za wpłatę | 3,00 zł |
-| 194.2. | wpłata z dowodem wpłaty zbiorczej (kilka rachunków) 1) | od kwoty wpłaty | 0,3% kwoty, min. 6,00 zł |
+| 194. | Wpłata gotówkowa na rachunek w kasie placówki | od kwoty wpłaty | 0,3% kwoty, min. 7,00 zł |
+| 194.1. | wpłata na rachunek własny do kwoty 1 000,00 zł | za wpłatę | 3,50 zł |
+| 194.2. | wpłata z dowodem wpłaty zbiorczej (kilka rachunków) 1) | od kwoty wpłaty | 0,3% kwoty, min. 7,00 zł |
 | 195. | Wpłata gotówkowa we wpłatomacie Banku | od kwoty wpłaty | 0,15% kwoty |
 | 196. | Wypłata gotówki z rachunku w kasie placówki | od kwoty wypłaty | 0,5% kwoty, min. 8,00 zł |
 | 197. | Wypłata gotówki w kwocie powyżej 20 000,00 zł bez wcześniejszego awizowania | od kwoty wypłaty | dodatkowo 0,10% kwoty |
@@ -378,7 +378,7 @@ Operacje gotówkowe są realizowane w wybranych placówkach Banku wyposażonych 
 | 214. | Przekazanie gotówki kurierowi Klienta po weryfikacji upoważnienia | za wypłatę | 20,00 zł |
 | 215. | Wpłata gotówkowa na rachunek w walucie obcej w kasie placówki | od kwoty wpłaty | 0,5% kwoty, min. 10,00 EUR |
 | 216. | Wypłata gotówki w walucie obcej w kasie placówki (zamówienie z 2-dniowym wyprzedzeniem) | od kwoty wypłaty | 0,5% kwoty, min. 10,00 EUR |
-| 217. | Wpłata gotówkowa na rachunek innego klienta Banku | od kwoty wpłaty | 0,3% kwoty, min. 6,00 zł |
+| 217. | Wpłata gotówkowa na rachunek innego klienta Banku | od kwoty wpłaty | 0,3% kwoty, min. 7,00 zł |
 | 218. | Wpłata gotówkowa przy użyciu karty wpłatomatowej | od kwoty wpłaty | 0,15% kwoty |
 | 219. | Wpłata gotówkowa w ramach pakietu kasowego (do 100 wpłat miesięcznie) | miesięcznie | 200,00 zł |
 | 220. | Wpłata w kopertach zabezpieczonych — usługa „wpłata wrzutowa” | za każdą kopertę | 10,00 zł |
@@ -407,13 +407,13 @@ Karty firmowe są wydawane do rachunków bieżących Klientów na wniosek osoby 
 | 226. | Prowadzenie karty debetowej dla firmy 1) | miesięcznie | 9,00 zł |
 | 227. | Roczna opłata za kartę kredytową dla firmy | rocznie | 120,00 zł |
 | 228. | Wydanie duplikatu karty | jednorazowo | 25,00 zł |
-| 229. | Zastrzeżenie karty | jednorazowo | 0,00 zł |
+| 229. | Zastrzeżenie karty | jednorazowo | 10,00 zł |
 | 230. | Zmiana numeru PIN w placówce lub bankomacie Banku | za zmianę | 10,00 zł |
 | 231. | Wypłata gotówki z bankomatów Banku | za wypłatę | bez opłat |
 | 232. | Wypłata gotówki z bankomatu innego banku w kraju | za wypłatę | 5,00 zł |
 | 233. | Wypłata gotówki z bankomatu za granicą 2) | od kwoty wypłaty | 3% kwoty, min. 10,00 zł |
 | 234. | Płatność kartą w kraju i za granicą u akceptantów | za transakcję | bez opłat |
-| 235. | Przeliczenie transakcji w walucie obcej według Tabeli kursów walut | od kwoty transakcji | marża 1,5% |
+| 235. | Przeliczenie transakcji w walucie obcej według Tabeli kursów walut | od kwoty transakcji | marża 2,5% |
 | 236. | Zmiana limitów transakcji ponad poziom domyślny, na czas oznaczony | za zmianę | 20,00 zł |
 | 237. | Pilna wysyłka karty kurierem | za przesyłkę | 60,00 zł |
 | 238. | Powiadomienie SMS o transakcji kartą | miesięcznie | 2,00 zł |
@@ -432,12 +432,12 @@ Karty firmowe są wydawane do rachunków bieżących Klientów na wniosek osoby 
 | 251. | Wymiana karty uszkodzonej z winy użytkownika | jednorazowo | 25,00 zł |
 | 252. | Wymiana karty uszkodzonej bez winy użytkownika | jednorazowo | bez opłat |
 | 253. | Wysłanie nowego numeru PIN w przesyłce | za przesyłkę | 10,00 zł |
-| 254. | Płatność kartą w walucie obcej u akceptanta za granicą | od kwoty transakcji | marża 1,5% |
+| 254. | Płatność kartą w walucie obcej u akceptanta za granicą | od kwoty transakcji | marża 2,5% |
 | 255. | Płatność kartą w serwisie internetowym — dodatkowe uwierzytelnienie 3-D Secure | za transakcję | bez opłat |
 | 256. | Płatność mobilna kartą dodaną do portfela telefonu | za transakcję | bez opłat |
 | 257. | Zwiększenie dziennego limitu transakcji bezgotówkowych powyżej 50 000,00 zł | za zmianę | wg umowy |
 | 258. | Reklamacja transakcji kartowej uznana za niezasadną po postępowaniu | za reklamację | 30,00 zł |
-| 259. | Zgłoszenie utraty lub kradzieży karty pod numerem 800 000 002 | jednorazowo | 0,00 zł |
+| 259. | Zgłoszenie utraty lub kradzieży karty pod numerem 800 000 002 | jednorazowo | 10,00 zł |
 
 <!-- page: 19 -->
 - 1\) Opłatę za prowadzenie karty zawiesza się w miesiącu, w którym łączna wartość transakcji bezgotówkowych
@@ -515,7 +515,7 @@ Gwarancje bankowe i akredytywy są udzielane na podstawie odrębnej umowy po prz
 | 298. | Zwiększenie kwoty gwarancji | za zmianę | 200,00 zł oraz prowizja od kwoty zwiększenia |
 | 299. | Zmniejszenie kwoty gwarancji lub zwolnienie z zobowiązań | za zmianę | bez opłat |
 | 300. | Wydanie gwarancji w języku obcym | za dokument | 150,00 zł |
-| 301. | Wydanie duplikatu gwarancji | za dokument | 30,00 zł |
+| 301. | Wydanie duplikatu gwarancji | za dokument | 35,00 zł |
 | 302. | Przesłanie gwarancji bezpośrednio do beneficjenta kurierem | za przesyłkę | 40,00 zł |
 | 303. | Awizo gwarancji otrzymanej od banku zagranicznego (kontrgwarancja) | jednorazowo | 0,15% kwoty, min. 200,00 zł |
 
@@ -536,9 +536,9 @@ Część obejmuje usługi o charakterze informacyjnym, dokumentowym i pomocniczy
 | --- | --- | --- | --- |
 | 304. | Zaświadczenie o prowadzeniu rachunku i jego saldzie | za dokument | 20,00 zł |
 | 305. | Zaświadczenie o terminowym regulowaniu zobowiązań wobec Banku | za dokument | 20,00 zł |
-| 306. | Opinia bankowa | za dokument | 80,00 zł |
+| 306. | Opinia bankowa | za dokument | 90,00 zł |
 | 307. | Potwierdzenie salda dla biegłego rewidenta | za dokument | 100,00 zł |
-| 308. | Odpis umowy lub aneksu | za dokument | 30,00 zł |
+| 308. | Odpis umowy lub aneksu | za dokument | 35,00 zł |
 | 309. | Kopia dokumentu z archiwum Banku starszego niż 2 lata 1) | za dokument | 40,00 zł |
 | 310. | Udzielenie odpowiedzi na pytanie organu egzekucyjnego lub sądu o stanie rachunku | za odpowiedź | 50,00 zł |
 | 311. | Uwierzytelnienie podpisu na dokumencie w placówce Banku | za podpis | 30,00 zł |
@@ -550,7 +550,7 @@ Część obejmuje usługi o charakterze informacyjnym, dokumentowym i pomocniczy
 | 317. | Wniosek o rozłożenie na raty należnych Bankowi opłat | za wniosek | bez opłat |
 | 318. | Wypowiedzenie umowy rachunku przez Klienta | jednorazowo | bez opłat |
 | 319. | Przeniesienie rachunku do innego banku — wydanie zestawienia obrotów | za dokument | 20,00 zł |
-| 320. | Wysłanie wezwania do zapłaty z tytułu zadłużenia na rachunku | za wezwanie | 15,00 zł |
+| 320. | Wysłanie wezwania do zapłaty z tytułu zadłużenia na rachunku | za wezwanie | 20,00 zł |
 | 321. | Wysłanie ostatecznego wezwania do zapłaty przed wypowiedzeniem umowy | za wezwanie | 35,00 zł |
 | 322. | Wyszukanie i odtworzenie dokumentu z archiwum elektronicznego | za dokument | 20,00 zł |
 | 323. | Wydanie dokumentu poświadczonego za zgodność z oryginałem | za stronę | 10,00 zł |
@@ -573,4 +573,4 @@ Użyte w Taryfie określenia oznaczają:
 - 4\) **opcja SHA, OUR, BEN** — sposoby podziału kosztów przelewu zagranicznego między zleceniodawcę a odbiorcę;
 - 5\) **stawka indywidualna** — stawka uzgodniona z Klientem w umowie, odmienna od stawki z Taryfy.
 
-Informacje o aktualnych stawkach i możliwości ich negocjowania udziela doradcy w placówkach Banku oraz infolinia dla firm pod numerem 800 000 001 (codziennie przez całą dobę). Reklamacje dotyczące naliczonych opłat rozpatrywane są w terminie 15 dni.
+Informacje o aktualnych stawkach i możliwości ich negocjowania udziela doradcy w placówkach Banku oraz infolinia dla firm pod numerem 800 000 001 (codziennie przez całą dobę). Reklamacje dotyczące naliczonych opłat rozpatrywane są w terminie 12 dni.

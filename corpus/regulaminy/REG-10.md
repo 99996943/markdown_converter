@@ -352,7 +352,7 @@ Przykładowy kredyt gotówkowy zaprezentowano w poniższej tabeli. Wartości maj
 
 ### § 41.
 
-- 1\. Klient może odstąpić od umowy kredytu bez podawania przyczyn w terminie 14 dni od dnia zawarcia umowy, a jeżeli informacje wymagane przez przepisy zostały przekazane później — od dnia ich otrzymania. Termin uważa się za zachowany, jeżeli przed jego upływem oświadczenie zostało wysłane.
+- 1\. Klient może odstąpić od umowy kredytu bez podawania przyczyn w terminie 21 dni od dnia zawarcia umowy, a jeżeli informacje wymagane przez przepisy zostały przekazane później — od dnia ich otrzymania. Termin uważa się za zachowany, jeżeli przed jego upływem oświadczenie zostało wysłane.
 - 2\. Oświadczenie o odstąpieniu składa się na piśmie, w bankowości elektronicznej albo w innej formie wskazanej w umowie. Do zachowania terminu wystarczy nadanie oświadczenia w placówce pocztowej lub jego złożenie w oddziale Banku.
 - 3\. W razie odstąpienia od umowy Klient jest obowiązany niezwłocznie, nie później niż w terminie 30 dni od dnia złożenia oświadczenia, zwrócić Bankowi kapitał wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, według stopy określonej w umowie. Bank nie może żądać zwrotu innych kosztów, z wyjątkiem opłat uiszczonych przez Bank organom administracji publicznej, których nie można <!-- page: 14 --> odzyskać.[^9]
 
@@ -361,7 +361,7 @@ Przykładowy kredyt gotówkowy zaprezentowano w poniższej tabeli. Wartości maj
 ### § 42.
 
 - 1\. Prawo odstąpienia od umowy nie przysługuje po upływie terminu wskazanego w § 41. Po jego upływie Klient może rozwiązać umowę przez wcześniejszą spłatę kredytu na zasadach określonych w Regulaminie.
-- 2\. Zasady odstąpienia od umowy kredytu zawartej na odległość mogą różnić się w drobnych szczegółach od zasad dotyczących umowy zawartej w placówce, ale zawsze zapewniają Klientowi termin nie krótszy niż 14 dni.
+- 2\. Zasady odstąpienia od umowy kredytu zawartej na odległość mogą różnić się w drobnych szczegółach od zasad dotyczących umowy zawartej w placówce, ale zawsze zapewniają Klientowi termin nie krótszy niż 21 dni.
 
 ### § 43.
 
@@ -413,7 +413,7 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
 - 1\. Gdy Klient nie ureguluje raty w terminie, Bank pobiera odsetki za opóźnienie od kwoty zaległego kapitału za okres od dnia następującego po terminie spłaty do dnia poprzedzającego dzień zapłaty. Odsetki te są wyższe od oprocentowania umownego i wynoszą 17% w skali roku.
 - 2\. O opóźnieniu Bank informuje Klienta w formie:
   - 1\) wiadomości SMS lub wiadomości w bankowości elektronicznej — od pierwszego dnia opóźnienia;
-  - 2\) upomnienia pisemnego, za które Bank pobiera opłatę 15,00 zł;
+  - 2\) upomnienia pisemnego, za które Bank pobiera opłatę 20,00 zł;
   <!-- page: 16 -->
   - 3\) wezwania do zapłaty, wysłanego po upływie okresu opóźnienia wskazanego w umowie, za które Bank pobiera opłatę 40,00 zł.
 - 3\. Opłaty za upomnienie i wezwanie do zapłaty są pobierane wyłącznie za czynności rzeczywiście wykonane przez Bank i nie mogą być naliczone więcej niż jeden raz w związku z tą samą zaległością.
@@ -448,7 +448,7 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
 
 - 1\. Bank może wypowiedzieć umowę kredytu w razie zaległości w spłacie, po uprzednim wezwaniu Klienta do zapłaty w terminie 14 dni od dnia otrzymania wezwania. Wezwanie zawiera pouczenie o możliwości złożenia w terminie 14 dni wniosku o restrukturyzację zadłużenia.
 - 2\. Wypowiedzenie umowy przez Bank następuje na piśmie, a okres wypowiedzenia wynosi 30 dni. W tym okresie Klient może spłacić zaległość i kontynuować umowę na dotychczasowych warunkach.
-- 3\. Klient może wypowiedzieć umowę kredytu składając oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie 30 dni od dnia otrzymania oświadczenia przez Bank.[^12]
+- 3\. Klient może wypowiedzieć umowę kredytu składając oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie 21 dni od dnia otrzymania oświadczenia przez Bank.[^12]
 - 4\. Po upływie okresu wypowiedzenia całość zadłużenia staje się wymagalna, a odsetki od zadłużenia przeterminowanego są naliczane według stopy odsetek za opóźnienie.
 
 [^12]: Szczegółowy tryb wypowiedzenia umowy kredytu konsumenckiego określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
@@ -485,9 +485,9 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja musi zawierać dane umożliwiające identyfikację składającego reklamację, opis zastrzeżeń oraz żądany sposób jej załatwienia. Reklamacje rozpatruje Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację niezwłocznie, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 40 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 
 ### § 60.
 
@@ -499,7 +499,7 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank powiadamia Klienta na trwałym nośniku, nie później niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść proponowanych zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ### § 61.
 

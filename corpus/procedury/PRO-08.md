@@ -39,7 +39,7 @@ Procedurę stosuje się do każdego wniosków i żądań dotyczących danych oso
 - 1\. Procedurę stosują wszyscy pracownicy Banku, którzy przyjmują wnioski, w szczególności:
   - 1\) pracownicy placówek i punktów obsługi Klientów;
   - 2\) konsultanci centrum kontaktu (800 000 001);
-  - 3\) pracownicy komórek ds. obsługi klienta, ds. reklamacji, ds. operacji, ds. zgodności oraz komórki prawnej (odpowiednio: Departament Obsługi Klienta, Biuro Reklamacji, Departament Operacji, Departament Zgodności i Departament Prawny) zaangażowani w przygotowaniu odpowiedzi.
+  - 3\) pracownicy komórek ds. obsługi klienta, ds. reklamacji, ds. operacji, ds. zgodności oraz komórki prawnej (odpowiednio: Centrum Obsługi Klienta, Biuro Reklamacji, Departament Operacji, Departament Zgodności i Departament Prawny) zaangażowani w przygotowaniu odpowiedzi.
 - 2\. Z wnioskiem mogą wystąpić w szczególności:
   - 1\) Klienci Banku oraz byli Klienci;
   - 2\) osoby składające wniosek o produkt Banku, w tym osoby, z którymi umowy nie zawarto;
@@ -123,7 +123,7 @@ Dodatkowo w procedurze stosuje się następujących określeń:
 - 4\) **Wnioskodawca** — osoba, której dane dotyczą, albo jej przedstawiciel ustawowy lub pełnomocnik, który występuje do Banku w sprawie danych osobowych;
 - 5\) **Wniosek** — każde żądanie wnioskodawcy dotyczące jego danych osobowych, złożone w dowolnej formie;
 - 6\) **IOD** — Inspektor Ochrony Danych wyznaczony przez Bank na podstawie przepisów RODO;
-- 7\) **Komórki merytoryczne** — komórka ds. zgodności (Departament Zgodności), komórka prawna (Departament Prawny), komórka ds. bezpieczeństwa (Departament Bezpieczeństwa), komórka ds. operacji (Departament Operacji), komórka ds. ryzyka (Departament Ryzyka), komórka ds. reklamacji (Biuro Reklamacji) oraz komórka ds. obsługi klienta (Departament Obsługi Klienta);
+- 7\) **Komórki merytoryczne** — komórka ds. zgodności (Departament Zgodności), komórka prawna (Departament Prawny), komórka ds. bezpieczeństwa (Departament Bezpieczeństwa), komórka ds. operacji (Departament Operacji), komórka ds. ryzyka (Departament Ryzyka), komórka ds. reklamacji (Biuro Reklamacji) oraz komórka ds. obsługi klienta (Centrum Obsługi Klienta);
 - 8\) **Organ nadzorczy** — Prezes Urzędu Ochrony Danych Osobowych;
 - 9\) **Rejestr wniosków** — rejestr RODO-REJ, w którym ewidencjonuje się wszystkie wnioski i ich załatwienie;
 - 10\) **Profilowanie** — dowolna forma zautomatyzowanego przetwarzania danych osobowych polegająca na ich wykorzystaniu do oceny niektórych czynników osobowych, w szczególności do analizy sytuacji ekonomicznej lub zachowania osoby;

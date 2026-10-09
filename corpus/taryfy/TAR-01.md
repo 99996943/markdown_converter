@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/TAR/01 Wersja 1 Obowiązuje od 1 września 2026 r.
+BP/TAR/01 Wersja 1 Obowiązuje od 1 października 2024 r. do 30 czerwca 2026 r.
 
 <!-- page: 2 -->
 ## I. Postanowienia ogólne
@@ -48,14 +48,14 @@ Pakiet Prywatny jest zestawem usług przeznaczonym dla Klientów, którzy wybral
 | 3. | Opieka doradcy przypisanego do Klienta | w ramach pakietu | bez opłat |
 | 3.1. | Spotkanie w placówce Banku | za spotkanie | bez opłat |
 | 3.2. | Wizyta poza placówką Banku 2) | za spotkanie | 200,00 zł |
-| 3.3. | Konsultacja ponad limit określony w pakiecie 3) | za godzinę | 180,00 zł |
+| 3.3. | Konsultacja ponad limit określony w pakiecie 3) | za godzinę | 150,00 zł |
 | 4. | Prowadzenie rachunku w złotych w ramach pakietu | miesięcznie | bez opłat |
 | 5. | Prowadzenie jednego rachunku walutowego w ramach pakietu | miesięcznie | bez opłat |
 | 6. | Wydanie i obsługa karty debetowej premium w ramach pakietu | rocznie | bez opłat |
 | 7. | Przelewy krajowe w złotych zlecane w bankowości elektronicznej | za przelew | bez opłat |
 | 8. | Wypłaty gotówki z bankomatów Banku | za wypłatę | bez opłat |
-| 9. | Powiadomienia SMS o operacjach na rachunku | miesięcznie | 3,00 zł |
-| 10. | Wyciąg z rachunku w postaci papierowej | za wyciąg | 12,00 zł |
+| 9. | Powiadomienia SMS o operacjach na rachunku | miesięcznie | 2,00 zł |
+| 10. | Wyciąg z rachunku w postaci papierowej | za wyciąg | 10,00 zł |
 | 11. | Ubezpieczenie kart od skutków utraty lub kradzieży | rocznie | w ramach pakietu |
 | 12. | Ubezpieczenie gotówki pobranej z bankomatu (do 48 godzin od wypłaty) | rocznie | w ramach pakietu |
 | 13. | Ubezpieczenie zakupów dokonanych kartą | rocznie | w ramach pakietu |
@@ -64,13 +64,13 @@ Pakiet Prywatny jest zestawem usług przeznaczonym dla Klientów, którzy wybral
 | 16. | Infolinia assistance dostępna przez całą dobę | za połączenie | brak opłaty |
 | 17. | Rozszerzenie ochrony ubezpieczeniowej o członków rodziny Klienta | rocznie | 99,00 zł |
 | 18. | Zgłoszenie szkody ubezpieczeniowej za pośrednictwem doradcy | za zgłoszenie | bez opłat |
-| 19. | Wystawienie duplikatu polisy lub certyfikatu ubezpieczenia | za dokument | 30,00 zł |
+| 19. | Wystawienie duplikatu polisy lub certyfikatu ubezpieczenia | za dokument | 35,00 zł |
 | 20. | Rezygnacja z ochrony ubezpieczeniowej w pakiecie | jednorazowo | bez opłat |
 | 21. | Wypłata gotówki z bankomatów Banku | za wypłatę | bez opłat |
 | 22. | Wypłata gotówki z bankomatów innych banków w kraju (do czterech wypłat w miesiącu) | za wypłatę | bez opłat |
-| 23. | Wypłata gotówki z bankomatów innych banków w kraju ponad limit pakietu | za wypłatę | 6,00 zł |
+| 23. | Wypłata gotówki z bankomatów innych banków w kraju ponad limit pakietu | za wypłatę | 5,00 zł |
 | 24. | Wpłata gotówki we wpłatomacie Banku | za wpłatę | bez opłat |
-| 25. | Wpłata gotówki w kasie placówki | za wpłatę | 3,00 zł |
+| 25. | Wpłata gotówki w kasie placówki | za wpłatę | 3,50 zł |
 | 26. | Wypłata gotówki w kasie placówki | za wypłatę | bez opłat |
 | 27. | Wypłata gotówki w kasie placówki bez zapowiedzi, powyżej 10 000,00 zł | od kwoty wypłaty | 0,5% kwoty wypłaty |
 | 28. | Wpłata gotówki powyżej 15 000,00 zł (wymaga złożenia wyjaśnień co do źródła środków) | za wpłatę | brak opłaty |
@@ -80,21 +80,21 @@ Pakiet Prywatny jest zestawem usług przeznaczonym dla Klientów, którzy wybral
 | 32. | Zmiana Pakietu Prywatnego na Pakiet Prywatny Plus | jednorazowo | brak opłaty |
 | 33. | Zmiana Pakietu Prywatnego Plus na Pakiet Prywatny | jednorazowo | brak opłaty |
 | 34. | Rezygnacja z pakietu w terminie 14 dni od zawarcia umowy | jednorazowo | brak opłaty |
-| 35. | Rozwiązanie umowy o pakiet za wypowiedzeniem Klienta (termin wypowiedzenia 30 dni) | jednorazowo | brak opłaty |
+| 35. | Rozwiązanie umowy o pakiet za wypowiedzeniem Klienta (termin wypowiedzenia 21 dni) | jednorazowo | brak opłaty |
 | 36. | Wydanie zaświadczenia o korzystaniu z pakietu | za każdy dokument | 20,00 zł |
-| 37. | Wydanie duplikatu umowy o pakiet | za każdy dokument | 30,00 zł |
-| 38. | Wysłanie upomnienia o zaległej opłacie za pakiet | za upomnienie | 15,00 zł |
+| 37. | Wydanie duplikatu umowy o pakiet | za każdy dokument | 35,00 zł |
+| 38. | Wysłanie upomnienia o zaległej opłacie za pakiet | za upomnienie | 18,00 zł |
 | 39. | Zmiana danych Klienta w umowie o pakiet | za każdą dyspozycję | brak opłaty |
 | 40. | Zmiana rachunku, z którego pobierana jest opłata za pakiet | za dyspozycję | brak opłaty |
 | 41. | Otwarcie rachunku w złotych w ramach pakietu | jednorazowo | bez opłat |
 | 42. | Wydanie karty dodatkowej do rachunku w ramach pakietu (pierwsza karta) | jednorazowo | bez opłat |
 | 43. | Wydanie kolejnej karty dodatkowej do rachunku w ramach pakietu | rocznie | 149,00 zł |
 | 44. | Przelew do obcego banku w kraju zlecony w bankowości elektronicznej | za przelew | brak opłaty |
-| 45. | Przelew natychmiastowy ponad 5 przelewów w miesiącu | za przelew | 5,00 zł |
+| 45. | Przelew natychmiastowy ponad 5 przelewów w miesiącu | za przelew | 4,00 zł |
 | 46. | Zlecenie stałe w złotych w ramach pakietu | za realizację | bez opłat |
 | 47. | Polecenie zapłaty w ramach pakietu | za realizację | bez opłat |
 | 48. | Zmiana limitu debetu w rachunku na wniosek Klienta | za dyspozycję | bez opłat |
-| 49. | Oprocentowanie środków na rachunku w złotych w ramach pakietu | rocznie | 0,1% w stosunku rocznym |
+| 49. | Oprocentowanie środków na rachunku w złotych w ramach pakietu | rocznie | 0,2% w stosunku rocznym |
 | 50. | Wyciąg z rachunku wysyłany na adres e-mail Klienta | miesięcznie | brak opłaty |
 
 <!-- page: 5 -->
@@ -130,10 +130,10 @@ Pakiet Prywatny Plus rozszerza zakres Pakietu Prywatnego o usługi dodatkowe, w 
 | 64. | Dodanie do pakietu karty dodatkowej dla członka rodziny | rocznie | 149,00 zł |
 | 65. | Przywrócenie pakietu po jego zawieszeniu | jednorazowo | bez opłat |
 | 66. | Zawieszenie pakietu na okres nieobecności Klienta (do 6 miesięcy) | miesięcznie | 50% opłaty miesięcznej |
-| 67. | Rozwiązanie umowy o pakiet — termin wypowiedzenia 30 dni | jednorazowo | bez opłat |
+| 67. | Rozwiązanie umowy o pakiet — termin wypowiedzenia 21 dni | jednorazowo | bez opłat |
 | 68. | Zaświadczenie o korzystaniu z Pakietu Prywatnego Plus | za każdy dokument | 20,00 zł |
-| 69. | Upomnienie o zaległej opłacie za pakiet | za upomnienie | 15,00 zł |
-| 70. | Duplikat umowy o pakiet | za każdy dokument | 30,00 zł |
+| 69. | Upomnienie o zaległej opłacie za pakiet | za upomnienie | 18,00 zł |
+| 70. | Duplikat umowy o pakiet | za każdy dokument | 35,00 zł |
 | 71. | Kwartalny raport o stanie aktywów Klienta w Banku | kwartalnie | brak opłaty |
 | 72. | Raport podsumowujący opłaty i odsetki za rok kalendarzowy | rocznie | brak opłaty |
 | 73. | Wycena portfela instrumentów finansowych na wskazany dzień | za wycenę | 80,00 zł |
@@ -145,8 +145,8 @@ Pakiet Prywatny Plus rozszerza zakres Pakietu Prywatnego o usługi dodatkowe, w 
 | 79. | Przygotowanie zestawienia w wersji w języku angielskim | za każdy dokument | 20,00 zł |
 | 80. | Zestawienie zbiorcze dla grupy rachunków członków rodziny | za zestawienie | 100,00 zł |
 | 81. | Przelew krajowy w złotych zlecany dowolnym kanałem | za przelew | bez opłat |
-| 82. | Przelew zagraniczny w walucie obcej do czterech przelewów w miesiącu (prowizja podstawowa) | od kwoty przelewu | 0,25%, min. 40,00 zł |
-| 83. | Przelew zagraniczny ponad liczbę przelewów objętych pakietem | od kwoty przelewu | 0,25%, min. 40,00 zł, maks. 250,00 zł |
+| 82. | Przelew zagraniczny w walucie obcej do czterech przelewów w miesiącu (prowizja podstawowa) | od kwoty przelewu | 0,2%, min. 40,00 zł |
+| 83. | Przelew zagraniczny ponad liczbę przelewów objętych pakietem | od kwoty przelewu | 0,2%, min. 40,00 zł, maks. 250,00 zł |
 | 84. | Wypłata gotówki z bankomatów innych banków w kraju bez ograniczenia liczby wypłat | za wypłatę | bez opłat |
 | 85. | Wypłata gotówki z bankomatów za granicą w ramach limitu pakietu | za wypłatę | brak opłaty |
 | 86. | Wypłata gotówki z bankomatów za granicą ponad limit pakietu | od kwoty wypłaty | 1% |
@@ -188,10 +188,10 @@ Opłaty za rachunek prowadzony poza pakietem pobiera się miesięcznie z dołu, 
 | 104.1. | rachunek w euro (EUR) | miesięcznie | 8,00 zł |
 | 104.2. | rachunek w dolarach amerykańskich (USD) | miesięcznie | 8,00 zł |
 | 104.3. | rachunek we frankach szwajcarskich (CHF) lub funtach szterlingach (GBP) | miesięcznie | 8,00 zł |
-| 105. | Oprocentowanie środków na rachunku w złotych | rocznie | 0,1% w stosunku rocznym |
-| 106. | Wpłata gotówki w placówce Banku | za wpłatę | 3,00 zł |
+| 105. | Oprocentowanie środków na rachunku w złotych | rocznie | 0,2% w stosunku rocznym |
+| 106. | Wpłata gotówki w placówce Banku | za wpłatę | 3,50 zł |
 | 107. | Wypłata gotówki w kasie, na podstawie zapowiedzi 2) | za wypłatę | bez opłat |
-| 108. | Zlecenie stałe | za zlecenie | 3,00 zł |
+| 108. | Zlecenie stałe | za zlecenie | 2,00 zł |
 | 109. | Polecenie zapłaty | za realizację | 1,50 zł |
 | 110. | Ustanowienie pełnomocnictwa do rachunku | jednorazowo | 0,00 zł |
 | 111. | Zamknięcie rachunku | jednorazowo | 0,00 zł |
@@ -203,7 +203,7 @@ Opłaty za rachunek prowadzony poza pakietem pobiera się miesięcznie z dołu, 
 | 117. | Potwierdzenie przelewu zagranicznego w formie dokumentu SWIFT | za dokument | 30,00 zł |
 | 118. | Odpis wyciągu z rachunku | za dokument | 15,00 zł |
 | 119. | Odpis dokumentu źródłowego operacji (np. dyspozycji przelewu) | za każdy dokument | 15,00 zł |
-| 120. | Wyciąg z rachunku wysłany pocztą | za wyciąg | 12,00 zł |
+| 120. | Wyciąg z rachunku wysłany pocztą | za wyciąg | 10,00 zł |
 | 121. | Wyszukanie i przygotowanie dokumentów archiwalnych starszych niż pięć lat | za wniosek | 100,00 zł |
 | 122. | Otwarcie rachunku dla małoletniego, w imieniu którego działa przedstawiciel ustawowy | jednorazowo | brak opłaty |
 | 123. | Prowadzenie rachunku dla małoletniego | miesięcznie | brak opłaty |
@@ -215,8 +215,8 @@ Opłaty za rachunek prowadzony poza pakietem pobiera się miesięcznie z dołu, 
 | 129. | Zmiana warunków zwolnienia środków z rachunku powierniczego | za dyspozycję | 150,00 zł |
 | 130. | Rachunek techniczny do rozliczeń transakcji nabycia nieruchomości | jednorazowo | 100,00 zł |
 | 131. | Zamknięcie rachunku powierniczego | jednorazowo | 0,00 zł |
-| 132. | Zajęcie egzekucyjne rachunku — obsługa jednego zajęcia | za zajęcie | 35,00 zł |
-| 133. | Zajęcie rachunku w postępowaniu administracyjnym | za zajęcie | 35,00 zł |
+| 132. | Zajęcie egzekucyjne rachunku — obsługa jednego zajęcia | za zajęcie | 30,00 zł |
+| 133. | Zajęcie rachunku w postępowaniu administracyjnym | za zajęcie | 30,00 zł |
 | 134. | Przekazanie środków organowi egzekucyjnemu | za przekazanie | brak opłaty |
 | 135. | Blokada środków na rachunku na żądanie Klienta | za dyspozycję | brak opłaty |
 | 136. | Zastaw na prawach z rachunku — ustanowienie | jednorazowo | 150,00 zł |
@@ -224,7 +224,7 @@ Opłaty za rachunek prowadzony poza pakietem pobiera się miesięcznie z dołu, 
 | 138. | Zgoda na przelew wierzytelności z rachunku | za zgodę | 300,00 zł |
 | 139. | Dopuszczalne zadłużenie w rachunku (debet) — oprocentowanie | rocznie | 18,5% |
 | 140. | Maksymalna kwota dopuszczalnego zadłużenia w rachunku | jednorazowo | 10 000,00 zł |
-| 141. | Wysłanie wezwania do zapłaty zadłużenia przeterminowanego | za wezwanie | 15,00 zł |
+| 141. | Wysłanie wezwania do zapłaty zadłużenia przeterminowanego | za wezwanie | 18,00 zł |
 | 142. | Wpłata gotówki w walucie obcej na rachunek walutowy | od kwoty wpłaty | 0,30% kwoty, min. 10,00 jednostek waluty |
 | 143. | Wypłata gotówki w walucie obcej z rachunku walutowego | od kwoty wypłaty | 0,50% kwoty, min. 15,00 jednostek waluty |
 | 144. | Wypłata gotówki w walucie obcej powyżej równowartości 20 000 zł bez zapowiedzi | od kwoty wypłaty | 1,00% kwoty |
@@ -247,7 +247,7 @@ w opisie pakietu.
 
 Przelewy zlecane w bankowości elektronicznej oraz za pośrednictwem doradcy są realizowane zgodnie z regulaminem rachunku i terminami w nim określonymi. Przelew zagraniczny obejmuje przelew w walucie obcej oraz przelew w złotych na rachunek prowadzony poza terytorium Rzeczypospolitej Polskiej.
 
-- 1\. Prowizja od przelewu zagranicznego jest naliczana od kwoty przelewu i wynosi 0,25%, nie mniej niż 40,00 zł i nie więcej niż 250,00 zł.
+- 1\. Prowizja od przelewu zagranicznego jest naliczana od kwoty przelewu i wynosi 0,2%, nie mniej niż 40,00 zł i nie więcej niż 250,00 zł.
 - 2\. Opłaty banków pośredniczących i banku odbiorcy obciążają zleceniodawcę albo odbiorcę, zależnie od wskazanej opcji kosztowej. Bank nie ma wpływu na wysokość tych opłat.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
@@ -256,11 +256,11 @@ Przelewy zlecane w bankowości elektronicznej oraz za pośrednictwem doradcy są
 | 152.1. | zlecony w bankowości elektronicznej lub mobilnej | za przelew | bez opłat |
 | 152.2. | zlecony w placówce Banku | za przelew | 8,00 zł |
 | 152.3. | złożony za pośrednictwem doradcy | za przelew | 8,00 zł |
-| 153. | Przelew natychmiastowy | za przelew | 5,00 zł |
+| 153. | Przelew natychmiastowy | za przelew | 4,00 zł |
 | 154. | Przelew w ramach Banku | za przelew | bez opłat |
-| 155. | Przelew SEPA w euro | za przelew | 7,00 zł |
-| 156. | Przelew zagraniczny w opcji kosztowej SHA 1) | od kwoty przelewu | 0,25%, min. 40,00 zł, maks. 250,00 zł |
-| 157. | Przelew zagraniczny w opcji kosztowej OUR | od kwoty przelewu | 0,25%, min. 40,00 zł, maks. 250,00 zł, powiększona o opłaty banków pośredniczących |
+| 155. | Przelew SEPA w euro | za przelew | 6,00 zł |
+| 156. | Przelew zagraniczny w opcji kosztowej SHA 1) | od kwoty przelewu | 0,2%, min. 40,00 zł, maks. 250,00 zł |
+| 157. | Przelew zagraniczny w opcji kosztowej OUR | od kwoty przelewu | 0,2%, min. 40,00 zł, maks. 250,00 zł, powiększona o opłaty banków pośredniczących |
 | 158. | Dopłata za realizację przelewu zagranicznego w trybie pilnym 2) | za przelew | 60,00 zł |
 | 159. | Przelew przychodzący z zagranicy | za przelew | 15,00 zł |
 | 160. | Wymiana walut po kursie z Tabeli kursów walut Banku | od kwoty transakcji | marża 1,5% |
@@ -273,7 +273,7 @@ Przelewy zlecane w bankowości elektronicznej oraz za pośrednictwem doradcy są
 | 167. | Przelew z rachunku walutowego na rachunek w złotych w Banku | od kwoty transakcji | marża 1,5% |
 | 168. | Przelew między rachunkami walutowymi w tej samej walucie w Banku | za przelew | bez opłat |
 | 169. | Przelew przychodzący w walucie obcej w kwocie powyżej równowartości 100 000 zł — zawiadomienie doradcy | za przelew | brak opłaty |
-| 170. | Zlecenie wypłaty środków z rachunku walutowego przelewem do kraju | za przelew | 7,00 zł |
+| 170. | Zlecenie wypłaty środków z rachunku walutowego przelewem do kraju | za przelew | 6,00 zł |
 | 171. | Przelew z potwierdzeniem w formie dokumentu na papierze | za dokument | 10,00 zł |
 | 172. | Limit jednorazowego przelewu zlecanego w bankowości elektronicznej | za przelew | 20 000,00 zł |
 | 173. | Przelew krajowy złożony w bankowości elektronicznej | za przelew | bez opłat |
@@ -281,20 +281,20 @@ Przelewy zlecane w bankowości elektronicznej oraz za pośrednictwem doradcy są
 | 175. | Przelew krajowy zlecony w placówce Banku | za przelew | 8,00 zł |
 | 176. | Przelew do urzędu skarbowego i organów publicznych | za przelew | bez opłat |
 | 177. | Przelew do Zakładu Ubezpieczeń Społecznych | za przelew | bez opłat |
-| 178. | Przelew natychmiastowy do kwoty 30 000,00 zł | za przelew | 5,00 zł |
+| 178. | Przelew natychmiastowy do kwoty 30 000,00 zł | za przelew | 4,00 zł |
 | 179. | Przelew z datą przyszłą | za przelew | brak opłaty |
 | 180. | Przelew krajowy w złotych o wartości powyżej 50 000,00 zł zlecany w placówce | od kwoty przelewu | 0,05% kwoty, maks. 50,00 zł |
 | 181. | Przelew pilny w złotych realizowany poza godzinami granicznymi | za przelew | 25,00 zł |
 | 182. | Przelew wewnętrzny między rachunkami Klienta w Banku | za przelew | bez opłat |
-| 183. | Zlecenie stałe — ustanowienie | za zlecenie | 3,00 zł |
-| 184. | Zlecenie stałe — realizacja w złotych | za realizację | 3,00 zł |
+| 183. | Zlecenie stałe — ustanowienie | za zlecenie | 2,00 zł |
+| 184. | Zlecenie stałe — realizacja w złotych | za realizację | 2,00 zł |
 | 185. | Zlecenie stałe — zmiana lub odwołanie (w terminie 2 dni) | za dyspozycję | bez opłat |
 | 186. | Zlecenie stałe do przekazywania środków na rachunek oszczędnościowy | za realizację | brak opłaty |
 | 187. | Polecenie zapłaty — udzielenie zgody | jednorazowo | bez opłat |
 | 188. | Polecenie zapłaty — realizacja | za realizację | 1,50 zł |
 | 189. | Polecenie zapłaty — odwołanie zgody | za dyspozycję | brak opłaty |
 | 190. | Zlecenie wypłaty w gotówce dla odbiorcy wskazanego przez Klienta | za zlecenie | 20,00 zł |
-| 191. | Cykliczny przelew walutowy (zlecenie stałe w walucie obcej) | za realizację | 7,00 zł |
+| 191. | Cykliczny przelew walutowy (zlecenie stałe w walucie obcej) | za realizację | 6,00 zł |
 | 192. | Zlecenie przekazania środków na wskazany rachunek po spełnieniu warunku (zlecenie warunkowe) | za zlecenie | 50,00 zł |
 | 193. | Wymiana walut w systemie bankowości elektronicznej po kursie z Tabeli kursów walut | od kwoty transakcji | marża 1,5% |
 | 194. | Wymiana walut w bankowości elektronicznej w czasie rzeczywistym (kurs dealerski) | od kwoty transakcji | marża 0,50% |
@@ -305,7 +305,7 @@ Przelewy zlecane w bankowości elektronicznej oraz za pośrednictwem doradcy są
 | 199. | Przeliczenie operacji kartą w walucie obcej | za operację | wg kursu z tabeli kursów walut Banku |
 | 200. | Przeliczenie opłaty z waluty rachunku na złote | za operację | wg kursu średniego z Tabeli kursów walut |
 | 201. | Informacja o aktualnych kursach walut przekazywana przez doradcę | za informację | bez opłat |
-| 202. | Powiadomienie SMS o zmianie kursu walutowego (alert kursowy) | miesięcznie | 3,00 zł |
+| 202. | Powiadomienie SMS o zmianie kursu walutowego (alert kursowy) | miesięcznie | 2,00 zł |
 
 <!-- page: 12 -->
 - 1\) W opcji SHA koszty banku zleceniodawcy ponosi zleceniodawca, a koszty banku odbiorcy ponosi odbiorca.
@@ -330,13 +330,13 @@ Karty premium wydaje się Klientom bankowości prywatnej jako karty debetowe i k
 | 206. | Obsługa karty dodatkowej | rocznie | 149,00 zł |
 | 207. | Obsługa karty kredytowej premium (karta główna) | rocznie | 99,00 zł |
 | 208. | Obsługa karty kredytowej premium (karta dodatkowa) | rocznie | 49,00 zł |
-| 209. | Wydanie duplikatu karty | jednorazowo | 30,00 zł |
+| 209. | Wydanie duplikatu karty | jednorazowo | 25,00 zł |
 | 210. | Zastrzeżenie karty | jednorazowo | 0,00 zł |
-| 211. | Dostarczenie karty kurierem na podany przez Klienta adres | za przesyłkę | 45,00 zł |
+| 211. | Dostarczenie karty kurierem na podany przez Klienta adres | za przesyłkę | 40,00 zł |
 | 212. | Awaryjne wydanie karty lub gotówki za granicą 2) | jednorazowo | 250,00 zł |
-| 213. | Wypłata gotówki w bankomacie innego banku w kraju | za wypłatę | 6,00 zł |
+| 213. | Wypłata gotówki w bankomacie innego banku w kraju | za wypłatę | 5,00 zł |
 | 214. | Wypłata gotówki w bankomacie za granicą | od kwoty wypłaty | 1%, min. 10,00 zł |
-| 215. | Wypłata gotówki kartą kredytową | od kwoty wypłaty | 4,5%, min. 10,00 zł |
+| 215. | Wypłata gotówki kartą kredytową | od kwoty wypłaty | 4%, min. 10,00 zł |
 | 216. | Zmiana kodu PIN | za zmianę | 5,00 zł |
 | 217. | Wypłata gotówki w bankomacie Banku w kraju | za wypłatę | brak opłaty |
 | 218. | Wypłata gotówki w bankomatach sieci współpracującej z Bankiem w kraju | za wypłatę | bez opłat |
@@ -349,7 +349,7 @@ Karty premium wydaje się Klientom bankowości prywatnej jako karty debetowe i k
 | 225. | Wydruk potwierdzenia transakcji w bankomacie | za wydruk | brak opłaty |
 | 226. | Zmiana kodu PIN w bankomacie Banku | za zmianę | bez opłat |
 | 227. | Oprocentowanie transakcji bezgotówkowych kartą kredytową | rocznie | 19,9% |
-| 228. | Oprocentowanie wypłat gotówki kartą kredytową | rocznie | 24,9% |
+| 228. | Oprocentowanie wypłat gotówki kartą kredytową | rocznie | 23,9% |
 | 229. | Oprocentowanie transakcji rozłożonych na raty | rocznie | 12,9% |
 | 230. | Prowizja za rozłożenie transakcji na raty | od kwoty transakcji | 3% |
 | 231. | Opłata za przekroczenie przyznanego limitu kredytowego | za zdarzenie | 35,00 zł |
@@ -357,7 +357,7 @@ Karty premium wydaje się Klientom bankowości prywatnej jako karty debetowe i k
 | 233. | Okres bezodsetkowy dla transakcji bezgotówkowych | za okres rozliczeniowy | do 50 dni |
 | 234. | Zmiana przyznanego limitu kredytowego na żądanie Klienta | za dyspozycję | brak opłaty |
 | 235. | Pilna wymiana karty kredytowej | jednorazowo | 150,00 zł |
-| 236. | Wydanie zestawienia transakcji w formie papierowej | za zestawienie | 12,00 zł |
+| 236. | Wydanie zestawienia transakcji w formie papierowej | za zestawienie | 10,00 zł |
 | 237. | Dostęp do saloników lotniskowych — wejście Klienta ponad limit karty premium plus | za wejście | 90,00 zł |
 | 238. | Dostęp do saloników lotniskowych — wejście gościa | za wejście | 90,00 zł |
 | 239. | Ubezpieczenie podróżne związane z kartą premium | rocznie | w ramach opłaty za kartę |
@@ -390,7 +390,7 @@ i czas realizacji podaje infolinia +48 800 000 003.
 
 ## VII. Lokaty negocjowane i produkty oszczędnościowe
 
-Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach określonych <!-- page: 15 --> w regulaminie lokat oraz lokaty negocjowane, których oprocentowanie ustalane jest indywidualnie. Lokata negocjowana jest dostępna przy kwocie nie niższej niż 250 000,00 zł.
+Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach określonych <!-- page: 15 --> w regulaminie lokat oraz lokaty negocjowane, których oprocentowanie ustalane jest indywidualnie. Lokata negocjowana jest dostępna przy kwocie nie niższej niż 200 000,00 zł.
 
 - 1\. Oprocentowanie lokat jest stałe w okresie umownym. Odsetki kapitalizowane są na koniec okresu umownego, a do ich obliczania przyjmuje się rok liczący 365 dni.
 - 2\. Odsetki od lokat podlegają opodatkowaniu na zasadach określonych w przepisach podatkowych. Bank potrąca podatek od dochodów z odsetek i odprowadza go do właściwego urzędu skarbowego.
@@ -399,21 +399,21 @@ Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach okre
 | --- | --- | --- | --- |
 | 257. | Otwarcie lokaty terminowej | jednorazowo | bez opłat |
 | 258. | Oprocentowanie lokaty „Lokata Stabilna” 1) | rocznie | wg poniższych stawek |
-| 258.1. | okres 1 miesiąca | rocznie | 3% |
-| 258.2. | okres 3 miesięcy | rocznie | 3,75% |
+| 258.1. | okres 1 miesiąca | rocznie | 3,2% |
+| 258.2. | okres 3 miesięcy | rocznie | 4% |
 | 258.3. | okres 6 miesięcy | rocznie | 4,2% |
 | 258.4. | okres 12 miesięcy | rocznie | 4,4% |
 | 258.5. | okres 24 miesięcy | rocznie | 4,6% |
 | 259. | Oprocentowanie lokaty „Lokata Indywidualna” 2) | rocznie | wg indywidualnej oferty |
-| 260. | Minimalna kwota lokaty „Lokata Indywidualna” | jednorazowo | 250 000,00 zł |
+| 260. | Minimalna kwota lokaty „Lokata Indywidualna” | jednorazowo | 200 000,00 zł |
 | 261. | Oprocentowanie środków przy zerwaniu lokaty przed terminem | rocznie | 0,1% |
 | 262. | Opłata za zerwanie lokaty przed terminem | jednorazowo | 0,00 zł |
-| 263. | Oprocentowanie po automatycznym odnowieniu lokaty | rocznie | 1,2% |
+| 263. | Oprocentowanie po automatycznym odnowieniu lokaty | rocznie | 1,5% |
 | 264. | Wypłata środków z lokaty w gotówce | za wypłatę | 0,00 zł |
 | 265. | Sporządzenie potwierdzenia założenia lokaty | za dokument | 15,00 zł |
-| 266. | Oprocentowanie rachunku oszczędnościowego | rocznie | 3% |
+| 266. | Oprocentowanie rachunku oszczędnościowego | rocznie | 3,5% |
 | 267. | Przygotowanie indywidualnej oferty lokaty „Lokata Indywidualna” | za ofertę | brak opłaty |
-| 268. | Próg kwotowy dla lokaty „Lokata Indywidualna” | jednorazowo | 250 000,00 zł |
+| 268. | Próg kwotowy dla lokaty „Lokata Indywidualna” | jednorazowo | 200 000,00 zł |
 | 269. | Ustalenie oprocentowania lokaty „Lokata Indywidualna” w dniu zawarcia umowy | rocznie | wg indywidualnej oferty |
 | 270. | Zawarcie umowy lokaty negocjowanej na okres powyżej 12 miesięcy | jednorazowo | bez opłat |
 | 271. | Zawarcie umowy lokaty negocjowanej w walucie obcej | jednorazowo | bez opłat |
@@ -421,11 +421,11 @@ Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach okre
 | 273. | Oprocentowanie lokaty negocjowanej zerwanej przed terminem | rocznie | 0,1% |
 | 274. | Częściowa wypłata środków z lokaty negocjowanej | za wypłatę | wg warunków umowy |
 | 275. | Zmiana warunków lokaty negocjowanej za zgodą Banku | za dyspozycję | brak opłaty |
-| 276. | Aneks do umowy lokaty negocjowanej sporządzony na wniosek Klienta | za każdy dokument | 30,00 zł |
+| 276. | Aneks do umowy lokaty negocjowanej sporządzony na wniosek Klienta | za każdy dokument | 35,00 zł |
 | 277. | Założenie lokaty terminowej w systemie bankowości elektronicznej | jednorazowo | bez opłat |
 | 278. | Założenie lokaty terminowej w placówce Banku | jednorazowo | bez opłat |
-| 279. | Oprocentowanie lokaty na 1 miesiąc | rocznie | 3% |
-| 280. | Oprocentowanie lokaty na 3 miesiące | rocznie | 3,75% |
+| 279. | Oprocentowanie lokaty na 1 miesiąc | rocznie | 3,2% |
+| 280. | Oprocentowanie lokaty na 3 miesiące | rocznie | 4% |
 | 281. | Oprocentowanie lokaty na 6 miesięcy | rocznie | 4,2% |
 | 282. | Oprocentowanie lokaty na 12 miesięcy | rocznie | 4,4% |
 | 283. | Oprocentowanie lokaty na 24 miesiące | rocznie | 4,6% |
@@ -440,7 +440,7 @@ Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach okre
 | 292. | Potwierdzenie zasad opodatkowania odsetek | za każdy dokument | bez opłat |
 | 293. | Przygotowanie zestawienia lokat Klienta na wskazany dzień | za zestawienie | 40,00 zł |
 | 294. | Zestawienie lokat dla biegłego rewidenta lub doradcy podatkowego | za każdy dokument | 150,00 zł |
-| 295. | Duplikat umowy lokaty | za każdy dokument | 30,00 zł |
+| 295. | Duplikat umowy lokaty | za każdy dokument | 35,00 zł |
 | 296. | Informacja o gwarancjach Bankowego Funduszu Gwarancyjnego (limit gwarancji: równowartość 100 000 euro) | za informację | bez opłat |
 | 297. | Lokata w walucie obcej na okres do 12 miesięcy | rocznie | wg Tabeli oprocentowania lokat walutowych |
 | 298. | Lokata dwuwalutowa z możliwością zmiany waluty przy odnowieniu | rocznie | wg indywidualnej oferty |
@@ -471,7 +471,7 @@ Bank prowadzi dla Klientów rachunki papierów wartościowych wraz z rachunkami 
 | 307. | Założenie rachunku papierów wartościowych | jednorazowo | 0,00 zł |
 | 308. | Prowadzenie rachunku papierów wartościowych 1) | rocznie od wartości aktywów | 0,15%, min. 40,00 zł kwartalnie |
 | 309. | Rozliczenie transakcji na instrumentach finansowych | za rozliczenie | wg poniższych stawek |
-| 309.1. | na rynku krajowym | za rozliczenie | 18,00 zł |
+| 309.1. | na rynku krajowym | za rozliczenie | 15,00 zł |
 | 309.2. | w obrocie zagranicznym 2) | za rozliczenie | 60,00 zł |
 | 310. | Przeniesienie instrumentów finansowych do innego podmiotu prowadzącego rachunek | za instrument | 100,00 zł |
 | 311. | Obsługa wypłaty dywidendy lub odsetek od obligacji | od kwoty wypłaty | 0,1%, min. 5,00 zł |
@@ -498,8 +498,8 @@ Bank prowadzi dla Klientów rachunki papierów wartościowych wraz z rachunkami 
 | 332. | Ustanowienie zastawu na instrumentach finansowych | jednorazowo | 200,00 zł |
 | 333. | Zwolnienie zastawu na instrumentach finansowych | jednorazowo | 100,00 zł |
 | 334. | Zestawienie transakcji i sald za rok kalendarzowy | rocznie | brak opłaty |
-| 335. | Duplikat umowy o prowadzenie rachunku papierów wartościowych | za dokument | 30,00 zł |
-| 336. | Rozliczenie transakcji kupna lub sprzedaży na rynku krajowym | za rozliczenie | 18,00 zł |
+| 335. | Duplikat umowy o prowadzenie rachunku papierów wartościowych | za dokument | 35,00 zł |
+| 336. | Rozliczenie transakcji kupna lub sprzedaży na rynku krajowym | za rozliczenie | 15,00 zł |
 | 337. | Rozliczenie transakcji kupna lub sprzedaży na rynkach zagranicznych | za rozliczenie | 60,00 zł |
 | 338. | Rozliczenie transakcji poza rynkiem zorganizowanym (transakcja pakietowa) | od wartości transakcji | 0,10% wartości transakcji, min. 100,00 zł |
 | 339. | Rozliczenie transakcji z dostawą instrumentów niezgodnie z terminem (korekta rozliczenia) | za korektę | 80,00 zł |
@@ -514,7 +514,7 @@ Bank prowadzi dla Klientów rachunki papierów wartościowych wraz z rachunkami 
 | 348. | Przechowywanie instrumentów finansowych w depozycie zagranicznym | rocznie od wartości aktywów | 0,20% wartości aktywów |
 | 349. | Ustalenie wartości portfela instrumentów finansowych na dzień wskazany przez Klienta | za wycenę | 80,00 zł |
 | 350. | Raport miesięczny o stanie rachunku papierów wartościowych w formie elektronicznej | miesięcznie | brak opłaty |
-| 351. | Raport miesięczny o stanie rachunku papierów wartościowych w formie papierowej | za raport | 12,00 zł |
+| 351. | Raport miesięczny o stanie rachunku papierów wartościowych w formie papierowej | za raport | 10,00 zł |
 | 352. | Dostęp do wykazu notowań i analiz rynkowych udostępnianych przez Bank | miesięcznie | brak opłaty |
 | 353. | Informacja o zdarzeniach korporacyjnych dotyczących posiadanych instrumentów | za informację | brak opłaty |
 | 354. | Wniosek o wydanie instrumentów finansowych w formie dokumentów (jeżeli instrument ma postać dokumentu) | za instrument | 300,00 zł |
@@ -547,9 +547,9 @@ Usługi dodatkowe obejmują w szczególności wynajem skrytek sejfowych, usługi
 | 361. | Dostarczenie dokumentów kurierem na wskazany adres | za przesyłkę | 35,00 zł |
 | 362. | Zaświadczenie o posiadaniu rachunku i saldzie zgromadzonych środków | za dokument | 20,00 zł |
 | 363. | Zaświadczenie o saldzie na rachunku walutowym | za dokument | 30,00 zł |
-| 364. | Opinia bankowa | za dokument | 140,00 zł |
+| 364. | Opinia bankowa | za dokument | 120,00 zł |
 | 365. | Potwierdzenie sald dla biegłego rewidenta | za dokument | 150,00 zł |
-| 366. | Odpis umowy | za dokument | 30,00 zł |
+| 366. | Odpis umowy | za dokument | 35,00 zł |
 | 367. | Najem skrytki sejfowej małej | rocznie | 280,00 zł |
 | 368. | Wynajem skrytki sejfowej średniej | rocznie | 520,00 zł |
 | 369. | Wynajem skrytki sejfowej dużej | rocznie | 890,00 zł |
@@ -559,7 +559,7 @@ Usługi dodatkowe obejmują w szczególności wynajem skrytek sejfowych, usługi
 | 373. | Wizyta w skrytkowni w dniu wolnym od pracy | za wizytę | 30,00 zł |
 | 374. | Ustanowienie pełnomocnika upoważnionego do dostępu do skrytki | jednorazowo | 50,00 zł |
 | 375. | Otwarcie skrytki w trybie awaryjnym (przy utracie obu kluczy) w obecności komisji | jednorazowo | 400,00 zł plus koszt usługi ślusarskiej |
-| 376. | Opłata za zwłokę w zapłacie czynszu za skrytkę (po 60 dni) | za upomnienie | 15,00 zł |
+| 376. | Opłata za zwłokę w zapłacie czynszu za skrytkę (po 60 dni) | za upomnienie | 18,00 zł |
 | 377. | Zlecenie concierge — rezerwacja restauracji lub biletów | za zlecenie | od 100,00 zł |
 | 378. | Zlecenie concierge — organizacja podróży krajowej | za zlecenie | od 100,00 zł |
 | 379. | Zlecenie concierge — organizacja podróży zagranicznej | za zlecenie | od 250,00 zł |
@@ -582,13 +582,13 @@ Usługi dodatkowe obejmują w szczególności wynajem skrytek sejfowych, usługi
 | 396. | Rozpatrzenie skargi Klienta na usługę dodatkową (termin odpowiedzi 30 dni) | za skargę | brak opłaty |
 | 397. | Zaświadczenie o numerach rachunków i dacie ich otwarcia | za dokument | 20,00 zł |
 | 398. | Zaświadczenie o historii rachunku z ostatnich dwunastu miesięcy | za dokument | 20,00 zł |
-| 399. | Opinia bankowa na potrzeby postępowania przetargowego | za każdy dokument | 140,00 zł |
-| 400. | Opinia bankowa w języku angielskim | za dokument | 140,00 zł |
+| 399. | Opinia bankowa na potrzeby postępowania przetargowego | za każdy dokument | 120,00 zł |
+| 400. | Opinia bankowa w języku angielskim | za dokument | 120,00 zł |
 | 401. | Potwierdzenie sald dla doradcy podatkowego | za dokument | 150,00 zł |
-| 402. | Potwierdzenie możliwości finansowych Klienta (list referencyjny) na potrzeby zakupu nieruchomości | za każdy dokument | 140,00 zł |
+| 402. | Potwierdzenie możliwości finansowych Klienta (list referencyjny) na potrzeby zakupu nieruchomości | za każdy dokument | 120,00 zł |
 | 403. | Poświadczenie zgodności kopii dokumentu z oryginałem | za stronę | 20,00 zł |
-| 404. | Wydanie duplikatu umowy | za dokument | 30,00 zł |
-| 405. | Wydanie wyciągu z rachunku w postaci papierowej | za wyciąg | 12,00 zł |
+| 404. | Wydanie duplikatu umowy | za dokument | 35,00 zł |
+| 405. | Wydanie wyciągu z rachunku w postaci papierowej | za wyciąg | 10,00 zł |
 | 406. | Wystawienie dokumentu w trybie pilnym (do końca następnego dnia roboczego) | za każdy dokument | dopłata 50% stawki podstawowej |
 
 <!-- page: 22 -->
@@ -606,4 +606,4 @@ odrębnie.
 Użyte w Taryfie określenia oznaczają: **doradca** — pracownik Banku przypisany do Klienta bankowości prywatnej; **aktywa** — suma środków i instrumentów finansowych Klienta wskazanych w części „Postanowienia ogólne”; **średnie saldo** — średnia arytmetyczna sald z końca każdego dnia kalendarzowego danego miesiąca.
 
 - 1\. Zaległe opłaty z tytułu usług dodatkowych, w tym zaległą opłatę za skrytkę sejfową trwającą dłużej niż 60 dni, Bank ma prawo potrącić z rachunków Klienta. Po upływie tego terminu Bank może wypowiedzieć umowę najmu skrytki.
-- 2\. Pytania dotyczące Taryfy można zgłaszać do doradcy lub na infolinię pod numerem 800 000 001, czynną w dni robocze od 7:00 do 21:00.
+- 2\. Pytania dotyczące Taryfy można zgłaszać do doradcy lub na infolinię pod numerem 800 000 001, czynną codziennie przez całą dobę.

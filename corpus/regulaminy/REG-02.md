@@ -64,7 +64,7 @@ Ponadto, na potrzeby stosowania Regulaminu, poszczególne określenia oznaczają
     - a\) podejrzenie wykorzystania karty do celów niezgodnych z prawem;
     - b\) naruszenie przez Klienta postanowień wcześniejszych umów z Bankiem;
     - c\) brak możliwości zastosowania środków bezpieczeństwa finansowego, o których mowa w przepisach o przeciwdziałaniu praniu pieniędzy.[^2]
-- 3\. Klient ma prawo odstąpić od umowy o kartę bez podania przyczyny w terminie 14 dni od dnia jej zawarcia, składając Bankowi oświadczenie na piśmie lub za pośrednictwem bankowości elektronicznej. Odstąpienie nie wpływa na umowę rachunku.
+- 3\. Klient ma prawo odstąpić od umowy o kartę bez podania przyczyny w terminie 21 dni od dnia jej zawarcia, składając Bankowi oświadczenie na piśmie lub za pośrednictwem bankowości elektronicznej. Odstąpienie nie wpływa na umowę rachunku.
 
 [^2]: Zakres stosowanych środków określa ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644); Bank może poprosić o dodatkowych dokumentów lub informacji.
 
@@ -96,7 +96,7 @@ Ponadto, na potrzeby stosowania Regulaminu, poszczególne określenia oznaczają
   - 1\) w bankowości elektronicznej — w zakresie danych kontaktowych;
   - 2\) w placówce Banku — po okazaniu dokumentu tożsamości, w zakresie wszystkich danych;
   - 3\) na Infolinii pod numerem 800 000 001 — w zakresie danych kontaktowych, po pozytywnym uwierzytelnieniu.
-- 3\. Bank wysyła korespondencję na ostatni adres wskazany przez Klienta. Pismo wysłane na ten adres uważa się za doręczone po upływie 14 dni od dnia jego nadania, jeżeli przesyłka nie została podjęta. Koszty wynikające z braku aktualizacji danych, w tym koszty ponownego wysłania karty, ponosi Posiadacz.
+- 3\. Bank wysyła korespondencję na ostatni adres wskazany przez Klienta. Pismo wysłane na ten adres uważa się za doręczone po upływie 10 dni od dnia jego nadania, jeżeli przesyłka nie została podjęta. Koszty wynikające z braku aktualizacji danych, w tym koszty ponownego wysłania karty, ponosi Posiadacz.
 - 4\. Zmiana nazwiska Użytkownika wymaga wydania nowej karty; karta z nowymi danymi jest wydawana na zasadach duplikatu, z zachowaniem dotychczasowych limitów, chyba że przepisy lub Regulamin stanowią inaczej.
 
 ### § 8.
@@ -105,12 +105,12 @@ Ponadto, na potrzeby stosowania Regulaminu, poszczególne określenia oznaczają
 - 2\. Jeżeli w wyniku rozliczenia transakcji saldo rachunku zostanie przekroczone, w szczególności z powodu zmiany kursu waluty między autoryzacją a rozliczeniem albo z powodu rozliczenia transakcji, której akceptant nie przekazał do rozliczenia w terminie, powstaje zadłużenie przeterminowane. Posiadacz jest obowiązany spłacić je niezwłocznie, a Bank:
   - 1\) nalicza od niego odsetki za opóźnienie w wysokości 17% w stosunku rocznym;
   - 2\) może wstrzymać możliwość wykonywania dalszych transakcji kartą do czasu spłaty zadłużenia;
-  - 3\) może pobrać opłatę za wezwanie do zapłaty w wysokości 15,00 zł.
+  - 3\) może pobrać opłatę za wezwanie do zapłaty w wysokości 20,00 zł.
 - 3\. Posiadacz sprawdza dostępne środki oraz zablokowane kwoty w bankowości elektronicznej, w bankomacie lub na Infolinii. Bank zwalnia blokadę środków po rozliczeniu transakcji albo po upływie okresu wskazanego w Regulaminie, jeżeli akceptant nie przekazał transakcji do rozliczenia.
 
 ### § 9.
 
-- 1\. Bank informuje Użytkownika o wykonanych transakcjach kartą i zmianach dotyczących karty za pomocą komunikatów w aplikacji mobilnej (powiadomienia push). Usługa ta jest wolna od opłat w kwocie 0,00 zł, jeżeli Użytkownik korzysta z aplikacji mobilnej i wyraził zgodę na odbiór powiadomień.
+- 1\. Bank informuje Użytkownika o wykonanych transakcjach kartą i zmianach dotyczących karty za pomocą komunikatów w aplikacji mobilnej (powiadomienia push). Usługa ta jest wolna od opłat w kwocie 0,50 zł, jeżeli Użytkownik korzysta z aplikacji mobilnej i wyraził zgodę na odbiór powiadomień.
 - 2\. Na wniosek Posiadacza Bank może przesyłać powiadomienia o transakcjach także w formie wiadomości tekstowych SMS; w takim przypadku obowiązują opłaty określone w umowie rachunku, w kwocie 3,00 zł za wiadomość. Użytkownik ponosi odpowiedzialność za aktualność numeru telefonu wskazanego Bankowi.
 - 3\. Brak powiadomienia nie zwalnia Użytkownika <!-- page: 5 --> z obowiązku regularnego sprawdzania historii rachunku. Bank nie odpowiada za niedoręczenie powiadomienia spowodowane brakiem zasięgu, wyłączeniem urządzenia, zablokowaniem powiadomień w ustawieniach lub zmianą numeru telefonu, o której Bank nie został poinformowany.[^3]
 
@@ -221,7 +221,7 @@ Ponadto, na potrzeby stosowania Regulaminu, poszczególne określenia oznaczają
 
 ### § 21.
 
-- 1\. Użytkownik ma prawo zmienić PIN w bankomacie Banku, bankowości elektronicznej lub w placówce. Zmiana PIN-u w bankomacie innego operatora bywa możliwa wyłącznie, jeżeli ten operator udostępnia taką funkcję. Za zmianę PIN-u Bank pobiera opłatę w wysokości 5,00 zł, o ile nie dokonano jej w bankowości elektronicznej.
+- 1\. Użytkownik ma prawo zmienić PIN w bankomacie Banku, bankowości elektronicznej lub w placówce. Zmiana PIN-u w bankomacie innego operatora bywa możliwa wyłącznie, jeżeli ten operator udostępnia taką funkcję. Za zmianę PIN-u Bank pobiera opłatę w wysokości 6,00 zł, o ile nie dokonano jej w bankowości elektronicznej.
 - 2\. Nowy PIN nie powinien składać się z prostych kombinacji, w szczególności z kolejnych lub powtarzających się cyfr, daty urodzenia Użytkownika albo numeru telefonu. Bank może nie zaakceptować PIN, który nie spełnia tych wymagań.
 - 3\. Użytkownik, który zapomniał PIN-u, może ustalić nowy PIN w bankowości elektronicznej po silnym uwierzytelnieniu lub zażądać przesłania nowego PIN-u pocztą. Bank nie ma technicznej możliwości odczytania ani przypomnienia PIN-u ustalonego przez Użytkownika.
 - 4\. trzykrotne wprowadzenie błędnego PIN-u w bankomacie lub terminalu powoduje czasowe zablokowanie możliwości jego użycia. Odblokowanie następuje automatycznie po upływie doby albo wcześniej na dyspozycję Użytkownika, po pozytywnym uwierzytelnieniu; zablokowanie PIN-u nie jest zastrzeżeniem karty.
@@ -307,7 +307,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 - 1\. Wpłaty gotówki na rachunek dokonywane za pomocą karty we wpłatomatach Banku są księgowane natychmiast po potwierdzeniu przez urządzenie liczby i autentyczności banknotów. Jednorazowa wpłata nie może przekroczyć kwoty 10 000,00 zł, a liczba banknotów — ograniczenia technicznego urządzenia.
 - 2\. Wpłatomat nie przyjmuje banknotów uszkodzonych, nieczytelnych, sfałszowanych, banknotów obcych walut oraz monet. Wpłatomat zatrzymuje banknoty, co do których istnieje podejrzenie sfałszowania, i przekazuje je właściwym organom zgodnie z przepisami.
 - 3\. W razie rozbieżności między kwotą wpłaty zarejestrowaną przez urządzenie a kwotą wskazaną przez Użytkownika, rozstrzyga protokół otwarcia wpłatomatu sporządzony przez komisję Banku; Użytkownik ma prawo zażądać wyjaśnienia na zasadach określonych w postanowieniach o reklamacjach.[^7]
-- 4\. Za wpłatę gotówki we wpłatomacie Bank pobiera opłatę w wysokości 3,00 zł, chyba że Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze przewiduje dla danego rachunku stawkę niższą.
+- 4\. Za wpłatę gotówki we wpłatomacie Bank pobiera opłatę w wysokości 3,50 zł, chyba że Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze przewiduje dla danego rachunku stawkę niższą.
 
 [^7]: Protokół jest sporządzany w obecności co najmniej dwóch pracowników Banku; Użytkownikowi przysługuje wgląd w jego treść.
 
@@ -440,7 +440,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
   - 3\) w placówce Banku w godzinach jej pracy.
 - 2\. Po przyjęciu zgłoszenia Bank niezwłocznie blokuje kartę w sposób uniemożliwiający dalsze jej użycie i przekazuje Użytkownikowi potwierdzenie zastrzeżenia, w tym datę i godzinę dokonania blokady oraz numer zgłoszenia. Zastrzeżenie karty jest nieodwracalne, a karta nie może zostać ponownie użyta, nawet jeśli została odnaleziona.[^12]
 - 3\. Zastrzeżenie karty obejmuje także powiązanych z nią tokenów płatności mobilnych, chyba że Użytkownik zażąda zablokowania wyłącznie karty fizycznej. Na wniosek Użytkownika Bank wydaje kartę zastępczą z nowym numerem; warunki jej wydania określa § 10.
-- 4\. Zastrzeżenie karty jest wolne od opłat w kwocie 0,00 zł. Za wydanie karty zastępczej Bank pobiera opłatę zgodnie ze stawką określoną w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
+- 4\. Zastrzeżenie karty jest wolne od opłat w kwocie 10,00 zł. Za wydanie karty zastępczej Bank pobiera opłatę zgodnie ze stawką określoną w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
 
 [^12]: Użytkownik, który odnajdzie zastrzeżoną kartę, powinien ją zniszczyć albo zwrócić Bankowi; użycie karty po zastrzeżeniu jest niemożliwe z przyczyn technicznych.
 
@@ -518,7 +518,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 
 - 1\. W razie sporu co do autoryzacji transakcji kartą Bank wykazuje, że transakcja została uwierzytelniona, prawidłowo zarejestrowana i zaksięgowana oraz że nie miała na nią wpływu awaria techniczna lub inna usterka. Samo zarejestrowanie użycia karty nie musi wystarczać do wykazania, że płatnik autoryzował transakcję.
 - 2\. Bank przechowuje dokumentację transakcji kartowych przez okres wymagany przepisami prawa, a w sprawach reklamacyjnych — do czasu zakończenia postępowania. Dokumentacja obejmuje w szczególności zapisy systemów autoryzacyjnych, logi uwierzytelniania oraz dane przekazane przez organizację płatniczą i akceptanta.
-- 3\. Użytkownik ma prawo zażądać udostępnienia kopii danych dotyczących kwestionowanej transakcji, w szczególności daty, godziny, miejsca i sposobu autoryzacji. Bank udostępnia te dane w terminie 15 dni od dnia otrzymania żądania, o ile nie koliduje to z przepisami o tajemnicy bankowej lub bezpieczeństwie.
+- 3\. Użytkownik ma prawo zażądać udostępnienia kopii danych dotyczących kwestionowanej transakcji, w szczególności daty, godziny, miejsca i sposobu autoryzacji. Bank udostępnia te dane w terminie 14 dni od dnia otrzymania żądania, o ile nie koliduje to z przepisami o tajemnicy bankowej lub bezpieczeństwie.
 
 ### § 51.
 
@@ -534,7 +534,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 ### § 52.
 
 - 1\. Reklamacja transakcji kartowej, poza danymi wymienionymi w postanowieniach o reklamacjach, powinna zawierać numer karty (co najmniej jego ostatnie cztery cyfry), datę, kwotę i opis transakcji oraz wskazanie, czy karta znajdowała się w posiadaniu Użytkownika w chwili transakcji.
-- 2\. Bank rozpatruje reklamację w terminie 15 dni od dnia jej otrzymania. Jeżeli wyjaśnienie sprawy wymaga uzyskania informacji od organizacji płatniczej lub zagranicznego banku, Bank może przedłużyć termin do 60 dni, informując o tym Klienta i wskazując przyczynę opóźnienia oraz przewidywany termin odpowiedzi.
+- 2\. Bank rozpatruje reklamację w terminie 14 dni od dnia jej otrzymania. Jeżeli wyjaśnienie sprawy wymaga uzyskania informacji od organizacji płatniczej lub zagranicznego banku, Bank może przedłużyć termin do 45 dni, informując o tym Klienta i wskazując przyczynę opóźnienia oraz przewidywany termin odpowiedzi.
 - 3\. Odpowiedź na reklamację Bank przekazuje w postaci papierowej albo — za zgodą Klienta — na innym trwałym nośniku, w tym pocztą elektroniczną. W przypadku uznania reklamacji Bank niezwłocznie przywraca rachunek do stanu sprzed transakcji. W przypadku odrzucenia reklamacji Bank podaje uzasadnienie oraz informuje o możliwości odwołania się do Rzecznika Finansowego lub sądu.
 
 ### § 53.
@@ -559,7 +559,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 ### § 55.
 
 - 1\. Rachunek, do którego wydano kartę, jest prowadzony w złotych polskich. Transakcje dokonane w innej walucie niż złoty są rozliczane przez organizację płatniczą w walucie rozliczeniowej, a następnie przeliczane przez Bank na złote.
-- 2\. Przeliczenie transakcji w walucie obcej na złote następuje według kursu obowiązującego w tabeli kursów walut Banku, ogłaszanej w dniu rozliczenia transakcji o godzinie 9:00, powiększonego o marżę przeliczeniową w wysokości 1,5%.[^17] Jeżeli transakcja jest rozliczana w walucie innej niż euro lub dolar amerykański, organizacja płatnicza może dokonać najpierw przeliczenia na walutę rozliczeniową, co wpływa na ostateczną kwotę obciążenia.
+- 2\. Przeliczenie transakcji w walucie obcej na złote następuje według kursu obowiązującego w tabeli kursów walut Banku, ogłaszanej w dniu rozliczenia transakcji o godzinie 8:30, powiększonego o marżę przeliczeniową w wysokości 1,3%.[^17] Jeżeli transakcja jest rozliczana w walucie innej niż euro lub dolar amerykański, organizacja płatnicza może dokonać najpierw przeliczenia na walutę rozliczeniową, co wpływa na ostateczną kwotę obciążenia.
 - 3\. Przy płatnościach za granicą akceptant lub operator bankomatu może zaproponować dokonanie transakcji w złotych według własnego kursu (usługa dynamicznej konwersji walut). Wybór tej opcji oznacza, że kurs ustala podmiot trzeci, a nie Bank; Bank nie ponosi odpowiedzialności za jego wysokość. Użytkownik, który chce skorzystać z kursu Banku, powinien odmówić przeliczenia i wybrać płatność w walucie lokalnej.
 - 4\. Informacja o wysokości kursu zastosowanego do transakcji oraz o łącznej kwocie obciążenia jest prezentowana w historii rachunku. Na wniosek Użytkownika Bank udostępnia zestawienie transakcji walutowych na trwałym nośniku, a także informacje o łącznej wysokości opłat za przeliczenie, wyrażonej jako odsetek ostatniego kursu referencyjnego Europejskiego Banku Centralnego dla danej waluty, w wiadomości przekazywanej po pierwszej płatności w walucie państwa Unii Europejskiej innej niż złoty.
 
@@ -567,9 +567,9 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 
 ### § 56.
 
-- 1\. Kursy walut stosowane do przeliczeń transakcji kartowych Bank ogłasza w tabeli kursów walut Banku, dostępnej w placówkach, w bankowości elektronicznej i na stronie https://bank.example. Tabela jest aktualizowana w dni robocze, nie później niż do godziny 9:00.
+- 1\. Kursy walut stosowane do przeliczeń transakcji kartowych Bank ogłasza w tabeli kursów walut Banku, dostępnej w placówkach, w bankowości elektronicznej i na stronie https://bank.example. Tabela jest aktualizowana w dni robocze, nie później niż do godziny 8:30.
 - 2\. W okresie między aktualizacjami tabeli Bank stosuje kurs z ostatniej aktualizacji. W przypadku gwałtownych zmian na rynku walutowym Bank może zaktualizować tabelę częściej, o czym informuje w bankowości elektronicznej.
-- 3\. Marża przeliczeniowa Banku wynosi 1,5% i jest stała, o ile Taryfa nie stanowi inaczej. Zmiana wysokości marży następuje w trybie zmiany Regulaminu lub Taryfy.
+- 3\. Marża przeliczeniowa Banku wynosi 1,3% i jest stała, o ile Taryfa nie stanowi inaczej. Zmiana wysokości marży następuje w trybie zmiany Regulaminu lub Taryfy.
 - 4\. Użytkownik może samodzielnie oszacować kurs rozliczenia transakcji na podstawie tabeli kursów i marży; faktyczny kurs zależy jednak od kursu ustalonego przez organizację płatniczą w dniu rozliczenia, który może się różnić od kursu w dniu transakcji.
 
 ### § 57.
@@ -589,10 +589,10 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 ### § 59.
 
 - 1\. Za czynności związane z wydaniem i używaniem karty Bank pobiera opłaty i prowizje w wysokości określonej w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze, obowiązującej w dniu dokonania czynności. W dniu wejścia w życie Regulaminu opłaty te wynoszą w szczególności:
-  - 1\) wydanie karty — 0,00 zł;
+  - 1\) wydanie karty — 10,00 zł;
   - 2\) prowadzenie karty (opłata miesięczna) — 6,00 zł;
   - 3\) wydanie duplikatu karty — 30,00 zł;
-  - 4\) zmiana PIN-u — 5,00 zł;
+  - 4\) zmiana PIN-u — 6,00 zł;
   - 5\) wypłata gotówki w bankomacie innego operatora — 6,00 zł;
   - 6\) wypłata gotówki w bankomacie za granicą — 10,00 zł.
 - 2\. Opłata miesięczna za kartę jest pobierana z rachunku w ostatnim dniu miesiąca kalendarzowego, a w razie braku środków — w dniu ich wpływu, wraz z odsetkami za opóźnienie wynikającymi z zadłużenia. Pierwsza opłata jest pobierana za miesiąc, w którym karta została aktywowana.[^18]
@@ -607,11 +607,11 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 
 | **Czynność** | **Opłata** |
 | --- | --- |
-| Wydanie karty | 0,00 zł |
+| Wydanie karty | 10,00 zł |
 | Opłata miesięczna za kartę | 6,00 zł |
 | Wydanie karty w trybie pilnym | 70,00 zł |
 | Duplikat karty | 30,00 zł |
-| Zastrzeżenie karty | 0,00 zł |
+| Zastrzeżenie karty | 10,00 zł |
 | Wypłata w bankomacie obcym w kraju | 6,00 zł |
 | Wypłata w bankomacie za granicą | 10,00 zł |
 
@@ -620,8 +620,8 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 ### § 61.
 
 - 1\. Bank pobiera opłaty z rachunku, do którego wydano kartę, w dniu wykonania czynności lub w terminach wskazanych w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze. Jeżeli na rachunku nie ma wystarczających środków, Bank może pobrać opłatę w dniu ich wpływu, powodując powstanie zadłużenia przeterminowanego.
-- 2\. Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie w wysokości 17% w stosunku rocznym. Za wezwanie do zapłaty Bank pobiera opłatę 15,00 zł, o ile poprzednie wezwanie nie zostało wysłane w ciągu ostatnich 30 dni.
-- 3\. Zmiana wysokości opłat następuje na zasadach określonych w postanowieniach o zmianie Regulaminu. Bank zwraca Posiadaczowi opłatę <!-- page: 22 --> pobraną nienależnie, w terminie 14 dni od dnia stwierdzenia błędu albo otrzymania żądania Posiadacza.
+- 2\. Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie w wysokości 17% w stosunku rocznym. Za wezwanie do zapłaty Bank pobiera opłatę 20,00 zł, o ile poprzednie wezwanie nie zostało wysłane w ciągu ostatnich 30 dni.
+- 3\. Zmiana wysokości opłat następuje na zasadach określonych w postanowieniach o zmianie Regulaminu. Bank zwraca Posiadaczowi opłatę <!-- page: 22 --> pobraną nienależnie, w terminie 10 dni od dnia stwierdzenia błędu albo otrzymania żądania Posiadacza.
 
 ## Rozdział 11. Ważność, wznowienie i rezygnacja
 
@@ -638,14 +638,14 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 
 ### § 63.
 
-- 1\. Posiadacz może wypowiedzieć umowę o kartę w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego 30 dni, składając oświadczenie w placówce, w bankowości elektronicznej albo w formie pisemnej na adres Banku. Umowa zostaje rozwiązana z końcem okresu wypowiedzenia.
-- 2\. Bank może wypowiedzieć umowę o kartę z zachowaniem 60 dni terminu wypowiedzenia, jeżeli zachodzi ważna przyczyna, w szczególności:
+- 1\. Posiadacz może wypowiedzieć umowę o kartę w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego 21 dni, składając oświadczenie w placówce, w bankowości elektronicznej albo w formie pisemnej na adres Banku. Umowa zostaje rozwiązana z końcem okresu wypowiedzenia.
+- 2\. Bank może wypowiedzieć umowę o kartę z zachowaniem 90 dni terminu wypowiedzenia, jeżeli zachodzi ważna przyczyna, w szczególności:
   - 1\) Posiadacz rażąco narusza postanowienia Regulaminu lub umowy;
   - 2\) karta była wykorzystywana w sposób sprzeczny z prawem lub z zasadami współżycia społecznego;
   - 3\) Posiadacz przez okres 12 miesięcy nie dokonał żadnej transakcji kartą, mimo wezwania do jej używania;
   - 4\) Posiadacz podał dane nieprawdziwe lub odmówił ich aktualizacji, co uniemożliwia Bankowi stosowanie środków bezpieczeństwa finansowego.
 - 3\. Wypowiedzenie umowy rachunku skutkuje wygaśnięciem umowy o kartę z dniem rozwiązania umowy rachunku. Z dniem rozwiązania umowy o kartę Użytkownik zobowiązany jest zwrócić Bankowi kartę lub ją zniszczy; Bank dezaktywuje wszystkie tokeny karty.
-- 4\. Rozwiązanie umowy nie zwalnia Posiadacza z obowiązku uregulowania transakcji wykonanych przed jej rozwiązaniem, a zrealizowanych i rozliczonych po tym dniu. Bank zwraca proporcjonalną część opłaty za okres po rozwiązaniu umowy, jeżeli opłata została pobrana z góry, w terminie 14 dni.
+- 4\. Rozwiązanie umowy nie zwalnia Posiadacza z obowiązku uregulowania transakcji wykonanych przed jej rozwiązaniem, a zrealizowanych i rozliczonych po tym dniu. Bank zwraca proporcjonalną część opłaty za okres po rozwiązaniu umowy, jeżeli opłata została pobrana z góry, w terminie 10 dni.
 
 ### § 64.
 
@@ -694,9 +694,9 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 - 2\. Reklamacja musi zawierać dane umożliwiające identyfikację składającego reklamację, opis zastrzeżeń oraz oczekiwany sposób jej załatwienia. Reklamacje rozpatruje Biuro Reklamacji.
 <!-- page: 24 -->
 - 3\. Bank udziela odpowiedzi na reklamację niezwłocznie, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank informuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 40 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 
 ### § 69.
 
@@ -707,7 +707,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank powiadamia Klienta na trwałym nośniku, z wyprzedzeniem nie krótszym niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie wniesie sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie wniesie sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ### § 70.
 
@@ -727,7 +727,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
   - 2\) w formie papierowej, listem zwykłym lub poleconym na ostatni znany Bankowi adres korespondencyjny;
   - 3\) w oddziale Banku, za pisemnym potwierdzeniem odbioru.
 - 2\. Klient jest obowiązany niezwłocznie informować Bank o zmianie danych kontaktowych, w tym adresu korespondencyjnego, numeru telefonu oraz adresu e-mail. Korespondencję wysłaną na ostatni adres wskazany Bankowi traktuje się za doręczoną.
-- 3\. Jeżeli korespondencja nie została odebrana, uważa się ją za doręczoną po upływie 14 dni od <!-- page: 25 --> dnia jej pierwszego awizowania. Korespondencję elektroniczną uznaje się za doręczoną w dniu jej udostępnienia w bankowości elektronicznej.
+- 3\. Jeżeli korespondencja nie została odebrana, uważa się ją za doręczoną po upływie 10 dni od <!-- page: 25 --> dnia jej pierwszego awizowania. Korespondencję elektroniczną uznaje się za doręczoną w dniu jej udostępnienia w bankowości elektronicznej.
 
 ### § 72.
 
@@ -767,7 +767,7 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 
 - 1\. Oświadczenia i zawiadomienia składane Bankowi mogą być składane w placówce, na Infolinii (w zakresie, w jakim umożliwia to Bank), w bankowości elektronicznej lub w formie pisemnej na adres ul. Przykładowa 1, 00-001 Warszawa. Dla skuteczności oświadczeń składanych w formie pisemnej decyduje data wpływu do Banku.
 - 2\. Oświadczenia Banku wobec Klienta są przekazywane na trwałym nośniku, w szczególności w bankowości elektronicznej, pocztą elektroniczną lub listem. Jeżeli Klient nie wyraził zgody na korzystanie z poczty elektronicznej, Bank przesyła korespondencję na adres korespondencyjny.
-- 3\. Klient odpowiada za skutki nieaktualnych danych kontaktowych. Pismo skierowane na ostatni znany adres uważa się za doręczone w terminie 14 dni od dnia nadania, chyba że Klient wykaże, że z przyczyn niezależnych od niego doręczenie nie nastąpiło.
+- 3\. Klient odpowiada za skutki nieaktualnych danych kontaktowych. Pismo skierowane na ostatni znany adres uważa się za doręczone w terminie 10 dni od dnia nadania, chyba że Klient wykaże, że z przyczyn niezależnych od niego doręczenie nie nastąpiło.
 
 ### § 77.
 

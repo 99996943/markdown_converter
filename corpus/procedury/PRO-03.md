@@ -1,11 +1,11 @@
 # Procedura zakładania rachunków osobistych dla klientów indywidualnych Banku Przykładowego S.A.
 
 <!-- page: 1 -->
-*Bank Przykładowy S.A., BP/PRO/03, wersja 1, obowiązuje od 1 marca 2026 r.*
+*Bank Przykładowy S.A., BP/PRO/03, wersja 2, obowiązuje od 1 marca 2026 r.*
 
 | **Oznaczenie** | BP/PRO/03 |
 | --- | --- |
-| **Wersja** | 1 |
+| **Wersja** | 2 |
 | **Właściciel** | Departament Obsługi Klienta |
 | **Zatwierdził** | Zarząd Banku Przykładowego S.A. |
 | **Data zatwierdzenia** | 8 lutego 2026 r. |
@@ -15,7 +15,8 @@
 
 | **Wersja** | **Data** | **Opis zmian** |
 | --- | --- | --- |
-| 1 | 8 lutego 2026 r. | Wydanie pierwsze. |
+| 1 | 11 lipca 2025 r. | Wydanie pierwsze. |
+| 2 | 8 lutego 2026 r. | Aktualizacja postanowień procedury. |
 
 ## 1. Cel
 
@@ -29,7 +30,7 @@ Procedura przedstawia kolejne czynności, które pracownik wykonuje od przyjęci
 - 4\) postępowanie w przypadkach szczególnych, w tym przy rachunkach małoletnich, rachunkach wspólnych i obsłudze cudzoziemców;
 - 5\) odmowę otwarcia rachunku i dokumentowanie tej odmowy.
 
-Procedura służy także wykonaniu obowiązków Banku wynikających z przepisów o bankowości (zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646)) oraz zapewnieniu spójności z postanowieniami dokumentu „Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank <!-- page: 2 --> Przykładowy S.A.” i z opłatami określonymi w dokumencie „Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych”.
+Procedura służy także wykonaniu obowiązków Banku wynikających z przepisów o bankowości (zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646)) oraz zapewnieniu spójności z postanowieniami dokumentu „Regulamin prowadzenia <!-- page: 2 --> rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.” i z opłatami określonymi w dokumencie „Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych”.
 
 ## 2. Zakres stosowania
 
@@ -349,7 +350,7 @@ Decyzję o zawiadomieniu GIIF oraz o ewentualnym wstrzymaniu transakcji podejmuj
 
 ## 9. Opis postępowania — zawarcie umowy i uruchomienie rachunku
 
-Umowę o rachunek osobisty zawiera się na piśmie albo w postaci elektronicznej na trwałym nośniku. Klient, który zawarł umowę na odległość, może od niej odstąpić w terminie 14 dni bez podania przyczyny.
+Umowę o rachunek osobisty zawiera się na piśmie albo w postaci elektronicznej na trwałym nośniku. Klient, który zawarł umowę na odległość, może od niej odstąpić w terminie 21 dni bez podania przyczyny.
 
 <!-- page: 14 -->
 - 9.1\. Przygotuj umowę w systemie CBS-PRZYKŁAD.
@@ -396,12 +397,12 @@ Razem z rachunkiem klient może zamówić kartę debetową i dostęp do bankowo�
 - 9.9\. Po wygenerowaniu kodu aktywacyjnego poinformuj klienta, że jest on ważny przez 7 dni i że po wygaśnięciu ważności nowy kod wygenerujesz na jego dyspozycję.
 - 9.10\. Zarejestruj zamówione usługi w systemie i wyślij klientowi potwierdzenie na trwałym nośniku.
 
-Klient, który zawarł umowę rachunku na odległość, ma prawo odstąpić od niej bez podania przyczyny w terminie 14 dni od dnia zawarcia umowy lub od dnia otrzymania warunków umowy, jeżeli nastąpiło to później. Zasady wykonywania tego prawa wynikają z ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
+Klient, który zawarł umowę rachunku na odległość, ma prawo odstąpić od niej bez podania przyczyny w terminie 21 dni od dnia zawarcia umowy lub od dnia otrzymania warunków umowy, jeżeli nastąpiło to później. Zasady wykonywania tego prawa wynikają z ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
 
 - 9.11\. Przyjmij oświadczenie o odstąpieniu złożone w placówce, pisemnie albo w bankowości elektronicznej.
   - 9.11.1\. Zapisz datę wpływu oświadczenia; liczy się data wysłania, jeżeli oświadczenie wysłano przed upływem terminu.
   - 9.11.2\. Nie wymagaj od klienta podania przyczyny odstąpienia ani nie zniechęcaj klienta do skorzystania z tego prawa.
-- 9.12\. Zleć komórce „Departament Operacji” zamknięcie rachunku i rozliczenie środków <!-- page: 16 --> w ciągu 14 dni od dnia otrzymania oświadczenia.
+- 9.12\. Zleć komórce „Departament Operacji” zamknięcie rachunku i rozliczenie środków <!-- page: 16 --> w ciągu 10 dni od dnia otrzymania oświadczenia.
   - 9.12.1\. Zwróć klientowi pobrane opłaty, z wyjątkiem opłat za usługi faktycznie wykonane na jego wyraźne żądanie przed odstąpieniem.
   - 9.12.2\. Jeżeli na rachunku znajdują się środki, wypłać je na wskazany przez klienta rachunek w innym banku lub w gotówce.
 - 9.13\. Załącz oświadczenie i potwierdzenie rozliczenia do dokumentacji sprawy.
@@ -486,7 +487,7 @@ Wniosek o otwarcie rachunku składa klient osobiście. Złożenie wniosku przez 
   - 10.22.1\. Zweryfikuj tożsamość mocodawcy na podstawie kopii jego dokumentu poświadczonej notarialnie lub w inny dopuszczony sposób.
   - 10.22.2\. Wypełnij kwestionariusz ryzyka dla mocodawcy i uwzględnij okoliczność działania przez pełnomocnika jako czynnik podnoszący ryzyko.
 - 10.23\. Potwierdź pełnomocnictwo u mocodawcy telefonicznie na numer podany w dokumentach, a nie w piśmie pełnomocnika; weryfikacja pełnomocnictwa trwa nie dłużej niż 3 dni.
-- 10.24\. Po otwarciu rachunku poinformuj mocodawcę o zawarciu umowy i o zakresie uprawnień pełnomocnika; opłata za ustanowienie pełnomocnictwa do rachunku wynosi 0,00 zł.
+- 10.24\. Po otwarciu rachunku poinformuj mocodawcę o zawarciu umowy i o zakresie uprawnień pełnomocnika; opłata za ustanowienie pełnomocnictwa do rachunku wynosi 10,00 zł.
 
 W trakcie otwierania rachunku i po jego otwarciu klient może zgłosić zmianę danych podanych we wniosku. Zmiana danych identyfikacyjnych i dotyczących ryzyka wymaga aktualizacji dokumentacji.
 
@@ -546,8 +547,8 @@ Zgłoszenie reklamacyjne rejestruje każdy pracownik Banku, niezależnie od form
   - 12.1.1\. Ustal formę zgłoszenia: pisemną, ustną lub elektroniczną.
   - 12.1.2\. Przy zgłoszeniu ustnym sporządź protokół i wydaj go Klientowi na jego żądanie.
 - 12.2\. Poinformuj o przyjęciu Klientowi przyjęcie reklamacji na trwałym nośniku.
-- 12.3\. Przekaż sprawę do rozpatrzenia i zachowaj termin odpowiedzi: 15 dni dla usług płatniczych oraz 30 dni dla pozostałych.
-  - 12.3.1\. Gdy termin jest zagrożony, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 35 dni.
+- 12.3\. Przekaż sprawę do rozpatrzenia i zachowaj termin odpowiedzi: 14 dni dla usług płatniczych oraz 25 dni dla pozostałych.
+  - 12.3.1\. Gdy termin jest zagrożony, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 40 dni.
 - 12.4\. Wyślij odpowiedź w trybie przewidzianym przepisami (zob. ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823)) i zamknij sprawę w rejestrze.
 
 Kontakt z Klientem realizuje się wyłącznie kanałami opisanymi w umowie lub w ustaleniach z Klientem. Dane teleadresowe Banku używane w korespondencji muszą być zgodne z danymi: adres ul. Przykładowa 1, 00-001 Warszawa, infolinia 800 000 001, strona https://bank.example.

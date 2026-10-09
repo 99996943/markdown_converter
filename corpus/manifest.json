@@ -11,11 +11,11 @@
         "min": 20,
         "max": 30
       },
-      "versionedShare": 0,
+      "versionedShare": 30,
       "maxVersions": 3,
-      "outdatedPerType": 0,
-      "contradictionPairsPerType": 0,
-      "crossTypeContradictionPairs": 0,
+      "outdatedPerType": 2,
+      "contradictionPairsPerType": 1,
+      "crossTypeContradictionPairs": 1,
       "poison": [],
       "strictUniqueness": true,
       "maxSharedShare": 20,
@@ -104,7 +104,7 @@
     },
     "parserVersion": "1.0.0",
     "generatorVersion": "1.0.0",
-    "contentHash": "176323b7bec33620b40dd71c19ce0868d7f92b58545acf3b55b0f668b12406f2"
+    "contentHash": "b99167be1d35f1cec4172d243a4017ceadd0f84a4b803e0a8603cabfd09a99fe"
   },
   "documents": [
     {
@@ -113,8 +113,9 @@
       "title": "Regulamin promocji „Karta z cashbackiem”",
       "designation": "BP/REG/01",
       "version": 1,
-      "validFrom": "2026-03-01",
-      "status": "obowiazujacy",
+      "validFrom": "2024-11-01",
+      "validTo": "2026-08-31",
+      "status": "nieaktualny",
       "pdf": "regulaminy/REG-01.pdf",
       "markdown": "regulaminy/REG-01.md",
       "pages": 26,
@@ -137,7 +138,17 @@
       "template": "regulamin-kart-debetowych",
       "layout": "dwie-kolumny",
       "seed": 2413130212113714107,
-      "sharedWordShare": 0.087
+      "sharedWordShare": 0.087,
+      "contradictions": [
+        {
+          "with": "REG-04",
+          "unit": "§ 63 ust. 2",
+          "page": 22,
+          "fact": "termin.wypowiedzenie-przez-bank",
+          "this": "90 dni",
+          "other": "30 dni"
+        }
+      ]
     },
     {
       "id": "REG-03",
@@ -153,7 +164,17 @@
       "template": "regulamin-lokat",
       "layout": "jedna-kolumna",
       "seed": 5824847356033299391,
-      "sharedWordShare": 0.088
+      "sharedWordShare": 0.088,
+      "contradictions": [
+        {
+          "with": "TAR-09",
+          "unit": "§ 25 ust. 4",
+          "page": 12,
+          "fact": "oplata.zaswiadczenie",
+          "this": "20,00 zł",
+          "other": "0,00 zł"
+        }
+      ]
     },
     {
       "id": "REG-04",
@@ -169,34 +190,231 @@
       "template": "regulamin-kart-kredytowych",
       "layout": "dwie-kolumny",
       "seed": 13794813368322103252,
-      "sharedWordShare": 0.069
+      "sharedWordShare": 0.069,
+      "contradictions": [
+        {
+          "with": "REG-02",
+          "unit": "§ 91 ust. 2",
+          "page": 21,
+          "fact": "termin.wypowiedzenie-przez-bank",
+          "this": "30 dni",
+          "other": "90 dni"
+        }
+      ]
     },
     {
       "id": "REG-05",
       "type": "regulaminy",
       "title": "Regulamin promocji „Konto z premią” Bank Przykładowy S.A.",
       "designation": "BP/REG/05",
-      "version": 1,
+      "version": 2,
       "validFrom": "2025-09-01",
       "status": "obowiazujacy",
+      "previousVersion": "REG-05-w1",
       "pdf": "regulaminy/REG-05.pdf",
       "markdown": "regulaminy/REG-05.md",
       "pages": 22,
       "template": "regulamin-promocji-konto",
       "layout": "tabela-dokument",
       "seed": 5381860506082556391,
-      "sharedWordShare": 0.128
+      "sharedWordShare": 0.128,
+      "changes": [
+        {
+          "unit": "§ 11 ust. 3",
+          "page": 5,
+          "fact": "promocja.warunek.wplyw-pierwszy-termin",
+          "before": "21 dni",
+          "after": "30 dni"
+        },
+        {
+          "unit": "§ 63 ust. 1",
+          "page": 20,
+          "fact": "termin.odstapienie-od-umowy",
+          "before": "14 dni",
+          "after": "21 dni"
+        },
+        {
+          "unit": "§ 51 ust. 3 pkt 2",
+          "page": 16,
+          "fact": "termin.reklamacja.inne",
+          "before": "30 dni",
+          "after": "25 dni"
+        },
+        {
+          "unit": "§ 51 ust. 4",
+          "page": 16,
+          "fact": "termin.reklamacja.maksymalny",
+          "before": "60 dni",
+          "after": "45 dni"
+        },
+        {
+          "unit": "§ 51 ust. 3 pkt 1",
+          "page": 16,
+          "fact": "termin.reklamacja.platnicze",
+          "before": "15 dni",
+          "after": "14 dni"
+        },
+        {
+          "unit": "§ 51 ust. 4",
+          "page": 16,
+          "fact": "termin.reklamacja.przedluzenie",
+          "before": "35 dni",
+          "after": "40 dni"
+        },
+        {
+          "unit": "§ 64 ust. 3",
+          "page": 20,
+          "fact": "termin.wypowiedzenie-przez-klienta",
+          "before": "30 dni",
+          "after": "21 dni"
+        }
+      ]
+    },
+    {
+      "id": "REG-05-w1",
+      "type": "regulaminy",
+      "title": "Regulamin promocji „Konto z premią” Bank Przykładowy S.A.",
+      "designation": "BP/REG/05",
+      "version": 1,
+      "validFrom": "2024-06-01",
+      "validTo": "2025-08-31",
+      "status": "nieaktualny",
+      "pdf": "regulaminy/REG-05-w1.pdf",
+      "markdown": "regulaminy/REG-05-w1.md",
+      "pages": 22,
+      "template": "regulamin-promocji-konto",
+      "layout": "tabela-dokument",
+      "seed": 5381860506082556391,
+      "sharedWordShare": 0.126
     },
     {
       "id": "REG-06",
       "type": "regulaminy",
       "title": "Regulamin rachunków bankowych dla przedsiębiorców Bank Przykładowy S.A.",
       "designation": "BP/REG/06",
-      "version": 1,
+      "version": 3,
       "validFrom": "2026-06-01",
       "status": "obowiazujacy",
+      "previousVersion": "REG-06-w2",
       "pdf": "regulaminy/REG-06.pdf",
       "markdown": "regulaminy/REG-06.md",
+      "pages": 23,
+      "template": "regulamin-rachunku-firmowego",
+      "layout": "jedna-kolumna",
+      "seed": 1824829257466863290,
+      "sharedWordShare": 0.073,
+      "changes": [
+        {
+          "unit": "§ 22 ust. 2 pkt 3",
+          "page": 11,
+          "fact": "godzina.firma.przelew-walutowy",
+          "before": "14:00",
+          "after": "13:30"
+        },
+        {
+          "unit": "§ 30 ust. 3",
+          "page": 14,
+          "fact": "kurs.godzina-tabeli",
+          "before": "9:00",
+          "after": "8:30"
+        },
+        {
+          "unit": "§ 27 ust. 2",
+          "page": 13,
+          "fact": "limit.firma.wyplata-bez-awiza",
+          "before": "20 000,00 zł",
+          "after": "15 000,00 zł"
+        },
+        {
+          "unit": "§ 40 ust. 3 pkt 5",
+          "page": 19,
+          "fact": "oplata.firma.opinia-bankowa",
+          "before": "90,00 zł",
+          "after": "100,00 zł"
+        },
+        {
+          "unit": "§ 30 ust. 4",
+          "page": 14,
+          "fact": "oplata.firma.prowadzenie-pomocniczego",
+          "before": "10,00 zł",
+          "after": "12,00 zł"
+        },
+        {
+          "unit": "§ 21 ust. 4",
+          "page": 11,
+          "fact": "oplata.firma.przelew-elixir",
+          "before": "2,50 zł",
+          "after": "3,00 zł"
+        },
+        {
+          "unit": "§ 40 ust. 3 pkt 2",
+          "page": 19,
+          "fact": "oplata.firma.przelew-wysokiej-wartosci",
+          "before": "40,00 zł",
+          "after": "25,00 zł"
+        },
+        {
+          "unit": "§ 33 ust. 2",
+          "page": 15,
+          "fact": "oplata.firma.token",
+          "before": "45,00 zł",
+          "after": "50,00 zł"
+        },
+        {
+          "unit": "§ 40 ust. 3 pkt 6",
+          "page": 19,
+          "fact": "oplata.powiadomienie-sms",
+          "before": "2,00 zł",
+          "after": "3,00 zł"
+        },
+        {
+          "unit": "§ 21 ust. 4",
+          "page": 11,
+          "fact": "oplata.przelew-natychmiastowy",
+          "before": "4,00 zł",
+          "after": "3,50 zł"
+        },
+        {
+          "unit": "§ 40 ust. 3 pkt 3",
+          "page": 19,
+          "fact": "oplata.wyciag-papierowy",
+          "before": "10,00 zł",
+          "after": "12,00 zł"
+        },
+        {
+          "unit": "§ 32 ust. 2",
+          "page": 15,
+          "fact": "oprocentowanie.firma.lokata-overnight",
+          "before": "2,5%",
+          "after": "2,25%"
+        },
+        {
+          "unit": "§ 3 ust. 4",
+          "page": 3,
+          "fact": "oprocentowanie.firma.rachunek-biezacy",
+          "before": "0,5%",
+          "after": "0,25%"
+        },
+        {
+          "unit": "§ 43 ust. 2",
+          "page": 20,
+          "fact": "termin.wypowiedzenie-przez-bank",
+          "before": "60 dni",
+          "after": "90 dni"
+        }
+      ]
+    },
+    {
+      "id": "REG-06-w1",
+      "type": "regulaminy",
+      "title": "Regulamin rachunków bankowych dla przedsiębiorców Bank Przykładowy S.A.",
+      "designation": "BP/REG/06",
+      "version": 1,
+      "validFrom": "2024-01-01",
+      "validTo": "2025-05-31",
+      "status": "nieaktualny",
+      "pdf": "regulaminy/REG-06-w1.pdf",
+      "markdown": "regulaminy/REG-06-w1.md",
       "pages": 23,
       "template": "regulamin-rachunku-firmowego",
       "layout": "jedna-kolumna",
@@ -204,13 +422,90 @@
       "sharedWordShare": 0.073
     },
     {
+      "id": "REG-06-w2",
+      "type": "regulaminy",
+      "title": "Regulamin rachunków bankowych dla przedsiębiorców Bank Przykładowy S.A.",
+      "designation": "BP/REG/06",
+      "version": 2,
+      "validFrom": "2025-06-01",
+      "validTo": "2026-05-31",
+      "status": "nieaktualny",
+      "previousVersion": "REG-06-w1",
+      "pdf": "regulaminy/REG-06-w2.pdf",
+      "markdown": "regulaminy/REG-06-w2.md",
+      "pages": 23,
+      "template": "regulamin-rachunku-firmowego",
+      "layout": "jedna-kolumna",
+      "seed": 1824829257466863290,
+      "sharedWordShare": 0.070,
+      "changes": [
+        {
+          "unit": "§ 30 ust. 2",
+          "page": 14,
+          "fact": "kurs.marza-przeliczen",
+          "before": "1,5%",
+          "after": "1,3%"
+        },
+        {
+          "unit": "§ 42 ust. 3 pkt 5",
+          "page": 19,
+          "fact": "oplata.firma.opinia-bankowa",
+          "before": "80,00 zł",
+          "after": "90,00 zł"
+        },
+        {
+          "unit": "§ 42 ust. 3 pkt 2",
+          "page": 19,
+          "fact": "oplata.firma.przelew-wysokiej-wartosci",
+          "before": "25,00 zł",
+          "after": "40,00 zł"
+        },
+        {
+          "unit": "§ 27 ust. 4",
+          "page": 13,
+          "fact": "oplata.firma.wplata-gotowkowa-minimum",
+          "before": "6,00 zł",
+          "after": "7,00 zł"
+        },
+        {
+          "unit": "§ 21 ust. 4",
+          "page": 11,
+          "fact": "oplata.przelew-natychmiastowy",
+          "before": "5,00 zł",
+          "after": "4,00 zł"
+        },
+        {
+          "unit": "§ 5 ust. 2",
+          "page": 4,
+          "fact": "termin.doreczenie-korespondencji",
+          "before": "14 dni",
+          "after": "10 dni"
+        },
+        {
+          "unit": "§ 51 ust. 2",
+          "page": 23,
+          "fact": "termin.reklamacja.maksymalny",
+          "before": "60 dni",
+          "after": "45 dni"
+        },
+        {
+          "unit": "§ 46 ust. 1",
+          "page": 20,
+          "fact": "termin.wypowiedzenie-przez-klienta",
+          "before": "30 dni",
+          "after": "21 dni"
+        }
+      ]
+    },
+    {
       "id": "REG-07",
       "type": "regulaminy",
       "title": "Regulamin korzystania z bankowości elektronicznej i aplikacji mobilnej",
       "designation": "BP/REG/07",
       "version": 1,
-      "validFrom": "2025-11-01",
-      "status": "obowiazujacy",
+      "validFrom": "2024-05-01",
+      "validTo": "2026-04-30",
+      "status": "nieaktualny",
       "pdf": "regulaminy/REG-07.pdf",
       "markdown": "regulaminy/REG-07.md",
       "pages": 23,
@@ -240,11 +535,59 @@
       "type": "regulaminy",
       "title": "Regulamin udzielania i obsługi kredytu hipotecznego dla konsumentów",
       "designation": "BP/REG/09",
-      "version": 1,
+      "version": 2,
       "validFrom": "2025-09-01",
       "status": "obowiazujacy",
+      "previousVersion": "REG-09-w1",
       "pdf": "regulaminy/REG-09.pdf",
       "markdown": "regulaminy/REG-09.md",
+      "pages": 22,
+      "template": "regulamin-kredytu-hipotecznego",
+      "layout": "jedna-kolumna",
+      "seed": 17063136704830563096,
+      "sharedWordShare": 0.093,
+      "changes": [
+        {
+          "unit": "§ 48 ust. 2 pkt 2",
+          "page": 19,
+          "fact": "oplata.upomnienie",
+          "before": "18,00 zł",
+          "after": "20,00 zł"
+        },
+        {
+          "unit": "§ 52 ust. 4",
+          "page": 21,
+          "fact": "termin.reklamacja.maksymalny",
+          "before": "60 dni",
+          "after": "45 dni"
+        },
+        {
+          "unit": "§ 52 ust. 4",
+          "page": 21,
+          "fact": "termin.reklamacja.przedluzenie",
+          "before": "35 dni",
+          "after": "40 dni"
+        },
+        {
+          "unit": "§ 53 ust. 2",
+          "page": 21,
+          "fact": "termin.zmiana-regulaminu",
+          "before": "30 dni",
+          "after": "60 dni"
+        }
+      ]
+    },
+    {
+      "id": "REG-09-w1",
+      "type": "regulaminy",
+      "title": "Regulamin udzielania i obsługi kredytu hipotecznego dla konsumentów",
+      "designation": "BP/REG/09",
+      "version": 1,
+      "validFrom": "2025-01-01",
+      "validTo": "2025-08-31",
+      "status": "nieaktualny",
+      "pdf": "regulaminy/REG-09-w1.pdf",
+      "markdown": "regulaminy/REG-09-w1.md",
       "pages": 22,
       "template": "regulamin-kredytu-hipotecznego",
       "layout": "jedna-kolumna",
@@ -273,8 +616,9 @@
       "title": "Taryfa opłat i prowizji dla klientów bankowości prywatnej Bank Przykładowy S.A.",
       "designation": "BP/TAR/01",
       "version": 1,
-      "validFrom": "2026-09-01",
-      "status": "obowiazujacy",
+      "validFrom": "2024-10-01",
+      "validTo": "2026-06-30",
+      "status": "nieaktualny",
       "pdf": "taryfy/TAR-01.pdf",
       "markdown": "taryfy/TAR-01.md",
       "pages": 22,
@@ -297,7 +641,17 @@
       "template": "taryfa-karty",
       "layout": "taryfa-bez-siatki",
       "seed": 14807846933840076842,
-      "sharedWordShare": 0.047
+      "sharedWordShare": 0.047,
+      "contradictions": [
+        {
+          "with": "TAR-06",
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.marza-przeliczen",
+          "this": "1,3%",
+          "other": "2,5%"
+        }
+      ]
     },
     {
       "id": "TAR-03",
@@ -320,11 +674,87 @@
       "type": "taryfy",
       "title": "Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A.",
       "designation": "BP/TAR/04",
-      "version": 1,
+      "version": 2,
       "validFrom": "2025-06-01",
       "status": "obowiazujacy",
+      "previousVersion": "TAR-04-w1",
       "pdf": "taryfy/TAR-04.pdf",
       "markdown": "taryfy/TAR-04.md",
+      "pages": 29,
+      "template": "taryfa-bankowosc-elektroniczna",
+      "layout": "taryfa-siatka",
+      "seed": 4060715809051253564,
+      "sharedWordShare": 0.031,
+      "changes": [
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.marza-przeliczen",
+          "before": "1,5%",
+          "after": "1,3%"
+        },
+        {
+          "unit": "poz. 75",
+          "page": 7,
+          "fact": "oplata.firma.bankowosc-abonament",
+          "before": "35,00 zł",
+          "after": "29,00 zł"
+        },
+        {
+          "unit": "poz. 205",
+          "page": 10,
+          "fact": "oplata.firma.opinia-bankowa",
+          "before": "80,00 zł",
+          "after": "90,00 zł"
+        },
+        {
+          "unit": "poz. 86",
+          "page": 7,
+          "fact": "oplata.firma.przelew-wewnetrzny",
+          "before": "0,00 zł",
+          "after": "0,10 zł"
+        },
+        {
+          "unit": "poz. 13",
+          "page": 3,
+          "fact": "oplata.przelew-natychmiastowy",
+          "before": "5,00 zł",
+          "after": "4,00 zł"
+        },
+        {
+          "unit": "sekcja X",
+          "page": 28,
+          "fact": "termin.reklamacja.platnicze",
+          "before": "15 dni",
+          "after": "14 dni"
+        },
+        {
+          "unit": "sekcja X",
+          "page": 28,
+          "fact": "termin.reklamacja.rozpatrzenie",
+          "before": "15 dni",
+          "after": "12 dni"
+        },
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "termin.zwrot-oplat",
+          "before": "14 dni",
+          "after": "10 dni"
+        }
+      ]
+    },
+    {
+      "id": "TAR-04-w1",
+      "type": "taryfy",
+      "title": "Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A.",
+      "designation": "BP/TAR/04",
+      "version": 1,
+      "validFrom": "2024-02-01",
+      "validTo": "2025-05-31",
+      "status": "nieaktualny",
+      "pdf": "taryfy/TAR-04-w1.pdf",
+      "markdown": "taryfy/TAR-04-w1.md",
       "pages": 29,
       "template": "taryfa-bankowosc-elektroniczna",
       "layout": "taryfa-siatka",
@@ -336,16 +766,112 @@
       "type": "taryfy",
       "title": "Taryfa opłat i prowizji Bank Przykładowy S.A. za przelewy zagraniczne i wymianę walut",
       "designation": "BP/TAR/05",
-      "version": 1,
+      "version": 3,
       "validFrom": "2025-11-01",
       "status": "obowiazujacy",
+      "previousVersion": "TAR-05-w2",
       "pdf": "taryfy/TAR-05.pdf",
       "markdown": "taryfy/TAR-05.md",
       "pages": 27,
       "template": "taryfa-zagraniczne",
       "layout": "taryfa-bez-siatki",
       "seed": 7629741134795189446,
+      "sharedWordShare": 0.037,
+      "changes": [
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.godzina-tabeli",
+          "before": "9:00",
+          "after": "8:30"
+        },
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.marza-przeliczen",
+          "before": "1,5%",
+          "after": "1,3%"
+        }
+      ]
+    },
+    {
+      "id": "TAR-05-w1",
+      "type": "taryfy",
+      "title": "Taryfa opłat i prowizji Bank Przykładowy S.A. za przelewy zagraniczne i wymianę walut",
+      "designation": "BP/TAR/05",
+      "version": 1,
+      "validFrom": "2024-02-01",
+      "validTo": "2025-01-31",
+      "status": "nieaktualny",
+      "pdf": "taryfy/TAR-05-w1.pdf",
+      "markdown": "taryfy/TAR-05-w1.md",
+      "pages": 27,
+      "template": "taryfa-zagraniczne",
+      "layout": "taryfa-bez-siatki",
+      "seed": 7629741134795189446,
       "sharedWordShare": 0.037
+    },
+    {
+      "id": "TAR-05-w2",
+      "type": "taryfy",
+      "title": "Taryfa opłat i prowizji Bank Przykładowy S.A. za przelewy zagraniczne i wymianę walut",
+      "designation": "BP/TAR/05",
+      "version": 2,
+      "validFrom": "2025-02-01",
+      "validTo": "2025-10-31",
+      "status": "nieaktualny",
+      "previousVersion": "TAR-05-w1",
+      "pdf": "taryfy/TAR-05-w2.pdf",
+      "markdown": "taryfy/TAR-05-w2.md",
+      "pages": 27,
+      "template": "taryfa-zagraniczne",
+      "layout": "taryfa-bez-siatki",
+      "seed": 7629741134795189446,
+      "sharedWordShare": 0.037,
+      "changes": [
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.marza-przeliczen",
+          "before": "1,3%",
+          "after": "1,5%"
+        },
+        {
+          "unit": "poz. 315",
+          "page": 24,
+          "fact": "oplata.duplikat-umowy",
+          "before": "30,00 zł",
+          "after": "35,00 zł"
+        },
+        {
+          "unit": "poz. 84",
+          "page": 7,
+          "fact": "oplata.firma.opinia-bankowa",
+          "before": "80,00 zł",
+          "after": "90,00 zł"
+        },
+        {
+          "unit": "poz. 5",
+          "page": 4,
+          "fact": "oplata.rachunek-osobisty.przelew-walutowy",
+          "before": "35,00 zł",
+          "after": "38,00 zł"
+        },
+        {
+          "unit": "sekcja I",
+          "page": 3,
+          "fact": "termin.reklamacja.platnicze",
+          "before": "15 dni",
+          "after": "14 dni"
+        },
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "termin.zwrot-oplat",
+          "before": "14 dni",
+          "after": "10 dni"
+        }
+      ]
     },
     {
       "id": "TAR-06",
@@ -361,7 +887,17 @@
       "template": "taryfa-firmy",
       "layout": "taryfa-bez-siatki",
       "seed": 13838983437078830150,
-      "sharedWordShare": 0.046
+      "sharedWordShare": 0.046,
+      "contradictions": [
+        {
+          "with": "TAR-02",
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.marza-przeliczen",
+          "this": "2,5%",
+          "other": "1,3%"
+        }
+      ]
     },
     {
       "id": "TAR-07",
@@ -385,8 +921,9 @@
       "title": "Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych",
       "designation": "BP/TAR/08",
       "version": 1,
-      "validFrom": "2026-02-01",
-      "status": "obowiazujacy",
+      "validFrom": "2024-04-01",
+      "validTo": "2026-04-30",
+      "status": "nieaktualny",
       "pdf": "taryfy/TAR-08.pdf",
       "markdown": "taryfy/TAR-08.md",
       "pages": 27,
@@ -409,18 +946,97 @@
       "template": "taryfa-mlodziez",
       "layout": "taryfa-bez-siatki",
       "seed": 11391594731458043774,
-      "sharedWordShare": 0.037
+      "sharedWordShare": 0.037,
+      "contradictions": [
+        {
+          "with": "REG-03",
+          "unit": "poz. 90",
+          "page": 7,
+          "fact": "oplata.zaswiadczenie",
+          "this": "0,00 zł",
+          "other": "20,00 zł"
+        }
+      ]
     },
     {
       "id": "TAR-10",
       "type": "taryfy",
       "title": "Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek",
       "designation": "BP/TAR/10",
-      "version": 1,
+      "version": 2,
       "validFrom": "2025-06-01",
       "status": "obowiazujacy",
+      "previousVersion": "TAR-10-w1",
       "pdf": "taryfy/TAR-10.pdf",
       "markdown": "taryfy/TAR-10.md",
+      "pages": 26,
+      "template": "taryfa-kredyty",
+      "layout": "taryfa-siatka",
+      "seed": 17969556811847555047,
+      "sharedWordShare": 0.033,
+      "changes": [
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "kurs.marza-przeliczen",
+          "before": "1,5%",
+          "after": "1,3%"
+        },
+        {
+          "unit": "poz. 11",
+          "page": 3,
+          "fact": "oplata.duplikat-umowy",
+          "before": "30,00 zł",
+          "after": "35,00 zł"
+        },
+        {
+          "unit": "poz. 6",
+          "page": 3,
+          "fact": "oplata.kredyt-gotowkowy.zmiana-terminu-splaty",
+          "before": "60,00 zł",
+          "after": "50,00 zł"
+        },
+        {
+          "unit": "poz. 18",
+          "page": 3,
+          "fact": "oplata.przelew-natychmiastowy",
+          "before": "5,00 zł",
+          "after": "4,00 zł"
+        },
+        {
+          "unit": "poz. 208",
+          "page": 11,
+          "fact": "oplata.upomnienie",
+          "before": "15,00 zł",
+          "after": "18,00 zł"
+        },
+        {
+          "unit": "poz. 16",
+          "page": 3,
+          "fact": "oplata.wplata-gotowkowa",
+          "before": "3,00 zł",
+          "after": "3,50 zł"
+        },
+        {
+          "unit": "sekcja I",
+          "page": 2,
+          "fact": "termin.zwrot-oplat",
+          "before": "14 dni",
+          "after": "10 dni"
+        }
+      ]
+    },
+    {
+      "id": "TAR-10-w1",
+      "type": "taryfy",
+      "title": "Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek",
+      "designation": "BP/TAR/10",
+      "version": 1,
+      "validFrom": "2023-12-01",
+      "validTo": "2025-05-31",
+      "status": "nieaktualny",
+      "pdf": "taryfy/TAR-10-w1.pdf",
+      "markdown": "taryfy/TAR-10-w1.md",
       "pages": 26,
       "template": "taryfa-kredyty",
       "layout": "taryfa-siatka",
@@ -449,8 +1065,9 @@
       "title": "Procedura przyjmowania pełnomocnictw",
       "designation": "BP/PRO/02",
       "version": 1,
-      "validFrom": "2026-01-01",
-      "status": "obowiazujacy",
+      "validFrom": "2024-07-01",
+      "validTo": "2026-03-31",
+      "status": "nieaktualny",
       "pdf": "procedury/PRO-02.pdf",
       "markdown": "procedury/PRO-02.md",
       "pages": 20,
@@ -464,11 +1081,38 @@
       "type": "procedury",
       "title": "Procedura zakładania rachunków osobistych dla klientów indywidualnych Banku Przykładowego S.A.",
       "designation": "BP/PRO/03",
-      "version": 1,
+      "version": 2,
       "validFrom": "2026-03-01",
       "status": "obowiazujacy",
+      "previousVersion": "PRO-03-w1",
       "pdf": "procedury/PRO-03.pdf",
       "markdown": "procedury/PRO-03.md",
+      "pages": 27,
+      "template": "procedura-otwarcie-rachunku",
+      "layout": "procedura",
+      "seed": 14407713012422982441,
+      "sharedWordShare": 0.066,
+      "changes": [
+        {
+          "unit": "krok 9.5.1",
+          "page": 14,
+          "fact": "bankowosc.waznosc-kodu-aktywacyjnego",
+          "before": "3 dni",
+          "after": "7 dni"
+        }
+      ]
+    },
+    {
+      "id": "PRO-03-w1",
+      "type": "procedury",
+      "title": "Procedura zakładania rachunków osobistych dla klientów indywidualnych Banku Przykładowego S.A.",
+      "designation": "BP/PRO/03",
+      "version": 1,
+      "validFrom": "2025-08-01",
+      "validTo": "2026-02-28",
+      "status": "nieaktualny",
+      "pdf": "procedury/PRO-03-w1.pdf",
+      "markdown": "procedury/PRO-03-w1.md",
       "pages": 27,
       "template": "procedura-otwarcie-rachunku",
       "layout": "procedura",
@@ -489,7 +1133,17 @@
       "template": "procedura-zgon-klienta",
       "layout": "procedura",
       "seed": 1226887757426160877,
-      "sharedWordShare": 0.034
+      "sharedWordShare": 0.034,
+      "contradictions": [
+        {
+          "with": "PRO-08",
+          "unit": "krok 9.6.3",
+          "page": 18,
+          "fact": "jednostka.obsluga-klienta",
+          "this": "Departament Obsługi Klienta",
+          "other": "Centrum Obsługi Klienta"
+        }
+      ]
     },
     {
       "id": "PRO-05",
@@ -513,8 +1167,9 @@
       "title": "Procedura stosowania środków bezpieczeństwa finansowego (AML/KYC)",
       "designation": "BP/PRO/06",
       "version": 1,
-      "validFrom": "2026-01-01",
-      "status": "obowiazujacy",
+      "validFrom": "2024-11-01",
+      "validTo": "2026-03-31",
+      "status": "nieaktualny",
       "pdf": "procedury/PRO-06.pdf",
       "markdown": "procedury/PRO-06.md",
       "pages": 26,
@@ -528,16 +1183,70 @@
       "type": "procedury",
       "title": "Procedura obsługi incydentów bezpieczeństwa i incydentów operacyjnych",
       "designation": "BP/PRO/07",
-      "version": 1,
+      "version": 3,
       "validFrom": "2025-04-01",
       "status": "obowiazujacy",
+      "previousVersion": "PRO-07-w2",
       "pdf": "procedury/PRO-07.pdf",
       "markdown": "procedury/PRO-07.md",
       "pages": 30,
       "template": "procedura-incydenty",
       "layout": "procedura",
       "seed": 5559475938400617313,
-      "sharedWordShare": 0.042
+      "sharedWordShare": 0.042,
+      "changes": [
+        {
+          "unit": "krok 10.11",
+          "page": 19,
+          "fact": "termin.incydent.przeglad",
+          "before": "10 dni",
+          "after": "14 dni"
+        }
+      ]
+    },
+    {
+      "id": "PRO-07-w1",
+      "type": "procedury",
+      "title": "Procedura obsługi incydentów bezpieczeństwa i incydentów operacyjnych",
+      "designation": "BP/PRO/07",
+      "version": 1,
+      "validFrom": "2022-11-01",
+      "validTo": "2024-02-29",
+      "status": "nieaktualny",
+      "pdf": "procedury/PRO-07-w1.pdf",
+      "markdown": "procedury/PRO-07-w1.md",
+      "pages": 30,
+      "template": "procedura-incydenty",
+      "layout": "procedura",
+      "seed": 5559475938400617313,
+      "sharedWordShare": 0.044
+    },
+    {
+      "id": "PRO-07-w2",
+      "type": "procedury",
+      "title": "Procedura obsługi incydentów bezpieczeństwa i incydentów operacyjnych",
+      "designation": "BP/PRO/07",
+      "version": 2,
+      "validFrom": "2024-03-01",
+      "validTo": "2025-03-31",
+      "status": "nieaktualny",
+      "previousVersion": "PRO-07-w1",
+      "pdf": "procedury/PRO-07-w2.pdf",
+      "markdown": "procedury/PRO-07-w2.md",
+      "pages": 30,
+      "template": "procedura-incydenty",
+      "layout": "procedura",
+      "seed": 5559475938400617313,
+      "sharedWordShare": 0.042,
+      "changes": [
+        {
+          "unit": "krok 10.11",
+          "page": 20,
+          "fact": "termin.incydent.przeglad",
+          "before": "14 dni",
+          "after": "10 dni"
+        }
+      ]
     },
     {
       "id": "PRO-08",
@@ -553,7 +1262,17 @@
       "template": "procedura-rodo",
       "layout": "procedura",
       "seed": 275099811078165099,
-      "sharedWordShare": 0.037
+      "sharedWordShare": 0.037,
+      "contradictions": [
+        {
+          "with": "PRO-04",
+          "unit": "sekcja 2",
+          "page": 2,
+          "fact": "jednostka.obsluga-klienta",
+          "this": "Centrum Obsługi Klienta",
+          "other": "Departament Obsługi Klienta"
+        }
+      ]
     },
     {
       "id": "PRO-09",
@@ -576,16 +1295,91 @@
       "type": "procedury",
       "title": "Procedura zastrzegania kart oraz rozpatrywania zgłoszeń transakcji nieautoryzowanych",
       "designation": "BP/PRO/10",
-      "version": 1,
+      "version": 3,
       "validFrom": "2025-12-01",
       "status": "obowiazujacy",
+      "previousVersion": "PRO-10-w2",
       "pdf": "procedury/PRO-10.pdf",
       "markdown": "procedury/PRO-10.md",
       "pages": 20,
       "template": "procedura-zastrzezenia",
       "layout": "procedura",
       "seed": 18332366380230967060,
-      "sharedWordShare": 0.078
+      "sharedWordShare": 0.078,
+      "changes": [
+        {
+          "unit": "krok 5.6.3",
+          "page": 6,
+          "fact": "oplata.karta.zastrzezenie",
+          "before": "0,00 zł",
+          "after": "10,00 zł"
+        },
+        {
+          "unit": "krok 7.10",
+          "page": 10,
+          "fact": "termin.reklamacja.inne",
+          "before": "30 dni",
+          "after": "25 dni"
+        },
+        {
+          "unit": "krok 7.10.1",
+          "page": 10,
+          "fact": "termin.reklamacja.przedluzenie",
+          "before": "35 dni",
+          "after": "40 dni"
+        }
+      ]
+    },
+    {
+      "id": "PRO-10-w1",
+      "type": "procedury",
+      "title": "Procedura zastrzegania kart oraz rozpatrywania zgłoszeń transakcji nieautoryzowanych",
+      "designation": "BP/PRO/10",
+      "version": 1,
+      "validFrom": "2023-03-01",
+      "validTo": "2024-08-31",
+      "status": "nieaktualny",
+      "pdf": "procedury/PRO-10-w1.pdf",
+      "markdown": "procedury/PRO-10-w1.md",
+      "pages": 20,
+      "template": "procedura-zastrzezenia",
+      "layout": "procedura",
+      "seed": 18332366380230967060,
+      "sharedWordShare": 0.077
+    },
+    {
+      "id": "PRO-10-w2",
+      "type": "procedury",
+      "title": "Procedura zastrzegania kart oraz rozpatrywania zgłoszeń transakcji nieautoryzowanych",
+      "designation": "BP/PRO/10",
+      "version": 2,
+      "validFrom": "2024-09-01",
+      "validTo": "2025-11-30",
+      "status": "nieaktualny",
+      "previousVersion": "PRO-10-w1",
+      "pdf": "procedury/PRO-10-w2.pdf",
+      "markdown": "procedury/PRO-10-w2.md",
+      "pages": 20,
+      "template": "procedura-zastrzezenia",
+      "layout": "procedura",
+      "seed": 18332366380230967060,
+      "sharedWordShare": 0.076,
+      "changes": [
+        {
+          "unit": "krok 7.10",
+          "page": 10,
+          "fact": "termin.reklamacja.inne",
+          "before": "25 dni",
+          "after": "30 dni"
+        },
+        {
+          "unit": "krok 7.10",
+          "page": 10,
+          "fact": "termin.reklamacja.platnicze",
+          "before": "15 dni",
+          "after": "14 dni"
+        }
+      ]
     }
   ]
 }

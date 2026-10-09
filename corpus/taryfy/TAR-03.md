@@ -22,12 +22,12 @@ Niniejsza Taryfa ustala opłaty i prowizje za czynności kasowe wykonywane w pla
 - 3\. Czynności kasowe na rzecz osób niebędących klientami Banku są wykonywane wyłącznie w zakresie wskazanym w częściach „Wymiana i liczenie wartości pieniężnych” oraz „Wpłaty i wypłaty gotówkowe” i podlegają opłatom podwyższonym.
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego realizowana jest czynność, w dniu jej wykonania, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank ma prawo pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane podlegają oprocentowaniu odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca nie później niż w ciągu 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca nie później niż w ciągu 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się do pełnego grosza.
 
 - 1\. Transakcje wymagające przeliczenia walut są rozliczane według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest sporządzana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są wyznaczane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,5%.
+- 2\. Kurs kupna i kurs sprzedaży są wyznaczane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,3%.
 
 Przeliczeń między walutami obcymi Bank dokonuje za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -47,12 +47,12 @@ Informacji o obsłudze kasowej udzielają także konsultanci infolinii pod numer
 
 ## II. Klienci indywidualni
 
-Stawki z tej części stosuje się do osób fizycznych niebędących przedsiębiorcami, które posiadają w Banku rachunek osobisty lub oszczędnościowy. Wypłaty gotówkowe w kasie placówki są realizowane do kwoty 10 000,00 zł bez wcześniejszego zgłoszenia; wyższe wypłaty wymagają awizowania z wyprzedzeniem 2 dni przed planowanym terminem.
+Stawki z tej części stosuje się do osób fizycznych niebędących przedsiębiorcami, które posiadają w Banku rachunek osobisty lub oszczędnościowy. Wypłaty gotówkowe w kasie placówki są realizowane do kwoty 15 000,00 zł bez wcześniejszego zgłoszenia; wyższe wypłaty wymagają awizowania z wyprzedzeniem 2 dni przed planowanym terminem.
 
 <!-- page: 4 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 1. | Wpłata gotówki w złotych na własny rachunek w kasie placówki 1) | za operację | 3,00 zł |
+| 1. | Wpłata gotówki w złotych na własny rachunek w kasie placówki 1) | za operację | 3,50 zł |
 | 2. | Wpłata gotówki w złotych na rachunek innej osoby w Banku | za operację | 5,00 zł |
 | 3. | Wypłata gotówki w złotych w kasie placówki | za operację | bez opłat do kwoty bez awizacji |
 | 3.1. | wypłata awizowana powyżej kwoty bez awizacji | od kwoty wypłaty | 0,5% kwoty, min. 10,00 zł |
@@ -89,9 +89,9 @@ Stawki z tej części stosuje się do osób fizycznych niebędących przedsiębi
 | 33. | Wypłata gotówki z rachunku oszczędnościowego w kasie placówki do limitu bezpłatnych wypłat | za operację | bez opłat |
 | 34. | Wypłata gotówki z rachunku oszczędnościowego ponad limit bezpłatnych wypłat w miesiącu | za operację | 10,00 zł |
 | 35. | Wpłata gotówki na rachunek dziecka prowadzony dla małoletniego | za operację | bez opłat |
-| 36. | Wpłata gotówki na rachunek wspólny w kasie placówki przez jednego ze współposiadaczy | za operację | 3,00 zł |
+| 36. | Wpłata gotówki na rachunek wspólny w kasie placówki przez jednego ze współposiadaczy | za operację | 3,50 zł |
 | 37. | Wypłata gotówki z rachunku wspólnego przez pełnomocnika współposiadacza | za operację | bez dodatkowych opłat |
-| 38. | Wpłata gotówki z równoczesnym zleceniem przelewu na rachunek w innym banku | za operację | 3,00 zł oraz opłata za przelew |
+| 38. | Wpłata gotówki z równoczesnym zleceniem przelewu na rachunek w innym banku | za operację | 3,50 zł oraz opłata za przelew |
 | 39. | Wydanie potwierdzenia wpłaty lub wypłaty w formie papierowej | za operację | bez opłat |
 | 40. | Wpłata gotówki dokonana przez osobę niebędącą posiadaczem rachunku, z podaniem tytułu wpłaty | za operację | 5,00 zł |
 | 41. | Zapisanie w kasie dyspozycji wypłaty gotówki na rzecz osoby upoważnionej (jednorazowe upoważnienie) | za dyspozycję | 5,00 zł |
@@ -108,7 +108,7 @@ Stawki z tej części stosuje się do przedsiębiorców i innych klientów insty
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 42. | Wpłata gotówki w złotych na rachunek bieżący w kasie placówki | od kwoty wpłaty | 0,3% kwoty, min. 6,00 zł |
+| 42. | Wpłata gotówki w złotych na rachunek bieżący w kasie placówki | od kwoty wpłaty | 0,3% kwoty, min. 7,00 zł |
 | 43. | Wypłata gotówki w złotych z rachunku bieżącego w kasie placówki | od kwoty wypłaty | 0,5% kwoty, min. 8,00 zł |
 | 44. | Wpłata gotówki we wpłatomacie Banku | od kwoty wpłaty | 0,15% kwoty |
 | 45. | Wpłata zamknięta w worku lub kasecie przyjmowana do przeliczenia | za każdy worek | 10,00 zł |
@@ -119,8 +119,8 @@ Stawki z tej części stosuje się do przedsiębiorców i innych klientów insty
 | 50. | Zamówienie gotówki w określonych nominałach | od kwoty zamówienia | 0,1% kwoty |
 | 51. | Abonament za korzystanie z wrzutni nocnej | miesięcznie | 60,00 zł |
 | 52. | Potwierdzenie salda i obrotów gotówkowych dla audytora | za dokument | 120,00 zł |
-| 53. | Wpłata utargu dziennego w kasie placówki do kwoty 5 000,00 zł | za wpłatę | 6,00 zł |
-| 54. | Wpłata utargu dziennego w kasie placówki powyżej 5 000,00 zł | od kwoty wpłaty | 0,3% kwoty, min. 6,00 zł |
+| 53. | Wpłata utargu dziennego w kasie placówki do kwoty 5 000,00 zł | za wpłatę | 7,00 zł |
+| 54. | Wpłata utargu dziennego w kasie placówki powyżej 5 000,00 zł | od kwoty wpłaty | 0,3% kwoty, min. 7,00 zł |
 | 55. | Wpłata utargu we wpłatomacie z kodem identyfikującym firmę | od kwoty wpłaty | 0,15% kwoty |
 | 56. | Wpłata gotówki z opisem zbiorczym rozliczanym na kilka rachunków pomocniczych | za wpłatę | 10,00 zł |
 | 57. | Wpłata gotówki na rachunek VAT przedsiębiorcy | za wpłatę | 0,00 zł |
@@ -138,7 +138,7 @@ Stawki z tej części stosuje się do przedsiębiorców i innych klientów insty
 | 69. | Dopłata do wpłaty zamkniętej po przeliczeniu (korekta niedomiaru) | za korektę | bez opłat |
 | 70. | Korekta nadwyżki wykazanej w kasie po zamknięciu protokołu | za korektę | bez opłat |
 | 71. | Wypłata zaliczek dla pracowników w gotówce z awizacją | od kwoty wypłaty | 0,5% kwoty, min. 8,00 zł |
-| 72. | Wpłata gotówki na rachunek escrow w kasie placówki | od kwoty wpłaty | 0,3% kwoty, min. 6,00 zł |
+| 72. | Wpłata gotówki na rachunek escrow w kasie placówki | od kwoty wpłaty | 0,3% kwoty, min. 7,00 zł |
 | 73. | Wpłata gotówki do wpłatomatu dla klientów instytucjonalnych (limit jednorazowy 20 000,00 zł) | od kwoty wpłaty | 0,15% kwoty |
 | 74. | Zwiększenie limitu wpłaty we wpłatomacie powyżej standardowego, na czas oznaczony | za zmianę | 20,00 zł |
 | 75. | Przyjęcie utargu w postaci bilonu do przeliczenia maszynowego | od kwoty wpłaty | 1,5% kwoty |
@@ -163,8 +163,8 @@ Poniższe pozycje dotyczą wpłat i wypłat gotówkowych w szczególnych trybach
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 83. | Wpłata gotówki na rachunek prowadzony w innym banku | od kwoty wpłaty | 1,00% kwoty, min. 15,00 zł |
-| 84. | Wpłata gotówki na rachunek podatkowy lub składkowy | za operację | 3,00 zł |
-| 85. | Wpłata na rachunek karty kredytowej w kasie placówki | za operację | 3,00 zł |
+| 84. | Wpłata gotówki na rachunek podatkowy lub składkowy | za operację | 3,50 zł |
+| 85. | Wpłata na rachunek karty kredytowej w kasie placówki | za operację | 3,50 zł |
 | 86. | Wpłata gotówki z tytułu spłaty rat kredytu w kasie placówki | za operację | bez opłat |
 | 87. | Wypłata gotówki w walucie obcej w kasie placówki | od kwoty wypłaty | 1% kwoty |
 | 87.1. | euro | od kwoty wypłaty | 1% kwoty |
@@ -174,14 +174,14 @@ Poniższe pozycje dotyczą wpłat i wypłat gotówkowych w szczególnych trybach
 | 89. | Wpłata gotówki w walucie obcej na rachunek złotowy z przewalutowaniem | od kwoty wpłaty | kurs kupna z Tabeli kursów walut |
 | 90. | Wpłata lub wypłata gotówki dla osoby niebędącej klientem Banku | od kwoty operacji | 1% kwoty, min. 15,00 zł |
 | 91. | Realizacja czeku gotówkowego krajowego | za czek | 0,30% kwoty, min. 10,00 zł |
-| 92. | Wpłata gotówki na rachunek podmiotu publicznego (urząd, sąd, gmina) | za operację | 3,00 zł |
-| 93. | Wpłata gotówki na rachunek składkowy dla ubezpieczeń społecznych | za operację | 3,00 zł |
-| 94. | Wpłata gotówki na rachunek wierzyciela w toku postępowania egzekucyjnego | za operację | 3,00 zł |
+| 92. | Wpłata gotówki na rachunek podmiotu publicznego (urząd, sąd, gmina) | za operację | 3,50 zł |
+| 93. | Wpłata gotówki na rachunek składkowy dla ubezpieczeń społecznych | za operację | 3,50 zł |
+| 94. | Wpłata gotówki na rachunek wierzyciela w toku postępowania egzekucyjnego | za operację | 3,50 zł |
 | 95. | Wpłata gotówki na rachunek depozytowy sądu | za operację | bez opłat |
 | 96. | Wpłata gotówki w złotych na rachunek w innym banku z tytułem wskazanym przez wpłacającego | od kwoty wpłaty | 1,00% kwoty, min. 15,00 zł |
-| 97. | Wpłata gotówki na rachunek wydawcy karty w celu spłaty zadłużenia | za operację | 3,00 zł |
+| 97. | Wpłata gotówki na rachunek wydawcy karty w celu spłaty zadłużenia | za operację | 3,50 zł |
 | 98. | Wpłata gotówki na rachunek lokaty terminowej w trakcie jej zakładania | za operację | bez opłat |
-| 99. | Wpłata gotówki na kredyt w rachunku bieżącym | za operację | 3,00 zł |
+| 99. | Wpłata gotówki na kredyt w rachunku bieżącym | za operację | 3,50 zł |
 | 100. | Wpłata gotówki na poczet wkładu własnego w ramach kredytu hipotecznego | za operację | bez opłat |
 | 101. | Wpłata gotówki jako zabezpieczenie gwarancji lub kaucji | od kwoty wpłaty | 0,10% kwoty, min. 20,00 zł |
 | 102. | Wypłata gotówki w kasie placówki z rachunku ROR na podstawie dokumentu tożsamości i karty | za operację | bez opłat do kwoty bez awizacji |
@@ -364,7 +364,7 @@ Skrytkę można wypowiedzieć z zachowaniem terminu 30 dni. Jeżeli Klient zaleg
 | 224. | Otwarcie skrytki w obecności komisji po upływie terminu zaległości w opłatach | za zdarzenie | 800,00 zł |
 | 225. | Przeniesienie zawartości skrytki otwartej przymusowo do depozytu zamkniętego | jednorazowo | 30,00 zł |
 | 226. | Przechowywanie zawartości skrytki otwartej przymusowo | miesięcznie | 20,00 zł |
-| 227. | Wezwanie do zapłaty zaległej opłaty za skrytkę | za każde wezwanie | 15,00 zł |
+| 227. | Wezwanie do zapłaty zaległej opłaty za skrytkę | za każde wezwanie | 18,00 zł |
 | 228. | Odsetki od zaległych opłat za skrytkę | rocznie | 17% w stosunku rocznym |
 | 229. | Obciążenie rachunku klienta zaległą opłatą za skrytkę bez dodatkowej dyspozycji | za obciążenie | bez opłat |
 | 230. | Zawiadomienie osoby wskazanej przez klienta o zaległości w opłatach za skrytkę | za zawiadomienie | bez opłat |
@@ -440,10 +440,10 @@ Zaświadczenia i odpisy dokumentów dotyczących operacji kasowych, skrytek i de
 | 276. | Zaświadczenie wydane w trybie pilnym 1) | za dokument | 45,00 zł |
 | 277. | Zaświadczenie w języku obcym | za dokument | 40,00 zł |
 | 278. | Zaświadczenie o przyjęciu depozytu | za dokument | 20,00 zł |
-| 279. | Odpis umowy najmu skrytki sejfowej lub umowy depozytu | za dokument | 30,00 zł |
+| 279. | Odpis umowy najmu skrytki sejfowej lub umowy depozytu | za dokument | 35,00 zł |
 | 280. | Odpis dokumentu kasowego (dowodu wpłaty lub wypłaty) | za dokument | 15,00 zł |
 | 281. | Duplikat potwierdzenia wpłaty | za dokument | 10,00 zł |
-| 282. | Opinia bankowa o kliencie | za dokument | 80,00 zł |
+| 282. | Opinia bankowa o kliencie | za dokument | 90,00 zł |
 | 283. | Potwierdzenie salda dla audytora | za dokument | 100,00 zł |
 | 284. | Poświadczenie zgodności kopii dokumentu z oryginałem przechowywanym w Banku | za stronę | 10,00 zł |
 | 285. | Zaświadczenie o numerach banknotów wpłaconych na rachunek | za dokument | 40,00 zł |
@@ -454,10 +454,10 @@ Zaświadczenia i odpisy dokumentów dotyczących operacji kasowych, skrytek i de
 | 290. | Odpis zamówienia gotówki lub potwierdzenia jego realizacji | za dokument | 15,00 zł |
 | 291. | Odpis dowodu wpłaty (raport kasowy) z archiwum, do 5 lat wstecz | za dokument | 15,00 zł |
 | 292. | Odpis dowodu wpłaty (raport kasowy) z archiwum, powyżej 5 lat wstecz | za dokument | 45,00 zł |
-| 293. | Odpis umowy depozytu, najmu skrytki lub usługi konwojowej | za dokument | 30,00 zł |
+| 293. | Odpis umowy depozytu, najmu skrytki lub usługi konwojowej | za dokument | 35,00 zł |
 | 294. | Kopia wykazu nominałów przyjętych we wpłacie zamkniętej | za dokument | bez opłat |
 | 295. | Wysyłka zaświadczenia lub odpisu pocztą na adres wskazany przez klienta | za przesyłkę | 10,00 zł |
-| 296. | Opinia bankowa o kliencie w zakresie rzetelności rozliczeń gotówkowych | za dokument | 80,00 zł |
+| 296. | Opinia bankowa o kliencie w zakresie rzetelności rozliczeń gotówkowych | za dokument | 90,00 zł |
 | 297. | Potwierdzenie salda i obrotów gotówkowych dla audytora lub biegłego rewidenta | za dokument | 120,00 zł |
 | 298. | Potwierdzenie salda rachunku według stanu na koniec roku obrotowego | za dokument | 100,00 zł |
 | 299. | Zestawienie wszystkich operacji kasowych za rok kalendarzowy | za zestawienie | 30,00 zł |

@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/REG/01 Wersja 1 Obowiązuje od 1 marca 2026 r.
+BP/REG/01 Wersja 1 Obowiązuje od 1 listopada 2024 r. do 31 sierpnia 2026 r.
 
 <!-- page: 2 -->
 ## Organizator promocji
@@ -296,7 +296,7 @@ uczestnika zasad korzystania z karty, Bank może zdecydować o utracie prawa do 
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja powinna zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz oczekiwany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację bez zbędnej zwłoki, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
   - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
 - 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank poinformuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 - 1\. Uczestnik może złożyć reklamację dotyczącą nieprzyznania lub nieprawidłowej wysokości Zwrotu w terminie 30 dni od dnia, w którym Zwrot powinien zostać wypłacony, nie ograniczając jego prawa do złożenia reklamacji w terminie późniejszym na zasadach ogólnych.
@@ -346,7 +346,7 @@ uczestnika zasad korzystania z karty, Bank może zdecydować o utracie prawa do 
 - 2\. Podstawą przetwarzania jest zawarta umowa oraz zgoda uczestnika w zakresie, w jakim Regulamin tego wymaga, a także uzasadniony interes Banku polegający na zapobieganiu nadużyciom i dochodzeniu roszczeń.[^7]
 - 3\. Dane o płatnościach uczestnika są wykorzystywane w ramach Promocji wyłącznie w zakresie niezbędnym do oceny spełnienia jej warunków i nie służą do tworzenia profilu uczestnika w celach marketingowych bez jego odrębnej zgody.
 - 1\. Uczestnik, który jest konsumentem, może w terminie 14 dni od zawarcia umowy o kartę na odległość odstąpić od niej bez podawania przyczyny, na zasadach określonych w ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287). Odstąpienie od umowy w tym terminie powoduje wygaśnięcie prawa do Zwrotu.
-- 2\. Regulamin obowiązuje od dnia 1 marca 2026 r., a w razie jego zmiany stosuje się wersję 1 do wniosków złożonych w okresie jej obowiązywania.
+- 2\. Regulamin obowiązuje od dnia 1 listopada 2024 r., a w razie jego zmiany stosuje się wersję 1 do wniosków złożonych w okresie jej obowiązywania.
 - 3\. Do spraw nieuregulowanych w Regulaminie mają zastosowanie postanowienia dokumentu „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.” oraz powszechnie obowiązujące przepisy prawa.
 - 1\. Bank ma prawo dokonać zmiany Regulaminu w razie wystąpienia co najmniej jednej z następujących przyczyn:
   - 1\) zmiany przepisów prawa odnoszących się do usług świadczonych na podstawie Regulaminu;
@@ -355,7 +355,7 @@ uczestnika zasad korzystania z karty, Bank może zdecydować o utracie prawa do 
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank informuje Klienta na trwałym nośniku, z wyprzedzeniem nie krótszym niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie wniesie sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie wniesie sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 <!-- page: 24 -->
 - 1\. Prawem właściwym dla stosunków między Bankiem a Klientem, w tym dla zawarcia umowy i jej wykonywania, jest prawo polskie. Umowa jest zawierana i wykonywana w języku polskim, o ile strony nie postanowią inaczej.
 - 2\. Do spraw nieuregulowanych w Regulaminie stosuje się przepisy powszechnie obowiązujące; dotyczy to w szczególności następujących aktów:

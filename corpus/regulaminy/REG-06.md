@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/REG/06 Wersja 1 Obowiązuje od 1 czerwca 2026 r.
+BP/REG/06 Wersja 3 Obowiązuje od 1 czerwca 2026 r.
 
 <!-- page: 2 -->
 ## Rozdział 1. Postanowienia ogólne
@@ -57,7 +57,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 5.
 
 - 1\. Posiadacz wskazuje w umowie adres siedziby, adres do doręczeń oraz dane kontaktowe osób upoważnionych do kontaktu z Bankiem, w tym numery telefonów i adresy poczty elektronicznej. Zmiana tych danych wymaga zawiadomienia Banku w terminie 7 dni.
-- 2\. Korespondencję kierowaną na ostatni adres wskazany przez Posiadacza uważa się za doręczoną, o ile nie została odebrana w terminie awizo, z upływem 14 dni od pierwszego awizowania. Skutek ten nie następuje, gdy Posiadacz udowodni, że niedoręczenie nastąpiło z przyczyn niezależnych od niego.
+- 2\. Korespondencję kierowaną na ostatni adres wskazany przez Posiadacza uważa się za doręczoną, o ile nie została odebrana w terminie awizo, z upływem 10 dni od pierwszego awizowania. Skutek ten nie następuje, gdy Posiadacz udowodni, że niedoręczenie nastąpiło z przyczyn niezależnych od niego.
 - 3\. Bank może prowadzić korespondencję w formie poczty elektronicznej, jeżeli Posiadacz wskazał adres poczty elektronicznej lub korzysta z bankowości elektronicznej. Wiadomość uważa się za doręczoną w chwili, gdy została udostępniona w sposób umożliwiający zapoznanie się z jej treścią.
 
 ## Rozdział 2. Otwarcie rachunku i dokumenty rejestrowe
@@ -210,7 +210,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Zlecenie przelewu powinno zawierać numeru rachunku odbiorcy w formacie NRB lub IBAN, nazwy odbiorcy, kwoty, waluty i tytułu płatności. Bank wykonuje zlecenie na podstawie unikatowego identyfikatora, to jest numeru rachunku, i nie weryfikuje zgodności tego numeru z nazwą odbiorcy, chyba że usługa weryfikacji nazwy została uruchomiona w bankowości elektronicznej.
 <!-- page: 11 -->
 - 3\. Dzienny limit przelewów z rachunku wynosi 100 000,00 zł, a limit pojedynczego przelewu w bankowości elektronicznej — 50 000,00 zł. Posiadacz może zawnioskować o zmianę limitów; Bank rozpatruje wniosek z uwzględnieniem profilu ryzyka Posiadacza i zasad bezpieczeństwa.[^4]
-- 4\. Za przelew natychmiastowy Bank nalicza opłatę w wysokości 5,00 zł, a za przelewy zewnętrzne w złotych — 3,00 zł za przelew zlecony w bankowości elektronicznej.
+- 4\. Za przelew natychmiastowy Bank nalicza opłatę w wysokości 3,50 zł, a za przelewy zewnętrzne w złotych — 3,00 zł za przelew zlecony w bankowości elektronicznej.
 
 [^4]: Podwyższenie limitu ponad kwotę 100 000,00 zł wymaga złożenia wniosku w formie pisemnej i może być uzależnione od przedstawienia dokumentów potwierdzających charakter transakcji.
 
@@ -256,7 +256,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Zlecenie przelewu w walucie obcej lub przelewu transgranicznego zawiera, oprócz danych podstawowych, kod identyfikacyjny banku odbiorcy (BIC lub SWIFT), numer rachunku odbiorcy w formacie IBAN lub inny właściwy dla kraju, a również informację <!-- page: 13 --> o rodzaju opłat (podział kosztów między nadawcę i odbiorcę albo pokrycie opłat przez jedną ze stron).
 - 2\. Opłata za przelew w ramach jednolitego obszaru płatności w euro wynosi 5,00 zł. Opłata za przelew do innych krajów lub w innych walutach obejmuje prowizję Banku oraz ewentualne opłaty banków pośredniczących i jest określona w Taryfie; opłaty pośredników Bank obciąża Posiadacza, jeżeli został wybrany podział kosztów obciążający nadawcę.
-- 3\. Przelew w walucie obcej jest wykonywany po kursie ustalonym według tabeli Banku obowiązującej w chwili realizacji, jeżeli wymaga przewalutowania, z uwzględnieniem marży wynoszącej 1,5%, a na wniosek Posiadacza — po kursie indywidualnym uzgodnionym przed złożeniem zlecenia.
+- 3\. Przelew w walucie obcej jest wykonywany po kursie ustalonym według tabeli Banku obowiązującej w chwili realizacji, jeżeli wymaga przewalutowania, z uwzględnieniem marży wynoszącej 1,3%, a na wniosek Posiadacza — po kursie indywidualnym uzgodnionym przed złożeniem zlecenia.
 
 ## Rozdział 7. Wpłaty i wypłaty gotówkowe
 
@@ -270,7 +270,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) odmawia wykonania transakcji lub ją wstrzymuje, o ile:
     - a\) dane o źródle środków nie zostaną przedstawione albo budzą wątpliwości;
     - b\) transakcja wskazuje na związek z praniem pieniędzy lub finansowaniem terroryzmu.
-- 4\. Dzienny limit wpłat we wpłatomacie wynosi 30 000,00 zł. Opłata za wpłatę gotówkową w kasie wynosi 0,35% kwoty wpłaty, nie mniej jednak niż 6,00 zł.
+- 4\. Dzienny limit wpłat we wpłatomacie wynosi 30 000,00 zł. Opłata za wpłatę gotówkową w kasie wynosi 0,35% kwoty wpłaty, nie mniej jednak niż 7,00 zł.
 
 ### § 28.
 
@@ -289,8 +289,8 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 30.
 
 - 1\. Na wniosek Posiadacza Bank otwiera rachunki pomocnicze do rachunku bieżącego w złotych oraz w walutach: euro, dolar amerykański, funt szterling i frank szwajcarski, a po uzgodnieniu — w innych walutach z tabeli kursów Banku. Do rachunków pomocniczych stosuje się odpowiednio postanowienia dotyczące rachunku bieżącego, z zastrzeżeniami wynikającymi z tego rozdziału.
-- 2\. Rachunek walutowy służy do przyjmowania wpłat z zagranicy oraz do realizacji zleceń na rzecz odbiorców krajowych i zagranicznych. Przeliczenia walut przy transakcjach niewymagających przewalutowania, a dokonywanych w walucie rachunku, nie następują; w pozostałych przypadkach stosuje się kurs z tabeli Banku obowiązujący w momencie realizacji transakcji, z marżą w wysokości 1,5%.
-- 3\. Tabela kursów walut jest ogłaszana w dni robocze około godziny 9:00 i w ciągu dnia może być aktualizowana. Posiadacz może uzgodnić z Bankiem indywidualny kurs dla transakcji o wartości powyżej kwoty wskazanej w Taryfie.
+- 2\. Rachunek walutowy służy do przyjmowania wpłat z zagranicy oraz do realizacji zleceń na rzecz odbiorców krajowych i zagranicznych. Przeliczenia walut przy transakcjach niewymagających przewalutowania, a dokonywanych w walucie rachunku, nie następują; w pozostałych przypadkach stosuje się kurs z tabeli Banku obowiązujący w momencie realizacji transakcji, z marżą w wysokości 1,3%.
+- 3\. Tabela kursów walut jest ogłaszana w dni robocze około godziny 8:30 i w ciągu dnia może być aktualizowana. Posiadacz może uzgodnić z Bankiem indywidualny kurs dla transakcji o wartości powyżej kwoty wskazanej w Taryfie.
 - 4\. Opłata za prowadzenie rachunku pomocniczego wynosi 12,00 zł miesięcznie. Rachunki pomocnicze są zamykane wraz z zamknięciem rachunku bieżącego, do którego zostały otwarte.
 
 ### § 31.
@@ -382,7 +382,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) przelew o wysokiej wartości — 25,00 zł;
   - 3\) wyciąg w formie papierowej — 12,00 zł;
   - 4\) zaświadczenie o posiadaniu rachunku — 20,00 zł;
-  - 5\) opinia bankowa — 80,00 zł;
+  - 5\) opinia bankowa — 100,00 zł;
   - 6\) powiadomienie SMS — 3,00 zł miesięcznie.
 - 4\. Bank pobiera opłaty i prowizje z rachunku Posiadacza, obciążając go w dniu wykonania czynności lub w terminach określonych w Taryfie. Jeżeli środki na rachunku nie wystarczają na pokrycie należności, Bank może pobrać je z innych rachunków Posiadacza w Banku.
 
@@ -408,8 +408,8 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 43.
 
-- 1\. Posiadacz ma prawo wypowiedzieć umowę rachunku w formie pisemnej z zachowaniem terminu wypowiedzenia wynoszącego 30 dni, liczonego od dnia doręczenia wypowiedzenia Bankowi, chyba że umowa stanowi inaczej. Oświadczenie wymaga podpisów osób uprawnionych do reprezentacji.
-- 2\. Bank ma prawo wypowiedzieć umowę z zachowaniem terminu 60 dni, jeżeli zachodzi co najmniej jedna z następujących przyczyn:
+- 1\. Posiadacz ma prawo wypowiedzieć umowę rachunku w formie pisemnej z zachowaniem terminu wypowiedzenia wynoszącego 21 dni, liczonego od dnia doręczenia wypowiedzenia Bankowi, chyba że umowa stanowi inaczej. Oświadczenie wymaga podpisów osób uprawnionych do reprezentacji.
+- 2\. Bank ma prawo wypowiedzieć umowę z zachowaniem terminu 90 dni, jeżeli zachodzi co najmniej jedna z następujących przyczyn:
   - 1\) rażące naruszenie postanowień umowy lub Regulaminu przez Posiadacza;
   - 2\) brak operacji na rachunku przez okres co najmniej 12 miesięcy;
   - 3\) ujawnienie okoliczności uzasadniających podejrzenie wykorzystywania rachunku do działalności przestępczej;
@@ -436,7 +436,7 @@ Użyte w Regulaminie określenia oznaczają:
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank informuje Klienta na trwałym nośniku, z wyprzedzeniem nie krótszym niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie wniesie sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie wniesie sprzeciwu, uważa się, że zmiany zostały zaakceptowane. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 
 ### § 46.
 
@@ -462,7 +462,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 48.
 
 - 1\. Posiadacz ma prawo zgłaszać reklamacje dotyczące usług świadczonych przez Bank pisemnie na adres: Bank Przykładowy S.A., Biuro Reklamacji, ul. Przykładowa 1, 00-001 Warszawa, elektronicznie na adres reklamacje@bank.example lub za pośrednictwem bankowości elektronicznej, a również telefonicznie pod numerem 800 000 001.
-- 2\. Reklamacja powinna zawierać dane Posiadacza i osoby ją składającej wraz z dokumentem potwierdzającym umocowanie, opis zastrzeżeń oraz żądanie Posiadacza. Bank rozpatruje reklamację bez zbędnej zwłoki, nie później niż w terminie 30 dni od dnia jej otrzymania, a w sprawach szczególnie skomplikowanych — nie później niż w terminie 60 dni, o czym zawiadamia Posiadacza przed upływem pierwszego terminu.
+- 2\. Reklamacja powinna zawierać dane Posiadacza i osoby ją składającej wraz z dokumentem potwierdzającym umocowanie, opis zastrzeżeń oraz żądanie Posiadacza. Bank rozpatruje reklamację bez zbędnej zwłoki, nie później niż w terminie 30 dni od dnia jej otrzymania, a w sprawach szczególnie skomplikowanych — nie później niż w terminie 45 dni, o czym zawiadamia Posiadacza przed upływem pierwszego terminu.
 - 3\. Odpowiedź na reklamację Bank przekazuje w formie pisemnej lub, za zgodą Posiadacza, na trwałym nośniku, w tym za pośrednictwem bankowości elektronicznej. Odpowiedź nie wymaga zachowania dodatkowych wymogów formalnych, które przepisy przewidują dla konsumentów.
 - 4\. Po wyczerpaniu postępowania reklamacyjnego Posiadacz może dochodzić roszczeń przed sądem powszechnym. Posiadacz niebędący konsumentem nie korzysta z uprawnień przewidzianych dla konsumentów w postępowaniu przed Rzecznikiem Finansowym, o ile przepisy nie stanowią inaczej.
 

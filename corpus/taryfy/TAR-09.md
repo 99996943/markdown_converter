@@ -17,12 +17,12 @@ O zmianie Taryfy Bank informuje Klientów na trwałym nośniku nie później ni�
 
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego realizowana jest czynność, w dniu realizacji, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank może pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane podlegają oprocentowaniu odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca w terminie 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca w terminie 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się do pełnego grosza.
 
 - 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili realizacji transakcji. Tabela jest ustalana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, pomniejszonego albo powiększonego o marżę w wysokości 1,5%.
+- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, pomniejszonego albo powiększonego o marżę w wysokości 1,3%.
 
 Przeliczeń między walutami obcymi dokonuje się za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -59,7 +59,7 @@ Dziecko korzysta z aplikacji w trybie uproszczonym: widzi saldo i historię oper
 | 14. | Wniosek o zamknięcie rachunku Konto Junior złożony przez przedstawiciela ustawowego | jednorazowo | bez opłat |
 | 15. | Wypłata środków po zamknięciu rachunku na rachunek wskazany przez przedstawiciela ustawowego | jednorazowo | bez opłat |
 | 16. | Zaświadczenie o posiadaniu rachunku przez małoletniego | za każdy dokument | 10,00 zł |
-| 17. | Duplikat umowy rachunku małoletniego | za każdy dokument | 30,00 zł |
+| 17. | Duplikat umowy rachunku małoletniego | za każdy dokument | 35,00 zł |
 | 18. | Zablokowanie rachunku dziecka na wniosek przedstawiciela ustawowego | za dyspozycję | bez opłat |
 | 19. | Odblokowanie rachunku dziecka na wniosek przedstawiciela ustawowego | za dyspozycję | bez opłat |
 | 20. | Wyciąg z rachunku dziecka w postaci elektronicznej | miesięcznie | bez opłat |
@@ -124,7 +124,7 @@ Opłata za prowadzenie rachunku Konto Teen wynosi 0,00 zł miesięcznie. Z dniem
 | --- | --- | --- | --- |
 | 62. | Otwarcie rachunku Konto Teen za zgodą przedstawiciela ustawowego | jednorazowo | bez opłat |
 | 63. | Prowadzenie rachunku Konto Teen | miesięcznie | 0,00 zł |
-| 64. | Oprocentowanie środków na rachunku Konto Teen | w stosunku rocznym | 0,1% |
+| 64. | Oprocentowanie środków na rachunku Konto Teen | w stosunku rocznym | 0,2% |
 | 65. | Dostęp do bankowości elektronicznej i aplikacji mobilnej | miesięcznie | bez opłat |
 | 66. | Zgoda przedstawiciela ustawowego na dyspozycje małoletniego | za dyspozycję | bez opłat |
 | 66.1. | zgoda ogólna udzielona w placówce lub w aplikacji 1) | jednorazowo | bez opłat |
@@ -143,17 +143,17 @@ Opłata za prowadzenie rachunku Konto Teen wynosi 0,00 zł miesięcznie. Z dniem
 | 77. | Potwierdzenie operacji w postaci papierowej wydane w placówce | za każdy dokument | 10,00 zł |
 | 78. | Wyciąg z rachunku w postaci elektronicznej | miesięcznie | bez opłat |
 | 79. | Wyciąg z rachunku w postaci papierowej | za każdy wyciąg | 10,00 zł |
-| 80. | Duplikat umowy rachunku | za każdy dokument | 30,00 zł |
+| 80. | Duplikat umowy rachunku | za każdy dokument | 35,00 zł |
 | 81. | Przygotowanie rachunku do przekształcenia w Konto Student po ukończeniu 18 lat | jednorazowo | bez opłat |
 | 82. | Przeniesienie celów oszczędnościowych na rachunek po przekształceniu | jednorazowo | bez opłat |
 | 83. | Przeniesienie zleceń stałych i kieszonkowego po przekształceniu rachunku | jednorazowo | bez opłat |
-| 84. | Wydanie nowej karty debetowej w związku z osiągnięciem pełnoletności | jednorazowo | 0,00 zł |
+| 84. | Wydanie nowej karty debetowej w związku z osiągnięciem pełnoletności | jednorazowo | 10,00 zł |
 | 85. | Wygaśnięcie zgód i limitów ustalonych przez przedstawiciela po osiągnięciu pełnoletności | jednorazowo | bez opłat |
 | 86. | Informacja o przekształceniu rachunku przesłana nastolatkowi i przedstawicielowi | jednorazowo | bez opłat |
 | 87. | Złożenie oświadczenia o odmowie przekształcenia rachunku i zamknięciu go | jednorazowo | bez opłat |
 | 88. | Zamknięcie rachunku Konto Teen z wypłatą środków na wskazany rachunek | jednorazowo | bez opłat |
 | 89. | Zestawienie opłat i prowizji pobranych w ostatnich 12 miesiącach z rachunku nastolatka | za każdy dokument | bez opłat |
-| 90. | Ponowne wydanie zaświadczenia o posiadaniu rachunku (kolejny egzemplarz) | za każdy dokument | 20,00 zł |
+| 90. | Ponowne wydanie zaświadczenia o posiadaniu rachunku (kolejny egzemplarz) | za każdy dokument | 0,00 zł |
 | 91. | Samodzielne logowanie nastolatka do bankowości elektronicznej z użyciem biometrii | miesięcznie | bez opłat |
 | 92. | Potwierdzanie operacji w aplikacji mobilnej kodem lub biometrią | za operację | bez opłat |
 | 93. | Zmiana limitu dziennego przelewów nastolatka przez przedstawiciela ustawowego | za dyspozycję | bez opłat |
@@ -204,7 +204,7 @@ Po utracie statusu studenta lub po ukończeniu 26 lat Bank stosuje przez 90 dni 
 | 122.2. | w okresie przejściowym po utracie statusu studenta | miesięcznie | 0,00 zł |
 | 122.3. | po zakończeniu okresu przejściowego (Konto Standard) | miesięcznie | 9,00 zł |
 | 123. | Prowadzenie rachunku w pakiecie Konto Student Plus | miesięcznie | 7,00 zł |
-| 124. | Oprocentowanie środków na rachunku Konto Student | w stosunku rocznym | 0,1% |
+| 124. | Oprocentowanie środków na rachunku Konto Student | w stosunku rocznym | 0,2% |
 | 125. | Dostęp do bankowości elektronicznej, aplikacji mobilnej i płatności mobilnych | miesięcznie | bez opłat |
 | 126. | Ubezpieczenie podróży dla studentów w pakiecie Konto Student Plus | miesięcznie | 6,00 zł |
 | 127. | Potwierdzenie statusu studenta przesłane w aplikacji mobilnej | za dyspozycję | bez opłat |
@@ -213,12 +213,12 @@ Po utracie statusu studenta lub po ukończeniu 26 lat Bank stosuje przez 90 dni 
 | 130. | Dopuszczalne zadłużenie w rachunku (debet) dla studenta — wniosek | jednorazowo | wg umowy |
 | 131. | Limit debetowy dla studentów — odsetki od wykorzystanej kwoty | w stosunku rocznym | 18,5% |
 | 132. | Stypendium i świadczenia uczelni — przyjęcie przelewu przychodzącego | za operację | bez opłat |
-| 133. | Zaświadczenie bankowe o posiadaniu rachunku (dla uczelni, domu studenckiego) | za każdy dokument | 20,00 zł |
+| 133. | Zaświadczenie bankowe o posiadaniu rachunku (dla uczelni, domu studenckiego) | za każdy dokument | 0,00 zł |
 | 134. | Potwierdzenie przelewu czesnego lub opłaty za akademik w postaci elektronicznej | za każdy dokument | bez opłat |
 | 135. | Potwierdzenie przelewu czesnego lub opłaty za akademik w postaci papierowej | za każdy dokument | 10,00 zł |
 | 136. | Wyciąg z rachunku w postaci elektronicznej | miesięcznie | bez opłat |
 | 137. | Wyciąg z rachunku w postaci papierowej | za każdy wyciąg | 10,00 zł |
-| 138. | Dyspozycja wypłaty środków na wypadek śmierci | jednorazowo | 0,00 zł |
+| 138. | Dyspozycja wypłaty środków na wypadek śmierci | jednorazowo | 10,00 zł |
 | 139. | Zamknięcie rachunku Konto Student | jednorazowo | 0,00 zł |
 | 140. | Rachunek oszczędnościowy dla studenta (cel: czesne, mieszkanie) — prowadzenie | miesięcznie | bez opłat |
 | 141. | Oprocentowanie rachunku oszczędnościowego dla studenta | w stosunku rocznym | 3,5% |
@@ -229,14 +229,14 @@ Po utracie statusu studenta lub po ukończeniu 26 lat Bank stosuje przez 90 dni 
 | 146. | Rachunek walutowy w euro dla studenta — otwarcie | jednorazowo | bez opłat |
 | 147. | Konto walutowe w euro — prowadzenie | miesięcznie | bez opłat |
 | 148. | Zlecenie wypłaty stypendium zagranicznego — przyjęcie przelewu w euro | za operację | bez opłat |
-| 149. | Zaświadczenie o posiadaniu środków dla celów wizowych lub rekrutacyjnych | za każdy dokument | 20,00 zł |
+| 149. | Zaświadczenie o posiadaniu środków dla celów wizowych lub rekrutacyjnych | za każdy dokument | 0,00 zł |
 | 150. | Pierwszy wniosek o kredyt dla studenta — rozpatrzenie wstępnej wersji wniosku | jednorazowo | bez opłat |
 | 151. | Kredyt studencki — prowizja za udzielenie | jednorazowo | wg umowy |
 | 152. | Informacja o historii kredytowej udostępniona studentowi w aplikacji | za każdy dokument | bez opłat |
 | 153. | Wniosek o zwiększenie dopuszczalnego salda debetowego | jednorazowo | wg umowy |
 | 154. | Wcześniejsza spłata zadłużenia w rachunku (debet) | za dyspozycję | bez opłat |
 | 155. | Odsetki od przeterminowanego zadłużenia w rachunku | w stosunku rocznym | 17% |
-| 156. | Upomnienie do zapłaty wysłane w związku z przeterminowanym zadłużeniem | za każde wezwanie | 15,00 zł |
+| 156. | Upomnienie do zapłaty wysłane w związku z przeterminowanym zadłużeniem | za każde wezwanie | 18,00 zł |
 | 157. | Zawieszenie spłaty zadłużenia w rachunku na wniosek studenta (do 3 miesięcy) | jednorazowo | bez opłat |
 | 158. | Plan spłaty zadłużenia w ratach — przygotowanie | jednorazowo | bez opłat |
 | 159. | Spłata zadłużenia z rachunku przedstawiciela lub poręczyciela | za operację | bez opłat |
@@ -245,7 +245,7 @@ Po utracie statusu studenta lub po ukończeniu 26 lat Bank stosuje przez 90 dni 
 | 162. | Przyjęcie zwrotu podatku od urzędu skarbowego na rachunek studenta | za każde wpłynięcie | bez opłat |
 | 163. | Zlecenie stałe na opłatę za akademik lub wynajem pokoju | za każde wykonanie | 2,00 zł |
 | 164. | Zlecenie stałe na opłatę za akademik do rachunku w Banku | za każde wykonanie | bez opłat |
-| 165. | Polecenie zapłaty za abonament telefoniczny lub internetowy | za każde obciążenie | 1,50 zł |
+| 165. | Polecenie zapłaty za abonament telefoniczny lub internetowy | za każde obciążenie | 2,00 zł |
 | 166. | Wspólny rachunek dla współlokatorów — otwarcie (do czterech współposiadaczy) | jednorazowo | bez opłat |
 | 167. | Wspólny rachunek dla współlokatorów — prowadzenie | miesięcznie | 0,00 zł |
 | 168. | Rozliczanie wydatków współlokatorów w aplikacji (podział rachunku) | za operację | bez opłat |
@@ -274,7 +274,7 @@ Karta wydawana dziecku nie umożliwia transakcji internetowych bez zgody przedst
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 180. | Wydanie karty debetowej do rachunku małoletniego lub studenta | jednorazowo | 0,00 zł |
+| 180. | Wydanie karty debetowej do rachunku małoletniego lub studenta | jednorazowo | 10,00 zł |
 | 181. | Obsługa karty debetowej | miesięcznie | zależnie od pakietu |
 | 181.1. | karta dziecka (Konto Junior) | miesięcznie | 0,00 zł |
 | 181.2. | karta nastolatka (Konto Teen) | miesięcznie | 2,00 zł |
@@ -296,10 +296,10 @@ Karta wydawana dziecku nie umożliwia transakcji internetowych bez zgody przedst
 | 190. | Zastrzeżenie karty w razie utraty lub kradzieży | za dyspozycję | 0,00 zł |
 | 191. | Wydanie duplikatu karty po zastrzeżeniu lub zniszczeniu | jednorazowo | 25,00 zł |
 | 192. | Wydanie karty w trybie pilnym | jednorazowo | 60,00 zł |
-| 193. | Zmiana numeru PIN w bankomacie lub w aplikacji 2) | za dyspozycję | 5,00 zł |
+| 193. | Zmiana numeru PIN w bankomacie lub w aplikacji 2) | za dyspozycję | 6,00 zł |
 | 194. | Wypłata gotówki z bankomatu za granicą (karta nastolatka i studenta) | za operację | 10,00 zł |
 | 195. | Wypłata gotówki z bankomatu za granicą (karta dziecka) | za operację | usługa niedostępna |
-| 196. | Powiadomienie o transakcji kartą wysyłane przedstawicielowi ustawowemu | za każde powiadomienie | 0,00 zł |
+| 196. | Powiadomienie o transakcji kartą wysyłane przedstawicielowi ustawowemu | za każde powiadomienie | 0,50 zł |
 | 197. | Wznowienie karty po upływie terminu ważności | jednorazowo | bez opłat |
 | 198. | Rezygnacja z karty i jej zwrot do Banku | jednorazowo | bez opłat |
 | 199. | Wydanie karty debetowej w kolorze i wzorze dla młodzieży (karta personalizowana) | jednorazowo | bez opłat |
@@ -311,7 +311,7 @@ Karta wydawana dziecku nie umożliwia transakcji internetowych bez zgody przedst
 | 205. | Odbiór karty w placówce | jednorazowo | bez opłat |
 | 206. | Ponowne wysłanie karty zwróconej z powodu nieodebrania przesyłki | jednorazowo | bez opłat |
 | 207. | Zniszczenie nieodebranej karty po upływie okresu przechowywania | jednorazowo | bez opłat |
-| 208. | Wydanie drugiej karty do rachunku nastolatka lub studenta | jednorazowo | 0,00 zł |
+| 208. | Wydanie drugiej karty do rachunku nastolatka lub studenta | jednorazowo | 10,00 zł |
 | 209. | Karta wirtualna do płatności internetowych dla nastolatka (wydanie) | jednorazowo | bez opłat |
 | 210. | Karta wirtualna do płatności internetowych — prowadzenie | miesięcznie | bez opłat |
 | 211. | Karta wirtualna — limit dzienny transakcji ustawiany przez przedstawiciela | za dobę | do 500,00 zł |
@@ -341,7 +341,7 @@ Karta wydawana dziecku nie umożliwia transakcji internetowych bez zgody przedst
 | 235. | Zastrzeżenie karty przez infolinię (dostępną całodobowo) | za dyspozycję | 0,00 zł |
 | 236. | Zgłoszenie utraty karty za granicą — wydanie karty awaryjnej | jednorazowo | wg cennika organizacji kartowej |
 | 237. | Wypłata gotówki awaryjnej za granicą po utracie karty | za operację | wg cennika organizacji kartowej |
-| 238. | Przeliczenie transakcji w walucie obcej według Tabeli kursów walut | od kwoty transakcji | 1,5% |
+| 238. | Przeliczenie transakcji w walucie obcej według Tabeli kursów walut | od kwoty transakcji | 1,3% |
 
 <!-- page: 18 -->
 - 1\) Opłata nie jest pobierana w miesiącu, w którym wartość transakcji bezgotówkowych wykonanych kartą wyniosła
@@ -363,7 +363,7 @@ Dzienne limity przelewów małoletniego wynikają ze zgody przedstawiciela ustaw
 | 240.1. | zlecony w bankowości elektronicznej lub mobilnej | za operację | bez opłat |
 | 240.2. | zlecony w placówce przez przedstawiciela ustawowego lub pełnoletniego klienta | za operację | 8,00 zł |
 | 241. | Przelew natychmiastowy w złotych — Konto Junior i Konto Teen 1) | za operację | 1,00 zł |
-| 242. | Przelew natychmiastowy w złotych — Konto Student | za operację | 5,00 zł |
+| 242. | Przelew natychmiastowy w złotych — Konto Student | za operację | 4,00 zł |
 | 243. | Maksymalna kwota przelewu natychmiastowego (Konto Student) | za operację | 30 000,00 zł |
 | 244. | Dzienny limit przelewów — Konto Junior | za dobę | 100,00 zł |
 | 245. | Dzienny limit przelewów — Konto Teen | za dobę | 2 000,00 zł |
@@ -373,9 +373,9 @@ Dzienne limity przelewów małoletniego wynikają ze zgody przedstawiciela ustaw
 | 249. | Kieszonkowe — zlecenie stałe założone przez przedstawiciela ustawowego w aplikacji | za każde wykonanie | bez opłat |
 | 250. | Kieszonkowe — zlecenie stałe założone lub zmienione w placówce | za dyspozycję | 2,00 zł |
 | 251. | Zlecenie stałe do rachunku w innym banku (Konto Student) | za każde wykonanie | 2,00 zł |
-| 252. | Polecenie zapłaty (Konto Student) | za każde obciążenie | 1,50 zł |
+| 252. | Polecenie zapłaty (Konto Student) | za każde obciążenie | 2,00 zł |
 | 253. | Przelew na cel oszczędnościowy dziecka lub nastolatka | za operację | bez opłat |
-| 254. | Przelew walutowy lub zagraniczny (wyłącznie Konto Student) | za operację | 35,00 zł |
+| 254. | Przelew walutowy lub zagraniczny (wyłącznie Konto Student) | za operację | 38,00 zł |
 | 255. | Przelew zagraniczny z rachunku małoletniego | za operację | usługa niedostępna |
 | 256. | Zlecenie przelewu na numer telefonu odbiorcy | za operację | bez opłat |
 | 257. | Odwołanie przelewu z przyszłą datą realizacji | za dyspozycję | bez opłat |
@@ -396,10 +396,10 @@ Dzienne limity przelewów małoletniego wynikają ze zgody przedstawiciela ustaw
 | 272. | Przelew zagraniczny poza EOG — opcja kosztowa SHA (Konto Student) | od kwoty transakcji | 0,2% min. 20,00 zł |
 | 273. | Przelew zagraniczny poza EOG — opcja kosztowa OUR (Konto Student) | od kwoty transakcji | 0,3% min. 40,00 zł |
 | 274. | Przyjęcie przelewu przychodzącego z zagranicy | za operację | bez opłat |
-| 275. | Zlecenie zwrotu przelewu przychodzącego z zagranicy | za operację | 35,00 zł |
+| 275. | Zlecenie zwrotu przelewu przychodzącego z zagranicy | za operację | 38,00 zł |
 | 276. | Dochodzenie dotyczące losów przelewu zagranicznego | za każde dochodzenie | 50,00 zł |
 | 277. | Zmiana lub odwołanie przelewu zagranicznego przed realizacją | za dyspozycję | bez opłat |
-| 278. | Zapłata za zakupy online w walucie obcej z rachunku Konto Student (przewalutowanie) | od kwoty transakcji | 1,5% |
+| 278. | Zapłata za zakupy online w walucie obcej z rachunku Konto Student (przewalutowanie) | od kwoty transakcji | 1,3% |
 | 279. | Przelew do rachunku bankowego zlecony przez nastolatka z użyciem hasła jednorazowego | za operację | bez opłat |
 | 280. | Lista zaufanych odbiorców nastolatka — dodanie odbiorcy (wymaga akceptacji przedstawiciela) | za dyspozycję | bez opłat |
 | 281. | Lista zaufanych odbiorców nastolatka — usunięcie odbiorcy | za dyspozycję | bez opłat |
@@ -447,7 +447,7 @@ Wypłaty w bankomatach Banku z użyciem karty wydanej do rachunku są wolne od o
 | 309. | Wpłata gotówki z dodatkowym wyjaśnieniem pochodzenia środków — próg | za operację | 15 000,00 zł |
 | 310. | Awizacja wypłaty gotówki dla nastolatka powyżej 1 000,00 zł | za dyspozycję | bez opłat |
 | 311. | Wypłata gotówki w placówce przez przedstawiciela ustawowego z rachunku dziecka | za operację | bez opłat |
-| 312. | Wypłata gotówki w placówce z rachunku studenta powyżej 10 000,00 zł — wymaga awizacji | za operację | bez opłat |
+| 312. | Wypłata gotówki w placówce z rachunku studenta powyżej 15 000,00 zł — wymaga awizacji | za operację | bez opłat |
 | 313. | Anulowanie awizowanej wypłaty gotówki | za dyspozycję | bez opłat |
 | 314. | Niepodjęcie awizowanej wypłaty gotówki w terminie | za dyspozycję | bez opłat |
 | 315. | Wypłata gotówki w placówce w walucie obcej (Konto Student) | za operację | bez opłat |
@@ -462,7 +462,7 @@ Wypłaty w bankomatach Banku z użyciem karty wydanej do rachunku są wolne od o
 | 324. | Wypłata gotówki w bankomacie innego banku — karta studenta | za operację | 5,00 zł |
 | 325. | Sprawdzenie salda w bankomacie Banku | za operację | bez opłat |
 | 326. | Sprawdzenie salda w bankomacie innego banku | za operację | 1,00 zł |
-| 327. | Zmiana PIN w bankomacie Banku | za dyspozycję | 5,00 zł |
+| 327. | Zmiana PIN w bankomacie Banku | za dyspozycję | 6,00 zł |
 | 328. | Wypłata bez karty w bankomacie z użyciem kodu z aplikacji mobilnej (Konto Teen i Konto Student) | za operację | bez opłat |
 | 329. | Maksymalna kwota wypłaty w bankomacie Banku w ciągu doby — ustawienie przez przedstawiciela | za dobę | do 500,00 zł |
 | 330. | Wpłata gotówki we wpłatomacie bez użycia karty (kod z aplikacji) | za operację | bez opłat |
@@ -472,7 +472,7 @@ Wypłaty w bankomatach Banku z użyciem karty wydanej do rachunku są wolne od o
 | 334. | Dokonanie wpłaty w kasie placówki z wyjaśnieniem pochodzenia środków | za operację | bez opłat |
 | 335. | Wpłata gotówki na cel oszczędnościowy dziecka w placówce | za operację | bez opłat |
 | 336. | Wpłata na rachunek dziecka z użyciem formularza wpłaty własnej | za operację | bez opłat |
-| 337. | Wpłata na rachunek studenta w placówce — przekazana przez osobę trzecią | za operację | 3,00 zł |
+| 337. | Wpłata na rachunek studenta w placówce — przekazana przez osobę trzecią | za operację | 3,50 zł |
 | 338. | Maksymalna wpłata gotówki we wpłatomacie jednorazowo | za operację | 10 000,00 zł |
 | 339. | Przeliczenie i sortowanie nominałów (dla wpłat zbiorczych przekraczających 200 sztuk banknotów) | za operację | wg wyceny indywidualnej |
 
@@ -494,12 +494,12 @@ W razie zmiany przedstawiciela ustawowego (np. w wyniku orzeczenia sądu) nowy p
 | 342. | Dostęp przedstawiciela ustawowego do historii rachunku w bankowości elektronicznej | miesięcznie | bez opłat |
 | 343. | Cykliczne zestawienie wydatków małoletniego przesyłane przedstawicielowi | miesięcznie | 0,00 zł |
 | 344. | Zaświadczenie dla opiekuna o rachunku i operacjach małoletniego | za każdy dokument | 10,00 zł |
-| 345. | Zaświadczenie o posiadaniu rachunku wystawione na życzenie pełnoletniego klienta | za każdy dokument | 20,00 zł |
+| 345. | Zaświadczenie o posiadaniu rachunku wystawione na życzenie pełnoletniego klienta | za każdy dokument | 0,00 zł |
 | 346. | Przedstawienie orzeczenia sądu o ustanowieniu opiekuna prawnego — weryfikacja dokumentu | jednorazowo | bez opłat |
 | 347. | Powiadomienie SMS o operacjach na rachunku | za każde powiadomienie | 2,00 zł |
 | 348. | Wniosek o zmianę danych kontaktowych małoletniego | za dyspozycję | bez opłat |
 | 349. | Zgłoszenie utraty dokumentu tożsamości i blokada dostępu do bankowości elektronicznej | za dyspozycję | bez opłat |
-| 350. | Zaświadczenie z Banku o statusie klienta dla uczelni lub ubezpieczyciela 1) | za każdy dokument | 20,00 zł |
+| 350. | Zaświadczenie z Banku o statusie klienta dla uczelni lub ubezpieczyciela 1) | za każdy dokument | 0,00 zł |
 | 351. | Pakiet Konto Student Plus — ubezpieczenie podróży i assistance | miesięcznie | 6,00 zł |
 | 352. | Rezygnacja z ubezpieczenia podróży w pakiecie Konto Student Plus | za dyspozycję | bez opłat |
 | 353. | Odpis wyciągu z rachunku za okres starszy niż 12 miesięcy | za każdy dokument | 15,00 zł |
@@ -521,7 +521,7 @@ W razie zmiany przedstawiciela ustawowego (np. w wyniku orzeczenia sądu) nowy p
 | 369. | Zmiana adresu e-mail do powiadomień | za dyspozycję | bez opłat |
 | 370. | Realizacja zajęcia egzekucyjnego rachunku pełnoletniego klienta | jednorazowo | 30,00 zł |
 | 371. | Odmowa zajęcia rachunku małoletniego w zakresie środków wolnych od zajęcia (świadczenia na dziecko) | za dyspozycję | bez opłat |
-| 372. | Realizacja dyspozycji wypłaty środków na wypadek śmierci | jednorazowo | 0,00 zł |
+| 372. | Realizacja dyspozycji wypłaty środków na wypadek śmierci | jednorazowo | 10,00 zł |
 | 373. | Wypłata środków z rachunku po śmierci przedstawiciela ustawowego (na rzecz nowego opiekuna) | jednorazowo | bez opłat |
 | 374. | Informacja dla sądu rodzinnego o rachunku małoletniego | za każdy dokument | bez opłat |
 | 375. | Informacja dla komornika o rachunkach klienta pełnoletniego | za każdy dokument | bez opłat |
@@ -538,17 +538,17 @@ W razie zmiany przedstawiciela ustawowego (np. w wyniku orzeczenia sądu) nowy p
 | 386. | Weryfikacja tożsamości przedstawiciela ustawowego w placówce | za dyspozycję | bez opłat |
 | 387. | Weryfikacja tożsamości przedstawiciela ustawowego zdalnie (wideo-weryfikacja) | za dyspozycję | bez opłat |
 | 388. | Przyjęcie dokumentów od przedstawiciela przesłanych korespondencyjnie z notarialnym poświadczeniem podpisu | za każdy dokument | bez opłat |
-| 389. | Weryfikacja pełnomocnictwa udzielonego przez przedstawiciela do obsługi rachunku małoletniego | jednorazowo | 0,00 zł |
+| 389. | Weryfikacja pełnomocnictwa udzielonego przez przedstawiciela do obsługi rachunku małoletniego | jednorazowo | 10,00 zł |
 | 390. | Zaświadczenie o posiadaniu rachunku dla ZUS lub urzędu (świadczenia na dziecko) | za każdy dokument | 10,00 zł |
 | 391. | Zaświadczenie o numerze rachunku w postaci elektronicznej | za każdy dokument | bez opłat |
 | 392. | Potwierdzenie otwarcia rachunku wydane po zawarciu umowy | jednorazowo | bez opłat |
 | 393. | Kopia umowy rachunku w postaci elektronicznej | za każdy dokument | bez opłat |
-| 394. | Duplikat umowy rachunku w postaci papierowej | za każdy dokument | 30,00 zł |
+| 394. | Duplikat umowy rachunku w postaci papierowej | za każdy dokument | 35,00 zł |
 | 395. | Odpis wyciągu z rachunku sprzed więcej niż 12 miesięcy | za każdy dokument | 15,00 zł |
 | 396. | Zestawienie transakcji z rachunku w formie pliku dla przedstawiciela | za każdy plik | bez opłat |
 | 397. | Informacja o opłatach pobranych w roku kalendarzowym z rachunku małoletniego | za każdy dokument | bez opłat |
 | 398. | Potwierdzenie wykonania operacji — wydruk w placówce | za każdy dokument | 10,00 zł |
-| 399. | Zaświadczenie o braku zadłużenia wobec Banku | za każdy dokument | 20,00 zł |
+| 399. | Zaświadczenie o braku zadłużenia wobec Banku | za każdy dokument | 0,00 zł |
 
 <!-- page: 27 -->
 - 1\) Zaświadczenie wydawane jest w postaci papierowej lub elektronicznej w ciągu 5 dni od dnia złożenia wniosku.

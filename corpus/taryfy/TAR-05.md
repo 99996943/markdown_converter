@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/TAR/05 Wersja 1 Obowiązuje od 1 listopada 2025 r.
+BP/TAR/05 Wersja 3 Obowiązuje od 1 listopada 2025 r.
 
 <!-- page: 2 -->
 ## I. Postanowienia ogólne
@@ -22,12 +22,12 @@ Niniejsza Taryfa ustala opłaty i prowizje za przelewy zagraniczne, przelewy w w
 - 3\. Stawki dla klientów indywidualnych i dla przedsiębiorców zostały zestawione w osobnych częściach Taryfy; w pozostałych częściach podano stawki właściwe dla obu grup, chyba że wskazano inaczej.
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego wykonywana jest czynność, w dniu jej wykonania, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank ma prawo pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane podlegają oprocentowaniu odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca nie później niż w ciągu 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca nie później niż w ciągu 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się w górę do pełnego grosza.
 
-- 1\. Transakcje wymagające przeliczenia walut są rozliczane według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest ustalana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są wyznaczane na podstawie kursu średniego, pomniejszonego albo powiększonego o marżę w wysokości 1,5%.
+- 1\. Transakcje wymagające przeliczenia walut są rozliczane według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest ustalana w dni robocze o godzinie 8:30 i publikowana na stronie https://bank.example.
+- 2\. Kurs kupna i kurs sprzedaży są wyznaczane na podstawie kursu średniego, pomniejszonego albo powiększonego o marżę w wysokości 1,3%.
 
 Przeliczeń między walutami obcymi dokonuje się za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -42,7 +42,7 @@ Zasady wykonywania dyspozycji płatniczych określa ustawa z dnia 19 sierpnia 20
 
 Terminy wykonania przelewów zagranicznych podane w Taryfie liczy się w dniach roboczych, z uwzględnieniem dni wolnych od pracy w państwie waluty przelewu. Przelew w euro w ramach SEPA jest uznawany na rachunku banku odbiorcy nie później niż w następnym dniu roboczym po dniu przyjęcia zlecenia, a przelew poza SEPA — w terminie wynikającym z wybranego trybu realizacji.
 
-- 1\. Reklamacje dotyczące przelewów zagranicznych i operacji walutowych Klient może składać w terminie 13 miesięcy od dnia obciążenia rachunku, w trybie określonym w regulaminie rachunku. Bank rozpatruje reklamację w terminie 15 dni.
+- 1\. Reklamacje dotyczące przelewów zagranicznych i operacji walutowych Klient może składać w terminie 13 miesięcy od dnia obciążenia rachunku, w trybie określonym w regulaminie rachunku. Bank rozpatruje reklamację w terminie 14 dni.
 - 2\. Kwoty pobrane przez banki pośredniczące i bank odbiorcy bez wiedzy Banku nie podlegają zwrotowi przez Bank, jednak Bank udziela Klientowi pomocy w ich odzyskaniu, jeżeli opłaty zostały pobrane niezgodnie z wybraną opcją kosztów.
 
 Bank ma prawo odmówić wykonania przelewu zagranicznego lub go wstrzymać, jeżeli dyspozycja budzi uzasadnione wątpliwości co do zgodności z przepisami o przeciwdziałaniu praniu pieniędzy, w szczególności ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644), lub z ograniczeniami wynikającymi z międzynarodowych sankcji finansowych. O odmowie Bank informuje Klienta, o ile przepisy nie zabraniają takiej informacji.
@@ -64,7 +64,7 @@ Stawki poniżej dotyczą osób fizycznych niebędących przedsiębiorcami, któr
 | 2. | Przelew zagraniczny poza SEPA w opcji SHA 1) | od kwoty transakcji | 0,2% kwoty przelewu, min. 20,00 zł, maks. 150,00 zł |
 | 3. | Dopłata za opcję kosztów OUR | za operację | 60,00 zł |
 | 4. | Dopłata za realizację przelewu zagranicznego w trybie pilnym (waluta dnia) | za operację | 45,00 zł |
-| 5. | Przelew walutowy zlecony w placówce z rachunku osobistego 2) | za operację | 35,00 zł |
+| 5. | Przelew walutowy zlecony w placówce z rachunku osobistego 2) | za operację | 38,00 zł |
 | 6. | Przelew między rachunkami własnymi Klienta w różnych walutach | za operację | 0,00 zł |
 | 7. | Przelew walutowy do innego klienta Banku (rachunek w walucie obcej) | za operację | 0,00 zł |
 | 8. | Przelew przychodzący z zagranicy (w tym SEPA) | za operację | 10,00 zł |
@@ -74,7 +74,7 @@ Stawki poniżej dotyczą osób fizycznych niebędących przedsiębiorcami, któr
 | 12. | Kopia potwierdzenia przelewu w formacie komunikatu SWIFT | za dokument | 30,00 zł |
 | 13. | Potwierdzenie wykonania przelewu w formie papierowej | za dokument | 15,00 zł |
 | 14. | Wymiana walut w bankowości internetowej (kantor internetowy) | od kwoty transakcji | kurs z marżą 0,3% |
-| 15. | Wymiana walut w placówce Banku | od kwoty transakcji | kurs z marżą 1,5% |
+| 15. | Wymiana walut w placówce Banku | od kwoty transakcji | kurs z marżą 1,3% |
 | 16. | Prowadzenie rachunku walutowego Klienta indywidualnego | miesięcznie | 0,00 zł |
 | 17. | Wypłata gotówki w walucie obcej w placówce | od kwoty transakcji | 1% kwoty wypłaty |
 | 18. | Przeliczenie transakcji kartą debetową w walucie innej niż waluta rachunku | od kwoty transakcji | 2% kwoty transakcji |
@@ -165,9 +165,9 @@ Stawki dla przedsiębiorców obejmują osoby fizyczne prowadzące działalność
 | 79. | Przelew walutowy do innego klienta Banku w bankowości internetowej | za przelew | 0,00 zł |
 | 80. | Przelew walutowy do innego klienta Banku zlecony w placówce | za przelew | 15,00 zł |
 | 81. | Wymiana walut na rachunkach firmowych w kantorze internetowym | od kwoty transakcji | kurs z marżą 0,3% |
-| 82. | Wymiana walut na rachunkach firmowych według Tabeli kursów walut | od kwoty transakcji | kurs z marżą 1,5% |
+| 82. | Wymiana walut na rachunkach firmowych według Tabeli kursów walut | od kwoty transakcji | kurs z marżą 1,3% |
 | 83. | Obsługa rachunku walutowego z dostępem w ramach bankowości dla firm | miesięcznie | 10,00 zł |
-| 84. | Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim) | za dokument | 80,00 zł |
+| 84. | Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim) | za dokument | 90,00 zł |
 | 85. | Potwierdzenie salda rachunku walutowego dla biegłego rewidenta | za dokument | 100,00 zł |
 | 86. | Przygotowanie zestawienia przelewów zagranicznych za wskazany okres (format elektroniczny) | za zestawienie | 25,00 zł |
 | 87. | Przekazanie informacji o transakcjach dewizowych do raportowania statystycznego (na wniosek) | za zlecenie | 40,00 zł |
@@ -189,7 +189,7 @@ banków pośredniczących, jeżeli nie wybrano opcji OUR, pomniejszają kwotę p
 
 - 2\) Jeżeli poszukiwanie wykaże błąd leżący po stronie Banku, opłaty nie pobiera się, a pobraną opłatę zwraca się
 
-w terminie 14 dni.
+w terminie 10 dni.
 
 - 3\) Opłata za weryfikację dokumentów jest pobierana jednorazowo, jeżeli do przelewu załączono więcej niż jeden
 
@@ -272,7 +272,7 @@ Przelewy zagraniczne poza SEPA realizowane są za pośrednictwem międzynarodowe
 | 141.2. | pilny (D+1, waluta następnego dnia roboczego) — klient indywidualny | za przelew | 45,00 zł |
 | 141.3. | pilny (D+1, waluta następnego dnia roboczego) — przedsiębiorca | za przelew | 40,00 zł |
 | 141.4. | ekspresowy (D+0, waluta tego samego dnia) 2) | za przelew | 80,00 zł |
-| 142. | Przelew walutowy zlecony w placówce z rachunku osobistego | za operację | 35,00 zł |
+| 142. | Przelew walutowy zlecony w placówce z rachunku osobistego | za operację | 38,00 zł |
 | 143. | Zmiana lub odwołanie dyspozycji przelewu zagranicznego — przedsiębiorca | za dyspozycję | 60,00 zł |
 | 144. | Zmiana lub odwołanie dyspozycji przelewu zagranicznego — klient indywidualny | za dyspozycję | 40,00 zł |
 | 145. | Zwrot przelewu zagranicznego (recall) na wniosek zleceniodawcy 3) | za operację | 45,00 zł |
@@ -340,7 +340,7 @@ Przelewy przychodzące z zagranicy są księgowane na rachunku Klienta w dniu ot
 | 178. | Przelew przychodzący z zagranicy w walucie obcej — przedsiębiorca | za przelew | 15,00 zł |
 | 179. | Przelew przychodzący z państwa Europejskiego Obszaru Gospodarczego w euro (SEPA) — klient indywidualny | za operację | 10,00 zł |
 | 180. | Przelew przychodzący z instytucji Unii Europejskiej lub organizacji międzynarodowej (dotacje, wynagrodzenia) 1) | za przelew | bez opłat |
-| 181. | Przeliczenie wpływu w walucie innej niż waluta rachunku | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 181. | Przeliczenie wpływu w walucie innej niż waluta rachunku | od kwoty transakcji | kurs kupna z marżą 1,3% |
 | 182. | Zwrot przelewu przychodzącego do nadawcy na wniosek Klienta | za operację | 10,00 zł |
 | 183. | Uzupełnienie lub poprawienie danych przelewu przychodzącego (naprawa instrukcji) | za przelew | 30,00 zł |
 | 184. | Zapytanie do banku zagranicznego o brakujący przelew przychodzący (poszukiwanie) | za zlecenie | 50,00 zł |
@@ -349,10 +349,10 @@ Przelewy przychodzące z zagranicy są księgowane na rachunku Klienta w dniu ot
 | 187. | Poszukiwanie przelewu przychodzącego z zagranicy — przedsiębiorca | za zlecenie | 80,00 zł |
 | 188. | Awizo wpływu środków z zagranicy przesyłane wiadomością SMS 2) | miesięcznie | 2,00 zł |
 | 189. | Awizo wpływu środków z zagranicy przesyłane wiadomością elektroniczną | miesięcznie | bez opłat |
-| 190. | Przeliczenie wpływu po kursie kupna z Tabeli kursów walut | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 190. | Przeliczenie wpływu po kursie kupna z Tabeli kursów walut | od kwoty transakcji | kurs kupna z marżą 1,3% |
 | 191. | Przeliczenie wpływu po kursie kantorowym (na rachunek w innej walucie) | od kwoty transakcji | kurs z marżą 0,3% |
 | 192. | Przeliczenie wpływu po kursie negocjowanym (powyżej progu transakcji dealerskich) | za transakcję | kurs indywidualny |
-| 193. | Automatyczne przewalutowanie wpływów na rachunek złotowy (stałe zlecenie wymiany) | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 193. | Automatyczne przewalutowanie wpływów na rachunek złotowy (stałe zlecenie wymiany) | od kwoty transakcji | kurs kupna z marżą 1,3% |
 | 194. | Przekazanie wpływu z zagranicy na wskazany rachunek w innym banku (przelew dalszy) | za operację | wg taryf przelewów wychodzących |
 | 195. | Zamknięcie rachunku do obsługi wpływów z zagranicy (przekazanie salda) | jednorazowo | 20,00 zł |
 | 196. | Przelew przychodzący z błędnym lub niepełnym numerem rachunku odbiorcy (ustalenie rachunku) | za przelew | 30,00 zł |
@@ -395,26 +395,26 @@ Wymiana walut polega na kupnie lub sprzedaży waluty obcej za złote albo na zam
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 216. | Wymiana walut według Tabeli kursów walut Banku (placówka, infolinia) | od kwoty transakcji | kurs z marżą 1,5% |
+| 216. | Wymiana walut według Tabeli kursów walut Banku (placówka, infolinia) | od kwoty transakcji | kurs z marżą 1,3% |
 | 217. | Wymiana walut w kantorze internetowym w bankowości internetowej i aplikacji mobilnej | od kwoty transakcji | kurs z marżą 0,3% |
 | 218. | Wymiana walut w placówce według kursu preferencyjnego dla klientów pakietów premium | od kwoty transakcji | kurs z marżą 1% |
 | 219. | Wymiana walut po kursie negocjowanym (transakcja dealerska powyżej progu) 1) | za transakcję | 0,00 zł (kurs indywidualny) |
 | 220. | Zlecenie wymiany walut z limitem kursu (zlecenie kursowe) | za zlecenie | 10,00 zł |
 | 221. | Wymiana walut w ramach płatności kartą w walucie innej niż waluta rachunku | od kwoty transakcji | 2% kwoty transakcji |
-| 222. | Wymiana walut przy wypłacie gotówki z bankomatu za granicą (rachunek złotowy) | od kwoty transakcji | kurs z Tabeli z marżą 1,5% |
-| 223. | Przeliczenie wpływu z zagranicy na rachunek w innej walucie | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 222. | Wymiana walut przy wypłacie gotówki z bankomatu za granicą (rachunek złotowy) | od kwoty transakcji | kurs z Tabeli z marżą 1,3% |
+| 223. | Przeliczenie wpływu z zagranicy na rachunek w innej walucie | od kwoty transakcji | kurs kupna z marżą 1,3% |
 | 224. | Przeliczenie opłaty za czynność wykonywaną z rachunku walutowego 2) | za operację | kurs średni Tabeli |
 | 225. | Potwierdzenie kursu zastosowanego w transakcji walutowej | za dokument | 15,00 zł |
-| 226. | Kupno euro za złote w placówce Banku (według Tabeli kursów walut) | od kwoty transakcji | kurs sprzedaży z marżą 1,5% |
-| 227. | Sprzedaż euro za złote w placówce Banku (według Tabeli kursów walut) | od kwoty transakcji | kurs kupna z marżą 1,5% |
-| 228. | Kupno i sprzedaż dolarów amerykańskich w placówce Banku | od kwoty transakcji | kurs z marżą 1,5% |
-| 229. | Kupno i sprzedaż funtów szterlingów lub franków szwajcarskich w placówce Banku | od kwoty transakcji | kurs z marżą 1,5% |
+| 226. | Kupno euro za złote w placówce Banku (według Tabeli kursów walut) | od kwoty transakcji | kurs sprzedaży z marżą 1,3% |
+| 227. | Sprzedaż euro za złote w placówce Banku (według Tabeli kursów walut) | od kwoty transakcji | kurs kupna z marżą 1,3% |
+| 228. | Kupno i sprzedaż dolarów amerykańskich w placówce Banku | od kwoty transakcji | kurs z marżą 1,3% |
+| 229. | Kupno i sprzedaż funtów szterlingów lub franków szwajcarskich w placówce Banku | od kwoty transakcji | kurs z marżą 1,3% |
 | 230. | Wymiana walut w placówce dla klientów pakietów premium (kurs preferencyjny) | od kwoty transakcji | kurs z marżą 1% |
-| 231. | Wymiana walut przez infolinię po uwierzytelnieniu Klienta | od kwoty transakcji | kurs z marżą 1,5% |
-| 232. | Wymiana walut w placówce w kwocie przekraczającej awizo (wymaga zamówienia waluty) | od kwoty transakcji | kurs z marżą 1,5% |
-| 233. | Wymiana banknotów obcych na złote bez rachunku w Banku (transakcja jednorazowa) | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 231. | Wymiana walut przez infolinię po uwierzytelnieniu Klienta | od kwoty transakcji | kurs z marżą 1,3% |
+| 232. | Wymiana walut w placówce w kwocie przekraczającej awizo (wymaga zamówienia waluty) | od kwoty transakcji | kurs z marżą 1,3% |
+| 233. | Wymiana banknotów obcych na złote bez rachunku w Banku (transakcja jednorazowa) | od kwoty transakcji | kurs kupna z marżą 1,3% |
 | 234. | Wymiana drobnych monet obcych na złote (przyjęcie do inkasa) | za transakcję | wg wyceny indywidualnej |
-| 235. | Wymiana walut z rachunku złotowego na rachunek walutowy tego samego Klienta w placówce | od kwoty transakcji | kurs z marżą 1,5% |
+| 235. | Wymiana walut z rachunku złotowego na rachunek walutowy tego samego Klienta w placówce | od kwoty transakcji | kurs z marżą 1,3% |
 | 236. | Kupno euro za złote w kantorze internetowym | od kwoty transakcji | kurs sprzedaży z marżą 0,3% |
 | 237. | Sprzedaż euro za złote w kantorze internetowym | od kwoty transakcji | kurs kupna z marżą 0,3% |
 | 238. | Kupno dolarów amerykańskich za złote w kantorze internetowym | od kwoty transakcji | kurs sprzedaży z marżą 0,3% |
@@ -524,7 +524,7 @@ Bank przyjmuje do inkasa czeki wystawione na rzecz Klienta i płatne za granicą
 | 302. | Awizo o przyjęciu dokumentów przez bank zagraniczny | za dokument | bez opłat |
 | 303. | Dołączenie kopii dokumentów handlowych do dyspozycji inkasa | za każdy dokument | 25,00 zł |
 | 304. | Dochodzenie zapłaty należności z inkasa po terminie | za zlecenie | 80,00 zł |
-| 305. | Rozliczenie inkasa w walucie innej niż waluta rachunku | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 305. | Rozliczenie inkasa w walucie innej niż waluta rachunku | od kwoty transakcji | kurs kupna z marżą 1,3% |
 
 <!-- page: 24 -->
 - 1\) Prowizja obejmuje wysyłkę czeku do banku trasata kurierem; koszty obcych banków i opłaty zagranicznej poczty
@@ -551,18 +551,18 @@ Za czynności dodatkowe uważa się czynności wykonywane na wniosek Klienta, ni
 | 309. | Kopia potwierdzenia przelewu w formacie komunikatu SWIFT | za dokument | 30,00 zł |
 | 310. | Potwierdzenie wykonania przelewu zagranicznego w formie papierowej | za dokument | 15,00 zł |
 | 311. | Weryfikacja dokumentów związanych z transakcją z zagranicą | za zlecenie | 40,00 zł |
-| 312. | Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim) | za dokument | 80,00 zł |
+| 312. | Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim) | za dokument | 90,00 zł |
 | 313. | Potwierdzenie salda rachunku walutowego dla biegłego rewidenta | za dokument | 100,00 zł |
 | 314. | Zaświadczenie o posiadanych rachunkach walutowych | za dokument | 20,00 zł |
-| 315. | Duplikat dokumentu potwierdzającego operację walutową | za dokument | 30,00 zł |
+| 315. | Duplikat dokumentu potwierdzającego operację walutową | za dokument | 35,00 zł |
 | 316. | Kopia komunikatu SWIFT (potwierdzenie wykonania przelewu zagranicznego) | za dokument | 30,00 zł |
 | 317. | Potwierdzenie wykonania przelewu w języku angielskim, opatrzone podpisem Banku | za dokument | 15,00 zł |
 | 318. | Zaświadczenie o rachunkach i saldach w walutach obcych (dla celów urzędowych) | za dokument | 20,00 zł |
 | 319. | Zaświadczenie o dokonanych przelewach zagranicznych w danym roku | za dokument | 20,00 zł |
-| 320. | Opinia bankowa o Kliencie dla kontrahenta zagranicznego | za dokument | 80,00 zł |
+| 320. | Opinia bankowa o Kliencie dla kontrahenta zagranicznego | za dokument | 90,00 zł |
 | 321. | Potwierdzenie salda rachunku walutowego dla biegłego rewidenta | za dokument | 100,00 zł |
 | 322. | Tłumaczenie przysięgłe dokumentu bankowego na język obcy (koszt rzeczywisty) | za dokument | wg faktury tłumacza |
-| 323. | Duplikat potwierdzenia operacji walutowej | za dokument | 30,00 zł |
+| 323. | Duplikat potwierdzenia operacji walutowej | za dokument | 35,00 zł |
 | 324. | Wydanie dokumentów w trybie pilnym (w ciągu 24 godzin) | za dokument | dwukrotność opłaty podstawowej |
 | 325. | Wysłanie dokumentów kurierem za granicę na wniosek Klienta | za przesyłkę | wg cennika przewoźnika |
 | 326. | Weryfikacja dokumentów dotyczących transakcji z zagranicą (faktura, umowa, zamówienie) | za zlecenie | 40,00 zł |

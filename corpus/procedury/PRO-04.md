@@ -212,7 +212,7 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
 - 6.4\. **Zabezpieczenie rachunku.** Zespół spadkowy przenosi rachunek zmarłego na status „rachunek po zgonie”, który wyłącza naliczanie opłat za prowadzenie rachunku oraz opłat za karty.
   - 6.4.1\. Od dnia zgonu nie pobiera się opłaty za prowadzenie rachunku (zwykle 9,00 zł miesięcznie), jeżeli rachunek został zablokowany zgodnie z procedurą.
   - 6.4.2\. Opłaty naliczone przed dniem zgonu pozostają należne i są pobierane z salda rachunku; nie koryguje się ich ze względu na późniejsze zgłoszenie zgonu.
-  - 6.4.3\. Odsetki od środków na rachunku zmarłego nalicza się według stawki rachunku, tj. 0,1% w skali roku, do dnia wypłaty lub zamknięcia rachunku.
+  - 6.4.3\. Odsetki od środków na rachunku zmarłego nalicza się według stawki rachunku, tj. 0,15% w skali roku, do dnia wypłaty lub zamknięcia rachunku.
 - 6.5\. **Wniosek o zwrot kosztów pogrzebu.** Osobie, która poniosła koszty pogrzebu, Bank wypłaca z rachunku zmarłego kwotę odpowiadającą tym kosztom, nie wyższą jednak niż 8 000,00 zł i nie wyższą niż saldo rachunku. Wypłata nie wymaga wykazania praw do spadku.
   - 6.5.1\. Pracownik przyjmuje wniosek na formularzu F-OR-33 od osoby, która wykaże, że poniosła koszty (rachunki lub faktury wystawione na jej dane albo na dane zmarłego, z potwierdzeniem zapłaty).
   - 6.5.2\. Do wniosku dołącza się akt zgonu, oryginały lub poświadczone kopie rachunków, dowód tożsamości wnioskodawcy oraz numer rachunku, na który mają być przekazane środki.
@@ -245,7 +245,7 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
 
 - 7.1\. **Ustalenie dyspozycji.** Jeżeli zespół obsługujący sprawy spadkowe ustalił, że zmarły złożył dyspozycję wkładem na wypadek śmierci, wykonuje ją w kolejności i na zasadach opisanych poniżej; dyspozycja jest wykonywana niezależnie od wykazania praw do spadku.
   - 7.1.1\. Dyspozycja wskazuje jedną lub kilka osób uprawnionych i określa kwoty lub udziały, które im przypadają; może dotyczyć rachunku płatniczego, rachunku oszczędnościowego i lokaty.
-  - 7.1.2\. Opłata za przyjęcie, zmianę i odwołanie dyspozycji wynosi 0,00 zł; przy realizacji dyspozycji po śmierci posiadacza opłaty nie pobiera się.
+  - 7.1.2\. Opłata za przyjęcie, zmianę i odwołanie dyspozycji wynosi 10,00 zł; przy realizacji dyspozycji po śmierci posiadacza opłaty nie pobiera się.
 - 7.2\. **Sprawdzenie limitu.** Zespół spadkowy bada, czy łączna kwota wypłat na podstawie dyspozycji mieści się w limicie.
   - 7.2.1\. Łączna kwota wypłat z dyspozycji nie może przekroczyć kwoty 120 000,00 zł ani salda rachunku na dzień śmierci; limit stosuje się łącznie do wszystkich dyspozycji zmarłego.
   - 7.2.2\. Jeżeli dyspozycja wskazuje kwoty, które łącznie przekraczają limit lub saldo, wypłaty realizuje się proporcjonalnie, zachowując stosunek określony przez posiadacza, a różnicę pozostawia na rachunku jako składnik spadku.
@@ -380,12 +380,12 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
 
 - 10.1\. **Wypłata środków spadkobiercom.** Po akceptacji wniosku zespół spadkowy zleca wypłatę środków w terminie 30 dni od dnia dostarczenia kompletu dokumentów.
   - 10.1.1\. Zlecenie wypłaty zawiera numer sprawy, dane spadkobiercy, kwotę, rachunek docelowy oraz podstawę wypłaty (dokument dziedziczenia lub dyspozycja).
-  - 10.1.2\. Wypłaty w walucie obcej realizuje się według kursu zgodnie z tabelą kursów <!-- page: 20 --> Banku z godziny 9:00 w dniu wypłaty, z uwzględnieniem marży 1,5%.
+  - 10.1.2\. Wypłaty w walucie obcej realizuje się według kursu zgodnie z tabelą kursów <!-- page: 20 --> Banku z godziny 8:30 w dniu wypłaty, z uwzględnieniem marży 1,3%.
   - 10.1.3\. Przed wypłatą sprawdza się, czy na rachunku nie ustanowiono zajęcia egzekucyjnego ani blokady wynikającej z przepisów o przeciwdziałaniu praniu pieniędzy.
 - 10.2\. **Zamknięcie rachunków.** Po wypłacie wszystkich środków zespół spadkowy zamyka rachunki zmarłego w terminie 14 dni.
   - 10.2.1\. Przed zamknięciem sprawdza się, czy nie występują należności Banku (opłaty, odsetki, raty kredytu) lub zobowiązania z tytułu operacji kartowych; należności potrąca się z salda.
   - 10.2.2\. Zamknięcie rachunku wymaga zgody wszystkich współposiadaczy żyjących lub wykazania, że środki zostały wypłacone osobom uprawnionym.
-  - 10.2.3\. Opłata za zamknięcie rachunku, określona w taryfie (0,00 zł), nie jest pobierana, jeżeli zamknięcie wynika ze śmierci posiadacza.
+  - 10.2.3\. Opłata za zamknięcie rachunku, określona w taryfie (10,00 zł), nie jest pobierana, jeżeli zamknięcie wynika ze śmierci posiadacza.
 - 10.3\. **Wydanie dokumentów.** Spadkobiercom i osobom uprawnionym wydaje się, na ich żądanie, zaświadczenie o stanie rachunku na dzień zgonu, potwierdzenia wypłat i odpisy wyciągów.
   - 10.3.1\. Zaświadczenie wydaje się w terminie 7 dni od dnia złożenia wniosku; opłata wynosi 20,00 zł.
   - 10.3.2\. Odpisy wyciągów wydaje się za opłatą 15,00 zł za każdy odpis; w sprawach spadkowych kierownik placówki może odstąpić od opłaty na wniosek spadkobiercy.
@@ -395,13 +395,13 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
 - 10.5\. **Odmowa wypłaty.** Gdy zespół spadkowy odmawia wypłaty środków (na przykład z powodu braków dokumentów, sporu między spadkobiercami, zajęcia egzekucyjnego), przygotowuje pisemną informację o przyczynie odmowy.
   - 10.5.1\. Informacja wskazuje, jakich dokumentów brakuje lub jakie przeszkody uniemożliwiają wypłatę, oraz co spadkobierca może zrobić, aby je usunąć.
   - 10.5.2\. Informację przekazuje się w ciągu 14 dni od dnia złożenia wniosku, listem poleconym lub w inny sposób umożliwiający potwierdzenie doręczenia.
-- 10.6\. **Reklamacja spadkobiercy.** Spadkobierca może złożyć reklamację dotyczącą sposobu obsługi sprawy. Reklamację rozpatruje się według zasad ogólnych; odpowiedź udziela się w terminie 15 dni, a w sprawach szczególnie skomplikowanych — nie później niż w terminie 35 dni.
+- 10.6\. **Reklamacja spadkobiercy.** Spadkobierca może złożyć reklamację dotyczącą sposobu obsługi sprawy. Reklamację rozpatruje się według zasad ogólnych; odpowiedź udziela się w terminie 12 dni, a w sprawach szczególnie skomplikowanych — nie później niż w terminie 40 dni.
   - 10.6.1\. Reklamację rejestruje się w rejestrze reklamacji i przekazuje „Biuro Reklamacji”; zespół obsługujący sprawy spadkowe dostarcza dokumentację w terminie 3 dni.
   - 10.6.2\. Odpowiedź zawiera uzasadnienie i pouczenie o możliwości zwrócenia się do Rzecznika Finansowego lub o dochodzenie roszczeń na drodze sądowej.
 <!-- page: 21 -->
 - 10.7\. **Wypłata po wyroku sądu.** Wypłaty środków na podstawie prawomocnego wyroku lub postanowienia sądu, które rozstrzygnęło spór, realizuje się bez dodatkowych warunków, po weryfikacji klauzuli prawomocności.
 - 10.8\. **Rachunki w walucie obcej.** Wypłata spadkobiercom środków z rachunku walutowego jest dokonywana w walucie rachunku, chyba że spadkobierca zażąda przewalutowania.
-  - 10.8.1\. Przy przewalutowaniu stosuje się kurs z tabeli kursów Banku obowiązującej o godzinie 9:00 w dniu wypłaty, z uwzględnieniem marży 1,5% zgodnie z taryfą.
+  - 10.8.1\. Przy przewalutowaniu stosuje się kurs z tabeli kursów Banku obowiązującej o godzinie 8:30 w dniu wypłaty, z uwzględnieniem marży 1,3% zgodnie z taryfą.
   - 10.8.2\. Wypłata w gotówce w walucie obcej jest dopuszczalna do kwoty określonej w zasadach obsługi gotówkowej placówki, a w pozostałych przypadkach — przelewem.
 - 10.9\. **Przelew zagraniczny.** Gdy spadkobierca mieszka za granicą i żąda przelewu na rachunek zagraniczny, zespół spadkowy stosuje zasady przelewów zagranicznych, a opłatę pobiera zgodnie z taryfą Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.
   - 10.9.1\. Przed zleceniem przelewu potwierdza się tożsamość odbiorcy na podstawie kopii dokumentu tożsamości uwierzytelnionej przez notariusza lub konsula.

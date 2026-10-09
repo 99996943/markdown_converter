@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/REG/07 Wersja 1 Obowiązuje od 1 listopada 2025 r.
+BP/REG/07 Wersja 1 Obowiązuje od 1 maja 2024 r. do 30 kwietnia 2026 r.
 
 <!-- page: 2 -->
 ## Rozdział 1. Postanowienia ogólne
@@ -268,7 +268,7 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 ### § 24.
 
 - 1\. Godziną graniczną dla przelewów krajowych składanych w bankowości elektronicznej jest 15:00 w dniu roboczym. Przelewy złożone i autoryzowane do tej godziny są przekazywane do realizacji w tym samym dniu roboczym; przelewy złożone po tej godzinie — w następnym dniu roboczym.
-- 2\. Przelewy natychmiastowe są realizowane przez całą dobę, we wszystkie dni roku, o ile bank odbiorcy uczestniczy w takim systemie rozliczeń. Za przelew natychmiastowy Bank pobiera opłatę zgodną z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A., w wysokości 5,00 zł.[^7]
+- 2\. Przelewy natychmiastowe są realizowane przez całą dobę, we wszystkie dni roku, o ile bank odbiorcy uczestniczy w takim systemie rozliczeń. Za przelew natychmiastowy Bank pobiera opłatę zgodną z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A., w wysokości 4,00 zł.[^7]
 - 3\. Jeżeli przelew natychmiastowy nie może zostać wykonany z przyczyn leżących po stronie odbiorcy lub systemu rozliczeniowego, Bank informuje Klienta o jego odrzuceniu i przywraca środki do dyspozycji Klienta niezwłocznie, nie później niż w terminie wskazanym w umowie rachunku.
 
 [^7]: Limit pojedynczego przelewu natychmiastowego wynosi 30 000,00 zł i może być obniżony przez Klienta w ustawieniach limitów.
@@ -473,7 +473,7 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
   - 1\) wydania tokena sprzętowego — w wysokości 39,00 zł;
   - 2\) wydania nowego kodu aktywacyjnego — w wysokości 10,00 zł;
   - 3\) powiadomień SMS o transakcjach — w wysokości 2,00 zł za wiadomość;
-  - 4\) przelewu natychmiastowego — w wysokości 5,00 zł.
+  - 4\) przelewu natychmiastowego — w wysokości 4,00 zł.
 - 3\. Udostępnienie wyciągu w postaci elektronicznej w bankowości elektronicznej jest realizowane w wysokości 0,00 zł; wyciąg w postaci papierowej podlega opłacie wynikającej z Taryfy.
 
 ### § 45.
@@ -482,7 +482,7 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 - 2\. Jeżeli na rachunku Klienta brak środków na pokrycie należnej opłaty, Bank ma prawo:
   - 1\) pobrać opłatę z innego rachunku Klienta prowadzonego w Banku, o ile umowa rachunku na to zezwala;
   - 2\) pobrać opłatę niezwłocznie po wpływie środków na rachunek;
-  - 3\) wezwać Klienta do uregulowania należności, naliczając opłatę za upomnienie w wysokości 15,00 zł, o ile Taryfa tak przewiduje.
+  - 3\) wezwać Klienta do uregulowania należności, naliczając opłatę za upomnienie w wysokości 18,00 zł, o ile Taryfa tak przewiduje.
 - 3\. Zmiana Taryfy następuje na zasadach określonych w rozdziale dotyczącym zmiany Regulaminu. Klient jest informowany o zmianie opłat na trwałym nośniku z wyprzedzeniem wskazanym w Regulaminie.
 
 ### § 46.
@@ -585,7 +585,7 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 
 ### § 55.
 
-- 1\. Regulamin wchodzi w życie z dniem 1 listopada 2025 r. i obowiązuje wobec wszystkich Klientów korzystających z bankowości elektronicznej.
+- 1\. Regulamin wchodzi w życie z dniem 1 maja 2024 r. i obowiązuje wobec wszystkich Klientów korzystających z bankowości elektronicznej.
 - 2\. Z dniem wejścia w życie Regulaminu tracą moc dotychczasowe postanowienia regulujące korzystanie z bankowości elektronicznej, z zastrzeżeniem, że do dyspozycji złożonych przed tym dniem stosuje się zasady w nich określone. Regulamin oznaczony jest numerem BP/REG/07, wersja 1.
 
 ### § 56.

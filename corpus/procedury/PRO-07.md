@@ -1,11 +1,11 @@
 # Procedura obsługi incydentów bezpieczeństwa i incydentów operacyjnych
 
 <!-- page: 1 -->
-*Bank Przykładowy S.A., BP/PRO/07, wersja 1, obowiązuje od 1 kwietnia 2025 r.*
+*Bank Przykładowy S.A., BP/PRO/07, wersja 3, obowiązuje od 1 kwietnia 2025 r.*
 
 | **Oznaczenie** | BP/PRO/07 |
 | --- | --- |
-| **Wersja** | 1 |
+| **Wersja** | 3 |
 | **Właściciel** | Departament Bezpieczeństwa |
 | **Zatwierdził** | Zarząd Banku Przykładowego S.A. |
 | **Data zatwierdzenia** | 11 marca 2025 r. |
@@ -15,7 +15,9 @@
 
 | **Wersja** | **Data** | **Opis zmian** |
 | --- | --- | --- |
-| 1 | 11 marca 2025 r. | Wydanie pierwsze. |
+| 1 | 11 października 2022 r. | Wydanie pierwsze. |
+| 2 | 9 lutego 2024 r. | Aktualizacja postanowień procedury. |
+| 3 | 11 marca 2025 r. | Aktualizacja postanowień procedury. |
 
 ## 1. Cel
 
@@ -32,9 +34,8 @@ Procedura określa w szczególności:
 - 7\) zabezpieczanie materiału dowodowego, przywracanie działania usług i przegląd po incydencie;
 - 8\) zasady testowania procedury i prowadzenia ćwiczeń.
 
-Procedura służy także realizacji obowiązków Banku wynikających z przepisów o usługach płatniczych, Prawa bankowego oraz przepisów o ochronie danych osobowych, a także wymogów organu nadzoru w zakresie zarządzania ryzyka operacyjnego i ryzyka technologicznego.
+Procedura służy także realizacji obowiązków Banku wynikających z przepisów o usługach płatniczych, Prawa bankowego oraz przepisów o ochronie danych osobowych, a także <!-- page: 2 --> wymogów organu nadzoru w zakresie zarządzania ryzyka operacyjnego i ryzyka technologicznego.
 
-<!-- page: 2 -->
 ## 2. Zakres stosowania
 
 Procedurę stosuje się do każdego incydentu, który wpływa na systemy informatyczne, procesy, dane, lokale lub pracowników Banku. Dotyczy to także incydentów powstałych po stronie dostawców usług zewnętrznych, jeżeli wywołują one skutki w działalności Banku.
@@ -63,8 +64,8 @@ Procedury nie stosuje się do rutynowych zgłoszeń serwisowych niewpływającyc
 Procedurę opracowano na podstawie przepisów powszechnie obowiązujących oraz regulacji wewnętrznych Banku.
 
 - 1\. Z przepisów powszechnie obowiązujących szczególne znaczenie mają:
-  - 1\) obowiązki dostawców usług płatniczych w zakresie bezpieczeństwa i zgłaszania poważnych incydentów określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30);
-  - 2\) wymogi dotyczące zarządzania ryzykiem, kontroli wewnętrznej i ciągłości działania <!-- page: 3 --> banków wynikają z przepisów prawa bankowego — zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646);
+  - 1\) obowiązki dostawców usług płatniczych w zakresie bezpieczeństwa i zgłaszania <!-- page: 3 --> poważnych incydentów określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30);
+  - 2\) wymogi dotyczące zarządzania ryzykiem, kontroli wewnętrznej i ciągłości działania banków wynikają z przepisów prawa bankowego — zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646);
   - 3\) zasady postępowania w razie naruszenia ochrony danych osobowych określa ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781) oraz rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679.
 - 2\. Dokumenty wewnętrzne, z którymi procedura jest powiązana, to:
   - 1\) polityka bezpieczeństwa informacji Banku;
@@ -93,8 +94,8 @@ Za obsługę incydentów w Banku odpowiadają jednostki i osoby wymienione poni�
   - 3\) dokonuje klasyfikacji incydentów i zatwierdza zmianę ich poziomu ważności;
   - 4\) przygotowuje zawiadomienia dla organu nadzoru i koordynuje współpracę z zespołem CSIRT;
   - 5\) odpowiada za aktualność procedury, testy i ćwiczenia.
-- 4\. **Departament Informatyki** odpowiada za techniczną obsługę incydentu: izolowanie systemów, analizę techniczną, usunięcie przyczyn i przywrócenie działania usług, a także za zabezpieczanie logów i obrazów systemów.
 <!-- page: 4 -->
+- 4\. **Departament Informatyki** odpowiada za techniczną obsługę incydentu: izolowanie systemów, analizę techniczną, usunięcie przyczyn i przywrócenie działania usług, a także za zabezpieczanie logów i obrazów systemów.
 - 5\. **Departament Zgodności** ocenia, czy incydent wymaga zawiadomienia organu nadzoru, opiniuje treść zawiadomień i monitoruje realizację zaleceń po incydencie.
 - 6\. **Inspektor Ochrony Danych** ocenia, czy incydent stanowi naruszenie ochrony danych osobowych, określa ryzyko dla osób, których dane dotyczą, oraz opracowuje zgłoszenie do organu ochrony danych i powiadomienia osób zainteresowanych.
 
@@ -125,11 +126,11 @@ i rozliczeń, wstrzymuje lub wznawia przetwarzanie operacji, koryguje błędnie 
 
 **Administrator systemu** wykonuje czynności techniczne powierzone przez kierownika incydentu, rejestruje wszystkie wykonane operacje (z godziną i identyfikatorem konta) i nie dokonuje zmian poza zakresem zlecenia.
 
+<!-- page: 5 -->
 **Jednostka ciągłości** (Biuro Ciągłości Działania) uruchamia plany ciągłości działania, gdy
 
 incydent zagraża realizacji kluczowych procesów, koordynuje przejście na tryb awaryjny oraz pilnuje wartości RTO i RPO.
 
-<!-- page: 5 -->
 **Jednostka ryzyka** (Departament Ryzyka) bierze pod uwagę dane o incydentach w ocenie
 
 ryzyka operacyjnego, ustala poziomy tolerancji ryzyka dla incydentów i przedstawia Zarządowi zbiorcze analizy strat poniesionych w wyniku incydentów.
@@ -160,8 +161,9 @@ Na potrzeby procedury przyjmuje się dodatkowo następujące określenia:
 - 2\) **Incydent bezpieczeństwa** — incydent związany z nieuprawnionym lub nieprawidłowym działaniem wobec informacji, systemów lub osób;
 - 3\) **Incydent operacyjny** — incydent wynikający z awarii, błędu lub zakłócenia procesów, systemów albo dostawców, niebędący działaniem celowym;
 - 4\) **Incydent poważny** — incydent o poziomie ważności krytycznym lub wysokim, spełniający kryteria zgłoszenia organowi nadzoru;
+<!-- page: 6 -->
 - 5\) **Organ nadzoru** — organ nadzoru właściwy dla Banku, któremu przekazuje się zawiadomienia o incydentach poważnych;
-- 6\) **CSIRT** — zespół CSIRT właściwy dla sektora finansowego, z którym Bank wymienia <!-- page: 6 --> informacje o zagrożeniach;
+- 6\) **CSIRT** — zespół CSIRT właściwy dla sektora finansowego, z którym Bank wymienia informacje o zagrożeniach;
 - 7\) **Naruszenie ochrony danych osobowych** — naruszenie bezpieczeństwa prowadzące do przypadkowego lub bezprawnego zniszczenia, utraty, zmiany, nieuprawnionego ujawnienia danych osobowych lub dostępu do nich;
 - 8\) **Kierownik incydentu** — osoba wyznaczona przez Jednostkę bezpieczeństwa, która koordynuje obsługę konkretnego incydentu;
 - 9\) **Zespół** — Zespół Reagowania na Incydenty, złożony z przedstawicieli jednostek wskazanych w procedurze i powoływany do obsługi incydentów o poziomie wysokim i krytycznym;
@@ -179,11 +181,11 @@ Na potrzeby procedury przyjmuje się dodatkowo następujące określenia:
 
 Poniższy schemat przedstawia podstawowy przebieg obsługi incydentu. Szczegółowe zasady dla poszczególnych etapów opisano w dalszej części procedury.
 
+<!-- page: 7 -->
 **Wykrycie i zgłoszenie**
 
 Incydent jest wykrywany przez systemy monitorujące, pracownika lub Klienta. Zgłoszenie trafia do systemu zgłoszeń INC-PRZYKŁAD.
 
-<!-- page: 7 -->
 **Rejestracja i klasyfikacja**
 
 Dyżurny Jednostki bezpieczeństwa zakłada wpis w Rejestrze.
@@ -213,9 +215,8 @@ Po zamknięciu incydentu przeprowadza się przegląd, a zalecenia wprowadza do p
   - 6.1.4\. komunikatów dostawców zewnętrznych, partnerów rozliczeniowych, zespołu CSIRT oraz organu nadzoru;
   - 6.1.5\. wyników kontroli, audytów, testów penetracyjnych i monitoringu transakcji pod kątem nadużyć.
 - 6.2\. Zgłoszenie przez pracownika. Pracownik, który zauważy zdarzenie mogące być incydentem, zgłasza je w terminie 30 minut od jego zauważenia.
-  - 6.2.1\. Zgłoszenie obejmuje opis zdarzenia, czas jego zauważenia, nazwę systemu lub procesu, liczbę i rodzaj podejrzanych operacji oraz dane osoby zgłaszającej; wzór zgłoszenia stanowi formularz F-BEZ-01.
+  - 6.2.1\. Zgłoszenie obejmuje opis zdarzenia, czas jego zauważenia, nazwę systemu lub procesu, liczbę i rodzaj podejrzanych operacji oraz dane osoby zgłaszającej; wzór <!-- page: 8 --> zgłoszenia stanowi formularz F-BEZ-01.
   - 6.2.2\. Jeżeli zdarzenie może mieć skutki krytyczne (np. niedostępność systemu centralnego, wyciek danych, podejrzenie przejęcia kont uprzywilejowanych), pracownik najpierw dzwoni na numer dyżurny, a dopiero potem uzupełnia formularz.
-  <!-- page: 8 -->
   - 6.2.3\. Pracownik zachowuje wiadomość, plik lub zrzut ekranu, które wzbudziły podejrzenie, i nie przekazuje ich dalej poza kanały służbowe.
 - 6.3\. Przyjęcie zgłoszenia. Dyżurny Jednostki bezpieczeństwa przyjmuje zgłoszenie w systemie zgłoszeń, niezwłocznie potwierdza jego przyjęcie osobie zgłaszającej i weryfikuje kompletność zgłoszenia.
   - 6.3.1\. Gdy zgłoszenie jest niekompletne, dyżurny uzupełnia je w rozmowie z osobą zgłaszającą, nie wstrzymując rejestracji.
@@ -233,9 +234,9 @@ Po zamknięciu incydentu przeprowadza się przegląd, a zalecenia wprowadza do p
   - 6.8.2\. ma zdalny dostęp do Rejestru i systemu SIEM oraz aktualną listę kontaktów alarmowych;
   - 6.8.3\. w przypadku niemożności objęcia dyżuru bez zbędnej zwłoki powiadamia kierownika Jednostki bezpieczeństwa, który wyznacza zastępstwo.
 - 6.9\. Lista kontaktów alarmowych. Lista kontaktów alarmowych obejmuje numery służbowe członków Zespołu, dyrektorów jednostek, kluczowych dostawców, zespołu CSIRT i organu nadzoru. Lista jest przechowywana również w postaci papierowej w zabezpieczonym miejscu, tak aby była dostępna w razie niedostępności systemów.
+<!-- page: 9 -->
 - 6.10\. Obsługa alertów z systemu SIEM. Analitycy Jednostki bezpieczeństwa przeglądają alerty z systemu SIEM w sposób ciągły, w kolejności wynikającej z priorytetu reguły, która alert wygenerowała.
   - 6.10.1\. Alert o priorytecie wysokim analityk weryfikuje bezzwłocznie; jeżeli potwierdza zdarzenie, rejestruje je jako incydent.
-  <!-- page: 9 -->
   - 6.10.2\. Alert fałszywie dodatni analityk oznacza w systemie wraz z krótkim uzasadnieniem, aby przy kolejnym przeglądzie reguł zmniejszyć liczbę podobnych alertów.
   - 6.10.3\. Alerty niepotwierdzone, ale powtarzające się w krótkim czasie, łączy się i analizuje łącznie.
 - 6.11\. Przegląd reguł. Jednostka bezpieczeństwa przegląda reguły korelacji zdarzeń przynajmniej raz na kwartał oraz po każdym incydencie, w którym zdarzenie nie zostało wykryte przez system lub zostało wykryte z opóźnieniem.
@@ -250,8 +251,8 @@ Po zamknięciu incydentu przeprowadza się przegląd, a zalecenia wprowadza do p
   - 6.14.2\. logowanie z nowych urządzeń lub lokalizacji, połączone z szybką zmianą danych kontaktowych Klienta;
   - 6.14.3\. nagłe podwyższenie limitów, po którym następują wypłaty lub przelewy na nowe rachunki;
   - 6.14.4\. zbieżność wielu transakcji na ten sam rachunek odbiorcy, co może wskazywać na rachunek wykorzystywany do wyprowadzania środków.
-- 6.15\. Postępowanie po alarmie. Gdy reguła wykryje podejrzaną transakcję, analityk w pierwszej kolejności blokuje jej realizację, o ile pozwala na to system, a następnie kontaktuje się z Klientem kanałem zgodnym z danymi zapisanymi w Banku, aby potwierdzić autentyczność operacji.
-- 6.16\. Przekazanie do Jednostki zgodności. Jeżeli podejrzenie nadużycia wskazuje również na ryzyko prania pieniędzy, analityk przekazuje sprawę Jednostce zgodności, nie informując Klienta o możliwym zgłoszeniu transakcji do właściwych organów — zob. ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu <!-- page: 10 --> terroryzmu (Dz. U. 2025 poz. 644).
+- 6.15\. Postępowanie po alarmie. Gdy reguła wykryje podejrzaną transakcję, analityk w pierwszej kolejności blokuje jej realizację, o ile pozwala na to system, a następnie kontaktuje się z Klientem kanałem zgodnym z danymi zapisanymi w Banku, aby <!-- page: 10 --> potwierdzić autentyczność operacji.
+- 6.16\. Przekazanie do Jednostki zgodności. Jeżeli podejrzenie nadużycia wskazuje również na ryzyko prania pieniędzy, analityk przekazuje sprawę Jednostce zgodności, nie informując Klienta o możliwym zgłoszeniu transakcji do właściwych organów — zob. ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
 - 6.17\. Podatności i zdarzenia wykryte w testach. Zdarzenia, w których test penetracyjny, skan podatności lub audyt wykażą możliwość nieuprawnionego dostępu do danych Klientów, ocenia Jednostka bezpieczeństwa pod kątem tego, czy podatność została już wykorzystana.
   - 6.17.1\. Gdy istnieją ślady wykorzystania podatności, zdarzenie rejestruje się jako incydent i klasyfikuje według zasad ogólnych.
   - 6.17.2\. Jeżeli brak takich śladów, podatność ujmuje się w rejestrze podatności i usuwa w terminie zależnym od jej krytyczności, a Rejestr zawiera odniesienie do decyzji o nierejestrowaniu incydentu.
@@ -269,9 +270,9 @@ Klasyfikacja incydentu służy ustaleniu wymaganego czasu reakcji, składu zespo
 | Niski | zdarzenie bez wpływu na Klientów i procesy, zablokowane w całości przez zabezpieczenia | 2 dni roboczych |
 
 - 7.1\. Ocena wstępna. Dyżurny Jednostki bezpieczeństwa dokonuje wstępnej klasyfikacji w ciągu 2 godzin od zarejestrowania zgłoszenia.
-  - 7.1.1\. Klasyfikacja obejmuje ocenę wpływu na poufność, integralność i dostępność informacji, liczbę dotkniętych Klientów, wartość operacji i ryzyko dla reputacji Banku.
+  - 7.1.1\. Klasyfikacja obejmuje ocenę wpływu na poufność, integralność i dostępność informacji, liczbę dotkniętych Klientów, wartość operacji i ryzyko dla reputacji <!-- page: 11 --> Banku.
   - 7.1.2\. Gdy dane są niepełne, przyjmuje się poziom wyższy; obniżenie poziomu jest możliwe dopiero po uzyskaniu pełnych danych.
-- 7.2\. Ustalenie rodzaju incydentu. Dyżurny przypisuje incydent do kategorii: złośliwe oprogramowanie, nieuprawniony dostęp, odmowa usługi, wyłudzenie danych, wyciek <!-- page: 11 --> danych, awaria systemu, błąd przetwarzania, incydent dostawcy lub incydent fizyczny. Kategoria wpływa na doborze członków Zespołu.
+- 7.2\. Ustalenie rodzaju incydentu. Dyżurny przypisuje incydent do kategorii: złośliwe oprogramowanie, nieuprawniony dostęp, odmowa usługi, wyłudzenie danych, wyciek danych, awaria systemu, błąd przetwarzania, incydent dostawcy lub incydent fizyczny. Kategoria wpływa na doborze członków Zespołu.
 - 7.3\. Ocena obowiązków zewnętrznych. Jednostka zgodności oraz Inspektor oceniają, czy incydent:
   - 7.3.1\. spełnia kryteria incydentu poważnego i wymaga zawiadomienia organu nadzoru;
   - 7.3.2\. stanowi naruszenie ochrony danych osobowych wymagające zgłoszenia do organu ochrony danych lub powiadomienia osób, których dane dotyczą;
@@ -286,10 +287,10 @@ Klasyfikacja incydentu służy ustaleniu wymaganego czasu reakcji, składu zespo
 - 7.8\. Incydenty powiązane. Gdy kilka zgłoszeń ma tę samą przyczynę, rejestruje się jeden incydent nadrzędny, a pozostałe zgłoszenia łączy się z nim jako zdarzenia podrzędne. Poziom ważności ustala się dla całości.
 - 7.9\. Incydenty jednoczesne. Jeżeli w tym samym czasie występuje kilka niepowiązanych incydentów, kierownik Jednostki bezpieczeństwa ustala kolejność ich obsługi i wyznacza odrębnych kierowników incydentów; Zespół może być w takim przypadku podzielony na grupy.
 - 7.10\. Incydent nawracający. Incydent, który powtarza się z tą samą przyczyną w ciągu ostatnich sześciu miesięcy, klasyfikuje się co najmniej o jeden poziom wyżej niż poprzednie wystąpienie, a przegląd po incydencie jest obowiązkowy niezależnie od poziomu.
+<!-- page: 12 -->
 - 7.11\. Ocena ryzyka naruszenia danych. Inspektor ocenia ryzyko dla osób, których dane dotyczą, uwzględniając:
   - 7.11.1\. rodzaj i wrażliwość danych (dane identyfikacyjne, finansowe, dane szczególnych kategorii);
   - 7.11.2\. liczbę osób i łatwość ich identyfikacji na podstawie ujawnionych danych;
-  <!-- page: 12 -->
   - 7.11.3\. zakres zabezpieczeń zastosowanych do danych, zwłaszcza szyfrowanie, które mogłoby uniemożliwić zapoznanie się z nimi;
   - 7.11.4\. prawdopodobne skutki dla osób, takie jak kradzież tożsamości, strata finansowa, dyskryminacja lub naruszenie dobrego imienia.
 - 7.12\. Dokumentowanie oceny. Wynik oceny, wraz z uzasadnieniem, Inspektor wpisuje do Rejestru, także wtedy, gdy uznaje, że zgłoszenie do organu ochrony danych nie jest wymagane.
@@ -310,9 +311,9 @@ Klasyfikacja incydentu służy ustaleniu wymaganego czasu reakcji, składu zespo
   - 7.15.3\. przewidywane odszkodowania, kary lub rekompensaty dla Klientów;
   - 7.15.4\. utracone przychody z tytułu niedostępności usług.
 - 7.16\. Szacunek wstępny. Szacunek wstępny jest oceną ostrożnościową — przyjmuje się wartość górnej granicy rozsądnego przedziału. Jednostka ryzyka weryfikuje szacunek po zamknięciu incydentu i przekazuje wartość rzeczywistą do Rejestru.
+<!-- page: 13 -->
 - 7.17\. Skutki niefinansowe. Obok skutków finansowych ocenia się wpływ na zaufanie Klientów, relacje z organem nadzoru, możliwość wykonywania zobowiązań wobec partnerów rozliczeniowych oraz bezpieczeństwo pracowników.
 
-<!-- page: 13 -->
 ## 8. Opis postępowania — reagowanie i ograniczanie skutków
 
 - 8.1\. Uruchomienie Zespołu. Kierownik incydentu zwołuje Zespół w czasie pierwszej reakcji właściwym dla poziomu ważności i otwiera pokój operacyjny, w którym prowadzi się chronologiczny zapis ustaleń i decyzji.
@@ -333,8 +334,8 @@ Klasyfikacja incydentu służy ustaleniu wymaganego czasu reakcji, składu zespo
   - 8.6.3\. sprawdza, czy w innych systemach nie występują te same słabości;
   - 8.6.4\. dokumentuje wykonane czynności w karcie incydentu.
 - 8.7\. Raport stanu. Kierownik incydentu przygotowuje cykliczny raport stanu: dla incydentu krytycznego co godzinę, dla wysokiego — co cztery godziny. Raport obejmuje status, podjęte działania, planowane czynności i szacowany czas przywrócenia usług.
+<!-- page: 14 -->
 - 8.8\. Współpraca z wyspecjalizowanymi podmiotami. Gdy Bank nie dysponuje wystarczającymi zasobami do analizy lub usunięcia skutków incydentu, kierownik incydentu może za zgodą dyrektora Jednostki bezpieczeństwa skorzystać ze wsparcia zewnętrznego zespołu specjalistów, z którym Bank ma zawartą umowę ramową.
-  <!-- page: 14 -->
   - 8.8.1\. Umowa z zewnętrznym zespołem obejmuje klauzule poufności i zapewnia, że zespół działa pod nadzorem Banku.
   - 8.8.2\. Dostęp zespołu do systemów i danych ogranicza się do niezbędnego zakresu i rejestruje.
   - 8.8.3\. Wyniki analizy zespół przekazuje jedynie Bankowi.
@@ -352,9 +353,8 @@ Klasyfikacja incydentu służy ustaleniu wymaganego czasu reakcji, składu zespo
   - 8.11.3\. zmienia klucze i certyfikaty, gdy mogły zostać ujawnione;
   - 8.11.4\. sprawdza ostatnie logowania pod kątem wcześniejszej, niezauważonej aktywności atakującego.
 - 8.12\. Zablokowanie kart i rachunków Klientów. Gdy incydent może prowadzić do nieautoryzowanych transakcji na kartach lub rachunkach Klientów, Jednostka operacji — na polecenie kierownika incydentu — czasowo blokuje dotknięte instrumenty płatnicze i rachunki oraz uruchamia proces wydania nowych instrumentów bez opłat dla Klienta.
-- 8.13\. Izolacja systemów i sieci. Izolację zainfekowanych lub przejętych systemów przeprowadza Jednostka informatyki na polecenie kierownika incydentu. Przed izolacją ocenia się, czy odłączenie nie spowoduje większej szkody niż pozostawienie systemu w sieci.
+- 8.13\. Izolacja systemów i sieci. Izolację zainfekowanych lub przejętych systemów przeprowadza Jednostka informatyki na polecenie kierownika incydentu. Przed <!-- page: 15 --> izolacją ocenia się, czy odłączenie nie spowoduje większej szkody niż pozostawienie systemu w sieci.
   - 8.13.1\. Dla systemów krytycznych decyzję o izolacji podejmuje kierownik incydentu w porozumieniu z właścicielem systemu.
-  <!-- page: 15 -->
   - 8.13.2\. Systemy odłączone oznacza się w Rejestrze i w dzienniku zdarzeń, ze wskazaniem godziny odłączenia i osoby, która tego dokonała.
   - 8.13.3\. Aby ponownie podłączyć system, wymagana jest zgoda kierownika incydentu.
 - 8.14\. Segmentacja. Zespół stosuje istniejący podział sieci na segmenty, aby ograniczyć rozprzestrzenianie się incydentu; w razie potrzeby czasowo zamyka połączenia między segmentami.
@@ -376,8 +376,8 @@ Komunikację w trakcie incydentu prowadzi się jedynie według zasad poniżej. P
 
 Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszeniu w terminach określonych poniżej. Terminy liczy się w godzinach, a nie w dniach roboczych — obejmują one dni ustawowo wolne od pracy, noce i weekendy.
 
-- 9.4\. Kwalifikacja incydentu poważnego. Jednostka zgodności wspólnie z Jednostką bezpieczeństwa ustala, czy incydent jest incydentem poważnym. Przy ocenie uwzględnia się zwłaszcza liczbę dotkniętych Klientów, czas trwania, zasięg, wartość transakcji, wpływ na inne instytucje i skutki dla reputacji Banku. Decyzję odnotowuje się w Rejestrze.
-- 9.5\. Zawiadomienie wstępne. Zawiadomienie wstępne dla organu nadzoru przekazuje się w ciągu 6 godzin od zaklasyfikowania incydentu jako poważnego, a w każdym razie nie <!-- page: 16 --> później niż w terminie 24 godzin od momentu, w którym Bank dowiedział się o incydencie.
+- 9.4\. Kwalifikacja incydentu poważnego. Jednostka zgodności wspólnie z Jednostką bezpieczeństwa ustala, czy incydent jest incydentem poważnym. Przy ocenie uwzględnia się zwłaszcza liczbę dotkniętych Klientów, czas trwania, zasięg, wartość <!-- page: 16 --> transakcji, wpływ na inne instytucje i skutki dla reputacji Banku. Decyzję odnotowuje się w Rejestrze.
+- 9.5\. Zawiadomienie wstępne. Zawiadomienie wstępne dla organu nadzoru przekazuje się w ciągu 6 godzin od zaklasyfikowania incydentu jako poważnego, a w każdym razie nie później niż w terminie 24 godzin od momentu, w którym Bank dowiedział się o incydencie.
   - 9.5.1\. Zawiadomienie przygotowuje Jednostka bezpieczeństwa na formularzu F-BEZ-06, a opiniuje Jednostka zgodności.
   - 9.5.2\. Zawiadomienie zawiera dane Banku, datę i godzinę wykrycia, wstępny opis incydentu, szacowany zasięg i rodzaj dotkniętych usług, informację o podjętych działaniach i dane osoby kontaktowej.
   - 9.5.3\. Zawiadomienie przekazuje się bezpiecznym kanałem wskazanym przez organ nadzoru; brak pełnych danych nie jest powodem opóźnienia — uzupełnia się je w zawiadomieniach kolejnych.
@@ -390,10 +390,10 @@ Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszen
   - 9.8.2\. Podstawę prawną zgłoszenia stanowią przepisy o ochronie danych osobowych — zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781).
 - 9.9\. Naruszenie ochrony danych osobowych — powiadomienie osób. Jeżeli naruszenie może powodować wysokie ryzyko naruszenia praw lub wolności osób, których dane dotyczą, Inspektor wspólnie z Jednostką komunikacji przygotowuje powiadomienie tych osób, napisane prostym językiem, i przekazuje je bez zbędnej zwłoki.
 - 9.10\. Kanały komunikacji z Klientami. Komunikaty do Klientów przekazuje się łącznie lub alternatywnie przez:
+  <!-- page: 17 -->
   - 9.10.1\. wiadomość w bankowości elektronicznej lub w aplikacji mobilnej;
   - 9.10.2\. wiadomość SMS lub pocztę elektroniczną, wysyłane jedynie na dane kontaktowe zapisane w Banku;
   - 9.10.3\. komunikat na stronie https://bank.example;
-  <!-- page: 17 -->
   - 9.10.4\. informację w placówkach i na infolinii 800 000 001;
   - 9.10.5\. w razie potrzeby — list polecony lub rozmowę telefoniczną z Klientem, którego dotyczy incydent.
 - 9.11\. Zasady bezpieczeństwa komunikatów. Komunikaty nie zawierają odnośników do logowania ani próśb o podanie haseł, kodów lub numeru PIN. Klienta informuje się, że o prawdziwości wiadomości może upewnić się w placówce lub na infolinii, aby ograniczyć ryzyko podszywania się sprawców pod Bank.
@@ -408,9 +408,9 @@ Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszen
 - 9.14\. Współpraca z zespołem CSIRT. W incydentach o charakterze cyberataku Jednostka bezpieczeństwa może przekazać zespołowi CSIRT informacje o wskaźnikach naruszenia bezpieczeństwa (adresy, skróty plików, domeny) w formie pozbawionej danych Klientów. Przekazywanie takich informacji ułatwia ochronę innych instytucji, a Bank może uzyskać od zespołu wsparcie analityczne.
 - 9.15\. Inne instytucje. Jeżeli incydent może wpływać na partnerów rozliczeniowych, operatorów systemów płatności lub inne instytucje finansowe, kierownik incydentu w porozumieniu z Jednostką zgodności informuje je w zakresie niezbędnym do ochrony ich systemów.
 - 9.16\. Komunikacja z mediami. Z mediami kontaktuje się wyłącznie Jednostka komunikacji za zgodą Zarządu. Treść oświadczeń zatwierdza Jednostka prawna w zakresie ryzyka prawnego, a kierownik incydentu — w zakresie zgodności z faktami.
+  <!-- page: 18 -->
   - 9.16.1\. Oświadczenie publiczne obejmuje tylko potwierdzone informacje i nie przesądza o przyczynach ani sprawcach incydentu.
   - 9.16.2\. Pracownicy, którzy otrzymają pytanie dziennikarza, nie udzielają odpowiedzi i przekazują kontakt do Jednostki komunikacji.
-  <!-- page: 18 -->
   - 9.16.3\. Wypowiedzi w mediach społecznościowych o incydencie w imieniu Banku wygłasza wyłącznie Jednostka komunikacji.
 - 9.17\. Monitorowanie reakcji. Jednostka komunikacji monitoruje publikacje i wpisy dotyczące incydentu i przekazuje kierownikowi incydentu informacje o nieprawdziwych lub szkodliwych doniesieniach.
 - 9.18\. Informowanie kierownictwa. Kierownictwo Banku jest powiadamiane w zakresie zależnym od poziomu ważności:
@@ -431,8 +431,9 @@ Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszen
   - 10.2.3\. wiadomości phishingowe wraz z nagłówkami technicznymi;
   - 10.2.4\. zapisy rozmów telefonicznych i korespondencję z osobami zgłaszającymi;
   - 10.2.5\. zapisy z monitoringu wizyjnego i rejestry wejść w przypadku incydentów fizycznych.
+<!-- page: 19 -->
 - 10.3\. Wstrzymanie usuwania danych. Na czas obsługi incydentu i do zamknięcia wszystkich związanych z nim postępowań Jednostka informatyki wstrzymuje automatyczne usuwanie logów i kopii objętych incydentem (blokada prawna na wniosek Jednostki prawnej).
-- 10.4\. Ochrona danych w materiale dowodowym. Materiał dowodowy obejmuje często dane <!-- page: 19 --> osobowe i tajemnicę bankową. Dostęp do niego mają wyłącznie osoby, które go potrzebują do obsługi incydentu; dostęp rejestruje się, a przekazanie materiału poza Bank wymaga zgody Jednostki prawnej.
+- 10.4\. Ochrona danych w materiale dowodowym. Materiał dowodowy obejmuje często dane osobowe i tajemnicę bankową. Dostęp do niego mają wyłącznie osoby, które go potrzebują do obsługi incydentu; dostęp rejestruje się, a przekazanie materiału poza Bank wymaga zgody Jednostki prawnej.
 - 10.5\. Plan przywrócenia. Kierownik incydentu wraz z Jednostką informatyki i Jednostką ciągłości ustala kolejność przywracania usług, opierając się na priorytetach określonych w planie ciągłości działania i wartościach RTO oraz RPO. Priorytet mają usługi umożliwiające Klientom dostęp do środków i realizację płatności.
 - 10.6\. Przywrócenie z kopii. Przywracanie systemów z kopii zapasowych poprzedza sprawdzenie, że kopie nie zostały zainfekowane. Systemy, które były przejęte, przywraca się z zaufanych, zweryfikowanych źródeł, nigdy przez proste usunięcie śladów.
   - 10.6.1\. Przed uruchomieniem systemu wykonuje się skanowanie antywirusowe i weryfikację integralności konfiguracji.
@@ -446,9 +447,8 @@ Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszen
   - 10.9.3\. dotknięci Klienci zostali poinformowani, a ich środki zabezpieczone;
   - 10.9.4\. wszystkie wymagane zawiadomienia zostały przekazane.
 - 10.10\. Zamknięcie incydentu. Incydent zamyka dyżurny Jednostki bezpieczeństwa po akceptacji kierownika incydentu, uzupełniając Rejestr o datę i godzinę zakończenia, ostateczny poziom ważności, przyczynę źródłową i wartość strat.
-- 10.11\. Przegląd po incydencie. Dla każdego incydentu o poziomie wysokim lub krytycznym oraz dla każdego incydentu, który spowodował wyjątkowe skutki, Jednostka bezpieczeństwa wykonuje przegląd w terminie 14 dni od zamknięcia incydentu.
+- 10.11\. Przegląd po incydencie. Dla każdego incydentu o poziomie wysokim lub krytycznym <!-- page: 20 --> oraz dla każdego incydentu, który spowodował wyjątkowe skutki, Jednostka bezpieczeństwa wykonuje przegląd w terminie 14 dni od zamknięcia incydentu.
   - 10.11.1\. W przeglądzie biorą udział kierownik incydentu, członkowie Zespołu i przedstawiciele jednostek, których incydent dotyczył; spotkanie prowadzi osoba niezwiązana bezpośrednio z obsługą incydentu.
-  <!-- page: 20 -->
   - 10.11.2\. Przegląd ma charakter wyjaśniający, a nie wskazujący winnych; jego celem jest ustalenie, co zadziałało, a co nie.
 - 10.12\. Zakres przeglądu. W przeglądzie bada się:
   - 10.12.1\. przyczynę źródłową i czynniki, które umożliwiły incydent;
@@ -466,10 +466,10 @@ Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszen
 - 10.17\. Komunikat o wznowieniu. Po wznowieniu każdego etapu Jednostka komunikacji informuje Klientów o przywróceniu usługi i, o ile to konieczne, o czynnościach, jakie powinni wykonać.
 - 10.18\. Rekoncyliacja po incydencie. Po przywróceniu systemów Jednostka operacji wykonuje rekoncyliację operacji dokonanych w okresie incydentu.
   - 10.18.1\. porównuje salda rachunków Klientów z zapisami w systemie centralnym i w systemach rozliczeniowych;
+  <!-- page: 21 -->
   - 10.18.2\. identyfikuje operacje zdublowane, utracone lub zaksięgowane z błędną datą;
   - 10.18.3\. przygotowuje listę korekt wraz z uzasadnieniem i przekazuje ją do akceptacji kierownika incydentu;
   - 10.18.4\. po wykonaniu korekt sporządza protokół z rekoncyliacji, który dołącza się do dokumentacji incydentu.
-<!-- page: 21 -->
 - 10.19\. Odsetki i opłaty. Gdy w wyniku błędu Klientowi naliczono opłaty lub odsetki, które nie byłyby naliczone w braku incydentu, Bank je koryguje z urzędu, bez konieczności składania wniosku przez Klienta.
 - 10.20\. Podwyższony monitoring. Po wznowieniu działania usług Jednostka bezpieczeństwa utrzymuje podwyższony monitoring odtworzonych systemów przez okres uzgodniony z kierownikiem incydentu, nie krócej niż siedem dni dla incydentów o poziomie wysokim i krytycznym.
   - 10.20.1\. Monitoring obejmuje poszukiwanie śladów ponownego włamania, nietypowych połączeń i prób logowania na przywróconych kontach.
@@ -487,9 +487,9 @@ Skuteczność procedury sprawdza się w praktyce poprzez regularne testy i ćwic
 
 - 11.1\. Testy planów reagowania. Plany reagowania na incydenty i plany odtwarzania systemów testuje się raz w roku. Test obejmuje co najmniej scenariusze: awarii systemu centralnego, ataku szyfrującego dane i niedostępności kluczowego dostawcy.
 - 11.2\. Ćwiczenia stołowe. Zespół uczestniczy w ćwiczeniach stołowych dwa razy w roku. W ćwiczeniu omawia się wymyślony scenariusz incydentu, role członków Zespołu, decyzje i komunikaty; z ćwiczenia sporządza się krótką notatkę z wnioskami.
-- 11.3\. Ćwiczenia praktyczne. Przynajmniej raz w roku wykonuje się ćwiczenie praktyczne z użyciem środowiska testowego lub kontrolowanej symulacji ataku, w którym sprawdza się działanie narzędzi wykrywania, kanałów powiadamiania i czasy reakcji.
+- 11.3\. Ćwiczenia praktyczne. Przynajmniej raz w roku wykonuje się ćwiczenie praktyczne z użyciem środowiska testowego lub kontrolowanej symulacji ataku, w którym <!-- page: 22 --> sprawdza się działanie narzędzi wykrywania, kanałów powiadamiania i czasy reakcji.
 - 11.4\. Ocena wyników. Wyniki testów i ćwiczeń ocenia się według kryteriów: dotrzymanie czasów reakcji, kompletność powiadomień, poprawność decyzji oraz jakość dokumentacji. Stwierdzone nieprawidłowości traktuje się jak zalecenia po incydencie.
-- 11.5\. Testy z udziałem dostawców. W umowach z kluczowymi dostawcami Bank zachowuje <!-- page: 22 --> prawo do udziału w testach awaryjnych dostawcy oraz do żądania wyników testów odtwarzania usług.
+- 11.5\. Testy z udziałem dostawców. W umowach z kluczowymi dostawcami Bank zachowuje prawo do udziału w testach awaryjnych dostawcy oraz do żądania wyników testów odtwarzania usług.
   - 11.5.1\. Wyniki testów dostawcy ocenia właściciel umowy wspólnie z Jednostką bezpieczeństwa.
   - 11.5.2\. Negatywne wyniki testów skutkują wezwaniem dostawcy do przekazania planu naprawczego w wyznaczonym terminie.
 - 11.6\. Szkolenia pracowników. Każdy pracownik przechodzi szkolenie z rozpoznawania i zgłaszania incydentów przy zatrudnieniu, w ciągu 30 dni, oraz powtarzają je co roku.
@@ -509,10 +509,11 @@ Skuteczność procedury sprawdza się w praktyce poprzez regularne testy i ćwic
 
 Poniżej opisano sytuacje, w których postępowanie według zasad ogólnych wymaga modyfikacji. Pozostałe postanowienia procedury stosuje się odpowiednio.
 
+<!-- page: 23 -->
 Zasady wspólne dla przypadków szczególnych:
 
 - 1\) w przypadku wątpliwości co do tego, który tryb obowiązuje, stosuje się tryb bardziej rygorystyczny;
-- 2\) kierownik incydentu może odstąpić od kolejności czynności określonej w procedurze, jeżeli wymaga tego ochrona Klientów lub ich środków; odstąpienie i jego uzasadnienie <!-- page: 23 --> odnotowuje w dzienniku zdarzeń;
+- 2\) kierownik incydentu może odstąpić od kolejności czynności określonej w procedurze, jeżeli wymaga tego ochrona Klientów lub ich środków; odstąpienie i jego uzasadnienie odnotowuje w dzienniku zdarzeń;
 - 3\) w przypadku jednoczesnego wystąpienia kilku incydentów priorytet nadaje się według poziomu ważności, a przy tym samym poziomie — według liczby dotkniętych Klientów.
 - 12.1\. Atak odmowy usługi. W razie ataku przeciążeniowego na kanały elektroniczne Jednostka informatyki:
   - 12.1.1\. uruchamia mechanizmy filtrowania ruchu i, w przypadku potrzeby, usługę ochrony udostępnioną przez operatora łączy;
@@ -529,9 +530,10 @@ Zasady wspólne dla przypadków szczególnych:
   - 12.4.2\. Jednostka bezpieczeństwa podejmuje działania ograniczające skutki, np. wnioskuje do niewłaściwego adresata o usunięcie wiadomości i potwierdzenie jej usunięcia.
   - 12.4.3\. Wszystkie naruszenia, także niezgłoszone organowi ochrony danych, wpisuje się do Rejestru wraz z uzasadnieniem.
 - 12.5\. Atak oprogramowania szyfrującego dane. W razie stwierdzenia szyfrowania danych w systemach Banku postępuje się następująco:
+  <!-- page: 24 -->
   - 12.5.1\. bez zbędnej zwłoki odłącza się zainfekowane stacje i serwery od sieci, nie wyłączając ich zasilania;
   - 12.5.2\. zabezpiecza się kopie zapasowe przed zaszyfrowaniem poprzez odłączenie ich nośników lub repozytoriów od sieci produkcyjnej;
-  - 12.5.3\. informuje się niezwłocznie dyrektora Jednostki bezpieczeństwa i członka Zarządu <!-- page: 24 --> nadzorującego ryzyko, gdyż incydent klasyfikuje się co najmniej jako wysoki;
+  - 12.5.3\. informuje się niezwłocznie dyrektora Jednostki bezpieczeństwa i członka Zarządu nadzorującego ryzyko, gdyż incydent klasyfikuje się co najmniej jako wysoki;
   - 12.5.4\. dokumentuje się treść żądania sprawców, w tym adres, na jaki żądano płatności, i przekazuje je organom ścigania.
 - 12.6\. Zakaz negocjacji. Pracownicy nie wchodzą w kontakt ze sprawcami i nie dokonują żadnych płatności. Decyzję o ewentualnym kontakcie ze sprawcami podejmuje wyłącznie Zarząd po zasięgnięciu opinii Jednostki prawnej i organów ścigania.
 - 12.7\. Kampania wyłudzająca dane Klientów. Jeżeli sprawcy podszywają się pod Bank (fałszywe strony, wiadomości SMS, rozmowy telefoniczne), Jednostka bezpieczeństwa:
@@ -556,9 +558,12 @@ Stosowanie procedury podlega kontroli w ramach systemu kontroli wewnętrznej Ban
   - 4\) odsetek zawiadomień przekazanych w terminie;
   - 5\) liczba przeterminowanych zaleceń po incydentach.
 
+<!-- page: 25 -->
 Jednostka bezpieczeństwa przedstawia Zarządowi kwartalne sprawozdanie z incydentów, a w razie incydentu krytycznego — niezwłoczną informację. Nieprawidłowości stwierdzone w kontroli są podstawą do zaleceń, których wykonanie monitoruje Jednostka zgodności.
 
-Jednostka bezpieczeństwa prowadzi wskaźniki ryzyka (KRI) dotyczące incydentów, dla <!-- page: 25 --> których Zarząd ustala poziomy ostrzegawcze. Przekroczenie poziomu ostrzegawczego wymaga:
+Jednostka bezpieczeństwa prowadzi wskaźniki ryzyka (KRI) dotyczące incydentów, dla
+
+których Zarząd ustala poziomy ostrzegawcze. Przekroczenie poziomu ostrzegawczego wymaga:
 
 - 1\) pisemnego wyjaśnienia przyczyn przez właściciela procesu;
 - 2\) planu działań naprawczych z terminami;
@@ -587,9 +592,10 @@ Dokumentację przechowuje się w następujący sposób:
 
 - 1\) w postaci elektronicznej, w systemie zgłoszeń i w repozytorium dokumentów Jednostki bezpieczeństwa, z dostępem ograniczonym do osób uprawnionych;
 - 2\) przez okres 10 lat od zamknięcia incydentu, a w przypadku toczących się postępowań — do ich prawomocnego zakończenia;
+<!-- page: 26 -->
 - 3\) z zabezpieczeniem przed zmianą — poprawki wpisów dokonuje się przez dopisek, bez usuwania poprzedniej treści.
 
-Po upływie okresu przechowywania dokumentację niszczy się w sposób uniemożliwiający jej odtworzenie, za zgodą Jednostki prawnej, a protokół zniszczenia dołącza się do ewidencji <!-- page: 26 --> dokumentów. Dokumentacja zawierająca tajemnicę bankową może być udostępniona jedynie na zasadach określonych w przepisach prawa bankowego.
+Po upływie okresu przechowywania dokumentację niszczy się w sposób uniemożliwiający jej odtworzenie, za zgodą Jednostki prawnej, a protokół zniszczenia dołącza się do ewidencji dokumentów. Dokumentacja zawierająca tajemnicę bankową może być udostępniona jedynie na zasadach określonych w przepisach prawa bankowego.
 
 Dane osobowe Klientów wykorzystuje się wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)) oraz z zasadą minimalizacji danych.
 
@@ -619,9 +625,9 @@ Każda zmiana musi zawierać:
 
 Poprzednie wersje archiwizuje się i udostępnia na żądanie komórki ds. zgodności (Departament Zgodności). Pracownicy są informowani o zmianie przed dniem jej wejścia w życie.
 
+<!-- page: 27 -->
 Kontakt z Klientem prowadzi się wyłącznie kanałami opisanymi w umowie lub w ustaleniach z Klientem. Dane teleadresowe Banku podawane w korespondencji muszą być zgodne z danymi: adres ul. Przykładowa 1, 00-001 Warszawa, infolinia 800 000 001, strona https://bank.example.
 
-<!-- page: 27 -->
 W rozmowie z Klientem pracownik:
 
 - 1\) przedstawia się i nazwę Banku;

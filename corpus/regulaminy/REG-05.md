@@ -3,7 +3,7 @@
 <!-- page: 1 -->
 Bank Przykładowy S.A.
 
-BP/REG/05 Wersja 1 Obowiązuje od 1 września 2025 r.
+BP/REG/05 Wersja 2 Obowiązuje od 1 września 2025 r.
 
 <!-- page: 2 -->
 ## Organizator promocji
@@ -267,9 +267,9 @@ rachunku, chyba że naruszenie jest jednocześnie podstawą wypowiedzenia umowy 
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja powinna zawierać dane umożliwiające identyfikację składającego reklamację, opis zastrzeżeń oraz oczekiwany sposób jej załatwienia. Reklamacje rozpatruje Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację bez zbędnej zwłoki, nie później niż w terminie:
-  - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
-  - 2\) 30 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
-- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank poinformuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 35 dni, a w sprawach płatniczych — 60 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 <!-- page: 17 --> r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
+  - 1\) 14 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
+  - 2\) 25 dni od dnia otrzymania reklamacji — w pozostałych sprawach.
+- 4\. Jeżeli zachowanie tych terminów nie jest możliwe z przyczyn niezależnych od Banku, Bank poinformuje Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć 40 dni, a w sprawach płatniczych — 45 dni. Zasady rozpatrywania reklamacji określa także ustawa z dnia 5 sierpnia 2015 <!-- page: 17 --> r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823).
 - 1\. Uczestnik może złożyć reklamację dotyczącą nieprzyznania lub nieprawidłowej wysokości premii w terminie 14 dni od dnia, w którym premia powinna zostać wypłacona, co nie wyłącza jego prawa do złożenia reklamacji w terminie późniejszym na zasadach ogólnych.
 - 2\. Do reklamacji dołącza się, o ile to możliwe, zestawienie operacji potwierdzających spełnienie warunków Promocji. Bank rozpatruje reklamację w terminach określonych w § 51.
 - 1\. Reklamację dotyczącą Promocji można złożyć:
@@ -313,8 +313,8 @@ którym je oparto.
 <!-- page: 20 -->
 ## Postanowienia końcowe
 
-- 1\. Uczestnik, który jest konsumentem, może w terminie 14 dni od zawarcia umowy rachunku na odległość odstąpić od niej bez podawania przyczyny, na zasadach określonych w ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287). Odstąpienie od umowy w tym terminie powoduje wygaśnięcie prawa do premii.
-- 2\. Regulamin wchodzi w życie od dnia 1 września 2025 r., a w razie jego zmiany stosuje się wersję 1 do wniosków złożonych w okresie jej obowiązywania.
+- 1\. Uczestnik, który jest konsumentem, może w terminie 21 dni od zawarcia umowy rachunku na odległość odstąpić od niej bez podawania przyczyny, na zasadach określonych w ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287). Odstąpienie od umowy w tym terminie powoduje wygaśnięcie prawa do premii.
+- 2\. Regulamin wchodzi w życie od dnia 1 września 2025 r., a w razie jego zmiany stosuje się wersję 2 do wniosków złożonych w okresie jej obowiązywania.
 - 3\. Do spraw nieuregulowanych w Regulaminie stosuje się postanowienia Regulaminu rachunku oraz powszechnie obowiązujące przepisy prawa.
 - 1\. Bank ma prawo dokonać zmiany Regulaminu w przypadku co najmniej jednej z następujących przyczyn:
   - 1\) zmiany przepisów prawa odnoszących się do usług świadczonych na podstawie Regulaminu;
@@ -323,7 +323,7 @@ którym je oparto.
     - a\) wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;
     - b\) zmian technologicznych i wymogów bezpieczeństwa.
 - 2\. O zmianie Regulaminu Bank informuje Klienta na trwałym nośniku, nie później niż 60 dni przed proponowanym dniem jej wejścia w życie. Treść zmian jest także dostępna na stronie https://bank.example oraz w placówkach Banku.
-- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 30 dni od dnia otrzymania informacji o zmianie.
+- 3\. Jeżeli Klient przed dniem wejścia zmian w życie nie zgłosi sprzeciwu, uważa się, że zmiany zostały przyjęte. Klient ma prawo także wypowiedzieć umowę bez ponoszenia opłat, w terminie 21 dni od dnia otrzymania informacji o zmianie.
 - 1\. Prawem miarodajnym dla stosunków między Bankiem a Klientem, w tym dla zawarcia umowy i jej wykonywania, jest prawo polskie. Umowa jest zawierana i wykonywana w języku polskim, o ile strony nie postanowią inaczej.
 - 2\. Do spraw nieuregulowanych w Regulaminie stosuje się przepisy powszechnie obowiązujące; dotyczy to w szczególności następujących aktów:
   - 1\) ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646);

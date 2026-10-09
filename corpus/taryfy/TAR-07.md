@@ -17,12 +17,12 @@ O zmianie Taryfy Bank informuje Klientów na trwałym nośniku z wyprzedzeniem n
 
 - 1\. Opłaty i prowizje są pobierane w walucie rachunku, z którego wykonywana jest czynność, w dniu realizacji, chyba że Taryfa lub umowa stanowi inaczej.
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank może pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane są oprocentowane odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
-- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca nie później niż w ciągu 14 dni od dnia stwierdzenia błędu.
+- 3\. Opłaty, które zostały pobrane bez podstawy, Bank zwraca nie później niż w ciągu 10 dni od dnia stwierdzenia błędu.
 
 Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się do pełnego grosza.
 
-- 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili realizacji transakcji. Tabela jest ustalana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
-- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,5%.
+- 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili realizacji transakcji. Tabela jest ustalana w dni robocze o godzinie 8:30 i publikowana na stronie https://bank.example.
+- 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,3%.
 
 Przeliczeń między walutami obcymi Bank dokonuje za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
@@ -51,14 +51,14 @@ Oprocentowanie podwyższone, wynoszące 5% w skali roku, Bank stosuje w okresach
 | 6. | Premia lojalnościowa za brak wypłat w danym kwartale | w skali roku, kwartalnie | 0,5% |
 | 7. | Wpłata na rachunek przelewem z rachunku prowadzonego w Banku | za operację | bez opłat |
 | 8. | Wpłata na rachunek przelewem z rachunku w innym banku | za operację | bez opłat |
-| 9. | Wpłata gotówkowa na rachunek w placówce | za operację | 3,00 zł |
+| 9. | Wpłata gotówkowa na rachunek w placówce | za operację | 3,50 zł |
 | 10. | Wypłata lub przelew z rachunku w ramach limitu bezpłatnych operacji | za operację | bez opłat |
 | 11. | Wypłata lub przelew ponad limit bezpłatnych operacji w miesiącu | za operację | 10,00 zł |
 | 12. | Maksymalna łączna wypłata z rachunku w ciągu jednego dnia | dziennie | 50 000,00 zł |
 | 13. | Wypłata gotówki z rachunku w kasie placówki do kwoty 5 000,00 zł | za operację | bez opłat |
 | 14. | Wypłata gotówki z rachunku w kasie placówki powyżej kwoty 5 000,00 zł 3) | od kwoty operacji | 0,5% kwoty wypłaty, min. 10,00 zł |
 | 15. | Zlecenie stałe z rachunku oszczędnościowego na rachunek w Banku | za realizację | bez opłat |
-| 16. | Przelew natychmiastowy z rachunku oszczędnościowego | za operację | 5,00 zł |
+| 16. | Przelew natychmiastowy z rachunku oszczędnościowego | za operację | 4,00 zł |
 | 17. | Przelew z rachunku oszczędnościowego na rachunek w innym banku złożony w placówce | za operację | 8,00 zł |
 | 18. | Dyspozycja automatycznego odkładania środków („zaokrąglanie” transakcji) | za dyspozycję | bez opłat |
 | 19. | Zmiana rachunku rozliczeniowego, z którego następują wpłaty i wypłaty | za dyspozycję | bez opłat |
@@ -69,14 +69,14 @@ Oprocentowanie podwyższone, wynoszące 5% w skali roku, Bank stosuje w okresach
 | 24. | Zamknięcie rachunku z powodu nieaktywności po upływie okresu określonego w Regulaminie 4) | jednorazowo | bez opłat |
 | 25. | Zamknięcie rachunku oszczędnościowego po upływie okresu wypowiedzenia | jednorazowo | bez opłat |
 | 26. | Wypowiedzenie umowy rachunku oszczędnościowego przez Klienta | jednorazowo | bez opłat |
-| 27. | Wypowiedzenie umowy rachunku oszczędnościowego przez Bank (termin wypowiedzenia) | od dnia doręczenia | 60 dni |
-| 28. | Wypowiedzenie umowy rachunku oszczędnościowego przez Klienta (termin wypowiedzenia) | od dnia złożenia oświadczenia | 30 dni |
+| 27. | Wypowiedzenie umowy rachunku oszczędnościowego przez Bank (termin wypowiedzenia) | od dnia doręczenia | 90 dni |
+| 28. | Wypowiedzenie umowy rachunku oszczędnościowego przez Klienta (termin wypowiedzenia) | od dnia złożenia oświadczenia | 21 dni |
 | 29. | Wypłata salda po zamknięciu rachunku przelewem na rachunek wskazany przez Klienta | za operację | bez opłat |
 | 30. | Wypłata salda po zamknięciu rachunku w gotówce w placówce | za operację | bez opłat |
 | 31. | Przekazanie środków z zamkniętego rachunku do depozytu sądowego, jeżeli Klient nie wskazał rachunku | jednorazowo | bez opłat |
 | 32. | Wydanie zaświadczenia o zamknięciu rachunku oszczędnościowego | za dokument | 20,00 zł |
 | 33. | Kontynuacja rachunku oszczędnościowego przez spadkobierców po zmarłym Kliencie | jednorazowo | bez opłat |
-| 34. | Zmiana posiadacza rachunku w drodze cesji praw wymagającej zgody Banku | jednorazowo | 30,00 zł |
+| 34. | Zmiana posiadacza rachunku w drodze cesji praw wymagającej zgody Banku | jednorazowo | 35,00 zł |
 | 35. | Przeniesienie rachunku oszczędnościowego do innej placówki Banku | jednorazowo | bez opłat |
 | 36. | Dostęp do rachunku oszczędnościowego w serwisie internetowym Banku | miesięcznie | bez opłat |
 | 37. | Dostęp do rachunku oszczędnościowego w aplikacji mobilnej | miesięcznie | bez opłat |
@@ -90,11 +90,11 @@ Oprocentowanie podwyższone, wynoszące 5% w skali roku, Bank stosuje w okresach
 | 45. | Zaświadczenie o saldzie rachunku oszczędnościowego na wskazany dzień | za dokument | 20,00 zł |
 | 46. | Zlecenie stałe wpłaty na rachunek oszczędnościowy z rachunku w innym banku (przyjęcie dyspozycji) | za dyspozycję | bez opłat |
 | 47. | Zmiana oprocentowania rachunku w związku z zakończeniem okresu promocyjnego | w skali roku | 3,5% |
-| 48. | Oprocentowanie nieaktywnego rachunku oszczędnościowego przed jego zamknięciem | w skali roku | 0,1% |
+| 48. | Oprocentowanie nieaktywnego rachunku oszczędnościowego przed jego zamknięciem | w skali roku | 0,2% |
 | 49. | Kapitalizacja odsetek od środków na rachunku oszczędnościowym 6) | miesięcznie | bez opłat |
 | 50. | Podatek od odsetek naliczonych na rachunku oszczędnościowym | od naliczonych odsetek | 19% |
 | 51. | Zwrot odsetek naliczonych niesłusznie przez Bank w wyniku błędu | jednorazowo | bez opłat |
-| 52. | Zwrot nienależnie pobranej opłaty (termin wynikający z zasad pobierania opłat) | od dnia stwierdzenia błędu | 14 dni |
+| 52. | Zwrot nienależnie pobranej opłaty (termin wynikający z zasad pobierania opłat) | od dnia stwierdzenia błędu | 10 dni |
 | 53. | Rozstrzygnięcie reklamacji dotyczącej naliczenia odsetek | za reklamację | bez opłat |
 | 54. | Odpowiedź na reklamację w formie papierowej wysłana pocztą | za każdy dokument | bez opłat |
 | 55. | Korekta naliczonych odsetek po zmianie dyspozycji kapitalizacji | za dyspozycję | bez opłat |
@@ -148,7 +148,7 @@ roboczego; prowizja nie jest pobierana, jeżeli Klient odstąpi od dyspozycji pr
 
 kapitalizacji odsetek i pobrania opłat.
 
-- 5\) Zwolnienie jest przyznawane jednorazowo w roku kalendarzowym i wymaga złożenia wniosku w ciągu 14 dni od dnia
+- 5\) Zwolnienie jest przyznawane jednorazowo w roku kalendarzowym i wymaga złożenia wniosku w ciągu 10 dni od dnia
 
 pobrania opłaty; Bank rozpatruje wniosek według własnej oceny sytuacji Klienta.
 
@@ -190,7 +190,7 @@ Oprocentowanie lokaty jest stałe w całym okresie umownym. Stawka obowiązując
 | 98. | Wypłata środków z lokaty w gotówce w placówce | za operację | 0,00 zł |
 | 99. | Wypłata środków z lokaty przelewem na rachunek w innym banku | za operację | 8,00 zł |
 | 100. | Kolejne potwierdzenie założenia lokaty w postaci papierowej | za dokument | 15,00 zł |
-| 101. | Duplikat umowy lokaty | za dokument | 30,00 zł |
+| 101. | Duplikat umowy lokaty | za dokument | 35,00 zł |
 | 102. | Zmiana dyspozycji odnowienia lokaty złożona w terminie | za dyspozycję | bez opłat |
 | 103. | Zmiana dyspozycji odnowienia lokaty złożona po terminie, w ciągu okresu określonego w Regulaminie 3) | za dyspozycję | bez opłat |
 | 104. | Wypłata odsetek na rachunek w Banku w trakcie trwania lokaty (lokata z wypłatą odsetek) | za operację | bez opłat |
@@ -203,7 +203,7 @@ Oprocentowanie lokaty jest stałe w całym okresie umownym. Stawka obowiązując
 | 111. | Lokata zakładana z rachunku rodzica na rzecz małoletniego dziecka | jednorazowo | bez opłat |
 | 112. | Lokata zakładana dla osoby nieposiadającej innych produktów w Banku (wymagane otwarcie rachunku oszczędnościowego) | jednorazowo | 100,00 zł |
 | 113. | Zwrot środków z lokaty w przypadku odstąpienia od umowy w ustawowym terminie | za dyspozycję | bez opłat |
-| 114. | Termin wypłaty środków przy odstąpieniu od umowy lokaty zawartej na odległość | od dnia odstąpienia | 14 dni |
+| 114. | Termin wypłaty środków przy odstąpieniu od umowy lokaty zawartej na odległość | od dnia odstąpienia | 21 dni |
 | 115. | Informacja o saldzie i odsetkach naliczonych od lokaty w bankowości elektronicznej | za zapytanie | bez opłat |
 | 116. | Informacja o saldzie lokaty przekazana telefonicznie | za zapytanie | bez opłat |
 | 117. | Zestawienie lokat Klienta w postaci papierowej | za dokument | 10,00 zł |
@@ -245,7 +245,7 @@ Oprocentowanie lokaty jest stałe w całym okresie umownym. Stawka obowiązując
 | 153. | Dyspozycja po zakończeniu lokaty — termin na zmianę dyspozycji | od dnia zakończenia | 7 dni |
 | 154. | Złożenie wniosku o zmianę danych osobowych posiadacza lokaty | za dyspozycję | bez opłat |
 | 155. | Zgłoszenie utraty dokumentu potwierdzającego założenie lokaty | za dyspozycję | bez opłat |
-| 156. | Wydanie nowego potwierdzenia założenia lokaty po zgłoszeniu utraty | za dokument | 30,00 zł |
+| 156. | Wydanie nowego potwierdzenia założenia lokaty po zgłoszeniu utraty | za dokument | 35,00 zł |
 | 157. | Przeliczenie odsetek po korekcie błędnie podanej daty założenia lokaty | za dyspozycję | bez opłat |
 
 <!-- page: 11 -->
@@ -277,7 +277,7 @@ okresu, o ile Regulamin nie stanowi inaczej; Bank informuje Klienta o jej skutka
 
 Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (USD), funtach brytyjskich (GBP) i frankach szwajcarskich (CHF) na podstawie odrębnej umowy, do której w zakresie nieuregulowanym stosuje się odpowiednio „Regulamin rachunków oszczędnościowych oraz lokat terminowych Bank Przykładowy S.A. dla konsumentów”. Minimalna kwota lokaty walutowej wynosi 500 jednostek waluty lokaty.
 
-Środki wpłacane w złotych na lokatę walutową oraz wypłacane z niej w złotych są przeliczane po kursie kupna lub sprzedaży z Tabeli kursów walut Banku, obowiązującym w chwili transakcji, z marżą 1,5% względem kursu średniego. Dyspozycje dotyczące lokat walutowych przyjmowane są do godziny 13:00 w dni robocze; późniejsze realizuje się następnego dnia roboczego. Klient bierze na siebie ryzyko kursowe związane ze zmianą kursu między założeniem a wypłatą lokaty.
+Środki wpłacane w złotych na lokatę walutową oraz wypłacane z niej w złotych są przeliczane po kursie kupna lub sprzedaży z Tabeli kursów walut Banku, obowiązującym w chwili transakcji, z marżą 1,3% względem kursu średniego. Dyspozycje dotyczące lokat walutowych przyjmowane są do godziny 13:00 w dni robocze; późniejsze realizuje się następnego dnia roboczego. Klient bierze na siebie ryzyko kursowe związane ze zmianą kursu między założeniem a wypłatą lokaty.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
@@ -293,7 +293,7 @@ Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (U
 | 163. | Oprocentowanie lokaty we frankach szwajcarskich (CHF) na okres 6 miesięcy 1) | w skali roku | 0,4% |
 | 164. | Wpłata gotówki w walucie obcej na rachunek lokaty w placówce | od kwoty operacji | 0,3% kwoty wpłaty, min. 5,00 zł |
 | 165. | Wypłata gotówki w walucie obcej z rachunku lokaty w placówce 2) | od kwoty operacji | 0,5% kwoty wypłaty, min. 5,00 zł |
-| 166. | Przeliczenie środków przy założeniu lub wypłacie lokaty (marża względem kursu średniego) | od kwoty przeliczenia | 1,5% |
+| 166. | Przeliczenie środków przy założeniu lub wypłacie lokaty (marża względem kursu średniego) | od kwoty przeliczenia | 1,3% |
 | 167. | Zerwanie lokaty walutowej przed terminem | za dyspozycję | 0,00 zł |
 | 168. | Kolejne potwierdzenie założenia lokaty walutowej | za dokument | 15,00 zł |
 | 169. | Zaświadczenie o wysokości odsetek od lokaty walutowej w języku angielskim | za dokument | 20,00 zł |
@@ -301,7 +301,7 @@ Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (U
 | 171. | Zerwanie lokaty w dolarach przed terminem | za dyspozycję | 0,00 zł |
 | 172. | Oprocentowanie środków po zerwaniu lokaty walutowej przed terminem | w skali roku | 0,1% |
 | 173. | Odnowienie lokaty walutowej na kolejny okres po zakończeniu poprzedniego | za dyspozycję | bez opłat |
-| 174. | Zmiana waluty lokaty przy odnowieniu (z przewalutowaniem środków) | od kwoty przeliczenia | marża 1,5% |
+| 174. | Zmiana waluty lokaty przy odnowieniu (z przewalutowaniem środków) | od kwoty przeliczenia | marża 1,3% |
 | 175. | Wypłata odsetek od lokaty walutowej w gotówce w walucie obcej w placówce 3) | od kwoty operacji | 0,5% kwoty wypłaty, min. 5,00 zł |
 | 176. | Wypłata środków z lokaty walutowej w złotych w placówce | za operację | bez opłat |
 | 177. | Przelew środków z lokaty walutowej na rachunek w innym banku w kraju | za operację | 8,00 zł |
@@ -315,9 +315,9 @@ Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (U
 | 185. | Lokata w funtach brytyjskich — założenie w placówce | jednorazowo | bez opłat |
 | 186. | Lokata we frankach szwajcarskich — założenie w placówce | jednorazowo | bez opłat |
 | 187. | Wpłata na lokatę walutową z rachunku bieżącego w tej samej walucie | za operację | bez opłat |
-| 188. | Wpłata na lokatę walutową z rachunku bieżącego w złotych (z przeliczeniem po kursie sprzedaży Banku) 4) | od kwoty przeliczenia | marża 1,5% |
+| 188. | Wpłata na lokatę walutową z rachunku bieżącego w złotych (z przeliczeniem po kursie sprzedaży Banku) 4) | od kwoty przeliczenia | marża 1,3% |
 | 189. | Wypłata z lokaty walutowej na rachunek w tej samej walucie | za operację | bez opłat |
-| 190. | Wypłata z lokaty walutowej na rachunek w złotych (z przeliczeniem po kursie kupna Banku) | od kwoty przeliczenia | marża 1,5% |
+| 190. | Wypłata z lokaty walutowej na rachunek w złotych (z przeliczeniem po kursie kupna Banku) | od kwoty przeliczenia | marża 1,3% |
 | 191. | Wpłata środków w euro przelewem SEPA na rachunek lokaty walutowej | za operację | bez opłat |
 | 192. | Wpłata środków w dolarach przelewem zagranicznym na rachunek lokaty | za operację | bez opłat |
 | 193. | Wpłata środków w funtach przelewem zagranicznym na rachunek lokaty | za operację | bez opłat |
@@ -327,8 +327,8 @@ Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (U
 | 197. | Zaświadczenie o posiadaniu lokaty walutowej w języku polskim | za dokument | 20,00 zł |
 | 198. | Zestawienie z rachunku lokaty walutowej w postaci elektronicznej | miesięcznie | bez opłat |
 | 199. | Wyciąg z rachunku lokaty walutowej w postaci papierowej | za każdy wyciąg | 10,00 zł |
-| 200. | Kurs stosowany do przeliczenia środków — termin publikacji Tabeli kursów walut | w dni robocze | 9:00 |
-| 201. | Zlecenie wymiany walut z rachunku bieżącego na lokatę walutową w kantorze internetowym Banku | od kwoty przeliczenia | marża 1,5% |
+| 200. | Kurs stosowany do przeliczenia środków — termin publikacji Tabeli kursów walut | w dni robocze | 8:30 |
+| 201. | Zlecenie wymiany walut z rachunku bieżącego na lokatę walutową w kantorze internetowym Banku | od kwoty przeliczenia | marża 1,3% |
 | 202. | Lokata w euro na okres 1 miesiąca 5) | w skali roku | wg tabeli oprocentowania obowiązującej w dniu założenia |
 | 203. | Lokata euro na okres 6 miesięcy | w skali roku | wg tabeli oprocentowania obowiązującej w dniu założenia |
 | 204. | Lokata w euro na okres 3 miesięcy — stawka referencyjna | w skali roku | 1,8% |
@@ -341,7 +341,7 @@ Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (U
 | 211. | Informacja o kursie przeliczenia odsetek na złote dla potrzeb rozliczenia podatkowego | rocznie | bez opłat |
 | 212. | Lokata dwuwalutowa (część kwoty w złotych, część w walucie obcej) | w skali roku | wg umowy |
 | 213. | Otwarcie lokaty dwuwalutowej | jednorazowo | bez opłat |
-| 214. | Przewalutowanie lokaty dwuwalutowej po zakończeniu okresu umownego | od kwoty przeliczenia | marża 1,5% |
+| 214. | Przewalutowanie lokaty dwuwalutowej po zakończeniu okresu umownego | od kwoty przeliczenia | marża 1,3% |
 | 215. | Zlecenie cykliczne przewalutowania środków na lokatę walutową | za realizację | bez opłat |
 | 216. | Lokata walutowa dla osoby niebędącej rezydentem w rozumieniu przepisów dewizowych | jednorazowo | bez opłat |
 | 217. | Złożenie oświadczenia o rezydencji podatkowej Klienta na formularzu Banku | jednorazowo | bez opłat |
@@ -366,7 +366,7 @@ równowartość 5 000 euro; Bank ma prawo wypłacić odsetki w złotych po kursi
 
 - 4\) Kurs sprzedaży jest ustalany na podstawie kursu średniego z Tabeli kursów walut Banku obowiązującej w chwili
 
-przeliczenia; Tabela jest sporządzana o godzinie 9:00 w dni robocze i może być zmieniana w ciągu dnia.
+przeliczenia; Tabela jest sporządzana o godzinie 8:30 w dni robocze i może być zmieniana w ciągu dnia.
 
 - 5\) Lokaty walutowe na okres krótszy niż trzy miesiące są zakładane tylko w euro i dolarach amerykańskich; stawkę dla
 
@@ -408,7 +408,7 @@ Parametry lokaty — kwota, okres, stopa procentowa, sposób wypłaty odsetek i 
 | 248. | Termin realizacji zerwania lokaty negocjowanej | od dnia dyspozycji | 2 dni |
 | 249. | Wypłata środków z lokaty negocjowanej w gotówce w placówce (kwoty powyżej 5 000,00 zł wymagają awizacji) | za operację | 0,00 zł |
 | 250. | Wypłata środków z lokaty negocjowanej na rachunek w innym banku | za operację | 8,00 zł |
-| 251. | Wypłata środków z lokaty negocjowanej przelewem natychmiastowym | za operację | 5,00 zł |
+| 251. | Wypłata środków z lokaty negocjowanej przelewem natychmiastowym | za operację | 4,00 zł |
 | 252. | Spadek po posiadaczu lokaty negocjowanej — wypłata środków spadkobiercom po przedstawieniu postanowienia sądu | jednorazowo | bez opłat |
 | 253. | Dziedziczenie lokaty negocjowanej — wypłata środków na podstawie dyspozycji wkładem na wypadek śmierci | jednorazowo | bez opłat |
 | 254. | Zaświadczenie o posiadaniu lokaty negocjowanej wydane na wniosek Klienta | za dokument | 20,00 zł |
@@ -462,10 +462,10 @@ Przedsiębiorcy, wspólnoty mieszkaniowe i inne podmioty niebędące konsumentam
 | 278. | Minimalna wpłata początkowa na rachunek oszczędnościowy przedsiębiorcy | jednorazowo | 500,00 zł |
 | 279. | Obsługa rachunku oszczędnościowego przedsiębiorcy | miesięcznie | 8,00 zł |
 | 280. | Oprocentowanie środków na rachunku oszczędnościowym przedsiębiorcy | w skali roku | 1,5% |
-| 281. | Przelew z rachunku oszczędnościowego na rachunek bieżący w Banku | za przelew | 0,00 zł |
+| 281. | Przelew z rachunku oszczędnościowego na rachunek bieżący w Banku | za przelew | 0,10 zł |
 | 282. | Przelew z rachunku oszczędnościowego na rachunek w innym banku 1) | za przelew | 0,40 zł |
 | 283. | Przelew z rachunku oszczędnościowego na rachunek w innym banku złożony w placówce | za przelew | 12,00 zł |
-| 284. | Wpłata gotówkowa na rachunek oszczędnościowy w kasie placówki | od kwoty operacji | 0,3% kwoty wpłaty, min. 6,00 zł |
+| 284. | Wpłata gotówkowa na rachunek oszczędnościowy w kasie placówki | od kwoty operacji | 0,3% kwoty wpłaty, min. 7,00 zł |
 | 285. | Zamknięcie rachunku oszczędnościowego przedsiębiorcy | jednorazowo | bez opłat |
 | 286. | Zajęcie rachunku oszczędnościowego w postępowaniu egzekucyjnym | za każde zajęcie | 50,00 zł |
 | 287. | Założenie lokaty terminowej dla przedsiębiorcy | jednorazowo | bez opłat |
@@ -480,7 +480,7 @@ Przedsiębiorcy, wspólnoty mieszkaniowe i inne podmioty niebędące konsumentam
 | 292. | Oprocentowanie środków po zerwaniu lokaty przedsiębiorcy | w skali roku | 0,1% |
 | 293. | Automatyczne odnowienie lokaty na kolejny okres | za dyspozycję | bez opłat |
 | 294. | Informacja o posiadanych lokatach dla potrzeb audytu lub kontrahenta | za dokument | 100,00 zł |
-| 295. | Opinia bankowa o współpracy z Klientem w zakresie lokat | za dokument | 80,00 zł |
+| 295. | Opinia bankowa o współpracy z Klientem w zakresie lokat | za dokument | 90,00 zł |
 | 296. | Ustanowienie blokady lokaty jako zabezpieczenia kredytu lub gwarancji | jednorazowo | 100,00 zł |
 | 297. | Zmiana osób uprawnionych do dysponowania lokatą (zmiana reprezentacji) | za dyspozycję | 40,00 zł |
 | 298. | Lokata terminowa dla podmiotu prowadzącego działalność w placówce — założenie | jednorazowo | bez opłat |
@@ -501,7 +501,7 @@ Przedsiębiorcy, wspólnoty mieszkaniowe i inne podmioty niebędące konsumentam
 | 313. | Zastaw rejestrowy na prawach z lokaty — wpis w rejestrze zastawów (opłata sądowa pobierana odrębnie) | jednorazowo | bez opłat |
 | 314. | Zajęcie egzekucyjne lokaty przedsiębiorcy przez komornika sądowego | za każde zajęcie | 50,00 zł |
 | 315. | Zajęcie lokaty przez naczelnika urzędu skarbowego w trybie egzekucji administracyjnej | za każde zajęcie | 50,00 zł |
-| 316. | Opinia bankowa o Kliencie dla kontrahenta lub urzędu | za dokument | 80,00 zł |
+| 316. | Opinia bankowa o Kliencie dla kontrahenta lub urzędu | za dokument | 90,00 zł |
 | 317. | Poświadczenie o posiadaniu rachunku oszczędnościowego lub lokaty przedsiębiorcy | za dokument | 20,00 zł |
 | 318. | Zmiana formy prawnej Klienta — przeniesienie lokaty na następcę prawnego | jednorazowo | bez opłat |
 | 319. | Likwidacja Klienta — wypłata środków z lokaty na rachunek likwidatora po przedstawieniu dokumentów | jednorazowo | bez opłat |
@@ -565,12 +565,12 @@ Poniższe stawki dotyczą czynności związanych z rachunkami oszczędnościowym
 | 353. | Zaświadczenie o wysokości naliczonych i wypłaconych odsetek | za dokument | 20,00 zł |
 | 354. | Roczna informacja o odsetkach i pobranym podatku w postaci elektronicznej (w terminie 30 dni po zakończeniu roku) | rocznie | bez opłat |
 | 355. | Duplikat informacji podatkowej w postaci papierowej 1) | za dokument | 15,00 zł |
-| 356. | Duplikat umowy rachunku lub lokaty | za dokument | 30,00 zł |
-| 357. | Ustanowienie pełnomocnictwa do rachunku oszczędnościowego lub lokaty | jednorazowo | 0,00 zł |
+| 356. | Duplikat umowy rachunku lub lokaty | za dokument | 35,00 zł |
+| 357. | Ustanowienie pełnomocnictwa do rachunku oszczędnościowego lub lokaty | jednorazowo | 10,00 zł |
 | 358. | Cofnięcie pełnomocnictwa | jednorazowo | bez opłat |
-| 359. | Dyspozycja wkładem na wypadek śmierci | jednorazowo | 0,00 zł |
+| 359. | Dyspozycja wkładem na wypadek śmierci | jednorazowo | 10,00 zł |
 | 360. | Zajęcie rachunku oszczędnościowego lub lokaty w trybie egzekucji 2) | za każde zajęcie | 30,00 zł |
-| 361. | Pismo wzywające do uzupełnienia dokumentów lub danych Klienta pocztą | za każdy dokument | 15,00 zł |
+| 361. | Pismo wzywające do uzupełnienia dokumentów lub danych Klienta pocztą | za każdy dokument | 20,00 zł |
 | 362. | Wyciąg lub zestawienie operacji z archiwum za okres starszy niż 12 miesięcy | za dokument | 15,00 zł |
 | 363. | Aktualizacja danych osobowych lub adresowych Klienta w placówce | za dyspozycję | bez opłat |
 | 364. | Zmiana danych Klienta w bankowości elektronicznej lub aplikacji mobilnej | za dyspozycję | bez opłat |
@@ -579,7 +579,7 @@ Poniższe stawki dotyczą czynności związanych z rachunkami oszczędnościowym
 | 367. | Przeniesienie środków z lokaty na inną lokatę w Banku po zakończeniu okresu umownego | za operację | bez opłat |
 | 368. | Zwolnienie środków po wygaśnięciu zabezpieczenia na wniosek Klienta | za dyspozycję | bez opłat |
 | 369. | Przygotowanie wniosku o przeniesienie lokaty do innego banku | za dokument | 20,00 zł |
-| 370. | Poszukiwanie dokumentacji lokaty zawartej przed rokiem poprzedzającym wniosek | za wniosek | 30,00 zł |
+| 370. | Poszukiwanie dokumentacji lokaty zawartej przed rokiem poprzedzającym wniosek | za wniosek | 35,00 zł |
 | 371. | Przesłanie dokumentów dotyczących lokaty kurierem na wniosek Klienta | za przesyłkę | 10,00 zł |
 | 372. | Telefoniczna weryfikacja salda lub stawki lokaty z doradcą po zweryfikowaniu tożsamości | za połączenie | bez opłat |
 | 373. | Przyjęcie dyspozycji dotyczącej lokaty za pośrednictwem infolinii | za dyspozycję | bez opłat |
@@ -591,7 +591,7 @@ Poniższe stawki dotyczą czynności związanych z rachunkami oszczędnościowym
 | 379. | Wydanie dokumentów dla potrzeb rozliczenia podatkowego za rok ubiegły (kolejny egzemplarz) | za dokument | 15,00 zł |
 | 380. | Kontakt z infolinią w sprawie lokat i rachunków oszczędnościowych (połączenie z numeru krajowego) | za połączenie | bez opłat |
 | 381. | Kontakt z infolinią z zagranicy pod numerem dla połączeń międzynarodowych | za połączenie | wg cennika operatora |
-| 382. | Zgłoszenie zastrzeżenia karty powiązanej z rachunkiem oszczędnościowym lub bieżącym | za dyspozycję | 0,00 zł |
+| 382. | Zgłoszenie zastrzeżenia karty powiązanej z rachunkiem oszczędnościowym lub bieżącym | za dyspozycję | 10,00 zł |
 | 383. | Wydanie duplikatu karty powiązanej z rachunkiem | jednorazowo | 25,00 zł |
 | 384. | Zlecenie czynności z wykorzystaniem pocztowego potwierdzenia nadania | za dyspozycję | bez opłat |
 | 385. | Powiadomienie o utracie dowodu osobistego i aktualizacja danych Klienta | za dyspozycję | bez opłat |
@@ -603,7 +603,7 @@ Poniższe stawki dotyczą czynności związanych z rachunkami oszczędnościowym
 | 391. | Zgoda na przekazywanie informacji o rachunku osobie wskazanej przez Klienta | za dyspozycję | bez opłat |
 | 392. | Cofnięcie zgody na przetwarzanie danych w celach marketingowych | za dyspozycję | bez opłat |
 | 393. | Wniosek o udzielenie informacji o danych osobowych przetwarzanych przez Bank | za wniosek | bez opłat |
-| 394. | Wniosek o kopię danych osobowych — kolejna kopia (po pierwszej bezpłatnej) | za kopię | 30,00 zł |
+| 394. | Wniosek o kopię danych osobowych — kolejna kopia (po pierwszej bezpłatnej) | za kopię | 35,00 zł |
 | 395. | Kontakt z inspektorem ochrony danych w sprawach związanych z lokatami | za zgłoszenie | bez opłat |
 | 396. | Realizacja dyspozycji wkładem na wypadek śmierci — wypłata na rzecz uposażonego | jednorazowo | bez opłat |
 | 397. | Zmiana lub odwołanie dyspozycji wkładem na wypadek śmierci | za dyspozycję | bez opłat |
@@ -613,26 +613,26 @@ Poniższe stawki dotyczą czynności związanych z rachunkami oszczędnościowym
 | 401. | Zaświadczenie o stanie środków na dzień śmierci Klienta dla potrzeb postępowania spadkowego | za dokument | 20,00 zł |
 | 402. | Zajęcie środków na rachunku oszczędnościowym na wniosek komornika (egzekucja świadczeń alimentacyjnych) | za każde zajęcie | 30,00 zł |
 | 403. | Realizacja zajęcia środków pochodzących ze świadczeń podlegających ochronie ustawowej | za zajęcie | bez opłat |
-| 404. | Zawiadomienie Klienta o zajęciu rachunku wysłane listem poleconym | za każdy dokument | 15,00 zł |
+| 404. | Zawiadomienie Klienta o zajęciu rachunku wysłane listem poleconym | za każdy dokument | 20,00 zł |
 | 405. | Odpowiedź dla komornika lub sądu o stanie środków na rachunku | za dokument | bez opłat |
 | 406. | Informacja dla organu podatkowego w trybie przewidzianym przepisami | za dokument | bez opłat |
 | 407. | Złożenie reklamacji w placówce, telefonicznie lub w bankowości elektronicznej | za reklamację | bez opłat |
-| 408. | Rozpatrzenie reklamacji dotyczącej lokaty lub rachunku oszczędnościowego (termin podstawowy) | od dnia otrzymania reklamacji | 15 dni |
-| 409. | Rozpatrzenie reklamacji w sprawie złożonej, wymagającej dodatkowych wyjaśnień (termin przedłużony) | od dnia otrzymania reklamacji | 35 dni |
+| 408. | Rozpatrzenie reklamacji dotyczącej lokaty lub rachunku oszczędnościowego (termin podstawowy) | od dnia otrzymania reklamacji | 12 dni |
+| 409. | Rozpatrzenie reklamacji w sprawie złożonej, wymagającej dodatkowych wyjaśnień (termin przedłużony) | od dnia otrzymania reklamacji | 40 dni |
 | 410. | Odpowiedź Banku na reklamację w formie elektronicznej | za każdy dokument | bez opłat |
 | 411. | Odpowiedź na reklamację w formie papierowej | za każdy dokument | bez opłat |
 | 412. | Wniosek do Rzecznika Finansowego — przekazanie dokumentów sprawy | za wniosek | bez opłat |
 | 413. | Wniosek o mediację przed sądem polubownym przy Bankowym Funduszu Gwarancyjnym | za wniosek | bez opłat |
-| 414. | Korespondencja Banku z Klientem na adres wskazany w umowie — termin uznania doręczenia | od dnia nadania | 14 dni |
-| 415. | Ponowne wysłanie korespondencji zwróconej do Banku z powodu braku adresata | za każdy dokument | 15,00 zł |
+| 414. | Korespondencja Banku z Klientem na adres wskazany w umowie — termin uznania doręczenia | od dnia nadania | 10 dni |
+| 415. | Ponowne wysłanie korespondencji zwróconej do Banku z powodu braku adresata | za każdy dokument | 20,00 zł |
 | 416. | Telefon zwrotny doradcy w sprawie lokaty zamówiony przez Klienta | za połączenie | bez opłat |
-| 417. | Wpłata gotówkowa na rachunek oszczędnościowy w kasie placówki do kwoty 5 000,00 zł | za operację | 3,00 zł |
-| 418. | Wpłata gotówkowa w złotych na lokatę w kasie placówki | za operację | 3,00 zł |
+| 417. | Wpłata gotówkowa na rachunek oszczędnościowy w kasie placówki do kwoty 5 000,00 zł | za operację | 3,50 zł |
+| 418. | Wpłata gotówkowa w złotych na lokatę w kasie placówki | za operację | 3,50 zł |
 | 419. | Zdawanie bilonu w placówce (powyżej 50 sztuk monet) | od kwoty operacji | 0,5% kwoty wpłaty, min. 10,00 zł |
 | 420. | Odkupienie banknotów lub monet uszkodzonych na wniosek Klienta | za wniosek | bez opłat |
 | 421. | Wypłata gotówki przy użyciu karty debetowej z bankomatu Banku | za operację | bez opłat |
 | 422. | Wypłata gotówki z rachunku oszczędnościowego w bankomacie innego operatora | za operację | 5,00 zł |
-| 423. | Przelew natychmiastowy z rachunku oszczędnościowego do innego banku w kraju | za operację | 5,00 zł |
+| 423. | Przelew natychmiastowy z rachunku oszczędnościowego do innego banku w kraju | za operację | 4,00 zł |
 | 424. | Zlecenie stałe z rachunku oszczędnościowego na rachunek w innym banku | za realizację | 8,00 zł |
 | 425. | Odwołanie zlecenia stałego z rachunku oszczędnościowego | za dyspozycję | bez opłat |
 | 426. | Zwrot przelewu z rachunku oszczędnościowego na wniosek Klienta | za operację | 8,00 zł |
@@ -654,7 +654,7 @@ wystawionych na osobę, która je poniosła, w granicach kwoty określonej przep
 
 - 1\. Użyte w Taryfie określenie „dzień roboczy” oznacza dzień inny niż sobota, niedziela lub dzień ustawowo wolny od pracy. „Okres umowny” oznacza okres, na jaki została założona lokata, a „kwota progowa” — saldo rachunku oszczędnościowego, powyżej którego stosuje się obniżoną stawkę oprocentowania.
 - 2\. Stawki oprocentowania podane w Taryfie mają zastosowanie w dniu jej wejścia w życie. Zmiana oprocentowania lokat zakładanych po tym dniu nie wymaga zmiany Taryfy, jeżeli Bank opublikuje aktualną tabelę oprocentowania na stronie https://bank.example; zmiana nie dotyczy lokat już założonych, których oprocentowanie jest stałe w całym okresie umownym.
-- 3\. Pytania dotyczące stawek Klient może zadawać na infolinię pod numerem 800 000 001 (codziennie przez całą dobę) albo zwrócić się do jednostki Banku: Departament Produktów Oszczędnościowych. Reklamacje dotyczące opłat i oprocentowania rozpatruje Biuro Reklamacji w terminie 15 dni.
+- 3\. Pytania dotyczące stawek Klient może zadawać na infolinię pod numerem 800 000 001 (codziennie przez całą dobę) albo zwrócić się do jednostki Banku: Departament Produktów Oszczędnościowych. Reklamacje dotyczące opłat i oprocentowania rozpatruje Biuro Reklamacji w terminie 12 dni.
 
 Taryfa obowiązuje od dnia wskazanego na okładce. Czynności rozpoczęte przed tym dniem i zakończone po jego upływie rozlicza się według stawek obowiązujących w dniu ich zlecenia, chyba że Taryfa stanowi inaczej.
 

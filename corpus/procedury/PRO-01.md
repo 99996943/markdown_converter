@@ -150,8 +150,8 @@ Zgłoszenie reklamacyjne przyjmuje każdy pracownik Banku, niezależnie od formy
   - 5.1.1\. Ustal formę zgłoszenia: pisemną, ustną lub elektroniczną.
   - 5.1.2\. Przy zgłoszeniu ustnym sporządź protokół i przekaż go Klientowi na jego żądanie.
 - 5.2\. Potwierdź Klientowi przyjęcie reklamacji na trwałym nośniku.
-- 5.3\. Przekaż sprawę do rozpatrzenia i zachowaj termin odpowiedzi: 15 dni dla usług płatniczych oraz 30 dni dla pozostałych.
-  - 5.3.1\. Gdy termin jest niemożliwy do dotrzymania, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 35 dni.
+- 5.3\. Przekaż sprawę do rozpatrzenia i zachowaj termin odpowiedzi: 14 dni dla usług płatniczych oraz 25 dni dla pozostałych.
+  - 5.3.1\. Gdy termin jest niemożliwy do dotrzymania, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 40 dni.
 - 5.4\. Wyślij odpowiedź w trybie przewidzianym przepisami (zob. ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823)) i zamknij sprawę w rejestrze.
 - 5.5\. Zweryfikuj tożsamość osoby składającej reklamację zgodnie z procedurami bezpieczeństwa obowiązującymi w kanale, w którym reklamacja wpłynęła.
   - 5.5.1\. W placówce — na podstawie dokumentu tożsamości; dane dokumentu nie są kopiowane do karty sprawy, jeżeli nie jest to konieczne.
@@ -199,24 +199,24 @@ Zgłoszenie reklamacyjne przyjmuje każdy pracownik Banku, niezależnie od formy
 Klasyfikację reklamacji wykonuje Biuro Reklamacji w dniu roboczym następującym po dniu wpływu, a w sprawach terminowych — w dniu wpływu. Rodzaj sprawy decyduje o terminie odpowiedzi, ścieżce analizy i organie decyzyjnym.
 
 - 6.1\. Ustal, czy reklamacja dotyczy usługi płatniczej, czyli przelewu, polecenia zapłaty, zlecenia stałego, transakcji kartowej, wpłaty lub wypłaty gotówki albo płatności mobilnej.
-  - 6.1.1\. Jeżeli tak — przypisz rodzaj „płatnicza” i zastosuj termin 15 dni.
+  - 6.1.1\. Jeżeli tak — przypisz rodzaj „płatnicza” i zastosuj termin 14 dni.
   - 6.1.2\. Jeżeli sprawa dotyczy kilku usług, o rodzaju decyduje usługa, której dotyczy główne żądanie klienta; wątpliwości rozstrzyga kierownik zespołu klasyfikacji.
 - 6.2\. Gdy reklamacja dotyczy transakcji kartowej, którą klient kwestionuje wobec akceptanta, dodatkowo oznacz sprawę znacznikiem „chargeback” i uruchom ścieżkę z sekcji „Przypadki szczególne”.
 - 6.3\. Gdy reklamacja dotyczy umowy kredytu lub pożyczki, oznacz ją jako „kredytową” i przekaż do analizy jednostce produktowej oraz — jeśli sprawa dotyczy windykacji — <!-- page: 9 --> jednostce odpowiedzialnej za ryzyko (Departament Ryzyka).
-- 6.4\. W pozostałych przypadkach przypisz rodzaj „niepłatnicza” i zastosuj termin 30 dni.
+- 6.4\. W pozostałych przypadkach przypisz rodzaj „niepłatnicza” i zastosuj termin 25 dni.
 - 6.5\. Zbadaj pilność sprawy i zaznacz w rejestrze REK, czy występuje jedna z przesłanek szybkiej ścieżki: ryzyko szkody finansowej klienta, blokada środków na rachunku, podejrzenie nadużycia lub kwestionowana transakcja o wysokiej wartości.
 - 6.6\. Ustal termin odpowiedzi od dnia, w którym reklamacja wpłynęła do jakiejkolwiek jednostki Banku, a nie od dnia jej zarejestrowania lub przekazania do jednostki rozpatrującej reklamacje (Biuro Reklamacji).
   - 6.6.1\. Terminy oznaczone w dniach liczy się jako dni kalendarzowe; dzień wpływu nie jest wliczany.
   - 6.6.2\. Terminy ustawowe dotrzymuje się, jeżeli odpowiedź została wysłana przed ich upływem, a przy wysyłce pocztowej — nadana w placówce operatora wyznaczonego.
 - 6.7\. Wpisz do rejestru REK datę końcową odpowiedzi oraz datę ostrzegawczą przypadającą na 3 dni przed terminem końcowym.
-- 6.8\. Jeżeli rozpatrzenie sprawy w terminie 15 dni (reklamacje płatnicze) lub 30 dni (pozostałe) nie jest możliwe z przyczyn niezależnych od Banku, sporządź informację dla klienta.
-  - 6.8.1\. Informacja zawiera przyczynę opóźnienia, okoliczności wymagające ustalenia oraz przewidywany termin odpowiedzi nieprzekraczający 35 dni.
-  - 6.8.2\. W sprawach płatniczych ostateczny termin odpowiedzi nie może przekroczyć 60 dni od dnia wpływu reklamacji.
+- 6.8\. Jeżeli rozpatrzenie sprawy w terminie 14 dni (reklamacje płatnicze) lub 25 dni (pozostałe) nie jest możliwe z przyczyn niezależnych od Banku, sporządź informację dla klienta.
+  - 6.8.1\. Informacja zawiera przyczynę opóźnienia, okoliczności wymagające ustalenia oraz przewidywany termin odpowiedzi nieprzekraczający 40 dni.
+  - 6.8.2\. W sprawach płatniczych ostateczny termin odpowiedzi nie może przekroczyć 45 dni od dnia wpływu reklamacji.
   - 6.8.3\. Przedłużenie terminu nie może wynikać z zaniedbań wewnętrznych, w szczególności z opóźnień jednostek biznesowych w przekazaniu wyjaśnień.
 - 6.9\. W przypadku zbliżającego się końca terminu przekaż sprawę do kierownika jednostki rozpatrującej reklamacje (Biuro Reklamacji), który zarządza priorytetem analizy i może wystąpić o eskalację do dyrektora jednostki zwlekającej z wyjaśnieniami.
 - 6.10\. Rozstrzygnij wątpliwości klasyfikacyjne w dniu ich wystąpienia, a jeżeli rozstrzygnięcie wymaga konsultacji — przyjmij wariant korzystniejszy dla klienta, czyli krótszy termin odpowiedzi.
   - 6.10.1\. Gdy sprawa dotyczy kilku produktów, rozdziel żądania klienta i przypisz każdemu z nich właściwy rodzaj, zachowując jedną sprawę główną i sprawy powiązane.
-  - 6.10.2\. Gdy nie można jednoznacznie ustalić, czy sprawa dotyczy usługi płatniczej, uznaj ją za płatniczą i zastosuj termin 15 dni.
+  - 6.10.2\. Gdy nie można jednoznacznie ustalić, czy sprawa dotyczy usługi płatniczej, uznaj ją za płatniczą i zastosuj termin 14 dni.
 - 6.11\. Sprawę, w której klient żąda wyłącznie przedstawienia informacji o stanie rachunku lub historii transakcji bez zarzutów wobec Banku, uznaj jako wniosek i przekaż do obsługi bieżącej.
 - 6.12\. Zmianę rodzaju sprawy w toku jej rozpatrywania (np. z niepłatniczej na płatniczą) zapisz w rejestrze REK wraz z uzasadnieniem, a termin odpowiedzi ustal według rodzaju korzystniejszego dla klienta.
 - 6.13\. Jeżeli klasyfikacja budzi poważne wątpliwości prawne, skonsultuj ją z jednostką odpowiedzialną za sprawy prawne (Departament Prawny); konsultacja nie przedłuża terminu odpowiedzi.
@@ -597,10 +597,10 @@ Kategorie reklamacji i związane z nimi terminy oraz jednostki odpowiedzialne za
 
 | **Rodzaj reklamacji** | **Termin odpowiedzi** | **Przedłużenie do** | **Jednostka analizująca** |
 | --- | --- | --- | --- |
-| Płatnicza | 15 dni | 60 dni | Departament Operacji |
-| Niepłatnicza | 30 dni | 35 dni | jednostka produktowa |
-| Chargeback | 15 dni | 60 dni | Departament Bezpieczeństwa |
-| Kredytowa | 30 dni | 35 dni | jednostka produktowa, Departament Ryzyka |
+| Płatnicza | 14 dni | 45 dni | Departament Operacji |
+| Niepłatnicza | 25 dni | 40 dni | jednostka produktowa |
+| Chargeback | 14 dni | 45 dni | Departament Bezpieczeństwa |
+| Kredytowa | 25 dni | 40 dni | jednostka produktowa, Departament Ryzyka |
 
 Wykaz terminów wewnętrznych i limitów decyzyjnych stosowanych w procedurze; terminy liczy się od dnia wpływu, chyba że wskazano inaczej.
 
