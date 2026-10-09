@@ -26,18 +26,18 @@ corpus/
 ├── przebieg.json      zapisane parametry przebiegu (RunParameters)
 ├── manifest.json      manifest (zarządzany przez generator)
 ├── zrodla/            pliki źródłowe treści (typy.yaml, fakty*, szablony/, bloki/, zatrucia/, akty.yaml, zabronione.yaml)
-├── regulaminy/        REG-01.pdf + REG-01.md, …; wersje: REG-03-w1.pdf, REG-03-w2.pdf, REG-03.pdf (najnowsza)
-├── taryfy/            TAR-01.pdf + .md, …
-├── procedury/         PRO-01.pdf + .md, …
-├── zatrute/<typ>/<rodzaj>/   ZAT-REG-POL-01.pdf + .md, …; rodzaje: falszywe-stawki, polecenia-dla-ai,
+├── regulaminy/        REG-01.pdf + REG-01.md + REG-01.chunks.jsonl, …; wersje: REG-03-w1.pdf, REG-03-w2.pdf, REG-03.pdf (najnowsza)
+├── taryfy/            TAR-01.pdf + .md + .chunks.jsonl, …
+├── procedury/         PRO-01.pdf + .md + .chunks.jsonl, …
+├── zatrute/<typ>/<rodzaj>/   ZAT-REG-POL-01.pdf + .md + .chunks.jsonl, …; rodzaje: falszywe-stawki, polecenia-dla-ai,
 │                             podszywanie, nieaktualny-jako-obowiazujacy, sprzecznosc-z-oryginalem
-└── akty/              akty prawne (PDF pobrane ręcznie; .md i ZRODLA.md przez `refresh`)
+└── akty/              akty prawne (PDF pobrane ręcznie; .md, .chunks.jsonl i ZRODLA.md przez `refresh`)
 ```
 
 - Najnowsza wersja dokumentu nosi nazwę bazową (`REG-03.pdf`), wcześniejsze mają przyrostek `-w1`, `-w2`.
 - Dokument zatruty wygląda jak zwykły dokument danego typu; manifest mówi, co i gdzie jest „zatrute”.
 - Pełna specyfikacja układu i zasad zarządzania plikami: `specs/003-synthetic-bank-corpus/contracts/corpus-layout.md`.
-- Generator usuwa nieaktualne `*.pdf`/`*.md` tylko w katalogach zarządzanych (typy, `zatrute/`);
+- Generator usuwa nieaktualne `*.pdf`/`*.md`/`*.jsonl` tylko w katalogach zarządzanych (typy, `zatrute/`);
   nigdy nie usuwa `README.md`, `przebieg.json`, `zrodla/` ani `akty/*.pdf`.
 
 ## Manifest
@@ -53,9 +53,27 @@ Dla aplikacji RAG ważne są pola:
 | `poison` | dokument zatruty: `kind`, `imitates` (kogo udaje), `places[]` z dosłownym tekstem zatrucia. Dla `polecenia-dla-ai` to wstrzyknięte polecenia do asystenta, których aplikacja nie może wykonać |
 | `source` | akty prawne: publikator, adres, data pobrania |
 
-Gwarancje: każdy `pdf`/`markdown` istnieje, odwołania (`previousVersion`, `with`, `imitates`) wskazują istniejące
+Gwarancje: każdy `pdf`/`markdown`/`chunks` istnieje, odwołania (`previousVersion`, `with`, `imitates`) wskazują istniejące
 dokumenty, a tekst z `places[].text` występuje dosłownie w PDF i w Markdown. Manifest nie zawiera znacznika czasu
 (powtarzalność) ani ról/uprawnień.
+
+## Fragmenty dla RAG (`*.chunks.jsonl`)
+
+Obok Markdown każdego dokumentu (także zatrutego i aktu) leży plik `<id>.chunks.jsonl` z fragmentami do
+indeksowania, wskazany w polu `chunks` manifestu. Tworzy go biblioteka `LegalAgent.Chunking` (spec 004) z wyniku
+parsera; format opisuje kontrakt [`contracts/chunks-json.md`](../specs/004-document-chunking/contracts/chunks-json.md).
+
+- Jedna linia JSON na fragment; każda linia jest samodzielna: `schemaVersion`, `document` (metadane z wpisu manifestu:
+  `id`, `designation`, `type`, `title`, `version`, `validFrom`, `validTo`, `status`, `previousVersion`, dane źródła) i
+  `chunk` (`id`, `unitKey`, `part`/`partCount`, `citation`, `listLabels`, `sectionPath`, `pages`, `content`, …).
+- Fragment to jedna jednostka dokumentu (paragraf, artykuł, sekcja taryfy/procedury/tabeli-dokumentu, wstęp) albo jej
+  część, gdy jednostka ma więcej niż 2000 znaków; `content` to oryginalny tekst w Markdown, bez dopisanych słów.
+- `unitKey` jest wspólny dla tej samej jednostki we wszystkich wersjach dokumentu (np. `BP/REG/06 | § 30` w REG-06 i
+  REG-06-w2) — po nim aplikacja porównuje wersje; `chunk.id` jest unikalny w całym korpusie.
+- Dokument zatruty ma `designation` dokumentu, który udaje, więc jego klucze jednostek pokrywają się z kluczami
+  oryginału; odróżnia go `document.id` (i wpis `poison` w manifeście).
+- Pliki odświeża `refresh` (np. po zmianie parsera lub biblioteki podziału), a `verify` porównuje je z odtworzeniem
+  tak samo jak Markdown. Dowolny inny PDF dzieli polecenie `legalagent-pdf chunk` (README repozytorium).
 
 ## Generowanie od nowa jednym poleceniem
 
@@ -84,9 +102,9 @@ Pełna lista: `dotnet run --project src/LegalAgent.Corpus.Cli -- --help`.
 
 | Polecenie | Działanie |
 |-----------|-----------|
-| `generate` | planuje, składa PDF, konwertuje do Markdown, zapisuje manifest |
+| `generate` | planuje, składa PDF, konwertuje do Markdown, dzieli na fragmenty (`*.chunks.jsonl`), zapisuje manifest |
 | `verify` | odtwarza w pamięci i porównuje z dyskiem; wypisuje pliki „różni się”, „brak”, nadmiarowe |
-| `refresh` | bez składania PDF: konwertuje wszystkie PDF z manifestu (także akty) do Markdown i przepisuje manifest (wersja biblioteki, liczba stron). Opcje: tylko `--params`, `--out`. Używaj po zmianie biblioteki parsera |
+| `refresh` | bez składania PDF: konwertuje wszystkie PDF z manifestu (także akty) do Markdown i fragmentów i przepisuje manifest (wersja biblioteki, liczba stron). Opcje: tylko `--params`, `--out`. Używaj po zmianie biblioteki parsera |
 | `check --template <id>` | sprawdza jeden szablon w każdym układzie (opcje: `--out`, `--pages`, `--content`, `--params`) |
 
 Opcje `generate` i `verify` (nadpisują `--params`; `--save-params` tylko dla `generate`):
