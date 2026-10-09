@@ -183,15 +183,16 @@ regulaminów → pomiar → poprawki R11; (4) taryfy; (5) procedury; (6) wersje/
 
 - Generator `LegalAgent.Corpus` + CLI `LegalAgent.Corpus.Cli` (`generate`, `refresh`, `verify`, `check`,
   wszystkie opcje z contracts/cli.md), treść w `corpus/zrodla/` (YAML), instrukcja `corpus/README.md`.
-- Korpus w repozytorium (`corpus/przebieg.json`, ziarno 20261008): 83 wpisy manifestu — 30 dokumentów
+- Korpus w repozytorium (`corpus/przebieg.json`, ziarno 20261008): 86 wpisów manifestu — 30 dokumentów
   bazowych (po 10 regulaminów, taryf, procedur, 6 układów), 13 wcześniejszych wersji (3 dokumenty na
   typ w 2–3 wersjach), po 2 nieaktualne na typ, 4 pary sprzeczne (po 1 na typ + regulamin–taryfa),
-  30 zatrutych (5 rodzajów × 3 typy × 2) i 10 aktów prawnych (6 z testów parsera, 4 pobrane z
+  33 zatrute (5 rodzajów × 3 typy × 2, a `polecenia-dla-ai` × 3, by wystąpiły też warianty jawne
+  FR-132) i 10 aktów prawnych (6 z testów parsera, 4 pobrane z
   Dziennika Ustaw wg R12). Rozmiar: ≈ 13 MB PDF syntetycznych + 20 MB aktów.
 - Testy: próbka (`CorpusSampleTests`, w każdym przebiegu) i pełny korpus (`CorpusFullTests`,
   `LEGALAGENT_CORPUS_FULL=1`, krok CI „Corpus full”), `verify` w CI, SC-021 jako test wydajności.
 
-**Metryki** (pomiar w research.md „Pomiar korpusu (T076)”): wszystkie 73 dokumenty syntetyczne i
+**Metryki** (pomiar w research.md „Pomiar korpusu (T076)”): wszystkie 76 dokumentów syntetycznych i
 zatrute spełniają SC-022 – SC-026 (0 słów spoza PDF, ≥ 99,8% słów, nagłówki ≥ 98%, fałszywe ≤ 1%,
 listy ≥ 98%, 100% stawek w wierszu i taryf jako jednej tabeli GFM); SC-020, SC-023 (100% tekstów
 zatruć dosłownie w Markdown), SC-027, SC-028, SC-031 — zielone; `generate` całego korpusu ≈ 1,5 min.
