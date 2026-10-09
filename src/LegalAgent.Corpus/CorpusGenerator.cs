@@ -129,8 +129,108 @@ public static class CorpusGenerator
         string templateId,
         string? outputDirectory,
         CorpusGeneratorOptions? options = null,
-        CancellationToken cancellationToken = default) =>
-        throw new NotImplementedException();
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(parameters);
+        ArgumentNullException.ThrowIfNull(templateId);
+        options ??= new CorpusGeneratorOptions();
+        return CheckTemplateCoreAsync(parameters, templateId, outputDirectory, options, cancellationToken);
+    }
+
+    private static async Task<TemplateCheckReport> CheckTemplateCoreAsync(
+        RunParameters parameters,
+        string templateId,
+        string? outputDirectory,
+        CorpusGeneratorOptions options,
+        CancellationToken cancellationToken)
+    {
+        ContentLibrary content = ContentLoader.Load(Resolve(options.BaseDirectory, parameters.ContentDirectory));
+        DocumentTemplate template = content.Templates.FirstOrDefault(t => t.Id == templateId)
+            ?? throw new CorpusGenerationException("Nieznany szablon: " + templateId) { Template = templateId };
+        DocumentTypeDef type = content.Types.First(t => t.Id == template.Type);
+
+        // The pool the template would get if it were the only template of its topic.
+        var categories = template.Sections.Where(s => s.Optional is not null).SelectMany(s => s.Optional!.Categories).ToHashSet(StringComparer.Ordinal);
+        var required = content.Templates.SelectMany(t => t.Sections).SelectMany(s => s.Required).ToHashSet(StringComparer.Ordinal);
+        var pool = content.Blocks
+            .Where(b => !b.Shared && b.Types.Contains(type.Id) && categories.Contains(b.Category) && !required.Contains(b.Id)
+                && (b.Topics.Count == 0 || b.Topics.Contains(template.Topic)))
+            .Select(b => b.Id)
+            .Order(StringComparer.Ordinal)
+            .ToList();
+
+        string id = type.Prefix + "-01";
+        var plan = new DocumentPlan
+        {
+            Id = id,
+            Type = type.Id,
+            Prefix = type.Prefix,
+            Designation = type.DesignationPattern.Replace("{prefiks}", type.Prefix, StringComparison.Ordinal).Replace("{nn}", "01", StringComparison.Ordinal),
+            Template = template.Id,
+            Layout = template.Layouts[0],
+            ValidFrom = new DateOnly(parameters.ReferenceDate.Year, parameters.ReferenceDate.Month, 1).AddMonths(-1),
+            BlockPool = pool,
+            TargetPages = (parameters.Pages.Min + parameters.Pages.Max) / 2,
+            Seed = Random.DeterministicRandom.DeriveSeed(parameters.Seed, "dokument", id),
+        };
+
+        var violations = new List<CheckViolation>(CorpusChecks.TemplateStructure(content).Where(v => v.Template == template.Id));
+        var layouts = new List<LayoutCheck>();
+        var written = new List<string>();
+        int requiredWords = 0;
+        int optionalWords = 0;
+        IPdfMarkdownConverter converter = Converter(parameters, options);
+        foreach (string layout in template.Layouts)
+        {
+            DocumentPlan doc = plan with { Layout = layout };
+            LayoutStyle style = LayoutStyles.Get(layout);
+            int capacity = Composition.DocumentComposer.OptionalCapacity(doc, content);
+            Composition.CompositionResult least = Composition.DocumentComposer.Compose(doc, content, parameters.Seed, 0);
+            Composition.CompositionResult most = Composition.DocumentComposer.Compose(doc, content, parameters.Seed, capacity);
+            TypesetResult leastSet = Typesetter.Typeset(least.Document, style);
+            TypesetResult mostSet = Typesetter.Typeset(most.Document, style);
+            if (layouts.Count == 0)
+            {
+                requiredWords = leastSet.Truth.Words.Count;
+                optionalWords = mostSet.Truth.Words.Count - requiredWords;
+                violations.AddRange(CorpusChecks.References(most.Unresolved));
+                violations.AddRange(CorpusChecks.ForbiddenNames(
+                    most.Blocks.Select(b => new RenderedText(id, b.BlockId, b.Text)).Append(new RenderedText(id, null, most.Document.Front.Title)),
+                    content.ForbiddenNames));
+            }
+
+            FitResult? fit = null;
+            string? error = null;
+            try
+            {
+                fit = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages);
+            }
+            catch (CorpusGenerationException ex)
+            {
+                error = ex.Message;
+            }
+
+            double share = fit is null ? SharedShare(new FitResult(most, mostSet, 0)) : SharedShare(fit);
+            if (fit is not null && share > parameters.MaxSharedShare / 100.0)
+            {
+                violations.AddRange(CorpusChecks.SharedShare([new DocumentWords(id, fit.Typeset.Truth.Words.Count, SharedWords(fit))], parameters.MaxSharedShare / 100.0));
+            }
+
+            layouts.Add(new LayoutCheck(layout, leastSet.PageCount, mostSet.PageCount, capacity, fit?.Typeset.PageCount, error, Math.Round(share, 3)));
+            if (outputDirectory is not null)
+            {
+                TypesetResult sample = fit?.Typeset ?? mostSet;
+                string stem = Path.Combine(Resolve(options.BaseDirectory, outputDirectory), template.Id + "." + layout);
+                string md = await ConvertAsync(converter, sample.Pdf, template.Id + "." + layout + ".pdf", cancellationToken).ConfigureAwait(false);
+                CorpusWriter.WriteAtomic(stem + ".pdf", sample.Pdf);
+                CorpusWriter.WriteAtomic(stem + ".md", CorpusWriter.TextBytes(md));
+                written.Add(stem + ".pdf");
+                written.Add(stem + ".md");
+            }
+        }
+
+        return new TemplateCheckReport(template.Id, type.Id, requiredWords, optionalWords, layouts, violations, written);
+    }
 
     internal static string Resolve(string baseDirectory, string path) =>
         Path.GetFullPath(Path.IsPathRooted(path) ? path : Path.Combine(baseDirectory, path));
