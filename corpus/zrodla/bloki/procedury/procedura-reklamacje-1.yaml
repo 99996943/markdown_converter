@@ -1,0 +1,152 @@
+bloki:
+  - id: procedura-reklamacje-cel
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: cel
+    elementy:
+      - akapit: "{Celem|Przedmiotem} procedury jest {ustalenie|określenie} jednolitych zasad {przyjmowania|rejestrowania}, rozpatrywania i dokumentowania reklamacji składanych przez klientów {{param:bank}} (dalej: Bank), tak aby każda reklamacja została rozpatrzona rzetelnie, w terminie i z zachowaniem wymogów wynikających z przepisów prawa."
+      - ustep: "Procedura służy w szczególności do:"
+        punkty:
+          - "zapewnienia, że reklamacja złożona w dowolnym kanale kontaktu jest {zarejestrowana|wpisana do rejestru} w dniu wpływu i trafia do właściwej jednostki;"
+          - "{ujednolicenia|wyznaczenia jednego standardu} klasyfikacji spraw na płatnicze, niepłatnicze, dotyczące transakcji kartowych oraz kredytów;"
+          - "dotrzymania terminów odpowiedzi, które wyznaczają {{ref:akt:dz-u-2026-823-reklamacje}} oraz {{ref:akt:dz-u-2024-30-uslugi-platnicze}};"
+          - "{zapewnienia|zagwarantowania} spójności odpowiedzi udzielanych klientom oraz prawidłowego prowadzenia korekt i uznań rachunków;"
+          - "{wykorzystania|użycia} informacji z reklamacji do usuwania przyczyn powtarzających się błędów w produktach i procesach Banku."
+      - akapit: "Procedurę prowadzi i aktualizuje {jednostka|komórka} organizacyjna o nazwie: {{fakt:jednostka.reklamacje}}. Wersje procedury podlegają zatwierdzeniu przez Zarząd Banku."
+
+  - id: procedura-reklamacje-zakres
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: zakres
+    elementy:
+      - akapit: "Procedura obowiązuje {wszystkich pracowników|każdą osobę zatrudnioną w} Banku, które przyjmują, przekazują, analizują lub rozstrzygają reklamacje, w tym pracowników placówek, {Infolinii|centrum kontaktu}, jednostek obsługujących bankowość elektroniczną, jednostek produktowych oraz jednostki rozpatrującej reklamacje ({{fakt:jednostka.reklamacje}})."
+      - ustep: "Procedurą objęte są reklamacje {składane|zgłaszane} przez:"
+        punkty:
+          - "konsumentów, w tym osoby fizyczne prowadzące działalność gospodarczą w zakresie umów niezwiązanych z tą działalnością w sposób zawodowy;"
+          - "osoby fizyczne, prawne i jednostki organizacyjne niemające osobowości prawnej, które korzystają z usług Banku lub o ich świadczenie występują;"
+          - "pełnomocników i przedstawicieli ustawowych klientów, po zweryfikowaniu ich umocowania;"
+          - "spadkobierców klienta w zakresie, w jakim dochodzą praw wynikających z umów zawartych przez spadkodawcę."
+      - ustep: "Procedura {nie dotyczy|nie obejmuje}:"
+        punkty:
+          - "zapytań, próśb o informację i wniosków, które nie zawierają zastrzeżeń dotyczących działania Banku — te załatwia się w trybie bieżącej obsługi;"
+          - "skarg pracowniczych i uwag dostawców, które rozpatruje się według odrębnych zasad;"
+          - "wezwań i pism procesowych kierowanych przez organy państwa, sądy i komorników — te obsługuje {{fakt:jednostka.prawny}}."
+      - akapit: "Zasady prezentowane klientom opisano w regulaminach produktowych; w razie rozbieżności w kwestiach wewnętrznego trybu postępowania pierwszeństwo ma niniejsza procedura, a w kwestiach praw klienta — przepisy prawa i umowa."
+
+  - id: procedura-reklamacje-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: odpowiedzialnosci
+    elementy:
+      - akapit: "Za prawidłowe stosowanie procedury odpowiadają jednostki i stanowiska wskazane poniżej. Zakresy odpowiedzialności {uzupełnia|doprecyzowuje} regulamin organizacyjny Banku."
+      - ustep: "**Pracownik placówki i centrum kontaktu** odpowiada za:"
+        punkty:
+          - "przyjęcie reklamacji niezależnie od formy jej złożenia i niedopuszczalność odmowy jej przyjęcia;"
+          - "ustalenie danych niezbędnych do rozpatrzenia sprawy i prawidłową identyfikację klienta;"
+          - "wpisanie reklamacji do rejestru reklamacji {{fakt:system.reklamacje-proc.rejestr}} (dalej: rejestr REK) w dniu wpływu;"
+          - "{poinformowanie|przekazanie klientowi informacji} o przewidywanym terminie odpowiedzi i sposobie jej doręczenia."
+      - ustep: "**Kierownik placówki** {odpowiada|jest odpowiedzialny} za:"
+        punkty:
+          - "nadzór nad prawidłowym przyjmowaniem reklamacji w placówce oraz codzienną kontrolę przesyłek wpływających pocztą;"
+          - "rozstrzyganie reklamacji prostych w ramach limitu {{fakt:limit.reklamacje-proc.kierownik-placowki}}, jeżeli wyjaśnienie nie wymaga analizy innej jednostki;"
+          - "przekazywanie pozostałych spraw do jednostki rozpatrującej reklamacje ({{fakt:jednostka.reklamacje}}) w terminie {{fakt:termin.reklamacje-proc.przekazanie}}."
+      - ustep: "**{{fakt:jednostka.reklamacje}}** — właściciel procedury — odpowiada za:"
+        punkty:
+          - "prowadzenie rejestru REK, klasyfikację reklamacji i nadzór nad terminami;"
+          - "koordynację analizy z jednostkami biznesowymi oraz przygotowanie projektu odpowiedzi;"
+          - "podejmowanie decyzji w granicach limitu {{fakt:limit.reklamacje-proc.biuro}} oraz przedstawianie spraw przekraczających ten limit właściwym organom decyzyjnym;"
+          - "kontakt z Rzecznikiem Finansowym, raportowanie i kontrolę jakości."
+      - ustep: "**Jednostki biznesowe i operacyjne** (m.in. {{fakt:jednostka.operacje}}, jednostki produktowe, {{fakt:jednostka.obsluga-klienta}}) {odpowiadają|są odpowiedzialne} za rzetelne i kompletne wyjaśnienia przekazane w terminie {{fakt:termin.reklamacje-proc.odpowiedz-jednostki}} od otrzymania zapytania oraz za wykonanie korekt przyznanych w decyzji."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** {odpowiada|jest odpowiedzialny} za ocenę zgodności procedury z przepisami, opiniowanie jej zmian oraz za kontrolę drugiej linii obrony. **{{fakt:jednostka.prawny}}** {opiniuje sprawy sporne|wydaje opinie w sprawach spornych}, wymagających wykładni przepisów lub zagrożonych procesem sądowym."
+      - ustep: "**{{fakt:jednostka.bezpieczenstwo}}** {bada|analizuje} reklamacje dotyczące podejrzeń nadużyć, nieautoryzowanych transakcji i kradzieży tożsamości."
+
+  - id: procedura-reklamacje-definicje
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: definicje
+    elementy:
+      - ustep: "Ponadto w procedurze stosuje się następujące określenia:"
+        punkty:
+          - "**Reklamacja** — {wystąpienie|oświadczenie} klienta skierowane do Banku, w którym klient zgłasza zastrzeżenia dotyczące usług świadczonych przez Bank;"
+          - "**Reklamacja płatnicza** — reklamacja dotycząca usług płatniczych, w tym przelewów, poleceń zapłaty, zleceń stałych, transakcji kartowych i płatności mobilnych;"
+          - "**Reklamacja niepłatnicza** — reklamacja {dotycząca|odnosząca się do} innych produktów i usług Banku, w szczególności rachunków, lokat, opłat, obsługi i bankowości elektronicznej;"
+          - "**Reklamacja kredytowa** — reklamacja dotycząca umowy kredytu, pożyczki lub limitu, w tym naliczonych odsetek, opłat, harmonogramu i windykacji;"
+          - "**Chargeback** — procedura sporu z akceptantem prowadzona w ramach zasad organizacji kartowej, w której Bank {wnosi o|żąda} zwrot wartości spornej transakcji kartowej;"
+          - "**Rejestr REK** — rejestr reklamacji {{fakt:system.reklamacje-proc.rejestr}}, w którym ewidencjonuje się wszystkie reklamacje i czynności podjęte w sprawie;"
+          - "**Termin ustawowy** — termin udzielenia odpowiedzi na reklamację, który określa {{ref:akt:dz-u-2026-823-reklamacje}} lub, w sprawach płatniczych, {{ref:akt:dz-u-2024-30-uslugi-platnicze}};"
+          - "**Uznanie rachunku** — {zwiększenie|podwyższenie} salda rachunku klienta w następstwie uwzględnienia reklamacji;"
+          - "**Odwołanie** — wystąpienie klienta o ponowne rozpatrzenie sprawy po otrzymaniu odpowiedzi na reklamację;"
+          - "**Karta sprawy** — zbiór dokumentów i zapisów dotyczących jednej reklamacji, prowadzony w elektronicznym archiwum dokumentów {{fakt:system.reklamacje-proc.archiwum}}."
+
+  - id: procedura-reklamacje-schemat
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: schemat
+    elementy:
+      - schemat:
+          - nazwa: "Przyjęcie"
+            wyjasnienie: "Pracownik {przyjmuje|rejestruje} reklamację w dowolnym kanale i wpisuje ją do rejestru REK w dniu wpływu. Klient otrzymuje potwierdzenie przyjęcia."
+          - nazwa: "Klasyfikacja"
+            wyjasnienie: "{{fakt:jednostka.reklamacje}} przypisuje sprawie rodzaj: płatnicza, niepłatnicza, kartowa lub kredytowa. Rodzaj sprawy {wyznacza|określa} termin odpowiedzi i ścieżkę analizy."
+          - nazwa: "Analiza"
+            wyjasnienie:
+              - "{{fakt:jednostka.reklamacje}} zbiera dokumenty i występuje do jednostek biznesowych o wyjaśnienia."
+              - "Jednostki odpowiadają w wyznaczonym terminie."
+          - nazwa: "Decyzja"
+            wyjasnienie: "Właściwy organ decyzyjny uwzględnia reklamację w całości, w części albo ją oddala. Decyzja mieści się w limitach określonych w procedurze."
+          - nazwa: "Odpowiedź i uznanie"
+            wyjasnienie: "Bank {wysyła|przekazuje} klientowi odpowiedź na trwałym nośniku lub pisemnie. W razie uwzględnienia reklamacji konto klienta jest uznawane bez zbędnej zwłoki."
+          - nazwa: "Zamknięcie"
+            wyjasnienie: "{{fakt:jednostka.reklamacje}} zamyka sprawę w rejestrze REK i archiwizuje kartę sprawy. Dane trafiają do raportów i analiz jakości."
+
+  - id: procedura-reklamacje-przyjecie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok
+    elementy:
+      - kroki:
+          - tekst: "{Zweryfikuj|Potwierdź} tożsamość osoby składającej reklamację zgodnie z procedurami bezpieczeństwa obowiązującymi w kanale, w którym reklamacja wpłynęła."
+            podkroki:
+              - tekst: "W placówce — na podstawie dokumentu tożsamości; dane dokumentu nie są kopiowane do karty sprawy, jeżeli nie jest to konieczne."
+              - tekst: "Na Infolinii — metodą przewidzianą w procedurze weryfikacji telefonicznej; przy niepowodzeniu weryfikacji reklamację można przyjąć, lecz odpowiedź kieruje się wyłącznie na adres wskazany w umowie."
+          - tekst: "{Wypełnij|Uzupełnij} w rejestrze REK pola obowiązkowe: data wpływu, kanał, dane klienta, numer produktu, opis zastrzeżeń, żądanie klienta, kwota sporna i wskazanie ewentualnego pełnomocnika."
+          - tekst: "Jeżeli klient złożył reklamację na formularzu {{fakt:system.reklamacje-proc.formularz-zgloszenia}}, {dołącz|załącz} skan formularza do karty sprawy; brak użycia formularza nie jest podstawą do odmowy przyjęcia reklamacji."
+          - tekst: "{Wyślij|Przekaż} klientowi potwierdzenie przyjęcia w ciągu {{fakt:termin.reklamacje-proc.potwierdzenie}} od wpływu, a w razie przyjęcia reklamacji ustnie w placówce — wydaj je niezwłocznie."
+            podkroki:
+              - tekst: "Potwierdzenie zawiera numer sprawy, datę wpływu, przewidywany termin odpowiedzi oraz dane kontaktowe jednostki rozpatrującej reklamacje (nazwa: {{fakt:jednostka.reklamacje}})."
+              - tekst: "Potwierdzenie nie zawiera oceny zasadności reklamacji ani zapowiedzi jej rozstrzygnięcia."
+          - tekst: "Gdy dane są niekompletne i {uniemożliwiają|nie pozwalają na} rozpatrzenie sprawy, wezwij klienta do uzupełnienia w terminie {{fakt:termin.reklamacje-proc.uzupelnienie}}; termin odpowiedzi biegnie jednak od wpływu reklamacji."
+
+  - id: procedura-reklamacje-klasyfikacja
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok
+    elementy:
+      - akapit: "{Klasyfikację|Przypisanie rodzaju} reklamacji wykonuje {{fakt:jednostka.reklamacje}} w dniu roboczym następującym po dniu wpływu, a w sprawach terminowych — w dniu wpływu. Rodzaj sprawy decyduje o terminie odpowiedzi, ścieżce analizy i organie decyzyjnym."
+      - kroki:
+          - tekst: "{Ustal|Określ}, czy reklamacja dotyczy usługi płatniczej, czyli przelewu, polecenia zapłaty, zlecenia stałego, transakcji kartowej, wpłaty lub wypłaty gotówki albo płatności mobilnej."
+            podkroki:
+              - tekst: "Jeżeli tak — przypisz rodzaj „płatnicza” i zastosuj termin {{fakt:termin.reklamacja.platnicze}}."
+              - tekst: "Jeżeli sprawa dotyczy kilku usług, o rodzaju decyduje usługa, której dotyczy główne żądanie klienta; wątpliwości rozstrzyga kierownik zespołu klasyfikacji."
+          - tekst: "Gdy reklamacja dotyczy transakcji kartowej, którą klient kwestionuje wobec akceptanta, dodatkowo oznacz sprawę znacznikiem „chargeback” i uruchom ścieżkę z sekcji „Przypadki szczególne”."
+          - tekst: "Gdy reklamacja dotyczy umowy kredytu lub pożyczki, oznacz ją jako „kredytową” i przekaż do analizy jednostce produktowej oraz — jeśli sprawa dotyczy windykacji — jednostce odpowiedzialnej za ryzyko ({{fakt:jednostka.ryzyko}})."
+          - tekst: "W pozostałych przypadkach przypisz rodzaj „niepłatnicza” i zastosuj termin {{fakt:termin.reklamacja.inne}}."
+          - tekst: "{Oceń|Zbadaj} pilność sprawy i zaznacz w rejestrze REK, czy występuje jedna z przesłanek szybkiej ścieżki: ryzyko szkody finansowej klienta, blokada środków na rachunku, podejrzenie nadużycia lub kwestionowana transakcja o wysokiej wartości."
+
+  - id: procedura-reklamacje-terminy
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok
+    elementy:
+      - kroki:
+          - tekst: "{Wylicz|Ustal} termin odpowiedzi od dnia, w którym reklamacja wpłynęła do jakiejkolwiek jednostki Banku, a nie od dnia jej zarejestrowania lub przekazania do jednostki rozpatrującej reklamacje ({{fakt:jednostka.reklamacje}})."
+            podkroki:
+              - tekst: "Terminy oznaczone w dniach liczy się jako dni kalendarzowe; dzień wpływu nie jest wliczany."
+              - tekst: "Terminy ustawowe dotrzymuje się, jeżeli odpowiedź została wysłana przed ich upływem, a przy wysyłce pocztowej — nadana w placówce operatora wyznaczonego."
+          - tekst: "{Wprowadź|Wpisz} do rejestru REK datę końcową odpowiedzi oraz datę ostrzegawczą przypadającą na {{fakt:termin.reklamacje-proc.alert}} przed terminem końcowym."
+          - tekst: "Jeżeli rozpatrzenie sprawy w terminie {{fakt:termin.reklamacja.platnicze}} (reklamacje płatnicze) lub {{fakt:termin.reklamacja.inne}} (pozostałe) nie jest możliwe z przyczyn niezależnych od Banku, {przygotuj|sporządź} informację dla klienta."
+            podkroki:
+              - tekst: "Informacja zawiera przyczynę opóźnienia, okoliczności wymagające ustalenia oraz przewidywany termin odpowiedzi nieprzekraczający {{fakt:termin.reklamacja.przedluzenie}}."
+              - tekst: "W sprawach płatniczych ostateczny termin odpowiedzi nie może przekroczyć {{fakt:termin.reklamacja.maksymalny}} od dnia wpływu reklamacji."
+              - tekst: "Przedłużenie terminu nie może wynikać z zaniedbań wewnętrznych, w szczególności z opóźnień jednostek biznesowych w przekazaniu wyjaśnień."
+          - tekst: "W przypadku zbliżającego się końca terminu przekaż sprawę do kierownika jednostki rozpatrującej reklamacje ({{fakt:jednostka.reklamacje}}), który zarządza priorytetem analizy i może wystąpić o eskalację do dyrektora jednostki zwlekającej z wyjaśnieniami."

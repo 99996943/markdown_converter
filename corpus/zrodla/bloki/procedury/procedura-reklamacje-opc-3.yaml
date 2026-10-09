@@ -1,0 +1,172 @@
+bloki:
+  - id: procedura-reklamacje-szcz-masowe
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Błędy masowe i awarie.** Gdy ta sama nieprawidłowość dotyczy wielu klientów (np. podwójne obciążenia, nieprawidłowe naliczenie opłaty, niedostępność bankowości elektronicznej), {{fakt:jednostka.reklamacje}} {uruchamia|wdraża} tryb postępowania zbiorczego."
+      - ustep: "W trybie zbiorczym:"
+        punkty:
+          - "wyznacza się koordynatora sprawy, który odpowiada za spójność odpowiedzi i raportowanie postępów do Zarządu Banku;"
+          - "jednostka produktowa lub operacyjna {przygotowuje|sporządza} wykaz poszkodowanych klientów wraz z kwotami korekt, który podlega weryfikacji w jednostce zgodności ({{fakt:jednostka.zgodnosc}});"
+          - "klientów zgłaszających się w tej sprawie rejestruje się jako reklamacje powiązane, a odpowiedzi udziela się zgodnie ze wzorem zatwierdzonym przez koordynatora, uzupełnionym o dane indywidualne;"
+          - "korekty wykonuje się z urzędu także wobec klientów, którzy nie złożyli reklamacji, jeżeli decyzja organu decyzyjnego tak stanowi;"
+          - "po zakończeniu sprawy koordynator {sporządza|przygotowuje} raport końcowy zawierający przyczyny, liczbę klientów, kwoty korekt i działania zapobiegawcze."
+      - akapit: "Terminy odpowiedzi dla reklamacji składanych w ramach błędu masowego liczy się indywidualnie dla każdej reklamacji; decyzja zbiorcza nie przedłuża tych terminów."
+
+  - id: procedura-reklamacje-szcz-wsparcie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Klienci wymagający szczególnego wsparcia.** Przy obsłudze osób starszych, z niepełnosprawnościami, niewidomych i niesłyszących, osób niemających pełnej zdolności do czynności prawnych oraz klientów, którzy nie posługują się językiem polskim w stopniu umożliwiającym zrozumienie procedury, pracownik {dostosowuje|zapewnia dostosowanie} sposób obsługi do potrzeb klienta."
+      - ustep: "{W szczególności|Zwłaszcza}:"
+        punkty:
+          - "w placówce umożliwia się złożenie reklamacji przy pomocy osoby zaufanej lub tłumacza, a w razie potrzeby — z użyciem tłumacza języka migowego udostępnionego przez Bank;"
+          - "odpowiedź przygotowuje się w formie dostępnej dla klienta, np. wydrukowanej większą czcionką lub przekazanej w sposób dźwiękowy;"
+          - "w sprawach klientów w wieku powyżej 65 lat, dotyczących utraty oszczędności lub wyłudzenia środków, stosuje się szybką ścieżkę z udziałem jednostki odpowiedzialnej za bezpieczeństwo ({{fakt:jednostka.bezpieczenstwo}});"
+          - "pracownik nie {wywiera presji na|naciska na} klienta w celu wycofania reklamacji ani nie zachęca go do rezygnacji z prawa do odwołania."
+      - akapit: "W przypadku wątpliwości co do zdolności klienta do czynności prawnych pracownik zasięga opinii jednostki odpowiedzialnej za sprawy prawne ({{fakt:jednostka.prawny}}) i nie odmawia przyjęcia reklamacji."
+
+  - id: procedura-reklamacje-szcz-uporczywe
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje wielokrotne i niewłaściwe zachowanie klienta.** Wielokrotne reklamacje dotyczące tej samej sprawy nie mogą być pomijane, lecz podlegają ocenie według poniższych zasad."
+      - ustep: "Reklamację {uznaje się|traktuje się} za powtórną, gdy:"
+        punkty:
+          - "dotyczy tego samego stanu faktycznego co reklamacja już rozpatrzona;"
+          - "nie zawiera nowych argumentów ani dowodów;"
+          - "została złożona po zakończeniu odwołań wewnętrznych."
+      - akapit: "Na reklamację powtórną udziela się krótkiej odpowiedzi, w której Bank {podtrzymuje|powtarza} swoje stanowisko i przywołuje wcześniejszą odpowiedź, a następnie ponownie pouczy klienta o prawie wniosku do Rzecznika Finansowego i drodze sądowej. Odpowiedzi udziela się w terminie {określonym|wskazanym} dla reklamacji; po trzeciej reklamacji powtórnej kierownik zespołu może zdecydować o tym, że kolejne pisma w tej sprawie będą jedynie rejestrowane, o czym informuje się klienta."
+      - akapit: "Wobec klientów używających wobec pracowników gróźb lub słów obraźliwych stosuje się procedurę postępowania w sytuacjach zagrożenia; samo użycie takich słów nie jest podstawą do odmowy rozpatrzenia reklamacji."
+
+  - id: procedura-reklamacje-szcz-odszkodowanie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje z roszczeniem odszkodowawczym.** {Jeżeli|Gdy} klient w reklamacji domaga się odszkodowania lub zadośćuczynienia, a roszczenie wykracza poza zwrot nienależnie pobranych kwot, sprawę rozpatruje się według poniższych zasad."
+      - ustep: "{Rozpatrzenie obejmuje|Rozpatrzenie sprawy obejmuje|Analiza obejmuje}:"
+        punkty:
+          - "ustalenie, czy po stronie Banku wystąpiło naruszenie umowy lub przepisów oraz czy istnieje związek przyczynowy ze szkodą zgłoszoną przez klienta;"
+          - "{ocenę|weryfikację} rodzaju i wysokości szkody wraz z dokumentami przedstawionymi przez klienta (rachunki, wyceny, potwierdzenia przelewów);"
+          - "uwzględnienie okoliczności, które mogły przyczynić się do szkody, w tym sposobu przechowywania danych uwierzytelniających przez klienta;"
+          - "opinię jednostki odpowiedzialnej za sprawy prawne ({{fakt:jednostka.prawny}}), która określa ryzyko procesowe."
+      - akapit: "Decyzje w sprawach z roszczeniem odszkodowawczym powyżej {{fakt:limit.reklamacje-proc.dyrektor}} podejmuje Zarząd Banku. Odpowiedź w takiej sprawie nie zawiera uznania roszczenia ani oświadczeń dotyczących zakresu odpowiedzialności, które nie zostały zatwierdzone przez jednostkę odpowiedzialną za sprawy prawne."
+
+  - id: procedura-reklamacje-szcz-dane
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje dotyczące danych osobowych.** {Jeżeli|Gdy} w reklamacji klient zgłasza zastrzeżenia dotyczące przetwarzania jego danych osobowych (np. ich udostępnienia podmiotom trzecim, niewłaściwej korekty danych lub wycieku), postępuje się według zasad określonych w {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
+      - ustep: "{W takich sprawach|W tych sprawach}:"
+        punkty:
+          - "reklamację {niezwłocznie|bez zbędnej zwłoki} przekazuje się do inspektora ochrony danych (adres: {{fakt:kontakt.email-iod}}), który ocenia, czy konieczne jest zgłoszenie naruszenia organowi nadzorczemu;"
+          - "odpowiedź uzgadnia się z inspektorem ochrony danych i z jednostką odpowiedzialną za bezpieczeństwo ({{fakt:jednostka.bezpieczenstwo}});"
+          - "w odpowiedzi informuje się klienta o przysługujących mu prawach, w tym o prawie dostępu do danych, sprostowania i usunięcia danych, a także o prawie wniesienia skargi do organu nadzorczego."
+      - akapit: "Reklamacji dotyczących danych nie rozstrzyga się w trybie szybkiej ścieżki bez udziału inspektora ochrony danych, nawet gdy kwota sporna jest niska."
+
+  - id: procedura-reklamacje-szcz-osoby-trzecie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Zgłoszenia składane przez osoby trzecie.** Zgłoszenie, w którym zastrzeżenia dotyczące usług Banku przedstawia osoba niebędąca stroną umowy, {przyjmuje się|wprowadza się} do rejestru, lecz odpowiedzi udziela się z uwzględnieniem tajemnicy bankowej."
+      - ustep: "{Przy rozpatrywaniu zgłoszenia|Rozpatrując zgłoszenie}:"
+        punkty:
+          - "jeżeli osoba trzecia przedstawia pełnomocnictwo, sprawdza się jego zakres, formę i datę, a w razie wątpliwości kontaktuje się z mocodawcą;"
+          - "jeżeli zgłoszenie składa kancelaria lub podmiot zawodowo dochodzący roszczeń, odpowiedzi udziela się wyłącznie pełnomocnikowi, po potwierdzeniu umocowania;"
+          - "jeżeli osoba trzecia nie przedstawia umocowania, informuje się ją, że Bank nie może udzielić informacji objętych tajemnicą bankową, a klientowi, którego sprawa dotyczy, przekazuje się informację o zgłoszeniu, o ile jest to możliwe."
+      - akapit: "W przypadku zgłoszeń składanych przez rodzinę zmarłego klienta {stosuje się|obowiązują} zasady określone dla spadkobierców; do udzielenia informacji wymagane jest przedstawienie odpisu aktu zgonu oraz dokumentu potwierdzającego prawo do spadku."
+
+  - id: procedura-reklamacje-kontrola-przyczyny
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-kontrola
+    elementy:
+      - akapit: "{Analiza|Badanie} przyczyn źródłowych służy usuwaniu nieprawidłowości, które powodują napływ reklamacji. Przeprowadza ją {{fakt:jednostka.reklamacje}} z udziałem jednostek produktowych co najmniej raz na kwartał."
+      - ustep: "{Analiza obejmuje|Zakres analizy obejmuje}:"
+        punkty:
+          - "zestawienie reklamacji według produktów, procesów i przyczyn (błąd Banku, błąd klienta, działanie podmiotu trzeciego, awaria systemu, niejasne zapisy umowy);"
+          - "identyfikację procesów, w których udział reklamacji uznanych przekracza poziom {{fakt:prog.reklamacje-proc.uznane}};"
+          - "ocenę udziału reklamacji powtórnych w ogólnej liczbie reklamacji, z poziomem ostrzegawczym {{fakt:prog.reklamacje-proc.powtorne}};"
+          - "wskazanie obszarów, w których niejasne informacje dla klientów lub nieprecyzyjne zapisy regulaminów prowadzą do nieporozumień."
+      - akapit: "Wnioski z analizy {przekazuje się|przedstawia się} właścicielom produktów wraz z zaleceniami; ci przedstawiają w terminie {{fakt:termin.reklamacje-proc.uzupelnienie}} plan działań naprawczych i wyznaczają osobę odpowiedzialną za jego realizację."
+
+  - id: procedura-reklamacje-kontrola-naprawcze
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-kontrola
+    elementy:
+      - akapit: "{Działania naprawcze|Działania korygujące} wynikające z kontroli, analizy przyczyn lub zaleceń organów zewnętrznych rejestruje się w rejestrze działań naprawczych prowadzonym przez jednostkę zgodności ({{fakt:jednostka.zgodnosc}})."
+      - ustep: "Dla każdego działania {zapisuje się|odnotowuje się}:"
+        punkty:
+          - "opis nieprawidłowości i jej źródło (kontrola, skarga, zalecenie, audyt);"
+          - "zakres działania, osobę odpowiedzialną i termin wykonania;"
+          - "{sposób|metodę} weryfikacji skuteczności po wdrożeniu;"
+          - "potwierdzenie wykonania i datę zamknięcia."
+      - akapit: "Działania, których termin upłynął bez wykonania, eskaluje się do dyrektora właściwej jednostki oraz — po upływie kolejnych {{fakt:termin.reklamacje-proc.uzupelnienie}} — do Zarządu Banku. Informacje o realizacji działań naprawczych zamieszcza się w raporcie kwartalnym."
+
+  - id: procedura-reklamacje-kontrola-audyt
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-kontrola
+    elementy:
+      - akapit: "Przestrzeganie procedury podlega kontroli trzech linii obrony: bieżącej kontroli kierowników zespołów (pierwsza linia), kontroli wykonywanej przez jednostkę zgodności (druga linia) i niezależnego audytu wewnętrznego (trzecia linia)."
+      - ustep: "Audyt wewnętrzny {sprawdza|ocenia} w szczególności:"
+        punkty:
+          - "kompletność i terminowość rejestracji reklamacji we wszystkich kanałach wpływu;"
+          - "poprawność klasyfikacji i dotrzymywanie terminów ustawowych;"
+          - "zgodność decyzji z limitami i zasadą rozdziału obowiązków analityka i wykonawcy dyspozycji księgowej;"
+          - "jakość dokumentacji w kartach spraw i zgodność archiwizacji z okresami przechowywania."
+      - akapit: "Wyniki audytu {przekazuje się|przedstawia się} Zarządowi Banku oraz właścicielowi procedury. Zalecenia audytu {podlegają|są objęte} obowiązkowemu monitorowaniu do czasu ich wykonania."
+
+  - id: procedura-reklamacje-archiwizacja-udostepnianie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-archiwizacja-opc
+    elementy:
+      - akapit: "Dostęp do kart spraw {mają|posiadają} wyłącznie pracownicy, którzy potrzebują ich do wykonywania obowiązków służbowych. Każde otwarcie karty sprawy jest rejestrowane w {{fakt:system.reklamacje-proc.archiwum}}."
+      - ustep: "{Dokumentację reklamacji udostępnia się|Dokumenty z kart spraw udostępnia się}:"
+        punkty:
+          - "klientowi lub jego pełnomocnikowi — na pisemny wniosek, w zakresie dotyczącym jego sprawy, w terminie {{fakt:termin.reklamacje-proc.uzupelnienie}};"
+          - "Rzecznikowi Finansowemu, organom nadzoru i sądom — na podstawie ich wezwania, po uzyskaniu zgody jednostki odpowiedzialnej za sprawy prawne ({{fakt:jednostka.prawny}});"
+          - "audytorom wewnętrznym i zewnętrznym — na podstawie pisemnego zlecenia kontroli."
+      - akapit: "Wydanie kopii dokumentów klientowi {odnotowuje się|zapisuje się} w karcie sprawy, a wydruk opatruje się klauzulą potwierdzającą zgodność z oryginałem. Dokumentów wewnętrznych (notatek roboczych, opinii prawnych, korespondencji między jednostkami) nie udostępnia się klientowi, jeżeli nie jest to konieczne do realizacji jego praw."
+
+  - id: procedura-reklamacje-archiwizacja-niszczenie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-archiwizacja-opc
+    elementy:
+      - akapit: "Po upływie okresu przechowywania ({{fakt:okres.reklamacje-proc.archiwizacja}} od zamknięcia sprawy) karty spraw {podlegają|są objęte} procedurze brakowania, którą prowadzi jednostka zarządzająca archiwum Banku we współpracy z właścicielem procedury."
+      - ustep: "{Brakowanie przebiega następująco|Brakowanie odbywa się w następujący sposób}:"
+        punkty:
+          - "jednostka rozpatrująca reklamacje sporządza zestawienie spraw, których okres przechowywania upłynął, i potwierdza brak przeszkód do ich zniszczenia (m.in. brak toczących się postępowań);"
+          - "zestawienie zatwierdza dyrektor jednostki oraz — w zakresie ochrony danych — inspektor ochrony danych;"
+          - "dokumenty papierowe niszczy się w sposób uniemożliwiający odtworzenie ich treści, a dane elektroniczne usuwa się z systemów i kopii zapasowych w trybie przewidzianym w polityce bezpieczeństwa;"
+          - "z czynności brakowania sporządza się protokół, który przechowuje się przez kolejne {{fakt:okres.reklamacje-proc.archiwum-biezace}}."
+      - akapit: "{Dane statystyczne|Zestawienia statystyczne} i zanonimizowane zestawienia wykorzystywane w analizach jakości mogą być przechowywane po upływie okresu przechowywania kart spraw, o ile nie umożliwiają identyfikacji klientów."
+
+  - id: procedura-reklamacje-zal-przyczyny
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-zal-odpowiedz
+    elementy:
+      - akapit: "{Przykładowe|Typowe} przyczyny nieuwzględnienia reklamacji i dokumenty, które {należy|trzeba} przywołać w uzasadnieniu odpowiedzi. {Zestawienie ma charakter pomocniczy|Lista nie jest wyczerpująca}."
+      - tabela:
+          kolumny:
+            - naglowek: "Przyczyna nieuwzględnienia"
+              waga: 2
+            - naglowek: "Dokumenty wymagane w karcie sprawy"
+              waga: 3
+          wiersze:
+            - ["Operacja prawidłowo autoryzowana przez klienta", "Zapis autoryzacji, dziennik zdarzeń, metoda potwierdzenia operacji"]
+            - ["Opłata naliczona zgodnie z tabelą opłat", "Umowa, tabela opłat obowiązująca w dniu zdarzenia, wydruk naliczenia"]
+            - ["Roszczenie wniesione po terminie na zgłoszenie", "Data obciążenia, data zgłoszenia, potwierdzenie przyjęcia reklamacji"]
+            - ["Brak dowodów uzasadniających zarzut", "Wezwanie klienta do uzupełnienia, brak odpowiedzi lub niekompletne dokumenty"]
+            - ["Sprawa dotyczy podmiotu innego niż Bank", "Umowa z podmiotem trzecim, wyciąg z rachunku, korespondencja"]
+          siatka: true
