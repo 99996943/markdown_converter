@@ -93,37 +93,31 @@ public sealed class TableDetectionStage : IPipelineStage
     private static List<Table> FindTables(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
     {
         (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
+        List<Table> tables = FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
         if (gutter is not { } g)
         {
-            return FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
+            return tables;
         }
 
-        // FR-031: on a page in columns a table lies inside one column, beside lines of the other column that share its
-        // baselines — lines are split at the gutter and each column is searched with its own rulings; lines across the
-        // gutter (a table over the full width) are searched as before.
+        // FR-031: on a page in columns a table may lie inside one column, beside lines of the other column that share
+        // its baselines — the remaining lines are split at the gutter and each column is searched with its own rulings.
         double middle = (g.Start + g.End) / 2;
-        SplitAtGutter(page, middle);
-        bool InLeft(LayoutLine l) => l.Box.Right <= middle;
-        bool InRight(LayoutLine l) => l.Box.Left >= middle;
-        List<Table> tables =
-        [
-            .. FindTables(context, page, InLeft, page.Rulings.Where(r => Math.Max(r.X1, r.X2) <= middle).ToList(), null, hyphenationExceptions),
-            .. FindTables(context, page, InRight, page.Rulings.Where(r => Math.Min(r.X1, r.X2) >= middle).ToList(), null, hyphenationExceptions),
-        ];
         var taken = new HashSet<LayoutLine>(tables.SelectMany(t => t.Lines), ReferenceEqualityComparer.Instance);
-        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && !InLeft(l) && !InRight(l), [.. page.Rulings], gutter, hyphenationExceptions));
+        SplitAtGutter(page, middle, taken);
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && l.Box.Right <= middle, page.Rulings.Where(r => Math.Max(r.X1, r.X2) <= middle).ToList(), null, hyphenationExceptions));
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && l.Box.Left >= middle, page.Rulings.Where(r => Math.Min(r.X1, r.X2) >= middle).ToList(), null, hyphenationExceptions));
         return tables;
     }
 
     /// <summary>A merged line with segments on both sides of the gutter (none across it) becomes one line per column.</summary>
-    private static void SplitAtGutter(LayoutPage page, double middle)
+    private static void SplitAtGutter(LayoutPage page, double middle, HashSet<LayoutLine> taken)
     {
         for (int i = 0; i < page.Lines.Count; i++)
         {
             LayoutLine line = page.Lines[i];
             List<LineSegment> left = line.Segments.Where(s => s.Box.Right <= middle).ToList();
             List<LineSegment> right = line.Segments.Where(s => s.Box.Left >= middle).ToList();
-            if (line.Role != LineRole.Unknown || left.Count == 0 || right.Count == 0 || left.Count + right.Count != line.Segments.Count)
+            if (line.Role != LineRole.Unknown || taken.Contains(line) || left.Count == 0 || right.Count == 0 || left.Count + right.Count != line.Segments.Count)
             {
                 continue;
             }
