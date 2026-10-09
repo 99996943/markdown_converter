@@ -1,0 +1,118 @@
+bloki:
+  - id: zastrzezenia-odp-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    elementy:
+      - ustep: "**Analityk jednostki „{{fakt:jednostka.centrum-monitorowania}}”** {odpowiada za|jest odpowiedzialny za}:"
+        punkty:
+          - "rzetelną i bezstronną analizę zgłoszeń transakcji nieautoryzowanych, opartą na danych systemowych, a nie {wyłącznie|tylko} na relacji Klienta lub pracownika placówki;"
+          - "przygotowanie rekomendacji rozstrzygnięcia z uzasadnieniem, które pozwala przełożonemu zweryfikować tok rozumowania;"
+          - "terminowe przekazanie dyspozycji zwrotu do jednostki „{{fakt:jednostka.operacje}}”;"
+          - "prowadzenie dokumentacji sporu z organizacją płatniczą i pilnowanie terminów wniesienia sporu."
+      - akapit: "Analityk nie może rozpatrywać zgłoszeń dotyczących własnych rachunków ani rachunków osób bliskich; w takim przypadku sprawę {przejmuje|rozpatruje} inny analityk, wskazany przez kierownika."
+
+  - id: zastrzezenia-krok-przyjecie-4
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Oceń|Zweryfikuj} pilność zgłoszenia."
+            podkroki:
+              - tekst: "Zgłoszenia, w których Klient informuje o trwającym obciążaniu rachunku, traktuj priorytetowo i zablokuj kartę przed zebraniem szczegółów zdarzenia."
+              - tekst: "Zgłoszenia o utracie karty bez nierozpoznanych transakcji można obsłużyć w standardowej kolejności, lecz blokady nie wolno odkładać."
+              - tekst: "Gdy do zgłoszenia dochodzi po godzinach pracy placówki, {przekaż|skieruj} je konsultantowi dyżurnemu i nie umawiaj Klienta na wizytę przed wykonaniem blokady."
+          - tekst: "{Sprawdź|Ustal} stan rachunku i karty."
+            podkroki:
+              - tekst: "Zweryfikuj w systemie status karty, datę wydania, limity {oraz|a także} ostatnie autoryzacje."
+              - tekst: "Zwróć uwagę, czy karta nie została niedawno zastrzeżona lub wymieniona — w takim przypadku {sprawdź|zweryfikuj}, czy kwestionowane transakcje dotyczą starej karty."
+              - tekst: "{Jeżeli|Jeśli} rachunek jest objęty blokadą lub zajęciem, zablokuj kartę, lecz nie zmieniaj statusu rachunku."
+
+  - id: zastrzezenia-krok-blokada-4
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    elementy:
+      - ustep: "Blokada obejmuje różne rodzaje instrumentów. Zasady dla poszczególnych z nich:"
+        punkty:
+          - "**karta fizyczna** — blokada na poziomie numeru karty, uniemożliwiająca transakcje stykowe, zbliżeniowe, w bankomatach i wpłatomatach;"
+          - "**karta wirtualna** — blokada numeru karty wirtualnej bez wpływu na kartę fizyczną, o ile Klient nie zażąda inaczej;"
+          - "**token płatności mobilnej** — wyłączenie tokenu na wskazanym urządzeniu; Klient może ponownie zarejestrować kartę po jej wymianie;"
+          - "**karta doładowywana lub przedpłacona** — zastrzeżenie karty i przeniesienie salda na rachunek posiadacza lub nową kartę zgodnie z umową;"
+          - "**dostęp do bankowości elektronicznej** — blokada logowania i urządzeń zaufanych, bez zamykania rachunku."
+      - akapit: "Po zastrzeżeniu karty fizycznej {sprawdź|upewnij się}, czy nie istnieją cykliczne obciążenia kartą (subskrypcje, usługi abonamentowe), i {poinformuj|powiadom} Klienta, że zmiana numeru karty wymaga aktualizacji danych u akceptantów."
+
+  - id: zastrzezenia-krok-nieaut-4
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    elementy:
+      - akapit: "Zgłoszenia dotyczące transakcji wykonanych za pośrednictwem bankowości elektronicznej, a nie kartą, wymagają dodatkowych czynności, ponieważ w tym przypadku nie ma możliwości sporu z organizacją płatniczą, a środki trafiają często do odbiorcy w innym banku."
+      - kroki:
+          - tekst: "{Zwróć się|Wystąp} do banku odbiorcy o wstrzymanie środków."
+            podkroki:
+              - tekst: "Wyślij w dniu zgłoszenia prośbę o zwrot lub wstrzymanie środków na rachunku odbiorcy, podając dane przelewu i krótki opis zdarzenia."
+              - tekst: "Prośbę {przekaż|skieruj} za pośrednictwem kanału przeznaczonego do współpracy między bankami {oraz|a także} {zawiadom|powiadom} o niej organy ścigania."
+          - tekst: "{Zbadaj|Przeanalizuj} okoliczności zlecenia przelewu."
+            podkroki:
+              - tekst: "{Sprawdź|Zweryfikuj}, z jakiego urządzenia i adresu IP zlecono przelew {oraz|a także} czy urządzenie było wcześniej znane Bankowi."
+              - tekst: "{Sprawdź|Zweryfikuj}, czy przed przelewem nie dodano nowego odbiorcy, nie zmieniono limitów albo nie zarejestrowano nowego urządzenia zaufanego."
+              - tekst: "Ustal, jaki element silnego uwierzytelniania został użyty i czy zachodziło ryzyko, że został udostępniony przez Klienta."
+          - tekst: "{Ustal|Oceń} zakres zwrotu."
+            podkroki:
+              - tekst: "{Jeżeli|Jeśli} Klient nie wyraził zgody na transakcję, zastosuj terminy i zasady zwrotu przewidziane dla transakcji nieautoryzowanych."
+              - tekst: "{Jeżeli|Jeśli} Klient sam zlecił przelew pod wpływem oszusta, transakcja jest autoryzowana; {poinformuj|powiadom} Klienta o możliwościach dochodzenia środków i zgłoś sprawę policji."
+
+  - id: zastrzezenia-krok-zwrot-4
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    elementy:
+      - akapit: "{Jeżeli|Jeśli} Klient kwestionuje autoryzowaną transakcję kartową, której kwota nie była znana w chwili autoryzacji ({na przykład|przykładowo} rezerwacja hotelowa, wypożyczenie pojazdu), a kwota przekracza to, czego Klient mógł się spodziewać, Bank rozpatruje sprawę jako żądanie zwrotu transakcji autoryzowanej, której kwota nie była znana. Klient może wystąpić o zwrot w terminie ośmiu tygodni od dnia obciążenia."
+      - ustep: "Warunki zwrotu takiej transakcji:"
+        punkty:
+          - "autoryzacja nie określała dokładnej kwoty transakcji;"
+          - "kwota przekroczyła wartość, jakiej Klient mógł się spodziewać z uwzględnieniem dotychczasowych wzorców wydatków i okoliczności;"
+          - "Klient przedstawi informacje faktyczne dotyczące transakcji — Bank może poprosić o dokumenty, {w szczególności|zwłaszcza} potwierdzenie rezerwacji lub umowę;"
+          - "Klient nie wyraził zgody na transakcję bezpośrednio wobec Banku i nie otrzymał informacji o transakcji co najmniej cztery tygodnie przed jej dokonaniem."
+      - akapit: "Bank {w terminie|w ciągu} {{fakt:termin.zastrzezenia.analiza-wstepna}} potwierdza przyjęcie wniosku, a decyzję w sprawie zwrotu podejmuje po otrzymaniu kompletu informacji. Odmowę zwrotu uzasadnia się na piśmie."
+
+  - id: zastrzezenia-szczegolne-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    elementy:
+      - ustep: "**Zgłoszenie po upływie terminu.** Zgłoszenie złożone po upływie {{fakt:termin.karta-debetowa.zgloszenie-nieautoryzowanej}} od obciążenia rachunku nie podlega rozpatrzeniu jako zgłoszenie transakcji nieautoryzowanej w trybie przepisów o usługach płatniczych. Pracownik przyjmuje je jednak, informuje Klienta o upływie terminu i o możliwości złożenia reklamacji na zasadach ogólnych; jednostka „{{fakt:jednostka.bezpieczenstwo}}” może zdecydować o rozpatrzeniu sprawy w trybie wyjątkowym."
+      - ustep: "**Zgłoszenie wielokrotne tej samej transakcji.** {Jeżeli|Jeśli} Klient zgłasza tę samą transakcję w kilku kanałach, wszystkie zgłoszenia łączy się w jedną sprawę, z datą pierwszego zgłoszenia."
+      - ustep: "**Klient, który nie może się legitymować.** Gdy Klient utracił dokument tożsamości razem z kartą, tożsamość można potwierdzić przez rozmowę weryfikacyjną na Infolinii {oraz|a także} przez inną placówkę Banku, która dysponuje wzorem podpisu Klienta."
+      - ustep: "**Karta zablokowana przez organizację płatniczą.** {Jeżeli|Jeśli} organizacja płatnicza zgłosi kompromitację danych karty, jednostka „{{fakt:jednostka.centrum-monitorowania}}” blokuje karty wskazane w komunikacie i zleca ich wymianę; za wymianę nie pobiera się opłaty."
+      - ustep: "**Zgłoszenie przez organy ścigania.** {Jeżeli|Jeśli} o zastrzeżenie karty wnosi policja lub prokuratura w związku z postępowaniem, pracownik przekazuje sprawę jednostce „{{fakt:jednostka.bezpieczenstwo}}”, która weryfikuje podstawę żądania i potwierdza je w formie pisemnej."
+
+  - id: zastrzezenia-monitoring-4
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    elementy:
+      - akapit: "{Dla każdego|W przypadku każdego} potwierdzonego nadużycia jednostka „{{fakt:jednostka.centrum-monitorowania}}” sporządza krótką analizę przyczyn, aby ustalić, w którym miejscu zawiodły zabezpieczenia i jakie działania należy podjąć."
+      - ustep: "Analiza obejmuje {w szczególności|zwłaszcza}:"
+        punkty:
+          - "opis sposobu, w jaki sprawca uzyskał dane lub dostęp;"
+          - "ocenę, czy reguły monitoringu powinny wykryć zdarzenie, i {jeżeli|jeśli} tak, dlaczego nie zadziałały;"
+          - "listę kont lub kart powiązanych ze sprawcą (np. wspólny akceptant lub adres IP);"
+          - "rekomendacje zmian w regułach, w komunikacji z Klientami lub w procesach Banku."
+      - akapit: "Wnioski z analizy są omawiane kwartalnie na spotkaniu zespołu z udziałem przedstawicieli jednostki „{{fakt:jednostka.operacje}}” i jednostki „{{fakt:jednostka.obsluga-klienta}}”. Zatwierdzone działania są wpisywane do planu i monitorowane do czasu realizacji."
+
+  - id: zastrzezenia-kontrola-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    elementy:
+      - akapit: "Niezależna kontrola jednostki „{{fakt:jednostka.zgodnosc}}” {obejmuje|jest prowadzona w zakresie} zgodności procedury z przepisami o usługach płatniczych {oraz|a także} z postanowieniami regulaminów kart płatniczych. Kontrola jest przeprowadzana co najmniej raz w roku."
+      - ustep: "W trakcie kontroli sprawdza się {w szczególności|zwłaszcza}:"
+        punkty:
+          - "czy terminy zwrotu środków za transakcje nieautoryzowane są dotrzymywane we wszystkich kanałach zgłoszeń;"
+          - "czy wyjątki od zwrotu są stosowane {wyłącznie|tylko} przy udokumentowanym podejrzeniu oszustwa i czy zawiadomienia organów ścigania były składane w terminie;"
+          - "czy informacje przekazywane Klientom w odpowiedziach i potwierdzeniach są zgodne z postanowieniami regulaminów {oraz|a także} z danymi taryfy, zwłaszcza w odniesieniu do opłat za kartę zastępczą;"
+          - "czy odpowiedzialność Klientów jest ustalana zgodnie z regulaminami i bez nadużywania pojęcia rażącego niedbalstwa."
+      - akapit: "Z kontroli sporządza się raport, który przekazuje się właścicielowi procedury. Na stwierdzone uchybienia właściciel odpowiada planem naprawczym w terminie określonym w raporcie."

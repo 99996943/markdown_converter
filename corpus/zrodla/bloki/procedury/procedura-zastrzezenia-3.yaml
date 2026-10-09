@@ -1,0 +1,131 @@
+bloki:
+  - id: zastrzezenia-monitoring
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "{{fakt:jednostka.centrum-monitorowania}} {prowadzi|zapewnia} całodobowy monitoring transakcji kartowych i elektronicznych z wykorzystaniem systemu monitorowania transakcji {{fakt:system.zastrzezenia.monitoring}}. System ocenia ryzyko każdej transakcji na podstawie profilu Klienta, lokalizacji, kwoty, rodzaju akceptanta i częstotliwości operacji. Alerty o wysokim ryzyku są weryfikowane przez analityka {niezwłocznie|bez zbędnej zwłoki}, a pozostałe w kolejności ustalonej w instrukcji stanowiskowej."
+      - ustep: "Sygnałami wymagającymi natychmiastowej weryfikacji są {w szczególności|zwłaszcza}:"
+        punkty:
+          - "{{fakt:limit.zastrzezenia.progi-alarmu}} w różnych krajach lub u akceptantów o podwyższonym ryzyku;"
+          - "transakcja w krótkim odstępie czasu od zmiany danych kontaktowych, hasła lub urządzenia zaufanego;"
+          - "seria transakcji o niskiej kwocie służąca sprawdzeniu ważności karty;"
+          - "transakcja internetowa bez poprawnego silnego uwierzytelniania z urządzenia nieznanego Bankowi;"
+          - "wypłata gotówki w bankomacie za granicą bezpośrednio po transakcji w kraju."
+      - kroki:
+          - tekst: "{Zweryfikuj|Zbadaj} alert i podejmij decyzję."
+            podkroki:
+              - tekst: "Skontaktuj się z Klientem telefonicznie w terminie {{fakt:termin.zastrzezenia.oddzwonienie-monitoring}} od powstania alertu, używając numeru zapisanego w systemie, a nie numeru podanego w wiadomości."
+              - tekst: "{Jeżeli|Jeśli} Klient potwierdza transakcję, zamknij alert i {odnotuj|zapisz} uwagę do profilu."
+              - tekst: "{Jeżeli|Jeśli} Klient zaprzecza lub kontakt jest niemożliwy, a ryzyko jest wysokie, zablokuj czasowo kartę i wyślij powiadomienie w aplikacji."
+          - tekst: "{Zarejestruj|Odnotuj} zdarzenie w rejestrze nadużyć."
+            podkroki:
+              - tekst: "Wpisz typ nadużycia (karta utracona, skradziona, skopiowana, phishing, przejęcie konta, oszustwo socjotechniczne), kwotę i akceptanta."
+              - tekst: "{Przekaż|Skieruj} do jednostki „{{fakt:jednostka.bezpieczenstwo}}” informacje o nowych schematach, aby uzupełnić reguły monitoringu."
+
+  - id: zastrzezenia-kontrola
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Kontrola przestrzegania procedury jest prowadzona na trzech poziomach: bieżącej kontroli przełożonych, kontroli jednostki „{{fakt:jednostka.bezpieczenstwo}}” {oraz|a także} niezależnej kontroli jednostki „{{fakt:jednostka.zgodnosc}}”."
+      - ustep: "Kontrola obejmuje {w szczególności|zwłaszcza}:"
+        punkty:
+          - "wyrywkowe sprawdzenie, czy czas blokady karty nie przekroczył {{fakt:termin.zastrzezenia.blokada-karty}};"
+          - "kompletność wpisów w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}} {oraz|a także} zgodność statusów z dokumentacją;"
+          - "dotrzymanie terminu zwrotu {{fakt:termin.karta-debetowa.zwrot-nieautoryzowanej}} {oraz|a także} uzasadnienie każdego wyjątku od niego;"
+          - "poprawność weryfikacji tożsamości zgłaszających, w tym próby nieuprawnionego ujawnienia informacji;"
+          - "przegląd uprawnień pracowników do zastrzegania kart i odblokowywania dostępu, wykonywany {{fakt:termin.zastrzezenia.przeglad-uprawnien}}."
+      - akapit: "Wyniki kontroli są przekazywane właścicielowi procedury. Stwierdzone nieprawidłowości wymagają planu naprawczego z terminem wykonania; {w razie|w przypadku} powtarzających się uchybień kierownik jednostki może zostać zobowiązany do przeprowadzenia dodatkowego szkolenia pracowników."
+
+  - id: zastrzezenia-dokumentacja
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - ustep: "Dokumentację sprawy stanowią:"
+        punkty:
+          - "wpis w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}} wraz z historią czynności i datą {oraz|a także} godziną blokady;"
+          - "formularze {{fakt:formularz.zastrzezenia.zgloszenie}}, {{fakt:formularz.zastrzezenia.oswiadczenie}} i {{fakt:formularz.zastrzezenia.spor}}, {jeżeli|jeśli} zostały wypełnione;"
+          - "nagrania rozmów i zapisy czatu — przechowywane zgodnie z zasadami obowiązującymi na Infolinii;"
+          - "dane autoryzacji transakcji i wyniki analizy jednostki „{{fakt:jednostka.centrum-monitorowania}}”;"
+          - "korespondencja z Klientem, organami ścigania, akceptantem i organizacją płatniczą;"
+          - "decyzje o odmowie lub wstrzymaniu zwrotu wraz z uzasadnieniem."
+      - akapit: "Dokumentację {przechowuje się|archiwizuje się} przez {{fakt:termin.zastrzezenia.archiwizacja}} od zamknięcia sprawy, a w przypadku sprawy objętej postępowaniem karnym lub sądowym — do jego prawomocnego zakończenia. Dostęp do dokumentacji mają {wyłącznie|tylko} osoby upoważnione; każdy dostęp jest odnotowywany w systemie."
+
+  - id: zastrzezenia-koncowe
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Procedurę {oznaczono numerem|oznaczono symbolem} {{param:oznaczenie}}, wersja {{param:wersja}}; obowiązuje od dnia {{param:od}}. Zatwierdza ją {{param:zatwierdzil}}, a jej właścicielem jest {{param:wlasciciel}}."
+      - akapit: "{Załączniki do procedury stanowią jej integralną część.|Integralną częścią procedury są jej załączniki.} W sprawach nieuregulowanych stosuje się przepisy powszechnie obowiązujące, {w szczególności|zwłaszcza} {{ref:akt:dz-u-2024-30-uslugi-platnicze}}, {oraz|a także} postanowienia regulaminów kart płatniczych."
+
+  - id: zastrzezenia-lista-kontrolna
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: lista-kontrolna
+    elementy:
+      - akapit: "Poniższą listę pracownik {wypełnia|uzupełnia} przy każdym zgłoszeniu zastrzeżenia karty lub transakcji nieautoryzowanej; wypełnioną listę {dołącza się|załącza się} do akt sprawy."
+      - lista-kontrolna:
+          forma: wektor
+          pozycje:
+            - "Zgłoszenie przyjęto i zarejestrowano w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}}"
+            - "Zweryfikowano tożsamość osoby zgłaszającej"
+            - "Kartę zastrzeżono lub zablokowano czasowo w systemie centralnym {{fakt:system.zastrzezenia.cbs}}"
+            - "Zablokowano tokeny płatności mobilnych powiązane z kartą"
+            - "Zablokowano dostęp do bankowości elektronicznej, {jeżeli|jeśli} było to konieczne"
+            - "Przekazano Klientowi numer zgłoszenia {oraz|a także} datę i godzinę blokady"
+            - "Zapytano o kartę zastępczą i {w razie|w przypadku} potrzeby złożono zamówienie"
+            - "Wyjaśniono Klientowi zasady zgłaszania transakcji nieautoryzowanych i terminy"
+            - "Zarejestrowano każdą kwestionowaną transakcję odrębnym wpisem"
+            - "Wypełniono formularz zgłoszenia, a oświadczenie Klienta załączono lub odnotowano odmowę"
+            - "Sprawę przekazano do Centrum Monitorowania Transakcji, {jeżeli|jeśli} wymagała tego procedura"
+            - "Potwierdzenie przyjęcia zgłoszenia {wysłano|przekazano} na trwałym nośniku w terminie"
+
+  - id: zastrzezenia-zal-terminy
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zalacznik-terminy
+    elementy:
+      - akapit: "{Zestawienie|Wykaz} terminów stosowanych w procedurze (wartości {obowiązują|są aktualne} w dniu wejścia w życie procedury)."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność"
+              waga: 3
+            - naglowek: "Termin"
+              waga: 2
+          wiersze:
+            - ["Zablokowanie karty po przyjęciu zgłoszenia", "{{fakt:termin.zastrzezenia.blokada-karty}}"]
+            - ["Potwierdzenie zastrzeżenia na trwałym nośniku", "{{fakt:termin.zastrzezenia.potwierdzenie-na-nosniku}}"]
+            - ["Dostarczenie karty zastępczej", "{{fakt:termin.zastrzezenia.karta-zastepcza}}"]
+            - ["Potwierdzenie przyjęcia zgłoszenia transakcji nieautoryzowanej", "{{fakt:termin.zastrzezenia.potwierdzenie-zgloszenia-nieautoryzowanej}}"]
+            - ["Analiza wstępna zgłoszenia", "{{fakt:termin.zastrzezenia.analiza-wstepna}}"]
+            - ["Zwrot środków za transakcję nieautoryzowaną", "{{fakt:termin.karta-debetowa.zwrot-nieautoryzowanej}}"]
+            - ["Zgłoszenie transakcji nieautoryzowanej przez Klienta", "{{fakt:termin.karta-debetowa.zgloszenie-nieautoryzowanej}}"]
+            - ["Zawiadomienie organów ścigania po decyzji o wstrzymaniu zwrotu", "{{fakt:termin.zastrzezenia.zawiadomienie-organow}}"]
+            - ["Wniesienie sporu z organizacją płatniczą", "{{fakt:termin.zastrzezenia.spor-zgloszenie}}"]
+            - ["Archiwizacja dokumentacji", "{{fakt:termin.zastrzezenia.archiwizacja}}"]
+          siatka: true
+
+  - id: zastrzezenia-zal-formularz
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zalacznik-formularz
+    elementy:
+      - akapit: "{Wzór|Układ} pól formularza {{fakt:formularz.zastrzezenia.zgloszenie}} „Zgłoszenie zastrzeżenia karty lub transakcji nieautoryzowanej”."
+      - tabela:
+          kolumny:
+            - naglowek: "Pole"
+              waga: 2
+            - naglowek: "Zakres informacji"
+              waga: 3
+          wiersze:
+            - ["Dane zgłaszającego", "imię i nazwisko, numer rachunku, ostatnie cztery cyfry karty, sposób weryfikacji"]
+            - ["Rodzaj zdarzenia", "utrata, kradzież, przywłaszczenie, skopiowanie danych, nieuprawnione użycie"]
+            - ["Data i miejsce zdarzenia", "data, godzina i miejsce, jeżeli są znane"]
+            - ["Wykonane czynności", "zastrzeżenie, blokada czasowa, blokada dostępu, karta zastępcza"]
+            - ["Kwestionowane transakcje", "data, kwota, akceptant, rodzaj transakcji"]
+            - ["Zawiadomienie organów ścigania", "tak lub nie, numer i data zgłoszenia, jednostka"]
+            - ["Podpisy", "Klient, pracownik przyjmujący, kierownik placówki w przypadku odstępstwa"]
+          siatka: true

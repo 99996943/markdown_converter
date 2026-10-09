@@ -1,0 +1,109 @@
+bloki:
+  # ===== Monitorowanie =====
+  - id: zastrzezenia-monitoring-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    elementy:
+      - akapit: "Reguły monitoringu {opracowuje|przygotowuje} analityk jednostki „{{fakt:jednostka.bezpieczenstwo}}”, a zatwierdza je kierownik jednostki. Reguły dzielą się na trzy grupy: reguły blokujące (transakcja jest odrzucana), reguły alertujące (transakcja jest realizowana, a analityk otrzymuje alert) {oraz|a także} reguły informacyjne (zdarzenie jest tylko rejestrowane do analiz)."
+      - ustep: "Każda nowa reguła, przed wprowadzeniem do systemu monitorowania:"
+        punkty:
+          - "jest testowana na danych historycznych, aby oszacować liczbę fałszywych alarmów;"
+          - "jest oceniana pod kątem wpływu na doświadczenie Klientów, {w szczególności|zwłaszcza} ryzyka odrzucenia prawidłowych transakcji;"
+          - "otrzymuje opis w repozytorium reguł wraz z datą wprowadzenia, autorem i przesłanką biznesową;"
+          - "jest wprowadzana etapowo — najpierw w trybie obserwacji, następnie w trybie alertów, a dopiero po pozytywnej ocenie w trybie blokującym."
+      - akapit: "Reguły są przeglądane {{fakt:termin.zastrzezenia.przeglad-uprawnien}}. Reguły o niskiej skuteczności są wyłączane lub modyfikowane."
+
+  - id: zastrzezenia-monitoring-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Zweryfikuj} alert wysokiego ryzyka."
+            podkroki:
+              - tekst: "Analityk otwiera alert w ciągu kilku minut od jego wygenerowania i sprawdza ostatnie transakcje Klienta, urządzenia {oraz|a także} zmiany danych kontaktowych."
+              - tekst: "{Jeżeli|Jeśli} na podstawie danych można jednoznacznie stwierdzić oszustwo, analityk blokuje kartę przed skontaktowaniem się z Klientem, aby ograniczyć straty."
+              - tekst: "W pozostałych przypadkach analityk kontaktuje się z Klientem; po {{fakt:limit.zastrzezenia.proby-weryfikacji}} nieudanych próbach kontaktu stosuje blokadę czasową i wysyła wiadomość w aplikacji."
+          - tekst: "{Zakończ|Zamknij} analizę alertu."
+            podkroki:
+              - tekst: "Zamknięcie alertu wymaga wskazania wyniku: prawdziwe oszustwo, transakcja potwierdzona przez Klienta, fałszywy alarm."
+              - tekst: "Wynik zamknięcia służy do doskonalenia reguł; analityk zgłasza uwagi kierownikowi."
+          - tekst: "{Powiadom|Poinformuj} Klienta po zdarzeniu."
+            podkroki:
+              - tekst: "Po zablokowaniu karty {przekaż|skieruj} Klientowi informację o możliwości zamówienia karty zastępczej {oraz|a także} o zasadach zgłaszania transakcji nieautoryzowanych."
+              - tekst: "W komunikacji nie ujawniaj reguł monitoringu ani progów alarmowych."
+
+  - id: zastrzezenia-monitoring-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    elementy:
+      - akapit: "{Bank prowadzi|Bank organizuje} działania prewencyjne, których celem jest ograniczenie liczby zdarzeń, zanim dojdzie do utraty środków. Odpowiada za nie jednostka „{{fakt:jednostka.bezpieczenstwo}}” we współpracy z jednostką odpowiedzialną za komunikację z Klientami."
+      - ustep: "Działania prewencyjne obejmują:"
+        punkty:
+          - "ostrzeżenia w bankowości elektronicznej i w komunikatach SMS o aktualnych metodach oszustw, {w szczególności|zwłaszcza} o fałszywych rozmowach z osobami podającymi się za pracowników Banku;"
+          - "kampanie edukacyjne przypominające, że Bank nie żąda pełnego numeru karty, PIN, hasła ani kodów jednorazowych;"
+          - "powiadomienia o transakcjach kartą w czasie rzeczywistym, {jeżeli|jeśli} Klient je włączył;"
+          - "możliwość ustawienia limitów, wyłączenia płatności internetowych lub zagranicznych {oraz|a także} czasowego zablokowania karty w aplikacji;"
+          - "współpracę z organami ścigania i innymi bankami w zakresie wymiany informacji o oszustwach, w granicach dopuszczonych przepisami o ochronie danych osobowych."
+      - akapit: "Pracownicy placówek {powinni|są zobowiązani} zwracać uwagę na Klientów, którzy dokonują nietypowych dyspozycji pod wpływem osób trzecich, {w szczególności|zwłaszcza} osób starszych, i {w razie|w przypadku} podejrzenia oszustwa informować kierownika placówki."
+
+  # ===== Kontrola =====
+  - id: zastrzezenia-kontrola-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    elementy:
+      - ustep: "Miesięczne sprawozdanie dla właściciela procedury zawiera wskaźniki:"
+        punkty:
+          - "liczbę zgłoszeń zastrzeżeń według kanałów {oraz|a także} średni czas od przyjęcia zgłoszenia do blokady;"
+          - "liczbę zgłoszeń transakcji nieautoryzowanych, wartość zwrotów i odsetek spraw zakończonych odmową;"
+          - "odsetek zwrotów zrealizowanych w terminie {{fakt:termin.karta-debetowa.zwrot-nieautoryzowanej}}, wraz z wyjaśnieniem przypadków opóźnień;"
+          - "liczbę sporów z organizacją płatniczą, ich skuteczność i wartość odzyskanych środków;"
+          - "liczbę alertów monitoringu, odsetek fałszywych alarmów {oraz|a także} średni czas reakcji analityków."
+      - akapit: "Sprawozdanie przekazuje się jednostce „{{fakt:jednostka.zgodnosc}}” {oraz|a także} Zarządowi w formie zestawienia kwartalnego. Odchylenia od wartości docelowych wymagają komentarza i planu działań."
+
+  - id: zastrzezenia-kontrola-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    elementy:
+      - akapit: "W ramach kontroli {funkcjonalnej|bieżącej} jednostka „{{fakt:jednostka.bezpieczenstwo}}” przeprowadza testy tajemniczego klienta, których celem jest sprawdzenie, czy pracownicy prawidłowo weryfikują tożsamość zgłaszających i nie ujawniają informacji osobom nieuprawnionym."
+      - kroki:
+          - tekst: "{Zaplanuj|Przygotuj} test."
+            podkroki:
+              - tekst: "Scenariusze obejmują zgłoszenie przez osobę o niepełnych danych, zgłoszenie przez osobę trzecią {oraz|a także} prośbę o zdjęcie blokady po zastrzeżeniu."
+              - tekst: "Testy przeprowadza się na rachunkach testowych, a o ich terminie nie informuje się pracowników."
+          - tekst: "{Oceń|Przeanalizuj} wyniki."
+            podkroki:
+              - tekst: "Uchybienia klasyfikuje się jako drobne, istotne i krytyczne; za krytyczne uznaje się ujawnienie danych rachunku osobie niezweryfikowanej lub zdjęcie blokady bez weryfikacji."
+              - tekst: "Wyniki omawia się z pracownikiem i jego przełożonym, a {w razie|w przypadku} uchybienia krytycznego pracownik jest ponownie szkolony przed dalszym obsługiwaniem linii zastrzeżeń."
+
+  # ===== Dokumentacja =====
+  - id: zastrzezenia-dokumentacja-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    elementy:
+      - ustep: "Zasady prowadzenia dokumentacji:"
+        punkty:
+          - "każdy wpis w rejestrze musi zawierać datę i godzinę czynności, dane pracownika {oraz|a także} opis wykonanych działań;"
+          - "wpisów w rejestrze nie usuwa się — błędy poprawia się nowym wpisem z adnotacją o sprostowaniu;"
+          - "dokumenty papierowe po zeskanowaniu przechowuje się w sposób zabezpieczony, a skany dołącza do sprawy w systemie;"
+          - "dokumentacja sprawy jest oznaczona klauzulą poufności, a jej kopiowanie poza system wymaga zgody kierownika jednostki."
+      - akapit: "Dokumentacja dotycząca spraw zakończonych {udostępniana jest|jest udostępniana} audytowi wewnętrznemu, biegłym rewidentom {oraz|a także} organom nadzoru na ich żądanie, w zakresie wynikającym z przepisów."
+
+  - id: zastrzezenia-dokumentacja-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    elementy:
+      - akapit: "Dane osobowe Klientów zgłaszających zdarzenia są przetwarzane {wyłącznie|tylko} w zakresie niezbędnym do obsługi zgłoszeń i przeciwdziałania nadużyciom. Dostęp do danych mają pracownicy, którzy ich potrzebują do realizacji zadań."
+      - ustep: "Udostępnianie danych podmiotom zewnętrznym następuje {wyłącznie|tylko}:"
+        punkty:
+          - "organom ścigania — na ich pisemne żądanie albo w związku z zawiadomieniem o przestępstwie składanym przez Bank;"
+          - "organizacji płatniczej — w zakresie niezbędnym do prowadzenia sporu, bez przekazywania pełnych danych o Kliencie;"
+          - "bankowi akceptanta — w zakresie wynikającym z zasad sporu;"
+          - "innym podmiotom — {wyłącznie|tylko} na podstawie przepisów prawa lub zgody Klienta, zatwierdzonej przez jednostkę „{{fakt:jednostka.zgodnosc}}”."
+      - akapit: "Każde udostępnienie danych odnotowuje się w aktach sprawy z podaniem podstawy, daty i zakresu przekazanych informacji. Po upływie okresu {{fakt:termin.zastrzezenia.archiwizacja}} {dokumentację|akta} niszczy się w sposób uniemożliwiający odtworzenie danych."

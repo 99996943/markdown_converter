@@ -1,0 +1,70 @@
+id: procedura-zastrzezenia
+typ: procedury
+temat: procedura-zastrzezenia
+tytul:
+  - "Procedura zastrzegania kart i rozpatrywania transakcji nieautoryzowanych"
+  - "Procedura {zastrzegania|blokowania} kart płatniczych i {rozpatrywania|obsługi} transakcji nieautoryzowanych"
+  - "Procedura zastrzegania kart oraz rozpatrywania zgłoszeń transakcji nieautoryzowanych"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry:
+  wlasciciel: "Departament Bezpieczeństwa"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [zastrzezenia-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [zastrzezenia-zakres]
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [zastrzezenia-odpowiedzialnosci]
+    opcjonalne: { kategorie: [zastrzezenia-odp], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, zastrzezenia-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przyjęcie zgłoszenia"
+    wymagane: [zastrzezenia-schemat, zastrzezenia-przyjecie, zastrzezenia-przyjecie-2]
+    opcjonalne: { kategorie: [zastrzezenia-krok-przyjecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — blokada karty i dostępu"
+    wymagane: [zastrzezenia-blokada, zastrzezenia-bankowosc, zastrzezenia-karta-zastepcza]
+    opcjonalne: { kategorie: [zastrzezenia-krok-blokada], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — transakcje nieautoryzowane"
+    wymagane: [zastrzezenia-nieautoryzowana-przyjecie, zastrzezenia-nieautoryzowana-analiza, wspolne-reklamacje-procedura]
+    opcjonalne: { kategorie: [zastrzezenia-krok-nieaut], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — zwrot środków i spór z organizacją płatniczą"
+    wymagane: [zastrzezenia-zwrot, zastrzezenia-odpowiedzialnosc-klienta, zastrzezenia-spor]
+    opcjonalne: { kategorie: [zastrzezenia-krok-zwrot], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [zastrzezenia-szczegolne-1]
+    opcjonalne: { kategorie: [zastrzezenia-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Monitorowanie transakcji i przeciwdziałanie nadużyciom"
+    wymagane: [zastrzezenia-monitoring]
+    opcjonalne: { kategorie: [zastrzezenia-monitoring], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [zastrzezenia-kontrola]
+    opcjonalne: { kategorie: [zastrzezenia-kontrola], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [zastrzezenia-dokumentacja, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [zastrzezenia-dokumentacja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [zastrzezenia-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna zgłoszenia"
+    wymagane: [zastrzezenia-lista-kontrolna]
+  - rodzaj: zalacznik
+    tytul: "Zestawienie terminów"
+    wymagane: [zastrzezenia-zal-terminy]
+  - rodzaj: zalacznik
+    tytul: "Wzór formularza zgłoszenia"
+    wymagane: [zastrzezenia-zal-formularz]
