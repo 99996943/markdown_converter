@@ -1,0 +1,15 @@
+bloki:
+  - id: wspolne-doreczenia-regulamin
+    typy: [regulaminy]
+    tematy: [doreczenia]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {przekazuje|doręcza} Klientowi korespondencję, w tym informacje, oświadczenia i zawiadomienia, w jednej z form:"
+        punkty:
+          - "w postaci elektronicznej, za pośrednictwem bankowości elektronicznej lub na wskazany adres e-mail;"
+          - "w formie papierowej, listem zwykłym lub poleconym na ostatni {znany|wskazany} Bankowi adres korespondencyjny;"
+          - "w {placówce|oddziale} Banku, za pisemnym potwierdzeniem odbioru."
+      - ustep: "{Klient|Posiadacz produktu} jest obowiązany {niezwłocznie|bez zbędnej zwłoki} informować Bank o zmianie danych kontaktowych, w tym adresu korespondencyjnego, numeru telefonu oraz adresu e-mail. Korespondencję wysłaną na ostatni adres wskazany Bankowi {uznaje się|traktuje się} za doręczoną."
+      - ustep: "Jeżeli korespondencja {nie została odebrana|została zwrócona jako niedoręczona}, {uważa się ją za doręczoną|przyjmuje się, że została doręczona} po upływie {{fakt:termin.doreczenie-korespondencji}} od dnia jej pierwszego awizowania. Korespondencję elektroniczną uznaje się za doręczoną w dniu jej udostępnienia w bankowości elektronicznej."

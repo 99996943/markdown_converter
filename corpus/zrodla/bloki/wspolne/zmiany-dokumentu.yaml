@@ -1,0 +1,18 @@
+bloki:
+  - id: wspolne-zmiany-regulamin
+    typy: [regulaminy]
+    tematy: [zmiany-dokumentu]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} dokonać zmiany Regulaminu {w przypadku|w razie wystąpienia} co najmniej jednej z następujących przyczyn:"
+        punkty:
+          - "zmiany przepisów prawa {dotyczących|odnoszących się do} usług świadczonych na podstawie Regulaminu;"
+          - "wydania {orzeczeń|decyzji} sądów lub organów administracji publicznej, które mają wpływ na treść Regulaminu;"
+          - tekst: "zmiany zakresu lub formy świadczonych usług, w szczególności:"
+            litery:
+              - "wprowadzenia nowych funkcjonalności lub rezygnacji z dotychczasowych;"
+              - "zmian technologicznych i wymogów bezpieczeństwa."
+      - ustep: "O zmianie Regulaminu Bank {informuje|powiadamia} Klienta na trwałym nośniku, {nie później niż|z wyprzedzeniem nie krótszym niż} {{fakt:termin.zmiana-regulaminu}} przed proponowanym dniem jej wejścia w życie. Treść {zmian|proponowanych zmian} jest także dostępna na stronie {{fakt:bank.strona}} oraz w placówkach Banku."
+      - ustep: "Jeżeli Klient przed dniem wejścia zmian w życie {nie zgłosi|nie wniesie} sprzeciwu, uważa się, że zmiany {zostały przyjęte|zostały zaakceptowane}. Klient {ma prawo|może} także wypowiedzieć umowę bez ponoszenia opłat, w terminie {{fakt:termin.wypowiedzenie-przez-klienta}} od dnia otrzymania informacji o zmianie."

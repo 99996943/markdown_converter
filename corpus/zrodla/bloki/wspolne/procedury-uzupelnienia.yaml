@@ -1,0 +1,28 @@
+bloki:
+  - id: wspolne-zmiany-procedura
+    typy: [procedury]
+    tematy: [zmiany-dokumentu]
+    kategoria: wspolny-procedura
+    wspolny: true
+    elementy:
+      - akapit: "Zmiany procedury {wprowadza się|zatwierdza się} w trybie przewidzianym dla jej pierwotnego przyjęcia. Projekt zmiany przygotowuje właściciel procedury, a opiniuje {{fakt:jednostka.zgodnosc}} oraz, w razie potrzeby, {{fakt:jednostka.prawny}}."
+      - ustep: "Każda zmiana {powinna|musi} zawierać:"
+        punkty:
+          - "wskazanie nowej wersji i daty jej wejścia w życie;"
+          - "zwięzły opis zmienionych postanowień wraz z uzasadnieniem;"
+          - "{informację|wzmiankę} o konieczności przeszkolenia pracowników."
+      - akapit: "Poprzednie wersje {przechowuje się|archiwizuje się} i udostępnia na żądanie {{fakt:jednostka.zgodnosc}}. Pracownicy są informowani o zmianie przed dniem jej wejścia w życie."
+
+  - id: wspolne-doreczenia-procedura
+    typy: [procedury]
+    tematy: [doreczenia]
+    kategoria: wspolny-procedura
+    wspolny: true
+    elementy:
+      - akapit: "Korespondencję do Klienta {wysyła się|przekazuje się} na adres wskazany w umowie albo w bankowości elektronicznej. {Dowód|Potwierdzenie} wysłania lub udostępnienia dokumentu {dołącza się|zachowuje się} do akt sprawy."
+      - ustep: "Dla przesyłek niedoręczonych obowiązują zasady:"
+        punkty:
+          - "przesyłkę zwróconą {rejestruje się|odnotowuje się} w dniu jej otrzymania;"
+          - "po upływie {{fakt:termin.doreczenie-korespondencji}} od pierwszego awizowania przesyłkę {uznaje się|traktuje się} za doręczoną;"
+          - "w razie zmiany adresu ponowną wysyłkę uzgadnia się z Klientem."
+      - akapit: "Korespondencję elektroniczną uznaje się za doręczoną w dniu {udostępnienia|jej udostępnienia} Klientowi w bankowości elektronicznej."

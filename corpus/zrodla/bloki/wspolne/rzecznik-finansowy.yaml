@@ -1,0 +1,15 @@
+bloki:
+  - id: wspolne-rzecznik-regulamin
+    typy: [regulaminy]
+    tematy: [rzecznik-finansowy]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Klient|Posiadacz produktu}, który {nie jest zadowolony|nie zgadza się} z rozstrzygnięciem reklamacji lub nie otrzymał odpowiedzi w terminie, {ma prawo|może} zwrócić się do Rzecznika Finansowego z wnioskiem o rozpatrzenie sprawy w trybie pozasądowego postępowania w sprawie rozwiązywania sporów."
+      - ustep: "Rzecznik Finansowy {prowadzi|przeprowadza} postępowanie na zasadach określonych w {{ref:akt:dz-u-2026-823-reklamacje}}. Informacje o trybie składania wniosków są dostępne na stronie: {{fakt:rzecznik.strona}}."
+      - ustep: "Bank {oświadcza|informuje}, że:"
+        punkty:
+          - "wyraża zgodę na udział w postępowaniu przed Rzecznikiem Finansowym w sprawach z udziałem konsumentów;"
+          - "odpowiedź na reklamację {zawiera|będzie zawierała} pouczenie o możliwości skorzystania z tej drogi;"
+          - "złożenie wniosku do Rzecznika {nie wyłącza|nie pozbawia Klienta} prawa dochodzenia roszczeń przed sądem."

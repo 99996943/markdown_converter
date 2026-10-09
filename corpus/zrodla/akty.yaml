@@ -1,0 +1,69 @@
+akty:
+  - id: dz-u-2026-1298-obwieszczenie-msz
+    tytul: "Obwieszczenie Ministra Spraw Zagranicznych z dnia 15 września 2026 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia w sprawie opłat konsularnych"
+    publikator: "Dz. U. 2026 poz. 1298"
+    tekst-jednolity: 2026-09-15
+    url: https://dziennikustaw.gov.pl/D20261298.pdf
+    pobrano: 2026-10-07
+    uwagi: "Plik Dziennika Ustaw (D20261298.pdf) przekazany przez właściciela projektu; 9 stron, wielostronicowa taryfa opłat."
+  - id: ustawa-o-sluzbie-cywilnej
+    tytul: "Ustawa z dnia 21 listopada 2008 r. o służbie cywilnej"
+    publikator: "Dz. U. 2026 poz. 590"
+    tekst-jednolity: 2026-10-07
+    url: https://isap.sejm.gov.pl/
+    pobrano: 2026-10-07
+    uwagi: "Tekst ujednolicony ISAP (Dz. U. z 2026 r. poz. 590) przekazany przez właściciela projektu; 71 stron. Data tekstu jednolitego nie jest podana w pliku, wpisano datę pobrania."
+  - id: dz-u-2024-1646-prawo-bankowe
+    tytul: "Ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe"
+    publikator: "Dz. U. 2024 poz. 1646"
+    tekst-jednolity: 2024-09-26
+    url: https://dziennikustaw.gov.pl/D2024000164601.pdf
+    pobrano: 2026-10-07
+    uwagi: "Obwieszczenie Marszałka Sejmu z dnia 26 września 2024 r.; 147 stron."
+  - id: dz-u-2024-30-uslugi-platnicze
+    tytul: "Ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych"
+    publikator: "Dz. U. 2024 poz. 30"
+    tekst-jednolity: 2023-12-07
+    url: https://dziennikustaw.gov.pl/D2024000003001.pdf
+    pobrano: 2026-10-07
+    uwagi: "Obwieszczenie Marszałka Sejmu z dnia 7 grudnia 2023 r.; 114 stron (dokument powyżej 100 stron)."
+  - id: dz-u-2024-1497-kredyt-konsumencki
+    tytul: "Ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim"
+    publikator: "Dz. U. 2024 poz. 1497"
+    tekst-jednolity: 2024-09-26
+    url: https://dziennikustaw.gov.pl/D2024000149701.pdf
+    pobrano: 2026-10-07
+    uwagi: "Obwieszczenie Marszałka Sejmu z dnia 26 września 2024 r.; 36 stron."
+  - id: dz-u-2020-287-prawa-konsumenta
+    tytul: "Ustawa z dnia 30 maja 2014 r. o prawach konsumenta"
+    publikator: "Dz. U. 2020 poz. 287"
+    tekst-jednolity: 2020-01-28
+    url: https://dziennikustaw.gov.pl/D2020000028701.pdf
+    pobrano: 2026-10-07
+    uwagi: "Obwieszczenie Marszałka Sejmu z dnia 28 stycznia 2020 r.; 16 stron."
+  - id: dz-u-2025-644-aml
+    tytul: "Ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu"
+    publikator: "Dz. U. 2025 poz. 644"
+    tekst-jednolity: 2025-05-09
+    url: https://dziennikustaw.gov.pl/D2025000064401.pdf
+    pobrano: 2026-10-08
+    uwagi: "Nie uwzględnia zmiany Dz. U. 2025 poz. 1669."
+  - id: dz-u-2019-1781-ochrona-danych
+    tytul: "Ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych"
+    publikator: "Dz. U. 2019 poz. 1781"
+    tekst-jednolity: 2019-08-30
+    url: https://dziennikustaw.gov.pl/D2019000178101.pdf
+    pobrano: 2026-10-08
+    uwagi: "Nie uwzględnia zmian wprowadzonych w Dz. U. 2026 poz. 252 i 548."
+  - id: dz-u-2026-823-reklamacje
+    tytul: "Ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej"
+    publikator: "Dz. U. 2026 poz. 823"
+    tekst-jednolity: 2026-06-12
+    url: https://dziennikustaw.gov.pl/D2026000082301.pdf
+    pobrano: 2026-10-08
+  - id: dz-u-2025-720-kredyt-hipoteczny
+    tytul: "Ustawa z dnia 23 marca 2017 r. o kredycie hipotecznym oraz o nadzorze nad pośrednikami kredytu hipotecznego i agentami"
+    publikator: "Dz. U. 2025 poz. 720"
+    tekst-jednolity: 2025-05-21
+    url: https://dziennikustaw.gov.pl/D2025000072001.pdf
+    pobrano: 2026-10-08

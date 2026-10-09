@@ -1,0 +1,37 @@
+bloki:
+  - id: wspolne-reklamacje-regulamin
+    typy: [regulaminy]
+    tematy: [reklamacje]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Klient|Posiadacz produktu} {ma prawo|może} złożyć reklamację dotyczącą {usług|produktów i usług} świadczonych przez Bank {w każdym czasie|w dowolnym momencie}, w {jednej z następujących form|następujący sposób}:"
+        punkty:
+          - "pisemnie — osobiście w {placówce|jednostce} Banku albo przesyłką pocztową na adres: {{fakt:kontakt.adres-korespondencyjny}};"
+          - "ustnie — telefonicznie pod numerem {{fakt:kontakt.infolinia}} lub osobiście do protokołu sporządzanego przez pracownika Banku;"
+          - "elektronicznie — na adres {{fakt:kontakt.email-reklamacje}} albo za pośrednictwem bankowości elektronicznej."
+      - ustep: "Reklamacja {powinna|musi} zawierać dane umożliwiające identyfikację {Klienta|składającego reklamację}, opis zastrzeżeń oraz {oczekiwany sposób|żądany sposób} jej załatwienia. {Reklamacje rozpatruje|Reklamacje rozpatrywane są przez} {{fakt:jednostka.reklamacje}}."
+      - ustep: "Bank udziela odpowiedzi na reklamację {bez zbędnej zwłoki|niezwłocznie}, nie później niż w terminie:"
+        punkty:
+          - "{{fakt:termin.reklamacja.platnicze}} od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;"
+          - "{{fakt:termin.reklamacja.inne}} od dnia otrzymania reklamacji — w pozostałych sprawach."
+      - ustep: "Jeżeli {rozpatrzenie reklamacji w tych terminach nie jest możliwe|zachowanie tych terminów nie jest możliwe} z przyczyn niezależnych od Banku, Bank {poinformuje|informuje} Klienta o przyczynie opóźnienia i wskaże przewidywany termin odpowiedzi, który nie może przekroczyć {{fakt:termin.reklamacja.przedluzenie}}, a w sprawach płatniczych — {{fakt:termin.reklamacja.maksymalny}}. Zasady rozpatrywania reklamacji określa także {{ref:akt:dz-u-2026-823-reklamacje}}."
+
+  - id: wspolne-reklamacje-procedura
+    typy: [procedury]
+    tematy: [reklamacje]
+    kategoria: wspolny-procedura
+    wspolny: true
+    elementy:
+      - akapit: "{Reklamację|Zgłoszenie reklamacyjne} {przyjmuje|rejestruje} każdy pracownik Banku, niezależnie od formy jej złożenia i {jednostki|komórki}, do której wpłynęła. {Rejestrację|Wpisanie do rejestru} wykonuje się {w dniu wpływu|niezwłocznie}, a dalsze czynności prowadzi {{fakt:jednostka.reklamacje}}."
+      - kroki:
+          - tekst: "{Zarejestruj|Wpisz do rejestru} reklamację i nadaj jej numer sprawy."
+            podkroki:
+              - tekst: "Ustal formę zgłoszenia: pisemną, ustną lub elektroniczną."
+              - tekst: "Przy zgłoszeniu ustnym sporządź protokół i {przekaż|wydaj} go Klientowi na jego żądanie."
+          - tekst: "{Potwierdź|Poinformuj o przyjęciu} Klientowi przyjęcie reklamacji na trwałym nośniku."
+          - tekst: "Przekaż sprawę do rozpatrzenia i {zachowaj|dotrzymaj} termin odpowiedzi: {{fakt:termin.reklamacja.platnicze}} dla usług płatniczych oraz {{fakt:termin.reklamacja.inne}} dla pozostałych."
+            podkroki:
+              - tekst: "Gdy termin jest {niemożliwy do dotrzymania|zagrożony}, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż {{fakt:termin.reklamacja.przedluzenie}}."
+          - tekst: "Wyślij odpowiedź, zgodnie z {{ref:akt:dz-u-2026-823-reklamacje}}, i zamknij sprawę w rejestrze."

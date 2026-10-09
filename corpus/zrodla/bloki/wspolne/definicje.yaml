@@ -1,0 +1,39 @@
+bloki:
+  - id: wspolne-definicje-regulamin
+    typy: [regulaminy]
+    tematy: [definicje]
+    kategoria: definicje
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użyte w Regulaminie określenia oznaczają:"
+        punkty:
+          - "**Bank** — Bank Przykładowy S.A. z siedzibą pod adresem {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców pod numerem KRS {{fakt:bank.krs}}, NIP {{fakt:bank.nip}};"
+          - "**Klient** — {osoba fizyczna|konsument} lub inny podmiot, który zawarł z Bankiem umowę;"
+          - "**Dzień roboczy** — dzień {tygodnia|kalendarzowy} od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;"
+          - "**Trwały nośnik** — nośnik umożliwiający przechowywanie informacji {w sposób|w formie} dostępnej do późniejszego wykorzystania i odtworzenia bez zmian;"
+          - "**Taryfa** — obowiązująca w Banku taryfa opłat i prowizji;"
+          - "**Placówka** — {jednostka|punkt} Banku obsługująca Klientów;"
+          - "**Bankowość elektroniczna** — usługa umożliwiająca dostęp do rachunku i składanie dyspozycji przez Internet lub aplikację mobilną;"
+          - "**Infolinia** — telefoniczny punkt obsługi Klientów, dostępny pod numerem {{fakt:kontakt.infolinia}};"
+          - "**Instrument płatniczy** — {zindywidualizowane urządzenie|zindywidualizowane urządzenie lub zestaw procedur}, za pomocą którego Klient składa zlecenie płatnicze;"
+          - "**Uwierzytelnienie** — procedura {pozwalająca|umożliwiająca} Bankowi weryfikację tożsamości Klienta lub ważności instrumentu płatniczego;"
+          - "**Dyspozycja** — oświadczenie woli Klienta dotyczące {produktu|rachunku lub innego produktu} Banku."
+
+  - id: wspolne-definicje-procedura
+    typy: [procedury]
+    tematy: [definicje]
+    kategoria: definicje
+    wspolny: true
+    elementy:
+      - ustep: "Użyte w procedurze określenia oznaczają:"
+        punkty:
+          - "**Bank** — Bank Przykładowy S.A.;"
+          - "**Klient** — osoba, która {korzysta|zamierza korzystać} z produktów lub usług Banku;"
+          - "**Pracownik** — osoba zatrudniona w Banku, {wykonująca|realizująca} czynności objęte procedurą;"
+          - "**Właściciel procedury** — komórka organizacyjna odpowiedzialna za jej aktualność i stosowanie;"
+          - "**Dzień roboczy** — dzień od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;"
+          - "**Trwały nośnik** — nośnik umożliwiający {przechowywanie|zachowanie} informacji w sposób dostępny do późniejszego wykorzystania;"
+          - "**Placówka** — jednostka Banku obsługująca Klientów;"
+          - "**Infolinia** — telefoniczny punkt obsługi Klientów, numer {{fakt:kontakt.infolinia}};"
+          - "**Eskalacja** — przekazanie sprawy do jednostki lub osoby {o wyższych|dysponującej wyższymi} uprawnieniach decyzyjnych."

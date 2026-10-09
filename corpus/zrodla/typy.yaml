@@ -1,0 +1,22 @@
+typy:
+  - id: regulaminy
+    prefiks: REG
+    oznaczenie: "BP/{prefiks}/{nn}"
+    nazwa: regulamin
+    uklady-min:
+      dwie-kolumny: 2
+      tabela-dokument: 2
+    wymagane-elementy: [okladka, "rozdzialy:3", "paragrafy:8", ustepy, punkty, litery, definicje, "przypis:3", odwolanie-taryfa, odwolanie-akt]
+  - id: taryfy
+    prefiks: TAR
+    oznaczenie: "BP/{prefiks}/{nn}"
+    nazwa: taryfa opłat i prowizji
+    uklady-min:
+      taryfa-siatka: 2
+      taryfa-bez-siatki: 2
+    wymagane-elementy: [okladka, "segmenty:2", "pozycje-taryfy:60", "przypis:5"]
+  - id: procedury
+    prefiks: PRO
+    oznaczenie: "BP/{prefiks}/{nn}"
+    nazwa: procedura wewnętrzna
+    wymagane-elementy: [metryczka, definicje, kroki, "kroki-poziomy:2", schemat, lista-kontrolna, zalacznik]

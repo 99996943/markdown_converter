@@ -1,0 +1,30 @@
+bloki:
+  - id: wspolne-kontakt-regulamin
+    typy: [regulaminy]
+    tematy: [kontakt]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Klient|Posiadacz produktu} może kontaktować się z Bankiem w sprawach dotyczących produktów i usług w następujący sposób:"
+        punkty:
+          - "telefonicznie — pod numerem infolinii {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) lub, dzwoniąc z zagranicy, pod numerem {{fakt:kontakt.infolinia-zagranica}};"
+          - "osobiście — w {placówkach|jednostkach} Banku w godzinach ich pracy;"
+          - "pisemnie — na adres: {{fakt:bank.adres}};"
+          - "elektronicznie — za pośrednictwem {bankowości elektronicznej|serwisu transakcyjnego} lub na stronie {{fakt:bank.strona}}."
+      - ustep: "Zgłoszenia utraty lub kradzieży instrumentu płatniczego {należy|można} dokonywać {niezwłocznie|bez zbędnej zwłoki}, całodobowo, pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+      - ustep: "Bank {może|ma prawo} potwierdzać tożsamość osoby kontaktującej się z Bankiem {w sposób|przy użyciu metod} przewidzianych w procedurach bezpieczeństwa. Pracownik Banku nie {prosi|żąda} o podanie pełnych danych uwierzytelniających, w szczególności haseł i kodów jednorazowych."
+
+  - id: wspolne-kontakt-procedura
+    typy: [procedury]
+    tematy: [kontakt]
+    kategoria: wspolny-procedura
+    wspolny: true
+    elementy:
+      - akapit: "Kontakt z Klientem {prowadzi się|realizuje się} wyłącznie kanałami {wskazanymi|opisanymi} w umowie lub w ustaleniach z Klientem. Dane teleadresowe Banku {używane|podawane} w korespondencji muszą być zgodne z danymi: adres {{fakt:bank.adres}}, infolinia {{fakt:kontakt.infolinia}}, strona {{fakt:bank.strona}}."
+      - ustep: "W rozmowie z Klientem pracownik:"
+        punkty:
+          - "{przedstawia się|podaje imię} i {nazwę|nazwę jednostki} Banku;"
+          - "{potwierdza|weryfikuje} tożsamość Klienta metodą przewidzianą w procedurach bezpieczeństwa;"
+          - "nie prosi o podanie haseł, kodów jednorazowych ani numeru PIN."
+      - akapit: "Sprawy {wymagające|które wymagają} eskalacji przekazuje się do {{fakt:jednostka.obsluga-klienta}}, a podejrzenia nadużyć — do {{fakt:jednostka.bezpieczenstwo}}."
