@@ -1,0 +1,241 @@
+fakty:
+  # --- pakiety kont
+  - id: oplata.taryfa-indywidualni.prowadzenie-premium
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 19.00
+      - od: 2027-01-01
+        wartosc: 22.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.taryfa-indywidualni.prowadzenie-senior
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [5.00, 3.00]
+  - id: oplata.taryfa-indywidualni.prog-wplywow-standard
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+      - od: 2026-04-01
+        wartosc: 1500.00
+    alternatywy: [800.00, 2000.00]
+  - id: oplata.taryfa-indywidualni.prog-wplywow-premium
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5000.00
+    alternatywy: [4000.00, 6000.00]
+  - id: oplata.taryfa-indywidualni.wiek-senior
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "60 lat"
+    alternatywy: ["65 lat", "55 lat"]
+  - id: oplata.taryfa-indywidualni.zmiana-pakietu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [20.00]
+  - id: oplata.taryfa-indywidualni.karta-senior-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [0.00, 6.00]
+  # --- przelewy i zlecenia
+  - id: oplata.taryfa-indywidualni.przelew-infolinia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 4.00
+      - od: 2027-01-01
+        wartosc: 5.00
+    alternatywy: [0.00, 8.00]
+  - id: oplata.taryfa-indywidualni.przelew-sepa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+    alternatywy: [0.00, 4.00]
+  - id: oplata.taryfa-indywidualni.przelew-sorbnet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+      - od: 2026-04-01
+        wartosc: 35.00
+    alternatywy: [20.00, 50.00]
+  - id: oplata.taryfa-indywidualni.zlecenie-stale-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+    alternatywy: [4.00, 8.00]
+  - id: oplata.taryfa-indywidualni.zwrot-przelewu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.taryfa-indywidualni.odwolanie-przelewu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [10.00, 25.00]
+  - id: oplata.taryfa-indywidualni.przelew-zagraniczny-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.2
+    alternatywy: [0.3, 0.1]
+  - id: oplata.taryfa-indywidualni.przelew-zagraniczny-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+      - od: 2027-01-01
+        wartosc: 25.00
+    alternatywy: [15.00, 30.00]
+  - id: oplata.taryfa-indywidualni.przelew-zagraniczny-maksimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00, 200.00]
+  - id: oplata.taryfa-indywidualni.przelew-walutowy-przychodzacy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.taryfa-indywidualni.opcja-koszty-our
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+    alternatywy: [40.00, 80.00]
+  # --- operacje gotówkowe
+  - id: oplata.taryfa-indywidualni.wyplata-placowka-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+    alternatywy: [1.0, 0.3]
+  - id: oplata.taryfa-indywidualni.wyplata-placowka-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 15.00]
+  - id: oplata.taryfa-indywidualni.wplata-na-cudzy-rachunek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2026-04-01
+        wartosc: 6.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.taryfa-indywidualni.wplata-wplatomat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00]
+  - id: oplata.taryfa-indywidualni.rozmiana-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.5
+    alternatywy: [3.0, 2.0]
+  - id: oplata.taryfa-indywidualni.rozmiana-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+    alternatywy: [3.00, 8.00]
+  - id: oplata.taryfa-indywidualni.awizo-niepodjeta
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [30.00, 100.00]
+  - id: oplata.taryfa-indywidualni.wyplata-gotowki-walutowej
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+      - od: 2027-01-01
+        wartosc: 1.2
+    alternatywy: [0.5, 2.0]
+  - id: oplata.taryfa-indywidualni.wydanie-torby-kasowej
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+    alternatywy: [0.00, 20.00]
+  # --- karty debetowe
+  - id: oplata.taryfa-indywidualni.karta-zmiana-limitu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+      - od: 2027-01-01
+        wartosc: 5.00
+    alternatywy: [0.00, 8.00]
+  - id: oplata.taryfa-indywidualni.karta-transakcja-walutowa-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+    alternatywy: [1.0, 3.0]
+  - id: oplata.taryfa-indywidualni.karta-dodatkowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.taryfa-indywidualni.karta-reklamacja-nieuzasadniona
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [0.00, 80.00]
+  - id: oplata.taryfa-indywidualni.karta-wydanie-za-granica
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [180.00, 350.00]
+  # --- usługi dodatkowe i dokumenty
+  - id: oplata.taryfa-indywidualni.zaswiadczenie-obcojezyczne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [30.00, 60.00]
+  - id: oplata.taryfa-indywidualni.opinia-bankowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [30.00, 80.00]
+  - id: oplata.taryfa-indywidualni.blokada-na-wniosek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+    alternatywy: [0.00, 30.00]
+  - id: oplata.taryfa-indywidualni.token-sprzetowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [0.00, 40.00]
+  - id: oplata.taryfa-indywidualni.kopia-dokumentu-archiwum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+      - od: 2026-04-01
+        wartosc: 35.00
+    alternatywy: [20.00, 50.00]
+  - id: oplata.taryfa-indywidualni.poszukiwanie-dokumentu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 45.00
+    alternatywy: [30.00, 60.00]
+  - id: oplata.taryfa-indywidualni.skrytka-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 35.00
+    alternatywy: [25.00, 50.00]
+  - id: oplata.taryfa-indywidualni.debet-prowizja-przyznanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+    alternatywy: [3.0, 1.0]
+  - id: oplata.taryfa-indywidualni.debet-prowizja-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 50.00]
+  - id: oplata.taryfa-indywidualni.debet-przedluzenie-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [1.5]
+  - id: oplata.taryfa-indywidualni.oprocentowanie-konto-premium
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+      - od: 2026-04-01
+        wartosc: 0.4
+    alternatywy: [1.0, 0.2]
