@@ -61,3 +61,6 @@ Thumbs.db
 tests/LegalAgent.PdfParser.Tests/Corpus/private/
 .claude/worktrees/
 .claude/worktrees/
+
+# mBank.FaqGenerator (downloaded regulations of a real bank, never committed)
+downloads/

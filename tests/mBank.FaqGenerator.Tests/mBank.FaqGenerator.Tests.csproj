@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>MBank.FaqGenerator.Tests</RootNamespace>
+    <!-- Test method names use Method_Scenario underscores. -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\mBank.FaqGenerator\mBank.FaqGenerator.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Shared HTTP fake and helpers from the library tests. -->
+    <Compile Include="..\LegalAgent.Downloads.Tests\Fakes\*.cs" LinkBase="Fakes" />
+  </ItemGroup>
+</Project>
