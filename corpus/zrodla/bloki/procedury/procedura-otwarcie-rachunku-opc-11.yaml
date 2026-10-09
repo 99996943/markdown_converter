@@ -1,0 +1,103 @@
+bloki:
+  # --- Kontrola i nadzór
+  - id: otwarcie-kontr-biezaca-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-kontrola-opc
+    elementy:
+      - akapit: "Kontrola przestrzegania procedury otwierania rachunków jest wykonywana w ramach trzech linii obrony, z których każda ma odrębne zadania. Wyniki kontroli są wykorzystywane do poprawy procesu i szkolenia pracowników."
+      - kroki:
+          - tekst: "Pierwsza linia obrony. Kierownik placówki co miesiąc kontroluje próbkę otwartych rachunków."
+            podkroki:
+              - tekst: "Próbka obejmuje co najmniej 5% rachunków otwartych w danym miesiącu, w tym wszystkie rachunki klientów wysokiego ryzyka."
+              - tekst: "Sprawdza się kompletność dokumentacji, poprawność oceny ryzyka, zgodność danych w systemie z dokumentami oraz prawidłowość weryfikacji tożsamości."
+              - tekst: "Wyniki kontroli zapisuje się w protokole i przekazuje pracownikowi w celu wyjaśnienia stwierdzonych nieprawidłowości."
+          - tekst: "Druga linia obrony. {{fakt:jednostka.zgodnosc}} kwartalnie bada próbkę rachunków z całego Banku pod kątem zgodności z przepisami o przeciwdziałaniu praniu pieniędzy."
+          - tekst: "Trzecia linia obrony. Audyt wewnętrzny, w ramach swojego planu, ocenia skuteczność całego procesu otwierania rachunków."
+
+  - id: otwarcie-kontr-nieprawidlowosci-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-kontrola-opc
+    elementy:
+      - akapit: "Stwierdzone nieprawidłowości są klasyfikowane według wagi i usuwane w terminach zależnych od ich znaczenia. Celem postępowania jest przede wszystkim poprawa jakości procesu, a nie wyłącznie ocena poszczególnych pracowników."
+      - kroki:
+          - tekst: "Klasyfikacja nieprawidłowości."
+            podkroki:
+              - tekst: "Nieprawidłowość istotna: brak weryfikacji tożsamości, brak oceny ryzyka, otwarcie rachunku wbrew przesłance odmowy."
+              - tekst: "Nieprawidłowość średnia: braki w dokumentacji, które można uzupełnić, błędy w danych klienta."
+              - tekst: "Nieprawidłowość drobna: uchybienia formalne niemające wpływu na bezpieczeństwo."
+          - tekst: "Usuwanie nieprawidłowości. Pracownik, w którego pracy stwierdzono nieprawidłowość, uzupełnia lub koryguje dokumentację w terminie wyznaczonym przez kontrolującego."
+            podkroki:
+              - tekst: "W przypadku nieprawidłowości istotnej rachunek może zostać czasowo zablokowany do czasu uzupełnienia danych, o czym informuje się klienta."
+              - tekst: "Jeżeli nieprawidłowości nie można usunąć, sprawę przekazuje się do {{fakt:jednostka.zgodnosc}}."
+          - tekst: "Szkolenie. Powtarzające się nieprawidłowości są podstawą do zorganizowania szkolenia dla pracowników placówki."
+          - tekst: "Raport. Wyniki kontroli i stan usuwania nieprawidłowości prezentuje się kierownictwu {{fakt:jednostka.obsluga-klienta}} w raportach kwartalnych."
+
+  - id: otwarcie-kontr-wskazniki-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-kontrola-opc
+    elementy:
+      - akapit: "Jakość procesu otwierania rachunków mierzy się za pomocą wskaźników, które Departament Obsługi Klienta zestawia kwartalnie i przedstawia kierownictwu."
+      - kroki:
+          - tekst: "Wskaźniki jakości."
+            podkroki:
+              - tekst: "odsetek rachunków otwartych bez nieprawidłowości stwierdzonych w kontroli;"
+              - tekst: "odsetek wniosków odrzuconych z powodu braków w dokumentach oraz średni czas ich uzupełnienia;"
+              - tekst: "liczba odmów otwarcia rachunku i ich główne przyczyny;"
+              - tekst: "odsetek klientów wysokiego ryzyka w ogólnej liczbie nowych klientów."
+          - tekst: "Wskaźniki sprawności."
+            podkroki:
+              - tekst: "średni czas od złożenia wniosku do uruchomienia rachunku w podziale na kanały;"
+              - tekst: "odsetek procesów w kanale zdalnym zakończonych powodzeniem w pierwszej próbie weryfikacji;"
+              - tekst: "liczba reklamacji dotyczących otwierania rachunków."
+          - tekst: "Wnioski. Wyniki analizuje się pod kątem potrzeby zmiany procedury, usprawnienia narzędzi i szkoleń, a decyzje w tych sprawach podejmuje kierownictwo {{fakt:jednostka.obsluga-klienta}}."
+
+  # --- Dokumentacja i archiwizacja
+  - id: otwarcie-dok-akta-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-dokumentacja-opc
+    elementy:
+      - akapit: "Dokumentacja klienta jest przechowywana w formie elektronicznej w systemie {{fakt:system.otwarcie.archiwum}}. Dokumenty papierowe przechowuje się tylko wtedy, gdy nie można ich zastąpić odpowiednikiem elektronicznym."
+      - kroki:
+          - tekst: "Zakres akt klienta. Akta obejmują:"
+            podkroki:
+              - tekst: "wniosek o otwarcie rachunku i umowę wraz z załącznikami;"
+              - tekst: "dokument tożsamości lub jego kopię oraz dokument potwierdzający adres;"
+              - tekst: "kwestionariusz ryzyka i notatki z rozmowy z klientem;"
+              - tekst: "protokół weryfikacji wideo lub potwierdzenie przelewu weryfikacyjnego;"
+              - tekst: "decyzje wydane w sprawie klienta oraz wyniki weryfikacji sankcyjnej."
+          - tekst: "Skanowanie. Dokumenty skanuje się w dniu zawarcia umowy w jakości umożliwiającej odczytanie wszystkich danych, a skany powiązuje z numerem klienta."
+          - tekst: "Okres przechowywania. Dokumentację przechowuje się przez {{fakt:termin.otwarcie.przechowywanie-dokumentacji}} od zakończenia relacji z klientem, a dokumentację związaną z odmową — przez okres określony w odrębnym przepisie."
+          - tekst: "Usuwanie. Po upływie okresu przechowywania dane usuwa się w sposób uniemożliwiający ich odtworzenie, a fakt usunięcia dokumentuje."
+
+  - id: otwarcie-dok-dostep-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-dokumentacja-opc
+    elementy:
+      - akapit: "Dostęp do dokumentacji klienta mają wyłącznie osoby, które potrzebują jej do wykonywania swoich obowiązków. Każdy dostęp jest rejestrowany i może zostać sprawdzony podczas kontroli."
+      - kroki:
+          - tekst: "Nadawanie uprawnień. Uprawnienia do systemu {{fakt:system.otwarcie.archiwum}} nadaje administrator na wniosek kierownika jednostki i odbiera je w dniu zakończenia pracy lub zmiany stanowiska."
+          - tekst: "Zasada minimalnych uprawnień. Pracownik ma dostęp wyłącznie do dokumentów klientów obsługiwanych w jego placówce, chyba że ma uprawnienia wynikające z funkcji."
+            podkroki:
+              - tekst: "Dostęp do dokumentacji klientów, z którymi pracownik jest w bliskich relacjach osobistych, jest zabroniony; pracownik zgłasza taki konflikt kierownikowi."
+              - tekst: "Wgląd w dane osób publicznych i pracowników Banku wymaga dodatkowej uwagi i jest szczególnie kontrolowany."
+          - tekst: "Udostępnianie na żądanie. Dokumentację klienta udostępnia się organom uprawnionym, w szczególności organom ścigania i nadzoru, wyłącznie na podstawie pisemnego żądania ocenionego przez radcę prawnego."
+          - tekst: "Przegląd uprawnień. Co pół roku kierownik jednostki weryfikuje listę osób z dostępem do dokumentacji i usuwa uprawnienia, które nie są już potrzebne."
+
+  - id: otwarcie-dok-nagrania-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-dokumentacja-opc
+    elementy:
+      - akapit: "Nagrania sesji wideo stanowią dokumentację weryfikacji tożsamości i podlegają szczególnym zasadom ochrony. Są przechowywane w osobnym, zabezpieczonym repozytorium."
+      - kroki:
+          - tekst: "Zapisywanie nagrań. Nagranie jest zapisywane automatycznie na koniec sesji i powiązywane z numerem wniosku; pracownik nie ma możliwości jego edycji ani usunięcia."
+          - tekst: "Szyfrowanie i dostęp. Nagrania są szyfrowane, a dostęp do nich mają wyłącznie wskazane osoby z {{fakt:jednostka.bezpieczenstwo}} oraz {{fakt:jednostka.zgodnosc}}."
+          - tekst: "Okres przechowywania. Nagranie przechowuje się przez {{fakt:termin.otwarcie.przechowywanie-nagrania}}, a po jego upływie usuwa automatycznie."
+            podkroki:
+              - tekst: "Okres przechowywania może zostać przedłużony wyłącznie na pisemne polecenie Inspektora ochrony danych w razie toczącego się postępowania."
+              - tekst: "Klient ma prawo żądać informacji o nagraniu i jego przechowywaniu na zasadach określonych w przepisach o ochronie danych osobowych."

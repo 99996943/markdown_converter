@@ -1,0 +1,76 @@
+bloki:
+  # --- Otwarcie rachunku w placówce
+  - id: otwarcie-placowka-identyfikacja-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Identyfikacja i weryfikacja tożsamości klienta w placówce są podstawą wszystkich dalszych czynności. Pracownik wykonuje je przed zebraniem jakichkolwiek informacji o planowanym korzystaniu z rachunku, a ich wynik dokumentuje."
+      - kroki:
+          - tekst: "Okazanie dokumentu. Poproś klienta o okazanie ważnego dokumentu tożsamości z fotografią; nie przyjmuj kopii ani fotografii dokumentu."
+            podkroki:
+              - tekst: "Porównaj zdjęcie z wizerunkiem klienta, zwracając uwagę na cechy, które nie zmieniają się w czasie."
+              - tekst: "Sprawdź zabezpieczenia dokumentu zgodnie z wytycznymi {{fakt:jednostka.bezpieczenstwo}} i, jeżeli to możliwe, odczytaj dane z elektronicznej warstwy dokumentu."
+              - tekst: "Zwróć uwagę na zachowanie klienta; jeżeli klient wydaje się niepewny co do własnych danych, zwiększ stopień weryfikacji."
+          - tekst: "Zapisanie danych. Wprowadź do systemu {{fakt:system.otwarcie.cbs}} imię i nazwisko, numer ewidencyjny, datę i miejsce urodzenia, obywatelstwo, adres zamieszkania oraz dane dokumentu."
+          - tekst: "Weryfikacja w rejestrach. Sprawdź w systemie {{fakt:system.otwarcie.aml}}, czy dokument nie figuruje jako zastrzeżony, a klient — na listach sankcyjnych."
+          - tekst: "Kopia dokumentu. Zrób kopię dokumentu tożsamości, jeżeli wymagają tego przepisy, i przechowuj ją zgodnie z zasadami ochrony danych osobowych; poinformuj klienta o celu kopiowania."
+
+  - id: otwarcie-placowka-rozmowa-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Rozmowa z klientem pozwala ustalić cel i charakter relacji gospodarczej oraz źródło pochodzenia środków. Pracownik zadaje pytania w sposób naturalny, bez sugerowania odpowiedzi, i dokumentuje odpowiedzi możliwie dosłownie."
+      - kroki:
+          - tekst: "Ustalenie celu rachunku. Zapytaj klienta, do jakich operacji będzie służył rachunek, jakie wpływy i wydatki planuje oraz czy będzie korzystał z płatności zagranicznych."
+          - tekst: "Ustalenie źródła środków. Zapytaj, skąd będą pochodziły środki wpłacane na rachunek, i odnotuj odpowiedź w kwestionariuszu ryzyka {{fakt:formularz.otwarcie.kwestionariusz-ryzyka}}."
+            podkroki:
+              - tekst: "W przypadku wpływów z tytułu wynagrodzenia lub świadczeń zapytaj o pracodawcę lub instytucję wypłacającą."
+              - tekst: "W przypadku wpływów z innych źródeł, w tym z darowizn, spadku lub sprzedaży majątku, poproś o krótkie wyjaśnienie i, jeżeli to uzasadnione, o dokument potwierdzający."
+          - tekst: "Ocena spójności. Oceń, czy informacje przekazane przez klienta są spójne z jego sytuacją zawodową i majątkową; zwróć uwagę na niezwykle wysokie lub nietypowe plany wpływów."
+          - tekst: "Zapis rozmowy. Wynik rozmowy zapisz w systemie tak, aby osoba niebiorąca w niej udziału mogła zrozumieć uzasadnienie przyjętej oceny ryzyka."
+
+  - id: otwarcie-placowka-podpis-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Umowę rachunku klient podpisuje w placówce na urządzeniu do podpisu elektronicznego albo własnoręcznie na dokumencie papierowym. Przed podpisaniem pracownik daje klientowi czas na zapoznanie się z treścią umowy."
+      - kroki:
+          - tekst: "Wydruk lub wyświetlenie umowy. Umowa zawiera dane klienta, numer rachunku, opłaty, oprocentowanie i terminy; sprawdź z klientem poprawność danych."
+          - tekst: "Podpis klienta."
+            podkroki:
+              - tekst: "Przy podpisie elektronicznym sprawdź, czy klient podpisuje się osobiście, a nie przekazuje urządzenia innej osobie."
+              - tekst: "Przy podpisie papierowym porównaj podpis ze wzorem w dokumencie tożsamości; jeżeli klient nie może się podpisać, postępuj zgodnie z zasadami określonymi dla osób niepełnosprawnych."
+          - tekst: "Wzór podpisu. Zapisz wzór podpisu klienta w systemie; wzór ten służy do późniejszej weryfikacji dyspozycji składanych w placówce."
+          - tekst: "Przekazanie egzemplarza. Przekaż klientowi egzemplarz umowy i regulaminu w formie papierowej lub na trwałym nośniku, zgodnie z wyborem klienta."
+
+  - id: otwarcie-placowka-wplata-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Klient może wpłacić środki na rachunek zaraz po zawarciu umowy. Wpłata wstępna nie jest warunkiem otwarcia rachunku, o ile umowa tego nie przewiduje, ale jej przyjęcie wymaga zachowania zasad kontroli kasowej."
+      - kroki:
+          - tekst: "Przyjęcie wpłaty. Jeżeli klient chce wpłacić środki, wskaż mu kasę lub wpłatomat; nie przyjmuj gotówki w sposób niezgodny z zasadami kasowymi placówki."
+            podkroki:
+              - tekst: "Wpłata gotówkowa w kwocie przekraczającej {{fakt:limit.otwarcie.wplata-wstepna-kasa}} wymaga dodatkowego wyjaśnienia źródła pochodzenia środków."
+              - tekst: "Wpłatę rejestruje się w systemie z podaniem tytułu operacji i danych wpłacającego."
+          - tekst: "Opłata za wpłatę. Poinformuj klienta, że opłata za wpłatę gotówkową wynosi {{fakt:oplata.wplata-gotowkowa}}, jeżeli taka opłata wynika z Taryfy dla danego rodzaju wpłaty."
+          - tekst: "Potwierdzenie. Wydaj klientowi potwierdzenie wpłaty i zwróć uwagę, że środki będą dostępne na rachunku zgodnie z zasadami określonymi w regulaminie."
+
+  - id: otwarcie-placowka-wyposazenie-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Po zawarciu umowy pracownik pomaga klientowi uruchomić dostęp do rachunku i przekazuje podstawowe wskazówki dotyczące bezpiecznego korzystania z usług bankowych."
+      - kroki:
+          - tekst: "Dostęp do bankowości. Jeżeli klient wybrał dostęp do bankowości elektronicznej, pomóż mu zainstalować aplikację {{fakt:bankowosc.nazwa-aplikacji}} i nadać dane uwierzytelniające."
+            podkroki:
+              - tekst: "Hasło ustala klient samodzielnie; pracownik nie zna hasła ani go nie zapisuje."
+              - tekst: "Zwróć uwagę, że hasło ma co najmniej {{fakt:bankowosc.min-dlugosc-hasla}} i nie może być związane z danymi osobowymi klienta."
+          - tekst: "Zasady bezpieczeństwa. Przekaż klientowi zasady chroniące przed wyłudzeniem danych: Bank nigdy nie prosi o podanie pełnego hasła, kodu autoryzacyjnego ani numeru karty, także telefonicznie."
+          - tekst: "Kontakt z Bankiem. Poinformuj klienta, że w razie utraty karty lub podejrzenia nieuprawnionego dostępu należy niezwłocznie skontaktować się z infolinią pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+          - tekst: "Zakończenie wizyty. Zapytaj klienta, czy ma dodatkowe pytania, i podaj dane kontaktowe do placówki."

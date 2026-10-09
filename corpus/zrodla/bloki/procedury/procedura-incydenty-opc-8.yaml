@@ -1,0 +1,85 @@
+bloki:
+  # --- Reagowanie i ograniczanie skutków
+  - id: incydenty-reag-izolacja-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - akapit: "Pierwszym celem reagowania jest powstrzymanie rozprzestrzeniania się incydentu. Wybór środków izolacji zależy od rodzaju incydentu, a decyzję o ich zastosowaniu podejmuje Kierownik incydentu po konsultacji z właścicielem dotkniętego systemu."
+      - kroki:
+          - tekst: "Izolacja stacji roboczych i serwerów."
+            podkroki:
+              - tekst: "Urządzenie podejrzane o zakażenie odłącza się od sieci przewodowej i bezprzewodowej, nie wyłączając go, aby nie utracić danych z pamięci operacyjnej."
+              - tekst: "Jeżeli odłączenie jest niemożliwe, urządzenie przenosi się do wydzielonego segmentu sieci, w którym nie ma dostępu do systemów produkcyjnych."
+              - tekst: "Na urządzeniu umieszcza się czytelne oznaczenie zakazujące jego używania do czasu decyzji Zespołu."
+          - tekst: "Izolacja kont. Konta, co do których istnieje podejrzenie przejęcia, {blokuje się|zawiesza się} natychmiast, a ich dotychczasowe sesje unieważnia się."
+            podkroki:
+              - tekst: "Hasła zmienia się dopiero po zabezpieczeniu śladów, chyba że zwłoka groziłaby istotną szkodą."
+              - tekst: "Zmiana haseł obejmuje także konta techniczne i klucze dostępowe, które mogły zostać ujawnione."
+          - tekst: "Izolacja segmentów sieci. Jeżeli incydent obejmuje wiele urządzeń, Jednostka informatyki, na polecenie Kierownika incydentu, ogranicza komunikację między segmentami sieci do niezbędnego minimum."
+          - tekst: "Rejestr decyzji. Każdą decyzję o izolacji zapisuje się w dzienniku zdarzeń, wraz z godziną, uzasadnieniem i przewidywanymi skutkami dla działalności Banku."
+
+  - id: incydenty-reag-malware-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - akapit: "W przypadku wykrycia złośliwego oprogramowania, w tym oprogramowania szyfrującego dane, obowiązują poniższe zasady postępowania, uzupełniające ogólne kroki reagowania."
+      - kroki:
+          - tekst: "Ustalenie zakresu zakażenia. Analityk bezpieczeństwa {ustala|identyfikuje} zakażone urządzenia na podstawie wskaźników kompromitacji, takich jak skróty plików, adresy serwerów sterujących i nazwy procesów."
+            podkroki:
+              - tekst: "Wskaźniki wprowadza się do systemu {{fakt:incydent.siem}}, który przeszukuje dzienniki z ostatnich trzydziestu dni."
+              - tekst: "Wyniki przeszukiwania zapisuje się w pokoju operacyjnym incydentu i na bieżąco uzupełnia."
+          - tekst: "Zablokowanie komunikacji. Adresy i domeny wykorzystywane przez złośliwe oprogramowanie blokuje się na zaporach i w bramach pocztowych."
+          - tekst: "Usunięcie oprogramowania. Złośliwe oprogramowanie usuwa się wyłącznie po zabezpieczeniu obrazu dysku lub pamięci; w razie wątpliwości co do skuteczności czyszczenia urządzenie instaluje się od nowa z zaufanego nośnika."
+          - tekst: "Żądanie okupu. Bank nie podejmuje rozmów z autorami żądania okupu ani nie dokonuje płatności bez decyzji Zarządu, podjętej po konsultacji z radcą prawnym i organami ścigania."
+          - tekst: "Kopie zapasowe. Przed rozpoczęciem odtwarzania danych z kopii zapasowych sprawdza się, że kopie nie zostały zainfekowane, a najpierw odtwarza się dane do odizolowanego środowiska testowego."
+
+  - id: incydenty-reag-przejecie-konta-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - akapit: "Przejęcie konta pracownika lub klienta stwarza szczególne ryzyko, ponieważ sprawca działa pod pozorem uprawnień osoby autoryzowanej. Postępowanie w takich sprawach przebiega w następującej kolejności."
+      - kroki:
+          - tekst: "Zablokowanie dostępu. Konto blokuje się, a aktywne sesje i tokeny unieważnia."
+            podkroki:
+              - tekst: "W przypadku konta klienta blokadę nakłada pracownik {{fakt:jednostka.obsluga-klienta}} lub Dyżurny, który niezwłocznie informuje klienta o blokadzie i o sposobie jej zniesienia."
+              - tekst: "Konto uprzywilejowane blokuje administrator bezpieczeństwa, a decyzję o ponownym włączeniu podejmuje Kierownik incydentu."
+          - tekst: "Ustalenie działań sprawcy. Analityk przegląda dzienniki zdarzeń konta od ostatniego znanego, prawidłowego logowania."
+            podkroki:
+              - tekst: "Ustala się zmiany uprawnień, dyspozycje płatnicze, zmiany danych kontaktowych i adresy, z których następowało logowanie."
+              - tekst: "Podejrzane dyspozycje płatnicze zgłasza się do wstrzymania lub odwołania w trybie opisanym w odrębnej procedurze."
+          - tekst: "Ustalenie sposobu przejęcia. Zespół ustala, czy konto zostało przejęte w wyniku wyłudzenia danych, ponownego użycia hasła ujawnionego w innym serwisie, złośliwego oprogramowania, czy też w inny sposób; wnioski wpisuje się do karty incydentu."
+          - tekst: "Przywrócenie bezpiecznego dostępu. Dostęp przywraca się po nadaniu nowych danych uwierzytelniających i weryfikacji tożsamości użytkownika dodatkowym kanałem."
+
+  - id: incydenty-reag-ddos-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - akapit: "Atak na dostępność usług, polegający na zalaniu systemów dużą liczbą żądań, wymaga szybkiego reagowania, aby usługi pozostały dostępne dla klientów. Odpowiedzialność za działania techniczne ponosi Jednostka informatyki."
+      - kroki:
+          - tekst: "Potwierdzenie ataku. Zespół odróżnia atak od nagłego wzrostu legalnego ruchu, porównując wzorce ruchu z danymi historycznymi i informacjami o kampaniach marketingowych."
+          - tekst: "Włączenie ochrony. Jednostka informatyki {uruchamia|włącza} mechanizmy filtrowania ruchu u dostawcy usług ochrony przed atakami i, w razie potrzeby, zwiększa pojemność łączy."
+            podkroki:
+              - tekst: "Zaostrza się limity liczby żądań z jednego adresu oraz blokuje ruch z krajów, z których Bank nie obsługuje klientów, o ile nie spowoduje to nadmiernych ograniczeń."
+              - tekst: "Zachowuje się dostęp dla kluczowych usług, w szczególności dla autoryzacji transakcji kartowych."
+          - tekst: "Komunikacja z klientami. Jeżeli atak powoduje niedostępność kanałów elektronicznych dłuższą niż próg wysokiej klasyfikacji, Jednostka komunikacji publikuje informację o utrudnieniach i alternatywnych sposobach załatwienia spraw."
+          - tekst: "Wykluczenie ataku osłonowego. Zespół sprawdza, czy atak nie jest używany do odwrócenia uwagi od innego działania, na przykład próby wyprowadzenia danych, i w tym celu analizuje równolegle dzienniki systemów wewnętrznych."
+
+  - id: incydenty-reag-bledne-przelewy-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - akapit: "Incydent operacyjny polegający na błędnym przetworzeniu transakcji wymaga od Banku szybkiego ustalenia skutków dla klientów oraz naprawienia błędu zgodnie z zasadami rozliczeń."
+      - kroki:
+          - tekst: "Zatrzymanie przetwarzania. Właściciel procesu wstrzymuje dalsze przetwarzanie transakcji dotkniętych błędem, aby nie powiększać liczby błędnych operacji."
+          - tekst: "Ustalenie zakresu. Jednostka operacji, {{fakt:jednostka.operacje}}, sporządza wykaz wszystkich operacji dotkniętych błędem, z podaniem kwot, rachunków i dat księgowania."
+            podkroki:
+              - tekst: "Wykaz weryfikuje druga osoba, niezależna od osoby, która go przygotowała."
+              - tekst: "Operacje, w których środki opuściły Bank, wyodrębnia się i traktuje priorytetowo."
+          - tekst: "Naprawa błędu. Korekty księgowań dokonuje się na podstawie polecenia podpisanego przez Kierownika incydentu i kierownika właściwej jednostki operacyjnej, w trybie podwójnej kontroli."
+          - tekst: "Zwrot środków klientom. Klientom, którzy ponieśli stratę lub których rachunki obciążono nienależnie, zwraca się środki bez konieczności składania reklamacji, w terminie {{fakt:termin.incydent.zwrot-nieautoryzowanej}}, a w razie utraty odsetek lub opłat — również odpowiednie koszty."
+          - tekst: "Informacja dla klientów. Klienci otrzymują wyjaśnienie błędu i zapewnienie o jego usunięciu, a Jednostka obsługi klienta zostaje poinformowana o treści wyjaśnienia, aby udzielać spójnych odpowiedzi."

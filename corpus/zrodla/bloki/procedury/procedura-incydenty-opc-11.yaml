@@ -1,0 +1,73 @@
+bloki:
+  # --- Testy i ćwiczenia
+  - id: incydenty-testy-tabletop-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - akapit: "Ćwiczenia stołowe polegają na przećwiczeniu reakcji na scenariusz incydentu w formie dyskusji prowadzonej według przygotowanego scenariusza, bez faktycznego wpływu na działanie systemów. Są wykonywane co najmniej raz na {{fakt:termin.incydent.cwiczenia-stolowe}}."
+      - kroki:
+          - tekst: "Przygotowanie. Jednostka bezpieczeństwa wybiera scenariusz, ustala cele ćwiczenia i wyznacza prowadzącego, który nie jest uczestnikiem ćwiczenia."
+            podkroki:
+              - tekst: "Uczestników powiadamia się z wyprzedzeniem, ale nie ujawnia się im szczegółów scenariusza."
+              - tekst: "Przygotowuje się wstrzyknięcia, czyli informacje podawane uczestnikom w trakcie ćwiczenia, które zmieniają jego przebieg."
+          - tekst: "Przebieg. Prowadzący przedstawia uczestnikom sytuację początkową, a następnie w odstępach czasu podaje kolejne wstrzyknięcia."
+            podkroki:
+              - tekst: "Uczestnicy opisują, jakie działania podjęliby w danym momencie i na podstawie jakich dokumentów."
+              - tekst: "Obserwatorzy notują decyzje, trudności, nieporozumienia i luki w procedurach."
+          - tekst: "Podsumowanie. Bezpośrednio po ćwiczeniu odbywa się spotkanie, na którym omawia się obserwacje, a w ciągu tygodnia sporządza się raport ze wskazaniem zaleceń."
+          - tekst: "Wnioski. Zalecenia z ćwiczeń włącza się do planu działań naprawczych i realizuje na zasadach przewidzianych dla zaleceń z przeglądów incydentów."
+
+  - id: incydenty-testy-techniczne-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - akapit: "Poza ćwiczeniami organizacyjnymi Bank przeprowadza testy techniczne, które sprawdzają, czy mechanizmy wykrywania i reagowania działają zgodnie z założeniami."
+      - kroki:
+          - tekst: "Testy penetracyjne. Niezależny zespół, zewnętrzny lub wewnętrzny, wykonuje kontrolowane próby włamania do wybranych systemów, a zakres testów i zasady ich prowadzenia określa pisemne zlecenie."
+            podkroki:
+              - tekst: "Zlecenie wskazuje systemy objęte testem, dozwolone techniki, okno czasowe oraz osoby kontaktowe, które mogą w każdej chwili przerwać test."
+              - tekst: "Wyniki testów przedstawia się w raporcie z podziałem ustaleń według krytyczności i zaleceniem sposobu naprawy."
+          - tekst: "Testy wykrywania. Jednostka bezpieczeństwa przeprowadza kontrolowane symulacje typowych ataków i sprawdza, czy system monitorowania wygenerował alert oraz czy analityk odpowiednio na niego zareagował."
+          - tekst: "Kampanie sprawdzające czujność pracowników. Co najmniej raz w roku wysyła się pracownikom symulowane wiadomości wyłudzające dane i bada, ilu pracowników je otworzyło, kliknęło w odnośnik lub zgłosiło."
+            podkroki:
+              - tekst: "Pracownicy, którzy ulegli symulowanej wiadomości, otrzymują natychmiast materiał szkoleniowy, a nie są karani."
+              - tekst: "Wyniki prezentuje się w sposób zbiorczy, bez wskazywania osób."
+          - tekst: "Usuwanie podatności. Podatności wykryte w testach usuwa się w terminach zależnych od ich krytyczności, a status usuwania podlega nadzorowi Jednostki bezpieczeństwa."
+
+  - id: incydenty-testy-lacznosc-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - akapit: "Skuteczna obsługa incydentu wymaga sprawnej łączności z osobami, które mogą zostać do niej wezwane. Gotowość kanałów łączności sprawdza się regularnie, niezależnie od ćwiczeń scenariuszowych."
+      - kroki:
+          - tekst: "Test wezwania. Co kwartał Dyżurny przeprowadza próbne wezwanie członków Zespołu, wysyłając wiadomość i wykonując połączenia na numery z listy kontaktów alarmowych."
+            podkroki:
+              - tekst: "Mierzy się czas, w jakim potwierdziły odbiór poszczególne osoby; za prawidłowy uznaje się wynik, w którym co najmniej 90% wezwanych potwierdziło odbiór w ciągu piętnastu minut."
+              - tekst: "Osoby, które nie potwierdziły odbioru, są kontaktowane przez przełożonego w celu wyjaśnienia przyczyn i aktualizacji danych."
+          - tekst: "Test kanałów zapasowych. Raz na pół roku sprawdza się działanie zapasowych kanałów łączności, w tym komunikatora poza infrastrukturą Banku i telefonów satelitarnych lub służbowych telefonów zapasowych."
+          - tekst: "Test pokoju operacyjnego. Raz w roku sprawdza się, czy {{fakt:incydent.pokoj-operacyjny}} można uruchomić w ciągu godziny, czy ma dostęp do niego komplet uprawnionych osób oraz czy rejestruje wszystkie wpisy."
+          - tekst: "Wyniki testów. Wyniki testów łączności zapisuje się w rejestrze ćwiczeń, a zauważone nieprawidłowości usuwa się bez zbędnej zwłoki."
+
+  - id: incydenty-testy-wskazniki-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - akapit: "Skuteczność procesu obsługi incydentów ocenia się na podstawie wskaźników, które Jednostka bezpieczeństwa oblicza kwartalnie i przedstawia Komitetowi nadzorującemu bezpieczeństwo."
+      - kroki:
+          - tekst: "Wskaźniki czasu."
+            podkroki:
+              - tekst: "średni czas od zdarzenia do jego wykrycia;"
+              - tekst: "średni czas od wykrycia do zaklasyfikowania incydentu;"
+              - tekst: "średni czas od klasyfikacji do ograniczenia skutków i do zamknięcia incydentu;"
+              - tekst: "odsetek incydentów obsłużonych w terminach określonych dla ich klasyfikacji."
+          - tekst: "Wskaźniki jakości."
+            podkroki:
+              - tekst: "odsetek incydentów wykrytych automatycznie w porównaniu z liczbą zgłoszonych przez pracowników i osoby z zewnątrz;"
+              - tekst: "odsetek alarmów fałszywych w ogólnej liczbie alertów;"
+              - tekst: "odsetek zaleceń z przeglądów zrealizowanych w terminie."
+          - tekst: "Wskaźniki skutków. Zestawia się liczbę dotkniętych klientów, całkowite czasy niedostępności usług oraz sumaryczną wartość strat i zwrotów dokonanych klientom."
+          - tekst: "Wykorzystanie wskaźników. Wyniki służą do wskazywania obszarów wymagających wzmocnienia i do planowania szkoleń, nie zaś do oceny pracowników indywidualnie."

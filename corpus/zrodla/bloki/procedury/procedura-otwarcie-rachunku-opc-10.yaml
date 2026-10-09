@@ -1,0 +1,65 @@
+bloki:
+  # --- Odmowa otwarcia rachunku
+  - id: otwarcie-odmowa-przeslanki-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Bank odmawia otwarcia rachunku, gdy nie może zastosować środków bezpieczeństwa finansowego albo gdy zachodzą okoliczności uniemożliwiające zawarcie umowy zgodnie z przepisami lub zasadami Banku. Przesłanki odmowy są następujące."
+      - kroki:
+          - tekst: "Przesłanki wynikające z przepisów."
+            podkroki:
+              - tekst: "klient odmawia przedstawienia dokumentu tożsamości albo przedstawiony dokument budzi uzasadnione wątpliwości co do jego autentyczności;"
+              - tekst: "klient nie podaje informacji wymaganych do oceny ryzyka lub podaje informacje niespójne;"
+              - tekst: "klient lub osoba z nim powiązana jest objęta środkami ograniczającymi;"
+              - tekst: "nie jest możliwe ustalenie rzeczywistego beneficjenta rachunku."
+          - tekst: "Przesłanki wewnętrzne."
+            podkroki:
+              - tekst: "klient był wcześniej stroną umowy rozwiązanej przez Bank z powodu rażącego naruszenia jej postanowień;"
+              - tekst: "w stosunku do klienta zachodzi uzasadnione podejrzenie, że rachunek będzie wykorzystany w celu przestępczym."
+          - tekst: "Zakaz odmowy z powodów dyskryminacyjnych. Odmowy nie można uzasadniać płcią, wiekiem, pochodzeniem, wyznaniem, niepełnosprawnością ani innymi cechami niezwiązanymi z oceną ryzyka."
+
+  - id: otwarcie-odmowa-postepowanie-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Decyzję o odmowie otwarcia rachunku podejmuje kierownik placówki, a w przypadkach powiązanych ze środkami bezpieczeństwa finansowego — {{fakt:jednostka.zgodnosc}}. Pracownik, który stwierdził przesłankę odmowy, nie podejmuje takiej decyzji samodzielnie."
+      - kroki:
+          - tekst: "Wstrzymanie procesu. Zaprzestań dalszych czynności i zachowaj dokumenty oraz dane zebrane do tej pory."
+          - tekst: "Wniosek o decyzję. Opisz okoliczności i przekaż sprawę kierownikowi placówki lub do {{fakt:jednostka.zgodnosc}} wraz z dokumentacją."
+            podkroki:
+              - tekst: "Decyzję wydaje się w terminie {{fakt:termin.otwarcie.decyzja-kierownika}} albo {{fakt:termin.otwarcie.decyzja-zgodnosci}}, w zależności od właściwego organu."
+              - tekst: "Decyzję zapisuje się w formularzu {{fakt:formularz.otwarcie.decyzja-odmowy}} z uzasadnieniem."
+          - tekst: "Zawiadomienie o podejrzeniu. Jeżeli odmowa wynika z podejrzenia przestępstwa lub prania pieniędzy, {{fakt:jednostka.zgodnosc}} ocenia obowiązek zawiadomienia właściwego organu."
+          - tekst: "Zwrot dokumentów. Klientowi zwraca się oryginały dokumentów, a kopie wykonane w trakcie procesu zachowuje się, jeżeli wymagają tego przepisy o przeciwdziałaniu praniu pieniędzy."
+
+  - id: otwarcie-odmowa-informowanie-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Klient jest informowany o odmowie otwarcia rachunku w sposób zrozumiały i uprzejmy, w terminie {{fakt:termin.otwarcie.informacja-o-odmowie}}. Zakres przekazywanych informacji zależy od przyczyny odmowy."
+      - kroki:
+          - tekst: "Odmowa z powodów formalnych. Gdy odmowa wynika z braku dokumentów lub niespełnienia warunków, wskaż klientowi, co powinien uzupełnić, i poinformuj, że może ponowić wniosek."
+          - tekst: "Odmowa z powodów związanych z bezpieczeństwem. Gdy odmowa wynika z oceny ryzyka lub podejrzeń, nie ujawniaj klientowi szczegółów oceny; poinformuj ogólnie, że Bank nie może otworzyć rachunku."
+            podkroki:
+              - tekst: "Nie ujawniaj, że dokonano zgłoszenia do organu, ani nie sugeruj podejrzeń wobec klienta."
+              - tekst: "Wskaż, że klient może skontaktować się z infolinią lub złożyć reklamację w trybie określonym w regulaminie."
+          - tekst: "Forma informacji. Informację przekazuje się ustnie w placówce, a na żądanie klienta — także na piśmie lub na trwałym nośniku."
+          - tekst: "Dokumentowanie. Fakt poinformowania klienta zapisz w systemie, z podaniem daty, osoby i zakresu przekazanych informacji."
+
+  - id: otwarcie-odmowa-ponowny-wniosek-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Klient, któremu odmówiono otwarcia rachunku, może ponownie złożyć wniosek, jeżeli przyczyna odmowy ustała. Ponowne rozpatrzenie wymaga jednak ostrożności, aby nie obejść wcześniejszej decyzji."
+      - kroki:
+          - tekst: "Sprawdzenie wcześniejszych odmów. Przed przyjęciem wniosku sprawdź w systemie {{fakt:system.otwarcie.cbs}}, czy klient ma wcześniejszą odmowę i z jakiego powodu."
+          - tekst: "Ocena zmiany okoliczności. Ustal, czy przyczyna odmowy ustała, i poproś o dokumenty, które to potwierdzają."
+            podkroki:
+              - tekst: "Jeżeli odmowa wynikała z braku dokumentów — sprawdź, czy zostały uzupełnione."
+              - tekst: "Jeżeli odmowa wynikała z oceny ryzyka — sprawę przekaż do {{fakt:jednostka.zgodnosc}}, która rozstrzyga, czy ponowny wniosek może zostać rozpatrzony."
+          - tekst: "Zakaz obchodzenia decyzji. Nie przyjmuj wniosku złożonego w innej placówce lub kanale w celu uniknięcia wcześniejszej odmowy, a stwierdzoną próbę zgłoś kierownikowi placówki."
+          - tekst: "Przechowywanie danych o odmowie. Dane o odmowie przechowuje się przez {{fakt:termin.otwarcie.przechowywanie-odmowy}}."

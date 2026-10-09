@@ -1,0 +1,79 @@
+bloki:
+  # --- Przypadki szczególne
+  - id: incydenty-szcz-dostawca-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - akapit: "Incydent, którego źródłem jest dostawca usług, rodzi specyficzne trudności, ponieważ Bank nie ma pełnej kontroli nad systemami dostawcy. Mimo to odpowiedzialność wobec klientów i organów nadzoru spoczywa na Banku."
+      - kroki:
+          - tekst: "Powiadomienie od dostawcy. Powiadomienie przyjmuje Opiekun relacji z dostawcą lub Dyżurny, który rejestruje je jako incydent i niezwłocznie informuje właściciela usługi."
+          - tekst: "Ocena wpływu. Zespół ocenia, na jakie procesy Banku wpływa incydent u dostawcy, i traktuje zdarzenie tak, jakby wystąpiło w systemach Banku."
+            podkroki:
+              - tekst: "Sprawdza się, czy dostawca ma dostęp do danych klientów Banku, i jeśli tak — jakich i w jakim zakresie."
+              - tekst: "Jeżeli dane mogły zostać naruszone, uruchamia się postępowanie jak w przypadku naruszenia ochrony danych."
+          - tekst: "Żądanie informacji. Opiekun żąda od dostawcy pisemnej informacji o przyczynach, zakresie, podjętych działaniach i przewidywanym terminie usunięcia skutków, a następnie otrzymanych odpowiedzi nie przyjmuje bezkrytycznie, lecz weryfikuje je z innych źródeł."
+          - tekst: "Środki zastępcze. Jeżeli dostawca nie jest w stanie przywrócić usługi w czasie wymaganym przez Bank, właściciel usługi uruchamia rozwiązania zastępcze przewidziane w planie ciągłości działania."
+
+  - id: incydenty-szcz-pracownik-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - akapit: "Incydent z udziałem pracownika, w szczególności podejrzenie nadużycia lub celowego działania na szkodę Banku, wymaga zachowania szczególnej poufności i ostrożności w ocenie faktów, aby chronić dobre imię osoby, której zdarzenie dotyczy."
+      - kroki:
+          - tekst: "Ograniczenie kręgu osób. Informacje o zdarzeniu przekazuje się wyłącznie osobom, które muszą je znać, a ich listę prowadzi Kierownik incydentu."
+          - tekst: "Zabezpieczenie dowodów. Jednostka bezpieczeństwa zabezpiecza dane i urządzenia, których dotyczy podejrzenie, w sposób niewzbudzający niepotrzebnej uwagi, ale zgodny z zasadami opisanymi w niniejszej procedurze."
+            podkroki:
+              - tekst: "Czynności wymagające wglądu w korespondencję lub dane pracownika wykonuje się wyłącznie w granicach dopuszczonych prawem i regulaminem pracy."
+              - tekst: "Zakres analizowanych danych ogranicza się do tych, które są niezbędne dla wyjaśnienia sprawy."
+          - tekst: "Udział Jednostki kadr. Jednostka kadr doradza w zakresie konsekwencji pracowniczych; decyzje w tej sprawie podejmuje się dopiero po zakończeniu analizy faktów."
+          - tekst: "Zawiadomienie organów. Jeżeli istnieje uzasadnione podejrzenie przestępstwa, zawiadomienie organów ścigania składa Zarząd na wniosek radcy prawnego."
+
+  - id: incydenty-szcz-dane-osobowe-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - akapit: "Naruszenie ochrony danych osobowych wymaga równoległego prowadzenia dwóch ścieżek: obsługi technicznej incydentu oraz oceny obowiązków wobec organu nadzoru i osób, których dane dotyczą."
+      - kroki:
+          - tekst: "Ocena ryzyka. Inspektor ochrony danych i radca prawny oceniają, czy naruszenie może powodować ryzyko naruszenia praw lub wolności osób fizycznych."
+            podkroki:
+              - tekst: "Uwzględnia się rodzaj danych, liczbę osób, łatwość identyfikacji, a także możliwe skutki, takie jak kradzież tożsamości, strata finansowa lub dyskryminacja."
+              - tekst: "Ocenę zapisuje się w rejestrze naruszeń, także wtedy, gdy uznano, że zgłoszenie organowi nadzoru nie jest wymagane."
+          - tekst: "Zgłoszenie organowi nadzoru. Jeżeli ryzyko wystąpiło, zgłoszenia dokonuje się w terminie {{fakt:termin.incydent.naruszenie-danych}} od stwierdzenia naruszenia; opóźnienie wymaga uzasadnienia."
+          - tekst: "Zawiadomienie osób. Jeżeli ryzyko jest wysokie, Bank zawiadamia osoby, których dane dotyczą, w terminie {{fakt:termin.incydent.powiadomienie-klientow}}."
+            podkroki:
+              - tekst: "Zawiadomienie jest napisane prostym językiem i opisuje charakter naruszenia, jego prawdopodobne skutki, podjęte środki oraz dane kontaktowe do Inspektora."
+              - tekst: "Zawiadomienie wysyła się kanałem, który najskuteczniej dotrze do adresata, z zachowaniem bezpieczeństwa treści."
+          - tekst: "Środki naprawcze. Bank wprowadza środki zmniejszające ryzyko, a ich skuteczność ocenia po upływie ustalonego okresu."
+
+  - id: incydenty-szcz-wyciek-dokumentow-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - akapit: "Najczęstszym incydentem związanym z danymi jest przesłanie dokumentów lub wiadomości do niewłaściwego adresata. Mimo niewielkiej skali pojedynczego zdarzenia wymaga ono konsekwentnej reakcji."
+      - kroki:
+          - tekst: "Natychmiastowe działania. Pracownik, który zauważył pomyłkę, niezwłocznie zgłasza ją Dyżurnemu i, jeżeli jest to możliwe, próbuje wycofać wiadomość."
+          - tekst: "Kontakt z adresatem. Kierownik jednostki lub wyznaczona osoba kontaktuje się z niewłaściwym adresatem i prosi go o skasowanie wiadomości i potwierdzenie tego faktu na piśmie."
+            podkroki:
+              - tekst: "Kontakt prowadzi się w sposób uprzejmy, bez ujawniania dodatkowych informacji o osobie, której dane dotyczą."
+              - tekst: "W przypadku braku potwierdzenia lub podejrzenia wykorzystania danych sprawę przekazuje się do radcy prawnego."
+          - tekst: "Ocena skutków. Inspektor ochrony danych ocenia, czy konieczne jest zgłoszenie naruszenia i zawiadomienie osoby, której dane dotyczą."
+          - tekst: "Działania zapobiegawcze. Jeżeli pomyłka wynikała z błędu w procesie lub konfiguracji systemu, zalecenie usunięcia przyczyny dołącza się do raportu z przeglądu."
+
+  - id: incydenty-szcz-oszustwo-karty-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - akapit: "Masowe nadużycia z użyciem kart płatniczych lub rachunków klientów, na przykład w wyniku wycieku danych kart albo kampanii wyłudzającej, wymagają skoordynowanej reakcji Jednostki bezpieczeństwa, Jednostki operacji i obsługi klienta."
+      - kroki:
+          - tekst: "Wykrycie i potwierdzenie. System monitorowania transakcji zgłasza nietypowy wzrost liczby podejrzanych transakcji, a analityk potwierdza, że dotyczą one wspólnego źródła, na przykład tego samego terminala lub sklepu internetowego."
+          - tekst: "Ograniczenie szkód. Jednostka operacji, na polecenie Kierownika incydentu, podejmuje działania zapobiegawcze."
+            podkroki:
+              - tekst: "Karty, których dane mogły zostać ujawnione, blokuje się zbiorczo, a klientów informuje o konieczności odbioru nowych kart."
+              - tekst: "Zaostrza się parametry kontroli transakcji dla ryzykownych kanałów, jednak w sposób, który nie uniemożliwia klientom normalnych płatności."
+          - tekst: "Obsługa zgłoszeń klientów. Klienci zgłaszający nieautoryzowane transakcje otrzymują pomoc w trybie przyspieszonym; zasady zwrotu środków określają odrębne przepisy, a zwrot następuje w terminie {{fakt:termin.incydent.zwrot-nieautoryzowanej}}."
+          - tekst: "Współpraca z organizacjami płatniczymi i policją. Radca prawny wraz z Jednostką bezpieczeństwa przygotowuje informacje dla organizacji płatniczych i organów ścigania, w tym zestawienia transakcji i zabezpieczone dowody."

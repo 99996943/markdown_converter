@@ -1,0 +1,132 @@
+bloki:
+  # --- Zakres stosowania
+  - id: otwarcie-zakres-wylaczenia-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zakres-opc
+    elementy:
+      - akapit: "Procedura nie obejmuje {otwierania|zakładania} rachunków dla klientów prowadzących działalność gospodarczą, rachunków lokat i kont oszczędnościowych otwieranych jako produkty dodatkowe do rachunku osobistego ani rachunków powierniczych. Zasady otwierania tych rachunków określają odrębne dokumenty."
+      - ustep: "W sprawach nieuregulowanych w niniejszej procedurze pracownik postępuje zgodnie z regulaminem rachunku osobistego oraz z zasadami środków bezpieczeństwa finansowego obowiązującymi w Banku. W razie wątpliwości co do zakresu procedury pracownik zwraca się do kierownika placówki albo do {{fakt:jednostka.zgodnosc}}."
+
+  - id: otwarcie-zakres-kanaly-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zakres-opc
+    elementy:
+      - akapit: "Procedurę stosuje się niezależnie od kanału, w którym klient składa wniosek o otwarcie rachunku. Poszczególne kanały różnią się sposobem identyfikacji klienta i składania podpisu, nie różnią się natomiast wymaganiami co do oceny ryzyka ani dokumentowania czynności."
+      - kroki:
+          - tekst: "Placówka. Klient zgłasza się osobiście do placówki Banku, a pracownik przeprowadza wszystkie czynności w jego obecności."
+          - tekst: "Kanał zdalny. Klient składa wniosek za pośrednictwem strony internetowej lub aplikacji mobilnej, a jego tożsamość weryfikuje się w sposób opisany w części poświęconej otwieraniu rachunku na odległość."
+          - tekst: "Doradca w miejscu wskazanym przez klienta. W wyjątkowych przypadkach, za zgodą kierownika placówki, doradca może otworzyć rachunek poza placówką, zachowując wszystkie wymagania obowiązujące w placówce."
+      - akapit: "Niezależnie od kanału obowiązuje ta sama lista dokumentów i takie same kryteria odmowy otwarcia rachunku."
+
+  - id: otwarcie-zakres-adresaci-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zakres-opc
+    elementy:
+      - akapit: "Procedurę stosują wszyscy pracownicy Banku uczestniczący w procesie otwierania rachunku, w tym także pracownicy zatrudnieni na podstawie umów cywilnoprawnych i pracownicy agentów, jeżeli wykonują w imieniu Banku czynności związane z identyfikacją klienta i zawarciem umowy."
+      - ustep: "Wymagania niniejszej procedury mają zastosowanie do każdego klienta, bez względu na wartość środków, jakie klient zamierza zgromadzić na rachunku, oraz bez względu na to, czy klient jest znany pracownikowi osobiście."
+      - ustep: "Pracownik, który nie ukończył szkolenia z zakresu otwierania rachunków i środków bezpieczeństwa finansowego, nie może samodzielnie wykonywać czynności objętych procedurą."
+
+  - id: otwarcie-zakres-dokumenty-powiazane-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zakres-opc
+    elementy:
+      - akapit: "Z niniejszą procedurą powiązane są dokumenty: „{{ref:dokument:regulamin-rachunku-osobistego}}”, „{{ref:dokument:taryfa-indywidualni}}” oraz wewnętrzne procedury z zakresu przeciwdziałania praniu pieniędzy i ochrony danych osobowych. W razie rozbieżności pierwszeństwo ma przepis powszechnie obowiązujący, następnie regulamin, a w dalszej kolejności niniejsza procedura."
+      - ustep: "Pracownik jest obowiązany znać aktualne wersje dokumentów powiązanych. Aktualne wersje dokumentów udostępnia {{fakt:jednostka.zgodnosc}} w systemie dokumentów wewnętrznych."
+
+  # --- Odpowiedzialności
+  - id: otwarcie-odp-role-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odp-opc
+    elementy:
+      - ustep: "**Doradca klienta** odpowiada za prawidłowe przeprowadzenie procesu otwarcia rachunku w placówce lub w kanale zdalnym. W szczególności:"
+        punkty:
+          - "{identyfikuje|ustala tożsamość} klienta i weryfikuje jego tożsamość na podstawie ważnego dokumentu;"
+          - "przeprowadza z klientem rozmowę, w trakcie której ustala cel i charakter relacji gospodarczej oraz źródło środków;"
+          - "{wypełnia|uzupełnia} wniosek i kwestionariusz ryzyka, a wszystkie dane zapisuje w systemie {{fakt:system.otwarcie.cbs}};"
+          - "przekazuje klientowi informacje o produkcie przed zawarciem umowy."
+      - ustep: "**Kierownik placówki** nadzoruje pracę doradców i podejmuje decyzje w sprawach wymagających jego zgody, w tym w terminie {{fakt:termin.otwarcie.decyzja-kierownika}} rozstrzyga o wyjątkach od standardowych wymagań dokumentowych."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** zatwierdza otwarcie rachunków klientów o podwyższonym ryzyku i rozstrzyga w sprawach wątpliwych w terminie {{fakt:termin.otwarcie.decyzja-zgodnosci}}."
+
+  - id: otwarcie-odp-druga-para-oczu-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odp-opc
+    elementy:
+      - ustep: "Czynności wymagające szczególnej staranności są wykonywane z zachowaniem zasady dwóch par oczu. Oznacza to, że ich prawidłowość potwierdza druga osoba, niezależna od osoby, która wykonała czynność. Zasadę stosuje się do:"
+        punkty:
+          - "otwierania rachunków klientów o podwyższonym ryzyku;"
+          - "przyjmowania wyjątków od wymaganych dokumentów;"
+          - "otwierania rachunków dla osób zajmujących eksponowane stanowiska polityczne;"
+          - "{korekt|zmian} danych klienta wprowadzonych po zawarciu umowy."
+      - ustep: "Osoba weryfikująca nie może być pracownikiem podlegającym osobie, której czynność weryfikuje, w sposób umożliwiający wywieranie wpływu na wynik weryfikacji. Weryfikację potwierdza się w systemie {{fakt:system.otwarcie.cbs}} własnym identyfikatorem."
+
+  - id: otwarcie-odp-szkolenia-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odp-opc
+    elementy:
+      - ustep: "Pracownik przed rozpoczęciem samodzielnej obsługi klientów przechodzi szkolenie obejmujące zasady otwierania rachunków, weryfikację tożsamości, środki bezpieczeństwa finansowego, ochronę danych osobowych oraz rozpoznawanie prób oszustwa. Szkolenie kończy się sprawdzianem wiedzy."
+      - ustep: "Szkolenia powtarza się co roku. Kierownik placówki prowadzi listę osób przeszkolonych i, w razie zmian w przepisach lub procedurach, organizuje szkolenie uzupełniające w terminie wyznaczonym przez {{fakt:jednostka.zgodnosc}}."
+      - ustep: "Pracownik, który uzyskał negatywny wynik sprawdzianu, nie może samodzielnie otwierać rachunków do czasu ponownego przeszkolenia i uzyskania wyniku pozytywnego."
+
+  # --- Przegląd i przygotowanie
+  - id: otwarcie-przeglad-ustalenie-potrzeb-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "Przed rozpoczęciem formalności pracownik ustala, jakiego produktu klient potrzebuje, i upewnia się, że klient rozumie, czym jest rachunek osobisty. Rozmowa z klientem powinna być prowadzona w sposób zrozumiały i rzetelny."
+      - kroki:
+          - tekst: "Poznanie potrzeb klienta."
+            podkroki:
+              - tekst: "Zapytaj klienta, w jakim celu chce otworzyć rachunek i jak zamierza z niego korzystać: do codziennych płatności, otrzymywania wynagrodzenia, oszczędzania czy rozliczeń z zagranicą."
+              - tekst: "Zapytaj, czy klient ma już rachunek w innym banku i czy zamierza zmienić bank, a jeśli tak — wyjaśnij zasady przenoszenia rachunku."
+          - tekst: "Przedstawienie warunków. Przekaż klientowi na trwałym nośniku {tabelę opłat|informację o opłatach}, regulamin rachunku oraz dokument „{{ref:dokument:taryfa-indywidualni}}”, i zapytaj, czy klient ma pytania."
+          - tekst: "Zapewnienie czasu na decyzję. Klient nie powinien być ponaglany; decyzję o otwarciu rachunku podejmuje po zapoznaniu się z przekazanymi dokumentami."
+
+  - id: otwarcie-przeglad-wniosek-wstepny-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "Klient może rozpocząć proces otwarcia rachunku przez złożenie wniosku wstępnego, a następnie uzupełnić formalności w placówce lub zdalnie. Wniosek wstępny nie jest umową ani zobowiązaniem żadnej ze stron."
+      - kroki:
+          - tekst: "Przyjęcie wniosku wstępnego. W formularzu {{fakt:formularz.otwarcie.wniosek}} zapisz podstawowe dane klienta i rodzaj wnioskowanego rachunku."
+            podkroki:
+              - tekst: "Wniosek wstępny zachowuje ważność przez {{fakt:termin.otwarcie.wniosek-wstepny-waznosc}}, po czym dane z niego usuwa się, o ile klient nie dokończył procesu."
+              - tekst: "Poinformuj klienta, jakie dokumenty powinien przynieść lub przesłać, i w jakim terminie może uzupełnić brakujące dokumenty: {{fakt:termin.otwarcie.uzupelnienie-dokumentow}}."
+          - tekst: "Wstępne sprawdzenie klienta. Przed wizytą klienta sprawdź w systemie {{fakt:system.otwarcie.cbs}}, czy klient nie ma już rachunku ani zapisów utrudniających zawarcie umowy."
+          - tekst: "Umówienie spotkania. Jeżeli klient wymaga osobistej obsługi, ustal termin wizyty w placówce i przypomnij o konieczności zabrania dokumentu tożsamości."
+
+  - id: otwarcie-przeglad-kompletnosc-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "Przed przystąpieniem do właściwych czynności pracownik sprawdza, czy klient przedstawił komplet dokumentów. Brak któregokolwiek z nich nie zwalnia z obowiązku zachowania należytej staranności."
+      - kroki:
+          - tekst: "Dokument tożsamości. Sprawdź ważność dokumentu, jego stan zewnętrzny i zgodność zdjęcia z wyglądem klienta."
+            podkroki:
+              - tekst: "Nie przyjmuj dokumentów uszkodzonych w sposób utrudniający odczyt danych ani noszących ślady przerobienia."
+              - tekst: "Jeżeli masz wątpliwości co do autentyczności dokumentu, zwróć się do {{fakt:jednostka.bezpieczenstwo}}."
+          - tekst: "Potwierdzenie adresu. Jeżeli adres zamieszkania klienta nie wynika z dokumentu tożsamości, wymagaj dokumentu potwierdzającego adres wystawionego nie wcześniej niż {{fakt:termin.otwarcie.waznosc-dokumentu-adresu}} przed dniem złożenia wniosku."
+          - tekst: "Numer identyfikacyjny. Zapisz numer ewidencyjny klienta; w przypadku osób, które go nie posiadają, zapisz datę urodzenia i rodzaj oraz numer dokumentu tożsamości."
+          - tekst: "Wynik przeglądu. Wynik sprawdzenia zapisz w liście kontrolnej, a w razie braków wskaż klientowi, co należy uzupełnić."
+
+  - id: otwarcie-przeglad-informacje-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "Przed zawarciem umowy klient musi otrzymać informacje wymagane przepisami. Informacje przekazuje się w sposób jasny i wyczerpujący, a ich przekazanie dokumentuje."
+      - kroki:
+          - tekst: "Informacje o Banku i produkcie. Poinformuj klienta o nazwie i adresie Banku, głównych cechach rachunku, opłatach, oprocentowaniu środków oraz o zasadach korzystania z rachunku."
+          - tekst: "Gwarancje. Wyjaśnij, że środki zgromadzone na rachunku są objęte gwarancjami w ramach systemu gwarantowania depozytów, i wskaż, że szczegółowe informacje znajdują się w arkuszu informacyjnym."
+          - tekst: "Prawo odstąpienia. Poinformuj klienta, że w przypadku umowy zawartej na odległość przysługuje mu prawo odstąpienia w terminie {{fakt:termin.odstapienie-od-umowy}}."
+          - tekst: "Skargi i reklamacje. Przekaż informacje o sposobach składania reklamacji oraz o możliwości skorzystania z pozasądowego rozwiązywania sporów przed rzecznikiem finansowym."
+          - tekst: "Potwierdzenie. Odnotuj w systemie, że informacje zostały przekazane, a klient potwierdził zapoznanie się z nimi."

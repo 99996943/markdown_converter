@@ -1,0 +1,79 @@
+bloki:
+  # --- Zawarcie umowy i uruchomienie rachunku
+  - id: otwarcie-umowa-tresc-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Umowa rachunku osobistego jest zawierana na czas nieokreślony, na wzorcu zatwierdzonym przez Bank. Pracownik nie zmienia treści umowy ani nie składa w imieniu Banku obietnic, które nie wynikają z dokumentów produktu."
+      - kroki:
+          - tekst: "Sprawdzenie danych w umowie. Przed podpisaniem umowy wspólnie z klientem sprawdź:"
+            podkroki:
+              - tekst: "dane identyfikacyjne klienta i adres do korespondencji;"
+              - tekst: "rodzaj rachunku, walutę i numer rachunku;"
+              - tekst: "wysokość opłat i oprocentowania wynikające z aktualnej tabeli opłat, w tym opłatę za prowadzenie rachunku w wysokości {{fakt:oplata.prowadzenie-rachunku}};"
+              - tekst: "dane dotyczące zamówionych usług dodatkowych."
+          - tekst: "Wyjaśnienie kluczowych postanowień. {Omów|Wyjaśnij} z klientem zasady wypowiedzenia umowy, które wynoszą {{fakt:termin.wypowiedzenie-przez-klienta}} dla klienta i {{fakt:termin.wypowiedzenie-przez-bank}} dla Banku, oraz zasady zmiany regulaminu."
+          - tekst: "Ocena zrozumienia. Zapytaj klienta, czy rozumie warunki umowy; jeżeli klient wykazuje trudności ze zrozumieniem, zaoferuj dodatkowe wyjaśnienia lub odłóż podpisanie umowy."
+
+  - id: otwarcie-umowa-karta-wydanie-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Karta debetowa wydawana do nowo otwartego rachunku jest przekazywana klientowi w sposób zapewniający, że nie trafi do rąk osób niepowołanych. Wydanie karty rejestruje się w systemie."
+      - kroki:
+          - tekst: "Wysyłka karty. Kartę wysyła się na adres do korespondencji klienta w kopercie niewskazującej zawartości, a kod PIN — w osobnej przesyłce lub w bankowości elektronicznej."
+          - tekst: "Odbiór w placówce. Jeżeli klient wybrał odbiór w placówce, wydaj kartę po okazaniu dokumentu tożsamości i potwierdzeniu odbioru podpisem."
+            podkroki:
+              - tekst: "Nie wydawaj karty osobie trzeciej bez pisemnego upoważnienia klienta i jej weryfikacji."
+              - tekst: "Kartę niewydaną w placówce w ciągu miesiąca od jej otrzymania niszczy się komisyjnie, a o tym fakcie informuje klienta."
+          - tekst: "Aktywacja karty. Poinformuj klienta, że karta wymaga aktywacji, i wyjaśnij, jak to zrobić w aplikacji, w bankomacie lub przez infolinię."
+          - tekst: "Limity. Wyjaśnij klientowi domyślne limity: dzienny limit transakcji gotówkowych wynosi {{fakt:limit.karta.dzienny-gotowkowy}}, a bezgotówkowych — {{fakt:limit.karta.dzienny-bezgotowkowy}}; klient może je zmienić w bankowości elektronicznej."
+
+  - id: otwarcie-umowa-powiadomienia-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Po zawarciu umowy klient może włączyć powiadomienia o operacjach na rachunku. Powiadomienia zwiększają bezpieczeństwo, ponieważ pozwalają szybko wykryć nieuprawnione transakcje."
+      - kroki:
+          - tekst: "Rodzaje powiadomień. Poinformuj klienta o możliwości otrzymywania wiadomości w aplikacji, wiadomości SMS lub wiadomości e-mail."
+            podkroki:
+              - tekst: "Powiadomienia w aplikacji są bezpłatne."
+              - tekst: "Opłata za powiadomienia SMS wynosi {{fakt:oplata.powiadomienie-sms}} za wiadomość lub zgodnie z pakietem opisanym w Taryfie."
+          - tekst: "Zakres powiadomień. Ustal z klientem, o jakich zdarzeniach chce być powiadamiany: o wszystkich operacjach, o operacjach powyżej wskazanej kwoty czy tylko o logowaniach."
+          - tekst: "Dane kontaktowe. Sprawdź, czy numer telefonu i adres e-mail klienta są poprawne, i zapytaj, czy klient chce otrzymywać także informacje o ofertach Banku; zgodę marketingową zbiera się odrębnie i jest ona dobrowolna."
+          - tekst: "Zmiany. Poinformuj klienta, że może zmienić ustawienia w każdym momencie, a o zmianie numeru telefonu powinien niezwłocznie powiadomić Bank."
+
+  - id: otwarcie-umowa-wyciagi-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Przy zawieraniu umowy klient wybiera sposób otrzymywania wyciągów z rachunku. Wybór wpływa na wysokość opłat i na dostępność informacji o rachunku, dlatego pracownik wyjaśnia różnice między możliwymi formami."
+      - kroki:
+          - tekst: "Wyciąg elektroniczny. Podstawową formą jest wyciąg dostępny w bankowości elektronicznej, udostępniany bezpłatnie co miesiąc."
+          - tekst: "Wyciąg papierowy. Klient może zażądać wyciągu w formie papierowej, przesyłanego na adres korespondencyjny; opłata za wyciąg papierowy wynosi {{fakt:oplata.wyciag-papierowy}}."
+            podkroki:
+              - tekst: "Poinformuj klienta, że wyciąg papierowy jest doręczany w terminie {{fakt:termin.doreczenie-korespondencji}} od jego sporządzenia."
+              - tekst: "Zapisz w systemie adres do korespondencji i sprawdź jego poprawność z klientem."
+          - tekst: "Obowiązek sprawdzania wyciągów. Przypomnij klientowi, że powinien regularnie sprawdzać operacje na rachunku i niezwłocznie zgłaszać niezgodności."
+          - tekst: "Zmiana formy. Wyjaśnij, że formę wyciągu można zmienić w dowolnym momencie."
+
+  - id: otwarcie-umowa-aktywacja-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Rachunek zostaje uruchomiony po zawarciu umowy i spełnieniu warunków wymaganych przed rozpoczęciem jego obsługi. Pracownik sprawdza, czy wszystkie warunki zostały spełnione, i potwierdza uruchomienie w systemie."
+      - kroki:
+          - tekst: "Kontrola kompletności. Przed uruchomieniem rachunku sprawdź w liście kontrolnej, że:"
+            podkroki:
+              - tekst: "umowa została podpisana przez wszystkie osoby, których podpis jest wymagany;"
+              - tekst: "weryfikacja tożsamości i ocena ryzyka zostały zakończone z wynikiem pozytywnym;"
+              - tekst: "dokumenty zostały zeskanowane i dołączone do akt klienta;"
+              - tekst: "rachunek wspólny lub rachunek małoletniego ma wymagane dodatkowe zgody."
+          - tekst: "Uruchomienie. Po spełnieniu warunków uruchom rachunek w systemie {{fakt:system.otwarcie.cbs}} w terminie {{fakt:termin.otwarcie.aktywacja-rachunku}} od zawarcia umowy."
+          - tekst: "Powiadomienie klienta. Poinformuj klienta o numerze rachunku, dacie uruchomienia oraz o sposobie, w jaki może rozpocząć korzystanie z rachunku."
+          - tekst: "Archiwizacja. Dokumenty z procesu przekaż do archiwizacji w systemie {{fakt:system.otwarcie.archiwum}}."

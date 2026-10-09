@@ -1,0 +1,90 @@
+bloki:
+  # --- Klasyfikacja i ocena incydentu
+  - id: incydenty-klas-kryteria-oceny-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - akapit: "Klasyfikacja incydentu opiera się na pięciu kryteriach oceny, z których każde analizuje się odrębnie. O poziomie klasyfikacji decyduje kryterium dające najwyższą ocenę."
+      - kroki:
+          - tekst: "Liczba dotkniętych klientów. Kryterium uznaje się za spełnione na poziomie krytycznym, gdy incydent dotyczy co najmniej {{fakt:incydent.prog.klienci-krytyczny}} klientów, a na poziomie wysokim — gdy dotyczy co najmniej {{fakt:incydent.prog.klienci-wysoki}}."
+          - tekst: "Czas niedostępności usługi. Przestój usługi kluczowej trwający dłużej niż {{fakt:incydent.prog.przestoj-krytyczny}} kwalifikuje incydent jako krytyczny, a trwający dłużej niż {{fakt:incydent.prog.przestoj-wysoki}} — jako wysoki."
+          - tekst: "Wartość transakcji i strat. Łączną kwotę dotkniętych operacji lub szacowanych strat porównuje się z progami {{fakt:incydent.prog.kwota-krytyczna}} oraz {{fakt:incydent.prog.kwota-wysoka}}."
+          - tekst: "Rodzaj danych. {Wyciek|Ujawnienie} danych szczególnych kategorii, danych uwierzytelniających lub danych finansowych klientów podnosi klasyfikację o jeden poziom, niezależnie od liczby osób."
+          - tekst: "Skutki prawne i wizerunkowe. Incydent, który może spowodować obowiązek zawiadomienia organu nadzoru, zainteresowanie mediów lub odpowiedzialność prawną Banku, ocenia się z udziałem radcy prawnego i Jednostki komunikacji."
+      - akapit: "Każdą ocenę uzasadnia się w karcie incydentu {{fakt:incydent.karta}}. Uzasadnienie powinno być na tyle konkretne, aby osoba niezwiązana z incydentem mogła zrozumieć, dlaczego przyjęto dany poziom."
+
+  - id: incydenty-klas-zmiana-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - akapit: "Klasyfikacja nadana w chwili zgłoszenia ma charakter wstępny i podlega weryfikacji wraz z napływem nowych informacji. Zmiana klasyfikacji w górę lub w dół jest normalnym elementem obsługi incydentu."
+      - kroki:
+          - tekst: "Podwyższenie klasyfikacji. Kierownik incydentu podwyższa klasyfikację niezwłocznie po stwierdzeniu, że spełniona jest przesłanka wyższego poziomu."
+            podkroki:
+              - tekst: "Zmianę zapisuje się w karcie incydentu z podaniem godziny, przyczyny i osoby podejmującej decyzję."
+              - tekst: "Podwyższenie klasyfikacji powoduje uruchomienie czasów reakcji właściwych dla nowego poziomu, liczonych od chwili zmiany."
+              - tekst: "O zmianie informuje się osoby i jednostki, które według macierzy komunikacji powinny być powiadamiane na wyższym poziomie."
+          - tekst: "Obniżenie klasyfikacji. Obniżenie wymaga zgody osoby, która nadała poprzednią klasyfikację, lub — dla incydentów krytycznych — zgody członka Zarządu odpowiedzialnego za bezpieczeństwo."
+            podkroki:
+              - tekst: "Obniżenie nie może być dokonane tylko dlatego, że upłynął znaczny czas od zdarzenia; musi wynikać z ustalenia, że skutki są mniejsze, niż pierwotnie zakładano."
+              - tekst: "Kierownik incydentu odnotowuje, które zobowiązania z wyższego poziomu pozostają do wykonania mimo obniżenia klasyfikacji."
+          - tekst: "Spory o klasyfikację. W razie rozbieżności stanowisk między jednostkami przyjmuje się klasyfikację wyższą do czasu rozstrzygnięcia sporu przez Komitet nadzorujący bezpieczeństwo."
+
+  - id: incydenty-klas-rodzaje-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - akapit: "Poza poziomem klasyfikacji każdemu incydentowi przypisuje się rodzaj, który determinuje właściwy zespół specjalistów i sposób dalszego postępowania. Rodzaj wpisuje się w rejestrze {{fakt:incydent.rejestr}}."
+      - kroki:
+          - tekst: "Incydent cyberbezpieczeństwa: złośliwe oprogramowanie, nieuprawniony dostęp, atak na dostępność usług, przejęcie konta, wyłudzenie danych."
+            podkroki:
+              - tekst: "Obsługę prowadzi Jednostka bezpieczeństwa z udziałem Jednostki informatyki."
+          - tekst: "Incydent operacyjny: awaria systemu, błąd w przetwarzaniu transakcji, utrata danych w wyniku błędu ludzkiego, awaria dostawcy."
+            podkroki:
+              - tekst: "Obsługę prowadzi właściciel procesu przy wsparciu Jednostki ciągłości działania."
+          - tekst: "Incydent dotyczący danych osobowych: nieuprawnione ujawnienie, utrata lub zmiana danych, wysłanie dokumentów do niewłaściwego adresata."
+            podkroki:
+              - tekst: "Obsługę prowadzi Kierownik incydentu wspólnie z Inspektorem ochrony danych."
+          - tekst: "Incydent fizyczny: kradzież lub zniszczenie sprzętu, włamanie do pomieszczeń, nieuprawniony dostęp osób postronnych do stref chronionych."
+            podkroki:
+              - tekst: "Obsługę prowadzi pracownik ochrony we współpracy z Jednostką bezpieczeństwa; zdarzenie zgłasza się także Policji."
+          - tekst: "Incydent z udziałem pracownika: podejrzenie nadużycia, ujawnienia informacji poufnych lub działania na szkodę Banku."
+            podkroki:
+              - tekst: "Obsługę prowadzi Jednostka bezpieczeństwa z Jednostką kadr, a dostęp do informacji o sprawie ogranicza się do niezbędnego minimum."
+      - akapit: "Incydent może należeć do kilku rodzajów jednocześnie; wówczas w karcie incydentu wskazuje się rodzaj wiodący i rodzaje dodatkowe."
+
+  - id: incydenty-klas-lancuch-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - akapit: "Incydenty powiązane ze sobą należy oceniać łącznie. Seria pozornie drobnych zdarzeń może wskazywać na zaplanowany atak, którego skutki są znacznie poważniejsze niż skutki każdego ze zdarzeń z osobna."
+      - kroki:
+          - tekst: "Wyszukiwanie powiązań. Przy rejestracji nowego incydentu analityk przeszukuje rejestr {{fakt:incydent.rejestr}} pod kątem zdarzeń z ostatnich dziewięćdziesięciu dni dotyczących tych samych systemów, kont, adresów sieciowych, dostawców lub metod ataku."
+          - tekst: "Łączenie incydentów. Jeżeli powiązanie jest prawdopodobne, analityk zakłada incydent nadrzędny i podpina do niego zdarzenia powiązane."
+            podkroki:
+              - tekst: "Klasyfikację incydentu nadrzędnego ustala się na podstawie łącznych skutków wszystkich zdarzeń."
+              - tekst: "Zdarzenia podpięte nie są zamykane, dopóki nie zostanie zamknięty incydent nadrzędny."
+          - tekst: "Rozdzielanie incydentów. Jeżeli w toku analizy okaże się, że zdarzenia nie są powiązane, rozdziela się je ponownie, a każde ocenia osobno z zachowaniem historii wpisów."
+          - tekst: "Informacja o powiązaniach. Powiązania i ich uzasadnienie opisuje się w karcie incydentu, aby przy przeglądzie można było ocenić trafność decyzji."
+
+  - id: incydenty-klas-ocena-wplywu-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - akapit: "Dla incydentów o klasyfikacji wysokiej i krytycznej, w ciągu {{fakt:termin.incydent.klasyfikacja}} od klasyfikacji wstępnej, Zespół sporządza ocenę wpływu incydentu na działalność Banku. Ocenę przygotowuje się na podstawie następujących kroków."
+      - kroki:
+          - tekst: "Identyfikacja procesów dotkniętych incydentem."
+            podkroki:
+              - tekst: "Wskazuje się procesy i usługi, które nie działają lub działają w ograniczonym zakresie, wraz z określeniem właścicieli tych procesów."
+              - tekst: "Ustala się, czy incydent dotyczy procesów wspierających, czy też bezpośrednio obsługi klientów."
+          - tekst: "Oszacowanie skutków dla klientów."
+            podkroki:
+              - tekst: "Szacuje się liczbę klientów, którzy nie mogą skorzystać z usług, oraz liczbę klientów, których dane lub środki mogły zostać narażone."
+              - tekst: "Określa się, czy klienci mogą skorzystać z kanałów zastępczych, takich jak placówki, infolinia lub bankomaty."
+          - tekst: "Oszacowanie skutków finansowych i prawnych. Zespół, wspólnie z Jednostką ryzyka i radcą prawnym, szacuje przewidywane straty, koszty usunięcia skutków oraz ryzyko roszczeń i kar."
+          - tekst: "Wskazanie działań priorytetowych. Ocenę kończy lista działań uporządkowana według pilności; Kierownik incydentu przedstawia ją kierownictwu w ramach pierwszej informacji o incydencie."

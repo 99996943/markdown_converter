@@ -1,0 +1,85 @@
+bloki:
+  # --- Komunikacja i raportowanie
+  - id: incydenty-kom-macierz-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - akapit: "Zakres i tryb informowania o incydencie zależą od jego klasyfikacji. Osoby i jednostki, które należy powiadomić, wskazuje poniższe zestawienie; Kierownik incydentu może rozszerzyć krąg adresatów, jeżeli wymaga tego sytuacja."
+      - tabela:
+          kolumny:
+            - naglowek: "Klasyfikacja"
+              waga: 2
+            - naglowek: "Kogo informować"
+              waga: 4
+            - naglowek: "Tryb"
+              waga: 2
+          wiersze:
+            - ["Krytyczna", "Zarząd, Komitet nadzorujący bezpieczeństwo, Jednostka komunikacji, radca prawny, Inspektor ochrony danych", "telefonicznie, następnie pisemnie"]
+            - ["Wysoka", "dyrektor jednostki dotkniętej incydentem, Jednostka ciągłości działania, Inspektor ochrony danych", "telefonicznie lub wiadomością"]
+            - ["Średnia", "kierownik jednostki dotkniętej incydentem, właściciel systemu", "wiadomością e-mail"]
+            - ["Niska", "właściciel systemu", "wpis w systemie zgłoszeń"]
+      - akapit: "Informacje przekazuje się w sposób zapewniający poufność; incydentów krytycznych nie omawia się na zwykłych kanałach komunikacji, jeżeli istnieje podejrzenie, że mogły zostać one naruszone."
+
+  - id: incydenty-kom-wewnetrzna-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - akapit: "Komunikacja wewnątrz Banku ma zapewnić, że pracownicy mają spójną i aktualną wiedzę o incydencie, a jednocześnie nie rozpowszechniają niepotwierdzonych informacji."
+      - kroki:
+          - tekst: "Komunikat dla pracowników. Jeżeli incydent może wpływać na codzienną pracę pracowników, Kierownik incydentu wraz z Jednostką komunikacji przygotowuje komunikat wewnętrzny."
+            podkroki:
+              - tekst: "Komunikat zawiera krótki opis sytuacji, polecenia dla pracowników (na przykład zakaz otwierania określonych wiadomości) oraz dane kontaktowe do uzyskania pomocy."
+              - tekst: "Komunikat nie zawiera szczegółów technicznych ani informacji o ustaleniach, które mogłyby ułatwić sprawcom dalsze działanie."
+          - tekst: "Informacje dla placówek i infolinii. Pracownicy mający kontakt z klientami otrzymują ustalone odpowiedzi na najczęstsze pytania."
+            podkroki:
+              - tekst: "Odpowiedzi aktualizuje się na bieżąco, a wersje oznacza godziną opublikowania."
+              - tekst: "Pracownik, który nie zna odpowiedzi, nie udziela informacji domysłów, lecz kieruje pytanie do wyznaczonej osoby."
+          - tekst: "Zakaz wypowiedzi publicznych. Pracownicy nie udzielają informacji mediom ani nie zamieszczają jej w mediach społecznościowych; wszystkie zapytania przekazują do Jednostki komunikacji."
+          - tekst: "Zamknięcie komunikacji. Po zakończeniu incydentu Kierownik incydentu informuje wszystkich dotychczasowych adresatów o przywróceniu normalnej pracy."
+
+  - id: incydenty-kom-media-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - akapit: "Kontakty z mediami w związku z incydentem prowadzi wyłącznie Jednostka komunikacji, w uzgodnieniu z Zarządem. Rzecznik Banku nie przekazuje informacji, które nie zostały wcześniej zatwierdzone."
+      - kroki:
+          - tekst: "Przygotowanie stanowiska. Jednostka komunikacji opracowuje stanowisko Banku na podstawie informacji przekazanych przez Kierownika incydentu."
+            podkroki:
+              - tekst: "Stanowisko określa to, co wiadomo, co jest ustalane oraz jakie działania podjął Bank."
+              - tekst: "Stanowisko nie zawiera domysłów co do sprawców ani przyczyn i nie obiecuje terminów, których Bank nie jest pewny."
+          - tekst: "Zatwierdzenie. Stanowisko zatwierdza członek Zarządu odpowiedzialny za komunikację, a w przypadku incydentów z udziałem danych osobowych — także radca prawny i Inspektor ochrony danych."
+          - tekst: "Monitorowanie reakcji. Jednostka komunikacji obserwuje publikacje i media społecznościowe, ocenia ich wpływ na reputację Banku i na bieżąco informuje Kierownika incydentu o pojawiających się pytaniach i plotkach."
+          - tekst: "Korekty. Nieprawdziwe informacje o Banku sprostowuje się w trybie ustalonym przez radcę prawnego."
+
+  - id: incydenty-kom-nadzor-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - akapit: "Incydenty poważne wymagają zawiadomienia organu nadzoru, czyli {{fakt:incydent.organ-nadzoru}}. Zawiadomienia przekazuje się w ustalonych terminach, a ich treść jest weryfikowana pod kątem kompletności i spójności z innymi informacjami przekazywanymi przez Bank."
+      - kroki:
+          - tekst: "Ocena obowiązku zawiadomienia. Radca prawny wraz z Jednostką zgodności ocenia, czy incydent spełnia kryteria incydentu poważnego, i zapisuje wynik oceny w karcie incydentu."
+          - tekst: "Zawiadomienie wstępne. Zawiadomienie wstępne w formularzu {{fakt:incydent.zawiadomienie-nadzor}} przekazuje się w terminie {{fakt:termin.incydent.powiadomienie-wstepne}} od zaklasyfikowania incydentu jako poważnego."
+            podkroki:
+              - tekst: "Zawiadomienie wstępne zawiera dane Banku, datę wykrycia, ogólny opis incydentu, wstępną ocenę skutków i informację o podjętych działaniach."
+              - tekst: "Brak pełnych informacji nie uzasadnia opóźnienia; informacje brakujące zawiadomienie wskazuje i uzupełnia się je w kolejnych etapach."
+          - tekst: "Zawiadomienie pośrednie. Aktualizację zawiadomienia przekazuje się w terminie {{fakt:termin.incydent.powiadomienie-posrednie}} od zawiadomienia wstępnego albo wcześniej, jeżeli zmienia się istotnie ocena skutków."
+          - tekst: "Zawiadomienie końcowe. Raport końcowy zawierający analizę przyczyn źródłowych i podjęte środki naprawcze przekazuje się w terminie {{fakt:termin.incydent.raport-koncowy}} od zakończenia czynności związanych z usunięciem skutków incydentu."
+
+  - id: incydenty-kom-kontrahenci-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - akapit: "Incydent może mieć wpływ na podmioty współpracujące z Bankiem. Informowanie ich o incydencie ma na celu ograniczenie skutków w ich systemach i umożliwienie wykonania ich własnych obowiązków."
+      - kroki:
+          - tekst: "Wskazanie kontrahentów do powiadomienia. Kierownik incydentu wraz z właścicielem procesu ustala, które podmioty zewnętrzne mogły zostać dotknięte incydentem lub mogą pomóc w jego usunięciu."
+            podkroki:
+              - tekst: "Do takich podmiotów należą w szczególności dostawcy usług informatycznych, operatorzy płatności, banki korespondenckie oraz podmioty, którym Bank powierzył przetwarzanie danych."
+              - tekst: "Zakres przekazywanych informacji ogranicza się do tych, które są niezbędne do zabezpieczenia interesów stron."
+          - tekst: "Umowy o zachowaniu poufności. Informacji o incydencie nie przekazuje się podmiotom, które nie są związane obowiązkiem poufności wobec Banku."
+          - tekst: "Dokumentowanie powiadomień. Każde powiadomienie kontrahenta rejestruje się z podaniem daty, godziny, adresata, osoby przekazującej informację i jej zakresu."
+          - tekst: "Obowiązki kontrahentów. Wobec podmiotów, które na mocy umowy są obowiązane informować Bank o incydentach, Kierownik incydentu ocenia terminowość i kompletność ich powiadomień."
