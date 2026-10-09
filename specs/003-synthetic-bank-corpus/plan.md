@@ -201,20 +201,32 @@ zatruć dosłownie w Markdown), SC-027, SC-028, SC-031 — zielone; `generate` c
 (T083–T083j), tabela z siatką pod akapitami (T089a), tytuł rozdziału w dwóch wierszach (T089b),
 dwie kolumny (T087–T087j: łączenie linii, interlinia w kolumnie, rynna, tabele w kolumnie, listy
 przez kolumny i strony, znaczniki przypisów), kod formularza w wersalikach (T089d), fragment tabeli
-z siatką (T089e), postrzępiona lewa kolumna (T089f–T089i), „§ 99.” w zawiniętym zdaniu (T086).
-Goldeny parsera i prywatny korpus właściciela bez zmian, z wyjątkiem T089b.
+z siatką (T089e), postrzępiona lewa kolumna (T089f–T089i), „§ 99.” w zawiniętym zdaniu (T086),
+jednostki w otwartym cytacie „…” nie są nagłówkami (T089j: cytowane artykuły innej ustawy w
+obwieszczeniu `dz-u-2019-1781` i w przepisach przejściowych), dwukolumnowa tabela z siatką sama na
+stronie (T089k). Prywatny korpus właściciela bez zmian.
+
+**Rozbudowa (US5, T089l)**: ≈ 620 nowych bloków opcjonalnych procedur — każdy szablon procedury
+sięga 52–55 stron, więc przykład z `corpus/README.md` (15 procedur po 40–50 stron,
+`--no-strict-uniqueness`) działa bez zmian kodu (strony 41–49, `repeatedWordShare` w manifeście).
+Przejście „czysty klon” wg `corpus/README.md` (SC-030, 2026-10-09): `generate` odtwarza korpus bajt w
+bajt, `verify`, `refresh`, `check --template`, przykład rozbudowy, testy próbki i pełnego korpusu z
+raportem oraz pobranie aktu `curl` + `refresh` — zgodnie z opisem. Przy tym poprawione: przebieg
+jednego typu bez pary sprzecznej między typami, goldeny parsera z LF na Windows (`.gitattributes`).
+
+**Zmiany goldenów parsera (FR-163)**
+
+- **T089b — zaakceptowane przez właściciela (2026-10-09):** tytuł rozdziału w dwóch wierszach jest
+  jednym nagłówkiem (`dz-u-2020-287` Rozdział 2, `dz-u-2024-1646` Rozdział 2b).
+- **Cytaty — do akceptacji:** commit `fix: units quoted from another act are text of the quotation,
+  not headings`; w `dz-u-2024-30` cytowane art. 63–64, w `dz-u-2024-1497` cytowany art. 60 nie są już
+  nagłówkami (tak jak poprzedzający je cytowany „Art. 62.”).
 
 **Otwarte decyzje dla właściciela**
 
-1. **Goldeny T089b** (FR-163): dwa goldeny aktów zmienione — tytuł rozdziału w dwóch wierszach jest
-   teraz jednym nagłówkiem (`dz-u-2020-287` Rozdział 2, `dz-u-2024-1646` Rozdział 2b); commit
-   `fix: a chapter title wrapped over more lines continues the heading (T089b)` — do akceptacji lub
-   cofnięcia.
-2. **Obwieszczenie o ochronie danych** (`corpus/akty/dz-u-2019-1781-ochrona-danych.md`): cytowane we
-   wstępie art. 109–157 (nieobjęte tekstem jednolitym) stają się nagłówkami „## Art. 110.” przed
-   właściwą ustawą; tekst kompletny, struktura myląca — kandydat na osobną poprawkę parsera.
+1. **Goldeny „cytaty”** — jw.
+2. **Obwieszczenie o ochronie danych** — rozwiązane poprawką „cytaty” (wyżej).
 3. **Regulaminy „tabela-dokument”** (REG-01, REG-05): ich wewnętrzne tabele nie są tabelami GFM
    (układ zapisywany wg FR-080 jako sekcje); metryka tabel ich nie wymaga — do potwierdzenia.
 4. **T097**: zmiany między wersjami realizują nadpisania faktów (historia `wartosci` i `alternatywy`);
    warianty bloków „po zmianie” nie zostały zaimplementowane.
-5. **README korpusu** (T117) nie był sprawdzony przejściem „czysty klon” (SC-030).

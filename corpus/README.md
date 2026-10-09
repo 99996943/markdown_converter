@@ -128,7 +128,8 @@ PowerShell: ta sama komenda w jednej linii, z `--out $env:TEMP\korpus-proba`.
   potem `check --template <id> --out <katalog>`: podaje liczbę stron bez/ze wszystkimi blokami opcjonalnymi,
   dopasowanie do zakresu, udział bloków wspólnych i naruszenia; zapisuje PDF i Markdown do obejrzenia.
 - **Inny zakres stron:** `--pages <min>-<max>`; szablon musi mieć dość bloków opcjonalnych, by dojść do górnej
-  granicy (przy 40–50 stron potrzeba znacznie większej puli). Kod wyjścia 3 = zakres nieosiągalny.
+  granicy (`check --template <id>` podaje maksimum; procedury sięgają ok. 52–55 stron, regulaminy i taryfy
+  ok. 25–35 — po więcej dopisz bloki). Kod wyjścia 3 = zakres nieosiągalny.
 - **Nowy typ dokumentu:** wpis w `zrodla/typy.yaml` (`id`, `prefiks`, `oznaczenie`, `nazwa`, `wymagane-elementy`,
   opcjonalnie `uklady-min`), bloki w `zrodla/bloki/<id>/`, szablony z `typ: <id>` w istniejących stylach układu
   (`jedna-kolumna`, `dwie-kolumny`, `tabela-dokument`, `taryfa-siatka`, `taryfa-bez-siatki`, `procedura`).
