@@ -34,6 +34,9 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double JustifiedGapSpread = 0.2;
     private const int JustifiedMinSegments = 4;
 
+    /// <summary>Share of the lines of a region in two text columns that hold at most one cell per column.</summary>
+    private const double TextColumnLineShare = 0.75;
+
     /// <inheritdoc />
     public int Order => StageOrder.TableDetection;
 
@@ -463,12 +466,24 @@ public sealed class TableDetectionStage : IPipelineStage
             return false;
         }
 
-        // A ragged column can reach into the free band past its middle; a cell crosses only when it spans the band.
         double middle = (g.Start + g.End) / 2;
         List<LineSegment> cells = region.SelectMany(r => r.Cells).ToList();
-        return cells.All(c => c.Box.Right <= g.End || c.Box.Left >= g.Start)
-            && cells.Any(c => c.Box.Left < middle)
-            && cells.Any(c => c.Box.Left >= middle);
+        if (!cells.Any(c => c.Box.Left < middle) || !cells.Any(c => c.Box.Left >= middle))
+        {
+            return false;
+        }
+
+        if (cells.All(c => c.Box.Right <= middle || c.Box.Left >= middle))
+        {
+            return true;
+        }
+
+        // A ragged column can reach into the free band past its middle: then no cell may span the band, and the lines
+        // must be running text — mostly one cell per column (a label joins its text), where table columns put several
+        // cells on one side.
+        int textLines = region.Count(r => r.Cells.Count(c => c.Box.Left < middle) <= 1 && r.Cells.Count(c => c.Box.Left >= middle) <= 1);
+        return textLines >= TextColumnLineShare * region.Count
+            && cells.All(c => c.Box.Right <= g.End || c.Box.Left >= g.Start);
     }
 
     /// <summary>

@@ -40,6 +40,9 @@ public sealed class CorpusSampleTests
             sample.AddRange(plan.Documents.Where(d => d.Designation == versioned.Designation && !sample.Contains(d)));
         }
 
+        // The first poisoned document of every (type, kind) pair.
+        sample.AddRange(plan.Documents.Where(d => d.Poison is not null).GroupBy(d => (d.Type, d.Poison!.Kind)).Select(g => g.First()));
+
         return sample;
     }
 
@@ -74,7 +77,15 @@ public sealed class CorpusSampleTests
             Assert.InRange(built.Entry.Pages, parameters.Pages.Min, parameters.Pages.Max);
 
             ManifestDocument entry = Assert.Single(manifest.Documents, d => d.Id == doc.Id);
-            Assert.Equal(built.Entry with { Changes = null, Contradictions = null }, entry with { Changes = null, Contradictions = null });
+            Assert.Equal(built.Entry with { Changes = null, Contradictions = null, Poison = null }, entry with { Changes = null, Contradictions = null, Poison = null });
+            Assert.Equal(built.Entry.Changes ?? [], entry.Changes ?? []);
+            Assert.Equal(built.Entry.Contradictions ?? [], entry.Contradictions ?? []);
+            Assert.Equal(built.Entry.Poison is null, entry.Poison is null);
+            if (built.Entry.Poison is { } poison)
+            {
+                Assert.Equal(poison with { Places = [] }, entry.Poison! with { Places = [] });
+                Assert.Equal(poison.Places, entry.Poison!.Places);
+            }
             Assert.False(string.IsNullOrEmpty(entry.Title));
             Assert.NotNull(entry.Designation);
             Assert.NotNull(entry.ValidFrom);

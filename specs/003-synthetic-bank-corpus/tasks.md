@@ -218,6 +218,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [X] T089d [US2] Test (red): kod formularza „(F-BEZ-05).” przeniesiony na początek strony (PRO-07-w1) → koniec akapitu, nie nagłówek; poprawka w `HeadingDetectionStage` (wersaliki: litery ≥ połowy znaków wiersza) (green)
 - [X] T089e [US2] Test (red): fragment taryfy z siatką (nagłówek + wiersz o prawie równych odstępach komórek) na dole strony (ZAT-TAR-POD-01) → tabela GFM; poprawka w `TableDetectionStage` (w siatce wiersz z ≥ 2 komórkami jest wierszem tabeli) (green)
 - [X] T089f [US2] Test (red): dwie kolumny na wspólnych liniach bazowych z postrzępioną lewą kolumną (ZAT-REG-SPR-02) → kolumny tekstu, nie tabela; poprawka w `TableDetectionStage.IsTextColumns` (komórka przecina rynnę, gdy obejmuje ją całą) (green)
+- [ ] T089g [US2] Test (red): na stronie T089f długie wiersze lewej kolumny (kończące się za środkiem wolnego pasa) czytane w lewej kolumnie (ZAT-REG-SPR-02 s. 16); poprawka w `ReadingOrderStage.Reorder` (kawałek przecina rynnę, gdy obejmuje ją całą) (green)
 - [X] T090 [US2] Dodaj polecenie `refresh` (konwersja istniejących PDF bez składania, przepisanie manifestu) w `corpus-lib/CorpusGenerator.cs` i `src/LegalAgent.Corpus.Cli/Program.cs` z testem w `ctests/Cli/ProgramTests.cs` (red → green); uruchom `refresh`, przejrzyj diff `corpus/**/*.md`, zacommituj; pełny zestaw `CorpusFull` zielony
 
 **Checkpoint**: SC-022 – SC-026 spełnione na całym korpusie; goldeny parsera bez niezatwierdzonych zmian.
