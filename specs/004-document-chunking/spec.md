@@ -42,6 +42,7 @@ błędy struktury poprawia się w parserze, nie w podziale.
 - (implementacja T033a) Przypisy jednostki bez odwołania są pakowane na końcu jednostki jak inne niepodzielne elementy — gdy nie mieszczą się w ostatniej części, tworzą kolejne części (prawo bankowe, Art. 4: przypisy tytułu ustawy dawały część 3796 znaków) (FR-232).
 - (implementacja T045) Nagłówki sekcji bez własnej treści (np. „Rozdział 1. Przepisy ogólne” nad samymi artykułami) nie trafiają do treści żadnego fragmentu, tylko do `sectionPath` fragmentów podrzędnych; FR-234 je pomija (FR-220, FR-234).
 - (implementacja T045a) Sekcja bez własnej treści i bez podsekcji (np. nagłówek „USTAWA z dnia … o ochronie danych osobowych” obok rozdziałów) tworzy fragment z samym nagłówkiem — inaczej jej tekst nie trafiałby ani do treści, ani do ścieżek sekcji (FR-220).
+- (decyzja właściciela po T046) Wartości metadanych, które trafiają do modelu, są po angielsku: generator korpusu tłumaczy `type` (regulaminy → `regulation`, taryfy → `tariff`, procedury → `procedure`, akty → `act`) i `status` (obowiazujacy → `in-force`, nieaktualny → `outdated`), a segment wstępu w kluczu jednostki to `~preamble`; tekst dokumentu (treść, tytuł, ścieżki, cytaty) pozostaje oryginalny, manifest korpusu bez zmian (FR-210, FR-243, FR-261).
 - Q: Czy każda linia pliku JSONL zawiera pełne metadane dokumentu? → A: Tak, każda linia jest samodzielna: wersja schematu, pełne metadane dokumentu i fragment (FR-251).
 
 ## User Scenarios & Testing *(mandatory)*

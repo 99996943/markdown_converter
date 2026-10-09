@@ -12,6 +12,21 @@ public sealed class CorpusChunksTests : IDisposable
 {
     private const string ActId = "dz-u-2025-644-aml";
 
+    // Values that reach the model are English; the manifest keeps its Polish values (contract of spec 003).
+    private static readonly Dictionary<string, string> EnglishTypes = new(StringComparer.Ordinal)
+    {
+        ["regulaminy"] = "regulation",
+        ["taryfy"] = "tariff",
+        ["procedury"] = "procedure",
+        ["akty"] = "act",
+    };
+
+    private static readonly Dictionary<string, string> EnglishStatuses = new(StringComparer.Ordinal)
+    {
+        ["obowiazujacy"] = "in-force",
+        ["nieaktualny"] = "outdated",
+    };
+
     private readonly string _root = Path.Combine(Path.GetTempPath(), "corpus-chunks-" + Guid.NewGuid().ToString("N"));
 
     public CorpusChunksTests()
@@ -91,7 +106,7 @@ public sealed class CorpusChunksTests : IDisposable
             Assert.NotEmpty(records);
             DocumentMetadata m = records[0].Document.Metadata;
             Assert.Equal(
-                (d.Id, d.Designation, d.Type, d.Title, d.Version, d.ValidFrom, d.ValidTo, d.Status, d.PreviousVersion),
+                (d.Id, d.Designation, EnglishTypes[d.Type], d.Title, d.Version, d.ValidFrom, d.ValidTo, EnglishStatuses[d.Status], d.PreviousVersion),
                 (m.DocumentId, m.Designation, m.Type, m.Title, m.Version, m.ValidFrom, m.ValidTo, m.Status, m.PreviousVersion));
             Assert.All(records, r => Assert.StartsWith(d.Id + "_", r.Chunk.ChunkId, StringComparison.Ordinal));
         });

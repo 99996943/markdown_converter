@@ -14,6 +14,21 @@ namespace LegalAgent.Chunking.Tests.Corpus;
 /// </summary>
 public sealed class GoldenChunksTests
 {
+    // As the corpus generator does: values that reach the model are English, the manifest keeps Polish ones.
+    private static readonly Dictionary<string, string> EnglishTypes = new(StringComparer.Ordinal)
+    {
+        ["regulaminy"] = "regulation",
+        ["taryfy"] = "tariff",
+        ["procedury"] = "procedure",
+        ["akty"] = "act",
+    };
+
+    private static readonly Dictionary<string, string> EnglishStatuses = new(StringComparer.Ordinal)
+    {
+        ["obowiazujacy"] = "in-force",
+        ["nieaktualny"] = "outdated",
+    };
+
     [Theory]
     [InlineData("REG-06")]
     [InlineData("REG-05")]
@@ -40,12 +55,12 @@ public sealed class GoldenChunksTests
         var metadata = new DocumentMetadata(id)
         {
             Designation = Text("designation"),
-            Type = Text("type"),
+            Type = Text("type") is { } type ? EnglishTypes[type] : null,
             Title = Text("title"),
             Version = d.TryGetProperty("version", out JsonElement version) ? version.GetInt32() : null,
             ValidFrom = Date("validFrom"),
             ValidTo = Date("validTo"),
-            Status = Text("status"),
+            Status = Text("status") is { } status ? EnglishStatuses[status] : null,
             PreviousVersion = Text("previousVersion"),
         };
         return (Text("pdf")!, metadata);

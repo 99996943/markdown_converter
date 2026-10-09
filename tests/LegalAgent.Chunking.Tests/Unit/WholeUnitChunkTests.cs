@@ -70,7 +70,7 @@ public sealed class WholeUnitChunkTests
         Assert.Equal(ChunkUnitKind.Preamble, preamble.UnitKind);
         Assert.Null(preamble.Citation);
         Assert.Empty(preamble.SectionPath);
-        Assert.Equal("BP/REG/05 | ~wstep", preamble.UnitKey);
+        Assert.Equal("BP/REG/05 | ~preamble", preamble.UnitKey);
         Assert.Equal(new PageSpan(1, 1), preamble.Pages);
     }
 

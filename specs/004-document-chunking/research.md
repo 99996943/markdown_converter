@@ -102,7 +102,7 @@ T033a).
 - oznaczenie wspólne dla wersji (`SeriesKey`, w JSON `document.designation`) = `DocumentMetadata.Designation`
   albo `DocumentId`, gdy brak (FR-210);
 - segment sekcji = `Section.Designation` (bez kropki końcowej, spacje znormalizowane), a gdy brak —
-  `HeadingText` (znormalizowany tak samo); wstęp = stały segment `~wstep` (metadane, nie treść);
+  `HeadingText` (znormalizowany tak samo); wstęp = stały segment `~preamble` (metadane, nie treść);
 - ścieżka jednostki = **najkrótszy sufiks** ścieżki segmentów (od jednostki w górę), który jest unikalny
   wśród jednostek dokumentu, połączony `" > "`; jeśli nawet pełna ścieżka się powtarza, dopisujemy
   `" #n"` (n = numer wystąpienia od 2 w kolejności dokumentu).

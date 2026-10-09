@@ -10,12 +10,12 @@ public sealed class ChunkJsonTests
         new DocumentMetadata("REG-05-w1")
         {
             Designation = "BP/REG/05",
-            Type = "regulaminy",
+            Type = "regulation",
             Title = "Regulamin „Konto”",
             Version = 1,
             ValidFrom = new DateOnly(2024, 9, 1),
             ValidTo = new DateOnly(2025, 8, 31),
-            Status = "nieaktualny",
+            Status = "outdated",
         },
         "Regulamin „Konto”",
         "REGULAMIN",
@@ -42,9 +42,9 @@ public sealed class ChunkJsonTests
         string json = ChunkJson.ToJsonLines(new ChunkedDocument(Header, [Paragraph]));
 
         Assert.Equal(
-            "{\"schemaVersion\":1,\"document\":{\"id\":\"REG-05-w1\",\"designation\":\"BP/REG/05\",\"type\":\"regulaminy\","
+            "{\"schemaVersion\":1,\"document\":{\"id\":\"REG-05-w1\",\"designation\":\"BP/REG/05\",\"type\":\"regulation\","
             + "\"title\":\"Regulamin „Konto”\",\"detectedTitle\":\"REGULAMIN\",\"version\":1,\"validFrom\":\"2024-09-01\","
-            + "\"validTo\":\"2025-08-31\",\"status\":\"nieaktualny\",\"source\":{\"pageCount\":22,\"sha256\":\"ab12\",\"isComplete\":true,"
+            + "\"validTo\":\"2025-08-31\",\"status\":\"outdated\",\"source\":{\"pageCount\":22,\"sha256\":\"ab12\",\"isComplete\":true,"
             + "\"skippedPages\":[]}},\"chunk\":{\"id\":\"REG-05-w1_a761a1aea4847cbf_2\",\"unitKey\":\"BP/REG/05 | § 11\",\"part\":2,"
             + "\"partCount\":2,\"unitKind\":\"paragraph\",\"citation\":\"§ 11\",\"listLabels\":[\"3.\"],"
             + "\"sectionPath\":[\"Warunki <promocji> & opłaty\",\"§ 11.\"],\"pages\":{\"first\":5,\"last\":6},\"length\":20,"

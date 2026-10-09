@@ -36,7 +36,8 @@ wynik niepełny (plik zapisany); 130 przerwanie; 1 błąd nieoczekiwany.
 - `corpus/<typ>/<id>.chunks.jsonl` obok `<id>.md` dla każdego wpisu manifestu (regulaminy, taryfy,
   procedury, zatrute, akty).
 - Metadane z wpisu manifestu: `id`, `designation`, `type`, `title`, `version`, `validFrom`, `validTo`,
-  `status`, `previousVersion`; opcje fragmentów domyślne.
+  `status`, `previousVersion`; `type` i `status` po angielsku (`regulation`/`tariff`/`procedure`/`act`,
+  `in-force`/`outdated`); opcje fragmentów domyślne.
 - Wpis manifestu ma pole `chunks` ze ścieżką pliku.
 - `generate` i `refresh` zapisują pliki; `verify` porównuje je z odtworzeniem (kod 1 przy różnicy,
   lista plików na stderr); sprzątanie usuwa pliki fragmentów dokumentów, których już nie ma.

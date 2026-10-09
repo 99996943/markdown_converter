@@ -9,12 +9,12 @@ niemutowalnymi rekordami; kolekcje to `IReadOnlyList<T>`. Postać JSON: `contrac
 |------|-----|----------|-------------------|
 | `DocumentId` | string | tak | `^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$`; unikalny dla wersji (np. `REG-05-w1`) |
 | `Designation` | string? | nie | oznaczenie wspólne dla wersji (np. `BP/REG/05`); brak → `DocumentId` |
-| `Type` | string? | nie | np. `regulaminy`, `taryfy`, `procedury`, `akty` |
+| `Type` | string? | nie | po angielsku, np. `regulation`, `tariff`, `procedure`, `act` (korpus: tłumaczenie z manifestu) |
 | `Title` | string? | nie | ma pierwszeństwo przed tytułem wykrytym przez parser |
 | `Version` | int? | nie | > 0 |
 | `ValidFrom` | DateOnly? | nie | |
 | `ValidTo` | DateOnly? | nie | ≥ `ValidFrom`, gdy oba podane |
-| `Status` | string? | nie | np. `obowiazujacy`, `nieaktualny`; biblioteka nie interpretuje |
+| `Status` | string? | nie | po angielsku, np. `in-force`, `outdated`; biblioteka nie interpretuje |
 | `PreviousVersion` | string? | nie | `DocumentId` poprzedniej wersji |
 
 Błąd walidacji → `ArgumentException` (FR-206) przed jakąkolwiek pracą.

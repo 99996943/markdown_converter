@@ -11,7 +11,7 @@ namespace LegalAgent.Chunking.Tests.Integration;
 /// <summary>T028: PDF stream input (FR-202, FR-206) on a corpus document.</summary>
 public sealed class PdfInputTests
 {
-    private static readonly DocumentMetadata Metadata = new("REG-06") { Designation = "BP/REG/06", Type = "regulaminy", Version = 3 };
+    private static readonly DocumentMetadata Metadata = new("REG-06") { Designation = "BP/REG/06", Type = "regulation", Version = 3 };
 
     [Fact]
     public async Task ChunkAsync_StreamGivesTheSameResultAsTheConversionResult()

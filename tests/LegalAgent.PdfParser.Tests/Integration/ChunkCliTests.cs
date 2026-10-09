@@ -46,8 +46,8 @@ public sealed class ChunkCliTests : IDisposable
         (int code, string stdout, _) = await RunAsync(
         [
             "chunk", TwoPagePdf(), "-o", Target,
-            "--id", "REG-07-w1", "--designation", "BP/REG/07", "--type", "regulaminy", "--title", "Regulamin testowy",
-            "--doc-version", "1", "--valid-from", "2025-01-01", "--valid-to", "2025-12-31", "--status", "nieaktualny",
+            "--id", "REG-07-w1", "--designation", "BP/REG/07", "--type", "regulation", "--title", "Regulamin testowy",
+            "--doc-version", "1", "--valid-from", "2025-01-01", "--valid-to", "2025-12-31", "--status", "outdated",
             "--previous-version", "REG-07-w0",
         ]);
 
@@ -56,7 +56,7 @@ public sealed class ChunkCliTests : IDisposable
         Assert.NotEmpty(records);
         Chunking.Model.DocumentMetadata m = records[0].Document.Metadata;
         Assert.Equal(
-            ("REG-07-w1", "BP/REG/07", "regulaminy", "Regulamin testowy", (int?)1, (DateOnly?)new DateOnly(2025, 1, 1), (DateOnly?)new DateOnly(2025, 12, 31), "nieaktualny", "REG-07-w0"),
+            ("REG-07-w1", "BP/REG/07", "regulation", "Regulamin testowy", (int?)1, (DateOnly?)new DateOnly(2025, 1, 1), (DateOnly?)new DateOnly(2025, 12, 31), "outdated", "REG-07-w0"),
             (m.DocumentId, m.Designation, m.Type, m.Title, m.Version, m.ValidFrom, m.ValidTo, m.Status, m.PreviousVersion));
         Assert.Contains("Pierwsza strona.", records[0].Chunk.Content, StringComparison.Ordinal);
         Assert.Contains($"Fragmenty: {records.Count}, przekraczające limit: 0", stdout, StringComparison.Ordinal);

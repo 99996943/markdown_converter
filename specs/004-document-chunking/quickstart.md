@@ -23,7 +23,7 @@ LEGALAGENT_CORPUS_FULL=1 dotnet test LegalAgent.slnx --filter "Category!=Perform
 ```bash
 dotnet run --project src/LegalAgent.PdfParser.Cli -c Release -- \
   chunk corpus/regulaminy/REG-06.pdf -o /tmp/REG-06.chunks.jsonl \
-  --id REG-06 --designation BP/REG/06 --type regulaminy --doc-version 3 --valid-from 2026-06-01
+  --id REG-06 --designation BP/REG/06 --type regulation --doc-version 3 --valid-from 2026-06-01
 ```
 
 Oczekiwane: kod 0, jedna linia JSON na fragment zgodna z `contracts/chunks-json.md`; fragment z

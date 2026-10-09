@@ -24,7 +24,7 @@ public sealed class UnitKeyBuilderTests
             "BP/REG/05",
             [[UnitKeyBuilder.PreambleSegment], ["Rozdział 1"], ["Rozdział 1", "§ 1"], ["Rozdział 2", "§ 11"]]);
 
-        Assert.Equal(["BP/REG/05 | ~wstep", "BP/REG/05 | Rozdział 1", "BP/REG/05 | § 1", "BP/REG/05 | § 11"], keys);
+        Assert.Equal(["BP/REG/05 | ~preamble", "BP/REG/05 | Rozdział 1", "BP/REG/05 | § 1", "BP/REG/05 | § 11"], keys);
     }
 
     [Fact]

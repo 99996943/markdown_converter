@@ -21,13 +21,13 @@ Wspólny dla serwisu i plików (FR-250, FR-251). Rekordem jest **jeden fragment 
   "document": {
     "id": "REG-05-w1",
     "designation": "BP/REG/05",
-    "type": "regulaminy",
+    "type": "regulation",
     "title": "Regulamin promocji „Konto z premią” Bank Przykładowy S.A.",
     "detectedTitle": "…",
     "version": 1,
     "validFrom": "2024-09-01",
     "validTo": "2025-08-31",
-    "status": "nieaktualny",
+    "status": "outdated",
     "previousVersion": null,
     "source": { "pageCount": 22, "sha256": "…", "isComplete": true, "skippedPages": [] }
   },
