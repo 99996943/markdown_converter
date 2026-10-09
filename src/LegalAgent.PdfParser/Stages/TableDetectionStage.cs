@@ -329,7 +329,11 @@ public sealed class TableDetectionStage : IPipelineStage
             region.Insert(0, row);
         }
 
-        List<Row> multi = region.Where(r => r.IsMulti).ToList();
+        // Inside a ruled grid the rulings make the rows: a line whose cells start in the table's columns is a row even when
+        // they happen to be spaced like the words of a justified line.
+        bool gridRegion = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
+        List<Row> rowsOfCells = region.Where(r => r.IsMulti).ToList();
+        List<Row> multi = region.Where(r => r.IsMulti || (gridRegion && IsAligned(r, rowsOfCells, tolerance))).ToList();
 
         double top = region.Min(r => r.Line.Box.Top);
         double bottom = region.Max(r => r.Line.Box.Bottom);
