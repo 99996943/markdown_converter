@@ -36,6 +36,15 @@ public sealed record FactOverride(string FactId, FactValue Value, OverrideReason
 /// <param name="FactId">The fact both documents state with different values.</param>
 public sealed record PlannedContradiction(string With, string FactId);
 
+/// <summary>The poison of a poisoned document (FR-130, FR-131).</summary>
+/// <param name="Kind">The poison kind (<c>zatrucia/&lt;rodzaj&gt;.yaml</c>).</param>
+/// <param name="Abbreviation">The kind's abbreviation used in the id, e.g. <c>POL</c>.</param>
+/// <param name="PatternId">The pattern applied.</param>
+/// <param name="Placement">Where the text goes (<c>akapit</c>, <c>przypis</c>, … ) or empty for operations without text.</param>
+/// <param name="ImitatesId">The id of the imitated document.</param>
+/// <param name="Variant">The index of the pattern's text variant.</param>
+public sealed record PoisonPlan(string Kind, string Abbreviation, string PatternId, string Placement, string ImitatesId, int Variant);
+
 /// <summary>The plan of one document.</summary>
 public sealed record DocumentPlan
 {
@@ -86,6 +95,9 @@ public sealed record DocumentPlan
 
     /// <summary>Gets the start dates of the earlier versions (version 1 first), for the record card history.</summary>
     public IReadOnlyList<DateOnly> EarlierVersionStarts { get; init; } = [];
+
+    /// <summary>Gets the poison of a poisoned document; null for the others.</summary>
+    public PoisonPlan? Poison { get; init; }
 
     /// <summary>Gets the contradictions planted with other documents.</summary>
     public IReadOnlyList<PlannedContradiction> Contradictions { get; init; } = [];
