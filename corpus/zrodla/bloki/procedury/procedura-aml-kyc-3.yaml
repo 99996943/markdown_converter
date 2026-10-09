@@ -1,0 +1,151 @@
+bloki:
+  - id: procedura-aml-kyc-zamrozenie
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Bank {stosuje|wykonuje} szczególne środki ograniczające wobec osób i podmiotów wskazanych w wykazach sankcyjnych oraz w decyzjach właściwych organów. Środki te mają charakter bezwzględny i nie wymagają zgody ani wiedzy klienta."
+      - ustep: "Po stwierdzeniu, że klient lub jego kontrahent jest objęty sankcjami, pracownik i jednostki Banku postępują następująco:"
+        punkty:
+          - "pracownik, który stwierdził trafienie, {nie wykonuje|wstrzymuje} dyspozycji i niezwłocznie powiadamia {{fakt:jednostka.zgodnosc}} telefonicznie oraz przez narzędzie ewidencyjne ({{fakt:aml.rejestr-podejrzanych}});"
+          - "{{fakt:jednostka.zgodnosc}} {potwierdza|weryfikuje} zgodność danych osoby z wykazem, a w razie wątpliwości co do tożsamości przeprowadza analizę dodatkową;"
+          - "po potwierdzeniu trafienia {{fakt:jednostka.operacje}} wdraża zamrożenie środków i zasobów gospodarczych {{fakt:termin.aml.zamrozenie-wdrozenie}};"
+          - "o zamrożeniu {{fakt:jednostka.zgodnosc}} zawiadamia właściwy organ oraz Generalnego Inspektora Informacji Finansowej, a także, o ile jest to dopuszczalne, osobę objętą środkiem — w sposób niezagrażający postępowaniu;"
+          - "środki objęte zamrożeniem są ewidencjonowane odrębnie i nie podlegają wypłacie, przelewowi ani żadnym innym operacjom bez zgody właściwego organu."
+      - akapit: "Zamrożenie uchyla się wyłącznie na podstawie decyzji organu lub wykreślenia osoby z wykazu. Odblokowanie zatwierdza {{fakt:jednostka.zgodnosc}}, a {{fakt:jednostka.operacje}} dokumentuje datę i podstawę zmiany w karcie klienta."
+      - akapit: "Wykazy sankcyjne są aktualizowane w narzędziach Banku nie później niż następnego dnia roboczego po ich ogłoszeniu. Za aktualizację odpowiada {{fakt:jednostka.zgodnosc}}, a za dostarczenie danych — wskazany dostawca danych o sankcjach."
+
+  - id: procedura-aml-kyc-szczegolne
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - ustep: "W przypadkach szczególnych pracownik stosuje następujące zasady:"
+        punkty:
+          - "**Obsługa na odległość** — jeżeli klient nie jest obecny osobiście, tożsamość weryfikuje się za pomocą kwalifikowanego podpisu elektronicznego, środka identyfikacji elektronicznej o odpowiednim poziomie bezpieczeństwa albo zdalnej weryfikacji dokumentu z potwierdzeniem biometrycznym; relację klasyfikuje się co najmniej jako średnie ryzyko;"
+          - "**Klient nierezydent** — zażądaj dokumentu podróży, informacji o numerze identyfikacji podatkowej w kraju rezydencji i oświadczenia o rezydencji podatkowej;"
+          - "**Odmowa współpracy** — gdy klient odmawia podania danych, nie nawiązuj stosunków i rozważ zawiadomienie Generalnego Inspektora Informacji Finansowej, jeżeli odmowa budzi podejrzenie;"
+          - "**Zmiana beneficjenta rzeczywistego** — traktuj jako zdarzenie wymagające ponownej oceny ryzyka w ciągu {{fakt:termin.aml.uzupelnienie-dokumentow}};"
+          - "**Rachunki powiernicze i skrytki** — wymagają zatwierdzenia przez komórkę zgodności ({{fakt:jednostka.zgodnosc}}), a umowa musi wskazywać beneficjenta rzeczywistego;"
+          - "**Wypłaty zagraniczne i kryptoaktywa** — transakcje powiązane z usługodawcami kryptoaktywów lub krajami wysokiego ryzyka analizuj jako transakcje o podwyższonym ryzyku;"
+          - "**Klienci przypadkowi** — przy transakcji okazjonalnej o wartości co najmniej {{fakt:aml.prog-transakcji}} identyfikuj i weryfikuj klienta, nawet jeśli nie zawiera on umowy z Bankiem."
+      - akapit: "W razie wątpliwości co do zastosowania powyższych reguł pracownik zwraca się do kierownika placówki, a ten — do komórki zgodności ({{fakt:jednostka.zgodnosc}}), korzystając z adresu {{fakt:aml.email}}."
+
+  - id: procedura-aml-kyc-kontrola
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Kontrola stosowania procedury jest prowadzona w trzech liniach. W pierwszej linii kierownicy placówek i jednostek weryfikują kompletność dokumentacji klientów i prawidłowość wprowadzania danych do systemów. W drugiej linii {{fakt:jednostka.zgodnosc}} wykonuje testy wyrywkowe oraz ocenia skuteczność scenariuszy monitorowania. W trzeciej linii niezależny audyt wewnętrzny bada całość procesu."
+      - ustep: "Kontrola obejmuje w szczególności:"
+        punkty:
+          - "{kwartalny|cokwartalny} przegląd próbki nowo przyjętych klientów, ze szczególnym uwzględnieniem klientów wysokiego ryzyka;"
+          - "sprawdzenie terminowości analiz alertów i zawiadomień oraz zgodności z zasadą nieujawniania;"
+          - "weryfikację jakości danych o beneficjentach rzeczywistych i aktualności dokumentów tożsamości;"
+          - "ocenę poprawności zastosowania progów transakcyjnych i środków wzmocnionych."
+      - akapit: "Wyniki kontroli są przedstawiane Zarządowi w sprawozdaniu rocznym sporządzanym przez osobę na stanowisku „{{fakt:aml.koordynator}}”. Stwierdzone uchybienia usuwa się według planu naprawczego z określonymi terminami; nieusunięcie uchybienia w terminie zgłasza się do organu zarządzającego ({{fakt:jednostka.zarzad}})."
+
+  - id: procedura-aml-kyc-szkolenia
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Bank zapewnia, aby pracownicy mieli wiedzę potrzebną do rozpoznawania i właściwej reakcji na ryzyko prania pieniędzy i finansowania terroryzmu. Szkolenia są obowiązkowe, a udział w nich jest odnotowywany w ewidencji szkoleń."
+      - ustep: "Zasady szkoleń są następujące:"
+        punkty:
+          - "nowo zatrudniony pracownik odbywa szkolenie wstępne w ciągu {{fakt:termin.aml.szkolenie-wstepne}} od dnia rozpoczęcia pracy i nie może samodzielnie przeprowadzać identyfikacji do czasu jego ukończenia;"
+          - "szkolenie okresowe odbywa się {{fakt:termin.aml.szkolenie-okresowe}} i obejmuje zmiany przepisów, typologie, wyniki kontroli oraz omówienie przypadków;"
+          - "pracownicy komórki analitycznej ({{fakt:aml.zespol-analiz}}) oraz osoby zatwierdzające relacje wysokiego ryzyka uczestniczą w szkoleniach specjalistycznych;"
+          - "szkolenia kończą się testem, a wynik poniżej progu zaliczenia wymaga powtórzenia szkolenia."
+      - akapit: "Za organizację szkoleń odpowiada {{fakt:jednostka.zgodnosc}}. Zaświadczenia o ukończeniu szkolenia przechowuje się w aktach osobowych pracownika."
+
+  - id: procedura-aml-kyc-dokumentacja
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Bank przechowuje dokumentację dotyczącą zastosowania środków bezpieczeństwa finansowego, a także wyniki prowadzonych analiz, przez okres {{fakt:termin.aml.przechowywanie-dokumentow}}, liczony od dnia zakończenia stosunków gospodarczych albo od dnia przeprowadzenia transakcji okazjonalnej."
+      - ustep: "Przechowywaniu podlegają:"
+        punkty:
+          - "kopie dokumentów i informacji uzyskanych w ramach identyfikacji, weryfikacji i ustalania beneficjenta rzeczywistego;"
+          - "formularze F-AML-01 oraz decyzje o zatwierdzeniu relacji wraz z uzasadnieniem;"
+          - "dokumentacja ocen ryzyka, zmian poziomu ryzyka i środków wzmocnionych;"
+          - "wyniki analiz alertów i zawiadomień — przez okres {{fakt:termin.aml.przechowywanie-analiz}};"
+          - "ewidencja szkoleń i wyniki kontroli."
+      - akapit: "Dokumentację przechowuje się w narzędziu informatycznym ({{fakt:aml.system-klienci}}) oraz w archiwum elektronicznym Banku, w sposób zapewniający jej integralność, dostępność dla uprawnionych osób i możliwość szybkiego przedstawienia organom państwa. Dokumentacji nie wolno niszczyć przed upływem okresu przechowywania, nawet na żądanie klienta; po jego upływie dokumenty niszczy się protokolarnie, o ile nie zachodzą podstawy do dłuższego przechowywania."
+
+  - id: procedura-aml-kyc-koncowe
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Procedura wchodzi w życie z dniem wskazanym w metryczce i zastępuje wcześniej obowiązujące zasady dotyczące identyfikacji i oceny ryzyka klientów. Wszystkie pytania dotyczące jej stosowania {kieruje się|zgłasza się} do komórki zgodności ({{fakt:jednostka.zgodnosc}}), na adres {{fakt:aml.email}}."
+      - akapit: "Załączniki są integralną częścią procedury. Naruszenie obowiązków wynikających z procedury może stanowić podstawę odpowiedzialności służbowej, a w przypadkach określonych w przepisach — także odpowiedzialności karnej."
+
+  - id: procedura-aml-kyc-zal-lista
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zalacznik-wymagany
+    elementy:
+      - akapit: "Lista kontrolna służy do potwierdzenia, że przed nawiązaniem stosunków gospodarczych zastosowano wszystkie środki bezpieczeństwa finansowego. Pracownik zaznacza wykonane czynności i dołącza listę do karty klienta."
+      - lista-kontrolna:
+          forma: tekst
+          pozycje:
+            - "Okazano dokument tożsamości klienta, sprawdzono jego ważność i zgodność danych"
+            - "Zweryfikowano tożsamość w niezależnym źródle lub w rejestrze publicznym"
+            - "Zidentyfikowano pełnomocnika lub osoby reprezentujące klienta i ich umocowanie"
+            - "Ustalono beneficjenta rzeczywistego i zweryfikowano jego dane"
+            - "Ustalono cel i planowany charakter stosunków gospodarczych"
+            - "Ustalono źródło pochodzenia środków i — jeśli wymagano — dołączono dokumenty"
+            - "Sprawdzono klienta, pełnomocników i beneficjenta w wykazach sankcyjnych"
+            - "Zapytano o status PEP i odnotowano odpowiedź"
+            - "Wprowadzono dane do systemu KYC-PRZYKŁAD i wyliczono wynik scoringu"
+            - "Przypisano poziom ryzyka i uzyskano wymagane zatwierdzenie"
+            - "Zastosowano środki uproszczone lub wzmocnione adekwatne do ryzyka"
+            - "Ustalono termin najbliższego przeglądu danych"
+            - "Klient podpisał oświadczenie o prawdziwości danych i klauzulę informacyjną"
+
+  - id: procedura-aml-kyc-zal-scoring
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zalacznik-wymagany
+    elementy:
+      - akapit: "Poniższa tabela przedstawia kryteria punktowe stosowane w narzędziu informatycznym ({{fakt:aml.system-klienci}}) do oceny ryzyka klienta. Wynik jest sumą punktów za poszczególne kryteria; progi poziomów ryzyka określono w sekcji dotyczącej oceny ryzyka."
+      - tabela:
+          kolumny:
+            - naglowek: "Kryterium"
+              waga: 3
+            - naglowek: "Opis"
+              waga: 4
+            - naglowek: "Punkty"
+          wiersze:
+            - ["Rodzaj klienta", "Osoba fizyczna rezydent — 5; przedsiębiorca — 10; osoba prawna ze złożoną strukturą — 20", "5–20"]
+            - ["Kraj", "Polska i państwa o niskim ryzyku — 0; kraje z wykazu podwyższonego ryzyka — 35", "0–35"]
+            - ["PEP", "Klient, beneficjent rzeczywisty lub pełnomocnik jest PEP — 40", "0–40"]
+            - ["Gotówka", "Regularne wpłaty i wypłaty gotówkowe niewspółmierne do profilu — 15", "0–15"]
+            - ["Kanał", "Obsługa w placówce — 0; kontakt na odległość — 10", "0–10"]
+            - ["Branża", "Branża podwyższonego ryzyka (np. obrót metalami szlachetnymi, nieruchomości, gry hazardowe) — 15", "0–15"]
+            - ["Produkt", "Rachunek bieżący — 0; rachunek powierniczy lub skrytka — 10", "0–10"]
+          siatka: true
+
+  - id: procedura-aml-kyc-zal-sygnaly
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zalacznik-wymagany
+    elementy:
+      - akapit: "Wykaz sygnałów ostrzegawczych ma charakter przykładowy. Wystąpienie jednego sygnału nie oznacza jeszcze podejrzenia, jednak powinno skłonić do dokładniejszej analizy sytuacji klienta."
+      - tabela:
+          kolumny:
+            - naglowek: "Obszar"
+              waga: 2
+            - naglowek: "Sygnał ostrzegawczy"
+              waga: 5
+          wiersze:
+            - ["Zachowanie klienta", "Unika kontaktu osobistego, niechętnie podaje dane lub składa niespójne wyjaśnienia"]
+            - ["Dokumenty", "Dokumenty budzą wątpliwości co do autentyczności albo dane w nich zawarte są niespójne"]
+            - ["Gotówka", "Wpłaty tuż poniżej progu, dzielone na kilka operacji lub na kilka dni"]
+            - ["Przepływ środków", "Środki są wypłacane lub przelewane niemal natychmiast po wpływie"]
+            - ["Struktura", "Skomplikowana struktura własności bez ekonomicznego uzasadnienia"]
+            - ["Kraje", "Przelewy do lub z krajów wysokiego ryzyka bez związku z działalnością klienta"]
+            - ["Profil", "Obroty wielokrotnie przewyższają deklarowane dochody lub przychody"]
+          siatka: true

@@ -1,0 +1,133 @@
+bloki:
+  - id: procedura-aml-kyc-zamrozenie-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zamrozenie
+    elementy:
+      - akapit: "Wstrzymanie transakcji lub blokada rachunku na żądanie organu państwa mogą trwać wyłącznie przez okres wskazany w przepisach. Początkowo okres ten wynosi {{fakt:termin.aml.blokada-giif}}; jego przedłużenie wymaga postanowienia prokuratora wydanego na czas nie dłuższy niż {{fakt:termin.aml.blokada-prokurator}}."
+      - ustep: "{{fakt:jednostka.operacje}} wykonuje blokadę w następujący sposób:"
+        punkty:
+          - "wprowadza w {systemie centralnym|systemie CBS-PRZYKŁAD} blokadę środków na rachunku w kwocie wskazanej w żądaniu albo na całym rachunku;"
+          - "{wyłącza|ogranicza} dostęp do dyspozycji klienta w bankowości elektronicznej i w placówkach, nie ujawniając przyczyny;"
+          - "przekazuje potwierdzenie wykonania blokady do komórki zgodności ({{fakt:jednostka.zgodnosc}}) w dniu jej wdrożenia;"
+          - "monitoruje termin zakończenia blokady i niezwłocznie informuje {{fakt:jednostka.zgodnosc}} o zbliżającym się końcu okresu."
+      - akapit: "Bank nie ponosi odpowiedzialności wobec klienta za szkodę wynikłą z wykonania blokady lub wstrzymania transakcji w dobrej wierze, na podstawie przepisów o przeciwdziałaniu praniu pieniędzy."
+
+  - id: procedura-aml-kyc-szczegolne-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - akapit: "Odmowa nawiązania stosunków gospodarczych, wykonania transakcji lub wypowiedzenie umowy z powodu niemożności zastosowania środków bezpieczeństwa finansowego wymaga zachowania szczególnej ostrożności, aby nie naruszyć zasady nieujawniania."
+      - ustep: "W takich przypadkach:"
+        punkty:
+          - "decyzję o odmowie lub wypowiedzeniu umowy podejmuje {{fakt:jednostka.zgodnosc}} na wniosek kierownika placówki;"
+          - "w informacji dla klienta wskazuje się, że odmowa wynika z obowiązków nałożonych na Bank przepisami prawa, bez podawania szczegółów analizy;"
+          - "umowę wypowiada się w terminie przewidzianym w regulaminie produktu, chyba że przepisy zezwalają na wypowiedzenie ze skutkiem natychmiastowym;"
+          - "środki klienta zwraca się na rachunek wskazany przez klienta, jeżeli zostanie on pozytywnie zweryfikowany i nie ma przeszkód wynikających z przepisów lub żądań organów."
+      - akapit: "Przy zwrocie środków na rachunek w innym banku sprawdź, czy rachunek należy do klienta; w razie wątpliwości zleć {przelew|zwrot} na rachunek, z którego środki wpłynęły."
+
+  - id: procedura-aml-kyc-szczegolne-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - akapit: "Przykład 1. Klient prowadzący jednoosobową działalność wpłaca w ciągu tygodnia trzykrotnie gotówkę w kwotach nieznacznie poniżej progu {{fakt:aml.prog-gotowka}}, tłumacząc, że pochodzi ona ze sprzedaży towarów. Pracownik przy trzeciej wpłacie prosi o dokumenty sprzedaży, odnotowuje odpowiedzi i zgłasza przypadek do komórki analitycznej ({{fakt:aml.zespol-analiz}}), nie informując klienta o tym, że wpłaty są analizowane."
+      - akapit: "Przykład 2. Spółka z ograniczoną odpowiedzialnością, której jedyny wspólnik jest zarejestrowany w państwie ujętym w dokumencie „{{fakt:aml.wykaz-krajow}}”, wnioskuje o otwarcie rachunku. Pracownik ustala beneficjenta rzeczywistego, zbiera schemat struktury i przekazuje wniosek do zatwierdzenia przez komórkę zgodności ({{fakt:jednostka.zgodnosc}}) jako relację wysokiego ryzyka."
+      - akapit: "Przykład 3. Osoba fizyczna prosi o przelew na kwotę przekraczającą {{fakt:aml.prog-przelew-informacje}} do kraju spoza Unii Europejskiej, nie potrafiąc wskazać tytułu ani relacji z odbiorcą. Pracownik wstrzymuje przelew, wyjaśnia, że brak danych uniemożliwia realizację, a po uzyskaniu informacji ocenia, czy konieczne jest zgłoszenie."
+      - akapit: "Przykłady mają charakter pomocniczy i nie wyczerpują wszystkich sytuacji; w każdej sprawie pracownik ocenia okoliczności indywidualnie."
+
+  - id: procedura-aml-kyc-kontrola-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-kontrola
+    elementy:
+      - ustep: "Kontrola funkcjonalna w placówkach przebiega według następujących zasad:"
+        punkty:
+          - "kierownik placówki co miesiąc losuje z systemu próbkę {5|pięciu} nowo przyjętych klientów i sprawdza kompletność ich dokumentacji względem listy kontrolnej z załącznika;"
+          - "wyniki kontroli wpisuje się do rejestru uchybień; uchybienia krytyczne (np. brak identyfikacji beneficjenta rzeczywistego) zgłasza się do komórki zgodności ({{fakt:jednostka.zgodnosc}}) w ciągu {{fakt:termin.aml.eskalacja-alertu}};"
+          - "uchybienia formalne usuwa się w ciągu {{fakt:termin.aml.uzupelnienie-dokumentow}} od ich wykrycia;"
+          - "pracownik, wobec którego stwierdzono powtarzające się uchybienia, kierowany jest na dodatkowe szkolenie."
+      - akapit: "Kontrola funkcjonalna nie zastępuje kontroli komórki zgodności ({{fakt:jednostka.zgodnosc}}) ani audytu; jej celem jest wczesne wykrywanie błędów."
+
+  - id: procedura-aml-kyc-kontrola-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-kontrola
+    elementy:
+      - akapit: "{{fakt:aml.koordynator}} raz w roku sporządza sprawozdanie dla Zarządu dotyczące stosowania procedury. Sprawozdanie przedstawia dane i wnioski, a także propozycje działań doskonalących."
+      - ustep: "Sprawozdanie zawiera co najmniej:"
+        punkty:
+          - "liczbę klientów według poziomów ryzyka i zmiany w ich strukturze;"
+          - "liczbę alertów, analiz i zawiadomień oraz średni czas obsługi alertu;"
+          - "wyniki kontroli, w tym liczbę i wagę stwierdzonych uchybień;"
+          - "informacje o szkoleniach i o wynikach testów;"
+          - "wnioski z kontroli organów nadzoru, jeżeli były prowadzone;"
+          - "propozycje zmian w procedurze, scenariuszach i narzędziach."
+      - akapit: "Zarząd rozpatruje sprawozdanie nie później niż w ciągu kolejnych {30|trzydziestu} dni od jego otrzymania i przyjmuje wnioski do realizacji, wyznaczając osoby odpowiedzialne i terminy."
+
+  - id: procedura-aml-kyc-szkolenia-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szkolenia
+    elementy:
+      - akapit: "Program szkoleń obejmuje wiedzę ogólną i szczegółową dostosowaną do stanowiska pracownika. Treści są aktualizowane co najmniej {{fakt:termin.aml.szkolenie-okresowe}} lub częściej, jeśli zmienią się przepisy."
+      - ustep: "Szkolenia dzielą się na:"
+        punkty:
+          - "**podstawowe** — dla wszystkich pracowników, obejmujące pojęcia ryzyka prania pieniędzy i finansowania terroryzmu, obowiązki Banku, zasadę nieujawniania i sposób zgłaszania podejrzeń;"
+          - "**stanowiskowe** — dla pracowników obsługujących klientów, dotyczące identyfikacji, weryfikacji, ustalania beneficjenta rzeczywistego i stosowania scoringu;"
+          - "**specjalistyczne** — dla analityków, kierowników i osób zatwierdzających relacje, dotyczące typologii, analizy alertów oraz sankcji;"
+          - "**dla zarządu i rady nadzorczej** — dotyczące odpowiedzialności organów za system przeciwdziałania praniu pieniędzy."
+      - akapit: "Pracownik, który nie ukończy szkolenia okresowego w terminie, jest wyłączony z możliwości zatwierdzania relacji o średnim i wysokim ryzyku do czasu jego ukończenia."
+
+  - id: procedura-aml-kyc-dokumentacja-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-dokumentacja
+    elementy:
+      - akapit: "Dokumentacja klienta jest prowadzona w formie elektronicznej; dokumenty papierowe skanuje się w dniu ich otrzymania, a oryginały zwraca klientowi, jeżeli przepisy nie wymagają ich zatrzymania."
+      - ustep: "Zasady jakości dokumentacji obejmują:"
+        punkty:
+          - "skany muszą być czytelne i kompletne, z widocznymi wszystkimi stronami dokumentu;"
+          - "każdy dokument opisuje się datą pozyskania i nazwiskiem pracownika, który go przyjął;"
+          - "dokumenty w języku obcym przechowuje się razem z tłumaczeniem;"
+          - "kopie dokumentów tożsamości oznacza się adnotacją o przeznaczeniu i zakazie dalszego kopiowania."
+      - akapit: "Dostęp do dokumentacji mają wyłącznie pracownicy upoważnieni, a każde jej otwarcie jest rejestrowane w narzędziu informatycznym ({{fakt:aml.system-klienci}}). {{fakt:jednostka.bezpieczenstwo}} raz w roku przegląda uprawnienia i zgłasza nieprawidłowości do komórki zgodności ({{fakt:jednostka.zgodnosc}})."
+
+  - id: procedura-aml-kyc-dokumentacja-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-dokumentacja
+    elementy:
+      - akapit: "Dokumentacja jest udostępniana organom państwa na ich żądanie i w zakresie przewidzianym w przepisach. Pracownik, który otrzymał żądanie od osoby podającej się za przedstawiciela organu, nie wydaje dokumentów bezpośrednio, lecz przekazuje żądanie do komórki prawnej ({{fakt:jednostka.prawny}})."
+      - ustep: "Udostępnienie dokumentacji wymaga:"
+        punkty:
+          - "weryfikacji tożsamości i uprawnień osoby składającej żądanie;"
+          - "sprawdzenia podstawy prawnej i zakresu żądania;"
+          - "zachowania kopii wydanych dokumentów i protokołu wydania;"
+          - "poinformowania komórki zgodności ({{fakt:jednostka.zgodnosc}}) o fakcie udostępnienia."
+      - akapit: "Dokumentacja, w tym dane osobowe, podlega ochronie tajemnicy bankowej; zasady jej ujawniania określa {{ref:akt:dz-u-2024-1646-prawo-bankowe}}. W razie wątpliwości co do zakresu udostępnienia decyzję podejmuje {{fakt:jednostka.prawny}}."
+
+  - id: procedura-aml-kyc-zal-progi
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zalacznik
+    elementy:
+      - akapit: "Poniższe zestawienie przedstawia najważniejsze progi i terminy stosowane w procedurze. Jest ono pomocą dla pracownika i nie zastępuje postanowień zasadniczych."
+      - tabela:
+          kolumny:
+            - naglowek: "Zagadnienie"
+              waga: 4
+            - naglowek: "Wartość lub termin"
+              waga: 3
+          wiersze:
+            - ["Transakcja okazjonalna — obowiązek stosowania CDD", "{{fakt:aml.prog-transakcji}}"]
+            - ["Transakcja gotówkowa podlegająca rejestracji", "{{fakt:aml.prog-gotowka}}"]
+            - ["Kontrola danych przelewu", "{{fakt:aml.prog-przelew-informacje}}"]
+            - ["Konieczność udokumentowania źródła wpłaty", "{{fakt:aml.prog-wplata-udokumentowanie}}"]
+            - ["Powiązane transakcje wymagające analizy", "{{fakt:aml.prog-powiazane-transakcje}}"]
+            - ["Próg udziałów beneficjenta rzeczywistego", "{{fakt:aml.prog-udzialu-beneficjenta}}"]
+            - ["Analiza alertu", "{{fakt:termin.aml.analiza-alertu}}"]
+            - ["Zawiadomienie Generalnego Inspektora Informacji Finansowej", "{{fakt:termin.aml.zawiadomienie-giif}}"]
+            - ["Przechowywanie dokumentacji", "{{fakt:termin.aml.przechowywanie-dokumentow}}"]
+          siatka: true

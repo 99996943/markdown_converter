@@ -1,0 +1,185 @@
+bloki:
+  - id: procedura-aml-kyc-kroki-identyfikacja
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Środki bezpieczeństwa finansowego stosuje się przed nawiązaniem stosunków gospodarczych, a także przy przeprowadzaniu transakcji okazjonalnej, której wartość wynosi {{fakt:aml.prog-transakcji}} lub więcej, bez względu na to, czy dokonuje się jej jedną operacją, czy kilkoma operacjami, które wydają się ze sobą powiązane."
+      - kroki:
+          - tekst: "{Ustal|Zidentyfikuj} klienta będącego osobą fizyczną."
+            podkroki:
+              - tekst: "Zbierz imię i nazwisko, obywatelstwo, numer PESEL albo datę urodzenia (gdy numer nie został nadany) oraz adres zamieszkania."
+              - tekst: "W przypadku przedsiębiorcy dodatkowo ustal firmę, adres głównego miejsca wykonywania działalności i numer identyfikacji podatkowej."
+              - tekst: "Zażądaj okazania dokumentu tożsamości z fotografią; sprawdź jego ważność, kompletność i brak śladów {przerobienia|ingerencji}."
+          - tekst: "{Ustal|Zidentyfikuj} klienta będącego osobą prawną lub jednostką organizacyjną."
+            podkroki:
+              - tekst: "{Zbierz|Ustal} nazwę, formę organizacyjną, adres siedziby, numer w rejestrze i numer identyfikacji podatkowej."
+              - tekst: "Pobierz odpis z właściwego rejestru, nie starszy niż 3 miesiące, oraz dokumenty określające zasady reprezentacji."
+              - tekst: "Ustal i zweryfikuj osoby uprawnione do reprezentowania klienta oraz ich dane identyfikacyjne."
+          - tekst: "{Zweryfikuj|Potwierdź} tożsamość klienta na podstawie dokumentów lub informacji z wiarygodnego i niezależnego źródła."
+            podkroki:
+              - tekst: "Porównaj dane z dokumentu z danymi podanymi we wniosku i zanotuj każdą rozbieżność."
+              - tekst: "Sprawdź dane w odpowiednich rejestrach publicznych, gdy dostęp do nich jest przewidziany w systemie."
+              - tekst: "Jeżeli weryfikacji nie można zakończyć w dniu wizyty, wskaż uzasadnienie w formularzu F-AML-01 i ustal termin uzupełnienia nie dłuższy niż {{fakt:termin.aml.uzupelnienie-dokumentow}}."
+          - tekst: "{Zweryfikuj|Sprawdź} pełnomocnika i przedstawiciela ustawowego."
+            podkroki:
+              - tekst: "Zidentyfikuj osobę działającą w imieniu klienta według tych samych zasad, które obowiązują wobec klienta."
+              - tekst: "Zachowaj oryginał lub kopię potwierdzoną za zgodność z oryginałem dokumentu umocowania."
+          - tekst: "Sprawdź klienta pod kątem sankcji i PEP przed zatwierdzeniem relacji."
+            podkroki:
+              - tekst: "Uruchom {automatyczne|systemowe} sprawdzenie klienta, pełnomocników i osób uprawnionych do reprezentacji w wykazach sankcyjnych."
+              - tekst: "Trafienie potwierdzone lub niejednoznaczne przekaż natychmiast do komórki zgodności ({{fakt:jednostka.zgodnosc}}) i wstrzymaj nawiązanie relacji."
+          - tekst: "{Zapisz|Wprowadź} wyniki w narzędziu informatycznym ({{fakt:aml.system-klienci}}) i dołącz skany dokumentów do karty klienta."
+      - ramka: "Zakaz: nie nawiązuj stosunków gospodarczych, nie wykonuj transakcji okazjonalnej i nie wypłacaj środków, jeśli identyfikacja lub weryfikacja nie zostały zakończone. Nie otwieraj rachunków anonimowych ani rachunków na fikcyjne dane."
+
+  - id: procedura-aml-kyc-kroki-beneficjent
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Ustal beneficjenta rzeczywistego klienta, który nie jest osobą fizyczną prowadzącą działalność na własny rachunek."
+            podkroki:
+              - tekst: "Zapytaj klienta o osoby, które bezpośrednio lub pośrednio posiadają więcej niż {{fakt:aml.prog-udzialu-beneficjenta}} udziałów albo ogółu praw głosu."
+              - tekst: "Jeżeli takiej osoby nie ma, ustal osobę sprawującą kontrolę w inny sposób, np. na podstawie uprawnień do powoływania zarządu."
+              - tekst: "Jeżeli nie ustalono żadnej osoby, jako beneficjenta rzeczywistego wskaż osobę zajmującą wyższe stanowisko kierownicze i {udokumentuj|odnotuj} przyczynę takiego wyboru."
+          - tekst: "{Zweryfikuj|Potwierdź} dane beneficjenta rzeczywistego."
+            podkroki:
+              - tekst: "{Zbierz|Ustal} imię i nazwisko, obywatelstwo oraz — jeśli to możliwe — numer PESEL i adres zamieszkania beneficjenta."
+              - tekst: "Porównaj oświadczenie klienta z informacjami z centralnego rejestru beneficjentów rzeczywistych oraz z innych wiarygodnych źródeł."
+              - tekst: "Rozbieżność między oświadczeniem klienta a danymi z rejestru zgłoś do komórki zgodności ({{fakt:jednostka.zgodnosc}}) w ciągu {{fakt:termin.aml.eskalacja-alertu}} od jej stwierdzenia."
+          - tekst: "Poznaj strukturę własności i kontroli klienta."
+            podkroki:
+              - tekst: "Sporządź lub zbierz schemat struktury własnościowej, gdy między klientem a beneficjentem występuje więcej niż jedno ogniwo."
+              - tekst: "Zwróć uwagę na struktury z udziałem podmiotów w krajach ujętych w dokumencie „{{fakt:aml.wykaz-krajow}}” oraz na udziały na okaziciela i powiernictwo."
+          - tekst: "Ustal cel i planowany charakter stosunków gospodarczych."
+            podkroki:
+              - tekst: "{Zapytaj|Dowiedz się} o przewidywane rodzaje i wartość miesięczną transakcji, rodzaj kontrahentów oraz geograficzny zasięg rozliczeń."
+              - tekst: "Zapytaj o źródło pochodzenia środków, które będą wpłacane na rachunek, i odnotuj odpowiedź własnymi słowami klienta."
+              - tekst: "Przy wpłacie przekraczającej {{fakt:aml.prog-wplata-udokumentowanie}} lub wyraźnie niezgodnej z deklarowaną działalnością zażądaj dokumentu potwierdzającego źródło środków."
+          - tekst: "Ustal, czy klient działa na własny rachunek."
+            podkroki:
+              - tekst: "Jeżeli klient wskazuje, że działa na rzecz osoby trzeciej, zidentyfikuj tę osobę i zbierz dokument uzasadniający takie działanie."
+          - tekst: "{Zapisz|Wpisz} ustalenia w sekcji B formularza F-AML-01 i poproś klienta o podpisanie oświadczenia o prawdziwości danych."
+
+  - id: procedura-aml-kyc-kroki-ryzyko
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Poziom ryzyka klienta określa się na podstawie scoringu w narzędziu informatycznym ({{fakt:aml.system-klienci}}); pełne kryteria zawiera {{ref:zalacznik:procedura-aml-kyc-zal-scoring}}. {Pracownik|Osoba wprowadzająca dane} nie może pominąć żadnego z kryteriów, a każdą ręczną zmianę wyniku {uzasadnia|opisuje} w polu komentarza."
+      - kroki:
+          - tekst: "Wprowadź do systemu dane niezbędne do wyliczenia wyniku."
+            podkroki:
+              - tekst: "{Wskaż|Zaznacz} rodzaj klienta, branżę, kraj rezydencji, obywatelstwo oraz kraje, z którymi klient będzie się rozliczać."
+              - tekst: "Wskaż rodzaj produktu, kanał obsługi (placówka, bankowość elektroniczna, kontakt na odległość) i spodziewaną strukturę transakcji."
+              - tekst: "Zaznacz informacje o ewentualnych powiązaniach z PEP lub z osobami z wykazów sankcyjnych."
+          - tekst: "Odczytaj wynik punktowy i przypisz klientowi poziom ryzyka."
+            podkroki:
+              - tekst: "Wynik {{fakt:aml.wynik-niskie-ryzyko}} oznacza ryzyko niskie."
+              - tekst: "Wynik pośredni oznacza ryzyko średnie."
+              - tekst: "Wynik {{fakt:aml.wynik-wysokie-ryzyko}} oznacza ryzyko wysokie i obliguje do zastosowania wzmocnionych środków bezpieczeństwa."
+          - tekst: "Uwzględnij czynniki podnoszące wynik niezależnie od punktów."
+            podkroki:
+              - tekst: "Klient będący PEP otrzymuje {{fakt:aml.punkty-pep}} i jest zawsze klasyfikowany jako klient wysokiego ryzyka."
+              - tekst: "Związek z krajem wysokiego ryzyka zwiększa wynik o {{fakt:aml.punkty-kraj-wysokiego-ryzyka}}."
+              - tekst: "Intensywne korzystanie z gotówki zwiększa wynik o {{fakt:aml.punkty-gotowka}}."
+          - tekst: "{Zatwierdź|Przekaż do zatwierdzenia} nawiązanie stosunków gospodarczych."
+            podkroki:
+              - tekst: "Przy ryzyku niskim decyzję podejmuje pracownik, jeśli kierownik placówki nie zażąda ponownej oceny."
+              - tekst: "Przy ryzyku średnim relację {zatwierdza|akceptuje} kierownik placówki."
+              - tekst: "Przy ryzyku wysokim relację zatwierdza {{fakt:jednostka.zgodnosc}} po zapoznaniu się z kompletną dokumentacją."
+          - tekst: "Ustal częstotliwość przeglądu danych klienta."
+            podkroki:
+              - tekst: "Klienta wysokiego ryzyka {poddaje się przeglądowi|obejmuje się przeglądem} {{fakt:termin.aml.przeglad-wysokie}}."
+              - tekst: "Klienta średniego ryzyka poddaje się przeglądowi {{fakt:termin.aml.przeglad-srednie}}."
+              - tekst: "Klienta niskiego ryzyka poddaje się przeglądowi {{fakt:termin.aml.przeglad-niskie}}."
+          - tekst: "Powiadom klienta, że Bank odmawia nawiązania relacji, jeżeli nie można zastosować środków bezpieczeństwa finansowego. Nie podawaj przyczyny wykraczającej poza stwierdzenie, że odmowa wynika z przepisów prawa."
+
+  - id: procedura-aml-kyc-kroki-ewd
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Środki uproszczone wolno stosować {wyłącznie|tylko} wtedy, gdy ocena ryzyka potwierdza niskie ryzyko; środki wzmocnione są obowiązkowe wobec klientów wysokiego ryzyka, PEP, klientów z krajów wysokiego ryzyka oraz w sytuacjach wskazanych w przepisach."
+      - kroki:
+          - tekst: "Zastosuj środki uproszczone (SDD) wobec klienta niskiego ryzyka."
+            podkroki:
+              - tekst: "{Ogranicz|Zawęź} zakres zbieranych informacji do danych identyfikacyjnych i weryfikacji w jednym niezależnym źródle."
+              - tekst: "Wydłuż okres między przeglądami do wartości wskazanej dla ryzyka niskiego."
+              - tekst: "Przy każdej wątpliwości lub zmianie okoliczności wróć do pełnego zakresu środków i ponów ocenę ryzyka."
+          - tekst: "Zastosuj środki wzmocnione (EDD) wobec klienta wysokiego ryzyka."
+            podkroki:
+              - tekst: "{Zbierz|Pozyskaj} dodatkowe dokumenty dotyczące źródła majątku i źródła pochodzenia środków; klient ma na ich dostarczenie {{fakt:termin.aml.potwierdzenie-zrodla-ewd}}."
+              - tekst: "Uzyskaj zgodę komórki zgodności ({{fakt:jednostka.zgodnosc}}) na nawiązanie lub kontynuowanie stosunków gospodarczych."
+              - tekst: "{Zwiększ|Podnieś} częstotliwość i intensywność monitorowania transakcji oraz przeglądów danych."
+          - tekst: "Zidentyfikuj PEP i zastosuj odpowiednie środki."
+            podkroki:
+              - tekst: "Zapytaj klienta i beneficjenta rzeczywistego o piastowane lub piastowane w przeszłości eksponowane stanowisko; wynik porównaj z danymi z wykazu."
+              - tekst: "Uwzględniaj osobę jako PEP przez {{fakt:termin.aml.pep-okres-po-funkcji}} po zaprzestaniu pełnienia funkcji, a następnie dokonaj ponownej oceny ryzyka."
+              - tekst: "Ustal źródło majątku i środków PEP, a decyzję o relacji przedstaw do zatwierdzenia przez komórkę zgodności ({{fakt:jednostka.zgodnosc}}) i członka zarządu odpowiedzialnego za przeciwdziałanie praniu pieniędzy."
+          - tekst: "Zastosuj środki wzmocnione wobec klientów związanych z krajami wysokiego ryzyka."
+            podkroki:
+              - tekst: "Sprawdź kraj rezydencji, siedziby, miejsca prowadzenia działalności oraz kraj kontrahentów według dokumentu „{{fakt:aml.wykaz-krajow}}”."
+              - tekst: "Wobec transakcji z krajami wysokiego ryzyka zbierz informacje o ich celu i charakterze oraz dokumenty handlowe."
+          - tekst: "Zapisz rodzaj zastosowanych środków i uzasadnienie w formularzu F-AML-01, a ich kopię dołącz do karty klienta."
+
+  - id: procedura-aml-kyc-kroki-monitorowanie
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Monitorowanie obejmuje analizę transakcji w całym okresie {trwania|obowiązywania} stosunków gospodarczych oraz aktualizację dokumentów i informacji o kliencie. Służy sprawdzeniu, czy transakcje są zgodne z wiedzą Banku o kliencie, jego działalności i profilu ryzyka."
+      - kroki:
+          - tekst: "Monitoruj transakcje za pomocą narzędzia informatycznego ({{fakt:aml.system-monitoringu}})."
+            podkroki:
+              - tekst: "System porównuje transakcje ze scenariuszami, m.in. dotyczącymi dzielenia wpłat, szybkiego przepływu środków, nietypowych kierunków przelewów i nagłego wzrostu obrotów."
+              - tekst: "Wszystkie alerty trafiają do komórki analitycznej ({{fakt:aml.zespol-analiz}}); pracownik placówki nie może ich usuwać ani zmieniać."
+          - tekst: "Zastosuj progi transakcyjne."
+            podkroki:
+              - tekst: "{Rejestruj|Odnotowuj} każdą transakcję gotówkową o wartości {{fakt:aml.prog-gotowka}} lub wyższej, także gdy składa się z kilku powiązanych operacji."
+              - tekst: "Wpłaty gotówkowe przekraczające {{fakt:aml.prog-wplata-udokumentowanie}} wymagają potwierdzenia pochodzenia środków przed zaksięgowaniem."
+              - tekst: "W przypadku operacji powiązanych o łącznej wartości co najmniej {{fakt:aml.prog-powiazane-transakcje}} w jednym dniu wykonaj dodatkową analizę, nawet jeśli żadna z nich nie przekracza progu."
+          - tekst: "Kontroluj dane towarzyszące przelewom."
+            podkroki:
+              - tekst: "Przy przelewie o wartości przekraczającej {{fakt:aml.prog-przelew-informacje}} sprawdź kompletność danych zleceniodawcy i odbiorcy."
+              - tekst: "Brak wymaganych danych jest podstawą do wstrzymania przelewu do czasu ich uzupełnienia."
+          - tekst: "Aktualizuj dane klienta."
+            podkroki:
+              - tekst: "Przy każdym kontakcie z klientem {sprawdź|zweryfikuj} aktualność danych i dokumentu tożsamości."
+              - tekst: "Przy przeglądzie okresowym ponów ocenę ryzyka i sprawdź zgodność transakcji z deklarowanym celem relacji."
+              - tekst: "Jeżeli klient nie uzupełni danych w wyznaczonym terminie, zawiadom {{fakt:jednostka.zgodnosc}} w celu podjęcia decyzji o ograniczeniu usług."
+          - tekst: "Wykonuj ponowną ocenę ryzyka po zdarzeniach nadzwyczajnych, np. zmianie właściciela, wzroście obrotów, informacji z mediów lub trafieniu na wykaz sankcyjny."
+
+  - id: procedura-aml-kyc-kroki-podejrzane
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "Analiza transakcji podejrzanej {rozpoczyna się|zaczyna się} z chwilą wygenerowania alertu albo zgłoszenia pracownika. W postępowaniu obowiązuje zakaz informowania klienta oraz osób trzecich o zamiarze, trwaniu lub zakończeniu analizy (zasada „nieujawniania”)."
+      - kroki:
+          - tekst: "Zarejestruj alert lub zgłoszenie w narzędziu ewidencyjnym ({{fakt:aml.rejestr-podejrzanych}})."
+            podkroki:
+              - tekst: "Wpis zawiera datę, źródło alertu, dane klienta, wartość i opis transakcji."
+              - tekst: "Zgłoszenie pracownika przesyłaj na adres {{fakt:aml.email}} lub przez formularz F-AML-05; nie umieszczaj w korespondencji treści, która mogłaby zostać ujawniona klientowi."
+          - tekst: "Przeprowadź analizę alertu w terminie {{fakt:termin.aml.analiza-alertu}} od jego wygenerowania."
+            podkroki:
+              - tekst: "{Zbierz|Zgromadź} historię rachunku, dane KYC, dokumenty związane z transakcją i informacje z innych źródeł dostępnych Bankowi."
+              - tekst: "Oceń, czy transakcja ma uzasadnienie ekonomiczne lub prawne, czy jest zgodna z profilem klienta i czy odpowiada typologiom prania pieniędzy."
+              - tekst: "{Zapisz|Udokumentuj} wnioski i wskaż: alert nieuzasadniony, wymagający wyjaśnień klienta albo uzasadniający zawiadomienie."
+          - tekst: "Uzyskaj wyjaśnienia od klienta, gdy jest to potrzebne i nie zagraża skuteczności postępowania."
+            podkroki:
+              - tekst: "Pytania zadaje wyłącznie pracownik wskazany przez komórkę analityczną ({{fakt:aml.zespol-analiz}}), w sposób niezdradzający podejrzeń Banku."
+              - tekst: "Wyjaśnienia klienta odnotuj w sprawie; niewiarygodne lub sprzeczne odpowiedzi stanowią okoliczność przemawiającą za zawiadomieniem."
+          - tekst: "{Eskaluj|Przekaż} sprawę do osoby na stanowisku „{{fakt:aml.koordynator}}” w ciągu {{fakt:termin.aml.eskalacja-alertu}} od ustalenia, że podejrzenie jest uzasadnione."
+          - tekst: "Przygotuj zawiadomienie dla Generalnego Inspektora Informacji Finansowej."
+            podkroki:
+              - tekst: "Zawiadomienie zawiera dane klienta i beneficjenta, opis transakcji, uzasadnienie podejrzenia oraz załączniki, w tym wyciąg z rachunku."
+              - tekst: "Zawiadomienie wysyła się elektronicznie w terminie {{fakt:termin.aml.zawiadomienie-giif}} od potwierdzenia podejrzenia; odpowiada za to {{fakt:aml.koordynator}}."
+              - tekst: "Wysyłka odbywa się także wtedy, gdy transakcję odrzucono lub nie doprowadzono do jej wykonania."
+          - tekst: "Zastosuj się do żądań organu państwa."
+            podkroki:
+              - tekst: "Wstrzymanie transakcji lub blokadę rachunku na żądanie Generalnego Inspektora Informacji Finansowej wykonuje się niezwłocznie na okres do {{fakt:termin.aml.blokada-giif}}; dalsze utrzymanie blokady następuje wyłącznie na podstawie postanowienia prokuratora na okres nie dłuższy niż {{fakt:termin.aml.blokada-prokurator}}."
+          - tekst: "Zamknij sprawę wpisem do rejestru i zdecyduj o dalszej współpracy z klientem."
+            podkroki:
+              - tekst: "{{fakt:jednostka.zgodnosc}} decyduje o ograniczeniu usług, zmianie poziomu ryzyka albo wypowiedzeniu umowy w trybie przewidzianym w regulaminie produktu."

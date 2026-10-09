@@ -1,0 +1,167 @@
+bloki:
+  - id: procedura-aml-kyc-odp-dodatkowe
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-odpowiedzialnosci
+    elementy:
+      - ustep: "Dodatkowe obowiązki w zakresie przeciwdziałania praniu pieniędzy {spoczywają|ciążą} na następujących osobach:"
+        punkty:
+          - "**Członek zarządu odpowiedzialny za przeciwdziałanie praniu pieniędzy** — {zatwierdza|przyjmuje} politykę ryzyka, wyznacza kierunki działania i raz w roku rozpatruje sprawozdanie osoby na stanowisku „{{fakt:aml.koordynator}}”;"
+          - "**Przełożeni pracowników** — {zapewniają|dbają o} to, aby podwładni znali procedurę, mieli dostęp do jej aktualnej wersji i uczestniczyli w szkoleniach;"
+          - "**Audyt wewnętrzny** — {ocenia|bada} niezależnie skuteczność procedury oraz zgodność jej stosowania z przepisami;"
+          - "**{{fakt:jednostka.bezpieczenstwo}}** — {udostępnia|zapewnia} informacje o nadużyciach i incydentach, które mogą wskazywać na wykorzystywanie Banku do celów przestępczych;"
+          - "**{{fakt:jednostka.prawny}}** — opiniuje projekty zmian procedury i pomaga w kontaktach z organami państwa w kwestiach prawnych;"
+          - "**{{fakt:jednostka.ryzyko}}** — uwzględnia wyniki oceny ryzyka prania pieniędzy w ogólnej ocenie ryzyka operacyjnego i reputacyjnego."
+      - akapit: "Obowiązki te nie zwalniają pracownika placówki z samodzielnej oceny sytuacji klienta; odpowiedzialności za rzetelne wypełnienie formularza F-AML-01 nie można przenieść na zatwierdzającego."
+
+  - id: procedura-aml-kyc-odp-zastepstwa
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-odpowiedzialnosci
+    elementy:
+      - akapit: "W razie nieobecności osoby wskazanej w procedurze jej zadania {przejmuje|wykonuje} zastępca wyznaczony w drodze pisemnego upoważnienia. Upoważnienie określa zakres zastępstwa i czas jego trwania; kopię przekazuje się do komórki zgodności ({{fakt:jednostka.zgodnosc}})."
+      - ustep: "Przy zastępstwach obowiązują następujące ograniczenia:"
+        punkty:
+          - "zastępca nie może zatwierdzać relacji, w których występuje konflikt interesów, w szczególności gdy klientem jest osoba z jego rodziny lub pracownik Banku;"
+          - "zatwierdzenie relacji wysokiego ryzyka przez zastępcę wymaga {potwierdzenia|akceptacji} osoby na stanowisku „{{fakt:aml.koordynator}}”, a w jego nieobecności — członka zarządu;"
+          - "decyzje o zawiadomieniu Generalnego Inspektora Informacji Finansowej podejmuje wyłącznie osoba do tego upoważniona, a zastępstwo w tym zakresie jest ograniczone do dwóch osób wskazanych imiennie."
+      - akapit: "Każdy pracownik odpowiada za działania wykonane w ramach zastępstwa tak samo jak za czynności własne. Konflikt interesów zgłasza się niezwłocznie przełożonemu i komórce zgodności ({{fakt:jednostka.zgodnosc}}), a czynności w danej sprawie przejmuje inna osoba."
+
+  - id: procedura-aml-kyc-def-dodatkowe
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-definicje
+    elementy:
+      - ustep: "Ponadto na potrzeby procedury stosuje się następujące określenia:"
+        punkty:
+          - "**Kraj wysokiego ryzyka** — państwo lub terytorium ujęte w dokumencie „{{fakt:aml.wykaz-krajow}}”, w szczególności z powodu braków w systemie przeciwdziałania praniu pieniędzy, finansowania terroryzmu albo wysokiego poziomu korupcji;"
+          - "**Rachunek powierniczy** — rachunek prowadzony przez Bank dla osoby, która dokonuje czynności w imieniu własnym, lecz na rachunek innej osoby;"
+          - "**Źródło majątku** — ogół okoliczności, dzięki którym klient zgromadził całość posiadanego majątku (np. spadek, sprzedaż nieruchomości, wynagrodzenie);"
+          - "**Źródło środków** — pochodzenie konkretnych środków, które mają być wpłacone lub przelane w ramach stosunków gospodarczych;"
+          - "**Typologia** — opis schematu działań charakterystycznych dla prania pieniędzy lub finansowania terroryzmu, publikowany przez organy lub opracowany w Banku;"
+          - "**Zasada nieujawniania** — zakaz informowania klienta i osób nieuprawnionych o przekazaniu zawiadomienia lub prowadzeniu analizy;"
+          - "**Dostawca danych sankcyjnych** — podmiot, od którego Bank otrzymuje zaktualizowane wykazy osób i podmiotów objętych środkami ograniczającymi;"
+          - "**Karta klienta** — zestaw dokumentów i danych o kliencie przechowywany w narzędziu informatycznym ({{fakt:aml.system-klienci}})."
+
+  - id: procedura-aml-kyc-krok-id-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "{Zastosuj|Wykonaj} procedurę identyfikacji w przypadku klienta będącego cudzoziemcem."
+            podkroki:
+              - tekst: "Poproś o okazanie paszportu, a w przypadku obywatela państwa Unii Europejskiej — także dowodu osobistego."
+              - tekst: "Jeżeli dokument jest sporządzony w języku obcym, poproś o tłumaczenie przysięgłe lub skorzystaj z wewnętrznego słownika dokumentów."
+              - tekst: "Zapytaj o cel pobytu w Polsce, źródło dochodu oraz kraj rezydencji podatkowej i zanotuj odpowiedzi."
+          - tekst: "{Zidentyfikuj|Ustal tożsamość} klienta niepełnoletniego lub ubezwłasnowolnionego."
+            podkroki:
+              - tekst: "Zbierz dane małoletniego z aktu urodzenia, legitymacji szkolnej lub dokumentu tożsamości, jeżeli został wydany."
+              - tekst: "Zidentyfikuj i zweryfikuj przedstawiciela ustawowego zgodnie z zasadami obowiązującymi wobec klienta."
+              - tekst: "Zachowaj dokument potwierdzający prawo do reprezentacji, a w razie opiekuna prawnego — postanowienie sądu."
+          - tekst: "Obsłuż klienta wymagającego pomocy w komunikacji."
+            podkroki:
+              - tekst: "Zapewnij tłumacza migowego lub inną formę wsparcia, jeśli klient o to wnosi."
+              - tekst: "Nie rezygnuj z żadnego elementu identyfikacji z powodu niepełnosprawności; zmień jedynie sposób komunikacji."
+          - tekst: "Zweryfikuj dokument tożsamości, który budzi wątpliwości."
+            podkroki:
+              - tekst: "Sprawdź zabezpieczenia dokumentu zgodnie z instrukcją F-AML-02 (hologram, druk wypukły, spójność numeru i serii)."
+              - tekst: "Jeżeli wątpliwości nie ustąpiły, poproś klienta o drugi dokument i wstrzymaj nawiązanie relacji."
+              - tekst: "Zgłoszenie o podejrzeniu użycia sfałszowanego dokumentu przekaż niezwłocznie do komórki bezpieczeństwa ({{fakt:jednostka.bezpieczenstwo}})."
+
+  - id: procedura-aml-kyc-krok-id-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "{Przeprowadź|Wykonaj} zdalną identyfikację klienta za pośrednictwem bankowości elektronicznej."
+            podkroki:
+              - tekst: "Sprawdź, czy klient jest już zidentyfikowany w Banku; jeśli tak, wykorzystaj dane z karty klienta."
+              - tekst: "Jeżeli klient nie jest znany, zażądaj przesłania zdjęcia dokumentu oraz zdjęcia twarzy i porównaj je przy użyciu narzędzia biometrycznego."
+              - tekst: "Wynik zbliżony do wartości granicznej zawsze sprawdź ręcznie, a w razie wątpliwości zaproponuj wizytę w placówce."
+          - tekst: "{Zweryfikuj|Potwierdź} dane za pomocą przelewu weryfikacyjnego."
+            podkroki:
+              - tekst: "Zleć klientowi przelew z rachunku prowadzonego na jego nazwisko w innej instytucji; nazwa i numer rachunku muszą być zgodne z danymi z wniosku."
+              - tekst: "Nie przyjmuj przelewu z rachunku prowadzonego na rzecz osoby trzeciej."
+          - tekst: "Ustal ograniczenia obowiązujące do chwili pełnej weryfikacji."
+            podkroki:
+              - tekst: "Do czasu zakończenia weryfikacji nie wydawaj instrumentów płatniczych ani nie uruchamiaj kredytu."
+              - tekst: "Ogranicz transakcje do wpłaty początkowej i przelewów przychodzących."
+          - tekst: "Zablokuj dostęp do rachunku, jeżeli w terminie {{fakt:termin.aml.uzupelnienie-dokumentow}} klient nie uzupełni brakujących dokumentów, i {poinformuj|powiadom} go o tym na trwałym nośniku."
+
+  - id: procedura-aml-kyc-krok-bo-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-beneficjent
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Zidentyfikuj} beneficjenta rzeczywistego spółki kapitałowej."
+            podkroki:
+              - tekst: "Przeanalizuj księgę udziałów lub aktualną listę wspólników i oblicz pośrednie udziały przez podmioty pośredniczące."
+              - tekst: "Sumuj udziały osób powiązanych, jeśli działają w porozumieniu, i porównaj wynik z progiem {{fakt:aml.prog-udzialu-beneficjenta}}."
+          - tekst: "{Ustal|Zidentyfikuj} beneficjenta rzeczywistego fundacji, stowarzyszenia i innych podmiotów bez właścicieli."
+            podkroki:
+              - tekst: "Ustal osoby należące do organów zarządzających, fundatorów, beneficjentów aktywów oraz osoby sprawujące nadzór."
+              - tekst: "Jeżeli kategoria beneficjentów dopiero ma zostać wyznaczona, opisz zasady ich wyboru."
+          - tekst: "Zbadaj trusty i podobne konstrukcje prawne."
+            podkroki:
+              - tekst: "Wskaż założyciela, powiernika, nadzorcę, beneficjentów oraz osobę faktycznie kontrolującą."
+              - tekst: "Zażądaj aktu założycielskiego i dokumentu potwierdzającego istnienie konstrukcji; każdą taką relację klasyfikuj jako wysokiego ryzyka."
+          - tekst: "Porównaj dane z centralnego rejestru beneficjentów rzeczywistych i {zachowaj|dołącz} wydruk do karty klienta."
+
+  - id: procedura-aml-kyc-krok-bo-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-beneficjent
+    elementy:
+      - kroki:
+          - tekst: "Ustal profil działalności klienta będącego przedsiębiorcą."
+            podkroki:
+              - tekst: "Zbierz informacje o przedmiocie działalności, głównych kontrahentach, rynkach i sezonowości obrotów."
+              - tekst: "Zapytaj o spodziewane obroty miesięczne i udział transakcji gotówkowych."
+              - tekst: "Porównaj informacje z danymi z publicznie dostępnych źródeł i, gdy to potrzebne, ze sprawozdaniem finansowym."
+          - tekst: "{Zbadaj|Oceń} wiarygodność źródła majątku klienta o wysokiej wartości aktywów."
+            podkroki:
+              - tekst: "Poproś o dokumenty, np. umowę sprzedaży nieruchomości, rozliczenie podatkowe, dokument spadkowy, wyciąg z rachunku."
+              - tekst: "Gdy dokumentów nie można przedstawić, odnotuj przyczynę i skieruj sprawę do komórki zgodności ({{fakt:jednostka.zgodnosc}})."
+          - tekst: "Zweryfikuj cel otwarcia rachunku powierniczego lub rachunku dla osoby trzeciej."
+            podkroki:
+              - tekst: "Zażądaj umowy, na podstawie której klient działa na cudzy rachunek."
+              - tekst: "Ustal i zidentyfikuj osobę, na rzecz której działa klient, jak beneficjenta rzeczywistego."
+          - tekst: "Wprowadź ustalony cel relacji do karty klienta w formie wybieranej z listy oraz opisu, a zmiany deklarowanego celu aktualizuj niezwłocznie."
+
+  - id: procedura-aml-kyc-krok-ryzyko-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ryzyko
+    elementy:
+      - kroki:
+          - tekst: "{Skoryguj|Zmodyfikuj} wynik scoringu w uzasadnionych przypadkach."
+            podkroki:
+              - tekst: "Podwyższenie poziomu ryzyka jest zawsze dopuszczalne, jeśli pracownik uzasadni je w polu komentarza."
+              - tekst: "Obniżenie poziomu ryzyka wymaga zatwierdzenia przez kierownika placówki, a w przypadku wyniku wysokiego — przez komórkę zgodności ({{fakt:jednostka.zgodnosc}})."
+              - tekst: "Obniżenie wyniku poniżej progu ryzyka wysokiego dla osoby PEP jest niedopuszczalne."
+          - tekst: "Przeprowadź ocenę ryzyka produktu i kanału."
+            podkroki:
+              - tekst: "Przed wprowadzeniem nowego produktu lub zmianą kanału dystrybucji {{fakt:jednostka.zgodnosc}} dokonuje oceny ryzyka prania pieniędzy."
+              - tekst: "Wyniki oceny są podstawą do zmiany wag kryteriów w scoringu."
+          - tekst: "Uwzględnij w ocenie ryzyka krajowej i ryzyka sektorowego wyniki opracowań organów państwa i wewnętrznej oceny ryzyka Banku."
+          - tekst: "Zapisz każdą ocenę w karcie klienta wraz z datą i danymi osoby, która jej dokonała."
+
+  - id: procedura-aml-kyc-krok-ryzyko-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ryzyko
+    elementy:
+      - kroki:
+          - tekst: "Dokonaj przeglądu klienta po upływie okresu wskazanego w ocenie."
+            podkroki:
+              - tekst: "System generuje zadanie przeglądu na {30|trzydzieści} dni przed upływem terminu i przydziela je pracownikowi prowadzącemu klienta."
+              - tekst: "Pracownik sprawdza zgodność danych z dokumentami, aktualność dokumentu tożsamości, beneficjenta rzeczywistego oraz wynik scoringu."
+              - tekst: "Zakończenie przeglądu zatwierdza ten sam szczebel, który zatwierdzał nawiązanie relacji."
+          - tekst: "Zareaguj na zmianę poziomu ryzyka."
+            podkroki:
+              - tekst: "Gdy poziom ryzyka rośnie, zastosuj od razu środki właściwe dla nowego poziomu, w tym wzmocnione."
+              - tekst: "Gdy poziom ryzyka maleje, nie stosuj środków uproszczonych wcześniej niż po zatwierdzeniu zmiany."
+          - tekst: "Poinformuj {{fakt:jednostka.zgodnosc}} o klientach, wobec których nie udało się przeprowadzić przeglądu w terminie, i wskaż plan działania."

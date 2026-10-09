@@ -1,0 +1,196 @@
+fakty:
+  # --- progi transakcji i kwoty
+  - id: aml.prog-transakcji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "równowartość 15 000 euro"
+    alternatywy: ["równowartość 10 000 euro"]
+  - id: aml.prog-gotowka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "równowartość 10 000 euro"
+      - od: 2027-01-01
+        wartosc: "równowartość 8 000 euro"
+    alternatywy: ["równowartość 15 000 euro"]
+  - id: aml.prog-przelew-informacje
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "równowartość 1 000 euro"
+    alternatywy: ["równowartość 500 euro"]
+  - id: aml.prog-wplata-udokumentowanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+      - od: 2027-01-01
+        wartosc: 30000.00
+    alternatywy: [20000.00, 100000.00]
+  - id: aml.prog-udzialu-beneficjenta
+    rodzaj: procent
+    wartosci:
+      - wartosc: 25
+    alternatywy: [10, 20]
+  - id: aml.prog-powiazane-transakcje
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "równowartość 5 000 euro"
+    alternatywy: ["równowartość 3 000 euro"]
+
+  # --- scoring ryzyka
+  - id: aml.wynik-wysokie-ryzyko
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "60 punktów lub więcej"
+      - od: 2027-01-01
+        wartosc: "55 punktów lub więcej"
+    alternatywy: ["50 punktów lub więcej"]
+  - id: aml.wynik-niskie-ryzyko
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "nie więcej niż 25 punktów"
+    alternatywy: ["nie więcej niż 20 punktów"]
+  - id: aml.punkty-pep
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "40 punktów"
+    alternatywy: ["30 punktów"]
+  - id: aml.punkty-kraj-wysokiego-ryzyka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "35 punktów"
+    alternatywy: ["25 punktów"]
+  - id: aml.punkty-gotowka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "15 punktów"
+    alternatywy: ["10 punktów"]
+
+  # --- terminy
+  - id: termin.aml.uzupelnienie-dokumentow
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.aml.analiza-alertu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+      - od: 2026-04-01
+        wartosc: 3
+    alternatywy: [7, 10]
+  - id: termin.aml.eskalacja-alertu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [1, 3]
+  - id: termin.aml.przeglad-wysokie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "raz w roku"
+      - od: 2027-01-01
+        wartosc: "co 6 miesięcy"
+    alternatywy: ["co 2 lata"]
+  - id: termin.aml.przeglad-srednie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "co 3 lata"
+    alternatywy: ["co 2 lata"]
+  - id: termin.aml.przeglad-niskie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "co 5 lat"
+    alternatywy: ["co 4 lata"]
+  - id: termin.aml.zawiadomienie-giif
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "2 dni roboczych"
+    alternatywy: ["5 dni roboczych"]
+  - id: termin.aml.zamrozenie-wdrozenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "niezwłocznie, nie później niż w ciągu 4 godzin"
+    alternatywy: ["w ciągu 24 godzin"]
+  - id: termin.aml.blokada-giif
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "96 godzin"
+    alternatywy: ["72 godziny"]
+  - id: termin.aml.blokada-prokurator
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 miesięcy"
+    alternatywy: ["3 miesiące"]
+  - id: termin.aml.przechowywanie-dokumentow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+      - od: 2027-01-01
+        wartosc: "10 lat"
+    alternatywy: ["3 lata"]
+  - id: termin.aml.przechowywanie-analiz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["3 lata"]
+  - id: termin.aml.szkolenie-wstepne
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.aml.szkolenie-okresowe
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "raz w roku"
+    alternatywy: ["co 2 lata"]
+  - id: termin.aml.pep-okres-po-funkcji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+      - od: 2027-01-01
+        wartosc: "18 miesięcy"
+    alternatywy: ["24 miesiące"]
+  - id: termin.aml.potwierdzenie-zrodla-ewd
+    rodzaj: termin
+    wartosci:
+      - wartosc: 10
+    alternatywy: [5, 15]
+
+  # --- nazwy systemów, wykazów i jednostek
+  - id: aml.system-monitoringu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "system monitorowania transakcji MON-AML"
+    alternatywy: ["system monitorowania transakcji TRX-WATCH"]
+  - id: aml.system-klienci
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "system klasyfikacji klientów KYC-PRZYKŁAD"
+    alternatywy: ["system klasyfikacji klientów KLASYFIKATOR"]
+  - id: aml.rejestr-podejrzanych
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "rejestr transakcji podejrzanych RTP"
+    alternatywy: ["rejestr zawiadomień RZA"]
+  - id: aml.wykaz-krajow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Wykaz krajów podwyższonego ryzyka AML"
+    alternatywy: ["Lista jurysdykcji wysokiego ryzyka"]
+  - id: aml.koordynator
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Koordynator ds. przeciwdziałania praniu pieniędzy"
+    alternatywy: ["Oficer ds. przeciwdziałania praniu pieniędzy"]
+  - id: aml.zespol-analiz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Zespół Analiz Transakcji w Departamencie Zgodności"
+    alternatywy: ["Zespół Monitorowania Transakcji"]
+  - id: aml.email
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "aml@bank.example"
+    alternatywy: ["zgodnosc-aml@bank.example"]
+  - id: aml.giif
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Generalny Inspektor Informacji Finansowej"
