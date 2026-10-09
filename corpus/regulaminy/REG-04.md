@@ -279,7 +279,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) wypłat gotówki w bankomatach i placówkach przyjmujących karty;
   - 4\) płatności za pomocą urządzeń mobilnych, po dodaniu karty do aplikacji płatniczej.
 - 2\. Dzienny limit transakcji internetowych wynosi 10 000,00 zł, a dzienny limit wypłat gotówki — 5 000,00 zł. Klient może zmienić limity w serwisie transakcyjnym, w granicach określonych przez Bank.
-- 3\. Za wypłaty gotówki Bank pobiera prowizję w wysokości 4% kwoty wypłaty, nie mniej niż 4 10,00 zł. Od wypłat gotówki odsetki są naliczane od dnia wypłaty, bez okresu bezodsetkowego.
+- 3\. Za wypłaty gotówki Bank pobiera prowizję w wysokości 4% kwoty wypłaty, nie mniej niż 10,00 zł.[^4] Od wypłat gotówki odsetki są naliczane od dnia wypłaty, bez okresu bezodsetkowego.
+
+[^4]: Prowizja jest naliczana niezależnie od odsetek i opłat wskazanych w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze, a jej wysokość zależy od daty dokonania wypłaty.
 
 ### § 38.
 
@@ -304,8 +306,6 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Płatność kartą w punktach, w których wysokość końcowej kwoty nie jest znana w momencie autoryzacji, w szczególności w hotelach, wypożyczalniach samochodów i na stacjach paliw, może skutkować zablokowaniem na rachunku karty kwoty wyższej niż wartość rzeczywista transakcji. Blokada jest zwalniana po rozliczeniu transakcji.
 - 2\. Klient wyraża zgodę na zablokowanie kwoty przekraczającej wartość transakcji wyłącznie po uprzednim poinformowaniu o wysokości blokady. Bank zwalnia zbędną blokadę <!-- page: 11 --> niezwłocznie po rozliczeniu transakcji albo na wniosek Klienta, jeżeli akceptant potwierdzi, że transakcja nie zostanie rozliczona.
 - 3\. W okresie trwania blokady dostępny limit kredytowy jest pomniejszony o jej kwotę, co może uniemożliwić dokonanie kolejnych transakcji.
-
-[^6]: Prowizja jest naliczana niezależnie od odsetek i opłat wskazanych w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze, a jej wysokość zależy od daty dokonania wypłaty.
 
 ### § 41.
 
@@ -412,10 +412,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) naliczonych odsetek, opłat i prowizji za cykl rozliczeniowy;
   - 3\) kwoty przekroczenia limitu kredytowego, o ile wystąpiło;
   - 4\) wymagalnych kwot zaległych z poprzednich cykli rozliczeniowych.
-- 2\. Jeżeli saldo zadłużenia na koniec cyklu jest niższe niż 50,00 zł, minimalna kwota do zapłaty odpowiada saldu zadłużenia. Minimalna kwota do zapłaty jest podawana w zestawieniu transakcji.[^4]
+- 2\. Jeżeli saldo zadłużenia na koniec cyklu jest niższe niż 50,00 zł, minimalna kwota do zapłaty odpowiada saldu zadłużenia. Minimalna kwota do zapłaty jest podawana w zestawieniu transakcji.[^5]
 - 3\. Spłata wyłącznie minimalnej kwoty do zapłaty powoduje utratę okresu bezodsetkowego dla transakcji bezgotówkowych w kolejnym cyklu rozliczeniowym i naliczenie odsetek od salda niespłaconego w całości, na zasadach opisanych w rozdziale o oprocentowaniu.
 
-[^4]: Spłata kwoty niższej niż minimalna kwota do zapłaty w terminie jest traktowana jako opóźnienie w spłacie zadłużenia, z konsekwencjami wskazanymi w Regulaminie i w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
+[^5]: Spłata kwoty niższej niż minimalna kwota do zapłaty w terminie jest traktowana jako opóźnienie w spłacie zadłużenia, z konsekwencjami wskazanymi w Regulaminie i w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
 
 ### § 56.
 
@@ -563,9 +563,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) numer PIN lub dane karty zostały ujawnione osobie nieuprawnionej;
   - 3\) stwierdzono transakcje, których Klient nie dokonał.
 - 2\. Zgłoszenia można dokonać całodobowo, przez wszystkie dni w roku, telefonicznie pod numerem 800 000 002 (z zagranicy: +48 800 000 003), w bankowości elektronicznej lub osobiście w placówce Banku w godzinach jej otwarcia. Zgłoszenie telefoniczne Bank potwierdza na trwałym nośniku.
-- 3\. Z chwilą zgłoszenia Bank niezwłocznie blokuje kartę, a następnie — na wniosek Klienta — wydaje duplikat. Zastrzeżenie karty jest czynnością nieodwracalną; zastrzeżonej karty nie można odblokować, nawet jeśli została odnaleziona.[^5]
+- 3\. Z chwilą zgłoszenia Bank niezwłocznie blokuje kartę, a następnie — na wniosek Klienta — wydaje duplikat. Zastrzeżenie karty jest czynnością nieodwracalną; zastrzeżonej karty nie można odblokować, nawet jeśli została odnaleziona.[^6]
 
-[^5]: Zastrzeżenie karty jest bezpłatne (0,00 zł); opłata za wydanie duplikatu została określona w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
+[^6]: Zastrzeżenie karty jest bezpłatne (0,00 zł); opłata za wydanie duplikatu została określona w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
 
 ### § 77.
 
