@@ -345,6 +345,43 @@ public sealed class CorpusLayoutsIntegrationTests
     }
 
     /// <summary>
+    /// T083h: a gridless tariff starting at the bottom of a page with only its bold column-name row and one row (TAR-06
+    /// page 3), continued on the next page under the repeated header: one GFM table, not a bold paragraph.
+    /// </summary>
+    [Fact]
+    public async Task GridlessTableStartingWithOneRowAtPageBottom_IsOneTableWithItsContinuation()
+    {
+        var b = new SyntheticPdfBuilder().PageNumberFooter("Strona {n}");
+        b.Page();
+        b.Text(Left, 60, "Taryfa opłat dla firm", 18, bold: true);
+        double y = Body(b, 100, 40);
+        b.Text(Left, y, "II. Mikroprzedsiębiorstwa", 13, bold: true);
+        y += 26;
+        b.Text(Left, y, "Do segmentu mikroprzedsiębiorstw należą Klienci zatrudniający mniej niż 10 pracowników.", Size);
+        y += 22;
+        GridlessTariff(b, y, [("1.", ["Otwarcie rachunku bieżącego"], ["jednorazowo"], "0,00 zł")]);
+        b.Page();
+        y = GridlessTariff(b, 70,
+        [
+            ("2.", ["Prowadzenie rachunku bieżącego"], ["miesięcznie"], "29,00 zł"),
+            ("3.", ["Prowadzenie rachunku pomocniczego"], ["miesięcznie"], "5,00 zł"),
+            ("4.", ["Przelew elektroniczny do innego banku"], ["za przelew"], "0,50 zł"),
+        ]);
+        Body(b, y + 30, 10);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t083h.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("**Lp. Wyszczególnienie", md, StringComparison.Ordinal);
+        Assert.Equal(1, md.Split('\n').Count(l => l.StartsWith("| **Lp.**", StringComparison.Ordinal)));
+        Assert.Contains("| 1. | Otwarcie rachunku bieżącego | jednorazowo | 0,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 4. | Przelew elektroniczny do innego banku | za przelew | 0,50 zł |", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// T083f: the continuation page of a gridless tariff as typeset in the corpus (TAR-06 page 4): sub-positions „2.1.”,
     /// „2.2.” with wrapped service names, then „3.” wrapped, „4.” … — all rows of the one table.
     /// </summary>
