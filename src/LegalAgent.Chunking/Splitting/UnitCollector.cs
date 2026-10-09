@@ -25,5 +25,55 @@ internal static class UnitCollector
     public const string PreambleSegment = Identity.UnitKeyBuilder.PreambleSegment;
 
     /// <summary>The preamble (when not empty) and every section with own blocks or footnotes, in document order.</summary>
-    public static IReadOnlyList<Unit> Collect(LegalDocument document) => [];
+    public static IReadOnlyList<Unit> Collect(LegalDocument document)
+    {
+        ArgumentNullException.ThrowIfNull(document);
+
+        var units = new List<Unit>();
+        List<ContentBlock> preamble = OwnBlocks(document.Preamble);
+        if (preamble.Count > 0 || document.PreambleFootnotes.Count > 0)
+        {
+            units.Add(new Unit(null, preamble, document.PreambleFootnotes, ChunkUnitKind.Preamble, [PreambleSegment], []));
+        }
+
+        foreach (Section section in document.Sections)
+        {
+            Collect(section, [], units);
+        }
+
+        return units;
+    }
+
+    private static void Collect(Section section, IReadOnlyList<string> parentSegments, List<Unit> units)
+    {
+        List<string> segments = [.. parentSegments, Identity.UnitKeyBuilder.Segment(section.Designation, section.HeadingText)];
+        List<ContentBlock> blocks = OwnBlocks(section.Blocks);
+        if (blocks.Count > 0 || section.Footnotes.Count > 0)
+        {
+            units.Add(new Unit(section, blocks, section.Footnotes, Kind(section.Kind), segments, section.Path));
+        }
+
+        foreach (Section child in section.Children)
+        {
+            Collect(child, segments, units);
+        }
+    }
+
+    // A skipped page is rendered as a comment that is not text of the PDF; it never makes or joins a unit.
+    private static List<ContentBlock> OwnBlocks(IReadOnlyList<ContentBlock> blocks) =>
+        blocks.Where(b => b is not SkippedPageBlock).ToList();
+
+    private static ChunkUnitKind Kind(SectionKind kind) => kind switch
+    {
+        SectionKind.DocumentTitle => ChunkUnitKind.DocumentTitle,
+        SectionKind.Book => ChunkUnitKind.Book,
+        SectionKind.Part => ChunkUnitKind.Part,
+        SectionKind.Division => ChunkUnitKind.Division,
+        SectionKind.Chapter => ChunkUnitKind.Chapter,
+        SectionKind.Subchapter => ChunkUnitKind.Subchapter,
+        SectionKind.Article => ChunkUnitKind.Article,
+        SectionKind.Paragraph => ChunkUnitKind.Paragraph,
+        SectionKind.TableDocumentSection => ChunkUnitKind.TableDocumentSection,
+        _ => ChunkUnitKind.Typographic,
+    };
 }
