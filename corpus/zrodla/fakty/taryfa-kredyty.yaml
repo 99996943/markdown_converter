@@ -1,0 +1,309 @@
+fakty:
+  # --- kredyt gotówkowy
+  - id: oplata.kredyt-gotowkowy.prowizja-przygotowanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.0
+      - od: 2027-01-01
+        wartosc: 2.5
+    alternatywy: [0.0, 5.0]
+  - id: oplata.kredyt-gotowkowy.prowizja-minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [50.00, 150.00]
+  - id: oplata.kredyt-gotowkowy.prowizja-odnowienie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [2.0]
+  - id: oplata.kredyt-gotowkowy.ubezpieczenie-splaty
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.9
+      - od: 2026-04-01
+        wartosc: 3.2
+    alternatywy: [4.0]
+  - id: oplata.kredyt-gotowkowy.wczesna-splata-powyzej-roku
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [0.0, 2.0]
+  - id: oplata.kredyt-gotowkowy.wczesna-splata-do-roku
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+    alternatywy: [0.0, 1.0]
+  - id: oplata.kredyt-gotowkowy.zmiana-terminu-splaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+      - od: 2026-04-01
+        wartosc: 60.00
+    alternatywy: [0.00, 80.00]
+  - id: oplata.kredyt-gotowkowy.wakacje-kredytowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2027-01-01
+        wartosc: 120.00
+    alternatywy: [0.00, 200.00]
+  - id: oplata.kredyt-gotowkowy.aneks
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+      - od: 2027-01-01
+        wartosc: 180.00
+    alternatywy: [100.00, 250.00]
+  - id: oplata.kredyt-gotowkowy.zmiana-rachunku-splaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [0.00, 45.00]
+  - id: oplata.kredyt-gotowkowy.harmonogram-duplikat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+    alternatywy: [0.00, 30.00]
+  - id: oplata.kredyt-gotowkowy.restrukturyzacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [200.00]
+  - id: limit.kredyt-gotowkowy.kwota-min
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [500.00, 2000.00]
+  - id: limit.kredyt-gotowkowy.kwota-max
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150000.00
+      - od: 2027-01-01
+        wartosc: 200000.00
+    alternatywy: [100000.00]
+  - id: termin.kredyt-gotowkowy.wydanie-zaswiadczenia
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+
+  # --- kredyt hipoteczny
+  - id: oplata.kredyt-hipoteczny.prowizja-przygotowanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+      - od: 2027-01-01
+        wartosc: 1.2
+    alternatywy: [0.0, 2.5]
+  - id: oplata.kredyt-hipoteczny.prowizja-minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1500.00
+    alternatywy: [1000.00, 2500.00]
+  - id: oplata.kredyt-hipoteczny.wycena-nieruchomosci
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 600.00
+      - od: 2026-04-01
+        wartosc: 700.00
+    alternatywy: [0.00, 900.00]
+  - id: oplata.kredyt-hipoteczny.wpis-hipoteki
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [100.00]
+  - id: oplata.kredyt-hipoteczny.wczesna-splata
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+    alternatywy: [0.0, 3.0]
+  - id: oplata.kredyt-hipoteczny.wczesna-splata-okres
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "pierwszych 36 miesięcy"
+    alternatywy: ["pierwszych 24 miesięcy", "pierwszych 60 miesięcy"]
+  - id: oplata.kredyt-hipoteczny.aneks
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2027-01-01
+        wartosc: 350.00
+    alternatywy: [200.00, 500.00]
+  - id: oplata.kredyt-hipoteczny.zwolnienie-hipoteki
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [0.00, 400.00]
+  - id: oplata.kredyt-hipoteczny.promesa-zwolnienia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [0.00]
+  - id: oplata.kredyt-hipoteczny.ubezpieczenie-pomostowe
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.4
+      - od: 2026-04-01
+        wartosc: 0.5
+    alternatywy: [1.0]
+  - id: oplata.kredyt-hipoteczny.uruchomienie-transzy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [0.00, 250.00]
+  - id: oplata.kredyt-hipoteczny.inspekcja-budowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+      - od: 2027-01-01
+        wartosc: 300.00
+    alternatywy: [180.00]
+  - id: oplata.kredyt-hipoteczny.zaswiadczenie-o-zadluzeniu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [0.00, 80.00]
+  - id: termin.kredyt-hipoteczny.zwolnienie-hipoteki
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+
+  # --- limity odnawialne (limit w rachunku osobistym, limit kartowy)
+  - id: oplata.limit-odnawialny.prowizja-przyznanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+      - od: 2027-01-01
+        wartosc: 1.8
+    alternatywy: [0.0, 3.0]
+  - id: oplata.limit-odnawialny.prowizja-przedluzenie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [0.0, 1.5]
+  - id: oplata.limit-odnawialny.prowizja-podwyzszenie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+    alternatywy: [2.0]
+  - id: oplata.limit-odnawialny.prowizja-minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 50.00]
+  - id: oplata.limit-odnawialny.utrzymanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2026-04-01
+        wartosc: 6.00
+    alternatywy: [0.00, 8.00]
+  - id: oplata.limit-odnawialny.zmiana-limitu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [0.00]
+  - id: limit.limit-odnawialny.przyznanie-maksymalne
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzykrotności średnich miesięcznych wpływów"
+    alternatywy: ["dwukrotności średnich miesięcznych wpływów"]
+
+  # --- kredyty dla przedsiębiorców
+  - id: oplata.kredyt-firmowy.prowizja-przygotowanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+      - od: 2027-01-01
+        wartosc: 1.8
+    alternatywy: [1.0, 3.5]
+  - id: oplata.kredyt-firmowy.prowizja-minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [300.00, 800.00]
+  - id: oplata.kredyt-firmowy.prowizja-odnowienie-linii
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [1.5]
+  - id: oplata.kredyt-firmowy.prowizja-niewykorzystanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+    alternatywy: [0.0, 1.0]
+  - id: oplata.kredyt-firmowy.rozpatrzenie-wniosku
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2026-04-01
+        wartosc: 350.00
+    alternatywy: [0.00, 500.00]
+  - id: oplata.kredyt-firmowy.aneks
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [300.00, 800.00]
+  - id: oplata.kredyt-firmowy.zmiana-zabezpieczenia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 400.00
+    alternatywy: [250.00]
+  - id: oplata.kredyt-firmowy.monitoring-kowenantow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [0.00, 400.00]
+  - id: oplata.kredyt-firmowy.wizyta-monitoringowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2027-01-01
+        wartosc: 350.00
+    alternatywy: [200.00]
+  - id: oplata.kredyt-firmowy.wczesna-splata
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+    alternatywy: [0.0, 2.5]
+  - id: oplata.kredyt-firmowy.wpis-zastawu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [150.00]
+
+  # --- windykacja i monity
+  - id: oplata.windykacja.wezwanie-do-zaplaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+      - od: 2027-01-01
+        wartosc: 50.00
+    alternatywy: [25.00, 60.00]
+  - id: oplata.windykacja.monit-sms
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [0.00, 5.00]
+  - id: oplata.windykacja.wizyta-terenowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+    alternatywy: [80.00, 200.00]
+  - id: termin.windykacja.monit-po-terminie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [1, 7]
+  - id: termin.windykacja.wezwanie-do-zaplaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 21]
+  - id: termin.windykacja.wypowiedzenie-umowy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]

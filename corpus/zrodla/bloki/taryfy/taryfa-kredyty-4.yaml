@@ -1,0 +1,293 @@
+bloki:
+  - id: taryfa-kredyty-firmowe-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-wymagane-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Rozpatrzenie wniosku o kredyt dla przedsiębiorcy"
+            stawka: "{{fakt:oplata.kredyt-firmowy.rozpatrzenie-wniosku}}[^1]"
+            tryb: "za każdy wniosek"
+          - usluga: "{Prowizja|Opłata} przygotowawcza za udzielenie kredytu obrotowego"
+            stawka: "{{fakt:oplata.kredyt-firmowy.prowizja-przygotowanie}} min. {{fakt:oplata.kredyt-firmowy.prowizja-minimalna}}"
+            tryb: "od kwoty kredytu, jednorazowo"
+          - usluga: "Prowizja przygotowawcza za udzielenie kredytu inwestycyjnego"
+            stawka: "{{fakt:oplata.kredyt-firmowy.prowizja-przygotowanie}} min. {{fakt:oplata.kredyt-firmowy.prowizja-minimalna}}"
+            tryb: "od kwoty kredytu, jednorazowo"
+            podpozycje:
+              - usluga: "kredyt na okres do 5 lat"
+                stawka: "{{fakt:oplata.kredyt-firmowy.prowizja-przygotowanie}}"
+                tryb: "od kwoty kredytu"
+              - usluga: "kredyt na okres powyżej 5 lat"
+                stawka: "2,5%"
+                tryb: "od kwoty kredytu"
+          - usluga: "Odnowienie linii kredytowej na kolejny okres"
+            stawka: "{{fakt:oplata.kredyt-firmowy.prowizja-odnowienie-linii}}[^2]"
+            tryb: "od kwoty linii"
+          - usluga: "Opłata za niewykorzystaną część kredytu lub linii"
+            stawka: "{{fakt:oplata.kredyt-firmowy.prowizja-niewykorzystanie}} w stosunku rocznym"
+            tryb: "kwartalnie, od kwoty niewykorzystanej"
+          - usluga: "Zmiana warunków umowy kredytu (aneks)"
+            stawka: "{{fakt:oplata.kredyt-firmowy.aneks}}"
+            tryb: "za każdy aneks"
+          - usluga: "Zmiana zabezpieczenia kredytu"
+            stawka: "{{fakt:oplata.kredyt-firmowy.zmiana-zabezpieczenia}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Monitoring wskaźników finansowych (kowenantów) określonych w umowie"
+            stawka: "{{fakt:oplata.kredyt-firmowy.monitoring-kowenantow}}[^3]"
+            tryb: "kwartalnie"
+          - usluga: "Wizyta monitoringowa w siedzibie przedsiębiorcy"
+            stawka: "{{fakt:oplata.kredyt-firmowy.wizyta-monitoringowa}}"
+            tryb: "za każdą wizytę"
+          - usluga: "{Wcześniejsza|Przedterminowa} spłata kredytu"
+            stawka: "{{fakt:oplata.kredyt-firmowy.wczesna-splata}}[^4]"
+            tryb: "od spłaconego kapitału"
+          - usluga: "Wniosek o wpis zastawu rejestrowego do rejestru zastawów (opłata sądowa)"
+            stawka: "{{fakt:oplata.kredyt-firmowy.wpis-zastawu}}"
+            tryb: "za każdy wpis"
+          - usluga: "Zaświadczenie o spłacie kredytu lub braku zadłużenia"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Odsetki od kwot przeterminowanych w kredycie firmowym"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Opłata za badanie sytuacji finansowej przedsiębiorcy (analiza sprawozdań)"
+            stawka: "350,00 zł"
+            tryb: "rocznie"
+          - usluga: "Przygotowanie umowy kredytu według wzoru przedsiębiorcy"
+            stawka: "wg umowy"
+            tryb: "jednorazowo"
+    przypisy:
+      1: "Opłata {jest pobierana|jest należna} w dniu złożenia wniosku, a w razie udzielenia kredytu {jest zaliczana|zostaje zaliczona} na poczet prowizji przygotowawczej; w razie odmowy udzielenia kredytu nie podlega zwrotowi."
+      2: "Prowizja {jest naliczana|dotyczy} od kwoty linii obowiązującej w dniu odnowienia, nie niższej niż kwota wykorzystana w okresie ostatnich 12 miesięcy."
+      3: "Opłata dotyczy umów, w których przedsiębiorca zobowiązał się do utrzymywania wskaźników finansowych i do przekazywania Bankowi sprawozdań w ustalonych terminach."
+      4: "Opłaty nie pobiera się od kredytów spłacanych ze środków pochodzących z refinansowania w Banku ani w przypadku przedterminowej spłaty dokonanej w ostatnich 3 miesiącach przed końcem okresu kredytowania."
+
+  - id: taryfa-kredyty-firmowe-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Kredyt w rachunku bieżącym — {prowizja|opłata} za przyznanie limitu"
+            stawka: "1,5% min. 300,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Kredyt w rachunku bieżącym — prowizja za przedłużenie na kolejny okres"
+            stawka: "1,0% min. 300,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Kredyt w rachunku bieżącym — odsetki od wykorzystanego zadłużenia"
+            stawka: "wg umowy"
+            tryb: "rocznie"
+          - usluga: "Kredyt w rachunku bieżącym — przekroczenie przyznanego limitu"
+            stawka: "wg umowy, nie więcej niż odsetki za opóźnienie"
+            tryb: "rocznie"
+          - usluga: "Kredyt w rachunku bieżącym — podwyższenie limitu w trakcie umowy"
+            stawka: "1,5% kwoty podwyższenia min. 300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Kredyt w rachunku bieżącym — obniżenie limitu na wniosek przedsiębiorcy"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+          - usluga: "Kredyt w rachunku bieżącym — sporządzenie aneksu"
+            stawka: "{{fakt:oplata.kredyt-firmowy.aneks}}"
+            tryb: "za każdy aneks"
+          - usluga: "Kredyt w rachunku bieżącym — {zawieszenie|wstrzymanie} dostępności limitu na wniosek"
+            stawka: "bez opłat"
+            tryb: "za każde zawieszenie"
+          - usluga: "Limit wielocelowy (wspólny dla kilku produktów) — prowizja"
+            stawka: "2,0% min. 600,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Limit wielocelowy — {przesunięcie|przeniesienie} kwot między produktami"
+            stawka: "100,00 zł"
+            tryb: "za każde przesunięcie"
+
+  - id: taryfa-kredyty-firmowe-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Kredyt na zakup {maszyn i urządzeń|środków trwałych} — prowizja"
+            stawka: "1,8% min. 800,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na zakup pojazdów dla przedsiębiorcy — prowizja"
+            stawka: "1,5% min. 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na zakup nieruchomości komercyjnej — prowizja"
+            stawka: "2,0% min. 2 000,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na {finansowanie|sfinansowanie} zapasów — prowizja"
+            stawka: "1,5% min. 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na finansowanie należności (faktoring pełny) — prowizja"
+            stawka: "0,8% wartości faktur"
+            tryb: "od wartości faktury"
+          - usluga: "Kredyt z gwarancją spłaty udzieloną przez instytucję publiczną — prowizja Banku"
+            stawka: "1,0% min. 400,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt z dopłatą do oprocentowania ze środków publicznych — prowizja Banku"
+            stawka: "1,0% min. 400,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt dla {rolników|producentów rolnych} — prowizja"
+            stawka: "1,5% min. 300,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt dla nowo założonych firm (do 24 miesięcy działalności) — prowizja"
+            stawka: "2,5% min. 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt dla przedsiębiorcy z rachunkiem firmowym w Banku — obniżenie prowizji"
+            stawka: "minus 0,3 pkt proc."
+            tryb: "od stawki prowizji"
+
+  - id: taryfa-kredyty-firmowe-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Ustanowienie hipoteki na nieruchomości przedsiębiorcy — wniosek o wpis (opłata sądowa)"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.wpis-hipoteki}}"
+            tryb: "za każdy wpis"
+          - usluga: "Wycena nieruchomości komercyjnej przez {rzeczoznawcę|rzeczoznawcę majątkowego} Banku"
+            stawka: "od 1 500,00 zł"
+            tryb: "za każdą wycenę"
+          - usluga: "Wycena maszyn i urządzeń stanowiących zabezpieczenie"
+            stawka: "od 900,00 zł"
+            tryb: "za każdą wycenę"
+          - usluga: "Ustanowienie zastawu rejestrowego na zapasach lub środkach trwałych — przygotowanie umowy"
+            stawka: "300,00 zł"
+            tryb: "za każdą umowę"
+          - usluga: "Przewłaszczenie na zabezpieczenie — przygotowanie umowy"
+            stawka: "300,00 zł"
+            tryb: "za każdą umowę"
+          - usluga: "Cesja wierzytelności z umów handlowych — przygotowanie umowy"
+            stawka: "250,00 zł"
+            tryb: "za każdą umowę"
+          - usluga: "Poręczenie wekslowe — {przygotowanie|sporządzenie} dokumentów"
+            stawka: "150,00 zł"
+            tryb: "za każde poręczenie"
+          - usluga: "Ubezpieczenie przedmiotu zabezpieczenia — {weryfikacja|kontrola} polisy"
+            stawka: "100,00 zł"
+            tryb: "rocznie"
+          - usluga: "Poręczenie osoby fizycznej (wspólnika) — sporządzenie umowy poręczenia"
+            stawka: "200,00 zł"
+            tryb: "za każde poręczenie"
+          - usluga: "Zwolnienie zabezpieczenia po spłacie kredytu"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.zwolnienie-hipoteki}}"
+            tryb: "za każde zwolnienie"
+
+  - id: taryfa-kredyty-firmowe-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zmiana {harmonogramu|terminów} spłat kredytu inwestycyjnego"
+            stawka: "0,3% salda min. 300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zawieszenie spłaty rat kapitałowych na okres do 6 miesięcy"
+            stawka: "0,5% salda min. 400,00 zł"
+            tryb: "za każde zawieszenie"
+          - usluga: "Wydłużenie okresu kredytowania"
+            stawka: "0,5% salda min. 400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda na zmianę przeznaczenia kredytu"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda na zmianę struktury własnościowej przedsiębiorcy (zmiana wspólnika)"
+            stawka: "400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda na {przekształcenie|zmianę} formy prawnej przedsiębiorcy"
+            stawka: "600,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda na wypłatę dywidendy lub zysku w okresie kredytowania (zwolnienie z kowenantu)"
+            stawka: "500,00 zł"
+            tryb: "za każdą zgodę"
+          - usluga: "Zgoda na zaciągnięcie dodatkowego zobowiązania przez przedsiębiorcę"
+            stawka: "400,00 zł"
+            tryb: "za każdą zgodę"
+          - usluga: "{Przejęcie|Przystąpienie do} długu przez inny podmiot"
+            stawka: "1,0% salda min. 800,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Wcześniejsza spłata kredytu z przeznaczeniem na refinansowanie w innym banku"
+            stawka: "{{fakt:oplata.kredyt-firmowy.wczesna-splata}}"
+            tryb: "od spłaconego kapitału"
+
+  - id: taryfa-kredyty-firmowe-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Uruchomienie transzy kredytu inwestycyjnego"
+            stawka: "150,00 zł"
+            tryb: "za każdą transzę"
+          - usluga: "{Weryfikacja|Sprawdzenie} faktur i dokumentów rozliczeniowych przed uruchomieniem transzy"
+            stawka: "120,00 zł"
+            tryb: "za każdą transzę"
+          - usluga: "Kontrola celowości wykorzystania kredytu"
+            stawka: "{{fakt:oplata.kredyt-firmowy.wizyta-monitoringowa}}"
+            tryb: "za każdą kontrolę"
+          - usluga: "{Przedłużenie|Wydłużenie} terminu uruchomienia kredytu"
+            stawka: "0,2% kwoty niewypłaconej min. 200,00 zł"
+            tryb: "za każde przedłużenie"
+          - usluga: "Rezygnacja z {uruchomienia|wykorzystania} kredytu po zawarciu umowy"
+            stawka: "0,5% kwoty kredytu min. 300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Opłata za zmianę terminu płatności raty"
+            stawka: "100,00 zł"
+            tryb: "za każdą zmianę"
+          - usluga: "Rozliczenie kredytu w walucie obcej — marża na przeliczeniu"
+            stawka: "{{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty przeliczenia"
+          - usluga: "Spłata kredytu walutowego w walucie innej niż waluta kredytu"
+            stawka: "0,2% min. 20,00 zł"
+            tryb: "od kwoty spłaty"
+          - usluga: "Wpłata gotówkowa na rachunek kredytowy w placówce"
+            stawka: "{{fakt:oplata.wplata-gotowkowa}}"
+            tryb: "za każdą wpłatę"
+          - usluga: "Przelew spłaty raty z rachunku w innym banku"
+            stawka: "według taryfy banku przedsiębiorcy"
+            tryb: "za każdy przelew"
+
+  - id: taryfa-kredyty-firmowe-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Promesa udzielenia kredytu (zobowiązanie do udzielenia kredytu)"
+            stawka: "0,3% kwoty promesy min. 300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Opinia bankowa|Referencje bankowe} o przedsiębiorcy dla kontrahentów"
+            stawka: "100,00 zł"
+            tryb: "za każdą opinię"
+          - usluga: "Zaświadczenie o terminowej obsłudze zadłużenia"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o posiadanych w Banku zobowiązaniach (wykaz kredytów)"
+            stawka: "60,00 zł"
+            tryb: "za każde zaświadczenie"
+          - usluga: "{Potwierdzenie|Poświadczenie} salda kredytu dla biegłego rewidenta"
+            stawka: "80,00 zł"
+            tryb: "za każde potwierdzenie"
+          - usluga: "Sporządzenie duplikatu umowy kredytu wraz z załącznikami"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za każdy dokument"
+          - usluga: "Udostępnienie informacji o zadłużeniu osobom upoważnionym przez przedsiębiorcę"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+          - usluga: "Dostęp do systemu bankowości elektronicznej w zakresie obsługi kredytów"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "{Raport|Zestawienie} z wykorzystania kredytów w okresie sprawozdawczym"
+            stawka: "50,00 zł"
+            tryb: "za każdy raport"
+          - usluga: "Weryfikacja kowenantu rocznego na podstawie sprawozdania zbadanego przez biegłego"
+            stawka: "{{fakt:oplata.kredyt-firmowy.monitoring-kowenantow}}"
+            tryb: "rocznie"

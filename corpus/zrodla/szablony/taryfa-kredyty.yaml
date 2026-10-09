@@ -1,0 +1,42 @@
+id: taryfa-kredyty
+typ: taryfy
+temat: taryfa-kredyty
+tytul:
+  - "Taryfa opłat i prowizji za kredyty i pożyczki {{param:bank}}"
+  - "Taryfa opłat i prowizji {{param:bank}} za kredyty, pożyczki i limity odnawialne"
+  - "Taryfa prowizji i opłat {{param:bank}} dotyczących kredytów i pożyczek"
+uklady: [taryfa-siatka]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-kredyty-ogolne]
+  - rodzaj: sekcja-taryfy
+    tytul: "Kredyty gotówkowe i pożyczki dla konsumentów"
+    wymagane: [taryfa-kredyty-gotowkowe-wstep, taryfa-kredyty-gotowkowe-pozycje]
+    opcjonalne: { kategorie: [pozycje-kredyty-gotowkowe], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Kredyty hipoteczne"
+    wymagane: [taryfa-kredyty-hipoteczne-wstep, taryfa-kredyty-hipoteczne-pozycje]
+    opcjonalne: { kategorie: [pozycje-kredyty-hipoteczne], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Limity w rachunku osobistym i limity kartowe"
+    wymagane: [taryfa-kredyty-limity-wstep, taryfa-kredyty-limity-pozycje]
+    opcjonalne: { kategorie: [pozycje-kredyty-limity], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Kredyty dla przedsiębiorców"
+    wymagane: [taryfa-kredyty-firmowe-wstep, taryfa-kredyty-firmowe-pozycje]
+    opcjonalne: { kategorie: [pozycje-kredyty-firmowe], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Czynności pozaumowne i aneksy"
+    wymagane: [taryfa-kredyty-czynnosci-wstep, taryfa-kredyty-czynnosci-pozycje]
+    opcjonalne: { kategorie: [pozycje-kredyty-czynnosci], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Windykacja i monity"
+    wymagane: [taryfa-kredyty-windykacja-wstep, taryfa-kredyty-windykacja-pozycje]
+    opcjonalne: { kategorie: [pozycje-kredyty-windykacja], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i definicje"
+    wymagane: [taryfa-kredyty-objasnienia]
+parametry:
+  produkt: "kredytów i pożyczek"
