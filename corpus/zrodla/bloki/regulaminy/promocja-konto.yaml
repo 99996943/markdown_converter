@@ -1,0 +1,179 @@
+bloki:
+  - id: promocja-organizator
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Organizatorem promocji „{{fakt:promocja.nazwa}}” ({{param:oznaczenie}}), zwanej dalej „Promocją”, jest {{param:bank}} z siedzibą pod adresem {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców pod numerem KRS {{fakt:bank.krs}}, NIP {{fakt:bank.nip}}, REGON {{fakt:bank.regon}}, zwany dalej „Bankiem”."
+      - ustep: "Promocja {polega na|obejmuje} przyznawaniu przez Bank premii pieniężnych osobom, które {otworzą|założą} {i będą prowadzić|oraz będą prowadzić} rachunek osobisty i spełnią w kolejnych miesiącach warunki określone w niniejszym Regulaminie."
+      - ustep: "Zasady prowadzenia rachunku osobistego, w tym {zasady|warunki} realizacji płatności, korzystania z kart i bankowości elektronicznej {oraz|a także} rozwiązania umowy, określa {{ref:dokument:regulamin-rachunku-osobistego}}. Regulamin Promocji {uzupełnia|stanowi uzupełnienie} tamte postanowienia i {nie zastępuje|nie zmienia} ich w zakresie nieobjętym Promocją.[^1]"
+      - ustep: "Regulamin jest {dostępny|udostępniony} w {placówkach|oddziałach} Banku, w bankowości elektronicznej {oraz|a także} na stronie {{fakt:bank.strona}}; na życzenie uczestnika Bank {przekazuje|doręcza} go na trwałym nośniku."
+    przypisy:
+      1: "Opłaty i prowizje związane z rachunkiem osobistym, kartą i usługami dodatkowymi {określa|wskazuje} {{ref:dokument:taryfa-indywidualni}}; udział w Promocji nie zmienia wysokości opłat, chyba że Regulamin stanowi inaczej."
+
+  - id: promocja-uczestnik
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W Promocji może wziąć udział {osoba fizyczna|konsument}, która {spełnia łącznie|spełnia jednocześnie} następujące warunki:"
+        punkty:
+          - "{posiada|ma} pełną zdolność do czynności prawnych i {{fakt:promocja.wiek-minimalny}};"
+          - "w okresie {{fakt:promocja.okres-karencji-nowy-klient}} poprzedzającym dzień złożenia wniosku o otwarcie rachunku {nie była|nie występowała jako} posiadaczem rachunku osobistego prowadzonego przez Bank;"
+          - tekst: "złoży w okresie obowiązywania Promocji wniosek o otwarcie rachunku osobistego, w tym:"
+            litery:
+              - "w placówce Banku;"
+              - "za pośrednictwem bankowości elektronicznej lub aplikacji mobilnej;"
+              - "w {sposób|trybie} umożliwiającym zawarcie umowy na odległość, na zasadach określonych w Regulaminie rachunku;"
+          - "zaakceptuje Regulamin Promocji {przy składaniu|w trakcie składania} wniosku."
+      - ustep: "Uczestnik może skorzystać z {{fakt:promocja.limit-uczestnikow}}. Rachunek wspólny nie uprawnia do odrębnych premii dla każdego ze współposiadaczy; premię przyznaje się wyłącznie {osobie, która złożyła wniosek|wnioskodawcy wskazanemu w umowie jako pierwszy posiadacz}."
+
+  - id: promocja-okres
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Promocja {trwa|jest prowadzona} od dnia {{fakt:promocja.data-start}} do dnia {{fakt:promocja.data-koniec}} {włącznie|(włącznie z tym dniem)}, z zastrzeżeniem ust. 3."
+      - ustep: "Wniosek o otwarcie rachunku {złożony|wniesiony} i {przyjęty|zaakceptowany} przez Bank w okresie, o którym mowa w ust. 1, {uprawnia|daje prawo} do udziału w Promocji, {nawet jeśli|także gdy} umowa rachunku zostanie zawarta po zakończeniu Promocji, nie później jednak niż w terminie {{fakt:promocja.warunek.wplyw-pierwszy-termin}} od dnia złożenia wniosku."
+      - ustep: "Bank {może|ma prawo} zakończyć Promocję przed upływem terminu, o którym mowa w ust. 1, {jeżeli|jeśli} wyczerpie się pula przewidziana na premie; informację o tym Bank {publikuje|zamieszcza} na stronie {{fakt:bank.strona}} {z wyprzedzeniem|co najmniej} {{fakt:promocja.termin.informacja-o-zmianie}}. Wnioski złożone przed dniem zakończenia Promocji są realizowane na dotychczasowych zasadach."
+      - ustep: "Okres, w którym uczestnik może spełniać warunki premii, wynosi {{fakt:promocja.okres-premiowany}} i liczy się od pierwszego pełnego miesiąca kalendarzowego następującego po dniu otwarcia rachunku."
+
+  - id: promocja-definicje
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na potrzeby Promocji {poszczególne określenia|użyte w Regulaminie określenia} oznaczają:"
+        punkty:
+          - "**Premia powitalna** — jednorazowa premia pieniężna w wysokości {{fakt:promocja.premia.powitalna}}, przyznawana po spełnieniu warunków pierwszego miesiąca;"
+          - "**Premia miesięczna** — premia w wysokości {{fakt:promocja.premia.miesieczna}}, przyznawana za każdy miesiąc, w którym uczestnik spełnił wszystkie warunki Promocji;"
+          - "**Miesiąc rozliczeniowy** — {pełny|kolejny} miesiąc kalendarzowy, w którym ocenia się spełnienie warunków Promocji;"
+          - "**Wpływ kwalifikowany** — uznanie rachunku {przelewem krajowym|przelewem w złotych} z rachunku prowadzonego w innym banku, z tytułu wynagrodzenia, emerytury, renty lub świadczenia, z wyłączeniem przelewów z rachunków uczestnika w Banku;"
+          - "**Transakcja kartowa** — rozliczona płatność kartą debetową do rachunku {za towary lub usługi|w punkcie handlowo-usługowym lub w Internecie}, z wyłączeniem wypłat gotówki i wpłat we wpłatomatach;"
+          - "**Aktywne logowanie** — {zalogowanie się|udane uwierzytelnienie} do bankowości elektronicznej lub aplikacji mobilnej w danym miesiącu rozliczeniowym;"
+          - "**Rachunek promocyjny** — rachunek osobisty otwarty w ramach Promocji."
+
+  - id: promocja-warunki
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Premię miesięczną Bank przyznaje za miesiąc rozliczeniowy, w którym uczestnik {spełnił łącznie|spełnił jednocześnie} następujące warunki:"
+        punkty:
+          - "na rachunek promocyjny wpłynęły wpływy kwalifikowane w łącznej wysokości co najmniej {{fakt:promocja.prog.wplywy}};"
+          - "uczestnik wykonał co najmniej {{fakt:promocja.prog.platnosci-karta-liczba}} kartowych o łącznej wartości nie niższej niż {{fakt:promocja.prog.platnosci-karta-kwota}};"
+          - "uczestnik {zalogował się|uwierzytelnił się} do bankowości elektronicznej lub aplikacji mobilnej co najmniej {{fakt:promocja.prog.logowania}};"
+          - "saldo rachunku promocyjnego na koniec ostatniego dnia miesiąca rozliczeniowego nie było niższe niż {{fakt:promocja.prog.saldo-minimalne}}."
+      - ustep: "Do wartości transakcji kartowych {wlicza się|zalicza się} wyłącznie płatności, które zostały rozliczone w miesiącu rozliczeniowym; płatności zrealizowane w ostatnich dniach miesiąca, a rozliczone w następnym, {zalicza się|uwzględnia się} do miesiąca rozliczenia.[^1]"
+      - ustep: "Warunki, o których mowa w ust. 1, {ocenia|weryfikuje} Bank {automatycznie|na podstawie danych z systemów Banku}; uczestnik nie składa w tym zakresie odrębnych oświadczeń."
+    przypisy:
+      1: "Moment rozliczenia płatności kartą {określa|wskazuje} {{ref:dokument:regulamin-rachunku-osobistego}}; data wykonania transakcji może się różnić od daty jej zaksięgowania."
+
+  - id: promocja-warunki-wplywy
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do wpływów kwalifikowanych {nie zalicza się|nie wlicza się}:"
+        punkty:
+          - "przelewów między rachunkami tego samego uczestnika w Banku;"
+          - "wpłat gotówkowych w placówkach, wpłatomatach i u pośredników;"
+          - "zwrotów płatności, odsetek {oraz|a także} środków pochodzących z likwidacji lokat;"
+          - tekst: "przelewów, w których tytuł lub nadawca wskazuje, że mają charakter pożyczki lub zwrotu pożyczki, w tym:"
+            litery:
+              - "pożyczek udzielanych przez osoby fizyczne;"
+              - "środków z kredytów i pożyczek udzielonych przez instytucje finansowe."
+      - ustep: "Bank {może|ma prawo} poprosić uczestnika o wyjaśnienie tytułu wpływu, {jeżeli|jeśli} budzi on wątpliwości co do jego kwalifikacji; uczestnik {przekazuje|składa} wyjaśnienia w terminie {{fakt:promocja.termin.rozstrzygniecie-wyjasnien}} od dnia wezwania."
+
+  - id: promocja-premia
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W ramach Promocji uczestnik {może otrzymać|ma prawo otrzymać} następujące premie:"
+        punkty:
+          - "premię powitalną w wysokości {{fakt:promocja.premia.powitalna}} — po spełnieniu warunków za pierwszy miesiąc rozliczeniowy;"
+          - "premię miesięczną w wysokości {{fakt:promocja.premia.miesieczna}} — za każdy miesiąc rozliczeniowy, w którym spełniono wszystkie warunki;"
+          - "premię dodatkową w wysokości {{fakt:promocja.premia.dodatkowa-karta}} — za aktywację karty debetowej i wykonanie nią pierwszej transakcji zbliżeniowej."
+      - ustep: "Łączna wysokość premii przyznanych jednemu uczestnikowi nie może przekroczyć {{fakt:promocja.premia.maksymalna}}; premie, których przyznanie przekroczyłoby ten limit, {przyznaje się|wypłaca się} do wysokości limitu."
+      - ustep: "Premia stanowi {nagrodę|świadczenie} za wykonanie czynności określonych w Regulaminie, a nie {oprocentowanie|odsetki od środków} na rachunku."
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj premii"
+              waga: 2
+            - naglowek: "Wysokość"
+            - naglowek: "Za co"
+              waga: 2
+          wiersze:
+            - ["Premia powitalna", "{{fakt:promocja.premia.powitalna}}", "Spełnienie warunków za pierwszy miesiąc"]
+            - ["Premia miesięczna", "{{fakt:promocja.premia.miesieczna}}", "Każdy miesiąc ze spełnionymi warunkami"]
+            - ["Premia dodatkowa", "{{fakt:promocja.premia.dodatkowa-karta}}", "Aktywacja karty i pierwsza transakcja zbliżeniowa"]
+          siatka: true
+
+  - id: promocja-wyplata
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wypłaca|przekazuje} premię przez uznanie rachunku promocyjnego, w terminie {{fakt:promocja.termin.wyplata-premii}} od dnia zakończenia miesiąca rozliczeniowego, za który premia przysługuje."
+      - ustep: "Premia {jest wypłacana|zostaje wypłacona} w złotych. Tytuł przelewu zawiera nazwę Promocji {oraz|a także} wskazanie miesiąca rozliczeniowego, co umożliwia uczestnikowi {identyfikację|weryfikację} wpływu w historii rachunku."
+      - ustep: "{Jeżeli|Gdy} w dniu wypłaty rachunek promocyjny jest zamknięty lub objęty wypowiedzeniem umowy, premia nie jest wypłacana, z zastrzeżeniem ust. 4."
+      - ustep: "{Jeżeli|Gdy} rachunek został zablokowany na podstawie {przepisów prawa|obowiązujących przepisów}, w tym tytułu egzekucyjnego, premię wypłaca się na zasadach przewidzianych dla innych wpływów na rachunek, a środki podlegają zajęciu w takim zakresie, w jakim przepisy to przewidują.[^1]"
+    przypisy:
+      1: "Zasady zajęcia rachunku bankowego i kwoty wolne od zajęcia określają przepisy ustawy z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego oraz {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+
+  - id: promocja-utrata
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik traci prawo do premii, w tym do premii już naliczonej, a niewypłaconej, {jeżeli|jeśli}:"
+        punkty:
+          - "rozwiąże umowę rachunku promocyjnego lub otrzyma jej wypowiedzenie przed upływem {{fakt:promocja.termin.utrzymanie-rachunku}} dni od dnia otwarcia rachunku;"
+          - "{podał|przekazał} Bankowi w związku z udziałem w Promocji dane niezgodne ze stanem faktycznym;"
+          - "{wykorzystał|używał} rachunek w sposób sprzeczny z Regulaminem rachunku lub przepisami prawa, {w szczególności|zwłaszcza} do operacji służących obejściu warunków Promocji;"
+          - tekst: "dopuścił się nadużycia, w tym sztucznego zwiększania wpływów lub obrotów kartowych, polegającego na:"
+            litery:
+              - "wzajemnych przelewach między rachunkami powiązanych osób bez rzeczywistej podstawy gospodarczej;"
+              - "zawieraniu i anulowaniu transakcji w celu wygenerowania obrotu."
+      - ustep: "O utracie prawa do premii Bank informuje uczestnika {na trwałym nośniku|w bankowości elektronicznej lub wiadomością e-mail}, wskazując przyczynę."
+
+  - id: promocja-podatek
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Premia {stanowi|jest} dla uczestnika przychód podlegający opodatkowaniu na zasadach ogólnych, w zakresie wynikającym z {przepisów prawa|obowiązujących przepisów} podatkowego.[^1]"
+      - ustep: "{Jeżeli|Gdy} przepisy tego wymagają, Bank jako płatnik {pobiera|potrąca} zryczałtowany podatek dochodowy w wysokości {{fakt:promocja.podatek.stawka}} od wartości premii i odprowadza go do właściwego urzędu skarbowego. Wypłacana kwota jest wówczas pomniejszona o należny podatek."
+      - ustep: "Bank przekazuje uczestnikowi {oraz|a także} właściwemu urzędowi skarbowemu informację o wysokości przychodu w terminie i na zasadach wynikających z {przepisów prawa|obowiązujących przepisów}."
+    przypisy:
+      1: "Bank nie świadczy usług doradztwa podatkowego; w sprawach wątpliwych uczestnik powinien skorzystać z interpretacji organów podatkowych lub pomocy doradcy podatkowego."
+
+  - id: promocja-reklamacje
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik może złożyć reklamację dotyczącą nieprzyznania lub nieprawidłowej wysokości premii w terminie {{fakt:promocja.termin.zgloszenie}} od dnia, w którym premia powinna zostać wypłacona, {co nie wyłącza|nie ograniczając} jego prawa do złożenia reklamacji w terminie późniejszym na zasadach ogólnych."
+      - ustep: "Do reklamacji dołącza się, o ile to możliwe, zestawienie operacji potwierdzających spełnienie warunków Promocji. Bank {rozpatruje|rozstrzyga} reklamację w terminach określonych w {{ref:blok:wspolne-reklamacje-regulamin}}."
+
+  - id: promocja-koncowe
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik, który jest konsumentem, może w terminie {{fakt:termin.odstapienie-od-umowy}} od zawarcia umowy rachunku na odległość odstąpić od niej bez podawania przyczyny, na zasadach określonych w {{ref:akt:dz-u-2020-287-prawa-konsumenta}}. Odstąpienie od umowy w tym terminie powoduje wygaśnięcie prawa do premii."
+      - ustep: "Regulamin {wchodzi w życie|obowiązuje} od dnia {{param:od}}, a w razie jego zmiany stosuje się wersję {{param:wersja}} do wniosków złożonych w okresie jej obowiązywania."
+      - ustep: "Do spraw nieuregulowanych w Regulaminie {stosuje się|mają zastosowanie} postanowienia Regulaminu rachunku {oraz|a także} powszechnie obowiązujące przepisy prawa."

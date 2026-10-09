@@ -1,0 +1,160 @@
+bloki:
+  - id: promocja-org-bezpieczenstwo
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-organizator-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank nie żąda od uczestników Promocji podawania haseł, kodów autoryzacyjnych ani pełnych numerów kart w rozmowach telefonicznych, wiadomościach tekstowych ani w wiadomościach e-mail. Wszelkie takie prośby uczestnik powinien traktować jako próbę oszustwa i zgłosić je pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+      - ustep: "Informacje o Promocji publikowane przez Bank znajdują się wyłącznie na stronie {{fakt:bank.strona}}, w bankowości elektronicznej {oraz|a także} w placówkach. Bank nie ponosi odpowiedzialności za treści zamieszczone przez osoby trzecie, w tym na stronach, które podszywają się pod Bank."
+      - ustep: "Uczestnik, który otrzymał wiadomość budzącą wątpliwości co do jej autentyczności, {może|powinien} zweryfikować ją na {Infolinii|infolinii} Banku przed podjęciem jakichkolwiek działań."
+
+  - id: promocja-uczestnik-dokumenty
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy składaniu wniosku uczestnik przedstawia ważny dokument tożsamości. Bank {może|jest uprawniony} zażądać dodatkowych dokumentów lub informacji, {jeżeli|jeśli} jest to niezbędne do wykonania obowiązków wynikających z przepisów o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu."
+      - ustep: "W przypadku wniosku składanego na odległość tożsamość uczestnika potwierdza się w sposób przewidziany w Regulaminie rachunku, {w szczególności|zwłaszcza} za pomocą przelewu weryfikacyjnego lub identyfikacji elektronicznej."
+      - ustep: "Niedostarczenie żądanych dokumentów w terminie {{fakt:promocja.warunek.wplyw-pierwszy-termin}} od dnia wezwania {skutkuje|powoduje} odmowę otwarcia rachunku, a tym samym brak możliwości udziału w Promocji."
+
+  - id: promocja-uczestnik-zmiana-danych
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmiana danych uczestnika, w tym nazwiska lub adresu, {nie wpływa|pozostaje bez wpływu} na jego prawo do udziału w Promocji, o ile zmiana została zgłoszona Bankowi i potwierdzona w sposób przewidziany w Regulaminie rachunku."
+      - ustep: "{Jeżeli|Gdy} zmiana danych została zgłoszona po miesiącu rozliczeniowym, którego dotyczy premia, premia jest wypłacana na dotychczasowych zasadach. Bank nie ponosi odpowiedzialności za skutki niepowiadomienia go o zmianie adresu korespondencyjnego."
+
+  - id: promocja-okres-informacje
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W trakcie okresu premiowanego Bank {co miesiąc|raz w miesiącu} udostępnia uczestnikowi w bankowości elektronicznej informację o stanie realizacji warunków Promocji, w tym o wysokości dotychczasowych wpływów kwalifikowanych, liczbie i wartości transakcji kartowych {oraz|a także} liczbie aktywnych logowań."
+      - ustep: "Informacja ma charakter pomocniczy. W razie rozbieżności między informacją a danymi na rachunku rozstrzygają dane księgowe Banku, a uczestnik może zażądać ich wyjaśnienia w trybie przewidzianym dla reklamacji."
+      - ustep: "Brak informacji o stanie realizacji warunków w danym miesiącu {nie wpływa|nie ma wpływu} na prawo uczestnika do premii."
+
+  - id: promocja-warunki-zlecenia-stale
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zlecenia stałe i polecenia zapłaty realizowane z rachunku promocyjnego {nie zastępują|nie są} transakcji kartowych i nie wlicza się ich do warunku liczby płatności kartą."
+      - ustep: "Płatności cykliczne rozliczane kartą debetową, na przykład abonamenty lub składki, {zalicza się|uwzględnia się} do transakcji kartowych, o ile zostały rozliczone w miesiącu rozliczeniowym i spełniają pozostałe warunki z {{ref:blok:promocja-warunki}}."
+      - ustep: "Uczestnik, który zamierza korzystać z płatności cyklicznych kartą, powinien upewnić się, że karta pozostaje aktywna; wznowienie lub wymiana karty nie wpływają na liczenie transakcji."
+
+  - id: promocja-warunki-blokada
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} karta debetowa została zastrzeżona lub zablokowana z przyczyn niezależnych od uczestnika, {w szczególności|zwłaszcza} w związku z podejrzeniem nieuprawnionego użycia, Bank {uznaje|zalicza} brak możliwości wykonania transakcji kartowych w okresie blokady za spełnienie warunku liczby płatności, pod warunkiem że uczestnik {niezwłocznie|bez zbędnej zwłoki} wnioskuje o wydanie nowej karty."
+      - ustep: "Zasada z ust. 1 nie dotyczy blokady karty wynikającej z naruszenia Regulaminu rachunku przez uczestnika. W takiej sytuacji miesiąc rozliczeniowy jest oceniany na zasadach ogólnych."
+
+  - id: promocja-premia-przyklad
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-premia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dla ilustracji zasad opisanych w Regulaminie: uczestnik, który w pierwszym miesiącu rozliczeniowym otrzymał wpływy kwalifikowane w wysokości {{fakt:promocja.prog.wplywy}}, wykonał płatności kartą o wartości co najmniej {{fakt:promocja.prog.platnosci-karta-kwota}}, zalogował się do bankowości elektronicznej w wymaganej liczbie dni i zachował wymagane saldo, otrzyma premię powitalną."
+      - ustep: "{Jeżeli|Gdy} w kolejnym miesiącu wpływy wyniosły mniej niż wymagany próg, premia miesięczna za ten miesiąc nie przysługuje, ale uczestnik zachowuje prawo do premii za miesiące następne."
+      - ustep: "Przykład ma charakter poglądowy; o prawie do premii rozstrzygają postanowienia Regulaminu."
+
+  - id: promocja-premia-zmiana-rachunku
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-premia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik, który w okresie premiowanym zmienia warianty usług dodatkowych powiązanych z rachunkiem, w tym pakiet kart lub sposób otrzymywania wyciągów, zachowuje prawo do premii, o ile rachunek pozostaje rachunkiem promocyjnym."
+      - ustep: "Zmiana waluty rachunku, przeniesienie praw i obowiązków z umowy na inną osobę {oraz|a także} zamknięcie rachunku i otwarcie nowego w Banku powodują utratę prawa do dalszych premii. Zasada ta wynika z celu Promocji, którym jest nagrodzenie nowych klientów za aktywne korzystanie z rachunku."
+
+  - id: promocja-premia-powiadomienia
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-premia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "O wypłacie premii Bank {powiadamia|informuje} uczestnika w bankowości elektronicznej {oraz|a także}, {jeżeli|jeśli} uczestnik aktywował powiadomienia, wiadomością tekstową. Opłata za powiadomienia tekstowe wynika z {{ref:dokument:taryfa-indywidualni}} i wynosi {{fakt:oplata.powiadomienie-sms}}."
+      - ustep: "Uczestnik, który nie otrzymał premii w terminie wskazanym w {{ref:blok:promocja-wyplata}} ust. 1, powinien sprawdzić historię rachunku, a następnie, jeśli nie znajdzie w niej wpływu, skontaktować się z Bankiem w trybie reklamacji."
+
+  - id: promocja-utrata-blokada-rachunku
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} rachunek promocyjny został zablokowany przez Bank na podstawie przepisów o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu, wypłata premii zostaje wstrzymana do czasu zakończenia blokady. {Jeżeli|Gdy} blokada zakończy się potwierdzeniem uzasadnionych podejrzeń, uczestnik traci prawo do premii."
+      - ustep: "Wstrzymanie wypłaty premii nie jest naruszeniem Regulaminu przez Bank. Bank nie ma obowiązku informowania uczestnika o przyczynach blokady, {jeżeli|jeśli} przepisy prawa tego zabraniają."
+
+  - id: promocja-utrata-zgon
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie śmierci uczestnika w okresie premiowanym prawo do premii za miesiące rozliczeniowe, w których uczestnik spełnił warunki przed śmiercią, wchodzi do spadku. Premię wypłaca się spadkobiercom na zasadach przewidzianych dla środków zgromadzonych na rachunku, po przedstawieniu dokumentów potwierdzających nabycie spadku."
+      - ustep: "Za miesiące rozliczeniowe następujące po śmierci uczestnika premia nie przysługuje, a zamknięcie rachunku z tego powodu nie powoduje obowiązku zwrotu premii wypłaconych wcześniej."
+
+  - id: promocja-podatek-wyplata
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-podatek-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kwoty premii wymienione w Regulaminie {oraz|a także} w tabeli premii są kwotami brutto. Kwota wypłacana na rachunek może być niższa o należny podatek, co nie stanowi obniżenia premii w rozumieniu Regulaminu."
+      - ustep: "{Jeżeli|Gdy} uczestnik zamyka rachunek w okresie, o którym mowa w {{ref:blok:promocja-utrata}}, i jest obowiązany do zwrotu premii, zwraca kwotę netto, to jest wartość wpłaconą na rachunek po potrąceniu podatku. Bank odpowiada za rozliczenie podatku z organem podatkowym, w tym za jego korektę."
+
+  - id: promocja-reklamacje-dowody
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-reklamacje-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ciężar wykazania, że warunki Promocji zostały spełnione, spoczywa na uczestniku, z tym że podstawowym dowodem są dane z historii rachunku {oraz|a także} zapisy systemów Banku. Bank {udostępnia|przekazuje} uczestnikowi na jego wniosek zestawienie operacji zaliczonych i niezaliczonych do poszczególnych warunków."
+      - ustep: "{Jeżeli|Gdy} ocena spełnienia warunku zależy od kwalifikacji konkretnego wpływu lub transakcji, Bank wskazuje w odpowiedzi na reklamację podstawę rozstrzygnięcia, w tym postanowienie Regulaminu, na którym je oparto."
+
+  - id: promocja-dane-prawa
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik ma prawo żądać od Banku informacji o tym, które dane są przetwarzane w związku z Promocją, {oraz|a także} uzyskać ich kopię. Wnioski w tym zakresie można składać w placówce, w bankowości elektronicznej lub pisemnie na adres Banku."
+      - ustep: "Dane przetwarzane w związku z obowiązkami podatkowymi i rachunkowymi nie podlegają usunięciu przed upływem okresu ich przechowywania, co {nie narusza|pozostaje bez uszczerbku dla} praw uczestnika do sprostowania danych niepoprawnych."
+
+  - id: promocja-koncowe-prawo
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin Promocji nie wyłącza ani nie ogranicza praw przysługujących uczestnikowi będącemu konsumentem na podstawie bezwzględnie obowiązujących {przepisów prawa|obowiązujących przepisów}, w tym przepisów o ochronie konsumentów przed nieuczciwymi praktykami rynkowymi."
+      - ustep: "Postanowienia Regulaminu należy interpretować w sposób zgodny z przepisami o usługach płatniczych, {w szczególności|zwłaszcza} w zakresie zasad wykonywania i rozliczania operacji płatniczych na rachunku promocyjnym."
+      - ustep: "Do sporów między Bankiem a uczestnikiem niebędącym konsumentem właściwy jest sąd powszechny właściwy ze względu na siedzibę Banku."
+
+  - id: promocja-koncowe-kolejnosc
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie rozbieżności między postanowieniami Regulaminu Promocji a postanowieniami Regulaminu rachunku w zakresie warunków uzyskania premii pierwszeństwo mają postanowienia Regulaminu Promocji; w pozostałym zakresie pierwszeństwo mają postanowienia Regulaminu rachunku."
+      - ustep: "Załączniki i informacje publikowane przez Bank w związku z Promocją, w tym przykłady obliczeń, nie zmieniają treści Regulaminu."
+      - ustep: "Regulamin może zostać przedstawiony uczestnikowi w formie umożliwiającej jego pobranie, utrwalenie i odtworzenie."
+
+  - id: promocja-okres-wniosek
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o otwarcie rachunku uznaje się za złożony w dniu, w którym wnioskodawca przekazał Bankowi komplet wymaganych danych i dokumentów, a w przypadku wniosku elektronicznego — w dniu jego wysłania w systemie Banku."
+      - ustep: "Wniosek, który z przyczyn leżących po stronie Banku nie mógł zostać przyjęty w ostatnim dniu Promocji, a który wnioskodawca podjął w tym dniu, Bank {traktuje|uznaje} za złożony w okresie Promocji. Uczestnik powinien zachować potwierdzenie próby złożenia wniosku."
