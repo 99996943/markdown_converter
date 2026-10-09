@@ -32,8 +32,8 @@ public sealed partial class PromptTests : IDisposable
 
         Assert.Equal(5, Prompts(run.Out).Count);
         Assert.Equal(
-            [.. Urls.Select(u => u[(u.LastIndexOf('/') + 1)..]), "manifest.json"],
-            app.Root.FileNames("downloads").Order(StringComparer.Ordinal));
+            ["manifest.json", "reg-1.pdf", "reg-2.pdf", "reg-3.pdf", "reg-4.pdf", "reg-5.pdf"],
+            app.Root.FileNames("downloads"));
     }
 
     [Theory]
