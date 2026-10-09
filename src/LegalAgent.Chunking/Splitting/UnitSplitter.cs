@@ -26,8 +26,11 @@ internal static class UnitSplitter
         ArgumentNullException.ThrowIfNull(unit);
         ArgumentNullException.ThrowIfNull(renderer);
 
-        List<Atom> atoms = Atoms(unit.Blocks);
         HashSet<int> references = FootnoteSelector.References(unit.Blocks);
+        List<Atom> atoms = Atoms(unit.Blocks);
+
+        // Footnotes the unit never refers to close the unit, one atom each (FR-232).
+        atoms.AddRange(unit.Footnotes.Where(f => !references.Contains(f.Number)).OrderBy(f => f.Number).Select(f => new FootnoteAtom(f, (f.Page, f.Page))));
         string whole = renderer.Render(unit.Section, unit.Blocks, FootnoteSelector.Select(unit.Blocks, unit.Footnotes, references, withUnreferenced: true));
         if (whole.Length <= maxLength)
         {
@@ -38,8 +41,7 @@ internal static class UnitSplitter
         var current = new List<Atom>();
         foreach (Atom atom in atoms)
         {
-            bool last = ReferenceEquals(atom, atoms[^1]);
-            if (current.Count > 0 && Render(unit, renderer, [.. current, atom], references, last).Length > maxLength)
+            if (current.Count > 0 && Render(unit, renderer, [.. current, atom], references).Length > maxLength)
             {
                 groups.Add(current);
                 current = [];
@@ -56,7 +58,7 @@ internal static class UnitSplitter
         var parts = new List<UnitPart>(groups.Count);
         for (int g = 0; g < groups.Count; g++)
         {
-            string content = Render(unit, renderer, groups[g], references, last: g == groups.Count - 1);
+            string content = Render(unit, renderer, groups[g], references);
             IReadOnlyList<string> labels = g > 0 && groups[g].Count > 0 && groups[g][0] is ItemAtom first ? first.Node.Labels() : [];
             parts.Add(new UnitPart(content, labels, Pages(unit, atoms, groups[g], firstPart: g == 0), content.Length > maxLength));
         }
@@ -64,11 +66,15 @@ internal static class UnitSplitter
         return parts;
     }
 
-    // Unreferenced footnotes belong to the unit's last atom, so they count towards the limit of the last part.
-    private static string Render(Unit unit, FragmentRenderer renderer, IReadOnlyList<Atom> atoms, IReadOnlySet<int> references, bool last)
+    // A part carries the footnotes its blocks refer to and the unreferenced footnotes packed into it as atoms.
+    private static string Render(Unit unit, FragmentRenderer renderer, IReadOnlyList<Atom> atoms, IReadOnlySet<int> references)
     {
         List<ContentBlock> blocks = Blocks(atoms);
-        return renderer.Render(unit.Section, blocks, FootnoteSelector.Select(blocks, unit.Footnotes, references, last));
+        List<Footnote> footnotes = FootnoteSelector.Select(blocks, unit.Footnotes, references, withUnreferenced: false)
+            .Concat(atoms.OfType<FootnoteAtom>().Select(a => a.Footnote))
+            .OrderBy(f => f.Number)
+            .ToList();
+        return renderer.Render(unit.Section, blocks, footnotes);
     }
 
     private static List<Atom> Atoms(IReadOnlyList<ContentBlock> blocks)
@@ -121,6 +127,12 @@ internal static class UnitSplitter
             if (atoms[i] is BlockAtom block)
             {
                 blocks.Add(block.Block);
+                i++;
+                continue;
+            }
+
+            if (atoms[i] is FootnoteAtom)
+            {
                 i++;
                 continue;
             }
@@ -232,6 +244,9 @@ internal static class UnitSplitter
 
     /// <summary>A whole block (paragraph, table without body rows).</summary>
     private sealed record BlockAtom(ContentBlock Block, (int First, int Last) Pages) : Atom(Pages);
+
+    /// <summary>A footnote definition the unit never refers to; packed after the unit's content.</summary>
+    private sealed record FootnoteAtom(Footnote Footnote, (int First, int Last) Pages) : Atom(Pages);
 
     /// <summary>One body row of a table; rendered under the table's header row.</summary>
     private sealed record RowAtom(TableBlock Table, int Row, (int First, int Last) Pages) : Atom(Pages);
