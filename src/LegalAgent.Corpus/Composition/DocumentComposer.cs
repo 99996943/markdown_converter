@@ -569,9 +569,27 @@ public static class DocumentComposer
             }
 
             var result = new List<Inline>(runs.Count);
+            bool dropPeriod = false;
             foreach (Inline run in runs)
             {
-                result.Add(run.Kind == InlineKind.Reference ? new Inline(Reference(run.Text), run.Style) : run);
+                Inline current = run;
+                if (dropPeriod && current.Kind == InlineKind.Text && current.Text.StartsWith('.'))
+                {
+                    // A referenced title ending with „S.A.” before the sentence's own period: one period only.
+                    current = current with { Text = current.Text[1..] };
+                }
+
+                dropPeriod = false;
+                if (current.Kind == InlineKind.Reference)
+                {
+                    current = new Inline(Reference(current.Text), current.Style);
+                    dropPeriod = current.Text.EndsWith('.');
+                }
+
+                if (current.Text.Length > 0)
+                {
+                    result.Add(current);
+                }
             }
 
             // Merge adjacent plain runs of one style.
