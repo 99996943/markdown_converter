@@ -373,14 +373,14 @@ public sealed partial class TableDocumentsIntegrationTests
         Assert.Single(result.Report.TableDocuments);
         Assert.Equal(1, result.Report.TableCount);
         Assert.Contains(
-            "| Rodzaj premii | Wysokość | Za co |\n| --- | --- | --- |\n| Premia powitalna | 200,00 zł | Spełnienie warunków za pierwszy miesiąc |\n| Premia miesięczna | 50,00 zł | Każdy miesiąc ze spełnionymi warunkami |",
+            "| **Rodzaj premii** | **Wysokość** | **Za co** |\n| --- | --- | --- |\n| Premia powitalna | 200,00 zł | Spełnienie warunków za pierwszy miesiąc |\n| Premia miesięczna | 50,00 zł | Każdy miesiąc ze spełnionymi warunkami |",
             md,
             StringComparison.Ordinal);
 
         // The table stands in its section, between the paragraphs of the cell, before the next section name.
         int heading = md.IndexOf("## Premie", StringComparison.Ordinal);
         int before = md.IndexOf("w powiadomieniach.", StringComparison.Ordinal);
-        int table = md.IndexOf("| Rodzaj premii", StringComparison.Ordinal);
+        int table = md.IndexOf("| **Rodzaj premii**", StringComparison.Ordinal);
         int after = md.IndexOf("Premie wypłacamy na rachunek promocyjny", StringComparison.Ordinal);
         int next = md.IndexOf("## Zasady bezpieczeństwa", StringComparison.Ordinal);
         Assert.True(heading >= 0 && heading < before && before < table && table < after && after < next, md);

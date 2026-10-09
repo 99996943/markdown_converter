@@ -95,6 +95,61 @@ public sealed class TableDetectionStage : IPipelineStage
 
     private static List<Table> FindTables(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
     {
+        List<Table> found = TablesInTableDocumentCells(context, page, hyphenationExceptions);
+        found.AddRange(FindPageTables(context, page, hyphenationExceptions));
+        return found;
+    }
+
+    /// <summary>
+    /// A table with a grid of its own inside the right cell of a table-document (vertical rulings right of the column
+    /// divider, shorter than the frame's): its lines are searched with its rulings, the rest of the cell stays text.
+    /// </summary>
+    private static List<Table> TablesInTableDocumentCells(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
+    {
+        TableDocumentRegion? region = context.TableDocuments.FirstOrDefault(r => page.Number >= r.FirstPage && page.Number <= r.LastPage);
+        List<Segment> verticals = page.Rulings.Where(r => r.IsVertical).ToList();
+        if (region is null || verticals.Count == 0)
+        {
+            return [];
+        }
+
+        double frameHeight = verticals.Max(r => Math.Abs(r.Y2 - r.Y1));
+        var inner = verticals
+            .Where(r => r.X1 > region.Divider + RulingSlack && Math.Abs(r.Y2 - r.Y1) < 0.9 * frameHeight)
+            .OrderBy(r => Math.Min(r.Y1, r.Y2))
+            .ToList();
+        var areas = new List<Rect>();
+        foreach (Segment r in inner)
+        {
+            var box = new Rect(r.X1 - RulingSlack, Math.Min(r.Y1, r.Y2) - RulingSlack, r.X1 + RulingSlack, Math.Max(r.Y1, r.Y2) + RulingSlack);
+            int i = areas.FindIndex(a => box.Top <= a.Bottom && box.Bottom >= a.Top);
+            areas.Add(i < 0 ? box : areas[i].Union(box));
+            if (i >= 0)
+            {
+                areas.RemoveAt(i);
+            }
+        }
+
+        var tables = new List<Table>();
+        foreach (Rect area in areas.Where(a => a.Width > 4 * RulingSlack))
+        {
+            bool Inside(double x, double y) => x > area.Left && x < area.Right && y > area.Top && y < area.Bottom;
+            List<Segment> rulings = page.Rulings.Where(r => Inside((r.X1 + r.X2) / 2, (r.Y1 + r.Y2) / 2)).ToList();
+            tables.AddRange(FindTables(
+                context,
+                page,
+                l => l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex) && Inside(l.Box.CenterX, l.Box.CenterY),
+                rulings,
+                null,
+                hyphenationExceptions,
+                inTableDocumentCell: true));
+        }
+
+        return tables;
+    }
+
+    private static List<Table> FindPageTables(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
+    {
         (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
         page.ColumnGutter = gutter;
         if (gutter is not { } g)
@@ -169,13 +224,14 @@ public sealed class TableDetectionStage : IPipelineStage
         Func<LayoutLine, bool> inScope,
         IReadOnlyList<Segment> rulings,
         (double Start, double End)? gutter,
-        string[] hyphenationExceptions)
+        string[] hyphenationExceptions,
+        bool inTableDocumentCell = false)
     {
         TableOptions options = context.Options.Tables;
         double tolerance = options.ColumnTolerance * page.Width;
         double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * page.Width;
         List<Row> flow = page.Lines
-            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex))
+            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && (inTableDocumentCell || !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
             .Where(inScope)
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();
