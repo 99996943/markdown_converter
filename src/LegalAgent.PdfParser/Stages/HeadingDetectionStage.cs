@@ -600,7 +600,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             }
         }
 
-        return letters >= MinCapsLetters;
+        // A code in capitals among digits and punctuation („(F-BEZ-05).”) is not a caps heading.
+        int visible = text.Count(c => !char.IsWhiteSpace(c));
+        return letters >= MinCapsLetters && 2 * letters >= visible;
     }
 
     [System.Text.RegularExpressions.GeneratedRegex(
