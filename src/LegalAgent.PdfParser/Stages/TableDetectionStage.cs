@@ -125,7 +125,18 @@ public sealed class TableDetectionStage : IPipelineStage
             return touching.Count > 0 && touching.All(OneSided);
         }
 
-        List<Table> tables = FindTables(context, page, _ => true, page.Rulings.Where(r => !InColumn(r)).ToList(), gutter, hyphenationExceptions);
+        // Lines with a segment inside the ruled area of a column table are that table's: left to the column search.
+        var columnAreas = page.Rulings.Where(InColumn)
+            .GroupBy(r => Left(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2)))
+            .Select(group => new Rect(
+                group.Min(r => Math.Min(r.X1, r.X2)) - RulingSlack,
+                group.Min(r => Math.Min(r.Y1, r.Y2)) - RulingSlack,
+                group.Max(r => Math.Max(r.X1, r.X2)) + RulingSlack,
+                group.Max(r => Math.Max(r.Y1, r.Y2)) + RulingSlack))
+            .ToList();
+        bool InColumnTable(LayoutLine line) =>
+            line.Segments.Any(seg => columnAreas.Any(a => seg.Box.CenterX > a.Left && seg.Box.CenterX < a.Right && seg.Box.CenterY > a.Top && seg.Box.CenterY < a.Bottom));
+        List<Table> tables = FindTables(context, page, l => !InColumnTable(l), page.Rulings.Where(r => !InColumn(r)).ToList(), gutter, hyphenationExceptions);
         var taken = new HashSet<LayoutLine>(tables.SelectMany(t => t.Lines), ReferenceEqualityComparer.Instance);
         SplitAtGutter(page, Left, Right, taken);
         tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && Left(l.Box.Left, l.Box.Right), page.Rulings.Where(r => Left(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2))).ToList(), null, hyphenationExceptions));
