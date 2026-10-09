@@ -1,6 +1,8 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
+using LegalAgent.Chunking.Identity;
 using LegalAgent.Chunking.Model;
+using LegalAgent.Chunking.Splitting;
 using LegalAgent.PdfParser;
 using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Rendering;
@@ -54,7 +56,8 @@ public sealed partial class DocumentChunker : IDocumentChunker
         ChunkingOptions options = ResolveOptions(request);
         cancellationToken.ThrowIfCancellationRequested();
 
-        return Task.FromResult(new ChunkedDocument(Header(conversion, metadata), []));
+        ChunkedDocumentHeader header = Header(conversion, metadata);
+        return Task.FromResult(new ChunkedDocument(header, Split(conversion.Document, header, options, cancellationToken)));
     }
 
     /// <inheritdoc />
@@ -64,6 +67,46 @@ public sealed partial class DocumentChunker : IDocumentChunker
         ChunkingRequest? request = null,
         CancellationToken cancellationToken = default) =>
         throw new NotImplementedException();
+
+    private List<Chunk> Split(LegalDocument document, ChunkedDocumentHeader header, ChunkingOptions options, CancellationToken cancellationToken)
+    {
+        var renderer = new FragmentRenderer(_renderer, options.Rendering ?? _parserOptions.Value.Rendering);
+        IReadOnlyList<Unit> units = UnitCollector.Collect(document);
+        IReadOnlyList<string> keys = UnitKeyBuilder.Build(header.SeriesKey, units.Select(u => u.SegmentPath).ToList());
+
+        var chunks = new List<Chunk>();
+        for (int i = 0; i < units.Count; i++)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            Unit unit = units[i];
+            IReadOnlyList<UnitPart> parts = UnitSplitter.Split(unit, renderer, options.MaxChunkLength);
+            for (int p = 0; p < parts.Count; p++)
+            {
+                UnitPart part = parts[p];
+                chunks.Add(new Chunk(
+                    ChunkIdBuilder.Build(header.Metadata.DocumentId, keys[i], p + 1),
+                    keys[i],
+                    p + 1,
+                    parts.Count,
+                    unit.Kind,
+                    Citation(unit.Section),
+                    part.ListLabels,
+                    unit.SectionPath,
+                    part.Pages,
+                    part.Content.Length,
+                    part.ExceedsLimit,
+                    part.Content));
+            }
+        }
+
+        return chunks;
+    }
+
+    // The designation as printed ("§ 13", "Art. 5"); the heading for a section without one; none for the preamble.
+    private static string? Citation(Section? section) =>
+        section is null ? null
+        : !string.IsNullOrWhiteSpace(section.Designation) ? section.Designation.Trim()
+        : section.HeadingText.Trim();
 
     private static void ValidateMetadata(DocumentMetadata metadata)
     {
