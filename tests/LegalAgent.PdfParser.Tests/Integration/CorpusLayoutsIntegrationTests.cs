@@ -1375,6 +1375,43 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("| 173. | Prowizja za przyznanie limitu w rachunku osobistym (debetu) | od kwoty limitu, jednorazowo | 2% min. 30,00 zł 1) |", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T089f: two columns on shared baselines whose left column has ragged line ends, a few reaching its right edge
+    /// (ZAT-REG-SPR-02 page 16): the free band starts well left of the column edge, but lines ending inside the gutter
+    /// do not cross it — the page is two columns of clauses, not a table.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnsWithRaggedLeftColumn_AreNotATable()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        string[] shortLines = ["treść postanowienia w krótkim wierszu,", "dalszy ciąg postanowienia,", "kolejne zdanie umowy karty,"];
+        const string LongLine = "wiersz sięgający prawie do prawej krawędzi kolumny,";
+        double y = 92;
+        for (int i = 0; i < 44; i++, y += 12.5)
+        {
+            string left = i % 4 == 3 ? LongLine : shortLines[i % 3];
+            if (i % 8 == 0)
+            {
+                b.Text(50, y, $"{(i / 8) + 1}.", 9.5).Text(68, y, left, 9.5);
+                b.Text(313, y, $"{(i / 8) + 1}.", 9.5).Text(331, y, "Postanowienie prawej kolumny regulaminu karty", 9.5);
+            }
+            else
+            {
+                b.Text(68, y, left, 9.5);
+                b.Text(331, y, "dalszy tekst prawej kolumny w kolejnym wierszu", 9.5);
+            }
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t089f.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| ", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
