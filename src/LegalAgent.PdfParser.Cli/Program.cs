@@ -1,10 +1,15 @@
+using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using LegalAgent.Chunking;
+using LegalAgent.Chunking.Model;
+using LegalAgent.Chunking.Serialization;
 using LegalAgent.PdfParser.Model;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace LegalAgent.PdfParser.Cli;
 
@@ -12,12 +17,17 @@ namespace LegalAgent.PdfParser.Cli;
 public static class Program
 {
     private const string EnvPrefix = "PDFPARSER__";
+    private const string ChunkingEnvPrefix = "CHUNKING__";
 
     private const string Usage =
         """
         Użycie:
           legalagent-pdf convert <wejście.pdf> [-o|--output <wyjście.md>] [--report <raport.json>]
                                  [--no-page-markers] [--allow-partial]
+          legalagent-pdf chunk <wejście.pdf> -o|--output <wyjście.jsonl> [--id <id>] [--designation <oznaczenie>]
+                               [--type <typ>] [--title <tytuł>] [--doc-version <n>] [--valid-from <rrrr-mm-dd>]
+                               [--valid-to <rrrr-mm-dd>] [--status <status>] [--previous-version <id>]
+                               [--max-length <n>] [--allow-partial]
           legalagent-pdf --help | --version
 
         Opcje:
@@ -28,13 +38,24 @@ public static class Program
           -h, --help            pokaż tę pomoc
           --version             pokaż wersję
 
+        Polecenie chunk dzieli dokument na fragmenty dla RAG i zapisuje je jako JSON Lines (jedna linia na
+        fragment, z metadanymi dokumentu). --id domyślnie: nazwa pliku bez rozszerzenia; --max-length: limit
+        znaków fragmentu (domyślnie 2000, co najmniej 200).
+
         Opcje heurystyk: zmienne środowiskowe PDFPARSER__<Grupa>__<Pole>, np. PDFPARSER__Limits__MaxPages=5000.
+        Opcje fragmentów: zmienne CHUNKING__<Pole>, np. CHUNKING__MaxChunkLength=1500 (argument ma pierwszeństwo).
 
         Kody wyjścia: 0 sukces, 2 błędne argumenty, 3 nieprawidłowy/zaszyfrowany/bez tekstu PDF,
         4 nieczytelna strona, 5 przekroczony limit, 6 wynik niepełny, 130 przerwano, 1 błąd nieoczekiwany.
         """;
 
     private static readonly JsonSerializerOptions ReportJson = CreateReportJson();
+
+    private static readonly string[] ChunkValueOptions =
+    [
+        "-o", "--output", "--id", "--designation", "--type", "--title", "--doc-version", "--valid-from", "--valid-to",
+        "--status", "--previous-version", "--max-length",
+    ];
 
     /// <summary>Runs the CLI without touching the console or the process environment.</summary>
     /// <param name="args">Command-line arguments.</param>
@@ -67,22 +88,33 @@ public static class Program
             return 0;
         }
 
-        CliArguments? parsed = await ParseAsync(args, stderr).ConfigureAwait(false);
-        if (parsed is null)
+        if (args.Length > 0 && args[0] == "chunk")
         {
-            return 2;
+            ChunkArguments? chunk = await ParseChunkAsync(args, stderr).ConfigureAwait(false);
+            return chunk is null
+                ? 2
+                : await GuardAsync(chunk.Input, stderr, () => ChunkAsync(chunk, stdout, stderr, environment, cancellationToken), cancellationToken).ConfigureAwait(false);
         }
 
-        if (!File.Exists(parsed.Input))
+        CliArguments? parsed = await ParseAsync(args, stderr).ConfigureAwait(false);
+        return parsed is null
+            ? 2
+            : await GuardAsync(parsed.Input, stderr, () => ConvertAsync(parsed, stdout, stderr, environment, cancellationToken), cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>Checks the input file and maps the library's errors to exit codes (contracts/cli.md).</summary>
+    private static async Task<int> GuardAsync(string input, TextWriter stderr, Func<Task<int>> run, CancellationToken cancellationToken)
+    {
+        if (!File.Exists(input))
         {
-            await stderr.WriteAsync($"Błąd: plik wejściowy nie istnieje: {parsed.Input}\n").ConfigureAwait(false);
+            await stderr.WriteAsync($"Błąd: plik wejściowy nie istnieje: {input}\n").ConfigureAwait(false);
             return 2;
         }
 
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-            return await ConvertAsync(parsed, stdout, stderr, environment, cancellationToken).ConfigureAwait(false);
+            return await run().ConfigureAwait(false);
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
         {
@@ -108,6 +140,14 @@ public static class Program
         catch (PdfLimitExceededException ex)
         {
             return await FailAsync(stderr, 5, ex.Message).ConfigureAwait(false);
+        }
+        catch (OptionsValidationException ex)
+        {
+            return await FailAsync(stderr, 2, ex.Message).ConfigureAwait(false);
+        }
+        catch (ArgumentException ex)
+        {
+            return await FailAsync(stderr, 2, ex.Message).ConfigureAwait(false);
         }
 #pragma warning disable CA1031 // The CLI boundary maps every unexpected error to exit code 1.
         catch (Exception ex)
@@ -183,14 +223,65 @@ public static class Program
         return 0;
     }
 
-    private static IConfiguration BuildConfiguration(IReadOnlyDictionary<string, string?> environment)
+    private static async Task<int> ChunkAsync(
+        ChunkArguments args,
+        TextWriter stdout,
+        TextWriter stderr,
+        IReadOnlyDictionary<string, string?> environment,
+        CancellationToken cancellationToken)
+    {
+        IConfiguration parserConfiguration = BuildConfiguration(environment);
+        IConfiguration chunkingConfiguration = BuildConfiguration(environment, ChunkingEnvPrefix);
+
+        var services = new ServiceCollection();
+        services.AddLegalAgentPdfParser(options =>
+        {
+            parserConfiguration.Bind(options);
+            if (args.AllowPartial)
+            {
+                options.AllowPartialResult = true;
+            }
+        });
+        services.AddLegalAgentChunking(options =>
+        {
+            chunkingConfiguration.Bind(options);
+            if (args.MaxLength is { } maxLength)
+            {
+                options.MaxChunkLength = maxLength;
+            }
+        });
+
+        await using ServiceProvider provider = services.BuildServiceProvider();
+        IDocumentChunker chunker = provider.GetRequiredService<IDocumentChunker>();
+
+        ChunkedDocument document;
+        await using (FileStream input = File.OpenRead(args.Input))
+        {
+            var request = new ChunkingRequest { ParserRequest = new PdfConversionRequest { SourceId = Path.GetFileName(args.Input) } };
+            document = await chunker.ChunkAsync(input, args.Metadata, request, cancellationToken).ConfigureAwait(false);
+        }
+
+        await WriteAtomicAsync(args.Output, ChunkJson.ToJsonLines(document), cancellationToken).ConfigureAwait(false);
+        int exceeding = document.Chunks.Count(c => c.ExceedsLimit);
+        await stdout.WriteAsync(string.Create(CultureInfo.InvariantCulture, $"Fragmenty: {document.Chunks.Count}, przekraczające limit: {exceeding}\n")).ConfigureAwait(false);
+
+        if (!document.Header.Source.IsComplete)
+        {
+            await stderr.WriteAsync("Wynik niepełny: część stron nie została przekonwertowana.\n").ConfigureAwait(false);
+            return 6;
+        }
+
+        return 0;
+    }
+
+    private static IConfiguration BuildConfiguration(IReadOnlyDictionary<string, string?> environment, string prefix = EnvPrefix)
     {
         var values = new Dictionary<string, string?>(StringComparer.OrdinalIgnoreCase);
         foreach ((string key, string? value) in environment)
         {
-            if (key.StartsWith(EnvPrefix, StringComparison.OrdinalIgnoreCase))
+            if (key.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
             {
-                values[key[EnvPrefix.Length..].Replace("__", ":", StringComparison.Ordinal)] = value;
+                values[key[prefix.Length..].Replace("__", ":", StringComparison.Ordinal)] = value;
             }
         }
 
@@ -306,6 +397,115 @@ public static class Program
         return new CliArguments(input!, output, report, noMarkers, partial);
     }
 
+    private static async Task<ChunkArguments?> ParseChunkAsync(string[] args, TextWriter stderr)
+    {
+        string? error = null;
+        string? input = null;
+        var values = new Dictionary<string, string>(StringComparer.Ordinal);
+        bool partial = false;
+
+        for (int i = 1; i < args.Length && error is null; i++)
+        {
+            string a = args[i];
+            if (ChunkValueOptions.Contains(a, StringComparer.Ordinal))
+            {
+                if (i + 1 >= args.Length)
+                {
+                    error = $"brak wartości dla opcji {a}.";
+                }
+                else
+                {
+                    values[a == "-o" ? "--output" : a] = args[++i];
+                }
+            }
+            else if (a == "--allow-partial")
+            {
+                partial = true;
+            }
+            else if (a.StartsWith('-') && a.Length > 1)
+            {
+                error = $"nieznana opcja: {a}";
+            }
+            else if (input is not null)
+            {
+                error = $"nadmiarowy argument: {a}";
+            }
+            else
+            {
+                input = a;
+            }
+        }
+
+        int? version = null;
+        int? maxLength = null;
+        DateOnly? validFrom = null;
+        DateOnly? validTo = null;
+        if (error is null)
+        {
+            error = input is null ? "brak pliku wejściowego."
+                : !values.ContainsKey("--output") ? "brak pliku wyjściowego (-o|--output)."
+                : ParseInt(values, "--doc-version", out version) ?? ParseInt(values, "--max-length", out maxLength)
+                    ?? ParseDate(values, "--valid-from", out validFrom) ?? ParseDate(values, "--valid-to", out validTo);
+        }
+
+        if (error is not null)
+        {
+            await stderr.WriteAsync($"Błąd: {error}\nUżyj --help, aby zobaczyć sposób użycia.\n").ConfigureAwait(false);
+            return null;
+        }
+
+        var metadata = new DocumentMetadata(values.GetValueOrDefault("--id") ?? DefaultId(input!))
+        {
+            Designation = values.GetValueOrDefault("--designation"),
+            Type = values.GetValueOrDefault("--type"),
+            Title = values.GetValueOrDefault("--title"),
+            Version = version,
+            ValidFrom = validFrom,
+            ValidTo = validTo,
+            Status = values.GetValueOrDefault("--status"),
+            PreviousVersion = values.GetValueOrDefault("--previous-version"),
+        };
+        return new ChunkArguments(input!, values["--output"], metadata, maxLength, partial);
+    }
+
+    private static string? ParseInt(Dictionary<string, string> values, string option, out int? value)
+    {
+        value = null;
+        if (!values.TryGetValue(option, out string? text))
+        {
+            return null;
+        }
+
+        if (!int.TryParse(text, NumberStyles.None, CultureInfo.InvariantCulture, out int number))
+        {
+            return $"opcja {option} wymaga liczby całkowitej (jest „{text}”).";
+        }
+
+        value = number;
+        return null;
+    }
+
+    private static string? ParseDate(Dictionary<string, string> values, string option, out DateOnly? value)
+    {
+        value = null;
+        if (!values.TryGetValue(option, out string? text))
+        {
+            return null;
+        }
+
+        if (!DateOnly.TryParseExact(text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateOnly date))
+        {
+            return $"opcja {option} wymaga daty rrrr-mm-dd (jest „{text}”).";
+        }
+
+        value = date;
+        return null;
+    }
+
+    // The file name without extension; characters outside [A-Za-z0-9._-] become "-".
+    private static string DefaultId(string input) =>
+        string.Concat(Path.GetFileNameWithoutExtension(input).Select(c => char.IsAsciiLetterOrDigit(c) || c is '.' or '_' or '-' ? c : '-'));
+
     private static string VersionString()
     {
         Assembly assembly = typeof(Program).Assembly;
@@ -349,6 +549,8 @@ public static class Program
     }
 
     private sealed record CliArguments(string Input, string? Output, string? Report, bool NoPageMarkers, bool AllowPartial);
+
+    private sealed record ChunkArguments(string Input, string Output, DocumentMetadata Metadata, int? MaxLength, bool AllowPartial);
 
     private sealed class SecondsTimeSpanConverter : JsonConverter<TimeSpan>
     {
