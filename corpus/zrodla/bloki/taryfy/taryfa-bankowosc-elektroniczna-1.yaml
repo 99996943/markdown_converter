@@ -1,0 +1,201 @@
+bloki:
+  # ---------------------------------------------------------------- I. Postanowienia ogólne
+  - id: taryfa-bankowosc-elektroniczna-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: ogolne-taryfa-bankowosc-elektroniczna
+    elementy:
+      - ustep: "Taryfa {dotyczy|obejmuje} usług bankowości internetowej i aplikacji mobilnej {udostępnianych|świadczonych} klientom indywidualnym, przedsiębiorcom i klientom instytucjonalnym, w tym narzędzi uwierzytelniania, powiadomień, dyspozycji składanych w kanałach elektronicznych, płatności mobilnych oraz usług dodatkowych. Zasady korzystania z tych usług określa „{{ref:dokument:regulamin-bankowosci-elektronicznej}}”."
+      - ustep: "Dostęp do bankowości elektronicznej i aplikacji mobilnej w zakresie podstawowym jest {udostępniany|świadczony} w wysokości {{fakt:oplata.bankowosc.dostep}} miesięcznie. Opłaty określone w Taryfie dotyczą wyłącznie tych usług, z których Klient skorzystał lub które aktywował; Bank nie pobiera opłat za samo założenie profilu w serwisie."
+      - ustep: "Opłaty za przelewy, rachunki i karty wykonywane za pośrednictwem kanałów elektronicznych wynikają z taryf właściwych dla danego produktu; w niniejszej Taryfie podano {tylko|wyłącznie} te z nich, które zależą od wyboru kanału lub sposobu złożenia dyspozycji."
+      - akapit: "Przepisy o usługach płatniczych, w tym o silnym uwierzytelnianiu klienta, określa {{ref:akt:dz-u-2024-30-uslugi-platnicze}}. Bank nie pobiera opłat za usługi, których świadczenie ustawa nakazuje {bezpłatnie|nieodpłatnie}, w szczególności za udostępnienie informacji o rachunku dostawcom usług płatniczych działającym na podstawie zgody Klienta."
+
+  # ---------------------------------------------------------------- II. Klienci indywidualni
+  - id: taryfa-bankowosc-elektroniczna-ind-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Poniższe {opłaty|stawki} dotyczą konsumentów korzystających z bankowości internetowej oraz aplikacji mobilnej {{fakt:bankowosc.nazwa-aplikacji}}, dostępnych pod adresem {{fakt:bankowosc.adres-serwisu}}. Podstawowy zakres usługi — podgląd rachunków, przelewy, zlecenia stałe i historia operacji — nie podlega opłacie."
+      - akapit: "Pakiety rozszerzone są świadczone na wniosek Klienta i mogą być wypowiedziane w każdym czasie ze skutkiem na koniec miesiąca kalendarzowego. Aktywacja pakietu następuje w ciągu {{fakt:termin.bankowosc-elektroniczna.aktywacja-uslugi}} roboczych od dnia złożenia dyspozycji."
+
+  - id: taryfa-bankowosc-elektroniczna-ind-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Dostęp|Korzystanie z dostępu} do bankowości internetowej i aplikacji mobilnej w zakresie podstawowym"
+            stawka: "{{fakt:oplata.bankowosc.dostep}}"
+            tryb: "miesięcznie"
+          - usluga: "Pakiet rozszerzony bankowości elektronicznej[^1]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.pakiet-rozszerzony}}"
+            tryb: "miesięcznie"
+          - usluga: "Pakiet rodzinny — wspólny dostęp dla {dwóch|2} osób wspólnie prowadzących gospodarstwo domowe"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.pakiet-rodzinny}}"
+            tryb: "miesięcznie"
+          - usluga: "Aktywacja aplikacji mobilnej na dodatkowym urządzeniu (powyżej limitu urządzeń)"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.opiekun-dodatkowe-urzadzenie}}"
+            tryb: "miesięcznie"
+          - usluga: "Wydanie nowego kodu aktywacyjnego do aplikacji mobilnej"
+            stawka: "{{fakt:oplata.bankowosc.nowy-kod-aktywacyjny}}"
+            tryb: "jednorazowo"
+          - usluga: "{Odblokowanie|Przywrócenie} dostępu do bankowości elektronicznej"
+            stawka: "wg kanału zgłoszenia"
+            tryb: "za każde odblokowanie"
+            podpozycje:
+              - usluga: "na Infolinii po weryfikacji tożsamości"
+                stawka: "{{fakt:oplata.bankowosc-elektroniczna.odblokowanie-dostepu-infolinia}}"
+                tryb: "za każde odblokowanie"
+              - usluga: "w placówce Banku[^2]"
+                stawka: "{{fakt:oplata.bankowosc-elektroniczna.odblokowanie-dostepu-placowka}}"
+                tryb: "za każde odblokowanie"
+          - usluga: "Zmiana limitów transakcji w serwisie internetowym lub w aplikacji"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+          - usluga: "Zmiana limitów transakcji w placówce Banku"
+            stawka: "{{fakt:oplata.bankowosc.zmiana-limitu-placowka}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Zmiana limitów transakcji na Infolinii"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.zmiana-limitu-infolinia}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Wyciąg z rachunku w postaci elektronicznej"
+            stawka: "{{fakt:oplata.bankowosc.wyciag-elektroniczny}}"
+            tryb: "za wyciąg"
+          - usluga: "Wyciąg z rachunku w postaci papierowej doręczany pocztą"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za wyciąg"
+          - usluga: "Przelew krajowy w złotych złożony w serwisie internetowym lub w aplikacji"
+            stawka: "bez opłat"
+            tryb: "za przelew"
+          - usluga: "Przelew natychmiastowy złożony w serwisie internetowym lub w aplikacji[^3]"
+            stawka: "{{fakt:oplata.przelew-natychmiastowy}}"
+            tryb: "za przelew"
+          - usluga: "Przelew krajowy złożony w placówce Banku"
+            stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}"
+            tryb: "za przelew"
+    przypisy:
+      1: "Pakiet rozszerzony obejmuje m.in. zwiększony pakiet powiadomień, rozszerzoną historię operacji oraz dostęp do e-archiwum dokumentów; pełny zakres pakietu opisano w sekcji o usługach dodatkowych."
+      2: "Opłaty nie pobiera się, jeżeli blokada dostępu nastąpiła z przyczyn leżących po stronie Banku, w szczególności w wyniku awarii systemu lub błędnego rozpoznania operacji jako podejrzanej."
+      3: "Opłata jest pobierana wyłącznie za przelew zrealizowany w trybie natychmiastowym; przelew, którego nie udało się zrealizować w tym trybie, jest wykonywany w zwykłym trybie za opłatą właściwą dla przelewu krajowego."
+
+  # ---------------------------------------------------------------- III. Przedsiębiorcy
+  - id: taryfa-bankowosc-elektroniczna-firmy-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Sekcja dotyczy przedsiębiorców — osób fizycznych prowadzących działalność gospodarczą oraz osób prawnych i jednostek organizacyjnych niebędących osobami prawnymi — korzystających z bankowości elektronicznej dla firm. {Abonament|Opłata abonamentowa} obejmuje {{fakt:oplata.bankowosc-elektroniczna.uzytkownicy-w-cenie}} oraz podstawowe moduły rachunków i płatności."
+      - akapit: "Opłaty za przelewy wykonywane w bankowości elektronicznej dla firm wynikają z taryfy właściwej dla rachunku; w niniejszej sekcji podano opłaty za dostęp, moduły dodatkowe i narzędzia uwierzytelniania. Do przedsiębiorców będących mikroprzedsiębiorcami stosuje się przepisy o usługach płatniczych w zakresie, w którym nie zostały wyłączone umową."
+
+  - id: taryfa-bankowosc-elektroniczna-firmy-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Abonament za bankowość elektroniczną dla firm[^1]"
+            stawka: "{{fakt:oplata.firma.bankowosc-abonament}}"
+            tryb: "miesięcznie"
+          - usluga: "Dodatkowy użytkownik powyżej liczby objętej abonamentem"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.uzytkownik-dodatkowy}}"
+            tryb: "miesięcznie"
+          - usluga: "Token sprzętowy dla użytkownika bankowości firmowej"
+            stawka: "{{fakt:oplata.firma.token-sprzetowy}}"
+            tryb: "jednorazowo"
+          - usluga: "Certyfikat do podpisywania dyspozycji w {pakiecie|module} bankowości firmowej"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.certyfikat-firmowy}}"
+            tryb: "rocznie"
+          - usluga: "Moduł przelewów masowych i paczek płatności"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-przelewy-masowe}}"
+            tryb: "miesięcznie"
+          - usluga: "Moduł importu plików płatności i wyciągów"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-import-plikow}}"
+            tryb: "miesięcznie"
+          - usluga: "Moduł akceptacji wielostopniowych[^2]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-akceptacje}}"
+            tryb: "miesięcznie"
+          - usluga: "Moduł obsługi wielu rachunków i pełnomocnictw (multikonto)"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-multikonto}}"
+            tryb: "miesięcznie"
+          - usluga: "Moduł rozliczeń walutowych i transakcji wymiany walut"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-fx}}"
+            tryb: "miesięcznie"
+          - usluga: "Przelew w złotych w bankowości elektronicznej dla firm"
+            stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}"
+            tryb: "za przelew"
+          - usluga: "Przelew w paczce przelewów masowych"
+            stawka: "{{fakt:oplata.firma.paczka-przelewow}}"
+            tryb: "za przelew w paczce"
+          - usluga: "Przelew wewnętrzny między rachunkami Banku"
+            stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}"
+            tryb: "za przelew"
+          - usluga: "Przelew natychmiastowy[^3]"
+            stawka: "{{fakt:oplata.przelew-natychmiastowy}}"
+            tryb: "za przelew"
+          - usluga: "Wyciąg w formacie MT940 dostarczany elektronicznie"
+            stawka: "{{fakt:oplata.firma.wyciag-mt940}}"
+            tryb: "miesięcznie"
+          - usluga: "Integracja systemu finansowo-księgowego Klienta z bankowością przez interfejs API"
+            stawka: "{{fakt:oplata.firma.integracja-api}}"
+            tryb: "miesięcznie"
+    przypisy:
+      1: "Abonament obejmuje dostęp do rachunków, historii operacji, przelewów krajowych, zleceń stałych i wyciągów w formie elektronicznej dla liczby użytkowników wskazanej we wstępie do niniejszej sekcji."
+      2: "Moduł pozwala ustalić do {czterech|4} kolejnych poziomów akceptacji dyspozycji, w zależności od kwoty i rodzaju operacji; przydzielenie uprawnień wymaga oświadczenia osób uprawnionych do reprezentacji."
+      3: "Limit kwotowy przelewu natychmiastowego wynosi {{fakt:limit.firma.przelew-natychmiastowy}} za jedną dyspozycję."
+
+  # ---------------------------------------------------------------- IV. Klienci instytucjonalni
+  - id: taryfa-bankowosc-elektroniczna-inst-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Klientami instytucjonalnymi są w rozumieniu Taryfy w szczególności jednostki sektora finansów publicznych, wspólnoty mieszkaniowe, stowarzyszenia, fundacje i inne podmioty niedziałające w celu osiągnięcia zysku, {którym|dla których} Bank zawarł odrębną umowę o korzystanie z bankowości elektronicznej."
+      - akapit: "Dla klientów instytucjonalnych {stosuje się|obowiązują} preferencyjne stawki za dostęp i narzędzia uwierzytelniania; opłaty za przelewy określa taryfa właściwa dla rachunku. Opłaty za integrację i wdrożenie ustala się indywidualnie w umowie, w granicach wskazanych poniżej."
+
+  - id: taryfa-bankowosc-elektroniczna-inst-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Abonament za bankowość elektroniczną dla klientów instytucjonalnych[^1]"
+            stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}"
+            tryb: "miesięcznie"
+          - usluga: "Dostęp dla {dodatkowego|kolejnego} użytkownika wskazanego przez jednostkę"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.uzytkownik-dodatkowy}}"
+            tryb: "miesięcznie"
+          - usluga: "Token sprzętowy dla użytkownika instytucjonalnego"
+            stawka: "{{fakt:oplata.firma.token-sprzetowy}}"
+            tryb: "jednorazowo"
+          - usluga: "Moduł obsługi rachunków pomocniczych (jednostki podległe i rachunki szczegółowe)"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-multikonto}}"
+            tryb: "miesięcznie"
+          - usluga: "Moduł przelewów masowych — wypłaty wynagrodzeń i świadczeń"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-przelewy-masowe}}"
+            tryb: "miesięcznie"
+          - usluga: "Przelew w bankowości elektronicznej dla klientów instytucjonalnych"
+            stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}"
+            tryb: "za przelew"
+          - usluga: "Przelew do ZUS i urzędów skarbowych[^2]"
+            stawka: "{{fakt:oplata.firma.przelew-zus-us}}"
+            tryb: "za przelew"
+          - usluga: "Przelew podzielonej płatności (split payment)"
+            stawka: "{{fakt:oplata.firma.przelew-podzielona-platnosc}}"
+            tryb: "za przelew"
+          - usluga: "Zlecenie stałe ustanowione w bankowości elektronicznej"
+            stawka: "{{fakt:oplata.firma.zlecenie-stale}}"
+            tryb: "za każdą realizację"
+          - usluga: "Polecenie zapłaty — realizacja"
+            stawka: "{{fakt:oplata.firma.polecenie-zaplaty}}"
+            tryb: "za każde polecenie"
+          - usluga: "Wyciąg w formacie MT940 dostarczany elektronicznie"
+            stawka: "{{fakt:oplata.firma.wyciag-mt940}}"
+            tryb: "miesięcznie"
+          - usluga: "Wdrożenie i konfiguracja bankowości elektronicznej w siedzibie klienta[^3]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.wdrozenie-dzien}}"
+            tryb: "za dzień roboczy"
+    przypisy:
+      1: "Stawkę stosuje się do jednostek, z którymi Bank zawarł umowę o prowadzenie rachunków; w razie kilku rachunków tej samej jednostki abonament jest pobierany jeden raz."
+      2: "Opłatę pobiera się niezależnie od tego, czy przelew został złożony w pojedynczej dyspozycji, czy w ramach paczki przelewów; przelewy do organów podatkowych na rachunki mikrorachunków podatkowych są realizowane na tych samych zasadach."
+      3: "Opłata dotyczy prac wykonywanych w siedzibie klienta po wcześniejszym uzgodnieniu zakresu i terminu; koszty dojazdu poza obszarem miejscowości, w której mieści się placówka Banku, ustala się w umowie."

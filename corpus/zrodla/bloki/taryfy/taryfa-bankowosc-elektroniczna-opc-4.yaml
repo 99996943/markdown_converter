@@ -1,0 +1,166 @@
+bloki:
+  # ---------------------------------------------------------------- VIII. Płatności mobilne
+  - id: taryfa-bankowosc-elektroniczna-opc-mobilne-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-mobilne
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Rejestracja karty debetowej w {portfelu|aplikacji} płatności mobilnych", stawka: "bez opłat", tryb: "za rejestrację"}
+          - {usluga: "Rejestracja karty kredytowej w portfelu płatności mobilnych", stawka: "bez opłat", tryb: "za rejestrację"}
+          - {usluga: "Rejestracja karty przedpłaconej w portfelu płatności mobilnych", stawka: "bez opłat", tryb: "za rejestrację"}
+          - {usluga: "Usunięcie karty z portfela płatności mobilnych", stawka: "bez opłat", tryb: "za usunięcie"}
+          - {usluga: "Wybór karty domyślnej do płatności zbliżeniowych telefonem", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Płatność zbliżeniowa telefonem do kwoty {{fakt:limit.bankowosc.platnosc-niskokwotowa}} bez potwierdzenia", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność zbliżeniowa telefonem powyżej kwoty {{fakt:limit.bankowosc.platnosc-niskokwotowa}} z potwierdzeniem w aplikacji", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność telefonem w komunikacji miejskiej i w biletomatach", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność telefonem w terminalu w walucie obcej w kraju", stawka: "wg Tabeli kursów walut", tryb: "za transakcję"}
+          - {usluga: "Weryfikacja płatności mobilnej odciskiem palca lub rozpoznawaniem twarzy", stawka: "bez opłat", tryb: "za transakcję"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-mobilne-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-mobilne
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Płatność mobilna za granicą — przeliczenie waluty obcej na złote", stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-zagranica}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Płatność mobilna w terminalu za granicą rozliczana w złotych (konwersja po stronie akceptanta)", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność mobilna w internecie za granicą", stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-zagranica}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Wypłata gotówki z bankomatu za granicą z użyciem aplikacji mobilnej", stawka: "wg taryfy kart płatniczych", tryb: "za operację"}
+          - {usluga: "Zmiana limitu pojedynczej płatności mobilnej do {{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-limit-jednorazowy}}", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zmiana dziennego limitu płatności mobilnych do {{fakt:limit.platnosci-mobilne.dzienny}}", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zmiana limitu płatności mobilnych na Infolinii", stawka: "{{fakt:oplata.bankowosc-elektroniczna.zmiana-limitu-infolinia}}", tryb: "za zmianę"}
+          - {usluga: "Zmiana limitu płatności mobilnych w placówce Banku", stawka: "{{fakt:oplata.bankowosc.zmiana-limitu-placowka}}", tryb: "za zmianę"}
+          - {usluga: "Tymczasowe wyłączenie płatności mobilnych na urządzeniu", stawka: "bez opłat", tryb: "za wyłączenie"}
+          - {usluga: "Ponowna aktywacja płatności mobilnych po wymianie urządzenia", stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-aktywacja}}", tryb: "jednorazowo"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-mobilne-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-mobilne
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew na numer telefonu — wysłanie środków w aplikacji", stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-na-telefon}}", tryb: "za przelew"}
+          - {usluga: "Przelew na numer telefonu — kwota maksymalna jednej dyspozycji {{fakt:oplata.bankowosc-elektroniczna.przelew-na-telefon-limit}}", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew na numer telefonu — otrzymanie środków", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Rejestracja numeru telefonu w usłudze przelewów na telefon", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Zmiana rachunku powiązanego z numerem telefonu", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Wyrejestrowanie numeru telefonu z usługi przelewów na telefon", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Płatność kodem w sklepie internetowym — {wygenerowanie|utworzenie} kodu w aplikacji", stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-kodem-sklep}}", tryb: "za transakcję"}
+          - {usluga: "Płatność kodem w sklepie internetowym — zatwierdzenie w aplikacji", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność kodem w terminalu stacjonarnym sprzedawcy", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Zwrot płatności kodem na rachunek Klienta", stawka: "bez opłat", tryb: "za zwrot"}
+          - {usluga: "Wypłata gotówki w bankomacie kodem wygenerowanym w aplikacji", stawka: "{{fakt:oplata.bankowosc-elektroniczna.wyplata-mobilna-bankomat}}", tryb: "za operację"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-mobilne-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-mobilne
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Płatności mobilne dla przedsiębiorców — rejestracja karty firmowej w portfelu", stawka: "bez opłat", tryb: "za rejestrację"}
+          - {usluga: "Płatność mobilna kartą firmową w kraju", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność mobilna kartą firmową za granicą", stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-zagranica}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Limit dzienny płatności mobilnych kartą firmową — zmiana w serwisie dla firm", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Akceptacja płatności mobilnych przez przedsiębiorcę w terminalu zbliżeniowym Banku", stawka: "wg umowy o akceptację płatności", tryb: "od kwoty transakcji"}
+          - {usluga: "Powiadomienie push o płatności mobilnej wykonanej kartą firmową", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}", tryb: "za powiadomienie"}
+          - {usluga: "Wniosek o zwiększenie limitu płatności mobilnych ponad {{fakt:limit.platnosci-mobilne.dzienny}}", stawka: "bez opłat", tryb: "za wniosek"}
+          - {usluga: "Zablokowanie portfela płatności mobilnych użytkownika na wniosek administratora", stawka: "bez opłat", tryb: "za zablokowanie"}
+          - {usluga: "Zdalne usunięcie danych karty z urządzenia zgłoszonego jako utracone", stawka: "bez opłat", tryb: "za usunięcie"}
+          - {usluga: "Przegląd historii płatności mobilnych w aplikacji", stawka: "bez opłat", tryb: "za zapytanie"}
+
+  # ---------------------------------------------------------------- IX. Usługi dodatkowe
+  - id: taryfa-bankowosc-elektroniczna-opc-uslugi-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Dodanie rachunku z innego banku do agregacji — pierwszy rachunek", stawka: "{{fakt:oplata.bankowosc-elektroniczna.agregacja-rachunkow}}", tryb: "miesięcznie"}
+          - {usluga: "Dodanie rachunku z innego banku do agregacji — każdy kolejny rachunek", stawka: "{{fakt:oplata.bankowosc-elektroniczna.agregacja-dodatkowy-rachunek}}", tryb: "miesięcznie"}
+          - {usluga: "Odświeżenie danych zagregowanych rachunków {na żądanie|ręcznie}", stawka: "bez opłat", tryb: "za odświeżenie"}
+          - {usluga: "Udzielenie zgody na dostęp do informacji o rachunku dostawcy usług płatniczych", stawka: "bez opłat", tryb: "za zgodę"}
+          - {usluga: "Odnowienie zgody na agregację po upływie okresu ważności", stawka: "bez opłat", tryb: "za odnowienie"}
+          - {usluga: "Kategoryzacja wydatków i raport budżetu domowego", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Eksport zagregowanych danych o rachunkach do pliku", stawka: "bez opłat", tryb: "za eksport"}
+          - {usluga: "Zlecenie przelewu z rachunku w innym banku w ramach usługi inicjowania płatności", stawka: "bez opłat", tryb: "za zlecenie"}
+          - {usluga: "Potwierdzenie dostępności środków na wniosek wydawcy instrumentu płatniczego", stawka: "bez opłat", tryb: "za potwierdzenie"}
+          - {usluga: "Cofnięcie zgody i usunięcie zagregowanych danych", stawka: "bez opłat", tryb: "za cofnięcie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uslugi-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wyciąg z rachunku w bankowości elektronicznej — format PDF", stawka: "{{fakt:oplata.bankowosc.wyciag-elektroniczny}}", tryb: "za wyciąg"}
+          - {usluga: "Wyciąg w formacie MT940 — Klient indywidualny", stawka: "{{fakt:oplata.firma.wyciag-mt940}}", tryb: "miesięcznie"}
+          - {usluga: "Zestawienie opłat i prowizji za rok kalendarzowy (zgodnie z przepisami o rachunku płatniczym)", stawka: "bez opłat", tryb: "rocznie"}
+          - {usluga: "E-archiwum dokumentów — przechowywanie powyżej {{fakt:bankowosc.historia-operacji}}", stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-archiwum}}", tryb: "miesięcznie"}
+          - {usluga: "Wydruk dokumentu z e-archiwum w placówce Banku", stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-dokument-kopia-papierowa}}", tryb: "za dokument"}
+          - {usluga: "Doręczenie dokumentu z e-archiwum listem zwykłym", stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-dokument-kopia-papierowa}}", tryb: "za dokument"}
+          - {usluga: "Przesłanie dokumentu z e-archiwum na wskazany adres e-mail", stawka: "bez opłat", tryb: "za dokument"}
+          - {usluga: "Elektroniczna korespondencja z Bankiem w serwisie (skrzynka odbiorcza)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Zmiana formy doręczania dokumentów z papierowej na elektroniczną", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zmiana formy doręczania dokumentów z elektronicznej na papierową", stawka: "bez opłat", tryb: "za zmianę"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uslugi-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Dostęp do interfejsu API {w środowisku|do środowiska} testowym (sandbox)", stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-sandbox}}", tryb: "miesięcznie"}
+          - {usluga: "Dostęp do interfejsu API w środowisku produkcyjnym — pakiet {{fakt:oplata.bankowosc-elektroniczna.api-limit-zapytan}}", stawka: "{{fakt:oplata.firma.integracja-api}}", tryb: "miesięcznie"}
+          - {usluga: "Zapytanie do interfejsu API ponad miesięczny pakiet", stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-zapytanie-ponad-limit}}", tryb: "za zapytanie"}
+          - {usluga: "Certyfikat do uwierzytelnienia aplikacji zewnętrznej w interfejsie API", stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-certyfikat-tpp}}", tryb: "rocznie"}
+          - {usluga: "Certyfikat do podpisu zleceń przesyłanych przez interfejs API", stawka: "{{fakt:oplata.bankowosc-elektroniczna.certyfikat-firmowy}}", tryb: "rocznie"}
+          - {usluga: "Rejestracja aplikacji zewnętrznej w portalu dla programistów", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przegląd zgodności integracji z wymaganiami bezpieczeństwa Banku", stawka: "{{fakt:oplata.bankowosc-elektroniczna.wdrozenie-dzien}}", tryb: "za dzień roboczy"}
+          - {usluga: "Zapytanie o saldo rachunku przez dostawcę usług płatniczych (API)", stawka: "bez opłat", tryb: "za zapytanie"}
+          - {usluga: "Inicjowanie płatności przez dostawcę usług płatniczych (API)", stawka: "wg taryfy właściwej dla przelewu", tryb: "za zlecenie"}
+          - {usluga: "Wsparcie techniczne zespołu integracji w czasie wdrożenia interfejsu API", stawka: "{{fakt:oplata.bankowosc-elektroniczna.szkolenie-godzina}}", tryb: "za godzinę"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uslugi-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Pomoc {zdalna|telefoniczna} konsultanta Infolinii w godzinach {{fakt:kontakt.godziny-infolinii}}", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Zgłoszenie błędu w działaniu aplikacji mobilnej lub serwisu internetowego", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Zdalna sesja serwisowa z udostępnieniem ekranu", stawka: "{{fakt:oplata.bankowosc-elektroniczna.pomoc-zdalna-sesja}}", tryb: "za sesję"}
+          - {usluga: "Szkolenie z obsługi bankowości elektronicznej dla firm — w siedzibie Klienta", stawka: "{{fakt:oplata.bankowosc-elektroniczna.szkolenie-godzina}}", tryb: "za godzinę"}
+          - {usluga: "Szkolenie z obsługi bankowości elektronicznej dla firm — online", stawka: "bez opłat", tryb: "za szkolenie"}
+          - {usluga: "Wsparcie wdrożeniowe — konfiguracja uprawnień, limitów i schematów akceptacji", stawka: "{{fakt:oplata.bankowosc-elektroniczna.wdrozenie-dzien}}", tryb: "za dzień roboczy"}
+          - {usluga: "Dedykowany opiekun techniczny bankowości dla firm", stawka: "{{fakt:oplata.bankowosc-elektroniczna.dedykowany-opiekun}}", tryb: "miesięcznie"}
+          - {usluga: "Priorytetowa obsługa zgłoszeń awarii w dni robocze", stawka: "wliczona w opłatę za dedykowanego opiekuna", tryb: "za zgłoszenie"}
+          - {usluga: "Wypowiedzenie modułu dodatkowego z zachowaniem terminu {{fakt:termin.bankowosc-elektroniczna.wypowiedzenie-modulu}}", stawka: "bez opłat", tryb: "za wypowiedzenie"}
+          - {usluga: "Wiadomość kurierska z instrukcją i danymi dostępowymi do bankowości dla firm", stawka: "{{fakt:oplata.bankowosc-elektroniczna.kurier-token}}", tryb: "za przesyłkę"}
+
+  # ---------------------------------------------------------------- I. Postanowienia ogólne (akapity dodatkowe)
+  - id: taryfa-bankowosc-elektroniczna-opc-ogolne-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: akapity-bankowosc-elektroniczna-ogolne
+    elementy:
+      - akapit: "Opłaty za usługi bankowości elektronicznej {są pobierane|obciążają rachunek} wskazany przez Klienta jako rachunek do rozliczania opłat; jeżeli Klient nie wskazał takiego rachunku, opłaty pobiera się z rachunku, do którego aktywowano usługę."
+      - akapit: "Opłaty abonamentowe za część miesiąca, w którym usługę aktywowano, nie są pobierane; za miesiąc, w którym usługę wypowiedziano, pobiera się opłatę w pełnej wysokości."
+      - akapit: "Ograniczenie, zawieszenie lub zablokowanie dostępu do bankowości elektronicznej z przyczyn określonych w regulaminie nie zwalnia Klienta z obowiązku zapłaty opłat abonamentowych za okres blokady, chyba że przyczyna blokady leżała po stronie Banku."
+
+  - id: taryfa-bankowosc-elektroniczna-opc-ogolne-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: akapity-bankowosc-elektroniczna-ogolne
+    elementy:
+      - ustep: "Stawki za dostęp do bankowości elektronicznej i aplikacji mobilnej obowiązują od dnia aktywacji usługi. Zmiana stawek abonamentowych na niekorzyść Klienta wymaga zachowania trybu zmiany Taryfy określonego w umowie i w regulaminie."
+      - ustep: "Bank może nie pobierać opłat lub pobierać je w obniżonej wysokości w ramach ofert promocyjnych; warunki promocji ogłasza się w regulaminie promocji, a po jej zakończeniu stosuje się stawki z Taryfy."
+      - akapit: "Opłaty, których nie wskazano w Taryfie, nie są pobierane. W razie wątpliwości co do wysokości opłaty za usługę Klient może zwrócić się do Banku pod numerem {{fakt:kontakt.infolinia}}."
+
+  - id: taryfa-bankowosc-elektroniczna-opc-ogolne-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: akapity-bankowosc-elektroniczna-ogolne
+    elementy:
+      - akapit: "Bank {zastrzega|zachowuje} prawo do czasowego wstrzymania usług bankowości elektronicznej w oknie serwisowym {{fakt:bankowosc.okno-serwisowe}} oraz w razie planowanych prac, o których informuje z wyprzedzeniem {{fakt:bankowosc.przerwa-zapowiedz}} dni. Przerwy te nie uzasadniają obniżenia opłat abonamentowych, jeżeli ich łączny czas w miesiącu nie przekracza {{fakt:bankowosc.przerwa-maks}}."
+      - akapit: "Opłaty abonamentowe są wymagalne za cały miesiąc, w którym Klient mógł korzystać z usługi, także wtedy, gdy z usługi nie skorzystał. Za przerwę trwającą dłużej niż {{fakt:bankowosc.przerwa-maks}}, spowodowaną awarią po stronie Banku, opłatę abonamentową obniża się proporcjonalnie na wniosek Klienta."

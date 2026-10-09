@@ -1,0 +1,158 @@
+bloki:
+  # ---------------------------------------------------------------- IV. Klienci instytucjonalni
+  - id: taryfa-bankowosc-elektroniczna-opc-inst-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Aktywacja bankowości elektronicznej dla {jednostki|podmiotu} instytucjonalnego", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Aktywacja dostępu dla jednostki organizacyjnej podległej (rachunek pomocniczy)", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Zmiana osób uprawnionych do dysponowania rachunkiem w bankowości elektronicznej", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za zmianę"}
+          - {usluga: "Dostęp w trybie „tylko do odczytu” dla biegłego rewidenta lub organu kontrolnego", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Dostęp dla księgowego zewnętrznego bez prawa składania dyspozycji", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Wniosek o zmianę zakresu uprawnień złożony w serwisie przez osobę reprezentującą", stawka: "bez opłat", tryb: "za wniosek"}
+          - {usluga: "Przelew do budżetu {państwa|jednostek samorządu} złożony w bankowości elektronicznej", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew"}
+          - {usluga: "Przelew wewnętrzny między rachunkami jednostki", stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}", tryb: "za przelew"}
+          - {usluga: "Przelew zbiorczy wynagrodzeń z listy płac", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za przelew w paczce"}
+          - {usluga: "Polecenie przelewu do rachunku jednostki zagranicznej w euro (SEPA)", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-inst-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Rachunek wspólnoty mieszkaniowej — dostęp do bankowości elektronicznej dla zarządu", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-wspolnota}}", tryb: "miesięcznie"}
+          - {usluga: "Dostęp do rachunku wspólnoty dla zarządcy nieruchomości", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Dostęp do rachunku wspólnoty dla członka zarządu (do trzech osób)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Raport wpłat członków wspólnoty z podziałem na lokale", stawka: "bez opłat", tryb: "za raport"}
+          - {usluga: "Import listy lokali i należności z pliku", stawka: "bez opłat", tryb: "za plik"}
+          - {usluga: "Wirtualne rachunki do identyfikacji wpłat (pula do 100 numerów)[^1]", stawka: "{{fakt:oplata.bankowosc-elektroniczna.modul-multikonto}}", tryb: "miesięcznie"}
+          - {usluga: "Wirtualne rachunki do identyfikacji wpłat — każdy dodatkowy numer powyżej puli", stawka: "0,10 zł", tryb: "miesięcznie"}
+          - {usluga: "Raport wpłat identyfikowanych na wirtualnych rachunkach", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Powiadomienie e-mail o wpływie na rachunek wpłat dla zarządu wspólnoty", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Dostęp do e-archiwum wyciągów wspólnoty z ostatnich {{fakt:bankowosc.historia-operacji}}", stawka: "bez opłat", tryb: "miesięcznie"}
+    przypisy:
+      1: "Pula obejmuje numery wirtualne powiązane z jednym rachunkiem rozliczeniowym; wpłaty na te numery są księgowane na rachunku nadrzędnym, a ich identyfikację udostępnia się w raporcie wpłat."
+
+  - id: taryfa-bankowosc-elektroniczna-opc-inst-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Integracja bankowości elektronicznej z systemem {księgowym|finansowo-księgowym} jednostki — konfiguracja", stawka: "{{fakt:oplata.bankowosc-elektroniczna.wdrozenie-dzien}}", tryb: "za dzień roboczy"}
+          - {usluga: "Dostęp do interfejsu API w środowisku produkcyjnym", stawka: "{{fakt:oplata.firma.integracja-api}}", tryb: "miesięcznie"}
+          - {usluga: "Dostęp do środowiska testowego interfejsu API", stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-sandbox}}", tryb: "miesięcznie"}
+          - {usluga: "Szkolenie administratorów i użytkowników jednostki", stawka: "{{fakt:oplata.bankowosc-elektroniczna.szkolenie-godzina}}", tryb: "za godzinę"}
+          - {usluga: "Szkolenie online w ramach wdrożenia usługi dla grupy do {dziesięciu|10} osób", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Dedykowany opiekun techniczny", stawka: "{{fakt:oplata.bankowosc-elektroniczna.dedykowany-opiekun}}", tryb: "miesięcznie"}
+          - {usluga: "Pomoc zdalna konsultanta w godzinach pracy zespołu wsparcia", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Sesja serwisowa z udostępnieniem ekranu poza godzinami pracy zespołu", stawka: "{{fakt:oplata.bankowosc-elektroniczna.pomoc-zdalna-sesja}}", tryb: "za sesję"}
+          - {usluga: "Przygotowanie raportu na zamówienie jednostki", stawka: "wg indywidualnej wyceny", tryb: "za raport"}
+          - {usluga: "Przygotowanie opinii bankowej o obsłudze rachunków", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za opinię"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-inst-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Potwierdzenie salda dla potrzeb {badania|audytu} sprawozdania finansowego — w formie elektronicznej", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za potwierdzenie"}
+          - {usluga: "Poszukiwanie przelewu na zlecenie jednostki", stawka: "{{fakt:oplata.firma.poszukiwanie-przelewu}}", tryb: "za zlecenie"}
+          - {usluga: "Zwrot przelewu na wniosek jednostki", stawka: "{{fakt:oplata.firma.zwrot-przelewu-na-wniosek}}", tryb: "za zwrot"}
+          - {usluga: "Odwołanie przelewu złożonego w bankowości elektronicznej", stawka: "{{fakt:oplata.firma.odwolanie-przelewu}}", tryb: "za odwołanie"}
+          - {usluga: "Obsługa zajęcia wierzytelności w rachunku w związku z postępowaniem egzekucyjnym", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za zajęcie"}
+          - {usluga: "Zestawienie dyspozycji i akceptacji z historii operacji użytkowników (raport audytowy)", stawka: "bez opłat", tryb: "za raport"}
+          - {usluga: "Archiwizacja raportów audytowych dłuższa niż {{fakt:bankowosc.historia-operacji}}", stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-archiwum}}", tryb: "miesięcznie"}
+          - {usluga: "Rozwiązanie umowy o korzystanie z bankowości elektronicznej przez jednostkę", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przekazanie danych Klienta do innego dostawcy usług na wniosek jednostki", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Dodatkowy certyfikat do podpisywania dyspozycji instytucji", stawka: "{{fakt:oplata.bankowosc-elektroniczna.certyfikat-firmowy}}", tryb: "rocznie"}
+
+  # ---------------------------------------------------------------- V. Dostęp i narzędzia uwierzytelniania
+  - id: taryfa-bankowosc-elektroniczna-opc-uwierz-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uwierz
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Logowanie do serwisu internetowego z użyciem loginu, hasła i kodu autoryzacyjnego", stawka: "bez opłat", tryb: "za logowanie"}
+          - {usluga: "Logowanie do aplikacji mobilnej kodem PIN lub danymi biometrycznymi", stawka: "bez opłat", tryb: "za logowanie"}
+          - {usluga: "Zmiana kodu PIN do aplikacji mobilnej", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zmiana hasła o długości co najmniej {{fakt:bankowosc.min-dlugosc-hasla}}", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Odblokowanie dostępu po {{fakt:bankowosc.limit-prob}} — przez {Infolinię|konsultanta}", stawka: "{{fakt:oplata.bankowosc-elektroniczna.odblokowanie-dostepu-infolinia}}", tryb: "za odblokowanie"}
+          - {usluga: "Odblokowanie dostępu po {{fakt:bankowosc.limit-prob}} — w placówce Banku", stawka: "{{fakt:oplata.bankowosc-elektroniczna.odblokowanie-dostepu-placowka}}", tryb: "za odblokowanie"}
+          - {usluga: "Automatyczne odblokowanie dostępu następuje {{fakt:bankowosc.odblokowanie}}", stawka: "bez opłat", tryb: "za odblokowanie"}
+          - {usluga: "Aktywacja nowego urządzenia z użyciem kodu przesłanego wiadomością tekstową", stawka: "bez opłat", tryb: "za aktywację"}
+          - {usluga: "Wylogowanie wszystkich urządzeń i unieważnienie sesji z poziomu serwisu", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Usunięcie zaufanego urządzenia z listy urządzeń w serwisie", stawka: "bez opłat", tryb: "za usunięcie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uwierz-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uwierz
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Token sprzętowy — wydanie dla Klienta posiadającego {pakiet rozszerzony|pakiet rodzinny}", stawka: "{{fakt:oplata.bankowosc.token}}", tryb: "jednorazowo"}
+          - {usluga: "Token sprzętowy — wydanie w trybie pilnym z doręczeniem kurierem", stawka: "{{fakt:oplata.bankowosc.token}} i {{fakt:oplata.bankowosc-elektroniczna.kurier-token}}", tryb: "jednorazowo"}
+          - {usluga: "Token sprzętowy — wymiana po zakończeniu okresu eksploatacji baterii", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Token sprzętowy — wymiana urządzenia zgubionego lub zniszczonego", stawka: "{{fakt:oplata.bankowosc-elektroniczna.token-wymiana}}", tryb: "jednorazowo"}
+          - {usluga: "Token sprzętowy — odblokowanie po {trzykrotnym|trzech kolejnych} błędnym wprowadzeniu kodu PIN", stawka: "{{fakt:oplata.bankowosc-elektroniczna.token-odblokowanie-pin}}", tryb: "za odblokowanie"}
+          - {usluga: "Token sprzętowy — synchronizacja urządzenia w placówce", stawka: "bez opłat", tryb: "za synchronizację"}
+          - {usluga: "Token sprzętowy — dezaktywacja na wniosek Klienta", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Zwrot niewykorzystanego tokenu w terminie 14 dni od wydania", stawka: "zwrot opłaty w pełnej wysokości", tryb: "jednorazowo"}
+          - {usluga: "Ponowne wydanie tokenu po jego niezwróconym wygaśnięciu", stawka: "{{fakt:oplata.bankowosc-elektroniczna.token-wymiana}}", tryb: "jednorazowo"}
+          - {usluga: "Przesyłka tokenu listem poleconym", stawka: "9,00 zł", tryb: "za przesyłkę"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uwierz-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uwierz
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Kody jednorazowe SMS do autoryzacji dyspozycji — liczba wiadomości w {kraju|Polsce}", stawka: "{{fakt:oplata.bankowosc.sms-kod}}", tryb: "za wiadomość"}
+          - {usluga: "Kody jednorazowe SMS — ponowne wysłanie po wygaśnięciu kodu ({{fakt:bankowosc.waznosc-kodu-sms}})", stawka: "{{fakt:oplata.bankowosc.sms-kod}}", tryb: "za wiadomość"}
+          - {usluga: "Kody jednorazowe SMS wysyłane na numer zagraniczny", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Zmiana numeru telefonu do kodów jednorazowych w serwisie z użyciem tokenu", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Karta kodów jednorazowych — wydanie pierwszej karty", stawka: "{{fakt:oplata.bankowosc-elektroniczna.karta-kodow-jednorazowych}}", tryb: "za kartę"}
+          - {usluga: "Karta kodów jednorazowych — wydanie kolejnej karty po wykorzystaniu kodów", stawka: "{{fakt:oplata.bankowosc-elektroniczna.karta-kodow-jednorazowych}}", tryb: "za kartę"}
+          - {usluga: "Zastrzeżenie karty kodów jednorazowych", stawka: "bez opłat", tryb: "za zastrzeżenie"}
+          - {usluga: "Powiadomienie push z prośbą o potwierdzenie dyspozycji", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Potwierdzenie dyspozycji kodem QR wyświetlonym w serwisie internetowym", stawka: "bez opłat", tryb: "za potwierdzenie"}
+          - {usluga: "Weryfikacja tożsamości na Infolinii z użyciem hasła słownego", stawka: "bez opłat", tryb: "za weryfikację"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uwierz-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uwierz
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zgłoszenie utraty lub kradzieży telefonu z zainstalowaną aplikacją — zablokowanie dostępu", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Zgłoszenie podejrzenia przejęcia dostępu i zmiana wszystkich danych logowania", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Przywrócenie dostępu po zastrzeżeniu — w serwisie internetowym", stawka: "bez opłat", tryb: "za przywrócenie"}
+          - {usluga: "Przywrócenie dostępu po zastrzeżeniu — w placówce Banku", stawka: "{{fakt:oplata.bankowosc-elektroniczna.odblokowanie-dostepu-placowka}}", tryb: "za przywrócenie"}
+          - {usluga: "Nowy kod aktywacyjny do aplikacji po utracie urządzenia", stawka: "{{fakt:oplata.bankowosc.nowy-kod-aktywacyjny}}", tryb: "jednorazowo"}
+          - {usluga: "Wniosek o zmianę metody autoryzacji (SMS, aplikacja, token) złożony w serwisie", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Wniosek o zmianę metody autoryzacji złożony w placówce Banku", stawka: "{{fakt:oplata.bankowosc.zmiana-limitu-placowka}}", tryb: "za zmianę"}
+          - {usluga: "Ponowne silne uwierzytelnienie przy dostępie do informacji o rachunku (co {{fakt:bankowosc.ponowne-sca}})", stawka: "bez opłat", tryb: "za uwierzytelnienie"}
+          - {usluga: "Przegląd zaufanych urządzeń i historii logowań", stawka: "bez opłat", tryb: "za zapytanie"}
+          - {usluga: "Wydruk historii logowań w placówce Banku", stawka: "{{fakt:oplata.bankowosc-elektroniczna.potwierdzenie-papierowe}}", tryb: "za wydruk"}
+
+  # ---------------------------------------------------------------- VI. Powiadomienia
+  - id: taryfa-bankowosc-elektroniczna-opc-powiad-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-powiad
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Powiadomienie o {uznaniu|wpływie} rachunku — komunikat push", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o obciążeniu rachunku — komunikat push", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o transakcji kartą — komunikat push", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o wpływie wynagrodzenia — wiadomość e-mail", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-email}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o terminie płatności rachunku lub raty — wiadomość e-mail", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-email}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o zbliżającym się końcu okresu lokaty — komunikat push", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o wykonaniu zlecenia stałego — wiadomość e-mail", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-email}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o odrzuceniu dyspozycji z braku środków", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o wygasającym terminie ważności karty lub tokenu", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o zmianie Taryfy lub regulaminu — wiadomość w serwisie", stawka: "bez opłat", tryb: "za powiadomienie"}

@@ -1,0 +1,171 @@
+bloki:
+  - id: taryfa-bankowosc-elektroniczna-opc-ind-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-ind
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Widżet z saldem rachunku na ekranie blokady telefonu", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Podgląd salda bez logowania (po włączeniu przez Klienta w ustawieniach aplikacji)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Cele oszczędnościowe i skarbonki w aplikacji mobilnej", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Wirtualna karta do płatności internetowych — wydanie w aplikacji", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Wirtualna karta do płatności internetowych — {prowadzenie|obsługa}", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Zmiana motywu i języka aplikacji, ustawienie ulubionych rachunków", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Skaner dokumentów płatniczych (odczyt kodu QR i danych z faktury)", stawka: "bez opłat", tryb: "za skan"}
+          - {usluga: "Wyszukiwarka placówek i bankomatów Banku z nawigacją", stawka: "bez opłat", tryb: "za zapytanie"}
+          - {usluga: "Czat z konsultantem w aplikacji mobilnej w godzinach pracy Infolinii", stawka: "bez opłat", tryb: "za rozmowę"}
+          - {usluga: "Rezerwacja wizyty w placówce Banku przez aplikację", stawka: "bez opłat", tryb: "za rezerwację"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-ind-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-ind
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Pakiet rozszerzony — rozszerzona historia operacji powyżej {{fakt:bankowosc.historia-operacji}}", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rozszerzony — zwiększony pakiet {powiadomień|wiadomości} tekstowych (do {pięćdziesięciu|50} miesięcznie)", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rozszerzony — dostęp do e-archiwum dokumentów", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rozszerzony — priorytetowa obsługa zgłoszeń na Infolinii", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rozszerzony — zwiększony limit przelewu jednorazowego w aplikacji mobilnej", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rozszerzony — agregacja rachunków z innych banków (do trzech rachunków)", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rodzinny — wspólne cele oszczędnościowe i budżet domowy", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Pakiet rodzinny — powiadomienia o operacjach drugiego użytkownika (za jego zgodą)", stawka: "w cenie pakietu", tryb: "miesięcznie"}
+          - {usluga: "Przekształcenie pakietu rozszerzonego w pakiet rodzinny", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Wypowiedzenie pakietu przez Klienta w serwisie lub w aplikacji", stawka: "bez opłat", tryb: "jednorazowo"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-firmy-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-firmy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Moduł przelewów masowych — import paczki do {{fakt:limit.bankowosc.maksymalny-ustawiany}} łącznej wartości", stawka: "wliczone w opłatę za moduł", tryb: "za paczkę"}
+          - {usluga: "Moduł przelewów masowych — przelew w paczce", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za przelew w paczce"}
+          - {usluga: "Moduł przelewów masowych — odrzucenie paczki z błędami formalnymi", stawka: "bez opłat", tryb: "za paczkę"}
+          - {usluga: "Moduł przelewów masowych — wycofanie paczki przed realizacją", stawka: "bez opłat", tryb: "za paczkę"}
+          - {usluga: "Moduł akceptacji — dodanie kolejnego schematu akceptacji", stawka: "bez opłat", tryb: "za schemat"}
+          - {usluga: "Moduł akceptacji — zmiana progów kwotowych w schemacie", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Moduł multikonto — dodanie rachunku do widoku zbiorczego", stawka: "bez opłat", tryb: "za rachunek"}
+          - {usluga: "Moduł multikonto — nadanie uprawnień do rachunku pełnomocnikowi", stawka: "bez opłat", tryb: "za nadanie"}
+          - {usluga: "Moduł rozliczeń walutowych — zawarcie transakcji wymiany walut w serwisie", stawka: "wg kursu negocjowanego lub z Tabeli kursów", tryb: "za transakcję"}
+          - {usluga: "Moduł rozliczeń walutowych — ustawienie zlecenia z limitem kursowym", stawka: "bez opłat", tryb: "za zlecenie"}
+          - {usluga: "Dodatkowy moduł na życzenie Klienta — wycena indywidualna", stawka: "wg umowy", tryb: "miesięcznie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-firmy-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-firmy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Aplikacja mobilna dla firm — dostęp dla użytkownika w ramach abonamentu", stawka: "w cenie abonamentu", tryb: "miesięcznie"}
+          - {usluga: "Aplikacja mobilna dla firm — autoryzacja przelewów powyżej limitu jednorazowego {{fakt:limit.bankowosc.przelew-mobilny}} (tylko z użyciem tokenu)", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Aplikacja mobilna dla firm — akceptacja dyspozycji wprowadzonych w serwisie internetowym", stawka: "bez opłat", tryb: "za akceptację"}
+          - {usluga: "Skanowanie faktur i przygotowanie przelewu z danych odczytanych z dokumentu", stawka: "bez opłat", tryb: "za dokument"}
+          - {usluga: "Lista wierzycieli i odbiorców cyklicznych — import z pliku", stawka: "bez opłat", tryb: "za plik"}
+          - {usluga: "Biała lista podatników VAT — weryfikacja rachunku odbiorcy przed przelewem", stawka: "bez opłat", tryb: "za weryfikację"}
+          - {usluga: "Zlecenie stałe w złotych w bankowości dla firm — ustanowienie", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przelew w paczce w sesji {Elixir|Express Elixir}", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za przelew w paczce"}
+          - {usluga: "Wpłata na rachunek firmowy przez serwis internetowy — zasilenie z innego rachunku", stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}", tryb: "za wpłatę"}
+          - {usluga: "Zlecenie wypłaty gotówki z awizo składane w serwisie dla kwot powyżej {{fakt:limit.firma.awizo-wyplaty}}", stawka: "bez opłat", tryb: "za awizo"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-inst-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Schemat akceptacji dla jednostki sektora finansów publicznych — konfiguracja", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Dwuosobowa akceptacja dyspozycji (zasada „dwóch par oczu”)", stawka: "w cenie abonamentu", tryb: "za dyspozycję"}
+          - {usluga: "Akceptacja dyspozycji przez osobę zastępującą w czasie nieobecności głównego księgowego", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Przelew do rachunku w ramach planu finansowego jednostki — kontrola limitów", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew płatności publicznoprawnych zbiorczy (paczka do ZUS i urzędów)", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew"}
+          - {usluga: "Dyspozycja zwrotu nadpłaconych należności na rachunki płatników", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za przelew w paczce"}
+          - {usluga: "Raport dla organu nadzorczego z historii dyspozycji i akceptacji", stawka: "bez opłat", tryb: "za raport"}
+          - {usluga: "Eksport danych do systemu sprawozdawczości budżetowej", stawka: "bez opłat", tryb: "za plik"}
+          - {usluga: "Udzielenie dostępu do rachunków dla jednostki nadrzędnej w trybie „tylko podgląd”", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Dostosowanie serwisu do wymagań dostępności cyfrowej na zlecenie jednostki", stawka: "wg indywidualnej wyceny", tryb: "jednorazowo"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uwierz-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uwierz
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Dostęp do serwisu internetowego z urządzenia niezarejestrowanego — jednorazowe potwierdzenie w aplikacji", stawka: "bez opłat", tryb: "za logowanie"}
+          - {usluga: "Dostęp do aplikacji na urządzeniu z systemem w wersji niewspieranej", stawka: "niedostępny ze względów bezpieczeństwa", tryb: "—"}
+          - {usluga: "Zablokowanie logowania biometrycznego po zmianie danych biometrycznych w urządzeniu", stawka: "bez opłat", tryb: "za zablokowanie"}
+          - {usluga: "Ponowna aktywacja logowania biometrycznego", stawka: "{{fakt:oplata.bankowosc-elektroniczna.biometria-aktywacja}}", tryb: "za aktywację"}
+          - {usluga: "Hasło tymczasowe do pierwszego logowania doręczone wiadomością tekstową", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Hasło tymczasowe do pierwszego logowania doręczone listem poleconym", stawka: "9,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Kod aktywacyjny do aplikacji wydany w placówce Banku — ważność {{fakt:bankowosc.waznosc-kodu-aktywacyjnego}} dni", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Nowy kod aktywacyjny po upływie terminu ważności", stawka: "{{fakt:oplata.bankowosc.nowy-kod-aktywacyjny}}", tryb: "jednorazowo"}
+          - {usluga: "Automatyczne wylogowanie z serwisu po okresie nieaktywności {{fakt:bankowosc.timeout-sesji}}", stawka: "bez opłat", tryb: "za sesję"}
+          - {usluga: "Blokada konta bankowości elektronicznej nieużywanego przez {{fakt:bankowosc.nieaktywnosc}} dni", stawka: "bez opłat", tryb: "za blokadę"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-powiad-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-powiad
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Alert o próbie logowania z nietypowej lokalizacji", stawka: "bez opłat", tryb: "za alert"}
+          - {usluga: "Alert o zmianie danych kontaktowych lub numeru telefonu do autoryzacji", stawka: "bez opłat", tryb: "za alert"}
+          - {usluga: "Alert o dodaniu nowego urządzenia do aplikacji mobilnej", stawka: "bez opłat", tryb: "za alert"}
+          - {usluga: "Alert o zmianie limitów transakcji", stawka: "bez opłat", tryb: "za alert"}
+          - {usluga: "Alert o utworzeniu nowego odbiorcy na liście zaufanych", stawka: "bez opłat", tryb: "za alert"}
+          - {usluga: "Alert o transakcji kartą za granicą", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}", tryb: "za alert"}
+          - {usluga: "Alert o zbliżającym się końcu limitu w rachunku", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-email}}", tryb: "za alert"}
+          - {usluga: "Powiadomienie o terminie spłaty minimalnej kwoty zadłużenia na karcie — wiadomość tekstowa", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Powiadomienie o terminie spłaty minimalnej kwoty zadłużenia na karcie — komunikat push", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o wystawieniu wyciągu z rachunku w serwisie", stawka: "bez opłat", tryb: "za powiadomienie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-dyspozycje-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-dyspozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Otwarcie lokaty terminowej w serwisie internetowym lub w aplikacji", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Otwarcie rachunku oszczędnościowego w serwisie internetowym", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Otwarcie rachunku w walucie obcej w serwisie internetowym", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Zlecenie wydania karty płatniczej w serwisie lub w aplikacji", stawka: "wg taryfy kart płatniczych", tryb: "jednorazowo"}
+          - {usluga: "Zmiana PIN do karty w {aplikacji mobilnej|serwisie internetowym}", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zastrzeżenie karty w serwisie internetowym lub w aplikacji", stawka: "bez opłat", tryb: "za zastrzeżenie"}
+          - {usluga: "Zmiana limitów karty w aplikacji mobilnej", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zlecenie spłaty zadłużenia na karcie kredytowej z rachunku", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Złożenie wniosku o zmianę danych osobowych z załączeniem skanu dokumentu", stawka: "bez opłat", tryb: "za wniosek"}
+          - {usluga: "Złożenie reklamacji w serwisie internetowym", stawka: "bez opłat", tryb: "za reklamację"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-mobilne-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-mobilne
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Płatność mobilna w kraju — transakcja w {punkcie|terminalu} stacjonarnym", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność mobilna w kraju — transakcja z wykorzystaniem zegarka lub opaski z modułem zbliżeniowym", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Dodanie karty do urządzenia noszonego (zegarek, opaska)", stawka: "bez opłat", tryb: "za rejestrację"}
+          - {usluga: "Płatność mobilna w automacie samoobsługowym i parkomacie", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność mobilna z użyciem rachunku powiązanego z numerem telefonu odbiorcy", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Przekroczenie dziennego limitu płatności mobilnych {{fakt:limit.platnosci-mobilne.dzienny}} — odrzucenie transakcji", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Zwrot środków za płatność mobilną po reklamacji akceptanta", stawka: "bez opłat", tryb: "za zwrot"}
+          - {usluga: "Powiadomienie o płatności mobilnej — komunikat push", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o płatności mobilnej — wiadomość tekstowa", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Zgłoszenie nieautoryzowanej płatności mobilnej", stawka: "bez opłat", tryb: "za zgłoszenie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-uslugi-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zestawienie transakcji na żądanie Klienta za okres dłuższy niż {{fakt:bankowosc.historia-operacji}} — wersja elektroniczna", stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-archiwum}}", tryb: "za zestawienie"}
+          - {usluga: "Zestawienie transakcji na żądanie Klienta — wersja papierowa", stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-dokument-kopia-papierowa}}", tryb: "za zestawienie"}
+          - {usluga: "Elektroniczny podpis umowy i dokumentów w serwisie (podpis autoryzowany kodem)", stawka: "bez opłat", tryb: "za dokument"}
+          - {usluga: "Przechowywanie podpisanych elektronicznie umów w e-archiwum", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Usługa powiadomienia o fakturach i rachunkach cyklicznych (e-rachunki)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Płatność e-rachunku zaakceptowanego w serwisie", stawka: "bez opłat", tryb: "za płatność"}
+          - {usluga: "Konto demonstracyjne do nauki obsługi serwisu", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Przeniesienie danych (lista odbiorców, szablony) z poprzedniego banku", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Pomoc w przeniesieniu rachunku i zleceń stałych do Banku (usługa zmiany rachunku)", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Dostęp do portalu informacyjnego i bazy wiedzy Banku", stawka: "bez opłat", tryb: "miesięcznie"}

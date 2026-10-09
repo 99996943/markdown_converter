@@ -1,0 +1,49 @@
+id: taryfa-bankowosc-elektroniczna
+typ: taryfy
+temat: taryfa-bankowosc-elektroniczna
+tytul:
+  - "Taryfa opłat za usługi bankowości elektronicznej i mobilnej {{param:bank}}"
+  - "{{param:bank}} — Taryfa opłat za usługi bankowości elektronicznej i mobilnej"
+  - "Taryfa opłat i prowizji za korzystanie z bankowości internetowej i aplikacji mobilnej {{param:bank}}"
+uklady: [taryfa-siatka]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, taryfa-bankowosc-elektroniczna-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut]
+    opcjonalne: { kategorie: [akapity-bankowosc-elektroniczna-ogolne], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Klienci indywidualni"
+    wymagane: [taryfa-bankowosc-elektroniczna-ind-opis, taryfa-bankowosc-elektroniczna-ind-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-ind], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przedsiębiorcy"
+    wymagane: [taryfa-bankowosc-elektroniczna-firmy-opis, taryfa-bankowosc-elektroniczna-firmy-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-firmy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Klienci instytucjonalni"
+    wymagane: [taryfa-bankowosc-elektroniczna-inst-opis, taryfa-bankowosc-elektroniczna-inst-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-inst], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Dostęp i narzędzia uwierzytelniania"
+    wymagane: [taryfa-bankowosc-elektroniczna-uwierz-opis, taryfa-bankowosc-elektroniczna-uwierz-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-uwierz], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Powiadomienia"
+    wymagane: [taryfa-bankowosc-elektroniczna-powiad-opis, taryfa-bankowosc-elektroniczna-powiad-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-powiad], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Dyspozycje w kanałach elektronicznych"
+    wymagane: [taryfa-bankowosc-elektroniczna-dyspozycje-opis, taryfa-bankowosc-elektroniczna-dyspozycje-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-dyspozycje], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Płatności mobilne"
+    wymagane: [taryfa-bankowosc-elektroniczna-mobilne-opis, taryfa-bankowosc-elektroniczna-mobilne-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-mobilne], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Usługi dodatkowe"
+    wymagane: [taryfa-bankowosc-elektroniczna-uslugi-opis, taryfa-bankowosc-elektroniczna-uslugi-pozycje]
+    opcjonalne: { kategorie: [pozycje-bankowosc-elektroniczna-uslugi], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i postanowienia końcowe"
+    wymagane: [taryfa-bankowosc-elektroniczna-objasnienia]
