@@ -15,6 +15,10 @@ public static class Program
     /// <returns>Exit code.</returns>
     public static async Task<int> Main(string[] args)
     {
+        // Polish messages and pasted addresses: the Windows console defaults to an OEM code page.
+        Console.OutputEncoding = new System.Text.UTF8Encoding(false);
+        Console.InputEncoding = new System.Text.UTF8Encoding(false);
+
         using var cancellation = new CancellationTokenSource();
         Console.CancelKeyPress += (_, e) =>
         {
