@@ -26,14 +26,14 @@ internal static class UnitSplitter
         ArgumentNullException.ThrowIfNull(unit);
         ArgumentNullException.ThrowIfNull(renderer);
 
+        List<Atom> atoms = Atoms(unit.Blocks);
         HashSet<int> references = FootnoteSelector.References(unit.Blocks);
         string whole = renderer.Render(unit.Section, unit.Blocks, FootnoteSelector.Select(unit.Blocks, unit.Footnotes, references, withUnreferenced: true));
         if (whole.Length <= maxLength)
         {
-            return [new UnitPart(whole, [], Pages(unit), false)];
+            return [new UnitPart(whole, [], Pages(unit, atoms, atoms, firstPart: true), false)];
         }
 
-        List<Atom> atoms = Atoms(unit.Blocks);
         var groups = new List<List<Atom>>();
         var current = new List<Atom>();
         foreach (Atom atom in atoms)
@@ -58,7 +58,7 @@ internal static class UnitSplitter
         {
             string content = Render(unit, renderer, groups[g], references, last: g == groups.Count - 1);
             IReadOnlyList<string> labels = g > 0 && groups[g].Count > 0 && groups[g][0] is ItemAtom first ? first.Node.Labels() : [];
-            parts.Add(new UnitPart(content, labels, Pages(unit), content.Length > maxLength));
+            parts.Add(new UnitPart(content, labels, Pages(unit, atoms, groups[g], firstPart: g == 0), content.Length > maxLength));
         }
 
         return parts;
@@ -78,15 +78,16 @@ internal static class UnitSplitter
         {
             if (block is ListBlock list)
             {
-                AddItems(list, null, -1, atoms);
+                int page = list.Pages.First;
+                AddItems(list, null, -1, atoms, ref page);
             }
             else if (block is TableBlock { Rows.Count: > 0 } table)
             {
-                atoms.AddRange(Enumerable.Range(0, table.Rows.Count).Select(r => new RowAtom(table, r)));
+                atoms.AddRange(table.Rows.Select((row, r) => new RowAtom(table, r, PageTracker.Row(table, row))));
             }
             else
             {
-                atoms.Add(new BlockAtom(block));
+                atoms.Add(new BlockAtom(block, PageTracker.Block(block)));
             }
         }
 
@@ -94,17 +95,18 @@ internal static class UnitSplitter
     }
 
     // Pre-order: an item's own atom, then the items of its nested lists.
-    private static void AddItems(ListBlock list, ItemNode? parent, int childIndex, List<Atom> atoms)
+    private static void AddItems(ListBlock list, ItemNode? parent, int childIndex, List<Atom> atoms, ref int page)
     {
+        page = Math.Max(page, list.Pages.First);
         foreach (ListItem item in list.Items)
         {
             var node = new ItemNode(item, list, parent, childIndex);
-            atoms.Add(new ItemAtom(node));
+            atoms.Add(new ItemAtom(node, PageTracker.Item(item, ref page)));
             for (int k = 0; k < item.Children.Count; k++)
             {
                 if (item.Children[k] is ListBlock nested)
                 {
-                    AddItems(nested, node, k, atoms);
+                    AddItems(nested, node, k, atoms, ref page);
                 }
             }
         }
@@ -200,29 +202,42 @@ internal static class UnitSplitter
         return node.Item with { Children = children };
     }
 
-    private static PageSpan Pages(Unit unit)
+    /// <summary>
+    /// Pages of a part (FR-242): the first part of a section starts on the heading's page, any other part on the page of
+    /// its first atom; it ends on the last page of its atoms; both are clipped to the unit's pages.
+    /// </summary>
+    private static PageSpan Pages(Unit unit, IReadOnlyList<Atom> unitAtoms, IReadOnlyList<Atom> partAtoms, bool firstPart)
     {
+        int low;
+        int high;
         if (unit.Section is { } section)
         {
-            return new PageSpan(section.Pages.First, section.Pages.Last);
+            (low, high) = (section.Pages.First, section.Pages.Last);
+        }
+        else
+        {
+            IEnumerable<int> pages = unitAtoms.SelectMany(a => new[] { a.Pages.First, a.Pages.Last }).Concat(unit.Footnotes.Select(f => f.Page));
+            (low, high) = (pages.DefaultIfEmpty(1).Min(), pages.DefaultIfEmpty(1).Max());
         }
 
-        IEnumerable<int> firsts = unit.Blocks.Select(b => b.Pages.First).Concat(unit.Footnotes.Select(f => f.Page));
-        IEnumerable<int> lasts = unit.Blocks.Select(b => b.Pages.Last).Concat(unit.Footnotes.Select(f => f.Page));
-        return new PageSpan(firsts.DefaultIfEmpty(1).Min(), lasts.DefaultIfEmpty(1).Max());
+        int first = firstPart && unit.Section is not null ? low : partAtoms.Count > 0 ? partAtoms[0].Pages.First : low;
+        int last = partAtoms.Count > 0 ? partAtoms.Max(a => a.Pages.Last) : first;
+        first = Math.Clamp(first, low, high);
+        last = Math.Clamp(last, first, Math.Max(first, high));
+        return new PageSpan(first, last);
     }
 
-    /// <summary>An indivisible piece of a unit's content.</summary>
-    private abstract record Atom;
+    /// <summary>An indivisible piece of a unit's content with its source pages.</summary>
+    private abstract record Atom((int First, int Last) Pages);
 
     /// <summary>A whole block (paragraph, table without body rows).</summary>
-    private sealed record BlockAtom(ContentBlock Block) : Atom;
+    private sealed record BlockAtom(ContentBlock Block, (int First, int Last) Pages) : Atom(Pages);
 
     /// <summary>One body row of a table; rendered under the table's header row.</summary>
-    private sealed record RowAtom(TableBlock Table, int Row) : Atom;
+    private sealed record RowAtom(TableBlock Table, int Row, (int First, int Last) Pages) : Atom(Pages);
 
     /// <summary>A list item's own text and paragraphs, without its nested lists.</summary>
-    private sealed record ItemAtom(ItemNode Node) : Atom;
+    private sealed record ItemAtom(ItemNode Node, (int First, int Last) Pages) : Atom(Pages);
 
     /// <summary>A list item in its source tree.</summary>
     /// <param name="item">The item.</param>
