@@ -42,7 +42,23 @@ public sealed class UnitCollectorTests
     }
 
     [Fact]
-    public void Collect_SkippedPagesAreDroppedAndASectionWithOnlySkippedPagesIsNotAUnit()
+    public void Collect_SectionWithNeitherContentNorSubsectionsIsAHeadingOnlyUnit()
+    {
+        LegalDocument document = Document(
+            null,
+            null,
+            Section(2, SectionKind.Typographic, null, "USTAWA z dnia 10 maja 2018 r. o ochronie danych osobowych", 1, 1),
+            Section(2, SectionKind.Chapter, "Rozdział 1", "Rozdział 1. Przepisy ogólne", 1, 1, children: [Paragraph(1, 1, 1, Para("Pierwszy."))]));
+
+        IReadOnlyList<Splitting.Unit> units = UnitCollector.Collect(document);
+
+        Assert.Equal([ChunkUnitKind.Typographic, ChunkUnitKind.Paragraph], units.Select(u => u.Kind));
+        Assert.Empty(units[0].Blocks);
+        Assert.Equal(["USTAWA z dnia 10 maja 2018 r. o ochronie danych osobowych"], units[0].SegmentPath);
+    }
+
+    [Fact]
+    public void Collect_SkippedPagesAreDroppedAndASectionWithOnlySkippedPagesKeepsItsHeading()
     {
         var skipped = new SkippedPageBlock(new PageRange(2, 2), 2, SkipReason.NoTextLayer);
         LegalDocument document = Document(
@@ -53,8 +69,10 @@ public sealed class UnitCollectorTests
 
         IReadOnlyList<Splitting.Unit> units = UnitCollector.Collect(document);
 
-        Splitting.Unit unit = Assert.Single(units);
-        Assert.IsType<ParagraphBlock>(Assert.Single(unit.Blocks));
+        Assert.Equal(2, units.Count);
+        Assert.IsType<ParagraphBlock>(Assert.Single(units[0].Blocks));
+        Assert.Empty(units[1].Blocks);
+        Assert.Equal(["§ 2"], units[1].SegmentPath);
     }
 
     [Fact]

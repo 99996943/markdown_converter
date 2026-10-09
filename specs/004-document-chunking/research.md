@@ -28,8 +28,9 @@ niepotrzebna, publiczny `Render` wystarcza; zostaje jako awaryjna opcja addytywn
 
 **Decyzja**: przechodzimy drzewo sekcji w kolejności dokumentu. Jednostką jest: wstęp
 (`LegalDocument.Preamble` + `PreambleFootnotes`, gdy niepusty) oraz każda `Section`, która ma własne
-bloki (poza `SkippedPageBlock`) lub własne przypisy. Sekcja bez własnej treści nie tworzy jednostki, ale
-jej nagłówek jest w `sectionPath` potomków (z `Section.Path`). Rodzaj jednostki = `SectionKind` albo
+bloki (poza `SkippedPageBlock`) lub własne przypisy, a także sekcja bez treści i bez podsekcji (fragment z
+samym nagłówkiem, T045a). Sekcja bez własnej treści, ale z podsekcjami, nie tworzy jednostki — jej nagłówek
+jest w `sectionPath` potomków (z `Section.Path`). Rodzaj jednostki = `SectionKind` albo
 `Preamble`. Tytuł dokumentu (`# …` z `LegalDocument.Title`) nie jest jednostką — trafia do metadanych
 (`detectedTitle`), spec FR-234.
 

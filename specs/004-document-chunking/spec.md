@@ -41,6 +41,7 @@ błędy struktury poprawia się w parserze, nie w podziale.
 - (implementacja T006) Część zaczynająca się od pozycji zagnieżdżonej listy nie zachowuje wcięcia: wcięcie ≥ 4 spacji na początku treści CommonMark czyta jako blok kodu; położenie pozycji opisują `listLabels` (FR-222).
 - (implementacja T033a) Przypisy jednostki bez odwołania są pakowane na końcu jednostki jak inne niepodzielne elementy — gdy nie mieszczą się w ostatniej części, tworzą kolejne części (prawo bankowe, Art. 4: przypisy tytułu ustawy dawały część 3796 znaków) (FR-232).
 - (implementacja T045) Nagłówki sekcji bez własnej treści (np. „Rozdział 1. Przepisy ogólne” nad samymi artykułami) nie trafiają do treści żadnego fragmentu, tylko do `sectionPath` fragmentów podrzędnych; FR-234 je pomija (FR-220, FR-234).
+- (implementacja T045a) Sekcja bez własnej treści i bez podsekcji (np. nagłówek „USTAWA z dnia … o ochronie danych osobowych” obok rozdziałów) tworzy fragment z samym nagłówkiem — inaczej jej tekst nie trafiałby ani do treści, ani do ścieżek sekcji (FR-220).
 - Q: Czy każda linia pliku JSONL zawiera pełne metadane dokumentu? → A: Tak, każda linia jest samodzielna: wersja schematu, pełne metadane dokumentu i fragment (FR-251).
 
 ## User Scenarios & Testing *(mandatory)*
@@ -159,7 +160,9 @@ wyniku względem kontraktu.
   procedury z tekstem przed podsekcjami): jej własna treść to osobna jednostka; nigdy nie łączy się z
   treścią podsekcji.
 - **Sekcja bez własnej treści** (np. rozdział zawierający tylko paragrafy): nie tworzy fragmentu;
-  występuje tylko w ścieżkach sekcji swoich podsekcji.
+  występuje tylko w ścieżkach sekcji swoich podsekcji. Sekcja bez własnej treści i bez podsekcji (sam
+  nagłówek, np. tytuł ustawy jako nagłówek obok rozdziałów) tworzy fragment z samym nagłówkiem, by jej
+  tekst nie zginął.
 - **Jednostka bardzo krótka** (np. „Art. 5. (uchylony)”): osobny fragment, bez łączenia z sąsiednią.
 - **Niepodzielny element dłuższy niż limit** (jedna pozycja listy, jeden akapit, jeden wiersz
   tabeli): zostaje w całości w jednym fragmencie przekraczającym limit; fragment jest oznaczony jako
@@ -232,7 +235,8 @@ wyniku względem kontraktu.
 - **FR-220**: Jednostką podziału MUSI być własna treść jednej sekcji modelu dokumentu (artykuł,
   paragraf, sekcja tabeli-dokumentu, sekcja taryfy, sekcja procedury, inna sekcja z nagłówkiem)
   oraz treść przed pierwszą sekcją (wstęp). Fragment NIE MOŻE zawierać treści dwóch sekcji ani
-  łączyć wstępu z sekcją. Sekcja bez własnej treści nie tworzy fragmentu.
+  łączyć wstępu z sekcją. Sekcja bez własnej treści nie tworzy fragmentu, chyba że nie ma też
+  podsekcji — wtedy tworzy fragment z samym nagłówkiem.
 - **FR-221**: Jednostka, której treść nie przekracza limitu długości, MUSI tworzyć dokładnie jeden
   fragment. Limit jest liczony w znakach treści fragmentu, konfigurowalny w opcjach (co najmniej 200
   znaków); wartość domyślna to 2000 znaków.
