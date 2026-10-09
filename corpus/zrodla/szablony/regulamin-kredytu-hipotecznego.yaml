@@ -1,0 +1,63 @@
+id: regulamin-kredytu-hipotecznego
+typ: regulaminy
+temat: kredyt-hipoteczny
+tytul:
+  - "Regulamin kredytu hipotecznego dla konsumentów {{param:bank}}"
+  - "Regulamin {udzielania i spłaty|udzielania i obsługi} kredytu hipotecznego dla konsumentów"
+uklady: [jedna-kolumna]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje-regulamin, hip-zakres, hip-dokumenty]
+    opcjonalne: { kategorie: [paragraf-hip-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Przeznaczenie kredytu i wkład własny"
+    wymagane: [hip-przeznaczenie, hip-wklad]
+    opcjonalne: { kategorie: [paragraf-hip-przeznaczenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wniosek, dokumenty i ocena zdolności kredytowej"
+    wymagane: [hip-wniosek, hip-zdolnosc]
+    opcjonalne: { kategorie: [paragraf-hip-wniosek], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wycena nieruchomości"
+    wymagane: [hip-wycena]
+    opcjonalne: { kategorie: [paragraf-hip-wycena], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Decyzja kredytowa i umowa kredytu"
+    wymagane: [hip-decyzja, hip-umowa]
+    opcjonalne: { kategorie: [paragraf-hip-umowa], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zabezpieczenia kredytu"
+    wymagane: [hip-hipoteka, hip-cesja]
+    opcjonalne: { kategorie: [paragraf-hip-zabezpieczenia], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypłata kredytu w transzach"
+    wymagane: [hip-wyplata]
+    opcjonalne: { kategorie: [paragraf-hip-wyplata], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Oprocentowanie zmienne i okresowo stałe"
+    wymagane: [hip-oprocentowanie, hip-wskaznik]
+    opcjonalne: { kategorie: [paragraf-hip-oprocentowanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Spłata kredytu, wakacje kredytowe i wcześniejsza spłata"
+    wymagane: [hip-splata, hip-wakacje, hip-wczesna-splata]
+    opcjonalne: { kategorie: [paragraf-hip-splata], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Ubezpieczenia"
+    wymagane: [hip-ubezpieczenia]
+    opcjonalne: { kategorie: [paragraf-hip-ubezpieczenia], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Obowiązki kredytobiorcy"
+    wymagane: [hip-obowiazki]
+    opcjonalne: { kategorie: [paragraf-hip-obowiazki], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Opóźnienie w spłacie i wypowiedzenie umowy"
+    wymagane: [hip-opoznienie, hip-wypowiedzenie]
+    opcjonalne: { kategorie: [paragraf-hip-opoznienie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-reklamacje-regulamin, wspolne-zmiany-regulamin, wspolne-ochrona-danych-regulamin]
+    opcjonalne: { kategorie: [paragraf-hip-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "kredytu hipotecznego"

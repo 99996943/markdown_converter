@@ -1,0 +1,193 @@
+bloki:
+  # ===== Rozdział: Postanowienia ogólne =====
+  - id: hip-zakres
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin określa {zasady|warunki} udzielania, wypłaty, oprocentowania i spłaty kredytu hipotecznego udzielanego przez {{param:bank}} (dalej: „Bank”) konsumentom, a także prawa i obowiązki stron umowy kredytu."
+      - ustep: "Kredyt hipoteczny jest kredytem {zabezpieczonym|zabezpieczanym} hipoteką na nieruchomości, udzielanym w złotych polskich, na cele wskazane w {{ref:blok:hip-przeznaczenie}}. Kredytu nie udziela się w walucie obcej ani w innej walucie niż waluta, w której Kredytobiorca osiąga dochody."
+      - ustep: "Zasady udzielania kredytu hipotecznego, obowiązki informacyjne Banku i prawa konsumenta wynikają w szczególności z następujących aktów prawnych, których przepisy mają pierwszeństwo przed postanowieniami Regulaminu:"
+        punkty:
+          - "{{ref:akt:dz-u-2025-720-kredyt-hipoteczny}};"
+          - "{{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - ustep: "Do kredytu hipotecznego nie stosuje się przepisów o kredycie konsumenckim w zakresie, w jakim przepisy o kredycie hipotecznym regulują daną kwestię odrębnie; w sprawach nieuregulowanych stosuje się Kodeks cywilny."
+
+  - id: hip-dokumenty
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy kredytu Bank {przekazuje|udostępnia} Klientowi na trwałym nośniku:"
+        punkty:
+          - "informację o prawach konsumenta w zakresie i formie określonych w dokumencie: {{ref:akt:dz-u-2025-720-kredyt-hipoteczny}};"
+          - "formularz „Europejskie ujednolicone informacje standardowe” dotyczący kredytu hipotecznego, zawierający indywidualną ofertę;"
+          - "projekt umowy kredytu wraz z harmonogramem spłat opartym na aktualnych parametrach oprocentowania;"
+          - "niniejszy Regulamin;"
+          - "taryfę opłat i prowizji, tj. dokument: „{{ref:dokument:taryfa-kredyty}}” (dalej: „Taryfa”).[^1]"
+      - ustep: "Oferta Banku zawarta w formularzu informacyjnym wiąże Bank przez {{fakt:termin.hipoteka.oferta-wiazanie}} od dnia jej przekazania Klientowi. Po upływie tego terminu Bank {może|ma prawo} zaktualizować ofertę, w tym marżę i opłaty, na podstawie obowiązującej wówczas Taryfy."
+      - ustep: "Klient {może|ma prawo} otrzymać nieodpłatnie wyjaśnienia dotyczące oferty, pozwalające ocenić, czy kredyt odpowiada jego potrzebom i sytuacji finansowej. Wyjaśnień udzielają: {{fakt:jednostka.kredyty-hipoteczne}}, doradcy w placówkach, telefonicznie pod numerem {{fakt:kontakt.infolinia}} oraz w bankowości elektronicznej."
+    przypisy:
+      1: "Taryfa jest {dostępna|udostępniana} w placówkach Banku i na stronie {{fakt:bank.strona}}; opłaty za czynności związane z kredytem hipotecznym, w tym za wycenę i zmianę warunków umowy, podano w odrębnych pozycjach Taryfy."
+
+  # ===== Rozdział: Przeznaczenie kredytu i wkład własny =====
+  - id: hip-przeznaczenie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt hipoteczny może być przeznaczony {wyłącznie|jedynie} na jeden lub kilka z następujących celów:"
+        punkty:
+          - "nabycie lokalu mieszkalnego, domu jednorodzinnego albo prawa użytkowania wieczystego gruntu zabudowanego lub przeznaczonego pod zabudowę mieszkaniową;"
+          - "nabycie działki budowlanej i sfinansowanie budowy domu jednorodzinnego w systemie gospodarczym lub z udziałem generalnego wykonawcy;"
+          - "remont, modernizacja lub rozbudowa nieruchomości mieszkalnej stanowiącej własność Kredytobiorcy;"
+          - "refinansowanie kredytu lub pożyczki zaciągniętych na jeden z celów wymienionych w punktach 1–3, jeżeli zadłużenie jest zabezpieczone hipoteką na tej nieruchomości;"
+          - "spłata zobowiązań kredytowych w innym banku z jednoczesnym zwiększeniem kwoty kredytu o nie więcej niż {{fakt:limit.hipoteka.ltv}} wartości nieruchomości."
+      - ustep: "Kwota kredytu wynosi od {{fakt:limit.hipoteka.kwota-min}} do {{fakt:limit.hipoteka.kwota-max}}, a okres kredytowania od {{fakt:limit.hipoteka.okres-min}} do {{fakt:limit.hipoteka.okres-max}}. Okres kredytowania nie może przekraczać dnia, w którym najstarszy Kredytobiorca ukończy {{fakt:limit.hipoteka.wiek-koniec-umowy}}."
+      - ustep: "Bank nie finansuje nieruchomości, które nie mają urządzonej księgi wieczystej lub kwalifikujących się do jej założenia dokumentów, nieruchomości o nieuregulowanym stanie prawnym oraz nieruchomości, w których w dniu zawarcia umowy ustanowiono ograniczone prawa rzeczowe uniemożliwiające wpis hipoteki na pierwszym miejscu."
+      - ustep: "Środki z kredytu nie mogą być przeznaczone na działalność gospodarczą Kredytobiorcy ani na nabycie nieruchomości, której podstawowym przeznaczeniem jest działalność inna niż mieszkaniowa."
+
+  - id: hip-wklad
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca jest {obowiązany|zobowiązany} wnieść wkład własny w wysokości co najmniej {{fakt:limit.hipoteka.wklad-wlasny}} wartości nieruchomości albo ceny jej nabycia, przy czym do obliczenia przyjmuje się wartość niższą."
+      - ustep: "Wskaźnik LTV, czyli stosunek kwoty kredytu do wartości nieruchomości ustalonej przez Bank, nie może przekraczać {{fakt:limit.hipoteka.ltv}}. Jeżeli wkład własny jest niższy, a LTV nie przekracza {{fakt:limit.hipoteka.ltv-z-ubezpieczeniem}}, Bank może udzielić kredytu pod warunkiem zawarcia ubezpieczenia niskiego wkładu własnego, o którym mowa w {{ref:blok:hip-ubezpieczenia}}."
+      - ustep: "Za wkład własny Bank uznaje:"
+        punkty:
+          - "środki zgromadzone na rachunkach Kredytobiorcy, jeżeli pochodzą z udokumentowanych źródeł;"
+          - "wpłaty już dokonane na rzecz sprzedawcy lub dewelopera, potwierdzone umową i dowodem zapłaty;"
+          - "nakłady poniesione na budowę lub remont, o ile zostały potwierdzone rachunkami i uwzględnione w wycenie;"
+          - "wartość działki, jeżeli kredyt jest przeznaczony na budowę domu na gruncie stanowiącym własność Kredytobiorcy."
+      - ustep: "Środków pochodzących z pożyczek prywatnych, kredytów konsumenckich i innych zobowiązań nie uznaje się za wkład własny. Bank {może|jest uprawniony} zażądać dokumentów potwierdzających pochodzenie środków, zgodnie z przepisami o przeciwdziałaniu praniu pieniędzy."
+
+  # ===== Rozdział: Wniosek, dokumenty i ocena zdolności =====
+  - id: hip-wniosek
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o udzielenie kredytu hipotecznego składa się {w placówce|w oddziale} Banku, za pośrednictwem pośrednika kredytu hipotecznego działającego na rzecz Banku albo w bankowości elektronicznej. Przyjęcie wniosku nie jest równoznaczne z podjęciem decyzji o udzieleniu kredytu."
+      - ustep: "Do wniosku Klient {dołącza|załącza} dokumenty niezbędne do oceny zdolności kredytowej i wyceny zabezpieczenia, w szczególności:"
+        punkty:
+          - "dokument tożsamości każdego z wnioskodawców;"
+          - "zaświadczenia o dochodach lub inne dokumenty potwierdzające ich wysokość i stabilność, w zależności od źródła dochodu;"
+          - "umowę przedwstępną lub inny dokument potwierdzający cenę i warunki nabycia nieruchomości;"
+          - "odpis lub numer księgi wieczystej nieruchomości oraz dokumenty wskazujące stan prawny;"
+          - "kosztorys i pozwolenie na budowę lub zgłoszenie robót, jeżeli kredyt jest przeznaczony na budowę lub remont."
+      - ustep: "Klient odpowiada za prawdziwość i kompletność danych podanych we wniosku. Wniosek niekompletny Bank zwraca do uzupełnienia, wyznaczając termin, a po jego bezskutecznym upływie pozostawia wniosek bez rozpatrzenia."
+
+  - id: hip-zdolnosc
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta na podstawie informacji o jego dochodach, wydatkach, zobowiązaniach i historii kredytowej, w tym danych pochodzących z biur informacji gospodarczej i Biura Informacji Kredytowej.[^1]"
+      - ustep: "Przy ocenie zdolności Bank {uwzględnia|bierze pod uwagę}:"
+        punkty:
+          - "wszystkie zobowiązania finansowe Klienta, w tym limity w rachunkach i na kartach kredytowych, bez względu na stopień ich wykorzystania;"
+          - "koszty utrzymania gospodarstwa domowego, ustalone na podstawie liczby osób i miejsca zamieszkania;"
+          - "wpływ zmiany stopy procentowej na wysokość raty, przy czym ratę wylicza się dla stopy podwyższonej o bufor wynoszący {{fakt:wskaznik.hipoteka.bufor-stopy}};"
+          - "okres, na jaki zawarto umowy o pracę lub zlecenie, oraz staż w obecnym miejscu zatrudnienia."
+      - ustep: "Łączne miesięczne obciążenie Klienta ratami wszystkich zobowiązań nie może przekraczać {{fakt:wskaznik.hipoteka.obciazenie-dochodu}} jego miesięcznego dochodu netto, z zastrzeżeniem że:"
+        punkty:
+          - tekst: "dochody uzyskiwane w walucie obcej uwzględnia się:"
+            litery:
+              - "po obniżeniu o korektę ryzyka walutowego ustaloną przez Bank;"
+              - "wyłącznie wtedy, gdy Klient udokumentuje ich stały charakter;"
+          - "dochody z najmu uwzględnia się w części wskazanej w ocenie ryzyka Banku."
+      - ustep: "Jeżeli ocena zdolności kredytowej jest negatywna, Bank informuje o tym Klienta niezwłocznie i nieodpłatnie, wskazując informacje wykorzystane w ocenie. Na żądanie Klient może otrzymać wyniki oceny w odniesieniu do danych z baz."
+    przypisy:
+      1: "Przetwarzanie danych w celu oceny zdolności kredytowej odbywa się na podstawie przepisów: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}; zasady przetwarzania danych osobowych opisano w rozdziale o ochronie danych."
+
+  # ===== Rozdział: Wycena nieruchomości =====
+  - id: hip-wycena
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Warunkiem udzielenia kredytu jest sporządzenie wyceny nieruchomości stanowiącej zabezpieczenie. Wycenę wykonuje niezależny rzeczoznawca majątkowy wskazany przez Bank z prowadzonej przez Bank listy, wybrany bez wpływu Klienta na jego wynik."
+      - ustep: "Za wycenę nieruchomości Bank {pobiera|nalicza} opłatę w wysokości {{fakt:oplata.hipoteka.wycena}}, płatną przed rozpoczęciem wyceny.[^1] Opłata nie podlega zwrotowi, jeżeli wycena została wykonana, niezależnie od tego, czy Klient zawarł umowę kredytu."
+      - ustep: "Wartość rynkowa nieruchomości ustalona w operacie szacunkowym jest podstawą do:"
+        punkty:
+          - "wyliczenia wskaźnika LTV i wysokości wkładu własnego;"
+          - "ustalenia kwoty zabezpieczenia hipotecznego;"
+          - "oceny, czy nieruchomość spełnia wymagania Banku dotyczące lokalizacji, stanu technicznego i płynności rynkowej."
+      - ustep: "Wycena jest ważna przez {{fakt:termin.hipoteka.waznosc-wyceny}} od dnia jej sporządzenia. Jeżeli umowa kredytu nie została zawarta w tym terminie, Bank {może|ma prawo} zażądać aktualizacji wyceny; opłatę za aktualizację określa Taryfa."
+      - ustep: "Klient {ma prawo|może} otrzymać kopię operatu szacunkowego. Jeżeli wartość nieruchomości ustalona w wycenie jest niższa niż cena nabycia, kwotę kredytu ustala się od wartości wycenionej, a różnicę pokrywa Klient ze środków własnych."
+    przypisy:
+      1: "Opłata za wycenę jest wymieniona w {{ref:dokument:taryfa-kredyty}}; jej wysokość {zależy|jest uzależniona} od rodzaju nieruchomości, a dla nieruchomości o nietypowych cechach Bank może zażądać dopłaty."
+
+  # ===== Rozdział: Decyzja kredytowa i umowa =====
+  - id: hip-decyzja
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank podejmuje decyzję kredytową w terminie {{fakt:termin.hipoteka.decyzja}} od dnia dostarczenia kompletnego wniosku i wyceny nieruchomości. W uzasadnionych przypadkach Bank może ten termin przedłużyć, informując o tym Klienta."
+      - ustep: "Pozytywna decyzja kredytowa jest ważna przez {{fakt:termin.hipoteka.waznosc-decyzji}}. W tym czasie Klient {może|ma prawo} zawrzeć umowę kredytu, o ile jego sytuacja finansowa i prawna oraz stan nieruchomości nie uległy istotnej zmianie."
+      - ustep: "Bank {może|ma prawo} wstrzymać zawarcie umowy lub wypłatę kredytu, jeżeli po wydaniu decyzji ujawnią się okoliczności, które wpływają na ocenę zdolności kredytowej lub wartości zabezpieczenia, w szczególności:"
+        punkty:
+          - "utrata pracy lub istotne obniżenie dochodów któregokolwiek z Kredytobiorców;"
+          - "niekorzystny wpis w bazie informacji gospodarczej lub w Biurze Informacji Kredytowej;"
+          - "ujawnienie wad prawnych nieruchomości lub niezgodności jej stanu z dokumentami."
+      - ustep: "O odmowie udzielenia kredytu Bank informuje Klienta na trwałym nośniku. Odmowa nie wymaga uzasadnienia, jeżeli przepisy nie stanowią inaczej, ale Bank wskazuje, czy podstawą była ocena zdolności kredytowej."
+
+  - id: hip-umowa
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa kredytu jest zawierana w formie pisemnej lub dokumentowej, a w przypadku, gdy wymagają tego przepisy lub Bank, także w formie aktu notarialnego. Umowa określa w szczególności:"
+        punkty:
+          - "kwotę kredytu, okres kredytowania, harmonogram spłat i terminy płatności rat;"
+          - "oprocentowanie, wskaźnik referencyjny i marżę oraz zasady ich zmiany;"
+          - "rzeczywistą roczną stopę oprocentowania (RRSO) i całkowity koszt kredytu;"
+          - "zabezpieczenia kredytu oraz zasady ubezpieczenia nieruchomości;"
+          - "warunki wypłaty kredytu, w tym transz;"
+          - "skutki opóźnienia w spłacie i zasady wypowiedzenia umowy."
+      - ustep: "Do chwili zawarcia umowy Klient {może|ma prawo} zrezygnować z kredytu bez ponoszenia kosztów innych niż opłata za wycenę oraz koszty, które poniósł osobiście wobec osób trzecich."
+      - ustep: "Jeżeli w umowie kredytu uzgodniono, że kredyt jest oprocentowany według zmiennej stopy opartej na {{fakt:wskaznik.hipoteka.nazwa}}, Bank przekazuje Klientowi aktualną wartość wskaźnika i zasady jego ustalania na trwałym nośniku przed zawarciem umowy."
+      - ustep: "Prowizja za przygotowanie i udzielenie kredytu wynosi {{fakt:oplata.hipoteka.prowizja-przygotowanie}} kwoty kredytu i jest {płatna|pobierana} jednorazowo, najpóźniej w dniu pierwszej wypłaty. Prowizję można doliczyć do kwoty kredytu, o ile mieści się w limicie wskaźnika LTV."
+
+  # ===== Rozdział: Zabezpieczenia =====
+  - id: hip-hipoteka
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Podstawowym zabezpieczeniem spłaty kredytu jest hipoteka umowna na rzecz Banku, ustanowiona na nieruchomości będącej przedmiotem kredytu, na pierwszym miejscu w księdze wieczystej, do kwoty wyższej niż kwota kredytu, obejmującej także odsetki i koszty."
+      - ustep: "Dla zabezpieczenia kredytu Bank {może|ma prawo} dodatkowo wymagać:"
+        punkty:
+          - "weksla własnego in blanco z deklaracją wekslową;"
+          - "oświadczenia o poddaniu się egzekucji w trybie art. 777 Kodeksu postępowania cywilnego;"
+          - "ustanowienia dodatkowej hipoteki na innej nieruchomości, jeżeli wartość nieruchomości kredytowanej nie zapewnia wymaganego zabezpieczenia;"
+          - "poręczenia osoby trzeciej lub zgody małżonka na zaciągnięcie zobowiązania."
+      - ustep: "Do czasu wpisu hipoteki do księgi wieczystej oprocentowanie kredytu {jest|zostaje} podwyższone o {{fakt:oprocentowanie.hipoteka.podwyzszenie-przed-hipoteka}} w skali roku. Podwyższenie przestaje obowiązywać od najbliższego dnia płatności raty po dostarczeniu Bankowi odpisu księgi wieczystej z prawomocnym wpisem."
+      - ustep: "Kredytobiorca jest obowiązany w terminie {{fakt:termin.hipoteka.dowod-wpisu}} od dnia wypłaty kredytu dostarczyć dowód wpisu hipoteki, jeżeli wniosek o wpis składał samodzielnie. Opłata sądowa od wniosku o wpis wynosi {{fakt:oplata.hipoteka.wpis-hipoteki}} i obciąża Kredytobiorcę."
+
+  - id: hip-cesja
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca jest obowiązany ubezpieczyć nieruchomość stanowiącą zabezpieczenie od ognia i innych zdarzeń losowych na sumę nie niższą niż wartość odtworzeniowa nieruchomości, a następnie dokonać cesji praw z umowy ubezpieczenia na rzecz Banku."
+      - ustep: "Cesja praw z umowy ubezpieczenia obejmuje:"
+        punkty:
+          - "prawo do odszkodowania z tytułu zniszczenia lub uszkodzenia nieruchomości, do wysokości zadłużenia z tytułu kredytu;"
+          - "prawo do zwrotu składki w przypadku wygaśnięcia umowy ubezpieczenia;"
+          - "uprawnienie do przyjmowania oświadczeń zakładu ubezpieczeń o zmianie warunków lub wypowiedzeniu umowy."
+      - ustep: "Kredytobiorca {może|ma prawo} wybrać zakład ubezpieczeń spośród tych, których warunki spełniają wymagania Banku. Bank nie może uzależniać udzielenia kredytu od wyboru ubezpieczyciela wskazanego przez Bank, jeżeli polisa zapewnia zakres ochrony co najmniej równoważny."
+      - ustep: "Kredytobiorca przekazuje Bankowi polisę lub jej potwierdzenie oraz zawiadomienie ubezpieczyciela o cesji najpóźniej w dniu pierwszej wypłaty, a kolejne polisy na co najmniej {{fakt:termin.hipoteka.waznosc-polisy-przed-koncem}} przed końcem okresu ubezpieczenia."
