@@ -52,7 +52,7 @@ Błąd walidacji → `ArgumentException` (FR-206) przed jakąkolwiek pracą.
 | `PartCount` | int | ≥ 1 |
 | `UnitKind` | ChunkUnitKind | `Preamble` albo wartość `SectionKind` (`Article`, `Paragraph`, `Chapter`, `TableDocumentSection`, `Typographic`, …) |
 | `Citation` | string? | `Section.Designation` albo `HeadingText` (sekcja bez oznaczenia); `null` dla wstępu (FR-241) |
-| `ListLabels` | IReadOnlyList<string> | etykiety pozycji, od której zaczyna się część, i jej przodków, od zewnętrznej (np. `["3.", "2)"]`); puste, gdy część nie zaczyna się od pozycji listy |
+| `ListLabels` | IReadOnlyList<string> | etykiety pozycji, od której zaczyna się część, i jej przodków, od zewnętrznej (np. `["3.", "2)"]`); puste, gdy część nie zaczyna się od pozycji listy, oraz dla pierwszej części jednostki (zaczyna się od początku jednostki, więc cytatem jest samo oznaczenie) |
 | `SectionPath` | IReadOnlyList<string> | `Section.Path` (teksty nagłówków od korzenia do jednostki); pusta dla wstępu |
 | `Pages` | PageSpan | `First`, `Last` (R4), w granicach stron jednostki |
 | `Length` | int | `Content.Length` (znaki UTF-16) |
