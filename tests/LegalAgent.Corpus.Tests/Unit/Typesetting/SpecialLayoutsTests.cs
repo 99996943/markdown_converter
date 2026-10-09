@@ -112,6 +112,31 @@ public sealed class SpecialLayoutsTests
     }
 
     [Fact]
+    public void TableDocument_PrintsSectionNamesWithoutChapterLabelsAndNoUnitLabels()
+    {
+        LayoutStyle style = Style(s => s with { TableDocument = true });
+        Element[] elements =
+        [
+            new HeadingElement(2, "Rozdział 1", T("Organizator promocji")),
+            new HeadingElement(3, "§ 1.", []) { Unit = "§ 1" },
+            P("Promocję organizuje Bank Przykładowy S.A."),
+            new HeadingElement(2, "Rozdział 2", T("Uczestnik promocji")),
+            new HeadingElement(3, "§ 2.", []),
+            P("W promocji mogą uczestniczyć konsumenci."),
+        ];
+
+        TypesetResult result = Typesetter.Typeset(Doc(elements), style);
+
+        string text = string.Join(' ', PageWords(result.Pdf).SelectMany(p => p).Select(w => w.Text));
+        Assert.DoesNotContain("Rozdział", text, StringComparison.Ordinal);
+        Assert.DoesNotContain("§", text, StringComparison.Ordinal);
+        Assert.Equal(
+            [new TruthHeading(2, null, "Organizator promocji"), new TruthHeading(2, null, "Uczestnik promocji")],
+            result.Truth.Headings.Skip(1));
+        Assert.DoesNotContain("Rozdział", result.Truth.Words);
+    }
+
+    [Fact]
     public void TableDocument_RowCrossingAPage_ContinuesWithAnEmptyLeftCell()
     {
         LayoutStyle style = Style(s => s with { TableDocument = true });
