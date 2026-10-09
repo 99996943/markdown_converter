@@ -27,10 +27,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 2.
 
 - 1\. Regulamin określa zasady wydawania i używania kart kredytowych przez Bank Przykładowy S.A. oraz warunki udzielania i spłaty kredytu odnawialnego w ramach limitu kredytowego przyznanego Klientowi na rachunku karty.
-- 2\. Karta kredytowa jest zindywidualizowanym instrumentem płatniczym umożliwiającym dokonywanie transakcji do wysokości przyznanego limitu kredytowego. Kwoty transakcji nie pomniejszają środków na
-
-rachunku bieżącym Klienta, lecz zwiększają zadłużenie na rachunku karty, które Klient spłaca zgodnie z postanowieniami niniejszego Regulaminu.
-
+- 2\. Karta kredytowa jest zindywidualizowanym instrumentem płatniczym umożliwiającym dokonywanie transakcji do wysokości przyznanego limitu kredytowego. Kwoty transakcji nie pomniejszają środków na rachunku bieżącym Klienta, lecz zwiększają zadłużenie na rachunku karty, które Klient spłaca zgodnie z postanowieniami niniejszego Regulaminu.
 - 3\. Regulamin stanowi integralną część umowy o kartę kredytową. W sprawach nieuregulowanych w umowie i Regulaminie stosuje się przepisy następujących aktów prawnych: ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497), ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30) oraz ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646).
 
 ### § 3.
@@ -85,10 +82,7 @@ rachunku bieżącym Klienta, lecz zwiększają zadłużenie na rachunku karty, k
 ### § 10.
 
 - 1\. Karta kredytowa służy wyłącznie do użytku osobistego Klienta i nie może być udostępniana osobom trzecim, w tym członkom rodziny. Karta kredytowa nie jest instrumentem przeznaczonym do wykorzystywania w prowadzonej działalności gospodarczej, chyba że umowa stanowi inaczej.
-- 2\. Klient jest obowiązany używać karty zgodnie z obowiązującymi przepisami prawa. Zabronione jest w szczególności używanie karty do transakcji związanych z działalnością niezgodną z prawem, do transakcji
-
-o charakterze spekulacyjnym oraz do kupna walut wirtualnych w sposób niezgodny z zasadami określonymi przez Bank.
-
+- 2\. Klient jest obowiązany używać karty zgodnie z obowiązującymi przepisami prawa. Zabronione jest w szczególności używanie karty do transakcji związanych z działalnością niezgodną z prawem, do transakcji o charakterze spekulacyjnym oraz do kupna walut wirtualnych w sposób niezgodny z zasadami określonymi przez Bank.
 - 3\. Bank informuje Klienta o rodzajach transakcji wyłączonych z zakresu funkcji karty na swojej stronie internetowej https://bank.example oraz w oddziałach Banku.
 
 ## Rozdział 2. Umowa o kartę kredytową i limit kredytowy
@@ -123,10 +117,7 @@ o charakterze spekulacyjnym oraz do kupna walut wirtualnych w sposób niezgodny 
 
 ### § 14.
 
-- 1\. Jeżeli Klient posiada pełnomocnika, pełnomocnictwo do zawarcia umowy o kartę kredytową i dokonywania czynności w jej
-
-ramach wymaga formy pisemnej z podpisem poświadczonym notarialnie lub złożonej w obecności pracownika Banku. Pełnomocnik nie może otrzymać karty głównej, a jedynie — za zgodą Klienta — kartę dodatkową.
-
+- 1\. Jeżeli Klient posiada pełnomocnika, pełnomocnictwo do zawarcia umowy o kartę kredytową i dokonywania czynności w jej ramach wymaga formy pisemnej z podpisem poświadczonym notarialnie lub złożonej w obecności pracownika Banku. Pełnomocnik nie może otrzymać karty głównej, a jedynie — za zgodą Klienta — kartę dodatkową.
 - 2\. Pełnomocnictwo wygasa z chwilą jego odwołania, wypowiedzenia lub śmierci mocodawcy. Odwołanie pełnomocnictwa wywołuje skutki wobec Banku od dnia jego otrzymania przez Bank.
 - 3\. Bank ma prawo odmówić przyjęcia pełnomocnictwa, jeżeli budzi ono wątpliwości co do autentyczności lub jego zakres jest niejednoznaczny.
 
@@ -191,10 +182,7 @@ ramach wymaga formy pisemnej z podpisem poświadczonym notarialnie lub złożone
 
 ### § 23.
 
-- 1\. Bank cyklicznie dokonuje ponownej oceny zdolności kredytowej Klienta w trakcie trwania umowy, w szczególności w razie wystąpienia zdarzeń wskazujących na ryzyko niewypłacalności, takich jak zaległości w spłacie, zajęcie wynagrodzenia lub rachunku
-
-bankowego albo wzrost zadłużenia Klienta w innych instytucjach.
-
+- 1\. Bank cyklicznie dokonuje ponownej oceny zdolności kredytowej Klienta w trakcie trwania umowy, w szczególności w razie wystąpienia zdarzeń wskazujących na ryzyko niewypłacalności, takich jak zaległości w spłacie, zajęcie wynagrodzenia lub rachunku bankowego albo wzrost zadłużenia Klienta w innych instytucjach.
 - 2\. Wyniki ponownej oceny mogą stanowić podstawę obniżenia limitu kredytowego, zgodnie z postanowieniami dotyczącymi limitu. Klient jest o tym informowany z zachowaniem zasad przewidzianych w Regulaminie.
 - 3\. Klient wyraża zgodę na przekazywanie przez Bank informacji o jego zobowiązaniach z tytułu karty do biura informacji kredytowej na zasadach wynikających z przepisów prawa bankowego.
 
@@ -229,9 +217,9 @@ bankowego albo wzrost zadłużenia Klienta w innych instytucjach.
 
 - 1\. Bank wydaje kartę w terminie 7 dni od dnia zawarcia umowy i przekazuje ją Klientowi listem poleconym lub kurierem na adres wskazany we wniosku albo, na życzenie Klienta, w placówce Banku. Karta jest wydawana w stanie nieaktywnym.
 - 2\. Aktywacja karty następuje po jej otrzymaniu, w jeden z poniższych sposobów:
-- 1\) w bankowości elektronicznej, po uwierzytelnieniu;
-- 2\) telefonicznie, na infolinii 800 000 001, po weryfikacji tożsamości Klienta;
-- 3\) poprzez dokonanie pierwszej transakcji z użyciem numeru PIN.
+  - 1\) w bankowości elektronicznej, po uwierzytelnieniu;
+  - 2\) telefonicznie, na infolinii 800 000 001, po weryfikacji tożsamości Klienta;
+  - 3\) poprzez dokonanie pierwszej transakcji z użyciem numeru PIN.
 - 3\. Numer PIN Klient ustala samodzielnie w bankowości elektronicznej albo otrzymuje go w odrębnej przesyłce. Karta jest ważna do ostatniego dnia miesiąca wskazanego na jej awersie; okres ważności karty wynosi 4 lata.
 
 ### § 29.
@@ -261,10 +249,7 @@ bankowego albo wzrost zadłużenia Klienta w innych instytucjach.
 ### § 33.
 
 - 1\. Klient może zażądać przekazania karty w oddziale lub w wybranej placówce Banku. Odbiór karty w placówce wymaga okazania dokumentu tożsamości; karta jest przekazywana wyłącznie Posiadaczowi lub użytkownikowi karty dodatkowej, któremu została wydana.
-- 2\. Karta nieodebrana w placówce w terminie 60 dni od dnia jej przygotowania podlega zniszczeniu, a Bank informuje o tym Klienta. Za wydanie nowej karty po upływie tego terminu
-
-Bank pobiera opłatę zgodnie z Taryfą.
-
+- 2\. Karta nieodebrana w placówce w terminie 60 dni od dnia jej przygotowania podlega zniszczeniu, a Bank informuje o tym Klienta. Za wydanie nowej karty po upływie tego terminu Bank pobiera opłatę zgodnie z Taryfą.
 - 3\. Karty pozostające w placówce Banku przechowywane są w sposób zapewniający ich bezpieczeństwo.
 
 ### § 34.
@@ -302,12 +287,9 @@ Bank pobiera opłatę zgodnie z Taryfą.
   - 1\) przez zbliżenie karty do terminala, w przypadku transakcji, których wartość nie przekracza 100,00 zł, bez konieczności wprowadzania numeru PIN;
   - 2\) przez wprowadzenie numeru PIN lub złożenie podpisu na potwierdzeniu transakcji;
   - 3\) w przypadku płatności internetowych — przez zastosowanie silnego uwierzytelnienia, obejmującego co najmniej dwa spośród następujących elementów:
-    - a\) element wiedzy, czyli coś, co zna tylko
-
-Klient;
-
-- b\) element posiadania, czyli coś, co posiada wyłącznie Klient, na przykład urządzenie mobilne;
-- c\) element cechy charakterystycznej Klienta, na przykład dane biometryczne.
+    - a\) element wiedzy, czyli coś, co zna tylko Klient;
+    - b\) element posiadania, czyli coś, co posiada wyłącznie Klient, na przykład urządzenie mobilne;
+    - c\) element cechy charakterystycznej Klienta, na przykład dane biometryczne.
 - 2\. Z chwilą autoryzacji Bank blokuje kwotę transakcji w ciężar dostępnego limitu, a zlecenie płatnicze nie może zostać odwołane, chyba że przepisy lub Regulamin stanowią inaczej.
 - 3\. Bank może odmówić wykonania transakcji, jeżeli jest to uzasadnione względami bezpieczeństwa, brakiem dostępnego limitu albo jeżeli transakcja jest sprzeczna z przepisami prawa. O odmowie Bank informuje Klienta, o ile nie jest to zabronione przepisami.
 
@@ -406,10 +388,7 @@ Klient;
 
 ### § 52.
 
-- 1\. Cykl rozliczeniowy rozpoczyna się pierwszego
-
-dnia miesiąca kalendarzowego i kończy ostatniego dnia tego miesiąca, chyba że umowa przewiduje inny dzień zakończenia cyklu. Klient może wnioskować o zmianę dnia zakończenia cyklu rozliczeniowego, nie częściej niż raz na 12 miesięcy.
-
+- 1\. Cykl rozliczeniowy rozpoczyna się pierwszego dnia miesiąca kalendarzowego i kończy ostatniego dnia tego miesiąca, chyba że umowa przewiduje inny dzień zakończenia cyklu. Klient może wnioskować o zmianę dnia zakończenia cyklu rozliczeniowego, nie częściej niż raz na 12 miesięcy.
 - 2\. Zmiana dnia zakończenia cyklu rozliczeniowego powoduje przesunięcie terminu spłaty i może skrócić lub wydłużyć jednorazowo okres bezodsetkowy. Bank informuje Klienta o skutkach zmiany przed jej wprowadzeniem.
 
 ### § 53.
@@ -474,10 +453,7 @@ dnia miesiąca kalendarzowego i kończy ostatniego dnia tego miesiąca, chyba ż
 - 1\. Kredyt w ramach limitu jest oprocentowany według zmiennej stopy procentowej, której wysokość w dniu wejścia w życie Regulaminu wynosi:
   - 1\) 19,9% w skali roku — dla transakcji bezgotówkowych;
   - 2\) 23,9% w skali roku — dla wypłat gotówki i transakcji im równoważnych;
-  - 3\) 17% w skali roku — dla zadłużenia przeterminowanego, czyli odsetki za
-
-opóźnienie.
-
+  - 3\) 17% w skali roku — dla zadłużenia przeterminowanego, czyli odsetki za opóźnienie.
 - 2\. Odsetki naliczane są codziennie od salda zadłużenia, w oparciu o rzeczywistą liczbę dni w roku, i są kapitalizowane w ostatnim dniu cyklu rozliczeniowego, zgodnie z zasadami określonymi w umowie. Zmiana oprocentowania następuje na zasadach przewidzianych w umowie, w tym z uwzględnieniem zmian wskaźników rynkowych.
 - 3\. Maksymalne oprocentowanie kredytu nie może przekroczyć wysokości określonej w przepisach o maksymalnych odsetkach w stosunkach cywilnoprawnych, a w szczególności wysokości odsetek maksymalnych za opóźnienie. Całkowity koszt kredytu, z wyłączeniem opłat za niewykonanie lub nienależyte wykonanie zobowiązania, nie może przekroczyć ustawowych limitów pozaodsetkowych kosztów kredytu.
 
@@ -500,7 +476,9 @@ opóźnienie.
 - 2\. Okres bezodsetkowy odnawia się po spłacie pełnego zadłużenia wykazanego w zestawieniu. Klient odzyskuje prawo do bezodsetkowego okresu dla transakcji dokonanych w kolejnym cyklu rozliczeniowym, począwszy od cyklu następującego po cyklu, w którym spłacił całe zadłużenie.
 - 3\. Zmiana długości okresu bezodsetkowego na niekorzyść Klienta wymaga powiadomienia go z wyprzedzeniem wskazanym w postanowieniach o zmianie oprocentowania.
 
-### Zestawienie podstawowych warunków finansowych karty
+**Zestawienie podstawowych warunków**
+
+**finansowych karty**
 
 | **Rodzaj warunku** | **Wartość** |
 | --- | --- |
@@ -541,10 +519,7 @@ opóźnienie.
 ### § 69.
 
 - 1\. Klient może zażądać rozłożenia wybranej transakcji bezgotówkowej lub salda zadłużenia na równe raty miesięczne (plan spłat), składając dyspozycję w serwisie transakcyjnym albo na infolinii 800 000 001. Rozłożenie na raty jest możliwe w okresie od 3 do 36 miesięcy, w granicach dostępnego limitu kredytowego.
-- 2\. Za uruchomienie planu spłat Bank pobiera jednorazową prowizję w wysokości 3% kwoty rozłożonej na raty. Kwota objęta planem jest oprocentowana według stawki 12,9% w skali roku, niezależnie od oprocentowania pozostałej
-
-części zadłużenia.
-
+- 2\. Za uruchomienie planu spłat Bank pobiera jednorazową prowizję w wysokości 3% kwoty rozłożonej na raty. Kwota objęta planem jest oprocentowana według stawki 12,9% w skali roku, niezależnie od oprocentowania pozostałej części zadłużenia.
 - 3\. Rata planu spłat składa się z części kapitałowej i odsetkowej i jest doliczana do minimalnej kwoty do zapłaty. Klient może w każdym czasie spłacić plan przed terminem, w całości lub w części, bez dodatkowych opłat.
 
 ### § 70.
@@ -652,9 +627,7 @@ części zadłużenia.
   - 2\) wysłać Klientowi upomnienie, za które pobiera opłatę w wysokości 15,00 zł;
   - 3\) podjąć czynności zmierzające do odzyskania należności, w tym wezwać Klienta do zapłaty;
   - 4\) wpisać zobowiązanie do rejestru dłużników, na zasadach określonych w przepisach.
-- 3\. Opłaty za upomnienia i czynności windykacyjne odpowiadają rzeczywistym kosztom poniesionym przez Bank i nie mogą przekroczyć
-
-wysokości określonej w przepisach aktu prawnego: ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497). Bank nie pobiera kilku opłat za ten sam rodzaj czynności w tym samym okresie.
+- 3\. Opłaty za upomnienia i czynności windykacyjne odpowiadają rzeczywistym kosztom poniesionym przez Bank i nie mogą przekroczyć wysokości określonej w przepisach aktu prawnego: ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497). Bank nie pobiera kilku opłat za ten sam rodzaj czynności w tym samym okresie.
 
 ### § 85.
 
@@ -685,10 +658,7 @@ wysokości określonej w przepisach aktu prawnego: ustawa z dnia 12 maja 2011 r.
 ### § 89.
 
 - 1\. Wezwanie do zapłaty przed wypowiedzeniem umowy Bank wysyła na adres wskazany przez Klienta jako adres korespondencyjny. W wezwaniu Bank wyznacza dodatkowy termin spłaty zaległości, nie krótszy niż 14 dni, i informuje Klienta o możliwości złożenia wniosku o restrukturyzację zadłużenia.
-- 2\. Bank informuje Klienta w tym samym wezwaniu o skutkach braku spłaty, w tym o możliwości wypowiedzenia umowy, postawienia całego
-
-zadłużenia w stan wymagalności i skierowania sprawy na drogę postępowania sądowego.
-
+- 2\. Bank informuje Klienta w tym samym wezwaniu o skutkach braku spłaty, w tym o możliwości wypowiedzenia umowy, postawienia całego zadłużenia w stan wymagalności i skierowania sprawy na drogę postępowania sądowego.
 - 3\. Klient, który zaległość spłaci w dodatkowym terminie, nie ponosi dalszych skutków braku terminowej spłaty, z wyjątkiem odsetek za opóźnienie oraz opłat za upomnienia naliczonych do dnia spłaty.
 
 ### § 90.
@@ -762,8 +732,8 @@ zadłużenia w stan wymagalności i skierowania sprawy na drogę postępowania s
 
 - 1\. Klient może złożyć reklamację dotyczącą produktów i usług świadczonych przez Bank w dowolnym momencie, w jednej z następujących form:
   - 1\) pisemnie — osobiście w placówce Banku albo przesyłką pocztową na adres: Bank Przykładowy S.A., Biuro Reklamacji, ul. Przykładowa 1, 00-001 Warszawa;
-- 2\) ustnie — telefonicznie pod numerem 800 000 001 lub osobiście do protokołu sporządzanego przez pracownika Banku;
-- 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
+  - 2\) ustnie — telefonicznie pod numerem 800 000 001 lub osobiście do protokołu sporządzanego przez pracownika Banku;
+  - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja powinna zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz oczekiwany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację bez zbędnej zwłoki, nie później niż w terminie:
   - 1\) 15 dni od dnia otrzymania reklamacji — w sprawach dotyczących usług płatniczych;
@@ -796,10 +766,7 @@ zadłużenia w stan wymagalności i skierowania sprawy na drogę postępowania s
 ### § 102.
 
 - 1\. Jeżeli którekolwiek z postanowień Regulaminu okaże się nieważne lub bezskuteczne, pozostałe postanowienia pozostają w mocy. Postanowienie nieważne strony zastępują postanowieniem, które w największym stopniu odpowiada celowi pierwotnego postanowienia.
-- 2\. Regulamin jest udostępniany Klientowi przed zawarciem umowy na trwałym nośniku oraz w każdym czasie na jego żądanie, w placówkach
-
-Banku i na stronie https://bank.example.
-
+- 2\. Regulamin jest udostępniany Klientowi przed zawarciem umowy na trwałym nośniku oraz w każdym czasie na jego żądanie, w placówkach Banku i na stronie https://bank.example.
 - 3\. Zmiany Regulaminu nie wpływają na prawa nabyte przez Klienta przed dniem ich wejścia w życie, z zastrzeżeniem przepisów bezwzględnie obowiązujących.
 
 ### § 103.
