@@ -5,7 +5,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 - **`LegalAgent.PdfParser`**: a .NET 9 library that converts PDFs into a structured document model and Markdown, for a downstream RAG chunker that splits on headings. Inputs are Polish legal acts (ISAP / Dziennik Ustaw) and bank regulations.
-- **`LegalAgent.PdfParser.Cli`**: a thin CLI over the library. The executable is `legalagent-pdf`.
+- **`LegalAgent.PdfParser.Cli`**: a thin CLI over the library. The executable is `legalagent-pdf` (`convert`, `chunk`).
+- **`LegalAgent.Chunking`**: splits a parser result into chunks with metadata for a RAG app (spec 004). In-memory models
+  only (no file I/O); JSON Lines contract in `specs/004-document-chunking/contracts/chunks-json.md`.
 - **`LegalAgent.Corpus`** and **`LegalAgent.Corpus.Cli`**: a deterministic generator of a synthetic Polish bank corpus („Bank Przykładowy S.A.”), committed in `corpus/`.
 
 The owner communicates in Polish. Specs, the README, `corpus/README.md` and the corpus content are in Polish; code, comments and commit messages are in English.
@@ -26,6 +28,8 @@ dotnet test tests/LegalAgent.Corpus.Tests -- --filter-class "*SpecialLayoutsTest
 
 # parser CLI
 dotnet run --project src/LegalAgent.PdfParser.Cli -c Release -- convert in.pdf -o out.md --report out.report.json
+dotnet run --project src/LegalAgent.PdfParser.Cli -c Release -- chunk in.pdf -o out.chunks.jsonl --id REG-06 --designation BP/REG/06
+# perf tests of one project: dotnet test tests/LegalAgent.Chunking.Tests -- --filter-class "LegalAgent.Chunking.Tests.PerformanceTests"
 
 # corpus generator (defaults to corpus/ and corpus/przebieg.json)
 dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- generate   # plan + typeset PDFs + convert + manifest
@@ -35,12 +39,12 @@ dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- check --template <i
 ```
 
 Environment variables used by the tests:
-- **`UPDATE_GOLDEN=1`**: rewrites `*.expected.md` goldens. On a mismatch, tests write `*.actual.md`.
+- **`UPDATE_GOLDEN=1`**: rewrites `*.expected.md` goldens and the chunk goldens `tests/LegalAgent.Chunking.Tests/Golden/*.chunks.jsonl`. On a mismatch, tests write `*.actual.md` / `*.actual.jsonl` (git-ignored).
 - **`LEGALAGENT_PRIVATE_CORPUS=<dir>`**: runs the owner's private bank PDFs against their goldens. These files are not in git. Locally the directory is `tests/LegalAgent.PdfParser.Tests/Corpus/private`.
 - **`LEGALAGENT_CORPUS_FULL=1`**: enables the `CorpusFull` category, which runs metrics over the whole committed corpus and checks that its Markdown is up to date. Plain `dotnet test` only checks a fixed sample.
 - **`LEGALAGENT_CORPUS_REPORT`**: writes per-document measurement tables.
 
-Parser options can be overridden through `PDFPARSER__<Group>__<Field>` env vars in the CLI.
+Parser options can be overridden through `PDFPARSER__<Group>__<Field>` env vars in the CLI; chunking options through `CHUNKING__<Field>` (e.g. `CHUNKING__MaxChunkLength`).
 
 ## Parser architecture
 
@@ -68,6 +72,21 @@ A later stage usually skips lines that an earlier stage claimed. For example, `T
 
 **Output must contain only text from the PDF.** Never synthesize words such as labels or „Krok N:”. Structure is expressed only through Markdown formatting.
 
+## Chunking architecture
+
+`DocumentChunker` (`src/LegalAgent.Chunking/`) works on the parser's `LegalDocument`, never on Markdown, and has no
+structure heuristics of its own — structure errors are fixed in the parser.
+- `UnitCollector`: units are the preamble and the own content of each section; a section with neither content nor
+  subsections is a heading-only unit; the title is metadata only.
+- `UnitSplitter`: units longer than `MaxChunkLength` (default 2000) are split into atoms (paragraph, table row, list
+  item with nested items as separate atoms, unreferenced footnote) packed greedily; every part starts with the unit
+  heading, table parts with the header row. `FragmentRenderer` renders each part through the parser's
+  `MarkdownRenderer` without page markers; `PageTracker` gives part pages (`TableRow.Page` from the parser).
+- `UnitKeyBuilder`: `unitKey` = designation shared by versions + shortest unique segment path (`BP/REG/06 | § 30`),
+  so the same unit has the same key in every version; `ChunkIdBuilder`: `<docId>_<hash16(unitKey)>_<part>`.
+- Metadata values meant for the model are English (`type` = regulation/tariff/procedure/act, `status` =
+  in-force/outdated, preamble key segment `~preamble`); document text stays as printed.
+
 ## Corpus generator architecture
 
 `CorpusGenerator` pipeline:
@@ -76,7 +95,10 @@ A later stage usually skips lines that an earlier stage claimed. For example, `T
 3. **`Composition/`** — turns templates and blocks into elements.
 4. **`Typesetting/`** — lays the elements out with one `LayoutStyle` per layout (`jedna-kolumna`, `dwie-kolumny`, `tabela-dokument`, `taryfa-*`, `procedura`), through `PageWriter`. While setting text, it records the **truth** (`Truth/DocumentTruth`: words, headings, list items, tables).
 5. **`Pdf/SyntheticPdfBuilder`** — writes the PDF; `PdfIdNormalizer` makes it byte-reproducible.
-6. **Parser** — converts each PDF to Markdown.
+6. **Parser** — converts each PDF to Markdown, and **`LegalAgent.Chunking`** writes `<id>.chunks.jsonl` next to it
+   (metadata from the manifest entry; English type names from `nazwa-en` in `typy.yaml`, statuses translated in code;
+   the manifest keeps its Polish values). Earlier versions of a document share the optional blocks and their order with
+   the latest version (`DocumentPlan.SeriesId`), so paragraph numbers and unit keys match across versions (FR-120).
 7. **`Validation/CorpusChecks`** — compares the parser output against the truth.
 8. **`Manifest/`** — writes `corpus/manifest.json`.
 

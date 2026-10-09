@@ -254,6 +254,24 @@ public sealed class TableDetectionStageTests
     }
 
     [Fact]
+    public void TableContinuedOnTheNextPage_EveryRowKnowsThePageItStartsOn_Spec004R4()
+    {
+        LayoutPage page1 = LayoutFactory.Page(1, Tariff(top: 680));
+        LayoutPage page2 = LayoutFactory.Page(2,
+        [
+            Styled(80, TextStyle.Bold, ("Usluga", C1), ("Oplata", C2), ("Czestotliwosc", C3)),
+            Row(100, ("Zlecenie stale", C1), ("2,00 zl", C2), ("miesiecznie", C3)),
+            Row(120, ("Polecenie zaplaty", C1), ("0,00 zl", C2), ("za transakcje", C3)),
+            LayoutFactory.Line("Tekst po tabeli zaczyna nowy akapit regulaminu.", C1, 160),
+        ]);
+
+        TableBlock table = SingleTable(Run(page1, page2));
+
+        Assert.Equal(1, table.Header?.Page);
+        Assert.Equal([1, 1, 1, 2, 2], table.Rows.Select(r => r.Page));
+    }
+
+    [Fact]
     public void CellCrossingColumnBoundaries_GoesToTheFirstColumnWithASpan_FR066()
     {
         PipelineContext context = Run(LayoutFactory.Page(1,

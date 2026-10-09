@@ -7,6 +7,9 @@ public sealed record DocumentTypeDef(string Id, string Prefix, string Designatio
 {
     /// <summary>Gets the minimum number of base documents of this type per layout id (<c>uklady-min</c>); empty when absent.</summary>
     public IReadOnlyDictionary<string, int> MinLayouts { get; init; } = new Dictionary<string, int>(StringComparer.Ordinal);
+
+    /// <summary>Gets the English name of the type (<c>nazwa-en</c>) used in chunk metadata (spec 004); null when absent.</summary>
+    public string? EnglishName { get; init; }
 }
 
 /// <summary>Front matter specification of a template.</summary>

@@ -8,7 +8,11 @@ namespace LegalAgent.Corpus.Typesetting;
 /// <param name="Composition">The composition used.</param>
 /// <param name="Typeset">Its typesetting.</param>
 /// <param name="Iterations">Number of compose-and-typeset rounds it took.</param>
-public sealed record FitResult(CompositionResult Composition, TypesetResult Typeset, int Iterations);
+public sealed record FitResult(CompositionResult Composition, TypesetResult Typeset, int Iterations)
+{
+    /// <summary>Number of optional blocks the fitted composition takes.</summary>
+    public int OptionalBlocks { get; init; }
+}
 
 /// <summary>
 /// Chooses how many optional blocks a document takes so that its page count hits the plan's target within the run's
@@ -19,8 +23,11 @@ public static class PageFitter
     /// <summary>Upper bound of compose-and-typeset rounds per document.</summary>
     public const int MaxIterations = 8;
 
-    /// <summary>Fits <paramref name="plan"/> into <paramref name="range"/>.</summary>
-    public static FitResult Fit(DocumentPlan plan, ContentLibrary content, ulong runSeed, PageRange range)
+    /// <summary>
+    /// Fits <paramref name="plan"/> into <paramref name="range"/>. With <paramref name="optionalBlocks"/> (an earlier
+    /// version taking the count of its latest version, FR-120) that count is used when it fits the range.
+    /// </summary>
+    public static FitResult Fit(DocumentPlan plan, ContentLibrary content, ulong runSeed, PageRange range, int? optionalBlocks = null)
     {
         ArgumentNullException.ThrowIfNull(plan);
         ArgumentNullException.ThrowIfNull(content);
@@ -38,6 +45,15 @@ public static class PageFitter
             }
 
             return result.Typeset.PageCount;
+        }
+
+        if (optionalBlocks is { } fixedCount)
+        {
+            int pages = Pages(fixedCount);
+            if (pages >= range.Min && pages <= range.Max)
+            {
+                return new FitResult(tried[fixedCount].Composition, tried[fixedCount].Typeset, tried.Count) { OptionalBlocks = fixedCount };
+            }
         }
 
         int capacity = DocumentComposer.OptionalCapacity(plan, content);
@@ -84,14 +100,13 @@ public static class PageFitter
             .Where(t => t.Value.Typeset.PageCount >= range.Min && t.Value.Typeset.PageCount <= range.Max)
             .OrderBy(t => Math.Abs(t.Value.Typeset.PageCount - target))
             .ThenBy(t => t.Key)
-            .Select(t => t.Value)
             .FirstOrDefault();
-        if (best.Composition is null)
+        if (best.Value.Composition is null)
         {
             throw Unreachable(plan, $"po {tried.Count} próbach żadna liczba bloków nie daje {range.Min}–{range.Max} str.");
         }
 
-        return new FitResult(best.Composition, best.Typeset, tried.Count);
+        return new FitResult(best.Value.Composition, best.Value.Typeset, tried.Count) { OptionalBlocks = best.Key };
     }
 
     private static CorpusGenerationException Unreachable(DocumentPlan plan, string detail) =>

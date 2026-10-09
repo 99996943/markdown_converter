@@ -49,18 +49,15 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 4.
 
-- 1\. Kredytobiorcą może być osoba fizyczna będąca konsumentem, posiadająca pełną zdolność do czynności prawnych, która ukończyła 18 lat i ma miejsce zamieszkania na terytorium Rzeczypospolitej Polskiej albo przebywa w niej na podstawie dokumentu uprawniającego do pobytu i pracy.
-- 2\. Kredyt może być udzielony jednemu Kredytobiorcom. Współkredytobiorcy odpowiadają za zobowiązania wynikające z umowy łącznie i każdy z osobna, a oświadczenia złożone przez jednego z nich Bank może uznać za skuteczne wobec pozostałych, o ile umowa nie stanowi inaczej.
-- 3\. Jeżeli Kredytobiorca pozostaje w związku małżeńskim, a nieruchomość wchodzi w skład majątku wspólnego, Bank może wymagać przystąpienia małżonka do umowy albo jego pisemnej zgody na zaciągnięcie zobowiązania i ustanowienie hipoteki.
+- 1\. Czynności związane z kredytem Klient może wykonywać przez pełnomocnika, z zastrzeżeniem że umowę kredytu i oświadczenie o ustanowieniu hipoteki składa osobiście lub przez pełnomocnika legitymującego się pełnomocnictwem w formie aktu notarialnego.
+- 2\. Pełnomocnictwo do czynności bankowych powinno wskazywać zakres umocowania. Bank może odmówić przyjęcia pełnomocnictwa, jeżeli budzi ono wątpliwości co do autentyczności lub zakresu umocowania, albo jeżeli pełnomocnik nie przedstawi dokumentu tożsamości.
+- 3\. Odwołanie lub wygaśnięcie pełnomocnictwa wywołuje skutki wobec Banku od dnia otrzymania przez Bank pisemnego zawiadomienia.
 
 ### § 5.
 
-- 1\. Bank może oferować kredyt hipoteczny za pośrednictwem pośredników kredytu hipotecznego, którzy działają na jego rzecz i wpisani są do rejestru prowadzonego przez organ nadzoru. Dane pośrednika Klient otrzymuje przed rozpoczęciem czynności.
-- 2\. Pośrednik nie jest uprawniony do:
-  - 1\) podejmowania decyzji kredytowej w imieniu Banku;
-  - 2\) przyjmowania wpłat na poczet kredytu lub prowizji w gotówce;
-  - 3\) składania oświadczeń woli w zakresie zmiany umowy kredytu.
-- 3\. Wynagrodzenie pośrednika działającego na rzecz Banku płaci Bank; Klient nie ponosi z tego tytułu żadnych opłat, o ile nie zawarł odrębnej umowy z pośrednikiem <!-- page: 4 --> działającym wyłącznie na jego rzecz.
+- 1\. Kredytobiorcą może być osoba fizyczna będąca konsumentem, posiadająca pełną zdolność do czynności prawnych, która ukończyła 18 lat i ma miejsce zamieszkania na terytorium Rzeczypospolitej Polskiej albo przebywa w niej na podstawie dokumentu uprawniającego do pobytu i pracy.
+- 2\. Kredyt może być udzielony jednemu Kredytobiorcom. Współkredytobiorcy odpowiadają za zobowiązania wynikające z umowy łącznie i każdy z osobna, a oświadczenia złożone przez jednego z nich Bank może uznać za skuteczne wobec pozostałych, o ile umowa nie stanowi inaczej.
+- 3\. Jeżeli Kredytobiorca pozostaje w związku małżeńskim, a nieruchomość wchodzi w skład majątku wspólnego, Bank może wymagać przystąpienia małżonka do umowy albo jego <!-- page: 4 --> pisemnej zgody na zaciągnięcie zobowiązania i ustanowienie hipoteki.
 
 ### § 6.
 
@@ -96,22 +93,6 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 9.
 
-- 1\. Wniesienie wkładu własnego Kredytobiorca dokumentuje wyciągami z rachunków bankowych, dowodami wpłat na rzecz sprzedawcy lub dewelopera albo umową darowizny, jeżeli środki pochodzą od członka rodziny.
-- 2\. Darowizna środków na wkład własny jest uznawana, jeżeli:
-  - 1\) została dokonana przez osobę z najbliższej rodziny Kredytobiorcy;
-  - 2\) została udokumentowana pisemną umową lub oświadczeniem darczyńcy złożonym z podpisem urzędowo poświadczonym;
-  - 3\) pochodzenie środków u darczyńcy nie budzi wątpliwości Banku.
-- 3\. Jeżeli Kredytobiorca nie udokumentuje wniesienia wkładu własnego w wysokości wskazanej w § 8, Bank ma prawo pomniejszyć kwotę kredytu proporcjonalnie lub odmówić wypłaty.
-
-### § 10.
-
-- 1\. Kredyt na remont lub modernizację może prace budowlane i wykończeniowe w nieruchomości będącej własnością Kredytobiorcy. Przed wypłatą Kredytobiorca przedstawia kosztorys oraz, w przypadku robót wymagających zgłoszenia, dokument potwierdzający brak sprzeciwu organu.
-- 2\. Koszty zakupu wyposażenia ruchomego, w tym mebli i sprzętu gospodarstwa domowego, mogą być sfinansowane z kredytu w części nieprzekraczającej 15% kwoty kredytu, o ile wynikają z faktur lub rachunków wystawionych na Kredytobiorcę.
-<!-- page: 6 -->
-- 3\. Zakończenie prac Kredytobiorca potwierdza protokołem odbioru lub oświadczeniem o ich zakończeniu, a Bank może przeprowadzić oględziny nieruchomości.
-
-### § 11.
-
 - 1\. Kredyt na budowę domu jednorodzinnego jest udzielany pod warunkiem przedstawienia:
   - 1\) prawomocnego pozwolenia na budowę lub zgłoszenia, wobec którego organ nie wniósł sprzeciwu;
   - 2\) tytułu prawnego do gruntu i aktualnej księgi wieczystej;
@@ -119,6 +100,25 @@ Użyte w Regulaminie określenia oznaczają:
   - 4\) dziennika budowy i oświadczenia kierownika budowy.
 - 2\. Okres budowy nie może przekraczać 24 miesięcy; po jego upływie Kredytobiorca jest zobowiązany przedstawić zawiadomienie o zakończeniu budowy lub pozwolenie na użytkowanie, a Bank może przekształcić kredyt w kredyt spłacany ratami kapitałowo-odsetkowymi.
 - 3\. W okresie budowy Kredytobiorca płaci wyłącznie odsetki od wypłaconych transz, o ile umowa nie stanowi inaczej.
+
+### § 10.
+
+- 1\. Przy zakupie nieruchomości na rynku pierwotnym od dewelopera Bank wypłaca środki zgodnie z harmonogramem wpłat określonym w umowie deweloperskiej, na rachunek powierniczy, o którym mowa w ustawie o ochronie praw nabywcy lokalu mieszkalnego.
+- 2\. Przed pierwszą wypłatą Klient przedstawia:
+  - 1\) umowę deweloperską zawartą w formie aktu notarialnego;
+  <!-- page: 6 -->
+  - 2\) prospekt informacyjny wraz z załącznikami;
+  - 3\) zaświadczenie o numerze rachunku powierniczego.
+- 3\. Jeżeli deweloper nie uzyska pozwolenia na użytkowanie w terminie określonym w umowie deweloperskiej, Bank może wstrzymać dalsze wypłaty do czasu wyjaśnienia sytuacji.
+
+### § 11.
+
+- 1\. Wniesienie wkładu własnego Kredytobiorca dokumentuje wyciągami z rachunków bankowych, dowodami wpłat na rzecz sprzedawcy lub dewelopera albo umową darowizny, jeżeli środki pochodzą od członka rodziny.
+- 2\. Darowizna środków na wkład własny jest uznawana, jeżeli:
+  - 1\) została dokonana przez osobę z najbliższej rodziny Kredytobiorcy;
+  - 2\) została udokumentowana pisemną umową lub oświadczeniem darczyńcy złożonym z podpisem urzędowo poświadczonym;
+  - 3\) pochodzenie środków u darczyńcy nie budzi wątpliwości Banku.
+- 3\. Jeżeli Kredytobiorca nie udokumentuje wniesienia wkładu własnego w wysokości wskazanej w § 8, Bank ma prawo pomniejszyć kwotę kredytu proporcjonalnie lub odmówić wypłaty.
 
 ## Rozdział 3. Wniosek, dokumenty i ocena zdolności kredytowej
 
@@ -133,9 +133,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 5\) kosztorys i pozwolenie na budowę lub zgłoszenie robót, jeżeli kredyt jest przeznaczony na budowę lub remont.
 - 3\. Klient odpowiada za prawdziwość i kompletność danych podanych we wniosku. Wniosek niekompletny Bank zwraca do uzupełnienia, wyznaczając termin, a po jego bezskutecznym upływie pozostawia wniosek bez rozpatrzenia.
 
+<!-- page: 7 -->
 ### § 13.
 
-- 1\. Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta na podstawie informacji <!-- page: 7 --> o jego dochodach, wydatkach, zobowiązaniach i historii kredytowej, w tym danych pochodzących z biur informacji gospodarczej i Biura Informacji Kredytowej.[^2]
+- 1\. Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta na podstawie informacji o jego dochodach, wydatkach, zobowiązaniach i historii kredytowej, w tym danych pochodzących z biur informacji gospodarczej i Biura Informacji Kredytowej.[^2]
 - 2\. Przy ocenie zdolności Bank bierze pod uwagę:
   - 1\) wszystkie zobowiązania finansowe Klienta, w tym limity w rachunkach i na kartach kredytowych, bez względu na stopień ich wykorzystania;
   - 2\) koszty utrzymania gospodarstwa domowego, ustalone na podstawie liczby osób i miejsca zamieszkania;
@@ -152,21 +153,20 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 14.
 
-- 1\. Dochody Klienta dokumentuje się w zależności od ich źródła. W przypadku umowy o pracę Klient przedstawia zaświadczenie od pracodawcy oraz wyciągi z rachunku z ostatnich 6 miesięcy; dla działalności gospodarczej — zeznania podatkowe za ostatnie dwa lata i zaświadczenia o niezaleganiu wobec organów publicznych.
-- 2\. Za dochody niestabilne uznaje się w szczególności wynagrodzenie z umów zlecenia i o dzieło uzyskiwane krócej niż 12 miesięcy, premie i dodatki o nieregularnym charakterze oraz dochody z zagranicy bez udokumentowania ich źródła i stałości. Dochody te uwzględnia się w ocenie zdolności w części ustalonej przez Bank, a w razie wątpliwości pomija w całości.
-
-### § 15.
-
 - 1\. Jeżeli wniosek składa kilka osób, Bank ocenia zdolność kredytową każdej z nich oraz łączną zdolność gospodarstwa domowego. Dochody i zobowiązania wnioskodawców sumuje się, a miesięczne koszty utrzymania ustala dla całego gospodarstwa.
 - 2\. Wnioskodawcy powinni wskazać osobę uprawnioną do kontaktów z Bankiem. Zmiana tej osoby wymaga pisemnego zawiadomienia podpisanego przez wszystkich Kredytobiorców.
 - 3\. Wyłączenie jednego z Kredytobiorców z umowy w trakcie jej trwania jest możliwe wyłącznie za zgodą Banku, po ponownej ocenie zdolności kredytowej, i wymaga aneksu do umowy; opłata za zmianę wynosi 500,00 zł.
 
-<!-- page: 8 -->
+### § 15.
+
+- 1\. Dochody Klienta dokumentuje się w zależności od ich źródła. W przypadku umowy o pracę Klient przedstawia zaświadczenie od pracodawcy oraz wyciągi z rachunku z ostatnich 6 miesięcy; dla działalności gospodarczej — zeznania podatkowe za ostatnie dwa lata i zaświadczenia o niezaleganiu wobec organów publicznych.
+- 2\. Za dochody niestabilne uznaje się w szczególności wynagrodzenie z umów zlecenia i o dzieło uzyskiwane krócej niż 12 miesięcy, premie i dodatki o nieregularnym charakterze oraz dochody z zagranicy bez udokumentowania ich źródła i stałości. <!-- page: 8 --> Dochody te uwzględnia się w ocenie zdolności w części ustalonej przez Bank, a w razie wątpliwości pomija w całości.
+
 ### § 16.
 
-- 1\. Składając wniosek, Klient upoważnia Bank do uzyskania informacji o swoich zobowiązaniach, terminowości ich spłaty i wpisach w bazach danych, w tym w Biurze Informacji Kredytowej oraz biurach informacji gospodarczej.
-- 2\. Klient może uzyskać informację o oddziaływaniu zapytań o kredyt na jego historię kredytową. Zapytania Banku mają charakter zapytań kredytowych i są odnotowywane w bazie.
-- 3\. Jeżeli w wyniku sprawdzenia okaże się, że Klient podał nieprawdziwe informacje o zobowiązaniach lub dochodach, Bank odmawia udzielenia kredytu.
+- 1\. Bank stosuje wobec Klienta środki bezpieczeństwa finansowego zgodnie z przepisami: ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644). W ramach tych środków Bank ma prawo żądać dokumentów potwierdzających tożsamość oraz źródło pochodzenia środków przeznaczonych na wkład własny.
+- 2\. Klient jest obowiązany poinformować Bank, czy jest osobą zajmującą eksponowane stanowisko polityczne, a także o beneficjentach rzeczywistych w razie, gdy działa w imieniu innej osoby.
+- 3\. Odmowa przedstawienia dokumentów lub udzielenia informacji uprawnia Bank do odmowy udzielenia kredytu oraz zakończenia procedury bez ponoszenia odpowiedzialności za szkodę Klienta.
 
 ## Rozdział 4. Wycena nieruchomości
 
@@ -185,25 +185,25 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 18.
 
+- 1\. Rzeczoznawca majątkowy sporządza operat szacunkowy zgodnie z przepisami o gospodarce nieruchomościami i standardami zawodowymi. Bank dba o to, by rzeczoznawca był niezależny od sprzedawcy, dewelopera, pośrednika i Klienta.
+<!-- page: 9 -->
+- 2\. Klient jest obowiązany umożliwić rzeczoznawcy oględziny nieruchomości w terminie uzgodnionym z nim, nie dłuższym niż 7 dni od dnia zlecenia wyceny, oraz udostępnić dokumenty techniczne, w tym rzuty i pozwolenia.
+- 3\. Jeżeli oględziny nie odbędą się z przyczyn leżących po stronie Klienta, Bank może zawiesić rozpatrywanie wniosku, a opłatę za wycenę pobrać także wtedy, gdy rzeczoznawca przyjechał na miejsce, a oględzin nie przeprowadzono.
+
+### § 19.
+
+- 1\. W trakcie trwania umowy Bank monitoruje wartość nieruchomości na podstawie statystycznych modeli wyceny i danych o cenach transakcyjnych w danej lokalizacji. Monitoring nie wymaga udziału Kredytobiorcy ani nie wiąże się z opłatą.
+- 2\. Jeżeli monitoring wykaże spadek wartości nieruchomości o więcej niż 20% w stosunku do wartości w dniu udzielenia kredytu, Bank ma prawo zlecić wycenę kontrolną, o czym zawiadamia Kredytobiorcę.
+- 3\. Koszt wyceny kontrolnej ponosi Bank, chyba że została zlecona na wniosek Kredytobiorcy albo w związku ze zmianą stanu nieruchomości.
+
+### § 20.
+
 - 1\. W operacie szacunkowym określa się wartość rynkową nieruchomości oraz — dla celów ostrożnościowych — wartość kredytowaną, która uwzględnia długoterminowe cechy nieruchomości i odrzuca przejściowe wahania cen.
 - 2\. Bank do wyliczenia LTV przyjmuje:
   - 1\) w przypadku zakupu — niższą z wartości: ceny nabycia i wartości rynkowej;
   - 2\) w przypadku budowy — wartość nieruchomości po ukończeniu inwestycji, pomniejszoną o ryzyko niedokończenia robót;
   - 3\) w przypadku refinansowania — aktualną wartość rynkową nieruchomości.
-<!-- page: 9 -->
 - 3\. Bank nie ponosi skutków różnic między wartością z wyceny a ceną uzyskiwaną przy sprzedaży nieruchomości w przyszłości.
-
-### § 19.
-
-- 1\. Rzeczoznawca majątkowy sporządza operat szacunkowy zgodnie z przepisami o gospodarce nieruchomościami i standardami zawodowymi. Bank dba o to, by rzeczoznawca był niezależny od sprzedawcy, dewelopera, pośrednika i Klienta.
-- 2\. Klient jest obowiązany umożliwić rzeczoznawcy oględziny nieruchomości w terminie uzgodnionym z nim, nie dłuższym niż 7 dni od dnia zlecenia wyceny, oraz udostępnić dokumenty techniczne, w tym rzuty i pozwolenia.
-- 3\. Jeżeli oględziny nie odbędą się z przyczyn leżących po stronie Klienta, Bank może zawiesić rozpatrywanie wniosku, a opłatę za wycenę pobrać także wtedy, gdy rzeczoznawca przyjechał na miejsce, a oględzin nie przeprowadzono.
-
-### § 20.
-
-- 1\. W trakcie trwania umowy Bank monitoruje wartość nieruchomości na podstawie statystycznych modeli wyceny i danych o cenach transakcyjnych w danej lokalizacji. Monitoring nie wymaga udziału Kredytobiorcy ani nie wiąże się z opłatą.
-- 2\. Jeżeli monitoring wykaże spadek wartości nieruchomości o więcej niż 20% w stosunku do wartości w dniu udzielenia kredytu, Bank ma prawo zlecić wycenę kontrolną, o czym zawiadamia Kredytobiorcę.
-- 3\. Koszt wyceny kontrolnej ponosi Bank, chyba że została zlecona na wniosek Kredytobiorcy albo w związku ze zmianą stanu nieruchomości.
 
 ## Rozdział 5. Decyzja kredytowa i umowa kredytu
 
@@ -213,9 +213,10 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Pozytywna decyzja kredytowa jest ważna przez 90 dni. W tym czasie Klient może zawrzeć umowę kredytu, o ile jego sytuacja finansowa i prawna oraz stan nieruchomości nie uległy istotnej zmianie.
 - 3\. Bank może wstrzymać zawarcie umowy lub wypłatę kredytu, jeżeli po wydaniu decyzji ujawnią się okoliczności, które wpływają na ocenę zdolności kredytowej lub wartości zabezpieczenia, w szczególności:
   - 1\) utrata pracy lub istotne obniżenie dochodów któregokolwiek z Kredytobiorców;
+  <!-- page: 10 -->
   - 2\) niekorzystny wpis w bazie informacji gospodarczej lub w Biurze Informacji Kredytowej;
   - 3\) ujawnienie wad prawnych nieruchomości lub niezgodności jej stanu z dokumentami.
-- 4\. O odmowie udzielenia kredytu Bank informuje Klienta na trwałym nośniku. Odmowa nie wymaga uzasadnienia, jeżeli przepisy nie stanowią inaczej, ale Bank wskazuje, czy <!-- page: 10 --> podstawą była ocena zdolności kredytowej.
+- 4\. O odmowie udzielenia kredytu Bank informuje Klienta na trwałym nośniku. Odmowa nie wymaga uzasadnienia, jeżeli przepisy nie stanowią inaczej, ale Bank wskazuje, czy podstawą była ocena zdolności kredytowej.
 
 ### § 22.
 
@@ -232,19 +233,20 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 23.
 
+- 1\. Umowa kredytu jest zawierana w placówce Banku, w kancelarii notarialnej albo — jeżeli Bank dopuszcza taką formę — na odległość, z wykorzystaniem kwalifikowanego podpisu elektronicznego.
+- 2\. Jeżeli oświadczenia o ustanowieniu hipoteki składane są w akcie notarialnym, Kredytobiorca ponosi koszty taksy notarialnej, podatku od czynności cywilnoprawnych i opłat sądowych w zakresie wynikającym z przepisów, a Bank pokrywa koszty swojego przedstawiciela.
+- 3\. Projekt aktu notarialnego Bank udostępnia Kredytobiorcy z wyprzedzeniem, aby umożliwić zapoznanie się z jego treścią, nie później niż na dzień roboczy przed planowanym terminem podpisania.
+
+### § 24.
+
 - 1\. Zmiana umowy kredytu wymaga formy, w jakiej zawarto umowę, z wyjątkiem zmian wynikających z Regulaminu, przepisów prawa lub zmiany oprocentowania, o których Bank informuje na trwałym nośniku.
+<!-- page: 11 -->
 - 2\. Kredytobiorca może wnioskować w szczególności o:
   - 1\) zmianę rodzaju rat, dnia płatności lub okresu kredytowania;
   - 2\) zmianę zabezpieczenia, w tym zastąpienie hipoteki na innej nieruchomości;
   - 3\) zwolnienie z długu jednego ze współkredytobiorców;
   - 4\) przedłużenie okresu stałego oprocentowania na kolejny okres.
 - 3\. Za rozpatrzenie wniosku o zmianę warunków umowy Bank nalicza opłatę w wysokości 500,00 zł. Opłatę pobiera się niezależnie od wyniku rozpatrzenia, chyba że odmowa wynika z błędu Banku.
-
-### § 24.
-
-- 1\. Kredytobiorca będący konsumentem może odstąpić od umowy kredytu bez podania przyczyny w terminie 14 dni od dnia zawarcia umowy albo od dnia, w którym otrzymał warunki umowy i informacje wymagane przepisami — jeżeli nastąpiło to później.
-- 2\. Oświadczenie o odstąpieniu składa się na piśmie, a w przypadku wysłania go przed upływem terminu uznaje się, że termin został zachowany. Po odstąpieniu Kredytobiorca zwraca Bankowi wypłaconą kwotę wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, bez zbędnej zwłoki, nie później niż w terminie 30 dni od dnia <!-- page: 11 --> wysłania oświadczenia.
-- 3\. Bank nie żąda od Kredytobiorcy innych opłat w związku z odstąpieniem niż zwrot kwot, które Bank zapłacił organom publicznym, oraz opłaty za wycenę, jeżeli została poniesiona na wniosek Kredytobiorcy.
 
 ### § 25.
 
@@ -266,10 +268,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) oświadczenia o poddaniu się egzekucji w trybie art. 777 Kodeksu postępowania cywilnego;
   - 3\) ustanowienia dodatkowej hipoteki na innej nieruchomości, jeżeli wartość nieruchomości kredytowanej nie zapewnia wymaganego zabezpieczenia;
   - 4\) poręczenia osoby trzeciej lub zgody małżonka na zaciągnięcie zobowiązania.
-- 3\. Do czasu wpisu hipoteki do księgi wieczystej oprocentowanie kredytu zostaje podwyższone o 1% w skali roku. Podwyższenie przestaje obowiązywać od najbliższego dnia płatności raty po dostarczeniu Bankowi odpisu księgi wieczystej z prawomocnym wpisem.
+- 3\. Do czasu wpisu hipoteki do księgi wieczystej oprocentowanie kredytu zostaje podwyższone o 1% w skali roku. Podwyższenie przestaje obowiązywać od najbliższego dnia płatności raty po dostarczeniu Bankowi odpisu księgi wieczystej z prawomocnym <!-- page: 12 --> wpisem.
 - 4\. Kredytobiorca jest obowiązany w terminie 180 dni od dnia wypłaty kredytu dostarczyć dowód wpisu hipoteki, jeżeli wniosek o wpis składał samodzielnie. Opłata sądowa od wniosku o wpis wynosi 200,00 zł i obciąża Kredytobiorcę.
 
-<!-- page: 12 -->
 ### § 27.
 
 - 1\. Kredytobiorca jest obowiązany ubezpieczyć nieruchomość stanowiącą zabezpieczenie od ognia i innych zdarzeń losowych na sumę nie niższą niż wartość odtworzeniowa nieruchomości, a następnie dokonać cesji praw z umowy ubezpieczenia na rzecz Banku.
@@ -282,21 +283,25 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 28.
 
-- 1\. Bank przekazuje dokument stanowiący podstawę wykreślenia hipoteki z księgi wieczystej po całkowitej spłacie kredytu wraz z należnościami ubocznymi w terminie 14 dni od dnia spłaty.
-- 2\. Zwolnienie zabezpieczeń, w tym zwrot weksla in blanco i deklaracji wekslowej, następuje na wniosek Kredytobiorcy; wniosek można złożyć w placówce lub za pośrednictwem bankowości elektronicznej.
-- 3\. Za wystawienie dokumentu zwolnienia Bank nie pobiera opłaty; za dodatkowe odpisy na życzenie Kredytobiorcy naliczana jest opłata w wysokości 20,00 zł.
-
-### § 29.
-
 - 1\. Poręczyciel odpowiada wobec Banku jak dłużnik solidarny, do wysokości określonej w umowie poręczenia. Bank informuje poręczyciela o istotnych zmianach w umowie kredytu, które mogą zwiększyć zakres jego odpowiedzialności.
 - 2\. Poręczyciel może żądać od Banku informacji o stanie zadłużenia i terminowości spłat, o ile Kredytobiorca wyraził na to zgodę. Zwolnienie poręczyciela wymaga zgody Banku i może być uzależnione od ustanowienia innego zabezpieczenia.
 - 3\. Poręczenie wygasa z chwilą całkowitej spłaty kredytu lub wypowiedzenia umowy poręczenia w przypadkach przewidzianych w jej treści.
 
+### § 29.
+
+- 1\. Wniosek o wpis hipoteki do księgi wieczystej składa się w sądzie wieczystoksięgowym, w formie elektronicznej, z wykorzystaniem systemu teleinformatycznego, jeżeli przepisy na to pozwalają, a w pozostałych przypadkach — w formie papierowej.
+- 2\. Do czasu uzyskania prawomocnego wpisu hipoteki Bank ma prawo stosować tymczasowe zabezpieczenie kredytu, w szczególności:
+  - 1\) ubezpieczenie kredytu na okres do czasu uzyskania wpisu;
+  - 2\) podwyższenie oprocentowania na zasadach określonych w § 26;
+  - 3\) przekazanie dokumentu potwierdzającego złożenie wniosku o wpis.
+- 3\. W przypadku odmowy wpisu hipoteki lub zwrotu wniosku Kredytobiorca niezwłocznie usuwa przeszkody, a Bank może wstrzymać dalsze wypłaty transz.
+
+<!-- page: 13 -->
 ## Rozdział 7. Wypłata kredytu w transzach
 
 ### § 30.
 
-- 1\. Wypłata kredytu następuje jednorazowo albo w transzach, w zależności od celu kredytu. <!-- page: 13 --> Kredyt przeznaczony na budowę lub remont jest wypłacany wyłącznie w transzach, w liczbie nie większej niż dziesięciu.
+- 1\. Wypłata kredytu następuje jednorazowo albo w transzach, w zależności od celu kredytu. Kredyt przeznaczony na budowę lub remont jest wypłacany wyłącznie w transzach, w liczbie nie większej niż dziesięciu.
 - 2\. Warunkami wypłaty pierwszej transzy są:
   - 1\) ustanowienie zabezpieczeń przewidzianych w umowie i złożenie wniosku o wpis hipoteki do księgi wieczystej;
   - 2\) przedstawienie polisy ubezpieczeniowej z potwierdzoną cesją praw na rzecz Banku;
@@ -309,20 +314,19 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 31.
 
-- 1\. Ostatnia transza nie może być niższa niż 100,00 zł ani stanowić mniej niż 10% kwoty kredytu; jej wypłata następuje po przedstawieniu dokumentu potwierdzającego zakończenie budowy lub remontu i dokonaniu przez Bank oględzin nieruchomości.
-- 2\. Kwotę kredytu, której Kredytobiorca nie wypłacił w terminie wypłaty określonym w umowie, uznaje się za niewykorzystaną, a umowa wygasa w tej części. Bank nie nalicza dodatkowych opłat z tego tytułu, z wyjątkiem prowizji należnej za część wypłaconą.
-- 3\. Prowizja za przygotowanie kredytu, pobrana od kwoty niewykorzystanej, nie podlega zwrotowi, chyba że niewykorzystanie wynika z przyczyn leżących po stronie Banku.
+- 1\. Przed wypłatą każdej transzy z wyjątkiem pierwszej Bank ma prawo dokonać kontroli postępu prac na nieruchomości. Termin kontroli Bank uzgadnia z Kredytobiorcą, a sama kontrola jest wykonywana w terminie 7 dni od dnia złożenia wniosku.
+- 2\. Jeżeli wynik kontroli wykaże, że zaawansowanie prac jest niższe od deklarowanego, Bank wypłaca transzę w części odpowiadającej rzeczywistemu zaawansowaniu, a różnicę wypłaca po uzupełnieniu prac.
+- 3\. Kontrola nie stanowi odbioru technicznego ani nadzoru nad budową i nie zwalnia Kredytobiorcy z odpowiedzialności za jakość robót.
 
 ### § 32.
 
-- 1\. Wniosek o wypłatę transzy składa się na formularzu udostępnionym przez Bank, w placówce lub w bankowości elektronicznej, wraz z dokumentami potwierdzającymi zakres wykonanych robót i poniesione koszty.
-- 2\. Do wniosku Kredytobiorca załącza:
-  - 1\) faktury lub rachunki za wykonane prace i zakupione materiały, wystawione na Kredytobiorcę;
-  - 2\) protokół odbioru etapu robót podpisany przez kierownika budowy lub inspektora nadzoru;
-  - 3\) zdjęcia dokumentujące postęp prac, jeżeli Bank ich zażąda.
-- 3\. Brak dokumentów lub rozbieżności w ich treści powodują wstrzymanie wypłaty do czasu ich wyjaśnienia, o czym Bank informuje Kredytobiorcę niezwłocznie.
+- 1\. Bank może wstrzymać wypłatę kolejnych transz, jeżeli:
+  - 1\) Kredytobiorca zalega ze spłatą rat lub odsetek od wypłaconych już transz;
+  - 2\) kontrola wykazała wykorzystanie środków niezgodnie z celem kredytu;
+  - 3\) ujawnione zostały wady prawne nieruchomości lub zagrożenie dla zabezpieczenia;
+  - 4\) wartość nieruchomości po zakończeniu kolejnego etapu robót jest niższa niż założona w kosztorysie.
+- 2\. Po usunięciu przyczyn wstrzymania Bank wznawia wypłaty w terminie 3 dni liczonym <!-- page: 14 --> w dniach roboczych, o ile nie upłynął termin ostatecznej wypłaty określony w umowie.
 
-<!-- page: 14 -->
 ## Rozdział 8. Oprocentowanie zmienne i okresowo stałe
 
 ### § 33.
@@ -344,13 +348,10 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 35.
 
-- 1\. Całkowity koszt kredytu obejmuje wszystkie koszty, które Kredytobiorca jest obowiązany ponieść w związku z umową, w szczególności odsetki, prowizje, opłaty za wycenę, składki ubezpieczeniowe wymagane przez Bank oraz inne opłaty, o których Bank wiedział w dniu zawarcia umowy.
-- 2\. Do całkowitego kosztu kredytu nie wlicza się:
-  <!-- page: 15 -->
-  - 1\) opłat notarialnych i sądowych związanych z ustanowieniem hipoteki, jeżeli Kredytobiorca ponosi je wobec osób trzecich;
-  - 2\) kosztów, które Kredytobiorca ponosi w razie niewykonania umowy;
-  - 3\) opłat za dobrowolne ubezpieczenia niewymagane przez Bank.
-- 3\. Przy obliczaniu RRSO oprocentowanie zmienne przyjmuje się na poziomie obowiązującym w dniu zawarcia umowy i zakłada jego niezmienność przez okres kredytowania.
+- 1\. W okresie obowiązywania stopy okresowo stałej oprocentowanie kredytu nie zmienia się wraz ze zmianą wskaźnika referencyjnego. Stopa ta jest ustalana na dzień zawarcia umowy i wynosi 6,49%.
+<!-- page: 15 -->
+- 2\. Najpóźniej na 14 dni przed końcem okresu stałego oprocentowania Bank przekazuje Kredytobiorcy propozycję dalszego oprocentowania oraz zaktualizowany harmonogram.
+- 3\. Jeżeli Kredytobiorca nie zaakceptuje propozycji Banku, oprocentowanie od pierwszego dnia po zakończeniu okresu stałego ustalane jest według zmiennej stopy na podstawie wskaźnik referencyjny WIR-3M i marży 2,1%.
 
 ### § 36.
 
@@ -374,7 +375,8 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 38.
 
-- 1\. Kredytobiorca będący konsumentem może wnioskować o zawieszenie spłaty rat kapitałowo-odsetkowych (wakacje kredytowe) na okres nie dłuższy niż czterech miesięcy w roku kalendarzowym, jeżeli kredyt został zaciągnięty na zaspokojenie własnych <!-- page: 16 --> potrzeb mieszkaniowych.
+- 1\. Kredytobiorca będący konsumentem może wnioskować o zawieszenie spłaty rat kapitałowo-odsetkowych (wakacje kredytowe) na okres nie dłuższy niż czterech miesięcy w roku kalendarzowym, jeżeli kredyt został zaciągnięty na zaspokojenie własnych potrzeb mieszkaniowych.
+<!-- page: 16 -->
 - 2\. Wniosek o wakacje kredytowe składa się nie później niż 30 dni przed terminem płatności pierwszej raty objętej zawieszeniem. Opłata za rozpatrzenie wniosku wynosi 0,00 zł.
 - 3\. W okresie wakacji kredytowych:
   - 1\) odsetki za okres zawieszenia nie są naliczane od kwoty kapitału, a ich równowartość nie podlega kapitalizacji;
@@ -392,18 +394,15 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 40.
 
-- 1\. Kredytobiorca może dokonać dodatkowej wpłaty (nadpłaty) kredytu, niebędącej spłatą całości zadłużenia. Nadpłatę Bank zalicza w następującej kolejności: na należności wymagalne, a następnie na kapitał.
-- 2\. Kredytobiorca w dyspozycji nadpłaty wskazuje, czy nadpłata ma:
-  - 1\) skrócić okres kredytowania, przy zachowaniu dotychczasowej wysokości raty;
-  - 2\) obniżyć wysokość kolejnych rat, przy zachowaniu dotychczasowego okresu kredytowania.
-- 3\. Jeżeli Kredytobiorca nie wskaże sposobu zaliczenia nadpłaty, Bank skraca okres kredytowania. Nadpłata dokonana w okresie wskazanym w § 39 podlega prowizji na zasadach tam określonych.
-
-<!-- page: 17 -->
-### § 41.
-
 - 1\. Wniosek o wakacje kredytowe może dotyczyć jednego albo kilku miesięcy, które Kredytobiorca wskazuje we wniosku. Liczbę miesięcy zawieszenia w roku kalendarzowym oblicza się narastająco od stycznia do grudnia.
 - 2\. W przypadku kredytu, w którym spłata odbywa się w ratach malejących, zawieszenie obejmuje zarówno część kapitałową, jak i odsetkową raty. Harmonogram po zawieszeniu Bank przekazuje Kredytobiorcy w terminie 14 dni.
 - 3\. Prawo do wakacji kredytowych nie przysługuje, jeżeli Kredytobiorca nie spełnia warunków przewidzianych w przepisach lub gdy zadłużenie przeterminowane w dniu wniosku przekracza wysokość dwóch pełnych rat.
+
+### § 41.
+
+- 1\. Kredytobiorca zapewnia na rachunku wskazanym w umowie środki wystarczające do pobrania raty w dniu jej płatności. Jeżeli środki są niewystarczające, Bank może obciążyć <!-- page: 17 --> inne rachunki Kredytobiorcy prowadzone w Banku, po uprzednim poinformowaniu go o tym zamiarze.
+- 2\. Potrącenie wierzytelności Banku z rachunków innych niż wskazane w umowie następuje na zasadach określonych w ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646). Bank nie potrąca środków wolnych od zajęcia ani środków pochodzących ze świadczeń, których potrącenie jest wyłączone przepisami.
+- 3\. Jeżeli rata została pobrana z rachunku prowadzonego w innej walucie niż złoty, Bank przelicza ją po kursie z tabeli Banku obowiązującej o godzinie 9:00 w dniu spłaty, z uwzględnieniem marży przeliczeń w wysokości 1,5%.
 
 ## Rozdział 10. Ubezpieczenia
 
@@ -450,15 +449,20 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 46.
 
-- 1\. Kredytobiorca utrzymuje nieruchomość w stanie niepogorszonym, pokrywa wszelkie koszty jej utrzymania, w tym podatki, opłaty eksploatacyjne i czynsz, oraz niezwłocznie usuwa skutki uszkodzeń.
-- 2\. Kredytobiorca nie jest uprawniony bez zgody Banku dokonywać zmian w sposobie użytkowania nieruchomości ani rozbiórki budynków znajdujących się na nieruchomości. Zgoda Banku nie jest wymagana na prace remontowe, które nie obniżają wartości <!-- page: 19 --> nieruchomości.
-- 3\. W przypadku wszczęcia wobec nieruchomości postępowania administracyjnego, w szczególności wywłaszczenia lub zajęcia na cele publiczne, Kredytobiorca zawiadamia Bank w terminie 14 dni od dnia otrzymania zawiadomienia o postępowaniu.
+- 1\. Kredytobiorca zawiadamia Bank o zmianie imienia, nazwiska, adresu zamieszkania, adresu korespondencyjnego, numeru telefonu i adresu poczty elektronicznej w terminie 14 dni od dnia zmiany, osobiście w placówce lub w bankowości elektronicznej.
+- 2\. Korespondencję wysłaną na ostatni znany Bankowi adres uznaje się za doręczoną po upływie 10 dni od dnia nadania, jeżeli Kredytobiorca nie zawiadomił o zmianie adresu.
+<!-- page: 19 -->
+- 3\. Bank nie odpowiada za skutki niepowiadomienia go o zmianie danych, w szczególności za doręczenie korespondencji pod nieaktualny adres.
 
 ### § 47.
 
-- 1\. W razie zamiaru sprzedaży nieruchomości obciążonej hipoteką Kredytobiorca informuje o tym Bank z wyprzedzeniem i uzgadnia z nim sposób rozliczenia kredytu. Zbycie nieruchomości bez zgody Banku jest naruszeniem umowy.
-- 2\. Za zgodą Banku nabywca nieruchomości może przejąć dług, o ile spełnia warunki zdolności kredytowej i wniesie wymagane zabezpieczenie. Przejęcie długu wymaga zawarcia aneksu, a za jego przygotowanie pobiera się opłatę w wysokości 500,00 zł.
-- 3\. W przypadku śmierci Kredytobiorcy spadkobiercy wstępują w jego prawa i obowiązki z umowy kredytu, a Bank może rozpatrzeć wniosek o dalsze obsługiwanie kredytu na dotychczasowych warunkach.
+- 1\. Kredytobiorca jest obowiązany przekazywać Bankowi, na jego żądanie, informacje i dokumenty dotyczące sytuacji majątkowej i dochodowej, jeżeli jest to niezbędne do oceny ryzyka kredytowego, nie częściej jednak niż raz w roku, o ile w umowie nie określono inaczej.
+- 2\. Kredytobiorca niezwłocznie informuje Bank o:
+  - 1\) wszczęciu postępowania egzekucyjnego lub upadłościowego wobec niego;
+  - 2\) utracie pracy lub zaprzestaniu prowadzenia działalności gospodarczej;
+  - 3\) zmianie stanu cywilnego lub ustroju majątkowego małżeńskiego;
+  - 4\) toczącym się postępowaniu dotyczącym nieruchomości, w tym o zasiedzenie lub rozgraniczenie.
+- 3\. Bank może potraktować niewykonanie obowiązków informacyjnych jako naruszenie umowy uzasadniające wezwanie do ich wykonania w wyznaczonym terminie.
 
 ## Rozdział 12. Opóźnienie w spłacie i wypowiedzenie umowy
 
@@ -477,7 +481,8 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Bank ma prawo wypowiedzieć umowę kredytu z zachowaniem okresu wypowiedzenia wynoszącego 30 dni, jeżeli:
   - 1\) Kredytobiorca zalega ze spłatą co najmniej dwóch pełnych rat i mimo wezwania do zapłaty w terminie 14 dni nie uregulował zaległości;
   - 2\) Kredytobiorca wykorzystał kredyt niezgodnie z umową albo podał nieprawdziwe informacje, które miały wpływ na decyzję Banku;
-  - 3\) wartość zabezpieczenia uległa obniżeniu w stopniu zagrażającym spłacie, <!-- page: 20 --> a Kredytobiorca nie ustanowił dodatkowego zabezpieczenia;
+  <!-- page: 20 -->
+  - 3\) wartość zabezpieczenia uległa obniżeniu w stopniu zagrażającym spłacie, a Kredytobiorca nie ustanowił dodatkowego zabezpieczenia;
   - 4\) Kredytobiorca nie utrzymuje ubezpieczenia nieruchomości lub nie dokonał cesji praw z polisy.
 - 2\. Wypowiedzenie następuje na piśmie lub na innym trwałym nośniku. W okresie wypowiedzenia Kredytobiorca może spłacić zaległość i kontynuować umowę, a wniosek o restrukturyzację złożony w tym okresie wstrzymuje wszczęcie egzekucji do czasu jego rozpatrzenia.
 - 3\. Kredytobiorca ma prawo wypowiedzieć umowę kredytu w każdym czasie, składając oświadczenie z zachowaniem terminu określonego w § 39 i spłacając całość zadłużenia.
@@ -485,9 +490,9 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 50.
 
-- 1\. Odsetki za opóźnienie są naliczane od dnia następującego po dniu wymagalności do dnia poprzedzającego dzień spłaty, od kwoty kapitału przeterminowanego, w wysokości nie wyższej niż 17% w skali roku.
-- 2\. Zmiana stopy odsetek za opóźnienie następuje automatycznie z dniem zmiany przepisów określających wysokość odsetek maksymalnych za opóźnienie, o czym Bank informuje na stronie https://bank.example.
-- 3\. Od odsetek za opóźnienie nie nalicza się odsetek, z wyjątkiem przypadków dopuszczonych przepisami prawa, ani nie pobiera dodatkowych kar umownych za sam fakt opóźnienia.
+- 1\. Po wypowiedzeniu umowy i upływie okresu wypowiedzenia Bank ma prawo wystąpić o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu albo dochodzić roszczeń na drodze sądowej, a następnie prowadzić egzekucję z nieruchomości, ruchomości, wynagrodzenia i rachunków Kredytobiorcy.
+- 2\. Kredytobiorca zachowuje prawo do spłaty zadłużenia w trakcie postępowania egzekucyjnego. Środki uzyskane z egzekucji zalicza się zgodnie z zasadami określonymi w § 37.
+- 3\. Nadwyżkę uzyskaną ze sprzedaży nieruchomości ponad zaspokojenie roszczeń Banku i innych wierzycieli komornik przekazuje Kredytobiorcy.
 
 ### § 51.
 
@@ -501,8 +506,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Posiadacz produktu ma prawo złożyć reklamację dotyczącą produktów i usług świadczonych przez Bank w każdym czasie, w jednej z następujących form:
   - 1\) pisemnie — osobiście w placówce Banku albo przesyłką pocztową na adres: Bank Przykładowy S.A., Biuro Reklamacji, ul. Przykładowa 1, 00-001 Warszawa;
-  - 2\) ustnie — telefonicznie pod numerem 800 000 001 lub osobiście do protokołu sporządzanego przez pracownika Banku;
-  <!-- page: 21 -->
+  - 2\) ustnie — telefonicznie pod numerem 800 000 001 lub osobiście do protokołu <!-- page: 21 --> sporządzanego przez pracownika Banku;
   - 3\) elektronicznie — na adres reklamacje@bank.example albo za pośrednictwem bankowości elektronicznej.
 - 2\. Reklamacja musi zawierać dane umożliwiające identyfikację Klienta, opis zastrzeżeń oraz żądany sposób jej załatwienia. Reklamacje rozpatrywane są przez Biuro Reklamacji.
 - 3\. Bank udziela odpowiedzi na reklamację niezwłocznie, nie później niż w terminie:
@@ -527,20 +531,20 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Bank przetwarza dane osobowe w celu:
   - 1\) zawarcia i wykonania umowy oraz obsługi produktów i usług;
   - 2\) wypełnienia obowiązków prawnych ciążących na Banku, w tym wynikających z przepisów o przeciwdziałaniu praniu pieniędzy;
+  <!-- page: 22 -->
   - 3\) realizacji prawnie uzasadnionych interesów Banku, w szczególności:
-    <!-- page: 22 -->
     - a\) dochodzenia roszczeń i obrony przed roszczeniami;
     - b\) zapobiegania nadużyciom i oszustwom.
 - 3\. Klientowi przysługuje prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz wniesienia sprzeciwu, a także prawo wniesienia skargi do organu nadzorczego. W sprawach ochrony danych można zwracać się do: Inspektor Ochrony Danych, adres e-mail: iod@bank.example.
 
 ### § 55.
 
-- 1\. Działalność Banku podlega nadzorowi organu nadzoru nad rynkiem finansowym. Bank jest uczestnikiem obowiązkowego systemu gwarantowania depozytów, a środki zgromadzone na rachunkach Kredytobiorcy objęte są gwarancją do kwoty równowartość 100 000 euro.
-- 2\. Kredytobiorca ma prawo zwrócić się do Rzecznika Finansowego, którego strona internetowa znajduje się pod adresem https://rzecznik-finansowy.example, o wszczęcie postępowania interwencyjnego lub o pomoc prawną.
-- 3\. Kontakt z Bankiem w sprawach kredytu hipotecznego umożliwiają: Departament Kredytów Hipotecznych, Infolinia pod numerem 800 000 001 (czynna codziennie przez całą dobę) oraz placówki Banku.
-
-### § 56.
-
 - 1\. Jeżeli którekolwiek z postanowień Regulaminu lub umowy kredytu okaże się nieważne albo bezskuteczne, pozostałe postanowienia zachowują moc, a w miejsce postanowienia nieważnego stosuje się odpowiednie przepisy prawa.
 - 2\. Załączniki do umowy, w tym harmonogram spłat, tabela opłat i oświadczenia Kredytobiorcy stanowią jej integralną część. W razie rozbieżności pierwszeństwo mają postanowienia umowy, a w dalszej kolejności Regulaminu.
 - 3\. Kredytobiorca może otrzymać w każdej chwili, na żądanie i bezpłatnie, kopię umowy oraz harmonogram spłat na trwałym nośniku.
+
+### § 56.
+
+- 1\. Regulamin wchodzi w życie w dniu 1 stycznia 2025 r. i ma zastosowanie do umów zawartych od tego dnia. W stosunku do umów zawartych wcześniej stosuje się postanowienia Regulaminu w brzmieniu obowiązującym w dniu zawarcia umowy, z zastrzeżeniem zmian wprowadzonych w trybie określonym w Regulaminie.
+- 2\. Regulamin jest udostępniany w placówkach Banku oraz na stronie https://bank.example, w postaci umożliwiającej jego pobranie, utrwalenie i wydrukowanie.
+- 3\. Wersję Regulaminu obowiązującą w dniu zawarcia umowy Bank przekazuje Kredytobiorcy wraz z umową.

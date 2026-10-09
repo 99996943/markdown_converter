@@ -251,6 +251,7 @@ internal static partial class DocumentStates
                 ValidTo = to,
                 Status = DocumentStatus.Nieaktualny,
                 PreviousVersionId = k > 1 ? Id(latest.Id, k - 1) : null,
+                SeriesId = latest.Id,
                 FactOverrides = [new FactOverride(fact, value, OverrideReason.Wersja)],
             };
             next = value;

@@ -73,7 +73,11 @@ public sealed record ManifestDocument(
     IReadOnlyList<Contradiction>? Contradictions = null,
     PoisonInfo? Poison = null,
     ActInfo? Source = null,
-    string? Notes = null);
+    string? Notes = null)
+{
+    /// <summary>Path of the chunk file relative to corpus/ (spec 004), written after <see cref="Markdown"/>.</summary>
+    public string? Chunks { get; init; }
+}
 
 /// <summary>A change against the previous version.</summary>
 /// <param name="Unit">Unit (for example "§ 12 ust. 3").</param>

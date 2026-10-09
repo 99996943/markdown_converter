@@ -23,6 +23,7 @@ typy:
     prefiks: PRO
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: procedura
+    nazwa-en: procedure      # opcjonalne (spec 004): angielska nazwa typu w metadanych fragmentów; brak = id
     wymagane-elementy: [metryczka, kroki, schemat, lista-kontrolna, zalacznik, definicje]
 ```
 

@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
+    <ProjectReference Include="..\LegalAgent.Chunking\LegalAgent.Chunking.csproj" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />

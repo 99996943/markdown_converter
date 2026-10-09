@@ -81,6 +81,12 @@ public sealed record DocumentPlan
     /// <summary>Gets the id of the previous version, if any.</summary>
     public string? PreviousVersionId { get; init; }
 
+    /// <summary>
+    /// Gets the id of the latest version for an earlier version (null otherwise). Versions share the choice and order
+    /// of optional blocks with the latest one, so they differ only in the changed facts (FR-120).
+    /// </summary>
+    public string? SeriesId { get; init; }
+
     /// <summary>Gets the ids of the non-shared optional blocks dealt to this document, in ordinal order.</summary>
     public required IReadOnlyList<string> BlockPool { get; init; }
 

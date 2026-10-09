@@ -145,6 +145,7 @@ public static class ManifestWriter
         OptString(w, "previousVersion", d.PreviousVersion);
         w.WriteString("pdf", d.Pdf);
         w.WriteString("markdown", d.Markdown);
+        OptString(w, "chunks", d.Chunks);
         w.WriteNumber("pages", d.Pages);
         OptString(w, "template", d.Template);
         OptString(w, "layout", d.Layout);
@@ -281,7 +282,10 @@ public static class ManifestWriter
             : null,
         Has(e, "poison") ? ReadPoison(e.GetProperty("poison")) : null,
         Has(e, "source") ? ReadSource(e.GetProperty("source")) : null,
-        Str(e, "notes"));
+        Str(e, "notes"))
+    {
+        Chunks = Str(e, "chunks"),
+    };
 
     private static PoisonInfo ReadPoison(JsonElement p) => new(
         Str(p, "kind")!,

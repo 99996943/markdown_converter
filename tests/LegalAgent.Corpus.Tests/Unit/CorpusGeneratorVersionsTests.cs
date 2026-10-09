@@ -109,4 +109,24 @@ public sealed class CorpusGeneratorVersionsTests : IDisposable
                 doc.Fit.Composition.Document.Front.History.Select(h => h.Version));
         }
     }
+
+    [Fact]
+    public async Task Versions_KeepTheBlocksAndParagraphNumbersOfTheLatest_FR120()
+    {
+        GenerationResult result = await CorpusGenerator.GenerateAsync(Parameters(), Options(), TestContext.Current.CancellationToken);
+        var byId = result.Documents.ToDictionary(d => d.Plan.Id, StringComparer.Ordinal);
+
+        var earlier = result.Documents.Where(d => d.Plan.Id.Contains("-w", StringComparison.Ordinal)).ToList();
+        Assert.NotEmpty(earlier);
+        foreach (GeneratedDocument version in earlier)
+        {
+            GeneratedDocument latest = byId[version.Plan.Id[..version.Plan.Id.LastIndexOf("-w", StringComparison.Ordinal)]];
+            Assert.Equal(latest.Fit.Composition.Blocks.Select(b => b.BlockId), version.Fit.Composition.Blocks.Select(b => b.BlockId));
+            Assert.Equal(Headings(latest.Markdown), Headings(version.Markdown));
+        }
+    }
+
+    // Unit headings only: covers and record cards of versions differ by design (version, dates, history).
+    private static List<string> Headings(string markdown) =>
+        markdown.Split('\n').Where(l => System.Text.RegularExpressions.Regex.IsMatch(l, @"^#+ (§ \d|Art\. \d|Rozdział \d)")).ToList();
 }
