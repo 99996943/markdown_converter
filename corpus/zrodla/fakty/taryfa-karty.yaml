@@ -1,0 +1,258 @@
+fakty:
+  # --- karty debetowe (uzupełnienie faktów regulaminu)
+  - id: oplata.taryfa-karty.debetowa-karta-dodatkowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 4.00
+      - od: 2027-01-01
+        wartosc: 5.00
+    alternatywy: [0.00, 7.00]
+  - id: oplata.taryfa-karty.debetowa-wznowienie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [10.00, 15.00]
+  - id: oplata.taryfa-karty.debetowa-zmiana-limitu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2026-04-01
+        wartosc: 2.00
+    alternatywy: [5.00]
+  - id: oplata.taryfa-karty.debetowa-wydruk-potwierdzenia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+    alternatywy: [0.00, 4.00]
+  - id: oplata.taryfa-karty.debetowa-prog-zwolnienia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+      - od: 2027-01-01
+        wartosc: 700.00
+    alternatywy: [300.00, 1000.00]
+  - id: oplata.taryfa-karty.debetowa-cashback
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00]
+  - id: limit.taryfa-karty.debetowa-cashback
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [100.00, 300.00]
+  # --- karty kredytowe
+  - id: oplata.taryfa-karty.kredytowa-wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [20.00, 30.00]
+  - id: oplata.taryfa-karty.kredytowa-prog-zwolnienia-rocznej
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12000.00
+      - od: 2027-01-01
+        wartosc: 15000.00
+    alternatywy: [6000.00, 20000.00]
+  - id: oplata.taryfa-karty.kredytowa-zwiekszenie-limitu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [30.00]
+  - id: oplata.taryfa-karty.kredytowa-restrukturyzacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+      - od: 2026-04-01
+        wartosc: 60.00
+    alternatywy: [0.00, 100.00]
+  - id: oplata.taryfa-karty.kredytowa-zmiana-terminu-splaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.taryfa-karty.kredytowa-przelew-z-karty
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.5
+      - od: 2027-01-01
+        wartosc: 4.0
+    alternatywy: [2.5]
+  # --- karty przedpłacone
+  - id: oplata.taryfa-karty.przedplacona-wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 19.00
+      - od: 2026-04-01
+        wartosc: 25.00
+    alternatywy: [0.00, 30.00]
+  - id: oplata.taryfa-karty.przedplacona-prowadzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2027-01-01
+        wartosc: 6.00
+    alternatywy: [0.00, 8.00]
+  - id: oplata.taryfa-karty.przedplacona-nieaktywna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [0.00, 5.00]
+  - id: oplata.taryfa-karty.przedplacona-doladowanie-przelewem
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [1.50]
+  - id: oplata.taryfa-karty.przedplacona-doladowanie-gotowka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [0.5, 2.0]
+  - id: oplata.taryfa-karty.przedplacona-wyplata-bankomat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2027-01-01
+        wartosc: 6.00
+    alternatywy: [0.00, 8.00]
+  - id: oplata.taryfa-karty.przedplacona-zwrot-salda
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: limit.taryfa-karty.przedplacona-saldo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 15000.00
+    alternatywy: [5000.00, 20000.00]
+  - id: limit.taryfa-karty.przedplacona-dzienny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3000.00
+    alternatywy: [1500.00, 5000.00]
+  - id: termin.taryfa-karty.przedplacona-nieaktywnosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesiącach"
+    alternatywy: ["6 miesiącach", "24 miesiącach"]
+  # --- karty dla przedsiębiorców
+  - id: oplata.taryfa-karty.firmowa-wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [0.00, 50.00]
+  - id: oplata.taryfa-karty.firmowa-prowadzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+      - od: 2027-01-01
+        wartosc: 15.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.taryfa-karty.firmowa-karta-dodatkowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.taryfa-karty.firmowa-wyplata-bankomat-obcy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 7.00
+      - od: 2026-04-01
+        wartosc: 8.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.taryfa-karty.firmowa-kredytowa-roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 199.00
+      - od: 2027-01-01
+        wartosc: 229.00
+    alternatywy: [0.00, 299.00]
+  - id: oplata.taryfa-karty.firmowa-zestawienie-zbiorcze
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [0.00, 40.00]
+  - id: limit.taryfa-karty.firmowa-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20000.00
+      - od: 2027-01-01
+        wartosc: 25000.00
+    alternatywy: [10000.00, 30000.00]
+  - id: limit.taryfa-karty.firmowa-bezgotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+    alternatywy: [30000.00, 100000.00]
+  # --- operacje za granicą
+  - id: oplata.taryfa-karty.zagranica-awaryjna-gotowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+      - od: 2026-04-01
+        wartosc: 150.00
+    alternatywy: [80.00, 200.00]
+  - id: oplata.taryfa-karty.zagranica-karta-awaryjna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 400.00
+    alternatywy: [300.00, 600.00]
+  - id: oplata.taryfa-karty.zagranica-zapytanie-o-saldo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+    alternatywy: [0.00, 3.00]
+  - id: oplata.taryfa-karty.zagranica-prowizja-platnosc-kredytowa
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+      - od: 2027-01-01
+        wartosc: 1.5
+    alternatywy: [0.0, 2.0]
+  - id: oplata.taryfa-karty.zagranica-odrzucona-autoryzacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [3.00]
+  # --- usługi dodatkowe
+  - id: oplata.taryfa-karty.ubezpieczenie-karty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.90
+      - od: 2027-01-01
+        wartosc: 7.90
+    alternatywy: [4.90, 9.90]
+  - id: oplata.taryfa-karty.pakiet-assistance
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 9.00
+    alternatywy: [0.00, 12.00]
+  - id: oplata.taryfa-karty.personalizacja-wizerunku
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.taryfa-karty.kurier-karta
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+      - od: 2026-04-01
+        wartosc: 30.00
+    alternatywy: [0.00, 40.00]
+  - id: oplata.taryfa-karty.potwierdzenie-transakcji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+    alternatywy: [0.00, 12.00]
+  - id: oplata.taryfa-karty.reklamacja-nieuzasadniona
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [0.00, 100.00]
+  - id: termin.taryfa-karty.wydanie-pilne
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [2, 5]

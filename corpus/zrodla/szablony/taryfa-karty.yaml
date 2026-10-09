@@ -1,0 +1,40 @@
+id: taryfa-karty
+typ: taryfy
+temat: taryfa-karty
+tytul:
+  - "Taryfa opłat i prowizji za karty płatnicze {{param:bank}}"
+  - "{{param:bank}} — Taryfa opłat i prowizji za karty płatnicze"
+  - "Taryfa opłat i prowizji za karty debetowe, kredytowe i przedpłacone {{param:bank}}"
+uklady: [taryfa-bez-siatki]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, taryfa-karty-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut]
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty debetowe dla klientów indywidualnych"
+    wymagane: [taryfa-karty-debetowe-wstep, taryfa-karty-debetowe-podstawowe]
+    opcjonalne: { kategorie: [pozycje-taryfa-karty-debetowe], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty kredytowe"
+    wymagane: [taryfa-karty-kredytowe-wstep, taryfa-karty-kredytowe-podstawowe]
+    opcjonalne: { kategorie: [pozycje-taryfa-karty-kredytowe], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty przedpłacone"
+    wymagane: [taryfa-karty-przedplacone-wstep, taryfa-karty-przedplacone-podstawowe]
+    opcjonalne: { kategorie: [pozycje-taryfa-karty-przedplacone], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty dla przedsiębiorców"
+    wymagane: [taryfa-karty-firmowe-wstep, taryfa-karty-firmowe-podstawowe]
+    opcjonalne: { kategorie: [pozycje-taryfa-karty-firmowe], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Operacje kartami za granicą"
+    wymagane: [taryfa-karty-zagranica-wstep, taryfa-karty-zagranica-podstawowe]
+    opcjonalne: { kategorie: [pozycje-taryfa-karty-zagranica], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Usługi dodatkowe do kart"
+    wymagane: [taryfa-karty-uslugi-wstep, taryfa-karty-uslugi-podstawowe]
+    opcjonalne: { kategorie: [pozycje-taryfa-karty-uslugi], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i postanowienia końcowe"
+    wymagane: [taryfa-karty-objasnienia]

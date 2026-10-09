@@ -1,0 +1,428 @@
+bloki:
+  # ---------- Karty przedpłacone ----------
+  - id: taryfa-karty-przedplacone-wstep
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: wstep-taryfa-karty
+    elementy:
+      - akapit: "Karta przedpłacona jest {wydawana|oferowana} bez konieczności posiadania rachunku w Banku i umożliwia wykonywanie transakcji wyłącznie do wysokości środków wcześniej wpłaconych na kartę. Środki zgromadzone na karcie nie są oprocentowane i nie stanowią depozytu."
+      - akapit: "Maksymalne saldo karty przedpłaconej wynosi {{fakt:limit.taryfa-karty.przedplacona-saldo}}, a dzienny limit transakcji — {{fakt:limit.taryfa-karty.przedplacona-dzienny}}. Opłatę za nieaktywną kartę pobiera się po {{fakt:termin.taryfa-karty.przedplacona-nieaktywnosc}} nieużywania karty."
+
+  - id: taryfa-karty-przedplacone-podstawowe
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: podstawowe-taryfa-karty
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Wydanie|Wystawienie} karty przedpłaconej imiennej"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-wydanie}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty przedpłaconej na okaziciela[^1]"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-wydanie}}"
+            tryb: "jednorazowo"
+          - usluga: "Prowadzenie karty przedpłaconej"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-prowadzenie}}"
+            tryb: "miesięcznie"
+          - usluga: "Prowadzenie karty nieaktywnej"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-nieaktywna}}"
+            tryb: "miesięcznie"
+          - usluga: "Doładowanie karty przelewem z rachunku w Banku"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-doladowanie-przelewem}}"
+            tryb: "za doładowanie"
+          - usluga: "Doładowanie karty gotówką w placówce Banku"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-doladowanie-gotowka}} min. 3,00 zł"
+            tryb: "od kwoty doładowania"
+          - usluga: "Wypłata gotówki z karty w bankomacie[^2]"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-wyplata-bankomat}}"
+            tryb: "za operację"
+          - usluga: "Płatność kartą przedpłaconą w punktach handlowo-usługowych"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność kartą przedpłaconą w internecie"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Wydanie duplikatu karty przedpłaconej"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "jednorazowo"
+          - usluga: "Zastrzeżenie karty przedpłaconej"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana numeru PIN do karty przedpłaconej"
+            stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Wypłata niewykorzystanych środków (wykup wartości pieniężnej)[^3]"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-zwrot-salda}}"
+            tryb: "jednorazowo"
+          - usluga: "Sprawdzenie salda karty w bankomacie Banku"
+            stawka: "bez opłat"
+            tryb: "za zapytanie"
+          - usluga: "Sprawdzenie salda karty w bankowości elektronicznej lub aplikacji"
+            stawka: "bez opłat"
+            tryb: "za zapytanie"
+    przypisy:
+      1: "Karta na okaziciela może być doładowana łącznie kwotą do równowartości 150 euro w ciągu roku kalendarzowego; wyższe kwoty wymagają przekształcenia karty w kartę imienną po zweryfikowaniu tożsamości."
+      2: "Opłata nie jest pobierana za wypłaty w bankomatach Banku w wysokości do {{fakt:limit.taryfa-karty.przedplacona-dzienny}} dziennie."
+      3: "Opłaty nie pobiera się, jeżeli zwrot środków następuje w związku z zakończeniem ważności karty albo z rezygnacją z karty w terminie {{fakt:termin.odstapienie-od-umowy}} od zawarcia umowy."
+
+  - id: taryfa-karty-przedplacone-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-przedplacone
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Aktywacja|Aktywowanie} karty przedpłaconej w aplikacji mobilnej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Aktywacja karty przedpłaconej na infolinii"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Weryfikacja tożsamości posiadacza karty imiennej w placówce"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Weryfikacja tożsamości posiadacza karty zdalnie przez wideorozmowę"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Przekształcenie karty na okaziciela w kartę imienną"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty przedpłaconej w wersji prezentowej z kopertą"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-wydanie}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty przedpłaconej dla dziecka w wieku od 10 do 17 lat"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Prowadzenie karty przedpłaconej dla dziecka"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Nadanie karcie przedpłaconej indywidualnego wizerunku"
+            stawka: "{{fakt:oplata.taryfa-karty.personalizacja-wizerunku}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty przedpłaconej w pakiecie wielokrotnym (od 10 sztuk) dla pracodawcy"
+            stawka: "wg umowy"
+            tryb: "za kartę"
+
+  - id: taryfa-karty-przedplacone-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-przedplacone
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Doładowanie karty w bankowości elektronicznej z rachunku w Banku"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-doladowanie-przelewem}}"
+            tryb: "za doładowanie"
+          - usluga: "Doładowanie karty przelewem z rachunku w innym banku"
+            stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}"
+            tryb: "za doładowanie"
+          - usluga: "{Doładowanie|Zasilenie} karty kartą debetową lub kredytową innego wydawcy"
+            stawka: "1,5% min. 2,00 zł"
+            tryb: "od kwoty doładowania"
+          - usluga: "Doładowanie karty w punkcie partnerskim"
+            stawka: "2,0% min. 3,00 zł"
+            tryb: "od kwoty doładowania"
+          - usluga: "Doładowanie karty cykliczne zleceniem stałym"
+            stawka: "bez opłat"
+            tryb: "za doładowanie"
+          - usluga: "Minimalna kwota pojedynczego doładowania"
+            stawka: "10,00 zł"
+            tryb: "za doładowanie"
+          - usluga: "Maksymalna kwota pojedynczego doładowania"
+            stawka: "{{fakt:limit.taryfa-karty.przedplacona-dzienny}}"
+            tryb: "za doładowanie"
+          - usluga: "Przelew środków z karty przedpłaconej na rachunek wskazany przez posiadacza"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-zwrot-salda}}"
+            tryb: "za przelew"
+          - usluga: "Wpłata gotówki na kartę we wpłatomacie Banku"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Odrzucenie doładowania ponad maksymalne saldo karty"
+            stawka: "bez opłat"
+            tryb: "za operację"
+
+  - id: taryfa-karty-przedplacone-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-przedplacone
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Wypłata|Pobranie} gotówki z karty przedpłaconej w bankomacie innego operatora w kraju"
+            stawka: "{{fakt:oplata.taryfa-karty.przedplacona-wyplata-bankomat}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki z karty przedpłaconej w bankomacie za granicą"
+            stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki z karty przedpłaconej w kasie punktu handlowego (cashback)"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Dzienny limit wypłat gotówki z karty przedpłaconej w wysokości do {{fakt:limit.taryfa-karty.przedplacona-dzienny}}"
+            stawka: "bez opłat"
+            tryb: "dziennie"
+          - usluga: "Dzienny limit płatności zbliżeniowych bez PIN do {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Łączna wartość kolejnych płatności zbliżeniowych bez PIN do {{fakt:limit.karta-debetowa.zblizeniowy-skumulowany}}"
+            stawka: "bez opłat"
+            tryb: "łącznie"
+          - usluga: "Płatność kartą przedpłaconą za granicą w walucie obcej"
+            stawka: "wg kursu Banku"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność kartą przedpłaconą za granicą w złotych"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Autoryzacja z blokadą środków (hotel, wynajem pojazdu)"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Zwrot transakcji kartą przedpłaconą zrealizowany przez akceptanta"
+            stawka: "bez opłat"
+            tryb: "za zwrot"
+
+  - id: taryfa-karty-przedplacone-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-przedplacone
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wydanie karty zastępczej w związku z utratą lub kradzieżą"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "jednorazowo"
+          - usluga: "{Przeniesienie|Przeksięgowanie} salda na kartę zastępczą po zastrzeżeniu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty zastępczej w razie wady produkcyjnej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wymiana karty po upływie terminu ważności"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wypłata salda po upływie terminu ważności karty"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zamknięcie karty przedpłaconej na wniosek posiadacza"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zaświadczenie o historii operacji na karcie"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za dokument"
+          - usluga: "Zestawienie operacji z ostatnich 3 miesięcy w bankowości elektronicznej"
+            stawka: "bez opłat"
+            tryb: "za zestawienie"
+          - usluga: "Zestawienie operacji w formie papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za zestawienie"
+          - usluga: "Powiadomienie o transakcji wiadomością tekstową"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+
+  # ---------- Karty dla przedsiębiorców ----------
+  - id: taryfa-karty-firmowe-wstep
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: wstep-taryfa-karty
+    elementy:
+      - akapit: "Karty dla przedsiębiorców są wydawane do rachunków firmowych {osobom upoważnionym|użytkownikom wskazanym} przez posiadacza rachunku. Posiadacz rachunku odpowiada za wszystkie transakcje wykonane kartami wydanymi na jego wniosek."
+      - akapit: "Dzienny limit wypłat gotówki dla kart firmowych wynosi domyślnie {{fakt:limit.taryfa-karty.firmowa-gotowkowy}}, a dzienny limit transakcji bezgotówkowych — {{fakt:limit.taryfa-karty.firmowa-bezgotowkowy}}. {Limity|Wysokość limitów} można zmienić na wniosek posiadacza rachunku."
+
+  - id: taryfa-karty-firmowe-podstawowe
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: podstawowe-taryfa-karty
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Wydanie|Wystawienie} karty debetowej do rachunku firmowego"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-wydanie}}"
+            tryb: "jednorazowo"
+          - usluga: "Prowadzenie karty debetowej do rachunku firmowego[^1]"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-prowadzenie}}"
+            tryb: "miesięcznie"
+          - usluga: "Wydanie karty debetowej dla kolejnego użytkownika"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-karta-dodatkowa}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty kredytowej dla przedsiębiorcy: opłata roczna"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-kredytowa-roczna}}"
+            tryb: "rocznie"
+          - usluga: "Wydanie karty zastępczej w miejsce zgubionej lub skradzionej"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "jednorazowo"
+          - usluga: "Zastrzeżenie karty firmowej"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Wypłata gotówki w bankomacie Banku"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki w bankomacie innego operatora w kraju"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-wyplata-bankomat-obcy}}"
+            tryb: "za operację"
+          - usluga: "Wpłata gotówki we wpłatomacie Banku na rachunek firmowy[^2]"
+            stawka: "0,1% min. 3,00 zł"
+            tryb: "od kwoty wpłaty"
+          - usluga: "Zmiana limitów dziennych karty firmowej"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+          - usluga: "Zestawienie zbiorcze transakcji wszystkich kart firmowych"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-zestawienie-zbiorcze}}"
+            tryb: "miesięcznie"
+          - usluga: "Zestawienie transakcji w formacie do importu w programie księgowym"
+            stawka: "bez opłat"
+            tryb: "za plik"
+          - usluga: "Płatność kartą firmową w punktach handlowo-usługowych i w internecie"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Zmiana numeru PIN do karty firmowej"
+            stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Wydanie karty firmowej w trybie pilnym"
+            stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}"
+            tryb: "jednorazowo"
+          - usluga: "Powiadomienie o transakcji kartą firmową wiadomością tekstową"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+    przypisy:
+      1: "Opłata za prowadzenie karty jest pobierana z rachunku firmowego, do którego karta została wydana; w pierwszych trzech miesiącach od zawarcia umowy o rachunek opłaty nie pobiera się."
+      2: "Stawkę procentową stosuje się do wpłat przekraczających {{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}} miesięcznie; wpłaty do tej kwoty są wolne od opłat."
+
+  - id: taryfa-karty-firmowe-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-firmowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Ustanowienie|Wskazanie} użytkownika karty firmowej w placówce"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Ustanowienie użytkownika karty firmowej w bankowości elektronicznej dla firm"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana danych użytkownika karty firmowej"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Odwołanie użytkownika karty firmowej i zamknięcie karty"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana osoby upoważnionej do dysponowania limitami kart"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Wydanie karty firmowej z nadrukowanym logo przedsiębiorcy"
+            stawka: "{{fakt:oplata.taryfa-karty.personalizacja-wizerunku}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie pakietu 10 kart firmowych na podstawie jednego wniosku"
+            stawka: "wg umowy"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty firmowej dla osoby spoza organów spółki"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-karta-dodatkowa}}"
+            tryb: "jednorazowo"
+          - usluga: "Aktywacja karty firmowej przez użytkownika"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wznowienie karty firmowej po upływie terminu ważności"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-karty-firmowe-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-firmowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Ustalenie|Ustawienie} indywidualnego limitu dziennego wypłat gotówki do {{fakt:limit.taryfa-karty.firmowa-gotowkowy}}"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Ustalenie indywidualnego limitu transakcji bezgotówkowych do {{fakt:limit.taryfa-karty.firmowa-bezgotowkowy}}"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Ustalenie limitu miesięcznego dla kategorii wydatków (paliwo, podróże, zakupy)"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Tymczasowe podwyższenie limitu karty firmowej na czas delegacji"
+            stawka: "10,00 zł"
+            tryb: "za zmianę"
+          - usluga: "Wyłączenie transakcji zagranicznych dla wskazanych użytkowników"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Wyłączenie transakcji internetowych dla wskazanych użytkowników"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Blokada kart firmowych wszystkich użytkowników na wniosek posiadacza"
+            stawka: "bez opłat"
+            tryb: "za blokadę"
+          - usluga: "Odblokowanie kart firmowych po wyjaśnieniu przyczyny blokady"
+            stawka: "bez opłat"
+            tryb: "za odblokowanie"
+          - usluga: "Płatność zbliżeniowa do kwoty {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}} bez PIN"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność kartą firmową za paliwo na stacjach partnerskich"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+
+  - id: taryfa-karty-firmowe-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-firmowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wypłata gotówki z karty kredytowej firmowej w bankomacie"
+            stawka: "{{fakt:oplata.karta.gotowka-prowizja}}, min. {{fakt:oplata.karta.gotowka-minimum}}"
+            tryb: "od kwoty wypłaty"
+          - usluga: "Roczna opłata za dodatkową kartę kredytową firmową"
+            stawka: "{{fakt:oplata.karta.dodatkowa-roczna}}"
+            tryb: "rocznie"
+          - usluga: "Okres bezodsetkowy dla transakcji bezgotówkowych kartą kredytową firmową do {{fakt:termin.karta.okres-bezodsetkowy}}"
+            stawka: "bez opłat"
+            tryb: "za okres rozliczeniowy"
+          - usluga: "{Zestawienie|Wyciąg} zbiorczy dla karty kredytowej firmowej w formie papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za zestawienie"
+          - usluga: "Zestawienie zbiorcze dla karty kredytowej firmowej w bankowości elektronicznej"
+            stawka: "bez opłat"
+            tryb: "za zestawienie"
+          - usluga: "Przekroczenie przyznanego limitu karty kredytowej firmowej"
+            stawka: "{{fakt:oplata.karta.przekroczenie-limitu}}"
+            tryb: "za każde przekroczenie"
+          - usluga: "Upomnienie w związku z opóźnieniem w spłacie karty kredytowej firmowej"
+            stawka: "{{fakt:oplata.upomnienie}}"
+            tryb: "za każde upomnienie"
+          - usluga: "Zwiększenie limitu kredytowego karty firmowej"
+            stawka: "{{fakt:oplata.taryfa-karty.kredytowa-zwiekszenie-limitu}}"
+            tryb: "jednorazowo"
+          - usluga: "Spłata zadłużenia na karcie firmowej z rachunku firmowego w Banku"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Rozłożenie transakcji karty firmowej na raty: prowizja"
+            stawka: "{{fakt:oplata.karta.prowizja-rata}}"
+            tryb: "od kwoty transakcji"
+
+  - id: taryfa-karty-firmowe-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-firmowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Zaświadczenie|Potwierdzenie} o posiadaniu karty firmowej dla kontrahenta"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za dokument"
+          - usluga: "Potwierdzenie transakcji kartą firmową do celów rozliczeniowych"
+            stawka: "{{fakt:oplata.taryfa-karty.potwierdzenie-transakcji}}"
+            tryb: "za dokument"
+          - usluga: "Zestawienie transakcji kart firmowych za okres do 12 miesięcy wstecz"
+            stawka: "{{fakt:oplata.taryfa-karty.firmowa-zestawienie-zbiorcze}}"
+            tryb: "za zestawienie"
+          - usluga: "Zestawienie transakcji kart firmowych za okres powyżej 12 miesięcy wstecz"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za zestawienie"
+          - usluga: "Opinia bankowa o terminowości rozliczeń karty firmowej"
+            stawka: "100,00 zł"
+            tryb: "za dokument"
+          - usluga: "Kopia umowy o kartę firmową"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za dokument"
+          - usluga: "Obsługa reklamacji transakcji kartą firmową uznanej za zasadną"
+            stawka: "bez opłat"
+            tryb: "za reklamację"
+          - usluga: "Obsługa reklamacji transakcji kartą firmową uznanej za niezasadną"
+            stawka: "{{fakt:oplata.taryfa-karty.reklamacja-nieuzasadniona}}"
+            tryb: "za reklamację"
+          - usluga: "Wydanie karty firmowej w placówce wskazanej przez przedsiębiorcę"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wysyłka karty firmowej kurierem na adres siedziby"
+            stawka: "{{fakt:oplata.taryfa-karty.kurier-karta}}"
+            tryb: "za przesyłkę"

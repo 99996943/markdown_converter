@@ -1,0 +1,281 @@
+bloki:
+  - id: taryfa-karty-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: ogolne-taryfa-karty
+    elementy:
+      - ustep: "Taryfa {dotyczy|obejmuje} kart debetowych, kredytowych i przedpłaconych wydawanych {osobom fizycznym|klientom indywidualnym} oraz przedsiębiorcom, a także operacji wykonywanych tymi kartami w kraju i za granicą. Zasady wydawania i używania kart określają regulaminy: „{{ref:dokument:regulamin-kart-debetowych}}” oraz „{{ref:dokument:regulamin-kart-kredytowych}}”."
+      - ustep: "Opłaty za karty wydawane w ramach {promocji|ofert promocyjnych} określa Taryfa w brzmieniu obowiązującym w dniu zawarcia umowy, z uwzględnieniem warunków danej promocji, wskazanych w „{{ref:dokument:regulamin-promocji-karty}}”."
+      - ustep: "Użyte w Taryfie określenia „karta”, „karta dodatkowa” i „użytkownik karty” {mają znaczenie|należy rozumieć tak}, jak w regulaminie właściwym dla danego rodzaju karty. Rodzaje kart i nazwy handlowe pakietów {ustala|określa} Bank w ofercie, a nie w Taryfie."
+      - akapit: "Wysokość oprocentowania karty kredytowej, zasady jego naliczania oraz rzeczywista roczna stopa oprocentowania wynikają z umowy i regulaminu karty kredytowej; w Taryfie podano wyłącznie opłaty i prowizje związane z kartą. Przepisy o usługach płatniczych określa {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+
+  # ---------- Karty debetowe ----------
+  - id: taryfa-karty-debetowe-wstep
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: wstep-taryfa-karty
+    elementy:
+      - akapit: "Karta debetowa jest wydawana do rachunku osobistego, a transakcje nią wykonane obciążają {środki na rachunku|saldo rachunku} lub, w przypadku zawarcia odpowiedniej umowy, dostępny limit w rachunku. {Opłaty|Stawki} w niniejszej sekcji dotyczą klientów indywidualnych."
+      - akapit: "Opłata za prowadzenie karty nie jest pobierana w miesiącu, w którym łączna wartość transakcji bezgotówkowych wykonanych kartami do rachunku wyniosła co najmniej {{fakt:oplata.taryfa-karty.debetowa-prog-zwolnienia}}."
+
+  - id: taryfa-karty-debetowe-podstawowe
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: podstawowe-taryfa-karty
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Wydanie|Wystawienie} karty debetowej do rachunku osobistego"
+            stawka: "{{fakt:oplata.karta-debetowa.wydanie}}"
+            tryb: "jednorazowo"
+          - usluga: "Prowadzenie karty debetowej[^1]"
+            stawka: "{{fakt:oplata.karta-debetowa.prowadzenie-miesieczna}}"
+            tryb: "miesięcznie"
+          - usluga: "Prowadzenie dodatkowej karty debetowej wydanej współposiadaczowi lub pełnomocnikowi"
+            stawka: "{{fakt:oplata.taryfa-karty.debetowa-karta-dodatkowa}}"
+            tryb: "miesięcznie"
+          - usluga: "Wznowienie karty po upływie terminu ważności"
+            stawka: "{{fakt:oplata.taryfa-karty.debetowa-wznowienie}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty zastępczej w miejsce zgubionej, skradzionej lub zniszczonej"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty w trybie pilnym[^2]"
+            stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}"
+            tryb: "jednorazowo"
+          - usluga: "{Zastrzeżenie|Zablokowanie} karty na wniosek użytkownika"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana numeru PIN w bankomacie lub w bankowości elektronicznej"
+            stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Zmiana limitów transakcji kartą"
+            stawka: "{{fakt:oplata.taryfa-karty.debetowa-zmiana-limitu}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Powiadomienie o transakcji kartą w aplikacji mobilnej"
+            stawka: "{{fakt:oplata.karta-debetowa.powiadomienie-o-transakcji}}"
+            tryb: "za powiadomienie"
+          - usluga: "Powiadomienie o transakcji kartą wiadomością tekstową"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+          - usluga: "Wypłata gotówki w bankomatach Banku"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki w bankomacie innego operatora w kraju"
+            stawka: "{{fakt:oplata.bankomat-obcy}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki w bankomacie za granicą"
+            stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki z kasy w ramach usługi cashback[^3]"
+            stawka: "{{fakt:oplata.taryfa-karty.debetowa-cashback}}"
+            tryb: "za operację"
+          - usluga: "Wpłata gotówki we wpłatomacie Banku"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Wpłata gotówki w placówce Banku na rachunek obsługiwany kartą"
+            stawka: "{{fakt:oplata.wplata-gotowkowa}}"
+            tryb: "za operację"
+          - usluga: "Płatność kartą w punktach handlowo-usługowych i w internecie"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność zbliżeniowa i płatność mobilna"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+    przypisy:
+      1: "Opłata nie jest pobierana w miesiącu, w którym spełniono warunek wskazany we wstępie do niniejszej sekcji; jest naliczana w ostatnim dniu miesiąca kalendarzowego."
+      2: "Karta w trybie pilnym jest przygotowywana w ciągu {{fakt:termin.taryfa-karty.wydanie-pilne}} roboczych i doręczana kurierem; opłatę za przesyłkę kurierską podano w sekcji o usługach dodatkowych."
+      3: "Usługa jest dostępna przy płatności w punktach handlowych, które ją oferują; wypłata nie może przekraczać kwoty {{fakt:limit.taryfa-karty.debetowa-cashback}} jednorazowo."
+
+  - id: taryfa-karty-debetowe-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-debetowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Zwiększenie|Podwyższenie} dziennego limitu wypłat gotówki powyżej limitu domyślnego"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Ustawienie dziennego limitu wypłat gotówki w wysokości do {{fakt:limit.karta-debetowa.maksymalny-ustawiany-gotowkowy}}"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Ustawienie limitu transakcji internetowych w wysokości do {{fakt:limit.karta-debetowa.internet-dzienny}}"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Zmiana limitu transakcji zbliżeniowych bez PIN"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "{Czasowa|Tymczasowa} blokada karty w bankowości elektronicznej"
+            stawka: "bez opłat"
+            tryb: "za każdą blokadę"
+          - usluga: "Odblokowanie karty po blokadzie czasowej"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Włączenie lub wyłączenie transakcji internetowych"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Włączenie lub wyłączenie transakcji zagranicznych"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Aktywacja karty w bankowości elektronicznej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Aktywacja karty w placówce lub na infolinii"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-karty-debetowe-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-debetowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wypłata gotówki w bankomacie operatora spoza sieci Banku, w tym:"
+            stawka: "{{fakt:oplata.bankomat-obcy}}"
+            tryb: "za operację"
+            podpozycje:
+              - usluga: "w bankomacie operatora niewspółpracującego z Bankiem"
+                stawka: "{{fakt:oplata.bankomat-obcy}}"
+                tryb: "za operację"
+              - usluga: "w bankomatach operatora współpracującego z Bankiem"
+                stawka: "bez opłat"
+                tryb: "za operację"
+          - usluga: "Sprawdzenie salda rachunku w bankomacie Banku"
+            stawka: "bez opłat"
+            tryb: "za zapytanie"
+          - usluga: "Sprawdzenie salda rachunku w bankomacie innego operatora"
+            stawka: "2,00 zł"
+            tryb: "za zapytanie"
+          - usluga: "Wydruk potwierdzenia transakcji w bankomacie"
+            stawka: "{{fakt:oplata.taryfa-karty.debetowa-wydruk-potwierdzenia}}"
+            tryb: "za wydruk"
+          - usluga: "Zmiana numeru PIN w bankomacie innego operatora"
+            stawka: "nie jest dostępna"
+            tryb: "—"
+          - usluga: "Odblokowanie numeru PIN zablokowanego po błędnych próbach jego wprowadzenia"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "{Wysłanie|Ponowne wysłanie} numeru PIN do karty pocztą"
+            stawka: "6,00 zł"
+            tryb: "za przesyłkę"
+          - usluga: "Wypłata gotówki w bankomacie z wykorzystaniem płatności mobilnych"
+            stawka: "{{fakt:oplata.bankomat-obcy}}"
+            tryb: "za operację"
+          - usluga: "Wpłata gotówki we wpłatomacie powyżej {{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}"
+            stawka: "niedostępna"
+            tryb: "—"
+          - usluga: "Wpłata monet w wyznaczonych wpłatomatach"
+            stawka: "1,0% min. 5,00 zł"
+            tryb: "od kwoty wpłaty"
+
+  - id: taryfa-karty-debetowe-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-debetowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Rozliczenie transakcji kartą w terminie {{fakt:termin.karta-debetowa.rozliczenie-transakcji}} od jej dokonania"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Zdjęcie blokady środków po anulowaniu autoryzacji przez akceptanta"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Przedłużenie blokady środków ponad {{fakt:termin.karta-debetowa.blokada-autoryzacji}} na wniosek akceptanta"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Zwrot transakcji kartą zrealizowany przez akceptanta"
+            stawka: "bez opłat"
+            tryb: "za zwrot"
+          - usluga: "Obsługa reklamacji transakcji kartą uznanej za zasadną"
+            stawka: "bez opłat"
+            tryb: "za reklamację"
+          - usluga: "Obsługa reklamacji transakcji kartą uznanej za niezasadną[^1]"
+            stawka: "{{fakt:oplata.taryfa-karty.reklamacja-nieuzasadniona}}"
+            tryb: "za reklamację"
+          - usluga: "{Uzyskanie|Dostarczenie} od akceptanta potwierdzenia transakcji kartą"
+            stawka: "{{fakt:oplata.taryfa-karty.potwierdzenie-transakcji}}"
+            tryb: "za dokument"
+          - usluga: "Transakcja kartą w walucie obcej na terytorium kraju"
+            stawka: "wg kursu Banku"
+            tryb: "od kwoty transakcji"
+          - usluga: "Transakcja kartą w złotych u akceptanta zagranicznego"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Transakcja kartą w punkcie wydającym gotówkę (quasi-gotówkowa)"
+            stawka: "2,0% min. 5,00 zł"
+            tryb: "od kwoty transakcji"
+    przypisy:
+      1: "Opłatę pobiera się wyłącznie wtedy, gdy zakwestionowana transakcja okazała się prawidłowo autoryzowana przez użytkownika karty; w innym przypadku reklamacja jest wolna od opłat."
+
+  - id: taryfa-karty-debetowe-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-debetowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Karta debetowa dla {młodzieży|klienta w wieku od 13 do 17 lat}: wydanie"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Karta debetowa dla młodzieży: prowadzenie"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Karta debetowa dla seniora (powyżej 65. roku życia): prowadzenie"
+            stawka: "2,00 zł"
+            tryb: "miesięcznie"
+          - usluga: "Karta debetowa dla studenta do ukończenia 26. roku życia: prowadzenie"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Naklejka do płatności zbliżeniowych powiązana z rachunkiem"
+            stawka: "19,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Opaska do płatności zbliżeniowych powiązana z rachunkiem"
+            stawka: "49,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Dodanie karty do portfela płatności mobilnych (liczba urządzeń: maksymalnie {{fakt:karta-debetowa.liczba-urzadzen-mobilnych}})"
+            stawka: "bez opłat"
+            tryb: "za urządzenie"
+          - usluga: "Usunięcie karty z portfela płatności mobilnych"
+            stawka: "bez opłat"
+            tryb: "za urządzenie"
+          - usluga: "Wydanie karty wirtualnej do płatności w internecie"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Prowadzenie karty wirtualnej"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+
+  - id: taryfa-karty-debetowe-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-debetowe
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Rezygnacja|Złożenie rezygnacji} z wznowienia karty w terminie {{fakt:termin.karta-debetowa.rezygnacja-z-wznowienia}} przed upływem ważności"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zamknięcie karty na wniosek użytkownika w okresie jej ważności"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana adresu doręczenia karty"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Ponowna aktywacja karty zablokowanej z powodu niewykorzystania w terminie {{fakt:termin.karta-debetowa.aktywacja}}"
+            stawka: "10,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Odbiór karty w wybranej placówce Banku"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zniszczenie nieodebranej karty po upływie {{fakt:termin.karta-debetowa.informacja-o-wznowieniu}} od jej przygotowania"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty z indywidualnym wizerunkiem"
+            stawka: "{{fakt:oplata.taryfa-karty.personalizacja-wizerunku}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty zastępczej w razie wady produkcyjnej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty zastępczej w razie uszkodzenia paska lub układu zbliżeniowego"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "jednorazowo"
+          - usluga: "Zaświadczenie o posiadaniu karty i jej limitach"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za dokument"

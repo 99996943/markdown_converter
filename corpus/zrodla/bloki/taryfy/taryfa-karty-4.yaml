@@ -1,0 +1,432 @@
+bloki:
+  # ---------- Operacje kartami za granicą ----------
+  - id: taryfa-karty-zagranica-wstep
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: wstep-taryfa-karty
+    elementy:
+      - akapit: "Transakcje wykonane kartą za granicą, a także transakcje w walucie innej niż waluta rachunku lub karty, są przeliczane według kursu z {{fakt:karta-debetowa.zrodlo-kursu}}, obowiązującego w dniu rozliczenia transakcji. Do kursu stosuje się marżę w wysokości {{fakt:kurs.marza-przeliczen}}."
+      - akapit: "Użytkownik karty {otrzymuje|powinien otrzymać} przed wykonaniem transakcji informację o łącznej wysokości opłat za przewalutowanie, jeżeli akceptant lub operator bankomatu oferuje wybór waluty rozliczenia. {Wybór|Przyjęcie} przeliczenia po kursie akceptanta powoduje, że kursów Banku nie stosuje się."
+
+  - id: taryfa-karty-zagranica-podstawowe
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: podstawowe-taryfa-karty
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przewalutowanie transakcji kartą w walucie innej niż waluta rachunku[^1]"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Wypłata gotówki kartą debetową w bankomacie za granicą"
+            stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki kartą kredytową w bankomacie za granicą"
+            stawka: "{{fakt:oplata.karta.gotowka-prowizja}}, min. {{fakt:oplata.karta.gotowka-minimum}}"
+            tryb: "od kwoty wypłaty"
+          - usluga: "Płatność kartą debetową u akceptanta za granicą"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność kartą kredytową u akceptanta za granicą[^2]"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-prowizja-platnosc-kredytowa}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Zapytanie o saldo w bankomacie za granicą"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-zapytanie-o-saldo}}"
+            tryb: "za zapytanie"
+          - usluga: "Odrzucona autoryzacja transakcji za granicą"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-odrzucona-autoryzacja}}"
+            tryb: "za transakcję"
+          - usluga: "Awaryjna wypłata gotówki za granicą po utracie karty[^3]"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-awaryjna-gotowka}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie karty awaryjnej za granicą po utracie karty"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-karta-awaryjna}}"
+            tryb: "jednorazowo"
+          - usluga: "Zgłoszenie utraty karty za granicą pod numerem {{fakt:kontakt.infolinia-zagranica}}"
+            stawka: "koszt połączenia wg taryfy operatora"
+            tryb: "za połączenie"
+          - usluga: "Zastrzeżenie karty za granicą"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Płatność kartą w walucie obcej w internecie u zagranicznego sprzedawcy"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Włączenie transakcji zagranicznych w bankowości elektronicznej"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Zwrot transakcji zagranicznej przeliczony po kursie z dnia zwrotu"
+            stawka: "bez opłat"
+            tryb: "za zwrot"
+    przypisy:
+      1: "Marżę stosuje się jednorazowo do przewalutowania z waluty transakcji na walutę rozliczenia; przeliczenia między walutami obcymi dokonuje się za pośrednictwem złotego, zgodnie z postanowieniami ogólnymi Taryfy."
+      2: "Prowizji nie pobiera się od transakcji wykonanych w złotych na terytorium Rzeczypospolitej Polskiej, nawet jeśli akceptant ma siedzibę za granicą."
+      3: "Gotówka jest wydawana w oddziale lub punkcie obsługi kart wskazanym przez infolinię, do wysokości wskazanej przez Bank, nie więcej niż dzienny limit karty."
+
+  - id: taryfa-karty-zagranica-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-zagranica
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Płatność|Transakcja} w euro w państwie należącym do Europejskiego Obszaru Gospodarczego"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność w funtach szterlingach"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność w dolarach amerykańskich"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność we frankach szwajcarskich"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność w koronach czeskich, szwedzkich, norweskich lub duńskich"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność w walutach nieujętych w Tabeli kursów walut Banku"
+            stawka: "marża 3,0%"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność w złotych u akceptanta zagranicznego"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Rozliczenie transakcji z karty w walucie rachunku bez przewalutowania"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Rozliczenie transakcji z karty powiązanej z rachunkiem walutowym w tej samej walucie"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Zwrot środków z zagranicy na kartę po uprzednim przewalutowaniu"
+            stawka: "wg kursu Banku"
+            tryb: "od kwoty zwrotu"
+
+  - id: taryfa-karty-zagranica-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-zagranica
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wypłata gotówki kartą debetową w bankomacie za granicą w strefie euro"
+            stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki kartą debetową w bankomacie poza Europą"
+            stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"
+            tryb: "za operację"
+          - usluga: "{Pobranie|Wypłata} gotówki kartą w placówce banku za granicą (usługa kasowa)"
+            stawka: "3,0% min. 15,00 zł"
+            tryb: "od kwoty wypłaty"
+          - usluga: "Wypłata gotówki kartą przedpłaconą w bankomacie za granicą"
+            stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"
+            tryb: "za operację"
+          - usluga: "Opłata pobierana przez operatora zagranicznego bankomatu"
+            stawka: "wg operatora"
+            tryb: "za operację"
+          - usluga: "Odmowa wypłaty z powodu przekroczenia limitu dziennego"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Odmowa wypłaty z powodu braku środków na rachunku"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-odrzucona-autoryzacja}}"
+            tryb: "za operację"
+          - usluga: "Podniesienie dziennego limitu wypłat gotówki za granicą na czas podróży"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Wypłata gotówki kartą kredytową w bankomacie za granicą z przewalutowaniem po kursie Banku"
+            stawka: "{{fakt:oplata.karta.gotowka-prowizja}}, min. {{fakt:oplata.karta.gotowka-minimum}}"
+            tryb: "od kwoty wypłaty"
+          - usluga: "Wypłata gotówki w bankomacie za granicą w walucie lokalnej bez przeliczenia przez operatora bankomatu"
+            stawka: "bez dodatkowej opłaty Banku"
+            tryb: "za operację"
+
+  - id: taryfa-karty-zagranica-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-zagranica
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Awaryjne|Pilne} wydanie karty za granicą w ciągu {{fakt:termin.taryfa-karty.wydanie-pilne}}"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-karta-awaryjna}}"
+            tryb: "jednorazowo"
+          - usluga: "Doręczenie karty awaryjnej do hotelu lub placówki dyplomatycznej"
+            stawka: "{{fakt:oplata.taryfa-karty.kurier-karta}}"
+            tryb: "za przesyłkę"
+          - usluga: "Awaryjna wypłata gotówki za granicą"
+            stawka: "{{fakt:oplata.taryfa-karty.zagranica-awaryjna-gotowka}}"
+            tryb: "jednorazowo"
+          - usluga: "Nadanie nowego numeru PIN do karty zastępczej za granicą"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Pomoc konsultanta infolinii podczas podróży zagranicznej"
+            stawka: "bez opłat"
+            tryb: "za połączenie"
+          - usluga: "Połączenie z infolinią z zagranicy pod numerem {{fakt:kontakt.infolinia-zagranica}}"
+            stawka: "wg taryfy operatora"
+            tryb: "za połączenie"
+          - usluga: "Zastrzeżenie karty przez osobę trzecią na polecenie użytkownika"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Informacja o transakcjach wykonanych zagranicą po zastrzeżeniu karty"
+            stawka: "bez opłat"
+            tryb: "za informację"
+          - usluga: "Odwołanie nieuznanej transakcji zagranicznej w trybie reklamacji kartowej"
+            stawka: "bez opłat"
+            tryb: "za reklamację"
+          - usluga: "Obsługa reklamacji zagranicznej transakcji prawidłowo autoryzowanej"
+            stawka: "{{fakt:oplata.taryfa-karty.reklamacja-nieuzasadniona}}"
+            tryb: "za reklamację"
+
+  - id: taryfa-karty-zagranica-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-zagranica
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Płatność|Transakcja} kartą w hotelu z blokadą środków na poczet pobytu"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność kartą w wypożyczalni pojazdów z kaucją"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność kartą na stacjach paliw za granicą (blokada do ustalonej kwoty)"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność kartą za przejazd autostradą bez udziału użytkownika"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność kartą za bilety komunikacji miejskiej za granicą w systemie bezkontaktowym"
+            stawka: "marża {{fakt:kurs.marza-przeliczen}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność zbliżeniowa za granicą do kwoty {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność mobilna za granicą"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność za granicą w trybie rozliczenia dynamicznego (wybór waluty przez akceptanta)"
+            stawka: "wg kursu akceptanta"
+            tryb: "od kwoty transakcji"
+          - usluga: "Rezerwacja kartą z późniejszym obciążeniem w innej walucie niż w dniu rezerwacji"
+            stawka: "wg kursu z dnia rozliczenia"
+            tryb: "od kwoty transakcji"
+          - usluga: "Przeliczenie transakcji rozliczonej po upływie {{fakt:termin.karta-debetowa.blokada-autoryzacji}} od dnia autoryzacji"
+            stawka: "wg kursu z dnia rozliczenia"
+            tryb: "od kwoty transakcji"
+
+  # ---------- Usługi dodatkowe do kart ----------
+  - id: taryfa-karty-uslugi-wstep
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: wstep-taryfa-karty
+    elementy:
+      - akapit: "Usługi dodatkowe do kart są {świadczone|udostępniane} na wniosek posiadacza rachunku lub karty i mogą być wykupione niezależnie od rodzaju karty, chyba że warunki danej usługi stanowią inaczej. Opłaty za usługi dodatkowe są pobierane z rachunku, do którego wydano kartę, a w przypadku karty kredytowej — obciążają limit karty."
+      - akapit: "Rezygnacja z usługi dodatkowej jest skuteczna od końca miesiąca kalendarzowego, w którym wniosek o rezygnację wpłynął do Banku, o ile warunki usługi nie stanowią inaczej."
+
+  - id: taryfa-karty-uslugi-podstawowe
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: podstawowe-taryfa-karty
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Ubezpieczenie|Pakiet ubezpieczeniowy} karty od skutków utraty i nieuprawnionego użycia[^1]"
+            stawka: "{{fakt:oplata.taryfa-karty.ubezpieczenie-karty}}"
+            tryb: "miesięcznie"
+          - usluga: "Pakiet assistance dla użytkownika karty"
+            stawka: "{{fakt:oplata.taryfa-karty.pakiet-assistance}}"
+            tryb: "miesięcznie"
+          - usluga: "Wydanie karty z indywidualnym wizerunkiem"
+            stawka: "{{fakt:oplata.taryfa-karty.personalizacja-wizerunku}}"
+            tryb: "jednorazowo"
+          - usluga: "Dostarczenie karty kurierem na wskazany adres[^2]"
+            stawka: "{{fakt:oplata.taryfa-karty.kurier-karta}}"
+            tryb: "za przesyłkę"
+          - usluga: "Wysłanie karty zwykłą przesyłką pocztową na adres korespondencyjny"
+            stawka: "bez opłat"
+            tryb: "za przesyłkę"
+          - usluga: "Powiadomienie o transakcji kartą wiadomością tekstową"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+          - usluga: "Powiadomienie o transakcji kartą w aplikacji mobilnej"
+            stawka: "bez opłat"
+            tryb: "za powiadomienie"
+          - usluga: "Zmiana numeru PIN do karty"
+            stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Potwierdzenie transakcji kartą wydawane na wniosek klienta"
+            stawka: "{{fakt:oplata.taryfa-karty.potwierdzenie-transakcji}}"
+            tryb: "za dokument"
+          - usluga: "Zaświadczenie o posiadanych kartach i ich limitach"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za dokument"
+          - usluga: "Kopia umowy o kartę"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za dokument"
+          - usluga: "Zastrzeżenie karty w trybie całodobowym"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Nadanie karty dodatkowej do rachunku dla osoby pełnoletniej"
+            stawka: "{{fakt:oplata.taryfa-karty.debetowa-karta-dodatkowa}}"
+            tryb: "miesięcznie"
+          - usluga: "Wydanie karty zastępczej w trybie pilnym"
+            stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}"
+            tryb: "jednorazowo"
+          - usluga: "Konsultacja z doradcą w sprawie doboru karty"
+            stawka: "bez opłat"
+            tryb: "za konsultację"
+    przypisy:
+      1: "Ubezpieczenie jest oferowane przez zakład ubezpieczeń współpracujący z Bankiem; szczegółowe warunki, w tym wyłączenia odpowiedzialności i limity świadczeń, określa umowa ubezpieczenia doręczana klientowi."
+      2: "Przesyłka kurierska jest doręczana w dni robocze; wydanie karty następuje do rąk adresata po okazaniu dokumentu tożsamości."
+
+  - id: taryfa-karty-uslugi-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Pakiet|Ochrona} ubezpieczeniowy karty w wariancie rozszerzonym"
+            stawka: "{{fakt:oplata.taryfa-karty.ubezpieczenie-karty}}"
+            tryb: "miesięcznie"
+          - usluga: "Ubezpieczenie zakupów dokonanych kartą"
+            stawka: "9,90 zł"
+            tryb: "miesięcznie"
+          - usluga: "Ubezpieczenie podróży zagranicznych dla posiadacza karty"
+            stawka: "12,90 zł"
+            tryb: "miesięcznie"
+          - usluga: "Ubezpieczenie podróży zagranicznych dla posiadacza karty i członków rodziny"
+            stawka: "19,90 zł"
+            tryb: "miesięcznie"
+          - usluga: "Rezygnacja z ubezpieczenia karty w terminie {{fakt:termin.odstapienie-od-umowy}} od jego zawarcia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zgłoszenie szkody z tytułu ubezpieczenia karty"
+            stawka: "bez opłat"
+            tryb: "za zgłoszenie"
+          - usluga: "Duplikat polisy ubezpieczenia karty"
+            stawka: "bez opłat"
+            tryb: "za dokument"
+          - usluga: "Zmiana osoby uprawnionej do świadczenia z ubezpieczenia"
+            stawka: "bez opłat"
+            tryb: "za zmianę"
+          - usluga: "Pakiet assistance w podróży: pomoc medyczna i prawna"
+            stawka: "{{fakt:oplata.taryfa-karty.pakiet-assistance}}"
+            tryb: "miesięcznie"
+          - usluga: "Pakiet assistance domowy dla posiadacza karty"
+            stawka: "7,00 zł"
+            tryb: "miesięcznie"
+
+  - id: taryfa-karty-uslugi-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Dostarczenie|Doręczenie} karty kurierem w terminie {{fakt:termin.taryfa-karty.wydanie-pilne}}"
+            stawka: "{{fakt:oplata.taryfa-karty.kurier-karta}}"
+            tryb: "za przesyłkę"
+          - usluga: "Doręczenie karty kurierem w sobotę"
+            stawka: "35,00 zł"
+            tryb: "za przesyłkę"
+          - usluga: "Doręczenie numeru PIN pocztą w terminie {{fakt:termin.karta-debetowa.dostarczenie-pin}}"
+            stawka: "bez opłat"
+            tryb: "za przesyłkę"
+          - usluga: "Ponowne doręczenie karty kurierem po nieodebraniu przesyłki"
+            stawka: "{{fakt:oplata.taryfa-karty.kurier-karta}}"
+            tryb: "za przesyłkę"
+          - usluga: "Odbiór karty w punkcie partnerskim"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Odbiór karty w placówce Banku"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana miejsca doręczenia karty po wysłaniu przesyłki"
+            stawka: "10,00 zł"
+            tryb: "za zmianę"
+          - usluga: "Przechowywanie karty w placówce Banku ponad 30 dni"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Odnowienie karty wysłane automatycznie przed upływem ważności"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wysyłka karty za granicę"
+            stawka: "70,00 zł"
+            tryb: "za przesyłkę"
+
+  - id: taryfa-karty-uslugi-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Wiadomość|Powiadomienie} tekstowa o każdej transakcji kartą"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+          - usluga: "Pakiet powiadomień tekstowych o transakcjach kartą (do 30 wiadomości miesięcznie)"
+            stawka: "9,00 zł"
+            tryb: "miesięcznie"
+          - usluga: "Powiadomienie o transakcji powyżej ustawionej kwoty"
+            stawka: "bez opłat"
+            tryb: "za powiadomienie"
+          - usluga: "Powiadomienie o transakcji za granicą"
+            stawka: "bez opłat"
+            tryb: "za powiadomienie"
+          - usluga: "Kod jednorazowy do potwierdzenia transakcji internetowej wysłany wiadomością tekstową"
+            stawka: "bez opłat"
+            tryb: "za kod"
+          - usluga: "Potwierdzenie transakcji internetowej w aplikacji mobilnej"
+            stawka: "bez opłat"
+            tryb: "za potwierdzenie"
+          - usluga: "Wiadomość tekstowa z informacją o saldzie karty"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+          - usluga: "Powiadomienie e-mailowe o transakcji kartą"
+            stawka: "bez opłat"
+            tryb: "za wiadomość"
+          - usluga: "Alert o próbie nieuprawnionego użycia karty"
+            stawka: "bez opłat"
+            tryb: "za powiadomienie"
+          - usluga: "Połączenie z infolinią w sprawach karty pod numerem {{fakt:kontakt.infolinia}}"
+            stawka: "wg taryfy operatora"
+            tryb: "za połączenie"
+
+  - id: taryfa-karty-uslugi-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: pozycje-taryfa-karty-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Wydanie|Sporządzenie} potwierdzenia transakcji kartą z ostatnich 3 miesięcy"
+            stawka: "{{fakt:oplata.taryfa-karty.potwierdzenie-transakcji}}"
+            tryb: "za dokument"
+          - usluga: "Potwierdzenie transakcji kartą starszej niż 3 miesiące"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za dokument"
+          - usluga: "Zestawienie transakcji kartą w formie papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za zestawienie"
+          - usluga: "Zestawienie transakcji kartą w bankowości elektronicznej"
+            stawka: "bez opłat"
+            tryb: "za zestawienie"
+          - usluga: "Raport roczny z opłat związanych z kartą"
+            stawka: "bez opłat"
+            tryb: "rocznie"
+          - usluga: "Zaświadczenie o wysokości opłat poniesionych w związku z kartą"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za dokument"
+          - usluga: "Kopia dokumentacji reklamacyjnej dotyczącej transakcji kartą"
+            stawka: "bez opłat"
+            tryb: "za dokument"
+          - usluga: "Informacja o sposobie rozliczenia transakcji kartą u akceptanta"
+            stawka: "bez opłat"
+            tryb: "za informację"
+          - usluga: "Odpis umowy o kartę poświadczony za zgodność z oryginałem"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za dokument"
+          - usluga: "Zestawienie dla celów podatkowych na wniosek przedsiębiorcy"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za dokument"
+
+  - id: taryfa-karty-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-karty]
+    kategoria: objasnienia-taryfa-karty
+    elementy:
+      - ustep: "Użyte w Taryfie określenie „za operację” oznacza opłatę pobieraną za każdą pojedynczą wypłatę, wpłatę lub zapytanie; „od kwoty transakcji” — opłatę liczoną procentowo od wartości transakcji; „miesięcznie” i „rocznie” — opłatę naliczaną cyklicznie, za dany miesiąc lub rok użytkowania karty."
+      - ustep: "Zwrot opłaty za kartę pobranej za okres, w którym karta nie była użytkowana z powodu jej zastrzeżenia, następuje {na wniosek|po złożeniu wniosku} klienta, w terminie {{fakt:termin.zwrot-oplat}} od dnia jego otrzymania."
+      - ustep: "Informacje o opłatach za transakcje wykonane kartą są prezentowane w zestawieniu transakcji lub w historii rachunku. Zakwestionowanie opłaty {odbywa się|następuje} w trybie reklamacji, zgodnie z regulaminem karty, w terminie nie dłuższym niż {{fakt:karta.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku."
+      - akapit: "Opłaty, o których mowa w Taryfie, są wyrażone w złotych; obciążenia w walutach obcych przelicza się według zasad określonych w postanowieniach ogólnych i w sekcji dotyczącej operacji za granicą. Opłaty nie zawierają należności osób trzecich, w tym operatorów bankomatów, które mogą być pobierane dodatkowo."
