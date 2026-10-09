@@ -44,6 +44,11 @@ public static class Typesetter
     {
         var w = new PageWriter(style, document.Front, document.Footnotes, totalPages);
         FrontPages(w, document.Front);
+        if (document.Front.RecordCard)
+        {
+            RecordCard(w, document.Front);
+        }
+
         TableDocumentLayout? tableDocument = style.TableDocument ? new TableDocumentLayout(w) : null;
         w.StartColumns(tableDocument is null ? style.Columns : 1);
         foreach (Element element in document.Elements)
@@ -112,6 +117,41 @@ public static class Typesetter
         }
 
         w.Y += 16;
+    }
+
+    /// <summary>The record card (metryczka) of a procedure: a key–value grid and the change history.</summary>
+    private static void RecordCard(PageWriter w, FrontMatter front)
+    {
+        var pairs = new List<KeyValuePair<string, IReadOnlyList<Inline>>>();
+        void Add(string key, string? value)
+        {
+            if (value is not null)
+            {
+                pairs.Add(new(key, [new Inline(value)]));
+            }
+        }
+
+        Add("Oznaczenie", front.Designation);
+        Add("Wersja", Number(front.Version));
+        Add("Właściciel", front.Owner);
+        Add("Zatwierdził", front.ApprovedBy);
+        Add("Data zatwierdzenia", front.ApprovalDate);
+        Add("Obowiązuje od", front.ValidFrom);
+        Add("Obowiązuje do", front.ValidTo);
+        w.Begin(new KeyValueTableElement(pairs) { Id = "metryczka" });
+        TableLayout.KeyValue(w, new KeyValueTableElement(pairs));
+
+        if (front.History.Count > 0)
+        {
+            Paragraph(w, [new Inline("Historia zmian", InlineStyle.Bold)]);
+            TableLayout.Table(w, new TableElement(
+                [new TableColumn("Wersja", 0.8), new TableColumn("Data", 1.6), new TableColumn("Opis zmian", 5)],
+                front.History.Select(h => (IReadOnlyList<TableCell>)[TableCell.Of(h.Version), TableCell.Of(h.Date), TableCell.Of(h.Description)]).ToList(),
+                Grid: true,
+                Notes: []));
+        }
+
+        w.Y += 10;
     }
 
     private static string Number(int value) => value.ToString(System.Globalization.CultureInfo.InvariantCulture);
