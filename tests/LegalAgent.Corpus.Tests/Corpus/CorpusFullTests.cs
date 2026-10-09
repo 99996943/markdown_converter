@@ -101,7 +101,7 @@ public sealed class CorpusFullTests
             Assert.All(doc.Contradictions ?? [], c => Assert.True(ids.Contains(c.With), $"{doc.Id}: contradiction with {c.With}"));
         }
 
-        foreach (IGrouping<string?, ManifestDocument> versions in manifest.Documents.Where(d => d.Designation is not null && d.Type != "akty").GroupBy(d => d.Designation))
+        foreach (IGrouping<string?, ManifestDocument> versions in manifest.Documents.Where(d => d.Designation is not null && d.Type != "akty" && d.Poison is null).GroupBy(d => d.Designation))
         {
             var ordered = versions.OrderBy(d => d.Version).ToList();
             for (int k = 0; k + 1 < ordered.Count; k++)
@@ -110,6 +110,55 @@ public sealed class CorpusFullTests
                 Assert.Equal(ordered[k].Id, ordered[k + 1].PreviousVersion);
             }
         }
+    }
+
+    /// <summary>
+    /// SC-023 and SC-028 for poisoned documents: at least the requested number per (type, kind) pair, each imitating an
+    /// existing document of its type, and every poison text verbatim in the document's Markdown (after unescaping).
+    /// </summary>
+    [Fact]
+    public async Task PoisonedDocuments_ImitateExistingDocuments_AndTheirTextsAreInTheMarkdown()
+    {
+        SkipUnlessEnabled();
+        RunParameters parameters = CorpusSampleTests.RecordedParameters();
+        string corpus = Path.Combine(CorpusSampleTests.RepoRoot(), "corpus");
+        Manifest.Manifest manifest = ManifestWriter.Read(await File.ReadAllTextAsync(Path.Combine(corpus, "manifest.json"), TestContext.Current.CancellationToken));
+        var byId = manifest.Documents.ToDictionary(d => d.Id, StringComparer.Ordinal);
+
+        foreach (PoisonQuota quota in parameters.Poison)
+        {
+            foreach (string type in new[] { "regulaminy", "taryfy", "procedury" })
+            {
+                int count = manifest.Documents.Count(d => d.Type == type && d.Poison?.Kind == quota.Kind);
+                Assert.True(count >= quota.PerType, $"{type} × {quota.Kind}: {count}");
+            }
+        }
+
+        var failures = new List<string>();
+        foreach (ManifestDocument doc in manifest.Documents.Where(d => d.Poison is not null))
+        {
+            Assert.True(byId.TryGetValue(doc.Poison!.Imitates, out ManifestDocument? imitated), $"{doc.Id}: imitates {doc.Poison.Imitates}");
+            Assert.Equal(imitated!.Type, doc.Type);
+            string markdown = Flat(await File.ReadAllTextAsync(Path.Combine(corpus, doc.Markdown), TestContext.Current.CancellationToken));
+            foreach (PoisonPlace place in doc.Poison.Places)
+            {
+                if (!markdown.Contains(Flat(place.Text), StringComparison.Ordinal))
+                {
+                    failures.Add($"{doc.Id} ({place.Element}, s. {place.Page}): brak tekstu „{place.Text}”");
+                }
+            }
+        }
+
+        Assert.True(failures.Count == 0, string.Join("\n", failures));
+    }
+
+    /// <summary>Markdown or text without escapes, emphasis markers, page markers and line breaks; whitespace collapsed.</summary>
+    internal static string Flat(string text)
+    {
+        string plain = System.Text.RegularExpressions.Regex.Replace(text, @"<!-- page: \d+ -->", " ");
+        plain = System.Text.RegularExpressions.Regex.Replace(plain, @"\\(.)", "$1");
+        plain = plain.Replace("**", string.Empty, StringComparison.Ordinal);
+        return string.Join(' ', plain.Split((char[])[' ', '\n', '\r', '\t'], StringSplitOptions.RemoveEmptyEntries));
     }
 
     /// <summary>The thresholds of SC-022 – SC-026 that <paramref name="q"/> misses, one message per metric.</summary>
