@@ -2,3 +2,4 @@ corpus/**/*.md text eol=lf
 corpus/**/*.json text eol=lf
 corpus/**/*.yaml text eol=lf
 corpus/**/*.pdf binary
+tests/**/*.expected.md text eol=lf
