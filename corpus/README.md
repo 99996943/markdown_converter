@@ -219,7 +219,8 @@ HTML zamiast PDF, usuń plik i pobierz ponownie.
 - **Jednostka** bloku `jednostka: "§ {n}."` → nagłówek „§ N.” numerowany w całym dokumencie. Paragraf z dwoma lub
   więcej `ustep` → „1.”, „2.” z punktami „1)” i literami „a)”; paragraf z jednym `ustep` → zwykły akapit, punkty od
   „1)”. Nie dawaj tytułów paragrafom (`tytul` bloku z jednostką jest pomijany). W układzie `tabela-dokument`
-  rozdziały są wierszami tabeli (nazwa po lewej), a „§ N.” — pogrubionym akapitem w komórce.
+  rozdziały są wierszami tabeli (nazwa po lewej, w Markdown `##`), a „§ N.” — pogrubionym wierszem w komórce
+  (w Markdown `###` pod nazwą sekcji); tabele w komórce mają własną siatkę i wychodzą jako tabele GFM.
 - **Kroki** (`kroki`) w sekcji „N.” → „N.1.”, „N.1.1.” (numeracja ciągła w sekcji, przez kolejne bloki); najwyżej
   dwa poziomy (`podkroki` jednego poziomu).
 - **Pozycje taryfy** (`pozycje-taryfy`) → jedna tabela na sekcję taryfy: „Lp. | Wyszczególnienie czynności | Tryb
