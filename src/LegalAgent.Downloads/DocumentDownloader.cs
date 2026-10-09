@@ -56,6 +56,9 @@ public sealed class DocumentDownloader
 
         string manifestPath = Path.Combine(directory, ManifestFileName);
         WriteManifest(manifestPath, results);
+
+        // The manifest records what was cancelled; the caller still learns about the cancellation.
+        cancellationToken.ThrowIfCancellationRequested();
         return new DownloadRun(results, [], manifestPath);
     }
 
@@ -96,7 +99,23 @@ public sealed class DocumentDownloader
         // Yield first so that every download starts before any of them blocks the caller.
         await Task.Yield();
         progress?.Report(new DownloadEvent(item.Index, item.Address, DownloadEventKind.Started, null));
-        DownloadResult result = await single.RunAsync(item, directory, cancellationToken).ConfigureAwait(false);
+        DownloadResult result;
+        try
+        {
+            result = await single.RunAsync(item, directory, cancellationToken).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            result = new DownloadResult
+            {
+                Index = item.Index,
+                Address = item.Address,
+                FileName = item.FileName,
+                Status = DownloadStatus.Failed,
+                Error = new DownloadError(DownloadErrorKind.Cancelled, "przerwano przez użytkownika"),
+            };
+        }
+
         progress?.Report(new DownloadEvent(item.Index, item.Address, DownloadEventKind.Finished, result));
         return result;
     }
