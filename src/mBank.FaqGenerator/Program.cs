@@ -85,6 +85,21 @@ public static class Program
             return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, handler, cancellationToken)
                 .ConfigureAwait(false);
         }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            await stderr.WriteLineAsync("Przerwano.").ConfigureAwait(false);
+            return 130;
+        }
+        catch (DownloadDirectoryException e)
+        {
+            await stderr.WriteLineAsync($"Błąd: {e.Message}").ConfigureAwait(false);
+            return 4;
+        }
+        catch (ConfigurationException e)
+        {
+            await stderr.WriteLineAsync($"Błąd konfiguracji: {e.Message}").ConfigureAwait(false);
+            return 2;
+        }
         catch (Exception e) when (e is not OperationCanceledException)
         {
             await stderr.WriteLineAsync($"Błąd nieoczekiwany: {e.Message}").ConfigureAwait(false);
@@ -105,7 +120,15 @@ public static class Program
         DownloadSettings settings = AppSettings.Load(configDirectory, environment);
         DownloadOptions options = settings.ToOptions() with { OutputDirectory = arguments.Output ?? settings.OutputDirectory };
         using HttpClient httpClient = CreateHttpClient(handler);
-        var downloader = new DocumentDownloader(httpClient, options);
+        DocumentDownloader downloader;
+        try
+        {
+            downloader = new DocumentDownloader(httpClient, options);
+        }
+        catch (ArgumentException e)
+        {
+            throw new ConfigurationException(e.Message, e);
+        }
 
         IReadOnlyList<Uri>? addresses;
         if (arguments.Urls.Count > 0 || settings.Urls.Length > 0)
@@ -116,6 +139,12 @@ public static class Program
         else
         {
             addresses = await AddressPrompt.AskAsync(stdin, stdout, options, RequiredCount, cancellationToken).ConfigureAwait(false);
+            if (addresses is null)
+            {
+                await stderr.WriteLineAsync(string.Create(
+                    CultureInfo.InvariantCulture,
+                    $"Brak adresów: wejście zostało zamknięte. Podaj {RequiredCount} adresów opcją --url albo w konfiguracji (Download:Urls).")).ConfigureAwait(false);
+            }
         }
 
         if (addresses is null)

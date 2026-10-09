@@ -51,6 +51,11 @@ internal sealed class ConsoleReport(TextWriter stdout, TextWriter stderr, int co
                 : string.Create(Polish, $"  {result.Index}. BŁĄD {result.Address.AbsoluteUri} — {result.Error?.Message}"));
         }
 
+        if (run.RemovedFiles.Count > 0)
+        {
+            stdout.WriteLine($"Usunięto pliki spoza bieżącej listy: {string.Join(", ", run.RemovedFiles)}");
+        }
+
         stdout.WriteLine($"Manifest: {run.ManifestPath}");
     }
 }

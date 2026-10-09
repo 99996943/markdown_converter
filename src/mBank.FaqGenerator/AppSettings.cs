@@ -65,6 +65,34 @@ internal static class AppSettings
             .AddInMemoryCollection(fromEnvironment)
             .Build();
 
-        return configuration.GetSection("Download").Get<DownloadSettings>() ?? new DownloadSettings();
+        try
+        {
+            return configuration.GetSection("Download").Get<DownloadSettings>() ?? new DownloadSettings();
+        }
+        catch (InvalidOperationException e)
+        {
+            throw new ConfigurationException(e.Message, e);
+        }
+    }
+}
+
+/// <summary>The configuration cannot be used (exit code 2).</summary>
+internal sealed class ConfigurationException : Exception
+{
+    /// <summary>Creates the exception.</summary>
+    public ConfigurationException()
+    {
+    }
+
+    /// <summary>Creates the exception with a message.</summary>
+    public ConfigurationException(string message)
+        : base(message)
+    {
+    }
+
+    /// <summary>Creates the exception with a message and a cause.</summary>
+    public ConfigurationException(string message, Exception innerException)
+        : base(message, innerException)
+    {
     }
 }
