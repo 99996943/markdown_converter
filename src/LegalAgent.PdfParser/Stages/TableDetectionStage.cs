@@ -201,7 +201,7 @@ public sealed class TableDetectionStage : IPipelineStage
         TableOptions options = context.Options.Tables;
         IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
         var grid = new Grid(rulings, candidate);
-        List<Row> region = CutAtGridGap(TrimTrailingLines(candidate, options, grid), grid);
+        List<Row> region = CutAtGridGap(TrimTrailingLines(CutAtRunningText(candidate, page, context), options, grid), grid);
 
         // Lines above the top border of a ruled grid are not part of it (numbered paragraphs introducing the table):
         // the seed moves on until it reaches the grid, and these lines stay running text.
@@ -453,6 +453,47 @@ public sealed class TableDetectionStage : IPipelineStage
         }
 
         return distinct;
+    }
+
+    /// <summary>
+    /// A gridless table ends before a single-cell line that starts at the table's left edge and runs across into its
+    /// second column: a note under the table, the next section heading or a paragraph — running text, not a row.
+    /// </summary>
+    private static List<Row> CutAtRunningText(List<Row> region, LayoutPage page, PipelineContext context)
+    {
+        if (page.Rulings.Any(r => r.IsVertical))
+        {
+            return region;
+        }
+
+        double tolerance = context.Options.Tables.ColumnTolerance * page.Width;
+        List<Row> rows = region.Where(r => r.IsMulti).ToList();
+        if (rows.Count == 0)
+        {
+            return region;
+        }
+
+        double left = rows.Min(r => r.Cells[0].Box.Left);
+        double second = rows.Min(r => r.Cells[1].Box.Left);
+        int multi = 0;
+        for (int j = 0; j < region.Count; j++)
+        {
+            Row row = region[j];
+            if (row.IsMulti)
+            {
+                multi++;
+                continue;
+            }
+
+            if (multi >= context.Options.Tables.MinRows
+                && row.Line.Box.Right > second + tolerance
+                && Math.Abs(row.Line.Box.Left - left) <= tolerance)
+            {
+                return region.Take(j).ToList();
+            }
+        }
+
+        return region;
     }
 
     /// <summary>
