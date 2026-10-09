@@ -83,6 +83,33 @@ public sealed class DocumentDownloaderTests : IDisposable
         Assert.False(Directory.Exists(Output));
     }
 
+    [Fact]
+    public async Task DownloadAll_RunsAllDownloadsConcurrently_AndReportsProgress()
+    {
+        string[] urls = [.. Enumerable.Range(1, 5).Select(i => $"https://www.example.test/{i}.pdf")];
+        foreach (string url in urls)
+        {
+            http.Pdf(url);
+        }
+
+        // Every response is held until all five requests arrived: a sequential downloader times out at the barrier.
+        http.HoldUntil(5);
+        var progress = new EventCollector();
+
+        DownloadRun run = await Downloader().DownloadAllAsync([.. urls.Select(u => new Uri(u))], progress, Ct);
+
+        Assert.True(run.AllSucceeded);
+        Assert.Equal(5, http.Requests.Count);
+        for (int index = 1; index <= 5; index++)
+        {
+            DownloadEvent[] events = [.. progress.Events.Where(e => e.Index == index)];
+            Assert.Equal([DownloadEventKind.Started, DownloadEventKind.Finished], events.Select(e => e.Kind));
+            Assert.Null(events[0].Result);
+            Assert.Equal(DownloadStatus.Downloaded, events[1].Result?.Status);
+            Assert.Equal(new Uri(urls[index - 1]), events[1].Address);
+        }
+    }
+
     private static CancellationToken Ct => TestContext.Current.CancellationToken;
 
     private DownloadOptions Options => new() { OutputDirectory = Output, AllowedHosts = ["example.test"] };
