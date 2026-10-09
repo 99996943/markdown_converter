@@ -1,0 +1,175 @@
+bloki:
+  - id: rodo-odp-dod-kierownicy
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - ustep: "**Zarząd Banku** {zapewnia|gwarantuje} {Inspektorowi Ochrony Danych|IOD} zasoby i niezależność niezbędne do realizacji zadań. Zarząd w szczególności:"
+        punkty:
+          - "zatwierdza procedurę i jej zmiany oraz {zapoznaje się ze sprawozdaniem z obsługi wniosków co {{fakt:rodo.raport-okres}}|rozpatruje co {{fakt:rodo.raport-okres}} sprawozdanie z obsługi wniosków};"
+          - "{rozstrzyga|decyduje} w sprawach, w których zdanie {{fakt:jednostka.iod}} różni się od stanowiska jednostki merytorycznej; odmienne stanowisko IOD zapisuje się w aktach sprawy;"
+          - "zatwierdza wyjaśnienia kierowane do organu nadzorczego w sprawach o wyższym ryzyku."
+      - akapit: "Członek Zarządu nadzorujący obszar ryzyka operacyjnego {sprawuje|wykonuje} bieżący nadzór nad wykonaniem zaleceń IOD oraz komórki ds. zgodności, a także {zapewnia|dba o} środki techniczne niezbędne do sprawnego wyszukiwania i eksportu danych."
+
+  - id: rodo-odp-dod-dostawcy
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - akapit: "Jeżeli dane Klientów są przetwarzane w imieniu Banku przez podmioty zewnętrzne (podmioty przetwarzające), umowy powierzenia przetwarzania {muszą|powinny} zobowiązywać je do {pomocy|wsparcia} Bankowi w wykonywaniu żądań osób, których dane dotyczą. Odpowiedzialność za nadzór nad takimi podmiotami ponosi {{fakt:jednostka.bezpieczenstwo}} we współpracy z właściwym właścicielem procesu."
+      - ustep: "Podmiot przetwarzający {jest obowiązany|zobowiązuje się}:"
+        punkty:
+          - "{niezwłocznie|bez zbędnej zwłoki} przekazać Bankowi każde żądanie otrzymane bezpośrednio od osoby, której dane dotyczą, i nie odpowiadać na nie samodzielnie;"
+          - "dostarczyć dane lub wykonać czynność (usunięcie, sprostowanie, ograniczenie) w terminie określonym w umowie, nie dłuższym niż {{fakt:termin.rodo.dane-od-jednostek}} roboczych od zapytania Banku;"
+          - "{potwierdzić|udokumentować} wykonanie żądania w sposób umożliwiający Bankowi wykazanie jego realizacji."
+      - akapit: "Przypadki nieterminowego lub niepełnego wsparcia ze strony podmiotu przetwarzającego {zgłasza się|odnotowuje się} w rejestrze wniosków {{fakt:rodo.system.rejestr}} jako uchybienie, które {{fakt:jednostka.iod}} uwzględnia przy ocenie ryzyka związanego z danym dostawcą."
+
+  - id: rodo-opis-przyjecie-skrzynka
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "W przypadku wniosku złożonego za pośrednictwem bezpiecznej skrzynki w bankowości elektronicznej {sprawdź|upewnij się}, czy {wiadomość została|wniosek został} automatycznie przekierowany do rejestru wniosków {{fakt:rodo.system.rejestr}}."
+            podkroki:
+              - tekst: "Jeżeli przekierowanie nie nastąpiło, {zarejestruj|wprowadź} wniosek ręcznie, zachowując datę i godzinę wpływu z komunikatu systemowego."
+              - tekst: "Wiadomości przesłane do niewłaściwej skrzynki (np. do skrzynki reklamacyjnej) {przekaż|prześlij} w dniu wpływu do IOD, a nadawcy wyślij informację o przekazaniu."
+          - tekst: "Wnioski wysłane na adres e-mail {{fakt:kontakt.email-iod}} {obsługuje|rejestruje} wyłącznie {{fakt:jednostka.iod}}; wnioski przesłane na inne adresy Banku {przekazuje się|przekierowuje się} na ten adres bez zmiany daty wpływu."
+          - tekst: "Jeżeli wiadomość zawiera załączniki o niewiadomym pochodzeniu lub podejrzaną zawartość, {nie otwieraj|nie otwieraj ich} i powiadom {{fakt:jednostka.bezpieczenstwo}}; wniosek zarejestruj niezależnie od tego i {poinformuj|powiadom} wnioskodawcę o konieczności ponownego przesłania dokumentów."
+
+  - id: rodo-opis-przyjecie-telefon
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy Klient {zgłasza|przedstawia} żądanie dotyczące danych podczas rozmowy z infolinią ({{fakt:kontakt.infolinia}}), {zarejestruj|odnotuj} je jako wniosek, nawet jeśli Klient sam tak go nie nazwał."
+            podkroki:
+              - tekst: "{Poinformuj Klienta|Wyjaśnij Klientowi}, że w celu wykonania żądania Bank prześle odpowiedź pisemnie, a w razie potrzeby poprosi o potwierdzenie tożsamości."
+              - tekst: "Nie podawaj danych osobowych ani szczegółów produktów w trakcie rozmowy, chyba że dotyczą wyłącznie informacji, które Klient przekazał w tej samej rozmowie."
+          - tekst: "{Zakończ|Zamknij} rozmowę podaniem numeru sprawy i terminu, w którym Klient otrzyma odpowiedź."
+            podkroki:
+              - tekst: "Jeżeli Klient chce złożyć wniosek na piśmie, {wskaż|podaj} adres {{fakt:kontakt.adres-korespondencyjny}} lub adres e-mail {{fakt:kontakt.email-iod}}."
+              - tekst: "Nagranie rozmowy {jest|stanowi} dowód złożenia wniosku i {podlega|zostaje objęte} okresowi przechowywania {{fakt:rodo.retencja.nagrania-rozmow}}, jednak w razie sporu o treść wniosku nagranie przechowuje się do końca postępowania."
+          - tekst: "{Wpisz|Zapisz} w rejestrze wniosków {{fakt:rodo.system.rejestr}} numer nagrania, aby {{fakt:jednostka.iod}} mógł do niego sięgnąć w razie wątpliwości co do zakresu żądania."
+
+  - id: rodo-opis-przyjecie-zbiorcze
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Wnioski składane masowo lub w sposób zorganizowany (np. przez kancelarię, firmę windykacyjną, organizację konsumencką lub w ramach akcji internetowej) wymagają szczególnej uwagi, ponieważ mogą stanowić próbę przeciążenia Banku albo ujawnienia danych podmiotom nieuprawnionym."
+      - kroki:
+          - tekst: "{Zidentyfikuj|Rozpoznaj} wnioski o jednakowej treści lub nadesłane w krótkim czasie z tego samego źródła i {zgłoś|przekaż} je do IOD."
+          - tekst: "Każdy wniosek rozpatruj indywidualnie; nie odpowiadaj zbiorczo ani nie przekazuj danych kilku osób jednemu adresatowi."
+            podkroki:
+              - tekst: "Jeżeli wnioski składa pełnomocnik wielu osób, sprawdź pełnomocnictwo każdej z nich oddzielnie."
+              - tekst: "Dane wydawaj wyłącznie mocodawcy lub pełnomocnikowi, który wykazał umocowanie do ich odbioru."
+          - tekst: "O wniosku wnoszonym w sposób ewidentnie nadmierny lub w złej wierze zawiadom {{fakt:jednostka.prawny}}; decyzję o zastosowaniu procedury odmowy podejmuje {{fakt:jednostka.iod}}."
+          - tekst: "{Informacje|Dane} o wnioskach zbiorczych uwzględnij w sprawozdaniu dla Zarządu Banku."
+
+  - id: rodo-opis-dostep-mapa
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Wyszukiwanie danych opiera się na mapie przetwarzania danych prowadzonej przez IOD. Mapa wskazuje systemy, w których mogą znajdować się dane wnioskodawcy, oraz właścicieli tych systemów."
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} aktualność mapy przetwarzania danych i {upewnij się|ustal}, że nie pominięto żadnego systemu, w którym dane mogą się znajdować."
+            podkroki:
+              - tekst: "Dane o produktach depozytowych i rachunkach — system centralny {{fakt:rodo.system.cbs}}; dane o kredytach — system kredytowy; dane o kartach — system kartowy."
+              - tekst: "Dane o kontaktach z Klientem — system obsługi relacji oraz nagrania rozmów infolinii, korespondencja w bezpiecznej skrzynce w bankowości elektronicznej i skrzynki pocztowe pracowników."
+              - tekst: "Dane o zgodach i preferencjach marketingowych — rejestr zgód i preferencji {{fakt:rodo.system.zgody}}."
+              - tekst: "Dane archiwalne — archiwum elektroniczne {{fakt:rodo.system.archiwum}} oraz archiwum papierowe."
+          - tekst: "{Poproś|Zwróć się do} właścicieli poszczególnych systemów o pisemne (elektroniczne) potwierdzenie, że przekazane dane są kompletne."
+          - tekst: "Jeżeli dane znajdują się w kopiach bezpieczeństwa, {uwzględnij|wskaż} to w odpowiedzi; nie przywracaj kopii wyłącznie w celu wykonania żądania dostępu, o ile dane w kopii pokrywają się z danymi w systemie produkcyjnym."
+          - tekst: "Wynik wyszukiwania {odnotuj|zapisz} w rejestrze wniosków {{fakt:rodo.system.rejestr}}, wraz z listą systemów, w których dane nie zostały znalezione."
+
+  - id: rodo-opis-dostep-informacje
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Poza kopią danych {wnioskodawca otrzymuje|Bank przekazuje wnioskodawcy} informacje, które przepisy RODO przewidują przy realizacji prawa dostępu. Informacje te są w znacznej części zawarte w klauzuli informacyjnej Banku, jednak przy odpowiedzi należy je {zindywidualizować|dostosować do sytuacji wnioskodawcy}."
+      - kroki:
+          - tekst: "{Wskaż|Opisz} cele przetwarzania i ich podstawy prawne w odniesieniu do danych wnioskodawcy."
+            podkroki:
+              - tekst: "Jeżeli dane są przetwarzane w kilku celach (np. wykonanie umowy, obowiązki AML, marketing), wskaż je osobno i oznacz zakresy danych przetwarzanych w każdym z celów."
+              - tekst: "Jeżeli podstawą jest prawnie uzasadniony interes Banku, wskaż, na czym ten interes polega."
+          - tekst: "{Podaj|Wymień} odbiorców lub kategorie odbiorców, którym dane ujawniono lub ujawni się, w tym odbiorców w państwach trzecich i stosowane zabezpieczenia."
+          - tekst: "{Wskaż|Podaj} planowany okres przechowywania danych albo kryteria jego ustalenia, korzystając z macierzy okresów przechowywania."
+          - tekst: "{Wskaż źródło|Poinformuj o źródle} pochodzenia danych, jeżeli nie zostały zebrane od wnioskodawcy (np. dane z rejestrów publicznych, od współkredytobiorcy, z biura informacji kredytowej)."
+          - tekst: "{Wskaż istnienie|Poinformuj o istnieniu} zautomatyzowanego podejmowania decyzji, w tym profilowania, oraz — co najmniej w tych przypadkach — o zasadach ich stosowania i przewidywanych konsekwencjach dla wnioskodawcy."
+          - tekst: "{Przypomnij wnioskodawcy|Poinformuj wnioskodawcę} o prawie do sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu, przenoszenia danych, cofnięcia zgody oraz wniesienia skargi do {{fakt:rodo.organ-nadzorczy-dopelniacz}}."
+
+  - id: rodo-opis-dostep-nagrania
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Szczególnych zasad wymaga udostępnianie nagrań rozmów telefonicznych, zapisów monitoringu wizyjnego w placówkach oraz korespondencji elektronicznej, ponieważ zawierają one zazwyczaj dane osób trzecich."
+      - kroki:
+          - tekst: "Nagranie rozmowy {udostępnij|wydaj} wnioskodawcy, jeżeli zawiera jego głos lub dane dotyczące go; w razie żądania udostępnienia samego zapisu rozmowy {poproś {{fakt:jednostka.bezpieczenstwo}}|zwróć się do komórki ds. bezpieczeństwa} o sporządzenie kopii."
+            podkroki:
+              - tekst: "Jeżeli w rozmowie występują dane innych osób (np. drugiego współwłaściciela rachunku, pracownika innego niż konsultant), kopię sporządź po wyciszeniu lub usunięciu tych fragmentów."
+              - tekst: "Gdy nagrania nie ma, ponieważ upłynął okres {{fakt:rodo.retencja.nagrania-rozmow}}, poinformuj o tym wnioskodawcę w odpowiedzi."
+          - tekst: "Zapisy monitoringu wizyjnego {udostępniaj|wydawaj} w razie zidentyfikowania wnioskodawcy na nagraniu, po zasłonięciu wizerunków innych osób; jeżeli nie jest to technicznie możliwe, odmowę uzasadnij względami ochrony praw osób trzecich i zaproponuj wgląd w nagranie w siedzibie Banku."
+          - tekst: "Korespondencję elektroniczną pracowników {przejrzyj|oceń} pod kątem danych wnioskodawcy: udostępnia się tylko fragmenty zawierające jego dane osobowe, a nie całą korespondencję."
+          - tekst: "Wyszukiwanie w korespondencji wewnętrznej {przeprowadza|wykonuje} wyłącznie {{fakt:jednostka.bezpieczenstwo}} na zlecenie IOD."
+
+  - id: rodo-opis-usuniecie-marketing
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Wnioskodawca często żąda „usunięcia z bazy marketingowej” albo „zaprzestania kontaktu”. Takie żądanie należy każdorazowo przeanalizować pod kątem dwóch praw: cofnięcia zgody (lub sprzeciwu wobec marketingu) oraz usunięcia danych."
+      - kroki:
+          - tekst: "{Ustal|Sprawdź}, na jakiej podstawie Bank kontaktuje się z wnioskodawcą w celach marketingowych: zgoda na komunikację elektroniczną i telefoniczną, zgoda na profilowanie, prawnie uzasadniony interes (marketing własnych produktów)."
+          - tekst: "Jeżeli wnioskodawca cofa zgodę, {wpisz|zarejestruj} cofnięcie w rejestrze zgód i preferencji {{fakt:rodo.system.zgody}} ze skutkiem natychmiastowym i {wyłącz|usuń} wnioskodawcę z list kampanijnych w terminie {{fakt:termin.rodo.blokada-marketingu}} roboczych."
+            podkroki:
+              - tekst: "Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem."
+              - tekst: "Cofnięcie zgody na marketing nie dotyczy komunikatów obowiązkowych, takich jak informacje o zmianie umowy lub regulaminu."
+          - tekst: "Jeżeli wnioskodawca żąda także usunięcia danych, {zachowaj|pozostaw} wyłącznie dane niezbędne do wykazania, że sprzeciw lub cofnięcie zgody zostały wykonane (identyfikator, data i zakres), a pozostałe dane marketingowe i segmentacyjne usuń."
+          - tekst: "Poinformuj wnioskodawcę, że jego dane jako Klienta Banku pozostają w systemach w zakresie niezbędnym do wykonywania umowy i obowiązków prawnych, a ich usunięcie jest możliwe dopiero po zakończeniu stosunków z Bankiem i upływie okresów przechowywania."
+
+  - id: rodo-opis-usuniecie-umowa
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Żądanie usunięcia danych złożone przez osobę, która nigdy nie zawarła z Bankiem umowy (np. kandydata na Klienta, który złożył wniosek o produkt, ale umowy nie zawarto), oraz przez byłego Klienta wymaga odrębnych ustaleń. Poniższe kroki {uzupełniają|rozszerzają} postępowanie opisane wyżej."
+      - kroki:
+          - tekst: "Jeżeli umowy nie zawarto, {sprawdź|ustal}, czy Bank ma podstawę do dalszego przetwarzania danych z wniosku: obrona roszczeń, obowiązki AML, ocena jakości procesu sprzedaży."
+            podkroki:
+              - tekst: "Dane z wniosku odrzuconego z powodu negatywnej oceny zdolności kredytowej przechowuj do upływu okresu {{fakt:rodo.retencja.wnioski-kredytowe-odrzucone}}."
+              - tekst: "Dane z wniosku niedokończonego (porzucony formularz) usuń niezwłocznie, jeżeli nie powstał obowiązek ich zachowania."
+          - tekst: "W przypadku byłego Klienta {zweryfikuj|sprawdź} datę zakończenia ostatniej umowy i {wylicz|ustal} datę końca okresu przechowywania z uwzględnieniem najdłuższego z obowiązujących okresów."
+          - tekst: "{Usuń|Przenieś do archiwum} dane, dla których okres przechowywania upłynął, a pozostałe dane — {zablokuj|ogranicz} do czasu upływu terminu; datę przewidywanego usunięcia {zapisz|wpisz} w rejestrze wniosków {{fakt:rodo.system.rejestr}}."
+          - tekst: "W odpowiedzi poinformuj, że po upływie okresów przechowywania dane zostaną usunięte z urzędu, bez potrzeby ponownego składania wniosku."
+
+  - id: rodo-opis-usuniecie-kopie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Wykonanie żądania usunięcia lub ograniczenia nie ogranicza się do systemu głównego. Dane mogą znajdować się w środowiskach testowych, hurtowniach danych, raportach, kopiach bezpieczeństwa i dokumentach papierowych."
+      - kroki:
+          - tekst: "{Zleć|Poleć} komórce ds. operacji sprawdzenie, w których zbiorach pomocniczych dane występują, na podstawie mapy przetwarzania danych."
+            podkroki:
+              - tekst: "W środowiskach testowych dane powinny być zanonimizowane; jeżeli znajdziesz dane rzeczywiste, usuń je i zgłoś nieprawidłowość komórce ds. bezpieczeństwa."
+              - tekst: "Dane w raportach archiwalnych, które nie mogą zostać zmienione bez utraty ich wartości dowodowej, oznacz jako zablokowane."
+          - tekst: "Dane w kopiach bezpieczeństwa usuwa się w terminie ich naturalnego wygaśnięcia, nie dłuższym niż {{fakt:termin.rodo.kopie-bezpieczenstwa}} od wykonania żądania; do tego czasu nie wolno ich przywracać bez zgody IOD."
+          - tekst: "Jeżeli kopia danych musi zostać odtworzona z kopii bezpieczeństwa, ponownie wykonaj usunięcie niezwłocznie po odtworzeniu, korzystając z zapisów rejestru żądań usunięcia."
+          - tekst: "Dokumenty papierowe {zniszcz|przekaż do zniszczenia} w sposób uniemożliwiający odczytanie danych i {sporządź|zachowaj} protokół zniszczenia."
+
+  - id: rodo-opis-usuniecie-ograniczenie-spor
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Ograniczenie przetwarzania pozostaje w szczególnej relacji do sporów między Bankiem a Klientem. Wnioskodawca, który kwestionuje prawidłowość danych w toku sporu o rozliczenie, może jednocześnie żądać ich sprostowania i ograniczenia."
+      - kroki:
+          - tekst: "{Przed zablokowaniem|Zanim wdrożysz ograniczenie} danych dotyczących należności {skonsultuj|uzgodnij} z komórką prawną, czy dane są potrzebne do ustalenia, dochodzenia lub obrony roszczeń."
+          - tekst: "Jeżeli tak, poinformuj wnioskodawcę, że Bank może nadal przetwarzać dane w tym celu, mimo ograniczenia; zapisz w rejestrze, których danych dotyczy wyłączenie."
+          - tekst: "{Nie przekazuj|Wstrzymaj przekazanie} spornych danych do biura informacji kredytowej ani podmiotów windykacyjnych do czasu rozstrzygnięcia, jeżeli prawo tego nie wymaga."
+          - tekst: "Po rozstrzygnięciu sporu {powiadom|poinformuj} wnioskodawcę o uchyleniu ograniczenia, jeżeli ono nastąpiło, oraz o jego prawach w zakresie dalszego przetwarzania."

@@ -1,0 +1,209 @@
+fakty:
+  # --- terminy
+  - id: termin.rodo.odpowiedz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "jednego miesiąca"
+    alternatywy: ["14 dni", "45 dni"]
+  - id: termin.rodo.przedluzenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "dwa kolejne miesiące"
+    alternatywy: ["jeden kolejny miesiąc"]
+  - id: termin.rodo.rejestracja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2026-04-01
+        wartosc: 2
+    alternatywy: [5, 7]
+  - id: termin.rodo.weryfikacja-tozsamosci
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14]
+  - id: termin.rodo.uzupelnienie-wniosku
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30, 7]
+  - id: termin.rodo.dane-od-jednostek
+    rodzaj: termin
+    wartosci:
+      - wartosc: 10
+      - od: 2027-01-01
+        wartosc: 8
+    alternatywy: [14, 20]
+  - id: termin.rodo.ograniczenie-wdrozenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [5]
+  - id: termin.rodo.powiadomienie-odbiorcow
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+    alternatywy: [10]
+  - id: termin.rodo.blokada-marketingu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [14, 30]
+  - id: termin.rodo.projekt-odpowiedzi
+    rodzaj: termin
+    wartosci:
+      - wartosc: 20
+    alternatywy: [25]
+  - id: termin.rodo.dostep-do-wyslanych-danych
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.rodo.ponowna-weryfikacja-decyzji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30]
+
+  - id: termin.rodo.kopie-bezpieczenstwa
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+      - od: 2027-01-01
+        wartosc: 60
+    alternatywy: [180]
+
+  # --- okresy przechowywania
+  - id: rodo.retencja.rejestr-wnioskow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+      - od: 2027-01-01
+        wartosc: "6 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: rodo.retencja.aml
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: rodo.retencja.roszczenia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 lat"
+    alternatywy: ["10 lat", "3 lata"]
+  - id: rodo.retencja.nagrania-rozmow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+      - od: 2026-04-01
+        wartosc: "6 miesięcy"
+    alternatywy: ["24 miesiące"]
+  - id: rodo.retencja.rachunkowa
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["10 lat"]
+  - id: rodo.retencja.wnioski-kredytowe-odrzucone
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["3 lata"]
+
+  # --- formularze
+  - id: rodo.formularz.wniosek
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-IOD-01"
+    alternatywy: ["F-IOD-10"]
+  - id: rodo.formularz.potwierdzenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-IOD-02"
+    alternatywy: ["F-IOD-20"]
+  - id: rodo.formularz.odmowa
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-IOD-03"
+    alternatywy: ["F-IOD-30"]
+  - id: rodo.formularz.weryfikacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-IOD-04"
+    alternatywy: ["F-IOD-40"]
+  - id: rodo.formularz.pelnomocnictwo
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-IOD-05"
+    alternatywy: ["F-IOD-50"]
+
+  # --- systemy
+  - id: rodo.system.rejestr
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "RODO-REJ"
+    alternatywy: ["REJ-DANE"]
+  - id: rodo.system.cbs
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+    alternatywy: ["CBS-ALFA"]
+  - id: rodo.system.archiwum
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "ARCH-PRZYKŁAD"
+    alternatywy: ["ARCH-BETA"]
+  - id: rodo.system.zgody
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "ZGODY-PRZYKŁAD"
+    alternatywy: ["ZGODY-BETA"]
+  - id: rodo.system.eksport
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "EKS-PRZYKŁAD"
+    alternatywy: ["EKS-BETA"]
+  # --- pozostałe
+  - id: rodo.organ-nadzorczy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Prezes Urzędu Ochrony Danych Osobowych"
+    alternatywy: ["Rzecznik Praw Obywatelskich"]
+  - id: rodo.organ-nadzorczy-dopelniacz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Prezesa Urzędu Ochrony Danych Osobowych"
+    alternatywy: ["Rzecznika Praw Obywatelskich"]
+  - id: rodo.adres-iod
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Bank Przykładowy S.A., Inspektor Ochrony Danych, ul. Przykładowa 1, 00-001 Warszawa"
+    alternatywy: ["Bank Przykładowy S.A., Inspektor Ochrony Danych, ul. Przykładowa 15, 00-002 Warszawa"]
+  - id: rodo.format-danych
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CSV lub XML"
+    alternatywy: ["wyłącznie PDF"]
+  - id: oplata.rodo.kolejna-kopia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+      - od: 2027-01-01
+        wartosc: 25.00
+    alternatywy: [0.00, 40.00]
+  - id: rodo.szkolenie-czestotliwosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "raz w roku"
+    alternatywy: ["co dwa lata"]
+  - id: rodo.raport-okres
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "kwartał"
+      - od: 2027-01-01
+        wartosc: "miesiąc"
+    alternatywy: ["rok"]
+  - id: rodo.kanal.telefon-iod
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "800 000 040"
+    alternatywy: ["800 000 041"]

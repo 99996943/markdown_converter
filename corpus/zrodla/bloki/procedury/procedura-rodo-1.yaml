@@ -1,0 +1,172 @@
+bloki:
+  - id: rodo-cel
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "{Celem procedury jest|Procedura ma na celu} {zapewnienie|zagwarantowanie} {jednolitego|spójnego} sposobu przyjmowania, weryfikowania, rozpatrywania i załatwiania wniosków osób, których dane osobowe przetwarza {{param:bank}}, w związku z wykonywaniem przez te osoby uprawnień przewidzianych w rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2016/679 (dalej: RODO) oraz w krajowych przepisach o ochronie danych osobowych (zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}})."
+      - ustep: "{Procedura|Dokument} {określa|reguluje} w szczególności:"
+        punkty:
+          - "kanały, którymi {osoba zgłasza wniosek|wniosek może wpłynąć do Banku}, oraz obowiązki {pracownika|osoby przyjmującej wniosek} w chwili jego otrzymania;"
+          - "zasady {potwierdzania|weryfikacji} tożsamości wnioskodawcy i jego umocowania;"
+          - "tryb realizacji prawa dostępu, sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, sprzeciwu oraz sprzeciwu wobec decyzji opartych wyłącznie na przetwarzaniu zautomatyzowanym;"
+          - "terminy udzielenia odpowiedzi, sposób ich przedłużania oraz przesłanki odmowy zadośćuczynienia żądaniu;"
+          - "{rejestrowanie|ewidencjonowanie} wniosków i współpracę z Inspektorem Ochrony Danych (dalej: IOD)."
+      - akapit: "{Prawidłowa|Rzetelna} realizacja procedury {ma zapewnić zgodność|służy zapewnieniu zgodności} działania Banku z przepisami o ochronie danych osobowych oraz {ograniczyć|zmniejszyć} ryzyko skarg, postępowań przed organem nadzorczym i sankcji administracyjnych."
+
+  - id: rodo-zakres
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Procedurę stosuje się do {wszystkich|każdego} wniosków i żądań dotyczących danych osobowych, które wpływają do Banku od osób fizycznych, niezależnie od kanału, formy i nazwy, jaką posłużył się wnioskodawca. Wniosek nie musi powoływać się na przepisy RODO — {decydująca|rozstrzygająca} jest treść żądania, czyli to, czego wnioskodawca {się domaga|oczekuje} w odniesieniu do swoich danych."
+      - ustep: "Procedurę stosują {wszyscy pracownicy|pracownicy wszystkich jednostek} Banku, którzy {mogą otrzymać|przyjmują} wnioski, w szczególności:"
+        punkty:
+          - "pracownicy placówek i punktów obsługi Klientów;"
+          - "konsultanci {infolinii|centrum kontaktu} ({{fakt:kontakt.infolinia}});"
+          - "pracownicy komórek ds. obsługi klienta, ds. reklamacji, ds. operacji, ds. zgodności oraz komórki prawnej (odpowiednio: {{fakt:jednostka.obsluga-klienta}}, {{fakt:jednostka.reklamacje}}, {{fakt:jednostka.operacje}}, {{fakt:jednostka.zgodnosc}} i {{fakt:jednostka.prawny}}) {uczestniczący|zaangażowani} w przygotowaniu odpowiedzi."
+      - ustep: "Z wnioskiem {mogą wystąpić|mogą się zwrócić} w szczególności:"
+        punkty:
+          - "Klienci Banku oraz byli Klienci;"
+          - "osoby składające wniosek o produkt Banku, w tym osoby, z którymi umowy nie zawarto;"
+          - "poręczyciele, współkredytobiorcy, pełnomocnicy, beneficjenci rzeczywiści i osoby upoważnione do dysponowania rachunkiem;"
+          - "osoby, których dane Bank {otrzymał|uzyskał} od podmiotów trzecich, np. osoby wskazane jako odbiorcy w poleceniach przelewu albo osoby kontaktowe;"
+          - "kandydaci do pracy oraz pracownicy Banku — w odniesieniu do danych przetwarzanych w sprawach kadrowych, o ile odrębna procedura kadrowa nie stanowi inaczej."
+
+  - id: rodo-zakres-wylaczenia
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Procedury {nie stosuje się|nie stosuje się bezpośrednio} do spraw, które mają {inny|odrębny} charakter niż wykonywanie uprawnień osoby, której dane dotyczą; dotyczy to spraw wskazanych poniżej."
+      - ustep: "{Odrębnie|W odrębnych dokumentach} {uregulowano|reguluje się}:"
+        punkty:
+          - "rozpatrywanie reklamacji dotyczących usług finansowych, w tym reklamacji dotyczących błędów w prowadzeniu rachunku — {{fakt:jednostka.reklamacje}} stosuje wówczas procedurę reklamacyjną; jeżeli w jednym piśmie zawarto reklamację i wniosek o realizację prawa, sprawy rozdziela się, a każdą załatwia w swoim trybie;"
+          - "postępowanie w razie naruszenia ochrony danych osobowych (incydent bezpieczeństwa) — {{fakt:jednostka.bezpieczenstwo}} wspólnie z IOD;"
+          - "udostępnianie informacji organom państwowym, sądom, komornikom i innym podmiotom uprawnionym na podstawie przepisów szczególnych, w tym informacji objętych tajemnicą bankową;"
+          - "zapytania podmiotów, które nie są osobami, których dane dotyczą, np. dziennikarzy lub kontrahentów Banku."
+      - akapit: "{Pracownik, który nie jest pewien|Pracownik mający wątpliwość}, czy sprawa podlega procedurze, {kieruje|przekazuje} ją {niezwłocznie|bez zwłoki} do IOD. Błędne zakwalifikowanie sprawy nie może prowadzić do przekroczenia terminu udzielenia odpowiedzi."
+
+  - id: rodo-odp-role
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "{Za realizację procedury odpowiadają|Odpowiedzialność za realizację procedury ponoszą} osoby i jednostki wskazane poniżej, w zakresie ich zadań."
+      - ustep: "**Pracownik placówki lub konsultant infolinii** jest obowiązany:"
+        punkty:
+          - "{rozpoznać|zidentyfikować} wniosek jako dotyczący danych osobowych i niezwłocznie go {zarejestrować|wprowadzić} w rejestrze wniosków {{fakt:rodo.system.rejestr}};"
+          - "{zweryfikować|potwierdzić} tożsamość wnioskodawcy zgodnie z punktem dotyczącym weryfikacji;"
+          - "udzielić {wnioskodawcy|osobie} podstawowych informacji o trybie i terminach załatwienia sprawy;"
+          - "nie {rozstrzygać|oceniać} merytorycznie zasadności wniosku i nie składać wnioskodawcy {zapewnień|obietnic} co do sposobu jego załatwienia."
+      - ustep: "**Kierownik placówki lub zespołu** {zapewnia|odpowiada za to}, że pracownicy:"
+        punkty:
+          - "{znają|są zapoznani z} procedurą i ukończyli szkolenie, o którym mowa w dalszej części procedury;"
+          - "przekazują wnioski do IOD w terminie {{fakt:termin.rodo.rejestracja}} roboczych od ich otrzymania;"
+          - "{nie ukrywają|nie pomijają} wniosków przyjętych ustnie."
+      - ustep: "**{{fakt:jednostka.iod}}** {koordynuje|nadzoruje} obsługę wniosków, {prowadzi|administruje} rejestr wniosków {{fakt:rodo.system.rejestr}}, przygotowuje lub zatwierdza projekty odpowiedzi, {opiniuje|ocenia} przesłanki odmowy oraz {raportuje|przedstawia} Zarządowi Banku wyniki obsługi wniosków co {{fakt:rodo.raport-okres}}."
+      - ustep: "**Właściciele systemów i zbiorów danych** (kierownicy jednostek merytorycznych {odpowiedzialnych|będących administratorami} za dany obszar) dostarczają dane i informacje w terminie {{fakt:termin.rodo.dane-od-jednostek}} roboczych od zapytania IOD oraz {potwierdzają|zapewniają} kompletność przekazanych zestawień."
+      - ustep: "**{{fakt:jednostka.bezpieczenstwo}}** {udostępnia|zapewnia} bezpieczne kanały przekazywania danych oraz {zatwierdza|akceptuje} techniczne sposoby wykonania żądań usunięcia, ograniczenia i eksportu danych."
+      - ustep: "**{{fakt:jednostka.prawny}}** {opiniuje|udziela opinii prawnej} w sprawach wątpliwych, w szczególności dotyczących przesłanek odmowy usunięcia danych i zakresu wyłączeń z prawa dostępu."
+
+  - id: rodo-odp-iod
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "{Inspektor Ochrony Danych|{{fakt:jednostka.iod}}} wykonuje zadania w sposób niezależny. {Nie przyjmuje|Nie otrzymuje} on {poleceń|instrukcji} co do sposobu rozstrzygania poszczególnych spraw w zakresie wykonywania swoich zadań, a bezpośrednio {podlega|raportuje} Zarządowi Banku. Pracownicy {nie mogą|nie są uprawnieni} {zlecać|polecać} IOD zadań, które mogłyby prowadzić do konfliktu interesów."
+      - akapit: "{Departament Zgodności|{{fakt:jednostka.zgodnosc}}} {sprawuje|wykonuje} nadzór nad {stosowaniem|przestrzeganiem} procedury w ramach drugiej linii kontroli, a komórka audytu wewnętrznego {weryfikuje|ocenia} jej skuteczność w ramach trzeciej linii kontroli."
+      - akapit: "Wnioskodawca {może|ma prawo} kontaktować się z IOD {bezpośrednio|w każdej chwili} w sprawach związanych z przetwarzaniem jego danych i wykonywaniem jego praw, pod adresem e-mail {{fakt:kontakt.email-iod}}, telefonicznie pod numerem {{fakt:rodo.kanal.telefon-iod}} lub listownie na adres: {{fakt:rodo.adres-iod}}."
+
+  - id: rodo-definicje
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - ustep: "Dodatkowo w procedurze {używa się|stosuje się} następujących określeń:"
+        punkty:
+          - "**RODO** — rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych;"
+          - "**Dane osobowe** — wszelkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej;"
+          - "**Osoba, której dane dotyczą** — osoba fizyczna, której dane osobowe są przetwarzane przez Bank;"
+          - "**Wnioskodawca** — osoba, której dane dotyczą, albo jej przedstawiciel ustawowy lub pełnomocnik, który {występuje|składa wniosek} do Banku w sprawie danych osobowych;"
+          - "**Wniosek** — każde żądanie wnioskodawcy {dotyczące|odnoszące się do} jego danych osobowych, {złożone|zgłoszone} w dowolnej formie;"
+          - "**IOD** — {{fakt:jednostka.iod}} wyznaczony przez Bank na podstawie przepisów RODO;"
+          - "**Komórki merytoryczne** — komórka ds. zgodności ({{fakt:jednostka.zgodnosc}}), komórka prawna ({{fakt:jednostka.prawny}}), komórka ds. bezpieczeństwa ({{fakt:jednostka.bezpieczenstwo}}), komórka ds. operacji ({{fakt:jednostka.operacje}}), komórka ds. ryzyka ({{fakt:jednostka.ryzyko}}), komórka ds. reklamacji ({{fakt:jednostka.reklamacje}}) oraz komórka ds. obsługi klienta ({{fakt:jednostka.obsluga-klienta}});"
+          - "**Organ nadzorczy** — {{fakt:rodo.organ-nadzorczy}};"
+          - "**Rejestr wniosków** — rejestr {{fakt:rodo.system.rejestr}}, w którym ewidencjonuje się wszystkie wnioski i ich załatwienie;"
+          - "**Profilowanie** — dowolna forma zautomatyzowanego przetwarzania danych osobowych polegająca na ich wykorzystaniu do oceny niektórych czynników osobowych, w szczególności do analizy sytuacji ekonomicznej lub zachowania osoby;"
+          - "**Ograniczenie przetwarzania** — oznaczenie przechowywanych danych w celu ograniczenia ich przetwarzania w przyszłości;"
+          - "**Odbiorca danych** — podmiot, któremu Bank ujawnia dane osobowe, niezależnie od tego, czy jest stroną trzecią;"
+
+  - id: rodo-schemat
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "{Poniższy schemat|Schemat poniżej} {przedstawia|ukazuje} ogólny przebieg obsługi wniosku osoby, której dane dotyczą; szczegółowe czynności opisano w kolejnych punktach procedury."
+      - schemat:
+          - nazwa: "Przyjęcie wniosku"
+            wyjasnienie:
+              - "{Pracownik|Osoba przyjmująca} rozpoznaje wniosek dotyczący danych osobowych i rejestruje go w rejestrze wniosków {{fakt:rodo.system.rejestr}}."
+              - "Od tego dnia {zaczyna|rozpoczyna} się bieg terminu na udzielenie odpowiedzi."
+          - nazwa: "Weryfikacja wnioskodawcy"
+            wyjasnienie: "Pracownik potwierdza tożsamość wnioskodawcy lub jego umocowanie; w razie wątpliwości {wzywa go do przedstawienia|prosi go o przedstawienie} dodatkowych informacji."
+          - nazwa: "Zebranie danych"
+            wyjasnienie:
+              - "{{fakt:jednostka.iod}} zleca jednostkom {zebranie|przygotowanie} danych lub wykonanie żądanej czynności."
+              - "Jednostki odpowiadają w terminie {{fakt:termin.rodo.dane-od-jednostek}} roboczych."
+          - nazwa: "Ocena żądania"
+            wyjasnienie: "IOD ocenia, czy żądanie jest zasadne, i ustala, czy zachodzą przesłanki ograniczenia lub odmowy jego realizacji."
+          - nazwa: "Odpowiedź dla wnioskodawcy"
+            wyjasnienie: "Bank udziela odpowiedzi w terminie {{fakt:termin.rodo.odpowiedz}} od otrzymania wniosku, a w razie odmowy informuje o prawie skargi do organu nadzorczego."
+          - nazwa: "Rejestracja i archiwum"
+            wyjasnienie: "Sprawę {zamyka|kończy} się w rejestrze, a dokumentację {przekazuje|przenosi} do archiwum elektronicznego {{fakt:rodo.system.archiwum}}."
+
+  - id: rodo-kroki-przyjecie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - kroki:
+          - tekst: "{Przyjmij|Przyjmij i oceń} wniosek, niezależnie od tego, którym kanałem wpłynął."
+            podkroki:
+              - tekst: "Wniosek może wpłynąć osobiście w placówce, telefonicznie na {infolinię|infolinię Banku} ({{fakt:kontakt.infolinia}}), pocztą na adres {{fakt:kontakt.adres-korespondencyjny}}, pocztą elektroniczną na adres {{fakt:kontakt.email-iod}} albo za pośrednictwem bezpiecznej skrzynki w bankowości elektronicznej."
+              - tekst: "Nie wolno odmówić przyjęcia wniosku z powodu użycia innego kanału niż wskazane w {{fakt:rodo.formularz.wniosek}}; formularz {{fakt:rodo.formularz.wniosek}} jest ułatwieniem, a nie warunkiem skuteczności wniosku."
+              - tekst: "Wniosek zgłoszony ustnie {spisz|odnotuj} z wnioskodawcą w formularzu {{fakt:rodo.formularz.wniosek}} lub w notatce, a następnie przeczytaj mu {jego treść|zapisane żądanie}, aby {upewnić się|potwierdzić}, że oddaje jego intencje."
+          - tekst: "{Zarejestruj|Wprowadź} wniosek w rejestrze wniosków {{fakt:rodo.system.rejestr}} w ciągu {{fakt:termin.rodo.rejestracja}} roboczych od jego otrzymania, a w przypadku wniosku przyjętego w placówce — w dniu przyjęcia."
+            podkroki:
+              - tekst: "Jako datę wpływu wpisz dzień, w którym wniosek dotarł do {jakiejkolwiek|dowolnej} jednostki Banku, a nie dzień jego rejestracji."
+              - tekst: "Zapisz kanał wpływu, rodzaj żądanego prawa (jedno lub kilka), dane identyfikacyjne wnioskodawcy oraz nazwę jednostki, która wniosek przyjęła."
+              - tekst: "Wniosek zawierający kilka żądań zarejestruj jako jedną sprawę z kilkoma pozycjami, aby wszystkie żądania {załatwić|rozpatrzyć} w tym samym terminie."
+          - tekst: "{Wydaj|Przekaż} wnioskodawcy potwierdzenie wpływu na formularzu {{fakt:rodo.formularz.potwierdzenie}}, jeżeli wniosek złożono osobiście lub został przekazany pocztą elektroniczną."
+            podkroki:
+              - tekst: "W potwierdzeniu wskaż numer sprawy, datę wpływu oraz ostateczną datę udzielenia odpowiedzi, wyliczoną jako dzień, w którym upływa termin {{fakt:termin.rodo.odpowiedz}} od daty wpływu."
+              - tekst: "Poinformuj wnioskodawcę, że może zostać poproszony o potwierdzenie tożsamości i że bez niego Bank nie wykona żądania."
+          - tekst: "Przekaż wniosek do IOD za pośrednictwem rejestru wniosków {{fakt:rodo.system.rejestr}}, a dokumenty papierowe — w formie skanu."
+            podkroki:
+              - tekst: "Oryginał pisma przechowuj w placówce do czasu zakończenia sprawy, jeżeli {{fakt:jednostka.iod}} nie zażąda jego przesłania."
+              - tekst: "Nie wykonuj żadnych zmian ani wyszukiwań danych {na własną rękę|samodzielnie}, zanim {{fakt:jednostka.iod}} nie zleci ich wykonania."
+
+  - id: rodo-kroki-weryfikacja
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Bank {wydaje|ujawnia} dane osobowe i {zmienia|modyfikuje} je wyłącznie po {upewnieniu się|potwierdzeniu}, że wniosek składa osoba, której dane dotyczą, albo osoba należycie umocowana. Zakres weryfikacji {powinien|ma} być {współmierny|proporcjonalny} do ryzyka — im bardziej wrażliwe dane lub skutki żądania, tym {pewniejszy|mocniejszy} sposób potwierdzenia tożsamości."
+      - kroki:
+          - tekst: "{Ustal|Określ} poziom weryfikacji i {zastosuj|przeprowadź} ją zgodnie z kanałem, którym wniosek wpłynął."
+            podkroki:
+              - tekst: "W placówce: sprawdź ważny dokument tożsamości ze zdjęciem, porównaj dane z danymi w systemie centralnym {{fakt:rodo.system.cbs}} i wypełnij formularz {{fakt:rodo.formularz.weryfikacja}}."
+              - tekst: "Przez bezpieczną skrzynkę w bankowości elektronicznej: uznaj wniosek za zweryfikowany, jeżeli wnioskodawca zalogował się z użyciem {uwierzytelnienia dwuskładnikowego|silnego uwierzytelnienia}."
+              - tekst: "Telefonicznie: zastosuj procedurę weryfikacji konsultanta i {nie udzielaj|nie przekazuj} danych osobowych w trakcie rozmowy; odpowiedź przekaż wyłącznie kanałem pisemnym na adres znany Bankowi."
+              - tekst: "Pocztą lub e-mailem: porównaj podpis lub adres nadawcy z danymi w systemie centralnym {{fakt:rodo.system.cbs}}; jeżeli się nie zgadzają, przejdź do kolejnego kroku."
+          - tekst: "W razie {uzasadnionych wątpliwości|wątpliwości} co do tożsamości wnioskodawcy {poproś|zwróć się z prośbą} o przedstawienie dodatkowych informacji niezbędnych do jej potwierdzenia."
+            podkroki:
+              - tekst: "Wezwanie wyślij w ciągu {{fakt:termin.rodo.weryfikacja-tozsamosci}} od wpływu wniosku, wskazując, jakie informacje lub dokumenty należy przedstawić."
+              - tekst: "Nie żądaj kopii dokumentu tożsamości, jeżeli tożsamość można potwierdzić mniej ingerencyjnie, np. przez odpowiedź na pytania {weryfikacyjne|kontrolne} lub kod wysłany na numer telefonu zapisany w systemie centralnym {{fakt:rodo.system.cbs}}."
+              - tekst: "Jeżeli kopię dokumentu pozyskano, {zanonimizuj|zasłoń} dane zbędne do weryfikacji (np. numer PESEL, jeżeli nie jest potrzebny) i usuń kopię po potwierdzeniu tożsamości."
+          - tekst: "Gdy wnioskodawca nie uzupełni informacji w ciągu {{fakt:termin.rodo.uzupelnienie-wniosku}} od wezwania, {powiadom|skieruj sprawę do} IOD."
+            podkroki:
+              - tekst: "{{fakt:jednostka.iod}} może zdecydować o odmowie realizacji żądania z powodu braku możliwości zidentyfikowania wnioskodawcy; odmowa wymaga zachowania trybu opisanego w punkcie o odmowie."
+              - tekst: "Bieg terminu na udzielenie odpowiedzi nie ulega zawieszeniu w czasie oczekiwania na uzupełnienie informacji, jednak wnioskodawcę należy o tej okoliczności poinformować."
+          - tekst: "{Potwierdź|Odnotuj} wynik weryfikacji w rejestrze wniosków {{fakt:rodo.system.rejestr}}, wskazując zastosowany sposób oraz osobę, która ją przeprowadziła."

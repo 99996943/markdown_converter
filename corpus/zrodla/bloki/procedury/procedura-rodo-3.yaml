@@ -1,0 +1,191 @@
+bloki:
+  - id: rodo-szczegolne-pelnomocnik
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Wnioskodawca może działać przez pełnomocnika. {Przyjmując wniosek|W razie przyjęcia wniosku} od pełnomocnika, pracownik {sprawdza|weryfikuje} jego tożsamość i umocowanie, a następnie {zleca|prosi o} potwierdzenie pełnomocnictwa przez IOD."
+      - ustep: "Pełnomocnictwo {jest skuteczne|uznaje się za skuteczne}, jeżeli:"
+        punkty:
+          - "zostało udzielone na piśmie z podpisem mocodawcy poświadczonym notarialnie, przez pracownika Banku albo kwalifikowanym podpisem elektronicznym, albo na formularzu {{fakt:rodo.formularz.pelnomocnictwo}} w placówce Banku;"
+          - "obejmuje umocowanie do żądania ujawnienia danych osobowych (pełnomocnictwo do reprezentowania w sprawach majątkowych {nie wystarcza|nie jest wystarczające} samo w sobie);"
+          - "nie zostało odwołane ani nie wygasło, co {sprawdza|potwierdza} się w systemie centralnym {{fakt:rodo.system.cbs}} i w rejestrze pełnomocnictw."
+      - akapit: "Odpowiedź udziela się mocodawcy, chyba że pełnomocnictwo wyraźnie przewiduje inaczej. Jeżeli odpowiedź ma zostać przekazana pełnomocnikowi, {{fakt:jednostka.iod}} {ocenia|bada}, czy nie zachodzi ryzyko, że pełnomocnik działa wbrew interesowi mocodawcy, w szczególności przy żądaniu dostępu do danych o stanie rachunków."
+
+  - id: rodo-szczegolne-maloletni
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Wniosek dotyczący danych osoby małoletniej {składa|może złożyć} jej przedstawiciel ustawowy (rodzic lub opiekun). Osoba małoletnia, która ukończyła 13 lat i posiada ograniczoną zdolność do czynności prawnych, może samodzielnie składać wnioski dotyczące danych przetwarzanych w związku z produktami, z których korzysta samodzielnie, np. rachunkiem dla młodzieży."
+      - ustep: "{Przyjmując|Rozpatrując} wniosek dotyczący danych małoletniego, pracownik:"
+        punkty:
+          - "{weryfikuje|sprawdza} tożsamość osoby składającej wniosek i jej relację z małoletnim na podstawie aktu urodzenia, orzeczenia sądu lub danych w systemie centralnym {{fakt:rodo.system.cbs}};"
+          - "nie {ujawnia|przekazuje} rodzicowi informacji, które mogłyby naruszyć dobro dziecka lub jego prawo do prywatności, w szczególności w sprawach, w których interesy rodzica i małoletniego są sprzeczne — w takim przypadku sprawę {przekazuje|kieruje} do IOD;"
+          - "po osiągnięciu pełnoletności przez osobę, której dane dotyczą, zaprzestaje wydawania danych rodzicowi."
+      - akapit: "Przy żądaniu usunięcia danych zebranych w czasie, gdy osoba była dzieckiem, należy uwzględnić, że zgodę na przetwarzanie danych wyrażało dziecko lub jego przedstawiciel, a prawo to {podlega|powinno podlegać} szczególnie {życzliwej|starannej} ocenie."
+
+  - id: rodo-rejestr
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Wszystkie wnioski osób, których dane dotyczą, {podlegają rejestracji|należy rejestrować} w rejestrze wniosków {{fakt:rodo.system.rejestr}}, który prowadzi {{fakt:jednostka.iod}}. Rejestr {jest dowodem|stanowi dowód} dochowania terminów i podstawą do sporządzania raportów dla Zarządu Banku oraz organu nadzorczego."
+      - ustep: "Dla każdego wniosku w rejestrze zapisuje się co najmniej:"
+        punkty:
+          - "numer sprawy, datę i kanał wpływu oraz jednostkę przyjmującą;"
+          - "dane identyfikacyjne wnioskodawcy oraz sposób weryfikacji jego tożsamości;"
+          - "rodzaj żądanego prawa (dostęp, sprostowanie, usunięcie, ograniczenie, przenoszenie, sprzeciw, decyzje zautomatyzowane);"
+          - "zlecone jednostkom zadania, ich terminy i wykonanie;"
+          - "rozstrzygnięcie (uwzględnienie, częściowe uwzględnienie, odmowa) wraz z uzasadnieniem;"
+          - "datę udzielenia odpowiedzi, sposób jej doręczenia oraz ewentualne przedłużenie terminu;"
+          - "informacje o skardze lub reklamacji dotyczącej sposobu załatwienia wniosku."
+      - akapit: "Dostęp do rejestru mają {wyłącznie|jedynie} {{fakt:jednostka.iod}}, osoby przez niego upoważnione oraz {{fakt:jednostka.zgodnosc}} w zakresie sprawowanego nadzoru. {Zapisów w rejestrze nie można|Nie wolno} {usuwać|kasować} {zapisów w rejestrze|ich}; korekty wprowadza się z zachowaniem historii zmian."
+
+  - id: rodo-iod-wspolpraca
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-rejestr-dod
+    elementy:
+      - akapit: "{Pracownicy|Jednostki Banku} są obowiązani {współpracować|ściśle współpracować} z IOD w sprawach dotyczących realizacji praw osób, których dane dotyczą. {{fakt:jednostka.iod}} ma dostęp do danych osobowych i operacji przetwarzania w zakresie niezbędnym do wykonywania zadań, a jednostki {nie mogą|nie powinny} odmawiać mu dostępu, powołując się na tajemnicę bankową."
+      - ustep: "W ramach współpracy IOD:"
+        punkty:
+          - "{wydaje|formułuje} opinie w sprawach wątpliwych, w tym w sprawach zakresu danych podlegających wydaniu i przesłanek odmowy;"
+          - "{monitoruje|nadzoruje} dotrzymywanie terminów i {wskazuje|zgłasza} kierownikom jednostek nieprawidłowości;"
+          - "{prowadzi|organizuje} szkolenia {dla pracowników|pracowników mających kontakt z Klientami} {{fakt:rodo.szkolenie-czestotliwosc}};"
+          - "{sporządza dla Zarządu Banku|przedstawia Zarządowi Banku} sprawozdanie z obsługi wniosków co {{fakt:rodo.raport-okres}}, zawierające liczbę wniosków według rodzajów, średni czas ich załatwienia, liczbę odmów oraz wykaz skarg;"
+          - "{jest punktem kontaktowym|pełni funkcję punktu kontaktowego} dla {{fakt:rodo.organ-nadzorczy-dopelniacz}} w sprawach związanych z przetwarzaniem."
+      - akapit: "Pracownik, który {ma wiedzę|dowie się} o możliwym naruszeniu praw osoby, której dane dotyczą, informuje o tym IOD w terminie jednego dnia roboczego; informację przekazuje się także wówczas, gdy sprawa jest już załatwiana przez inną jednostkę."
+
+  - id: rodo-kontrola
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "{Przestrzeganie|Stosowanie} procedury podlega kontroli w ramach {systemu kontroli wewnętrznej|przyjętego w Banku systemu kontroli wewnętrznej}, który obejmuje kontrolę funkcjonalną, monitoring zgodności i audyt wewnętrzny."
+      - ustep: "Kontrola funkcjonalna i nadzór obejmują w szczególności:"
+        punkty:
+          - "{weryfikację|sprawdzanie} przez kierowników jednostek, czy wszystkie wnioski przyjęte w ich jednostce zostały zarejestrowane w rejestrze wniosków {{fakt:rodo.system.rejestr}} w wymaganym terminie;"
+          - "przegląd przez IOD wszystkich spraw, w których przekroczono termin odpowiedzi, oraz ustalenie przyczyn;"
+          - "{wyrywkową|losową} kontrolę co najmniej 10% zamkniętych spraw {co|w ramach przeglądu przeprowadzanego co} {{fakt:rodo.raport-okres}} pod kątem prawidłowości weryfikacji tożsamości, kompletności przekazanych danych i trafności odmów;"
+          - "ocenę, czy pracownicy ukończyli wymagane szkolenia."
+      - akapit: "{{fakt:jednostka.zgodnosc}} przedstawia Zarządowi Banku wyniki kontroli. W razie stwierdzenia nieprawidłowości właściciel procedury {opracowuje|przygotowuje} plan działań naprawczych z terminami realizacji i osobami odpowiedzialnymi. Uchybienia pracowników mogą stanowić podstawę odpowiedzialności porządkowej lub dyscyplinarnej, a w razie naruszenia obowiązku zachowania tajemnicy także odpowiedzialności przewidzianej w przepisach prawa."
+
+  - id: rodo-archiwizacja
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "{Akta|Dokumentację} sprawy tworzą w szczególności: wniosek wraz z potwierdzeniem wpływu, formularz weryfikacji tożsamości, zapytania do jednostek i ich odpowiedzi, opinie IOD i komórki prawnej, kopia odpowiedzi udzielonej wnioskodawcy wraz z dowodem jej wysłania lub doręczenia oraz dokumenty dotyczące ewentualnej skargi."
+      - ustep: "Dokumentację {archiwizuje|przechowuje} się według następujących zasad:"
+        punkty:
+          - "akta spraw zamkniętych {przenosi|przekazuje} się do archiwum elektronicznego {{fakt:rodo.system.archiwum}} w terminie {{fakt:termin.rodo.rejestracja}} roboczych od zamknięcia sprawy;"
+          - "dokumentację przechowuje się przez {{fakt:rodo.retencja.rejestr-wnioskow}} od końca roku kalendarzowego, w którym sprawę zakończono, a gdy toczy się postępowanie przed organem nadzorczym lub sądem — do jego prawomocnego zakończenia;"
+          - "po upływie okresu przechowywania dokumentację {niszczy|usuwa} się w sposób uniemożliwiający odtworzenie danych, a fakt zniszczenia {odnotowuje|dokumentuje} protokołem;"
+          - "kopie dokumentów tożsamości sporządzone na potrzeby weryfikacji usuwa się niezwłocznie po jej zakończeniu, a w rejestrze pozostawia się wyłącznie adnotację o wyniku weryfikacji."
+      - akapit: "{Do dokumentacji sprawy nie dołącza się|W dokumentacji sprawy nie zamieszcza się} danych w szerszym zakresie, niż jest to niezbędne do wykazania prawidłowości załatwienia wniosku (zasada minimalizacji)."
+
+  - id: rodo-koncowe
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Procedura {wchodzi w życie|obowiązuje} z dniem wskazanym w metryczce i {zastępuje|uchyla} dotychczasowe zasady obsługi wniosków osób, których dane dotyczą. Wnioski, które wpłynęły przed tym dniem, załatwia się według zasad dotychczasowych, z zachowaniem terminów wynikających z RODO."
+      - akapit: "{Nieznajomość procedury|Niezapoznanie się z procedurą} nie zwalnia pracownika z odpowiedzialności za jej niewykonanie. Każdy pracownik {potwierdza zapoznanie się z procedurą|składa oświadczenie o zapoznaniu się z procedurą}, a oświadczenie {przechowuje się w aktach osobowych|dołącza się do akt osobowych}."
+      - akapit: "W sprawach nieuregulowanych w procedurze stosuje się przepisy RODO oraz krajowe przepisy o ochronie danych osobowych (zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}}), a także wytyczne organów nadzorczych w zakresie praw osób, których dane dotyczą. Wątpliwości interpretacyjne rozstrzyga {{fakt:jednostka.iod}}."
+
+  - id: rodo-zal-lista
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Listę {wypełnia|uzupełnia} pracownik, który obsługuje wniosek, a {{fakt:jednostka.iod}} {akceptuje|zatwierdza} ją przy zamykaniu sprawy w rejestrze wniosków {{fakt:rodo.system.rejestr}}."
+      - lista-kontrolna:
+          forma: wektor
+          pozycje:
+            - "Wniosek zarejestrowano w rejestrze wniosków {{fakt:rodo.system.rejestr}} w terminie {{fakt:termin.rodo.rejestracja}} roboczych od wpływu."
+            - "Jako datę wpływu wpisano dzień dotarcia wniosku do Banku."
+            - "Wnioskodawcy wydano lub wysłano potwierdzenie wpływu (formularz {{fakt:rodo.formularz.potwierdzenie}})."
+            - "Zweryfikowano tożsamość wnioskodawcy albo umocowanie pełnomocnika lub przedstawiciela ustawowego."
+            - "Określono rodzaj i zakres każdego żądania oraz wyznaczono jednostki odpowiedzialne za dane."
+            - "Jednostki przekazały dane lub potwierdziły wykonanie czynności w terminie {{fakt:termin.rodo.dane-od-jednostek}} roboczych."
+            - "Z danych wyłączono informacje o osobach trzecich i informacje objęte tajemnicą."
+            - "Dla usunięcia lub ograniczenia sprawdzono obowiązki przechowywania danych i wyjątki."
+            - "Odbiorców danych powiadomiono o sprostowaniu, usunięciu lub ograniczeniu przetwarzania."
+            - "Sprzeciw marketingowy zapisano w rejestrze zgód i preferencji {{fakt:rodo.system.zgody}} dla wszystkich kanałów."
+            - "Projekt odpowiedzi zatwierdził IOD, a w razie odmowy także {{fakt:jednostka.prawny}}."
+            - "Odpowiedź wysłano przed upływem terminu {{fakt:termin.rodo.odpowiedz}} od wpływu wniosku, a w razie przedłużenia — w przedłużonym terminie."
+            - "W razie odmowy lub częściowego uwzględnienia wniosku zamieszczono uzasadnienie i pouczenie o prawie skargi do {{fakt:rodo.organ-nadzorczy-dopelniacz}}."
+            - "Dowód doręczenia dołączono do akt, a sprawę zamknięto w rejestrze."
+
+  - id: rodo-zal-wzory-1
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Poniższe wzory {stanowią|są} podstawę odpowiedzi udzielanych wnioskodawcom; w razie potrzeby {należy je dostosować|treść dostosowuje się} do okoliczności sprawy. Fragmenty w nawiasach okrągłych uzupełnia pracownik."
+      - naglowek: "Wzór nr 1 — potwierdzenie wpływu wniosku"
+        poziom: 2
+      - akapit: "(miejscowość i data) (imię i nazwisko oraz adres wnioskodawcy)"
+      - akapit: "Szanowni Państwo, potwierdzamy, że {w dniu|dnia} (data) otrzymaliśmy Państwa wniosek dotyczący danych osobowych, któremu nadano numer (numer sprawy). {Odpowiedzi udzielimy|Poinformujemy Państwa o sposobie załatwienia wniosku} w terminie {{fakt:termin.rodo.odpowiedz}} od dnia jego otrzymania, czyli do dnia (data). Jeżeli nie będziemy mogli zachować tego terminu, {powiadomimy|poinformujemy} Państwa o jego przedłużeniu i przyczynach."
+      - akapit: "Aby wykonać Państwa wniosek, {musimy|jesteśmy zobowiązani} potwierdzić Państwa tożsamość. {Prosimy|Uprzejmie prosimy} o (opis informacji lub dokumentów) w terminie {{fakt:termin.rodo.uzupelnienie-wniosku}} od otrzymania niniejszego pisma. W razie pytań prosimy o kontakt z IOD: {{fakt:kontakt.email-iod}}, telefon {{fakt:rodo.kanal.telefon-iod}}."
+      - akapit: "Z poważaniem, (imię i nazwisko, stanowisko)"
+      - naglowek: "Wzór nr 2 — odpowiedź na wniosek o dostęp do danych"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w odpowiedzi na Państwa wniosek z dnia (data) informujemy, że {Bank Przykładowy S.A.|Bank} przetwarza Państwa dane osobowe w następujących celach: (cele przetwarzania) na podstawie (podstawy prawne). Przetwarzane kategorie danych to: (kategorie danych). Dane {pozyskaliśmy|otrzymaliśmy} od (źródło danych). Odbiorcami danych są (odbiorcy lub kategorie odbiorców). Dane będą przechowywane przez okres (okres przechowywania) albo do czasu (kryterium)."
+      - akapit: "W załączeniu przekazujemy {kopię|pierwszą kopię} danych osobowych, które przetwarzamy, w formie (forma), zabezpieczoną hasłem. Hasło przekażemy {odrębnie|osobnym komunikatem}. Informujemy o przysługujących Państwu prawach do sprostowania danych, usunięcia, ograniczenia przetwarzania, wniesienia sprzeciwu oraz przenoszenia danych, a także o prawie wniesienia skargi do {{fakt:rodo.organ-nadzorczy-dopelniacz}}. Pierwsza kopia danych jest wydawana nieodpłatnie; za kolejne kopie możemy pobrać opłatę w wysokości {{fakt:oplata.rodo.kolejna-kopia}}."
+      - akapit: "Z poważaniem, (imię i nazwisko, stanowisko)"
+
+  - id: rodo-zal-wzory-2
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór nr 3 — odpowiedź na wniosek o usunięcie danych (odmowa częściowa)"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w odpowiedzi na Państwa wniosek z dnia (data) o usunięcie danych osobowych informujemy, że {usunęliśmy następujące dane|zrealizowaliśmy usunięcie następujących danych}: (zakres danych usuniętych). Pozostałe dane (zakres danych zachowanych) {nie mogły zostać usunięte|musimy zachować}, ponieważ {Bank jest zobowiązany|jesteśmy zobowiązani} przepisami (podstawa prawna) do ich przechowywania przez okres (okres przechowywania), liczony od (data początkowa). W tym czasie dane są {przechowywane|wyłącznie przechowywane} z ograniczeniem dostępu i nie będą wykorzystywane do innych celów."
+      - akapit: "{Przypominamy|Informujemy}, że przysługuje Państwu prawo wniesienia skargi do {{fakt:rodo.organ-nadzorczy-dopelniacz}} oraz dochodzenia roszczeń przed sądem."
+      - naglowek: "Wzór nr 4 — zawiadomienie o przedłużeniu terminu"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w związku z Państwa wnioskiem z dnia (data), nr sprawy (numer sprawy), informujemy, że termin udzielenia odpowiedzi zostaje przedłużony o {{fakt:termin.rodo.przedluzenie}}, to jest do dnia (data), z uwagi na (przyczyna przedłużenia: skomplikowany charakter żądania lub liczba żądań). Dołożymy starań, aby odpowiedzieć {wcześniej|jak najszybciej}. Z poważaniem, (imię i nazwisko, stanowisko)"
+      - naglowek: "Wzór nr 5 — odmowa realizacji żądania"
+        poziom: 2
+      - akapit: "Szanowni Państwo, po rozpatrzeniu Państwa wniosku z dnia (data) {informujemy|zawiadamiamy}, że nie możemy uwzględnić żądania (wskazanie żądania), ponieważ (podstawa faktyczna i prawna odmowy). Mogą Państwo złożyć skargę do {{fakt:rodo.organ-nadzorczy-dopelniacz}} oraz dochodzić roszczeń przed sądem. W sprawach związanych z przetwarzaniem danych można się kontaktować z IOD: {{fakt:kontakt.email-iod}}. Z poważaniem, (imię i nazwisko, stanowisko)"
+
+  - id: rodo-zal-macierz
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-podstawowy
+    elementy:
+      - akapit: "Macierz {zawiera|przedstawia} skrótowo przesłanki i ograniczenia poszczególnych praw oraz najważniejsze okresy przechowywania danych w Banku. Jest to materiał pomocniczy — rozstrzygające są przepisy powszechnie obowiązujące i wiążące wytyczne."
+      - tabela:
+          kolumny:
+            - naglowek: "Prawo"
+            - naglowek: "Kiedy przysługuje"
+              waga: 2
+            - naglowek: "Najważniejsze ograniczenia"
+              waga: 2
+          wiersze:
+            - ["Dostęp do danych", "Zawsze, jeżeli Bank przetwarza dane wnioskodawcy", "Prawa i wolności innych osób; tajemnica przedsiębiorstwa Banku"]
+            - ["Sprostowanie", "Dane są nieprawidłowe lub niekompletne", "Konieczność udokumentowania zmiany; zachowanie historii"]
+            - ["Usunięcie", "Dane nie są już potrzebne, cofnięto zgodę, skutecznie wniesiono sprzeciw", "Obowiązek prawny przechowywania; dochodzenie lub obrona roszczeń"]
+            - ["Ograniczenie przetwarzania", "Kwestionowanie danych, przetwarzanie niezgodne z prawem, potrzeba dochodzenia roszczeń, sprzeciw", "Dane mogą być nadal przechowywane i wykorzystywane do roszczeń"]
+            - ["Przenoszenie danych", "Zgoda lub umowa oraz przetwarzanie zautomatyzowane", "Tylko dane dostarczone przez wnioskodawcę; nie obejmuje danych wtórnych"]
+            - ["Sprzeciw", "Przetwarzanie na podstawie prawnie uzasadnionego interesu; marketing bezpośredni", "Nadrzędne podstawy po stronie Banku; marketing — bez wyjątków"]
+            - ["Decyzje zautomatyzowane", "Decyzja oparta wyłącznie na przetwarzaniu zautomatyzowanym ze skutkami prawnymi lub istotnymi", "Wyjątki: umowa, przepis prawa, wyraźna zgoda — przy zachowaniu interwencji człowieka"]
+          siatka: true
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj danych lub dokumentów"
+              waga: 2
+            - naglowek: "Okres przechowywania"
+            - naglowek: "Podstawa"
+              waga: 2
+          wiersze:
+            - ["Dokumentacja identyfikacji i weryfikacji Klienta, dokumenty dotyczące transakcji", "{{fakt:rodo.retencja.aml}}", "Przepisy o przeciwdziałaniu praniu pieniędzy"]
+            - ["Dokumenty księgowe", "{{fakt:rodo.retencja.rachunkowa}}", "Przepisy o rachunkowości i podatkowe"]
+            - ["Umowy i korespondencja z Klientem", "{{fakt:rodo.retencja.roszczenia}} od zakończenia umowy", "Obrona i dochodzenie roszczeń"]
+            - ["Nagrania rozmów z infolinią", "{{fakt:rodo.retencja.nagrania-rozmow}}", "Dowód zawarcia lub wykonania dyspozycji"]
+            - ["Odrzucone wnioski kredytowe", "{{fakt:rodo.retencja.wnioski-kredytowe-odrzucone}}", "Obrona roszczeń; ocena jakości procesu"]
+            - ["Akta spraw dotyczących praw osób, których dane dotyczą", "{{fakt:rodo.retencja.rejestr-wnioskow}}", "Wykazanie rozliczalności"]
+          siatka: true

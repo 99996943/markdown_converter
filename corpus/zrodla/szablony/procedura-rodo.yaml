@@ -1,0 +1,74 @@
+id: procedura-rodo
+typ: procedury
+temat: procedura-rodo
+tytul:
+  - "Procedura realizacji praw osób, których dane dotyczą"
+  - "Procedura {obsługi|realizacji} wniosków osób, których dane dotyczą, w {{param:bank}}"
+  - "Procedura realizacji praw osób, których dane osobowe są przetwarzane przez {{param:bank}}"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [rodo-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [rodo-zakres, rodo-zakres-wylaczenia]
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [rodo-odp-role, rodo-odp-iod]
+    opcjonalne: { kategorie: [rodo-odpowiedzialnosci], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, rodo-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przyjęcie i weryfikacja wniosku"
+    wymagane: [rodo-schemat, rodo-kroki-przyjecie, rodo-kroki-weryfikacja]
+    opcjonalne: { kategorie: [rodo-opis-przyjecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — prawo dostępu i kopia danych"
+    wymagane: [rodo-kroki-dostep]
+    opcjonalne: { kategorie: [rodo-opis-dostep], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — sprostowanie, usunięcie i ograniczenie przetwarzania"
+    wymagane: [rodo-kroki-sprostowanie, rodo-kroki-usuniecie]
+    opcjonalne: { kategorie: [rodo-opis-usuniecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przenoszenie danych, sprzeciw i decyzje zautomatyzowane"
+    wymagane: [rodo-kroki-sprzeciw]
+    opcjonalne: { kategorie: [rodo-opis-sprzeciw], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — odpowiedź, odmowa i skargi"
+    wymagane: [rodo-kroki-odpowiedz, rodo-kroki-odmowa]
+    opcjonalne: { kategorie: [rodo-opis-odpowiedz], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [rodo-szczegolne-pelnomocnik]
+    opcjonalne: { kategorie: [rodo-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Rejestr wniosków i współpraca z Inspektorem Ochrony Danych"
+    wymagane: [rodo-rejestr, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [rodo-rejestr-dod], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [rodo-kontrola]
+    opcjonalne: { kategorie: [rodo-kontrola-dod], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [rodo-archiwizacja]
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [rodo-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna obsługi wniosku osoby, której dane dotyczą"
+    wymagane: [rodo-zal-lista]
+  - rodzaj: zalacznik
+    tytul: "Wzory odpowiedzi na wnioski osób, których dane dotyczą"
+    wymagane: [rodo-zal-wzory-1]
+    opcjonalne: { kategorie: [rodo-wzor], min: 0, max: 40 }
+  - rodzaj: zalacznik
+    tytul: "Macierz praw i okresów przechowywania danych"
+    wymagane: [rodo-zal-macierz]
+parametry:
+  wlasciciel: "Inspektor Ochrony Danych"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
