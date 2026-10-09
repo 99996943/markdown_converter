@@ -2,7 +2,7 @@ using Microsoft.Extensions.Options;
 
 namespace LegalAgent.PdfParser;
 
-/// <summary>Validates <see cref="PdfParserOptions"/>: ratios in (0, 1], positive counts and sizes, depth 1-6.</summary>
+/// <summary>Validates <see cref="PdfParserOptions"/>: ratios in (0, 1], positive counts and sizes, depth 1-6, table-documents spanning at least 2 pages.</summary>
 public sealed class PdfParserOptionsValidator : IValidateOptions<PdfParserOptions>
 {
     /// <inheritdoc />
@@ -60,6 +60,14 @@ public sealed class PdfParserOptionsValidator : IValidateOptions<PdfParserOption
         Positive(failures, "Tables.MinRows", options.Tables.MinRows);
         Ratio(failures, "Tables.ColumnTolerance", options.Tables.ColumnTolerance);
         Positive(failures, "Tables.RowMergeGapFactor", options.Tables.RowMergeGapFactor);
+        Ratio(failures, "Tables.TableDocumentMaxLeftColumnRatio", options.Tables.TableDocumentMaxLeftColumnRatio);
+        Ratio(failures, "Tables.TableDocumentMinPageRatio", options.Tables.TableDocumentMinPageRatio);
+        if (options.Tables.TableDocumentMinPages < 2)
+        {
+            failures.Add("Tables.TableDocumentMinPages musi wynosić co najmniej 2.");
+        }
+
+        Positive(failures, "Tables.TableDocumentMinMedianWords", options.Tables.TableDocumentMinMedianWords);
 
         Ratio(failures, "Footnotes.MaxSizeRatio", options.Footnotes.MaxSizeRatio);
 

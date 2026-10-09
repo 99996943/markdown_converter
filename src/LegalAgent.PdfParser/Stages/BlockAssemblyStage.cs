@@ -63,6 +63,13 @@ public sealed class BlockAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                // FR-083: the rest of a section name broken by a page boundary is part of the heading already placed on
+                // the previous page; it must not interrupt that section's content.
+                if (line.Role == LineRole.Heading && line.Heading is null && InTableDocument(line))
+                {
+                    continue;
+                }
+
                 // FR-034: side notes wait until the block they stand beside is finished.
                 if (line.Role == LineRole.SideNote)
                 {
@@ -326,6 +333,11 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return false;
         }
 
+        if (InTableDocument(previous) && InTableDocument(line) && EndsTableDocumentParagraph(previous, line, size))
+        {
+            return false;
+        }
+
         double tolerance = context.Options.Lists.IndentTolerance;
 
         if (page.Number != paragraph.LastPage)
@@ -348,7 +360,7 @@ public sealed class BlockAssemblyStage : IPipelineStage
             return false;
         }
 
-        double indentDelta = line.Box.Left - previous.Box.Left;
+        double indentDelta = TextLeft(line) - TextLeft(previous);
         if (indentDelta > tolerance)
         {
             return false;
@@ -409,6 +421,47 @@ public sealed class BlockAssemblyStage : IPipelineStage
         return trimmed[..end];
     }
 
+    private static bool InTableDocument(LayoutLine line) => line.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex);
+
+    /// <summary>
+    /// R9 (spec 002, FR-085, FR-086): in table-document content a line ends its paragraph when the next line starts with
+    /// a capital letter and its first word — a one-letter word together with the word after it — would have fit before
+    /// the column's right edge (the break was intended, the text is ragged-right; a manual break inside a sentence is
+    /// followed by a lowercase word), or when the line is bold as a whole and the next one is not, or
+    /// the other way round.
+    /// </summary>
+    private static bool EndsTableDocumentParagraph(LayoutLine previous, LayoutLine line, double size)
+    {
+        if (AllBold(previous) != AllBold(line))
+        {
+            return true;
+        }
+
+        if (LayoutAnnotations.GetNumber(previous, LayoutAnnotations.ColumnRight) is not double right
+            || line.Words.Count == 0
+            || !char.IsUpper(line.Words[0].Text[0]))
+        {
+            return false;
+        }
+
+        List<double> gaps = previous.Words.Zip(previous.Words.Skip(1), (a, b) => b.Box.Left - a.Box.Right).Where(g => g > 0).Order().ToList();
+        double space = gaps.Count > 0 ? gaps[gaps.Count / 2] : 0.25 * size;
+        LayoutWord first = line.Words[0];
+        double width = first.Text.Length == 1 && line.Words.Count > 1 ? line.Words[1].Box.Right - first.Box.Left : first.Box.Width;
+        return previous.Box.Right + space + width <= right;
+    }
+
+    /// <summary>
+    /// Left edge of a line for indentation: in table-document content the pen position of the first letter, so that a
+    /// letter whose ink overhangs to the left („J”) does not indent the line; elsewhere the ink box.
+    /// </summary>
+    private static double TextLeft(LayoutLine line) =>
+        InTableDocument(line) && line.Words.Count > 0 && line.Words[0].Glyphs.Count > 0
+            ? line.Words[0].Glyphs[0].Start
+            : line.Box.Left;
+
+    private static bool AllBold(LayoutLine line) => line.Words.Count > 0 && line.Words.All(w => w.Style.HasFlag(TextStyle.Bold));
+
     private static bool EndsWithPeriod(string text)
     {
         string core = StripClosers(text);
@@ -448,6 +501,9 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
         public double LastSize { get; set; } = size;
 
+        /// <summary>The last word with the pieces glued to it from earlier lines (a hyphenated word or an address).</summary>
+        public string LastWord { get; set; } = first.Words.Count > 0 ? first.Words[^1].Text : string.Empty;
+
         /// <summary>The first line is the remainder of a heading line („Art. 5. Treść…”).</summary>
         public bool FollowsHeadingOnItsLine { get; set; }
     }
@@ -473,7 +529,10 @@ public sealed class BlockAssemblyStage : IPipelineStage
         public void AppendLine(Paragraph paragraph, LayoutLine line, int page)
         {
             LayoutLine previous = paragraph.LastLine;
-            HyphenJoin join = Hyphenation.Decide(previous.Text, line.Text, exceptions);
+
+            // A one-word line may be the middle of a word glued over several lines (FR-094: a long web address).
+            string lineEnd = previous.Words.Count == 1 ? paragraph.LastWord : previous.Text;
+            HyphenJoin join = Hyphenation.Decide(lineEnd, line.Text, exceptions);
             bool glue = join != HyphenJoin.None;
             if (join == HyphenJoin.Remove)
             {
@@ -495,6 +554,12 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 {
                     paragraph.Inlines.AddPageBreak(page);
                 }
+            }
+
+            if (line.Words.Count > 0)
+            {
+                string tail = join == HyphenJoin.Remove ? paragraph.LastWord[..^1] : paragraph.LastWord;
+                paragraph.LastWord = line.Words.Count == 1 && glue ? tail + line.Words[0].Text : line.Words[^1].Text;
             }
 
             paragraph.Lines.Add(line);

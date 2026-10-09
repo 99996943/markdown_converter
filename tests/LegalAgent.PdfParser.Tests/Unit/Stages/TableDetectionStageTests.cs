@@ -565,4 +565,48 @@ public sealed class TableDetectionStageTests
 
         Assert.Empty(context.Tables);
     }
+
+    private static void MarkAsTableDocument(IEnumerable<LayoutLine> lines)
+    {
+        foreach (LayoutLine line in lines)
+        {
+            line.Annotations[LayoutAnnotations.TableDocumentIndex] = "0";
+        }
+    }
+
+    [Fact]
+    public void LinesOfATableDocument_InsideARuledGrid_AreNotTableLines()
+    {
+        PipelineContext context = new TableSheet().Page().Row("Organizator promocji", 24).Row("Uczestnik promocji", 24).Context();
+        context.BodyStyle = new BodyStyle(10, 20);
+        MarkAsTableDocument(context.Pages[0].Lines);
+
+        new TableDetectionStage().Execute(context);
+
+        Assert.Empty(context.Tables);
+        Assert.All(context.Pages[0].Lines, l => Assert.NotEqual(LineRole.Table, l.Role));
+        Assert.All(context.Pages[0].Lines, l => Assert.False(l.Annotations.ContainsKey(LayoutAnnotations.TableIndex), l.Text));
+        Assert.DoesNotContain(context.Report.Build(1, TimeSpan.Zero).Warnings, w => w.Code == "TBL001_AmbiguousGrid");
+    }
+
+    [Fact]
+    public void OrdinaryTableBelowATableDocumentFrame_IsStillDetected()
+    {
+        PipelineContext context = new TableSheet().Page().Row("Organizator promocji", 24).Context();
+        context.BodyStyle = new BodyStyle(10, 20);
+        MarkAsTableDocument(context.Pages[0].Lines);
+        LayoutPage page = context.Pages[0];
+        LayoutLine[] tariff = Tariff(600);
+        foreach (LayoutLine line in tariff)
+        {
+            page.Lines.Add(line);
+        }
+
+        new TableDetectionStage().Execute(context);
+
+        TableBlock table = SingleTable(context);
+        Assert.Equal("Prowadzenie rachunku", Text(table.Rows[0].Cells[0]));
+        Assert.All(tariff, l => Assert.Equal(LineRole.Table, l.Role));
+        Assert.All(page.Lines.Except(tariff), l => Assert.NotEqual(LineRole.Table, l.Role));
+    }
 }

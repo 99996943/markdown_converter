@@ -103,7 +103,10 @@ public sealed class ListDetectionStage : IPipelineStage
             LayoutLine? previous = null;
             foreach (LayoutLine line in page.Lines)
             {
-                if (line.Role is LineRole.Artifact or LineRole.Footnote or LineRole.SideNote || line.Words.Count == 0)
+                // Spec 002, FR-083/FR-085: the rest of a section name broken by a page boundary belongs to the heading on
+                // the previous page and does not end the list of that section.
+                if (line.Role is LineRole.Artifact or LineRole.Footnote or LineRole.SideNote || line.Words.Count == 0
+                    || (line.Role == LineRole.Heading && line.Heading is null && line.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
                 {
                     continue;
                 }
@@ -130,11 +133,35 @@ public sealed class ListDetectionStage : IPipelineStage
                     entry.ArticleUstep = articleUsteps.Contains(line);
                     entry.Accepted = label.Kind != ListLabelKind.ArabicDot || entry.ArticleUstep;
                 }
+                else if (!entry.LegalUnit && IsFontBullet(line))
+                {
+                    entry.Label = new ListLabelMatch("o", ListLabelKind.Bullet, null, string.Join(' ', line.Words.Skip(1).Select(w => w.Text)));
+                    entry.Accepted = true;
+                }
             }
         }
 
         return entries;
     }
+
+    /// <summary>
+    /// R10: word processors set the sub-bullet „o” in another font (Courier New) than the text; the preposition „o”
+    /// is set in the text font and stays a word.
+    /// </summary>
+    private static bool IsFontBullet(LayoutLine line)
+    {
+        if (line.Words.Count < 2 || !string.Equals(line.Words[0].Text, "o", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        string? bullet = FamilyOf(line.Words[0]);
+        string? text = FamilyOf(line.Words[1]);
+        return bullet is not null && text is not null && !string.Equals(bullet, text, StringComparison.Ordinal);
+    }
+
+    private static string? FamilyOf(LayoutWord word) =>
+        word.Glyphs.Count > 0 ? FontFamily.Of(word.Glyphs[0].FontName) : null;
 
     /// <summary>
     /// A bold passage is not a run of headings: points, letters, tirets and bullets never number headings, and a

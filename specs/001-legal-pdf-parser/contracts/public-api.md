@@ -3,6 +3,11 @@
 Wersja kontraktu: **1.0.0** (SemVer; zmiana łamiąca = MAJOR — konstytucja). Sygnatury poniżej
 są wiążące co do nazw, typów i semantyki; ciała metod — nie. Typy modelu: [data-model.md](../data-model.md).
 
+> **Dodatki 1.1.0** (spec 002: `SectionKind.TableDocumentSection`, `ConversionReport.TableDocuments`, opcje `Tables.DetectTableDocuments`
+> i progi, `Headings.DetectImageCaptions`, `Headings.ValidityLineAsParagraph`) opisuje
+> [002-table-document-sections/contracts/public-api.md](../../002-table-document-sections/contracts/public-api.md).
+> Zmiany są addytywne; poniższy kontrakt 1.0.0 obowiązuje bez zmian.
+
 ## Rejestracja (namespace `Microsoft.Extensions.DependencyInjection`)
 
 ```csharp

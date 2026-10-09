@@ -509,4 +509,155 @@ public sealed class BlockAssemblyStageTests
             [new TextRun("Ustawa wdraza dyrektywe"), new FootnoteRef(7)],
             block.Inlines.ToArray());
     }
+
+    // ---------------------------------------------------------------- table-document content (spec 002, R9)
+
+    private const double ContentLeft = 186;
+    private const double ContentRight = 529;
+    private const string EndsAt509 = "oplate za kazda transakcje wykonana karta debetowa w kraju oraz";
+    private const string EndsAt476 = "Nie mozesz uczestniczyc w promocji jesli posiadasz konto";
+
+    /// <summary>Assembles the pages and marks every line as table-document content of the column 186–529.</summary>
+    private static PipelineContext RunTableDocument(params PageSketch[] pages)
+    {
+        PipelineContext context = PageSketch.Assemble(null, pages);
+        foreach (LayoutLine line in context.Pages.SelectMany(p => p.Lines))
+        {
+            line.Annotations[LayoutAnnotations.TableDocumentIndex] = "0";
+            LayoutAnnotations.SetNumber(line, LayoutAnnotations.ColumnLeft, ContentLeft);
+            LayoutAnnotations.SetNumber(line, LayoutAnnotations.ColumnRight, ContentRight);
+        }
+
+        new BlockAssemblyStage().Execute(context);
+        return context;
+    }
+
+    [Fact]
+    public void TableDocument_LineAfterWhichTheNextWordWouldFit_EndsTheParagraphWithoutAPeriod()
+    {
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line("Organizator – mBank SA z siedziba w Warszawie", ContentLeft, 100)
+            .Line("Uczestnik – osoba fizyczna posiadajaca rachunek", ContentLeft, 114));
+
+        Assert.Equal(["Organizator – mBank SA z siedziba w Warszawie", "Uczestnik – osoba fizyczna posiadajaca rachunek"], Paragraphs(context));
+    }
+
+    [Fact]
+    public void TableDocument_ManualBreakInsideASentence_ContinuesTheParagraphWhenTheNextLineStartsLowercase()
+    {
+        // The reference document has manual line breaks inside sentences; definitions start with a capital letter.
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line("ul. Prostej 18, wpisany do rejestru", ContentLeft, 100)
+            .Line("przedsiebiorcow Krajowego Rejestru Sadowego przez Sad", ContentLeft, 114));
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
+    public void TableDocument_RaggedLineAfterWhichTheNextWordWouldNotFit_ContinuesTheParagraph()
+    {
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line("(czyli po przekroczeniu kwoty dwustu zlotych miesiecznie", ContentLeft, 100)
+            .Line("przekroczeniu limitu bank nalicza oplate)", ContentLeft, 114));
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
+    public void TableDocument_OneLetterWordIsMeasuredWithTheWordAfterIt()
+    {
+        // „w” alone would fit after „oraz”, „w sklepie” would not: Polish typesetting moves one-letter words to the next line.
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line(EndsAt509, ContentLeft, 100)
+            .Line("w sklepie internetowym banku", ContentLeft, 114));
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
+    public void TableDocument_LetterWhoseInkStartsLeftOfItsAdvance_DoesNotIndentTheLine()
+    {
+        // „J” in Verdana: the ink box starts 1.6 pt left of the pen position, more than the indent tolerance.
+        var sketch = new PageSketch()
+            .Line("Jesli spelnisz warunki promocji, otrzymasz do nowo otwartego", ContentLeft, 100)
+            .Line("biezacego:", ContentLeft, 114);
+        LayoutGlyph first = sketch.Page.Glyphs[0];
+        sketch.Page.Glyphs[0] = first with { Box = first.Box with { Left = first.Box.Left - 1.6 }, AdvanceStart = first.Box.Left, AdvanceEnd = first.Box.Right };
+
+        PipelineContext context = RunTableDocument(sketch);
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
+    public void TableDocument_ChangeBetweenAllBoldAndNotAllBold_EndsTheParagraph()
+    {
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line(EndsAt476, ContentLeft, 100, bold: true)
+            .Line("przekroczeniu limitu bank nalicza oplate", ContentLeft, 114)
+            .Line(EndsAt476, ContentLeft, 128)
+            .Line("przekroczeniu limitu", ContentLeft, 142, bold: true));
+
+        Assert.Equal(4, context.Blocks.Count);
+    }
+
+    [Fact]
+    public void TableDocument_ConsecutiveBoldLines_AreOneParagraph()
+    {
+        PipelineContext context = RunTableDocument(new PageSketch()
+            .Line(EndsAt476, ContentLeft, 100, bold: true)
+            .Line("przekroczeniu limitu", ContentLeft, 114, bold: true));
+
+        Assert.Single(context.Blocks);
+    }
+
+    [Fact]
+    public void TableDocument_SectionNameContinuedOnTheNextPage_DoesNotInterruptTheParagraph()
+    {
+        PipelineContext context = PageSketch.Assemble(
+            null,
+            new PageSketch(1).Line("Warunki/zasady", 60, 90, bold: true).Line(EndsAt509, ContentLeft, 104),
+            new PageSketch(2).Line("promocji", 60, 90, bold: true).Line("w sklepie internetowym banku", ContentLeft, 104));
+        foreach (LayoutLine line in context.Pages.SelectMany(p => p.Lines))
+        {
+            line.Annotations[LayoutAnnotations.TableDocumentIndex] = "0";
+            if (line.Box.Left < 181)
+            {
+                line.Role = LineRole.Heading;
+            }
+            else
+            {
+                LayoutAnnotations.SetNumber(line, LayoutAnnotations.ColumnLeft, ContentLeft);
+                LayoutAnnotations.SetNumber(line, LayoutAnnotations.ColumnRight, ContentRight);
+            }
+        }
+
+        FindLine(context, "Warunki").Heading = new HeadingInfo(2, SectionKind.TableDocumentSection, null, null, "Warunki/zasady promocji", "Warunki/zasady promocji");
+        new BlockAssemblyStage().Execute(context);
+
+        Assert.Equal([LayoutBlockKind.Heading, LayoutBlockKind.Paragraph], context.Blocks.Select(b => b.Kind));
+        Assert.Contains("[p2]", Flat(context.Blocks[1]), StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void WebAddressBrokenOverThreeLines_KeepsAllItsHyphens()
+    {
+        // FR-094: the middle piece has no „/” of its own; the address is recognised from the whole word built so far.
+        PipelineContext context = Run(new PageSketch()
+            .Line("adres: https://example.org/pdf/rozwijaj-", 50, 100)
+            .Line("firme-z-platnosciami-edycja-1-01-09-26-", 50, 114)
+            .Line("30-11-26.pdf", 50, 128));
+
+        Assert.Equal(["adres: https://example.org/pdf/rozwijaj-firme-z-platnosciami-edycja-1-01-09-26-30-11-26.pdf"], Paragraphs(context));
+    }
+
+    [Fact]
+    public void LinesOutsideATableDocument_KeepAShortLineWithoutAPeriodInTheParagraph()
+    {
+        PipelineContext context = Run(new PageSketch()
+            .Line("Organizator – mBank SA z siedziba w Warszawie", ContentLeft, 100)
+            .Line("Uczestnik – osoba fizyczna posiadajaca rachunek", ContentLeft, 114));
+
+        Assert.Single(context.Blocks);
+    }
 }

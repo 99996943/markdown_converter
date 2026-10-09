@@ -22,6 +22,8 @@ public sealed class PdfParserOptionsValidatorTests
         { "Headings.CenterTolerance", (o, v) => o.Headings.CenterTolerance = v },
         { "Tables.ColumnTolerance", (o, v) => o.Tables.ColumnTolerance = v },
         { "Footnotes.MaxSizeRatio", (o, v) => o.Footnotes.MaxSizeRatio = v },
+        { "Tables.TableDocumentMaxLeftColumnRatio", (o, v) => o.Tables.TableDocumentMaxLeftColumnRatio = v },
+        { "Tables.TableDocumentMinPageRatio", (o, v) => o.Tables.TableDocumentMinPageRatio = v },
     };
 
     public static TheoryData<string, Action<PdfParserOptions>> NonPositiveValues => new()
@@ -40,6 +42,8 @@ public sealed class PdfParserOptionsValidatorTests
         { "Tables.CellGapFactor", o => o.Tables.CellGapFactor = 0 },
         { "Tables.MinRows", o => o.Tables.MinRows = 0 },
         { "Tables.RowMergeGapFactor", o => o.Tables.RowMergeGapFactor = -0.5 },
+        { "Tables.TableDocumentMinPages", o => o.Tables.TableDocumentMinPages = 1 },
+        { "Tables.TableDocumentMinMedianWords", o => o.Tables.TableDocumentMinMedianWords = 0 },
     };
 
     [Fact]
@@ -71,6 +75,45 @@ public sealed class PdfParserOptionsValidatorTests
         Assert.True(o.Rendering.PageMarkers);
         Assert.Equal(FootnotesPlacement.EndOfSection, o.Rendering.FootnotesPlacement);
         Assert.Equal(0.9, o.Footnotes.MaxSizeRatio);
+    }
+
+    [Fact]
+    public void TableDocumentAndCaptionDefaults_MatchSpecification()
+    {
+        var o = new PdfParserOptions();
+        Assert.True(o.Tables.DetectTableDocuments);
+        Assert.Equal(0.35, o.Tables.TableDocumentMaxLeftColumnRatio);
+        Assert.Equal(2, o.Tables.TableDocumentMinPages);
+        Assert.Equal(0.5, o.Tables.TableDocumentMinPageRatio);
+        Assert.Equal(40, o.Tables.TableDocumentMinMedianWords);
+        Assert.True(o.Headings.DetectImageCaptions);
+        Assert.True(o.Headings.ValidityLineAsParagraph);
+    }
+
+    [Fact]
+    public void TableDocumentMinPages_OfTwo_IsValid()
+    {
+        var o = new PdfParserOptions();
+        o.Tables.TableDocumentMinPages = 2;
+        o.Tables.TableDocumentMinMedianWords = 1;
+        Assert.True(Validate(o).Succeeded);
+    }
+
+    [Fact]
+    public void Clone_CopiesTableDocumentAndCaptionOptions()
+    {
+        var original = new PdfParserOptions();
+        original.Tables.DetectTableDocuments = false;
+        original.Tables.TableDocumentMinMedianWords = 12;
+        original.Headings.DetectImageCaptions = false;
+        original.Headings.ValidityLineAsParagraph = false;
+
+        PdfParserOptions copy = original.Clone();
+
+        Assert.False(copy.Tables.DetectTableDocuments);
+        Assert.Equal(12, copy.Tables.TableDocumentMinMedianWords);
+        Assert.False(copy.Headings.DetectImageCaptions);
+        Assert.False(copy.Headings.ValidityLineAsParagraph);
     }
 
     [Theory]

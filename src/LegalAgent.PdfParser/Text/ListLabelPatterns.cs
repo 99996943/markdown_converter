@@ -156,7 +156,7 @@ internal static partial class ListLabelPatterns
         return map;
     }
 
-    [GeneratedRegex(@"^\d+(\.\d+)+\.?$", RegexOptions.CultureInvariant)]
+    [GeneratedRegex(@"^\d{1,3}(\.\d{1,3})+\.?$", RegexOptions.CultureInvariant)]
     private static partial Regex OutlineLabel();
 
     // 1) 1a) 4ba) 5¹) 1. 2a. 3¹. — at most three digits, so years („2024.”) are not labels.

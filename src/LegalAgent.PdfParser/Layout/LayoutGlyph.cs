@@ -9,6 +9,7 @@ namespace LegalAgent.PdfParser.Layout;
 /// <param name="IsItalic">True for italic or oblique faces.</param>
 /// <param name="AdvanceStart">X where the glyph's advance starts (pen position); <see cref="double.NaN"/> when unknown.</param>
 /// <param name="AdvanceEnd">X where the glyph's advance ends (next pen position); <see cref="double.NaN"/> when unknown.</param>
+/// <param name="FontName">Font name as written in the PDF (may carry a subset prefix); null when unknown. Used to recognise the bullet "o" by its font family (spec 002, FR-084).</param>
 public sealed record LayoutGlyph(
     string Text,
     Rect Box,
@@ -17,7 +18,8 @@ public sealed record LayoutGlyph(
     bool IsBold,
     bool IsItalic,
     double AdvanceStart = double.NaN,
-    double AdvanceEnd = double.NaN)
+    double AdvanceEnd = double.NaN,
+    string? FontName = null)
 {
     /// <summary>Left edge used for spacing: the advance start, or the ink box when the advance is unknown.</summary>
     public double Start => double.IsNaN(AdvanceStart) ? Box.Left : AdvanceStart;

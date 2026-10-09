@@ -16,7 +16,8 @@ Potok etapów (`IPipelineStage`) stosuje heurystyki:
 - **tabele** — z linii siatki lub z wyrównania kolumn, łączenie tabel ciągłych na kolejnych stronach;
 - **przypisy** — odnośniki `[^n]` i definicje umieszczane po treści artykułu/sekcji;
 - **adnotacje boczne** — wąska kolumna przy krawędzi strony jest wydzielana z tekstu głównego;
-- **kolejność czytania** — wykrywanie układu wielokolumnowego.
+- **kolejność czytania** — wykrywanie układu wielokolumnowego;
+- **tabele-dokumenty** — dokument będący jedną wielostronicową tabelą dwukolumnową jest odtwarzany jako sekwencja sekcji (patrz niżej).
 
 ## Wymagania
 
@@ -57,7 +58,7 @@ Strumień nie jest zamykany przez bibliotekę; konwerter jest bezpieczny do wywo
 |------------|-----------|
 | `Markdown` | wynik w Markdown (LF, UTF-8) |
 | `Document` | model `LegalDocument` (sekcje, bloki, przypisy) |
-| `Report` | `ConversionReport`: liczba stron, pominięte strony, usunięte artefakty, liczniki nagłówków/list/tabel/przypisów, ostrzeżenia, `Elapsed` |
+| `Report` | `ConversionReport`: liczba stron, pominięte strony, usunięte artefakty, liczniki nagłówków/list/tabel/przypisów, `TableDocuments` (rozpoznane tabele-dokumenty: strony, liczba sekcji, pominięty wiersz nazw kolumn), ostrzeżenia, `Elapsed` |
 | `IsComplete` | `false` wtedy i tylko wtedy, gdy raport zawiera pominięte strony |
 
 ## Opcje (`PdfParserOptions`)
@@ -99,6 +100,8 @@ Strumień nie jest zamykany przez bibliotekę; konwerter jest bezpieczny do wywo
 | `Headings` | `GapFactor` | `1.3` | wymagany odstęp wokół nagłówka (w interliniach) |
 | `Headings` | `CenterTolerance` | `0.05` | tolerancja wyśrodkowania (ułamek szerokości strony) |
 | `Headings` | `DetectLegalUnits` | `true` | wykrywanie Dział/Rozdział/Art./§ |
+| `Headings` | `DetectImageCaptions` | `true` | krótka linia na obrazie lub tuż pod nim (np. adres pod logo) jest podpisem, nie nagłówkiem (FR-088) |
+| `Headings` | `ValidityLineAsParagraph` | `true` | linia „Obowiązuje od …” na pierwszej stronie jest akapitem, nie nagłówkiem (FR-093) |
 | `Lists` | `Enabled` | `true` | wykrywanie list |
 | `Lists` | `IndentTolerance` | `1.5` | różnica wcięcia (pkt) traktowana jako ten sam poziom |
 | `Tables` | `Enabled` | `true` | wykrywanie tabel |
@@ -109,6 +112,11 @@ Strumień nie jest zamykany przez bibliotekę; konwerter jest bezpieczny do wywo
 | `Tables` | `UseRulingLines` | `true` | użycie linii siatki do wykrycia tabeli |
 | `Tables` | `MergeAcrossPages` | `true` | łączenie tabel ciągłych między stronami |
 | `Tables` | `DetectStepSequences` | `true` | schematy kroków (szare pola z nazwami kroków, wyjaśnienie obok) jako pogrubiona nazwa kroku + treść (FR-067) |
+| `Tables` | `DetectTableDocuments` | `true` | dokument będący wielostronicową tabelą dwukolumnową → sekcje (FR-080); `false` = zachowanie jak bez tej funkcji |
+| `Tables` | `TableDocumentMaxLeftColumnRatio` | `0.35` | maks. szerokość lewej kolumny (ułamek szerokości tabeli), zakres (0, 1] |
+| `Tables` | `TableDocumentMinPages` | `2` | minimalna liczba stron tabeli-dokumentu (≥ 2) |
+| `Tables` | `TableDocumentMinPageRatio` | `0.5` | minimalny ułamek stron z tekstem, który zajmuje tabela, zakres (0, 1] |
+| `Tables` | `TableDocumentMinMedianWords` | `40` | minimalna mediana liczby słów w prawych komórkach wierszy z nazwą (≥ 1) |
 | `Rendering` | `PageMarkers` | `true` | znaczniki stron `<!-- page: N -->` |
 | `Rendering` | `FootnotesPlacement` | `EndOfSection` | miejsce definicji przypisów (jedyna wartość: po treści sekcji) |
 | `Rendering` | `EmphasisInline` | `true` | pogrubienie/kursywa jako `**` / `*` |
@@ -117,12 +125,36 @@ Strumień nie jest zamykany przez bibliotekę; konwerter jest bezpieczny do wywo
 
 Opcje są walidowane (`OptionsValidationException` przy niepoprawnych wartościach).
 
+## Tabele-dokumenty
+
+Część regulaminów to jedna wielostronicowa tabela z ramką i dwiema kolumnami: w lewej są nazwy sekcji (np. „Warunki
+promocji”), w prawej ich treść (akapity, listy, podpunkty). Biblioteka rozpoznaje taki dokument (etap
+`TableDocumentStage`, `StageOrder.TableDocument` = 560; progi: opcje `Tables.TableDocument*`) i zamiast tabeli GFM
+zapisuje go jako zwykły dokument:
+
+- nazwa z lewej komórki to nagłówek `##` (`SectionKind.TableDocumentSection`), także gdy nazwa jest przerwana granicą strony;
+- treść z prawych komórek płynie ciągle, ponad granicami wierszy i stron (akapity, listy, zagnieżdżone podpunkty);
+- wiersz nazw kolumn („Definicje | Wyjaśnienie”), powtarzany na kolejnych stronach, jest pomijany i odnotowany w `Report.TableDocuments`;
+- tabela-dokument nie tworzy `TableBlock` i nie jest wliczana do `Report.TableCount` ani `FallbackTableCount`;
+- zwykła, krótka tabela (np. definicji) w regulaminie nadal jest tabelą GFM.
+
+Wyłączenie: `o.Tables.DetectTableDocuments = false` lub `PDFPARSER__Tables__DetectTableDocuments=false`.
+Pozostałe nowe opcje ustawia się tak samo, np. `PDFPARSER__Tables__TableDocumentMinPages=3`,
+`PDFPARSER__Headings__DetectImageCaptions=false`.
+
+Nowa wartość enuma `SectionKind.TableDocumentSection` — przy `switch` bez gałęzi `default` obsłuż ją jak `Typographic`
+(nagłówek bez oznaczenia jednostki prawnej). Kontrakt zmian: `specs/002-table-document-sections/contracts/public-api.md` (1.1.0).
+
+**Wskazówka dla chunkera opartego na nagłówkach:** dziel po `##`. Sekcje tabeli-dokumentu są na poziomie 2 pod tytułem
+`#`, a ich treść jest ciągła (bez znaczników wierszy tabeli), więc każdy fragment jest samodzielną sekcją
+o czytelnej nazwie; `Section.Path` zawiera tytuł i nazwę sekcji.
+
 ## Własne etapy potoku
 
 Etap implementuje `IPipelineStage` (`int Order`, `void Execute(PipelineContext context)`); etapy są wykonywane
 rosnąco wg `Order`. Wbudowane wartości są w stałych `StageOrder` (przestrzeń nazw `LegalAgent.PdfParser.Pipeline`):
 `PageExtraction` 100, `TextNormalization` 200, `LineAssembly` 300, `ArtifactRemoval` 400, `FootnoteDetection` 500,
-`StepSequence` 550, `TableDetection` 600, `ReadingOrder` 700, `ListDetection` 800, `HeadingDetection` 900, `BlockAssembly` 1000,
+`StepSequence` 550, `TableDocument` 560, `TableDetection` 600, `ReadingOrder` 700, `ListDetection` 800, `HeadingDetection` 900, `BlockAssembly` 1000,
 `DocumentBuild` 1100. Etap musi być bezstanowy (stan wyłącznie w `PipelineContext`).
 
 ```csharp
@@ -181,7 +213,7 @@ Bez `-o` Markdown trafia na stdout. `--report` zapisuje `ConversionReport` jako 
 
 ## Format wyjściowy Markdown
 
-Pełny kontrakt: `specs/001-legal-pdf-parser/contracts/markdown-output.md`. W skrócie: CommonMark + GFM, UTF-8, LF.
+Pełny kontrakt: `specs/001-legal-pdf-parser/contracts/markdown-output.md` (uzupełnienia: `specs/002-table-document-sections/contracts/markdown-output.md`). W skrócie: CommonMark + GFM, UTF-8, LF.
 
 - tytuł jako `#`, sekcje jako `##`…; jednostki prawne (Dział, Rozdział, Art., §) jako nagłówki o rosnącym poziomie;
 - listy: `- 1\) treść`, zagnieżdżenie wcięciem 2 spacji; punktory i tiret jako `- treść` / `- – treść`;

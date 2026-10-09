@@ -13,6 +13,7 @@ internal static class BuiltInStages
         new ArtifactRemovalStage(),
         new FootnoteDetectionStage(),
         new StepSequenceStage(),
+        new TableDocumentStage(),
         new TableDetectionStage(),
         new ReadingOrderStage(),
         new ListDetectionStage(),

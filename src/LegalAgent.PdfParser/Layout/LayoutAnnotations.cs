@@ -41,6 +41,12 @@ public static class LayoutAnnotations
     /// </summary>
     public const string StepIndex = "step.scheme";
 
+    /// <summary>
+    /// Document-wide index (invariant integer) of the table-document (spec 002, FR-080) a line belongs to: its section names,
+    /// its content lines and its dropped column-name rows.
+    /// </summary>
+    public const string TableDocumentIndex = "tabledoc.index";
+
     /// <summary>Number of the step (invariant integer, from 1 within a scheme) on <see cref="LineRole.StepTitle"/> lines.</summary>
     public const string StepNumber = "step.number";
 

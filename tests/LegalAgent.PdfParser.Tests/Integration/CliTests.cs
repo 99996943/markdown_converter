@@ -105,6 +105,7 @@ public sealed class CliTests : IDisposable
         using JsonDocument json = JsonDocument.Parse(await File.ReadAllTextAsync(report, TestContext.Current.CancellationToken));
         Assert.Equal(2, json.RootElement.GetProperty("pageCount").GetInt32());
         Assert.Equal(JsonValueKind.Number, json.RootElement.GetProperty("elapsed").ValueKind);
+        Assert.Equal(JsonValueKind.Array, json.RootElement.GetProperty("tableDocuments").ValueKind);
     }
 
     [Fact]

@@ -21,8 +21,8 @@ internal static class Hyphenation
     /// <summary>
     /// Decides the join. The hyphen is removed when it is the last character of the line, follows a letter, and
     /// the next line starts with a lowercase letter. It is kept when the first part is a one-letter prefix or an
-    /// upper-case abbreviation (PKB-owski), when the next line starts with an uppercase letter (Bielsko-Biała), or when
-    /// the result is on the exception list. A capitalised first part alone does not keep it (Zagra-nicznych → Zagranicznych).
+    /// upper-case abbreviation (PKB-owski), when the next line starts with an uppercase letter (Bielsko-Biała), when
+    /// the last word is a web address (FR-094), or when the result is on the exception list. A capitalised first part alone does not keep it (Zagra-nicznych → Zagranicznych).
     /// </summary>
     /// <param name="lineEnd">Text of the line that ends with the hyphen.</param>
     /// <param name="nextLineStart">Text of the following line.</param>
@@ -35,6 +35,11 @@ internal static class Hyphenation
 
         string end = lineEnd.TrimEnd();
         string next = nextLineStart.TrimStart();
+        if (end.Length >= 2 && end[^1] == '-' && next.Length > 0 && EndsInWebAddress(end))
+        {
+            return HyphenJoin.Keep;
+        }
+
         if (end.Length < 2 || end[^1] != '-' || !char.IsLetter(end[^2]) || next.Length == 0 || !char.IsLetter(next[0]))
         {
             return HyphenJoin.None;
@@ -62,6 +67,18 @@ internal static class Hyphenation
         }
 
         return HyphenJoin.Remove;
+    }
+
+    /// <summary>
+    /// True when the last word of the line is a web address or path (contains <c>://</c>, <c>www.</c> or <c>/</c>),
+    /// where a line-ending hyphen is part of the address and must stay (FR-094).
+    /// </summary>
+    private static bool EndsInWebAddress(string end)
+    {
+        string lastWord = end[(end.LastIndexOf(' ') + 1)..];
+        return lastWord.Contains("://", StringComparison.Ordinal)
+            || lastWord.Contains("www.", StringComparison.Ordinal)
+            || lastWord.Contains('/', StringComparison.Ordinal);
     }
 
     private static string TrailingLetters(string text)

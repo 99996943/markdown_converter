@@ -32,6 +32,26 @@ public sealed class PageExtractionStageTests
     }
 
     [Fact]
+    public void Execute_GlyphsCarryTheFontName_R10()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page()
+            .Text(50, 100, "o", mono: true)
+            .Text(80, 100, "tekst")
+            .Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        LayoutPage page = Assert.Single(h.Context.Pages);
+        LayoutGlyph mono = page.Glyphs.Single(g => g.Text == "o");
+        Assert.Contains("NotoSansMono", mono.FontName, StringComparison.Ordinal);
+        LayoutGlyph normal = page.Glyphs.First(g => g.Text == "t");
+        Assert.NotNull(normal.FontName);
+        Assert.Contains("NotoSans", normal.FontName, StringComparison.Ordinal);
+        Assert.DoesNotContain("Mono", normal.FontName, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void Execute_ConvertsYToTopDown()
     {
         byte[] pdf = new SyntheticPdfBuilder().Page().Text(50, 100, "Hello", 11).Build();
@@ -376,6 +396,35 @@ public sealed class PageExtractionStageTests
             failing.Contains(pageNumber)
                 ? throw new InvalidOperationException("boom")
                 : base.GetPage(document, pageNumber);
+    }
+    [Fact]
+    public void Execute_ImageAreas_AreInTopDownLayoutCoordinates()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page()
+            .Text(50, 60, "Tekst", 11)
+            .Image(100, 200, 150, 80)
+            .Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        LayoutPage page = Assert.Single(h.Context.Pages);
+        Rect area = Assert.Single(page.ImageAreas);
+        Assert.Equal(100, area.Left, 1);
+        Assert.Equal(200, area.Top, 1);
+        Assert.Equal(250, area.Right, 1);
+        Assert.Equal(280, area.Bottom, 1);
+    }
+
+    [Fact]
+    public void Execute_PageWithoutImages_HasNoImageAreas()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page().Text(50, 60, "Tekst", 11).Build();
+        using StageHarness h = StageHarness.Open(pdf);
+
+        h.Run(new PageExtractionStage());
+
+        Assert.Empty(Assert.Single(h.Context.Pages).ImageAreas);
     }
 }
 

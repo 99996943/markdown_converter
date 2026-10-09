@@ -7,13 +7,20 @@ internal sealed record ListTruth(string Label, int Depth);
 
 internal sealed record TableRowTruth(string Service, string Fee, string Frequency);
 
-internal sealed record DocumentTruth(IReadOnlyList<ListTruth> ListItems, IReadOnlyList<TableRowTruth> TableRows);
+internal sealed record DocumentTruth(IReadOnlyList<ListTruth> ListItems, IReadOnlyList<TableRowTruth> TableRows)
+{
+    /// <summary>Section names of a table-document (the left cells), in document order.</summary>
+    public IReadOnlyList<string> SectionNames { get; init; } = [];
+
+    /// <summary>Words of the dropped column-name row of a table-document.</summary>
+    public IReadOnlyList<string> HeaderRowWords { get; init; } = [];
+}
 
 /// <summary>
-/// Deterministic, in-memory generator of four synthetic banking documents (generic names, no real
+/// Deterministic, in-memory generator of synthetic banking documents (generic names, no real
 /// bank branding) used by golden tests. Built only with <see cref="SyntheticPdfBuilder"/>.
 /// </summary>
-internal static class BankingCorpusGenerator
+internal static partial class BankingCorpusGenerator
 {
     private const string Bank = "Bank Przykładowy S.A.";
     private const string Registry = "Bank Przykładowy S.A., ul. Przykładowa 1, 00-001 Warszawa, KRS 0000000000";
@@ -26,11 +33,14 @@ internal static class BankingCorpusGenerator
     public static IReadOnlyList<(string Name, byte[] Pdf)> Documents() =>
         Names.Select(n => (n, Build(n).Pdf)).ToArray();
 
+    /// <summary>PDF bytes of any generated document, including those not (yet) in the golden corpus.</summary>
+    public static byte[] Pdf(string name) => Build(name).Pdf;
+
     /// <summary>Ground truth recorded while the named document is generated.</summary>
     public static DocumentTruth Truth(string name) => Build(name).Truth;
 
     private static readonly string[] Names =
-        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny"];
+        ["regulamin-rachunku", "taryfa-z-siatka", "taryfa-bez-siatki", "regulamin-dwie-kolumny", "regulamin-promocji-tabela", "regulamin-z-tabela-definicji"];
 
     private static (byte[] Pdf, DocumentTruth Truth) Build(string name)
     {
@@ -41,15 +51,19 @@ internal static class BankingCorpusGenerator
             "taryfa-z-siatka" => TaryfaZSiatka(rec),
             "taryfa-bez-siatki" => TaryfaBezSiatki(rec),
             "regulamin-dwie-kolumny" => RegulaminDwieKolumny(rec),
+            "regulamin-promocji-tabela" => RegulaminPromocjiTabela(rec),
+            "regulamin-z-tabela-definicji" => RegulaminZTabelaDefinicji(rec),
             _ => throw new ArgumentException("Unknown document: " + name, nameof(name)),
         };
-        return (pdf, new DocumentTruth(rec.ListItems, rec.TableRows));
+        return (pdf, new DocumentTruth(rec.ListItems, rec.TableRows) { SectionNames = rec.SectionNames, HeaderRowWords = rec.HeaderRowWords });
     }
 
     private sealed class Recorder
     {
         public List<ListTruth> ListItems { get; } = [];
         public List<TableRowTruth> TableRows { get; } = [];
+        public List<string> SectionNames { get; } = [];
+        public List<string> HeaderRowWords { get; } = [];
 
         public void Row(string[] service, string fee, string freq) =>
             TableRows.Add(new TableRowTruth(string.Join(' ', service), fee, freq));

@@ -62,6 +62,12 @@ public sealed class PipelineContext
     /// </summary>
     public IList<LayoutBlock> Tables { get; } = [];
 
+    /// <summary>
+    /// Table-documents found by table-document detection (spec 002), in page order; their lines carry
+    /// <see cref="LayoutAnnotations.TableDocumentIndex"/> with the index into this list.
+    /// </summary>
+    internal IList<TableDocumentRegion> TableDocuments { get; } = [];
+
     /// <summary>Report builder for warnings and statistics.</summary>
     public ReportBuilder Report { get; }
 

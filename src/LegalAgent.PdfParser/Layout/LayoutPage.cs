@@ -39,6 +39,9 @@ public sealed class LayoutPage
     /// </summary>
     public IList<Rect> FilledAreas { get; } = [];
 
+    /// <summary>Rectangles of the images placed on the page, in layout coordinates (FR-088).</summary>
+    public IList<Rect> ImageAreas { get; } = [];
+
     /// <summary>True when the page contains images.</summary>
     public bool HasImages { get; set; }
 

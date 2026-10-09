@@ -7,7 +7,7 @@ namespace LegalAgent.PdfParser.Tests.Fixtures;
 
 /// <summary>
 /// Fluent builder of synthetic PDF documents for tests. Text uses embedded Noto Sans TrueType
-/// fonts (Regular, Bold, Italic) so Polish diacritics are supported. Vertical coordinates are
+/// fonts (Regular, Bold, Italic, Mono) so Polish diacritics are supported. Vertical coordinates are
 /// given as the distance from the top edge of the page (Y grows downwards).
 /// </summary>
 public sealed class SyntheticPdfBuilder
@@ -35,12 +35,15 @@ public sealed class SyntheticPdfBuilder
     /// <summary>Adds a page without any content.</summary>
     public SyntheticPdfBuilder BlankPage(double width = 595, double height = 842) => Page(width, height);
 
-    /// <summary>Writes horizontal text whose baseline is <paramref name="yFromTop"/> from the top edge.</summary>
-    public SyntheticPdfBuilder Text(double x, double yFromTop, string text, double size = 11, bool bold = false, bool italic = false)
+    /// <summary>
+    /// Writes horizontal text whose baseline is <paramref name="yFromTop"/> from the top edge; <paramref name="mono"/>
+    /// selects the monospace face (like the Courier New „o” of second-level bullets in word processors).
+    /// </summary>
+    public SyntheticPdfBuilder Text(double x, double yFromTop, string text, double size = 11, bool bold = false, bool italic = false, bool mono = false)
     {
         Current.Draw.Add((ctx, page) =>
         {
-            page.AddText(text, size, new PdfPoint(x, page.PageSize.Height - yFromTop), ctx.Font(bold, italic));
+            page.AddText(text, size, new PdfPoint(x, page.PageSize.Height - yFromTop), mono ? ctx.Mono() : ctx.Font(bold, italic));
         });
         return this;
     }
@@ -214,6 +217,22 @@ public sealed class SyntheticPdfBuilder
         return builder.Build();
     }
 
+    /// <summary>Advance width in points of <paramref name="text"/> set in the given face, for laying out wrapped text.</summary>
+    public static double TextWidth(string text, double size = 11, bool bold = false, bool italic = false, bool mono = false)
+    {
+        if (text.Length == 0)
+        {
+            return 0;
+        }
+
+        lock (Measuring.Gate)
+        {
+            PdfDocumentBuilder.AddedFont font = mono ? Measuring.Context.Mono() : Measuring.Context.Font(bold, italic);
+            IReadOnlyList<UglyToad.PdfPig.Content.Letter> letters = Measuring.Page.MeasureText(text, size, new PdfPoint(0, 0), font);
+            return letters[^1].EndBaseLine.X - letters[0].StartBaseLine.X;
+        }
+    }
+
     private PageSpec Current =>
         _pages.Count > 0 ? _pages[^1] : throw new InvalidOperationException("Call Page() before drawing.");
 
@@ -224,14 +243,30 @@ public sealed class SyntheticPdfBuilder
         public List<Action<BuildContext, PdfPageBuilder>> Draw { get; } = [];
     }
 
+    /// <summary>A never-built document whose fonts and page are used only to measure text.</summary>
+    private static class Measuring
+    {
+        private static readonly PdfDocumentBuilder Builder = new();
+
+        public static object Gate { get; } = new();
+
+        public static BuildContext Context { get; } = new(Builder);
+
+        public static PdfPageBuilder Page { get; } = Builder.AddPage(595, 842);
+    }
+
     private sealed class BuildContext(PdfDocumentBuilder builder)
     {
         private readonly Dictionary<string, PdfDocumentBuilder.AddedFont> _fonts = new(StringComparer.Ordinal);
 
-        public PdfDocumentBuilder.AddedFont Font(bool bold, bool italic)
-        {
+        public PdfDocumentBuilder.AddedFont Font(bool bold, bool italic) =>
             // There is no bold-italic face in the fixtures: bold wins.
-            string name = bold ? "NotoSans-Bold.ttf" : italic ? "NotoSans-Italic.ttf" : "NotoSans-Regular.ttf";
+            Load(bold ? "NotoSans-Bold.ttf" : italic ? "NotoSans-Italic.ttf" : "NotoSans-Regular.ttf");
+
+        public PdfDocumentBuilder.AddedFont Mono() => Load("NotoSansMono-Regular.ttf");
+
+        private PdfDocumentBuilder.AddedFont Load(string name)
+        {
             if (!_fonts.TryGetValue(name, out PdfDocumentBuilder.AddedFont? font))
             {
                 string path = Path.Combine(AppContext.BaseDirectory, "Fixtures", "Fonts", name);
