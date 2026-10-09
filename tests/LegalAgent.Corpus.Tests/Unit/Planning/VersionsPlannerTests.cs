@@ -143,6 +143,16 @@ public class VersionsPlannerTests
     }
 
     [Fact]
+    public void SingleTypeRun_HasNoCrossTypePair_AndNoError()
+    {
+        CorpusPlan plan = Plan(Defaults with { Types = ["procedury"] });
+
+        var pairs = plan.Documents.SelectMany(d => d.Contradictions.Select(c => (d, Other: plan.Documents.Single(o => o.Id == c.With)))).ToList();
+        Assert.NotEmpty(pairs);
+        Assert.All(pairs, p => Assert.Equal(p.d.Type, p.Other.Type));
+    }
+
+    [Fact]
     public void ZeroParameters_GiveOnlyBaseDocuments()
     {
         CorpusPlan plan = Plan(Defaults with { VersionedShare = 0, OutdatedPerType = 0, ContradictionPairsPerType = 0, CrossTypeContradictionPairs = 0 });
