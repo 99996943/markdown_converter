@@ -148,9 +148,7 @@ Konsument nie może zrzec się praw przyznanych mu w ustawie. Postanowienia umó
 - 2\. Jeżeli przedsiębiorca nie udzielił odpowiedzi na reklamację w terminie, o którym mowa w ust. 1, uważa się, że uznał reklamację.
 - 3\. Odpowiedź na reklamację przedsiębiorca przekazuje konsumentowi na papierze lub innym trwałym nośniku.
 
-## Rozdział 2. Obowiązki przedsiębiorcy w umowach, innych niż umowy zawierane poza lokalem przedsiębiorstwa
-
-**lub na odległość**
+## Rozdział 2. Obowiązki przedsiębiorcy w umowach, innych niż umowy zawierane poza lokalem przedsiębiorstwa lub na odległość
 
 ### Art. 8.
 

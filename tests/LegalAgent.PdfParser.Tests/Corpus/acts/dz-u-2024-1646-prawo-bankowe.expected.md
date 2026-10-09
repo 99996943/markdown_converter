@@ -1650,9 +1650,7 @@ Do instytucji finansowych mających siedzibę w państwach członkowskich, któr
 
 W przypadku gdy instytucja kredytowa prowadząca działalność na terytorium Rzeczypospolitej Polskiej zamierza dokonać zmian prawnych lub organizacyjnych, których skutkiem będzie zmiana systemu gwarantowania, pod ochroną którego znajdują się środki gwarantowane w nim zgromadzone lub ich część, na obowiązkowy system gwarantowania, o którym mowa w ustawie z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozytów oraz przymusowej restrukturyzacji, zawiadamia ona Bankowy Fundusz Gwarancyjny co najmniej 6 miesięcy przed planowaną zmianą.
 
-## Rozdział 2b. Zatwierdzanie działalności finansowych spółek holdingowych
-
-**oraz finansowych spółek holdingowych o działalności mieszanej**
+## Rozdział 2b. Zatwierdzanie działalności finansowych spółek holdingowych oraz finansowych spółek holdingowych o działalności mieszanej
 
 ### Art. 48q.
 

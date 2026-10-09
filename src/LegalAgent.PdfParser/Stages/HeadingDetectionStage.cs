@@ -317,7 +317,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
             if (entry.Legal is { } unit)
             {
-                headings.Add(LegalHeading(entry, unit, next, options, leading));
+                headings.Add(LegalHeading(entries, i, unit, next, options, leading));
                 entry.Consumed = true;
                 continue;
             }
@@ -369,8 +369,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         }
     }
 
-    private static Detected LegalHeading(Entry entry, LegalUnitMatch unit, Entry? next, HeadingOptions options, double leading)
+    private static Detected LegalHeading(List<Entry> entries, int index, LegalUnitMatch unit, Entry? next, HeadingOptions options, double leading)
     {
+        Entry entry = entries[index];
         var heading = new Detected(entry, unit.Kind) { Designation = unit.Designation, Number = unit.Number };
 
         if (unit.Kind is SectionKind.Article or SectionKind.Paragraph)
@@ -397,6 +398,29 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             heading.Title = next.Text;
             heading.Merged.Add(next);
             next.Consumed = true;
+
+            // A title wrapped over more lines continues in the same font (MaxLines title lines).
+            Entry last = next;
+            for (int j = index + 2; j < entries.Count && heading.Merged.Count < options.MaxLines; j++)
+            {
+                Entry follower = entries[j];
+                if (follower.Page != entry.Page
+                    || follower.Previous != last.Line
+                    || follower.Legal is not null
+                    || !SameFont(follower, last, options)
+                    || follower.Line.Baseline - last.Line.Baseline > options.GapFactor * leading
+                    || heading.Title.Length + 1 + follower.Text.Length > options.MaxLength
+                    || follower.Text.EndsWith(',')
+                    || follower.Text.EndsWith(';'))
+                {
+                    break;
+                }
+
+                heading.Title += " " + follower.Text;
+                heading.Merged.Add(follower);
+                follower.Consumed = true;
+                last = follower;
+            }
         }
 
         heading.Text = heading.Title is null ? unit.Designation : $"{unit.Designation}. {heading.Title}";
