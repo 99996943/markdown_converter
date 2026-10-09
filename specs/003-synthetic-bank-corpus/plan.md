@@ -176,3 +176,44 @@ regulaminów → pomiar → poprawki R11; (4) taryfy; (5) procedury; (6) wersje/
 | Zależność `YamlDotNet` 16.3.0 | Setki stron polskiej prozy w plikach źródłowych muszą być czytelne i edytowalne bez kodu (FR-102); YAML ma bloki wieloliniowe bez escapowania | JSON (wbudowany) wymaga escapowania i jednej linii na akapit — nieczytelny w tej skali; własny format = parser i gramatyka do utrzymania (więcej kodu niż zależność) |
 | Dwa nowe projekty w `src/` (+1 testowy) | Generator musi być uruchamiany jednym poleceniem i być wielokrotnego użytku (FR-100), a konstytucja wymaga logiki w bibliotece + cienkiej aplikacji + osobnego projektu testowego | Polecenie w CLI parsera — CLI parsera zależałoby od generatora i kodu testowego; generator w projekcie testowym — brak „jednego polecenia” i kontraktu parametrów; osobny projekt tylko na `SyntheticPdfBuilder` — dodatkowy projekt bez samodzielnej wartości |
 | Commitowany korpus binarny (≈ 10 MB PDF) | Spec wymaga korpusu w repozytorium dla aplikacji RAG | Generowanie przy użyciu — aplikacja RAG jest osobna i nie powinna budować generatora; Git LFS — dodatkowe narzędzie przy małym rozmiarze |
+
+## Stan prac i przekazanie (T126, 2026-10-09)
+
+**Zrobione** — wszystkie zadania T001–T126 (`tasks.md`), gałąź `003-synthetic-bank-corpus`:
+
+- Generator `LegalAgent.Corpus` + CLI `LegalAgent.Corpus.Cli` (`generate`, `refresh`, `verify`, `check`,
+  wszystkie opcje z contracts/cli.md), treść w `corpus/zrodla/` (YAML), instrukcja `corpus/README.md`.
+- Korpus w repozytorium (`corpus/przebieg.json`, ziarno 20261008): 83 wpisy manifestu — 30 dokumentów
+  bazowych (po 10 regulaminów, taryf, procedur, 6 układów), 13 wcześniejszych wersji (3 dokumenty na
+  typ w 2–3 wersjach), po 2 nieaktualne na typ, 4 pary sprzeczne (po 1 na typ + regulamin–taryfa),
+  30 zatrutych (5 rodzajów × 3 typy × 2) i 10 aktów prawnych (6 z testów parsera, 4 pobrane z
+  Dziennika Ustaw wg R12). Rozmiar: ≈ 13 MB PDF syntetycznych + 20 MB aktów.
+- Testy: próbka (`CorpusSampleTests`, w każdym przebiegu) i pełny korpus (`CorpusFullTests`,
+  `LEGALAGENT_CORPUS_FULL=1`, krok CI „Corpus full”), `verify` w CI, SC-021 jako test wydajności.
+
+**Metryki** (pomiar w research.md „Pomiar korpusu (T076)”): wszystkie 73 dokumenty syntetyczne i
+zatrute spełniają SC-022 – SC-026 (0 słów spoza PDF, ≥ 99,8% słów, nagłówki ≥ 98%, fałszywe ≤ 1%,
+listy ≥ 98%, 100% stawek w wierszu i taryf jako jednej tabeli GFM); SC-020, SC-023 (100% tekstów
+zatruć dosłownie w Markdown), SC-027, SC-028, SC-031 — zielone; `generate` całego korpusu ≈ 1,5 min.
+
+**Poprawki biblioteki** (R11/T089, test-first w `CorpusLayoutsIntegrationTests`): taryfy bez siatki
+(T083–T083j), tabela z siatką pod akapitami (T089a), tytuł rozdziału w dwóch wierszach (T089b),
+dwie kolumny (T087–T087j: łączenie linii, interlinia w kolumnie, rynna, tabele w kolumnie, listy
+przez kolumny i strony, znaczniki przypisów), kod formularza w wersalikach (T089d), fragment tabeli
+z siatką (T089e), postrzępiona lewa kolumna (T089f–T089i), „§ 99.” w zawiniętym zdaniu (T086).
+Goldeny parsera i prywatny korpus właściciela bez zmian, z wyjątkiem T089b.
+
+**Otwarte decyzje dla właściciela**
+
+1. **Goldeny T089b** (FR-163): dwa goldeny aktów zmienione — tytuł rozdziału w dwóch wierszach jest
+   teraz jednym nagłówkiem (`dz-u-2020-287` Rozdział 2, `dz-u-2024-1646` Rozdział 2b); commit
+   `fix: a chapter title wrapped over more lines continues the heading (T089b)` — do akceptacji lub
+   cofnięcia.
+2. **Obwieszczenie o ochronie danych** (`corpus/akty/dz-u-2019-1781-ochrona-danych.md`): cytowane we
+   wstępie art. 109–157 (nieobjęte tekstem jednolitym) stają się nagłówkami „## Art. 110.” przed
+   właściwą ustawą; tekst kompletny, struktura myląca — kandydat na osobną poprawkę parsera.
+3. **Regulaminy „tabela-dokument”** (REG-01, REG-05): ich wewnętrzne tabele nie są tabelami GFM
+   (układ zapisywany wg FR-080 jako sekcje); metryka tabel ich nie wymaga — do potwierdzenia.
+4. **T097**: zmiany między wersjami realizują nadpisania faktów (historia `wartosci` i `alternatywy`);
+   warianty bloków „po zmianie” nie zostały zaimplementowane.
+5. **README korpusu** (T117) nie był sprawdzony przejściem „czysty klon” (SC-030).
