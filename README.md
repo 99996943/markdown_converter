@@ -9,6 +9,11 @@ Biblioteka **`LegalAgent.Chunking`** dzieli wynik parsera na **fragmenty dla apl
 artykuł, sekcja taryfy/procedury/tabeli-dokumentu) z metadanymi do indeksowania, cytowania i porównywania wersji —
 patrz [Podział na fragmenty](#podział-na-fragmenty-legalagentchunking).
 
+Aplikacja konsolowa **`mBank.FaqGenerator`** (z biblioteką **`LegalAgent.Downloads`**) pobiera 5 publicznych
+regulaminów PDF ze strony mBanku do katalogu `./downloads` — patrz
+[Pobieranie regulaminów](#pobieranie-regulaminów-mbankfaqgenerator). Konwersja do Markdown i generowanie FAQ to
+kolejne etapy tej aplikacji (osobne specyfikacje).
+
 ## Co robi
 
 Potok etapów (`IPipelineStage`) stosuje heurystyki:
@@ -271,6 +276,55 @@ string jsonl = ChunkJson.ToJsonLines(doc);                                      
   `specs/004-document-chunking/contracts/chunks-json.md` — jedna samodzielna linia na fragment
   (`schemaVersion`, `document`, `chunk`).
 
+## Pobieranie regulaminów (`mBank.FaqGenerator`)
+
+Aplikacja pobiera **5 regulaminów PDF** równolegle do katalogu pobrań (domyślnie `./downloads` względem bieżącego
+katalogu) i zapisuje `manifest.json`, który wiąże każdy plik z adresem źródła. Logika (sprawdzanie adresów, nazwy
+plików, pobieranie, zapis atomowy, manifest, sprzątanie) jest w bibliotece **`LegalAgent.Downloads`**; aplikacja to
+cienka warstwa (argumenty, konfiguracja, pytania, komunikaty, kody wyjścia). Specyfikacja:
+`specs/005-regulation-download/`.
+
+```bash
+# tryb pytań: aplikacja prosi kolejno o 5 adresów
+dotnet run --project src/mBank.FaqGenerator -c Release
+
+# jedno polecenie, bez pytań: 5 adresów w argumentach
+dotnet run --project src/mBank.FaqGenerator -c Release -- \
+  --url https://www.mbank.pl/pdf/…/a.pdf --url … --url … --url … --url … [--output <katalog>]
+```
+
+**Skąd adresy:** `--url` podane dokładnie 5 razy → w przeciwnym razie niepusta lista `Download:Urls` z
+konfiguracji (musi mieć 5 pozycji) → w przeciwnym razie pytania w konsoli. Każdy adres musi być `https://`, z hosta
+z listy `Download:AllowedHosts` (domyślnie `mbank.pl` i jego subdomeny) i nie może się powtarzać; przekierowania są
+wykonywane tylko do dozwolonych hostów.
+
+**Konfiguracja** (rosnący priorytet): `appsettings.json` obok pliku wykonywalnego → `appsettings.Local.json`
+(opcjonalny, ignorowany przez git) → zmienne środowiskowe `FAQGEN__<Sekcja>__<Pole>` → argumenty.
+
+| Klucz (`Download:…`) | Domyślnie | Znaczenie |
+|----------------------|-----------|-----------|
+| `Urls` | `[]` | 5 adresów (pusta lista = pytania), np. `FAQGEN__Download__Urls__0=https://…` … `__4` |
+| `AllowedHosts` | `["mbank.pl"]` | dozwolone hosty (z subdomenami) |
+| `AllowHttp` | `false` | czy dopuszczać `http://` |
+| `OutputDirectory` | `downloads` | katalog pobrań (`--output` ma pierwszeństwo) |
+| `TimeoutSeconds` | `60` | limit czasu na plik (liczba, może być ułamkowa) |
+| `MaxFileSizeMegabytes` | `50` | limit rozmiaru pliku |
+| `MaxRedirects` | `5` | limit przekierowań (0–20) |
+| `UserAgent` | `mBank.FaqGenerator/1.0` | nagłówek `User-Agent` |
+
+**Wynik:** pliki PDF o nazwach z ostatniego segmentu adresu (oczyszczonych; kolizje dostają przyrostek `-N`) i
+`manifest.json` (kontrakt: `specs/005-regulation-download/contracts/download-manifest.md`). Plik trafia pod docelową
+nazwę dopiero po pełnym pobraniu i sprawdzeniu sygnatury `%PDF-`, więc błąd nie zostawia niekompletnego pliku ani
+nie psuje poprzedniej wersji. Ponowne uruchomienie nadpisuje pliki; po pobraniu 5 z 5 usuwane są pliki PDF spoza
+bieżącej listy. Niedostępny link (kod błędu, przekroczony czas, brak połączenia, strona HTML zamiast PDF) nie
+przerywa pozostałych pobrań — przyczyna trafia do podsumowania i manifestu.
+
+**Kody wyjścia:** 0 pobrano 5 z 5; 2 błędne argumenty, konfiguracja, lista adresów lub zamknięte wejście przy
+pytaniach; 3 co najmniej jedno pobranie nieudane; 4 błąd katalogu pobrań (utworzenie, manifest, sprzątanie);
+130 przerwano (Ctrl+C); 1 błąd nieoczekiwany.
+
+Pobrane regulaminy nie są częścią repozytorium (`downloads/` w `.gitignore`).
+
 ## Testy
 
 ```bash
@@ -286,6 +340,9 @@ dotnet test LegalAgent.slnx -c Release --filter "Category=Performance"  # tylko 
 - **Fragmenty:** `tests/LegalAgent.Chunking.Tests` — testy jednostkowe podziału i metadanych, kontrakt JSON, determinizm,
   pliki wzorcowe `Golden/*.chunks.jsonl` (`UPDATE_GOLDEN=1`, różnice jako `*.actual.jsonl`), pokrycie słów całego korpusu
   (`CorpusFull`) i wydajność (`Performance`).
+- **Pobieranie:** `tests/LegalAgent.Downloads.Tests` (biblioteka) i `tests/mBank.FaqGenerator.Tests` (aplikacja przez
+  `Program.RunAsync`) działają bez sieci — odpowiedzi serwera zastępuje atrapa `FakeHttpHandler`, a każdy test aplikacji
+  ma własny `appsettings.json` w katalogu tymczasowym.
 - CI (`.github/workflows/ci.yml`, ubuntu-latest) buduje i uruchamia testy z filtrem `Category!=Performance`, a następnie osobno `Category=Performance`.
 
 ## Korpus syntetyczny

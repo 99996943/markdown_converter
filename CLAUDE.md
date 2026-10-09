@@ -9,6 +9,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **`LegalAgent.Chunking`**: splits a parser result into chunks with metadata for a RAG app (spec 004). In-memory models
   only (no file I/O); JSON Lines contract in `specs/004-document-chunking/contracts/chunks-json.md`.
 - **`LegalAgent.Corpus`** and **`LegalAgent.Corpus.Cli`**: a deterministic generator of a synthetic Polish bank corpus („Bank Przykładowy S.A.”), committed in `corpus/`.
+- **`LegalAgent.Downloads`** and **`mBank.FaqGenerator`** (spec 005): the library downloads a list of PDF addresses in
+  parallel (allowed hosts, manual redirects, time/size limits, `.part` + atomic move, `manifest.json`, cleanup); the
+  console app asks for 5 regulation URLs (or takes `--url` ×5 / `Download:Urls` from `appsettings.json` and
+  `FAQGEN__…` variables) and writes them to `./downloads` (git-ignored — real bank documents). The library knows no
+  hosts; `mbank.pl` and the count 5 live in the app. Conversion and FAQ (OKF) are later stages of the same app.
 
 The owner communicates in Polish. Specs, the README, `corpus/README.md` and the corpus content are in Polish; code, comments and commit messages are in English.
 
@@ -36,7 +41,14 @@ dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- generate   # plan +
 dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- refresh    # re-convert existing PDFs only (after parser changes)
 dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- verify     # rebuild in memory, compare with disk (CI step)
 dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- check --template <id>
+
+# regulation download (prompts for 5 URLs without --url; exit codes 0/2/3/4/130/1 in specs/005-regulation-download/contracts/cli.md)
+dotnet run --project src/mBank.FaqGenerator -c Release -- --url <a> --url <b> --url <c> --url <d> --url <e> [--output <dir>]
 ```
+
+The download tests never touch the network: `FakeHttpHandler` (in `tests/LegalAgent.Downloads.Tests/Fakes/`, linked
+into the app tests) scripts responses, and app tests run `Program.RunAsync` through `AppHarness` with their own
+`appsettings.json`.
 
 Environment variables used by the tests:
 - **`UPDATE_GOLDEN=1`**: rewrites `*.expected.md` goldens and the chunk goldens `tests/LegalAgent.Chunking.Tests/Golden/*.chunks.jsonl`. On a mismatch, tests write `*.actual.md` / `*.actual.jsonl` (git-ignored).

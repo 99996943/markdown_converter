@@ -159,8 +159,8 @@ pytań; drugie uruchomienie → te same nazwy, identyczny manifest.
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T044 [P] README.md: sekcja „mBank.FaqGenerator — pobieranie regulaminów” (cel, uruchomienie w trybie pytań i z `--url`/konfiguracją, `appsettings.json`/`appsettings.Local.json`/`FAQGEN__…`, katalog `downloads/` i `manifest.json`, kody wyjścia, uruchamianie testów) — FR-333, zasada VII
-- [ ] T045 [P] CLAUDE.md: projekty `LegalAgent.Downloads` i `mBank.FaqGenerator` w „What this is”, polecenia uruchomienia w „Commands”, `downloads/` jako katalog niecommitowany
+- [X] T044 [P] README.md: sekcja „mBank.FaqGenerator — pobieranie regulaminów” (cel, uruchomienie w trybie pytań i z `--url`/konfiguracją, `appsettings.json`/`appsettings.Local.json`/`FAQGEN__…`, katalog `downloads/` i `manifest.json`, kody wyjścia, uruchamianie testów) — FR-333, zasada VII
+- [X] T045 [P] CLAUDE.md: projekty `LegalAgent.Downloads` i `mBank.FaqGenerator` w „What this is”, polecenia uruchomienia w „Commands”, `downloads/` jako katalog niecommitowany
 - [ ] T046 Uruchom `dotnet build LegalAgent.slnx -c Release` i `dotnet test LegalAgent.slnx --filter "Category!=Performance"` (wszystkie projekty zielone, istniejące testy bez zmian); sprawdź, że `dl-lib/` nie zawiera „mbank” (`grep -ri mbank src/LegalAgent.Downloads` pusty)
 - [ ] T047 Ręczna weryfikacja wg quickstart.md 2–6 z prawdziwymi adresami regulaminów z `www.mbank.pl` (bez commitowania pobranych plików); wynik (w tym ewentualne 403 i decyzja o `UserAgent`) zapisz w handoffie
 - [ ] T048 Uzupełnij „Stan prac i przekazanie” w `specs/005-regulation-download/plan.md` (zrobione, walidacja, decyzje, otwarte punkty) i oznacz zadania w tym pliku
