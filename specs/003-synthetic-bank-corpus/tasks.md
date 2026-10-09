@@ -330,7 +330,7 @@ wpisy manifestu ze źródłem.
 
 - [X] T122 [P] Dodaj do `.github/workflows/ci.yml` krok „Corpus full” po testach: `dotnet test LegalAgent.slnx -c Release --no-build --filter "Category=CorpusFull"` z `env: LEGALAGENT_CORPUS_FULL: 1`; (krok `verify` jest już z T072a)
 - [X] T123 [P] Rozszerz `CorpusFullTests` o SC-027 (0 nazw zabronionych w PDF i MD dokumentów syntetycznych) i SC-031 (bloki wspólne ≤ 20% słów, brak powtórzeń bloków niewspólnych między dokumentami bazowymi); test czasu SC-021 jako `[Trait("Category","Performance")]` (pełne `generate` do katalogu tymczasowego < 10 min)
-- [ ] T124 [P] Zaktualizuj `README.md` w katalogu głównym: sekcja „Korpus syntetyczny” (cel, `corpus/README.md`, polecenia `generate`/`refresh`/`verify`, testy `CorpusFull`), nowe projekty w opisie solucji, licencja czcionek Noto (OFL) w nowej lokalizacji
+- [X] T124 [P] Zaktualizuj `README.md` w katalogu głównym: sekcja „Korpus syntetyczny” (cel, `corpus/README.md`, polecenia `generate`/`refresh`/`verify`, testy `CorpusFull`), nowe projekty w opisie solucji, licencja czcionek Noto (OFL) w nowej lokalizacji
 - [ ] T125 Uruchom testy jak CI (`--filter "Category!=Performance"`, `Category=Performance`, `CorpusFull`, `verify`) na Windows; wypchnij gałąź i potwierdź zielone CI na Ubuntu (SC-021: identyczne pliki na obu systemach — `verify` w CI)
 - [ ] T126 Dopisz sekcję „Stan prac i przekazanie” na końcu `specs/003-synthetic-bank-corpus/plan.md` (co zrobione, wyniki metryk, otwarte decyzje, poprawki biblioteki z R11/T089) i odhacz zadania
 

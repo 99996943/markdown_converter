@@ -236,6 +236,39 @@ dotnet test LegalAgent.slnx -c Release --filter "Category=Performance"  # tylko 
 - **Korpus prywatny:** zmienna `LEGALAGENT_PRIVATE_CORPUS` wskazuje katalog z własnymi PDF (np. regulaminami, których nie można publikować); odpowiadające jej testy są pomijane, gdy zmienna nie jest ustawiona.
 - CI (`.github/workflows/ci.yml`, ubuntu-latest) buduje i uruchamia testy z filtrem `Category!=Performance`, a następnie osobno `Category=Performance`.
 
+## Korpus syntetyczny
+
+Obok parsera repozytorium zawiera **syntetyczny korpus polskich dokumentów bankowych** („Bank Przykładowy S.A.”):
+regulaminy, taryfy i procedury wewnętrzne w wielu wersjach, dokumenty nieaktualne i sprzeczne, dokumenty zatrute
+(wstrzyknięcia w treści) oraz 10 aktów prawnych. Do każdego PDF dołączony jest Markdown, a **manifest prawdy referencyjnej**
+(`corpus/manifest.json`) opisuje zmiany między wersjami, pary sprzeczności i rodzaje zatruć. Korpus służy do testowania
+konwersji PDF → Markdown (`LegalAgent.PdfParser`) oraz aplikacji RAG. Pełna instrukcja: [`corpus/README.md`](corpus/README.md).
+
+Projekty w solucji (`LegalAgent.slnx`):
+
+| Projekt | Rola |
+|---------|------|
+| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown |
+| `src/LegalAgent.PdfParser.Cli` | aplikacja CLI parsera (`legalagent-pdf`) |
+| `src/LegalAgent.Corpus` | generator korpusu syntetycznego (PDF, manifest, czcionki) |
+| `src/LegalAgent.Corpus.Cli` | CLI generatora: `generate`, `refresh`, `verify`, `check` |
+| `tests/LegalAgent.PdfParser.Tests` | testy parsera |
+| `tests/LegalAgent.Corpus.Tests` | testy generatora i jakości korpusu |
+
+```bash
+dotnet run --project src/LegalAgent.Corpus.Cli -- generate   # wygenerowanie korpusu
+dotnet run --project src/LegalAgent.Corpus.Cli -- refresh    # odświeżenie
+dotnet run --project src/LegalAgent.Corpus.Cli -- verify     # sprawdzenie zgodności z zapisanym korpusem
+dotnet run --project src/LegalAgent.Corpus.Cli -- check      # kontrole jakości
+LEGALAGENT_CORPUS_FULL=1 dotnet test LegalAgent.slnx -c Release --filter "Category=CorpusFull"   # testy całego korpusu
+```
+
+Domyślnie testy sprawdzają próbkę korpusu; testy `CorpusFull` są pomijane bez `LEGALAGENT_CORPUS_FULL=1`
+(PowerShell: `$env:LEGALAGENT_CORPUS_FULL = "1"`). Szczegóły i opcje poleceń: `corpus/README.md`.
+
+**Licencja czcionek:** PDF-y korpusu osadzają czcionki Noto Sans i Noto Sans Mono (`src/LegalAgent.Corpus/Fonts/`)
+na licencji SIL Open Font License 1.1; jej tekst: `src/LegalAgent.Corpus/Fonts/OFL.txt`.
+
 ## Ograniczenia
 
 - Strony skanowane (bez warstwy tekstowej) **nie są** przetwarzane OCR-em — są pomijane (znacznik `no-text-layer`, `IsComplete == false`).
