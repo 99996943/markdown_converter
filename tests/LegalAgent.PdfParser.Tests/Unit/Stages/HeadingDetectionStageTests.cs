@@ -512,6 +512,30 @@ public sealed class HeadingDetectionStageTests
         Assert.All(articles, h => Assert.Equal("Art. 31", h.Designation));
     }
 
+    [Fact]
+    public void UnitsInsideAQuotation_AreNotHeadings_UntilTheQuotationCloses()
+    {
+        // An announcement quoting amending articles of another act (Dz. U. 2019 poz. 1781): the quotation opened by
+        // „Art. 109. runs over pages and quotes further articles and paragraphs; the act itself follows after ”.
+        PipelineContext context = Run(
+            Page()
+                .Text("„Art. 109. W ustawie z dnia 17 listopada 1964 r. dodaje się pkt 4 w brzmieniu:")
+                .Text("„4) o roszczenia wynikające z naruszenia przepisów o ochronie danych.”.")
+                .Gap()
+                .Text("Art. 110. W ustawie z dnia 17 czerwca 1966 r. wprowadza się następujące zmiany:"),
+            Page(2)
+                .Text("Art. 111. W ustawie z dnia 26 czerwca 1974 r. dodaje się art. 22a w brzmieniu:")
+                .Text("„Art. 22a. § 1. Pracodawca może wprowadzić szczególny nadzór nad terenem zakładu.")
+                .Gap()
+                .Text("§ 2. Monitoring nie obejmuje pomieszczeń sanitarnych.”.”;")
+                .Gap()
+                .Text("Art. 1. Ustawa określa „zasady” ochrony danych osobowych.")
+                .Gap()
+                .Text("Art. 2. Ustawę stosuje się do przetwarzania danych."));
+
+        Assert.Equal(["Art. 1.", "Art. 2."], Headings(context).Select(h => h.Text));
+    }
+
     // ---------------------------------------------------------------- spec 002: table-documents (FR-086, FR-087)
 
     /// <summary>Runs the stage with a table-document starting on <paramref name="page"/> at <paramref name="top"/>.</summary>
