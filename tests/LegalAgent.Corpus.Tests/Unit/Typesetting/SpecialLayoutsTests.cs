@@ -151,6 +151,32 @@ public sealed class SpecialLayoutsTests
         Assert.Contains(page2, w => w.Text == "Akapit");
     }
 
+    [Fact]
+    public void TableDocument_RowAfterAContinuedRow_IsRuledOffAndNamedBesideItsOwnContent()
+    {
+        LayoutStyle style = Style(s => s with { TableDocument = true });
+        var elements = new List<Element> { new HeadingElement(2, null, T("Korzyści promocji")) };
+        elements.AddRange(Paragraphs(20));
+        elements.Add(new HeadingElement(2, null, T("Reklamacje")));
+        elements.Add(P("Skargę można złożyć w placówce Banku."));
+
+        TypesetResult result = Typesetter.Typeset(Doc(elements), style);
+
+        List<List<Word>> pages = PageWords(result.Pdf);
+        int index = pages.FindIndex(p => p.Any(w => w.Text == "Reklamacje"));
+        List<Word> page = pages[index];
+        Word name = page.First(w => w.Text == "Reklamacje");
+        Word content = page.First(w => w.Text == "Skargę");
+        double continuationBottom = page.Where(w => w.Text == "Akapit").Max(Baseline);
+
+        // The page starts with the continued row; the new row is named on the baseline of its first content line,
+        // below a ruling that closes the continued row.
+        Assert.True(continuationBottom < Baseline(content));
+        Assert.Equal(Baseline(content), Baseline(name), 1);
+        Assert.Contains(Lines(result.Pdf, index + 1), l => l.GetBoundingRectangle() is { } r
+            && Math.Abs(r.Right - 181) < 1.5 && r.Height < 1 && 842 - r.Top > continuationBottom && 842 - r.Top < Baseline(name));
+    }
+
     // ------------------------------------------------------------------ step scheme (FR-067)
 
     [Fact]
