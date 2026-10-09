@@ -26,6 +26,21 @@ public sealed class CorpusChecksTests
     }
 
     [Fact]
+    public void ForbiddenNames_MatchWholeWordsOnly()
+    {
+        RenderedText[] texts =
+        [
+            new("REG-01", "a", "Umowa leasingu i marketingu."),
+            new("REG-02", "b", "Klient banku ING otrzymał przelew."),
+            new("REG-03", "c", "Konto (ING) i ING-owe."),
+        ];
+
+        var violations = CorpusChecks.ForbiddenNames(texts, ["ING"]);
+
+        Assert.Equal(["REG-02", "REG-03"], violations.Select(v => v.DocumentId));
+    }
+
+    [Fact]
     public void ForbiddenNames_CleanText_NoViolations()
     {
         Assert.Empty(CorpusChecks.ForbiddenNames([new RenderedText("D1", null, "Zwykły tekst.")], Forbidden));
