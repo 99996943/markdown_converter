@@ -25,6 +25,7 @@ public sealed class CorpusGeneratorTests : IDisposable
         DocumentsPerType = 2,
         Pages = new LegalAgent.Corpus.Planning.PageRange(1, 3),
         StrictUniqueness = false,
+        MaxSharedShare = 100,
         VersionedShare = 0,
         OutdatedPerType = 0,
         ContradictionPairsPerType = 0,
