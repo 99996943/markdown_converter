@@ -1,3 +1,4 @@
+using System.Globalization;
 using LegalAgent.Downloads;
 using LegalAgent.Downloads.Model;
 
@@ -58,9 +59,30 @@ public static class Program
         ArgumentNullException.ThrowIfNull(environment);
         ArgumentNullException.ThrowIfNull(configDirectory);
 
+        AppArguments arguments = AppArguments.Parse(args, RequiredCount);
+        if (arguments.Error is not null)
+        {
+            await stderr.WriteLineAsync($"Błąd: {arguments.Error}").ConfigureAwait(false);
+            await stderr.WriteLineAsync().ConfigureAwait(false);
+            await stderr.WriteLineAsync(AppArguments.Usage).ConfigureAwait(false);
+            return 2;
+        }
+
+        if (arguments.Help)
+        {
+            await stdout.WriteLineAsync(AppArguments.Usage).ConfigureAwait(false);
+            return 0;
+        }
+
+        if (arguments.Version)
+        {
+            await stdout.WriteLineAsync($"mBank.FaqGenerator {typeof(Program).Assembly.GetName().Version?.ToString(3)}").ConfigureAwait(false);
+            return 0;
+        }
+
         try
         {
-            return await RunCoreAsync(stdin, stdout, stderr, environment, configDirectory, handler, cancellationToken)
+            return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, handler, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception e) when (e is not OperationCanceledException)
@@ -71,6 +93,7 @@ public static class Program
     }
 
     private static async Task<int> RunCoreAsync(
+        AppArguments arguments,
         TextReader stdin,
         TextWriter stdout,
         TextWriter stderr,
@@ -79,13 +102,22 @@ public static class Program
         HttpMessageHandler? handler,
         CancellationToken cancellationToken)
     {
-        DownloadOptions options = AppSettings.Load(configDirectory, environment).ToOptions();
+        DownloadSettings settings = AppSettings.Load(configDirectory, environment);
+        DownloadOptions options = settings.ToOptions() with { OutputDirectory = arguments.Output ?? settings.OutputDirectory };
         using HttpClient httpClient = CreateHttpClient(handler);
         var downloader = new DocumentDownloader(httpClient, options);
 
-        IReadOnlyList<Uri>? addresses = await AddressPrompt
-            .AskAsync(stdin, stdout, options, RequiredCount, cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<Uri>? addresses;
+        if (arguments.Urls.Count > 0 || settings.Urls.Length > 0)
+        {
+            // Arguments win over configuration; neither source asks the user (FR-303).
+            addresses = await CheckListAsync(arguments.Urls.Count > 0 ? arguments.Urls : settings.Urls, options, stderr).ConfigureAwait(false);
+        }
+        else
+        {
+            addresses = await AddressPrompt.AskAsync(stdin, stdout, options, RequiredCount, cancellationToken).ConfigureAwait(false);
+        }
+
         if (addresses is null)
         {
             return 2;
@@ -95,6 +127,32 @@ public static class Program
         DownloadRun run = await downloader.DownloadAllAsync(addresses, report, cancellationToken).ConfigureAwait(false);
         report.Summary(run, Path.GetFullPath(options.OutputDirectory));
         return run.AllSucceeded ? 0 : 3;
+    }
+
+    /// <summary>Checks a list from the arguments or the configuration; reports the first wrong position.</summary>
+    private static async Task<IReadOnlyList<Uri>?> CheckListAsync(IReadOnlyList<string> urls, DownloadOptions options, TextWriter stderr)
+    {
+        if (urls.Count != RequiredCount)
+        {
+            await stderr.WriteLineAsync(string.Create(
+                CultureInfo.InvariantCulture,
+                $"Błąd: lista adresów w konfiguracji (Download:Urls) musi mieć {RequiredCount} pozycji, ma {urls.Count}.")).ConfigureAwait(false);
+            return null;
+        }
+
+        IReadOnlyList<AddressCheck> checks = AddressValidator.CheckAll(urls, options);
+        for (int i = 0; i < checks.Count; i++)
+        {
+            if (checks[i].Address is null)
+            {
+                await stderr.WriteLineAsync(string.Create(
+                    CultureInfo.InvariantCulture,
+                    $"Błąd: Adres {i + 1}: {checks[i].Message}")).ConfigureAwait(false);
+                return null;
+            }
+        }
+
+        return [.. checks.Select(c => c.Address!)];
     }
 
     private static HttpClient CreateHttpClient(HttpMessageHandler? handler)
