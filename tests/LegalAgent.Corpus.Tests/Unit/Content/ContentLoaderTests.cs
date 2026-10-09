@@ -82,7 +82,7 @@ public class ContentLoaderTests
         var block = MiniContent.Load().Blocks.Single(b => b.Id == "taryfa-karty-oplaty");
 
         var items = Assert.IsType<SourceTariffItems>(Assert.Single(block.Elements)).Items;
-        Assert.Equal(2, items.Count);
+        Assert.Equal(3, items.Count);
         Assert.Equal("Przelew", items[1].Service);
         var child = Assert.Single(items[1].Children);
         Assert.Equal("Przelew zagraniczny", child.Service);

@@ -10,7 +10,17 @@ public class CorpusPlannerTests
     private static readonly ContentLibrary Mini = MiniContent.Load();
 
     private static RunParameters Parameters(int perType = 6, ulong seed = 42, IReadOnlyList<string>? types = null)
-        => new() { Seed = seed, DocumentsPerType = perType, Types = types, Pages = new PageRange(5, 9) };
+        => new()
+        {
+            Seed = seed,
+            DocumentsPerType = perType,
+            Types = types,
+            Pages = new PageRange(5, 9),
+            VersionedShare = 0,
+            OutdatedPerType = 0,
+            ContradictionPairsPerType = 0,
+            CrossTypeContradictionPairs = 0,
+        };
 
     private static string Serialise(CorpusPlan plan) => string.Join(
         "\n",

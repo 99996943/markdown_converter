@@ -15,3 +15,6 @@ bloki:
               - usluga: "Przelew zagraniczny"
                 stawka: "{{fakt:oplata.prowizja.przelew}}"
                 tryb: "za przelew"
+          - usluga: "Zastrzeżenie karty pod numerem {{fakt:kontakt.infolinia}}"
+            stawka: "0,00 zł"
+            tryb: "za zastrzeżenie"

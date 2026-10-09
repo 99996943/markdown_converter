@@ -31,6 +31,11 @@ public enum OverrideReason
 /// <param name="Reason">The reason of the override.</param>
 public sealed record FactOverride(string FactId, FactValue Value, OverrideReason Reason);
 
+/// <summary>A planted contradiction with another document (FR-122).</summary>
+/// <param name="With">The id of the other document.</param>
+/// <param name="FactId">The fact both documents state with different values.</param>
+public sealed record PlannedContradiction(string With, string FactId);
+
 /// <summary>The plan of one document.</summary>
 public sealed record DocumentPlan
 {
@@ -78,6 +83,9 @@ public sealed record DocumentPlan
 
     /// <summary>Gets the fact overrides.</summary>
     public IReadOnlyList<FactOverride> FactOverrides { get; init; } = [];
+
+    /// <summary>Gets the contradictions planted with other documents.</summary>
+    public IReadOnlyList<PlannedContradiction> Contradictions { get; init; } = [];
 }
 
 /// <summary>The plan of the whole corpus.</summary>

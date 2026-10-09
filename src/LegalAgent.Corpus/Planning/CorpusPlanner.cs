@@ -48,6 +48,13 @@ public static class CorpusPlanner
         return new CorpusPlan(documents);
     }
 
+    /// <summary>
+    /// Facts a document of <paramref name="template"/> certainly states: used by its required blocks outside variant
+    /// groups (<c>{a|b}</c>), in ordinal order.
+    /// </summary>
+    public static IReadOnlyList<string> GuaranteedFacts(ContentLibrary content, DocumentTemplate template) =>
+        throw new NotImplementedException();
+
     private static List<DocumentPlan> PlanType(
         ContentLibrary content,
         RunParameters parameters,
