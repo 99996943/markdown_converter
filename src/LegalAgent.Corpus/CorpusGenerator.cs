@@ -153,7 +153,11 @@ public static class CorpusGenerator
         // Acts are converted again from akty.yaml (FR-150); the other documents from the manifest.
         List<ManifestDocument> documents = manifest.Documents.Where(d => d.Type != ActType).ToList();
         string content = Resolve(options.BaseDirectory, parameters.ContentDirectory);
-        IReadOnlyList<ActSource> acts = File.Exists(Path.Combine(content, "akty.yaml")) ? ContentLoader.Load(content).Acts : [];
+        ContentLibrary? library = File.Exists(Path.Combine(content, "typy.yaml")) || File.Exists(Path.Combine(content, "akty.yaml"))
+            ? ContentLoader.Load(content)
+            : null;
+        IReadOnlyList<ActSource> acts = File.Exists(Path.Combine(content, "akty.yaml")) ? library!.Acts : [];
+        IReadOnlyDictionary<string, string> typeNames = TypeNames(library);
         var converted = new PdfConversionResult[documents.Count];
         IPdfMarkdownConverter converter = Converter(parameters, options);
         IDocumentChunker chunker = Chunker(parameters, converter);
@@ -183,10 +187,10 @@ public static class CorpusGenerator
             ManifestDocument entry = documents[i] with { Pages = converted[i].Document.Source.PageCount, Chunks = ChunksPath(documents[i].Markdown) };
             entries.Add(entry);
             files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(converted[i].Markdown)));
-            files.Add(await ChunkFileAsync(chunker, converted[i], entry, cancellationToken).ConfigureAwait(false));
+            files.Add(await ChunkFileAsync(chunker, typeNames, converted[i], entry, cancellationToken).ConfigureAwait(false));
         }
 
-        (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(acts, output, converter, chunker, required: true, cancellationToken).ConfigureAwait(false);
+        (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(acts, output, converter, chunker, typeNames, required: true, cancellationToken).ConfigureAwait(false);
         entries.AddRange(actEntries);
         files.AddRange(actFiles);
 
@@ -212,6 +216,7 @@ public static class CorpusGenerator
         string output,
         IPdfMarkdownConverter converter,
         IDocumentChunker chunker,
+        IReadOnlyDictionary<string, string> typeNames,
         bool required,
         CancellationToken cancellationToken)
     {
@@ -254,7 +259,7 @@ public static class CorpusGenerator
                 Chunks = ChunksPath(markdownPath),
             };
             entries.Add(entry);
-            files.Add(await ChunkFileAsync(chunker, result, entry, cancellationToken).ConfigureAwait(false));
+            files.Add(await ChunkFileAsync(chunker, typeNames, result, entry, cancellationToken).ConfigureAwait(false));
             listed.Add(act);
         }
 
@@ -455,12 +460,17 @@ public static class CorpusGenerator
     }
 
     /// <summary>Spec 004, FR-261: the chunks of a converted document with the metadata of its manifest entry.</summary>
-    private static async Task<CorpusFile> ChunkFileAsync(IDocumentChunker chunker, PdfConversionResult result, ManifestDocument entry, CancellationToken cancellationToken)
+    private static async Task<CorpusFile> ChunkFileAsync(
+        IDocumentChunker chunker,
+        IReadOnlyDictionary<string, string> typeNames,
+        PdfConversionResult result,
+        ManifestDocument entry,
+        CancellationToken cancellationToken)
     {
         var metadata = new DocumentMetadata(entry.Id)
         {
             Designation = entry.Designation,
-            Type = English(EnglishTypes, entry.Type, "typ", entry.Id),
+            Type = typeNames.TryGetValue(entry.Type, out string? type) ? type : entry.Type,
             Title = entry.Title,
             Version = entry.Version,
             ValidFrom = entry.ValidFrom,
@@ -472,15 +482,22 @@ public static class CorpusGenerator
         return new CorpusFile(entry.Chunks!, CorpusWriter.TextBytes(ChunkJson.ToJsonLines(chunks)));
     }
 
-    // Spec 004: metadata values that reach the model are English; the manifest keeps its Polish values (spec 003).
-    private static readonly Dictionary<string, string> EnglishTypes = new(StringComparer.Ordinal)
+    /// <summary>
+    /// Spec 004: English type names for chunk metadata — <c>nazwa-en</c> of each type in <c>typy.yaml</c> (a type without
+    /// it keeps its id, so new types still need no code) and „act” for the legal acts. The manifest keeps the ids.
+    /// </summary>
+    private static Dictionary<string, string> TypeNames(ContentLibrary? content)
     {
-        ["regulaminy"] = "regulation",
-        ["taryfy"] = "tariff",
-        ["procedury"] = "procedure",
-        [ActType] = "act",
-    };
+        var names = new Dictionary<string, string>(StringComparer.Ordinal) { [ActType] = "act" };
+        foreach (DocumentTypeDef type in content?.Types ?? [])
+        {
+            names[type.Id] = type.EnglishName ?? type.Id;
+        }
 
+        return names;
+    }
+
+    // Spec 004: the two statuses of the manifest in English.
     private static readonly Dictionary<string, string> EnglishStatuses = new(StringComparer.Ordinal)
     {
         ["obowiazujacy"] = "in-force",
@@ -510,6 +527,7 @@ public static class CorpusGenerator
         var results = new PdfConversionResult[plans.Count];
         IPdfMarkdownConverter converter = Converter(parameters, options);
         IDocumentChunker chunker = Chunker(parameters, converter);
+        IReadOnlyDictionary<string, string> typeNames = TypeNames(content);
         int done = 0;
         var index = Enumerable.Range(0, plans.Count).ToDictionary(i => plans[i].Id, StringComparer.Ordinal);
 
@@ -557,7 +575,7 @@ public static class CorpusGenerator
             documents.Add(new GeneratedDocument(doc, fit.Typeset.Pdf, markdown[i], entry, fit));
             files.Add(new CorpusFile(entry.Pdf, fit.Typeset.Pdf));
             files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(markdown[i])));
-            files.Add(await ChunkFileAsync(chunker, results[i], entry, cancellationToken).ConfigureAwait(false));
+            files.Add(await ChunkFileAsync(chunker, typeNames, results[i], entry, cancellationToken).ConfigureAwait(false));
             if (options.TruthDirectory is { } truthDirectory)
             {
                 Directory.CreateDirectory(truthDirectory);
@@ -574,7 +592,7 @@ public static class CorpusGenerator
         }
 
         (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(
-            content.Acts, Resolve(options.BaseDirectory, parameters.OutputDirectory), converter, chunker, required: false, cancellationToken).ConfigureAwait(false);
+            content.Acts, Resolve(options.BaseDirectory, parameters.OutputDirectory), converter, chunker, typeNames, required: false, cancellationToken).ConfigureAwait(false);
         files.AddRange(actFiles);
         var manifest = new Manifest.Manifest(run, [.. documents.Select(d => d.Entry), .. actEntries]);
         IReadOnlyList<string> typeOrder = content.Types.Select(t => t.Id).ToList();

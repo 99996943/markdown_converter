@@ -3,14 +3,17 @@ typy:
     prefiks: REG
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: regulamin
+    nazwa-en: regulation
     wymagane-elementy: [paragrafy]
   - id: taryfy
     prefiks: TAR
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: taryfa
+    nazwa-en: tariff
     wymagane-elementy: [tabela]
   - id: procedury
     prefiks: PRO
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: procedura
+    nazwa-en: procedure
     wymagane-elementy: [kroki]

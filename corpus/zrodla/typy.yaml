@@ -3,6 +3,7 @@ typy:
     prefiks: REG
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: regulamin
+    nazwa-en: regulation
     uklady-min:
       dwie-kolumny: 2
       tabela-dokument: 2
@@ -11,6 +12,7 @@ typy:
     prefiks: TAR
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: taryfa opłat i prowizji
+    nazwa-en: tariff
     uklady-min:
       taryfa-siatka: 2
       taryfa-bez-siatki: 2
@@ -19,4 +21,5 @@ typy:
     prefiks: PRO
     oznaczenie: "BP/{prefiks}/{nn}"
     nazwa: procedura wewnętrzna
+    nazwa-en: procedure
     wymagane-elementy: [metryczka, definicje, kroki, "kroki-poziomy:2", schemat, lista-kontrolna, zalacznik]

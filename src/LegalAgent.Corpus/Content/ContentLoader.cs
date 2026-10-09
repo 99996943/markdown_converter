@@ -223,8 +223,9 @@ public static class ContentLoader
                     }
                 }
 
+                string? englishName = m.OptStr("nazwa-en");
                 m.Finish();
-                list.Add(new DocumentTypeDef(id, prefix, pattern, name, required) { MinLayouts = minLayouts });
+                list.Add(new DocumentTypeDef(id, prefix, pattern, name, required) { MinLayouts = minLayouts, EnglishName = englishName });
             }
 
             root.Finish();
