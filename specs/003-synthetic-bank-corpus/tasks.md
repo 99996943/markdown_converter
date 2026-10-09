@@ -201,7 +201,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 
 - [ ] T077 [US2] Test (red): metryczka procedury (tabela klucz–wartość z siatką, 8 wierszy, 1. strona) → tabela GFM 2-kolumnowa, nie tabela-dokument ani nagłówki (R11)
 - [ ] T078 [US2] Poprawka dla T077 w `src/LegalAgent.PdfParser/Stages/` (green)
-- [ ] T079 [US2] Test (red): kroki „4.1.”, „4.1.1.” po nagłówku „4. Opis postępowania” (krok bywa pogrubiony) → pozycje list z oryginalnym oznaczeniem i poziomem z hierarchii, nie nagłówki (R11, FR-161)
+- [X] T079 [US2] Test (red): kroki „4.1.”, „4.1.1.” po nagłówku „4. Opis postępowania” (krok bywa pogrubiony) → pozycje list z oryginalnym oznaczeniem i poziomem z hierarchii, nie nagłówki (R11, FR-161)
 - [ ] T080 [US2] Poprawka dla T079 (green)
 - [X] T081 [US2] Test (red): lista kontrolna z polem wektorowym i w tabeli „Lp. | Czynność | Wykonano” → pozycje/wiersze z pełnym tekstem
 - [ ] T082 [US2] Poprawka dla T081 (green)

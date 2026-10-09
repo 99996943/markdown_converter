@@ -124,6 +124,7 @@ public sealed class ListDetectionStage : IPipelineStage
                 double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
                 bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
                 entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
+                entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);
                 entry.FirstOnPage = above is null;
                 if (!entry.LegalUnit
                     && ListLabelPatterns.TryMatch(line.Text, out ListLabelMatch? label)
@@ -371,6 +372,13 @@ public sealed class ListDetectionStage : IPipelineStage
                 return entry.FirstOnPage;
             }
 
+            // A numbered section heading set larger than the body („3. Odpowiedzialności” after items „1.”, „2.”) does
+            // not continue the list even when its number would.
+            if (entry.TitleStyle)
+            {
+                return false;
+            }
+
             bool continues = _stack.Any(o => Math.Abs(o.LabelX - entry.LabelX) <= _tolerance && NextInSequence(o.Label, label));
             entry.Accepted |= continues;
             return continues;
@@ -565,6 +573,9 @@ public sealed class ListDetectionStage : IPipelineStage
         public bool LegalUnit { get; set; }
 
         public bool HeadingLike { get; set; }
+
+        /// <summary>Isolated, bold and larger than the body text: a numbered section heading, not the next list item.</summary>
+        public bool TitleStyle { get; set; }
 
         public bool FirstOnPage { get; set; }
 
