@@ -700,6 +700,172 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Equal(20, md.Split('\n').Count(l => System.Text.RegularExpressions.Regex.IsMatch(l, @"^- \d+\\\. ")));
     }
 
+    /// <summary>
+    /// T087c: page 2 of REG-02 (two columns, a centred „§ 3.” in the right one): the gutter is the gap between the
+    /// columns, not a band reaching into the right column where only the centred unit label lies beyond it.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnPageWithACentredUnitInTheRightColumn_IsReadAsTwoColumns()
+    {
+        var b = new SyntheticPdfBuilder().Page().Page();
+        b.Text(50.0, 92.0, "Rozdział 1", 12.0, bold: true);
+        b.Text(313.0, 92.0, "5)", 9.5);
+        b.Text(331.0, 92.0, "Taryfa", 9.5, bold: true);
+        b.Text(363.7, 92.0, "— obowiązująca w Banku taryfa opłat", 9.5);
+        b.Text(331.0, 104.5, "i prowizji;", 9.5);
+        b.Text(50.0, 108.2, "Postanowienia", 12.0, bold: true);
+        b.Text(141.4, 108.2, "ogólne", 12.0, bold: true);
+        b.Text(313.0, 120.0, "6)", 9.5);
+        b.Text(331.0, 120.0, "Placówka", 9.5, bold: true);
+        b.Text(378.4, 120.0, "— punkt Banku obsługujący", 9.5);
+        b.Text(331.0, 132.5, "Klientów;", 9.5);
+        b.Text(157.6, 134.4, "§ 1.", 10.5, bold: true);
+        b.Text(313.0, 148.0, "7)", 9.5);
+        b.Text(331.0, 148.0, "Bankowość", 9.5, bold: true);
+        b.Text(387.2, 148.0, "elektroniczna", 9.5, bold: true);
+        b.Text(454.5, 148.0, "— usługa", 9.5);
+        b.Text(50.0, 154.6, "1. Regulamin określa zasady wydawania", 9.5);
+        b.Text(331.0, 160.5, "umożliwiająca dostęp do rachunku i składanie", 9.5);
+        b.Text(68.0, 167.1, "i używania kart debetowych wydawanych", 9.5);
+        b.Text(253.9, 167.1, "przez", 9.5);
+        b.Text(331.0, 173.0, "dyspozycji przez Internet lub aplikację mobilną;", 9.5);
+        b.Text(68.0, 179.6, "Bank Przykładowy S.A. (zwany dalej „Bankiem”)", 9.5);
+        b.Text(313.0, 188.5, "8)", 9.5);
+        b.Text(331.0, 188.5, "Infolinia", 9.5, bold: true);
+        b.Text(373.3, 188.5, "— telefoniczny punkt obsługi", 9.5);
+        b.Text(68.0, 192.1, "osobom fizycznym niebędącym", 9.5);
+        b.Text(331.0, 201.0, "Klientów, dostępny pod numerem", 9.5);
+        b.Text(485.1, 201.0, "800 000 001;", 9.5);
+        b.Text(68.0, 204.6, "przedsiębiorcami, a także prawa i obowiązki", 9.5);
+        b.Text(313.0, 216.5, "9)", 9.5);
+        b.Text(331.0, 216.5, "Instrument płatniczy", 9.5, bold: true);
+        b.Text(433.1, 216.5, "— zindywidualizowane", 9.5);
+        b.Text(68.0, 217.1, "stron umowy o kartę debetową.", 9.5);
+        b.Text(331.0, 229.0, "urządzenie lub zestaw procedur, za pomocą", 9.5);
+        b.Text(50.0, 232.6, "2. Karta debetowa jest instrumentem płatniczym,", 9.5);
+        b.Text(331.0, 241.5, "którego Klient składa zlecenie płatnicze;", 9.5);
+        b.Text(68.0, 245.1, "który umożliwia dysponowanie środkami", 9.5);
+        b.Text(313.0, 257.0, "10)", 9.5);
+        b.Text(331.7, 257.0, "Uwierzytelnienie", 9.5, bold: true);
+        b.Text(414.4, 257.0, "— procedura umożliwiająca", 9.5);
+        b.Text(68.0, 257.6, "zgromadzonymi", 9.5);
+        b.Text(142.8, 257.6, "na rachunku płatniczym, do", 9.5);
+        b.Text(331.7, 269.5, "Bankowi weryfikację tożsamości Klienta lub", 9.5);
+        b.Text(68.0, 270.1, "którego została wydana. Transakcje wykonane", 9.5);
+        b.Text(331.7, 282.0, "ważności instrumentu płatniczego;", 9.5);
+        b.Text(68.0, 282.6, "kartą obciążają ten rachunek bez udzielania", 9.5);
+        b.Text(68.0, 295.1, "kredytu, a jej użycie jest ograniczone do", 9.5);
+        b.Text(313.0, 297.5, "11)", 9.5);
+        b.Text(331.7, 297.5, "Dyspozycja", 9.5, bold: true);
+        b.Text(386.8, 297.5, "— oświadczenie woli Klienta", 9.5);
+        b.Text(68.0, 307.6, "wysokości dostępnych środków i ustalonych", 9.5);
+        b.Text(331.7, 310.0, "dotyczące produktu Banku.", 9.5);
+        b.Text(103.4, 316.5, "1", 5.7);
+        b.Text(68.0, 320.1, "limitów.", 9.5);
+        b.Text(420.6, 334.5, "§ 3.", 10.5, bold: true);
+        b.Text(50.0, 335.6, "3. W zakresie nieuregulowanym", 9.5);
+        b.Text(201.9, 335.6, "w Regulaminie", 9.5);
+        b.Text(68.0, 348.1, "mają zastosowanie postanowienia umowy", 9.5);
+        b.Text(313.0, 354.7, "Ponadto, na potrzeby stosowania Regulaminu,", 9.5);
+        b.Text(68.0, 360.6, "rachunku, do którego wydano kartę, a także", 9.5);
+        b.Text(313.0, 367.2, "poszczególne określenia oznaczają:", 9.5);
+        b.Text(68.0, 373.1, "ustawa z dnia 19 sierpnia 2011 r. o usługach", 9.5);
+        b.Text(68.0, 385.6, "płatniczych (Dz. U. 2024 poz. 30). W razie", 9.5);
+        b.Text(313.0, 387.7, "1)", 9.5);
+        b.Text(331.0, 387.7, "Karta", 9.5, bold: true);
+        b.Text(359.5, 387.7, "— karta debetowa wydana przez Bank,", 9.5);
+        b.Text(68.0, 398.1, "rozbieżności między Regulaminem", 9.5);
+        b.Text(224.9, 398.1, "a umową", 9.5);
+        b.Text(331.0, 400.2, "w formie plastikowej lub wirtualna, powiązana", 9.5);
+        b.Text(68.0, 410.6, "szczególne znaczenie mają postanowienia", 9.5);
+        b.Text(331.0, 412.7, "z rachunkiem Posiadacza;", 9.5);
+        b.Text(68.0, 423.1, "umowy o kartę debetową.", 9.5);
+        b.Text(313.0, 428.2, "2)", 9.5);
+        b.Text(331.0, 428.2, "Posiadacz", 9.5, bold: true);
+        b.Text(379.9, 428.2, "— konsument, która zawarła", 9.5);
+        b.Text(50.0, 438.6, "4. Regulamin jest przekazywany Klientowi przed", 9.5);
+        b.Text(331.0, 440.7, "z Bankiem umowę", 9.5);
+        b.Text(415.3, 440.7, "rachunku i umowę", 9.5);
+        b.Text(500.9, 440.7, "o kartę;", 9.5);
+        b.Text(68.0, 451.1, "zawarciem umowy na trwałym nośniku,", 9.5);
+        b.Text(313.0, 456.2, "3)", 9.5);
+        b.Text(331.0, 456.2, "Użytkownik", 9.5, bold: true);
+        b.Text(389.7, 456.2, "— osoba wskazana przez", 9.5);
+        b.Text(68.0, 463.6, "w placówce oraz na stronie", 9.5);
+        b.Text(331.0, 468.7, "Posiadacza we wniosku, której Bank wydał", 9.5);
+        b.Text(68.0, 476.1, "https://bank.example. Klient ma prawo", 9.5);
+        b.Text(331.0, 481.2, "kartę i która jest uprawniona do jej używania;", 9.5);
+        b.Text(68.0, 488.6, "w każdym czasie otrzymać jego bezpłatnego", 9.5);
+        b.Text(313.0, 496.7, "4)", 9.5);
+        b.Text(331.0, 496.7, "PIN", 9.5, bold: true);
+        b.Text(350.8, 496.7, "— poufny, zindywidualizowany numer", 9.5);
+        b.Text(68.0, 501.1, "odpisu.", 9.5);
+        b.Text(331.0, 509.2, "identyfikacyjny, służący do autoryzacji", 9.5);
+        b.Text(331.0, 521.7, "transakcji;", 9.5);
+        b.Text(157.6, 525.6, "§ 2.", 10.5, bold: true);
+        b.Text(313.0, 537.2, "5)", 9.5);
+        b.Text(331.0, 537.2, "Organizacja płatnicza", 9.5, bold: true);
+        b.Text(435.2, 537.2, "— podmiot, którego", 9.5);
+        b.Text(50.0, 545.8, "Użyte w Regulaminie określenia oznaczają:", 9.5);
+        b.Text(331.0, 549.7, "zasady określają sposób przetwarzania", 9.5);
+        b.Text(331.0, 562.2, "transakcji kartowych i rozliczeń między", 9.5);
+        b.Text(50.0, 566.2, "1)", 9.5);
+        b.Text(68.0, 566.2, "Bank", 9.5, bold: true);
+        b.Text(94.5, 566.2, "— Bank Przykładowy S.A. z siedzibą pod", 9.5);
+        b.Text(331.0, 574.7, "bankami;", 9.5);
+        b.Text(68.0, 578.8, "adresem ul. Przykładowa 1, 00-001 Warszawa,", 9.5);
+        b.Text(313.0, 590.2, "6)", 9.5);
+        b.Text(331.0, 590.2, "Akceptant", 9.5, bold: true);
+        b.Text(382.6, 590.2, "— przedsiębiorca przyjmujący", 9.5);
+        b.Text(68.0, 591.2, "wpisany do rejestru przedsiębiorców pod", 9.5);
+        b.Text(331.0, 602.7, "płatności kartą, w tym przez terminal, stronę", 9.5);
+        b.Text(68.0, 603.8, "numerem", 9.5);
+        b.Text(114.6, 603.8, "KRS 0000000000, NIP 000-000-00-00;", 9.5);
+        b.Text(331.0, 615.2, "internetową lub aplikację;", 9.5);
+        b.Text(50.0, 619.2, "2)", 9.5);
+        b.Text(68.0, 619.2, "Klient", 9.5, bold: true);
+        b.Text(98.4, 619.2, "— osoba fizyczna lub inny podmiot, który", 9.5);
+        b.Text(313.0, 630.7, "7)", 9.5);
+        b.Text(331.0, 630.7, "Transakcja bezgotówkowa", 9.5, bold: true);
+        b.Text(459.4, 630.7, "— płatność kartą", 9.5);
+        b.Text(68.0, 631.8, "zawarł z Bankiem umowę;", 9.5);
+        b.Text(331.0, 643.2, "za towary lub usługi, wykonana w punkcie", 9.5);
+        b.Text(50.0, 647.2, "3)", 9.5);
+        b.Text(68.0, 647.2, "Dzień roboczy", 9.5, bold: true);
+        b.Text(136.4, 647.2, "— dzień od poniedziałku do", 9.5);
+        b.Text(331.0, 655.7, "handlowym, przez Internet lub w inny sposób", 9.5);
+        b.Text(68.0, 659.8, "piątku, z wyłączeniem dni ustawowo wolnych", 9.5);
+        b.Text(331.0, 668.2, "na odległość;", 9.5);
+        b.Text(68.0, 672.2, "od pracy;", 9.5);
+        b.Text(313.0, 683.7, "8)", 9.5);
+        b.Text(331.0, 683.7, "Transakcja gotówkowa", 9.5, bold: true);
+        b.Text(443.1, 683.7, "— wypłata lub wpłata", 9.5);
+        b.Text(50.0, 687.8, "4)", 9.5);
+        b.Text(68.0, 687.8, "Trwały nośnik", 9.5, bold: true);
+        b.Text(136.6, 687.8, "— nośnik umożliwiający", 9.5);
+        b.Text(331.0, 696.2, "gotówki w bankomacie, wpłatomacie albo", 9.5);
+        b.Text(68.0, 700.2, "przechowywanie informacji w sposób dostępny", 9.5);
+        b.Text(331.0, 708.7, "u akceptanta oferującego taką usługę;", 9.5);
+        b.Text(68.0, 712.8, "do późniejszego wykorzystania i odtworzenia", 9.5);
+        b.Text(313.0, 724.2, "9)", 9.5);
+        b.Text(331.0, 724.2, "Transakcja zbliżeniowa", 9.5, bold: true);
+        b.Text(442.8, 724.2, "— transakcja", 9.5);
+        b.Text(68.0, 725.2, "bez zmian;", 9.5);
+        b.Text(331.0, 736.7, "inicjowana przez zbliżenie karty lub urządzenia", 9.5);
+        b.Text(50.0, 769.0, "1) Zasady prowadzenia rachunku, do którego wydano kartę, określa odrębny regulamin rachunków; nie wyłącza on stosowania", 8.0);
+        b.Text(61.0, 779.0, "Regulaminu kart debetowych w zakresie obsługi karty.", 8.0);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087c.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+        Assert.Contains("## Rozdział 1. Postanowienia ogólne\n", md, StringComparison.Ordinal);
+        Assert.Contains("### § 3.", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
