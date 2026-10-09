@@ -1,0 +1,186 @@
+bloki:
+  # ===== Pula (uzupełnienie): Postanowienia ogólne =====
+  - id: bankowosc-elektroniczna-opc-zasady-uzytkowania
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bankowość elektroniczna jest przeznaczona do użytku osobistego Klienta i nie może być wykorzystywana do celów sprzecznych z prawem, dobrymi obyczajami lub interesem Banku. Klient {nie może|nie jest uprawniony} w szczególności:"
+        punkty:
+          - "udostępniać swojego dostępu osobom trzecim, w tym w celu świadczenia usług agregacji danych, bez zawarcia odrębnej umowy z Bankiem;"
+          - "dokonywać prób obejścia zabezpieczeń lub uzyskania dostępu do danych innych klientów;"
+          - "wprowadzać do systemu Banku treści zawierających złośliwy kod lub naruszających prawa osób trzecich."
+      - ustep: "Naruszenie zasad użytkowania może skutkować blokadą dostępu na warunkach określonych w Regulaminie, a w przypadkach określonych prawem — zawiadomieniem organów ścigania. Klient odpowiada za szkodę wyrządzoną Bankowi swoim zawinionym działaniem."
+      - ustep: "Prawa autorskie do aplikacji mobilnej i serwisu internetowego przysługują Bankowi lub jego licencjodawcom. Klient otrzymuje niewyłączną, nieprzenoszalną licencję na korzystanie z aplikacji w zakresie niezbędnym do korzystania z usług, na czas obowiązywania umowy."
+
+  # ===== Pula (uzupełnienie): Dostęp i aktywacja =====
+  - id: bankowosc-elektroniczna-opc-dane-kontaktowe
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostep
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawidłowe dane kontaktowe Klienta, w szczególności numer telefonu komórkowego i adres e-mail, są warunkiem korzystania z bankowości elektronicznej, ponieważ służą do przekazywania kodów jednorazowych i powiadomień. Klient jest obowiązany niezwłocznie aktualizować te dane."
+      - ustep: "Zmiana numeru telefonu komórkowego, który jest wykorzystywany do uwierzytelniania, wymaga:"
+        punkty:
+          - "silnego uwierzytelnienia Klienta w aplikacji mobilnej lub w serwisie internetowym;"
+          - "potwierdzenia nowego numeru kodem jednorazowym wysłanym na ten numer;"
+          - "w przypadku braku aplikacji mobilnej — złożenia dyspozycji w placówce Banku po okazaniu dokumentu tożsamości."
+      - ustep: "Po zmianie numeru telefonu Bank {może|ma prawo} na okres próbny ograniczyć limity dyspozycji składanych w bankowości elektronicznej. O wprowadzeniu ograniczenia Klient jest informowany na dotychczasowy i nowy numer oraz na adres e-mail."
+
+  # ===== Pula (uzupełnienie): Wymagania techniczne =====
+  - id: bankowosc-elektroniczna-opc-zabezpieczenie-urzadzenia
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-wymagania
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Urządzenie, na którym zainstalowano aplikację mobilną, powinno być zabezpieczone blokadą ekranu za pomocą kodu, hasła, wzoru lub biometrii. Klient nie powinien rezygnować z blokady ekranu ani ustawiać jej w sposób umożliwiający łatwe odgadnięcie."
+      - ustep: "Klient nie powinien pozostawiać urządzenia bez nadzoru w stanie odblokowanym, a także nie powinien udostępniać go osobom trzecim w celu korzystania z bankowości elektronicznej. Przed oddaniem urządzenia do serwisu lub przekazaniem go innej osobie Klient jest zobowiązany:"
+        punkty:
+          - "usunąć urządzenie z listy urządzeń zaufanych;"
+          - "odinstalować aplikację mobilną i usunąć z urządzenia dane osobowe;"
+          - "przywrócić ustawienia fabryczne, o ile jest to możliwe."
+      - ustep: "Jeżeli urządzenie zostanie utracone, Klient może zdalnie zablokować dostęp do aplikacji mobilnej przez Infolinię lub z innego urządzenia zaufanego. Bank {zaleca|rekomenduje} włączenie funkcji zdalnej lokalizacji i blokowania urządzenia, jeżeli udostępnia ją producent systemu."
+
+  # ===== Pula (uzupełnienie): Uwierzytelnianie =====
+  - id: bankowosc-elektroniczna-opc-zwolnienia-sca
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-uwierzytelnianie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} nie stosować silnego uwierzytelniania w przypadkach, w których dopuszczają to przepisy, o ile ryzyko oszustwa jest niskie. Do takich przypadków należą w szczególności:"
+        punkty:
+          - "dostęp do informacji o saldzie i ostatnich operacjach, jeżeli Klient był silnie uwierzytelniony w okresie {{fakt:bankowosc.ponowne-sca}} wcześniej;"
+          - "płatności niskokwotowe nieprzekraczające kwoty {{fakt:limit.bankowosc.platnosc-niskokwotowa}} pojedynczo;"
+          - "przelewy między rachunkami własnymi Klienta prowadzonymi w Banku;"
+          - "przelewy na rachunki z listy zaufanych odbiorców."
+      - ustep: "Zwolnienie z silnego uwierzytelniania {nie oznacza|nie powoduje} rezygnacji z innych mechanizmów bezpieczeństwa. Bank może w każdym czasie zażądać silnego uwierzytelnienia, w szczególności po wykryciu nietypowego zachowania lub po przekroczeniu skumulowanej kwoty płatności zwolnionych z uwierzytelniania."
+      - ustep: "Lista odbiorców zaufanych jest prowadzona przez Klienta. Dodanie lub usunięcie odbiorcy wymaga silnego uwierzytelnienia, a informacja o zmianie listy jest przekazywana Klientowi w powiadomieniu."
+
+  # ===== Pula (uzupełnienie): Aplikacja mobilna =====
+  - id: bankowosc-elektroniczna-opc-pin-aplikacji
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-aplikacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kod PIN aplikacji składa się z cyfr w liczbie wskazanej przy jego ustalaniu i służy do logowania oraz do autoryzacji dyspozycji w aplikacji mobilnej. Kod PIN aplikacji jest niezależny od Hasła do serwisu internetowego oraz od kodu PIN do karty płatniczej."
+      - ustep: "Po {{fakt:bankowosc.limit-prob}} wprowadzenia kodu PIN aplikacji dostęp do aplikacji zostaje zablokowany. Odblokowanie wymaga ponownej aktywacji aplikacji z użyciem kodu aktywacyjnego albo potwierdzenia tożsamości Klienta w sposób określony w Regulaminie."
+      - ustep: "Klient powinien zmieniać kod PIN aplikacji w razie podejrzenia, że został on ujawniony osobie trzeciej. Bank {zaleca|rekomenduje} nieużywanie kodów łatwych do odgadnięcia, takich jak data urodzenia, kolejne cyfry lub powtarzające się cyfry."
+
+  # ===== Pula (uzupełnienie): Dyspozycje i limity =====
+  - id: bankowosc-elektroniczna-opc-lokaty
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za pośrednictwem bankowości elektronicznej Klient {może|ma możliwość} otworzyć lokatę terminową i rachunek oszczędnościowy, o ile spełnia warunki określone w regulaminach tych produktów. Zawarcie umowy następuje przez złożenie dyspozycji i jej autoryzację silnym uwierzytelnieniem, po zapoznaniu się z informacjami o produkcie."
+      - ustep: "Przed zawarciem umowy Bank udostępnia Klientowi na trwałym nośniku regulamin produktu, informacje o oprocentowaniu i opłatach oraz formularz informacyjny. Klient może pobrać te dokumenty i zachować je w pamięci urządzenia."
+      - ustep: "Dyspozycje dotyczące produktów oszczędnościowych, w tym zerwanie lokaty, są realizowane na zasadach określonych w regulaminie danego produktu. Bank {nie ponosi|nie przyjmuje na siebie} odpowiedzialności za skutki niezapoznania się przez Klienta z warunkami produktu przed złożeniem dyspozycji."
+
+  - id: bankowosc-elektroniczna-opc-zmiana-limitow
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma możliwość} samodzielnie zmieniać limity dyspozycji w serwisie internetowym i aplikacji mobilnej, w granicach od {{fakt:limit.bankowosc.minimalny-ustawiany}} do {{fakt:limit.bankowosc.maksymalny-ustawiany}}. Zmiana limitu na niższy jest skuteczna niezwłocznie."
+      - ustep: "Zmiana limitu na wyższy następuje:"
+        punkty:
+          - "niezwłocznie, jeżeli Klient potwierdzi dyspozycję w aplikacji mobilnej na urządzeniu zaufanym;"
+          - "po upływie czasu wskazanego przez Bank, jeżeli dyspozycja została złożona w serwisie internetowym i potwierdzona kodem SMS;"
+          - "po weryfikacji w placówce, jeżeli Klient wnioskuje o limit wyższy niż dopuszczalny w kanałach zdalnych."
+      - ustep: "Limity czasowe, ustalane na określony dzień lub okres w związku z planowanym dużym wydatkiem, wygasają automatycznie po upływie okresu, na który zostały ustanowione. Po wygaśnięciu stosuje się limit ustalony wcześniej."
+
+  # ===== Pula (uzupełnienie): Powiadomienia =====
+  - id: bankowosc-elektroniczna-opc-sms-email
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-powiadomienia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Powiadomienia SMS są wysyłane na numer telefonu komórkowego wskazany przez Klienta. Usługa powiadomień SMS o transakcjach jest świadczona za opłatą w wysokości {{fakt:oplata.powiadomienie-sms}} za wiadomość, z zastrzeżeniem że kody jednorazowe oraz alerty bezpieczeństwa są wysyłane bez opłat."
+      - ustep: "Powiadomienia e-mail są wysyłane na adres wskazany w umowie i mogą zawierać informacje o dostępności dokumentów w bankowości elektronicznej, w tym wyciągów i zmian regulaminów. Wiadomości e-mail nie zawierają danych uwierzytelniających."
+      - ustep: "Klient jest zobowiązany do zapewnienia, że numer telefonu i adres e-mail są aktualne oraz że dostęp do nich mają wyłącznie osoby uprawnione. Bank {nie odpowiada|nie ponosi odpowiedzialności} za skutki odczytania powiadomień przez osoby nieuprawnione, jeżeli było to następstwem niedochowania obowiązków Klienta."
+
+  # ===== Pula (uzupełnienie): Bezpieczeństwo i obowiązki Klienta =====
+  - id: bankowosc-elektroniczna-opc-oprogramowanie-zdalne
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-bezpieczenstwo
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Szczególnym zagrożeniem są programy do zdalnego sterowania urządzeniem, które oszuści nakłaniają Klientów do zainstalowania pod pretekstem pomocy technicznej lub ochrony środków. Klient nie powinien instalować takich programów na żądanie osób, które skontaktowały się z nim z własnej inicjatywy."
+      - ustep: "Bank nigdy nie żąda:"
+        punkty:
+          - "zainstalowania programów do zdalnego dostępu do urządzenia;"
+          - "udostępnienia ekranu lub przekazania sterowania urządzeniem;"
+          - "wykonania przelewów próbnych lub „zabezpieczających”;"
+          - "podawania kodów lub haseł w trakcie rozmowy telefonicznej."
+      - ustep: "Jeżeli Klient mimo ostrzeżeń udostępnił dostęp do urządzenia lub ujawnił dane uwierzytelniające, powinien niezwłocznie zablokować dostęp do bankowości elektronicznej i zawiadomić Bank. Szybkie zgłoszenie zwiększa szanse na wstrzymanie lub odzyskanie środków, jednak Bank nie gwarantuje skuteczności takich działań."
+
+  - id: bankowosc-elektroniczna-opc-dokumenty-elektroniczne
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-bezpieczenstwo
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank udostępnia w bankowości elektronicznej dokumenty dotyczące produktów Klienta, w tym wyciągi, potwierdzenia transakcji, informacje o zmianach i umowy. Dokumenty są dostępne w postaci plików, które Klient może pobrać i zapisać na własnym urządzeniu."
+      - ustep: "Klient jest odpowiedzialny za zabezpieczenie pobranych dokumentów przed dostępem osób nieuprawnionych. Pobrane dokumenty zawierają dane osobowe i informacje objęte tajemnicą bankową, dlatego Klient {nie powinien|powinien unikać} przesyłania ich przez niezabezpieczone kanały komunikacji."
+      - ustep: "Dokumenty udostępnione w bankowości elektronicznej są dostępne przez okres {{fakt:bankowosc.historia-operacji}} od dnia ich udostępnienia. Po upływie tego okresu Klient {może|ma prawo} zażądać odpisu dokumentu w placówce Banku, za opłatą zgodną z Taryfą."
+
+  # ===== Pula (uzupełnienie): Blokada dostępu =====
+  - id: bankowosc-elektroniczna-opc-blokada-aplikacji
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-blokada
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może zablokować aplikację mobilną na wybranym urządzeniu bez blokowania dostępu do serwisu internetowego oraz pozostałych urządzeń zaufanych. Blokada aplikacji jest skuteczna od chwili jej wprowadzenia do systemu Banku."
+      - ustep: "Zablokowaną aplikację można odblokować:"
+        punkty:
+          - "przez wprowadzenie kodu PIN aplikacji, jeżeli blokada była efektem pomyłek przy logowaniu;"
+          - "z użyciem nowego kodu aktywacyjnego, jeżeli urządzenie było zgłoszone jako utracone;"
+          - "po wizycie w placówce Banku i weryfikacji tożsamości, jeżeli przyczyną blokady było podejrzenie nieuprawnionego użycia."
+      - ustep: "Jeżeli Klient zgłosił utratę urządzenia, Bank {może|ma prawo} dodatkowo zablokować płatności mobilne i inne usługi powiązane z tym urządzeniem. Odblokowanie tych usług wymaga ponownej rejestracji urządzenia lub zarejestrowania nowego."
+
+  # ===== Pula (uzupełnienie): Odpowiedzialność =====
+  - id: bankowosc-elektroniczna-opc-szkody
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-odpowiedzialnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank ponosi odpowiedzialność za szkodę poniesioną przez Klienta wskutek niewykonania lub nienależytego wykonania usług bankowości elektronicznej, chyba że niewykonanie lub nienależyte wykonanie jest następstwem okoliczności, za które Bank nie ponosi odpowiedzialności zgodnie z Regulaminem lub przepisami prawa."
+      - ustep: "W przypadku niewykonania lub nienależytego wykonania zlecenia płatniczego Bank, na wniosek Klienta:"
+        punkty:
+          - "niezwłocznie przywraca obciążony rachunek do stanu, jaki istniałby, gdyby zlecenie płatnicze zostało wykonane należycie;"
+          - "zwraca opłaty i odsetki, którymi Klient został obciążony w związku z niewykonaniem lub nienależytym wykonaniem zlecenia;"
+          - "podejmuje działania w celu ustalenia przebiegu transakcji i poinformowania Klienta o ich wynikach."
+      - ustep: "Odpowiedzialność Banku za szkodę ograniczona jest do rzeczywistej straty Klienta, z wyłączeniem utraconych korzyści, o ile przepisy bezwzględnie obowiązujące nie stanowią inaczej."
+
+  # ===== Pula (uzupełnienie): Dostępność =====
+  - id: bankowosc-elektroniczna-opc-wersje-i-aktualizacje
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostepnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank rozwija usługi bankowości elektronicznej i udostępnia nowe wersje oprogramowania. Aktualizacje serwisu internetowego są wprowadzane automatycznie i nie wymagają działań Klienta; aktualizacje aplikacji mobilnej Klient instaluje samodzielnie za pośrednictwem sklepu z aplikacjami."
+      - ustep: "Jeżeli aktualizacja ma istotne znaczenie dla bezpieczeństwa, Bank {może|ma prawo} uzależnić korzystanie z aplikacji od zainstalowania jej najnowszej wersji. W takim przypadku aplikacja wyświetla komunikat o konieczności aktualizacji i do czasu jej wykonania ogranicza dostępne funkcje."
+      - ustep: "Bank wycofuje obsługę starszych wersji aplikacji i serwisu po uprzednim poinformowaniu Klientów, z wyprzedzeniem nie krótszym niż {{fakt:bankowosc.przerwa-zapowiedz}}, chyba że wymaga tego natychmiastowa ochrona bezpieczeństwa Klientów lub systemu Banku."
+
+  # ===== Pula (uzupełnienie): Postanowienia końcowe =====
+  - id: bankowosc-elektroniczna-opc-jezyk-i-forma
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Językiem stosowanym w relacjach Banku z Klientem w zakresie bankowości elektronicznej jest język polski, chyba że umowa stanowi inaczej. Bank {może|ma prawo} udostępnić wybrane treści także w innych językach; w razie rozbieżności rozstrzygające znaczenie ma wersja polskojęzyczna."
+      - ustep: "Oświadczenia woli składane w bankowości elektronicznej po prawidłowym uwierzytelnieniu i autoryzacji mają skutki prawne oświadczeń składanych w formie dokumentowej, z uwzględnieniem postanowień Regulaminu i przepisów prawa."
+      - ustep: "Bank archiwizuje dyspozycje złożone w bankowości elektronicznej i związane z nimi dane o autoryzacji przez okres wymagany przepisami, w szczególności przepisami o rachunkowości i przeciwdziałaniu praniu pieniędzy. Zapisy w systemach Banku stanowią dowód dokonania dyspozycji, z zastrzeżeniem prawa Klienta do wykazania nieprawidłowości."

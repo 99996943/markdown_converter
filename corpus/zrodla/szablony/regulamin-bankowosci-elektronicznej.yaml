@@ -1,0 +1,68 @@
+id: regulamin-bankowosci-elektronicznej
+typ: regulaminy
+temat: bankowosc-elektroniczna
+tytul:
+  - "Regulamin bankowości elektronicznej i aplikacji mobilnej {{param:bank}}"
+  - "Regulamin korzystania z bankowości elektronicznej i aplikacji mobilnej"
+  - "Regulamin usług bankowości elektronicznej {{param:bank}}"
+uklady: [jedna-kolumna, dwie-kolumny]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [bankowosc-elektroniczna-zakres, wspolne-definicje-regulamin, bankowosc-elektroniczna-definicje, bankowosc-elektroniczna-umowa]
+    opcjonalne: { kategorie: [paragraf-bankowosc-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dostęp i aktywacja"
+    wymagane: [bankowosc-elektroniczna-dostep, bankowosc-elektroniczna-aktywacja]
+    opcjonalne: { kategorie: [paragraf-bankowosc-dostep], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wymagania techniczne"
+    wymagane: [bankowosc-elektroniczna-wymagania]
+    opcjonalne: { kategorie: [paragraf-bankowosc-wymagania], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Uwierzytelnianie i silne uwierzytelnianie"
+    wymagane: [bankowosc-elektroniczna-uwierzytelnianie, bankowosc-elektroniczna-silne-uwierzytelnianie]
+    opcjonalne: { kategorie: [paragraf-bankowosc-uwierzytelnianie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Aplikacja mobilna i urządzenia zaufane"
+    wymagane: [bankowosc-elektroniczna-aplikacja, bankowosc-elektroniczna-urzadzenia-zaufane]
+    opcjonalne: { kategorie: [paragraf-bankowosc-aplikacja], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dyspozycje i limity"
+    wymagane: [bankowosc-elektroniczna-dyspozycje, bankowosc-elektroniczna-limity]
+    opcjonalne: { kategorie: [paragraf-bankowosc-dyspozycje], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Powiadomienia"
+    wymagane: [bankowosc-elektroniczna-powiadomienia]
+    opcjonalne: { kategorie: [paragraf-bankowosc-powiadomienia], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Bezpieczeństwo i obowiązki Klienta"
+    wymagane: [bankowosc-elektroniczna-obowiazki, bankowosc-elektroniczna-oszustwa]
+    opcjonalne: { kategorie: [paragraf-bankowosc-bezpieczenstwo], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Blokada dostępu"
+    wymagane: [bankowosc-elektroniczna-blokada-klient, bankowosc-elektroniczna-blokada-bank]
+    opcjonalne: { kategorie: [paragraf-bankowosc-blokada], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Odpowiedzialność"
+    wymagane: [bankowosc-elektroniczna-odpowiedzialnosc, bankowosc-elektroniczna-nieautoryzowane]
+    opcjonalne: { kategorie: [paragraf-bankowosc-odpowiedzialnosc], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dostępność usług i przerwy techniczne"
+    wymagane: [bankowosc-elektroniczna-dostepnosc]
+    opcjonalne: { kategorie: [paragraf-bankowosc-dostepnosc], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Opłaty"
+    wymagane: [bankowosc-elektroniczna-oplaty]
+    opcjonalne: { kategorie: [paragraf-bankowosc-oplaty], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zmiana Regulaminu"
+    wymagane: [wspolne-zmiany-regulamin]
+    opcjonalne: { kategorie: [paragraf-bankowosc-zmiana], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [bankowosc-elektroniczna-wypowiedzenie, wspolne-reklamacje-regulamin, wspolne-ochrona-danych-regulamin, wspolne-doreczenia-regulamin, wspolne-rzecznik-regulamin, wspolne-prawo-wlasciwe-regulamin, bankowosc-elektroniczna-wejscie-w-zycie]
+    opcjonalne: { kategorie: [paragraf-bankowosc-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "bankowości elektronicznej"

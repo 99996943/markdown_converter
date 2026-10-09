@@ -1,0 +1,162 @@
+fakty:
+  # --- nazwy i adresy usługi
+  - id: bankowosc.nazwa-aplikacji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Bank Przykładowy Mobile"
+    alternatywy: ["Przykładowy Mobilny"]
+  - id: bankowosc.adres-serwisu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "https://online.bank.example"
+    alternatywy: ["https://online.przyklad.invalid"]
+
+  # --- terminy i parametry bezpieczeństwa
+  - id: bankowosc.timeout-sesji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 minut"
+      - od: 2026-04-01
+        wartosc: "5 minut"
+    alternatywy: ["15 minut", "3 minuty"]
+  - id: bankowosc.liczba-urzadzen
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "pięć"
+    alternatywy: ["trzy", "dziesięć"]
+  - id: bankowosc.limit-prob
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "pięciu kolejnych nieudanych próbach"
+    alternatywy: ["trzech kolejnych nieudanych próbach", "dziesięciu kolejnych nieudanych próbach"]
+  - id: bankowosc.min-dlugosc-hasla
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 znaków"
+      - od: 2027-01-01
+        wartosc: "12 znaków"
+    alternatywy: ["8 znaków"]
+  - id: bankowosc.waznosc-kodu-aktywacyjnego
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+  - id: bankowosc.waznosc-kodu-sms
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "120 sekund"
+    alternatywy: ["60 sekund", "5 minut"]
+  - id: bankowosc.ponowne-sca
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "180 dni"
+      - od: 2027-01-01
+        wartosc: "90 dni"
+    alternatywy: ["30 dni"]
+  - id: bankowosc.karencja-odbiorca
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 godziny"
+    alternatywy: ["12 godzin", "48 godzin"]
+  - id: bankowosc.nieaktywnosc
+    rodzaj: termin
+    wartosci:
+      - wartosc: 180
+    alternatywy: [90, 365]
+  - id: bankowosc.przerwa-zapowiedz
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [7, 14]
+  - id: bankowosc.przerwa-maks
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 godzin"
+      - od: 2027-01-01
+        wartosc: "4 godzin"
+    alternatywy: ["12 godzin"]
+  - id: bankowosc.okno-serwisowe
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "od 2:00 do 4:00"
+    alternatywy: ["od 1:00 do 5:00"]
+  - id: bankowosc.historia-operacji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 miesięcy"
+    alternatywy: ["12 miesięcy", "36 miesięcy"]
+  - id: bankowosc.odblokowanie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+    alternatywy: ["w ciągu 3 dni roboczych"]
+
+  # --- limity
+  - id: limit.bankowosc.przelew-jednorazowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15000.00
+    alternatywy: [5000.00, 25000.00]
+  - id: limit.bankowosc.przelew-mobilny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 15000.00
+    alternatywy: [5000.00]
+  - id: limit.bankowosc.nowy-odbiorca
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3000.00
+    alternatywy: [1000.00, 5000.00]
+  - id: limit.bankowosc.minimalny-ustawiany
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [1.00, 500.00]
+  - id: limit.bankowosc.maksymalny-ustawiany
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100000.00
+      - od: 2027-01-01
+        wartosc: 80000.00
+    alternatywy: [50000.00, 200000.00]
+  - id: limit.bankowosc.platnosc-niskokwotowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [100.00, 500.00]
+
+  # --- opłaty
+  - id: oplata.bankowosc.dostep
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [5.00, 8.00]
+  - id: oplata.bankowosc.token
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 39.00
+      - od: 2026-04-01
+        wartosc: 45.00
+    alternatywy: [0.00, 60.00]
+  - id: oplata.bankowosc.nowy-kod-aktywacyjny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.bankowosc.zmiana-limitu-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.bankowosc.wyciag-elektroniczny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [4.00]
+  - id: oplata.bankowosc.sms-kod
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [0.50]
