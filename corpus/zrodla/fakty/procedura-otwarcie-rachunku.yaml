@@ -1,0 +1,201 @@
+fakty:
+  # --- systemy i formularze wewnętrzne
+  - id: system.otwarcie.cbs
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+    alternatywy: ["CBS-BANK"]
+  - id: system.otwarcie.aml
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "AML-FILTR"
+    alternatywy: ["AML-KONTROLA"]
+  - id: system.otwarcie.wideo
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "WERYFIKACJA-WIDEO"
+    alternatywy: ["WIDEO-ID"]
+  - id: system.otwarcie.archiwum
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "EAD"
+    alternatywy: ["ARCHIWUM-E"]
+  - id: formularz.otwarcie.wniosek
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-01"
+    alternatywy: ["F-OR-10"]
+  - id: formularz.otwarcie.kwestionariusz-ryzyka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-02"
+    alternatywy: ["F-OR-20"]
+  - id: formularz.otwarcie.protokol-wideo
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-03"
+    alternatywy: ["F-OR-30"]
+  - id: formularz.otwarcie.przedstawiciel-ustawowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-04"
+    alternatywy: ["F-OR-40"]
+  - id: formularz.otwarcie.rachunek-wspolny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-05"
+    alternatywy: ["F-OR-50"]
+  - id: formularz.otwarcie.oswiadczenie-pep
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-06"
+    alternatywy: ["F-OR-60"]
+  - id: formularz.otwarcie.decyzja-odmowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-07"
+    alternatywy: ["F-OR-70"]
+  - id: formularz.otwarcie.notatka-wyjatek
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-08"
+    alternatywy: ["F-OR-80"]
+  # --- terminy
+  - id: termin.otwarcie.wniosek-wstepny-waznosc
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30, 7]
+  - id: termin.otwarcie.uzupelnienie-dokumentow
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2027-01-01
+        wartosc: 21
+    alternatywy: [14, 60]
+  - id: termin.otwarcie.waznosc-dokumentu-adresu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "3 miesięcy"
+    alternatywy: ["6 miesięcy", "30 dni"]
+  - id: termin.otwarcie.waznosc-przelewu-weryfikacyjnego
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+  - id: termin.otwarcie.sesja-wideo-czas
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "20 minut"
+    alternatywy: ["10 minut", "30 minut"]
+  - id: termin.otwarcie.przechowywanie-dokumentacji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+      - od: 2027-01-01
+        wartosc: "6 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: termin.otwarcie.przechowywanie-nagrania
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["2 lata", "10 lat"]
+  - id: termin.otwarcie.przechowywanie-odmowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: termin.otwarcie.waznosc-kwestionariusza
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesięcy"]
+  - id: termin.otwarcie.przeglad-ryzyko-niskie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "36 miesięcy"
+    alternatywy: ["48 miesięcy", "24 miesięcy"]
+  - id: termin.otwarcie.przeglad-ryzyko-srednie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 miesięcy"
+    alternatywy: ["18 miesięcy", "36 miesięcy"]
+  - id: termin.otwarcie.przeglad-ryzyko-wysokie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+      - od: 2027-01-01
+        wartosc: "6 miesięcy"
+    alternatywy: ["9 miesięcy", "24 miesięcy"]
+  - id: termin.otwarcie.decyzja-kierownika
+    rodzaj: termin
+    wartosci:
+      - wartosc: 1
+    alternatywy: [2, 3]
+  - id: termin.otwarcie.decyzja-zgodnosci
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+      - od: 2026-04-01
+        wartosc: 3
+    alternatywy: [1, 5]
+  - id: termin.otwarcie.informacja-o-odmowie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "w dniu podjęcia decyzji"
+    alternatywy: ["w ciągu 3 dni roboczych", "w ciągu 7 dni"]
+  - id: termin.otwarcie.aktywacja-rachunku
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "w dniu roboczym następującym po zawarciu umowy"
+    alternatywy: ["w dniu zawarcia umowy", "w ciągu 3 dni roboczych"]
+  - id: termin.otwarcie.waznosc-pelnomocnictwa-zagranicznego
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesięcy"]
+  # --- limity i progi
+  - id: limit.otwarcie.proby-wideo
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzech prób"
+    alternatywy: ["pięciu prób", "dwóch prób"]
+  - id: limit.otwarcie.przelew-weryfikacyjny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.01
+    alternatywy: [1.00, 0.10]
+  - id: limit.otwarcie.wspolposiadacze
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "czterech"
+      - od: 2027-01-01
+        wartosc: "trzech"
+    alternatywy: ["dwóch", "sześciu"]
+  - id: limit.otwarcie.wyplata-maloletni-dzienna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+      - od: 2026-04-01
+        wartosc: 300.00
+    alternatywy: [200.00, 1000.00]
+  - id: limit.otwarcie.punkty-ryzyko-niskie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do 3 punktów"
+    alternatywy: ["do 4 punktów", "do 2 punktów"]
+  - id: limit.otwarcie.punkty-ryzyko-srednie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "od 4 do 6 punktów"
+    alternatywy: ["od 5 do 7 punktów", "od 3 do 5 punktów"]
+  - id: limit.otwarcie.punkty-ryzyko-wysokie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "7 punktów i więcej"
+    alternatywy: ["8 punktów i więcej", "6 punktów i więcej"]
+  - id: limit.otwarcie.wplata-wstepna-kasa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5000.00
+    alternatywy: [2000.00, 10000.00]

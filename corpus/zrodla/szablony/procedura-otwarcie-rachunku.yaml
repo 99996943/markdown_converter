@@ -1,0 +1,77 @@
+id: procedura-otwarcie-rachunku
+typ: procedury
+temat: procedura-otwarcie-rachunku
+tytul:
+  - "Procedura otwierania rachunków dla klientów indywidualnych"
+  - "Procedura {otwierania|zakładania} rachunków osobistych dla klientów indywidualnych Banku Przykładowego S.A."
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry:
+  wlasciciel: "Departament Obsługi Klienta"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [otwarcie-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [otwarcie-zakres]
+    opcjonalne: { kategorie: [otwarcie-zakres-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [otwarcie-odpowiedzialnosci]
+    opcjonalne: { kategorie: [otwarcie-odp-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, otwarcie-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przegląd i przygotowanie"
+    wymagane: [otwarcie-schemat, otwarcie-kroki-przygotowanie]
+    opcjonalne: { kategorie: [otwarcie-przeglad-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — otwarcie rachunku w placówce"
+    wymagane: [otwarcie-kroki-placowka]
+    opcjonalne: { kategorie: [otwarcie-placowka-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — otwarcie rachunku na odległość"
+    wymagane: [otwarcie-kroki-zdalne]
+    opcjonalne: { kategorie: [otwarcie-zdalne-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — środki bezpieczeństwa finansowego"
+    wymagane: [otwarcie-kroki-aml]
+    opcjonalne: { kategorie: [otwarcie-aml-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — zawarcie umowy i uruchomienie rachunku"
+    wymagane: [otwarcie-kroki-umowa]
+    opcjonalne: { kategorie: [otwarcie-umowa-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [otwarcie-szcz-maloletni, otwarcie-szcz-wspolny, otwarcie-szcz-cudzoziemcy]
+    opcjonalne: { kategorie: [otwarcie-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Odmowa otwarcia rachunku"
+    wymagane: [otwarcie-odmowa]
+    opcjonalne: { kategorie: [otwarcie-odmowa-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Reklamacje i kontakt z klientem"
+    wymagane: [wspolne-reklamacje-procedura, wspolne-kontakt-procedura]
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [otwarcie-kontrola]
+    opcjonalne: { kategorie: [otwarcie-kontrola-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [otwarcie-dokumentacja, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [otwarcie-dokumentacja-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [otwarcie-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna otwarcia rachunku"
+    wymagane: [otwarcie-zal-lista]
+  - rodzaj: zalacznik
+    tytul: "Wykaz dokumentów wymaganych przy otwarciu rachunku"
+    wymagane: [otwarcie-zal-dokumenty]
+  - rodzaj: zalacznik
+    tytul: "Punktacja ryzyka klienta"
+    wymagane: [otwarcie-zal-punktacja]

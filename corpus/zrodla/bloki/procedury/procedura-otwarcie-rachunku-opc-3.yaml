@@ -1,0 +1,80 @@
+bloki:
+  - id: otwarcie-zdalne-awaria
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "W przypadku {awarii|niedostępności} systemu wideoweryfikacji lub bankowości elektronicznej Bank zapewnia ciągłość obsługi wniosków w sposób opisany poniżej. Awarie, które utrudniają otwieranie rachunków, zgłasza się niezwłocznie do komórki „{{fakt:jednostka.operacje}}”."
+      - kroki:
+          - tekst: "{Poinformuj|Powiadom} klienta o przerwie i o przewidywanym czasie jej usunięcia."
+            podkroki:
+              - tekst: "Jeżeli czas usunięcia awarii nie jest znany, zaproponuj klientowi kontakt telefoniczny następnego dnia roboczego lub wizytę w placówce."
+              - tekst: "Nie proś klienta o przesyłanie skanów dokumentów tożsamości pocztą elektroniczną; takie kanały nie zapewniają odpowiedniego poziomu ochrony danych."
+          - tekst: "Wniosek wstępny złożony przed awarią pozostaje w systemie i zachowuje ważność przez {{fakt:termin.otwarcie.wniosek-wstepny-waznosc}}, liczone od dnia jego złożenia."
+          - tekst: "Po przywróceniu działania systemu sprawdź, czy nagrania sesji prowadzonych w czasie awarii zostały zapisane w całości."
+            podkroki:
+              - tekst: "Jeżeli nagranie jest niepełne lub uszkodzone, sesję uznaje się za niezakończoną i należy ją powtórzyć."
+              - tekst: "Przypadek odnotuj w rejestrze zdarzeń, który prowadzi {{fakt:jednostka.bezpieczenstwo}}."
+
+  - id: otwarcie-umowa-dokumenty
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Przed zawarciem umowy Bank {jest obowiązany|musi} przekazać klientowi informacje wymagane przepisami, a po jej zawarciu — potwierdzenie jej warunków. Dokumenty przekazuje się na trwałym nośniku, to jest w postaci papierowej albo jako plik w bankowości elektronicznej, którego klient nie może samodzielnie zmienić."
+      - ustep: "Zestaw dokumentów przekazywanych klientowi obejmuje:"
+        punkty:
+          - "tekst umowy rachunku z załączonym dokumentem „{{ref:dokument:regulamin-rachunku-osobistego}}”;"
+          - "tabelę opłat i prowizji, o której mowa w dokumencie „{{ref:dokument:taryfa-indywidualni}}”;"
+          - "informację o gwarancjach Bankowego Funduszu Gwarancyjnego dla środków na rachunku;"
+          - "informację o przetwarzaniu danych osobowych, zawierającą dane kontaktowe osoby pełniącej funkcję „{{fakt:jednostka.iod}}” ({{fakt:kontakt.email-iod}});"
+          - "informację o sposobie składania reklamacji, w tym adres {{fakt:kontakt.email-reklamacje}};"
+          - "w przypadku umowy na odległość — pouczenie o prawie odstąpienia od umowy."
+      - akapit: "Pracownik sprawdza i odnotowuje w systemie, że wszystkie dokumenty zostały przekazane. Klient może w każdym czasie żądać udostępnienia kopii umowy; pierwszą kopię na życzenie klienta wydaje się bezpłatnie, a za kolejne Bank pobiera opłatę zgodnie z {{ref:dokument:taryfa-indywidualni}}."
+
+  - id: otwarcie-aml-zmiana-ryzyka
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Poziom ryzyka ustalony przy otwarciu rachunku nie jest {stały|niezmienny}. Podlega on {aktualizacji|przeglądowi} w trakcie trwania stosunków gospodarczych, a pracownik, który stwierdzi okoliczności mogące go zmienić, informuje o tym komórkę „{{fakt:jednostka.zgodnosc}}”."
+      - ustep: "Zmianę poziomu ryzyka powinny wywołać w szczególności:"
+        punkty:
+          - "zmiana danych klienta, w tym rezydencji podatkowej lub obywatelstwa;"
+          - "uzyskanie przez klienta statusu osoby zajmującej eksponowane stanowisko polityczne;"
+          - "nietypowe transakcje niewynikające z deklarowanego celu rachunku;"
+          - "informacje z mediów lub z innych źródeł wskazujące na powiązanie klienta z przestępstwem;"
+          - "upływ terminu okresowego przeglądu: {{fakt:termin.otwarcie.przeglad-ryzyko-niskie}} przy ryzyku niskim, {{fakt:termin.otwarcie.przeglad-ryzyko-srednie}} przy ryzyku średnim i {{fakt:termin.otwarcie.przeglad-ryzyko-wysokie}} przy ryzyku wysokim."
+      - akapit: "Wynik przeglądu odnotowuje się w systemie {{fakt:system.otwarcie.cbs}} wraz z datą, uzasadnieniem i danymi osoby, która dokonała przeglądu. Jeżeli klient nie przekazuje informacji niezbędnych do przeglądu, {{fakt:jednostka.zgodnosc}} decyduje o ograniczeniu usług lub o rozwiązaniu stosunków gospodarczych."
+
+  - id: otwarcie-szcz-ubezwlasnowolnienie
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Osoba ubezwłasnowolniona całkowicie nie może samodzielnie zawrzeć umowy rachunku. Umowę zawiera w jej imieniu opiekun ustanowiony przez sąd, który działa w granicach zakresu zarządu majątkiem."
+      - kroki:
+          - tekst: "{Zażądaj|Poproś o przedstawienie} odpisu postanowienia sądu o ubezwłasnowolnieniu i ustanowieniu opiekuna oraz dokumentu tożsamości opiekuna."
+          - tekst: "Sprawdź, czy opiekun ma zgodę sądu opiekuńczego na czynność, jeżeli wymagają tego przepisy."
+            podkroki:
+              - tekst: "W razie wątpliwości co do zakresu uprawnień opiekuna wstrzymaj czynności i skonsultuj się z komórką „{{fakt:jednostka.prawny}}”."
+              - tekst: "Zachowaj odpis postanowienia i zgody sądu w dokumentacji sprawy."
+          - tekst: "Zastosuj środki bezpieczeństwa finansowego wobec opiekuna oraz osoby ubezwłasnowolnionej i {oceń|określ} poziom ryzyka z uwzględnieniem celu rachunku."
+          - tekst: "Wyjaśnij opiekunowi, że dysponowanie rachunkiem odbywa się wyłącznie przez opiekuna i że osoba ubezwłasnowolniona nie otrzymuje karty ani dostępu do bankowości elektronicznej."
+
+  - id: otwarcie-szcz-rezydencja
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Bank {jest obowiązany|ma obowiązek} ustalić rezydencję podatkową klienta i, jeżeli klient jest rezydentem podatkowym innego państwa, przekazywać informacje o jego rachunku właściwym organom na zasadach określonych w przepisach o wymianie informacji podatkowych."
+      - kroki:
+          - tekst: "Poproś klienta o złożenie oświadczenia o rezydencji podatkowej na {{fakt:formularz.otwarcie.wniosek}}."
+            podkroki:
+              - tekst: "Wyjaśnij, że klient wskazuje wszystkie państwa, w których jest rezydentem podatkowym, wraz z numerem identyfikacji podatkowej."
+              - tekst: "Nie doradzaj klientowi, w którym państwie jest rezydentem; to klient ponosi odpowiedzialność za prawdziwość oświadczenia."
+          - tekst: "Sprawdź spójność oświadczenia z innymi danymi klienta."
+            podkroki:
+              - tekst: "Wskazania obcego miejsca urodzenia, obcego adresu lub obcego numeru telefonu mogą świadczyć o rezydencji w innym państwie; jeżeli oświadczenie temu przeczy, poproś o dokument wyjaśniający."
+              - tekst: "Jeżeli klient odmawia złożenia oświadczenia, nie otwieraj rachunku."
+          - tekst: "Zapisz wskazane państwa w systemie {{fakt:system.otwarcie.cbs}} i poinformuj klienta o obowiązku zawiadomienia Banku o zmianie rezydencji podatkowej w terminie {{fakt:termin.rachunek-osobisty.zmiana-danych}}."

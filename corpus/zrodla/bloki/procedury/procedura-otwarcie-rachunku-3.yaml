@@ -1,0 +1,198 @@
+bloki:
+  - id: otwarcie-szcz-maloletni
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne-wymagane
+    elementy:
+      - akapit: "Rachunek dla osoby małoletniej {otwiera się|zakłada się} w placówce, w obecności przedstawiciela ustawowego. Otwarcie takiego rachunku na odległość nie jest dopuszczalne."
+      - kroki:
+          - tekst: "{Ustal|Sprawdź} wiek małoletniego i zakres jego zdolności do czynności prawnych."
+            podkroki:
+              - tekst: "Dziecko, które nie ukończyło {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}}, nie ma zdolności do czynności prawnych — umowę zawiera w jego imieniu wyłącznie przedstawiciel ustawowy."
+              - tekst: "Osoba, która ukończyła {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}}, a nie ukończyła {{fakt:wiek.rachunek-osobisty.pelnoletnosc}}, ma ograniczoną zdolność do czynności prawnych i działa za zgodą przedstawiciela ustawowego."
+          - tekst: "{Zweryfikuj|Sprawdź} tożsamość i uprawnienia przedstawiciela ustawowego."
+            podkroki:
+              - tekst: "{Zażądaj|Poproś o okazanie} dokumentu tożsamości przedstawiciela oraz dokumentu potwierdzającego jego uprawnienia: aktu urodzenia dziecka albo orzeczenia sądu o ustanowieniu opieki."
+              - tekst: "Gdy rachunek ma być otwarty za zgodą jednego rodzica, poproś o oświadczenie, że drugi rodzic nie jest pozbawiony władzy rodzicielskiej i nie sprzeciwia się otwarciu; zapisz je na {{fakt:formularz.otwarcie.przedstawiciel-ustawowy}}."
+          - tekst: "Zweryfikuj tożsamość małoletniego."
+            podkroki:
+              - tekst: "Jeżeli dziecko ma dokument tożsamości, zeskanuj go; jeśli nie — zapisz dane z aktu urodzenia lub odpisu i numer PESEL."
+              - tekst: "Zastosuj środki bezpieczeństwa finansowego wobec przedstawiciela ustawowego i małoletniego, oceniając ryzyko przedstawiciela."
+          - tekst: "Ustal zakres dysponowania rachunkiem."
+            podkroki:
+              - tekst: "Poinformuj, że dzienny limit wypłat gotówki z rachunku małoletniego wynosi {{fakt:limit.otwarcie.wyplata-maloletni-dzienna}}, a limit zadłużenia w rachunku nie jest przyznawany."
+              - tekst: "Zapisz w systemie, czy małoletni ma korzystać z bankowości elektronicznej i karty debetowej; zgodę na to wyraża przedstawiciel ustawowy."
+          - tekst: "Po ukończeniu {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} przez posiadacza zleć w systemie zmianę statusu rachunku i poproś o potwierdzenie danych."
+
+  - id: otwarcie-szcz-wspolny
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne-wymagane
+    elementy:
+      - akapit: "Rachunek wspólny {może być otwarty|można otworzyć} dla osób fizycznych, z których każda spełnia warunki otwarcia rachunku osobistego. Liczba współposiadaczy {nie może przekraczać|jest ograniczona do} {{fakt:limit.otwarcie.wspolposiadacze}}."
+      - kroki:
+          - tekst: "Wobec każdego współposiadacza przeprowadź odrębnie identyfikację, weryfikację tożsamości i ocenę ryzyka."
+            podkroki:
+              - tekst: "Poziom ryzyka rachunku wspólnego odpowiada najwyższemu poziomowi ryzyka spośród współposiadaczy."
+              - tekst: "Jeżeli jeden ze współposiadaczy nie może stawić się osobiście, a pozostali nie są obecni, odmów podpisania umowy; wyjątki określa kierownik placówki."
+          - tekst: "{Wypełnij|Sporządź} {{fakt:formularz.otwarcie.rachunek-wspolny}} i ustal zasady dysponowania rachunkiem."
+            podkroki:
+              - tekst: "Zapisz, czy każdy ze współposiadaczy może dysponować rachunkiem samodzielnie, czy tylko łącznie z pozostałymi."
+              - tekst: "{Wyjaśnij|Poinformuj}, że współposiadacze odpowiadają solidarnie za zobowiązania z tytułu rachunku, w tym za ujemne saldo."
+          - tekst: "Wyjaśnij skutki jednostronnego wypowiedzenia lub zmiany sposobu dysponowania rachunkiem przez jednego ze współposiadaczy."
+            podkroki:
+              - tekst: "Poinformuj, że o takiej czynności Bank {zawiadamia|powiadamia} pozostałych współposiadaczy."
+              - tekst: "Poinformuj o skutkach śmierci współposiadacza dla rachunku i dyspozycji na wypadek śmierci."
+          - tekst: "Zarejestruj w systemie każdego współposiadacza jako odrębnego klienta, a rachunek — jako jeden rachunek z kilkoma posiadaczami."
+
+  - id: otwarcie-szcz-cudzoziemcy
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne-wymagane
+    elementy:
+      - akapit: "Rachunek może być otwarty dla cudzoziemca, w tym osoby niemającej miejsca zamieszkania w Rzeczypospolitej Polskiej, jeżeli może on okazać dokumenty wymagane w niniejszej sekcji. Wobec takich klientów stosuje się {wzmożoną|zwiększoną} staranność przy ocenie celu otwarcia rachunku."
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} dokument tożsamości cudzoziemca i prawo pobytu."
+            podkroki:
+              - tekst: "{Przyjmij|Zaakceptuj} ważny paszport albo inny dokument podróży; obywatele państw Unii Europejskiej mogą okazać także dowód osobisty."
+              - tekst: "Dla obywateli państw spoza Unii sprawdź dokument potwierdzający prawo pobytu w Rzeczypospolitej Polskiej lub wizę."
+              - tekst: "Jeżeli prawo pobytu wygasa w ciągu kolejnych 90 dni, poinformuj klienta, że po wygaśnięciu Bank może ograniczyć dysponowanie rachunkiem."
+          - tekst: "Uzyskaj dokument potwierdzający adres w kraju pochodzenia lub w Polsce."
+            podkroki:
+              - tekst: "Przyjmij rachunek za usługi, umowę najmu lub zaświadczenie o zameldowaniu wystawione w ciągu ostatnich {{fakt:termin.otwarcie.waznosc-dokumentu-adresu}}."
+              - tekst: "Dokumenty w języku obcym przyjmij wraz z tłumaczeniem sporządzonym lub poświadczonym przez tłumacza przysięgłego, chyba że kierownik placówki zwolni z tego wymogu w przypadku języka angielskiego."
+          - tekst: "Ustal cel otwarcia rachunku i źródło środków."
+            podkroki:
+              - tekst: "{Poproś|Zwróć się} o dokumenty potwierdzające cel pobytu: umowę o pracę, zaświadczenie z uczelni lub inny dokument."
+              - tekst: "Wpłaty gotówkowe powyżej {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}} wymagają złożenia wyjaśnień dotyczących pochodzenia środków."
+          - tekst: "Wobec osób z państw wskazanych jako wysokiego ryzyka zastosuj wzmożone środki bezpieczeństwa finansowego i przekaż sprawę do komórki „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "Przy pełnomocnictwie wystawionym za granicą sprawdź jego legalizację lub apostille; pełnomocnictwo zagraniczne jest przyjmowane, jeżeli zostało wystawione nie wcześniej niż {{fakt:termin.otwarcie.waznosc-pelnomocnictwa-zagranicznego}} przed jego okazaniem."
+
+  - id: otwarcie-odmowa
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa
+    elementy:
+      - ustep: "Bank {odmawia|jest obowiązany odmówić} otwarcia rachunku, jeżeli:"
+        punkty:
+          - "nie można zastosować środków bezpieczeństwa finansowego, w szczególności klient odmawia przedstawienia dokumentów lub udzielenia wyjaśnień;"
+          - "klient przedstawia dokument nieważny, uszkodzony albo budzący uzasadnione wątpliwości co do autentyczności;"
+          - "wynik wideoweryfikacji jest negatywny, a klient nie zgadza się na weryfikację w placówce;"
+          - "dane klienta znajdują się na liście osób i podmiotów objętych sankcjami;"
+          - "klient jest objęty wewnętrznym zakazem współpracy z Bankiem wpisanym przez komórkę „{{fakt:jednostka.bezpieczenstwo}}”;"
+          - "klient złożył nieprawdziwe oświadczenie lub zataił istotne informacje."
+      - ustep: "Odmowę otwarcia rachunku wydaje kierownik placówki, a w przypadku klientów wysokiego ryzyka — {{fakt:jednostka.zgodnosc}}. Postępowanie jest następujące:"
+        punkty:
+          - "pracownik {wypełnia|sporządza} {{fakt:formularz.otwarcie.decyzja-odmowy}} i wskazuje podstawę odmowy;"
+          - "o odmowie {informuje się|powiadamia się} klienta {{fakt:termin.otwarcie.informacja-o-odmowie}}, ustnie lub na trwałym nośniku;"
+          - "pracownik nie podaje klientowi szczegółów, których ujawnienie mogłoby utrudnić postępowanie, w szczególności nie informuje o podejrzeniu przestępstwa ani o zawiadomieniu GIIF;"
+          - "dane osobowe z odrzuconego wniosku i {{fakt:formularz.otwarcie.decyzja-odmowy}} przechowuje się przez {{fakt:termin.otwarcie.przechowywanie-odmowy}}."
+      - akapit: "Odmowa nie {wyłącza|pozbawia} prawa klienta do ponownego złożenia wniosku po usunięciu przyczyny odmowy. Klientowi przysługuje także prawo złożenia reklamacji zgodnie z zasadami opisanymi w sekcji „Reklamacje i kontakt z klientem”."
+
+  - id: otwarcie-kontrola
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-kontrola
+    elementy:
+      - akapit: "{Przestrzeganie|Stosowanie} procedury podlega kontroli na trzech poziomach: bieżącej kontroli wykonywanej przez kierownika placówki, kontroli funkcjonalnej prowadzonej przez komórkę „{{fakt:jednostka.zgodnosc}}” oraz niezależnej oceny audytu wewnętrznego."
+      - ustep: "W ramach kontroli bieżącej kierownik placówki:"
+        punkty:
+          - "sprawdza {w każdym tygodniu|co tydzień} losowo wybrane wnioski o otwarcie rachunków pod kątem kompletności dokumentacji i poprawności oceny ryzyka;"
+          - "{przegląda|analizuje} zestawienie spraw wstrzymanych, odmów i wyjątków od procedury;"
+          - "weryfikuje, czy pracownicy ukończyli wymagane szkolenia."
+      - ustep: "{{fakt:jednostka.zgodnosc}} {raz w kwartale|co kwartał}:"
+        punkty:
+          - "bada próbę nagrań wideoweryfikacji i ocenia jakość weryfikacji tożsamości;"
+          - "analizuje liczbę klientów o wysokim ryzyku i zgodność decyzji z punktacją;"
+          - "przekazuje właścicielowi procedury wnioski i zalecenia."
+      - akapit: "Wyniki kontroli, wraz z listą nieprawidłowości i wyznaczonymi terminami ich usunięcia, przekazuje się właścicielowi procedury i organowi „{{fakt:jednostka.zarzad}}”."
+
+  - id: otwarcie-dokumentacja
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-dokumentacja
+    elementy:
+      - ustep: "Dokumentację sprawy otwarcia rachunku {tworzy się|gromadzi się} w archiwum {{fakt:system.otwarcie.archiwum}}. W skład dokumentacji wchodzą:"
+        punkty:
+          - "{{fakt:formularz.otwarcie.wniosek}} wraz z oświadczeniami klienta;"
+          - "skan dokumentu tożsamości i dokumentów dodatkowych;"
+          - "{{fakt:formularz.otwarcie.kwestionariusz-ryzyka}} i wynik sprawdzenia w systemie {{fakt:system.otwarcie.aml}};"
+          - "{{fakt:formularz.otwarcie.protokol-wideo}} i nagranie sesji, jeżeli wideoweryfikacja miała miejsce;"
+          - "podpisana umowa i potwierdzenie przekazania dokumentów na trwałym nośniku;"
+          - "decyzje kierownika placówki lub komórki „{{fakt:jednostka.zgodnosc}}”, o ile były wymagane."
+      - akapit: "Dokumentację {przechowuje się|zachowuje się} przez {{fakt:termin.otwarcie.przechowywanie-dokumentacji}} od zakończenia stosunków gospodarczych z klientem, a nagrania wideoweryfikacji — przez {{fakt:termin.otwarcie.przechowywanie-nagrania}} od dnia sesji, chyba że przepisy lub toczące się postępowanie wymagają dłuższego okresu. Po upływie okresu przechowywania dokumenty {niszczy się|usuwa się} w sposób uniemożliwiający ich odtworzenie."
+      - akapit: "Dostęp do dokumentacji mają pracownicy, których zadania tego wymagają, a każdy dostęp jest rejestrowany. Kopie dokumentów nie mogą być wynoszone poza placówkę ani przesyłane na prywatne adresy pocztowe."
+
+  - id: otwarcie-koncowe
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-koncowe
+    elementy:
+      - akapit: "Procedura {wchodzi w życie|obowiązuje} z dniem {{param:od}}. {Z tym dniem|Z chwilą jej wejścia w życie} traci moc dotychczasowa procedura otwierania rachunków osobistych dla klientów indywidualnych."
+      - akapit: "W sprawach nieuregulowanych w procedurze stosuje się przepisy prawa (w szczególności: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}) oraz postanowienia dokumentu „{{ref:dokument:regulamin-rachunku-osobistego}}”. {Wątpliwości interpretacyjne|Wątpliwości co do wykładni} rozstrzyga {{fakt:jednostka.obsluga-klienta}} w porozumieniu z komórką „{{fakt:jednostka.prawny}}”."
+      - akapit: "Odstępstwo od procedury w indywidualnej sprawie wymaga {{fakt:formularz.otwarcie.notatka-wyjatek}} zatwierdzonej przez kierownika placówki i, w sprawach dotyczących środków bezpieczeństwa finansowego, przez komórkę „{{fakt:jednostka.zgodnosc}}”. {Nie można udzielić wyjątku|Nie udziela się wyjątku} od obowiązków wynikających z przepisów prawa."
+
+  - id: otwarcie-zal-lista
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zalacznik
+    elementy:
+      - akapit: "{Listę wypełnia|Listę sporządza} pracownik, który prowadził sprawę, i {dołącza|załącza} do dokumentacji. Wszystkie pozycje {muszą być odznaczone|muszą zostać potwierdzone} przed uruchomieniem rachunku."
+      - lista-kontrolna:
+          forma: wektor
+          pozycje:
+            - "Sprawdzono ważność i autentyczność dokumentu tożsamości klienta"
+            - "Zweryfikowano tożsamość klienta w placówce albo w wideoweryfikacji"
+            - "Zarejestrowano klienta i wniosek w systemie centralnym"
+            - "Wypełniono kwestionariusz ryzyka i ustalono poziom ryzyka"
+            - "Sprawdzono klienta w systemie filtrowania list sankcyjnych i PEP"
+            - "Uzyskano oświadczenie o beneficjencie rzeczywistym i rezydencji podatkowej"
+            - "Uzyskano decyzję kierownika placówki lub Departamentu Zgodności, jeżeli była wymagana"
+            - "Przekazano klientowi regulamin, tabelę opłat i informację o gwarancjach na trwałym nośniku"
+            - "Zawarto umowę i uzyskano podpis klienta"
+            - "Zarchiwizowano dokumentację w elektronicznym archiwum"
+
+  - id: otwarcie-zal-dokumenty
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zalacznik
+    elementy:
+      - akapit: "Wykaz {określa|wskazuje} dokumenty, które klient {przedstawia|okazuje} przy otwarciu rachunku, {w zależności od|stosownie do} jego sytuacji."
+      - tabela:
+          kolumny:
+            - naglowek: "Sytuacja klienta"
+              waga: 2
+            - naglowek: "Wymagane dokumenty"
+              waga: 3
+            - naglowek: "Uwagi"
+              waga: 2
+          wiersze:
+            - ["Pełnoletni obywatel Polski", "Dowód osobisty lub paszport; {{fakt:formularz.otwarcie.wniosek}}", "Numer PESEL wymagany"]
+            - ["Małoletni", "Akt urodzenia lub dokument dziecka; dokument przedstawiciela; {{fakt:formularz.otwarcie.przedstawiciel-ustawowy}}", "Tylko w placówce"]
+            - ["Obywatel Unii Europejskiej", "Dowód osobisty lub paszport; dokument adresowy wystawiony w ciągu ostatnich {{fakt:termin.otwarcie.waznosc-dokumentu-adresu}}", "Tłumaczenie w razie potrzeby"]
+            - ["Obywatel spoza Unii Europejskiej", "Paszport; dokument pobytowy lub wiza; dokument potwierdzający cel pobytu", "Wzmożona staranność"]
+            - ["Współposiadacze rachunku", "Dokumenty każdego współposiadacza; {{fakt:formularz.otwarcie.rachunek-wspolny}}", "Odrębna ocena ryzyka"]
+            - ["Osoba zajmująca eksponowane stanowisko polityczne", "Dokumenty jak wyżej; {{fakt:formularz.otwarcie.oswiadczenie-pep}}", "Decyzja Departamentu Zgodności"]
+          siatka: true
+
+  - id: otwarcie-zal-punktacja
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zalacznik
+    elementy:
+      - akapit: "Punktację {stosuje się|wykorzystuje się} w {{fakt:formularz.otwarcie.kwestionariusz-ryzyka}}. Punkty za poszczególne czynniki {sumuje się|dodaje się}."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynnik ryzyka"
+              waga: 3
+            - naglowek: "Punkty"
+              waga: 1
+          wiersze:
+            - ["Klient posiada rezydencję podatkową w Polsce", "0"]
+            - ["Klient posiada rezydencję podatkową za granicą", "2"]
+            - ["Klient jest osobą zajmującą eksponowane stanowisko polityczne", "3"]
+            - ["Rachunek otwierany na odległość", "1"]
+            - ["Przewidywane wpłaty gotówkowe powyżej {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}} miesięcznie", "2"]
+            - ["Źródło środków nieudokumentowane", "2"]
+            - ["Państwo pochodzenia o podwyższonym ryzyku", "3"]
+      - akapit: "{Poziomy ryzyka|Progi ryzyka}: niskie — {{fakt:limit.otwarcie.punkty-ryzyko-niskie}}, średnie — {{fakt:limit.otwarcie.punkty-ryzyko-srednie}}, wysokie — {{fakt:limit.otwarcie.punkty-ryzyko-wysokie}}. Okresowy przegląd ryzyka: niskie — co {{fakt:termin.otwarcie.przeglad-ryzyko-niskie}}, średnie — co {{fakt:termin.otwarcie.przeglad-ryzyko-srednie}}, wysokie — co {{fakt:termin.otwarcie.przeglad-ryzyko-wysokie}}."

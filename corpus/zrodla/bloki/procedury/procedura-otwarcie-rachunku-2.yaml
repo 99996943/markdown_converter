@@ -1,0 +1,127 @@
+bloki:
+  - id: otwarcie-kroki-placowka
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka
+    elementy:
+      - akapit: "Klient zgłaszający się do placówki obsługiwany jest przez pracownika, który {samodzielnie|osobiście} prowadzi całą sprawę, chyba że wymaga ona udziału kierownika placówki. Wobec klienta fizycznie obecnego w placówce weryfikację tożsamości przeprowadza się na podstawie oryginału dokumentu."
+      - kroki:
+          - tekst: "{Poproś|Zwróć się do} klienta o okazanie oryginału ważnego dokumentu tożsamości."
+            podkroki:
+              - tekst: "Przyjmij dowód osobisty albo paszport; w przypadku cudzoziemca — dokument podróży oraz, gdy wymagają tego przepisy, dokument potwierdzający prawo pobytu."
+              - tekst: "Nie przyjmuj dokumentów uszkodzonych w sposób utrudniający odczyt, nieważnych, zastrzeżonych ani wydanych w formie kopii lub wydruku."
+              - tekst: "Porównaj zdjęcie w dokumencie z wyglądem osoby i sprawdź zabezpieczenia dokumentu zgodnie z instrukcją pracownika."
+          - tekst: "Zweryfikuj dane z dokumentu i wprowadź je do systemu {{fakt:system.otwarcie.cbs}}."
+            podkroki:
+              - tekst: "Wprowadź imiona, nazwisko, numer PESEL (a w razie jego braku datę urodzenia), obywatelstwo, serię i numer dokumentu oraz datę jego ważności."
+              - tekst: "Zeskanuj dokument i dołącz skan do sprawy w archiwum {{fakt:system.otwarcie.archiwum}}; skan musi być czytelny i obejmować obie strony dokumentu."
+              - tekst: "Poproś klienta o potwierdzenie poprawności zapisanych danych na ekranie podglądu."
+          - tekst: "{Ustal|Zbierz} dane adresowe i kontaktowe klienta."
+            podkroki:
+              - tekst: "Zapisz adres zamieszkania i adres do korespondencji, jeżeli jest inny."
+              - tekst: "Zapisz numer telefonu i adres poczty elektronicznej; wyślij kod weryfikacyjny, aby potwierdzić, że klient ma do nich dostęp."
+              - tekst: "Poinformuj klienta, że o zmianie danych musi zawiadomić Bank w terminie {{fakt:termin.rachunek-osobisty.zmiana-danych}}."
+          - tekst: "Wypełnij z klientem {{fakt:formularz.otwarcie.wniosek}} (wniosek o otwarcie rachunku)."
+            podkroki:
+              - tekst: "Wskaż wybrany pakiet konta, sposób odbioru wyciągów i oświadczenia klienta dotyczące rezydencji podatkowej."
+              - tekst: "Zapytaj o zgody marketingowe i zapisz je odrębnie; ich brak nie może wpływać na decyzję o otwarciu rachunku."
+          - tekst: "Przekaż klientowi przed podpisaniem umowy informacje wymagane przepisami."
+            podkroki:
+              - tekst: "Udostępnij na trwałym nośniku dokument „{{ref:dokument:regulamin-rachunku-osobistego}}”, tabelę opłat z dokumentu „{{ref:dokument:taryfa-indywidualni}}” oraz informację o gwarancjach Bankowego Funduszu Gwarancyjnego."
+              - tekst: "Poinformuj klienta, że decyzja o otwarciu rachunku zapada w terminie {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od dnia złożenia kompletnego wniosku."
+          - tekst: "Przejdź do sekcji dotyczącej środków bezpieczeństwa finansowego; do czasu ich zastosowania nie uruchamiaj rachunku."
+      - akapit: "{W razie awarii|Jeżeli wystąpi awaria} systemu {{fakt:system.otwarcie.cbs}} pracownik przyjmuje wniosek na formularzu papierowym i wprowadza dane do systemu niezwłocznie po usunięciu awarii; rachunek nie jest wtedy uruchamiany przed zarejestrowaniem sprawy."
+
+  - id: otwarcie-kroki-zdalne
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne
+    elementy:
+      - akapit: "Rachunek na odległość może otworzyć wyłącznie klient pełnoletni, który {posiada|ma} dokument tożsamości z warstwą zdjęciową, numer telefonu i adres poczty elektronicznej. Wniosek składa się w serwisie internetowym albo w aplikacji mobilnej, a tożsamość klienta potwierdza się w trakcie wideoweryfikacji prowadzonej w systemie {{fakt:system.otwarcie.wideo}}."
+      - kroki:
+          - tekst: "Przyjmij wniosek wstępny złożony przez klienta w bankowości elektronicznej."
+            podkroki:
+              - tekst: "{Sprawdź|Upewnij się}, czy klient wypełnił wszystkie pola {{fakt:formularz.otwarcie.wniosek}} i zaakceptował klauzule informacyjne oraz warunki rachunku."
+              - tekst: "Wniosek wstępny pozostaje w systemie przez {{fakt:termin.otwarcie.wniosek-wstepny-waznosc}}; po upływie tego terminu wygasa i klient musi złożyć nowy."
+          - tekst: "Potwierdź dane kontaktowe klienta jednorazowym kodem wysłanym na wskazany numer telefonu i adres poczty elektronicznej."
+          - tekst: "Zaplanuj sesję wideoweryfikacji i przeprowadź ją w terminie ustalonym z klientem."
+            podkroki:
+              - tekst: "Upewnij się, że klient znajduje się w pomieszczeniu bez osób postronnych i ma dobre oświetlenie oraz stabilne łącze."
+              - tekst: "Rozpocznij nagrywanie sesji dopiero po poinformowaniu klienta o celu i podstawie prawnej nagrania oraz uzyskaniu jego zgody na dalszy przebieg sesji."
+              - tekst: "Poproś o pokazanie przed kamerą obu stron dokumentu tożsamości, jego pochylenie w celu ujawnienia zabezpieczeń oraz zdjęcie twarzy w pełnej ostrości."
+              - tekst: "Porównaj twarz klienta ze zdjęciem w dokumencie, a w razie wątpliwości poproś o wykonanie prostych poleceń (obrót głowy, mrugnięcie), które wykluczają użycie zapisu lub zdjęcia."
+              - tekst: "Czas trwania sesji nie powinien przekraczać {{fakt:termin.otwarcie.sesja-wideo-czas}}; po jego upływie przerwij sesję i zaproponuj nowy termin."
+          - tekst: "Zakończ sesję decyzją o jej wyniku i sporządź {{fakt:formularz.otwarcie.protokol-wideo}}."
+            podkroki:
+              - tekst: "Przy wyniku pozytywnym potwierdź tożsamość klienta w systemie i dołącz nagranie do sprawy w archiwum {{fakt:system.otwarcie.archiwum}}."
+              - tekst: "Przy wyniku negatywnym wskaż przyczynę (np. niska jakość obrazu, rozbieżność danych, podejrzenie fałszerstwa) i zaproponuj klientowi weryfikację w placówce."
+              - tekst: "Liczba prób wideoweryfikacji nie może przekroczyć {{fakt:limit.otwarcie.proby-wideo}}; kolejną próbę kieruj do kierownika zespołu wideoweryfikacji."
+          - tekst: "Zweryfikuj rachunek klienta w innym banku przelewem weryfikacyjnym, jeżeli wymaga tego ocena ryzyka."
+            podkroki:
+              - tekst: "Poproś o przelew na kwotę {{fakt:limit.otwarcie.przelew-weryfikacyjny}} z rachunku prowadzonego na dane klienta w innej instytucji; dane nadawcy muszą zgadzać się z danymi we wniosku."
+              - tekst: "Przelew jest ważny przez {{fakt:termin.otwarcie.waznosc-przelewu-weryfikacyjnego}} od wysłania instrukcji; po tym terminie powtórz procedurę."
+          - tekst: "Przejdź do środków bezpieczeństwa finansowego i zawarcia umowy w formie elektronicznej."
+      - akapit: "{W razie przerwania sesji|Gdy sesja zostaje przerwana} z przyczyn technicznych, pracownik odnotowuje przerwę w protokole i umawia klienta na nowy termin; przerwa z przyczyn technicznych nie wlicza się do liczby prób, o której mowa wyżej."
+
+  - id: otwarcie-kroki-aml
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml
+    elementy:
+      - akapit: "Środki bezpieczeństwa finansowego stosuje się wobec każdego klienta przed nawiązaniem stosunków gospodarczych, a więc przed zawarciem umowy rachunku. Zakres tych środków wynika z {{ref:akt:dz-u-2025-644-aml}} i jest dostosowany do poziomu ryzyka związanego z klientem."
+      - kroki:
+          - tekst: "{Zidentyfikuj|Ustal} klienta i zweryfikuj jego tożsamość na podstawie dokumentu, zgodnie z poprzednimi sekcjami."
+          - tekst: "Ustal, czy klient działa we własnym imieniu i na własny rachunek."
+            podkroki:
+              - tekst: "{Zapytaj|Dopytaj} klienta o beneficjenta rzeczywistego rachunku i zapisz odpowiedź w {{fakt:formularz.otwarcie.kwestionariusz-ryzyka}}."
+              - tekst: "Gdy klient działa na rzecz innej osoby, zweryfikuj jej tożsamość i podstawę umocowania; sprawę przekaż kierownikowi placówki."
+          - tekst: "Ustal cel i zakładaną naturę stosunków gospodarczych."
+            podkroki:
+              - tekst: "Zapytaj o przeznaczenie rachunku, przewidywane źródła wpływów oraz miesięczne obroty."
+              - tekst: "{Zapisz|Odnotuj} odpowiedzi własnymi słowami klienta; nie sugeruj klientowi odpowiedzi."
+          - tekst: "Ustal, czy klient jest osobą zajmującą eksponowane stanowisko polityczne."
+            podkroki:
+              - tekst: "Poproś klienta o wypełnienie {{fakt:formularz.otwarcie.oswiadczenie-pep}}."
+              - tekst: "Sprawdź klienta w systemie {{fakt:system.otwarcie.aml}}, który weryfikuje listy osób i podmiotów objętych sankcjami oraz listę osób zajmujących eksponowane stanowiska."
+              - tekst: "Przy trafieniu na liście sankcyjnej wstrzymaj czynności i niezwłocznie powiadom komórkę „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "Wypełnij kwestionariusz ryzyka i ustal poziom ryzyka klienta."
+            podkroki:
+              - tekst: "Zsumuj punkty przypisane odpowiedziom według załącznika „Punktacja ryzyka klienta”; ryzyko niskie — {{fakt:limit.otwarcie.punkty-ryzyko-niskie}}, średnie — {{fakt:limit.otwarcie.punkty-ryzyko-srednie}}, a wysokie — {{fakt:limit.otwarcie.punkty-ryzyko-wysokie}}."
+              - tekst: "Kwestionariusz zachowuje ważność przez {{fakt:termin.otwarcie.waznosc-kwestionariusza}}; zmiana danych klienta wymaga jego aktualizacji."
+          - tekst: "Zastosuj wynik oceny ryzyka."
+            podkroki:
+              - tekst: "Przy ryzyku niskim pracownik samodzielnie uruchamia dalsze czynności."
+              - tekst: "Przy ryzyku średnim otwarcie rachunku zatwierdza kierownik placówki; termin na decyzję, liczony w dniach roboczych, wynosi {{fakt:termin.otwarcie.decyzja-kierownika}}."
+              - tekst: "Przy ryzyku wysokim stosuje się wzmożoną analizę, a decyzję podejmuje {{fakt:jednostka.zgodnosc}}; termin na decyzję, liczony w dniach roboczych, wynosi {{fakt:termin.otwarcie.decyzja-zgodnosci}}."
+      - akapit: "Jeżeli Bank nie może zastosować któregokolwiek ze środków bezpieczeństwa finansowego, nie nawiązuje stosunków gospodarczych i nie otwiera rachunku; w takim przypadku {rozważa się|analizuje się} także, czy zachodzą przesłanki do zawiadomienia GIIF, o czym decyduje wyłącznie {{fakt:jednostka.zgodnosc}}. Pracownik nie informuje klienta o skierowaniu zawiadomienia."
+
+  - id: otwarcie-kroki-umowa
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa
+    elementy:
+      - akapit: "Umowę o rachunek osobisty zawiera się {w formie pisemnej|na piśmie} albo w postaci elektronicznej na trwałym nośniku. Klient, który zawarł umowę na odległość, może od niej odstąpić w terminie {{fakt:termin.odstapienie-od-umowy}} bez podania przyczyny."
+      - kroki:
+          - tekst: "{Przygotuj|Wygeneruj} umowę w systemie {{fakt:system.otwarcie.cbs}}."
+            podkroki:
+              - tekst: "Wygeneruj umowę na podstawie zatwierdzonego wniosku; nie edytuj ręcznie treści standardowych postanowień."
+              - tekst: "Sprawdź, czy dane klienta, wybrany pakiet i sposób dostarczania wyciągów są zgodne z wnioskiem."
+          - tekst: "Przekaż klientowi umowę i dokumenty towarzyszące na trwałym nośniku i zapewnij mu czas na zapoznanie się z nimi."
+            podkroki:
+              - tekst: "{Wyjaśnij|Objaśnij} postanowienia, o które pyta klient, w szczególności opłaty, oprocentowanie i zasady dysponowania rachunkiem."
+              - tekst: "Nie zachęcaj do pośpiechu i nie uzależniaj podpisania umowy od zakupu innych produktów."
+          - tekst: "{Zbierz podpisy|Uzyskaj podpisy}."
+            podkroki:
+              - tekst: "W placówce klient podpisuje umowę odręcznie albo na tablecie podpisowym w obecności pracownika."
+              - tekst: "Na odległość klient akceptuje umowę w bankowości elektronicznej po uwierzytelnieniu kodem jednorazowym wysłanym na zweryfikowany numer telefonu."
+              - tekst: "Pracownik sprawdza, czy podpis jest zgodny z wzorem z dokumentu tożsamości."
+          - tekst: "Zatwierdź zawarcie umowy w systemie i zleć uruchomienie rachunku."
+            podkroki:
+              - tekst: "Przy ryzyku średnim lub wysokim upewnij się, że w systemie znajduje się wymagana decyzja o otwarciu rachunku."
+              - tekst: "Zleć komórce „{{fakt:jednostka.operacje}}” nadanie numeru rachunku; rachunek zostaje uruchomiony {{fakt:termin.otwarcie.aktywacja-rachunku}}."
+          - tekst: "Przekaż klientowi dostęp do rachunku."
+            podkroki:
+              - tekst: "Wyślij kod aktywacyjny do bankowości elektronicznej; jest ważny przez {{fakt:bankowosc.waznosc-kodu-aktywacyjnego}}."
+              - tekst: "Wydaj kartę debetową, jeżeli została zamówiona, po uprzednim potwierdzeniu tożsamości odbiorcy."
+              - tekst: "Poinformuj klienta o aplikacji {{fakt:bankowosc.nazwa-aplikacji}} i o numerze infolinii {{fakt:kontakt.infolinia}}."
+          - tekst: "{Zamknij sprawę|Zakończ sprawę}, zarchiwizuj dokumenty w archiwum {{fakt:system.otwarcie.archiwum}} i wypełnij listę kontrolną z załącznika."
