@@ -143,8 +143,8 @@ pytań; drugie uruchomienie → te same nazwy, identyczny manifest.
 
 - [X] T036 [P] [US3] Test (red) w `dltests/CleanupTests.cs` (FR-325, R9, wyjaśnienie 4): w katalogu `stary.pdf`, `STARY2.PDF`, `notatki.txt`, podkatalog `x/` z `y.pdf`, pozostałość `z.pdf.part`; 5 z 5 pobranych → usunięte `stary.pdf`, `STARY2.PDF`, `z.pdf.part`, zostają `notatki.txt`, `x/y.pdf`, `manifest.json` i 5 bieżących; `RemovedFiles` posortowane `Ordinal`; plik bieżący różniący się wielkością liter nie jest usuwany; przy jednym nieudanym adresie nic nie jest usuwane i `RemovedFiles` puste; błąd usuwania → `DownloadDirectoryException`
 - [X] T037 [US3] Implementacja (green) `dl-lib/DirectoryCleaner.cs` (internal) i wywołanie po zapisie manifestu w `dl-lib/DocumentDownloader.cs`
-- [ ] T038 [P] [US3] Test (red) w `dltests/RepeatRunTests.cs` (FR-323, SC-063): dwa uruchomienia z tą samą listą i atrapą → te same nazwy plików, ta sama liczba plików (bez kopii typu „plik (1).pdf”), identyczne treści i manifest; katalog niedający się utworzyć (ścieżka wskazująca na istniejący plik) → `DownloadDirectoryException` przed jakimkolwiek żądaniem; `manifest.json` istnieje jako katalog → `DownloadDirectoryException` (kod 4 w aplikacji)
-- [ ] T039 [US3] Implementacja (green) poprawek w `dl-lib/DocumentDownloader.cs`, jeśli T038 wykaże braki (w przeciwnym razie commit T038 jako charakteryzacja)
+- [X] T038 [P] [US3] Test (red) w `dltests/RepeatRunTests.cs` (FR-323, SC-063): dwa uruchomienia z tą samą listą i atrapą → te same nazwy plików, ta sama liczba plików (bez kopii typu „plik (1).pdf”), identyczne treści i manifest; katalog niedający się utworzyć (ścieżka wskazująca na istniejący plik) → `DownloadDirectoryException` przed jakimkolwiek żądaniem; `manifest.json` istnieje jako katalog → `DownloadDirectoryException` (kod 4 w aplikacji)
+- [X] T039 [US3] Implementacja (green) poprawek w `dl-lib/DocumentDownloader.cs`, jeśli T038 wykaże braki (w przeciwnym razie commit T038 jako charakteryzacja)
 
 ### Aplikacja
 
