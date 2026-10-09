@@ -242,7 +242,9 @@ public sealed class TableDocumentStage : IPipelineStage
 
     /// <summary>
     /// Rows joined across page boundaries: a page's first data row continues the previous row when its left cell is
-    /// empty, or when the previous row's name ends at the bottom of the frame (a name broken by the page boundary).
+    /// empty, or when the previous row's name ends at the bottom of the frame (a name broken by the page boundary). A
+    /// first data row whose name stands below lines of content, with no ruling between them, is split at the name: the
+    /// lines above continue the previous row.
     /// </summary>
     private static List<LogicalRow> LogicalRows(List<PageFrame> region, HashSet<FrameRow> headers)
     {
@@ -250,11 +252,19 @@ public sealed class TableDocumentStage : IPipelineStage
         foreach (PageFrame frame in region)
         {
             bool first = true;
-            foreach (FrameRow row in frame.Rows.Where(r => r.Lines.Count > 0 && !headers.Contains(r)))
+            foreach (FrameRow candidate in frame.Rows.Where(r => r.Lines.Count > 0 && !headers.Contains(r)).ToList())
             {
+                FrameRow row = candidate;
                 FrameRow? previous = rows.Count > 0 ? rows[^1].Parts[^1] : null;
-                if (first && previous is not null && previous.Frame != frame
-                    && (row.LeftWords.Count == 0 || NameReachesFrameBottom(previous)))
+                bool continues = first && previous is not null && previous.Frame != frame;
+                if (continues && row.LeftWords.Count > 0 && !NameReachesFrameBottom(previous!) && SplitAtName(row) is { } split)
+                {
+                    rows[^1].Parts.Add(split.Above);
+                    row = split.Below;
+                    continues = false;
+                }
+
+                if (continues && (row.LeftWords.Count == 0 || NameReachesFrameBottom(previous!)))
                 {
                     rows[^1].Parts.Add(row);
                 }
@@ -268,6 +278,31 @@ public sealed class TableDocumentStage : IPipelineStage
         }
 
         return rows;
+    }
+
+    /// <summary>
+    /// Splits a row whose name starts below lines with content only (a row continued from the previous page that is not
+    /// ruled off from the next one) into the lines above the name and the rest; null when no line lies above the name.
+    /// </summary>
+    private static (FrameRow Above, FrameRow Below)? SplitAtName(FrameRow row)
+    {
+        double nameTop = row.LeftWords.Min(w => w.Box.Top);
+        List<LayoutLine> above = row.Lines
+            .Where(l => l.Box.CenterY < nameTop && l.Words.All(w => w.Box.CenterX >= row.Frame.Divider))
+            .ToList();
+        if (above.Count == 0)
+        {
+            return null;
+        }
+
+        var upper = new FrameRow(row.Frame, row.Top, nameTop);
+        var lower = new FrameRow(row.Frame, nameTop, row.Bottom);
+        upper.Lines.AddRange(above);
+        lower.Lines.AddRange(row.Lines.Where(l => !above.Contains(l)));
+        int index = row.Frame.Rows.IndexOf(row);
+        row.Frame.Rows[index] = lower;
+        row.Frame.Rows.Insert(index, upper);
+        return (upper, lower);
     }
 
     /// <summary>True when the row is the last of its page and its name's last line lies within 1.5 line heights of the frame bottom.</summary>

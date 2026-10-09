@@ -204,7 +204,9 @@ przez kolumny i strony, znaczniki przypisów), kod formularza w wersalikach (T08
 z siatką (T089e), postrzępiona lewa kolumna (T089f–T089i), „§ 99.” w zawiniętym zdaniu (T086),
 jednostki w otwartym cytacie „…” nie są nagłówkami (T089j: cytowane artykuły innej ustawy w
 obwieszczeniu `dz-u-2019-1781` i w przepisach przejściowych), dwukolumnowa tabela z siatką sama na
-stronie (T089k). Prywatny korpus właściciela bez zmian.
+stronie (T089k), tabela-dokument (T089m–T089o, po zgłoszeniu właściciela na REG-05): nazwa sekcji przy
+własnej treści także bez linii siatki, „§ N.” jako `###` pod nazwą sekcji, tabela z siatką w komórce jako
+GFM. Prywatny korpus właściciela bez zmian.
 
 **Rozbudowa (US5, T089l)**: ≈ 620 nowych bloków opcjonalnych procedur — każdy szablon procedury
 sięga 52–55 stron, więc przykład z `corpus/README.md` (15 procedur po 40–50 stron,
@@ -226,7 +228,6 @@ jednego typu bez pary sprzecznej między typami, goldeny parsera z LF na Windows
 
 1. **Goldeny „cytaty”** — jw.
 2. **Obwieszczenie o ochronie danych** — rozwiązane poprawką „cytaty” (wyżej).
-3. **Regulaminy „tabela-dokument”** (REG-01, REG-05): ich wewnętrzne tabele nie są tabelami GFM
-   (układ zapisywany wg FR-080 jako sekcje); metryka tabel ich nie wymaga — do potwierdzenia.
+3. **Regulaminy „tabela-dokument”** — rozwiązane (T089o): tabele z siatką w komórce są tabelami GFM.
 4. **T097**: zmiany między wersjami realizują nadpisania faktów (historia `wartosci` i `alternatywy`);
    warianty bloków „po zmianie” nie zostały zaimplementowane.

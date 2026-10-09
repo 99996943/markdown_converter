@@ -565,6 +565,21 @@ public sealed class HeadingDetectionStageTests
     }
 
     [Fact]
+    public void UnitsInATableDocument_AreOneLevelBelowTheSectionNames()
+    {
+        PipelineContext context = RunWithTableDocument(
+            2,
+            100,
+            null,
+            Page().Text("Regulamin promocji", size: 16, bold: true).Paragraph(),
+            Page(2).Gap().Gap().Gap().Gap().Gap().Gap().Gap().Gap()
+                .Text("§ 1.", bold: true).Gap().Text("1. Organizatorem promocji jest Bank.").Paragraph()
+                .Gap().Text("§ 2.", bold: true).Gap().Text("1. Promocja trwa do końca roku.").Paragraph());
+
+        Assert.Equal([("Regulamin promocji", 1), ("§ 1.", 3), ("§ 2.", 3)], Headings(context).Select(h => (h.Text, h.Level)));
+    }
+
+    [Fact]
     public void WithoutATableDocument_TheSameLinesAreHeadings()
     {
         PipelineContext context = Run(

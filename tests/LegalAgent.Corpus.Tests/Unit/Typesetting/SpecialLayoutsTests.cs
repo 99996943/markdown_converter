@@ -112,7 +112,7 @@ public sealed class SpecialLayoutsTests
     }
 
     [Fact]
-    public void TableDocument_PrintsSectionNamesWithoutChapterLabelsAndNoUnitLabels()
+    public void TableDocument_PrintsSectionNamesWithoutChapterLabelsAndUnitLabelsAsBoldLinesInTheCell()
     {
         LayoutStyle style = Style(s => s with { TableDocument = true });
         Element[] elements =
@@ -121,19 +121,35 @@ public sealed class SpecialLayoutsTests
             new HeadingElement(3, "§ 1.", []) { Unit = "§ 1" },
             P("Promocję organizuje Bank Przykładowy S.A."),
             new HeadingElement(2, "Rozdział 2", T("Uczestnik promocji")),
-            new HeadingElement(3, "§ 2.", []),
+            new HeadingElement(3, "§ 2.", T("Kto może uczestniczyć")),
             P("W promocji mogą uczestniczyć konsumenci."),
         ];
 
         TypesetResult result = Typesetter.Typeset(Doc(elements), style);
 
-        string text = string.Join(' ', PageWords(result.Pdf).SelectMany(p => p).Select(w => w.Text));
-        Assert.DoesNotContain("Rozdział", text, StringComparison.Ordinal);
-        Assert.DoesNotContain("§", text, StringComparison.Ordinal);
+        List<Word> words = PageWords(result.Pdf).SelectMany(p => p).ToList();
+        Assert.DoesNotContain(words, w => w.Text == "Rozdział");
+
+        // „§ N.” stands in the right cell as a bold line of its own, so a citation of the paragraph finds its text.
+        Word unit = words.First(w => w.Text == "§");
+        Assert.True(IsBold(unit));
+        Assert.InRange(X(unit), 182, 200);
+        Assert.Equal(Baseline(unit), Baseline(words.First(w => w.Text == "1.")), 1);
+        Assert.True(Baseline(words.First(w => w.Text == "Promocję")) > Baseline(unit) + 1);
+        Assert.Contains(words, w => w.Text == "Kto" && IsBold(w) && Math.Abs(Baseline(w) - Baseline(words.Last(u => u.Text == "§"))) < 1);
+
+        // A unit in a table-document is a heading below its section name (FR-087).
         Assert.Equal(
-            [new TruthHeading(2, null, "Organizator promocji"), new TruthHeading(2, null, "Uczestnik promocji")],
+            [
+                new TruthHeading(2, null, "Organizator promocji"),
+                new TruthHeading(3, "§ 1.", string.Empty),
+                new TruthHeading(2, null, "Uczestnik promocji"),
+                new TruthHeading(3, "§ 2.", "Kto może uczestniczyć"),
+            ],
             result.Truth.Headings.Skip(1));
         Assert.DoesNotContain("Rozdział", result.Truth.Words);
+        Assert.Equal(["§", "1.", "Promocję"], result.Truth.Words.SkipWhile(w => w != "§").Take(3));
+        Assert.Equal(["§", "2.", "Kto", "może", "uczestniczyć", "W"], result.Truth.Words.Skip(result.Truth.Words.ToList().LastIndexOf("§")).Take(6));
     }
 
     [Fact]
@@ -149,6 +165,32 @@ public sealed class SpecialLayoutsTests
         List<Word> page2 = PageWords(result.Pdf)[1];
         Assert.DoesNotContain(page2, w => X(w) < 175 && Baseline(w) > 100 && Baseline(w) < style.FooterBaseline - 1);
         Assert.Contains(page2, w => w.Text == "Akapit");
+    }
+
+    [Fact]
+    public void TableDocument_RowAfterAContinuedRow_IsRuledOffAndNamedBesideItsOwnContent()
+    {
+        LayoutStyle style = Style(s => s with { TableDocument = true });
+        var elements = new List<Element> { new HeadingElement(2, null, T("Korzyści promocji")) };
+        elements.AddRange(Paragraphs(20));
+        elements.Add(new HeadingElement(2, null, T("Reklamacje")));
+        elements.Add(P("Skargę można złożyć w placówce Banku."));
+
+        TypesetResult result = Typesetter.Typeset(Doc(elements), style);
+
+        List<List<Word>> pages = PageWords(result.Pdf);
+        int index = pages.FindIndex(p => p.Any(w => w.Text == "Reklamacje"));
+        List<Word> page = pages[index];
+        Word name = page.First(w => w.Text == "Reklamacje");
+        Word content = page.First(w => w.Text == "Skargę");
+        double continuationBottom = page.Where(w => w.Text == "Akapit").Max(Baseline);
+
+        // The page starts with the continued row; the new row is named on the baseline of its first content line,
+        // below a ruling that closes the continued row.
+        Assert.True(continuationBottom < Baseline(content));
+        Assert.Equal(Baseline(content), Baseline(name), 1);
+        Assert.Contains(Lines(result.Pdf, index + 1), l => l.GetBoundingRectangle() is { } r
+            && Math.Abs(r.Right - 181) < 1.5 && r.Height < 1 && 842 - r.Top > continuationBottom && 842 - r.Top < Baseline(name));
     }
 
     // ------------------------------------------------------------------ step scheme (FR-067)

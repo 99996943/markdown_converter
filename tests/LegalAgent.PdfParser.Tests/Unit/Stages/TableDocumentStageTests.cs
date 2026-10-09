@@ -219,6 +219,22 @@ public sealed class TableDocumentStageTests
         Assert.Equal(2, context.TableDocuments[0].SectionCount);
     }
 
+    [Fact]
+    public void NameBelowContinuedContentWithoutARuling_StartsItsSectionAtItsOwnLine()
+    {
+        // A page starts with the continuation of the previous section and the next name stands lower, on the baseline of
+        // its first content line, with no ruling between them: the content above the name continues the previous section.
+        PipelineContext context = Run(new TableSheet()
+            .Page().Row("Organizator promocji", 48, bullet: true)
+            .Page().Row(null, 24, ruled: false).Row("Ważne pojęcia", 48).Row("Korzyści promocji", 48));
+
+        Assert.Equal(["Organizator promocji", "Ważne pojęcia", "Korzyści promocji"], HeadingTexts(context));
+        string kinds = string.Concat(context.Pages[1].Lines.Select(l =>
+            l.Role == LineRole.Artifact ? 'H' : l.Heading is not null ? 'N' : 'C'));
+        Assert.Equal("HCCCNCCCCCCNCCCCCC", kinds);
+        Assert.Equal(3, context.TableDocuments[0].SectionCount);
+    }
+
     // ---------------------------------------------------------------- order and content column (R7)
 
     [Fact]
