@@ -164,7 +164,7 @@ public sealed class ProgramTests : IDisposable
         Assert.Contains("numer karty", err, StringComparison.Ordinal);
     }
 
-    [Fact(Skip = "CheckTemplateAsync in progress")]
+    [Fact]
     public void Check_PrintsReportHeader()
     {
         var (_, output, err) = Invoke("check", "--template", "regulamin-karty", "--pages", "1-3", "--content", Path.Combine(baseDirectory, "zrodla"));

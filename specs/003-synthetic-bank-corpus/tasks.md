@@ -111,7 +111,7 @@ z PDF, Markdown i manifestem; drugie uruchomienie nie zmienia bajtów.
 - [X] T030 [P] [US1] Testy w `ctests/Unit/Typesetting/PageFitterTests.cs` (red): dobór bloków opcjonalnych trafia w `TargetPages` z tolerancją zakresu; za mało bloków → `CorpusGenerationException` „nieosiągalny zakres stron” z dokumentem i szablonem; maks. 8 iteracji; wynik deterministyczny
 - [X] T031 [P] [US1] Testy w `ctests/Unit/Manifest/ManifestWriterTests.cs` (red): JSON wg contracts/manifest.md — `schemaVersion` 1, `run` (seed, referenceDate, parameters, parserVersion, generatorVersion, contentHash, bez znacznika czasu), wpisy z polami wspólnymi (`id`, `type`, `title`, `designation`, `version`, `validFrom`, `validTo`, `status`, `pdf`, `markdown`, `pages`, `template`, `layout`, `seed`, `sharedWordShare`), stała kolejność kluczy, pomijane `null`, kolejność wpisów: akty, regulaminy, taryfy, procedury, zatrute (ordinal id); wcięcie 2 spacje; brak ról/uprawnień
 - [X] T032 [P] [US1] Testy w `ctests/Unit/CorpusGeneratorTests.cs` (red, `zrodla-mini`, katalog tymczasowy, 2 dokumenty na typ, 2–3 strony): `Generate` zapisuje PDF+MD w `regulaminy/`, `taryfy/`, `procedury/` wg contracts/corpus-layout.md i `manifest.json`; drugi `Generate` → identyczne bajty wszystkich plików; `Verify` po `Generate` → brak różnic; zmiana jednego bajtu MD → `Verify` zgłasza plik; Markdown = wynik `PdfMarkdownConverter.CreateDefault()` z `SourceId` = ścieżka względna; konwersja niekompletna → błąd (kod 5)
-- [ ] T033 [P] [US1] Testy w `ctests/Cli/ProgramTests.cs` (red): `generate --params <plik> --out <tmp>` → kod 0; `--help`, `--version`; błędny parametr → kod 2 i komunikat po polsku na stderr; błąd w YAML → kod 2 z plikiem; nieosiągalny zakres stron → kod 3; nazwa zabroniona → kod 4; `verify` z różnicą → kod 1 (contracts/cli.md „Kody wyjścia”)
+- [X] T033 [P] [US1] Testy w `ctests/Cli/ProgramTests.cs` (red): `generate --params <plik> --out <tmp>` → kod 0; `--help`, `--version`; błędny parametr → kod 2 i komunikat po polsku na stderr; błąd w YAML → kod 2 z plikiem; nieosiągalny zakres stron → kod 3; nazwa zabroniona → kod 4; `verify` z różnicą → kod 1 (contracts/cli.md „Kody wyjścia”)
 
 ### Implementation for User Story 1
 
@@ -121,7 +121,7 @@ z PDF, Markdown i manifestem; drugie uruchomienie nie zmienia bajtów.
 - [X] T037 [US1] Zaimplementuj `corpus-lib/Typesetting/PageFitter.cs` — T030 green
 - [X] T038 [US1] Zaimplementuj `corpus-lib/Manifest/{Manifest,ManifestWriter}.cs` (pola wspólne; `changes`/`contradictions`/`poison`/`source` jako puste typy na później) — T031 green
 - [X] T039 [US1] Zaimplementuj `corpus-lib/Conversion/MarkdownRefresher.cs` (R13) i fasadę `corpus-lib/CorpusGenerator.cs` (`Generate`, `Verify`; konwersja z `RunParameters.ParserOptions`; składanie dokumentów równolegle z deterministycznym porządkiem wyniku) — T032 green
-- [ ] T040 [US1] Zaimplementuj `src/LegalAgent.Corpus.Cli/Program.cs` (polecenia `generate`, `verify`, opcje `--params`, `--out`, `--content`, `--seed`, `--truth`; kody wyjścia 0–6) — T033 green
+- [X] T040 [US1] Zaimplementuj `src/LegalAgent.Corpus.Cli/Program.cs` (polecenia `generate`, `verify`, opcje `--params`, `--out`, `--content`, `--seed`, `--truth`; kody wyjścia 0–6) — T033 green
 
 ### Treść korpusu bazowego (US1)
 
