@@ -44,13 +44,15 @@ public static class Typesetter
     {
         var w = new PageWriter(style, document.Front, document.Footnotes, totalPages);
         FrontPages(w, document.Front);
-        w.StartColumns(style.Columns);
+        TableDocumentLayout? tableDocument = style.TableDocument ? new TableDocumentLayout(w) : null;
+        w.StartColumns(tableDocument is null ? style.Columns : 1);
         foreach (Element element in document.Elements)
         {
             w.Begin(element);
-            Element(w, element);
+            Element(w, element, tableDocument);
         }
 
+        tableDocument?.FlushNames();
         w.Finish();
         return w;
     }
@@ -114,7 +116,7 @@ public static class Typesetter
 
     private static string Number(int value) => value.ToString(System.Globalization.CultureInfo.InvariantCulture);
 
-    private static void Element(PageWriter w, Element element)
+    private static void Element(PageWriter w, Element element, TableDocumentLayout? tableDocument)
     {
         // Items of one list are close together; anything else after a list keeps a paragraph gap from it.
         if (w.AfterListItem && element is not ListItemElement)
@@ -125,6 +127,13 @@ public static class Typesetter
         w.AfterListItem = false;
         switch (element)
         {
+            case HeadingElement { Level: <= 2 } h when tableDocument is not null:
+                tableDocument.Section(h);
+                break;
+            case HeadingElement h when tableDocument is not null:
+                // Inside a table-document cell a subheading is a bold paragraph (the parser keeps it as such).
+                Paragraph(w, [new Inline(string.Join(' ', new[] { h.Label, Inline.PlainText(h.Text) }.Where(t => !string.IsNullOrEmpty(t))), InlineStyle.Bold)]);
+                break;
             case HeadingElement h:
                 Heading(w, h);
                 break;
@@ -139,6 +148,15 @@ public static class Typesetter
                 break;
             case KeyValueTableElement kv:
                 TableLayout.KeyValue(w, kv);
+                break;
+            case StepSchemeElement scheme:
+                StepSchemeLayout.Scheme(w, scheme);
+                break;
+            case ChecklistElement list:
+                ChecklistLayout.Checklist(w, list);
+                break;
+            case CalloutElement callout:
+                ChecklistLayout.Callout(w, callout);
                 break;
             case PageBreakElement:
                 if (!(w.AtTopOfColumn && w.Column == 0))

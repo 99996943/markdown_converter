@@ -57,9 +57,21 @@ internal sealed class PageWriter
     /// <summary>Whether the last element drawn was a list item.</summary>
     public bool AfterListItem { get; set; }
 
-    public double ColumnWidth => (_style.Right - _style.Left - (_style.ColumnGap * (Columns - 1))) / Columns;
+    public double ColumnWidth => BodyOverride is { } o ? o.Width : (_style.Right - _style.Left - (_style.ColumnGap * (Columns - 1))) / Columns;
 
-    public double ColumnLeft => _style.Left + (Column * (ColumnWidth + _style.ColumnGap));
+    public double ColumnLeft => BodyOverride is { } o ? o.Left : _style.Left + (Column * (ColumnWidth + _style.ColumnGap));
+
+    /// <summary>Text area replacing the style's columns (the right cell of a table-document).</summary>
+    public (double Left, double Width)? BodyOverride { get; set; }
+
+    /// <summary>Called right after a new page has started (the body position can be moved).</summary>
+    public Action? PageStarting { get; set; }
+
+    /// <summary>Called when a page ends, before footnotes and running header/footer are drawn.</summary>
+    public Action? PageEnding { get; set; }
+
+    /// <summary>Called with the baseline of every body line placed by <see cref="Place"/>.</summary>
+    public Action<double>? LinePlaced { get; set; }
 
     /// <summary>Number of columns of the current page region (1 above the columns, e.g. the title).</summary>
     public int Columns { get; private set; } = 1;
@@ -87,6 +99,7 @@ internal sealed class PageWriter
         _maxYOfPreviousColumns = 0;
         Y = _style.Top;
         _columnTop = Y;
+        PageStarting?.Invoke();
     }
 
     /// <summary>Switches to <paramref name="columns"/> columns starting at the current position.</summary>
@@ -156,6 +169,7 @@ internal sealed class PageWriter
                 Y += leading;
                 _pageHasContent = true;
                 Track();
+                LinePlaced?.Invoke(y);
                 return y;
             }
 
@@ -250,6 +264,7 @@ internal sealed class PageWriter
 
     private void EndPage()
     {
+        PageEnding?.Invoke();
         DrawFootnotes();
         if (_marginsOnPage)
         {
