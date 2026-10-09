@@ -42,7 +42,7 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
             }
 
             (long size, string sha256) = await WritePartAsync(response.Content, part, token).ConfigureAwait(false);
-            File.Move(part, target, overwrite: true);
+            WriteGuard(() => File.Move(part, target, overwrite: true));
 
             return new DownloadResult
             {
@@ -71,11 +71,56 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                 $"nie można połączyć się z serwerem {item.Address.Host}",
                 Detail: e.Message));
         }
+        catch (IOException e)
+        {
+            // Write errors are already WriteFailed; an I/O error here comes from the response body.
+            return Failed(item, new DownloadError(
+                DownloadErrorKind.Connection,
+                $"połączenie z serwerem {item.Address.Host} zostało przerwane podczas pobierania",
+                Detail: e.Message));
+        }
         finally
         {
-            File.Delete(part);
+            DeletePart(part);
         }
     }
+
+    private static void DeletePart(string part)
+    {
+        try
+        {
+            if (File.Exists(part))
+            {
+                File.Delete(part);
+            }
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            // A leftover is overwritten by the next run and removed by the cleanup (research R9).
+        }
+    }
+
+    /// <summary>Runs a file-system operation, turning its errors into <see cref="DownloadErrorKind.WriteFailed"/>.</summary>
+    private static T WriteGuard<T>(Func<T> write)
+    {
+        try
+        {
+            return write();
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            throw WriteFailed(e);
+        }
+    }
+
+    private static void WriteGuard(Action write) => WriteGuard(() =>
+    {
+        write();
+        return true;
+    });
+
+    private static DownloadFailureException WriteFailed(Exception e) =>
+        new(new DownloadError(DownloadErrorKind.WriteFailed, "nie można zapisać pliku w katalogu pobrań", Detail: e.Message));
 
     /// <summary>Message for an elapsed time limit (pl-PL number format).</summary>
     internal static string TimeoutMessage(TimeSpan timeout) =>
@@ -187,7 +232,7 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                 throw new DownloadFailureException(new DownloadError(DownloadErrorKind.NotPdf, "pod adresem nie ma pliku PDF"));
             }
 
-            var file = new FileStream(part, FileMode.Create, FileAccess.Write, FileShare.None, BufferSize, useAsync: true);
+            FileStream file = WriteGuard(() => new FileStream(part, FileMode.Create, FileAccess.Write, FileShare.None, BufferSize, useAsync: true));
             await using (file.ConfigureAwait(false))
             {
                 long size = 0;
@@ -201,7 +246,15 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                     }
 
                     hash.AppendData(buffer, 0, read);
-                    await file.WriteAsync(buffer.AsMemory(0, read), cancellationToken).ConfigureAwait(false);
+                    try
+                    {
+                        await file.WriteAsync(buffer.AsMemory(0, read), cancellationToken).ConfigureAwait(false);
+                    }
+                    catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+                    {
+                        throw WriteFailed(e);
+                    }
+
                     read = await body.ReadAsync(buffer, cancellationToken).ConfigureAwait(false);
                 }
 
