@@ -273,9 +273,21 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
 
         double middle = (gutter.Start + gutter.End) / 2;
+        static string TableOf(LayoutLine line) => line.Annotations.TryGetValue(LayoutAnnotations.TableIndex, out string? index) ? index : string.Empty;
+        Dictionary<string, (double Top, double Bottom)> tableSpans = page.Lines
+            .Where(l => l.Role == LineRole.Table)
+            .GroupBy(TableOf)
+            .ToDictionary(g => g.Key, g => (g.Min(l => l.Box.Top), g.Max(l => l.Box.Bottom)), StringComparer.Ordinal);
         foreach (LayoutLine line in page.Lines)
         {
-            if (!IsFlowText(line) || PiecesOf(line).Any(p => p.Left < middle && p.Right > middle))
+            // A table inside one column beside text of the other column (FR-031) is read in its column; other non-flow
+            // lines, and a table between the column blocks, stand between the columns.
+            bool columnTable = line.Role == LineRole.Table && tableSpans.TryGetValue(TableOf(line), out (double Top, double Bottom) span)
+                && (line.Box.Right <= middle || line.Box.Left >= middle)
+                && page.Lines.Any(o => IsFlowText(o)
+                    && (line.Box.Right <= middle ? o.Box.Left >= middle : o.Box.Right <= middle)
+                    && o.Baseline > span.Top && o.Baseline < span.Bottom);
+            if ((!IsFlowText(line) && !columnTable) || PiecesOf(line).Any(p => p.Left < middle && p.Right > middle))
             {
                 Flush();
                 ordered.Add(line);

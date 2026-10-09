@@ -92,15 +92,65 @@ public sealed class TableDetectionStage : IPipelineStage
 
     private static List<Table> FindTables(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
     {
+        (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
+        if (gutter is not { } g)
+        {
+            return FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
+        }
+
+        // FR-031: on a page in columns a table lies inside one column, beside lines of the other column that share its
+        // baselines — lines are split at the gutter and each column is searched with its own rulings; lines across the
+        // gutter (a table over the full width) are searched as before.
+        double middle = (g.Start + g.End) / 2;
+        SplitAtGutter(page, middle);
+        bool InLeft(LayoutLine l) => l.Box.Right <= middle;
+        bool InRight(LayoutLine l) => l.Box.Left >= middle;
+        List<Table> tables =
+        [
+            .. FindTables(context, page, InLeft, page.Rulings.Where(r => Math.Max(r.X1, r.X2) <= middle).ToList(), null, hyphenationExceptions),
+            .. FindTables(context, page, InRight, page.Rulings.Where(r => Math.Min(r.X1, r.X2) >= middle).ToList(), null, hyphenationExceptions),
+        ];
+        var taken = new HashSet<LayoutLine>(tables.SelectMany(t => t.Lines), ReferenceEqualityComparer.Instance);
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && !InLeft(l) && !InRight(l), [.. page.Rulings], gutter, hyphenationExceptions));
+        return tables;
+    }
+
+    /// <summary>A merged line with segments on both sides of the gutter (none across it) becomes one line per column.</summary>
+    private static void SplitAtGutter(LayoutPage page, double middle)
+    {
+        for (int i = 0; i < page.Lines.Count; i++)
+        {
+            LayoutLine line = page.Lines[i];
+            List<LineSegment> left = line.Segments.Where(s => s.Box.Right <= middle).ToList();
+            List<LineSegment> right = line.Segments.Where(s => s.Box.Left >= middle).ToList();
+            if (line.Role != LineRole.Unknown || left.Count == 0 || right.Count == 0 || left.Count + right.Count != line.Segments.Count)
+            {
+                continue;
+            }
+
+            page.Lines[i] = LineSlicer.Slice(line, left.SelectMany(s => s.Words).ToList());
+            page.Lines.Insert(i + 1, LineSlicer.Slice(line, right.SelectMany(s => s.Words).ToList()));
+            i++;
+        }
+    }
+
+    private static List<Table> FindTables(
+        PipelineContext context,
+        LayoutPage page,
+        Func<LayoutLine, bool> inScope,
+        IReadOnlyList<Segment> rulings,
+        (double Start, double End)? gutter,
+        string[] hyphenationExceptions)
+    {
         TableOptions options = context.Options.Tables;
         double tolerance = options.ColumnTolerance * page.Width;
         double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * page.Width;
         List<Row> flow = page.Lines
             .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex))
+            .Where(inScope)
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();
 
-        (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
         var tables = new List<Table>();
         int start = 0;
         int free = 0;
@@ -113,7 +163,7 @@ public sealed class TableDetectionStage : IPipelineStage
             }
 
             List<Row> region = GrowRegion(context, flow, start);
-            Table? table = Build(context, page, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
+            Table? table = Build(context, page, rulings, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
             if (table is null)
             {
                 start++;
@@ -219,6 +269,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
     /// <param name="context">Pipeline context.</param>
     /// <param name="page">The page.</param>
+    /// <param name="pageRulings">Rulings of the page (of the column searched).</param>
     /// <param name="candidate">Lines from the seed on, as grown by <see cref="GrowRegion"/>.</param>
     /// <param name="above">Free body lines above the seed (not taken by an earlier table), top to bottom.</param>
     /// <param name="gutter">Column gutter of the page (FR-031), if any.</param>
@@ -227,6 +278,7 @@ public sealed class TableDetectionStage : IPipelineStage
     private static Table? Build(
         PipelineContext context,
         LayoutPage page,
+        IReadOnlyList<Segment> pageRulings,
         List<Row> candidate,
         List<Row> above,
         (double Start, double End)? gutter,
@@ -234,9 +286,9 @@ public sealed class TableDetectionStage : IPipelineStage
         string[] exceptions)
     {
         TableOptions options = context.Options.Tables;
-        IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
+        IEnumerable<Segment> rulings = options.UseRulingLines ? pageRulings : [];
         var grid = new Grid(rulings, candidate);
-        List<Row> region = CutAtGridGap(TrimTrailingLines(CutAtRunningText(candidate, page, context), options, grid, tolerance), grid);
+        List<Row> region = CutAtGridGap(TrimTrailingLines(CutAtRunningText(candidate, page, pageRulings, context), options, grid, tolerance), grid);
 
         // Lines above the top border of a ruled grid are not part of it (numbered paragraphs introducing the table):
         // the seed moves on until it reaches the grid, and these lines stay running text.
@@ -499,9 +551,9 @@ public sealed class TableDetectionStage : IPipelineStage
     /// A gridless table ends before a single-cell line that starts at the table's left edge and runs across into its
     /// second column: a note under the table, the next section heading or a paragraph — running text, not a row.
     /// </summary>
-    private static List<Row> CutAtRunningText(List<Row> region, LayoutPage page, PipelineContext context)
+    private static List<Row> CutAtRunningText(List<Row> region, LayoutPage page, IReadOnlyList<Segment> rulings, PipelineContext context)
     {
-        if (page.Rulings.Any(r => r.IsVertical))
+        if (rulings.Any(r => r.IsVertical))
         {
             return region;
         }
