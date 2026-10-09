@@ -203,12 +203,9 @@ Poniższe pozycje dotyczą wpłat i wypłat gotówkowych w szczególnych trybach
 | 118. | Wpłata gotówki w walucie obcej na rachunek przedsiębiorcy z tytułu dewizowego utargu | od kwoty wpłaty | 0,25% kwoty, min. 10,00 zł |
 | 119. | Wpłata i wypłata gotówki w tej samej walucie tego samego dnia (tzw. rozmiana walutowa) | od kwoty operacji | 2,5% kwoty, min. 5,00 zł |
 | 120. | Przeliczenie wpłaty walutowej niezgodnej z deklaracją klienta | za operację | bez opłat |
+| 121. | Złożenie oświadczenia o pochodzeniu środków przy wpłacie dewizowej | za oświadczenie | bez opłat |
 
 <!-- page: 11 -->
-121\. Złożenie oświadczenia o pochodzeniu środków za oświadczenie bez opłat
-
-przy wpłacie dewizowej
-
 ## V. Wymiana i liczenie wartości pieniężnych
 
 Wymiana nominałów, przeliczanie wartości pieniężnych i przyjmowanie uszkodzonych znaków pieniężnych odbywają się w kasach wybranych placówek Banku. Bank przyjmuje do wymiany wyłącznie banknoty i monety polskie oraz wymienialne waluty obce wskazane w Tabeli kursów walut. Znaki pieniężne uszkodzone w stopniu uniemożliwiającym ich przyjęcie w kasie Bank kieruje do wymiany w Narodowym Banku Polskim; opłata obejmuje wówczas koszt czynności pośredniczących.

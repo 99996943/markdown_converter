@@ -197,9 +197,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Bank może obniżyć limit lub wstrzymać wykonanie dyspozycji, o ile uzna to za konieczne ze względu na bezpieczeństwo środków, ryzyko nadużycia lub nietypowy charakter transakcji. Obniżenie limitu następuje po poinformowaniu Posiadacza w sposób uzgodniony w umowie.
 - 3\. Dyspozycja przekraczająca limit wymaga potwierdzenia w formie pisemnej albo odrębnej autoryzacji osoby uprawnionej do reprezentacji w trybie ustalonym przez Bank. Bank informuje o sposobie potwierdzenia przy odmowie wykonania dyspozycji.
 
-## Rozdział 6. Przelewy, w tym podzielona płatność i przelewy do urzędu
-
-**skarbowego**
+## Rozdział 6. Przelewy, w tym podzielona płatność i przelewy do urzędu skarbowego
 
 ### § 21.
 
