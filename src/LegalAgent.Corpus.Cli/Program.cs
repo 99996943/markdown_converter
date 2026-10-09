@@ -14,6 +14,7 @@ public static class Program
         """
         Użycie:
           legalagent-corpus generate [opcje]
+          legalagent-corpus refresh [--params <plik>] [--out <katalog>]
           legalagent-corpus verify [opcje]
           legalagent-corpus check --template <id> [--out <katalog>] [--pages <min>-<max>]
                                   [--content <katalog>] [--params <plik>]
@@ -21,10 +22,12 @@ public static class Program
 
         Polecenia:
           generate   planuje, składa PDF, konwertuje do Markdown, zapisuje manifest
+          refresh    bez składania PDF: konwertuje PDF z manifestu do Markdown, przepisuje Markdown i manifest
+                     (wersja biblioteki, liczba stron); nie wymaga katalogu źródeł treści
           verify     odtwarza korpus w pamięci i porównuje z plikami na dysku (niczego nie zapisuje)
           check      sprawdza jeden szablon (zakres stron w każdym układzie, naruszenia reguł)
 
-        Opcje (generate, verify):
+        Opcje (generate, verify; refresh: tylko --params i --out):
           --params <plik>       parametry przebiegu (domyślnie corpus/przebieg.json, jeśli istnieje)
           --out <katalog>       katalog wyjściowy korpusu
           --content <katalog>   katalog źródeł treści
@@ -79,6 +82,8 @@ public static class Program
                     return 0;
                 case "generate":
                     return RunCorpus(args[1..], generate: true, stdout, stderr, baseDirectory);
+                case "refresh":
+                    return RunRefresh(args[1..], stdout, baseDirectory);
                 case "verify":
                     return RunCorpus(args[1..], generate: false, stdout, stderr, baseDirectory);
                 case "check":
@@ -182,6 +187,16 @@ public static class Program
         }
 
         stdout.WriteLine("zgodne: korpus na dysku jest identyczny z odtworzonym.");
+        return 0;
+    }
+
+    private static int RunRefresh(string[] args, TextWriter stdout, string baseDirectory)
+    {
+        Options o = Options.Parse(args, ["--params", "--out"], []);
+        RunParameters parameters = LoadParameters(o, baseDirectory);
+        var options = new CorpusGeneratorOptions { BaseDirectory = baseDirectory, Progress = new SyncProgress(stdout) };
+        RefreshResult result = CorpusGenerator.RefreshAsync(parameters, options).GetAwaiter().GetResult();
+        stdout.WriteLine(string.Create(CultureInfo.InvariantCulture, $"gotowe: przekonwertowano {result.Converted.Count} dokumentów, manifest przepisany"));
         return 0;
     }
 

@@ -42,6 +42,11 @@ public sealed record GeneratedDocument(DocumentPlan Plan, byte[] Pdf, string Mar
 /// <param name="Deleted">Stale files removed from the managed directories.</param>
 public sealed record GenerationResult(IReadOnlyList<GeneratedDocument> Documents, Manifest.Manifest Manifest, IReadOnlyList<string> Deleted);
 
+/// <summary>Result of <see cref="CorpusGenerator.RefreshAsync"/>.</summary>
+/// <param name="Manifest">The manifest written.</param>
+/// <param name="Converted">Relative paths of the PDFs converted, in manifest order.</param>
+public sealed record RefreshResult(Manifest.Manifest Manifest, IReadOnlyList<string> Converted);
+
 /// <summary>A conversion failed or was incomplete (FR-160; CLI exit code 5).</summary>
 public sealed class ConversionFailedException : Exception
 {
@@ -109,6 +114,75 @@ public static class CorpusGenerator
         CorpusWriter.Write(output, built.Files);
         IReadOnlyList<string> deleted = CorpusWriter.Cleanup(output, built.Files.Select(f => f.RelativePath), built.ManagedDirectories);
         return new GenerationResult(built.Documents, built.Manifest, deleted);
+    }
+
+    /// <summary>
+    /// Converts every PDF listed in the manifest of the output directory to Markdown again (nothing is typeset, the content
+    /// directory is not read), rewrites the Markdown files and the manifest (parser version, page counts).
+    /// </summary>
+    public static async Task<RefreshResult> RefreshAsync(RunParameters parameters, CorpusGeneratorOptions? options = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(parameters);
+        options ??= new CorpusGeneratorOptions();
+        parameters.Validate();
+        string output = Resolve(options.BaseDirectory, parameters.OutputDirectory);
+        string manifestPath = Path.Combine(output, "manifest.json");
+        if (!File.Exists(manifestPath))
+        {
+            throw new ContentException("Brak manifestu korpusu (uruchom generate): " + manifestPath) { File = "manifest.json" };
+        }
+
+        Manifest.Manifest manifest;
+        try
+        {
+            manifest = ManifestWriter.Read(await File.ReadAllTextAsync(manifestPath, cancellationToken).ConfigureAwait(false));
+        }
+        catch (Exception ex) when (ex is JsonException or KeyNotFoundException or InvalidOperationException or FormatException)
+        {
+            throw new ContentException("Nieczytelny manifest: " + ex.Message, ex) { File = "manifest.json" };
+        }
+
+        IReadOnlyList<ManifestDocument> documents = manifest.Documents;
+        var converted = new (string Markdown, int Pages)[documents.Count];
+        IPdfMarkdownConverter converter = Converter(parameters, options);
+        int done = 0;
+        await Parallel.ForEachAsync(
+            Enumerable.Range(0, documents.Count),
+            new ParallelOptions { CancellationToken = cancellationToken, MaxDegreeOfParallelism = Environment.ProcessorCount },
+            async (i, ct) =>
+            {
+                ManifestDocument entry = documents[i];
+                string pdfPath = Resolve(output, entry.Pdf);
+                if (!File.Exists(pdfPath))
+                {
+                    throw new FileNotFoundException("Brak pliku PDF z manifestu: " + pdfPath, pdfPath);
+                }
+
+                byte[] pdf = await File.ReadAllBytesAsync(pdfPath, ct).ConfigureAwait(false);
+                converted[i] = await ConvertWithPagesAsync(converter, pdf, entry.Pdf, ct).ConfigureAwait(false);
+                int n = Interlocked.Increment(ref done);
+                options.Progress?.Report($"dokument {n}/{documents.Count}: {entry.Id} ({converted[i].Pages} str.)");
+            }).ConfigureAwait(false);
+
+        // T119: acts (zrodla/akty.yaml, akty/ZRODLA.md) are added to the manifest and converted here.
+        var files = new List<CorpusFile>();
+        var entries = new List<ManifestDocument>(documents.Count);
+        for (int i = 0; i < documents.Count; i++)
+        {
+            entries.Add(documents[i] with { Pages = converted[i].Pages });
+            files.Add(new CorpusFile(documents[i].Markdown, CorpusWriter.TextBytes(converted[i].Markdown)));
+        }
+
+        var refreshed = new Manifest.Manifest(manifest.Run with { ParserVersion = ParserVersion }, entries);
+        IReadOnlyList<string> typeOrder = documents
+            .Where(d => d.Type != "akty" && !d.Id.StartsWith("ZAT-", StringComparison.Ordinal))
+            .Select(d => d.Type)
+            .Distinct(StringComparer.Ordinal)
+            .ToList();
+        string manifestText = ManifestWriter.Write(refreshed, typeOrder);
+        files.Add(new CorpusFile("manifest.json", CorpusWriter.TextBytes(manifestText)));
+        CorpusWriter.Write(output, files);
+        return new RefreshResult(ManifestWriter.Read(manifestText), documents.Select(d => d.Pdf).ToList());
     }
 
     /// <summary>Rebuilds the corpus in memory and compares it with the files on disk; writes nothing.</summary>
@@ -239,7 +313,10 @@ public static class CorpusGenerator
     internal static IPdfMarkdownConverter Converter(RunParameters parameters, CorpusGeneratorOptions options) =>
         options.Converter ?? PdfMarkdownConverter.CreateDefault(target => CopyOptions(parameters.ParserOptions, target));
 
-    internal static async Task<string> ConvertAsync(IPdfMarkdownConverter converter, byte[] pdf, string sourceId, CancellationToken cancellationToken)
+    internal static async Task<string> ConvertAsync(IPdfMarkdownConverter converter, byte[] pdf, string sourceId, CancellationToken cancellationToken) =>
+        (await ConvertWithPagesAsync(converter, pdf, sourceId, cancellationToken).ConfigureAwait(false)).Markdown;
+
+    internal static async Task<(string Markdown, int Pages)> ConvertWithPagesAsync(IPdfMarkdownConverter converter, byte[] pdf, string sourceId, CancellationToken cancellationToken)
     {
         PdfConversionResult result;
         try
@@ -257,7 +334,7 @@ public static class CorpusGenerator
             throw new ConversionFailedException($"Konwersja niekompletna: {sourceId}");
         }
 
-        return result.Markdown;
+        return (result.Markdown, result.Document.Source.PageCount);
     }
 
     private sealed record Built(IReadOnlyList<GeneratedDocument> Documents, Manifest.Manifest Manifest, IReadOnlyList<CorpusFile> Files, IReadOnlyList<string> ManagedDirectories);
