@@ -220,6 +220,21 @@ public sealed class QualityMetricsTests
     [Theory]
     [InlineData("- □ Dowód osobisty")]
     [InlineData("- Dowód osobisty")]
+    public void ChecklistBoxRenderedAsAListMarker_IsNotAMissingWord(string line)
+    {
+        DocumentTruth t = new();
+        t.Words.AddRange(["□", "Dowód", "osobisty"]);
+        t.ListItems.Add(new TruthListItem("□", 0, "Dowód osobisty"));
+
+        QualityReport r = QualityMetrics.Measure(Id, t, line + "\n");
+
+        Assert.Equal(1.0, r.WordCompleteness);
+        Assert.Equal(0, r.ExtraWords);
+    }
+
+    [Theory]
+    [InlineData("- □ Dowód osobisty")]
+    [InlineData("- Dowód osobisty")]
     [InlineData("- [ ] Dowód osobisty")]
     public void ChecklistItem_MatchesRegardlessOfTheLabel(string line)
     {
