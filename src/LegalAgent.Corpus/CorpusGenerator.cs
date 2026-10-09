@@ -33,7 +33,8 @@ public sealed class CorpusGeneratorOptions
 /// <param name="Pdf">PDF bytes.</param>
 /// <param name="Markdown">Markdown from the library.</param>
 /// <param name="Entry">Its manifest entry.</param>
-public sealed record GeneratedDocument(DocumentPlan Plan, byte[] Pdf, string Markdown, Manifest.ManifestDocument Entry);
+/// <param name="Fit">Composition and typesetting (reference truth, element pages).</param>
+public sealed record GeneratedDocument(DocumentPlan Plan, byte[] Pdf, string Markdown, Manifest.ManifestDocument Entry, FitResult Fit);
 
 /// <summary>Result of <see cref="CorpusGenerator.GenerateAsync"/>.</summary>
 /// <param name="Documents">Generated documents in manifest order.</param>
@@ -297,24 +298,8 @@ public static class CorpusGenerator
         {
             DocumentPlan doc = plans[i];
             FitResult fit = fits[i];
-            ManifestDocument entry = new(
-                doc.Id,
-                doc.Type,
-                fit.Composition.Document.Front.Title,
-                doc.Designation,
-                doc.Version,
-                doc.ValidFrom,
-                doc.ValidTo,
-                doc.Status == DocumentStatus.Obowiazujacy ? "obowiazujacy" : "nieaktualny",
-                doc.PreviousVersionId,
-                PdfPath(doc),
-                MarkdownPath(doc),
-                fit.Typeset.PageCount,
-                doc.Template,
-                doc.Layout,
-                doc.Seed,
-                Math.Round(SharedShare(fit), 3));
-            documents.Add(new GeneratedDocument(doc, fit.Typeset.Pdf, markdown[i], entry));
+            ManifestDocument entry = Entry(doc, fit);
+            documents.Add(new GeneratedDocument(doc, fit.Typeset.Pdf, markdown[i], entry, fit));
             files.Add(new CorpusFile(entry.Pdf, fit.Typeset.Pdf));
             files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(markdown[i])));
             if (options.TruthDirectory is { } truthDirectory)
@@ -332,6 +317,47 @@ public static class CorpusGenerator
         var managed = content.Types.Select(t => t.Id).Append("zatrute").ToList();
         return new Built(documents, ManifestWriter.Read(manifestText), files, managed);
     }
+
+    /// <summary>The plan of the corpus described by <paramref name="parameters"/>.</summary>
+    public static CorpusPlan Plan(RunParameters parameters, CorpusGeneratorOptions? options = null)
+    {
+        ArgumentNullException.ThrowIfNull(parameters);
+        options ??= new CorpusGeneratorOptions();
+        parameters.Validate();
+        return CorpusPlanner.Plan(ContentLoader.Load(Resolve(options.BaseDirectory, parameters.ContentDirectory)), parameters);
+    }
+
+    /// <summary>Builds one document of the corpus in memory (as <see cref="GenerateAsync"/> would), for tests and diagnostics.</summary>
+    public static async Task<GeneratedDocument> BuildDocumentAsync(RunParameters parameters, string documentId, CorpusGeneratorOptions? options = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(parameters);
+        options ??= new CorpusGeneratorOptions();
+        parameters.Validate();
+        ContentLibrary content = ContentLoader.Load(Resolve(options.BaseDirectory, parameters.ContentDirectory));
+        DocumentPlan doc = CorpusPlanner.Plan(content, parameters).Documents.FirstOrDefault(d => d.Id == documentId)
+            ?? throw new CorpusGenerationException("Brak dokumentu w planie: " + documentId) { DocumentId = documentId };
+        FitResult fit = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages);
+        string markdown = await ConvertAsync(Converter(parameters, options), fit.Typeset.Pdf, PdfPath(doc), cancellationToken).ConfigureAwait(false);
+        return new GeneratedDocument(doc, fit.Typeset.Pdf, markdown, Entry(doc, fit), fit);
+    }
+
+    private static ManifestDocument Entry(DocumentPlan doc, FitResult fit) => new(
+        doc.Id,
+        doc.Type,
+        fit.Composition.Document.Front.Title,
+        doc.Designation,
+        doc.Version,
+        doc.ValidFrom,
+        doc.ValidTo,
+        doc.Status == DocumentStatus.Obowiazujacy ? "obowiazujacy" : "nieaktualny",
+        doc.PreviousVersionId,
+        PdfPath(doc),
+        MarkdownPath(doc),
+        fit.Typeset.PageCount,
+        doc.Template,
+        doc.Layout,
+        doc.Seed,
+        Math.Round(SharedShare(fit), 3));
 
     private static void Check(RunParameters parameters, IReadOnlyList<DocumentPlan> plans, FitResult[] fits, string[] markdown, ContentLibrary content)
     {
