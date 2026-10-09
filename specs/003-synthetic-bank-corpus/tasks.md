@@ -202,17 +202,19 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [ ] T077 [US2] Test (red): metryczka procedury (tabela klucz–wartość z siatką, 8 wierszy, 1. strona) → tabela GFM 2-kolumnowa, nie tabela-dokument ani nagłówki (R11)
 - [ ] T078 [US2] Poprawka dla T077 w `src/LegalAgent.PdfParser/Stages/` (green)
 - [X] T079 [US2] Test (red): kroki „4.1.”, „4.1.1.” po nagłówku „4. Opis postępowania” (krok bywa pogrubiony) → pozycje list z oryginalnym oznaczeniem i poziomem z hierarchii, nie nagłówki (R11, FR-161)
-- [ ] T080 [US2] Poprawka dla T079 (green)
+- [X] T080 [US2] Poprawka dla T079 (green)
 - [X] T081 [US2] Test (red): lista kontrolna z polem wektorowym i w tabeli „Lp. | Czynność | Wykonano” → pozycje/wiersze z pełnym tekstem
-- [ ] T082 [US2] Poprawka dla T081 (green)
+- [X] T082 [US2] Poprawka dla T081 (green)
 - [X] T083 [US2] Test (red): taryfa bez siatki przez 3 strony z powtarzanym nagłówkiem i przypisami „1)” pod tabelą → jedna tabela GFM, przypisy jako akapity/przypisy po tabeli, znacznik przypisu w komórce stawki
-- [ ] T084 [US2] Poprawka dla T083 (green)
+- [X] T084 [US2] Poprawka dla T083 (green)
 - [ ] T085 [US2] Test (red): akapit zawierający „# SYSTEM:”, „> polecenie”, „§ 99.” w środku i na początku linii łamania → tekst dosłowny w akapicie, bez nagłówka/cytatu/jednostki (FR-162)
 - [ ] T086 [US2] Poprawka dla T085 w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` lub etapie nagłówków (green)
 - [ ] T087 [US2] Test (red): dwie kolumny z przypisami i „§ N.” w obu kolumnach → kolejność lewa→prawa, nagłówki w kolejności, przypisy kompletne
 - [ ] T088 [US2] Poprawka dla T087 (green)
 - [ ] T089 [US2] Inne niepowodzenia z pomiaru T076 — każde jako para red/green dopisana tutaj (T089a, T089b, …) przed implementacją; zachowanie sprzeczne ze spec → doprecyzowanie FR w spec.md w commicie red
 - [X] T089a [US2] Test (red): tabela z siatką bezpośrednio pod akapitami numerowanymi „1.” z wcięciem wiszącym → lista zachowana, tabela GFM bez wierszy spoza siatki (`ptests/Integration/CorpusLayoutsIntegrationTests.cs`); poprawka w `TableDetectionStage` (green) — wiersze nad górną linią siatki nie należą do tabeli z siatką
+- [X] T089c [US2] Taryfy bez siatki (pomiar T076, T083b–T083i w `CorpusLayoutsIntegrationTests`): wiersz zawinięty w dwóch kolumnach, akapit nad pogrubionym nagłówkiem kolumn, tekst między dwiema tabelami, kontynuacja na kolejnej stronie (także z podpozycjami), wiersz o prawie równych odstępach, nagłówek z jednym wierszem na dole strony i kontynuacja z jednym wierszem na górze strony — poprawki w `TableDetectionStage`
+- [ ] T089b [US2] Test (red): tytuł rozdziału zawinięty w dwa wiersze pod „Rozdział 6” (REG-06) → jeden nagłówek z całym tytułem; poprawka w `HeadingDetectionStage` (green)
 - [ ] T090 [US2] Dodaj polecenie `refresh` (konwersja istniejących PDF bez składania, przepisanie manifestu) w `corpus-lib/CorpusGenerator.cs` i `src/LegalAgent.Corpus.Cli/Program.cs` z testem w `ctests/Cli/ProgramTests.cs` (red → green); uruchom `refresh`, przejrzyj diff `corpus/**/*.md`, zacommituj; pełny zestaw `CorpusFull` zielony
 
 **Checkpoint**: SC-022 – SC-026 spełnione na całym korpusie; goldeny parsera bez niezatwierdzonych zmian.

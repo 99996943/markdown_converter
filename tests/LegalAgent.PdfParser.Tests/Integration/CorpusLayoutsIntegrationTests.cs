@@ -428,6 +428,29 @@ public sealed class CorpusLayoutsIntegrationTests
     }
 
     /// <summary>
+    /// T089b: a chapter title wrapped over two lines under „Rozdział 6” (REG-06 page 10) is one heading with the whole
+    /// title, followed by the unit „§ 21.”.
+    /// </summary>
+    [Fact]
+    public async Task ChapterTitleWrappedOverTwoLines_IsOneHeading()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 60, "Regulamin rachunków bankowych dla przedsiębiorców", 18, bold: true);
+        double y = Body(b, 100, 8);
+        b.Text(Left, y + 20, "Rozdział 6", 12.5, bold: true);
+        b.Text(Left, y + 37.5, "Przelewy, w tym podzielona płatność i przelewy do urzędu", 12.5, bold: true);
+        b.Text(Left, y + 55, "skarbowego", 12.5, bold: true);
+        b.Text(286, y + 82.5, "§ 21.", 11, bold: true);
+        Body(b, y + 104, 8);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("## Rozdział 6. Przelewy, w tym podzielona płatność i przelewy do urzędu skarbowego\n", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("**skarbowego**", md, StringComparison.Ordinal);
+        Assert.Contains("### § 21.", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// T083f: the continuation page of a gridless tariff as typeset in the corpus (TAR-06 page 4): sub-positions „2.1.”,
     /// „2.2.” with wrapped service names, then „3.” wrapped, „4.” … — all rows of the one table.
     /// </summary>
