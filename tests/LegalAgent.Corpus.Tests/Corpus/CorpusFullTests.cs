@@ -53,6 +53,7 @@ public sealed class CorpusFullTests
         string corpus = Path.Combine(CorpusSampleTests.RepoRoot(), "corpus");
 
         var failures = new List<string>();
+        var details = new List<string>();
         var table = new StringBuilder("| Dokument | Układ | Słowa | Spoza PDF | Kolejność | Nagłówki | Fałszywe | Listy | Wiersze | Tabele GFM | Komórki |\n|---|---|---|---|---|---|---|---|---|---|---|\n");
         foreach (DocumentPlan doc in plan.Documents)
         {
@@ -68,6 +69,7 @@ public sealed class CorpusFullTests
             }
 
             QualityReport q = QualityMetrics.Measure(doc.Id, built.Fit.Typeset.Truth, built.Markdown);
+            details.AddRange(q.Failures);
             table.Append(CultureInfo.InvariantCulture, $"| {doc.Id} | {doc.Layout} | {q.WordCompleteness:P2} | {q.ExtraWords} | {q.ReadingOrder:P1} | {q.HeadingRecall:P1} | {q.FalseHeadingShare:P1} | {q.ListRecall:P1} | {q.RowsIntact:P1} | {q.TablesAsSingleGfm:P0} | {q.CellAgreement:P1} |\n");
 
             void Check(bool ok, string what)
@@ -93,7 +95,7 @@ public sealed class CorpusFullTests
 
         if (Environment.GetEnvironmentVariable("LEGALAGENT_CORPUS_REPORT") is { } report)
         {
-            await File.WriteAllTextAsync(report, table.ToString() + "\n" + string.Join("\n", failures) + "\n", TestContext.Current.CancellationToken);
+            await File.WriteAllTextAsync(report, table.ToString() + "\n" + string.Join("\n", failures) + "\n\n## Szczegóły\n\n" + string.Join("\n", details) + "\n", TestContext.Current.CancellationToken);
         }
 
         Assert.True(failures.Count == 0, string.Join("\n", failures));
