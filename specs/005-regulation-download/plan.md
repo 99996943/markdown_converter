@@ -152,6 +152,45 @@ etap konwersji (kolejna specyfikacja) połączy oba w aplikacji.
 
 Brak naruszeń konstytucji.
 
-## Stan prac i przekazanie
+## Stan prac i przekazanie (T048, 2026-10-09)
 
-Plan gotowy (2026-10-09); implementacja jeszcze nie rozpoczęta. Następny krok: `/speckit-tasks`.
+**Zrobione**: zadania T001–T048 (`tasks.md`), gałąź `005-regulation-download` (niewypchnięta; PR do zrobienia).
+Każda zmiana zachowania jako para commitów red/green; T030, T032, T034 częściowo, T038 w całości przeszły od razu
+(charakteryzacja, opisane w commitach).
+
+- Biblioteka `LegalAgent.Downloads`: `AddressValidator`, `HostAllowList` (IDN, subdomeny), `FileNamePlanner`,
+  `DocumentDownloader` (równolegle, `IProgress`), `SingleDownload` (ręczne przekierowania, jeden limit czasu na
+  pobranie, limit rozmiaru z nagłówka i licznika, `%PDF-`, `.part` + `File.Move`, SHA-256, `Last-Modified`),
+  `DownloadManifestJson`, `DirectoryCleaner`. Brak zależności pakietowych; brak „mbank” w kodzie biblioteki.
+- Aplikacja `mBank.FaqGenerator`: `--url` ×5, `--output`, `--help`, `--version`; konfiguracja `appsettings.json` →
+  `appsettings.Local.json` → `FAQGEN__…`; pytania w konsoli; postęp, podsumowanie (rozmiary `pl-PL`), kody
+  0/1/2/3/4/130.
+- Testy: `tests/LegalAgent.Downloads.Tests` (122) i `tests/mBank.FaqGenerator.Tests` (42), bez sieci.
+- README (sekcja „Pobieranie regulaminów”), `CLAUDE.md`, `.gitignore` (`downloads/`).
+
+**Walidacja (T046, T047)**: `dotnet build -c Release` bez ostrzeżeń; `dotnet test LegalAgent.slnx --filter
+"Category!=Performance"` — 1639 zaliczonych, 8 pominiętych (te same co przed zmianą). Quickstart 2–3 na zbudowanej
+aplikacji: `--help` → 0, 1× `--url` → 2, obcy host → 2 z „Adres 1: …”, zamknięte wejście → 2 z podpowiedzią.
+Sieć: 5 nieistniejących adresów `www.mbank.pl/pdf/…` → serwer odpowiada 404 (nie 403 — `User-Agent` aplikacji nie jest
+blokowany), podsumowanie 0 z 5, manifest z przyczynami, kod 3. **Nie sprawdzono pobrania prawdziwych regulaminów**
+(quickstart 4–6): wymaga 5 adresów wskazanych przez właściciela.
+
+**Odstępstwa od planu i decyzje w trakcie**:
+
+- Pakiet `Microsoft.Extensions.Configuration.EnvironmentVariables` niepotrzebny: zmienne `FAQGEN__` czytane są ze
+  słownika przekazanego do `RunAsync` (`AddInMemoryCollection`), więc testy nie dotykają środowiska procesu. Jedyna
+  nowa zależność: `Configuration.Json` 9.0.20.
+- Kilka drobnych typów w jednym pliku zamiast osobnych (`AddressError` w `AddressCheck.cs`, `PlannedDownload` w
+  `FileNamePlanner.cs`, wyliczenia modelu obok rekordów); publiczna stała `DocumentDownloader.ManifestFileName`.
+- Zerwane połączenie w trakcie treści → `connection` („połączenie … zostało przerwane”); błędy systemu plików →
+  `write-failed`. Komunikat statusu HTTP używa kanonicznej frazy .NET (serwery HTTP/2 nie wysyłają własnej).
+- Kontrakt manifestu: przykład obiektu `error` pokazany z wcięciami jak reszta pliku (bez zmiany formatu).
+- T047: `Main` ustawia UTF-8 na konsoli (Windows pokazywał polskie znaki jako `�`), jak `legalagent-pdf`.
+
+**Otwarte / do wiadomości**:
+
+- Ręczne pobranie 5 prawdziwych regulaminów mBanku (quickstart 4–6) — po podaniu adresów przez właściciela.
+- Test „nie da się usunąć starego pliku” działa tylko na Windows (na Linuksie otwarty plik da się usunąć) — na CI jest
+  pomijany (`Assert.SkipUnless`).
+- Następne etapy aplikacji: konwersja PDF → Markdown (parser z spec 001/002, wejście = pozycje `downloaded` z
+  `manifest.json`) i FAQ w OKF (`resource` = `url` z manifestu) — osobne specyfikacje.
