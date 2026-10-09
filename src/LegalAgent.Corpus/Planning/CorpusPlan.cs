@@ -84,6 +84,9 @@ public sealed record DocumentPlan
     /// <summary>Gets the fact overrides.</summary>
     public IReadOnlyList<FactOverride> FactOverrides { get; init; } = [];
 
+    /// <summary>Gets the start dates of the earlier versions (version 1 first), for the record card history.</summary>
+    public IReadOnlyList<DateOnly> EarlierVersionStarts { get; init; } = [];
+
     /// <summary>Gets the contradictions planted with other documents.</summary>
     public IReadOnlyList<PlannedContradiction> Contradictions { get; init; } = [];
 }

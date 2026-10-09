@@ -232,13 +232,13 @@ między typami), wszystko w treści i w manifeście.
 
 - [X] T091 [P] [US3] Testy w `ctests/Unit/Planning/VersionsPlannerTests.cs` (red): `VersionedShare` 30% z 10 → 3 dokumenty (zaokrąglenie w górę), liczba wersji 2–`MaxVersions`; wersje: to samo oznaczenie i tytuł, kolejne numery, „`ValidTo(n) + 1 dzień = ValidFrom(n+1)`”, wcześniejsze `Status = Nieaktualny`, `PreviousVersionId`; co najmniej jedna zmiana (nadpisanie faktu z `Values` z datą lub inny wariant bloku), reszta treści identyczna; dokumenty nieaktualne (`OutdatedPerType`, „`ValidTo < ReferenceDate`”, bez następcy, rozłączne z wersjonowanymi); pary sprzeczne: nachodzące okresy, ten sam fakt z różnymi wartościami (`Alternatives`), para między typami regulamin–taryfa dzieli fakt; wszystko deterministyczne
 - [X] T092 [P] [US3] Testy w `ctests/Unit/Manifest/ManifestChangesTests.cs` (red): `changes[]` (`unit`, `page`, `fact`, `before`, `after`) i `contradictions[]` (`with`, `unit`, `page`, `fact`, `this`, `other`) wyliczone z nadpisań i `ElementPages`; jednostka w formacie „§ 12 ust. 3 pkt 2” / „poz. 4.7” / „krok 5.2”; dokument nie zawiera meta-uwag o sprzeczności (FR-123: tekst PDF nie zawiera słów „sprzeczn”, „nieaktualn” poza treścią z bloków)
-- [ ] T093 [P] [US3] Testy w `ctests/Unit/CorpusGeneratorVersionsTests.cs` (red): pliki wersji `REG-03-w1.pdf`, `REG-03-w2.pdf`, najnowsza `REG-03.pdf` (contracts/corpus-layout.md); okładki z numerem wersji i datami; manifest `previousVersion`
+- [X] T093 [P] [US3] Testy w `ctests/Unit/CorpusGeneratorVersionsTests.cs` (red): pliki wersji `REG-03-w1.pdf`, `REG-03-w2.pdf`, najnowsza `REG-03.pdf` (contracts/corpus-layout.md); okładki z numerem wersji i datami; manifest `previousVersion`
 
 ### Implementation for User Story 3
 
 - [X] T094 [US3] Rozszerz `corpus-lib/Planning/CorpusPlanner.cs` o wersje, nieaktualne i pary sprzeczne — T091 green
 - [X] T095 [US3] Rozszerz `corpus-lib/Manifest/ManifestWriter.cs` i `corpus-lib/Composition/DocumentComposer.cs` (śledzenie jednostek zmienionych faktów) — T092 green
-- [ ] T096 [US3] Rozszerz `corpus-lib/CorpusGenerator.cs` i `CorpusWriter` o nazwy plików wersji — T093 green
+- [X] T096 [US3] Rozszerz `corpus-lib/CorpusGenerator.cs` i `CorpusWriter` o nazwy plików wersji — T093 green
 - [ ] T097 [US3] Treść: historia wartości i `alternatywy` w `corpus/zrodla/fakty.yaml` dla faktów używanych przez co najmniej 3 dokumenty każdego typu; warianty bloków „po zmianie” (np. nowe brzmienie postanowienia) w odpowiednich plikach `bloki/`
 - [ ] T098 [US3] Ustaw w `corpus/przebieg.json` wersje/nieaktualne/sprzeczności wg domyślnych, `generate`, przejrzyj i zacommituj korpus; rozszerz `CorpusFullTests` o SC-028 (wersje rozłączne i ciągłe) i spójność odwołań manifestu (`previousVersion`, `with` istnieją); próbka (T072) obejmuje wszystkie wersje pierwszego wersjonowanego dokumentu
 

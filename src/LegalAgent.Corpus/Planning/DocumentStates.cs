@@ -255,6 +255,11 @@ internal static partial class DocumentStates
             next = value;
         }
 
+        for (int k = 1; k < count; k++)
+        {
+            versions[k] = versions[k] with { EarlierVersionStarts = versions.Take(k).Select(v => v.ValidFrom).ToList() };
+        }
+
         return [.. versions];
     }
 

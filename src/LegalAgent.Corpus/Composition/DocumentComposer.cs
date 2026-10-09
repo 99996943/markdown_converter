@@ -753,7 +753,12 @@ public static class DocumentComposer
                 ApprovedBy = card ? Parameter("zatwierdzil") ?? DefaultApprover : null,
                 ApprovalDate = card ? PolishFormat.Date(approval) : null,
                 History = card
-                    ? [new HistoryEntry(_plan.Version.ToString(CultureInfo.InvariantCulture), PolishFormat.Date(approval), _plan.Version == 1 ? "Wydanie pierwsze." : "Aktualizacja postanowień procedury.")]
+                    ? _plan.EarlierVersionStarts.Append(_plan.ValidFrom)
+                        .Select((from, i) => new HistoryEntry(
+                            (i + 1).ToString(CultureInfo.InvariantCulture),
+                            PolishFormat.Date(from.AddDays(-21)),
+                            i == 0 ? "Wydanie pierwsze." : "Aktualizacja postanowień procedury."))
+                        .ToList()
                     : [],
             };
         }
