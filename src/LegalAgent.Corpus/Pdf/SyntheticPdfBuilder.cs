@@ -3,10 +3,10 @@ using UglyToad.PdfPig.Core;
 using UglyToad.PdfPig.Graphics.Operations.SpecialGraphicsState;
 using UglyToad.PdfPig.Writer;
 
-namespace LegalAgent.PdfParser.Tests.Fixtures;
+namespace LegalAgent.Corpus.Pdf;
 
 /// <summary>
-/// Fluent builder of synthetic PDF documents for tests. Text uses embedded Noto Sans TrueType
+/// Fluent builder of synthetic PDF documents. Text uses embedded Noto Sans TrueType
 /// fonts (Regular, Bold, Italic, Mono) so Polish diacritics are supported. Vertical coordinates are
 /// given as the distance from the top edge of the page (Y grows downwards).
 /// </summary>
@@ -269,12 +269,20 @@ public sealed class SyntheticPdfBuilder
         {
             if (!_fonts.TryGetValue(name, out PdfDocumentBuilder.AddedFont? font))
             {
-                string path = Path.Combine(AppContext.BaseDirectory, "Fixtures", "Fonts", name);
-                font = builder.AddTrueTypeFont(File.ReadAllBytes(path));
+                font = builder.AddTrueTypeFont(FontBytes(name));
                 _fonts[name] = font;
             }
 
             return font;
+        }
+
+        private static byte[] FontBytes(string name)
+        {
+            using Stream stream = typeof(SyntheticPdfBuilder).Assembly.GetManifestResourceStream("LegalAgent.Corpus.Fonts." + name)
+                ?? throw new InvalidOperationException("Missing embedded font: " + name);
+            using var buffer = new MemoryStream();
+            stream.CopyTo(buffer);
+            return buffer.ToArray();
         }
     }
 }

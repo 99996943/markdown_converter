@@ -3,7 +3,9 @@ using UglyToad.PdfPig;
 using UglyToad.PdfPig.Content;
 using UglyToad.PdfPig.Core;
 
-namespace LegalAgent.PdfParser.Tests.Fixtures;
+using LegalAgent.Corpus.Pdf;
+
+namespace LegalAgent.Corpus.Tests.Unit.Pdf;
 
 public sealed class SyntheticPdfBuilderTests
 {

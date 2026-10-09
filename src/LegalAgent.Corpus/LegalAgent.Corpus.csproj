@@ -11,6 +11,9 @@
     <ProjectReference Include="..\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\*.ttf" LogicalName="LegalAgent.Corpus.Fonts.%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
     <InternalsVisibleTo Include="LegalAgent.Corpus.Tests" />
   </ItemGroup>
 </Project>
