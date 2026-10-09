@@ -1,0 +1,105 @@
+bloki:
+  - id: zgon-cel
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-cel
+    wspolny: false
+    elementy:
+      - akapit: "Celem procedury jest {jednolite|ujednolicone} określenie zasad postępowania pracowników Banku po otrzymaniu informacji o śmierci Klienta, a {w szczególności|zwłaszcza}: przyjęcia i udokumentowania zgłoszenia zgonu, zabezpieczenia produktów zmarłego przed nieuprawnionym dysponowaniem, ustalenia składu jego majątku w Banku, wypłaty środków na koszty pogrzebu, realizacji dyspozycji wkładem na wypadek śmierci oraz wypłaty środków spadkobiercom po wykazaniu przez nich swoich praw."
+      - akapit: "Procedura służy {zapewnieniu|zagwarantowaniu} zgodności działania Banku z przepisami, {w szczególności|zwłaszcza} z przepisami, które określa {{ref:akt:dz-u-2024-1646-prawo-bankowe}}, a także {ochronie|zabezpieczeniu} interesów spadkobierców, współposiadaczy rachunków i samego Banku. Dokument określa, kto, w jakim terminie i na podstawie jakich dokumentów podejmuje poszczególne czynności, oraz kto odpowiada za ich prawidłowe wykonanie."
+      - akapit: "Procedura jest {dokumentem wewnętrznym|aktem wewnętrznym} Banku, przeznaczonym wyłącznie dla pracowników. Nie stanowi oferty ani regulaminu w rozumieniu przepisów o umowach z konsumentami; zasady obowiązujące Klientów określają odpowiednie regulaminy produktów, {w szczególności|zwłaszcza} dokument „{{ref:dokument:regulamin-rachunku-osobistego}}”."
+
+  - id: zgon-zakres
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zakres
+    wspolny: false
+    elementy:
+      - akapit: "Procedura obejmuje wszystkie przypadki, w których Bank {uzyskuje|otrzymuje} wiarygodną informację o śmierci osoby fizycznej będącej Klientem Banku, {niezależnie od kanału|bez względu na kanał}, {którym|za pośrednictwem którego} informacja wpłynęła, oraz od tego, czy zmarły był posiadaczem, współposiadaczem, pełnomocnikiem, kredytobiorcą, współkredytobiorcą, poręczycielem czy jedynie użytkownikiem karty."
+      - ustep: "Procedurę stosuje się do następujących produktów i usług zmarłego Klienta:"
+        punkty:
+          - "rachunków płatniczych, {w tym|łącznie z} rachunków osobistych indywidualnych i wspólnych, oraz rachunków oszczędnościowych;"
+          - "lokat terminowych i innych rachunków terminowych, także tych odnawianych automatycznie;"
+          - "kart debetowych i kredytowych wydanych zmarłemu, a także kart wydanych do jego rachunków innym osobom;"
+          - "usług bankowości elektronicznej i płatności mobilnych, {w tym|obejmujących} zleceń stałych, poleceń zapłaty i płatności cyklicznych;"
+          - "kredytów gotówkowych, kredytów hipotecznych, limitów w rachunku i limitów kart kredytowych;"
+          - "ubezpieczeń oferowanych przez Bank we współpracy z partnerami ubezpieczeniowymi;"
+          - "skrytek sejfowych i depozytów zamkniętych oraz innych usług, w których zmarły był stroną umowy."
+      - ustep: "Procedura nie obejmuje:"
+        punkty:
+          - "zgonu przedsiębiorcy prowadzącego rachunek firmowy w zakresie, w jakim zasady szczególne określa odrębna procedura dla klientów biznesowych — w pozostałym zakresie stosuje się ją odpowiednio;"
+          - "likwidacji rachunków osób prawnych oraz utraty bytu prawnego przez inne podmioty niebędące osobami fizycznymi;"
+          - "postępowania w sprawie osób zaginionych oraz uznania za zmarłego, {o ile|jeśli} nie zapadło prawomocne orzeczenie sądu, które stwierdza zgon."
+      - akapit: "Procedurę {stosują|obowiązani są stosować} wszyscy pracownicy placówek, infolinii i jednostek centrali obsługujących wymienione produkty oraz pracownicy jednostki „{{fakt:zgon.jednostka.zespol-spadkowy}}”, w zakresie określonym w sekcji „Odpowiedzialności”."
+
+  - id: zgon-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-role
+    wspolny: false
+    elementy:
+      - akapit: "Za prawidłowe stosowanie procedury odpowiadają następujące osoby i komórki organizacyjne, każda w zakresie swoich uprawnień:"
+      - ustep: "**Pracownik placówki lub infolinii** przyjmujący zgłoszenie:"
+        punkty:
+          - "{rejestruje|odnotowuje} zgłoszenie w systemie centralnym {{fakt:zgon.system.cbs}} i zakłada sprawę w rejestrze spraw spadkowych {{fakt:zgon.system.rejestr}};"
+          - "{weryfikuje|sprawdza} tożsamość zgłaszającego i zbiera dokumenty wskazane w wykazie (zob. {{ref:zalacznik:zgon-zalacznik-dokumenty}});"
+          - "wypełnia formularz {{fakt:zgon.formularz.zgloszenie}} i przekazuje komplet dokumentów jednostce „{{fakt:zgon.jednostka.zespol-spadkowy}}”;"
+          - "nie udziela informacji o stanie produktów zmarłego osobom, które nie wykazały uprawnienia do ich otrzymania."
+      - ustep: "**Kierownik placówki**:"
+        punkty:
+          - "{nadzoruje|kontroluje} poprawność i terminowość czynności pracowników placówki w sprawach zgonu;"
+          - "akceptuje wypłaty z rachunków zmarłych do kwoty {{fakt:zgon.limit.akceptacja-kierownik}} włącznie;"
+          - "{rozstrzyga|podejmuje decyzję w} sprawach wątpliwych, w których dokumenty przedłożone przez zgłaszającego budzą zastrzeżenia co do autentyczności lub kompletności."
+      - ustep: "**{{fakt:zgon.jednostka.zespol-spadkowy}}** (zespół w strukturze jednostki „{{param:wlasciciel}}”):"
+        punkty:
+          - "prowadzi sprawy spadkowe od chwili przekazania kompletu dokumentów do zamknięcia sprawy;"
+          - "ustala wszystkie produkty zmarłego i {weryfikuje|sprawdza} prawa osób zgłaszających roszczenia;"
+          - "akceptuje wypłaty w granicach swoich uprawnień oraz przygotowuje wnioski o akceptację wypłat wyższych;"
+          - "prowadzi rejestr spraw spadkowych {{fakt:zgon.system.rejestr}} i odpowiada za kompletność akt sprawy."
+      - ustep: "**{{param:wlasciciel}}** jako właściciel procedury {odpowiada|jest odpowiedzialny} za jej aktualność, przegląd co najmniej raz w roku, szkolenia pracowników oraz akceptację wypłat powyżej kwoty {{fakt:zgon.limit.akceptacja-departament}}."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** {opiniuje|ocenia} wypłaty o podwyższonym ryzyku, {w szczególności|zwłaszcza} {gdy|jeżeli} zachodzi podejrzenie wyłudzenia, prania pieniędzy lub posłużenia się sfałszowanym dokumentem, oraz {sprawuje|wykonuje} niezależną kontrolę stosowania procedury."
+      - ustep: "**{{fakt:zgon.jednostka.windykacja}}** prowadzi sprawy zobowiązań zmarłego z tytułu kredytów, **{{fakt:zgon.jednostka.ubezpieczenia}}** — zgłoszenia do ubezpieczycieli, a **{{fakt:zgon.jednostka.rachunkowosc}}** — rozliczenia księgowe i podatkowe związane z wypłatami."
+      - ustep: "**{{fakt:jednostka.bezpieczenstwo}}** {zabezpiecza|blokuje} kanały zdalnego dostępu zmarłego oraz {bada|analizuje} podejrzane operacje wykonane po dacie zgonu, a **{{fakt:jednostka.prawny}}** udziela opinii w sprawach spornych i {w razie|w przypadku} sprzecznych roszczeń spadkobierców."
+
+  - id: zgon-definicje
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-definicje
+    wspolny: false
+    elementy:
+      - ustep: "W niniejszej procedurze, oprócz określeń podanych {wyżej|powyżej}, {użyto|zastosowano} następujących określeń:"
+        punkty:
+          - "**Zmarły** — Klient, którego zgon został {zgłoszony|przekazany do wiadomości} Bankowi lub który zmarł według wiarygodnych informacji posiadanych przez Bank;"
+          - "**Zgłaszający** — osoba, która {informuje|zawiadamia} Bank o śmierci Klienta, {w szczególności|zwłaszcza} członek rodziny, współposiadacz rachunku, osoba organizująca pogrzeb albo notariusz;"
+          - "**Akt zgonu** — odpis skrócony lub zupełny aktu zgonu wydany przez urząd stanu cywilnego; za równoważne uznaje się także zagraniczne dokumenty urzędowe po spełnieniu wymogów legalizacji lub apostille i przedłożeniu tłumaczenia przysięgłego;"
+          - "**Spadkobierca** — osoba, która nabyła spadek po Zmarłym z mocy ustawy lub na podstawie testamentu, co potwierdza jeden z dokumentów wymienionych w załączniku dotyczącym dokumentów wymaganych od osób zgłaszających roszczenia;"
+          - "**Postanowienie o stwierdzeniu nabycia spadku** — prawomocne postanowienie sądu stwierdzające krąg spadkobierców i wysokość ich udziałów;"
+          - "**Akt poświadczenia dziedziczenia** — akt notarialny sporządzony przez notariusza i zarejestrowany w rejestrze aktów poświadczenia dziedziczenia;"
+          - "**Europejskie poświadczenie spadkowe** — dokument wydawany zgodnie z unijnymi przepisami o spadkach o skutkach transgranicznych;"
+          - "**Dyspozycja na wypadek śmierci** — dyspozycja wkładem na wypadek śmierci posiadacza rachunku, złożona na podstawie przepisów, które określa {{ref:akt:dz-u-2024-1646-prawo-bankowe}};"
+          - "**Osoba uprawniona** — osoba wskazana w dyspozycji na wypadek śmierci jako uprawniona do otrzymania określonej kwoty ze środków zmarłego;"
+          - "**Koszty pogrzebu** — udokumentowane wydatki poniesione w związku z pochówkiem Zmarłego, które Bank może pokryć z rachunku zmarłego na zasadach opisanych w procedurze;"
+          - "**Blokada** — techniczne uniemożliwienie dysponowania produktem w kanałach zdalnych, kartami, zleceniami stałymi i przez pełnomocników przy jednoczesnym zachowaniu księgowania należności na rachunku;"
+          - "**Sprawa spadkowa** — zbiór czynności i dokumentów związanych ze zgonem jednego Klienta, prowadzony w rejestrze spraw spadkowych {{fakt:zgon.system.rejestr}} pod jednym numerem."
+      - akapit: "Pojęcia {nieokreślone|niezdefiniowane} w procedurze należy {rozumieć|interpretować} zgodnie z przepisami prawa cywilnego, bankowego i prawa spadkowego oraz regulaminami produktów."
+
+  - id: zgon-schemat
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-przyjecie
+    wspolny: false
+    elementy:
+      - naglowek: "Przegląd przebiegu procedury"
+      - schemat:
+          - nazwa: "Przyjęcie zgłoszenia"
+            wyjasnienie: "Pracownik rejestruje informację o zgonie, {weryfikuje|sprawdza} zgłaszającego i zakłada sprawę spadkową. Dokumenty i dane zgłaszającego przekazuje do zespołu spadkowego."
+          - nazwa: "Blokada produktów"
+            wyjasnienie: "Pracownik blokuje karty, bankowość elektroniczną, zlecenia stałe i dostęp pełnomocników. Rachunek {nadal|w dalszym ciągu} księguje należności, a środki pozostają na nim."
+          - nazwa: "Ustalenie majątku"
+            wyjasnienie: "{Zespół spadkowy|Zespół obsługujący sprawy spadkowe} ustala wszystkie produkty zmarłego, kredyty i ubezpieczenia. Sporządza zestawienie stanu na dzień zgonu."
+          - nazwa: "Koszty pogrzebu"
+            wyjasnienie: "Na wniosek osoby, która poniosła koszty, Bank wypłaca z rachunku udokumentowaną kwotę do limitu. Wypłata nie wymaga wykazania praw do spadku."
+          - nazwa: "Wypłata środków"
+            wyjasnienie: "Bank realizuje dyspozycję na wypadek śmierci albo wypłaca środki spadkobiercom po przedłożeniu dokumentu potwierdzającego dziedziczenie."
+          - nazwa: "Zamknięcie sprawy"
+            wyjasnienie: "{Zespół spadkowy|Zespół obsługujący sprawy spadkowe} zamyka rachunki, rozlicza zobowiązania i archiwizuje akta sprawy."

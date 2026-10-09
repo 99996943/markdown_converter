@@ -1,0 +1,211 @@
+bloki:
+  - id: zgon-kroki-wspolne
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-spadkobiercy
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Rachunek wspólny — blokada zmarłego.** Po zgłoszeniu zgonu jednego ze współposiadaczy rachunku wspólnego umowa rachunku nie wygasa wobec pozostałych współposiadaczy; pracownik blokuje wyłącznie możliwość dysponowania rachunkiem przez zmarłego i jego pełnomocników oraz karty wydane zmarłemu."
+            podkroki:
+              - tekst: "Pozostałych współposiadaczy zawiadamia się pisemnie o przyjęciu zgłoszenia i o tym, że mogą dysponować środkami na rachunku na dotychczasowych zasadach."
+              - tekst: "{Gdy|Jeżeli} współposiadacz żąda wypłaty całości środków, pracownik {informuje|zawiadamia} go, że prawa spadkobierców zmarłego do udziału w środkach na rachunku są realizowane poza Bankiem, a Bank nie rozstrzyga sporów między współposiadaczami a spadkobiercami."
+          - tekst: "**Rachunek wspólny — oświadczenie współposiadacza.** Aby zapobiec późniejszym roszczeniom, od współposiadacza pobiera się oświadczenie na formularzu {{fakt:zgon.formularz.wspolposiadacz}}, w którym potwierdza on dane zmarłego, datę zgonu i gotowość dalszego prowadzenia rachunku."
+            podkroki:
+              - tekst: "Oświadczenie zawiera także informację, czy współposiadacz zamierza kontynuować umowę rachunku, czy żąda jej rozwiązania."
+              - tekst: "{Gdy|Jeżeli} współposiadacz zamierza zamknąć rachunek, przed wypłatą środków Bank {informuje|zawiadamia} go, że środki przypadające spadkobiercom zmarłego (według udziałów, które wynikają z umowy rachunku, a {w razie|w przypadku} jej braku — w częściach równych) pozostaną w Banku do czasu wykazania praw do spadku."
+          - tekst: "**Rachunek wspólny — kredyty i limity.** Jeżeli do rachunku wspólnego udzielono limitu lub debetu, {zespół spadkowy|zespół obsługujący sprawy spadkowe} zawiadamia „{{fakt:zgon.jednostka.windykacja}}” i do czasu ustalenia sytuacji nie zwiększa limitu ani nie zmienia warunków."
+          - tekst: "**Informacje dla spadkobierców współposiadacza.** Spadkobiercom zmarłego współposiadacza udziela się, po przedłożeniu dokumentu potwierdzającego prawa do spadku, informacji o stanie rachunku na dzień śmierci."
+            podkroki:
+              - tekst: "Zakres informacji obejmuje saldo na dzień zgonu oraz historię operacji z okresu, który jest konieczny do ustalenia stanu spadku (zwykle ostatnie {{fakt:zgon.okres-historii}} przed zgonem), a także operacje wykonane po zgonie."
+              - tekst: "Informacji o danych osobowych pozostałych współposiadaczy ani o ich oddzielnych produktach nie udziela się."
+
+  - id: zgon-kroki-kredyty
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-kredyty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Kredyty i limity zmarłego.** Jeżeli zmarły był kredytobiorcą lub posiadaczem limitu, {zespół spadkowy|zespół obsługujący sprawy spadkowe} {przekazuje|kieruje} sprawę do „{{fakt:zgon.jednostka.windykacja}}” {w ciągu|w terminie} {{fakt:termin.zgon.ustalenie-produktow}} od ustalenia produktów."
+            podkroki:
+              - tekst: "Zobowiązanie z tytułu kredytu nie wygasa z chwilą śmierci kredytobiorcy; wstępuje w nie spadkobierca, który przyjął spadek, a jego odpowiedzialność jest ograniczona do wartości stanu czynnego spadku, {o ile|jeśli} nie złożył innego oświadczenia."
+              - tekst: "Do czasu ustalenia spadkobierców windykacja {wstrzymuje|zawiesza} wysyłanie wezwań do zapłaty adresowanych do zmarłego oraz naliczanie opłat za wezwania; odsetki naliczane są zgodnie z umową, a zaległości {odnotowuje|zapisuje} się w ewidencji."
+              - tekst: "Raty kredytu płatne z rachunku zmarłego pobiera się z salda rachunku do czasu wypłaty środków spadkobiercom, {o ile|jeśli} nie zabrania tego przepis szczególny."
+          - tekst: "**Kredyt z ubezpieczeniem.** Zespół {sprawdza|bada}, czy kredyt był objęty ubezpieczeniem na życie lub ubezpieczeniem spłaty kredytu na wypadek śmierci."
+            podkroki:
+              - tekst: "{Gdy|Jeżeli} ubezpieczenie obejmowało śmierć kredytobiorcy, „{{fakt:zgon.jednostka.ubezpieczenia}}” zgłasza zdarzenie ubezpieczycielowi w terminie {{fakt:termin.zgon.ubezpieczyciel}} od otrzymania aktu zgonu."
+              - tekst: "Do czasu decyzji ubezpieczyciela spłata kredytu jest zawieszana na wniosek spadkobierców, {o ile|jeśli} umowa kredytu to przewiduje; zawieszenie wymaga zgody „{{fakt:zgon.jednostka.windykacja}}”."
+              - tekst: "O decyzji ubezpieczyciela {informuje|zawiadamia} się spadkobierców {na piśmie|pisemnie}."
+          - tekst: "**Współkredytobiorcy i poręczyciele.** Zgon jednego ze współkredytobiorców nie zwalnia pozostałych z obowiązku spłaty kredytu."
+            podkroki:
+              - tekst: "Zespół ustala dane współkredytobiorców i poręczycieli i przekazuje je do jednostki „{{fakt:zgon.jednostka.windykacja}}”, która zawiadamia ich o zgonie i o dalszym trybie spłaty."
+              - tekst: "{Gdy|Jeżeli} zmarły był poręczycielem, zobowiązanie z tytułu poręczenia przechodzi na spadkobierców, {o ile|jeśli} umowa poręczenia nie stanowi inaczej."
+          - tekst: "**Kredyt hipoteczny.** W sprawach kredytów zabezpieczonych hipoteką zespół uzgadnia z „{{fakt:zgon.jednostka.windykacja}}” dalszy tryb postępowania, w tym wymianę dłużnika, zmianę harmonogramu lub restrukturyzację."
+            podkroki:
+              - tekst: "Spadkobiercy mogą złożyć wniosek o przejęcie długu lub o zmianę warunków kredytu; wniosek rozpatruje się według zasad opisanych w dokumencie „{{ref:dokument:regulamin-kredytu-hipotecznego}}”."
+              - tekst: "Wypłata środków z ubezpieczenia nieruchomości lub ubezpieczenia na życie, związanych z kredytem, podlega odrębnym postanowieniom umowy."
+          - tekst: "**Pozostałe produkty.** {Zespół spadkowy|Zespół obsługujący sprawy spadkowe} zamyka lub rozwiązuje umowy niemające znaczenia dla spadkobierców (karty, bankowość elektroniczna, powiadomienia) oraz uzgadnia z „{{fakt:zgon.jednostka.ubezpieczenia}}” sytuację polis ubezpieczeniowych związanych z kontem lub kartą."
+          - tekst: "**Informowanie jednostek.** {Zespół spadkowy|Zespół obsługujący sprawy spadkowe} zawiadamia wewnętrzne jednostki o zgonie Klienta, korzystając z systemu obiegu dokumentów {{fakt:zgon.system.obieg}}."
+            podkroki:
+              - tekst: "„{{fakt:jednostka.bezpieczenstwo}}” otrzymuje informację o dacie zgonu w celu monitorowania operacji po tej dacie."
+              - tekst: "„{{fakt:zgon.jednostka.rachunkowosc}}” otrzymuje informację o saldach na dzień zgonu, o wypłatach i o kwotach z tytułu podatku od odsetek."
+              - tekst: "„{{fakt:jednostka.obsluga-klienta}}” otrzymuje informację o zablokowaniu produktów, aby odpowiadać na pytania spadkobierców bez ujawniania danych poufnych."
+              - tekst: "Jednostki marketingowe i sprzedażowe wyłączają zmarłego Klienta z kontaktów handlowych i ofert; dane zmarłego nie są wykorzystywane do celów marketingowych."
+
+  - id: zgon-kroki-wyplata
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-wyplata
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Wypłata środków spadkobiercom.** Po akceptacji wniosku {zespół spadkowy|zespół obsługujący sprawy spadkowe} zleca wypłatę środków w terminie {{fakt:termin.rachunek-osobisty.wyplata-po-zgonie}} od dnia dostarczenia kompletu dokumentów."
+            podkroki:
+              - tekst: "Zlecenie wypłaty {zawiera|obejmuje} numer sprawy, dane spadkobiercy, kwotę, rachunek docelowy oraz podstawę wypłaty (dokument dziedziczenia lub dyspozycja)."
+              - tekst: "Wypłaty w walucie obcej realizuje się według kursu zgodnie z tabelą kursów Banku z godziny {{fakt:kurs.godzina-tabeli}} w dniu wypłaty, z uwzględnieniem marży {{fakt:kurs.marza-przeliczen}}."
+              - tekst: "Przed wypłatą sprawdza się, czy na rachunku nie ustanowiono zajęcia egzekucyjnego ani blokady wynikającej z przepisów o przeciwdziałaniu praniu pieniędzy."
+          - tekst: "**Zamknięcie rachunków.** Po wypłacie wszystkich środków {zespół spadkowy|zespół obsługujący sprawy spadkowe} zamyka rachunki zmarłego w terminie {{fakt:termin.zgon.zamkniecie-rachunku}}."
+            podkroki:
+              - tekst: "Przed zamknięciem {sprawdza się|weryfikuje się}, czy nie występują należności Banku (opłaty, odsetki, raty kredytu) lub zobowiązania z tytułu operacji kartowych; należności potrąca się z salda."
+              - tekst: "Zamknięcie rachunku wymaga zgody wszystkich współposiadaczy żyjących lub wykazania, że środki zostały wypłacone osobom uprawnionym."
+              - tekst: "Opłata za zamknięcie rachunku, określona w taryfie ({{fakt:oplata.rachunek-osobisty.zamkniecie}}), nie jest pobierana, {gdy|jeżeli} zamknięcie wynika ze śmierci posiadacza."
+          - tekst: "**Wydanie dokumentów.** Spadkobiercom i osobom uprawnionym wydaje się, na ich żądanie, zaświadczenie o stanie rachunku na dzień zgonu, potwierdzenia wypłat i odpisy wyciągów."
+            podkroki:
+              - tekst: "Zaświadczenie wydaje się w terminie {{fakt:termin.zgon.zaswiadczenie}} od dnia złożenia wniosku; opłata wynosi {{fakt:oplata.zaswiadczenie}}."
+              - tekst: "Odpisy wyciągów wydaje się za opłatą {{fakt:oplata.rachunek-osobisty.odpis-wyciagu}} za każdy odpis; w sprawach spadkowych kierownik placówki może odstąpić od opłaty na wniosek spadkobiercy."
+          - tekst: "**Zamknięcie sprawy.** Po wykonaniu wszystkich czynności {zespół spadkowy|zespół obsługujący sprawy spadkowe} zamyka sprawę w rejestrze spraw spadkowych {{fakt:zgon.system.rejestr}} i przekazuje akta do archiwum."
+            podkroki:
+              - tekst: "Zamknięcie {poprzedza|musi poprzedzać} sprawdzenie według listy kontrolnej (zob. {{ref:zalacznik:zgon-zalacznik-lista}})."
+              - tekst: "Dane zmarłego i produkty zamknięte oznacza się w systemie centralnym {{fakt:zgon.system.cbs}} statusem „zamknięte — zgon”; dostęp do nich ogranicza się do uprawnionych pracowników."
+
+  - id: zgon-podatki
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-wyplata
+    wspolny: false
+    elementy:
+      - naglowek: "Podatki i obowiązki informacyjne"
+      - ustep: "Pracownik zespołu spadkowego {informuje|zawiadamia} spadkobierców i osoby uprawnione, że:"
+        punkty:
+          - "Bank nie pobiera podatku od spadków i darowizn od wypłacanych środków; obowiązek zgłoszenia nabycia spadku organowi podatkowemu spoczywa na nabywcy, a zgłoszenia {dokonuje się|realizuje się} w terminie {{fakt:zgon.termin.zgloszenie-podatkowe}} od dnia powstania obowiązku podatkowego;"
+          - "od odsetek naliczonych do dnia zgonu Bank pobiera podatek od dochodów z odsetek według stawki {{fakt:podatek.odsetki}}, jeżeli odsetki te podlegają opodatkowaniu zgodnie z przepisami;"
+          - "zaświadczenie o stanie rachunku na dzień zgonu, wydane przez Bank, może posłużyć do zgłoszenia nabycia spadku; Bank nie sporządza za spadkobierców deklaracji podatkowych;"
+          - "pracownik nie udziela porad podatkowych, a {w razie|w przypadku} pytań wskazuje właściwy urząd skarbowy lub doradcę podatkowego."
+      - ustep: "„{{fakt:zgon.jednostka.rachunkowosc}}”:"
+        punkty:
+          - "{ujmuje|księguje} wypłaty ze spadku w sposób umożliwiający późniejsze sporządzenie informacji dla organów podatkowych;"
+          - "przekazuje informacje o saldach i wypłatach organom uprawnionym na podstawie przepisów, w terminie wskazanym w wezwaniu;"
+          - "„{{fakt:jednostka.prawny}}” akceptuje każdą odpowiedź na wezwanie organu dotyczącą zmarłego Klienta, zanim zostanie wysłana."
+      - akapit: "Pracownik {nie ujawnia|nie udostępnia} organom ani osobom trzecim informacji objętych tajemnicą bankową, z wyjątkiem sytuacji, w których uprawnienie do uzyskania informacji wynika z przepisów prawa, {w szczególności|zwłaszcza} z przepisami prawa bankowego (zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}). {W razie|W przypadku} wątpliwości co do zakresu uprawnienia pracownik kieruje sprawę do „{{fakt:jednostka.prawny}}”."
+
+  - id: zgon-szczegolne
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-szczegolne
+    wspolny: false
+    elementy:
+      - ustep: "Jeżeli zgłoszenie zgonu okaże się błędne (Klient żyje), pracownik {niezwłocznie|bezzwłocznie}:"
+        punkty:
+          - "zawiesza {dalsze czynności|kolejne czynności} i przywraca produkty do stanu sprzed blokady na podstawie dyspozycji Klienta, po jego pełnej weryfikacji tożsamości;"
+          - "zawiadamia „{{fakt:jednostka.bezpieczenstwo}}” o możliwym naruszeniu bezpieczeństwa lub próbie wyłudzenia;"
+          - "dokumentuje przebieg zdarzenia w rejestrze spraw spadkowych {{fakt:zgon.system.rejestr}} i {informuje|zawiadamia} Klienta o przyczynie blokady."
+      - ustep: "{Gdy|Jeżeli} spadkobiercą jest osoba małoletnia lub ubezwłasnowolniona, Bank wypłaca środki wyłącznie przedstawicielowi ustawowemu i po przedłożeniu orzeczenia sądu opiekuńczego zezwalającego na dokonanie czynności przekraczającej zwykły zarząd, {o ile|jeśli} wypłata przekracza zwykły zarząd majątkiem dziecka."
+      - ustep: "{Gdy|Jeżeli} spadkobiercy złożyli sprzeczne roszczenia lub zachodzi spór co do ważności testamentu, {zespół spadkowy|zespół obsługujący sprawy spadkowe} {wstrzymuje|zawiesza} wypłatę do czasu uprawomocnienia się orzeczenia sądu albo zgodnego oświadczenia wszystkich zainteresowanych i {informuje|zawiadamia} o tym spadkobierców {na piśmie|pisemnie}."
+      - ustep: "{Gdy|Jeżeli} po zgłoszeniu zgonu na rachunek wpłynęły świadczenia z tytułu emerytury lub renty za okres po dacie zgonu, Bank zwraca je na żądanie organu rentowego w zakresie i terminie określonym w przepisach; zwrot realizuje „{{fakt:zgon.jednostka.rachunkowosc}}” po zatwierdzeniu przez „{{fakt:zgon.jednostka.zespol-spadkowy}}”."
+      - ustep: "{Gdy|Jeżeli} na rachunku ustanowiono zajęcie egzekucyjne, wypłata środków spadkobiercom {następuje|jest dokonywana} po uwzględnieniu zajęcia; komornika {informuje|zawiadamia} się o śmierci dłużnika w odpowiedzi na zawiadomienie o zajęciu."
+      - ustep: "{Gdy|Jeżeli} zmarły był cudzoziemcem, a spadkobiercy {przedłoży|przedstawi}li zagraniczne dokumenty, sprawę przekazuje się do „{{fakt:jednostka.prawny}}” w celu oceny skuteczności dokumentów oraz tłumaczenia przysięgłego."
+
+  - id: zgon-kontrola
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-kontrola
+    wspolny: false
+    elementy:
+      - akapit: "Kontrola stosowania procedury odbywa się na trzech poziomach: bieżącej kontroli funkcjonalnej wykonywanej przez kierowników placówek, kontroli właściciela procedury oraz niezależnej kontroli „{{fakt:jednostka.zgodnosc}}” i audytu wewnętrznego."
+      - ustep: "Kontrola bieżąca obejmuje co najmniej:"
+        punkty:
+          - "sprawdzenie, czy blokada produktów została wykonana {{fakt:zgon.termin.blokada}};"
+          - "weryfikację kompletności dokumentów w sprawie przed każdą wypłatą powyżej {{fakt:zgon.limit.akceptacja-kierownik}};"
+          - "zgodność wypłaty z limitem kosztów pogrzebu ({{fakt:zgon.limit.koszty-pogrzebu}}) oraz z dyspozycją na wypadek śmierci (limit {{fakt:zgon.limit.dyspozycja}});"
+          - "dotrzymanie terminów: {{fakt:termin.zgon.potwierdzenie}} na potwierdzenie przyjęcia zgłoszenia, {{fakt:termin.zgon.ustalenie-produktow}} na ustalenie produktów i {{fakt:termin.rachunek-osobisty.wyplata-po-zgonie}} na wypłatę po dostarczeniu kompletu dokumentów."
+      - akapit: "Właściciel procedury {co kwartał|raz na kwartał} sporządza zestawienie spraw spadkowych, w którym wykazuje liczbę zgłoszeń, czas ich obsługi, liczbę przekroczonych terminów oraz sprawy o podwyższonym ryzyku. Zestawienie przekazuje „{{fakt:jednostka.zgodnosc}}” oraz „{{fakt:jednostka.ryzyko}}”, a wnioski z niego włącza do programu szkoleń."
+      - akapit: "Stwierdzone nieprawidłowości, {w szczególności|zwłaszcza} wypłaty bez kompletu dokumentów, przekroczenie uprawnień do akceptacji lub brak blokady produktów, podlegają zgłoszeniu do właściciela procedury {w ciągu|w terminie} {{fakt:termin.zgon.zgloszenie-nieprawidlowosci}} od ich wykrycia. Właściciel ustala działania naprawcze i termin ich wykonania."
+
+  - id: zgon-dokumentacja
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-dokumentacja
+    wspolny: false
+    elementy:
+      - akapit: "Akta sprawy spadkowej {prowadzi się|gromadzi się} w rejestrze spraw spadkowych {{fakt:zgon.system.rejestr}} i w systemie obiegu dokumentów {{fakt:zgon.system.obieg}}. Dokumenty papierowe, które muszą być przechowywane w oryginale ({w szczególności|zwłaszcza} oryginały dyspozycji na wypadek śmierci, pełnomocnictw i oświadczeń), przechowuje się w archiwum Banku."
+      - ustep: "Akta sprawy zawierają co najmniej:"
+        punkty:
+          - "formularz {{fakt:zgon.formularz.zgloszenie}} wraz z potwierdzeniem przyjęcia zgłoszenia;"
+          - "kopię aktu zgonu poświadczoną za zgodność z oryginałem;"
+          - "notatkę z ustalenia produktów ({{fakt:zgon.formularz.notatka}}) i zestawienie stanu na dzień zgonu;"
+          - "dokumenty potwierdzające prawa do spadku, wnioski spadkobierców oraz pokwitowania odbioru środków;"
+          - "dokumenty dotyczące kosztów pogrzebu wraz z wnioskiem {{fakt:zgon.formularz.koszty-pogrzebu}};"
+          - "wszelką korespondencję z osobami zainteresowanymi, sądami, notariuszami i organami."
+      - akapit: "Akta sprawy przechowuje się przez {{fakt:zgon.retencja}} od końca roku, w którym zamknięto sprawę, chyba że przepisy lub inne wewnętrzne regulacje Banku przewidują okres dłuższy. Po upływie okresu przechowywania akta niszczy się w sposób uniemożliwiający odtworzenie danych, a fakt zniszczenia {odnotowuje|zapisuje} w protokole."
+      - akapit: "{Dostęp do akt mają|Do akt mają dostęp} wyłącznie pracownicy „{{fakt:zgon.jednostka.zespol-spadkowy}}” oraz osoby upoważnione przez właściciela procedury; każdy dostęp do akt jest rejestrowany. Dane osobowe zmarłego i osób zgłaszających roszczenia są przetwarzane wyłącznie w celu obsługi sprawy spadkowej i wypełnienia obowiązków prawnych Banku."
+
+  - id: zgon-koncowe
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-koncowe
+    wspolny: false
+    elementy:
+      - akapit: "Procedura wchodzi w życie z dniem {{param:od}} i {obowiązuje|jest stosowana} do czasu jej zmiany lub uchylenia przez organ, którym jest {{param:zatwierdzil}}. Z dniem wejścia w życie traci moc poprzednia wersja procedury, a sprawy rozpoczęte przed tym dniem dokończa się według dotychczasowych zasad, chyba że nowe zasady są korzystniejsze dla osób zgłaszających roszczenia."
+      - akapit: "W sprawach nieuregulowanych w procedurze stosuje się odpowiednio przepisy powszechnie obowiązujące, {w szczególności|zwłaszcza} przepisy prawa bankowego (zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}), oraz regulaminy produktów. Wątpliwości interpretacyjne {rozstrzyga|rozwiązuje} właściciel procedury w porozumieniu z „{{fakt:jednostka.prawny}}”."
+      - akapit: "Pracownicy obsługujący sprawy spadkowe {odbywają|przechodzą} szkolenie z zasad procedury przed dopuszczeniem do pracy oraz co roku szkolenie przypominające; udział w szkoleniu {odnotowuje|zapisuje} się w aktach pracowniczych."
+
+  - id: zgon-zalacznik-lista
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik
+    wspolny: false
+    elementy:
+      - akapit: "Lista kontrolna służy do {sprawdzenia|potwierdzenia}, czy wszystkie czynności procedury zostały wykonane. {Wypełnia ją|Sporządza ją} pracownik zespołu spadkowego przed zamknięciem sprawy; podpisaną listę {dołącza się do akt|włącza się do akt}."
+      - lista-kontrolna:
+          forma: tabela
+          pozycje:
+            - "Zgłoszenie zgonu zarejestrowano w systemie centralnym i w rejestrze spraw spadkowych"
+            - "Zweryfikowano tożsamość zgłaszającego i odnotowano jego dane w formularzu zgłoszenia"
+            - "Odpis aktu zgonu dołączono do akt w poświadczonej kopii"
+            - "Wykonano blokadę kart, bankowości elektronicznej, zleceń stałych i pełnomocnictw"
+            - "Wysłano lub wręczono zgłaszającemu potwierdzenie przyjęcia zgłoszenia w terminie"
+            - "Ustalono wszystkie produkty zmarłego i sporządzono notatkę oraz zestawienie stanu na dzień zgonu"
+            - "Sprawdzono istnienie dyspozycji na wypadek śmierci i pełnomocnictw"
+            - "Rozpatrzono wnioski o zwrot kosztów pogrzebu w terminie i w granicach limitu"
+            - "Zawiadomiono osoby uprawnione o dyspozycji na wypadek śmierci"
+            - "Zweryfikowano dokumenty potwierdzające prawa do spadku"
+            - "Przekazano sprawy kredytów, ubezpieczeń i rachunków wspólnych właściwym jednostkom"
+            - "Wypłacono środki i uzyskano pokwitowania odbioru"
+            - "Zamknięto rachunki i rozliczono należności Banku"
+            - "Wydano spadkobiercom zaświadczenia i dokumenty, o które wnioskowali"
+            - "Akta sprawy skompletowano i przekazano do archiwum"
+
+  - id: zgon-zalacznik-dokumenty
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik
+    wspolny: false
+    elementy:
+      - akapit: "{Poniższe|Niniejsze} zestawienie {wskazuje|wymienia} dokumenty, których pracownik wymaga od osób zgłaszających roszczenia w poszczególnych typach spraw. Dokumenty {przedkłada się|składa się} w oryginale do wglądu lub w odpisie poświadczonym; pracownik {sporządza|wykonuje} poświadczoną kopię."
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj sprawy"
+              waga: 2
+            - naglowek: "Dokumenty wymagane"
+              waga: 4
+            - naglowek: "Kto akceptuje"
+              waga: 2
+          siatka: true
+          wiersze:
+            - ["Zgłoszenie zgonu i blokada", "Akt zgonu (odpis skrócony lub zupełny), dokument tożsamości zgłaszającego, formularz {{fakt:zgon.formularz.zgloszenie}}", "Pracownik placówki"]
+            - ["Koszty pogrzebu", "Akt zgonu, rachunki lub faktury z potwierdzeniem zapłaty, formularz {{fakt:zgon.formularz.koszty-pogrzebu}}, dokument tożsamości wnioskodawcy", "Kierownik placówki do {{fakt:zgon.limit.akceptacja-kierownik}}, powyżej — „{{fakt:zgon.jednostka.zespol-spadkowy}}”"]
+            - ["Dyspozycja na wypadek śmierci", "Akt zgonu, dokument tożsamości osoby uprawnionej, formularz {{fakt:zgon.formularz.wniosek-spadkobiercy}}", "„{{fakt:zgon.jednostka.zespol-spadkowy}}”"]
+            - ["Wypłata spadkobiercom", "Postanowienie sądu o stwierdzeniu nabycia spadku albo akt poświadczenia dziedziczenia albo europejskie poświadczenie spadkowe, akt zgonu, dokumenty tożsamości, formularz {{fakt:zgon.formularz.wniosek-spadkobiercy}}", "Kierownik placówki do {{fakt:zgon.limit.akceptacja-kierownik}}, do {{fakt:zgon.limit.akceptacja-departament}} — „{{fakt:zgon.jednostka.zespol-spadkowy}}”, powyżej — {{param:wlasciciel}}"]
+            - ["Rachunek wspólny", "Akt zgonu, oświadczenie współposiadacza {{fakt:zgon.formularz.wspolposiadacz}}, dokument tożsamości współposiadacza", "„{{fakt:zgon.jednostka.zespol-spadkowy}}”"]
+            - ["Spadkobierca małoletni", "Dokumenty jak w wypłacie spadkobiercom, dokument tożsamości przedstawiciela ustawowego, a w razie potrzeby zezwolenie sądu opiekuńczego", "„{{fakt:zgon.jednostka.zespol-spadkowy}}” w porozumieniu z „{{fakt:jednostka.prawny}}”"]

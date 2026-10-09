@@ -1,0 +1,73 @@
+id: procedura-zgon-klienta
+typ: procedury
+temat: procedura-zgon-klienta
+tytul:
+  - "Procedura obsługi zgłoszenia zgonu Klienta i wypłat z rachunku zmarłego"
+  - "Procedura {obsługi|postępowania w razie} zgłoszenia zgonu Klienta oraz wypłat środków z rachunku zmarłego"
+  - "Procedura postępowania po zgłoszeniu zgonu Klienta — rachunki i produkty zmarłego"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [zgon-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [zgon-zakres]
+    opcjonalne: { kategorie: [zgon-zakres-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [zgon-odpowiedzialnosci]
+    opcjonalne: { kategorie: [zgon-role-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, zgon-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przyjęcie zgłoszenia i zabezpieczenie produktów"
+    wymagane: [zgon-schemat, zgon-kroki-przyjecie]
+    opcjonalne: { kategorie: [zgon-krok-przyjecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — ustalenie produktów zmarłego i koszty pogrzebu"
+    wymagane: [zgon-kroki-produkty, zgon-kroki-pogrzeb]
+    opcjonalne: { kategorie: [zgon-krok-produkty], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — dyspozycja na wypadek śmierci"
+    wymagane: [zgon-kroki-dyspozycja]
+    opcjonalne: { kategorie: [zgon-krok-dyspozycja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — spadkobiercy i rachunki wspólne"
+    wymagane: [zgon-kroki-spadkobiercy]
+    opcjonalne: { kategorie: [zgon-krok-spadkobiercy], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — kredyty, ubezpieczenia i informowanie jednostek"
+    wymagane: [zgon-kroki-kredyty]
+    opcjonalne: { kategorie: [zgon-krok-kredyty], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — wypłaty, podatki i zamknięcie sprawy"
+    wymagane: [zgon-kroki-wyplata]
+    opcjonalne: { kategorie: [zgon-krok-wyplata], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [zgon-szczegolne]
+    opcjonalne: { kategorie: [zgon-szczegolne-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [zgon-kontrola]
+    opcjonalne: { kategorie: [zgon-kontrola-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [zgon-dokumentacja, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [zgon-dokumentacja-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [zgon-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna obsługi zgłoszenia zgonu"
+    wymagane: [zgon-zalacznik-lista]
+  - rodzaj: zalacznik
+    tytul: "Wykaz dokumentów wymaganych od osób zgłaszających roszczenia"
+    wymagane: [zgon-zalacznik-dokumenty]
+    opcjonalne: { kategorie: [zgon-zalacznik-opc], min: 0, max: 40 }
+parametry:
+  wlasciciel: "Departament Operacji"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."

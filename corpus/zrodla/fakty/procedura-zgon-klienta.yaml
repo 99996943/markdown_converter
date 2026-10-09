@@ -1,0 +1,187 @@
+fakty:
+  # --- jednostki, systemy i formularze procedury
+  - id: zgon.jednostka.zespol-spadkowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Zespół Obsługi Spadków"
+    alternatywy: ["Sekcja Spadków i Zgonów"]
+  - id: zgon.jednostka.windykacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Windykacji i Restrukturyzacji"
+    alternatywy: ["Departament Windykacji"]
+  - id: zgon.jednostka.ubezpieczenia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Zespół Bancassurance"
+    alternatywy: ["Biuro Ubezpieczeń"]
+  - id: zgon.jednostka.rachunkowosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Finansów i Rachunkowości"
+    alternatywy: ["Departament Rachunkowości"]
+  - id: zgon.system.cbs
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+    alternatywy: ["CBS-BANK"]
+  - id: zgon.system.rejestr
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "RSS"
+    alternatywy: ["RZG"]
+  - id: zgon.system.obieg
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "EOD"
+  - id: zgon.formularz.zgloszenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-31"
+    alternatywy: ["F-OR-13"]
+  - id: zgon.formularz.wniosek-spadkobiercy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-32"
+  - id: zgon.formularz.koszty-pogrzebu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-33"
+  - id: zgon.formularz.wspolposiadacz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-34"
+  - id: zgon.formularz.notatka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-35"
+  - id: zgon.email
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "zgony@bank.example"
+    alternatywy: ["spadki@bank.example"]
+
+  # --- terminy
+  - id: zgon.termin.blokada
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "w dniu przyjęcia zgłoszenia, nie później niż do końca dnia roboczego"
+      - od: 2027-01-01
+        wartosc: "niezwłocznie, nie później niż w ciągu 4 godzin od przyjęcia zgłoszenia"
+    alternatywy: ["w ciągu 2 dni roboczych od przyjęcia zgłoszenia"]
+  - id: termin.zgon.potwierdzenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5, 7]
+  - id: termin.zgon.ustalenie-produktow
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2027-01-01
+        wartosc: 2
+    alternatywy: [5]
+  - id: termin.zgon.koszty-pogrzebu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+    alternatywy: [3, 7]
+  - id: termin.zgon.informacja-spadkobiercy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.zgon.zaswiadczenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+      - od: 2027-01-01
+        wartosc: 5
+    alternatywy: [14]
+  - id: termin.zgon.ubezpieczyciel
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5]
+  - id: termin.zgon.przeglad
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+    alternatywy: [60, 180]
+  - id: termin.zgon.uzupelnienie-dokumentow
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.zgon.zamkniecie-rachunku
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30]
+  - id: termin.zgon.rozliczenie-kredytu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [60]
+  - id: termin.zgon.dokumentacja-reklamacji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5]
+  - id: termin.zgon.zgloszenie-nieprawidlowosci
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [5]
+  - id: zgon.okres-historii
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy"]
+  - id: zgon.termin.zgloszenie-podatkowe
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 miesięcy"
+    alternatywy: ["3 miesiące"]
+
+  # --- limity i kwoty
+  - id: zgon.limit.koszty-pogrzebu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8000.00
+      - od: 2027-01-01
+        wartosc: 10000.00
+    alternatywy: [5000.00, 12000.00]
+  - id: zgon.limit.dyspozycja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100000.00
+      - od: 2026-04-01
+        wartosc: 120000.00
+    alternatywy: [80000.00]
+  - id: zgon.limit.akceptacja-kierownik
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20000.00
+    alternatywy: [10000.00, 50000.00]
+  - id: zgon.limit.akceptacja-departament
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250000.00
+      - od: 2027-01-01
+        wartosc: 300000.00
+    alternatywy: [100000.00]
+  - id: zgon.limit.wyplata-gotowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15000.00
+    alternatywy: [5000.00, 30000.00]
+
+  # --- archiwizacja
+  - id: zgon.retencja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 lat"
+      - od: 2027-01-01
+        wartosc: "12 lat"
+    alternatywy: ["5 lat"]

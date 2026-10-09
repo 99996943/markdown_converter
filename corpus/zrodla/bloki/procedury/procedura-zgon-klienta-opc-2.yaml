@@ -1,0 +1,121 @@
+bloki:
+  - id: zgon-krok-dyspozycja-sporne
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-dyspozycja
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Dyspozycja nieczytelna lub niepełna.** {Gdy|Jeżeli} dyspozycja na wypadek śmierci nie wskazuje jednoznacznie osoby uprawnionej (na przykład brak numeru PESEL, nieczytelne nazwisko), {zespół spadkowy|zespół obsługujący sprawy spadkowe} ustala tożsamość osoby uprawnionej na podstawie danych w systemie centralnym {{fakt:zgon.system.cbs}} oraz oryginału dyspozycji."
+            podkroki:
+              - tekst: "Jeżeli ustalenie nie jest możliwe, zespół zwraca się do „{{fakt:jednostka.prawny}}” o opinię i do czasu jej uzyskania {wstrzymuje|zawiesza} wypłatę w części, której dotyczy wątpliwość."
+              - tekst: "Wypłaty na rzecz pozostałych osób uprawnionych, co do których nie ma wątpliwości, realizuje się w terminie {{fakt:termin.rachunek-osobisty.wyplata-po-zgonie}}."
+          - tekst: "**Śmierć osoby uprawnionej przed posiadaczem.** {Gdy|Jeżeli} osoba uprawniona zmarła przed posiadaczem rachunku, jej część dyspozycji wygasa, chyba że dyspozycja przewiduje osobę zastępującą."
+            podkroki:
+              - tekst: "Kwotę niewypłaconą wskutek wygaśnięcia dyspozycji pozostawia się na rachunku jako składnik spadku."
+              - tekst: "Spadkobiercom osoby uprawnionej nie wypłaca się środków z dyspozycji, {o ile|jeśli} dyspozycja nie stanowi inaczej."
+          - tekst: "**Osoba uprawniona niepełnoletnia.** Wypłatę na rzecz osoby uprawnionej niepełnoletniej realizuje się wyłącznie na rachunek prowadzony na rzecz dziecka lub — za zgodą sądu opiekuńczego, jeżeli jest wymagana — przedstawicielowi ustawowemu."
+            podkroki:
+              - tekst: "Przedstawiciel ustawowy okazuje {dokument tożsamości|dowód tożsamości} oraz dokument potwierdzający jego uprawnienia (akt urodzenia dziecka lub orzeczenie sądu)."
+              - tekst: "Kwoty przekraczające {{fakt:zgon.limit.akceptacja-kierownik}} wypłaca się dopiero po akceptacji „{{fakt:zgon.jednostka.zespol-spadkowy}}”."
+          - tekst: "**Kilka dyspozycji tego samego posiadacza.** {Gdy|Jeżeli} zmarły złożył więcej niż jedną dyspozycję, wiążąca jest dyspozycja ostatnia pod względem daty przyjęcia przez Bank, chyba że wcześniejsza dotyczy innego rachunku."
+            podkroki:
+              - tekst: "Wcześniejsze dyspozycje oznacza się w systemie jako zastąpione, a notatkę o tym dołącza do akt."
+              - tekst: "{Gdy|Jeżeli} dyspozycje dotyczą różnych rachunków, limit {{fakt:zgon.limit.dyspozycja}} stosuje się łącznie."
+
+  - id: zgon-krok-dyspozycja-zmiany
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-dyspozycja
+    wspolny: false
+    elementy:
+      - naglowek: "Przykłady ustalania kwot z dyspozycji"
+      - akapit: "{Poniższe|Niniejsze} przykłady {ilustrują|pokazują} sposób obliczania kwot wypłat z dyspozycji, przy założeniu, że limit łączny wynosi {{fakt:zgon.limit.dyspozycja}}. Dane osób i kwoty są fikcyjne i mają charakter {szkoleniowy|poglądowy}."
+      - tabela:
+          kolumny:
+            - naglowek: "Sytuacja"
+              waga: 3
+            - naglowek: "Sposób postępowania"
+              waga: 4
+          siatka: true
+          wiersze:
+            - ["Dyspozycja wskazuje dwie osoby uprawnione bez określenia kwot; saldo rachunku jest niższe niż limit", "Środki dzielimy na dwie równe części; każda osoba otrzymuje połowę salda na dzień zgonu"]
+            - ["Dyspozycja wskazuje kwoty, których suma przekracza limit", "Wypłaty pomniejszamy proporcjonalnie, tak aby suma równała się kwocie limitu"]
+            - ["Dyspozycja wskazuje kwoty, których suma jest wyższa niż saldo rachunku", "Wypłaty pomniejszamy proporcjonalnie do salda; rachunek zostaje wyzerowany"]
+            - ["Dyspozycja wskazuje osobę uprawnioną na część środków (na przykład 40% salda)", "Obliczamy kwotę od salda na dzień zgonu, z uwzględnieniem limitu; resztę pozostawiamy w spadku"]
+            - ["Rachunek jest obciążony zajęciem egzekucyjnym ustanowionym przed śmiercią posiadacza", "Wypłatę realizujemy dopiero po uwzględnieniu zajęcia w zakresie, w jakim przepisy to przewidują; przypadek konsultujemy z jednostką „{{fakt:jednostka.prawny}}”"]
+      - akapit: "W każdym przypadku {zespół spadkowy|zespół obsługujący sprawy spadkowe} dokumentuje sposób obliczenia kwot w notatce służbowej i dołącza ją do akt sprawy."
+
+  - id: zgon-krok-spadkobiercy-testament
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-spadkobiercy
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Testament.** Samego testamentu nie uznaje się za dokument uprawniający do wypłaty środków z rachunku zmarłego. Pracownik wyjaśnia spadkobiercy, że prawa wynikające z testamentu potwierdza dopiero postanowienie sądu o stwierdzeniu nabycia spadku lub akt poświadczenia dziedziczenia."
+            podkroki:
+              - tekst: "Przedłożonego testamentu nie kopiuje się do akt, jeżeli zawiera on dane osobowe osób niebędących stronami sprawy; w aktach {odnotowuje|zapisuje} się wyłącznie fakt jego okazania."
+              - tekst: "Wyjątek od tej zasady stanowi sytuacja, w której testament wskazuje wykonawcę testamentu; wykonawcę uwzględnia się dopiero po przedstawieniu orzeczenia sądu."
+          - tekst: "**Odrzucenie spadku.** {Gdy|Jeżeli} ze spadkobierców, którym przysługuje spadek, część złożyła oświadczenie o odrzuceniu spadku, w ustalaniu udziałów {zespół spadkowy|zespół obsługujący sprawy spadkowe} opiera się wyłącznie na treści postanowienia sądu lub aktu poświadczenia dziedziczenia."
+            podkroki:
+              - tekst: "Oświadczenie o odrzuceniu spadku nie jest samodzielną podstawą do zmiany podziału środków."
+              - tekst: "Pracownik nie ocenia skuteczności oświadczenia; {w razie|w przypadku} wątpliwości kieruje sprawę do „{{fakt:jednostka.prawny}}”."
+          - tekst: "**Wielu spadkobierców.** W sprawach z wieloma spadkobiercami {zespół spadkowy|zespół obsługujący sprawy spadkowe} prowadzi jedną sprawę i dokonuje wypłat jednocześnie albo w kolejności, w jakiej spadkobiercy złożą kompletne wnioski."
+            podkroki:
+              - tekst: "Wypłata na rzecz jednego spadkobiercy nie wymaga zgody pozostałych, jeżeli dotyczy jego udziału określonego w orzeczeniu."
+              - tekst: "Każdy spadkobierca otrzymuje oddzielne pokwitowanie i oddzielne zaświadczenie o wypłaconej kwocie."
+
+  - id: zgon-krok-spadkobiercy-informacje
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-spadkobiercy
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Informacja dla spadkobierców o stanie majątku.** Po przedłożeniu dokumentu potwierdzającego prawa do spadku {zespół spadkowy|zespół obsługujący sprawy spadkowe} udziela spadkobiercom w terminie {{fakt:termin.zgon.informacja-spadkobiercy}} pełnej informacji o produktach zmarłego i ich stanie na dzień zgonu."
+            podkroki:
+              - tekst: "Zakres informacji obejmuje salda rachunków i lokat, zadłużenie z tytułu kredytów, limitów i kart, ubezpieczenia powiązane z produktami, a także dyspozycje na wypadek śmierci w zakresie, w jakim przepisy dopuszczają ich ujawnienie."
+              - tekst: "Informacji udziela się {na piśmie|pisemnie} i za potwierdzeniem odbioru; {w razie|w przypadku} żądania spadkobiercy informację można przekazać w placówce po okazaniu dokumentu tożsamości."
+          - tekst: "**Dokumenty do postępowania spadkowego.** Przed uzyskaniem prawomocnego orzeczenia osoba, która wszczęła postępowanie o stwierdzenie nabycia spadku, może wystąpić o zaświadczenie o stanie rachunków na dzień zgonu."
+            podkroki:
+              - tekst: "Zaświadczenie wydaje się w terminie {{fakt:termin.zgon.zaswiadczenie}}; opłata wynosi {{fakt:oplata.zaswiadczenie}}."
+              - tekst: "Zaświadczenia nie wydaje się, jeżeli wnioskodawca nie wykaże interesu prawnego w jego uzyskaniu (na przykład poprzez przedłożenie wniosku do sądu lub notariusza)."
+          - tekst: "**Zakres praw spadkobierców.** Spadkobiercy nie mogą żądać informacji o produktach niezwiązanych ze zmarłym, {w szczególności|zwłaszcza} o rachunkach innych osób, w których zmarły był jedynie pełnomocnikiem; w takim przypadku Bank {informuje|zawiadamia} posiadaczy tych rachunków."
+
+  - id: zgon-krok-spadkobiercy-pelnomocnik
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-spadkobiercy
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Pełnomocnik spadkobiercy.** Spadkobierca może działać przez pełnomocnika; pełnomocnictwo do dokonywania czynności w sprawie spadkowej wymaga formy pisemnej z podpisem poświadczonym notarialnie lub złożonym w obecności pracownika Banku."
+            podkroki:
+              - tekst: "Pracownik {weryfikuje|sprawdza} tożsamość pełnomocnika i spadkobiercy oraz sprawdza zakres umocowania; pełnomocnictwo ogólne nie uprawnia do odbioru środków ze spadku, jeżeli nie wymienia wprost czynności tego rodzaju."
+              - tekst: "Pełnomocnictwo oryginalne lub jego poświadczoną kopię {dołącza się do akt|włącza się do akt}; weryfikacja pełnomocnictwa trwa nie dłużej niż {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}} od przedłożenia kompletu dokumentów."
+          - tekst: "**Pełnomocnik zmarłego.** Pełnomocnictwo udzielone przez zmarłego wygasa z chwilą jego śmierci, a pełnomocnik nie może dysponować rachunkiem zmarłego, chyba że wykaże uprawnienia jako spadkobierca albo osoba uprawniona."
+            podkroki:
+              - tekst: "{Gdy|Jeżeli} pełnomocnik wykonał dyspozycję przed zgłoszeniem zgonu i bez wiedzy o śmierci mocodawcy, operację traktuje się jako skuteczną; Bank nie odpowiada za wykonanie dyspozycji przed uzyskaniem informacji o śmierci."
+              - tekst: "Operacje wykonane po dacie zgonu, a przed zgłoszeniem zgonu, bada „{{fakt:jednostka.bezpieczenstwo}}”; jeżeli wyjaśnienia nie przekonują, zawiadamia się „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "**Wykonawca testamentu i kurator spadku.** Osoby te działają na podstawie orzeczenia sądu lub zaświadczenia notariusza; Bank wymaga prawomocnego postanowienia o ustanowieniu kuratora lub o powołaniu wykonawcy."
+
+  - id: zgon-krok-kredyty-windykacja
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-kredyty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Kredyt gotówkowy zmarłego.** Zespół windykacji, po otrzymaniu informacji o zgonie kredytobiorcy, ustala saldo zadłużenia na dzień zgonu, w tym kapitał, odsetki umowne (według stawki z umowy) i odsetki za opóźnienie według stawki {{fakt:oprocentowanie.odsetki-za-opoznienie}}."
+            podkroki:
+              - tekst: "Nie nalicza się opłaty za wezwanie do zapłaty ({{fakt:oplata.upomnienie}}) w okresie do dnia, w którym spadkobiercy zostaną ustaleni, i przez {{fakt:termin.zgon.uzupelnienie-dokumentow}} po ich ustaleniu."
+              - tekst: "Zasady spłaty kredytu gotówkowego przez spadkobierców określa dokument „{{ref:dokument:regulamin-kredytu-gotowkowego}}”."
+          - tekst: "**Kontakt ze spadkobiercami.** Spadkobiercom po ustaleniu ich praw wysyła się pismo informacyjne o zadłużeniu i proponowanych opcjach: spłacie jednorazowej, spłacie ratalnej lub przejęciu długu."
+            podkroki:
+              - tekst: "Pismo przypomina, że spadkobierca odpowiada za długi spadkowe do wartości stanu czynnego spadku, jeżeli przyjął spadek bez ograniczenia lub z dobrodziejstwem inwentarza, według oświadczenia złożonego w postępowaniu spadkowym."
+              - tekst: "W piśmie nie wyraża się presji ani nie grozi sankcjami; zawiera ono dane kontaktowe jednostki prowadzącej sprawę i informację o prawie złożenia reklamacji."
+          - tekst: "**Rozliczenie zobowiązania.** Rozliczenia kredytu z salda rachunku zmarłego {dokonuje się|realizuje się} dopiero po wykazaniu praw do spadku, {w ciągu|w terminie} {{fakt:termin.zgon.rozliczenie-kredytu}} od złożenia wniosku."
+            podkroki:
+              - tekst: "{Gdy|Jeżeli} środki na rachunkach zmarłego nie wystarczają na pokrycie zadłużenia, pozostałą część wierzytelności dochodzi się od spadkobierców w granicach ich odpowiedzialności."
+              - tekst: "{Gdy|Jeżeli} środki przewyższają zadłużenie, nadwyżkę wypłaca się spadkobiercom zgodnie z ich udziałami."
