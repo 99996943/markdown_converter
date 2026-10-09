@@ -54,7 +54,7 @@ public static class CorpusChecks
             var folded = FoldDiacritics(text.Text);
             foreach (var (name, key) in names)
             {
-                if (folded.Contains(key, StringComparison.Ordinal))
+                if (ContainsWord(folded, key))
                 {
                     result.Add(new CheckViolation(
                         "ForbiddenNames",
@@ -66,6 +66,23 @@ public static class CorpusChecks
         }
 
         return Sort(result);
+    }
+
+    /// <summary>Whether <paramref name="key"/> occurs in <paramref name="text"/> not glued to letters or digits.</summary>
+    private static bool ContainsWord(string text, string key)
+    {
+        for (int i = text.IndexOf(key, StringComparison.Ordinal); i >= 0; i = text.IndexOf(key, i + 1, StringComparison.Ordinal))
+        {
+            bool before = i == 0 || !char.IsLetterOrDigit(text[i - 1]);
+            int end = i + key.Length;
+            bool after = end == text.Length || !char.IsLetterOrDigit(text[end]);
+            if (before && after)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /// <summary>FR-103b: non-shared block text must not repeat across documents.</summary>
