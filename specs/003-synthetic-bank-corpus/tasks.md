@@ -291,13 +291,13 @@ między typami), wszystko w treści i w manifeście.
 ### Tests for User Story 5 ⚠️
 
 - [ ] T111 [P] [US5] Testy w `ctests/Cli/ProgramOptionsTests.cs` (red): wszystkie opcje contracts/cli.md (`--types`, `--count`, `--pages`, `--reference-date`, `--versioned`, `--outdated`, `--contradictions`, `--poison <rodzaj>=<n>`/`none`, `--no-strict-uniqueness`, `--save-params`) nadpisują `--params`; błędne wartości → kod 2
-- [ ] T112 [P] [US5] Testy w `ctests/Unit/Planning/NonStrictUniquenessTests.cs` (red, `zrodla-mini`): przebieg wymagający więcej treści niż warianty — z `StrictUniqueness` → kod 3 z liczbą brakujących bloków; bez — powtórzenia między dokumentami (nigdy w tym samym), `repeatedWordShare` per dokument i dla przebiegu w manifeście; zapisany przebieg korpusu nadal ściśle unikalny
+- [X] T112 [P] [US5] Testy w `ctests/Unit/Planning/NonStrictUniquenessTests.cs` (red, `zrodla-mini`): przebieg wymagający więcej treści niż warianty — z `StrictUniqueness` → kod 3 z liczbą brakujących bloków; bez — powtórzenia między dokumentami (nigdy w tym samym), `repeatedWordShare` per dokument i dla przebiegu w manifeście; zapisany przebieg korpusu nadal ściśle unikalny
 - [ ] T113 [P] [US5] Test w `ctests/Unit/CorpusGeneratorExtensibilityTests.cs` (red): nowy **typ dokumentu** (wpis w `typy.yaml` + szablon w istniejącym stylu układu), szablon, blok i rodzaj zatrucia dodane wyłącznie jako pliki YAML w kopii `zrodla-mini` (katalog tymczasowy) pojawiają się w wyniku (`<nowy-typ>/`, `zatrute/<typ>/<nowy-rodzaj>/`) bez zmian kodu (FR-102, FR-134)
 
 ### Implementation for User Story 5
 
 - [ ] T114 [US5] Zaimplementuj opcje w `src/LegalAgent.Corpus.Cli/Program.cs` — T111 green
-- [ ] T115 [US5] Zaimplementuj tryb nieścisły i raport powtórzeń w `corpus-lib/Planning/CorpusPlanner.cs` / `corpus-lib/Validation/CorpusChecks.cs` / manifest (`repeatedWordShare`) — T112 green
+- [X] T115 [US5] Zaimplementuj tryb nieścisły i raport powtórzeń w `corpus-lib/Planning/CorpusPlanner.cs` / `corpus-lib/Validation/CorpusChecks.cs` / manifest (`repeatedWordShare`) — T112 green
 - [ ] T116 [US5] Usuń zaszyte listy typów dokumentów i rodzajów zatruć (`DocumentType`, `PoisonKind` czytane z plików `typy.yaml` i `zatrucia/*.yaml`) — T113 green
 - [ ] T117 [US5] Napisz `corpus/README.md`: cel i zawartość korpusu (układ katalogów, manifest — odsyłacz do schematu), wygenerowanie od nowa jednym poleceniem, `verify`, dodanie dokumentów (`--count`, nowy szablon), zmiana liczby stron (`--pages`), nowy typ dokumentu (szablon z istniejącymi stylami; kiedy potrzebny kod — nowy element układu), nowy szablon/blok/fakt (format, warianty, unikalność, bloki wspólne ≤ 20%), nowy rodzaj zatrucia, odświeżenie Markdown i manifestu (`refresh`), zaokrąglenia liczb z parametrów, pobranie aktów (curl z `--max-time`, sprawdzenie `%PDF-`); obecny korpus = przebieg z `przebieg.json`; walidacja SC-030: przejście instrukcji krok po kroku w czystym klonie (quickstart.md §5) i poprawki README
 

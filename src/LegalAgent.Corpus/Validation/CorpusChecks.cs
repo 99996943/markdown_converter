@@ -115,6 +115,28 @@ public static partial class CorpusChecks
         return Sort(result);
     }
 
+    /// <summary>
+    /// FR-103b: the (document, block) pairs whose rendered non-shared text also occurs in another document (versions of
+    /// one document count as one).
+    /// </summary>
+    public static IReadOnlySet<(string DocumentId, string BlockId)> RepeatedBlocks(IEnumerable<RenderedBlock> blocks)
+    {
+        ArgumentNullException.ThrowIfNull(blocks);
+        var result = new HashSet<(string, string)>();
+        foreach (var group in blocks.Where(b => !b.Shared)
+            .Select(b => (Block: b, Key: Normalize(b.Text)))
+            .Where(x => x.Key.Length > 0)
+            .GroupBy(x => x.Key, StringComparer.Ordinal))
+        {
+            if (group.Select(x => BaseId(x.Block.DocumentId)).Distinct(StringComparer.Ordinal).Count() > 1)
+            {
+                result.UnionWith(group.Select(x => (x.Block.DocumentId, x.Block.BlockId)));
+            }
+        }
+
+        return result;
+    }
+
     private static string BaseId(string documentId) => VersionSuffix().Replace(documentId, string.Empty);
 
     [System.Text.RegularExpressions.GeneratedRegex(@"-w\d+$", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]

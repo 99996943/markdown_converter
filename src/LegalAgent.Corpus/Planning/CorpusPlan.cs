@@ -84,6 +84,12 @@ public sealed record DocumentPlan
     /// <summary>Gets the ids of the non-shared optional blocks dealt to this document, in ordinal order.</summary>
     public required IReadOnlyList<string> BlockPool { get; init; }
 
+    /// <summary>
+    /// Gets the non-shared optional blocks dealt to other documents that this one may repeat when its own pool runs out
+    /// (non-strict runs only, FR-103b), in ordinal order.
+    /// </summary>
+    public IReadOnlyList<string> RepeatPool { get; init; } = [];
+
     /// <summary>Gets the target page count.</summary>
     public required int TargetPages { get; init; }
 

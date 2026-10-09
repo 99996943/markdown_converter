@@ -371,6 +371,13 @@ public static class CorpusGenerator
 
         var documents = new List<GeneratedDocument>(plans.Count);
         var files = new List<CorpusFile>();
+
+        // FR-103b: in a non-strict run, the share of words in blocks repeated across documents (poisoned copies aside).
+        IReadOnlySet<(string DocumentId, string BlockId)>? repeated = parameters.StrictUniqueness
+            ? null
+            : CorpusChecks.RepeatedBlocks(fits.Where((f, i) => plans[i].Poison is null).SelectMany(f => f.Composition.Blocks));
+        int RepeatedWords(DocumentPlan doc, FitResult fit) =>
+            fit.Typeset.BlockWordCounts.Where(p => repeated!.Contains((doc.Id, p.Key))).Sum(p => p.Value);
         var index = Enumerable.Range(0, plans.Count).ToDictionary(i => plans[i].Id, StringComparer.Ordinal);
         for (int i = 0; i < plans.Count; i++)
         {
@@ -378,6 +385,12 @@ public static class CorpusGenerator
             FitResult fit = fits[i];
             FitResult? previous = doc.PreviousVersionId is { } p ? fits[index[p]] : null;
             ManifestDocument entry = Entry(content, plans, doc, fit, previous);
+            if (repeated is not null)
+            {
+                int total = fit.Typeset.Truth.Words.Count;
+                entry = entry with { RepeatedWordShare = total == 0 ? 0 : Math.Round((double)RepeatedWords(doc, fit) / total, 3) };
+            }
+
             documents.Add(new GeneratedDocument(doc, fit.Typeset.Pdf, markdown[i], entry, fit));
             files.Add(new CorpusFile(entry.Pdf, fit.Typeset.Pdf));
             files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(markdown[i])));
@@ -389,6 +402,13 @@ public static class CorpusGenerator
         }
 
         var run = new ManifestRun(parameters.Seed, parameters.ReferenceDate, ManifestParameters(parameters, options), ParserVersion, GeneratorVersion, content.ContentHash);
+        if (repeated is not null)
+        {
+            int words = fits.Sum(f => f.Typeset.Truth.Words.Count);
+            int repeatedWords = plans.Select((p, i) => RepeatedWords(p, fits[i])).Sum();
+            run = run with { RepeatedWordShare = words == 0 ? 0 : Math.Round((double)repeatedWords / words, 3) };
+        }
+
         var manifest = new Manifest.Manifest(run, documents.Select(d => d.Entry).ToList());
         IReadOnlyList<string> typeOrder = content.Types.Select(t => t.Id).ToList();
         string manifestText = ManifestWriter.Write(manifest, typeOrder);

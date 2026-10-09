@@ -71,7 +71,10 @@ public static class ManifestWriter
                 run.GetProperty("parameters").GetRawText(),
                 Str(run, "parserVersion")!,
                 Str(run, "generatorVersion")!,
-                Str(run, "contentHash")!),
+                Str(run, "contentHash")!)
+            {
+                RepeatedWordShare = Has(run, "repeatedWordShare") ? run.GetProperty("repeatedWordShare").GetDouble() : null,
+            },
             documents);
     }
 
@@ -120,6 +123,7 @@ public static class ManifestWriter
         w.WriteString("parserVersion", run.ParserVersion);
         w.WriteString("generatorVersion", run.GeneratorVersion);
         w.WriteString("contentHash", run.ContentHash);
+        OptShare(w, "repeatedWordShare", run.RepeatedWordShare);
         w.WriteEndObject();
     }
 

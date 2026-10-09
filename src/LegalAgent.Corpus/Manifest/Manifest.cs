@@ -22,7 +22,11 @@ public sealed record ManifestRun(
     string ParametersJson,
     string ParserVersion,
     string GeneratorVersion,
-    string ContentHash);
+    string ContentHash)
+{
+    /// <summary>Gets the share of words in blocks repeated across documents in the whole run (non-strict runs only).</summary>
+    public double? RepeatedWordShare { get; init; }
+}
 
 /// <summary>One entry of <c>documents[]</c>.</summary>
 /// <param name="Id">Document id.</param>

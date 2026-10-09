@@ -94,6 +94,7 @@ public static class CorpusPlanner
         List<string>[] pools = DealPools(content, type, seed, ids, docTemplates, requiredBlocks);
 
         var result = new List<DocumentPlan>(count);
+        List<string>[] repeats = parameters.StrictUniqueness ? [] : RepeatPools(content, type, ids, docTemplates, pools, requiredBlocks);
         for (int i = 0; i < count; i++)
         {
             string id = ids[i];
@@ -114,9 +115,42 @@ public static class CorpusPlanner
                 Layout = layouts[i],
                 ValidFrom = new DateOnly(shifted.Year, shifted.Month, 1),
                 BlockPool = pools[i],
+                RepeatPool = parameters.StrictUniqueness ? [] : repeats[i],
                 TargetPages = targetPages,
                 Seed = DeterministicRandom.DeriveSeed(seed, "dokument", id),
             });
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// FR-103b, non-strict runs: per document the non-shared blocks of its type, topic and categories dealt to other
+    /// documents — taken only after its own pool, never twice in one document.
+    /// </summary>
+    private static List<string>[] RepeatPools(
+        ContentLibrary content,
+        DocumentTypeDef type,
+        string[] ids,
+        DocumentTemplate[] docTemplates,
+        List<string>[] pools,
+        HashSet<string> requiredBlocks)
+    {
+        var result = new List<string>[ids.Length];
+        for (int i = 0; i < ids.Length; i++)
+        {
+            var categories = docTemplates[i].Sections.Where(s => s.Optional is not null).SelectMany(s => s.Optional!.Categories).ToHashSet(StringComparer.Ordinal);
+            var own = pools[i].ToHashSet(StringComparer.Ordinal);
+            result[i] = content.Blocks
+                .Where(b => !b.Shared
+                    && b.Types.Contains(type.Id, StringComparer.Ordinal)
+                    && !requiredBlocks.Contains(b.Id)
+                    && !own.Contains(b.Id)
+                    && categories.Contains(b.Category)
+                    && (b.Topics.Count == 0 || b.Topics.Contains(docTemplates[i].Topic, StringComparer.Ordinal)))
+                .Select(b => b.Id)
+                .Order(StringComparer.Ordinal)
+                .ToList();
         }
 
         return result;

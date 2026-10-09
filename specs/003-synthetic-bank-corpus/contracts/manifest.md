@@ -24,6 +24,7 @@ tabelach niżej). Manifest nie zawiera ról ani uprawnień (FR-140). Wersja sche
 | `parserVersion` | string | wersja `LegalAgent.PdfParser` użyta do Markdown |
 | `generatorVersion` | string | wersja `LegalAgent.Corpus` |
 | `contentHash` | string | SHA-256 plików `zrodla/` (porządek ordinal ścieżek) |
+| `repeatedWordShare` | number? | tylko przebieg nieścisły (FR-103b): udział słów bloków powtórzonych między dokumentami w całym przebiegu (0–1, 3 miejsca) |
 
 Brak znacznika czasu uruchomienia (powtarzalność).
 

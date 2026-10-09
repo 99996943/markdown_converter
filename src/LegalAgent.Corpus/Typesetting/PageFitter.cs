@@ -44,7 +44,10 @@ public static class PageFitter
         int most = Pages(capacity);
         if (most < range.Min)
         {
-            throw Unreachable(plan, $"za mało bloków: najwięcej {most} str. przy {capacity} blokach opcjonalnych, wymagane {range.Min}–{range.Max}");
+            // Blocks still missing, at the pages one optional block adds on average (FR-103b: a strict run cannot repeat).
+            double perBlock = capacity == 0 ? 1 : Math.Max(0.1, (double)(most - Pages(0)) / capacity);
+            int missing = (int)Math.Ceiling((range.Min - most) / perBlock);
+            throw Unreachable(plan, $"za mało bloków: najwięcej {most} str. przy {capacity} blokach opcjonalnych, wymagane {range.Min}–{range.Max}; brakuje ok. {missing} bloków");
         }
 
         int least = Pages(0);
