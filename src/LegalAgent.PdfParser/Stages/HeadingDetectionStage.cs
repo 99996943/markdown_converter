@@ -21,6 +21,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const int MinCapsLetters = 3;
     private const int MaxLevel = 6;
 
+    /// <summary>Line spacing of a heading font, in font sizes (a typical leading).</summary>
+    private const double HeadingLineSpacing = 1.2;
+
     private const int RankTitle = 0;
     private const int RankTypographicInLegal = 6;
     private const int RankUnit = 7;
@@ -298,6 +301,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         first.Consumed = true;
     }
 
+    /// <summary>Line spacing between lines of a heading: the body leading, or more for a larger heading font.</summary>
+    private static double HeadingLeading(Entry entry, double leading) => Math.Max(leading, HeadingLineSpacing * entry.Size);
+
     private static bool SameFont(Entry a, Entry b, HeadingOptions options) =>
         Math.Abs(a.Size - b.Size) <= options.SizeClusterTolerance && a.AllBold == b.AllBold;
 
@@ -388,7 +394,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         else if (next is not null
             && next.Legal is null
             && next.Text.Length <= options.MaxLength
-            && next.Line.Baseline - entry.Line.Baseline <= options.GapFactor * leading
+            && next.Line.Baseline - entry.Line.Baseline <= options.GapFactor * HeadingLeading(entry, leading)
             && !next.Text.EndsWith('.')
             && !next.Text.EndsWith(',')
             && !next.Text.EndsWith(';')
@@ -408,7 +414,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                     || follower.Previous != last.Line
                     || follower.Legal is not null
                     || !SameFont(follower, last, options)
-                    || follower.Line.Baseline - last.Line.Baseline > options.GapFactor * leading
+                    || follower.Line.Baseline - last.Line.Baseline > options.GapFactor * HeadingLeading(last, leading)
                     || heading.Title.Length + 1 + follower.Text.Length > options.MaxLength
                     || follower.Text.EndsWith(',')
                     || follower.Text.EndsWith(';'))

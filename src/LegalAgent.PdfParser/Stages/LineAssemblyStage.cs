@@ -25,6 +25,12 @@ public sealed class LineAssemblyStage : IPipelineStage
     /// <summary>Glyphs at least this fraction of the seed size extend the core box of a line.</summary>
     private const double CoreSizeRatio = 0.9;
 
+    /// <summary>
+    /// Glyphs below this fraction of the seed size are markers (superscripts, footnote references) that may join a line
+    /// by vertical overlap even far to the side; larger ones there are text of another line.
+    /// </summary>
+    private const double MarkerSizeRatio = 0.7;
+
     private const double MaxLeadingInFontSizes = 3.0;
 
     /// <summary>Horizontal distance (in ems) within which a glyph may join a line by vertical overlap alone.</summary>
@@ -553,9 +559,10 @@ public sealed class LineAssemblyStage : IPipelineStage
             }
 
             // Vertical overlap catches raised or lowered glyphs (superscripts, footnote markers); a full-size glyph far to
-            // the side with another baseline belongs to a different line, e.g. of the other column (FR-030).
+            // the side with another baseline belongs to a different line, e.g. of the other column (FR-030) — also body
+            // text beside a larger heading there.
             double distance = Math.Max(0, Math.Max(_left - glyph.Box.Right, glyph.Box.Left - _right));
-            if (distance > NearGlyphEm * smaller && glyph.PointSize >= CoreSizeRatio * _seedSize)
+            if (distance > NearGlyphEm * smaller && glyph.PointSize >= MarkerSizeRatio * _seedSize)
             {
                 return false;
             }
