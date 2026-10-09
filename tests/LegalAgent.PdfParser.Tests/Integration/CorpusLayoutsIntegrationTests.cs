@@ -1216,6 +1216,38 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("\n2\\.\n", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087i: a left-column line ending with a footnote marker and a right-column line 2.5 pt higher (REG-02 page 10,
+    /// „Bank.6”): the two columns are separate lines, so the marker stays raised above its own line and links to its
+    /// note.
+    /// </summary>
+    [Fact]
+    public async Task FootnoteMarkerBesideALineOfTheOtherColumn_IsAMarker()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        double y = 92;
+        for (int i = 0; i < 40; i++, y += 12.5)
+        {
+            b.Text(50, y, $"Treść lewej kolumny regulaminu w wierszu {i + 1},", 9.5);
+            b.Text(313, y - 2.5, $"treść prawej kolumny regulaminu w wierszu {i + 1},", 9.5);
+        }
+
+        b.Text(50, y, "i może wymagać oceny ryzyka przez Bank.", 9.5);
+        b.Text(50 + SyntheticPdfBuilder.TextWidth("i może wymagać oceny ryzyka przez Bank.", 9.5) + 0.3, y - 3.6, "6", 5.7);
+        b.Text(313, y - 2.5, "2. Jeżeli bankomat nie wydał gotówki,", 9.5);
+        b.Text(50, 769, "6) Limity zdefiniowane przez Użytkownika nie mogą przekraczać kwot z tabeli.", 8);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087i.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("Bank.6", md, StringComparison.Ordinal);
+        Assert.Contains("ryzyka przez Bank.[^6]", md, StringComparison.Ordinal);
+        Assert.Contains("[^6]: Limity zdefiniowane", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
