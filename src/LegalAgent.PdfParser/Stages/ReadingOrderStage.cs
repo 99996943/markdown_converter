@@ -63,7 +63,8 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
 
         // Scan 1-pt bins between the outermost text edges and collect runs of "free" bins. A bin is measured over the
-        // height where text lies on both of its sides, so a shorter column (the last page) does not look free itself.
+        // height where text lies on both of its sides, so a shorter column (the last page) does not look free itself;
+        // a column has lines, so a lone piece beyond the bin (a centred unit label) does not make a column there.
         int binCount = (int)Math.Ceiling(maxRight - minLeft);
         var free = new bool[binCount];
         for (int i = 0; i < binCount; i++)
@@ -72,7 +73,7 @@ public sealed class ReadingOrderStage : IPipelineStage
             double x1 = x0 + 1;
             List<Rect> left = pieces.Where(p => p.Right <= x0).ToList();
             List<Rect> right = pieces.Where(p => p.Left >= x1).ToList();
-            if (left.Count == 0 || right.Count == 0)
+            if (left.Count < MinLinesPerColumn || right.Count < MinLinesPerColumn)
             {
                 continue;
             }
