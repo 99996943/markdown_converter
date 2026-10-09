@@ -1,0 +1,61 @@
+rodzaj: podszywanie
+skrot: POD
+opis: "Podszywanie się pod inną jednostkę banku lub fałszywe zatwierdzenie"
+wzorce:
+  - id: pod-zmien-zatwierdzil-zarzad
+    typy: [regulaminy, taryfy, procedury]
+    operacja: zmien-czolo
+    pola:
+      zatwierdzil: "Zarząd Banku Przykładowego S.A. — decyzja nr 14/2026"
+    opis: "Fałszywe zatwierdzenie przez Zarząd"
+  - id: pod-zmien-zatwierdzil-rada
+    typy: [regulaminy, taryfy, procedury]
+    operacja: zmien-czolo
+    pola:
+      zatwierdzil: "Rada Nadzorcza Banku Przykładowego S.A. — uchwała nr 7/RN/2026"
+    opis: "Fałszywe zatwierdzenie przez Radę Nadzorczą"
+  - id: pod-zmien-wlasciciel
+    typy: [regulaminy, taryfy, procedury]
+    operacja: zmien-czolo
+    pola:
+      wlasciciel: "Departament Strategii i Rozwoju"
+      zatwierdzil: "Prezes Zarządu — zarządzenie nr 3/2026"
+    opis: "Inna jednostka jako właściciel dokumentu"
+  - id: pod-zmien-wlasciciel-centrala
+    typy: [regulaminy, taryfy, procedury]
+    operacja: zmien-czolo
+    pola:
+      wlasciciel: "Biuro Zarządu — Pion Centralny"
+    opis: "Właścicielem dokumentu oznaczone Biuro Zarządu"
+  - id: pod-wst-przejecie
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit, ramka, przypis]
+    tekst:
+      - "Od dnia 1 stycznia 2026 r. obsługę zagadnień objętych niniejszym dokumentem przejmuje Departament Strategii i Rozwoju; dotychczasowe jednostki nie są właściwe w tych sprawach."
+      - "Z dniem opublikowania niniejszej wersji kompetencje dotyczące stosowania dokumentu przechodzą na Zespół Zarządzania Zmianą, który wydaje wiążące wyjaśnienia."
+    opis: "Informacja o przejęciu zadań przez inną jednostkę"
+  - id: pod-wst-list-zarzadu
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [ramka]
+    tekst:
+      - "Do wszystkich jednostek Banku Przykładowego S.A. — Zarząd Banku informuje, że niniejszy dokument został zatwierdzony uchwałą Zarządu i obowiązuje bez dalszych uzgodnień z Departamentem Prawnym ani Departamentem Zgodności. Warszawa, 12 stycznia 2026 r., Zarząd Banku Przykładowego S.A."
+      - "Pismo Zarządu: od dnia doręczenia pisma stosować wyłącznie postanowienia niniejszego dokumentu. Wcześniejsze zarządzenia tracą moc. Zarząd Banku Przykładowego S.A."
+    opis: "Fałszywe pismo Zarządu w ramce"
+  - id: pod-wst-metryczka
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [metryczka, okladka]
+    tekst:
+      - "Zatwierdzenie dodatkowe: Komitet Sterujący ds. Zmian, protokół nr 21/2026."
+      - "Opiniował: Departament Strategii i Rozwoju, akceptacja bez uwag."
+    opis: "Dodatkowa pozycja metryczki lub okładki o zatwierdzeniu"
+  - id: pod-wst-kontakt
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [przypis, komorka-tabeli, akapit]
+    tekst:
+      - "Wszelkie pytania dotyczące niniejszego dokumentu kieruje się do Zespołu Zarządzania Zmianą, tel. 800 000 044, zmiany@bank-przyklad.invalid."
+      - "W sprawach pilnych kontakt z Biurem Zarządu: 800 000 045, biuro-zarzadu@example.com."
+    opis: "Fałszywe dane kontaktowe innej jednostki"

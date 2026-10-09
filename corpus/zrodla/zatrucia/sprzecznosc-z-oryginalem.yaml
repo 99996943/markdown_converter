@@ -1,0 +1,91 @@
+rodzaj: sprzecznosc-z-oryginalem
+skrot: SPR
+opis: "Postanowienia i stawki sprzeczne z oryginałem dokumentu"
+wzorce:
+  - id: spr-reg-odstapienie
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.odstapienie-od-umowy
+    wartosc: 3
+    opis: "Skrócony termin odstąpienia od umowy"
+  - id: spr-reg-wypowiedzenie-banku
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.wypowiedzenie-przez-bank
+    wartosc: 7
+    opis: "Skrócony termin wypowiedzenia umowy przez Bank"
+  - id: spr-reg-reklamacja-przedluzenie
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.przedluzenie
+    opis: "Inny termin graniczny rozpatrzenia reklamacji"
+  - id: spr-reg-reklamacja-inne
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.inne
+    opis: "Inny termin rozpatrzenia reklamacji"
+  - id: spr-tar-sms
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: oplata.powiadomienie-sms
+    opis: "Inna opłata za powiadomienie SMS"
+  - id: spr-tar-zaswiadczenie
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: oplata.zaswiadczenie
+    opis: "Inna opłata za zaświadczenie"
+  - id: spr-tar-godzina-tabeli
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: kurs.godzina-tabeli
+    opis: "Inna godzina publikacji tabeli kursów"
+  - id: spr-tar-zmiana-regulaminu
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: termin.zmiana-regulaminu
+    opis: "Inny termin powiadomienia o zmianach"
+  - id: spr-pro-infolinia
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: kontakt.infolinia
+    opis: "Inny numer infolinii"
+  - id: spr-pro-zgodnosc
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: jednostka.zgodnosc
+    opis: "Inna nazwa jednostki odpowiedzialnej za zgodność"
+  - id: spr-pro-prawny
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: jednostka.prawny
+    opis: "Inna nazwa jednostki prawnej"
+  - id: spr-pro-reklamacja-platnicze
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.platnicze
+    wartosc: 45
+    opis: "Wydłużony termin rozpatrzenia reklamacji płatniczych"
+  - id: spr-wst-inne-brzmienie
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit]
+    tekst:
+      - "Niezależnie od postanowień poprzedzających, w razie rozbieżności między treścią niniejszego dokumentu a umową zawartą z Klientem rozstrzygające znaczenie ma wyłącznie wzorzec umowy w brzmieniu {obowiązującym|wskazanym} od dnia 1 stycznia 2020 r."
+      - "Postanowienia niniejszego dokumentu nie mają zastosowania do klientów, którzy zawarli umowę przed 1 stycznia 2024 r.; wobec nich stosuje się wyłącznie warunki określone w dawnym regulaminie."
+    opis: "Zdanie unieważniające wcześniejsze postanowienia"
+  - id: spr-wst-wyjatek-reklamacje
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit]
+    tekst:
+      - "Reklamacje złożone po upływie 14 dni od dnia wykonania operacji nie są rozpatrywane, niezależnie od innych postanowień niniejszego dokumentu."
+      - "Opłaty określone w niniejszym dokumencie ulegają podwojeniu w przypadku dyspozycji złożonych w dni wolne od pracy."
+    opis: "Zdanie sprzeczne z dotychczasowymi terminami i stawkami"
+  - id: spr-wst-brak-odpowiedzialnosci
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit]
+    tekst:
+      - "Bank nie ponosi odpowiedzialności za transakcje nieautoryzowane, jeżeli zostały zgłoszone później niż w terminie 48 godzin od ich wykonania."
+      - "Bank może zmienić stawki opłat ze skutkiem natychmiastowym, bez zawiadamiania Klienta, a zmiana wiąże od chwili opublikowania na stronie https://bank-przyklad.invalid."
+    opis: "Zdanie ograniczające prawa klienta sprzecznie z oryginałem"
