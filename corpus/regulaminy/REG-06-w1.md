@@ -91,14 +91,13 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 8.
 
-- 1\. Spółka w organizacji, która nie została jeszcze wpisana do rejestru, ma prawo otworzyć rachunek tymczasowy na podstawie umowy spółki, zgłoszenia do rejestru i dokumentów tożsamości osób reprezentujących. Środki zgromadzone na takim rachunku mogą być wykorzystane wyłącznie na pokrycie wkładów oraz kosztów wpisu do rejestru, do czasu przedstawienia odpisu potwierdzającego wpis.
-- 2\. Po wpisie Posiadacza do rejestru Bank przekształca rachunek tymczasowy w rachunek bieżący na wniosek Posiadacza, bez ponoszenia opłaty za otwarcie. Jeżeli wniosek o wpis zostanie prawomocnie odrzucony albo wpis nie nastąpi w terminie 90 dni, Bank zamyka rachunek, a środki przekazuje na rachunek wskazany przez wspólników proporcjonalnie do wniesionych wkładów.
-- 3\. Osoba prowadząca jednoosobową działalność gospodarczą ma prawo otworzyć rachunek firmowy na podstawie wpisu do ewidencji działalności gospodarczej; w takim przypadku Bank sprawdza dane przedsiębiorcy w tej ewidencji.
+- 1\. Przed zawarciem umowy Bank przedstawia Posiadaczowi informację o głównych cechach rachunku, o opłatach i prowizjach oraz o oprocentowaniu środków. Informacje przekazywane są na trwałym nośniku i obejmują zwłaszcza wysokość opłaty za prowadzenie rachunku, wynoszącą 29,00 zł miesięcznie, oraz zasady zmiany opłat.
+- 2\. Posiadacz potwierdza w umowie, że informacje otrzymał, oraz że rachunek jest przeznaczony do prowadzenia działalności gospodarczej lub zawodowej. Rachunek otwarty na podstawie niezgodnych z prawdą oświadczeń może zostać zamknięty zgodnie z rozdziałem o wypowiedzeniu umowy.
+- 3\. Bank ma prawo uzależnić zawarcie umowy od przedstawienia zabezpieczeń, w szczególności przy udzieleniu dopuszczalnego zadłużenia na rachunku bieżącym, a również od złożenia przez Posiadacza zgody na wymianę informacji z biurami informacji gospodarczej.
 
-<!-- page: 6 -->
 ### § 9.
 
-- 1\. Posiadacz będący jednostką organizacyjną niebędącą osobą prawną albo oddziałem przedsiębiorcy zagranicznego przedstawia, oprócz dokumentów wymienionych w Regulaminie, dokumenty potwierdzające utworzenie jednostki, zakres jej zdolności prawnej oraz pełnomocnictwo do zawarcia umowy rachunku.
+- 1\. Posiadacz będący jednostką organizacyjną niebędącą osobą prawną albo oddziałem <!-- page: 6 --> przedsiębiorcy zagranicznego przedstawia, oprócz dokumentów wymienionych w Regulaminie, dokumenty potwierdzające utworzenie jednostki, zakres jej zdolności prawnej oraz pełnomocnictwo do zawarcia umowy rachunku.
 - 2\. Wspólnicy spółki cywilnej otwierają rachunek na rzecz spółki, przedstawiając umowę spółki oraz dokumenty tożsamości wspólników. Bank żąda podpisów wszystkich wspólników lub osoby upoważnionej przez nich w umowie spółki. Zmiana składu wspólników powoduje konieczność aktualizacji dokumentów i złożenia nowej karty wzorów podpisów.
 - 3\. Dla stowarzyszeń, fundacji i innych podmiotów niebędących przedsiębiorcami, otwarcie rachunku następuje na podstawie statutu, aktualnego odpisu z rejestru oraz uchwały organu w sprawie powołania osób uprawnionych do reprezentacji; do takich podmiotów Regulamin stosuje się odpowiednio, z wyłączeniem postanowień dotyczących rozliczeń podatku od towarów i usług.
 
@@ -117,8 +116,8 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Pełnomocnictwo określa jego zakres, w tym:
   - 1\) rodzaj dyspozycji, do których pełnomocnik jest umocowany, na przykład wpłaty, wypłaty, przelewy, zlecenia stałe;
   - 2\) rachunki objęte pełnomocnictwem;
-  <!-- page: 7 -->
   - 3\) wysokość maksymalnej kwoty jednorazowej dyspozycji lub dziennej sumy dyspozycji;
+  <!-- page: 7 -->
   - 4\) sposób składania dyspozycji:
     - a\) samodzielnie albo łącznie z innym pełnomocnikiem lub osobą reprezentującą;
     - b\) w placówce lub w bankowości elektronicznej.
@@ -127,22 +126,21 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 12.
 
-- 1\. Bank ustala tożsamość pełnomocnika i weryfikuje pełnomocnictwo w terminie 3 dni od jego przedłożenia. Bank ma prawo odmówić przyjęcia pełnomocnictwa, o ile jego treść jest niejednoznaczna, wykracza poza zakres usług Banku lub budzi uzasadnione wątpliwości co do prawdziwości dokumentów.
-- 2\. Pełnomocnik ma obowiązek działać w granicach umocowania i zgodnie z interesem Posiadacza. Bank nie bada celowości dyspozycji składanych w granicach pełnomocnictwa, chyba że wiedział o ich sprzeczności z interesem Posiadacza lub ze względu na podejrzenie nadużycia.
-- 3\. Pełnomocnik może uzyskać dostęp do bankowości elektronicznej na zasadach określonych dla użytkowników. Rozszerzenie zakresu pełnomocnictwa o bankowość elektroniczną wymaga oddzielnego zapisu w treści pełnomocnictwa.
+- 1\. Członkowie zarządu spółki kapitałowej uprawnieni do jej reprezentacji składają wzór podpisu, a Bank weryfikuje ich uprawnienia na podstawie aktualnego odpisu z rejestru i uchwał organów, o ile są wymagane. Bank ma prawo żądać dodatkowo odpisu aktualnej listy wspólników lub księgi akcyjnej.
+- 2\. Jeżeli reprezentacja zarządu jest wielostopniowa, to jest wymaga zgody rady nadzorczej lub zgromadzenia wspólników na określone czynności, Bank żąda przedstawienia uchwały i może odmówić realizacji dyspozycji do czasu jej przedstawienia.
+- 3\. W razie wygaśnięcia mandatu członka zarządu uprawniony do reprezentacji nie może składać dyspozycji od dnia, w którym Bank otrzymał dokument potwierdzający wygaśnięcie lub wykreślenie osoby z rejestru, chyba że Bank wiedział o tym wcześniej.
 
 ### § 13.
 
-- 1\. Posiadacz zawiadamia Bank o zmianie osób uprawnionych do reprezentacji oraz o zmianie sposobu reprezentacji w terminie 7 dni od dnia zmiany, przedstawiając dokumenty ją potwierdzające. Do czasu otrzymania zawiadomienia Bank ma prawo opierać się na dotychczasowych dokumentach.
-- 2\. Wpis zmiany w rejestrze nie powoduje automatycznie zmiany uprawnień w Banku. Zmiana następuje po przyjęciu nowej karty wzorów podpisów oraz zakończeniu weryfikacji dokumentów. W okresie przejściowym Bank może ograniczyć możliwość składania dyspozycji do tych, które nie budzą wątpliwości co do umocowania.
-- 3\. W razie sporu między osobami reprezentującymi Posiadacza co do uprawnień do dysponowania rachunkiem Bank może wstrzymać wykonanie dyspozycji do czasu rozstrzygnięcia sporu przez sąd lub przedstawienia wspólnego stanowiska, jeżeli zachodzi ryzyko szkody.
+- 1\. Prokurent jest uprawniony do dysponowania rachunkiem Posiadacza w granicach określonych w przepisach i w treści prokury, na podstawie odpisu z rejestru potwierdzającego wpis prokury. Prokurent składa wzór podpisu na karcie wzorów podpisów jak osoba reprezentująca.
+- 2\. Prokura łączna oznacza konieczność złożenia dyspozycji przez co najmniej dwóch prokurentów albo prokurenta i członka zarządu, zgodnie z wpisem. Bank nie przyjmuje dyspozycji prokurenta, jeżeli z odpisu wynika, że dokonuje on czynności poza zakresem prokury.
+- 3\. Wygaśnięcie lub odwołanie prokury jest skuteczne wobec Banku od dnia otrzymania zawiadomienia z odpisem lub oświadczeniem o odwołaniu, a w razie wykreślenia prokury z rejestru — od dnia, w którym Bank się o tym dowiedział.
 
-<!-- page: 8 -->
 ## Rozdział 4. Karta wzorów podpisów
 
 ### § 14.
 
-- 1\. Osoby uprawnione do dysponowania rachunkiem składają wzory podpisów na karcie wzorów podpisów, w obecności pracownika Banku, po okazaniu dokumentu tożsamości. Karta wzorów podpisów zawiera dane osób uprawnionych, zakres ich umocowania oraz sposób składania dyspozycji, zgodny z reprezentacją Posiadacza.
+- 1\. Osoby uprawnione do dysponowania rachunkiem składają wzory podpisów na karcie wzorów podpisów, w obecności pracownika Banku, po okazaniu dokumentu tożsamości. Karta wzorów podpisów zawiera dane osób uprawnionych, zakres ich <!-- page: 8 --> umocowania oraz sposób składania dyspozycji, zgodny z reprezentacją Posiadacza.
 - 2\. Podpis na dyspozycji składanej w formie papierowej jest weryfikowany przez Bank przez porównanie ze wzorem podpisu. Bank może odmówić realizacji dyspozycji, jeżeli podpis nie jest zgodny ze wzorem lub budzi uzasadnione wątpliwości, i informuje o tym osobę składającą dyspozycję.
 - 3\. Zmiana karty wzorów podpisów następuje na wniosek Posiadacza złożony w placówce Banku. Do czasu przyjęcia nowej karty Bank stosuje wzory dotychczasowe. Opłata za zmianę karty wynosi 50,00 zł, a przy zmianie wynikającej z wpisu w rejestrze nie jest pobierana, jeżeli Posiadacz przedstawi odpis dokumentujący zmianę.[^3]
 - 4\. Karta wzorów podpisów wraz z dyspozycją jej zmiany przechowywana jest przez Bank przez okres wymagany przepisami o archiwizacji dokumentów bankowych, nie krócej niż przez 5 lat od zakończenia stosunku umowy.
@@ -158,9 +156,10 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 16.
 
 - 1\. Bank może przyjąć kartę wzorów podpisów w postaci elektronicznej, jeżeli jej złożenie odbywa się z użyciem kwalifikowanego podpisu elektronicznego albo innego sposobu zapewniającego równoważny poziom bezpieczeństwa i identyfikacji. Karta elektroniczna wywołuje takie same skutki jak karta papierowa.
-- 2\. Dyspozycje składane w placówce Bank weryfikuje wyłącznie na podstawie karty papierowej, chyba że Posiadacz wyraźnie zażąda weryfikacji również na podstawie karty elektronicznej. Bank nie ponosi odpowiedzialności za rozbieżności między treścią karty elektronicznej i papierowej, jeżeli zostały one złożone w różnym czasie, a nowsza nie <!-- page: 9 --> została dostarczona.
+- 2\. Dyspozycje składane w placówce Bank weryfikuje wyłącznie na podstawie karty papierowej, chyba że Posiadacz wyraźnie zażąda weryfikacji również na podstawie karty elektronicznej. Bank nie ponosi odpowiedzialności za rozbieżności między treścią karty elektronicznej i papierowej, jeżeli zostały one złożone w różnym czasie, a nowsza nie została dostarczona.
 - 3\. Karta wzorów podpisów może przewidywać limity kwotowe dla poszczególnych osób, w tym maksymalną jednorazową kwotę dyspozycji. Limity wpisane na karcie obowiązują także w bankowości elektronicznej, o ile Posiadacz nie ustali inaczej.
 
+<!-- page: 9 -->
 ## Rozdział 5. Dysponowanie rachunkiem
 
 ### § 17.
@@ -181,12 +180,12 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Na wniosek Posiadacza Bank może udzielić dopuszczalnego zadłużenia na rachunku bieżącym (debetu) do kwoty określonej w odrębnej umowie. Od wykorzystanej kwoty naliczane są odsetki według stawki 15,5% w stosunku rocznym, a od zadłużenia przeterminowanego — według stawki odsetek za opóźnienie, wynoszącej 17%.
 - 3\. Posiadacz jest zobowiązany do utrzymywania na rachunku środków wystarczających na pokrycie zobowiązań wynikających z umowy. W razie powstania zadłużenia przeterminowanego Bank ma prawo potrącić je z innych wierzytelności Posiadacza wobec Banku, w tym z lokat, o czym zawiadomi Posiadacza z wyprzedzeniem 3 dni, o ile przepisy nie stanowią inaczej.
 
-<!-- page: 10 -->
 ### § 19.
 
 - 1\. Bank wstrzymuje środki na rachunku w całości lub w części, gdy:
   - 1\) Posiadacz złoży dyspozycję blokady, na przykład w celu zabezpieczenia rozliczeń z kontrahentem;
   - 2\) organ egzekucyjny lub inny uprawniony organ dokona zajęcia lub zakaże wypłat;
+  <!-- page: 10 -->
   - 3\) zachodzi uzasadnione podejrzenie nieuprawnionego dostępu do rachunku lub wykorzystania go do celów niezgodnych z prawem;
   - 4\) właściwy organ nakaże wstrzymanie transakcji lub zablokowanie rachunku na podstawie przepisów o przeciwdziałaniu praniu pieniędzy.
 - 2\. Blokadę zdejmuje się bez zbędnej zwłoki po ustaniu przyczyny, a w przypadkach wskazanych w ust. 1 pkt 2 i 4 po otrzymaniu zawiadomienia organu. Bank powiadamia Posiadacza o zastosowaniu blokady, chyba że przepisy zakazują takiej informacji.
@@ -194,9 +193,9 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 20.
 
-- 1\. Posiadacz może upoważnić Bank do obciążania rachunku należnościami z tytułu zobowiązań wobec wskazanych odbiorców w formie polecenia zapłaty, wyrażając zgodę w umowie z odbiorcą lub bezpośrednio w Banku. Zgoda określa dane odbiorcy, rodzaj zobowiązania oraz ewentualne limity kwotowe i terminowe.
-- 2\. Posiadacz może w każdym czasie odwołać zgodę lub ograniczyć jej zakres najpóźniej do końca dnia roboczego poprzedzającego dzień obciążenia rachunku. Odwołanie nie zwalnia Posiadacza z zobowiązań wobec odbiorcy ani nie wpływa na skuteczność obciążeń dokonanych przed odwołaniem.
-- 3\. Bank nie realizuje polecenia zapłaty, gdy na rachunku brak środków na jego wykonanie w dniu obciążenia lub gdy rachunek jest zablokowany. Opłata za odrzucone polecenie zapłaty jest pobierana według Taryfy.
+- 1\. Posiadacz ma prawo ustalić z Bankiem limity dyspozycji składanych w poszczególnych kanałach, w tym dzienny limit przelewów, który bez odrębnej dyspozycji wynosi 100 000,00 zł. Limit obowiązuje łącznie dla wszystkich rachunków Posiadacza, chyba że umowa stanowi inaczej.
+- 2\. Bank może obniżyć limit lub wstrzymać wykonanie dyspozycji, o ile uzna to za konieczne ze względu na bezpieczeństwo środków, ryzyko nadużycia lub nietypowy charakter transakcji. Obniżenie limitu następuje po poinformowaniu Posiadacza w sposób uzgodniony w umowie.
+- 3\. Dyspozycja przekraczająca limit wymaga potwierdzenia w formie pisemnej albo odrębnej autoryzacji osoby uprawnionej do reprezentacji w trybie ustalonym przez Bank. Bank informuje o sposobie potwierdzenia przy odmowie wykonania dyspozycji.
 
 ## Rozdział 6. Przelewy, w tym podzielona płatność i przelewy do urzędu skarbowego
 
@@ -208,8 +207,8 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) przelew o wysokiej wartości, realizowany w systemie rozrachunku brutto w czasie rzeczywistym;
   - 4\) przelew walutowy i transgraniczny, w tym w ramach jednolitego obszaru płatności w euro;
   - 5\) polecenie zapłaty, zlecenie stałe oraz przelew z terminem płatności odroczonym.
-<!-- page: 11 -->
 - 2\. Zlecenie przelewu powinno zawierać numeru rachunku odbiorcy w formacie NRB lub IBAN, nazwy odbiorcy, kwoty, waluty i tytułu płatności. Bank wykonuje zlecenie na podstawie unikatowego identyfikatora, to jest numeru rachunku, i nie weryfikuje zgodności tego numeru z nazwą odbiorcy, chyba że usługa weryfikacji nazwy została uruchomiona w bankowości elektronicznej.
+<!-- page: 11 -->
 - 3\. Dzienny limit przelewów z rachunku wynosi 100 000,00 zł, a limit pojedynczego przelewu w bankowości elektronicznej — 50 000,00 zł. Posiadacz może zawnioskować o zmianę limitów; Bank rozpatruje wniosek z uwzględnieniem profilu ryzyka Posiadacza i zasad bezpieczeństwa.[^4]
 - 4\. Za przelew natychmiastowy Bank nalicza opłatę w wysokości 5,00 zł, a za przelewy zewnętrzne w złotych — 2,50 zł za przelew zlecony w bankowości elektronicznej.
 
@@ -231,10 +230,10 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Do rachunku bieżącego Bank prowadzi rachunek VAT, służący do gromadzenia środków z tytułu podatku od towarów i usług otrzymywanych w mechanizmie podzielonej płatności. Rachunek VAT otwierany jest automatycznie, wraz z rachunkiem bieżącym, i nie jest oprocentowany.
 - 2\. Zlecenie podzielonej płatności zawiera odrębnie kwotę brutto, kwotę podatku od towarów i usług, numer faktury oraz numer identyfikacji podatkowej wystawcy faktury. Bank obciąża rachunek bieżący kwotą netto, a rachunek VAT — kwotą podatku, i uznaje odpowiednio rachunek odbiorcy oraz jego rachunek VAT.
 - 3\. Środki z rachunku VAT mogą być przeznaczone wyłącznie na:
-  <!-- page: 12 -->
   - 1\) zapłatę podatku od towarów i usług kontrahentowi w podzielonej płatności;
   - 2\) zapłatę podatku od towarów i usług do urzędu skarbowego;
   - 3\) zapłatę innych zobowiązań publicznoprawnych, w zakresie dopuszczonym przepisami;
+  <!-- page: 12 -->
   - 4\) przeniesienie na rachunek bieżący, za zgodą właściwego organu, w zakresie wskazanym w przepisach.
 - 4\. Zlecenia dotyczące rachunku VAT realizowane są w godzinach granicznych przewidzianych dla przelewów zewnętrznych w złotych. Bank nie ponosi odpowiedzialności za skutki podatkowe wynikające z niewłaściwego użycia rachunku VAT, w tym za błędy w danych faktury podanych przez Posiadacza.
 
@@ -249,15 +248,15 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 25.
 
-- 1\. Zlecenie przelewu w walucie obcej lub przelewu transgranicznego zawiera, oprócz danych podstawowych, kod identyfikacyjny banku odbiorcy (BIC lub SWIFT), numer rachunku odbiorcy w formacie IBAN lub inny właściwy dla kraju, a również informację o rodzaju opłat (podział kosztów między nadawcę i odbiorcę albo pokrycie opłat przez jedną ze stron).
-- 2\. Opłata za przelew w ramach jednolitego obszaru płatności w euro wynosi 5,00 zł. Opłata za przelew do innych krajów lub w innych walutach obejmuje prowizję Banku oraz ewentualne opłaty banków pośredniczących i jest określona w Taryfie; opłaty pośredników Bank obciąża Posiadacza, jeżeli został wybrany podział kosztów obciążający nadawcę.
-- 3\. Przelew w walucie obcej jest wykonywany po kursie ustalonym według tabeli Banku obowiązującej w chwili realizacji, jeżeli wymaga przewalutowania, z uwzględnieniem marży wynoszącej 1,5%, a na wniosek Posiadacza — po kursie indywidualnym <!-- page: 13 --> uzgodnionym przed złożeniem zlecenia.
+- 1\. Posiadacz może zlecić Bankowi regularne wykonywanie przelewów w stałych kwotach i terminach (zlecenie stałe) lub przelewów odroczonych (zlecenie z datą przyszłą). Zlecenie określa rachunek odbiorcy, kwotę, częstotliwość, pierwszy termin wykonania oraz, jeśli to potrzebne, termin zakończenia.
+- 2\. Jeżeli termin wykonania zlecenia przypada w dniu niebędącym dniem roboczym, zlecenie jest wykonywane w najbliższym następnym dniu roboczym, chyba że Posiadacz wskazał inaczej. Brak środków w dniu wykonania skutkuje niewykonaniem zlecenia; Bank ponawia wykonanie zlecenia w kolejnym dniu roboczym, jeżeli takie ustalenie zawarto w umowie.
+- 3\. Zmiana lub odwołanie zlecenia stałego powinny zostać złożone najpóźniej na 2 dni przed dniem jego wykonania. Dyspozycja złożona później wywołuje skutki od następnego terminu realizacji.
 
 ### § 26.
 
-- 1\. Jeżeli przelew został wykonany na rachunek niewłaściwego odbiorcy wskutek błędnego identyfikatora podanego przez Posiadacza, Bank podejmuje działania w celu odzyskania środków, bez gwarancji ich zwrotu, i powiadamia Posiadacza o ich wyniku. Za podjęcie czynności Bank pobiera opłatę według Taryfy.
-- 2\. Jeżeli zlecenie nie zostało wykonane lub zostało wykonane nienależycie z przyczyn leżących po stronie Banku, Bank niezwłocznie zwraca Posiadaczowi kwotę transakcji i przywraca rachunek do stanu sprzed jej wykonania, chyba że Posiadacz nie zgłosił zastrzeżeń w terminie wskazanym w Regulaminie.
-- 3\. Zwrot środków przelewu zagranicznego nastąpi po otrzymaniu ich od banku pośredniczącego lub banku odbiorcy, w kwocie pomniejszonej o opłaty tych banków oraz — w razie zwrotu w innej walucie — po kursie obowiązującym w dniu zwrotu.
+- 1\. Zlecenie przelewu w walucie obcej lub przelewu transgranicznego zawiera, oprócz danych podstawowych, kod identyfikacyjny banku odbiorcy (BIC lub SWIFT), numer rachunku odbiorcy w formacie IBAN lub inny właściwy dla kraju, a również informację <!-- page: 13 --> o rodzaju opłat (podział kosztów między nadawcę i odbiorcę albo pokrycie opłat przez jedną ze stron).
+- 2\. Opłata za przelew w ramach jednolitego obszaru płatności w euro wynosi 5,00 zł. Opłata za przelew do innych krajów lub w innych walutach obejmuje prowizję Banku oraz ewentualne opłaty banków pośredniczących i jest określona w Taryfie; opłaty pośredników Bank obciąża Posiadacza, jeżeli został wybrany podział kosztów obciążający nadawcę.
+- 3\. Przelew w walucie obcej jest wykonywany po kursie ustalonym według tabeli Banku obowiązującej w chwili realizacji, jeżeli wymaga przewalutowania, z uwzględnieniem marży wynoszącej 1,5%, a na wniosek Posiadacza — po kursie indywidualnym uzgodnionym przed złożeniem zlecenia.
 
 ## Rozdział 7. Wpłaty i wypłaty gotówkowe
 
@@ -275,15 +274,15 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 28.
 
-- 1\. Na podstawie odrębnej umowy Posiadacz ma prawo składać wpłaty gotówkowe w zamkniętych workach wpłatowych lub kopertach depozytowych, które Bank przyjmuje w placówce albo od uprawnionego konwojenta. Umowa określa zasady <!-- page: 14 --> oznaczania worków, protokoły odbioru oraz limity zawartości.
-- 2\. Zawartość worka jest przeliczana przez Bank w terminie 2 dni od przyjęcia, w obecności dwóch pracowników Banku, a wynik przeliczenia jest wiążący dla stron. Różnice między kwotą zadeklarowaną i stwierdzoną są księgowane po stronie Posiadacza w dniu przeliczenia.
-- 3\. Bank nie odpowiada za brak części zawartości worka, jeżeli worek nie był prawidłowo zamknięty i oznaczony, a także za szkody powstałe przed jego przyjęciem. Za usługę przyjęcia i przeliczenia worka Bank pobiera opłatę zgodnie z Taryfą.
+- 1\. Posiadacz może dokonywać wpłat gotówkowych we wpłatomatach Banku za pomocą karty firmowej lub identyfikatora uzyskanego w bankowości elektronicznej. Wpłata jest zaliczana na rachunku bez zbędnej zwłoki po potwierdzeniu przez urządzenie, a przy wpłatach w dniach niebędących dniami roboczymi — z datą pierwszego dnia roboczego.
+- 2\. Dzienny limit wpłat we wpłatomacie wynosi 30 000,00 zł, a pojedyncza wpłata może <!-- page: 14 --> obejmować nie więcej niż 200 banknotów. Wpłaty przekraczające limit realizuje się w kasie placówki.
+- 3\. Reklamację dotyczącą wpłaty we wpłatomacie Posiadacz zgłasza z potwierdzeniem wpłaty. Bank wyjaśnia sprawę na podstawie zapisów urządzenia, a w razie stwierdzenia nadwyżki lub niedoboru dokonuje korekty rachunku, w terminie określonym w rozdziale o reklamacjach.
 
 ### § 29.
 
-- 1\. Wpłaty i wypłaty gotówki w walutach obcych Bank realizuje w wybranych placówkach i w nominałach, którymi dysponuje. Wypłaty w walucie obcej wymagają awizo składanego najpóźniej do godziny 13:00 dnia roboczego poprzedzającego wypłatę, niezależnie od kwoty.
-- 2\. Bank nie przyjmuje monet obcych, banknotów uszkodzonych w stopniu uniemożliwiającym weryfikację oraz banknotów wycofanych z obiegu. Banknoty podejrzane o sfałszowanie Bank zatrzymuje i przekazuje właściwym organom, sporządzając protokół wręczany wpłacającemu.
-- 3\. Posiadacz nie może wypłacać gotówki z rachunku w złotych w celu dokonania rozliczeń z innym przedsiębiorcą, jeżeli wartość transakcji przekracza limity określone w przepisach, które przewidują obowiązek dokonywania płatności za pośrednictwem rachunku bankowego.
+- 1\. Na podstawie odrębnej umowy Posiadacz ma prawo składać wpłaty gotówkowe w zamkniętych workach wpłatowych lub kopertach depozytowych, które Bank przyjmuje w placówce albo od uprawnionego konwojenta. Umowa określa zasady oznaczania worków, protokoły odbioru oraz limity zawartości.
+- 2\. Zawartość worka jest przeliczana przez Bank w terminie 2 dni od przyjęcia, w obecności dwóch pracowników Banku, a wynik przeliczenia jest wiążący dla stron. Różnice między kwotą zadeklarowaną i stwierdzoną są księgowane po stronie Posiadacza w dniu przeliczenia.
+- 3\. Bank nie odpowiada za brak części zawartości worka, jeżeli worek nie był prawidłowo zamknięty i oznaczony, a także za szkody powstałe przed jego przyjęciem. Za usługę przyjęcia i przeliczenia worka Bank pobiera opłatę zgodnie z Taryfą.
 
 ## Rozdział 8. Rachunki pomocnicze i walutowe, firmowe lokaty i karty
 
@@ -294,18 +293,17 @@ Użyte w Regulaminie określenia oznaczają:
 - 3\. Tabela kursów walut jest ogłaszana w dni robocze około godziny 9:00 i w ciągu dnia może być aktualizowana. Posiadacz może uzgodnić z Bankiem indywidualny kurs dla transakcji o wartości powyżej kwoty wskazanej w Taryfie.
 - 4\. Opłata za prowadzenie rachunku pomocniczego wynosi 10,00 zł miesięcznie. Rachunki pomocnicze są zamykane wraz z zamknięciem rachunku bieżącego, do którego zostały otwarte.
 
-<!-- page: 15 -->
 ### § 31.
+
+- 1\. Do rachunku bieżącego Bank wydaje, na żądanie Posiadacza, karty debetowe dla wskazanych przez niego osób (użytkowników kart). Zasady użytkowania kart określa osobny dokument — Regulamin kart debetowych dla klientów indywidualnych Bank <!-- page: 15 --> Przykładowy S.A. — w zakresie, w jakim nie sprzeciwiają się one postanowieniom niniejszego Regulaminu.
+- 2\. Posiadacz odpowiada za transakcje dokonane wszystkimi kartami wydanymi do rachunku oraz za przestrzeganie warunków ich używania przez użytkowników. Posiadacz ustala limity dzienne dla poszczególnych kart, w tym limit transakcji gotówkowych, który bez odrębnej dyspozycji wynosi 10 000,00 zł.
+- 3\. Za wydanie karty Bank nalicza opłatę 0,00 zł, a za jej użytkowanie opłatę roczną w wysokości 60,00 zł. Utratę lub kradzież karty zgłasza się całodobowo pod numerem 800 000 002; po zgłoszeniu Bank blokuje kartę niezwłocznie.
+
+### § 32.
 
 - 1\. Na wniosek Posiadacza Bank zakłada lokaty terminowe i lokaty typu overnight, z wykorzystaniem środków zgromadzonych na rachunku bieżącym. Warunki lokaty, w tym wysokość i sposób naliczania odsetek, okres trwania i zasady zerwania, określa potwierdzenie lokaty albo odrębna umowa; w sprawach nieuregulowanych stosuje się odpowiednio Regulamin rachunków oszczędnościowych oraz lokat terminowych Bank Przykładowy S.A. dla konsumentów, w zakresie dotyczącym przedsiębiorców.
 - 2\. Oprocentowanie lokaty overnight wynosi 2,5% w stosunku rocznym i jest naliczane za każdy dzień, w którym środki pozostają na lokacie. Lokata jest zakładana automatycznie na koniec dnia roboczego z nadwyżki ponad ustalone saldo minimalne i likwidowana na początku następnego dnia roboczego.
 - 3\. Minimalna kwota lokaty terminowej wynosi 5 000,00 zł. Zerwanie lokaty przed upływem terminu powoduje naliczenie odsetek według obniżonej stawki, a od zerwanej części Bank ma prawo pobrać opłatę zgodnie z Taryfą.
-
-### § 32.
-
-- 1\. Do rachunku bieżącego Bank wydaje, na żądanie Posiadacza, karty debetowe dla wskazanych przez niego osób (użytkowników kart). Zasady użytkowania kart określa osobny dokument — Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A. — w zakresie, w jakim nie sprzeciwiają się one postanowieniom niniejszego Regulaminu.
-- 2\. Posiadacz odpowiada za transakcje dokonane wszystkimi kartami wydanymi do rachunku oraz za przestrzeganie warunków ich używania przez użytkowników. Posiadacz ustala limity dzienne dla poszczególnych kart, w tym limit transakcji gotówkowych, który bez odrębnej dyspozycji wynosi 10 000,00 zł.
-- 3\. Za wydanie karty Bank nalicza opłatę 0,00 zł, a za jej użytkowanie opłatę roczną w wysokości 60,00 zł. Utratę lub kradzież karty zgłasza się całodobowo pod numerem 800 000 002; po zgłoszeniu Bank blokuje kartę niezwłocznie.
 
 ## Rozdział 9. Bankowość elektroniczna dla firm
 
@@ -314,9 +312,9 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Posiadacz ma prawo uzyskać dostęp do rachunków przez bankowość elektroniczną dla firm, obejmującą serwis internetowy i aplikację mobilną. Dostęp udzielany jest wskazanym przez Posiadacza użytkownikom, którym nadaje się role i uprawnienia, w tym uprawnienia do przeglądania rachunku, przygotowywania dyspozycji lub ich autoryzacji.
 - 2\. Dyspozycje w bankowości elektronicznej wymagają silnego uwierzytelnienia. Użytkownik autoryzuje je za pomocą aplikacji mobilnej, tokena sprzętowego lub innego narzędzia wskazanego przez Bank. Wydanie tokena sprzętowego jest płatne według Taryfy, w kwocie 45,00 zł.
 - 3\. Posiadacz odpowiada za działania użytkowników i zapewnia, aby korzystali oni z bankowości elektronicznej zgodnie z Regulaminem. Posiadacz zobowiązany jest zwłaszcza do:
-  <!-- page: 16 -->
   - 1\) zachowania w tajemnicy danych uwierzytelniających i niedopuszczenia do ich ujawnienia osobom trzecim;
   - 2\) bieżącego informujenia Banku o zmianie uprawnień użytkowników;
+  <!-- page: 16 -->
   - 3\) stosowania aktualnego oprogramowania zabezpieczającego na urządzeniach, z których korzysta;
   - 4\) niezwłocznego zgłoszenia utraty lub nieuprawnionego użycia danych uwierzytelniających pod numerem 800 000 002.
 - 4\. Posiadacz, który nie jest konsumentem, zgłasza Bankowi nieautoryzowane, niewykonane lub nienależycie wykonane transakcje płatnicze niezwłocznie, nie później niż w terminie 30 dni od dnia obciążenia rachunku. Upływ terminu powoduje wygaśnięcie roszczeń wobec Banku z tego tytułu. Bank odpowiada za transakcje nieautoryzowane na zasadach określonych w umowie, a Posiadacz ponosi pełną odpowiedzialność za transakcje dokonane z jego winy umyślnej lub rażącego niedbalstwa.[^6]
@@ -335,12 +333,11 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. W razie niedostępności bankowości Posiadacz ma prawo składać dyspozycje w placówce lub telefonicznie, po uwierzytelnieniu na zasadach określonych przez Bank. Bank nie odpowiada za szkody wynikające z przerw, jeżeli podjął działania niezbędne do ich usunięcia w terminie technicznie możliwym.
 - 3\. Bank przechowuje dane o dyspozycjach składanych w bankowości elektronicznej i udostępnia je Posiadaczowi na żądanie. Zapisy komputerowe Banku stanowią dowód złożenia dyspozycji, chyba że Posiadacz wykaże ich nieprawidłowość.
 
-<!-- page: 17 -->
 ## Rozdział 10. Zajęcia egzekucyjne
 
 ### § 36.
 
-- 1\. Bank wykonuje zajęcia rachunku dokonywane przez komorników sądowych, organy egzekucyjne administracji, w tym naczelników urzędów skarbowych, oraz inne uprawnione organy, w granicach wynikających z przepisów. Z chwilą doręczenia zawiadomienia o zajęciu Bank wstrzymuje wypłaty z rachunku do wysokości zajęcia wraz z przewidywanymi kosztami.
+- 1\. Bank wykonuje zajęcia rachunku dokonywane przez komorników sądowych, organy egzekucyjne administracji, w tym naczelników urzędów skarbowych, oraz inne <!-- page: 17 --> uprawnione organy, w granicach wynikających z przepisów. Z chwilą doręczenia zawiadomienia o zajęciu Bank wstrzymuje wypłaty z rachunku do wysokości zajęcia wraz z przewidywanymi kosztami.
 - 2\. Po zajęciu Bank powiadamia Posiadacza o zajęciu oraz o jego zakresie, a również przekazuje organowi zajmującemu informacje o stanie rachunku, na zasadach wynikających z przepisów. Wypłata środków na rzecz organu następuje nie wcześniej niż po upływie 7 dni od doręczenia zawiadomienia, chyba że przepisy przewidują inny termin.
 - 3\. Do rachunku firmowego nie stosuje się przepisów o ochronie środków do wysokości kwoty wolnej od zajęcia, przewidzianej dla rachunków osób fizycznych, o ile przepisy nie stanowią inaczej. W przypadku zbiegu zajęć Bank wykonuje je według kolejności ich doręczenia, a gdy zajęć dokonano jednocześnie — proporcjonalnie, z uwzględnieniem przepisów o pierwszeństwie należności.
 - 4\. Za czynności związane z obsługą zajęcia Bank pobiera opłatę w wysokości 50,00 zł, a w razie zajęcia rachunku przez organ egzekucyjny administracji — jeżeli przepisy nie wyłączają prawa do pobrania opłaty. Opłatę potrąca się z kwoty niepodlegającej zajęciu albo z innych środków Posiadacza.
@@ -355,9 +352,10 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 38.
 
-- 1\. Bank, jako instytucja obowiązana, stosuje środki bezpieczeństwa finansowego przewidziane w ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644). W szczególności identyfikuje <!-- page: 18 --> i weryfikuje tożsamość Posiadacza, osób go reprezentujących oraz jego beneficjentów rzeczywistych, ocenia cel i zamierzony charakter stosunków gospodarczych oraz prowadzi bieżącą analizę transakcji.
+- 1\. Bank, jako instytucja obowiązana, stosuje środki bezpieczeństwa finansowego przewidziane w ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644). W szczególności identyfikuje i weryfikuje tożsamość Posiadacza, osób go reprezentujących oraz jego beneficjentów rzeczywistych, ocenia cel i zamierzony charakter stosunków gospodarczych oraz prowadzi bieżącą analizę transakcji.
 - 2\. Posiadacz przekazuje Bankowi informacje o beneficjencie rzeczywistym, zwłaszcza o:
   - 1\) osobach fizycznych sprawujących bezpośrednio lub pośrednio kontrolę nad Posiadaczem;
+  <!-- page: 18 -->
   - 2\) osobach, którym przysługuje ponad 25% udziałów lub głosów albo prawo do powoływania większości organów;
   - 3\) sposobie sprawowania kontroli oraz strukturze własności, w tym łańcuchu zależności prowadzącym do beneficjenta;
   - 4\) osobach zajmujących wyższe stanowisko kierownicze, jeżeli nie można ustalić beneficjenta rzeczywistego.
@@ -368,15 +366,10 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 39.
 
-- 1\. Bank ocenia ryzyko związane z Posiadaczem i jego działalnością, uwzględniając rodzaj klienta, obszar geograficzny, rodzaj usług, kanały dystrybucji oraz charakter transakcji. W zależności od poziomu ryzyka Bank stosuje zwykłe lub wzmożone środki bezpieczeństwa finansowego.
-- 2\. Wzmożone środki obejmują zwłaszcza:
-  - 1\) pozyskanie dodatkowych informacji o źródle środków i źródle majątku Posiadacza oraz beneficjentów rzeczywistych;
-  - 2\) uzyskanie zgody kadry zarządzającej Banku na nawiązanie lub kontynuację stosunków gospodarczych;
-  - 3\) zwiększoną częstotliwość monitorowania transakcji i aktualizacji danych;
-  - 4\) żądanie dokumentów potwierdzających cel i charakter planowanych transakcji.
-- 3\. Posiadacz jest obowiązany współpracować z Bankiem w zakresie stosowania środków bezpieczeństwa finansowego i udzielać informacji w terminie wyznaczonym przez Bank, nie krótszym niż 7 dni. Niezastosowanie się do żądania może skutkować ograniczeniem możliwości składania dyspozycji.
+- 1\. Bank ma obowiązek gromadzić i przekazywać organom podatkowym informacje o rachunkach prowadzonych dla podmiotów, których rezydencja podatkowa znajduje się poza Rzecząpospolitą Polską, zgodnie z przepisami o wymianie informacji podatkowych z innymi państwami.
+- 2\. Posiadacz składa oświadczenie o statusie podatkowym, wskazując państwa rezydencji, numery identyfikacji podatkowej oraz status podmiotu (instytucja finansowa, podmiot niefinansowy czynny albo bierny). Podmiot niefinansowy bierny wskazuje osoby kontrolujące i ich rezydencje podatkowe.
+- 3\. Brak oświadczenia, nieprawdziwe dane lub ich brak aktualizacji w terminie 7 dni od zmiany uprawniają Bank do zastosowania domniemań wynikających z przepisów oraz do ograniczenia usług.
 
-<!-- page: 19 -->
 ## Rozdział 12. Opłaty i oprocentowanie
 
 ### § 40.
@@ -384,6 +377,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Za czynności związane z prowadzeniem rachunku i realizacją dyspozycji Bank pobiera opłaty i prowizje w wysokości określonej w Taryfie, a w zakresie nieuregulowanym w Taryfie — w wysokości uzgodnionej w umowie. Taryfa jest integralną częścią umowy i wiąże Posiadacza od dnia jej doręczenia.
 - 2\. Opłata za prowadzenie rachunku bieżącego wynosi 29,00 zł miesięcznie. Opłata jest pobierana z dołu, w ostatnim dniu roboczym miesiąca, a jeżeli rachunek został otwarty lub zamknięty w trakcie miesiąca, w kwocie proporcjonalnej do okresu jego prowadzenia.
 - 3\. Pozostałe opłaty, zwłaszcza za przelewy, wpłaty, wypłaty, wyciągi papierowe, zaświadczenia i opinie bankowe, wynoszą odpowiednio:
+  <!-- page: 19 -->
   - 1\) przelew zewnętrzny w złotych — 2,50 zł;
   - 2\) przelew o wysokiej wartości — 25,00 zł;
   - 3\) wyciąg w formie papierowej — 10,00 zł;
@@ -403,13 +397,13 @@ Użyte w Regulaminie określenia oznaczają:
   - 4\) zmiany przepisów prawa wpływających na koszty prowadzenia rachunków.
 - 4\. Zmiana oprocentowania rachunku bieżącego nie stanowi zmiany Regulaminu i następuje przez ogłoszenie informacji w bankowości elektronicznej oraz w placówkach, w terminie 14 dni przed dniem jej wejścia w życie, chyba że zmiana jest korzystna dla Posiadacza — wówczas następuje bez zachowania terminu.
 
-<!-- page: 20 -->
 ### § 42.
 
-- 1\. Bank może zmienić Taryfę z ważnych przyczyn, w szczególności w razie zmiany przepisów prawa, wzrostu kosztów usług obcych, zmiany zakresu lub formy świadczonych usług albo wzrostu wskaźnika cen towarów i usług konsumpcyjnych ogłoszonego przez Główny Urząd Statystyczny.
-- 2\. O zmianie Taryfy Bank zawiadamia Posiadacza na trwałym nośniku z wyprzedzeniem 30 dni przed dniem jej wejścia w życie. Zmiana nie wymaga zawarcia aneksu, jeżeli Posiadacz nie wypowie umowy przed tym dniem, a jeżeli nie zgłosi sprzeciwu — uważa się, że ją przyjął.
-- 3\. Zmiana opłat na korzyść Posiadacza może następować bez zachowania terminu. Zmiana Taryfy przewidziana w zdaniu poprzednim nie dotyczy opłat już naliczonych.
+- 1\. Posiadacz ma prawo wybrać pakiet usług, który obejmuje prowadzenie rachunku, określoną liczbę przelewów, kartę debetową oraz dostęp do bankowości elektronicznej za jedną opłatę miesięczną. Skład i opłatę pakietu określa Taryfa, a jego aktywacja następuje na wniosek Posiadacza.
+- 2\. Czynności przekraczające pakiet są rozliczane według stawek podstawowych z Taryfy. Pakiet może przewidywać obniżenie opłaty, o ile w danym miesiącu obroty na rachunku przekroczą określoną kwotę, co Bank sprawdza na koniec miesiąca.
+- 3\. Rezygnacja z pakietu następuje z końcem miesiąca kalendarzowego, w którym Bank otrzymał oświadczenie, a od następnego miesiąca stosuje się stawki podstawowe. Zmiana pakietu na inny nie wymaga zmiany umowy rachunku.
 
+<!-- page: 20 -->
 ## Rozdział 13. Wypowiedzenie umowy
 
 ### § 43.
@@ -426,13 +420,13 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 44.
 
-- 1\. Z dniem rozwiązania umowy tracą moc wszystkie dyspozycje, zlecenia stałe, polecenia zapłaty oraz pełnomocnictwa do dysponowania rachunkiem. Posiadacz informuje odbiorców i kontrahentów o zmianie rachunku, a Bank nie ponosi odpowiedzialności za skutki nieprzekazania takiej informacji.
-<!-- page: 21 -->
-- 2\. Środki wpływające na rachunek po jego zamknięciu Bank zwraca nadawcy, a jeśli nie jest to możliwe — przekazuje na rachunek wskazany przez Posiadacza, po potrąceniu należnych opłat. Dane rachunku zamkniętego Bank przechowuje przez okres wymagany przepisami.
-- 3\. Zamknięcie rachunku wymaga uprzedniego uregulowania zobowiązań Posiadacza wobec Banku. W razie zadłużenia Bank podejmuje czynności windykacyjne, a Posiadacz obowiązany jest do zapłaty odsetek za opóźnienie do dnia pełnej spłaty.
+- 1\. W razie ogłoszenia upadłości Posiadacza Bank realizuje obowiązki wynikające z przepisów prawa upadłościowego, w szczególności zamyka rachunki bieżące i przekazuje środki syndykowi. Dysponowanie rachunkiem po ogłoszeniu upadłości następuje wyłącznie przez syndyka na podstawie postanowienia sądu.
+- 2\. W przypadku likwidacji Posiadacza rachunek może być prowadzony przez likwidatora, który składa wzór podpisu i przedstawia dokumenty potwierdzające jego umocowanie. Po zakończeniu likwidacji i wykreśleniu Posiadacza z rejestru Bank zamyka rachunek, a pozostałe środki przekazuje uprawnionym osobom, na podstawie dokumentów rejestrowych.
+- 3\. Przekształcenie, połączenie lub podział Posiadacza wymaga przedstawienia dokumentów potwierdzających sukcesję. Bank utrzymuje stosunek umowny z następcą prawnym po spełnieniu wymogów weryfikacji.
 
 ## Rozdział 14. Postanowienia końcowe
 
+<!-- page: 21 -->
 ### § 45.
 
 - 1\. Bank ma prawo dokonać zmiany Regulaminu w razie wystąpienia co najmniej jednej z następujących przyczyn:
@@ -455,7 +449,6 @@ Użyte w Regulaminie określenia oznaczają:
     - b\) wartości instrumentów finansowych niebędących depozytami.
 - 3\. Szczegółowe informacje o systemie gwarantowania depozytów są dostępne w placówkach oraz na stronie https://bank.example. Klient otrzymuje formularz informacyjny dla deponentów przed zawarciem umowy rachunku.
 
-<!-- page: 22 -->
 ### § 47.
 
 - 1\. Prawem właściwym dla stosunków między Bankiem a Klientem, w tym dla zawarcia umowy i wykonywania jej postanowień, jest prawo polskie. Umowa jest zawierana i realizowana w języku polskim, o ile strony nie postanowią inaczej.
@@ -463,6 +456,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 1\) ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646);
   - 2\) ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30);
   - 3\) Kodeks cywilny.
+<!-- page: 22 -->
 - 3\. Spory wynikłe z umowy rozstrzyga sąd powszechny właściwy zgodnie z przepisami Kodeksu postępowania cywilnego. Klient będący konsumentem ma prawo również skorzystać z pozasądowych metod rozwiązywania sporów, w tym z postępowania przed Rzecznikiem Finansowym. Jeżeli którekolwiek z postanowień Regulaminu okaże się nieważne, pozostała część Regulaminu zachowują moc.
 
 ### § 48.
@@ -476,11 +470,11 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Regulamin wchodzi w życie i obowiązuje od dnia 1 stycznia 2024 r. Do umów zawartych przed tym dniem stosuje się Regulamin w brzmieniu doręczonym Posiadaczowi, z zastrzeżeniem zmian wprowadzonych zgodnie z jego postanowieniami.
 - 2\. Posiadacz oświadcza, że otrzymał Regulamin i Taryfę przed zawarciem umowy oraz że zapoznał się z ich treścią. Regulamin w aktualnym brzmieniu jest udostępniony w placówkach Banku i na stronie https://bank.example.
-- 3\. Informacje i oświadczenia Banku dotyczące umowy Bank przekazuje Posiadaczowi na trwałym nośniku, w tym w bankowości elektronicznej. Bank jest uprawniony do <!-- page: 23 --> przekazywania informacji o produktach i usługach Banku, o ile Posiadacz nie wniesie sprzeciwu.
+- 3\. Informacje i oświadczenia Banku dotyczące umowy Bank przekazuje Posiadaczowi na trwałym nośniku, w tym w bankowości elektronicznej. Bank jest uprawniony do przekazywania informacji o produktach i usługach Banku, o ile Posiadacz nie wniesie sprzeciwu.
 - 4\. Nieważność lub bezskuteczność któregokolwiek postanowienia Regulaminu nie wpływa na ważność pozostałych postanowień. Postanowienie nieważne strony zastąpią postanowieniem możliwie najbliższym ich zamiarowi gospodarczemu.
 
 ### § 50.
 
-- 1\. Strony dążą do polubownego rozwiązania sporów wynikających z umowy. Spory, które nie zostały rozwiązane w drodze reklamacji albo negocjacji prowadzonych przez okres nie dłuższy niż 30 dni, rozstrzyga sąd powszechny właściwy miejscowo dla siedziby Banku.
-- 2\. Zrzeczenie się przez Posiadacza roszczeń wobec Banku wymaga formy pisemnej. Cesja wierzytelności Posiadacza wobec Banku wynikających z umowy rachunku wymaga zgody Banku wyrażonej w formie pisemnej pod rygorem nieważności.
-- 3\. Bank może przenieść prawa i obowiązki wynikające z umowy na inny podmiot uprawniony do prowadzenia rachunków bankowych, o czym informuje Posiadacza z wyprzedzeniem 60 dni; Posiadacz ma prawo w tym terminie wypowiedzieć umowę bez dodatkowych opłat.
+- 1\. Bank podlega nadzorowi organu nadzoru nad rynkiem finansowym, a jego działalność w zakresie świadczenia usług płatniczych określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30). Informacje o Banku i organie nadzoru <!-- page: 23 --> dostępne są na stronie https://bank.example.
+- 2\. Bank wykorzystuje dane osobowe osób reprezentujących Posiadacza, pełnomocników, użytkowników i beneficjentów rzeczywistych w celu zawarcia i wykonania umowy, wypełnienia obowiązków prawnych oraz dochodzenia roszczeń, na zasadach opisanych w klauzuli informacyjnej udostępnianej tym osobom. Kontakt z inspektorem ochrony danych: iod@bank.example.
+- 3\. Posiadacz udostępnia osobom, których dane udostępnia Bankowi, klauzulę informacyjną Banku i zapewnia, że ma podstawę prawną do przekazania ich danych.

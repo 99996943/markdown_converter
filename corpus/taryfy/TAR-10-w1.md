@@ -58,82 +58,82 @@ Prowizja za udzielenie nie podlega zwrotowi w przypadku odstąpienia od umowy kr
 | 13. | Wysłanie wyciągu lub harmonogramu w formie papierowej | za każdy dokument | 10,00 zł |
 | 14. | Wcześniejsza spłata całości kredytu w terminie odstąpienia od umowy | jednorazowo | bez opłat |
 | 15. | Rozpatrzenie wniosku o kredyt gotówkowy | jednorazowo | bez opłat |
-| 16. | Założenie blokady środków na rachunku jako zabezpieczenia kredytu | jednorazowo | 50,00 zł |
-| 17. | Zwolnienie blokady środków po spłacie kredytu | jednorazowo | bez opłat |
-| 18. | Cesja praw z polisy ubezpieczeniowej na rzecz Banku | jednorazowo | 60,00 zł |
-| 19. | Zwolnienie cesji praw z polisy po spłacie kredytu | jednorazowo | bez opłat |
-| 20. | Weryfikacja dokumentów dochodowych przedłożonych po terminie | jednorazowo | 30,00 zł |
-| 21. | Weryfikacja stosunku pracy u pracodawcy Klienta na wniosek Klienta | jednorazowo | bez opłat |
-| 22. | Opłata za ponowne uruchomienie kredytu po wygaśnięciu terminu uruchomienia | jednorazowo | 100,00 zł |
-| 23. | Sporządzenie aneksu do umowy w formie dokumentowej | za każdy aneks | 150,00 zł, w tym 20,00 zł opłaty elektronicznej |
-| 24. | Wypłata kredytu na rachunek w innym banku w walucie obcej | od kwoty wypłaty | 0,2% min. 20,00 zł, max 150,00 zł |
-| 25. | Opłata za przeliczenie salda po kursie z Tabeli kursów walut | od kwoty przeliczenia | marża 1,5% |
-| 26. | Spłata kredytu w placówce Banku — wpłata gotówkowa na rachunek kredytowy | za każdą wpłatę | 3,00 zł |
-| 27. | Spłata raty przelewem z rachunku w innym banku | za każdy przelew | według taryfy banku Klienta |
-| 28. | Spłata raty przelewem natychmiastowym | za każdy przelew | 5,00 zł |
-| 29. | Stałe zlecenie spłaty raty z rachunku osobistego w Banku | za każde zlecenie | bez opłat |
-| 30. | Spłata raty w punkcie partnerskim Banku | za każdą wpłatę | 4,00 zł |
-| 31. | Nadpłata raty ponad kwotę wymagalną — zarachowanie na poczet kapitału | za każdą nadpłatę | bez opłat |
-| 32. | Zwrot nadpłaconej kwoty na rachunek Klienta | za każdy zwrot | bez opłat |
-| 33. | Zwrot nadpłaconej kwoty w gotówce w placówce | od kwoty zwrotu | 0,5% min. 10,00 zł |
-| 34. | Odwołanie nieudanego polecenia zapłaty z rachunku w innym banku | za każde odwołanie | 10,00 zł |
-| 35. | Ponowne uruchomienie zlecenia stałego po zajęciu rachunku | za każde uruchomienie | 15,00 zł |
-| 36. | Poszukiwanie wpłaty niewłaściwie opisanej przez Klienta | za każde poszukiwanie | 25,00 zł |
-| 37. | Zmiana liczby rat — skrócenie okresu kredytowania | za każdą zmianę | bez opłat |
-| 38. | Zmiana rodzaju rat z równych na malejące | jednorazowo | 60,00 zł |
-| 39. | Zmiana rodzaju rat z malejących na równe | jednorazowo | 60,00 zł |
-| 40. | Przeniesienie praw i obowiązków z umowy kredytu na inną osobę (przejęcie długu) | jednorazowo | 1,0% salda min. 200,00 zł |
-| 41. | Zwolnienie jednego ze współkredytobiorców z długu | jednorazowo | 150,00 zł |
-| 42. | Przystąpienie współkredytobiorcy do umowy | jednorazowo | 200,00 zł |
-| 43. | Zmiana waluty spłaty (dotyczy kredytów w walucie obcej) | jednorazowo | 0,5% salda min. 100,00 zł |
-| 44. | Wcześniejsza spłata — zmiana harmonogramu po częściowej nadpłacie | za każdą zmianę | bez opłat |
-| 45. | Ponowne rozpatrzenie wniosku po odrzuceniu wniosku (w ciągu 30 dni) | jednorazowo | bez opłat |
-| 46. | Przygotowanie symulacji kosztów kredytu na wniosek Klienta | za każdą symulację | bez opłat |
-| 47. | Zaświadczenie o wysokości zadłużenia na dzień wskazany przez Klienta | za każde zaświadczenie | 30,00 zł |
-| 48. | Zaświadczenie wydane w terminie 7 dni od wniosku | pierwsze w roku kalendarzowym | bez opłat |
-| 49. | Zaświadczenie dla biura informacji kredytowej o historii spłat | za każde zaświadczenie | 25,00 zł |
-| 50. | Potwierdzenie przelewu spłaty raty w formie papierowej | za każde potwierdzenie | 5,00 zł |
-| 51. | Wydruk zestawienia spłat za okres powyżej 12 miesięcy | za każde zestawienie | 15,00 zł |
-| 52. | Opinia bankowa o kliencie dla podmiotu zewnętrznego | za każdą opinię | 60,00 zł |
-| 53. | Odpis dokumentów z teczki kredytowej | za każdą kopię | 1,00 zł za stronę, min. 10,00 zł |
-| 54. | Zmiana adresu korespondencyjnego w umowie | za każdą zmianę | bez opłat |
-| 55. | Przekazanie informacji o kredycie osobie upoważnionej przez Klienta | za każde upoważnienie | 20,00 zł |
-| 56. | Poświadczenie podpisu na dokumentach kredytowych w oddziale | za każdy dokument | bez opłat |
-| 57. | Potwierdzenie przeniesienia wierzytelności (cesji) dla dłużnika | jednorazowo | 100,00 zł |
-| 58. | Kredyt gotówkowy zaciągany przez internet — prowizja | od kwoty kredytu | 2,0% min. 60,00 zł |
-| 59. | Kredyt gotówkowy zaciągany w placówce Banku — prowizja | od kwoty kredytu | 3,0% min. 100,00 zł |
-| 60. | Kredyt gotówkowy dla klientów, którzy zawarli umowę o ubezpieczenie od utraty pracy — obniżenie prowizji | od stawki prowizji | minus 0,3 pkt proc. |
-| 61. | Kredyt gotówkowy z możliwością odroczenia pierwszej raty o 3 miesiące | jednorazowo | 0,5% kwoty kredytu min. 50,00 zł |
-| 62. | Kredyt gotówkowy na cele zdrowotne i rehabilitacyjne — prowizja | od kwoty kredytu | 1,0% min. 50,00 zł |
-| 63. | Kredyt na sfinansowanie wesela lub uroczystości rodzinnych — prowizja | od kwoty kredytu | 2,5% min. 100,00 zł |
-| 64. | Kredyt gotówkowy dla osób pracujących za granicą (dochód w walucie obcej) — dodatkowa opłata za weryfikację dochodów | jednorazowo | 150,00 zł |
-| 65. | Kredyt gotówkowy dla rolników indywidualnych — prowizja | od kwoty kredytu | 2,0% min. 100,00 zł |
-| 66. | Kredyt gotówkowy ze spłatą jednorazową (balonową) — prowizja | od kwoty kredytu | 3,5% min. 150,00 zł |
-| 67. | Kredyt gotówkowy w kwocie powyżej 100 000,00 zł — dodatkowa weryfikacja zdolności kredytowej | jednorazowo | bez opłat |
-| 68. | Prowizja za uruchomienie kredytu w transzach | za każdą transzę | 0,3% kwoty transzy min. 20,00 zł |
-| 69. | Kredyt ratalny na zakup towarów i usług — prowizja | od kwoty kredytu | wg umowy, nie więcej niż 2,5% |
-| 70. | Kredyt konsolidacyjny — prowizja za przygotowanie | od kwoty kredytu | 2,0% min. 100,00 zł |
-| 70.1. | konsolidacja zobowiązań własnych w Banku | od kwoty konsolidowanej | 1,5% |
-| 70.2. | konsolidacja zobowiązań w innych instytucjach | od kwoty konsolidowanej | 2,0% |
-| 71. | Przelew środków kredytu na rachunek innej instytucji kredytowej w celu konsolidacji | za każdy przelew | bez opłat |
-| 72. | Kredyt dla osób z rachunkiem osobistym w Banku — obniżenie prowizji | od stawki prowizji | minus 0,5 pkt proc. |
-| 73. | Przedłużenie okresu kredytowania o 12 miesięcy | jednorazowo | 0,5% salda kapitału min. 80,00 zł |
-| 74. | Zgoda Banku na zmianę przeznaczenia kredytu | jednorazowo | 40,00 zł |
-| 75. | Opłata za wcześniejsze udostępnienie środków (uruchomienie w dniu złożenia wniosku) | jednorazowo | 30,00 zł |
-| 76. | Uruchomienie kredytu w placówce Banku w gotówce | od kwoty wypłaty | 0,5% min. 10,00 zł |
-| 77. | Przygotowanie projektu umowy z uwzględnieniem szczególnych warunków wskazanych przez Klienta | jednorazowo | wg umowy |
-| 78. | Kredyt gotówkowy dla emerytów i rencistów — prowizja | od kwoty kredytu | 2,0% min. 80,00 zł |
-| 79. | Kredyt gotówkowy dla osób młodych (do 26. roku życia) — prowizja | od kwoty kredytu | 1,5% min. 60,00 zł |
-| 80. | Kredyt na cele edukacyjne — prowizja | od kwoty kredytu | 1,0% min. 50,00 zł |
-| 81. | Kredyt na zakup lub montaż instalacji fotowoltaicznej — prowizja | od kwoty kredytu | 2,0% min. 100,00 zł |
-| 82. | Kredyt na remont lub wyposażenie mieszkania — prowizja | od kwoty kredytu | 2,5% min. 100,00 zł |
-| 83. | Kredyt na zakup pojazdu — prowizja | od kwoty kredytu | 2,5% min. 100,00 zł |
-| 83.1. | pojazd nowy | od kwoty kredytu | 2,0% |
-| 83.2. | pojazd używany | od kwoty kredytu | 3,0% |
-| 84. | Kredyt z poręczeniem osoby trzeciej — opłata za sporządzenie umowy poręczenia | za każde poręczenie | 100,00 zł |
-| 85. | Kredyt z umowy o limit odnawialny w ofercie bankowości mobilnej | od kwoty kredytu | 1,0% min. 20,00 zł |
-| 86. | Pożyczka na krótki okres do 90 dni — prowizja | od kwoty pożyczki | 0,0% (promocja stała) |
-| 87. | Pożyczka gotówkowa dla klientów korporacyjnych (pracowników zakładów współpracujących) | od kwoty pożyczki | 1,0% min. 50,00 zł |
+| 16. | Spłata kredytu w placówce Banku — wpłata gotówkowa na rachunek kredytowy | za każdą wpłatę | 3,00 zł |
+| 17. | Spłata raty przelewem z rachunku w innym banku | za każdy przelew | według taryfy banku Klienta |
+| 18. | Spłata raty przelewem natychmiastowym | za każdy przelew | 5,00 zł |
+| 19. | Stałe zlecenie spłaty raty z rachunku osobistego w Banku | za każde zlecenie | bez opłat |
+| 20. | Spłata raty w punkcie partnerskim Banku | za każdą wpłatę | 4,00 zł |
+| 21. | Nadpłata raty ponad kwotę wymagalną — zarachowanie na poczet kapitału | za każdą nadpłatę | bez opłat |
+| 22. | Zwrot nadpłaconej kwoty na rachunek Klienta | za każdy zwrot | bez opłat |
+| 23. | Zwrot nadpłaconej kwoty w gotówce w placówce | od kwoty zwrotu | 0,5% min. 10,00 zł |
+| 24. | Odwołanie nieudanego polecenia zapłaty z rachunku w innym banku | za każde odwołanie | 10,00 zł |
+| 25. | Ponowne uruchomienie zlecenia stałego po zajęciu rachunku | za każde uruchomienie | 15,00 zł |
+| 26. | Poszukiwanie wpłaty niewłaściwie opisanej przez Klienta | za każde poszukiwanie | 25,00 zł |
+| 27. | Zaświadczenie o wysokości zadłużenia na dzień wskazany przez Klienta | za każde zaświadczenie | 30,00 zł |
+| 28. | Zaświadczenie wydane w terminie 7 dni od wniosku | pierwsze w roku kalendarzowym | bez opłat |
+| 29. | Zaświadczenie dla biura informacji kredytowej o historii spłat | za każde zaświadczenie | 25,00 zł |
+| 30. | Potwierdzenie przelewu spłaty raty w formie papierowej | za każde potwierdzenie | 5,00 zł |
+| 31. | Wydruk zestawienia spłat za okres powyżej 12 miesięcy | za każde zestawienie | 15,00 zł |
+| 32. | Opinia bankowa o kliencie dla podmiotu zewnętrznego | za każdą opinię | 60,00 zł |
+| 33. | Odpis dokumentów z teczki kredytowej | za każdą kopię | 1,00 zł za stronę, min. 10,00 zł |
+| 34. | Zmiana adresu korespondencyjnego w umowie | za każdą zmianę | bez opłat |
+| 35. | Przekazanie informacji o kredycie osobie upoważnionej przez Klienta | za każde upoważnienie | 20,00 zł |
+| 36. | Poświadczenie podpisu na dokumentach kredytowych w oddziale | za każdy dokument | bez opłat |
+| 37. | Potwierdzenie przeniesienia wierzytelności (cesji) dla dłużnika | jednorazowo | 100,00 zł |
+| 38. | Kredyt gotówkowy zaciągany przez internet — prowizja | od kwoty kredytu | 2,0% min. 60,00 zł |
+| 39. | Kredyt gotówkowy zaciągany w placówce Banku — prowizja | od kwoty kredytu | 3,0% min. 100,00 zł |
+| 40. | Kredyt gotówkowy dla klientów, którzy zawarli umowę o ubezpieczenie od utraty pracy — obniżenie prowizji | od stawki prowizji | minus 0,3 pkt proc. |
+| 41. | Kredyt gotówkowy z możliwością odroczenia pierwszej raty o 3 miesiące | jednorazowo | 0,5% kwoty kredytu min. 50,00 zł |
+| 42. | Kredyt gotówkowy na cele zdrowotne i rehabilitacyjne — prowizja | od kwoty kredytu | 1,0% min. 50,00 zł |
+| 43. | Kredyt na sfinansowanie wesela lub uroczystości rodzinnych — prowizja | od kwoty kredytu | 2,5% min. 100,00 zł |
+| 44. | Kredyt gotówkowy dla osób pracujących za granicą (dochód w walucie obcej) — dodatkowa opłata za weryfikację dochodów | jednorazowo | 150,00 zł |
+| 45. | Kredyt gotówkowy dla rolników indywidualnych — prowizja | od kwoty kredytu | 2,0% min. 100,00 zł |
+| 46. | Kredyt gotówkowy ze spłatą jednorazową (balonową) — prowizja | od kwoty kredytu | 3,5% min. 150,00 zł |
+| 47. | Kredyt gotówkowy w kwocie powyżej 100 000,00 zł — dodatkowa weryfikacja zdolności kredytowej | jednorazowo | bez opłat |
+| 48. | Założenie blokady środków na rachunku jako zabezpieczenia kredytu | jednorazowo | 50,00 zł |
+| 49. | Zwolnienie blokady środków po spłacie kredytu | jednorazowo | bez opłat |
+| 50. | Cesja praw z polisy ubezpieczeniowej na rzecz Banku | jednorazowo | 60,00 zł |
+| 51. | Zwolnienie cesji praw z polisy po spłacie kredytu | jednorazowo | bez opłat |
+| 52. | Weryfikacja dokumentów dochodowych przedłożonych po terminie | jednorazowo | 30,00 zł |
+| 53. | Weryfikacja stosunku pracy u pracodawcy Klienta na wniosek Klienta | jednorazowo | bez opłat |
+| 54. | Opłata za ponowne uruchomienie kredytu po wygaśnięciu terminu uruchomienia | jednorazowo | 100,00 zł |
+| 55. | Sporządzenie aneksu do umowy w formie dokumentowej | za każdy aneks | 150,00 zł, w tym 20,00 zł opłaty elektronicznej |
+| 56. | Wypłata kredytu na rachunek w innym banku w walucie obcej | od kwoty wypłaty | 0,2% min. 20,00 zł, max 150,00 zł |
+| 57. | Opłata za przeliczenie salda po kursie z Tabeli kursów walut | od kwoty przeliczenia | marża 1,5% |
+| 58. | Zmiana liczby rat — skrócenie okresu kredytowania | za każdą zmianę | bez opłat |
+| 59. | Zmiana rodzaju rat z równych na malejące | jednorazowo | 60,00 zł |
+| 60. | Zmiana rodzaju rat z malejących na równe | jednorazowo | 60,00 zł |
+| 61. | Przeniesienie praw i obowiązków z umowy kredytu na inną osobę (przejęcie długu) | jednorazowo | 1,0% salda min. 200,00 zł |
+| 62. | Zwolnienie jednego ze współkredytobiorców z długu | jednorazowo | 150,00 zł |
+| 63. | Przystąpienie współkredytobiorcy do umowy | jednorazowo | 200,00 zł |
+| 64. | Zmiana waluty spłaty (dotyczy kredytów w walucie obcej) | jednorazowo | 0,5% salda min. 100,00 zł |
+| 65. | Wcześniejsza spłata — zmiana harmonogramu po częściowej nadpłacie | za każdą zmianę | bez opłat |
+| 66. | Ponowne rozpatrzenie wniosku po odrzuceniu wniosku (w ciągu 30 dni) | jednorazowo | bez opłat |
+| 67. | Przygotowanie symulacji kosztów kredytu na wniosek Klienta | za każdą symulację | bez opłat |
+| 68. | Kredyt gotówkowy dla emerytów i rencistów — prowizja | od kwoty kredytu | 2,0% min. 80,00 zł |
+| 69. | Kredyt gotówkowy dla osób młodych (do 26. roku życia) — prowizja | od kwoty kredytu | 1,5% min. 60,00 zł |
+| 70. | Kredyt na cele edukacyjne — prowizja | od kwoty kredytu | 1,0% min. 50,00 zł |
+| 71. | Kredyt na zakup lub montaż instalacji fotowoltaicznej — prowizja | od kwoty kredytu | 2,0% min. 100,00 zł |
+| 72. | Kredyt na remont lub wyposażenie mieszkania — prowizja | od kwoty kredytu | 2,5% min. 100,00 zł |
+| 73. | Kredyt na zakup pojazdu — prowizja | od kwoty kredytu | 2,5% min. 100,00 zł |
+| 73.1. | pojazd nowy | od kwoty kredytu | 2,0% |
+| 73.2. | pojazd używany | od kwoty kredytu | 3,0% |
+| 74. | Kredyt z poręczeniem osoby trzeciej — opłata za sporządzenie umowy poręczenia | za każde poręczenie | 100,00 zł |
+| 75. | Kredyt z umowy o limit odnawialny w ofercie bankowości mobilnej | od kwoty kredytu | 1,0% min. 20,00 zł |
+| 76. | Pożyczka na krótki okres do 90 dni — prowizja | od kwoty pożyczki | 0,0% (promocja stała) |
+| 77. | Pożyczka gotówkowa dla klientów korporacyjnych (pracowników zakładów współpracujących) | od kwoty pożyczki | 1,0% min. 50,00 zł |
+| 78. | Prowizja za uruchomienie kredytu w transzach | za każdą transzę | 0,3% kwoty transzy min. 20,00 zł |
+| 79. | Kredyt ratalny na zakup towarów i usług — prowizja | od kwoty kredytu | wg umowy, nie więcej niż 2,5% |
+| 80. | Kredyt konsolidacyjny — prowizja za przygotowanie | od kwoty kredytu | 2,0% min. 100,00 zł |
+| 80.1. | konsolidacja zobowiązań własnych w Banku | od kwoty konsolidowanej | 1,5% |
+| 80.2. | konsolidacja zobowiązań w innych instytucjach | od kwoty konsolidowanej | 2,0% |
+| 81. | Przelew środków kredytu na rachunek innej instytucji kredytowej w celu konsolidacji | za każdy przelew | bez opłat |
+| 82. | Kredyt dla osób z rachunkiem osobistym w Banku — obniżenie prowizji | od stawki prowizji | minus 0,5 pkt proc. |
+| 83. | Przedłużenie okresu kredytowania o 12 miesięcy | jednorazowo | 0,5% salda kapitału min. 80,00 zł |
+| 84. | Zgoda Banku na zmianę przeznaczenia kredytu | jednorazowo | 40,00 zł |
+| 85. | Opłata za wcześniejsze udostępnienie środków (uruchomienie w dniu złożenia wniosku) | jednorazowo | 30,00 zł |
+| 86. | Uruchomienie kredytu w placówce Banku w gotówce | od kwoty wypłaty | 0,5% min. 10,00 zł |
+| 87. | Przygotowanie projektu umowy z uwzględnieniem szczególnych warunków wskazanych przez Klienta | jednorazowo | wg umowy |
 
 <!-- page: 7 -->
 - 1\) Prowizja jest potrącana z kwoty kredytu w dniu uruchomienia albo — na wniosek Klienta — doliczana do kwoty
@@ -171,26 +171,26 @@ Niniejsza sekcja dotyczy kredytów zabezpieczonych hipoteką na nieruchomości m
 | 100. | Zaświadczenie o spłacie kredytu hipotecznego | za każde zaświadczenie | 20,00 zł |
 | 101. | Zmiana ubezpieczyciela nieruchomości — weryfikacja polisy | jednorazowo | 100,00 zł |
 | 102. | Rozpatrzenie wniosku o kredyt hipoteczny | jednorazowo | bez opłat |
-| 103. | Zmiana oprocentowania zmiennego na okresowo stałe (na 5 lat) | jednorazowo | 0,5% salda kapitału |
-| 104. | Powrót z oprocentowania stałego na zmienne po upływie okresu stałości | jednorazowo | bez opłat |
-| 105. | Zmiana marży w ramach negocjacji (obniżenie marży na wniosek Klienta) | jednorazowo | 0,3% salda kapitału min. 400,00 zł |
-| 106. | Zmiana waluty kredytu | jednorazowo | 0,5% salda min. 600,00 zł |
-| 107. | Zmiana terminu płatności raty | za każdą zmianę | 100,00 zł |
-| 108. | Zawieszenie spłaty rat kapitałowych na wniosek Klienta w trudnej sytuacji życiowej | za każde zawieszenie, do 3 razy w okresie umowy | bez opłat |
-| 109. | Zawieszenie spłaty rat kapitałowych — kolejne zawieszenia | za każde zawieszenie | 200,00 zł |
-| 110. | Wydłużenie okresu kredytowania | jednorazowo | 300,00 zł |
-| 111. | Zmiana sposobu spłaty (raty równe/malejące) | jednorazowo | 200,00 zł |
-| 112. | Zmiana rachunku, z którego spłacany jest kredyt hipoteczny | za każdą zmianę | 40,00 zł |
-| 113. | Wypłata transzy kredytu na rachunek dewelopera (rachunek powierniczy) | za każdą wypłatę | bez opłat |
-| 114. | Wypłata transzy kredytu na rachunek wykonawcy robót | za każdą wypłatę | 20,00 zł |
-| 115. | Przedłużenie terminu uruchomienia kredytu o kolejne 3 miesiące | za każde przedłużenie | 0,1% kwoty niewypłaconej min. 150,00 zł |
-| 116. | Opłata za niewykorzystanie kredytu w terminie uruchomienia | jednorazowo | 0,2% kwoty niewypłaconej |
-| 117. | Weryfikacja faktur i protokołów odbioru przed uruchomieniem transzy | za każdą transzę | 100,00 zł |
-| 118. | Kontrola postępu prac przez inspektora nadzoru wskazanego przez Bank | za każdą kontrolę | 250,00 zł |
-| 119. | Ponowna inspekcja budowy po stwierdzeniu uchybień | za każdą inspekcję | 250,00 zł |
-| 120. | Sprawdzenie pozwolenia na użytkowanie budynku po zakończeniu inwestycji | jednorazowo | bez opłat |
-| 121. | Rozliczenie nadwyżki środków z niewykorzystanej transzy | jednorazowo | bez opłat |
-| 122. | Wniosek o wydłużenie okresu finansowania budowy | jednorazowo | 300,00 zł |
+| 103. | Odpis księgi wieczystej pobrany przez Bank na wniosek Klienta | za każdy odpis | 30,00 zł |
+| 104. | Zaświadczenie o terminowej spłacie dla innej instytucji finansowej | za każde zaświadczenie | 20,00 zł |
+| 105. | Zaświadczenie o odsetkach zapłaconych w roku podatkowym | raz w roku | bez opłat |
+| 106. | Informacja o historii zmian oprocentowania kredytu | za każdą informację | 20,00 zł |
+| 107. | Zestawienie wszystkich spłat od dnia zawarcia umowy | za każde zestawienie | 40,00 zł |
+| 108. | Duplikat umowy kredytu hipotecznego wraz z załącznikami | za każdy dokument | 30,00 zł |
+| 109. | Odpis aktu notarialnego z archiwum Banku | za każdy odpis | 50,00 zł |
+| 110. | Poświadczenie zgodności z oryginałem dokumentów kredytowych | za każdą stronę | 10,00 zł za stronę |
+| 111. | Wydanie kopii dokumentów kredytowych spadkobiercy kredytobiorcy | jednorazowo | bez opłat |
+| 112. | Przekazanie oryginałów dokumentów zabezpieczenia po spłacie kredytu | jednorazowo | bez opłat |
+| 113. | Zmiana oprocentowania zmiennego na okresowo stałe (na 5 lat) | jednorazowo | 0,5% salda kapitału |
+| 114. | Powrót z oprocentowania stałego na zmienne po upływie okresu stałości | jednorazowo | bez opłat |
+| 115. | Zmiana marży w ramach negocjacji (obniżenie marży na wniosek Klienta) | jednorazowo | 0,3% salda kapitału min. 400,00 zł |
+| 116. | Zmiana waluty kredytu | jednorazowo | 0,5% salda min. 600,00 zł |
+| 117. | Zmiana terminu płatności raty | za każdą zmianę | 100,00 zł |
+| 118. | Zawieszenie spłaty rat kapitałowych na wniosek Klienta w trudnej sytuacji życiowej | za każde zawieszenie, do 3 razy w okresie umowy | bez opłat |
+| 119. | Zawieszenie spłaty rat kapitałowych — kolejne zawieszenia | za każde zawieszenie | 200,00 zł |
+| 120. | Wydłużenie okresu kredytowania | jednorazowo | 300,00 zł |
+| 121. | Zmiana sposobu spłaty (raty równe/malejące) | jednorazowo | 200,00 zł |
+| 122. | Zmiana rachunku, z którego spłacany jest kredyt hipoteczny | za każdą zmianę | 40,00 zł |
 | 123. | Kredyt hipoteczny na zakup mieszkania na rynku pierwotnym — prowizja | od kwoty kredytu | 1,5% min. 1 500,00 zł |
 | 124. | Kredyt hipoteczny na zakup domu — prowizja | od kwoty kredytu | 1,8% min. 1 500,00 zł |
 | 125. | Kredyt na zakup działki budowlanej — prowizja | od kwoty kredytu | 2,0% min. 1 500,00 zł |
@@ -201,46 +201,46 @@ Niniejsza sekcja dotyczy kredytów zabezpieczonych hipoteką na nieruchomości m
 | 130. | Kredyt hipoteczny z wkładem własnym powyżej 30% — obniżenie prowizji | od stawki prowizji | minus 0,2 pkt proc. |
 | 131. | Kredyt hipoteczny w ramach programu wsparcia z funduszu publicznego — prowizja | od kwoty kredytu | 0,0% |
 | 132. | Podwyższenie kwoty kredytu hipotecznego w trakcie umowy | jednorazowo | 1,0% kwoty zwiększenia min. 500,00 zł |
-| 133. | Odpis księgi wieczystej pobrany przez Bank na wniosek Klienta | za każdy odpis | 30,00 zł |
-| 134. | Zaświadczenie o terminowej spłacie dla innej instytucji finansowej | za każde zaświadczenie | 20,00 zł |
-| 135. | Zaświadczenie o odsetkach zapłaconych w roku podatkowym | raz w roku | bez opłat |
-| 136. | Informacja o historii zmian oprocentowania kredytu | za każdą informację | 20,00 zł |
-| 137. | Zestawienie wszystkich spłat od dnia zawarcia umowy | za każde zestawienie | 40,00 zł |
-| 138. | Duplikat umowy kredytu hipotecznego wraz z załącznikami | za każdy dokument | 30,00 zł |
-| 139. | Odpis aktu notarialnego z archiwum Banku | za każdy odpis | 50,00 zł |
-| 140. | Poświadczenie zgodności z oryginałem dokumentów kredytowych | za każdą stronę | 10,00 zł za stronę |
-| 141. | Wydanie kopii dokumentów kredytowych spadkobiercy kredytobiorcy | jednorazowo | bez opłat |
-| 142. | Przekazanie oryginałów dokumentów zabezpieczenia po spłacie kredytu | jednorazowo | bez opłat |
-| 143. | Wstępna ocena zdolności kredytowej przed złożeniem wniosku | jednorazowo | bez opłat |
-| 144. | Opłata za rozpatrzenie wniosku o kredyt hipoteczny dla nieruchomości o szczególnym charakterze (dom drewniany, nieruchomość zabytkowa) | jednorazowo | 400,00 zł |
-| 145. | Uproszczona wycena nieruchomości na podstawie danych z rejestru cen | za każdą wycenę | 250,00 zł |
-| 146. | Ponowna wycena nieruchomości zabezpieczającej kredyt | za każdą aktualizację | 400,00 zł |
-| 147. | Wycena nieruchomości — dodatkowy wyjazd rzeczoznawcy poza miejscowość Banku | za każdy kilometr | 1,20 zł za kilometr |
-| 148. | Sprawdzenie stanu prawnego nieruchomości w księdze wieczystej | za każde sprawdzenie | 80,00 zł |
-| 149. | Analiza dokumentów dewelopera (prospekt informacyjny, pozwolenia) | za każdą analizę | 300,00 zł |
-| 150. | Weryfikacja umowy przedwstępnej sprzedaży nieruchomości | jednorazowo | 150,00 zł |
-| 151. | Przygotowanie projektu umowy kredytu w wersji dwujęzycznej | jednorazowo | 200,00 zł |
-| 152. | Ocena zdolności kredytowej dla kredytobiorców zagranicznych | jednorazowo | 300,00 zł |
-| 153. | Zmiana zabezpieczenia hipotecznego — zastąpienie nieruchomości inną | jednorazowo | 0,5% kwoty kredytu min. 800,00 zł |
-| 154. | Zgoda Banku na wynajem nieruchomości zabezpieczającej kredyt | jednorazowo | bez opłat |
-| 155. | Zgoda Banku na ustanowienie służebności lub prawa dożywocia na nieruchomości | jednorazowo | 250,00 zł |
-| 156. | Zgoda Banku na podział nieruchomości lub jej części zabezpieczonej hipoteką | jednorazowo | 400,00 zł |
-| 157. | Zgoda Banku na zbycie nieruchomości z przejęciem długu przez nabywcę | jednorazowo | 0,5% salda min. 600,00 zł |
-| 158. | Cząstkowe zwolnienie z hipoteki (wyłączenie części nieruchomości) | jednorazowo | 400,00 zł |
-| 159. | Zgoda na zmianę sposobu wykorzystania nieruchomości | jednorazowo | 200,00 zł |
-| 160. | Cesja praw z polisy ubezpieczeniowej nieruchomości na rzecz Banku | jednorazowo | 60,00 zł |
-| 161. | Przesunięcie hipoteki na dalsze miejsce w księdze wieczystej (zgoda na pierwszeństwo) | jednorazowo | 300,00 zł |
-| 162. | Oświadczenie o poddaniu się egzekucji w formie aktu notarialnego — opłata notarialna | jednorazowo | wg taksy notarialnej |
-| 163. | Zastaw na prawach z umowy deweloperskiej jako zabezpieczenie pomostowe — przygotowanie dokumentów | jednorazowo | 300,00 zł |
-| 164. | Sprawdzenie księgi wieczystej prowadzonej dla budynku w budowie | jednorazowo | 100,00 zł |
-| 165. | Weryfikacja umowy deweloperskiej i rachunku powierniczego | jednorazowo | 400,00 zł |
-| 166. | Weryfikacja zgodności inwestycji z planem zagospodarowania przestrzennego | jednorazowo | 150,00 zł |
-| 167. | Ocena zabezpieczenia dla nieruchomości stanowiącej współwłasność małżeńską | jednorazowo | bez opłat |
-| 168. | Analiza zabezpieczenia dla udziału we własności nieruchomości | jednorazowo | 250,00 zł |
-| 169. | Opłata za rozpatrzenie wniosku o zwolnienie z obowiązku wniesienia wkładu własnego | jednorazowo | 200,00 zł |
-| 170. | Opłata za wydanie decyzji kredytowej w trybie przyspieszonym (w ciągu 3 dni roboczych) | jednorazowo | 500,00 zł |
-| 171. | Przedłużenie ważności decyzji kredytowej o 3 miesiące | za każde przedłużenie | 100,00 zł |
-| 172. | Zmiana wnioskowanej kwoty kredytu przed zawarciem umowy | za każdą zmianę | bez opłat |
+| 133. | Wypłata transzy kredytu na rachunek dewelopera (rachunek powierniczy) | za każdą wypłatę | bez opłat |
+| 134. | Wypłata transzy kredytu na rachunek wykonawcy robót | za każdą wypłatę | 20,00 zł |
+| 135. | Przedłużenie terminu uruchomienia kredytu o kolejne 3 miesiące | za każde przedłużenie | 0,1% kwoty niewypłaconej min. 150,00 zł |
+| 136. | Opłata za niewykorzystanie kredytu w terminie uruchomienia | jednorazowo | 0,2% kwoty niewypłaconej |
+| 137. | Weryfikacja faktur i protokołów odbioru przed uruchomieniem transzy | za każdą transzę | 100,00 zł |
+| 138. | Kontrola postępu prac przez inspektora nadzoru wskazanego przez Bank | za każdą kontrolę | 250,00 zł |
+| 139. | Ponowna inspekcja budowy po stwierdzeniu uchybień | za każdą inspekcję | 250,00 zł |
+| 140. | Sprawdzenie pozwolenia na użytkowanie budynku po zakończeniu inwestycji | jednorazowo | bez opłat |
+| 141. | Rozliczenie nadwyżki środków z niewykorzystanej transzy | jednorazowo | bez opłat |
+| 142. | Wniosek o wydłużenie okresu finansowania budowy | jednorazowo | 300,00 zł |
+| 143. | Zmiana zabezpieczenia hipotecznego — zastąpienie nieruchomości inną | jednorazowo | 0,5% kwoty kredytu min. 800,00 zł |
+| 144. | Zgoda Banku na wynajem nieruchomości zabezpieczającej kredyt | jednorazowo | bez opłat |
+| 145. | Zgoda Banku na ustanowienie służebności lub prawa dożywocia na nieruchomości | jednorazowo | 250,00 zł |
+| 146. | Zgoda Banku na podział nieruchomości lub jej części zabezpieczonej hipoteką | jednorazowo | 400,00 zł |
+| 147. | Zgoda Banku na zbycie nieruchomości z przejęciem długu przez nabywcę | jednorazowo | 0,5% salda min. 600,00 zł |
+| 148. | Cząstkowe zwolnienie z hipoteki (wyłączenie części nieruchomości) | jednorazowo | 400,00 zł |
+| 149. | Zgoda na zmianę sposobu wykorzystania nieruchomości | jednorazowo | 200,00 zł |
+| 150. | Cesja praw z polisy ubezpieczeniowej nieruchomości na rzecz Banku | jednorazowo | 60,00 zł |
+| 151. | Przesunięcie hipoteki na dalsze miejsce w księdze wieczystej (zgoda na pierwszeństwo) | jednorazowo | 300,00 zł |
+| 152. | Oświadczenie o poddaniu się egzekucji w formie aktu notarialnego — opłata notarialna | jednorazowo | wg taksy notarialnej |
+| 153. | Zastaw na prawach z umowy deweloperskiej jako zabezpieczenie pomostowe — przygotowanie dokumentów | jednorazowo | 300,00 zł |
+| 154. | Sprawdzenie księgi wieczystej prowadzonej dla budynku w budowie | jednorazowo | 100,00 zł |
+| 155. | Weryfikacja umowy deweloperskiej i rachunku powierniczego | jednorazowo | 400,00 zł |
+| 156. | Weryfikacja zgodności inwestycji z planem zagospodarowania przestrzennego | jednorazowo | 150,00 zł |
+| 157. | Ocena zabezpieczenia dla nieruchomości stanowiącej współwłasność małżeńską | jednorazowo | bez opłat |
+| 158. | Analiza zabezpieczenia dla udziału we własności nieruchomości | jednorazowo | 250,00 zł |
+| 159. | Opłata za rozpatrzenie wniosku o zwolnienie z obowiązku wniesienia wkładu własnego | jednorazowo | 200,00 zł |
+| 160. | Opłata za wydanie decyzji kredytowej w trybie przyspieszonym (w ciągu 3 dni roboczych) | jednorazowo | 500,00 zł |
+| 161. | Przedłużenie ważności decyzji kredytowej o 3 miesiące | za każde przedłużenie | 100,00 zł |
+| 162. | Zmiana wnioskowanej kwoty kredytu przed zawarciem umowy | za każdą zmianę | bez opłat |
+| 163. | Wstępna ocena zdolności kredytowej przed złożeniem wniosku | jednorazowo | bez opłat |
+| 164. | Opłata za rozpatrzenie wniosku o kredyt hipoteczny dla nieruchomości o szczególnym charakterze (dom drewniany, nieruchomość zabytkowa) | jednorazowo | 400,00 zł |
+| 165. | Uproszczona wycena nieruchomości na podstawie danych z rejestru cen | za każdą wycenę | 250,00 zł |
+| 166. | Ponowna wycena nieruchomości zabezpieczającej kredyt | za każdą aktualizację | 400,00 zł |
+| 167. | Wycena nieruchomości — dodatkowy wyjazd rzeczoznawcy poza miejscowość Banku | za każdy kilometr | 1,20 zł za kilometr |
+| 168. | Sprawdzenie stanu prawnego nieruchomości w księdze wieczystej | za każde sprawdzenie | 80,00 zł |
+| 169. | Analiza dokumentów dewelopera (prospekt informacyjny, pozwolenia) | za każdą analizę | 300,00 zł |
+| 170. | Weryfikacja umowy przedwstępnej sprzedaży nieruchomości | jednorazowo | 150,00 zł |
+| 171. | Przygotowanie projektu umowy kredytu w wersji dwujęzycznej | jednorazowo | 200,00 zł |
+| 172. | Ocena zdolności kredytowej dla kredytobiorców zagranicznych | jednorazowo | 300,00 zł |
 
 <!-- page: 11 -->
 - 1\) Prowizja zostaje pobrana ze środków kredytu w dniu uruchomienia pierwszej transzy; jeżeli umowa nie dojdzie do
@@ -282,68 +282,68 @@ Od kwoty wykorzystanego limitu Bank pobiera odsetki według stopy wskazanej w um
 | 185. | Zamiana transakcji kartą kredytową na raty | od kwoty transakcji | 3% |
 | 186. | Likwidacja limitu odnawialnego na wniosek Klienta | jednorazowo | bez opłat |
 | 187. | Rezygnacja z limitu w terminie 14 dni od zawarcia umowy | jednorazowo | bez opłat |
-| 188. | Rozpatrzenie wniosku o limit w rachunku osobistym wysłanego w bankowości internetowej | jednorazowo | bez opłat |
-| 189. | Limit w rachunku osobistym przyznany z automatu na podstawie historii wpływów — prowizja | od kwoty limitu | 1,0% min. 20,00 zł |
-| 190. | Limit w rachunku osobistym dla klientów z wpływami powyżej 3 000,00 zł miesięcznie — prowizja | od kwoty limitu | 1,5% min. 30,00 zł |
-| 191. | Limit w rachunku osobistym dla klientów z wpływami do 3 000,00 zł miesięcznie — prowizja | od kwoty limitu | 2,5% min. 30,00 zł |
-| 192. | Limit w rachunku osobistym dla seniorów — prowizja | od kwoty limitu | 1,0% min. 20,00 zł |
-| 193. | Limit w rachunku wspólnym dwóch posiadaczy — dodatkowa prowizja za drugiego współposiadacza | od kwoty limitu | 0,5% |
-| 194. | Odblokowanie limitu zawieszonego z powodu opóźnienia w spłacie | jednorazowo | 50,00 zł |
-| 195. | Okres dostępności limitu — 12 miesięcy od dnia przyznania | jednorazowo | bez opłat |
-| 196. | Automatyczne wznowienie limitu po okresie dostępności | od kwoty limitu | 1,0% min. 30,00 zł |
-| 197. | Rezygnacja z samoczynnego wznowienia limitu | jednorazowo | bez opłat |
-| 198. | Karta kredytowa — prowizja za przyznanie limitu kredytowego | od kwoty limitu | 2% min. 30,00 zł |
-| 199. | Podwyższenie limitu w karcie kredytowej | od kwoty podwyższenia | 1,5% |
-| 200. | Tymczasowe podwyższenie limitu kartowego (do 3 miesięcy) | za każde podwyższenie | 30,00 zł |
-| 201. | Obniżenie limitu w karcie kredytowej na wniosek Klienta | za każdą zmianę | 40,00 zł |
-| 202. | Spłata minimalna karty kredytowej — udział w zadłużeniu | miesięcznie | 5,0% zadłużenia min. 50,00 zł |
-| 203. | Przekroczenie limitu karty kredytowej | za każde przekroczenie | 35,00 zł |
-| 204. | Odsetki od zadłużenia karty kredytowej po upływie okresu bezodsetkowego | rocznie | wg umowy |
-| 205. | Wypłata gotówki z karty kredytowej w bankomacie Banku | od kwoty wypłaty | 4% |
-| 206. | Wypłata gotówki z karty kredytowej w bankomacie obcym | za każdą wypłatę | 5,00 zł oraz 4% |
-| 207. | Przelew z karty kredytowej na rachunek bankowy | od kwoty przelewu | 4% min. 10,00 zł |
-| 208. | Zaświadczenie o wysokości przyznanego limitu | za każde zaświadczenie | 20,00 zł |
-| 209. | Zaświadczenie o historii wykorzystania limitu | za każde zaświadczenie | 30,00 zł |
-| 210. | Informacja o saldzie zadłużenia w limicie w placówce Banku | za każdą informację | bez opłat |
-| 211. | Informacja o saldzie zadłużenia w limicie telefonicznie | za każdą informację | bez opłat |
-| 212. | Opinia bankowa o sposobie obsługi limitu | za każdą opinię | 60,00 zł |
-| 213. | Duplikat umowy o limit | za każdy dokument | 30,00 zł |
-| 214. | Sporządzenie aneksu do umowy o limit | za każdy aneks | 70,00 zł |
-| 215. | Weryfikacja zdolności kredytowej przy wniosku o podwyższenie limitu | jednorazowo | bez opłat |
-| 216. | Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość SMS | za każde powiadomienie | 2,00 zł |
-| 217. | Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość w aplikacji | za każde powiadomienie | bez opłat |
-| 218. | Opłata za brak spłaty minimalnej kwoty zadłużenia w terminie | za każdy miesiąc zaległości | 15,00 zł |
-| 219. | Odsetki od kwot przeterminowanych w limicie | rocznie, od kwoty zaległości | 17% |
-| 220. | Blokada karty kredytowej z powodu zaległości | jednorazowo | bez opłat |
-| 221. | Odblokowanie karty kredytowej po spłacie zaległości | jednorazowo | 20,00 zł |
-| 222. | Wypowiedzenie umowy o limit przez Bank z powodu zaległości | jednorazowo | bez opłat |
-| 223. | Rozłożenie zadłużenia z karty kredytowej na raty (restrukturyzacja) | jednorazowo | 100,00 zł |
-| 224. | Porozumienie dotyczące spłaty zadłużenia w limicie | jednorazowo | bez opłat |
-| 225. | Przeniesienie zadłużenia z limitu do kredytu gotówkowego | jednorazowo | 1,0% przeniesionej kwoty min. 50,00 zł |
-| 226. | Zmniejszenie limitu z urzędu z powodu pogorszenia zdolności kredytowej | jednorazowo | bez opłat |
-| 227. | Zmiana terminu spłaty zadłużenia w karcie kredytowej (dnia zestawienia) | za każdą zmianę | 20,00 zł |
-| 228. | Spłata zadłużenia karty kredytowej wpłatą gotówkową w placówce | za każdą wpłatę | 3,00 zł |
-| 229. | Spłata zadłużenia karty kredytowej przelewem z rachunku w Banku | za każdy przelew | bez opłat |
-| 230. | Spłata zadłużenia karty kredytowej przelewem z innego banku | za każdy przelew | według taryfy banku Klienta |
-| 231. | Stałe zlecenie spłaty minimalnej kwoty zadłużenia | za każde zlecenie | bez opłat |
-| 232. | Zlecenie stałe spłaty pełnej kwoty zadłużenia | za każde zlecenie | bez opłat |
-| 233. | Wykaz transakcji kartą kredytową w formie papierowej | za każde zestawienie | 10,00 zł |
-| 234. | Duplikat zestawienia transakcji karty kredytowej | za każdy duplikat | 10,00 zł |
-| 235. | Powiadomienie SMS o transakcji kartą kredytową | miesięcznie | 2,00 zł |
-| 236. | Zastrzeżenie karty kredytowej | jednorazowo | 0,00 zł |
-| 237. | Wydanie duplikatu karty kredytowej | za każdy duplikat | 25,00 zł |
-| 238. | Limit w rachunku osobistym — minimalna kwota przyznania | jednorazowo | 500,00 zł |
-| 239. | Limit w rachunku osobistym — kwota limitu bez zbadania zdolności kredytowej | jednorazowo | do 1 000,00 zł |
-| 240. | Limit w rachunku osobistym — okres bezodsetkowy dla pierwszego wykorzystania | jednorazowo | do 30 dni |
-| 241. | Limit w rachunku osobistym — odsetki od kwot wykorzystanych powyżej 10 000,00 zł | rocznie | wg umowy |
-| 242. | Limit w rachunku osobistym dla Klientów z wpływami wynagrodzenia — zwolnienie z opłaty za utrzymanie | miesięcznie | bez opłat |
-| 243. | Spłata zadłużenia w limicie w pierwszej kolejności z wpływów na rachunek | za każdy wpływ | bez opłat |
-| 244. | Opłata za brak wpływów na rachunek w okresie 3 miesięcy przy aktywnym limicie | miesięcznie | 10,00 zł |
-| 245. | Przekształcenie zadłużenia w limicie na kredyt ratalny | jednorazowo | 1,0% kwoty zadłużenia min. 50,00 zł |
-| 246. | Pomoc w zamknięciu zadłużenia z limitu — sporządzenie planu spłaty | jednorazowo | bez opłat |
-| 247. | Odnowienie limitu po całkowitej spłacie zadłużenia | jednorazowo | bez opłat |
+| 188. | Zaświadczenie o wysokości przyznanego limitu | za każde zaświadczenie | 20,00 zł |
+| 189. | Zaświadczenie o historii wykorzystania limitu | za każde zaświadczenie | 30,00 zł |
+| 190. | Informacja o saldzie zadłużenia w limicie w placówce Banku | za każdą informację | bez opłat |
+| 191. | Informacja o saldzie zadłużenia w limicie telefonicznie | za każdą informację | bez opłat |
+| 192. | Opinia bankowa o sposobie obsługi limitu | za każdą opinię | 60,00 zł |
+| 193. | Duplikat umowy o limit | za każdy dokument | 30,00 zł |
+| 194. | Sporządzenie aneksu do umowy o limit | za każdy aneks | 70,00 zł |
+| 195. | Weryfikacja zdolności kredytowej przy wniosku o podwyższenie limitu | jednorazowo | bez opłat |
+| 196. | Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość SMS | za każde powiadomienie | 2,00 zł |
+| 197. | Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość w aplikacji | za każde powiadomienie | bez opłat |
+| 198. | Pożyczka odnawialna w bankowości mobilnej — prowizja za uruchomienie | od kwoty uruchomienia | 1,0% min. 20,00 zł |
+| 199. | Pożyczka odnawialna — prowizja za wznowienie po spłacie | od kwoty wznowienia | 0,5% min. 10,00 zł |
+| 200. | Pożyczka odnawialna — opłata za utrzymanie limitu | miesięcznie | 5,00 zł |
+| 201. | Limit w koncie dla młodych — maksymalna kwota limitu | jednorazowo | 1 000,00 zł |
+| 202. | Limit w koncie dla młodych — prowizja za przyznanie | jednorazowo | bez opłat |
+| 203. | Limit „ratalny” na zakupy w sklepach partnerskich — prowizja | od kwoty transakcji | wg umowy |
+| 204. | Opłata za zmianę rachunku, do którego przypisany jest limit | za każdą zmianę | 40,00 zł |
+| 205. | Opłata za przeniesienie limitu do nowego produktu rachunkowego | jednorazowo | bez opłat |
+| 206. | Zawieszenie możliwości korzystania z limitu na wniosek Klienta | za każde zawieszenie | bez opłat |
+| 207. | Odnowienie możliwości korzystania z limitu po zawieszeniu | za każde przywrócenie | bez opłat |
+| 208. | Opłata za brak spłaty minimalnej kwoty zadłużenia w terminie | za każdy miesiąc zaległości | 15,00 zł |
+| 209. | Odsetki od kwot przeterminowanych w limicie | rocznie, od kwoty zaległości | 17% |
+| 210. | Blokada karty kredytowej z powodu zaległości | jednorazowo | bez opłat |
+| 211. | Odblokowanie karty kredytowej po spłacie zaległości | jednorazowo | 20,00 zł |
+| 212. | Wypowiedzenie umowy o limit przez Bank z powodu zaległości | jednorazowo | bez opłat |
+| 213. | Rozłożenie zadłużenia z karty kredytowej na raty (restrukturyzacja) | jednorazowo | 100,00 zł |
+| 214. | Porozumienie dotyczące spłaty zadłużenia w limicie | jednorazowo | bez opłat |
+| 215. | Przeniesienie zadłużenia z limitu do kredytu gotówkowego | jednorazowo | 1,0% przeniesionej kwoty min. 50,00 zł |
+| 216. | Zmniejszenie limitu z urzędu z powodu pogorszenia zdolności kredytowej | jednorazowo | bez opłat |
+| 217. | Zmiana terminu spłaty zadłużenia w karcie kredytowej (dnia zestawienia) | za każdą zmianę | 20,00 zł |
+| 218. | Limit w rachunku osobistym — minimalna kwota przyznania | jednorazowo | 500,00 zł |
+| 219. | Limit w rachunku osobistym — kwota limitu bez zbadania zdolności kredytowej | jednorazowo | do 1 000,00 zł |
+| 220. | Limit w rachunku osobistym — okres bezodsetkowy dla pierwszego wykorzystania | jednorazowo | do 30 dni |
+| 221. | Limit w rachunku osobistym — odsetki od kwot wykorzystanych powyżej 10 000,00 zł | rocznie | wg umowy |
+| 222. | Limit w rachunku osobistym dla Klientów z wpływami wynagrodzenia — zwolnienie z opłaty za utrzymanie | miesięcznie | bez opłat |
+| 223. | Spłata zadłużenia w limicie w pierwszej kolejności z wpływów na rachunek | za każdy wpływ | bez opłat |
+| 224. | Opłata za brak wpływów na rachunek w okresie 3 miesięcy przy aktywnym limicie | miesięcznie | 10,00 zł |
+| 225. | Przekształcenie zadłużenia w limicie na kredyt ratalny | jednorazowo | 1,0% kwoty zadłużenia min. 50,00 zł |
+| 226. | Pomoc w zamknięciu zadłużenia z limitu — sporządzenie planu spłaty | jednorazowo | bez opłat |
+| 227. | Odnowienie limitu po całkowitej spłacie zadłużenia | jednorazowo | bez opłat |
+| 228. | Karta kredytowa — prowizja za przyznanie limitu kredytowego | od kwoty limitu | 2% min. 30,00 zł |
+| 229. | Podwyższenie limitu w karcie kredytowej | od kwoty podwyższenia | 1,5% |
+| 230. | Tymczasowe podwyższenie limitu kartowego (do 3 miesięcy) | za każde podwyższenie | 30,00 zł |
+| 231. | Obniżenie limitu w karcie kredytowej na wniosek Klienta | za każdą zmianę | 40,00 zł |
+| 232. | Spłata minimalna karty kredytowej — udział w zadłużeniu | miesięcznie | 5,0% zadłużenia min. 50,00 zł |
+| 233. | Przekroczenie limitu karty kredytowej | za każde przekroczenie | 35,00 zł |
+| 234. | Odsetki od zadłużenia karty kredytowej po upływie okresu bezodsetkowego | rocznie | wg umowy |
+| 235. | Wypłata gotówki z karty kredytowej w bankomacie Banku | od kwoty wypłaty | 4% |
+| 236. | Wypłata gotówki z karty kredytowej w bankomacie obcym | za każdą wypłatę | 5,00 zł oraz 4% |
+| 237. | Przelew z karty kredytowej na rachunek bankowy | od kwoty przelewu | 4% min. 10,00 zł |
+| 238. | Rozpatrzenie wniosku o limit w rachunku osobistym wysłanego w bankowości internetowej | jednorazowo | bez opłat |
+| 239. | Limit w rachunku osobistym przyznany z automatu na podstawie historii wpływów — prowizja | od kwoty limitu | 1,0% min. 20,00 zł |
+| 240. | Limit w rachunku osobistym dla klientów z wpływami powyżej 3 000,00 zł miesięcznie — prowizja | od kwoty limitu | 1,5% min. 30,00 zł |
+| 241. | Limit w rachunku osobistym dla klientów z wpływami do 3 000,00 zł miesięcznie — prowizja | od kwoty limitu | 2,5% min. 30,00 zł |
+| 242. | Limit w rachunku osobistym dla seniorów — prowizja | od kwoty limitu | 1,0% min. 20,00 zł |
+| 243. | Limit w rachunku wspólnym dwóch posiadaczy — dodatkowa prowizja za drugiego współposiadacza | od kwoty limitu | 0,5% |
+| 244. | Odblokowanie limitu zawieszonego z powodu opóźnienia w spłacie | jednorazowo | 50,00 zł |
+| 245. | Okres dostępności limitu — 12 miesięcy od dnia przyznania | jednorazowo | bez opłat |
+| 246. | Automatyczne wznowienie limitu po okresie dostępności | od kwoty limitu | 1,0% min. 30,00 zł |
+| 247. | Rezygnacja z samoczynnego wznowienia limitu | jednorazowo | bez opłat |
 
-<!-- page: 14 -->
+<!-- page: 15 -->
 - 1\) Prowizja jest potrącana z rachunku Klienta w dniu udostępnienia limitu; nie podlega zwrotowi w razie zamknięcia
 
 limitu przed upływem okresu, na który został przyznany, z wyjątkiem odstąpienia od umowy.
@@ -356,7 +356,6 @@ wysokość stopy może ulec zmianie na zasadach określonych w umowie.
 
 przepisów o usługach płatniczych, oraz gdy zadłużenie ponad limit zostanie spłacone w dniu jego powstania.
 
-<!-- page: 15 -->
 ## V. Kredyty dla przedsiębiorców
 
 Niniejsza sekcja dotyczy kredytów obrotowych, inwestycyjnych, linii kredytowych i kredytów w rachunku bieżącym oferowanych przedsiębiorcom, w tym osobom fizycznym prowadzącym działalność gospodarczą. Stawki ustalone w umowie z przedsiębiorcą mogą niższe od stawek Taryfy; Taryfa stanowi stawki maksymalne.
@@ -382,16 +381,16 @@ Prowizję przygotowawczą Bank pobiera od kwoty kredytu, nie mniej niż 500,00 z
 | 260. | Odsetki od kwot przeterminowanych w kredycie firmowym | rocznie, od kwoty zaległości | 17% |
 | 261. | Opłata za badanie sytuacji finansowej przedsiębiorcy (analiza sprawozdań) | rocznie | 350,00 zł |
 | 262. | Przygotowanie umowy kredytu według wzoru przedsiębiorcy | jednorazowo | wg umowy |
-| 263. | Promesa udzielenia kredytu (zobowiązanie do udzielenia kredytu) | jednorazowo | 0,3% kwoty promesy min. 300,00 zł |
-| 264. | Opinia bankowa o przedsiębiorcy dla kontrahentów | za każdą opinię | 100,00 zł |
-| 265. | Zaświadczenie o terminowej obsłudze zadłużenia | za każde zaświadczenie | 20,00 zł |
-| 266. | Zaświadczenie o posiadanych w Banku zobowiązaniach (wykaz kredytów) | za każde zaświadczenie | 60,00 zł |
-| 267. | Potwierdzenie salda kredytu dla biegłego rewidenta | za każde potwierdzenie | 80,00 zł |
-| 268. | Sporządzenie duplikatu umowy kredytu wraz z załącznikami | za każdy dokument | 30,00 zł |
-| 269. | Udostępnienie informacji o zadłużeniu osobom upoważnionym przez przedsiębiorcę | za każdą informację | bez opłat |
-| 270. | Dostęp do systemu bankowości elektronicznej w zakresie obsługi kredytów | miesięcznie | bez opłat |
-| 271. | Raport z wykorzystania kredytów w okresie sprawozdawczym | za każdy raport | 50,00 zł |
-| 272. | Weryfikacja kowenantu rocznego na podstawie sprawozdania zbadanego przez biegłego | rocznie | 250,00 zł |
+| 263. | Ustanowienie hipoteki na nieruchomości przedsiębiorcy — wniosek o wpis (opłata sądowa) | za każdy wpis | 200,00 zł |
+| 264. | Wycena nieruchomości komercyjnej przez rzeczoznawcę Banku | za każdą wycenę | od 1 500,00 zł |
+| 265. | Wycena maszyn i urządzeń stanowiących zabezpieczenie | za każdą wycenę | od 900,00 zł |
+| 266. | Ustanowienie zastawu rejestrowego na zapasach lub środkach trwałych — przygotowanie umowy | za każdą umowę | 300,00 zł |
+| 267. | Przewłaszczenie na zabezpieczenie — przygotowanie umowy | za każdą umowę | 300,00 zł |
+| 268. | Cesja wierzytelności z umów handlowych — przygotowanie umowy | za każdą umowę | 250,00 zł |
+| 269. | Poręczenie wekslowe — sporządzenie dokumentów | za każde poręczenie | 150,00 zł |
+| 270. | Ubezpieczenie przedmiotu zabezpieczenia — kontrola polisy | rocznie | 100,00 zł |
+| 271. | Poręczenie osoby fizycznej (wspólnika) — sporządzenie umowy poręczenia | za każde poręczenie | 200,00 zł |
+| 272. | Zwolnienie zabezpieczenia po spłacie kredytu | za każde zwolnienie | 250,00 zł |
 | 273. | Gwarancja bankowa w ramach limitu kredytowego — prowizja | rocznie | 1,5% kwoty gwarancji min. 300,00 zł |
 | 274. | Akredytywa dokumentowa — prowizja za otwarcie | za każde otwarcie | 0,5% kwoty min. 250,00 zł |
 | 275. | Kredyt kupiecki dla odbiorców przedsiębiorcy — prowizja za przygotowanie | od kwoty limitu | 1,0% min. 300,00 zł |
@@ -402,46 +401,46 @@ Prowizję przygotowawczą Bank pobiera od kwoty kredytu, nie mniej niż 500,00 z
 | 280. | Kredyt w rachunku bieżącym dla organizacji pozarządowych — prowizja | od kwoty limitu | 1,0% min. 200,00 zł |
 | 281. | Kredyt dla jednostek samorządu terytorialnego — prowizja | od kwoty kredytu | wg umowy |
 | 282. | Konsolidacja zobowiązań przedsiębiorcy z innych instytucji — prowizja | od kwoty konsolidowanej | 1,5% min. 600,00 zł |
-| 283. | Uruchomienie transzy kredytu inwestycyjnego | za każdą transzę | 150,00 zł |
-| 284. | Weryfikacja faktur i dokumentów rozliczeniowych przed uruchomieniem transzy | za każdą transzę | 120,00 zł |
-| 285. | Kontrola celowości wykorzystania kredytu | za każdą kontrolę | 300,00 zł |
-| 286. | Przedłużenie terminu uruchomienia kredytu | za każde przedłużenie | 0,2% kwoty niewypłaconej min. 200,00 zł |
-| 287. | Rezygnacja z uruchomienia kredytu po zawarciu umowy | jednorazowo | 0,5% kwoty kredytu min. 300,00 zł |
-| 288. | Opłata za zmianę terminu płatności raty | za każdą zmianę | 100,00 zł |
-| 289. | Rozliczenie kredytu w walucie obcej — marża na przeliczeniu | od kwoty przeliczenia | 1,5% |
-| 290. | Spłata kredytu walutowego w walucie innej niż waluta kredytu | od kwoty spłaty | 0,2% min. 20,00 zł |
-| 291. | Wpłata gotówkowa na rachunek kredytowy w placówce | za każdą wpłatę | 3,00 zł |
-| 292. | Przelew spłaty raty z rachunku w innym banku | za każdy przelew | według taryfy banku przedsiębiorcy |
-| 293. | Kredyt na zakup maszyn i urządzeń — prowizja | od kwoty kredytu | 1,8% min. 800,00 zł |
-| 294. | Kredyt na zakup pojazdów dla przedsiębiorcy — prowizja | od kwoty kredytu | 1,5% min. 500,00 zł |
-| 295. | Kredyt na zakup nieruchomości komercyjnej — prowizja | od kwoty kredytu | 2,0% min. 2 000,00 zł |
-| 296. | Kredyt na sfinansowanie zapasów — prowizja | od kwoty kredytu | 1,5% min. 500,00 zł |
-| 297. | Kredyt na finansowanie należności (faktoring pełny) — prowizja | od wartości faktury | 0,8% wartości faktur |
-| 298. | Kredyt z gwarancją spłaty udzieloną przez instytucję publiczną — prowizja Banku | od kwoty kredytu | 1,0% min. 400,00 zł |
-| 299. | Kredyt z dopłatą do oprocentowania ze środków publicznych — prowizja Banku | od kwoty kredytu | 1,0% min. 400,00 zł |
-| 300. | Kredyt dla producentów rolnych — prowizja | od kwoty kredytu | 1,5% min. 300,00 zł |
-| 301. | Kredyt dla nowo założonych firm (do 24 miesięcy działalności) — prowizja | od kwoty kredytu | 2,5% min. 500,00 zł |
-| 302. | Kredyt dla przedsiębiorcy z rachunkiem firmowym w Banku — obniżenie prowizji | od stawki prowizji | minus 0,3 pkt proc. |
-| 303. | Kredyt w rachunku bieżącym — prowizja za przyznanie limitu | od kwoty limitu | 1,5% min. 300,00 zł |
-| 304. | Kredyt w rachunku bieżącym — prowizja za przedłużenie na kolejny okres | od kwoty limitu | 1,0% min. 300,00 zł |
-| 305. | Kredyt w rachunku bieżącym — odsetki od wykorzystanego zadłużenia | rocznie | wg umowy |
-| 306. | Kredyt w rachunku bieżącym — przekroczenie przyznanego limitu | rocznie | wg umowy, nie więcej niż odsetki za opóźnienie |
-| 307. | Kredyt w rachunku bieżącym — podwyższenie limitu w trakcie umowy | jednorazowo | 1,5% kwoty podwyższenia min. 300,00 zł |
-| 308. | Kredyt w rachunku bieżącym — obniżenie limitu na wniosek przedsiębiorcy | za każdą zmianę | bez opłat |
-| 309. | Kredyt w rachunku bieżącym — sporządzenie aneksu | za każdy aneks | 500,00 zł |
-| 310. | Kredyt w rachunku bieżącym — zawieszenie dostępności limitu na wniosek | za każde zawieszenie | bez opłat |
-| 311. | Limit wielocelowy (wspólny dla kilku produktów) — prowizja | od kwoty limitu | 2,0% min. 600,00 zł |
-| 312. | Limit wielocelowy — przeniesienie kwot między produktami | za każde przesunięcie | 100,00 zł |
-| 313. | Ustanowienie hipoteki na nieruchomości przedsiębiorcy — wniosek o wpis (opłata sądowa) | za każdy wpis | 200,00 zł |
-| 314. | Wycena nieruchomości komercyjnej przez rzeczoznawcę Banku | za każdą wycenę | od 1 500,00 zł |
-| 315. | Wycena maszyn i urządzeń stanowiących zabezpieczenie | za każdą wycenę | od 900,00 zł |
-| 316. | Ustanowienie zastawu rejestrowego na zapasach lub środkach trwałych — przygotowanie umowy | za każdą umowę | 300,00 zł |
-| 317. | Przewłaszczenie na zabezpieczenie — przygotowanie umowy | za każdą umowę | 300,00 zł |
-| 318. | Cesja wierzytelności z umów handlowych — przygotowanie umowy | za każdą umowę | 250,00 zł |
-| 319. | Poręczenie wekslowe — sporządzenie dokumentów | za każde poręczenie | 150,00 zł |
-| 320. | Ubezpieczenie przedmiotu zabezpieczenia — kontrola polisy | rocznie | 100,00 zł |
-| 321. | Poręczenie osoby fizycznej (wspólnika) — sporządzenie umowy poręczenia | za każde poręczenie | 200,00 zł |
-| 322. | Zwolnienie zabezpieczenia po spłacie kredytu | za każde zwolnienie | 250,00 zł |
+| 283. | Kredyt na zakup maszyn i urządzeń — prowizja | od kwoty kredytu | 1,8% min. 800,00 zł |
+| 284. | Kredyt na zakup pojazdów dla przedsiębiorcy — prowizja | od kwoty kredytu | 1,5% min. 500,00 zł |
+| 285. | Kredyt na zakup nieruchomości komercyjnej — prowizja | od kwoty kredytu | 2,0% min. 2 000,00 zł |
+| 286. | Kredyt na sfinansowanie zapasów — prowizja | od kwoty kredytu | 1,5% min. 500,00 zł |
+| 287. | Kredyt na finansowanie należności (faktoring pełny) — prowizja | od wartości faktury | 0,8% wartości faktur |
+| 288. | Kredyt z gwarancją spłaty udzieloną przez instytucję publiczną — prowizja Banku | od kwoty kredytu | 1,0% min. 400,00 zł |
+| 289. | Kredyt z dopłatą do oprocentowania ze środków publicznych — prowizja Banku | od kwoty kredytu | 1,0% min. 400,00 zł |
+| 290. | Kredyt dla producentów rolnych — prowizja | od kwoty kredytu | 1,5% min. 300,00 zł |
+| 291. | Kredyt dla nowo założonych firm (do 24 miesięcy działalności) — prowizja | od kwoty kredytu | 2,5% min. 500,00 zł |
+| 292. | Kredyt dla przedsiębiorcy z rachunkiem firmowym w Banku — obniżenie prowizji | od stawki prowizji | minus 0,3 pkt proc. |
+| 293. | Uruchomienie transzy kredytu inwestycyjnego | za każdą transzę | 150,00 zł |
+| 294. | Weryfikacja faktur i dokumentów rozliczeniowych przed uruchomieniem transzy | za każdą transzę | 120,00 zł |
+| 295. | Kontrola celowości wykorzystania kredytu | za każdą kontrolę | 300,00 zł |
+| 296. | Przedłużenie terminu uruchomienia kredytu | za każde przedłużenie | 0,2% kwoty niewypłaconej min. 200,00 zł |
+| 297. | Rezygnacja z uruchomienia kredytu po zawarciu umowy | jednorazowo | 0,5% kwoty kredytu min. 300,00 zł |
+| 298. | Opłata za zmianę terminu płatności raty | za każdą zmianę | 100,00 zł |
+| 299. | Rozliczenie kredytu w walucie obcej — marża na przeliczeniu | od kwoty przeliczenia | 1,5% |
+| 300. | Spłata kredytu walutowego w walucie innej niż waluta kredytu | od kwoty spłaty | 0,2% min. 20,00 zł |
+| 301. | Wpłata gotówkowa na rachunek kredytowy w placówce | za każdą wpłatę | 3,00 zł |
+| 302. | Przelew spłaty raty z rachunku w innym banku | za każdy przelew | według taryfy banku przedsiębiorcy |
+| 303. | Promesa udzielenia kredytu (zobowiązanie do udzielenia kredytu) | jednorazowo | 0,3% kwoty promesy min. 300,00 zł |
+| 304. | Opinia bankowa o przedsiębiorcy dla kontrahentów | za każdą opinię | 100,00 zł |
+| 305. | Zaświadczenie o terminowej obsłudze zadłużenia | za każde zaświadczenie | 20,00 zł |
+| 306. | Zaświadczenie o posiadanych w Banku zobowiązaniach (wykaz kredytów) | za każde zaświadczenie | 60,00 zł |
+| 307. | Potwierdzenie salda kredytu dla biegłego rewidenta | za każde potwierdzenie | 80,00 zł |
+| 308. | Sporządzenie duplikatu umowy kredytu wraz z załącznikami | za każdy dokument | 30,00 zł |
+| 309. | Udostępnienie informacji o zadłużeniu osobom upoważnionym przez przedsiębiorcę | za każdą informację | bez opłat |
+| 310. | Dostęp do systemu bankowości elektronicznej w zakresie obsługi kredytów | miesięcznie | bez opłat |
+| 311. | Raport z wykorzystania kredytów w okresie sprawozdawczym | za każdy raport | 50,00 zł |
+| 312. | Weryfikacja kowenantu rocznego na podstawie sprawozdania zbadanego przez biegłego | rocznie | 250,00 zł |
+| 313. | Kredyt w rachunku bieżącym — prowizja za przyznanie limitu | od kwoty limitu | 1,5% min. 300,00 zł |
+| 314. | Kredyt w rachunku bieżącym — prowizja za przedłużenie na kolejny okres | od kwoty limitu | 1,0% min. 300,00 zł |
+| 315. | Kredyt w rachunku bieżącym — odsetki od wykorzystanego zadłużenia | rocznie | wg umowy |
+| 316. | Kredyt w rachunku bieżącym — przekroczenie przyznanego limitu | rocznie | wg umowy, nie więcej niż odsetki za opóźnienie |
+| 317. | Kredyt w rachunku bieżącym — podwyższenie limitu w trakcie umowy | jednorazowo | 1,5% kwoty podwyższenia min. 300,00 zł |
+| 318. | Kredyt w rachunku bieżącym — obniżenie limitu na wniosek przedsiębiorcy | za każdą zmianę | bez opłat |
+| 319. | Kredyt w rachunku bieżącym — sporządzenie aneksu | za każdy aneks | 500,00 zł |
+| 320. | Kredyt w rachunku bieżącym — zawieszenie dostępności limitu na wniosek | za każde zawieszenie | bez opłat |
+| 321. | Limit wielocelowy (wspólny dla kilku produktów) — prowizja | od kwoty limitu | 2,0% min. 600,00 zł |
+| 322. | Limit wielocelowy — przeniesienie kwot między produktami | za każde przesunięcie | 100,00 zł |
 
 <!-- page: 18 -->
 - 1\) Opłata jest pobierana w dniu złożenia wniosku, a w razie udzielenia kredytu jest zaliczana na poczet prowizji
@@ -464,6 +463,7 @@ przedterminowej spłaty dokonanej w ostatnich 3 miesiącach przed końcem okresu
 
 Niniejsza sekcja dotyczy czynności wykonywanych w okresie trwania umowy kredytu na wniosek Klienta lub w jego interesie: zmian warunków umowy, wydawania zaświadczeń i dokumentów, zwolnień zabezpieczeń. Opłaty pobierane są jednorazowo, przed jej wykonaniem, chyba że Taryfa stanowi inaczej.
 
+<!-- page: 19 -->
 Bank nie pobiera opłat za informacje, które zgodnie z przepisami prawa udostępnia Klientowi nieodpłatnie, w szczególności za harmonogram spłat przekazywany raz w roku oraz za informację o saldzie zadłużenia w kanałach elektronicznych.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
@@ -483,16 +483,16 @@ Bank nie pobiera opłat za informacje, które zgodnie z przepisami prawa udostę
 | 335. | Zmiana danych Klienta w umowie kredytu (nazwisko, adres, dane kontaktowe) | za każdą zmianę | bez opłat |
 | 336. | Sporządzenie kopii dokumentów z archiwum kredytowego Banku | za każdą kopię | 1,00 zł za stronę, min. 10,00 zł |
 | 337. | Wizyta pracownika Banku w miejscu wskazanym przez Klienta w celu podpisania aneksu | za każdą wizytę | 150,00 zł 3) |
-| 338. | Opłata za wysyłkę powiadomień o zmianie oprocentowania w formie papierowej | za każde powiadomienie | 10,00 zł |
-| 339. | Powiadomienia SMS o terminach spłaty rat | miesięcznie | 2,00 zł |
-| 340. | Powiadomienia e-mail o terminach spłaty rat | miesięcznie | bez opłat |
-| 341. | Powiadomienia push w aplikacji mobilnej o terminach spłaty rat | miesięcznie | bez opłat |
-| 342. | Wyciąg z rachunku kredytowego w formie elektronicznej | miesięcznie | bez opłat |
-| 343. | Wyciąg z rachunku kredytowego w formie papierowej | miesięcznie | 10,00 zł |
-| 344. | Odbiór dokumentów kredytowych w placówce zamiast wysyłki | jednorazowo | bez opłat |
-| 345. | Przesłanie dokumentów kurierem na wniosek Klienta | za każdą przesyłkę | 35,00 zł |
-| 346. | Wysyłka dokumentów za granicę | za każdą przesyłkę | 60,00 zł |
-| 347. | Dodatkowy egzemplarz formularza informacyjnego dla Klienta | za każdy egzemplarz | bez opłat |
+| 338. | Zaświadczenie o zdolności kredytowej wydane na wniosek Klienta | za każde zaświadczenie | 40,00 zł |
+| 339. | Zaświadczenie o wysokości rat kredytu dla celów podatkowych | raz w roku | bez opłat |
+| 340. | Zaświadczenie o zapłaconych odsetkach w wersji angielskojęzycznej | za każde zaświadczenie | 20,00 zł |
+| 341. | Zaświadczenie o terminowej spłacie dla urzędu lub kontrahenta | za każde zaświadczenie | 20,00 zł |
+| 342. | Zaświadczenie o kredytach posiadanych w Banku (zestawienie zobowiązań) | za każde zaświadczenie | 30,00 zł |
+| 343. | Zaświadczenie pilne — wystawienie w ciągu 1 dnia roboczego | za każde zaświadczenie | 2-krotność stawki zaświadczenia |
+| 344. | Potwierdzenie ustanowienia zabezpieczenia na rzecz Banku | za każde potwierdzenie | 30,00 zł |
+| 345. | Oświadczenie Banku o braku roszczeń z powodu kredytu | za każde oświadczenie | 50,00 zł |
+| 346. | Potwierdzenie wpłaty na rachunek kredytowy | za każde potwierdzenie | bez opłat |
+| 347. | Informacja dla organu egzekucyjnego o stanie zadłużenia | za każdą informację | bez opłat |
 | 348. | Sporządzenie kopii umowy kredytowej w języku angielskim (tłumaczenie) | za każdy dokument | 150,00 zł |
 | 349. | Poświadczenie wierzytelności wynikającej z umowy kredytu dla notariusza | za każde poświadczenie | 50,00 zł |
 | 350. | Potwierdzenie rozliczenia kredytu dla organu podatkowego | za każde potwierdzenie | bez opłat |
@@ -503,46 +503,46 @@ Bank nie pobiera opłat za informacje, które zgodnie z przepisami prawa udostę
 | 355. | Sporządzenie wyliczenia rzeczywistej rocznej stopy oprocentowania dla Klienta | za każde wyliczenie | bez opłat |
 | 356. | Sporządzenie symulacji kosztów wcześniejszej spłaty | za każdą symulację | bez opłat |
 | 357. | Przeliczenie kredytu po zmianie przepisów (uwzględnienie ustawowych limitów opłat) | jednorazowo | bez opłat |
-| 358. | Zmiana wysokości raty kredytu na wniosek Klienta bez zmiany okresu kredytowania | za każdą zmianę | 100,00 zł |
-| 359. | Przeniesienie kredytu do innego oddziału Banku | jednorazowo | bez opłat |
-| 360. | Zmiana danych współkredytobiorcy w umowie | za każdą zmianę | bez opłat |
-| 361. | Zmiana pełnomocnika do reprezentowania w sprawach kredytu | za każdą zmianę | 30,00 zł |
-| 362. | Rejestracja wzoru podpisu pełnomocnika w dokumentach kredytowych | za każdą rejestrację | bez opłat |
-| 363. | Przyjęcie dyspozycji na wypadek śmierci kredytobiorcy (zgłoszenie osoby kontaktowej) | za każde zgłoszenie | bez opłat |
-| 364. | Przejście praw i obowiązków kredytobiorcy na spadkobierców — przyjęcie dokumentów | jednorazowo | bez opłat |
-| 365. | Przygotowanie ugody dotyczącej spłaty kredytu | za każdą ugodę | 100,00 zł |
-| 366. | Zmiana wzoru umowy na dwujęzyczny po zawarciu umowy | jednorazowo | 150,00 zł |
-| 367. | Udzielenie informacji o stanie kredytu telefonicznie po weryfikacji tożsamości | za każdą informację | bez opłat |
-| 368. | Zwolnienie z poręczenia osoby trzeciej | za każde zwolnienie | 150,00 zł |
-| 369. | Zastąpienie poręczyciela nowym poręczycielem | za każdą zmianę | 200,00 zł |
-| 370. | Zwolnienie blokady środków na rachunku stanowiących zabezpieczenie kredytu | jednorazowo | bez opłat |
-| 371. | Zwrot oryginału weksla in blanco wraz z deklaracją wekslową po całkowitej spłacie kredytu | jednorazowo | bez opłat |
-| 372. | Zwolnienie przewłaszczenia lub zastawu rejestrowego po spłacie kredytu | za każde zwolnienie | 200,00 zł |
-| 373. | Wniosek o wykreślenie zastawu rejestrowego z rejestru zastawów (opłata sądowa) | za każdy wniosek | 100,00 zł |
-| 374. | Zwolnienie cesji praw z polisy ubezpieczeniowej | jednorazowo | bez opłat |
-| 375. | Zwrot dokumentów własności pojazdu po spłacie kredytu | jednorazowo | bez opłat |
-| 376. | Wydanie klucza lub karty pojazdu przechowywanych w depozycie | jednorazowo | bez opłat |
-| 377. | Przekazanie dokumentacji zabezpieczenia do kancelarii notarialnej wskazanej przez Klienta | jednorazowo | 60,00 zł |
-| 378. | Zaświadczenie o zdolności kredytowej wydane na wniosek Klienta | za każde zaświadczenie | 40,00 zł |
-| 379. | Zaświadczenie o wysokości rat kredytu dla celów podatkowych | raz w roku | bez opłat |
-| 380. | Zaświadczenie o zapłaconych odsetkach w wersji angielskojęzycznej | za każde zaświadczenie | 20,00 zł |
-| 381. | Zaświadczenie o terminowej spłacie dla urzędu lub kontrahenta | za każde zaświadczenie | 20,00 zł |
-| 382. | Zaświadczenie o kredytach posiadanych w Banku (zestawienie zobowiązań) | za każde zaświadczenie | 30,00 zł |
-| 383. | Zaświadczenie pilne — wystawienie w ciągu 1 dnia roboczego | za każde zaświadczenie | 2-krotność stawki zaświadczenia |
-| 384. | Potwierdzenie ustanowienia zabezpieczenia na rzecz Banku | za każde potwierdzenie | 30,00 zł |
-| 385. | Oświadczenie Banku o braku roszczeń z powodu kredytu | za każde oświadczenie | 50,00 zł |
-| 386. | Potwierdzenie wpłaty na rachunek kredytowy | za każde potwierdzenie | bez opłat |
-| 387. | Informacja dla organu egzekucyjnego o stanie zadłużenia | za każdą informację | bez opłat |
-| 388. | Weryfikacja tożsamości Klienta składającego dyspozycję kredytową w placówce | za każdą dyspozycję | bez opłat |
-| 389. | Weryfikacja pełnomocnictwa notarialnego do czynności kredytowych | za każde pełnomocnictwo | 50,00 zł |
-| 390. | Weryfikacja dokumentów zagranicznych (wraz z tłumaczeniem przysięgłym wskazanym przez Bank) | za każdy dokument | 100,00 zł |
-| 391. | Złożenie dyspozycji kredytowej przez pełnomocnika | za każdą dyspozycję | 30,00 zł |
-| 392. | Złożenie dyspozycji kredytowej drogą korespondencyjną z poświadczeniem podpisu | za każdą dyspozycję | 20,00 zł |
-| 393. | Cofnięcie dyspozycji kredytowej przed jej realizacją | za każde odwołanie | bez opłat |
-| 394. | Odwołanie dyspozycji po rozpoczęciu realizacji | za każde odwołanie | 40,00 zł |
-| 395. | Rezygnacja z zawarcia umowy po przygotowaniu dokumentów | jednorazowo | bez opłat |
-| 396. | Sporządzenie dodatkowego projektu umowy na wniosek Klienta | za każdy projekt | bez opłat |
-| 397. | Sprawdzenie zgodności danych w dokumentach z rejestrami publicznymi | za każde sprawdzenie | 30,00 zł |
+| 358. | Weryfikacja tożsamości Klienta składającego dyspozycję kredytową w placówce | za każdą dyspozycję | bez opłat |
+| 359. | Weryfikacja pełnomocnictwa notarialnego do czynności kredytowych | za każde pełnomocnictwo | 50,00 zł |
+| 360. | Weryfikacja dokumentów zagranicznych (wraz z tłumaczeniem przysięgłym wskazanym przez Bank) | za każdy dokument | 100,00 zł |
+| 361. | Złożenie dyspozycji kredytowej przez pełnomocnika | za każdą dyspozycję | 30,00 zł |
+| 362. | Złożenie dyspozycji kredytowej drogą korespondencyjną z poświadczeniem podpisu | za każdą dyspozycję | 20,00 zł |
+| 363. | Cofnięcie dyspozycji kredytowej przed jej realizacją | za każde odwołanie | bez opłat |
+| 364. | Odwołanie dyspozycji po rozpoczęciu realizacji | za każde odwołanie | 40,00 zł |
+| 365. | Rezygnacja z zawarcia umowy po przygotowaniu dokumentów | jednorazowo | bez opłat |
+| 366. | Sporządzenie dodatkowego projektu umowy na wniosek Klienta | za każdy projekt | bez opłat |
+| 367. | Sprawdzenie zgodności danych w dokumentach z rejestrami publicznymi | za każde sprawdzenie | 30,00 zł |
+| 368. | Opłata za wysyłkę powiadomień o zmianie oprocentowania w formie papierowej | za każde powiadomienie | 10,00 zł |
+| 369. | Powiadomienia SMS o terminach spłaty rat | miesięcznie | 2,00 zł |
+| 370. | Powiadomienia e-mail o terminach spłaty rat | miesięcznie | bez opłat |
+| 371. | Powiadomienia push w aplikacji mobilnej o terminach spłaty rat | miesięcznie | bez opłat |
+| 372. | Wyciąg z rachunku kredytowego w formie elektronicznej | miesięcznie | bez opłat |
+| 373. | Wyciąg z rachunku kredytowego w formie papierowej | miesięcznie | 10,00 zł |
+| 374. | Odbiór dokumentów kredytowych w placówce zamiast wysyłki | jednorazowo | bez opłat |
+| 375. | Przesłanie dokumentów kurierem na wniosek Klienta | za każdą przesyłkę | 35,00 zł |
+| 376. | Wysyłka dokumentów za granicę | za każdą przesyłkę | 60,00 zł |
+| 377. | Dodatkowy egzemplarz formularza informacyjnego dla Klienta | za każdy egzemplarz | bez opłat |
+| 378. | Zmiana wysokości raty kredytu na wniosek Klienta bez zmiany okresu kredytowania | za każdą zmianę | 100,00 zł |
+| 379. | Przeniesienie kredytu do innego oddziału Banku | jednorazowo | bez opłat |
+| 380. | Zmiana danych współkredytobiorcy w umowie | za każdą zmianę | bez opłat |
+| 381. | Zmiana pełnomocnika do reprezentowania w sprawach kredytu | za każdą zmianę | 30,00 zł |
+| 382. | Rejestracja wzoru podpisu pełnomocnika w dokumentach kredytowych | za każdą rejestrację | bez opłat |
+| 383. | Przyjęcie dyspozycji na wypadek śmierci kredytobiorcy (zgłoszenie osoby kontaktowej) | za każde zgłoszenie | bez opłat |
+| 384. | Przejście praw i obowiązków kredytobiorcy na spadkobierców — przyjęcie dokumentów | jednorazowo | bez opłat |
+| 385. | Przygotowanie ugody dotyczącej spłaty kredytu | za każdą ugodę | 100,00 zł |
+| 386. | Zmiana wzoru umowy na dwujęzyczny po zawarciu umowy | jednorazowo | 150,00 zł |
+| 387. | Udzielenie informacji o stanie kredytu telefonicznie po weryfikacji tożsamości | za każdą informację | bez opłat |
+| 388. | Zwolnienie z poręczenia osoby trzeciej | za każde zwolnienie | 150,00 zł |
+| 389. | Zastąpienie poręczyciela nowym poręczycielem | za każdą zmianę | 200,00 zł |
+| 390. | Zwolnienie blokady środków na rachunku stanowiących zabezpieczenie kredytu | jednorazowo | bez opłat |
+| 391. | Zwrot oryginału weksla in blanco wraz z deklaracją wekslową po całkowitej spłacie kredytu | jednorazowo | bez opłat |
+| 392. | Zwolnienie przewłaszczenia lub zastawu rejestrowego po spłacie kredytu | za każde zwolnienie | 200,00 zł |
+| 393. | Wniosek o wykreślenie zastawu rejestrowego z rejestru zastawów (opłata sądowa) | za każdy wniosek | 100,00 zł |
+| 394. | Zwolnienie cesji praw z polisy ubezpieczeniowej | jednorazowo | bez opłat |
+| 395. | Zwrot dokumentów własności pojazdu po spłacie kredytu | jednorazowo | bez opłat |
+| 396. | Wydanie klucza lub karty pojazdu przechowywanych w depozycie | jednorazowo | bez opłat |
+| 397. | Przekazanie dokumentacji zabezpieczenia do kancelarii notarialnej wskazanej przez Klienta | jednorazowo | 60,00 zł |
 
 <!-- page: 22 -->
 - 1\) Pierwsze w roku kalendarzowym zaświadczenie o spłacie kredytu, o którym mowa w przepisach o kredycie
@@ -580,66 +580,66 @@ Pierwszy monit Bank kieruje do Klienta w terminie 3 dni od dnia wymagalności ra
 | 410. | Zaświadczenie o wysokości zaległości na dzień wskazany przez Klienta | za każde zaświadczenie | 20,00 zł |
 | 411. | Zaświadczenie o całkowitej spłacie zaległości | jednorazowo | bez opłat |
 | 412. | Wniosek o wstrzymanie czynności windykacyjnych na czas rozpatrzenia reklamacji | za każdy wniosek | bez opłat |
-| 413. | Rozłożenie zaległości na raty — ugoda do 6 miesięcy | jednorazowo | bez opłat |
-| 414. | Rozłożenie zaległości na raty — ugoda od 7 do 24 miesięcy | jednorazowo | 100,00 zł |
-| 415. | Rozłożenie zaległości na raty — ugoda powyżej 24 miesięcy | jednorazowo | 0,5% kwoty zaległości min. 200,00 zł |
-| 416. | Kapitalizacja zaległych odsetek w ramach restrukturyzacji | jednorazowo | bez opłat |
-| 417. | Konsolidacja zaległych rat z kapitałem w jeden kredyt restrukturyzacyjny | jednorazowo | 1,0% kwoty min. 150,00 zł |
-| 418. | Zmniejszenie oprocentowania w ramach programu pomocy dla kredytobiorców | jednorazowo | bez opłat |
-| 419. | Zawieszenie spłaty rat na okres do 3 miesięcy w związku z utratą pracy | za każde zawieszenie | bez opłat |
-| 420. | Odroczenie terminu płatności raty o 30 dni | za każde odroczenie | 60,00 zł |
-| 421. | Umorzenie odsetek za opóźnienie w całości lub w części | jednorazowo | bez opłat |
-| 422. | Opłata za rozpatrzenie wniosku o umorzenie zadłużenia | jednorazowo | bez opłat |
-| 423. | Wizyta terenowa pracownika w miejscu pobytu Klienta | za każdą wizytę | 120,00 zł |
-| 424. | Wizyta terenowa w siedzibie przedsiębiorcy | za każdą wizytę | 200,00 zł |
-| 425. | Ponowna wizyta po nieskutecznej próbie kontaktu | za każdą wizytę | 60,00 zł |
-| 426. | Kontrola stanu przedmiotu zabezpieczenia na wniosek Banku | za każde oględziny | 150,00 zł |
-| 427. | Wycena przedmiotu zabezpieczenia w związku z zaległością | za każdą wycenę | wg faktycznie poniesionych kosztów |
-| 428. | Przejęcie przedmiotu zabezpieczenia w drodze dobrowolnego wydania | jednorazowo | 300,00 zł |
-| 429. | Przechowanie pojazdu stanowiącego zabezpieczenie kredytu | za każdą dobę | wg faktycznie poniesionych kosztów |
-| 430. | Sprzedaż przedmiotu zabezpieczenia — koszty ogłoszenia i pośrednictwa | jednorazowo | wg faktycznie poniesionych kosztów |
-| 431. | Rozliczenie nadwyżki ze sprzedaży przedmiotu zabezpieczenia | jednorazowo | bez opłat |
-| 432. | Zwrot przedmiotu zabezpieczenia po spłacie zadłużenia | jednorazowo | bez opłat |
-| 433. | Odsetki za opóźnienie od kapitału w kredycie konsumenckim | rocznie, od kwoty zaległości | 17% |
-| 434. | Odsetki za opóźnienie od odsetek kapitałowych | rocznie | bez opłat |
-| 435. | Odsetki za opóźnienie w kredycie zabezpieczonym hipoteką | rocznie, od kwoty zaległości | wg umowy, nie więcej niż odsetki maksymalne |
-| 436. | Odsetki za opóźnienie w kredycie dla przedsiębiorcy | rocznie, od kwoty zaległości | wg umowy |
-| 437. | Odsetki od zadłużenia przeterminowanego w limicie rachunku osobistego | rocznie, od kwoty zaległości | 17% |
-| 438. | Odsetki od zadłużenia przeterminowanego w karcie kredytowej | rocznie, od kwoty zaległości | 17% |
-| 439. | Odsetki od kwot należnych po wypowiedzeniu umowy kredytu | rocznie, od całości zadłużenia | 17% |
-| 440. | Opłata za ustalenie harmonogramu spłaty zaległości po wypowiedzeniu umowy | jednorazowo | 100,00 zł |
-| 441. | Naliczanie odsetek w okresie wstrzymania czynności windykacyjnych | rocznie | bez opłat |
-| 442. | Zaokrąglanie odsetek do pełnego grosza w górę | jednorazowo | bez opłat |
-| 443. | Pierwszy monit SMS po terminie płatności raty | za każdy monit | 3,00 zł |
-| 444. | Monit przesłany pocztą elektroniczną o zaległości w spłacie | za każdy monit | bez opłat |
-| 445. | Komunikat w aplikacji mobilnej o zaległości w spłacie | za każde powiadomienie | bez opłat |
-| 446. | Monit telefoniczny nagraną wiadomością | za każdy monit | bez opłat |
-| 447. | Drugi monit pisemny wysłany listem zwykłym | za każdy monit | 15,00 zł |
-| 448. | Trzeci monit pisemny nadany listem poleconym | za każdy monit | 25,00 zł |
-| 449. | Ostateczne wezwanie do zapłaty wysłane listem poleconym za potwierdzeniem odbioru | za każde wezwanie | 40,00 zł |
-| 450. | Ponowne doręczenie wezwania po zwrocie przesyłki (adres nieaktualny) | za każdą przesyłkę | 15,00 zł |
-| 451. | Ustalenie aktualnego adresu Klienta na podstawie rejestrów publicznych | za każde ustalenie | wg faktycznie poniesionych kosztów |
-| 452. | Opłata za wysłanie wezwania do współkredytobiorcy lub poręczyciela | za każde wezwanie | 15,00 zł |
-| 453. | Monit rozmowa monitująca prowadzony przez konsultanta Banku | za każdy monit | bez opłat |
-| 454. | Przesłanie wezwania do zapłaty na adres e-mail wskazany w umowie | za każde wezwanie | bez opłat |
-| 455. | Potwierdzenie doręczenia wezwania do zapłaty — usługa pocztowa | za każde potwierdzenie | wg cennika operatora pocztowego |
-| 456. | Publikacja informacji o zaległościach w rejestrze dłużników — koszty | jednorazowo | wg faktycznie poniesionych kosztów |
-| 457. | Oświadczenie dłużnika o uznaniu długu — sporządzenie | za każde oświadczenie | bez opłat |
-| 458. | Pokwitowanie przyjęcia wniosku o ugodę | za każde potwierdzenie | bez opłat |
-| 459. | Okres wstrzymania czynności windykacyjnych na czas rozpatrzenia wniosku o restrukturyzację | za każdy wniosek | do 14 dni |
-| 460. | Opłata za przygotowanie planu spłaty po ustaniu zaległości | jednorazowo | bez opłat |
-| 461. | Opłata za ponowne wystawienie wezwania po uregulowaniu części zaległości | za każde wezwanie | 40,00 zł |
-| 462. | Opłata za zawiadomienie poręczyciela o zaległości kredytobiorcy | za każde zawiadomienie | 15,00 zł |
-| 463. | Wniosek o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu | za każdy wniosek | wg przepisów o kosztach sądowych |
-| 464. | Opłata za wystawienie bankowego tytułu egzekucyjnego | za każdy tytuł | bez opłat |
-| 465. | Wniesienie pozwu o zapłatę (opłata sądowa) | za każdy pozew | wg przepisów o kosztach sądowych |
-| 466. | Koszty zastępstwa procesowego w postępowaniu sądowym | za każde postępowanie | wg stawek ustalonych przez sąd |
-| 467. | Koszty postępowania egzekucyjnego prowadzonego przez komornika | za każde postępowanie | wg przepisów o komornikach |
-| 468. | Zgłoszenie wierzytelności w postępowaniu upadłościowym | za każde zgłoszenie | wg faktycznie poniesionych kosztów |
-| 469. | Zgłoszenie wierzytelności w postępowaniu restrukturyzacyjnym | za każde zgłoszenie | wg faktycznie poniesionych kosztów |
-| 470. | Wniosek o zawarcie ugody przed sądem polubownym | za każdy wniosek | bez opłat |
-| 471. | Wniosek o zawieszenie postępowania egzekucyjnego w związku z ugodą | za każdy wniosek | bez opłat |
-| 472. | Zwrot kosztów postępowania wskutek całkowitej spłaty zadłużenia | jednorazowo | bez opłat |
+| 413. | Pierwszy monit SMS po terminie płatności raty | za każdy monit | 3,00 zł |
+| 414. | Monit przesłany pocztą elektroniczną o zaległości w spłacie | za każdy monit | bez opłat |
+| 415. | Komunikat w aplikacji mobilnej o zaległości w spłacie | za każde powiadomienie | bez opłat |
+| 416. | Monit telefoniczny nagraną wiadomością | za każdy monit | bez opłat |
+| 417. | Drugi monit pisemny wysłany listem zwykłym | za każdy monit | 15,00 zł |
+| 418. | Trzeci monit pisemny nadany listem poleconym | za każdy monit | 25,00 zł |
+| 419. | Ostateczne wezwanie do zapłaty wysłane listem poleconym za potwierdzeniem odbioru | za każde wezwanie | 40,00 zł |
+| 420. | Ponowne doręczenie wezwania po zwrocie przesyłki (adres nieaktualny) | za każdą przesyłkę | 15,00 zł |
+| 421. | Ustalenie aktualnego adresu Klienta na podstawie rejestrów publicznych | za każde ustalenie | wg faktycznie poniesionych kosztów |
+| 422. | Opłata za wysłanie wezwania do współkredytobiorcy lub poręczyciela | za każde wezwanie | 15,00 zł |
+| 423. | Rozłożenie zaległości na raty — ugoda do 6 miesięcy | jednorazowo | bez opłat |
+| 424. | Rozłożenie zaległości na raty — ugoda od 7 do 24 miesięcy | jednorazowo | 100,00 zł |
+| 425. | Rozłożenie zaległości na raty — ugoda powyżej 24 miesięcy | jednorazowo | 0,5% kwoty zaległości min. 200,00 zł |
+| 426. | Kapitalizacja zaległych odsetek w ramach restrukturyzacji | jednorazowo | bez opłat |
+| 427. | Konsolidacja zaległych rat z kapitałem w jeden kredyt restrukturyzacyjny | jednorazowo | 1,0% kwoty min. 150,00 zł |
+| 428. | Zmniejszenie oprocentowania w ramach programu pomocy dla kredytobiorców | jednorazowo | bez opłat |
+| 429. | Zawieszenie spłaty rat na okres do 3 miesięcy w związku z utratą pracy | za każde zawieszenie | bez opłat |
+| 430. | Odroczenie terminu płatności raty o 30 dni | za każde odroczenie | 60,00 zł |
+| 431. | Umorzenie odsetek za opóźnienie w całości lub w części | jednorazowo | bez opłat |
+| 432. | Opłata za rozpatrzenie wniosku o umorzenie zadłużenia | jednorazowo | bez opłat |
+| 433. | Wniosek o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu | za każdy wniosek | wg przepisów o kosztach sądowych |
+| 434. | Opłata za wystawienie bankowego tytułu egzekucyjnego | za każdy tytuł | bez opłat |
+| 435. | Wniesienie pozwu o zapłatę (opłata sądowa) | za każdy pozew | wg przepisów o kosztach sądowych |
+| 436. | Koszty zastępstwa procesowego w postępowaniu sądowym | za każde postępowanie | wg stawek ustalonych przez sąd |
+| 437. | Koszty postępowania egzekucyjnego prowadzonego przez komornika | za każde postępowanie | wg przepisów o komornikach |
+| 438. | Zgłoszenie wierzytelności w postępowaniu upadłościowym | za każde zgłoszenie | wg faktycznie poniesionych kosztów |
+| 439. | Zgłoszenie wierzytelności w postępowaniu restrukturyzacyjnym | za każde zgłoszenie | wg faktycznie poniesionych kosztów |
+| 440. | Wniosek o zawarcie ugody przed sądem polubownym | za każdy wniosek | bez opłat |
+| 441. | Wniosek o zawieszenie postępowania egzekucyjnego w związku z ugodą | za każdy wniosek | bez opłat |
+| 442. | Zwrot kosztów postępowania wskutek całkowitej spłaty zadłużenia | jednorazowo | bez opłat |
+| 443. | Odsetki za opóźnienie od kapitału w kredycie konsumenckim | rocznie, od kwoty zaległości | 17% |
+| 444. | Odsetki za opóźnienie od odsetek kapitałowych | rocznie | bez opłat |
+| 445. | Odsetki za opóźnienie w kredycie zabezpieczonym hipoteką | rocznie, od kwoty zaległości | wg umowy, nie więcej niż odsetki maksymalne |
+| 446. | Odsetki za opóźnienie w kredycie dla przedsiębiorcy | rocznie, od kwoty zaległości | wg umowy |
+| 447. | Odsetki od zadłużenia przeterminowanego w limicie rachunku osobistego | rocznie, od kwoty zaległości | 17% |
+| 448. | Odsetki od zadłużenia przeterminowanego w karcie kredytowej | rocznie, od kwoty zaległości | 17% |
+| 449. | Odsetki od kwot należnych po wypowiedzeniu umowy kredytu | rocznie, od całości zadłużenia | 17% |
+| 450. | Opłata za ustalenie harmonogramu spłaty zaległości po wypowiedzeniu umowy | jednorazowo | 100,00 zł |
+| 451. | Naliczanie odsetek w okresie wstrzymania czynności windykacyjnych | rocznie | bez opłat |
+| 452. | Zaokrąglanie odsetek do pełnego grosza w górę | jednorazowo | bez opłat |
+| 453. | Wizyta terenowa pracownika w miejscu pobytu Klienta | za każdą wizytę | 120,00 zł |
+| 454. | Wizyta terenowa w siedzibie przedsiębiorcy | za każdą wizytę | 200,00 zł |
+| 455. | Ponowna wizyta po nieskutecznej próbie kontaktu | za każdą wizytę | 60,00 zł |
+| 456. | Kontrola stanu przedmiotu zabezpieczenia na wniosek Banku | za każde oględziny | 150,00 zł |
+| 457. | Wycena przedmiotu zabezpieczenia w związku z zaległością | za każdą wycenę | wg faktycznie poniesionych kosztów |
+| 458. | Przejęcie przedmiotu zabezpieczenia w drodze dobrowolnego wydania | jednorazowo | 300,00 zł |
+| 459. | Przechowanie pojazdu stanowiącego zabezpieczenie kredytu | za każdą dobę | wg faktycznie poniesionych kosztów |
+| 460. | Sprzedaż przedmiotu zabezpieczenia — koszty ogłoszenia i pośrednictwa | jednorazowo | wg faktycznie poniesionych kosztów |
+| 461. | Rozliczenie nadwyżki ze sprzedaży przedmiotu zabezpieczenia | jednorazowo | bez opłat |
+| 462. | Zwrot przedmiotu zabezpieczenia po spłacie zadłużenia | jednorazowo | bez opłat |
+| 463. | Monit rozmowa monitująca prowadzony przez konsultanta Banku | za każdy monit | bez opłat |
+| 464. | Przesłanie wezwania do zapłaty na adres e-mail wskazany w umowie | za każde wezwanie | bez opłat |
+| 465. | Potwierdzenie doręczenia wezwania do zapłaty — usługa pocztowa | za każde potwierdzenie | wg cennika operatora pocztowego |
+| 466. | Publikacja informacji o zaległościach w rejestrze dłużników — koszty | jednorazowo | wg faktycznie poniesionych kosztów |
+| 467. | Oświadczenie dłużnika o uznaniu długu — sporządzenie | za każde oświadczenie | bez opłat |
+| 468. | Pokwitowanie przyjęcia wniosku o ugodę | za każde potwierdzenie | bez opłat |
+| 469. | Okres wstrzymania czynności windykacyjnych na czas rozpatrzenia wniosku o restrukturyzację | za każdy wniosek | do 14 dni |
+| 470. | Opłata za przygotowanie planu spłaty po ustaniu zaległości | jednorazowo | bez opłat |
+| 471. | Opłata za ponowne wystawienie wezwania po uregulowaniu części zaległości | za każde wezwanie | 40,00 zł |
+| 472. | Opłata za zawiadomienie poręczyciela o zaległości kredytobiorcy | za każde zawiadomienie | 15,00 zł |
 
 <!-- page: 25 -->
 - 1\) Opłata za monit pisemny jest pobierana najwyżej raz w miesiącu kalendarzowym, w którym raty pozostają
@@ -654,11 +654,11 @@ wypowiedzenia umowy; opłatę pobiera się po doręczeniu wezwania.
 
 8:00–20:00 w dniach roboczych; opłaty nie pobiera się, jeżeli Klient nie został zastany w miejscu wskazanym w umowie z przyczyn niezależnych od Banku.
 
+<!-- page: 26 -->
 - 4\) Koszty zewnętrzne nie mogą przekroczyć kwoty niezbędnej i uzasadnionej, a Bank na wniosek Klienta przedstawia ich
 
 szczegółowe zestawienie; koszty nie dotyczą okresu wstrzymania czynności windykacyjnych.
 
-<!-- page: 26 -->
 ## VIII. Objaśnienia i definicje
 
 - 1\. Użyte w Taryfie pojęcia oznaczają:

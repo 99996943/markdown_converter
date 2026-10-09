@@ -33,16 +33,16 @@ Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat za
 Przeliczeń między walutami obcymi dokonuje się za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji.
 
 <!-- page: 3 -->
-- 1\. Stawki za dostęp do bankowości elektronicznej i aplikacji mobilnej obowiązują od dnia aktywacji usługi. Zmiana stawek abonamentowych na niekorzyść Klienta wymaga zachowania trybu zmiany Taryfy określonego w umowie i w regulaminie.
-- 2\. Bank może nie pobierać opłat lub pobierać je w obniżonej wysokości w ramach ofert promocyjnych; warunki promocji ogłasza się w regulaminie promocji, a po jej zakończeniu stosuje się stawki z Taryfy.
-
-Opłaty, których nie wskazano w Taryfie, nie są pobierane. W razie wątpliwości co do wysokości opłaty za usługę Klient może zwrócić się do Banku pod numerem 800 000 001.
-
 Opłaty za usługi bankowości elektronicznej są pobierane wskazany przez Klienta jako rachunek do rozliczania opłat; jeżeli Klient nie wskazał takiego rachunku, opłaty pobiera się z rachunku, do którego aktywowano usługę.
 
 Opłaty abonamentowe za część miesiąca, w którym usługę aktywowano, nie są pobierane; za miesiąc, w którym usługę wypowiedziano, pobiera się opłatę w pełnej wysokości.
 
 Ograniczenie, zawieszenie lub zablokowanie dostępu do bankowości elektronicznej z przyczyn określonych w regulaminie nie zwalnia Klienta z obowiązku zapłaty opłat abonamentowych za okres blokady, chyba że przyczyna blokady leżała po stronie Banku.
+
+- 1\. Stawki za dostęp do bankowości elektronicznej i aplikacji mobilnej obowiązują od dnia aktywacji usługi. Zmiana stawek abonamentowych na niekorzyść Klienta wymaga zachowania trybu zmiany Taryfy określonego w umowie i w regulaminie.
+- 2\. Bank może nie pobierać opłat lub pobierać je w obniżonej wysokości w ramach ofert promocyjnych; warunki promocji ogłasza się w regulaminie promocji, a po jej zakończeniu stosuje się stawki z Taryfy.
+
+Opłaty, których nie wskazano w Taryfie, nie są pobierane. W razie wątpliwości co do wysokości opłaty za usługę Klient może zwrócić się do Banku pod numerem 800 000 001.
 
 Bank zachowuje prawo do czasowego wstrzymania usług bankowości elektronicznej w oknie serwisowym od 2:00 do 4:00 oraz w razie planowanych prac, o których informuje z wyprzedzeniem 3 dni dni. Przerwy te nie uzasadniają obniżenia opłat abonamentowych, jeżeli ich łączny czas w miesiącu nie przekracza 6 godzin.
 
@@ -82,60 +82,61 @@ Pakiety rozszerzone są świadczone na wniosek Klienta i mogą być wypowiedzian
 | 22. | Przelew w złotych na rachunek w banku poza granicami kraju (z zachowaniem numeru NRB) | za przelew | wg taryfy przelewów zagranicznych |
 | 23. | Przelew na rachunek podatkowy z użyciem identyfikatora płatności | za przelew | bez opłat |
 | 24. | Skorzystanie z kalkulatora opłat i kantoru walutowego w aplikacji | za transakcję | bez opłat |
-| 25. | Przegląd i eksport zgód udzielonych dostawcom usług płatniczych | za zapytanie | bez opłat |
-| 26. | Cofnięcie zgody dostawcy usług płatniczych na dostęp do informacji o rachunku | za cofnięcie | bez opłat |
-| 27. | Aktualizacja danych kontaktowych (telefon, e-mail) w serwisie internetowym | za zmianę | bez opłat |
-| 28. | Aktualizacja danych kontaktowych w placówce Banku | za zmianę | bez opłat |
-| 29. | Zmiana numeru telefonu do kodów autoryzacyjnych po weryfikacji w placówce | za zmianę | 8,00 zł |
-| 30. | Wniosek o produkt Banku złożony w aplikacji mobilnej | za wniosek | bez opłat |
-| 31. | Elektroniczne podpisanie umowy lub aneksu w serwisie | za dokument | bez opłat |
-| 32. | Wiadomość do doradcy przesłana przez skrzynkę kontaktową w serwisie | za wiadomość | bez opłat |
-| 33. | Rozmowa wideo z doradcą w aplikacji mobilnej | za rozmowę | bez opłat |
-| 34. | Zamknięcie profilu bankowości elektronicznej na wniosek Klienta | jednorazowo | bez opłat |
-| 35. | Pakiet rozszerzony — czasowe wstrzymanie usługi na wniosek Klienta | za wniosek | bez opłat |
-| 36. | Pakiet rozszerzony — rezygnacja przed upływem pierwszych trzech miesięcy | jednorazowo | 9,00 zł |
-| 37. | Pakiet rodzinny — dodanie drugiego użytkownika do istniejącego pakietu | jednorazowo | bez opłat |
-| 38. | Pakiet rodzinny — usunięcie użytkownika i przekształcenie w pakiet indywidualny | jednorazowo | bez opłat |
-| 39. | Profil dla osoby małoletniej powyżej 13. roku życia (aplikacja z ograniczeniami) | miesięcznie | bez opłat |
-| 40. | Profil opiekuna prawnego z podglądem rachunku osoby małoletniej | miesięcznie | bez opłat |
-| 41. | Profil dla osoby z ograniczoną zdolnością do czynności prawnych — ustanowienie uprawnień przedstawiciela | jednorazowo | bez opłat |
-| 42. | Dodatkowe urządzenie mobilne powyżej pięć zarejestrowanych | miesięcznie | 5,00 zł |
-| 43. | Przeniesienie profilu aplikacji na nowe urządzenie | za przeniesienie | bez opłat |
-| 44. | Przeniesienie profilu na nowe urządzenie z użyciem kodu aktywacyjnego wydanego w placówce | za przeniesienie | 10,00 zł |
-| 45. | Widżet z saldem rachunku na ekranie blokady telefonu | miesięcznie | bez opłat |
-| 46. | Podgląd salda bez logowania (po włączeniu przez Klienta w ustawieniach aplikacji) | miesięcznie | bez opłat |
-| 47. | Cele oszczędnościowe i skarbonki w aplikacji mobilnej | miesięcznie | bez opłat |
-| 48. | Wirtualna karta do płatności internetowych — wydanie w aplikacji | jednorazowo | bez opłat |
-| 49. | Wirtualna karta do płatności internetowych — prowadzenie | miesięcznie | bez opłat |
-| 50. | Zmiana motywu i języka aplikacji, ustawienie ulubionych rachunków | za zmianę | bez opłat |
-| 51. | Skaner dokumentów płatniczych (odczyt kodu QR i danych z faktury) | za skan | bez opłat |
-| 52. | Wyszukiwarka placówek i bankomatów Banku z nawigacją | za zapytanie | bez opłat |
-| 53. | Czat z konsultantem w aplikacji mobilnej w godzinach pracy Infolinii | za rozmowę | bez opłat |
-| 54. | Rezerwacja wizyty w placówce Banku przez aplikację | za rezerwację | bez opłat |
-| 55. | Założenie profilu w bankowości internetowej przez Klienta posiadającego rachunek | jednorazowo | bez opłat |
-| 56. | Rejestracja aplikacji mobilnej na pierwszym urządzeniu | jednorazowo | bez opłat |
-| 57. | Zmiana loginu lub hasła dostępu do serwisu | za każdą zmianę | bez opłat |
-| 58. | Reset hasła do serwisu po weryfikacji w placówce Banku | za każdy reset | 8,00 zł |
-| 59. | Wyświetlenie historii operacji z okresu 24 miesięcy | za zapytanie | bez opłat |
-| 60. | Eksport historii operacji do pliku (PDF, CSV) | za eksport | bez opłat |
-| 61. | Zestawienie operacji za okres dłuższy niż 24 miesięcy zlecone w serwisie | za zestawienie | 5,00 zł |
-| 62. | Zaświadczenie o posiadanych rachunkach wygenerowane w serwisie internetowym | za zaświadczenie | bez opłat |
-| 63. | Zaświadczenie o posiadanych rachunkach wydane w placówce Banku | za zaświadczenie | 20,00 zł |
-| 64. | Dostęp do serwisu dla pełnomocnika rachunku | miesięcznie | bez opłat |
-| 65. | Pakiet rozszerzony — rozszerzona historia operacji powyżej 24 miesięcy | miesięcznie | w cenie pakietu |
-| 66. | Pakiet rozszerzony — zwiększony pakiet powiadomień tekstowych (do pięćdziesięciu miesięcznie) | miesięcznie | w cenie pakietu |
-| 67. | Pakiet rozszerzony — dostęp do e-archiwum dokumentów | miesięcznie | w cenie pakietu |
-| 68. | Pakiet rozszerzony — priorytetowa obsługa zgłoszeń na Infolinii | miesięcznie | w cenie pakietu |
-| 69. | Pakiet rozszerzony — zwiększony limit przelewu jednorazowego w aplikacji mobilnej | miesięcznie | w cenie pakietu |
-| 70. | Pakiet rozszerzony — agregacja rachunków z innych banków (do trzech rachunków) | miesięcznie | w cenie pakietu |
-| 71. | Pakiet rodzinny — wspólne cele oszczędnościowe i budżet domowy | miesięcznie | w cenie pakietu |
-| 72. | Pakiet rodzinny — powiadomienia o operacjach drugiego użytkownika (za jego zgodą) | miesięcznie | w cenie pakietu |
-| 73. | Przekształcenie pakietu rozszerzonego w pakiet rodzinny | za zmianę | bez opłat |
-| 74. | Wypowiedzenie pakietu przez Klienta w serwisie lub w aplikacji | jednorazowo | bez opłat |
+| 25. | Założenie profilu w bankowości internetowej przez Klienta posiadającego rachunek | jednorazowo | bez opłat |
+| 26. | Rejestracja aplikacji mobilnej na pierwszym urządzeniu | jednorazowo | bez opłat |
+| 27. | Zmiana loginu lub hasła dostępu do serwisu | za każdą zmianę | bez opłat |
+| 28. | Reset hasła do serwisu po weryfikacji w placówce Banku | za każdy reset | 8,00 zł |
+| 29. | Wyświetlenie historii operacji z okresu 24 miesięcy | za zapytanie | bez opłat |
+| 30. | Eksport historii operacji do pliku (PDF, CSV) | za eksport | bez opłat |
+| 31. | Zestawienie operacji za okres dłuższy niż 24 miesięcy zlecone w serwisie | za zestawienie | 5,00 zł |
+| 32. | Zaświadczenie o posiadanych rachunkach wygenerowane w serwisie internetowym | za zaświadczenie | bez opłat |
+| 33. | Zaświadczenie o posiadanych rachunkach wydane w placówce Banku | za zaświadczenie | 20,00 zł |
+| 34. | Dostęp do serwisu dla pełnomocnika rachunku | miesięcznie | bez opłat |
+| 35. | Pakiet rozszerzony — rozszerzona historia operacji powyżej 24 miesięcy | miesięcznie | w cenie pakietu |
+| 36. | Pakiet rozszerzony — zwiększony pakiet powiadomień tekstowych (do pięćdziesięciu miesięcznie) | miesięcznie | w cenie pakietu |
+| 37. | Pakiet rozszerzony — dostęp do e-archiwum dokumentów | miesięcznie | w cenie pakietu |
+| 38. | Pakiet rozszerzony — priorytetowa obsługa zgłoszeń na Infolinii | miesięcznie | w cenie pakietu |
+| 39. | Pakiet rozszerzony — zwiększony limit przelewu jednorazowego w aplikacji mobilnej | miesięcznie | w cenie pakietu |
+| 40. | Pakiet rozszerzony — agregacja rachunków z innych banków (do trzech rachunków) | miesięcznie | w cenie pakietu |
+| 41. | Pakiet rodzinny — wspólne cele oszczędnościowe i budżet domowy | miesięcznie | w cenie pakietu |
+| 42. | Pakiet rodzinny — powiadomienia o operacjach drugiego użytkownika (za jego zgodą) | miesięcznie | w cenie pakietu |
+| 43. | Przekształcenie pakietu rozszerzonego w pakiet rodzinny | za zmianę | bez opłat |
+| 44. | Wypowiedzenie pakietu przez Klienta w serwisie lub w aplikacji | jednorazowo | bez opłat |
+| 45. | Pakiet rozszerzony — czasowe wstrzymanie usługi na wniosek Klienta | za wniosek | bez opłat |
+| 46. | Pakiet rozszerzony — rezygnacja przed upływem pierwszych trzech miesięcy | jednorazowo | 9,00 zł |
+| 47. | Pakiet rodzinny — dodanie drugiego użytkownika do istniejącego pakietu | jednorazowo | bez opłat |
+| 48. | Pakiet rodzinny — usunięcie użytkownika i przekształcenie w pakiet indywidualny | jednorazowo | bez opłat |
+| 49. | Profil dla osoby małoletniej powyżej 13. roku życia (aplikacja z ograniczeniami) | miesięcznie | bez opłat |
+| 50. | Profil opiekuna prawnego z podglądem rachunku osoby małoletniej | miesięcznie | bez opłat |
+| 51. | Profil dla osoby z ograniczoną zdolnością do czynności prawnych — ustanowienie uprawnień przedstawiciela | jednorazowo | bez opłat |
+| 52. | Dodatkowe urządzenie mobilne powyżej pięć zarejestrowanych | miesięcznie | 5,00 zł |
+| 53. | Przeniesienie profilu aplikacji na nowe urządzenie | za przeniesienie | bez opłat |
+| 54. | Przeniesienie profilu na nowe urządzenie z użyciem kodu aktywacyjnego wydanego w placówce | za przeniesienie | 10,00 zł |
+| 55. | Widżet z saldem rachunku na ekranie blokady telefonu | miesięcznie | bez opłat |
+| 56. | Podgląd salda bez logowania (po włączeniu przez Klienta w ustawieniach aplikacji) | miesięcznie | bez opłat |
+| 57. | Cele oszczędnościowe i skarbonki w aplikacji mobilnej | miesięcznie | bez opłat |
+| 58. | Wirtualna karta do płatności internetowych — wydanie w aplikacji | jednorazowo | bez opłat |
+| 59. | Wirtualna karta do płatności internetowych — prowadzenie | miesięcznie | bez opłat |
+| 60. | Zmiana motywu i języka aplikacji, ustawienie ulubionych rachunków | za zmianę | bez opłat |
+| 61. | Skaner dokumentów płatniczych (odczyt kodu QR i danych z faktury) | za skan | bez opłat |
+| 62. | Wyszukiwarka placówek i bankomatów Banku z nawigacją | za zapytanie | bez opłat |
+| 63. | Czat z konsultantem w aplikacji mobilnej w godzinach pracy Infolinii | za rozmowę | bez opłat |
+| 64. | Rezerwacja wizyty w placówce Banku przez aplikację | za rezerwację | bez opłat |
+| 65. | Przegląd i eksport zgód udzielonych dostawcom usług płatniczych | za zapytanie | bez opłat |
+| 66. | Cofnięcie zgody dostawcy usług płatniczych na dostęp do informacji o rachunku | za cofnięcie | bez opłat |
+| 67. | Aktualizacja danych kontaktowych (telefon, e-mail) w serwisie internetowym | za zmianę | bez opłat |
+| 68. | Aktualizacja danych kontaktowych w placówce Banku | za zmianę | bez opłat |
+| 69. | Zmiana numeru telefonu do kodów autoryzacyjnych po weryfikacji w placówce | za zmianę | 8,00 zł |
+| 70. | Wniosek o produkt Banku złożony w aplikacji mobilnej | za wniosek | bez opłat |
+| 71. | Elektroniczne podpisanie umowy lub aneksu w serwisie | za dokument | bez opłat |
+| 72. | Wiadomość do doradcy przesłana przez skrzynkę kontaktową w serwisie | za wiadomość | bez opłat |
+| 73. | Rozmowa wideo z doradcą w aplikacji mobilnej | za rozmowę | bez opłat |
+| 74. | Zamknięcie profilu bankowości elektronicznej na wniosek Klienta | jednorazowo | bez opłat |
 
-<!-- page: 7 -->
+<!-- page: 6 -->
 - 1\) Pakiet rozszerzony obejmuje m.in. zwiększony pakiet powiadomień, rozszerzoną historię operacji oraz dostęp do
 
+<!-- page: 7 -->
 e-archiwum dokumentów; pełny zakres pakietu opisano w sekcji o usługach dodatkowych.
 
 - 2\) Opłaty nie pobiera się, jeżeli blokada dostępu nastąpiła z przyczyn leżących po stronie Banku, w szczególności
@@ -169,17 +170,17 @@ Opłaty za przelewy wykonywane w bankowości elektronicznej dla firm wynikają z
 | 87. | Przelew natychmiastowy 3) | za przelew | 5,00 zł |
 | 88. | Wyciąg w formacie MT940 dostarczany elektronicznie | miesięcznie | 25,00 zł |
 | 89. | Integracja systemu finansowo-księgowego Klienta z bankowością przez interfejs API | miesięcznie | 150,00 zł |
-| 90. | Import pliku przelewów w formacie ELIXIR-0 | za plik | wliczony w opłatę za moduł importu |
-| 91. | Import pliku przelewów w formacie XML (standard SEPA) | za plik | wliczony w opłatę za moduł importu |
-| 92. | Eksport wyciągów w formacie MT940 do systemu księgowego | miesięcznie | 25,00 zł |
-| 93. | Eksport historii rachunku w formacie PDF | za eksport | bez opłat |
-| 94. | Lista należności i raport salda zbiorczego dla wielu rachunków | za raport | bez opłat |
-| 95. | Raport kasowy i zestawienie obrotów z rachunku VAT | za raport | bez opłat |
-| 96. | Podział płatności na rachunek rozliczeniowy i rachunek VAT w bankowości elektronicznej | za dyspozycję | bez opłat |
-| 97. | Zlecenie stałe złożone w bankowości elektronicznej dla firm | za każdą realizację | 4,00 zł |
-| 98. | Polecenie zapłaty — ustanowienie zgody w bankowości elektronicznej | jednorazowo | bez opłat |
-| 99. | Polecenie zapłaty — realizacja | za każde polecenie | 3,00 zł |
-| 100. | Zlecenie zakupu i sprzedaży waluty po kursie negocjowanym 4) | za transakcję | wg Tabeli kursów lub kursu negocjowanego |
+| 90. | Aktywacja bankowości elektronicznej dla firm w trakcie otwarcia rachunku | jednorazowo | bez opłat |
+| 91. | Aktywacja bankowości elektronicznej dla firm dla rachunku istniejącego | jednorazowo | bez opłat |
+| 92. | Abonament w pierwszych trzech miesiącach od aktywacji usługi | miesięcznie | bez opłat |
+| 93. | Abonament za bankowość elektroniczną dla mikroprzedsiębiorców z pakietem podstawowym | miesięcznie | 35,00 zł |
+| 94. | Zmiana pakietu abonamentowego na wyższy | za zmianę | bez opłat |
+| 95. | Zmiana pakietu abonamentowego na niższy | za zmianę | 20,00 zł |
+| 96. | Zawieszenie abonamentu na okres do 3 miesięcy | za wniosek | bez opłat |
+| 97. | Rezygnacja z abonamentu i zamknięcie dostępu | jednorazowo | bez opłat |
+| 98. | Nadanie uprawnień użytkownikowi bankowości firmowej przez administratora w serwisie | za nadanie | bez opłat |
+| 99. | Nadanie uprawnień użytkownikowi na podstawie dokumentu złożonego w placówce | za zmianę | 40,00 zł |
+| 100. | Zmiana administratora bankowości elektronicznej Klienta | za zmianę | 40,00 zł |
 | 101. | Aplikacja mobilna dla firm — dostęp dla użytkownika w ramach abonamentu | miesięcznie | w cenie abonamentu |
 | 102. | Aplikacja mobilna dla firm — autoryzacja przelewów powyżej limitu jednorazowego 10 000,00 zł (tylko z użyciem tokenu) | za dyspozycję | bez opłat |
 | 103. | Aplikacja mobilna dla firm — akceptacja dyspozycji wprowadzonych w serwisie internetowym | za akceptację | bez opłat |
@@ -190,49 +191,49 @@ Opłaty za przelewy wykonywane w bankowości elektronicznej dla firm wynikają z
 | 108. | Przelew w paczce w sesji Express Elixir | za przelew w paczce | 0,25 zł |
 | 109. | Wpłata na rachunek firmowy przez serwis internetowy — zasilenie z innego rachunku | za wpłatę | 0,00 zł |
 | 110. | Zlecenie wypłaty gotówki z awizo składane w serwisie dla kwot powyżej 20 000,00 zł | za awizo | bez opłat |
-| 111. | Aktywacja bankowości elektronicznej dla firm w trakcie otwarcia rachunku | jednorazowo | bez opłat |
-| 112. | Aktywacja bankowości elektronicznej dla firm dla rachunku istniejącego | jednorazowo | bez opłat |
-| 113. | Abonament w pierwszych trzech miesiącach od aktywacji usługi | miesięcznie | bez opłat |
-| 114. | Abonament za bankowość elektroniczną dla mikroprzedsiębiorców z pakietem podstawowym | miesięcznie | 35,00 zł |
-| 115. | Zmiana pakietu abonamentowego na wyższy | za zmianę | bez opłat |
-| 116. | Zmiana pakietu abonamentowego na niższy | za zmianę | 20,00 zł |
-| 117. | Zawieszenie abonamentu na okres do 3 miesięcy | za wniosek | bez opłat |
-| 118. | Rezygnacja z abonamentu i zamknięcie dostępu | jednorazowo | bez opłat |
-| 119. | Nadanie uprawnień użytkownikowi bankowości firmowej przez administratora w serwisie | za nadanie | bez opłat |
-| 120. | Nadanie uprawnień użytkownikowi na podstawie dokumentu złożonego w placówce | za zmianę | 40,00 zł |
-| 121. | Zmiana administratora bankowości elektronicznej Klienta | za zmianę | 40,00 zł |
-| 122. | Dodatkowy token sprzętowy dla kolejnego użytkownika | jednorazowo | 49,00 zł |
-| 123. | Wymiana tokenu sprzętowego uszkodzonego z winy użytkownika | jednorazowo | 29,00 zł |
-| 124. | Wymiana tokenu sprzętowego uszkodzonego z przyczyn niezależnych od użytkownika | jednorazowo | bez opłat |
-| 125. | Odnowienie certyfikatu do podpisywania dyspozycji przed upływem terminu ważności | rocznie | 120,00 zł |
-| 126. | Wydanie certyfikatu w trybie pilnym | jednorazowo | 120,00 zł i dopłata 50,00 zł |
-| 127. | Unieważnienie certyfikatu na wniosek Klienta | jednorazowo | bez opłat |
-| 128. | Zablokowanie dostępu użytkownika na wniosek administratora | za zablokowanie | bez opłat |
-| 129. | Odblokowanie użytkownika przez administratora Klienta | za odblokowanie | bez opłat |
-| 130. | Odblokowanie użytkownika przez konsultanta Infolinii | za odblokowanie | 0,00 zł |
-| 131. | Dodatkowy użytkownik — ponad trzech użytkowników | miesięcznie | 9,00 zł |
-| 132. | Moduł przelewów masowych — import paczki do 100 000,00 zł łącznej wartości | za paczkę | wliczone w opłatę za moduł |
-| 133. | Moduł przelewów masowych — przelew w paczce | za przelew w paczce | 0,25 zł |
-| 134. | Moduł przelewów masowych — odrzucenie paczki z błędami formalnymi | za paczkę | bez opłat |
-| 135. | Moduł przelewów masowych — wycofanie paczki przed realizacją | za paczkę | bez opłat |
-| 136. | Moduł akceptacji — dodanie kolejnego schematu akceptacji | za schemat | bez opłat |
-| 137. | Moduł akceptacji — zmiana progów kwotowych w schemacie | za zmianę | bez opłat |
-| 138. | Moduł multikonto — dodanie rachunku do widoku zbiorczego | za rachunek | bez opłat |
-| 139. | Moduł multikonto — nadanie uprawnień do rachunku pełnomocnikowi | za nadanie | bez opłat |
-| 140. | Moduł rozliczeń walutowych — zawarcie transakcji wymiany walut w serwisie | za transakcję | wg kursu negocjowanego lub z Tabeli kursów |
-| 141. | Moduł rozliczeń walutowych — ustawienie zlecenia z limitem kursowym | za zlecenie | bez opłat |
-| 142. | Dodatkowy moduł na życzenie Klienta — wycena indywidualna | miesięcznie | wg umowy |
-| 143. | Przelew krajowy złożony w bankowości internetowej dla firm — do rachunku w innym banku | za przelew | 0,40 zł |
-| 144. | Przelew krajowy złożony w aplikacji mobilnej dla firm | za przelew | 0,40 zł |
-| 145. | Przelew w systemie SORBNET złożony w bankowości elektronicznej | za przelew | 25,00 zł |
-| 146. | Przelew do ZUS lub urzędu skarbowego | za przelew | 0,30 zł |
-| 147. | Przelew w mechanizmie podzielonej płatności | za przelew | 0,50 zł |
-| 148. | Przelew w euro w systemie SEPA | za przelew | 5,00 zł |
-| 149. | Przelew zagraniczny złożony w bankowości elektronicznej dla firm | od kwoty przelewu | 0,2%, min. 20,00 zł, maks. 150,00 zł |
-| 150. | Przelew zagraniczny w trybie pilnym — dopłata | za przelew | 40,00 zł |
-| 151. | Przelew natychmiastowy do kwoty 50 000,00 zł | za przelew | 5,00 zł |
-| 152. | Odwołanie przelewu złożonego w bankowości elektronicznej po rozpoczęciu realizacji | za odwołanie | 25,00 zł |
-| 153. | Dzienny limit przelewów w bankowości internetowej dla firm — zmiana ponad poziom domyślny | za każdą zmianę | bez opłat |
+| 111. | Przelew krajowy złożony w bankowości internetowej dla firm — do rachunku w innym banku | za przelew | 0,40 zł |
+| 112. | Przelew krajowy złożony w aplikacji mobilnej dla firm | za przelew | 0,40 zł |
+| 113. | Przelew w systemie SORBNET złożony w bankowości elektronicznej | za przelew | 25,00 zł |
+| 114. | Przelew do ZUS lub urzędu skarbowego | za przelew | 0,30 zł |
+| 115. | Przelew w mechanizmie podzielonej płatności | za przelew | 0,50 zł |
+| 116. | Przelew w euro w systemie SEPA | za przelew | 5,00 zł |
+| 117. | Przelew zagraniczny złożony w bankowości elektronicznej dla firm | od kwoty przelewu | 0,2%, min. 20,00 zł, maks. 150,00 zł |
+| 118. | Przelew zagraniczny w trybie pilnym — dopłata | za przelew | 40,00 zł |
+| 119. | Przelew natychmiastowy do kwoty 50 000,00 zł | za przelew | 5,00 zł |
+| 120. | Odwołanie przelewu złożonego w bankowości elektronicznej po rozpoczęciu realizacji | za odwołanie | 25,00 zł |
+| 121. | Dzienny limit przelewów w bankowości internetowej dla firm — zmiana ponad poziom domyślny | za każdą zmianę | bez opłat |
+| 122. | Moduł przelewów masowych — import paczki do 100 000,00 zł łącznej wartości | za paczkę | wliczone w opłatę za moduł |
+| 123. | Moduł przelewów masowych — przelew w paczce | za przelew w paczce | 0,25 zł |
+| 124. | Moduł przelewów masowych — odrzucenie paczki z błędami formalnymi | za paczkę | bez opłat |
+| 125. | Moduł przelewów masowych — wycofanie paczki przed realizacją | za paczkę | bez opłat |
+| 126. | Moduł akceptacji — dodanie kolejnego schematu akceptacji | za schemat | bez opłat |
+| 127. | Moduł akceptacji — zmiana progów kwotowych w schemacie | za zmianę | bez opłat |
+| 128. | Moduł multikonto — dodanie rachunku do widoku zbiorczego | za rachunek | bez opłat |
+| 129. | Moduł multikonto — nadanie uprawnień do rachunku pełnomocnikowi | za nadanie | bez opłat |
+| 130. | Moduł rozliczeń walutowych — zawarcie transakcji wymiany walut w serwisie | za transakcję | wg kursu negocjowanego lub z Tabeli kursów |
+| 131. | Moduł rozliczeń walutowych — ustawienie zlecenia z limitem kursowym | za zlecenie | bez opłat |
+| 132. | Dodatkowy moduł na życzenie Klienta — wycena indywidualna | miesięcznie | wg umowy |
+| 133. | Dodatkowy token sprzętowy dla kolejnego użytkownika | jednorazowo | 49,00 zł |
+| 134. | Wymiana tokenu sprzętowego uszkodzonego z winy użytkownika | jednorazowo | 29,00 zł |
+| 135. | Wymiana tokenu sprzętowego uszkodzonego z przyczyn niezależnych od użytkownika | jednorazowo | bez opłat |
+| 136. | Odnowienie certyfikatu do podpisywania dyspozycji przed upływem terminu ważności | rocznie | 120,00 zł |
+| 137. | Wydanie certyfikatu w trybie pilnym | jednorazowo | 120,00 zł i dopłata 50,00 zł |
+| 138. | Unieważnienie certyfikatu na wniosek Klienta | jednorazowo | bez opłat |
+| 139. | Zablokowanie dostępu użytkownika na wniosek administratora | za zablokowanie | bez opłat |
+| 140. | Odblokowanie użytkownika przez administratora Klienta | za odblokowanie | bez opłat |
+| 141. | Odblokowanie użytkownika przez konsultanta Infolinii | za odblokowanie | 0,00 zł |
+| 142. | Dodatkowy użytkownik — ponad trzech użytkowników | miesięcznie | 9,00 zł |
+| 143. | Import pliku przelewów w formacie ELIXIR-0 | za plik | wliczony w opłatę za moduł importu |
+| 144. | Import pliku przelewów w formacie XML (standard SEPA) | za plik | wliczony w opłatę za moduł importu |
+| 145. | Eksport wyciągów w formacie MT940 do systemu księgowego | miesięcznie | 25,00 zł |
+| 146. | Eksport historii rachunku w formacie PDF | za eksport | bez opłat |
+| 147. | Lista należności i raport salda zbiorczego dla wielu rachunków | za raport | bez opłat |
+| 148. | Raport kasowy i zestawienie obrotów z rachunku VAT | za raport | bez opłat |
+| 149. | Podział płatności na rachunek rozliczeniowy i rachunek VAT w bankowości elektronicznej | za dyspozycję | bez opłat |
+| 150. | Zlecenie stałe złożone w bankowości elektronicznej dla firm | za każdą realizację | 4,00 zł |
+| 151. | Polecenie zapłaty — ustanowienie zgody w bankowości elektronicznej | jednorazowo | bez opłat |
+| 152. | Polecenie zapłaty — realizacja | za każde polecenie | 3,00 zł |
+| 153. | Zlecenie zakupu i sprzedaży waluty po kursie negocjowanym 4) | za transakcję | wg Tabeli kursów lub kursu negocjowanego |
 
 <!-- page: 10 -->
 - 1\) Abonament obejmuje dostęp do rachunków, historii operacji, przelewów krajowych, zleceń stałych i wyciągów
@@ -252,7 +253,6 @@ w godzinach pracy zespołu obsługi rynku walutowego; moduł rozliczeń walutowy
 
 Klientami instytucjonalnymi są w rozumieniu Taryfy w szczególności jednostki sektora finansów publicznych, wspólnoty mieszkaniowe, stowarzyszenia, fundacje i inne podmioty niedziałające w celu osiągnięcia zysku, którym Bank zawarł odrębną umowę o korzystanie z bankowości elektronicznej. Dla klientów instytucjonalnych obowiązują preferencyjne stawki za dostęp i narzędzia uwierzytelniania; opłaty za przelewy określa taryfa właściwa dla rachunku. Opłaty za integrację i wdrożenie ustala się indywidualnie w umowie, w granicach wskazanych poniżej.
 
-<!-- page: 11 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 154. | Abonament za bankowość elektroniczną dla klientów instytucjonalnych 1) | miesięcznie | 8,00 zł |
@@ -267,26 +267,26 @@ Klientami instytucjonalnymi są w rozumieniu Taryfy w szczególności jednostki 
 | 163. | Polecenie zapłaty — realizacja | za każde polecenie | 3,00 zł |
 | 164. | Wyciąg w formacie MT940 dostarczany elektronicznie | miesięcznie | 25,00 zł |
 | 165. | Wdrożenie i konfiguracja bankowości elektronicznej w siedzibie klienta 3) | za dzień roboczy | 800,00 zł |
-| 166. | Rachunek wspólnoty mieszkaniowej — dostęp do bankowości elektronicznej dla zarządu | miesięcznie | 15,00 zł |
-| 167. | Dostęp do rachunku wspólnoty dla zarządcy nieruchomości | miesięcznie | bez opłat |
-| 168. | Dostęp do rachunku wspólnoty dla członka zarządu (do trzech osób) | miesięcznie | bez opłat |
-| 169. | Raport wpłat członków wspólnoty z podziałem na lokale | za raport | bez opłat |
-| 170. | Import listy lokali i należności z pliku | za plik | bez opłat |
-| 171. | Wirtualne rachunki do identyfikacji wpłat (pula do 100 numerów) 4) | miesięcznie | 35,00 zł |
-| 172. | Wirtualne rachunki do identyfikacji wpłat — każdy dodatkowy numer powyżej puli | miesięcznie | 0,10 zł |
-| 173. | Raport wpłat identyfikowanych na wirtualnych rachunkach | miesięcznie | bez opłat |
-| 174. | Powiadomienie e-mail o wpływie na rachunek wpłat dla zarządu wspólnoty | za powiadomienie | bez opłat |
-| 175. | Dostęp do e-archiwum wyciągów wspólnoty z ostatnich 24 miesięcy | miesięcznie | bez opłat |
-| 176. | Integracja bankowości elektronicznej z systemem finansowo-księgowym jednostki — konfiguracja | za dzień roboczy | 800,00 zł |
-| 177. | Dostęp do interfejsu API w środowisku produkcyjnym | miesięcznie | 150,00 zł |
-| 178. | Dostęp do środowiska testowego interfejsu API | miesięcznie | 0,00 zł |
-| 179. | Szkolenie administratorów i użytkowników jednostki | za godzinę | 250,00 zł |
-| 180. | Szkolenie online w ramach wdrożenia usługi dla grupy do dziesięciu osób | jednorazowo | bez opłat |
-| 181. | Dedykowany opiekun techniczny | miesięcznie | 99,00 zł |
-| 182. | Pomoc zdalna konsultanta w godzinach pracy zespołu wsparcia | za zgłoszenie | bez opłat |
-| 183. | Sesja serwisowa z udostępnieniem ekranu poza godzinami pracy zespołu | za sesję | 49,00 zł |
-| 184. | Przygotowanie raportu na zamówienie jednostki | za raport | wg indywidualnej wyceny |
-| 185. | Przygotowanie opinii bankowej o obsłudze rachunków | za opinię | 80,00 zł |
+| 166. | Schemat akceptacji dla jednostki sektora finansów publicznych — konfiguracja | jednorazowo | bez opłat |
+| 167. | Dwuosobowa akceptacja dyspozycji (zasada „dwóch par oczu”) | za dyspozycję | w cenie abonamentu |
+| 168. | Akceptacja dyspozycji przez osobę zastępującą w czasie nieobecności głównego księgowego | za dyspozycję | bez opłat |
+| 169. | Przelew do rachunku w ramach planu finansowego jednostki — kontrola limitów | za przelew | bez opłat |
+| 170. | Przelew płatności publicznoprawnych zbiorczy (paczka do ZUS i urzędów) | za przelew | 0,30 zł |
+| 171. | Dyspozycja zwrotu nadpłaconych należności na rachunki płatników | za przelew w paczce | 0,25 zł |
+| 172. | Raport dla organu nadzorczego z historii dyspozycji i akceptacji | za raport | bez opłat |
+| 173. | Eksport danych do systemu sprawozdawczości budżetowej | za plik | bez opłat |
+| 174. | Udzielenie dostępu do rachunków dla jednostki nadrzędnej w trybie „tylko podgląd” | miesięcznie | bez opłat |
+| 175. | Dostosowanie serwisu do wymagań dostępności cyfrowej na zlecenie jednostki | jednorazowo | wg indywidualnej wyceny |
+| 176. | Aktywacja bankowości elektronicznej dla podmiotu instytucjonalnego | jednorazowo | bez opłat |
+| 177. | Aktywacja dostępu dla jednostki organizacyjnej podległej (rachunek pomocniczy) | jednorazowo | bez opłat |
+| 178. | Zmiana osób uprawnionych do dysponowania rachunkiem w bankowości elektronicznej | za zmianę | 40,00 zł |
+| 179. | Dostęp w trybie „tylko do odczytu” dla biegłego rewidenta lub organu kontrolnego | miesięcznie | bez opłat |
+| 180. | Dostęp dla księgowego zewnętrznego bez prawa składania dyspozycji | miesięcznie | bez opłat |
+| 181. | Wniosek o zmianę zakresu uprawnień złożony w serwisie przez osobę reprezentującą | za wniosek | bez opłat |
+| 182. | Przelew do budżetu państwa złożony w bankowości elektronicznej | za przelew | 0,30 zł |
+| 183. | Przelew wewnętrzny między rachunkami jednostki | za przelew | 0,00 zł |
+| 184. | Przelew zbiorczy wynagrodzeń z listy płac | za przelew w paczce | 0,25 zł |
+| 185. | Polecenie przelewu do rachunku jednostki zagranicznej w euro (SEPA) | za przelew | 5,00 zł |
 | 186. | Potwierdzenie salda dla potrzeb audytu sprawozdania finansowego — w formie elektronicznej | za potwierdzenie | 100,00 zł |
 | 187. | Poszukiwanie przelewu na zlecenie jednostki | za zlecenie | 80,00 zł |
 | 188. | Zwrot przelewu na wniosek jednostki | za zwrot | 30,00 zł |
@@ -297,26 +297,26 @@ Klientami instytucjonalnymi są w rozumieniu Taryfy w szczególności jednostki 
 | 193. | Rozwiązanie umowy o korzystanie z bankowości elektronicznej przez jednostkę | jednorazowo | bez opłat |
 | 194. | Przekazanie danych Klienta do innego dostawcy usług na wniosek jednostki | jednorazowo | bez opłat |
 | 195. | Dodatkowy certyfikat do podpisywania dyspozycji instytucji | rocznie | 120,00 zł |
-| 196. | Aktywacja bankowości elektronicznej dla podmiotu instytucjonalnego | jednorazowo | bez opłat |
-| 197. | Aktywacja dostępu dla jednostki organizacyjnej podległej (rachunek pomocniczy) | jednorazowo | bez opłat |
-| 198. | Zmiana osób uprawnionych do dysponowania rachunkiem w bankowości elektronicznej | za zmianę | 40,00 zł |
-| 199. | Dostęp w trybie „tylko do odczytu” dla biegłego rewidenta lub organu kontrolnego | miesięcznie | bez opłat |
-| 200. | Dostęp dla księgowego zewnętrznego bez prawa składania dyspozycji | miesięcznie | bez opłat |
-| 201. | Wniosek o zmianę zakresu uprawnień złożony w serwisie przez osobę reprezentującą | za wniosek | bez opłat |
-| 202. | Przelew do budżetu państwa złożony w bankowości elektronicznej | za przelew | 0,30 zł |
-| 203. | Przelew wewnętrzny między rachunkami jednostki | za przelew | 0,00 zł |
-| 204. | Przelew zbiorczy wynagrodzeń z listy płac | za przelew w paczce | 0,25 zł |
-| 205. | Polecenie przelewu do rachunku jednostki zagranicznej w euro (SEPA) | za przelew | 5,00 zł |
-| 206. | Schemat akceptacji dla jednostki sektora finansów publicznych — konfiguracja | jednorazowo | bez opłat |
-| 207. | Dwuosobowa akceptacja dyspozycji (zasada „dwóch par oczu”) | za dyspozycję | w cenie abonamentu |
-| 208. | Akceptacja dyspozycji przez osobę zastępującą w czasie nieobecności głównego księgowego | za dyspozycję | bez opłat |
-| 209. | Przelew do rachunku w ramach planu finansowego jednostki — kontrola limitów | za przelew | bez opłat |
-| 210. | Przelew płatności publicznoprawnych zbiorczy (paczka do ZUS i urzędów) | za przelew | 0,30 zł |
-| 211. | Dyspozycja zwrotu nadpłaconych należności na rachunki płatników | za przelew w paczce | 0,25 zł |
-| 212. | Raport dla organu nadzorczego z historii dyspozycji i akceptacji | za raport | bez opłat |
-| 213. | Eksport danych do systemu sprawozdawczości budżetowej | za plik | bez opłat |
-| 214. | Udzielenie dostępu do rachunków dla jednostki nadrzędnej w trybie „tylko podgląd” | miesięcznie | bez opłat |
-| 215. | Dostosowanie serwisu do wymagań dostępności cyfrowej na zlecenie jednostki | jednorazowo | wg indywidualnej wyceny |
+| 196. | Integracja bankowości elektronicznej z systemem finansowo-księgowym jednostki — konfiguracja | za dzień roboczy | 800,00 zł |
+| 197. | Dostęp do interfejsu API w środowisku produkcyjnym | miesięcznie | 150,00 zł |
+| 198. | Dostęp do środowiska testowego interfejsu API | miesięcznie | 0,00 zł |
+| 199. | Szkolenie administratorów i użytkowników jednostki | za godzinę | 250,00 zł |
+| 200. | Szkolenie online w ramach wdrożenia usługi dla grupy do dziesięciu osób | jednorazowo | bez opłat |
+| 201. | Dedykowany opiekun techniczny | miesięcznie | 99,00 zł |
+| 202. | Pomoc zdalna konsultanta w godzinach pracy zespołu wsparcia | za zgłoszenie | bez opłat |
+| 203. | Sesja serwisowa z udostępnieniem ekranu poza godzinami pracy zespołu | za sesję | 49,00 zł |
+| 204. | Przygotowanie raportu na zamówienie jednostki | za raport | wg indywidualnej wyceny |
+| 205. | Przygotowanie opinii bankowej o obsłudze rachunków | za opinię | 80,00 zł |
+| 206. | Rachunek wspólnoty mieszkaniowej — dostęp do bankowości elektronicznej dla zarządu | miesięcznie | 15,00 zł |
+| 207. | Dostęp do rachunku wspólnoty dla zarządcy nieruchomości | miesięcznie | bez opłat |
+| 208. | Dostęp do rachunku wspólnoty dla członka zarządu (do trzech osób) | miesięcznie | bez opłat |
+| 209. | Raport wpłat członków wspólnoty z podziałem na lokale | za raport | bez opłat |
+| 210. | Import listy lokali i należności z pliku | za plik | bez opłat |
+| 211. | Wirtualne rachunki do identyfikacji wpłat (pula do 100 numerów) 4) | miesięcznie | 35,00 zł |
+| 212. | Wirtualne rachunki do identyfikacji wpłat — każdy dodatkowy numer powyżej puli | miesięcznie | 0,10 zł |
+| 213. | Raport wpłat identyfikowanych na wirtualnych rachunkach | miesięcznie | bez opłat |
+| 214. | Powiadomienie e-mail o wpływie na rachunek wpłat dla zarządu wspólnoty | za powiadomienie | bez opłat |
+| 215. | Dostęp do e-archiwum wyciągów wspólnoty z ostatnich 24 miesięcy | miesięcznie | bez opłat |
 
 <!-- page: 13 -->
 - 1\) Stawkę stosuje się do jednostek, z którymi Bank zawarł umowę o prowadzenie rachunków; w razie kilku rachunków tej
@@ -341,7 +341,6 @@ Narzędziami uwierzytelniania są: autoryzacja w aplikacji mobilnej, kody jednor
 
 Silne uwierzytelnienie jest wymagane przy logowaniu oraz przy dyspozycjach określonych w regulaminie. Ponowne uwierzytelnienie przy dostępie do informacji o rachunku jest wymagane co 180 dni.
 
-<!-- page: 14 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 216. | Autoryzacja dyspozycji w aplikacji mobilnej | za autoryzację | bez opłat |
@@ -356,46 +355,46 @@ Silne uwierzytelnienie jest wymagane przy logowaniu oraz przy dyspozycjach okre�
 | 225. | Wydanie nowego kodu aktywacyjnego do aplikacji mobilnej | jednorazowo | 10,00 zł |
 | 226. | Zastrzeżenie dostępu do bankowości elektronicznej na wniosek Klienta | za zastrzeżenie | bez opłat |
 | 227. | Certyfikat do podpisywania dyspozycji w bankowości dla firm | rocznie | 120,00 zł |
-| 228. | Dostęp do serwisu internetowego z urządzenia niezarejestrowanego — jednorazowe potwierdzenie w aplikacji | za logowanie | bez opłat |
-| 229. | Dostęp do aplikacji na urządzeniu z systemem w wersji niewspieranej | — | niedostępny ze względów bezpieczeństwa |
-| 230. | Zablokowanie logowania biometrycznego po zmianie danych biometrycznych w urządzeniu | za zablokowanie | bez opłat |
-| 231. | Ponowna aktywacja logowania biometrycznego | za aktywację | 0,00 zł |
-| 232. | Hasło tymczasowe do pierwszego logowania doręczone wiadomością tekstową | jednorazowo | bez opłat |
-| 233. | Hasło tymczasowe do pierwszego logowania doręczone listem poleconym | jednorazowo | 9,00 zł |
-| 234. | Kod aktywacyjny do aplikacji wydany w placówce Banku — ważność 7 dni dni | jednorazowo | bez opłat |
-| 235. | Nowy kod aktywacyjny po upływie terminu ważności | jednorazowo | 10,00 zł |
-| 236. | Automatyczne wylogowanie z serwisu po okresie nieaktywności 10 minut | za sesję | bez opłat |
-| 237. | Blokada konta bankowości elektronicznej nieużywanego przez 180 dni dni | za blokadę | bez opłat |
-| 238. | Logowanie do serwisu internetowego z użyciem loginu, hasła i kodu autoryzacyjnego | za logowanie | bez opłat |
-| 239. | Logowanie do aplikacji mobilnej kodem PIN lub danymi biometrycznymi | za logowanie | bez opłat |
-| 240. | Zmiana kodu PIN do aplikacji mobilnej | za zmianę | bez opłat |
-| 241. | Zmiana hasła o długości co najmniej 10 znaków | za zmianę | bez opłat |
-| 242. | Odblokowanie dostępu po pięciu kolejnych nieudanych próbach — przez konsultanta | za odblokowanie | 0,00 zł |
-| 243. | Odblokowanie dostępu po pięciu kolejnych nieudanych próbach — w placówce Banku | za odblokowanie | 8,00 zł |
-| 244. | Automatyczne odblokowanie dostępu następuje do końca następnego dnia roboczego | za odblokowanie | bez opłat |
-| 245. | Aktywacja nowego urządzenia z użyciem kodu przesłanego wiadomością tekstową | za aktywację | bez opłat |
-| 246. | Wylogowanie wszystkich urządzeń i unieważnienie sesji z poziomu serwisu | za dyspozycję | bez opłat |
-| 247. | Usunięcie zaufanego urządzenia z listy urządzeń w serwisie | za usunięcie | bez opłat |
-| 248. | Zgłoszenie utraty lub kradzieży telefonu z zainstalowaną aplikacją — zablokowanie dostępu | za zgłoszenie | bez opłat |
-| 249. | Zgłoszenie podejrzenia przejęcia dostępu i zmiana wszystkich danych logowania | za zgłoszenie | bez opłat |
-| 250. | Przywrócenie dostępu po zastrzeżeniu — w serwisie internetowym | za przywrócenie | bez opłat |
-| 251. | Przywrócenie dostępu po zastrzeżeniu — w placówce Banku | za przywrócenie | 8,00 zł |
-| 252. | Nowy kod aktywacyjny do aplikacji po utracie urządzenia | jednorazowo | 10,00 zł |
-| 253. | Wniosek o zmianę metody autoryzacji (SMS, aplikacja, token) złożony w serwisie | za zmianę | bez opłat |
-| 254. | Wniosek o zmianę metody autoryzacji złożony w placówce Banku | za zmianę | 5,00 zł |
-| 255. | Ponowne silne uwierzytelnienie przy dostępie do informacji o rachunku (co 180 dni) | za uwierzytelnienie | bez opłat |
-| 256. | Przegląd zaufanych urządzeń i historii logowań | za zapytanie | bez opłat |
-| 257. | Wydruk historii logowań w placówce Banku | za wydruk | 8,00 zł |
-| 258. | Kody jednorazowe SMS do autoryzacji dyspozycji — liczba wiadomości w kraju | za wiadomość | 0,00 zł |
-| 259. | Kody jednorazowe SMS — ponowne wysłanie po wygaśnięciu kodu (120 sekund) | za wiadomość | 0,00 zł |
-| 260. | Kody jednorazowe SMS wysyłane na numer zagraniczny | za wiadomość | 2,00 zł |
-| 261. | Zmiana numeru telefonu do kodów jednorazowych w serwisie z użyciem tokenu | za zmianę | bez opłat |
-| 262. | Karta kodów jednorazowych — wydanie pierwszej karty | za kartę | 15,00 zł |
-| 263. | Karta kodów jednorazowych — wydanie kolejnej karty po wykorzystaniu kodów | za kartę | 15,00 zł |
-| 264. | Zastrzeżenie karty kodów jednorazowych | za zastrzeżenie | bez opłat |
-| 265. | Powiadomienie push z prośbą o potwierdzenie dyspozycji | za powiadomienie | bez opłat |
-| 266. | Potwierdzenie dyspozycji kodem QR wyświetlonym w serwisie internetowym | za potwierdzenie | bez opłat |
-| 267. | Weryfikacja tożsamości na Infolinii z użyciem hasła słownego | za weryfikację | bez opłat |
+| 228. | Zgłoszenie utraty lub kradzieży telefonu z zainstalowaną aplikacją — zablokowanie dostępu | za zgłoszenie | bez opłat |
+| 229. | Zgłoszenie podejrzenia przejęcia dostępu i zmiana wszystkich danych logowania | za zgłoszenie | bez opłat |
+| 230. | Przywrócenie dostępu po zastrzeżeniu — w serwisie internetowym | za przywrócenie | bez opłat |
+| 231. | Przywrócenie dostępu po zastrzeżeniu — w placówce Banku | za przywrócenie | 8,00 zł |
+| 232. | Nowy kod aktywacyjny do aplikacji po utracie urządzenia | jednorazowo | 10,00 zł |
+| 233. | Wniosek o zmianę metody autoryzacji (SMS, aplikacja, token) złożony w serwisie | za zmianę | bez opłat |
+| 234. | Wniosek o zmianę metody autoryzacji złożony w placówce Banku | za zmianę | 5,00 zł |
+| 235. | Ponowne silne uwierzytelnienie przy dostępie do informacji o rachunku (co 180 dni) | za uwierzytelnienie | bez opłat |
+| 236. | Przegląd zaufanych urządzeń i historii logowań | za zapytanie | bez opłat |
+| 237. | Wydruk historii logowań w placówce Banku | za wydruk | 8,00 zł |
+| 238. | Kody jednorazowe SMS do autoryzacji dyspozycji — liczba wiadomości w kraju | za wiadomość | 0,00 zł |
+| 239. | Kody jednorazowe SMS — ponowne wysłanie po wygaśnięciu kodu (120 sekund) | za wiadomość | 0,00 zł |
+| 240. | Kody jednorazowe SMS wysyłane na numer zagraniczny | za wiadomość | 2,00 zł |
+| 241. | Zmiana numeru telefonu do kodów jednorazowych w serwisie z użyciem tokenu | za zmianę | bez opłat |
+| 242. | Karta kodów jednorazowych — wydanie pierwszej karty | za kartę | 15,00 zł |
+| 243. | Karta kodów jednorazowych — wydanie kolejnej karty po wykorzystaniu kodów | za kartę | 15,00 zł |
+| 244. | Zastrzeżenie karty kodów jednorazowych | za zastrzeżenie | bez opłat |
+| 245. | Powiadomienie push z prośbą o potwierdzenie dyspozycji | za powiadomienie | bez opłat |
+| 246. | Potwierdzenie dyspozycji kodem QR wyświetlonym w serwisie internetowym | za potwierdzenie | bez opłat |
+| 247. | Weryfikacja tożsamości na Infolinii z użyciem hasła słownego | za weryfikację | bez opłat |
+| 248. | Logowanie do serwisu internetowego z użyciem loginu, hasła i kodu autoryzacyjnego | za logowanie | bez opłat |
+| 249. | Logowanie do aplikacji mobilnej kodem PIN lub danymi biometrycznymi | za logowanie | bez opłat |
+| 250. | Zmiana kodu PIN do aplikacji mobilnej | za zmianę | bez opłat |
+| 251. | Zmiana hasła o długości co najmniej 10 znaków | za zmianę | bez opłat |
+| 252. | Odblokowanie dostępu po pięciu kolejnych nieudanych próbach — przez konsultanta | za odblokowanie | 0,00 zł |
+| 253. | Odblokowanie dostępu po pięciu kolejnych nieudanych próbach — w placówce Banku | za odblokowanie | 8,00 zł |
+| 254. | Automatyczne odblokowanie dostępu następuje do końca następnego dnia roboczego | za odblokowanie | bez opłat |
+| 255. | Aktywacja nowego urządzenia z użyciem kodu przesłanego wiadomością tekstową | za aktywację | bez opłat |
+| 256. | Wylogowanie wszystkich urządzeń i unieważnienie sesji z poziomu serwisu | za dyspozycję | bez opłat |
+| 257. | Usunięcie zaufanego urządzenia z listy urządzeń w serwisie | za usunięcie | bez opłat |
+| 258. | Dostęp do serwisu internetowego z urządzenia niezarejestrowanego — jednorazowe potwierdzenie w aplikacji | za logowanie | bez opłat |
+| 259. | Dostęp do aplikacji na urządzeniu z systemem w wersji niewspieranej | — | niedostępny ze względów bezpieczeństwa |
+| 260. | Zablokowanie logowania biometrycznego po zmianie danych biometrycznych w urządzeniu | za zablokowanie | bez opłat |
+| 261. | Ponowna aktywacja logowania biometrycznego | za aktywację | 0,00 zł |
+| 262. | Hasło tymczasowe do pierwszego logowania doręczone wiadomością tekstową | jednorazowo | bez opłat |
+| 263. | Hasło tymczasowe do pierwszego logowania doręczone listem poleconym | jednorazowo | 9,00 zł |
+| 264. | Kod aktywacyjny do aplikacji wydany w placówce Banku — ważność 7 dni dni | jednorazowo | bez opłat |
+| 265. | Nowy kod aktywacyjny po upływie terminu ważności | jednorazowo | 10,00 zł |
+| 266. | Automatyczne wylogowanie z serwisu po okresie nieaktywności 10 minut | za sesję | bez opłat |
+| 267. | Blokada konta bankowości elektronicznej nieużywanego przez 180 dni dni | za blokadę | bez opłat |
 | 268. | Token sprzętowy — wydanie dla Klienta posiadającego pakiet rozszerzony | jednorazowo | 39,00 zł |
 | 269. | Token sprzętowy — wydanie w trybie pilnym z doręczeniem kurierem | jednorazowo | 39,00 zł i 24,00 zł |
 | 270. | Token sprzętowy — wymiana po zakończeniu okresu eksploatacji baterii | jednorazowo | bez opłat |
@@ -422,7 +421,6 @@ Powiadomienia o operacjach na rachunku mogą być doręczane jako komunikaty w a
 
 Powiadomienia wiadomością tekstową rozliczane są za wiadomość wysłaną albo w ramach pakietu miesięcznego, jeżeli Klient go aktywował. Pakiet obejmuje do 20 wiadomości w miesiącu; wiadomości ponad pakiet rozlicza się według stawki za pojedynczą wiadomość.
 
-<!-- page: 17 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 278. | Powiadomienie o operacji w aplikacji mobilnej (push) | za powiadomienie | 0,00 zł |
@@ -435,26 +433,26 @@ Powiadomienia wiadomością tekstową rozliczane są za wiadomość wysłaną al
 | 285. | Alert bezpieczeństwa o logowaniu z nowego urządzenia | za alert | bez opłat |
 | 286. | Alert bezpieczeństwa o podejrzanej transakcji wykonany telefonicznie przez konsultanta | za kontakt | bez opłat |
 | 287. | Pakiet powiadomień dla firm — wiadomości tekstowe do 5 osób wskazanych przez Klienta | miesięcznie | 19,00 zł |
-| 288. | Alert o próbie logowania z nietypowej lokalizacji | za alert | bez opłat |
-| 289. | Alert o zmianie danych kontaktowych lub numeru telefonu do autoryzacji | za alert | bez opłat |
-| 290. | Alert o dodaniu nowego urządzenia do aplikacji mobilnej | za alert | bez opłat |
-| 291. | Alert o zmianie limitów transakcji | za alert | bez opłat |
-| 292. | Alert o utworzeniu nowego odbiorcy na liście zaufanych | za alert | bez opłat |
-| 293. | Alert o transakcji kartą za granicą | za alert | 0,00 zł |
-| 294. | Alert o zbliżającym się końcu limitu w rachunku | za alert | 0,00 zł |
-| 295. | Powiadomienie o terminie spłaty minimalnej kwoty zadłużenia na karcie — wiadomość tekstowa | za wiadomość | 2,00 zł |
-| 296. | Powiadomienie o terminie spłaty minimalnej kwoty zadłużenia na karcie — komunikat push | za powiadomienie | bez opłat |
-| 297. | Powiadomienie o wystawieniu wyciągu z rachunku w serwisie | za powiadomienie | bez opłat |
-| 298. | Powiadomienie tekstowe o wpływie środków na rachunek | za wiadomość | 2,00 zł |
-| 299. | Powiadomienie tekstowe o obciążeniu rachunku | za wiadomość | 2,00 zł |
-| 300. | Powiadomienie tekstowe o transakcji kartą powyżej ustalonego progu kwotowego | za wiadomość | 2,00 zł |
-| 301. | Powiadomienie tekstowe o saldzie rachunku wysyłane codziennie o wybranej godzinie | za wiadomość | 1,00 zł |
-| 302. | Informacja o saldzie rachunku przesłana wiadomością tekstową na żądanie Klienta | za wiadomość | 1,00 zł |
-| 303. | Pakiet powiadomień tekstowych — do dwudziestu wiadomości w miesiącu | miesięcznie | 9,00 zł |
-| 304. | Pakiet powiadomień tekstowych — zmiana numeru telefonu odbiorcy | za zmianę | bez opłat |
-| 305. | Pakiet powiadomień tekstowych — wiadomości ponad pakiet | za wiadomość | 2,00 zł |
-| 306. | Pakiet powiadomień tekstowych — rezygnacja | jednorazowo | bez opłat |
-| 307. | Powiadomienie tekstowe o kodzie do odbioru gotówki w bankomacie | za wiadomość | bez opłat |
+| 288. | Konfiguracja zakresu powiadomień w aplikacji mobilnej | za zmianę | bez opłat |
+| 289. | Konfiguracja zakresu powiadomień na Infolinii | za zmianę | bez opłat |
+| 290. | Konfiguracja zakresu powiadomień w placówce Banku | za zmianę | bez opłat |
+| 291. | Ustawienie progu kwotowego powiadomień o operacjach | za zmianę | bez opłat |
+| 292. | Ustawienie harmonogramu „cichych godzin” bez powiadomień push | za zmianę | bez opłat |
+| 293. | Przekierowanie powiadomień na adres e-mail pełnomocnika | za zmianę | bez opłat |
+| 294. | Powiadomienie e-mail o zbliżającej się planowanej przerwie serwisowej (z wyprzedzeniem 3 dni dni) | za powiadomienie | bez opłat |
+| 295. | Powiadomienie o planowanej przerwie w dostępie do bankowości w oknie serwisowym od 2:00 do 4:00 | za powiadomienie | bez opłat |
+| 296. | Komunikat w aplikacji o awarii lub niedostępności usługi | za komunikat | bez opłat |
+| 297. | Przesłanie powiadomienia w formie wydruku listem zwykłym | za przesyłkę | 10,00 zł |
+| 298. | Powiadomienie o wpływie rachunku — komunikat push | za powiadomienie | 0,00 zł |
+| 299. | Powiadomienie o obciążeniu rachunku — komunikat push | za powiadomienie | 0,00 zł |
+| 300. | Powiadomienie o transakcji kartą — komunikat push | za powiadomienie | 0,00 zł |
+| 301. | Powiadomienie o wpływie wynagrodzenia — wiadomość e-mail | za powiadomienie | 0,00 zł |
+| 302. | Powiadomienie o terminie płatności rachunku lub raty — wiadomość e-mail | za powiadomienie | 0,00 zł |
+| 303. | Powiadomienie o zbliżającym się końcu okresu lokaty — komunikat push | za powiadomienie | bez opłat |
+| 304. | Powiadomienie o wykonaniu zlecenia stałego — wiadomość e-mail | za powiadomienie | 0,00 zł |
+| 305. | Powiadomienie o odrzuceniu dyspozycji z braku środków | za powiadomienie | bez opłat |
+| 306. | Powiadomienie o wygasającym terminie ważności karty lub tokenu | za powiadomienie | bez opłat |
+| 307. | Powiadomienie o zmianie Taryfy lub regulaminu — wiadomość w serwisie | za powiadomienie | bez opłat |
 | 308. | Powiadomienia dla firm — zbiorcza informacja o wpływach dnia, wiadomość e-mail | za wiadomość | 0,00 zł |
 | 309. | Powiadomienia dla firm — powiadomienie o oczekującej dyspozycji do akceptacji | za powiadomienie | bez opłat |
 | 310. | Powiadomienia dla firm — powiadomienie o odrzuceniu dyspozycji przez osobę akceptującą | za powiadomienie | bez opłat |
@@ -465,26 +463,26 @@ Powiadomienia wiadomością tekstową rozliczane są za wiadomość wysłaną al
 | 315. | Powiadomienie o zajęciu rachunku przez organ egzekucyjny — wiadomość w serwisie | za powiadomienie | bez opłat |
 | 316. | Powiadomienie o terminie wygaśnięcia umowy o bankowość elektroniczną | za powiadomienie | bez opłat |
 | 317. | Powiadomienie webhook o zdarzeniach na rachunku dostarczane do systemu Klienta (API) | za zdarzenie | wliczone w opłatę za dostęp do API |
-| 318. | Powiadomienie o wpływie rachunku — komunikat push | za powiadomienie | 0,00 zł |
-| 319. | Powiadomienie o obciążeniu rachunku — komunikat push | za powiadomienie | 0,00 zł |
-| 320. | Powiadomienie o transakcji kartą — komunikat push | za powiadomienie | 0,00 zł |
-| 321. | Powiadomienie o wpływie wynagrodzenia — wiadomość e-mail | za powiadomienie | 0,00 zł |
-| 322. | Powiadomienie o terminie płatności rachunku lub raty — wiadomość e-mail | za powiadomienie | 0,00 zł |
-| 323. | Powiadomienie o zbliżającym się końcu okresu lokaty — komunikat push | za powiadomienie | bez opłat |
-| 324. | Powiadomienie o wykonaniu zlecenia stałego — wiadomość e-mail | za powiadomienie | 0,00 zł |
-| 325. | Powiadomienie o odrzuceniu dyspozycji z braku środków | za powiadomienie | bez opłat |
-| 326. | Powiadomienie o wygasającym terminie ważności karty lub tokenu | za powiadomienie | bez opłat |
-| 327. | Powiadomienie o zmianie Taryfy lub regulaminu — wiadomość w serwisie | za powiadomienie | bez opłat |
-| 328. | Konfiguracja zakresu powiadomień w aplikacji mobilnej | za zmianę | bez opłat |
-| 329. | Konfiguracja zakresu powiadomień na Infolinii | za zmianę | bez opłat |
-| 330. | Konfiguracja zakresu powiadomień w placówce Banku | za zmianę | bez opłat |
-| 331. | Ustawienie progu kwotowego powiadomień o operacjach | za zmianę | bez opłat |
-| 332. | Ustawienie harmonogramu „cichych godzin” bez powiadomień push | za zmianę | bez opłat |
-| 333. | Przekierowanie powiadomień na adres e-mail pełnomocnika | za zmianę | bez opłat |
-| 334. | Powiadomienie e-mail o zbliżającej się planowanej przerwie serwisowej (z wyprzedzeniem 3 dni dni) | za powiadomienie | bez opłat |
-| 335. | Powiadomienie o planowanej przerwie w dostępie do bankowości w oknie serwisowym od 2:00 do 4:00 | za powiadomienie | bez opłat |
-| 336. | Komunikat w aplikacji o awarii lub niedostępności usługi | za komunikat | bez opłat |
-| 337. | Przesłanie powiadomienia w formie wydruku listem zwykłym | za przesyłkę | 10,00 zł |
+| 318. | Alert o próbie logowania z nietypowej lokalizacji | za alert | bez opłat |
+| 319. | Alert o zmianie danych kontaktowych lub numeru telefonu do autoryzacji | za alert | bez opłat |
+| 320. | Alert o dodaniu nowego urządzenia do aplikacji mobilnej | za alert | bez opłat |
+| 321. | Alert o zmianie limitów transakcji | za alert | bez opłat |
+| 322. | Alert o utworzeniu nowego odbiorcy na liście zaufanych | za alert | bez opłat |
+| 323. | Alert o transakcji kartą za granicą | za alert | 0,00 zł |
+| 324. | Alert o zbliżającym się końcu limitu w rachunku | za alert | 0,00 zł |
+| 325. | Powiadomienie o terminie spłaty minimalnej kwoty zadłużenia na karcie — wiadomość tekstowa | za wiadomość | 2,00 zł |
+| 326. | Powiadomienie o terminie spłaty minimalnej kwoty zadłużenia na karcie — komunikat push | za powiadomienie | bez opłat |
+| 327. | Powiadomienie o wystawieniu wyciągu z rachunku w serwisie | za powiadomienie | bez opłat |
+| 328. | Powiadomienie tekstowe o wpływie środków na rachunek | za wiadomość | 2,00 zł |
+| 329. | Powiadomienie tekstowe o obciążeniu rachunku | za wiadomość | 2,00 zł |
+| 330. | Powiadomienie tekstowe o transakcji kartą powyżej ustalonego progu kwotowego | za wiadomość | 2,00 zł |
+| 331. | Powiadomienie tekstowe o saldzie rachunku wysyłane codziennie o wybranej godzinie | za wiadomość | 1,00 zł |
+| 332. | Informacja o saldzie rachunku przesłana wiadomością tekstową na żądanie Klienta | za wiadomość | 1,00 zł |
+| 333. | Pakiet powiadomień tekstowych — do dwudziestu wiadomości w miesiącu | miesięcznie | 9,00 zł |
+| 334. | Pakiet powiadomień tekstowych — zmiana numeru telefonu odbiorcy | za zmianę | bez opłat |
+| 335. | Pakiet powiadomień tekstowych — wiadomości ponad pakiet | za wiadomość | 2,00 zł |
+| 336. | Pakiet powiadomień tekstowych — rezygnacja | jednorazowo | bez opłat |
+| 337. | Powiadomienie tekstowe o kodzie do odbioru gotówki w bankomacie | za wiadomość | bez opłat |
 
 <!-- page: 19 -->
 - 1\) Opłata nie obejmuje wiadomości o charakterze bezpieczeństwa, w tym informacji o zablokowaniu dostępu
@@ -530,48 +528,48 @@ Przelew do nowego odbiorcy podlega dodatkowemu limitowi 3 000,00 zł przez 24 go
 | 360. | Wymiana walut w serwisie internetowym po kursie z Tabeli kursów walut | za transakcję | bez opłat |
 | 361. | Przewalutowanie przelewu w złotych na rachunek w walucie obcej | za transakcję | wg Tabeli kursów walut |
 | 362. | Poszukiwanie przelewu zagranicznego na zlecenie Klienta | za zlecenie | 80,00 zł |
-| 363. | Zlecenie stałe — ustanowienie w serwisie mobilnym | jednorazowo | 0,00 zł |
-| 364. | Zlecenie stałe — realizacja | za każdą realizację | bez opłat |
-| 365. | Zlecenie stałe — modyfikacja kwoty lub terminu | za każdą zmianę | 3,00 zł |
-| 366. | Zlecenie stałe — odwołanie | za odwołanie | bez opłat |
-| 367. | Zlecenie stałe ustanowione w placówce Banku | jednorazowo | 5,00 zł |
-| 368. | Zlecenie stałe — informacja o nieudanej realizacji z braku środków | za informację | bez opłat |
-| 369. | Polecenie zapłaty — udzielenie zgody w serwisie internetowym | jednorazowo | bez opłat |
-| 370. | Polecenie zapłaty — odwołanie zgody lub zablokowanie wierzyciela | za dyspozycję | bez opłat |
-| 371. | Polecenie zapłaty — realizacja | za każde polecenie | 3,00 zł |
-| 372. | Automatyczna spłata karty kredytowej z rachunku — ustawienie w serwisie | jednorazowo | bez opłat |
-| 373. | Cykliczna wpłata na rachunek oszczędnościowy (reguła „zaokrąglaj do pełnych złotych”) | miesięcznie | bez opłat |
-| 374. | Otwarcie lokaty terminowej w serwisie internetowym lub w aplikacji | jednorazowo | bez opłat |
-| 375. | Otwarcie rachunku oszczędnościowego w serwisie internetowym | jednorazowo | bez opłat |
-| 376. | Otwarcie rachunku w walucie obcej w serwisie internetowym | jednorazowo | bez opłat |
-| 377. | Zlecenie wydania karty płatniczej w serwisie lub w aplikacji | jednorazowo | wg taryfy kart płatniczych |
-| 378. | Zmiana PIN do karty w serwisie internetowym | za zmianę | bez opłat |
-| 379. | Zastrzeżenie karty w serwisie internetowym lub w aplikacji | za zastrzeżenie | bez opłat |
-| 380. | Zmiana limitów karty w aplikacji mobilnej | za zmianę | bez opłat |
-| 381. | Zlecenie spłaty zadłużenia na karcie kredytowej z rachunku | za dyspozycję | bez opłat |
-| 382. | Złożenie wniosku o zmianę danych osobowych z załączeniem skanu dokumentu | za wniosek | bez opłat |
-| 383. | Złożenie reklamacji w serwisie internetowym | za reklamację | bez opłat |
-| 384. | Zmiana dziennego limitu przelewów w serwisie internetowym w granicach od 100,00 zł do 100 000,00 zł | za każdą zmianę | bez opłat |
-| 385. | Zmiana limitu jednorazowego przelewu w aplikacji mobilnej | za każdą zmianę | bez opłat |
-| 386. | Zmiana limitu transakcji w kanałach elektronicznych na Infolinii | za każdą zmianę | 3,00 zł |
-| 387. | Zmiana limitu transakcji w kanałach elektronicznych w placówce Banku | za każdą zmianę | 5,00 zł |
-| 388. | Czasowe podwyższenie limitu przelewów na jedną dyspozycję w aplikacji | za dyspozycję | bez opłat |
-| 389. | Potwierdzenie przelewu w postaci elektronicznej wysłane na adres e-mail | za potwierdzenie | bez opłat |
-| 390. | Potwierdzenie przelewu w postaci papierowej wydane w placówce | za potwierdzenie | 8,00 zł |
-| 391. | Duplikat potwierdzenia przelewu starszego niż 24 miesięcy | za potwierdzenie | 8,00 zł |
-| 392. | Przelew zlecony przez konsultanta Infolinii po pozytywnej weryfikacji tożsamości | za przelew | 6,00 zł |
-| 393. | Odwołanie przelewu na wniosek Klienta po rozpoczęciu realizacji | za odwołanie | 10,00 zł |
-| 394. | Wniosek o zwrot przelewu wykonanego na błędny numer rachunku | za wniosek | 30,00 zł |
-| 395. | Przelew krajowy w złotych z rachunku osobistego do banku zewnętrznego, złożony w aplikacji mobilnej | za przelew | bez opłat |
-| 396. | Przelew krajowy w złotych do odbiorcy z listy zaufanych | za przelew | bez opłat |
-| 397. | Przelew krajowy w złotych do nowego odbiorcy do kwoty 3 000,00 zł | za przelew | bez opłat |
-| 398. | Przelew z rachunku oszczędnościowego na rachunek osobisty Klienta | za przelew | bez opłat |
-| 399. | Przelew do ZUS i urzędu skarbowego | za przelew | bez opłat |
-| 400. | Przelew ekspresowy — realizacja w ciągu 15 minut w dni robocze | za przelew | 5,00 zł |
-| 401. | Przelew realizowany w sesji Elixir o godzinie granicznej 15:30 | za przelew | bez opłat |
-| 402. | Przelew złożony po godzinie granicznej — realizacja w kolejnym dniu roboczym | za przelew | bez opłat |
-| 403. | Przelew z kodem QR do płatności faktur lub rachunków | za przelew | bez opłat |
-| 404. | Przelew na rachunek Klienta prowadzony w innym banku (przelew własny zewnętrzny) | za przelew | bez opłat |
+| 363. | Przelew krajowy w złotych z rachunku osobistego do banku zewnętrznego, złożony w aplikacji mobilnej | za przelew | bez opłat |
+| 364. | Przelew krajowy w złotych do odbiorcy z listy zaufanych | za przelew | bez opłat |
+| 365. | Przelew krajowy w złotych do nowego odbiorcy do kwoty 3 000,00 zł | za przelew | bez opłat |
+| 366. | Przelew z rachunku oszczędnościowego na rachunek osobisty Klienta | za przelew | bez opłat |
+| 367. | Przelew do ZUS i urzędu skarbowego | za przelew | bez opłat |
+| 368. | Przelew ekspresowy — realizacja w ciągu 15 minut w dni robocze | za przelew | 5,00 zł |
+| 369. | Przelew realizowany w sesji Elixir o godzinie granicznej 15:30 | za przelew | bez opłat |
+| 370. | Przelew złożony po godzinie granicznej — realizacja w kolejnym dniu roboczym | za przelew | bez opłat |
+| 371. | Przelew z kodem QR do płatności faktur lub rachunków | za przelew | bez opłat |
+| 372. | Przelew na rachunek Klienta prowadzony w innym banku (przelew własny zewnętrzny) | za przelew | bez opłat |
+| 373. | Zmiana dziennego limitu przelewów w serwisie internetowym w granicach od 100,00 zł do 100 000,00 zł | za każdą zmianę | bez opłat |
+| 374. | Zmiana limitu jednorazowego przelewu w aplikacji mobilnej | za każdą zmianę | bez opłat |
+| 375. | Zmiana limitu transakcji w kanałach elektronicznych na Infolinii | za każdą zmianę | 3,00 zł |
+| 376. | Zmiana limitu transakcji w kanałach elektronicznych w placówce Banku | za każdą zmianę | 5,00 zł |
+| 377. | Czasowe podwyższenie limitu przelewów na jedną dyspozycję w aplikacji | za dyspozycję | bez opłat |
+| 378. | Potwierdzenie przelewu w postaci elektronicznej wysłane na adres e-mail | za potwierdzenie | bez opłat |
+| 379. | Potwierdzenie przelewu w postaci papierowej wydane w placówce | za potwierdzenie | 8,00 zł |
+| 380. | Duplikat potwierdzenia przelewu starszego niż 24 miesięcy | za potwierdzenie | 8,00 zł |
+| 381. | Przelew zlecony przez konsultanta Infolinii po pozytywnej weryfikacji tożsamości | za przelew | 6,00 zł |
+| 382. | Odwołanie przelewu na wniosek Klienta po rozpoczęciu realizacji | za odwołanie | 10,00 zł |
+| 383. | Wniosek o zwrot przelewu wykonanego na błędny numer rachunku | za wniosek | 30,00 zł |
+| 384. | Zlecenie stałe — ustanowienie w serwisie mobilnym | jednorazowo | 0,00 zł |
+| 385. | Zlecenie stałe — realizacja | za każdą realizację | bez opłat |
+| 386. | Zlecenie stałe — modyfikacja kwoty lub terminu | za każdą zmianę | 3,00 zł |
+| 387. | Zlecenie stałe — odwołanie | za odwołanie | bez opłat |
+| 388. | Zlecenie stałe ustanowione w placówce Banku | jednorazowo | 5,00 zł |
+| 389. | Zlecenie stałe — informacja o nieudanej realizacji z braku środków | za informację | bez opłat |
+| 390. | Polecenie zapłaty — udzielenie zgody w serwisie internetowym | jednorazowo | bez opłat |
+| 391. | Polecenie zapłaty — odwołanie zgody lub zablokowanie wierzyciela | za dyspozycję | bez opłat |
+| 392. | Polecenie zapłaty — realizacja | za każde polecenie | 3,00 zł |
+| 393. | Automatyczna spłata karty kredytowej z rachunku — ustawienie w serwisie | jednorazowo | bez opłat |
+| 394. | Cykliczna wpłata na rachunek oszczędnościowy (reguła „zaokrąglaj do pełnych złotych”) | miesięcznie | bez opłat |
+| 395. | Otwarcie lokaty terminowej w serwisie internetowym lub w aplikacji | jednorazowo | bez opłat |
+| 396. | Otwarcie rachunku oszczędnościowego w serwisie internetowym | jednorazowo | bez opłat |
+| 397. | Otwarcie rachunku w walucie obcej w serwisie internetowym | jednorazowo | bez opłat |
+| 398. | Zlecenie wydania karty płatniczej w serwisie lub w aplikacji | jednorazowo | wg taryfy kart płatniczych |
+| 399. | Zmiana PIN do karty w serwisie internetowym | za zmianę | bez opłat |
+| 400. | Zastrzeżenie karty w serwisie internetowym lub w aplikacji | za zastrzeżenie | bez opłat |
+| 401. | Zmiana limitów karty w aplikacji mobilnej | za zmianę | bez opłat |
+| 402. | Zlecenie spłaty zadłużenia na karcie kredytowej z rachunku | za dyspozycję | bez opłat |
+| 403. | Złożenie wniosku o zmianę danych osobowych z załączeniem skanu dokumentu | za wniosek | bez opłat |
+| 404. | Złożenie reklamacji w serwisie internetowym | za reklamację | bez opłat |
 
 <!-- page: 22 -->
 - 1\) Przelew natychmiastowy jest dostępny całodobowo, we wszystkie dni tygodnia, do kwoty 10 000,00 zł w aplikacji
@@ -592,7 +590,6 @@ Płatności mobilne umożliwiają zapłatę należności telefonem wyposażonym 
 
 Transakcje do kwoty 250,00 zł mogą być potwierdzane bez silnego uwierzytelnienia, w granicach limitów określonych w regulaminie. Opłaty za karty płatnicze zarejestrowane w aplikacji określa „Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze”.
 
-<!-- page: 23 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 405. | Aktywacja płatności mobilnych w aplikacji | jednorazowo | 0,00 zł |
@@ -616,47 +613,47 @@ Transakcje do kwoty 250,00 zł mogą być potwierdzane bez silnego uwierzytelnie
 | 423. | Zablokowanie portfela płatności mobilnych użytkownika na wniosek administratora | za zablokowanie | bez opłat |
 | 424. | Zdalne usunięcie danych karty z urządzenia zgłoszonego jako utracone | za usunięcie | bez opłat |
 | 425. | Przegląd historii płatności mobilnych w aplikacji | za zapytanie | bez opłat |
-| 426. | Przelew na numer telefonu — wysłanie środków w aplikacji | za przelew | 0,00 zł |
-| 427. | Przelew na numer telefonu — kwota maksymalna jednej dyspozycji 1 000,00 zł | za przelew | bez opłat |
-| 428. | Przelew na numer telefonu — otrzymanie środków | za przelew | bez opłat |
-| 429. | Rejestracja numeru telefonu w usłudze przelewów na telefon | jednorazowo | bez opłat |
-| 430. | Zmiana rachunku powiązanego z numerem telefonu | za zmianę | bez opłat |
-| 431. | Wyrejestrowanie numeru telefonu z usługi przelewów na telefon | jednorazowo | bez opłat |
-| 432. | Płatność kodem w sklepie internetowym — wygenerowanie kodu w aplikacji | za transakcję | 0,00 zł |
-| 433. | Płatność kodem w sklepie internetowym — zatwierdzenie w aplikacji | za transakcję | bez opłat |
-| 434. | Płatność kodem w terminalu stacjonarnym sprzedawcy | za transakcję | bez opłat |
-| 435. | Zwrot płatności kodem na rachunek Klienta | za zwrot | bez opłat |
-| 436. | Wypłata gotówki w bankomacie kodem wygenerowanym w aplikacji | za operację | 0,00 zł |
-| 437. | Rejestracja karty debetowej w aplikacji płatności mobilnych | za rejestrację | bez opłat |
-| 438. | Rejestracja karty kredytowej w portfelu płatności mobilnych | za rejestrację | bez opłat |
-| 439. | Rejestracja karty przedpłaconej w portfelu płatności mobilnych | za rejestrację | bez opłat |
-| 440. | Usunięcie karty z portfela płatności mobilnych | za usunięcie | bez opłat |
-| 441. | Wybór karty domyślnej do płatności zbliżeniowych telefonem | za zmianę | bez opłat |
-| 442. | Płatność zbliżeniowa telefonem do kwoty 250,00 zł bez potwierdzenia | za transakcję | bez opłat |
-| 443. | Płatność zbliżeniowa telefonem powyżej kwoty 250,00 zł z potwierdzeniem w aplikacji | za transakcję | bez opłat |
-| 444. | Płatność telefonem w komunikacji miejskiej i w biletomatach | za transakcję | bez opłat |
-| 445. | Płatność telefonem w terminalu w walucie obcej w kraju | za transakcję | wg Tabeli kursów walut |
-| 446. | Weryfikacja płatności mobilnej odciskiem palca lub rozpoznawaniem twarzy | za transakcję | bez opłat |
-| 447. | Płatność mobilna za granicą — przeliczenie waluty obcej na złote | od kwoty transakcji | 1,5% |
-| 448. | Płatność mobilna w terminalu za granicą rozliczana w złotych (konwersja po stronie akceptanta) | za transakcję | bez opłat |
-| 449. | Płatność mobilna w internecie za granicą | od kwoty transakcji | 1,5% |
-| 450. | Wypłata gotówki z bankomatu za granicą z użyciem aplikacji mobilnej | za operację | wg taryfy kart płatniczych |
-| 451. | Zmiana limitu pojedynczej płatności mobilnej do 1 000,00 zł | za zmianę | bez opłat |
-| 452. | Zmiana dziennego limitu płatności mobilnych do 5 000,00 zł | za zmianę | bez opłat |
-| 453. | Zmiana limitu płatności mobilnych na Infolinii | za zmianę | 3,00 zł |
-| 454. | Zmiana limitu płatności mobilnych w placówce Banku | za zmianę | 5,00 zł |
-| 455. | Tymczasowe wyłączenie płatności mobilnych na urządzeniu | za wyłączenie | bez opłat |
-| 456. | Ponowna aktywacja płatności mobilnych po wymianie urządzenia | jednorazowo | 0,00 zł |
-| 457. | Płatność mobilna w kraju — transakcja w punkcie stacjonarnym | za transakcję | bez opłat |
-| 458. | Płatność mobilna w kraju — transakcja z wykorzystaniem zegarka lub opaski z modułem zbliżeniowym | za transakcję | bez opłat |
-| 459. | Dodanie karty do urządzenia noszonego (zegarek, opaska) | za rejestrację | bez opłat |
-| 460. | Płatność mobilna w automacie samoobsługowym i parkomacie | za transakcję | bez opłat |
-| 461. | Płatność mobilna z użyciem rachunku powiązanego z numerem telefonu odbiorcy | za transakcję | bez opłat |
-| 462. | Przekroczenie dziennego limitu płatności mobilnych 5 000,00 zł — odrzucenie transakcji | za transakcję | bez opłat |
-| 463. | Zwrot środków za płatność mobilną po reklamacji akceptanta | za zwrot | bez opłat |
-| 464. | Powiadomienie o płatności mobilnej — komunikat push | za powiadomienie | 0,00 zł |
-| 465. | Powiadomienie o płatności mobilnej — wiadomość tekstowa | za wiadomość | 2,00 zł |
-| 466. | Zgłoszenie nieautoryzowanej płatności mobilnej | za zgłoszenie | bez opłat |
+| 426. | Płatność mobilna za granicą — przeliczenie waluty obcej na złote | od kwoty transakcji | 1,5% |
+| 427. | Płatność mobilna w terminalu za granicą rozliczana w złotych (konwersja po stronie akceptanta) | za transakcję | bez opłat |
+| 428. | Płatność mobilna w internecie za granicą | od kwoty transakcji | 1,5% |
+| 429. | Wypłata gotówki z bankomatu za granicą z użyciem aplikacji mobilnej | za operację | wg taryfy kart płatniczych |
+| 430. | Zmiana limitu pojedynczej płatności mobilnej do 1 000,00 zł | za zmianę | bez opłat |
+| 431. | Zmiana dziennego limitu płatności mobilnych do 5 000,00 zł | za zmianę | bez opłat |
+| 432. | Zmiana limitu płatności mobilnych na Infolinii | za zmianę | 3,00 zł |
+| 433. | Zmiana limitu płatności mobilnych w placówce Banku | za zmianę | 5,00 zł |
+| 434. | Tymczasowe wyłączenie płatności mobilnych na urządzeniu | za wyłączenie | bez opłat |
+| 435. | Ponowna aktywacja płatności mobilnych po wymianie urządzenia | jednorazowo | 0,00 zł |
+| 436. | Płatność mobilna w kraju — transakcja w punkcie stacjonarnym | za transakcję | bez opłat |
+| 437. | Płatność mobilna w kraju — transakcja z wykorzystaniem zegarka lub opaski z modułem zbliżeniowym | za transakcję | bez opłat |
+| 438. | Dodanie karty do urządzenia noszonego (zegarek, opaska) | za rejestrację | bez opłat |
+| 439. | Płatność mobilna w automacie samoobsługowym i parkomacie | za transakcję | bez opłat |
+| 440. | Płatność mobilna z użyciem rachunku powiązanego z numerem telefonu odbiorcy | za transakcję | bez opłat |
+| 441. | Przekroczenie dziennego limitu płatności mobilnych 5 000,00 zł — odrzucenie transakcji | za transakcję | bez opłat |
+| 442. | Zwrot środków za płatność mobilną po reklamacji akceptanta | za zwrot | bez opłat |
+| 443. | Powiadomienie o płatności mobilnej — komunikat push | za powiadomienie | 0,00 zł |
+| 444. | Powiadomienie o płatności mobilnej — wiadomość tekstowa | za wiadomość | 2,00 zł |
+| 445. | Zgłoszenie nieautoryzowanej płatności mobilnej | za zgłoszenie | bez opłat |
+| 446. | Rejestracja karty debetowej w aplikacji płatności mobilnych | za rejestrację | bez opłat |
+| 447. | Rejestracja karty kredytowej w portfelu płatności mobilnych | za rejestrację | bez opłat |
+| 448. | Rejestracja karty przedpłaconej w portfelu płatności mobilnych | za rejestrację | bez opłat |
+| 449. | Usunięcie karty z portfela płatności mobilnych | za usunięcie | bez opłat |
+| 450. | Wybór karty domyślnej do płatności zbliżeniowych telefonem | za zmianę | bez opłat |
+| 451. | Płatność zbliżeniowa telefonem do kwoty 250,00 zł bez potwierdzenia | za transakcję | bez opłat |
+| 452. | Płatność zbliżeniowa telefonem powyżej kwoty 250,00 zł z potwierdzeniem w aplikacji | za transakcję | bez opłat |
+| 453. | Płatność telefonem w komunikacji miejskiej i w biletomatach | za transakcję | bez opłat |
+| 454. | Płatność telefonem w terminalu w walucie obcej w kraju | za transakcję | wg Tabeli kursów walut |
+| 455. | Weryfikacja płatności mobilnej odciskiem palca lub rozpoznawaniem twarzy | za transakcję | bez opłat |
+| 456. | Przelew na numer telefonu — wysłanie środków w aplikacji | za przelew | 0,00 zł |
+| 457. | Przelew na numer telefonu — kwota maksymalna jednej dyspozycji 1 000,00 zł | za przelew | bez opłat |
+| 458. | Przelew na numer telefonu — otrzymanie środków | za przelew | bez opłat |
+| 459. | Rejestracja numeru telefonu w usłudze przelewów na telefon | jednorazowo | bez opłat |
+| 460. | Zmiana rachunku powiązanego z numerem telefonu | za zmianę | bez opłat |
+| 461. | Wyrejestrowanie numeru telefonu z usługi przelewów na telefon | jednorazowo | bez opłat |
+| 462. | Płatność kodem w sklepie internetowym — wygenerowanie kodu w aplikacji | za transakcję | 0,00 zł |
+| 463. | Płatność kodem w sklepie internetowym — zatwierdzenie w aplikacji | za transakcję | bez opłat |
+| 464. | Płatność kodem w terminalu stacjonarnym sprzedawcy | za transakcję | bez opłat |
+| 465. | Zwrot płatności kodem na rachunek Klienta | za zwrot | bez opłat |
+| 466. | Wypłata gotówki w bankomacie kodem wygenerowanym w aplikacji | za operację | 0,00 zł |
 
 <!-- page: 25 -->
 - 1\) Opłatę pobiera się dodatkowo do kursu waluty z Tabeli kursów walut Banku; nie pobiera się jej przy płatnościach
@@ -671,7 +668,6 @@ numerem 800 000 002; blokada nie wpływa na ważność karty fizycznej.
 
 Usługi dodatkowe obejmują agregację rachunków z innych banków, archiwum dokumentów elektronicznych, dostęp do interfejsów programistycznych (API) dla dostawców usług płatniczych i klientów korporacyjnych oraz pomoc techniczną Infolinii. Wiadomości i dokumenty doręczane są w bankowości elektronicznej jako trwały nośnik; kopia papierowa jest dodatkowo płatna. Dostęp do interfejsu API w środowisku produkcyjnym jest ograniczony do 100 000 zapytań miesięcznie; zapytania ponad ten limit są rozliczane osobno. Zasady udostępniania informacji o rachunku dostawcom usług płatniczych wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
 
-<!-- page: 26 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 467. | Agregacja rachunków prowadzonych w innych bankach — pierwszy rachunek | miesięcznie | 0,00 zł |
@@ -687,56 +683,56 @@ Usługi dodatkowe obejmują agregację rachunków z innych banków, archiwum dok
 | 477. | Zdalna sesja serwisowa z udostępnieniem ekranu poza godzinami pracy zespołu wsparcia | za sesję | 49,00 zł |
 | 478. | Szkolenie dla użytkowników bankowości elektronicznej dla firm | za godzinę | 250,00 zł |
 | 479. | Dedykowany opiekun techniczny bankowości dla firm | miesięcznie | 99,00 zł |
-| 480. | Dodanie rachunku z innego banku do agregacji — pierwszy rachunek | miesięcznie | 0,00 zł |
-| 481. | Dodanie rachunku z innego banku do agregacji — każdy kolejny rachunek | miesięcznie | 2,00 zł |
-| 482. | Odświeżenie danych zagregowanych rachunków ręcznie | za odświeżenie | bez opłat |
-| 483. | Udzielenie zgody na dostęp do informacji o rachunku dostawcy usług płatniczych | za zgodę | bez opłat |
-| 484. | Odnowienie zgody na agregację po upływie okresu ważności | za odnowienie | bez opłat |
-| 485. | Kategoryzacja wydatków i raport budżetu domowego | miesięcznie | bez opłat |
-| 486. | Eksport zagregowanych danych o rachunkach do pliku | za eksport | bez opłat |
-| 487. | Zlecenie przelewu z rachunku w innym banku w ramach usługi inicjowania płatności | za zlecenie | bez opłat |
-| 488. | Potwierdzenie dostępności środków na wniosek wydawcy instrumentu płatniczego | za potwierdzenie | bez opłat |
-| 489. | Cofnięcie zgody i usunięcie zagregowanych danych | za cofnięcie | bez opłat |
-| 490. | Wyciąg z rachunku w bankowości elektronicznej — format PDF | za wyciąg | 0,00 zł |
-| 491. | Wyciąg w formacie MT940 — Klient indywidualny | miesięcznie | 25,00 zł |
-| 492. | Zestawienie opłat i prowizji za rok kalendarzowy (zgodnie z przepisami o rachunku płatniczym) | rocznie | bez opłat |
-| 493. | E-archiwum dokumentów — przechowywanie powyżej 24 miesięcy | miesięcznie | 4,00 zł |
-| 494. | Wydruk dokumentu z e-archiwum w placówce Banku | za dokument | 6,00 zł |
-| 495. | Doręczenie dokumentu z e-archiwum listem zwykłym | za dokument | 6,00 zł |
-| 496. | Przesłanie dokumentu z e-archiwum na wskazany adres e-mail | za dokument | bez opłat |
-| 497. | Elektroniczna korespondencja z Bankiem w serwisie (skrzynka odbiorcza) | miesięcznie | bez opłat |
-| 498. | Zmiana formy doręczania dokumentów z papierowej na elektroniczną | za zmianę | bez opłat |
-| 499. | Zmiana formy doręczania dokumentów z elektronicznej na papierową | za zmianę | bez opłat |
-| 500. | Pomoc telefoniczna konsultanta Infolinii w godzinach codziennie przez całą dobę | za zgłoszenie | bez opłat |
-| 501. | Zgłoszenie błędu w działaniu aplikacji mobilnej lub serwisu internetowego | za zgłoszenie | bez opłat |
-| 502. | Zdalna sesja serwisowa z udostępnieniem ekranu | za sesję | 49,00 zł |
-| 503. | Szkolenie z obsługi bankowości elektronicznej dla firm — w siedzibie Klienta | za godzinę | 250,00 zł |
-| 504. | Szkolenie z obsługi bankowości elektronicznej dla firm — online | za szkolenie | bez opłat |
-| 505. | Wsparcie wdrożeniowe — konfiguracja uprawnień, limitów i schematów akceptacji | za dzień roboczy | 800,00 zł |
-| 506. | Dedykowany opiekun techniczny bankowości dla firm | miesięcznie | 99,00 zł |
-| 507. | Priorytetowa obsługa zgłoszeń awarii w dni robocze | za zgłoszenie | wliczona w opłatę za dedykowanego opiekuna |
-| 508. | Wypowiedzenie modułu dodatkowego z zachowaniem terminu 30 dni | za wypowiedzenie | bez opłat |
-| 509. | Wiadomość kurierska z instrukcją i danymi dostępowymi do bankowości dla firm | za przesyłkę | 24,00 zł |
-| 510. | Dostęp do interfejsu API w środowisku testowym (sandbox) | miesięcznie | 0,00 zł |
-| 511. | Dostęp do interfejsu API w środowisku produkcyjnym — pakiet 100 000 zapytań miesięcznie | miesięcznie | 150,00 zł |
-| 512. | Zapytanie do interfejsu API ponad miesięczny pakiet | za zapytanie | 0,02 zł |
-| 513. | Certyfikat do uwierzytelnienia aplikacji zewnętrznej w interfejsie API | rocznie | 0,00 zł |
-| 514. | Certyfikat do podpisu zleceń przesyłanych przez interfejs API | rocznie | 120,00 zł |
-| 515. | Rejestracja aplikacji zewnętrznej w portalu dla programistów | jednorazowo | bez opłat |
-| 516. | Przegląd zgodności integracji z wymaganiami bezpieczeństwa Banku | za dzień roboczy | 800,00 zł |
-| 517. | Zapytanie o saldo rachunku przez dostawcę usług płatniczych (API) | za zapytanie | bez opłat |
-| 518. | Inicjowanie płatności przez dostawcę usług płatniczych (API) | za zlecenie | wg taryfy właściwej dla przelewu |
-| 519. | Wsparcie techniczne zespołu integracji w czasie wdrożenia interfejsu API | za godzinę | 250,00 zł |
-| 520. | Zestawienie transakcji na żądanie Klienta za okres dłuższy niż 24 miesięcy — wersja elektroniczna | za zestawienie | 4,00 zł |
-| 521. | Zestawienie transakcji na żądanie Klienta — wersja papierowa | za zestawienie | 6,00 zł |
-| 522. | Elektroniczny podpis umowy i dokumentów w serwisie (podpis autoryzowany kodem) | za dokument | bez opłat |
-| 523. | Przechowywanie podpisanych elektronicznie umów w e-archiwum | miesięcznie | bez opłat |
-| 524. | Usługa powiadomienia o fakturach i rachunkach cyklicznych (e-rachunki) | miesięcznie | bez opłat |
-| 525. | Płatność e-rachunku zaakceptowanego w serwisie | za płatność | bez opłat |
-| 526. | Konto demonstracyjne do nauki obsługi serwisu | miesięcznie | bez opłat |
-| 527. | Przeniesienie danych (lista odbiorców, szablony) z poprzedniego banku | jednorazowo | bez opłat |
-| 528. | Pomoc w przeniesieniu rachunku i zleceń stałych do Banku (usługa zmiany rachunku) | jednorazowo | bez opłat |
-| 529. | Dostęp do portalu informacyjnego i bazy wiedzy Banku | miesięcznie | bez opłat |
+| 480. | Wyciąg z rachunku w bankowości elektronicznej — format PDF | za wyciąg | 0,00 zł |
+| 481. | Wyciąg w formacie MT940 — Klient indywidualny | miesięcznie | 25,00 zł |
+| 482. | Zestawienie opłat i prowizji za rok kalendarzowy (zgodnie z przepisami o rachunku płatniczym) | rocznie | bez opłat |
+| 483. | E-archiwum dokumentów — przechowywanie powyżej 24 miesięcy | miesięcznie | 4,00 zł |
+| 484. | Wydruk dokumentu z e-archiwum w placówce Banku | za dokument | 6,00 zł |
+| 485. | Doręczenie dokumentu z e-archiwum listem zwykłym | za dokument | 6,00 zł |
+| 486. | Przesłanie dokumentu z e-archiwum na wskazany adres e-mail | za dokument | bez opłat |
+| 487. | Elektroniczna korespondencja z Bankiem w serwisie (skrzynka odbiorcza) | miesięcznie | bez opłat |
+| 488. | Zmiana formy doręczania dokumentów z papierowej na elektroniczną | za zmianę | bez opłat |
+| 489. | Zmiana formy doręczania dokumentów z elektronicznej na papierową | za zmianę | bez opłat |
+| 490. | Zestawienie transakcji na żądanie Klienta za okres dłuższy niż 24 miesięcy — wersja elektroniczna | za zestawienie | 4,00 zł |
+| 491. | Zestawienie transakcji na żądanie Klienta — wersja papierowa | za zestawienie | 6,00 zł |
+| 492. | Elektroniczny podpis umowy i dokumentów w serwisie (podpis autoryzowany kodem) | za dokument | bez opłat |
+| 493. | Przechowywanie podpisanych elektronicznie umów w e-archiwum | miesięcznie | bez opłat |
+| 494. | Usługa powiadomienia o fakturach i rachunkach cyklicznych (e-rachunki) | miesięcznie | bez opłat |
+| 495. | Płatność e-rachunku zaakceptowanego w serwisie | za płatność | bez opłat |
+| 496. | Konto demonstracyjne do nauki obsługi serwisu | miesięcznie | bez opłat |
+| 497. | Przeniesienie danych (lista odbiorców, szablony) z poprzedniego banku | jednorazowo | bez opłat |
+| 498. | Pomoc w przeniesieniu rachunku i zleceń stałych do Banku (usługa zmiany rachunku) | jednorazowo | bez opłat |
+| 499. | Dostęp do portalu informacyjnego i bazy wiedzy Banku | miesięcznie | bez opłat |
+| 500. | Dostęp do interfejsu API w środowisku testowym (sandbox) | miesięcznie | 0,00 zł |
+| 501. | Dostęp do interfejsu API w środowisku produkcyjnym — pakiet 100 000 zapytań miesięcznie | miesięcznie | 150,00 zł |
+| 502. | Zapytanie do interfejsu API ponad miesięczny pakiet | za zapytanie | 0,02 zł |
+| 503. | Certyfikat do uwierzytelnienia aplikacji zewnętrznej w interfejsie API | rocznie | 0,00 zł |
+| 504. | Certyfikat do podpisu zleceń przesyłanych przez interfejs API | rocznie | 120,00 zł |
+| 505. | Rejestracja aplikacji zewnętrznej w portalu dla programistów | jednorazowo | bez opłat |
+| 506. | Przegląd zgodności integracji z wymaganiami bezpieczeństwa Banku | za dzień roboczy | 800,00 zł |
+| 507. | Zapytanie o saldo rachunku przez dostawcę usług płatniczych (API) | za zapytanie | bez opłat |
+| 508. | Inicjowanie płatności przez dostawcę usług płatniczych (API) | za zlecenie | wg taryfy właściwej dla przelewu |
+| 509. | Wsparcie techniczne zespołu integracji w czasie wdrożenia interfejsu API | za godzinę | 250,00 zł |
+| 510. | Pomoc telefoniczna konsultanta Infolinii w godzinach codziennie przez całą dobę | za zgłoszenie | bez opłat |
+| 511. | Zgłoszenie błędu w działaniu aplikacji mobilnej lub serwisu internetowego | za zgłoszenie | bez opłat |
+| 512. | Zdalna sesja serwisowa z udostępnieniem ekranu | za sesję | 49,00 zł |
+| 513. | Szkolenie z obsługi bankowości elektronicznej dla firm — w siedzibie Klienta | za godzinę | 250,00 zł |
+| 514. | Szkolenie z obsługi bankowości elektronicznej dla firm — online | za szkolenie | bez opłat |
+| 515. | Wsparcie wdrożeniowe — konfiguracja uprawnień, limitów i schematów akceptacji | za dzień roboczy | 800,00 zł |
+| 516. | Dedykowany opiekun techniczny bankowości dla firm | miesięcznie | 99,00 zł |
+| 517. | Priorytetowa obsługa zgłoszeń awarii w dni robocze | za zgłoszenie | wliczona w opłatę za dedykowanego opiekuna |
+| 518. | Wypowiedzenie modułu dodatkowego z zachowaniem terminu 30 dni | za wypowiedzenie | bez opłat |
+| 519. | Wiadomość kurierska z instrukcją i danymi dostępowymi do bankowości dla firm | za przesyłkę | 24,00 zł |
+| 520. | Dodanie rachunku z innego banku do agregacji — pierwszy rachunek | miesięcznie | 0,00 zł |
+| 521. | Dodanie rachunku z innego banku do agregacji — każdy kolejny rachunek | miesięcznie | 2,00 zł |
+| 522. | Odświeżenie danych zagregowanych rachunków ręcznie | za odświeżenie | bez opłat |
+| 523. | Udzielenie zgody na dostęp do informacji o rachunku dostawcy usług płatniczych | za zgodę | bez opłat |
+| 524. | Odnowienie zgody na agregację po upływie okresu ważności | za odnowienie | bez opłat |
+| 525. | Kategoryzacja wydatków i raport budżetu domowego | miesięcznie | bez opłat |
+| 526. | Eksport zagregowanych danych o rachunkach do pliku | za eksport | bez opłat |
+| 527. | Zlecenie przelewu z rachunku w innym banku w ramach usługi inicjowania płatności | za zlecenie | bez opłat |
+| 528. | Potwierdzenie dostępności środków na wniosek wydawcy instrumentu płatniczego | za potwierdzenie | bez opłat |
+| 529. | Cofnięcie zgody i usunięcie zagregowanych danych | za cofnięcie | bez opłat |
 
 <!-- page: 28 -->
 - 1\) Dokumenty z okresu objętego historią operacji są dostępne w serwisie bez dodatkowych opłat; opłata dotyczy
@@ -751,7 +747,7 @@ nie pobiera opłaty za dostęp tych podmiotów do danych w zakresie, w którym u
 
 - 1\. Użyte w Taryfie określenie „miesięcznie” oznacza opłatę naliczaną za każdy rozpoczęty miesiąc korzystania z usługi i pobieraną w ostatnim dniu miesiąca kalendarzowego; „za operację” i „za przelew” — opłatę pobieraną od każdej pojedynczej dyspozycji; „rocznie” — opłatę pobieraną z góry za dwanaście miesięcy.
 - 2\. Przez „kanały elektroniczne” rozumie się serwis internetowy, aplikację mobilną Bank Przykładowy Mobile oraz interfejsy programistyczne Banku. Dyspozycje składane przez Infolinię i w placówce Banku nie są dyspozycjami składanymi w kanałach elektronicznych, nawet jeżeli są realizowane z użyciem systemu bankowości elektronicznej.
-<!-- page: 29 -->
 - 3\. Reklamacje dotyczące opłat pobranych za usługi bankowości elektronicznej Bank rozpatruje w terminie 15 dni, a w sprawach dotyczących usług płatniczych — w terminie 15 dni od dnia ich otrzymania. Reklamację można złożyć w serwisie internetowym, w placówce, na adres reklamacje@bank.example lub telefonicznie pod numerem 800 000 001.
 
+<!-- page: 29 -->
 Opłaty nie obejmują kosztów po stronie Klienta związanych z korzystaniem z usług, w tym opłat operatora telekomunikacyjnego za transmisję danych i wiadomości, które ustala operator zgodnie z własnym cennikiem.

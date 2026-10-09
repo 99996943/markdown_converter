@@ -490,7 +490,7 @@
       "template": "regulamin-promocji-konto",
       "layout": "tabela-dokument",
       "seed": 5381860506082556391,
-      "sharedWordShare": 0.145
+      "sharedWordShare": 0.142
     },
     {
       "id": "REG-06",
@@ -645,24 +645,24 @@
       "template": "regulamin-rachunku-firmowego",
       "layout": "jedna-kolumna",
       "seed": 1824829257466863290,
-      "sharedWordShare": 0.070,
+      "sharedWordShare": 0.073,
       "changes": [
         {
-          "unit": "§ 30 ust. 2",
-          "page": 14,
+          "unit": "§ 26 ust. 3",
+          "page": 13,
           "fact": "kurs.marza-przeliczen",
           "before": "1,5%",
           "after": "1,3%"
         },
         {
-          "unit": "§ 42 ust. 3 pkt 5",
+          "unit": "§ 40 ust. 3 pkt 5",
           "page": 19,
           "fact": "oplata.firma.opinia-bankowa",
           "before": "80,00 zł",
           "after": "90,00 zł"
         },
         {
-          "unit": "§ 42 ust. 3 pkt 2",
+          "unit": "§ 40 ust. 3 pkt 2",
           "page": 19,
           "fact": "oplata.firma.przelew-wysokiej-wartosci",
           "before": "25,00 zł",
@@ -690,14 +690,14 @@
           "after": "10 dni"
         },
         {
-          "unit": "§ 51 ust. 2",
-          "page": 23,
+          "unit": "§ 48 ust. 2",
+          "page": 22,
           "fact": "termin.reklamacja.maksymalny",
           "before": "60 dni",
           "after": "45 dni"
         },
         {
-          "unit": "§ 46 ust. 1",
+          "unit": "§ 43 ust. 1",
           "page": 20,
           "fact": "termin.wypowiedzenie-przez-klienta",
           "before": "30 dni",
@@ -758,6 +758,20 @@
       "seed": 17063136704830563096,
       "sharedWordShare": 0.093,
       "changes": [
+        {
+          "unit": "§ 41 ust. 3",
+          "page": 17,
+          "fact": "kurs.godzina-tabeli",
+          "before": "9:00",
+          "after": "8:30"
+        },
+        {
+          "unit": "§ 41 ust. 3",
+          "page": 17,
+          "fact": "kurs.marza-przeliczen",
+          "before": "1,5%",
+          "after": "1,3%"
+        },
         {
           "unit": "§ 48 ust. 2 pkt 2",
           "page": 19,
@@ -1586,7 +1600,7 @@
       "template": "procedura-zastrzezenia",
       "layout": "procedura",
       "seed": 18332366380230967060,
-      "sharedWordShare": 0.076
+      "sharedWordShare": 0.079
     },
     {
       "id": "PRO-10-w2",
@@ -1605,7 +1619,7 @@
       "template": "procedura-zastrzezenia",
       "layout": "procedura",
       "seed": 18332366380230967060,
-      "sharedWordShare": 0.078,
+      "sharedWordShare": 0.079,
       "changes": [
         {
           "unit": "krok 7.10",
