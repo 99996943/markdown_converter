@@ -39,6 +39,8 @@ internal sealed class TableDocumentLayout
         _w.PageEnding = Close;
         _w.LinePlaced = y =>
         {
+            // A row continued from the previous page is a row of this page: the next section is ruled off from it.
+            _rowOnPage = true;
             _lastBaseline = y;
             if (_names.Count > 0)
             {
