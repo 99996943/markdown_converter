@@ -354,6 +354,15 @@ public sealed class DocumentComposerTests
     }
 
     [Fact]
+    public void TariffBlocks_RenderedTextContainsTheirPositions()
+    {
+        CompositionResult r = DocumentComposer.Compose(Plan("taryfa-test", "taryfy", "TAR", pool: [], layout: "taryfa-siatka"), Library.Value, RunSeed, 0);
+
+        Assert.Contains("Przelew natychmiastowy", Assert.Single(r.Blocks, b => b.BlockId == "test-pozycje-a").Text, StringComparison.Ordinal);
+        Assert.Contains("Wydanie karty", Assert.Single(r.Blocks, b => b.BlockId == "test-pozycje-b").Text, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void SamePlan_ComposesIdentically()
     {
         Assert.Equal(All(Regulation()), All(Regulation()));
