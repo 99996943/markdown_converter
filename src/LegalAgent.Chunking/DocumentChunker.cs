@@ -61,12 +61,21 @@ public sealed partial class DocumentChunker : IDocumentChunker
     }
 
     /// <inheritdoc />
-    public Task<ChunkedDocument> ChunkAsync(
+    public async Task<ChunkedDocument> ChunkAsync(
         Stream pdf,
         DocumentMetadata metadata,
         ChunkingRequest? request = null,
-        CancellationToken cancellationToken = default) =>
-        throw new NotImplementedException();
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(pdf);
+
+        // Metadata and options are checked before the (much slower) conversion.
+        ValidateMetadata(metadata);
+        ResolveOptions(request);
+
+        PdfConversionResult conversion = await _converter.ConvertAsync(pdf, request?.ParserRequest, cancellationToken).ConfigureAwait(false);
+        return await ChunkAsync(conversion, metadata, request, cancellationToken).ConfigureAwait(false);
+    }
 
     private List<Chunk> Split(LegalDocument document, ChunkedDocumentHeader header, ChunkingOptions options, CancellationToken cancellationToken)
     {
