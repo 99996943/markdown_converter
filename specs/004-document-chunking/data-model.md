@@ -21,6 +21,9 @@ Błąd walidacji → `ArgumentException` (FR-206) przed jakąkolwiek pracą.
 
 ## ChunkedDocument (wynik)
 
+Implementacja: `ChunkedDocument(Header, Chunks)`, gdzie `Header` to `ChunkedDocumentHeader` z polami
+`Metadata`, `Title`, `DetectedTitle`, `SeriesKey`, `Source` (tabela poniżej); modele w `LegalAgent.Chunking.Model`.
+
 | Pole | Typ | Opis |
 |------|-----|------|
 | `Metadata` | DocumentMetadata | jak na wejściu |

@@ -50,6 +50,7 @@ public sealed class ChunkingOptions
     public RenderingOptions? Rendering { get; set; }
 }
 
+// namespace LegalAgent.Chunking.Serialization
 public static class ChunkJson
 {
     public const int SchemaVersion = 1;

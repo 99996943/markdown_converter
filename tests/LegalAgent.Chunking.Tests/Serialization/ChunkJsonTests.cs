@@ -128,6 +128,9 @@ public sealed class ChunkJsonTests
     [InlineData("\"schemaVersion\":1,", "\"schemaVersion\":2,", "schemaVersion")]
     [InlineData(",\"content\":", ",\"text\":", "content")]
     [InlineData("\"part\":2,", "\"part\":\"2\",", "part")]
+    [InlineData("\"unitKind\":\"paragraph\"", "\"unitKind\":\"\"", "unitKind")]
+    [InlineData("\"unitKind\":\"paragraph\"", "\"unitKind\":\"3\"", "unitKind")]
+    [InlineData("\"unitKind\":\"paragraph\"", "\"unitKind\":\"Paragraph\"", "unitKind")]
     public void ReadLines_InvalidRecordRaisesFormatExceptionWithTheLineNumber(string from, string to, string field)
     {
         string line = ChunkJson.ToJsonLines(new ChunkedDocument(Header, [Paragraph])).TrimEnd('\n');
