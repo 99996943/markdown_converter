@@ -1,0 +1,176 @@
+bloki:
+  - id: zamkniecie-krok-klient-przyjecie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Zidentyfikuj} kanał, w którym Klient składa wypowiedzenie, i zastosuj odpowiedni tryb przyjęcia dyspozycji."
+            podkroki:
+              - tekst: "W placówce: sprawdź dokument tożsamości Klienta, {porównaj|zestaw} dane z danymi w systemie {{fakt:zamkniecie.system.glowny}} i {zaproponuj|zaoferuj} wypełnienie formularza {{fakt:zamkniecie.formularz.wypowiedzenie}}."
+              - tekst: "W bankowości elektronicznej: {przyjmij|zarejestruj} dyspozycję złożoną w serwisie, o ile Klient {uwierzytelnił|potwierdził} ją zgodnie z zasadami silnego uwierzytelnienia; pracownik nie ingeruje w jej treść."
+              - tekst: "Korespondencyjnie: {zarejestruj|wpisz do rejestru} pismo w dniu wpływu, najpóźniej następnego dnia roboczego (termin: {{fakt:zamkniecie.termin.rejestracja-korespondencji}}), i przekaż je do jednostki „{{fakt:jednostka.operacje}}”."
+              - tekst: "Telefonicznie: wypowiedzenia nie przyjmuje się przez Infolinię; {poinformuj|powiadom} Klienta o dostępnych kanałach i {wyślij|przekaż} mu na trwałym nośniku odnośnik do formularza."
+          - tekst: "{Ustal|Sprawdź}, czy osoba składająca oświadczenie jest {uprawniona|upoważniona} do złożenia wypowiedzenia."
+            podkroki:
+              - tekst: "Przy rachunku indywidualnym {potwierdź|upewnij się}, że wypowiedzenie składa Posiadacz albo pełnomocnik z umocowaniem obejmującym zamknięcie rachunku."
+              - tekst: "Przy rachunku osoby małoletniej oświadczenie składa przedstawiciel ustawowy; w razie {braku zgody|sprzeciwu} drugiego rodzica {przekaż|skieruj} sprawę kierownikowi placówki."
+              - tekst: "Przy rachunku wspólnym i firmowym postępuj zgodnie z częścią „Przypadki szczególne”."
+          - tekst: "{Poinformuj|Powiadom} Klienta o terminie wypowiedzenia i skutkach rozwiązania umowy."
+            podkroki:
+              - tekst: "Wskaż, że termin wypowiedzenia {wynosi|jest równy} {{fakt:termin.wypowiedzenie-przez-klienta}}, liczony od dnia doręczenia oświadczenia Bankowi, chyba że umowa stanowi inaczej."
+              - tekst: "Poinformuj, że strony {mogą|mają prawo} uzgodnić krótszy termin lub rozwiązanie umowy za porozumieniem w wybranym przez Klienta dniu."
+              - tekst: "Przypomnij, że do dnia zamknięcia Klient ponosi opłaty za prowadzenie rachunku i produktów powiązanych oraz że po zamknięciu nie będzie mógł korzystać z kart, bankowości elektronicznej ani z historii rachunku w serwisie."
+          - tekst: "Wprowadź dyspozycję do systemu {{fakt:zamkniecie.system.glowny}} i rejestr zamknięć {{fakt:zamkniecie.system.rejestr}}."
+            podkroki:
+              - tekst: "{Wpisz|Odnotuj} datę złożenia oświadczenia, planowaną datę rozwiązania umowy i kanał złożenia."
+              - tekst: "{Zeskanuj|Zdigitalizuj} formularz i dokument potwierdzający umocowanie i {załącz|dołącz} je do sprawy w elektronicznym archiwum dokumentów {{fakt:zamkniecie.system.archiwum}}."
+
+  - id: zamkniecie-krok-klient-weryfikacja
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Zweryfikuj dyspozycję w terminie {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}} od dnia jej przyjęcia."
+            podkroki:
+              - tekst: "{Sprawdź|Zbadaj} kompletność formularza i zgodność podpisu z wzorem w aktach Klienta."
+              - tekst: "W razie braków {wezwij Klienta do uzupełnienia|poproś Klienta o uzupełnienie} na trwałym nośniku, wyznaczając termin nie krótszy niż {{fakt:termin.doreczenie-korespondencji}}; bieg terminu wypowiedzenia nie ulega zawieszeniu, jeżeli oświadczenie jest co do istoty skuteczne."
+          - tekst: "Zbadaj, czy na rachunku występują okoliczności wpływające na możliwość zamknięcia."
+            podkroki:
+              - tekst: "{Sprawdź|Zweryfikuj} w rejestrze tytułów egzekucyjnych {{fakt:zamkniecie.system.zajecia}}, czy rachunek jest objęty zajęciem lub blokadą, i {odnotuj|zapisz} ich rodzaj oraz organ."
+              - tekst: "{Sprawdź|Ustal} saldo, naliczone odsetki, opłaty niepobrane oraz {ewentualne|ewentualnie istniejące} zadłużenie w rachunku (debet) lub z tytułu kart."
+              - tekst: "Sprawdź, czy rachunek jest rachunkiem rozliczeniowym dla kredytu, lokaty lub umowy z rabatem uzależnionym od utrzymania rachunku."
+          - tekst: "Poinformuj Klienta o wyniku weryfikacji."
+            podkroki:
+              - tekst: "Jeżeli nie ma przeszkód, {potwierdź|poświadcz} przyjęcie wypowiedzenia i {wskaż|podaj} datę rozwiązania umowy."
+              - tekst: "Jeżeli istnieją przeszkody (np. zadłużenie, zajęcie), {wskaż|wyjaśnij} Klientowi, jakie czynności {musi|powinien} wykonać przed zamknięciem rachunku."
+          - tekst: "{Wydaj|Przekaż} lub wyślij Klientowi potwierdzenie przyjęcia wypowiedzenia w terminie {{fakt:zamkniecie.termin.potwierdzenie}} od dnia jego otrzymania."
+            podkroki:
+              - tekst: "Potwierdzenie zawiera numer rachunku, datę wpływu oświadczenia, datę rozwiązania umowy, wykaz produktów, które wygasają, oraz informację o sposobie rozliczenia salda."
+              - tekst: "Potwierdzenie {wysyła się|przekazuje się} na trwałym nośniku, a jego kopię {dołącza się|zachowuje się} w aktach sprawy."
+
+  - id: zamkniecie-krok-bank-decyzja
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "{Przyjmij|Rozpatruj} wniosek o wypowiedzenie umowy przez Bank wyłącznie od jednostek uprawnionych do jego złożenia."
+            podkroki:
+              - tekst: "Wnioski {mogą składać|składają}: „{{fakt:jednostka.zgodnosc}}” (podejrzenie nadużyć, naruszenie przepisów o przeciwdziałaniu praniu pieniędzy), „{{fakt:jednostka.ryzyko}}” (zadłużenie i ryzyko kredytowe), „{{fakt:jednostka.operacje}}” (nieaktywność) oraz „{{fakt:jednostka.bezpieczenstwo}}”."
+              - tekst: "Wniosek {zawiera|obejmuje} numer rachunku, dane Klienta, przyczynę wypowiedzenia i dokumenty ją {potwierdzające|uzasadniające}."
+          - tekst: "{Sprawdź|Zbadaj}, czy zachodzi ważna przyczyna wypowiedzenia {przewidziana|określona} w umowie lub regulaminie."
+            podkroki:
+              - tekst: "Do przyczyn {należą|zalicza się} w szczególności: rażące naruszenie umowy lub regulaminu, podanie nieprawdziwych danych, wykorzystywanie rachunku do działań sprzecznych z prawem, brak operacji przez okres {{fakt:termin.rachunek-osobisty.nieaktywnosc}} (rachunki osobiste) lub {{fakt:termin.firma.nieaktywnosc}} (rachunki firmowe) oraz utrata przez Klienta zdolności do czynności prawnych bez ustanowienia przedstawiciela."
+              - tekst: "{Nie wypowiada się|Nie wolno wypowiadać} umowy z powodów niewymienionych w umowie ani z powodów dyskryminujących, a także w odpowiedzi na złożoną przez Klienta reklamację."
+          - tekst: "{Zbadaj|Ustal}, czy zachowanie terminu wypowiedzenia nie jest wyłączone."
+            podkroki:
+              - tekst: "Terminu {{fakt:termin.wypowiedzenie-przez-bank}} nie stosuje się w przypadkach przewidzianych w umowie dla rozwiązania bez zachowania terminu (m.in. ogłoszenie upadłości Posiadacza, nakaz organu publicznego) — {wymagana jest|konieczna jest} wówczas opinia jednostki „{{fakt:jednostka.prawny}}”."
+              - tekst: "W przypadku wypowiedzenia z przyczyn AML decyzję podejmuje „{{fakt:jednostka.zgodnosc}}” i nie {informuje się|powiadamia się} Klienta o przyczynach, jeżeli {informowanie|ich ujawnienie} byłoby sprzeczne z przepisami."
+          - tekst: "{Zatwierdź|Zaakceptuj} decyzję zgodnie z poziomami uprawnień."
+            podkroki:
+              - tekst: "Rachunki konsumenckie: kierownik właściwego zespołu w jednostce „{{fakt:jednostka.operacje}}” z akceptacją jednostki „{{fakt:jednostka.zgodnosc}}”."
+              - tekst: "Rachunki firmowe oraz rachunki z saldem powyżej {{fakt:zamkniecie.limit.wyplata-druga-osoba}}: dodatkowo dyrektor jednostki „{{fakt:jednostka.operacje}}”."
+
+  - id: zamkniecie-krok-bank-wypowiedzenie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "{Przygotuj|Sporządź} wypowiedzenie według wzoru zatwierdzonego przez jednostkę „{{fakt:jednostka.prawny}}”."
+            podkroki:
+              - tekst: "Wypowiedzenie {sporządza się|wystawia się} w postaci papierowej lub na trwałym nośniku i {zawiera|musi zawierać}: oznaczenie umowy, datę, termin wypowiedzenia, uzasadnienie (z zastrzeżeniem przepisów o przeciwdziałaniu praniu pieniędzy), pouczenie o skutkach oraz dane kontaktowe Banku."
+              - tekst: "W uzasadnieniu {wskazuje się|podaje się} konkretną przyczynę z umowy oraz fakty, które ją {potwierdzają|uzasadniają}."
+          - tekst: "{Wyślij|Doręcz} wypowiedzenie Klientowi."
+            podkroki:
+              - tekst: "{Wysyłka|Doręczenie} następuje listem poleconym na adres korespondencyjny Klienta albo, jeżeli Klient wyraził na to zgodę, na trwałym nośniku w bankowości elektronicznej."
+              - tekst: "{Zachowaj|Zabezpiecz} dowód nadania i {odnotuj|wpisz} datę wysyłki w rejestrze zamknięć {{fakt:zamkniecie.system.rejestr}}; dalsze zasady doręczeń opisano w części „Postanowienia końcowe”."
+              - tekst: "Termin wypowiedzenia {{fakt:termin.wypowiedzenie-przez-bank}} {biegnie|liczy się} od dnia doręczenia wypowiedzenia Klientowi albo od dnia, w którym uznaje się je za doręczone (po upływie {{fakt:termin.doreczenie-korespondencji}} od pierwszego awizowania)."
+          - tekst: "{Zablokuj|Wyłącz} możliwość zawierania nowych umów i zwiększania zobowiązań."
+            podkroki:
+              - tekst: "Od dnia doręczenia wypowiedzenia nie {udziela się|oferuje się} Klientowi nowych produktów związanych z rachunkiem ani nie podwyższa limitów."
+              - tekst: "Rachunek pozostaje czynny do dnia rozwiązania umowy, chyba że „{{fakt:jednostka.bezpieczenstwo}}” lub „{{fakt:jednostka.zgodnosc}}” zadecyduje o ograniczeniu dysponowania środkami na podstawie przepisów."
+          - tekst: "{Poinformuj|Powiadom} Klienta o obowiązkach w okresie wypowiedzenia."
+            podkroki:
+              - tekst: "Klient {ma|jest obowiązany} wskazać rachunek, na który zostanie przekazane saldo, oraz zwrócić karty."
+              - tekst: "Klient ma uregulować zobowiązania wobec Banku, w tym ewentualny debet."
+              - tekst: "Klient {może|ma prawo} skorzystać z usługi zmiany banku (zob. odrębną część procedury)."
+
+  - id: zamkniecie-krok-produkty
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "{Sporządź|Przygotuj} wykaz produktów powiązanych z rachunkiem na podstawie danych z systemu {{fakt:zamkniecie.system.glowny}}."
+            podkroki:
+              - tekst: "Wykaz {obejmuje|zawiera}: karty debetowe (także dodatkowe i wydane pełnomocnikom), limit w rachunku, zlecenia stałe, polecenia zapłaty, dostęp do bankowości elektronicznej i płatności mobilnych, powiadomienia SMS, subkonta, rachunek oszczędnościowy."
+              - tekst: "Wykaz {przekaż|przedstaw} Klientowi do wglądu i potwierdzenia."
+          - tekst: "Rozlicz karty płatnicze."
+            podkroki:
+              - tekst: "{Zastrzeż|Zablokuj} kartę w dniu rozwiązania umowy lub wcześniej na żądanie Klienta; od chwili zastrzeżenia karta nie może być używana."
+              - tekst: "Klient zwraca kartę lub niszczy ją w obecności pracownika; w razie braku zwrotu karta zostaje {zablokowana|zastrzeżona}, a Klient {ma obowiązek|jest zobowiązany} ją zwrócić w ciągu {{fakt:zamkniecie.termin.zwrot-karty}}."
+              - tekst: "{Poinformuj|Uprzedź} Klienta, że transakcje wykonane przed zastrzeżeniem karty, a rozliczone później, obciążą rachunek; środki na ich pokrycie pozostają zablokowane przez okres {{fakt:termin.karta-debetowa.blokada-autoryzacji}}."
+          - tekst: "Rozlicz limit w rachunku (debet)."
+            podkroki:
+              - tekst: "{Ustal|Oblicz} wysokość wykorzystanego limitu (limit maksymalny: {{fakt:limit.rachunek-osobisty.debet}}) wraz z odsetkami według stawki {{fakt:oprocentowanie.debet}} w skali roku."
+              - tekst: "{Poinformuj Klienta|Wyjaśnij Klientowi}, że debet podlega spłacie najpóźniej w dniu rozwiązania umowy, a umowa o limit wygasa z dniem zamknięcia rachunku."
+          - tekst: "{Wygaś|Zakończ} zlecenia stałe i polecenia zapłaty."
+            podkroki:
+              - tekst: "Zlecenia stałe {wygaszaj|zamykaj} w ciągu {{fakt:termin.rachunek-osobisty.zlecenie-stale-zmiana}} od dyspozycji Klienta, nie później niż w dniu poprzedzającym zamknięcie rachunku."
+              - tekst: "Przy poleceniach zapłaty {przekaż|wydaj} Klientowi listę odbiorców i {poinformuj|uprzedź} o konieczności zmiany rachunku do rozliczeń z odbiorcami."
+          - tekst: "{Wyłącz|Zamknij} usługi dodatkowe i bankowość elektroniczną."
+            podkroki:
+              - tekst: "Dostęp do bankowości elektronicznej {wyłącz|zablokuj} po zamknięciu rachunku, jeżeli Klient nie korzysta z niej do obsługi innych produktów."
+              - tekst: "Przed wyłączeniem {poinformuj|uprzedź} Klienta o możliwości pobrania wyciągów i historii rachunku; wyciąg papierowy za okres końcowy jest dostępny za opłatą {{fakt:oplata.wyciag-papierowy}}."
+
+  - id: zamkniecie-krok-rozliczenie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Oblicz} saldo końcowe rachunku na dzień rozwiązania umowy."
+            podkroki:
+              - tekst: "Naliczone odsetki od środków na rachunku (stawka {{fakt:oprocentowanie.rachunek-osobisty}} w skali roku dla rachunków osobistych) {dopisz|doliczaj} do salda w dniu zamknięcia."
+              - tekst: "{Pomniejsz|Zmniejsz} saldo o należne opłaty, prowizje i zobowiązania wobec Banku, w tym opłatę za zamknięcie, jeżeli jest należna (rachunek osobisty: {{fakt:oplata.rachunek-osobisty.zamkniecie}}, rachunek firmowy: {{fakt:oplata.firma.zamkniecie-rachunku}})."
+              - tekst: "Opłat okresowych pobranych z góry nie dzieli się proporcjonalnie, {chyba że|o ile} umowa lub taryfa nie stanowi inaczej; opłaty podlegające zwrotowi Bank zwraca w terminie {{fakt:termin.zwrot-oplat}}."
+          - tekst: "{Rozlicz|Wypłać} saldo dodatnie."
+            podkroki:
+              - tekst: "Saldo {wypłaca się|przekazuje się} w terminie {{fakt:termin.rachunek-osobisty.zamkniecie-rozliczenie}} (rachunki osobiste) lub {{fakt:termin.firma.zamkniecie-rozliczenie}} (rachunki firmowe) od dnia rozwiązania umowy; Bank {dąży do wypłaty|zapewnia wypłatę} w ciągu {{fakt:zamkniecie.termin.wyplata-salda}} od zgłoszenia przez Klienta dyspozycji wypłaty."
+              - tekst: "Wypłata {następuje|jest realizowana} przelewem na rachunek wskazany przez Klienta (bez opłaty: {{fakt:zamkniecie.oplata.przelew-salda-na-rachunek-zewnetrzny}}) lub w kasie placówki, gdy saldo nie przekracza {{fakt:zamkniecie.limit.wyplata-gotowkowa-salda}}."
+              - tekst: "Wypłata powyżej {{fakt:zamkniecie.limit.wyplata-druga-osoba}} wymaga akceptacji drugiej osoby (zasada dwóch par oczu)."
+          - tekst: "Rozlicz saldo ujemne."
+            podkroki:
+              - tekst: "{Wezwij|Wezwij na piśmie} Klienta do zapłaty w terminie {{fakt:zamkniecie.termin.wezwanie-do-zaplaty}} i poinformuj o odsetkach za opóźnienie ({{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku) oraz o opłacie za upomnienie ({{fakt:oplata.upomnienie}})."
+              - tekst: "Po bezskutecznym upływie terminu {przekaż|skieruj} sprawę do jednostki „{{fakt:jednostka.ryzyko}}”; rachunek zamknij technicznie, a należność przenieś na rachunek wierzytelności."
+          - tekst: "Zamknij rachunek w systemie."
+            podkroki:
+              - tekst: "Zamknięcie {wykonuje|przeprowadza} „{{fakt:jednostka.operacje}}” po sprawdzeniu, że saldo wynosi zero, a produkty powiązane są zamknięte."
+              - tekst: "Jeżeli saldo nie wynosi zero z przyczyn niezależnych od Banku (np. brak wskazania rachunku), {przenieś|przeksięguj} środki na rachunek techniczny {{fakt:zamkniecie.system.rachunek-techniczny-numer}} i zamknij rachunek; środki przechowuje się przez okres {{fakt:zamkniecie.termin.rachunek-techniczny}}."
+          - tekst: "{Potwierdź|Poświadcz} zamknięcie Klientowi w terminie {{fakt:zamkniecie.termin.potwierdzenie}} od dnia zamknięcia."
+
+  - id: zamkniecie-krok-zmiana-banku
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - kroki:
+          - tekst: "{Poinformuj|Powiadom} Klienta o usłudze zmiany banku."
+            podkroki:
+              - tekst: "Usługa polega na tym, że bank, do którego Klient przenosi rachunek, na podstawie pełnomocnictwa Klienta {występuje|zwraca się} do Banku o przekazanie informacji o zleceniach stałych i poleceniach zapłaty oraz o przelanie salda."
+              - tekst: "Usługa dotyczy rachunków osobistych konsumentów; przy rachunkach firmowych stosuje się tryb standardowy z ustaleniem zakresu w porozumieniu."
+          - tekst: "{Przyjmij|Odbierz} od nowego banku wniosek o przeniesienie rachunku (formularz {{fakt:zamkniecie.formularz.zmiana-banku}}) i potwierdź jego autentyczność."
+            podkroki:
+              - tekst: "{Sprawdź|Zweryfikuj}, czy pełnomocnictwo zawiera zakres: przekazanie wykazu zleceń stałych i poleceń zapłaty, przelanie salda, zamknięcie rachunku."
+              - tekst: "Sprawdź, czy pełnomocnictwo jest opatrzone podpisem lub potwierdzone w sposób elektroniczny zgodnie z umową."
+          - tekst: "{Przekaż|Udostępnij} nowemu bankowi wymagane informacje w terminie {{fakt:zamkniecie.termin.zmiana-banku-przekazanie}} od dnia otrzymania wniosku."
+            podkroki:
+              - tekst: "Przekaż wykaz aktywnych zleceń stałych i poleceń zapłaty oraz informacje o regularnych wpływach z ostatnich {{fakt:zamkniecie.termin.przekierowanie-wplywow}}."
+              - tekst: "Przekaż informację o saldzie, rozliczonych i nierozliczonych operacjach oraz zobowiązaniach."
+          - tekst: "W dniu wskazanym przez Klienta {wykonaj|zrealizuj} przelew salda i zamknij rachunek."
+            podkroki:
+              - tekst: "Zlecenia stałe wygaś w ciągu {{fakt:zamkniecie.termin.zmiana-banku-zlecenia}} od dnia przekazania informacji nowemu bankowi."
+              - tekst: "Wpływy na zamknięty rachunek przez okres {{fakt:zamkniecie.termin.przekierowanie-wplywow}} {przekazuj|przekierowuj} na rachunek w nowym banku, {informując|powiadamiając} nadawcę o zmianie."

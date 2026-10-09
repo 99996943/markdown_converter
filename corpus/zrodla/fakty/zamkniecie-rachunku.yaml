@@ -1,0 +1,200 @@
+fakty:
+  # --- terminy
+  - id: zamkniecie.termin.potwierdzenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2027-01-01
+        wartosc: 2
+    alternatywy: [5, 7]
+  - id: zamkniecie.termin.rejestracja-korespondencji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 1
+    alternatywy: [2, 3]
+  - id: zamkniecie.termin.weryfikacja-dyspozycji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [1, 5]
+  - id: zamkniecie.termin.wyplata-salda
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2027-01-01
+        wartosc: 2
+    alternatywy: [5, 7]
+  - id: zamkniecie.termin.zawiadomienie-nieaktywnosc
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: zamkniecie.termin.wezwanie-do-zaplaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2026-04-01
+        wartosc: 7
+    alternatywy: [21, 30]
+  - id: zamkniecie.termin.zwrot-karty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+  - id: zamkniecie.termin.zmiana-banku-przekazanie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 dni roboczych"
+      - od: 2027-01-01
+        wartosc: "3 dni roboczych"
+    alternatywy: ["10 dni roboczych"]
+  - id: zamkniecie.termin.zmiana-banku-zlecenia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "2 dni roboczych"
+    alternatywy: ["3 dni roboczych", "5 dni roboczych"]
+  - id: zamkniecie.termin.zajecie-uwolnienie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+  - id: zamkniecie.termin.kontrola-wyrywkowa
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+    alternatywy: [3, 10]
+  - id: zamkniecie.termin.rachunek-techniczny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 lat"
+    alternatywy: ["5 lat", "6 lat"]
+  - id: zamkniecie.termin.archiwum-dokumentacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 lat"
+      - od: 2027-01-01
+        wartosc: "12 lat"
+    alternatywy: ["5 lat"]
+  - id: zamkniecie.termin.archiwum-aml
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["10 lat"]
+  - id: zamkniecie.termin.przeglad-rachunkow-nieaktywnych
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "co miesiąc, do piątego dnia roboczego"
+    alternatywy: ["co kwartał", "co tydzień"]
+  - id: zamkniecie.termin.wspolny-zgloszenie-sprzeciwu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+  - id: zamkniecie.termin.zgon-zamkniecie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+
+  # --- opłaty
+  - id: zamkniecie.oplata.zamkniecie-przed-okresem
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2027-01-01
+        wartosc: 150.00
+    alternatywy: [0.00, 200.00]
+  - id: zamkniecie.oplata.wyplata-z-rachunku-technicznego
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+      - od: 2027-01-01
+        wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: zamkniecie.oplata.potwierdzenie-zamkniecia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [20.00]
+  - id: zamkniecie.oplata.przelew-salda-na-rachunek-zewnetrzny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [8.00]
+
+  # --- limity i progi
+  - id: zamkniecie.limit.wyplata-gotowkowa-salda
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5000.00
+      - od: 2027-01-01
+        wartosc: 3000.00
+    alternatywy: [10000.00]
+  - id: zamkniecie.limit.wyplata-druga-osoba
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100000.00
+    alternatywy: [50000.00, 200000.00]
+  - id: zamkniecie.limit.saldo-bagatelne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1.00
+    alternatywy: [5.00, 0.50]
+  - id: zamkniecie.procent.kontrola-prob
+    rodzaj: procent
+    wartosci:
+      - wartosc: 10
+      - od: 2027-01-01
+        wartosc: 15
+    alternatywy: [5, 20]
+
+  # --- oznaczenia formularzy i systemów
+  - id: zamkniecie.formularz.wypowiedzenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-31"
+    alternatywy: ["F-OR-41"]
+  - id: zamkniecie.formularz.rozliczenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-32"
+    alternatywy: ["F-OR-42"]
+  - id: zamkniecie.formularz.zmiana-banku
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-33"
+  - id: zamkniecie.formularz.wspolny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-34"
+  - id: zamkniecie.formularz.zajecie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-OR-35"
+  - id: zamkniecie.system.glowny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+  - id: zamkniecie.system.rejestr
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "RZR"
+  - id: zamkniecie.system.archiwum
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "EAD"
+  - id: zamkniecie.system.zajecia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "RTE"
+  - id: zamkniecie.system.rachunek-techniczny-numer
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "00 0000 0000 0000 0000 0000 0000"
+  - id: zamkniecie.termin.przekierowanie-wplywow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 miesięcy"
+      - od: 2027-01-01
+        wartosc: "6 miesięcy"
+    alternatywy: ["12 miesięcy"]

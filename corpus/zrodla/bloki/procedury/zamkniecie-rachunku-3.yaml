@@ -1,0 +1,155 @@
+bloki:
+  - id: zamkniecie-szczegolne-nieaktywne
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "**Rachunki nieaktywne i środki niepodjęte.** „{{fakt:jednostka.operacje}}” {prowadzi|wykonuje} przegląd rachunków ({{fakt:zamkniecie.termin.przeglad-rachunkow-nieaktywnych}}), na których nie wykonano operacji zleconej przez Posiadacza w okresie {{fakt:termin.rachunek-osobisty.nieaktywnosc}} (rachunki osobiste), {{fakt:termin.firma.nieaktywnosc}} (rachunki firmowe) albo {{fakt:termin.rachunek-oszczednosciowy.nieaktywnosc}} (rachunki oszczędnościowe). Do nieaktywności nie zalicza się naliczenia odsetek, pobrania opłat ani zapisów wykonanych z inicjatywy Banku."
+      - ustep: "Wobec rachunku nieaktywnego postępuje się w następujący sposób:"
+        punkty:
+          - "przed wypowiedzeniem umowy {należy|trzeba} próbować nawiązać kontakt z Klientem co najmniej dwoma kanałami (korespondencja, wiadomość w bankowości elektronicznej, kontakt telefoniczny), a dowody prób kontaktu załącza się do sprawy;"
+          - "o zamiarze wypowiedzenia umowy Klienta zawiadamia się na piśmie co najmniej na {{fakt:zamkniecie.termin.zawiadomienie-nieaktywnosc}} przed upływem terminu wypowiedzenia {{fakt:termin.wypowiedzenie-przez-bank}};"
+          - "jeżeli na rachunku znajdują się środki, a opłata za prowadzenie rachunku ({{fakt:oplata.prowadzenie-rachunku}} miesięcznie) nie pochłania całego salda, rachunek {nie jest zamykany|pozostaje czynny} do chwili ich wyczerpania, chyba że Klient zażąda zamknięcia;"
+          - "saldo niższe niż {{fakt:zamkniecie.limit.saldo-bagatelne}} {księguje się|ewidencjonuje się} na rachunku technicznym bez dalszych czynności windykacyjnych."
+      - akapit: "Środki niepodjęte po zamknięciu rachunku, których Klient nie odebrał mimo wezwania, przenosi się na rachunek techniczny {{fakt:zamkniecie.system.rachunek-techniczny-numer}} i przechowuje przez okres {{fakt:zamkniecie.termin.rachunek-techniczny}}. Klient lub jego następca prawny {może|ma prawo} zgłosić się po wypłatę w dowolnym czasie w tym okresie; wypłata wymaga weryfikacji tożsamości i podlega opłacie {{fakt:zamkniecie.oplata.wyplata-z-rachunku-technicznego}}. Po upływie okresu przechowywania „{{fakt:jednostka.prawny}}” wydaje decyzję co do dalszego postępowania zgodnie z przepisami."
+
+  - id: zamkniecie-szczegolne-zajecia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "**Rachunki objęte zajęciem lub blokadą.** Rachunek, na którym ustanowiono zajęcie egzekucyjne, administracyjne lub zabezpieczenie, {nie może|nie powinien} być zamknięty ani wypłacony w części objętej zajęciem, dopóki nie wygaśnie tytuł do dokonania zajęcia lub organ nie zwolni środków. Fakt zajęcia i jego rodzaj ewidencjonuje się w rejestrze tytułów egzekucyjnych {{fakt:zamkniecie.system.zajecia}}."
+      - ustep: "W przypadku zajęcia pracownik:"
+        punkty:
+          - "nie przyjmuje dyspozycji wypłaty salda do wysokości kwoty objętej zajęciem i informuje Klienta o ograniczeniu na piśmie, na formularzu {{fakt:zamkniecie.formularz.zajecie}};"
+          - "{zawiadamia|powiadamia} „{{fakt:jednostka.prawny}}” o wniosku Klienta o zamknięcie rachunku i oczekuje na stanowisko w terminie {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}};"
+          - "{przyjmuje|rejestruje} wypowiedzenie umowy, lecz odracza zamknięcie rachunku do dnia, w którym zajęcie zostanie zwolnione lub wykonane;"
+          - "po wykonaniu zajęcia lub jego zwolnieniu rozlicza pozostałe saldo w terminie {{fakt:zamkniecie.termin.zajecie-uwolnienie}} od dnia otrzymania zawiadomienia organu."
+      - akapit: "Opłata za czynności związane z zajęciem egzekucyjnym wynosi {{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}; nie jest ona doliczana do salda po zamknięciu rachunku, jeżeli została pobrana wcześniej. Rachunku objętego blokadą na podstawie przepisów o przeciwdziałaniu praniu pieniędzy nie zamyka się bez zgody jednostki „{{fakt:jednostka.zgodnosc}}”. Informacji o przyczynach blokady nie ujawnia się Klientowi, jeżeli zakazują tego przepisy."
+
+  - id: zamkniecie-szczegolne-wspolne
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "**Rachunki wspólne i osoby małoletnie.** Wypowiedzenie umowy rachunku wspólnego {może być|może zostać} złożone przez każdego ze współposiadaczy, chyba że umowa stanowi inaczej. Bank niezwłocznie, nie później niż w terminie {{fakt:zamkniecie.termin.wspolny-zgloszenie-sprzeciwu}}, {informuje|zawiadamia} pozostałych współposiadaczy o złożeniu wypowiedzenia, na formularzu {{fakt:zamkniecie.formularz.wspolny}}."
+      - ustep: "Przy rachunku wspólnym obowiązują następujące zasady:"
+        punkty:
+          - "{po otrzymaniu|w razie otrzymania} wypowiedzenia od jednego ze współposiadaczy zablokuj możliwość zaciągania nowych zobowiązań (np. debet), a pozostałe operacje realizuj do dnia rozwiązania umowy;"
+          - "saldo wypłaca się zgodnie z dyspozycją złożoną łącznie przez wszystkich współposiadaczy, a w razie jej braku — na rachunek wskazany przez wszystkich lub w częściach równych, jeżeli umowa nie stanowi inaczej;"
+          - "w razie sporu między współposiadaczami co do podziału środków saldo przechowuje się na rachunku technicznym do czasu wskazania sposobu rozliczenia, rozstrzygnięcia sądu albo ugody;"
+          - "karty wydane do rachunku wspólnego zwracają ich użytkownicy; zwrotu karty drugiego współposiadacza nie można uzależniać od jego obecności w placówce."
+      - akapit: "Rachunek osoby małoletniej zamyka przedstawiciel ustawowy. Jeżeli małoletni ukończył {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}} i dysponuje rachunkiem w ramach ograniczonej zdolności do czynności prawnych, wypowiedzenie wymaga zgody przedstawiciela ustawowego, a saldo przekazuje się na rachunek wskazany przez przedstawiciela, chyba że sąd zdecyduje inaczej. W razie śmierci Posiadacza rachunku indywidualnego umowa wygasa, a zamknięcie rachunku następuje po ustaleniu osób uprawnionych i w terminie {{fakt:zamkniecie.termin.zgon-zamkniecie}} od dnia przedłożenia kompletu dokumentów, z uwzględnieniem dyspozycji na wypadek śmierci."
+
+  - id: zamkniecie-szczegolne-firmowe
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "**Rachunki firmowe.** Wypowiedzenie umowy rachunku firmowego {składa|podpisuje} osoba lub osoby uprawnione do reprezentacji Posiadacza, zgodnie z odpisem z właściwego rejestru, na formularzu {{fakt:zamkniecie.formularz.wypowiedzenie}} z podpisami wymaganymi dla składania oświadczeń woli. Pracownik weryfikuje umocowanie na podstawie aktualnego odpisu lub informacji z rejestru, w terminie {{fakt:termin.firma.weryfikacja-dokumentow}}."
+      - ustep: "Przy zamykaniu rachunku firmowego dodatkowo:"
+        punkty:
+          - "{sprawdza się|ustala się}, czy Posiadacz nie jest w stanie likwidacji lub upadłości — w takim przypadku sprawę przekazuje się do jednostki „{{fakt:jednostka.prawny}}”, a rachunek rozlicza zgodnie z przepisami i postanowieniami sądu lub syndyka;"
+          - "weryfikuje się, czy do rachunku nie są przypisane rachunki pomocnicze, rachunki VAT, rachunki powiernicze lub zabezpieczenia umów kredytowych, które wymagają osobnego rozliczenia;"
+          - "przed zamknięciem rachunku {należy|trzeba} rozliczyć potrącenia na rzecz Banku, zawiadamiając Posiadacza o potrąceniu w terminie {{fakt:termin.firma.potracenie-zawiadomienie}};"
+          - "pozostałe saldo wypłaca się w terminie {{fakt:termin.firma.zamkniecie-rozliczenie}} od dnia rozwiązania umowy wyłącznie przelewem na rachunek Posiadacza prowadzony w Banku lub w innym banku, z zastrzeżeniem odstępstw w razie likwidacji;"
+          - "opłata za zamknięcie wynosi {{fakt:oplata.firma.zamkniecie-rachunku}} i jest pobierana z salda rachunku w dniu zamknięcia; opłaty nie pobiera się, jeżeli zamknięcie następuje z inicjatywy Banku."
+      - akapit: "Przy zamknięciu rachunku firmowego w ciągu pierwszych sześciu miesięcy od jego otwarcia „{{fakt:jednostka.operacje}}” ocenia, czy w grę nie wchodzi nadużycie warunków promocji; w razie potwierdzenia dodatkowo pobiera się opłatę za zamknięcie przed upływem okresu minimalnego wynoszącą {{fakt:zamkniecie.oplata.zamkniecie-przed-okresem}}, o ile umowa to przewiduje."
+
+  - id: zamkniecie-kontrola
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Kontrola stosowania procedury {jest prowadzona|odbywa się} na trzech poziomach. Pierwszy poziom stanowi samokontrola pracownika wykonującego czynności oraz weryfikacja kierownika placówki zgodnie z listą kontrolną stanowiącą załącznik do procedury. Drugi poziom stanowi kontrola wyrywkowa prowadzona przez jednostkę „{{fakt:jednostka.operacje}}”, a trzeci — niezależna kontrola „{{fakt:jednostka.zgodnosc}}”."
+      - ustep: "Kontrola wyrywkowa obejmuje:"
+        punkty:
+          - "co miesiąc nie mniej niż {{fakt:zamkniecie.procent.kontrola-prob}} zamkniętych rachunków wybranych losowo z rejestru zamknięć {{fakt:zamkniecie.system.rejestr}};"
+          - "wszystkie zamknięcia rachunków z saldem przekraczającym {{fakt:zamkniecie.limit.wyplata-druga-osoba}} oraz rachunków objętych zajęciem;"
+          - "wszystkie wypowiedzenia złożone przez Bank z przyczyn innych niż nieaktywność rachunku."
+      - ustep: "W ramach kontroli sprawdza się w szczególności:"
+        punkty:
+          - "kompletność dokumentacji, w tym formularzy {{fakt:zamkniecie.formularz.wypowiedzenie}} i {{fakt:zamkniecie.formularz.rozliczenie}}, oraz zgodność podpisów i umocowania;"
+          - "dotrzymanie terminów wypowiedzenia, rozliczenia i potwierdzenia zamknięcia;"
+          - "prawidłowość naliczenia odsetek, opłat i zwrotu środków;"
+          - "zastosowanie zasady dwóch par oczu przy wypłatach przekraczających próg;"
+          - "wygaszenie produktów powiązanych i brak operacji na rachunku po zamknięciu."
+      - akapit: "Wyniki kontroli wyrywkowej jednostka „{{fakt:jednostka.operacje}}” przekazuje jednostce „{{fakt:jednostka.zgodnosc}}” w terminie {{fakt:zamkniecie.termin.kontrola-wyrywkowa}} od zakończenia miesiąca. Stwierdzone nieprawidłowości {podlegają usunięciu|muszą zostać usunięte}, a ich przyczyny — analizie. Uchybienia istotne (w szczególności wypłata środków osobie nieuprawnionej lub zamknięcie rachunku objętego zajęciem) {zgłasza się|przekazuje się} niezwłocznie do jednostki „{{fakt:jednostka.zgodnosc}}” i „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: zamkniecie-archiwizacja
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Dokumentację zamknięcia rachunku {tworzy się|gromadzi się} w formie elektronicznej w elektronicznym archiwum dokumentów {{fakt:zamkniecie.system.archiwum}}; oryginały dokumentów papierowych {przekazuje się|dostarcza się} do archiwum Banku w terminie nie dłuższym niż {{fakt:zamkniecie.termin.kontrola-wyrywkowa}} od zamknięcia rachunku."
+      - ustep: "Akta zamknięcia obejmują:"
+        punkty:
+          - "wypowiedzenie lub porozumienie o rozwiązaniu umowy, wraz z dowodem doręczenia lub potwierdzeniem złożenia;"
+          - "dokumenty potwierdzające tożsamość i umocowanie osoby składającej oświadczenie;"
+          - "formularze {{fakt:zamkniecie.formularz.wypowiedzenie}} i {{fakt:zamkniecie.formularz.rozliczenie}} oraz kopie ewentualnych formularzy dodatkowych;"
+          - "wykaz produktów powiązanych i dowody ich zamknięcia (potwierdzenia zwrotu lub zniszczenia kart, wygaszenia zleceń);"
+          - "dokumenty rozliczenia salda: dyspozycję wypłaty, potwierdzenie przelewu, kwit kasowy;"
+          - "potwierdzenie zamknięcia wysłane Klientowi oraz korespondencję w sprawie."
+      - ustep: "Okresy przechowywania:"
+        punkty:
+          - "dokumentacja zamknięcia rachunku — {{fakt:zamkniecie.termin.archiwum-dokumentacja}}, liczone od końca roku kalendarzowego, w którym rachunek został zamknięty;"
+          - "dokumenty i informacje dotyczące stosowania środków bezpieczeństwa finansowego — {{fakt:zamkniecie.termin.archiwum-aml}} od dnia zamknięcia rachunku, zgodnie z {{ref:akt:dz-u-2025-644-aml}};"
+          - "dokumentacja rachunku technicznego — do czasu wypłaty środków albo przez okres {{fakt:zamkniecie.termin.rachunek-techniczny}}, w zależności od tego, co nastąpi później."
+      - akapit: "Po upływie okresu przechowywania dokumentację {niszczy się|usuwa się} w sposób uniemożliwiający odtworzenie danych, a fakt zniszczenia odnotowuje w rejestrze zamknięć {{fakt:zamkniecie.system.rejestr}}. Dokumentów nie niszczy się, jeżeli toczy się postępowanie, w którym mogą stanowić dowód."
+
+  - id: zamkniecie-koncowe
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Wersja procedury oznaczona jako {{param:wersja}} {zastępuje|uchyla} poprzednie wersje i obowiązuje od dnia {{param:od}}, a jej oznaczenie wewnętrzne to {{param:oznaczenie}}."
+      - akapit: "W sprawach nieuregulowanych w procedurze {stosuje się|obowiązują} postanowienia umów rachunków, regulaminów (zob. {{ref:dokument:regulamin-rachunku-osobistego}}, {{ref:dokument:regulamin-rachunku-firmowego}}) oraz przepisy powszechnie obowiązujące. Wątpliwości interpretacyjne rozstrzyga „{{fakt:jednostka.operacje}}” w porozumieniu z jednostką „{{fakt:jednostka.prawny}}”."
+      - akapit: "Pracownicy {zapoznają się|są zobowiązani zapoznać się} z procedurą i jej zmianami w terminie wskazanym przez właściciela procedury; potwierdzenie zapoznania się przechowuje się w aktach osobowych."
+
+  - id: zamkniecie-zalacznik-lista
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Lista kontrolna jest {wypełniana|uzupełniana} przez pracownika wykonującego czynności i {zatwierdzana|akceptowana} przez kierownika placówki lub właściwą jednostkę „{{fakt:jednostka.operacje}}”. Wypełnioną listę {dołącza się|załącza się} do akt zamknięcia."
+      - lista-kontrolna:
+          forma: tekst
+          pozycje:
+            - "{Ustalono|Zweryfikowano} tożsamość osoby składającej dyspozycję i sprawdzono jej umocowanie."
+            - "Przyjęto wypowiedzenie lub porozumienie na formularzu {{fakt:zamkniecie.formularz.wypowiedzenie}} (albo w bankowości elektronicznej) i zarejestrowano je w systemie w dniu wpływu."
+            - "Ustalono termin wypowiedzenia i datę rozwiązania umowy oraz poinformowano Klienta o skutkach."
+            - "Sprawdzono zajęcia, blokady i zobowiązania wobec Banku."
+            - "Sporządzono wykaz produktów powiązanych i zamknięto karty, limit w rachunku, zlecenia stałe i polecenia zapłaty."
+            - "{Poinformowano|Powiadomiono} Klienta o możliwości skorzystania z usługi zmiany banku."
+            - "Rozliczono saldo (odsetki, opłaty, zobowiązania) i wypłacono środki w obowiązującym terminie."
+            - "Zastosowano zasadę dwóch par oczu przy wypłacie powyżej limitu."
+            - "Zamknięto rachunek w systemie {{fakt:zamkniecie.system.glowny}} i uzupełniono rejestr zamknięć {{fakt:zamkniecie.system.rejestr}}."
+            - "{Wydano|Przekazano} lub wysłano Klientowi potwierdzenie zamknięcia."
+            - "Dokumentację przekazano do elektronicznego archiwum dokumentów {{fakt:zamkniecie.system.archiwum}}."
+
+  - id: zamkniecie-zalacznik-terminy
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Zestawienie ma charakter {pomocniczy|informacyjny}; w razie {rozbieżności|sprzeczności} z umową lub regulaminem {obowiązują|rozstrzygają} te dokumenty."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność lub zdarzenie"
+              waga: 4
+            - naglowek: "Termin lub opłata"
+              waga: 2
+          wiersze:
+            - ["Termin wypowiedzenia umowy przez Klienta", "{{fakt:termin.wypowiedzenie-przez-klienta}}"]
+            - ["Termin wypowiedzenia umowy przez Bank", "{{fakt:termin.wypowiedzenie-przez-bank}}"]
+            - ["Potwierdzenie przyjęcia wypowiedzenia", "{{fakt:zamkniecie.termin.potwierdzenie}}"]
+            - ["Rozliczenie rachunku osobistego po rozwiązaniu umowy", "{{fakt:termin.rachunek-osobisty.zamkniecie-rozliczenie}}"]
+            - ["Rozliczenie rachunku firmowego po rozwiązaniu umowy", "{{fakt:termin.firma.zamkniecie-rozliczenie}}"]
+            - ["Wezwanie do zapłaty salda ujemnego", "{{fakt:zamkniecie.termin.wezwanie-do-zaplaty}}"]
+            - ["Zwrot karty po rozwiązaniu umowy", "{{fakt:zamkniecie.termin.zwrot-karty}}"]
+            - ["Wygaszenie zlecenia stałego", "{{fakt:termin.rachunek-osobisty.zlecenie-stale-zmiana}}"]
+            - ["Przekazanie informacji nowemu bankowi (zmiana banku)", "{{fakt:zamkniecie.termin.zmiana-banku-przekazanie}}"]
+            - ["Opłata za zamknięcie rachunku osobistego", "{{fakt:oplata.rachunek-osobisty.zamkniecie}}"]
+            - ["Opłata za zamknięcie rachunku firmowego", "{{fakt:oplata.firma.zamkniecie-rachunku}}"]
+            - ["Opłata za wypłatę z rachunku technicznego", "{{fakt:zamkniecie.oplata.wyplata-z-rachunku-technicznego}}"]
+            - ["Okres przechowywania dokumentacji zamknięcia", "{{fakt:zamkniecie.termin.archiwum-dokumentacja}}"]

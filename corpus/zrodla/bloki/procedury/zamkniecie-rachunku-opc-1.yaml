@@ -1,0 +1,213 @@
+bloki:
+  # ---------- Odpowiedzialności ----------
+  - id: zamkniecie-odp-kasjer
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - ustep: "**Kasjer** {realizuje|wykonuje} wypłatę salda w gotówce po zamknięciu rachunku i odpowiada za:"
+        punkty:
+          - "{sprawdzenie|zweryfikowanie} tożsamości osoby odbierającej środki na podstawie dokumentu ze zdjęciem, a przy pełnomocniku — także pełnomocnictwa;"
+          - "wypłatę wyłącznie do kwoty {{fakt:zamkniecie.limit.wyplata-gotowkowa-salda}}; wyższe kwoty przekazuje się przelewem;"
+          - "{pobranie|uzyskanie} podpisu odbiorcy na kwicie kasowym i {dołączenie|załączenie} kwitu do dokumentacji sprawy;"
+          - "niezwłoczne {zgłoszenie|przekazanie} kierownikowi placówki każdej wątpliwości co do tożsamości odbiorcy."
+
+  - id: zamkniecie-odp-infolinia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - ustep: "**Pracownik Infolinii** ({{fakt:kontakt.infolinia}}) {nie przyjmuje|nie jest uprawniony do przyjmowania} wypowiedzeń, ale odpowiada za:"
+        punkty:
+          - "{udzielenie|przekazanie} Klientowi informacji o dostępnych sposobach wypowiedzenia umowy i o terminach;"
+          - "{zweryfikowanie|potwierdzenie} tożsamości Klienta zgodnie z zasadami uwierzytelnienia telefonicznego, zanim udzieli informacji o rachunku;"
+          - "{odnotowanie|zapisanie} w systemie zgłoszenia i przekazanie sprawy do placówki lub jednostki obsługującej wypowiedzenia;"
+          - "{wskazanie|poinformowanie} Klienta, że rozmowa telefoniczna nie powoduje rozwiązania umowy."
+
+  - id: zamkniecie-odp-szkolenia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - akapit: "**Szkolenia i wsparcie.** Właściciel procedury organizuje szkolenie wstępne dla pracowników nowo zatrudnionych w placówkach i na Infolinii oraz szkolenie okresowe, prowadzone nie rzadziej niż raz w roku. Szkolenie {obejmuje|uwzględnia} przypadki szczególne opisane w procedurze, w tym rachunki wspólne, zajęcia i rachunki firmowe. Pracownik, który nie jest pewien sposobu postępowania, {zwraca się|kieruje zapytanie} do kierownika placówki, a ten — w razie potrzeby — do jednostki „{{fakt:jednostka.operacje}}”; do czasu uzyskania odpowiedzi nie {dokonuje|wykonuje} czynności nieodwracalnych."
+
+  - id: zamkniecie-odp-bezpieczenstwo
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - ustep: "Jednostka „{{fakt:jednostka.bezpieczenstwo}}” {uczestniczy|bierze udział} w procedurze w następującym zakresie:"
+        punkty:
+          - "{ocenia|analizuje} sygnały o możliwym wyłudzeniu środków lub podszywaniu się pod Klienta przy składaniu dyspozycji zamknięcia;"
+          - "{wydaje|formułuje} zalecenie wstrzymania zamknięcia rachunku do czasu wyjaśnienia okoliczności;"
+          - "{współpracuje|współdziała} z organami ścigania w granicach przepisów i po konsultacji z jednostką „{{fakt:jednostka.prawny}}”."
+
+  - id: zamkniecie-odp-iod
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - akapit: "**Ochrona danych w procesie zamknięcia.** Pracownicy {przetwarzają|wykorzystują} dane Klienta wyłącznie w zakresie niezbędnym do wykonania procedury, a po zamknięciu rachunku dostęp do jego danych jest {ograniczony|zawężony} do osób wykonujących czynności rozliczeniowe, kontrolnych i archiwizacyjnych. Zapytania Klienta dotyczące dalszego przetwarzania jego danych po zamknięciu rachunku kieruje się do „{{fakt:jednostka.iod}}” (adres {{fakt:kontakt.email-iod}}); pracownik nie udziela odpowiedzi {samodzielnie|na własną rękę}, jeżeli wykraczałaby ona poza informację o okresach przechowywania podanych w procedurze."
+
+  # ---------- Zasady ogólne ----------
+  - id: zamkniecie-zasady-forma
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "**Forma oświadczenia.** Oświadczenie o wypowiedzeniu umowy rachunku {składa się|składane jest} w formie, którą przewiduje umowa. W przypadku rachunków osobistych {dopuszczalne są|można stosować} wypowiedzenia w postaci papierowej, w bankowości elektronicznej oraz drogą korespondencyjną; w przypadku rachunków firmowych — wyłącznie pisemnie albo w formie elektronicznej opatrzonej podpisem osoby uprawnionej do reprezentacji. Oświadczenie niezawierające wskazania rachunku albo danych umożliwiających jego identyfikację {uzupełnia się|dopełnia się} z Klientem, nie odmawiając jego przyjęcia."
+      - akapit: "Skutki oświadczenia nie zależą od użycia słowa „wypowiedzenie”. Jeżeli z treści pisma lub rozmowy wynika, że Klient chce zakończyć współpracę, pracownik {wyjaśnia|ustala}, czy chodzi o zamknięcie rachunku, rezygnację z karty albo wyłączenie usługi, i przyjmuje oświadczenie zgodne z rzeczywistą wolą Klienta."
+
+  - id: zamkniecie-zasady-odstapienie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "**Odstąpienie od umowy a wypowiedzenie.** Konsument, który zawarł umowę rachunku na odległość lub poza lokalem przedsiębiorstwa, {może|ma prawo} odstąpić od niej w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia zawarcia umowy lub otrzymania warunków umowy, jeżeli nastąpiło to później (zob. {{ref:akt:dz-u-2020-287-prawa-konsumenta}}). Odstąpienie nie wymaga {podania przyczyny|uzasadnienia} i nie jest wypowiedzeniem; skutkuje wygaśnięciem umowy z mocą wsteczną, a saldo oraz opłaty rozlicza się według zasad określonych poniżej."
+      - ustep: "W przypadku odstąpienia pracownik:"
+        punkty:
+          - "{ustala|sprawdza}, czy oświadczenie złożono w terminie, na podstawie daty nadania lub złożenia w bankowości elektronicznej;"
+          - "nie {pobiera|nalicza} opłaty za zamknięcie ani innych opłat za okres po dniu zawarcia umowy, z wyjątkiem opłat za usługi rzeczywiście wykonane na wyraźne żądanie Klienta;"
+          - "{zwraca|oddaje} Klientowi środki wpłacone na rachunek w terminie {{fakt:termin.zwrot-oplat}} od dnia otrzymania oświadczenia;"
+          - "{rejestruje|odnotowuje} sprawę w rejestrze zamknięć {{fakt:zamkniecie.system.rejestr}} z oznaczeniem podstawy „odstąpienie”."
+
+  - id: zamkniecie-zasady-retencja
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "**Rozmowa z Klientem rezygnującym.** Pracownik może, nie dłużej niż w czasie przyjmowania oświadczenia, {zapytać|zwrócić się do} Klienta o powód rezygnacji oraz przedstawić jedną ofertę zmiany warunków prowadzenia rachunku, jeżeli taka oferta jest dostępna w placówce. Pracownik {nie wywiera nacisku|nie może wywierać presji} na Klienta, nie warunkuje przyjęcia oświadczenia przeprowadzeniem rozmowy i nie wydłuża obsługi ponad czas niezbędny do wykonania czynności. Odmowa Klienta jest {odnotowywana|zapisywana} w uwagach sprawy i nie wymaga uzasadnienia."
+      - akapit: "Informacje o przyczynach rezygnacji {wprowadza się|rejestruje się} do systemu w postaci zagregowanej kategorii (np. opłaty, jakość obsługi, przeprowadzka, oferta konkurencji), bez zapisywania danych osobowych w polach wolnego tekstu."
+
+  - id: zamkniecie-zasady-nosnik
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - ustep: "Informacje i dokumenty przekazywane Klientowi w związku z zamknięciem rachunku {przekazuje się|doręcza się} na trwałym nośniku. Dotyczy to w szczególności:"
+        punkty:
+          - "potwierdzenia przyjęcia wypowiedzenia;"
+          - "wykazu produktów powiązanych i pouczenia o skutkach ich wygaśnięcia;"
+          - "zestawienia rozliczenia {końcowego|ostatecznego}, zawierającego saldo, naliczone odsetki, pobrane opłaty i sposób wypłaty;"
+          - "potwierdzenia zamknięcia rachunku."
+      - akapit: "Klient, który nie korzysta z bankowości elektronicznej i nie wskazał adresu poczty elektronicznej, {otrzymuje|dostaje} dokumenty w postaci papierowej, bez dodatkowej opłaty. Wydruk historii rachunku za okres {wskazany|określony} przez Klienta jest odpłatny według taryfy (opłata za odpis wyciągu lub za zaświadczenie, np. {{fakt:oplata.zaswiadczenie}})."
+
+  - id: zamkniecie-zasady-wypowiedzenie-uzasadnienie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "**Wypowiedzenie przez Bank — zasady równego traktowania.** Wypowiedzenie umowy rachunku przez Bank {stosuje się|dokonuje się} wyłącznie na podstawie obiektywnych, udokumentowanych przesłanek wymienionych w umowie. Pracownik nie może {wnioskować o wypowiedzenie|występować o wypowiedzenie} z powodów dotyczących osoby Klienta, takich jak jego wiek, pochodzenie, wyznanie, stan zdrowia lub poglądy, ani w związku ze złożeniem przez Klienta reklamacji. Wniosek o wypowiedzenie {oceniany jest|podlega ocenie} przez dwie osoby: wnioskującego i zatwierdzającego."
+      - akapit: "W każdej sprawie {przechowuje się|zachowuje się} notatkę z oceny przesłanek. Notatka wskazuje okoliczności faktyczne, podstawę umowną, przyjęty termin wypowiedzenia ({{fakt:termin.wypowiedzenie-przez-bank}}) oraz osoby, które podjęły decyzję."
+
+  - id: zamkniecie-zasady-dzien-rozwiazania
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "**Ustalanie dnia rozwiązania umowy.** Termin wypowiedzenia {liczy się|biegnie} od dnia doręczenia oświadczenia drugiej stronie. Gdy oświadczenie złożono w bankowości elektronicznej, za datę doręczenia {przyjmuje się|uznaje się} datę złożenia dyspozycji; gdy wysłano je listem poleconym — datę odbioru przez adresata albo datę uznania za doręczone na zasadach określonych w części o doręczeniach. Dzień rozwiązania umowy to ostatni dzień terminu wypowiedzenia; jeżeli przypada na dzień wolny od pracy, rachunek zamyka się w najbliższym dniu roboczym, a odsetki i opłaty nalicza do dnia rozwiązania."
+      - akapit: "Strony mogą uzgodnić krótszy termin lub dzień rozwiązania umowy; porozumienie wymaga formy {zachowanej|przewidzianej} dla oświadczenia o wypowiedzeniu i jest przechowywane w aktach sprawy. Klient, który chce zakończyć umowę wcześniej niż po upływie terminu wypowiedzenia, {składa|wypełnia} wniosek na formularzu {{fakt:zamkniecie.formularz.wypowiedzenie}} z zaznaczoną opcją „porozumienie”."
+
+  # ---------- Kroki: wypowiedzenie przez Klienta ----------
+  - id: zamkniecie-krok-klient-pelnomocnik
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - kroki:
+          - tekst: "Przy wypowiedzeniu składanym przez pełnomocnika {zbadaj|sprawdź} zakres pełnomocnictwa."
+            podkroki:
+              - tekst: "Pełnomocnictwo musi wyraźnie obejmować prawo do wypowiedzenia umowy rachunku lub zamknięcia rachunku; pełnomocnictwo ogólne do dysponowania środkami {nie wystarcza|jest niewystarczające}."
+              - tekst: "{Zweryfikuj|Sprawdź} pełnomocnictwo w terminie {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}}; w razie wątpliwości co do autentyczności {skontaktuj się|połącz się} z Posiadaczem."
+          - tekst: "{Zażądaj|Poproś o okazanie} dokumentu tożsamości pełnomocnika i dokumentu pełnomocnictwa w oryginale lub kopii poświadczonej."
+            podkroki:
+              - tekst: "{Wypisz|Wpisz} dane pełnomocnika i datę pełnomocnictwa na formularzu {{fakt:zamkniecie.formularz.wypowiedzenie}}."
+              - tekst: "{Zeskanuj|Zdigitalizuj} dokumenty i {dołącz|załącz} do sprawy; oryginałów nie zatrzymuj, chyba że pełnomocnictwo wygasa wraz ze złożeniem oświadczenia."
+          - tekst: "Wypłaty salda {dokonuj|dokonuj wyłącznie} na rachunek Posiadacza, chyba że pełnomocnictwo wprost przewiduje wypłatę na rachunek lub do rąk pełnomocnika."
+            podkroki:
+              - tekst: "Wypłata do rąk pełnomocnika wymaga {akceptacji|zgody} kierownika placówki."
+              - tekst: "Potwierdzenie zamknięcia {przekaż|wyślij} Posiadaczowi, nie pełnomocnikowi."
+
+  - id: zamkniecie-krok-klient-poczta
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - kroki:
+          - tekst: "Przy wypowiedzeniu nadesłanym pocztą {zbadaj|oceń} wiarygodność pisma."
+            podkroki:
+              - tekst: "{Porównaj|Zestaw} podpis ze wzorem w aktach Klienta; w razie rozbieżności {przekaż|skieruj} pismo do jednostki „{{fakt:jednostka.bezpieczenstwo}}” i skontaktuj się z Klientem pod numerem telefonu zapisanym w systemie."
+              - tekst: "{Sprawdź|Zweryfikuj}, czy pismo zawiera dane identyfikujące rachunek i jednoznaczną dyspozycję; brak numeru rachunku nie jest przeszkodą, jeżeli Klient da się zidentyfikować na podstawie danych osobowych."
+          - tekst: "{Zarejestruj|Wpisz do rejestru} pismo w terminie {{fakt:zamkniecie.termin.rejestracja-korespondencji}} od wpływu i {wyślij|przekaż} potwierdzenie."
+            podkroki:
+              - tekst: "Datą doręczenia oświadczenia Bankowi jest data wpływu pisma do Banku, a nie data nadania."
+              - tekst: "Potwierdzenie wysyłaj na adres z systemu, nie na adres wskazany w piśmie, jeżeli się różnią; odmienny adres zweryfikuj z Klientem."
+          - tekst: "Jeżeli pismo jest niekompletne, {wezwij Klienta do uzupełnienia|poproś Klienta o uzupełnienie}, nie odmawiając jego przyjęcia."
+            podkroki:
+              - tekst: "W wezwaniu {wskaż|wymień} brakujące elementy i wyznacz termin nie krótszy niż {{fakt:termin.doreczenie-korespondencji}}."
+              - tekst: "Po upływie terminu bez uzupełnienia sprawę {zamyka się|zamknij} z adnotacją „oświadczenie nieskuteczne”, informując o tym Klienta."
+
+  - id: zamkniecie-krok-klient-ebank
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż wypowiedzenie złożone w bankowości elektronicznej."
+            podkroki:
+              - tekst: "Dyspozycja {trafia|wpływa} do kolejki zadań {{fakt:jednostka.operacje}}; pracownik przejmuje ją najpóźniej następnego dnia roboczego."
+              - tekst: "{Sprawdź|Zweryfikuj}, czy dyspozycja została uwierzytelniona silnym uwierzytelnieniem i czy dotyczy rachunku, do którego zalogowany użytkownik jest uprawniony."
+          - tekst: "{Skontaktuj się|Połącz się} z Klientem, jeżeli dyspozycja budzi wątpliwości."
+            podkroki:
+              - tekst: "Wątpliwości {budzi|wzbudza} w szczególności dyspozycja złożona z nowego urządzenia, w krótkim czasie po zmianie danych kontaktowych lub w połączeniu z dużym przelewem wychodzącym."
+              - tekst: "Kontakt {nawiąż|podejmij} telefonicznie pod numerem zapisanym w systemie przed zmianą danych; nie używaj numeru wskazanego w ostatnim czasie."
+          - tekst: "{Wygeneruj|Sporządź} w systemie potwierdzenie przyjęcia wypowiedzenia i {udostępnij|przekaż} je Klientowi w serwisie."
+            podkroki:
+              - tekst: "Potwierdzenie pozostaje {dostępne|widoczne} w serwisie do dnia zamknięcia rachunku."
+              - tekst: "Klientowi, który po zamknięciu rachunku nie będzie miał dostępu do serwisu, {wyślij|prześlij} potwierdzenie na adres poczty elektronicznej."
+
+  - id: zamkniecie-krok-klient-promocja
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - kroki:
+          - tekst: "{Sprawdź|Ustal}, czy rachunek jest objęty promocją lub programem z minimalnym okresem utrzymania."
+            podkroki:
+              - tekst: "W {{fakt:zamkniecie.system.glowny}} {sprawdź|odczytaj} znacznik programu promocyjnego oraz datę otwarcia rachunku."
+              - tekst: "Jeżeli program przewiduje zwrot premii lub opłatę za zamknięcie przed upływem okresu, {poinformuj|powiadom} Klienta o jej wysokości przed przyjęciem wypowiedzenia."
+          - tekst: "{Wylicz|Oblicz} należności z tytułu zamknięcia przed upływem okresu minimalnego."
+            podkroki:
+              - tekst: "Opłata za zamknięcie przed upływem okresu minimalnego: {{fakt:zamkniecie.oplata.zamkniecie-przed-okresem}}, jeżeli taka opłata wynika z regulaminu programu."
+              - tekst: "Zwrot premii {obliczaj|ustalaj} według regulaminu programu; wysokość zwrotu {przedstaw|podaj} Klientowi na piśmie."
+          - tekst: "{Uzyskaj|Pobierz} od Klienta potwierdzenie, że został poinformowany o skutkach, i {załącz|dołącz} je do sprawy."
+
+  - id: zamkniecie-krok-klient-cudzoziemiec
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - kroki:
+          - tekst: "Przy obsłudze Klienta niemówiącego po polsku zapewnij zrozumienie treści oświadczenia."
+            podkroki:
+              - tekst: "{Zaproponuj|Zaoferuj} udział osoby znającej język Klienta; tłumaczenie nie zastępuje formularza w języku polskim."
+              - tekst: "{Wyjaśnij|Objaśnij} skutki wypowiedzenia prostym językiem i {potwierdź zrozumienie|upewnij się, że Klient zrozumiał}."
+          - tekst: "Zweryfikuj dokument tożsamości i, jeżeli dotyczy, prawo pobytu."
+            podkroki:
+              - tekst: "{Zachowaj|Zabezpiecz} kopię dokumentu zgodnie z zasadami środków bezpieczeństwa finansowego."
+              - tekst: "Jeżeli Klient opuszcza kraj, {ustal|wskaż} rachunek, na który przekazać saldo, i {sprawdź|zbadaj}, czy przelew za granicę nie wymaga dodatkowych czynności."
+
+  - id: zamkniecie-krok-klient-osoby-szczegolne
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - kroki:
+          - tekst: "Zapewnij Klientowi z niepełnosprawnością lub ograniczoną mobilnością możliwość złożenia wypowiedzenia w dogodny sposób."
+            podkroki:
+              - tekst: "{Zaproponuj|Zaoferuj} przyjęcie dyspozycji w miejscu zamieszkania przez doradcę mobilnego albo skorzystanie z kanału zdalnego."
+              - tekst: "Dla osób niewidomych i słabowidzących {odczytaj|przeczytaj} treść formularza na głos i zapytaj o zgodę na przekazanie dokumentów w formie elektronicznej."
+          - tekst: "Jeżeli Klient jest osobą ubezwłasnowolnioną lub ustanowiono dla niego opiekuna, {przyjmuj|odbieraj} oświadczenia wyłącznie od osoby uprawnionej."
+            podkroki:
+              - tekst: "{Zażądaj|Poproś o przedłożenie} postanowienia sądu o ustanowieniu opiekuna lub kuratora i {sprawdź|zbadaj} jego zakres."
+              - tekst: "Sprawy takie przekazuj do jednostki „{{fakt:jednostka.prawny}}” przed realizacją wypłaty."
