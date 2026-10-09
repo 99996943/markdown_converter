@@ -1,0 +1,167 @@
+bloki:
+  # ===== Pula: Postanowienia ogólne =====
+  - id: karty-debetowe-opc-rodzaje-kart
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {oferuje|udostępnia} klientom indywidualnym następujące rodzaje kart debetowych, różniące się zakresem funkcji, formą i okresem ważności:"
+        punkty:
+          - "karta fizyczna — karta plastikowa z układem elektronicznym (chipem), paskiem magnetycznym i funkcją zbliżeniową;"
+          - "karta wirtualna — karta bez postaci fizycznej, której dane są dostępne w bankowości elektronicznej i która służy wyłącznie do płatności na odległość oraz płatności mobilnych;"
+          - "karta dla osoby niepełnoletniej — karta o obniżonych limitach, wydawana na zasadach opisanych w Regulaminie."
+      - ustep: "Do jednego rachunku płatniczego {można wydać|Bank może wydać} więcej niż jedną kartę, w tym kartę fizyczną i kartę wirtualną. {Maksymalną liczbę|Liczbę} kart wydanych do jednego rachunku ustala Bank w umowie o kartę; wydanie karty wirtualnej nie zmienia limitów karty fizycznej, jeżeli Użytkownik nie postanowi inaczej."
+      - ustep: "Każda karta {ma|posiada} odrębny numer, datę ważności, kod zabezpieczający i PIN. Zastrzeżenie, zablokowanie albo wygaśnięcie jednej karty nie powoduje samoistnie zastrzeżenia, zablokowania lub wygaśnięcia pozostałych kart wydanych do rachunku, chyba że Regulamin stanowi inaczej."
+
+  - id: karty-debetowe-opc-powiadomienia
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {informuje|powiadamia} Użytkownika o wykonanych transakcjach kartą i zmianach dotyczących karty za pomocą komunikatów w aplikacji mobilnej (powiadomienia push). Usługa ta jest wolna od opłat w kwocie {{fakt:oplata.karta-debetowa.powiadomienie-o-transakcji}}, jeżeli Użytkownik korzysta z aplikacji mobilnej i wyraził zgodę na odbiór powiadomień."
+      - ustep: "Na wniosek Posiadacza Bank może przesyłać powiadomienia o transakcjach także w formie wiadomości tekstowych SMS; w takim przypadku obowiązują opłaty określone w umowie rachunku, w kwocie {{fakt:oplata.powiadomienie-sms}} za wiadomość. Użytkownik {odpowiada za|ponosi odpowiedzialność za} aktualność numeru telefonu wskazanego Bankowi."
+      - ustep: "Brak powiadomienia {nie zwalnia|nie zwalnia Użytkownika} z obowiązku regularnego sprawdzania historii rachunku. Bank {nie odpowiada|nie ponosi odpowiedzialności} za niedoręczenie powiadomienia spowodowane brakiem zasięgu, wyłączeniem urządzenia, zablokowaniem powiadomień w ustawieniach lub zmianą numeru telefonu, o której Bank nie został poinformowany.[^1]"
+    przypisy:
+      1: "Zasady przekazywania Klientowi informacji o transakcjach płatniczych określa {{ref:akt:dz-u-2024-30-uslugi-platnicze}}; Bank udostępnia je także w wyciągu z rachunku."
+
+  - id: karty-debetowe-opc-aktualizacja-danych
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz i Użytkownik {zobowiązani są|mają obowiązek} niezwłocznie informować Bank o zmianie danych podanych we wniosku o kartę, w szczególności imienia i nazwiska, adresu zamieszkania i adresu korespondencyjnego, numeru telefonu, adresu poczty elektronicznej oraz danych dokumentu tożsamości."
+      - ustep: "Zmianę danych można zgłosić:"
+        punkty:
+          - "w bankowości elektronicznej — w zakresie danych kontaktowych;"
+          - "w placówce Banku — po okazaniu dokumentu tożsamości, w zakresie wszystkich danych;"
+          - "na Infolinii pod numerem {{fakt:kontakt.infolinia}} — w zakresie danych kontaktowych, po pozytywnym uwierzytelnieniu."
+      - ustep: "Bank {kieruje|wysyła} korespondencję na ostatni adres wskazany przez Klienta. Pismo wysłane na ten adres uważa się za doręczone po upływie {{fakt:termin.doreczenie-korespondencji}} od dnia jego nadania, jeżeli przesyłka nie została podjęta. Koszty wynikające z braku aktualizacji danych, w tym koszty ponownego wysłania karty, ponosi Posiadacz."
+      - ustep: "Zmiana nazwiska Użytkownika wymaga wydania nowej karty; {nowa karta|karta z nowymi danymi} jest wydawana na zasadach duplikatu, z zachowaniem dotychczasowych limitów, chyba że przepisy lub Regulamin stanowią inaczej."
+
+  # ===== Pula: Wydanie i aktywacja karty =====
+  - id: karty-debetowe-opc-karta-wirtualna
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartę wirtualną Użytkownik {zamawia|może zamówić} w bankowości elektronicznej. Dane karty — numer, datę ważności i kod zabezpieczający — Bank {udostępnia|ujawnia} bezpośrednio po jej wydaniu, po wykonaniu silnego uwierzytelniania. Karta wirtualna nie wymaga aktywacji i może być użyta od chwili jej wydania."
+      - ustep: "Karta wirtualna {służy|jest przeznaczona} wyłącznie do transakcji na odległość oraz do płatności mobilnych, a także do płatności w terminalu po zarejestrowaniu w portfelu mobilnym. Nie można nią wypłacać gotówki w bankomacie."
+      - ustep: "Użytkownik może ustalić dla karty wirtualnej własne limity, nie wyższe jednak niż {{fakt:limit.karta-debetowa.internet-dzienny}} dziennie. Użytkownik {zwraca szczególną uwagę|powinien zwracać uwagę}, by dane karty nie były zapisywane na urządzeniach publicznych ani w serwisach, których wiarygodności nie zweryfikował."
+      - ustep: "W razie podejrzenia, że dane karty wirtualnej zostały ujawnione, Użytkownik niezwłocznie zastrzega kartę. Bank wydaje wówczas nową kartę wirtualną z nowymi danymi, bez {pobierania opłaty|dodatkowych kosztów}, jeżeli zastrzeżenie nastąpiło z przyczyn niezależnych od Użytkownika."
+
+  - id: karty-debetowe-opc-karta-zastepcza
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wydaje kartę zastępczą (duplikat), jeżeli karta została zastrzeżona, zniszczona, uszkodzona, nie działa prawidłowo lub nie została doręczona. Wniosek o kartę zastępczą można złożyć na Infolinii, w bankowości elektronicznej oraz w placówce."
+      - ustep: "Za wydanie karty zastępczej Bank pobiera opłatę w wysokości {{fakt:oplata.karta.wydanie-duplikatu}}, z wyjątkiem przypadków, gdy:"
+        punkty:
+          - "karta jest uszkodzona wskutek wady materiałowej lub produkcyjnej;"
+          - "karta nie została doręczona z przyczyn leżących po stronie Banku lub operatora pocztowego;"
+          - "Bank zmienił numery kart w związku z naruszeniem bezpieczeństwa danych, za które nie odpowiada Użytkownik."
+      - ustep: "Karta zastępcza {posiada|ma} nowy numer i nową datę ważności, a PIN może zostać ustalony na nowo. Limity ustawione dla poprzedniej karty {zostają przeniesione|są przenoszone} na kartę zastępczą, o ile Użytkownik nie zażąda ich zmiany. Karta uszkodzona powinna zostać zniszczona przez Użytkownika albo zwrócona Bankowi."
+
+  - id: karty-debetowe-opc-personalizacja
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma możliwość} wydać kartę z indywidualnym wzorem graficznym wybranym przez Posiadacza z katalogu dostępnego w bankowości elektronicznej. Niedopuszczalne jest umieszczanie na karcie własnych zdjęć, znaków towarowych osób trzecich, symboli, treści obraźliwych lub naruszających prawa osób trzecich."
+      - ustep: "Bank {nie ponosi odpowiedzialności|nie odpowiada} za brak możliwości wykorzystania wybranego wzoru, jeżeli jego wykorzystanie jest niemożliwe z przyczyn technicznych lub organizacyjnych. W takim przypadku Bank {proponuje|oferuje} wydanie karty ze wzorem standardowym."
+      - ustep: "Wydanie karty z indywidualnym wzorem graficznym {nie powoduje|nie wiąże się z} zmiany zasad jej funkcjonowania; karta jest nadal własnością Banku. Termin wydania takiej karty może zostać wydłużony ponad termin wskazany w {{ref:blok:karty-debetowe-wydanie}}, o czas potrzebny do jej wykonania."
+      - ustep: "Użytkownik {zachowuje|ma prawo do zachowania} ten sam wzór graficzny w przypadku wznowienia karty, o ile ten wzór jest nadal dostępny w ofercie Banku."
+
+  # ===== Pula: Użytkownik karty =====
+  - id: karty-debetowe-opc-niepelnoletni
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-uzytkownik
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartę dla osoby niepełnoletniej, która ukończyła 13 lat, wydaje się za zgodą jej przedstawiciela ustawowego, wyrażoną na wniosku o kartę albo w formie wskazanej przez Bank. Osoba niepełnoletnia, która ukończyła 13 lat, ma ograniczoną zdolność do czynności prawnych i {działa|dokonuje transakcji} w zakresie udzielonej zgody."
+      - ustep: "Dla karty osoby niepełnoletniej Bank ustala limity niższe niż dla pełnoletnich Użytkowników. Przedstawiciel ustawowy {może|ma prawo} je zmienić w granicach dopuszczonych przez Bank, a także:"
+        punkty:
+          - "zablokować kartę lub funkcję płatności internetowych;"
+          - "wyłączyć możliwość wypłaty gotówki;"
+          - "ograniczyć transakcje do określonych kategorii akceptantów, o ile Bank udostępnia taką funkcję."
+      - ustep: "Przedstawiciel ustawowy odpowiada wobec Banku za transakcje wykonane kartą osoby niepełnoletniej w granicach przysługujących mu praw i obowiązków. Środki na rachunku osoby niepełnoletniej {nie mogą być wykorzystane|nie mogą służyć do} transakcji, które wymagają zgody przedstawiciela ustawowego, a nie została ona udzielona."
+      - ustep: "Z chwilą ukończenia przez Użytkownika 18 lat Bank {informuje|powiadamia} go o zmianie warunków obsługi karty i — na jego wniosek — przywraca standardowe limity. Zgoda przedstawiciela ustawowego wygasa z dniem uzyskania pełnoletności."
+
+  - id: karty-debetowe-opc-pin
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-uzytkownik
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik {może|ma prawo} zmienić PIN w bankomacie Banku, bankowości elektronicznej lub w placówce. Zmiana PIN-u w bankomacie innego operatora {jest możliwa|bywa możliwa} wyłącznie, jeżeli ten operator udostępnia taką funkcję. Za zmianę PIN-u Bank pobiera opłatę w wysokości {{fakt:oplata.karta-debetowa.zmiana-pin}}, o ile nie dokonano jej w bankowości elektronicznej."
+      - ustep: "Nowy PIN {nie powinien|nie może} składać się z prostych kombinacji, w szczególności z kolejnych lub powtarzających się cyfr, daty urodzenia Użytkownika albo numeru telefonu. Bank {może odrzucić|może nie zaakceptować} PIN, który nie spełnia tych wymagań."
+      - ustep: "{Użytkownik, który zapomniał PIN-u|W razie zapomnienia PIN-u}, może ustalić nowy PIN w bankowości elektronicznej po silnym uwierzytelnieniu lub zażądać przesłania nowego PIN-u pocztą. Bank nie ma technicznej możliwości odczytania ani przypomnienia PIN-u ustalonego przez Użytkownika."
+      - ustep: "{{fakt:karta-debetowa.liczba-prob-pin}} wprowadzenie błędnego PIN-u w bankomacie lub terminalu powoduje czasowe zablokowanie możliwości jego użycia. Odblokowanie następuje automatycznie po upływie doby albo wcześniej na dyspozycję Użytkownika, po pozytywnym uwierzytelnieniu; zablokowanie PIN-u nie jest zastrzeżeniem karty."
+
+  - id: karty-debetowe-opc-smierc
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-uzytkownik
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie śmierci Posiadacza Bank {blokuje|niezwłocznie blokuje} kartę z chwilą uzyskania wiarygodnej informacji o zdarzeniu. Transakcje autoryzowane przed śmiercią Posiadacza, a rozliczone po niej, {obciążają|mogą obciążać} rachunek, chyba że przepisy prawa stanowią inaczej."
+      - ustep: "Użytkownik, który nie jest Posiadaczem, {traci|nie jest już uprawniony do} prawo używania karty z chwilą śmierci Posiadacza; osoba, w której posiadaniu znajduje się karta, jest obowiązana zwrócić ją Bankowi albo zniszczyć."
+      - ustep: "W razie śmierci Użytkownika niebędącego Posiadaczem umowa o kartę wygasa w odniesieniu do tej karty z dniem otrzymania przez Bank informacji o śmierci, a pozostałe karty wydane do rachunku {funkcjonują|są obsługiwane} bez zmian."
+
+  # ===== Pula: Transakcje i limity =====
+  - id: karty-debetowe-opc-bankomaty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłaty gotówki w bankomatach są dokonywane w kwocie nieprzekraczającej limitu dziennego karty i salda dostępnego na rachunku, w nominałach, które oferuje dany bankomat. Przed wykonaniem wypłaty bankomat {może wyświetlić|wyświetla} informację o opłacie operatora, którą {należy zaakceptować|trzeba zaakceptować}, aby kontynuować transakcję."
+      - ustep: "Jeżeli bankomat nie wydał gotówki lub wydał ją w kwocie niższej niż wskazana, Użytkownik {zgłasza|powinien zgłosić} ten fakt Bankowi, wskazując numer bankomatu, datę, godzinę i wysokość transakcji. Bank wyjaśnia sprawę z operatorem bankomatu, a w razie potwierdzenia nieprawidłowości {przywraca|zwraca} środki na rachunek."
+      - ustep: "Jeżeli Użytkownik nie odbierze gotówki lub karty w czasie wskazanym przez bankomat, urządzenie może pobrać je z powrotem. Gotówka zostaje wtedy zwrócona na rachunek, a karta {pozostaje|jest przechowywana} w bankomacie. Użytkownik niezwłocznie kontaktuje się z Bankiem w celu odebrania lub wydania nowej karty."
+      - ustep: "Wypłata gotówki w bankomacie innego operatora, a w szczególności za granicą, podlega opłatom wskazanym w {{ref:dokument:taryfa-karty}}; w przypadku bankomatów należących do operatora krajowego opłata wynosi {{fakt:oplata.bankomat-obcy}}."
+
+  - id: karty-debetowe-opc-wplatomaty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wpłaty gotówki na rachunek dokonywane za pomocą karty we wpłatomatach Banku są księgowane {niezwłocznie|natychmiast} po potwierdzeniu przez urządzenie liczby i autentyczności banknotów. Jednorazowa wpłata nie może przekroczyć kwoty {{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}, a liczba banknotów — ograniczenia technicznego urządzenia."
+      - ustep: "Wpłatomat nie przyjmuje banknotów uszkodzonych, nieczytelnych, sfałszowanych, banknotów obcych walut oraz monet. {Bank zatrzymuje|Wpłatomat zatrzymuje} banknoty, co do których istnieje podejrzenie sfałszowania, i przekazuje je właściwym organom zgodnie z przepisami."
+      - ustep: "W razie rozbieżności między kwotą wpłaty zarejestrowaną przez urządzenie a kwotą wskazaną przez Użytkownika, {decyduje|rozstrzyga} protokół otwarcia wpłatomatu sporządzony przez komisję Banku; Użytkownik {ma prawo|może} zażądać wyjaśnienia na zasadach określonych w postanowieniach o reklamacjach.[^1]"
+      - ustep: "Za wpłatę gotówki we wpłatomacie Bank pobiera opłatę w wysokości {{fakt:oplata.wplata-gotowkowa}}, chyba że {{ref:dokument:taryfa-karty}} przewiduje dla danego rachunku stawkę niższą."
+    przypisy:
+      1: "Protokół jest sporządzany w obecności co najmniej dwóch pracowników Banku; Użytkownikowi przysługuje wgląd w jego treść."
+
+  - id: karty-debetowe-opc-platnosci-internetowe
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartą można płacić w Internecie w serwisach, które akceptują płatności kartami debetowymi. Przed zapłatą Użytkownik {powinien|jest zobowiązany} zweryfikować wiarygodność sprzedawcy, w tym adres strony, dane kontaktowe, opinie innych klientów oraz zabezpieczenie połączenia."
+      - ustep: "Płatność kartą w Internecie wymaga podania numeru karty, daty ważności oraz kodu zabezpieczającego (trzy cyfry z tyłu karty). Dodatkowo Bank wymaga potwierdzenia płatności w aplikacji mobilnej albo kodem jednorazowym SMS. Użytkownik nie podaje kodów autoryzujących w żadnych formularzach, wiadomościach ani rozmowach telefonicznych."
+      - ustep: "Dzienny limit transakcji internetowych wynosi {{fakt:limit.karta-debetowa.internet-dzienny}}. Użytkownik może w bankowości elektronicznej:"
+        punkty:
+          - "wyłączyć lub włączyć płatności internetowe;"
+          - "ustawić niższy limit dzienny lub transakcyjny;"
+          - "zablokować transakcje u akceptantów spoza Europejskiego Obszaru Gospodarczego."
+      - ustep: "W przypadku nienależytego wykonania usługi przez sprzedawcę Użytkownik dochodzi roszczeń bezpośrednio od sprzedawcy; Bank może pomóc w procedurze zwrotu środków w ramach reklamacji transakcji kartowej, o ile zostały spełnione warunki wynikające z zasad organizacji płatniczej."
+
+  - id: karty-debetowe-opc-zwroty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrot środków za towar lub usługę zakupioną kartą jest dokonywany przez akceptanta na rachunek, do którego wydano kartę. Bank uznaje rachunek kwotą zwrotu w dniu otrzymania zapisu od organizacji płatniczej, nie później jednak niż do końca dnia roboczego po jego otrzymaniu."
+      - ustep: "Jeżeli transakcja została dokonana w walucie obcej, a zwrot następuje po zmianie kursu, kwota zwrotu w złotych może różnić się od pierwotnie obciążonej kwoty. {Różnice kursowe|Różnica kursowa} nie podlegają zwrotowi, chyba że wynikają z błędu Banku."
+      - ustep: "Do czasu otrzymania przez Bank zwrotu od akceptanta Użytkownik nie może żądać od Banku uznania rachunku. Bank {nie ma wpływu|nie może wpłynąć} na termin zwrotu dokonywanego przez akceptanta; {zwykle|przeciętnie} akceptant zwraca środki w terminie od {{fakt:termin.karta-debetowa.rozliczenie-transakcji}} do kilkunastu dni."
+      - ustep: "Anulowanie autoryzowanej transakcji, która nie została jeszcze rozliczona, powoduje zwolnienie blokady środków po otrzymaniu przez Bank odpowiedniego komunikatu od akceptanta; do tego czasu środki pozostają zablokowane przez okres wskazany w Regulaminie."

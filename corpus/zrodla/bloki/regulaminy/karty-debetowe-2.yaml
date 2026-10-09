@@ -1,0 +1,140 @@
+bloki:
+  # ===== Rozdział: Autoryzacja i silne uwierzytelnianie =====
+  - id: karty-debetowe-autoryzacja
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcja kartą jest autoryzowana, gdy Użytkownik wyrazi zgodę na jej wykonanie {w sposób|w formie} właściwy dla danego rodzaju transakcji. Zgoda może zostać wyrażona przez:"
+        punkty:
+          - "włożenie karty do czytnika i wprowadzenie PIN-u;"
+          - "zbliżenie karty lub urządzenia mobilnego do czytnika, z potwierdzeniem PIN-em albo bez niego, w granicach określonych w Regulaminie;"
+          - "podanie numeru karty, daty ważności i kodu zabezpieczającego oraz potwierdzenie transakcji w aplikacji mobilnej albo kodem jednorazowym;"
+          - "złożenie podpisu na potwierdzeniu transakcji, jeżeli akceptant stosuje taką formę;"
+          - "wyrażenie zgody na cykliczne obciążanie karty, które dotyczy wielu transakcji."
+      - ustep: "Z chwilą {udzielenia zgody|autoryzacji} Użytkownik {nie może jej odwołać|traci możliwość jej odwołania}. Wyjątkiem są transakcje, których moment wykonania jest odroczony lub które mają charakter cykliczny; zgodę na nie można odwołać najpóźniej do końca dnia roboczego poprzedzającego dzień obciążenia, kontaktując się z akceptantem oraz Bankiem.[^1]"
+      - ustep: "Bank {odmawia|może odmówić} wykonania transakcji, jeżeli jest to uzasadnione {względami bezpieczeństwa|ryzykiem nadużycia}, brakiem środków, przekroczeniem limitu, zablokowaniem karty albo gdy transakcja jest sprzeczna z przepisami prawa. Informację o odmowie i, o ile to możliwe, o jej przyczynie Użytkownik uzyskuje na terminalu, w bankowości elektronicznej lub na Infolinii."
+    przypisy:
+      1: "Zasady odwoływania zgody na transakcje cykliczne wynikają także z umowy zawartej z akceptantem; Bank nie jest stroną tej umowy."
+
+  - id: karty-debetowe-uwierzytelnianie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank stosuje silne uwierzytelnianie Użytkownika, gdy zlecenie płatnicze jest składane przez Internet, a także w innych przypadkach, w których wymagają tego przepisy {o usługach płatniczych|prawa}.[^1] Silne uwierzytelnianie polega na potwierdzeniu transakcji co najmniej dwoma niezależnymi elementami, spośród:"
+        punkty:
+          - "wiedzy, np. PIN lub hasło do bankowości elektronicznej;"
+          - "posiadania, np. urządzenie mobilne z zarejestrowaną aplikacją Banku lub karta;"
+          - "cechy użytkownika, np. odcisk palca lub obraz twarzy, o ile urządzenie obsługuje takie rozwiązanie."
+      - ustep: "Bank {może|ma prawo} nie stosować silnego uwierzytelniania w przypadkach dopuszczonych przepisami, w szczególności przy transakcjach zbliżeniowych o niskiej wartości, płatnościach cyklicznych o stałej kwocie, płatnościach na rzecz akceptantów umieszczonych przez Użytkownika na liście zaufanych odbiorców oraz transakcjach uznanych przez Bank za niskiego ryzyka."
+      - ustep: "Użytkownik powinien {potwierdzać|autoryzować} w aplikacji mobilnej wyłącznie te transakcje, które sam zainicjował, po sprawdzeniu {nazwy akceptanta|danych akceptanta} i kwoty przedstawionej w komunikacie. {Zatwierdzenie|Potwierdzenie} transakcji, której Użytkownik nie zainicjował, {może|może prowadzić do} obciążenia rachunku bez możliwości jej zakwestionowania jako nieautoryzowanej, jeżeli doszło do tego na skutek rażącego niedbalstwa Użytkownika."
+      - ustep: "Jeżeli zarejestrowano {{fakt:karta-debetowa.liczba-prob-pin}} wprowadzenie błędnego PIN-u lub kodu jednorazowego zostało zarejestrowane, Bank {zawiesza|czasowo blokuje} możliwość użycia danego elementu uwierzytelniającego. Odblokowania Użytkownik dokonuje w bankowości elektronicznej, na Infolinii lub w placówce, po {pozytywnym|prawidłowym} potwierdzeniu tożsamości."
+    przypisy:
+      1: "Szczegółowe warunki stosowania silnego uwierzytelniania, w tym przypadki wyłączeń, określają przepisy prawa wskazane w {{ref:akt:dz-u-2024-30-uslugi-platnicze}} oraz akty wydane na ich podstawie."
+
+  # ===== Rozdział: Płatności zbliżeniowe i mobilne =====
+  - id: karty-debetowe-zblizeniowe
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta jest {wyposażona|standardowo wyposażona} w funkcję zbliżeniową, która umożliwia płatność po zbliżeniu karty do czytnika terminala {bez konieczności|bez potrzeby} wkładania jej do czytnika. {Funkcja ta jest aktywna|Funkcja ta zostaje włączona} po pierwszej transakcji z użyciem chipa i PIN-u."
+      - ustep: "Pojedyncza transakcja zbliżeniowa może zostać wykonana bez wprowadzania PIN-u do kwoty {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}. Bank wymaga potwierdzenia PIN-em, jeżeli:"
+        punkty:
+          - "kwota transakcji przekracza wskazany próg;"
+          - "łączna kwota kolejnych transakcji zbliżeniowych bez PIN-u przekroczyła {{fakt:limit.karta-debetowa.zblizeniowy-skumulowany}};"
+          - "liczba kolejnych transakcji zbliżeniowych bez PIN-u wyniosła {{fakt:karta-debetowa.liczba-transakcji-zblizeniowych}};"
+          - "terminal nie obsługuje transakcji zbliżeniowych w trybie bez PIN-u, np. poza granicami kraju."
+      - ustep: "Użytkownik {może|ma prawo} wyłączyć lub ponownie włączyć funkcję zbliżeniową w bankowości elektronicznej albo w placówce. Zmiana nie wymaga wymiany karty. Wyłączenie funkcji {nie ma wpływu|nie wpływa} na możliwość wykonywania transakcji z użyciem chipa i PIN-u lub paska magnetycznego."
+      - ustep: "Użytkownik przechowuje kartę w sposób ograniczający ryzyko {niezamierzonego|przypadkowego} zbliżenia do czytnika. Bank nie ponosi odpowiedzialności za transakcje zbliżeniowe, do których Użytkownik {doprowadził|przyczynił się} przez umyślne lub rażąco niedbałe udostępnienie karty."
+
+  - id: karty-debetowe-mobilne
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik {może|ma prawo} zarejestrować kartę w portfelu mobilnym udostępnianym przez Bank lub przez dostawcę rozwiązania płatności mobilnych, współpracującego z Bankiem, i {płacić|dokonywać płatności} za pomocą urządzenia mobilnego. Do jednego urządzenia można dodać karty w liczbie {określonej|wskazanej} w aplikacji, a do jednej karty — {{fakt:karta-debetowa.liczba-urzadzen-mobilnych}} urządzeń."
+      - ustep: "Rejestracja karty wymaga potwierdzenia silnym uwierzytelnianiem. Podczas rejestracji dla karty tworzony jest odrębny identyfikator (token), {który|co sprawia, że} rzeczywisty numer karty nie jest przekazywany akceptantowi. Token jest powiązany z konkretnym urządzeniem; utrata urządzenia nie wymaga zastrzegania karty, jeżeli Użytkownik wyłączy token w bankowości elektronicznej lub zwróci się o to do Banku.[^1]"
+      - ustep: "Dzienny limit płatności mobilnych wynosi {{fakt:limit.platnosci-mobilne.dzienny}}, o ile Użytkownik nie ustawił limitu niższego. Płatności mobilne podlegają także limitom karty, o których mowa w {{ref:blok:karty-debetowe-limity}}; wykorzystanie limitu karty zmniejsza kwotę dostępną w płatnościach mobilnych i odwrotnie."
+      - ustep: "Użytkownik {zobowiązany jest|jest obowiązany} zabezpieczyć urządzenie mobilne kodem blokady lub cechą biometryczną oraz nie udostępniać urządzenia osobom trzecim. Jeżeli do zarejestrowania w urządzeniu dodano cechy biometryczne innej osoby, Użytkownik odpowiada za transakcje przez nią wykonane."
+    przypisy:
+      1: "Usunięcie tokenu z urządzenia nie powoduje zablokowania samej karty ani tokenów zarejestrowanych na innych urządzeniach."
+
+  # ===== Rozdział: Zastrzeżenie karty =====
+  - id: karty-debetowe-zastrzezenie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik {zobowiązany jest|ma obowiązek} niezwłocznie zgłosić Bankowi utratę, kradzież, przywłaszczenie lub nieuprawnione użycie karty, a także podejrzenie, że PIN lub dane karty stały się znane osobie nieuprawnionej. Zgłoszenia można dokonać:"
+        punkty:
+          - "telefonicznie przez całą dobę pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}, a z zagranicy pod numerem {{fakt:kontakt.infolinia-zagranica}};"
+          - "w bankowości elektronicznej, wybierając funkcję zastrzeżenia karty;"
+          - "w placówce Banku w godzinach jej pracy."
+      - ustep: "Po przyjęciu zgłoszenia Bank {niezwłocznie blokuje|natychmiast blokuje} kartę w sposób uniemożliwiający dalsze jej użycie i przekazuje Użytkownikowi potwierdzenie zastrzeżenia, w tym datę i godzinę dokonania blokady oraz numer zgłoszenia. Zastrzeżenie karty jest nieodwracalne, a karta nie może zostać ponownie użyta, nawet jeśli została odnaleziona.[^1]"
+      - ustep: "Zastrzeżenie karty {obejmuje|dotyczy} także powiązanych z nią tokenów płatności mobilnych, chyba że Użytkownik zażąda zablokowania wyłącznie karty fizycznej. Na wniosek Użytkownika Bank wydaje kartę zastępczą z nowym numerem; {zasady|warunki} jej wydania określa {{ref:blok:karty-debetowe-wydanie}}."
+      - ustep: "Zastrzeżenie karty jest wolne od opłat w kwocie {{fakt:oplata.karta.zastrzezenie}}. Za wydanie karty zastępczej Bank pobiera opłatę {w wysokości|zgodnie ze stawką} określoną w {{ref:dokument:taryfa-karty}}."
+    przypisy:
+      1: "Użytkownik, który odnajdzie zastrzeżoną kartę, {powinien|jest obowiązany} ją zniszczyć albo zwrócić Bankowi; użycie karty po zastrzeżeniu jest niemożliwe z przyczyn technicznych."
+
+  - id: karty-debetowe-blokada-bank
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {ma prawo|może} zablokować kartę — czasowo albo trwale — z ważnych przyczyn, w szczególności gdy:"
+        punkty:
+          - "ma uzasadnione podejrzenie nieuprawnionego użycia lub umyślnego doprowadzenia do nieautoryzowanej transakcji;"
+          - "karta została użyta w sposób niezgodny z Regulaminem lub z przepisami prawa;"
+          - "w systemach Banku lub organizacji płatniczej wykryto naruszenie bezpieczeństwa danych kart;"
+          - "z rachunku, do którego wydano kartę, wynika zadłużenie przeterminowane;"
+          - tekst: "na rachunku ustanowiono blokadę lub ograniczenie dysponowania środkami, w szczególności z powodu:"
+            litery:
+              - "zajęcia dokonanego w postępowaniu egzekucyjnym lub zabezpieczającym;"
+              - "wszczęcia postępowania przez organy ścigania;"
+              - "śmierci Posiadacza, o której Bank powziął wiadomość."
+      - ustep: "Bank {informuje|powiadamia} Użytkownika o zablokowaniu karty przed jej zablokowaniem, a jeżeli nie jest to możliwe — niezwłocznie po jej zablokowaniu, telefonicznie, za pomocą wiadomości w bankowości elektronicznej lub przesyłką na adres korespondencyjny, o ile przekazanie takiej informacji nie jest niedopuszczalne ze względów bezpieczeństwa lub wymogów prawa."
+      - ustep: "Bank {odblokowuje|przywraca możliwość użycia} kartę lub wydaje nową, jeżeli ustały przyczyny blokady. Blokada karty {nie zwalnia|nie ma wpływu na obowiązek} Posiadacza z tytułu opłat należnych za okres jej trwania."
+      - ustep: "Użytkownik {może|ma prawo} samodzielnie, w bankowości elektronicznej, czasowo zablokować kartę i odblokować ją bez konieczności wymiany; blokada taka nie jest zastrzeżeniem karty i nie wiąże się z opłatą."
+
+  # ===== Rozdział: Transakcje nieautoryzowane i odpowiedzialność =====
+  - id: karty-debetowe-nieautoryzowane
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik {powinien|jest obowiązany} niezwłocznie powiadomić Bank o stwierdzeniu transakcji nieautoryzowanej, niewykonanej lub wykonanej nienależycie, nie później jednak niż w terminie {{fakt:termin.karta-debetowa.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku. Po upływie tego terminu roszczenia Posiadacza względem Banku z tego tytułu wygasają."
+      - ustep: "Zgłoszenie można złożyć na Infolinii, w bankowości elektronicznej, w placówce lub w formie reklamacji, zgodnie z postanowieniami o reklamacjach. Zgłoszenie powinno zawierać:"
+        punkty:
+          - "numer karty (lub jego ostatnie cztery cyfry), datę i kwotę kwestionowanej transakcji;"
+          - "nazwę akceptanta, jeżeli jest znana;"
+          - "opis okoliczności, w szczególności informację o tym, czy karta była w posiadaniu Użytkownika;"
+          - "wskazanie, czy Użytkownik zgłosił sprawę policji lub innym organom."
+      - ustep: "Bank {przeprowadza|prowadzi} postępowanie wyjaśniające i może zażądać od Użytkownika dodatkowych informacji lub dokumentów, a także zawiadomić organy ścigania. {Bank dokonuje|Zwrot kwoty} zwrotu transakcji nieautoryzowanej {następuje|jest dokonywany} {{fakt:termin.karta-debetowa.zwrot-nieautoryzowanej}} po stwierdzeniu transakcji lub otrzymaniu zgłoszenia, chyba że Bank ma uzasadnione i należycie udokumentowane podstawy, by podejrzewać oszustwo, i powiadomi o tym organy ścigania.[^1]"
+      - ustep: "Przywrócenie rachunku do stanu sprzed transakcji obejmuje również opłaty i odsetki, którymi został obciążony rachunek wskutek tej transakcji. Jeżeli w toku postępowania Bank stwierdzi, że transakcja była autoryzowana, może ponownie obciążyć rachunek, informując o tym Posiadacza."
+    przypisy:
+      1: "Zasady te nie ograniczają prawa Posiadacza do dochodzenia roszczeń na drodze sądowej ani do skorzystania z pozasądowych metod rozwiązywania sporów."
+
+  - id: karty-debetowe-odpowiedzialnosc
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz odpowiada za nieautoryzowane transakcje do wysokości równowartości w złotych kwoty {{fakt:termin.karta-debetowa.odpowiedzialnosc-kwota}}, jeżeli doszło do nich wskutek utraty karty lub jej kradzieży albo przywłaszczenia. Ograniczenie to nie ma zastosowania, jeżeli:"
+        punkty:
+          - "Użytkownik nie mógł stwierdzić utraty, kradzieży lub przywłaszczenia karty przed wykonaniem transakcji, chyba że działał umyślnie;"
+          - "utrata karty została spowodowana działaniem lub zaniechaniem pracownika Banku albo podmiotu, za który Bank ponosi odpowiedzialność."
+      - ustep: "Posiadacz ponosi pełną odpowiedzialność za nieautoryzowane transakcje, jeżeli doprowadził do nich umyślnie albo w wyniku umyślnego lub będącego skutkiem rażącego niedbalstwa naruszenia obowiązków określonych w Regulaminie, w szczególności obowiązku ochrony karty, PIN-u i danych uwierzytelniających oraz obowiązku niezwłocznego zgłoszenia utraty karty."
+      - ustep: "Po zgłoszeniu utraty, kradzieży, przywłaszczenia lub nieuprawnionego użycia karty zgodnie z Regulaminem Posiadacz nie odpowiada za nieautoryzowane transakcje wykonane po zgłoszeniu, chyba że doprowadził do nich umyślnie. Odpowiedzialność ta nie obejmuje także transakcji, w których Bank nie wymagał silnego uwierzytelniania, chyba że Użytkownik działał umyślnie.[^1]"
+      - ustep: "Bank odpowiada wobec Posiadacza za niewykonanie lub nienależyte wykonanie autoryzowanej transakcji, chyba że wykaże, że rachunek akceptanta został uznany we właściwym terminie, albo że niewykonanie nastąpiło wskutek siły wyższej lub okoliczności, za które ponosi odpowiedzialność inny podmiot."
+    przypisy:
+      1: "Zakres odpowiedzialności płatnika wynika z przepisów {{ref:akt:dz-u-2024-30-uslugi-platnicze}}; postanowienia umowy nie mogą go zmieniać na niekorzyść konsumenta."

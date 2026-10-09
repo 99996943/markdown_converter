@@ -1,0 +1,129 @@
+bloki:
+  - id: karty-debetowe-opc-karta-za-granica
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed wyjazdem za granicę Użytkownik {powinien|zaleca się mu}: sprawdzić ważność karty, ustalić odpowiednie limity oraz upewnić się, że w ustawieniach karty włączono transakcje w wybranym regionie świata. Użytkownik powinien zabrać ze sobą numer telefonu do zastrzegania karty, tj. {{fakt:kontakt.infolinia-zagranica}}."
+      - ustep: "W niektórych państwach terminale mogą wymagać użycia karty z chipem i PIN-em, a stosowanie paska magnetycznego bywa niemożliwe. Użytkownik nie powinien powierzać karty osobom trzecim w czasie dokonywania płatności i powinien obserwować jej użycie, a transakcję w terminalu wykonywać w swojej obecności."
+      - ustep: "Hotele, wypożyczalnie pojazdów i inni akceptanci mogą żądać wcześniejszej autoryzacji (rezerwacji) środków na karcie. Blokada ta zmniejsza dostępne saldo na czas wskazany w Regulaminie; jeżeli akceptant nie zwolni blokady w terminie {{fakt:termin.karta-debetowa.blokada-autoryzacji}}, Bank zwalnia ją z urzędu, o ile transakcja nie została rozliczona."
+      - ustep: "Bank nie odpowiada za ograniczenia w używaniu karty wynikające z przepisów obcych państw, sankcji międzynarodowych ani z zasad stosowanych przez zagranicznych akceptantów i operatorów bankomatów."
+
+  - id: karty-debetowe-opc-zakupy-paliwo
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy płatnościach na stacjach paliw, w automatach samoobsługowych, na parkingach i w innych punktach, w których ostateczna kwota nie jest znana w chwili autoryzacji, akceptant {może|ma prawo} wystąpić o blokadę środków w kwocie maksymalnej przewidzianej dla danego urządzenia."
+      - ustep: "Po zakończeniu transakcji akceptant przekazuje do rozliczenia rzeczywistą kwotę; Bank zwalnia nadwyżkę blokady po otrzymaniu zapisu o rozliczeniu. Do czasu zwolnienia blokady Użytkownik nie może dysponować zablokowaną kwotą, nawet jeśli rzeczywista wartość zakupu była niższa."
+      - ustep: "Jeżeli rozliczenie transakcji nie nastąpi w terminie {{fakt:termin.karta-debetowa.blokada-autoryzacji}}, Bank zwalnia blokadę, a po późniejszym rozliczeniu obciąża rachunek rzeczywistą kwotą transakcji, także gdy w międzyczasie środki zostały wykorzystane do innych celów. W takim przypadku obowiązują zasady dotyczące zadłużenia przeterminowanego."
+      - ustep: "Zakup w urządzeniu samoobsługowym kartą wirtualną lub urządzeniem mobilnym podlega tym samym zasadom, o ile urządzenie obsługuje płatności zbliżeniowe."
+
+  - id: karty-debetowe-opc-wykaz-transakcji
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {informuje|udostępnia informacje} o wykonanych transakcjach kartowych w historii rachunku w bankowości elektronicznej oraz w wyciągu z rachunku. Dla każdej transakcji podawane są co najmniej:"
+        punkty:
+          - "data wykonania transakcji i data jej księgowania;"
+          - "kwota i waluta transakcji;"
+          - "nazwa akceptanta lub operatora bankomatu oraz miejsce transakcji;"
+          - "numer karty w formie zamaskowanej;"
+          - "opłaty i prowizje związane z transakcją oraz kurs waluty obcej, jeżeli został zastosowany."
+      - ustep: "Wyciąg z rachunku jest udostępniany bezpłatnie w formie elektronicznej na trwałym nośniku. Na wniosek Posiadacza Bank wysyła wyciąg papierowy, pobierając opłatę {{fakt:oplata.wyciag-papierowy}} za każdy wyciąg."
+      - ustep: "Posiadacz sprawdza zgodność wykazanych transakcji ze swoimi dyspozycjami i niezwłocznie zgłasza Bankowi stwierdzone rozbieżności. Brak zgłoszenia w terminie wskazanym w Regulaminie skutkuje wygaśnięciem roszczeń Posiadacza z tytułu nieautoryzowanych lub nienależycie wykonanych transakcji, z zastrzeżeniem przepisów szczególnych."
+
+  - id: karty-debetowe-opc-cyfrowe-karty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Aby skorzystać z karty wirtualnej lub zarejestrować kartę w portfelu mobilnym, Użytkownik {musi|powinien} korzystać z aktualnej wersji aplikacji mobilnej Banku. Bank określa minimalne wymagania techniczne dla urządzeń i systemów operacyjnych, publikując je na stronie {{fakt:bank.strona}}."
+      - ustep: "Dane karty wyświetlane w aplikacji mobilnej są dostępne po podaniu kodu dostępu do aplikacji lub zastosowaniu cechy biometrycznej. Użytkownik nie wykonuje zrzutów ekranu ani kopii tych danych w sposób umożliwiający ich odczytanie przez inne osoby i aplikacje."
+      - ustep: "Bank {może|ma prawo} czasowo wstrzymać wyświetlanie danych kart w aplikacji, jeżeli wykryje zagrożenie dla bezpieczeństwa urządzenia lub aplikacji. Wstrzymanie nie jest zastrzeżeniem karty."
+      - ustep: "W razie awarii aplikacji mobilnej lub zmiany wymagań technicznych Użytkownik ma możliwość uzyskania danych karty w placówce lub na Infolinii po uwierzytelnieniu, bez dodatkowej opłaty."
+
+  - id: karty-debetowe-opc-pelnomocnik
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-uzytkownik
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pełnomocnik Posiadacza do rachunku może otrzymać kartę, jeżeli pełnomocnictwo przewiduje taki zakres umocowania i zostało złożone w formie przewidzianej w umowie rachunku. Wydanie karty pełnomocnikowi wymaga jego wniosku oraz potwierdzenia zgody Posiadacza."
+      - ustep: "Karta wydana pełnomocnikowi nie wygasa z chwilą wygaśnięcia pełnomocnictwa, jeżeli Bank nie został o tym zawiadomiony; Posiadacz {jest obowiązany|powinien} niezwłocznie zawiadomić Bank o odwołaniu pełnomocnictwa i zwrócić kartę lub zażądać jej zablokowania."
+      - ustep: "Pełnomocnik jest zobowiązany do przestrzegania Regulaminu. Posiadacz odpowiada za transakcje wykonane przez pełnomocnika kartą do chwili, w której Bank zablokował kartę wskutek otrzymania zawiadomienia o wygaśnięciu pełnomocnictwa."
+
+  - id: karty-debetowe-opc-reklamacje-transakcji
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-nieautoryzowane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Reklamacja transakcji kartowej, poza danymi wymienionymi w postanowieniach o reklamacjach, {powinna|musi} zawierać numer karty (co najmniej jego ostatnie cztery cyfry), datę, kwotę i opis transakcji oraz wskazanie, czy karta znajdowała się w posiadaniu Użytkownika w chwili transakcji."
+      - ustep: "Bank rozpatruje reklamację w terminie {{fakt:termin.reklamacja.platnicze}} od dnia jej otrzymania. Jeżeli wyjaśnienie sprawy wymaga uzyskania informacji od organizacji płatniczej lub zagranicznego banku, Bank może przedłużyć termin do {{fakt:termin.reklamacja.maksymalny}}, informując o tym Klienta i wskazując przyczynę opóźnienia oraz przewidywany termin odpowiedzi."
+      - ustep: "Odpowiedź na reklamację Bank przekazuje w postaci papierowej albo — za zgodą Klienta — na innym trwałym nośniku, w tym pocztą elektroniczną. W przypadku uznania reklamacji Bank niezwłocznie przywraca rachunek do stanu sprzed transakcji. W przypadku odrzucenia reklamacji Bank podaje uzasadnienie oraz informuje o możliwości odwołania się do Rzecznika Finansowego lub sądu."
+
+  - id: karty-debetowe-opc-wczesne-ostrzeganie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-nieautoryzowane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik, który otrzymał z Banku powiadomienie o transakcji, której nie wykonał, {powinien|jest obowiązany} niezwłocznie zablokować kartę w bankowości elektronicznej lub zadzwonić pod numer {{fakt:kontakt.infolinia-zastrzezenia}}, a następnie zgłosić transakcję jako nieautoryzowaną."
+      - ustep: "Jeżeli Użytkownik zaniecha niezwłocznego zablokowania karty po otrzymaniu takiego powiadomienia i w następstwie tego zaniechania zostaną wykonane kolejne transakcje, Bank może uznać, że za transakcje wykonane po upływie rozsądnego czasu od otrzymania powiadomienia odpowiada Użytkownik, o ile okoliczności wskazują na rażące niedbalstwo."
+      - ustep: "Bank zaleca ustawienie niskich limitów dziennych dla transakcji internetowych oraz włączenie powiadomień o każdej transakcji, co pozwala wcześnie wykryć nieuprawnione użycie karty."
+
+  - id: karty-debetowe-opc-dostep-posiadacza
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zastrzeżenie karty przez telefon wymaga weryfikacji tożsamości osoby zgłaszającej na podstawie danych osobowych i danych rachunku. W razie wątpliwości co do tożsamości Bank {może|ma prawo} dokonać blokady karty, odmawiając jej odblokowania do czasu zweryfikowania tożsamości w placówce lub w bankowości elektronicznej."
+      - ustep: "Bank {nie odpowiada|nie ponosi odpowiedzialności} za skutki zastrzeżenia karty dokonanego przez osobę, która posłużyła się danymi Użytkownika, jeżeli Bank dochował należytej staranności przy weryfikacji. Posiadacz może jednak żądać wydania nowej karty bez opłaty."
+      - ustep: "Połączenia z Infolinią zastrzegania są nagrywane; nagranie stanowi dowód zgłoszenia, a jego data i godzina stanowią moment zastrzeżenia karty. Użytkownik ma prawo żądać potwierdzenia zgłoszenia na trwałym nośniku."
+
+  - id: karty-debetowe-opc-zmiany-limitow-bank
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} zmienić domyślne limity transakcji kartowych, w szczególności z następujących przyczyn:"
+        punkty:
+          - "zmiany przepisów prawa lub zaleceń organów nadzoru dotyczących bezpieczeństwa płatności;"
+          - "zmiany poziomu ryzyka nadużyć związanych z danym rodzajem transakcji;"
+          - "zmiany zasad organizacji płatniczej;"
+          - "zmiany oferty Banku w zakresie kart."
+      - ustep: "O zmianie domyślnych limitów Bank informuje Posiadacza w trybie przewidzianym dla zmiany Regulaminu. Zmiana limitów ustawionych indywidualnie przez Użytkownika wymaga jego zgody, chyba że wynika z okoliczności związanych z bezpieczeństwem."
+      - ustep: "Z dniem {{param:od}} limit dzienny transakcji zbliżeniowych bez PIN-u wynosi {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}, a limit dzienny transakcji bezgotówkowych — {{fakt:limit.karta.dzienny-bezgotowkowy}}."
+
+  - id: karty-debetowe-opc-wznowienie-wyjatki
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waznosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank nie wznawia karty, jeżeli:"
+        punkty:
+          - "Posiadacz złożył rezygnację w terminie wskazanym w Regulaminie;"
+          - "umowa rachunku lub umowa o kartę została wypowiedziana albo wygasła;"
+          - "karta została wycofana z oferty, a Posiadacz nie wybrał karty zastępczej;"
+          - "wystąpiły okoliczności uzasadniające odmowę wydania karty, o których mowa w Regulaminie."
+      - ustep: "W przypadku niewznowienia karty z przyczyn leżących po stronie Banku Bank informuje o tym Posiadacza z odpowiednim wyprzedzeniem i proponuje alternatywne rozwiązanie. Jeżeli Posiadacz nie otrzymał wznowionej karty w terminie {{fakt:termin.karta-debetowa.wydanie}} przed upływem ważności dotychczasowej, {zawiadamia|powinien zawiadomić} o tym Bank."
+      - ustep: "Wznowienie karty nie wymaga zawarcia nowej umowy, a postanowienia Regulaminu obowiązujące w dniu wznowienia stosuje się do karty wznowionej."
+
+  - id: karty-debetowe-opc-zawiadomienia
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Oświadczenia i zawiadomienia składane Bankowi {mogą być składane|można składać} w placówce, na Infolinii (w zakresie, w jakim umożliwia to Bank), w bankowości elektronicznej lub w formie pisemnej na adres {{fakt:bank.adres}}. Dla skuteczności oświadczeń składanych w formie pisemnej decyduje data wpływu do Banku."
+      - ustep: "Oświadczenia Banku wobec Klienta są przekazywane na trwałym nośniku, w szczególności w bankowości elektronicznej, pocztą elektroniczną lub listem. Jeżeli Klient nie wyraził zgody na korzystanie z poczty elektronicznej, Bank przesyła korespondencję na adres korespondencyjny."
+      - ustep: "Klient odpowiada za skutki nieaktualnych danych kontaktowych. Pismo skierowane na ostatni znany adres uważa się za doręczone w terminie {{fakt:termin.doreczenie-korespondencji}} od dnia nadania, chyba że Klient wykaże, że z przyczyn niezależnych od niego doręczenie nie nastąpiło."

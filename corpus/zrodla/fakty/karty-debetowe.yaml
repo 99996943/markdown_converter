@@ -1,0 +1,153 @@
+fakty:
+  # --- opłaty
+  - id: oplata.karta-debetowa.wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [15.00, 20.00]
+  - id: oplata.karta-debetowa.prowadzenie-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+      - od: 2027-01-01
+        wartosc: 8.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.karta-debetowa.wydanie-pilne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+      - od: 2026-04-01
+        wartosc: 70.00
+    alternatywy: [40.00, 90.00]
+  - id: oplata.karta-debetowa.zmiana-pin
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.karta-debetowa.wyplata-bankomat-zagranica
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+      - od: 2027-01-01
+        wartosc: 12.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.karta-debetowa.powiadomienie-o-transakcji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [1.00]
+  # --- limity
+  - id: limit.karta-debetowa.zblizeniowy-bez-pin
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2027-01-01
+        wartosc: 150.00
+    alternatywy: [50.00, 200.00]
+  - id: limit.karta-debetowa.zblizeniowy-skumulowany
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+    alternatywy: [150.00, 500.00]
+  - id: limit.karta-debetowa.internet-dzienny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 12000.00
+    alternatywy: [3000.00, 20000.00]
+  - id: limit.karta-debetowa.maksymalny-ustawiany-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20000.00
+    alternatywy: [10000.00, 30000.00]
+  - id: limit.karta-debetowa.minimalny-ustawiany
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [0.00, 500.00]
+  - id: limit.karta-debetowa.maksymalna-wplata-wplatomat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+    alternatywy: [5000.00, 20000.00]
+  # --- terminy i inne
+  - id: termin.karta-debetowa.wydanie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2026-04-01
+        wartosc: 10
+    alternatywy: [7, 21]
+  - id: termin.karta-debetowa.aktywacja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 60
+    alternatywy: [30, 90]
+  - id: termin.karta-debetowa.dostarczenie-pin
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14]
+  - id: termin.karta-debetowa.rozliczenie-transakcji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5, 7]
+  - id: termin.karta-debetowa.blokada-autoryzacji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14, 30]
+  - id: termin.karta-debetowa.informacja-o-wznowieniu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 45
+    alternatywy: [30, 60]
+  - id: termin.karta-debetowa.rezygnacja-z-wznowienia
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 45]
+  - id: termin.karta-debetowa.zgloszenie-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 miesięcy"
+    alternatywy: ["6 miesięcy"]
+  - id: termin.karta-debetowa.zwrot-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+    alternatywy: ["w ciągu 5 dni roboczych"]
+  - id: termin.karta-debetowa.odpowiedzialnosc-kwota
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [150.00, 0.00]
+  - id: karta-debetowa.okres-waznosci
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "4 lata"
+      - od: 2027-01-01
+        wartosc: "5 lat"
+    alternatywy: ["3 lata"]
+  - id: karta-debetowa.liczba-prob-pin
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzykrotne"
+    alternatywy: ["pięciokrotne"]
+  - id: karta-debetowa.liczba-transakcji-zblizeniowych
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "pięć"
+    alternatywy: ["trzy", "dziesięć"]
+  - id: karta-debetowa.zrodlo-kursu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "tabeli kursów walut Banku"
+    alternatywy: ["tabeli kursów średnich Narodowego Banku Polskiego"]
+  - id: karta-debetowa.liczba-urzadzen-mobilnych
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "pięć"
+    alternatywy: ["trzy", "dziesięć"]

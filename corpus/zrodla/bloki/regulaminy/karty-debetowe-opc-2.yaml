@@ -1,0 +1,191 @@
+bloki:
+  # ===== Pula: Autoryzacja i silne uwierzytelnianie =====
+  - id: karty-debetowe-opc-monitorowanie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-autoryzacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {stosuje|wykorzystuje} systemy monitorowania transakcji kartowych, które w czasie rzeczywistym oceniają ryzyko nadużycia. Ocena uwzględnia w szczególności kwotę i miejsce transakcji, rodzaj akceptanta, dotychczasowe zwyczaje Użytkownika oraz informacje o znanych metodach oszustw."
+      - ustep: "Jeżeli transakcja zostanie uznana za podejrzaną, Bank {może|ma prawo}:"
+        punkty:
+          - "odrzucić transakcję i przesłać do Użytkownika powiadomienie z prośbą o potwierdzenie;"
+          - "skontaktować się z Użytkownikiem telefonicznie, nigdy nie żądając podania PIN-u, haseł ani kodów jednorazowych;"
+          - "czasowo zablokować kartę do czasu wyjaśnienia sprawy."
+      - ustep: "Użytkownik, który otrzymał z Banku telefon lub wiadomość z prośbą o potwierdzenie transakcji, {powinien|jest obowiązany} zweryfikować prawdziwość kontaktu, kończąc rozmowę i dzwoniąc samodzielnie na numer Infolinii {{fakt:kontakt.infolinia}}. Pracownik Banku nie prosi o przelanie środków na „bezpieczne konto”, o instalację aplikacji zdalnego dostępu ani o podanie danych karty w rozmowie telefonicznej.[^1]"
+    przypisy:
+      1: "Zasady bezpiecznego korzystania z kart Bank {publikuje|zamieszcza} także na stronie {{fakt:bank.strona}} w zakładce poświęconej bezpieczeństwu."
+
+  - id: karty-debetowe-opc-bezpieczenstwo-online
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-autoryzacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W celu ograniczenia ryzyka nadużyć w płatnościach na odległość Użytkownik {powinien|zobowiązuje się} przestrzegać następujących zasad:"
+        punkty:
+          - "korzystać wyłącznie ze stron zabezpieczonych szyfrowanym połączeniem i nie otwierać odnośników z podejrzanych wiadomości;"
+          - "nie zapisywać danych karty w przeglądarce na urządzeniach współdzielonych z innymi osobami;"
+          - "nie podawać danych karty ani kodów jednorazowych osobom, które skontaktowały się z nim z własnej inicjatywy;"
+          - "w przypadku płatności w serwisach, z którymi Użytkownik nie ma doświadczenia, korzystać z karty wirtualnej o ograniczonym limicie."
+      - ustep: "Bank {ma prawo|może} odmówić autoryzacji transakcji internetowej w przypadku, gdy akceptant nie obsługuje mechanizmów silnego uwierzytelniania, a transakcja nie kwalifikuje się do wyłączenia z tego wymogu. Odmowa nie stanowi niewykonania usługi przez Bank."
+      - ustep: "Na wniosek Użytkownika Bank {wyłącza|może wyłączyć} możliwość dokonywania transakcji bez fizycznej obecności karty, w tym płatności internetowych i telefonicznych. Włączenie tej funkcji wymaga silnego uwierzytelnienia i jest skuteczne od chwili potwierdzenia dyspozycji."
+      - ustep: "Użytkownik nie powinien korzystać z publicznie dostępnych sieci bezprzewodowych bez dodatkowych zabezpieczeń podczas płatności kartą; {odpowiedzialność|ryzyko} z tytułu wykonania transakcji w ten sposób ponosi w granicach określonych w Regulaminie."
+
+  # ===== Pula: Płatności zbliżeniowe i mobilne =====
+  - id: karty-debetowe-opc-zmiana-urzadzenia
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zblizeniowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie sprzedaży, oddania do naprawy, utraty lub wymiany urządzenia mobilnego, na którym zarejestrowano kartę, Użytkownik {powinien|jest zobowiązany} niezwłocznie usunąć token z urządzenia. W tym celu może:"
+        punkty:
+          - "usunąć kartę z portfela mobilnego w ustawieniach urządzenia;"
+          - "wyłączyć token w bankowości elektronicznej;"
+          - "zwrócić się o to do Infolinii pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+      - ustep: "Po wymianie urządzenia Użytkownik rejestruje kartę ponownie, po przejściu silnego uwierzytelniania. Aby uniknąć problemów z płatnością, Użytkownik sprawdza, czy w urządzeniu zainstalowano aktualną wersję systemu i aplikacji Banku."
+      - ustep: "Bank {może|ma prawo} odmówić rejestracji karty w urządzeniu, jeżeli ma uzasadnione podejrzenie, że urządzenie zostało zmodyfikowane w sposób zmniejszający poziom jego bezpieczeństwa (np. poprzez uzyskanie nieograniczonych uprawnień administratora), albo jeżeli system operacyjny nie jest już wspierany przez producenta."
+      - ustep: "Płatności mobilne mogą być czasowo niedostępne z powodu prac serwisowych Banku lub dostawcy rozwiązania. Bank informuje o planowanych przerwach z wyprzedzeniem w aplikacji mobilnej i na stronie internetowej; {nie odpowiada|nie ponosi odpowiedzialności} za szkody wynikające z przerw spowodowanych siłą wyższą."
+
+  - id: karty-debetowe-opc-zblizeniowe-zagranica
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zblizeniowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Limity transakcji zbliżeniowych bez PIN-u za granicą mogą różnić się od limitów krajowych, ponieważ ustalają je operatorzy terminali i przepisy danego państwa. Bank {nie ma wpływu|nie może wpłynąć} na te limity; terminal może zażądać wprowadzenia PIN-u także przy kwocie niższej niż {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}."
+      - ustep: "Zbliżeniowa transakcja zagraniczna jest rozliczana według zasad opisanych w rozdziale o transakcjach walutowych. Użytkownik, który podróżuje poza Europejski Obszar Gospodarczy, powinien przed wyjazdem sprawdzić w bankowości elektronicznej, czy w ustawieniach karty włączono transakcje w wybranych regionach świata."
+      - ustep: "W ustawieniach karty Użytkownik {może|ma możliwość} wyłączyć płatności w wybranych regionach świata, a także ograniczyć możliwość używania karty wyłącznie do transakcji w kraju. Zmiany te wchodzą w życie niezwłocznie po potwierdzeniu dyspozycji i nie wymagają wymiany karty."
+
+  # ===== Pula: Zastrzeżenie karty =====
+  - id: karty-debetowe-opc-zatrzymanie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta może zostać zatrzymana przez bankomat lub akceptanta, jeżeli:"
+        punkty:
+          - "Użytkownik trzykrotnie błędnie wprowadził PIN w tym samym bankomacie;"
+          - "karta została zastrzeżona lub zablokowana, a akceptant otrzymał polecenie jej zatrzymania;"
+          - "Użytkownik nie odebrał karty z bankomatu w czasie przewidzianym przez urządzenie;"
+          - "wystąpiła awaria urządzenia."
+      - ustep: "O zatrzymaniu karty Użytkownik {powinien|jest zobowiązany} niezwłocznie powiadomić Bank. Jeżeli karta została zatrzymana z powodu awarii bankomatu Banku lub nieodebrania w czasie, Bank {wydaje|przekazuje Użytkownikowi} nową kartę na zasadach określonych w Regulaminie, a opłata za jej wydanie jest zależna od ustaleń Taryfy."
+      - ustep: "Karta zatrzymana przez bankomat obcego operatora jest zwracana Bankowi w ciągu kilku dni; w tym czasie Bank {może|ma prawo} ją zastrzec ze względów bezpieczeństwa. Zwrot karty Użytkownikowi {następuje|jest możliwy} wyłącznie, jeżeli Bank nie zastrzegł jej wcześniej."
+
+  - id: karty-debetowe-opc-po-zastrzezeniu
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po zastrzeżeniu karty Użytkownik {powinien|jest zobowiązany} sprawdzić historię transakcji i niezwłocznie zgłosić Bankowi wszystkie transakcje, których nie wykonał. Do zgłoszenia {warto|należy} dołączyć informacje o okolicznościach utraty karty i kopię zawiadomienia o przestępstwie, jeżeli zostało złożone."
+      - ustep: "W razie kradzieży karty Użytkownik {zawiadamia|powinien zawiadomić} o tym fakcie policję. Bank nie wymaga zawiadomienia jako warunku zastrzeżenia, lecz może poprosić o jego kopię w postępowaniu wyjaśniającym dotyczącym nieautoryzowanych transakcji."
+      - ustep: "Po zastrzeżeniu karty Bank wydaje nową kartę z innym numerem. Użytkownik uaktualnia dane karty w serwisach, w których zapisał ją jako stałą metodę płatności, w szczególności w usługach subskrypcyjnych, aby uniknąć przerwy w ich świadczeniu. Bank {nie ponosi odpowiedzialności|nie odpowiada} za konsekwencje braku aktualizacji danych karty u akceptanta."
+
+  # ===== Pula: Transakcje nieautoryzowane i odpowiedzialność =====
+  - id: karty-debetowe-opc-chargeback
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-nieautoryzowane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Użytkownik kwestionuje transakcję zrealizowaną przez akceptanta, w szczególności z powodu niedostarczenia towaru, niewykonania usługi, wielokrotnego obciążenia lub obciążenia kwotą inną niż autoryzowana, Bank {może|ma prawo} wszcząć procedurę zwrotną (tzw. chargeback) wobec banku akceptanta, zgodnie z zasadami organizacji płatniczej."
+      - ustep: "Aby Bank mógł wszcząć procedurę, Użytkownik {musi|powinien} przekazać Bankowi dokumenty potwierdzające zasadność roszczenia, w szczególności:"
+        punkty:
+          - "potwierdzenie zamówienia, rezerwacji lub zakupu;"
+          - "korespondencję z akceptantem, w której Użytkownik próbował rozwiązać sporną kwestię;"
+          - "dowód odstąpienia od umowy, zwrotu towaru lub rezygnacji z usługi, jeżeli sprawa dotyczy takiego zdarzenia."
+      - ustep: "Procedura zwrotna jest ograniczona terminami określonymi przez organizację płatniczą, dlatego wniosek należy złożyć niezwłocznie, nie później niż w terminie 120 dni od dnia rozliczenia transakcji. Bank {poinformuje|powiadomi} Użytkownika o wyniku procedury; jej wszczęcie nie gwarantuje zwrotu środków.[^1]"
+    przypisy:
+      1: "Terminy procedury zwrotnej mają charakter zasad organizacji płatniczej; Bank nie ma wpływu na ich wysokość ani na rozstrzygnięcie w stosunkach między bankami."
+
+  - id: karty-debetowe-opc-dowody
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-nieautoryzowane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie sporu co do autoryzacji transakcji kartą Bank {wykazuje|jest obowiązany wykazać}, że transakcja została uwierzytelniona, prawidłowo zarejestrowana i zaksięgowana oraz że nie miała na nią wpływu awaria techniczna lub inna usterka. Samo zarejestrowanie użycia karty nie musi wystarczać do wykazania, że płatnik autoryzował transakcję."
+      - ustep: "Bank przechowuje dokumentację transakcji kartowych przez okres wymagany przepisami prawa, a w sprawach reklamacyjnych — do czasu zakończenia postępowania. Dokumentacja obejmuje w szczególności zapisy systemów autoryzacyjnych, logi uwierzytelniania oraz dane przekazane przez organizację płatniczą i akceptanta."
+      - ustep: "Użytkownik {ma prawo|może} zażądać udostępnienia kopii danych dotyczących kwestionowanej transakcji, w szczególności daty, godziny, miejsca i sposobu autoryzacji. Bank udostępnia te dane w terminie {{fakt:termin.reklamacja.platnicze}} od dnia otrzymania żądania, o ile nie koliduje to z przepisami o tajemnicy bankowej lub bezpieczeństwie."
+
+  # ===== Pula: Rozliczanie transakcji walutowych =====
+  - id: karty-debetowe-opc-waluty-bankomat
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waluty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłata gotówki w bankomacie za granicą jest rozliczana w walucie lokalnej według kursu, o którym mowa w rozdziale dotyczącym transakcji walutowych, a Bank pobiera dodatkową opłatę wskazaną w {{ref:dokument:taryfa-karty}}. W dniu wejścia w życie Regulaminu opłata ta wynosi {{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}."
+      - ustep: "Operator bankomatu może zaproponować wypłatę w złotych po własnym kursie, z doliczeniem prowizji. Użytkownik powinien zwrócić uwagę na komunikat wyświetlany na ekranie przed zatwierdzeniem wypłaty i wybrać wypłatę w walucie lokalnej, jeżeli chce, aby przeliczenia dokonał Bank."
+      - ustep: "Jeżeli bankomat za granicą wyda gotówkę w kwocie niższej niż potwierdzona, Użytkownik składa reklamację, załączając potwierdzenie wypłaty. Bank wyjaśnia sprawę z operatorem urządzenia, co może wydłużyć czas rozpatrzenia reklamacji ze względu na konieczność kontaktu z podmiotem zagranicznym."
+
+  - id: karty-debetowe-opc-waluty-zwroty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waluty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrot transakcji dokonanej w walucie obcej jest przeliczany na złote według kursu obowiązującego w dniu rozliczenia zwrotu, a nie w dniu pierwotnej transakcji. W konsekwencji kwota zwrotu może być niższa lub wyższa niż kwota pierwotnie obciążona."
+      - ustep: "Jeżeli transakcja walutowa została anulowana przed rozliczeniem, blokada środków {zostaje zwolniona|jest zwalniana} w złotych, w kwocie, w jakiej została założona, bez zastosowania kursu rozliczeniowego."
+      - ustep: "W historii rachunku Bank podaje kwotę transakcji w walucie oryginalnej, kwotę w złotych oraz — jeżeli to technicznie możliwe — zastosowany kurs. {Informacje te|Dane te} Użytkownik wykorzystuje przy ewentualnym wnioskowaniu o wyjaśnienie transakcji."
+
+  # ===== Pula: Opłaty =====
+  - id: karty-debetowe-opc-pobieranie-oplat
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-oplaty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank pobiera opłaty z rachunku, do którego wydano kartę, w dniu wykonania czynności lub w terminach wskazanych w {{ref:dokument:taryfa-karty}}. Jeżeli na rachunku nie ma wystarczających środków, Bank {może|ma prawo} pobrać opłatę w dniu ich wpływu, powodując powstanie zadłużenia przeterminowanego."
+      - ustep: "Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie w wysokości {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym. Za wezwanie do zapłaty Bank pobiera opłatę {{fakt:oplata.upomnienie}}, o ile poprzednie wezwanie nie zostało wysłane w ciągu ostatnich 30 dni."
+      - ustep: "Zmiana wysokości opłat następuje na zasadach określonych w postanowieniach o zmianie Regulaminu. Bank zwraca Posiadaczowi opłatę pobraną nienależnie, w terminie {{fakt:termin.zwrot-oplat}} od dnia stwierdzenia błędu albo otrzymania żądania Posiadacza."
+
+  # ===== Pula: Ważność, wznowienie i rezygnacja =====
+  - id: karty-debetowe-opc-nieuzywana
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waznosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta, której Użytkownik nie używał przez okres co najmniej 12 miesięcy, jest uznawana za nieaktywną. Bank {może|ma prawo} w takim przypadku:"
+        punkty:
+          - "wysłać Użytkownikowi informację z prośbą o potwierdzenie zamiaru dalszego korzystania z karty;"
+          - "nie wznawiać karty po upływie okresu jej ważności;"
+          - "wypowiedzieć umowę o kartę zgodnie z postanowieniami o rezygnacji."
+      - ustep: "Fakt nieużywania karty {nie zwalnia|nie wyłącza obowiązku} z opłat należnych według Taryfy. Użytkownik, który nie zamierza korzystać z karty, powinien złożyć dyspozycję rezygnacji, aby uniknąć zbędnych kosztów."
+      - ustep: "Posiadacz może na własny wniosek zawiesić możliwość używania karty na wskazany okres, nie dłuższy niż 90 dni; w tym czasie opłata miesięczna za kartę jest naliczana zgodnie z Taryfą, a karta nie funkcjonuje."
+
+  - id: karty-debetowe-opc-zmiana-karty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waznosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na wniosek Posiadacza Bank może zamienić kartę na inny rodzaj karty debetowej dostępny w ofercie. Zamiana następuje przez wydanie nowej karty i rozwiązanie umowy w zakresie dotychczasowej karty z dniem aktywacji nowej."
+      - ustep: "Jeżeli Bank wycofuje daną kartę z oferty albo zmienia zakres jej funkcji, informuje o tym Posiadacza na trwałym nośniku z wyprzedzeniem wynikającym z postanowień o zmianie Regulaminu i oferuje wydanie karty o zbliżonych parametrach. {Wymiana|Zamiana} jest dokonywana bez dodatkowej opłaty, jeżeli taka jest wola Banku."
+      - ustep: "Zamiana karty nie powoduje utraty zapisanych tokenów płatności mobilnych, jeżeli numer karty pozostaje bez zmian; w pozostałych przypadkach Użytkownik rejestruje kartę ponownie, a stare tokeny są dezaktywowane z dniem wygaśnięcia dotychczasowej karty."
+
+  # ===== Pula: Postanowienia końcowe =====
+  - id: karty-debetowe-opc-sila-wyzsza
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {nie ponosi odpowiedzialności|nie odpowiada} za niewykonanie lub nienależyte wykonanie usług związanych z kartą, jeżeli wynika to z siły wyższej, w szczególności z klęski żywiołowej, awarii zasilania lub sieci telekomunikacyjnych niezależnych od Banku, strajku, aktów terroryzmu lub działań władz publicznych."
+      - ustep: "Bank nie odpowiada także za odmowę przyjęcia karty przez akceptanta oraz za jakość towarów i usług zakupionych kartą. Reklamacje dotyczące towarów i usług Użytkownik kieruje do akceptanta; w zakresie, w jakim sprawa dotyczy rozliczenia transakcji, mogą mieć zastosowanie zasady procedury zwrotnej."
+      - ustep: "Wyłączenia odpowiedzialności, o których mowa w ustępach poprzedzających, {nie obejmują|nie dotyczą} szkód wyrządzonych umyślnie ani odpowiedzialności, której nie można wyłączyć lub ograniczyć na podstawie przepisów prawa, w szczególności przepisów chroniących konsumentów."
+
+  - id: karty-debetowe-opc-jezyk-komunikacja
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Językiem stosowanym w relacjach między Bankiem a Klientem, w tym w umowie o kartę, Regulaminie, Taryfie i korespondencji, jest język polski, chyba że strony postanowią inaczej."
+      - ustep: "Bank kontaktuje się z Użytkownikiem w sprawach dotyczących karty, korzystając z kanałów wskazanych przez Posiadacza: telefonu, poczty elektronicznej, bankowości elektronicznej oraz korespondencji pocztowej. Rozmowy telefoniczne z Infolinią są nagrywane, a Klient jest o tym informowany na początku rozmowy. {Nagrania|Zapisy rozmów} mogą być wykorzystywane do rozpatrywania reklamacji."
+      - ustep: "Infolinia jest dostępna {{fakt:kontakt.godziny-infolinii}}. Połączenia z numerów krajowych są wolne od opłat dodatkowych. Użytkownik, który przebywa za granicą, korzysta z numeru {{fakt:kontakt.infolinia-zagranica}}, a opłata za połączenie jest naliczana zgodnie z cennikiem jego operatora."
+      - ustep: "Dane do kontaktu z Bankiem, w tym adres siedziby i adres korespondencyjny, są dostępne na stronie {{fakt:bank.strona}} i mogą ulegać zmianie. Zmiana tych danych nie stanowi zmiany Regulaminu."
