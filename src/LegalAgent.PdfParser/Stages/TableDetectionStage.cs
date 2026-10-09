@@ -512,10 +512,16 @@ public sealed class TableDetectionStage : IPipelineStage
         // A ragged column can reach into the free band past its middle: then no cell may span the band, and the lines
         // must be running text — mostly one cell per column (a label joins its text), where table columns put several
         // cells on one side.
-        int textLines = region.Count(r => r.Cells.Count(c => c.Box.Left < middle) <= 1 && r.Cells.Count(c => c.Box.Left >= middle) <= 1);
+        int textLines = region.Count(r => TextCells(r.Cells.Where(c => c.Box.Left < middle).ToList()) <= 1 && TextCells(r.Cells.Where(c => c.Box.Left >= middle).ToList()) <= 1);
         return textLines >= TextColumnLineShare * region.Count
             && cells.All(c => c.Box.Right <= g.End || c.Box.Left >= g.Start);
     }
+
+    /// <summary>Cells of one column of a line, a leading list label („1.”, „2)”) counted with the text it introduces.</summary>
+    private static int TextCells(List<LineSegment> cells) =>
+        cells.Count > 1 && ListLabelPatterns.TryMatch(cells[0].Text + " x", out ListLabelMatch? label) && string.Equals(label.Label, cells[0].Text, StringComparison.Ordinal)
+            ? cells.Count - 1
+            : cells.Count;
 
     /// <summary>
     /// Keeps the lines up to the last multi-cell line plus the single-cell lines that still belong to the last row: inside
