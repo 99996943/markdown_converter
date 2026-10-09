@@ -24,7 +24,7 @@ bloki:
       - pozycje-taryfy:
           - {usluga: "Wypłata gotówki w kasie placówki przez posiadacza rachunku dla seniora", stawka: "bez opłat", tryb: "za operację"}
           - {usluga: "Wpłata gotówki we wpłatomacie Banku z użyciem karty debetowej", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację"}
-          - {usluga: "Wpłata gotówki we wpłatomacie Banku bez użycia karty (kod BLIK lub kod z aplikacji)", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki we wpłatomacie Banku bez użycia karty (kod jednorazowy z aplikacji mobilnej)", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację"}
           - {usluga: "Wpłata monet we wpłatomacie przystosowanym do przyjmowania bilonu", stawka: "1,00% kwoty, min. 2,00 zł", tryb: "od kwoty wpłaty"}
           - {usluga: "Wypłata gotówki w kasie placówki z rachunku ze zbliżonym saldem do kwoty wypłaty (wypłata całości środków)", stawka: "bez opłat", tryb: "za operację"}
           - {usluga: "Likwidacja rachunku z wypłatą salda w gotówce", stawka: "bez opłat", tryb: "jednorazowo"}
