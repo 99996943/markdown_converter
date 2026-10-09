@@ -182,6 +182,7 @@ public static class DocumentComposer
         private string? _sectionNumber;
         private int _stepCounter;
         private TariffTable? _tariff;
+        private readonly System.Text.StringBuilder _blockExtra = new();
 
         public Composition(DocumentPlan plan, ContentLibrary content, DocumentTemplate template, ulong runSeed, List<List<string>> optional)
         {
@@ -391,7 +392,14 @@ public static class DocumentComposer
                 }
             }
 
-            _rendered.Add(new RenderedBlock(_plan.Id, block.Id, block.Shared, BlockText(first)));
+            string text = BlockText(first);
+            if (_blockExtra.Length > 0)
+            {
+                text = (text + " " + _blockExtra).Trim();
+                _blockExtra.Clear();
+            }
+
+            _rendered.Add(new RenderedBlock(_plan.Id, block.Id, block.Shared, text));
         }
 
         private void Clause(ContentBlock block, SourceClause clause, string? unit, int number)
@@ -477,13 +485,17 @@ public static class DocumentComposer
                         number = prefix + (++k).ToString(CultureInfo.InvariantCulture);
                     }
 
-                    _tariff.Rows.Add(
+                    IReadOnlyList<TableCell> row =
                     [
                         TableCell.Of(number + "."),
                         new TableCell(notes.Markers(Render(item.Service))),
                         new TableCell(notes.Markers(Render(item.Mode))),
                         new TableCell(notes.Markers(Render(item.Rate))),
-                    ]);
+                    ];
+                    _tariff.Rows.Add(row);
+
+                    // Positions are flushed into the table later; their text still belongs to this block (checks).
+                    _blockExtra.Append(' ').Append(string.Join(" ", row.Skip(1).Select(c => Inline.PlainText(c.Text))));
                     Rows(item.Children, number + ".");
                 }
             }
