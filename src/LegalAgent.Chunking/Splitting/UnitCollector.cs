@@ -48,7 +48,8 @@ internal static class UnitCollector
     {
         List<string> segments = [.. parentSegments, Identity.UnitKeyBuilder.Segment(section.Designation, section.HeadingText)];
         List<ContentBlock> blocks = OwnBlocks(section.Blocks);
-        if (blocks.Count > 0 || section.Footnotes.Count > 0)
+        // A section with neither content nor subsections keeps its heading as a unit of its own (FR-220).
+        if (blocks.Count > 0 || section.Footnotes.Count > 0 || section.Children.Count == 0)
         {
             units.Add(new Unit(section, blocks, section.Footnotes, Kind(section.Kind), segments, section.Path));
         }
