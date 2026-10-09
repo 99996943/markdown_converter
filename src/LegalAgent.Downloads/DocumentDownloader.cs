@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 using LegalAgent.Downloads.Model;
 
 namespace LegalAgent.Downloads;
@@ -53,7 +54,36 @@ public sealed class DocumentDownloader
                 plan.Select(item => DownloadOneAsync(single, item, directory, progress, cancellationToken)))
             .ConfigureAwait(false);
 
-        return new DownloadRun(results, [], Path.Combine(directory, ManifestFileName));
+        string manifestPath = Path.Combine(directory, ManifestFileName);
+        WriteManifest(manifestPath, results);
+        return new DownloadRun(results, [], manifestPath);
+    }
+
+    private static void WriteManifest(string manifestPath, IReadOnlyList<DownloadResult> results)
+    {
+        string part = manifestPath + ".part";
+        try
+        {
+            File.WriteAllText(part, DownloadManifestJson.Serialize(results), new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+            File.Move(part, manifestPath, overwrite: true);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            TryDelete(part);
+            throw new DownloadDirectoryException($"Nie można zapisać manifestu {manifestPath}: {e.Message}", e);
+        }
+    }
+
+    private static void TryDelete(string path)
+    {
+        try
+        {
+            File.Delete(path);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            // The leftover is removed by the next successful run (research R9).
+        }
     }
 
     private static async Task<DownloadResult> DownloadOneAsync(
