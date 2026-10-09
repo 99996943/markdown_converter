@@ -1,0 +1,30 @@
+fakty:
+  - id: oplata.karta.wydanie-duplikatu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+      - od: 2026-04-01
+        wartosc: 30.00
+    alternatywy: [0.00, 45.00]
+  - id: oplata.prowizja.przelew
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+    alternatywy: [2.5]
+  - id: termin.reklamacja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2026-07-01
+        wartosc: 30
+    alternatywy: [7, 60]
+  - id: kontakt.infolinia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "800 000 001"
+    alternatywy: ["800 000 099"]
+  - id: data.wejscie-w-zycie
+    rodzaj: data
+    wartosci:
+      - wartosc: 2026-01-01
+    alternatywy: [2027-01-01]

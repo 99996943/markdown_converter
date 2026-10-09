@@ -1,0 +1,12 @@
+bloki:
+  - id: wspolne-definicje
+    typy: [regulaminy, taryfy, procedury]
+    kategoria: definicja
+    wspolny: true
+    jednostka: "§ {n}."
+    tytul: "Definicje"
+    elementy:
+      - naglowek: "Słownik pojęć"
+        poziom: 2
+      - akapit: "Użyte w dokumencie określenia oznaczają:"
+      - ramka: "{Uwaga|Ważne}: infolinia Banku Przykładowego S.A. działa pod numerem {{fakt:kontakt.infolinia}}."

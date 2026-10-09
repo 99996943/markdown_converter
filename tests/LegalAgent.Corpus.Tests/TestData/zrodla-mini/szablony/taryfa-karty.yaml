@@ -1,0 +1,10 @@
+id: taryfa-karty
+typ: taryfy
+temat: karty
+tytul: ["Taryfa opłat i prowizji {{param:bank}}"]
+uklady: [taryfa-siatka, taryfa-bez-siatki, tabela-dokument]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty płatnicze"
+    wymagane: [taryfa-karty-oplaty]

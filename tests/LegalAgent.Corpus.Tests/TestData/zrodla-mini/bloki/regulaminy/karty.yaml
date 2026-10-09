@@ -1,0 +1,31 @@
+bloki:
+  - id: karty-zastrzezenie
+    typy: [regulaminy]
+    tematy: [karty]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Klient|Posiadacz karty} {niezwłocznie|bez zbędnej zwłoki} zgłasza utratę karty:"
+        punkty:
+          - "telefonicznie pod numerem {{fakt:kontakt.infolinia}};"
+          - tekst: "w {oddziale|placówce} Banku, wskazując:"
+            litery:
+              - "numer karty;"
+              - "datę zdarzenia.[^1]"
+    przypisy:
+      1: "Opłata za duplikat: {{fakt:oplata.karta.wydanie-duplikatu}}."
+  - id: karty-tabela
+    typy: [regulaminy]
+    tematy: [karty]
+    kategoria: paragraf
+    elementy:
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj karty"
+              waga: 2
+            - naglowek: "Limit"
+          wiersze:
+            - ["Karta debetowa", "1 000 zł"]
+            - ["Karta kredytowa", "5 000 zł"]
+          siatka: true
+          przypisy: ["Limity dzienne."]

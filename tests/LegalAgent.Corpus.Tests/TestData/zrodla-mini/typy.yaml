@@ -1,0 +1,16 @@
+typy:
+  - id: regulaminy
+    prefiks: REG
+    oznaczenie: "BP/{prefiks}/{nn}"
+    nazwa: regulamin
+    wymagane-elementy: [paragrafy]
+  - id: taryfy
+    prefiks: TAR
+    oznaczenie: "BP/{prefiks}/{nn}"
+    nazwa: taryfa
+    wymagane-elementy: [tabela]
+  - id: procedury
+    prefiks: PRO
+    oznaczenie: "BP/{prefiks}/{nn}"
+    nazwa: procedura
+    wymagane-elementy: [kroki]
