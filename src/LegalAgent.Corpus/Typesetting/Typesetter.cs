@@ -143,6 +143,8 @@ public static class Typesetter
 
         if (front.History.Count > 0)
         {
+            // An isolated bold line: a heading of the record card (the parser makes it one, so does the truth).
+            w.Truth.Headings.Add(new TruthHeading(2, null, "Historia zmian"));
             Paragraph(w, [new Inline("Historia zmian", InlineStyle.Bold)]);
             TableLayout.Table(w, new TableElement(
                 [new TableColumn("Wersja", 0.8), new TableColumn("Data", 1.6), new TableColumn("Opis zmian", 5)],

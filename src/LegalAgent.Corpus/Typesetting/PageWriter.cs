@@ -333,10 +333,11 @@ internal sealed class PageWriter
         foreach ((int number, List<SetLine> lines) in _pageFootnotes)
         {
             // The label stands alone at the margin; it is not a truth word (the Markdown shows it as the definition key).
-            Builder.Text(_style.Left, y, number.ToString(CultureInfo.InvariantCulture) + ")", _style.FootnoteSize);
+            string label = number.ToString(CultureInfo.InvariantCulture) + ")";
+            Builder.Text(_style.Left, y, label, _style.FootnoteSize);
             foreach (SetLine line in lines)
             {
-                Draw(line, _style.Left + FootnoteIndent, y, _style.FootnoteSize);
+                Draw(line, _style.Left + Indent(number), y, _style.FootnoteSize);
                 y += _style.FootnoteLeading;
             }
 
@@ -345,6 +346,10 @@ internal sealed class PageWriter
 
         _current = saved;
     }
+
+    /// <summary>Text indent of a footnote: wide enough for its label („10)”) plus a gap.</summary>
+    private double Indent(int number) =>
+        Math.Max(FootnoteIndent, TextMeasure.Width(number.ToString(CultureInfo.InvariantCulture) + ")", _style.FootnoteSize) + 3);
 
     private double FootnoteTop(double height) => _style.FooterBaseline - FootnoteAreaAboveFooter - height;
 
@@ -357,6 +362,6 @@ internal sealed class PageWriter
             throw new InvalidOperationException("Missing footnote " + number.ToString(CultureInfo.InvariantCulture));
         }
 
-        return TextMeasure.Wrap(TextMeasure.Tokenize(text), _style.Right - _style.Left - FootnoteIndent, _style.FootnoteSize);
+        return TextMeasure.Wrap(TextMeasure.Tokenize(text), _style.Right - _style.Left - Indent(number), _style.FootnoteSize);
     }
 }
