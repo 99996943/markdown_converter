@@ -6,6 +6,43 @@ namespace LegalAgent.Corpus.Tests.Unit.Content;
 public class ContentLoaderTests
 {
     [Fact]
+    public void Load_FactsMayBeSplitIntoFilesUnderFakty()
+    {
+        var lib = MiniContent.LoadModified(dir =>
+        {
+            Directory.CreateDirectory(System.IO.Path.Combine(dir, "fakty"));
+            File.WriteAllText(System.IO.Path.Combine(dir, "fakty", "karty.yaml"), """
+                fakty:
+                  - id: oplata.karta.dodatkowa
+                    rodzaj: kwota
+                    wartosci:
+                      - wartosc: 12.5
+                """);
+        });
+
+        Assert.Equal(6, lib.Facts.All.Count);
+        Assert.Equal(12.5m, lib.Facts.Get("oplata.karta.dodatkowa").Values[0].Value.Number);
+    }
+
+    [Fact]
+    public void Load_DuplicateFactAcrossFiles_Throws()
+    {
+        var ex = Assert.Throws<ContentException>(() => MiniContent.LoadModified(dir =>
+        {
+            Directory.CreateDirectory(System.IO.Path.Combine(dir, "fakty"));
+            File.WriteAllText(System.IO.Path.Combine(dir, "fakty", "dubel.yaml"), """
+                fakty:
+                  - id: kontakt.infolinia
+                    rodzaj: tekst
+                    wartosci:
+                      - wartosc: "800 000 002"
+                """);
+        }));
+
+        Assert.Equal("fakty/dubel.yaml", ex.File);
+    }
+
+    [Fact]
     public void Load_MiniSet_HasExpectedCounts()
     {
         var lib = MiniContent.Load();
