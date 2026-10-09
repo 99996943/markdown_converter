@@ -188,11 +188,16 @@ public static class Typesetter
                 tableDocument.Section(h.Text.Count > 0 ? h with { Label = null } : h);
                 break;
             case HeadingElement h when tableDocument is not null:
-                // A unit („§ N.”) or titled subheading is a bold line of the right cell, not a heading: the section name
-                // stays the only boundary, and a cited paragraph is still in the text (FR-110).
+                // A unit („§ N.”) or titled subheading is a bold line of the right cell (FR-110); a unit is a heading below
+                // the section name (FR-087), a subheading without a unit label a bold paragraph.
                 string line = string.Join(' ', new[] { h.Label, Inline.PlainText(h.Text) }.Where(t => !string.IsNullOrEmpty(t)));
                 if (line.Length > 0)
                 {
+                    if (h.Label is { Length: > 0 })
+                    {
+                        w.Truth.Headings.Add(new TruthHeading(h.Level, h.Label, Inline.PlainText(h.Text)));
+                    }
+
                     w.Need(3 * w.Style.Leading);
                     Paragraph(w, [new Inline(line, InlineStyle.Bold)]);
                 }
