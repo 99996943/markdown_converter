@@ -1,0 +1,133 @@
+bloki:
+  # ---------------------------------------------------------------- IV. Przelewy SEPA
+  - id: taryfa-zagraniczne-sepa-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Przelew SEPA jest przelewem w euro na rachunek prowadzony w państwie uczestniczącym w jednolitym obszarze płatności w euro, z wykorzystaniem numeru IBAN odbiorcy i opcji kosztów SHA. Bank {wykonuje|realizuje} przelew SEPA nie później niż do końca następnego dnia roboczego po dniu przyjęcia zlecenia. Przelew SEPA Instant jest dostępny całodobowo, jeżeli bank odbiorcy uczestniczy w tym schemacie, a kwota przelewu nie przekracza limitu określonego w umowie."
+
+  - id: taryfa-zagraniczne-sepa-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew SEPA wychodzący w euro (klient indywidualny)"
+            stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sepa}}"
+            tryb: "za operację"
+            podpozycje:
+              - {usluga: "zlecony w bankowości internetowej lub aplikacji mobilnej", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sepa}}", tryb: "za operację"}
+              - {usluga: "zlecony w placówce Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sepa}}", tryb: "za operację"}
+          - {usluga: "Przelew SEPA wychodzący w euro (przedsiębiorca)", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Przelew SEPA Instant w euro (przedsiębiorca)", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Przelew SEPA przychodzący (klient indywidualny)", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-walutowy-przychodzacy}}", tryb: "za operację"}
+          - {usluga: "Przelew SEPA przychodzący (przedsiębiorca)", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-przychodzacy}}", tryb: "za przelew"}
+          - {usluga: "Zlecenie stałe SEPA w euro — realizacja jednego przelewu[^1]", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sepa}}", tryb: "za operację"}
+          - {usluga: "Zwrot przelewu SEPA przychodzącego na wniosek odbiorcy[^2]", stawka: "{{fakt:oplata.zagraniczne.sepa-zwrot-przychodzacego}}", tryb: "za operację"}
+          - {usluga: "Anulowanie przelewu SEPA przed przekazaniem do realizacji", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Odwołanie przelewu SEPA po przekazaniu do realizacji (przedsiębiorca)", stawka: "{{fakt:oplata.firma.odwolanie-przelewu}}", tryb: "za dyspozycję"}
+          - {usluga: "Poszukiwanie przelewu SEPA w banku odbiorcy", stawka: "{{fakt:oplata.zagraniczne.poszukiwanie-ind}}", tryb: "za zlecenie"}
+    przypisy:
+      1: "Opłatę pobiera się przy każdym wykonaniu zlecenia stałego, w dniu jego realizacji; zlecenia stałe w złotych podlegają stawkom z taryf krajowych."
+      2: "Opłata nie jest pobierana, jeżeli zwrot wynika z błędnych danych odbiorcy przekazanych przez bank nadawcy."
+
+  # ---------------------------------------------------------------- V. Przelewy poza SEPA
+  - id: taryfa-zagraniczne-swift-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Przelewy zagraniczne poza SEPA realizowane są za pośrednictwem międzynarodowej sieci komunikacji międzybankowej SWIFT, na podstawie kodu BIC banku odbiorcy i numeru rachunku odbiorcy. Do przelewu w walucie innej niż euro lub do państwa poza obszarem SEPA Klient wskazuje opcję kosztów. {W przypadku|Przy} dyspozycji OUR Bank pobiera dopłatę, a bank pośredniczący nie pomniejsza kwoty przelewu o własne prowizje; rzeczywiste koszty banków zagranicznych mogą jednak zostać odrębnie rozliczone z Bankiem i przeniesione na Klienta."
+
+  - id: taryfa-zagraniczne-swift-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew zagraniczny wychodzący poza SEPA w opcji SHA — klient indywidualny"
+            stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-minimum}}, maks. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-maksimum}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Przelew zagraniczny wychodzący poza SEPA w opcji SHA — przedsiębiorca"
+            stawka: "{{fakt:oplata.firma.przelew-zagraniczny-prowizja}} kwoty, min. {{fakt:oplata.firma.przelew-zagraniczny-minimum}}, maks. {{fakt:oplata.firma.przelew-zagraniczny-maksimum}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Opcje kosztów przelewu zagranicznego[^1]"
+            stawka: "wg opcji"
+            tryb: "za przelew"
+            podpozycje:
+              - {usluga: "SHA — koszty dzielone między zleceniodawcę i odbiorcę", stawka: "bez dopłaty", tryb: "za przelew"}
+              - {usluga: "OUR — wszystkie koszty ponosi zleceniodawca (klient indywidualny)", stawka: "{{fakt:oplata.taryfa-indywidualni.opcja-koszty-our}}", tryb: "za przelew"}
+              - {usluga: "OUR — wszystkie koszty ponosi zleceniodawca (przedsiębiorca)", stawka: "{{fakt:oplata.zagraniczne.opcja-our-firma}}", tryb: "za przelew"}
+              - {usluga: "BEN — koszty ponosi odbiorca", stawka: "bez dopłaty", tryb: "za przelew"}
+          - usluga: "Tryb realizacji przelewu zagranicznego"
+            stawka: "wg trybu"
+            tryb: "za przelew"
+            podpozycje:
+              - {usluga: "zwykły (D+2, waluta dwa dni po przyjęciu zlecenia)", stawka: "bez dopłaty", tryb: "za przelew"}
+              - {usluga: "pilny (D+1, waluta następnego dnia roboczego) — klient indywidualny", stawka: "{{fakt:oplata.zagraniczne.swift-pilny-ind}}", tryb: "za przelew"}
+              - {usluga: "pilny (D+1, waluta następnego dnia roboczego) — przedsiębiorca", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-pilny}}", tryb: "za przelew"}
+              - {usluga: "ekspresowy (D+0, waluta tego samego dnia)[^2]", stawka: "{{fakt:oplata.zagraniczne.swift-ekspres}}", tryb: "za przelew"}
+          - {usluga: "Przelew walutowy zlecony w placówce z rachunku osobistego", stawka: "{{fakt:oplata.rachunek-osobisty.przelew-walutowy}}", tryb: "za operację"}
+          - {usluga: "Zmiana lub odwołanie dyspozycji przelewu zagranicznego — przedsiębiorca", stawka: "{{fakt:oplata.firma.zmiana-dyspozycji-zagranicznej}}", tryb: "za dyspozycję"}
+          - {usluga: "Zmiana lub odwołanie dyspozycji przelewu zagranicznego — klient indywidualny", stawka: "{{fakt:oplata.zagraniczne.zmiana-dyspozycji-ind}}", tryb: "za dyspozycję"}
+          - {usluga: "Zwrot przelewu zagranicznego (recall) na wniosek zleceniodawcy[^3]", stawka: "{{fakt:oplata.zagraniczne.zwrot-przelewu-zagranicznego}}", tryb: "za operację"}
+          - {usluga: "Naprawa błędnej lub niepełnej instrukcji płatniczej przed wysłaniem przelewu", stawka: "{{fakt:oplata.zagraniczne.naprawa-instrukcji}}", tryb: "za przelew"}
+    przypisy:
+      1: "Opcje kosztów są dostępne w zależności od waluty i kraju banku odbiorcy; wykaz ograniczeń publikuje Bank na stronie internetowej. Opłaty obcych banków pobierane w opcji SHA obciążają odbiorcę i mogą się różnić w zależności od banku."
+      2: "Tryb ekspresowy jest dostępny dla wybranych walut w dni robocze do godziny granicznej określonej w komunikacie Banku i wymaga wcześniejszego potwierdzenia kursu."
+      3: "Zwrot środków następuje po ich otrzymaniu od banku odbiorcy. Bank nie gwarantuje skuteczności zwrotu, jeżeli bank odbiorcy lub odbiorca nie wyrażą na niego zgody."
+
+  # ---------------------------------------------------------------- VI. Przelewy przychodzące
+  - id: taryfa-zagraniczne-przych-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Przelewy przychodzące z zagranicy są księgowane na rachunku Klienta w dniu otrzymania środków przez Bank, {nie później niż|najpóźniej} w dniu roboczym następującym po tym dniu, jeżeli instrukcja płatnicza jest prawidłowa. Jeżeli waluta przelewu jest inna niż waluta rachunku, wpływ jest przeliczany według kursu kupna z Tabeli kursów walut obowiązującej w chwili księgowania, chyba że Klient wskazał inny kurs w umowie."
+
+  - id: taryfa-zagraniczne-przych-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew przychodzący z zagranicy w walucie obcej — klient indywidualny", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-walutowy-przychodzacy}}", tryb: "za operację"}
+          - {usluga: "Przelew przychodzący z zagranicy w walucie obcej — przedsiębiorca", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-przychodzacy}}", tryb: "za przelew"}
+          - {usluga: "Przelew przychodzący z państwa Europejskiego Obszaru Gospodarczego w euro (SEPA) — klient indywidualny", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-walutowy-przychodzacy}}", tryb: "za operację"}
+          - {usluga: "Przelew przychodzący z instytucji Unii Europejskiej lub organizacji międzynarodowej (dotacje, wynagrodzenia)[^1]", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przeliczenie wpływu w walucie innej niż waluta rachunku", stawka: "kurs kupna z marżą {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Zwrot przelewu przychodzącego do nadawcy na wniosek Klienta", stawka: "{{fakt:oplata.zagraniczne.sepa-zwrot-przychodzacego}}", tryb: "za operację"}
+          - {usluga: "Uzupełnienie lub poprawienie danych przelewu przychodzącego (naprawa instrukcji)", stawka: "{{fakt:oplata.zagraniczne.naprawa-instrukcji}}", tryb: "za przelew"}
+          - {usluga: "Zapytanie do banku zagranicznego o brakujący przelew przychodzący (poszukiwanie)", stawka: "{{fakt:oplata.zagraniczne.poszukiwanie-ind}}", tryb: "za zlecenie"}
+          - {usluga: "Potwierdzenie wpływu środków z zagranicy dla celów dokumentacyjnych", stawka: "{{fakt:oplata.zagraniczne.potwierdzenie-realizacji}}", tryb: "za dokument"}
+    przypisy:
+      1: "Zwolnienie z opłaty dotyczy wpływów, w których tytule przelewu lub w komunikacie SWIFT wskazano numer umowy dotacji albo oznaczenie instytucji; Klient przedstawia w razie potrzeby dokument potwierdzający źródło środków."
+
+  # ---------------------------------------------------------------- VII. Wymiana walut
+  - id: taryfa-zagraniczne-wymiana-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Wymiana walut polega na kupnie lub sprzedaży waluty obcej za złote albo na zamianie jednej waluty obcej na inną. Kursy stosowane przez Bank wynikają z Tabeli kursów walut Banku, a w kantorze internetowym — z kursów kantorowych aktualizowanych w ciągu dnia. Dla transakcji o wartości powyżej progu {{fakt:limit.zagraniczne.wymiana-kurs-negocjowany-prog}} Klient może wnioskować o kurs negocjowany z dealerem Banku."
+
+  - id: taryfa-zagraniczne-wymiana-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wymiana walut według Tabeli kursów walut Banku (placówka, infolinia)", stawka: "kurs z marżą {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Wymiana walut w kantorze internetowym w bankowości internetowej i aplikacji mobilnej", stawka: "kurs z marżą {{fakt:oplata.zagraniczne.wymiana-marza-kantor}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Wymiana walut w placówce według kursu preferencyjnego dla klientów pakietów premium", stawka: "kurs z marżą {{fakt:oplata.zagraniczne.wymiana-marza-placowka}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Wymiana walut po kursie negocjowanym (transakcja dealerska powyżej progu)[^1]", stawka: "{{fakt:oplata.zagraniczne.wymiana-prowizja-dealerska}} (kurs indywidualny)", tryb: "za transakcję"}
+          - {usluga: "Zlecenie wymiany walut z limitem kursu (zlecenie kursowe)", stawka: "{{fakt:oplata.zagraniczne.zlecenie-kursowe}}", tryb: "za zlecenie"}
+          - {usluga: "Wymiana walut w ramach płatności kartą w walucie innej niż waluta rachunku", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-transakcja-walutowa-prowizja}} kwoty transakcji", tryb: "od kwoty transakcji"}
+          - {usluga: "Wymiana walut przy wypłacie gotówki z bankomatu za granicą (rachunek złotowy)", stawka: "kurs z Tabeli z marżą {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Przeliczenie wpływu z zagranicy na rachunek w innej walucie", stawka: "kurs kupna z marżą {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Przeliczenie opłaty za czynność wykonywaną z rachunku walutowego[^2]", stawka: "kurs średni Tabeli", tryb: "za operację"}
+          - {usluga: "Potwierdzenie kursu zastosowanego w transakcji walutowej", stawka: "{{fakt:oplata.zagraniczne.potwierdzenie-realizacji}}", tryb: "za dokument"}
+    przypisy:
+      1: "Kurs negocjowany ustala dealer Banku telefonicznie w godzinach pracy dealingu; ustalenie kursu jest wiążące po potwierdzeniu transakcji przez Klienta. Prowizji nie pobiera się, a marża jest zawarta w kursie."
+      2: "Do przeliczenia opłaty stosuje się kurs średni z Tabeli kursów walut Banku z dnia pobrania opłaty, bez marży."
