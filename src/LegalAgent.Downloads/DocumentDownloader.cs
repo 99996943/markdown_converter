@@ -16,6 +16,7 @@ public sealed class DocumentDownloader
     {
         ArgumentNullException.ThrowIfNull(httpClient);
         ArgumentNullException.ThrowIfNull(options);
+        options.Validate();
         this.httpClient = httpClient;
         this.options = options;
     }

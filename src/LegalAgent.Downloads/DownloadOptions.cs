@@ -23,4 +23,47 @@ public sealed record DownloadOptions
 
     /// <summary>Value of the <c>User-Agent</c> request header, if any.</summary>
     public string? UserAgent { get; init; }
+
+    /// <summary>Throws <see cref="ArgumentException"/> when the options cannot be used.</summary>
+    internal void Validate()
+    {
+        if (string.IsNullOrWhiteSpace(OutputDirectory))
+        {
+            throw new ArgumentException("Katalog pobrań nie może być pusty.", nameof(OutputDirectory));
+        }
+
+        if (AllowedHosts is null || AllowedHosts.Count == 0)
+        {
+            throw new ArgumentException("Lista dozwolonych hostów musi mieć co najmniej jeden wpis.", nameof(AllowedHosts));
+        }
+
+        foreach (string host in AllowedHosts)
+        {
+            if (!IsHostName(host))
+            {
+                throw new ArgumentException(
+                    $"Niepoprawny dozwolony host „{host}”: podaj samą nazwę hosta, bez schematu, portu i ścieżki.",
+                    nameof(AllowedHosts));
+            }
+        }
+
+        if (Timeout <= TimeSpan.Zero)
+        {
+            throw new ArgumentException("Limit czasu musi być dodatni.", nameof(Timeout));
+        }
+
+        if (MaxFileSizeBytes <= 0)
+        {
+            throw new ArgumentException("Limit rozmiaru pliku musi być dodatni.", nameof(MaxFileSizeBytes));
+        }
+
+        if (MaxRedirects is < 0 or > 20)
+        {
+            throw new ArgumentException("Limit przekierowań musi mieścić się w przedziale 0–20.", nameof(MaxRedirects));
+        }
+    }
+
+    private static bool IsHostName(string? host) =>
+        !string.IsNullOrWhiteSpace(host)
+        && Uri.CheckHostName(host) == UriHostNameType.Dns;
 }
