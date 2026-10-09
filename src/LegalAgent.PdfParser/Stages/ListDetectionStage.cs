@@ -555,6 +555,12 @@ public sealed class ListDetectionStage : IPipelineStage
                 return entry.Page.Number == _previous.Page.Number + 1;
             }
 
+            // FR-031: from the bottom of one column to the top of the next, like a page break.
+            if (entry.Origin > 0 && _previous.Origin > 0 && entry.Origin > _previous.Origin && entry.Line.Baseline < _previous.Line.Baseline)
+            {
+                return true;
+            }
+
             double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * _previous.Line.Box.Height;
             double gap = entry.Line.Baseline - _previous.Line.Baseline;
             return gap > 0 && gap <= _gapFactor * leading;
