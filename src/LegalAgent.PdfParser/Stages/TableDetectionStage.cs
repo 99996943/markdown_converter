@@ -93,6 +93,7 @@ public sealed class TableDetectionStage : IPipelineStage
     private static List<Table> FindTables(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
     {
         (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
+        page.ColumnGutter = gutter;
         List<Table> tables = FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
         if (gutter is not { } g)
         {

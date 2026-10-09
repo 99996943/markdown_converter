@@ -47,4 +47,7 @@ public sealed class LayoutPage
 
     /// <summary>Set when the page was skipped; null otherwise.</summary>
     public SkipReason? Skipped { get; set; }
+
+    /// <summary>The column gutter found before table detection (FR-031), measured on all lines of the page.</summary>
+    internal (double Start, double End)? ColumnGutter { get; set; }
 }

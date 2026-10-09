@@ -40,6 +40,13 @@ public sealed class ReadingOrderStage : IPipelineStage
 
             if (FindGutter(page, options) is { } gutter)
             {
+                // Without the lines of a table inside one column, the free band can reach into that column: the gutter
+                // measured on all lines before table detection, when this one contains it, is the real one.
+                if (page.ColumnGutter is { } before && gutter.Start <= before.Start + 1 && gutter.End >= before.End - 1)
+                {
+                    gutter = before;
+                }
+
                 Reorder(page, gutter);
             }
         }
