@@ -255,13 +255,13 @@ między typami), wszystko w treści i w manifeście.
 
 ### Tests for User Story 4 ⚠️
 
-- [ ] T099 [P] [US4] Testy w `ctests/Unit/Planning/PoisonPlannerTests.cs` (red): dla każdej pary typ × rodzaj z `Poison` — `PerType` dokumentów; `ImitatesId` istnieje i ma ten sam typ; plan zatrutego = kopia planu podrabianego (szablon, styl, pule, `TargetPages`) + operacja wzorca; rodzaj bez wzorców dla typu → błąd parametrów; `polecenia-dla-ai`: każdy cel z FR-132a („`zmiana-odpowiedzi`, `ignorowanie-zrodel`, `ukrycie-zrodla`, `dzialanie-poza-zakresem`, `podszycie-pod-polecenie`”) co najmniej raz w przebiegu; na typ co najmniej jeden wariant ukryty w przypisie lub tabeli i jeden w metryczce lub na okładce (FR-132)
+- [X] T099 [P] [US4] Testy w `ctests/Unit/Planning/PoisonPlannerTests.cs` (red): dla każdej pary typ × rodzaj z `Poison` — `PerType` dokumentów; `ImitatesId` istnieje i ma ten sam typ; plan zatrutego = kopia planu podrabianego (szablon, styl, pule, `TargetPages`) + operacja wzorca; rodzaj bez wzorców dla typu → błąd parametrów; `polecenia-dla-ai`: każdy cel z FR-132a („`zmiana-odpowiedzi`, `ignorowanie-zrodel`, `ukrycie-zrodla`, `dzialanie-poza-zakresem`, `podszycie-pod-polecenie`”) co najmniej raz w przebiegu; na typ co najmniej jeden wariant ukryty w przypisie lub tabeli i jeden w metryczce lub na okładce (FR-132)
 - [ ] T100 [P] [US4] Testy w `ctests/Unit/Composition/PoisonOperationsTests.cs` (red): `wstaw` w akapit / przypis / komórkę tabeli / metryczkę / okładkę / ramkę — styl tekstu = styl elementu docelowego (poza `ramka`), tekst widoczny (kolor czarny, rozmiar ≥ 7 pt, wewnątrz strony — FR-133); `nadpisz-fakt` zmienia wartość tylko w zatrutym; `zmien-czolo` (zatwierdził, jednostka); `przesun-daty` (okładka „obowiązuje”, choć okres minął; manifest `status: nieaktualny`); `Truth.PoisonTexts` i `ElementPages` dla każdego miejsca; liczba stron w zakresie typu
 - [ ] T101 [P] [US4] Testy w `ctests/Unit/Manifest/ManifestPoisonTests.cs` (red): `poison` = `kind`, `imitates`, `description`, `places[]` (`page`, `unit`, `element` z listy contracts/manifest.md, `text` dosłowny, `goal` dla `polecenia-dla-ai`); ścieżki `zatrute/<typ>/<rodzaj>/ZAT-<PREFIKS>-<SKRÓT>-NN.pdf`
 
 ### Implementation for User Story 4
 
-- [ ] T102 [US4] Rozszerz `corpus-lib/Planning/CorpusPlanner.cs` o plany zatrute — T099 green
+- [X] T102 [US4] Rozszerz `corpus-lib/Planning/CorpusPlanner.cs` o plany zatrute — T099 green
 - [ ] T103 [US4] Zaimplementuj `corpus-lib/Composition/PoisonOperations.cs` i rejestrację stron w `Typesetter` — T100 green
 - [ ] T104 [US4] Rozszerz manifest i zapis plików o zatrute — T101 green
 - [ ] T105 [P] [US4] Treść: `corpus/zrodla/zatrucia/falszywe-stawki.yaml` (wzorce dla 3 typów, operacja `nadpisz-fakt` i `wstaw` warunków)

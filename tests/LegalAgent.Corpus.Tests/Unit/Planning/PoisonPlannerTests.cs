@@ -60,11 +60,12 @@ public class PoisonPlannerTests
     {
         CorpusPlan plan = CorpusPlanner.Plan(Mini, Parameters(perType: 3));
 
-        foreach (string prefix in new[] { "ZAT-REG-", "ZAT-TAR-" })
+        // Mini rules have no table, so only a footnote and a paragraph fit them; tariffs take all three placements.
+        foreach ((string prefix, int distinct) in new[] { ("ZAT-REG-", 2), ("ZAT-TAR-", 3) })
         {
             var placements = plan.Documents.Where(d => d.Id.StartsWith(prefix, StringComparison.Ordinal)).Select(d => d.Poison!.Placement).ToList();
             Assert.Equal(3, placements.Count);
-            Assert.Equal(3, placements.Distinct(StringComparer.Ordinal).Count());
+            Assert.Equal(distinct, placements.Distinct(StringComparer.Ordinal).Count());
         }
     }
 

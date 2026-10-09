@@ -45,7 +45,9 @@ public static class CorpusPlanner
             types.Add(PlanType(content, parameters, type, requiredBlocks));
         }
 
-        return new CorpusPlan(DocumentStates.Apply(content, parameters, types));
+        List<DocumentPlan> documents = DocumentStates.Apply(content, parameters, types);
+        documents.AddRange(PoisonPlanner.Plan(content, parameters, documents));
+        return new CorpusPlan(documents);
     }
 
     /// <summary>
