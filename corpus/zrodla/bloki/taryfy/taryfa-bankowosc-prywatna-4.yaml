@@ -1,0 +1,172 @@
+bloki:
+  # ======================================================== Karty premium — pozycje opcjonalne
+  - id: taryfa-bankowosc-prywatna-karty-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wydanie karty debetowej premium {w standardowym terminie|w terminie podstawowym}", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty debetowej premium w trybie pilnym", stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}", tryb: "jednorazowo" }
+          - { usluga: "Wznowienie karty po upływie terminu ważności", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty z personalizowanym wzorem graficznym", stawka: "80,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty z elementem metalowym (wariant {kolekcjonerski|limitowany})", stawka: "250,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty dodatkowej do rachunku", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Wymiana karty uszkodzonej mechanicznie", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Przesłanie kodu PIN w wiadomości SMS", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za wiadomość" }
+          - { usluga: "Ponowne wygenerowanie kodu PIN", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za wygenerowanie" }
+          - { usluga: "Aktywacja karty w {oddziale|placówce} Banku", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+
+  - id: taryfa-bankowosc-prywatna-karty-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Oprocentowanie transakcji bezgotówkowych kartą kredytową", stawka: "{{fakt:oprocentowanie.karta.zakupy}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie wypłat gotówki kartą kredytową", stawka: "{{fakt:oprocentowanie.karta.gotowka}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie transakcji rozłożonych na raty", stawka: "{{fakt:oprocentowanie.karta.rata}}", tryb: "rocznie" }
+          - { usluga: "Prowizja za rozłożenie transakcji na raty", stawka: "{{fakt:oplata.karta.prowizja-rata}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Opłata za przekroczenie przyznanego limitu kredytowego", stawka: "{{fakt:oplata.karta.przekroczenie-limitu}}", tryb: "za zdarzenie" }
+          - { usluga: "Minimalna kwota spłaty zadłużenia w okresie rozliczeniowym", stawka: "{{fakt:splata.karta.minimum-procent}} zadłużenia, nie mniej niż {{fakt:splata.karta.minimum-kwota}}", tryb: "miesięcznie" }
+          - { usluga: "Okres bezodsetkowy dla transakcji bezgotówkowych", stawka: "do {{fakt:termin.karta.okres-bezodsetkowy}}", tryb: "za okres rozliczeniowy" }
+          - { usluga: "Zmiana przyznanego limitu kredytowego {na wniosek|na żądanie} Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Pilna wymiana karty kredytowej", stawka: "{{fakt:oplata.karta.pilna-wymiana}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie zestawienia transakcji w formie papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za zestawienie" }
+
+  - id: taryfa-bankowosc-prywatna-karty-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dostęp do saloników lotniskowych — wejście Klienta ponad limit karty premium plus", stawka: "{{fakt:oplata.prywatna.salonik-wejscie}}", tryb: "za wejście" }
+          - { usluga: "Dostęp do saloników lotniskowych — wejście gościa", stawka: "{{fakt:oplata.prywatna.salonik-wejscie}}", tryb: "za wejście" }
+          - { usluga: "Ubezpieczenie podróżne związane z kartą premium", stawka: "w ramach opłaty za kartę", tryb: "rocznie" }
+          - { usluga: "Ochrona zakupów dokonanych kartą premium", stawka: "w ramach opłaty za kartę", tryb: "rocznie" }
+          - { usluga: "Ubezpieczenie wynajmu samochodu opłaconego kartą", stawka: "w ramach opłaty za kartę", tryb: "rocznie" }
+          - { usluga: "Program rabatowy dla posiadaczy kart premium", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach karty" }
+          - { usluga: "Rozszerzenie ochrony ubezpieczeniowej karty o osoby towarzyszące", stawka: "120,00 zł", tryb: "rocznie" }
+          - { usluga: "Zgłoszenie szkody z ubezpieczenia karty", stawka: "{bez opłat|brak opłaty}", tryb: "za zgłoszenie" }
+          - { usluga: "Dostęp do całodobowej linii asysty dla posiadaczy kart premium", stawka: "{bez opłat|brak opłaty}", tryb: "za połączenie" }
+          - { usluga: "Zaświadczenie o posiadaniu karty i jej limicie", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-karty-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata gotówki w bankomacie Banku w kraju", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki w bankomatach sieci współpracującej z Bankiem w kraju", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki w bankomacie za granicą w walucie rachunku karty", stawka: "{{fakt:oplata.prywatna.karta-gotowka-zagranica-prowizja}}, min. {{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "od kwoty wypłaty" }
+          - { usluga: "Wypłata gotówki w kasie obcego banku (tzw. cash advance)", stawka: "3,00% kwoty, min. 15,00 zł", tryb: "od kwoty wypłaty" }
+          - { usluga: "Wypłata gotówki w punkcie handlowym (usługa cashback)", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wpłata gotówki we wpłatomacie Banku — do kwoty {{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}", stawka: "{bez opłat|brak opłaty}", tryb: "za wpłatę" }
+          - { usluga: "Sprawdzenie salda w bankomacie innego banku", stawka: "2,00 zł", tryb: "za zapytanie" }
+          - { usluga: "Sprawdzenie salda w bankomacie Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za zapytanie" }
+          - { usluga: "Wydruk potwierdzenia transakcji w bankomacie", stawka: "{bez opłat|brak opłaty}", tryb: "za wydruk" }
+          - { usluga: "Zmiana kodu PIN w bankomacie Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za zmianę" }
+
+  - id: taryfa-bankowosc-prywatna-karty-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dzienny limit wypłat gotówki kartą premium (domyślny)", stawka: "{{fakt:limit.prywatna.karta-dzienny-gotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Dzienny limit transakcji bezgotówkowych kartą premium (domyślny)", stawka: "{{fakt:limit.prywatna.karta-dzienny-bezgotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Dzienny limit transakcji internetowych", stawka: "{{fakt:limit.karta-debetowa.internet-dzienny}}", tryb: "dziennie" }
+          - { usluga: "Limit transakcji zbliżeniowych bez PIN (pojedyncza transakcja)", stawka: "{{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}", tryb: "za transakcję" }
+          - { usluga: "Zmiana limitów transakcji kartą w {bankowości elektronicznej|systemie bankowości elektronicznej}", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Zmiana limitów transakcji kartą za pośrednictwem doradcy", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Czasowe podwyższenie limitu {na wniosek|na żądanie} Klienta (do 30 dni)", stawka: "50,00 zł", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Zablokowanie karty {na wniosek|na żądanie} Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Odblokowanie karty {na wniosek|na żądanie} Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Rezygnacja z karty przed upływem okresu ważności", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+
+  # ======================================================== Lokaty i oszczędności — pozycje opcjonalne
+  - id: taryfa-bankowosc-prywatna-lokaty-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Założenie lokaty terminowej w {bankowości elektronicznej|systemie bankowości elektronicznej}", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty terminowej w {placówce|oddziale} Banku", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Oprocentowanie lokaty na 1 miesiąc", stawka: "{{fakt:oprocentowanie.lokata-1m}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie lokaty na 3 miesiące", stawka: "{{fakt:oprocentowanie.lokata-3m}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie lokaty na 6 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-6m}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie lokaty na 12 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-12m}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie lokaty na 24 miesiące", stawka: "{{fakt:oprocentowanie.lokata-24m}}", tryb: "rocznie" }
+          - { usluga: "Minimalna kwota lokaty terminowej", stawka: "{{fakt:limit.lokata.minimalna}}", tryb: "jednorazowo" }
+          - { usluga: "Maksymalna kwota lokaty terminowej", stawka: "{{fakt:limit.lokata.maksymalna}}", tryb: "jednorazowo" }
+          - { usluga: "{Wystawienie|Sporządzenie} potwierdzenia założenia lokaty w formie papierowej", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-lokaty-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przygotowanie indywidualnej oferty lokaty „{{fakt:lokata.nazwa-lokata-negocjowana}}”", stawka: "{bez opłat|brak opłaty}", tryb: "za ofertę" }
+          - { usluga: "Próg kwotowy dla lokaty „{{fakt:lokata.nazwa-lokata-negocjowana}}”", stawka: "{{fakt:limit.lokata.negocjowana}}", tryb: "jednorazowo" }
+          - { usluga: "Ustalenie oprocentowania lokaty „{{fakt:lokata.nazwa-lokata-negocjowana}}” w dniu zawarcia umowy", stawka: "wg indywidualnej oferty", tryb: "rocznie" }
+          - { usluga: "Zawarcie umowy lokaty negocjowanej na okres powyżej 12 miesięcy", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zawarcie umowy lokaty negocjowanej w walucie obcej", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zerwanie lokaty negocjowanej przed terminem — prowizja od kwoty wypłaty", stawka: "{{fakt:oplata.prywatna.lokata-negocjowana-prowizja-wczesniejsza}}", tryb: "od kwoty wypłaty" }
+          - { usluga: "Oprocentowanie lokaty negocjowanej zerwanej przed terminem", stawka: "{{fakt:oprocentowanie.lokata.zerwanie}}", tryb: "rocznie" }
+          - { usluga: "Częściowa wypłata środków z lokaty negocjowanej", stawka: "wg warunków umowy", tryb: "za wypłatę" }
+          - { usluga: "Zmiana warunków lokaty negocjowanej za zgodą Banku", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Aneks do umowy lokaty negocjowanej sporządzony {na wniosek|na żądanie} Klienta", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-lokaty-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie „{{fakt:lokata.nazwa-rachunek}}”", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Minimalna kwota pierwszej wpłaty na rachunek oszczędnościowy", stawka: "{{fakt:limit.rachunek-oszczednosciowy.otwarcie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie rachunku oszczędnościowego", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Stopa procentowa rachunku oszczędnościowego (zmienna)", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie promocyjne rachunku oszczędnościowego (pierwsze miesiące)", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy.promocyjne}}", tryb: "rocznie" }
+          - { usluga: "Bezpłatne wypłaty i przelewy w miesiącu", stawka: "{{fakt:limit.rachunek-oszczednosciowy.bezplatne-wyplaty}}", tryb: "miesięcznie" }
+          - { usluga: "Wypłata lub przelew ponad liczbę bezpłatnych operacji", stawka: "{{fakt:oplata.rachunek-oszczednosciowy.wyplata-ponad-limit}}", tryb: "za operację" }
+          - { usluga: "Dzienny limit wypłat z rachunku oszczędnościowego", stawka: "{{fakt:limit.rachunek-oszczednosciowy.wyplata-dzienna}}", tryb: "dziennie" }
+          - { usluga: "Wypłata środków z rachunku oszczędnościowego w gotówce", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Zamknięcie rachunku oszczędnościowego", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+
+  - id: taryfa-bankowosc-prywatna-lokaty-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Automatyczne odnowienie lokaty na kolejny okres", stawka: "{bez opłat|brak opłaty}", tryb: "za odnowienie" }
+          - { usluga: "Oprocentowanie lokaty po odnowieniu", stawka: "{{fakt:oprocentowanie.lokata.odnowienie}}", tryb: "rocznie" }
+          - { usluga: "Złożenie dyspozycji dotyczącej odnowienia lokaty (w terminie {{fakt:termin.lokata.odnowienie-dyspozycja}} przed jej końcem)", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Zerwanie lokaty przed terminem — realizacja dyspozycji w terminie {{fakt:termin.lokata.zerwanie-realizacja}}", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "jednorazowo" }
+          - { usluga: "Dyspozycja po terminie lokaty (w okresie {{fakt:termin.lokata.dyspozycja-po-terminie}})", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Wypłata środków z lokaty w kasie placówki", stawka: "{{fakt:oplata.lokata.wyplata-gotowkowa}}", tryb: "za wypłatę" }
+          - { usluga: "Przeniesienie środków z lokaty na rachunek w walucie obcej", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Ustanowienie blokady lokaty jako zabezpieczenia", stawka: "100,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Zniesienie blokady lokaty", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Ustanowienie zastawu na lokacie na rzecz osoby trzeciej", stawka: "150,00 zł", tryb: "jednorazowo" }
+
+  - id: taryfa-bankowosc-prywatna-lokaty-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Informacja o odsetkach i podatku od odsetek za rok kalendarzowy (w terminie {{fakt:termin.podatek.informacja-roczna}})", stawka: "{bez opłat|brak opłaty}", tryb: "rocznie" }
+          - { usluga: "Zaświadczenie o odsetkach naliczonych od lokat", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Zaświadczenie o odsetkach w języku obcym", stawka: "60,00 zł", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Zaświadczenie o odsetkach dla zagranicznego urzędu skarbowego", stawka: "80,00 zł", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Zaświadczenie o posiadaniu lokaty i kwocie zdeponowanych środków", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Potwierdzenie zasad opodatkowania odsetek", stawka: "{bez opłat|brak opłaty}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "{Przygotowanie|Opracowanie} zestawienia lokat Klienta na wskazany dzień", stawka: "40,00 zł", tryb: "za zestawienie" }
+          - { usluga: "Zestawienie lokat dla biegłego rewidenta lub doradcy podatkowego", stawka: "{{fakt:oplata.prywatna.potwierdzenie-audytorskie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Duplikat umowy lokaty", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Informacja o gwarancjach Bankowego Funduszu Gwarancyjnego (limit gwarancji: {{fakt:bfg.gwarancja}})", stawka: "{bez opłat|brak opłaty}", tryb: "za informację" }

@@ -1,0 +1,49 @@
+id: taryfa-bankowosc-prywatna
+typ: taryfy
+temat: taryfa-bankowosc-prywatna
+tytul:
+  - "Taryfa opłat i prowizji dla klientów bankowości prywatnej {{param:bank}}"
+  - "Taryfa opłat i prowizji {{param:bank}} dla klientów bankowości prywatnej"
+uklady: [taryfa-siatka]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, taryfa-bankowosc-prywatna-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut]
+  - rodzaj: sekcja-taryfy
+    tytul: "Pakiet Prywatny"
+    wymagane: [taryfa-bankowosc-prywatna-opis-pakiet, taryfa-bankowosc-prywatna-pakiet-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-pakiet], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Pakiet Prywatny Plus"
+    wymagane: [taryfa-bankowosc-prywatna-opis-plus, taryfa-bankowosc-prywatna-plus-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-plus], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Rachunki i rachunki walutowe"
+    wymagane: [taryfa-bankowosc-prywatna-opis-rachunki, taryfa-bankowosc-prywatna-rachunki-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-rachunki], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy"
+    wymagane: [taryfa-bankowosc-prywatna-opis-przelewy, taryfa-bankowosc-prywatna-przelewy-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-przelewy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty premium"
+    wymagane: [taryfa-bankowosc-prywatna-opis-karty, taryfa-bankowosc-prywatna-karty-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-karty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Lokaty negocjowane i produkty oszczędnościowe"
+    wymagane: [taryfa-bankowosc-prywatna-opis-lokaty, taryfa-bankowosc-prywatna-lokaty-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-lokaty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Rachunek papierów wartościowych (usługi powiernicze)"
+    wymagane: [taryfa-bankowosc-prywatna-opis-rpw, taryfa-bankowosc-prywatna-rpw-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-rpw], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Usługi dodatkowe"
+    wymagane: [taryfa-bankowosc-prywatna-opis-uslugi, taryfa-bankowosc-prywatna-uslugi-wymagane]
+    opcjonalne: { kategorie: [pozycje-prywatna-uslugi], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia"
+    wymagane: [taryfa-bankowosc-prywatna-objasnienia]
+parametry:
+  produkt: "usług bankowości prywatnej"

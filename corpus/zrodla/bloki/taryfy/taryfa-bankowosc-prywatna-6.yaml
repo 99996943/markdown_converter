@@ -1,0 +1,212 @@
+bloki:
+  # ======================================================== Pakiet Prywatny — uzupełnienie
+  - id: taryfa-bankowosc-prywatna-pakiet-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Otwarcie|Założenie} rachunku w złotych w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty dodatkowej do rachunku w ramach pakietu (pierwsza karta)", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie kolejnej karty dodatkowej do rachunku w ramach pakietu", stawka: "{{fakt:oplata.prywatna.karta-dodatkowa-roczna}}", tryb: "rocznie" }
+          - { usluga: "Przelew do {innego|obcego} banku w kraju zlecony w {bankowości elektronicznej|aplikacji mobilnej}", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Przelew natychmiastowy ponad {pięć|5} przelewów w miesiącu", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za przelew" }
+          - { usluga: "Zlecenie stałe w złotych w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "za realizację" }
+          - { usluga: "Polecenie zapłaty w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "za realizację" }
+          - { usluga: "Zmiana {limitu|wysokości limitu} debetu w rachunku na wniosek Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Oprocentowanie środków na rachunku w złotych w ramach pakietu", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}} w stosunku rocznym", tryb: "rocznie" }
+          - { usluga: "Wyciąg z rachunku wysyłany na adres e-mail Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+
+  # ======================================================== Pakiet Prywatny Plus — uzupełnienie
+  - id: taryfa-bankowosc-prywatna-plus-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew krajowy w złotych {zlecany|składany} dowolnym kanałem", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Przelew zagraniczny w {walucie obcej|obcej walucie} do czterech przelewów w miesiącu (prowizja podstawowa)", stawka: "{{fakt:oplata.prywatna.przelew-swift-prowizja}}, min. {{fakt:oplata.prywatna.przelew-swift-minimum}}", tryb: "od kwoty przelewu" }
+          - { usluga: "Przelew zagraniczny ponad liczbę przelewów objętych pakietem", stawka: "{{fakt:oplata.prywatna.przelew-swift-prowizja}}, min. {{fakt:oplata.prywatna.przelew-swift-minimum}}, maks. {{fakt:oplata.prywatna.przelew-swift-maksimum}}", tryb: "od kwoty przelewu" }
+          - { usluga: "Wypłata gotówki z bankomatów innych banków w kraju bez ograniczenia liczby wypłat", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki z bankomatów za granicą w ramach limitu pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki z bankomatów za granicą ponad limit pakietu", stawka: "{{fakt:oplata.prywatna.karta-gotowka-zagranica-prowizja}}", tryb: "od kwoty wypłaty" }
+          - { usluga: "Dodatkowy {współposiadacz|posiadacz} rachunku w pakiecie", stawka: "{{fakt:oplata.prywatna.pakiet-wspolposiadacz}}", tryb: "miesięcznie" }
+          - { usluga: "Wizyta doradcy w miejscu wskazanym przez Klienta (do czterech wizyt w roku)", stawka: "{bez opłat|brak opłaty}", tryb: "za spotkanie" }
+          - { usluga: "Wizyta doradcy w miejscu wskazanym przez Klienta ponad limit pakietu", stawka: "{{fakt:oplata.prywatna.wizyta-poza-oddzialem}}", tryb: "za spotkanie" }
+          - { usluga: "Pierwszeństwo w terminach spotkań z doradcą {w ciągu|w terminie} dwóch dni roboczych", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach pakietu" }
+
+  # ======================================================== Rachunki — uzupełnienia
+  - id: taryfa-bankowosc-prywatna-rachunki-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Prowadzenie rachunku w euro poza pakietem", stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku w koronach skandynawskich poza pakietem", stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunkach walutowych", stawka: "wg Tabeli oprocentowania rachunków walutowych", tryb: "rocznie" }
+          - { usluga: "Dopuszczalne saldo ujemne na rachunku walutowym", stawka: "niedozwolone", tryb: "jednorazowo" }
+          - { usluga: "Zlecenie przeniesienia rachunku z innego {banku|podmiotu prowadzącego rachunek} do Banku", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zmiana {waluty|denominacji} rachunku (otwarcie nowego rachunku i przeniesienie środków)", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana numeru rachunku na wniosek Klienta", stawka: "50,00 zł", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana posiadacza rachunku przez przeniesienie umowy (za zgodą Banku)", stawka: "100,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Zamknięcie rachunku walutowego z wypłatą salda w gotówce", stawka: "0,50% kwoty wypłaty", tryb: "od kwoty wypłaty" }
+          - { usluga: "Obsługa dyspozycji złożonej na podstawie pełnomocnictwa notarialnego", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+
+  - id: taryfa-bankowosc-prywatna-rachunki-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wniosek o odblokowanie rachunku po {zajęciu|zajęciu egzekucyjnym}", stawka: "{bez opłat|brak opłaty}", tryb: "za wniosek" }
+          - { usluga: "Wyliczenie kwoty wolnej od zajęcia na wniosek Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "za wyliczenie" }
+          - { usluga: "Realizacja tytułu wykonawczego dotyczącego środków na rachunku walutowym", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}} plus koszt przewalutowania", tryb: "za zajęcie" }
+          - { usluga: "Udzielenie informacji organom uprawnionym na podstawie przepisów szczególnych", stawka: "{bez opłat|brak opłaty}", tryb: "za zapytanie" }
+          - { usluga: "Zajęcie środków przez komornika sądowego dotyczące kilku rachunków Klienta", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}} za każdy rachunek", tryb: "za zajęcie" }
+          - { usluga: "Zgoda na wypłatę środków spod blokady po ustaniu przyczyny blokady", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Wniosek Klienta o wyjaśnienie operacji na rachunku {sprzed|z okresu przed} dwunastu miesięcy", stawka: "60,00 zł", tryb: "za wniosek" }
+          - { usluga: "Potwierdzenie wykonania zlecenia stałego", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za dokument" }
+          - { usluga: "Wyciąg z rachunku w formie papierowej za okres dłuższy niż miesiąc", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za wyciąg" }
+          - { usluga: "Wysłanie pisma informującego o zadłużeniu na rachunku", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za pismo" }
+
+  # ======================================================== Przelewy — uzupełnienia
+  - id: taryfa-bankowosc-prywatna-przelewy-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew krajowy w złotych {zlecony|złożony} przez doradcę na podstawie dyspozycji pisemnej", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za przelew" }
+          - { usluga: "Przelew zbiorczy (do dziesięciu odbiorców jednocześnie)", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Przelew do ZUS-u lub urzędu skarbowego {złożony|zlecony} w placówce", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za przelew" }
+          - { usluga: "Przelew z rachunku w złotych na rachunek własny w innym banku w kraju", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Przelew z rachunku walutowego na rachunek w złotych w Banku", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Przelew między rachunkami walutowymi w tej samej walucie w Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Przelew przychodzący w walucie obcej w kwocie powyżej równowartości 100 000 zł — zawiadomienie doradcy", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Zlecenie wypłaty środków z rachunku walutowego przelewem do kraju", stawka: "{{fakt:oplata.prywatna.przelew-sepa}}", tryb: "za przelew" }
+          - { usluga: "Przelew z potwierdzeniem w formie dokumentu {papierowego|na papierze}", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za dokument" }
+          - { usluga: "Limit jednorazowego przelewu zlecanego w bankowości elektronicznej", stawka: "{{fakt:limit.przelew-dzienny-domyslny}}", tryb: "za przelew" }
+
+  - id: taryfa-bankowosc-prywatna-przelewy-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Podwyższenie dziennego limitu przelewów na wniosek Klienta (do 30 dni)", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Stałe podwyższenie dziennego limitu przelewów", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Dopłata za przelew krajowy w złotych zlecony po godzinie granicznej, realizowany tego samego dnia", stawka: "25,00 zł", tryb: "za przelew" }
+          - { usluga: "Dopłata za przelew zagraniczny zlecony po godzinie granicznej", stawka: "{{fakt:oplata.prywatna.przelew-pilny-doplata}}", tryb: "za przelew" }
+          - { usluga: "Przelew na rachunek wskazany na liście zaufanych odbiorców", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Dodanie odbiorcy do listy zaufanych odbiorców", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Dodatkowe potwierdzenie przelewu o wysokiej kwocie telefonicznie u doradcy", stawka: "{bez opłat|brak opłaty}", tryb: "za przelew" }
+          - { usluga: "Wstrzymanie realizacji przelewu na wniosek Klienta przed jego wykonaniem", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Oświadczenie o źródle pochodzenia środków przy przelewie powyżej 100 000 zł — przyjęcie i weryfikacja", stawka: "{bez opłat|brak opłaty}", tryb: "za oświadczenie" }
+          - { usluga: "Informacja o statusie przelewu zagranicznego przekazana przez doradcę", stawka: "{bez opłat|brak opłaty}", tryb: "za informację" }
+
+  # ======================================================== Karty — uzupełnienia
+  - id: taryfa-bankowosc-prywatna-karty-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Transakcja kartą w {walucie obcej|obcej walucie} — przewalutowanie", stawka: "wg kursu z {{fakt:karta-debetowa.zrodlo-kursu}}", tryb: "za transakcję" }
+          - { usluga: "Transakcja kartą w sklepie internetowym za granicą", stawka: "{bez opłat|brak opłaty}", tryb: "za transakcję" }
+          - { usluga: "Zwrot środków za transakcję kartą w walucie obcej (różnice kursowe)", stawka: "wg kursu z dnia rozliczenia zwrotu", tryb: "za zwrot" }
+          - { usluga: "Blokada kwoty autoryzacji na rachunku (do {{fakt:termin.karta-debetowa.blokada-autoryzacji}})", stawka: "{bez opłat|brak opłaty}", tryb: "za transakcję" }
+          - { usluga: "Wydanie zaświadczenia o transakcjach kartą w wybranym okresie", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Wniosek o zwrot nieautoryzowanej transakcji kartą (zgłoszenie w terminie {{fakt:termin.karta-debetowa.zgloszenie-nieautoryzowanej}})", stawka: "{bez opłat|brak opłaty}", tryb: "za wniosek" }
+          - { usluga: "Zgłoszenie reklamacji transakcji kartą", stawka: "{bez opłat|brak opłaty}", tryb: "za reklamację" }
+          - { usluga: "Zastrzeżenie karty pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "jednorazowo" }
+          - { usluga: "Zastrzeżenie karty za granicą pod numerem {{fakt:kontakt.infolinia-zagranica}}", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "jednorazowo" }
+          - { usluga: "Zamówienie karty zastępczej po zastrzeżeniu", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+
+  - id: taryfa-bankowosc-prywatna-karty-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dodanie karty do {portfela mobilnego|aplikacji płatności mobilnych}", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Dzienny limit płatności mobilnych", stawka: "{{fakt:limit.platnosci-mobilne.dzienny}}", tryb: "dziennie" }
+          - { usluga: "Płatności zbliżeniowe w terminalach — limit łączny bez PIN", stawka: "{{fakt:limit.karta-debetowa.zblizeniowy-skumulowany}}", tryb: "za serię transakcji" }
+          - { usluga: "Wypłata gotówki z bankomatu za pomocą telefonu", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Karta wirtualna do płatności internetowych", stawka: "{bez opłat|brak opłaty}", tryb: "rocznie" }
+          - { usluga: "Wydanie karty wirtualnej jednorazowego użytku", stawka: "{bez opłat|brak opłaty}", tryb: "za kartę" }
+          - { usluga: "Karta dla dziecka lub osoby bliskiej jako karta dodatkowa z limitem miesięcznym", stawka: "{{fakt:oplata.prywatna.karta-dodatkowa-roczna}}", tryb: "rocznie" }
+          - { usluga: "Zmiana waluty rozliczeniowej karty", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Zawieszenie możliwości dokonywania transakcji kartą za granicą", stawka: "{bez opłat|brak opłaty}", tryb: "za dyspozycję" }
+          - { usluga: "Uruchomienie powiadomień o transakcjach kartą w aplikacji mobilnej", stawka: "{{fakt:oplata.karta-debetowa.powiadomienie-o-transakcji}}", tryb: "miesięcznie" }
+
+  # ======================================================== Lokaty — uzupełnienie
+  - id: taryfa-bankowosc-prywatna-lokaty-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata w walucie obcej na {okres|czas} do {dwunastu|12} miesięcy", stawka: "wg Tabeli oprocentowania lokat walutowych", tryb: "rocznie" }
+          - { usluga: "Lokata dwuwalutowa z możliwością zmiany waluty przy odnowieniu", stawka: "wg indywidualnej oferty", tryb: "rocznie" }
+          - { usluga: "Lokata „progresywna” z rosnącym w kolejnych okresach oprocentowaniem", stawka: "wg indywidualnej oferty", tryb: "rocznie" }
+          - { usluga: "Lokata ze stałą wypłatą odsetek miesięcznie na rachunek Klienta", stawka: "stawka lokaty pomniejszona o {0,10|0,1} p.p.", tryb: "rocznie" }
+          - { usluga: "Lokata na rzecz osoby trzeciej (rachunek rodziny)", stawka: "wg warunków lokaty podstawowej", tryb: "rocznie" }
+          - { usluga: "Dopłata do lokaty w okresie umownym (jeżeli umowa na to pozwala)", stawka: "{bez opłat|brak opłaty}", tryb: "za wpłatę" }
+          - { usluga: "Przeniesienie lokaty do innego Klienta (cesja praw)", stawka: "150,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Kapitalizacja odsetek na lokacie wg zasady „{{fakt:lokata.kapitalizacja}}”", stawka: "{bez opłat|brak opłaty}", tryb: "za okres" }
+          - { usluga: "Wypłata odsetek na rachunek w innym banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za przelew" }
+          - { usluga: "Oświadczenie o rezydencji podatkowej — przyjęcie i weryfikacja", stawka: "{bez opłat|brak opłaty}", tryb: "za dokument" }
+
+  # ======================================================== RPW — uzupełnienie
+  - id: taryfa-bankowosc-prywatna-rpw-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Opłata za prowadzenie rachunku papierów wartościowych od aktywów powyżej 2 000 000 zł (część nadwyżkowa)", stawka: "0,10% wartości aktywów", tryb: "rocznie od wartości aktywów" }
+          - { usluga: "Opłata za prowadzenie rachunku papierów wartościowych przy aktywach do 100 000 zł", stawka: "{{fakt:oplata.prywatna.rpw-prowadzenie-minimum}}", tryb: "kwartalnie" }
+          - { usluga: "Przechowywanie instrumentów finansowych w depozycie zagranicznym", stawka: "0,20% wartości aktywów", tryb: "rocznie od wartości aktywów" }
+          - { usluga: "{Wycena|Ustalenie wartości} portfela instrumentów finansowych na dzień wskazany przez Klienta", stawka: "80,00 zł", tryb: "za wycenę" }
+          - { usluga: "Raport miesięczny o stanie rachunku papierów wartościowych w formie elektronicznej", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Raport miesięczny o stanie rachunku papierów wartościowych w formie papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za raport" }
+          - { usluga: "Dostęp do wykazu notowań i analiz rynkowych udostępnianych przez Bank", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Informacja o zdarzeniach korporacyjnych dotyczących posiadanych instrumentów", stawka: "{bez opłat|brak opłaty}", tryb: "za informację" }
+          - { usluga: "Wniosek o wydanie instrumentów finansowych w formie dokumentów (jeżeli instrument ma postać dokumentu)", stawka: "300,00 zł", tryb: "za instrument" }
+          - { usluga: "Oświadczenie o statusie podatkowym Klienta dla potrzeb rozliczeń zagranicznych — przyjęcie", stawka: "{bez opłat|brak opłaty}", tryb: "za dokument" }
+
+  # ======================================================== Usługi dodatkowe — uzupełnienia
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przechowanie przesyłki lub depozytu zamkniętego (paczka, koperta) w skarbcu Banku", stawka: "od 120,00 zł", tryb: "rocznie" }
+          - { usluga: "Przyjęcie depozytu zamkniętego do przechowania {tymczasowego|krótkoterminowego} (do 30 dni)", stawka: "60,00 zł", tryb: "za depozyt" }
+          - { usluga: "Wydanie depozytu zamkniętego osobie upoważnionej", stawka: "{bez opłat|brak opłaty}", tryb: "za wydanie" }
+          - { usluga: "Sporządzenie spisu zawartości depozytu przy udziale pracowników Banku", stawka: "150,00 zł", tryb: "za spis" }
+          - { usluga: "Zmiana osób uprawnionych do dostępu do skrytki", stawka: "50,00 zł", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana rozmiaru skrytki sejfowej (przeniesienie do skrytki innej wielkości)", stawka: "100,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Zwrot skrytki przed końcem okresu najmu (zwrot czynszu proporcjonalnie)", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zawiadomienie Klienta o upływie okresu najmu skrytki", stawka: "{bez opłat|brak opłaty}", tryb: "za zawiadomienie" }
+          - { usluga: "Przeprowadzenie procedury otwarcia skrytki po wypowiedzeniu umowy najmu", stawka: "400,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Ubezpieczenie zawartości skrytki ponad sumę {{fakt:limit.prywatna.sejf-ubezpieczenie}}", stawka: "0,30% wartości dodatkowej sumy", tryb: "rocznie" }
+
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Pośrednictwo w organizacji spotkania z doradcą podatkowym lub prawnym współpracującym z Bankiem", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Honorarium doradcy podatkowego lub prawnego współpracującego z Bankiem", stawka: "wg cennika podmiotu współpracującego", tryb: "za godzinę" }
+          - { usluga: "Pośrednictwo w uzyskaniu wyceny nieruchomości przez rzeczoznawcę", stawka: "od 200,00 zł plus honorarium rzeczoznawcy", tryb: "za zlecenie" }
+          - { usluga: "Pośrednictwo w zakupie ubezpieczenia majątkowego u partnera Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Pośrednictwo w organizacji transportu wartości pieniężnych", stawka: "wg wyceny przewoźnika", tryb: "za zlecenie" }
+          - { usluga: "Organizacja spotkania Klienta ze specjalistą ds. inwestycji w siedzibie Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za spotkanie" }
+          - { usluga: "Zaproszenie na wydarzenia {dla Klientów bankowości prywatnej|organizowane przez Bank dla Klientów}", stawka: "{bez opłat|brak opłaty}", tryb: "za wydarzenie" }
+          - { usluga: "Udział osoby towarzyszącej w wydarzeniu organizowanym przez Bank", stawka: "od 100,00 zł", tryb: "za osobę" }
+          - { usluga: "Przygotowanie podsumowania sytuacji finansowej rodziny dla doradcy zewnętrznego", stawka: "100,00 zł", tryb: "za podsumowanie" }
+          - { usluga: "Rozpatrzenie skargi Klienta na usługę dodatkową (termin odpowiedzi {{fakt:termin.reklamacja.inne}})", stawka: "{bez opłat|brak opłaty}", tryb: "za skargę" }

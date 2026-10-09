@@ -1,0 +1,172 @@
+bloki:
+  # ======================================================== Rachunek papierów wartościowych — pozycje opcjonalne
+  - id: taryfa-bankowosc-prywatna-rpw-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zawarcie umowy o prowadzenie rachunku papierów wartościowych", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Otwarcie dodatkowego rachunku papierów wartościowych", stawka: "{{fakt:oplata.prywatna.rpw-otwarcie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie rachunku papierów wartościowych — stawka podstawowa", stawka: "{{fakt:oplata.prywatna.rpw-prowadzenie-roczna}}", tryb: "rocznie od wartości aktywów" }
+          - { usluga: "Minimalna opłata za prowadzenie rachunku w kwartale", stawka: "{{fakt:oplata.prywatna.rpw-prowadzenie-minimum}}", tryb: "kwartalnie" }
+          - { usluga: "Prowadzenie rachunku papierów wartościowych w kwartale, w którym nie było żadnych zapisów", stawka: "{{fakt:oplata.prywatna.rpw-prowadzenie-minimum}}", tryb: "kwartalnie" }
+          - { usluga: "Prowadzenie rejestru instrumentów finansowych zapisanych na rachunku zbiorczym", stawka: "0,05% wartości aktywów", tryb: "rocznie" }
+          - { usluga: "Prowadzenie rachunku pieniężnego obsługującego rachunek papierów wartościowych", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Zmiana danych posiadacza rachunku papierów wartościowych", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Zamknięcie rachunku papierów wartościowych", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Ustanowienie pełnomocnictwa do rachunku papierów wartościowych", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+
+  - id: taryfa-bankowosc-prywatna-rpw-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Rozliczenie transakcji kupna lub sprzedaży na rynku krajowym", stawka: "{{fakt:oplata.prywatna.rpw-rozliczenie-krajowe}}", tryb: "za rozliczenie" }
+          - { usluga: "Rozliczenie transakcji kupna lub sprzedaży na rynkach zagranicznych", stawka: "{{fakt:oplata.prywatna.rpw-rozliczenie-zagraniczne}}", tryb: "za rozliczenie" }
+          - { usluga: "Rozliczenie transakcji poza rynkiem zorganizowanym (transakcja pakietowa)", stawka: "0,10% wartości transakcji, min. 100,00 zł", tryb: "od wartości transakcji" }
+          - { usluga: "Rozliczenie transakcji z dostawą instrumentów niezgodnie z terminem (korekta rozliczenia)", stawka: "80,00 zł", tryb: "za korektę" }
+          - { usluga: "Anulowanie nierozliczonego zlecenia", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Modyfikacja nierozliczonego zlecenia", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Przyjęcie zlecenia składanego za pośrednictwem doradcy telefonicznie", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie z limitem ceny ważne do końca miesiąca", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Potwierdzenie rozliczenia transakcji w formie papierowej", stawka: "10,00 zł", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Potwierdzenie rozliczenia transakcji w formie elektronicznej", stawka: "{bez opłat|brak opłaty}", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-rpw-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przyjęcie zlecenia nabycia jednostek funduszu inwestycyjnego", stawka: "{{fakt:oplata.prywatna.fundusz-dystrybucja-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Przyjęcie zlecenia umorzenia jednostek funduszu inwestycyjnego", stawka: "{{fakt:oplata.prywatna.fundusz-dystrybucja-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Przyjęcie zlecenia zamiany jednostek między subfunduszami", stawka: "{{fakt:oplata.prywatna.fundusz-dystrybucja-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Obsługa zapisu na obligacje skarbowe w ofercie publicznej", stawka: "{bez opłat|brak opłaty}", tryb: "za zapis" }
+          - { usluga: "Wykup obligacji skarbowych przed terminem", stawka: "wg warunków emisji", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Obsługa obligacji korporacyjnych — rozliczenie nabycia", stawka: "0,10% wartości nominalnej, min. 40,00 zł", tryb: "od wartości nominalnej" }
+          - { usluga: "Obsługa wykupu obligacji korporacyjnych w terminie zapadalności", stawka: "{bez opłat|brak opłaty}", tryb: "za wykup" }
+          - { usluga: "Obsługa wypłaty odsetek od obligacji", stawka: "{{fakt:oplata.prywatna.rpw-dywidenda-prowizja}}", tryb: "od kwoty wypłaty" }
+          - { usluga: "Przekazanie Klientowi informacji o opłatach funduszu (dokument informacyjny)", stawka: "{bez opłat|brak opłaty}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Zestawienie posiadanych jednostek funduszy na wskazany dzień", stawka: "40,00 zł", tryb: "za zestawienie" }
+
+  - id: taryfa-bankowosc-prywatna-rpw-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Obsługa wypłaty dywidendy od akcji krajowych", stawka: "{{fakt:oplata.prywatna.rpw-dywidenda-prowizja}}, min. 5,00 zł", tryb: "od kwoty wypłaty" }
+          - { usluga: "Obsługa wypłaty dywidendy od akcji zagranicznych", stawka: "0,30% kwoty, min. 15,00 zł", tryb: "od kwoty wypłaty" }
+          - { usluga: "Obsługa podziału lub połączenia akcji (split, scalenie)", stawka: "{bez opłat|brak opłaty}", tryb: "za zdarzenie" }
+          - { usluga: "Obsługa prawa poboru i objęcia akcji nowej emisji", stawka: "50,00 zł", tryb: "za zdarzenie" }
+          - { usluga: "Obsługa wezwania do zapisywania się na sprzedaż akcji", stawka: "60,00 zł", tryb: "za zdarzenie" }
+          - { usluga: "Wykonanie prawa głosu na walnym zgromadzeniu — przekazanie instrukcji", stawka: "100,00 zł", tryb: "za zgromadzenie" }
+          - { usluga: "{Wystawienie|Sporządzenie} imiennego świadectwa depozytowego", stawka: "{{fakt:oplata.prywatna.rpw-zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "{Wystawienie|Sporządzenie} zaświadczenia o dochodach z instrumentów finansowych", stawka: "{{fakt:oplata.prywatna.rpw-zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "{Wystawienie|Sporządzenie} zaświadczenia na potrzeby zagranicznego organu podatkowego", stawka: "100,00 zł", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Obsługa zwrotu podatku u źródła od dywidend zagranicznych", stawka: "10% odzyskanej kwoty, min. 50,00 zł", tryb: "od kwoty zwrotu" }
+
+  - id: taryfa-bankowosc-prywatna-rpw-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przeniesienie instrumentów finansowych do innego biura maklerskiego lub banku powierniczego", stawka: "{{fakt:oplata.prywatna.rpw-przeniesienie}}", tryb: "za instrument" }
+          - { usluga: "Przyjęcie instrumentów finansowych przeniesionych z innego podmiotu", stawka: "{bez opłat|brak opłaty}", tryb: "za instrument" }
+          - { usluga: "Przeniesienie instrumentów finansowych na rachunek za granicą", stawka: "200,00 zł", tryb: "za zlecenie" }
+          - { usluga: "Przeniesienie instrumentów między rachunkami tego samego Klienta w Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Przeniesienie instrumentów finansowych w drodze darowizny", stawka: "100,00 zł", tryb: "za zlecenie" }
+          - { usluga: "Przeniesienie instrumentów finansowych w drodze dziedziczenia", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Ustanowienie zastawu na instrumentach finansowych", stawka: "200,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Zwolnienie zastawu na instrumentach finansowych", stawka: "100,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Zestawienie transakcji i sald za rok kalendarzowy", stawka: "{bez opłat|brak opłaty}", tryb: "rocznie" }
+          - { usluga: "Duplikat umowy o prowadzenie rachunku papierów wartościowych", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }
+
+  # ======================================================== Usługi dodatkowe — pozycje opcjonalne
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Wynajem|Najem} skrytki sejfowej małej", stawka: "{{fakt:oplata.prywatna.sejf-maly}}", tryb: "rocznie" }
+          - { usluga: "{Wynajem|Najem} skrytki sejfowej średniej", stawka: "{{fakt:oplata.prywatna.sejf-sredni}}", tryb: "rocznie" }
+          - { usluga: "{Wynajem|Najem} skrytki sejfowej dużej", stawka: "{{fakt:oplata.prywatna.sejf-duzy}}", tryb: "rocznie" }
+          - { usluga: "Kaucja zwrotna za każdy klucz do skrytki", stawka: "{{fakt:oplata.prywatna.sejf-kaucja}}", tryb: "za klucz" }
+          - { usluga: "Wymiana zamka skrytki po {utracie|zagubieniu} klucza", stawka: "{{fakt:oplata.prywatna.sejf-wymiana-zamka}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie {duplikatu|kopii} klucza do skrytki", stawka: "100,00 zł", tryb: "za klucz" }
+          - { usluga: "Wizyta w skrytkowni w dniu wolnym od pracy", stawka: "{{fakt:oplata.prywatna.sejf-dostep-dodatkowy}}", tryb: "za wizytę" }
+          - { usluga: "Ustanowienie pełnomocnika upoważnionego do dostępu do skrytki", stawka: "50,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Otwarcie skrytki w trybie awaryjnym (przy utracie obu kluczy) w obecności komisji", stawka: "400,00 zł plus koszt usługi ślusarskiej", tryb: "jednorazowo" }
+          - { usluga: "Opłata za zwłokę w zapłacie czynszu za skrytkę (po {{fakt:termin.prywatna.sejf-zaleglosc}})", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za upomnienie" }
+
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zlecenie concierge — rezerwacja {restauracji|stolika} lub biletów", stawka: "od {{fakt:oplata.prywatna.concierge-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie concierge — organizacja podróży krajowej", stawka: "od {{fakt:oplata.prywatna.concierge-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie concierge — organizacja podróży zagranicznej", stawka: "od 250,00 zł", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie concierge — organizacja wydarzenia rodzinnego lub firmowego", stawka: "wg indywidualnej wyceny", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie concierge — załatwienie spraw urzędowych na podstawie pełnomocnictwa", stawka: "od 300,00 zł", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie concierge — zamówienie transportu", stawka: "od {{fakt:oplata.prywatna.concierge-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Zlecenie concierge — pilne, realizowane w ciągu 24 godzin (dopłata)", stawka: "50% stawki podstawowej", tryb: "za zlecenie" }
+          - { usluga: "Anulowanie zlecenia concierge przed rozpoczęciem realizacji", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Anulowanie zlecenia concierge w trakcie realizacji", stawka: "50% stawki, plus koszty poniesione u podmiotu trzeciego", tryb: "za zlecenie" }
+          - { usluga: "Przekazanie Klientowi rozliczenia kosztów usług podmiotów trzecich", stawka: "{bez opłat|brak opłaty}", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zaświadczenie o numerach rachunków i dacie ich otwarcia", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Zaświadczenie o historii rachunku z ostatnich dwunastu miesięcy", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Opinia bankowa na potrzeby postępowania przetargowego", stawka: "{{fakt:oplata.prywatna.opinia-bankowa}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Opinia bankowa w języku angielskim", stawka: "{{fakt:oplata.prywatna.opinia-bankowa}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Potwierdzenie sald dla doradcy podatkowego", stawka: "{{fakt:oplata.prywatna.potwierdzenie-audytorskie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Potwierdzenie możliwości finansowych Klienta (list referencyjny) na potrzeby zakupu nieruchomości", stawka: "{{fakt:oplata.prywatna.opinia-bankowa}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Poświadczenie zgodności kopii dokumentu z oryginałem", stawka: "20,00 zł", tryb: "za stronę" }
+          - { usluga: "Wydanie duplikatu umowy", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Wydanie wyciągu z rachunku w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za wyciąg" }
+          - { usluga: "{Wystawienie|Sporządzenie} dokumentu w trybie pilnym (do końca następnego dnia roboczego)", stawka: "dopłata 50% stawki podstawowej", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Doręczenie dokumentów kurierem na adres w kraju", stawka: "{{fakt:oplata.prywatna.doreczenie-kurierskie-dokumentow}}", tryb: "za przesyłkę" }
+          - { usluga: "Doręczenie dokumentów kurierem na adres za granicą", stawka: "wg cennika przewoźnika", tryb: "za przesyłkę" }
+          - { usluga: "Odbiór dokumentów od Klienta przez kuriera", stawka: "{{fakt:oplata.prywatna.doreczenie-kurierskie-dokumentow}}", tryb: "za przesyłkę" }
+          - { usluga: "Doręczenie karty płatniczej kurierem w godzinach wskazanych przez Klienta", stawka: "{{fakt:oplata.prywatna.karta-kurier}}", tryb: "za przesyłkę" }
+          - { usluga: "Przesyłka poleconym listem za potwierdzeniem odbioru", stawka: "15,00 zł", tryb: "za przesyłkę" }
+          - { usluga: "Przesłanie dokumentów w formie zaszyfrowanej wiadomości e-mail", stawka: "{bez opłat|brak opłaty}", tryb: "za wiadomość" }
+          - { usluga: "Skanowanie i przesłanie dokumentów z archiwum", stawka: "5,00 zł", tryb: "za stronę" }
+          - { usluga: "Pośrednictwo w uzyskaniu apostille lub legalizacji dokumentu", stawka: "od 200,00 zł plus opłaty urzędowe", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Pośrednictwo w tłumaczeniu przysięgłym dokumentów", stawka: "od 100,00 zł plus koszt tłumaczenia", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Pośrednictwo w uzyskaniu odpisu z rejestru publicznego", stawka: "50,00 zł plus opłaty urzędowe", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-uslugi-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Spotkanie z doradcą poza placówką Banku", stawka: "{{fakt:oplata.prywatna.wizyta-poza-oddzialem}}", tryb: "za spotkanie" }
+          - { usluga: "Dodatkowa konsultacja z doradcą ponad limit pakietu", stawka: "{{fakt:oplata.prywatna.doradca-konsultacja-dodatkowa}}", tryb: "za godzinę" }
+          - { usluga: "Opracowanie indywidualnego planu sukcesji majątku — konsultacja wstępna", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Opracowanie indywidualnego planu sukcesji majątku — opracowanie szczegółowe", stawka: "wg indywidualnej wyceny", tryb: "jednorazowo" }
+          - { usluga: "{Przygotowanie|Opracowanie} zestawienia dla rodzinnego spotkania finansowego", stawka: "100,00 zł", tryb: "za zestawienie" }
+          - { usluga: "Wysłanie upomnienia o zaległej opłacie", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za upomnienie" }
+          - { usluga: "Powiadomienie SMS o zdarzeniach na rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie" }
+          - { usluga: "Zmiana adresu korespondencyjnego", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Ponowne wysłanie korespondencji po nieudanym doręczeniu (w terminie {{fakt:termin.doreczenie-korespondencji}})", stawka: "10,00 zł", tryb: "za przesyłkę" }
+          - { usluga: "Złożenie reklamacji w placówce, telefonicznie lub na adres {{fakt:kontakt.email-reklamacje}}", stawka: "{bez opłat|brak opłaty}", tryb: "za reklamację" }
