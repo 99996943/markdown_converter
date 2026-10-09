@@ -146,6 +146,23 @@ public sealed class TableDetectionStage : IPipelineStage
         return next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// The first lines of a page: a bold column-name row that the previous page also has, and a few rows — the end of a
+    /// table continued from there, however few rows remain.
+    /// </summary>
+    private static bool ContinuesFromPreviousPage(PipelineContext context, LayoutPage page, List<Row> region)
+    {
+        Row header = region[0];
+        if (!header.IsMulti || !header.IsAllBold
+            || !ReferenceEquals(page.Lines.FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0), header.Line))
+        {
+            return false;
+        }
+
+        LayoutPage? previous = context.Pages.FirstOrDefault(p => p.Number == page.Number - 1);
+        return previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal));
+    }
+
     /// <summary>Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces.</summary>
     private static List<LineSegment> CellsOf(LayoutLine line)
     {
@@ -237,7 +254,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
-        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && StartsAtPageEnd(context, page, region)))
+        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && (StartsAtPageEnd(context, page, region) || ContinuesFromPreviousPage(context, page, region))))
         {
             return null;
         }
@@ -497,6 +514,9 @@ public sealed class TableDetectionStage : IPipelineStage
 
         double left = rows.Min(r => r.Cells[0].Box.Left);
         double second = rows.Min(r => r.Cells[1].Box.Left);
+
+        // Below a bold column-name row, one row is enough to tell the table's columns from text crossing them.
+        int minRows = region[0].IsMulti && region[0].IsAllBold ? 2 : context.Options.Tables.MinRows;
         int multi = 0;
         for (int j = 0; j < region.Count; j++)
         {
@@ -510,7 +530,7 @@ public sealed class TableDetectionStage : IPipelineStage
             // A line whose segments all start in the table's columns is a row (spaced evenly by chance), not text.
             bool aligned = row.Cells.Count >= 2
                 && row.Cells.All(c => rows.Any(r => r.Cells.Any(m => Math.Abs(m.Box.Left - c.Box.Left) <= tolerance)));
-            if (multi >= context.Options.Tables.MinRows
+            if (multi >= minRows
                 && !aligned
                 && row.Line.Box.Right > second + tolerance
                 && Math.Abs(row.Line.Box.Left - left) <= tolerance)
