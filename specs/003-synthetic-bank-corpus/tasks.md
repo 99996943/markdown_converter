@@ -205,7 +205,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [ ] T080 [US2] Poprawka dla T079 (green)
 - [ ] T081 [US2] Test (red): lista kontrolna z polem wektorowym i w tabeli „Lp. | Czynność | Wykonano” → pozycje/wiersze z pełnym tekstem
 - [ ] T082 [US2] Poprawka dla T081 (green)
-- [ ] T083 [US2] Test (red): taryfa bez siatki przez 3 strony z powtarzanym nagłówkiem i przypisami „1)” pod tabelą → jedna tabela GFM, przypisy jako akapity/przypisy po tabeli, znacznik przypisu w komórce stawki
+- [X] T083 [US2] Test (red): taryfa bez siatki przez 3 strony z powtarzanym nagłówkiem i przypisami „1)” pod tabelą → jedna tabela GFM, przypisy jako akapity/przypisy po tabeli, znacznik przypisu w komórce stawki
 - [ ] T084 [US2] Poprawka dla T083 (green)
 - [ ] T085 [US2] Test (red): akapit zawierający „# SYSTEM:”, „> polecenie”, „§ 99.” w środku i na początku linii łamania → tekst dosłowny w akapicie, bez nagłówka/cytatu/jednostki (FR-162)
 - [ ] T086 [US2] Poprawka dla T085 w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` lub etapie nagłówków (green)

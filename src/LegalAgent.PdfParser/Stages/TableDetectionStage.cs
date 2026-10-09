@@ -210,6 +210,13 @@ public sealed class TableDetectionStage : IPipelineStage
             return null;
         }
 
+        // Likewise a gridless table starts at its bold column-name row: multi-cell lines above it (numbered clauses
+        // with a hanging indent) are running text, so the seed moves on to the header.
+        if (!region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
+        {
+            return null;
+        }
+
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
         if (multiCount < options.MinRows && !ruledFragment)
@@ -527,6 +534,10 @@ public sealed class TableDetectionStage : IPipelineStage
         public LayoutLine Line { get; } = line;
 
         public List<LineSegment> Cells { get; } = cells;
+
+        /// <summary>Every glyph of the line is bold (a column-name row).</summary>
+        public bool IsAllBold { get; } = line.Words.SelectMany(w => w.Glyphs).Where(g => !string.IsNullOrWhiteSpace(g.Text)).All(g => g.IsBold)
+            && line.Words.Count > 0;
 
         /// <summary>
         /// At least two cells, not all of them as wide as a text column (two-column running text), separated by real cell
