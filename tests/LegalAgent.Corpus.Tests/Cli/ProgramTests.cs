@@ -14,6 +14,9 @@ public sealed class ProgramTests : IDisposable
     {
         Directory.CreateDirectory(baseDirectory);
         CopyDirectory(MiniContent.Path, Path.Combine(baseDirectory, "zrodla"));
+
+        // The mini acts have no PDF; acts are covered by ActsTests (refresh needs every act's PDF).
+        File.Delete(Path.Combine(baseDirectory, "zrodla", "akty.yaml"));
         new RunParameters
         {
             DocumentsPerType = 2,

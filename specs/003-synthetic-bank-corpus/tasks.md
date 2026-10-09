@@ -314,11 +314,11 @@ wpisy manifestu ze źródłem.
 
 ### Tests for User Story 6 ⚠️
 
-- [ ] T118 [P] [US6] Testy w `ctests/Unit/ActsTests.cs` (red, katalog tymczasowy z małym PDF aktu): `refresh` tworzy `<id>.md` i wpis manifestu `type: akty` z `source` (`journal`, `consolidatedTextDate`, `url`, `downloadedOn`, `notes`); `ZRODLA.md` odtwarzany z `akty.yaml` (tabela: plik, akt, publikator, źródło, pobrano, uwagi); brak PDF wymienionego w `akty.yaml` → kod 6 z nazwą pliku; generator nie wykonuje żadnego połączenia sieciowego
+- [X] T118 [P] [US6] Testy w `ctests/Unit/ActsTests.cs` (red, katalog tymczasowy z małym PDF aktu): `refresh` tworzy `<id>.md` i wpis manifestu `type: akty` z `source` (`journal`, `consolidatedTextDate`, `url`, `downloadedOn`, `notes`); `ZRODLA.md` odtwarzany z `akty.yaml` (tabela: plik, akt, publikator, źródło, pobrano, uwagi); brak PDF wymienionego w `akty.yaml` → kod 6 z nazwą pliku; generator nie wykonuje żadnego połączenia sieciowego
 
 ### Implementation for User Story 6
 
-- [ ] T119 [US6] Zaimplementuj obsługę aktów w `corpus-lib/CorpusGenerator.cs` (`refresh`), `ManifestWriter` (`ActInfo`) i generowanie `corpus/akty/ZRODLA.md` — T118 green
+- [X] T119 [US6] Zaimplementuj obsługę aktów w `corpus-lib/CorpusGenerator.cs` (`refresh`), `ManifestWriter` (`ActInfo`) i generowanie `corpus/akty/ZRODLA.md` — T118 green
 - [ ] T120 [US6] Skopiuj 6 aktów z `ptests/Corpus/acts/*.pdf` do `corpus/akty/` (te same nazwy) i pobierz 4 akty (research.md R12: `dz-u-2025-644-aml`, `dz-u-2019-1781-ochrona-danych`, `dz-u-2026-823-reklamacje`, `dz-u-2025-720-kredyt-hipoteczny`) poleceniem z README (`curl --fail --max-time 60`, sprawdzenie `%PDF-`); uzupełnij `corpus/zrodla/akty.yaml` (10 wpisów; dla 6 aktów źródła z `ptests/Corpus/acts/SOURCES.md`; uwagi o nieuwzględnionych nowelizacjach: AML — Dz. U. 2025 poz. 1669, ochrona danych — Dz. U. 2026 poz. 252 i 548)
 - [ ] T121 [US6] `refresh`; przejrzyj Markdown 4 nowych aktów (konwersja kompletna, brak ostrzeżeń krytycznych w raporcie; nowe defekty parsera → pary red/green jak T089, zgłoszone właścicielowi); zacommituj `corpus/akty/**` i manifest; `CorpusFullTests` obejmuje akty w SC-020 (komplet plików i wpisów)
 

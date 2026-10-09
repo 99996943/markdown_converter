@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
@@ -92,6 +93,8 @@ public sealed class ForbiddenNameException : Exception
 /// <summary>Facade of the corpus generator: <c>generate</c>, <c>verify</c> (contracts/cli.md).</summary>
 public static class CorpusGenerator
 {
+    private const string ActType = "akty";
+
     private static readonly JsonSerializerOptions TruthJson = new()
     {
         WriteIndented = true,
@@ -142,7 +145,10 @@ public static class CorpusGenerator
             throw new ContentException("Nieczytelny manifest: " + ex.Message, ex) { File = "manifest.json" };
         }
 
-        IReadOnlyList<ManifestDocument> documents = manifest.Documents;
+        // Acts are converted again from akty.yaml (FR-150); the other documents from the manifest.
+        List<ManifestDocument> documents = manifest.Documents.Where(d => d.Type != ActType).ToList();
+        string content = Resolve(options.BaseDirectory, parameters.ContentDirectory);
+        IReadOnlyList<ActSource> acts = File.Exists(Path.Combine(content, "akty.yaml")) ? ContentLoader.Load(content).Acts : [];
         var converted = new (string Markdown, int Pages)[documents.Count];
         IPdfMarkdownConverter converter = Converter(parameters, options);
         int done = 0;
@@ -164,7 +170,6 @@ public static class CorpusGenerator
                 options.Progress?.Report($"dokument {n}/{documents.Count}: {entry.Id} ({converted[i].Pages} str.)");
             }).ConfigureAwait(false);
 
-        // T119: acts (zrodla/akty.yaml, akty/ZRODLA.md) are added to the manifest and converted here.
         var files = new List<CorpusFile>();
         var entries = new List<ManifestDocument>(documents.Count);
         for (int i = 0; i < documents.Count; i++)
@@ -172,6 +177,10 @@ public static class CorpusGenerator
             entries.Add(documents[i] with { Pages = converted[i].Pages });
             files.Add(new CorpusFile(documents[i].Markdown, CorpusWriter.TextBytes(converted[i].Markdown)));
         }
+
+        (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(acts, output, converter, required: true, cancellationToken).ConfigureAwait(false);
+        entries.AddRange(actEntries);
+        files.AddRange(actFiles);
 
         var refreshed = new Manifest.Manifest(manifest.Run with { ParserVersion = ParserVersion }, entries);
         IReadOnlyList<string> typeOrder = documents
@@ -182,7 +191,82 @@ public static class CorpusGenerator
         string manifestText = ManifestWriter.Write(refreshed, typeOrder);
         files.Add(new CorpusFile("manifest.json", CorpusWriter.TextBytes(manifestText)));
         CorpusWriter.Write(output, files);
-        return new RefreshResult(ManifestWriter.Read(manifestText), documents.Select(d => d.Pdf).ToList());
+        return new RefreshResult(ManifestWriter.Read(manifestText), [.. documents.Select(d => d.Pdf), .. actEntries.Select(d => d.Pdf)]);
+    }
+
+    /// <summary>
+    /// FR-150 – FR-152: converts the acts of <c>akty.yaml</c> (<c>akty/&lt;id&gt;.pdf</c>, committed by hand) and writes
+    /// <c>akty/ZRODLA.md</c>. Nothing is downloaded. With <paramref name="required"/> a missing PDF is an error (CLI exit
+    /// code 6); otherwise acts without a PDF are left out.
+    /// </summary>
+    private static async Task<(List<ManifestDocument> Entries, List<CorpusFile> Files)> ActsAsync(
+        IReadOnlyList<ActSource> acts,
+        string output,
+        IPdfMarkdownConverter converter,
+        bool required,
+        CancellationToken cancellationToken)
+    {
+        var entries = new List<ManifestDocument>();
+        var files = new List<CorpusFile>();
+        var listed = new List<ActSource>();
+        foreach (ActSource act in acts.OrderBy(a => a.Id, StringComparer.Ordinal))
+        {
+            string pdfPath = ActType + "/" + act.Id + ".pdf";
+            string full = Resolve(output, pdfPath);
+            if (!File.Exists(full))
+            {
+                if (required)
+                {
+                    throw new FileNotFoundException("Brak pliku PDF aktu z akty.yaml: " + pdfPath, full);
+                }
+
+                continue;
+            }
+
+            byte[] pdf = await File.ReadAllBytesAsync(full, cancellationToken).ConfigureAwait(false);
+            (string markdown, int pages) = await ConvertWithPagesAsync(converter, pdf, pdfPath, cancellationToken).ConfigureAwait(false);
+            string markdownPath = ActType + "/" + act.Id + ".md";
+            files.Add(new CorpusFile(markdownPath, CorpusWriter.TextBytes(markdown)));
+            entries.Add(new ManifestDocument(
+                act.Id,
+                ActType,
+                act.Title,
+                act.Journal,
+                null,
+                null,
+                null,
+                "obowiazujacy",
+                null,
+                pdfPath,
+                markdownPath,
+                pages,
+                Source: new ActInfo(act.Journal, act.ConsolidatedDate, act.Url, act.DownloadedOn, act.Notes)));
+            listed.Add(act);
+        }
+
+        if (listed.Count > 0)
+        {
+            files.Add(new CorpusFile(ActType + "/ZRODLA.md", CorpusWriter.TextBytes(Sources(listed))));
+        }
+
+        return (entries, files);
+    }
+
+    /// <summary>The table of act sources (contracts/corpus-layout.md).</summary>
+    private static string Sources(IReadOnlyList<ActSource> acts)
+    {
+        static string Cell(string? text) => (text ?? string.Empty).Replace("|", "\\|", StringComparison.Ordinal).Replace('\n', ' ');
+        var sb = new StringBuilder();
+        sb.Append("# Źródła aktów prawnych\n\n");
+        sb.Append("Pliki PDF aktów są dodawane do repozytorium ręcznie; Markdown i ta tabela powstają poleceniem `refresh` z `zrodla/akty.yaml`.\n\n");
+        sb.Append("| Plik | Akt | Publikator | Źródło | Pobrano | Uwagi |\n");
+        sb.Append("|---|---|---|---|---|---|\n");
+        foreach (ActSource act in acts)
+        {
+            sb.Append(CultureInfo.InvariantCulture, $"| {Cell(act.Id)}.pdf | {Cell(act.Title)} | {Cell(act.Journal)} | {Cell(act.Url)} | {act.DownloadedOn.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)} | {Cell(act.Notes)} |\n");
+        }
+
+        return sb.ToString();
     }
 
     /// <summary>Rebuilds the corpus in memory and compares it with the files on disk; writes nothing.</summary>
@@ -409,7 +493,10 @@ public static class CorpusGenerator
             run = run with { RepeatedWordShare = words == 0 ? 0 : Math.Round((double)repeatedWords / words, 3) };
         }
 
-        var manifest = new Manifest.Manifest(run, documents.Select(d => d.Entry).ToList());
+        (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(
+            content.Acts, Resolve(options.BaseDirectory, parameters.OutputDirectory), converter, required: false, cancellationToken).ConfigureAwait(false);
+        files.AddRange(actFiles);
+        var manifest = new Manifest.Manifest(run, [.. documents.Select(d => d.Entry), .. actEntries]);
         IReadOnlyList<string> typeOrder = content.Types.Select(t => t.Id).ToList();
         string manifestText = ManifestWriter.Write(manifest, typeOrder);
         files.Add(new CorpusFile("manifest.json", CorpusWriter.TextBytes(manifestText)));
