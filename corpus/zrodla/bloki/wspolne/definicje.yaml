@@ -10,14 +10,14 @@ bloki:
         punkty:
           - "**Bank** — Bank Przykładowy S.A. z siedzibą pod adresem {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców pod numerem KRS {{fakt:bank.krs}}, NIP {{fakt:bank.nip}};"
           - "**Klient** — {osoba fizyczna|konsument} lub inny podmiot, który zawarł z Bankiem umowę;"
-          - "**Dzień roboczy** — dzień {tygodnia|kalendarzowy} od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;"
-          - "**Trwały nośnik** — nośnik umożliwiający przechowywanie informacji {w sposób|w formie} dostępnej do późniejszego wykorzystania i odtworzenia bez zmian;"
+          - "**Dzień roboczy** — {dzień|każdy dzień} od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;"
+          - "**Trwały nośnik** — nośnik umożliwiający przechowywanie informacji {w sposób dostępny|w formie dostępnej} do późniejszego wykorzystania i odtworzenia bez zmian;"
           - "**Taryfa** — obowiązująca w Banku taryfa opłat i prowizji;"
-          - "**Placówka** — {jednostka|punkt} Banku obsługująca Klientów;"
+          - "**Placówka** — {jednostka Banku obsługująca|punkt Banku obsługujący} Klientów;"
           - "**Bankowość elektroniczna** — usługa umożliwiająca dostęp do rachunku i składanie dyspozycji przez Internet lub aplikację mobilną;"
           - "**Infolinia** — telefoniczny punkt obsługi Klientów, dostępny pod numerem {{fakt:kontakt.infolinia}};"
           - "**Instrument płatniczy** — {zindywidualizowane urządzenie|zindywidualizowane urządzenie lub zestaw procedur}, za pomocą którego Klient składa zlecenie płatnicze;"
-          - "**Uwierzytelnienie** — procedura {pozwalająca|umożliwiająca} Bankowi weryfikację tożsamości Klienta lub ważności instrumentu płatniczego;"
+          - "**Uwierzytelnienie** — procedura {pozwalająca Bankowi na weryfikację|umożliwiająca Bankowi weryfikację} tożsamości Klienta lub ważności instrumentu płatniczego;"
           - "**Dyspozycja** — oświadczenie woli Klienta dotyczące {produktu|rachunku lub innego produktu} Banku."
 
   - id: wspolne-definicje-procedura
@@ -36,4 +36,4 @@ bloki:
           - "**Trwały nośnik** — nośnik umożliwiający {przechowywanie|zachowanie} informacji w sposób dostępny do późniejszego wykorzystania;"
           - "**Placówka** — jednostka Banku obsługująca Klientów;"
           - "**Infolinia** — telefoniczny punkt obsługi Klientów, numer {{fakt:kontakt.infolinia}};"
-          - "**Eskalacja** — przekazanie sprawy do jednostki lub osoby {o wyższych|dysponującej wyższymi} uprawnieniach decyzyjnych."
+          - "**Eskalacja** — przekazanie sprawy do jednostki lub osoby {o wyższych uprawnieniach decyzyjnych|dysponującej wyższymi uprawnieniami decyzyjnymi}."

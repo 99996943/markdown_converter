@@ -34,4 +34,4 @@ bloki:
           - tekst: "Przekaż sprawę do rozpatrzenia i {zachowaj|dotrzymaj} termin odpowiedzi: {{fakt:termin.reklamacja.platnicze}} dla usług płatniczych oraz {{fakt:termin.reklamacja.inne}} dla pozostałych."
             podkroki:
               - tekst: "Gdy termin jest {niemożliwy do dotrzymania|zagrożony}, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż {{fakt:termin.reklamacja.przedluzenie}}."
-          - tekst: "Wyślij odpowiedź, zgodnie z {{ref:akt:dz-u-2026-823-reklamacje}}, i zamknij sprawę w rejestrze."
+          - tekst: "Wyślij odpowiedź w trybie przewidzianym przepisami (zob. {{ref:akt:dz-u-2026-823-reklamacje}}) i zamknij sprawę w rejestrze."

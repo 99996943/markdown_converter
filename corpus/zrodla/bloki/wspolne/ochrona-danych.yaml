@@ -6,7 +6,7 @@ bloki:
     wspolny: true
     jednostka: "§ {n}."
     elementy:
-      - ustep: "Administratorem {danych osobowych|danych osobowych Klientów} jest Bank Przykładowy S.A. z siedzibą pod adresem: {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS {{fakt:bank.krs}}. {Dane|Dane osobowe} są przetwarzane {zgodnie z|w oparciu o} rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 oraz {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
+      - ustep: "Administratorem {danych osobowych|danych osobowych Klientów} jest Bank Przykładowy S.A. z siedzibą pod adresem: {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS {{fakt:bank.krs}}. {Dane|Dane osobowe} są przetwarzane {zgodnie z rozporządzeniem|na podstawie rozporządzenia} Parlamentu Europejskiego i Rady (UE) 2016/679 oraz przepisów krajowych — zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
       - ustep: "Bank przetwarza dane osobowe {w celu|dla potrzeb}:"
         punkty:
           - "zawarcia i wykonania umowy oraz {obsługi|prowadzenia obsługi} produktów i usług;"
@@ -23,7 +23,7 @@ bloki:
     kategoria: wspolny-procedura
     wspolny: true
     elementy:
-      - akapit: "Dane osobowe Klientów {przetwarza się|wykorzystuje się} wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z {{ref:akt:dz-u-2019-1781-ochrona-danych}} oraz zasadą minimalizacji danych."
+      - akapit: "Dane osobowe Klientów {przetwarza się|wykorzystuje się} wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}}) oraz z zasadą minimalizacji danych."
       - ustep: "Pracownik wykonujący czynności objęte procedurą jest obowiązany:"
         punkty:
           - "{chronić|zabezpieczać} dokumenty i dane przed dostępem osób nieupoważnionych;"
