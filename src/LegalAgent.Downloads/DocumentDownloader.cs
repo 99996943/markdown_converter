@@ -59,7 +59,11 @@ public sealed class DocumentDownloader
 
         // The manifest records what was cancelled; the caller still learns about the cancellation.
         cancellationToken.ThrowIfCancellationRequested();
-        return new DownloadRun(results, [], manifestPath);
+
+        IReadOnlyList<string> removed = results.All(r => r.Status == DownloadStatus.Downloaded)
+            ? DirectoryCleaner.RemoveStale(directory, plan.Select(p => p.FileName))
+            : [];
+        return new DownloadRun(results, removed, manifestPath);
     }
 
     private static void WriteManifest(string manifestPath, IReadOnlyList<DownloadResult> results)
