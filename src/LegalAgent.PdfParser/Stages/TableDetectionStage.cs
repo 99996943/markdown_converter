@@ -887,7 +887,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         public List<LayoutLine> Lines { get; } = [];
 
-        public void StartRow() => _rows.Add(new RowDraft(Bands.Count));
+        public void StartRow() => _rows.Add(new RowDraft(Bands.Count, FirstPage));
 
         public void AddToRow(Row row, double tolerance)
         {
@@ -902,7 +902,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         public void AddVisualRow(Row row)
         {
-            var draft = new RowDraft(row.Cells.Count);
+            var draft = new RowDraft(row.Cells.Count, FirstPage);
             for (int i = 0; i < row.Cells.Count; i++)
             {
                 draft.Add(i, 1, row.Cells[i], exceptions);
@@ -938,8 +938,8 @@ public sealed class TableDetectionStage : IPipelineStage
         }
     }
 
-    /// <summary>Words of one table row per column, with the span of the cell starting in each column.</summary>
-    private sealed class RowDraft(int columns)
+    /// <summary>Words of one table row per column, with the span of the cell starting in each column, and the page the row starts on.</summary>
+    private sealed class RowDraft(int columns, int page)
     {
         private readonly List<Token>[] _tokens = Enumerable.Range(0, columns).Select(_ => new List<Token>()).ToArray();
         private readonly string?[] _lastLine = new string?[columns];
@@ -1004,7 +1004,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 cells.Add(new TableCell([]));
             }
 
-            return new TableRow(cells);
+            return new TableRow(cells) { Page = page };
         }
 
         /// <summary>Text runs of a cell; a separating space belongs to the run before it.</summary>
