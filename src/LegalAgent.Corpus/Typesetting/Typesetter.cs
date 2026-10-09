@@ -168,11 +168,16 @@ public static class Typesetter
         switch (element)
         {
             case HeadingElement { Level: <= 2 } h when tableDocument is not null:
-                tableDocument.Section(h);
+                // A table-document row is named by its section title alone (no „Rozdział N”).
+                tableDocument.Section(h.Text.Count > 0 ? h with { Label = null } : h);
                 break;
             case HeadingElement h when tableDocument is not null:
-                // Inside a table-document cell a subheading is a bold paragraph (the parser keeps it as such).
-                Paragraph(w, [new Inline(string.Join(' ', new[] { h.Label, Inline.PlainText(h.Text) }.Where(t => !string.IsNullOrEmpty(t))), InlineStyle.Bold)]);
+                // Units („§ N.”) are not printed in a table-document; a titled subheading is a bold paragraph.
+                if (h.Text.Count > 0)
+                {
+                    Paragraph(w, [new Inline(Inline.PlainText(h.Text), InlineStyle.Bold)]);
+                }
+
                 break;
             case HeadingElement h:
                 Heading(w, h);

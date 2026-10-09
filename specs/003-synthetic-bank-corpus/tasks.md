@@ -138,13 +138,13 @@ Elementy obowiązkowe każdego szablonu (pole `wymagane-elementy` typu w `typy.y
 
 - [X] T041 [US1] Treść wspólna: `corpus/zrodla/typy.yaml` (3 typy z prefiksami `REG`, `TAR`, `PRO` i `wymagane-elementy` jak wyżej), `corpus/zrodla/fakty.yaml` (opłaty, oprocentowania, limity, terminy reklamacji 15/30/60 dni, jednostki organizacyjne — Departament Zgodności, Departament Operacji, Biuro Reklamacji, Departament Bezpieczeństwa, Zarząd — adresy, infolinia, adres korespondencyjny, wszystkie fikcyjne), `corpus/zrodla/zabronione.yaml` (nazwy i znaki towarowe banków działających w Polsce i ich marek), `corpus/zrodla/bloki/wspolne/*.yaml` (bloki `wspolny: true`: reklamacje, ochrona danych osobowych, zmiany dokumentu, kontakt z bankiem, doręczenia, prawo właściwe, Rzecznik Finansowy, BFG)
 - [ ] T042 [P] [US1] Regulamin rachunku osobistego (`regulamin-rachunku-osobistego`, styl `jedna-kolumna`)
-- [ ] T043 [P] [US1] Regulamin rachunków oszczędnościowych i lokat (`regulamin-lokat`, `jedna-kolumna`)
+- [X] T043 [P] [US1] Regulamin rachunków oszczędnościowych i lokat (`regulamin-lokat`, `jedna-kolumna`)
 - [ ] T044 [P] [US1] Regulamin kart debetowych (`regulamin-kart-debetowych`, `dwie-kolumny`)
 - [ ] T045 [P] [US1] Regulamin kart kredytowych (`regulamin-kart-kredytowych`, `dwie-kolumny`)
 - [ ] T046 [P] [US1] Regulamin kredytu gotówkowego (`regulamin-kredytu-gotowkowego`, `jedna-kolumna`)
 - [ ] T047 [P] [US1] Regulamin kredytu hipotecznego (`regulamin-kredytu-hipotecznego`, `jedna-kolumna`)
 - [ ] T048 [P] [US1] Regulamin bankowości elektronicznej (`regulamin-bankowosci-elektronicznej`, `jedna-kolumna` lub `dwie-kolumny`)
-- [ ] T049 [P] [US1] Regulamin promocji „konto z premią” (`regulamin-promocji-konto`, `tabela-dokument`)
+- [X] T049 [P] [US1] Regulamin promocji „konto z premią” (`regulamin-promocji-konto`, `tabela-dokument`)
 - [ ] T050 [P] [US1] Regulamin promocji kart (`regulamin-promocji-karty`, `tabela-dokument`)
 - [ ] T051 [P] [US1] Regulamin rachunku firmowego (`regulamin-rachunku-firmowego`, `jedna-kolumna`)
 - [ ] T052 [P] [US1] Taryfa — klienci indywidualni (`taryfa-indywidualni`, `taryfa-siatka`, sekcje segmentów)
@@ -188,8 +188,8 @@ dla wszystkich dokumentów (quickstart.md §2).
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T074 [P] [US2] Testy w `ctests/Unit/QualityMetricsTests.cs` (red) dla `ctests/Corpus/QualityMetrics.cs` na małych `DocumentTruth` + Markdown/model: kompletność słów (z odescapowaniem Markdown i usunięciem `<!-- page: N -->`; słowo spoza PDF wykryte), kolejność czytania, nagłówki (poziom i oryginalne oznaczenie; fałszywy nagłówek liczony), pozycje list (label, głębokość), tabele (stawka w wierszu nazwy usługi i numeru pozycji; jedna tabela na tabelę źródłową; brak powtórzonych nagłówków; zgodność komórek), raport wskazuje dokument i jednostkę przy niepowodzeniu
-- [ ] T075 [US2] Zaimplementuj `ctests/Corpus/QualityMetrics.cs` — T074 green
+- [X] T074 [P] [US2] Testy w `ctests/Unit/QualityMetricsTests.cs` (red) dla `ctests/Corpus/QualityMetrics.cs` na małych `DocumentTruth` + Markdown/model: kompletność słów (z odescapowaniem Markdown i usunięciem `<!-- page: N -->`; słowo spoza PDF wykryte), kolejność czytania, nagłówki (poziom i oryginalne oznaczenie; fałszywy nagłówek liczony), pozycje list (label, głębokość), tabele (stawka w wierszu nazwy usługi i numeru pozycji; jedna tabela na tabelę źródłową; brak powtórzonych nagłówków; zgodność komórek), raport wskazuje dokument i jednostkę przy niepowodzeniu
+- [X] T075 [US2] Zaimplementuj `ctests/Corpus/QualityMetrics.cs` — T074 green
 - [ ] T076 [US2] Rozszerz `ctests/Corpus/CorpusSampleTests.cs` o metryki SC-022 (≥ 99,5% słów, 0 słów spoza PDF), SC-024 (≥ 98% nagłówków, ≤ 1% fałszywych), SC-025 (≥ 98% list), SC-026 (100% stawek w wierszu, 100% tabel taryf jako GFM bez powtórzonych nagłówków, ≥ 98% komórek); utwórz `ctests/Corpus/CorpusFullTests.cs` (`[Trait("Category","CorpusFull")]`, `Skip` gdy brak `LEGALAGENT_CORPUS_FULL`) z tymi samymi asercjami dla wszystkich dokumentów + SC-020; uruchom pełny zestaw i zapisz wyniki pomiaru (odsetki per dokument i lista niepowodzeń) w `specs/003-synthetic-bank-corpus/research.md` „Pomiar korpusu” — niepowodzenia to czerwone stany dla T077–T088
 
 ### Implementation for User Story 2 (poprawki biblioteki — tylko potwierdzone pomiarem T076)
