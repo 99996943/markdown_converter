@@ -98,6 +98,7 @@ public sealed class DocumentComposerTests
             elementy:
               - akapit: "Reklamacje regulują {{ref:blok:test-reklamacje}} oraz {{ref:zalacznik:test-zalacznik}}; opłaty – {{ref:dokument:taryfa-test}}.[^1]"
               - akapit: "Zobacz też {{ref:blok:test-nieobecny}}."
+              - akapit: "Niniejszy dokument to {{ref:dokument:regulamin-test}}."
             przypisy:
               1: "Drugi przypis dokumentu."
           - id: test-zalacznik
@@ -267,6 +268,15 @@ public sealed class DocumentComposerTests
         Assert.Contains("Reklamacje regulują § 2 oraz Załącznik nr 1; opłaty – Taryfa testowa.", text, StringComparison.Ordinal);
         UnresolvedReference missing = Assert.Single(r.Unresolved);
         Assert.Equal(("REG-01", "test-odwolania", "blok:test-nieobecny"), (missing.DocumentId, missing.BlockId, missing.Target));
+    }
+
+    [Fact]
+    public void ReferenceEndingWithAPeriod_BeforeAPeriod_DoesNotDoubleIt()
+    {
+        CompositionResult r = Regulation();
+
+        // The regulation title ends with „S.A.”; the template text „… {{ref:dokument:regulamin-test}}.” must not give „S.A..”.
+        Assert.DoesNotContain("..", All(r), StringComparison.Ordinal);
     }
 
     [Fact]
