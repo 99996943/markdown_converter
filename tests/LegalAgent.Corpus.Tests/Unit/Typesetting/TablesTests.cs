@@ -119,6 +119,23 @@ public sealed class TablesTests
     }
 
     [Fact]
+    public void NarrowColumn_IsWidenedToItsLongestWord_SoCellsDoNotOverlap()
+    {
+        var table = new TableElement(
+            [new TableColumn("System", 0.3), new TableColumn("Opis", 5), new TableColumn("Termin", 1)],
+            [[TableCell.Of("CBS-PRZYKŁAD-CENTRALNY"), TableCell.Of("System centralny banku prowadzący rachunki."), TableCell.Of("1 dzień")]],
+            true,
+            []);
+
+        TypesetResult result = Typesetter.Typeset(Doc([table]), Style());
+
+        List<Word> words = PageWords(result.Pdf)[0];
+        Word system = words.First(w => w.Text.StartsWith("CBS", StringComparison.Ordinal));
+        Word next = words.First(w => w.Text == "System" && Baseline(w) == Baseline(system));
+        Assert.True(system.BoundingBox.Right < next.BoundingBox.Left - 4, $"{system.BoundingBox.Right} vs {next.BoundingBox.Left}");
+    }
+
+    [Fact]
     public void KeyValueTable_IsAGridWithBoldKeys()
     {
         var card = new KeyValueTableElement(
