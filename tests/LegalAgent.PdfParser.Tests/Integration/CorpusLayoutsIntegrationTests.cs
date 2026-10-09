@@ -1249,6 +1249,37 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("[^1]: Limity zdefiniowane", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087j: a footnote marker after the last word of a left-column line whose baseline is nearer to a right-column line
+    /// 4.9 pt higher (REG-02 page 5, „Przykładowy 4 S.A.”): the marker stays with its own line and links to its note.
+    /// </summary>
+    [Fact]
+    public async Task FootnoteMarkerNearerToTheOtherColumnsBaseline_StaysWithItsLine()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        double y = 92;
+        for (int i = 0; i < 40; i++, y += 12.5)
+        {
+            b.Text(50, y, $"Treść lewej kolumny regulaminu w wierszu {i + 1},", 9.5);
+            b.Text(313, y - 4.9, $"treść prawej kolumny regulaminu w wierszu {i + 1},", 9.5);
+        }
+
+        b.Text(50, y, "według Taryfy opłat i prowizji.", 9.5);
+        b.Text(50 + SyntheticPdfBuilder.TextWidth("według Taryfy opłat i prowizji.", 9.5) + 0.3, y - 3.6, "4", 5.7);
+        b.Text(313, y - 4.9, "wyraźnie upoważnia do tego Bank,", 9.5);
+        b.HLine(50, 170, 755);
+        b.Text(50, 769, "4) Taryfa jest dostępna w placówkach i na stronie internetowej Banku.", 8);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087j.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("opłat i prowizji.[^1]", md, StringComparison.Ordinal);
+        Assert.Contains("[^1]: Taryfa jest dostępna", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
