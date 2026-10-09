@@ -49,13 +49,26 @@ public sealed class DocumentDownloader
 
         IReadOnlyList<PlannedDownload> plan = FileNamePlanner.Plan(addresses);
         var single = new SingleDownload(httpClient, options);
-        var results = new List<DownloadResult>(plan.Count);
-        foreach (PlannedDownload item in plan)
-        {
-            results.Add(await single.RunAsync(item, directory, cancellationToken).ConfigureAwait(false));
-        }
+        DownloadResult[] results = await Task.WhenAll(
+                plan.Select(item => DownloadOneAsync(single, item, directory, progress, cancellationToken)))
+            .ConfigureAwait(false);
 
         return new DownloadRun(results, [], Path.Combine(directory, ManifestFileName));
+    }
+
+    private static async Task<DownloadResult> DownloadOneAsync(
+        SingleDownload single,
+        PlannedDownload item,
+        string directory,
+        IProgress<DownloadEvent>? progress,
+        CancellationToken cancellationToken)
+    {
+        // Yield first so that every download starts before any of them blocks the caller.
+        await Task.Yield();
+        progress?.Report(new DownloadEvent(item.Index, item.Address, DownloadEventKind.Started, null));
+        DownloadResult result = await single.RunAsync(item, directory, cancellationToken).ConfigureAwait(false);
+        progress?.Report(new DownloadEvent(item.Index, item.Address, DownloadEventKind.Finished, result));
+        return result;
     }
 
     private void ValidateAddresses(IReadOnlyList<Uri> addresses)
