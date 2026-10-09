@@ -122,6 +122,51 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T079: a procedure section heading „3. Odpowiedzialności” (larger bold) right after numbered items „1.”, „2.” of the
+    /// previous section is a heading, not the next list item; steps „3.1.” below it are list items.
+    /// </summary>
+    [Fact]
+    public async Task NumberedSectionHeadingAfterANumberedList_IsAHeading()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 60, "Procedura zastrzegania kart", 18, bold: true);
+        double y = Body(b, 100, 6);
+        void Heading(string text)
+        {
+            y += 10;
+            b.Text(Left, y, text, 12.5, bold: true);
+            y += 12.5 * 1.35 + 6;
+        }
+
+        void Item(string label, string text, double indent = 0)
+        {
+            b.Text(Left + indent, y, label, Size).Text(Left + indent + 30, y, text, Size);
+            y += Leading + 3;
+        }
+
+        Heading("2. Zakres stosowania");
+        Item("1.", "Procedurę stosują pracownicy placówek i infolinii.");
+        Item("2.", "Procedura dotyczy kart debetowych i kredytowych.");
+        y += 5;
+        Heading("3. Odpowiedzialności");
+        Item("3.1.", "Pracownik placówki przyjmuje zgłoszenie.");
+        Item("3.1.1.", "Sprawdza tożsamość zgłaszającego.", 18);
+        Item("3.2.", "Kierownik zatwierdza wyjątki.");
+        Body(b, y + 20, 10);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t079.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("## 2. Zakres stosowania", md, StringComparison.Ordinal);
+        Assert.Contains("## 3. Odpowiedzialności", md, StringComparison.Ordinal);
+        Assert.Contains("- 3.1\\. Pracownik placówki przyjmuje zgłoszenie.", md, StringComparison.Ordinal);
+        Assert.Contains("  - 3.1.1\\. Sprawdza tożsamość zgłaszającego.", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T081: a ruled checklist table „Lp. | Czynność | Wykonano” whose last column is empty in every row.</summary>
     [Fact]
     public async Task RuledChecklistWithAnEmptyColumn_IsAGfmTableWithEmptyCells()
