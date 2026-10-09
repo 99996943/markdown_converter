@@ -556,6 +556,41 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("| 4. | Przelew natychmiastowy | za przelew | 5,00 zł |", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T083j: the last row of a gridless tariff has nearly equal cell gaps (TAR-03 row 121, wrapped service name) and is
+    /// followed by the next section heading: the row stays the last row of the table.
+    /// </summary>
+    [Fact]
+    public async Task LastGridlessRowWithNearlyEqualCellGaps_StaysInTheTable()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(64, 60, "Taryfa opłat dla firm", 18, bold: true);
+        b.Text(64, 92, "Lp.", 9.5, bold: true).Text(104, 92, "Wyszczególnienie czynności", 9.5, bold: true)
+            .Text(343, 92, "Tryb pobierania", 9.5, bold: true).Text(440, 92, "Stawka", 9.5, bold: true);
+        (string No, string Service, string Wrap, string Mode, string Rate)[] rows =
+        [
+            ("118.", "Wpłata gotówki w walucie obcej na rachunek", "przedsiębiorcy z tytułu dewizowego utargu", "od kwoty wpłaty", "0,25% kwoty"),
+            ("119.", "Wpłata i wypłata gotówki w tej samej walucie", "tego samego dnia", "od kwoty operacji", "2,5% kwoty"),
+            ("120.", "Przeliczenie wpłaty walutowej niezgodnej", "z deklaracją klienta", "za operację", "bez opłat"),
+            ("121.", "Złożenie oświadczenia o pochodzeniu środków", "przy wpłacie dewizowej", "za oświadczenie", "bez opłat"),
+        ];
+        double y = 116;
+        foreach ((string no, string service, string wrap, string mode, string rate) in rows)
+        {
+            b.Text(64, y, no, 9.5).Text(104, y, service, 9.5).Text(343, y, mode, 9.5).Text(440, y, rate, 9.5);
+            b.Text(104, y + 12, wrap, 9.5);
+            y += 36;
+        }
+
+        b.Text(64, y + 36, "V. Wymiana i liczenie wartości pieniężnych", 13, bold: true);
+        Body(b, y + 60, 8);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("| 121. | Złożenie oświadczenia o pochodzeniu środków przy wpłacie dewizowej | za oświadczenie | bez opłat |", md, StringComparison.Ordinal);
+        Assert.Contains("## V. Wymiana i liczenie wartości pieniężnych", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
