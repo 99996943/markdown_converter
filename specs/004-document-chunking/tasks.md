@@ -152,9 +152,9 @@ fragmentów 5 dokumentów.
 
 - [X] T047 [P] `README.md`: biblioteka `LegalAgent.Chunking` (rejestracja, `ChunkAsync`, opcje, kontrakt JSON), polecenie `legalagent-pdf chunk` z przykładem, `CHUNKING__*`, pliki `*.chunks.jsonl` korpusu (zasada VII)
 - [X] T048 [P] `CLAUDE.md`: projekt `LegalAgent.Chunking` w „What this is”, polecenie `chunk` w „Commands”, krótka sekcja architektury podziału (jednostki, klucz, renderowanie przez parser) i zasada „corpus chunks regenerowane przez refresh”
-- [ ] T049 Sprawdź `.github/workflows/ci.yml`: nowy projekt testowy uruchamia się z solucji, `verify` obejmuje pliki fragmentów; ewentualne poprawki
-- [ ] T050 Walidacja końcowa wg quickstart.md: `dotnet test LegalAgent.slnx --filter "Category!=Performance"` z `LEGALAGENT_PRIVATE_CORPUS` i `LEGALAGENT_CORPUS_FULL=1`, `verify`, scenariusze CLI; pliki wzorcowe parsera bez zmian
-- [ ] T051 Handoff „Stan prac i przekazanie” w `specs/004-document-chunking/plan.md` (zrobione, pomiary SC-045, wynik przeglądu plików wzorcowych, otwarte ryzyka) i oznaczenie zadań w `tasks.md`
+- [X] T049 Sprawdź `.github/workflows/ci.yml`: nowy projekt testowy uruchamia się z solucji, `verify` obejmuje pliki fragmentów; ewentualne poprawki
+- [X] T050 Walidacja końcowa wg quickstart.md: `dotnet test LegalAgent.slnx --filter "Category!=Performance"` z `LEGALAGENT_PRIVATE_CORPUS` i `LEGALAGENT_CORPUS_FULL=1`, `verify`, scenariusze CLI; pliki wzorcowe parsera bez zmian
+- [X] T051 Handoff „Stan prac i przekazanie” w `specs/004-document-chunking/plan.md` (zrobione, pomiary SC-045, wynik przeglądu plików wzorcowych, otwarte ryzyka) i oznaczenie zadań w `tasks.md`
 
 ---
 

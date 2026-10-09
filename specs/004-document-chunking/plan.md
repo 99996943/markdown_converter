@@ -154,20 +154,53 @@ obejmowało pliki fragmentów bez osobnego kodu porównań.
 
 Brak naruszeń konstytucji.
 
-## Stan prac i przekazanie
+## Stan prac i przekazanie (T051, 2026-10-09)
 
-**Stan (2026-10-09)**: specyfikacja z doprecyzowaniami (4 pytania), plan, research R1–R12, data-model,
-kontrakty i quickstart gotowe. Następny krok: `/speckit-tasks`. Kod jeszcze nie powstał; nic nie jest
-zacommitowane na gałęzi `004-document-chunking`.
+**Zrobione** — wszystkie zadania T001–T051 oraz poprawki T033a, T043a, T045a (`tasks.md`), gałąź
+`004-document-chunking` (niewypchnięta; PR do zrobienia):
 
-**Zmiany specyfikacji w trakcie planowania**: FR-232 (przypis z odwołaniami w kilku częściach jest w
-każdej; przypisy bez odwołania — w ostatniej części) i FR-234 (pokrycie słów bez wiersza tytułu
-dokumentu i znaczników stron pominiętych) — uzgodnienie z R1/R5.
+- Biblioteka `LegalAgent.Chunking` (`AddLegalAgentChunking`, `IDocumentChunker.ChunkAsync` z wyniku parsera albo
+  strumienia PDF, `ChunkingOptions`/`ChunkingRequest`, `ChunkJson` — kontrakt JSONL `schemaVersion` 1) i jej testy
+  `tests/LegalAgent.Chunking.Tests` (jednostkowe, kontrakt, determinizm, 5 plików wzorcowych, `CorpusFull`,
+  `Performance`).
+- Parser: addytywne `TableRow.Page` (strona początku wiersza) z `TableDetectionStage`; Markdown i pliki wzorcowe
+  parsera bez zmian (także prywatny korpus właściciela).
+- CLI: `legalagent-pdf chunk` (metadane z opcji, `CHUNKING__*`, kody wyjścia jak `convert`).
+- Korpus: `<id>.chunks.jsonl` obok każdego Markdown (86 plików), pole `chunks` w manifeście, `generate`/`refresh`
+  zapisują, `verify` porównuje, sprzątanie obejmuje `*.jsonl`; `.gitattributes` trzyma `*.jsonl` w LF.
+- README, `corpus/README.md`, `CLAUDE.md`, kontrakty spec 003 (`manifest.md`: `chunks`; `content-format.md`:
+  `nazwa-en`).
 
-**Po `/speckit-analyze` (2026-10-09)**: poprawki I1 (strony pominięte w zakresie), I2 (limit ≥ 200 w
-FR-206/FR-221), U1 (FR-243: najkrótsza unikalna ścieżka), F1 (jedna nazwa: „oznaczenie wspólne dla
-wersji” / `SeriesKey` / `document.designation`), C1 (`--allow-partial` w T034) oraz drobne C2, C6 (T014,
-T016) i O1 (wspólny `push` T037–T040).
+**Walidacja (T050)**: `dotnet test --filter "Category!=Performance"` z `LEGALAGENT_PRIVATE_CORPUS` i
+`LEGALAGENT_CORPUS_FULL=1` — 1483/1483; `Category=Performance` — 4/4; `verify` — kod 0; scenariusze quickstart
+(CLI `chunk`, błędna data → 2, klucz `BP/REG/06 | § 30` w REG-06 i REG-06-w2) — zgodne. CI bez zmian (nowy projekt w
+`.slnx`, `verify` obejmuje pliki fragmentów).
 
-**Pliki wzorcowe fragmentów (T044, FR-271)**: REG-06, REG-05, TAR-04, PRO-07, dz-u-2019-1781 — zaakceptowane
-przez właściciela 2026-10-09 (identyczne z plikami fragmentów korpusu po T045a).
+**Pomiary (SC-045, T046)**: konwersja całego korpusu 23,4 s, podział 0,79 s (3,4%); najwolniejszy dokument
+(dz-u-2024-1646, 645 fragmentów) 103 ms. Pliki fragmentów korpusu ≈ 12 MB (metadane dokumentu w każdej linii).
+
+**Pliki wzorcowe fragmentów (T044, FR-271)**: REG-06, REG-05, TAR-04, PRO-07, dz-u-2019-1781 — zaakceptowane przez
+właściciela 2026-10-09; później zmienione na jego polecenie (angielskie `type`/`status`, `~preamble`).
+
+**Decyzje i doprecyzowania w trakcie implementacji** (zapisane w spec.md → Clarifications):
+
+- FR-222: część zaczynająca się od pozycji zagnieżdżonej listy jest bez wcięcia (wcięcie 4 spacji = blok kodu w
+  CommonMark); etykiety pozycji (`listLabels`) mają tylko części od 2. wzwyż.
+- FR-232 (T033a): przypisy bez odwołania są atomami na końcu jednostki — prawo bankowe, Art. 4 dawało część 3796 zn.
+- FR-220/FR-234 (T045a): sekcja bez treści i bez podsekcji = fragment z samym nagłówkiem (tytuł ustawy obok
+  rozdziałów ginął); nagłówki sekcji bez własnej treści są pokryte przez `sectionPath`.
+- Spec 003 FR-120 (T043a, decyzja właściciela): wersje dokumentu mają te same bloki i numerację paragrafów co
+  najnowsza (`DocumentPlan.SeriesId`, liczba bloków opcjonalnych z najnowszej) — wcześniej przenumerowanie rozdzielało
+  klucze 10 z 64 zmian; regeneracja dotknęła tylko 13 wcześniejszych wersji.
+- Decyzja właściciela: wartości metadanych dla modelu po angielsku — `type` (`regulation`/`tariff`/`procedure`/
+  `act`, z `nazwa-en` w `typy.yaml`), `status` (`in-force`/`outdated`), segment `~preamble`; manifest bez zmian.
+
+**Otwarte / do wiadomości**:
+
+- Strona zmiany w manifeście (spec 003) to dla pozycji taryfy pierwsza strona tabeli, nie wiersza — test FR-273
+  rozpoznaje pozycje i kroki po etykiecie. Poprawka wymagałaby stron wierszy w składzie generatora.
+- Dokumenty zatrute mają oznaczenie dokumentu, który udają, więc ich klucze jednostek pokrywają się z oryginałem
+  (odróżnia je `document.id`) — świadomie, opisane w `corpus/README.md`.
+- Klucze sekcji bez oznaczenia (taryfy, procedury) pochodzą z tekstu nagłówka — zmiana tytułu sekcji między wersjami
+  rozdzieli klucze (w korpusie nie występuje).
+- Commity T037–T040 i dane korpusu wypchnąć razem (CI `verify`).
