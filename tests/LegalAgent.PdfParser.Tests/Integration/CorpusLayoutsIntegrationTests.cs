@@ -866,6 +866,53 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("### § 3.", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087d: two columns (REG-02 pages 3–4) — clause „1.” with sub-points „1)” … „3)” ends the right column, clause „2.”
+    /// opens the left column of the next page: labels are compared within their column, so both clauses are items of
+    /// one list and the sub-points nest under „1.”.
+    /// </summary>
+    [Fact]
+    public async Task ClauseContinuedFromTheRightColumnToTheNextPage_StaysInTheList()
+    {
+        var b = new SyntheticPdfBuilder().Page().Page().Page();
+        static void Filler(SyntheticPdfBuilder b, double x, double y, int lines)
+        {
+            for (int i = 0; i < lines; i++)
+            {
+                b.Text(x, y + (i * 12.5), "Treść postanowienia regulaminu w kolumnie strony,", 9.5);
+            }
+        }
+
+        Filler(b, 50, 92, 50);
+        b.Text(421, 92, "§ 6.", 10.5, bold: true);
+        b.Text(313, 112, "1.", 9.5).Text(331, 112, "Bank udostępnia klientom indywidualnym", 9.5);
+        b.Text(331, 124.5, "następujące rodzaje kart debetowych, różniące", 9.5);
+        b.Text(331, 137, "się zakresem funkcji, formą i okresem ważności:", 9.5);
+        b.Text(331, 152.5, "1)", 9.5).Text(349, 152.5, "karta fizyczna — karta plastikowa", 9.5);
+        b.Text(349, 165, "z układem elektronicznym (chipem);", 9.5);
+        b.Text(331, 180.5, "2)", 9.5).Text(349, 180.5, "karta wirtualna — karta bez postaci", 9.5);
+        b.Text(349, 193, "fizycznej;", 9.5);
+        b.Text(331, 208.5, "3)", 9.5).Text(349, 208.5, "karta dla osoby niepełnoletniej.", 9.5);
+        Filler(b, 331, 240, 40);
+        b.Page();
+        b.Text(50, 92, "2.", 9.5).Text(68, 92, "Karta jest wydawana na okres wskazany", 9.5);
+        b.Text(68, 104.5, "na awersie karty.", 9.5);
+        b.Text(50, 120, "3.", 9.5).Text(68, 120, "Bank może zmienić rodzaje wydawanych", 9.5);
+        b.Text(68, 132.5, "kart w trybie zmiany Regulaminu.", 9.5);
+        Filler(b, 50, 160, 45);
+        Filler(b, 313, 92, 50);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087d.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("- 1\\. Bank udostępnia klientom indywidualnym następujące rodzaje kart debetowych, różniące się zakresem funkcji, formą i okresem ważności:\n", md, StringComparison.Ordinal);
+        Assert.Contains("  - 1\\) karta fizyczna — karta plastikowa z układem elektronicznym (chipem);\n", md, StringComparison.Ordinal);
+        Assert.Contains("- 2\\. Karta jest wydawana na okres wskazany na awersie karty.\n", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
