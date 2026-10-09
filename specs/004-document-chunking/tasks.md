@@ -62,8 +62,8 @@ wspólne dla wszystkich historyjek.
 - [X] T007 Implementacja (green) `chunk-lib/Splitting/FragmentRenderer.cs`: mały `LegalDocument` (`Title = null`, jedna `Section` o tym samym `Level`/`Kind`/`HeadingText`, `Children = []`) renderowany publicznym `IMarkdownRenderer`; listy od kolumny 0 (R1); wynik bez końcowego LF
 - [X] T008 [P] Test (red) w `chtests/Unit/UnitKeyBuilderTests.cs` (R6): segment = `Designation` bez kropki końcowej ze znormalizowanymi spacjami, bez oznaczenia — `HeadingText`, wstęp — `~wstep`; klucz `<SeriesKey> | <ścieżka>`, `SeriesKey` = `Designation` ?? `DocumentId`; najkrótszy unikalny sufiks ścieżki łączony `" > "` (np. `BP/REG/05 | Oprocentowanie > § 2`, gdy „§ 2” występuje w dwóch sekcjach); pełna ścieżka powtórzona → `" #2"`, `" #3"` w kolejności dokumentu; wstawienie rozdziału przed paragrafem nie zmienia klucza „§ 11”
 - [X] T009 Implementacja (green) `chunk-lib/Identity/UnitKeyBuilder.cs`
-- [ ] T010 [P] Test (red) w `chtests/Unit/ChunkIdBuilderTests.cs` (R7): `<DocumentId>_<hex16(SHA-256(UTF-8(UnitKey)))>_<Part>`, małe litery hex, zgodność z „`^[A-Za-z0-9][A-Za-z0-9._-]*_[0-9a-f]{16}_[0-9]+$`”, długość ≤ 120, stabilność (wartość oczekiwana zapisana w teście), różne klucze → różne id
-- [ ] T011 Implementacja (green) `chunk-lib/Identity/ChunkIdBuilder.cs`
+- [X] T010 [P] Test (red) w `chtests/Unit/ChunkIdBuilderTests.cs` (R7): `<DocumentId>_<hex16(SHA-256(UTF-8(UnitKey)))>_<Part>`, małe litery hex, zgodność z „`^[A-Za-z0-9][A-Za-z0-9._-]*_[0-9a-f]{16}_[0-9]+$`”, długość ≤ 120, stabilność (wartość oczekiwana zapisana w teście), różne klucze → różne id
+- [X] T011 Implementacja (green) `chunk-lib/Identity/ChunkIdBuilder.cs`
 
 **Checkpoint**: fundament gotowy — można zaczynać historyjki.
 
