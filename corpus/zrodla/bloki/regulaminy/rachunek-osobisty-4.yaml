@@ -1,0 +1,114 @@
+bloki:
+  - id: rachunek-osobisty-wyplata-awizo
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-dysponowanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zgłoszenie zamiaru wypłaty gotówki (awizo) {składa się|należy złożyć} w placówce, w której wypłata ma nastąpić, w bankowości elektronicznej albo na Infolinii pod numerem {{fakt:kontakt.infolinia}}. Zgłoszenie określa kwotę, walutę oraz planowany dzień wypłaty i jest {wiążące|zobowiązujące} dla Klienta."
+      - ustep: "Wypłata gotówki wymagająca awizowania dotyczy kwot przekraczających {{fakt:limit.rachunek-osobisty.wyplata-awizo}} jednorazowo, a w przypadku kwot wyższych niż równowartość {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}} Bank może wymagać wcześniejszego uzgodnienia terminu o więcej niż jeden dzień roboczy."
+      - ustep: "Jeżeli Klient nie zgłosi się po odbiór środków w dniu wskazanym w awizie albo w dniu następnym, zgłoszenie wygasa. Bank {nie pobiera|nie nalicza} opłaty za wygaśnięcie awiza, o ile Klient nie dokonał wielokrotnego, nieuzasadnionego zgłaszania wypłat bez ich odbioru."
+      - ustep: "Wypłaty gotówki w walucie obcej są realizowane w placówkach, które prowadzą obsługę kasową w tej walucie, a w razie braku dostępnych nominałów Bank {może|ma prawo} wypłacić równowartość w złotych polskich po kursie z tabeli obowiązującej w dniu wypłaty."
+
+  - id: rachunek-osobisty-sprawdzanie-tozsamosci
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-zawarcie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy każdej czynności wykonywanej w placówce Bank weryfikuje tożsamość osoby składającej dyspozycję na podstawie ważnego dokumentu tożsamości ze zdjęciem. Za dokument tożsamości uznaje się {dowód osobisty|dowód osobisty lub paszport} oraz inne dokumenty wskazane w przepisach."
+      - ustep: "Jeżeli dokument tożsamości budzi wątpliwości co do autentyczności lub nie pozwala jednoznacznie ustalić tożsamości, Bank odmawia wykonania dyspozycji i, jeżeli wymagają tego przepisy, powiadamia właściwe organy. Utrata dokumentu tożsamości powinna zostać {niezwłocznie|bez zbędnej zwłoki} zgłoszona w Banku, aby zapobiec jego nieuprawnionemu użyciu."
+      - ustep: "Dyspozycje składane telefonicznie wymagają pozytywnej weryfikacji Klienta w trybie przewidzianym w procedurach bezpieczeństwa, w tym przez zadanie pytań weryfikacyjnych lub wymaganie kodu z aplikacji mobilnej. Bank może wymagać potwierdzenia dyspozycji w placówce albo w bankowości elektronicznej, szczególnie gdy dotyczy ona zmian danych lub ustanowienia limitów."
+      - ustep: "Zmiany danych identyfikacyjnych Klienta, {w szczególności|zwłaszcza} nazwiska, adresu zamieszkania oraz numeru dokumentu tożsamości, wymagają przedstawienia dokumentów potwierdzających zmianę i są wprowadzane przez Bank niezwłocznie, nie później niż w terminie {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od dnia ich przedłożenia."
+
+  - id: rachunek-osobisty-wymiana-karty
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-dysponowanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do rachunku wydawana jest karta debetowa, której posiadaczem i użytkownikiem jest Posiadacz rachunku lub pełnomocnik, jeżeli został wskazany we wniosku. Karta jest wydawana na okres jej ważności i {odnawiana|wznawiana} automatycznie, chyba że Posiadacz zrezygnuje z wznowienia najpóźniej na 45 dni przed upływem ważności."
+      - ustep: "Limity transakcji dla karty wynoszą, o ile Posiadacz nie ustali innych, dziennie {{fakt:limit.karta.dzienny-gotowkowy}} dla transakcji gotówkowych oraz {{fakt:limit.karta.dzienny-bezgotowkowy}} dla transakcji bezgotówkowych. Posiadacz {może|ma prawo} zmieniać limity w bankowości elektronicznej w ramach maksymalnych wartości dopuszczonych przez Bank."
+      - ustep: "Za wydanie duplikatu karty w razie jej zniszczenia lub utraty Bank pobiera opłatę w wysokości {{fakt:oplata.karta.wydanie-duplikatu}}. Zastrzeżenie karty w związku z jej utratą lub kradzieżą jest {nieodpłatne|wolne od opłat}, o ile Taryfa nie stanowi inaczej."
+      - ustep: "Transakcje kartą mogą być wykonywane również przy użyciu płatności mobilnych, w ramach limitu dziennego {{fakt:limit.platnosci-mobilne.dzienny}}. Aktywacja płatności mobilnych wymaga uwierzytelnienia w aplikacji i przypisania karty do urządzenia, a jej wyłączenie może nastąpić {w każdym czasie|w dowolnym momencie}."
+
+  - id: rachunek-osobisty-wyplata-bankomat
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-zlecenia
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłaty z bankomatów i wpłatomatów Banku {są realizowane|odbywają się} bez dodatkowych opłat, {o ile|jeżeli} Taryfa nie stanowi inaczej. Za wypłatę z bankomatu innego operatora Bank pobiera opłatę w wysokości {{fakt:oplata.bankomat-obcy}}, a operator bankomatu może pobrać własną prowizję, o czym informuje przed dokonaniem transakcji."
+      - ustep: "Jeżeli w trakcie wypłaty z bankomatu doszło do awarii i bankomat nie wydał środków, a rachunek został obciążony, Posiadacz {może|ma prawo} złożyć reklamację w trybie określonym w Regulaminie. Bank dokona zwrotu na rachunek {niezwłocznie|bez zbędnej zwłoki} po stwierdzeniu nieprawidłowości, na podstawie danych z rozliczeń."
+      - ustep: "Transakcje dokonywane w walucie innej niż waluta rachunku są przeliczane po kursie zgodnym z tabelą kursów Banku z uwzględnieniem marży {{fakt:kurs.marza-przeliczen}}, a przed ich dokonaniem organizacja płatnicza lub operator mogą zaproponować przeliczenie waluty na złote według własnego kursu. Wybór takiej opcji odbywa się na ryzyko Posiadacza."
+
+  - id: rachunek-osobisty-kontrola-sald
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-wyciagi
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} {w każdym czasie|w dowolnym momencie} uzyskać informację o saldzie rachunku i dokonanych operacjach w bankowości elektronicznej, w bankomatach Banku wyposażonych w taką funkcję, w placówce oraz na Infolinii. Informacje podawane telefonicznie są udzielane po pozytywnej weryfikacji tożsamości."
+      - ustep: "Saldo rachunku podawane w kanałach elektronicznych przedstawia środki dostępne na rachunku w danej chwili, z uwzględnieniem blokad, a także, odrębnie, saldo księgowe. Saldo księgowe nie uwzględnia transakcji autoryzowanych, a jeszcze niezaksięgowanych."
+      - ustep: "Bank nie ponosi odpowiedzialności za rozbieżności w informacjach o saldzie wynikające z opóźnień w przekazywaniu danych przez podmioty trzecie, {w szczególności|zwłaszcza} przez organizacje płatnicze, operatorów systemów rozliczeniowych oraz organy publiczne. W razie wątpliwości co do prawidłowości salda Klient {może|ma prawo} zwrócić się z wnioskiem o wyjaśnienie, składanym w trybie reklamacji."
+
+  - id: rachunek-osobisty-dane-kontaktowe
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dane kontaktowe Banku, w tym adres siedziby {{fakt:bank.adres}} oraz adres korespondencyjny do spraw reklamacyjnych {{fakt:kontakt.adres-korespondencyjny}}, są dostępne na stronie {{fakt:bank.strona}}. Infolinia jest czynna {{fakt:kontakt.godziny-infolinii}}, a połączenia z zagranicy przyjmuje pod numerem {{fakt:kontakt.infolinia-zagranica}}."
+      - ustep: "Korespondencja kierowana przez Klienta do Banku w sprawach dotyczących rachunku powinna zawierać imię i nazwisko, numer rachunku lub inny identyfikator oraz własnoręczny podpis, jeżeli jest przesyłana pocztą. Wiadomości elektroniczne wysyłane przez bankowość elektroniczną są {uznawane|traktowane} za złożone w formie dokumentowej."
+      - ustep: "Bank ma prawo nagrywać rozmowy telefoniczne prowadzone na Infolinii w celu dokumentowania dyspozycji, zapewnienia bezpieczeństwa i kontroli jakości usług, o czym {informuje|powiadamia} na początku rozmowy. Nagrania są przechowywane przez okres przewidziany w przepisach, a Klient ma prawo do ich odsłuchania na żądanie."
+      - ustep: "Klient {może|ma prawo} wskazać odrębny adres do doręczeń, adres poczty elektronicznej oraz numer telefonu do kontaktu. Zmiany te nie wymagają zmiany umowy i są skuteczne od dnia ich zgłoszenia, {o ile|jeżeli} Bank nie zakwestionuje ich w terminie {{fakt:termin.rachunek-osobisty.zmiana-danych}}."
+
+  - id: rachunek-osobisty-zwrot-transakcji
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-bezpieczenstwo
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} żądać od Banku zwrotu kwoty autoryzowanej transakcji płatniczej zainicjowanej przez odbiorcę lub za jego pośrednictwem, jeżeli w chwili autoryzacji nie określono dokładnej kwoty, a kwota transakcji przewyższa kwotę, jakiej Posiadacz mógł się spodziewać z uwzględnieniem charakteru wcześniejszych transakcji i okoliczności."
+      - ustep: "Wniosek o zwrot należy złożyć w terminie 8 tygodni od dnia obciążenia rachunku. Bank w terminie {{fakt:termin.reklamacja.platnicze}} od dnia otrzymania wniosku dokonuje zwrotu pełnej kwoty transakcji albo podaje uzasadnienie odmowy wraz z informacją o możliwości odwołania się do właściwych organów."
+      - ustep: "Prawo do zwrotu nie przysługuje, jeżeli Posiadacz udzielił zgody na wykonanie transakcji bezpośrednio Bankowi, a informacja o przyszłej transakcji została mu przekazana {co najmniej|przynajmniej} na 4 tygodnie przed jej wykonaniem w uzgodniony sposób, ani w odniesieniu do polecenia zapłaty w euro realizowanego w ramach jednolitego obszaru płatniczego, {o ile|jeżeli} przepisy wyłączają takie uprawnienie."
+
+  - id: rachunek-osobisty-ochrona-konsumenta
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Postanowienia Regulaminu nie {wyłączają|wykluczają} ani nie ograniczają uprawnień przysługujących konsumentowi na podstawie bezwzględnie obowiązujących przepisów prawa. {W razie|W przypadku} sprzeczności postanowień Regulaminu z takimi przepisami stosuje się przepisy, a postanowienia Regulaminu w tym zakresie nie wiążą Klienta."
+      - ustep: "{Jeżeli|Gdyby} którekolwiek z postanowień Regulaminu zostało uznane za nieważne lub niewiążące, pozostałe postanowienia zachowują moc. Bank i Klient są obowiązani {dołożyć starań|podjąć starania}, aby nieważne postanowienie zastąpić takim, które w największym stopniu {odpowiada|ponosi odpowiedzialność} celowi umowy, a w zakresie dotyczącym konsumenta — jest dla niego nie mniej korzystne."
+      - ustep: "Wzorce umów stosowane przez Bank, w tym Regulamin, podlegają kontroli abstrakcyjnej na podstawie przepisów o ochronie konkurencji i konsumentów. Postanowienia uznane za niedozwolone i wpisane do rejestru nie mogą być powoływane przez Bank wobec Klienta."
+
+  - id: rachunek-osobisty-rozliczenia-walutowe
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-wspolny
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pełnomocnik oraz współposiadacz mogą {składać|zlecać} dyspozycje dotyczące subkont walutowych prowadzonych do rachunku, w zakresie, w jakim mogą dysponować rachunkiem w złotych polskich, chyba że umowa lub pełnomocnictwo stanowią inaczej."
+      - ustep: "Przy dyspozycjach wymagających przewalutowania {stosuje się|obowiązują} kursy z tabeli Banku obowiązującej w chwili realizacji, a Bank {informuje|powiadamia} o zastosowanym kursie w potwierdzeniu transakcji. Marża Banku wynosi nie więcej niż {{fakt:kurs.marza-przeliczen}} kursu średniego."
+      - ustep: "Współposiadacze mogą ustalić we wniosku sposób składania dyspozycji walutowych: samodzielnie przez każdego z nich lub łącznie przez wszystkich. Bank wykonuje dyspozycje zgodnie z {ostatnio złożonym|ostatnim} wspólnym oświadczeniem współposiadaczy."
+
+  - id: rachunek-osobisty-dyspozycja-zmiana
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-zgon
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Osoba uprawniona z tytułu dyspozycji wypłaty na wypadek śmierci nie nabywa praw do rachunku ani do środków na nim, aż do chwili śmierci Posiadacza. Do tego czasu Posiadacz swobodnie dysponuje środkami i może zlikwidować rachunek bez zgody osoby uprawnionej."
+      - ustep: "Wskazanie osoby uprawnionej obejmuje jej imię i nazwisko oraz numer PESEL, a {w razie|w przypadku} braku — rodzaj i numer dokumentu tożsamości. Bank nie weryfikuje, czy osoba uprawniona pozostaje w stosunku pokrewieństwa ze zmarłym; za prawidłowość wskazania {odpowiada|ponosi odpowiedzialność} Posiadacz."
+      - ustep: "Jeżeli osoba uprawniona zmarła przed Posiadaczem, nie można wypłacić środków jej spadkobiercom na podstawie dyspozycji, {o ile|jeżeli} nie wskazano w niej dodatkowej osoby uprawnionej. W takim przypadku środki stanowią część spadku po Posiadaczu i są wypłacane na zasadach ogólnych."
