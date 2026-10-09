@@ -5,6 +5,10 @@ Biblioteka .NET 9 (z cienką aplikacją CLI) konwertująca pliki PDF z polskimi 
 **ustrukturyzowany model dokumentu** i **Markdown** nadający się do dalszego przetwarzania (np. przez agenta AI).
 Wynik jest deterministyczny: te same bajty i opcje dają ten sam model, Markdown i raport (poza `Elapsed`).
 
+Biblioteka **`LegalAgent.Chunking`** dzieli wynik parsera na **fragmenty dla aplikacji RAG** (jednostka = paragraf,
+artykuł, sekcja taryfy/procedury/tabeli-dokumentu) z metadanymi do indeksowania, cytowania i porównywania wersji —
+patrz [Podział na fragmenty](#podział-na-fragmenty-legalagentchunking).
+
 ## Co robi
 
 Potok etapów (`IPipelineStage`) stosuje heurystyki:
@@ -188,6 +192,10 @@ znacznikiem `<!-- page N skipped: no-text-layer -->`.
 ```text
 legalagent-pdf convert <wejście.pdf> [-o|--output <wyjście.md>] [--report <raport.json>]
                        [--no-page-markers] [--allow-partial]
+legalagent-pdf chunk <wejście.pdf> -o|--output <wyjście.jsonl> [--id <id>] [--designation <oznaczenie>]
+                     [--type <typ>] [--title <tytuł>] [--doc-version <n>] [--valid-from <rrrr-mm-dd>]
+                     [--valid-to <rrrr-mm-dd>] [--status <status>] [--previous-version <id>]
+                     [--max-length <n>] [--allow-partial]
 legalagent-pdf --help | --version
 ```
 
@@ -199,6 +207,15 @@ PDFPARSER__Limits__MaxPages=5000 dotnet run --project src/LegalAgent.PdfParser.C
 
 Bez `-o` Markdown trafia na stdout. `--report` zapisuje `ConversionReport` jako JSON. Opcje heurystyk można ustawić zmiennymi
 środowiskowymi `PDFPARSER__<Grupa>__<Pole>`. Komunikaty błędów (po polsku) trafiają na stderr.
+
+`chunk` zapisuje fragmenty dokumentu jako JSON Lines (opis niżej); `--id` domyślnie to nazwa pliku (znaki spoza
+`[A-Za-z0-9._-]` → `-`), limit długości: `--max-length` albo `CHUNKING__MaxChunkLength` (argument ma pierwszeństwo).
+Błędne metadane lub opcje → kod 2; pozostałe kody jak dla `convert`.
+
+```bash
+dotnet run --project src/LegalAgent.PdfParser.Cli -c Release -- chunk regulamin.pdf -o regulamin.chunks.jsonl \
+  --id REG-06 --designation BP/REG/06 --type regulation --doc-version 3 --valid-from 2026-06-01 --status in-force
+```
 
 | Kod | Znaczenie |
 |-----|-----------|
@@ -222,6 +239,38 @@ Pełny kontrakt: `specs/001-legal-pdf-parser/contracts/markdown-output.md` (uzup
 - znaczniki stron `<!-- page: N -->` (wyłączane opcją `Rendering.PageMarkers` / `--no-page-markers`); strony pominięte: `<!-- page N skipped: … -->`;
 - pogrubienie `**t**`, kursywa `*t*`; znaki specjalne Markdown są escapowane.
 
+## Podział na fragmenty (`LegalAgent.Chunking`)
+
+Biblioteka zwraca wyłącznie modele w pamięci (nie czyta ani nie zapisuje plików) i działa na modelu `LegalDocument`
+z wyniku parsera, nie na Markdown. Specyfikacja: `specs/004-document-chunking/`.
+
+```csharp
+var services = new ServiceCollection().AddLegalAgentChunking(o => o.MaxChunkLength = 2000);   // rejestruje też parser
+var chunker = services.BuildServiceProvider().GetRequiredService<IDocumentChunker>();
+var metadata = new DocumentMetadata("REG-06")
+{
+    Designation = "BP/REG/06", Type = "regulation", Version = 3,
+    ValidFrom = new DateOnly(2026, 6, 1), Status = "in-force", PreviousVersion = "REG-06-w2",
+};
+ChunkedDocument doc = await chunker.ChunkAsync(File.OpenRead("REG-06.pdf"), metadata);   // albo ChunkAsync(wynikParsera, metadata)
+string jsonl = ChunkJson.ToJsonLines(doc);                                                 // LegalAgent.Chunking.Serialization
+```
+
+- **Jednostka** = wstęp albo własna treść jednej sekcji (paragraf, artykuł, sekcja taryfy, procedury, tabeli-dokumentu).
+  Jednostka dłuższa niż limit (domyślnie 2000 znaków, co najmniej 200) jest dzielona między akapitami, pozycjami list
+  (dowolnego poziomu) i wierszami tabel — nigdy w środku; każda część zaczyna się od nagłówka jednostki, a części
+  tabeli od jej wiersza nagłówka. Fragment nigdy nie łączy dwóch sekcji.
+- **Treść** to oryginalny tekst w Markdown (renderer parsera, bez znaczników stron), bez dopisanych słów; kontekst jest
+  w metadanych: `citation` (np. „§ 13”), `listLabels` (np. `["3.", "2)"]` dla kontynuacji), `sectionPath`, `pages`.
+- **`unitKey`** (np. `BP/REG/06 | § 30`) jest wspólny dla tej samej jednostki we wszystkich wersjach dokumentu — po nim
+  porównuje się wersje; **`chunk.id`** jest stabilny i unikalny (identyfikator dokumentu + skrót klucza + część).
+- Wartości metadanych przeznaczone dla modelu (`type`, `status`) podaje się po angielsku (`regulation`, `in-force`, …).
+- Opcje per wywołanie: `ChunkingRequest { ConfigureOptions = …, ParserRequest = … }`; błędne metadane →
+  `ArgumentException`, błędne opcje → `OptionsValidationException`, wyjątki parsera przechodzą bez zmian.
+- **Kontrakt JSON** (wspólny dla serwisu i plików, `schemaVersion` 1):
+  `specs/004-document-chunking/contracts/chunks-json.md` — jedna samodzielna linia na fragment
+  (`schemaVersion`, `document`, `chunk`).
+
 ## Testy
 
 ```bash
@@ -234,13 +283,17 @@ dotnet test LegalAgent.slnx -c Release --filter "Category=Performance"  # tylko 
   Ustawienie `UPDATE_GOLDEN=1` nadpisuje wzorce (`UPDATE_GOLDEN=1 dotnet test LegalAgent.slnx -c Release`; w PowerShell: `$env:UPDATE_GOLDEN = "1"`). Zmiany wzorców przejrzyj w diffie.
 - **Korpus** publiczny: `tests/LegalAgent.PdfParser.Tests/Corpus/acts` (źródła: `Corpus/acts/SOURCES.md`) oraz pliki błędów w `Corpus/errors`.
 - **Korpus prywatny:** zmienna `LEGALAGENT_PRIVATE_CORPUS` wskazuje katalog z własnymi PDF (np. regulaminami, których nie można publikować); odpowiadające jej testy są pomijane, gdy zmienna nie jest ustawiona.
+- **Fragmenty:** `tests/LegalAgent.Chunking.Tests` — testy jednostkowe podziału i metadanych, kontrakt JSON, determinizm,
+  pliki wzorcowe `Golden/*.chunks.jsonl` (`UPDATE_GOLDEN=1`, różnice jako `*.actual.jsonl`), pokrycie słów całego korpusu
+  (`CorpusFull`) i wydajność (`Performance`).
 - CI (`.github/workflows/ci.yml`, ubuntu-latest) buduje i uruchamia testy z filtrem `Category!=Performance`, a następnie osobno `Category=Performance`.
 
 ## Korpus syntetyczny
 
 Obok parsera repozytorium zawiera **syntetyczny korpus polskich dokumentów bankowych** („Bank Przykładowy S.A.”):
 regulaminy, taryfy i procedury wewnętrzne w wielu wersjach, dokumenty nieaktualne i sprzeczne, dokumenty zatrute
-(wstrzyknięcia w treści) oraz 10 aktów prawnych. Do każdego PDF dołączony jest Markdown, a **manifest prawdy referencyjnej**
+(wstrzyknięcia w treści) oraz 10 aktów prawnych. Do każdego PDF dołączony jest Markdown i plik fragmentów
+`*.chunks.jsonl` (gotowy do zaindeksowania), a **manifest prawdy referencyjnej**
 (`corpus/manifest.json`) opisuje zmiany między wersjami, pary sprzeczności i rodzaje zatruć. Korpus służy do testowania
 konwersji PDF → Markdown (`LegalAgent.PdfParser`) oraz aplikacji RAG. Pełna instrukcja: [`corpus/README.md`](corpus/README.md).
 
@@ -249,15 +302,17 @@ Projekty w solucji (`LegalAgent.slnx`):
 | Projekt | Rola |
 |---------|------|
 | `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown |
-| `src/LegalAgent.PdfParser.Cli` | aplikacja CLI parsera (`legalagent-pdf`) |
+| `src/LegalAgent.PdfParser.Cli` | aplikacja CLI parsera (`legalagent-pdf`: `convert`, `chunk`) |
+| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG |
 | `src/LegalAgent.Corpus` | generator korpusu syntetycznego (PDF, manifest, czcionki) |
 | `src/LegalAgent.Corpus.Cli` | CLI generatora: `generate`, `refresh`, `verify`, `check` |
-| `tests/LegalAgent.PdfParser.Tests` | testy parsera |
+| `tests/LegalAgent.PdfParser.Tests` | testy parsera i CLI |
+| `tests/LegalAgent.Chunking.Tests` | testy podziału na fragmenty |
 | `tests/LegalAgent.Corpus.Tests` | testy generatora i jakości korpusu |
 
 ```bash
 dotnet run --project src/LegalAgent.Corpus.Cli -- generate   # wygenerowanie korpusu
-dotnet run --project src/LegalAgent.Corpus.Cli -- refresh    # odświeżenie
+dotnet run --project src/LegalAgent.Corpus.Cli -- refresh    # odświeżenie Markdown i fragmentów (np. po zmianie parsera)
 dotnet run --project src/LegalAgent.Corpus.Cli -- verify     # sprawdzenie zgodności z zapisanym korpusem
 dotnet run --project src/LegalAgent.Corpus.Cli -- check      # kontrole jakości
 LEGALAGENT_CORPUS_FULL=1 dotnet test LegalAgent.slnx -c Release --filter "Category=CorpusFull"   # testy całego korpusu

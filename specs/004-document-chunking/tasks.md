@@ -150,7 +150,7 @@ fragmentów 5 dokumentów.
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T047 [P] `README.md`: biblioteka `LegalAgent.Chunking` (rejestracja, `ChunkAsync`, opcje, kontrakt JSON), polecenie `legalagent-pdf chunk` z przykładem, `CHUNKING__*`, pliki `*.chunks.jsonl` korpusu (zasada VII)
+- [X] T047 [P] `README.md`: biblioteka `LegalAgent.Chunking` (rejestracja, `ChunkAsync`, opcje, kontrakt JSON), polecenie `legalagent-pdf chunk` z przykładem, `CHUNKING__*`, pliki `*.chunks.jsonl` korpusu (zasada VII)
 - [ ] T048 [P] `CLAUDE.md`: projekt `LegalAgent.Chunking` w „What this is”, polecenie `chunk` w „Commands”, krótka sekcja architektury podziału (jednostki, klucz, renderowanie przez parser) i zasada „corpus chunks regenerowane przez refresh”
 - [ ] T049 Sprawdź `.github/workflows/ci.yml`: nowy projekt testowy uruchamia się z solucji, `verify` obejmuje pliki fragmentów; ewentualne poprawki
 - [ ] T050 Walidacja końcowa wg quickstart.md: `dotnet test LegalAgent.slnx --filter "Category!=Performance"` z `LEGALAGENT_PRIVATE_CORPUS` i `LEGALAGENT_CORPUS_FULL=1`, `verify`, scenariusze CLI; pliki wzorcowe parsera bez zmian
