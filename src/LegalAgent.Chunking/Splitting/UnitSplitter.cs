@@ -26,7 +26,8 @@ internal static class UnitSplitter
         ArgumentNullException.ThrowIfNull(unit);
         ArgumentNullException.ThrowIfNull(renderer);
 
-        string whole = renderer.Render(unit.Section, unit.Blocks, unit.Footnotes);
+        HashSet<int> references = FootnoteSelector.References(unit.Blocks);
+        string whole = renderer.Render(unit.Section, unit.Blocks, FootnoteSelector.Select(unit.Blocks, unit.Footnotes, references, withUnreferenced: true));
         if (whole.Length <= maxLength)
         {
             return [new UnitPart(whole, [], Pages(unit), false)];
@@ -37,7 +38,8 @@ internal static class UnitSplitter
         var current = new List<Atom>();
         foreach (Atom atom in atoms)
         {
-            if (current.Count > 0 && Render(unit, renderer, [.. current, atom], last: false).Length > maxLength)
+            bool last = ReferenceEquals(atom, atoms[^1]);
+            if (current.Count > 0 && Render(unit, renderer, [.. current, atom], references, last).Length > maxLength)
             {
                 groups.Add(current);
                 current = [];
@@ -54,7 +56,7 @@ internal static class UnitSplitter
         var parts = new List<UnitPart>(groups.Count);
         for (int g = 0; g < groups.Count; g++)
         {
-            string content = Render(unit, renderer, groups[g], last: g == groups.Count - 1);
+            string content = Render(unit, renderer, groups[g], references, last: g == groups.Count - 1);
             IReadOnlyList<string> labels = g > 0 && groups[g].Count > 0 && groups[g][0] is ItemAtom first ? first.Node.Labels() : [];
             parts.Add(new UnitPart(content, labels, Pages(unit), content.Length > maxLength));
         }
@@ -62,8 +64,12 @@ internal static class UnitSplitter
         return parts;
     }
 
-    private static string Render(Unit unit, FragmentRenderer renderer, IReadOnlyList<Atom> atoms, bool last) =>
-        renderer.Render(unit.Section, Blocks(atoms), last ? unit.Footnotes : []);
+    // Unreferenced footnotes belong to the unit's last atom, so they count towards the limit of the last part.
+    private static string Render(Unit unit, FragmentRenderer renderer, IReadOnlyList<Atom> atoms, IReadOnlySet<int> references, bool last)
+    {
+        List<ContentBlock> blocks = Blocks(atoms);
+        return renderer.Render(unit.Section, blocks, FootnoteSelector.Select(blocks, unit.Footnotes, references, last));
+    }
 
     private static List<Atom> Atoms(IReadOnlyList<ContentBlock> blocks)
     {
