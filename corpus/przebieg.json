@@ -1,0 +1,99 @@
+{
+  "seed": 20261008,
+  "referenceDate": "2026-10-01",
+  "documentsPerType": 10,
+  "pages": {
+    "min": 20,
+    "max": 30
+  },
+  "versionedShare": 0,
+  "maxVersions": 3,
+  "outdatedPerType": 0,
+  "contradictionPairsPerType": 0,
+  "crossTypeContradictionPairs": 0,
+  "poison": [],
+  "strictUniqueness": true,
+  "maxSharedShare": 20,
+  "outputDirectory": "corpus",
+  "contentDirectory": "corpus/zrodla",
+  "parserOptions": {
+    "limits": {
+      "maxInputBytes": 104857600,
+      "maxPages": 2000,
+      "maxDuration": "00:02:00"
+    },
+    "allowPartialResult": false,
+    "normalization": {
+      "hyphenationExceptions": [
+        "e-mail",
+        "biało-czerwony"
+      ],
+      "dropRotatedText": true,
+      "dropInvisibleText": true
+    },
+    "artifacts": {
+      "enabled": true,
+      "marginZoneRatio": 0.08,
+      "minPageRatio": 0.5,
+      "minPages": 3,
+      "positionTolerance": 0.02,
+      "similarity": 0.85,
+      "splitOddEven": true,
+      "removePageNumbers": true
+    },
+    "layout": {
+      "lineOverlapRatio": 0.5,
+      "baselineToleranceRatio": 0.3,
+      "paragraphGapFactor": 1.5,
+      "shortLineRatio": 0.75,
+      "detectColumns": true,
+      "gutterMinWidthRatio": 0.02,
+      "gutterMinHeightRatio": 0.6,
+      "columnMinLineWidthRatio": 0.25,
+      "detectSideNotes": true,
+      "sideNoteMaxWidthRatio": 0.25,
+      "sideNoteMaxSizeRatio": 0.9
+    },
+    "headings": {
+      "enabled": true,
+      "sizeRatio": 1.15,
+      "sizeClusterTolerance": 0.5,
+      "maxLength": 120,
+      "maxLines": 2,
+      "maxTypographicDepth": 3,
+      "gapFactor": 1.3,
+      "centerTolerance": 0.05,
+      "detectLegalUnits": true,
+      "detectImageCaptions": true,
+      "validityLineAsParagraph": true
+    },
+    "lists": {
+      "enabled": true,
+      "indentTolerance": 1.5
+    },
+    "tables": {
+      "enabled": true,
+      "cellGapFactor": 2,
+      "minRows": 3,
+      "columnTolerance": 0.03,
+      "rowMergeGapFactor": 1.2,
+      "useRulingLines": true,
+      "mergeAcrossPages": true,
+      "detectStepSequences": true,
+      "detectTableDocuments": true,
+      "tableDocumentMaxLeftColumnRatio": 0.35,
+      "tableDocumentMinPages": 2,
+      "tableDocumentMinPageRatio": 0.5,
+      "tableDocumentMinMedianWords": 40
+    },
+    "rendering": {
+      "pageMarkers": true,
+      "footnotesPlacement": "endOfSection",
+      "emphasisInline": true
+    },
+    "footnotes": {
+      "enabled": true,
+      "maxSizeRatio": 0.9
+    }
+  }
+}
