@@ -1,0 +1,150 @@
+bloki:
+  # ===== Zamówienia gotówki =====
+  - id: taryfa-kasa-opc-zamowienia-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-zamowienia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zamówienie gotówki w złotych składane w bankowości elektronicznej", stawka: "{{fakt:oplata.kasa.zamowienie-gotowki-procent}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki w złotych składane telefonicznie na infolinii", stawka: "{{fakt:oplata.kasa.zamowienie-gotowki-procent}} kwoty, min. 5,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki w złotych składane w placówce", stawka: "{{fakt:oplata.kasa.zamowienie-gotowki-procent}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki do kwoty {{fakt:limit.firma.awizo-wyplaty}}", stawka: "bez opłat", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie gotówki z wypłatą w placówce innej niż prowadząca rachunek", stawka: "15,00 zł", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie nominałów 10 zł i 20 zł w liczbie powyżej 500 sztuk", stawka: "{{fakt:oplata.kasa.zamowienie-nominalow-specjalnych}}", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie banknotów w nominale 500 zł w liczbie powyżej 100 sztuk", stawka: "{{fakt:oplata.kasa.zamowienie-nominalow-specjalnych}}", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie monet kolekcjonerskich emisji NBP", stawka: "bez opłat dodatkowych", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie gotówki na wypłatę świadczeń w dniu jej wypłaty (zamówienie stałe)", stawka: "0,08% kwoty, min. 25,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zmiana struktury nominałów w złożonym zamówieniu w terminie", stawka: "bez opłat", tryb: "za zmianę"}
+  - id: taryfa-kasa-opc-zamowienia-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-zamowienia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zamówienie gotówki w euro w kasie placówki", stawka: "0,50% kwoty, min. 15,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki w dolarach amerykańskich w kasie placówki", stawka: "0,50% kwoty, min. 15,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki w funtach brytyjskich lub frankach szwajcarskich", stawka: "0,80% kwoty, min. 20,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki w walutach egzotycznych (np. w koronach szwedzkich) — termin realizacji do 5 dni", stawka: "1,50% kwoty, min. 40,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki walutowej w kwocie powyżej równowartości 15 000 EUR", stawka: "0,30% kwoty, min. 60,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki walutowej na wyjazd służbowy, odbiór w dniu poprzedzającym", stawka: "0,40% kwoty, min. 20,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Potwierdzenie zamówienia gotówki walutowej w formie pisemnej", stawka: "bez opłat", tryb: "za potwierdzenie"}
+          - {usluga: "Zmiana waluty zamówienia po terminie zmiany", stawka: "25,00 zł", tryb: "za zmianę"}
+          - {usluga: "Niepodjęcie zamówionej gotówki walutowej, zwrot do kasy i obciążenie kosztami przewalutowania", stawka: "{{fakt:oplata.taryfa-indywidualni.awizo-niepodjeta}} plus koszty przewalutowania", tryb: "za zamówienie"}
+          - {usluga: "Przedłużenie terminu odbioru zamówionej gotówki o jeden dzień roboczy", stawka: "20,00 zł", tryb: "za przedłużenie"}
+  - id: taryfa-kasa-opc-zamowienia-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-zamowienia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zamówienie rozmiany dla sklepu w paczkach o określonej strukturze (np. 20 x 5 zł, 50 x 1 zł)", stawka: "{{fakt:oplata.kasa.rozmiana-firma-procent}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie stałe rozmiany co tydzień w określonym dniu", stawka: "40,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Dostawa zamówionej gotówki do siedziby klienta przez konwój", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}", tryb: "za każdą dostawę"}
+          - {usluga: "Przygotowanie gotówki w kopertach płacowych według listy wynagrodzeń", stawka: "0,60 zł za kopertę", tryb: "za kopertę"}
+          - {usluga: "Przygotowanie kasetek z gotówką dla kasjerów (zasilenie kas fiskalnych)", stawka: "12,00 zł", tryb: "za kasetkę"}
+          - {usluga: "Zamówienie gotówki na imprezę masową lub zawody sportowe, zestaw nominałów drobnych", stawka: "0,30% kwoty, min. 100,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Wypłata gotówki w trybie awaryjnym w dniu zamówienia (bez wymaganego terminu)", stawka: "0,60% kwoty, min. 50,00 zł", tryb: "od kwoty wypłaty"}
+          - {usluga: "Zlecenie stałe zamówienia gotówki na rzecz placówki oświatowej (wypłata stypendiów)", stawka: "bez opłat", tryb: "za zlecenie"}
+          - {usluga: "Zamówienie gotówki z odbiorem przez firmę ochrony wskazaną przez klienta", stawka: "{{fakt:oplata.kasa.zamowienie-gotowki-procent}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Wydanie pokwitowania odbioru zamówionej gotówki z podpisem odbierającego", stawka: "bez opłat", tryb: "za pokwitowanie"}
+
+  # ===== Wrzutnia nocna i konwój =====
+  - id: taryfa-kasa-opc-wrzutnia-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wrzutnia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Złożenie wpłaty we wrzutni nocnej w worku o pojemności do 3 litrów", stawka: "{{fakt:oplata.kasa.wrzutnia-wplata-procent}} kwoty, min. {{fakt:oplata.kasa.wrzutnia-wplata-minimum}}", tryb: "od kwoty wpłaty"}
+          - {usluga: "Złożenie wpłaty we wrzutni nocnej w worku o pojemności powyżej 3 litrów", stawka: "{{fakt:oplata.kasa.wrzutnia-wplata-procent}} kwoty, min. 12,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Uznanie rachunku w dniu złożenia wpłaty we wrzutni (tryb przyspieszony)", stawka: "0,10% kwoty, min. 10,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata we wrzutni nocnej złożona w workach bez numeru plomby", stawka: "{{fakt:oplata.firma.wplata-zamknieta}} dodatkowo", tryb: "za worek"}
+          - {usluga: "Awaria urządzenia wrzutni — przyjęcie wpłaty w placówce bez dodatkowej opłaty", stawka: "bez opłat", tryb: "za wpłatę"}
+          - {usluga: "Przedłużenie umowy o korzystanie z wrzutni na kolejny okres", stawka: "bez opłat", tryb: "za przedłużenie"}
+          - {usluga: "Zmiana placówki obsługującej wrzutnię w umowie", stawka: "30,00 zł", tryb: "za zmianę"}
+          - {usluga: "Rozwiązanie umowy o korzystanie z wrzutni nocnej", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Kontrola zawartości worka na wniosek klienta w jego obecności", stawka: "60,00 zł", tryb: "za wniosek"}
+          - {usluga: "Zwrot niewykorzystanego kluczyka do wrzutni", stawka: "bez opłat", tryb: "za zwrot"}
+  - id: taryfa-kasa-opc-wrzutnia-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wrzutnia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Odbiór wartości pieniężnych przez konwój raz w tygodniu według stałego harmonogramu", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}", tryb: "za każdą wizytę"}
+          - {usluga: "Odbiór wartości pieniężnych przez konwój codziennie w dni robocze", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}", tryb: "za każdą wizytę"}
+          - {usluga: "Odbiór wartości pieniężnych przez konwój dwa razy dziennie", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}} za każdy odbiór", tryb: "za każdą wizytę"}
+          - {usluga: "Odbiór dodatkowy na zgłoszenie telefoniczne w dniu odbioru", stawka: "{{fakt:oplata.kasa.konwoj-dodatkowy-odbior}} powyżej opłaty za wizytę", tryb: "za każdy odbiór"}
+          - {usluga: "Odbiór w odległości powyżej 20 km od placówki Banku", stawka: "2,50 zł za każdy kilometr ponad limit", tryb: "za każdą wizytę"}
+          - {usluga: "Odbiór wartości o wartości deklarowanej powyżej 250 000,00 zł", stawka: "{{fakt:oplata.kasa.konwoj-ubezpieczenie-procent}} wartości, min. 100,00 zł", tryb: "od wartości transportu"}
+          - {usluga: "Ochrona zbrojna transportu na wniosek klienta (dwuosobowa załoga)", stawka: "wg indywidualnej wyceny", tryb: "za każdy transport"}
+          - {usluga: "Wydanie protokołu odbioru wartości pieniężnych z podpisem konwojenta", stawka: "bez opłat", tryb: "za protokół"}
+          - {usluga: "Puste wyjazdy konwoju (brak wartości do odbioru, wizyta niezgłoszona jako odwołana)", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}", tryb: "za wyjazd"}
+          - {usluga: "Zawieszenie usługi konwoju na czas urlopu lub przerwy w działalności", stawka: "bez opłat", tryb: "za zawieszenie"}
+  - id: taryfa-kasa-opc-wrzutnia-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wrzutnia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Umowa o usługę konwojową — zawarcie", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Zmiana harmonogramu odbiorów konwoju z wyprzedzeniem co najmniej 5 dni roboczych", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Zmiana harmonogramu odbiorów konwoju z wyprzedzeniem krótszym niż 5 dni roboczych", stawka: "40,00 zł", tryb: "za zmianę"}
+          - {usluga: "Dodanie punktu odbioru do umowy o usługę konwojową", stawka: "100,00 zł", tryb: "za punkt"}
+          - {usluga: "Wydanie plomb kasetowych serii klienta", stawka: "0,50 zł za sztukę", tryb: "za sztukę"}
+          - {usluga: "Wydanie torby transportowej z zamkiem szyfrowym", stawka: "{{fakt:oplata.taryfa-indywidualni.wydanie-torby-kasowej}}", tryb: "za torbę"}
+          - {usluga: "Zgłoszenie szkody w transporcie wartości pieniężnych", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Odbiór zwrotny wartości pieniężnych po stwierdzeniu braku wpływu na rachunek", stawka: "{{fakt:oplata.kasa.konwoj-dodatkowy-odbior}}", tryb: "za odbiór"}
+          - {usluga: "Przechowanie wartości pieniężnych w skarbcu Banku przez weekend, przed uznaniem rachunku", stawka: "0,02% wartości, min. 15,00 zł", tryb: "od wartości"}
+          - {usluga: "Raport z odbiorów konwoju za miesiąc w formie elektronicznej", stawka: "bez opłat", tryb: "miesięcznie"}
+
+  # ===== Skrytki sejfowe =====
+  - id: taryfa-kasa-opc-skrytki-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-skrytki
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wynajem skrytki małej na okres 12 miesięcy z góry (rabat 10% za opłatę roczną)", stawka: "{{fakt:oplata.kasa.skrytka-mala-miesiecznie}} za miesiąc, po rabacie", tryb: "rocznie"}
+          - {usluga: "Wynajem skrytki średniej na okres 12 miesięcy z góry (rabat 10% za opłatę roczną)", stawka: "{{fakt:oplata.taryfa-indywidualni.skrytka-miesiecznie}} za miesiąc, po rabacie", tryb: "rocznie"}
+          - {usluga: "Wynajem skrytki dużej na okres 12 miesięcy z góry (rabat 10% za opłatę roczną)", stawka: "{{fakt:oplata.kasa.skrytka-duza-miesiecznie}} za miesiąc, po rabacie", tryb: "rocznie"}
+          - {usluga: "Wynajem skrytki na okres krótszy niż trzy miesiące", stawka: "dopłata 20% do opłaty miesięcznej", tryb: "miesięcznie"}
+          - {usluga: "Wynajem skrytki przez przedsiębiorcę lub osobę prawną", stawka: "opłata miesięczna powiększona o 20%", tryb: "miesięcznie"}
+          - {usluga: "Wynajem skrytki przez dwóch współnajemców", stawka: "bez dodatkowej opłaty", tryb: "miesięcznie"}
+          - {usluga: "Wynajem skrytki przez trzech lub więcej współnajemców", stawka: "15,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Wypowiedzenie umowy najmu skrytki przez klienta", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Rozwiązanie umowy najmu skrytki przez Bank z przyczyn leżących po stronie klienta", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przedłużenie umowy najmu skrytki na kolejny okres", stawka: "bez opłat", tryb: "za przedłużenie"}
+  - id: taryfa-kasa-opc-skrytki-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-skrytki
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Dostęp do skrytki poza godzinami pracy placówki (wizyta umówiona)", stawka: "40,00 zł", tryb: "za wizytę"}
+          - {usluga: "Dostęp do skrytki przez pełnomocnika klienta", stawka: "bez dodatkowych opłat", tryb: "za wejście"}
+          - {usluga: "Dostęp do skrytki przez spadkobiercę po okazaniu stwierdzenia nabycia spadku", stawka: "bez opłat", tryb: "za wejście"}
+          - {usluga: "Dostęp do skrytki w obecności notariusza lub komornika, na podstawie postanowienia", stawka: "50,00 zł", tryb: "za wizytę"}
+          - {usluga: "Sporządzenie protokołu zawartości skrytki przez komisję Banku na wniosek klienta", stawka: "100,00 zł", tryb: "za protokół"}
+          - {usluga: "Wydanie dodatkowego klucza do skrytki na wniosek klienta", stawka: "{{fakt:oplata.kasa.skrytka-kaucja-klucz}} kaucji", tryb: "za klucz"}
+          - {usluga: "Zwrot kaucji za klucz po rozwiązaniu umowy", stawka: "bez opłat", tryb: "za zwrot"}
+          - {usluga: "Wymiana klucza uszkodzonego mechanicznie (przy zwrocie uszkodzonego klucza)", stawka: "80,00 zł", tryb: "za klucz"}
+          - {usluga: "Zgłoszenie utraty klucza poza godzinami pracy placówki", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Blokada dostępu do skrytki na wniosek klienta (np. po utracie klucza do czasu wymiany zamka)", stawka: "bez opłat", tryb: "za blokadę"}
+  - id: taryfa-kasa-opc-skrytki-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-skrytki
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Otwarcie skrytki w obecności komisji po upływie terminu zaległości w opłatach", stawka: "{{fakt:oplata.kasa.skrytka-otwarcie-przymusowe}}", tryb: "za zdarzenie"}
+          - {usluga: "Przeniesienie zawartości skrytki otwartej przymusowo do depozytu zamkniętego", stawka: "{{fakt:oplata.kasa.depozyt-przyjecie}}", tryb: "jednorazowo"}
+          - {usluga: "Przechowywanie zawartości skrytki otwartej przymusowo", stawka: "{{fakt:oplata.kasa.depozyt-zamkniety-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Wezwanie do zapłaty zaległej opłaty za skrytkę", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każde wezwanie"}
+          - {usluga: "Odsetki od zaległych opłat za skrytkę", stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Obciążenie rachunku klienta zaległą opłatą za skrytkę bez dodatkowej dyspozycji", stawka: "bez opłat", tryb: "za obciążenie"}
+          - {usluga: "Zawiadomienie osoby wskazanej przez klienta o zaległości w opłatach za skrytkę", stawka: "bez opłat", tryb: "za zawiadomienie"}
+          - {usluga: "Złożenie zawartości skrytki w depozycie sądowym po upływie terminu przechowywania", stawka: "100,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Sprawdzenie stanu technicznego zamka skrytki na wniosek klienta", stawka: "bez opłat", tryb: "za sprawdzenie"}
+          - {usluga: "Naprawa uszkodzonych drzwiczek skrytki z winy klienta", stawka: "wg kosztorysu, nie mniej niż 200,00 zł", tryb: "za zdarzenie"}

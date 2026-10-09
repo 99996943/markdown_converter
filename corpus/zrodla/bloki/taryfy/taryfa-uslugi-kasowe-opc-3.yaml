@@ -1,0 +1,125 @@
+bloki:
+  # ===== Depozyty =====
+  - id: taryfa-kasa-opc-depozyty-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-depozyty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Depozyt zamknięty o wymiarach do 20 x 30 x 10 cm", stawka: "{{fakt:oplata.kasa.depozyt-zamkniety-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Depozyt zamknięty o wymiarach do 40 x 40 x 20 cm", stawka: "35,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Depozyt zamknięty o wymiarach większych (do 60 x 50 x 30 cm)", stawka: "55,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Depozyt zamknięty przyjęty na czas nie dłuższy niż 7 dni", stawka: "{{fakt:oplata.kasa.depozyt-przyjecie}}", tryb: "jednorazowo"}
+          - {usluga: "Depozyt zamknięty — przedłużenie okresu przechowywania na wniosek klienta", stawka: "bez opłat", tryb: "za przedłużenie"}
+          - {usluga: "Depozyt zamknięty — zmiana osoby uprawnionej do odbioru", stawka: "30,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Depozyt zamknięty — sporządzenie protokołu stanu opakowania przy wydaniu", stawka: "bez opłat", tryb: "za protokół"}
+          - {usluga: "Depozyt zamknięty — wydanie przed upływem okresu przechowywania", stawka: "{{fakt:oplata.kasa.depozyt-wydanie}}", tryb: "za wydanie"}
+          - {usluga: "Depozyt zamknięty — wydanie osobie upoważnionej na podstawie pełnomocnictwa notarialnego", stawka: "{{fakt:oplata.kasa.depozyt-wydanie}}", tryb: "za wydanie"}
+          - {usluga: "Depozyt zamknięty — wniesienie przez kuriera na zlecenie klienta i potwierdzenie przyjęcia", stawka: "80,00 zł", tryb: "za przesyłkę"}
+  - id: taryfa-kasa-opc-depozyty-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-depozyty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Depozyt dokumentów w kopercie formatu A5", stawka: "8,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Depozyt dokumentów w kopercie formatu A4", stawka: "{{fakt:oplata.kasa.depozyt-dokumentow-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Depozyt dokumentów w teczce lub segregatorze (do 500 stron)", stawka: "25,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Depozyt testamentu (przyjęcie do przechowania w zamkniętej kopercie)", stawka: "{{fakt:oplata.kasa.depozyt-przyjecie}}", tryb: "jednorazowo"}
+          - {usluga: "Depozyt umowy lub dokumentów firmowych w ramach powierniczego przechowania", stawka: "{{fakt:oplata.kasa.depozyt-dokumentow-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Depozyt dokumentacji nieruchomości do czasu zawarcia aktu notarialnego", stawka: "20,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Wydanie dokumentu z depozytu na potrzeby okazania i zwrotu w tym samym dniu", stawka: "10,00 zł", tryb: "za wydanie"}
+          - {usluga: "Sporządzenie kopii dokumentu z depozytu i poświadczenie zgodności", stawka: "10,00 zł", tryb: "za stronę"}
+          - {usluga: "Udostępnienie depozytu dokumentów organom państwowym na podstawie przepisów prawa", stawka: "bez opłat", tryb: "za udostępnienie"}
+          - {usluga: "Przekazanie depozytu dokumentów do archiwum zewnętrznego (po upływie umowy)", stawka: "40,00 zł", tryb: "jednorazowo"}
+  - id: taryfa-kasa-opc-depozyty-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-depozyty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Depozyt wartościowy — biżuteria i zegarki (do zadeklarowanej wartości 20 000,00 zł)", stawka: "{{fakt:oplata.kasa.depozyt-wartosci-procent}} zadeklarowanej wartości, min. 40,00 zł", tryb: "rocznie"}
+          - {usluga: "Depozyt wartościowy — sztabki i monety z metali szlachetnych", stawka: "{{fakt:oplata.kasa.depozyt-wartosci-procent}} zadeklarowanej wartości, min. 60,00 zł", tryb: "rocznie"}
+          - {usluga: "Depozyt wartościowy — dzieła sztuki i przedmioty kolekcjonerskie", stawka: "0,30% zadeklarowanej wartości, min. 100,00 zł", tryb: "rocznie"}
+          - {usluga: "Depozyt wartościowy — papiery wartościowe w formie dokumentu", stawka: "0,10% zadeklarowanej wartości, min. 50,00 zł", tryb: "rocznie"}
+          - {usluga: "Depozyt wartościowy — wycena rzeczoznawcy zlecona przez Bank", stawka: "wg kosztorysu rzeczoznawcy", tryb: "jednorazowo"}
+          - {usluga: "Aktualizacja zadeklarowanej wartości depozytu na wniosek klienta", stawka: "25,00 zł", tryb: "za zmianę"}
+          - {usluga: "Dodatkowe ubezpieczenie depozytu wartościowego ponad sumę standardową", stawka: "0,12% sumy dodatkowej", tryb: "rocznie"}
+          - {usluga: "Spis zawartości depozytu wartościowego przy przyjęciu, w obecności komisji", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "jednorazowo"}
+          - {usluga: "Okresowa inwentaryzacja depozytu wartościowego w obecności klienta", stawka: "60,00 zł", tryb: "za inwentaryzację"}
+          - {usluga: "Zwrot depozytu wartościowego z protokołem zdawczo-odbiorczym", stawka: "{{fakt:oplata.kasa.depozyt-wydanie}}", tryb: "za wydanie"}
+
+  # ===== Zaświadczenia i odpisy =====
+  - id: taryfa-kasa-opc-zaswiadczenia-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-zaswiadczenia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zaświadczenie o wysokości salda rachunku na wskazany dzień", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o dokonanych wpłatach gotówkowych w okresie", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o dokonanych wypłatach gotówkowych w okresie", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o niezaleganiu z opłatami za skrytkę sejfową", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o korzystaniu ze skrytki sejfowej od określonej daty", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o złożeniu depozytu dokumentów", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o pochodzeniu środków wpłaconych w gotówce", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie dla potrzeb wniosku wizowego lub imigracyjnego", stawka: "{{fakt:oplata.kasa.zaswiadczenie-pilne}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie w języku angielskim", stawka: "{{fakt:oplata.taryfa-indywidualni.zaswiadczenie-obcojezyczne}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie w języku niemieckim lub francuskim", stawka: "{{fakt:oplata.taryfa-indywidualni.zaswiadczenie-obcojezyczne}}", tryb: "za dokument"}
+  - id: taryfa-kasa-opc-zaswiadczenia-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-zaswiadczenia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Odpis protokołu przyjęcia depozytu", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Odpis protokołu otwarcia skrytki sejfowej", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Odpis protokołu otwarcia worka wrzutowego", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Odpis protokołu odbioru wartości pieniężnych przez konwój", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Odpis zamówienia gotówki lub potwierdzenia jego realizacji", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Odpis dowodu wpłaty (raport kasowy) z archiwum, do 5 lat wstecz", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Odpis dowodu wpłaty (raport kasowy) z archiwum, powyżej 5 lat wstecz", stawka: "{{fakt:oplata.taryfa-indywidualni.poszukiwanie-dokumentu}}", tryb: "za dokument"}
+          - {usluga: "Odpis umowy depozytu, najmu skrytki lub usługi konwojowej", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument"}
+          - {usluga: "Kopia wykazu nominałów przyjętych we wpłacie zamkniętej", stawka: "bez opłat", tryb: "za dokument"}
+          - {usluga: "Wysyłka zaświadczenia lub odpisu pocztą na adres wskazany przez klienta", stawka: "10,00 zł", tryb: "za przesyłkę"}
+  - id: taryfa-kasa-opc-zaswiadczenia-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-zaswiadczenia
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Opinia bankowa o kliencie w zakresie rzetelności rozliczeń gotówkowych", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie salda i obrotów gotówkowych dla audytora lub biegłego rewidenta", stawka: "{{fakt:oplata.kasa.potwierdzenie-dla-audytora}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie salda rachunku według stanu na koniec roku obrotowego", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument"}
+          - {usluga: "Zestawienie wszystkich operacji kasowych za rok kalendarzowy", stawka: "30,00 zł", tryb: "za zestawienie"}
+          - {usluga: "Poświadczenie zgodności kopii dokumentu kasowego z oryginałem", stawka: "10,00 zł", tryb: "za stronę"}
+          - {usluga: "Zaświadczenie o numerach seryjnych banknotów wypłaconych klientowi", stawka: "40,00 zł", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o braku skrytki sejfowej lub depozytu w Banku (dla potrzeb postępowania spadkowego)", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Informacja o skrytce sejfowej i depozytach zmarłego klienta, udzielana spadkobiercom", stawka: "bez opłat", tryb: "za informację"}
+          - {usluga: "Informacja o kasowych operacjach rachunku dla organu egzekucyjnego", stawka: "bez opłat", tryb: "za informację"}
+          - {usluga: "Wydanie dokumentu w formie elektronicznej z kwalifikowanym podpisem elektronicznym Banku", stawka: "wg {{fakt:oplata.zaswiadczenie}} plus 5,00 zł", tryb: "za dokument"}
+
+  # ===== Postanowienia ogólne — akapity dodatkowe =====
+  - id: taryfa-kasa-opc-ogolne-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: akapity-kasa-ogolne
+    elementy:
+      - ustep: "Dyspozycje kasowe są realizowane po przedstawieniu dokumentu tożsamości z fotografią. Bank {może|ma prawo} odmówić wykonania operacji, jeżeli nie może ustalić tożsamości osoby dokonującej wpłaty lub wypłaty albo jeżeli podpis na dyspozycji różni się od wzoru złożonego w Banku."
+      - ustep: "Przy wpłacie gotówki Klient {jest obowiązany|powinien} wskazać tytuł wpłaty oraz — na żądanie Banku — okazać dokumenty potwierdzające pochodzenie środków, w szczególności w przypadkach wpłat o nietypowo wysokiej wartości w stosunku do dotychczasowej aktywności na rachunku."
+
+  - id: taryfa-kasa-opc-ogolne-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: akapity-kasa-ogolne
+    elementy:
+      - ustep: "Bank {zastrzega|zachowuje} sobie prawo do ograniczenia obsługi kasowej w wybranych placówkach z przyczyn organizacyjnych lub bezpieczeństwa, informując o tym Klientów na stronie {{fakt:bank.strona}} i w placówce, w której zmiana nastąpiła, z wyprzedzeniem co najmniej jednego dnia roboczego."
+      - ustep: "Reklamacje dotyczące czynności kasowych, w tym rozbieżności w liczeniu gotówki, {należy|można} składać w placówce, listownie na adres: {{fakt:kontakt.adres-korespondencyjny}} lub pocztą elektroniczną na adres {{fakt:kontakt.email-reklamacje}}. Rozbieżności zgłoszone przy kasie rozpatruje się niezwłocznie, w obecności Klienta."
+
+  - id: taryfa-kasa-opc-ogolne-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: akapity-kasa-ogolne
+    elementy:
+      - ustep: "Odpowiedzialność Banku za skrytki sejfowe i depozyty określa umowa z Klientem. W przypadku skrytek sejfowych Bank odpowiada za należyte zabezpieczenie pomieszczenia i skarbca, a nie za zawartość skrytek, do której dostęp ma wyłącznie Klient; Klient {może|ma możliwość} zawrzeć dodatkowo umowę ubezpieczenia zawartości skrytki."
+      - ustep: "Wartości pieniężne i przedmioty niedozwolone, w szczególności broń, materiały wybuchowe, substancje łatwopalne i toksyczne oraz towary podlegające szybkiemu zepsuciu, nie mogą być przechowywane w skrytkach ani przyjmowane do depozytu."

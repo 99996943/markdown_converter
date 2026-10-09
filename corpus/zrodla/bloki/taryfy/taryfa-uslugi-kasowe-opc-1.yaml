@@ -1,0 +1,200 @@
+bloki:
+  # ===== Klienci indywidualni =====
+  - id: taryfa-kasa-opc-ind-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-ind
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki na rachunek oszczędnościowy w kasie placówki", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki z rachunku oszczędnościowego w kasie placówki do limitu bezpłatnych wypłat", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki z rachunku oszczędnościowego ponad limit bezpłatnych wypłat w miesiącu", stawka: "{{fakt:oplata.rachunek-oszczednosciowy.wyplata-ponad-limit}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na rachunek dziecka prowadzony dla małoletniego", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na rachunek wspólny w kasie placówki przez jednego ze współposiadaczy", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki z rachunku wspólnego przez pełnomocnika współposiadacza", stawka: "bez dodatkowych opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki z równoczesnym zleceniem przelewu na rachunek w innym banku", stawka: "{{fakt:oplata.wplata-gotowkowa}} oraz opłata za przelew", tryb: "za operację"}
+          - {usluga: "Wydanie potwierdzenia wpłaty lub wypłaty w formie papierowej", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki dokonana przez osobę niebędącą posiadaczem rachunku, z podaniem tytułu wpłaty", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-na-cudzy-rachunek}}", tryb: "za operację"}
+          - {usluga: "Zapisanie w kasie dyspozycji wypłaty gotówki na rzecz osoby upoważnionej (jednorazowe upoważnienie)", stawka: "5,00 zł", tryb: "za dyspozycję"}
+  - id: taryfa-kasa-opc-ind-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-ind
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wypłata gotówki w kasie placówki przez posiadacza rachunku dla seniora", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki we wpłatomacie Banku z użyciem karty debetowej", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki we wpłatomacie Banku bez użycia karty (kod BLIK lub kod z aplikacji)", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację"}
+          - {usluga: "Wpłata monet we wpłatomacie przystosowanym do przyjmowania bilonu", stawka: "1,00% kwoty, min. 2,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wypłata gotówki w kasie placówki z rachunku ze zbliżonym saldem do kwoty wypłaty (wypłata całości środków)", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Likwidacja rachunku z wypłatą salda w gotówce", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Wypłata środków spadkowych w kasie placówki na podstawie postanowienia sądu", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata środków na pokrycie kosztów pogrzebu z rachunku zmarłego posiadacza", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki z rachunku w dniu, w którym rachunek został zasilony przelewem natychmiastowym", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki w kasie placówki w kwocie powyżej 50 000,00 zł bez awizacji", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-placowka-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.wyplata-placowka-minimum}}, plus 0,10% kwoty", tryb: "od kwoty wypłaty"}
+  - id: taryfa-kasa-opc-ind-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-ind
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wypłata gotówki w walucie euro z rachunku walutowego w kasie placówki", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wypłata gotówki w walucie obcej do równowartości 500 EUR bez zamówienia", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Zakup waluty obcej za gotówkę w złotych (kantor w placówce)", stawka: "kurs sprzedaży z Tabeli kursów walut", tryb: "za transakcję"}
+          - {usluga: "Sprzedaż waluty obcej za złote (kantor w placówce)", stawka: "kurs kupna z Tabeli kursów walut", tryb: "za transakcję"}
+          - {usluga: "Wymiana drobnych nominałów na nominały wyższe w liczbie do 50 sztuk", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wymiana drobnych nominałów na nominały wyższe w liczbie powyżej 50 sztuk", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Przyjęcie banknotów do ekspertyzy autentyczności zgłoszonej przez klienta", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Przyjęcie od klienta znaku pieniężnego uznanego za podrobiony, protokół zatrzymania", stawka: "bez opłat", tryb: "za protokół"}
+          - {usluga: "Zlecenie okresowego wydawania gotówki w stałej kwocie w wybranej placówce", stawka: "10,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Zwrot niepodjętej gotówki z awizo na rachunek klienta", stawka: "bez opłat", tryb: "za operację"}
+
+  # ===== Przedsiębiorcy =====
+  - id: taryfa-kasa-opc-firmy-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-firmy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata utargu dziennego w kasie placówki do kwoty 5 000,00 zł", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "za wpłatę"}
+          - {usluga: "Wpłata utargu dziennego w kasie placówki powyżej 5 000,00 zł", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata utargu we wpłatomacie z kodem identyfikującym firmę", stawka: "{{fakt:oplata.firma.wplata-wplatomat-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki z opisem zbiorczym rozliczanym na kilka rachunków pomocniczych", stawka: "10,00 zł", tryb: "za wpłatę"}
+          - {usluga: "Wpłata gotówki na rachunek VAT przedsiębiorcy", stawka: "{{fakt:oplata.firma.rachunek-vat}}", tryb: "za wpłatę"}
+          - {usluga: "Wpłata gotówki na rachunek wspólnoty mieszkaniowej przez zarządcę", stawka: "bez opłat", tryb: "za wpłatę"}
+          - {usluga: "Wpłata gotówki do protokołu przez pracownika przedsiębiorcy na podstawie upoważnienia", stawka: "bez dodatkowych opłat", tryb: "za wpłatę"}
+          - {usluga: "Wypłata gotówki na wynagrodzenia w kasie placówki", stawka: "0,30% kwoty, min. 10,00 zł", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wypłata gotówki w kasie placówki w kwotach powyżej limitu awizacji z awizacją w terminie", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wypłata gotówki w kasie placówki z rachunku pomocniczego", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+  - id: taryfa-kasa-opc-firmy-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-firmy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata zamknięta w kopercie bezpieczeństwa w kasie placówki", stawka: "{{fakt:oplata.firma.wplata-zamknieta}}", tryb: "za każdą kopertę"}
+          - {usluga: "Wpłata zamknięta w kasecie zabezpieczonej plombą", stawka: "{{fakt:oplata.firma.wplata-zamknieta}}", tryb: "za każdą kasetę"}
+          - {usluga: "Przyjęcie wpłaty zamkniętej z deklaracją kwoty o wartości powyżej 100 000,00 zł", stawka: "0,05% deklarowanej kwoty, min. 25,00 zł", tryb: "od kwoty deklaracji"}
+          - {usluga: "Zwrot pustej kasety lub worka do Klienta", stawka: "bez opłat", tryb: "za zwrot"}
+          - {usluga: "Wydanie kasety kasowej do wpłat zamkniętych", stawka: "75,00 zł", tryb: "za sztukę"}
+          - {usluga: "Wydanie worka depozytowego z numerowaną plombą", stawka: "{{fakt:oplata.kasa.wrzutnia-worek-wydanie}}", tryb: "za worek"}
+          - {usluga: "Dopłata do wpłaty zamkniętej po przeliczeniu (korekta niedomiaru)", stawka: "bez opłat", tryb: "za korektę"}
+          - {usluga: "Korekta nadwyżki wykazanej w kasie po zamknięciu protokołu", stawka: "bez opłat", tryb: "za korektę"}
+          - {usluga: "Wypłata zaliczek dla pracowników w gotówce z awizacją", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wpłata gotówki na rachunek escrow w kasie placówki", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "od kwoty wpłaty"}
+  - id: taryfa-kasa-opc-firmy-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-firmy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki do wpłatomatu dla klientów instytucjonalnych (limit jednorazowy 20 000,00 zł)", stawka: "{{fakt:oplata.firma.wplata-wplatomat-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Zwiększenie limitu wpłaty we wpłatomacie powyżej standardowego, na czas oznaczony", stawka: "20,00 zł", tryb: "za zmianę"}
+          - {usluga: "Przyjęcie utargu w postaci bilonu do przeliczenia maszynowego", stawka: "{{fakt:oplata.firma.bilon-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Raport dobowy z wpłat gotówkowych przekazywany w bankowości elektronicznej", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Zestawienie wpłat gotówkowych w formacie pliku do systemu księgowego", stawka: "30,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Wpłaty gotówkowe wielu kasjerów firmy, odrębna identyfikacja kasjera na wyciągu", stawka: "15,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Dopuszczenie dodatkowej osoby do składania wpłat zamkniętych w imieniu firmy", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za dyspozycję"}
+          - {usluga: "Zgłoszenie utraty plomby lub kasety i unieważnienie numeru", stawka: "50,00 zł", tryb: "za zdarzenie"}
+          - {usluga: "Rozmiana banknotów dla placówki handlowej przed otwarciem (w ramach zamówienia)", stawka: "{{fakt:oplata.kasa.rozmiana-firma-procent}} kwoty", tryb: "od kwoty operacji"}
+          - {usluga: "Przyjęcie od Klienta wniosku o stałe awizo wypłaty w określonym dniu tygodnia", stawka: "bez opłat", tryb: "za wniosek"}
+
+  # ===== Wpłaty i wypłaty gotówkowe =====
+  - id: taryfa-kasa-opc-wplaty-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wplaty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki na rachunek podmiotu publicznego (urząd, sąd, gmina)", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na rachunek składkowy dla ubezpieczeń społecznych", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na rachunek wierzyciela w toku postępowania egzekucyjnego", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na rachunek depozytowy sądu", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki w złotych na rachunek w innym banku z tytułem wskazanym przez wpłacającego", stawka: "1,00% kwoty, min. 15,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki na rachunek wydawcy karty w celu spłaty zadłużenia", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na rachunek lokaty terminowej w trakcie jej zakładania", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na kredyt w rachunku bieżącym", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki na poczet wkładu własnego w ramach kredytu hipotecznego", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki jako zabezpieczenie gwarancji lub kaucji", stawka: "0,10% kwoty, min. 20,00 zł", tryb: "od kwoty wpłaty"}
+  - id: taryfa-kasa-opc-wplaty-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wplaty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wypłata gotówki w kasie placówki z rachunku ROR na podstawie dokumentu tożsamości i karty", stawka: "bez opłat do kwoty bez awizacji", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki bez karty i bez dokumentu tożsamości (zlecona przez bankowość elektroniczną, kod odbioru)", stawka: "5,00 zł", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki w kasie placówki na podstawie czeku gotówkowego (czek własny)", stawka: "0,30% kwoty, min. 10,00 zł", tryb: "za czek"}
+          - {usluga: "Realizacja czeku gotówkowego wystawionego przez posiadacza rachunku w innym banku", stawka: "1,00% kwoty, min. 20,00 zł", tryb: "za czek"}
+          - {usluga: "Wypłata gotówki dla osoby niebędącej klientem Banku z tytułu przekazu gotówkowego", stawka: "{{fakt:oplata.kasa.operacja-nieklient-procent}} kwoty, min. {{fakt:oplata.kasa.operacja-nieklient-minimum}}", tryb: "od kwoty przekazu"}
+          - {usluga: "Przekaz gotówkowy krajowy (wpłata z poleceniem wypłaty adresatowi w placówce Banku)", stawka: "1,50% kwoty, min. 20,00 zł", tryb: "od kwoty przekazu"}
+          - {usluga: "Przekaz gotówkowy zagraniczny — wpłata gotówki na rachunek za granicą", stawka: "2,00% kwoty, min. 30,00 zł", tryb: "od kwoty przekazu"}
+          - {usluga: "Wypłata gotówki na podstawie prawomocnego postanowienia sądu, bez udziału posiadacza rachunku", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki z rachunku zajętego w egzekucji (część wolna od zajęcia)", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki w kasie przed godziną otwarcia placówki w trybie umówionym", stawka: "50,00 zł", tryb: "za operację"}
+  - id: taryfa-kasa-opc-wplaty-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wplaty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki w walucie euro na rachunek walutowy w kasie placówki", stawka: "0,30% kwoty, min. 10,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki w dolarach amerykańskich na rachunek walutowy w kasie placówki", stawka: "0,30% kwoty, min. 10,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki w funtach brytyjskich lub frankach szwajcarskich na rachunek walutowy", stawka: "0,50% kwoty, min. 15,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki w walucie niewymienionej w Tabeli kursów walut (przyjęcie do inkasa)", stawka: "wg indywidualnej wyceny", tryb: "za wpłatę"}
+          - {usluga: "Wypłata gotówki w koronach czeskich lub norweskich w kasie placówki", stawka: "1,50% kwoty, min. 15,00 zł", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wypłata gotówki w walucie obcej powyżej równowartości 10 000 EUR (wymaga zamówienia)", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty plus opłata za zamówienie", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wpłata gotówki w walucie obcej na rachunek przedsiębiorcy z tytułu dewizowego utargu", stawka: "0,25% kwoty, min. 10,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata i wypłata gotówki w tej samej walucie tego samego dnia (tzw. rozmiana walutowa)", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Przeliczenie wpłaty walutowej niezgodnej z deklaracją klienta", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Złożenie oświadczenia o pochodzeniu środków przy wpłacie dewizowej", stawka: "bez opłat", tryb: "za oświadczenie"}
+
+  # ===== Wymiana i liczenie wartości pieniężnych =====
+  - id: taryfa-kasa-opc-wymiana-1
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wymiana
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wymiana banknotów 500 zł na niższe nominały", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana banknotów 200 zł i 100 zł na niższe nominały", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana banknotów 50 zł i 20 zł na banknoty 100 zł lub 200 zł", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana monet 5 zł, 2 zł i 1 zł na banknoty", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} kwoty, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana monet groszowych na monety złotowe", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} kwoty, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana banknotów o nominałach euro na banknoty euro o innych nominałach", stawka: "1,00% kwoty, min. 10,00 zł", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana drobnych banknotów euro na dolary amerykańskie (poprzez złote)", stawka: "kursy z Tabeli kursów walut", tryb: "za transakcję"}
+          - {usluga: "Wymiana banknotów wycofanych z obiegu, przekazanie do Narodowego Banku Polskiego", stawka: "{{fakt:oplata.kasa.przyjecie-uszkodzonych-do-wymiany}}", tryb: "za wniosek"}
+          - {usluga: "Wymiana banknotów z nadrukiem, zabrudzonych lub nadpalonych — wstępna ocena stanu", stawka: "bez opłat", tryb: "za ocenę"}
+          - {usluga: "Odbiór wymienionych banknotów po rozpatrzeniu wniosku przez Narodowy Bank Polski", stawka: "bez opłat", tryb: "za odbiór"}
+  - id: taryfa-kasa-opc-wymiana-2
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wymiana
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Liczenie banknotów w paczkach z banderolą Banku", stawka: "{{fakt:oplata.kasa.liczenie-banknotow-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-banknotow-minimum}}", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie banknotów w paczkach z banderolą innego banku", stawka: "{{fakt:oplata.kasa.liczenie-banknotow-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-banknotow-minimum}}", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie banknotów luzem, niesortowanych, z domieszką monet", stawka: "0,50% wartości, min. 20,00 zł", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie monet 1 gr, 2 gr i 5 gr", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie monet 10 gr, 20 gr i 50 gr", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie monet 1 zł, 2 zł i 5 zł", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie bilonu w trybie pilnym (w czasie oczekiwania klienta w placówce)", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} wartości plus 15,00 zł", tryb: "od wartości przeliczanej"}
+          - {usluga: "Ponowne przeliczenie wpłaty na wniosek klienta po zgłoszeniu rozbieżności", stawka: "bez opłat", tryb: "za wniosek"}
+          - {usluga: "Przeliczenie wartości w obecności komisji (np. w sprawie spornej)", stawka: "100,00 zł", tryb: "za przeliczenie"}
+          - {usluga: "Przeliczenie wartości pieniężnych przez konwój przed transportem (w siedzibie Klienta)", stawka: "0,15% wartości, min. 50,00 zł", tryb: "od wartości przeliczanej"}
+  - id: taryfa-kasa-opc-wymiana-3
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: pozycje-kasa-wymiana
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przyjęcie banknotów wątpliwych do badania przez Bank", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Przekazanie do ekspertyzy monety kolekcjonerskiej o wartości numizmatycznej", stawka: "35,00 zł", tryb: "za sztukę"}
+          - {usluga: "Wymiana banknotów zniszczonych w ponad połowie ich powierzchni (zwrot równowartości po wyroku NBP)", stawka: "{{fakt:oplata.kasa.przyjecie-uszkodzonych-do-wymiany}}", tryb: "za wniosek"}
+          - {usluga: "Sprzedaż monet kolekcjonerskich emisji NBP dostępnych w placówce", stawka: "cena nominalna emisji", tryb: "za sztukę"}
+          - {usluga: "Sprzedaż okolicznościowych zestawów monet obiegowych", stawka: "cena zestawu wg cennika emisji", tryb: "za zestaw"}
+          - {usluga: "Zakup monet obiegowych w rolkach do rozmiany (rolka 50 sztuk)", stawka: "wartość nominalna plus 2,00 zł", tryb: "za rolkę"}
+          - {usluga: "Zakup torebek foliowych i rolek na bilon w placówce", stawka: "3,00 zł", tryb: "za zestaw"}
+          - {usluga: "Wypożyczenie licznika banknotów lub testera autentyczności dla klienta na czas wizyty", stawka: "bez opłat", tryb: "za wizytę"}
+          - {usluga: "Szkolenie pracowników klienta w zakresie rozpoznawania zabezpieczeń banknotów (do 10 osób)", stawka: "250,00 zł", tryb: "za szkolenie"}
+          - {usluga: "Wydanie materiałów informacyjnych o zabezpieczeniach znaków pieniężnych", stawka: "bez opłat", tryb: "za materiał"}

@@ -1,0 +1,114 @@
+bloki:
+  # ---------------------------------------------------------------- I. Postanowienia ogólne
+  - id: taryfa-kasa-zakres
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-ogolne
+    elementy:
+      - akapit: "Niniejsza Taryfa {określa|ustala} opłaty i prowizje za czynności kasowe wykonywane w placówkach Banku, za wynajem skrytek sejfowych, przyjmowanie depozytów oraz za wydawanie zaświadczeń i odpisów dokumentów związanych z obsługą gotówkową. Dotyczy zarówno klientów indywidualnych, jak i przedsiębiorców."
+      - ustep: "Obsługa kasowa jest prowadzona w placówkach wskazanych na stronie {{fakt:bank.strona}}, w godzinach pracy tych placówek, nie dłużej jednak niż do godziny {{fakt:termin.kasa.godzina-konca-obslugi-kasowej}} w dni robocze. Dyspozycje kasowe zgłoszone po tej godzinie są {realizowane|wykonywane} następnego dnia roboczego."
+      - ustep: "Opłaty za operacje na rachunkach bankowych niezwiązane z obrotem gotówkowym, w szczególności za prowadzenie rachunków, przelewy i karty, {określają|zawierają} odrębne taryfy Banku."
+      - ustep: "Czynności kasowe na rzecz osób niebędących klientami Banku są wykonywane {wyłącznie|jedynie} w zakresie wskazanym w częściach „Wymiana i liczenie wartości pieniężnych” oraz „Wpłaty i wypłaty gotówkowe” i podlegają opłatom podwyższonym."
+
+  - id: taryfa-kasa-zasady
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-ogolne
+    elementy:
+      - ustep: "Opłaty za wpłaty i wypłaty gotówkowe są pobierane w dniu operacji z rachunku objętego operacją. Jeżeli operacja jest wykonywana bez udziału rachunku, opłatę {uiszcza się|pobiera się} w gotówce przed wydaniem środków."
+      - ustep: "Opłaty miesięczne i roczne za skrytki sejfowe i depozyty są {płatne|pobierane} z góry, w pierwszym dniu okresu rozliczeniowego, na podstawie umowy. Opłata za niepełny miesiąc umowy jest naliczana proporcjonalnie do liczby dni, w których skrytka lub depozyt pozostawały w dyspozycji Klienta."
+      - ustep: "Stawki procentowe liczy się od kwoty wpłaty, wypłaty lub wartości przyjętej do przechowania, wyrażonej w złotych; wartości w walutach obcych przelicza się według kursu średniego z Tabeli kursów walut Banku."
+      - ustep: "Bank {może|ma prawo} odmówić przyjęcia wpłaty lub wypłaty gotówki, jeżeli Klient nie okaże dokumentu tożsamości, nie wyjaśni pochodzenia środków w przypadkach przewidzianych w przepisach o przeciwdziałaniu praniu pieniędzy lub jeżeli banknoty albo monety budzą uzasadnione wątpliwości co do autentyczności. Zasady te {określa|wskazuje} {{ref:akt:dz-u-2025-644-aml}}."
+      - akapit: "Informacji o obsłudze kasowej {można uzyskać|udzielają} także konsultanci infolinii pod numerem {{fakt:kontakt.infolinia}}, {{fakt:kontakt.godziny-infolinii}}."
+
+  # ---------------------------------------------------------------- II. Klienci indywidualni
+  - id: taryfa-kasa-ind-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Stawki z tej części stosuje się do osób fizycznych niebędących przedsiębiorcami, które posiadają w Banku rachunek osobisty lub oszczędnościowy. Wypłaty gotówkowe w kasie placówki są realizowane do kwoty {{fakt:limit.rachunek-osobisty.wyplata-awizo}} bez wcześniejszego zgłoszenia; wyższe wypłaty wymagają awizowania z wyprzedzeniem {{fakt:termin.kasa.awizo-wyplaty}} przed planowanym terminem."
+
+  - id: taryfa-kasa-ind-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki w złotych na własny rachunek w kasie placówki[^1]", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki w złotych na rachunek innej osoby w Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-na-cudzy-rachunek}}", tryb: "za operację"}
+          - usluga: "Wypłata gotówki w złotych w kasie placówki"
+            stawka: "bez opłat do kwoty bez awizacji"
+            tryb: "za operację"
+            podpozycje:
+              - {usluga: "wypłata awizowana powyżej kwoty bez awizacji", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-placowka-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.wyplata-placowka-minimum}}", tryb: "od kwoty wypłaty"}
+              - {usluga: "wypłata powyżej kwoty bez awizacji, bez zgłoszenia", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-placowka-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.wyplata-placowka-minimum}}, oraz 50,00 zł za brak awizacji", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wpłata gotówki we wpłatomacie Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację"}
+          - {usluga: "Wypłata gotówki w walucie obcej w kasie placówki[^2]", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Rozmiana banknotów lub monet na życzenie klienta", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Niepodjęcie awizowanej wypłaty gotówki", stawka: "{{fakt:oplata.taryfa-indywidualni.awizo-niepodjeta}}", tryb: "za awizo"}
+          - {usluga: "Wypłata gotówki na podstawie pełnomocnictwa udzielonego w placówce", stawka: "bez dodatkowych opłat", tryb: "za operację"}
+          - {usluga: "Wydanie torby kasowej zabezpieczonej plombą", stawka: "{{fakt:oplata.taryfa-indywidualni.wydanie-torby-kasowej}}", tryb: "za torbę"}
+          - {usluga: "Wynajem skrytki sejfowej o średniej wielkości", stawka: "{{fakt:oplata.taryfa-indywidualni.skrytka-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Poszukiwanie dokumentu kasowego w archiwum Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.poszukiwanie-dokumentu}}", tryb: "za dokument"}
+    przypisy:
+      1: "Wpłata na rachunek oszczędnościowy w placówce jest bezpłatna, jeżeli zasady rachunku nie przewidują inaczej."
+      2: "Wypłata w walucie obcej jest możliwa po uprzednim zamówieniu gotówki zgodnie z częścią „Zamówienia gotówki”; kurs przeliczenia ustala się według Tabeli kursów walut Banku."
+
+  # ---------------------------------------------------------------- III. Przedsiębiorcy
+  - id: taryfa-kasa-firmy-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Stawki z tej części stosuje się do przedsiębiorców i innych klientów instytucjonalnych prowadzących rachunki bieżące w Banku. Wypłaty przekraczające {{fakt:limit.firma.awizo-wyplaty}} oraz wpłaty przekraczające {{fakt:limit.kasa.wplata-bez-awizo}} {należy zgłosić|wymagają zgłoszenia} w Banku z wyprzedzeniem {{fakt:termin.kasa.awizo-wyplaty}}."
+
+  - id: taryfa-kasa-firmy-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki w złotych na rachunek bieżący w kasie placówki", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wypłata gotówki w złotych z rachunku bieżącego w kasie placówki", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wpłata gotówki we wpłatomacie Banku", stawka: "{{fakt:oplata.firma.wplata-wplatomat-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata zamknięta w worku lub kasecie przyjmowana do przeliczenia", stawka: "{{fakt:oplata.firma.wplata-zamknieta}}", tryb: "za każdy worek"}
+          - {usluga: "Przeliczenie i wpłata bilonu", stawka: "{{fakt:oplata.firma.bilon-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Rozmiana banknotów lub monet dla przedsiębiorcy", stawka: "{{fakt:oplata.kasa.rozmiana-firma-procent}} kwoty", tryb: "od kwoty operacji"}
+          - {usluga: "Wypłata gotówki powyżej kwoty bez awizacji, bez zgłoszenia w terminie[^1]", stawka: "dodatkowo 0,10% kwoty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Niepodjęcie awizowanej wypłaty gotówki", stawka: "{{fakt:oplata.kasa.awizo-niepodjeta-firma}}", tryb: "za awizo"}
+          - {usluga: "Zamówienie gotówki w określonych nominałach", stawka: "{{fakt:oplata.kasa.zamowienie-gotowki-procent}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Abonament za korzystanie z wrzutni nocnej", stawka: "{{fakt:oplata.kasa.wrzutnia-abonament}}", tryb: "miesięcznie"}
+          - {usluga: "Potwierdzenie salda i obrotów gotówkowych dla audytora", stawka: "{{fakt:oplata.kasa.potwierdzenie-dla-audytora}}", tryb: "za dokument"}
+    przypisy:
+      1: "Opłaty nie pobiera się, jeżeli Klient zgłosił potrzebę wypłaty w terminie wskazanym w opisie części, a Bank nie dysponował wymaganą kwotą w danej placówce."
+
+  # ---------------------------------------------------------------- IV. Wpłaty i wypłaty gotówkowe
+  - id: taryfa-kasa-wplaty-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Poniższe pozycje dotyczą wpłat i wypłat gotówkowych w szczególnych trybach: wpłat na rachunki osób trzecich, wpłat na rzecz instytucji i wypłat w walutach wymienialnych. Przy wpłatach monet bez opłaty przyjmuje się do {{fakt:limit.kasa.bilon-bez-prowizji}} jednorazowo; ponad ten limit stosuje się stawki za przeliczenie bilonu."
+
+  - id: taryfa-kasa-wplaty-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówki na rachunek prowadzony w innym banku", stawka: "1,00% kwoty, min. 15,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki na rachunek podatkowy lub składkowy", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata na rachunek karty kredytowej w kasie placówki", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację"}
+          - {usluga: "Wpłata gotówki z tytułu spłaty rat kredytu w kasie placówki", stawka: "bez opłat", tryb: "za operację"}
+          - usluga: "Wypłata gotówki w walucie obcej w kasie placówki"
+            stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty"
+            tryb: "od kwoty wypłaty"
+            podpozycje:
+              - {usluga: "euro", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty", tryb: "od kwoty wypłaty"}
+              - {usluga: "dolar amerykański", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty", tryb: "od kwoty wypłaty"}
+              - {usluga: "frank szwajcarski i funt brytyjski", stawka: "1,50% kwoty, min. 15,00 zł", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wpłata gotówki w walucie obcej na rachunek walutowy", stawka: "0,30% kwoty, min. 10,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówki w walucie obcej na rachunek złotowy z przewalutowaniem", stawka: "kurs kupna z Tabeli kursów walut", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata lub wypłata gotówki dla osoby niebędącej klientem Banku", stawka: "{{fakt:oplata.kasa.operacja-nieklient-procent}} kwoty, min. {{fakt:oplata.kasa.operacja-nieklient-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Realizacja czeku gotówkowego krajowego", stawka: "0,30% kwoty, min. 10,00 zł", tryb: "za czek"}
