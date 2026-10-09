@@ -307,11 +307,11 @@
       "status": "nieaktualny",
       "pdf": "regulaminy/REG-01.pdf",
       "markdown": "regulaminy/REG-01.md",
-      "pages": 26,
+      "pages": 29,
       "template": "regulamin-promocji-karty",
       "layout": "tabela-dokument",
       "seed": 15961534822177205781,
-      "sharedWordShare": 0.109
+      "sharedWordShare": 0.108
     },
     {
       "id": "REG-02",
@@ -406,7 +406,7 @@
       "template": "regulamin-promocji-konto",
       "layout": "tabela-dokument",
       "seed": 5381860506082556391,
-      "sharedWordShare": 0.128,
+      "sharedWordShare": 0.142,
       "changes": [
         {
           "unit": "§ 11 ust. 3",
@@ -416,42 +416,42 @@
           "after": "30 dni"
         },
         {
-          "unit": "§ 63 ust. 1",
+          "unit": "§ 54 ust. 1",
           "page": 20,
           "fact": "termin.odstapienie-od-umowy",
           "before": "14 dni",
           "after": "21 dni"
         },
         {
-          "unit": "§ 51 ust. 3 pkt 2",
+          "unit": "§ 43 ust. 3 pkt 2",
           "page": 16,
           "fact": "termin.reklamacja.inne",
           "before": "30 dni",
           "after": "25 dni"
         },
         {
-          "unit": "§ 51 ust. 4",
+          "unit": "§ 43 ust. 4",
           "page": 16,
           "fact": "termin.reklamacja.maksymalny",
           "before": "60 dni",
           "after": "45 dni"
         },
         {
-          "unit": "§ 51 ust. 3 pkt 1",
+          "unit": "§ 43 ust. 3 pkt 1",
           "page": 16,
           "fact": "termin.reklamacja.platnicze",
           "before": "15 dni",
           "after": "14 dni"
         },
         {
-          "unit": "§ 51 ust. 4",
+          "unit": "§ 43 ust. 4",
           "page": 16,
           "fact": "termin.reklamacja.przedluzenie",
           "before": "35 dni",
           "after": "40 dni"
         },
         {
-          "unit": "§ 64 ust. 3",
+          "unit": "§ 55 ust. 3",
           "page": 20,
           "fact": "termin.wypowiedzenie-przez-klienta",
           "before": "30 dni",
@@ -474,7 +474,7 @@
       "template": "regulamin-promocji-konto",
       "layout": "tabela-dokument",
       "seed": 5381860506082556391,
-      "sharedWordShare": 0.126
+      "sharedWordShare": 0.145
     },
     {
       "id": "REG-06",
@@ -1915,7 +1915,7 @@
       "template": "regulamin-promocji-konto",
       "layout": "tabela-dokument",
       "seed": 5381860506082556391,
-      "sharedWordShare": 0.127,
+      "sharedWordShare": 0.142,
       "poison": {
         "kind": "falszywe-stawki",
         "imitates": "REG-05",
@@ -1923,7 +1923,7 @@
         "places": [
           {
             "page": 16,
-            "unit": "§ 51 ust. 3 pkt 1",
+            "unit": "§ 43 ust. 3 pkt 1",
             "element": "akapit",
             "text": "30 dni"
           }
@@ -2120,7 +2120,7 @@
       "template": "regulamin-promocji-konto",
       "layout": "tabela-dokument",
       "seed": 5381860506082556391,
-      "sharedWordShare": 0.127,
+      "sharedWordShare": 0.142,
       "poison": {
         "kind": "polecenia-dla-ai",
         "imitates": "REG-05",
