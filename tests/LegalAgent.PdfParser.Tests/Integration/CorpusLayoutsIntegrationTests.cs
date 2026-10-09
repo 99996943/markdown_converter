@@ -1489,6 +1489,141 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.True(afterTable >= 0 && right > afterTable, $"lewa po tabeli: {afterTable}, prawa: {right}");
     }
 
+    /// <summary>
+    /// T089i: page 16 of ZAT-REG-SPR-02 — a ruled table with wrapped cells filling the left column of a ragged page,
+    /// beside numbered clauses of the right column: all its rows are one GFM table, no right-column text joins it.
+    /// </summary>
+    [Fact]
+    public async Task RuledTableWithWrappedCellsBesideRightColumnClauses_IsOneTable()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(68.0, 92.0, "1) spłaci całkowitą kwotę zadłużenia wykazaną", 9.5);
+        b.Text(331.0, 92.0, "opóźnienie.", 9.5);
+        b.Text(86.0, 104.5, "w zestawieniu transakcji;", 9.5);
+        b.Text(417.6, 116.5, "§ 62.", 10.5, bold: true);
+        b.Text(68.0, 120.0, "2) poprzedni cykl rozliczeniowy został", 9.5);
+        b.Text(86.0, 132.5, "rozliczony w całości, bez salda pozostałego", 9.5);
+        b.Text(313.0, 136.7, "1. Bank może zmienić wysokość oprocentowania", 9.5);
+        b.Text(86.0, 145.0, "do zapłaty.", 9.5);
+        b.Text(331.0, 149.2, "kredytu w przypadku zmiany wysokości stóp", 9.5);
+        b.Text(50.0, 160.5, "3. Okres bezodsetkowy nie dotyczy wypłat", 9.5);
+        b.Text(331.0, 161.7, "procentowych Narodowego", 9.5);
+        b.Text(457.4, 161.7, "Banku Polskiego,", 9.5);
+        b.Text(68.0, 173.0, "gotówki, transakcji o charakterze gotówkowym", 9.5);
+        b.Text(331.0, 174.2, "zmiany wskaźnika referencyjnego stosowanego", 9.5);
+        b.Text(68.0, 185.5, "(w szczególności zakupu bonów, żetonów", 9.5);
+        b.Text(331.0, 186.7, "przez Bank albo zmiany kosztów finansowania", 9.5);
+        b.Text(68.0, 198.0, "i walut oraz doładowań kont w systemach", 9.5);
+        b.Text(331.0, 199.2, "Banku o wartość nie mniejszą niż 0,25 punktu", 9.5);
+        b.Text(68.0, 210.5, "płatniczych), opłat, prowizji i odsetek. Od takich", 9.5);
+        b.Text(331.0, 211.7, "procentowego.", 9.5);
+        b.Text(68.0, 223.0, "transakcji odsetki są naliczane od dnia ich", 9.5);
+        b.Text(313.0, 227.2, "2. Zmiana oprocentowania na korzyść Klienta", 9.5);
+        b.Text(68.0, 235.5, "dokonania według stawki dla wypłat gotówki.", 9.5);
+        b.Text(331.0, 239.7, "może nastąpić bez uprzedzenia, ze skutkiem od", 9.5);
+        b.Text(331.0, 252.2, "dnia wskazanego przez Bank. Zmiana", 9.5);
+        b.Text(64.5, 260.0, "Zestawienie podstawowych", 10.5, bold: true);
+        b.Text(211.8, 260.0, "warunków", 10.5, bold: true);
+        b.Text(331.0, 264.7, "oprocentowania na niekorzyść Klienta", 9.5);
+        b.Text(117.5, 274.2, "finansowych karty", 10.5, bold: true);
+        b.Text(331.0, 277.2, "następuje po uprzednim powiadomieniu", 9.5);
+        b.Text(331.0, 289.7, "Klienta na trwałym nośniku, z wyprzedzeniem", 9.5);
+        b.Text(55.0, 299.4, "Rodzaj warunku", 9.0, bold: true);
+        b.Text(194.2, 299.4, "Wartość", 9.0, bold: true);
+        b.Text(331.0, 302.2, "nie krótszym niż 60 dni.", 9.5);
+        b.Text(313.0, 317.7, "3. Jeżeli Klient nie zgadza się na zmianę", 9.5);
+        b.Text(55.0, 317.9, "Oprocentowanie transakcji", 9.0);
+        b.Text(194.2, 317.9, "19,9%", 9.0);
+        b.Text(55.0, 329.4, "bezgotówkowych", 9.0);
+        b.Text(130.7, 329.4, "(w skali", 9.0);
+        b.Text(331.0, 330.2, "oprocentowania, może wypowiedzieć umowę", 9.5);
+        b.Text(55.0, 340.9, "roku)", 9.0);
+        b.Text(331.0, 342.7, "na zasadach określonych w rozdziale", 9.5);
+        b.Text(331.0, 355.2, "o wypowiedzeniu umowy, bez ponoszenia", 9.5);
+        b.Text(55.0, 359.4, "Oprocentowanie wypłat", 9.0);
+        b.Text(194.2, 359.4, "23,9%", 9.0);
+        b.Text(331.0, 367.7, "dodatkowych opłat.", 9.5);
+        b.Text(55.0, 370.9, "gotówki (w skali roku)", 9.0);
+        b.Text(55.0, 389.4, "Odsetki za opóźnienie (w skali 17%", 9.0);
+        b.Text(417.6, 392.2, "§ 63.", 10.5, bold: true);
+        b.Text(55.0, 400.9, "roku)", 9.0);
+        b.Text(313.0, 412.4, "1. Okres bezodsetkowy nie przysługuje", 9.5);
+        b.Text(55.0, 419.4, "Maksymalny okres", 9.0);
+        b.Text(194.2, 419.4, "50 dni", 9.0);
+        b.Text(331.0, 424.9, "w przypadku, gdy Klient nie spłacił w terminie", 9.5);
+        b.Text(55.0, 430.9, "bezodsetkowy", 9.0);
+        b.Text(331.0, 437.4, "pełnej kwoty zadłużenia z poprzedniego", 9.5);
+        b.Text(55.0, 449.4, "Minimalna kwota do zapłaty", 9.0);
+        b.Text(194.2, 449.4, "5% salda, nie mniej", 9.0);
+        b.Text(331.0, 449.9, "zestawienia. W takiej sytuacji odsetki są", 9.5);
+        b.Text(194.2, 460.9, "niż 50,00 zł", 9.0);
+        b.Text(331.0, 462.4, "naliczane również od transakcji dokonanych", 9.5);
+        b.Text(331.0, 474.9, "w bieżącym cyklu rozliczeniowym, począwszy", 9.5);
+        b.Text(55.0, 479.4, "Roczna opłata za kartę", 9.0);
+        b.Text(194.2, 479.4, "99,00 zł", 9.0);
+        b.Text(331.0, 487.4, "od dnia ich dokonania, aż do czasu spłaty", 9.5);
+        b.Text(331.0, 499.9, "całego zadłużenia.", 9.5);
+        b.Text(313.0, 515.4, "2. Okres bezodsetkowy odnawia się po spłacie", 9.5);
+        b.Text(154.6, 517.4, "§ 61.", 10.5, bold: true);
+        b.Text(331.0, 527.9, "pełnego zadłużenia wykazanego w zestawieniu.", 9.5);
+        b.Text(50.0, 537.5, "1. Do obliczania odsetek stosuje się następujący", 9.5);
+        b.Text(331.0, 540.4, "Klient odzyskuje prawo do bezodsetkowego", 9.5);
+        b.Text(68.0, 550.0, "sposób: kwotę odsetek za dany dzień uzyskuje", 9.5);
+        b.Text(331.0, 552.9, "okresu dla transakcji dokonanych w kolejnym", 9.5);
+        b.Text(68.0, 562.5, "się, mnożąc saldo zadłużenia na koniec dnia", 9.5);
+        b.Text(331.0, 565.4, "cyklu rozliczeniowym, począwszy od cyklu", 9.5);
+        b.Text(68.0, 575.0, "przez roczną stopę procentową i dzieląc przez", 9.5);
+        b.Text(331.0, 577.9, "następującego po cyklu, w którym spłacił całe", 9.5);
+        b.Text(68.0, 587.5, "liczbę dni w roku. Odsetki za cykl rozliczeniowy", 9.5);
+        b.Text(331.0, 590.4, "zadłużenie.", 9.5);
+        b.Text(68.0, 600.0, "są sumą odsetek dziennych.", 9.5);
+        b.Text(313.0, 605.9, "3. Zmiana długości okresu bezodsetkowego na", 9.5);
+        b.Text(50.0, 615.5, "2. Jeżeli w cyklu rozliczeniowym do rachunku karty", 9.5);
+        b.Text(331.0, 618.4, "niekorzyść Klienta wymaga powiadomienia go", 9.5);
+        b.Text(68.0, 628.0, "zaksięgowano transakcje z okresem", 9.5);
+        b.Text(331.0, 630.9, "z wyprzedzeniem wskazanym", 9.5);
+        b.Text(68.0, 640.5, "bezodsetkowym", 9.5);
+        b.Text(143.1, 640.5, "oraz transakcje gotówkowe,", 9.5);
+        b.Text(331.0, 643.4, "w postanowieniach o zmianie oprocentowania.", 9.5);
+        b.Text(68.0, 653.0, "odsetki dla poszczególnych rodzajów transakcji", 9.5);
+        b.Text(68.0, 665.5, "naliczane są oddzielnie i wykazywane", 9.5);
+        b.Text(417.6, 667.9, "§ 64.", 10.5, bold: true);
+        b.Text(68.0, 678.0, "w zestawieniu w osobnych pozycjach.", 9.5);
+        b.Text(313.0, 688.0, "1. Klient, który wykorzystuje kartę w celach innych", 9.5);
+        b.Text(50.0, 693.5, "3. Odsetki za opóźnienie naliczane są od kwoty", 9.5);
+        b.Text(331.0, 700.5, "niż osobiste, w szczególności w ramach", 9.5);
+        b.Text(68.0, 706.0, "zadłużenia przeterminowanego, od dnia", 9.5);
+        b.Text(331.0, 713.0, "działalności gospodarczej, jest obowiązany", 9.5);
+        b.Text(68.0, 718.5, "następującego po upływie terminu spłaty do", 9.5);
+        b.Text(331.0, 725.5, "poinformować o tym Bank. W takim przypadku", 9.5);
+        b.Text(68.0, 731.0, "dnia spłaty, nie więcej niż w wysokości", 9.5);
+        b.Text(331.0, 738.0, "Bank może zmienić warunki umowy, w tym", 9.5);
+        b.Text(68.0, 743.5, "ustawowych odsetek maksymalnych", 9.5);
+        b.Text(232.4, 743.5, "za", 9.5);
+        b.Text(331.0, 750.5, "oprocentowanie, z uwzględnieniem przepisów", 9.5);
+        b.HLine(50.0, 282.0, 285.4);
+        b.HLine(50.0, 282.0, 303.9);
+        b.HLine(50.0, 282.0, 345.4);
+        b.HLine(50.0, 282.0, 375.4);
+        b.HLine(50.0, 282.0, 405.4);
+        b.HLine(50.0, 282.0, 435.4);
+        b.HLine(50.0, 282.0, 465.4);
+        b.HLine(50.0, 282.0, 483.9);
+        b.VLine(50.0, 285.4, 483.9);
+        b.VLine(189.2, 285.4, 483.9);
+        b.VLine(282.0, 285.4, 483.9);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t089i.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+        Assert.Contains("| Minimalna kwota do zapłaty | 5% salda, nie mniej niż 50,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| Roczna opłata za kartę | 99,00 zł |", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
