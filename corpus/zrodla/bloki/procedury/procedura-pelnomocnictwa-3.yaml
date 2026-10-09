@@ -1,0 +1,155 @@
+bloki:
+  - id: procedura-pelnomocnictwa-weryfikacja-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "{Zweryfikuj|Potwierdź} tożsamość mocodawcy."
+            podkroki:
+              - tekst: "Gdy mocodawca stawia się w placówce, porównaj okazany dokument tożsamości z danymi w systemie, sprawdź jego ważność i zgodność zdjęcia z wyglądem osoby."
+              - tekst: "Gdy mocodawca nie jest obecny, ustal jego tożsamość na podstawie poświadczenia notarialnego podpisu albo — w przypadku pełnomocnictw składanych w procedurze zdalnej — na podstawie uwierzytelnienia w bankowości elektronicznej."
+              - tekst: "Zapytaj mocodawcę lub sprawdź w dokumencie, czy pełnomocnictwo jest udzielane dobrowolnie i czy nie istnieją okoliczności wskazujące na przymus lub wprowadzenie w błąd."
+          - tekst: "{Zweryfikuj|Potwierdź} tożsamość pełnomocnika i jego dane osobowe."
+            podkroki:
+              - tekst: "Wymagaj okazania ważnego dokumentu tożsamości ze zdjęciem; kopię dokumentu sporządź tylko wtedy, gdy jest to niezbędne do stosowania środków bezpieczeństwa finansowego."
+              - tekst: "Zweryfikuj numer PESEL lub — dla osób bez PESEL — datę urodzenia i obywatelstwo; wprowadź dane do systemu."
+              - tekst: "Zbierz od pełnomocnika oświadczenie, czy jest osobą zajmującą eksponowane stanowisko polityczne albo członkiem rodziny takiej osoby lub osobą blisko z nią współpracującą."
+          - tekst: "Pobierz wzór podpisu pełnomocnika."
+            podkroki:
+              - tekst: "Poproś pełnomocnika o złożenie trzech próbek podpisu na karcie F-PEŁ-02 w Twojej obecności."
+              - tekst: "Jeżeli pełnomocnik nie może się podpisać, zastosuj procedurę dla osób niepotrafiących lub niemogących pisać: wymagaj obecności świadka lub notariusza i odnotuj to na karcie."
+              - tekst: "Wzór podpisu odnawiaj nie rzadziej niż co {{fakt:pelnomocnictwo.okres.wzor-podpisu}} oraz każdorazowo po zmianie danych osobowych pełnomocnika."
+          - tekst: "Sprawdź, czy dokumenty przedstawione przez Klienta nie zostały {zastrzeżone|oznaczone jako utracone lub skradzione}."
+            podkroki:
+              - tekst: "Wyszukaj numer i serię dokumentu tożsamości w rejestrze dokumentów zastrzeżonych; wynik dodatni oznacza, że dokumentu nie wolno przyjąć."
+              - tekst: "W razie trafienia nie informuj Klienta o szczegółach wyniku; zatrzymaj sprawę i niezwłocznie powiadom komórkę „{{fakt:jednostka.bezpieczenstwo}}”."
+          - tekst: "Wykonaj weryfikację pod kątem środków bezpieczeństwa finansowego."
+            podkroki:
+              - tekst: "Zweryfikuj dane mocodawcy i pełnomocnika z listami sankcyjnymi i wykazem osób zajmujących eksponowane stanowiska polityczne w module KYC-PRZYKŁAD."
+              - tekst: "Gdy wynik wskazuje na podwyższone ryzyko, nie rejestruj pełnomocnictwa przed uzyskaniem zgody osoby pełniącej funkcję „{{fakt:pelnomocnictwo.jednostka.aml}}”."
+
+  - id: procedura-pelnomocnictwa-weryfikacja-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "Gdy dyspozycję składa pełnomocnik, a mocodawca nie jest obecny, {potwierdź|zweryfikuj} dyspozycję bezpośrednio z mocodawcą."
+            podkroki:
+              - tekst: "Dla wypłat gotówkowych i przelewów powyżej {{fakt:pelnomocnictwo.limit.wyplata-bez-potwierdzenia}} skontaktuj się z mocodawcą pod numerem telefonu zapisanym w systemie, a nie wskazanym przez pełnomocnika."
+              - tekst: "Przed rozmową przeprowadź uwierzytelnienie mocodawcy zgodnie z zasadami obowiązującymi dla Infolinii; nie ujawniaj jego danych osobie trzeciej."
+              - tekst: "Gdy mocodawca nie odpowiada lub nie potwierdza dyspozycji, odmów jej wykonania i odnotuj fakt w karcie weryfikacji."
+          - tekst: "Zapisz w systemie datę, godzinę i wynik potwierdzenia oraz imię i nazwisko pracownika, który je przeprowadził."
+
+  - id: procedura-pelnomocnictwa-weryfikacja-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "Przy {każdej dyspozycji|każdej czynności} pełnomocnika {sprawdź|zweryfikuj} jego umocowanie, nawet jeżeli pełnomocnictwo zostało wcześniej zarejestrowane."
+            podkroki:
+              - tekst: "Wyświetl w module pełnomocnictw zakres, limity i okres obowiązywania; upewnij się, że status pełnomocnictwa to „aktywne”."
+              - tekst: "Porównaj podpis na dyspozycji papierowej z wzorem podpisu zapisanym w systemie, zwracając uwagę na kształt liter, nacisk, tempo i ciągłość linii."
+              - tekst: "Jeżeli dyspozycja wykracza poza zakres pełnomocnictwa, odmów jej wykonania i poinformuj pełnomocnika, że o rozszerzenie umocowania musi wystąpić mocodawca."
+          - tekst: "Gdy wartość dyspozycji przekracza {{fakt:pelnomocnictwo.limit.druga-weryfikacja}}, przekaż ją do zatwierdzenia kierownikowi placówki przed realizacją."
+
+  - id: procedura-pelnomocnictwa-weryfikacja-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "W przypadku pełnomocnika lub mocodawcy będącego cudzoziemcem {zastosuj|stosuj} dodatkowe zasady."
+            podkroki:
+              - tekst: "Jako dokument tożsamości przyjmuj paszport albo — dla obywateli państw Unii Europejskiej — dowód osobisty; dla pozostałych osób dodatkowo dokument potwierdzający legalność pobytu."
+              - tekst: "Gdy dokument sporządzono w obcym alfabecie, zapisz dane w transkrypcji łacińskiej zgodnej z zapisem w paszporcie i dołącz tłumaczenie danych na język polski."
+              - tekst: "Odnotuj państwo pochodzenia i obywatelstwo w karcie weryfikacji; dla państw wskazanych przez komórkę „{{fakt:jednostka.zgodnosc}}” jako wysokiego ryzyka przekaż sprawę do oceny osoby pełniącej funkcję „{{fakt:pelnomocnictwo.jednostka.aml}}”."
+          - tekst: "Nie wymagaj od pełnomocnika znajomości języka polskiego; zapewnij, w razie potrzeby, udział tłumacza wskazanego przez Klienta, zachowując pisemne oświadczenie tłumacza o zachowaniu poufności."
+
+  - id: procedura-pelnomocnictwa-weryfikacja-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "Porównując podpisy, {postępuj zgodnie z poniższymi zasadami|stosuj się do poniższych zasad}."
+            podkroki:
+              - tekst: "Zawsze używaj wzoru podpisu z karty F-PEŁ-02 zapisanej w systemie, nie zaś podpisu z dokumentu tożsamości."
+              - tekst: "Nie odrzucaj dyspozycji wyłącznie dlatego, że podpis różni się nieznacznie od wzoru; w takim przypadku poproś o ponowne złożenie podpisu w Twojej obecności."
+              - tekst: "Gdy rozbieżność jest istotna, a pełnomocnik jej nie wyjaśnia, wstrzymaj dyspozycję i zgłoś sprawę kierownikowi placówki."
+          - tekst: "Dyspozycje przesłane pocztą lub kurierem realizuj wyłącznie po potwierdzeniu podpisu notarialnie albo po telefonicznym potwierdzeniu z mocodawcą."
+
+  - id: procedura-pelnomocnictwa-notarialne-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-notarialne
+    elementy:
+      - kroki:
+          - tekst: "Przy pełnomocnictwie w formie aktu notarialnego lub z podpisem poświadczonym notarialnie {sprawdź|zbadaj} następujące elementy dokumentu."
+            podkroki:
+              - tekst: "Oryginał, wypis lub poświadczoną notarialnie kopię z oznaczeniem, że jest zgodna z oryginałem; zwykłej kopii nie przyjmuj."
+              - tekst: "Numer repertorium, datę sporządzenia aktu, imię i nazwisko notariusza oraz siedzibę kancelarii."
+              - tekst: "Pieczęć i podpis notariusza oraz wzmianki o sprawdzeniu tożsamości stron."
+          - tekst: "Ustal, czy pełnomocnictwo notarialne obejmuje czynności, do których ma zostać użyte."
+            podkroki:
+              - tekst: "Sprawdź, czy dokument wymienia z nazwy rodzaj czynności (np. dysponowanie rachunkiem, zawarcie umowy kredytu), a nie ogranicza się do określenia „reprezentowanie mocodawcy we wszystkich sprawach”."
+              - tekst: "Jeżeli wymagana jest forma aktu notarialnego (kredyt hipoteczny, zabezpieczenia), potwierdź, że dokument został sporządzony w tej formie, a nie jedynie z poświadczonym podpisem."
+          - tekst: "Zeskanuj dokument w całości i wprowadź do systemu {numer|dane} notariusza oraz datę aktu; oryginał zwróć Klientowi po sporządzeniu poświadczonej kopii."
+
+  - id: procedura-pelnomocnictwa-zagraniczne-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Przyjmując pełnomocnictwo sporządzone za granicą, ustal państwo, w którym zostało sporządzone, i formę jego uwierzytelnienia."
+            podkroki:
+              - tekst: "Dla państw będących stronami konwencji haskiej wymagaj apostille umieszczonego na dokumencie lub na odrębnej karcie trwale z nim połączonej."
+              - tekst: "Dla państw niebędących stronami konwencji wymagaj legalizacji dokonanej przez polski organ konsularny, chyba że dwustronna umowa o pomocy prawnej stanowi inaczej."
+              - tekst: "Gdy pełnomocnictwo sporządzono przed polskim konsulem, traktuj je jak dokument krajowy poświadczony notarialnie i dołącz zaświadczenie konsula o czynności."
+          - tekst: "Sprawdź, czy dokument został przetłumaczony na język polski przez tłumacza przysięgłego."
+            podkroki:
+              - tekst: "Tłumaczenie przysięgłe musi obejmować całość dokumentu, w tym apostille, pieczęcie i klauzule; tłumaczenie częściowe odrzuć."
+              - tekst: "Sprawdź, czy tłumaczenie zawiera numer w repertorium tłumacza, pieczęć, miejsce i datę sporządzenia; jeżeli tłumaczenie sporządzono za granicą, skieruj sprawę do komórki „{{fakt:pelnomocnictwo.jednostka.weryfikacja}}”."
+          - tekst: "Przekaż komplet dokumentów do komórki „{{fakt:pelnomocnictwo.jednostka.weryfikacja}}” najpóźniej {{fakt:pelnomocnictwo.termin.przekazanie-do-opinii}}, wraz z kartą weryfikacji i skanami."
+          - tekst: "Poinformuj Klienta, że weryfikacja pełnomocnictwa zagranicznego trwa do {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}} od dnia przedstawienia kompletu dokumentów oraz że do czasu jej zakończenia pełnomocnik nie może składać dyspozycji."
+          - tekst: "Po otrzymaniu opinii komórki „{{fakt:jednostka.prawny}}”, wydanej w terminie {{fakt:pelnomocnictwo.termin.opinia-prawna}}, zarejestruj pełnomocnictwo w systemie albo poinformuj Klienta o odmowie wraz z jej uzasadnieniem."
+
+  - id: procedura-pelnomocnictwa-zagraniczne-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Dla dokumentów starszych niż {{fakt:pelnomocnictwo.okres.wiek-dokumentu-zagranicznego}} {poproś o dodatkowe potwierdzenie|wymagaj dodatkowego potwierdzenia} aktualności umocowania."
+            podkroki:
+              - tekst: "Poproś mocodawcę o pisemne oświadczenie, że pełnomocnictwo nie zostało odwołane i nadal wyraża jego wolę; oświadczenie powinno mieć podpis poświadczony w trybie właściwym dla pełnomocnictwa."
+              - tekst: "Gdy mocodawca przebywa za granicą, dopuszczalne jest poświadczenie podpisu przez polski urząd konsularny albo notariusza w państwie pobytu, z apostille."
+          - tekst: "Niezależnie od wieku dokumentu zastrzeż w systemie, że pełnomocnik ma dostęp do środków w ograniczonym zakresie do chwili zakończenia weryfikacji."
+
+  - id: procedura-pelnomocnictwa-zagraniczne-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli dokument pochodzi z państwa, z którego Bank nie ma ustalonej praktyki przyjmowania pełnomocnictw, {zasięgnij opinii|uzyskaj opinię} komórki „{{fakt:jednostka.prawny}}” przed jakąkolwiek odpowiedzią Klientowi."
+            podkroki:
+              - tekst: "Prześlij skan dokumentu, tłumaczenie przysięgłe i wyniki weryfikacji formalnej przez formularz zgłoszeniowy w systemie obiegu dokumentów."
+              - tekst: "Zapytaj Klienta, w jakim celu pełnomocnictwo ma być użyte i czy środki mają być przekazywane poza Polskę."
+              - tekst: "Po otrzymaniu opinii wprowadź jej numer do karty weryfikacji; brak opinii oznacza brak podstawy do wykonywania dyspozycji."
+          - tekst: "Nie zwracaj się do Klienta z propozycją „obejścia” wymogów formalnych, w szczególności z propozycją zastąpienia pełnomocnictwa innym dokumentem, jeżeli nie przewiduje tego procedura."
+
+  - id: procedura-pelnomocnictwa-zagraniczne-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Gdy pełnomocnictwo zostało sporządzone w języku obcym i w języku polskim w formie dwujęzycznej, {sprawdź|zbadaj} zgodność obu wersji."
+            podkroki:
+              - tekst: "Porównaj treść w zakresie nazwisk, dat, zakresu umocowania i limitów kwotowych; rozbieżności zgłoś komórce „{{fakt:pelnomocnictwo.jednostka.weryfikacja}}”."
+              - tekst: "W przypadku różnic znaczeniowych jako wiążącą przyjmij wersję w języku, w którym sporządzono oryginał, jeżeli tłumaczenie przysięgłe potwierdza jej treść."
+          - tekst: "Zwróć uwagę na wzmianki o prawie właściwym; jeżeli pełnomocnictwo podlega prawu obcemu, ocenę jego skuteczności zlecaj komórce „{{fakt:jednostka.prawny}}”."

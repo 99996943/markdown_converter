@@ -1,0 +1,222 @@
+bloki:
+  - id: procedura-pelnomocnictwa-firmy-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-firmy
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Określ} sposób reprezentacji Klienta firmowego na podstawie aktualnych dokumentów rejestrowych."
+            podkroki:
+              - tekst: "Wymagaj odpisu z Krajowego Rejestru Sądowego lub zaświadczenia o wpisie do Centralnej Ewidencji i Informacji o Działalności Gospodarczej nie starszego niż {{fakt:termin.firma.aktualnosc-odpisu}}; gdy to możliwe, pobierz dane bezpośrednio z rejestru publicznego i dołącz wydruk do akt."
+              - tekst: "Zapoznaj się z umową spółki lub statutem i ustal, czy sposób reprezentacji jest samodzielny, czy łączny, a także czy w organie obowiązuje zakaz zastępowania."
+              - tekst: "Porównaj dane osób wskazanych w rejestrze z danymi w systemie i okazanymi dokumentami tożsamości."
+          - tekst: "Rozróżnij umocowanie wynikające z organu od umocowania wynikającego z pełnomocnictwa."
+            podkroki:
+              - tekst: "Członków zarządu, wspólników uprawnionych do reprezentacji i inne osoby wskazane w rejestrze traktuj jako osoby uprawnione do reprezentacji; ich uprawnień nie rejestruj jako pełnomocnictwa."
+              - tekst: "Pełnomocnictwo udzielone przez osoby uprawnione do reprezentacji przyjmuj na zasadach ogólnych, z zachowaniem sposobu reprezentacji; pełnomocnictwo podpisane przez jedną osobę w spółce z reprezentacją łączną jest nieważne."
+              - tekst: "Sprawdź, czy osoba podpisująca pełnomocnictwo była uprawniona w dniu jego sporządzenia."
+          - tekst: "Przy {prokurze|umocowaniu prokurenta} {sprawdź|zweryfikuj} jej wpis do rejestru przedsiębiorców."
+            podkroki:
+              - tekst: "Prokura podlega ujawnieniu w rejestrze przedsiębiorców; bez aktualnego wpisu nie przyjmuj jej jako podstawy dyspozycji, nawet jeżeli Klient przedstawia uchwałę o jej udzieleniu, i skonsultuj sprawę z komórką „{{fakt:jednostka.prawny}}”."
+              - tekst: "Ustal rodzaj prokury: samoistna, łączna (prokurent działa wraz z drugim prokurentem lub członkiem zarządu) albo oddziałowa, ograniczona do oddziału przedsiębiorstwa."
+              - tekst: "Pamiętaj, że prokurent nie może zbywać przedsiębiorstwa, oddawać go do czasowego korzystania ani zbywać i obciążać nieruchomości bez odrębnego pełnomocnictwa do takiej czynności."
+          - tekst: "{Zarejestruj|Zapisz} w systemie karty wzorów podpisów osób reprezentujących Klienta i prokurentów."
+            podkroki:
+              - tekst: "Każda osoba składa wzór podpisu na karcie F-PEŁ-02; karty dotyczące Klienta firmowego powiąż w systemie z numerem rachunku i ze sposobem reprezentacji."
+              - tekst: "Dyspozycje wymagające autoryzacji łącznej przyjmuj do realizacji dopiero po podpisaniu przez wszystkie wymagane osoby; dyspozycję niepełną w terminie {{fakt:termin.firma.autoryzacja-laczna}} odrzuć."
+          - tekst: "Poinformuj Klienta o obowiązku aktualizacji dokumentów."
+            podkroki:
+              - tekst: "Wyjaśnij, że o każdej zmianie składu organów lub sposobu reprezentacji Klient ma obowiązek zawiadomić Bank w terminie {{fakt:termin.firma.aktualizacja-danych}} od dnia zmiany; zmiana wywiera skutek od dnia otrzymania zawiadomienia wraz z dokumentami."
+              - tekst: "Poinformuj, że Bank weryfikuje dokumenty w terminie {{fakt:termin.firma.weryfikacja-dokumentow}} od dnia ich otrzymania i do tego czasu opiera się na dotychczasowych."
+
+  - id: procedura-pelnomocnictwa-firmy-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "Przy obsłudze osób fizycznych prowadzących jednoosobową działalność gospodarczą {stosuj|zastosuj} uproszczone zasady."
+            podkroki:
+              - tekst: "Sprawdź w Centralnej Ewidencji i Informacji o Działalności Gospodarczej status wpisu: czynna, zawieszona, wykreślona; w razie zawieszenia działalności pełnomocnik nie może dokonywać czynności wykraczających poza zachowanie majątku."
+              - tekst: "Pełnomocnictwo udzielone przez przedsiębiorcę może być ogólne w sprawach firmy, ale do dysponowania rachunkiem wymaga wyraźnego wskazania czynności bankowych."
+              - tekst: "Prokurę przyjmuj, jeżeli przedsiębiorca jest wpisany do Centralnej Ewidencji i Informacji o Działalności Gospodarczej i ujawniono ją we wpisie."
+          - tekst: "Przy spółce cywilnej zbadaj, czy pełnomocnictwo zostało udzielone przez wszystkich wspólników albo przez jednego z nich na podstawie umowy spółki."
+
+  - id: procedura-pelnomocnictwa-firmy-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "Dla Klientów, którzy nie podlegają wpisowi do rejestru przedsiębiorców (stowarzyszeń, fundacji, wspólnot mieszkaniowych, związków wyznaniowych), zbierz dokumenty właściwe dla ich formy prawnej."
+            podkroki:
+              - tekst: "Odpis z odpowiedniego rejestru sądowego lub inny dokument potwierdzający istnienie podmiotu, nie starszy niż {{fakt:termin.firma.aktualnosc-odpisu}}."
+              - tekst: "Statut lub umowę, uchwałę o wyborze organu, a w przypadku wspólnot mieszkaniowych także uchwałę właścicieli lokali o wyborze zarządu lub zarządcy."
+              - tekst: "Dokumenty tożsamości osób reprezentujących oraz ich wzory podpisów."
+          - tekst: "Gdy uchwała organu jest dokumentem wewnętrznym, zachowaj jej kopię potwierdzoną za zgodność z oryginałem przez osobę uprawnioną do reprezentacji; nie przyjmuj niepodpisanych projektów uchwał."
+
+  - id: procedura-pelnomocnictwa-firmy-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "Po zawiadomieniu o zmianie składu organów lub sposobu reprezentacji {przeprowadź|wykonaj} aktualizację uprawnień."
+            podkroki:
+              - tekst: "Zablokuj w systemie uprawnienia osób, których mandat wygasł, od dnia otrzymania zawiadomienia wraz z dokumentami; do tego dnia Bank może opierać się na dotychczasowych dokumentach."
+              - tekst: "Zbierz karty F-PEŁ-02 od nowych osób uprawnionych i zaktualizuj w module pełnomocnictw sposób reprezentacji."
+              - tekst: "Sprawdź, czy dotychczasowe pełnomocnictwa udzielone przez osoby, których mandat wygasł, pozostają ważne; pełnomocnictwo udzielone w imieniu spółki nie wygasa, jeżeli nie zostało odwołane."
+          - tekst: "Gdy aktualizacja dokumentów nie następuje w terminie, zgłoś sprawę doradcy Klienta oraz komórce „{{fakt:jednostka.zgodnosc}}” jako zagadnienie dotyczące aktualności danych identyfikacyjnych."
+
+  - id: procedura-pelnomocnictwa-firmy-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "W razie {otwarcia likwidacji|zmiany statusu Klienta} oraz ogłoszenia upadłości {zastosuj|stosuj} szczególne zasady postępowania z umocowaniami."
+            podkroki:
+              - tekst: "Wygaśnięcie prokury wskutek otwarcia likwidacji lub ogłoszenia upadłości odnotuj w systemie z dniem wskazanym w orzeczeniu lub uchwale, po sprawdzeniu wpisu w rejestrze."
+              - tekst: "Od dnia ogłoszenia upadłości dyspozycje składają wyłącznie syndyk lub nadzorca sądowy w granicach wynikających z orzeczenia; pełnomocnictwa udzielone przez upadłego traktuj jako wygasłe w zakresie majątku wchodzącego do masy."
+              - tekst: "Skonsultuj każdą wątpliwość z komórką „{{fakt:jednostka.prawny}}” przed realizacją dyspozycji."
+          - tekst: "Prokura nie wygasa wskutek śmierci przedsiębiorcy; w takim przypadku nie wyłączaj prokurenta bez wpisu o jej wygaśnięciu, lecz poinformuj komórkę „{{fakt:jednostka.prawny}}” i zablokuj dyspozycje do czasu wyjaśnienia sytuacji spadkowej."
+
+  - id: procedura-pelnomocnictwa-rejestracja-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-rejestracja
+    elementy:
+      - kroki:
+          - tekst: "{Zarejestruj|Wprowadź} pełnomocnictwo w module pełnomocnictw systemu CBS-PRZYKŁAD po zakończeniu weryfikacji."
+            podkroki:
+              - tekst: "Wprowadź dane mocodawcy i pełnomocnika, rodzaj pełnomocnictwa, datę jego sporządzenia, datę początku i — jeżeli występuje — datę końca ważności."
+              - tekst: "Wybierz produkty objęte umocowaniem; nie wybieraj wariantu „wszystkie produkty”, jeżeli dokument wymienia konkretne rachunki."
+              - tekst: "Dołącz skan pełnomocnictwa, kartę F-PEŁ-02 oraz kartę weryfikacji F-PEŁ-04."
+          - tekst: "Odwzoruj w systemie zakres i ograniczenia umocowania."
+            podkroki:
+              - tekst: "Ustaw uprawnienia: wpłaty, wypłaty, przelewy, zlecenia stałe, lokaty, karty, wyciągi, zmiana limitów, zamknięcie rachunku."
+              - tekst: "Ustaw limity kwotowe i terminowe wynikające z dokumentu; gdy dokument nie wskazuje limitu, dla wypłat gotówkowych i przelewów w placówce stosuj limit domyślny {{fakt:pelnomocnictwo.limit.wyplata-bez-potwierdzenia}}, powyżej którego wymagane jest potwierdzenie z mocodawcą."
+              - tekst: "Zaznacz w polu uwag szczególne zastrzeżenia, np. zakaz udzielania dalszych pełnomocnictw."
+          - tekst: "Poproś kierownika placówki lub drugiego pracownika o zatwierdzenie wpisu."
+            podkroki:
+              - tekst: "Osoba zatwierdzająca porównuje wpis w systemie z dokumentem; wpisu nie zatwierdza ta sama osoba, która go utworzyła."
+              - tekst: "Po zatwierdzeniu status pełnomocnictwa zmienia się na „aktywne”, a pełnomocnik może składać dyspozycje."
+          - tekst: "Poinformuj mocodawcę o rejestracji pełnomocnictwa w ciągu {{fakt:pelnomocnictwo.termin.zawiadomienie-mocodawcy}} od jej dokonania, za pośrednictwem bankowości elektronicznej, wiadomości SMS lub pisemnie, jeżeli mocodawca nie był obecny przy złożeniu dokumentu."
+          - tekst: "Ustaw w systemie przypomnienie o potwierdzeniu aktualności pełnomocnictw bezterminowych po upływie {{fakt:pelnomocnictwo.termin.potwierdzenie-aktualnosci}}."
+
+  - id: procedura-pelnomocnictwa-rejestracja-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-rejestracja
+    elementy:
+      - kroki:
+          - tekst: "Przy nadawaniu pełnomocnikowi dostępu do bankowości elektronicznej {zastosuj|stosuj} następujące zasady."
+            podkroki:
+              - tekst: "Dostęp nadaj tylko wtedy, gdy pełnomocnictwo wyraźnie obejmuje korzystanie z bankowości elektronicznej; samo upoważnienie do dysponowania rachunkiem w placówce tego nie wystarcza."
+              - tekst: "Pełnomocnik otrzymuje własny identyfikator i własne dane uwierzytelniające; nie wolno udostępniać mu danych mocodawcy."
+              - tekst: "Zakres uprawnień w bankowości elektronicznej nie może przekraczać zakresu pełnomocnictwa; limity pełnomocnika ustaw na poziomie nie wyższym niż limity z umocowania."
+          - tekst: "Odnotuj w systemie datę nadania dostępu i poinformuj mocodawcę o jego zakresie."
+
+  - id: procedura-pelnomocnictwa-rejestracja-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-rejestracja
+    elementy:
+      - kroki:
+          - tekst: "Pełnomocnictwo do lokat i kart {rejestruj|obsługuj} z uwzględnieniem ich specyfiki."
+            podkroki:
+              - tekst: "Pełnomocnik do rachunku nie otrzymuje karty głównej mocodawcy; karta może zostać wydana pełnomocnikowi imiennie wyłącznie, gdy pełnomocnictwo to przewiduje i mocodawca potwierdził zgodę."
+              - tekst: "Pełnomocnictwo do lokaty obejmuje zakładanie, zmianę warunków i wypłatę tylko wtedy, gdy dokument wymienia te czynności; w przeciwnym razie ogranicz uprawnienia do składania dyspozycji wypłaty odsetek."
+              - tekst: "Wypłaty z lokaty przed terminem dokonuj dopiero po potwierdzeniu dyspozycji z mocodawcą."
+          - tekst: "W razie odwołania pełnomocnictwa zablokuj kartę wydaną pełnomocnikowi niezwłocznie, a mocodawcę poinformuj o konieczności jej zwrotu."
+
+  - id: procedura-pelnomocnictwa-rejestracja-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-rejestracja
+    elementy:
+      - kroki:
+          - tekst: "Zmianę zakresu lub warunków pełnomocnictwa {wprowadź|odnotuj} wyłącznie na podstawie nowego dokumentu spełniającego wymogi formalne."
+            podkroki:
+              - tekst: "Nie zmieniaj zakresu na podstawie ustnego oświadczenia mocodawcy, z wyjątkiem ograniczenia umocowania lub jego odwołania, które mocodawca może złożyć w każdej formie określonej w procedurze odwołania."
+              - tekst: "Rozszerzenie umocowania traktuj jak nowe pełnomocnictwo i przeprowadź pełną procedurę przyjęcia i weryfikacji."
+              - tekst: "Dotychczasowy wpis zamknij w systemie z datą poprzedzającą dzień zmiany i zachowaj historię."
+          - tekst: "Poinformuj pełnomocnika o zmianie zakresu na piśmie lub w bankowości elektronicznej."
+
+  - id: procedura-pelnomocnictwa-wygasniecie-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "Przyjmij oświadczenie mocodawcy o odwołaniu pełnomocnictwa, niezależnie od formy, w jakiej zostało ono udzielone."
+            podkroki:
+              - tekst: "Oświadczenie przyjmuj w placówce, pisemnie, na formularzu F-PEŁ-03 albo za pośrednictwem bankowości elektronicznej po uwierzytelnieniu mocodawcy; oświadczenia telefonicznego nie przyjmuj bez uwierzytelnienia zgodnego z zasadami Infolinii."
+              - tekst: "Odwołanie jest skuteczne wobec Banku od chwili jego otrzymania; nie odmawiaj przyjęcia oświadczenia, nawet gdy pełnomocnictwo zawiera zastrzeżenie o nieodwołalności."
+              - tekst: "Zapisz datę i godzinę otrzymania oświadczenia w systemie."
+          - tekst: "Wprowadź odwołanie do modułu pełnomocnictw {{fakt:pelnomocnictwo.termin.odwolanie-wprowadzenie}}."
+            podkroki:
+              - tekst: "Zmień status pełnomocnictwa na „odwołane” i wyłącz uprawnienia pełnomocnika we wszystkich kanałach, w tym w bankowości elektronicznej i dla kart wydanych pełnomocnikowi."
+              - tekst: "Zablokuj dyspozycje zaplanowane przez pełnomocnika, takie jak przelewy z datą przyszłą i zlecenia stałe ustanowione przez niego, chyba że mocodawca zdecyduje inaczej."
+              - tekst: "Potwierdź mocodawcy wykonanie odwołania na papierze lub w bankowości elektronicznej."
+          - tekst: "Przyjmij wypowiedzenie pełnomocnictwa przez pełnomocnika i zawiadom o nim mocodawcę w ciągu {{fakt:pelnomocnictwo.termin.zawiadomienie-mocodawcy}}."
+          - tekst: "Wyłącz pełnomocnictwo w systemie w razie wygaśnięcia z innych przyczyn."
+            podkroki:
+              - tekst: "Upływ terminu, na który pełnomocnictwo zostało udzielone, oraz wykonanie czynności, do której udzielono pełnomocnictwa jednorazowego."
+              - tekst: "Śmierć pełnomocnika; wyłącz uprawnienia po otrzymaniu aktu zgonu lub innego wiarygodnego zawiadomienia."
+              - tekst: "Ustanie bytu prawnego mocodawcy będącego osobą prawną, potwierdzone wykreśleniem z rejestru."
+          - tekst: "Po otrzymaniu informacji o śmierci mocodawcy wstrzymaj uprawnienia pełnomocnika {{fakt:pelnomocnictwo.termin.blokada-po-zgonie}}."
+            podkroki:
+              - tekst: "Nie wykonuj dyspozycji pełnomocnika po powzięciu wiadomości o zgonie, chyba że pełnomocnictwo wyraźnie obejmuje czas po śmierci mocodawcy, a komórka „{{fakt:jednostka.prawny}}” potwierdziła jego skuteczność."
+              - tekst: "Zarejestruj akt zgonu, powiadom komórkę „{{fakt:jednostka.prawny}}” i poinformuj pełnomocnika, że dalsze czynności wymagają postanowienia o stwierdzeniu nabycia spadku lub dyspozycji na wypadek śmierci."
+
+  - id: procedura-pelnomocnictwa-wygasniecie-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy odwołanie składa osoba inna niż mocodawca, {zbadaj|oceń} jej umocowanie."
+            podkroki:
+              - tekst: "Opiekun prawny lub kurator mocodawcy musi przedstawić postanowienie sądu i wykazać, że odwołanie mieści się w zakresie jego władzy."
+              - tekst: "Spadkobiercy mocodawcy nie mają prawa odwołania pełnomocnictwa, które wygasło ze śmiercią mocodawcy; sprawę kieruj do komórki „{{fakt:jednostka.prawny}}”."
+              - tekst: "Pełnomocnik ustanowiony przez mocodawcę może odwołać inne pełnomocnictwo tylko wtedy, gdy jego pełnomocnictwo wyraźnie to przewiduje."
+          - tekst: "Odmowę przyjęcia oświadczenia uzasadnij pisemnie i zachowaj kopię w aktach."
+
+  - id: procedura-pelnomocnictwa-wygasniecie-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "W razie utraty zdolności mocodawcy do czynności prawnych {postępuj|działaj} ze szczególną ostrożnością."
+            podkroki:
+              - tekst: "Po otrzymaniu odpisu orzeczenia o ubezwłasnowolnieniu mocodawcy oceń wraz z komórką „{{fakt:jednostka.prawny}}”, czy pełnomocnictwo pozostaje skuteczne; do czasu oceny wstrzymaj dyspozycje pełnomocnika o znacznej wartości."
+              - tekst: "Gdy do Banku wpływają informacje o pogorszeniu stanu zdrowia mocodawcy, nie wykonuj dyspozycji wykraczających poza dotychczasowy wzorzec działania pełnomocnika bez potwierdzenia z mocodawcą lub jego opiekunem."
+          - tekst: "Zabezpiecz środki mocodawcy przed ryzykiem nadużyć, zgłaszając sprawę kierownikowi placówki i komórce „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: procedura-pelnomocnictwa-wygasniecie-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "Po odwołaniu pełnomocnictwa {rozliczaj|obsługuj} dyspozycje zlecone wcześniej według poniższych zasad."
+            podkroki:
+              - tekst: "Dyspozycje wykonane przed otrzymaniem oświadczenia o odwołaniu są skuteczne wobec mocodawcy."
+              - tekst: "Dyspozycje przyjęte, ale niewykonane (np. polecenia przelewu z odroczonym terminem) wstrzymaj i zapytaj mocodawcę o dalsze postępowanie."
+              - tekst: "Rozliczeń kartowych dokonanych przez pełnomocnika przed zablokowaniem karty nie cofaj; mocodawca odpowiada za nie na zasadach określonych w regulaminie karty."
+          - tekst: "Zachowaj dowody czasu otrzymania oświadczenia o odwołaniu, ponieważ od ich zapisu zależy przypisanie odpowiedzialności za dyspozycje dokonane w tym samym dniu."
+
+  - id: procedura-pelnomocnictwa-wygasniecie-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "Przy odwołaniu prokury {postępuj zgodnie z zasadami właściwymi|stosuj zasady właściwe} dla Klientów firmowych."
+            podkroki:
+              - tekst: "Odwołanie prokury może nastąpić w każdym czasie; w przypadku prokury udzielonej przez kilku przedsiębiorców wystarcza oświadczenie jednego z nich."
+              - tekst: "Skutek wobec Banku wywołuje już samo oświadczenie osób uprawnionych do reprezentacji, a wpis do rejestru ma charakter ujawniający; jeżeli wpis nie nastąpił, poinformuj komórkę „{{fakt:jednostka.prawny}}”."
+              - tekst: "Wyłącz uprawnienia prokurenta w systemie i zbierz od niego, jeżeli to możliwe, tokeny oraz inne narzędzia dostępu."
+          - tekst: "Zarejestruj rezygnację prokurenta z prokury i zawiadom o niej osoby uprawnione do reprezentacji Klienta."

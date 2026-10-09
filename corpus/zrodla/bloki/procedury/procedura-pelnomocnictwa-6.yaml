@@ -1,0 +1,105 @@
+bloki:
+  - id: procedura-pelnomocnictwa-zal-lista
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: lista-kontrolna
+    elementy:
+      - akapit: "Lista kontrolna przyjęcia i weryfikacji pełnomocnictwa. Pracownik wypełnia ją dla każdego pełnomocnictwa i dołącza do karty weryfikacji F-PEŁ-04; kierownik placówki potwierdza jej kompletność podpisem."
+      - lista-kontrolna:
+          forma: tabela
+          pozycje:
+            - "Ustalono rodzaj pełnomocnictwa (ogólne, rodzajowe, szczególne, jednorazowe, prokura)"
+            - "Oceniono formę dokumentu względem rodzaju czynności"
+            - "Sprawdzono, czy zakres umocowania obejmuje czynność, której dotyczy dyspozycja"
+            - "Zweryfikowano tożsamość mocodawcy na podstawie ważnego dokumentu"
+            - "Zweryfikowano tożsamość pełnomocnika na podstawie ważnego dokumentu"
+            - "Sprawdzono dokumenty w rejestrze dokumentów zastrzeżonych"
+            - "Pobrano wzór podpisu pełnomocnika na karcie F-PEŁ-02"
+            - "Przeprowadzono weryfikację w module KYC-PRZYKŁAD (sankcje, osoby zajmujące eksponowane stanowiska polityczne)"
+            - "Dla dokumentu zagranicznego sprawdzono apostille lub legalizację i tłumaczenie przysięgłe"
+            - "Dla Klienta firmowego sprawdzono aktualny odpis z rejestru oraz sposób reprezentacji"
+            - "Dla prokury sprawdzono ujawnienie w rejestrze i rodzaj prokury"
+            - "Przekazano sprawę do opinii, jeżeli dokument budzi wątpliwości"
+            - "Wprowadzono pełnomocnictwo do modułu pełnomocnictw wraz z zakresem i limitami"
+            - "Wpis zatwierdziła druga osoba"
+            - "Mocodawca został poinformowany o rejestracji i zasadach odwołania"
+            - "Skan dokumentów i karty zapisano w ARCH-DOK"
+            - "Oryginały przekazano do archiwum placówki"
+
+  - id: procedura-pelnomocnictwa-zal-rodzaje
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zalacznik-rodzaje
+    elementy:
+      - akapit: "Poniższa tabela zawiera zestawienie rodzajów pełnomocnictw przyjmowanych przez Bank, wymaganej formy oraz dodatkowych wymogów. W razie rozbieżności między tabelą a treścią procedury rozstrzyga treść procedury."
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj pełnomocnictwa"
+              waga: 2
+            - naglowek: "Czynności, których dotyczy"
+              waga: 3
+            - naglowek: "Wymagana forma"
+              waga: 3
+            - naglowek: "Dodatkowe wymogi"
+              waga: 3
+          wiersze:
+            - ["Pełnomocnictwo do rachunku osobistego", "Dysponowanie środkami, wpłaty, wypłaty, przelewy, wyciągi", "Pisemne, podpis w obecności pracownika albo poświadczony notarialnie", "Wzór podpisu pełnomocnika; opłata zgodnie z Taryfą: {{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}"]
+            - ["Pełnomocnictwo do lokaty lub rachunku oszczędnościowego", "Założenie, zmiana warunków, wypłata", "Pisemne, podpis w obecności pracownika albo poświadczony notarialnie", "Potwierdzenie z mocodawcą przy wypłacie przed terminem"]
+            - ["Pełnomocnictwo do karty kredytowej", "Zawarcie umowy, odbiór karty dodatkowej", "Podpis poświadczony notarialnie", "Zgoda mocodawcy na kartę dodatkową"]
+            - ["Pełnomocnictwo do kredytu hipotecznego", "Zawarcie umowy kredytu, ustanowienie hipoteki", "Akt notarialny", "Opinia komórki „{{fakt:jednostka.prawny}}” przy dokumentach niestandardowych"]
+            - ["Pełnomocnictwo jednorazowe", "Pojedyncza dyspozycja lub czynność", "Pisemne, ważne {{fakt:pelnomocnictwo.termin.jednorazowe-waznosc}} od daty sporządzenia", "Wygasa z chwilą wykonania czynności"]
+            - ["Pełnomocnictwo ogólne", "Czynności zwykłego zarządu", "Pisemne; do dysponowania rachunkiem wymaga wyraźnego wskazania czynności", "Ocena kierownika placówki"]
+            - ["Pełnomocnictwo zagraniczne", "Zgodnie z treścią dokumentu", "Dokument z apostille lub zalegalizowany, tłumaczenie przysięgłe", "Weryfikacja do {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}}"]
+            - ["Prokura", "Czynności sądowe i pozasądowe związane z prowadzeniem przedsiębiorstwa", "Ujawnienie w rejestrze przedsiębiorców", "Odpis nie starszy niż {{fakt:termin.firma.aktualnosc-odpisu}}; rodzaj prokury"]
+            - ["Umocowanie z rejestru lub umowy spółki", "Reprezentacja Klienta firmowego", "Wpis do rejestru, umowa spółki lub statut", "Karta wzorów podpisów; zawiadomienie o zmianie w {{fakt:termin.firma.aktualizacja-danych}}"]
+
+  - id: procedura-pelnomocnictwa-zal-formularze
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zalacznik-formularze
+    elementy:
+      - akapit: "Wykaz formularzy i systemów, z których korzysta się przy obsłudze pełnomocnictw. Aktualne wzory formularzy udostępnia {{fakt:jednostka.prawny}}."
+      - tabela:
+          kolumny:
+            - naglowek: "Oznaczenie"
+              waga: 2
+            - naglowek: "Nazwa"
+              waga: 3
+            - naglowek: "Przeznaczenie"
+              waga: 4
+            - naglowek: "Przechowywanie"
+              waga: 2
+          wiersze:
+            - ["F-PEŁ-01", "Formularz udzielenia pełnomocnictwa do rachunku", "Składanie pełnomocnictwa w obecności pracownika Banku", "ARCH-DOK i archiwum placówki"]
+            - ["F-PEŁ-02", "Karta wzorów podpisów", "Zapis podpisu pełnomocnika lub osoby reprezentującej", "ARCH-DOK; odnowienie co {{fakt:pelnomocnictwo.okres.wzor-podpisu}}"]
+            - ["F-PEŁ-03", "Oświadczenie o odwołaniu pełnomocnictwa", "Odwołanie lub wypowiedzenie umocowania", "ARCH-DOK"]
+            - ["F-PEŁ-04", "Karta weryfikacji pełnomocnictwa", "Dokumentowanie wyników sprawdzenia", "ARCH-DOK"]
+            - ["F-PEŁ-05", "Zgłoszenie podejrzanego pełnomocnictwa", "Przekazanie sprawy do komórki „{{fakt:jednostka.zgodnosc}}”", "Rejestr zgłoszeń; dostęp ograniczony"]
+            - ["CBS-PRZYKŁAD", "System centralny, moduł pełnomocnictw", "Rejestracja, zmiana i wyłączanie pełnomocnictw", "Baza produkcyjna Banku"]
+            - ["KYC-PRZYKŁAD", "Moduł oceny klienta", "Weryfikacja sankcyjna i ocena ryzyka", "Baza produkcyjna Banku"]
+            - ["ARCH-DOK", "Archiwum elektroniczne dokumentów", "Przechowywanie skanów i kart", "{{fakt:pelnomocnictwo.okres.archiwizacja-oryginalow}} od wygaśnięcia pełnomocnictwa"]
+
+  - id: procedura-pelnomocnictwa-zal-terminy
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zalacznik-dod
+    elementy:
+      - akapit: "Zestawienie terminów i limitów stosowanych w procedurze. Wartości mają charakter wiążący dla pracowników."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność"
+              waga: 4
+            - naglowek: "Termin lub limit"
+              waga: 3
+            - naglowek: "Odpowiedzialny"
+              waga: 3
+          wiersze:
+            - ["Weryfikacja pełnomocnictwa zagranicznego", "do {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}}", "{{fakt:pelnomocnictwo.jednostka.weryfikacja}}"]
+            - ["Opinia prawna w sprawie niestandardowej", "do {{fakt:pelnomocnictwo.termin.opinia-prawna}}", "{{fakt:jednostka.prawny}}"]
+            - ["Uzupełnienie braków przez Klienta", "{{fakt:pelnomocnictwo.termin.uzupelnienie-brakow}}", "Klient; pracownik placówki"]
+            - ["Wprowadzenie odwołania do systemu", "{{fakt:pelnomocnictwo.termin.odwolanie-wprowadzenie}}", "Pracownik placówki"]
+            - ["Zawiadomienie mocodawcy o rejestracji", "do {{fakt:pelnomocnictwo.termin.zawiadomienie-mocodawcy}}", "Pracownik placówki"]
+            - ["Zgłoszenie podejrzenia do komórki zgodności", "{{fakt:pelnomocnictwo.termin.zgloszenie-zgodnosc}}", "Pracownik placówki"]
+            - ["Potwierdzenie aktualności pełnomocnictw bezterminowych", "co {{fakt:pelnomocnictwo.termin.potwierdzenie-aktualnosci}}", "{{fakt:pelnomocnictwo.jednostka.weryfikacja}}"]
+            - ["Wypłata lub przelew wymagające potwierdzenia z mocodawcą", "powyżej {{fakt:pelnomocnictwo.limit.wyplata-bez-potwierdzenia}}", "Pracownik placówki"]
+            - ["Dyspozycja wymagająca zatwierdzenia kierownika", "powyżej {{fakt:pelnomocnictwo.limit.druga-weryfikacja}}", "Kierownik placówki"]
