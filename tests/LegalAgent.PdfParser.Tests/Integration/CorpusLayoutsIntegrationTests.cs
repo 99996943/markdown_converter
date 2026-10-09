@@ -913,6 +913,84 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("- 2\\. Karta jest wydawana na okres wskazany na awersie karty.\n", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087e: page 14 of REG-02 — a full left column with ragged line ends and a right column of only eight lines at the
+    /// top: the gutter is the empty band between the columns, so the chapter heading, the units and the clauses of the
+    /// left column are read as such, not as a table.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnPageWithAShortRightColumn_IsReadAsTwoColumns()
+    {
+        var b = new SyntheticPdfBuilder().Page().Page();
+        b.Text(183.6, 88.4, "10", 5.7);
+        b.Text(68.0, 92.0, "w rozmowie telefonicznej.", 9.5);
+        b.Text(313.0, 92.0, "2. Rejestracja karty wymaga potwierdzenia silnym", 9.5);
+        b.Text(331.0, 104.5, "uwierzytelnianiem. Podczas rejestracji dla karty", 9.5);
+        b.Text(331.0, 117.0, "tworzony jest odrębny identyfikator (token),", 9.5);
+        b.Text(50.0, 122.5, "Rozdział 6", 12.0, bold: true);
+        b.Text(331.0, 129.5, "który rzeczywisty numer karty nie jest", 9.5);
+        b.Text(50.0, 138.7, "Płatności zbliżeniowe i mobilne", 12.0, bold: true);
+        b.Text(331.0, 142.0, "przekazywany akceptantowi. Token jest", 9.5);
+        b.Text(331.0, 154.5, "powiązany z konkretnym urządzeniem; utrata", 9.5);
+        b.Text(154.6, 164.9, "§ 37.", 10.5, bold: true);
+        b.Text(331.0, 167.0, "urządzenia nie wymaga zastrzegania karty,", 9.5);
+        b.Text(331.0, 179.5, "jeżeli Użytkownik wyłączy token w bankowości", 9.5);
+        b.Text(50.0, 185.1, "1. Karta jest standardowo wyposażona w funkcję", 9.5);
+        b.Text(68.0, 197.6, "zbliżeniową, która umożliwia płatność po", 9.5);
+        b.Text(68.0, 210.1, "zbliżeniu karty do czytnika terminala bez", 9.5);
+        b.Text(68.0, 222.6, "konieczności wkładania jej do czytnika. Funkcja", 9.5);
+        b.Text(68.0, 235.1, "ta zostaje włączona po pierwszej transakcji", 9.5);
+        b.Text(68.0, 247.6, "z użyciem chipa i PIN-u.", 9.5);
+        b.Text(50.0, 263.1, "2. Pojedyncza transakcja zbliżeniowa może zostać", 9.5);
+        b.Text(68.0, 275.6, "wykonana bez wprowadzania PIN-u do kwoty", 9.5);
+        b.Text(68.0, 288.1, "100,00 zł. Bank wymaga potwierdzenia PIN-em,", 9.5);
+        b.Text(68.0, 300.6, "jeżeli:", 9.5);
+        b.Text(68.0, 316.1, "1) kwota transakcji przekracza wskazany próg;", 9.5);
+        b.Text(68.0, 331.6, "2) łączna kwota kolejnych transakcji", 9.5);
+        b.Text(86.0, 344.1, "zbliżeniowych bez PIN-u przekroczyła", 9.5);
+        b.Text(86.0, 356.6, "300,00 zł;", 9.5);
+        b.Text(68.0, 372.1, "3) liczba kolejnych transakcji zbliżeniowych", 9.5);
+        b.Text(86.0, 384.6, "bez PIN-u wyniosła pięć;", 9.5);
+        b.Text(68.0, 400.1, "4) terminal nie obsługuje transakcji", 9.5);
+        b.Text(86.0, 412.6, "zbliżeniowych w trybie bez PIN-u, np. poza", 9.5);
+        b.Text(86.0, 425.1, "granicami kraju.", 9.5);
+        b.Text(50.0, 440.6, "3. Użytkownik może wyłączyć lub ponownie", 9.5);
+        b.Text(68.0, 453.1, "włączyć funkcję zbliżeniową w bankowości", 9.5);
+        b.Text(68.0, 465.6, "elektronicznej albo w placówce. Zmiana nie", 9.5);
+        b.Text(68.0, 478.1, "wymaga wymiany karty. Wyłączenie funkcji nie", 9.5);
+        b.Text(68.0, 490.6, "ma wpływu na możliwość wykonywania", 9.5);
+        b.Text(68.0, 503.1, "transakcji z użyciem chipa i PIN-u lub paska", 9.5);
+        b.Text(68.0, 515.6, "magnetycznego.", 9.5);
+        b.Text(50.0, 531.1, "4. Użytkownik przechowuje kartę w sposób", 9.5);
+        b.Text(68.0, 543.6, "ograniczający ryzyko niezamierzonego zbliżenia", 9.5);
+        b.Text(68.0, 556.1, "do czytnika. Bank nie ponosi odpowiedzialności", 9.5);
+        b.Text(68.0, 568.6, "za transakcje zbliżeniowe, do których", 9.5);
+        b.Text(68.0, 581.1, "Użytkownik przyczynił się przez umyślne lub", 9.5);
+        b.Text(68.0, 593.6, "rażąco niedbałe udostępnienie karty.", 9.5);
+        b.Text(154.6, 618.1, "§ 38.", 10.5, bold: true);
+        b.Text(50.0, 638.2, "1. Użytkownik może zarejestrować kartę", 9.5);
+        b.Text(68.0, 650.8, "w portfelu mobilnym udostępnianym przez", 9.5);
+        b.Text(68.0, 663.2, "Bank lub przez dostawcę rozwiązania płatności", 9.5);
+        b.Text(68.0, 675.8, "mobilnych, współpracującego z Bankiem,", 9.5);
+        b.Text(68.0, 688.2, "i płacić za pomocą urządzenia mobilnego. Do", 9.5);
+        b.Text(68.0, 700.8, "jednego urządzenia można dodać karty", 9.5);
+        b.Text(68.0, 713.2, "w liczbie wskazanej w aplikacji, a do jednej karty", 9.5);
+        b.Text(68.0, 725.8, "— pięć urządzeń.", 9.5);
+        b.Text(50.0, 769.0, "10) Zasady bezpiecznego korzystania z kart Bank publikuje także na stronie https://bank.example w zakładce poświęconej", 8.0);
+        b.Text(64.6, 779.0, "bezpieczeństwu.", 8.0);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087e.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+        Assert.Contains("## Rozdział 6. Płatności zbliżeniowe i mobilne\n", md, StringComparison.Ordinal);
+        Assert.Contains("### § 37.", md, StringComparison.Ordinal);
+        Assert.Contains("- 1\\. Karta jest standardowo wyposażona w funkcję zbliżeniową,", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
