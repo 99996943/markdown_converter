@@ -233,7 +233,13 @@ public sealed class TableDetectionStage : IPipelineStage
             Row row = above[i];
             double gap = region[0].Line.Baseline - row.Line.Baseline;
             bool belongs = seedInGrid ? grid.Contains(row.Line.Box.CenterY) : gap <= rowGap;
-            if (row.IsMulti || gap <= 0 || !belongs)
+
+            // Above a bold column-name row, a line running across its column boundary is text, not a cell.
+            bool headerLine = !region[0].IsAllBold
+                || row.IsAllBold
+                || region[0].Cells.Count < 2
+                || row.Cells[^1].Box.Right <= region[0].Cells[1].Box.Left;
+            if (row.IsMulti || gap <= 0 || !belongs || !headerLine)
             {
                 break;
             }
@@ -279,7 +285,25 @@ public sealed class TableDetectionStage : IPipelineStage
         List<double> horizontals = HorizontalRulings(rulings, region);
         bool inGrid = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
         bool ruled = inGrid || horizontals.Count >= 2;
-        bool ambiguous = (!ruled && multi.Select(r => r.Cells.Count).Distinct().Count() > 1)
+        // Without rulings, a multi-cell line right below a row and empty in the first column continues that row (its
+        // service name and its mode both wrap); it neither starts a row nor makes the grid ambiguous.
+        var continuations = new HashSet<Row>();
+        if (!ruled)
+        {
+            for (int i = 1; i < region.Count; i++)
+            {
+                Row row = region[i];
+                if (row.IsMulti
+                    && row.Line.Baseline - region[i - 1].Line.Baseline <= rowGap
+                    && ColumnClustering.BandIndex(bands, row.Cells[0].Box.Left, tolerance) > 0
+                    && region.Count(r => r.IsMulti && ColumnClustering.BandIndex(bands, r.Cells[0].Box.Left, tolerance) == 0) >= 2)
+                {
+                    continuations.Add(row);
+                }
+            }
+        }
+
+        bool ambiguous = (!ruled && multi.Where(r => !continuations.Contains(r)).Select(r => r.Cells.Count).Distinct().Count() > 1)
             || multi.Any(r => r.Cells.Select(c => ColumnClustering.BandIndex(bands, c.Box.Left, tolerance)).Distinct().Count() < r.Cells.Count);
 
         var table = new Table(page.Number, bands, exceptions) { IsFallback = ambiguous };
@@ -317,7 +341,7 @@ public sealed class TableDetectionStage : IPipelineStage
         foreach (Row row in region)
         {
             bool continues = previous is not null
-                && !row.IsMulti
+                && (!row.IsMulti || continuations.Contains(row))
                 && row.Line.Baseline - previous.Line.Baseline <= rowGap
                 && row.Cells.All(c => ColumnClustering.Span(bands, c.Box.Left, c.Box.Right, tolerance) <= 1)
                 && !horizontals.Any(y => y > previous.Line.Box.CenterY && y < row.Line.Box.CenterY);
