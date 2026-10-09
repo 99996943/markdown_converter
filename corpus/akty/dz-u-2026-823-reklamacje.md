@@ -20,9 +20,7 @@ Poz. 823
   - 2\) art. 20 ustawy z dnia 25 czerwca 2025 r. o zmianie niektórych ustaw w związku z zapewnieniem operacyjnej odporności cyfrowej sektora finansowego oraz emitowaniem europejskich zielonych obligacji (Dz. U. poz. 1069), który stanowi: „Art. 20. Ustawa wchodzi w życie z dniem następującym po dniu ogłoszenia.”;
   - 3\) art. 2 i art. 3 ustawy z dnia 17 października 2025 r. o zmianie ustawy o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. poz. 1545), które stanowią: „Art. 2. Do reklamacji złożonych i nierozpatrzonych przed dniem wejścia w życie niniejszej ustawy stosuje się przepisy dotychczasowe.
 
-## Art. 3.
-
-Ustawa wchodzi w życie po upływie 3 miesięcy od dnia ogłoszenia.”.
+Art. 3. Ustawa wchodzi w życie po upływie 3 miesięcy od dnia ogłoszenia.”.
 
 Marszałek Sejmu: *W. Czarzasty*
 

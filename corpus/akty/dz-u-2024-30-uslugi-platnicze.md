@@ -44,14 +44,12 @@ oraz zmian wynikających z przepisów ogłoszonych przed dniem 5 grudnia 2023 r.
 
 2\. W przypadku postępowań, o których mowa w ust. 1, średnia całkowitej kwoty transakcji płatniczych nie może przekraczać najwyższej całkowitej kwoty transakcji płatniczych w danym miesiącu, zgłoszonej w 2023 r. na podstawie art. 117p ust. 1 pkt 1 lit. a ustawy zmienianej w art. 23.
 
-## Art. 63.
+Art. 63.
 
 - 1\. Do postępowań o wpis do rejestru małych instytucji płatniczych i biur usług płatniczych, wszczętych i niezakończonych przed dniem wejścia w życie niniejszej ustawy, stosuje się przepisy ustawy zmienianej w art. 23, w brzmieniu nadanym niniejszą ustawą.
 - 2\. Transferów, o których mowa w art. 117ha ust. 1 i art. 118 ust. 3c ustawy zmienianej w art. 23, małe instytucje płatnicze i biura usług płatniczych są obowiązane dokonywać najpóźniej z upływem 6 miesięcy od dnia wejścia w życie niniejszej ustawy.
 
-## Art. 64.
-
-Dotychczasowe przepisy wykonawcze wydane na podstawie art. 4a ust. 5 oraz art. 14d ustawy zmienianej w art. 23 zachowują moc do dnia wejścia w życie przepisów wykonawczych wydanych odpowiednio na podstawie art. 4a ust. 5 oraz art. 14d ustawy zmienianej w art. 23, w brzmieniu nadanym niniejszą ustawą, jednak nie dłużej niż przez 12 miesięcy od dnia wejścia w życie niniejszej ustawy.”
+Art. 64. Dotychczasowe przepisy wykonawcze wydane na podstawie art. 4a ust. 5 oraz art. 14d ustawy zmienianej w art. 23 zachowują moc do dnia wejścia w życie przepisów wykonawczych wydanych odpowiednio na podstawie art. 4a ust. 5 oraz art. 14d ustawy zmienianej w art. 23, w brzmieniu nadanym niniejszą ustawą, jednak nie dłużej niż przez 12 miesięcy od dnia wejścia w życie niniejszej ustawy.”
 
 „Art. 73. Ustawa wchodzi w życie po upływie 30 dni od dnia ogłoszenia, z wyjątkiem:
 

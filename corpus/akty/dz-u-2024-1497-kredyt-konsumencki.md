@@ -24,9 +24,7 @@ oraz zmian wynikających z przepisów ogłoszonych przed dniem 18 września 2024
   - 2\) art. 7 pkt 13, który wchodzi w życie z dniem 1 stycznia 2024 r.”;
   - 2\) art. 59 i art. 60 ustawy z dnia 14 kwietnia 2023 r. o konsumenckiej pożyczce lombardowej (Dz. U. poz. 1285), które stanowią: „Art. 59. Przepisów ustawy nie stosuje się do umów zawartych przed dniem jej wejścia w życie.
 
-## Art. 60.
-
-Ustawa wchodzi w życie po upływie 6 miesięcy od dnia ogłoszenia.”;
+Art. 60. Ustawa wchodzi w życie po upływie 6 miesięcy od dnia ogłoszenia.”;
 
 - 3\) art. 19 i art. 26 ustawy z dnia 7 lipca 2023 r. o zmianie niektórych ustaw w celu ograniczania niektórych skutków kradzieży tożsamości (Dz. U. poz. 1394), które stanowią: „Art. 19. 1. Jeżeli kredyt konsumencki udzielany jest w ramach umowy o charakterze ciągłym, regulującej zasady jego udzielania, zawartej przed dniem 1 czerwca 2024 r., do kredytów konsumenckich udzielanych w okresie obowiązywania tej umowy nie stosuje się przepisu art. 9b ustawy zmienianej w art. 9. 2. Podmiot udzielający kredytu konsumenckiego w ramach umów, o których mowa w ust. 1, informuje konsumentów o braku obowiązku weryfikacji zastrzeżenia numeru PESEL.” <!-- page: 2 --> „Art. 26. Ustawa wchodzi w życie z dniem następującym po dniu ogłoszenia, z wyjątkiem:
 - 1\) art. 8 pkt 1 i pkt 2 w zakresie art. 23a–23d, art. 23e ust. 1, ust. 2 pkt 1 lit. a i pkt 2 i ust. 3–5, art. 23g–23i, art. 23j ust. 1, ust. 2 pkt 1 lit. a i pkt 2 i ust. 3–6, art. 23k ust. 1 pkt 1 i ust. 2–6, art. 23l ust. 1 pkt 1 i ust. 2–5 i art. 23m–23p, które wchodzą w życie z dniem określonym w komunikacie, o którym mowa w art. 21 ust. 1 pkt 1;

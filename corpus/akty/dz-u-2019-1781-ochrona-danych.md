@@ -26,94 +26,48 @@ oraz zmian wynikających z przepisów ogłoszonych przed dniem 29 sierpnia 2019 
 
 wych.”.
 
-[^1]: Dodany przez art. 161 pkt 2 ustawy, o której mowa w odnośniku 3.
-
-## Art. 110.
-
-W ustawie z dnia 17 czerwca 1966 r. o postępowaniu egzekucyjnym w administracji (Dz. U. z 2017 r. poz. 1201, 1475, 1954 i 2491 oraz z 2018 r. poz. 138 i 398) wprowadza się następujące zmiany:
+Art. 110. W ustawie z dnia 17 czerwca 1966 r. o postępowaniu egzekucyjnym w administracji (Dz. U. z 2017 r. poz. 1201, 1475, 1954 i 2491 oraz z 2018 r. poz. 138 i 398) wprowadza się następujące zmiany:
 
 - 1\) użyte w art. 2 w § 1 w pkt 12 i w art. 20 w § 2 w różnym przypadku wyrazy „Generalny Inspektor Ochrony Danych Osobowych” zastępuje się użytymi w odpowiednim przypadku wyrazami „Prezes Urzędu Ochrony Danych Osobowych”;
 - 2\) w art. 18i § 12 otrzymuje brzmienie: „§ 12. Postępowanie w sprawie sprzeciwu nie wyłącza odpowiedzialności za naruszenie obowiązków wynikających z przepisów o ochronie danych osobowych.”.
 
-[^14]: a) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 5, 138, 398, 416, 650, 730, 756, 770 i 771. b) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2361 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 685, 723 i 864. c) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2018 r. poz. 3, 5, 106, 138, 771 i 848. d) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 106, 138, 650, 685 i 771. e) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2201 oraz z 2018 r. poz. 138, 398, 650, 730 i 912. f) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2486 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 723, 771 i 864.
-
 <!-- page: 2 -->
-## Art. 111.
-
-W ustawie z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2018 r. poz. 917) po art. 22[^2] dodaje się art. 22[^3] i art. 22[^4] w brzmieniu:
+Art. 111. W ustawie z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2018 r. poz. 917) po art. 22[^2] dodaje się art. 22[^3] i art. 22[^4] w brzmieniu:
 
 „Art. 22². § 1. Jeżeli jest to niezbędne do zapewnienia bezpieczeństwa pracowników lub ochrony mienia lub kontroli produkcji lub zachowania w tajemnicy informacji, których ujawnienie mogłoby narazić pracodawcę na szkodę, pracodawca może wprowadzić szczególny nadzór nad terenem zakładu pracy lub terenem wokół zakładu pracy w postaci środków technicznych umożliwiających rejestrację obrazu (monitoring).
 
-[^2]: Niniejsza ustawa służy stosowaniu rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
+§ 2. Monitoring nie obejmuje pomieszczeń sanitarnych, szatni, stołówek oraz palarni lub pomieszczeń udostępnianych zakładowej organizacji związkowej, chyba że stosowanie monitoringu w tych pomieszczeniach jest niezbędne do realizacji celu określonego w § 1 i nie naruszy to godności oraz innych dóbr osobistych pracownika, a także zasady wolności i niezależności związków zawodowych, w szczególności poprzez zastosowanie technik uniemożliwiających rozpoznanie przebywających w tych pomieszczeniach osób.
 
-[^3]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę Parlamentu Europejskiego i Rady (UE) 2016/680 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych i wykonywania kar, w sprawie swobodnego przepływu takich danych oraz uchylającą decyzję ramową Rady 2008/977/WSiSW.
+§ 3. Nagrania obrazu pracodawca przetwarza wyłącznie do celów, dla których zostały zebrane, i przechowuje przez okres nieprzekraczający 3 miesięcy od dnia nagrania.
 
-[^4]: Dodany przez art. 161 pkt 1 ustawy z dnia 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. U. poz. 730), która weszła w życie z dniem 4 maja 2019 r.
+§ 4. W przypadku, w którym nagrania obrazu stanowią dowód w postępowaniu prowadzonym na podstawie prawa lub pracodawca powziął wiadomość, iż mogą one stanowić dowód w postępowaniu, termin określony w § 3 ulega przedłużeniu do czasu prawomocnego zakończenia postępowania.
 
-## § 2.
+§ 5. Po upływie okresów, o których mowa w § 3 lub 4, uzyskane w wyniku monitoringu nagrania obrazu zawierające dane osobowe podlegają zniszczeniu, o ile przepisy odrębne nie stanowią inaczej.
 
-Monitoring nie obejmuje pomieszczeń sanitarnych, szatni, stołówek oraz palarni lub pomieszczeń udostępnianych zakładowej organizacji związkowej, chyba że stosowanie monitoringu w tych pomieszczeniach jest niezbędne do realizacji celu określonego w § 1 i nie naruszy to godności oraz innych dóbr osobistych pracownika, a także zasady wolności i niezależności związków zawodowych, w szczególności poprzez zastosowanie technik uniemożliwiających rozpoznanie przebywających w tych pomieszczeniach osób.
+§ 6. Cele, zakres oraz sposób zastosowania monitoringu ustala się w układzie zbiorowym pracy lub w regulaminie pracy albo w obwieszczeniu, jeżeli pracodawca nie jest objęty układem zbiorowym pracy lub nie jest obowiązany do ustalenia regulaminu pracy.
 
-## § 3.
+§ 7. Pracodawca informuje pracowników o wprowadzeniu monitoringu, w sposób przyjęty u danego pracodawcy, nie później niż 2 tygodnie przed jego uruchomieniem.
 
-Nagrania obrazu pracodawca przetwarza wyłącznie do celów, dla których zostały zebrane, i przechowuje przez okres nieprzekraczający 3 miesięcy od dnia nagrania.
+§ 8. Pracodawca przed dopuszczeniem pracownika do pracy przekazuje mu na piśmie informacje, o których mowa w § 6.
 
-## § 4.
+§ 9. W przypadku wprowadzenia monitoringu pracodawca oznacza pomieszczenia i teren monitorowany w sposób widoczny i czytelny, za pomocą odpowiednich znaków lub ogłoszeń dźwiękowych, nie później niż jeden dzień przed jego uruchomieniem.
 
-W przypadku, w którym nagrania obrazu stanowią dowód w postępowaniu prowadzonym na podstawie prawa lub pracodawca powziął wiadomość, iż mogą one stanowić dowód w postępowaniu, termin określony w § 3 ulega przedłużeniu do czasu prawomocnego zakończenia postępowania.
+§ 10. Przepis § 9 nie narusza przepisów art. 12 i art. 13 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1).
 
-## § 5.
+Art. 22³. § 1. Jeżeli jest to niezbędne do zapewnienia organizacji pracy umożliwiającej pełne wykorzystanie czasu pracy oraz właściwego użytkowania udostępnionych pracownikowi narzędzi pracy, pracodawca może wprowadzić kontrolę służbowej poczty elektronicznej pracownika (monitoring poczty elektronicznej).
 
-Po upływie okresów, o których mowa w § 3 lub 4, uzyskane w wyniku monitoringu nagrania obrazu zawierające dane osobowe podlegają zniszczeniu, o ile przepisy odrębne nie stanowią inaczej.
+§ 2. Monitoring poczty elektronicznej nie może naruszać tajemnicy korespondencji oraz innych dóbr osobistych pracownika.
 
-## § 6.
+§ 3. Przepisy art. 22[^3] § 6–10 stosuje się odpowiednio.
 
-Cele, zakres oraz sposób zastosowania monitoringu ustala się w układzie zbiorowym pracy lub w regulaminie pracy albo w obwieszczeniu, jeżeli pracodawca nie jest objęty układem zbiorowym pracy lub nie jest obowiązany do ustalenia regulaminu pracy.
+§ 4. Przepisy § 1–3 stosuje się odpowiednio do innych form monitoringu niż określone w § 1, jeśli ich zastosowanie jest konieczne do realizacji celów określonych w § 1.”.
 
-## § 7.
+Art. 112. W ustawie z dnia 31 lipca 1981 r. o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe (Dz. U. z 2017 r. poz. 1998 oraz z 2018 r. poz. 650) użyte w art. 2 w pkt 2 i 4 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
 
-Pracodawca informuje pracowników o wprowadzeniu monitoringu, w sposób przyjęty u danego pracodawcy, nie później niż 2 tygodnie przed jego uruchomieniem.
-
-## § 8.
-
-Pracodawca przed dopuszczeniem pracownika do pracy przekazuje mu na piśmie informacje, o których mowa w § 6.
-
-## § 9.
-
-W przypadku wprowadzenia monitoringu pracodawca oznacza pomieszczenia i teren monitorowany w sposób widoczny i czytelny, za pomocą odpowiednich znaków lub ogłoszeń dźwiękowych, nie później niż jeden dzień przed jego uruchomieniem.
-
-## § 10.
-
-Przepis § 9 nie narusza przepisów art. 12 i art. 13 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1).
-
-## Art. 22³.
-
-§ 1. Jeżeli jest to niezbędne do zapewnienia organizacji pracy umożliwiającej pełne wykorzystanie czasu pracy oraz właściwego użytkowania udostępnionych pracownikowi narzędzi pracy, pracodawca może wprowadzić kontrolę służbowej poczty elektronicznej pracownika (monitoring poczty elektronicznej).
-
-## § 2.
-
-Monitoring poczty elektronicznej nie może naruszać tajemnicy korespondencji oraz innych dóbr osobistych pracownika.
-
-## § 3.
-
-Przepisy art. 22[^3] § 6–10 stosuje się odpowiednio.
-
-## § 4.
-
-Przepisy § 1–3 stosuje się odpowiednio do innych form monitoringu niż określone w § 1, jeśli ich zastosowanie jest konieczne do realizacji celów określonych w § 1.”.
-
-## Art. 112.
-
-W ustawie z dnia 31 lipca 1981 r. o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe (Dz. U. z 2017 r. poz. 1998 oraz z 2018 r. poz. 650) użyte w art. 2 w pkt 2 i 4 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
-
-## Art. 113.
-
-W ustawie z dnia 16 września 1982 r. o pracownikach urzędów państwowych (Dz. U. z 2017 r. poz. 2142 i 2203 oraz z 2018 r. poz. 106 i 650) użyte w art. 1 w ust. 1 w pkt 13, w art. 36 w ust. 5 w pkt 1 oraz art. 48 w ust. 2, w różnym przypadku, wyrazy „Biuro Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się użytymi w odpowiednim przypadku wyrazami „Urząd Ochrony Danych Osobowych”.
+Art. 113. W ustawie z dnia 16 września 1982 r. o pracownikach urzędów państwowych (Dz. U. z 2017 r. poz. 2142 i 2203 oraz z 2018 r. poz. 106 i 650) użyte w art. 1 w ust. 1 w pkt 13, w art. 36 w ust. 5 w pkt 1 oraz art. 48 w ust. 2, w różnym przypadku, wyrazy „Biuro Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się użytymi w odpowiednim przypadku wyrazami „Urząd Ochrony Danych Osobowych”.
 
 <!-- page: 3 -->
-## Art. 114.
-
-W ustawie z dnia 8 marca 1990 r. o samorządzie gminnym (Dz. U. z 2018 r. poz. 994) wprowadza się następujące zmiany:
+Art. 114. W ustawie z dnia 8 marca 1990 r. o samorządzie gminnym (Dz. U. z 2018 r. poz. 994) wprowadza się następujące zmiany:
 
 - 1\) po art. 9 dodaje się art. 9a w brzmieniu: „Art. 9a. 1. Gmina w celu zapewnienia porządku publicznego i bezpieczeństwa obywateli oraz ochrony przeciwpożarowej i przeciwpowodziowej może stosować środki techniczne umożliwiające rejestrację obrazu (monitoring) w obszarze przestrzeni publicznej, za zgodą zarządzającego tym obszarem lub podmiotu posiadającego tytuł prawny do tego obszaru lub na terenie nieruchomości i w obiektach budowlanych stanowiących mienie gminy lub jednostek organizacyjnych gminy, a także na terenie wokół takich nieruchomości i obiektów budowlanych, jeżeli jest to konieczne do zapewnienia porządku publicznego i bezpieczeństwa obywateli lub ochrony przeciwpożarowej i przeciwpowodziowej.
 - 2\. Monitoring nie obejmuje pomieszczeń sanitarnych, szatni, stołówek, palarni oraz obiektów socjalnych.
@@ -123,51 +77,35 @@ W ustawie z dnia 8 marca 1990 r. o samorządzie gminnym (Dz. U. z 2018 r. poz. 9
 - 6\. Monitoring, w ramach którego dochodzi do przetwarzania danych osobowych, wymaga stosowania środków zabezpieczających przetwarzanie tych danych, w szczególności uniemożliwiających ich utratę lub bezprawne rozpowszechnienie, a także uniemożliwienie dostępu do danych osobom nieuprawnionym.”;
   - 2\) w art. 50 dotychczasową treść oznacza się jako ust. 1 i dodaje się ust. 2 w brzmieniu: „2. Ochrona mienia obejmuje w szczególności monitoring na terenie nieruchomości i w obiektach budowlanych stanowiących mienie gminy i na terenie wokół takich nieruchomości i obiektów budowlanych. Przepisy art. 9a ust. 2–6 stosuje się odpowiednio.”.
 
-## Art. 115.
-
-W ustawie z dnia 23 grudnia 1994 r. o Najwyższej Izbie Kontroli (Dz. U. z 2017 r. poz. 524) wprowadza się następujące zmiany:
+Art. 115. W ustawie z dnia 23 grudnia 1994 r. o Najwyższej Izbie Kontroli (Dz. U. z 2017 r. poz. 524) wprowadza się następujące zmiany:
 
 - 1\) użyte w art. 4 w ust. 1 i 2 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”;
 - 2\) w art. 29 w ust. 1 w pkt 2 lit. i otrzymuje brzmienie: „i) przetwarzania danych osobowych, z wyjątkiem danych ujawniających poglądy polityczne, przekonania religijne lub światopoglądowe, jak również danych genetycznych, o nałogach, o seksualności lub o orientacji seksualnej.”.
 
-## Art. 116.
+Art. 116. W ustawie z dnia 29 czerwca 1995 r. o statystyce publicznej (Dz. U. z 2018 r. poz. 997) użyte w art. 44 w ust. 2 w pkt 2 wyrazy „Generalnemu Inspektorowi Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesowi Urzędu Ochrony Danych Osobowych”.
 
-W ustawie z dnia 29 czerwca 1995 r. o statystyce publicznej (Dz. U. z 2018 r. poz. 997) użyte w art. 44 w ust. 2 w pkt 2 wyrazy „Generalnemu Inspektorowi Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesowi Urzędu Ochrony Danych Osobowych”.
-
-## Art. 117.
-
-W ustawie z dnia 10 kwietnia 1997 r. – Prawo energetyczne (Dz. U. z 2018 r. poz. 755, 650, 685 i 771) w art. 9c ust. 5a otrzymuje brzmienie:
+Art. 117. W ustawie z dnia 10 kwietnia 1997 r. – Prawo energetyczne (Dz. U. z 2018 r. poz. 755, 650, 685 i 771) w art. 9c ust. 5a otrzymuje brzmienie:
 
 „5a. Operatorzy systemów dystrybucyjnych instalujący u odbiorców końcowych przyłączonych do ich sieci liczniki zdalnego odczytu są obowiązani chronić dane pomiarowe dotyczące tych odbiorców na zasadach określonych w przepisach o ochronie danych osobowych.”.
 
-## Art. 118.
+Art. 118. W ustawie z dnia 21 sierpnia 1997 r. o gospodarce nieruchomościami (Dz. U. z 2018 r. poz. 121, 50 i 650) użyte w art. 60 w ust. 1 w pkt 1 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
 
-W ustawie z dnia 21 sierpnia 1997 r. o gospodarce nieruchomościami (Dz. U. z 2018 r. poz. 121, 50 i 650) użyte w art. 60 w ust. 1 w pkt 1 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
-
-## Art. 119.
-
-W ustawie z dnia 27 sierpnia 1997 r. o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych (Dz. U. z 2018 r. poz. 511) w art. 6d ust. 4b otrzymuje brzmienie:
+Art. 119. W ustawie z dnia 27 sierpnia 1997 r. o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych (Dz. U. z 2018 r. poz. 511) w art. 6d ust. 4b otrzymuje brzmienie:
 
 „4b. Podmioty wymienione w ust. 4a przetwarzają dane udostępnione z systemu w celu, w którym te dane zostały im udostępnione, na zasadach określonych w przepisach o ochronie danych osobowych.”.
 
 <!-- page: 4 -->
-## Art. 120.
-
-W ustawie z dnia 29 sierpnia 1997 r. – Ordynacja podatkowa (Dz. U. z 2018 r. poz. 800, 650, 723 i 771) wprowadza się następujące zmiany:
+Art. 120. W ustawie z dnia 29 sierpnia 1997 r. – Ordynacja podatkowa (Dz. U. z 2018 r. poz. 800, 650, 723 i 771) wprowadza się następujące zmiany:
 
 - 1\) w art. 14 § 4 otrzymuje brzmienie: „§ 4. Minister właściwy do spraw finansów publicznych zapewnia funkcjonowanie portalu podatkowego i jest administratorem danych podatników, płatników, inkasentów, ich następców prawnych oraz osób trzecich korzystających z tego portalu.”;
 - 2\) w art. 119zt pkt 4 otrzymuje brzmienie: „4) Prezesa Urzędu Ochrony Danych Osobowych – w zakresie niezbędnym do realizacji ustawowych zadań określonych w przepisach o ochronie danych osobowych;”;
 - 3\) w art. 119zzg wyrazy „Generalny Inspektor Ochrony Danych Osobowych” zastępuje się wyrazami „Prezes Urzędu Ochrony Danych Osobowych”.
 
-## Art. 121.
-
-W ustawie z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. z 2017 r. poz. 1876, z późn. zm.b)) w art. 105 w ust. 1 w pkt 2 lit. n otrzymuje brzmienie:
+Art. 121. W ustawie z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. z 2017 r. poz. 1876, z późn. zm.b)) w art. 105 w ust. 1 w pkt 2 lit. n otrzymuje brzmienie:
 
 „n) Prezesa Urzędu Ochrony Danych Osobowych w zakresie niezbędnym do realizacji ustawowych zadań,”.
 
-## Art. 122.
-
-W ustawie z dnia 5 czerwca 1998 r. o samorządzie województwa (Dz. U. z 2018 r. poz. 913) po art. 60 dodaje się art. 60a w brzmieniu:
+Art. 122. W ustawie z dnia 5 czerwca 1998 r. o samorządzie województwa (Dz. U. z 2018 r. poz. 913) po art. 60 dodaje się art. 60a w brzmieniu:
 
 „Art. 60a. 1. Obowiązkiem osób uczestniczących w zarządzaniu mieniem województwa jest zachowanie szczególnej staranności przy wykonywaniu zarządu zgodnie z przeznaczeniem tego mienia i jego ochrona.
 
@@ -178,9 +116,7 @@ W ustawie z dnia 5 czerwca 1998 r. o samorządzie województwa (Dz. U. z 2018 r.
 - 6\. Nieruchomości i obiekty budowlane objęte monitoringiem oznacza się w sposób widoczny i czytelny informacją o monitoringu, w szczególności za pomocą odpowiednich znaków.
 - 7\. Monitoring, w ramach którego dochodzi do przetwarzania danych osobowych, wymaga stosowania środków zabezpieczających przetwarzanie tych danych, w szczególności uniemożliwiających ich utratę lub bezprawne rozpowszechnienie, a także uniemożliwienie dostępu do danych osobom nieuprawnionym.”.
 
-## Art. 123.
-
-W ustawie z dnia 5 czerwca 1998 r. o samorządzie powiatowym (Dz. U. z 2018 r. poz. 995) wprowadza się następujące zmiany:
+Art. 123. W ustawie z dnia 5 czerwca 1998 r. o samorządzie powiatowym (Dz. U. z 2018 r. poz. 995) wprowadza się następujące zmiany:
 
 - 1\) po art. 4a dodaje się art. 4b w brzmieniu: „Art. 4b. 1. Powiat w celu zapewnienia porządku publicznego i bezpieczeństwa obywateli oraz ochrony przeciwpożarowej i przeciwpowodziowej może stosować środki techniczne umożliwiające rejestrację obrazu (monitoring) w obszarze przestrzeni publicznej, za zgodą zarządzającego tym obszarem lub podmiotu posiadającego tytuł prawny do tego obszaru lub na terenie nieruchomości i w obiektach budowlanych stanowiących mienie powiatu lub jednostek organizacyjnych powiatu, a także na terenie wokół takich nieruchomości i obiektów budowlanych, jeżeli jest to konieczne do zapewnienia porządku publicznego i bezpieczeństwa obywateli lub ochrony przeciwpożarowej i przeciwpowodziowej.
 - 2\. Monitoring nie obejmuje pomieszczeń sanitarnych, szatni, stołówek, palarni oraz obiektów socjalnych.
@@ -191,92 +127,62 @@ W ustawie z dnia 5 czerwca 1998 r. o samorządzie powiatowym (Dz. U. z 2018 r. p
 - 6\. Monitoring, w ramach którego dochodzi do przetwarzania danych osobowych, wymaga stosowania środków zabezpieczających przetwarzanie tych danych, w szczególności uniemożliwiających ich utratę lub bezprawne rozpowszechnienie, a także uniemożliwienie dostępu do danych osobom nieuprawnionym.”;
   - 2\) w art. 50 dotychczasową treść oznacza się jako ust. 1 i dodaje się ust. 2 w brzmieniu: „2. Ochrona mienia obejmuje w szczególności monitoring na terenie nieruchomości i w obiektach budowlanych stanowiących mienie powiatu i na terenie wokół takich nieruchomości i obiektów budowlanych. Przepisy art. 4b ust. 2–6 stosuje się odpowiednio.”.
 
-## Art. 124.
-
-W ustawie z dnia 18 grudnia 1998 r. o Instytucie Pamięci Narodowej – Komisji Ścigania Zbrodni przeciwko Narodowi Polskiemu (Dz. U. z 2016 r. poz. 1575 oraz z 2018 r. poz. 5 i 369) wprowadza się następujące zmiany:
+Art. 124. W ustawie z dnia 18 grudnia 1998 r. o Instytucie Pamięci Narodowej – Komisji Ścigania Zbrodni przeciwko Narodowi Polskiemu (Dz. U. z 2016 r. poz. 1575 oraz z 2018 r. poz. 5 i 369) wprowadza się następujące zmiany:
 
 - 1\) w art. 53f ust. 1 otrzymuje brzmienie: „1. W celu prowadzenia prac poszukiwawczych oraz identyfikacji tożsamości osób, o których mowa w art. 53b, w Instytucie Pamięci tworzy się Bazę Materiału Genetycznego, zwaną dalej „Bazą”, której administratorem jest Prezes Instytutu Pamięci.”;
 - 2\) w art. 53h ust. 3 otrzymuje brzmienie: „3. Podmiot, o którym mowa w ust. 1, przekazuje do Instytutu Pamięci informacje i dane, o których mowa w ust. 1, oraz posiadane próbki materiału genetycznego i biologicznego w przypadku zakończenia działalności związanej z identyfikacją tożsamości osób, o których mowa w art. 53b.”;
 - 3\) art. 71 otrzymuje brzmienie: „Art. 71. W działalności Instytutu Pamięci określonej w art. 1 przepisy rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1) stosuje się do prowadzenia Bazy.”.
 
-## Art. 125.
-
-W ustawie z dnia 9 listopada 2000 r. o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości (Dz. U. z 2018 r. poz. 110 i 650) w art. 6aa ust. 5 otrzymuje brzmienie:
+Art. 125. W ustawie z dnia 9 listopada 2000 r. o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości (Dz. U. z 2018 r. poz. 110 i 650) w art. 6aa ust. 5 otrzymuje brzmienie:
 
 „5. Agencja pełni funkcję administratora danych, o których mowa w ust. 2 i 3.”.
 
-## Art. 126.
-
-W ustawie z dnia 8 czerwca 2001 r. o zawodzie psychologa i samorządzie zawodowym psychologów (Dz. U. poz. 763 i 1798 oraz z 2009 r. poz. 120 i 753) w art. 13 ust. 2 otrzymuje brzmienie:
+Art. 126. W ustawie z dnia 8 czerwca 2001 r. o zawodzie psychologa i samorządzie zawodowym psychologów (Dz. U. poz. 763 i 1798 oraz z 2009 r. poz. 120 i 753) w art. 13 ust. 2 otrzymuje brzmienie:
 
 „2. Jeżeli wyniki badań mają służyć nie tylko do informacji klienta, stosuje się przepisy o ochronie danych osobowych.”.
 
-## Art. 127.
-
-W ustawie z dnia 27 lipca 2001 r. – Prawo o ustroju sądów powszechnych (Dz. U. z 2018 r. poz. 23, z późn. zm.c)) wprowadza się następujące zmiany:
+Art. 127. W ustawie z dnia 27 lipca 2001 r. – Prawo o ustroju sądów powszechnych (Dz. U. z 2018 r. poz. 23, z późn. zm.c)) wprowadza się następujące zmiany:
 
 - 1\) w art. 175a uchyla się § 2;
 - 2\) w art. 175c w § 1 uchyla się zdanie drugie.
 
-## Art. 128.
-
-W ustawie z dnia 28 listopada 2003 r. o świadczeniach rodzinnych (Dz. U. z 2017 r. poz. 1952 oraz z 2018 r. poz. 107, 138, 650, 730 i 912) w art. 23 ust. 9 otrzymuje brzmienie:
+Art. 128. W ustawie z dnia 28 listopada 2003 r. o świadczeniach rodzinnych (Dz. U. z 2017 r. poz. 1952 oraz z 2018 r. poz. 107, 138, 650, 730 i 912) w art. 23 ust. 9 otrzymuje brzmienie:
 
 „9. Informacje, o których mowa w ust. 8, mogą być przetwarzane przez ministra właściwego do spraw rodziny i wojewodę w celu monitorowania realizacji świadczeń rodzinnych oraz w celu umożliwienia organom właściwym i wojewodzie weryfikacji prawa do świadczeń rodzinnych oraz przez podmioty wymienione w ust. 10 w celu, w którym informacje te zostały im udostępnione, na zasadach określonych w przepisach o ochronie danych osobowych. Organy właściwe i wojewoda przekazują dane do rejestru centralnego, wykorzystując oprogramowanie, o którym mowa w ust. 7.”.
 
 <!-- page: 6 -->
-## Art. 129.
-
-W ustawie z dnia 27 maja 2004 r. o funduszach inwestycyjnych i zarządzaniu alternatywnymi funduszami inwestycyjnymi (Dz. U. z 2018 r. poz. 56, z późn. zm.d)) w art. 286b ust. 16 otrzymuje brzmienie:
+Art. 129. W ustawie z dnia 27 maja 2004 r. o funduszach inwestycyjnych i zarządzaniu alternatywnymi funduszami inwestycyjnymi (Dz. U. z 2018 r. poz. 56, z późn. zm.d)) w art. 286b ust. 16 otrzymuje brzmienie:
 
 „16. Komisja może przekazać organowi nadzoru państwa trzeciego informacje dotyczące sprawy indywidualnej prowadzonej przez Komisję, jeżeli spełnione są warunki, o których mowa w rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1) – w przypadku danych osobowych, oraz jeżeli ich przekazanie jest niezbędne dla realizacji zadań określonych ustawą. Komisja może w takim przypadku wyrazić zgodę na dalsze przekazanie tych informacji organowi nadzoru innego państwa trzeciego.”.
 
-## Art. 130.
+Art. 130. W ustawie z dnia 17 grudnia 2004 r. o odpowiedzialności za naruszenie dyscypliny finansów publicznych (Dz. U. z 2017 r. poz. 1311 i 2110) użyte w art. 47 w ust. 1 w pkt 11 i w art. 52 w pkt 8, w różnym przypadku, wyrazy „Generalny Inspektor Ochrony Danych Osobowych” zastępuje się użytymi w odpowiednim przypadku wyrazami „Prezes Urzędu Ochrony Danych Osobowych”.
 
-W ustawie z dnia 17 grudnia 2004 r. o odpowiedzialności za naruszenie dyscypliny finansów publicznych (Dz. U. z 2017 r. poz. 1311 i 2110) użyte w art. 47 w ust. 1 w pkt 11 i w art. 52 w pkt 8, w różnym przypadku, wyrazy „Generalny Inspektor Ochrony Danych Osobowych” zastępuje się użytymi w odpowiednim przypadku wyrazami „Prezes Urzędu Ochrony Danych Osobowych”.
-
-## Art. 131.
-
-W ustawie z dnia 17 lutego 2005 r. o informatyzacji działalności podmiotów realizujących zadania publiczne (Dz. U. z 2017 r. poz. 570) wprowadza się następujące zmiany:
+Art. 131. W ustawie z dnia 17 lutego 2005 r. o informatyzacji działalności podmiotów realizujących zadania publiczne (Dz. U. z 2017 r. poz. 570) wprowadza się następujące zmiany:
 
 - 1\) w art. 2 w ust. 4 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”;
 - 2\) w art. 4 pkt 1 otrzymuje brzmienie: „1) przepisów o ochronie danych osobowych;”;
 - 3\) w art. 19a ust. 2 otrzymuje brzmienie: „2. Minister właściwy do spraw informatyzacji jest administratorem danych użytkowników ePUAP.”.
 
-## Art. 132.
+Art. 132. W ustawie z dnia 27 lipca 2005 r. – Prawo o szkolnictwie wyższym (Dz. U. z 2017 r. poz. 2183, z późn. zm.e)) w art. 88 uchyla się ust. 5.
 
-W ustawie z dnia 27 lipca 2005 r. – Prawo o szkolnictwie wyższym (Dz. U. z 2017 r. poz. 2183, z późn. zm.e)) w art. 88 uchyla się ust. 5.
+Art. 133. W ustawie z dnia 18 października 2006 r. o ujawnianiu informacji o dokumentach organów bezpieczeństwa państwa z lat 1944–1990 oraz treści tych dokumentów (Dz. U. z 2017 r. poz. 2186 oraz z 2018 r. poz. 538, 650, 651 i 730) w art. 22 w ust. 1 w pkt 8c wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
 
-## Art. 133.
-
-W ustawie z dnia 18 października 2006 r. o ujawnianiu informacji o dokumentach organów bezpieczeństwa państwa z lat 1944–1990 oraz treści tych dokumentów (Dz. U. z 2017 r. poz. 2186 oraz z 2018 r. poz. 538, 650, 651 i 730) w art. 22 w ust. 1 w pkt 8c wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
-
-## Art. 134.
-
-W ustawie z dnia 7 września 2007 r. o pomocy osobom uprawnionym do alimentów (Dz. U. z 2018 r. poz. 554 i 650) w art. 15 ust. 8b otrzymuje brzmienie:
+Art. 134. W ustawie z dnia 7 września 2007 r. o pomocy osobom uprawnionym do alimentów (Dz. U. z 2018 r. poz. 554 i 650) w art. 15 ust. 8b otrzymuje brzmienie:
 
 „8b. Informacje zawarte w rejestrze centralnym, o którym mowa w ust. 8a, mogą być przetwarzane przez ministra właściwego do spraw rodziny i wojewodę w celu monitorowania realizacji świadczeń z funduszu alimentacyjnego oraz w celu umożliwienia organom właściwym dłużnika i organom właściwym wierzyciela weryfikacji prawa do świadczeń z funduszu alimentacyjnego oraz przez podmioty wymienione w ust. 8c w celu, w którym informacje te zostały im udostępnione, na zasadach określonych w przepisach o ochronie danych osobowych. Organy właściwe wierzyciela oraz organy właściwe dłużnika przekazują dane do rejestru centralnego, wykorzystując oprogramowanie, o którym mowa w ust. 8.”.
 
-## Art. 135.
+Art. 135. W ustawie z dnia 27 sierpnia 2009 r. o finansach publicznych (Dz. U. z 2017 r. poz. 2077 oraz z 2018 r. poz. 62) w art. 139 w ust. 2 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
 
-W ustawie z dnia 27 sierpnia 2009 r. o finansach publicznych (Dz. U. z 2017 r. poz. 2077 oraz z 2018 r. poz. 62) w art. 139 w ust. 2 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
-
-## Art. 136.
-
-W ustawie z dnia 5 listopada 2009 r. o spółdzielczych kasach oszczędnościowo-kredytowych (Dz. U. z 2017 r. poz. 2065, z późn. zm.f)) w art. 9f w ust. 1 pkt 18 otrzymuje brzmienie:
+Art. 136. W ustawie z dnia 5 listopada 2009 r. o spółdzielczych kasach oszczędnościowo-kredytowych (Dz. U. z 2017 r. poz. 2065, z późn. zm.f)) w art. 9f w ust. 1 pkt 18 otrzymuje brzmienie:
 
 „18) na żądanie Prezesa Urzędu Ochrony Danych Osobowych, w zakresie wykonywania przez niego zadań
 
 określonych w przepisach o ochronie danych osobowych;”.
 
 <!-- page: 7 -->
-## Art. 137.
+Art. 137. W ustawie z dnia 9 kwietnia 2010 r. o udostępnianiu informacji gospodarczych i wymianie danych gospodarczych (Dz. U. z 2018 r. poz. 470, 650, 723, 730 i 771) w art. 11 w ust. 2 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
 
-W ustawie z dnia 9 kwietnia 2010 r. o udostępnianiu informacji gospodarczych i wymianie danych gospodarczych (Dz. U. z 2018 r. poz. 470, 650, 723, 730 i 771) w art. 11 w ust. 2 wyrazy „Generalnego Inspektora Ochrony Danych Osobowych” zastępuje się wyrazami „Prezesa Urzędu Ochrony Danych Osobowych”.
-
-## Art. 138.
-
-W ustawie z dnia 9 kwietnia 2010 r. o Służbie Więziennej (Dz. U. z 2017 r. poz. 631 i 1321 oraz z 2018 r. poz. 138, 730 i 912) w art. 18 w ust. 2 pkt 6 otrzymuje brzmienie:
+Art. 138. W ustawie z dnia 9 kwietnia 2010 r. o Służbie Więziennej (Dz. U. z 2017 r. poz. 631 i 1321 oraz z 2018 r. poz. 138, 730 i 912) w art. 18 w ust. 2 pkt 6 otrzymuje brzmienie:
 
 | „6) | Prezes Urzędu Ochrony Danych Osobowych;”. |
 | --- | --- |
@@ -300,80 +206,56 @@ W ustawie z dnia 9 kwietnia 2010 r. o Służbie Więziennej (Dz. U. z 2017 r. po
 | Art. 143. W ustawie z dnia 14 grudnia 2012 r. o odpadach (Dz. U. z 2018 r. poz. 992) w art. 80 w ust. 1 pkt 3 otrzymuje brzmienie: |  |
 | „3) | zapewnia bezpieczeństwo przetwarzanych danych, informacji oraz dokumentów, które otrzymał w związku z prowadzeniem BDO, zgodnie z przepisami o ochronie danych osobowych.”. |
 
-## Art. 144.
-
-W ustawie z dnia 20 lutego 2015 r. o odnawialnych źródłach energii (Dz. U. z 2017 r. poz. 1148, 1213 i 1593 oraz z 2018 r. poz. 9 i 650) w art. 159 ust. 1 otrzymuje brzmienie:
+Art. 144. W ustawie z dnia 20 lutego 2015 r. o odnawialnych źródłach energii (Dz. U. z 2017 r. poz. 1148, 1213 i 1593 oraz z 2018 r. poz. 9 i 650) w art. 159 ust. 1 otrzymuje brzmienie:
 
 „1. Prezes UDT administruje i przetwarza dane zawarte w rejestrach, o których mowa w art. 158 ust. 1, zgodnie z przepisami o ochronie danych osobowych.”.
 
-## Art. 145.
-
-W ustawie z dnia 24 lipca 2015 r. – Prawo o zgromadzeniach (Dz. U. z 2018 r. poz. 408) w art. 15 ust. 3 otrzymuje brzmienie:
+Art. 145. W ustawie z dnia 24 lipca 2015 r. – Prawo o zgromadzeniach (Dz. U. z 2018 r. poz. 408) w art. 15 ust. 3 otrzymuje brzmienie:
 
 „3. Decyzję o zakazie zgromadzenia udostępnia się w Biuletynie Informacji Publicznej z uwzględnieniem przepisów o ochronie danych osobowych przez 3 miesiące od dnia jej wydania.”.
 
-## Art. 146.
-
-W ustawie z dnia 11 września 2015 r. o działalności ubezpieczeniowej i reasekuracyjnej (Dz. U. z 2018 r. poz. 999) w art. 35 w ust. 2 pkt 10 otrzymuje brzmienie:
+Art. 146. W ustawie z dnia 11 września 2015 r. o działalności ubezpieczeniowej i reasekuracyjnej (Dz. U. z 2018 r. poz. 999) w art. 35 w ust. 2 pkt 10 otrzymuje brzmienie:
 
 „10) Prezesa Urzędu Ochrony Danych Osobowych, w zakresie wykonywania przez niego zadań określonych
 
 w przepisach o ochronie danych osobowych;”.
 
-## Art. 147.
-
-W ustawie z dnia 25 września 2015 r. o zawodzie fizjoterapeuty (Dz. U. z 2018 r. poz. 505) w art. 12 ust. 9 otrzymuje brzmienie:
+Art. 147. W ustawie z dnia 25 września 2015 r. o zawodzie fizjoterapeuty (Dz. U. z 2018 r. poz. 505) w art. 12 ust. 9 otrzymuje brzmienie:
 
 „9. Postępowanie w sprawach określonych w ust. 1–7 jest poufne i odbywa się z zachowaniem przepisów o ochronie danych osobowych.”.
 
 <!-- page: 8 -->
-## Art. 148.
-
-W ustawie z dnia 9 października 2015 r. o produktach biobójczych (Dz. U. z 2018 r. poz. 122, 138 i 650) w art. 42 ust. 2 otrzymuje brzmienie:
+Art. 148. W ustawie z dnia 9 października 2015 r. o produktach biobójczych (Dz. U. z 2018 r. poz. 122, 138 i 650) w art. 42 ust. 2 otrzymuje brzmienie:
 
 „2. Raport oraz dane, o których mowa w ust. 1, nie mogą obejmować danych podlegających ochronie na podstawie przepisów o ochronie danych osobowych.”.
 
-## Art. 149.
-
-W ustawie z dnia 28 stycznia 2016 r. – Prawo o prokuraturze (Dz. U. z 2017 r. poz. 1767 oraz z 2018 r. poz. 5) wprowadza się następujące zmiany:
+Art. 149. W ustawie z dnia 28 stycznia 2016 r. – Prawo o prokuraturze (Dz. U. z 2017 r. poz. 1767 oraz z 2018 r. poz. 5) wprowadza się następujące zmiany:
 
 - 1\) w art. 13:
   - a\) § 5 otrzymuje brzmienie: „§ 5. Prokuratura Krajowa jest administratorem danych przetwarzanych w ogólnokrajowych systemach teleinformatycznych powszechnych jednostek organizacyjnych prokuratury.”,
   - b\) dodaje się § 6 i 7 w brzmieniu: „§ 6. Powszechne jednostki organizacyjne prokuratury są administratorami danych przetwarzanych w ramach realizowanych zadań, z wyłączeniem danych, o których mowa w § 5.
 
-## § 7.
-
-Do przetwarzania danych osobowych w postępowaniach lub systemach teleinformatycznych w ramach realizacji zadań, o których mowa w art. 2, przepisów art. 12–16, art. 18–22 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1) nie stosuje się.”;
+§ 7. Do przetwarzania danych osobowych w postępowaniach lub systemach teleinformatycznych w ramach realizacji zadań, o których mowa w art. 2, przepisów art. 12–16, art. 18–22 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1) nie stosuje się.”;
 
 - 2\) w art. 191 uchyla się § 2.
 
-## Art. 150.
-
-W ustawie z dnia 11 lutego 2016 r. o pomocy państwa w wychowywaniu dzieci (Dz. U. z 2017 r. poz. 1851 oraz z 2018 r. poz. 107, 138 i 650) w art. 14 ust. 3 otrzymuje brzmienie:
+Art. 150. W ustawie z dnia 11 lutego 2016 r. o pomocy państwa w wychowywaniu dzieci (Dz. U. z 2017 r. poz. 1851 oraz z 2018 r. poz. 107, 138 i 650) w art. 14 ust. 3 otrzymuje brzmienie:
 
 „3. Informacje, o których mowa w ust. 2, mogą być przetwarzane przez ministra właściwego do spraw rodziny i wojewodę w celu monitorowania realizacji świadczeń wychowawczych oraz w celu umożliwienia organom właściwym i wojewodom weryfikacji prawa do świadczeń wychowawczych oraz przez podmioty wymienione w ust. 4 w celu, w jakim informacje te zostały im udostępnione, na zasadach określonych w przepisach o ochronie danych osobowych. Organy właściwe i wojewodowie przekazują dane do rejestru centralnego, wykorzystując systemy teleinformatyczne, o których mowa w ust. 1.”.
 
-## Art. 151.
-
-W ustawie z dnia 25 lutego 2016 r. o ponownym wykorzystywaniu informacji sektora publicznego (Dz. U. poz. 352 oraz z 2017 r. poz. 60) w art. 7 ust. 2 otrzymuje brzmienie:
+Art. 151. W ustawie z dnia 25 lutego 2016 r. o ponownym wykorzystywaniu informacji sektora publicznego (Dz. U. poz. 352 oraz z 2017 r. poz. 60) w art. 7 ust. 2 otrzymuje brzmienie:
 
 „2. Przepisy ustawy nie naruszają przepisów o ochronie danych osobowych.”.
 
-## Art. 152.
-
-W ustawie z dnia 13 kwietnia 2016 r. o bezpieczeństwie obrotu prekursorami materiałów wybuchowych (Dz. U. z 2018 r. poz. 410) art. 9 otrzymuje brzmienie:
+Art. 152. W ustawie z dnia 13 kwietnia 2016 r. o bezpieczeństwie obrotu prekursorami materiałów wybuchowych (Dz. U. z 2018 r. poz. 410) art. 9 otrzymuje brzmienie:
 
 „Art. 9. Do danych osobowych zgromadzonych w systemie zgłaszania stosuje się przepisy o ochronie danych osobowych.”.
 
-## Art. 153.
-
-W ustawie z dnia 16 listopada 2016 r. o Krajowej Administracji Skarbowej (Dz. U. z 2018 r. poz. 508, 650 i 723) w art. 45 ust. 1 otrzymuje brzmienie:
+Art. 153. W ustawie z dnia 16 listopada 2016 r. o Krajowej Administracji Skarbowej (Dz. U. z 2018 r. poz. 508, 650 i 723) w art. 45 ust. 1 otrzymuje brzmienie:
 
 „1. Organy KAS, w celu realizacji ustawowych zadań w zakresie, o którym mowa w art. 2 ust. 1 pkt 1, 2, 6 i 8, mogą zbierać i wykorzystywać informacje, w tym dane osobowe, od osób prawnych, jednostek organizacyjnych niemających osobowości prawnej oraz osób fizycznych prowadzących działalność gospodarczą, o zdarzeniach mających bezpośredni wpływ na powstanie lub wysokość zobowiązania podatkowego lub należności celnych oraz przetwarzać je, a także występować do tych podmiotów o udostępnienie dokumentów zawierających informacje, w tym dane osobowe, także bez wiedzy i zgody osoby, której dane te dotyczą.”.
 
-## Art. 154.
-
-W ustawie z dnia 14 grudnia 2016 r. – Prawo oświatowe (Dz. U. z 2018 r. poz. 996) po art. 108 dodaje się art. 108a w brzmieniu:
+Art. 154. W ustawie z dnia 14 grudnia 2016 r. – Prawo oświatowe (Dz. U. z 2018 r. poz. 996) po art. 108 dodaje się art. 108a w brzmieniu:
 
 „Art. 108a. 1. Jeżeli jest to niezbędne do zapewnienia bezpieczeństwa uczniów i pracowników lub ochrony mienia dyrektor szkoły lub placówki, w uzgodnieniu z organem prowadzącym szkołę lub placówkę oraz po przeprowadzeniu konsultacji z radą pedagogiczną, radą rodziców i samorządem uczniowskim, może wprowadzić szczególny nadzór nad pomieszczeniami szkoły lub placówki lub terenem wokół szkoły lub placówki w postaci środków technicznych umożliwiających rejestrację obrazu (monitoring).
 
@@ -387,9 +269,7 @@ W ustawie z dnia 14 grudnia 2016 r. – Prawo oświatowe (Dz. U. z 2018 r. poz. 
 - 8\. W przypadku wprowadzenia monitoringu dyrektor szkoły lub placówki oznacza pomieszczenia i teren monitorowany w sposób widoczny i czytelny, za pomocą odpowiednich znaków lub ogłoszeń dźwiękowych, nie później niż dzień przed jego uruchomieniem.
 - 9\. Dyrektor szkoły lub placówki uzgadnia z organem prowadzącym szkołę lub placówkę odpowiednie środki techniczne i organizacyjne w celu ochrony przechowywanych nagrań obrazu oraz danych osobowych uczniów, pracowników i innych osób, których w wyniku tych nagrań można zidentyfikować, uzyskanych w wyniku monitoringu.”.
 
-## Art. 155.
-
-W ustawie z dnia 16 grudnia 2016 r. o zasadach zarządzania mieniem państwowym (Dz. U. poz. 2259, z 2017 r. poz. 624, 1491 i 1529 oraz z 2018 r. poz. 538 i 702) po art. 5 dodaje się art. 5a w brzmieniu:
+Art. 155. W ustawie z dnia 16 grudnia 2016 r. o zasadach zarządzania mieniem państwowym (Dz. U. poz. 2259, z 2017 r. poz. 624, 1491 i 1529 oraz z 2018 r. poz. 538 i 702) po art. 5 dodaje się art. 5a w brzmieniu:
 
 „Art. 5a. 1. Zarządzanie mieniem państwowym obejmuje także zapewnienie bezpieczeństwa mienia, w ramach którego możliwe jest stosowanie zabezpieczeń, w tym zabezpieczeń fizycznych oraz środków technicznych umożliwiających rejestrację obrazu (monitoring) na terenie nieruchomości i w obiektach budowlanych stanowiących mienie państwowe, a także na terenie wokół takich nieruchomości i obiektów, jeżeli jest to konieczne do zapewnienia bezpieczeństwa zarządzanym mieniem państwowym.
 
@@ -399,16 +279,12 @@ W ustawie z dnia 16 grudnia 2016 r. o zasadach zarządzania mieniem państwowym 
 - 5\. Nieruchomości i obiekty budowlane objęte monitoringiem oznacza się w sposób widoczny i czytelny informacją o monitoringu, w szczególności za pomocą odpowiednich znaków.
 - 6\. Monitoring, w ramach którego dochodzi do przetwarzania danych osobowych, wymaga stosowania środków zabezpieczających przetwarzanie tych danych, w szczególności uniemożliwiających ich utratę lub bezprawne rozpowszechnienie, a także uniemożliwienie dostępu do danych osobom nieuprawnionym.”.
 
-## Art. 156.
-
-W ustawie z dnia 9 marca 2017 r. o systemie monitorowania drogowego przewozu towarów (Dz. U. poz. 708 oraz z 2018 r. poz. 138) w art. 4 ust. 3 otrzymuje brzmienie:
+Art. 156. W ustawie z dnia 9 marca 2017 r. o systemie monitorowania drogowego przewozu towarów (Dz. U. poz. 708 oraz z 2018 r. poz. 138) w art. 4 ust. 3 otrzymuje brzmienie:
 
 „3. Rejestr prowadzi Szef Krajowej Administracji Skarbowej, który jest administratorem danych przetwarzanych w rejestrze.”.
 
 <!-- page: 10 -->
-## Art. 157.
-
-W ustawie z dnia 27 października 2017 r. o podstawowej opiece zdrowotnej (Dz. U. poz. 2217) w art. 10 ust. 5 otrzymuje brzmienie:
+Art. 157. W ustawie z dnia 27 października 2017 r. o podstawowej opiece zdrowotnej (Dz. U. poz. 2217) w art. 10 ust. 5 otrzymuje brzmienie:
 
 „5. Wypełnione deklaracje wyboru, o których mowa w ust. 1 pkt 1, świadczeniodawca przechowuje w swojej siedzibie albo w miejscu udzielania świadczeń z zakresu podstawowej opieki zdrowotnej, zapewniając ich dostępność świadczeniobiorcom, którzy je złożyli, z zachowaniem wymagań wynikających z przepisów o ochronie danych osobowych.”.”;
 
@@ -432,6 +308,16 @@ Marszałek Sejmu: *E. Witek*
 
 <!-- page: 11 -->
 Załącznik do obwieszczenia Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 30 sierpnia 2019 r. (poz. 1781)
+
+[^1]: Dodany przez art. 161 pkt 2 ustawy, o której mowa w odnośniku 3.
+
+[^2]: Niniejsza ustawa służy stosowaniu rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
+
+[^3]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę Parlamentu Europejskiego i Rady (UE) 2016/680 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych i wykonywania kar, w sprawie swobodnego przepływu takich danych oraz uchylającą decyzję ramową Rady 2008/977/WSiSW.
+
+[^4]: Dodany przez art. 161 pkt 1 ustawy z dnia 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. U. poz. 730), która weszła w życie z dniem 4 maja 2019 r.
+
+[^14]: a) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 5, 138, 398, 416, 650, 730, 756, 770 i 771. b) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2361 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 685, 723 i 864. c) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2018 r. poz. 3, 5, 106, 138, 771 i 848. d) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 106, 138, 650, 685 i 771. e) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2201 oraz z 2018 r. poz. 138, 398, 650, 730 i 912. f) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2486 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 723, 771 i 864.
 
 ## USTAWA z dnia 10 maja 2018 r. o ochronie danych osobowych1),
 
