@@ -1082,6 +1082,140 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("- 2\\. Użytkownik sprawdza historię transakcji.", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087h: page 21 of REG-02 — a ruled table in the right column beside the left column, clauses „1.” with labels
+    /// in the gutter side of the right column: once the table is found, the columns are still split at the gutter, so
+    /// the labels stay with their clauses.
+    /// </summary>
+    [Fact]
+    public async Task RuledTableInTheRightColumn_KeepsTheColumnGutterForTheText()
+    {
+        var b = new SyntheticPdfBuilder().Page().Page();
+        b.Text(68.0, 92.0, "obowiązującego w dniu rozliczenia zwrotu,", 9.5);
+        b.Text(313.0, 92.0, "4. Niezależnie od opłat Banku operatorzy", 9.5);
+        b.Text(68.0, 104.5, "a nie w dniu pierwotnej transakcji.", 9.5);
+        b.Text(331.0, 104.5, "bankomatów", 9.5);
+        b.Text(392.2, 104.5, "i akceptanci są uprawnieni do", 9.5);
+        b.Text(68.0, 117.0, "W konsekwencji kwota zwrotu może być niższa", 9.5);
+        b.Text(331.0, 117.0, "pobierania własne prowizje, o których", 9.5);
+        b.Text(68.0, 129.5, "lub wyższa niż kwota pierwotnie obciążona.", 9.5);
+        b.Text(331.0, 129.5, "informują przed wykonaniem transakcji. Bank", 9.5);
+        b.Text(331.0, 142.0, "nie ma wpływu na ich wysokość.", 9.5);
+        b.Text(50.0, 145.0, "2. Jeżeli transakcja walutowa została anulowana", 9.5);
+        b.Text(68.0, 157.5, "przed rozliczeniem, blokada środków jest", 9.5);
+        b.Text(417.6, 166.5, "§ 60.", 10.5, bold: true);
+        b.Text(68.0, 170.0, "zwalniana w złotych, w kwocie, w jakiej została", 9.5);
+        b.Text(68.0, 182.5, "założona, bez zastosowania kursu", 9.5);
+        b.Text(313.0, 186.7, "1. Zestawienie wybranych opłat związanych", 9.5);
+        b.Text(68.0, 195.0, "rozliczeniowego.", 9.5);
+        b.Text(331.0, 199.2, "z obsługą karty, obowiązujących w dniu wejścia", 9.5);
+        b.Text(50.0, 210.5, "3. W historii rachunku Bank podaje kwotę", 9.5);
+        b.Text(331.0, 211.7, "w życie Regulaminu, przedstawia tabela.", 9.5);
+        b.Text(68.0, 223.0, "transakcji w walucie oryginalnej, kwotę", 9.5);
+        b.Text(331.0, 224.2, "W razie rozbieżności między zestawieniem", 9.5);
+        b.Text(68.0, 235.5, "w złotych oraz — jeżeli to technicznie możliwe", 9.5);
+        b.Text(331.0, 236.7, "a Bank Przykładowy S.A. — Taryfa opłat", 9.5);
+        b.Text(68.0, 248.0, "— zastosowany kurs. Dane te Użytkownik", 9.5);
+        b.Text(331.0, 249.2, "i prowizji za karty płatnicze rozstrzygają", 9.5);
+        b.Text(68.0, 260.5, "wykorzystuje przy ewentualnym wnioskowaniu", 9.5);
+        b.Text(331.0, 261.7, "postanowienia Taryfy.", 9.5);
+        b.Text(68.0, 273.0, "o wyjaśnienie transakcji.", 9.5);
+        b.Text(318.0, 287.2, "Czynność", 9.0, bold: true);
+        b.Text(492.0, 287.2, "Opłata", 9.0, bold: true);
+        b.Text(50.0, 303.5, "Rozdział 10", 12.0, bold: true);
+        b.Text(318.0, 305.7, "Wydanie karty", 9.0);
+        b.Text(492.0, 305.7, "0,00 zł", 9.0);
+        b.Text(50.0, 319.7, "Opłaty", 12.0, bold: true);
+        b.Text(318.0, 324.2, "Opłata miesięczna za kartę", 9.0);
+        b.Text(492.0, 324.2, "6,00 zł", 9.0);
+        b.Text(318.0, 342.7, "Wydanie karty w trybie pilnym", 9.0);
+        b.Text(492.0, 342.7, "70,00 zł", 9.0);
+        b.Text(154.6, 345.9, "§ 59.", 10.5, bold: true);
+        b.Text(318.0, 361.2, "Duplikat karty", 9.0);
+        b.Text(492.0, 361.2, "30,00 zł", 9.0);
+        b.Text(50.0, 366.1, "1. Za czynności związane z wydaniem i używaniem", 9.5);
+        b.Text(68.0, 378.6, "karty Bank pobiera opłaty i prowizje", 9.5);
+        b.Text(318.0, 379.7, "Zastrzeżenie karty", 9.0);
+        b.Text(492.0, 379.7, "0,00 zł", 9.0);
+        b.Text(68.0, 391.1, "w wysokości określonej w Bank Przykładowy", 9.5);
+        b.Text(318.0, 398.2, "Wypłata w bankomacie obcym w kraju 6,00 zł", 9.0);
+        b.Text(68.0, 403.6, "S.A. — Taryfa opłat i prowizji za karty płatnicze,", 9.5);
+        b.Text(68.0, 416.1, "obowiązującej w dniu dokonania czynności.", 9.5);
+        b.Text(318.0, 416.7, "Wypłata w bankomacie za granicą", 9.0);
+        b.Text(492.0, 416.7, "10,00 zł", 9.0);
+        b.Text(68.0, 428.6, "W dniu wejścia w życie Regulaminu opłaty te", 9.5);
+        b.Text(68.0, 441.1, "wynoszą w szczególności:", 9.5);
+        b.Text(313.0, 450.7, "2. Wskazane kwoty są podane w złotych polskich", 9.5);
+        b.Text(68.0, 456.6, "1) wydanie karty — 0,00 zł;", 9.5);
+        b.Text(331.0, 463.2, "i obejmują wszystkie opłaty pobierane przez", 9.5);
+        b.Text(68.0, 472.1, "2) prowadzenie karty (opłata miesięczna) —", 9.5);
+        b.Text(331.0, 475.7, "Bank. Opłaty operatorów bankomatów", 9.5);
+        b.Text(86.0, 484.6, "6,00 zł;", 9.5);
+        b.Text(331.0, 488.2, "i akceptantów nie są tu uwzględnione.", 9.5);
+        b.Text(68.0, 500.1, "3) wydanie duplikatu karty — 30,00 zł;", 9.5);
+        b.Text(417.6, 512.7, "§ 61.", 10.5, bold: true);
+        b.Text(68.0, 515.6, "4) zmiana PIN-u — 5,00 zł;", 9.5);
+        b.Text(68.0, 531.1, "5) wypłata gotówki w bankomacie innego", 9.5);
+        b.Text(313.0, 532.9, "1. Bank pobiera opłaty z rachunku, do którego", 9.5);
+        b.Text(86.0, 543.6, "operatora — 6,00 zł;", 9.5);
+        b.Text(331.0, 545.4, "wydano kartę, w dniu wykonania czynności lub", 9.5);
+        b.Text(331.0, 557.9, "w terminach wskazanych w Bank Przykładowy", 9.5);
+        b.Text(68.0, 559.1, "6) wypłata gotówki w bankomacie za granicą", 9.5);
+        b.Text(331.0, 570.4, "S.A. — Taryfa opłat i prowizji za karty płatnicze.", 9.5);
+        b.Text(86.0, 571.6, "— 10,00 zł.", 9.5);
+        b.Text(331.0, 582.9, "Jeżeli na rachunku nie ma wystarczających", 9.5);
+        b.Text(50.0, 587.1, "2. Opłata miesięczna za kartę jest pobierana", 9.5);
+        b.Text(331.0, 595.4, "środków, Bank może pobrać opłatę w dniu ich", 9.5);
+        b.Text(68.0, 599.6, "z rachunku w ostatnim dniu miesiąca", 9.5);
+        b.Text(331.0, 607.9, "wpływu, powodując powstanie zadłużenia", 9.5);
+        b.Text(68.0, 612.1, "kalendarzowego, a w razie braku środków —", 9.5);
+        b.Text(331.0, 620.4, "przeterminowanego.", 9.5);
+        b.Text(68.0, 624.6, "w dniu ich wpływu, wraz z odsetkami za", 9.5);
+        b.Text(313.0, 635.9, "2. Od zadłużenia przeterminowanego", 9.5);
+        b.Text(490.0, 635.9, "Bank", 9.5);
+        b.Text(68.0, 637.1, "opóźnienie wynikającymi z zadłużenia. Pierwsza", 9.5);
+        b.Text(331.0, 648.4, "nalicza odsetki za opóźnienie w wysokości 17%", 9.5);
+        b.Text(68.0, 649.6, "opłata jest pobierana za miesiąc, w którym", 9.5);
+        b.Text(185.8, 658.5, "18", 5.7);
+        b.Text(331.0, 660.9, "w stosunku rocznym. Za wezwanie do zapłaty", 9.5);
+        b.Text(68.0, 662.1, "karta została aktywowana.", 9.5);
+        b.Text(331.0, 673.4, "Bank pobiera opłatę 15,00 zł, o ile poprzednie", 9.5);
+        b.Text(50.0, 677.6, "3. Bank nie pobiera opłat za zastrzeżenie karty,", 9.5);
+        b.Text(331.0, 685.9, "wezwanie nie zostało wysłane w ciągu ostatnich", 9.5);
+        b.Text(68.0, 690.1, "powiadomienia o transakcjach wysyłane do", 9.5);
+        b.Text(331.0, 698.4, "30 dni.", 9.5);
+        b.Text(68.0, 702.6, "aplikacji mobilnej oraz za odrzucone transakcje.", 9.5);
+        b.Text(313.0, 713.9, "3. Zmiana wysokości opłat następuje na zasadach", 9.5);
+        b.Text(68.0, 715.1, "Za wiadomości SMS Bank pobiera opłatę", 9.5);
+        b.Text(331.0, 726.4, "określonych w postanowieniach o zmianie", 9.5);
+        b.Text(68.0, 727.6, "zgodnie z umową", 9.5);
+        b.Text(148.8, 727.6, "rachunku.", 9.5);
+        b.Text(331.0, 738.9, "Regulaminu. Bank zwraca Posiadaczowi opłatę", 9.5);
+        b.Text(50.0, 769.0, "18) Jeżeli karta została wydana w trakcie miesiąca, opłata miesięczna za pierwszy miesiąc nie jest naliczana proporcjonalnie, chyba", 8.0);
+        b.Text(64.6, 779.0, "że umowa o kartę stanowi inaczej.", 8.0);
+        for (int k = 0; k <= 8; k++)
+        {
+            b.HLine(313, 545, 274.2 + (k * 18.5));
+        }
+
+        foreach (double vx in new[] { 313.0, 487.0, 545.0 })
+        {
+            b.VLine(vx, 274.2, 422.2);
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087h.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("| **Czynność** | **Opłata** |", md, StringComparison.Ordinal);
+        Assert.Contains("- 1\\. Bank pobiera opłaty z rachunku, do którego wydano kartę,", md, StringComparison.Ordinal);
+        Assert.Contains("- 2\\. Od zadłużenia przeterminowanego Bank nalicza odsetki", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("\n1\\.\n", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("\n2\\.\n", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
