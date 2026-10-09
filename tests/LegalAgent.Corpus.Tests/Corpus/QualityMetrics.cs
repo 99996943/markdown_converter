@@ -91,13 +91,15 @@ internal static class QualityMetrics
         List<string> failures = [];
         string[] lines = markdown.Split('\n').Select(l => l.TrimEnd('\r')).ToArray();
 
-        string[] truthWords = truth.Words.SelectMany(Tokens).ToArray();
-        string[] mdWords = lines.SelectMany(MarkdownWordsOfLine).ToArray();
+        // A symbol labelling list items („□”) may become the Markdown list marker: it is list syntax, not a word.
+        HashSet<string> symbols = truth.ListItems.Select(i => i.Label).Where(l => l.Length > 0 && !l.Any(char.IsLetterOrDigit)).ToHashSet(StringComparer.Ordinal);
+        string[] truthWords = truth.Words.SelectMany(Tokens).Where(w => !symbols.Contains(w)).ToArray();
+        string[] mdWords = lines.SelectMany(MarkdownWordsOfLine).Where(w => !symbols.Contains(w)).ToArray();
 
         (double completeness, int extra, List<string> samples, int missing) = CompareWords(truthWords, mdWords);
         if (missing > 0)
         {
-            failures.Add($"{documentId}: brakujące słowa: {missing.ToString(CultureInfo.InvariantCulture)}");
+            failures.Add($"{documentId}: brakujące słowa: {missing.ToString(CultureInfo.InvariantCulture)} ({string.Join(", ", MissingWords(truthWords, mdWords).Take(MaxSamples))})");
         }
 
         if (extra > 0)
@@ -152,6 +154,27 @@ internal static class QualityMetrics
     }
 
     // ---- words ---------------------------------------------------------------------------------------------------
+
+    private static IEnumerable<string> MissingWords(string[] truthWords, string[] mdWords)
+    {
+        Dictionary<string, int> budget = new(StringComparer.Ordinal);
+        foreach (string w in mdWords)
+        {
+            budget[w] = budget.GetValueOrDefault(w) + 1;
+        }
+
+        foreach (string w in truthWords)
+        {
+            if (budget.TryGetValue(w, out int left) && left > 0)
+            {
+                budget[w] = left - 1;
+            }
+            else
+            {
+                yield return w;
+            }
+        }
+    }
 
     private static (double Completeness, int Extra, List<string> Samples, int Missing) CompareWords(string[] truthWords, string[] mdWords)
     {
