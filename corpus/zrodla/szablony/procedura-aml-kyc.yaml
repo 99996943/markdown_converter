@@ -1,0 +1,83 @@
+id: procedura-aml-kyc
+typ: procedury
+temat: procedura-aml-kyc
+tytul:
+  - "Procedura stosowania środków bezpieczeństwa finansowego (AML/KYC)"
+  - "Procedura {przeciwdziałania praniu pieniędzy|stosowania środków bezpieczeństwa finansowego} i poznawania klienta (AML/KYC)"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry:
+  wlasciciel: "Departament Zgodności"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [procedura-aml-kyc-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [procedura-aml-kyc-zakres]
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [procedura-aml-kyc-odpowiedzialnosci]
+    opcjonalne: { kategorie: [aml-odpowiedzialnosci], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, procedura-aml-kyc-definicje]
+    opcjonalne: { kategorie: [aml-definicje], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — identyfikacja i weryfikacja klienta"
+    wymagane: [procedura-aml-kyc-schemat, procedura-aml-kyc-kroki-identyfikacja]
+    opcjonalne: { kategorie: [aml-krok-identyfikacja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — beneficjent rzeczywisty i cel stosunków gospodarczych"
+    wymagane: [procedura-aml-kyc-kroki-beneficjent]
+    opcjonalne: { kategorie: [aml-krok-beneficjent], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — ocena ryzyka klienta"
+    wymagane: [procedura-aml-kyc-kroki-ryzyko]
+    opcjonalne: { kategorie: [aml-krok-ryzyko], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — środki uproszczone i wzmocnione, PEP, kraje wysokiego ryzyka"
+    wymagane: [procedura-aml-kyc-kroki-ewd]
+    opcjonalne: { kategorie: [aml-krok-ewd], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — bieżące monitorowanie transakcji"
+    wymagane: [procedura-aml-kyc-kroki-monitorowanie]
+    opcjonalne: { kategorie: [aml-krok-monitorowanie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — analiza transakcji podejrzanych i zawiadomienia"
+    wymagane: [procedura-aml-kyc-kroki-podejrzane]
+    opcjonalne: { kategorie: [aml-krok-podejrzane], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Zamrożenie środków i blokada rachunków"
+    wymagane: [procedura-aml-kyc-zamrozenie]
+    opcjonalne: { kategorie: [aml-zamrozenie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [procedura-aml-kyc-szczegolne]
+    opcjonalne: { kategorie: [aml-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [procedura-aml-kyc-kontrola]
+    opcjonalne: { kategorie: [aml-kontrola], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Szkolenia"
+    wymagane: [procedura-aml-kyc-szkolenia]
+    opcjonalne: { kategorie: [aml-szkolenia], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [procedura-aml-kyc-dokumentacja, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [aml-dokumentacja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [procedura-aml-kyc-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna stosowania środków bezpieczeństwa finansowego"
+    wymagane: [procedura-aml-kyc-zal-lista]
+  - rodzaj: zalacznik
+    tytul: "Kryteria scoringu ryzyka klienta"
+    wymagane: [procedura-aml-kyc-zal-scoring]
+    opcjonalne: { kategorie: [aml-zalacznik], min: 0, max: 40 }
+  - rodzaj: zalacznik
+    tytul: "Przykładowe sygnały ostrzegawcze"
+    wymagane: [procedura-aml-kyc-zal-sygnaly]

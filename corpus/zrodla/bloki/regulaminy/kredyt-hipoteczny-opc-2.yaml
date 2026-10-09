@@ -1,0 +1,194 @@
+bloki:
+  # ===== Decyzja i umowa =====
+  - id: hip-umowa-warunki-decyzji
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pozytywna decyzja kredytowa może być wydana z zastrzeżeniem spełnienia warunków, które Kredytobiorca {musi|jest obowiązany} wypełnić przed zawarciem umowy lub przed wypłatą kredytu. Warunki Bank wskazuje w komunikacie przekazanym na trwałym nośniku."
+      - ustep: "Do typowych warunków należą:"
+        punkty:
+          - "dostarczenie brakujących dokumentów dotyczących nieruchomości;"
+          - "wykreślenie istniejących hipotek lub oświadczenie wierzyciela o zgodzie na wykreślenie po spłacie;"
+          - "zawarcie ubezpieczenia nieruchomości lub ubezpieczenia niskiego wkładu własnego;"
+          - "uzyskanie przez dewelopera pozwolenia na użytkowanie, jeżeli umowa deweloperska tego wymaga."
+      - ustep: "Niespełnienie warunków w okresie ważności decyzji, wynoszącym {{fakt:termin.hipoteka.waznosc-decyzji}}, powoduje jej wygaśnięcie bez konieczności zawiadamiania Klienta."
+
+  - id: hip-umowa-odstapienie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca będący konsumentem {może|ma prawo} odstąpić od umowy kredytu bez podania przyczyny w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia zawarcia umowy albo od dnia, w którym otrzymał warunki umowy i informacje wymagane przepisami — jeżeli nastąpiło to później."
+      - ustep: "Oświadczenie o odstąpieniu składa się na piśmie, a w przypadku wysłania go przed upływem terminu uznaje się, że termin został zachowany. Po odstąpieniu Kredytobiorca zwraca Bankowi wypłaconą kwotę wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, bez zbędnej zwłoki, nie później niż w terminie 30 dni od dnia wysłania oświadczenia."
+      - ustep: "Bank nie żąda od Kredytobiorcy innych opłat w związku z odstąpieniem niż zwrot kwot, które Bank zapłacił organom publicznym, oraz opłaty za wycenę, jeżeli została poniesiona na wniosek Kredytobiorcy."
+
+  - id: hip-umowa-zmiana
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmiana umowy kredytu wymaga formy, w jakiej zawarto umowę, z wyjątkiem zmian wynikających z Regulaminu, przepisów prawa lub zmiany oprocentowania, o których Bank informuje na trwałym nośniku."
+      - ustep: "Kredytobiorca {może|ma prawo} wnioskować w szczególności o:"
+        punkty:
+          - "zmianę rodzaju rat, dnia płatności lub okresu kredytowania;"
+          - "zmianę zabezpieczenia, w tym zastąpienie hipoteki na innej nieruchomości;"
+          - "zwolnienie z długu jednego ze współkredytobiorców;"
+          - "przedłużenie okresu stałego oprocentowania na kolejny okres."
+      - ustep: "Za rozpatrzenie wniosku o zmianę warunków umowy Bank {pobiera|nalicza} opłatę w wysokości {{fakt:oplata.hipoteka.zmiana-warunkow}}. Opłatę pobiera się niezależnie od wyniku rozpatrzenia, chyba że odmowa wynika z błędu Banku."
+
+  - id: hip-umowa-pelnomocnictwo-notarialne
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa kredytu jest zawierana w {placówce|siedzibie} Banku, w kancelarii notarialnej albo — jeżeli Bank dopuszcza taką formę — na odległość, z wykorzystaniem kwalifikowanego podpisu elektronicznego."
+      - ustep: "Jeżeli oświadczenia o ustanowieniu hipoteki składane są w akcie notarialnym, Kredytobiorca ponosi koszty taksy notarialnej, podatku od czynności cywilnoprawnych i opłat sądowych w zakresie wynikającym z przepisów, a Bank pokrywa koszty swojego przedstawiciela."
+      - ustep: "Projekt aktu notarialnego Bank udostępnia Kredytobiorcy z wyprzedzeniem, aby umożliwić zapoznanie się z jego treścią, nie później niż na dzień roboczy przed planowanym terminem podpisania."
+
+  # ===== Zabezpieczenia =====
+  - id: hip-zabezp-wpis
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-zabezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o wpis hipoteki do księgi wieczystej składa się w sądzie wieczystoksięgowym, w formie elektronicznej, z wykorzystaniem systemu teleinformatycznego, jeżeli przepisy na to pozwalają, a w pozostałych przypadkach — w formie papierowej."
+      - ustep: "Do czasu uzyskania prawomocnego wpisu hipoteki Bank {może|ma prawo} stosować tymczasowe zabezpieczenie kredytu, w szczególności:"
+        punkty:
+          - "ubezpieczenie kredytu na okres do czasu uzyskania wpisu;"
+          - "podwyższenie oprocentowania na zasadach określonych w {{ref:blok:hip-hipoteka}};"
+          - "przekazanie dokumentu potwierdzającego złożenie wniosku o wpis."
+      - ustep: "W przypadku odmowy wpisu hipoteki lub zwrotu wniosku Kredytobiorca niezwłocznie usuwa przeszkody, a Bank {może|ma prawo} wstrzymać dalsze wypłaty transz."
+
+  - id: hip-zabezp-wykreslenie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-zabezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wystawia|przekazuje} dokument stanowiący podstawę wykreślenia hipoteki z księgi wieczystej po całkowitej spłacie kredytu wraz z należnościami ubocznymi w terminie {{fakt:termin.hipoteka.zwolnienie-hipoteki}} od dnia spłaty."
+      - ustep: "Zwolnienie zabezpieczeń, w tym zwrot weksla in blanco i deklaracji wekslowej, następuje na wniosek Kredytobiorcy; wniosek można złożyć w placówce lub za pośrednictwem bankowości elektronicznej."
+      - ustep: "Za wystawienie dokumentu zwolnienia Bank nie pobiera opłaty; za dodatkowe odpisy na życzenie Kredytobiorcy naliczana jest opłata w wysokości {{fakt:oplata.zaswiadczenie}}."
+
+  - id: hip-zabezp-dodatkowe
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-zabezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli w trakcie umowy wartość zabezpieczenia istotnie spadnie, Bank {może|ma prawo} wezwać Kredytobiorcę do ustanowienia dodatkowego zabezpieczenia, wyznaczając na to termin {{fakt:termin.hipoteka.wezwanie-do-zaplaty}} od dnia otrzymania wezwania."
+      - ustep: "Jako zabezpieczenie dodatkowe Bank przyjmuje w szczególności:"
+        punkty:
+          - "hipotekę na innej nieruchomości stanowiącej własność Kredytobiorcy lub osoby trzeciej;"
+          - "blokadę środków na rachunku lub lokacie w Banku;"
+          - "poręczenie osoby fizycznej o odpowiednim poziomie dochodów."
+      - ustep: "Niedostarczenie dodatkowego zabezpieczenia stanowi podstawę do wypowiedzenia umowy na zasadach określonych w {{ref:blok:hip-wypowiedzenie}}."
+
+  - id: hip-zabezp-poreczenie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-zabezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Poręczyciel odpowiada wobec Banku jak dłużnik solidarny, do wysokości określonej w umowie poręczenia. Bank informuje poręczyciela o istotnych zmianach w umowie kredytu, które mogą zwiększyć zakres jego odpowiedzialności."
+      - ustep: "Poręczyciel {może|ma prawo} żądać od Banku informacji o stanie zadłużenia i terminowości spłat, o ile Kredytobiorca wyraził na to zgodę. Zwolnienie poręczyciela wymaga zgody Banku i może być uzależnione od ustanowienia innego zabezpieczenia."
+      - ustep: "Poręczenie wygasa z chwilą całkowitej spłaty kredytu lub wypowiedzenia umowy poręczenia w przypadkach przewidzianych w jej treści."
+
+  # ===== Wypłata w transzach =====
+  - id: hip-wyplata-wniosek
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o wypłatę transzy składa się na formularzu udostępnionym przez Bank, w placówce lub w bankowości elektronicznej, wraz z dokumentami potwierdzającymi zakres wykonanych robót i poniesione koszty."
+      - ustep: "Do wniosku Kredytobiorca załącza:"
+        punkty:
+          - "faktury lub rachunki za wykonane prace i zakupione materiały, wystawione na Kredytobiorcę;"
+          - "protokół odbioru etapu robót podpisany przez kierownika budowy lub inspektora nadzoru;"
+          - "zdjęcia dokumentujące postęp prac, jeżeli Bank ich zażąda."
+      - ustep: "Brak dokumentów lub rozbieżności w ich treści powodują wstrzymanie wypłaty do czasu ich wyjaśnienia, o czym Bank informuje Kredytobiorcę niezwłocznie."
+
+  - id: hip-wyplata-kontrola
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed wypłatą każdej transzy z wyjątkiem pierwszej Bank {może|ma prawo} dokonać kontroli postępu prac na nieruchomości. Termin kontroli Bank uzgadnia z Kredytobiorcą, a sama kontrola jest wykonywana w terminie {{fakt:termin.hipoteka.kontrola-nieruchomosci}} od dnia złożenia wniosku."
+      - ustep: "Jeżeli wynik kontroli wykaże, że zaawansowanie prac jest niższe od deklarowanego, Bank wypłaca transzę w części odpowiadającej rzeczywistemu zaawansowaniu, a różnicę wypłaca po uzupełnieniu prac."
+      - ustep: "Kontrola nie stanowi odbioru technicznego ani nadzoru nad budową i nie zwalnia Kredytobiorcy z odpowiedzialności za jakość robót."
+
+  - id: hip-wyplata-zawieszenie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wstrzymuje|może wstrzymać} wypłatę kolejnych transz, jeżeli:"
+        punkty:
+          - "Kredytobiorca zalega ze spłatą rat lub odsetek od wypłaconych już transz;"
+          - "kontrola wykazała wykorzystanie środków niezgodnie z celem kredytu;"
+          - "ujawnione zostały wady prawne nieruchomości lub zagrożenie dla zabezpieczenia;"
+          - "wartość nieruchomości po zakończeniu kolejnego etapu robót jest niższa niż założona w kosztorysie."
+      - ustep: "Po usunięciu przyczyn wstrzymania Bank wznawia wypłaty w terminie {{fakt:termin.hipoteka.wyplata-po-warunkach}} liczonym w dniach roboczych, o ile nie upłynął termin ostatecznej wypłaty określony w umowie."
+
+  - id: hip-wyplata-ostatnia
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ostatnia transza nie może być niższa niż {{fakt:oplata.hipoteka.wyplata-transzy}} ani stanowić mniej niż 10% kwoty kredytu; jej wypłata następuje po przedstawieniu dokumentu potwierdzającego zakończenie budowy lub remontu i dokonaniu przez Bank oględzin nieruchomości."
+      - ustep: "Kwotę kredytu, której Kredytobiorca nie wypłacił w terminie wypłaty określonym w umowie, uznaje się za niewykorzystaną, a umowa wygasa w tej części. Bank {nie pobiera|nie nalicza} dodatkowych opłat z tego tytułu, z wyjątkiem prowizji należnej za część wypłaconą."
+      - ustep: "Prowizja za przygotowanie kredytu, pobrana od kwoty niewykorzystanej, nie podlega zwrotowi, chyba że niewykorzystanie wynika z przyczyn leżących po stronie Banku."
+
+  # ===== Oprocentowanie =====
+  - id: hip-oproc-obnizka
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa może przewidywać czasowe obniżenie marży w zamian za spełnienie przez Kredytobiorcę warunków dodatkowych, takich jak miesięczne wpływy na rachunek osobisty w Banku czy zawarcie ubezpieczenia na życie."
+      - ustep: "Jeżeli Kredytobiorca przestanie spełniać warunki obniżki, Bank od najbliższego okresu rozliczeniowego stosuje marżę podstawową wynoszącą {{fakt:oprocentowanie.hipoteka.marza}}. O zmianie Bank informuje Kredytobiorcę z wyprzedzeniem."
+      - ustep: "Obniżenie marży nie dotyczy oprocentowania odsetek za opóźnienie i nie wpływa na wysokość innych opłat przewidzianych w Taryfie."
+
+  - id: hip-oproc-stala
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W okresie obowiązywania stopy okresowo stałej oprocentowanie kredytu nie zmienia się wraz ze zmianą wskaźnika referencyjnego. Stopa ta jest ustalana na dzień zawarcia umowy i wynosi {{fakt:oprocentowanie.hipoteka.okresowo-stale}}."
+      - ustep: "Najpóźniej na {{fakt:termin.hipoteka.powiadomienie-stopa}} przed końcem okresu stałego oprocentowania Bank przekazuje Kredytobiorcy propozycję dalszego oprocentowania oraz zaktualizowany harmonogram."
+      - ustep: "Jeżeli Kredytobiorca nie zaakceptuje propozycji Banku, oprocentowanie od pierwszego dnia po zakończeniu okresu stałego ustalane jest według zmiennej stopy na podstawie {{fakt:wskaznik.hipoteka.nazwa}} i marży {{fakt:oprocentowanie.hipoteka.marza}}."
+
+  - id: hip-oproc-rrso
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Całkowity koszt kredytu obejmuje wszystkie koszty, które Kredytobiorca jest obowiązany ponieść w związku z umową, w szczególności odsetki, prowizje, opłaty za wycenę, składki ubezpieczeniowe wymagane przez Bank oraz inne opłaty, o których Bank wiedział w dniu zawarcia umowy."
+      - ustep: "Do całkowitego kosztu kredytu nie wlicza się:"
+        punkty:
+          - "opłat notarialnych i sądowych związanych z ustanowieniem hipoteki, jeżeli Kredytobiorca ponosi je wobec osób trzecich;"
+          - "kosztów, które Kredytobiorca ponosi w razie niewykonania umowy;"
+          - "opłat za dobrowolne ubezpieczenia niewymagane przez Bank."
+      - ustep: "Przy obliczaniu RRSO oprocentowanie zmienne przyjmuje się na poziomie obowiązującym w dniu zawarcia umowy i zakłada jego niezmienność przez okres kredytowania."
+
+  - id: hip-oproc-informacje
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Co najmniej raz w roku oraz po każdej zmianie oprocentowania Bank przekazuje Kredytobiorcy zestawienie zawierające saldo kredytu, naliczone odsetki, dokonane spłaty i pozostały okres kredytowania."
+      - ustep: "Na wniosek Kredytobiorcy Bank nieodpłatnie udostępnia symulację skutków zmiany wskaźnika referencyjnego, obejmującą wzrost stopy o {{fakt:wskaznik.hipoteka.bufor-stopy}} oraz spadek o taką samą wartość, wraz z wpływem na wysokość raty."
+      - ustep: "Informacje o saldzie i historii spłat są dostępne w bankowości elektronicznej oraz — na żądanie — telefonicznie, po uwierzytelnieniu Kredytobiorcy na Infolinii {{fakt:kontakt.infolinia}}."

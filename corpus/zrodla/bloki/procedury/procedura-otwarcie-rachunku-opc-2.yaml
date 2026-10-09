@@ -1,0 +1,161 @@
+bloki:
+  - id: otwarcie-umowa-karta-bankowosc
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "{Wraz z rachunkiem|Razem z rachunkiem} klient może zamówić kartę debetową i dostęp do bankowości elektronicznej. Zamówienie tych usług jest odrębną dyspozycją klienta; pracownik nie uzależnia otwarcia rachunku od ich zamówienia."
+      - kroki:
+          - tekst: "Zapytaj klienta o chęć korzystania z bankowości elektronicznej i aplikacji {{fakt:bankowosc.nazwa-aplikacji}}."
+            podkroki:
+              - tekst: "Przy zamówieniu usługi zapisz numer telefonu, na który będą wysyłane kody autoryzacyjne; numer musi być zgodny z numerem zweryfikowanym przy otwarciu rachunku."
+              - tekst: "{Przekaż|Przedstaw} klientowi zasady bezpiecznego korzystania z bankowości: zakaz udostępniania haseł i kodów, wymóg samodzielnego ustalenia hasła o minimalnej długości {{fakt:bankowosc.min-dlugosc-hasla}} oraz konieczność zgłoszenia utraty urządzenia."
+          - tekst: "Przy zamówieniu karty debetowej ustal wariant karty i limity."
+            podkroki:
+              - tekst: "{Zapisz|Odnotuj} adres doręczenia karty; karta jest wysyłana na adres do korespondencji albo wydawana w placówce."
+              - tekst: "Poinformuj klienta o numerze do zastrzeżenia karty: {{fakt:kontakt.infolinia-zastrzezenia}}, dostępnym także z zagranicy pod numerem {{fakt:kontakt.infolinia-zagranica}}."
+          - tekst: "Po wygenerowaniu kodu aktywacyjnego poinformuj klienta, że jest on ważny przez {{fakt:bankowosc.waznosc-kodu-aktywacyjnego}} i że po wygaśnięciu ważności nowy kod wygenerujesz na jego dyspozycję."
+          - tekst: "{Zapisz|Zarejestruj} zamówione usługi w systemie i wyślij klientowi potwierdzenie na trwałym nośniku."
+
+  - id: otwarcie-umowa-odstapienie
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Klient, który zawarł umowę rachunku na odległość, ma prawo odstąpić od niej bez podania przyczyny w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia zawarcia umowy lub od dnia otrzymania warunków umowy, jeżeli nastąpiło to później. Zasady wykonywania tego prawa wynikają z {{ref:akt:dz-u-2020-287-prawa-konsumenta}}."
+      - kroki:
+          - tekst: "{Przyjmij|Odbierz} oświadczenie o odstąpieniu złożone w placówce, pisemnie albo w bankowości elektronicznej."
+            podkroki:
+              - tekst: "{Zarejestruj|Zapisz} datę wpływu oświadczenia; liczy się data wysłania, jeżeli oświadczenie wysłano przed upływem terminu."
+              - tekst: "Nie wymagaj od klienta podania przyczyny odstąpienia ani nie zniechęcaj klienta do skorzystania z tego prawa."
+          - tekst: "Zleć komórce „{{fakt:jednostka.operacje}}” zamknięcie rachunku i rozliczenie środków w ciągu {{fakt:termin.zwrot-oplat}} od dnia otrzymania oświadczenia."
+            podkroki:
+              - tekst: "{Zwróć|Oddaj} klientowi pobrane opłaty, z wyjątkiem opłat za usługi faktycznie wykonane na jego wyraźne żądanie przed odstąpieniem."
+              - tekst: "Jeżeli na rachunku znajdują się środki, wypłać je na wskazany przez klienta rachunek w innym banku lub w gotówce."
+          - tekst: "{Dołącz|Załącz} oświadczenie i potwierdzenie rozliczenia do dokumentacji sprawy."
+      - akapit: "W sprawach rachunków zamykanych z innych przyczyn niż odstąpienie od umowy stosuje się dokument „{{ref:dokument:regulamin-rachunku-osobistego}}”, a w sprawach terminu rozliczenia — termin {{fakt:termin.rachunek-osobisty.zamkniecie-rozliczenie}}."
+
+  - id: otwarcie-szcz-pelnomocnik
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Wniosek o otwarcie rachunku {składa klient osobiście|klient składa osobiście}. Złożenie wniosku przez pełnomocnika jest dopuszczalne wyłącznie wyjątkowo, po uprzedniej zgodzie kierownika placówki i przy spełnieniu warunków wymienionych poniżej."
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} pełnomocnictwo."
+            podkroki:
+              - tekst: "Pełnomocnictwo musi być sporządzone w formie pisemnej z podpisem notarialnie poświadczonym, a jeśli wystawiono je za granicą — zalegalizowane lub opatrzone apostille."
+              - tekst: "Pełnomocnictwo musi wyraźnie upoważniać do zawarcia umowy rachunku i do dysponowania rachunkiem; {nie przyjmuj|nie akceptuj} pełnomocnictw ogólnych."
+              - tekst: "Zweryfikuj tożsamość pełnomocnika i ustal, czy nie jest on osobą zajmującą eksponowane stanowisko polityczne."
+          - tekst: "Zastosuj środki bezpieczeństwa finansowego wobec mocodawcy."
+            podkroki:
+              - tekst: "{Zweryfikuj|Potwierdź} tożsamość mocodawcy na podstawie kopii jego dokumentu poświadczonej notarialnie lub w inny dopuszczony sposób."
+              - tekst: "Wypełnij kwestionariusz ryzyka dla mocodawcy i uwzględnij okoliczność działania przez pełnomocnika jako czynnik podnoszący ryzyko."
+          - tekst: "Potwierdź pełnomocnictwo u mocodawcy telefonicznie na numer podany w dokumentach, a nie w piśmie pełnomocnika; weryfikacja pełnomocnictwa trwa nie dłużej niż {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}}."
+          - tekst: "Po otwarciu rachunku poinformuj mocodawcę o zawarciu umowy i o zakresie uprawnień pełnomocnika; opłata za ustanowienie pełnomocnictwa do rachunku wynosi {{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}."
+
+  - id: otwarcie-szcz-istniejacy
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klient, który ma już rachunek lub inny produkt w Banku, może otworzyć dodatkowy rachunek osobisty w uproszczonym trybie, jeżeli jego dane i ocena ryzyka są aktualne."
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} w systemie {{fakt:system.otwarcie.cbs}} aktualność danych klienta."
+            podkroki:
+              - tekst: "Zweryfikuj ważność dokumentu tożsamości zapisanego w systemie; jeżeli dokument jest nieważny, poproś o nowy."
+              - tekst: "Potwierdź z klientem adres i dane kontaktowe oraz zapytaj o zmianę sytuacji, która mogłaby wpłynąć na ocenę ryzyka."
+          - tekst: "Sprawdź datę ostatniej oceny ryzyka."
+            podkroki:
+              - tekst: "Jeżeli kwestionariusz ryzyka został wypełniony nie wcześniej niż {{fakt:termin.otwarcie.waznosc-kwestionariusza}} temu i nie ma zmian w sytuacji klienta, możesz posłużyć się dotychczasową oceną."
+              - tekst: "W przeciwnym razie wypełnij nowy kwestionariusz ryzyka i powtórz sprawdzenie w {{fakt:system.otwarcie.aml}}."
+          - tekst: "Zawrzyj umowę dodatkowego rachunku na {ogólnych zasadach|zasadach ogólnych}."
+      - akapit: "Klient może prowadzić kilka rachunków osobistych {jednocześnie|równolegle}. Opłaty za prowadzenie każdego z rachunków są pobierane zgodnie z dokumentem „{{ref:dokument:taryfa-indywidualni}}”, o czym pracownik informuje klienta przed zawarciem umowy."
+
+  - id: otwarcie-szcz-zmiana-danych
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "W trakcie otwierania rachunku i po jego otwarciu klient może zgłosić zmianę danych podanych we wniosku. Zmiana danych identyfikacyjnych i dotyczących ryzyka wymaga {aktualizacji|uaktualnienia} dokumentacji."
+      - ustep: "Pracownik {przyjmuje|rejestruje} zgłoszenie zmiany danych w następujący sposób:"
+        punkty:
+          - "zmiana nazwiska, numeru dokumentu lub adresu wymaga okazania dokumentu potwierdzającego zmianę;"
+          - "zmianę numeru telefonu wykorzystywanego do autoryzacji dyspozycji potwierdza się w placówce albo w wideoweryfikacji;"
+          - "zmianę rezydencji podatkowej uwzględnia się w oświadczeniu klienta i w kwestionariuszu ryzyka, który należy zaktualizować;"
+          - "klient jest obowiązany zawiadomić Bank o zmianie danych w terminie {{fakt:termin.rachunek-osobisty.zmiana-danych}} od jej wystąpienia."
+      - akapit: "Aktualizacji danych w systemie {{fakt:system.otwarcie.cbs}} dokonuje się {niezwłocznie|bez zbędnej zwłoki} po przedstawieniu dokumentów, a dane archiwalne są zachowywane z oznaczeniem daty zmiany. Jeżeli klient nie odpowiada na wezwanie do uzupełnienia danych, pracownik informuje o tym kierownika placówki i komórkę „{{fakt:jednostka.zgodnosc}}”, która może zdecydować o ograniczeniu dysponowania rachunkiem."
+
+  - id: otwarcie-szcz-niepelnosprawnosc
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Osoba z niepełnosprawnością wzroku, słuchu lub ruchu ma prawo do otwarcia rachunku na takich samych zasadach jak pozostali klienci. Bank {zapewnia|gwarantuje} sposób obsługi dostosowany do rodzaju niepełnosprawności."
+      - kroki:
+          - tekst: "Ustal potrzeby klienta w zakresie obsługi i {zaproponuj|zapewnij} odpowiednie rozwiązanie."
+            podkroki:
+              - tekst: "W przypadku osoby niewidomej lub słabowidzącej przeczytaj na głos treść umowy i najważniejsze oświadczenia, a na życzenie przygotuj dokumenty w wersji powiększonej lub elektronicznej."
+              - tekst: "W przypadku osoby niesłyszącej zaproponuj kontakt pisemny albo skorzystanie z tłumacza języka migowego zamówionego z wyprzedzeniem."
+              - tekst: "W przypadku osoby poruszającej się na wózku zapewnij dostęp do stanowiska obsługi na parterze lub wizytę w miejscu wskazanym przez klienta, o ile kierownik placówki wyrazi na to zgodę."
+          - tekst: "{Zapytaj klienta, czy życzy sobie|Ustal, czy klient życzy sobie} obecności osoby zaufanej, i odnotuj jej imię i nazwisko w dokumentacji."
+          - tekst: "Podpis na dokumentach składa klient; jeżeli nie może podpisać się samodzielnie, skorzystaj z formy przewidzianej przepisami, w uzgodnieniu z kierownikiem placówki."
+      - akapit: "Dodatkowe usługi związane z obsługą osoby z niepełnosprawnością, w szczególności korzystanie z tłumacza języka migowego, nie powodują naliczenia opłat po stronie klienta."
+
+  - id: otwarcie-odmowa-odwolanie
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Klient, któremu odmówiono otwarcia rachunku, może {zwrócić się o|wnioskować o} ponowne rozpatrzenie sprawy. Wniosek o ponowne rozpatrzenie może złożyć w placówce, listownie albo w bankowości elektronicznej."
+      - kroki:
+          - tekst: "{Przyjmij|Odbierz} wniosek o ponowne rozpatrzenie i zarejestruj go jako wniosek, a nie reklamację."
+            podkroki:
+              - tekst: "Sprawdź, czy wniosek zawiera nowe okoliczności lub dokumenty, których klient nie przedstawił wcześniej."
+              - tekst: "Jeżeli klient kwestionuje samą odmowę, a nie zgłasza nowych okoliczności, poinformuj go o możliwości złożenia reklamacji."
+          - tekst: "{Przekaż|Skieruj} sprawę do kierownika placówki, a w sprawach wysokiego ryzyka — do komórki „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "{Poinformuj|Powiadom} klienta o wyniku w terminie {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od dnia otrzymania kompletnego wniosku."
+      - akapit: "Ponowne rozpatrzenie nie może prowadzić do ominięcia środków bezpieczeństwa finansowego. Jeżeli przyczyną odmowy był brak możliwości zastosowania tych środków, rachunek może być otwarty tylko wtedy, gdy klient usunął przeszkodę, a ocena ryzyka wypada pozytywnie."
+
+  - id: otwarcie-odmowa-rejestr
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Wszystkie odmowy otwarcia rachunku {rejestruje się|odnotowuje się} w rejestrze odmów prowadzonym w systemie {{fakt:system.otwarcie.cbs}}. Rejestr służy analizie przyczyn odmów, ocenie jakości procesu i wykrywaniu prób wyłudzeń."
+      - ustep: "Wpis w rejestrze {obejmuje|zawiera}:"
+        punkty:
+          - "numer sprawy, datę odmowy i kanał, w którym złożono wniosek;"
+          - "podstawę odmowy wybraną z listy zamkniętej, a w przypadku podstawy „inne” — krótki opis;"
+          - "dane osoby, która podjęła decyzję;"
+          - "informację o przekazaniu sprawy do komórki „{{fakt:jednostka.zgodnosc}}” lub „{{fakt:jednostka.bezpieczenstwo}}”, jeżeli to nastąpiło."
+      - akapit: "{{fakt:jednostka.zgodnosc}} {analizuje|przegląda} rejestr odmów co miesiąc i raz w kwartale przedstawia właścicielowi procedury zestawienie przyczyn odmów oraz rekomendacje zmian. Dane z rejestru {są przechowywane|są archiwizowane} przez {{fakt:termin.otwarcie.przechowywanie-odmowy}}."
+
+  - id: otwarcie-kontrola-wskazniki
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-kontrola-opc
+    elementy:
+      - akapit: "Skuteczność procedury {ocenia się|mierzy się} na podstawie wskaźników, które właściciel procedury przedstawia organowi „{{fakt:jednostka.zarzad}}” w raporcie kwartalnym."
+      - ustep: "Do wskaźników {należą|zaliczają się} w szczególności:"
+        punkty:
+          - "odsetek wniosków, w których stwierdzono braki w dokumentacji, oraz średni czas ich uzupełnienia;"
+          - "liczba i przyczyny odmów otwarcia rachunku, z podziałem na kanały;"
+          - "odsetek sesji wideoweryfikacji zakończonych wynikiem negatywnym;"
+          - "liczba przypadków, w których poziom ryzyka ustalono nieprawidłowo i skorygowano w toku kontroli;"
+          - "liczba odstępstw od procedury zatwierdzonych na {{fakt:formularz.otwarcie.notatka-wyjatek}};"
+          - "czas, jaki upływa od złożenia kompletnego wniosku do uruchomienia rachunku, w odniesieniu do terminu {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}}."
+      - akapit: "Jeżeli wskaźnik przekroczy wartość progową ustaloną przez właściciela procedury w porozumieniu z komórką „{{fakt:jednostka.ryzyko}}”, {wszczyna się|uruchamia się} postępowanie wyjaśniające, a jego wyniki wykorzystuje się do doskonalenia procedury i szkoleń."
+
+  - id: otwarcie-dok-incydenty
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-dokumentacja-opc
+    elementy:
+      - akapit: "Utratę, zniszczenie lub ujawnienie osobom nieupoważnionym dokumentów dotyczących otwarcia rachunku {traktuje się|kwalifikuje się} jako incydent bezpieczeństwa. Pracownik, który stwierdzi taki incydent, postępuje następująco."
+      - kroki:
+          - tekst: "Zabezpiecz miejsce zdarzenia i pozostałe dokumenty, aby zapobiec dalszej utracie danych."
+          - tekst: "Niezwłocznie zawiadom kierownika placówki, komórkę „{{fakt:jednostka.bezpieczenstwo}}” oraz osobę pełniącą funkcję „{{fakt:jednostka.iod}}” ({{fakt:kontakt.email-iod}})."
+          - tekst: "{Sporządź|Przygotuj} opis zdarzenia: czas, okoliczności, rodzaj dokumentów i liczbę osób, których dane dotyczą."
+          - tekst: "Wykonaj polecenia osoby pełniącej funkcję „{{fakt:jednostka.iod}}”, która ocenia, czy konieczne jest zawiadomienie organu nadzorczego i osób, których dane dotyczą, zgodnie z {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
+          - tekst: "{Po zakończeniu sprawy|Po wyjaśnieniu sprawy} uzupełnij wykaz incydentów i, w razie potrzeby, zaproponuj właścicielowi procedury zmiany zapobiegające powtórzeniu zdarzenia."

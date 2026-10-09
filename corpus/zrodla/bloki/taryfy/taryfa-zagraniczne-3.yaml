@@ -1,0 +1,105 @@
+bloki:
+  # ---------------------------------------------------------------- VIII. Rachunki walutowe
+  - id: taryfa-zagraniczne-rachunki-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Bank prowadzi rachunki walutowe w euro, dolarach amerykańskich, funtach szterlingach, frankach szwajcarskich oraz innych walutach wskazanych w Tabeli kursów walut. Rachunek walutowy może być prowadzony jako rachunek pojedynczy albo jako rachunek wielowalutowy, na którym wyodrębnia się subkonta w poszczególnych walutach. Wypłata środków z rachunku walutowego {następuje|jest dokonywana} w walucie rachunku, a wypłata w złotych wymaga wymiany waluty."
+
+  - id: taryfa-zagraniczne-rachunki-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Otwarcie rachunku walutowego", stawka: "{{fakt:oplata.zagraniczne.rachunek-walutowy-otwarcie}}", tryb: "jednorazowo"}
+          - usluga: "Prowadzenie rachunku walutowego[^1]"
+            stawka: "wg segmentu"
+            tryb: "miesięcznie"
+            podpozycje:
+              - {usluga: "klient indywidualny", stawka: "{{fakt:oplata.zagraniczne.rachunek-walutowy-ind}}", tryb: "miesięcznie"}
+              - {usluga: "przedsiębiorca", stawka: "{{fakt:oplata.firma.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku wielowalutowego (opłata za każdą subwalutę ponad pierwszą)", stawka: "{{fakt:oplata.zagraniczne.rachunek-walutowy-wielowalutowy}}", tryb: "miesięcznie"}
+          - {usluga: "Zamknięcie rachunku walutowego", stawka: "{{fakt:oplata.zagraniczne.rachunek-walutowy-zamkniecie}}", tryb: "jednorazowo"}
+          - {usluga: "Wyciąg z rachunku walutowego w formie papierowej", stawka: "{{fakt:oplata.zagraniczne.wyciag-walutowy-papierowy}}", tryb: "za każdy wyciąg"}
+          - {usluga: "Wyciąg z rachunku walutowego w formie elektronicznej", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Dopuszczalne saldo ujemne na rachunku walutowym (oprocentowanie od zadłużenia)[^2]", stawka: "{{fakt:oprocentowanie.zagraniczne.saldo-ujemne-walutowe}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Wpłata gotówki w walucie obcej na rachunek walutowy", stawka: "{{fakt:oplata.zagraniczne.wplata-gotowki-walutowej}} kwoty, min. {{fakt:oplata.zagraniczne.wplata-gotowki-walutowej-minimum}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Wypłata gotówki w walucie obcej z rachunku walutowego — klient indywidualny", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty wypłaty", tryb: "od kwoty transakcji"}
+          - {usluga: "Wypłata gotówki w walucie obcej z rachunku walutowego — przedsiębiorca", stawka: "{{fakt:oplata.zagraniczne.wyplata-gotowki-walutowej-firma}} kwoty, min. {{fakt:oplata.zagraniczne.wyplata-gotowki-walutowej-minimum}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Wypłata gotówki w walucie obcej wymagająca wcześniejszego zamówienia (awizo)[^3]", stawka: "bez dodatkowej opłaty", tryb: "za zamówienie"}
+          - {usluga: "Weryfikacja autentyczności banknotów obcych na wniosek Klienta", stawka: "{{fakt:oplata.zagraniczne.weryfikacja-autentycznosci-banknotow}}", tryb: "za zlecenie"}
+    przypisy:
+      1: "Opłata nie jest pobierana w miesiącach, w których na rachunku walutowym zaksięgowano wpływ z zagranicy o równowartości co najmniej wskazanej w umowie."
+      2: "Zadłużenie na rachunku walutowym powstaje wyłącznie w razie pobrania opłaty lub prowizji przekraczającej saldo i powinno zostać spłacone niezwłocznie; odsetki naliczane są od dnia powstania do dnia spłaty."
+      3: "Wypłatę gotówki powyżej kwoty {{fakt:limit.zagraniczne.awizo-waluty-prog}} (w przeliczeniu według kursu średniego z Tabeli) należy zamówić w placówce nie później niż na {{fakt:termin.zagraniczne.awizo-waluty}} robocze przed planowaną wypłatą."
+
+  # ---------------------------------------------------------------- IX. Czeki i inkaso
+  - id: taryfa-zagraniczne-czeki-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Bank przyjmuje do inkasa czeki wystawione na rzecz Klienta i płatne za granicą oraz wystawia czeki bankowe w walutach obcych. Czeki przyjęte do inkasa są rozliczane po otrzymaniu środków od banku trasata; kredytowanie rachunku przed ostatecznym rozliczeniem czeku (skup czeku) wymaga odrębnej zgody Banku i wiąże się z ryzykiem zwrotu czeku, którym obciążany jest Klient."
+
+  - id: taryfa-zagraniczne-czeki-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przyjęcie czeku zagranicznego do inkasa (rozliczenie po otrzymaniu środków)[^1]", stawka: "{{fakt:oplata.zagraniczne.czek-inkaso-prowizja}} kwoty czeku, min. {{fakt:oplata.zagraniczne.czek-inkaso-minimum}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Skup czeku zagranicznego (natychmiastowe uznanie rachunku)", stawka: "{{fakt:oplata.zagraniczne.czek-skup-prowizja}} kwoty czeku, min. {{fakt:oplata.zagraniczne.czek-skup-minimum}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Zwrot czeku niezapłaconego przez bank trasata (obciążenie rachunku)", stawka: "{{fakt:oplata.zagraniczne.czek-zwrot-nieoplacony}}", tryb: "za czek"}
+          - {usluga: "Wystawienie czeku bankowego w walucie obcej", stawka: "{{fakt:oplata.zagraniczne.czek-wystawienie-bankowy}}", tryb: "za czek"}
+          - {usluga: "Inkaso dokumentowe — przyjęcie dokumentów do inkasa[^2]", stawka: "{{fakt:oplata.zagraniczne.inkaso-dokumentowe-prowizja}} kwoty, min. {{fakt:oplata.zagraniczne.inkaso-dokumentowe-minimum}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Zmiana warunków inkasa po przyjęciu dokumentów", stawka: "{{fakt:oplata.zagraniczne.inkaso-zmiana-warunkow}}", tryb: "za zmianę"}
+          - {usluga: "Obsługa inkasa niezapłaconego lub zwróconego", stawka: "{{fakt:oplata.zagraniczne.inkaso-niezaplacone}}", tryb: "za zlecenie"}
+          - {usluga: "Dołączenie kopii dokumentów handlowych do dyspozycji", stawka: "{{fakt:oplata.zagraniczne.dolaczenie-kopii-dokumentow}}", tryb: "za każdy dokument"}
+    przypisy:
+      1: "Prowizja obejmuje wysyłkę czeku do banku trasata kurierem; koszty obcych banków i opłaty zagranicznej poczty obciążają Klienta według rzeczywistej wysokości."
+      2: "Stawka dotyczy inkasa dokumentowego wychodzącego (w imieniu eksportera). Przy inkasie przychodzącym Bank pobiera opłatę od zleceniodawcy zagranicznego zgodnie z jego umową."
+
+  # ---------------------------------------------------------------- X. Czynności dodatkowe
+  - id: taryfa-zagraniczne-dodatkowe-opis
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Za czynności dodatkowe uważa się czynności wykonywane na wniosek Klienta, niewchodzące w skład podstawowej usługi płatniczej, w szczególności wyjaśnianie i śledzenie przelewów, wystawianie dokumentów i potwierdzeń oraz weryfikację dokumentów wymaganych przy rozliczeniach z zagranicą. Zlecenie przelewu z datą przyszłą można złożyć z wyprzedzeniem do {{fakt:termin.zagraniczne.zlecenie-wyprzedzajace}}."
+
+  - id: taryfa-zagraniczne-dodatkowe-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Poszukiwanie przelewu zagranicznego — klient indywidualny", stawka: "{{fakt:oplata.zagraniczne.poszukiwanie-ind}}", tryb: "za zlecenie"}
+          - {usluga: "Poszukiwanie przelewu zagranicznego — przedsiębiorca", stawka: "{{fakt:oplata.firma.poszukiwanie-przelewu}}", tryb: "za zlecenie"}
+          - {usluga: "Zapytanie o status przelewu zagranicznego (potwierdzenie zakończenia rozliczenia)[^1]", stawka: "bez opłat", tryb: "za zapytanie"}
+          - {usluga: "Kopia potwierdzenia przelewu w formacie komunikatu SWIFT", stawka: "{{fakt:oplata.zagraniczne.kopia-mt103}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie wykonania przelewu zagranicznego w formie papierowej", stawka: "{{fakt:oplata.zagraniczne.potwierdzenie-realizacji}}", tryb: "za dokument"}
+          - {usluga: "Weryfikacja dokumentów związanych z transakcją z zagranicą", stawka: "{{fakt:oplata.zagraniczne.weryfikacja-dokumentow}}", tryb: "za zlecenie"}
+          - {usluga: "Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim)", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie salda rachunku walutowego dla biegłego rewidenta", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o posiadanych rachunkach walutowych", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Duplikat dokumentu potwierdzającego operację walutową", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument"}
+    przypisy:
+      1: "Opłata za status dotyczy zapytania zgłoszonego w terminie nie krótszym niż 3 dni robocze od daty przelewu; zapytania zgłaszane wcześniej Bank rozpatruje w trybie poszukiwania."
+
+  # ---------------------------------------------------------------- Objaśnienia i postanowienia końcowe
+  - id: taryfa-zagraniczne-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-zagraniczne]
+    kategoria: wymagany-objasnienia
+    elementy:
+      - akapit: "Użyte w Taryfie określenia oznaczają:"
+      - ustep: "**SEPA** — jednolity obszar płatności w euro, w którym przelewy w euro realizowane są według jednolitych zasad i z wykorzystaniem numeru IBAN, z opcją kosztów SHA;"
+      - ustep: "**SWIFT** — międzynarodowa sieć komunikacji międzybankowej, za pośrednictwem której przekazywane są przelewy poza SEPA, identyfikowana kodem BIC banku;"
+      - ustep: "**IBAN** — międzynarodowy numer rachunku bankowego, złożony z kodu kraju, cyfr kontrolnych i krajowego numeru rachunku;"
+      - ustep: "**opcja SHA, OUR, BEN** — sposób podziału kosztów przelewu: SHA — koszty dzielone, OUR — wszystkie koszty ponosi zleceniodawca, BEN — koszty ponosi odbiorca;"
+      - ustep: "**waluta dnia (D+0), D+1, D+2** — termin uznania rachunku banku odbiorcy, liczony w dniach roboczych od dnia przyjęcia zlecenia;"
+      - ustep: "**Tabela kursów walut** — tabela kursów kupna, sprzedaży i średnich, sporządzana przez Bank w dni robocze i obowiązująca w chwili realizacji transakcji;"
+      - ustep: "**dzień roboczy** — dzień niebędący sobotą ani dniem ustawowo wolnym od pracy, a w przypadku przelewów zagranicznych — dzień roboczy także w państwie waluty przelewu."
+      - akapit: "{Pytania|Wnioski i pytania} dotyczące Taryfy można kierować na infolinię pod numerem {{fakt:kontakt.infolinia}}, a dzwoniąc z zagranicy — pod numerem {{fakt:kontakt.infolinia-zagranica}}. Taryfa wchodzi w życie z dniem wskazanym na okładce i obowiązuje do czasu jej zmiany w trybie określonym w postanowieniach ogólnych."

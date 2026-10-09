@@ -1,0 +1,41 @@
+bloki:
+  - id: taryfa-karty-przelewy
+    typy: [taryfy]
+    tematy: [karty]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Przelewy kartą są realizowane w dni robocze."
+  - id: taryfa-karty-gotowka
+    typy: [taryfy]
+    tematy: [karty]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Wypłata gotówki w bankomacie Banku jest bezpłatna."
+  - id: taryfa-rachunki-glowna
+    typy: [taryfy]
+    tematy: [rachunki]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Prowadzenie rachunku rozliczeniowego."
+  - id: taryfa-rachunki-przelewy
+    typy: [taryfy]
+    tematy: [rachunki]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Przelew krajowy w złotych."
+  - id: taryfa-rachunki-wyciagi
+    typy: [taryfy]
+    tematy: [rachunki]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Wyciąg papierowy wysyłany pocztą."
+  - id: taryfa-ogolne-waluty
+    typy: [taryfy]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Przewalutowanie według kursu Banku Przykładowego S.A."
+  - id: taryfa-ogolne-zlecenia
+    typy: [taryfy]
+    kategoria: pozycja-taryfy
+    elementy:
+      - akapit: "Zlecenie stałe realizowane jest zgodnie z harmonogramem."

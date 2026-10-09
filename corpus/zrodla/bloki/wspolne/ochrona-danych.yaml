@@ -1,0 +1,32 @@
+bloki:
+  - id: wspolne-ochrona-danych-regulamin
+    typy: [regulaminy]
+    tematy: [ochrona-danych]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Administratorem {danych osobowych|danych osobowych Klientów} jest Bank Przykładowy S.A. z siedzibą pod adresem: {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS {{fakt:bank.krs}}. {Dane|Dane osobowe} są przetwarzane {zgodnie z rozporządzeniem|na podstawie rozporządzenia} Parlamentu Europejskiego i Rady (UE) 2016/679 oraz przepisów krajowych — zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
+      - ustep: "Bank przetwarza dane osobowe {w celu|dla potrzeb}:"
+        punkty:
+          - "zawarcia i wykonania umowy oraz {obsługi|prowadzenia obsługi} produktów i usług;"
+          - "wypełnienia obowiązków prawnych ciążących na Banku, w tym wynikających z przepisów o przeciwdziałaniu praniu pieniędzy;"
+          - tekst: "{realizacji|zabezpieczenia} prawnie uzasadnionych interesów Banku, w szczególności:"
+            litery:
+              - "dochodzenia roszczeń i obrony przed roszczeniami;"
+              - "zapobiegania nadużyciom i oszustwom."
+      - ustep: "{Klientowi|Osobie, której dane dotyczą} przysługuje prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz wniesienia sprzeciwu, a także prawo wniesienia skargi do organu nadzorczego. W sprawach ochrony danych można {kontaktować się|zwracać się} do: {{fakt:jednostka.iod}}, adres e-mail: {{fakt:kontakt.email-iod}}."
+
+  - id: wspolne-ochrona-danych-procedura
+    typy: [procedury]
+    tematy: [ochrona-danych]
+    kategoria: wspolny-procedura
+    wspolny: true
+    elementy:
+      - akapit: "Dane osobowe Klientów {przetwarza się|wykorzystuje się} wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}}) oraz z zasadą minimalizacji danych."
+      - ustep: "Pracownik wykonujący czynności objęte procedurą jest obowiązany:"
+        punkty:
+          - "{chronić|zabezpieczać} dokumenty i dane przed dostępem osób nieupoważnionych;"
+          - "nie {przekazywać|udostępniać} danych poza {Bank|struktury Banku} bez podstawy prawnej;"
+          - "niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych: inspektorowi ochrony danych ({{fakt:jednostka.iod}}) oraz jednostce bezpieczeństwa ({{fakt:jednostka.bezpieczenstwo}})."
+      - akapit: "Wnioski osób, których dane dotyczą, {kieruje się|przekazuje się} do inspektora ochrony danych ({{fakt:jednostka.iod}}, {{fakt:kontakt.email-iod}}); {odpowiedź|informacja o sposobie załatwienia wniosku} jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku."

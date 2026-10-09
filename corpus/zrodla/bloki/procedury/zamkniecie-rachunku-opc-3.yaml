@@ -1,0 +1,160 @@
+bloki:
+  # ---------- Przypadki szczególne ----------
+  - id: zamkniecie-szczegolne-oszczednosciowy
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Rachunki oszczędnościowe i lokaty powiązane z rachunkiem.** Zamknięcie rachunku osobistego nie powoduje automatycznego zamknięcia rachunku oszczędnościowego ani lokaty terminowej prowadzonej w Banku. Pracownik {ustala|sprawdza}, czy na rachunku oszczędnościowym znajdują się środki, i {pyta|zasięga opinii} Klienta o dyspozycję; środki z rachunku oszczędnościowego {mogą|mogą też} zostać przekazane na rachunek wskazany przez Klienta albo zostać na rachunku oszczędnościowym, jeżeli umowa to dopuszcza."
+      - ustep: "Przy lokacie terminowej powiązanej z rachunkiem osobistym:"
+        punkty:
+          - "{jeżeli|w sytuacji, gdy} lokata jest odnawiana automatycznie, a środki po zakończeniu okresu mają wrócić na zamykany rachunek, należy zmienić dyspozycję dotyczącą rachunku, na który wypłacone zostaną środki po zakończeniu lokaty;"
+          - "zerwanie lokaty przed terminem {następuje|jest wykonywane} wyłącznie na wyraźne żądanie Klienta, z pouczeniem o utracie odsetek według warunków lokaty;"
+          - "rachunek oszczędnościowy bez środków i bez operacji przez okres {{fakt:termin.rachunek-oszczednosciowy.nieaktywnosc}} może zostać zamknięty przez Bank po uprzednim powiadomieniu Klienta."
+
+  - id: zamkniecie-szczegolne-kredyt
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Rachunki służące do obsługi kredytu.** Jeżeli rachunek jest rachunkiem rozliczeniowym kredytu konsumenckiego lub hipotecznego (spłata następuje z rachunku w drodze zlecenia stałego lub polecenia zapłaty), zamknięcie rachunku wymaga uprzedniego {wskazania|ustanowienia} innego rachunku do spłaty rat albo spłaty kredytu. Pracownik {nie przyjmuje|nie realizuje} dyspozycji zamknięcia, dopóki zlecenie spłaty nie zostanie {zmienione|przeniesione na inny rachunek}, o czym {informuje|powiadamia} Klienta i odnotowuje w systemie."
+      - akapit: "W przypadku kredytu z promocyjną marżą uzależnioną od utrzymywania rachunku i wpływów na rachunek pracownik informuje Klienta, że zamknięcie rachunku może skutkować podwyższeniem oprocentowania lub utratą ulgi na warunkach opisanych w umowie kredytu (zob. także {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}} i {{ref:akt:dz-u-2025-720-kredyt-hipoteczny}}). Informację {przekazuje się|doręcza się} na piśmie, a Klient potwierdza {zapoznanie się|zapoznanie} z nią własnoręcznym podpisem lub w bankowości elektronicznej."
+
+  - id: zamkniecie-szczegolne-naduzycia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Rachunki objęte podejrzeniem nadużyć lub prania pieniędzy.** Jeżeli rachunek został zgłoszony do jednostki „{{fakt:jednostka.zgodnosc}}” w związku z podejrzeniem związanym z przeciwdziałaniem praniu pieniędzy lub finansowaniu terroryzmu (zob. {{ref:akt:dz-u-2025-644-aml}}), pracownik {nie podejmuje|nie wykonuje} żadnych czynności zmierzających do zamknięcia rachunku bez wyraźnej zgody tej jednostki."
+      - ustep: "Zasady postępowania:"
+        punkty:
+          - "pracownik nie {informuje|powiadamia} Klienta o zgłoszeniu ani o wszczęciu czynności wyjaśniających;"
+          - "jeżeli Klient żąda zamknięcia rachunku, pracownik {przyjmuje|rejestruje} dyspozycję i przekazuje ją niezwłocznie do jednostki „{{fakt:jednostka.zgodnosc}}”, wskazując Klientowi, że realizacja będzie wymagała dodatkowych czynności;"
+          - "decyzję o wypłacie lub przekazaniu środków podejmuje jednostka „{{fakt:jednostka.zgodnosc}}” w porozumieniu z jednostką „{{fakt:jednostka.prawny}}”, z uwzględnieniem wymogów przepisów i poleceń organów;"
+          - "wszystkie czynności {dokumentuje się|ewidencjonuje się} w odrębnych aktach o ograniczonym dostępie."
+
+  - id: zamkniecie-szczegolne-zgon
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Zamknięcie rachunku po śmierci Posiadacza.** Śmierć Posiadacza rachunku indywidualnego skutkuje wygaśnięciem umowy rachunku. Po otrzymaniu informacji o zgonie pracownik {blokuje|zawiesza} rachunek dla operacji zleconych przez pełnomocników (z wyjątkiem pełnomocnictw, które przepisy lub umowa pozwalają wykonywać po śmierci) i wykonuje czynności ustalone w odrębnych instrukcjach dotyczących postępowania w razie zgonu."
+      - ustep: "Zamknięcie rachunku {następuje|jest wykonywane}:"
+        punkty:
+          - "na wniosek spadkobierców po przedłożeniu dokumentów stwierdzających prawa do spadku (postanowienie sądu lub akt poświadczenia dziedziczenia) oraz dokumentów tożsamości;"
+          - "w terminie {{fakt:zamkniecie.termin.zgon-zamkniecie}} od dnia przedłożenia kompletu dokumentów albo, jeżeli wcześniej wystąpiły uprawnione osoby wskazane w dyspozycji na wypadek śmierci, w terminie {{fakt:termin.rachunek-osobisty.wyplata-po-zgonie}} od dnia zgłoszenia;"
+          - "po {rozliczeniu|uregulowaniu} zobowiązań Posiadacza wobec Banku i pokryciu kosztów pogrzebu do wysokości przewidzianej w przepisach, jeżeli osoba je ponosząca przedłoży rachunki."
+      - akapit: "Sprawy dotyczące kilku spadkobierców i niezgodności co do podziału środków {przekazuje się|kieruje się} do jednostki „{{fakt:jednostka.prawny}}”; do czasu rozstrzygnięcia środki są przechowywane na rachunku technicznym."
+
+  - id: zamkniecie-szczegolne-pelnomocnictwa
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Wygaśnięcie pełnomocnictw i dyspozycji.** Z dniem rozwiązania umowy rachunku wygasają pełnomocnictwa do rachunku, dyspozycja na wypadek śmierci oraz dyspozycje związane z kartami wydanymi pełnomocnikom. Pracownik, który przyjmuje oświadczenie o wypowiedzeniu, {informuje|poucza} Posiadacza o tych skutkach i, jeżeli Posiadacz sobie tego życzy, odnotowuje w systemie datę odwołania pełnomocnictw przed zamknięciem rachunku."
+      - akapit: "Pełnomocnikowi nie {wolno|można} wypłacić salda po wypowiedzeniu rachunku ani po jego zamknięciu, jeżeli pełnomocnictwo wygasło przed dniem wypłaty. W razie wątpliwości co do ważności pełnomocnictwa wypłatę {odracza się|wstrzymuje się} do czasu uzyskania jednoznacznego stanowiska Posiadacza lub jednostki „{{fakt:jednostka.prawny}}”."
+
+  - id: zamkniecie-szczegolne-nieaktywne-opc
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Nieaktywna bankowość elektroniczna.** Dostęp do bankowości elektronicznej, z którego Klient nie korzystał przez okres {{fakt:bankowosc.nieaktywnosc}}, może zostać {zablokowany|czasowo wyłączony} przez Bank po uprzednim powiadomieniu. Zablokowanie dostępu nie jest równoznaczne z zamknięciem rachunku ani z wypowiedzeniem umowy; Klient {może|ma prawo} odblokować dostęp w placówce lub na Infolinii. Zamknięcie rachunku z powodu nieaktywności bankowości elektronicznej nie jest {dopuszczalne|możliwe}, jeżeli na rachunku wykonywane są inne operacje."
+
+  - id: zamkniecie-szczegolne-karta-zagranica
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Karty wydane do rachunku i transakcje w toku.** Zamknięcie rachunku nie zwalnia Klienta z obowiązku zapłaty transakcji kartowych wykonanych przed zastrzeżeniem karty, a rozliczonych po zamknięciu rachunku, w szczególności transakcji zagranicznych i płatności zbliżeniowych rozliczanych z opóźnieniem. W takim przypadku Bank {obciąża|rozlicza} Klienta kwotą transakcji, powiększoną o należne opłaty, a w razie braku środków wzywa go do zapłaty."
+      - ustep: "Aby ograniczyć ryzyko niedopłat:"
+        punkty:
+          - "przed zamknięciem rachunku {należy|trzeba} pozostawić na nim środki wystarczające do pokrycia zablokowanych autoryzacji na okres {{fakt:termin.karta-debetowa.blokada-autoryzacji}};"
+          - "rachunek zamyka się po upływie tego okresu albo po {zakończeniu|dokonaniu} rozliczenia wszystkich autoryzacji;"
+          - "jeżeli Klient {zażąda|zgłosi żądanie} wcześniejszego zamknięcia rachunku, wymagane jest jego oświadczenie o przyjęciu ryzyka i wskazanie rachunku do obciążenia w razie nierozliczonych transakcji."
+
+  - id: zamkniecie-szczegolne-spor
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "**Rachunki objęte reklamacją lub postępowaniem.** Zamknięcie rachunku nie {kończy|wygasza} postępowania reklamacyjnego dotyczącego operacji na tym rachunku. Jeżeli w chwili zamknięcia toczy się postępowanie w sprawie nieautoryzowanej transakcji, zwrot środków (jeżeli reklamacja zostanie uwzględniona) następuje na rachunek wskazany przez Klienta, a w razie jego braku — przez wypłatę z rachunku technicznego. Pracownik {wpisuje|odnotowuje} w rejestrze zamknięć numer sprawy reklamacyjnej."
+      - akapit: "Jeżeli przeciwko Klientowi lub Bankowi toczy się postępowanie sądowe, w którym stanowiska stron dotyczą rachunku, zamknięcie rachunku {odracza się|wstrzymuje się} do czasu wskazania przez jednostkę „{{fakt:jednostka.prawny}}” sposobu dalszego postępowania."
+
+  # ---------- Kontrola ----------
+  - id: zamkniecie-kontrola-wskazniki
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - ustep: "Jednostka „{{fakt:jednostka.operacje}}” monitoruje co miesiąc następujące wskaźniki:"
+        punkty:
+          - "odsetek zamknięć {zrealizowanych|wykonanych} w terminie wynikającym z procedury;"
+          - "liczbę wypowiedzeń złożonych przez Bank, z {podziałem na|uwzględnieniem} przyczyn;"
+          - "liczbę reklamacji dotyczących zamknięcia rachunku i odsetek uwzględnionych;"
+          - "liczbę rachunków przeniesionych na rachunek techniczny oraz wartość środków niepodjętych;"
+          - "średni czas od złożenia wypowiedzenia do wypłaty salda."
+      - akapit: "Wyniki są przedstawiane kierownictwu jednostki „{{fakt:jednostka.operacje}}” i, w zakresie dotyczącym zgodności, jednostce „{{fakt:jednostka.zgodnosc}}”. Przekroczenie progów ostrzegawczych wyznaczonych przez właściciela procedury {uruchamia|wszczyna} analizę przyczyn."
+
+  - id: zamkniecie-kontrola-dzialania
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - akapit: "**Działania korygujące.** W razie stwierdzenia nieprawidłowości właściwa jednostka {sporządza|opracowuje} plan działań korygujących, wskazujący przyczynę, osobę odpowiedzialną i termin usunięcia uchybień. Uchybienia, które mogły spowodować szkodę Klienta, są {usuwane|korygowane} niezwłocznie; Klienta informuje się na trwałym nośniku o błędzie i podjętych działaniach."
+      - ustep: "Plan działań korygujących zawiera w szczególności:"
+        punkty:
+          - "opis nieprawidłowości i liczbę dotkniętych nią spraw;"
+          - "{analizę|ocenę} przyczyn (błąd człowieka, niejasna instrukcja, błąd systemu);"
+          - "działania naprawcze i zapobiegawcze, w tym zmiany procedury lub szkolenie;"
+          - "sposób {weryfikacji|sprawdzenia} skuteczności działań."
+
+  - id: zamkniecie-kontrola-audyt
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - akapit: "Stosowanie procedury podlega także badaniu przez audyt wewnętrzny Banku, zgodnie z rocznym planem audytu. Audyt {może obejmować|obejmuje zwykle} próbę zamknięć rachunków, kontrolę uprawnień w {{fakt:zamkniecie.system.glowny}} oraz sprawdzenie, czy wypłaty salda były dokonywane zgodnie z limitami. Pracownicy i kierownicy {udostępniają|przekazują} audytorom wszystkie wymagane dokumenty w terminie wyznaczonym w zawiadomieniu o audycie, a wnioski i zalecenia audytu {wdrażane są|realizuje się} w uzgodnionych terminach."
+
+  # ---------- Archiwizacja ----------
+  - id: zamkniecie-archiwum-dostep
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "**Dostęp do zarchiwizowanej dokumentacji.** Dostęp do dokumentacji zamknięcia rachunku mają wyłącznie pracownicy upoważnieni przez właściciela procedury. Każde wyszukanie lub pobranie dokumentu jest {rejestrowane|odnotowywane}, a rejestr przeglądany przez jednostkę „{{fakt:jednostka.zgodnosc}}” w ramach kontroli. Dokumentów nie {wynosi się|wydaje się} poza archiwum; odpisy wydaje się za pisemną zgodą kierownika jednostki archiwizującej."
+      - ustep: "Dokumentację udostępnia się na wniosek:"
+        punkty:
+          - "byłego Posiadacza rachunku lub jego następcy prawnego — po {weryfikacji|potwierdzeniu} tożsamości, za opłatą według taryfy (zob. np. {{fakt:oplata.duplikat-umowy}} za duplikat umowy);"
+          - "organów publicznych — po {sprawdzeniu|zbadaniu} podstawy prawnej i po akceptacji jednostki „{{fakt:jednostka.prawny}}”;"
+          - "audytorów i kontrolerów — na podstawie zawiadomienia o kontroli."
+
+  - id: zamkniecie-archiwum-zniszczenie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "**Brakowanie dokumentacji.** Dokumentację, której okres przechowywania upłynął, {przekazuje się|kieruje się} do zniszczenia na podstawie protokołu brakowania sporządzanego raz w roku. Protokół zawiera wykaz akt, okres przechowywania, datę upływu i podpisy członków komisji. {Przed zniszczeniem|Przed przystąpieniem do niszczenia} jednostka „{{fakt:jednostka.prawny}}” sprawdza, czy nie toczy się postępowanie, w którym dokumentacja mogłaby stanowić dowód, oraz czy nie obowiązuje zakaz niszczenia dokumentów wydany przez organ."
+      - akapit: "Dokumenty elektroniczne {usuwa się|kasuje się} w sposób uniemożliwiający ich odtworzenie, a fakt usunięcia odnotowuje w elektronicznym archiwum dokumentów {{fakt:zamkniecie.system.archiwum}}. Okresy: dokumentacja ogólna — {{fakt:zamkniecie.termin.archiwum-dokumentacja}}, dokumenty AML — {{fakt:zamkniecie.termin.archiwum-aml}}."
+
+  # ---------- Postanowienia końcowe ----------
+  - id: zamkniecie-koncowe-formularze
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-koncowe-opc
+    elementy:
+      - ustep: "Do realizacji procedury {stosuje się|używa się} następujące wzory formularzy, udostępnione w systemie obiegu dokumentów:"
+        punkty:
+          - "{{fakt:zamkniecie.formularz.wypowiedzenie}} — wypowiedzenie umowy rachunku lub porozumienie o jej rozwiązaniu;"
+          - "{{fakt:zamkniecie.formularz.rozliczenie}} — dyspozycja rozliczenia i wypłaty salda;"
+          - "{{fakt:zamkniecie.formularz.zmiana-banku}} — wniosek o przeniesienie rachunku do innego banku;"
+          - "{{fakt:zamkniecie.formularz.wspolny}} — zawiadomienie współposiadaczy o wypowiedzeniu rachunku wspólnego;"
+          - "{{fakt:zamkniecie.formularz.zajecie}} — informacja dla Klienta o ograniczeniu dysponowania środkami z powodu zajęcia."
+      - akapit: "Zmiana wzoru formularza wymaga {zatwierdzenia|akceptacji} przez właściciela procedury w porozumieniu z jednostką „{{fakt:jednostka.prawny}}”. Pracownicy {używają wyłącznie wzorów|korzystają wyłącznie ze wzorów} aktualnych na dzień przyjęcia dyspozycji."
+
+  - id: zamkniecie-koncowe-przejsciowe
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-koncowe-opc
+    elementy:
+      - akapit: "Do wypowiedzeń i dyspozycji zamknięcia rachunku złożonych przed dniem wejścia w życie procedury {stosuje się|stosuje się nadal} dotychczasowe zasady, z zastrzeżeniem, że zamknięcie i rozliczenie rachunku {dokonywane|wykonywane} po tym dniu odbywa się zgodnie z procedurą w zakresie terminów rozliczenia, potwierdzeń i archiwizacji. Sprawy w toku, w których jest ustalony inny termin lub sposób rozliczenia, są {dokończone|zakończone} według ustaleń z Klientem, jeżeli {nie narusza to przepisów|nie jest to sprzeczne z przepisami}."

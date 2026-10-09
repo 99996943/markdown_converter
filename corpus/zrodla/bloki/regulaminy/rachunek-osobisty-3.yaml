@@ -1,0 +1,155 @@
+bloki:
+  - id: rachunek-osobisty-wspolny-zgon
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-wspolny
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{W razie|W przypadku} śmierci jednego ze współposiadaczy rachunku wspólnego umowa rachunku {nie wygasa|pozostaje w mocy} wobec pozostałych współposiadaczy. Bank {niezwłocznie|bez zbędnej zwłoki} po otrzymaniu informacji o śmierci blokuje możliwość dysponowania rachunkiem przez zmarłego i jego pełnomocników."
+      - ustep: "Pozostali współposiadacze mogą dysponować całością środków zgromadzonych na rachunku, z zastrzeżeniem praw spadkobierców zmarłego, które realizowane są poza Bankiem, w trybie przepisów prawa spadkowego. Bank nie rozstrzyga sporów między współposiadaczami a spadkobiercami."
+      - ustep: "Spadkobiercy zmarłego współposiadacza mogą żądać od Banku informacji o stanie rachunku na dzień śmierci, {po przedstawieniu|po okazaniu} dokumentów potwierdzających ich prawa. Bank udziela takich informacji w zakresie niezbędnym do ustalenia praw do spadku i w sposób przewidziany w przepisach."
+
+  - id: rachunek-osobisty-pelnomocnik-elektroniczny
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-wspolny
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pełnomocnik rachunku {może uzyskać|ma prawo uzyskać} dostęp do bankowości elektronicznej, jeżeli Posiadacz wyraźnie wskaże to w pełnomocnictwie. Pełnomocnik otrzymuje własne dane uwierzytelniające, które nie mogą być udostępniane osobom trzecim, w tym Posiadaczowi."
+      - ustep: "Zakres uprawnień pełnomocnika w bankowości elektronicznej może być ograniczony do:"
+        punkty:
+          - "wglądu w saldo i historię operacji;"
+          - "składania przelewów do ustalonego limitu;"
+          - "dysponowania kartą debetową wydaną do rachunku."
+      - ustep: "Posiadacz ponosi odpowiedzialność za działania i zaniechania pełnomocnika {jak za własne|tak jak za działania własne}. Bank {może|ma prawo} zablokować dostęp pełnomocnika do bankowości elektronicznej, jeżeli zachodzi podejrzenie, że jego działania zagrażają bezpieczeństwu rachunku lub są sprzeczne z umocowaniem."
+
+  - id: rachunek-osobisty-zgon-postepowanie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-zgon
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po {otrzymaniu|uzyskaniu} informacji o śmierci Posiadacza rachunku Bank {wstrzymuje|zawiesza} wykonywanie zleceń stałych i poleceń zapłaty, z wyjątkiem zleceń dotyczących zobowiązań, które powstały przed dniem śmierci i które można zrealizować bez uszczerbku dla spadkobierców."
+      - ustep: "Spadkobiercy mogą żądać wypłaty środków z rachunku {po przedstawieniu|po okazaniu} Bankowi:"
+        punkty:
+          - "aktu zgonu Posiadacza;"
+          - "prawomocnego postanowienia sądu o stwierdzeniu nabycia spadku albo zarejestrowanego aktu poświadczenia dziedziczenia;"
+          - "dokumentów tożsamości osób wnioskujących o wypłatę."
+      - ustep: "Rachunek zmarłego Posiadacza jest {prowadzony|utrzymywany} do chwili wypłaty środków spadkobiercom. W tym czasie Bank nie pobiera opłaty za prowadzenie rachunku ani nie nalicza opłat z tytułu czynności wykonywanych w związku ze śmiercią Posiadacza, a środki są oprocentowane według stawki rachunku."
+
+  - id: rachunek-osobisty-zgon-pogrzeb
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-zgon
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wypłaca|dokonuje wypłaty} z rachunku zmarłego Posiadacza, na żądanie osoby, która przedstawi rachunek lub fakturę, kwotę przeznaczoną na pokrycie kosztów pogrzebu, {do wysokości|do kwoty} tych kosztów oraz {do wysokości|do kwoty} środków na rachunku, nie więcej niż w wysokości określonej w przepisach."
+      - ustep: "Wypłata następuje bez konieczności przedstawienia postanowienia o stwierdzeniu nabycia spadku, ale po okazaniu aktu zgonu, rachunków za koszty pogrzebu oraz dokumentu tożsamości wnioskodawcy. Bank wypłaca kwotę, o której mowa w ust. 1, w terminie {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od dnia złożenia kompletu dokumentów."
+      - ustep: "Osoba, która pobrała środki na koszty pogrzebu, {jest obowiązana|ma obowiązek} rozliczyć się ze spadkobiercami. Bank nie jest zobowiązany do weryfikacji prawidłowości wydatkowania środków, a wypłata nie wpływa na prawa i obowiązki spadkobierców."
+
+  - id: rachunek-osobisty-silne-uwierzytelnianie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-bezpieczenstwo
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank stosuje silne uwierzytelnienie Klienta przy logowaniu do bankowości elektronicznej oraz przy autoryzacji transakcji płatniczych, polegające na zweryfikowaniu {co najmniej|przynajmniej} dwóch z trzech elementów: wiedzy (np. hasła lub PIN), posiadania (np. telefonu z aplikacją mobilną) oraz cechy Klienta (np. biometrii)."
+      - ustep: "Transakcje zbliżeniowe kartą debetową do kwoty {{fakt:limit.rachunek-osobisty.zblizeniowa-bez-pin}} {mogą być|są} realizowane bez wprowadzania PIN, w granicach łącznych limitów wskazanych w regulaminie kart. Po przekroczeniu limitu kolejnej transakcji lub liczby transakcji Bank wymaga wprowadzenia PIN."
+      - ustep: "W przypadku wykrycia nietypowej aktywności Bank {może|ma prawo} dodatkowo zażądać potwierdzenia transakcji w drodze telefonicznej lub w aplikacji. Brak potwierdzenia w terminie wskazanym w komunikacie jest równoznaczny z odmową wykonania transakcji."
+
+  - id: rachunek-osobisty-bankowosc-elektroniczna
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-bezpieczenstwo
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dostęp do rachunku przez bankowość elektroniczną wymaga aktywacji usługi, którą Klient dokonuje w placówce lub samodzielnie po pozytywnym zweryfikowaniu tożsamości. Bank przekazuje dane niezbędne do pierwszego logowania odrębnymi kanałami."
+      - ustep: "Klient {jest obowiązany|ma obowiązek} logować się {wyłącznie|jedynie} przez stronę internetową Banku {{fakt:bank.strona}} lub oficjalną aplikację mobilną, pobraną z autoryzowanego sklepu. Przerwy w dostępie do bankowości elektronicznej związane z konserwacją systemów Bank ogłasza z wyprzedzeniem, w tym na swojej stronie i w aplikacji."
+      - ustep: "Bank {może|ma prawo} zawiesić lub ograniczyć dostęp do bankowości elektronicznej {w razie|w przypadku} zagrożenia bezpieczeństwa systemu, awarii lub ataku na infrastrukturę Banku. Za szkody wynikłe z przerw niezależnych od Banku Bank nie ponosi odpowiedzialności."
+
+  - id: rachunek-osobisty-oszustwa
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-bezpieczenstwo
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank prowadzi systemy wykrywania {nadużyć|oszustw}, które analizują transakcje płatnicze na rachunku pod kątem niezgodności z typowym zachowaniem Klienta. Wykrycie nieprawidłowości może skutkować czasowym wstrzymaniem transakcji do chwili jej potwierdzenia przez Klienta."
+      - ustep: "Klient jest zobowiązany {ostrożnie|z należytą uwagą} weryfikować komunikaty podszywające się pod Bank, {w szczególności|zwłaszcza} wiadomości tekstowe i elektroniczne z linkami do stron logowania. Bank nie prosi o ujawnienie kodów autoryzacyjnych ani nie wymaga ich podawania pracownikom. Podejrzane wiadomości należy przesyłać do Banku, a w przypadku wystąpienia podejrzenia przestępstwa — {niezwłocznie|bez zbędnej zwłoki} zawiadomić Infolinię i organy ścigania."
+      - ustep: "Jeżeli Klient padł ofiarą oszustwa, Bank — w granicach swoich uprawnień — podejmuje działania zmierzające do zablokowania środków na rachunku odbiorcy oraz współpracuje z organami ścigania, nie gwarantując jednak odzyskania środków."
+
+  - id: rachunek-osobisty-zmiana-informowanie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-zmiany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Informacje o zmianie Regulaminu lub Taryfy Bank {przekazuje|udostępnia} Klientowi w postaci elektronicznej, w bankowości elektronicznej oraz za pośrednictwem poczty elektronicznej, a na żądanie Klienta — w postaci papierowej, za opłatą określoną w Taryfie."
+      - ustep: "Klient, który nie wyraża zgody na proponowane zmiany, {składa sprzeciw|zgłasza sprzeciw} najpóźniej w dniu poprzedzającym dzień wejścia zmian w życie. {Brak sprzeciwu oznacza zgodę|Niezgłoszenie sprzeciwu oznacza akceptację zmian}, a złożenie sprzeciwu bez wypowiedzenia umowy powoduje wygaśnięcie umowy z dniem poprzedzającym dzień wejścia zmian w życie."
+      - ustep: "Zmiany niewymagające zachowania terminu, o którym mowa w Regulaminie, to zmiany wynikające wprost z przepisów prawa, zmiany oczywistych omyłek pisarskich oraz zmiany korzystne dla Klienta. Bank {poinformuje|powiadomi} o nich w terminie umożliwiającym Klientowi zapoznanie się z ich treścią."
+
+  - id: rachunek-osobisty-skutki-rozwiazania
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-wypowiedzenie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Z dniem rozwiązania umowy rachunku Bank wyłącza dostęp do rachunku, unieważnia instrumenty płatnicze wydane do rachunku, w tym kartę debetową, oraz zamyka usługi dodatkowe, {w szczególności|zwłaszcza} bankowość elektroniczną i powiadomienia SMS."
+      - ustep: "Do dnia zamknięcia rachunku Klient {jest obowiązany|ma obowiązek}:"
+        punkty:
+          - "odwołać zlecenia stałe oraz zgody na polecenia zapłaty;"
+          - "zwrócić Bankowi karty i inne instrumenty płatnicze albo zniszczyć je w sposób uniemożliwiający ich użycie;"
+          - "wskazać rachunek, na który mają zostać przelane środki pozostałe po rozliczeniu."
+      - ustep: "Zobowiązania wynikające z operacji wykonanych przed zamknięciem rachunku, które nie zostały jeszcze rozliczone, pozostają w mocy po rozwiązaniu umowy. Bank {może|ma prawo} wstrzymać wypłatę środków do czasu rozliczenia operacji kartowych, lecz nie dłużej niż przez {{fakt:termin.rachunek-osobisty.zamkniecie-rozliczenie}}."
+
+  - id: rachunek-osobisty-saldo-ujemne
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-wypowiedzenie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli w dniu rozwiązania umowy rachunek wykazuje saldo ujemne, Klient {jest obowiązany|ma obowiązek} {niezwłocznie|bez zbędnej zwłoki} spłacić zadłużenie wraz z odsetkami i należnymi opłatami. Bank wzywa Klienta do spłaty na piśmie, wyznaczając termin nie krótszy niż {{fakt:termin.doreczenie-korespondencji}}."
+      - ustep: "Od należności przeterminowanych Bank {nalicza|oblicza} odsetki w wysokości {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym. Po bezskutecznym upływie terminu wyznaczonego w wezwaniu Bank {może|ma prawo} wszcząć postępowanie windykacyjne, a także przekazać informację o zadłużeniu do biura informacji gospodarczej na zasadach określonych w przepisach."
+      - ustep: "Zaległa należność może zostać pokryta w drodze potrącenia z innych wierzytelności Klienta wobec Banku, w tym z salda innych rachunków, w zakresie dopuszczalnym przez przepisy o ochronie środków przed zajęciem."
+
+  - id: rachunek-osobisty-zmiana-rachunku
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Na wniosek|Na żądanie} Klienta Bank pomaga w przeniesieniu rachunku do innego dostawcy usług płatniczych na terytorium Rzeczypospolitej Polskiej, na zasadach określonych w przepisach o usługach płatniczych, bez pobierania opłat za czynności związane z zamknięciem rachunku."
+      - ustep: "W ramach usługi zmiany rachunku Bank przekazuje, w terminie {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od otrzymania wniosku, wykaz zleceń stałych i poleceń zapłaty obowiązujących w okresie ostatnich 13 miesięcy oraz informacje o cyklicznych wpływach na rachunek. Dane te Bank przekazuje bezpośrednio nowemu dostawcy."
+      - ustep: "Bank przekazuje pozostałe środki na wskazany rachunek w nowym banku i zamyka rachunek w dniu wskazanym przez Klienta, {o ile|jeżeli} nie ma on zaległych zobowiązań wobec Banku. {W razie|W przypadku} zaległości Bank {informuje|powiadamia} Klienta o tym fakcie i o kwocie zadłużenia."
+
+  - id: rachunek-osobisty-dostepnosc
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {zapewnia|gwarantuje} osobom z niepełnosprawnościami możliwość korzystania z usług związanych z rachunkiem na zasadach równych z innymi Klientami. W placówkach {dostępne są|zapewnione są} udogodnienia, w tym możliwość skorzystania z pomocy pracownika, a {w razie|w przypadku} potrzeby — z tłumacza języka migowego po wcześniejszym uzgodnieniu."
+      - ustep: "Klient niewidomy, słabowidzący lub z innymi trudnościami w odbiorze informacji może zażądać, aby dokumenty dotyczące rachunku były przekazane w formie dostępnej, {w szczególności|zwłaszcza} w formie elektronicznej zgodnej ze standardami dostępności. Takie żądanie można złożyć w placówce lub na Infolinii pod numerem {{fakt:kontakt.infolinia}}."
+      - ustep: "Podpisanie umowy lub dyspozycji przez osobę, która nie może składać podpisu, następuje w obecności pracownika Banku i świadka, w sposób przewidziany przepisami prawa. Bank umożliwia także ustanowienie pełnomocnika do dokonywania czynności w imieniu Klienta."
+
+  - id: rachunek-osobisty-sprawy-sporne
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf-rachunek-osobisty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma prawo} zwrócić się do Banku z prośbą o polubowne rozwiązanie sporu, kierując wniosek na adres {{fakt:kontakt.email-reklamacje}} albo w formie pisemnej na adres {{fakt:kontakt.adres-korespondencyjny}}. Bank {rozpatruje|rozstrzyga} takie wnioski w terminach przewidzianych dla reklamacji."
+      - ustep: "Klient {niezadowolony z rozstrzygnięcia|niezgadzający się z rozstrzygnięciem} reklamacji może skorzystać z pozasądowego postępowania w sprawie rozwiązywania sporów, prowadzonego przez właściwy podmiot uprawniony. Bank wyraża zgodę na udział w takim postępowaniu, {o ile|jeżeli} Klient uprzednio wyczerpał drogę reklamacyjną."
+      - ustep: "Klient będący konsumentem może również zwrócić się o pomoc do miejskiego lub powiatowego rzecznika konsumentów oraz do organizacji konsumenckich. Informacje o tych możliwościach Bank udostępnia na stronie {{fakt:bank.strona}}."

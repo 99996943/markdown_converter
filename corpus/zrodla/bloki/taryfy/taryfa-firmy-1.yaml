@@ -1,0 +1,129 @@
+bloki:
+  # ---------------------------------------------------------------- I. Postanowienia ogólne
+  - id: taryfa-firmy-zakres
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-ogolne
+    elementy:
+      - akapit: "Niniejsza Taryfa {dotyczy|obejmuje} przedsiębiorców, w tym osoby fizyczne prowadzące działalność gospodarczą, spółki, stowarzyszenia, fundacje, jednostki sektora finansów publicznych oraz wspólnoty mieszkaniowe (dalej: **Klienci**), którzy {zawarli|posiadają} z Bankiem umowę rachunku lub inną umowę {dotyczącą|w zakresie} produktów firmowych."
+      - ustep: "Taryfa nie dotyczy konsumentów. Opłaty i prowizje za produkty przeznaczone dla osób fizycznych niebędących przedsiębiorcami określają odrębne taryfy Banku."
+      - ustep: "Zaliczenie Klienta do danego segmentu następuje na podstawie {oświadczenia|danych} złożonych we wniosku o otwarcie rachunku, a w przypadku {mikroprzedsiębiorstw|małych i średnich przedsiębiorstw} — także na podstawie sprawozdań finansowych za ostatni rok obrotowy."
+      - ustep: "Bank {weryfikuje|ocenia} przynależność do segmentu raz w roku. Zmiana segmentu {powoduje|skutkuje} stosowanie stawek właściwych dla nowego segmentu od pierwszego dnia miesiąca następującego po dokonaniu zmiany."
+
+  - id: taryfa-firmy-zasady-szczegolowe
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-ogolne
+    elementy:
+      - ustep: "Wszystkie stawki podano w złotych, o ile nie zaznaczono inaczej. Usługi bankowe {świadczone na rzecz|wykonywane dla} Klientów są zwolnione z podatku od towarów i usług, chyba że przepisy prawa stanowią inaczej; w takim przypadku do opłaty doliczany jest podatek w obowiązującej wysokości."
+      - ustep: "Opłaty miesięczne za prowadzenie rachunków i usług abonamentowych są pobierane {z dołu|po zakończeniu miesiąca}, ostatniego dnia roboczego miesiąca kalendarzowego. Za niepełny miesiąc obowiązywania umowy opłaty nie są pomniejszane, chyba że umowa stanowi inaczej."
+      - ustep: "Dyspozycje złożone po godzinach granicznych są realizowane następnego dnia roboczego. Godziny graniczne dla przelewów krajowych w systemie Elixir wynoszą {{fakt:termin.firma.godzina-odciecia-elixir}}, dla przelewów w systemie SORBNET {{fakt:termin.firma.godzina-odciecia-sorbnet}}, a dla przelewów zagranicznych {{fakt:termin.firma.godzina-odciecia-zagraniczne}}."
+      - ustep: "Stawki indywidualne uzgodnione z Klientem w umowie lub w aneksie mają {pierwszeństwo|przewagę} przed stawkami z Taryfy. Warunki negocjowane obowiązują wyłącznie w okresie wskazanym w umowie."
+      - ustep: "Opłaty za usługi niewymienione w Taryfie, a wykonywane na wniosek Klienta, ustala się w drodze indywidualnej wyceny. Klient jest informowany o wysokości opłaty przed realizacją usługi i {może|ma prawo} z niej zrezygnować bez ponoszenia kosztów."
+      - akapit: "Zasady zawierania umów oraz wykonywania dyspozycji płatniczych {określa|reguluje} {{ref:dokument:regulamin-rachunku-firmowego}}. Obowiązki Banku wynikające z przepisów o usługach płatniczych {opisuje|określa} {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+
+  # ---------------------------------------------------------------- II. Mikroprzedsiębiorstwa
+  - id: taryfa-firmy-mikro-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Do segmentu mikroprzedsiębiorstw należą {Klienci|przedsiębiorcy}, którzy w ostatnim roku obrotowym zatrudniali średniorocznie mniej niż 10 pracowników, a ich roczny obrót netto lub suma bilansowa nie przekraczała równowartości 2 milionów euro. Stawki poniżej dotyczą rachunków prowadzonych w złotych."
+
+  - id: taryfa-firmy-mikro-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Otwarcie rachunku bieżącego", stawka: "{{fakt:oplata.firma.otwarcie-rachunku}}", tryb: "jednorazowo"}
+          - usluga: "{Prowadzenie|Obsługa} rachunku bieżącego w pakiecie dla mikroprzedsiębiorstw[^1]"
+            stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-mikro}}"
+            tryb: "{miesięcznie|za miesiąc}"
+            podpozycje:
+              - {usluga: "w pierwszych trzech miesiącach od otwarcia rachunku", stawka: "bez opłat", tryb: "miesięcznie"}
+              - {usluga: "przy wpływach na rachunek co najmniej 5 000,00 zł w miesiącu", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku pomocniczego (każdy kolejny)", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku rozliczeń VAT", stawka: "{{fakt:oplata.firma.rachunek-vat}}", tryb: "miesięcznie"}
+          - usluga: "Przelew elektroniczny w złotych do innego banku"
+            stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}"
+            tryb: "za przelew"
+            podpozycje:
+              - {usluga: "pierwsze 10 przelewów w miesiącu", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Przelew do Zakładu Ubezpieczeń Społecznych lub urzędu skarbowego", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew"}
+          - {usluga: "Przelew natychmiastowy", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za przelew"}
+          - {usluga: "Pakiet powiadomień SMS o operacjach na rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie"}
+          - {usluga: "Wyciąg z rachunku w formie papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg"}
+          - {usluga: "Obsługa dyspozycji w ramach jednoosobowej działalności gospodarczej po śmierci przedsiębiorcy[^2]", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Zmiana danych firmy i wzorów podpisów", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za zmianę"}
+    przypisy:
+      1: "Pakiet obejmuje prowadzenie rachunku, kartę debetową dla jednego użytkownika oraz dostęp do bankowości elektronicznej. Opłatę za pakiet pobiera się od drugiego miesiąca obowiązywania umowy."
+      2: "W okresie do czasu przedstawienia postanowienia o stwierdzeniu nabycia spadku Bank realizuje wyłącznie płatności niezbędne do zachowania ciągłości przedsiębiorstwa, zgodnie z przepisami o zarządzie sukcesyjnym."
+
+  # ---------------------------------------------------------------- III. Małe i średnie przedsiębiorstwa
+  - id: taryfa-firmy-msp-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Do segmentu małych i średnich przedsiębiorstw należą Klienci zatrudniający średniorocznie od 10 do 249 pracowników, których roczny obrót netto nie przekracza równowartości 50 milionów euro. Klientom tego segmentu {przysługuje opiekun klienta|Bank zapewnia opiekuna klienta} oraz {możliwość negocjowania|prawo do negocjowania} stawek na podstawie obrotów na rachunku."
+
+  - id: taryfa-firmy-msp-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Prowadzenie|Obsługa} rachunku bieżącego w pakiecie dla małych i średnich przedsiębiorstw[^1]"
+            stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-msp}}"
+            tryb: "{miesięcznie|za miesiąc}"
+          - {usluga: "Prowadzenie rachunku pomocniczego (każdy kolejny)", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - usluga: "Przelew elektroniczny w złotych do innego banku"
+            stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}"
+            tryb: "za przelew"
+            podpozycje:
+              - {usluga: "pierwsze 50 przelewów w miesiącu", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Przelew między rachunkami Klienta w Banku", stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}", tryb: "za przelew"}
+          - {usluga: "Paczka przelewów importowana z systemu finansowo-księgowego", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za każdy przelew w paczce"}
+          - {usluga: "Cash pooling — prowadzenie struktury rachunków skoncentrowanych[^2]", stawka: "250,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Uruchomienie limitu w rachunku bieżącym (prowizja przygotowawcza)", stawka: "1,0% kwoty limitu, min. 150,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Odnowienie limitu w rachunku bieżącym", stawka: "0,5% kwoty limitu, min. 100,00 zł", tryb: "rocznie"}
+          - {usluga: "Opinia bankowa o Kliencie", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie salda dla potrzeb badania sprawozdania finansowego", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument"}
+          - {usluga: "Obsługa rachunku powierniczego — otwarcie", stawka: "{{fakt:oplata.firma.rachunek-powierniczy-otwarcie}}", tryb: "jednorazowo"}
+    przypisy:
+      1: "Opłata nie jest pobierana, jeżeli średnie miesięczne saldo rachunku w poprzednim kwartale przekroczyło 50 000,00 zł."
+      2: "Opłata obejmuje do pięciu rachunków uczestników struktury; za każdy dalszy rachunek Bank pobiera opłatę jak za rachunek pomocniczy."
+
+  # ---------------------------------------------------------------- IV. Klienci instytucjonalni i wspólnoty
+  - id: taryfa-firmy-inst-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Segment obejmuje jednostki sektora finansów publicznych, fundacje, stowarzyszenia, związki zawodowe, spółdzielnie, wspólnoty mieszkaniowe oraz inne podmioty niebędące przedsiębiorcami w rozumieniu ustawy o swobodzie działalności gospodarczej. Klienci instytucjonalni {mogą|są uprawnieni do} prowadzenia rachunków pomocniczych dla wyodrębnionych funduszy i projektów."
+
+  - id: taryfa-firmy-inst-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "{Prowadzenie|Obsługa} rachunku bieżącego klienta instytucjonalnego", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-instytucjonalny}}", tryb: "miesięcznie"}
+          - usluga: "{Prowadzenie|Obsługa} rachunku wspólnoty mieszkaniowej[^1]"
+            stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-wspolnota}}"
+            tryb: "miesięcznie"
+            podpozycje:
+              - {usluga: "rachunek funduszu remontowego", stawka: "bez opłat", tryb: "miesięcznie"}
+              - {usluga: "rachunek bieżącej eksploatacji", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-wspolnota}}", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku pomocniczego dla wyodrębnionego funduszu lub projektu", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - {usluga: "Przelew elektroniczny w złotych do innego banku", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew"}
+          - {usluga: "Przelew w placówce Banku", stawka: "{{fakt:oplata.firma.przelew-placowka}}", tryb: "za przelew"}
+          - {usluga: "Identyfikacja wpłat czynszowych i zaliczek na rachunku wspólnoty (wirtualne numery lokali)", stawka: "0,10 zł", tryb: "za każdy numer lokalu, miesięcznie"}
+          - {usluga: "Zestawienie wpłat właścicieli lokali za wskazany okres", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o posiadanych rachunkach i saldach", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Obsługa zajęcia egzekucyjnego rachunku[^2]", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za każde zajęcie"}
+          - {usluga: "Zmiana osób uprawnionych do dysponowania rachunkiem po zmianie zarządu", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za zmianę"}
+    przypisy:
+      1: "Stawka dotyczy wspólnot mieszkaniowych, których zarząd złożył do Banku uchwałę o wyborze zarządu oraz zaświadczenie o numerze identyfikacji podatkowej."
+      2: "Opłatę pobiera się niezależnie od kwoty zajęcia. Bank nie pobiera opłaty za zajęcie dotyczące alimentów oraz należności z tytułu składek na ubezpieczenia społeczne, jeżeli ustawa tak stanowi."

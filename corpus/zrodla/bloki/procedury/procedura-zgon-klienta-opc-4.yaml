@@ -1,0 +1,67 @@
+bloki:
+  - id: zgon-krok-produkty-przeglad
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-produkty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Okresowy przegląd sprawy.** Jeżeli {w ciągu|w terminie} {{fakt:termin.zgon.przeglad}} od dnia przyjęcia zgłoszenia nie zgłosili się spadkobiercy ani osoby uprawnione, {zespół spadkowy|zespół obsługujący sprawy spadkowe} {ponownie|jeszcze raz} przegląda sprawę."
+            podkroki:
+              - tekst: "Sprawdza, czy wpłynęły nowe informacje (wpłaty, pisma sądowe, zajęcia komornicze) i {kontaktuje się|nawiązuje kontakt} z osobą, która zgłosiła zgon."
+              - tekst: "{Gdy|Jeżeli} kontakt jest niemożliwy, przeprowadza się {dalsze czynności|kolejne czynności} zgodne z sekcją „Przypadki szczególne”, a przegląd powtarza w odstępach nie dłuższych niż {{fakt:termin.zgon.przeglad}}."
+          - tekst: "**Rejestr spraw otwartych.** „{{fakt:zgon.jednostka.zespol-spadkowy}}” prowadzi zestawienie spraw, w których nie zgłosili się spadkobiercy, i raz na kwartał przekazuje je właścicielowi procedury."
+            podkroki:
+              - tekst: "Zestawienie zawiera numer sprawy, datę zgonu, łączną kwotę środków na rachunkach oraz opis podjętych działań."
+              - tekst: "Sprawy otwarte dłużej niż rok omawia się na posiedzeniu właściciela procedury z udziałem przedstawiciela „{{fakt:jednostka.prawny}}”."
+
+  - id: zgon-krok-pogrzeb-informacja
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-produkty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Poinformowanie wnioskodawcy.** Pracownik {informuje|zawiadamia} wnioskodawcę, że wypłata kosztów pogrzebu nie przesądza o uprawnieniach do spadku, a osoba, która pobrała środki, może być {obowiązana|zobowiązana} do rozliczenia się ze spadkobiercami."
+            podkroki:
+              - tekst: "Wypłata nie jest wypłatą z tytułu dyspozycji na wypadek śmierci i nie wpływa na jej realizację, {o ile|jeśli} łączna kwota nie przekracza salda rachunku."
+              - tekst: "Bank nie {weryfikuje|sprawdza}, czy wnioskodawca jest spadkobiercą, ani nie rozstrzyga o prawie do zwrotu kosztów {między osobami uprawnionymi|pomiędzy osobami uprawnionymi}."
+          - tekst: "**Zwrot nadpłaconych kosztów.** Jeżeli po wypłacie okaże się, że wnioskodawca otrzymał kwotę wyższą niż udokumentowane koszty (na przykład z powodu korekty faktury), {zespół spadkowy|zespół obsługujący sprawy spadkowe} wzywa go do zwrotu różnicy."
+            podkroki:
+              - tekst: "Wezwanie wysyła się pisemnie, z podaniem podstawy i kwoty; zwrot {następuje|jest dokonywana} na rachunek zmarłego."
+              - tekst: "{Gdy|Jeżeli} wnioskodawca nie zwraca różnicy, sprawę przekazuje się „{{fakt:jednostka.prawny}}” w celu oceny dalszych działań."
+
+  - id: zgon-krok-przyjecie-blokada-wyjatki
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Wyjątki od blokady.** Blokada produktów zmarłego nie obejmuje operacji, które są niezbędne do zachowania interesów spadkobierców lub wynikają z przepisów."
+            podkroki:
+              - tekst: "Wykonuje się {nadal|w dalszym ciągu} zapłatę rat kredytów zmarłego z salda jego rachunku, {o ile|jeśli} umowa kredytu przewiduje pobranie raty w dniu spłaty."
+              - tekst: "Wykonuje się tytuły wykonawcze i zajęcia egzekucyjne, które wpłynęły przed zgłoszeniem zgonu lub po nim, zgodnie z przepisami o postępowaniu egzekucyjnym."
+              - tekst: "Można wykonać pojedyncze zlecenie zapłaty przez spadkobiercę lub współposiadacza z rachunku wspólnego, na zasadach rachunku wspólnego, jeżeli blokada zmarłego nie dotyczy tej operacji."
+          - tekst: "**Zdjęcie blokady.** Blokada produktu zmarłego jest zdejmowana wyłącznie przez „{{fakt:zgon.jednostka.zespol-spadkowy}}” po wypłacie środków spadkobiercom lub osobom uprawnionym albo po zamknięciu rachunku."
+            podkroki:
+              - tekst: "{W razie|W przypadku} błędnego zgłoszenia zgonu blokadę zdejmuje kierownik placówki po akceptacji „{{fakt:jednostka.bezpieczenstwo}}” i weryfikacji tożsamości Klienta."
+              - tekst: "Każde zdjęcie blokady dokumentuje się w systemie obiegu dokumentów {{fakt:zgon.system.obieg}} z podaniem przyczyny i identyfikatora pracownika."
+
+  - id: zgon-krok-dyspozycja-wypowiedzenie
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-dyspozycja
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Przyjęcie dyspozycji w trakcie życia Klienta.** W ramach obsługi bieżącej pracownik {informuje|zawiadamia} Klienta o możliwości złożenia dyspozycji wkładem na wypadek śmierci i — na jego życzenie — przyjmuje ją w placówce."
+            podkroki:
+              - tekst: "Dyspozycję składa się osobiście, na formularzu Banku, po uwierzytelnieniu Klienta na podstawie dokumentu tożsamości; nie można jej złożyć przez pełnomocnika."
+              - tekst: "Klient wskazuje osoby uprawnione (imię, nazwisko, PESEL lub datę urodzenia, adres) oraz kwoty lub udziały; {informuje|zawiadamia} się go o limicie {{fakt:zgon.limit.dyspozycja}}."
+              - tekst: "Za przyjęcie, zmianę i odwołanie dyspozycji pobiera się {{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}."
+          - tekst: "**Zmiana i odwołanie dyspozycji.** Dyspozycję można w każdym czasie zmienić lub odwołać; zmianę przyjmuje się na nowym formularzu, a poprzednia dyspozycja zostaje oznaczona jako zastąpiona."
+            podkroki:
+              - tekst: "Zmiana lub odwołanie jest skuteczne od dnia przyjęcia oświadczenia przez Bank."
+              - tekst: "Dyspozycja wygasa z chwilą zamknięcia rachunku, którego dotyczy, oraz wypłaty wszystkich środków, których dotyczyła."
+          - tekst: "**Informacja o skutkach dyspozycji.** Pracownik {informuje|zawiadamia} Klienta, że środki wypłacone na podstawie dyspozycji nie wchodzą do spadku, ale mogą być uwzględniane przy obliczaniu zachowku zgodnie z przepisami prawa spadkowego."

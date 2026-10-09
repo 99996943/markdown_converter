@@ -1,0 +1,178 @@
+bloki:
+  # ===== IV. Lokaty w walutach obcych =====
+  - id: taryfa-oszczednosci-waluty-opis
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - akapit: "Lokaty w walutach obcych są zakładane w euro (EUR), dolarach amerykańskich (USD), funtach brytyjskich (GBP) i frankach szwajcarskich (CHF) na podstawie {odrębnej|osobnej} umowy, do której w zakresie nieuregulowanym stosuje się odpowiednio „{{ref:dokument:regulamin-lokat}}”. Minimalna kwota lokaty walutowej wynosi {{fakt:limit.taryfa-oszczednosci.lokata-waluta-minimum}}."
+      - akapit: "Środki wpłacane w złotych na lokatę walutową oraz wypłacane z niej w złotych {są przeliczane|przelicza się} po kursie kupna lub sprzedaży z Tabeli kursów walut Banku, obowiązującym w chwili transakcji, z marżą {{fakt:kurs.marza-przeliczen}} względem kursu średniego. Dyspozycje dotyczące lokat walutowych przyjmowane są do godziny {{fakt:limit.taryfa-oszczednosci.godzina-graniczna-waluty}} w dni robocze; późniejsze realizuje się następnego dnia roboczego. Klient {ponosi|bierze na siebie} ryzyko kursowe związane ze zmianą kursu między założeniem a wypłatą lokaty."
+  - id: taryfa-oszczednosci-waluty-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Założenie|Otwarcie} lokaty w walucie obcej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Minimalna kwota lokaty w walucie obcej", stawka: "{{fakt:limit.taryfa-oszczednosci.lokata-waluta-minimum}}", tryb: "jednorazowo" }
+          - usluga: "Oprocentowanie lokaty w euro (EUR)"
+            stawka: "wg okresu lokaty"
+            tryb: "w skali roku"
+            podpozycje:
+              - { usluga: "na okres 3 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-eur-3m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 12 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-eur-12m}}", tryb: "w skali roku" }
+          - usluga: "Oprocentowanie lokaty w dolarach amerykańskich (USD)"
+            stawka: "wg okresu lokaty"
+            tryb: "w skali roku"
+            podpozycje:
+              - { usluga: "na okres 3 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-usd-3m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 12 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-usd-12m}}", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie lokaty w funtach brytyjskich (GBP) na okres 6 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-gbp-6m}}", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie lokaty we frankach szwajcarskich (CHF) na okres 6 miesięcy[^1]", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-chf-6m}}", tryb: "w skali roku" }
+          - { usluga: "Wpłata gotówki w walucie obcej na rachunek lokaty w placówce", stawka: "{{fakt:oplata.taryfa-oszczednosci.wplata-waluta-prowizja}} kwoty wpłaty, min. {{fakt:oplata.taryfa-oszczednosci.wplata-waluta-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "Wypłata gotówki w walucie obcej z rachunku lokaty w placówce[^2]", stawka: "{{fakt:oplata.taryfa-oszczednosci.wyplata-waluta-prowizja}} kwoty wypłaty, min. {{fakt:oplata.taryfa-oszczednosci.wplata-waluta-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "{Przewalutowanie|Przeliczenie} środków przy założeniu lub wypłacie lokaty (marża względem kursu średniego)", stawka: "{{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia" }
+          - { usluga: "Zerwanie lokaty walutowej przed terminem", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "za dyspozycję" }
+          - { usluga: "{Dodatkowe|Kolejne} potwierdzenie założenia lokaty walutowej", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "za dokument" }
+          - { usluga: "Zaświadczenie o wysokości odsetek od lokaty walutowej w języku angielskim", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+    przypisy:
+      1: "Oprocentowanie lokat we frankach szwajcarskich {może zostać zmienione|może ulec zmianie} przed założeniem lokaty; obowiązuje stawka podana w potwierdzeniu umowy, a nie stawka z Taryfy na dzień złożenia wniosku."
+      2: "Wypłaty gotówki w walucie obcej powyżej równowartości 10 000 euro Klient zgłasza z wyprzedzeniem trzech dni roboczych; Bank może wypłacić środki w innej walucie, jeżeli nie dysponuje banknotami wskazanej waluty."
+
+  # ===== V. Lokaty negocjowane =====
+  - id: taryfa-oszczednosci-negocjowane-opis
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - akapit: "{{fakt:lokata.nazwa-lokata-negocjowana}} {jest zakładana|zakładana jest} dla kwoty co najmniej {{fakt:limit.lokata.negocjowana}} na okres i na warunkach uzgodnionych z doradcą Banku. Oprocentowanie lokaty negocjowanej mieści się w przedziale od {{fakt:oprocentowanie.taryfa-oszczednosci.negocjowana-od}} do {{fakt:oprocentowanie.taryfa-oszczednosci.negocjowana-do}} w skali roku, przy czym nie może być niższe od stawki z tabeli oprocentowania lokat dla tego samego okresu."
+      - akapit: "{Warunki|Parametry} lokaty — kwota, okres, stopa procentowa, sposób wypłaty odsetek i skutki zerwania — Bank i Klient potwierdzają w odrębnej umowie. W sprawach nieuregulowanych w umowie {stosuje się|mają zastosowanie} Regulamin oraz niniejszą Taryfę. Opłaty dotyczące czynności dodatkowych pobiera się na zasadach ogólnych."
+  - id: taryfa-oszczednosci-negocjowane-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Założenie|Zawarcie} lokaty negocjowanej w placówce lub u doradcy", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Minimalna kwota lokaty negocjowanej", stawka: "{{fakt:limit.lokata.negocjowana}}", tryb: "jednorazowo" }
+          - { usluga: "Dolna granica oprocentowania lokaty negocjowanej", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.negocjowana-od}}", tryb: "w skali roku" }
+          - { usluga: "Górna granica oprocentowania lokaty negocjowanej[^1]", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.negocjowana-do}}", tryb: "w skali roku" }
+          - { usluga: "{Zmiana|Modyfikacja} warunków lokaty negocjowanej za zgodą Banku w trakcie jej trwania", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Zerwanie lokaty negocjowanej przed terminem[^2]", stawka: "wg umowy lokaty", tryb: "za dyspozycję" }
+          - { usluga: "{Odnowienie|Przedłużenie} lokaty negocjowanej na kolejny okres na dotychczasowych warunkach", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata odsetek z lokaty negocjowanej na rachunek w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Ustanowienie blokady lokaty negocjowanej jako zabezpieczenia wierzytelności Banku", stawka: "{{fakt:oplata.taryfa-oszczednosci.blokada-lokaty}}", tryb: "jednorazowo" }
+          - { usluga: "Cesja praw z lokaty negocjowanej na rzecz osoby trzeciej za zgodą Banku", stawka: "{{fakt:oplata.taryfa-oszczednosci.cesja-lokaty}}", tryb: "jednorazowo" }
+          - { usluga: "{Dodatkowe|Kolejne} potwierdzenie warunków lokaty negocjowanej", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "za dokument" }
+    przypisy:
+      1: "Stawka w górnej części przedziału jest przyznawana wyłącznie przy lokatach na okres co najmniej 12 miesięcy i kwotach wielokrotnie przekraczających minimum, po akceptacji właściwej komórki Banku."
+      2: "Umowa lokaty negocjowanej może przewidywać utratę odsetek w całości lub w części w razie zerwania; zastrzeżenie takie musi być wskazane wprost w umowie i w potwierdzeniu założenia lokaty."
+
+  # ===== VI. Rachunki i lokaty dla przedsiębiorców =====
+  - id: taryfa-oszczednosci-firmy-opis
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - akapit: "Przedsiębiorcy, wspólnoty mieszkaniowe i inne podmioty niebędące konsumentami {mogą zakładać|mogą otwierać} rachunki pomocnicze oszczędnościowe oraz lokaty terminowe w złotych. Minimalna kwota lokaty wynosi {{fakt:limit.taryfa-oszczednosci.lokata-firma-minimalna}}; rachunek oszczędnościowy {otwiera się|jest otwierany} wpłatą nie niższą niż {{fakt:limit.taryfa-oszczednosci.rachunek-firma-otwarcie}}."
+      - akapit: "Rachunek oszczędnościowy dla przedsiębiorcy {nie służy|nie jest przeznaczony} do bieżących rozliczeń. Otwarcie wymaga posiadania w Banku rachunku bieżącego, a lokata może być założona wyłącznie ze środków pochodzących z tego rachunku. Odsetki od lokat podmiotów niebędących osobami fizycznymi {rozlicza|ujmuje} Klient we własnym zakresie, a Bank nie pobiera zryczałtowanego podatku dochodowego, jeżeli przepisy go do tego nie zobowiązują."
+  - id: taryfa-oszczednosci-firmy-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Otwarcie|Założenie} rachunku oszczędnościowego dla przedsiębiorcy", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Minimalna wpłata początkowa na rachunek oszczędnościowy przedsiębiorcy", stawka: "{{fakt:limit.taryfa-oszczednosci.rachunek-firma-otwarcie}}", tryb: "jednorazowo" }
+          - { usluga: "{Prowadzenie|Obsługa} rachunku oszczędnościowego przedsiębiorcy", stawka: "{{fakt:oplata.taryfa-oszczednosci.firma-prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku oszczędnościowym przedsiębiorcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-rachunek}}", tryb: "w skali roku" }
+          - { usluga: "Przelew z rachunku oszczędnościowego na rachunek bieżący w Banku", stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}", tryb: "za przelew" }
+          - { usluga: "Przelew z rachunku oszczędnościowego na rachunek w innym banku[^1]", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew" }
+          - { usluga: "Przelew z rachunku oszczędnościowego na rachunek w innym banku złożony w placówce", stawka: "{{fakt:oplata.firma.przelew-placowka}}", tryb: "za przelew" }
+          - { usluga: "Wpłata gotówkowa na rachunek oszczędnościowy w kasie placówki", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty wpłaty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "{Zamknięcie|Likwidacja} rachunku oszczędnościowego przedsiębiorcy", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zajęcie rachunku oszczędnościowego w {trybie egzekucji|postępowaniu egzekucyjnym}", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+    przypisy:
+      1: "Opłatę za przelew elektroniczny pobiera się niezależnie od jego kwoty; stawka jest taka sama jak dla przelewów elektronicznych z rachunku bieżącego Klienta."
+  - id: taryfa-oszczednosci-firmy-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Założenie|Otwarcie} lokaty terminowej dla przedsiębiorcy", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Minimalna kwota lokaty terminowej przedsiębiorcy", stawka: "{{fakt:limit.taryfa-oszczednosci.lokata-firma-minimalna}}", tryb: "jednorazowo" }
+          - { usluga: "Oprocentowanie lokaty jednodniowej (overnight)", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-overnight}}", tryb: "w skali roku" }
+          - usluga: "Oprocentowanie lokaty terminowej przedsiębiorcy"
+            stawka: "wg okresu lokaty"
+            tryb: "w skali roku"
+            podpozycje:
+              - { usluga: "na okres 1 miesiąca", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-1m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 3 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-3m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 6 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-6m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 12 miesięcy", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-12m}}", tryb: "w skali roku" }
+          - { usluga: "Zerwanie lokaty terminowej przedsiębiorcy przed terminem[^1]", stawka: "{{fakt:oplata.taryfa-oszczednosci.firma-zerwanie-lokaty}}", tryb: "za dyspozycję" }
+          - { usluga: "Oprocentowanie środków po zerwaniu lokaty przedsiębiorcy", stawka: "{{fakt:oprocentowanie.lokata.zerwanie}}", tryb: "w skali roku" }
+          - { usluga: "{Automatyczne|Samoczynne} odnowienie lokaty na kolejny okres", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zaświadczenie|Informacja} o posiadanych lokatach dla potrzeb audytu lub kontrahenta", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument" }
+          - { usluga: "{Opinia bankowa|Referencje bankowe} o współpracy z Klientem w zakresie lokat", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument" }
+          - { usluga: "Ustanowienie blokady lokaty jako zabezpieczenia kredytu lub gwarancji", stawka: "{{fakt:oplata.taryfa-oszczednosci.blokada-lokaty}}", tryb: "jednorazowo" }
+          - { usluga: "Zmiana osób uprawnionych do dysponowania lokatą (zmiana reprezentacji)", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za dyspozycję" }
+    przypisy:
+      1: "Opłata nie jest pobierana, jeżeli lokata zostanie zerwana z powodu likwidacji lub upadłości Klienta, śmierci przedsiębiorcy będącego osobą fizyczną albo na żądanie organu egzekucyjnego."
+
+  # ===== VII. Czynności dodatkowe =====
+  - id: taryfa-oszczednosci-czynnosci-opis
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - akapit: "Poniższe stawki {dotyczą|odnoszą się do} czynności związanych z rachunkami oszczędnościowymi i lokatami, które nie są wykonywane w ramach produktu podstawowego, lub których wykonanie wymaga odrębnego zlecenia. Czynności wykonywane na wniosek Klienta w placówce {są realizowane|Bank realizuje} w dni robocze w godzinach pracy placówki. Zaświadczenia i informacje {wydawane są|Bank wydaje} w terminie do trzech dni roboczych od dnia złożenia wniosku."
+  - id: taryfa-oszczednosci-czynnosci-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Zaświadczenie|Poświadczenie} o posiadaniu rachunku oszczędnościowego lub lokaty", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Zaświadczenie o wysokości naliczonych i wypłaconych odsetek", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Roczna informacja o odsetkach i pobranym podatku w postaci elektronicznej (w terminie {{fakt:termin.podatek.informacja-roczna}} po zakończeniu roku)", stawka: "bez opłat", tryb: "rocznie" }
+          - { usluga: "Duplikat informacji podatkowej w postaci papierowej[^1]", stawka: "{{fakt:oplata.taryfa-oszczednosci.informacja-podatkowa}}", tryb: "za dokument" }
+          - { usluga: "{Duplikat|Odpis} umowy rachunku lub lokaty", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument" }
+          - { usluga: "Ustanowienie pełnomocnictwa do rachunku oszczędnościowego lub lokaty", stawka: "{{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}", tryb: "jednorazowo" }
+          - { usluga: "{Odwołanie|Cofnięcie} pełnomocnictwa", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Dyspozycja wkładem na wypadek śmierci", stawka: "{{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}", tryb: "jednorazowo" }
+          - { usluga: "Zajęcie rachunku oszczędnościowego lub lokaty w trybie egzekucji[^2]", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+          - { usluga: "{Wezwanie|Pismo wzywające} do uzupełnienia dokumentów lub danych Klienta pocztą", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każdy dokument" }
+          - { usluga: "Wyciąg lub zestawienie operacji z archiwum za okres starszy niż 12 miesięcy", stawka: "{{fakt:oplata.rachunek-osobisty.odpis-wyciagu}}", tryb: "za dokument" }
+    przypisy:
+      1: "Informację w postaci elektronicznej Klient pobiera w bankowości elektronicznej bez opłat; opłatę pobiera się wyłącznie za duplikat sporządzony w postaci papierowej i wysłany pocztą."
+      2: "Opłata nie jest pobierana, jeżeli zajęcie nie obejmuje żadnych środków znajdujących się na rachunku w dniu otrzymania zawiadomienia od organu egzekucyjnego."
+  - id: taryfa-oszczednosci-czynnosci-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Zmiana|Aktualizacja} danych osobowych lub adresowych Klienta w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana danych Klienta w bankowości elektronicznej lub aplikacji mobilnej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Dodanie|Przystąpienie} współposiadacza do rachunku oszczędnościowego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana zasad dysponowania środkami na rachunku wspólnym", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Przeniesienie środków z lokaty na inną lokatę w Banku po zakończeniu okresu umownego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Odblokowanie|Zwolnienie} środków po wygaśnięciu zabezpieczenia na wniosek Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Przygotowanie wniosku o przeniesienie lokaty do innego banku", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Poszukiwanie dokumentacji lokaty zawartej przed rokiem poprzedzającym wniosek", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za wniosek" }
+          - { usluga: "Przesłanie dokumentów dotyczących lokaty kurierem na wniosek Klienta", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za przesyłkę" }
+          - { usluga: "Telefoniczna weryfikacja salda lub stawki lokaty z doradcą po zweryfikowaniu tożsamości", stawka: "bez opłat", tryb: "za połączenie" }
+          - { usluga: "{Złożenie|Przyjęcie} dyspozycji dotyczącej lokaty za pośrednictwem infolinii", stawka: "bez opłat", tryb: "za dyspozycję" }
+
+  # ===== VIII. Objaśnienia i przepisy końcowe =====
+  - id: taryfa-oszczednosci-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - ustep: "{Użyte|Występujące} w Taryfie określenie „dzień roboczy” oznacza dzień inny niż sobota, niedziela lub dzień ustawowo wolny od pracy. „Okres umowny” oznacza okres, na jaki została założona lokata, a „kwota progowa” — saldo rachunku oszczędnościowego, powyżej którego stosuje się obniżoną stawkę oprocentowania."
+      - ustep: "Stawki oprocentowania podane w Taryfie {obowiązują|mają zastosowanie} w dniu jej wejścia w życie. Zmiana oprocentowania lokat zakładanych po tym dniu nie wymaga zmiany Taryfy, jeżeli Bank opublikuje aktualną tabelę oprocentowania na stronie {{fakt:bank.strona}}; zmiana nie dotyczy lokat już założonych, których oprocentowanie jest stałe w całym okresie umownym."
+      - ustep: "Pytania dotyczące stawek Klient może {kierować|zadawać} na infolinię pod numerem {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) albo zwrócić się do jednostki Banku: {{fakt:jednostka.produkty-oszczednosciowe}}. Reklamacje dotyczące opłat i oprocentowania rozpatruje {{fakt:jednostka.reklamacje}} w terminie {{fakt:termin.reklamacja.rozpatrzenie}}."
+      - akapit: "Taryfa obowiązuje od dnia wskazanego na okładce. {Czynności|Operacje} rozpoczęte przed tym dniem i zakończone po jego upływie rozlicza się według stawek obowiązujących w dniu ich zlecenia, chyba że Taryfa stanowi inaczej."

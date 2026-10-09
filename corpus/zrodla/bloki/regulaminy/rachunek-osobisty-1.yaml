@@ -1,0 +1,319 @@
+bloki:
+  - id: rachunek-osobisty-zakres
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin określa {zasady|warunki} otwierania, prowadzenia i zamykania przez {{param:bank}} rachunków osobistych dla konsumentów, zwanych dalej „rachunkami”, a także zasady wykonywania na ich rzecz i z ich udziałem krajowych i zagranicznych operacji płatniczych."
+      - ustep: "Regulamin stanowi integralną część umowy rachunku i jest wiążący dla Klienta od chwili jej zawarcia. Postanowienia umowy {odmienne od Regulaminu|różniące się od Regulaminu} mają pierwszeństwo, o ile nie naruszają bezwzględnie obowiązujących przepisów prawa."
+      - ustep: "Działalność Banku {jest nadzorowana|podlega nadzorowi} przez Komisję Nadzoru Finansowego. Podstawę prowadzenia rachunków stanowi {{ref:akt:dz-u-2024-1646-prawo-bankowe}}, a zasady świadczenia usług płatniczych określa {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+      - ustep: "Wysokość opłat i prowizji za czynności związane z prowadzeniem rachunku określa {{ref:dokument:taryfa-indywidualni}}.[^1] Taryfa jest {udostępniana|przekazywana} Klientowi przed zawarciem umowy oraz dostępna w placówkach i na stronie {{fakt:bank.strona}}."
+      - ustep: "Ilekroć w Regulaminie jest mowa o Posiadaczu, rozumie się przez to Klienta, który zawarł z Bankiem umowę rachunku. Regulamin nie dotyczy rachunków prowadzonych dla przedsiębiorców, rachunków lokat terminowych ani rachunków prowadzonych w ramach odrębnych programów, dla których Bank wydał odrębne regulaminy."
+    przypisy:
+      1: "Opłaty wymienione w Taryfie są pobierane wyłącznie za czynności, które Klient zlecił lub z których skorzystał, chyba że umowa lub Regulamin stanowią inaczej."
+
+  - id: rachunek-osobisty-rodzaje
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank prowadzi dla {Klientów będących konsumentami|konsumentów} następujące rodzaje rachunków osobistych:"
+        punkty:
+          - "rachunek osobisty indywidualny — prowadzony dla jednego {Posiadacza|Klienta};"
+          - "rachunek osobisty wspólny — prowadzony dla dwóch lub więcej Posiadaczy, na zasadach określonych w rozdziale o rachunku wspólnym;"
+          - "rachunek osobisty dla osoby małoletniej — prowadzony dla Klienta, który nie ukończył {{fakt:wiek.rachunek-osobisty.pelnoletnosc}}, za zgodą i z udziałem przedstawiciela ustawowego."
+      - ustep: "Rachunek jest prowadzony w złotych polskich. Na wniosek Klienta Bank {może|ma możliwość} prowadzić do rachunku {dodatkowe subkonta|subkonta} walutowe, na których środki są wyrażone w walucie obcej, pod warunkiem że Bank prowadzi rachunki w danej walucie."
+      - ustep: "Rachunek ma charakter {rozliczeniowy|rozliczeniowo-oszczędnościowy} i służy do gromadzenia środków pieniężnych oraz przeprowadzania rozliczeń pieniężnych. Środki na rachunku {są oprocentowane|podlegają oprocentowaniu} według zmiennej stopy procentowej, zgodnie z rozdziałem o oprocentowaniu."
+      - ustep: "Do rachunku {Bank wydaje|Klient może otrzymać} instrumenty płatnicze, w szczególności kartę debetową, oraz uzyskuje dostęp do bankowości elektronicznej. Zasady korzystania z karty określa odrębny regulamin kart debetowych, doręczany Klientowi przy wydaniu karty."
+
+  - id: rachunek-osobisty-zawarcie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa rachunku zostaje zawarta po {złożeniu|podpisaniu} przez Klienta wniosku o otwarcie rachunku oraz po jego {zaakceptowaniu|przyjęciu} przez Bank. Umowę można zawrzeć w placówce, a także za pośrednictwem bankowości elektronicznej lub przez kuriera, o ile Bank udostępnia taki tryb."
+      - ustep: "Przed zawarciem umowy Bank przekazuje Klientowi na trwałym nośniku:"
+        punkty:
+          - "projekt umowy wraz z Regulaminem;"
+          - "Taryfę oraz informację o oprocentowaniu rachunku;"
+          - "formularz informacyjny dla deponentów dotyczący gwarancji Bankowego Funduszu Gwarancyjnego;"
+          - tekst: "dokument zawierający wykaz najważniejszych usług powiązanych z rachunkiem, który obejmuje w szczególności:"
+            litery:
+              - "wpłaty i wypłaty gotówkowe;"
+              - "przelewy krajowe oraz polecenia zapłaty;"
+              - "obsługę karty debetowej i bankowość elektroniczną."
+      - ustep: "Bank rozpatruje wniosek o otwarcie rachunku w terminie {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od dnia złożenia kompletu dokumentów i informuje Klienta o decyzji. Bank {może|ma prawo} odmówić zawarcia umowy, jeżeli Klient nie przedstawił wymaganych dokumentów, odmówił złożenia oświadczeń przewidzianych przepisami albo gdy zawarcie umowy byłoby sprzeczne z przepisami prawa."
+      - ustep: "Pierwsza wpłata na rachunek nie jest {warunkiem|wymagana jako warunek} zawarcia umowy; minimalna kwota pierwszej wpłaty wynosi {{fakt:limit.rachunek-osobisty.pierwsza-wplata}}. Rachunek jest otwierany {w dniu zawarcia umowy|najpóźniej w dniu następującym po zawarciu umowy}, a Klient otrzymuje numer rachunku w formacie NRB, złożony z samych cyfr, np. 00 0000 0000 0000 0000 0000 0000."
+
+  - id: rachunek-osobisty-weryfikacja
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {jest obowiązany|ma obowiązek} zastosować środki bezpieczeństwa finansowego przed zawarciem umowy, na zasadach wynikających z przepisów (zob. {{ref:akt:dz-u-2025-644-aml}}). W szczególności Bank:"
+        punkty:
+          - "identyfikuje Klienta i weryfikuje jego tożsamość na podstawie ważnego dokumentu tożsamości;"
+          - "ustala, czy Klient działa we własnym imieniu, oraz czy jest osobą zajmującą eksponowane stanowisko polityczne;"
+          - "ocenia cel i zakładaną naturę stosunków gospodarczych."
+      - ustep: "Klient jest obowiązany {złożyć|przedstawić} dokumenty i oświadczenia niezbędne do zawarcia umowy, w tym oświadczenie o rezydencji podatkowej. W przypadku zmiany danych podanych przy otwarciu rachunku Klient {informuje|zawiadamia} o tym Bank w terminie {{fakt:termin.rachunek-osobisty.zmiana-danych}}."
+      - ustep: "Bank prowadzi bieżącą analizę transakcji wykonywanych na rachunku. Jeżeli charakter transakcji budzi {uzasadnione wątpliwości|wątpliwości} co do jej zgodności z przepisami, Bank może {zwrócić się do Klienta|poprosić Klienta} o udzielenie wyjaśnień oraz przedstawienie dokumentów potwierdzających źródło pochodzenia środków."
+      - ustep: "Wpłaty gotówkowe przekraczające równowartość {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}} wymagają zachowania szczególnej staranności. Do czasu przedstawienia wyjaśnień Bank {może wstrzymać|ma prawo wstrzymać} wykonanie dyspozycji, o czym niezwłocznie informuje Klienta, o ile przepisy tego nie zakazują."
+
+  - id: rachunek-osobisty-dysponowanie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz rachunku {ma prawo|może} swobodnie dysponować środkami zgromadzonymi na rachunku, w granicach salda dostępnego, z uwzględnieniem ograniczeń wynikających z przepisów prawa, umowy i Regulaminu."
+      - ustep: "Saldo dostępne stanowią środki zgromadzone na rachunku pomniejszone o:"
+        punkty:
+          - "kwoty zablokowane z tytułu autoryzowanych, a jeszcze nierozliczonych transakcji kartą;"
+          - "kwoty objęte zajęciem na podstawie tytułu wykonawczego lub innej decyzji uprawnionego organu;"
+          - "środki zablokowane na wniosek Posiadacza lub z innych przyczyn przewidzianych w umowie."
+      - ustep: "Dysponowanie rachunkiem odbywa się {w formie|przy użyciu} dyspozycji składanych w placówce, w bankowości elektronicznej, za pośrednictwem infolinii pod numerem {{fakt:kontakt.infolinia}} oraz z użyciem instrumentów płatniczych. Rodzaje dyspozycji dostępne w poszczególnych kanałach {określa|wskazuje} Bank w komunikatach dostępnych na stronie {{fakt:bank.strona}}."
+      - ustep: "Osoba małoletnia, która ukończyła {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}}, może dysponować środkami na rachunku w zakresie wynikającym z zgody przedstawiciela ustawowego, wyrażonej we wniosku. Przedstawiciel ustawowy może w każdym czasie ograniczyć lub cofnąć tę zgodę, składając dyspozycję w placówce."
+      - ustep: "Do rachunku Bank {może|ma prawo} na wniosek Posiadacza udzielić limitu zadłużenia (debetu) do wysokości {{fakt:limit.rachunek-osobisty.debet}}, o ile wynika to z oceny zdolności kredytowej, a zasady jego udzielenia reguluje odrębna umowa, do której mają zastosowanie przepisy o kredycie konsumenckim (zob. {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}})."
+
+  - id: rachunek-osobisty-wplaty-wyplaty
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wpłaty gotówkowe na rachunek {można|mogą być} dokonywać w kasach placówek oraz we wpłatomatach Banku. Wpłata jest {księgowana|zapisywana na rachunku} niezwłocznie po jej przyjęciu, nie później niż w dniu roboczym, w którym została dokonana, jeżeli została przyjęta przed godziną graniczną wskazaną w komunikatach Banku."
+      - ustep: "Wypłaty gotówkowe są {realizowane|dokonywane} w kasach placówek w godzinach ich pracy, w bankomatach oraz w innych punktach akceptujących kartę debetową. Wypłata w kasie jednorazowo przekraczająca {{fakt:limit.rachunek-osobisty.wyplata-awizo}} wymaga wcześniejszego zgłoszenia (awizo) co najmniej na jeden dzień roboczy przed planowaną wypłatą."
+      - ustep: "Bank {nie jest obowiązany|nie ma obowiązku} przyjąć wpłaty lub dokonać wypłaty w przypadku:"
+        punkty:
+          - "podejrzenia, że banknoty lub monety są sfałszowane albo uszkodzone w stopniu wykluczającym ich wymianę;"
+          - "braku możliwości potwierdzenia tożsamości osoby dokonującej wpłaty lub wypłaty;"
+          - "okoliczności uzasadniających zastosowanie przez Bank środków bezpieczeństwa finansowego."
+      - ustep: "Za wpłatę gotówki dokonaną w placówce Bank pobiera opłatę w wysokości {{fakt:oplata.wplata-gotowkowa}}, o ile Taryfa nie przewiduje zwolnienia z opłaty dla danego rodzaju rachunku."
+
+  - id: rachunek-osobisty-zlecenia
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wykonuje z rachunku następujące dyspozycje i zlecenia płatnicze:"
+        punkty:
+          - "przelew wewnętrzny — na rachunek prowadzony w Banku;"
+          - "przelew krajowy zewnętrzny — na rachunek prowadzony w innym banku w kraju;"
+          - "przelew natychmiastowy, {o ile|jeżeli} bank odbiorcy uczestniczy w systemie rozliczeń natychmiastowych;"
+          - "zlecenie stałe i polecenie zapłaty;"
+          - "przelew w walucie obcej oraz przelew na rachunek za granicą."
+      - ustep: "Zlecenie płatnicze {powinno|musi} zawierać dane niezbędne do jego wykonania, a {w szczególności|zwłaszcza} numer rachunku odbiorcy w formacie NRB lub IBAN, nazwę odbiorcy, kwotę i walutę oraz tytuł. Za prawidłowość danych wskazanych w zleceniu {odpowiada|ponosi odpowiedzialność} Klient; Bank wykonuje przelew zgodnie z podanym unikatowym identyfikatorem."
+      - ustep: "Zlecenie płatnicze jest uważane za autoryzowane, jeżeli Klient wyraził na nie zgodę w sposób przewidziany w Regulaminie, to znaczy:"
+        punkty:
+          - "podpisując je w placówce;"
+          - tekst: "potwierdzając je w bankowości elektronicznej:"
+            litery:
+              - "kodem wygenerowanym w aplikacji mobilnej;"
+              - "kodem jednorazowym przesłanym na zarejestrowany numer telefonu;"
+          - "używając karty debetowej wraz z PIN lub w sposób zbliżeniowy."
+      - ustep: "Przelew krajowy zewnętrzny złożony w placówce podlega opłacie {{fakt:oplata.przelew-zewnetrzny-placowka}}, a przelew natychmiastowy — opłacie {{fakt:oplata.przelew-natychmiastowy}}.[^1]"
+    przypisy:
+      1: "Szczegółowe stawki oraz zwolnienia z opłat dla poszczególnych kanałów składania zleceń określa {{ref:dokument:taryfa-indywidualni}}."
+
+  - id: rachunek-osobisty-realizacja
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za moment otrzymania zlecenia płatniczego uważa się dzień roboczy, w którym zlecenie wpłynęło do Banku. Zlecenie otrzymane po godzinie granicznej {{fakt:termin.rachunek-osobisty.godzina-graniczna}} w kanałach elektronicznych, a w placówkach po godzinie {{fakt:termin.rachunek-osobisty.godzina-graniczna-placowka}}, albo w dniu niebędącym dniem roboczym, jest {uznawane|traktowane} jako otrzymane w następnym dniu roboczym."
+      - ustep: "Bank {uznaje|zapewnia uznanie} rachunek banku odbiorcy kwotą przelewu krajowego nie później niż do końca następnego dnia roboczego po otrzymaniu zlecenia. Przelew natychmiastowy jest realizowany niezwłocznie przez całą dobę, w granicach limitu {{fakt:limit.rachunek-osobisty.przelew-natychmiastowy}} na jedną transakcję."
+      - ustep: "Dzienny limit przelewów z rachunku wynosi {{fakt:limit.przelew-dzienny-domyslny}}, a w placówce — do {{fakt:limit.rachunek-osobisty.przelew-placowka}} na jedną dyspozycję. Posiadacz może {zmienić|obniżyć} limity w zakresie dopuszczanym przez Bank w bankowości elektronicznej lub w placówce."
+      - ustep: "Bank odmawia wykonania zlecenia płatniczego, jeżeli:"
+        punkty:
+          - "zlecenie nie spełnia warunków określonych w umowie lub Regulaminie;"
+          - "saldo dostępne nie wystarcza na pokrycie kwoty zlecenia i należnych Bankowi opłat;"
+          - "wykonanie zlecenia jest niedopuszczalne na podstawie odrębnych przepisów."
+      - ustep: "O odmowie wykonania zlecenia Bank informuje Klienta w sposób uzgodniony w umowie, wskazując, jeśli to możliwe, przyczyny odmowy i procedurę poprawienia błędów, które ją spowodowały. Do czasu rozpoczęcia wykonywania zlecenie może zostać odwołane na zasadach określonych w umowie."
+
+  - id: rachunek-osobisty-oprocentowanie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki zgromadzone na rachunku są oprocentowane według zmiennej stopy procentowej w stosunku rocznym, która w dniu wejścia w życie Regulaminu wynosi {{fakt:oprocentowanie.rachunek-osobisty}}. Aktualne oprocentowanie jest {podawane|publikowane} w placówkach oraz na stronie {{fakt:bank.strona}}."
+      - ustep: "Odsetki naliczane są od dnia wpływu środków na rachunek do dnia poprzedzającego dzień ich wypłaty, przy założeniu, że rok liczy 365 dni, a miesiąc — rzeczywistą liczbę dni. Odsetki są kapitalizowane w okresach odsetkowych: {{fakt:termin.rachunek-osobisty.okres-odsetkowy}}, a podatek od odsetek jest pobierany zgodnie z obowiązującymi przepisami."
+      - ustep: "Środki wykorzystane ponad saldo dostępne, w ramach zezwolonego limitu zadłużenia lub {w razie|w przypadku} niedozwolonego salda debetowego, są oprocentowane według stopy procentowej wynoszącej {{fakt:oprocentowanie.debet}}. Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie według stopy nieprzekraczającej {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym."
+      - ustep: "Zmiana wysokości oprocentowania następuje:"
+        punkty:
+          - "w razie zmiany stóp procentowych Narodowego Banku Polskiego o {co najmniej|przynajmniej} pół punktu procentowego;"
+          - "w razie zmiany wskaźników rynkowych, w tym stawek rynku międzybankowego, wpływających na koszt pozyskania środków przez Bank;"
+          - "w razie zmiany przepisów prawa dotyczących rezerwy obowiązkowej lub opodatkowania odsetek."
+      - ustep: "O zmianie oprocentowania Bank powiadamia Klienta {w wyciągu z rachunku|na trwałym nośniku} lub w inny uzgodniony sposób. Zmiana oprocentowania nie stanowi zmiany Regulaminu i nie wymaga zachowania terminów, o których mowa w rozdziale o zmianie Regulaminu."
+
+  - id: rachunek-osobisty-oplaty
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za czynności związane z prowadzeniem rachunku Bank pobiera opłaty i prowizje w wysokości określonej w dokumencie: {{ref:dokument:taryfa-indywidualni}}. Aktualna Taryfa jest {dostępna|udostępniona} na stronie {{fakt:bank.strona}}, w placówkach oraz w bankowości elektronicznej."
+      - ustep: "Za prowadzenie rachunku Bank pobiera miesięczną opłatę w wysokości {{fakt:oplata.prowadzenie-rachunku}}. Opłata jest pobierana {z dołu|na koniec miesiąca} z rachunku, a w razie braku wystarczających środków — jako zadłużenie na rachunku.[^1]"
+      - ustep: "Pozostałe opłaty związane z rachunkiem obejmują {w szczególności|zwłaszcza}:"
+        punkty:
+          - "zlecenie stałe — {{fakt:oplata.rachunek-osobisty.zlecenie-stale}} za każde wykonanie;"
+          - "polecenie zapłaty — {{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}} za każde wykonanie;"
+          - "przelew walutowy lub zagraniczny — {{fakt:oplata.rachunek-osobisty.przelew-walutowy}};"
+          - "wydanie zaświadczenia o posiadaniu rachunku — {{fakt:oplata.zaswiadczenie}};"
+          - "wydanie duplikatu umowy — {{fakt:oplata.duplikat-umowy}}."
+      - ustep: "Bank pobiera opłaty w dniu wykonania czynności albo w dniu wskazanym w Taryfie, obciążając rachunek. Jeżeli czynność, za którą pobrano opłatę, nie została wykonana z przyczyn leżących po stronie Banku, Bank zwraca opłatę w terminie {{fakt:termin.zwrot-oplat}}."
+      - ustep: "Bank {nie pobiera|nie może pobierać} opłat za czynności, których wykonanie jest obowiązkiem Banku wynikającym z przepisów prawa, w szczególności za udzielanie informacji o operacjach płatniczych w zakresie wymaganym ustawą oraz za przyjęcie reklamacji."
+    przypisy:
+      1: "Stawka opłaty za prowadzenie rachunku jest podawana w dokumencie: {{ref:dokument:taryfa-indywidualni}}; w przypadku różnicy między Regulaminem a Taryfą co do stawek pierwszeństwo ma Taryfa."
+
+  - id: rachunek-osobisty-wyciagi
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank udostępnia Klientowi, nie rzadziej niż raz w miesiącu, wyciąg z rachunku zawierający informacje o operacjach płatniczych dokonanych w danym okresie, {w szczególności|zwłaszcza} o:"
+        punkty:
+          - "kwocie, walucie i dacie każdej operacji;"
+          - "opłatach i prowizjach pobranych od Klienta;"
+          - "odsetkach naliczonych i skapitalizowanych oraz kursach walut użytych do przeliczeń;"
+          - "saldzie rachunku na początek i koniec okresu."
+      - ustep: "Wyciąg jest udostępniany {w bankowości elektronicznej|na trwałym nośniku w bankowości elektronicznej} do {{fakt:termin.rachunek-osobisty.udostepnienie-wyciagu}}. Klient może zażądać przesyłania wyciągów w formie papierowej, za co Bank pobiera opłatę w wysokości {{fakt:oplata.wyciag-papierowy}} za każdy wyciąg."
+      - ustep: "Klient jest obowiązany {regularnie|na bieżąco} sprawdzać wyciągi i zgłaszać Bankowi stwierdzone niezgodności, w szczególności nieautoryzowane, niewykonane lub nienależycie wykonane operacje. Brak zgłoszenia {w terminie|w odpowiednim terminie} nie pozbawia Klienta uprawnień wynikających z przepisów, jeżeli zgłoszenie nastąpiło w terminie {{fakt:termin.rachunek-osobisty.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku."
+      - ustep: "Na żądanie Klienta Bank wydaje potwierdzenie wykonania operacji lub odpis wyciągu za opłatą w wysokości określonej w Taryfie, w szczególności {{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}} za potwierdzenie operacji oraz {{fakt:oplata.rachunek-osobisty.odpis-wyciagu}} za odpis wyciągu."
+
+  - id: rachunek-osobisty-wspolny
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank prowadzi rachunek wspólny dla dwóch lub więcej osób fizycznych, zwanych {dalej|w dalszej części} współposiadaczami. Rachunek wspólny jest otwierany na podstawie jednej umowy podpisanej przez wszystkich współposiadaczy."
+      - ustep: "Każdy ze współposiadaczy {jest uprawniony|ma prawo} do samodzielnego dysponowania całością środków na rachunku, w tym do składania dyspozycji i zleceń płatniczych, chyba że umowa przewiduje inaczej. Współposiadacze odpowiadają wobec Banku solidarnie za zobowiązania wynikające z umowy, w szczególności za saldo debetowe i należne opłaty."
+      - ustep: "Czynności wymagające zgody wszystkich współposiadaczy obejmują:"
+        punkty:
+          - "zmianę postanowień umowy rachunku;"
+          - "ustanowienie, zmianę lub odwołanie pełnomocnika do rachunku;"
+          - "zamknięcie rachunku, z zastrzeżeniem odrębnych zasad wypowiedzenia umowy przez jednego ze współposiadaczy."
+      - ustep: "Każdy ze współposiadaczy może {złożyć|przedłożyć} Bankowi oświadczenie o wypowiedzeniu umowy rachunku wspólnego. Bank niezwłocznie informuje pozostałych współposiadaczy o złożeniu wypowiedzenia; po upływie terminu wypowiedzenia rachunek jest zamykany, a pozostałe środki wypłacane zgodnie z dyspozycją współposiadaczy albo, w razie jej braku, zdeponowane na zasadach przewidzianych w przepisach."
+      - ustep: "Do czasu rozstrzygnięcia sporu między współposiadaczami Bank {może|ma prawo} wstrzymać realizację dyspozycji, jeżeli otrzyma od któregoś z nich pisemne, jednoznaczne zastrzeżenie dotyczące zakresu dysponowania środkami albo jeżeli zachodzi wątpliwość co do uprawnień osoby składającej dyspozycję."
+
+  - id: rachunek-osobisty-pelnomocnictwa
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz rachunku może ustanowić pełnomocnika do dysponowania rachunkiem. Pełnomocnictwo wymaga formy pisemnej i jest składane w placówce w obecności pracownika Banku albo w innej formie uzgodnionej z Bankiem, zapewniającej potwierdzenie tożsamości mocodawcy."
+      - ustep: "Pełnomocnik {jest uprawniony|ma prawo} do składania dyspozycji w zakresie określonym w pełnomocnictwie. Pełnomocnik nie może, bez wyraźnego umocowania:"
+        punkty:
+          - "ustanawiać dalszych pełnomocników;"
+          - "zmieniać ani wypowiadać umowy rachunku;"
+          - "zaciągać zobowiązań z tytułu debetu ani zmieniać limitów transakcji;"
+          - "dysponować środkami na wypadek śmierci Posiadacza."
+      - ustep: "Bank weryfikuje uprawnienia pełnomocnika przy każdej dyspozycji. W przypadku pełnomocnictw udzielonych w innej formie, w tym za granicą, Bank {może|ma prawo} zażądać dodatkowych dokumentów; rozpatrzenie takiego pełnomocnictwa trwa do {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}} od dnia przedstawienia dokumentów."
+      - ustep: "Pełnomocnictwo wygasa z chwilą jego odwołania lub wypowiedzenia, śmierci Posiadacza albo pełnomocnika, a także z chwilą zamknięcia rachunku. Odwołanie jest skuteczne wobec Banku od dnia otrzymania przez Bank oświadczenia Posiadacza; Bank {nie ponosi odpowiedzialności|nie odpowiada} za dyspozycje wykonane przed tą chwilą. Opłata za przyjęcie i zmianę pełnomocnictwa wynosi {{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}."
+
+  - id: rachunek-osobisty-zgon
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz rachunku może {w każdym czasie|w dowolnym momencie} złożyć w Banku dyspozycję wypłaty środków zgromadzonych na rachunku na wypadek swojej śmierci, wskazując jedną lub kilka osób uprawnionych oraz określając wysokość przypadających im kwot."
+      - ustep: "Łączna kwota wypłat na podstawie dyspozycji, o której mowa w ust. 1, nie może przekraczać {w danym momencie|w chwili śmierci} kwoty środków zgromadzonych na rachunku. W przypadku, gdy dyspozycja nie określa wysokości kwot, środki dzieli się między osoby uprawnione w równych częściach."
+      - ustep: "Dyspozycja wypłaty na wypadek śmierci:"
+        punkty:
+          - "może być w każdym czasie zmieniona lub odwołana przez Posiadacza;"
+          - "jest składana w placówce, a jej przyjęcie Bank potwierdza na piśmie;"
+          - tekst: "nie obejmuje środków przewidzianych w przepisach o dziedziczeniu jako część spadku w zakresie:"
+            litery:
+              - "wartości zachowku, {o ile|jeżeli} przysługuje uprawnionym osobom;"
+              - "zobowiązań Posiadacza wobec Banku z tytułu rachunku, które Bank {może|ma prawo} potrącić."
+      - ustep: "Wypłata następuje po przedstawieniu przez osobę uprawnioną odpisu skróconego aktu zgonu i dokumentu potwierdzającego jej tożsamość, nie później niż w terminie {{fakt:termin.rachunek-osobisty.wyplata-po-zgonie}} od dnia dostarczenia dokumentów. Za przyjęcie, zmianę lub odwołanie dyspozycji Bank pobiera opłatę w wysokości {{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}."
+      - ustep: "Po otrzymaniu informacji o śmierci Posiadacza Bank blokuje możliwość składania dyspozycji przez pełnomocnika i przez współposiadacza w zakresie wynikającym z tej śmierci, a rachunek jest dalej prowadzony do czasu wypłaty środków."
+
+  - id: rachunek-osobisty-bezpieczenstwo
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest obowiązany korzystać z instrumentów płatniczych oraz bankowości elektronicznej zgodnie z Regulaminem, a {w szczególności|zwłaszcza}:"
+        punkty:
+          - "chronić dane uwierzytelniające, w tym PIN, hasła i kody jednorazowe, przed ujawnieniem osobom trzecim;"
+          - "nie udostępniać karty ani telefonu z aplikacją mobilną innym osobom;"
+          - "{niezwłocznie|bez zbędnej zwłoki} zgłaszać utratę, kradzież, przywłaszczenie lub nieuprawnione użycie instrumentu płatniczego;"
+          - "instalować aktualizacje oprogramowania i stosować zabezpieczenia urządzenia, z którego korzysta."
+      - ustep: "Zgłoszenia, o którym mowa w ust. 1 pkt 3, Klient dokonuje całodobowo pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}, a z zagranicy — pod numerem {{fakt:kontakt.infolinia-zagranica}}. Po zgłoszeniu Bank {niezwłocznie|bez zbędnej zwłoki} blokuje instrument płatniczy."
+      - ustep: "Bank {zastrzega sobie prawo|ma prawo} zablokować instrument płatniczy lub dostęp do bankowości elektronicznej z uzasadnionych przyczyn związanych z bezpieczeństwem, w razie podejrzenia nieuprawnionego użycia lub umyślnego doprowadzenia do nieautoryzowanej transakcji. O zablokowaniu i jego przyczynach Bank informuje Klienta przed zablokowaniem, a jeżeli nie jest to możliwe — niezwłocznie po nim, chyba że przepisy zabraniają przekazania takiej informacji."
+      - ustep: "Bank nigdy nie prosi Klienta, w rozmowie telefonicznej ani w wiadomości elektronicznej, o podanie pełnych danych uwierzytelniających, kodów jednorazowych ani o instalację oprogramowania umożliwiającego zdalny dostęp do urządzenia. Klient, który otrzymał takie żądanie, powinien skontaktować się z Bankiem pod numerem {{fakt:kontakt.infolinia}}."
+
+  - id: rachunek-osobisty-nieautoryzowane
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank odpowiada za wykonanie nieautoryzowanej transakcji płatniczej, z zastrzeżeniem ust. 3 i 4. {W razie|W przypadku} wystąpienia takiej transakcji Bank {niezwłocznie|bez zbędnej zwłoki} przywraca obciążony rachunek do stanu, jaki istniałby, gdyby transakcja nie miała miejsca, nie później niż {{fakt:termin.rachunek-osobisty.zwrot-nieautoryzowanej}} po stwierdzeniu nieautoryzowanej transakcji lub otrzymaniu zgłoszenia.[^1]"
+      - ustep: "Klient zgłasza nieautoryzowane, niewykonane lub nienależycie wykonane transakcje {niezwłocznie|bez zbędnej zwłoki} po ich stwierdzeniu, nie później niż w terminie {{fakt:termin.rachunek-osobisty.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku lub dnia, w którym transakcja miała być wykonana."
+      - ustep: "Klient odpowiada za nieautoryzowane transakcje płatnicze do kwoty stanowiącej równowartość 50 euro w przypadku, gdy transakcja jest skutkiem:"
+        punkty:
+          - "posłużenia się utraconym lub skradzionym instrumentem płatniczym;"
+          - "przywłaszczenia instrumentu płatniczego."
+      - ustep: "Klient ponosi pełną odpowiedzialność za nieautoryzowane transakcje, jeżeli doprowadził do nich umyślnie albo w wyniku umyślnego lub będącego skutkiem rażącego niedbalstwa naruszenia obowiązków w zakresie ochrony danych uwierzytelniających i zgłaszania utraty instrumentu płatniczego, określonych w poprzednim paragrafie. {Bank nie ponosi odpowiedzialności|Bank nie odpowiada} za szkody wynikłe z okoliczności o charakterze siły wyższej."
+    przypisy:
+      1: "Zasady odpowiedzialności Banku i Klienta za nieautoryzowane transakcje wynikają z przepisów (zob. {{ref:akt:dz-u-2024-30-uslugi-platnicze}}) i nie mogą być w umowie ukształtowane na niekorzyść konsumenta."
+
+  - id: rachunek-osobisty-wypowiedzenie
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa rachunku zostaje zawarta na czas nieokreślony. Posiadacz {może|ma prawo} ją wypowiedzieć w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego {{fakt:termin.wypowiedzenie-przez-klienta}}, składając oświadczenie na piśmie lub w innej formie uzgodnionej z Bankiem."
+      - ustep: "Bank {może|ma prawo} wypowiedzieć umowę z zachowaniem terminu {{fakt:termin.wypowiedzenie-przez-bank}}, wyłącznie z ważnych przyczyn, do których zalicza się {w szczególności|zwłaszcza}:"
+        punkty:
+          - "rażące naruszenie postanowień umowy lub Regulaminu przez Klienta;"
+          - "podanie przez Klienta nieprawdziwych danych przy zawieraniu umowy;"
+          - "wykorzystywanie rachunku do działań sprzecznych z prawem lub z zasadami współżycia społecznego;"
+          - "brak operacji na rachunku w okresie {{fakt:termin.rachunek-osobisty.nieaktywnosc}} przy saldzie niższym niż opłata za prowadzenie rachunku;"
+          - "utratę przez Klienta zdolności do czynności prawnych bez ustanowienia przedstawiciela."
+      - ustep: "Wypowiedzenie umowy przez Bank następuje na piśmie lub na trwałym nośniku i zawiera uzasadnienie. W okresie wypowiedzenia Klient {jest obowiązany|ma obowiązek} rozliczyć wszystkie zobowiązania i wskazać rachunek, na który zostaną przekazane pozostałe środki."
+      - ustep: "Umowa wygasa w razie śmierci Posiadacza rachunku indywidualnego, z zastrzeżeniem przepisów dotyczących dyspozycji na wypadek śmierci. Umowa może być rozwiązana w każdym czasie za porozumieniem stron, a zamknięcie rachunku następuje bez opłat; opłata za zamknięcie wynosi {{fakt:oplata.rachunek-osobisty.zamkniecie}}."
+      - ustep: "Najpóźniej w terminie {{fakt:termin.rachunek-osobisty.zamkniecie-rozliczenie}} od dnia rozwiązania umowy Bank rozlicza rachunek i wypłaca Klientowi pozostałe na nim środki, wraz z naliczonymi odsetkami, pomniejszone o należne Bankowi opłaty i zobowiązania."
+
+  - id: rachunek-osobisty-koncowe
+    typy: [regulaminy]
+    tematy: [rachunek-osobisty]
+    kategoria: paragraf
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin wchodzi w życie z dniem {{param:od}} i obowiązuje do czasu wydania nowego regulaminu. Wersja Regulaminu oznaczona jako {{param:wersja}} {zastępuje|uchyla} poprzednie wersje, a jego oznaczenie wewnętrzne to {{param:oznaczenie}}."
+      - ustep: "Regulamin jest udostępniany Klientowi przed zawarciem umowy w formie umożliwiającej jego przechowywanie i odtworzenie, a na żądanie Klienta — także {w każdym czasie|w dowolnym momencie} w trakcie trwania umowy, nieodpłatnie."
+      - ustep: "Językiem stosowanym w relacjach między Bankiem a Klientem jest język polski. Umowa i Regulamin są sporządzone w języku polskim; za zgodą Banku Klient {może|ma prawo} otrzymać tłumaczenie, które ma charakter wyłącznie informacyjny."
+      - ustep: "W sprawach nieuregulowanych w Regulaminie {stosuje się|mają zastosowanie} odpowiednio postanowienia umowy rachunku, Taryfy oraz przepisy powszechnie obowiązujące. Szczegółowych informacji o rachunku udziela Infolinia, pod numerem {{fakt:kontakt.infolinia}}, czynna {{fakt:kontakt.godziny-infolinii}}."

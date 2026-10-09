@@ -1,0 +1,144 @@
+bloki:
+  # ===== Rachunki oszczędnościowe — pozycje dodatkowe =====
+  - id: taryfa-oszczednosci-opc-rachunki-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Rachunek|Konto} oszczędnościowe Junior dla osoby małoletniej[^1]", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie rachunku oszczędnościowego Junior", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.rachunek-junior}}", tryb: "w skali roku" }
+          - { usluga: "Wiek, do którego rachunek Junior może być prowadzony na zasadach preferencyjnych", stawka: "{{fakt:limit.taryfa-oszczednosci.junior-wiek}}", tryb: "jednorazowo" }
+          - { usluga: "{Wpłata|Wpłata środków} na rachunek Junior przez rodzica lub opiekuna prawnego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Wypłata|Wypłata środków} z rachunku Junior przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przekształcenie rachunku Junior w rachunek oszczędnościowy dorosłego Klienta po osiągnięciu pełnoletności", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zgoda sądu opiekuńczego przedstawiona do wypłaty dużej kwoty — weryfikacja dokumentu", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "{Ustanowienie|Zlecenie} dyspozycji cyklicznych wpłat na rachunek Junior", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Informacja o saldzie rachunku Junior przekazywana przedstawicielowi w aplikacji", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wniosek o otwarcie rachunku Junior złożony przez dziadków lub inne osoby trzecie jako dar", stawka: "bez opłat", tryb: "jednorazowo" }
+    przypisy:
+      1: "Rachunek Junior jest prowadzony na wniosek przedstawiciela ustawowego; dysponowanie środkami przez osobę małoletnią w wieku od 13 do 18 lat jest ograniczone do wysokości określonej w umowie i wymaga zgody przedstawiciela przy wypłatach powyżej tej kwoty."
+  - id: taryfa-oszczednosci-opc-rachunki-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Rachunek oszczędnościowy wspólny dla dwóch posiadaczy — otwarcie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Rachunek oszczędnościowy wspólny — prowadzenie", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "{Zmiana|Korekta} liczby współposiadaczy rachunku wspólnego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypowiedzenie rachunku wspólnego przez jednego ze współposiadaczy[^1]", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Podział środków z rachunku wspólnego po rozwiązaniu umowy", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Rachunek oszczędnościowy z celem oszczędzania (cel nadany przez Klienta)", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Zmiana celu oszczędzania i jego opisu w bankowości elektronicznej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Dodatkowy rachunek oszczędnościowy w złotych dla tego samego Klienta (po pierwszym)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie dodatkowego rachunku oszczędnościowego po pierwszym", stawka: "{{fakt:oplata.prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "Przeniesienie środków między własnymi rachunkami oszczędnościowymi w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Zawieszenie|Wstrzymanie} możliwości wypłat z rachunku na wniosek Klienta (blokada dobrowolna)", stawka: "bez opłat", tryb: "za dyspozycję" }
+    przypisy:
+      1: "Po wypowiedzeniu przez jednego ze współposiadaczy rachunek jest zamykany po upływie terminu wypowiedzenia określonego w umowie, a Bank {informuje|powiadamia} o tym pozostałych współposiadaczy na trwałym nośniku."
+  - id: taryfa-oszczednosci-opc-rachunki-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Wypłata|Realizacja wypłaty} z rachunku oszczędnościowego dokonywana przez pełnomocnika w placówce", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata z rachunku oszczędnościowego dokonywana w kasie obcej placówki Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata z rachunku oszczędnościowego w gotówce w wypłatomacie Banku", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "Przelew z rachunku oszczędnościowego do urzędu skarbowego lub ZUS w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew z rachunku oszczędnościowego na rachunek kredytowy w Banku (spłata rat)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zmiana limitu dziennego wypłat w ramach rachunku oszczędnościowego w bankowości elektronicznej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zmiana|Modyfikacja} limitu dziennego wypłat w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Maksymalny dzienny limit wypłat po zmianie przez Klienta", stawka: "{{fakt:limit.rachunek-oszczednosciowy.wyplata-dzienna}}", tryb: "dziennie" }
+          - { usluga: "{Powiadomienie|Komunikat} push o wpływie środków na rachunek oszczędnościowy", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "{Powiadomienie|Wiadomość} e-mail o zbliżającym się końcu okresu promocyjnego", stawka: "bez opłat", tryb: "za wiadomość" }
+  - id: taryfa-oszczednosci-opc-rachunki-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zmiana oprocentowania rachunku w związku z zakończeniem okresu promocyjnego", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy}}", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie nieaktywnego rachunku oszczędnościowego przed jego zamknięciem", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}}", tryb: "w skali roku" }
+          - { usluga: "Kapitalizacja odsetek od środków na rachunku oszczędnościowym[^1]", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Podatek od odsetek naliczonych na rachunku oszczędnościowym", stawka: "{{fakt:podatek.odsetki}}", tryb: "od naliczonych odsetek" }
+          - { usluga: "{Zwrot|Korekta} odsetek naliczonych niesłusznie przez Bank w wyniku błędu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zwrot nienależnie pobranej opłaty (termin wynikający z zasad pobierania opłat)", stawka: "{{fakt:termin.zwrot-oplat}}", tryb: "od dnia stwierdzenia błędu" }
+          - { usluga: "{Rozpatrzenie|Rozstrzygnięcie} reklamacji dotyczącej naliczenia odsetek", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Odpowiedź na reklamację w formie papierowej wysłana pocztą", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Korekta naliczonych odsetek po zmianie dyspozycji kapitalizacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wniosek o ponowne naliczenie odsetek za okres po zerwanej promocji", stawka: "bez opłat", tryb: "za wniosek" }
+    przypisy:
+      1: "Kapitalizacja odsetek od środków na rachunku oszczędnościowym następuje w ostatnim dniu roboczym miesiąca kalendarzowego, a po kapitalizacji odsetki {zwiększają|powiększają} saldo i podlegają dalszemu oprocentowaniu."
+  # ===== Lokaty terminowe w złotych — pozycje dodatkowe =====
+  - id: taryfa-oszczednosci-opc-lokaty-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Założenie lokaty {terminowej|oszczędnościowej} w bankowości elektronicznej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Założenie|Otwarcie} lokaty terminowej w placówce Banku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty terminowej na infolinii po weryfikacji tożsamości", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty ze środków pochodzących z rachunku w innym banku (wpłata przelewem)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Założenie|Otwarcie} lokaty wspólnej dla dwóch osób", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty przez pełnomocnika na podstawie pełnomocnictwa notarialnego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty z odsetkami wypłacanymi na koniec okresu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty z odsetkami wypłacanymi co miesiąc[^1]", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Założenie lokaty z automatycznym odnowieniem na kolejny okres", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Założenie|Otwarcie} lokaty bez automatycznego odnowienia", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Złożenie dyspozycji założenia lokaty dla maksymalnej kwoty określonej w Taryfie", stawka: "{{fakt:limit.lokata.maksymalna}}", tryb: "jednorazowo" }
+    przypisy:
+      1: "Przy wypłacie odsetek co miesiąc oprocentowanie lokaty może być niższe o 0,1 punktu procentowego niż stawka z tabeli oprocentowania dla lokat z kapitalizacją na koniec okresu; wysokość stawki Bank {podaje|wskazuje} w potwierdzeniu umowy."
+  - id: taryfa-oszczednosci-opc-lokaty-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Zmiana|Zmiana wskazania} rachunku, na który wypłacane są odsetki od lokaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana rachunku, na który wypłacany jest kapitał lokaty po zakończeniu okresu", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana okresu lokaty przy odnowieniu na kolejny okres", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Rezygnacja|Odstąpienie} z automatycznego odnowienia lokaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Rezygnacja z automatycznego odnowienia lokaty złożona w terminie krótszym niż {{fakt:termin.lokata.odnowienie-dyspozycja}} przed jej zakończeniem[^1]", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Dopłata|Wpłata dodatkowa} do trwającej lokaty (zwiększenie kwoty) za zgodą Banku", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Częściowa wypłata z lokaty przed terminem (zerwanie części lokaty)", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "za dyspozycję" }
+          - { usluga: "Oprocentowanie części lokaty pozostałej po częściowym zerwaniu", stawka: "wg tabeli oprocentowania dla pozostałego okresu", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie części lokaty zerwanej przed terminem", stawka: "{{fakt:oprocentowanie.lokata.zerwanie}}", tryb: "w skali roku" }
+          - { usluga: "Wypłata środków z lokaty po zakończeniu okresu na rachunek oszczędnościowy w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata środków z lokaty po zakończeniu okresu w gotówce w placówce do kwoty 5 000,00 zł", stawka: "{{fakt:oplata.lokata.wyplata-gotowkowa}}", tryb: "za operację" }
+    przypisy:
+      1: "Dyspozycja złożona po upływie terminu przewidzianego dla zmiany jest traktowana jako dyspozycja dla kolejnego okresu, o ile Regulamin nie stanowi inaczej; Bank {informuje|powiadamia} Klienta o jej skutkach na trwałym nośniku."
+  - id: taryfa-oszczednosci-opc-lokaty-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata 3-miesięczna z odsetkami na koniec okresu — {oprocentowanie|stawka}", stawka: "{{fakt:oprocentowanie.lokata-3m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata 6-miesięczna z odsetkami na koniec okresu — {oprocentowanie|stawka}", stawka: "{{fakt:oprocentowanie.lokata-6m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata 12-miesięczna z odsetkami na koniec okresu — {oprocentowanie|stawka}", stawka: "{{fakt:oprocentowanie.lokata-12m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata 24-miesięczna z odsetkami na koniec okresu — oprocentowanie", stawka: "{{fakt:oprocentowanie.lokata-24m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata 1-miesięczna z odsetkami na koniec okresu — oprocentowanie", stawka: "{{fakt:oprocentowanie.lokata-1m}}", tryb: "w skali roku" }
+          - { usluga: "Liczba dni okresu lokaty 1-miesięcznej przyjmowana do obliczeń odsetek", stawka: "{{fakt:termin.lokata.okres-1m}}", tryb: "za okres lokaty" }
+          - { usluga: "Liczba dni okresu lokaty 12-miesięcznej przyjmowana do obliczeń odsetek", stawka: "{{fakt:termin.lokata.okres-12m}}", tryb: "za okres lokaty" }
+  - id: taryfa-oszczednosci-opc-lokaty-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Lokata promocyjna|Lokata w promocji} dla nowych środków (okres promocji ogłaszany odrębnie)", stawka: "wg regulaminu promocji", tryb: "w skali roku" }
+          - { usluga: "Lokata odnawialna — oprocentowanie na kolejny okres po odnowieniu", stawka: "{{fakt:oprocentowanie.lokata.odnowienie}}", tryb: "w skali roku" }
+          - { usluga: "Lokata zakładana ze środków pochodzących ze sprzedaży nieruchomości (potwierdzenie źródła środków)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Weryfikacja źródła pochodzenia środków przy lokacie powyżej progu ustawowego[^1]", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Lokata zakładana z rachunku rodzica na rzecz małoletniego dziecka", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata zakładana dla osoby nieposiadającej innych produktów w Banku (wymagane otwarcie rachunku oszczędnościowego)", stawka: "{{fakt:limit.rachunek-oszczednosciowy.otwarcie}}", tryb: "jednorazowo" }
+          - { usluga: "{Zwrot|Wypłata} środków z lokaty w przypadku odstąpienia od umowy w ustawowym terminie", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Termin wypłaty środków przy odstąpieniu od umowy lokaty zawartej na odległość", stawka: "{{fakt:termin.odstapienie-od-umowy}}", tryb: "od dnia odstąpienia" }
+          - { usluga: "Informacja o saldzie i odsetkach naliczonych od lokaty w bankowości elektronicznej", stawka: "bez opłat", tryb: "za zapytanie" }
+          - { usluga: "Informacja o {saldzie|stanie środków} lokaty przekazana telefonicznie", stawka: "bez opłat", tryb: "za zapytanie" }
+          - { usluga: "Zestawienie lokat Klienta w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za dokument" }
+    przypisy:
+      1: "Bank może poprosić o dokumenty potwierdzające źródło pochodzenia środków, jeżeli kwota lokaty przekracza próg określony w przepisach o przeciwdziałaniu praniu pieniędzy; brak dokumentów {uprawnia|upoważnia} Bank do odmowy zawarcia umowy lokaty."

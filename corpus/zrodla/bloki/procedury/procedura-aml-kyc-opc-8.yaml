@@ -1,0 +1,166 @@
+bloki:
+  - id: procedura-aml-kyc-krok-id-9
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Zaktualizuj dane klienta w razie zmiany dokumentu tożsamości."
+            podkroki:
+              - tekst: "Po wygaśnięciu dokumentu poproś klienta o okazanie nowego i porównaj go z dotychczasowymi danymi w {{fakt:aml.system-klienci}}; zmiany numeru, nazwiska lub adresu wpisz z zachowaniem historii."
+              - tekst: "Jeżeli klient zmienił nazwisko, zażądaj dokumentu potwierdzającego zmianę, na przykład odpisu aktu małżeństwa lub orzeczenia."
+              - tekst: "Gdy klient nie przedstawi nowego dokumentu w terminie wskazanym w wezwaniu, ogranicz dostęp do usług do czynności niezbędnych do ochrony jego środków."
+          - tekst: "Zweryfikuj zgodność danych klienta z danymi zewnętrznymi."
+            podkroki:
+              - tekst: "Gdy dane w rejestrach państwowych różnią się od danych w Banku, ustal przyczynę i uzupełnij dane po potwierdzeniu u klienta."
+              - tekst: "Rozbieżności, których klient nie umie wyjaśnić, przekaż do analizy jednostce „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "Zapisz wynik aktualizacji."
+            podkroki:
+              - tekst: "W karcie klienta odnotuj datę, zakres zmian i osobę, która je wprowadziła."
+              - tekst: "Poprzednie dane zachowaj w historii przez okres wskazany w części dotyczącej dokumentacji."
+
+  - id: procedura-aml-kyc-krok-id-10
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Zidentyfikuj klienta, który nie może okazać dokumentu tożsamości z powodu jego utraty."
+            podkroki:
+              - tekst: "Poproś o zaświadczenie o zgłoszeniu utraty dokumentu oraz o inny dokument ze zdjęciem, jeżeli jest dostępny, na przykład prawo jazdy."
+              - tekst: "Nie otwieraj rachunku na podstawie samego oświadczenia klienta; odmowę wyjaśnij uprzejmie i wskaż, jakie dokumenty należy przedstawić."
+          - tekst: "Obsłuż klienta posiadającego już rachunek."
+            podkroki:
+              - tekst: "Zidentyfikuj go, korzystając z danych zgromadzonych wcześniej oraz dodatkowych pytań weryfikacyjnych dotyczących ostatnich transakcji i danych kontaktowych."
+              - tekst: "Wykonaj tylko te dyspozycje, które nie powodują ryzyka dla jego środków; wypłaty wysokich kwot odłóż do czasu przedstawienia dokumentu."
+          - tekst: "Ostrzeż klienta o zagrożeniach."
+            podkroki:
+              - tekst: "Poinformuj klienta o możliwości zastrzeżenia dokumentu w rejestrze oraz o zagrożeniu wykorzystaniem jego danych przez osoby nieuprawnione."
+              - tekst: "Jeżeli istnieje ryzyko wykorzystania utraconego dokumentu, skontaktuj się z {{fakt:jednostka.bezpieczenstwo}} i zastosuj tryb ostrożnościowy wobec rachunków klienta."
+
+  - id: procedura-aml-kyc-krok-benef-8
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-beneficjent
+    elementy:
+      - kroki:
+          - tekst: "Zweryfikuj beneficjenta rzeczywistego w przypadku spółki cywilnej i spółek osobowych."
+            podkroki:
+              - tekst: "Zażądaj umowy spółki wraz z aneksami i ustal wszystkich wspólników oraz ich udziały w zyskach i głosach."
+              - tekst: "Beneficjentami rzeczywistymi są wspólnicy, którzy posiadają ponad {{fakt:aml.prog-udzialu-beneficjenta}} udziałów lub w inny sposób sprawują kontrolę nad spółką."
+          - tekst: "Uwzględnij komplementariuszy i wspólników wnoszących wkłady niepieniężne."
+            podkroki:
+              - tekst: "Ustal, czy komplementariusz jest osobą fizyczną, czy spółką; w drugim przypadku zbadaj jej właścicieli jak w przypadku spółek kapitałowych."
+              - tekst: "Wkłady niepieniężne o znacznej wartości, zwłaszcza nieruchomości, zestaw z dokumentami, które potwierdzają ich pochodzenie."
+          - tekst: "Zastosuj podobne zasady dla wspólnot mieszkaniowych i innych podmiotów nieposiadających osobowości prawnej."
+            podkroki:
+              - tekst: "Jako beneficjentów wpisz osoby wchodzące w skład zarządu lub zarządcę, jeżeli sprawują faktyczną kontrolę nad środkami."
+              - tekst: "Uzyskaj uchwałę o powołaniu zarządu i upoważnienie do dysponowania rachunkiem."
+
+  - id: procedura-aml-kyc-krok-ryzyko-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ryzyko
+    elementy:
+      - kroki:
+          - tekst: "Zastosuj punktację za okoliczności szczególne w ocenie ryzyka."
+            podkroki:
+              - tekst: "Za status osoby eksponowanej politycznie doliczaj {{fakt:aml.punkty-pep}} punktów, za powiązanie z krajem wysokiego ryzyka — {{fakt:aml.punkty-kraj-wysokiego-ryzyka}}, a za intensywne korzystanie z gotówki — {{fakt:aml.punkty-gotowka}}."
+              - tekst: "Okoliczności, których nie ujęto w tabeli punktacji, opisz w polu uwag i przekaż do oceny jednostce zgodności."
+          - tekst: "Rozpatrz wniosek o obniżenie kategorii ryzyka."
+            podkroki:
+              - tekst: "Wniosek składa opiekun klienta, wskazując nowe okoliczności, które uzasadniają zmianę, oraz dołączając dokumenty."
+              - tekst: "Decyzję podejmuje kierownik jednostki zgodności w terminie siedmiu dni roboczych i zapisuje uzasadnienie."
+          - tekst: "Raportuj strukturę ryzyka klientów."
+            podkroki:
+              - tekst: "Raz na kwartał jednostka „{{fakt:jednostka.ryzyko}}” zestawia liczbę klientów w poszczególnych kategoriach, zmiany w ich strukturze oraz klientów z przeterminowanym przeglądem."
+              - tekst: "Zestawienie omawia się na posiedzeniu komitetu zarządczego i wykorzystuje do aktualizacji oceny ryzyka Banku."
+
+  - id: procedura-aml-kyc-krok-pod-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż zapytanie organu o informacje na temat klienta."
+            podkroki:
+              - tekst: "Zapytanie przyjmuje jednostka „{{fakt:jednostka.prawny}}”, która potwierdza jego autentyczność przez kontakt z organem na dane z urzędowych wykazów."
+              - tekst: "Sprawdź, czy zapytanie zawiera podstawę prawną, zakres danych i termin odpowiedzi; braki zgłoś organowi."
+          - tekst: "Przygotuj odpowiedź."
+            podkroki:
+              - tekst: "Zbierz dane z systemów Banku i sporządź zestawienie obejmujące wyłącznie informacje wskazane w zapytaniu."
+              - tekst: "Zestawienie zatwierdza koordynator; nie dołączaj własnych ocen ani wniosków, o ile organ ich nie żąda."
+          - tekst: "Zachowaj poufność."
+            podkroki:
+              - tekst: "Nie informuj klienta ani osób trzecich o zapytaniu; pracownicy, którzy poznali jego treść, są zobowiązani do zachowania tajemnicy."
+              - tekst: "Kopię odpowiedzi wraz z potwierdzeniem doręczenia przechowuj w aktach sprawy w {{fakt:aml.rejestr-podejrzanych}}."
+
+  - id: procedura-aml-kyc-zamroz-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zamrozenie
+    elementy:
+      - kroki:
+          - tekst: "Zareaguj na komunikat o nowym wpisie w wykazie osób i podmiotów objętych sankcjami."
+            podkroki:
+              - tekst: "Komunikat z wykazem przyjmuje {{fakt:aml.zespol-analiz}} i w tym samym dniu uruchamia przeszukanie baz klientów, beneficjentów rzeczywistych i pełnomocników."
+              - tekst: "Wyniki przeszukania zapisz w protokole zawierającym datę, godzinę, liczbę dopasowań oraz decyzje o ich zatwierdzeniu lub odrzuceniu."
+          - tekst: "Sprawdź transakcje w toku."
+            podkroki:
+              - tekst: "Zatrzymaj płatności, w których uczestniczy osoba z nowego wpisu, a także płatności kierowane do podmiotów przez nią kontrolowanych."
+              - tekst: "Płatności zatrzymane przechowuj na rachunku technicznym do czasu decyzji koordynatora."
+          - tekst: "Powiadom jednostki Banku o zmianie wykazu."
+            podkroki:
+              - tekst: "Poinformuj kierowników placówek i jednostki operacyjne o wpisie, jeśli dotyczy on ich klientów; komunikat nie zawiera danych wykraczających poza niezbędne."
+              - tekst: "Przypomnij o obowiązku niezwłocznego zgłaszania wszelkich prób zlecenia transakcji przez osoby wymienione w wykazie."
+
+  - id: procedura-aml-kyc-szcz-9
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Postępuj przy transakcjach związanych z obrotem nieruchomościami."
+            podkroki:
+              - tekst: "Przy kredytach hipotecznych i przelewach tytułem zakupu nieruchomości sprawdź, czy źródło środków własnych jest udokumentowane, na przykład sprzedażą innej nieruchomości lub darowizną."
+              - tekst: "Zwróć uwagę na zakupy dokonywane za cenę wyraźnie odbiegającą od rynkowej, szybkie odsprzedaże oraz rozliczenia w gotówce."
+          - tekst: "Zbadaj uczestników transakcji."
+            podkroki:
+              - tekst: "Sprawdź powiązania między sprzedającym a kupującym; transakcje pomiędzy osobami blisko związanymi, bez uzasadnienia ekonomicznego, wymagają analizy."
+              - tekst: "Jeżeli w transakcji uczestniczy podmiot zagraniczny, ustal jego beneficjentów rzeczywistych."
+          - tekst: "Udokumentuj ustalenia."
+            podkroki:
+              - tekst: "Notatkę z ustaleń dołącz do wniosku kredytowego lub dyspozycji; decyzja kredytowa nie może zostać podjęta przed jej sporządzeniem."
+              - tekst: "O wątpliwościach poinformuj {{fakt:aml.zespol-analiz}} przed uruchomieniem środków."
+
+  - id: procedura-aml-kyc-kontr-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-kontrola
+    elementy:
+      - kroki:
+          - tekst: "Przeprowadź roczną ocenę ryzyka prania pieniędzy i finansowania terroryzmu w Banku."
+            podkroki:
+              - tekst: "Jednostka „{{fakt:jednostka.ryzyko}}” we współpracy z komórką zgodności zbiera dane o klientach, produktach, kanałach dystrybucji i obszarach geograficznych."
+              - tekst: "Oceny dokonuje się z uwzględnieniem krajowej oceny ryzyka oraz wniosków z kontroli i analiz transakcji z minionego roku."
+          - tekst: "Zatwierdź wyniki oceny."
+            podkroki:
+              - tekst: "Wyniki wraz z rekomendacjami zmian procedur i limitów przedstawia się zarządowi do zatwierdzenia nie później niż w pierwszym kwartale kolejnego roku."
+              - tekst: "Zatwierdzona ocena stanowi podstawę do aktualizacji niniejszej procedury i kryteriów scoringu."
+          - tekst: "Poinformuj pracowników o zmianach."
+            podkroki:
+              - tekst: "Zmiany wynikające z oceny przedstawia się w formie komunikatu oraz uwzględnia w szkoleniach."
+              - tekst: "Wdrożenie zmian w systemach teleinformatycznych jest planowane z zachowaniem terminów wskazanych przez zarząd."
+
+  - id: procedura-aml-kyc-odp-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-odpowiedzialnosci
+    elementy:
+      - akapit: "Odpowiedzialność za przestrzeganie procedury jest rozłożona pomiędzy trzy linie obrony, tak aby zapewnić niezależność oceny i skuteczność kontroli."
+      - ustep: "Podział odpowiedzialności jest następujący:"
+        punkty:
+          - "**pierwsza linia** — pracownicy placówek i jednostek biznesowych, którzy stosują środki bezpieczeństwa finansowego na co dzień oraz identyfikują ryzyka związane z klientami;"
+          - "**druga linia** — jednostka „{{fakt:jednostka.zgodnosc}}” oraz jednostka „{{fakt:jednostka.ryzyko}}”, które projektują zasady, monitorują ich stosowanie i doradzają jednostkom biznesowym;"
+          - "**trzecia linia** — audyt wewnętrzny, który niezależnie ocenia skuteczność systemu i zgodność działania z przepisami."
+      - akapit: "Żadna z linii nie zastępuje pozostałych. Pracownik pierwszej linii nie może powierzyć jednostce zgodności decyzji, które należą do niego, a jednostka zgodności nie zatwierdza czynności, które sama wykonuje."

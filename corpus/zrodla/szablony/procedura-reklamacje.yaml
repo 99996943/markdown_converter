@@ -1,0 +1,70 @@
+id: procedura-reklamacje
+typ: procedury
+temat: procedura-reklamacje
+tytul: ["Procedura rozpatrywania reklamacji klientów", "Procedura {obsługi|rozpatrywania} reklamacji składanych przez klientów {{param:bank}}"]
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry: { wlasciciel: "Biuro Reklamacji", zatwierdzil: "Zarząd Banku Przykładowego S.A." }
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [procedura-reklamacje-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [procedura-reklamacje-zakres]
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [procedura-reklamacje-odpowiedzialnosci]
+    opcjonalne: { kategorie: [reklamacje-odpowiedzialnosci-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, procedura-reklamacje-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przyjęcie i rejestracja reklamacji"
+    wymagane: [procedura-reklamacje-schemat, wspolne-reklamacje-procedura, procedura-reklamacje-przyjecie]
+    opcjonalne: { kategorie: [krok-reklamacje-przyjecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — klasyfikacja i terminy"
+    wymagane: [procedura-reklamacje-klasyfikacja, procedura-reklamacje-terminy]
+    opcjonalne: { kategorie: [krok-reklamacje-klasyfikacja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — analiza sprawy"
+    wymagane: [procedura-reklamacje-analiza]
+    opcjonalne: { kategorie: [krok-reklamacje-analiza], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — decyzja i odpowiedź"
+    wymagane: [procedura-reklamacje-decyzja]
+    opcjonalne: { kategorie: [krok-reklamacje-odpowiedz], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — uznanie rachunku i korekty"
+    wymagane: [procedura-reklamacje-uznanie]
+    opcjonalne: { kategorie: [krok-reklamacje-uznanie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — odwołania i Rzecznik Finansowy"
+    wymagane: [procedura-reklamacje-odwolania]
+    opcjonalne: { kategorie: [krok-reklamacje-odwolania], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [procedura-reklamacje-szczegolne]
+    opcjonalne: { kategorie: [reklamacje-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Raportowanie i kontrola jakości"
+    wymagane: [procedura-reklamacje-kontrola]
+    opcjonalne: { kategorie: [reklamacje-kontrola], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [procedura-reklamacje-archiwizacja, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [reklamacje-archiwizacja-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-zmiany-procedura, procedura-reklamacje-koncowe]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna rozpatrzenia reklamacji"
+    wymagane: [procedura-reklamacje-lista]
+  - rodzaj: zalacznik
+    tytul: "Wymagana treść odpowiedzi na reklamację"
+    wymagane: [procedura-reklamacje-zal-odpowiedz]
+    opcjonalne: { kategorie: [reklamacje-zal-odpowiedz], min: 0, max: 40 }
+  - rodzaj: zalacznik
+    tytul: "Terminy i limity decyzyjne"
+    wymagane: [procedura-reklamacje-klasyfikacja-tabela, procedura-reklamacje-zal-terminy]

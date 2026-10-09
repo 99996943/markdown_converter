@@ -1,0 +1,162 @@
+bloki:
+  - id: otwarcie-zakres-wylaczenia
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zakres-opc
+    elementy:
+      - ustep: "Procedura {pozostaje w związku|jest powiązana} z następującymi dokumentami, które pracownik {powinien znać|ma obowiązek znać}:"
+        punkty:
+          - "dokument „{{ref:dokument:regulamin-rachunku-osobistego}}” — określa prawa i obowiązki stron umowy rachunku;"
+          - "dokument „{{ref:dokument:taryfa-indywidualni}}” — zawiera wysokość opłat i prowizji, z którymi klient jest zapoznawany przed zawarciem umowy;"
+          - "instrukcja bezpieczeństwa wideoweryfikacji prowadzona przez komórkę „{{fakt:jednostka.bezpieczenstwo}}”;"
+          - "wewnętrzna polityka przeciwdziałania praniu pieniędzy i finansowaniu terroryzmu, wydana na podstawie {{ref:akt:dz-u-2025-644-aml}}."
+      - akapit: "Procedura nie reguluje zasad prowadzenia rachunku po jego otwarciu, rozpatrywania dyspozycji klienta ani zamykania rachunku. Te zagadnienia {opisują|określają} odrębne dokumenty. Jeżeli przepisy powszechnie obowiązujące lub decyzja organu nadzoru stanowią inaczej niż procedura, stosuje się przepisy lub decyzję, a pracownik niezwłocznie zawiadamia właściciela procedury."
+
+  - id: otwarcie-odp-obowiazki
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odp-opc
+    elementy:
+      - ustep: "Każdy pracownik uprawniony do otwierania rachunków jest obowiązany w szczególności:"
+        punkty:
+          - "ukończyć {przed rozpoczęciem|przed przystąpieniem do} samodzielnej pracy szkolenie z zakresu przeciwdziałania praniu pieniędzy oraz szkolenie z obsługi systemu {{fakt:system.otwarcie.cbs}};"
+          - "uczestniczyć co najmniej raz w roku w szkoleniu odświeżającym i zdać test wiedzy;"
+          - "stosować wyłącznie aktualną wersję formularzy i wzorów umów udostępnioną w systemie;"
+          - "zgłaszać kierownikowi placówki każdą próbę otwarcia rachunku, która wzbudza wątpliwości, nawet jeżeli nie doszło do zawarcia umowy;"
+          - "nie zawierać umowy, jeżeli nie zostały zrealizowane wszystkie czynności wymagane procedurą."
+      - akapit: "Kierownik placówki przydziela uprawnienia do otwierania rachunków w systemie po stwierdzeniu, że pracownik ukończył szkolenia, i odbiera je niezwłocznie, jeżeli pracownik przestaje spełniać te warunki. {{fakt:jednostka.obsluga-klienta}} prowadzi rejestr osób posiadających uprawnienia i weryfikuje go {raz w kwartale|co kwartał}."
+      - akapit: "Naruszenie procedury może stanowić naruszenie obowiązków pracowniczych. Pracownik, który zgłosił nieprawidłowość w dobrej wierze, nie może być z tego powodu {poszkodowany|traktowany niekorzystnie}; zgłoszenia można dokonać także anonimowo, za pośrednictwem kanału zgłoszeń nieprawidłowości prowadzonego przez komórkę „{{fakt:jednostka.zgodnosc}}”."
+
+  - id: otwarcie-przeglad-zasady
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "{Niezależnie od kanału|Bez względu na kanał} otwarcia rachunku obowiązują następujące zasady ogólne, których pracownik przestrzega na każdym etapie procesu:"
+      - ustep: "W szczególności pracownik:"
+        punkty:
+          - "{rzetelnie|z należytą starannością} identyfikuje klienta i nie pomija żadnej czynności z powodu pośpiechu klienta, kolejki w placówce lub presji sprzedażowej;"
+          - "nie przyjmuje dokumentów od osób trzecich, jeżeli nie mają one wymaganego pełnomocnictwa, ani nie wypełnia wniosku w imieniu klienta bez jego udziału;"
+          - "nie udziela klientowi porad podatkowych ani prawnych, a w razie pytań kieruje go do właściwego specjalisty;"
+          - "nie zachęca klienta do podawania nieprawdziwych informacji ani nie podpowiada odpowiedzi w kwestionariuszu ryzyka;"
+          - "chroni dane klienta i nie rozmawia o nich w obecności osób postronnych."
+      - akapit: "Jeżeli w trakcie procesu wystąpi {wątpliwość|niejasność} co do zastosowania procedury, pracownik wstrzymuje czynności i zwraca się do kierownika placówki. Nie wolno uruchomić rachunku „na zaufanie” z zamiarem uzupełnienia dokumentów później, z wyjątkiem sytuacji wprost przewidzianych w procedurze."
+
+  - id: otwarcie-placowka-seniorzy
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Obsługa klientów starszych, osób z niepełnosprawnościami oraz klientów, którzy nie czują się pewnie w kontaktach z bankiem, wymaga dostosowania sposobu przekazywania informacji, ale nie zwalnia z żadnej czynności procedury."
+      - kroki:
+          - tekst: "{Dostosuj|Zaadaptuj} sposób obsługi do potrzeb klienta."
+            podkroki:
+              - tekst: "{Zaproponuj|Zapewnij} miejsce przy stanowisku z krzesłem oraz zadbaj o ciszę potrzebną do rozmowy."
+              - tekst: "{Przekaż|Przedstaw} najważniejsze informacje o rachunku prostym językiem, bez skrótów i terminów specjalistycznych, i upewnij się, że klient je rozumie."
+              - tekst: "Na życzenie klienta wydrukuj dokumenty w powiększonej czcionce."
+          - tekst: "Jeżeli klient przychodzi z osobą towarzyszącą, rozmawiaj z klientem."
+            podkroki:
+              - tekst: "Poproś osobę towarzyszącą o zachowanie dyskrecji przy omawianiu danych; w razie potrzeby poproś klienta o zgodę na obecność tej osoby."
+              - tekst: "Jeżeli masz uzasadnione podejrzenie, że klient działa pod presją lub nie rozumie zawieranej umowy, wstrzymaj czynności i poproś o rozmowę z klientem bez osoby towarzyszącej."
+          - tekst: "Poinformuj klienta o możliwości skorzystania z konta w pakiecie dla seniora, jeżeli klient ukończył {{fakt:oplata.taryfa-indywidualni.wiek-senior}}, zgodnie z warunkami opisanymi w dokumencie „{{ref:dokument:taryfa-indywidualni}}”."
+          - tekst: "Nie podpisuj dokumentów za klienta; w razie niemożności samodzielnego podpisania skieruj sprawę do kierownika placówki, który ustali sposób złożenia oświadczenia woli zgodny z przepisami."
+
+  - id: otwarcie-placowka-wplata
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Klient może dokonać pierwszej wpłaty na rachunek w placówce w dniu otwarcia rachunku; nie jest ona warunkiem otwarcia rachunku, ponieważ wymagana pierwsza wpłata wynosi {{fakt:limit.rachunek-osobisty.pierwsza-wplata}}."
+      - kroki:
+          - tekst: "{Przyjmij|Przyjmuj} wpłatę gotówkową dopiero po uruchomieniu rachunku w systemie."
+            podkroki:
+              - tekst: "Wpłatę {przelicz|policz} w obecności klienta i potwierdź jej kwotę."
+              - tekst: "Wpłatę przekraczającą {{fakt:limit.otwarcie.wplata-wstepna-kasa}} wykonaj w kasie, po uzgodnieniu z kierownikiem placówki."
+          - tekst: "Jeżeli kwota wpłaty gotówkowej przekracza {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}}, poproś klienta o wyjaśnienie pochodzenia środków."
+            podkroki:
+              - tekst: "Zapisz wyjaśnienia w systemie i dołącz potwierdzające je dokumenty, jeśli klient je posiada."
+              - tekst: "Gdy wyjaśnienia są niewiarygodne lub klient odmawia ich złożenia, wstrzymaj przyjęcie wpłaty i zawiadom komórkę „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "{Wydaj|Przekaż} klientowi potwierdzenie wpłaty i poinformuj o dostępności środków na rachunku."
+
+  - id: otwarcie-zdalne-infolinia
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Klient może {zgłosić zamiar|zgłosić chęć} otwarcia rachunku także telefonicznie, za pośrednictwem infolinii dostępnej pod numerem {{fakt:kontakt.infolinia}}, czynną {{fakt:kontakt.godziny-infolinii}}. Rozmowa na infolinii nie zastępuje weryfikacji tożsamości; jej celem jest przyjęcie wniosku wstępnego."
+      - kroki:
+          - tekst: "Zweryfikuj rozmówcę zgodnie z zasadami bezpieczeństwa obowiązującymi na infolinii."
+            podkroki:
+              - tekst: "{Zapytaj o|Poproś o} dane potrzebne do założenia wniosku: imiona, nazwisko, PESEL, adres poczty elektronicznej."
+              - tekst: "Nie proś klienta o podanie danych uwierzytelniających do bankowości elektronicznej innych banków ani o numer PIN karty."
+          - tekst: "Zarejestruj wniosek wstępny w systemie {{fakt:system.otwarcie.cbs}} i wyślij klientowi na wskazany adres poczty elektronicznej odnośnik do dokończenia wniosku w serwisie."
+          - tekst: "Poinformuj klienta, że wniosek wstępny jest ważny {{fakt:termin.otwarcie.wniosek-wstepny-waznosc}}, a do otwarcia rachunku niezbędna jest wideoweryfikacja lub wizyta w placówce."
+          - tekst: "{Zakończ|Zamknij} rozmowę podsumowaniem uzgodnień i, jeżeli klient wyraził zgodę, zapisz rozmowę zgodnie z zasadami nagrywania rozmów."
+
+  - id: otwarcie-zdalne-bezpieczenstwo
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Otwarcie rachunku na odległość jest narażone na próby wyłudzenia tożsamości. Pracownik wideoweryfikacji zwraca szczególną uwagę na sygnały ostrzegawcze opisane poniżej i w razie ich wystąpienia {kończy|przerywa} sesję."
+      - ustep: "Do sygnałów ostrzegawczych {należą|zaliczają się} w szczególności:"
+        punkty:
+          - "obraz lub dźwięk wykazujące cechy zapisu, montażu lub sztucznie wygenerowanego materiału, w tym nienaturalne ruchy ust lub opóźnienia reakcji na polecenia;"
+          - "dokument tożsamości o nietypowym połysku, braku zabezpieczeń optycznych albo wyraźnych śladach ingerencji;"
+          - "obecność osoby podpowiadającej klientowi lub wyraźne czytanie odpowiedzi z ekranu;"
+          - "dane we wniosku niezgodne z danymi w dokumencie, a także adres poczty elektronicznej lub numer telefonu założone bezpośrednio przed złożeniem wniosku;"
+          - "wiele wniosków z tego samego urządzenia lub z tego samego adresu IP na różne dane osobowe."
+      - kroki:
+          - tekst: "Po {wykryciu|stwierdzeniu} sygnału ostrzegawczego przerwij sesję bez ujawniania klientowi jej powodu."
+          - tekst: "{Zapisz|Odnotuj} obserwacje w {{fakt:formularz.otwarcie.protokol-wideo}} i niezwłocznie przekaż sprawę do komórki „{{fakt:jednostka.bezpieczenstwo}}”."
+          - tekst: "Zablokuj wniosek w systemie i oznacz dane klienta jako wymagające zwiększonej uwagi; odblokować wniosek może wyłącznie {{fakt:jednostka.bezpieczenstwo}}."
+
+  - id: otwarcie-aml-pep
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Osoba zajmująca eksponowane stanowisko polityczne (PEP) stwarza podwyższone ryzyko i jej obsługa wymaga zastosowania dodatkowych środków. Statusem PEP objęte są także osoby bliskie, w szczególności małżonek, dzieci i ich małżonkowie oraz rodzice, a także osoby znane jako bliscy współpracownicy takiej osoby."
+      - kroki:
+          - tekst: "Po {stwierdzeniu|ustaleniu}, że klient jest PEP, wstrzymaj otwarcie rachunku i przekaż wniosek do komórki „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "{Zbierz|Uzyskaj} dodatkowe informacje."
+            podkroki:
+              - tekst: "{Ustal|Sprawdź} funkcję, którą klient pełni lub pełnił, oraz datę jej zakończenia, jeżeli dotyczy."
+              - tekst: "{Poproś|Zwróć się} o dokumenty potwierdzające źródło majątku i źródło środków przewidywanych do wpłaty na rachunek."
+              - tekst: "Uzyskaj od klienta oświadczenie o gotowości do składania wyjaśnień w ramach bieżącego monitorowania."
+          - tekst: "Po otrzymaniu zgody komórki „{{fakt:jednostka.zgodnosc}}” (termin: {{fakt:termin.otwarcie.decyzja-zgodnosci}}) otwórz rachunek i oznacz klienta w systemie jako PEP."
+          - tekst: "Ustal częstotliwość przeglądu relacji: nie rzadziej niż co {{fakt:termin.otwarcie.przeglad-ryzyko-wysokie}}."
+      - akapit: "Klient przestaje być traktowany jako PEP po upływie roku od dnia, w którym zakończył pełnienie eksponowanej funkcji, jeżeli analiza ryzyka nie wskazuje na dalszą potrzebę stosowania podwyższonych środków; decyzję podejmuje {{fakt:jednostka.zgodnosc}}."
+
+  - id: otwarcie-aml-wysokie-ryzyko
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Wobec klienta zakwalifikowanego do wysokiego ryzyka stosuje się wzmożone środki bezpieczeństwa finansowego. Mają one na celu {głębsze|dokładniejsze} poznanie klienta i lepsze zrozumienie przewidywanych transakcji."
+      - kroki:
+          - tekst: "{Przekaż|Prześlij} do komórki „{{fakt:jednostka.zgodnosc}}” kompletną dokumentację sprawy wraz z kwestionariuszem ryzyka i uzasadnieniem punktacji."
+          - tekst: "{Uzyskaj|Zbierz} od klienta dodatkowe informacje."
+            podkroki:
+              - tekst: "Zapytaj o szczegółowe źródło środków, zawód, pracodawcę lub źródło dochodów."
+              - tekst: "Poproś o dokumenty potwierdzające podane informacje, na przykład umowę o pracę, zaświadczenie o dochodach lub umowę sprzedaży majątku."
+              - tekst: "Uzyskaj informacje o planowanych przelewach zagranicznych i o państwach, do których klient zamierza przekazywać środki."
+          - tekst: "{Wdroż|Uruchom} po otwarciu rachunku wzmożone monitorowanie."
+            podkroki:
+              - tekst: "Ustaw w systemie oznaczenie klienta o podwyższonym ryzyku, które powoduje wygenerowanie alertu przy każdej transakcji powyżej progu ustalonego przez komórkę „{{fakt:jednostka.zgodnosc}}”."
+              - tekst: "Zaplanuj przegląd relacji w terminie {{fakt:termin.otwarcie.przeglad-ryzyko-wysokie}} od dnia otwarcia rachunku."
+      - akapit: "Zatwierdzenie otwarcia rachunku dla klienta wysokiego ryzyka wymaga zgody kierownika wyższego szczebla niż kierownik placówki; w sprawach dotyczących PEP — zgody osoby wskazanej w wewnętrznej polityce przeciwdziałania praniu pieniędzy."
+
+  - id: otwarcie-aml-giif
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "{Jeżeli|Gdy} pracownik poweźmie podejrzenie, że otwarcie rachunku lub zachowanie klienta może mieć związek z praniem pieniędzy lub finansowaniem terroryzmu, jest obowiązany przekazać informację do komórki „{{fakt:jednostka.zgodnosc}}”. Zasady zawiadamiania Generalnego Inspektora Informacji Finansowej określa {{ref:akt:dz-u-2025-644-aml}}."
+      - ustep: "W takim przypadku pracownik:"
+        punkty:
+          - "{nie ujawnia|w żadnym wypadku nie ujawnia} klientowi ani osobom trzecim, że przekazał informację lub że prowadzone jest postępowanie;"
+          - "sporządza {zwięzłą|krótką} notatkę służbową z opisem okoliczności, faktów i przyczyn podejrzenia, bez własnych ocen prawnych;"
+          - "zabezpiecza dokumenty, nagrania i zapisy z systemów, a w razie wątpliwości co do dalszych czynności wykonuje polecenia komórki „{{fakt:jednostka.zgodnosc}}”;"
+          - "kontynuuje obsługę klienta w sposób niebudzący jego podejrzeń, jeżeli nie ma przeszkód do jej kontynuowania."
+      - akapit: "Decyzję o zawiadomieniu GIIF oraz o ewentualnym wstrzymaniu transakcji podejmuje wyłącznie {{fakt:jednostka.zgodnosc}}. Pracownik, który w dobrej wierze przekazał informację, nie ponosi z tego tytułu odpowiedzialności dyscyplinarnej ani cywilnoprawnej."

@@ -1,0 +1,219 @@
+bloki:
+  - id: karty-kredytowe-ogolne-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {zastrzega sobie|ma} prawo do odmowy wydania karty kredytowej bez podawania przyczyny, jeżeli odmowa wynika z wyniku oceny zdolności kredytowej, wymogów przepisów o przeciwdziałaniu praniu pieniędzy lub z innych okoliczności uniemożliwiających zawarcie umowy zgodnie z przepisami prawa."
+      - ustep: "Przy zawieraniu umowy Bank stosuje środki bezpieczeństwa finansowego określone w przepisach aktu prawnego: {{ref:akt:dz-u-2025-644-aml}}, w tym identyfikuje i weryfikuje tożsamość Klienta oraz ustala, czy Klient jest osobą zajmującą eksponowane stanowisko polityczne. Klient jest obowiązany udzielić informacji niezbędnych do wypełnienia tych obowiązków."
+      - ustep: "Bank może wstrzymać wykonanie transakcji lub zablokować kartę, jeżeli transakcja budzi uzasadnione podejrzenie związku z praniem pieniędzy lub finansowaniem terroryzmu, i jest zobowiązany zawiadomić o tym właściwe organy."
+
+  - id: karty-kredytowe-ogolne-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta kredytowa służy wyłącznie do użytku osobistego Klienta i nie może być udostępniana osobom trzecim, w tym członkom rodziny. Karta kredytowa nie jest instrumentem przeznaczonym do wykorzystywania w prowadzonej działalności gospodarczej, chyba że umowa stanowi inaczej."
+      - ustep: "Klient {powinien|jest obowiązany} używać karty zgodnie z obowiązującymi przepisami prawa. Zabronione jest w szczególności używanie karty do transakcji związanych z działalnością niezgodną z prawem, do transakcji o charakterze spekulacyjnym oraz do kupna walut wirtualnych w sposób niezgodny z zasadami określonymi przez Bank."
+      - ustep: "Bank {informuje|powiadamia} Klienta o rodzajach transakcji wyłączonych z zakresu funkcji karty na swojej stronie internetowej {{fakt:bank.strona}} oraz w {placówkach|oddziałach} Banku."
+
+  - id: karty-kredytowe-ogolne-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank prowadzi dla Klientów program ochrony kart, który obejmuje monitorowanie transakcji w czasie rzeczywistym w celu wykrywania nietypowych operacji. W razie wykrycia podejrzanej transakcji Bank {kontaktuje się|nawiązuje kontakt} z Klientem telefonicznie lub za pomocą wiadomości SMS, prosząc o potwierdzenie jej autentyczności."
+      - ustep: "Klient nie powinien potwierdzać transakcji, której nie dokonał, ani podawać w wiadomościach i rozmowach pełnych danych karty. W razie wątpliwości co do tożsamości rozmówcy Klient powinien zakończyć rozmowę i samodzielnie skontaktować się z infolinią {{fakt:kontakt.infolinia}}."
+      - ustep: "Brak możliwości skontaktowania się z Klientem w celu potwierdzenia transakcji może skutkować jej odrzuceniem lub czasową blokadą karty, o czym Klient jest informowany po nawiązaniu kontaktu."
+
+  - id: karty-kredytowe-umowa-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient posiada w Banku więcej niż jedną kartę kredytową, limity przyznane dla poszczególnych kart są sumowane na potrzeby oceny zdolności kredytowej, niezależnie od stopnia ich wykorzystania. Łączna wysokość limitów przyznanych jednemu Klientowi nie może przekroczyć {{fakt:limit.karta.kredytowy-max}}."
+      - ustep: "Zamknięcie jednej z kart nie powoduje zamknięcia pozostałych, a spłata zadłużenia na jednym rachunku karty nie zwalnia z obowiązku spłaty zadłużenia na pozostałych rachunkach kart."
+      - ustep: "W przypadku wniosku o kolejną kartę Bank {ma prawo|może} zażądać aktualizacji dokumentów potwierdzających dochody, jeżeli od daty zawarcia poprzedniej umowy upłynęło więcej niż 12 miesięcy."
+
+  - id: karty-kredytowe-umowa-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa o kartę kredytową może zostać zawarta na odległość, za pośrednictwem bankowości elektronicznej. Przed jej zawarciem Klient {otrzymuje|ma dostęp do} na trwałym nośniku wszystkich informacji wymaganych przez przepisy, w tym formularza informacyjnego, projektu umowy oraz niniejszego Regulaminu."
+      - ustep: "Złożenie przez Klienta oświadczenia woli w formie elektronicznej następuje po uwierzytelnieniu w sposób właściwy dla bankowości elektronicznej, w tym przez użycie jednorazowego kodu przesłanego na numer telefonu wskazany przez Klienta."
+      - ustep: "Klient jest obowiązany zapewnić poufność danych służących do uwierzytelnienia. Bank nie ponosi odpowiedzialności za skutki złożenia oświadczenia przez osobę, która posłużyła się danymi uwierzytelniającymi Klienta, jeżeli ujawnił je przez swoje zawinione zaniedbanie."
+
+  - id: karty-kredytowe-zdolnosc-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zdolność kredytowa jest obliczana na podstawie wskaźnika obciążenia dochodów, w którym zobowiązania Klienta (w tym obciążenia z tytułu przyznanych limitów kredytowych) porównywane są z jego dochodami netto. Maksymalny dopuszczalny wskaźnik obciążenia określa polityka kredytowa Banku i może być zróżnicowany w zależności od poziomu dochodów."
+      - ustep: "Przy wnioskach składanych wspólnie przez kilka osób ocena obejmuje łączne dochody i zobowiązania wnioskodawców, z uwzględnieniem kosztów utrzymania gospodarstwa domowego. W takim przypadku kartę wydaje się jednej z tych osób, a pozostałym — kartę dodatkową."
+      - ustep: "Jeżeli Klient odmówi podania informacji koniecznych do oceny zdolności kredytowej, Bank {ma prawo|może} odmówić zawarcia umowy lub zwiększenia limitu."
+
+  - id: karty-kredytowe-zdolnosc-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy o kredyt konsumencki Bank udziela Klientowi wyjaśnień umożliwiających ocenę, czy proponowana umowa jest dostosowana do jego potrzeb i sytuacji finansowej, w tym przedstawia istotne cechy proponowanych produktów oraz specyficzne skutki, jakie mogą one mieć dla Klienta, w tym ryzyko niewypłacalności."
+      - ustep: "Wyjaśnienia są przekazywane na trwałym nośniku, w sposób jasny i zrozumiały. Klient potwierdza ich otrzymanie, a Bank przechowuje potwierdzenie przez okres niezbędny do wykonania umowy i zabezpieczenia roszczeń."
+
+  - id: karty-kredytowe-wydanie-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta jest wydawana w formie plastikowej albo w formie wirtualnej, udostępnianej w aplikacji mobilnej Banku. Karta wirtualna może być używana do płatności w sieci Internet oraz — po dodaniu do aplikacji płatniczej — do płatności w punktach handlowo-usługowych."
+      - ustep: "Dane karty wirtualnej, w tym numer, data ważności i kod zabezpieczający, są wyświetlane w aplikacji po uwierzytelnieniu Klienta. Zasady dotyczące ochrony karty plastikowej stosuje się odpowiednio do karty wirtualnej."
+      - ustep: "Klient, który zamierza używać karty w urządzeniu mobilnym, jest obowiązany zapewnić jego zabezpieczenie przed dostępem osób nieuprawnionych, w tym przez ustawienie blokady ekranu. W razie utraty urządzenia Klient niezwłocznie usuwa z niego kartę lub zgłasza utratę urządzenia do Banku."
+
+  - id: karty-kredytowe-wydanie-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmianę danych użytkownika karty dodatkowej, w szczególności imienia i nazwiska wytłoczonego na karcie, Posiadacz rachunku karty zgłasza w placówce Banku albo za pośrednictwem bankowości elektronicznej. Wydanie nowej karty w związku ze zmianą danych {jest wolne od opłat|nie podlega opłacie}, o ile zmiana nie wynika z zawinionego działania Klienta."
+      - ustep: "Posiadacz rachunku karty może ustanowić dla karty dodatkowej odrębny limit transakcyjny, który nie przekracza limitu dostępnego na rachunku karty. Zmiana limitu następuje z dniem jej zarejestrowania przez Bank."
+      - ustep: "Jeżeli Posiadacz rachunku karty utraci zdolność do czynności prawnych, Bank {blokuje|zawiesza} możliwość dokonywania transakcji kartą dodatkową po otrzymaniu informacji o zdarzeniu."
+
+  - id: karty-kredytowe-transakcje-8
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} wprowadzić dodatkowe ograniczenia transakcji dla wybranych krajów lub kategorii punktów akceptujących, jeżeli wynika to z oceny ryzyka nadużyć. Informację o aktualnych ograniczeniach Klient uzyskuje w bankowości elektronicznej oraz na stronie {{fakt:bank.strona}}."
+      - ustep: "Przed wyjazdem za granicę Klient może — jeżeli taka funkcja jest dostępna — zdefiniować w bankowości elektronicznej kraje, w których karta ma być używana. Karta używana w kraju innym niż wskazany może zostać zablokowana ze względów bezpieczeństwa."
+      - ustep: "Zasady dotyczące transakcji dokonywanych w państwach należących do Europejskiego Obszaru Gospodarczego w walutach tych państw określają przepisy o opłatach za przewalutowania; Bank stosuje te przepisy w wysokości marży wskazanej w dokumencie: {{ref:dokument:taryfa-karty}}."
+
+  - id: karty-kredytowe-transakcje-9
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Płatność kartą w punktach, w których wysokość końcowej kwoty nie jest znana w momencie autoryzacji, w szczególności w hotelach, wypożyczalniach samochodów i na stacjach paliw, może skutkować zablokowaniem na rachunku karty kwoty wyższej niż wartość rzeczywista transakcji. Blokada jest zwalniana po rozliczeniu transakcji."
+      - ustep: "Klient wyraża zgodę na zablokowanie kwoty przekraczającej wartość transakcji wyłącznie po uprzednim poinformowaniu o wysokości blokady. Bank {zwalnia|odblokowuje} zbędną blokadę niezwłocznie po rozliczeniu transakcji albo na wniosek Klienta, jeżeli akceptant potwierdzi, że transakcja nie zostanie rozliczona."
+      - ustep: "W okresie trwania blokady dostępny limit kredytowy jest pomniejszony o jej kwotę, co może uniemożliwić dokonanie kolejnych transakcji."
+
+  - id: karty-kredytowe-zestawienie-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na wniosek Klienta Bank udostępnia w każdym czasie, bezpłatnie, na trwałym nośniku, harmonogram spłaty zadłużenia oraz informację o aktualnej wysokości zadłużenia, w tym kapitału, odsetek, opłat i prowizji, a także o wysokości kwot, które pozostały do spłaty w okresie bezodsetkowym."
+      - ustep: "Klient ma prawo do bezpłatnego otrzymania, raz w roku kalendarzowym, zestawienia wszystkich transakcji, opłat i prowizji zaksięgowanych na rachunku karty w ciągu minionego roku. Dodatkowe zestawienia są dostępne odpłatnie, zgodnie z Taryfą, o ile przepisy nie przewidują ich bezpłatnego udostępnienia."
+      - ustep: "Dowód zapłaty wpłaty na rachunek karty stanowi potwierdzenie przelewu wystawione przez bank prowadzący rachunek zleceniodawcy albo wyciąg z rachunku Klienta."
+
+  - id: karty-kredytowe-zestawienie-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może wyrazić zgodę na przesyłanie zestawień w postaci elektronicznej, w bankowości elektronicznej lub na wskazany adres poczty elektronicznej. Wyrażenie zgody nie wyłącza prawa Klienta do żądania zestawienia w postaci papierowej, w szczególności w razie niemożności dostępu do bankowości elektronicznej."
+      - ustep: "Jeżeli Klient nie wskaże adresu poczty elektronicznej, a zestawienie jest udostępniane jedynie w bankowości elektronicznej, Bank informuje go o gotowości zestawienia w formie komunikatu SMS lub powiadomienia w aplikacji mobilnej."
+      - ustep: "Zestawienie udostępnione w bankowości elektronicznej uważa się za doręczone w dniu jego udostępnienia."
+
+  - id: karty-kredytowe-minimum-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-minimum
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Spłata zadłużenia w wysokości niższej niż całkowita kwota zadłużenia, lecz nie niższej niż minimalna kwota do zapłaty, powoduje, że pozostała część zadłużenia staje się zadłużeniem oprocentowanym według stawki {{fakt:oprocentowanie.karta.zakupy}} w skali roku, naliczanym od dnia następującego po dniu zakończenia cyklu rozliczeniowego."
+      - ustep: "Jeżeli w poprzednich dwóch cyklach rozliczeniowych Klient spłacał jedynie minimalną kwotę do zapłaty, Bank przekazuje w zestawieniu informację o zalecanej wyższej kwocie spłaty i o skutkach długotrwałej spłaty wyłącznie kwot minimalnych."
+      - ustep: "Bank może zaproponować Klientowi usługę automatycznej spłaty większej kwoty niż minimalna, z rachunku bieżącego, w terminie określonym w zestawieniu. Skorzystanie z usługi jest dobrowolne i może zostać w każdej chwili odwołane."
+
+  - id: karty-kredytowe-oprocentowanie-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przykład obliczenia kosztu kredytu: jeżeli w cyklu rozliczeniowym Klient dokonał transakcji bezgotówkowych na kwotę 2 000,00 zł i nie spłacił całej kwoty zadłużenia w terminie, odsetki od niespłaconej części są naliczane od dnia następującego po dniu zakończenia cyklu według stawki {{fakt:oprocentowanie.karta.zakupy}} w skali roku. Przykład ma charakter wyłącznie poglądowy."
+      - ustep: "Bank jest obowiązany informować Klienta o każdej zmianie stawki oprocentowania w zestawieniu transakcji lub w odrębnej informacji przekazywanej na trwałym nośniku, z uwzględnieniem terminów określonych w Regulaminie."
+      - ustep: "W razie wątpliwości co do wysokości naliczonych odsetek Klient może zwrócić się do Banku o szczegółowe wyliczenie, które Bank przekazuje bezpłatnie na trwałym nośniku w terminie {{fakt:termin.karta.rozpatrzenie-wniosku}} od dnia otrzymania żądania."
+
+  - id: karty-kredytowe-oprocentowanie-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Okres bezodsetkowy nie przysługuje w przypadku, gdy Klient nie spłacił w terminie pełnej kwoty zadłużenia z poprzedniego zestawienia. W takiej sytuacji odsetki są naliczane również od transakcji dokonanych w bieżącym cyklu rozliczeniowym, począwszy od dnia ich dokonania, aż do czasu spłaty całego zadłużenia."
+      - ustep: "Okres bezodsetkowy odnawia się po spłacie pełnego zadłużenia wykazanego w zestawieniu. Klient odzyskuje prawo do bezodsetkowego okresu dla transakcji dokonanych w kolejnym cyklu rozliczeniowym, począwszy od cyklu następującego po cyklu, w którym spłacił całe zadłużenie."
+      - ustep: "Zmiana długości okresu bezodsetkowego na niekorzyść Klienta wymaga powiadomienia go z wyprzedzeniem wskazanym w postanowieniach o zmianie oprocentowania."
+
+  - id: karty-kredytowe-raty-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-raty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przykład planu spłat: transakcja o wartości 3 000,00 zł rozłożona na 12 miesięcy przy oprocentowaniu {{fakt:oprocentowanie.karta.rata}} i prowizji {{fakt:oplata.karta.prowizja-rata}} oznacza miesięczną ratę kapitałowo-odsetkową obejmującą część kapitału, odsetki naliczone od pozostałego kapitału oraz proporcjonalną część prowizji. Dokładny harmonogram Bank przedstawia przed uruchomieniem planu."
+      - ustep: "Rata planu spłat jest płatna w terminie spłaty wskazanym w zestawieniu. Zapłata samej raty nie wystarcza do zachowania okresu bezodsetkowego dla pozostałych transakcji."
+      - ustep: "Prowizja za uruchomienie planu spłat nie podlega zwrotowi w razie wcześniejszej spłaty planu, chyba że przepisy o kredycie konsumenckim stanowią inaczej."
+
+  - id: karty-kredytowe-zastrzezenie-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który odnalazł zastrzeżoną kartę, nie może jej używać, a kartę powinien zniszczyć w sposób uniemożliwiający odczytanie danych albo zwrócić Bankowi. Użycie zastrzeżonej karty jest niedopuszczalne i może skutkować odpowiedzialnością Klienta za szkodę."
+      - ustep: "Jeżeli karta została zatrzymana przez bankomat lub terminal, Klient powinien niezwłocznie skontaktować się z Bankiem, który wydaje dyspozycję odblokowania, jeśli zatrzymanie nie wynikało z blokady karty. W razie zatrzymania karty Bank wydaje duplikat na zasadach określonych w Regulaminie."
+      - ustep: "Bank nie ponosi odpowiedzialności za skutki zatrzymania karty przez akceptanta lub operatora bankomatu, o ile nie wynikają z jego zawinionych działań lub zaniechań."
+
+  - id: karty-kredytowe-opoznienie-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po upływie terminu spłaty bez zapłaty wymaganej kwoty minimalnej Bank {może|ma prawo} zawiesić możliwość dokonywania transakcji kartą do czasu uregulowania zaległości. Zawieszenie ma charakter czasowy i ustaje z chwilą zaksięgowania wpłaty pokrywającej całą zaległość."
+      - ustep: "W przypadku zaległości trwającej dłużej niż 30 dni Bank może podjąć decyzję o wypowiedzeniu umowy, po uprzednim wezwaniu do zapłaty, na zasadach określonych w rozdziale o wypowiedzeniu umowy."
+      - ustep: "Wszelkie wpłaty dokonane przez Klienta w czasie trwania zaległości są zaliczane na poczet zobowiązań w kolejności wskazanej w Regulaminie, niezależnie od wskazania celu wpłaty przez Klienta w tytule przelewu."
+
+  - id: karty-kredytowe-wypowiedzenie-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który rezygnuje z karty bez wypowiadania umowy w całości (na przykład zamierza korzystać wyłącznie z karty dodatkowej), składa dyspozycję zamknięcia karty głównej w placówce Banku lub w bankowości elektronicznej. Zamknięcie karty głównej skutkuje zamknięciem wszystkich kart dodatkowych."
+      - ustep: "Po otrzymaniu dyspozycji zamknięcia karty Bank blokuje kartę oraz nalicza odsetki i opłaty do dnia spłaty całego zadłużenia. Rachunek karty zostaje zamknięty po spłacie zadłużenia i rozliczeniu wszystkich transakcji, w terminie nie dłuższym niż 30 dni od dnia spłaty."
+      - ustep: "Bank nie pobiera opłaty za zamknięcie karty lub rachunku karty."
+
+  - id: karty-kredytowe-koncowe-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank przetwarza dane osobowe Klienta w zakresie niezbędnym do zawarcia i wykonania umowy o kartę kredytową, wypełnienia obowiązków prawnych ciążących na Banku oraz w celu dochodzenia roszczeń, a także w celu oceny ryzyka kredytowego i monitorowania ryzyka w trakcie trwania umowy."
+      - ustep: "Dane dotyczące zobowiązań Klienta mogą być przekazywane do biur informacji kredytowej i biur informacji gospodarczej na zasadach określonych w przepisach. Klient ma prawo do wglądu w swoje dane, ich sprostowania i uzupełnienia."
+      - ustep: "Szczegółowe informacje o przetwarzaniu danych osobowych zawiera klauzula informacyjna przekazywana Klientowi przed zawarciem umowy."
+
+  - id: karty-kredytowe-koncowe-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Językiem stosowanym w relacjach między Bankiem a Klientem jest język polski. Umowa oraz wszelka korespondencja są sporządzane w języku polskim, o ile strony nie postanowią inaczej."
+      - ustep: "Klient może w każdym czasie zażądać udostępnienia mu treści umowy o kartę kredytową oraz Regulaminu w postaci umożliwiającej ich utrwalenie i odtworzenie. Za pierwszy duplikat umowy Bank nie pobiera opłaty, a za kolejne — pobiera opłatę w wysokości {{fakt:oplata.duplikat-umowy}}."
+      - ustep: "Klient będący konsumentem może zgłosić Bankowi sprzeciw wobec przetwarzania danych w celach marketingowych w każdym czasie, bez podawania przyczyn, a Bank niezwłocznie zaprzestaje takiego przetwarzania."

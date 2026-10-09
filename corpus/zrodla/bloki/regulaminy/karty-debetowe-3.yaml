@@ -1,0 +1,79 @@
+bloki:
+  # ===== Rozdział: Rozliczanie transakcji walutowych =====
+  - id: karty-debetowe-waluty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rachunek, do którego wydano kartę, jest prowadzony w złotych polskich. Transakcje dokonane w innej walucie niż złoty {są rozliczane|podlegają rozliczeniu} przez organizację płatniczą w walucie rozliczeniowej, a następnie przeliczane przez Bank na złote."
+      - ustep: "Przeliczenie transakcji w walucie obcej na złote następuje według kursu {ustalonego|obowiązującego} w {{fakt:karta-debetowa.zrodlo-kursu}}, ogłaszanej w dniu rozliczenia transakcji o godzinie {{fakt:kurs.godzina-tabeli}}, powiększonego o marżę przeliczeniową w wysokości {{fakt:kurs.marza-przeliczen}}.[^1] Jeżeli transakcja jest rozliczana w walucie innej niż euro lub dolar amerykański, organizacja płatnicza może dokonać najpierw przeliczenia na walutę rozliczeniową, co {może wpłynąć|wpływa} na ostateczną kwotę obciążenia."
+      - ustep: "Przy płatnościach za granicą akceptant lub operator bankomatu {może zaproponować|ma możliwość zaproponowania} dokonanie transakcji w złotych według własnego kursu (usługa dynamicznej konwersji walut). Wybór tej opcji oznacza, że kurs ustala podmiot trzeci, a nie Bank; Bank nie ponosi odpowiedzialności za jego wysokość. Użytkownik, który chce skorzystać z kursu Banku, {powinien|ma możliwość} odmówić przeliczenia i wybrać płatność w walucie lokalnej."
+      - ustep: "Informacja o wysokości kursu zastosowanego do transakcji oraz o łącznej kwocie obciążenia jest prezentowana w historii rachunku. Na wniosek Użytkownika Bank udostępnia zestawienie transakcji walutowych na trwałym nośniku, a także informacje o łącznej wysokości opłat za przeliczenie, wyrażonej jako odsetek ostatniego kursu referencyjnego Europejskiego Banku Centralnego dla danej waluty, w wiadomości przekazywanej po pierwszej płatności w walucie państwa Unii Europejskiej innej niż złoty."
+    przypisy:
+      1: "Kurs przeliczeniowy Banku w dniu dokonania transakcji może różnić się od kursu w dniu jej rozliczenia; różnice kursowe obciążają {Posiadacza|rachunek Posiadacza}."
+
+  # ===== Rozdział: Opłaty =====
+  - id: karty-debetowe-oplaty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za czynności związane z wydaniem i używaniem karty Bank pobiera opłaty i prowizje w wysokości określonej w {{ref:dokument:taryfa-karty}}, obowiązującej w dniu dokonania czynności. W dniu wejścia w życie Regulaminu opłaty te wynoszą w szczególności:"
+        punkty:
+          - "wydanie karty — {{fakt:oplata.karta-debetowa.wydanie}};"
+          - "prowadzenie karty (opłata miesięczna) — {{fakt:oplata.karta-debetowa.prowadzenie-miesieczna}};"
+          - "wydanie duplikatu karty — {{fakt:oplata.karta.wydanie-duplikatu}};"
+          - "zmiana PIN-u — {{fakt:oplata.karta-debetowa.zmiana-pin}};"
+          - "wypłata gotówki w bankomacie innego operatora — {{fakt:oplata.bankomat-obcy}};"
+          - "wypłata gotówki w bankomacie za granicą — {{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}."
+      - ustep: "Opłata miesięczna za kartę jest pobierana z rachunku w ostatnim dniu miesiąca kalendarzowego, a w razie braku środków — w dniu ich wpływu, wraz z odsetkami za opóźnienie wynikającymi z zadłużenia. Pierwsza opłata jest pobierana za miesiąc, w którym karta została aktywowana.[^1]"
+      - ustep: "Bank {nie pobiera|nie obciąża} opłat za zastrzeżenie karty, powiadomienia o transakcjach wysyłane do aplikacji mobilnej oraz za odrzucone transakcje. Za wiadomości SMS Bank pobiera opłatę zgodnie z umową rachunku."
+      - ustep: "Niezależnie od opłat Banku operatorzy bankomatów i akceptanci {mogą pobierać|są uprawnieni do pobierania} własne prowizje, o których informują przed wykonaniem transakcji. Bank nie ma wpływu na ich wysokość."
+    przypisy:
+      1: "Jeżeli karta została wydana w trakcie miesiąca, opłata miesięczna za pierwszy miesiąc nie jest naliczana proporcjonalnie, chyba że umowa o kartę stanowi inaczej."
+
+  # ===== Rozdział: Ważność, wznowienie i rezygnacja =====
+  - id: karty-debetowe-waznosc
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta jest ważna do ostatniego dnia miesiąca wskazanego na jej awersie. {Okres ważności|Termin ważności} nowo wydanej karty wynosi {{fakt:karta-debetowa.okres-waznosci}}. Po upływie terminu ważności karty nie można używać i należy ją zniszczyć."
+      - ustep: "Bank wznawia kartę automatycznie, wydając nową kartę na kolejny okres, jeżeli:"
+        punkty:
+          - "Posiadacz nie zrezygnował z wznowienia w sposób określony w Regulaminie;"
+          - "rachunek jest prowadzony i nie zalega w opłatach;"
+          - "karta była używana w okresie ostatnich 12 miesięcy albo Bank ocenia, że wznowienie jest uzasadnione;"
+          - "nie zachodzą okoliczności uzasadniające odmowę wydania karty."
+      - ustep: "Bank informuje Posiadacza o terminie wznowienia karty oraz o sposobie rezygnacji z niego na trwałym nośniku, najpóźniej na {{fakt:termin.karta-debetowa.informacja-o-wznowieniu}} przed upływem ważności dotychczasowej karty. Posiadacz może zrezygnować z wznowienia, składając dyspozycję najpóźniej na {{fakt:termin.karta-debetowa.rezygnacja-z-wznowienia}} przed tym dniem."
+      - ustep: "Wznowiona karta ma ten sam numer rachunku, ale {może mieć|zazwyczaj ma} nowy numer karty, datę ważności i kod zabezpieczający. PIN dotychczasowej karty {pozostaje bez zmian|jest zachowywany}, chyba że Bank poinformował o jego zmianie. Użytkownik niezwłocznie po otrzymaniu nowej karty niszczy dotychczasową kartę i aktualizuje dane karty u akceptantów, u których zapisano ją jako formę płatności cyklicznej."
+
+  - id: karty-debetowe-rezygnacja
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz może wypowiedzieć umowę o kartę w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego {{fakt:termin.wypowiedzenie-przez-klienta}}, składając oświadczenie w placówce, w bankowości elektronicznej albo w formie pisemnej na adres Banku. Umowa zostaje rozwiązana z końcem okresu wypowiedzenia."
+      - ustep: "Bank może wypowiedzieć umowę o kartę z zachowaniem {{fakt:termin.wypowiedzenie-przez-bank}} terminu wypowiedzenia, jeżeli zachodzi ważna przyczyna, w szczególności:"
+        punkty:
+          - "Posiadacz rażąco narusza postanowienia Regulaminu lub umowy;"
+          - "karta była wykorzystywana w sposób sprzeczny z prawem lub z zasadami współżycia społecznego;"
+          - "Posiadacz przez okres 12 miesięcy nie dokonał żadnej transakcji kartą, mimo wezwania do jej używania;"
+          - "Posiadacz podał dane nieprawdziwe lub odmówił ich aktualizacji, co uniemożliwia Bankowi stosowanie środków bezpieczeństwa finansowego."
+      - ustep: "Wypowiedzenie umowy rachunku skutkuje wygaśnięciem umowy o kartę z dniem rozwiązania umowy rachunku. Z dniem rozwiązania umowy o kartę Użytkownik {zwraca|zobowiązany jest zwrócić} Bankowi kartę lub ją zniszczy; Bank dezaktywuje wszystkie tokeny karty."
+      - ustep: "Rozwiązanie umowy nie zwalnia Posiadacza z obowiązku uregulowania transakcji wykonanych przed jej rozwiązaniem, a zrealizowanych i rozliczonych po tym dniu. Bank zwraca proporcjonalną część opłaty za okres po rozwiązaniu umowy, jeżeli opłata została pobrana z góry, w terminie {{fakt:termin.zwrot-oplat}}."
+
+  # ===== Rozdział: Postanowienia końcowe =====
+  - id: karty-debetowe-wejscie-w-zycie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin wchodzi w życie z dniem {{param:od}} i obowiązuje do czasu jego zmiany albo zastąpienia nowym regulaminem, a w odniesieniu do umów zawartych przed tym dniem — {zgodnie z|na zasadach określonych w} postanowieniach o zmianie Regulaminu."
+      - ustep: "Regulamin ma oznaczenie {{param:oznaczenie}}, wersję {{param:wersja}}. {Poprzednie wersje Regulaminu|Wcześniejsze wersje Regulaminu} są dostępne na stronie {{fakt:bank.strona}} oraz w placówkach Banku."
+      - ustep: "Nadzór nad działalnością Banku {sprawuje|wykonuje} właściwy organ nadzoru finansowego. Klient {może|ma prawo} zwrócić się o pomoc do właściwych organów, w tym do Rzecznika Finansowego, którego dane są dostępne na stronie {{fakt:rzecznik.strona}}."

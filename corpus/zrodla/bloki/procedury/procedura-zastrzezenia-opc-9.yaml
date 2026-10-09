@@ -1,0 +1,58 @@
+bloki:
+  - id: zastrzezenia-b-krok-przyjecie-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - ustep: "Pracownik przyjmujący zgłoszenie {zwraca uwagę|jest zobowiązany zwrócić uwagę} na sygnały wskazujące na to, że rozmówca nie jest posiadaczem karty, a w szczególności:"
+        punkty:
+          - "nietypowy sposób prowadzenia rozmowy, na przykład czytanie odpowiedzi z kartki, pośpiech lub naciskanie na szybkie zdjęcie blokady;"
+          - "{próby|usiłowania} zmiany numeru telefonu, adresu do korespondencji lub sposobu doręczenia karty zastępczej w trakcie tej samej rozmowy;"
+          - "zgłoszenie złożone z numeru ukrytego lub z zagranicy przez osobę, która twierdzi, że przebywa w kraju;"
+          - "brak znajomości podstawowych danych o własnym rachunku, które posiadacz zwykle zna bez trudu."
+      - akapit: "{Jeżeli|Jeśli} występuje choć jeden z tych sygnałów, pracownik nie odmawia przyjęcia zgłoszenia, lecz wykonuje blokadę czasową, odnotowuje spostrzeżenia w rejestrze i informuje kierownika zmiany, który decyduje o dalszych czynnościach."
+
+  - id: zastrzezenia-b-krok-blokada-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zweryfikuj|Sprawdź} skuteczność blokady po jej wykonaniu."
+            podkroki:
+              - tekst: "Po wykonaniu blokady wywołaj w systemie podgląd statusu karty i potwierdź, że karta widnieje jako zastrzeżona w systemie autoryzacyjnym, a nie tylko w systemie obsługi klienta."
+              - tekst: "Sprawdź, czy w ciągu kilku minut po blokadzie nie zarejestrowano próby autoryzacji; jeżeli tak, zgłoś to jako incydent do „{{fakt:jednostka.centrum-monitorowania}}”."
+          - tekst: "{Poinformuj|Powiadom} Klienta o zastrzeżeniu pisemnie."
+            podkroki:
+              - tekst: "Potwierdzenie zastrzeżenia wyślij Klientowi na nośniku, który wskazał, w terminie {{fakt:termin.zastrzezenia.potwierdzenie-na-nosniku}}."
+              - tekst: "Potwierdzenie zawiera numer zgłoszenia, godzinę blokady oraz informację, że od tej chwili Klient nie ponosi odpowiedzialności za transakcje wykonane kartą, z zastrzeżeniem przepisów szczególnych."
+
+  - id: zastrzezenia-b-szczegolne-14
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Karty o ograniczonej funkcjonalności i karty przedpłacone.** Karty te zastrzega się według zasad ogólnych, jednak różnią się one od kart debetowych tym, że środki są przechowywane na odrębnym rachunku technicznym."
+      - ustep: "Szczególne zasady postępowania obejmują:"
+        punkty:
+          - "przeniesienie środków z zastrzeżonej karty na kartę zastępczą wyłącznie po zakończeniu analizy i potwierdzeniu, że środki nie zostały wykorzystane;"
+          - "ustalenie, czy karta została zarejestrowana na dane konkretnej osoby, ponieważ karty anonimowe mają ograniczone limity i nie zawsze możliwa jest ich wymiana;"
+          - "{poinformowanie|pouczenie} Klienta, że Bank odpowiada za środki zgromadzone na karcie zgodnie z warunkami produktu, a roszczenia ponad tę kwotę nie przysługują;"
+          - "wykonanie zwrotu środków na rachunek wskazany przez Klienta, jeżeli wymiana karty nie jest możliwa."
+
+  - id: zastrzezenia-b-monitoring-13
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - ustep: "Reguły monitorowania wprowadzone przez zespół „{{fakt:jednostka.centrum-monitorowania}}” są testowane przed uruchomieniem na produkcji:"
+        punkty:
+          - "{nowa|zmieniona} reguła jest najpierw uruchamiana w trybie obserwacji, w którym generuje alerty, ale nie wpływa na autoryzację transakcji;"
+          - "po tygodniu obserwacji analityk porównuje liczbę alertów z liczbą potwierdzonych nadużyć i ocenia wpływ reguły na obsługę klientów;"
+          - "reguła, która generuje zbyt wiele fałszywych alarmów, jest korygowana lub wycofywana przed wdrożeniem właściwym;"
+          - "wyniki testów dołącza się do wniosku o zmianę reguł, a po wdrożeniu reguła jest oceniana ponownie po miesiącu."
+      - akapit: "Reguły pilne, wdrażane w reakcji na aktywny atak, mogą być uruchomione z pominięciem trybu obserwacji; wymagają wówczas zgody dyrektora „{{fakt:jednostka.bezpieczenstwo}}” i oceny po upływie tygodnia."

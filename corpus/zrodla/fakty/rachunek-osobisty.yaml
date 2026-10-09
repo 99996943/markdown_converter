@@ -1,0 +1,186 @@
+fakty:
+  # --- terminy
+  - id: termin.rachunek-osobisty.rozpatrzenie-wniosku
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+    alternatywy: [10, 3]
+  - id: termin.rachunek-osobisty.zmiana-danych
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14, 3]
+  - id: termin.rachunek-osobisty.zlecenie-stale-zmiana
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [3, 5]
+  - id: termin.rachunek-osobisty.zamkniecie-rozliczenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30, 7]
+  - id: termin.rachunek-osobisty.wyplata-po-zgonie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.rachunek-osobisty.weryfikacja-pelnomocnictwa
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5]
+  - id: termin.rachunek-osobisty.zgloszenie-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 miesięcy"
+    alternatywy: ["6 miesięcy", "12 miesięcy"]
+  - id: termin.rachunek-osobisty.zwrot-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+    alternatywy: ["w ciągu 3 dni roboczych", "w ciągu 14 dni"]
+  - id: termin.rachunek-osobisty.nieaktywnosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 miesięcy"
+      - od: 2027-01-01
+        wartosc: "18 miesięcy"
+    alternatywy: ["12 miesięcy", "36 miesięcy"]
+  - id: termin.rachunek-osobisty.udostepnienie-wyciagu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "piątego dnia roboczego następnego miesiąca"
+    alternatywy: ["pierwszego dnia roboczego następnego miesiąca", "dziesiątego dnia następnego miesiąca"]
+  - id: termin.rachunek-osobisty.godzina-graniczna
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "15:00"
+      - od: 2026-04-01
+        wartosc: "14:30"
+    alternatywy: ["14:00", "16:00"]
+  - id: termin.rachunek-osobisty.godzina-graniczna-placowka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13:00"
+    alternatywy: ["12:00", "14:00"]
+  - id: termin.rachunek-osobisty.okres-odsetkowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "miesięczny"
+    alternatywy: ["kwartalny"]
+  - id: wiek.rachunek-osobisty.ograniczona-zdolnosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 lat"
+    alternatywy: ["16 lat", "12 lat"]
+  - id: wiek.rachunek-osobisty.pelnoletnosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "18 lat"
+  # --- opłaty
+  - id: oplata.rachunek-osobisty.zlecenie-stale
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+      - od: 2026-04-01
+        wartosc: 3.00
+    alternatywy: [0.00, 5.00]
+  - id: oplata.rachunek-osobisty.polecenie-zaplaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1.50
+      - od: 2025-05-01
+        wartosc: 2.00
+    alternatywy: [0.00, 3.00]
+  - id: oplata.rachunek-osobisty.pelnomocnictwo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2024-12-01
+        wartosc: 10.00
+    alternatywy: [20.00, 30.00]
+  - id: oplata.rachunek-osobisty.dyspozycja-smierci
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2025-03-01
+        wartosc: 10.00
+    alternatywy: [40.00, 60.00]
+  - id: oplata.rachunek-osobisty.odpis-wyciagu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+      - od: 2027-01-01
+        wartosc: 20.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.rachunek-osobisty.potwierdzenie-operacji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.rachunek-osobisty.zajecie-egzekucyjne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+      - od: 2026-04-01
+        wartosc: 35.00
+    alternatywy: [0.00, 50.00]
+  - id: oplata.rachunek-osobisty.przelew-walutowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 35.00
+      - od: 2024-08-01
+        wartosc: 38.00
+      - od: 2026-01-01
+        wartosc: 40.00
+    alternatywy: [25.00, 50.00]
+  - id: oplata.rachunek-osobisty.zamkniecie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2026-05-01
+        wartosc: 10.00
+    alternatywy: [50.00, 30.00]
+  # --- limity
+  - id: limit.rachunek-osobisty.wplata-wyjasnienia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15000.00
+    alternatywy: [10000.00, 20000.00]
+  - id: limit.rachunek-osobisty.przelew-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+      - od: 2027-01-01
+        wartosc: 40000.00
+    alternatywy: [30000.00, 100000.00]
+  - id: limit.rachunek-osobisty.wyplata-awizo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2025-02-01
+        wartosc: 15000.00
+    alternatywy: [5000.00, 20000.00]
+  - id: limit.rachunek-osobisty.zblizeniowa-bez-pin
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [50.00, 150.00]
+  - id: limit.rachunek-osobisty.debet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 15000.00
+    alternatywy: [5000.00, 20000.00]
+  - id: limit.rachunek-osobisty.przelew-natychmiastowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30000.00
+    alternatywy: [10000.00, 50000.00]
+  - id: limit.rachunek-osobisty.pierwsza-wplata
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [100.00, 50.00]

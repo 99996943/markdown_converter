@@ -1,0 +1,71 @@
+bloki:
+  - id: procedura-aml-kyc-krok-ewd-8
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "Zastosuj środki wzmocnione wobec klienta, który często zmienia swoje dane lub strukturę własnościową."
+            podkroki:
+              - tekst: "Zestaw historię zmian w {{fakt:aml.system-klienci}} i sprawdź, czy zmiany nie następują w czasie zbliżonym do dużych transakcji lub próśb o podwyższenie limitów."
+              - tekst: "Zapytaj klienta o przyczyny zmian; odpowiedzi zapisz i oceń ich wiarygodność z uwzględnieniem dokumentów."
+          - tekst: "Zweryfikuj aktualny stan faktyczny."
+            podkroki:
+              - tekst: "Sprawdź w rejestrach publicznych, czy zmiany zostały ujawnione i kiedy; zwróć uwagę na wpisy dokonane z opóźnieniem."
+              - tekst: "Jeżeli zmiany prowadzą do ukrycia rzeczywistego beneficjenta, zastosuj procedurę zgłoszenia podejrzenia."
+          - tekst: "Ogranicz ryzyko do czasu wyjaśnienia."
+            podkroki:
+              - tekst: "Na czas wyjaśnień obniż limity operacji klienta i wyłącz usługi, które umożliwiają szybkie przesunięcie środków poza Bank."
+              - tekst: "Ograniczenia znosi kierownik jednostki zgodności po zakończeniu analizy."
+
+  - id: procedura-aml-kyc-krok-mon-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "Prowadź monitorowanie ręczne w odniesieniu do wybranych klientów i transakcji."
+            podkroki:
+              - tekst: "Na liście monitorowania ręcznego umieszcza się klientów o wysokim ryzyku, osoby eksponowane politycznie oraz klientów, wobec których zawiadomiono organ."
+              - tekst: "Lista jest aktualizowana na bieżąco przez analityków i przeglądana raz w miesiącu przez kierownika jednostki zgodności."
+          - tekst: "Przeglądaj transakcje z listy monitorowania."
+            podkroki:
+              - tekst: "Analityk przegląda w każdym tygodniu operacje klientów z listy, ze szczególnym uwzględnieniem przelewów przychodzących z zagranicy i wypłat gotówkowych."
+              - tekst: "Wnioski z przeglądu odnotowuje w rejestrze monitorowania wraz z datą i imieniem."
+          - tekst: "Wyłącz klienta z monitorowania ręcznego."
+            podkroki:
+              - tekst: "Wyłączenie jest możliwe po zakończeniu okresu obserwacji i zatwierdzeniu przez koordynatora (stanowisko „{{fakt:aml.koordynator}}”)."
+              - tekst: "Decyzję i jej uzasadnienie zapisuje się w karcie klienta, a system monitoringu przywraca parametry standardowe."
+
+  - id: procedura-aml-kyc-krok-pod-8
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "Zaktualizuj informacje po przekazaniu zawiadomienia."
+            podkroki:
+              - tekst: "Jeżeli po zawiadomieniu pojawią się nowe fakty dotyczące klienta lub transakcji, przekaż je organowi jako uzupełnienie, powołując numer sprawy nadany przez organ."
+              - tekst: "Uzupełnienia przekazuje koordynator w tym samym trybie co zawiadomienie pierwotne."
+          - tekst: "Podejmij decyzję o dalszym prowadzeniu relacji z klientem."
+            podkroki:
+              - tekst: "Po zawiadomieniu organu ocena ryzyka klienta jest podnoszona do wysokiej, a relacja objęta wzmocnionym monitorowaniem."
+              - tekst: "O wypowiedzeniu umowy decyduje komórka zgodności po zasięgnięciu opinii {{fakt:jednostka.prawny}}; decyzja nie może ujawniać klientowi powodu."
+          - tekst: "Odnotuj wynik sprawy."
+            podkroki:
+              - tekst: "Informację o wszczęciu postępowania, umorzeniu lub prawomocnym orzeczeniu wpisz do rejestru, jeżeli Bank ją otrzymał."
+              - tekst: "Wnioski ze sprawy wykorzystaj w aktualizacji scenariuszy monitoringu i szkoleń."
+
+  - id: procedura-aml-kyc-szcz-10
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - akapit: "W sytuacjach, w których klient lub osoba trzecia wywiera na pracownika presję albo grozi mu w związku z wykonywaniem obowiązków wynikających z procedury, pracownik nie ponosi z tego tytułu żadnych negatywnych konsekwencji służbowych."
+      - ustep: "Pracownik, który doświadczył takiej presji lub zagrożenia:"
+        punkty:
+          - "wstrzymuje czynność, jeżeli może to zrobić bezpiecznie, i zawiadamia przełożonego;"
+          - "niezwłocznie informuje jednostkę „{{fakt:jednostka.bezpieczenstwo}}” oraz komórkę zgodności, a w razie bezpośredniego zagrożenia — odpowiednie służby;"
+          - "sporządza notatkę opisującą zdarzenie, w tym dane osoby wywierającej presję, o ile je zna;"
+          - "może skorzystać z kanału zgłaszania nieprawidłowości, który zapewnia ochronę tożsamości zgłaszającego."
+      - akapit: "Bank zapewnia pracownikom ochronę przed odwetem związanym ze zgłoszeniem podejrzeń prania pieniędzy lub nieprawidłowości, a wszelkie przejawy nieuzasadnionego niekorzystnego traktowania są rozpatrywane przez zarząd."

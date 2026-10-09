@@ -1,0 +1,54 @@
+id: regulamin-promocji-konto
+typ: regulaminy
+temat: promocja-konto
+tytul:
+  - "Regulamin promocji „{{fakt:promocja.nazwa}}” {{param:bank}}"
+  - "Regulamin promocji „{{fakt:promocja.nazwa}}”"
+uklady: [tabela-dokument]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Organizator promocji"
+    wymagane: [promocja-organizator]
+    opcjonalne: { kategorie: [promocja-organizator-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Uczestnik promocji"
+    wymagane: [promocja-uczestnik]
+    opcjonalne: { kategorie: [promocja-uczestnik-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Okres promocji"
+    wymagane: [promocja-okres]
+    opcjonalne: { kategorie: [promocja-okres-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Ważne pojęcia"
+    wymagane: [wspolne-definicje-regulamin, promocja-definicje]
+  - rodzaj: rozdzial
+    tytul: "Warunki promocji"
+    wymagane: [promocja-warunki, promocja-warunki-wplywy]
+    opcjonalne: { kategorie: [promocja-warunki-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Premia i jej wypłata"
+    wymagane: [promocja-premia, promocja-wyplata]
+    opcjonalne: { kategorie: [promocja-premia-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Utrata prawa do premii"
+    wymagane: [promocja-utrata]
+    opcjonalne: { kategorie: [promocja-utrata-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Opodatkowanie"
+    wymagane: [promocja-podatek]
+    opcjonalne: { kategorie: [promocja-podatek-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Reklamacje"
+    wymagane: [wspolne-reklamacje-regulamin, promocja-reklamacje]
+    opcjonalne: { kategorie: [promocja-reklamacje-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dane osobowe"
+    wymagane: [wspolne-ochrona-danych-regulamin]
+    opcjonalne: { kategorie: [promocja-dane-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [promocja-koncowe, wspolne-zmiany-regulamin, wspolne-prawo-wlasciwe-regulamin]
+    opcjonalne: { kategorie: [promocja-koncowe-par], min: 0, max: 40 }
+parametry:
+  produkt: "rachunku osobistego w promocji"

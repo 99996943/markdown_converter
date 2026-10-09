@@ -1,0 +1,130 @@
+bloki:
+  # ===== Lokaty w walutach obcych — pozycje dodatkowe =====
+  - id: taryfa-oszczednosci-opc-waluty-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-waluty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata w euro — {założenie|otwarcie} w bankowości elektronicznej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata w euro — {założenie|otwarcie} w placówce", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata w dolarach amerykańskich — założenie w bankowości elektronicznej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata w dolarach amerykańskich — założenie w placówce", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata w funtach brytyjskich — założenie w placówce", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata we frankach szwajcarskich — założenie w placówce", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wpłata na lokatę walutową z rachunku bieżącego w tej samej walucie", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata na lokatę walutową z rachunku bieżącego w złotych (z przeliczeniem po kursie sprzedaży Banku)[^1]", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia" }
+          - { usluga: "{Wypłata|Przekazanie środków} z lokaty walutowej na rachunek w tej samej walucie", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata z lokaty walutowej na rachunek w złotych (z przeliczeniem po kursie kupna Banku)", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia" }
+    przypisy:
+      1: "Kurs sprzedaży jest ustalany na podstawie kursu średniego z Tabeli kursów walut Banku obowiązującej w chwili przeliczenia; Tabela {jest sporządzana|powstaje} o godzinie {{fakt:kurs.godzina-tabeli}} w dni robocze i może być zmieniana w ciągu dnia."
+  - id: taryfa-oszczednosci-opc-waluty-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-waluty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata w euro na okres 1 miesiąca[^1]", stawka: "wg tabeli oprocentowania obowiązującej w dniu założenia", tryb: "w skali roku" }
+          - { usluga: "{Lokata w euro|Lokata euro} na okres 6 miesięcy", stawka: "wg tabeli oprocentowania obowiązującej w dniu założenia", tryb: "w skali roku" }
+          - { usluga: "Lokata w euro na okres 3 miesięcy — stawka referencyjna", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-eur-3m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata w euro na okres 12 miesięcy — stawka referencyjna", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-eur-12m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata w dolarach na okres 3 miesięcy — stawka referencyjna", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-usd-3m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata w dolarach na okres 12 miesięcy — stawka referencyjna", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-usd-12m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata w funtach na okres 6 miesięcy — stawka referencyjna", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-gbp-6m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata we frankach na okres 6 miesięcy — stawka referencyjna", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.lokata-chf-6m}}", tryb: "w skali roku" }
+          - { usluga: "Podatek od odsetek od lokaty w walucie obcej (odsetki przeliczane na złote po kursie średnim NBP)", stawka: "{{fakt:podatek.odsetki}}", tryb: "od naliczonych odsetek" }
+          - { usluga: "{Informacja|Zestawienie} o kursie przeliczenia odsetek na złote dla potrzeb rozliczenia podatkowego", stawka: "bez opłat", tryb: "rocznie" }
+    przypisy:
+      1: "Lokaty walutowe na okres krótszy niż trzy miesiące są zakładane {wyłącznie|tylko} w euro i dolarach amerykańskich; stawkę dla pozostałych okresów Bank podaje w tabeli oprocentowania dostępnej w placówkach i na stronie {{fakt:bank.strona}}."
+  - id: taryfa-oszczednosci-opc-waluty-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-waluty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zerwanie lokaty w euro przed terminem", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "za dyspozycję" }
+          - { usluga: "Zerwanie lokaty w dolarach przed terminem", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "za dyspozycję" }
+          - { usluga: "Oprocentowanie środków po zerwaniu lokaty walutowej przed terminem", stawka: "{{fakt:oprocentowanie.lokata.zerwanie}}", tryb: "w skali roku" }
+          - { usluga: "{Odnowienie|Przedłużenie} lokaty walutowej na kolejny okres po zakończeniu poprzedniego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zmiana|Zamiana} waluty lokaty przy odnowieniu (z przewalutowaniem środków)", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia" }
+          - { usluga: "Wypłata odsetek od lokaty walutowej w gotówce w walucie obcej w placówce[^1]", stawka: "{{fakt:oplata.taryfa-oszczednosci.wyplata-waluta-prowizja}} kwoty wypłaty, min. {{fakt:oplata.taryfa-oszczednosci.wplata-waluta-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "Wypłata środków z lokaty walutowej w złotych w placówce", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Przelew|Przekazanie} środków z lokaty walutowej na rachunek w innym banku w kraju", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Dodatkowe potwierdzenie założenia lokaty walutowej w języku angielskim", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "za dokument" }
+          - { usluga: "Dyspozycja złożona po godzinie granicznej dla lokat walutowych", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Godzina graniczna przyjmowania dyspozycji lokat walutowych", stawka: "{{fakt:limit.taryfa-oszczednosci.godzina-graniczna-waluty}}", tryb: "w dni robocze" }
+    przypisy:
+      1: "Wypłata odsetek w gotówce wymaga uprzedniego zamówienia banknotów w placówce, jeżeli kwota przekracza równowartość 5 000 euro; Bank {może|ma prawo} wypłacić odsetki w złotych po kursie kupna."
+  - id: taryfa-oszczednosci-opc-waluty-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-waluty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata dwuwalutowa (część kwoty w złotych, część w walucie obcej)", stawka: "wg umowy", tryb: "w skali roku" }
+          - { usluga: "{Założenie|Otwarcie} lokaty dwuwalutowej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Przewalutowanie lokaty dwuwalutowej po zakończeniu okresu umownego", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia" }
+          - { usluga: "{Zlecenie stałe|Zlecenie cykliczne} przewalutowania środków na lokatę walutową", stawka: "bez opłat", tryb: "za realizację" }
+          - { usluga: "Lokata walutowa dla osoby niebędącej rezydentem w rozumieniu przepisów dewizowych", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Złożenie oświadczenia o rezydencji podatkowej Klienta na formularzu Banku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Uzupełnienie|Aktualizacja} informacji o numerze identyfikacji podatkowej z zagranicy", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zaświadczenie o odsetkach od lokaty walutowej dla zagranicznego urzędu skarbowego", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Tłumaczenie zaświadczenia o lokacie walutowej na język angielski", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Potwierdzenie salda lokaty walutowej dla potrzeb wniosku wizowego", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "{Roczna informacja|Roczne zestawienie} o stanie lokat walutowych na dzień 31 grudnia", stawka: "bez opłat", tryb: "rocznie" }
+
+  # ===== Lokaty negocjowane — pozycje dodatkowe =====
+  - id: taryfa-oszczednosci-opc-negocjowane-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-negocjowane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Wstępna|Orientacyjna} wycena oprocentowania lokaty negocjowanej przez doradcę", stawka: "bez opłat", tryb: "za wycenę" }
+          - { usluga: "Wycena oprocentowania lokaty negocjowanej przekazana na piśmie", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Ważność wyceny oprocentowania lokaty negocjowanej", stawka: "{{fakt:termin.lokata.potwierdzenie-umowy}}", tryb: "od dnia wyceny" }
+          - { usluga: "Przedłużenie ważności wyceny na wniosek Klienta[^1]", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Podpisanie|Zawarcie} umowy lokaty negocjowanej w placówce", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Podpisanie umowy lokaty negocjowanej w formie elektronicznej z użyciem kwalifikowanego podpisu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Wizyta|Dojazd} doradcy do Klienta w celu zawarcia umowy lokaty negocjowanej", stawka: "bez opłat", tryb: "za wizytę" }
+          - { usluga: "Lokata negocjowana na okres od 1 miesiąca do 5 lat", stawka: "wg umowy", tryb: "w skali roku" }
+          - { usluga: "Lokata negocjowana z odsetkami wypłacanymi kwartalnie", stawka: "wg umowy", tryb: "w skali roku" }
+          - { usluga: "Lokata negocjowana z odsetkami kapitalizowanymi na koniec okresu", stawka: "wg umowy", tryb: "w skali roku" }
+          - { usluga: "Lokata negocjowana z oprocentowaniem rosnącym w kolejnych okresach", stawka: "wg umowy", tryb: "w skali roku" }
+    przypisy:
+      1: "Przedłużenie ważności wyceny jest możliwe jednokrotnie i {nie gwarantuje|nie zapewnia} zachowania stawki, jeżeli w okresie ważności zmieniły się warunki rynkowe uzasadniające korektę oprocentowania."
+  - id: taryfa-oszczednosci-opc-negocjowane-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-negocjowane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata negocjowana dla kwoty od {{fakt:limit.lokata.negocjowana}} do {{fakt:limit.lokata.maksymalna}}", stawka: "wg umowy, w przedziale od {{fakt:oprocentowanie.taryfa-oszczednosci.negocjowana-od}} do {{fakt:oprocentowanie.taryfa-oszczednosci.negocjowana-do}}", tryb: "w skali roku" }
+          - { usluga: "Lokata negocjowana dla kwoty powyżej {{fakt:limit.lokata.maksymalna}}", stawka: "wg umowy", tryb: "w skali roku" }
+          - { usluga: "{Zmiana|Korekta} kwoty lokaty negocjowanej w trakcie okresu umownego (zwiększenie)", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana kwoty lokaty negocjowanej w trakcie okresu umownego (zmniejszenie)", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana okresu lokaty negocjowanej w trakcie jej trwania", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana sposobu wypłaty odsetek od lokaty negocjowanej za zgodą Banku", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Aneks do umowy lokaty negocjowanej {sporządzony|przygotowany} na wniosek Klienta", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dokument" }
+          - { usluga: "Aneks do umowy lokaty negocjowanej wynikający ze zmiany przepisów prawa", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Umowa przedwstępna lokaty negocjowanej (rezerwacja stawki do dnia wpłaty środków)[^1]", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Termin|Czas} wpłaty środków po rezerwacji stawki", stawka: "{{fakt:termin.lokata.potwierdzenie-umowy}}", tryb: "od dnia rezerwacji" }
+    przypisy:
+      1: "Rezerwacja stawki wygasa, jeżeli środki nie zostaną wpłacone w terminie; Bank nie jest wówczas {zobowiązany|obowiązany} do zawarcia umowy lokaty na uzgodnionych warunkach."
+  - id: taryfa-oszczednosci-opc-negocjowane-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-negocjowane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zerwanie lokaty negocjowanej bez utraty odsetek (jeżeli umowa nie przewiduje utraty)", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "za dyspozycję" }
+          - { usluga: "Zerwanie lokaty negocjowanej z częściową utratą odsetek wskazaną w umowie", stawka: "wg umowy lokaty", tryb: "za dyspozycję" }
+          - { usluga: "Zerwanie lokaty negocjowanej z całkowitą utratą odsetek wskazaną w umowie", stawka: "wg umowy lokaty", tryb: "za dyspozycję" }
+          - { usluga: "{Termin|Czas} realizacji zerwania lokaty negocjowanej", stawka: "{{fakt:termin.lokata.zerwanie-realizacja}}", tryb: "od dnia dyspozycji" }
+          - { usluga: "Wypłata środków z lokaty negocjowanej w gotówce w placówce (kwoty powyżej 5 000,00 zł wymagają awizacji)", stawka: "{{fakt:oplata.lokata.wyplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "{Wypłata|Przekazanie} środków z lokaty negocjowanej na rachunek w innym banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Wypłata środków z lokaty negocjowanej przelewem natychmiastowym", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "{Dziedziczenie lokaty negocjowanej|Spadek po posiadaczu lokaty negocjowanej} — wypłata środków spadkobiercom po przedstawieniu postanowienia sądu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Dziedziczenie lokaty negocjowanej — wypłata środków na podstawie dyspozycji wkładem na wypadek śmierci", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zaświadczenie o posiadaniu lokaty negocjowanej wydane na wniosek Klienta", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "{Opinia|Rekomendacja} doradcy o możliwości zakładania kolejnych lokat negocjowanych", stawka: "bez opłat", tryb: "za opinię" }

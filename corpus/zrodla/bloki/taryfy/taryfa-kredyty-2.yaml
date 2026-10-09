@@ -1,0 +1,293 @@
+bloki:
+  - id: taryfa-kredyty-hipoteczne-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-wymagane-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Prowizja|Opłata} za przygotowanie i udzielenie kredytu hipotecznego"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.prowizja-przygotowanie}} min. {{fakt:oplata.kredyt-hipoteczny.prowizja-minimalna}}[^1]"
+            tryb: "od kwoty kredytu, jednorazowo"
+            podpozycje:
+              - usluga: "kredyt na zakup lub budowę nieruchomości"
+                stawka: "{{fakt:oplata.kredyt-hipoteczny.prowizja-przygotowanie}}"
+                tryb: "od kwoty kredytu"
+              - usluga: "kredyt na refinansowanie kredytu mieszkaniowego z innej instytucji"
+                stawka: "0,0%"
+                tryb: "od kwoty kredytu"
+          - usluga: "Wycena nieruchomości przez rzeczoznawcę Banku"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.wycena-nieruchomosci}}[^2]"
+            tryb: "za każdą wycenę"
+          - usluga: "Wniosek o wpis hipoteki do księgi wieczystej (opłata sądowa)"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.wpis-hipoteki}}"
+            tryb: "za każdy wpis"
+          - usluga: "Uruchomienie transzy kredytu"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.uruchomienie-transzy}}"
+            tryb: "za każdą transzę"
+          - usluga: "Inspekcja budowy przed uruchomieniem transzy"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.inspekcja-budowy}}"
+            tryb: "za każdą inspekcję"
+          - usluga: "Ubezpieczenie pomostowe do czasu wpisu hipoteki (podwyższenie marży)"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.ubezpieczenie-pomostowe}} pkt proc.[^3]"
+            tryb: "rocznie, od salda kredytu"
+          - usluga: "{Wcześniejsza|Przedterminowa} spłata kredytu w okresie {{fakt:oplata.kredyt-hipoteczny.wczesna-splata-okres}} obowiązywania umowy"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.wczesna-splata}}[^4]"
+            tryb: "od spłaconego kapitału"
+          - usluga: "Wcześniejsza spłata kredytu po upływie okresu wskazanego w poprzedniej pozycji"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana warunków umowy kredytu hipotecznego (aneks)"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.aneks}}"
+            tryb: "za każdy aneks"
+          - usluga: "Promesa zwolnienia z hipoteki"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.promesa-zwolnienia}}"
+            tryb: "za każdą promesę"
+          - usluga: "Zwolnienie hipoteki — oświadczenie do wykreślenia wpisu, wydane w terminie {{fakt:termin.kredyt-hipoteczny.zwolnienie-hipoteki}} od spłaty"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.zwolnienie-hipoteki}}"
+            tryb: "za każde oświadczenie"
+          - usluga: "Zaświadczenie o wysokości zadłużenia z tytułu kredytu hipotecznego"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.zaswiadczenie-o-zadluzeniu}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o spłacie kredytu hipotecznego"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zmiana ubezpieczyciela nieruchomości — weryfikacja polisy"
+            stawka: "100,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Rozpatrzenie wniosku o kredyt hipoteczny"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+    przypisy:
+      1: "Prowizja {może zostać|zostaje} pobrana ze środków kredytu w dniu uruchomienia pierwszej transzy; jeżeli umowa nie dojdzie do skutku z przyczyn leżących po stronie Banku, prowizja nie jest pobierana."
+      2: "Opłatę {pobiera|uiszcza} Klient przed zleceniem wyceny; w razie wyceny dokonanej przez rzeczoznawcę wskazanego przez Klienta i zaakceptowanego przez Bank opłaty nie pobiera się."
+      3: "Podwyższenie marży obowiązuje do dnia przedłożenia przez Klienta odpisu księgi wieczystej z wpisem hipoteki na rzecz Banku, a nie dłużej niż przez okres określony w umowie."
+      4: "Opłata nie może przekroczyć kwoty odsetek, które Bank otrzymałby w okresie {{fakt:oplata.kredyt-hipoteczny.wczesna-splata-okres}} obowiązywania umowy, i nie jest pobierana w przypadku spłaty ze środków z ubezpieczenia ani w razie zmiany oprocentowania zmiennego zgodnie z umową."
+
+  - id: taryfa-kredyty-hipoteczne-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wstępna ocena zdolności kredytowej {przed złożeniem wniosku|na wniosek Klienta}"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Opłata za rozpatrzenie wniosku o kredyt hipoteczny dla nieruchomości o szczególnym charakterze (dom drewniany, nieruchomość zabytkowa)"
+            stawka: "400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Uproszczona wycena nieruchomości na podstawie danych z rejestru cen"
+            stawka: "250,00 zł"
+            tryb: "za każdą wycenę"
+          - usluga: "{Aktualizacja|Ponowna wycena} nieruchomości zabezpieczającej kredyt"
+            stawka: "400,00 zł"
+            tryb: "za każdą aktualizację"
+          - usluga: "Wycena nieruchomości — dodatkowy {wyjazd|dojazd} rzeczoznawcy poza miejscowość Banku"
+            stawka: "1,20 zł za kilometr"
+            tryb: "za każdy kilometr"
+          - usluga: "Sprawdzenie stanu prawnego nieruchomości w {księdze wieczystej|rejestrze ksiąg wieczystych}"
+            stawka: "80,00 zł"
+            tryb: "za każde sprawdzenie"
+          - usluga: "Analiza dokumentów dewelopera (prospekt informacyjny, pozwolenia)"
+            stawka: "300,00 zł"
+            tryb: "za każdą analizę"
+          - usluga: "Weryfikacja umowy przedwstępnej sprzedaży nieruchomości"
+            stawka: "150,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Przygotowanie projektu umowy kredytu w wersji dwujęzycznej"
+            stawka: "200,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Ocena zdolności kredytowej dla kredytobiorców zagranicznych"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-hipoteczne-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Kredyt hipoteczny na zakup mieszkania na rynku {pierwotnym|deweloperskim} — prowizja"
+            stawka: "1,5% min. 1 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt hipoteczny na zakup domu — prowizja"
+            stawka: "1,8% min. 1 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na zakup działki budowlanej — prowizja"
+            stawka: "2,0% min. 1 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na budowę domu systemem gospodarczym — prowizja"
+            stawka: "2,0% min. 2 000,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt remontowy zabezpieczony hipoteką — prowizja"
+            stawka: "2,0% min. 1 000,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt konsolidacyjny zabezpieczony hipoteką — prowizja"
+            stawka: "1,5% min. 1 200,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt hipoteczny dla osób do 35. roku życia — {obniżenie|zmniejszenie} prowizji"
+            stawka: "minus 0,3 pkt proc."
+            tryb: "od stawki prowizji"
+          - usluga: "Kredyt hipoteczny z wkładem własnym powyżej 30% — obniżenie prowizji"
+            stawka: "minus 0,2 pkt proc."
+            tryb: "od stawki prowizji"
+          - usluga: "Kredyt hipoteczny w ramach programu wsparcia z funduszu publicznego — prowizja"
+            stawka: "0,0%"
+            tryb: "od kwoty kredytu"
+          - usluga: "{Zwiększenie|Podwyższenie} kwoty kredytu hipotecznego w trakcie umowy"
+            stawka: "1,0% kwoty zwiększenia min. 500,00 zł"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-hipoteczne-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zmiana oprocentowania zmiennego na okresowo stałe (na 5 lat)"
+            stawka: "0,5% salda kapitału"
+            tryb: "jednorazowo"
+          - usluga: "Powrót z oprocentowania stałego na zmienne po {zakończeniu|upływie} okresu stałości"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana marży w ramach negocjacji (obniżenie marży na wniosek Klienta)"
+            stawka: "0,3% salda kapitału min. 400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana waluty kredytu"
+            stawka: "0,5% salda min. 600,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana {terminu|dnia} płatności raty"
+            stawka: "100,00 zł"
+            tryb: "za każdą zmianę"
+          - usluga: "Zawieszenie spłaty rat kapitałowych na wniosek Klienta w trudnej sytuacji życiowej"
+            stawka: "bez opłat"
+            tryb: "za każde zawieszenie, do 3 razy w okresie umowy"
+          - usluga: "Zawieszenie spłaty rat kapitałowych — kolejne zawieszenia"
+            stawka: "200,00 zł"
+            tryb: "za każde zawieszenie"
+          - usluga: "{Wydłużenie|Przedłużenie} okresu kredytowania"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana sposobu spłaty (raty równe/malejące)"
+            stawka: "200,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana rachunku, z którego spłacany jest kredyt hipoteczny"
+            stawka: "40,00 zł"
+            tryb: "za każdą zmianę"
+
+  - id: taryfa-kredyty-hipoteczne-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zmiana zabezpieczenia hipotecznego — zastąpienie nieruchomości inną"
+            stawka: "0,5% kwoty kredytu min. 800,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda Banku na {wynajem|najem} nieruchomości zabezpieczającej kredyt"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda Banku na ustanowienie służebności lub prawa dożywocia na nieruchomości"
+            stawka: "250,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda Banku na podział nieruchomości lub jej części zabezpieczonej hipoteką"
+            stawka: "400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda Banku na zbycie nieruchomości z przejęciem długu przez nabywcę"
+            stawka: "0,5% salda min. 600,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Częściowe|Cząstkowe} zwolnienie z hipoteki (wyłączenie części nieruchomości)"
+            stawka: "400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zgoda na zmianę sposobu {użytkowania|wykorzystania} nieruchomości"
+            stawka: "200,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Cesja praw z polisy ubezpieczeniowej nieruchomości na rzecz Banku"
+            stawka: "60,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Przesunięcie hipoteki na dalsze miejsce w księdze wieczystej (zgoda na pierwszeństwo)"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Oświadczenie o poddaniu się egzekucji w formie aktu notarialnego — opłata notarialna"
+            stawka: "wg taksy notarialnej"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-hipoteczne-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wypłata transzy kredytu na rachunek dewelopera (rachunek powierniczy)"
+            stawka: "bez opłat"
+            tryb: "za każdą wypłatę"
+          - usluga: "{Wypłata|Przekazanie} transzy kredytu na rachunek wykonawcy robót"
+            stawka: "20,00 zł"
+            tryb: "za każdą wypłatę"
+          - usluga: "Przedłużenie terminu uruchomienia kredytu o kolejne 3 miesiące"
+            stawka: "0,1% kwoty niewypłaconej min. 150,00 zł"
+            tryb: "za każde przedłużenie"
+          - usluga: "Opłata za niewykorzystanie kredytu w terminie uruchomienia"
+            stawka: "0,2% kwoty niewypłaconej"
+            tryb: "jednorazowo"
+          - usluga: "Weryfikacja faktur i protokołów odbioru przed uruchomieniem transzy"
+            stawka: "100,00 zł"
+            tryb: "za każdą transzę"
+          - usluga: "Kontrola postępu prac przez inspektora nadzoru wskazanego przez Bank"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.inspekcja-budowy}}"
+            tryb: "za każdą kontrolę"
+          - usluga: "Ponowna inspekcja budowy po stwierdzeniu uchybień"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.inspekcja-budowy}}"
+            tryb: "za każdą inspekcję"
+          - usluga: "Sprawdzenie pozwolenia na użytkowanie budynku po zakończeniu inwestycji"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rozliczenie nadwyżki środków z {niewykorzystanej|niewypłaconej} transzy"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wniosek o {wydłużenie|przedłużenie} okresu finansowania budowy"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-hipoteczne-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Odpis|Wydruk} księgi wieczystej pobrany przez Bank na wniosek Klienta"
+            stawka: "30,00 zł"
+            tryb: "za każdy odpis"
+          - usluga: "Zaświadczenie o terminowej spłacie dla innej instytucji finansowej"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o odsetkach zapłaconych w roku podatkowym"
+            stawka: "bez opłat"
+            tryb: "raz w roku"
+          - usluga: "Informacja o historii zmian oprocentowania kredytu"
+            stawka: "20,00 zł"
+            tryb: "za każdą informację"
+          - usluga: "Zestawienie wszystkich spłat od {początku|dnia zawarcia} umowy"
+            stawka: "40,00 zł"
+            tryb: "za każde zestawienie"
+          - usluga: "Duplikat umowy kredytu hipotecznego wraz z załącznikami"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za każdy dokument"
+          - usluga: "Odpis aktu notarialnego z archiwum Banku"
+            stawka: "50,00 zł"
+            tryb: "za każdy odpis"
+          - usluga: "Poświadczenie zgodności z oryginałem dokumentów kredytowych"
+            stawka: "10,00 zł za stronę"
+            tryb: "za każdą stronę"
+          - usluga: "{Udostępnienie|Wydanie kopii} dokumentów kredytowych spadkobiercy kredytobiorcy"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Przekazanie oryginałów dokumentów zabezpieczenia po spłacie kredytu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"

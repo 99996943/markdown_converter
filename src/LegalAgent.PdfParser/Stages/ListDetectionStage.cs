@@ -124,6 +124,7 @@ public sealed class ListDetectionStage : IPipelineStage
                 double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
                 bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
                 entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
+                entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);
                 entry.FirstOnPage = above is null;
                 if (!entry.LegalUnit
                     && ListLabelPatterns.TryMatch(line.Text, out ListLabelMatch? label)
@@ -262,7 +263,7 @@ public sealed class ListDetectionStage : IPipelineStage
 
         bool Follows(Entry previous, Entry next) =>
             NextInSequence(previous.Label!, next.Label!)
-            && (previous.ArticleUstep || Math.Abs(previous.LabelX - next.LabelX) <= tolerance);
+            && (previous.ArticleUstep || Math.Abs(previous.LabelX - (next.LabelX - Shift(previous.Origin, next.Origin))) <= tolerance);
 
         for (int k = 0; k < candidates.Count; k++)
         {
@@ -300,6 +301,13 @@ public sealed class ListDetectionStage : IPipelineStage
     };
 
     private static bool EndsWithColon(LayoutLine line) => line.Text.TrimEnd().EndsWith(':');
+
+    /// <summary>
+    /// How far a position in the column starting at <paramref name="to"/> is from the same position in the column
+    /// starting at <paramref name="from"/> (FR-031): a list runs on from the right column to the left column of the next
+    /// page. Zero within one column or without columns.
+    /// </summary>
+    private static double Shift(double from, double to) => from > 0 && to > 0 ? to - from : 0;
 
     /// <summary>Walks the entries keeping the stack of open items.</summary>
     private sealed class Walker(PipelineContext context)
@@ -371,7 +379,14 @@ public sealed class ListDetectionStage : IPipelineStage
                 return entry.FirstOnPage;
             }
 
-            bool continues = _stack.Any(o => Math.Abs(o.LabelX - entry.LabelX) <= _tolerance && NextInSequence(o.Label, label));
+            // A numbered section heading set larger than the body („3. Odpowiedzialności” after items „1.”, „2.”) does
+            // not continue the list even when its number would.
+            if (entry.TitleStyle)
+            {
+                return false;
+            }
+
+            bool continues = _stack.Any(o => Math.Abs(o.LabelX - (entry.LabelX - Shift(o.Origin, entry.Origin))) <= _tolerance && NextInSequence(o.Label, label));
             entry.Accepted |= continues;
             return continues;
         }
@@ -379,7 +394,7 @@ public sealed class ListDetectionStage : IPipelineStage
         private void VisitDash(Entry entry, Entry? next)
         {
             OpenItem? top = Top;
-            double x = entry.LabelX;
+            double x = entry.LabelX - Shift(top?.Origin ?? 0, entry.Origin);
             if (top is null)
             {
                 bool introduced = _previous is not null && EndsWithColon(_previous.Line);
@@ -416,7 +431,7 @@ public sealed class ListDetectionStage : IPipelineStage
         /// <summary>„– …” aligned with the labels of an enumeration closes it; the line is the common part of its parent.</summary>
         private void CloseEnumerationAt(Entry entry)
         {
-            int level = _stack.FindLastIndex(o => Math.Abs(o.LabelX - entry.LabelX) <= _tolerance);
+            int level = _stack.FindLastIndex(o => Math.Abs(o.LabelX - (entry.LabelX - Shift(o.Origin, entry.Origin))) <= _tolerance);
             if (level < 0)
             {
                 Reset();
@@ -435,7 +450,7 @@ public sealed class ListDetectionStage : IPipelineStage
                 return;
             }
 
-            double x = entry.Line.Box.Left;
+            double x = entry.Line.Box.Left - Shift(top.Origin, entry.Origin);
             if (_commonOwner is not null)
             {
                 Continue(entry, _commonOwner, common: true);
@@ -459,7 +474,7 @@ public sealed class ListDetectionStage : IPipelineStage
                 return;
             }
 
-            int owner = _stack.FindLastIndex(o => Math.Abs((o.ContinuationX ?? o.TextX) - x) <= _tolerance);
+            int owner = _stack.FindLastIndex(o => Math.Abs((o.ContinuationX ?? o.TextX) - (entry.Line.Box.Left - Shift(o.Origin, entry.Origin))) <= _tolerance);
             if (owner < 0)
             {
                 Reset();
@@ -490,7 +505,8 @@ public sealed class ListDetectionStage : IPipelineStage
                 _nextId++,
                 label,
                 entry.LabelX,
-                entry.Line.Words.Count > 1 ? entry.Line.Words[1].Box.Left : entry.Line.Box.Right);
+                entry.Line.Words.Count > 1 ? entry.Line.Words[1].Box.Left : entry.Line.Box.Right,
+                entry.Origin);
 
             while (Top is { } top && !IsParent(top, item))
             {
@@ -512,7 +528,7 @@ public sealed class ListDetectionStage : IPipelineStage
         private bool IsParent(OpenItem open, OpenItem item) =>
             Rank(open.Kind) is int openRank && Rank(item.Kind) is int itemRank
                 ? itemRank > openRank
-                : item.LabelX > open.LabelX + _tolerance;
+                : item.LabelX - Shift(open.Origin, item.Origin) > open.LabelX + _tolerance;
 
         private void Continue(Entry entry, OpenItem owner, bool common)
         {
@@ -539,6 +555,12 @@ public sealed class ListDetectionStage : IPipelineStage
                 return entry.Page.Number == _previous.Page.Number + 1;
             }
 
+            // FR-031: from the bottom of one column to the top of the next, like a page break.
+            if (entry.Origin > 0 && _previous.Origin > 0 && entry.Origin > _previous.Origin && entry.Line.Baseline < _previous.Line.Baseline)
+            {
+                return true;
+            }
+
             double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * _previous.Line.Box.Height;
             double gap = entry.Line.Baseline - _previous.Line.Baseline;
             return gap > 0 && gap <= _gapFactor * leading;
@@ -562,9 +584,15 @@ public sealed class ListDetectionStage : IPipelineStage
 
         public double LabelX => Line.Box.Left;
 
+        /// <summary>The left edge of the line's text column on a page in columns (FR-031), 0 otherwise.</summary>
+        public double Origin { get; } = LayoutAnnotations.GetNumber(line, LayoutAnnotations.ColumnLeft) ?? 0;
+
         public bool LegalUnit { get; set; }
 
         public bool HeadingLike { get; set; }
+
+        /// <summary>Isolated, bold and larger than the body text: a numbered section heading, not the next list item.</summary>
+        public bool TitleStyle { get; set; }
 
         public bool FirstOnPage { get; set; }
 
@@ -575,8 +603,10 @@ public sealed class ListDetectionStage : IPipelineStage
         public bool Accepted { get; set; }
     }
 
-    private sealed class OpenItem(int id, ListLabelMatch label, double labelX, double textX)
+    private sealed class OpenItem(int id, ListLabelMatch label, double labelX, double textX, double origin)
     {
+        public double Origin { get; } = origin;
+
         public int Id { get; } = id;
 
         public ListLabelMatch Label { get; } = label;

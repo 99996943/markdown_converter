@@ -1,0 +1,170 @@
+bloki:
+  # ---------- Prawo dostępu i kopia danych ----------
+  - id: rodo-n-opis-dostep-nagrania
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Wnioskodawca może żądać dostępu do nagrań rozmów telefonicznych i zapisów z monitoringu wizyjnego, jeżeli Bank je przechowuje. Wydanie takich materiałów wymaga szczególnej ostrożności, ponieważ na nagraniu mogą znajdować się dane innych osób, w tym pracowników Banku."
+      - kroki:
+          - tekst: "{Ustal|Zapytaj wnioskodawcę o}, jakiej rozmowy lub zdarzenia dotyczy wniosek: datę, przybliżoną godzinę, numer telefonu lub placówkę. Bez tych informacji wyszukanie nagrania nie jest możliwe i {należy|trzeba} wezwać wnioskodawcę do uzupełnienia wniosku."
+          - tekst: "Zwróć się do jednostki przechowującej nagrania o zabezpieczenie materiału przed upływem okresu przechowywania ({{fakt:rodo.retencja.nagrania-rozmow}}); zabezpieczenie obowiązuje do czasu zakończenia sprawy."
+          - tekst: "Przed wydaniem {odsłuchaj|obejrzyj} nagranie i {oceń|sprawdź}, czy jego udostępnienie nie naruszy praw innych osób."
+            podkroki:
+              - tekst: "Jeżeli na nagraniu występują dane osób trzecich, {zanonimizuj|zasłoń} je albo udostępnij transkrypcję pozbawioną tych danych."
+              - tekst: "Głos pracownika Banku jest częścią nagrania i co do zasady jest udostępniany wnioskodawcy razem z rozmową, chyba że zachodzi ryzyko dla bezpieczeństwa pracownika."
+          - tekst: "Nagranie przekaż w formie bezpiecznej, np. w formacie {{fakt:rodo.format-danych}}, i {odnotuj|zapisz} w rejestrze wniosków {{fakt:rodo.system.rejestr}}, jaki materiał wydano i w jakim zakresie."
+
+  - id: rodo-n-opis-dostep-profilowanie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Wniosek o dostęp obejmuje prawo do informacji o tym, czy dane Klienta są wykorzystywane do profilowania, w tym do oceny zdolności kredytowej, ustalania ryzyka lub dopasowywania ofert. W takim przypadku odpowiedź nie może ograniczać się do kopii danych."
+      - ustep: "IOD przygotowuje informację, która obejmuje:"
+        punkty:
+          - "{wskazanie|opis} celów profilowania i danych, które są w nim wykorzystywane;"
+          - "{ogólny opis|zwięzłe wyjaśnienie} logiki, według której dokonuje się oceny, bez ujawniania tajemnicy przedsiębiorstwa ani parametrów modeli, których ujawnienie umożliwiłoby ich obejście;"
+          - "{informację|wyjaśnienie} o przewidywanych skutkach profilowania dla Klienta, np. wpływie na wysokość limitu lub rodzaj proponowanych produktów;"
+          - "{pouczenie|wskazanie} o prawie do sprzeciwu i do żądania ponownej oceny przez człowieka."
+      - akapit: "Informacje o modelach i regułach oceny uzyskuje się od {{fakt:jednostka.ryzyko}}, która odpowiada za ich merytoryczną poprawność. Odpowiedź uzgadnia się z {{fakt:jednostka.prawny}}, jeżeli dotyczy ona decyzji kredytowej."
+
+  - id: rodo-n-opis-dostep-odbiorcy
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - kroki:
+          - tekst: "Przygotowując odpowiedź na wniosek o dostęp, {wskaż|ustal} odbiorców, którym dane wnioskodawcy zostały ujawnione, korzystając z mapy przetwarzania danych i rejestru czynności przetwarzania."
+            podkroki:
+              - tekst: "Wskaż kategorie odbiorców (np. podmioty przetwarzające, biura informacji gospodarczej, organy publiczne, podmioty z grupy kapitałowej), a na wyraźne żądanie wnioskodawcy — konkretne podmioty."
+              - tekst: "Nie ujawniaj informacji o udostępnieniu danych organom ścigania lub nadzoru, jeżeli przepisy zakazują informowania o takim żądaniu; w razie wątpliwości {skonsultuj|zapytaj} {{fakt:jednostka.prawny}}."
+          - tekst: "Wskaż, czy dane były lub będą przekazywane poza Europejski Obszar Gospodarczy, a jeśli tak — na jakiej podstawie (np. decyzja stwierdzająca odpowiedni stopień ochrony albo standardowe klauzule umowne) i gdzie można uzyskać kopię zabezpieczeń."
+          - tekst: "Wskaż źródło danych, jeżeli nie pochodzą one od wnioskodawcy, np. biuro informacji gospodarczej, rejestr publiczny lub inny podmiot."
+          - tekst: "{Zapisz|Udokumentuj} w aktach sprawy, na podstawie jakich źródeł sporządzono wykaz odbiorców, aby w razie kontroli można było wykazać jego rzetelność."
+
+  - id: rodo-n-opis-dostep-kopia-papier
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Pierwszą kopię danych Bank przekazuje bezpłatnie. Za każdą kolejną kopię, której wnioskodawca żąda dodatkowo, może pobrać opłatę odpowiadającą kosztom administracyjnym, obecnie w wysokości {{fakt:oplata.rodo.kolejna-kopia}}. Kolejną kopię uważa się za dodatkową, jeżeli dotyczy tego samego zakresu danych, co kopia wydana wcześniej, i nie wynika z błędu Banku."
+      - ustep: "Przy wydawaniu kopii danych obowiązują następujące zasady:"
+        punkty:
+          - "kopię przekazuje się w formie elektronicznej, jeżeli wnioskodawca złożył wniosek w tej formie, chyba że poprosił o inną;"
+          - "kopię w postaci papierowej wysyła się listem poleconym za potwierdzeniem odbioru albo wydaje w placówce za pokwitowaniem;"
+          - "przed pobraniem opłaty informuje się wnioskodawcę o jej wysokości i sposobie zapłaty, a realizację kopii rozpoczyna się po zaksięgowaniu wpłaty;"
+          - "odmowa wydania kolejnej kopii z powodu braku opłaty nie wpływa na obowiązek udzielenia pozostałych informacji."
+
+  # ---------- Sprostowanie, usunięcie, ograniczenie ----------
+  - id: rodo-n-opis-usuniecie-zgoda
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Cofnięcie zgody na przetwarzanie danych nie wymaga uzasadnienia i działa na przyszłość; nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem. Cofnięcie powinno być równie łatwe jak jej wyrażenie."
+      - kroki:
+          - tekst: "{Ustal|Zidentyfikuj} w systemie zgód {{fakt:rodo.system.zgody}}, których zgód dotyczy oświadczenie Klienta (np. marketingowych, na profilowanie lub na kontakt w określonym kanale)."
+            podkroki:
+              - tekst: "Jeżeli oświadczenie jest ogólne, {potraktuj|rozumiej} je jako cofnięcie wszystkich zgód, które nie są niezbędne do wykonania umowy, i poinformuj o tym Klienta."
+              - tekst: "Jeżeli dane są przetwarzane także na innej podstawie prawnej (np. w celu wykonania umowy), poinformuj Klienta, że cofnięcie zgody nie powoduje ich usunięcia."
+          - tekst: "Wprowadź zmianę w systemie zgód z datą i godziną oświadczenia, a następnie zleć {{fakt:jednostka.obsluga-klienta}} zaprzestanie działań, których dotyczyła zgoda, w terminie {{fakt:termin.rodo.blokada-marketingu}}."
+          - tekst: "{Powiadom|Poinformuj} Klienta o skutkach cofnięcia zgody oraz o tym, że nie wpływa ono na dostęp do produktów i usług realizowanych na podstawie umowy."
+
+  - id: rodo-n-opis-usuniecie-archiwum
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Usunięcie danych z systemów produkcyjnych nie wyczerpuje obowiązku, jeżeli kopie danych znajdują się w archiwach, kopiach bezpieczeństwa lub systemach analitycznych. Wymaga to odrębnych ustaleń z właścicielami tych zasobów."
+      - kroki:
+          - tekst: "Ustal z właścicielem archiwum {{fakt:rodo.system.archiwum}}, czy dane objęte wnioskiem znajdują się w archiwum i na jakiej podstawie są tam przechowywane."
+            podkroki:
+              - tekst: "Dane, których przechowywanie wynika z przepisów, pozostają w archiwum do końca wymaganego okresu; zablokuj do nich dostęp wszystkim poza osobami wykonującymi obowiązek archiwizacyjny."
+              - tekst: "Dane, dla których nie ma podstawy dalszego przechowywania, usuń z archiwum w terminie {{fakt:termin.rodo.ograniczenie-wdrozenie}}."
+          - tekst: "W przypadku kopii bezpieczeństwa, z których nie można selektywnie usunąć danych, zastosuj zasadę, że dane zostaną usunięte wraz z wygaśnięciem kopii po upływie {{fakt:termin.rodo.kopie-bezpieczenstwa}}, a do tego czasu nie wolno ich przywracać do systemów produkcyjnych bez ponownego usunięcia danych wnioskodawcy."
+          - tekst: "O zastosowanej zasadzie {poinformuj|powiadom} wnioskodawcę w odpowiedzi, wyjaśniając, że dane w kopiach zapasowych nie są wykorzystywane i zostaną usunięte w sposób naturalny."
+
+  - id: rodo-n-opis-usuniecie-sprostowanie-kredyt
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Wniosek o sprostowanie danych bywa składany w związku z błędnymi informacjami przekazanymi do biur informacji gospodarczej lub do rejestrów kredytowych. Sprostowanie wymaga wtedy oceny, czy dane są nieprawidłowe, czy tylko niekorzystne dla Klienta."
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} w dokumentach Banku, czy kwestionowana informacja jest zgodna ze stanem faktycznym, np. czy wskazana zaległość rzeczywiście istniała w podanym okresie."
+          - tekst: "Jeżeli informacja jest nieprawdziwa, {popraw|skoryguj} ją w systemie Banku i zleć jednostce odpowiedzialnej za raportowanie przekazanie sprostowania do odbiorców, którym dane przekazano, w terminie {{fakt:termin.rodo.powiadomienie-odbiorcow}}."
+            podkroki:
+              - tekst: "Odnotuj w aktach, kiedy i jakim kanałem przekazano sprostowanie oraz kiedy potwierdzono jego wprowadzenie."
+              - tekst: "Poinformuj wnioskodawcę o zakresie dokonanej korekty i o odbiorcach, którym ją przekazano."
+          - tekst: "Jeżeli informacja jest prawdziwa, a Klient się z nią nie zgadza, {wyjaśnij|przedstaw} podstawy ustalenia i {poinformuj|pouczy} o prawie do uzupełnienia danych o dodatkowe oświadczenie, które zostanie dołączone do akt."
+          - tekst: "Spory o wysokość lub istnienie zadłużenia rozpatruje się w trybie reklamacyjnym; wniosek RODO i reklamację {prowadzi się|rozpatruje się} równolegle i informuje wnioskodawcę o odrębnych terminach."
+
+  - id: rodo-n-opis-usuniecie-marketing
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - ustep: "Żądanie usunięcia danych wykorzystywanych w celach marketingowych {rozpatruje się|realizuje się} w następującej kolejności:"
+        punkty:
+          - "{wstrzymanie|zablokowanie} kontaktów marketingowych w terminie {{fakt:termin.rodo.blokada-marketingu}}, niezależnie od dalszego toku sprawy;"
+          - "{wycofanie|usunięcie} danych z list kampanii, segmentów i narzędzi do wysyłki wiadomości, w tym z danych przekazanych podmiotom przetwarzającym obsługującym kampanie;"
+          - "{usunięcie|trwałe usunięcie} profili marketingowych i wyników modeli skłonności do zakupu, jeżeli nie są wykorzystywane w innych celach;"
+          - "{wpisanie|dodanie} adresu i numeru telefonu Klienta do listy wykluczeń, aby uniknąć ponownego włączenia go do kampanii; na liście przechowuje się wyłącznie dane niezbędne do wykluczenia."
+      - akapit: "Informację o wykonaniu żądania przesyła się Klientowi w terminie {{fakt:termin.rodo.projekt-odpowiedzi}} od jego zrealizowania. Pracownik nie może zachęcać Klienta do wycofania żądania ani proponować korzyści w zamian za pozostawienie danych."
+
+  # ---------- Przenoszenie, sprzeciw, decyzje zautomatyzowane ----------
+  - id: rodo-n-opis-sprzeciw-bik
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-sprzeciw
+    elementy:
+      - akapit: "Sprzeciw wobec przetwarzania danych w celu oceny ryzyka kredytowego lub w celu dochodzenia roszczeń wymaga od Banku wykazania ważnych, prawnie uzasadnionych podstaw, które przeważają nad interesami wnioskodawcy. Samo powołanie się na prawnie uzasadniony interes nie wystarcza."
+      - kroki:
+          - tekst: "{Sporządź|Przygotuj} ocenę równowagi interesów, w której zestawisz interes Banku (np. zapobieganie nadmiernemu zadłużeniu, ochrona przed nadużyciami) z sytuacją wnioskodawcy opisaną we wniosku."
+            podkroki:
+              - tekst: "W ocenie uwzględnij charakter danych, ich ilość, okres przetwarzania i uzasadnione oczekiwania Klienta."
+              - tekst: "Wskaż, czy cel można osiągnąć środkami mniej ingerującymi w prywatność, np. ograniczając zakres danych."
+          - tekst: "Ocenę przedstaw do akceptacji {{fakt:jednostka.zgodnosc}}, a w sprawach kredytowych — także {{fakt:jednostka.ryzyko}}."
+          - tekst: "Jeżeli sprzeciw jest uzasadniony, {zaprzestań|zakończ} przetwarzanie w zakresie objętym sprzeciwem i wskaż wnioskodawcy, jakich skutków dla produktów można się spodziewać; w przeciwnym razie przekaż uzasadnioną odmowę wraz z pouczeniem o środkach ochrony."
+
+  - id: rodo-n-opis-sprzeciw-przenoszenie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-sprzeciw
+    elementy:
+      - akapit: "Prawo do przenoszenia danych przysługuje, gdy dane dotyczą wnioskodawcy, dostarczył je Bank sam i są przetwarzane na podstawie zgody lub umowy w sposób zautomatyzowany. Obejmuje ono również żądanie przesłania danych bezpośrednio innemu administratorowi, jeżeli jest to technicznie możliwe."
+      - kroki:
+          - tekst: "{Ustal|Sprawdź}, czy żądanie spełnia przesłanki; przy rachunkach i kartach zakres obejmuje m.in. dane o transakcjach, zleceniach stałych i odbiorcach zdefiniowanych przez Klienta."
+            podkroki:
+              - tekst: "Danych wytworzonych przez Bank (np. wyniki oceny ryzyka, notatki z kontaktów) nie dołącza się do eksportu."
+              - tekst: "Dane innych osób, np. kontrahentów, pozostawia się w zakresie niezbędnym do zachowania sensu informacji o transakcji."
+          - tekst: "Wygeneruj eksport z systemu {{fakt:rodo.system.eksport}} w formacie ustrukturyzowanym i powszechnie używanym, np. w formacie {{fakt:rodo.format-danych}}."
+          - tekst: "Jeżeli wnioskodawca żąda przesłania danych innemu administratorowi, {zweryfikuj|ustal} jego dane i sposób bezpiecznego przekazania; w razie braku możliwości technicznych {poinformuj|wyjaśnij} wnioskodawcy powody i zaproponuj przekazanie danych jemu samemu."
+
+  - id: rodo-n-opis-sprzeciw-ludzki
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-sprzeciw
+    elementy:
+      - akapit: "Osoba, wobec której podjęto decyzję opartą wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, która wywołuje wobec niej skutki prawne lub w podobny sposób istotnie na nią wpływa, może żądać interwencji człowieka, wyrażenia własnego stanowiska i zakwestionowania decyzji."
+      - kroki:
+          - tekst: "Przekaż sprawę do pracownika, który nie uczestniczył w pierwotnej decyzji i ma uprawnienia do jej zmiany; {nie może to być|nie wolno wyznaczać} osoby, która jedynie zatwierdza rekomendację systemu bez jej analizy."
+          - tekst: "Umożliw wnioskodawcy przedstawienie dodatkowych informacji i dokumentów, wyznaczając na to termin {{fakt:termin.rodo.uzupelnienie-wniosku}}."
+          - tekst: "Dokonaj ponownej oceny z uwzględnieniem nowych okoliczności i {sporządź|przygotuj} notatkę z uzasadnieniem, w której wyjaśnisz, jakie czynniki zadecydowały o utrzymaniu lub zmianie decyzji."
+            podkroki:
+              - tekst: "Ponowną decyzję wydaj w terminie {{fakt:termin.rodo.ponowna-weryfikacja-decyzji}} od otrzymania kompletnych informacji."
+              - tekst: "Jeżeli decyzja jest utrzymana, poinformuj wnioskodawcę o prawie do wniesienia skargi i środkach ochrony."
+
+  - id: rodo-n-opis-sprzeciw-ograniczenie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-sprzeciw
+    elementy:
+      - akapit: "Ograniczenie przetwarzania może być zastosowane na czas weryfikacji prawidłowości danych, rozpatrzenia sprzeciwu albo gdy przetwarzanie jest niezgodne z prawem, ale wnioskodawca nie chce usunięcia danych. Dane objęte ograniczeniem są wyłącznie przechowywane."
+      - ustep: "W okresie ograniczenia przetwarzania:"
+        punkty:
+          - "dane {oznacza się|opatruje się} w systemie znacznikiem ograniczenia, który uniemożliwia ich wykorzystanie w procesach biznesowych, kampaniach i raportach;"
+          - "{wolno|można} je przetwarzać wyłącznie za zgodą wnioskodawcy, w celu ustalenia, dochodzenia lub obrony roszczeń, w celu ochrony praw innej osoby albo z ważnych względów interesu publicznego;"
+          - "{{fakt:jednostka.iod}} {wyznacza|ustala} termin przeglądu ograniczenia, nie dłuższy niż {{fakt:termin.rodo.ponowna-weryfikacja-decyzji}} od jego zastosowania;"
+          - "o uchyleniu ograniczenia {informuje się|zawiadamia się} wnioskodawcę przed jego zniesieniem."

@@ -1,0 +1,94 @@
+bloki:
+  # --- Wykrywanie i rejestracja incydentu
+  - id: incydenty-wykr-monitoring-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - akapit: "Wykrywanie incydentów opiera się nie tylko na zgłoszeniach pracowników, lecz także na ciągłym monitorowaniu systemów. {Podstawowym narzędziem monitorowania|Głównym narzędziem monitorowania} jest system {{fakt:incydent.siem}}, do którego trafiają dzienniki zdarzeń z kluczowych systemów Banku."
+      - kroki:
+          - tekst: "Reguły korelacji zdarzeń. Jednostka bezpieczeństwa {utrzymuje|prowadzi} zbiór reguł, które automatycznie podnoszą alert po wykryciu niepokojącego wzorca."
+            podkroki:
+              - tekst: "Reguły obejmują co najmniej serię nieudanych logowań, logowanie z nietypowej lokalizacji lub o nietypowej porze, nagłe zwiększenie liczby pobrań danych oraz zmiany uprawnień kont uprzywilejowanych."
+              - tekst: "Każdą regułę opisuje się w katalogu reguł: podaje się jej cel, źródła danych, próg uruchomienia, osobę odpowiedzialną i datę ostatniego przeglądu."
+              - tekst: "Reguły przegląda się co najmniej raz na pół roku oraz po każdym incydencie, który nie został wykryty automatycznie."
+          - tekst: "Obsługa alertów. {Każdy alert|Każde ostrzeżenie} wygenerowane przez system monitorowania jest {przypisywane|przydzielane} analitykowi dyżurnemu i wymaga rozstrzygnięcia."
+            podkroki:
+              - tekst: "Analityk ocenia alert w ciągu {{fakt:termin.incydent.klasyfikacja}} i oznacza go jako prawdziwy incydent, zdarzenie do dalszej obserwacji albo alarm fałszywy."
+              - tekst: "Alarm fałszywy uzasadnia się w notatce, a powtarzające się alarmy fałszywe są podstawą do zmiany progu reguły."
+              - tekst: "Alert oznaczony jako prawdziwy incydent jest rejestrowany zgodnie z zasadami opisanymi w kolejnych punktach."
+          - tekst: "Weryfikacja ciągłości monitorowania. Jednostka bezpieczeństwa codziennie {sprawdza|kontroluje}, czy wszystkie źródła dzienników przesyłają dane; brak danych ze źródła przez ponad godzinę traktuje się jako zdarzenie wymagające wyjaśnienia."
+
+  - id: incydenty-wykr-zrodla-zewnetrzne-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - akapit: "Informacje o zdarzeniach mogą pochodzić także spoza Banku. Źródłami zewnętrznymi są w szczególności zespół {{fakt:incydent.csirt}}, dostawcy usług, inne instytucje finansowe, organy ścigania oraz osoby postronne, w tym klienci i dziennikarze."
+      - kroki:
+          - tekst: "Przyjęcie informacji z zewnątrz. Informację o zdarzeniu otrzymaną od podmiotu zewnętrznego przyjmuje każdy pracownik, który ją otrzymał, i {niezwłocznie|bez zwłoki} przekazuje Dyżurnemu."
+            podkroki:
+              - tekst: "Pracownik nie potwierdza ani nie zaprzecza zasadności informacji, jeżeli nie jest do tego upoważniony; ogranicza się do podania, że sprawa zostanie przekazana właściwej jednostce."
+              - tekst: "Pracownik zapisuje dane kontaktowe nadawcy, dokładną treść informacji oraz czas jej otrzymania."
+          - tekst: "Weryfikacja wiarygodności. Dyżurny {sprawdza|ocenia} wiarygodność informacji, porównując ją z danymi z systemu monitorowania i rejestrem incydentów."
+            podkroki:
+              - tekst: "Jeżeli informacja pochodzi od nieznanego nadawcy, Dyżurny ustala możliwość jej weryfikacji niezależnym kanałem, na przykład przez oddzwonienie na numer z oficjalnej strony podmiotu."
+              - tekst: "Informacji o podatnościach i zagrożeniach otrzymanych od zespołu {{fakt:incydent.csirt}} nie ignoruje się nawet wtedy, gdy Bank nie odnotował żadnych niepokojących zdarzeń."
+          - tekst: "Wpis do rejestru. Informację przyjętą jako wiarygodną rejestruje się w systemie {{fakt:incydent.system-zgloszen}}, a w polu źródło zgłoszenia wpisuje się jej pochodzenie zewnętrzne."
+
+  - id: incydenty-wykr-rejestracja-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - akapit: "Rejestracja zgłoszenia jest pierwszą czynnością formalną w obsłudze zdarzenia. Zgłoszenie rejestruje się {nawet wtedy|także wtedy}, gdy jego zasadność budzi wątpliwości; decyzję o odrzuceniu zgłoszenia podejmuje się dopiero po jego zarejestrowaniu."
+      - kroki:
+          - tekst: "Dane obowiązkowe zgłoszenia. W formularzu {{fakt:incydent.formularz-zgloszenia}} Dyżurny zapisuje:"
+            podkroki:
+              - tekst: "datę i godzinę zdarzenia oraz datę i godzinę jego zgłoszenia;"
+              - tekst: "dane osoby zgłaszającej i sposób, w jaki zgłoszenie wpłynęło;"
+              - tekst: "opis zdarzenia własnymi słowami zgłaszającego, bez interpretacji;"
+              - tekst: "dotknięte systemy, usługi i grupy klientów, o ile są znane;"
+              - tekst: "podjęte dotychczas działania oraz osoby, które o zdarzeniu wiedzą."
+          - tekst: "Nadanie numeru. System {{fakt:incydent.system-zgloszen}} nadaje zgłoszeniu unikalny numer, który jest podawany zgłaszającemu i używany we wszystkich dalszych dokumentach i wiadomościach dotyczących zdarzenia."
+          - tekst: "Potwierdzenie przyjęcia. Dyżurny {potwierdza|przekazuje potwierdzenie} zgłaszającemu przyjęcie zgłoszenia, podaje jego numer i informuje, jak zgłaszający może dostarczyć dodatkowe informacje; potwierdzenia nie wysyła się do nadawców anonimowych."
+          - tekst: "Wpis w rejestrze. Zdarzenie wprowadza się do rejestru {{fakt:incydent.rejestr}} ze statusem „do oceny”; zmiana statusu wymaga wpisu zawierającego datę, godzinę i autora zmiany."
+
+  - id: incydenty-wykr-sygnaly-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - akapit: "Pracownicy {powinni|są obowiązani} znać typowe sygnały, które mogą wskazywać na incydent bezpieczeństwa. Poniższy katalog nie jest zamknięty; w razie wątpliwości zdarzenie należy zgłosić."
+      - kroki:
+          - tekst: "Sygnały dotyczące stacji roboczych i kont."
+            podkroki:
+              - tekst: "nagłe spowolnienie pracy urządzenia, nieoczekiwane okna lub komunikaty, zablokowanie plików albo żądanie okupu;"
+              - tekst: "wiadomości o logowaniach na konto, których pracownik nie wykonał, oraz powiadomienia o zmianie hasła, o którą nie wnioskował;"
+              - tekst: "nieznane urządzenia lub nośniki podłączone do sprzętu w miejscu pracy."
+          - tekst: "Sygnały dotyczące klientów."
+            podkroki:
+              - tekst: "kilku klientów zgłasza w krótkim czasie takie same nietypowe wiadomości, połączenia lub transakcje;"
+              - tekst: "klienci informują o stronach internetowych lub aplikacjach podszywających się pod Bank;"
+              - tekst: "nietypowe dyspozycje zmiany danych kontaktowych, po których następują dyspozycje wypłaty środków."
+          - tekst: "Sygnały dotyczące procesów i dokumentów."
+            podkroki:
+              - tekst: "dokumenty zawierające dane klientów pozostawione bez nadzoru lub wysłane na niewłaściwy adres;"
+              - tekst: "niezgodności w saldach lub zestawieniach, których nie da się wyjaśnić błędem operacyjnym;"
+              - tekst: "próby nakłonienia pracownika do ominięcia procedury przez osobę podającą się za przełożonego lub pracownika dostawcy."
+      - akapit: "Zgłoszenie sygnału, który okazał się nieistotny, nie rodzi odpowiedzialności zgłaszającego; zgłoszenie pozwala natomiast odpowiednio wcześnie uruchomić działania ograniczające skutki."
+
+  - id: incydenty-wykr-poza-godzinami-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - akapit: "Zgłoszenia wpływające poza godzinami pracy placówek i jednostek {są przyjmowane|obsługuje się} w takim samym trybie jak w dni robocze. Gotowość zapewnia całodobowy dyżur, a w sytuacjach o klasyfikacji wysokiej i krytycznej — dyżur rezerwowy."
+      - kroki:
+          - tekst: "Przyjęcie zgłoszenia w nocy i w dni wolne. Dyżurny przyjmuje zgłoszenie pod numerem {{fakt:incydent.dyzur-telefon}} lub z adresu {{fakt:incydent.dyzur-email}} i rejestruje je zgodnie z ogólnymi zasadami."
+          - tekst: "Wstępne ograniczenie skutków. Jeżeli zwłoka mogłaby spowodować istotną szkodę, Dyżurny podejmuje decyzję o niezbędnych działaniach tymczasowych."
+            podkroki:
+              - tekst: "Do działań tymczasowych należą: odłączenie urządzenia od sieci, zablokowanie konta, zawieszenie zlecenia płatniczego lub czasowe wyłączenie kanału elektronicznego."
+              - tekst: "Dyżurny nie podejmuje działań nieodwracalnych, takich jak usunięcie danych lub reinstalacja systemu, bez zgody Kierownika incydentu."
+          - tekst: "Wezwanie osób. Dyżurny wzywa Kierownika incydentu i niezbędnych członków Zespołu, korzystając z listy kontaktów alarmowych, a brak potwierdzenia odbioru wezwania w ciągu kwadransa skutkuje wezwaniem zastępcy."
+          - tekst: "Przekazanie sprawy. Rano następnego dnia roboczego Dyżurny przekazuje Kierownikowi incydentu pisemne podsumowanie działań podjętych w nocy, które włącza się do dziennika zdarzeń."

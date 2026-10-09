@@ -1,0 +1,135 @@
+bloki:
+  # --- Komunikacja i raportowanie (kroki)
+  - id: incydenty-komunikacja-kanaly
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Kanały komunikacji z Klientami. Komunikaty do Klientów przekazuje się łącznie lub alternatywnie przez:"
+            podkroki:
+              - tekst: "wiadomość w bankowości elektronicznej lub w aplikacji mobilnej;"
+              - tekst: "wiadomość SMS lub pocztę elektroniczną, wysyłane {wyłącznie|jedynie} na dane kontaktowe zapisane w Banku;"
+              - tekst: "komunikat na stronie {{fakt:bank.strona}};"
+              - tekst: "informację w placówkach i na infolinii {{fakt:kontakt.infolinia}};"
+              - tekst: "{w razie|w przypadku} potrzeby — list polecony lub rozmowę telefoniczną z Klientem, którego dotyczy incydent."
+          - tekst: "Zasady bezpieczeństwa komunikatów. Komunikaty nie zawierają odnośników do logowania ani próśb o podanie haseł, kodów lub numeru PIN. Klienta {informuje|powiadamia} się, że o prawdziwości wiadomości może upewnić się w placówce lub na infolinii, aby ograniczyć ryzyko podszywania się sprawców pod Bank."
+
+  - id: incydenty-komunikacja-media
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Komunikacja z mediami. Z mediami kontaktuje się {wyłącznie|jedynie} Jednostka komunikacji za zgodą Zarządu. Treść oświadczeń zatwierdza Jednostka prawna w zakresie ryzyka prawnego, a kierownik incydentu — w zakresie zgodności z faktami."
+            podkroki:
+              - tekst: "Oświadczenie publiczne {zawiera|obejmuje} tylko potwierdzone informacje i nie przesądza o przyczynach ani sprawcach incydentu."
+              - tekst: "Pracownicy, którzy otrzymają pytanie dziennikarza, nie udzielają odpowiedzi i przekazują kontakt do Jednostki komunikacji."
+              - tekst: "Wypowiedzi w mediach społecznościowych o incydencie w imieniu Banku wygłasza wyłącznie Jednostka komunikacji."
+          - tekst: "Monitorowanie reakcji. Jednostka komunikacji monitoruje publikacje i wpisy dotyczące incydentu i przekazuje kierownikowi incydentu informacje o nieprawdziwych lub szkodliwych doniesieniach."
+
+  - id: incydenty-komunikacja-organy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Zawiadomienie o przestępstwie. W razie uzasadnionego podejrzenia popełnienia przestępstwa Jednostka prawna w porozumieniu z Jednostką bezpieczeństwa składa zawiadomienie do właściwych organów ścigania i uzgadnia z nimi zakres współpracy."
+            podkroki:
+              - tekst: "{Zakres|Rozmiar} informacji przekazywanych organom ścigania musi być zgodny z przepisami o tajemnicy bankowej — zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+              - tekst: "Przekazanie materiału dowodowego organom ścigania {dokumentuje|rejestruje} się protokołem według formularza {{fakt:incydent.protokol-dowodow}}."
+              - tekst: "Pracownik Banku nie {informuje|powiadamia} osób podejrzewanych o toczących się czynnościach."
+          - tekst: "Współpraca z zespołem CSIRT. W incydentach o charakterze cyberataku Jednostka bezpieczeństwa może przekazać zespołowi CSIRT informacje o wskaźnikach naruszenia bezpieczeństwa (adresy, skróty plików, domeny) w formie pozbawionej danych Klientów. Przekazywanie takich informacji ułatwia ochronę innych instytucji, a Bank może uzyskać od zespołu wsparcie analityczne."
+          - tekst: "Inne instytucje. {Jeżeli|Gdy} incydent może wpływać na partnerów rozliczeniowych, operatorów systemów płatności lub inne instytucje finansowe, kierownik incydentu w porozumieniu z Jednostką zgodności informuje je w zakresie niezbędnym do ochrony ich systemów."
+
+  - id: incydenty-komunikacja-dostawcy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Komunikacja z dostawcami i partnerami. Dostawców, których usługi są dotknięte incydentem lub mogą być jego przyczyną, kontaktuje kierownik incydentu według kanałów wskazanych w umowach."
+            podkroki:
+              - tekst: "Każdą rozmowę z dostawcą {odnotowuje się|wpisuje się} w dzienniku zdarzeń."
+              - tekst: "Informacje przekazywane dostawcy ogranicza się do niezbędnych do rozwiązania problemu; dane Klientów nie są przekazywane bez podstawy prawnej i umowy powierzenia."
+              - tekst: "{Jeżeli|Gdy} dostawca nie reaguje w uzgodnionym czasie, kierownik incydentu eskaluje sprawę do osoby kierującej relacją z dostawcą i {informuje|powiadamia} dyrektora Jednostki bezpieczeństwa."
+
+  - id: incydenty-komunikacja-infolinia
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Instrukcja dla infolinii i placówek. Jednostka obsługi klienta otrzymuje od kierownika incydentu {zwięzłą|krótką} instrukcję, która zawiera:"
+            podkroki:
+              - tekst: "stan faktyczny w zakresie, w jakim można go przekazać Klientom;"
+              - tekst: "zalecenia, których należy udzielić Klientom (np. czasowe zaprzestanie korzystania z danej usługi, zmiana hasła);"
+              - tekst: "informację, jak postępować z Klientami, którzy zgłaszają straty;"
+              - tekst: "dane osoby w Jednostce obsługi klienta, do której kieruje się trudniejsze pytania."
+          - tekst: "Skrypt rozmowy. Pracownicy infolinii korzystają z {uzgodnionego|zatwierdzonego} skryptu rozmowy i nie {wychodzą poza|przekraczają} zawarte w nim informacje. Pytania, na które skrypt nie {odpowiada|daje odpowiedzi}, {rejestruje się|zapisuje się} i przekazuje kierownikowi incydentu."
+
+  - id: incydenty-komunikacja-zarzad
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Informowanie kierownictwa. Kierownictwo Banku jest {informowane o incydencie|powiadamiane} w zakresie {zależnym od|wynikającym z} poziomu ważności:"
+            podkroki:
+              - tekst: "poziom krytyczny — niezwłoczna informacja telefoniczna dla członka Zarządu nadzorującego ryzyko, a następnie raporty stanu w ustalonych odstępach;"
+              - tekst: "poziom wysoki — informacja dla dyrektorów departamentów dotkniętych incydentem oraz zbiorcza informacja w kwartalnym sprawozdaniu;"
+              - tekst: "poziom średni i niski — informacja w miesięcznym zestawieniu Jednostki bezpieczeństwa."
+          - tekst: "Zawartość informacji. Informacja dla kierownictwa jest {krótka|zwięzła} i {zawiera|wskazuje}: co się stało, jakie są skutki, co zrobiono, co planuje się zrobić i jakich decyzji {oczekuje się|wymaga się} od kierownictwa."
+
+  # --- Zabezpieczenie dowodów, przywrócenie i przegląd (kroki)
+  - id: incydenty-przywracanie-etapy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Etapowe wznawianie usług. Usługi wznawia się etapami, {rozpoczynając|zaczynając} od najważniejszych dla Klientów, a każdy etap kończy się weryfikacją poprawności działania. Kolejność etapów wynika z planu ciągłości działania, a odstępstwa wymagają zgody kierownika incydentu."
+            podkroki:
+              - tekst: "Etap 1 — usługi niezbędne do dostępu Klientów do środków: rachunki, wypłaty, płatności kartami."
+              - tekst: "Etap 2 — usługi płatnicze realizowane w bankowości elektronicznej oraz rozliczenia."
+              - tekst: "Etap 3 — pozostałe usługi, w tym wnioski, usługi doradcze i raportowe."
+          - tekst: "Komunikat o wznowieniu. Po wznowieniu każdego etapu Jednostka komunikacji {informuje|powiadamia} Klientów o przywróceniu usługi i, {o ile|jeżeli} to konieczne, o czynnościach, jakie powinni wykonać."
+
+  - id: incydenty-przywracanie-rekoncyliacja
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Rekoncyliacja po incydencie. Po przywróceniu systemów Jednostka operacji {przeprowadza|wykonuje} rekoncyliację operacji dokonanych w okresie incydentu."
+            podkroki:
+              - tekst: "porównuje salda rachunków Klientów z zapisami w systemie centralnym i w systemach rozliczeniowych;"
+              - tekst: "identyfikuje operacje zdublowane, utracone lub zaksięgowane z błędną datą;"
+              - tekst: "{przygotowuje|opracowuje} listę korekt wraz z uzasadnieniem i przekazuje ją do akceptacji kierownika incydentu;"
+              - tekst: "po wykonaniu korekt sporządza protokół z rekoncyliacji, który dołącza się do dokumentacji incydentu."
+          - tekst: "Odsetki i opłaty. {Jeżeli|Gdy} w wyniku błędu Klientowi naliczono opłaty lub odsetki, które nie byłyby naliczone w braku incydentu, Bank je koryguje z urzędu, bez konieczności składania wniosku przez Klienta."
+
+  - id: incydenty-przywracanie-monitoring
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Podwyższony monitoring. {Po przywróceniu usług|Po wznowieniu działania usług} Jednostka bezpieczeństwa utrzymuje podwyższony monitoring odtworzonych systemów przez okres uzgodniony z kierownikiem incydentu, nie krócej niż siedem dni dla incydentów o poziomie wysokim i krytycznym."
+            podkroki:
+              - tekst: "Monitoring obejmuje poszukiwanie śladów ponownego włamania, nietypowych połączeń i prób logowania na przywróconych kontach."
+              - tekst: "{Wszelkie anomalie zgłasza się|Każdą anomalię zgłasza się} {niezwłocznie|bez zbędnej zwłoki} kierownikowi incydentu, który może ponownie otworzyć incydent."
+          - tekst: "Ponowne otwarcie incydentu. Zamknięty incydent można ponownie otworzyć, {jeżeli|gdy} w ciągu {{fakt:termin.incydent.przeglad}} od zamknięcia ujawnią się nowe okoliczności wskazujące na jego dalsze trwanie albo na nieskuteczne usunięcie przyczyny."
+
+  - id: incydenty-przywracanie-ubezpieczenie
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Roszczenia i ubezpieczenie. {Jeżeli|Gdy} incydent spowodował szkodę, która może być przedmiotem roszczenia wobec dostawcy, sprawcy lub ubezpieczyciela, Jednostka prawna:"
+            podkroki:
+              - tekst: "{ustala|określa} dopuszczalne terminy zgłoszenia szkody i niezwłocznie je zachowuje;"
+              - tekst: "zbiera dokumentację niezbędną do dochodzenia roszczeń, korzystając z materiału dowodowego zabezpieczonego w trakcie incydentu;"
+              - tekst: "prowadzi korespondencję z ubezpieczycielem i dostawcą, uzgadniając jej treść z kierownikiem incydentu."
+          - tekst: "Ocena kar i sankcji. Jednostka zgodności {ocenia|sprawdza}, czy incydent może skutkować nałożeniem sankcji przez organ nadzoru lub organ ochrony danych, i {informuje|powiadamia} o tym Zarząd wraz z propozycją działań ograniczających takie ryzyko."

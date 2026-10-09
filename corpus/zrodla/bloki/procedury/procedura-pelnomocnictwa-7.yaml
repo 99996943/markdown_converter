@@ -1,0 +1,156 @@
+bloki:
+  - id: procedura-pelnomocnictwa-zakres-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zakres-dod
+    elementy:
+      - ustep: "Procedura obejmuje wszystkie kanały, w których pełnomocnik {może się legitymować|może powoływać się na} umocowanie, {to jest|a mianowicie}:"
+        punkty:
+          - "placówki Banku, w tym punkty obsługi Klientów firmowych;"
+          - "Infolinię, jednak wyłącznie w zakresie dyspozycji, które według zasad Banku mogą być składane telefonicznie przez pełnomocnika po jego uwierzytelnieniu;"
+          - "bankowość elektroniczną, z dostępem pełnomocnika nadawanym zgodnie z postanowieniami procedury;"
+          - "korespondencję pocztową i kurierską, w której do dyspozycji dołączono pełnomocnictwo."
+      - ustep: "Zasady procedury {stosuje się odpowiednio|stosuje się stosownie} do czynności, w których pełnomocnik działa wobec Banku w imieniu mocodawcy będącego osobą prawną, jednostką organizacyjną {niemającą|pozbawioną} osobowości prawnej albo zespołem osób wspólnie prowadzących rachunek, {jeżeli|o ile} umocowanie nie wynika bezpośrednio z przepisów lub rejestru."
+
+  - id: procedura-pelnomocnictwa-zakres-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zakres-dod
+    elementy:
+      - ustep: "W razie rozbieżności między procedurą a przepisami powszechnie obowiązującymi lub orzeczeniem sądu albo organu {stosuje się|należy stosować} przepisy lub orzeczenie, a o rozbieżności pracownik informuje {{param:wlasciciel}}. Procedura nie ogranicza obowiązków Banku wynikających z przepisów, w szczególności z {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - ustep: "W sprawach dotyczących dostępu pełnomocników do informacji objętych tajemnicą bankową stosuje się zasady ustalone przez Bank oraz wewnętrzne instrukcje ochrony tajemnicy. Pełnomocnik uzyskuje informacje o rachunku mocodawcy wyłącznie w zakresie {wynikającym z pełnomocnictwa|określonym w pełnomocnictwie} i dla celów jego {wykonywania|wykonania}."
+
+  - id: procedura-pelnomocnictwa-odp-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-odp-dod
+    elementy:
+      - ustep: "Pracownik nie {może uczestniczyć|jest uprawniony do uczestniczenia} w przyjęciu, weryfikacji lub zatwierdzeniu pełnomocnictwa, jeżeli jest mocodawcą lub pełnomocnikiem, jest z nimi spokrewniony lub spowinowacony w linii prostej albo w linii bocznej do drugiego stopnia, pozostaje w związku małżeńskim albo w stosunku przysposobienia, a także jeżeli istnieją inne okoliczności, które mogłyby budzić wątpliwości co do jego bezstronności."
+      - ustep: "O zaistnieniu takich okoliczności pracownik {niezwłocznie|bez zwłoki} informuje kierownika placówki, który {wyznacza|wskazuje} inną osobę do obsługi sprawy i odnotowuje to w karcie weryfikacji. Pracownik, który zataił okoliczności wyłączające go od udziału w sprawie, ponosi odpowiedzialność na zasadach określonych w regulaminie pracy i zasadach etyki zawodowej."
+
+  - id: procedura-pelnomocnictwa-def-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-definicja-dod
+    elementy:
+      - ustep: "{Ponadto|Dodatkowo} w procedurze {używa się|stosuje się} następujących określeń:"
+        punkty:
+          - "**Dyspozycja na wypadek śmierci** — oświadczenie posiadacza rachunku, w którym wskazuje on osobę uprawnioną do otrzymania środków po jego śmierci; nie jest pełnomocnictwem i podlega odrębnym zasadom;"
+          - "**Kontrola drugiej pary oczu** — {niezależne|odrębne} sprawdzenie dokumentów i wpisu w systemie przez osobę, która nie przyjmowała pełnomocnictwa;"
+          - "**Legalizacja** — poświadczenie przez polski organ konsularny autentyczności podpisu i pieczęci na dokumencie sporządzonym w państwie, które nie przystąpiło do konwencji haskiej;"
+          - "**Podpis poświadczony notarialnie** — podpis złożony wobec notariusza albo uznany przez osobę podpisującą za własny wobec notariusza, z odpowiednią wzmianką na dokumencie;"
+          - "**Reprezentacja łączna** — sposób reprezentacji, w którym oświadczenia w imieniu podmiotu składają co najmniej dwie osoby działające wspólnie;"
+          - "**Rejestr dokumentów zastrzeżonych** — zbiór informacji o dokumentach utraconych, skradzionych lub unieważnionych, z którego korzysta Bank przy weryfikacji tożsamości;"
+          - "**Środki bezpieczeństwa finansowego** — czynności podejmowane przez Bank w celu identyfikacji i weryfikacji Klienta, jego pełnomocników i beneficjentów rzeczywistych oraz bieżącej oceny relacji, wynikające z {{ref:akt:dz-u-2025-644-aml}}."
+
+  - id: procedura-pelnomocnictwa-przyjecie-opc-5
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy pełnomocnictwo jest {przedkładane|przesyłane} w kanale zdalnym, {zastosuj|stosuj} odrębne zasady przyjmowania."
+            podkroki:
+              - tekst: "Pełnomocnictwa przesłanego pocztą elektroniczną lub w bankowości elektronicznej nie przyjmuj jako podstawy do dysponowania rachunkiem, jeżeli nie jest opatrzone podpisem poświadczonym notarialnie albo kwalifikowanym podpisem elektronicznym mocodawcy."
+              - tekst: "Po otrzymaniu skanu dokumentu skontaktuj się z mocodawcą pod numerem zapisanym w systemie i potwierdź wolę ustanowienia pełnomocnika; wynik rozmowy odnotuj w karcie weryfikacji."
+              - tekst: "Zaproś pełnomocnika do placówki w celu złożenia wzoru podpisu i okazania dokumentu tożsamości; do tego czasu rejestracja pełnomocnictwa jest wstrzymana."
+          - tekst: "W przypadku pełnomocnictwa opatrzonego kwalifikowanym podpisem elektronicznym sprawdź ważność certyfikatu i integralność dokumentu za pomocą narzędzia weryfikacji podpisu."
+
+  - id: procedura-pelnomocnictwa-weryfikacja-opc-5
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "W przypadku mocodawcy, który nie może stawić się w placówce z powodu choroby lub pobytu w zakładzie opieki, {zorganizuj|uzgodnij} wizytę pracownika poza placówką."
+            podkroki:
+              - tekst: "Wizytę przeprowadzają dwie osoby, w tym jedna upoważniona przez kierownika placówki; wyjazd odnotowuje się w ewidencji wyjazdów."
+              - tekst: "Podczas wizyty sprawdź tożsamość mocodawcy, upewnij się, że rozumie on znaczenie czynności, i poproś o podpisanie formularza F-PEŁ-01 oraz karty wzorów podpisów."
+              - tekst: "Gdy stan zdrowia mocodawcy budzi wątpliwości co do świadomości lub swobody wyrażenia woli, nie przyjmuj pełnomocnictwa i skonsultuj się z kierownikiem placówki."
+          - tekst: "Gdy wizyta jest niemożliwa, zaproponuj mocodawcy ustanowienie pełnomocnictwa z podpisem poświadczonym notarialnie, które notariusz może sporządzić poza kancelarią."
+
+  - id: procedura-pelnomocnictwa-zagraniczne-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Przy pełnomocnictwie zagranicznym przeznaczonym do wypłat lub przelewów poza granice kraju {zastosuj|stosuj} dodatkowe środki ostrożności."
+            podkroki:
+              - tekst: "Zapytaj pełnomocnika o cel i odbiorcę transakcji oraz zapisz odpowiedź w opisie dyspozycji."
+              - tekst: "Przy przelewach walutowych i międzynarodowych porównaj dane odbiorcy z listami sankcyjnymi w module KYC-PRZYKŁAD."
+              - tekst: "Gdy kwota transakcji przekracza {{fakt:pelnomocnictwo.limit.druga-weryfikacja}}, wymagaj zatwierdzenia kierownika placówki oraz potwierdzenia z mocodawcą."
+          - tekst: "Nie przeliczaj kwot po kursie innym niż wynikający z tabeli kursów Banku obowiązującej w chwili realizacji dyspozycji, nawet jeżeli pełnomocnik przedstawia inne uzgodnienia."
+
+  - id: procedura-pelnomocnictwa-firmy-opc-5
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "Przy udzielaniu pełnomocnictw przez Klienta firmowego do dysponowania rachunkiem {sprawdź|zbadaj} zgodność umocowania z zasadami wewnętrznymi podmiotu."
+            podkroki:
+              - tekst: "Zwróć uwagę, czy statut lub umowa spółki nie wymaga zgody rady nadzorczej lub zgromadzenia wspólników na ustanowienie pełnomocnika do czynności o określonej wartości."
+              - tekst: "Zapytaj osoby reprezentujące, czy limity kwotowe pełnomocnika zostały ustalone w uchwale; ustaw je w module pełnomocnictw zgodnie z jej treścią."
+              - tekst: "Nie przyjmuj pełnomocnictwa dla osoby, która jest jednocześnie jedynym wspólnikiem i członkiem zarządu, jeżeli dokument wskazuje tę osobę zarówno jako mocodawcę, jak i pełnomocnika, bez wskazania odrębnych uprawnień."
+          - tekst: "Dla limitów przelewów pełnomocnika nie ustalaj wartości wyższych niż limit jednorazowy przelewu Klienta firmowego, wynoszący {{fakt:limit.firma.przelew-jednorazowy}}."
+
+  - id: procedura-pelnomocnictwa-rejestracja-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-rejestracja
+    elementy:
+      - kroki:
+          - tekst: "Co {{fakt:pelnomocnictwo.termin.potwierdzenie-aktualnosci}} przeprowadź potwierdzenie aktualności pełnomocnictw bezterminowych."
+            podkroki:
+              - tekst: "Wygeneruj z modułu pełnomocnictw listę pełnomocnictw, dla których minął termin potwierdzenia, i skontaktuj się z mocodawcami."
+              - tekst: "Poproś o potwierdzenie, że pełnomocnictwo nie zostało odwołane oraz że dane pełnomocnika nie uległy zmianie; potwierdzenie możesz przyjąć w placówce, w bankowości elektronicznej lub pisemnie."
+              - tekst: "Gdy mocodawca nie odpowiada mimo dwóch prób kontaktu, zgłoś sprawę kierownikowi placówki; ograniczenie uprawnień pełnomocnika wymaga jego decyzji."
+          - tekst: "Zapisz wynik potwierdzenia w systemie i ustaw datę kolejnego przeglądu."
+
+  - id: procedura-pelnomocnictwa-wygasniecie-opc-5
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "Przy wygaśnięciu pełnomocnictwa wskutek śmierci pełnomocnika {zachowaj|zastosuj} następujące zasady."
+            podkroki:
+              - tekst: "Wyłącz uprawnienia zmarłego w systemie i w bankowości elektronicznej; zablokuj karty wydane pełnomocnikowi."
+              - tekst: "Poinformuj mocodawcę o wygaśnięciu pełnomocnictwa i o możliwości ustanowienia nowego pełnomocnika."
+              - tekst: "Nie przekazuj spadkobiercom pełnomocnika żadnych informacji o rachunku mocodawcy."
+          - tekst: "Zwróć uwagę na dyspozycje zlecone przez zmarłego pełnomocnika, które nie zostały wykonane, i wstrzymaj je do czasu decyzji mocodawcy."
+
+  - id: procedura-pelnomocnictwa-szczegolne-opc-5
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-opc
+    elementy:
+      - kroki:
+          - tekst: "Gdy pełnomocnik zgłasza się po zamknięciu rachunku lub po wypowiedzeniu umowy, {sprawdź|zbadaj} zakres jego uprawnień."
+            podkroki:
+              - tekst: "Po zamknięciu rachunku pełnomocnictwo do niego wygasa; pełnomocnik nie może żądać wydania środków ani dokumentów dotyczących rachunku, chyba że pełnomocnictwo obejmuje także czynności związane z rozliczeniem umowy."
+              - tekst: "W przypadku wypowiedzenia umowy przez Bank pełnomocnik może składać dyspozycje wyłącznie w okresie wypowiedzenia i w zakresie wynikającym z pełnomocnictwa."
+              - tekst: "Wątpliwości co do zakresu uprawnień w takich sytuacjach rozstrzygaj z kierownikiem placówki, nie realizując dyspozycji do czasu ich wyjaśnienia."
+          - tekst: "Gdy pełnomocnik składa zawiadomienie o wszczęciu postępowania egzekucyjnego lub spadkowego w sprawie mocodawcy, przekaż pismo do właściwej komórki zgodnie z procedurą obsługi tytułów wykonawczych i spraw spadkowych."
+
+  - id: procedura-pelnomocnictwa-kontrola-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-kontrola
+    elementy:
+      - ustep: "Wyniki kontroli kwartalnej, o której mowa w procedurze, {{fakt:pelnomocnictwo.jednostka.weryfikacja}} {przedstawia|przekazuje} właścicielowi procedury w formie {raportu|sprawozdania} zawierającego liczbę zbadanych pełnomocnictw, liczbę stwierdzonych nieprawidłowości z podziałem na kategorie (brak dokumentów, brak zatwierdzenia, błędny zakres, brak wzoru podpisu, opóźnienie odwołania) oraz rekomendacje."
+      - ustep: "Raport {trafia|jest przekazywany} także do komórki „{{fakt:jednostka.zgodnosc}}” oraz, w zakresie dotyczącym ryzyka operacyjnego, do komórki „{{fakt:jednostka.ryzyko}}”. Rekomendacje mające wpływ na kształt procedury są omawiane na posiedzeniu właściciela procedury i komórek uczestniczących, a ich realizację odnotowuje się w protokole."
+
+  - id: procedura-pelnomocnictwa-archiwum-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-archiwum
+    elementy:
+      - ustep: "Pracownik, który {odebrał|przyjął} dokument od Klienta, odpowiada za jego prawidłowe {opisanie|oznaczenie} i przekazanie do archiwum. Przy przekazaniu {stosuje się|obowiązują} zasady:"
+        punkty:
+          - "dokumenty dotyczące jednego pełnomocnictwa przechowuje się razem, w kolejności chronologicznej, w teczce oznaczonej numerem sprawy i datą rejestracji;"
+          - "dokumenty zawierające dane szczególnie chronione, takie jak odpisy orzeczeń sądowych lub dokumentacja medyczna, przechowuje się w oddzielnej, zamkniętej części teczki;"
+          - "dokumenty, które utraciły moc, oznacza się adnotacją „wygasło” z datą i podpisem pracownika, nie usuwając ich z teczki;"
+          - "wypożyczenie dokumentu z archiwum wymaga zgody kierownika placówki i wpisu do ewidencji wypożyczeń."
+      - ustep: "Dokumenty przechowywane w postaci elektronicznej {zabezpiecza się|chroni się} przed nieuprawnioną zmianą i utratą, w szczególności przez kopie zapasowe wykonywane zgodnie z polityką bezpieczeństwa informacji Banku."

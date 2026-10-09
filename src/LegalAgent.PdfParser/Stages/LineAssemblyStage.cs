@@ -25,6 +25,12 @@ public sealed class LineAssemblyStage : IPipelineStage
     /// <summary>Glyphs at least this fraction of the seed size extend the core box of a line.</summary>
     private const double CoreSizeRatio = 0.9;
 
+    /// <summary>
+    /// Glyphs below this fraction of the seed size are markers (superscripts, footnote references) that may join a line
+    /// by vertical overlap even far to the side; larger ones there are text of another line.
+    /// </summary>
+    private const double MarkerSizeRatio = 0.7;
+
     private const double MaxLeadingInFontSizes = 3.0;
 
     /// <summary>Horizontal distance (in ems) within which a glyph may join a line by vertical overlap alone.</summary>
@@ -248,6 +254,7 @@ public sealed class LineAssemblyStage : IPipelineStage
             LayoutGlyph glyph = page.Glyphs[index];
             LineBuilder? best = null;
             double bestDelta = double.MaxValue;
+            bool bestFar = true;
 
             foreach (LineBuilder line in lines)
             {
@@ -256,11 +263,15 @@ public sealed class LineAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                // A marker (a small raised glyph after the last word of its line) joins the line beside it rather than one
+                // far to the side whose baseline happens to be nearer — a line of the other column (FR-030).
                 double delta = Math.Abs(line.Baseline - glyph.Baseline);
-                if (delta < bestDelta)
+                bool far = line.IsFarMarker(glyph);
+                if ((bestFar && !far && best is not null) || (far == bestFar && delta < bestDelta) || best is null)
                 {
                     best = line;
                     bestDelta = delta;
+                    bestFar = far;
                 }
             }
 
@@ -486,13 +497,28 @@ public sealed class LineAssemblyStage : IPipelineStage
             }
         }
 
+        // The leading is the distance to the next line below in the same column (horizontally overlapping): lines of two
+        // columns with offset baselines interleave top to bottom.
         var distances = new List<double>();
         foreach (List<(LayoutLine Line, double Size)> lines in perPage)
         {
             for (int i = 0; i + 1 < lines.Count; i++)
             {
                 (LayoutLine a, double sa) = lines[i];
-                (LayoutLine b, double sb) = lines[i + 1];
+                int j = i + 1;
+                while (j < lines.Count
+                    && (lines[j].Line.Box.Right <= a.Box.Left || lines[j].Line.Box.Left >= a.Box.Right)
+                    && lines[j].Line.Baseline - a.Baseline <= bodySize * MaxLeadingInFontSizes)
+                {
+                    j++;
+                }
+
+                if (j == lines.Count)
+                {
+                    continue;
+                }
+
+                (LayoutLine b, double sb) = lines[j];
                 if (a.Zone != LineZone.Body || b.Zone != LineZone.Body || sa != bodySize || sb != bodySize)
                 {
                     continue;
@@ -553,15 +579,23 @@ public sealed class LineAssemblyStage : IPipelineStage
             }
 
             // Vertical overlap catches raised or lowered glyphs (superscripts, footnote markers); a full-size glyph far to
-            // the side with another baseline belongs to a different line, e.g. of the other column (FR-030).
+            // the side with another baseline belongs to a different line, e.g. of the other column (FR-030) — also body
+            // text beside a larger heading there.
             double distance = Math.Max(0, Math.Max(_left - glyph.Box.Right, glyph.Box.Left - _right));
-            if (distance > NearGlyphEm * smaller && glyph.PointSize >= CoreSizeRatio * _seedSize)
+            if (distance > NearGlyphEm * smaller && glyph.PointSize >= MarkerSizeRatio * _seedSize)
             {
                 return false;
             }
 
             double minHeight = Math.Min(_core.Height, glyph.Box.Height);
             return minHeight > 0 && _core.VerticalOverlap(glyph.Box) / minHeight >= layout.LineOverlapRatio;
+        }
+
+        /// <summary>A marker-sized glyph more than <see cref="NearGlyphEm"/> to the side of the line's glyphs.</summary>
+        public bool IsFarMarker(LayoutGlyph glyph)
+        {
+            double distance = Math.Max(0, Math.Max(_left - glyph.Box.Right, glyph.Box.Left - _right));
+            return glyph.PointSize < MarkerSizeRatio * _seedSize && distance > NearGlyphEm * _seedSize;
         }
 
         public void Add(LayoutGlyph glyph, int index)

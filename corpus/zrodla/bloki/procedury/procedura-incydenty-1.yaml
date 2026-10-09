@@ -1,0 +1,138 @@
+bloki:
+  - id: incydenty-cel
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Celem procedury jest {zapewnienie|ustanowienie} jednolitego, {szybkiego|sprawnego} i udokumentowanego sposobu postępowania w przypadku wystąpienia w Banku incydentu bezpieczeństwa lub incydentu operacyjnego, tak aby {ograniczyć|zminimalizować} jego skutki dla Klientów, ciągłości działania Banku i bezpieczeństwa {przetwarzanych|chronionych} informacji."
+      - ustep: "Procedura {określa|reguluje} w szczególności:"
+        punkty:
+          - "źródła zgłoszeń o incydentach oraz sposób ich {przyjmowania|rejestrowania} w Rejestrze;"
+          - "zasady klasyfikacji incydentów i nadawania im poziomu ważności;"
+          - "skład i zadania Zespołu oraz podział ról w trakcie obsługi incydentu;"
+          - "działania mające na celu ograniczenie rozprzestrzeniania się incydentu i usunięcie jego przyczyn;"
+          - "zasady komunikacji z Klientami, z organem nadzoru oraz z podmiotami zewnętrznymi;"
+          - "{terminy|ramy czasowe} zgłaszania incydentów poważnych oraz naruszeń ochrony danych osobowych;"
+          - "zabezpieczanie materiału dowodowego, przywracanie działania usług i przegląd po incydencie;"
+          - "zasady testowania procedury i prowadzenia ćwiczeń."
+      - akapit: "Procedura służy także {wypełnieniu|realizacji} obowiązków Banku wynikających z przepisów o usługach płatniczych, Prawa bankowego oraz przepisów o ochronie danych osobowych, a także wymogów organu nadzoru w zakresie {zarządzania|kontroli} ryzyka operacyjnego i ryzyka technologicznego."
+
+  - id: incydenty-zakres
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Procedurę stosuje się do każdego incydentu, który {wpływa na|ma wpływ na} systemy informatyczne, procesy, dane, lokale lub pracowników Banku. Dotyczy to także incydentów powstałych po stronie dostawców usług zewnętrznych, jeżeli wywołują one skutki w działalności Banku."
+      - ustep: "Procedura obejmuje incydenty następujących rodzajów:"
+        punkty:
+          - tekst: "incydenty bezpieczeństwa informacji, w szczególności:"
+            litery:
+              - "nieuprawniony dostęp do systemów, danych lub rachunków Klientów;"
+              - "złośliwe oprogramowanie, w tym oprogramowanie szyfrujące dane w celu wymuszenia okupu;"
+              - "ataki typu odmowa usługi na kanały elektroniczne Banku;"
+              - "wyłudzenie danych uwierzytelniających Klientów lub pracowników (phishing, vishing, smishing);"
+          - tekst: "incydenty operacyjne, w szczególności:"
+            litery:
+              - "awarie systemów centralnych, w tym systemu centralnego {{fakt:incydent.system-cbs}}, oraz systemów rozliczeniowych;"
+              - "niedostępność bankowości elektronicznej, bankomatów lub terminali płatniczych;"
+              - "błędy w przetwarzaniu transakcji prowadzące do nieprawidłowych obciążeń lub uznań rachunków;"
+              - "niedostępność kluczowych dostawców lub podwykonawców;"
+          - "incydenty związane z bezpieczeństwem fizycznym, jeżeli mogą skutkować utratą informacji lub środków Klientów;"
+          - "naruszenia ochrony danych osobowych."
+      - akapit: "Procedura obowiązuje wszystkich pracowników Banku, osoby świadczące pracę na podstawie umów cywilnoprawnych oraz pracowników podmiotów zewnętrznych, którzy mają dostęp do systemów lub danych Banku. Obowiązek zgłoszenia incydentu dotyczy każdej z tych osób, {niezależnie od|bez względu na} zajmowanego stanowiska."
+      - akapit: "Procedury nie stosuje się do {zwykłych|rutynowych} zgłoszeń serwisowych niewpływających na bezpieczeństwo lub ciągłość działania, które obsługuje się w trybie wsparcia użytkowników. Reklamacje Klientów rozpatruje się według odrębnych zasad; jeżeli reklamacja {ujawnia|wskazuje na} incydent, pracownik postępuje zgodnie z niniejszą procedurą."
+
+  - id: incydenty-podstawy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Procedurę opracowano na podstawie przepisów powszechnie obowiązujących oraz regulacji wewnętrznych Banku."
+      - ustep: "Z przepisów powszechnie obowiązujących {istotne są|szczególne znaczenie mają}:"
+        punkty:
+          - "obowiązki dostawców usług płatniczych w zakresie bezpieczeństwa i zgłaszania poważnych incydentów określa {{ref:akt:dz-u-2024-30-uslugi-platnicze}};"
+          - "wymogi dotyczące zarządzania ryzykiem, kontroli wewnętrznej i ciągłości działania banków wynikają z przepisów prawa bankowego — zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}};"
+          - "zasady postępowania {w razie|w przypadku} naruszenia ochrony danych osobowych określa {{ref:akt:dz-u-2019-1781-ochrona-danych}} oraz rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679."
+      - ustep: "Dokumenty wewnętrzne, z którymi procedura jest {powiązana|związana}, to:"
+        punkty:
+          - "polityka bezpieczeństwa informacji Banku;"
+          - "plan ciągłości działania oraz plany awaryjnego odtwarzania systemów;"
+          - "instrukcja zarządzania uprawnieniami i dostępem do systemów;"
+          - "procedura obsługi reklamacji Klientów;"
+          - "procedura obsługi wniosków osób, których dane dotyczą."
+      - akapit: "W razie rozbieżności między procedurą a przepisami powszechnie obowiązującymi lub wytycznymi organu nadzoru stosuje się te przepisy lub wytyczne, a właściciel procedury {niezwłocznie|bez zbędnej zwłoki} wszczyna tryb jej zmiany."
+
+  - id: incydenty-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Za obsługę incydentów w Banku {odpowiadają|są odpowiedzialne} jednostki i osoby wymienione poniżej. Zakres ich zadań dotyczy {wszystkich faz|każdej fazy} obsługi incydentu: od wykrycia po przegląd końcowy. Zadania pozostałych jednostek opisano w dalszych częściach procedury."
+      - ustep: "**Pracownik** każdej jednostki Banku:"
+        punkty:
+          - "zgłasza każde zauważone zdarzenie wskazujące na incydent w terminie {{fakt:termin.incydent.zgloszenie-pracownika}} od jego zauważenia;"
+          - "nie podejmuje na własną rękę działań naprawczych, które mogłyby {zatrzeć|zniekształcić} ślady incydentu;"
+          - "stosuje się do poleceń Zespołu wydanych w trakcie obsługi incydentu."
+      - ustep: "**Kierownik jednostki organizacyjnej:**"
+        punkty:
+          - "zapewnia znajomość procedury wśród podległych pracowników, w tym przeszkolenie nowych pracowników w terminie {{fakt:termin.incydent.szkolenie-wstepne}} od zatrudnienia;"
+          - "wyznacza osobę kontaktową do spraw incydentów w swojej jednostce;"
+          - "udostępnia pracowników i zasoby potrzebne do obsługi incydentu."
+      - ustep: "**{{fakt:jednostka.bezpieczenstwo}}**, jako właściciel procedury:"
+        punkty:
+          - "prowadzi Rejestr i {nadzoruje|kontroluje} jego kompletność;"
+          - "kieruje pracami Zespołu i wyznacza kierownika incydentu;"
+          - "dokonuje klasyfikacji incydentów i zatwierdza zmianę ich poziomu ważności;"
+          - "przygotowuje zawiadomienia dla organu nadzoru i koordynuje współpracę z zespołem CSIRT;"
+          - "odpowiada za aktualność procedury, testy i ćwiczenia."
+      - ustep: "**{{fakt:incydent.jednostka.informatyka}}** odpowiada za {techniczną obsługę incydentu|działania techniczne}: izolowanie systemów, analizę techniczną, usunięcie przyczyn i przywrócenie działania usług, a także za zabezpieczanie logów i obrazów systemów."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** ocenia, czy incydent wymaga zawiadomienia organu nadzoru, opiniuje treść zawiadomień i monitoruje realizację zaleceń po incydencie."
+      - ustep: "**{{fakt:jednostka.iod}}** ocenia, czy incydent stanowi naruszenie ochrony danych osobowych, określa ryzyko dla osób, których dane dotyczą, oraz {przygotowuje|opracowuje} zgłoszenie do organu ochrony danych i powiadomienia osób zainteresowanych."
+
+  - id: incydenty-definicje
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - ustep: "Na potrzeby procedury przyjmuje się dodatkowo następujące określenia:"
+        punkty:
+          - "**Incydent** — zdarzenie, które {zagraża|godzi w} poufności, integralności lub dostępności informacji albo ciągłości działania usług, bądź jest {podejrzewane|uznawane} o spowodowanie takiego naruszenia;"
+          - "**Incydent bezpieczeństwa** — incydent związany z nieuprawnionym lub nieprawidłowym działaniem wobec informacji, systemów lub osób;"
+          - "**Incydent operacyjny** — incydent wynikający z awarii, błędu lub zakłócenia procesów, systemów albo dostawców, niebędący działaniem celowym;"
+          - "**Incydent poważny** — incydent o poziomie ważności krytycznym lub wysokim, spełniający kryteria zgłoszenia organowi nadzoru;"
+          - "**Organ nadzoru** — {{fakt:incydent.organ-nadzoru}} właściwy dla Banku, któremu przekazuje się zawiadomienia o incydentach poważnych;"
+          - "**CSIRT** — {{fakt:incydent.csirt}}, z którym Bank wymienia informacje o zagrożeniach;"
+          - "**Naruszenie ochrony danych osobowych** — naruszenie bezpieczeństwa prowadzące do przypadkowego lub bezprawnego zniszczenia, utraty, zmiany, nieuprawnionego ujawnienia danych osobowych lub dostępu do nich;"
+          - "**Kierownik incydentu** — osoba wyznaczona przez Jednostkę bezpieczeństwa, która koordynuje obsługę konkretnego incydentu;"
+          - "**Zespół** — {{fakt:incydent.zespol}}, złożony z przedstawicieli jednostek wskazanych w procedurze i powoływany do obsługi incydentów o poziomie wysokim i krytycznym;"
+          - "**Rejestr** — centralny rejestr incydentów o nazwie {{fakt:incydent.rejestr}}, prowadzony w systemie zgłoszeń {{fakt:incydent.system-zgloszen}};"
+          - "**System SIEM** — system monitorowania zdarzeń {{fakt:incydent.siem}}, który zbiera i koreluje zdarzenia z systemów informatycznych;"
+          - "**Pokój operacyjny** — {{fakt:incydent.pokoj-operacyjny}}, w którym prowadzi się dziennik zdarzeń i wymianę ustaleń podczas obsługi incydentu;"
+          - "**Jednostka bezpieczeństwa** — {{fakt:jednostka.bezpieczenstwo}}; **Jednostka informatyki** — {{fakt:incydent.jednostka.informatyka}}; **Jednostka zgodności** — {{fakt:jednostka.zgodnosc}}; **Jednostka operacji** — {{fakt:jednostka.operacje}}; **Jednostka prawna** — {{fakt:jednostka.prawny}};"
+          - "**Jednostka komunikacji** — {{fakt:incydent.jednostka.komunikacja}}; **Jednostka obsługi klienta** — {{fakt:jednostka.obsluga-klienta}}; **Jednostka ciągłości** — {{fakt:incydent.jednostka.ciaglosc}}; **Jednostka ryzyka** — {{fakt:jednostka.ryzyko}}; **Jednostka audytu** — {{fakt:incydent.jednostka.audyt}}; **Jednostka kadr** — {{fakt:incydent.jednostka.kadry}};"
+          - "**Inspektor** — {{fakt:jednostka.iod}}; **Zarząd** — {{fakt:jednostka.zarzad}};"
+          - "**Ograniczenie skutków** — działania zatrzymujące rozprzestrzenianie się incydentu bez usuwania jego przyczyny;"
+          - "**Materiał dowodowy** — logi, obrazy dysków, zapisy rozmów, wiadomości i inne dane, które mogą służyć ustaleniu przebiegu incydentu;"
+          - "**RTO i RPO** — odpowiednio maksymalny akceptowalny czas przywrócenia usługi oraz maksymalna akceptowalna utrata danych, określone w planie ciągłości działania."
+
+  - id: incydenty-schemat
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Poniższy schemat przedstawia {ogólny|podstawowy} przebieg obsługi incydentu. Szczegółowe zasady dla poszczególnych etapów opisano w dalszej części procedury."
+      - schemat:
+          - nazwa: "Wykrycie i zgłoszenie"
+            wyjasnienie: "Incydent jest wykrywany przez systemy monitorujące, pracownika lub Klienta. Zgłoszenie trafia do systemu zgłoszeń {{fakt:incydent.system-zgloszen}}."
+          - nazwa: "Rejestracja i klasyfikacja"
+            wyjasnienie:
+              - "Dyżurny Jednostki bezpieczeństwa zakłada wpis w Rejestrze."
+              - "Następnie nadaje poziom ważności zgodnie z macierzą klasyfikacji."
+          - nazwa: "Ograniczenie skutków"
+            wyjasnienie: "Zespół zatrzymuje rozprzestrzenianie się incydentu i zabezpiecza ślady."
+          - nazwa: "Komunikacja i raportowanie"
+            wyjasnienie: "Informowani są Klienci, kierownictwo, organ nadzoru oraz inne uprawnione podmioty w terminach określonych procedurą."
+          - nazwa: "Usunięcie i przywrócenie"
+            wyjasnienie: "Usuwa się przyczynę incydentu i przywraca działanie usług według priorytetów ciągłości działania."
+          - nazwa: "Przegląd i wnioski"
+            wyjasnienie: "Po zamknięciu incydentu {przeprowadza|wykonuje} się przegląd, a zalecenia wprowadza do planu działań."

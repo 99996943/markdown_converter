@@ -1,0 +1,174 @@
+bloki:
+  - id: procedura-aml-kyc-krok-ewd-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "{Zastosuj|Stosuj} dodatkowe środki wobec relacji z instytucją korespondencką spoza Europejskiego Obszaru Gospodarczego."
+            podkroki:
+              - tekst: "Zbierz informacje o charakterze działalności instytucji, jej reputacji i jakości nadzoru, któremu podlega."
+              - tekst: "Oceń system przeciwdziałania praniu pieniędzy stosowany przez instytucję i uzyskaj jego opis na piśmie."
+              - tekst: "Relację zatwierdza członek zarządu odpowiedzialny za przeciwdziałanie praniu pieniędzy po zasięgnięciu opinii komórki zgodności ({{fakt:jednostka.zgodnosc}})."
+          - tekst: "Zastosuj środki wzmocnione wobec klienta, który nie był obecny przy identyfikacji, jeśli wynik scoringu jest wysoki."
+            podkroki:
+              - tekst: "Zażądaj dodatkowego dokumentu potwierdzającego tożsamość lub potwierdzenia ze strony innej instytucji obowiązanej."
+              - tekst: "Pierwszą transakcję zleć wyłącznie z rachunku prowadzonego przez instytucję kredytową w państwie o równoważnych wymogach."
+          - tekst: "{Zastosuj|Zapewnij} szczegółową analizę dla skomplikowanych lub nietypowo dużych transakcji."
+            podkroki:
+              - tekst: "Ustal ekonomiczny cel transakcji, kontrahentów i przebieg środków; zapisz wnioski."
+              - tekst: "Jeżeli cel jest niejasny, zwiększ intensywność monitorowania relacji i poinformuj {{fakt:aml.zespol-analiz}}."
+          - tekst: "Przechowaj wyniki zastosowania środków wzmocnionych tak samo jak dokumentację podstawową."
+
+  - id: procedura-aml-kyc-krok-ewd-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "Zbadaj rodzinę i bliskich współpracowników PEP."
+            podkroki:
+              - tekst: "Za członków rodziny uznaj małżonka, dzieci i ich małżonków, rodziców oraz osoby pozostające we wspólnym pożyciu."
+              - tekst: "Za bliskiego współpracownika uznaj osobę będącą współwłaścicielem osoby prawnej wraz z PEP albo osobę, która jest jedynym beneficjentem konstrukcji prawnej założonej na rzecz PEP."
+              - tekst: "Wobec członków rodziny i bliskich współpracowników zastosuj te same środki wzmocnione, co wobec samego PEP."
+          - tekst: "{Dokonaj|Przeprowadź} oceny ryzyka krajowego PEP."
+            podkroki:
+              - tekst: "Stanowiska krajowe i zagraniczne oceniaj według jednolitych kryteriów, uwzględniając rangę stanowiska i dostęp do środków publicznych."
+              - tekst: "Po upływie {{fakt:termin.aml.pep-okres-po-funkcji}} od zaprzestania pełnienia funkcji dokonaj ponownej oceny; jeśli ryzyko jest nadal wysokie, utrzymaj środki wzmocnione."
+          - tekst: "Potwierdź źródło majątku PEP z co najmniej dwóch niezależnych źródeł, np. oświadczenia majątkowego i dokumentów bankowych."
+          - tekst: "Monitoruj relację z PEP w sposób ciągły i dokonuj przeglądu {{fakt:termin.aml.przeglad-wysokie}}."
+
+  - id: procedura-aml-kyc-krok-ewd-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "{Utrzymuj|Prowadź} wykaz krajów podwyższonego ryzyka."
+            podkroki:
+              - tekst: "{{fakt:jednostka.zgodnosc}} aktualizuje wykaz na podstawie list organizacji międzynarodowych, wskazań Komisji Europejskiej i własnej oceny."
+              - tekst: "Wykaz jest dostępny w systemie i w intranecie; pracownik sprawdza jego aktualną wersję przy każdej ocenie."
+              - tekst: "O zmianie wykazu informuje się pracowników w ciągu jednego dnia roboczego."
+          - tekst: "Zastosuj środki wobec transakcji z krajem wysokiego ryzyka."
+            podkroki:
+              - tekst: "Zażądaj od klienta umowy lub faktury potwierdzającej charakter transakcji."
+              - tekst: "Zbadaj, czy odbiorca i bank odbiorcy nie znajdują się w wykazach sankcyjnych."
+              - tekst: "Gdy transakcja jest nietypowa, zgłoś ją do komórki analitycznej ({{fakt:aml.zespol-analiz}}) przed jej wykonaniem."
+          - tekst: "Rozważ odmowę wykonania transakcji, jeżeli klient nie przedstawi dokumentów albo ich treść budzi wątpliwości; o odmowie poinformuj {{fakt:jednostka.zgodnosc}}."
+
+  - id: procedura-aml-kyc-krok-monit-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "{Analizuj|Zbadaj} transakcje gotówkowe klienta."
+            podkroki:
+              - tekst: "Przy wpłacie gotówkowej zapytaj o jej pochodzenie, jeżeli kwota jest wyższa niż zwykle lub przekracza {{fakt:aml.prog-wplata-udokumentowanie}}."
+              - tekst: "Odnotuj odpowiedź w systemie niezależnie od tego, czy klient jest stałym klientem Banku."
+              - tekst: "Nie przyjmuj wpłat gotówkowych dokonywanych przez osoby trzecie na rachunki klientów wysokiego ryzyka bez zgody komórki zgodności ({{fakt:jednostka.zgodnosc}})."
+          - tekst: "Wykrywaj dzielenie transakcji."
+            podkroki:
+              - tekst: "Zwracaj uwagę na wpłaty dokonywane wielokrotnie w krótkim czasie w kwotach tuż poniżej progu {{fakt:aml.prog-gotowka}}."
+              - tekst: "Wzorce wykryte w jednej placówce zgłaszaj do komórki analitycznej ({{fakt:aml.zespol-analiz}}), nawet gdy dotyczą kilku klientów."
+          - tekst: "Weryfikuj wpływy z zagranicy."
+            podkroki:
+              - tekst: "Sprawdź, czy nadawca i tytuł wpłaty są zgodne z działalnością klienta."
+              - tekst: "Wpływy zwrócone do nadawcy po otrzymaniu zapytania o źródło środków traktuj jako okoliczność wymagającą analizy."
+          - tekst: "Wykonaj ręczny przegląd klientów, którzy zmienili schemat korzystania z rachunku, i opisz wnioski w karcie klienta."
+
+  - id: procedura-aml-kyc-krok-monit-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "{Zarządzaj|Prowadź} scenariuszami monitorowania."
+            podkroki:
+              - tekst: "{{fakt:aml.zespol-analiz}} raz na kwartał ocenia skuteczność scenariuszy, liczbę alertów fałszywie dodatnich i czas ich obsługi."
+              - tekst: "Zmiany progów i parametrów zatwierdza {{fakt:aml.koordynator}} po konsultacji z komórką ryzyka ({{fakt:jednostka.ryzyko}})."
+              - tekst: "Każdą zmianę dokumentuje się w protokole zmiany z datą wdrożenia i uzasadnieniem."
+          - tekst: "Przeprowadź test systemu monitorowania."
+            podkroki:
+              - tekst: "Raz w roku sprawdź kompletność i poprawność danych przekazywanych do systemu z systemu centralnego CBS-PRZYKŁAD."
+              - tekst: "Wykonaj testy wsteczne na wybranych transakcjach i sprawdź, czy odpowiednie scenariusze wygenerowały alerty."
+          - tekst: "Wyłącz klienta spod scenariusza tylko wtedy, gdy decyzję uzasadnioną i zatwierdzoną wpisano do systemu; okresowo przeglądaj wszystkie wyłączenia."
+          - tekst: "Zgłaszaj zespołowi Departamentu Zgodności błędy w danych, które uniemożliwiają prawidłowe monitorowanie."
+
+  - id: procedura-aml-kyc-krok-podejrzane-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "Postępuj w razie podejrzenia w trakcie obsługi klienta."
+            podkroki:
+              - tekst: "Nie informuj klienta o podejrzeniu; kontynuuj rozmowę w sposób neutralny i nie zadawaj pytań, które mogłyby go zaalarmować."
+              - tekst: "Jeżeli transakcja ma zostać wykonana, odłóż ją w sposób niezwracający uwagi (np. wskazując konieczność dodatkowej weryfikacji systemowej) i niezwłocznie powiadom {{fakt:aml.zespol-analiz}}."
+              - tekst: "Po zakończeniu obsługi sporządź notatkę służbową z opisem zdarzenia, zachowania klienta i wypowiedzianych słów."
+          - tekst: "Zabezpiecz materiał dowodowy."
+            podkroki:
+              - tekst: "Zachowaj dokumenty, kopie dowodów tożsamości, zapisy z monitoringu oraz wydruki z systemów."
+              - tekst: "Nie modyfikuj dokumentów ani wpisów w systemie po powzięciu podejrzenia."
+          - tekst: "Zapewnij ochronę zgłaszającego; dane pracownika, który zgłosił podejrzenie, nie są ujawniane klientowi ani osobom postronnym."
+
+  - id: procedura-aml-kyc-krok-podejrzane-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "{Zastosuj|Wykorzystaj} typologie przy ocenie transakcji."
+            podkroki:
+              - tekst: "Sprawdź, czy transakcja odpowiada jednej z typologii: strukturyzowanie wpłat, szybki obrót środkami (rachunek „przelotowy”), wykorzystanie spółek-wydmuszek, fikcyjne faktury, przepływy wskazujące na oszustwa podatkowe."
+              - tekst: "Zbadaj, czy wartość i częstotliwość transakcji odpowiadają zadeklarowanym dochodom klienta."
+              - tekst: "Zbadaj powiązania klienta z innymi klientami Banku, które mogą wskazywać na wspólny schemat działania."
+          - tekst: "Ustal czy podejrzenie dotyczy finansowania terroryzmu."
+            podkroki:
+              - tekst: "Zwróć uwagę na niewielkie, ale częste transfery do stref konfliktów lub na rzecz organizacji nonprofit o niejasnym charakterze."
+              - tekst: "O podejrzeniu związanym z finansowaniem terroryzmu powiadom osobę na stanowisku „{{fakt:aml.koordynator}}” niezwłocznie, nawet poza godzinami pracy, korzystając z telefonu dyżurnego."
+          - tekst: "Gdy analiza nie potwierdziła podejrzenia, zamknij alert z uzasadnieniem, które pozwoli na ocenę decyzji przez osobę niezwiązaną ze sprawą."
+
+  - id: procedura-aml-kyc-krok-podejrzane-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "{Wykonuj|Realizuj} obowiązki informacyjne wobec organów państwa."
+            podkroki:
+              - tekst: "Na pisemne żądanie Generalnego Inspektora Informacji Finansowej przekaż żądane informacje i dokumenty w terminie wskazanym w żądaniu."
+              - tekst: "Żądania prokuratury, sądu i innych uprawnionych organów rejestruj w odrębnym rejestrze prowadzonym przez komórkę prawną ({{fakt:jednostka.prawny}})."
+              - tekst: "Zakres informacji ogranicz do tego, co wskazano w żądaniu, i odnotuj podstawę prawną udostępnienia."
+          - tekst: "Zawiadom organ o uzasadnionym podejrzeniu popełnienia przestępstwa lub przestępstwa skarbowego."
+            podkroki:
+              - tekst: "Zawiadomienie sporządza {{fakt:jednostka.zgodnosc}} we współpracy z {{fakt:jednostka.prawny}} i przekazuje właściwemu organowi po zatwierdzeniu przez członka zarządu."
+          - tekst: "Prowadź statystyki zawiadomień (liczba, wartość, rodzaj podejrzenia) i przekazuj je co kwartał do organu zarządzającego ({{fakt:jednostka.zarzad}}) oraz na żądanie organów nadzoru."
+
+  - id: procedura-aml-kyc-zamrozenie-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zamrozenie
+    elementy:
+      - ustep: "Przy stosowaniu środków ograniczających należy pamiętać o następujących zasadach:"
+        punkty:
+          - "wykazy sankcyjne sprawdza się nie tylko przy nawiązywaniu relacji, lecz także przy każdej zmianie wykazu — wobec całej bazy klientów — oraz przed wykonaniem przelewu zagranicznego;"
+          - "badaniu podlega nie tylko klient, ale także beneficjent rzeczywisty, pełnomocnik, kontrahent i bank kontrahenta;"
+          - "zbieżność nazwiska nie przesądza o trafieniu — porównuje się datę urodzenia, obywatelstwo, adres i inne dostępne dane identyfikacyjne;"
+          - "trafienie niepotwierdzone przez komórkę zgodności ({{fakt:jednostka.zgodnosc}}) w ciągu {{fakt:termin.aml.eskalacja-alertu}} oznacza, że transakcja pozostaje wstrzymana do czasu wyjaśnienia."
+      - akapit: "Bank {udostępnia|przekazuje} organom właściwym w sprawach sankcji informacje o zamrożonych środkach w terminach i formach określonych w przepisach. Środki zamrożone pozostają na rachunku klienta, a Bank nie pobiera z nich opłat innych niż niezbędne do utrzymania rachunku."
+
+  - id: procedura-aml-kyc-szczegolne-1
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - ustep: "W sytuacjach nietypowych należy postępować następująco:"
+        punkty:
+          - "**Klient wycofuje wniosek po pytaniach o źródło środków** — odnotuj zdarzenie i przekaż informację do komórki analitycznej ({{fakt:aml.zespol-analiz}}); wycofanie wniosku nie wyłącza obowiązku analizy;"
+          - "**Klient prosi o wypłatę gotówki w kwocie tuż poniżej progu** — poinformuj o obowiązujących zasadach i nie sugeruj sposobu ich obejścia;"
+          - "**Klient żąda zachowania poufności wobec rodziny lub organów** — nie składaj obietnic i zgłoś sprawę do komórki zgodności ({{fakt:jednostka.zgodnosc}});"
+          - "**Naciski na pracownika** — każdą próbę nacisku, obietnicę korzyści lub groźbę zgłaszaj niezwłocznie przełożonemu i do komórki bezpieczeństwa ({{fakt:jednostka.bezpieczenstwo}});"
+          - "**Relacja zakończona przez klienta po wszczęciu analizy** — nie blokuj wypowiedzenia umowy, lecz zachowaj dokumentację i kontynuuj analizę;"
+          - "**Zmarły klient** — po otrzymaniu informacji o zgonie zablokuj dyspozycje, zachowaj dokumentację i sprawdź, czy nie występują okoliczności wymagające zawiadomienia."
+      - akapit: "Przypadki nieobjęte powyższym wykazem rozstrzyga {{fakt:jednostka.zgodnosc}}, a rozstrzygnięcie odnotowuje się w karcie klienta wraz z uzasadnieniem."

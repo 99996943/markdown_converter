@@ -1,0 +1,79 @@
+bloki:
+  - id: procedura-aml-kyc-cel
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - akapit: "{Procedura|Niniejsza procedura} określa zasady stosowania w Banku Przykładowym S.A. środków bezpieczeństwa finansowego wobec klientów, w tym identyfikacji i weryfikacji tożsamości, ustalania beneficjentów rzeczywistych, oceny ryzyka {prania pieniędzy|legalizacji wpływów z przestępstw} oraz finansowania terroryzmu, a także {bieżącego monitorowania|stałego monitorowania} stosunków gospodarczych. Podstawę jej wydania stanowi {{ref:akt:dz-u-2025-644-aml}}."
+      - akapit: "Celem procedury jest {zapewnienie|zagwarantowanie} jednolitego, udokumentowanego i weryfikowalnego sposobu postępowania we wszystkich jednostkach Banku, tak aby {Bank|instytucja} nie został wykorzystany do celów przestępczych, a obowiązki wynikające z przepisów — także z przepisów o tajemnicy bankowej (zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}) — były wykonywane {spójnie|w sposób wzajemnie uzgodniony}."
+      - akapit: "Procedura wdraża podejście oparte na ocenie ryzyka: zakres i {intensywność|głębokość} stosowanych środków zależą od {poziomu ryzyka|oceny ryzyka} przypisanego klientowi, produktowi, kanałowi dostępu oraz położeniu geograficznemu. Procedura jest dokumentem wewnętrznym i nie jest przeznaczona dla klientów."
+
+  - id: procedura-aml-kyc-zakres
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - ustep: "Procedurę stosują {wszyscy pracownicy|pracownicy wszystkich jednostek} Banku, którzy {w ramach swoich obowiązków|wykonując swoje zadania}:"
+        punkty:
+          - "nawiązują stosunki gospodarcze z klientami, w szczególności przyjmują wnioski o otwarcie rachunków, lokat, kredytów i kart płatniczych;"
+          - "przyjmują i realizują dyspozycje klientów, w tym wpłaty i wypłaty gotówkowe oraz przelewy krajowe i zagraniczne;"
+          - "{obsługują|prowadzą} klientów korporacyjnych i klientów bankowości prywatnej;"
+          - "zajmują się {monitorowaniem|analizą} transakcji, rozpatrywaniem alertów oraz przygotowywaniem zawiadomień dla organów państwa;"
+          - "zarządzają dokumentacją klientów, jej archiwizacją oraz {nadzorują|kontrolują} jakość danych."
+      - akapit: "Procedura obejmuje klientów będących osobami fizycznymi, osobami prawnymi i jednostkami organizacyjnymi niemającymi osobowości prawnej, w tym przedsiębiorców, fundacje, stowarzyszenia i wspólnoty mieszkaniowe, a także osoby działające w imieniu klienta na podstawie pełnomocnictwa lub przedstawicielstwa ustawowego."
+      - akapit: "Dla poszczególnych produktów obowiązują ponadto warunki szczegółowe zawarte w dokumentach „{{ref:dokument:regulamin-rachunku-osobistego}}” oraz „{{ref:dokument:regulamin-rachunku-firmowego}}”. W razie rozbieżności {pierwszeństwo|przewagę} mają przepisy powszechnie obowiązujące, a następnie niniejsza procedura."
+      - akapit: "Procedura nie reguluje zasad postępowania w sprawach reklamacyjnych; w tym zakresie pracownik stosuje procedurę obsługi reklamacji."
+
+  - id: procedura-aml-kyc-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - ustep: "Za prawidłowe stosowanie procedury {odpowiadają|są odpowiedzialni} następujący uczestnicy procesu:"
+        punkty:
+          - "**Pracownik placówki** — przeprowadza identyfikację i weryfikację klienta, zbiera dokumenty i oświadczenia, wypełnia formularz F-AML-01 {i rejestruje dane|oraz wprowadza dane} w narzędziu informatycznym ({{fakt:aml.system-klienci}}), a w razie wątpliwości zwraca się do przełożonego;"
+          - "**Kierownik placówki** — zatwierdza nawiązanie stosunków gospodarczych z klientami o średnim ryzyku, {zapewnia kompletność|czuwa nad kompletnością} dokumentacji w placówce oraz organizuje bieżące szkolenia pracowników;"
+          - "**Departament Obsługi Klienta** — odpowiada za procesy obsługi na odległość, w tym zdalną weryfikację tożsamości, oraz za korespondencję z klientem w sprawach uzupełnienia danych;"
+          - "**{{fakt:jednostka.zgodnosc}}** — jest właścicielem procedury, prowadzi ocenę ryzyka Banku, zatwierdza stosunki o wysokim ryzyku, odpowiada za zawiadomienia dla organów państwa i kontakt z {nadzorem|organami nadzoru};"
+          - "**{{fakt:aml.koordynator}}** — {nadzoruje|koordynuje} stosowanie procedury w skali Banku, składa Zarządowi sprawozdania okresowe i jest osobą kontaktową dla organów;"
+          - "**{{fakt:aml.zespol-analiz}}** — analizuje alerty z systemu monitorowania, przygotowuje rekomendacje i prowadzi rejestr transakcji podejrzanych;"
+          - "**{{fakt:jednostka.operacje}}** — wykonuje blokady i zamrożenia w systemie centralnym CBS-PRZYKŁAD na polecenie komórki zgodności ({{fakt:jednostka.zgodnosc}});"
+          - "**{{fakt:jednostka.zarzad}}** — zatwierdza procedurę, wyznacza członka zarządu odpowiedzialnego za przeciwdziałanie praniu pieniędzy i zapewnia zasoby potrzebne do jej stosowania."
+      - akapit: "Każdy pracownik jest {obowiązany|zobowiązany} do niezwłocznego zgłoszenia podejrzenia, że transakcja lub okoliczność może wiązać się z praniem pieniędzy lub finansowaniem terroryzmu, bez względu na kwotę i stanowisko klienta. Zgłoszenie nie wymaga uprzedniej zgody przełożonego."
+
+  - id: procedura-aml-kyc-definicje
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - ustep: "Dodatkowo, na potrzeby procedury, użyte określenia oznaczają:"
+        punkty:
+          - "**CDD** — środki bezpieczeństwa finansowego stosowane wobec klienta, obejmujące identyfikację, weryfikację, ustalenie beneficjenta rzeczywistego, ocenę stosunków gospodarczych i bieżące monitorowanie;"
+          - "**KYC** — {proces|zbiór czynności} poznania klienta, na który składa się zebranie i weryfikacja informacji o kliencie, jego działalności oraz źródle pochodzenia środków;"
+          - "**Beneficjent rzeczywisty** — osoba fizyczna sprawująca bezpośrednio lub pośrednio kontrolę nad klientem albo osoba, w której interesie nawiązywane są stosunki gospodarcze lub przeprowadzana transakcja;"
+          - "**PEP** — osoba zajmująca eksponowane stanowisko polityczne, a także członek jej rodziny i osoba znana jako bliski współpracownik;"
+          - "**Stosunki gospodarcze** — relacja Banku z klientem o charakterze trwałym, nawiązywana w związku z prowadzeniem przez Bank działalności i w chwili nawiązania uznawana za mającą cechę trwałości;"
+          - "**Transakcja okazjonalna** — transakcja niewynikająca ze stosunków gospodarczych, np. jednorazowa wpłata gotówkowa na rzecz osoby niebędącej klientem;"
+          - "**Scoring ryzyka** — zestaw kryteriów punktowych służący do przypisania klientowi poziomu ryzyka: niskiego, średniego albo wysokiego;"
+          - "**Alert** — komunikat generowany przez narzędzie informatyczne ({{fakt:aml.system-monitoringu}}) o transakcji lub zachowaniu klienta odbiegającym od przyjętych scenariuszy;"
+          - "**Zawiadomienie** — informacja przekazywana przez Bank organowi państwa w razie uzasadnionego podejrzenia, że transakcja ma związek z praniem pieniędzy lub finansowaniem terroryzmu;"
+          - "**GIIF** — organ właściwy w sprawach analizy informacji finansowych, określany generycznie jako {{fakt:aml.giif}};"
+          - "**Zamrożenie** — uniemożliwienie rozporządzania środkami lub zasobami gospodarczymi osoby objętej sankcjami, wykonywane przez Bank na podstawie przepisów o szczególnych środkach sankcyjnych;"
+          - "**Wykaz sankcyjny** — urzędowy wykaz osób i podmiotów objętych środkami ograniczającymi, wczytywany do narzędzi Banku z uznanego dostawcy danych."
+
+  - id: procedura-aml-kyc-schemat
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-wymagane
+    elementy:
+      - schemat:
+          - nazwa: "Identyfikacja klienta"
+            wyjasnienie: "Pracownik ustala dane klienta na podstawie dokumentu tożsamości i weryfikuje je w niezależnych źródłach. Bez zakończonej identyfikacji nie można nawiązać stosunków gospodarczych."
+          - nazwa: "Beneficjent i cel"
+            wyjasnienie: "Pracownik ustala beneficjenta rzeczywistego oraz cel i planowany charakter stosunków gospodarczych. Wyniki zapisuje w formularzu F-AML-01."
+          - nazwa: "Ocena ryzyka"
+            wyjasnienie: "System przypisuje klientowi punkty według kryteriów scoringu, a pracownik potwierdza lub koryguje wynik. Poziom ryzyka decyduje o zakresie dalszych środków."
+          - nazwa: "Zatwierdzenie relacji"
+            wyjasnienie: "Stosunki o średnim ryzyku zatwierdza kierownik, a o wysokim — Departament Zgodności. Przy ryzyku niskim stosuje się środki uproszczone."
+          - nazwa: "Monitorowanie i zgłaszanie"
+            wyjasnienie: "Bank na bieżąco monitoruje transakcje i aktualizuje dane klienta. Przy uzasadnionym podejrzeniu sprawa trafia do zawiadomienia organu państwa."

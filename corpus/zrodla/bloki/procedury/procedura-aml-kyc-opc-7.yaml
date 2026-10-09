@@ -1,0 +1,250 @@
+bloki:
+  - id: procedura-aml-kyc-krok-id-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Zidentyfikuj pełnomocnika klienta."
+            podkroki:
+              - tekst: "Zweryfikuj tożsamość pełnomocnika na podstawie ważnego dokumentu oraz sprawdź treść pełnomocnictwa, w szczególności zakres umocowania, czas obowiązywania i sposób jego udzielenia."
+              - tekst: "Pełnomocnictwo udzielone poza Bankiem powinno mieć formę pisemną z podpisem poświadczonym notarialnie, jeżeli obejmuje dyspozycje o znacznej wartości lub rozporządzanie całością środków."
+          - tekst: "Oceń ryzyko związane z osobą pełnomocnika."
+            podkroki:
+              - tekst: "Zbadaj, czy pełnomocnik działa w imieniu większej liczby niezwiązanych ze sobą klientów; zjawisko to odnotuj jako sygnał ostrzegawczy."
+              - tekst: "Gdy pełnomocnik jest obywatelem państwa z wykazu „{{fakt:aml.wykaz-krajow}}”, oceń ryzyko jak dla klienta bezpośredniego."
+          - tekst: "Ustal zasady kontaktu z pełnomocnikiem."
+            podkroki:
+              - tekst: "Zapisz dane kontaktowe pełnomocnika i zaznacz, czy może on odbierać korespondencję w imieniu klienta."
+              - tekst: "Okresowo, nie rzadziej niż przy przeglądzie relacji, potwierdź u klienta, że pełnomocnictwo nadal obowiązuje."
+
+  - id: procedura-aml-kyc-krok-id-8
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Zidentyfikuj klienta instytucjonalnego, który jest jednostką samorządu lub podmiotem publicznym."
+            podkroki:
+              - tekst: "Zażądaj aktu powołania, statutu lub innego dokumentu określającego formę prawną jednostki oraz uchwały lub decyzji uprawniającej do otwarcia rachunku."
+              - tekst: "Zweryfikuj osoby reprezentujące jednostkę na podstawie dokumentów o ich powołaniu i próbek podpisów."
+          - tekst: "Oceń, czy zastosowanie środków uproszczonych jest uzasadnione."
+            podkroki:
+              - tekst: "Sprawdź, czy jednostka podlega nadzorowi publicznemu, jej działalność jest jawna, a źródło finansowania pochodzi z budżetu lub funduszy publicznych."
+              - tekst: "Jeżeli którakolwiek z tych okoliczności nie występuje, zastosuj środki bezpieczeństwa finansowego w pełnym zakresie."
+          - tekst: "Zwróć uwagę na rachunki prowadzone dla wielu jednostek organizacyjnych."
+            podkroki:
+              - tekst: "Gdy podmiot publiczny prowadzi rachunki dla jednostek podległych, uzyskaj wykaz tych jednostek i osób upoważnionych do dyspozycji środkami."
+              - tekst: "Każdą zmianę osób uprawnionych odnotuj po doręczeniu dokumentu potwierdzającego tę zmianę."
+
+  - id: procedura-aml-kyc-krok-benef-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-beneficjent
+    elementy:
+      - kroki:
+          - tekst: "Ustal beneficjenta rzeczywistego spółki giełdowej lub kontrolowanej przez spółkę giełdową."
+            podkroki:
+              - tekst: "Potwierdź notowanie akcji na rynku regulowanym i sprawdź w dostępnych źródłach publicznych wykaz akcjonariuszy przekraczających próg znacznego udziału."
+              - tekst: "Jeżeli spółka podlega wymogom ujawniania informacji równoważnym z wymogami unijnymi, możesz poprzestać na ustaleniu osób, które posiadają ponad {{fakt:aml.prog-udzialu-beneficjenta}} akcji."
+          - tekst: "Zbadaj strukturę, gdy akcjonariuszem jest podmiot prywatny."
+            podkroki:
+              - tekst: "Dla każdego akcjonariusza niebędącego spółką publiczną ustal jego właścicieli według zasad ogólnych."
+              - tekst: "W razie braku danych o rzeczywistych właścicielach wystąp do klienta o oświadczenie, a odpowiedź porównaj z informacjami z rejestrów."
+          - tekst: "Udokumentuj sposób, w jaki ustalono beneficjenta."
+            podkroki:
+              - tekst: "Zapisz źródła informacji, daty ich pobrania i imię osoby, która dokonała ustaleń."
+              - tekst: "Przy kolejnym przeglądzie powtórz sprawdzenie, a różnice opisz."
+
+  - id: procedura-aml-kyc-krok-benef-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-beneficjent
+    elementy:
+      - akapit: "Cel i zamierzony charakter stosunków gospodarczych ustala się przed uruchomieniem produktu, a wyniki ustaleń służą do późniejszej oceny, czy transakcje klienta są zgodne z deklaracjami."
+      - ustep: "Pracownik ustala w szczególności:"
+        punkty:
+          - "do jakich celów klient zamierza używać rachunku (rozliczenia bieżące, oszczędzanie, rozliczenia z kontrahentami, obsługa kredytu);"
+          - "jakie są przewidywane średnie miesięczne wpływy i wydatki oraz ich źródła;"
+          - "czy klient planuje wykonywanie przelewów zagranicznych, a jeśli tak — do jakich państw i w jakich kwotach;"
+          - "czy klient zamierza korzystać z gotówki, w tym z wpłat i wypłat wysokich kwot;"
+          - "czy rachunek będzie wykorzystywany na rzecz osób trzecich;"
+          - "czy w przeszłości odmówiono klientowi otwarcia rachunku albo zakończono z nim relację, jeżeli klient o tym wie i chce o tym poinformować."
+      - akapit: "Wszystkie odpowiedzi odnotowuje się w kwestionariuszu w {{fakt:aml.system-klienci}}. W razie odmowy udzielenia odpowiedzi pracownik oznacza to w kwestionariuszu i uwzględnia w ocenie ryzyka."
+
+  - id: procedura-aml-kyc-krok-ryzyko-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ryzyko
+    elementy:
+      - kroki:
+          - tekst: "Zaktualizuj ocenę ryzyka po zmianie okoliczności dotyczących klienta."
+            podkroki:
+              - tekst: "Zmianę adresu do korespondencji na zagraniczny, zmianę właściciela lub nietypowe zwiększenie obrotów traktuj jako okoliczność wymagającą ponownego przeliczenia punktów."
+              - tekst: "Wynik nowego scoringu porównaj z wcześniejszym i, jeżeli różnica przekracza jedną kategorię, poinformuj kierownika."
+          - tekst: "Wprowadź zmiany w narzędziu."
+            podkroki:
+              - tekst: "Zaktualizuj dane w {{fakt:aml.system-klienci}} w dniu uzyskania informacji; poprzedni wynik zostaje zachowany w historii klienta."
+              - tekst: "Gdy zmiana skutkuje przejściem do wysokiego ryzyka, uruchom środki wzmocnione i odnotuj datę ich wdrożenia."
+          - tekst: "Poinformuj powiązane jednostki."
+            podkroki:
+              - tekst: "Opiekun klienta i komórka monitorowania powinni otrzymać informację o zmianie kategorii ryzyka w ciągu jednego dnia roboczego."
+              - tekst: "Kategorię ryzyka klienta wolno ujawniać wyłącznie osobom, które potrzebują jej do wykonywania obowiązków służbowych."
+
+  - id: procedura-aml-kyc-krok-ewd-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "Stosuj środki wzmocnione wobec transakcji niemających widocznego uzasadnienia ekonomicznego."
+            podkroki:
+              - tekst: "Przy transakcji, której wielkość, częstotliwość lub kierunek odbiegają od dotychczasowej aktywności, zapytaj klienta o jej cel i kontrahenta."
+              - tekst: "Poproś o dokument potwierdzający zasadność transakcji, a gdy takiego nie ma, o pisemne wyjaśnienie podpisane przez klienta."
+          - tekst: "Rozważ dodatkową weryfikację kontrahentów."
+            podkroki:
+              - tekst: "Sprawdź kontrahenta w wykazach sankcyjnych, w publicznych rejestrach oraz w narzędziu do przeglądu informacji negatywnych."
+              - tekst: "Jeżeli kontrahent jest podmiotem nowo założonym, bez widocznej działalności, odnotuj to jako dodatkową przesłankę ryzyka."
+          - tekst: "Rozstrzygnij o wykonaniu transakcji."
+            podkroki:
+              - tekst: "Gdy wyjaśnienia są spójne i udokumentowane, wykonaj transakcję i oznacz sprawę jako wyjaśnioną."
+              - tekst: "Gdy wyjaśnienia nie usuwają wątpliwości, nie wykonuj transakcji do czasu decyzji jednostki zgodności i zastosuj procedurę zgłoszenia."
+
+  - id: procedura-aml-kyc-krok-mon-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż alert dotyczący nagłej zmiany aktywności na rachunku."
+            podkroki:
+              - tekst: "Porównaj miesięczne obroty z wcześniejszymi trzema miesiącami i z profilem zapisanym w kwestionariuszu; odnotuj różnice przekraczające dwukrotność średniej."
+              - tekst: "Sprawdź, czy zmianie towarzyszyły inne zdarzenia, takie jak zmiana pełnomocnika, aktualizacja danych kontaktowych albo zmiana urządzenia do bankowości elektronicznej."
+          - tekst: "Zbadaj możliwość przejęcia rachunku przez osobę trzecią."
+            podkroki:
+              - tekst: "Jeżeli zmiana następuje po zmianie danych logowania lub numeru telefonu, przeanalizuj sprawę także pod kątem oszustwa i powiadom {{fakt:jednostka.bezpieczenstwo}}."
+              - tekst: "Dyspozycje, które nie budzą pewności co do autoryzacji, zweryfikuj przez kontakt z klientem na dotychczasowy numer telefonu."
+          - tekst: "Zamknij lub eskaluj alert."
+            podkroki:
+              - tekst: "W razie zgodności z uzasadnionym wyjaśnieniem klienta zapisz je i zamknij alert."
+              - tekst: "W razie braku wyjaśnienia lub wyjaśnienia niewiarygodnego skieruj sprawę do analityka {{fakt:aml.zespol-analiz}}."
+
+  - id: procedura-aml-kyc-krok-mon-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "Prowadź monitorowanie rachunków firmowych o dużej liczbie drobnych wpłat."
+            podkroki:
+              - tekst: "Zwracaj uwagę na rachunki, na które wpływa wiele małych płatności od różnych nadawców, a środki są następnie przelewane w jednej kwocie do jednego odbiorcy."
+              - tekst: "Zapytaj klienta o charakter płatności i sprawdź, czy mogą być wynikiem prowadzenia zbiórek lub działalności niezgłoszonej."
+          - tekst: "Przeprowadź analizę łańcucha przepływów."
+            podkroki:
+              - tekst: "Zestaw dane o płatnościach przychodzących i wychodzących w okresie ostatnich trzech miesięcy i ustal kierunek końcowy środków."
+              - tekst: "W razie pojawienia się powiązań z rachunkami innych klientów Banku, ocenę przeprowadź łącznie."
+          - tekst: "Zdecyduj o dalszych krokach."
+            podkroki:
+              - tekst: "Gdy przepływy mają uzasadnione źródło, zaktualizuj profil klienta, aby kolejne podobne płatności nie generowały alertów."
+              - tekst: "Gdy źródło nie zostało wyjaśnione, objęcie klienta wzmocnionym nadzorem zatwierdza kierownik jednostki zgodności."
+
+  - id: procedura-aml-kyc-zamroz-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zamrozenie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż dyspozycję klienta, której wykonanie mogłoby naruszyć zamrożenie."
+            podkroki:
+              - tekst: "Gdy w imieniu klienta objętego środkami ograniczającymi występuje osoba trzecia, sprawdź, czy dyspozycja nie służy obejściu zamrożenia."
+              - tekst: "Dyspozycję odrzuć, informując klienta, że nie może być wykonana z powodu przepisów prawa, a sprawę przekaż koordynatorowi."
+          - tekst: "Rozpoznaj transakcje, w których uczestniczy podmiot kontrolowany przez osobę objętą sankcjami."
+            podkroki:
+              - tekst: "Przy ocenie kontroli uwzględnij udziały, prawa głosu, możliwość powoływania zarządu oraz inne uprawnienia, także pośrednie."
+              - tekst: "Zasoby podmiotu kontrolowanego przez osobę objętą sankcjami traktuje się jak środki tej osoby i zamraża w tym samym zakresie."
+          - tekst: "Prowadź rejestr zamrożeń."
+            podkroki:
+              - tekst: "W rejestrze zapisz datę, podstawę prawną, wartość zamrożonych środków, osobę zatwierdzającą i datę zawiadomienia organu."
+              - tekst: "Rejestr aktualizuj najpóźniej w dniu zmiany stanu zamrożenia; stan rejestru porównuj raz w miesiącu ze stanem w {{fakt:zajecie.system-centralny}}."
+
+  - id: procedura-aml-kyc-szcz-7
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Postępuj przy wpłatach gotówkowych na rachunek przez osoby trzecie."
+            podkroki:
+              - tekst: "Ustal tożsamość wpłacającego i jego relację z posiadaczem rachunku; dane zapisz w dowodzie wpłaty."
+              - tekst: "Przy wpłacie przekraczającej {{fakt:aml.prog-gotowka}} poproś o wyjaśnienie pochodzenia środków i, jeżeli to możliwe, o dokument je potwierdzający."
+          - tekst: "Zbadaj, czy wpłaty nie mają charakteru powtarzalnego."
+            podkroki:
+              - tekst: "Sprawdź historię rachunku pod kątem podobnych wpłat dokonywanych przez tę samą lub różne osoby w ostatnich trzydziestu dniach."
+              - tekst: "Powtarzalne wpłaty od kilku osób bez jasnego związku z klientem odnotuj jako zdarzenie wymagające analizy."
+          - tekst: "Zdecyduj o przyjęciu wpłaty."
+            podkroki:
+              - tekst: "Wpłaty, których pochodzenia nie udało się ustalić, możesz odrzucić; decyzję zapisz i przekaż do jednostki zgodności."
+              - tekst: "Nie ujawniaj wpłacającemu, że jego dane są weryfikowane pod kątem przeciwdziałania praniu pieniędzy."
+
+  - id: procedura-aml-kyc-szcz-8
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - akapit: "Szczególnej ostrożności wymaga obsługa klientów korzystających z wielu rachunków i produktów jednocześnie, zwłaszcza gdy nie jest to uzasadnione ich sytuacją finansową."
+      - ustep: "Pracownik zwraca uwagę, czy klient:"
+        punkty:
+          - "otwiera kilka rachunków w krótkim czasie bez uzasadnienia, a następnie przesuwa środki pomiędzy nimi;"
+          - "wnioskuje o karty płatnicze do rachunku, z którego nie korzysta, lub o limity znacznie przewyższające jego potrzeby;"
+          - "przedłuża rozmowę, unika odpowiedzi lub próbuje zniechęcić pracownika do przeprowadzenia weryfikacji;"
+          - "oferuje korzyść za pominięcie formalności lub za przyspieszenie obsługi;"
+          - "wykazuje nietypowe zainteresowanie wewnętrznymi procedurami Banku, w tym progami kontroli."
+      - akapit: "Każdą próbę wręczenia korzyści pracownik odmawia przyjęcia i niezwłocznie zgłasza do jednostki „{{fakt:jednostka.bezpieczenstwo}}” oraz komórki zgodności."
+
+  - id: procedura-aml-kyc-kontr-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-kontrola
+    elementy:
+      - kroki:
+          - tekst: "Przeprowadź niezależną ocenę procedury przez audyt wewnętrzny."
+            podkroki:
+              - tekst: "Audyt wewnętrzny uwzględnia obszar przeciwdziałania praniu pieniędzy w rocznym planie audytów i pozostawia sobie prawo do dodatkowych, doraźnych kontroli."
+              - tekst: "Audytorzy mają dostęp do dokumentacji, systemów i pracowników w zakresie niezbędnym do przeprowadzenia kontroli."
+          - tekst: "Przygotuj raport z oceny."
+            podkroki:
+              - tekst: "Raport zawiera opis zakresu, ustalenia, ocenę ryzyka stwierdzonych nieprawidłowości i rekomendacje."
+              - tekst: "Raport przekazuje się zarządowi, radzie nadzorczej oraz koordynatorowi (stanowisko „{{fakt:aml.koordynator}}”)."
+          - tekst: "Monitoruj wdrożenie rekomendacji."
+            podkroki:
+              - tekst: "Jednostka kontrolowana w terminie czternastu dni przedstawia plan działań naprawczych wraz z terminami."
+              - tekst: "Audyt wewnętrzny sprawdza wykonanie planu i raportuje o stanie realizacji co kwartał."
+
+  - id: procedura-aml-kyc-szkol-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szkolenia
+    elementy:
+      - akapit: "Poza szkoleniami cyklicznymi Bank organizuje szkolenia doraźne, gdy zmieniają się przepisy, pojawiają się nowe typologie lub wyniki kontroli wskazują na powtarzające się nieprawidłowości."
+      - ustep: "Szkolenia doraźne:"
+        punkty:
+          - "{zarządza|zleca} koordynator, określając grupę odbiorców, temat i termin wykonania;"
+          - "prowadzi się w krótkiej formie — instruktażu, wideokonferencji lub krótkiego kursu zdalnego;"
+          - "obejmują obowiązkowo wszystkich pracowników, których zmiana dotyczy, w terminie siedmiu dni od zmiany;"
+          - "kończą się potwierdzeniem zapoznania się z treścią i krótkim sprawdzianem."
+      - akapit: "Materiały szkoleniowe są dostępne na wewnętrznym portalu i podlegają aktualizacji. Pracownik jest obowiązany korzystać wyłącznie z aktualnej wersji."
+
+  - id: procedura-aml-kyc-dok-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-dokumentacja
+    elementy:
+      - akapit: "Rejestr podejrzanych transakcji ({{fakt:aml.rejestr-podejrzanych}}) jest prowadzony wyłącznie w formie elektronicznej, z kontrolą dostępu opartą na rolach."
+      - ustep: "Wpis w rejestrze zawiera:"
+        punkty:
+          - "numer sprawy, datę zgłoszenia oraz dane osoby, która je przekazała;"
+          - "dane klienta, rachunku i transakcji, których dotyczy podejrzenie;"
+          - "streszczenie analizy i uzasadnienie decyzji koordynatora;"
+          - "datę i numer potwierdzenia zawiadomienia organu, jeżeli je przekazano;"
+          - "informacje o dalszych czynnościach, w tym wstrzymaniu transakcji, blokadzie lub zamrożeniu."
+      - akapit: "Dostęp do rejestru mają wyłącznie koordynator, analitycy oraz osoby wskazane przez zarząd. Każde otwarcie wpisu jest rejestrowane, a zestawienia dostępu przegląda się co kwartał."

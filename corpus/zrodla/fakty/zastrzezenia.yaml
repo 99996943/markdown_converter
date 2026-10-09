@@ -1,0 +1,143 @@
+fakty:
+  # --- jednostki i systemy
+  - id: jednostka.centrum-monitorowania
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Centrum Monitorowania Transakcji"
+    alternatywy: ["Zespół Monitorowania Transakcji"]
+  - id: system.zastrzezenia.cbs
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+    alternatywy: ["CBS-BANK"]
+  - id: system.zastrzezenia.rejestr
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "RZK"
+    alternatywy: ["RZD"]
+  - id: system.zastrzezenia.monitoring
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "SMT-PRZYKŁAD"
+    alternatywy: ["SMT-BANK"]
+  - id: formularz.zastrzezenia.zgloszenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-01"
+    alternatywy: ["F-BEZ-10"]
+  - id: formularz.zastrzezenia.oswiadczenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-02"
+    alternatywy: ["F-BEZ-20"]
+  - id: formularz.zastrzezenia.spor
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-03"
+    alternatywy: ["F-BEZ-30"]
+
+  # --- terminy
+  - id: termin.zastrzezenia.blokada-karty
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 minut"
+      - od: 2026-04-01
+        wartosc: "3 minut"
+    alternatywy: ["15 minut", "30 minut"]
+  - id: termin.zastrzezenia.potwierdzenie-na-nosniku
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+    alternatywy: ["w ciągu 3 dni roboczych"]
+  - id: termin.zastrzezenia.karta-zastepcza
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 dni roboczych"
+      - od: 2026-04-01
+        wartosc: "3 dni roboczych"
+    alternatywy: ["7 dni roboczych", "10 dni roboczych"]
+  - id: termin.zastrzezenia.dostep-tymczasowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "72 godziny"
+    alternatywy: ["24 godziny", "7 dni"]
+  - id: termin.zastrzezenia.potwierdzenie-zgloszenia-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "1 dnia roboczego"
+    alternatywy: ["3 dni roboczych"]
+  - id: termin.zastrzezenia.analiza-wstepna
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "3 dni roboczych"
+      - od: 2027-01-01
+        wartosc: "2 dni roboczych"
+    alternatywy: ["5 dni roboczych", "10 dni roboczych"]
+  - id: termin.zastrzezenia.zawiadomienie-organow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "2 dni roboczych"
+    alternatywy: ["7 dni roboczych", "14 dni"]
+  - id: termin.zastrzezenia.oddzwonienie-monitoring
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "30 minut"
+      - od: 2026-04-01
+        wartosc: "20 minut"
+    alternatywy: ["60 minut", "2 godziny"]
+  - id: termin.zastrzezenia.spor-zgloszenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 120
+    alternatywy: [60, 90]
+  - id: termin.zastrzezenia.spor-odpowiedz
+    rodzaj: termin
+    wartosci:
+      - wartosc: 45
+    alternatywy: [30, 60]
+  - id: termin.zastrzezenia.spor-przygotowanie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 dni roboczych"
+    alternatywy: ["5 dni roboczych", "15 dni roboczych"]
+  - id: termin.zastrzezenia.archiwizacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+      - od: 2027-01-01
+        wartosc: "6 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: termin.zastrzezenia.przeglad-uprawnien
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "co kwartał"
+    alternatywy: ["co pół roku", "co miesiąc"]
+  - id: termin.zastrzezenia.reklamacja-zwrotu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "2 dni roboczych"
+    alternatywy: ["5 dni roboczych"]
+
+  # --- limity
+  - id: limit.zastrzezenia.kwota-eskalacji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5000.00
+      - od: 2027-01-01
+        wartosc: 7000.00
+    alternatywy: [2000.00, 10000.00]
+  - id: limit.zastrzezenia.kwota-zawiadomienia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [500.00, 3000.00]
+  - id: limit.zastrzezenia.progi-alarmu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzy transakcje w ciągu 10 minut"
+    alternatywy: ["pięć transakcji w ciągu 10 minut"]
+  - id: limit.zastrzezenia.proby-weryfikacji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzy"
+    alternatywy: ["dwie", "pięć"]

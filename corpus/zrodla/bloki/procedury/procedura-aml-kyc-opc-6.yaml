@@ -1,0 +1,250 @@
+bloki:
+  - id: procedura-aml-kyc-zamroz-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zamrozenie
+    elementy:
+      - kroki:
+          - tekst: "Sprawdź klientów w wykazach sankcyjnych przy zawieraniu umowy i w trakcie jej trwania."
+            podkroki:
+              - tekst: "Przy każdym nowym kliencie, beneficjencie rzeczywistym i pełnomocniku wykonaj kontrolę w {{fakt:aml.system-klienci}} przed zawarciem umowy."
+              - tekst: "Po każdej aktualizacji wykazów system automatycznie porównuje bazę klientów z nowymi wpisami; wyniki trafiają do {{fakt:aml.zespol-analiz}}."
+              - tekst: "Zgodność częściową, na przykład zbieżne nazwisko przy odmiennej dacie urodzenia, wyjaśnia analityk na podstawie dodatkowych danych identyfikacyjnych."
+          - tekst: "Zamroź środki po potwierdzeniu zgodności."
+            podkroki:
+              - tekst: "Po potwierdzeniu, że klient znajduje się w wykazie, zamroź wszystkie środki i zasoby w terminie {{fakt:termin.aml.zamrozenie-wdrozenie}} od chwili otrzymania informacji o wpisie."
+              - tekst: "Zamrożenie obejmuje rachunki, lokaty, skrytki, instrumenty finansowe oraz zobowiązania klienta, które mogłyby posłużyć do przekazania zasobów."
+          - tekst: "Poinformuj właściwy organ."
+            podkroki:
+              - tekst: "Zawiadomienie o zamrożeniu wraz z wykazem zamrożonych składników przekaż organowi wskazanemu w przepisach za pośrednictwem koordynatora."
+              - tekst: "Klienta nie informuje się o powodach zamrożenia, a jedynie o tym, że wykonanie dyspozycji jest niemożliwe z mocy przepisów."
+          - tekst: "Obsługuj zamrożone środki."
+            podkroki:
+              - tekst: "Odsetki i inne korzyści naliczane na zamrożonym rachunku dopisuj w ciągu dalszym do środków zamrożonych."
+              - tekst: "Wypłaty na pokrycie niezbędnych wydatków możliwe są wyłącznie za zezwoleniem właściwego organu, które dołącza się do akt sprawy."
+
+  - id: procedura-aml-kyc-zamroz-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zamrozenie
+    elementy:
+      - akapit: "Po zamrożeniu środków Bank prowadzi sprawę w sposób zapewniający możliwość wykazania przed organem nadzoru, że czynności wykonano prawidłowo i w terminie. Zasady postępowania w tym okresie są następujące:"
+      - ustep: "Rachunek objęty zamrożeniem:"
+        punkty:
+          - "{oznacza się|opatruje się} w {{fakt:zajecie.system-centralny}} blokadą szczególną, która uniemożliwia wszystkie operacje obciążeniowe, a także wpłaty gotówkowe wykonywane przez klienta;"
+          - "nie podlega zamknięciu, a opłaty i prowizje naliczane na nim nie są pobierane do czasu uchylenia środków ograniczających, chyba że organ postanowi inaczej;"
+          - "zachowuje powiązane produkty w stanie bez zmian, w tym karty płatnicze, które blokuje się trwale z powodu zamrożenia."
+      - akapit: "Zmiany stanu zamrożenia, w szczególności jego rozszerzenie lub uchylenie, jednostka „{{fakt:jednostka.zgodnosc}}” wprowadza w tym samym dniu, w którym otrzymała stosowną informację, i dokumentuje w rejestrze."
+      - ustep: "Uchylenie zamrożenia następuje wyłącznie po:"
+        punkty:
+          - "otrzymaniu informacji o skreśleniu klienta z wykazu albo decyzji właściwego organu;"
+          - "potwierdzeniu przez analityka, że nie istnieją inne podstawy do utrzymania blokady;"
+          - "pisemnym zatwierdzeniu przez koordynatora („{{fakt:aml.koordynator}}”)."
+
+  - id: procedura-aml-kyc-szcz-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Postępuj przy obsłudze klienta prowadzącego działalność w branży kryptoaktywów."
+            podkroki:
+              - tekst: "Ustal, czy klient posiada wymagany wpis do rejestru lub zezwolenie, i zachowaj jego kopię; brak wpisu stanowi przesłankę podwyższenia ryzyka."
+              - tekst: "Zażądaj opisu mechanizmów przeciwdziałania praniu pieniędzy stosowanych przez klienta, w tym sposobu weryfikacji jego własnych klientów."
+              - tekst: "Zwiększ częstotliwość przeglądów do roku, niezależnie od wyniku scoringu."
+          - tekst: "Monitoruj przepływy związane z kryptoaktywami."
+            podkroki:
+              - tekst: "Zwracaj uwagę na przelewy kierowane do lub od podmiotów, które nie są objęte nadzorem, oraz na duże kwoty przekazywane w krótkim czasie na rachunki różnych osób fizycznych."
+              - tekst: "Wpłaty od osób fizycznych tytułem zakupu kryptoaktywów traktuj jak transakcje o zwiększonym ryzyku, jeżeli kwota przekracza {{fakt:aml.prog-wplata-udokumentowanie}}."
+          - tekst: "Zdecyduj o dalszym prowadzeniu relacji."
+            podkroki:
+              - tekst: "Decyzję o utrzymaniu relacji z klientem tej branży zatwierdza komórka zgodności, a nie jednostka biznesowa."
+              - tekst: "W razie niewyjaśnionych przepływów lub braku współpracy rozpocznij procedurę zakończenia relacji i rozważ zawiadomienie organu."
+
+  - id: procedura-aml-kyc-szcz-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Postępuj przy obsłudze rachunku powierniczego i rachunku zbiorczego."
+            podkroki:
+              - tekst: "Ustal, na czyj rachunek działa posiadacz rachunku powierniczego, oraz zażądaj listy osób, których środki są na nim ewidencjonowane."
+              - tekst: "Beneficjentów, których udział przekracza próg wskazany w procedurze, zidentyfikuj i zweryfikuj tak samo jak klienta bezpośredniego."
+          - tekst: "Zbadaj rzetelność posiadacza rachunku zbiorczego."
+            podkroki:
+              - tekst: "Sprawdź, czy posiadacz jest instytucją obowiązaną, i potwierdź, że podlega nadzorowi w zakresie przeciwdziałania praniu pieniędzy."
+              - tekst: "Uzyskaj pisemne zapewnienie, że na żądanie Banku dane o osobach, na których rzecz działa, zostaną udostępnione bez zbędnej zwłoki."
+          - tekst: "Wyznacz zasady monitorowania."
+            podkroki:
+              - tekst: "Monitoruj rachunek zbiorczy pod kątem zgodności obrotów z deklarowanym profilem, zwracając uwagę na pojedyncze, wyjątkowo duże transakcje."
+              - tekst: "Zlecenie kierowane na rachunki osób trzecich, niewskazanych w pierwotnej liście, wymaga weryfikacji przed realizacją."
+
+  - id: procedura-aml-kyc-szcz-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szczegolne
+    elementy:
+      - akapit: "Przypadki szczególne dotyczące klientów korzystających z usług o dużej wartości (bankowość prywatna, doradztwo majątkowe) wymagają od pracownika większej uwagi i dodatkowych czynności ponad zasady ogólne."
+      - ustep: "W relacjach z klientami bankowości prywatnej pracownik:"
+        punkty:
+          - "sporządza rozszerzony wywiad dotyczący źródła majątku, opisujący historię zawodową, działalność gospodarczą i istotne transakcje majątkowe;"
+          - "ustala, czy klient lub jego rodzina nie pełnią funkcji publicznych i nie są powiązani z podmiotami z państw ujętych w dokumencie „{{fakt:aml.wykaz-krajow}}”;"
+          - "uzyskuje akceptację zgodności przed uruchomieniem produktów inwestycyjnych i kredytowych zabezpieczanych aktywami zlokalizowanymi za granicą;"
+          - "dokumentuje spotkania z klientem i przekazuje komórce zgodności informacje o nietypowych dyspozycjach w terminie ustalonym w instrukcji."
+      - akapit: "Doradca nie może przyjmować dyspozycji, które mogą służyć ukryciu rzeczywistego beneficjenta środków, w szczególności zleceń przelewu w imieniu osoby trzeciej, bez pisemnego umocowania i weryfikacji stron."
+
+  - id: procedura-aml-kyc-kontr-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-kontrola
+    elementy:
+      - kroki:
+          - tekst: "Przeprowadź kontrolę funkcjonalną pierwszej linii."
+            podkroki:
+              - tekst: "Kierownik placówki co miesiąc wybiera losowo kilka kart klientów nowo przyjętych i sprawdza kompletność dokumentów, poprawność scoringu i zgodność wyniku ze stanem faktycznym."
+              - tekst: "Stwierdzone braki wpisuje do arkusza kontroli i wyznacza pracownikowi termin ich usunięcia nie dłuższy niż {{fakt:termin.aml.uzupelnienie-dokumentow}}."
+          - tekst: "Przeprowadź kontrolę drugiej linii."
+            podkroki:
+              - tekst: "Jednostka „{{fakt:jednostka.zgodnosc}}” w ramach rocznego planu bada próbę placówek i procesów, wskazując słabe punkty systemu oraz zalecane działania naprawcze."
+              - tekst: "Wyniki kontroli przedstawia się koordynatorowi oraz członkowi zarządu odpowiedzialnemu za przeciwdziałanie praniu pieniędzy w formie sprawozdania."
+          - tekst: "Wdrożenie zaleceń pokontrolnych."
+            podkroki:
+              - tekst: "Każde zalecenie ma wskazanego właściciela i termin realizacji; postęp jest raportowany do kolejnego posiedzenia komitetu."
+              - tekst: "Zalecenia nierealizowane w terminie podlegają eskalacji do członka zarządu, który decyduje o dalszych krokach."
+
+  - id: procedura-aml-kyc-kontr-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-kontrola
+    elementy:
+      - akapit: "Skuteczność działania systemu monitorowania transakcji podlega regularnej ocenie, aby ograniczyć zarówno liczbę alertów fałszywie dodatnich, jak i ryzyko pominięcia zdarzeń istotnych."
+      - ustep: "W ramach oceny skuteczności systemu {{fakt:aml.system-monitoringu}}:"
+        punkty:
+          - "{co kwartał|raz na kwartał} analizuje się liczbę wygenerowanych alertów, odsetek alertów zamkniętych bez eskalacji i średni czas obsługi;"
+          - "co najmniej raz w roku testuje się scenariusze na danych historycznych, w tym na sprawach zakończonych zawiadomieniem organu;"
+          - "zmiany parametrów scenariuszy wymagają pisemnego uzasadnienia, akceptacji kierownika jednostki zgodności oraz ich opisu w dokumentacji systemu;"
+          - "wykryte luki lub nieprawidłowości w działaniu systemu zgłasza się do jednostki informatycznej i śledzi do czasu ich usunięcia."
+      - akapit: "Sprawozdanie z oceny skuteczności systemu przekazuje się audytowi wewnętrznemu, który uwzględnia je w planowaniu własnych czynności."
+
+  - id: procedura-aml-kyc-szkol-2
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szkolenia
+    elementy:
+      - akapit: "Szkolenia wstępne odbywają się przed samodzielnym rozpoczęciem pracy na stanowisku związanym z obsługą klientów albo przetwarzaniem transakcji i w terminie {{fakt:termin.aml.szkolenie-wstepne}} od dnia zatrudnienia. Do czasu ich ukończenia pracownik działa pod nadzorem przełożonego."
+      - ustep: "Program szkolenia wstępnego obejmuje:"
+        punkty:
+          - "omówienie obowiązków Banku jako instytucji obowiązanej oraz odpowiedzialności pracownika za naruszenie przepisów;"
+          - "praktyczne ćwiczenia z identyfikacji klienta i ustalania beneficjenta rzeczywistego na przykładach dokumentów;"
+          - "wypełnianie formularza oceny ryzyka oraz posługiwanie się narzędziem {{fakt:aml.system-klienci}};"
+          - "rozpoznawanie sygnałów ostrzegawczych i zasady zgłaszania podejrzeń wewnątrz Banku;"
+          - "zasady postępowania z klientem, wobec którego prowadzona jest analiza, w tym zakaz informowania go o tym fakcie."
+      - akapit: "Szkolenie kończy się testem, w którym wymagane jest uzyskanie co najmniej osiemdziesięciu procent poprawnych odpowiedzi. W razie wyniku niższego pracownik powtarza szkolenie w ciągu trzydziestu dni."
+
+  - id: procedura-aml-kyc-szkol-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-szkolenia
+    elementy:
+      - kroki:
+          - tekst: "Zaplanuj szkolenia okresowe na dany rok."
+            podkroki:
+              - tekst: "Do końca stycznia koordynator przedstawia plan szkoleń obejmujący grupy odbiorców, tematy, formę i terminy; plan uwzględnia zmiany przepisów oraz wnioski z kontroli."
+              - tekst: "Plan zatwierdza członek zarządu odpowiedzialny za przeciwdziałanie praniu pieniędzy."
+          - tekst: "Zrealizuj szkolenia i zbierz potwierdzenia."
+            podkroki:
+              - tekst: "Obecność na szkoleniach stacjonarnych potwierdzają uczestnicy podpisem na liście; udział w szkoleniach zdalnych jest rejestrowany przez platformę szkoleniową."
+              - tekst: "Szkolenia okresowe są powtarzane co {{fakt:termin.aml.szkolenie-okresowe}}, a pracownicy, którzy ich nie ukończą, zostają wskazani przełożonym do podjęcia działań."
+          - tekst: "Oceń skuteczność szkoleń."
+            podkroki:
+              - tekst: "Po każdym cyklu wykonuje się analizę wyników testów i liczby błędów wykrytych w kontrolach; wnioski wykorzystuje się przy przygotowaniu kolejnego programu."
+              - tekst: "Wnioski z oceny przedstawia się komitetowi zarządczemu razem z rocznym sprawozdaniem."
+
+  - id: procedura-aml-kyc-dok-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-dokumentacja
+    elementy:
+      - akapit: "Dokumentację dotyczącą stosowania środków bezpieczeństwa finansowego przechowuje się w sposób umożliwiający jej odtworzenie w razie kontroli organu nadzoru lub postępowania karnego."
+      - ustep: "Do dokumentacji należą:"
+        punkty:
+          - "kopie dokumentów lub informacje z nich pochodzące, pozyskane przy identyfikacji i weryfikacji;"
+          - "formularze oceny ryzyka, wyniki scoringu oraz ich zmiany w czasie;"
+          - "analizy alertów, w tym decyzje o zamknięciu sprawy wraz z uzasadnieniem;"
+          - "korespondencja z klientem w sprawie wyjaśnienia transakcji lub uzupełnienia danych;"
+          - "kopie zawiadomień przekazanych organom i dowody ich przekazania;"
+          - "dokumentacja szkoleń i kontroli wewnętrznych."
+      - akapit: "Dokumentację przechowuje się przez okres {{fakt:termin.aml.przechowywanie-dokumentow}}, a analizy dotyczące transakcji — przez {{fakt:termin.aml.przechowywanie-analiz}}. Po upływie tych okresów jednostka „{{fakt:jednostka.zgodnosc}}” zleca jej zniszczenie w sposób uniemożliwiający odtworzenie danych."
+
+  - id: procedura-aml-kyc-dok-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-dokumentacja
+    elementy:
+      - kroki:
+          - tekst: "Zapewnij integralność i dostępność dokumentacji."
+            podkroki:
+              - tekst: "Dokumenty papierowe skanuj w dniu przyjęcia i wiąż z kartą klienta w {{fakt:aml.system-klienci}}; oryginały przechowuj w zamykanej szafie z rejestrem dostępu."
+              - tekst: "Dostęp do dokumentacji mają wyłącznie osoby upoważnione; każde udostępnienie jest odnotowywane."
+          - tekst: "Udostępniaj dokumentację organom uprawnionym."
+            podkroki:
+              - tekst: "Żądanie organu przyjmuje {{fakt:jednostka.prawny}}, która sprawdza podstawę prawną i zakres żądanych danych."
+              - tekst: "Dokumenty przekazuje się w terminie wskazanym przez organ, w formie bezpiecznej, a fakt udostępnienia wpisuje się do rejestru."
+          - tekst: "Zabezpiecz dokumentację przed utratą."
+            podkroki:
+              - tekst: "Kopie zapasowe systemów wykonuje się zgodnie z politykami bezpieczeństwa informacji; test odtworzenia przeprowadza się co najmniej raz w roku."
+              - tekst: "W razie zdarzenia, które mogło spowodować utratę lub ujawnienie dokumentów, informuje się jednostkę „{{fakt:jednostka.bezpieczenstwo}}” w trybie zgłaszania incydentów."
+
+  - id: procedura-aml-kyc-odp-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-odpowiedzialnosci
+    elementy:
+      - ustep: "W zakresie szczegółowych czynności procedury odpowiedzialność ponoszą:"
+        punkty:
+          - "**Pracownik placówki** — przeprowadza identyfikację i weryfikację klienta, wypełnia formularz oceny ryzyka, przekazuje sprawy niejasne do jednostki zgodności i nie informuje klienta o analizie;"
+          - "**Kierownik placówki** — nadzoruje prawidłowość stosowania procedury w placówce, zatwierdza relacje o podwyższonym ryzyku w granicach swoich uprawnień oraz odpowiada za przeszkolenie zespołu;"
+          - "**Analityk** — ocenia alerty, przeprowadza analizy transakcji, przygotowuje rekomendacje dla koordynatora i prowadzi rejestr podejrzanych transakcji;"
+          - "**Koordynator** — decyduje o zawiadomieniach organu, zamrożeniach i wstrzymaniach transakcji oraz przedstawia zarządowi sprawozdania;"
+          - "**Opiekun klienta** — informuje klienta o konieczności aktualizacji danych, zbiera dokumenty i odnotowuje istotne zmiany jego sytuacji."
+      - akapit: "Zakresy czynności poszczególnych stanowisk są uzupełnione w regulaminach organizacyjnych jednostek. W razie rozbieżności stosuje się postanowienia niniejszej procedury."
+
+  - id: procedura-aml-kyc-def-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-definicje
+    elementy:
+      - ustep: "Dla potrzeb części procedury poświęconych analizie i monitorowaniu stosuje się dodatkowo następujące pojęcia:"
+        punkty:
+          - "**Alert** — komunikat generowany przez {{fakt:aml.system-monitoringu}}, wskazujący na transakcję lub zespół transakcji wymagających oceny;"
+          - "**Fałszywy alert** — alert, który po analizie nie wskazuje na wystąpienie przesłanek prania pieniędzy ani finansowania terroryzmu;"
+          - "**Rozwarstwianie** — wprowadzanie do rachunku wielu operacji, mające na celu utrudnienie ustalenia pochodzenia środków;"
+          - "**Strukturyzowanie** — dzielenie transakcji na mniejsze części w celu uniknięcia progów kontroli lub rejestracji;"
+          - "**Osoba pośrednicząca** — osoba, która działa jako łącznik między klientem a Bankiem, nie będąc jego pełnomocnikiem ani przedstawicielem ustawowym;"
+          - "**Zasoby gospodarcze** — aktywa każdego rodzaju, materialne lub niematerialne, ruchome lub nieruchome, które mogą być wykorzystane do uzyskania środków, towarów lub usług;"
+          - "**Zamrożenie** — zablokowanie przemieszczania, przekazywania, zmiany lub wykorzystywania środków oraz zasobów gospodarczych."
+
+  - id: procedura-aml-kyc-zal-sankcje
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-zalacznik
+    elementy:
+      - akapit: "Poniższa tabela zestawia osoby odpowiedzialne za poszczególne etapy obsługi sprawy podejrzanej transakcji oraz najważniejsze terminy. Jest to pomoc dla pracownika, a postanowienia szczegółowe zawiera treść procedury."
+      - tabela:
+          kolumny:
+            - naglowek: "Etap"
+              waga: 3
+            - naglowek: "Odpowiedzialny"
+              waga: 3
+            - naglowek: "Termin"
+              waga: 3
+          wiersze:
+            - ["Zgłoszenie wewnętrzne podejrzenia", "Pracownik, który powziął podejrzenie", "Niezwłocznie"]
+            - ["Analiza alertu", "Analityk", "{{fakt:termin.aml.analiza-alertu}}"]
+            - ["Eskalacja alertu", "Analityk", "{{fakt:termin.aml.eskalacja-alertu}}"]
+            - ["Decyzja o zawiadomieniu", "Koordynator", "W trakcie analizy"]
+            - ["Zawiadomienie organu", "Koordynator", "{{fakt:termin.aml.zawiadomienie-giif}}"]
+            - ["Wdrożenie zamrożenia", "Jednostka zgodności", "{{fakt:termin.aml.zamrozenie-wdrozenie}}"]
+            - ["Uzupełnienie dokumentów przez klienta", "Opiekun klienta", "{{fakt:termin.aml.uzupelnienie-dokumentow}}"]
+          siatka: true

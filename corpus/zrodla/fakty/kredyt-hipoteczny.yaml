@@ -1,0 +1,296 @@
+fakty:
+  # --- marża, oprocentowanie, wskaźnik
+  - id: oprocentowanie.hipoteka.marza
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.1
+      - od: 2027-01-01
+        wartosc: 1.9
+    alternatywy: [2.9, 1.5]
+  - id: oprocentowanie.hipoteka.podwyzszenie-przed-hipoteka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+      - od: 2026-04-01
+        wartosc: 1.2
+    alternatywy: [0.5, 2.0]
+  - id: oprocentowanie.hipoteka.okresowo-stale
+    rodzaj: procent
+    wartosci:
+      - wartosc: 6.49
+      - od: 2026-04-01
+        wartosc: 6.19
+    alternatywy: [7.19, 5.49]
+  - id: wskaznik.hipoteka.nazwa
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "wskaźnik referencyjny WIR-3M"
+    alternatywy: ["wskaźnik referencyjny WIR-6M"]
+  - id: wskaznik.hipoteka.okres-zmiany
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzy miesiące"
+      - od: 2027-01-01
+        wartosc: "sześć miesięcy"
+    alternatywy: ["miesiąc"]
+  - id: wskaznik.hipoteka.okres-stalosci
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+      - od: 2027-01-01
+        wartosc: "7 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: wskaznik.hipoteka.bufor-stopy
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.5
+    alternatywy: [3.0, 1.5]
+  - id: wskaznik.hipoteka.obciazenie-dochodu
+    rodzaj: procent
+    wartosci:
+      - wartosc: 50.0
+      - od: 2027-01-01
+        wartosc: 45.0
+    alternatywy: [40.0, 60.0]
+
+  # --- limity i wkład własny
+  - id: limit.hipoteka.ltv
+    rodzaj: procent
+    wartosci:
+      - wartosc: 80.0
+      - od: 2027-01-01
+        wartosc: 75.0
+    alternatywy: [90.0, 70.0]
+  - id: limit.hipoteka.ltv-z-ubezpieczeniem
+    rodzaj: procent
+    wartosci:
+      - wartosc: 90.0
+    alternatywy: [95.0, 85.0]
+  - id: limit.hipoteka.wklad-wlasny
+    rodzaj: procent
+    wartosci:
+      - wartosc: 20.0
+      - od: 2027-01-01
+        wartosc: 25.0
+    alternatywy: [10.0, 30.0]
+  - id: limit.hipoteka.kwota-min
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100000.00
+    alternatywy: [50000.00, 150000.00]
+  - id: limit.hipoteka.kwota-max
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3000000.00
+      - od: 2027-01-01
+        wartosc: 3500000.00
+    alternatywy: [2000000.00, 5000000.00]
+  - id: limit.hipoteka.okres-min
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["3 lata", "10 lat"]
+  - id: limit.hipoteka.okres-max
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "35 lat"
+      - od: 2027-01-01
+        wartosc: "30 lat"
+    alternatywy: ["25 lat", "40 lat"]
+  - id: limit.hipoteka.liczba-transz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "dziesięciu"
+    alternatywy: ["sześciu", "dwunastu"]
+  - id: limit.hipoteka.wakacje-liczba
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "czterech"
+      - od: 2027-01-01
+        wartosc: "dwóch"
+    alternatywy: ["sześciu"]
+  - id: limit.hipoteka.wiek-koniec-umowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "75 lat"
+    alternatywy: ["70 lat", "80 lat"]
+
+  # --- opłaty i prowizje
+  - id: oplata.hipoteka.wycena
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 600.00
+      - od: 2027-01-01
+        wartosc: 700.00
+    alternatywy: [0.00, 900.00]
+  - id: oplata.hipoteka.prowizja-przygotowanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+      - od: 2026-04-01
+        wartosc: 1.0
+    alternatywy: [0.0, 2.0]
+  - id: oplata.hipoteka.wpis-hipoteki
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [100.00, 300.00]
+  - id: oplata.hipoteka.wczesna-splata
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+      - od: 2027-01-01
+        wartosc: 1.5
+    alternatywy: [0.0, 3.0]
+  - id: oplata.hipoteka.okres-oplaty-wczesnej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "3 lat"
+    alternatywy: ["2 lat", "5 lat"]
+  - id: oplata.hipoteka.zmiana-warunkow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+      - od: 2027-01-01
+        wartosc: 600.00
+    alternatywy: [0.00, 800.00]
+  - id: oplata.hipoteka.wyplata-transzy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2026-04-01
+        wartosc: 120.00
+    alternatywy: [0.00, 200.00]
+  - id: oplata.hipoteka.ubezpieczenie-niskiego-wkladu
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.8
+    alternatywy: [3.5, 2.0]
+  - id: oplata.hipoteka.wakacje
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2027-01-01
+        wartosc: 100.00
+    alternatywy: [150.00]
+
+  # --- terminy
+  - id: termin.hipoteka.decyzja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 21
+      - od: 2027-01-01
+        wartosc: 14
+    alternatywy: [30, 10]
+  - id: termin.hipoteka.waznosc-decyzji
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+    alternatywy: [60, 120]
+  - id: termin.hipoteka.waznosc-wyceny
+    rodzaj: termin
+    wartosci:
+      - wartosc: 180
+      - od: 2027-01-01
+        wartosc: 120
+    alternatywy: [90, 365]
+  - id: termin.hipoteka.oferta-wiazanie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.hipoteka.wyplata-po-warunkach
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2027-01-01
+        wartosc: 2
+    alternatywy: [5, 7]
+  - id: termin.hipoteka.dowod-wpisu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 180
+    alternatywy: [90, 365]
+  - id: termin.hipoteka.waznosc-polisy-przed-koncem
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.hipoteka.powiadomienie-stopa
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.hipoteka.wakacje-wniosek
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 45]
+  - id: termin.hipoteka.wczesna-splata-zawiadomienie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.hipoteka.zawiadomienie-zmiany-danych
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.hipoteka.wezwanie-do-zaplaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 21]
+  - id: termin.hipoteka.wypowiedzenie-przez-bank
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.hipoteka.zwolnienie-hipoteki
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2027-01-01
+        wartosc: 7
+    alternatywy: [30]
+  - id: termin.hipoteka.zaleglosc-raty
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "dwóch pełnych rat"
+    alternatywy: ["jednej pełnej raty", "trzech pełnych rat"]
+  - id: termin.hipoteka.kontrola-nieruchomosci
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+
+  # --- jednostka
+  - id: jednostka.kredyty-hipoteczne
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Kredytów Hipotecznych"
+    alternatywy: ["Biuro Kredytów Hipotecznych"]
+
+  # --- uzupełnienia
+  - id: termin.hipoteka.weryfikacja-wyceny
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: limit.hipoteka.spadek-wartosci
+    rodzaj: procent
+    wartosci:
+      - wartosc: 20.0
+    alternatywy: [10.0, 30.0]
+  - id: limit.hipoteka.wyposazenie-udzial
+    rodzaj: procent
+    wartosci:
+      - wartosc: 15.0
+    alternatywy: [10.0, 25.0]
+  - id: limit.hipoteka.okres-budowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 miesięcy"
+      - od: 2027-01-01
+        wartosc: "30 miesięcy"
+    alternatywy: ["18 miesięcy"]

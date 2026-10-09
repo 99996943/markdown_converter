@@ -1,0 +1,247 @@
+fakty:
+  # --- systemy, rejestry i formularze
+  - id: incydent.rejestr
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "RINC"
+    alternatywy: ["RZB"]
+  - id: incydent.system-zgloszen
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "INC-PRZYKŁAD"
+  - id: incydent.siem
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "SIEM-PRZYKŁAD"
+  - id: incydent.system-cbs
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+  - id: incydent.zespol
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Zespół Reagowania na Incydenty"
+    alternatywy: ["Zespół Operacyjny ds. Incydentów"]
+  - id: incydent.pokoj-operacyjny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "wirtualny pokój operacyjny incydentu"
+  - id: incydent.formularz-zgloszenia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-01"
+  - id: incydent.karta
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-02"
+  - id: incydent.raport-koncowy-formularz
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-03"
+  - id: incydent.protokol-dowodow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-04"
+  - id: incydent.raport-przegladu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-05"
+  - id: incydent.zawiadomienie-nadzor
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-BEZ-06"
+
+  # --- kontakt dyżurny i jednostki
+  - id: incydent.dyzur-telefon
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "800 000 040"
+    alternatywy: ["800 000 041"]
+  - id: incydent.dyzur-email
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "incydenty@bank.example"
+    alternatywy: ["bezpieczenstwo@bank.example"]
+  - id: incydent.jednostka.informatyka
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Informatyki"
+  - id: incydent.jednostka.ciaglosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Biuro Ciągłości Działania"
+  - id: incydent.jednostka.komunikacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Biuro Komunikacji Korporacyjnej"
+  - id: incydent.jednostka.kadry
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Zasobów Ludzkich"
+  - id: incydent.jednostka.audyt
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Audytu Wewnętrznego"
+  - id: incydent.organ-nadzoru
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "organ nadzoru"
+  - id: incydent.csirt
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "zespół CSIRT właściwy dla sektora finansowego"
+
+  # --- progi ważności i czasy reakcji
+  - id: incydent.czas-reakcji.krytyczny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "15 minut"
+      - od: 2027-01-01
+        wartosc: "10 minut"
+    alternatywy: ["30 minut"]
+  - id: incydent.czas-reakcji.wysoki
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "1 godziny"
+    alternatywy: ["2 godzin"]
+  - id: incydent.czas-reakcji.sredni
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "4 godzin"
+    alternatywy: ["8 godzin"]
+  - id: incydent.czas-reakcji.niski
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "2 dni roboczych"
+    alternatywy: ["5 dni roboczych"]
+  - id: incydent.prog.klienci-krytyczny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "ponad 1 000 Klientów"
+    alternatywy: ["ponad 5 000 Klientów"]
+  - id: incydent.prog.klienci-wysoki
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "od 100 do 1 000 Klientów"
+  - id: incydent.prog.przestoj-krytyczny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "dłużej niż 2 godziny"
+    alternatywy: ["dłużej niż 4 godziny"]
+  - id: incydent.prog.przestoj-wysoki
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "od 30 minut do 2 godzin"
+  - id: incydent.prog.kwota-krytyczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500000.00
+      - od: 2027-01-01
+        wartosc: 250000.00
+    alternatywy: [1000000.00]
+  - id: incydent.prog.kwota-wysoka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+    alternatywy: [100000.00]
+
+  # --- terminy zgłaszania i raportowania (godziny jako tekst)
+  - id: termin.incydent.zgloszenie-pracownika
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "30 minut"
+    alternatywy: ["1 godziny"]
+  - id: termin.incydent.klasyfikacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "2 godzin"
+      - od: 2027-01-01
+        wartosc: "1 godziny"
+    alternatywy: ["4 godzin"]
+  - id: termin.incydent.powiadomienie-wstepne
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 godzin"
+      - od: 2026-04-01
+        wartosc: "4 godzin"
+    alternatywy: ["24 godzin"]
+  - id: termin.incydent.powiadomienie-wstepne-granica
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 godzin"
+    alternatywy: ["48 godzin"]
+  - id: termin.incydent.powiadomienie-posrednie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "72 godzin"
+    alternatywy: ["96 godzin"]
+  - id: termin.incydent.raport-koncowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "1 miesiąca"
+    alternatywy: ["2 miesięcy"]
+  - id: termin.incydent.naruszenie-danych
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "72 godzin"
+    alternatywy: ["48 godzin"]
+  - id: termin.incydent.powiadomienie-klientow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 godzin"
+      - od: 2027-01-01
+        wartosc: "12 godzin"
+    alternatywy: ["48 godzin"]
+  - id: termin.incydent.zwrot-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+    alternatywy: ["w ciągu 3 dni roboczych"]
+  - id: termin.incydent.przeglad
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2027-01-01
+        wartosc: 10
+    alternatywy: [30, 7]
+  - id: termin.incydent.zatwierdzenie-raportu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14]
+  - id: termin.incydent.szkolenie-wstepne
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [60, 14]
+  - id: termin.incydent.realizacja-zalecen
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+      - od: 2027-01-01
+        wartosc: 60
+    alternatywy: [120]
+  - id: termin.incydent.retencja-dokumentacji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 lat"
+    alternatywy: ["5 lat"]
+  - id: termin.incydent.retencja-logow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 miesięcy"
+      - od: 2027-01-01
+        wartosc: "18 miesięcy"
+    alternatywy: ["6 miesięcy"]
+  - id: termin.incydent.test-planow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "raz w roku"
+    alternatywy: ["raz na dwa lata"]
+  - id: termin.incydent.cwiczenia-stolowe
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "dwa razy w roku"
+      - od: 2027-01-01
+        wartosc: "co kwartał"
+    alternatywy: ["raz w roku"]

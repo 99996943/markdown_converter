@@ -1,0 +1,136 @@
+bloki:
+  # ===== I. Postanowienia ogólne =====
+  - id: taryfa-indywidualni-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - ustep: "Niniejsza Taryfa {dotyczy|obejmuje} Klientów będących osobami fizycznymi, którzy zawierają z Bankiem umowy w celu niezwiązanym bezpośrednio z działalnością gospodarczą lub zawodową. Stawki dla przedsiębiorców i podmiotów niebędących konsumentami określa odrębna taryfa."
+      - ustep: "Taryfa jest podzielona na {sekcje|części} odpowiadające pakietom kont osobistych (Konto Standard, Konto Premium, Konto dla seniora) oraz grupom produktów wspólnych dla wszystkich pakietów: przelewom i zleceniom, operacjom gotówkowym, kartom debetowym oraz usługom dodatkowym i dokumentom. Jeżeli dana czynność nie została w sekcji pakietu wymieniona odrębnie, {stosuje się|obowiązuje} stawka z właściwej sekcji produktowej."
+      - ustep: "Opłaty i prowizje wyrażone w złotych {zawierają|uwzględniają} podatek od towarów i usług, o ile czynność nie jest zwolniona z tego podatku. Czynności bankowe wykonywane na rzecz konsumentów są co do zasady zwolnione z podatku, a stawki podane w Taryfie są stawkami ostatecznymi."
+      - akapit: "Przy kolejnych pozycjach podano tryb pobierania opłaty: „miesięcznie” oznacza opłatę pobieraną w ostatnim dniu roboczym miesiąca kalendarzowego, „za operację” — opłatę pobieraną w dniu wykonania pojedynczej czynności, „jednorazowo” — opłatę pobieraną raz, najpóźniej w dniu zakończenia czynności."
+  # ===== II. Konto Standard =====
+  - id: taryfa-indywidualni-standard-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Konto Standard jest podstawowym pakietem rachunku osobistego w złotych, przeznaczonym dla Klientów, którzy korzystają z rachunku do bieżących płatności i odbioru wynagrodzenia. Pakiet obejmuje rachunek, dostęp do bankowości elektronicznej i mobilnej oraz kartę debetową. Opłata za prowadzenie rachunku {nie jest pobierana|nie jest naliczana} w miesiącu, w którym wpływy na rachunek wyniosły co najmniej {{fakt:oplata.taryfa-indywidualni.prog-wplywow-standard}}."
+      - akapit: "Do wpływów uprawniających do zwolnienia z opłaty zalicza się przelewy przychodzące z innych rachunków, wynagrodzenie, świadczenia emerytalne i rentowe oraz zasiłki; nie zalicza się wpłat gotówkowych, przelewów między rachunkami tego samego Klienta ani zwrotów transakcji kartowych."
+  - id: taryfa-indywidualni-standard-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku osobistego w pakiecie Konto Standard", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Minimalna wpłata początkowa na rachunek", stawka: "{{fakt:limit.rachunek-osobisty.pierwsza-wplata}}", tryb: "jednorazowo" }
+          - usluga: "{Prowadzenie|Obsługa i prowadzenie} rachunku osobistego Konto Standard"
+            stawka: "{{fakt:oplata.prowadzenie-rachunku}}"
+            tryb: "miesięcznie"
+            podpozycje:
+              - { usluga: "w miesiącu, w którym wpływy na rachunek wyniosły co najmniej kwotę progową[^1]", stawka: "bez opłat", tryb: "miesięcznie" }
+              - { usluga: "w miesiącu, w którym wpływy nie osiągnęły kwoty progowej", stawka: "{{fakt:oplata.prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Zmiana pakietu rachunku na inny pakiet Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.zmiana-pakietu}}", tryb: "jednorazowo" }
+          - { usluga: "Dostęp do bankowości elektronicznej i mobilnej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wydanie pierwszej karty debetowej do rachunku", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - { usluga: "Ustanowienie pełnomocnictwa do rachunku", stawka: "{{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}", tryb: "jednorazowo" }
+          - { usluga: "Dyspozycja na wypadek śmierci", stawka: "{{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}", tryb: "jednorazowo" }
+          - { usluga: "Zamknięcie rachunku osobistego", stawka: "{{fakt:oplata.rachunek-osobisty.zamkniecie}}", tryb: "jednorazowo" }
+          - usluga: "Zajęcie rachunku w trybie egzekucji[^2]"
+            stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}"
+            tryb: "za każde zajęcie"
+    przypisy:
+      1: "Kwotę progową oraz zasady zaliczania wpływów podano w opisie sekcji; miesiąc, w którym rachunek został otwarty, traktuje się jak miesiąc, w którym spełniono warunek zwolnienia."
+      2: "Opłata obejmuje czynności związane z zawiadomieniem Klienta o zajęciu, zablokowaniem środków oraz przekazaniem ich organowi egzekucyjnemu; nie jest pobierana, jeżeli na rachunku nie ma środków podlegających zajęciu."
+  - id: taryfa-indywidualni-standard-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zmiana danych Klienta w placówce lub w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wniosek o zwiększenie limitu przelewów w placówce[^3]", stawka: "bez opłat", tryb: "za operację" }
+          - usluga: "Przyznanie limitu zadłużenia w rachunku (debetu)"
+            stawka: "{{fakt:oplata.taryfa-indywidualni.debet-prowizja-przyznanie}} kwoty limitu, min. {{fakt:oplata.taryfa-indywidualni.debet-prowizja-minimum}}"
+            tryb: "jednorazowo"
+          - { usluga: "Odsetki od zadłużenia w ramach limitu w rachunku", stawka: "{{fakt:oprocentowanie.debet}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Odsetki od zadłużenia przeterminowanego", stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Wezwanie do zapłaty (upomnienie) w sprawie zadłużenia", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każdy dokument" }
+          - { usluga: "Wniosek o zawieszenie spłaty zadłużenia w rachunku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Powiadomienie SMS o saldzie i transakcjach", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie" }
+          - { usluga: "Powiadomienie push w aplikacji mobilnej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku w postaci papierowej wysyłany pocztą", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+          - { usluga: "Rachunek dodatkowy w złotych w ramach pakietu", stawka: "{{fakt:oplata.prowadzenie-rachunku}}", tryb: "miesięcznie" }
+    przypisy:
+      3: "Zwiększenie limitu powyżej kwoty {{fakt:limit.przelew-dzienny-domyslny}} dziennie wymaga złożenia dyspozycji w placówce albo potwierdzenia w kanale elektronicznym zgodnie z regulaminem rachunku."
+  # ===== III. Konto Premium =====
+  - id: taryfa-indywidualni-premium-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Konto Premium jest pakietem rozszerzonym, w którym Klient otrzymuje bezpłatne przelewy do rachunków w innych bankach, wyższe limity transakcyjne, opiekuna klienta oraz podwyższone oprocentowanie środków. Opłata za prowadzenie rachunku {nie jest pobierana|nie jest naliczana} w miesiącu, w którym wpływy na rachunek wyniosły co najmniej {{fakt:oplata.taryfa-indywidualni.prog-wplywow-premium}}."
+      - akapit: "Pakiet jest oferowany Klientom, którzy ukończyli {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} i złożyli wniosek o jego przyznanie. Bank może odmówić przyznania pakietu bez podawania przyczyn, jeżeli Klient nie spełnia warunków wewnętrznych dotyczących zdolności kredytowej i historii współpracy z Bankiem."
+  - id: taryfa-indywidualni-premium-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku osobistego w pakiecie Konto Premium", stawka: "bez opłat", tryb: "jednorazowo" }
+          - usluga: "{Prowadzenie|Obsługa i prowadzenie} rachunku osobistego Konto Premium"
+            stawka: "{{fakt:oplata.taryfa-indywidualni.prowadzenie-premium}}"
+            tryb: "miesięcznie"
+            podpozycje:
+              - { usluga: "w miesiącu, w którym wpływy na rachunek wyniosły co najmniej kwotę progową[^1]", stawka: "bez opłat", tryb: "miesięcznie" }
+              - { usluga: "w miesiącu, w którym wpływy nie osiągnęły kwoty progowej", stawka: "{{fakt:oplata.taryfa-indywidualni.prowadzenie-premium}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku Konto Premium", stawka: "{{fakt:oplata.taryfa-indywidualni.oprocentowanie-konto-premium}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Przelew krajowy zlecony w placówce do rachunku w innym banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Przelew krajowy zlecony w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew natychmiastowy w bankowości elektronicznej[^2]", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "Dzienny limit przelewów w kanałach elektronicznych (ustawienie domyślne)", stawka: "{{fakt:limit.przelew-dzienny-domyslny}}", tryb: "dziennie" }
+          - { usluga: "Dzienny limit przelewów natychmiastowych", stawka: "{{fakt:limit.rachunek-osobisty.przelew-natychmiastowy}}", tryb: "dziennie" }
+          - { usluga: "Wydanie karty debetowej do rachunku Konto Premium", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie karty debetowej do rachunku Konto Premium", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wypłata gotówki z bankomatów obcych w kraju[^3]", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zlecenie stałe w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wyciąg z rachunku w postaci papierowej wysyłany pocztą", stawka: "bez opłat", tryb: "za każdy wyciąg" }
+          - { usluga: "Dedykowany opiekun klienta (kontakt telefoniczny i spotkania)", stawka: "bez opłat", tryb: "miesięcznie" }
+    przypisy:
+      1: "Miesiąc, w którym rachunek został otwarty albo w którym Klient zmienił pakiet na Konto Premium, traktuje się jak miesiąc, w którym spełniono warunek zwolnienia z opłaty."
+      2: "Przelew natychmiastowy jest realizowany całodobowo, o ile bank odbiorcy uczestniczy w systemie rozliczeń natychmiastowych; w przeciwnym razie Klient jest informowany o niemożności wykonania zlecenia przed jego potwierdzeniem."
+      3: "Zwolnienie dotyczy wypłat w bankomatach działających na terytorium kraju; wypłaty zagraniczne są rozliczane według sekcji „Karty debetowe”."
+  # ===== IV. Konto dla seniora =====
+  - id: taryfa-indywidualni-senior-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Konto dla seniora jest pakietem rachunku osobistego w złotych dla Klientów, którzy ukończyli {{fakt:oplata.taryfa-indywidualni.wiek-senior}}. Rachunek jest prowadzony bez opłaty miesięcznej, a Klient może korzystać z obsługi w placówce bez dodatkowych kosztów. Uprawnienie do pakietu Klient wykazuje dokumentem tożsamości."
+      - akapit: "Klient, który przestał spełniać warunek wieku w wyniku błędnej daty w danych, może zmienić pakiet na inny bez opłaty. Bank nie zmienia pakietu z urzędu w przypadku zgonu współposiadacza rachunku."
+  - id: taryfa-indywidualni-senior-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku osobistego w pakiecie Konto dla seniora", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Prowadzenie|Obsługa i prowadzenie} rachunku osobistego Konto dla seniora", stawka: "{{fakt:oplata.taryfa-indywidualni.prowadzenie-senior}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Wydanie karty debetowej do rachunku", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie karty debetowej w pakiecie dla seniora", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-senior-miesiecznie}}", tryb: "miesięcznie" }
+          - { usluga: "Wpłata gotówki w placówce na własny rachunek", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w placówce z własnego rachunku do kwoty awizacji", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew krajowy zlecony w placówce[^1]", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Przelew krajowy zlecony w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Polecenie zapłaty rachunków za media", stawka: "{{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}}", tryb: "za operację" }
+          - { usluga: "Wyciąg z rachunku w postaci papierowej wysyłany pocztą[^2]", stawka: "bez opłat", tryb: "za każdy wyciąg" }
+          - { usluga: "Powiadomienie SMS o saldzie rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie" }
+          - { usluga: "Pomoc pracownika placówki przy pierwszym logowaniu do bankowości elektronicznej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana pakietu na inny bez zmiany numeru rachunku", stawka: "{{fakt:oplata.taryfa-indywidualni.zmiana-pakietu}}", tryb: "jednorazowo" }
+    przypisy:
+      1: "Opłata nie jest pobierana, jeżeli Klient ukończył 75 lat, a przelew dotyczy opłat za media, czynsz albo opłaty za leczenie, potwierdzonych dokumentem przedstawionym w placówce."
+      2: "Bezpłatny jest wyciąg przesyłany na adres korespondencyjny Klienta w kraju; wysyłka za granicę podlega opłacie według pozycji „Wyciąg z rachunku w postaci papierowej” w sekcji Konto Standard."

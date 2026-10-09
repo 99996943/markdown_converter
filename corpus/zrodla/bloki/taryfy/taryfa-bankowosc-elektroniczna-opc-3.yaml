@@ -1,0 +1,123 @@
+bloki:
+  # ---------------------------------------------------------------- VI. Powiadomienia (cd.)
+  - id: taryfa-bankowosc-elektroniczna-opc-powiad-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-powiad
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Powiadomienie tekstowe o {uznaniu|wpływie} środków na rachunek", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Powiadomienie tekstowe o obciążeniu rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Powiadomienie tekstowe o transakcji kartą powyżej ustalonego progu kwotowego", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Powiadomienie tekstowe o saldzie rachunku wysyłane codziennie o wybranej godzinie", stawka: "{{fakt:oplata.bankowosc-elektroniczna.sms-saldo}}", tryb: "za wiadomość"}
+          - {usluga: "Informacja o saldzie rachunku przesłana wiadomością tekstową na żądanie Klienta", stawka: "{{fakt:oplata.bankowosc-elektroniczna.sms-saldo}}", tryb: "za wiadomość"}
+          - {usluga: "Pakiet powiadomień tekstowych — do {dwudziestu|20} wiadomości w miesiącu", stawka: "{{fakt:oplata.bankowosc-elektroniczna.pakiet-sms}}", tryb: "miesięcznie"}
+          - {usluga: "Pakiet powiadomień tekstowych — zmiana numeru telefonu odbiorcy", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Pakiet powiadomień tekstowych — wiadomości ponad pakiet", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za wiadomość"}
+          - {usluga: "Pakiet powiadomień tekstowych — rezygnacja", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Powiadomienie tekstowe o kodzie do odbioru gotówki w bankomacie", stawka: "bez opłat", tryb: "za wiadomość"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-powiad-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-powiad
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Konfiguracja zakresu powiadomień w {serwisie|aplikacji} mobilnej", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Konfiguracja zakresu powiadomień na Infolinii", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Konfiguracja zakresu powiadomień w placówce Banku", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Ustawienie progu kwotowego powiadomień o operacjach", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Ustawienie harmonogramu „cichych godzin” bez powiadomień push", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Przekierowanie powiadomień na adres e-mail pełnomocnika", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Powiadomienie e-mail o zbliżającej się planowanej przerwie serwisowej (z wyprzedzeniem {{fakt:bankowosc.przerwa-zapowiedz}} dni)", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o planowanej przerwie w dostępie do bankowości w oknie serwisowym {{fakt:bankowosc.okno-serwisowe}}", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Komunikat w aplikacji o awarii lub niedostępności usługi", stawka: "bez opłat", tryb: "za komunikat"}
+          - {usluga: "Przesłanie powiadomienia w formie wydruku listem zwykłym", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za przesyłkę"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-powiad-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-powiad
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Powiadomienia dla firm — zbiorcza informacja o wpływach dnia, wiadomość e-mail", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-email}}", tryb: "za wiadomość"}
+          - {usluga: "Powiadomienia dla firm — powiadomienie o oczekującej dyspozycji do akceptacji", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienia dla firm — powiadomienie o odrzuceniu dyspozycji przez osobę akceptującą", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienia dla firm — pakiet wiadomości tekstowych dla {pięciu|5} osób", stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-firma-pakiet}}", tryb: "miesięcznie"}
+          - {usluga: "Powiadomienia dla firm — powiadomienie o przekroczeniu dziennego limitu {{fakt:limit.firma.przelew-dzienny-internet}}", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienia dla firm — komunikat o wygasającym certyfikacie podpisu", stawka: "bez opłat", tryb: "za komunikat"}
+          - {usluga: "Powiadomienia dla firm — komunikat o wygasającym upoważnieniu użytkownika", stawka: "bez opłat", tryb: "za komunikat"}
+          - {usluga: "Powiadomienie o zajęciu rachunku przez organ egzekucyjny — wiadomość w serwisie", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie o terminie wygaśnięcia umowy o bankowość elektroniczną", stawka: "bez opłat", tryb: "za powiadomienie"}
+          - {usluga: "Powiadomienie webhook o zdarzeniach na rachunku dostarczane do systemu Klienta (API)", stawka: "wliczone w opłatę za dostęp do API", tryb: "za zdarzenie"}
+
+  # ---------------------------------------------------------------- VII. Dyspozycje w kanałach elektronicznych
+  - id: taryfa-bankowosc-elektroniczna-opc-dyspozycje-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-dyspozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew krajowy w złotych z rachunku osobistego do banku {innego|zewnętrznego}, złożony w aplikacji mobilnej", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew krajowy w złotych do odbiorcy z listy zaufanych", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew krajowy w złotych do nowego odbiorcy do kwoty {{fakt:limit.bankowosc.nowy-odbiorca}}", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew z rachunku oszczędnościowego na rachunek osobisty Klienta", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew do ZUS i urzędu skarbowego", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew ekspresowy — realizacja w ciągu 15 minut w dni robocze", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za przelew"}
+          - {usluga: "Przelew realizowany w sesji Elixir o godzinie granicznej {{fakt:termin.firma.godzina-odciecia-elixir}}", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew złożony po godzinie granicznej — realizacja w kolejnym dniu roboczym", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew z kodem QR do płatności faktur lub rachunków", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew na rachunek Klienta prowadzony w innym banku (przelew własny zewnętrzny)", stawka: "bez opłat", tryb: "za przelew"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-dyspozycje-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-dyspozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew zagraniczny w walucie obcej w serwisie internetowym — opcja kosztów SHA", stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-zagraniczny-internet}}", tryb: "za przelew"}
+          - {usluga: "Przelew zagraniczny w walucie obcej w serwisie internetowym — opcja kosztów OUR", stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-zagraniczny-internet}} i opłaty banków pośredniczących", tryb: "za przelew"}
+          - {usluga: "Przelew zagraniczny w trybie pilnym — dopłata", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-pilny}}", tryb: "za przelew"}
+          - {usluga: "Przelew SEPA w euro", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Przelew przychodzący z zagranicy w walucie obcej", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-przychodzacy}}", tryb: "za przelew"}
+          - {usluga: "Zmiana lub anulowanie dyspozycji przelewu zagranicznego po rozpoczęciu realizacji", stawka: "{{fakt:oplata.firma.zmiana-dyspozycji-zagranicznej}}", tryb: "za zmianę"}
+          - {usluga: "Przelew zagraniczny — godzina graniczna składania dyspozycji {{fakt:termin.firma.godzina-odciecia-zagraniczne}}", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Wymiana walut w serwisie internetowym po kursie z Tabeli kursów walut", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Przewalutowanie przelewu w złotych na rachunek w walucie obcej", stawka: "wg Tabeli kursów walut", tryb: "za transakcję"}
+          - {usluga: "Poszukiwanie przelewu zagranicznego na zlecenie Klienta", stawka: "{{fakt:oplata.firma.poszukiwanie-przelewu}}", tryb: "za zlecenie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-dyspozycje-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-dyspozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zlecenie stałe — ustanowienie w {aplikacji|serwisie} mobilnym", stawka: "{{fakt:oplata.bankowosc-elektroniczna.zlecenie-stale-ustanowienie}}", tryb: "jednorazowo"}
+          - {usluga: "Zlecenie stałe — realizacja", stawka: "bez opłat", tryb: "za każdą realizację"}
+          - {usluga: "Zlecenie stałe — modyfikacja kwoty lub terminu", stawka: "{{fakt:oplata.bankowosc-elektroniczna.zlecenie-stale-modyfikacja}}", tryb: "za każdą zmianę"}
+          - {usluga: "Zlecenie stałe — odwołanie", stawka: "bez opłat", tryb: "za odwołanie"}
+          - {usluga: "Zlecenie stałe ustanowione w placówce Banku", stawka: "5,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Zlecenie stałe — informacja o nieudanej realizacji z braku środków", stawka: "bez opłat", tryb: "za informację"}
+          - {usluga: "Polecenie zapłaty — udzielenie zgody w serwisie internetowym", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Polecenie zapłaty — odwołanie zgody lub zablokowanie wierzyciela", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Polecenie zapłaty — realizacja", stawka: "{{fakt:oplata.firma.polecenie-zaplaty}}", tryb: "za każde polecenie"}
+          - {usluga: "Automatyczna spłata karty kredytowej z rachunku — ustawienie w serwisie", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Cykliczna wpłata na rachunek oszczędnościowy (reguła „zaokrąglaj do pełnych złotych”)", stawka: "bez opłat", tryb: "miesięcznie"}
+
+  - id: taryfa-bankowosc-elektroniczna-opc-dyspozycje-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-bankowosc-elektroniczna-dyspozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zmiana dziennego limitu przelewów w serwisie internetowym w granicach od {{fakt:limit.bankowosc.minimalny-ustawiany}} do {{fakt:limit.bankowosc.maksymalny-ustawiany}}", stawka: "bez opłat", tryb: "za każdą zmianę"}
+          - {usluga: "Zmiana limitu jednorazowego przelewu w aplikacji mobilnej", stawka: "bez opłat", tryb: "za każdą zmianę"}
+          - {usluga: "Zmiana limitu transakcji w kanałach elektronicznych na Infolinii", stawka: "{{fakt:oplata.bankowosc-elektroniczna.zmiana-limitu-infolinia}}", tryb: "za każdą zmianę"}
+          - {usluga: "Zmiana limitu transakcji w kanałach elektronicznych w placówce Banku", stawka: "{{fakt:oplata.bankowosc.zmiana-limitu-placowka}}", tryb: "za każdą zmianę"}
+          - {usluga: "Czasowe podwyższenie limitu przelewów na jedną dyspozycję w aplikacji", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Potwierdzenie przelewu w {formie|postaci} elektronicznej wysłane na adres e-mail", stawka: "bez opłat", tryb: "za potwierdzenie"}
+          - {usluga: "Potwierdzenie przelewu w postaci papierowej wydane w placówce", stawka: "{{fakt:oplata.bankowosc-elektroniczna.potwierdzenie-papierowe}}", tryb: "za potwierdzenie"}
+          - {usluga: "Duplikat potwierdzenia przelewu starszego niż {{fakt:bankowosc.historia-operacji}}", stawka: "{{fakt:oplata.bankowosc-elektroniczna.potwierdzenie-papierowe}}", tryb: "za potwierdzenie"}
+          - {usluga: "Przelew zlecony przez konsultanta Infolinii po pozytywnej weryfikacji tożsamości", stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-zlecony-infolinia}}", tryb: "za przelew"}
+          - {usluga: "Odwołanie przelewu na wniosek Klienta po rozpoczęciu realizacji", stawka: "{{fakt:oplata.bankowosc-elektroniczna.odwolanie-przelewu-konsument}}", tryb: "za odwołanie"}
+          - {usluga: "Wniosek o zwrot przelewu wykonanego na błędny numer rachunku", stawka: "{{fakt:oplata.firma.zwrot-przelewu-na-wniosek}}", tryb: "za wniosek"}

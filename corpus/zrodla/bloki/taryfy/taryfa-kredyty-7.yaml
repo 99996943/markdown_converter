@@ -1,0 +1,228 @@
+bloki:
+  - id: taryfa-kredyty-gotowkowe-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-gotowkowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Kredyt gotówkowy zaciągany {w trybie zdalnym|przez internet} — prowizja"
+            stawka: "2,0% min. 60,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt gotówkowy zaciągany w {placówce|oddziale} Banku — prowizja"
+            stawka: "3,0% min. 100,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt gotówkowy dla klientów, którzy zawarli umowę o {ubezpieczenie na życie|ubezpieczenie od utraty pracy} — obniżenie prowizji"
+            stawka: "minus 0,3 pkt proc."
+            tryb: "od stawki prowizji"
+          - usluga: "Kredyt gotówkowy z możliwością odroczenia pierwszej raty o 3 miesiące"
+            stawka: "0,5% kwoty kredytu min. 50,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Kredyt gotówkowy na cele zdrowotne i rehabilitacyjne — prowizja"
+            stawka: "1,0% min. 50,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na sfinansowanie wesela lub uroczystości rodzinnych — prowizja"
+            stawka: "2,5% min. 100,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt gotówkowy dla osób pracujących za granicą (dochód w walucie obcej) — dodatkowa opłata za weryfikację dochodów"
+            stawka: "150,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Kredyt gotówkowy dla rolników indywidualnych — prowizja"
+            stawka: "2,0% min. 100,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt gotówkowy ze spłatą jednorazową (balonową) — prowizja"
+            stawka: "3,5% min. 150,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt gotówkowy w kwocie powyżej 100 000,00 zł — dodatkowa weryfikacja zdolności kredytowej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-hipoteczne-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-hipoteczne
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zastaw na prawach z umowy deweloperskiej {jako zabezpieczenie tymczasowe|jako zabezpieczenie pomostowe} — przygotowanie dokumentów"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Weryfikacja|Sprawdzenie} księgi wieczystej prowadzonej dla budynku w budowie"
+            stawka: "100,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Weryfikacja umowy deweloperskiej i rachunku powierniczego"
+            stawka: "400,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Weryfikacja zgodności inwestycji z planem zagospodarowania przestrzennego"
+            stawka: "150,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Ocena zabezpieczenia dla nieruchomości stanowiącej współwłasność małżeńską"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "{Ocena|Analiza} zabezpieczenia dla udziału we własności nieruchomości"
+            stawka: "250,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Opłata za rozpatrzenie wniosku o zwolnienie z obowiązku wniesienia wkładu własnego"
+            stawka: "200,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Opłata za wydanie decyzji kredytowej w trybie przyspieszonym (w ciągu 3 dni roboczych)"
+            stawka: "500,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Przedłużenie|Wydłużenie} ważności decyzji kredytowej o 3 miesiące"
+            stawka: "100,00 zł"
+            tryb: "za każde przedłużenie"
+          - usluga: "Zmiana wnioskowanej kwoty kredytu przed zawarciem umowy"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+
+  - id: taryfa-kredyty-limity-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Limit w rachunku osobistym — {minimalna|najniższa} kwota przyznania"
+            stawka: "500,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Limit w rachunku osobistym — kwota limitu bez zbadania zdolności kredytowej"
+            stawka: "do 1 000,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Limit w rachunku osobistym — okres bezodsetkowy dla pierwszego wykorzystania"
+            stawka: "do 30 dni"
+            tryb: "jednorazowo"
+          - usluga: "Limit w rachunku osobistym — odsetki od kwot wykorzystanych powyżej {10 000,00 zł|kwoty podstawowej}"
+            stawka: "wg umowy"
+            tryb: "rocznie"
+          - usluga: "Limit w rachunku osobistym dla Klientów z wpływami wynagrodzenia — zwolnienie z opłaty za utrzymanie"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Spłata zadłużenia w limicie w pierwszej kolejności z {wpływów|przychodów} na rachunek"
+            stawka: "bez opłat"
+            tryb: "za każdy wpływ"
+          - usluga: "Opłata za brak wpływów na rachunek w okresie 3 miesięcy przy aktywnym limicie"
+            stawka: "10,00 zł"
+            tryb: "miesięcznie"
+          - usluga: "{Zamiana|Przekształcenie} zadłużenia w limicie na kredyt ratalny"
+            stawka: "1,0% kwoty zadłużenia min. 50,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Pomoc w zamknięciu zadłużenia z limitu — sporządzenie planu spłaty"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Odnowienie limitu po całkowitej spłacie zadłużenia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-firmowe-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-firmowe
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Gwarancja bankowa {zabezpieczona kredytem|w ramach limitu kredytowego} — prowizja"
+            stawka: "1,5% kwoty gwarancji min. 300,00 zł"
+            tryb: "rocznie"
+          - usluga: "Akredytywa dokumentowa — {prowizja|opłata} za otwarcie"
+            stawka: "0,5% kwoty min. 250,00 zł"
+            tryb: "za każde otwarcie"
+          - usluga: "Kredyt kupiecki dla odbiorców przedsiębiorcy — prowizja za przygotowanie"
+            stawka: "1,0% min. 300,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Kredyt na prefinansowanie dotacji ze środków publicznych — prowizja"
+            stawka: "1,2% min. 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt na finansowanie zamówień publicznych — prowizja"
+            stawka: "1,5% min. 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Leasing zwrotny nieruchomości — opłata za analizę"
+            stawka: "wg umowy"
+            tryb: "jednorazowo"
+          - usluga: "Kredyt dla {spółdzielni|spółdzielni mieszkaniowych} i wspólnot mieszkaniowych — prowizja"
+            stawka: "1,0% min. 500,00 zł"
+            tryb: "od kwoty kredytu"
+          - usluga: "Kredyt w rachunku bieżącym dla organizacji pozarządowych — prowizja"
+            stawka: "1,0% min. 200,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Kredyt dla jednostek samorządu terytorialnego — prowizja"
+            stawka: "wg umowy"
+            tryb: "od kwoty kredytu"
+          - usluga: "Konsolidacja zobowiązań przedsiębiorcy z innych instytucji — prowizja"
+            stawka: "1,5% min. 600,00 zł"
+            tryb: "od kwoty konsolidowanej"
+
+  - id: taryfa-kredyty-czynnosci-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Sporządzenie {kopii|odpisu} umowy kredytowej w języku angielskim (tłumaczenie)"
+            stawka: "150,00 zł"
+            tryb: "za każdy dokument"
+          - usluga: "Poświadczenie wierzytelności wynikającej z umowy kredytu dla notariusza"
+            stawka: "50,00 zł"
+            tryb: "za każde poświadczenie"
+          - usluga: "Potwierdzenie rozliczenia kredytu dla organu podatkowego"
+            stawka: "bez opłat"
+            tryb: "za każde potwierdzenie"
+          - usluga: "Informacja o kredytach i pożyczkach {dla|na potrzeby} biura informacji kredytowej"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+          - usluga: "Raport z historii kredytowej Klienta przygotowany przez Bank"
+            stawka: "40,00 zł"
+            tryb: "za każdy raport"
+          - usluga: "{Weryfikacja|Sprawdzenie} zgodności harmonogramu z umową na wniosek Klienta"
+            stawka: "bez opłat"
+            tryb: "za każdą weryfikację"
+          - usluga: "Korekta harmonogramu spłat po stwierdzeniu błędu Banku"
+            stawka: "bez opłat"
+            tryb: "za każdą korektę"
+          - usluga: "Sporządzenie wyliczenia rzeczywistej rocznej stopy oprocentowania dla Klienta"
+            stawka: "bez opłat"
+            tryb: "za każde wyliczenie"
+          - usluga: "{Sporządzenie|Przygotowanie} symulacji kosztów wcześniejszej spłaty"
+            stawka: "bez opłat"
+            tryb: "za każdą symulację"
+          - usluga: "Przeliczenie kredytu po zmianie przepisów (uwzględnienie ustawowych limitów opłat)"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-windykacja-opc-7
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Monit {telefoniczny|rozmowa monitująca} prowadzony przez konsultanta Banku"
+            stawka: "bez opłat"
+            tryb: "za każdy monit"
+          - usluga: "{Wysłanie|Przesłanie} wezwania do zapłaty na adres e-mail wskazany w umowie"
+            stawka: "bez opłat"
+            tryb: "za każde wezwanie"
+          - usluga: "Potwierdzenie doręczenia wezwania do zapłaty — usługa pocztowa"
+            stawka: "wg cennika operatora pocztowego"
+            tryb: "za każde potwierdzenie"
+          - usluga: "Publikacja informacji o zaległościach w rejestrze dłużników — koszty"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "jednorazowo"
+          - usluga: "Oświadczenie dłużnika o uznaniu długu — sporządzenie"
+            stawka: "bez opłat"
+            tryb: "za każde oświadczenie"
+          - usluga: "{Potwierdzenie|Pokwitowanie} przyjęcia wniosku o ugodę"
+            stawka: "bez opłat"
+            tryb: "za każde potwierdzenie"
+          - usluga: "Okres wstrzymania czynności windykacyjnych na czas rozpatrzenia wniosku o restrukturyzację"
+            stawka: "do {{fakt:termin.windykacja.wezwanie-do-zaplaty}}"
+            tryb: "za każdy wniosek"
+          - usluga: "Opłata za {sporządzenie|przygotowanie} planu spłaty po ustaniu zaległości"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Opłata za ponowne wystawienie wezwania po uregulowaniu części zaległości"
+            stawka: "{{fakt:oplata.windykacja.wezwanie-do-zaplaty}}"
+            tryb: "za każde wezwanie"
+          - usluga: "Opłata za zawiadomienie poręczyciela o zaległości kredytobiorcy"
+            stawka: "{{fakt:oplata.upomnienie}}"
+            tryb: "za każde zawiadomienie"

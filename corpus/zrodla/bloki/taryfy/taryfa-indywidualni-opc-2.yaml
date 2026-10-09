@@ -1,0 +1,302 @@
+bloki:
+  # ===== Przelewy i zlecenia — pozycje dodatkowe =====
+  - id: taryfa-indywidualni-opc-przelewy-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew krajowy w złotych zlecony z datą przyszłą w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew krajowy w złotych zlecony z datą przyszłą w placówce", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "{Przelew|Zlecenie przelewu} na rachunek telefoniczny odbiorcy (na numer telefonu)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew na rachunek odbiorcy prowadzony w tym samym banku, zlecony w placówce", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew zlecony w placówce na kwotę wyższą niż {{fakt:limit.rachunek-osobisty.przelew-placowka}}", stawka: "nie jest realizowany", tryb: "za operację" }
+          - { usluga: "Przelew podatkowy do urzędu skarbowego z użyciem formularza elektronicznego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew do organu celnego lub izby administracji skarbowej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew do rachunku w ramach split payment (mechanizm podzielonej płatności)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew na rachunek lokaty terminowej prowadzonej w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew zbiorczy (do 10 odbiorców) w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+  - id: taryfa-indywidualni-opc-przelewy-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Założenie zlecenia stałego z częstotliwością miesięczną", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Modyfikacja|Zmiana} kwoty lub terminu zlecenia stałego w bankowości elektronicznej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana lub odwołanie zlecenia stałego w placówce", stawka: "{{fakt:oplata.taryfa-indywidualni.zlecenie-stale-placowka}}", tryb: "za dyspozycję" }
+          - { usluga: "Wykonanie zlecenia stałego do rachunku w innym banku", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za każde wykonanie" }
+          - { usluga: "Wykonanie zlecenia stałego do rachunku w Banku", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Niewykonanie zlecenia stałego z powodu braku środków na rachunku", stawka: "bez opłat", tryb: "za każde zlecenie" }
+          - { usluga: "Ponowna próba wykonania zlecenia stałego następnego dnia roboczego", stawka: "bez opłat", tryb: "za każdą próbę" }
+          - { usluga: "Zawieszenie zlecenia stałego na wniosek Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zlecenie stałe na rachunek oszczędnościowy (automatyczne odkładanie)", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Zmiana terminu wykonywania zlecenia stałego na przedostatni dzień miesiąca", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-indywidualni-opc-przelewy-3
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Udzielenie zgody na polecenie zapłaty w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Polecenie zapłaty — realizacja obciążenia rachunku Klienta", stawka: "{{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}}", tryb: "za każde obciążenie" }
+          - { usluga: "Odwołanie zgody na polecenie zapłaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Ustalenie|Ustawienie} limitu kwotowego dla polecenia zapłaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Blokada polecenia zapłaty w odniesieniu do wskazanego odbiorcy", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zwrot kwoty autoryzowanego polecenia zapłaty w terminie 8 tygodni od obciążenia", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Zgłoszenie nieautoryzowanego obciążenia rachunku w placówce", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Zgłoszenie nieautoryzowanego obciążenia rachunku przez infolinię", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Zwrot kwoty nieautoryzowanej transakcji płatniczej[^1]", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Wniosek o ustalenie losów przelewu, który nie dotarł do odbiorcy", stawka: "{{fakt:oplata.taryfa-indywidualni.odwolanie-przelewu}}", tryb: "za wniosek" }
+    przypisy:
+      1: "Zwrot następuje {{fakt:termin.rachunek-osobisty.zwrot-nieautoryzowanej}}, o ile zgłoszenie nastąpiło w terminie {{fakt:termin.rachunek-osobisty.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku."
+  - id: taryfa-indywidualni-opc-przelewy-4
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew w euro do rachunku w państwie spoza Europejskiego Obszaru Gospodarczego", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-procent}} kwoty przelewu, min. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-minimum}}, max. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-maksimum}}", tryb: "od kwoty przelewu" }
+          - { usluga: "Przelew w dolarach amerykańskich do rachunku w banku zagranicznym", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-procent}} kwoty przelewu, min. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-minimum}}, max. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-maksimum}}", tryb: "od kwoty przelewu" }
+          - { usluga: "Przelew w funtach szterlingach do rachunku w banku zagranicznym", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-procent}} kwoty przelewu, min. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-minimum}}, max. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-maksimum}}", tryb: "od kwoty przelewu" }
+          - { usluga: "Przelew w złotych do rachunku prowadzonego przez bank zagraniczny", stawka: "{{fakt:oplata.rachunek-osobisty.przelew-walutowy}}", tryb: "za operację" }
+          - { usluga: "{Pilny|Przyspieszony} przelew zagraniczny rozliczany w tym samym dniu roboczym", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sorbnet}} (dodatkowo)", tryb: "za operację" }
+          - { usluga: "Opcja kosztów SHA (koszty dzielone między zleceniodawcę i odbiorcę)", stawka: "bez opłat dodatkowych", tryb: "za operację" }
+          - { usluga: "Opcja kosztów BEN (koszty ponosi odbiorca)", stawka: "bez opłat dodatkowych", tryb: "za operację" }
+          - { usluga: "Przelew walutowy między własnymi rachunkami w Banku, w różnych walutach", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przeliczenie waluty w przelewie między własnymi rachunkami", stawka: "kurs z Tabeli kursów walut Banku", tryb: "w dniu operacji" }
+          - { usluga: "Zlecenie wymiany walut w bankowości elektronicznej po kursie z Tabeli", stawka: "bez opłat", tryb: "za operację" }
+  - id: taryfa-indywidualni-opc-przelewy-5
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew zagraniczny przychodzący w euro (SEPA) z Europejskiego Obszaru Gospodarczego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew zagraniczny przychodzący z państwa spoza Europejskiego Obszaru Gospodarczego", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-walutowy-przychodzacy}}", tryb: "za operację" }
+          - { usluga: "Rozliczenie czeku zagranicznego w złotych", stawka: "0,5% kwoty czeku, min. 25,00 zł", tryb: "od kwoty czeku" }
+          - { usluga: "Poszukiwanie przelewu zagranicznego, który nie został uznany na rachunku", stawka: "{{fakt:oplata.taryfa-indywidualni.odwolanie-przelewu}}", tryb: "za wniosek" }
+          - { usluga: "Korekta danych w przelewie zagranicznym przychodzącym", stawka: "{{fakt:oplata.taryfa-indywidualni.odwolanie-przelewu}}", tryb: "za dyspozycję" }
+          - { usluga: "{Zwrot|Odesłanie} przelewu zagranicznego przychodzącego na wniosek odbiorcy", stawka: "{{fakt:oplata.taryfa-indywidualni.zwrot-przelewu}}", tryb: "za operację" }
+          - { usluga: "Potwierdzenie przelewu zagranicznego w formie dokumentu SWIFT", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie przelewu zagranicznego w języku angielskim", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Zawiadomienie o uznaniu rachunku w złotych kwotą w walucie obcej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Informacja o kursie zastosowanym w przeliczeniu przelewu", stawka: "bez opłat", tryb: "za każdy dokument" }
+  # ===== Operacje gotówkowe — pozycje dodatkowe =====
+  - id: taryfa-indywidualni-opc-gotowka-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wpłata gotówki w złotych we wpłatomacie z użyciem karty debetowej", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki w złotych we wpłatomacie bez użycia karty, z kodem jednorazowym płatności mobilnych", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację" }
+          - { usluga: "Wpłata monet w złotych w placówce (powyżej 50 sztuk)", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "Wpłata monet w złotych w placówce (do 50 sztuk)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki w walucie obcej na rachunek walutowy w placówce", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "{Wpłata|Przyjęcie wpłaty} gotówki na rachunek z jednoczesnym przewalutowaniem", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "Wpłata zamknięta (wpłata w zalakowanej kopercie z późniejszym przeliczeniem)", stawka: "{{fakt:oplata.taryfa-indywidualni.wydanie-torby-kasowej}}", tryb: "za operację" }
+          - { usluga: "Przeliczenie wpłaty zamkniętej w obecności Klienta na jego żądanie", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Sprawdzenie autentyczności banknotu na wniosek Klienta", stawka: "bez opłat", tryb: "za sztukę" }
+          - { usluga: "Wymiana uszkodzonego banknotu w złotych na wniosek Klienta", stawka: "bez opłat", tryb: "za sztukę" }
+  - id: taryfa-indywidualni-opc-gotowka-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Awizacja wypłaty gotówki powyżej {{fakt:limit.rachunek-osobisty.wyplata-awizo}} składana w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Awizacja wypłaty gotówki składana w bankowości elektronicznej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana terminu awizowanej wypłaty gotówki", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Odwołanie awizacji nie później niż w dniu poprzedzającym wypłatę", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Odwołanie awizacji w dniu wypłaty", stawka: "{{fakt:oplata.taryfa-indywidualni.awizo-niepodjeta}}", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata gotówki w walucie obcej w nominałach banknotów", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty wypłaty", tryb: "od kwoty wypłaty" }
+          - { usluga: "Wypłata gotówki z rachunku w przypadku zlecenia osoby upoważnionej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Wypłata|Realizacja wypłaty} gotówki na podstawie dyspozycji na wypadek śmierci", stawka: "{{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w kasie placówki z użyciem dokumentu tożsamości zamiast karty", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata całości środków przy zamknięciu rachunku", stawka: "{{fakt:oplata.rachunek-osobisty.zamkniecie}}", tryb: "jednorazowo" }
+  - id: taryfa-indywidualni-opc-gotowka-3
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata gotówki z bankomatu Banku w ramach usługi cashback w punkcie handlowym", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z bankomatu Banku przy użyciu kodu jednorazowego płatności mobilnych", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z bankomatu obcego w kraju przy użyciu kodu jednorazowego płatności mobilnych", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z bankomatu za granicą w walucie obcej, z przeliczeniem według kursu Banku", stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "za operację" }
+          - { usluga: "Dzienny limit wypłat gotówki z bankomatów (ustawienie domyślne)", stawka: "{{fakt:limit.karta.dzienny-gotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Najwyższy limit wypłat gotówki możliwy do ustawienia", stawka: "{{fakt:limit.karta-debetowa.maksymalny-ustawiany-gotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Najniższy limit wypłat gotówki możliwy do ustawienia", stawka: "{{fakt:limit.karta-debetowa.minimalny-ustawiany}}", tryb: "dziennie" }
+          - { usluga: "Maksymalna wpłata gotówki we wpłatomacie", stawka: "{{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z bankomatu na terytorium Unii Europejskiej w walucie euro", stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "za operację" }
+          - { usluga: "Zgłoszenie połknięcia karty przez bankomat i jej odzyskanie w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+  # ===== Karty debetowe — pozycje dodatkowe =====
+  - id: taryfa-indywidualni-opc-karty-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Aktywacja karty w bankowości elektronicznej lub w bankomacie Banku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Ponowne wysłanie PIN w postaci wiadomości SMS", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za dyspozycję" }
+          - { usluga: "Ponowne wysłanie karty na inny adres korespondencyjny", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty z indywidualnym projektem graficznym", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-dodatkowa}}", tryb: "jednorazowo" }
+          - { usluga: "{Wznowienie|Odnowienie} karty z nowym numerem po zastrzeżeniu", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Rezygnacja z wznowienia karty złożona w terminie {{fakt:termin.karta-debetowa.rezygnacja-z-wznowienia}} przed upływem ważności", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zamknięcie karty na wniosek Klienta", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Okres ważności karty debetowej", stawka: "{{fakt:karta-debetowa.okres-waznosci}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty debetowej dla osoby niepełnoletniej, która ukończyła {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}}", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty do rachunku wspólnego dla drugiego współposiadacza", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-dodatkowa}}", tryb: "jednorazowo" }
+  - id: taryfa-indywidualni-opc-karty-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Płatność kartą w sklepie internetowym wymagającym uwierzytelnienia silnego", stawka: "bez opłat", tryb: "za transakcję" }
+          - { usluga: "Płatność kartą w serwisie zagranicznym (w złotych, po przeliczeniu)", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-transakcja-walutowa-prowizja}} kwoty transakcji", tryb: "od kwoty transakcji" }
+          - { usluga: "Płatność kartą za granicą w walucie obcej (rozliczenie według kursu z Tabeli)", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-transakcja-walutowa-prowizja}} kwoty transakcji", tryb: "od kwoty transakcji" }
+          - { usluga: "Zwrot transakcji kartowej w walucie obcej (rozliczenie po kursie z dnia zwrotu)", stawka: "bez opłat", tryb: "za transakcję" }
+          - { usluga: "Zbliżeniowa płatność kartą bez PIN do kwoty {{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}", stawka: "bez opłat", tryb: "za transakcję" }
+          - { usluga: "Skumulowany limit transakcji zbliżeniowych bez PIN", stawka: "{{fakt:limit.karta-debetowa.zblizeniowy-skumulowany}}", tryb: "do kolejnego PIN" }
+          - { usluga: "{Zablokowanie|Wyłączenie} płatności zbliżeniowych na wniosek Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wyłączenie płatności internetowych kartą", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wyłączenie płatności kartą za granicą", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Dodanie karty do usługi płatności mobilnych na urządzeniu Klienta", stawka: "bez opłat", tryb: "za urządzenie" }
+          - { usluga: "Dodatkowe urządzenie mobilne powyżej {{fakt:karta-debetowa.liczba-urzadzen-mobilnych}} sztuk", stawka: "nie jest dopuszczone", tryb: "za urządzenie" }
+  - id: taryfa-indywidualni-opc-karty-3
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Ponowne wydanie karty po trzykrotnym błędnym wpisaniu PIN i zablokowaniu karty", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Odblokowanie karty po błędnym wpisaniu PIN w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgłoszenie podejrzenia skimmingu i wymiana karty", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zgłoszenie utraty karty za granicą przez infolinię {{fakt:kontakt.infolinia-zagranica}}", stawka: "bez opłat", tryb: "za zgłoszenie" }
+          - { usluga: "{Wypłata|Wydanie} gotówki awaryjnej za granicą po utracie karty", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-wydanie-za-granica}}", tryb: "jednorazowo" }
+          - { usluga: "Reklamacja transakcji kartowej — zablokowanie środków do czasu rozpatrzenia", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Reklamacja uznana za bezzasadną po przeprowadzeniu postępowania wyjaśniającego", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-reklamacja-nieuzasadniona}}", tryb: "za reklamację" }
+          - { usluga: "Zgłoszenie sporu z akceptantem (chargeback) po bezskutecznym kontakcie ze sprzedawcą", stawka: "bez opłat", tryb: "za zgłoszenie" }
+          - { usluga: "Maksymalna kwota odpowiedzialności posiadacza za transakcje nieautoryzowane przed zgłoszeniem", stawka: "{{fakt:termin.karta-debetowa.odpowiedzialnosc-kwota}}", tryb: "za zdarzenie" }
+          - { usluga: "Informacja o blokadzie autoryzacyjnej na rachunku, utrzymywanej do {{fakt:termin.karta-debetowa.blokada-autoryzacji}}", stawka: "bez opłat", tryb: "za operację" }
+  - id: taryfa-indywidualni-opc-karty-4
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Powiadomienie SMS o transakcji kartą", stawka: "{{fakt:oplata.karta-debetowa.powiadomienie-o-transakcji}}", tryb: "za każde powiadomienie" }
+          - { usluga: "Powiadomienie push o transakcji kartą w aplikacji mobilnej", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "Historia transakcji kartą w bankowości elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Zestawienie transakcji kartowych w formie papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każde zestawienie" }
+          - { usluga: "{Podgląd|Wyświetlenie} numeru PIN w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zmiana PIN w aplikacji mobilnej", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za operację" }
+          - { usluga: "Ustawienie dziennego limitu transakcji internetowych do kwoty {{fakt:limit.karta-debetowa.internet-dzienny}}", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-zmiana-limitu}}", tryb: "za dyspozycję" }
+          - { usluga: "Czasowe podwyższenie limitu transakcji za granicą na czas wyjazdu", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-zmiana-limitu}}", tryb: "za dyspozycję" }
+          - { usluga: "Zdalna blokada karty w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zdalne odblokowanie karty w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+  # ===== Usługi dodatkowe i dokumenty — pozycje dodatkowe =====
+  - id: taryfa-indywidualni-opc-uslugi-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zaświadczenie o wysokości obrotów na rachunku za wskazany okres", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie o historii spłaty zadłużenia w rachunku", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie o otwartych w Banku rachunkach i produktach Klienta", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "{Zaświadczenie|Informacja} do celów podatkowych o odsetkach zapłaconych i otrzymanych w roku podatkowym", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie dla celów wizowych w języku obcym", stawka: "{{fakt:oplata.taryfa-indywidualni.zaswiadczenie-obcojezyczne}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie wydane w trybie ekspresowym (w ciągu jednego dnia roboczego)", stawka: "{{fakt:oplata.taryfa-indywidualni.opinia-bankowa}}", tryb: "za każdy dokument" }
+          - { usluga: "Odpis zaświadczenia wydanego wcześniej przez Bank", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za każdy dokument" }
+          - { usluga: "Wypełnienie przez Bank formularza przedłożonego przez Klienta", stawka: "{{fakt:oplata.taryfa-indywidualni.opinia-bankowa}}", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie salda na dzień wskazany przez Klienta dla audytora", stawka: "{{fakt:oplata.taryfa-indywidualni.opinia-bankowa}}", tryb: "za każdy dokument" }
+          - { usluga: "Poświadczenie podpisu Klienta w placówce na dokumencie bankowym", stawka: "bez opłat", tryb: "za każdy dokument" }
+  - id: taryfa-indywidualni-opc-uslugi-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Odpis umowy rachunku z archiwum Banku, umowa zawarta ponad pięć lat temu", stawka: "{{fakt:oplata.taryfa-indywidualni.kopia-dokumentu-archiwum}}", tryb: "za każdy dokument" }
+          - { usluga: "Odpis dyspozycji lub zlecenia płatniczego z archiwum Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.kopia-dokumentu-archiwum}}", tryb: "za każdy dokument" }
+          - { usluga: "{Poszukiwanie|Wyszukanie} dokumentu w archiwum, za każdą rozpoczętą godzinę pracy pracownika", stawka: "{{fakt:oplata.taryfa-indywidualni.poszukiwanie-dokumentu}}", tryb: "za godzinę" }
+          - { usluga: "Wniosek o udostępnienie dokumentów dla organu ścigania lub sądu", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Informacja o stanie rachunku udzielona na żądanie sądu lub komornika", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Wydruk historii rachunku w placówce (do 20 pozycji)", stawka: "bez opłat", tryb: "za wydruk" }
+          - { usluga: "Wydruk historii rachunku w placówce (każde kolejne 20 pozycji)", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy wydruk" }
+          - { usluga: "Wysyłka dokumentów kurierem na adres wskazany przez Klienta", stawka: "{{fakt:oplata.taryfa-indywidualni.wydanie-torby-kasowej}}", tryb: "za przesyłkę" }
+          - { usluga: "Wysyłka dokumentów listem poleconym za potwierdzeniem odbioru", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za przesyłkę" }
+          - { usluga: "Przekazanie dokumentów drogą elektroniczną na adres e-mail wskazany w Banku", stawka: "bez opłat", tryb: "za przesyłkę" }
+  - id: taryfa-indywidualni-opc-uslugi-3
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wynajem skrytki sejfowej w placówce — skrytka mała", stawka: "{{fakt:oplata.taryfa-indywidualni.skrytka-miesiecznie}}", tryb: "miesięcznie" }
+          - { usluga: "Wynajem skrytki sejfowej w placówce — skrytka duża", stawka: "70,00 zł", tryb: "miesięcznie" }
+          - { usluga: "Kaucja zwrotna za klucz do skrytki sejfowej", stawka: "100,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Wymiana zamka skrytki w razie utraty klucza", stawka: "250,00 zł", tryb: "jednorazowo" }
+          - { usluga: "{Otwarcie|Komisyjne otwarcie} skrytki w razie nieobecności najemcy", stawka: "300,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Dodatkowe wejście do skrytki poza godzinami pracy placówki", stawka: "bez opłat", tryb: "za wejście" }
+          - { usluga: "Przechowanie zamkniętej koperty z dokumentami w depozycie Banku", stawka: "10,00 zł", tryb: "miesięcznie" }
+          - { usluga: "Wydanie depozytu na żądanie osoby upoważnionej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana osoby upoważnionej do dostępu do skrytki", stawka: "{{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}", tryb: "jednorazowo" }
+          - { usluga: "Zwrot skrytki przed końcem okresu najmu (zwrot opłaty proporcjonalnie)", stawka: "bez opłat", tryb: "jednorazowo" }
+  - id: taryfa-indywidualni-opc-uslugi-4
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Aktywacja bankowości elektronicznej i mobilnej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wydanie tokena sprzętowego do autoryzacji dyspozycji", stawka: "{{fakt:oplata.taryfa-indywidualni.token-sprzetowy}}", tryb: "jednorazowo" }
+          - { usluga: "Wymiana uszkodzonego tokena sprzętowego", stawka: "{{fakt:oplata.taryfa-indywidualni.token-sprzetowy}}", tryb: "jednorazowo" }
+          - { usluga: "Autoryzacja dyspozycji kodem SMS", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Autoryzacja dyspozycji w aplikacji mobilnej Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Powiązanie|Sparowanie} nowego urządzenia mobilnego z aplikacją", stawka: "bez opłat", tryb: "za urządzenie" }
+          - { usluga: "Zablokowanie dostępu do bankowości elektronicznej na wniosek Klienta", stawka: "{{fakt:oplata.taryfa-indywidualni.blokada-na-wniosek}}", tryb: "za dyspozycję" }
+          - { usluga: "Zablokowanie dostępu do bankowości elektronicznej zgłoszone telefonicznie z powodu utraty urządzenia", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Blokada środków na rachunku do wskazanej kwoty na wniosek Klienta (np. zabezpieczenie rozliczenia)", stawka: "{{fakt:oplata.taryfa-indywidualni.blokada-na-wniosek}}", tryb: "za dyspozycję" }
+          - { usluga: "Zdjęcie blokady środków przed terminem na wniosek Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-indywidualni-opc-uslugi-5
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: pozycje-ind-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przeniesienie rachunku osobistego z innego banku (usługa zmiany rachunku)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Powiadomienie płatników i odbiorców o zmianie numeru rachunku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Przeniesienie zleceń stałych i poleceń zapłaty z poprzedniego rachunku", stawka: "bez opłat", tryb: "za zlecenie" }
+          - { usluga: "{Zamknięcie|Likwidacja} rachunku w innym banku w ramach usługi zmiany rachunku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypłata spadku z rachunku zmarłego posiadacza na podstawie postanowienia sądu lub aktu poświadczenia dziedziczenia", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Sporządzenie zestawienia obrotów na rachunku zmarłego posiadacza", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Realizacja zajęcia egzekucyjnego — zawiadomienie Klienta i organu egzekucyjnego", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+          - { usluga: "Uwolnienie środków po cofnięciu zajęcia", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Rozpatrzenie reklamacji dotyczącej opłat i prowizji", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Rozpatrzenie wniosku o ugodę lub restrukturyzację zadłużenia", stawka: "bez opłat", tryb: "za wniosek" }
+  # ===== Objaśnienia — pozycje opcjonalne =====
+  - id: taryfa-indywidualni-opc-objasnienie-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: objasnienie-ind
+    elementy:
+      - ustep: "Stawki dotyczące kart debetowych {mają zastosowanie|obowiązują} także do kart wydanych przed dniem wejścia w życie Taryfy, od pierwszego dnia miesiąca następującego po dniu, w którym upłynął termin wypowiedzenia zmiany."
+      - ustep: "Klient, który nie zgadza się na zmianę stawek, może przed dniem ich wejścia w życie wypowiedzieć umowę rachunku bez ponoszenia opłat z tytułu wypowiedzenia, zachowując termin {{fakt:termin.wypowiedzenie-przez-klienta}} od dnia doręczenia wypowiedzenia."
+  - id: taryfa-indywidualni-opc-objasnienie-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: objasnienie-ind
+    elementy:
+      - ustep: "Pojęcie „placówka” oznacza oddział lub agencję Banku prowadzącą obsługę klientów indywidualnych; wykaz placówek wraz z godzinami otwarcia jest dostępny na stronie {{fakt:bank.strona}}."
+      - ustep: "Pojęcie „bankomat obcy” oznacza bankomat niebędący własnością Banku ani niewchodzący w skład sieci bankomatów, w których wypłaty są bezpłatne, o czym Klient jest informowany na ekranie urządzenia przed potwierdzeniem operacji."
+  - id: taryfa-indywidualni-opc-objasnienie-3
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: objasnienie-ind
+    elementy:
+      - ustep: "Opłaty z tytułu wykonywania czynności, które nie zostały wymienione w Taryfie, Bank ustala na podstawie rzeczywistych kosztów poniesionych w związku z ich wykonaniem, informując Klienta o ich wysokości przed wykonaniem czynności."
+      - ustep: "W razie wątpliwości co do tego, która pozycja Taryfy ma zastosowanie do danej czynności, {stosuje się|przyjmuje się} stawkę korzystniejszą dla Klienta."

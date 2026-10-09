@@ -1,0 +1,156 @@
+bloki:
+  - id: karty-kredytowe-oprocentowanie-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    elementy:
+      - naglowek: "Zestawienie podstawowych warunków finansowych karty"
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj warunku"
+              waga: 3
+            - naglowek: "Wartość"
+              waga: 2
+          wiersze:
+            - ["Oprocentowanie transakcji bezgotówkowych (w skali roku)", "{{fakt:oprocentowanie.karta.zakupy}}"]
+            - ["Oprocentowanie wypłat gotówki (w skali roku)", "{{fakt:oprocentowanie.karta.gotowka}}"]
+            - ["Odsetki za opóźnienie (w skali roku)", "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"]
+            - ["Maksymalny okres bezodsetkowy", "{{fakt:termin.karta.okres-bezodsetkowy}}"]
+            - ["Minimalna kwota do zapłaty", "{{fakt:splata.karta.minimum-procent}} salda, nie mniej niż {{fakt:splata.karta.minimum-kwota}}"]
+            - ["Roczna opłata za kartę", "{{fakt:oplata.karta.roczna}}"]
+          siatka: true
+
+  - id: karty-kredytowe-ogolne-8
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient będący osobą małoletnią lub ubezwłasnowolnioną nie może być stroną umowy o kartę kredytową. Bank nie wydaje także karty osobie, wobec której prowadzone jest postępowanie upadłościowe albo egzekucyjne, jeżeli może to wpłynąć na ocenę zdolności kredytowej."
+      - ustep: "Klient jest obowiązany niezwłocznie poinformować Bank o wszczęciu wobec niego postępowania upadłościowego, egzekucyjnego lub restrukturyzacyjnego, a także o zajęciu wynagrodzenia lub rachunku bankowego. Brak takiej informacji stanowi naruszenie umowy."
+
+  - id: karty-kredytowe-umowa-8
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient posiada pełnomocnika, pełnomocnictwo do zawarcia umowy o kartę kredytową i dokonywania czynności w jej ramach wymaga formy pisemnej z podpisem poświadczonym notarialnie lub złożonej w obecności pracownika Banku. Pełnomocnik nie może otrzymać karty głównej, a jedynie — za zgodą Klienta — kartę dodatkową."
+      - ustep: "Pełnomocnictwo wygasa z chwilą jego odwołania, wypowiedzenia lub śmierci mocodawcy. Odwołanie pełnomocnictwa wywołuje skutki wobec Banku od dnia jego otrzymania przez Bank."
+      - ustep: "Bank {może|ma prawo} odmówić przyjęcia pełnomocnictwa, jeżeli budzi ono wątpliwości co do autentyczności lub jego zakres jest niejednoznaczny."
+
+  - id: karty-kredytowe-umowa-9
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa o kartę kredytową może zostać zmieniona na wniosek Klienta w każdym czasie, o ile zmiana nie narusza przepisów prawa ani zasad polityki kredytowej Banku. Zmiana wymaga zachowania formy, w jakiej zawarto umowę."
+      - ustep: "W razie zmian dotyczących nazwy lub formy prawnej Banku, jego połączenia z innym podmiotem albo przejęcia praw i obowiązków z umowy przez inny podmiot Bank {informuje|powiadamia} Klienta na trwałym nośniku, a Klient ma prawo wypowiedzieć umowę bez dodatkowych opłat w terminie {{fakt:termin.wypowiedzenie-przez-klienta}} od dnia otrzymania informacji."
+
+  - id: karty-kredytowe-zdolnosc-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank może odmówić zwiększenia limitu kredytowego, jeżeli Klient w okresie ostatnich 12 miesięcy dopuścił się opóźnienia w spłacie jakiegokolwiek zobowiązania wobec Banku, a także jeżeli w tym okresie Bank obniżał lub blokował jego limit."
+      - ustep: "Klient, któremu odmówiono zwiększenia limitu, może ponownie wystąpić z takim wnioskiem po upływie 3 miesięcy od dnia odmowy, chyba że przedstawi nowe okoliczności istotnie zmieniające ocenę jego zdolności kredytowej."
+      - ustep: "Przy ocenie wniosku o zwiększenie limitu Bank bierze pod uwagę dotychczasowy sposób korzystania z karty, w tym terminowość spłat i stopień wykorzystania limitu."
+
+  - id: karty-kredytowe-wydanie-8
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może zażądać przekazania karty w oddziale lub w wybranej placówce Banku. Odbiór karty w placówce wymaga okazania dokumentu tożsamości; karta jest przekazywana wyłącznie Posiadaczowi lub użytkownikowi karty dodatkowej, któremu została wydana."
+      - ustep: "Karta nieodebrana w placówce w terminie 60 dni od dnia jej przygotowania podlega zniszczeniu, a Bank informuje o tym Klienta. Za wydanie nowej karty po upływie tego terminu Bank pobiera opłatę zgodnie z Taryfą."
+      - ustep: "Karty pozostające w placówce Banku przechowywane są w sposób zapewniający ich bezpieczeństwo."
+
+  - id: karty-kredytowe-transakcje-10
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłaty gotówki w bankomatach Banku nie podlegają dodatkowym opłatom poza prowizją, o której mowa w Regulaminie. Za wypłaty w bankomatach innych operatorów Bank pobiera opłatę w wysokości {{fakt:oplata.bankomat-obcy}}, a operator bankomatu może pobrać własną opłatę, o której Klient jest informowany przed dokonaniem transakcji."
+      - ustep: "Klient jest obowiązany sprawdzić wydawaną gotówkę i potwierdzenie transakcji przed opuszczeniem bankomatu. Niezwłocznie po stwierdzeniu nieprawidłowości, w tym wypłaty niższej kwoty niż zażądana, Klient zawiadamia Bank albo operatora bankomatu."
+      - ustep: "Jeżeli bankomat nie wydał gotówki mimo obciążenia karty, Bank rozpatruje reklamację w terminach określonych w Regulaminie, a kwota nienależnie pobrana jest zwracana niezwłocznie po stwierdzeniu nieprawidłowości."
+
+  - id: karty-kredytowe-transakcje-11
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może wnioskować o czasowe podwyższenie limitu transakcyjnego karty, w szczególności limitu płatności internetowych albo wypłat gotówki, na okres nie dłuższy niż 30 dni. Podwyższenie wymaga uwierzytelnienia w bankowości elektronicznej i nie może spowodować przekroczenia przyznanego limitu kredytowego."
+      - ustep: "Po upływie okresu podwyższenia limit transakcyjny powraca automatycznie do wysokości poprzedniej, o czym Bank nie jest obowiązany odrębnie zawiadamiać."
+      - ustep: "Bank {może|ma prawo} odmówić podwyższenia limitu transakcyjnego, jeżeli wymagają tego względy bezpieczeństwa lub gdy Klient zalega ze spłatą zadłużenia."
+
+  - id: karty-kredytowe-zestawienie-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W zestawieniu transakcji Bank odrębnie wykazuje pozycje rozliczone w danym cyklu, pozycje zablokowane (jeszcze nierozliczone) oraz opłaty i odsetki. Dla czytelności zestawienia transakcje wykazuje się w układzie chronologicznym."
+      - ustep: "Przy każdej transakcji wskazuje się datę dokonania, datę księgowania, nazwę akceptanta, kwotę w walucie transakcji oraz — jeżeli transakcja była dokonana w walucie obcej — kwotę po przeliczeniu na złote wraz z zastosowanym kursem."
+      - ustep: "Klient może w bankowości elektronicznej przeglądać transakcje zablokowane i rozliczone na bieżąco, jednak zestawienie sporządzone na koniec cyklu rozliczeniowego stanowi dokument rozstrzygający dla celów spłaty zadłużenia."
+
+  - id: karty-kredytowe-minimum-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-minimum
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient dokonał w cyklu rozliczeniowym wpłaty przekraczającej minimalną kwotę do zapłaty, nadwyżka jest zaliczana na poczet zadłużenia z kolejnych cykli, a następnie — po ich spłacie — na poczet kapitału. Wpłata wyższa niż minimalna kwota do zapłaty nie powoduje zwolnienia z obowiązku zapłaty minimalnej kwoty w następnym cyklu, jeżeli w tym cyklu powstało nowe zadłużenie."
+      - ustep: "Jeżeli wpłata zaksięgowana przed dniem sporządzenia zestawienia obejmuje minimalną kwotę do zapłaty za kolejny cykl, Bank może wykazać w zestawieniu kwotę minimalną jako zapłaconą, a Klientowi — informację o spełnieniu obowiązku."
+
+  - id: karty-kredytowe-raty-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-raty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może jednorazowo zmienić liczbę rat planu spłat, składając wniosek w bankowości elektronicznej lub na infolinii {{fakt:kontakt.infolinia}}, nie wcześniej niż po upływie trzech miesięcy od uruchomienia planu. Zmiana planu wymaga zgody Banku i może skutkować naliczeniem nowej prowizji w wysokości {{fakt:oplata.karta.prowizja-rata}} od pozostałego do spłaty kapitału."
+      - ustep: "Jeżeli w trakcie trwania planu Klient złoży dyspozycję zamknięcia karty, pozostałe do spłaty raty stają się wymagalne wraz z odsetkami naliczonymi do dnia spłaty."
+
+  - id: karty-kredytowe-opoznienie-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank jest obowiązany uwzględniać przy windykacji należności zasadę poszanowania prywatności Klienta. W szczególności Bank nie kontaktuje się z Klientem w miejscu pracy w sprawach zadłużenia, jeżeli Klient wyraźnie sprzeciwi się takiej formie kontaktu."
+      - ustep: "Bank nie ujawnia informacji o zadłużeniu Klienta jego pracodawcy, sąsiadom lub członkom rodziny, z wyjątkiem osób posiadających uprawnienia wynikające z przepisów prawa lub z pełnomocnictwa."
+      - ustep: "Klient może w każdym czasie zwrócić się do Banku o wskazanie podstawy, wysokości i sposobu obliczenia kwot dochodzonych w ramach windykacji, a Bank udziela odpowiedzi na trwałym nośniku w terminie {{fakt:termin.karta.rozpatrzenie-wniosku}}."
+
+  - id: karty-kredytowe-zastrzezenie-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po zastrzeżeniu karty Bank odpowiednio zmniejsza dostępny limit o kwotę niezrealizowanych autoryzowanych transakcji do czasu ich rozliczenia. Transakcje autoryzowane przed zgłoszeniem, a rozliczone po nim, obciążają rachunek karty, chyba że Klient zakwestionuje je jako nieautoryzowane."
+      - ustep: "Bank przekazuje Klientowi duplikat karty na adres korespondencyjny w terminie {{fakt:termin.karta.wydanie}} od dnia zastrzeżenia, a jeżeli Klient wskazał placówkę — w tej placówce. Duplikat otrzymuje nowy numer i nowy kod PIN."
+
+  - id: karty-kredytowe-wypowiedzenie-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wypowiadający umowę z przyczyn niezwiązanych z zaległościami w spłacie może — za zgodą Klienta — zaproponować mu zawarcie umowy o inny produkt kredytowy, z zachowaniem przepisów dotyczących oceny zdolności kredytowej."
+      - ustep: "Propozycja zawarcia nowej umowy nie wpływa na bieg terminu wypowiedzenia, a Klient nie ma obowiązku jej przyjęcia."
+      - ustep: "Jeżeli umowa została wypowiedziana przez Klienta, Bank może zwrócić się do niego z prośbą o wskazanie powodu rezygnacji, jednak udzielenie odpowiedzi jest dobrowolne i nie wpływa na skuteczność wypowiedzenia."
+
+  - id: karty-kredytowe-koncowe-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli którekolwiek z postanowień Regulaminu okaże się nieważne lub bezskuteczne, pozostałe postanowienia pozostają w mocy. Postanowienie nieważne strony zastępują postanowieniem, które w największym stopniu odpowiada celowi pierwotnego postanowienia."
+      - ustep: "Regulamin jest udostępniany Klientowi przed zawarciem umowy na trwałym nośniku oraz w każdym czasie na jego żądanie, w placówkach Banku i na stronie {{fakt:bank.strona}}."
+      - ustep: "Zmiany Regulaminu nie wpływają na prawa nabyte przez Klienta przed dniem ich wejścia w życie, z zastrzeżeniem przepisów bezwzględnie obowiązujących."

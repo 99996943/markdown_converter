@@ -1,0 +1,45 @@
+id: taryfa-mlodziez
+typ: taryfy
+temat: taryfa-mlodziez
+tytul:
+  - "Taryfa opłat i prowizji {{param:bank}} dla dzieci, młodzieży i studentów"
+  - "Taryfa {opłat i prowizji|prowizji i opłat} {{param:bank}} za rachunki, karty i usługi dla dzieci, młodzieży i studentów"
+uklady: [taryfa-bez-siatki]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-mlodziez-ogolne]
+  - rodzaj: sekcja-taryfy
+    tytul: "Konto dla dziecka (6–12 lat)"
+    wymagane: [taryfa-mlodziez-dziecko-opis, taryfa-mlodziez-dziecko-1, taryfa-mlodziez-dziecko-2]
+    opcjonalne: { kategorie: [pozycje-mlodziez-dziecko], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Konto dla nastolatka (13–17 lat)"
+    wymagane: [taryfa-mlodziez-nastolatek-opis, taryfa-mlodziez-nastolatek-1, taryfa-mlodziez-nastolatek-2]
+    opcjonalne: { kategorie: [pozycje-mlodziez-nastolatek], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Konto studenckie (18–26 lat)"
+    wymagane: [taryfa-mlodziez-student-opis, taryfa-mlodziez-student-1, taryfa-mlodziez-student-2]
+    opcjonalne: { kategorie: [pozycje-mlodziez-student], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty"
+    wymagane: [taryfa-mlodziez-karty-opis, taryfa-mlodziez-karty-1, taryfa-mlodziez-karty-2]
+    opcjonalne: { kategorie: [pozycje-mlodziez-karty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy"
+    wymagane: [taryfa-mlodziez-przelewy-opis, taryfa-mlodziez-przelewy-1, taryfa-mlodziez-przelewy-2]
+    opcjonalne: { kategorie: [pozycje-mlodziez-przelewy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Gotówka"
+    wymagane: [taryfa-mlodziez-gotowka-opis, taryfa-mlodziez-gotowka-1]
+    opcjonalne: { kategorie: [pozycje-mlodziez-gotowka], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Usługi dodatkowe i rola przedstawiciela ustawowego"
+    wymagane: [taryfa-mlodziez-uslugi-opis, taryfa-mlodziez-uslugi-1, taryfa-mlodziez-uslugi-2]
+    opcjonalne: { kategorie: [pozycje-mlodziez-uslugi], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i przepisy końcowe"
+    wymagane: [taryfa-mlodziez-objasnienia]
+    opcjonalne: { kategorie: [objasnienie-mlodziez], min: 0, max: 40 }
+parametry: {}

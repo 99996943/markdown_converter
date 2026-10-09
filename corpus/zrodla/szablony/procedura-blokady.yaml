@@ -1,0 +1,83 @@
+id: procedura-blokady
+typ: procedury
+temat: procedura-blokady
+tytul:
+  - "Procedura obsługi blokad rachunków i zajęć egzekucyjnych"
+  - "Procedura {obsługi|realizacji} blokad rachunków i zajęć egzekucyjnych"
+  - "Procedura postępowania z blokadami rachunków i zajęciami egzekucyjnymi"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry:
+  wlasciciel: "Departament Operacji"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [blokady-cel]
+    opcjonalne: { kategorie: [blokady-cel-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [blokady-zakres]
+    opcjonalne: { kategorie: [blokady-zakres-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [blokady-odpowiedzialnosci]
+    opcjonalne: { kategorie: [blokady-odp-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, blokady-definicje]
+    opcjonalne: { kategorie: [blokady-def-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przyjęcie i rejestracja zawiadomienia"
+    wymagane: [blokady-schemat, blokady-kroki-przyjecie]
+    opcjonalne: { kategorie: [blokady-opis-przyjecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — wykonanie zajęcia"
+    wymagane: [blokady-kroki-wykonanie]
+    opcjonalne: { kategorie: [blokady-opis-wykonanie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — kwoty wolne od zajęcia i zbieg zajęć"
+    wymagane: [blokady-kroki-kwoty]
+    opcjonalne: { kategorie: [blokady-opis-kwoty], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przekazanie środków i zwolnienie zajęcia"
+    wymagane: [blokady-kroki-przekazanie]
+    opcjonalne: { kategorie: [blokady-opis-przekazanie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Blokady z innych podstaw"
+    wymagane: [blokady-kroki-inne]
+    opcjonalne: { kategorie: [blokady-opis-inne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Rachunki zmarłych klientów"
+    wymagane: [blokady-kroki-zmarly]
+    opcjonalne: { kategorie: [blokady-opis-zmarly], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Informowanie klienta i opłaty"
+    wymagane: [blokady-klient, wspolne-doreczenia-procedura]
+    opcjonalne: { kategorie: [blokady-klient-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Terminy i obsługa błędów"
+    wymagane: [blokady-bledy]
+    opcjonalne: { kategorie: [blokady-bledy-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [blokady-szczegolne]
+    opcjonalne: { kategorie: [blokady-szczegolne-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [blokady-kontrola]
+    opcjonalne: { kategorie: [blokady-kontrola-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [blokady-dokumentacja, wspolne-ochrona-danych-procedura]
+    opcjonalne: { kategorie: [blokady-dok-opt], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [blokady-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna obsługi zajęcia rachunku"
+    wymagane: [blokady-lista]
+  - rodzaj: zalacznik
+    tytul: "Rodzaje blokad i terminy wykonania"
+    wymagane: [blokady-zal-tabela]
+    opcjonalne: { kategorie: [blokady-zal-opt], min: 0, max: 40 }

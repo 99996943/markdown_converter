@@ -1,0 +1,181 @@
+bloki:
+  - id: promocja-org-informacje
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-organizator-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Informacji o Promocji {udziela|udzielają} pracownicy Banku w {placówkach|oddziałach} {oraz|a także} konsultanci {Infolinii|infolinii Banku} pod numerem {{fakt:kontakt.infolinia}}, {czynnej|dostępnej} {{fakt:kontakt.godziny-infolinii}}."
+      - ustep: "Materiały reklamowe dotyczące Promocji mają charakter informacyjny. W razie rozbieżności między treścią materiału a Regulaminem {rozstrzygające znaczenie|pierwszeństwo} mają postanowienia Regulaminu."
+      - ustep: "Bank nie {jest zobowiązany|ma obowiązku} przyjmować wniosków od osób, wobec których {zachodzą|istnieją} przeszkody wynikające z przepisów o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu; odmowa nie wymaga uzasadnienia, {jeżeli|jeśli} przepisy prawa ograniczają jego udzielenie."
+
+  - id: promocja-org-fundusz
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-organizator-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Premie wypłacane w ramach Promocji {pochodzą|są finansowane} ze środków własnych Banku. Wypłata premii nie powoduje powstania po stronie uczestnika obowiązku ponoszenia dodatkowych opłat na rzecz Banku."
+      - ustep: "Pula środków przeznaczona przez Bank na Promocję jest {ograniczona|określona} i {może ulec wyczerpaniu|może zostać wyczerpana} przed upływem terminu Promocji; w takim przypadku stosuje się {{ref:blok:promocja-okres}} ust. 3."
+      - ustep: "Bank prowadzi ewidencję przyznanych premii {oraz|a także} {uczestników, którzy je otrzymali|osób, którym je wypłacono}. Ewidencja jest przechowywana {przez okres|przez czas} wymagany przepisami prawa podatkowego i rachunkowego."
+
+  - id: promocja-org-nadzor
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-organizator-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za prawidłowe {przeprowadzenie|prowadzenie} Promocji odpowiada {{fakt:jednostka.obsluga-klienta}}; do zadań tej jednostki należy {weryfikacja|kontrola} naliczania premii {oraz|a także} {rozpatrywanie|opiniowanie} spraw spornych."
+      - ustep: "Zgodność materiałów promocyjnych z przepisami prawa, w tym z przepisami o przeciwdziałaniu nieuczciwym praktykom rynkowym, {ocenia|weryfikuje} {{fakt:jednostka.zgodnosc}} przed ich opublikowaniem."
+      - ustep: "Zasady ochrony środków na rachunkach osobistych, w tym ich objęcie gwarancjami, nie zależą od udziału w Promocji i są {takie same|identyczne} dla wszystkich klientów Banku."
+
+  - id: promocja-org-kanaly
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-organizator-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o otwarcie rachunku w ramach Promocji można złożyć:"
+        punkty:
+          - "w placówce Banku, po okazaniu dokumentu tożsamości;"
+          - "przez stronę {{fakt:bank.strona}}, z wykorzystaniem formularza elektronicznego;"
+          - "w aplikacji mobilnej, o ile {funkcja ta jest|usługa ta jest} dostępna w danym okresie."
+      - ustep: "O przyjęciu wniosku Bank {powiadamia|informuje} wnioskodawcę {niezwłocznie|bez zbędnej zwłoki}, nie później niż w {następnym dniu roboczym|ciągu jednego dnia roboczego} po zakończeniu weryfikacji tożsamości."
+
+  - id: promocja-uczestnik-wyl
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W Promocji nie mogą uczestniczyć:"
+        punkty:
+          - "pracownicy Banku {oraz|a także} osoby pozostające z nimi we wspólnym gospodarstwie domowym;"
+          - "osoby, które w okresie {{fakt:promocja.okres-karencji-nowy-klient}} poprzedzającym wniosek korzystały już z promocji o podobnym charakterze, {jeżeli|jeśli} wypłacono im premię;"
+          - "przedsiębiorcy w zakresie rachunków otwieranych w związku z prowadzoną działalnością;"
+          - "osoby, wobec których Bank {zastosował|stosuje} środki ograniczające lub które nie przeszły pozytywnie weryfikacji."
+      - ustep: "Wyłączenie z Promocji nie wpływa na możliwość {zawarcia|zawarcia i prowadzenia} umowy rachunku osobistego na zasadach ogólnych."
+
+  - id: promocja-uczestnik-przedstawiciel
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Osoba małoletnia lub ograniczona w zdolności do czynności prawnych {nie może|nie ma możliwości} samodzielnie przystąpić do Promocji. Udział w Promocji w jej imieniu jest {możliwy|dopuszczalny} wyłącznie wtedy, gdy rachunek otwiera przedstawiciel ustawowy za zgodą sądu opiekuńczego, {jeżeli|jeśli} jest ona wymagana."
+      - ustep: "Pełnomocnik uczestnika {może|ma prawo} złożyć wniosek o otwarcie rachunku w ramach Promocji, {jeżeli|jeśli} pełnomocnictwo zostało udzielone {w formie wymaganej przez Bank|na piśmie, z podpisem poświadczonym} i obejmuje czynności związane z Promocją. Premia jest wypłacana wyłącznie na rachunek mocodawcy."
+
+  - id: promocja-uczestnik-oswiadczenia
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Składając wniosek, uczestnik {oświadcza|potwierdza}, że:"
+        punkty:
+          - "zapoznał się z Regulaminem Promocji i Regulaminem rachunku i {akceptuje|przyjmuje} ich postanowienia;"
+          - "dane podane we wniosku są {prawdziwe|zgodne z prawdą} i kompletne;"
+          - "rachunek nie będzie wykorzystywany do działalności gospodarczej ani do rozliczeń na rzecz osób trzecich."
+      - ustep: "Uczestnik jest zobowiązany {niezwłocznie|bez zbędnej zwłoki} powiadomić Bank o zmianie danych {podanych|przekazanych} we wniosku, {w szczególności|zwłaszcza} adresu zamieszkania {oraz|a także} adresu e-mail, na który Bank przesyła informacje o Promocji."
+
+  - id: promocja-uczestnik-klient-istniejacy
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Osoba, która jest klientem Banku z tytułu innych produktów, na przykład lokaty lub kredytu, może przystąpić do Promocji, {jeżeli|jeśli} spełnia warunki określone w {{ref:blok:promocja-uczestnik}} i nie posiada rachunku osobistego w Banku w okresie {{fakt:promocja.okres-karencji-nowy-klient}} przed wnioskiem."
+      - ustep: "Posiadanie innych produktów w Banku {nie zwiększa|nie wpływa na} wysokości premii i nie jest warunkiem Promocji. Bank nie uzależnia otwarcia rachunku w ramach Promocji od zawarcia umów o produkty dodatkowe."
+
+  - id: promocja-okres-miesiace
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pierwszym miesiącem rozliczeniowym jest pierwszy pełny miesiąc kalendarzowy następujący po dniu otwarcia rachunku promocyjnego. Okres od dnia otwarcia rachunku do końca miesiąca, w którym go otwarto, {nie jest|nie stanowi} miesiąca rozliczeniowego i nie jest oceniany pod kątem spełnienia warunków."
+      - ustep: "Przykładowo: rachunek otwarty 17 marca podlega ocenie od 1 kwietnia, a premia za pierwszy miesiąc rozliczeniowy jest wypłacana w terminie {{fakt:promocja.termin.wyplata-premii}} od dnia 30 kwietnia."
+      - ustep: "Ostatnim miesiącem rozliczeniowym jest ostatni miesiąc okresu premiowanego, o którym mowa w {{ref:blok:promocja-okres}} ust. 4, nawet jeśli upływa po dniu zakończenia Promocji."
+
+  - id: promocja-okres-dni
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Terminy wyrażone w dniach {liczy się|oblicza się} od dnia następującego po dniu, w którym nastąpiło zdarzenie {rozpoczynające|będące początkiem} bieg terminu. {Jeżeli|Gdy} ostatni dzień terminu przypada na dzień wolny od pracy, termin upływa następnego dnia roboczego."
+      - ustep: "Terminy wyrażone w miesiącach kończą się z upływem dnia, który odpowiada początkowi terminu, a gdy w danym miesiącu nie ma takiego dnia — ostatniego dnia miesiąca."
+      - ustep: "Datą spełnienia warunku jest data księgowania operacji na rachunku promocyjnym, widoczna w historii rachunku, a w przypadku logowań — data zapisana w systemie Banku."
+
+  - id: promocja-okres-przedluzenie
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} przedłużyć okres obowiązywania Promocji, ogłaszając to na stronie {{fakt:bank.strona}} {oraz|a także} w {placówkach|oddziałach} co najmniej na {{fakt:promocja.termin.informacja-o-zmianie}} przed dniem jej zakończenia."
+      - ustep: "Przedłużenie nie zmienia warunków przyznawania premii wobec uczestników, którzy złożyli wnioski przed jego ogłoszeniem; dla wniosków złożonych w okresie przedłużenia mogą obowiązywać {inne|odmienne} progi, o których Bank {poinformuje|powiadomi} w ogłoszeniu."
+      - ustep: "Uczestnik, który złożył wniosek w okresie przedłużenia, nie może powoływać się na warunki obowiązujące wcześniej, {jeżeli|jeśli} ogłoszenie o przedłużeniu wskazywało inne zasady."
+
+  - id: promocja-okres-zawieszenie
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W przypadku awarii systemów informatycznych Banku, która uniemożliwia uczestnikom spełnienie warunków Promocji w danym miesiącu rozliczeniowym {przez okres|przez czas} dłuższy niż jeden dzień roboczy, Bank {może|jest uprawniony} uznać warunki za spełnione w zakresie, w jakim awaria uniemożliwiała ich realizację."
+      - ustep: "Uczestnik nie ponosi odpowiedzialności za niespełnienie warunku, {jeżeli|jeśli} wynikało ono z przyczyn leżących po stronie Banku, {w szczególności|zwłaszcza} z niedostępności bankowości elektronicznej lub błędnego zaksięgowania wpływu."
+
+  - id: promocja-warunki-karta
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcje kartowe liczone do warunków Promocji muszą być wykonane kartą debetową wydaną do rachunku promocyjnego. Karta {musi być|powinna być} aktywna w całym miesiącu rozliczeniowym."
+      - ustep: "Do transakcji kartowych nie zalicza się:"
+        punkty:
+          - "wypłat gotówki z bankomatów i w punktach handlowo-usługowych;"
+          - "transakcji zwróconych lub anulowanych w tym samym lub następnym miesiącu rozliczeniowym;"
+          - "płatności na rzecz podmiotów prowadzących gry hazardowe i zakłady wzajemne;"
+          - "doładowań kont w portfelach elektronicznych i przekazów pieniężnych wykonywanych kartą."
+      - ustep: "{Jeżeli|Gdy} płatność została zwrócona, Bank pomniejsza łączną wartość transakcji kartowych o kwotę zwrotu w miesiącu rozliczeniowym, w którym zwrot został zaksięgowany."
+
+  - id: promocja-warunki-logowanie
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za aktywne logowanie uznaje się {pomyślne|skuteczne} uwierzytelnienie uczestnika w bankowości elektronicznej lub aplikacji mobilnej, zakończone dostępem do rachunku. Nieudane próby logowania nie są liczone."
+      - ustep: "Kilkakrotne logowanie w tym samym dniu jest traktowane jako jedno logowanie; do osiągnięcia progu {{fakt:promocja.prog.logowania}} wymagane są logowania w {różnych|odrębnych} dniach miesiąca rozliczeniowego."
+      - ustep: "Bank nie wymaga od uczestnika wykonywania w trakcie logowania jakichkolwiek operacji ani wyrażania zgód marketingowych."
+
+  - id: promocja-warunki-saldo
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Saldo rachunku promocyjnego, o którym mowa w {{ref:blok:promocja-warunki}} ust. 1 pkt 4, ustala się według stanu na koniec ostatniego dnia miesiąca rozliczeniowego, po zaksięgowaniu wszystkich operacji tego dnia."
+      - ustep: "Do salda nie wlicza się środków, których dostępność jest ograniczona wskutek blokady, zajęcia lub rezerwacji środków pod rozliczenie transakcji kartowych, ani środków pochodzących z limitu debetowego."
+      - ustep: "Minimalne saldo {służy|ma na celu} wyłącznie ocenę spełnienia warunków Promocji i nie oznacza obowiązku utrzymywania środków na rachunku ponad wymagania wynikające z Regulaminu rachunku."
+
+  - id: promocja-warunki-wplyw-zasady
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wpływy kwalifikowane sumuje się w ramach miesiąca rozliczeniowego, także jeśli pochodzą od kilku nadawców. Wymagany próg {{fakt:promocja.prog.wplywy}} dotyczy sumy wpływów, a nie wartości pojedynczego przelewu."
+      - ustep: "Wpływ zaksięgowany po godzinie granicznej ostatniego dnia roboczego miesiąca jest zaliczany do miesiąca, w którym został zaksięgowany na rachunku. {Odpowiedzialność za terminowe zlecenie przelewu ponosi nadawca|Zlecenie przelewu we właściwym terminie leży po stronie nadawcy}."
+      - ustep: "W przypadku zwrotu wpływu przez uczestnika na rachunek nadawcy wartość wpływu {pomniejsza się|zmniejsza się} o kwotę zwrotu w miesiącu rozliczeniowym, w którym nastąpił zwrot."
+
+  - id: promocja-warunki-pierwszy-wplyw
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Warunkiem przyznania premii powitalnej jest wykonanie w terminie {{fakt:promocja.warunek.wplyw-pierwszy-termin}} od dnia otwarcia rachunku co najmniej jednej operacji kartowej {oraz|a także} otrzymanie pierwszego wpływu kwalifikowanego."
+      - ustep: "Niedotrzymanie terminu, o którym mowa w ust. 1, nie pozbawia uczestnika prawa do udziału w pozostałej części Promocji; uczestnik traci wyłącznie prawo do premii powitalnej."

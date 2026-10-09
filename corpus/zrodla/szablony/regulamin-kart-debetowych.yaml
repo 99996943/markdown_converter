@@ -1,0 +1,60 @@
+id: regulamin-kart-debetowych
+typ: regulaminy
+temat: karty-debetowe
+tytul:
+  - "Regulamin kart debetowych dla klientów indywidualnych {{param:bank}}"
+  - "Regulamin wydawania i używania kart debetowych dla klientów indywidualnych"
+  - "Regulamin kart debetowych {{param:bank}} dla osób fizycznych"
+uklady: [dwie-kolumny]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [karty-debetowe-zakres, wspolne-definicje-regulamin, karty-debetowe-definicje, karty-debetowe-umowa]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-ogolne], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Wydanie i aktywacja karty"
+    wymagane: [karty-debetowe-wydanie, karty-debetowe-aktywacja]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-wydanie], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Użytkownik karty"
+    wymagane: [karty-debetowe-uzytkownik, karty-debetowe-ochrona-karty]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-uzytkownik], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Transakcje i limity"
+    wymagane: [karty-debetowe-transakcje, karty-debetowe-limity]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-transakcje], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Autoryzacja i silne uwierzytelnianie"
+    wymagane: [karty-debetowe-autoryzacja, karty-debetowe-uwierzytelnianie]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-autoryzacja], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Płatności zbliżeniowe i mobilne"
+    wymagane: [karty-debetowe-zblizeniowe, karty-debetowe-mobilne]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-zblizeniowe], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Zastrzeżenie karty"
+    wymagane: [karty-debetowe-zastrzezenie, karty-debetowe-blokada-bank]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-zastrzezenie], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Transakcje nieautoryzowane i odpowiedzialność"
+    wymagane: [karty-debetowe-nieautoryzowane, karty-debetowe-odpowiedzialnosc]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-nieautoryzowane], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Rozliczanie transakcji walutowych"
+    wymagane: [karty-debetowe-waluty]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-waluty], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Opłaty"
+    wymagane: [karty-debetowe-oplaty]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-oplaty], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Ważność, wznowienie i rezygnacja"
+    wymagane: [karty-debetowe-waznosc, karty-debetowe-rezygnacja]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-waznosc], min: 0, max: 6 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-reklamacje-regulamin, wspolne-zmiany-regulamin, wspolne-ochrona-danych-regulamin, wspolne-doreczenia-regulamin, wspolne-rzecznik-regulamin, wspolne-prawo-wlasciwe-regulamin, karty-debetowe-wejscie-w-zycie]
+    opcjonalne: { kategorie: [paragraf-karty-debetowe-koncowe], min: 0, max: 6 }
+parametry:
+  produkt: "karty debetowej"

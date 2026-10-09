@@ -1,0 +1,141 @@
+fakty:
+  - id: promocja.nazwa
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Konto z premią"
+    alternatywy: ["Konto z nagrodą"]
+  - id: promocja.data-start
+    rodzaj: data
+    wartosci:
+      - wartosc: 2026-09-01
+    alternatywy: [2026-10-01]
+  - id: promocja.data-koniec
+    rodzaj: data
+    wartosci:
+      - wartosc: 2026-12-31
+      - od: 2027-01-01
+        wartosc: 2027-06-30
+    alternatywy: [2026-09-30]
+  - id: promocja.okres-premiowany
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 miesięcy"
+      - od: 2027-01-01
+        wartosc: "4 miesięcy"
+    alternatywy: ["9 miesięcy"]
+  - id: promocja.premia.powitalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+      - od: 2026-04-01
+        wartosc: 150.00
+    alternatywy: [300.00, 100.00]
+  - id: promocja.premia.miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+      - od: 2027-01-01
+        wartosc: 40.00
+    alternatywy: [75.00, 25.00]
+  - id: promocja.premia.dodatkowa-karta
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 50.00]
+  - id: promocja.premia.maksymalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+      - od: 2027-01-01
+        wartosc: 360.00
+    alternatywy: [600.00, 450.00]
+  - id: promocja.prog.wplywy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2000.00
+      - od: 2026-04-01
+        wartosc: 2500.00
+    alternatywy: [1500.00, 3000.00]
+  - id: promocja.prog.platnosci-karta-kwota
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+    alternatywy: [500.00, 200.00]
+  - id: promocja.prog.platnosci-karta-liczba
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 transakcji"
+      - od: 2026-04-01
+        wartosc: "8 transakcji"
+    alternatywy: ["3 transakcji", "10 transakcji"]
+  - id: promocja.prog.logowania
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "3 logowania"
+    alternatywy: ["5 logowań", "2 logowania"]
+  - id: promocja.prog.saldo-minimalne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [0.00, 500.00]
+  - id: promocja.warunek.wplyw-pierwszy-termin
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2027-01-01
+        wartosc: 21
+    alternatywy: [14, 60]
+  - id: promocja.termin.wyplata-premii
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2027-01-01
+        wartosc: 45
+    alternatywy: [14, 60]
+  - id: promocja.termin.zgloszenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 21]
+  - id: promocja.termin.utrzymanie-rachunku
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+      - od: 2027-01-01
+        wartosc: 120
+    alternatywy: [60, 180]
+  - id: promocja.okres-karencji-nowy-klient
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesięcy"]
+  - id: promocja.limit-uczestnikow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "jednej promocji na jedną osobę"
+    alternatywy: ["dwóch promocji na jedną osobę"]
+  - id: promocja.podatek.stawka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 19
+    alternatywy: [18, 17]
+  - id: promocja.podatek.zwolnienie-kwota
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [100.00, 500.00]
+  - id: promocja.wiek-minimalny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "ukończyła 18 lat"
+    alternatywy: ["ukończyła 16 lat"]
+  - id: promocja.termin.informacja-o-zmianie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30, 7]
+  - id: promocja.termin.rozstrzygniecie-wyjasnien
+    rodzaj: termin
+    wartosci:
+      - wartosc: 21
+    alternatywy: [14, 30]

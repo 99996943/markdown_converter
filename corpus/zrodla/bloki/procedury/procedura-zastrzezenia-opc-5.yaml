@@ -1,0 +1,219 @@
+bloki:
+  # ===== Odpowiedzialności =====
+  - id: zastrzezenia-b-odp-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Kierownik zmiany na linii zastrzeżeń** {odpowiada za|zapewnia} ciągłość obsługi w trakcie dyżuru, a w szczególności:"
+        punkty:
+          - "{rozpoczyna|otwiera} zmianę od sprawdzenia dostępności systemów {{fakt:system.zastrzezenia.cbs}} i {{fakt:system.zastrzezenia.rejestr}} oraz łączy telefonicznych i odnotowuje wynik w dzienniku dyżuru;"
+          - "przydziela konsultantom zgłoszenia o podwyższonym ryzyku, takie jak zgłoszenia dotyczące kilku kart jednego Klienta lub transakcji zagranicznych o wysokiej wartości;"
+          - "{podejmuje|wydaje} decyzje w sprawach wymagających odstępstwa od schematu rozmowy, na przykład gdy Klient nie może się zidentyfikować w standardowy sposób;"
+          - "{zamyka|kończy} zmianę przekazaniem następcy listy zgłoszeń niezakończonych wraz z informacją o terminach, które upływają w ciągu najbliższych godzin."
+      - akapit: "Kierownik zmiany nie może jednocześnie przyjmować zgłoszeń i rozstrzygać o ich dalszym losie, jeżeli sam przeprowadził rozmowę z Klientem; w takim przypadku decyzję podejmuje {inny kierownik|zastępca} lub pracownik wskazany przez „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: zastrzezenia-b-odp-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Analityk transakcji nieautoryzowanych** w „{{fakt:jednostka.bezpieczenstwo}}” {wykonuje|realizuje} następujące zadania:"
+        punkty:
+          - "{ocenia|bada} każdą zakwestionowaną transakcję pod kątem sposobu autoryzacji, miejsca i czasu jej wykonania oraz zgodności z dotychczasowym profilem użytkowania karty;"
+          - "{zabezpiecza|gromadzi} dane techniczne z systemów Banku, w tym zapisy zdarzeń uwierzytelniania, adresy sieciowe urządzeń i identyfikatory terminali;"
+          - "sporządza notatkę z analizy zawierającą jednoznaczne ustalenie, czy transakcja została autoryzowana przez Klienta, oraz wskazanie dowodów, na których ustalenie oparto;"
+          - "{wnioskuje|występuje} o uznanie rachunku Klienta w terminach określonych w procedurze albo przekazuje sprawę do dalszej analizy z uzasadnieniem."
+      - akapit: "Analityk nie kontaktuje się z Klientem w sposób inny niż przewidziany w procedurze; wszelkie pytania uzupełniające kieruje przez konsultanta prowadzącego sprawę, aby {zachować|utrzymać} jednolity przekaz i pełny zapis korespondencji."
+
+  - id: zastrzezenia-b-odp-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Jednostka informatyki** {odpowiada za|zapewnia} techniczne warunki stosowania procedury, w szczególności:"
+        punkty:
+          - "{dostępność|ciągłość działania} funkcji zastrzegania kart w kanałach elektronicznych na poziomie określonym w umowie o poziomie usług wewnętrznych;"
+          - "natychmiastowe przekazywanie do organizacji płatniczej informacji o zastrzeżonych kartach oraz ich wycofanie z list autoryzacyjnych;"
+          - "{zapisywanie|rejestrowanie} w sposób niezmienialny każdej operacji blokady i odblokowania wraz z identyfikatorem pracownika i czasem zdarzenia;"
+          - "powiadomienie właściciela procedury o awarii dłuższej niż {{fakt:termin.zastrzezenia.blokada-karty}} w terminie umożliwiającym uruchomienie procedury zastępczej."
+      - akapit: "W razie awarii obejmującej więcej niż jeden kanał zgłaszania jednostka informatyki {przekazuje|udostępnia} kierownikowi zmiany co godzinę komunikat o stanie prac, dopóki działanie systemów nie zostanie przywrócone."
+
+  - id: zastrzezenia-b-odp-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Pracownik jednostki reklamacji** {uczestniczy|bierze udział} w procedurze w zakresie, w jakim zgłoszenie transakcji nieautoryzowanej ma postać reklamacji:"
+        punkty:
+          - "{rejestruje|wprowadza} reklamację w systemie, jeżeli Klient wyraźnie zażądał jej rozpatrzenia lub nie zgodził się ze stanowiskiem Banku;"
+          - "{powiadamia|informuje} Klienta pisemnie o stanie sprawy i o przysługujących mu środkach odwoławczych, w tym o prawie do skorzystania z pozasądowych metod rozwiązywania sporów;"
+          - "współpracuje z „{{fakt:jednostka.reklamacje}}” przy ustalaniu terminu odpowiedzi, tak aby nie została przekroczona granica określona przepisami;"
+          - "przekazuje do „{{fakt:jednostka.bezpieczenstwo}}” kopię każdej reklamacji, w której Klient podnosi zarzut wadliwego działania zabezpieczeń Banku."
+      - akapit: "Sprawy, w których reklamacja dotyczy zachowania pracownika Banku, są przekazywane {również|dodatkowo} do jednostki zgodności, niezależnie od ustaleń w zakresie samej transakcji."
+
+  - id: zastrzezenia-b-odp-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Jednostka zgodności** {sprawuje|wykonuje} nadzór nad przestrzeganiem procedury, w ramach którego:"
+        punkty:
+          - "{ocenia|weryfikuje} raz w roku adekwatność uprawnień przyznanych pracownikom do blokowania i odblokowywania kart;"
+          - "bada przypadki, w których blokada została zdjęta w czasie krótszym niż wskazany w procedurze, i żąda wyjaśnień od osoby, która ją zdjęła;"
+          - "{opiniuje|ocenia} zmiany wzorów pism kierowanych do Klientów pod kątem zgodności z przepisami o ochronie konsumentów i usługach płatniczych;"
+          - "{informuje|raportuje} Zarząd o stwierdzonych nieprawidłowościach w trybie przewidzianym w regulaminie kontroli wewnętrznej."
+      - akapit: "Jednostka zgodności ma {nieograniczony|pełny} dostęp do rejestru zgłoszeń i nagrań rozmów w zakresie niezbędnym do wykonywania tych zadań."
+
+  # ===== Przyjęcie zgłoszenia =====
+  - id: zastrzezenia-b-krok-przyjecie-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zweryfikuj|Potwierdź} tożsamość Klienta zgłaszającego zdarzenie."
+            podkroki:
+              - tekst: "Zadaj co najmniej dwa pytania weryfikacyjne z różnych grup, na przykład o dane osobowe i o ostatnio wykonaną operację; nie zadawaj pytania, na które odpowiedź podałeś już wcześniej w rozmowie."
+              - tekst: "Po {wyczerpaniu|przekroczeniu} liczby prób określonej w {{fakt:limit.zastrzezenia.proby-weryfikacji}} nie ponawiaj weryfikacji, lecz zastosuj blokadę czasową i poproś Klienta o wizytę w placówce."
+              - tekst: "Wynik weryfikacji odnotuj w rejestrze bez zapisywania odpowiedzi udzielonych przez Klienta."
+          - tekst: "{Ustal|Zbierz} podstawowe okoliczności zdarzenia."
+            podkroki:
+              - tekst: "Zapytaj, czy karta została zgubiona, skradziona, zatrzymana przez bankomat, czy też Klient podejrzewa skopiowanie danych."
+              - tekst: "Ustal, kiedy i gdzie Klient po raz ostatni użył karty oraz czy zauważył transakcje, których nie wykonał."
+              - tekst: "Nie wymagaj od Klienta dokładnego opisu zdarzenia przed wykonaniem blokady; szczegóły można uzupełnić po zabezpieczeniu środków."
+
+  - id: zastrzezenia-b-krok-przyjecie-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - akapit: "Zgłoszenie złożone przez osobę trzecią, na przykład przez członka rodziny lub znalazcę karty, {wymaga|stanowi przypadek wymagający} szczególnej ostrożności, ponieważ nie można w takim przypadku zweryfikować posiadacza karty w zwykły sposób."
+      - kroki:
+          - tekst: "{Przyjmij|Obsłuż} zgłoszenie od osoby niebędącej posiadaczem karty."
+            podkroki:
+              - tekst: "Poproś o podanie imienia i nazwiska osoby zgłaszającej, numeru telefonu do kontaktu oraz relacji z posiadaczem karty, a następnie zapisz te dane w rejestrze."
+              - tekst: "Wykonaj blokadę czasową karty na podstawie numeru karty lub imienia i nazwiska posiadacza; nie ujawniaj zgłaszającemu żadnych danych o rachunku ani o historii transakcji."
+              - tekst: "Poinformuj zgłaszającego, że trwałe zastrzeżenie wymaga kontaktu z samym posiadaczem, i {przekaż|wyślij} posiadaczowi wiadomość o blokadzie na numer zapisany w systemie."
+          - tekst: "{Obsłuż|Przyjmij} znalezioną kartę."
+            podkroki:
+              - tekst: "Jeżeli znalazca przynosi kartę do placówki, zabezpiecz ją w zamkniętej szufladzie, zastrzeż w systemie i sporządź protokół przyjęcia zawierający dane znalazcy."
+              - tekst: "Kartę zastrzeżoną z powodu znalezienia {niszcz|zniszcz} komisyjnie w obecności dwóch pracowników, o ile posiadacz nie zażąda jej zwrotu w terminie 14 dni."
+
+  - id: zastrzezenia-b-krok-przyjecie-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - ustep: "Podczas przyjmowania zgłoszenia pracownik {poucza|informuje} Klienta, że:"
+        punkty:
+          - "{blokada|zastrzeżenie} karty jest czynnością nieodwracalną, jeżeli Klient wskaże zgubienie lub kradzież, i po jej wykonaniu karta nie może zostać ponownie użyta, nawet jeśli zostanie odnaleziona;"
+          - "w razie wątpliwości co do miejsca pobytu karty Klient może skorzystać z blokady czasowej, która pozwala na jej odblokowanie po {zweryfikowaniu|potwierdzeniu} tożsamości;"
+          - "Bank nie ponosi odpowiedzialności za transakcje wykonane po dokonaniu zgłoszenia, o ile zgłoszenie zostało przyjęte zgodnie z procedurą, a Klient postępował zgodnie z poleceniami konsultanta;"
+          - "zgłoszenie można uzupełnić w placówce lub w bankowości elektronicznej, a numer zgłoszenia pozwala na sprawdzenie jego stanu."
+      - akapit: "Pouczenie jest przekazywane zwięźle i bez użycia terminologii prawnej; pracownik {upewnia się|sprawdza}, że Klient je zrozumiał, a w razie potrzeby powtarza kluczowe informacje."
+
+  - id: zastrzezenia-b-krok-przyjecie-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Przyjmij} zgłoszenie dotyczące kilku kart lub kilku rachunków."
+            podkroki:
+              - tekst: "Zapytaj Klienta, które karty ma przy sobie, a które mogły zostać utracone; wykonaj blokadę wszystkich kart, co do których istnieje wątpliwość."
+              - tekst: "W przypadku kart dodatkowych i kart wydanych do rachunku wspólnego poinformuj współposiadaczy lub użytkowników o blokadzie, {jeżeli|o ile} zgłaszający wyrazi na to zgodę lub umowa to przewiduje."
+              - tekst: "Zapisz w rejestrze jedno zgłoszenie główne i powiąż z nim zgłoszenia poszczególnych kart, aby późniejsza analiza uwzględniała wszystkie zdarzenia łącznie."
+          - tekst: "{Zakończ|Zamknij} rozmowę."
+            podkroki:
+              - tekst: "Podaj Klientowi numer zgłoszenia, godzinę blokady oraz wskaż, kiedy otrzyma kartę zastępczą."
+              - tekst: "Zapytaj, czy Klient potrzebuje dodatkowej pomocy, na przykład w zakresie dostępu do środków na czas oczekiwania na nową kartę."
+
+  # ===== Blokada karty i dostępu =====
+  - id: zastrzezenia-b-krok-blokada-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Wykonaj|Przeprowadź} blokadę karty w systemie."
+            podkroki:
+              - tekst: "Wybierz w systemie {{fakt:system.zastrzezenia.cbs}} kartę wskazaną przez Klienta i ustaw status odpowiadający przyczynie zgłoszenia: utrata, kradzież, podejrzenie skopiowania lub zatrzymanie przez urządzenie."
+              - tekst: "Sprawdź, czy w ciągu kilku sekund system potwierdził zmianę statusu; jeżeli potwierdzenie nie nastąpiło, {powtórz|ponów} operację i zgłoś problem kierownikowi zmiany."
+              - tekst: "Zapisz w rejestrze godzinę i minutę blokady; jest to czas, od którego Bank ponosi odpowiedzialność za nieautoryzowane transakcje."
+          - tekst: "{Zabezpiecz|Zablokuj} powiązane usługi."
+            podkroki:
+              - tekst: "Wyłącz tokeny kart w portfelach mobilnych i płatności zbliżeniowe powiązane z zastrzeganą kartą."
+              - tekst: "Wstrzymaj płatności cykliczne zlecone kartą tylko na wyraźne życzenie Klienta, informując go, że może to spowodować przerwanie usług u sprzedawców."
+
+  - id: zastrzezenia-b-krok-blokada-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - akapit: "Zastrzeżenie karty nie wyczerpuje obowiązków pracownika, jeżeli istnieje podejrzenie, że przestępca zdobył dane umożliwiające dostęp do rachunku. Wówczas konieczne jest {również|dodatkowo} zabezpieczenie kanałów zdalnych."
+      - ustep: "Pracownik, który podejrzewa przejęcie danych dostępowych, {wykonuje|podejmuje} następujące działania:"
+        punkty:
+          - "{blokuje|zawiesza} dostęp do bankowości elektronicznej i zmienia status urządzeń zaufanych Klienta na nieaktywny;"
+          - "wyłącza limity transakcji dla przelewów natychmiastowych i płatności mobilnych do czasu potwierdzenia tożsamości Klienta;"
+          - "{poucza|informuje} Klienta, że ponowne uruchomienie dostępu wymaga wizyty w placówce lub połączenia wideo z weryfikacją dokumentu tożsamości;"
+          - "powiadamia „{{fakt:jednostka.centrum-monitorowania}}” o możliwym przejęciu danych, aby jednostka objęła rachunek wzmożonym monitorowaniem."
+
+  - id: zastrzezenia-b-krok-blokada-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Wykonaj|Przeprowadź} zastrzeżenie karty zatrzymanej przez bankomat."
+            podkroki:
+              - tekst: "Ustal z Klientem, czy karta została zatrzymana z powodu błędu urządzenia, trzykrotnego błędnego PIN, czy upływu czasu na odebranie karty."
+              - tekst: "Zleć jednostce obsługującej sieć bankomatów weryfikację, czy karta znajduje się w urządzeniu i czy jej odzyskanie jest możliwe."
+              - tekst: "{Jeżeli|Jeśli} karta nie może zostać odzyskana w ciągu jednego dnia roboczego, zastrzeż ją i zleć wydanie karty zastępczej bez pobierania opłaty."
+          - tekst: "{Zdecyduj|Rozstrzygnij} o dalszym postępowaniu z kartą odzyskaną."
+            podkroki:
+              - tekst: "Kartę odzyskaną w ciągu jednego dnia roboczego od zatrzymania można zwrócić Klientowi po sprawdzeniu dokumentu tożsamości i zapisaniu zwrotu w rejestrze."
+              - tekst: "Karty, której Klient nie odebrał w terminie 30 dni, nie zwraca się, lecz niszczy zgodnie z procedurą postępowania z nośnikami."
+
+  - id: zastrzezenia-b-krok-blokada-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - ustep: "Przed {zdjęciem|zniesieniem} blokady czasowej pracownik {sprawdza|weryfikuje}, czy zostały spełnione łącznie następujące warunki:"
+        punkty:
+          - "Klient jednoznacznie wskazał, że karta została odnaleziona lub że jej użycie nie budzi wątpliwości, a okoliczności jej odnalezienia są wiarygodne;"
+          - "tożsamość Klienta została potwierdzona w sposób co najmniej równie rygorystyczny jak przy zgłoszeniu, a w razie wątpliwości — w placówce;"
+          - "w okresie blokady nie zarejestrowano prób użycia karty, które mogłyby wskazywać na jej skopiowanie, a w przeciwnym razie sprawę oceniają pracownicy „{{fakt:jednostka.centrum-monitorowania}}”;"
+          - "odblokowanie zostało zapisane w rejestrze z podaniem godziny, osoby wykonującej czynność oraz przyczyny."
+      - akapit: "{Jeżeli|Jeśli} choć jeden z warunków nie jest spełniony, pracownik odmawia odblokowania i proponuje wydanie karty zastępczej; decyzję o odstępstwie może podjąć wyłącznie kierownik zmiany."
+
+  - id: zastrzezenia-b-krok-blokada-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zorganizuj|Zapewnij} Klientowi dostęp do środków na czas wymiany karty."
+            podkroki:
+              - tekst: "Poinformuj Klienta o możliwości wypłaty gotówki w kasie placówki po okazaniu dokumentu tożsamości, w terminie określonym jako {{fakt:termin.zastrzezenia.dostep-tymczasowy}} od zgłoszenia."
+              - tekst: "Zaproponuj wykonywanie przelewów za pośrednictwem bankowości elektronicznej, o ile dostęp do niej nie został zablokowany ze względu na podejrzenie przejęcia danych."
+              - tekst: "Jeżeli Klient przebywa za granicą, przekaż mu numer {{fakt:kontakt.infolinia-zagranica}} oraz opisz możliwość skorzystania z awaryjnej wypłaty gotówki za pośrednictwem organizacji płatniczej."
+          - tekst: "{Zamów|Zleć} wydanie karty zastępczej."
+            podkroki:
+              - tekst: "Zapytaj o preferowany sposób odbioru: przesyłka kurierska na adres do korespondencji albo odbiór w placówce; ustal, czy dane adresowe w systemie są aktualne."
+              - tekst: "Przekaż Klientowi informację, że nowa karta ma inny numer i wymaga aktywacji, a stary PIN nie obowiązuje."

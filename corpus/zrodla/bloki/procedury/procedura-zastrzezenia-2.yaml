@@ -1,0 +1,199 @@
+bloki:
+  - id: zastrzezenia-blokada
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Blokadę {wykonuje się|zakłada się} bezzwłocznie po zweryfikowaniu zgłaszającego, nie później niż w ciągu {{fakt:termin.zastrzezenia.blokada-karty}} od przyjęcia zgłoszenia. Wykonanie blokady nie może być uzależnione od ustalenia, czy Klient wcześniej dokonał transakcji ani od uzyskania dodatkowych dokumentów."
+      - kroki:
+          - tekst: "{Zablokuj|Zastrzeż} kartę w systemie centralnym {{fakt:system.zastrzezenia.cbs}}."
+            podkroki:
+              - tekst: "Wybierz w systemie kartę wskazaną przez Klienta; {jeżeli|jeśli} Klient nie zna jej numeru, zidentyfikuj ją po ostatnich czterech cyfrach, dacie ważności lub rachunku."
+              - tekst: "Wybierz status „zastrzeżona” albo „blokada czasowa” zgodnie z ustaleniem z Klientem."
+              - tekst: "{Sprawdź|Zweryfikuj}, czy system potwierdził zmianę statusu i czy status został przekazany do systemu autoryzacyjnego."
+          - tekst: "{Zablokuj|Wyłącz} tokeny kart w aplikacjach płatności mobilnych."
+            podkroki:
+              - tekst: "Zastrzeżenie karty obejmuje wszystkie powiązane z nią tokeny; wyjątek stanowi {wyłącznie|tylko} wyraźne żądanie Klienta, aby zablokować jedynie kartę fizyczną."
+              - tekst: "{Jeżeli|Jeśli} zgłoszenie dotyczy tylko utraty urządzenia mobilnego, wyłącz token powiązany z tym urządzeniem i pozostaw kartę fizyczną aktywną."
+          - tekst: "{Ustal|Sprawdź}, czy konieczne jest zablokowanie dostępu do bankowości elektronicznej."
+            podkroki:
+              - tekst: "Zablokuj dostęp, {jeżeli|jeśli} karta lub dane uwierzytelniające zostały utracone razem z urządzeniem zaufanym albo Klient ujawnił hasło lub kod jednorazowy."
+              - tekst: "Zablokuj dostęp także wtedy, gdy zlecono nierozpoznane przelewy lub zmieniono dane kontaktowe Klienta w ostatnich dniach."
+              - tekst: "Dostęp tymczasowy po zdarzeniu może zostać przyznany na zasadach opisanych w dalszej części procedury, nie dłużej niż na {{fakt:termin.zastrzezenia.dostep-tymczasowy}}."
+          - tekst: "{Przekaż|Wydaj} Klientowi potwierdzenie zastrzeżenia."
+            podkroki:
+              - tekst: "Podaj ustnie numer zgłoszenia {oraz|a także} datę i godzinę blokady."
+              - tekst: "Na żądanie Klienta wyślij potwierdzenie na trwałym nośniku nie później niż {{fakt:termin.zastrzezenia.potwierdzenie-na-nosniku}} po zgłoszeniu."
+              - tekst: "Przypomnij Klientowi, że po zastrzeżeniu nie wolno już używać znalezionej karty — należy ją zniszczyć lub zwrócić do placówki."
+
+  - id: zastrzezenia-karta-zastepcza
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Karta zastępcza jest wydawana z nowym numerem i nowym kodem zabezpieczającym. Zasady jej wydania, w tym opłaty, określają dokumenty „{{ref:dokument:regulamin-kart-debetowych}}” i „{{ref:dokument:regulamin-kart-kredytowych}}” {oraz|a także} właściwa taryfa opłat i prowizji; zastrzeżenie karty jest bezpłatne ({{fakt:oplata.karta.zastrzezenie}})."
+      - kroki:
+          - tekst: "{Zapytaj|Ustal} Klienta, czy chce otrzymać kartę zastępczą."
+            podkroki:
+              - tekst: "{Jeżeli|Jeśli} Klient zrezygnuje z karty zastępczej, {odnotuj|zapisz} to w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}} i {poinformuj|powiadom} o możliwości złożenia wniosku później."
+              - tekst: "Zweryfikuj aktualność adresu korespondencyjnego i numeru telefonu Klienta; {w razie|w przypadku} wątpliwości co do ich aktualności nie wysyłaj karty do czasu potwierdzenia."
+          - tekst: "{Złóż|Zarejestruj} zamówienie karty w systemie centralnym {{fakt:system.zastrzezenia.cbs}}."
+            podkroki:
+              - tekst: "Wybierz tryb zwykły albo pilny; za tryb pilny pobierana jest opłata w wysokości {{fakt:oplata.karta-debetowa.wydanie-pilne}} w przypadku kart debetowych."
+              - tekst: "Karta zastępcza jest dostarczana w terminie {{fakt:termin.zastrzezenia.karta-zastepcza}} od zamówienia, a PIN — odrębną przesyłką lub w bankowości elektronicznej."
+          - tekst: "{Poinformuj|Zaznacz w rozmowie} Klienta o limitach nowej karty."
+            podkroki:
+              - tekst: "Nowa karta otrzymuje limity dotychczasowej karty, chyba że Klient zażąda ich zmiany."
+              - tekst: "W przypadku zastrzeżenia z powodu oszustwa limity dla płatności internetowych mogą zostać obniżone do czasu zakończenia analizy."
+          - tekst: "{Zamknij|Zakończ} obsługę zgłoszenia o utracie."
+            podkroki:
+              - tekst: "Oznacz zgłoszenie w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}} jako „zablokowano” i wskaż numer zamówienia karty zastępczej."
+              - tekst: "{Jeżeli|Jeśli} Klient kwestionuje transakcje, nie zamykaj sprawy, lecz przejdź do zgłoszenia transakcji nieautoryzowanej."
+
+  - id: zastrzezenia-bankowosc
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Zablokowanie dostępu do bankowości elektronicznej {stosuje się|wykonuje się} w celu ochrony rachunku Klienta, gdy dane uwierzytelniające mogły zostać przejęte. Blokada dotyczy także aplikacji mobilnej i powiązanych urządzeń zaufanych."
+      - kroki:
+          - tekst: "{Zablokuj|Wyłącz} dostęp Klienta do bankowości elektronicznej."
+            podkroki:
+              - tekst: "Zablokuj logowanie hasłem {oraz|a także} wszystkie urządzenia zaufane; uniemożliwi to autoryzację dyspozycji."
+              - tekst: "Anuluj niewykonane dyspozycje oczekujące i zlecenia stałe, których Klient nie rozpoznaje, po uprzednim potwierdzeniu z Klientem."
+              - tekst: "{Jeżeli|Jeśli} przelew został już zlecony, {natychmiast|bezzwłocznie} zgłoś sprawę do jednostki „{{fakt:jednostka.centrum-monitorowania}}”, aby podjęto próbę wstrzymania lub odwołania przelewu."
+          - tekst: "{Ustal|Uzgodnij} z Klientem sposób przywrócenia dostępu."
+            podkroki:
+              - tekst: "Nowe dane uwierzytelniające można ustanowić dopiero po pozytywnej weryfikacji tożsamości Klienta w placówce lub na Infolinii z użyciem silnego uwierzytelniania."
+              - tekst: "Do czasu przywrócenia dostępu Klient składa dyspozycje w placówce lub telefonicznie; dostęp tymczasowy może zostać przyznany na czas nie dłuższy niż {{fakt:termin.zastrzezenia.dostep-tymczasowy}}."
+          - tekst: "{Zaleć|Poradź} Klientowi czynności zabezpieczające."
+            podkroki:
+              - tekst: "Zmiana haseł do poczty elektronicznej i usług powiązanych z numerem telefonu."
+              - tekst: "Usunięcie z urządzenia aplikacji zdalnego dostępu i przeskanowanie urządzenia programem zabezpieczającym."
+              - tekst: "Zgłoszenie podejrzenia przestępstwa na policji."
+
+  - id: zastrzezenia-nieautoryzowana-przyjecie
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Zgłoszenie transakcji nieautoryzowanej, niewykonanej lub wykonanej nienależycie Klient może złożyć na Infolinii, w bankowości elektronicznej, w placówce lub jako reklamację. Klient traci uprawnienie do żądania zwrotu, {jeżeli|jeśli} nie zgłosi sprawy w terminie {{fakt:termin.karta-debetowa.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku — termin ten dotyczy zarówno kart debetowych, jak i kart kredytowych (zob. {{ref:akt:dz-u-2024-30-uslugi-platnicze}}). Pracownik nie może odmówić przyjęcia zgłoszenia złożonego po terminie; jego ocenę zastrzega się dla jednostki „{{fakt:jednostka.centrum-monitorowania}}”."
+      - kroki:
+          - tekst: "{Przyjmij|Zarejestruj} zgłoszenie transakcji nieautoryzowanej."
+            podkroki:
+              - tekst: "Zweryfikuj tożsamość zgłaszającego zgodnie z częścią o przyjmowaniu zgłoszeń."
+              - tekst: "{Jeżeli|Jeśli} karta nie została jeszcze zablokowana, najpierw wykonaj blokadę, a następnie kontynuuj rejestrację zgłoszenia."
+              - tekst: "Zarejestruj w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}} każdą kwestionowaną transakcję odrębnym wpisem: data, kwota, akceptant, rodzaj transakcji (fizyczna, zbliżeniowa, internetowa, w bankomacie)."
+          - tekst: "{Zbierz|Uzyskaj} od Klienta informacje potrzebne do analizy."
+            podkroki:
+              - tekst: "Czy karta była w posiadaniu Klienta w momencie transakcji i gdzie się znajdowała."
+              - tekst: "Czy PIN, dane karty lub kody jednorazowe były udostępniane innym osobom, także w rozmowie z osobą podającą się za pracownika Banku."
+              - tekst: "Czy Klient dostał powiadomienie SMS lub w aplikacji o transakcji i jak zareagował."
+              - tekst: "Czy Klient zgłosił sprawę policji i czy posiada potwierdzenie zgłoszenia."
+          - tekst: "{Poproś|Zaproponuj} Klientowi złożenie pisemnego oświadczenia na formularzu {{fakt:formularz.zastrzezenia.oswiadczenie}}."
+            podkroki:
+              - tekst: "Oświadczenie nie jest warunkiem przyjęcia zgłoszenia ani zwrotu, lecz ułatwia analizę i ewentualny spór z organizacją płatniczą."
+              - tekst: "{Jeżeli|Jeśli} Klient odmawia złożenia oświadczenia, {odnotuj|zapisz} to w rejestrze i kontynuuj rozpatrywanie zgłoszenia."
+          - tekst: "{Potwierdź|Poinformuj o przyjęciu} zgłoszenie Klientowi."
+            podkroki:
+              - tekst: "Potwierdzenie przyjęcia zgłoszenia na trwałym nośniku przekazuje się nie później niż w terminie {{fakt:termin.zastrzezenia.potwierdzenie-zgloszenia-nieautoryzowanej}} od przyjęcia."
+              - tekst: "W potwierdzeniu wskaż numer sprawy, listę kwestionowanych transakcji {oraz|a także} informację o dalszych etapach."
+
+  - id: zastrzezenia-nieautoryzowana-analiza
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Analizę zgłoszenia prowadzi jednostka „{{fakt:jednostka.centrum-monitorowania}}”. Analiza wstępna powinna być zakończona w terminie {{fakt:termin.zastrzezenia.analiza-wstepna}} od przyjęcia zgłoszenia, a w każdym przypadku przed upływem terminu na zwrot środków."
+      - kroki:
+          - tekst: "{Zbierz|Pobierz} dane o kwestionowanych transakcjach."
+            podkroki:
+              - tekst: "Pobierz dane autoryzacji: sposób uwierzytelnienia, czy użyto chipa, PIN, silnego uwierzytelniania, adres IP i identyfikator urządzenia dla transakcji internetowych."
+              - tekst: "{Sprawdź|Zweryfikuj} historię alertów w systemie monitorowania transakcji {{fakt:system.zastrzezenia.monitoring}} {oraz|a także} wcześniejszy kontakt z Klientem."
+              - tekst: "Porównaj miejsce i czas transakcji z lokalizacją Klienta {oraz|a także} jego dotychczasowym profilem użycia karty."
+          - tekst: "{Oceń|Zbadaj} okoliczności transakcji."
+            podkroki:
+              - tekst: "{Sprawdź|Zweryfikuj}, czy transakcja została poprawnie uwierzytelniona i czy nie wystąpiły nieprawidłowości po stronie Banku lub akceptanta."
+              - tekst: "Zweryfikuj, czy zachowanie Klienta nie wskazuje na umyślne lub rażąco niedbałe naruszenie obowiązków, {w szczególności|zwłaszcza} udostępnienie danych uwierzytelniających."
+              - tekst: "Oceń, czy zachodzą okoliczności wskazujące na oszustwo ze strony Klienta; wniosek taki wymaga udokumentowanych podstaw, a nie samych podejrzeń."
+          - tekst: "{Podejmij|Sformułuj} rekomendację co do rozstrzygnięcia."
+            podkroki:
+              - tekst: "Rekomendacja: zwrot, zwrot z jednoczesnym sporem z organizacją płatniczą, odmowa zwrotu w przypadku uzasadnionego podejrzenia oszustwa albo uznanie transakcji za autoryzowaną."
+              - tekst: "Rekomendację zatwierdza kierownik {{fakt:jednostka.centrum-monitorowania}}, a w sprawach powyżej {{fakt:limit.zastrzezenia.kwota-eskalacji}} — jednostka „{{fakt:jednostka.bezpieczenstwo}}”."
+              - tekst: "Rekomendację {odnotuj|zapisz} w rejestrze wraz z uzasadnieniem."
+
+  - id: zastrzezenia-zwrot
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Co do zasady Bank zwraca kwotę transakcji nieautoryzowanej {{fakt:termin.karta-debetowa.zwrot-nieautoryzowanej}} po stwierdzeniu transakcji nieautoryzowanej lub po otrzymaniu zgłoszenia, przywracając rachunek do stanu sprzed obciążenia, z uwzględnieniem opłat i odsetek, którymi rachunek został obciążony. Termin ten liczy się od przyjęcia zgłoszenia przez dowolnego pracownika, a nie od zakończenia analizy. Dla kart kredytowych obowiązuje termin: {{fakt:karta.zwrot-nieautoryzowanej}}."
+      - kroki:
+          - tekst: "{Zleć|Przekaż do realizacji} zwrot środków."
+            podkroki:
+              - tekst: "Dyspozycję zwrotu przekazuje jednostka „{{fakt:jednostka.centrum-monitorowania}}” do jednostki „{{fakt:jednostka.operacje}}” z potwierdzeniem terminu realizacji."
+              - tekst: "Zwrot ujmij na rachunku z datą waluty dnia obciążenia, aby Klient nie poniósł dodatkowych kosztów ani utraty odsetek."
+              - tekst: "Dla kart kredytowych skoryguj saldo zadłużenia {oraz|a także} odsetki naliczone od kwestionowanej kwoty."
+          - tekst: "{Poinformuj|Powiadom} Klienta o zwrocie."
+            podkroki:
+              - tekst: "Poinformuj Klienta o kwocie, dacie zwrotu i dalszym przebiegu sprawy."
+              - tekst: "Wskaż, że {w razie|w przypadku} późniejszego stwierdzenia, iż transakcja była autoryzowana, Bank ponownie obciąży rachunek, powiadamiając o tym Klienta."
+          - tekst: "{Zastosuj|Rozważ} wyjątki od zwrotu w terminie."
+            podkroki:
+              - tekst: "Zwrot można wstrzymać {wyłącznie|tylko}, gdy Bank ma uzasadnione i należycie udokumentowane podstawy do podejrzewania oszustwa i powiadomił o tym organy ścigania; decyzję podejmuje jednostka „{{fakt:jednostka.bezpieczenstwo}}”."
+              - tekst: "Zawiadomienie organów ścigania następuje w terminie {{fakt:termin.zastrzezenia.zawiadomienie-organow}} od podjęcia decyzji o wstrzymaniu zwrotu."
+              - tekst: "O wstrzymaniu zwrotu {poinformuj|powiadom} Klienta pisemnie, wskazując, że Bank przekazał sprawę właściwym organom, bez ujawniania informacji, których przekazanie jest zabronione."
+
+  - id: zastrzezenia-odpowiedzialnosc-klienta
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Ocena zakresu odpowiedzialności Klienta za transakcje nieautoryzowane następuje {wyłącznie|tylko} na podstawie okoliczności ustalonych w toku postępowania wyjaśniającego, zgodnie z {{ref:akt:dz-u-2024-30-uslugi-platnicze}}, i nie może prowadzić do pogorszenia sytuacji Klienta w stosunku do postanowień dokumentów „{{ref:dokument:regulamin-kart-debetowych}}” i „{{ref:dokument:regulamin-kart-kredytowych}}”."
+      - ustep: "Przy ocenie odpowiedzialności stosuje się zasady:"
+        punkty:
+          - "w przypadku transakcji nieautoryzowanych wynikłych z utraty karty, jej kradzieży lub przywłaszczenia Klient odpowiada do kwoty {{fakt:termin.karta-debetowa.odpowiedzialnosc-kwota}} w odniesieniu do kart debetowych, a w odniesieniu do kart kredytowych — do {{fakt:karta.odpowiedzialnosc-limit}};"
+          - "odpowiedzialność ograniczona nie ma zastosowania, {jeżeli|jeśli} Klient nie mógł stwierdzić utraty, kradzieży lub przywłaszczenia karty przed transakcją, {jeżeli|jeśli} utrata wynikała z działania pracownika Banku lub {jeżeli|jeśli} Bank nie wymagał silnego uwierzytelniania;"
+          - "Klient ponosi pełną odpowiedzialność za transakcje, które umożliwił umyślnie lub wskutek umyślnego albo rażąco niedbałego naruszenia obowiązków, {w szczególności|zwłaszcza} przez ujawnienie PIN, hasła lub kodów jednorazowych;"
+          - "po przyjęciu zgłoszenia utraty, kradzieży lub nieuprawnionego użycia Klient nie odpowiada za transakcje wykonane po zgłoszeniu, chyba że działał umyślnie."
+      - akapit: "Przypisanie Klientowi odpowiedzialności za rażące niedbalstwo wymaga zatwierdzenia przez kierownika jednostki „{{fakt:jednostka.centrum-monitorowania}}” i odnotowania w rejestrze uzasadnienia. Samo użycie prawidłowego PIN lub kodu jednorazowego nie jest wystarczającym dowodem rażącego niedbalstwa."
+
+  - id: zastrzezenia-spor
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "{Jeżeli|Jeśli} kwestionowana transakcja kartowa została rozliczona za pośrednictwem organizacji płatniczej, a Bank zwrócił Klientowi środki, jednostka „{{fakt:jednostka.centrum-monitorowania}}” {podejmuje|wszczyna} spór z organizacją płatniczą w celu odzyskania środków od banku akceptanta. Prowadzenie sporu nie opóźnia zwrotu środków Klientowi."
+      - kroki:
+          - tekst: "{Zakwalifikuj|Określ} podstawę sporu."
+            podkroki:
+              - tekst: "Transakcja nieautoryzowana (karta utracona, skradziona lub skopiowana), transakcja podwójnie obciążona, niewykonana usługa lub niedostarczony towar, kwota inna niż uzgodniona, anulowana subskrypcja."
+              - tekst: "Dla każdej podstawy {sprawdź|zweryfikuj} warunki formalne wymagane przez organizację płatniczą {oraz|a także} wymagane załączniki."
+          - tekst: "{Przygotuj|Skompletuj} {dokumentację|akta} sporu na formularzu {{fakt:formularz.zastrzezenia.spor}}."
+            podkroki:
+              - tekst: "Dokumentacja obejmuje dane transakcji, dowody autoryzacji, oświadczenie Klienta, korespondencję z akceptantem i potwierdzenie zgłoszenia na policję, {jeżeli|jeśli} zostało złożone."
+              - tekst: "Dokumentację przygotowuje się w terminie {{fakt:termin.zastrzezenia.spor-przygotowanie}} od dyspozycji zwrotu."
+          - tekst: "{Złóż|Wnieś} spór w terminie."
+            podkroki:
+              - tekst: "Spór należy wnieść najpóźniej w terminie {{fakt:termin.zastrzezenia.spor-zgloszenie}} od dnia transakcji lub dnia, w którym usługa miała być wykonana, o ile zasady organizacji płatniczej nie przewidują terminu krótszego."
+              - tekst: "Spór wnosi się za pośrednictwem systemu rozliczeniowego; potwierdzenie wniesienia dołącz do akt."
+          - tekst: "{Obsłuż|Przeanalizuj} odpowiedź banku akceptanta."
+            podkroki:
+              - tekst: "Bank akceptanta może uznać spór albo przedstawić dowody; odpowiedź należy ocenić w terminie wskazanym przez organizację płatniczą, nie dłuższym niż {{fakt:termin.zastrzezenia.spor-odpowiedz}} od jej otrzymania."
+              - tekst: "{Jeżeli|Jeśli} spór został uznany, zaksięguj odzyskane środki na rachunku wewnętrznym i rozlicz je z kosztami; Klient nie jest ponownie obciążany."
+              - tekst: "{Jeżeli|Jeśli} odpowiedź jest dla Banku niekorzystna, rozważ ponowne wniesienie sporu lub zamknięcie sprawy i {odnotuj|zapisz} stratę w rejestrze nadużyć."
+
+  - id: zastrzezenia-szczegolne-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - ustep: "**Zgłoszenie przez osobę nieuprawnioną lub niezweryfikowaną.** {Jeżeli|Jeśli} osoba zgłaszająca nie potwierdziła tożsamości, pracownik {nie ujawnia|nie przekazuje} informacji o rachunku, lecz — jeśli zgłoszenie jest wiarygodne — stosuje blokadę zachowawczą karty. Blokada zachowawcza ma charakter czasowy; jej zniesienie wymaga potwierdzenia przez posiadacza rachunku."
+      - ustep: "**Zgłoszenie przez osobę trzecią** ({na przykład|przykładowo} członka rodziny albo osobę, która znalazła kartę). Pracownik przyjmuje informację, blokuje kartę czasowo i zawiadamia posiadacza rachunku, a znalezioną kartę przyjmuje do depozytu lub poleca zniszczyć."
+      - ustep: "**Znaleziona karta Klienta.** {Jeżeli|Jeśli} Klient odnajdzie kartę po jej zastrzeżeniu, nie może jej użyć; karta jest niszczona w obecności pracownika albo przyjmowana do zniszczenia."
+      - ustep: "**Karta pozostająca w bankomacie.** Karta zatrzymana przez bankomat jest blokowana przez system; Klient może zażądać wydania karty zastępczej. {{fakt:karta-debetowa.liczba-prob-pin}} błędne wprowadzenie PIN powoduje zablokowanie karty i jej zatrzymanie w bankomacie."
+      - ustep: "**Zgłoszenie z zagranicy.** Klient dzwoni pod numer {{fakt:kontakt.infolinia-zagranica}}. Karta zastępcza może zostać wysłana na adres za granicą lub, w nagłych przypadkach, wydana w formie awaryjnej przez sieć organizacji płatniczej; koszty takiej usługi określa taryfa opłat i prowizji."
+      - ustep: "**Karta kredytowa i karty dodatkowe.** Zastrzeżenie karty głównej powoduje zastrzeżenie kart dodatkowych na żądanie posiadacza; zastrzeżenie karty dodatkowej nie wpływa na kartę główną. Zasady rozliczenia zadłużenia określa „{{ref:dokument:regulamin-kart-kredytowych}}”."
+      - ustep: "**Klient nie rozpoznaje transakcji, lecz nie utracił karty.** Pracownik zakłada, że dane karty mogły zostać skopiowane, zastrzega kartę i traktuje sprawę jako zgłoszenie transakcji nieautoryzowanej."
+      - ustep: "**Zgłoszenie dotyczące transakcji autoryzowanej przez Klienta.** {Jeżeli|Jeśli} Klient przyznaje, że wykonał transakcję, lecz został wprowadzony w błąd przez oszusta, transakcja co do zasady jest autoryzowana; pracownik przyjmuje zgłoszenie, informuje Klienta o możliwościach odzyskania środków, zgłasza sprawę do jednostki „{{fakt:jednostka.centrum-monitorowania}}” i zaleca powiadomienie policji. O obowiązku zwrotu rozstrzyga jednostka „{{fakt:jednostka.bezpieczenstwo}}”."
+      - ustep: "**Klient w trudnej sytuacji życiowej** (choroba, brak możliwości wizyty w placówce). Kierownik placówki może zdecydować o przyjęciu oświadczenia drogą elektroniczną lub telefonicznie, o ile tożsamość Klienta została potwierdzona."

@@ -1,0 +1,77 @@
+id: procedura-pelnomocnictwa
+typ: procedury
+temat: procedura-pelnomocnictwa
+tytul:
+  - "Procedura {przyjmowania|przyjmowania i weryfikacji} pełnomocnictw"
+  - "Procedura przyjmowania i weryfikacji pełnomocnictw w {{param:bank}}"
+  - "Procedura obsługi pełnomocnictw do rachunków i produktów bankowych"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry:
+  wlasciciel: "Departament Prawny"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [procedura-pelnomocnictwa-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [procedura-pelnomocnictwa-zakres]
+    opcjonalne: { kategorie: [pelnomocnictwa-zakres-dod], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [procedura-pelnomocnictwa-odpowiedzialnosci]
+    opcjonalne: { kategorie: [pelnomocnictwa-odp-dod], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, procedura-pelnomocnictwa-definicje]
+    opcjonalne: { kategorie: [pelnomocnictwa-definicja-dod], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przyjęcie pełnomocnictwa"
+    wymagane: [procedura-pelnomocnictwa-schemat, procedura-pelnomocnictwa-przyjecie-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-opis-przyjecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — weryfikacja mocodawcy i pełnomocnika"
+    wymagane: [procedura-pelnomocnictwa-weryfikacja-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-opis-weryfikacja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — pełnomocnictwa notarialne i zagraniczne"
+    wymagane: [procedura-pelnomocnictwa-notarialne-kroki, procedura-pelnomocnictwa-zagraniczne-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-opis-zagraniczne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — prokura i reprezentacja przedsiębiorców"
+    wymagane: [procedura-pelnomocnictwa-firmy-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-opis-firmy], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — rejestracja w systemie, zakres i ograniczenia"
+    wymagane: [procedura-pelnomocnictwa-rejestracja-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-opis-rejestracja], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — odwołanie, wypowiedzenie i wygaśnięcie"
+    wymagane: [procedura-pelnomocnictwa-wygasniecie-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-opis-wygasniecie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne i podejrzane"
+    wymagane: [procedura-pelnomocnictwa-szczegolne-sygnaly, procedura-pelnomocnictwa-szczegolne-kroki]
+    opcjonalne: { kategorie: [pelnomocnictwa-szczegolne-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [procedura-pelnomocnictwa-kontrola]
+    opcjonalne: { kategorie: [pelnomocnictwa-kontrola], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [procedura-pelnomocnictwa-archiwizacja, wspolne-ochrona-danych-procedura, wspolne-doreczenia-procedura]
+    opcjonalne: { kategorie: [pelnomocnictwa-archiwum], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [procedura-pelnomocnictwa-koncowe, wspolne-zmiany-procedura]
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna przyjęcia i weryfikacji pełnomocnictwa"
+    wymagane: [procedura-pelnomocnictwa-zal-lista]
+  - rodzaj: zalacznik
+    tytul: "Rodzaje pełnomocnictw i wymagana forma"
+    wymagane: [procedura-pelnomocnictwa-zal-rodzaje]
+  - rodzaj: zalacznik
+    tytul: "Wykaz formularzy, systemów i terminów"
+    wymagane: [procedura-pelnomocnictwa-zal-formularze]
+    opcjonalne: { kategorie: [pelnomocnictwa-zalacznik-dod], min: 0, max: 5 }

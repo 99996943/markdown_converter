@@ -1,0 +1,286 @@
+bloki:
+  - id: taryfa-kredyty-windykacja-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-wymagane-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Upomnienie pisemne|Monit pisemny} w sprawie zaległości w spłacie"
+            stawka: "{{fakt:oplata.upomnienie}}[^1]"
+            tryb: "za każde upomnienie"
+          - usluga: "Monit SMS o zaległości w spłacie"
+            stawka: "{{fakt:oplata.windykacja.monit-sms}}"
+            tryb: "za każdy monit"
+          - usluga: "Wezwanie do zapłaty przed wypowiedzeniem umowy"
+            stawka: "{{fakt:oplata.windykacja.wezwanie-do-zaplaty}}[^2]"
+            tryb: "za każde wezwanie"
+          - usluga: "Wizyta terenowa pracownika Banku w sprawie zaległości"
+            stawka: "{{fakt:oplata.windykacja.wizyta-terenowa}}[^3]"
+            tryb: "za każdą wizytę"
+          - usluga: "{Rozmowa telefoniczna|Kontakt telefoniczny} w sprawie zaległości"
+            stawka: "bez opłat"
+            tryb: "za każdą rozmowę"
+          - usluga: "Odsetki od kwot przeterminowanych w kredycie konsumenckim"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Wypowiedzenie umowy kredytu z {powodu|przyczyny} zaległości"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rozpatrzenie wniosku o restrukturyzację zadłużenia"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.restrukturyzacja}}"
+            tryb: "jednorazowo"
+          - usluga: "Sporządzenie ugody w sprawie spłaty zadłużenia po wypowiedzeniu umowy"
+            stawka: "100,00 zł"
+            tryb: "za każdą ugodę"
+          - usluga: "Wniosek o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu (opłata sądowa)"
+            stawka: "wg przepisów o kosztach sądowych"
+            tryb: "za każdy wniosek"
+          - usluga: "Zlecenie odzyskiwania należności podmiotowi zewnętrznemu — koszty"
+            stawka: "wg faktycznie poniesionych kosztów[^4]"
+            tryb: "za każde zlecenie"
+          - usluga: "Informacja o zaległości przekazana do biura informacji kredytowej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zaświadczenie o wysokości zaległości na dzień wskazany przez Klienta"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o całkowitej spłacie zaległości"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wniosek o wstrzymanie czynności windykacyjnych na czas rozpatrzenia reklamacji"
+            stawka: "bez opłat"
+            tryb: "za każdy wniosek"
+    przypisy:
+      1: "Opłata za {upomnienie pisemne|monit pisemny} jest pobierana najwyżej raz w miesiącu kalendarzowym, w którym raty pozostają w zaległości, i dotyczy wyłącznie przesyłek wysłanych po upływie terminu płatności."
+      2: "Wezwanie do zapłaty zawiera informację o możliwości złożenia wniosku o restrukturyzację zadłużenia oraz o skutkach wypowiedzenia umowy; opłatę pobiera się po doręczeniu wezwania."
+      3: "Wizyta terenowa {może zostać|jest} przeprowadzona wyłącznie po uprzednim powiadomieniu Klienta i w godzinach 8:00–20:00 w dniach roboczych; opłaty nie pobiera się, jeżeli Klient nie został zastany w miejscu wskazanym w umowie z przyczyn niezależnych od Banku."
+      4: "Koszty zewnętrzne nie mogą przekroczyć kwoty niezbędnej i uzasadnionej, a Bank na wniosek Klienta przedstawia ich szczegółowe zestawienie; koszty nie dotyczą okresu wstrzymania czynności windykacyjnych."
+
+  - id: taryfa-kredyty-windykacja-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Pierwszy monit {SMS|wiadomość tekstowa} po terminie płatności raty"
+            stawka: "{{fakt:oplata.windykacja.monit-sms}}"
+            tryb: "za każdy monit"
+          - usluga: "Monit {e-mailowy|przesłany pocztą elektroniczną} o zaległości w spłacie"
+            stawka: "bez opłat"
+            tryb: "za każdy monit"
+          - usluga: "{Powiadomienie|Komunikat} w aplikacji mobilnej o zaległości w spłacie"
+            stawka: "bez opłat"
+            tryb: "za każde powiadomienie"
+          - usluga: "Monit telefoniczny nagraną wiadomością"
+            stawka: "bez opłat"
+            tryb: "za każdy monit"
+          - usluga: "Drugi monit pisemny wysłany listem zwykłym"
+            stawka: "{{fakt:oplata.upomnienie}}"
+            tryb: "za każdy monit"
+          - usluga: "Trzeci monit pisemny {wysłany|nadany} listem poleconym"
+            stawka: "25,00 zł"
+            tryb: "za każdy monit"
+          - usluga: "Ostateczne wezwanie do zapłaty wysłane listem poleconym za potwierdzeniem odbioru"
+            stawka: "{{fakt:oplata.windykacja.wezwanie-do-zaplaty}}"
+            tryb: "za każde wezwanie"
+          - usluga: "Ponowne doręczenie wezwania po zwrocie przesyłki (adres nieaktualny)"
+            stawka: "15,00 zł"
+            tryb: "za każdą przesyłkę"
+          - usluga: "Ustalenie aktualnego adresu Klienta na podstawie rejestrów publicznych"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "za każde ustalenie"
+          - usluga: "Opłata za wysłanie wezwania do współkredytobiorcy lub poręczyciela"
+            stawka: "{{fakt:oplata.upomnienie}}"
+            tryb: "za każde wezwanie"
+
+  - id: taryfa-kredyty-windykacja-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Odsetki za opóźnienie od kapitału w kredycie konsumenckim"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Odsetki za opóźnienie od odsetek kapitałowych"
+            stawka: "bez opłat"
+            tryb: "rocznie"
+          - usluga: "Odsetki za opóźnienie w kredycie {hipotecznym|zabezpieczonym hipoteką}"
+            stawka: "wg umowy, nie więcej niż odsetki maksymalne"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Odsetki za opóźnienie w kredycie dla przedsiębiorcy"
+            stawka: "wg umowy"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Odsetki od zadłużenia przeterminowanego w limicie rachunku osobistego"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Odsetki od zadłużenia przeterminowanego w karcie kredytowej"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "Odsetki od kwot należnych po wypowiedzeniu umowy kredytu"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od całości zadłużenia"
+          - usluga: "Opłata za {ustalenie|sporządzenie} harmonogramu spłaty zaległości po wypowiedzeniu umowy"
+            stawka: "100,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Naliczanie|Pobieranie} odsetek w okresie wstrzymania czynności windykacyjnych"
+            stawka: "bez opłat"
+            tryb: "rocznie"
+          - usluga: "Zaokrąglanie odsetek do pełnego grosza w górę"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-windykacja-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wizyta terenowa pracownika w {miejscu zamieszkania|miejscu pobytu} Klienta"
+            stawka: "{{fakt:oplata.windykacja.wizyta-terenowa}}"
+            tryb: "za każdą wizytę"
+          - usluga: "Wizyta terenowa w siedzibie przedsiębiorcy"
+            stawka: "200,00 zł"
+            tryb: "za każdą wizytę"
+          - usluga: "Ponowna wizyta po nieskutecznej próbie kontaktu"
+            stawka: "60,00 zł"
+            tryb: "za każdą wizytę"
+          - usluga: "{Oględziny|Kontrola stanu} przedmiotu zabezpieczenia na wniosek Banku"
+            stawka: "150,00 zł"
+            tryb: "za każde oględziny"
+          - usluga: "Wycena przedmiotu zabezpieczenia w związku z zaległością"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "za każdą wycenę"
+          - usluga: "Przejęcie przedmiotu zabezpieczenia w drodze dobrowolnego wydania"
+            stawka: "300,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Przechowanie|Przechowywanie} pojazdu stanowiącego zabezpieczenie kredytu"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "za każdą dobę"
+          - usluga: "Sprzedaż przedmiotu zabezpieczenia — koszty ogłoszenia i pośrednictwa"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "jednorazowo"
+          - usluga: "Rozliczenie nadwyżki ze sprzedaży przedmiotu zabezpieczenia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zwrot przedmiotu zabezpieczenia po spłacie zadłużenia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-windykacja-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wniosek o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu"
+            stawka: "wg przepisów o kosztach sądowych"
+            tryb: "za każdy wniosek"
+          - usluga: "Opłata za wystawienie bankowego tytułu egzekucyjnego"
+            stawka: "bez opłat"
+            tryb: "za każdy tytuł"
+          - usluga: "{Złożenie|Wniesienie} pozwu o zapłatę (opłata sądowa)"
+            stawka: "wg przepisów o kosztach sądowych"
+            tryb: "za każdy pozew"
+          - usluga: "Koszty zastępstwa procesowego w postępowaniu sądowym"
+            stawka: "wg stawek ustalonych przez sąd"
+            tryb: "za każde postępowanie"
+          - usluga: "Koszty postępowania egzekucyjnego prowadzonego przez komornika"
+            stawka: "wg przepisów o komornikach"
+            tryb: "za każde postępowanie"
+          - usluga: "{Zgłoszenie|Wniesienie zgłoszenia} wierzytelności w postępowaniu upadłościowym"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "za każde zgłoszenie"
+          - usluga: "Zgłoszenie wierzytelności w postępowaniu restrukturyzacyjnym"
+            stawka: "wg faktycznie poniesionych kosztów"
+            tryb: "za każde zgłoszenie"
+          - usluga: "Wniosek o zawarcie ugody przed {mediatorem|sądem polubownym}"
+            stawka: "bez opłat"
+            tryb: "za każdy wniosek"
+          - usluga: "Wniosek o zawieszenie postępowania egzekucyjnego w związku z ugodą"
+            stawka: "bez opłat"
+            tryb: "za każdy wniosek"
+          - usluga: "Zwrot kosztów postępowania wskutek całkowitej spłaty zadłużenia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-windykacja-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Rozłożenie|Rozbicie} zaległości na raty — ugoda do 6 miesięcy"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rozłożenie zaległości na raty — ugoda od 7 do 24 miesięcy"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.restrukturyzacja}}"
+            tryb: "jednorazowo"
+          - usluga: "Rozłożenie zaległości na raty — ugoda powyżej 24 miesięcy"
+            stawka: "0,5% kwoty zaległości min. 200,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Kapitalizacja zaległych odsetek w ramach restrukturyzacji"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Konsolidacja zaległych rat z kapitałem w jeden kredyt restrukturyzacyjny"
+            stawka: "1,0% kwoty min. 150,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "{Obniżenie|Zmniejszenie} oprocentowania w ramach programu pomocy dla kredytobiorców"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zawieszenie spłaty rat na okres do 3 miesięcy w związku z utratą pracy"
+            stawka: "bez opłat"
+            tryb: "za każde zawieszenie"
+          - usluga: "Odroczenie terminu płatności raty o 30 dni"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.zmiana-terminu-splaty}}"
+            tryb: "za każde odroczenie"
+          - usluga: "{Umorzenie|Darowanie} odsetek za opóźnienie w całości lub w części"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Opłata za rozpatrzenie wniosku o umorzenie zadłużenia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-windykacja-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-windykacja
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zaświadczenie o istnieniu i wysokości zaległości"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o uregulowaniu zaległości (dla biura informacji kredytowej)"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wniosek o aktualizację danych w biurze informacji kredytowej po spłacie"
+            stawka: "bez opłat"
+            tryb: "za każdy wniosek"
+          - usluga: "Informacja o zasadach przekazywania danych o zaległościach do biura informacji kredytowej"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+          - usluga: "{Wypis|Zestawienie} z historii monitów i wezwań wysłanych do Klienta"
+            stawka: "20,00 zł"
+            tryb: "za każdy wypis"
+          - usluga: "Odpis dokumentów windykacyjnych z akt Banku"
+            stawka: "1,00 zł za stronę, min. 10,00 zł"
+            tryb: "za każdą kopię"
+          - usluga: "{Odpis|Kopia} nagrania rozmowy telefonicznej w sprawie zaległości"
+            stawka: "50,00 zł"
+            tryb: "za każdy odpis"
+          - usluga: "Reklamacja dotycząca opłat windykacyjnych"
+            stawka: "bez opłat"
+            tryb: "za każdą reklamację"
+          - usluga: "Zwrot opłat windykacyjnych {pobranych nienależnie|pobranych bez podstawy}"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Informacja o skutkach braku spłaty zadłużenia — konsultacja w placówce"
+            stawka: "bez opłat"
+            tryb: "za każdą konsultację"

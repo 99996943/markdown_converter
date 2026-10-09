@@ -1,0 +1,49 @@
+rodzaj: nieaktualny-jako-obowiazujacy
+skrot: NIE
+opis: "Dokument nieaktualny przedstawiony jako obowiązujący"
+wzorce:
+  - id: nie-reg-przesun-daty
+    typy: [regulaminy]
+    operacja: przesun-daty
+    opis: "Okładka nieaktualnego regulaminu bez daty końca obowiązywania"
+  - id: nie-tar-przesun-daty
+    typy: [taryfy]
+    operacja: przesun-daty
+    opis: "Okładka nieaktualnej taryfy bez daty końca obowiązywania"
+  - id: nie-pro-przesun-daty
+    typy: [procedury]
+    operacja: przesun-daty
+    opis: "Okładka nieaktualnej procedury bez daty końca obowiązywania"
+  - id: nie-wszystkie-przesun-daty-2
+    typy: [regulaminy, taryfy, procedury]
+    operacja: przesun-daty
+    opis: "Wariant: okładka starszej wersji bez adnotacji o zastąpieniu"
+  - id: nie-wszystkie-przesun-daty-3
+    typy: [regulaminy, taryfy, procedury]
+    operacja: przesun-daty
+    opis: "Wariant: okładka starszej wersji przedstawiona jako bieżąca"
+  - id: nie-wst-okladka
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [okladka, metryczka]
+    tekst:
+      - "Dokument obowiązuje do odwołania."
+      - "Status dokumentu: obowiązujący, aktualna wersja."
+      - "Wersja obowiązująca; nie została zastąpiona przez nowszą."
+    opis: "Informacja o obowiązywaniu na okładce lub w metryczce"
+  - id: nie-wst-akapit
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit, ramka]
+    tekst:
+      - "Niniejszy dokument jest {aktualną|obowiązującą} wersją i pozostaje w mocy do czasu jego wyraźnego odwołania przez Zarząd Banku Przykładowego S.A."
+      - "Wersja ta nie została zastąpiona ani uchylona; należy ją stosować bez ograniczeń czasowych."
+    opis: "Akapit stwierdzający, że dokument nie utracił mocy"
+  - id: nie-wst-przypis
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [przypis, okladka]
+    tekst:
+      - "Okres obowiązywania: bezterminowo."
+      - "Dokument pozostaje w mocy; nowsze wersje, jeżeli zostaną opublikowane, nie uchylają niniejszej."
+    opis: "Przypis lub linia na okładce o bezterminowym obowiązywaniu"

@@ -1,0 +1,162 @@
+fakty:
+  # --- terminy wewnętrzne procedury reklamacyjnej
+  - id: termin.reklamacje-proc.potwierdzenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [3, 5]
+  - id: termin.reklamacje-proc.przekazanie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [3]
+  - id: termin.reklamacje-proc.odpowiedz-jednostki
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+      - od: 2026-04-01
+        wartosc: 4
+    alternatywy: [7, 10]
+  - id: termin.reklamacje-proc.uzupelnienie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14]
+  - id: termin.reklamacje-proc.alert
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5]
+  - id: termin.reklamacje-proc.uznanie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [3, 5]
+  - id: termin.reklamacje-proc.odwolanie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2027-01-01
+        wartosc: 21
+    alternatywy: [30]
+  - id: termin.reklamacje-proc.odwolanie-rozpatrzenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [30, 21]
+  - id: termin.reklamacje-proc.chargeback-zgloszenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 120
+      - od: 2026-04-01
+        wartosc: 100
+    alternatywy: [90]
+  - id: termin.reklamacje-proc.chargeback-dokumenty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 10
+    alternatywy: [7, 14]
+  - id: termin.reklamacje-proc.chargeback-weryfikacja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [5]
+  # --- okresy i terminy opisowe
+  - id: okres.reklamacje-proc.nieautoryzowana
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 miesięcy"
+    alternatywy: ["12 miesięcy"]
+  - id: okres.reklamacje-proc.archiwizacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+      - od: 2027-01-01
+        wartosc: "6 lat"
+    alternatywy: ["10 lat", "3 lata"]
+  - id: okres.reklamacje-proc.archiwum-biezace
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["24 miesiące"]
+  - id: okres.reklamacje-proc.raport-miesieczny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do 5. dnia roboczego miesiąca następującego po miesiącu sprawozdawczym"
+    alternatywy: ["do 10. dnia roboczego miesiąca następującego po miesiącu sprawozdawczym"]
+  - id: okres.reklamacje-proc.raport-kwartalny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do 15. dnia miesiąca następującego po kwartale"
+    alternatywy: ["do 20. dnia miesiąca następującego po kwartale"]
+  # --- limity decyzyjne (kwota spornej sprawy)
+  - id: limit.reklamacje-proc.kierownik-placowki
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300
+      - od: 2027-01-01
+        wartosc: 500
+    alternatywy: [200, 1000]
+  - id: limit.reklamacje-proc.biuro
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5000
+    alternatywy: [3000, 10000]
+  - id: limit.reklamacje-proc.dyrektor
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20000
+      - od: 2026-04-01
+        wartosc: 25000
+    alternatywy: [10000, 50000]
+  - id: limit.reklamacje-proc.uznanie-tymczasowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500
+    alternatywy: [200, 1000]
+  # --- progi kontrolne
+  - id: prog.reklamacje-proc.po-terminie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+    alternatywy: [5.0, 1.0]
+  - id: prog.reklamacje-proc.uznane
+    rodzaj: procent
+    wartosci:
+      - wartosc: 35.0
+    alternatywy: [50.0]
+  - id: prog.reklamacje-proc.proba-kontrolna
+    rodzaj: procent
+    wartosci:
+      - wartosc: 5.0
+      - od: 2026-04-01
+        wartosc: 10.0
+    alternatywy: [3.0]
+  - id: prog.reklamacje-proc.powtorne
+    rodzaj: procent
+    wartosci:
+      - wartosc: 8.0
+    alternatywy: [12.0]
+  # --- systemy i formularze
+  - id: system.reklamacje-proc.rejestr
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "REK-PRZYKŁAD"
+    alternatywy: ["SKW-PRZYKŁAD"]
+  - id: system.reklamacje-proc.cbs
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "CBS-PRZYKŁAD"
+  - id: system.reklamacje-proc.archiwum
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "EAD-PRZYKŁAD"
+  - id: system.reklamacje-proc.formularz-zgloszenia
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-REK-01"
+    alternatywy: ["F-REK-11"]
+  - id: system.reklamacje-proc.formularz-chargeback
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "F-REK-05"

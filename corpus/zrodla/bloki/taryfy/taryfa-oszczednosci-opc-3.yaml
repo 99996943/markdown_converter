@@ -1,0 +1,143 @@
+bloki:
+  # ===== Rachunki i lokaty dla przedsiębiorców — pozycje dodatkowe =====
+  - id: taryfa-oszczednosci-opc-firmy-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-firmy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Rachunek oszczędnościowy dla wspólnoty mieszkaniowej (fundusz remontowy)[^1]", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie rachunku funduszu remontowego wspólnoty mieszkaniowej", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-rachunek}}", tryb: "w skali roku" }
+          - { usluga: "{Rachunek oszczędnościowy|Rachunek pomocniczy} dla stowarzyszenia lub fundacji", stawka: "{{fakt:oplata.taryfa-oszczednosci.firma-prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "Rachunek oszczędnościowy dla spółdzielni mieszkaniowej", stawka: "{{fakt:oplata.taryfa-oszczednosci.firma-prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "Dyspozycja automatycznego przekazywania nadwyżek z rachunku bieżącego na rachunek oszczędnościowy", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana zasad reprezentacji Klienta w odniesieniu do rachunku oszczędnościowego", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za dyspozycję" }
+          - { usluga: "Ustanowienie pełnomocnika do dysponowania rachunkiem oszczędnościowym", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za dyspozycję" }
+          - { usluga: "{Aktualizacja|Zmiana} karty wzorów podpisów w placówce", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "{Przyjęcie|Przyjęcie i rejestracja} dokumentów rejestrowych Klienta (KRS, CEIDG) i ich weryfikacja", stawka: "bez opłat", tryb: "za zestaw dokumentów" }
+          - { usluga: "Zamknięcie rachunku oszczędnościowego wspólnoty mieszkaniowej po zmianie zarządcy", stawka: "bez opłat", tryb: "jednorazowo" }
+    przypisy:
+      1: "Środki funduszu remontowego wspólnoty mieszkaniowej mogą być {wypłacane|wydawane} wyłącznie na podstawie uchwały wspólnoty i zgodnie z zasadami reprezentacji ujawnionymi Bankowi."
+  - id: taryfa-oszczednosci-opc-firmy-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-firmy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata overnight — {zakładanie|otwieranie} automatyczne z rachunku bieżącego", stawka: "bez opłat", tryb: "za lokatę" }
+          - { usluga: "Lokata overnight — {minimalna|najniższa} kwota", stawka: "{{fakt:limit.taryfa-oszczednosci.lokata-firma-minimalna}}", tryb: "jednorazowo" }
+          - { usluga: "Lokata overnight — oprocentowanie[^1]", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-overnight}}", tryb: "w skali roku" }
+          - { usluga: "Lokata terminowa na okres 1 miesiąca — oprocentowanie", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-1m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata terminowa na okres 3 miesięcy — oprocentowanie", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-3m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata terminowa na okres 6 miesięcy — oprocentowanie", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-6m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata terminowa na okres 12 miesięcy — oprocentowanie", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.firma-lokata-12m}}", tryb: "w skali roku" }
+          - { usluga: "Lokata terminowa dla przedsiębiorców — oprocentowanie po automatycznym odnowieniu", stawka: "{{fakt:oprocentowanie.lokata.odnowienie}}", tryb: "w skali roku" }
+          - { usluga: "Lokata terminowa dla przedsiębiorców — odsetki {wypłacane|przekazywane} na rachunek bieżący na koniec okresu", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Lokata terminowa dla przedsiębiorców — odsetki kapitalizowane na koniec okresu", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Lokata terminowa dla przedsiębiorców — wypłata środków po terminie na rachunek bieżący", stawka: "bez opłat", tryb: "za operację" }
+    przypisy:
+      1: "Lokata overnight {jest zakładana|zakładana jest} na jeden dzień roboczy i odnawiana automatycznie do dnia odwołania; w piątek lub w dniu poprzedzającym dzień wolny od pracy obejmuje okres do najbliższego dnia roboczego."
+  - id: taryfa-oszczednosci-opc-firmy-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-firmy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zerwanie lokaty terminowej przedsiębiorcy bez utraty kapitału", stawka: "{{fakt:oplata.taryfa-oszczednosci.firma-zerwanie-lokaty}}", tryb: "za dyspozycję" }
+          - { usluga: "{Zerwanie|Przedterminowe zakończenie} części lokaty terminowej przedsiębiorcy", stawka: "{{fakt:oplata.taryfa-oszczednosci.firma-zerwanie-lokaty}}", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata środków z lokaty w gotówce w {kasie placówki|kasie oddziału}", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty wypłaty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "Przelew środków z lokaty na rachunek w innym banku w trybie SORBNET", stawka: "{{fakt:oplata.firma.przelew-sorbnet}}", tryb: "za przelew" }
+          - { usluga: "Przelew środków z lokaty na rachunek w innym banku w trybie Elixir", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew" }
+          - { usluga: "Przelew środków z lokaty do ZUS lub urzędu skarbowego", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew" }
+          - { usluga: "Przelew SEPA z lokaty walutowej w euro", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew" }
+          - { usluga: "{Potwierdzenie|Poświadczenie} salda lokaty dla biegłego rewidenta (badanie sprawozdania finansowego)", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument" }
+          - { usluga: "Informacja o wysokości odsetek i podatku od lokaty podmiotu niebędącego osobą fizyczną", stawka: "{{fakt:oplata.taryfa-oszczednosci.informacja-podatkowa}}", tryb: "za dokument" }
+          - { usluga: "{Wyciąg|Zestawienie operacji} z rachunku oszczędnościowego dla przedsiębiorcy w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku oszczędnościowego dla przedsiębiorcy w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+  - id: taryfa-oszczednosci-opc-firmy-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-firmy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata zabezpieczająca zobowiązania wobec Banku — {założenie|otwarcie}", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata zabezpieczająca zobowiązania wobec Banku — ustanowienie blokady", stawka: "{{fakt:oplata.taryfa-oszczednosci.blokada-lokaty}}", tryb: "jednorazowo" }
+          - { usluga: "{Zwolnienie|Zdjęcie} blokady lokaty po wygaśnięciu zabezpieczenia", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Cesja praw z lokaty przedsiębiorcy na rzecz podmiotu trzeciego", stawka: "{{fakt:oplata.taryfa-oszczednosci.cesja-lokaty}}", tryb: "jednorazowo" }
+          - { usluga: "Zastaw rejestrowy na prawach z lokaty — wpis w rejestrze zastawów (opłata sądowa pobierana odrębnie)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Zajęcie|Zajęcie egzekucyjne} lokaty przedsiębiorcy przez komornika sądowego", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+          - { usluga: "Zajęcie lokaty przez naczelnika urzędu skarbowego w trybie egzekucji administracyjnej", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+          - { usluga: "Opinia bankowa o Kliencie dla kontrahenta lub urzędu", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument" }
+          - { usluga: "{Zaświadczenie|Poświadczenie} o posiadaniu rachunku oszczędnościowego lub lokaty przedsiębiorcy", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Zmiana formy prawnej Klienta — przeniesienie lokaty na następcę prawnego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Likwidacja Klienta — wypłata środków z lokaty na rachunek likwidatora po przedstawieniu dokumentów", stawka: "bez opłat", tryb: "jednorazowo" }
+
+  # ===== Czynności dodatkowe — pozycje dodatkowe =====
+  - id: taryfa-oszczednosci-opc-czynnosci-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-czynnosci
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Realizacja dyspozycji wkładem na wypadek śmierci — wypłata na rzecz uposażonego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Zmiana|Modyfikacja} lub odwołanie dyspozycji wkładem na wypadek śmierci", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Wypłata|Wydanie} środków spadkobiercom na podstawie aktu poświadczenia dziedziczenia", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypłata środków spadkobiercom na podstawie postanowienia sądu o stwierdzeniu nabycia spadku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypłata zasiłku pogrzebowego z rachunku zmarłego Klienta[^1]", stawka: "bez opłat", tryb: "za wypłatę" }
+          - { usluga: "Zaświadczenie o stanie środków na dzień śmierci Klienta dla potrzeb postępowania spadkowego", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Zajęcie środków na rachunku oszczędnościowym na wniosek komornika (egzekucja świadczeń alimentacyjnych)", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+          - { usluga: "Realizacja zajęcia środków pochodzących ze świadczeń podlegających ochronie ustawowej", stawka: "bez opłat", tryb: "za zajęcie" }
+          - { usluga: "Zawiadomienie Klienta o zajęciu rachunku wysłane listem poleconym", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każdy dokument" }
+          - { usluga: "{Informacja|Odpowiedź} dla komornika lub sądu o stanie środków na rachunku", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Informacja dla organu podatkowego w trybie przewidzianym przepisami", stawka: "bez opłat", tryb: "za dokument" }
+    przypisy:
+      1: "Bank wypłaca kwotę nieprzekraczającą wysokości poniesionych kosztów pogrzebu, po przedstawieniu {rachunków|faktur} wystawionych na osobę, która je poniosła, w granicach kwoty określonej przepisami prawa."
+  - id: taryfa-oszczednosci-opc-czynnosci-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-czynnosci
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Zgłoszenie utraty|Powiadomienie o utracie} dowodu osobistego i aktualizacja danych Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Aktualizacja numeru telefonu do kodów jednorazowych w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Aktualizacja numeru telefonu do kodów jednorazowych przez infolinię po weryfikacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zmiana|Aktualizacja} adresu korespondencyjnego dla dokumentów dotyczących lokat", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana formy przekazywania wyciągów z papierowej na elektroniczną", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana formy przekazywania wyciągów z elektronicznej na papierową", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgoda na przekazywanie informacji o rachunku osobie wskazanej przez Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Wycofanie|Cofnięcie} zgody na przetwarzanie danych w celach marketingowych", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wniosek o udzielenie informacji o danych osobowych przetwarzanych przez Bank", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Wniosek o kopię danych osobowych — kolejna kopia (po pierwszej bezpłatnej)", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za kopię" }
+          - { usluga: "{Kontakt z inspektorem|Zgłoszenie do inspektora} ochrony danych w sprawach związanych z lokatami", stawka: "bez opłat", tryb: "za zgłoszenie" }
+  - id: taryfa-oszczednosci-opc-czynnosci-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-czynnosci
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wpłata gotówkowa na rachunek oszczędnościowy w kasie placówki do kwoty 5 000,00 zł", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "Wpłata gotówkowa w złotych na lokatę w kasie placówki", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "{Wpłata|Zdawanie} bilonu w placówce (powyżej 50 sztuk monet)", stawka: "{{fakt:oplata.taryfa-oszczednosci.wyplata-gotowkowa-prowizja}} kwoty wpłaty, min. {{fakt:oplata.taryfa-oszczednosci.wyplata-gotowkowa-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "{Wymiana|Odkupienie} banknotów lub monet uszkodzonych na wniosek Klienta", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Wypłata gotówki przy użyciu karty debetowej z bankomatu Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z rachunku oszczędnościowego w bankomacie innego operatora", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "Przelew natychmiastowy z rachunku oszczędnościowego do innego banku w kraju", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "Zlecenie stałe z rachunku oszczędnościowego na rachunek w innym banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za realizację" }
+          - { usluga: "{Odwołanie|Anulowanie} zlecenia stałego z rachunku oszczędnościowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zwrot|Cofnięcie} przelewu z rachunku oszczędnościowego na wniosek Klienta", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+  - id: taryfa-oszczednosci-opc-czynnosci-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-czynnosci
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Zgłoszenie|Złożenie} reklamacji w placówce, telefonicznie lub w bankowości elektronicznej", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Rozpatrzenie reklamacji dotyczącej lokaty lub rachunku oszczędnościowego (termin podstawowy)", stawka: "{{fakt:termin.reklamacja.rozpatrzenie}}", tryb: "od dnia otrzymania reklamacji" }
+          - { usluga: "Rozpatrzenie reklamacji w sprawie złożonej, wymagającej dodatkowych wyjaśnień (termin przedłużony)", stawka: "{{fakt:termin.reklamacja.przedluzenie}}", tryb: "od dnia otrzymania reklamacji" }
+          - { usluga: "{Odpowiedź|Odpowiedź Banku} na reklamację w formie elektronicznej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Odpowiedź na reklamację w formie papierowej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Wniosek do Rzecznika Finansowego — przekazanie dokumentów sprawy", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Wniosek o mediację przed sądem polubownym przy Bankowym Funduszu Gwarancyjnym", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Korespondencja Banku z Klientem na adres wskazany w umowie — termin uznania doręczenia", stawka: "{{fakt:termin.doreczenie-korespondencji}}", tryb: "od dnia nadania" }
+          - { usluga: "{Ponowne wysłanie|Powtórne nadanie} korespondencji zwróconej do Banku z powodu braku adresata", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każdy dokument" }
+          - { usluga: "{Telefon zwrotny|Kontakt zwrotny} doradcy w sprawie lokaty zamówiony przez Klienta", stawka: "bez opłat", tryb: "za połączenie" }

@@ -1,0 +1,68 @@
+id: procedura-zamkniecie-rachunku
+typ: procedury
+temat: procedura-zamkniecie-rachunku
+tytul:
+  - "Procedura zamykania rachunków i rozwiązywania umów rachunków"
+  - "Procedura {zamykania rachunków|zamknięcia rachunku} i rozwiązywania umów rachunków bankowych"
+  - "Procedura rozwiązywania umów i zamykania rachunków bankowych (dokument wewnętrzny — {{param:bank}})"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [zamkniecie-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [zamkniecie-zakres]
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [zamkniecie-odpowiedzialnosci]
+    opcjonalne: { kategorie: [zamkniecie-odp], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, zamkniecie-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przegląd i zasady ogólne"
+    wymagane: [zamkniecie-schemat, zamkniecie-zasady-ogolne]
+    opcjonalne: { kategorie: [zamkniecie-zasady], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — wypowiedzenie umowy przez Klienta"
+    wymagane: [zamkniecie-krok-klient-przyjecie, zamkniecie-krok-klient-weryfikacja]
+    opcjonalne: { kategorie: [zamkniecie-krok-klient], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — wypowiedzenie umowy przez Bank"
+    wymagane: [zamkniecie-krok-bank-decyzja, zamkniecie-krok-bank-wypowiedzenie]
+    opcjonalne: { kategorie: [zamkniecie-krok-bank], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — produkty powiązane i rozliczenie rachunku"
+    wymagane: [zamkniecie-krok-produkty, zamkniecie-krok-rozliczenie]
+    opcjonalne: { kategorie: [zamkniecie-krok-rozliczenie], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — przeniesienie rachunku do innego banku"
+    wymagane: [zamkniecie-krok-zmiana-banku]
+    opcjonalne: { kategorie: [zamkniecie-krok-zmiana-banku], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [zamkniecie-szczegolne-nieaktywne, zamkniecie-szczegolne-zajecia, zamkniecie-szczegolne-wspolne, zamkniecie-szczegolne-firmowe]
+    opcjonalne: { kategorie: [zamkniecie-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [zamkniecie-kontrola]
+    opcjonalne: { kategorie: [zamkniecie-kontrola-opc], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [zamkniecie-archiwizacja]
+    opcjonalne: { kategorie: [zamkniecie-archiwum], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-zmiany-procedura, wspolne-reklamacje-procedura, wspolne-ochrona-danych-procedura, zamkniecie-koncowe]
+    opcjonalne: { kategorie: [zamkniecie-koncowe-opc], min: 0, max: 40 }
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna zamknięcia rachunku"
+    wymagane: [zamkniecie-zalacznik-lista]
+  - rodzaj: zalacznik
+    tytul: "Zestawienie terminów i opłat związanych z zamknięciem rachunku"
+    wymagane: [zamkniecie-zalacznik-terminy]
+parametry:
+  wlasciciel: "Departament Operacji"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."

@@ -1,0 +1,373 @@
+bloki:
+  - id: procedura-reklamacje-dod2-przyjecie-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Reklamacje nadesłane pocztą tradycyjną lub kurierem otwiera i rejestruje kancelaria Banku w dniu ich odbioru, a gdy to niemożliwe — nie później niż następnego dnia roboczego."
+            podkroki:
+              - tekst: "Zachowaj kopertę z datą stempla pocztowego lub potwierdzeniem nadania kurierskiego; w razie sporu co do terminu wpływu data ta ma znaczenie dowodowe."
+              - tekst: "Zeskanuj pismo wraz z załącznikami i zapisz skan w rejestrze REK, a oryginał przekaż do archiwum po zakończeniu sprawy."
+          - tekst: "Jeżeli pismo wpłynęło bez podpisu, bez wskazania danych klienta lub w sposób uniemożliwiający ustalenie nadawcy, zarejestruj je jako zgłoszenie anonimowe i oceń, czy zawiera informacje istotne dla Banku."
+          - tekst: "Reklamacje skierowane do członków Zarządu lub dyrektorów przekaż do jednostki rozpatrującej bez zwłoki; adresat nie rozpatruje ich samodzielnie ani nie odpowiada klientowi poza procedurą."
+          - tekst: "Pisma zawierające dane osobowe osób trzecich zabezpiecz przed dostępem osób nieuprawnionych i poinformuj klienta o zasadach ich przetwarzania."
+
+  - id: procedura-reklamacje-dod2-przyjecie-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - akapit: "Zastrzeżenia klientów bywają zgłaszane w mediach społecznościowych, na forach internetowych i w serwisach z opiniami. Choć Bank nie ma obowiązku odpowiadać na każdy wpis, wpis, który spełnia przesłanki reklamacji, powinien zostać przyjęty i rozpatrzony zgodnie z procedurą."
+      - ustep: "Zespół obsługujący kanały społecznościowe:"
+        punkty:
+          - "monitoruje wpisy dotyczące Banku w ciągu dnia roboczego i rozpoznaje te, w których klient formułuje zastrzeżenia co do usług Banku;"
+          - "odpowiada publicznie krótką informacją o gotowości pomocy, bez ujawniania danych klienta i bez omawiania szczegółów sprawy;"
+          - "zachęca klienta do kontaktu w bezpiecznym kanale, takim jak bankowość elektroniczna lub Infolinia, i wskazuje adres {{fakt:kontakt.email-reklamacje}};"
+          - "rejestruje w rejestrze REK reklamację, gdy klient przekaże dane pozwalające na jego identyfikację, a datą wpływu jest dzień otrzymania tych danych;"
+          - "zgłasza jednostce rozpatrującej wpisy wskazujące na błąd masowy lub poważne naruszenie, nawet gdy autor nie chce składać formalnej reklamacji."
+      - akapit: "Zespół nie prowadzi dyskusji z klientem w komentarzach ani nie usuwa krytycznych wpisów; wszelkie wnioski o usunięcie treści rozpatruje {{fakt:jednostka.prawny}}."
+
+  - id: procedura-reklamacje-dod2-przyjecie-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Przyjmując reklamację od klienta, który nie włada językiem polskim w stopniu pozwalającym na swobodną komunikację, zapewnij mu możliwość zrozumienia procedury."
+            podkroki:
+              - tekst: "Zaproponuj rozmowę w języku angielskim, jeżeli pracownik nim włada, lub skorzystaj z pomocy tłumacza zatrudnionego przez Bank; nie korzystaj z pomocy osób przypadkowych, jeżeli może to naruszyć tajemnicę bankową."
+              - tekst: "Jeżeli klient wyraża zgodę na obecność osoby towarzyszącej jako tłumacza, zapisz to w notatce wraz z danymi tej osoby."
+          - tekst: "Przy reklamacjach pisemnych w języku obcym zleć tłumaczenie niezbędnych fragmentów lub całości w terminie {{fakt:termin.reklamacje-proc.przekazanie}} i zaznacz w rejestrze, że sprawa wymaga tłumaczenia."
+          - tekst: "Odpowiedź udziel w języku polskim, a gdy umowa przewiduje inny język komunikacji — w tym języku; w obu przypadkach zadbaj o jasność przekazu i prostotę zdań."
+          - tekst: "Nie wydłużaj terminu odpowiedzi z powodu konieczności tłumaczenia, jeżeli nie ma ku temu wyraźnej podstawy przewidzianej w procedurze."
+
+  - id: procedura-reklamacje-dod2-przyjecie-4
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - akapit: "Pracownik przyjmujący reklamację dba o to, aby klient nie musiał powtarzać swojej historii wielu osobom i nie był odsyłany między jednostkami. Zasada jednego punktu kontaktu obowiązuje od momentu przyjęcia do udzielenia odpowiedzi."
+      - ustep: "W praktyce oznacza to, że:"
+        punkty:
+          - "pracownik, który przyjął reklamację, jest dla klienta osobą kontaktową do czasu przekazania sprawy analitykowi, po czym kontakt przejmuje analityk;"
+          - "klientowi podaje się numer sprawy, adres do kontaktu i orientacyjny termin odpowiedzi w sposób umożliwiający późniejsze odnalezienie tych informacji;"
+          - "klient jest informowany o zmianie osoby prowadzącej sprawę, jeżeli zmiana wpływa na sposób kontaktu;"
+          - "pracownicy innych jednostek, do których klient zwróci się w tej sprawie, kierują go do osoby prowadzącej reklamację i nie udzielają samodzielnie informacji o stanie sprawy."
+      - akapit: "Na prośbę klienta pracownik może przekazać mu informację o aktualnym etapie rozpatrywania reklamacji, o ile nie ujawnia danych objętych tajemnicą służbową."
+
+  - id: procedura-reklamacje-dod2-klasyfikacja-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Przypisz sprawę do właściwego zespołu analityków według podziału specjalizacji: produkty płatnicze i karty, kredyty i pożyczki, rachunki i lokaty, bankowość elektroniczna, usługi inwestycyjne i ubezpieczeniowe oraz sprawy ogólne."
+            podkroki:
+              - tekst: "Jeżeli reklamacja dotyczy kilku produktów, przypisz ją zespołowi odpowiedzialnemu za produkt o największym znaczeniu dla klienta, a pozostałe zespoły zobowiąż do przekazania wyjaśnień w terminie {{fakt:termin.reklamacje-proc.odpowiedz-jednostki}}."
+              - tekst: "Jeżeli sprawa wymaga wiedzy specjalistycznej, której nie posiada żaden zespół, poproś o wsparcie jednostkę prawną lub właściciela produktu."
+          - tekst: "Sprawdź równoważenie obciążenia: rozdzielając sprawy, uwzględnij liczbę spraw w toku u analityka, ich stopień skomplikowania oraz obecność analityka w pracy."
+          - tekst: "Spraw pilnych i priorytetowych nie pozostawiaj w kolejce ogólnej; przypisz je imiennie i dopilnuj, aby analityk potwierdził ich przyjęcie w ciągu jednego dnia roboczego."
+
+  - id: procedura-reklamacje-dod2-klasyfikacja-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - akapit: "Poniższa tabela przedstawia kryteria nadawania priorytetów sprawom. Priorytet może zostać podwyższony na każdym etapie rozpatrywania reklamacji, jeżeli ujawnią się nowe okoliczności."
+      - tabela:
+          kolumny:
+            - naglowek: "Priorytet"
+              waga: 2
+            - naglowek: "Kryteria"
+              waga: 5
+            - naglowek: "Sposób postępowania"
+              waga: 4
+          wiersze:
+            - ["Pilny", "Brak środków na podstawowe potrzeby, zagrożenie utratą mieszkania lub zdrowia, ryzyko szkody niemożliwej do naprawienia", "Przypisanie imienne, kontakt z klientem w ciągu jednego dnia roboczego, zatwierdzenie przez kierownika zespołu"]
+            - ["Podwyższony", "Nieautoryzowane transakcje, zablokowane środki, klient wymagający szczególnego wsparcia, sprawa z udziałem organu nadzoru", "Rozpatrzenie w skróconym terminie wewnętrznym, nadzór kierownika zespołu"]
+            - ["Standardowy", "Pozostałe reklamacje", "Rozpatrzenie w ramach standardowego terminu"]
+            - ["Zbiorczy", "Błąd masowy lub awaria dotykające wielu klientów", "Rozpatrzenie w trybie zbiorczym, osobny numer sprawy nadrzędnej"]
+
+  - id: procedura-reklamacje-dod2-klasyfikacja-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - ustep: "Aby uniknąć dublowania pracy, przed przypisaniem sprawy zespół klasyfikacji sprawdza w rejestrze REK, czy klient nie złożył już reklamacji w tej samej sprawie. W szczególności:"
+        punkty:
+          - "jeżeli reklamacja dotyczy tej samej operacji lub produktu, a poprzednia sprawa jest w toku, nowe pismo dołącza się do sprawy już prowadzonej i informuje się o tym klienta;"
+          - "jeżeli poprzednia sprawa została zakończona odpowiedzią, nowe pismo traktuje się jako reklamację powtórną lub odwołanie, w zależności od treści;"
+          - "jeżeli klient złożył reklamację jednocześnie w kilku kanałach, zachowuje się datę pierwszego wpływu i prowadzi jedną sprawę;"
+          - "jeżeli ta sama reklamacja wpłynęła od współposiadaczy rachunku, odpowiada się wszystkim w jednym piśmie, o ile nie ma przeciwskazań."
+      - akapit: "Wszystkie powiązania zapisuje się w rejestrze, tak aby analityk widział pełną historię i nie wzywał klienta po raz kolejny do przedstawienia tych samych informacji."
+
+  - id: procedura-reklamacje-dod2-analiza-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - kroki:
+          - tekst: "W reklamacjach dotyczących kredytów i pożyczek sprawdź w pierwszej kolejności dokumentację zawarcia umowy oraz harmonogram spłat."
+            podkroki:
+              - tekst: "Porównaj kwotę raty, odsetki i opłaty zapisane w harmonogramie z wartościami wynikającymi z umowy i regulaminu."
+              - tekst: "Sprawdź, czy wszystkie wpłaty klienta zostały zaksięgowane w dniu wpływu i zaliczone na właściwe zobowiązania w kolejności określonej w umowie."
+              - tekst: "Zbadaj, czy zmiany oprocentowania zostały wprowadzone w terminie i w sposób przewidziany w umowie oraz czy klient został o nich poinformowany."
+          - tekst: "Jeżeli klient zarzuca nieprawidłowe naliczenie odsetek karnych lub opłat za wezwania, ustal daty wymagalności, wezwań oraz zapisy w systemie windykacji."
+          - tekst: "Przy zarzutach dotyczących przedterminowej spłaty ustal, czy Bank prawidłowo obliczył kwotę do spłaty i zwrot części kosztów kredytu zgodnie z {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}."
+
+  - id: procedura-reklamacje-dod2-analiza-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - akapit: "Reklamacje dotyczące przelewów i płatności mobilnych często wymagają wyjaśnienia, na którym etapie transakcja została zatrzymana lub błędnie przetworzona. Analityk zbiera dane od wszystkich uczestników łańcucha rozliczeniowego, zaczynając od systemu Banku."
+      - ustep: "Zakres analizy obejmuje:"
+        punkty:
+          - "sprawdzenie, czy zlecenie zostało złożone poprawnie, w szczególności czy numer rachunku odbiorcy, kwota i tytuł zostały wpisane zgodnie z intencją klienta;"
+          - "ustalenie, czy zlecenie zostało przyjęte przed godziną graniczną i w jakim terminie rachunek odbiorcy został uznany;"
+          - "zbadanie komunikatów z systemu rozliczeniowego i potwierdzeń z banku odbiorcy, jeżeli środki nie trafiły na rachunek;"
+          - "w przypadku płatności mobilnych — sprawdzenie, czy jednorazowy kod został poprawnie wygenerowany i potwierdzony, oraz sprawdzenie danych akceptanta;"
+          - "ocenę, czy opóźnienie lub błąd nie wynikły z przyczyn leżących po stronie klienta, na przykład niewłaściwego numeru rachunku."
+      - akapit: "Jeżeli środki zostały przekazane na błędny rachunek z winy klienta, Bank podejmuje starania o ich odzyskanie od banku odbiorcy zgodnie z zasadami określonymi w regulaminie, informując klienta o zakresie swoich możliwości."
+
+  - id: procedura-reklamacje-dod2-analiza-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - kroki:
+          - tekst: "Wnioskując o dane do podmiotów zewnętrznych, na przykład organizacji płatniczych, operatorów systemów lub innych banków, sporządź zapytanie w sposób umożliwiający szybką odpowiedź."
+            podkroki:
+              - tekst: "Wskaż numer sprawy, dane transakcji (data, kwota, identyfikator), opis problemu i oczekiwany zakres informacji; nie przesyłaj danych osobowych klienta bez potrzeby."
+              - tekst: "Wyślij zapytanie nie później niż następnego dnia roboczego i ustaw w rejestrze przypomnienie o terminie oczekiwanej odpowiedzi."
+              - tekst: "Jeżeli odpowiedź nie nadejdzie w terminie, ponów zapytanie i poinformuj kierownika zespołu o ryzyku przekroczenia terminu."
+          - tekst: "Analizując otrzymane dane, zweryfikuj ich wiarygodność i kompletność; w razie sprzeczności z danymi Banku zażądaj wyjaśnień od nadawcy."
+          - tekst: "Poinformuj klienta o fakcie zwrócenia się do podmiotu zewnętrznego, jeżeli wpływa to na termin odpowiedzi, i wskaż mu przewidywany czas oczekiwania."
+
+  - id: procedura-reklamacje-dod2-odpowiedz-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - akapit: "Odpowiedź na reklamację jest udzielana na papierze lub na innym trwałym nośniku. Za trwały nośnik uznaje się materiał pozwalający klientowi przechowywać informacje w sposób umożliwiający ich późniejsze odczytanie i niezmieniony odtworzenie, na przykład plik w formacie PDF przesłany w bankowości elektronicznej."
+      - kroki:
+          - tekst: "Wysyłając odpowiedź pocztą elektroniczną, upewnij się, że klient wyraził zgodę na taką formę kontaktu i że adres jest zgodny z danymi w systemie."
+          - tekst: "Zabezpiecz załącznik hasłem znanym klientowi, jeżeli odpowiedź zawiera dane szczególnie wrażliwe, a hasło przekaż innym kanałem."
+          - tekst: "Zapisz w rejestrze REK datę wysłania, adres i sposób potwierdzenia doręczenia."
+            podkroki:
+              - tekst: "W przypadku listu poleconego zachowaj potwierdzenie nadania i, po zwrocie, potwierdzenie odbioru lub informację o niedoręczeniu."
+              - tekst: "Jeżeli przesyłka wróciła jako niedoręczona, wyślij odpowiedź ponownie lub udostępnij ją w bankowości elektronicznej i poinformuj o tym klienta telefonicznie."
+          - tekst: "Za dzień udzielenia odpowiedzi uważa się dzień jej wysłania w sposób umożliwiający klientowi zapoznanie się z jej treścią."
+
+  - id: procedura-reklamacje-dod2-odpowiedz-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - ustep: "Odpowiedź na reklamację zawiera następujące elementy obowiązkowe:"
+        punkty:
+          - "pełną nazwę i dane adresowe Banku oraz oznaczenie sprawy, której odpowiedź dotyczy;"
+          - "datę sporządzenia odpowiedzi oraz imię, nazwisko i stanowisko osoby, która ją podpisała lub zatwierdziła;"
+          - "wyczerpujące stanowisko w sprawie wszystkich zarzutów podniesionych w reklamacji, wraz z uzasadnieniem faktycznym i prawnym;"
+          - "w przypadku nieuwzględnienia roszczenia — pouczenie o możliwości odwołania, Rzeczniku Finansowym i drodze sądowej;"
+          - "informację o możliwości skorzystania z mediacji lub sądu polubownego, jeżeli przepisy tego wymagają."
+      - akapit: "Odpowiedź nie zawiera informacji handlowych ani ofert marketingowych. Jeżeli Bank chce zaproponować klientowi produkt lub rabat, robi to w odrębnej korespondencji, po zakończeniu sprawy i tylko wtedy, gdy klient wyraził stosowne zgody."
+
+  - id: procedura-reklamacje-dod2-odpowiedz-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - kroki:
+          - tekst: "Przy reklamacjach, w których stan faktyczny jest sporny, rozważ propozycję ugodowego załatwienia sprawy, zanim wydasz odpowiedź odmowną."
+            podkroki:
+              - tekst: "Oceń ryzyko prawne i reputacyjne po stronie Banku oraz koszty ewentualnego postępowania; w sprawach powyżej limitu {{fakt:limit.reklamacje-proc.biuro}} skonsultuj ocenę z jednostką prawną."
+              - tekst: "Przedstaw propozycję klientowi w formie pisemnej, wskazując warunki, kwotę i skutki prawne ugody."
+              - tekst: "Nie składaj propozycji w sposób sugerujący presję lub ograniczający prawo klienta do dochodzenia roszczeń."
+          - tekst: "Jeżeli klient przyjmie propozycję, zawrzyj ugodę zgodnie z zasadami reprezentacji Banku i zarejestruj ją w rejestrze REK jako sposób zakończenia sprawy."
+          - tekst: "W razie odrzucenia propozycji przekaż odpowiedź zgodnie ze zwykłymi zasadami, nie wykorzystując informacji o rozmowach ugodowych na niekorzyść klienta."
+
+  - id: procedura-reklamacje-dod2-uznanie-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-uznanie
+    elementy:
+      - akapit: "Wykonanie decyzji o uznaniu rachunku wymaga zachowania rozdziału obowiązków. Osoba, która rozpatrzyła reklamację, nie może samodzielnie wykonać operacji korygującej, a każda korekta podlega zatwierdzeniu przez drugą osobę."
+      - ustep: "Operacja korygująca spełnia następujące warunki:"
+        punkty:
+          - "jest oznaczona numerem sprawy z rejestru REK i krótkim opisem przyczyny, tak aby można ją było powiązać z reklamacją;"
+          - "zostaje wykonana w terminie wynikającym z decyzji, nie dłuższym niż {{fakt:termin.reklamacje-proc.uznanie}} od jej zatwierdzenia;"
+          - "dotyczy kwoty wskazanej w decyzji, z uwzględnieniem odsetek i opłat podlegających zwrotowi;"
+          - "jest weryfikowana przez drugą osobę po wykonaniu, a wynik weryfikacji zapisuje się w rejestrze;"
+          - "jest zgłaszana do księgowości, jeżeli wiąże się z kosztem Banku lub z korektą wcześniejszych zapisów."
+      - akapit: "W razie pomyłki w wykonaniu korekty pracownik niezwłocznie zawiadamia kierownika, który zleca jej sprostowanie i, w razie potrzeby, informuje klienta."
+
+  - id: procedura-reklamacje-dod2-uznanie-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-uznanie
+    elementy:
+      - kroki:
+          - tekst: "Gdy decyzja o uznaniu dotyczy rachunku, który został zamknięty, ustal sposób przekazania środków klientowi."
+            podkroki:
+              - tekst: "Skontaktuj się z klientem i poproś o wskazanie rachunku, na który mają zostać przekazane środki; zweryfikuj tożsamość klienta zgodnie z procedurą."
+              - tekst: "Jeżeli klient nie odpowiada, wyślij pismo z prośbą o podanie rachunku na ostatni znany adres i odnotuj próbę kontaktu."
+              - tekst: "Po upływie 30 dni bez odpowiedzi umieść środki na rachunku wewnętrznym i powiadom klienta o możliwościach ich odbioru."
+          - tekst: "Jeżeli zwrot jest niewielki i koszt przelewu zewnętrznego przekracza wartość kwoty, zaproponuj klientowi odbiór gotówki w placówce lub zaliczenie kwoty na inne zobowiązanie."
+          - tekst: "Wypłatę w gotówce wykonaj po potwierdzeniu tożsamości odbierającego, a w przypadku odbioru przez pełnomocnika — po weryfikacji pełnomocnictwa."
+
+  - id: procedura-reklamacje-dod2-odwolania-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odwolania
+    elementy:
+      - ustep: "Przy współpracy z Rzecznikiem Finansowym obowiązują dodatkowe zasady wzmacniające terminowość i jakość odpowiedzi:"
+        punkty:
+          - "wniosek Rzecznika rejestruje się jako sprawę priorytetową, a datę jego wpływu zapisuje w rejestrze REK;"
+          - "osobą odpowiedzialną za sprawę jest wyznaczony analityk, który nie brał udziału w rozpatrywaniu pierwotnej reklamacji;"
+          - "stanowisko Banku opiera się na całości dokumentacji i zawiera ocenę prawną; nie ogranicza się do powtórzenia treści pierwotnej odpowiedzi;"
+          - "kopię stanowiska przekazuje się klientowi, jeżeli Rzecznik o to wnosi, a w każdym razie informuje się go o fakcie jego złożenia;"
+          - "wnioski wynikające z postępowania Rzecznika uwzględnia się w analizie przyczyn źródłowych i, jeżeli to zasadne, w zmianie procedur."
+      - akapit: "W razie rozbieżności między stanowiskiem Rzecznika a stanowiskiem Banku {{fakt:jednostka.prawny}} ocenia, czy możliwe jest ponowne rozpatrzenie sprawy na korzyść klienta, a dyrektor jednostki rozpatrującej reklamacje podejmuje decyzję o dalszych krokach."
+
+  - id: procedura-reklamacje-dod2-odwolania-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odwolania
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli do Banku wpłynie zapytanie lub żądanie wyjaśnień ze strony organu nadzoru lub kontroli, rejestruj je w tym samym dniu i niezwłocznie przekaż jednostce zgodności."
+            podkroki:
+              - tekst: "Określ termin wyznaczony przez organ i ustal wewnętrzny termin przygotowania odpowiedzi tak, aby zostawić czas na zatwierdzenie przez Zarząd Banku."
+              - tekst: "Zbierz dokumentację sprawy, w tym oryginalną reklamację, odpowiedzi, notatki z analizy i dokumenty wewnętrzne wymagane przez organ."
+          - tekst: "Przygotuj odpowiedź w sposób rzetelny, bez zatajania faktów niekorzystnych dla Banku; odpowiedź zatwierdza jednostka prawna i jednostka zgodności."
+          - tekst: "Po otrzymaniu zaleceń lub decyzji organu wprowadź je do rejestru działań naprawczych i zleć ich wykonanie właściwym jednostkom."
+          - tekst: "Poinformuj klienta o wyniku postępowania, jeżeli organ taki obowiązek nałożył lub gdy ujawnienie informacji jest dopuszczalne i korzystne dla klienta."
+
+  - id: procedura-reklamacje-dod2-szczegolne-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje składane w imieniu osób małoletnich i ubezwłasnowolnionych.** Reklamację w sprawie rachunku lub produktu małoletniego składa jego przedstawiciel ustawowy. Reklamacje dotyczące osób ubezwłasnowolnionych składa opiekun lub kurator, w granicach ustalonych przez sąd."
+      - ustep: "Pracownik rozpatrujący takie sprawy:"
+        punkty:
+          - "sprawdza dokumenty potwierdzające umocowanie przedstawiciela ustawowego, w tym odpis aktu urodzenia, postanowienie sądu lub inny dokument;"
+          - "kieruje odpowiedź do przedstawiciela ustawowego, a w przypadku małoletniego, który ukończył 13 lat, rozważa przekazanie informacji także jemu w sposób dostosowany do wieku;"
+          - "w sprawach dotyczących znacznych kwot lub zmiany sytuacji majątkowej małoletniego sprawdza, czy czynność nie wymaga zgody sądu opiekuńczego;"
+          - "zachowuje szczególną ostrożność, gdy przedstawiciele ustawowi pozostają w sporze lub gdy zachodzi podejrzenie nadużycia."
+      - akapit: "W razie wątpliwości co do umocowania przedstawiciela pracownik konsultuje sprawę z {{fakt:jednostka.prawny}} i nie ujawnia danych o rachunku do czasu wyjaśnienia."
+
+  - id: procedura-reklamacje-dod2-szczegolne-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje po śmierci posiadacza rachunku.** Reklamacje dotyczące rachunków zmarłych klientów składają zwykle członkowie rodziny, spadkobiercy lub inne osoby, które wykazują interes prawny. Sprawy te wymagają łączenia wrażliwości z dochowaniem tajemnicy bankowej."
+      - kroki:
+          - tekst: "Ustal, kto składa reklamację, i zażądaj dokumentów potwierdzających uprawnienie: aktu zgonu oraz dokumentu wskazującego prawo do spadku lub inny tytuł do reprezentowania zmarłego."
+          - tekst: "Zbadaj, czy zdarzenie będące przedmiotem reklamacji miało miejsce przed, czy po dacie zgonu, i w razie potrzeby sprawdź, kto dysponował rachunkiem w tym czasie."
+            podkroki:
+              - tekst: "Jeżeli dyspozycje zostały wykonane po śmierci posiadacza, skieruj sprawę do jednostki prawnej i do komórki „{{fakt:jednostka.bezpieczenstwo}}”."
+              - tekst: "Jeżeli reklamacja dotyczy opłat naliczonych po zgonie, rozważ ich zwrot zgodnie z zasadami obowiązującymi w Banku."
+          - tekst: "Dokumenty dotyczące zgonu przekaż do sprawy w terminie {{fakt:termin.zgon.dokumentacja-reklamacji}} od ich otrzymania."
+          - tekst: "Odpowiedź kieruj do uprawnionego spadkobiercy lub osoby wskazanej w prawomocnym orzeczeniu; nie udzielaj informacji innym członkom rodziny."
+
+  - id: procedura-reklamacje-dod2-szczegolne-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje dotyczące zachowania pracowników Banku.** Zarzuty dotyczące nieuprzejmego traktowania, nierzetelnego doradztwa lub naruszenia zasad etyki traktuje się jako reklamacje, a ich rozpatrywanie wymaga zachowania bezstronności i ochrony praw wszystkich zainteresowanych."
+      - ustep: "Zasady postępowania w takich sprawach są następujące:"
+        punkty:
+          - "pracownik, którego dotyczy zarzut, nie uczestniczy w rozpatrywaniu reklamacji ani w zatwierdzaniu odpowiedzi;"
+          - "analityk zbiera wyjaśnienia pracownika i jego przełożonego oraz nagrania rozmów, rejestry monitoringu i inne dostępne dowody;"
+          - "o wynikach analizy zawiadamia się komórkę odpowiedzialną za sprawy pracownicze, która ocenia, czy zachodzą podstawy do wyciągnięcia konsekwencji;"
+          - "klientowi udziela się odpowiedzi, w której wyraża się żal z powodu zaistniałej sytuacji, jeżeli zarzuty się potwierdziły, ale nie ujawnia się informacji o konsekwencjach wobec pracownika;"
+          - "zarzuty o możliwym przestępstwie przekazuje się do komórki „{{fakt:jednostka.zgodnosc}}” i komórki „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: procedura-reklamacje-dod2-kontrola-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-kontrola
+    elementy:
+      - akapit: "Dla zapewnienia przejrzystości i porównywalności oceny jakości rozpatrywania reklamacji Bank stosuje zestaw mierników. Mierniki dzielą się na trzy grupy: dotyczące terminowości, jakości merytorycznej i doświadczenia klienta."
+      - tabela:
+          kolumny:
+            - naglowek: "Miernik"
+              waga: 4
+            - naglowek: "Sposób pomiaru"
+              waga: 4
+            - naglowek: "Wartość docelowa lub próg"
+              waga: 3
+          wiersze:
+            - ["Terminowość rozpatrzenia", "Odsetek spraw zakończonych odpowiedzią w terminie", "Przekroczenia nie więcej niż {{fakt:prog.reklamacje-proc.po-terminie}}"]
+            - ["Udział uznań", "Odsetek spraw uznanych w całości lub w części", "Próg ostrzegawczy {{fakt:prog.reklamacje-proc.uznane}}"]
+            - ["Reklamacje powtórne", "Odsetek reklamacji dotyczących tej samej sprawy", "Próg ostrzegawczy {{fakt:prog.reklamacje-proc.powtorne}}"]
+            - ["Czas pierwszej reakcji", "Czas od wpływu do potwierdzenia przyjęcia", "W terminie {{fakt:termin.reklamacje-proc.potwierdzenie}}"]
+            - ["Zadowolenie klienta", "Ocena odpowiedzi w ankiecie po zakończeniu sprawy", "Śledzone kwartalnie, bez progu sztywnego"]
+
+  - id: procedura-reklamacje-dod2-kontrola-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-kontrola
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli miernik przekroczy poziom ostrzegawczy, jednostka rozpatrująca reklamacje wszczyna tryb eskalacji."
+            podkroki:
+              - tekst: "Kierownik zespołu sporządza w ciągu {{fakt:termin.reklamacje-proc.uzupelnienie}} wyjaśnienie przyczyn przekroczenia i propozycję działań, które zostaną podjęte."
+              - tekst: "Dyrektor jednostki ocenia wyjaśnienie, zatwierdza plan i wyznacza osobę odpowiedzialną."
+              - tekst: "Jeżeli przekroczenie dotyczy dwóch kolejnych okresów sprawozdawczych, sprawę przedstawia się jednostce zgodności i właścicielowi procedury."
+          - tekst: "Wdrożenie planu naprawczego monitoruje się w cyklu miesięcznym do czasu powrotu miernika w granice prawidłowe."
+          - tekst: "O przypadkach, w których miernik przekracza poziom ostrzegawczy z powodu zdarzeń niezależnych od Banku, informuje się Zarząd Banku wraz z oceną skutków."
+
+  - id: procedura-reklamacje-dod2-archiwizacja-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-archiwizacja-opc
+    elementy:
+      - akapit: "Dostęp do archiwum reklamacji jest ograniczony i rejestrowany. Dokumentacja zawiera dane osobowe klientów, informacje objęte tajemnicą bankową i dane wrażliwe, dlatego zasady jej udostępniania są ściśle określone."
+      - ustep: "W systemie {{fakt:system.reklamacje-proc.archiwum}} obowiązują następujące zasady:"
+        punkty:
+          - "dostęp do dokumentacji mają wyłącznie pracownicy jednostki rozpatrującej, jednostki zgodności, jednostki prawnej i audytu, w zakresie koniecznym do wykonywania obowiązków;"
+          - "przeglądanie, pobieranie i drukowanie dokumentów jest rejestrowane w dzienniku zdarzeń, który podlega okresowej kontroli;"
+          - "wydruki sporządza się wyłącznie w uzasadnionych przypadkach i niszczy się je niezwłocznie po wykorzystaniu;"
+          - "pracownicy, którzy zmienili stanowisko lub opuścili Bank, tracą dostęp w dniu zmiany, a przegląd uprawnień wykonuje się co kwartał;"
+          - "kopie zapasowe przechowuje się w sposób zabezpieczony przed utratą i nieuprawnionym dostępem."
+
+  - id: procedura-reklamacje-dod2-odp-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-odpowiedzialnosci-opc
+    elementy:
+      - akapit: "**Inspektor ochrony danych** {opiniuje|ocenia} sposób przetwarzania danych osobowych w procesie rozpatrywania reklamacji i uczestniczy w rozstrzyganiu spraw, w których klient podnosi zarzuty dotyczące przetwarzania jego danych. Do jego zadań należy również doradzanie przy wdrażaniu nowych narzędzi, w których przetwarzane są dane klientów."
+      - ustep: "**Jednostka audytu wewnętrznego** w ramach swoich zadań:"
+        punkty:
+          - "ocenia skuteczność systemu rozpatrywania reklamacji, w tym zgodność z procedurą i przepisami;"
+          - "bada niezależność i obiektywność decyzji podejmowanych w procesie;"
+          - "weryfikuje, czy ustalenia wcześniejszych kontroli zostały wdrożone;"
+          - "przedstawia wyniki audytu Zarządowi Banku i komitetowi audytu wraz z rekomendacjami."
+      - akapit: "Wszystkie jednostki uczestniczące w procedurze współpracują z audytem i kontrolą, udostępniając dokumentację i wyjaśnienia w uzgodnionych terminach."
+
+  - id: procedura-reklamacje-dod2-zal-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-zal-odpowiedz
+    elementy:
+      - akapit: "Wzorcowy układ odpowiedzi na reklamację. Układ ułatwia klientowi zrozumienie rozstrzygnięcia i zapewnia kompletność wymaganych elementów."
+      - tabela:
+          kolumny:
+            - naglowek: "Część odpowiedzi"
+              waga: 3
+            - naglowek: "Zawartość"
+              waga: 7
+          wiersze:
+            - ["Nagłówek", "Dane Banku, numer sprawy, data odpowiedzi, dane adresata"]
+            - ["Wstęp", "Odniesienie do reklamacji klienta, data jej wpływu i krótkie streszczenie zarzutów"]
+            - ["Rozstrzygnięcie", "Jasne stwierdzenie, czy reklamacja została uwzględniona w całości, w części, czy nieuwzględniona"]
+            - ["Uzasadnienie", "Ustalony stan faktyczny, podstawy umowne i prawne, odniesienie do wszystkich zarzutów"]
+            - ["Dalsze kroki", "Informacja o terminach wykonania decyzji, kwotach, sposobie zwrotu"]
+            - ["Pouczenie", "Możliwość odwołania, wniosku do Rzecznika Finansowego, mediacji i drogi sądowej"]
+            - ["Zakończenie", "Dane kontaktowe, podpis i stanowisko osoby zatwierdzającej odpowiedź"]

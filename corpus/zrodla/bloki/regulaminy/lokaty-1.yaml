@@ -1,0 +1,294 @@
+bloki:
+  - id: lokaty-zakres
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin {określa|reguluje} zasady otwierania, prowadzenia i zamykania rachunków oszczędnościowych oraz zakładania i obsługi lokat terminowych, które Bank Przykładowy S.A. {oferuje|prowadzi dla} osobom fizycznym niezwiązanym z prowadzoną działalnością gospodarczą lub zawodową (konsumentom)."
+      - ustep: "Regulamin stanowi integralną część umowy rachunku oszczędnościowego lub umowy lokaty terminowej i jest {wiążący|obowiązujący} dla Klienta oraz Banku. W zakresie nieuregulowanym Regulaminem do umowy mają zastosowanie postanowienia umowy {oraz|a także} przepisy prawa, w szczególności: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - ustep: "Regulamin nie dotyczy:"
+        punkty:
+          - "rachunków rozliczeniowych służących do dokonywania rozliczeń pieniężnych, które prowadzone są na podstawie odrębnego regulaminu;"
+          - "lokat zakładanych przez przedsiębiorców i inne podmioty niebędące konsumentami;"
+          - "produktów inwestycyjnych i ubezpieczeniowych, nawet jeżeli są oferowane łącznie z lokatą."
+      - ustep: "Szczegółowy wykaz opłat i prowizji związanych z rachunkiem oszczędnościowym i lokatą określa „{{ref:dokument:taryfa-oszczednosci}}”, dostępna w placówkach Banku i na stronie {{fakt:bank.strona}}.[^1]"
+    przypisy:
+      1: "Taryfa stanowi odrębny dokument, który {Bank doręcza|Bank udostępnia} Klientowi przed zawarciem umowy na trwałym nośniku; {w razie rozbieżności|w przypadku różnic} między Regulaminem a umową pierwszeństwo mają postanowienia umowy."
+
+  - id: lokaty-zawarcie-umowy
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa rachunku oszczędnościowego lub lokaty terminowej {zostaje zawarta|dochodzi do skutku} z chwilą złożenia przez Klienta oraz przyjęcia przez Bank odpowiedniego wniosku, pod warunkiem pozytywnej weryfikacji tożsamości Klienta. Umowę można zawrzeć:"
+        punkty:
+          - "w {placówce|oddziale} Banku, w formie pisemnej;"
+          - "za pośrednictwem bankowości elektronicznej, w formie elektronicznej, z wykorzystaniem środków uwierzytelnienia udostępnionych Klientowi;"
+          - "telefonicznie, za pośrednictwem Infolinii, pod numerem {{fakt:kontakt.infolinia}}, jeżeli Klient posiada już w Banku rachunek, a rozmowa kończy się potwierdzeniem warunków na trwałym nośniku."
+      - ustep: "Przed zawarciem umowy Bank {przekazuje|udostępnia} Klientowi na trwałym nośniku Regulamin, „{{ref:dokument:taryfa-oszczednosci}}” oraz formularz informacyjny dla deponenta, o którym mowa w {{ref:blok:wspolne-bfg-regulamin}}. Potwierdzenie zawarcia umowy Bank doręcza Klientowi w terminie {{fakt:termin.lokata.potwierdzenie-umowy}} od jej zawarcia.[^1]"
+      - ustep: "Klient będący konsumentem, który zawarł umowę na odległość, może od niej {odstąpić|odstąpić bez podania przyczyny} w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia jej zawarcia lub od dnia otrzymania postanowień umowy, jeżeli nastąpiło to później. Do zachowania terminu wystarcza wysłanie oświadczenia przed jego upływem.[^2]"
+      - ustep: "Umowa lokaty terminowej może zostać zawarta wyłącznie na okres wskazany w ofercie Banku obowiązującej w dniu jej zawarcia. Bank {może odmówić|ma prawo odmówić} zawarcia umowy z ważnych przyczyn, w szczególności gdy Klient nie przedstawi dokumentów wymaganych przez przepisy o przeciwdziałaniu praniu pieniędzy, w szczególności: {{ref:akt:dz-u-2025-644-aml}}."
+    przypisy:
+      1: "Za wydanie dodatkowego potwierdzenia lub duplikatu umowy Bank {pobiera|może pobrać} opłatę w wysokości {{fakt:oplata.duplikat-umowy}}, zgodnie z „{{ref:dokument:taryfa-oszczednosci}}”."
+      2: "W razie odstąpienia od umowy lokaty Bank zwraca środki wraz z odsetkami naliczonymi do dnia odstąpienia, z zastrzeżeniem potrącenia podatku, o którym mowa w rozdziale o podatku od odsetek."
+
+  - id: lokaty-identyfikacja
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {identyfikuje|weryfikuje tożsamość} Klienta na podstawie ważnego dokumentu tożsamości oraz, w przypadkach przewidzianych przepisami, innych dokumentów i oświadczeń. Klient jest zobowiązany do {podania|przekazania} prawdziwych danych oraz do ich aktualizacji."
+      - ustep: "Klient {zobowiązuje się|jest zobowiązany} niezwłocznie powiadomić Bank o zmianie:"
+        punkty:
+          - "imienia, nazwiska, numeru dokumentu tożsamości oraz adresu zamieszkania lub korespondencyjnego;"
+          - "numeru telefonu i adresu poczty elektronicznej, które służą do kontaktu i do przekazywania powiadomień;"
+          - "rezydencji podatkowej, a także innych danych niezbędnych do wykonywania przez Bank obowiązków wynikających z przepisów prawa podatkowego."
+      - ustep: "Bank może wystąpić do Klienta o złożenie dodatkowych wyjaśnień dotyczących źródła pochodzenia środków wpłacanych na rachunek lub lokatę. Do czasu ich złożenia Bank {może wstrzymać|ma prawo wstrzymać} wykonanie dyspozycji, o czym informuje Klienta, o ile przepisy tego nie zabraniają."
+
+  - id: lokaty-ro-otwarcie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{{fakt:lokata.nazwa-rachunek}} jest rachunkiem oszczędnościowym prowadzonym w złotych polskich, służącym do gromadzenia środków pieniężnych i otrzymywania odsetek. Rachunek {nie służy|nie jest przeznaczony} do dokonywania rozliczeń związanych z prowadzoną działalnością gospodarczą."
+      - ustep: "Rachunek oszczędnościowy {otwiera się|zakłada się} po dokonaniu pierwszej wpłaty w wysokości co najmniej {{fakt:limit.rachunek-oszczednosciowy.otwarcie}}. Do rachunku nie wydaje się karty płatniczej ani czeków."
+      - ustep: "Wpłaty na rachunek oszczędnościowy Klient może dokonywać:"
+        punkty:
+          - "przelewem z rachunku prowadzonego w Banku lub w innym banku krajowym;"
+          - "gotówką w placówce Banku, z uwzględnieniem opłaty, o której mowa w „{{ref:dokument:taryfa-oszczednosci}}”;"
+          - "w ramach zlecenia stałego, ustanowionego w bankowości elektronicznej lub w placówce."
+      - ustep: "Środki zgromadzone na rachunku oprocentowane są według zmiennej stopy procentowej, wynoszącej w dniu wejścia Regulaminu w życie {{fakt:oprocentowanie.rachunek-oszczednosciowy}} w stosunku rocznym. W okresach promocyjnych ogłaszanych przez Bank stawka może wynosić {{fakt:oprocentowanie.rachunek-oszczednosciowy.promocyjne}}, o ile Klient spełni warunki promocji.[^1]"
+    przypisy:
+      1: "Warunki promocji, w tym okres jej trwania oraz limit środków objętych podwyższonym oprocentowaniem, {Bank podaje|określa Bank} w odrębnym komunikacie dostępnym na stronie {{fakt:bank.strona}}."
+
+  - id: lokaty-ro-wyplaty
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki na rachunku oszczędnościowym są dostępne {w każdym czasie|bez ograniczeń czasowych}, z zastrzeżeniem limitów określonych w niniejszym paragrafie. Wypłaty realizowane są przelewem na rachunek wskazany przez Klienta lub, w przypadku wypłat gotówkowych, w placówkach Banku."
+      - ustep: "W miesiącu kalendarzowym Klient może dokonać bez opłat z rachunku: {{fakt:limit.rachunek-oszczednosciowy.bezplatne-wyplaty}}. Za każdą kolejną wypłatę w tym miesiącu Bank pobiera opłatę w wysokości {{fakt:oplata.rachunek-oszczednosciowy.wyplata-ponad-limit}}."
+      - ustep: "Łączna kwota wypłat z rachunku oszczędnościowego w ciągu jednego dnia nie może przekroczyć {{fakt:limit.rachunek-oszczednosciowy.wyplata-dzienna}}. Wypłata gotówkowa przekraczająca tę kwotę wymaga wcześniejszego zgłoszenia w placówce, na co najmniej:"
+        punkty:
+          - "jeden dzień roboczy przed planowanym terminem wypłaty — w przypadku kwot do wysokości dwukrotności limitu;"
+          - tekst: "trzy dni robocze przed planowanym terminem wypłaty — w przypadku kwot wyższych, przy czym zgłoszenie:"
+            litery:
+              - "może zostać złożone osobiście, telefonicznie lub za pośrednictwem bankowości elektronicznej;"
+              - "powinno wskazywać kwotę, dzień oraz placówkę, w której nastąpi wypłata."
+      - ustep: "Naliczone odsetki od środków na rachunku Bank {kapitalizuje|dopisuje do salda} na koniec każdego miesiąca kalendarzowego. Odsetki liczone są według rzeczywistej liczby dni w okresie odsetkowym, przy założeniu, że rok liczy {{fakt:lokata.rok-odsetkowy}}."
+
+  - id: lokaty-ro-nieaktywnosc
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli przez okres {{fakt:termin.rachunek-oszczednosciowy.nieaktywnosc}} na rachunku oszczędnościowym nie wystąpiła żadna operacja zainicjowana przez Klienta, a saldo rachunku wynosi zero, Bank {może rozwiązać|ma prawo rozwiązać} umowę za wypowiedzeniem, informując o tym Klienta na trwałym nośniku."
+      - ustep: "Za operację zainicjowaną przez Klienta nie uważa się kapitalizacji odsetek, pobrania opłat ani podatku."
+      - ustep: "Klient może w każdym czasie wypowiedzieć umowę rachunku oszczędnościowego z zachowaniem terminu wypowiedzenia wynoszącego {{fakt:termin.wypowiedzenie-przez-klienta}}. Bank może wypowiedzieć umowę z ważnych powodów, z zachowaniem terminu {{fakt:termin.wypowiedzenie-przez-bank}}, do których zalicza się w szczególności:[^1]"
+        punkty:
+          - "podanie przez Klienta nieprawdziwych danych przy zawarciu umowy;"
+          - "wykorzystywanie rachunku w sposób sprzeczny z prawem lub z Regulaminem;"
+          - "brak możliwości zastosowania środków bezpieczeństwa finansowego wymaganych przepisami."
+      - ustep: "Z dniem rozwiązania umowy Bank wypłaca saldo rachunku wraz z naliczonymi odsetkami, pomniejszone o należny podatek, na wskazany przez Klienta rachunek bankowy albo w placówce Banku."
+    przypisy:
+      1: "Wypowiedzenie umowy przez Bank następuje w formie pisemnej lub na innym trwałym nośniku i zawiera wskazanie przyczyny wypowiedzenia."
+
+  - id: lokaty-rodzaje
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank oferuje następujące rodzaje lokat terminowych, zakładanych w złotych polskich na okres wskazany w umowie:"
+        punkty:
+          - "{{fakt:lokata.nazwa-lokata-klasyczna}} — lokata o stałym oprocentowaniu, zakładana na okres jednego, trzech, sześciu, dwunastu lub dwudziestu czterech miesięcy;"
+          - "{{fakt:lokata.nazwa-lokata-negocjowana}} — lokata zakładana na okres uzgodniony z Bankiem, o indywidualnie ustalonym oprocentowaniu, dla kwoty co najmniej {{fakt:limit.lokata.negocjowana}}."
+      - tabela:
+          kolumny:
+            - naglowek: "Okres lokaty"
+              waga: 2
+            - naglowek: "Liczba dni"
+            - naglowek: "Oprocentowanie w skali roku"
+          wiersze:
+            - ["1 miesiąc", "{{fakt:termin.lokata.okres-1m}}", "{{fakt:oprocentowanie.lokata-1m}}"]
+            - ["3 miesiące", "{{fakt:termin.lokata.okres-3m}}", "{{fakt:oprocentowanie.lokata-3m}}"]
+            - ["6 miesięcy", "{{fakt:termin.lokata.okres-6m}}", "{{fakt:oprocentowanie.lokata-6m}}"]
+            - ["12 miesięcy", "{{fakt:termin.lokata.okres-12m}}", "{{fakt:oprocentowanie.lokata-12m}}"]
+            - ["24 miesiące", "—", "{{fakt:oprocentowanie.lokata-24m}}"]
+          siatka: true
+      - ustep: "Minimalna kwota lokaty wynosi {{fakt:limit.lokata.minimalna}}, a maksymalna kwota pojedynczej lokaty — {{fakt:limit.lokata.maksymalna}}. Łączna kwota lokat jednego Klienta nie jest ograniczona, lecz ochrona wynikająca z systemu gwarantowania depozytów obejmuje wyłącznie środki do wysokości określonej w {{ref:blok:wspolne-bfg-regulamin}}."
+
+  - id: lokaty-zakladanie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Lokata terminowa zostaje założona w dniu, w którym środki w kwocie wskazanej w dyspozycji zostaną przekazane z rachunku Klienta na rachunek lokaty, a Bank potwierdzi jej otwarcie. Okres lokaty {liczy się|biegnie} od dnia następującego po dniu założenia."
+      - ustep: "Środki na lokatę mogą pochodzić wyłącznie:"
+        punkty:
+          - "z rachunku oszczędnościowego lub rachunku rozliczeniowego Klienta prowadzonego w Banku;"
+          - "z przelewu przychodzącego z innego banku, o ile został on zaksięgowany na rachunku wskazanym w umowie;"
+          - tekst: "z wpłaty gotówkowej, pod warunkiem że:"
+            litery:
+              - "Klient okaże dokument tożsamości;"
+              - "kwota wpłaty nie przekracza limitów, od których przepisy wymagają dodatkowych oświadczeń."
+      - ustep: "Jeżeli kwota przekazana na lokatę jest niższa od minimalnej określonej w {{ref:blok:lokaty-rodzaje}}, Bank nie zakłada lokaty i niezwłocznie zwraca środki na rachunek, z którego je otrzymał. W razie przekazania kwoty wyższej od zadeklarowanej, nadwyżka {pozostaje|jest pozostawiana} na rachunku Klienta."
+      - ustep: "Bank doręcza Klientowi potwierdzenie założenia lokaty, które zawiera w szczególności kwotę, okres, datę zapadalności, stopę procentową, sposób kapitalizacji odsetek oraz dyspozycję dotyczącą odnowienia."
+
+  - id: lokaty-odnowienie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W dniu zapadalności lokaty Bank postępuje zgodnie z dyspozycją złożoną przez Klienta przy zakładaniu lokaty lub w trakcie jej trwania. Klient może wskazać, że środki wraz z odsetkami mają zostać:"
+        punkty:
+          - "przekazane na rachunek wskazany przez Klienta;"
+          - "przeznaczone na założenie nowej lokaty na taki sam okres (automatyczne odnowienie), przy czym odnowiona może zostać kwota wraz z odsetkami albo sama kwota pierwotna."
+      - ustep: "W razie automatycznego odnowienia lokata jest oprocentowana według stawki obowiązującej w dniu odnowienia dla danego okresu, zgodnie z tabelą oprocentowania dostępną w placówkach i na stronie {{fakt:bank.strona}}. Jeżeli oferta dla danego okresu została wycofana, lokata zostaje odnowiona na okres najbliższy, a jeżeli to niemożliwe — środki przekazuje się na rachunek oszczędnościowy Klienta, oprocentowany według stawki {{fakt:oprocentowanie.lokata.odnowienie}} w skali roku.[^1]"
+      - ustep: "Klient może odwołać dyspozycję automatycznego odnowienia najpóźniej w dniu poprzedzającym zapadalność lokaty. Zmiana dyspozycji złożona w dniu zapadalności będzie wykonana w terminie {{fakt:termin.lokata.odnowienie-dyspozycja}} roboczych."
+      - ustep: "Jeżeli dzień zapadalności nie jest dniem roboczym, środki zostają udostępnione w najbliższym dniu roboczym, a odsetki za dni dzielące zapadalność od tego dnia nie są naliczane."
+    przypisy:
+      1: "Stawka odnowienia dotyczy wyłącznie sytuacji, w której nie ma możliwości zawarcia nowej lokaty; w pozostałych przypadkach stosuje się oprocentowanie standardowe z tabeli oprocentowania."
+
+  - id: lokaty-dyspozycje
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient po upływie okresu lokaty nie podjął środków ani nie złożył dyspozycji, a lokata nie podlega automatycznemu odnowieniu, środki wraz z odsetkami przekazywane są na rachunek oszczędnościowy Klienta w Banku lub, w razie jego braku, pozostają na nieoprocentowanym rachunku technicznym przez okres {{fakt:termin.lokata.dyspozycja-po-terminie}}."
+      - ustep: "Po upływie tego okresu Bank {może|jest uprawniony} założyć na rachunku oszczędnościowym Klienta rachunek niezbędny do przechowywania środków, o czym poinformuje Klienta na trwałym nośniku. Za prowadzenie takiego rachunku Bank nie pobiera opłat, jeżeli saldo jest niższe niż kwota określona w „{{ref:dokument:taryfa-oszczednosci}}”."
+      - ustep: "Dyspozycje dotyczące lokaty, w tym wypłata środków po terminie, zmiana rachunku do wypłaty odsetek oraz ustanowienie pełnomocnika, Klient składa w placówce, w bankowości elektronicznej albo za pośrednictwem Infolinii, po pozytywnym uwierzytelnieniu."
+
+  - id: lokaty-oprocentowanie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki zgromadzone na lokacie terminowej oprocentowane są według stałej stopy procentowej, obowiązującej w dniu założenia lokaty i wskazanej w potwierdzeniu, przez cały okres lokaty. Stopa ta {nie ulega zmianie|pozostaje niezmienna} w trakcie trwania okresu umownego, z wyjątkiem przypadków opisanych w {{ref:blok:lokaty-zmiana-stopy}}."
+      - ustep: "Stopa procentowa jest podawana w skali roku. Wysokość stóp procentowych dla poszczególnych okresów lokat, obowiązujących w dniu wejścia w życie Regulaminu, przedstawia {{ref:blok:lokaty-rodzaje}}. Bank może ogłaszać nowe stawki dla lokat zakładanych w przyszłości, co nie wpływa na lokaty już założone.[^1]"
+      - ustep: "Odsetki naliczane są od dnia założenia lokaty do dnia poprzedzającego dzień zapadalności, według rzeczywistej liczby dni, przy założeniu, że rok odsetkowy liczy {{fakt:lokata.rok-odsetkowy}}. Wzór naliczania odsetek jest następujący:"
+        punkty:
+          - "odsetki brutto = kwota lokaty × stopa procentowa × liczba dni lokaty podzielona przez liczbę dni w roku odsetkowym;"
+          - "odsetki netto = odsetki brutto pomniejszone o podatek obliczony zgodnie z rozdziałem o podatku od odsetek."
+    przypisy:
+      1: "Aktualne tabele oprocentowania Bank {publikuje|udostępnia} w placówkach oraz na stronie {{fakt:bank.strona}}; w razie rozbieżności wiążąca jest stawka wskazana w potwierdzeniu założenia lokaty."
+
+  - id: lokaty-naliczanie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odsetki od lokat terminowych podlegają kapitalizacji {{fakt:lokata.kapitalizacja}}, chyba że umowa przewiduje inaczej. Kapitalizacja polega na doliczeniu naliczonych odsetek do kwoty lokaty, co zwiększa podstawę naliczania odsetek w kolejnym okresie."
+      - ustep: "Klient może w umowie lokaty wskazać, że odsetki będą wypłacane:"
+        punkty:
+          - "na koniec okresu lokaty, wraz z kwotą lokaty;"
+          - "w okresach miesięcznych — na rachunek wskazany przez Klienta, z zastrzeżeniem że lokata o takim sposobie wypłaty odsetek nie podlega kapitalizacji."
+      - ustep: "W przypadku lokat o okresie dłuższym niż dwanaście miesięcy odsetki są kapitalizowane co dwanaście miesięcy, a za ostatni, niepełny okres odsetkowy — w dniu zapadalności. Jeżeli kapitalizacja przypada na dzień niebędący dniem roboczym, odsetki są dopisywane w tym dniu, lecz udostępniane w najbliższym dniu roboczym."
+      - ustep: "Klient może w każdym czasie zażądać od Banku zaświadczenia o wysokości naliczonych odsetek. Bank wydaje zaświadczenie za opłatą w wysokości {{fakt:oplata.zaswiadczenie}}, z zastrzeżeniem, że zaświadczenie wydawane do celów podatkowych jest bezpłatne."
+
+  - id: lokaty-zmiana-stopy
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {nie może|nie ma prawa} jednostronnie zmienić stopy procentowej lokaty terminowej w trakcie okresu, na jaki została założona. Zmiana stopy procentowej rachunku oszczędnościowego jest dopuszczalna, jeżeli nastąpi w związku ze zmianą co najmniej jednego z następujących wskaźników:"
+        punkty:
+          - "stóp procentowych Narodowego Banku Polskiego o co najmniej 0,25 punktu procentowego;"
+          - "wskaźnika inflacji ogłaszanego przez Prezesa Głównego Urzędu Statystycznego;"
+          - tekst: "kosztów pozyskania środków przez Bank, rozumianych jako:"
+            litery:
+              - "zmiana stawek rynku pieniężnego publikowanych dla złotego;"
+              - "zmiana wymagań dotyczących rezerwy obowiązkowej."
+      - ustep: "Zmiana oprocentowania rachunku oszczędnościowego następuje nie częściej niż raz w miesiącu i jest ogłaszana w placówkach oraz na stronie {{fakt:bank.strona}} z co najmniej siedmiodniowym wyprzedzeniem, jeżeli zmiana jest niekorzystna dla Klienta. Zmiana korzystna dla Klienta może wejść w życie bez wyprzedzenia."
+      - ustep: "Jeżeli oprocentowanie rachunku oszczędnościowego ulega obniżeniu, Klient może rozwiązać umowę bez ponoszenia opłat, składając dyspozycję przed dniem wejścia zmiany w życie. Stawka obowiązująca na początek obowiązywania Regulaminu wynosi {{fakt:oprocentowanie.rachunek-oszczednosciowy}}."
+
+  - id: lokaty-zerwanie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może w każdym czasie złożyć dyspozycję zerwania lokaty przed upływem okresu, na jaki została założona, w całości lub w części. Dyspozycję zerwania lokaty Klient składa w placówce, w bankowości elektronicznej albo za pośrednictwem Infolinii."
+      - ustep: "Bank realizuje dyspozycję zerwania lokaty w terminie {{fakt:termin.lokata.zerwanie-realizacja}} roboczych od dnia jej złożenia, przy czym w przypadku dyspozycji złożonej w bankowości elektronicznej w dniu roboczym do godziny 15:00 — {w dniu jej złożenia|jeszcze tego samego dnia}."
+      - ustep: "Zerwanie lokaty w części jest możliwe pod warunkiem że:"
+        punkty:
+          - "kwota pozostała na lokacie nie jest niższa od minimalnej kwoty określonej w {{ref:blok:lokaty-rodzaje}};"
+          - "lokata nie została ustanowiona jako zabezpieczenie zobowiązań wobec Banku lub osoby trzeciej;"
+          - "na lokacie nie ustanowiono blokady na podstawie przepisów prawa."
+      - ustep: "Za dyspozycję zerwania lokaty Bank nie pobiera opłaty, jeżeli „{{ref:dokument:taryfa-oszczednosci}}” nie stanowi inaczej; w dniu wejścia Regulaminu w życie opłata ta wynosi {{fakt:oplata.lokata.zerwanie}}."
+
+  - id: lokaty-zerwanie-skutki
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie zerwania lokaty przed terminem Bank wypłaca Klientowi kwotę lokaty oraz odsetki naliczone według obniżonej stopy procentowej, wynoszącej {{fakt:oprocentowanie.lokata.zerwanie}} w skali roku, za okres od dnia założenia lokaty do dnia poprzedzającego dzień zerwania.[^1]"
+      - ustep: "Jeżeli w wyniku zerwania lokaty wcześniej wypłacone odsetki przewyższają odsetki należne według stawki określonej w ust. 1, Bank {potrąca|ma prawo potrącić} różnicę z wypłacanej kwoty lokaty, a jeżeli kwota ta jest niewystarczająca — z innych środków Klienta w Banku, po uprzednim poinformowaniu go o tym."
+      - ustep: "Zerwanie lokaty w okresie pierwszych {{fakt:termin.odstapienie-od-umowy}} od jej założenia, w przypadku lokaty zawartej na odległość, jest traktowane jako odstąpienie od umowy, jeżeli Klient złoży w tym zakresie oświadczenie; w takiej sytuacji odsetki naliczane są według stawki umownej do dnia odstąpienia.[^2]"
+      - ustep: "Zerwanie lokaty przed terminem nie wpływa na wysokość odsetek naliczonych za poprzednie, w pełni zakończone okresy odsetkowe, o ile zostały one już skapitalizowane lub wypłacone zgodnie z umową, z zastrzeżeniem ust. 2."
+    przypisy:
+      1: "Przykład: przy lokacie 10 000 zł założonej na rok, zerwanej po 100 dniach, odsetki brutto wynoszą 10 000 zł × stawka za zerwanie × 100 dni podzielone przez liczbę dni w roku odsetkowym."
+      2: "Szczegółowe zasady odstąpienia od umowy zawartej na odległość określa {{ref:akt:dz-u-2020-287-prawa-konsumenta}}."
+
+  - id: lokaty-podatek
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odsetki od środków na rachunku oszczędnościowym i lokacie terminowej stanowią dochód podlegający opodatkowaniu na zasadach określonych w przepisach prawa podatkowego. Bank jako płatnik {pobiera|potrąca} od odsetek zryczałtowany podatek dochodowy w wysokości {{fakt:podatek.odsetki}}, o ile przepisy nie przewidują zwolnienia lub innej stawki."
+      - ustep: "Podatek od odsetek jest pobierany w dniu kapitalizacji lub wypłaty odsetek, od ich wartości naliczonej za dany okres, zaokrąglonej do pełnych groszy zgodnie z przepisami. Klient otrzymuje odsetki w wysokości pomniejszonej o należny podatek."
+      - ustep: "Klient niebędący polskim rezydentem podatkowym może skorzystać z preferencji wynikających z umów o unikaniu podwójnego opodatkowania, jeżeli przedstawi Bankowi zaświadczenie o rezydencji podatkowej wydane przez właściwy organ zagranicznego urzędu skarbowego, przed dniem pobrania podatku. Bank nie ponosi odpowiedzialności za skutki podatkowe niedostarczenia dokumentów w terminie."
+      - ustep: "W terminie {{fakt:termin.podatek.informacja-roczna}} po zakończeniu roku kalendarzowego Bank udostępnia Klientowi informację o wysokości odsetek i pobranego podatku. Bank wypełnia obowiązki informacyjne wobec organów podatkowych, w tym wynikające z przepisów o automatycznej wymianie informacji podatkowych."
+
+  - id: lokaty-bfg-uzupelnienie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Gwarancją objęte są łącznie wszystkie środki Klienta zgromadzone w Banku, w tym na rachunkach oszczędnościowych i lokatach terminowych, niezależnie od liczby rachunków. Limit gwarancji dotyczy sumy tych środków, a nie każdego rachunku z osobna.[^1]"
+      - ustep: "W razie rachunku wspólnego środki dzieli się, jeżeli umowa nie stanowi inaczej, w równych częściach pomiędzy współposiadaczy, a limit gwarancji stosuje się odrębnie do udziału każdego z nich."
+    przypisy:
+      1: "Informacje o wypłatach gwarantowanych środków ogłasza Bankowy Fundusz Gwarancyjny; Bank nie pośredniczy w ich wypłacie."
+
+  - id: lokaty-koncowe
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-wymagane
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin wchodzi w życie w dniu wskazanym na okładce i stosuje się do umów zawartych od tego dnia. Do umów zawartych wcześniej stosuje się Regulamin w brzmieniu obowiązującym w dniu ich zawarcia, z zastrzeżeniem postanowień o zmianie Regulaminu."
+      - ustep: "Bank prowadzi rachunki i lokaty w ramach {{fakt:jednostka.produkty-oszczednosciowe}}. Informacji o produktach udziela Infolinia pod numerem {{fakt:kontakt.infolinia}}, dostępna {{fakt:kontakt.godziny-infolinii}}, oraz placówki Banku."
+      - ustep: "Korespondencję do Klienta Bank kieruje na ostatni wskazany przez niego adres. Korespondencję uważa się za doręczoną po upływie {{fakt:termin.doreczenie-korespondencji}} od jej nadania, jeżeli Klient nie podjął przesyłki. Szczegółowe zasady wykonywania usług płatniczych w związku z rachunkiem określają przepisy prawa, w szczególności: {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."

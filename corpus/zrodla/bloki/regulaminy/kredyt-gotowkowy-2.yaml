@@ -1,0 +1,174 @@
+bloki:
+  # ===== Rozdział: Postanowienia ogólne =====
+  - id: kredyt-gotowkowy-ogolne-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {udziela|oferuje} kredytu gotówkowego wyłącznie osobom, które {w dniu składania wniosku|w chwili składania wniosku} nie są objęte postępowaniem upadłościowym ani egzekucyjnym, a ich dane zostały pozytywnie zweryfikowane w rejestrach wykorzystywanych przez Bank."
+      - ustep: "Kredyt może być udzielony jednemu Klientowi albo kilku współkredytobiorcom, którzy {odpowiadają|ponoszą odpowiedzialność} wobec Banku solidarnie. Współkredytobiorcą może być wyłącznie osoba spełniająca warunki określone w Regulaminie."
+
+  - id: kredyt-gotowkowy-ogolne-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {prowadzi|zapewnia} obsługę kredytu za pośrednictwem {placówek|oddziałów} oraz kanałów zdalnych: bankowości elektronicznej i infolinii pod numerem {{fakt:kontakt.infolinia}}. Infolinia jest dostępna {{fakt:kontakt.godziny-infolinii}}."
+      - ustep: "Dyspozycje dotyczące kredytu Klient może składać:"
+        punkty:
+          - "osobiście w placówce Banku, po okazaniu dokumentu tożsamości;"
+          - "w bankowości elektronicznej, po {uwierzytelnieniu|zalogowaniu i potwierdzeniu} dyspozycji;"
+          - "telefonicznie, o ile dana czynność została udostępniona w tym kanale."
+
+  - id: kredyt-gotowkowy-ogolne-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank jest {obowiązany|zobowiązany} zachować w tajemnicy informacje o Kliencie i jego zobowiązaniach, objęte tajemnicą bankową. Informacje te mogą być ujawnione tylko w przypadkach przewidzianych w przepisach {Prawa bankowego|ustawy — Prawo bankowe}."
+      - ustep: "Klient wyraża zgodę na przekazywanie przez Bank informacji o jego zobowiązaniach do biura informacji kredytowej i do systemu wymiany informacji między bankami w zakresie i na zasadach określonych w przepisach. Zgoda ta nie wyłącza prawa Klienta do żądania informacji o przetwarzanych danych."
+
+  - id: kredyt-gotowkowy-ogolne-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {przeciwdziała|zapobiega} praniu pieniędzy i finansowaniu terroryzmu. W związku z tym Klient {obowiązany jest|jest zobowiązany} udzielić informacji o celu kredytu i źródle pochodzenia środków przeznaczonych na spłatę, jeżeli Bank o to poprosi."
+      - ustep: "Bank {może|ma prawo} odmówić zawarcia umowy lub wstrzymać wypłatę kredytu, jeżeli Klient nie dostarczy żądanych informacji lub dokumentów albo jeżeli ich analiza wskazuje na podejrzenie nadużycia. O odmowie Bank informuje w zakresie dozwolonym przez przepisy."
+
+  # ===== Rozdział: Wniosek i ocena zdolności kredytowej =====
+  - id: kredyt-gotowkowy-wniosek-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dochody Klienta mogą być potwierdzone w {szczególności|zależności od źródła} jednym z następujących dokumentów:"
+        punkty:
+          - "zaświadczeniem pracodawcy o zatrudnieniu i wysokości wynagrodzenia;"
+          - "wyciągiem z rachunku bankowego z ostatnich {sześciu|trzech} miesięcy, na który wpływa wynagrodzenie;"
+          - "decyzją o przyznaniu emerytury lub renty albo ostatnim odcinkiem świadczenia;"
+          - "rocznym zeznaniem podatkowym wraz z potwierdzeniem jego złożenia."
+      - ustep: "Bank {może|ma prawo} zażądać dodatkowych dokumentów, jeżeli dotychczas przedstawione nie pozwalają na rzetelną ocenę sytuacji finansowej Klienta."
+
+  - id: kredyt-gotowkowy-wniosek-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {odpowiada|ponosi odpowiedzialność} za prawdziwość i kompletność danych podanych we wniosku. Podanie nieprawdziwych danych może skutkować odmową udzielenia kredytu, a po zawarciu umowy — jej wypowiedzeniem, jeżeli dane te miały istotne znaczenie dla decyzji kredytowej."
+      - ustep: "W trakcie rozpatrywania wniosku Klient jest obowiązany niezwłocznie informować Bank o każdej zmianie sytuacji finansowej lub osobistej, w szczególności o utracie pracy, zmniejszeniu dochodów lub zaciągnięciu nowego zobowiązania."
+
+  - id: kredyt-gotowkowy-wniosek-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o kredyt może zostać złożony także wspólnie z {małżonkiem|drugą osobą}, jeżeli osoby te zamierzają zaciągnąć zobowiązanie jako współkredytobiorcy. W takim przypadku oceny zdolności kredytowej dokonuje się łącznie, na podstawie dochodów i wydatków obu wnioskodawców."
+      - ustep: "Każdy ze współkredytobiorców {składa|przedkłada} własne dokumenty tożsamości i dochodów oraz podpisuje oświadczenia o zobowiązaniach. W razie odmowy jednego z nich do przedstawienia dokumentów Bank rozpatruje wniosek jako złożony przez pozostałego wnioskodawcę, o ile ten wyrazi na to zgodę."
+
+  - id: kredyt-gotowkowy-wniosek-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Złożenie wniosku o kredyt nie zobowiązuje Banku do udzielenia kredytu ani Klienta do jego zaciągnięcia. Wniosek można {wycofać|cofnąć} w każdym czasie przed zawarciem umowy, składając Bankowi oświadczenie w dowolnej formie."
+      - ustep: "Jeżeli Klient w ciągu {{fakt:termin.kredyt-gotowkowy.waznosc-decyzji}} od dnia pozytywnej decyzji nie zawrze umowy, decyzja traci ważność, a ponowny wniosek podlega rozpatrzeniu na ogólnych zasadach. Bank nie pobiera opłat za rozpatrzenie wniosku zakończone odmową lub wycofaniem wniosku."
+
+  - id: kredyt-gotowkowy-wniosek-5
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy ocenie zdolności kredytowej Bank uwzględnia obciążenia Klienta z tytułu {kart kredytowych|limitów w rachunkach} niezależnie od faktycznego wykorzystania limitu, przyjmując wartość miesięcznego obciążenia ustaloną według wewnętrznych zasad ostrożnościowych."
+      - ustep: "Bank {stosuje|przyjmuje} bufor bezpieczeństwa na wypadek wzrostu stóp procentowych oraz inne czynniki ryzyka, a wynik oceny przedstawia Klientowi w formie informacji o maksymalnej kwocie raty, na którą pozwala jego sytuacja finansowa."
+
+  - id: kredyt-gotowkowy-umowa-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy Bank udziela Klientowi {wyjaśnień|informacji} umożliwiających ocenę, czy proponowany kredyt odpowiada jego potrzebom i sytuacji finansowej, w szczególności przez przedstawienie najważniejszych cech produktu oraz konsekwencji niespłacenia kredytu."
+      - ustep: "Klient potwierdza, że otrzymał formularz informacyjny i zapoznał się z jego treścią, przed złożeniem oświadczenia woli o zawarciu umowy. Brak takiego potwierdzenia uniemożliwia zawarcie umowy."
+
+  - id: kredyt-gotowkowy-umowa-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowę kredytu można zawrzeć w {formie elektronicznej|postaci elektronicznej} po uprzednim zidentyfikowaniu Klienta w bankowości elektronicznej. Klient potwierdza zawarcie umowy za pomocą {kodu jednorazowego|środków uwierzytelnienia} przekazanego na numer telefonu wskazany w Banku."
+      - ustep: "Umowa zawarta w postaci elektronicznej jest udostępniana Klientowi na trwałym nośniku w bankowości elektronicznej i dodatkowo wysyłana na adres poczty elektronicznej wskazany przez Klienta. Klient może żądać jej wydania w formie papierowej, bez dodatkowych opłat."
+
+  - id: kredyt-gotowkowy-umowa-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa kredytu może przewidywać następujące zabezpieczenia spłaty:"
+        punkty:
+          - "{poręczenie|poręczenie cywilnoprawne} udzielone przez osobę trzecią;"
+          - "pełnomocnictwo do rachunku Klienta w zakresie pobierania rat;"
+          - "oświadczenie o poddaniu się egzekucji w formie aktu notarialnego, jeżeli {przewiduje to umowa|strony tak postanowiły}."
+      - ustep: "Ustanowienie zabezpieczenia nie zwalnia Klienta z obowiązku terminowej spłaty. Zabezpieczenie wygasa po całkowitej spłacie kredytu, a Bank {zwraca|przekazuje} Klientowi dokumenty dotyczące zabezpieczenia w terminie {{fakt:termin.kredyt-gotowkowy.zaswiadczenie-o-splacie}}."
+
+  - id: kredyt-gotowkowy-umowa-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmiana warunków umowy wymaga formy pisemnej lub postaci elektronicznej pod rygorem nieważności, z zastrzeżeniem zmian wynikających z przepisów prawa oraz zmian korzystnych dla Klienta, które Bank {może|ma prawo} wprowadzić jednostronnie."
+      - ustep: "Zmiana oprocentowania w trakcie obowiązywania umowy {nie jest dopuszczalna|nie następuje}, ponieważ kredyt oprocentowany jest według stałej stopy. Zmiana wysokości opłat jest możliwa tylko wówczas, gdy w umowie wskazano jej przyczyny, a Klient zostanie o niej powiadomiony z odpowiednim wyprzedzeniem."
+
+  # ===== Rozdział: Wypłata kredytu =====
+  - id: kredyt-gotowkowy-wyplata-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłata kredytu następuje w złotych polskich, w formie przelewu na rachunek Klienta prowadzony w Banku albo, na wniosek Klienta, na rachunek w innym banku wskazany w umowie. Wypłata kredytu w gotówce {nie jest dopuszczalna|nie jest realizowana}."
+      - ustep: "Za dzień wypłaty kredytu przyjmuje się dzień uznania rachunku wskazanego w umowie. W razie wypłaty na rachunek w innym banku Bank {odpowiada|ponosi odpowiedzialność} za prawidłowe zlecenie przelewu, a nie odpowiada za czas jego przetworzenia przez bank odbiorcy."
+
+  - id: kredyt-gotowkowy-wyplata-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli prowizja za udzielenie kredytu ma być pokryta ze środków kredytu, Bank {potrąca|pomniejsza} ją z kwoty wypłaty. Kwota wypłacona Klientowi jest wówczas niższa od kwoty kredytu o wysokość prowizji i składki ubezpieczeniowej, jeżeli ją sfinansowano z kredytu."
+      - ustep: "Bank informuje Klienta o wysokości środków wypłaconych na rachunek w {wiadomości w bankowości elektronicznej|powiadomieniu SMS}, chyba że Klient zrezygnował z takich powiadomień."
+
+  - id: kredyt-gotowkowy-wyplata-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} odmówić wypłaty kredytu lub wstrzymać jego wypłatę, jeżeli przed jej dokonaniem:"
+        punkty:
+          - "Klient przedstawił fałszywe dokumenty lub nieprawdziwe oświadczenia;"
+          - "zdolność kredytowa Klienta uległa istotnemu pogorszeniu, w szczególności w wyniku utraty źródła dochodów;"
+          - "wobec Klienta wszczęto postępowanie egzekucyjne lub upadłościowe;"
+          - "nie zostały spełnione warunki uruchomienia kredytu wskazane w umowie."
+      - ustep: "O odmowie lub wstrzymaniu wypłaty Bank informuje Klienta niezwłocznie, wskazując przyczynę, o ile nie stoją temu na przeszkodzie przepisy prawa."
+
+  - id: kredyt-gotowkowy-wyplata-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli środki nie zostaną wypłacone z przyczyn leżących po stronie Klienta w terminie {{fakt:termin.kredyt-gotowkowy.uruchomienie-umowy}} od dnia zawarcia umowy, Bank {może|ma prawo} wezwać Klienta do wskazania prawidłowego rachunku lub uzupełnienia dokumentów, wyznaczając dodatkowy termin."
+      - ustep: "Po bezskutecznym upływie dodatkowego terminu Bank może odstąpić od umowy kredytu, a Klientowi nie przysługuje roszczenie o wypłatę środków. W takim przypadku Bank zwraca pobrane opłaty, o ile nie dotyczą one czynności już wykonanych i nieodwracalnych."

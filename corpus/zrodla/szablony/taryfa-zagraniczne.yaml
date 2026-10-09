@@ -1,0 +1,54 @@
+id: taryfa-zagraniczne
+typ: taryfy
+temat: taryfa-zagraniczne
+tytul:
+  - "Taryfa opłat i prowizji {{param:bank}} za przelewy zagraniczne i wymianę walut"
+  - "Taryfa {opłat i prowizji|prowizji i opłat} {{param:bank}} za przelewy zagraniczne, rachunki walutowe i operacje wymiany walut"
+uklady: [taryfa-bez-siatki]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, taryfa-zagraniczne-zakres, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-zagraniczne-zasady-szczegolowe]
+    opcjonalne: { kategorie: [akapity-zagraniczne-ogolne], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Klienci indywidualni"
+    wymagane: [taryfa-zagraniczne-ind-opis, taryfa-zagraniczne-ind-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-ind], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przedsiębiorcy"
+    wymagane: [taryfa-zagraniczne-firmy-opis, taryfa-zagraniczne-firmy-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-firmy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy SEPA"
+    wymagane: [taryfa-zagraniczne-sepa-opis, taryfa-zagraniczne-sepa-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-sepa], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy zagraniczne poza SEPA"
+    wymagane: [taryfa-zagraniczne-swift-opis, taryfa-zagraniczne-swift-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-swift], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy przychodzące"
+    wymagane: [taryfa-zagraniczne-przych-opis, taryfa-zagraniczne-przych-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-przych], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Wymiana walut"
+    wymagane: [taryfa-zagraniczne-wymiana-opis, taryfa-zagraniczne-wymiana-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-wymiana], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Rachunki walutowe"
+    wymagane: [taryfa-zagraniczne-rachunki-opis, taryfa-zagraniczne-rachunki-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-rachunki], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Czeki i inkaso"
+    wymagane: [taryfa-zagraniczne-czeki-opis, taryfa-zagraniczne-czeki-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-czeki], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Czynności dodatkowe"
+    wymagane: [taryfa-zagraniczne-dodatkowe-opis, taryfa-zagraniczne-dodatkowe-pozycje]
+    opcjonalne: { kategorie: [pozycje-zagraniczne-dodatkowe], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i postanowienia końcowe"
+    wymagane: [taryfa-zagraniczne-objasnienia]
+parametry:
+  produkt: "przelewów zagranicznych i operacji walutowych"

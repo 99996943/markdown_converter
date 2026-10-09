@@ -1,0 +1,226 @@
+bloki:
+  # --- Przegląd i przygotowanie
+  - id: otwarcie-przeglad-duplikaty-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "Przed otwarciem rachunku pracownik sprawdza, czy klient nie ma już w Banku rachunku lub zablokowanej relacji, ponieważ otwieranie kolejnych rachunków na te same dane może wskazywać na próbę obejścia zasad bezpieczeństwa lub zwykłą pomyłkę."
+      - kroki:
+          - tekst: "Wyszukanie klienta. W systemie {{fakt:system.otwarcie.cbs}} wyszukaj klienta po numerze ewidencyjnym, a następnie po imieniu, nazwisku i dacie urodzenia."
+            podkroki:
+              - tekst: "Jeżeli znajdziesz klienta o zbliżonych danych, porównaj numery dokumentów, adresy i dane kontaktowe, aby ustalić, czy to ta sama osoba."
+              - tekst: "Nie zakładaj nowej karty klienta, jeżeli klient już istnieje; zaktualizuj dane w istniejącej karcie."
+          - tekst: "Ocena istniejących relacji. Sprawdź status poprzednich produktów klienta: rachunki aktywne, zamknięte, zablokowane oraz historię wypowiedzeń i reklamacji."
+          - tekst: "Zablokowane relacje. Jeżeli klient miał rachunek zamknięty z winy klienta, na przykład z powodu nadużycia, przekaż sprawę do decyzji kierownika placówki."
+          - tekst: "Wynik sprawdzenia. Zapisz wynik wyszukiwania w liście kontrolnej, a wątpliwości dotyczące tożsamości wyjaśnij przed dalszymi czynnościami."
+
+  - id: otwarcie-przeglad-zgody-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "W trakcie przygotowania wniosku pracownik zbiera od klienta oświadczenia i zgody niezbędne do zawarcia umowy oraz informuje go o przetwarzaniu danych osobowych. Zgody dobrowolne zbiera się odrębnie i w sposób, który pozwala je później łatwo cofnąć."
+      - kroki:
+          - tekst: "Informacja o przetwarzaniu danych. Przekaż klientowi klauzulę informacyjną, w której wskazano administratora, cele i podstawy przetwarzania, odbiorców danych, okres przechowywania i prawa klienta, a kontakt do Inspektora ochrony danych to {{fakt:kontakt.email-iod}}."
+          - tekst: "Oświadczenia obowiązkowe."
+            podkroki:
+              - tekst: "oświadczenie o prawdziwości danych oraz o zobowiązaniu do ich aktualizacji;"
+              - tekst: "oświadczenie o statusie podatkowym klienta;"
+              - tekst: "oświadczenie o statusie osoby zajmującej eksponowane stanowisko polityczne."
+          - tekst: "Zgody dobrowolne. Zgody na kontakt marketingowy i profilowanie zbiera się wyłącznie, jeżeli klient wyraźnie ich udzieli."
+            podkroki:
+              - tekst: "Brak zgody dobrowolnej nie wpływa na możliwość otwarcia rachunku ani na warunki jego prowadzenia."
+              - tekst: "Poinformuj klienta, że zgodę można w każdej chwili cofnąć, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem."
+          - tekst: "Zapis zgód. Odnotuj zgody w systemie z datą ich udzielenia i kanałem, w którym je złożono."
+
+  - id: otwarcie-przeglad-jezyk-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad-opc
+    elementy:
+      - akapit: "Klient, który nie posługuje się swobodnie językiem polskim, może wymagać wsparcia w zrozumieniu dokumentów. Bank nie może odmówić otwarcia rachunku tylko z powodu bariery językowej, ale musi zadbać o to, aby klient świadomie zawierał umowę."
+      - kroki:
+          - tekst: "Ustalenie sposobu porozumiewania się. Zapytaj klienta, w jakim języku może swobodnie rozmawiać, i oceń, czy pracownik jest w stanie przeprowadzić proces w tym języku."
+          - tekst: "Wsparcie tłumacza. Jeżeli pracownik nie zna języka klienta, skorzystaj z pomocy innego pracownika Banku lub z usług tłumacza zapewnionego przez Bank."
+            podkroki:
+              - tekst: "Nie korzystaj z pomocy osób towarzyszących klientowi przy czynnościach dotyczących oceny ryzyka i ustalania celu rachunku, ponieważ ich obecność może wpływać na odpowiedzi klienta."
+              - tekst: "Fakt skorzystania z tłumacza zapisz w dokumentacji, wraz z jego danymi lub numerem pracownika."
+          - tekst: "Dokumenty w innym języku. Dla klienta przygotuj tłumaczenie kluczowych informacji, w szczególności dotyczących opłat i ryzyka; wiążąca jest wersja polska umowy."
+          - tekst: "Potwierdzenie zrozumienia. Zapytaj klienta, czy rozumie treść umowy, i odnotuj jego odpowiedź w dokumentacji."
+
+  # --- Otwarcie rachunku w placówce
+  - id: otwarcie-placowka-kolejka-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Organizacja obsługi w placówce powinna umożliwiać przeprowadzenie rozmowy w warunkach zapewniających poufność. Otwieranie rachunku wymaga czasu i spokoju, dlatego zaleca się umawianie klientów na wizyty."
+      - kroki:
+          - tekst: "Wybór stanowiska. Rozmowę z klientem prowadź przy stanowisku, które nie pozwala osobom postronnym usłyszeć danych osobowych ani zobaczyć ekranu."
+          - tekst: "Zarządzanie czasem. Przeznacz na otwarcie rachunku czas wystarczający do rzetelnego przeprowadzenia wszystkich czynności; wizyta trwa zwykle od trzydziestu do czterdziestu pięciu minut."
+            podkroki:
+              - tekst: "Jeżeli w placówce są kolejki, nie skracaj czynności obowiązkowych; zaproponuj klientowi umówienie wizyty na inny termin."
+              - tekst: "Nie przerywaj czynności związanych z identyfikacją klienta w celu obsłużenia innych osób."
+          - tekst: "Dane na ekranie. Po zakończeniu obsługi wyloguj się z systemu lub zablokuj stanowisko i usuń z biurka dokumenty zawierające dane klienta."
+          - tekst: "Obsługa klientów oczekujących. W razie dłuższego oczekiwania poinformuj klientów o przewidywanym czasie i zaproponuj alternatywne formy załatwienia sprawy."
+
+  - id: otwarcie-placowka-weryfikacja-adresu-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Adres zamieszkania i adres do korespondencji klienta muszą być zweryfikowane, ponieważ na ich podstawie Bank doręcza dokumenty, a także ocenia ryzyko związane z miejscem zamieszkania. Sposób weryfikacji zależy od tego, czy adres wynika z dokumentu tożsamości."
+      - kroki:
+          - tekst: "Adres zgodny z dokumentem. Jeżeli adres zamieszkania znajduje się w dokumencie tożsamości, potwierdź go z klientem i zapisz w systemie."
+          - tekst: "Adres niewynikający z dokumentu. W pozostałych przypadkach poproś o dokument potwierdzający adres."
+            podkroki:
+              - tekst: "Za dokument potwierdzający adres uznaje się rachunek za media, umowę najmu, decyzję administracyjną lub zaświadczenie o zameldowaniu, wystawione nie wcześniej niż {{fakt:termin.otwarcie.waznosc-dokumentu-adresu}} przed dniem wniosku."
+              - tekst: "Nie przyjmuj dokumentów, w których imię i nazwisko klienta są nieczytelne lub różnią się od danych w dowodzie tożsamości."
+          - tekst: "Adres do korespondencji. Ustal, czy klient chce otrzymywać korespondencję pod adresem innym niż zamieszkania, i zapisz ten adres odrębnie."
+          - tekst: "Potwierdzenie przesyłką. W razie wątpliwości co do adresu wyślij pierwszą przesyłkę z kodem, którego podanie potwierdza odbiór korespondencji."
+
+  # --- Otwarcie rachunku na odległość
+  - id: otwarcie-zdalne-awaria-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Podczas otwierania rachunku na odległość mogą wystąpić problemy techniczne. Postępowanie w takich przypadkach ma zapewnić, że klient nie utraci danych, a proces nie zostanie zakończony bez wymaganych weryfikacji."
+      - kroki:
+          - tekst: "Przerwanie sesji wideo. W razie przerwania połączenia z przyczyn technicznych spróbuj nawiązać je ponownie, a jeśli się nie uda, umów klienta na nową sesję."
+            podkroki:
+              - tekst: "Przerwana sesja nie jest zaliczana do limitu prób, jeżeli przyczyną była awaria po stronie Banku."
+              - tekst: "Poinformuj klienta, że dotychczasowe dane we wniosku zostały zachowane."
+          - tekst: "Niska jakość obrazu lub dźwięku. Jeżeli jakość połączenia uniemożliwia rzetelną weryfikację dokumentu, nie kończ sesji pozytywnie; poproś klienta o poprawę oświetlenia lub zmianę urządzenia."
+          - tekst: "Awaria systemu. W razie awarii systemu {{fakt:system.otwarcie.wideo}} przekaż sprawę do {{fakt:jednostka.obsluga-klienta}} i zaproponuj klientom weryfikację w placówce."
+          - tekst: "Dokumentowanie zdarzeń. Każdą awarię odnotuj w dzienniku zdarzeń, a powtarzające się problemy zgłoś do Departamentu Bezpieczeństwa."
+
+  - id: otwarcie-zdalne-dostepnosc-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Otwieranie rachunku na odległość powinno być dostępne dla klienta w sposób przejrzysty i dostosowany do jego umiejętności. Pracownik obsługi pomaga klientowi, który ma trudności z korzystaniem z kanału zdalnego."
+      - kroki:
+          - tekst: "Pomoc w trakcie wypełniania wniosku. Klient może skontaktować się z infolinią pod numerem {{fakt:kontakt.infolinia}} w godzinach {{fakt:kontakt.godziny-infolinii}}."
+            podkroki:
+              - tekst: "Pracownik infolinii może wyjaśnić sposób wypełnienia formularza, ale nie wypełnia go w imieniu klienta ani nie prosi o podanie haseł."
+              - tekst: "Jeżeli klient prosi o pomoc w podaniu danych wrażliwych, zaproponuj mu wizytę w placówce."
+          - tekst: "Wymagania techniczne. Poinformuj klienta o wymaganiach dotyczących urządzenia: kamery, mikrofonu, dostępu do internetu i aktualnej przeglądarki lub aplikacji."
+          - tekst: "Alternatywa. Zawsze informuj klienta, że może otworzyć rachunek w placówce, jeżeli kanał zdalny mu nie odpowiada."
+          - tekst: "Opinie klientów. Uwagi klientów dotyczące wygody procesu przekazuj do {{fakt:jednostka.obsluga-klienta}}, która uwzględnia je przy rozwoju kanału."
+
+  # --- Środki bezpieczeństwa finansowego
+  - id: otwarcie-aml-nietypowe-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Pracownik ma obowiązek zwracać uwagę na okoliczności, które mogą wskazywać na pranie pieniędzy lub finansowanie terroryzmu, już na etapie otwierania rachunku. Poniższe sygnały nie stanowią zamkniętego katalogu."
+      - kroki:
+          - tekst: "Sygnały dotyczące klienta."
+            podkroki:
+              - tekst: "klient jest nadmiernie zainteresowany zasadami zgłaszania transakcji do organów lub próbuje dowiedzieć się, jakie kwoty nie podlegają kontroli;"
+              - tekst: "klient odmawia podania źródła środków lub podaje je w sposób niespójny;"
+              - tekst: "klient nie potrafi uzasadnić potrzeby otwarcia rachunku w Banku."
+          - tekst: "Sygnały dotyczące planowanych operacji. Zwróć uwagę, gdy klient planuje wpłaty w gotówce w kwotach tuż poniżej progów kontrolnych, częste przelewy do krajów wysokiego ryzyka lub przepływy niewspółmierne do dochodów."
+          - tekst: "Postępowanie. W razie wystąpienia sygnałów nie informuj klienta o swoich podejrzeniach."
+            podkroki:
+              - tekst: "Zakończ proces w sposób nienaruszający zasad uprzejmości, na przykład przez wyjaśnienie, że wniosek wymaga dodatkowej analizy."
+              - tekst: "Niezwłocznie zgłoś sprawę do {{fakt:jednostka.zgodnosc}} według przyjętego trybu zgłaszania transakcji podejrzanych."
+          - tekst: "Zakaz informowania. Informowanie klienta o zgłoszeniu lub o jego powodach jest zabronione i może rodzić odpowiedzialność prawną."
+
+  - id: otwarcie-aml-zrodlo-majatku-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Dla klientów zakwalifikowanych do wysokiego ryzyka Bank ustala nie tylko źródło środków, które będą wpłacane na rachunek, ale także źródło ogólnego majątku klienta. Czynności te są bardziej szczegółowe niż w przypadku ryzyka niskiego i średniego."
+      - kroki:
+          - tekst: "Rozmowa o majątku. Zapytaj klienta, w jaki sposób zgromadził majątek, którym dysponuje, na przykład z wynagrodzenia, działalności, spadku, darowizny lub sprzedaży nieruchomości."
+          - tekst: "Dokumenty potwierdzające. Poproś o dokumenty potwierdzające wskazane źródło."
+            podkroki:
+              - tekst: "Dla wynagrodzenia: zaświadczenie od pracodawcy lub zeznanie podatkowe."
+              - tekst: "Dla spadku lub darowizny: postanowienie sądu, akt notarialny lub umowę darowizny."
+              - tekst: "Dla sprzedaży majątku: umowę sprzedaży i dokument potwierdzający otrzymanie środków."
+          - tekst: "Ocena wiarygodności. Oceń, czy przedstawione dokumenty są spójne z informacjami od klienta i z jego sytuacją zawodową."
+          - tekst: "Opinia Jednostki zgodności. Wynik ustaleń przekaż do {{fakt:jednostka.zgodnosc}} wraz z kwestionariuszem; otwarcie rachunku wymaga jej akceptacji w terminie {{fakt:termin.otwarcie.decyzja-zgodnosci}}."
+
+  # --- Zawarcie umowy
+  - id: otwarcie-umowa-zmiany-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-umowa-opc
+    elementy:
+      - akapit: "Umowa rachunku może być zmieniana w trakcie jej trwania, a o zmianach klient jest informowany zgodnie z zasadami określonymi w regulaminie. Przy zawieraniu umowy pracownik wyjaśnia klientowi, w jaki sposób Bank dokonuje zmian."
+      - kroki:
+          - tekst: "Zmiana regulaminu i tabeli opłat. Poinformuj klienta, że o zmianie Bank powiadamia z wyprzedzeniem wynoszącym {{fakt:termin.zmiana-regulaminu}}."
+            podkroki:
+              - tekst: "Brak sprzeciwu klienta w tym terminie oznacza, że klient wyraził zgodę na zmiany."
+              - tekst: "Klient, który nie zgadza się na zmiany, może wypowiedzieć umowę bez ponoszenia dodatkowych opłat do dnia wejścia zmian w życie."
+          - tekst: "Zmiana danych klienta. Poinformuj klienta, że obowiązany jest niezwłocznie zgłaszać zmianę danych, w tym adresu, numeru telefonu i dokumentu tożsamości."
+          - tekst: "Kanały zgłaszania zmian. Wskaż klientowi możliwe sposoby zgłoszenia zmiany: w placówce, w bankowości elektronicznej lub przez infolinię, z zastrzeżeniem zmian wymagających osobistej obecności."
+          - tekst: "Skutki braku aktualizacji. Wyjaśnij, że brak aktualizacji danych może prowadzić do ograniczenia dostępu do rachunku."
+
+  # --- Odmowa
+  - id: otwarcie-odmowa-rejestr-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odmowa-opc
+    elementy:
+      - akapit: "Każda odmowa otwarcia rachunku jest rejestrowana w systemie, co pozwala Bankowi analizować jej przyczyny i dostrzegać próby nadużyć. Rejestr odmów prowadzi {{fakt:jednostka.zgodnosc}}."
+      - kroki:
+          - tekst: "Wpis do rejestru. Pracownik, który przekazał sprawę do decyzji, wprowadza do rejestru dane klienta, datę, powód odmowy i numer decyzji."
+          - tekst: "Kategorie przyczyn. Przyczyny klasyfikuje się według kategorii: brak dokumentów, wątpliwości co do tożsamości, wynik weryfikacji sankcyjnej, ocena ryzyka, inne."
+            podkroki:
+              - tekst: "Dla każdej kategorii analizuje się liczbę odmów w ujęciu kwartalnym."
+              - tekst: "Nagły wzrost liczby odmów w danej kategorii jest sygnałem do przeprowadzenia analizy procesu lub szkolenia."
+          - tekst: "Dostęp do rejestru. Dostęp mają wyłącznie osoby wyznaczone przez {{fakt:jednostka.zgodnosc}}, a każde zapytanie jest rejestrowane."
+          - tekst: "Okres przechowywania. Wpisy przechowuje się przez {{fakt:termin.otwarcie.przechowywanie-odmowy}}."
+
+  # --- Szczególne
+  - id: otwarcie-szcz-rezydent-niepolski-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Rachunek dla klienta, który jest obywatelem państwa trzeciego i przebywa w Polsce na podstawie wizy lub karty pobytu, wymaga weryfikacji uprawnienia do pobytu oraz oceny stabilności jego sytuacji w Polsce."
+      - kroki:
+          - tekst: "Dokumenty pobytowe. Sprawdź ważność dokumentu uprawniającego do pobytu i zapisz jego rodzaj, numer i termin ważności."
+            podkroki:
+              - tekst: "Jeżeli dokument pobytowy wygasa w ciągu najbliższych trzech miesięcy, poinformuj klienta o skutkach jego wygaśnięcia dla umowy rachunku."
+              - tekst: "Zapisz w systemie datę ważności dokumentu i ustaw przypomnienie o jego aktualizacji."
+          - tekst: "Cel pobytu. Zapytaj klienta o cel pobytu w Polsce i planowany okres, na przykład studia, praca lub połączenie rodziny."
+          - tekst: "Ocena ryzyka. Uwzględnij obywatelstwo i kraj pochodzenia klienta oraz kraj, do którego zamierza wysyłać środki; w przypadku krajów wysokiego ryzyka zastosuj pogłębione środki bezpieczeństwa finansowego."
+          - tekst: "Aktualizacja. Po odnowieniu dokumentu pobytowego klient jest obowiązany niezwłocznie przedstawić go Bankowi."
+
+  - id: otwarcie-szcz-zmiana-banku-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klient, który zmienia bank, może skorzystać z usługi ułatwiającej przeniesienie rachunku. Usługa polega na tym, że nowy bank przejmuje od dotychczasowego banku informacje o zleceniach stałych i poleceniach zapłaty i uruchamia je w nowym banku."
+      - kroki:
+          - tekst: "Wniosek klienta. Klient składa pisemne upoważnienie dla nowego banku do wystąpienia o przekazanie informacji o zleceniach i poleceniach zapłaty."
+          - tekst: "Zlecenie do dotychczasowego banku. Bank przekazuje dyspozycję dotychczasowemu bankowi, a ten w ustawowym terminie przekazuje wykaz zleceń i poleceń zapłaty."
+            podkroki:
+              - tekst: "Poinformuj klienta, że w międzyczasie dotychczasowy rachunek pozostaje czynny, a klient powinien zadbać o zachowanie na nim środków potrzebnych do wykonania zleceń."
+              - tekst: "Klient odpowiada za poinformowanie płatników o zmianie numeru rachunku, a Bank udostępnia mu wzór pisma do pracodawcy i kontrahentów."
+          - tekst: "Uruchomienie zleceń. Po otrzymaniu danych ustal z klientem, które zlecenia mają zostać uruchomione, i uruchom je w terminie wskazanym w umowie."
+          - tekst: "Zamknięcie dotychczasowego rachunku. Zamknięcie dotychczasowego rachunku następuje na dyspozycję klienta, a Bank informuje klienta o skutkach zamknięcia."
+
+  - id: otwarcie-szcz-zmarly-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Jeżeli w trakcie procesu otwierania rachunku pracownik dowie się o śmierci klienta lub osoby, która miała zostać współposiadaczem rachunku, postępuje w sposób opisany poniżej, z zachowaniem taktu i poufności."
+      - kroki:
+          - tekst: "Wstrzymanie czynności. Zatrzymaj proces otwierania rachunku i nie zawieraj umowy, jeżeli wymaga ona podpisu osoby zmarłej."
+          - tekst: "Weryfikacja informacji. Poproś osobę zgłaszającą o przedstawienie aktu zgonu lub jego odpisu."
+            podkroki:
+              - tekst: "Nie ujawniaj osobie zgłaszającej żadnych informacji o produktach zmarłego, jeżeli nie wykaże ona uprawnienia do ich uzyskania."
+              - tekst: "Zapisz dane osoby zgłaszającej i jej relację ze zmarłym."
+          - tekst: "Zablokowanie wniosku. Wniosek oznacz w systemie jako wstrzymany z powodu zgonu."
+          - tekst: "Dalsze postępowanie. Informacje o prawach spadkobierców i postępowaniu z rachunkiem zmarłego przekaż zgodnie z procedurą dotyczącą zgonu klienta."

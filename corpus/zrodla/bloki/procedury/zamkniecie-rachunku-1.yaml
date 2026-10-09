@@ -1,0 +1,117 @@
+bloki:
+  - id: zamkniecie-cel
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Celem procedury jest {jednolite|ujednolicone} określenie zasad i kolejności czynności wykonywanych przez pracowników Banku przy rozwiązywaniu umów rachunków bankowych i zamykaniu rachunków, niezależnie od tego, czy inicjatorem jest Klient, czy Bank. Procedura ma zapewnić, że zamknięcie rachunku odbywa się {w terminach|w sposób i w terminach} wynikających z umowy i przepisów, a środki Klienta są rozliczone w pełnej, prawidłowo ustalonej wysokości."
+      - ustep: "Procedura służy ponadto zapewnieniu, aby:"
+        punkty:
+          - "przy zamknięciu rachunku nie pozostały {niezakończone|nierozliczone} produkty i usługi powiązane z rachunkiem, w szczególności karty, limity w rachunku, zlecenia stałe i polecenia zapłaty;"
+          - "Klient otrzymał {pełną|kompletną} informację o skutkach rozwiązania umowy, o sposobie wypłaty salda oraz o możliwości skorzystania z usługi zmiany banku;"
+          - "Bank {nie dopuścił|zapobiegł} wypłacie środków osobie nieuprawnionej oraz zrealizował obowiązki wynikające z przepisów o przeciwdziałaniu praniu pieniędzy i o postępowaniu egzekucyjnym;"
+          - "dokumentacja zamknięcia była kompletna, możliwa do odtworzenia i przechowywana przez wymagany okres."
+      - akapit: "Procedura została opracowana na podstawie umów i regulaminów rachunków (zob. {{ref:dokument:regulamin-rachunku-osobistego}} oraz {{ref:dokument:regulamin-rachunku-firmowego}}) i uwzględnia przepisy, w szczególności {{ref:akt:dz-u-2024-1646-prawo-bankowe}} oraz {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+
+  - id: zamkniecie-zakres
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Procedura obowiązuje {wszystkich pracowników|pracowników} Banku uczestniczących w obsłudze rachunków w placówkach, w kanałach zdalnych i w jednostkach centralnych, w szczególności pracowników placówek, Infolinii, zespołu obsługi bankowości elektronicznej, zespołu rozliczeń oraz jednostki „{{fakt:jednostka.operacje}}”."
+      - ustep: "Procedurę stosuje się do następujących rachunków i umów:"
+        punkty:
+          - "rachunków osobistych (rozliczeniowo-oszczędnościowych) prowadzonych dla konsumentów, w tym rachunków wspólnych oraz rachunków osób małoletnich;"
+          - "rachunków oszczędnościowych prowadzonych do rachunku osobistego;"
+          - "rachunków bieżących i pomocniczych prowadzonych dla przedsiębiorców i innych klientów instytucjonalnych;"
+          - "umów o produkty, które wygasają lub podlegają rozliczeniu w związku z zamknięciem rachunku (karty, debet w rachunku, bankowość elektroniczna, usługi dodatkowe)."
+      - ustep: "Procedury nie stosuje się do zamykania lokat terminowych przed upływem okresu, na który zostały założone, ani do rozwiązywania umów kredytu; te czynności reguluje odrębna dokumentacja produktowa. Jeżeli jednak lokata lub kredyt są powiązane z rachunkiem prowadzonym przez Bank, pracownik {ustala|sprawdza} ich status zgodnie z zasadami opisanymi w dalszych częściach procedury."
+      - akapit: "Procedura nie obejmuje czynności związanych ze zgonem Posiadacza rachunku w zakresie dziedziczenia; w takim przypadku {stosuje się|obowiązują} odrębne instrukcje, a niniejsza procedura określa jedynie sposób zamknięcia rachunku po ustaleniu osób uprawnionych."
+
+  - id: zamkniecie-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Odpowiedzialność za prawidłowe stosowanie procedury {rozkłada się|ponoszą} następujące osoby i jednostki."
+      - ustep: "**Pracownik placówki** (doradca, kasjer, pracownik Infolinii) odpowiada za:"
+        punkty:
+          - "przyjęcie dyspozycji lub wypowiedzenia, ustalenie tożsamości i umocowania osoby składającej oświadczenie;"
+          - "przedstawienie Klientowi skutków zamknięcia rachunku i produktów powiązanych oraz poinformowanie o możliwości skorzystania z usługi zmiany banku;"
+          - "zebranie kompletu dokumentów i wprowadzenie dyspozycji do systemu {{fakt:zamkniecie.system.glowny}} w dniu przyjęcia;"
+          - "wydanie Klientowi potwierdzenia przyjęcia oświadczenia."
+      - ustep: "**Kierownik placówki** odpowiada za:"
+        punkty:
+          - "weryfikację zgodności dyspozycji z procedurą w sytuacjach wymagających jego akceptacji, w tym przy wypłacie salda powyżej {{fakt:zamkniecie.limit.wyplata-gotowkowa-salda}} oraz przy rachunkach wspólnych i firmowych;"
+          - "rozstrzyganie wątpliwości co do umocowania i tożsamości;"
+          - "bieżącą kontrolę terminowości działań placówki."
+      - ustep: "**{{fakt:jednostka.operacje}}** (właściciel procedury) odpowiada za:"
+        punkty:
+          - "rozliczenie rachunków, zamknięcie ich w systemie {{fakt:zamkniecie.system.glowny}} oraz prowadzenie rejestru zamknięć {{fakt:zamkniecie.system.rejestr}};"
+          - "obsługę wypowiedzeń składanych drogą korespondencyjną oraz wypowiedzeń kierowanych przez Bank;"
+          - "aktualizację procedury i szkolenie pracowników w jej zakresie."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** odpowiada za {nadzór|kontrolę} stosowania procedury, w tym za kontrolę wyrywkową zamknięć oraz opiniowanie zmian procedury, a także za ocenę wypowiedzeń dokonywanych z przyczyn związanych z ryzykiem nadużyć i przeciwdziałaniem praniu pieniędzy."
+      - ustep: "**{{fakt:jednostka.prawny}}** odpowiada za opiniowanie nietypowych przypadków (rachunki z zajęciem, spory między współposiadaczami, wątpliwości co do umocowania) oraz za treść wzorów wypowiedzeń."
+      - ustep: "**{{fakt:jednostka.ryzyko}}** {rozstrzyga|podejmuje decyzje} w sprawach rozliczenia sald ujemnych i windykacji należności po zamknięciu rachunku."
+
+  - id: zamkniecie-definicje
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - ustep: "Ponadto w procedurze używa się następujących określeń:"
+        punkty:
+          - "**Wypowiedzenie** — oświadczenie woli jednej ze stron o zakończeniu umowy rachunku po upływie terminu wypowiedzenia;"
+          - "**Rozwiązanie umowy** — zakończenie umowy w drodze wypowiedzenia, porozumienia stron albo wygaśnięcia z mocy prawa lub umowy;"
+          - "**Zamknięcie rachunku** — czynność {techniczna|systemowa}, w wyniku której rachunek zostaje zablokowany dla dalszych operacji, rozliczony i wyłączony z obsługi w systemie {{fakt:zamkniecie.system.glowny}};"
+          - "**Rachunek techniczny** — wewnętrzny rachunek Banku, na którym {ewidencjonuje się|księguje się} środki niewypłacone Klientowi po zamknięciu jego rachunku;"
+          - "**Rachunek nieaktywny** — rachunek, na którym przez okres {określony|wskazany} w umowie nie wykonano operacji zleconej przez Posiadacza;"
+          - "**Produkty powiązane** — karty płatnicze, limit w rachunku (debet), zlecenia stałe, polecenia zapłaty, usługi bankowości elektronicznej i inne usługi dodatkowe wykonywane za pośrednictwem rachunku;"
+          - "**Zmiana banku** — usługa {polegająca na przeniesieniu|służąca przeniesieniu} do innego banku zleceń stałych i poleceń zapłaty oraz salda rachunku, wraz z zamknięciem rachunku w Banku;"
+          - "**Zajęcie** — czynność organu egzekucyjnego lub innego uprawnionego organu skutkująca ograniczeniem dysponowania środkami na rachunku;"
+          - "**Osoba umocowana** — pełnomocnik, przedstawiciel ustawowy lub osoba uprawniona do reprezentacji Posiadacza niebędącego osobą fizyczną;"
+          - "**Rachunek firmowy** — rachunek prowadzony dla przedsiębiorcy lub innego podmiotu niebędącego konsumentem."
+
+  - id: zamkniecie-schemat
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - akapit: "Poniższy schemat {przedstawia|ilustruje} ogólny przebieg zamknięcia rachunku. Szczegółowe czynności {opisują|określają} kolejne części procedury."
+      - schemat:
+          - nazwa: "Przyjęcie dyspozycji"
+            wyjasnienie: "Pracownik {ustala|weryfikuje} tożsamość i umocowanie, {przyjmuje|odbiera} wypowiedzenie lub wniosek i rejestruje je w systemie w dniu wpływu."
+          - nazwa: "Analiza powiązań"
+            wyjasnienie:
+              - "Pracownik {sprawdza|bada} produkty powiązane, salda, zajęcia i zobowiązania wobec Banku."
+              - "Wynik analizy {przekazuje|przedstawia} Klientowi."
+          - nazwa: "Rozwiązanie umowy"
+            wyjasnienie: "Umowa {wygasa|kończy się} po upływie terminu wypowiedzenia albo w dniu uzgodnionym przez strony."
+          - nazwa: "Rozliczenie salda"
+            wyjasnienie: "Bank nalicza odsetki i opłaty, rozlicza zobowiązania i {wypłaca|przekazuje} saldo na wskazany rachunek lub w kasie."
+          - nazwa: "Zamknięcie i potwierdzenie"
+            wyjasnienie: "Rachunek zostaje {zamknięty|wyłączony z obsługi} w systemie, a Klient otrzymuje potwierdzenie zamknięcia."
+          - nazwa: "Archiwizacja"
+            wyjasnienie: "Dokumentacja trafia do archiwum i jest {przechowywana|zachowywana} przez wymagany okres."
+
+  - id: zamkniecie-zasady-ogolne
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-wymagane
+    elementy:
+      - ustep: "Umowa rachunku zawarta na czas nieokreślony {może być|może zostać} rozwiązana:"
+        punkty:
+          - "przez Klienta w drodze wypowiedzenia z zachowaniem terminu {{fakt:termin.wypowiedzenie-przez-klienta}}, chyba że umowa przewiduje inny termin;"
+          - "przez Bank w drodze wypowiedzenia z zachowaniem terminu {{fakt:termin.wypowiedzenie-przez-bank}}, wyłącznie z przyczyn określonych w umowie i regulaminie;"
+          - "za porozumieniem stron, w dniu uzgodnionym w porozumieniu;"
+          - "z mocy prawa, w szczególności w razie śmierci Posiadacza rachunku indywidualnego lub ustania bytu prawnego Posiadacza niebędącego osobą fizyczną."
+      - akapit: "Rozwiązanie umowy {nie zwalnia|nie uchyla wobec} Klienta obowiązku zapłaty należności wymagalnych na dzień zamknięcia rachunku, a także należności powstałych po tym dniu z tytułu operacji zleconych przed rozwiązaniem umowy. Bank {nie pobiera|nie nalicza} opłaty za samo zamknięcie rachunku osobistego ({{fakt:oplata.rachunek-osobisty.zamkniecie}}); opłata za zamknięcie rachunku firmowego wynosi {{fakt:oplata.firma.zamkniecie-rachunku}}."
+      - ustep: "Zamknięcie rachunku jest możliwe wyłącznie po spełnieniu łącznie następujących warunków:"
+        punkty:
+          - "umowa została rozwiązana, a termin wypowiedzenia upłynął albo strony uzgodniły inną datę;"
+          - "wszystkie karty zostały zwrócone, zniszczone lub zastrzeżone, a limit w rachunku — zamknięty;"
+          - "zlecenia stałe i polecenia zapłaty zostały wygaszone lub przeniesione;"
+          - "saldo rachunku zostało rozliczone, a Klient wskazał sposób wypłaty środków;"
+          - "nie istnieją zajęcia egzekucyjne ani blokady, które uniemożliwiałyby wypłatę lub zamknięcie rachunku."
+      - akapit: "Pracownik nie {zamyka|likwiduje} rachunku w systemie wyłącznie na podstawie ustnej informacji Klienta. Podstawą jest {pisemne|złożone na trwałym nośniku} oświadczenie na formularzu {{fakt:zamkniecie.formularz.wypowiedzenie}} albo wypowiedzenie złożone w bankowości elektronicznej, a w przypadku inicjatywy Banku — wypowiedzenie przygotowane zgodnie z częścią procedury poświęconą wypowiedzeniu przez Bank."
+      - akapit: "Każde zamknięcie rachunku {ewidencjonuje się|odnotowuje się} w rejestrze zamknięć {{fakt:zamkniecie.system.rejestr}} z podaniem numeru rachunku, daty złożenia oświadczenia, daty rozwiązania umowy, daty zamknięcia, podstawy rozwiązania oraz osoby, która wykonała czynność. Z rejestru korzystają „{{fakt:jednostka.zgodnosc}}” i „{{fakt:jednostka.operacje}}”."

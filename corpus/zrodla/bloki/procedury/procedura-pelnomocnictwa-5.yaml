@@ -1,0 +1,188 @@
+bloki:
+  - id: procedura-pelnomocnictwa-szczegolne-sygnaly
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-sygnaly
+    elementy:
+      - akapit: "Pracownik zwraca szczególną uwagę na okoliczności, które mogą świadczyć o fałszerstwie, nadużyciu pełnomocnictwa lub wykorzystywaniu osoby w trudnej sytuacji życiowej. Wystąpienie jednego sygnału nie przesądza o nieprawidłowości, ale obliguje do dokładniejszej weryfikacji i odnotowania jej wyniku w karcie weryfikacji."
+      - tabela:
+          kolumny:
+            - naglowek: "Sygnał ostrzegawczy"
+              waga: 2
+            - naglowek: "Przykład"
+              waga: 2
+            - naglowek: "Zalecane działanie"
+              waga: 2
+          wiersze:
+            - ["Rozbieżność w dokumencie", "Inne dane osobowe niż w systemie, różna pisownia nazwiska, inna data sporządzenia niż w treści", "Wstrzymaj przyjęcie i wyjaśnij z Klientem; skontaktuj się z mocodawcą"]
+            - ["Pośpiech i presja", "Pełnomocnik domaga się natychmiastowej wypłaty dużej kwoty, odmawia kontaktu z mocodawcą", "Odmów realizacji do czasu potwierdzenia z mocodawcą"]
+            - ["Zachowanie mocodawcy", "Mocodawca sprawia wrażenie zdezorientowanego, nie zna zakresu umocowania, jest nieustannie nadzorowany", "Rozmawiaj z mocodawcą osobno; powiadom kierownika placówki"]
+            - ["Nietypowy zakres umocowania", "Pełnomocnictwo ogólne do wszystkich środków z prawem przenoszenia ich na rachunek pełnomocnika", "Zgłoś do oceny osoby pełniącej funkcję „{{fakt:pelnomocnictwo.jednostka.aml}}”"]
+            - ["Jakość dokumentu", "Ślady przeróbek, niejednolity krój pisma, nieczytelna pieczęć notariusza", "Przekaż dokument do komórki „{{fakt:jednostka.bezpieczenstwo}}”; nie zwracaj go Klientowi"]
+            - ["Wzór zachowań", "Wielokrotne ustanawianie i odwoływanie pełnomocników, wiele rachunków obsługiwanych przez tę samą osobę", "Odnotuj w systemie i zgłoś do komórki „{{fakt:jednostka.zgodnosc}}”"]
+            - ["Transakcje", "Wypłata niemal całości środków wkrótce po ustanowieniu pełnomocnictwa, przelewy do państw wysokiego ryzyka", "Wstrzymaj realizację i zastosuj zasady postępowania z transakcją podejrzaną"]
+
+  - id: procedura-pelnomocnictwa-szczegolne-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Gdy {masz|powziąłeś} uzasadnione podejrzenie nieprawidłowości, wstrzymaj czynność i {zgłoś|przekaż} sprawę kierownikowi placówki."
+            podkroki:
+              - tekst: "Nie informuj pełnomocnika ani mocodawcy, że sprawa została zgłoszona do komórki „{{fakt:jednostka.zgodnosc}}”; informację o przeprowadzeniu dodatkowej weryfikacji przedstaw jako standardowy element procedury."
+              - tekst: "Wypełnij formularz F-PEŁ-05 i przekaż go {{fakt:pelnomocnictwo.termin.zgloszenie-zgodnosc}} do komórki „{{fakt:jednostka.zgodnosc}}”; dołącz skany dokumentów i opis zdarzeń."
+              - tekst: "Nie niszcz ani nie zwracaj Klientowi dokumentów budzących wątpliwości; zabezpiecz je w sejfie placówki."
+          - tekst: "Wykonaj decyzję komórki „{{fakt:jednostka.zgodnosc}}” dotyczącą dalszego postępowania."
+            podkroki:
+              - tekst: "Jeżeli decyzja dopuszcza kontynuację, odnotuj w systemie uzasadnienie i zastosuj dodatkowe środki, np. potwierdzenie z mocodawcą przy każdej dyspozycji."
+              - tekst: "Jeżeli decyzja nakazuje odmowę, poinformuj Klienta o odmowie bez ujawniania jej przyczyn związanych z przeciwdziałaniem praniu pieniędzy, powołując się na wewnętrzne zasady oceny umocowania."
+              - tekst: "Zgłoszenie do właściwego organu dokonuje wyłącznie osoba pełniąca funkcję „{{fakt:pelnomocnictwo.jednostka.aml}}”; pracownik placówki nie kontaktuje się z organem samodzielnie."
+
+  - id: procedura-pelnomocnictwa-szczegolne-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-opc
+    elementy:
+      - kroki:
+          - tekst: "W przypadku podejrzenia wykorzystywania finansowego osoby starszej lub zależnej od pełnomocnika {zastosuj|stosuj} dodatkowe środki ochrony."
+            podkroki:
+              - tekst: "Poproś mocodawcę o rozmowę bez udziału pełnomocnika i zapytaj, czy rozumie zakres udzielonego umocowania oraz czy wyraża wolę jego utrzymania."
+              - tekst: "Zwróć uwagę na wypłaty znacznie przekraczające dotychczasowy wzorzec wydatków mocodawcy, w szczególności po zmianie stanu zdrowia lub miejsca zamieszkania."
+              - tekst: "Zaproponuj mocodawcy ograniczenie umocowania — kwotowe lub do wskazanych kanałów — oraz ustanowienie powiadomień o transakcjach."
+          - tekst: "Jeżeli podejrzenie nie ustępuje, zgłoś sprawę komórce „{{fakt:jednostka.bezpieczenstwo}}” i, w uzgodnieniu z nią, zawiadom właściwe organy."
+
+  - id: procedura-pelnomocnictwa-szczegolne-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-opc
+    elementy:
+      - kroki:
+          - tekst: "Gdy istnieje podejrzenie podrobienia podpisu mocodawcy lub pełnomocnika, {postępuj|działaj} według poniższych zasad."
+            podkroki:
+              - tekst: "Nie wypowiadaj wobec Klienta oskarżeń; poproś o ponowne złożenie podpisu w Twojej obecności i zachowaj próbki."
+              - tekst: "Sporządź notatkę z opisem rozbieżności, wskaż cechy wzoru podpisu, które się nie zgadzają, i przekaż ją komórce „{{fakt:jednostka.bezpieczenstwo}}”."
+              - tekst: "Do czasu wyjaśnienia nie realizuj dyspozycji; mocodawcę zawiadom na dane kontaktowe zapisane w systemie."
+          - tekst: "Jeżeli dyspozycja została wykonana przed ujawnieniem podejrzenia, wystąp o ocenę możliwości odwołania transakcji i zabezpieczenia środków u odbiorcy."
+
+  - id: procedura-pelnomocnictwa-szczegolne-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-opc
+    elementy:
+      - kroki:
+          - tekst: "Gdy Klient żąda przyjęcia pełnomocnictwa, które nie spełnia wymogów procedury, {odmów|odmów jego przyjęcia} w sposób, który {nie narusza|chroni} relacji z Klientem."
+            podkroki:
+              - tekst: "Wyjaśnij, jakie wymogi nie zostały spełnione, i wskaż, jak można je uzupełnić, np. poprzez poświadczenie podpisu przez notariusza."
+              - tekst: "Wydaj pisemną informację o odmowie na żądanie Klienta; kopię zachowaj w aktach."
+              - tekst: "Poinformuj Klienta o prawie do złożenia reklamacji na zasadach określonych w regulaminie produktu."
+          - tekst: "Nie podejmuj samodzielnie decyzji o wyjątkach od zasad; wyjątki zatwierdza komórka „{{fakt:jednostka.prawny}}” na wniosek kierownika placówki."
+
+  - id: procedura-pelnomocnictwa-szczegolne-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-opc
+    elementy:
+      - kroki:
+          - tekst: "Przy pełnomocnictwie, które pozwala pełnomocnikowi działać także na własną rzecz (czynność z samym sobą lub reprezentacja obu stron), {zachowaj|zastosuj} ostrożność."
+            podkroki:
+              - tekst: "Sprawdź, czy dokument wyraźnie zezwala na takie czynności; brak wyraźnej zgody oznacza, że czynność może być nieważna lub wymagać potwierdzenia mocodawcy."
+              - tekst: "Przy przelewach z rachunku mocodawcy na rachunek pełnomocnika powyżej {{fakt:pelnomocnictwo.limit.druga-weryfikacja}} wymagaj potwierdzenia mocodawcy i zatwierdzenia kierownika placówki."
+              - tekst: "Zapytaj o cel przelewu i odnotuj odpowiedź w opisie dyspozycji."
+          - tekst: "Przy kilku pełnomocnikach tego samego mocodawcy sprawdź, czy dokumenty nie nakładają na siebie sprzecznych zakresów i czy umocowania nie są łączne; w razie sprzeczności skonsultuj się z komórką „{{fakt:pelnomocnictwo.jednostka.weryfikacja}}”."
+
+  - id: procedura-pelnomocnictwa-kontrola
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-kontrola-wymagane
+    elementy:
+      - ustep: "Przestrzeganie procedury podlega kontroli {na trzech poziomach|trzystopniowej}:"
+        punkty:
+          - "kontrola pierwszego poziomu — kierownik placówki co miesiąc sprawdza próbę {{fakt:pelnomocnictwo.limit.proba-kontrolna}} pełnomocnictw zarejestrowanych w jego placówce i porównuje wpisy w systemie z dokumentami;"
+          - "kontrola drugiego poziomu — {{fakt:pelnomocnictwo.jednostka.weryfikacja}} raz na kwartał analizuje raporty z modułu pełnomocnictw pod kątem wpisów bez kompletnej dokumentacji i bez zatwierdzenia drugiej osoby;"
+          - "kontrola trzeciego poziomu — {{fakt:pelnomocnictwo.jednostka.audyt}} ocenia skuteczność procedury w cyklach nie rzadszych niż {{fakt:pelnomocnictwo.okres.audyt}}."
+      - ustep: "Wyniki kontroli odnotowuje się w rejestrze kontroli. Stwierdzone nieprawidłowości {usuwa się|koryguje się} w terminie wskazanym przez kontrolującego, a ich powtarzalność jest podstawą do zmiany procedury lub zorganizowania szkolenia."
+
+  - id: procedura-pelnomocnictwa-kontrola-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-kontrola
+    elementy:
+      - ustep: "{{fakt:pelnomocnictwo.jednostka.weryfikacja}} monitoruje następujące wskaźniki jakości i ryzyka:"
+        punkty:
+          - "odsetek pełnomocnictw zarejestrowanych bez zatwierdzenia drugiej osoby;"
+          - "liczba odmów przyjęcia pełnomocnictwa i ich przyczyny;"
+          - "średni czas weryfikacji pełnomocnictw zagranicznych w stosunku do terminu {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}};"
+          - "liczba pełnomocnictw bezterminowych, dla których minął termin potwierdzenia aktualności ({{fakt:pelnomocnictwo.termin.potwierdzenie-aktualnosci}});"
+          - "liczba dyspozycji wykonanych po dacie odwołania lub wygaśnięcia pełnomocnictwa."
+      - ustep: "Przekroczenie progów ustalonych przez komórkę „{{fakt:jednostka.ryzyko}}” jest zgłaszane właścicielowi procedury w ciągu {{fakt:pelnomocnictwo.termin.zawiadomienie-mocodawcy}} od dnia sporządzenia raportu."
+
+  - id: procedura-pelnomocnictwa-kontrola-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-kontrola
+    elementy:
+      - ustep: "W razie stwierdzenia, że pełnomocnictwo zostało przyjęte lub zarejestrowane z naruszeniem procedury, {należy|pracownik obowiązany jest}:"
+        punkty:
+          - "niezwłocznie wstrzymać w systemie uprawnienia pełnomocnika do czasu uzupełnienia braków;"
+          - "ocenić, czy w międzyczasie zostały wykonane dyspozycje, które wymagają potwierdzenia przez mocodawcę;"
+          - "poinformować mocodawcę o stwierdzonych brakach, gdy mogą one wpływać na jego prawa;"
+          - "odnotować zdarzenie w rejestrze incydentów operacyjnych."
+      - ustep: "Naruszenia o charakterze umyślnym oraz powtarzające się naruszenia kierownik przekazuje do oceny komórki „{{fakt:jednostka.zgodnosc}}” i, w stosownych przypadkach, do właściwej komórki zajmującej się sprawami pracowniczymi."
+
+  - id: procedura-pelnomocnictwa-kontrola-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-kontrola
+    elementy:
+      - ustep: "Pracownicy obsługujący pełnomocnictwa są szkoleni w następującym zakresie:"
+        punkty:
+          - "wprowadzające szkolenie przed dopuszczeniem do samodzielnej pracy, obejmujące formę i zakres pełnomocnictw, weryfikację tożsamości i obsługę modułu pełnomocnictw;"
+          - "coroczne szkolenie odświeżające, uwzględniające zmiany przepisów, nowe typologie nadużyć i wnioski z kontroli;"
+          - "szkolenie dodatkowe dla pracowników obsługujących Klientów firmowych w zakresie prokury i reprezentacji spółek."
+      - ustep: "Udział w szkoleniach dokumentuje się w ewidencji szkoleń. Brak ukończenia szkolenia w terminie powoduje czasowe odebranie uprawnień do zatwierdzania wpisów w module pełnomocnictw."
+
+  - id: procedura-pelnomocnictwa-archiwizacja
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-archiwum-wymagane
+    elementy:
+      - ustep: "Dla każdego pełnomocnictwa tworzy się w systemie elektronicznym ARCH-DOK teczkę, w której przechowuje się:"
+        punkty:
+          - "skan pełnomocnictwa wraz z załącznikami (apostille, tłumaczenie przysięgłe, odpis z rejestru);"
+          - "kartę wzorów podpisów F-PEŁ-02 oraz formularz F-PEŁ-01, jeżeli pełnomocnictwo złożono w placówce;"
+          - "kartę weryfikacji F-PEŁ-04 z opisem sprawdzonych elementów i podpisami pracownika oraz osoby zatwierdzającej;"
+          - "dokumenty dotyczące odwołania, wypowiedzenia lub wygaśnięcia, w tym oświadczenie lub akt zgonu;"
+          - "opinie {{fakt:jednostka.prawny}} oraz decyzje komórki „{{fakt:jednostka.zgodnosc}}”, jeżeli sprawa była do nich kierowana."
+      - ustep: "Oryginały dokumentów, które Klient przekazał Bankowi, przechowuje się w archiwum przez {{fakt:pelnomocnictwo.okres.archiwizacja-oryginalow}} od dnia wygaśnięcia pełnomocnictwa. Dokumenty i informacje związane ze stosowaniem środków bezpieczeństwa finansowego przechowuje się przez {{fakt:okres.firma.przechowywanie-dokumentow}} licząc od pierwszego dnia roku następującego po roku zakończenia stosunków gospodarczych z Klientem, chyba że przepisy wymagają okresu dłuższego."
+      - ustep: "Po upływie okresów przechowywania dokumenty niszczy się komisyjnie, a z czynności sporządza się protokół. Niszczenie nie może nastąpić, jeżeli Bank wie o toczącym się postępowaniu, w którym dokumenty mogą stanowić dowód."
+
+  - id: procedura-pelnomocnictwa-archiwum-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-archiwum
+    elementy:
+      - ustep: "Dostęp do teczki pełnomocnictwa mają wyłącznie osoby, które potrzebują go do wykonywania obowiązków. Dostęp przyznaje i monitoruje komórka „{{fakt:pelnomocnictwo.jednostka.weryfikacja}}”. Każde otwarcie teczki jest rejestrowane w dzienniku zdarzeń systemu."
+      - ustep: "Kopie dokumentów z teczki mogą być udostępniane:"
+        punkty:
+          - "mocodawcy na jego żądanie, z wyjątkiem informacji objętych tajemnicą przeciwdziałania praniu pieniędzy;"
+          - "pełnomocnikowi w zakresie dokumentu, na podstawie którego działa;"
+          - "sądom, organom ścigania i organom nadzoru na podstawie przepisów, po zatwierdzeniu przez komórkę „{{fakt:jednostka.prawny}}”;"
+          - "audytorom wewnętrznym i zewnętrznym w zakresie niezbędnym do przeprowadzenia badania."
+
+  - id: procedura-pelnomocnictwa-archiwum-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-archiwum
+    elementy:
+      - ustep: "Dokumenty papierowe, które Bank ma obowiązek zachować w oryginale, przekazuje się do archiwum placówki w terminie siedmiu dni od zarejestrowania pełnomocnictwa, w zamkniętej kopercie oznaczonej numerem teczki. Przekazanie odnotowuje się w ewidencji dokumentów, a kierownik placówki potwierdza zgodność liczby i opisu dokumentów."
+      - ustep: "Dokumenty zagraniczne i tłumaczenia przysięgłe przechowuje się razem w jednej teczce. Jeżeli Klient odebrał oryginał, Bank zachowuje kopię potwierdzoną przez pracownika za zgodność z okazanym oryginałem, z adnotacją o dacie i osobie dokonującej potwierdzenia."
+
+  - id: procedura-pelnomocnictwa-koncowe
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-koncowe
+    elementy:
+      - akapit: "Procedura obowiązuje od dnia {{param:od}} i znajduje zastosowanie do pełnomocnictw przedstawionych od tego dnia. Pełnomocnictwa zarejestrowane przed tym dniem pozostają skuteczne, a ich ponowna weryfikacja następuje przy najbliższej dyspozycji lub w ramach potwierdzenia aktualności."
+      - akapit: "W sprawach nieuregulowanych w procedurze stosuje się odpowiednio postanowienia dokumentów „{{ref:dokument:regulamin-rachunku-osobistego}}” i „{{ref:dokument:regulamin-rachunku-firmowego}}”, a w razie wątpliwości interpretacyjnych rozstrzyga {{param:wlasciciel}}."
+      - akapit: "Procedura została zatwierdzona przez {{param:zatwierdzil}}. Wzory formularzy i wykazy, o których mowa w procedurze, są dostępne w repozytorium dokumentów wewnętrznych Banku."

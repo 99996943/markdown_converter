@@ -1,0 +1,20 @@
+bloki:
+  - id: taryfa-karty-oplaty
+    typy: [taryfy]
+    tematy: [karty]
+    kategoria: pozycja-taryfy
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wydanie duplikatu karty"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "jednorazowo"
+          - usluga: "Przelew"
+            stawka: "{{fakt:oplata.prowizja.przelew}}"
+            tryb: "od kwoty przelewu"
+            podpozycje:
+              - usluga: "Przelew zagraniczny"
+                stawka: "{{fakt:oplata.prowizja.przelew}}"
+                tryb: "za przelew"
+          - usluga: "Zastrzeżenie karty pod numerem {{fakt:kontakt.infolinia}}"
+            stawka: "0,00 zł"
+            tryb: "za zastrzeżenie"

@@ -1,0 +1,121 @@
+bloki:
+  # ---------------------------------------------------------------- VIII. Płatności mobilne
+  - id: taryfa-bankowosc-elektroniczna-mobilne-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Płatności mobilne umożliwiają {regulowanie|zapłatę} należności telefonem wyposażonym w moduł zbliżeniowy, po zarejestrowaniu karty płatniczej lub rachunku w aplikacji mobilnej, a także płatność kodem w sklepach internetowych. Dzienny limit płatności mobilnych wynosi {{fakt:limit.platnosci-mobilne.dzienny}}, a limit pojedynczej transakcji — {{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-limit-jednorazowy}}."
+      - akapit: "Transakcje do kwoty {{fakt:limit.bankowosc.platnosc-niskokwotowa}} mogą być potwierdzane bez silnego uwierzytelnienia, w granicach limitów określonych w regulaminie. Opłaty za karty płatnicze zarejestrowane w aplikacji określa „{{ref:dokument:taryfa-karty}}”."
+
+  - id: taryfa-bankowosc-elektroniczna-mobilne-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Aktywacja|Uruchomienie} płatności mobilnych w aplikacji"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-aktywacja}}"
+            tryb: "jednorazowo"
+          - usluga: "Rejestracja kolejnej karty lub rachunku w portfelu płatności mobilnych"
+            stawka: "bez opłat"
+            tryb: "za rejestrację"
+          - usluga: "Płatność mobilna w punkcie handlowo-usługowym w kraju"
+            stawka: "bez opłat"
+            tryb: "za transakcję"
+          - usluga: "Płatność mobilna za granicą w walucie obcej[^1]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-mobilna-zagranica}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "Płatność kodem w sklepie internetowym"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.platnosc-kodem-sklep}}"
+            tryb: "za transakcję"
+          - usluga: "Wypłata gotówki w bankomacie Banku z użyciem aplikacji mobilnej"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.wyplata-mobilna-bankomat}}"
+            tryb: "za operację"
+          - usluga: "Wypłata gotówki z użyciem aplikacji w bankomacie innego operatora"
+            stawka: "{{fakt:oplata.bankomat-obcy}}"
+            tryb: "za operację"
+          - usluga: "Zmiana dziennego limitu płatności mobilnych w aplikacji"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+          - usluga: "Zablokowanie płatności mobilnych na urządzeniu zgubionym lub skradzionym[^2]"
+            stawka: "bez opłat"
+            tryb: "za zablokowanie"
+          - usluga: "Przelew na numer telefonu odbiorcy wykonany w aplikacji mobilnej"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-na-telefon}}"
+            tryb: "za przelew"
+          - usluga: "Żądanie zapłaty wysłane do innego użytkownika aplikacji"
+            stawka: "bez opłat"
+            tryb: "za żądanie"
+    przypisy:
+      1: "Opłatę pobiera się dodatkowo do kursu waluty z Tabeli kursów walut Banku; nie pobiera się jej przy płatnościach w złotych wykonywanych za granicą, jeżeli akceptant rozlicza transakcję w złotych."
+      2: "Zablokowanie jest możliwe w aplikacji mobilnej na innym urządzeniu, w serwisie internetowym albo na Infolinii pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}; blokada nie wpływa na ważność karty fizycznej."
+
+  # ---------------------------------------------------------------- IX. Usługi dodatkowe
+  - id: taryfa-bankowosc-elektroniczna-uslugi-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Usługi dodatkowe obejmują agregację rachunków z innych banków, archiwum dokumentów elektronicznych, dostęp do interfejsów programistycznych (API) dla dostawców usług płatniczych i klientów korporacyjnych oraz pomoc techniczną Infolinii. Wiadomości i dokumenty doręczane są w bankowości elektronicznej jako trwały nośnik; kopia papierowa jest dodatkowo płatna."
+      - akapit: "Dostęp do interfejsu API w środowisku produkcyjnym jest ograniczony do {{fakt:oplata.bankowosc-elektroniczna.api-limit-zapytan}}; zapytania ponad ten limit są rozliczane osobno. Zasady udostępniania informacji o rachunku dostawcom usług płatniczych wynikają z {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+
+  - id: taryfa-bankowosc-elektroniczna-uslugi-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Agregacja rachunków prowadzonych w innych bankach — pierwszy rachunek"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.agregacja-rachunkow}}"
+            tryb: "miesięcznie"
+          - usluga: "Agregacja rachunków prowadzonych w innych bankach — każdy kolejny rachunek"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.agregacja-dodatkowy-rachunek}}"
+            tryb: "miesięcznie"
+          - usluga: "E-archiwum dokumentów (przechowywanie powyżej okresu {{fakt:bankowosc.historia-operacji}})[^1]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-archiwum}}"
+            tryb: "miesięcznie"
+          - usluga: "Kopia papierowa dokumentu udostępnionego w bankowości elektronicznej"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.e-dokument-kopia-papierowa}}"
+            tryb: "za dokument"
+          - usluga: "Wyciąg z rachunku w postaci papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za wyciąg"
+          - usluga: "Środowisko testowe (sandbox) interfejsu API"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-sandbox}}"
+            tryb: "miesięcznie"
+          - usluga: "Certyfikat dostawcy usług płatniczych do interfejsu API[^2]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-certyfikat-tpp}}"
+            tryb: "rocznie"
+          - usluga: "Dostęp produkcyjny do interfejsu API dla klientów korporacyjnych"
+            stawka: "{{fakt:oplata.firma.integracja-api}}"
+            tryb: "miesięcznie"
+          - usluga: "Zapytania do interfejsu API ponad miesięczny limit"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.api-zapytanie-ponad-limit}}"
+            tryb: "za zapytanie"
+          - usluga: "Pomoc zdalna konsultanta w konfiguracji aplikacji lub serwisu"
+            stawka: "bez opłat"
+            tryb: "za zgłoszenie"
+          - usluga: "Zdalna sesja serwisowa z udostępnieniem ekranu poza godzinami pracy zespołu wsparcia"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.pomoc-zdalna-sesja}}"
+            tryb: "za sesję"
+          - usluga: "Szkolenie dla użytkowników bankowości elektronicznej dla firm"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.szkolenie-godzina}}"
+            tryb: "za godzinę"
+          - usluga: "Dedykowany opiekun techniczny bankowości dla firm"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.dedykowany-opiekun}}"
+            tryb: "miesięcznie"
+    przypisy:
+      1: "Dokumenty z okresu objętego historią operacji są dostępne w serwisie bez dodatkowych opłat; opłata dotyczy wyłącznie przechowywania i udostępniania dokumentów starszych, aż do ich usunięcia na wniosek Klienta."
+      2: "Certyfikat jest wydawany dostawcom usług płatniczych posiadającym zezwolenie właściwego organu nadzoru; Bank nie pobiera opłaty za dostęp tych podmiotów do danych w zakresie, w którym ustawa nakazuje dostęp bezpłatny."
+
+  # ---------------------------------------------------------------- X. Objaśnienia
+  - id: taryfa-bankowosc-elektroniczna-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: objasnienia-taryfa-bankowosc-elektroniczna
+    elementy:
+      - ustep: "Użyte w Taryfie określenie „miesięcznie” oznacza opłatę naliczaną za każdy rozpoczęty miesiąc korzystania z usługi i pobieraną w ostatnim dniu miesiąca kalendarzowego; „za operację” i „za przelew” — opłatę pobieraną od każdej pojedynczej dyspozycji; „rocznie” — opłatę pobieraną z góry za dwanaście miesięcy."
+      - ustep: "Przez „kanały elektroniczne” rozumie się serwis internetowy, aplikację mobilną {{fakt:bankowosc.nazwa-aplikacji}} oraz interfejsy programistyczne Banku. Dyspozycje składane przez Infolinię i w placówce Banku nie są dyspozycjami składanymi w kanałach elektronicznych, nawet jeżeli są realizowane z użyciem systemu bankowości elektronicznej."
+      - ustep: "Reklamacje dotyczące opłat pobranych za usługi bankowości elektronicznej Bank rozpatruje w terminie {{fakt:termin.reklamacja.rozpatrzenie}}, a w sprawach dotyczących usług płatniczych — w terminie {{fakt:termin.reklamacja.platnicze}} od dnia ich otrzymania. Reklamację można złożyć w serwisie internetowym, w placówce, na adres {{fakt:kontakt.email-reklamacje}} lub telefonicznie pod numerem {{fakt:kontakt.infolinia}}."
+      - akapit: "Opłaty nie obejmują kosztów po stronie Klienta związanych z korzystaniem z usług, w tym opłat operatora telekomunikacyjnego za transmisję danych i wiadomości, które ustala operator zgodnie z własnym cennikiem."

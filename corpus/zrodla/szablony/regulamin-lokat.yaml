@@ -1,0 +1,47 @@
+id: regulamin-lokat
+typ: regulaminy
+temat: lokaty
+tytul: ["Regulamin {rachunków oszczędnościowych i lokat terminowych|rachunków oszczędnościowych oraz lokat terminowych} {{param:bank}} dla konsumentów"]
+uklady: [jedna-kolumna]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [lokaty-zakres, wspolne-definicje-regulamin, lokaty-zawarcie-umowy, lokaty-identyfikacja]
+    opcjonalne: { kategorie: [paragraf-lokaty-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Rachunek oszczędnościowy"
+    wymagane: [lokaty-ro-otwarcie, lokaty-ro-wyplaty, lokaty-ro-nieaktywnosc]
+    opcjonalne: { kategorie: [paragraf-lokaty-rachunek], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Lokaty terminowe — rodzaje, zakładanie, odnawianie"
+    wymagane: [lokaty-rodzaje, lokaty-zakladanie, lokaty-odnowienie, lokaty-dyspozycje]
+    opcjonalne: { kategorie: [paragraf-lokaty-lokata], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Oprocentowanie i kapitalizacja odsetek"
+    wymagane: [lokaty-oprocentowanie, lokaty-naliczanie, lokaty-zmiana-stopy]
+    opcjonalne: { kategorie: [paragraf-lokaty-odsetki], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zerwanie lokaty przed terminem"
+    wymagane: [lokaty-zerwanie, lokaty-zerwanie-skutki]
+    opcjonalne: { kategorie: [paragraf-lokaty-zerwanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Podatek od odsetek"
+    wymagane: [lokaty-podatek]
+    opcjonalne: { kategorie: [paragraf-lokaty-podatek], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Gwarancje Bankowego Funduszu Gwarancyjnego"
+    wymagane: [wspolne-bfg-regulamin, lokaty-bfg-uzupelnienie]
+  - rodzaj: rozdzial
+    tytul: "Reklamacje i pozasądowe rozstrzyganie sporów"
+    wymagane: [wspolne-reklamacje-regulamin]
+    opcjonalne: { kategorie: [paragraf-lokaty-spory], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zmiana Regulaminu"
+    wymagane: [wspolne-zmiany-regulamin]
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [lokaty-koncowe]
+    opcjonalne: { kategorie: [paragraf-lokaty-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "lokaty terminowej"

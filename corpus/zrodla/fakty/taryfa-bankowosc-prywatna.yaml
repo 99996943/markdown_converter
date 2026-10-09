@@ -1,0 +1,304 @@
+fakty:
+  - id: limit.prywatna.prog-wejscia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500000.00
+      - od: 2027-01-01
+        wartosc: 750000.00
+    alternatywy: [300000.00, 1000000.00]
+  - id: oplata.prywatna.pakiet-prywatny-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 49.00
+      - od: 2027-01-01
+        wartosc: 59.00
+    alternatywy: [0.00, 69.00]
+  - id: oplata.prywatna.pakiet-plus-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 129.00
+      - od: 2027-01-01
+        wartosc: 149.00
+    alternatywy: [99.00, 179.00]
+  - id: limit.prywatna.pakiet-prywatny-saldo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250000.00
+    alternatywy: [150000.00, 400000.00]
+  - id: limit.prywatna.pakiet-plus-saldo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000000.00
+      - od: 2027-01-01
+        wartosc: 1200000.00
+    alternatywy: [750000.00]
+  - id: oplata.prywatna.pakiet-wspolposiadacz
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [0.00, 40.00]
+  - id: oplata.prywatna.doradca-konsultacja-dodatkowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+      - od: 2026-04-01
+        wartosc: 180.00
+    alternatywy: [100.00, 250.00]
+  - id: oplata.prywatna.wizyta-poza-oddzialem
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [150.00, 300.00]
+  - id: oplata.prywatna.rachunek-walutowy-prowadzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+      - od: 2027-01-01
+        wartosc: 10.00
+    alternatywy: [0.00, 12.00]
+  - id: oplata.prywatna.rachunek-walutowy-otwarcie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [20.00]
+  - id: oplata.prywatna.przelew-sepa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+      - od: 2026-04-01
+        wartosc: 7.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.prywatna.przelew-swift-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.20
+      - od: 2026-04-01
+        wartosc: 0.25
+    alternatywy: [0.30, 0.15]
+  - id: oplata.prywatna.przelew-swift-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [30.00, 60.00]
+  - id: oplata.prywatna.przelew-swift-maksimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+      - od: 2027-01-01
+        wartosc: 300.00
+    alternatywy: [200.00]
+  - id: oplata.prywatna.przelew-pilny-doplata
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+    alternatywy: [40.00, 80.00]
+  - id: oplata.prywatna.przelew-przychodzacy-swift
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: kurs.prywatna.marza-negocjowana
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.30
+      - od: 2027-01-01
+        wartosc: 0.25
+    alternatywy: [0.50, 0.10]
+  - id: limit.prywatna.kurs-negocjowany-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+      - od: 2027-01-01
+        wartosc: 40000.00
+    alternatywy: [20000.00, 100000.00]
+  - id: oplata.prywatna.karta-premium-roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 299.00
+      - od: 2027-01-01
+        wartosc: 349.00
+    alternatywy: [199.00, 399.00]
+  - id: oplata.prywatna.karta-premium-plus-roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 599.00
+      - od: 2027-01-01
+        wartosc: 649.00
+    alternatywy: [499.00]
+  - id: oplata.prywatna.karta-dodatkowa-roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 149.00
+    alternatywy: [99.00, 199.00]
+  - id: oplata.prywatna.karta-kurier
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+      - od: 2026-04-01
+        wartosc: 45.00
+    alternatywy: [0.00, 60.00]
+  - id: oplata.prywatna.karta-awaryjna-zagranica
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [150.00, 400.00]
+  - id: oplata.prywatna.karta-gotowka-zagranica-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.00
+    alternatywy: [2.00, 0.00]
+  - id: limit.prywatna.karta-dzienny-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20000.00
+      - od: 2027-01-01
+        wartosc: 25000.00
+    alternatywy: [10000.00, 30000.00]
+  - id: limit.prywatna.karta-dzienny-bezgotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100000.00
+    alternatywy: [50000.00, 150000.00]
+  - id: oplata.prywatna.salonik-wejscie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 90.00
+      - od: 2027-01-01
+        wartosc: 100.00
+    alternatywy: [70.00, 120.00]
+  - id: oplata.prywatna.lokata-negocjowana-prowizja-wczesniejsza
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.50
+    alternatywy: [1.00, 0.00]
+  - id: oplata.prywatna.fundusz-dystrybucja-zlecenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [10.00]
+  - id: oplata.prywatna.rpw-prowadzenie-roczna
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.15
+      - od: 2027-01-01
+        wartosc: 0.18
+    alternatywy: [0.25, 0.10]
+  - id: oplata.prywatna.rpw-prowadzenie-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [25.00, 60.00]
+  - id: oplata.prywatna.rpw-otwarcie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [50.00]
+  - id: oplata.prywatna.rpw-rozliczenie-krajowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+      - od: 2026-04-01
+        wartosc: 18.00
+    alternatywy: [10.00, 25.00]
+  - id: oplata.prywatna.rpw-rozliczenie-zagraniczne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+    alternatywy: [45.00, 90.00]
+  - id: oplata.prywatna.rpw-przeniesienie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2027-01-01
+        wartosc: 120.00
+    alternatywy: [0.00, 150.00]
+  - id: oplata.prywatna.rpw-dywidenda-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.10
+    alternatywy: [0.20]
+  - id: oplata.prywatna.rpw-zaswiadczenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [20.00, 60.00]
+  - id: oplata.prywatna.sejf-maly
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 280.00
+      - od: 2027-01-01
+        wartosc: 320.00
+    alternatywy: [200.00, 350.00]
+  - id: oplata.prywatna.sejf-sredni
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 520.00
+      - od: 2027-01-01
+        wartosc: 580.00
+    alternatywy: [400.00]
+  - id: oplata.prywatna.sejf-duzy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 890.00
+      - od: 2027-01-01
+        wartosc: 960.00
+    alternatywy: [700.00]
+  - id: oplata.prywatna.sejf-kaucja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+    alternatywy: [200.00, 500.00]
+  - id: oplata.prywatna.sejf-wymiana-zamka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 400.00
+    alternatywy: [250.00, 600.00]
+  - id: oplata.prywatna.sejf-dostep-dodatkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [0.00, 50.00]
+  - id: limit.prywatna.sejf-ubezpieczenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200000.00
+      - od: 2027-01-01
+        wartosc: 250000.00
+    alternatywy: [100000.00]
+  - id: oplata.prywatna.concierge-zlecenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [0.00, 150.00]
+  - id: oplata.prywatna.doreczenie-kurierskie-dokumentow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 35.00
+    alternatywy: [0.00, 50.00]
+  - id: oplata.prywatna.zaswiadczenie-saldo-walutowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00]
+  - id: oplata.prywatna.opinia-bankowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+      - od: 2026-04-01
+        wartosc: 140.00
+    alternatywy: [80.00]
+  - id: oplata.prywatna.potwierdzenie-audytorskie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00]
+  - id: termin.prywatna.sejf-awizo
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "1 dzień roboczy"
+    alternatywy: ["2 dni robocze"]
+  - id: termin.prywatna.sejf-zaleglosc
+    rodzaj: termin
+    wartosci:
+      - wartosc: 60
+    alternatywy: [30, 90]

@@ -1,0 +1,54 @@
+id: taryfa-uslugi-kasowe
+typ: taryfy
+temat: taryfa-uslugi-kasowe
+tytul:
+  - "Taryfa opłat {{param:bank}} za usługi kasowe, skrytki sejfowe i depozyty"
+  - "Taryfa opłat i prowizji za {usługi kasowe|czynności kasowe}, skrytki sejfowe i depozyty {{param:bank}}"
+uklady: [taryfa-bez-siatki]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, taryfa-kasa-zakres, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-kasa-zasady]
+    opcjonalne: { kategorie: [akapity-kasa-ogolne], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Klienci indywidualni"
+    wymagane: [taryfa-kasa-ind-opis, taryfa-kasa-ind-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-ind], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przedsiębiorcy"
+    wymagane: [taryfa-kasa-firmy-opis, taryfa-kasa-firmy-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-firmy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Wpłaty i wypłaty gotówkowe"
+    wymagane: [taryfa-kasa-wplaty-opis, taryfa-kasa-wplaty-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-wplaty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Wymiana i liczenie wartości pieniężnych"
+    wymagane: [taryfa-kasa-wymiana-opis, taryfa-kasa-wymiana-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-wymiana], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Zamówienia gotówki"
+    wymagane: [taryfa-kasa-zamowienia-opis, taryfa-kasa-zamowienia-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-zamowienia], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Wrzutnia nocna i konwój"
+    wymagane: [taryfa-kasa-wrzutnia-opis, taryfa-kasa-wrzutnia-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-wrzutnia], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Skrytki sejfowe"
+    wymagane: [taryfa-kasa-skrytki-opis, taryfa-kasa-skrytki-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-skrytki], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Depozyty"
+    wymagane: [taryfa-kasa-depozyty-opis, taryfa-kasa-depozyty-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-depozyty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Zaświadczenia i odpisy"
+    wymagane: [taryfa-kasa-zaswiadczenia-opis, taryfa-kasa-zaswiadczenia-pozycje]
+    opcjonalne: { kategorie: [pozycje-kasa-zaswiadczenia], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i postanowienia końcowe"
+    wymagane: [taryfa-kasa-objasnienia]
+parametry:
+  produkt: "usług kasowych, skrytek sejfowych i depozytów"

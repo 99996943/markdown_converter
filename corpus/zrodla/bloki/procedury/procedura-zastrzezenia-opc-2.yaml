@@ -1,0 +1,82 @@
+bloki:
+  # ===== Zwrot i spór =====
+  - id: zastrzezenia-krok-zwrot-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    elementy:
+      - akapit: "Przy obliczaniu terminu zwrotu {{fakt:termin.karta-debetowa.zwrot-nieautoryzowanej}} {za dzień przyjęcia zgłoszenia uznaje się|bierze się pod uwagę} dzień roboczy, w którym zgłoszenie zostało przyjęte; zgłoszenia przyjęte w sobotę, niedzielę lub dzień ustawowo wolny od pracy liczy się tak, jakby wpłynęły w następnym dniu roboczym."
+      - ustep: "Dla uniknięcia opóźnień:"
+        punkty:
+          - "jednostka „{{fakt:jednostka.centrum-monitorowania}}” podejmuje wstępną decyzję o zwrocie jeszcze w dniu przyjęcia zgłoszenia, {jeżeli|jeśli} dane wskazują wyraźnie na transakcję nieautoryzowaną;"
+          - "dyspozycje zwrotu przekazywane po godzinie rozliczeń dziennych są realizowane w pierwszej kolejności następnego dnia roboczego, z datą waluty dnia obciążenia;"
+          - "{w razie|w przypadku} niedostępności systemów zwrotu dyżurny jednostki „{{fakt:jednostka.operacje}}” realizuje je ręcznie, po zatwierdzeniu przez kierownika."
+      - akapit: "Opóźnienie zwrotu {wymaga|musi zostać opatrzone} wpisem w rejestrze, wskazującym przyczynę i osobę odpowiedzialną; każde opóźnienie jest zgłaszane właścicielowi procedury w dniu jego stwierdzenia."
+
+  - id: zastrzezenia-krok-zwrot-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    elementy:
+      - kroki:
+          - tekst: "{Odzyskaj|Skoryguj} skutki transakcji nieautoryzowanej poza kwotą główną."
+            podkroki:
+              - tekst: "Przywróć opłaty pobrane w związku z transakcją, {na przykład|przykładowo} prowizję od wypłaty gotówki lub marżę przeliczenia walut."
+              - tekst: "Skoryguj odsetki od zadłużenia na karcie kredytowej, naliczone od dnia obciążenia."
+              - tekst: "{Jeżeli|Jeśli} transakcja spowodowała przekroczenie salda lub niedopuszczalne zadłużenie na rachunku, cofnij także opłaty z tym związane."
+          - tekst: "{Rozlicz|Zaksięguj} zwrot w księgach."
+            podkroki:
+              - tekst: "Zwrot księguje się na koncie rozliczeń nadużyć do czasu zakończenia ewentualnego sporu z organizacją płatniczą."
+              - tekst: "Księgowanie na koncie strat następuje po zakończeniu sporu lub upływie terminów na jego wniesienie."
+          - tekst: "{Ponownie obciąż|Odwróć zwrot na} rachunek {w razie|w przypadku} stwierdzenia, że transakcja była autoryzowana."
+            podkroki:
+              - tekst: "Ponowne obciążenie wymaga decyzji jednostki „{{fakt:jednostka.bezpieczenstwo}}” i pisemnego uzasadnienia."
+              - tekst: "Klienta należy uprzedzić o planowanym obciążeniu z odpowiednim wyprzedzeniem, aby mógł zabezpieczyć środki; {jeżeli|jeśli} rachunek nie ma środków, nie narusza się zasad dotyczących debetu bez zgody Klienta."
+
+  - id: zastrzezenia-krok-zwrot-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    elementy:
+      - akapit: "Spór z organizacją płatniczą {jest prowadzony|prowadzi się} niezależnie od zwrotu na rzecz Klienta, ale wymaga zachowania dowodów. Poniżej opisano, jak postępować w typowych sytuacjach."
+      - ustep: "**Transakcja internetowa bez silnego uwierzytelniania.** Spór oparty jest na braku uwierzytelnienia po stronie akceptanta; do wniosku dołącza się dane autoryzacji. {Jeżeli|Jeśli} akceptant przedstawi dowód, że transakcja została uwierzytelniona, sprawę zamyka się i ocenia ponownie odpowiedzialność Klienta."
+      - ustep: "**Transakcja z kartą utraconą.** Spór opiera się na oświadczeniu Klienta {oraz|a także} dowodzie zgłoszenia utraty; transakcje po zgłoszeniu są podstawą dla roszczeń wobec akceptanta, {jeżeli|jeśli} akceptant nie zastosował wymaganych zabezpieczeń."
+      - ustep: "**Towar lub usługa niezgodne z umową.** Klient najpierw próbuje rozwiązać sprawę z akceptantem; do wniosku o spór dołącza korespondencję, a Bank przyjmuje wniosek tylko wtedy, gdy nie upłynął termin {{fakt:termin.zastrzezenia.spor-zgloszenie}} od transakcji lub od dnia, w którym usługa miała być wykonana."
+      - ustep: "**Dwukrotne obciążenie.** {Sprawdź|Zweryfikuj}, czy nie ma dwóch różnych transakcji o tej samej kwocie; {jeżeli|jeśli} dane wskazują na duplikat, spór wnosi się {niezwłocznie|bez zbędnej zwłoki}, a Klientowi zwraca się kwotę podwójnego obciążenia."
+
+# ===== Przypadki szczególne =====
+  - id: zastrzezenia-szczegolne-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    elementy:
+      - ustep: "**Karta wspólna dla współposiadaczy rachunku.** Każdy ze współposiadaczy {może|ma prawo} zgłosić zastrzeżenie karty wydanej do wspólnego rachunku; zgłoszenie jednego z nich skutkuje zablokowaniem karty wszystkich użytkowników, chyba że umowa stanowi inaczej."
+      - ustep: "**Karta wydana osobie niepełnoletniej.** Zastrzeżenie może zgłosić zarówno użytkownik, jak i przedstawiciel ustawowy. O fakcie zastrzeżenia informuje się przedstawiciela ustawowego, a kartę zastępczą wydaje się według zasad przewidzianych dla kart tego typu."
+      - ustep: "**Karta firmowa.** Zgłoszenia przyjmuje się od użytkownika karty {oraz|a także} od osób upoważnionych do reprezentowania firmy; o zastrzeżeniu informuje się osobę wskazaną w umowie jako opiekuna rachunku. Zasady odpowiedzialności przedsiębiorcy za transakcje nieautoryzowane są odrębne i wynikają z umowy rachunku firmowego."
+      - ustep: "**Zgon posiadacza karty.** Po powzięciu informacji o zgonie karty zablokuj trwale, zatrzymaj wydawanie kart zastępczych i {przekaż|skieruj} sprawę do jednostki obsługującej spadki; nie przyjmuj zgłoszeń od osób, które nie wykazały uprawnień."
+      - ustep: "**Skradziona tożsamość.** {Jeżeli|Jeśli} Klient twierdzi, że karta lub rachunek zostały założone przez osobę, która posłużyła się jego danymi, zastrzeż produkty, wstrzymaj korespondencję na adres wskazany we wniosku i {przekaż|skieruj} sprawę jednostce „{{fakt:jednostka.bezpieczenstwo}}” {oraz|a także} jednostce „{{fakt:jednostka.zgodnosc}}”."
+
+  - id: zastrzezenia-szczegolne-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    elementy:
+      - ustep: "**Transakcje wykonane przez osobę bliską.** {Jeżeli|Jeśli} Klient przyznaje, że kartę wykorzystała bliska osoba bez jego wiedzy, zgłoszenie rozpatruje się jak zgłoszenie transakcji nieautoryzowanej, ale bierze się pod uwagę, czy Klient udostępnił jej PIN lub kartę; {w razie|w przypadku} umyślnego udostępnienia odpowiedzialność ponosi Klient."
+      - ustep: "**Transakcja na kwotę wyższą niż autoryzowana.** Dotyczy to {na przykład|przykładowo} hoteli i wypożyczalni, gdzie akceptant obciąża kartę kwotą wyższą od uzgodnionej. Zgłoszenie przekazuje się do sporu z organizacją płatniczą, a Klient — {jeżeli|jeśli} kwestionuje część kwoty — otrzymuje zwrot kwoty różnicy po analizie."
+      - ustep: "**Transakcje z państw o podwyższonym ryzyku.** Zgłoszenia dotyczące kilku transakcji dokonanych w krótkim czasie w państwach, w których Klient nie przebywał, kieruje się do natychmiastowej oceny jednostki „{{fakt:jednostka.centrum-monitorowania}}” i zalecenia zmiany ustawień kart na czas podróży."
+      - ustep: "**Klient pozostający w sporze z akceptantem.** Gdy kwestionowana transakcja była autoryzowana, a spór dotyczy realizacji umowy, pracownik wyjaśnia, że zgłoszenie nie jest zgłoszeniem transakcji nieautoryzowanej, i informuje o możliwości złożenia reklamacji {oraz|a także} wszczęcia sporu na zasadach organizacji płatniczej."
+      - ustep: "**Zgłoszenie nadmiernej liczby transakcji w krótkim czasie.** {Jeżeli|Jeśli} ten sam Klient zgłasza trzecie zdarzenie w ciągu roku lub czwarte w ciągu dwóch lat, sprawa przekazywana jest do oceny przez jednostkę „{{fakt:jednostka.bezpieczenstwo}}”, która może zalecić dodatkowe środki bezpieczeństwa."
+
+  - id: zastrzezenia-szczegolne-4
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    elementy:
+      - akapit: "W razie {awarii masowej|incydentu masowego}, {na przykład|przykładowo} wycieku danych kart u akceptanta lub wykrycia złośliwego oprogramowania w sieci bankomatów, jednostka „{{fakt:jednostka.bezpieczenstwo}}” może zarządzić zbiorczą wymianę kart. Wtedy stosuje się zasady szczególne:"
+      - ustep: "Zarządzenie zbiorczej wymiany kart zawiera:"
+        punkty:
+          - "wskazanie przyczyny incydentu, zakresu kart objętych wymianą i terminu zablokowania;"
+          - "treść komunikatu dla Klientów, w której wskazuje się, że wymiana jest bezpłatna;"
+          - "instrukcję dla Infolinii dotyczącą rozmów z Klientami, w tym zasady informowania o ryzyku;"
+          - "wskazanie, że zbiorcza wymiana nie jest zastrzeżeniem karty przez Klienta i nie wiąże się z opłatą określoną w taryfie."
+      - akapit: "W trakcie incydentu Infolinia {nie zmienia|stosuje bez zmian} zasad weryfikacji Klientów; przekazuje się {wyłącznie|tylko} informacje zatwierdzone przez jednostkę „{{fakt:jednostka.bezpieczenstwo}}”. O wszystkich zdarzeniach, które mogą stanowić incydent związany z bezpieczeństwem płatności, informuje się {niezwłocznie|bez zbędnej zwłoki} jednostkę „{{fakt:jednostka.zgodnosc}}” w zakresie obowiązków notyfikacyjnych wobec organu nadzoru."

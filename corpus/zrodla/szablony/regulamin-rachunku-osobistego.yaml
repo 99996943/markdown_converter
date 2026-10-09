@@ -1,0 +1,59 @@
+id: regulamin-rachunku-osobistego
+typ: regulaminy
+temat: rachunek-osobisty
+tytul:
+  - "Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów {{param:bank}}"
+  - "Regulamin {prowadzenia|otwierania i prowadzenia} rachunków osobistych dla konsumentów {{param:bank}}"
+uklady: [jedna-kolumna]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje-regulamin, rachunek-osobisty-zakres, rachunek-osobisty-rodzaje]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zawarcie umowy i otwarcie rachunku"
+    wymagane: [rachunek-osobisty-zawarcie, rachunek-osobisty-weryfikacja]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-zawarcie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dysponowanie rachunkiem"
+    wymagane: [rachunek-osobisty-dysponowanie, rachunek-osobisty-wplaty-wyplaty]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-dysponowanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dyspozycje i zlecenia płatnicze"
+    wymagane: [rachunek-osobisty-zlecenia, rachunek-osobisty-realizacja]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-zlecenia], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Oprocentowanie, opłaty i prowizje"
+    wymagane: [rachunek-osobisty-oprocentowanie, rachunek-osobisty-oplaty]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-oplaty], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wyciągi i informacja o operacjach"
+    wymagane: [rachunek-osobisty-wyciagi]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-wyciagi], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Rachunek wspólny i pełnomocnictwa"
+    wymagane: [rachunek-osobisty-wspolny, rachunek-osobisty-pelnomocnictwa]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-wspolny], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dyspozycja na wypadek śmierci"
+    wymagane: [rachunek-osobisty-zgon]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-zgon], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Bezpieczeństwo i odpowiedzialność"
+    wymagane: [rachunek-osobisty-bezpieczenstwo, rachunek-osobisty-nieautoryzowane]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-bezpieczenstwo], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zmiana regulaminu i reklamacje"
+    wymagane: [wspolne-zmiany-regulamin, wspolne-reklamacje-regulamin]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-zmiany], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypowiedzenie i rozwiązanie umowy"
+    wymagane: [rachunek-osobisty-wypowiedzenie]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-wypowiedzenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-bfg-regulamin, wspolne-prawo-wlasciwe-regulamin, rachunek-osobisty-koncowe]
+    opcjonalne: { kategorie: [paragraf-rachunek-osobisty-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "rachunku osobistego"

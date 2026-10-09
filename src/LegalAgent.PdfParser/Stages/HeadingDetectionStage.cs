@@ -21,6 +21,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const int MinCapsLetters = 3;
     private const int MaxLevel = 6;
 
+    /// <summary>A wrapped line of running text fills at least this share of its column.</summary>
+    private const double WrappedLineRatio = 0.75;
+
+    /// <summary>Line spacing of a heading font, in font sizes (a typical leading).</summary>
+    private const double HeadingLineSpacing = 1.2;
+
     private const int RankTitle = 0;
     private const int RankTypographicInLegal = 6;
     private const int RankUnit = 7;
@@ -30,6 +36,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const double CaptionWidthMargin = 0.1;
     private const double CaptionGapInLineHeights = 3;
     private const double CaptionTolerance = 1;
+    private const char OpeningQuote = '\u201E';
+    private const char ClosingQuote = '\u201D';
+    private const char EnglishClosingQuote = '\u201C';
 
     /// <inheritdoc />
     public int Order => StageOrder.HeadingDetection;
@@ -65,6 +74,10 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private static List<Entry> Collect(PipelineContext context)
     {
         var entries = new List<Entry>();
+
+        // Open quotations („…”) in the running text, list items included: units quoted from another act (an
+        // announcement quoting amending articles) are text of the quotation, not units of the document.
+        int quotes = 0;
         foreach (LayoutPage page in context.Pages)
         {
             context.CancellationToken.ThrowIfCancellationRequested();
@@ -77,12 +90,24 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                     continue;
                 }
 
-                if (line.Role == LineRole.Unknown)
+                string text = string.Join(' ', line.Words.Where(w => w.FootnoteId is null).Select(w => w.Text)).Trim();
+                if (line.Role == LineRole.Unknown && text.Length > 0)
                 {
-                    string text = string.Join(' ', line.Words.Where(w => w.FootnoteId is null).Select(w => w.Text)).Trim();
-                    if (text.Length > 0)
+                    entries.Add(new Entry(page, line, previous, text) { Quoted = quotes > 0 });
+                }
+
+                if (line.Role is LineRole.Unknown or LineRole.ListItem or LineRole.ListContinuation)
+                {
+                    foreach (char c in text)
                     {
-                        entries.Add(new Entry(page, line, previous, text));
+                        if (c == OpeningQuote)
+                        {
+                            quotes++;
+                        }
+                        else if (c is ClosingQuote or EnglishClosingQuote && quotes > 0)
+                        {
+                            quotes--;
+                        }
                     }
                 }
 
@@ -158,7 +183,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && line.Box.Left - left >= CenterMarginRatio * width
                 && right - line.Box.Right >= CenterMarginRatio * width;
 
-            if (options.DetectLegalUnits && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match))
+            // FR-162: a unit designation at the start of a wrapped line of running text (the line above, at the body
+            // leading and in the same style, fills the column and ends mid-sentence; the text goes on in lowercase) is
+            // a word of that sentence, not a unit.
+            if (options.DetectLegalUnits
+                && !entry.Quoted
+                && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
+                && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0])))
             {
                 entry.Legal = match;
             }
@@ -298,6 +329,19 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         first.Consumed = true;
     }
 
+    /// <summary>Line spacing between lines of a heading: the body leading, or more for a larger heading font.</summary>
+    private static double HeadingLeading(Entry entry, double leading) => Math.Max(leading, HeadingLineSpacing * entry.Size);
+
+    private static bool ContinuesSentence(Entry entry, List<LayoutWord> words, double columnWidth) =>
+        !entry.Isolated
+        && entry.Previous is { } previous
+        && previous.Role == LineRole.Unknown
+        && previous.Words.Count > 0
+        && previous.Box.Width >= WrappedLineRatio * columnWidth
+        && char.IsLetter(previous.Text.TrimEnd()[^1])
+        && previous.Words.All(w => w.Style == words[0].Style)
+        && words.All(w => w.Style == words[0].Style);
+
     private static bool SameFont(Entry a, Entry b, HeadingOptions options) =>
         Math.Abs(a.Size - b.Size) <= options.SizeClusterTolerance && a.AllBold == b.AllBold;
 
@@ -317,7 +361,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
             if (entry.Legal is { } unit)
             {
-                headings.Add(LegalHeading(entry, unit, next, options, leading));
+                headings.Add(LegalHeading(entries, i, unit, next, options, leading));
                 entry.Consumed = true;
                 continue;
             }
@@ -369,8 +413,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         }
     }
 
-    private static Detected LegalHeading(Entry entry, LegalUnitMatch unit, Entry? next, HeadingOptions options, double leading)
+    private static Detected LegalHeading(List<Entry> entries, int index, LegalUnitMatch unit, Entry? next, HeadingOptions options, double leading)
     {
+        Entry entry = entries[index];
         var heading = new Detected(entry, unit.Kind) { Designation = unit.Designation, Number = unit.Number };
 
         if (unit.Kind is SectionKind.Article or SectionKind.Paragraph)
@@ -387,7 +432,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         else if (next is not null
             && next.Legal is null
             && next.Text.Length <= options.MaxLength
-            && next.Line.Baseline - entry.Line.Baseline <= options.GapFactor * leading
+            && next.Line.Baseline - entry.Line.Baseline <= options.GapFactor * HeadingLeading(entry, leading)
             && !next.Text.EndsWith('.')
             && !next.Text.EndsWith(',')
             && !next.Text.EndsWith(';')
@@ -397,6 +442,29 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             heading.Title = next.Text;
             heading.Merged.Add(next);
             next.Consumed = true;
+
+            // A title wrapped over more lines continues in the same font (MaxLines title lines).
+            Entry last = next;
+            for (int j = index + 2; j < entries.Count && heading.Merged.Count < options.MaxLines; j++)
+            {
+                Entry follower = entries[j];
+                if (follower.Page != entry.Page
+                    || follower.Previous != last.Line
+                    || follower.Legal is not null
+                    || !SameFont(follower, last, options)
+                    || follower.Line.Baseline - last.Line.Baseline > options.GapFactor * HeadingLeading(last, leading)
+                    || heading.Title.Length + 1 + follower.Text.Length > options.MaxLength
+                    || follower.Text.EndsWith(',')
+                    || follower.Text.EndsWith(';'))
+                {
+                    break;
+                }
+
+                heading.Title += " " + follower.Text;
+                heading.Merged.Add(follower);
+                follower.Consumed = true;
+                last = follower;
+            }
         }
 
         heading.Text = heading.Title is null ? unit.Designation : $"{unit.Designation}. {heading.Title}";
@@ -552,7 +620,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             }
         }
 
-        return letters >= MinCapsLetters;
+        // A code in capitals among digits and punctuation („(F-BEZ-05).”) is not a caps heading.
+        int visible = text.Count(c => !char.IsWhiteSpace(c));
+        return letters >= MinCapsLetters && 2 * letters >= visible;
     }
 
     [System.Text.RegularExpressions.GeneratedRegex(
@@ -602,6 +672,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         public bool Plain { get; set; }
 
         public LegalUnitMatch? Legal { get; set; }
+
+        /// <summary>The line starts inside a quotation opened by „ in an earlier line.</summary>
+        public bool Quoted { get; init; }
     }
 
     private sealed class Detected(Entry entry, SectionKind kind)

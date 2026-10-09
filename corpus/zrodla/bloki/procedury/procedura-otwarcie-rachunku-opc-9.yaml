@@ -1,0 +1,93 @@
+bloki:
+  # --- Przypadki szczególne
+  - id: otwarcie-szcz-niewidomy-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klient z niepełnosprawnością ma prawo do otwarcia rachunku na takich samych zasadach jak inni klienci. Pracownik zapewnia dostosowanie sposobu obsługi do potrzeb klienta, nie uzależniając tego od dodatkowych warunków."
+      - kroki:
+          - tekst: "Klient z niepełnosprawnością wzroku."
+            podkroki:
+              - tekst: "Przeczytaj klientowi na głos treść umowy i regulaminu albo udostępnij je w formie dostępnej, na przykład w powiększonym druku."
+              - tekst: "Podpisanie umowy przez klienta niewidomego odbywa się w obecności drugiego pracownika, który potwierdza, że treść umowy została klientowi przekazana."
+          - tekst: "Klient z niepełnosprawnością słuchu. Zaproponuj komunikację pisemną, z użyciem tłumacza języka migowego lub komunikatora tekstowego, zgodnie z możliwościami placówki."
+          - tekst: "Klient z niepełnosprawnością ruchową. Zapewnij miejsce umożliwiające swobodny dostęp do stanowiska obsługi, a w razie potrzeby przeprowadź czynności poza stanowiskiem."
+          - tekst: "Klient niemogący złożyć podpisu. Przy niemożności złożenia podpisu stosuje się formę zastępczą przewidzianą w przepisach, w obecności dwóch pracowników, a okoliczność tę odnotowuje się w dokumentacji."
+          - tekst: "Uwaga ogólna. Nie wyciągaj wniosków o ograniczeniu zdolności do czynności prawnych wyłącznie na podstawie niepełnosprawności klienta."
+
+  - id: otwarcie-szcz-senior-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klienci w podeszłym wieku są szczególnie narażeni na wyłudzenia i wykorzystywanie ich zaufania. Pracownik obsługuje ich z należytą cierpliwością i zwraca uwagę na sygnały mogące wskazywać na działanie pod wpływem innej osoby."
+      - kroki:
+          - tekst: "Czas i sposób rozmowy. Wyjaśnij warunki produktu spokojnie, używając prostego języka; upewnij się, że klient rozumie zasady korzystania z rachunku."
+          - tekst: "Sygnały ostrzegawcze. Zwróć uwagę, jeżeli:"
+            podkroki:
+              - tekst: "klientowi towarzyszy osoba, która odpowiada za niego lub wyraźnie na niego wpływa;"
+              - tekst: "klient nie wie, w jakim celu otwiera rachunek, lub twierdzi, że robi to na prośbę osoby trzeciej;"
+              - tekst: "klient planuje przekazać komuś dane dostępowe lub kartę."
+          - tekst: "Rozmowa na osobności. W razie wątpliwości zaproponuj rozmowę bez udziału osoby towarzyszącej, a gdy wątpliwości się potwierdzą, poinformuj kierownika placówki."
+          - tekst: "Zabezpieczenia. Zaproponuj klientowi niższe limity transakcji oraz powiadomienia o operacjach, a także wskaż osobę zaufaną, którą Bank może powiadomić w sytuacji, gdy nie będzie można skontaktować się z klientem."
+
+  - id: otwarcie-szcz-zagraniczny-adres-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klient mieszkający za granicą, który chce otworzyć rachunek w Polsce, jest klientem podwyższonego ryzyka, gdy jego rezydencja podatkowa i miejsce zamieszkania znajdują się poza Polską. Otwarcie rachunku w takim przypadku wymaga dodatkowych ustaleń."
+      - kroki:
+          - tekst: "Ustalenie powodu. Zapytaj klienta, dlaczego chce prowadzić rachunek w Polsce, i oceń wiarygodność odpowiedzi, na przykład powiązania rodzinne, majątkowe lub zawodowe z Polską."
+          - tekst: "Dokumenty. Poza dokumentem tożsamości poproś o dokument potwierdzający adres za granicą."
+            podkroki:
+              - tekst: "Dokument wystawiony za granicą powinien być zalegalizowany lub opatrzony apostille, jeżeli wymagają tego przepisy."
+              - tekst: "Dokument sporządzony w języku obcym wymaga tłumaczenia przysięgłego, chyba że jest sporządzony w języku angielskim."
+          - tekst: "Rezydencja podatkowa. Zbierz oświadczenie o rezydencji podatkowej klienta i poinformuj go o obowiązkach Banku w zakresie wymiany informacji podatkowych."
+          - tekst: "Zatwierdzenie. Otwarcie rachunku klienta o rezydencji poza Polską wymaga zatwierdzenia przez {{fakt:jednostka.zgodnosc}} w terminie {{fakt:termin.otwarcie.decyzja-zgodnosci}}."
+
+  - id: otwarcie-szcz-student-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klient młody, który ukończył osiemnaście lat, ale nie osiągnął jeszcze stabilnej sytuacji zawodowej, może otworzyć rachunek na warunkach przewidzianych dla młodzieży, jeżeli Taryfa przewiduje dla takiej grupy preferencyjne warunki."
+      - kroki:
+          - tekst: "Potwierdzenie uprawnienia. Sprawdź, czy klient spełnia warunki wskazane w dokumencie „{{ref:dokument:taryfa-mlodziez}}”, na przykład wiek lub status ucznia albo studenta."
+            podkroki:
+              - tekst: "Status studenta potwierdza ważna legitymacja albo zaświadczenie z uczelni, wystawione w terminie wskazanym w Taryfie."
+              - tekst: "Brak potwierdzenia nie wyklucza otwarcia rachunku, ale rachunek jest prowadzony na zasadach ogólnych."
+          - tekst: "Ocena zdolności. Zweryfikuj, czy klient ma pełną zdolność do czynności prawnych, a w razie wątpliwości poproś o wyjaśnienie."
+          - tekst: "Informacje dodatkowe. Wyjaśnij klientowi zasady korzystania z debetu w koncie, o ile jest dostępny, oraz skutki zadłużenia, a także zaproponuj ustawienie powiadomień o saldzie."
+          - tekst: "Zmiana warunków. Poinformuj klienta, że po utracie uprawnień, na przykład po ukończeniu studiów, rachunek będzie prowadzony na zasadach ogólnych, a Bank powiadomi o tym z odpowiednim wyprzedzeniem."
+
+  - id: otwarcie-szcz-brak-pesel-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Klient, który nie posiada numeru ewidencyjnego, na przykład cudzoziemiec przebywający w Polsce krótko, nie może być automatycznie wykluczony z możliwości otwarcia rachunku. Proces dostosowuje się do dostępnych danych identyfikacyjnych."
+      - kroki:
+          - tekst: "Zebranie danych zastępczych. Zapisz imię i nazwisko, datę i miejsce urodzenia, obywatelstwo, serię i numer dokumentu oraz organ, który go wydał."
+          - tekst: "Zwiększona weryfikacja. Dla klientów bez numeru ewidencyjnego stosuj zwiększony poziom weryfikacji."
+            podkroki:
+              - tekst: "Sprawdź prawo klienta do pobytu w Polsce na podstawie dokumentów, takich jak wiza, karta pobytu lub dokument potwierdzający prawo wjazdu."
+              - tekst: "Zweryfikuj, czy dokument tożsamości jest ważny co najmniej przez okres potrzebny do zawarcia i wykonania umowy."
+          - tekst: "Ocena ryzyka. Uwzględnij wyższe ryzyko wynikające z krótkiego okresu pobytu i zakwalifikuj klienta do odpowiedniej kategorii na podstawie kwestionariusza."
+          - tekst: "Zawiadomienie o numerze. Jeżeli klient w trakcie trwania umowy otrzyma numer ewidencyjny, jest obowiązany go przekazać, a pracownik uzupełnia dane w systemie."
+
+  - id: otwarcie-szcz-osoba-ubezwlasnowolniona-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Rachunek osoby ubezwłasnowolnionej może być otwarty wyłącznie przez jej przedstawiciela ustawowego, na podstawie orzeczenia sądu. Zakres uprawnień przedstawiciela wynika z postanowienia sądu opiekuńczego."
+      - kroki:
+          - tekst: "Weryfikacja orzeczenia. Poproś o przedstawienie prawomocnego postanowienia sądu o ubezwłasnowolnieniu i o ustanowieniu opiekuna lub kuratora, w oryginale lub odpisie."
+            podkroki:
+              - tekst: "Sprawdź, czy orzeczenie jest prawomocne i czy nie zostało uchylone."
+              - tekst: "Ustal, czy ubezwłasnowolnienie jest całkowite, czy częściowe, i w jakim zakresie osoba może samodzielnie dokonywać czynności."
+          - tekst: "Identyfikacja. Zweryfikuj tożsamość przedstawiciela oraz osoby ubezwłasnowolnionej; formularz {{fakt:formularz.otwarcie.przedstawiciel-ustawowy}} wypełnia przedstawiciel."
+          - tekst: "Zgoda sądu. Jeżeli czynność przekracza zakres zwykłego zarządu, poproś o zezwolenie sądu opiekuńczego."
+          - tekst: "Zasady dysponowania. W umowie i w systemie zapisz, kto i w jakim zakresie może dysponować środkami, a przedstawiciela poinformuj, że obowiązują go ograniczenia wynikające z orzeczenia sądu."

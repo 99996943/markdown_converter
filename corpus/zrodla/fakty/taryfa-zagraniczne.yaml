@@ -1,0 +1,242 @@
+# Fakty taryfy opłat za przelewy zagraniczne i wymianę walut (T057)
+fakty:
+  - id: oplata.zagraniczne.sepa-zwrot-przychodzacego
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.zagraniczne.swift-pilny-ind
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 45.00
+    alternatywy: [30.00, 60.00]
+  - id: oplata.zagraniczne.swift-ekspres
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 80.00
+      - od: 2027-01-01
+        wartosc: 90.00
+    alternatywy: [60.00, 120.00]
+  - id: oplata.zagraniczne.opcja-our-firma
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 70.00
+    alternatywy: [50.00, 90.00]
+  - id: oplata.zagraniczne.przelew-wewnetrzny-walutowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [3.00]
+  - id: oplata.zagraniczne.przelew-wewnetrzny-walutowy-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [10.00, 20.00]
+  - id: oplata.zagraniczne.przelew-walutowy-wlasny-rachunek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00]
+  - id: oplata.zagraniczne.naprawa-instrukcji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 45.00]
+  - id: oplata.zagraniczne.zmiana-dyspozycji-ind
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+      - od: 2027-01-01
+        wartosc: 45.00
+    alternatywy: [30.00, 60.00]
+  - id: oplata.zagraniczne.poszukiwanie-ind
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [35.00, 70.00]
+  - id: oplata.zagraniczne.zwrot-przelewu-zagranicznego
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 45.00
+      - od: 2027-01-01
+        wartosc: 55.00
+    alternatywy: [30.00, 70.00]
+  - id: oplata.zagraniczne.kopia-mt103
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 40.00]
+  - id: oplata.zagraniczne.potwierdzenie-realizacji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.zagraniczne.weryfikacja-dokumentow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [25.00, 60.00]
+  - id: oplata.zagraniczne.wymiana-marza-kantor
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.3
+      - od: 2027-01-01
+        wartosc: 0.4
+    alternatywy: [0.2, 0.6]
+  - id: oplata.zagraniczne.wymiana-marza-placowka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.0
+    alternatywy: [0.8, 1.5]
+  - id: limit.zagraniczne.wymiana-kurs-negocjowany-prog
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+      - od: 2027-01-01
+        wartosc: 40000.00
+    alternatywy: [25000.00, 100000.00]
+  - id: oplata.zagraniczne.wymiana-prowizja-dealerska
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [25.00]
+  - id: oplata.zagraniczne.zlecenie-kursowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.zagraniczne.rachunek-walutowy-ind
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2027-01-01
+        wartosc: 3.00
+    alternatywy: [2.00, 5.00]
+  - id: oplata.zagraniczne.rachunek-walutowy-otwarcie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [20.00]
+  - id: oplata.zagraniczne.rachunek-walutowy-zamkniecie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+    alternatywy: [0.00, 40.00]
+  - id: oplata.zagraniczne.wyciag-walutowy-papierowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+    alternatywy: [8.00, 20.00]
+  - id: oplata.zagraniczne.rachunek-walutowy-wielowalutowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+    alternatywy: [8.00, 18.00]
+  - id: oprocentowanie.zagraniczne.saldo-ujemne-walutowe
+    rodzaj: procent
+    wartosci:
+      - wartosc: 14.0
+      - od: 2026-04-01
+        wartosc: 15.5
+    alternatywy: [12.0, 18.0]
+  - id: oplata.zagraniczne.wplata-gotowki-walutowej
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+    alternatywy: [0.3, 1.0]
+  - id: oplata.zagraniczne.wplata-gotowki-walutowej-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+    alternatywy: [5.00, 12.00]
+  - id: oplata.zagraniczne.wyplata-gotowki-walutowej-firma
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.2
+      - od: 2027-01-01
+        wartosc: 1.4
+    alternatywy: [0.8, 2.0]
+  - id: oplata.zagraniczne.wyplata-gotowki-walutowej-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [10.00, 25.00]
+  - id: limit.zagraniczne.awizo-waluty-prog
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 8000.00
+    alternatywy: [5000.00, 20000.00]
+  - id: termin.zagraniczne.awizo-waluty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [1, 3]
+  - id: oplata.zagraniczne.weryfikacja-autentycznosci-banknotow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 20.00]
+  - id: oplata.zagraniczne.czek-skup-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+    alternatywy: [0.3, 1.0]
+  - id: oplata.zagraniczne.czek-skup-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 50.00]
+  - id: oplata.zagraniczne.czek-inkaso-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.3
+      - od: 2027-01-01
+        wartosc: 0.35
+    alternatywy: [0.2, 0.5]
+  - id: oplata.zagraniczne.czek-inkaso-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [30.00, 80.00]
+  - id: oplata.zagraniczne.czek-zwrot-nieoplacony
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 80.00
+    alternatywy: [50.00, 120.00]
+  - id: oplata.zagraniczne.czek-wystawienie-bankowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+    alternatywy: [40.00, 90.00]
+  - id: oplata.zagraniczne.inkaso-dokumentowe-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.25
+    alternatywy: [0.15, 0.4]
+  - id: oplata.zagraniczne.inkaso-dokumentowe-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00, 200.00]
+  - id: oplata.zagraniczne.inkaso-zmiana-warunkow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [60.00, 150.00]
+  - id: oplata.zagraniczne.inkaso-niezaplacone
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+    alternatywy: [80.00, 180.00]
+  - id: oplata.zagraniczne.dolaczenie-kopii-dokumentow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [15.00, 40.00]
+  - id: termin.zagraniczne.zlecenie-wyprzedzajace
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [60, 14]

@@ -1,0 +1,169 @@
+bloki:
+  # ---------------------------------------------------------------- V. Dostęp i narzędzia uwierzytelniania
+  - id: taryfa-bankowosc-elektroniczna-uwierz-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Narzędziami uwierzytelniania są: autoryzacja w aplikacji mobilnej, kody jednorazowe przesyłane wiadomością tekstową, token sprzętowy oraz — w bankowości dla firm — certyfikat. Kod SMS jest ważny {{fakt:bankowosc.waznosc-kodu-sms}}; za wiadomości z kodami autoryzacyjnymi Bank {nie pobiera|nie obciąża Klienta} opłat w wysokości innej niż wskazana poniżej."
+      - akapit: "Silne uwierzytelnienie jest {wymagane|stosowane} przy logowaniu oraz przy dyspozycjach określonych w regulaminie. Ponowne uwierzytelnienie przy dostępie do informacji o rachunku jest wymagane co {{fakt:bankowosc.ponowne-sca}}."
+
+  - id: taryfa-bankowosc-elektroniczna-uwierz-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Autoryzacja dyspozycji w aplikacji mobilnej"
+            stawka: "bez opłat"
+            tryb: "za autoryzację"
+          - usluga: "Aktywacja logowania i autoryzacji biometrycznej (odcisk palca, rozpoznawanie twarzy)"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.biometria-aktywacja}}"
+            tryb: "jednorazowo"
+          - usluga: "Kod jednorazowy przesyłany wiadomością tekstową"
+            stawka: "{{fakt:oplata.bankowosc.sms-kod}}"
+            tryb: "za wiadomość"
+          - usluga: "Kod jednorazowy przesyłany wiadomością tekstową za granicą[^1]"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+          - usluga: "Token sprzętowy — wydanie pierwszego urządzenia"
+            stawka: "{{fakt:oplata.bankowosc.token}}"
+            tryb: "jednorazowo"
+          - usluga: "Token sprzętowy — wymiana urządzenia {uszkodzonego|zużytego} lub utraconego"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.token-wymiana}}"
+            tryb: "jednorazowo"
+          - usluga: "Odblokowanie tokenu sprzętowego po zablokowaniu kodu PIN"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.token-odblokowanie-pin}}"
+            tryb: "za każde odblokowanie"
+          - usluga: "Wysyłka tokenu sprzętowego kurierem"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.kurier-token}}"
+            tryb: "za przesyłkę"
+          - usluga: "Lista kodów jednorazowych (karta kodów) w formie papierowej[^2]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.karta-kodow-jednorazowych}}"
+            tryb: "za listę"
+          - usluga: "Wydanie nowego kodu aktywacyjnego do aplikacji mobilnej"
+            stawka: "{{fakt:oplata.bankowosc.nowy-kod-aktywacyjny}}"
+            tryb: "jednorazowo"
+          - usluga: "Zastrzeżenie dostępu do bankowości elektronicznej na wniosek Klienta"
+            stawka: "bez opłat"
+            tryb: "za zastrzeżenie"
+          - usluga: "Certyfikat do podpisywania dyspozycji w bankowości dla firm"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.certyfikat-firmowy}}"
+            tryb: "rocznie"
+    przypisy:
+      1: "Opłatę pobiera się za wiadomość z kodem wysłaną na numer operatora zagranicznego, jeżeli Klient przebywa poza terytorium Rzeczypospolitej Polskiej i nie korzysta z autoryzacji w aplikacji mobilnej."
+      2: "Lista zawiera {pięćdziesiąt|50} kodów; wykorzystane kody tracą ważność, a nową listę wydaje się na wniosek Klienta lub z urzędu po wykorzystaniu 90% kodów. Usługa jest dostępna wyłącznie dla Klientów, którzy nie mogą korzystać z aplikacji mobilnej."
+
+  # ---------------------------------------------------------------- VI. Powiadomienia
+  - id: taryfa-bankowosc-elektroniczna-powiad-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Powiadomienia o operacjach na rachunku mogą być doręczane jako komunikaty w aplikacji mobilnej (push), wiadomości e-mail albo wiadomości tekstowe. Klient wybiera zakres i kanał powiadomień w ustawieniach profilu; {wyłączenie|rezygnacja z} powiadomień nie zwalnia Banku z obowiązku informowania o operacjach w wyciągu z rachunku."
+      - akapit: "Powiadomienia wiadomością tekstową rozliczane są za wiadomość wysłaną albo w ramach pakietu miesięcznego, jeżeli Klient go aktywował. Pakiet obejmuje do {dwudziestu|20} wiadomości w miesiącu; wiadomości ponad pakiet {rozlicza się|pobiera się} według stawki za pojedynczą wiadomość."
+
+  - id: taryfa-bankowosc-elektroniczna-powiad-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Powiadomienie o operacji w aplikacji mobilnej (push)"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-push}}"
+            tryb: "za powiadomienie"
+          - usluga: "Powiadomienie o operacji wiadomością e-mail"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-email}}"
+            tryb: "za powiadomienie"
+          - usluga: "Powiadomienie o operacji wiadomością tekstową[^1]"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za wiadomość"
+          - usluga: "Pakiet powiadomień tekstowych"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.pakiet-sms}}"
+            tryb: "miesięcznie"
+          - usluga: "Informacja o saldzie rachunku przesyłana na żądanie wiadomością tekstową"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.sms-saldo}}"
+            tryb: "za wiadomość"
+          - usluga: "Powiadomienie o wpływie środków na rachunek"
+            stawka: "wg stawek za powiadomienia w wybranym kanale"
+            tryb: "za powiadomienie"
+          - usluga: "Powiadomienie o przekroczeniu ustawionego progu salda lub wydatków[^2]"
+            stawka: "bez opłat"
+            tryb: "za powiadomienie"
+          - usluga: "Alert bezpieczeństwa o logowaniu z nowego urządzenia"
+            stawka: "bez opłat"
+            tryb: "za alert"
+          - usluga: "Alert bezpieczeństwa o podejrzanej transakcji wykonany telefonicznie przez konsultanta"
+            stawka: "bez opłat"
+            tryb: "za kontakt"
+          - usluga: "Pakiet powiadomień dla firm — wiadomości tekstowe do {pięciu|5} osób wskazanych przez Klienta"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.powiadomienie-firma-pakiet}}"
+            tryb: "miesięcznie"
+    przypisy:
+      1: "Opłata nie obejmuje wiadomości o charakterze bezpieczeństwa, w tym informacji o zablokowaniu dostępu i o logowaniu z nowego urządzenia, które Bank wysyła bez opłat."
+      2: "Próg ustawia Klient w aplikacji mobilnej lub w serwisie internetowym; powiadomienie jest wysyłane w kanale wybranym przez Klienta dla powiadomień o operacjach."
+
+  # ---------------------------------------------------------------- VII. Dyspozycje w kanałach elektronicznych
+  - id: taryfa-bankowosc-elektroniczna-dyspozycje-opis
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: opis-taryfa-bankowosc-elektroniczna
+    elementy:
+      - akapit: "Opłaty za dyspozycje zależą od kanału, w którym je złożono: w serwisie internetowym i aplikacji mobilnej, na Infolinii albo w placówce Banku. Dyspozycje składane w kanałach elektronicznych są wykonywane {zgodnie z terminami|w terminach} określonymi w regulaminie rachunku, a godziny graniczne dla przelewów krajowych opublikowano na stronie {{fakt:bank.strona}}."
+      - akapit: "Dzienne limity transakcji w kanałach elektronicznych wynoszą domyślnie {{fakt:limit.przelew-dzienny-domyslny}}; limit jednorazowy przelewu w serwisie internetowym — {{fakt:limit.bankowosc.przelew-jednorazowy}}, a w aplikacji mobilnej — {{fakt:limit.bankowosc.przelew-mobilny}}. Przelew do nowego odbiorcy podlega dodatkowemu limitowi {{fakt:limit.bankowosc.nowy-odbiorca}} przez {{fakt:bankowosc.karencja-odbiorca}}."
+
+  - id: taryfa-bankowosc-elektroniczna-dyspozycje-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-elektroniczna]
+    kategoria: pozycje-wymagane-taryfa-bankowosc-elektroniczna
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew krajowy w złotych {złożony|zlecony} w serwisie internetowym lub w aplikacji mobilnej"
+            stawka: "bez opłat"
+            tryb: "za przelew"
+          - usluga: "Przelew natychmiastowy złożony w serwisie internetowym lub w aplikacji[^1]"
+            stawka: "{{fakt:oplata.przelew-natychmiastowy}}"
+            tryb: "za przelew"
+          - usluga: "Przelew natychmiastowy {zlecony|złożony} przez konsultanta Infolinii lub w placówce Banku"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-natychmiastowy-wysoki}}"
+            tryb: "za przelew"
+          - usluga: "Przelew pilny w systemie rozliczeń brutto"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-pilny-prowizja}}, min. {{fakt:oplata.bankowosc-elektroniczna.przelew-pilny-minimum}}"
+            tryb: "od kwoty przelewu"
+          - usluga: "Przelew krajowy zlecony przez konsultanta Infolinii"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-zlecony-infolinia}}"
+            tryb: "za przelew"
+          - usluga: "Przelew krajowy złożony w placówce Banku"
+            stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}"
+            tryb: "za przelew"
+          - usluga: "Przelew zagraniczny i przelew w walucie obcej złożony w serwisie internetowym[^2]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-zagraniczny-internet}}"
+            tryb: "za przelew"
+          - usluga: "Przelew w euro w systemie SEPA"
+            stawka: "{{fakt:oplata.firma.przelew-sepa}}"
+            tryb: "za przelew"
+          - usluga: "Przelew na numer telefonu odbiorcy do kwoty określonej w Taryfie[^3]"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.przelew-na-telefon}}"
+            tryb: "za przelew"
+          - usluga: "Zlecenie stałe — ustanowienie w serwisie internetowym lub w aplikacji"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.zlecenie-stale-ustanowienie}}"
+            tryb: "jednorazowo"
+          - usluga: "Zlecenie stałe — modyfikacja lub odwołanie"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.zlecenie-stale-modyfikacja}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Odwołanie przelewu z przyszłą datą realizacji"
+            stawka: "bez opłat"
+            tryb: "za odwołanie"
+          - usluga: "Odwołanie przelewu na wniosek Klienta po rozpoczęciu realizacji"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.odwolanie-przelewu-konsument}}"
+            tryb: "za odwołanie"
+          - usluga: "Potwierdzenie przelewu w postaci elektronicznej (plik PDF)"
+            stawka: "bez opłat"
+            tryb: "za potwierdzenie"
+          - usluga: "Potwierdzenie przelewu w postaci papierowej wydane w placówce"
+            stawka: "{{fakt:oplata.bankowosc-elektroniczna.potwierdzenie-papierowe}}"
+            tryb: "za potwierdzenie"
+    przypisy:
+      1: "Przelew natychmiastowy jest dostępny całodobowo, we wszystkie dni tygodnia, do kwoty {{fakt:limit.bankowosc.przelew-mobilny}} w aplikacji mobilnej oraz do kwoty {{fakt:limit.bankowosc.przelew-jednorazowy}} w serwisie internetowym, o ile bank odbiorcy uczestniczy w tym trybie rozliczeń."
+      2: "Opłata nie obejmuje opłat banków pośredniczących i banku odbiorcy, które mogą obciążyć kwotę przelewu zależnie od wybranej opcji kosztów; przeliczenia walut dokonuje się według zasad wskazanych w postanowieniach ogólnych."
+      3: "Limit przelewu na numer telefonu wynosi {{fakt:oplata.bankowosc-elektroniczna.przelew-na-telefon-limit}} za jedną dyspozycję; usługa wymaga zarejestrowania numeru telefonu odbiorcy w usłudze i wyrażenia zgody przez odbiorcę."

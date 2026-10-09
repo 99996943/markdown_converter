@@ -1,0 +1,143 @@
+bloki:
+  # ---------------------------------------------------------------- IX. Karty firmowe
+  - id: taryfa-firmy-opc-karty-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-karty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wydanie karty debetowej dla dodatkowego użytkownika", stawka: "{{fakt:oplata.firma.karta-wydanie}}", tryb: "jednorazowo"}
+          - {usluga: "Wznowienie karty po upływie terminu ważności", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Wydanie karty przedpłaconej dla pracownika", stawka: "15,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Doładowanie karty przedpłaconej z rachunku firmowego", stawka: "bez opłat", tryb: "za doładowanie"}
+          - {usluga: "Prowadzenie karty przedpłaconej", stawka: "5,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Karta kredytowa dla firmy — roczna opłata za kartę dodatkową", stawka: "60,00 zł", tryb: "rocznie"}
+          - {usluga: "Wypłata gotówki kartą kredytową dla firmy", stawka: "3,00% kwoty, min. 10,00 zł", tryb: "od kwoty wypłaty"}
+          - {usluga: "Spłata zadłużenia kartowego przelewem z rachunku firmowego", stawka: "bez opłat", tryb: "za spłatę"}
+          - {usluga: "Odsetki od zadłużenia na karcie kredytowej dla firmy", stawka: "{{fakt:oprocentowanie.debet}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Miesięczne zestawienie transakcji kartowych w wersji papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za zestawienie"}
+
+  - id: taryfa-firmy-opc-karty-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-karty
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zablokowanie karty na wniosek Klienta (blokada tymczasowa)", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Odblokowanie karty po blokadzie tymczasowej", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Wymiana karty uszkodzonej z winy użytkownika", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo"}
+          - {usluga: "Wymiana karty uszkodzonej bez winy użytkownika", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Wysłanie nowego numeru PIN w przesyłce", stawka: "{{fakt:oplata.firma.karta-zmiana-pin}}", tryb: "za przesyłkę"}
+          - {usluga: "Płatność kartą w walucie obcej u akceptanta za granicą", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Płatność kartą w serwisie internetowym — dodatkowe uwierzytelnienie 3-D Secure", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Płatność mobilna kartą dodaną do portfela telefonu", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Zwiększenie dziennego limitu transakcji bezgotówkowych powyżej {{fakt:limit.firma.karta-dzienny-bezgotowkowy}}", stawka: "wg umowy", tryb: "za zmianę"}
+          - {usluga: "Reklamacja transakcji kartowej uznana za niezasadną po postępowaniu", stawka: "30,00 zł", tryb: "za reklamację"}
+          - {usluga: "Zgłoszenie utraty lub kradzieży karty pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "jednorazowo"}
+
+  # ---------------------------------------------------------------- X. Bankowość elektroniczna
+  - id: taryfa-firmy-opc-bankowosc-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-bankowosc
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Abonament za bankowość elektroniczną w pakiecie z rachunkiem dla mikroprzedsiębiorstw", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Aktywacja dostępu do bankowości elektronicznej w placówce", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Aktywacja dodatkowego urządzenia mobilnego użytkownika", stawka: "bez opłat", tryb: "za urządzenie"}
+          - {usluga: "Zmiana modelu uprawnień (schemat podpisów) w bankowości elektronicznej", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za zmianę"}
+          - {usluga: "Dwuetapowa akceptacja przelewów (zasada dwóch par oczu)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Import danych z systemu finansowo-księgowego — plik w formacie Elixir-O lub XML", stawka: "bez opłat", tryb: "za plik"}
+          - {usluga: "Eksport wyciągów w formacie MT940 — dodatkowy rachunek", stawka: "{{fakt:oplata.firma.wyciag-mt940}}", tryb: "miesięcznie, za rachunek"}
+          - {usluga: "Dostęp do raportu dziennego o saldach w formacie PDF", stawka: "10,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Certyfikat kwalifikowany do podpisu elektronicznego w bankowości — wydanie", stawka: "{{fakt:oplata.firma.token-sprzetowy}}", tryb: "jednorazowo"}
+          - {usluga: "Szkolenie użytkowników bankowości elektronicznej w siedzibie Klienta", stawka: "400,00 zł", tryb: "za dzień szkolenia"}
+          - {usluga: "Zablokowanie dostępu do bankowości elektronicznej na wniosek Klienta", stawka: "bez opłat", tryb: "za dyspozycję"}
+
+  - id: taryfa-firmy-opc-bankowosc-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-bankowosc
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Interfejs API otwartej bankowości — dostęp dla dostawcy usług płatniczych wskazanego przez Klienta", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Integracja z platformą e-commerce Klienta (statusy płatności)", stawka: "{{fakt:oplata.firma.integracja-api}}", tryb: "miesięcznie"}
+          - {usluga: "Dodatkowe środowisko testowe interfejsu API", stawka: "100,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Wsparcie techniczne integracji — godzina pracy specjalisty", stawka: "180,00 zł", tryb: "za godzinę"}
+          - {usluga: "Przywrócenie dostępu po zablokowaniu z powodu błędnych prób logowania", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Wymiana tokena sprzętowego na token mobilny", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przesłanie hasła początkowego pocztą", stawka: "{{fakt:oplata.firma.karta-zmiana-pin}}", tryb: "za przesyłkę"}
+          - {usluga: "Dyspozycja złożona telefonicznie po potwierdzeniu tożsamości", stawka: "5,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Powiadomienie SMS o logowaniu do bankowości elektronicznej", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie"}
+          - {usluga: "Dostęp do bankowości elektronicznej dla księgowego zewnętrznego (biuro rachunkowe)", stawka: "bez opłat", tryb: "miesięcznie"}
+
+  # ---------------------------------------------------------------- XI. Gwarancje i akredytywy
+  - id: taryfa-firmy-opc-gwarancje-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-gwarancje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Gwarancja zwrotu zaliczki", stawka: "{{fakt:oplata.firma.gwarancja-prowizja}} kwoty gwarancji, min. {{fakt:oplata.firma.gwarancja-minimum}}", tryb: "za każdy rozpoczęty kwartał"}
+          - {usluga: "Gwarancja usunięcia wad i usterek", stawka: "{{fakt:oplata.firma.gwarancja-prowizja}} kwoty gwarancji, min. {{fakt:oplata.firma.gwarancja-minimum}}", tryb: "za każdy rozpoczęty kwartał"}
+          - {usluga: "Gwarancja płatności czynszu najmu", stawka: "1,0% kwoty gwarancji, min. 250,00 zł", tryb: "za każdy rozpoczęty kwartał"}
+          - {usluga: "Gwarancja celna", stawka: "0,8% kwoty gwarancji, min. 200,00 zł", tryb: "za każdy rozpoczęty kwartał"}
+          - {usluga: "Przedłużenie terminu ważności gwarancji", stawka: "{{fakt:oplata.firma.gwarancja-zmiana}} oraz prowizja za dodatkowy okres", tryb: "za zmianę"}
+          - {usluga: "Zwiększenie kwoty gwarancji", stawka: "{{fakt:oplata.firma.gwarancja-zmiana}} oraz prowizja od kwoty zwiększenia", tryb: "za zmianę"}
+          - {usluga: "Zmniejszenie kwoty gwarancji lub zwolnienie z zobowiązań", stawka: "bez opłat", tryb: "za zmianę"}
+          - {usluga: "Wydanie gwarancji w języku obcym", stawka: "150,00 zł", tryb: "za dokument"}
+          - {usluga: "Wydanie duplikatu gwarancji", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument"}
+          - {usluga: "Przesłanie gwarancji bezpośrednio do beneficjenta kurierem", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za przesyłkę"}
+          - {usluga: "Awizo gwarancji otrzymanej od banku zagranicznego (kontrgwarancja)", stawka: "0,15% kwoty, min. 200,00 zł", tryb: "jednorazowo"}
+
+  - id: taryfa-firmy-opc-gwarancje-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-gwarancje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Akredytywa importowa — zmiana kwoty lub terminu na wniosek zleceniodawcy", stawka: "{{fakt:oplata.firma.gwarancja-zmiana}}", tryb: "za zmianę"}
+          - {usluga: "Akredytywa importowa — płatność po przedstawieniu zgodnych dokumentów", stawka: "0,15% kwoty płatności, min. 150,00 zł", tryb: "od kwoty płatności"}
+          - {usluga: "Akredytywa importowa — akceptacja dokumentów z niezgodnościami", stawka: "120,00 zł", tryb: "za komplet dokumentów"}
+          - {usluga: "Akredytywa eksportowa — potwierdzenie akredytywy przez Bank", stawka: "wg wyceny indywidualnej, min. 400,00 zł", tryb: "za każdy rozpoczęty kwartał"}
+          - {usluga: "Akredytywa eksportowa — negocjacja dokumentów", stawka: "0,20% kwoty dokumentów, min. 250,00 zł", tryb: "od kwoty dokumentów"}
+          - {usluga: "Akredytywa eksportowa — przeniesienie akredytywy na beneficjenta zastępczego", stawka: "0,15% kwoty, min. 200,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Inkaso dokumentowe — wypłata środków po otrzymaniu płatności", stawka: "0,10% kwoty inkasa, min. 80,00 zł", tryb: "od kwoty inkasa"}
+          - {usluga: "Inkaso dokumentowe — zwrot niezrealizowanych dokumentów", stawka: "100,00 zł", tryb: "za komplet dokumentów"}
+          - {usluga: "Przesłanie dokumentów handlowych do banku zagranicznego kurierem międzynarodowym", stawka: "koszt kuriera plus 20,00 zł", tryb: "za przesyłkę"}
+          - {usluga: "Opinia o wiarygodności zagranicznego kontrahenta (raport bankowy)", stawka: "wg cennika podmiotu zewnętrznego plus 50,00 zł", tryb: "za raport"}
+
+  # ---------------------------------------------------------------- XII. Usługi dodatkowe
+  - id: taryfa-firmy-opc-uslugi-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Skrytka sejfowa — kaucja zwrotna za klucze", stawka: "200,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Skrytka sejfowa — wymiana zamka z winy najemcy", stawka: "250,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Skrytka sejfowa — upomnienie o zaległej opłacie za najem", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za upomnienie"}
+          - {usluga: "Dostęp do skrytki sejfowej poza godzinami pracy placówki", stawka: "100,00 zł", tryb: "za wizytę"}
+          - {usluga: "Przechowywanie dokumentów w depozycie archiwalnym", stawka: "20,00 zł", tryb: "miesięcznie, za pudło"}
+          - {usluga: "Udzielenie informacji o numerze rachunku podatnika dla potrzeb weryfikacji kontrahenta", stawka: "bez opłat", tryb: "za informację"}
+          - {usluga: "Wydanie zaświadczenia w języku obcym", stawka: "{{fakt:oplata.zaswiadczenie}} oraz 30,00 zł za tłumaczenie", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o numerze rachunku do wniosku o dotację", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Umowa agencyjna — zgłoszenie rachunku do systemu ubezpieczeń społecznych", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Obsługa dyspozycji złożonej na formularzu w placówce poza standardowymi godzinami", stawka: "50,00 zł", tryb: "za dyspozycję"}
+
+  - id: taryfa-firmy-opc-uslugi-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wniosek o rozłożenie na raty należnych Bankowi opłat", stawka: "bez opłat", tryb: "za wniosek"}
+          - {usluga: "Wypowiedzenie umowy rachunku przez Klienta", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przeniesienie rachunku do innego banku — wydanie zestawienia obrotów", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Wysłanie wezwania do zapłaty z tytułu zadłużenia na rachunku", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za wezwanie"}
+          - {usluga: "Wysłanie ostatecznego wezwania do zapłaty przed wypowiedzeniem umowy", stawka: "35,00 zł", tryb: "za wezwanie"}
+          - {usluga: "Wyszukanie i odtworzenie dokumentu z archiwum elektronicznego", stawka: "20,00 zł", tryb: "za dokument"}
+          - {usluga: "Wydanie dokumentu poświadczonego za zgodność z oryginałem", stawka: "10,00 zł", tryb: "za stronę"}
+          - {usluga: "Udzielenie informacji audytorowi Banku wskazanemu przez Klienta (list audytowy)", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument"}
+          - {usluga: "Obsługa dyspozycji wypłaty środków po śmierci wspólnika spółki", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Realizacja dyspozycji złożonej przez zarządcę sukcesyjnego", stawka: "bez opłat", tryb: "za dyspozycję"}

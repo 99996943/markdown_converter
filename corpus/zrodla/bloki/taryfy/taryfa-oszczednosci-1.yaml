@@ -1,0 +1,123 @@
+bloki:
+  # ===== I. Postanowienia ogólne =====
+  - id: taryfa-oszczednosci-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - ustep: "Niniejsza Taryfa {obejmuje rachunki oszczędnościowe i lokaty terminowe prowadzone|dotyczy rachunków oszczędnościowych i lokat terminowych prowadzonych} przez Bank dla osób fizycznych oraz dla przedsiębiorców. Postanowienia umów i zasady funkcjonowania poszczególnych produktów określa „{{ref:dokument:regulamin-lokat}}”; Taryfa nie powtarza tych zasad i podaje wyłącznie stawki, limity oraz oprocentowanie."
+      - ustep: "Oprocentowanie rachunków i lokat podano w skali roku jako stałą stopę procentową, chyba że przy danej pozycji zaznaczono inaczej. Odsetki naliczane są w oparciu o rok liczący {{fakt:lokata.rok-odsetkowy}}, a ich kapitalizacja {następuje|odbywa się} {{fakt:lokata.kapitalizacja}}, o ile umowa lokaty nie stanowi inaczej. Od odsetek Bank pobiera podatek dochodowy w wysokości {{fakt:podatek.odsetki}}, o którym informuje Klienta zgodnie z zasadami opisanymi w Regulaminie."
+      - ustep: "Taryfa jest podzielona na {części|sekcje} odpowiadające grupom produktów: rachunkom oszczędnościowym klientów indywidualnych, lokatom terminowym w złotych, lokatom w walutach obcych, lokatom negocjowanym, produktom dla przedsiębiorców oraz czynnościom dodatkowym, które mogą być zlecone do dowolnego z tych produktów. Czynność niewymieniona w sekcji produktu {jest wykonywana|Bank wykonuje} zgodnie ze stawką z sekcji „Czynności dodatkowe”."
+      - ustep: "Środki zgromadzone na rachunkach oszczędnościowych i lokatach są objęte gwarancjami Bankowego Funduszu Gwarancyjnego do kwoty stanowiącej {{fakt:bfg.gwarancja}}. Zasady gwarantowania {omawia|opisuje} formularz informacyjny przekazywany Klientowi przed zawarciem umowy."
+      - akapit: "Przy pozycjach podano tryb pobierania: „jednorazowo” oznacza opłatę pobieraną przy wykonaniu czynności lub zawarciu umowy, „miesięcznie” — opłatę pobieraną w ostatnim dniu roboczym miesiąca, „w skali roku” — stawkę oprocentowania naliczaną proporcjonalnie do liczby dni, a „od kwoty operacji” — prowizję naliczaną od wartości transakcji."
+
+  # ===== II. Rachunki oszczędnościowe =====
+  - id: taryfa-oszczednosci-rachunki-opis
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - akapit: "{{fakt:lokata.nazwa-rachunek}} jest rachunkiem oszczędnościowym w złotych, z którego Klient {może|ma prawo} {dysponować środkami|korzystać ze środków} w każdym czasie, z zastrzeżeniem limitu bezpłatnych wypłat. Rachunek otwiera się wpłatą początkową w wysokości co najmniej {{fakt:limit.rachunek-oszczednosciowy.otwarcie}}; oprocentowanie {podstawowe|bazowe} wynosi {{fakt:oprocentowanie.rachunek-oszczednosciowy}} w skali roku."
+      - akapit: "Oprocentowanie podwyższone, wynoszące {{fakt:oprocentowanie.rachunek-oszczednosciowy.promocyjne}} w skali roku, Bank stosuje w okresach promocyjnych wskazanych w odrębnych regulaminach promocji, a po ich zakończeniu stosuje oprocentowanie podstawowe. Za {wypłaty i przelewy|operacje obciążające rachunek} w miesiącu kalendarzowym, w liczbie przekraczającej limit „{{fakt:limit.rachunek-oszczednosciowy.bezplatne-wyplaty}}”, Bank pobiera opłatę podaną w tabeli."
+  - id: taryfa-oszczednosci-rachunki-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku oszczędnościowego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Minimalna wpłata początkowa na otwarcie rachunku", stawka: "{{fakt:limit.rachunek-oszczednosciowy.otwarcie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie rachunku oszczędnościowego", stawka: "bez opłat", tryb: "miesięcznie" }
+          - usluga: "{Oprocentowanie|Stopa procentowa} środków na rachunku oszczędnościowym"
+            stawka: "wg wysokości salda"
+            tryb: "w skali roku"
+            podpozycje:
+              - { usluga: "dla salda do kwoty progowej[^1]", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy}}", tryb: "w skali roku" }
+              - { usluga: "dla nadwyżki salda ponad kwotę progową", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.rachunek-saldo-wysokie}}", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie promocyjne w okresie promocji[^2]", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy.promocyjne}}", tryb: "w skali roku" }
+          - { usluga: "Premia lojalnościowa za brak wypłat w danym kwartale", stawka: "{{fakt:oprocentowanie.taryfa-oszczednosci.premia-lojalnosciowa}}", tryb: "w skali roku, kwartalnie" }
+          - { usluga: "Wpłata na rachunek przelewem z rachunku {prowadzonego|otwartego} w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata na rachunek przelewem z rachunku w innym banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówkowa na rachunek w placówce", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "{Wypłata|Wypłata gotówki} lub przelew z rachunku w ramach limitu bezpłatnych operacji", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata lub przelew ponad limit bezpłatnych operacji w miesiącu", stawka: "{{fakt:oplata.rachunek-oszczednosciowy.wyplata-ponad-limit}}", tryb: "za operację" }
+          - { usluga: "{Maksymalna|Najwyższa} łączna wypłata z rachunku w ciągu jednego dnia", stawka: "{{fakt:limit.rachunek-oszczednosciowy.wyplata-dzienna}}", tryb: "dziennie" }
+    przypisy:
+      1: "Kwota progowa wynosi {{fakt:limit.taryfa-oszczednosci.rachunek-saldo-prog}}; oprocentowanie nadwyżki liczy się od środków przekraczających tę kwotę na koniec dnia, a nie od średniego salda miesiąca."
+      2: "Oprocentowanie promocyjne dotyczy wyłącznie Klientów, którzy spełnili warunki promocji, i nie może być stosowane łącznie z premią lojalnościową, chyba że regulamin promocji stanowi inaczej."
+  - id: taryfa-oszczednosci-rachunki-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata gotówki z rachunku w kasie placówki do kwoty 5 000,00 zł", stawka: "bez opłat", tryb: "za operację" }
+          - usluga: "Wypłata gotówki z rachunku w kasie placówki powyżej kwoty 5 000,00 zł[^1]"
+            stawka: "{{fakt:oplata.taryfa-oszczednosci.wyplata-gotowkowa-prowizja}} kwoty wypłaty, min. {{fakt:oplata.taryfa-oszczednosci.wyplata-gotowkowa-minimum}}"
+            tryb: "od kwoty operacji"
+          - { usluga: "Zlecenie {stałe|cykliczne} z rachunku oszczędnościowego na rachunek w Banku", stawka: "bez opłat", tryb: "za realizację" }
+          - { usluga: "Przelew natychmiastowy z rachunku oszczędnościowego", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "Przelew z rachunku oszczędnościowego na rachunek w innym banku złożony w placówce", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Dyspozycja automatycznego odkładania środków („zaokrąglanie” transakcji)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana rachunku rozliczeniowego, z którego następują wpłaty i wypłaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zamknięcie rachunku oszczędnościowego na wniosek Klienta", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wyciąg z rachunku oszczędnościowego w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku oszczędnościowego w postaci papierowej {wysyłany|przesyłany} pocztą", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+          - { usluga: "Powiadomienie SMS o zmianie salda rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie" }
+          - { usluga: "Zamknięcie rachunku z powodu nieaktywności po upływie okresu określonego w Regulaminie[^2]", stawka: "bez opłat", tryb: "jednorazowo" }
+    przypisy:
+      1: "Wypłatę gotówki powyżej kwoty 5 000,00 zł należy zgłosić w placówce {z wyprzedzeniem|z uprzedzeniem} co najmniej jednego dnia roboczego; prowizja nie jest pobierana, jeżeli Klient odstąpi od dyspozycji przed jej realizacją."
+      2: "Rachunek jest uznawany za nieaktywny, jeżeli przez {{fakt:termin.rachunek-oszczednosciowy.nieaktywnosc}} nie wykonano na nim żadnej operacji z wyjątkiem kapitalizacji odsetek i pobrania opłat."
+
+  # ===== III. Lokaty terminowe w złotych =====
+  - id: taryfa-oszczednosci-lokaty-opis
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - akapit: "{Tabela oprocentowania dotyczy|Stawki tabeli oprocentowania odnoszą się do} produktu „{{fakt:lokata.nazwa-lokata-klasyczna}}” zakładanego w złotych na okres jednego, trzech, sześciu, dwunastu i dwudziestu czterech miesięcy. Minimalna kwota lokaty wynosi {{fakt:limit.lokata.minimalna}}, a maksymalna {{fakt:limit.lokata.maksymalna}}; w przypadku kwoty wyższej Bank zawiera umowę o lokatę negocjowaną."
+      - akapit: "{Oprocentowanie lokaty jest stałe|Stopa procentowa lokaty jest stała} w całym okresie umownym. Stawka obowiązująca w dniu założenia lokaty jest wskazana w potwierdzeniu umowy, które Bank przekazuje Klientowi w terminie {{fakt:termin.lokata.potwierdzenie-umowy}}. Dyspozycje składane w dniu roboczym po godzinie {{fakt:limit.taryfa-oszczednosci.godzina-graniczna}} {traktuje się jak|uznaje się za} złożone w następnym dniu roboczym."
+  - id: taryfa-oszczednosci-lokaty-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Założenie|Otwarcie} lokaty terminowej w złotych", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Minimalna|Najniższa} kwota lokaty terminowej", stawka: "{{fakt:limit.lokata.minimalna}}", tryb: "jednorazowo" }
+          - { usluga: "Maksymalna kwota lokaty terminowej zakładanej według tabeli oprocentowania", stawka: "{{fakt:limit.lokata.maksymalna}}", tryb: "jednorazowo" }
+          - usluga: "Oprocentowanie lokaty terminowej w złotych[^1]"
+            stawka: "wg okresu lokaty"
+            tryb: "w skali roku"
+            podpozycje:
+              - { usluga: "na okres 1 miesiąca ({{fakt:termin.lokata.okres-1m}})", stawka: "{{fakt:oprocentowanie.lokata-1m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 3 miesięcy ({{fakt:termin.lokata.okres-3m}})", stawka: "{{fakt:oprocentowanie.lokata-3m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 6 miesięcy ({{fakt:termin.lokata.okres-6m}})", stawka: "{{fakt:oprocentowanie.lokata-6m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 12 miesięcy ({{fakt:termin.lokata.okres-12m}})", stawka: "{{fakt:oprocentowanie.lokata-12m}}", tryb: "w skali roku" }
+              - { usluga: "na okres 24 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-24m}}", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie lokaty po automatycznym odnowieniu na kolejny okres[^2]", stawka: "{{fakt:oprocentowanie.lokata.odnowienie}}", tryb: "w skali roku" }
+          - { usluga: "Oprocentowanie środków po zerwaniu lokaty przed terminem", stawka: "{{fakt:oprocentowanie.lokata.zerwanie}}", tryb: "w skali roku" }
+          - { usluga: "Podatek od odsetek ({zryczałtowany|ryczałtowy} podatek dochodowy)", stawka: "{{fakt:podatek.odsetki}}", tryb: "od naliczonych odsetek" }
+    przypisy:
+      1: "Stawki podano dla lokat zakładanych w placówce, w bankowości elektronicznej i mobilnej. Okres lokaty {liczy się|oblicza się} w dniach kalendarzowych; ich liczbę dla poszczególnych okresów podano w nawiasie."
+      2: "Odnowienie następuje na dotychczasowy okres lokaty, o ile Klient nie złoży dyspozycji innej w terminie {{fakt:termin.lokata.odnowienie-dyspozycja}} przed upływem okresu umownego; po odnowieniu stosuje się wskazaną stawkę, a nie stawkę z tabeli."
+  - id: taryfa-oszczednosci-lokaty-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: wymagane-taryfa-osz
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Dyspozycja|Zlecenie} zerwania lokaty przed terminem", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "za dyspozycję" }
+          - { usluga: "Realizacja zerwania lokaty (termin wypłaty środków)", stawka: "{{fakt:termin.lokata.zerwanie-realizacja}}", tryb: "od dnia dyspozycji" }
+          - { usluga: "Wypłata środków z lokaty na rachunek prowadzony w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata środków z lokaty w gotówce w placówce", stawka: "{{fakt:oplata.lokata.wyplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "Wypłata środków z lokaty przelewem na rachunek w innym banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "{Dodatkowe|Kolejne} potwierdzenie założenia lokaty w postaci papierowej", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "za dokument" }
+          - { usluga: "Duplikat umowy lokaty", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument" }
+          - { usluga: "Zmiana dyspozycji odnowienia lokaty złożona w terminie", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana dyspozycji odnowienia lokaty złożona po terminie, w ciągu okresu określonego w Regulaminie[^1]", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata odsetek na rachunek w Banku w trakcie trwania lokaty (lokata z wypłatą odsetek)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Podział|Rozdzielenie} lokaty na dwie lub więcej lokat o niższych kwotach", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Założenie lokaty dla dziecka z rachunku rodzica lub opiekuna prawnego", stawka: "bez opłat", tryb: "jednorazowo" }
+    przypisy:
+      1: "Dyspozycja złożona po upływie okresu umownego jest realizowana w terminie {{fakt:termin.lokata.dyspozycja-po-terminie}} od dnia zakończenia lokaty; za ten czas odsetki {naliczane są|Bank nalicza} według stawki rachunku, na którym zdeponowano środki."

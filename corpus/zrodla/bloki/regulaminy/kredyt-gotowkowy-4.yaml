@@ -1,0 +1,172 @@
+bloki:
+  # ===== Rozdział: Ubezpieczenie kredytu (opcjonalne) =====
+  - id: kredyt-gotowkowy-ubezpieczenie-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ubezpieczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {oferuje|proponuje} Klientom ubezpieczenie kredytu gotówkowego świadczone przez współpracujący zakład ubezpieczeń. Zakres ubezpieczenia może obejmować śmierć ubezpieczonego, trwałą niezdolność do pracy oraz utratę stałego źródła dochodów."
+      - ustep: "Bank działa w tym zakresie jako agent ubezpieczeniowy i nie jest stroną umowy ubezpieczenia. Wszelkie roszczenia z umowy ubezpieczenia Klient kieruje do zakładu ubezpieczeń, a warunki ubezpieczenia określa dokument przekazywany Klientowi przed zawarciem umowy ubezpieczenia."
+
+  - id: kredyt-gotowkowy-ubezpieczenie-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ubezpieczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy ubezpieczenia Bank przekazuje Klientowi na trwałym nośniku informacje o:"
+        punkty:
+          - "zakresie ochrony ubezpieczeniowej i sumie ubezpieczenia;"
+          - "wysokości składki i sposobie jej opłacenia;"
+          - "okresie ubezpieczenia, który nie może być dłuższy niż okres kredytowania;"
+          - "wyłączeniach odpowiedzialności zakładu ubezpieczeń;"
+          - "prawie do odstąpienia od umowy ubezpieczenia, o którym mowa w {{ref:blok:kredyt-gotowkowy-ubezpieczenie}}."
+      - ustep: "Bank {nie wywiera|nie może wywierać} na Klienta nacisku w celu zawarcia umowy ubezpieczenia i nie uzależnia od niej warunków cenowych kredytu."
+
+  - id: kredyt-gotowkowy-ubezpieczenie-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ubezpieczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli zdarzenie objęte ubezpieczeniem nastąpi w okresie jego trwania, Klient lub osoba uprawniona zgłasza je zakładowi ubezpieczeń w terminie wskazanym w warunkach ubezpieczenia. Zakład ubezpieczeń wypłaca świadczenie, które — zależnie od umowy — jest przeznaczone na spłatę zadłużenia kredytowego."
+      - ustep: "Do czasu wypłaty świadczenia Klient {nie jest zwolniony|pozostaje zobowiązany} do terminowej spłaty rat. Jeżeli świadczenie okaże się niższe od zadłużenia, Klient spłaca różnicę zgodnie z harmonogramem; jeżeli wyższe — nadwyżka jest wypłacana osobie uprawnionej."
+
+  - id: kredyt-gotowkowy-ubezpieczenie-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ubezpieczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Składka ubezpieczeniowa należna zakładowi ubezpieczeń wynosi {{fakt:ubezpieczenie.kredyt-gotowkowy.skladka}} kwoty kredytu i jest wskazywana w umowie ubezpieczenia. Składka ta {nie stanowi|nie jest} prowizją Banku, ale jeśli została sfinansowana z kredytu, zwiększa kwotę zadłużenia i odsetki."
+      - ustep: "W razie wcześniejszej spłaty kredytu Klient może wypowiedzieć umowę ubezpieczenia i żądać zwrotu niewykorzystanej części składki; zasady rozliczenia określają warunki ubezpieczenia. Zwrot, który należy się z tytułu sfinansowanej składki, jest zaliczany na poczet zadłużenia."
+
+  # ===== Rozdział: Opóźnienie w spłacie i windykacja =====
+  - id: kredyt-gotowkowy-opoznienie-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Opóźnieniem w spłacie jest niezapłacenie w terminie całości lub części raty kredytu, w tym odsetek i innych należności. Za dzień zapłaty uznaje się dzień, w którym środki zostały zaksięgowane na rachunku wskazanym w umowie."
+      - ustep: "Klient ponosi koszty wynikające z opóźnienia tylko w zakresie przewidzianym w umowie i w Taryfie. Do kosztów tych należą w szczególności odsetki za opóźnienie oraz opłaty za monity i wezwania, naliczane w sposób opisany w {{ref:blok:kredyt-gotowkowy-opoznienie}}."
+
+  - id: kredyt-gotowkowy-opoznienie-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli opóźnienie trwa dłużej niż kilka dni, Bank {podejmuje|rozpoczyna} czynności zmierzające do odzyskania należności, w szczególności:"
+        punkty:
+          - "kontaktuje się z Klientem telefonicznie, pisemnie lub za pomocą wiadomości elektronicznych;"
+          - "proponuje Klientowi rozwiązania ułatwiające spłatę zaległości, jeżeli sytuacja tego wymaga;"
+          - "kieruje wezwanie do zapłaty, wskazując kwotę zaległości i termin jej zapłaty."
+      - ustep: "Z Klientem kontaktują się wyłącznie osoby upoważnione przez Bank, które na żądanie przedstawiają swoją tożsamość i podstawę do działania w imieniu Banku."
+
+  - id: kredyt-gotowkowy-opoznienie-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient nie zgadza się z wysokością zaległości lub zasadnością naliczenia opłat, może w każdym czasie złożyć reklamację na zasadach określonych w {{ref:blok:wspolne-reklamacje-regulamin}}. Złożenie reklamacji nie zwalnia Klienta z obowiązku spłaty bezspornej części zadłużenia."
+      - ustep: "Bank {wstrzymuje|zawiesza} czynności windykacyjne w odniesieniu do spornej części należności na czas rozpatrywania reklamacji, chyba że wstrzymanie mogłoby narazić Bank na utratę możliwości dochodzenia należności."
+
+  - id: kredyt-gotowkowy-opoznienie-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na wniosek Klienta, który nie może terminowo regulować rat z powodu przejściowych trudności, Bank {rozpatruje|analizuje} możliwość restrukturyzacji zadłużenia. Restrukturyzacja może polegać na zmianie wysokości rat, wydłużeniu okresu kredytowania lub rozłożeniu zaległości na raty."
+      - ustep: "Restrukturyzacja wymaga zawarcia aneksu do umowy i może prowadzić do zwiększenia całkowitego kosztu kredytu. Przed zawarciem aneksu Bank przedstawia Klientowi informacje o skutkach zmiany, w tym o nowym harmonogramie spłat."
+
+  # ===== Rozdział: Wypowiedzenie umowy =====
+  - id: kredyt-gotowkowy-wypowiedzenie-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} wypowiedzieć umowę kredytu z ważnych powodów, do których należą:"
+        punkty:
+          - "zaległość w spłacie co najmniej dwóch rat, pomimo wezwania do zapłaty;"
+          - "podanie przez Klienta fałszywych informacji lub dokumentów, które miały wpływ na decyzję kredytową;"
+          - "wykorzystanie kredytu w sposób sprzeczny z przepisami prawa;"
+          - "utrata przez Klienta zdolności kredytowej w stopniu uniemożliwiającym terminową spłatę."
+      - ustep: "W przypadku wypowiedzenia z innych przyczyn niż zaległość w spłacie Bank wzywa Klienta do wyjaśnień w terminie {{fakt:termin.kredyt-gotowkowy.wezwanie-do-zaplaty}}."
+
+  - id: kredyt-gotowkowy-wypowiedzenie-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypowiedzenie umowy powinno być sporządzone na piśmie lub na innym trwałym nośniku i zawierać przyczynę wypowiedzenia oraz kwotę zadłużenia na dzień wypowiedzenia. Okres wypowiedzenia biegnie od dnia doręczenia oświadczenia drugiej stronie."
+      - ustep: "Jeżeli Klient w okresie wypowiedzenia spłaci całość zaległości wraz z odsetkami i opłatami, wypowiedzenie traci skuteczność, a umowa jest kontynuowana na dotychczasowych warunkach. Bank potwierdza ten skutek Klientowi {pisemnie|na trwałym nośniku}."
+
+  - id: kredyt-gotowkowy-wypowiedzenie-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po upływie okresu wypowiedzenia Klient jest obowiązany spłacić całość zadłużenia, w skład którego wchodzą kapitał, odsetki umowne naliczone do dnia upływu okresu wypowiedzenia oraz odsetki za opóźnienie naliczone od dnia następującego po tym dniu."
+      - ustep: "Jeżeli Klient nie spłaci wypowiedzianego kredytu, Bank {może|ma prawo} dochodzić należności na drodze sądowej, a także wystąpić o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu, jeżeli Klient złożył odpowiednie oświadczenie o poddaniu się egzekucji."
+
+  - id: kredyt-gotowkowy-wypowiedzenie-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa kredytu wygasa także z dniem:"
+        punkty:
+          - "całkowitej spłaty kredytu wraz z odsetkami i innymi należnościami;"
+          - "śmierci Klienta, z zastrzeżeniem praw i obowiązków spadkobierców;"
+          - "odstąpienia od umowy na zasadach określonych w Regulaminie;"
+          - "rozwiązania umowy za porozumieniem stron."
+      - ustep: "W razie śmierci Klienta spadkobiercy odpowiadają za zobowiązanie na zasadach określonych w Kodeksie cywilnym; Bank {udziela|przekazuje} im informacji o stanie zadłużenia po przedstawieniu dokumentów potwierdzających prawa do spadku."
+
+  # ===== Rozdział: Postanowienia końcowe =====
+  - id: kredyt-gotowkowy-koncowe-1
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank podlega nadzorowi Komisji Nadzoru Finansowego. Klient ma prawo do pozasądowego rozwiązywania sporów, w tym przez wystąpienie do Rzecznika Finansowego, którego strona internetowa to {{fakt:rzecznik.strona}}, albo do właściwego podmiotu uprawnionego do prowadzenia postępowań w sprawie sporów konsumenckich."
+      - ustep: "Spory z umowy kredytu {rozstrzygane są|rozpoznają} przez sąd powszechny właściwy według przepisów Kodeksu postępowania cywilnego. Klient będący konsumentem może wytoczyć powództwo także przed sąd właściwy ze względu na swoje miejsce zamieszkania."
+
+  - id: kredyt-gotowkowy-koncowe-2
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki zgromadzone w Banku, w tym wpłaty na rachunki bankowe Klienta, podlegają ochronie gwarancyjnej Bankowego Funduszu Gwarancyjnego w wysokości {{fakt:bfg.gwarancja}}. Ochrona nie dotyczy zadłużenia Klienta z tytułu kredytu."
+      - ustep: "Bank {udostępnia|przekazuje} Klientowi, na jego żądanie, aktualny tekst Regulaminu w formie umożliwiającej jego pobranie i zapisanie, w tym na stronie {{fakt:bank.strona}} lub w placówce Banku."
+
+  - id: kredyt-gotowkowy-koncowe-3
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa kredytu i korespondencja z Klientem prowadzona są w języku polskim. Jeżeli Klient zażąda wersji w innym języku, Bank może ją udostępnić wyłącznie w celach informacyjnych, a rozstrzygająca jest wersja polska."
+      - ustep: "Jeżeli którekolwiek postanowienie Regulaminu zostanie uznane za nieważne lub niewiążące, nie wpływa to na ważność pozostałych postanowień, które pozostają w mocy. W miejsce postanowienia nieważnego stosuje się odpowiednie przepisy prawa."
+
+  - id: kredyt-gotowkowy-koncowe-4
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kontakt z Bankiem w sprawach dotyczących kredytu gotówkowego jest możliwy:"
+        punkty:
+          - "telefonicznie, pod numerem {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}});"
+          - "osobiście w placówkach Banku;"
+          - "listownie, na adres: {{fakt:bank.adres}}."
+      - ustep: "Klient może także skorzystać z formularza kontaktowego w bankowości elektronicznej. Wiadomości przesłane w ten sposób są rejestrowane i traktowane na równi z korespondencją tradycyjną."

@@ -1,0 +1,38 @@
+bloki:
+  - id: procedura-kroki
+    typy: [procedury]
+    tematy: [reklamacje]
+    kategoria: krok
+    elementy:
+      - metryczka:
+          - klucz: "Właściciel"
+            wartosc: "Departament Obsługi Klienta"
+      - kroki:
+          - tekst: "Przyjmij reklamację."
+            podkroki:
+              - tekst: "Zweryfikuj tożsamość Klienta."
+                podkroki:
+                  - tekst: "Sprawdź dokument tożsamości."
+          - tekst: "Rozpatrz reklamację w ciągu {{fakt:termin.reklamacja}}."
+  - id: procedura-schemat
+    typy: [procedury]
+    tematy: [reklamacje]
+    kategoria: krok
+    elementy:
+      - schemat:
+          - nazwa: "Przyjęcie"
+            wyjasnienie: "Pracownik rejestruje zgłoszenie."
+          - nazwa: "Rozpatrzenie"
+            wyjasnienie:
+              - "Pracownik analizuje sprawę."
+              - "Przygotowuje odpowiedź."
+  - id: procedura-lista
+    typy: [procedury]
+    tematy: [reklamacje]
+    kategoria: lista-kontrolna
+    elementy:
+      - lista-kontrolna:
+          forma: tabela
+          pozycje:
+            - "Zarejestrowano zgłoszenie"
+            - "Wysłano odpowiedź"

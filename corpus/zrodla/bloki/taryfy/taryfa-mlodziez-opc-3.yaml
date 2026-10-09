@@ -1,0 +1,95 @@
+bloki:
+  # ===== Usługi dodatkowe i rola przedstawiciela — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-uslugi-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przyjęcie od przedstawiciela ustawowego zgody na przetwarzanie danych małoletniego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wycofanie zgody marketingowej udzielonej przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Udzielenie przedstawicielowi dostępu do aplikacji w trybie opiekuna", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Odebranie|Cofnięcie} przedstawicielowi dostępu do aplikacji w trybie opiekuna na podstawie orzeczenia sądu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Ustanowienie dodatkowego opiekuna (np. dziadków) z prawem wglądu bez prawa dyspozycji", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Cofnięcie uprawnień dodatkowego opiekuna", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Weryfikacja tożsamości przedstawiciela ustawowego w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Weryfikacja tożsamości przedstawiciela ustawowego zdalnie (wideo-weryfikacja)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Przyjęcie dokumentów od przedstawiciela przesłanych korespondencyjnie z notarialnym poświadczeniem podpisu", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Weryfikacja pełnomocnictwa udzielonego przez przedstawiciela do obsługi rachunku małoletniego", stawka: "{{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}", tryb: "jednorazowo" }
+  - id: taryfa-mlodziez-opc-uslugi-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zaświadczenie o posiadaniu rachunku dla ZUS lub urzędu (świadczenia na dziecko)", stawka: "{{fakt:oplata.mlodziez.zaswiadczenie-opiekuna}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie o numerze rachunku w postaci elektronicznej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie otwarcia rachunku wydane po zawarciu umowy", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Duplikat|Kopia} umowy rachunku w postaci elektronicznej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Duplikat umowy rachunku w postaci papierowej", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za każdy dokument" }
+          - { usluga: "Odpis wyciągu z rachunku sprzed więcej niż 12 miesięcy", stawka: "{{fakt:oplata.rachunek-osobisty.odpis-wyciagu}}", tryb: "za każdy dokument" }
+          - { usluga: "Zestawienie transakcji z rachunku w formie pliku dla przedstawiciela", stawka: "bez opłat", tryb: "za każdy plik" }
+          - { usluga: "Informacja o opłatach pobranych w roku kalendarzowym z rachunku małoletniego", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie wykonania operacji — wydruk w placówce", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie o braku zadłużenia wobec Banku", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+  - id: taryfa-mlodziez-opc-uslugi-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Powiadomienie SMS o logowaniu do bankowości elektronicznej", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za każde powiadomienie" }
+          - { usluga: "Powiadomienie push w aplikacji o operacjach na rachunku", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "Powiadomienie e-mail o zmianie limitów lub ustawień bezpieczeństwa", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "Alert o saldzie poniżej progu wskazanego przez przedstawiciela", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "{Wysyłka|Przesłanie} wiadomości SMS z kodem jednorazowym (autoryzacja operacji)", stawka: "bez opłat", tryb: "za każdy kod" }
+          - { usluga: "Wysyłka korespondencji papierowej na adres przedstawiciela ustawowego", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdą przesyłkę" }
+          - { usluga: "Wysyłka korespondencji w postaci elektronicznej", stawka: "bez opłat", tryb: "za każdą przesyłkę" }
+          - { usluga: "Zmiana kanału otrzymywania korespondencji z papierowego na elektroniczny", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana adresu korespondencyjnego przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana adresu e-mail do powiadomień", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-uslugi-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-uslugi
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Realizacja zajęcia egzekucyjnego rachunku pełnoletniego klienta", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "jednorazowo" }
+          - { usluga: "Odmowa zajęcia rachunku małoletniego w zakresie środków wolnych od zajęcia (świadczenia na dziecko)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Realizacja|Wykonanie} dyspozycji wypłaty środków na wypadek śmierci", stawka: "{{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}", tryb: "jednorazowo" }
+          - { usluga: "Wypłata środków z rachunku po śmierci przedstawiciela ustawowego (na rzecz nowego opiekuna)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Informacja dla sądu rodzinnego o rachunku małoletniego", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Informacja dla komornika o rachunkach klienta pełnoletniego", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Wniosek o zamknięcie rachunku złożony przez pełnoletniego klienta", stawka: "{{fakt:oplata.rachunek-osobisty.zamkniecie}}", tryb: "jednorazowo" }
+          - { usluga: "Rozliczenie rachunku po wypowiedzeniu umowy i wypłata salda", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Pozasądowe rozpatrzenie reklamacji dotyczącej opłat", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Pisemna odpowiedź na reklamację przesłana na adres przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za reklamację" }
+  # ===== Objaśnienia =====
+  - id: taryfa-mlodziez-opc-obj-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: objasnienie-mlodziez
+    elementy:
+      - ustep: "Zmiana pakietu wynikająca z wieku klienta {następuje|jest dokonywana} automatycznie: Konto Junior przekształca się w Konto Teen po ukończeniu {{fakt:wiek.mlodziez.dziecko-max}}, a Konto Teen — z dniem ukończenia {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} w Konto Student albo Konto Standard. Bank informuje przedstawiciela ustawowego lub klienta o przekształceniu co najmniej na {{fakt:termin.mlodziez.powiadomienie-o-przeksztalceniu}} przed jego dokonaniem."
+      - ustep: "Przekształcenie nie powoduje zamknięcia rachunku ani zmiany jego numeru; zachowują ważność zlecenia stałe, kieszonkowe, cele oszczędnościowe i karta debetowa, o ile nie została zastrzeżona. Limity ustalone przez przedstawiciela ustawowego wygasają z dniem ukończenia {{fakt:wiek.rachunek-osobisty.pelnoletnosc}}."
+  - id: taryfa-mlodziez-opc-obj-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: objasnienie-mlodziez
+    elementy:
+      - ustep: "Zwolnienia z opłat przewidziane w pakiecie Konto Student {obowiązują|przysługują} do końca miesiąca, w którym klient ukończył {{fakt:wiek.mlodziez.student-max}}, nie dłużej niż przez okres ważności potwierdzenia statusu studenta powiększony o okres przejściowy ({{fakt:termin.mlodziez.okres-przejsciowy}})."
+      - ustep: "Jeżeli klient nie potwierdzi statusu studenta po upływie okresu przejściowego, Bank przekształca rachunek w Konto Standard i stosuje stawki z Taryfy opłat i prowizji dla klientów indywidualnych. Klient może w każdej chwili ponownie złożyć dokument potwierdzający status i wrócić do pakietu studenckiego."
+  - id: taryfa-mlodziez-opc-obj-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: objasnienie-mlodziez
+    elementy:
+      - ustep: "Dyspozycje małoletniego przekraczające zakres zgody przedstawiciela ustawowego {są niewiążące|nie wywołują skutków} dla Banku do czasu ich zatwierdzenia przez przedstawiciela. Zatwierdzenie jest skuteczne od chwili potwierdzenia w aplikacji kodem jednorazowym lub biometrią, a w placówce — od chwili złożenia podpisu."
+      - ustep: "Środki zgromadzone na rachunku małoletniego stanowią jego własność; przedstawiciel ustawowy zarządza nimi w ramach zwykłego zarządu. Czynności przekraczające zwykły zarząd, w szczególności wypłata znacznych kwot, wymagają zezwolenia sądu opiekuńczego, o ile przepisy tego wymagają."
+  - id: taryfa-mlodziez-opc-obj-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: objasnienie-mlodziez
+    elementy:
+      - ustep: "Środki na rachunkach małoletnich i studentów są objęte gwarancją Bankowego Funduszu Gwarancyjnego na zasadach określonych w odrębnych przepisach; szczegółowe informacje {zawiera|udostępnia} arkusz informacyjny dołączony do umowy rachunku."
+      - ustep: "Stawki oznaczone jako „wg umowy” lub „wg regulaminu promocji” są ustalane indywidualnie albo wynikają z regulaminu promocji, w której klient uczestniczy, i nie są objęte niniejszą Taryfą. W razie rozbieżności pierwszeństwo ma umowa zawarta z klientem lub przedstawicielem ustawowym."

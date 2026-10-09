@@ -1,0 +1,244 @@
+bloki:
+  # ===== Spłata, wakacje, wcześniejsza spłata =====
+  - id: hip-splata-raty-rowne
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W systemie rat równych (annuitetowych) wysokość miesięcznej raty jest stała w okresie obowiązywania danego oprocentowania, przy czym w początkowym okresie większą część raty stanowią odsetki, a w miarę upływu czasu rośnie udział kapitału."
+      - ustep: "W systemie rat malejących część kapitałowa każdej raty jest stała, a część odsetkowa maleje wraz ze spadkiem salda zadłużenia. Pierwsze raty są wyższe niż w systemie rat równych, co {zwiększa|podnosi} wymaganą zdolność kredytową."
+      - ustep: "Zmiana rodzaju rat w trakcie umowy {jest możliwa|może nastąpić} za zgodą Banku i wiąże się z opłatą w wysokości {{fakt:oplata.hipoteka.zmiana-warunkow}}."
+
+  - id: hip-splata-nadplata
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca {może|ma prawo} dokonać dodatkowej wpłaty (nadpłaty) kredytu, niebędącej spłatą całości zadłużenia. Nadpłatę Bank zalicza w następującej kolejności: na należności wymagalne, a następnie na kapitał."
+      - ustep: "Kredytobiorca w dyspozycji nadpłaty wskazuje, czy nadpłata ma:"
+        punkty:
+          - "skrócić okres kredytowania, przy zachowaniu dotychczasowej wysokości raty;"
+          - "obniżyć wysokość kolejnych rat, przy zachowaniu dotychczasowego okresu kredytowania."
+      - ustep: "Jeżeli Kredytobiorca nie wskaże sposobu zaliczenia nadpłaty, Bank skraca okres kredytowania. Nadpłata dokonana w okresie wskazanym w {{ref:blok:hip-wczesna-splata}} podlega prowizji na zasadach tam określonych."
+
+  - id: hip-splata-rachunek
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca zapewnia na rachunku wskazanym w umowie środki wystarczające do pobrania raty w dniu jej płatności. Jeżeli środki są niewystarczające, Bank {może|ma prawo} obciążyć inne rachunki Kredytobiorcy prowadzone w Banku, po uprzednim poinformowaniu go o tym zamiarze."
+      - ustep: "Potrącenie wierzytelności Banku z rachunków innych niż wskazane w umowie następuje na zasadach określonych w {{ref:akt:dz-u-2024-1646-prawo-bankowe}}. Bank nie potrąca środków wolnych od zajęcia ani środków pochodzących ze świadczeń, których potrącenie jest wyłączone przepisami."
+      - ustep: "Jeżeli rata została pobrana z rachunku prowadzonego w innej walucie niż złoty, Bank przelicza ją po kursie z tabeli Banku obowiązującej o godzinie {{fakt:kurs.godzina-tabeli}} w dniu spłaty, z uwzględnieniem marży przeliczeń w wysokości {{fakt:kurs.marza-przeliczen}}."
+
+  - id: hip-splata-zaswiadczenia
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na wniosek Kredytobiorcy Bank wydaje zaświadczenie o wysokości zadłużenia, zaświadczenie o spłacie kredytu, zaświadczenie o odsetkach zapłaconych w danym roku podatkowym oraz duplikat umowy lub harmonogramu."
+      - ustep: "Za wydanie zaświadczenia Bank pobiera opłatę w wysokości {{fakt:oplata.zaswiadczenie}}, a za duplikat umowy — {{fakt:oplata.duplikat-umowy}}. Pierwszy harmonogram spłat i pierwsze roczne zestawienie są wydawane bez opłat."
+      - ustep: "Dokumenty są przekazywane w terminie 7 dni roboczych od dnia złożenia wniosku, a w przypadku dokumentów wymagających archiwum — w terminie uzgodnionym z Kredytobiorcą."
+
+  - id: hip-wakacje-zasady
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniosek o wakacje kredytowe może dotyczyć jednego albo kilku miesięcy, które Kredytobiorca wskazuje we wniosku. Liczbę miesięcy zawieszenia w roku kalendarzowym oblicza się narastająco od stycznia do grudnia."
+      - ustep: "W przypadku kredytu, w którym spłata odbywa się w ratach malejących, zawieszenie obejmuje zarówno część kapitałową, jak i odsetkową raty. Harmonogram po zawieszeniu Bank przekazuje Kredytobiorcy w terminie {{fakt:termin.hipoteka.powiadomienie-stopa}}."
+      - ustep: "Prawo do wakacji kredytowych nie przysługuje, jeżeli Kredytobiorca nie spełnia warunków przewidzianych w przepisach lub gdy zadłużenie przeterminowane w dniu wniosku przekracza wysokość {{fakt:termin.hipoteka.zaleglosc-raty}}."
+
+  - id: hip-wczesna-oplata
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prowizja za wcześniejszą spłatę, o której mowa w {{ref:blok:hip-wczesna-splata}}, nie jest pobierana, jeżeli:"
+        punkty:
+          - "spłata następuje na skutek wypłaty odszkodowania z ubezpieczenia nieruchomości;"
+          - "spłata jest dokonywana w wykonaniu orzeczenia sądu lub prawomocnego postanowienia komornika;"
+          - "spłata jest wynikiem sprzedaży nieruchomości w ramach zbycia dokonanego z zachowaniem warunków umowy."
+      - ustep: "Prowizja nie przekracza {{fakt:oplata.hipoteka.wczesna-splata}} spłacanej kwoty i nie jest naliczana od kwot spłaconych w okresie, w którym oprocentowanie ulega zmianie, jeżeli spłata następuje w terminie 30 dni od dnia zawiadomienia o zmianie."
+      - ustep: "Szczegółowy sposób obliczenia kwoty prowizji Bank przedstawia na wniosek Kredytobiorcy, przed dokonaniem spłaty, na trwałym nośniku."
+
+  # ===== Ubezpieczenia =====
+  - id: hip-ubezp-warunki
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ubezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ubezpieczenie nieruchomości powinno obejmować co najmniej następujące ryzyka: pożar, uderzenie pioruna, wybuch, zalanie, huragan, powódź, śnieg i grad, a w przypadku budowy — także ryzyka budowlano-montażowe."
+      - ustep: "Franszyza redukcyjna i udział własny w szkodzie nie mogą przekraczać poziomu zaakceptowanego przez Bank. Polisa powinna zawierać klauzulę, że odszkodowanie jest wypłacane Bankowi do wysokości zadłużenia, o ile szkoda przekracza kwotę wskazaną w umowie."
+      - ustep: "Suma ubezpieczenia podlega indeksacji i aktualizacji nie rzadziej niż co 12 miesięcy; Kredytobiorca informuje Bank o istotnych zmianach wartości nieruchomości."
+
+  - id: hip-ubezp-szkoda
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ubezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie zajścia zdarzenia objętego ubezpieczeniem Kredytobiorca niezwłocznie zawiadamia zakład ubezpieczeń oraz Bank i podejmuje działania zmierzające do zmniejszenia szkody."
+      - ustep: "Odszkodowanie wypłacone w związku ze zniszczeniem lub uszkodzeniem nieruchomości jest przeznaczane w pierwszej kolejności na:"
+        punkty:
+          - "odbudowę lub naprawę nieruchomości — w takim przypadku Bank uzgadnia z Kredytobiorcą harmonogram wypłat;"
+          - "spłatę zadłużenia z tytułu kredytu — jeżeli odbudowa nie jest możliwa lub Kredytobiorca z niej rezygnuje."
+      - ustep: "Bank {może|ma prawo} wstrzymać wypłatę środków Kredytobiorcy do czasu przedstawienia kosztorysu naprawy i dokumentów potwierdzających zakres szkód."
+
+  - id: hip-ubezp-nw
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ubezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ubezpieczenie od następstw utraty pracy, trwałej niezdolności do pracy i śmierci pełni funkcję ochronną i służy zabezpieczeniu spłaty rat w razie zdarzeń losowych. Zakres ochrony, wyłączenia odpowiedzialności i okres karencji określają ogólne warunki ubezpieczenia."
+      - ustep: "Kredytobiorca {może|ma prawo} wypowiedzieć umowę ubezpieczenia w każdym czasie, a zakład ubezpieczeń zwraca składkę za niewykorzystany okres. Wypowiedzenie ubezpieczenia dobrowolnego może skutkować utratą obniżki marży, jeżeli była z nim związana."
+      - ustep: "Bank pełni w stosunku do ubezpieczeń dobrowolnych rolę agenta ubezpieczeniowego wyłącznie na podstawie odrębnej umowy i nie ponosi odpowiedzialności za wypłatę świadczeń."
+
+  - id: hip-ubezp-niski-wklad
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ubezpieczenia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ubezpieczenie niskiego wkładu własnego chroni Bank przed ryzykiem niewypłacalności Kredytobiorcy w zakresie części kredytu przekraczającej {{fakt:limit.hipoteka.ltv}} wartości nieruchomości. Kredytobiorca jest ubezpieczającym, a Bank — uprawnionym z umowy."
+      - ustep: "Po spłacie kapitału do poziomu, który zapewnia LTV nieprzekraczający {{fakt:limit.hipoteka.ltv}}, Kredytobiorca {może|ma prawo} wystąpić o zakończenie ubezpieczenia i zwrot proporcjonalnej części składki, o ile została opłacona jednorazowo."
+      - ustep: "Zwrot składki następuje w terminie {{fakt:termin.zwrot-oplat}} od dnia rozwiązania ubezpieczenia, na rachunek wskazany przez Kredytobiorcę."
+
+  # ===== Obowiązki kredytobiorcy =====
+  - id: hip-obow-informacje
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-obowiazki
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca jest obowiązany przekazywać Bankowi, na jego żądanie, informacje i dokumenty dotyczące sytuacji majątkowej i dochodowej, jeżeli jest to niezbędne do oceny ryzyka kredytowego, nie częściej jednak niż raz w roku, o ile w umowie nie określono inaczej."
+      - ustep: "Kredytobiorca niezwłocznie informuje Bank o:"
+        punkty:
+          - "wszczęciu postępowania egzekucyjnego lub upadłościowego wobec niego;"
+          - "utracie pracy lub zaprzestaniu prowadzenia działalności gospodarczej;"
+          - "zmianie stanu cywilnego lub ustroju majątkowego małżeńskiego;"
+          - "toczącym się postępowaniu dotyczącym nieruchomości, w tym o zasiedzenie lub rozgraniczenie."
+      - ustep: "Bank {może|ma prawo} potraktować niewykonanie obowiązków informacyjnych jako naruszenie umowy uzasadniające wezwanie do ich wykonania w wyznaczonym terminie."
+
+  - id: hip-obow-nieruchomosc
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-obowiazki
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca utrzymuje nieruchomość w stanie niepogorszonym, pokrywa wszelkie koszty jej utrzymania, w tym podatki, opłaty eksploatacyjne i czynsz, oraz niezwłocznie usuwa skutki uszkodzeń."
+      - ustep: "Kredytobiorca {nie może|nie jest uprawniony} bez zgody Banku dokonywać zmian w sposobie użytkowania nieruchomości ani rozbiórki budynków znajdujących się na nieruchomości. Zgoda Banku nie jest wymagana na prace remontowe, które nie obniżają wartości nieruchomości."
+      - ustep: "W przypadku wszczęcia wobec nieruchomości postępowania administracyjnego, w szczególności wywłaszczenia lub zajęcia na cele publiczne, Kredytobiorca zawiadamia Bank w terminie {{fakt:termin.hipoteka.zawiadomienie-zmiany-danych}} od dnia otrzymania zawiadomienia o postępowaniu."
+
+  - id: hip-obow-dane
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-obowiazki
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca zawiadamia Bank o zmianie imienia, nazwiska, adresu zamieszkania, adresu korespondencyjnego, numeru telefonu i adresu poczty elektronicznej w terminie {{fakt:termin.hipoteka.zawiadomienie-zmiany-danych}} od dnia zmiany, osobiście w placówce lub w bankowości elektronicznej."
+      - ustep: "Korespondencję wysłaną na ostatni znany Bankowi adres uznaje się za doręczoną po upływie {{fakt:termin.doreczenie-korespondencji}} od dnia nadania, jeżeli Kredytobiorca nie zawiadomił o zmianie adresu."
+      - ustep: "Bank nie odpowiada za skutki niepowiadomienia go o zmianie danych, w szczególności za doręczenie korespondencji pod nieaktualny adres."
+
+  - id: hip-obow-zbycie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-obowiazki
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie zamiaru sprzedaży nieruchomości obciążonej hipoteką Kredytobiorca informuje o tym Bank z wyprzedzeniem i uzgadnia z nim sposób rozliczenia kredytu. Zbycie nieruchomości bez zgody Banku jest naruszeniem umowy."
+      - ustep: "Za zgodą Banku nabywca nieruchomości {może|ma prawo} przejąć dług, o ile spełnia warunki zdolności kredytowej i wniesie wymagane zabezpieczenie. Przejęcie długu wymaga zawarcia aneksu, a za jego przygotowanie pobiera się opłatę w wysokości {{fakt:oplata.hipoteka.zmiana-warunkow}}."
+      - ustep: "W przypadku śmierci Kredytobiorcy spadkobiercy wstępują w jego prawa i obowiązki z umowy kredytu, a Bank {może|ma prawo} rozpatrzeć wniosek o dalsze obsługiwanie kredytu na dotychczasowych warunkach."
+
+  # ===== Opóźnienie i wypowiedzenie =====
+  - id: hip-opoz-restrukturyzacja
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca, który z przyczyn niezależnych od siebie ma trudności ze spłatą, {może|ma prawo} wystąpić o restrukturyzację kredytu. Bank rozpatruje wniosek, biorąc pod uwagę sytuację finansową i rodzinną Kredytobiorcy."
+      - ustep: "Restrukturyzacja może polegać w szczególności na:"
+        punkty:
+          - "wydłużeniu okresu kredytowania, jeżeli nie przekroczy limitu określonego w {{ref:blok:hip-przeznaczenie}};"
+          - "czasowym obniżeniu rat lub zawieszeniu spłaty części kapitałowej;"
+          - "rozłożeniu zaległości na raty w dodatkowym harmonogramie."
+      - ustep: "Za zawarcie aneksu restrukturyzacyjnego Bank pobiera opłatę nie wyższą niż {{fakt:oplata.hipoteka.zmiana-warunkow}}."
+
+  - id: hip-opoz-powiadomienia
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank informuje Kredytobiorcę o powstaniu zaległości w spłacie wiadomością SMS, e-mail lub telefonicznie, nie później niż w kolejnym dniu roboczym po upływie terminu płatności raty. Przypomnienie nie jest czynnością płatną."
+      - ustep: "Jeżeli zaległość nie zostanie uregulowana, Bank wysyła pisemne wezwanie do zapłaty, zawierające wskazanie kwoty zaległości, terminu jej zapłaty wynoszącego {{fakt:termin.hipoteka.wezwanie-do-zaplaty}} oraz pouczenie o skutkach braku zapłaty."
+      - ustep: "Za wezwanie Bank {pobiera|nalicza} opłatę określoną w Taryfie, nie wyższą niż {{fakt:oplata.upomnienie}}, oraz zwrot udokumentowanych kosztów przesyłki poleconej."
+
+  - id: hip-opoz-odsetki
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odsetki za opóźnienie są naliczane od dnia następującego po dniu wymagalności do dnia poprzedzającego dzień spłaty, od kwoty kapitału przeterminowanego, w wysokości nie wyższej niż {{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku."
+      - ustep: "Zmiana stopy odsetek za opóźnienie następuje automatycznie z dniem zmiany przepisów określających wysokość odsetek maksymalnych za opóźnienie, o czym Bank informuje na stronie {{fakt:bank.strona}}."
+      - ustep: "Od odsetek za opóźnienie nie nalicza się odsetek, z wyjątkiem przypadków dopuszczonych przepisami prawa, ani nie pobiera dodatkowych kar umownych za sam fakt opóźnienia."
+
+  - id: hip-opoz-egzekucja
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po wypowiedzeniu umowy i upływie okresu wypowiedzenia Bank {może|ma prawo} wystąpić o nadanie klauzuli wykonalności bankowemu tytułowi egzekucyjnemu albo dochodzić roszczeń na drodze sądowej, a następnie prowadzić egzekucję z nieruchomości, ruchomości, wynagrodzenia i rachunków Kredytobiorcy."
+      - ustep: "Kredytobiorca zachowuje prawo do spłaty zadłużenia w trakcie postępowania egzekucyjnego. Środki uzyskane z egzekucji zalicza się zgodnie z zasadami określonymi w {{ref:blok:hip-splata}}."
+      - ustep: "Nadwyżkę uzyskaną ze sprzedaży nieruchomości ponad zaspokojenie roszczeń Banku i innych wierzycieli komornik przekazuje Kredytobiorcy."
+
+  # ===== Postanowienia końcowe =====
+  - id: hip-koncowe-obowiazywanie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin wchodzi w życie w dniu {{param:od}} i ma zastosowanie do umów zawartych od tego dnia. W stosunku do umów zawartych wcześniej stosuje się postanowienia Regulaminu w brzmieniu obowiązującym w dniu zawarcia umowy, z zastrzeżeniem zmian wprowadzonych w trybie określonym w Regulaminie."
+      - ustep: "Regulamin jest {dostępny|udostępniany} w placówkach Banku oraz na stronie {{fakt:bank.strona}}, w postaci umożliwiającej jego pobranie, utrwalenie i wydrukowanie."
+      - ustep: "Wersję Regulaminu obowiązującą w dniu zawarcia umowy Bank przekazuje Kredytobiorcy wraz z umową."
+
+  - id: hip-koncowe-sady
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Spory wynikające z umowy kredytu rozstrzyga sąd powszechny właściwy według przepisów Kodeksu postępowania cywilnego. Konsument {może|ma prawo} wytoczyć powództwo przed sąd właściwy dla jego miejsca zamieszkania lub siedziby Banku."
+      - ustep: "Przed wniesieniem sprawy do sądu Kredytobiorca {może|ma prawo} skorzystać z pozasądowych metod rozwiązywania sporów, w szczególności z postępowania przed Rzecznikiem Finansowym lub sądem polubownym działającym przy organie nadzoru, na zasadach określonych w odrębnych przepisach."
+      - ustep: "Korzystanie z pozasądowych metod rozwiązywania sporów nie wyłącza ani nie ogranicza prawa Kredytobiorcy do dochodzenia roszczeń w postępowaniu sądowym."
+
+  - id: hip-koncowe-prawo
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli którekolwiek z postanowień Regulaminu lub umowy kredytu okaże się nieważne albo bezskuteczne, pozostałe postanowienia zachowują moc, a w miejsce postanowienia nieważnego stosuje się odpowiednie przepisy prawa."
+      - ustep: "Załączniki do umowy, w tym harmonogram spłat, tabela opłat i oświadczenia Kredytobiorcy stanowią jej integralną część. W razie rozbieżności pierwszeństwo mają postanowienia umowy, a w dalszej kolejności Regulaminu."
+      - ustep: "Kredytobiorca {może|ma prawo} otrzymać w każdej chwili, na żądanie i bezpłatnie, kopię umowy oraz harmonogram spłat na trwałym nośniku."
+
+  - id: hip-koncowe-nadzor
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Działalność Banku podlega nadzorowi organu nadzoru nad rynkiem finansowym. Bank jest uczestnikiem obowiązkowego systemu gwarantowania depozytów, a środki zgromadzone na rachunkach Kredytobiorcy objęte są gwarancją do kwoty {{fakt:bfg.gwarancja}}."
+      - ustep: "Kredytobiorca {może|ma prawo} zwrócić się do Rzecznika Finansowego, którego strona internetowa znajduje się pod adresem {{fakt:rzecznik.strona}}, o wszczęcie postępowania interwencyjnego lub o pomoc prawną."
+      - ustep: "Kontakt z Bankiem w sprawach kredytu hipotecznego umożliwiają: {{fakt:jednostka.kredyty-hipoteczne}}, Infolinia pod numerem {{fakt:kontakt.infolinia}} (czynna {{fakt:kontakt.godziny-infolinii}}) oraz placówki Banku."

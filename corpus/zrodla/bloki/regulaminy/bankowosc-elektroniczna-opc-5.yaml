@@ -1,0 +1,118 @@
+bloki:
+  - id: bankowosc-elektroniczna-opc-rachunki-wspolne
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W przypadku rachunku wspólnego każdy ze współposiadaczy korzysta z bankowości elektronicznej na własnych danych uwierzytelniających i we własnym zakresie, chyba że umowa rachunku stanowi inaczej. Dyspozycje złożone przez jednego ze współposiadaczy wywołują skutki wobec wszystkich współposiadaczy."
+      - ustep: "Każdy współposiadacz {może|ma prawo} samodzielnie:"
+        punkty:
+          - "przeglądać salda i historię operacji na rachunku wspólnym;"
+          - "składać dyspozycje płatnicze w granicach ustalonych limitów;"
+          - "zablokować dostęp do rachunku wspólnego w bankowości elektronicznej."
+      - ustep: "Zmiana limitów lub rezygnacja z bankowości elektronicznej dla rachunku wspólnego wymaga zgody wszystkich współposiadaczy, chyba że Regulamin lub umowa rachunku stanowi inaczej. Bank {może|ma prawo} poinformować pozostałych współposiadaczy o zmianie limitów dokonanej przez jednego z nich."
+
+  - id: bankowosc-elektroniczna-opc-reset-dostepu
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-uwierzytelnianie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient zapomniał Hasła, może samodzielnie ustalić nowe Hasło w procesie resetowania, który {rozpoczyna|inicjuje} na stronie logowania. Proces ten wymaga podania Identyfikatora oraz potwierdzenia tożsamości jednym z następujących sposobów:"
+        punkty:
+          - "kodem jednorazowym przesłanym w wiadomości SMS, ważnym {{fakt:bankowosc.waznosc-kodu-sms}};"
+          - "potwierdzeniem w aplikacji mobilnej na urządzeniu zaufanym;"
+          - "w przypadku braku obu tych możliwości — w placówce Banku lub na Infolinii."
+      - ustep: "Po zakończeniu procesu resetowania wszystkie aktywne sesje zostają zakończone, a Klient otrzymuje powiadomienie o zmianie Hasła. W celu ochrony przed nadużyciem Bank {może|ma prawo} na krótki okres ograniczyć limity dyspozycji."
+      - ustep: "Jeżeli Klient nie inicjował resetowania Hasła, a otrzymał powiadomienie o takim zdarzeniu, powinien niezwłocznie zablokować dostęp do bankowości elektronicznej i skontaktować się z Bankiem."
+
+  - id: bankowosc-elektroniczna-opc-zaufane-przegladarki
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-aplikacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Podczas logowania w serwisie internetowym Klient może oznaczyć przeglądarkę jako zaufaną, jeżeli korzysta z własnego urządzenia. Oznaczenie przeglądarki jako zaufanej pozwala ograniczyć częstotliwość dodatkowych potwierdzeń, nie zwalnia jednak z silnego uwierzytelniania w przypadkach wymaganych przepisami."
+      - ustep: "Zaufane przeglądarki są rejestrowane na liście zarządzanej przez Klienta; ich liczba nie może być większa niż {{fakt:bankowosc.liczba-urzadzen}}. Klient {może|ma prawo} w każdej chwili usunąć wybraną przeglądarkę z listy, co powoduje konieczność ponownego potwierdzenia przy następnym logowaniu."
+      - ustep: "Oznaczenie przeglądarki jako zaufanej wygasa po upływie {{fakt:bankowosc.ponowne-sca}} od chwili ostatniego silnego uwierzytelnienia oraz w razie wyczyszczenia danych przeglądarki. Bank nie zaleca oznaczania jako zaufanych przeglądarek na urządzeniach współdzielonych."
+
+  - id: bankowosc-elektroniczna-opc-limity-tymczasowe
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który planuje dokonanie jednorazowej płatności o wysokiej wartości, {może|ma możliwość} ustanowić limit tymczasowy na dzień lub okres nie dłuższy niż siedem dni. Limit tymczasowy może przekraczać limit dzienny ustalony dla przelewów, jednak nie może przekroczyć kwoty {{fakt:limit.bankowosc.maksymalny-ustawiany}}."
+      - ustep: "Ustanowienie limitu tymczasowego wymaga:"
+        punkty:
+          - "złożenia dyspozycji w aplikacji mobilnej lub serwisie internetowym i silnego uwierzytelnienia;"
+          - "wskazania okresu obowiązywania oraz kwoty limitu;"
+          - "zapoznania się z informacją o ryzyku związanym z przelewami o dużej wartości."
+      - ustep: "W okresie obowiązywania limitu tymczasowego Bank {może|ma prawo} zastosować dodatkowe środki weryfikacji transakcji, w szczególności zadzwonić do Klienta w celu potwierdzenia dyspozycji. Po upływie okresu obowiązywania limit tymczasowy wygasa, a w bankowości elektronicznej obowiązują limity ustalone wcześniej."
+
+  - id: bankowosc-elektroniczna-opc-historia
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-powiadomienia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Historia logowań i operacji jest dostępna w bankowości elektronicznej przez okres {{fakt:bankowosc.historia-operacji}}. Klient {powinien|jest zobowiązany} regularnie przeglądać historię, w szczególności listę ostatnich logowań, listę urządzeń zaufanych oraz zmian dokonanych w ustawieniach dostępu."
+      - ustep: "W historii logowań Bank udostępnia informacje o:"
+        punkty:
+          - "dacie i godzinie logowania oraz jego wyniku;"
+          - "rodzaju urządzenia i przeglądarki lub aplikacji, z której nastąpiło logowanie;"
+          - "przybliżonej lokalizacji, ustalonej na podstawie adresu sieciowego, z którego nastąpiło połączenie."
+      - ustep: "Jeżeli w historii Klient znajdzie wpis, którego nie rozpoznaje, powinien niezwłocznie zablokować dostęp do bankowości elektronicznej, zmienić Hasło i zgłosić zdarzenie do Banku. Dane w historii mają charakter informacyjny; wiążące są zapisy w systemach Banku."
+
+  - id: bankowosc-elektroniczna-opc-weryfikacja-odbiorcy
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-bezpieczenstwo
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed autoryzacją przelewu Klient powinien dokładnie sprawdzić dane odbiorcy i treść zlecenia. W szczególności należy upewnić się, że:"
+        punkty:
+          - "numer rachunku odbiorcy jest zgodny z numerem wskazanym w fakturze lub umowie, a nie został podmieniony przez osoby trzecie;"
+          - "kwota i waluta przelewu są zgodne z zamierzeniem Klienta;"
+          - "przelew nie jest wykonywany w związku z rzekomą pilną „akcją” Banku, organów ścigania lub innych instytucji."
+      - ustep: "Bank może wyświetlić ostrzeżenie, jeżeli przelew jest kierowany do odbiorcy lub na rachunek, co do którego powzięto podejrzenie wykorzystywania do oszustw. W takim przypadku Klient {powinien|jest zobowiązany} wstrzymać się z autoryzacją i zweryfikować dane."
+      - ustep: "Po potwierdzeniu przelewu Bank nie ma możliwości jego cofnięcia, jeżeli został on już przekazany bankowi odbiorcy. Bank, na wniosek Klienta, podejmie próbę odzyskania środków, na zasadach określonych w Regulaminie i przepisach prawa."
+
+  - id: bankowosc-elektroniczna-opc-ciezar-dowodu
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-odpowiedzialnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient zaprzecza, że autoryzował wykonaną transakcję płatniczą, albo twierdzi, że transakcja została wykonana nieprawidłowo, to na Banku spoczywa obowiązek wykazania, że transakcja została uwierzytelniona, prawidłowo zaksięgowana i nie miała na nią wpływu awaria techniczna ani inna usterka usługi."
+      - ustep: "Samo zapisanie przez Bank użycia danych uwierzytelniających nie jest wystarczające dla wykazania, że Klient autoryzował transakcję albo że umyślnie lub w wyniku rażącego niedbalstwa nie dopełnił obowiązków. Bank {ocenia|analizuje} okoliczności sprawy, w tym:"
+        punkty:
+          - "sposób uwierzytelnienia i potwierdzenia dyspozycji;"
+          - "urządzenie i lokalizację, z których złożono dyspozycję;"
+          - "zachowanie Klienta w okresie poprzedzającym zdarzenie."
+      - ustep: "Klient jest zobowiązany do współpracy z Bankiem w wyjaśnieniu okoliczności zdarzenia, w szczególności do udzielenia informacji i przekazania dokumentów dotyczących okoliczności utraty danych uwierzytelniających lub urządzenia. Niezawinione przez Klienta niedopełnienie tego obowiązku nie pozbawia go praw wynikających z Regulaminu."
+
+  - id: bankowosc-elektroniczna-opc-obowiazki-informacyjne
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy o korzystanie z bankowości elektronicznej Bank przekazuje Klientowi informacje wymagane przepisami, w tym dotyczące warunków korzystania z usługi, opłat, sposobu komunikacji oraz zasad zgłaszania nieautoryzowanych transakcji. Informacje te są udostępniane na trwałym nośniku."
+      - ustep: "W trakcie obowiązywania umowy Bank:"
+        punkty:
+          - "udostępnia Klientowi co najmniej raz w miesiącu zestawienie operacji na rachunku, jeżeli były wykonywane;"
+          - "informuje o zmianach Regulaminu i Taryfy w trybie określonym w Regulaminie;"
+          - "na żądanie Klienta udostępnia bezpłatnie aktualną treść Regulaminu i Taryfy."
+      - ustep: "Klient może w każdym czasie żądać od Banku udostępnienia treści umowy oraz informacji o tym, jakie dane są przetwarzane w związku z korzystaniem z bankowości elektronicznej, na zasadach określonych w przepisach o ochronie danych osobowych."
+
+  - id: bankowosc-elektroniczna-opc-wyciagi-i-zgody
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma prawo} w bankowości elektronicznej zarządzać zgodami i oświadczeniami składanymi Bankowi, w szczególności zgodami na kontakt w celach marketingowych, zgodami na otrzymywanie korespondencji w postaci elektronicznej oraz zgodami na dostęp podmiotów trzecich do informacji o rachunku."
+      - ustep: "Zgody udzielone dostawcom usług płatniczych, którym Klient umożliwił dostęp do informacji o rachunku lub inicjowanie płatności, są widoczne w bankowości elektronicznej. Klient może w każdej chwili odwołać taką zgodę; odwołanie działa wobec Banku niezwłocznie, ale nie wpływa na skutki wcześniej wykonanych dyspozycji."
+      - ustep: "Zmiana zgody lub oświadczenia wymaga silnego uwierzytelnienia Klienta. Bank {zapisuje|rejestruje} historię zmian i udostępnia ją Klientowi na jego żądanie. Wycofanie zgody marketingowej nie wpływa na możliwość korzystania z bankowości elektronicznej."

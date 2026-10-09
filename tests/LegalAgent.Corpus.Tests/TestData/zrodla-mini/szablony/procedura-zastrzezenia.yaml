@@ -1,0 +1,14 @@
+id: procedura-zastrzezenia
+typ: procedury
+temat: zastrzezenia
+tytul: ["Procedura zastrzegania instrumentów płatniczych"]
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, wlasciciel, zatwierdzil] }
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Przebieg procedury"
+    wymagane: [procedura-kroki, procedura-schemat]
+    opcjonalne: { kategorie: [krok], min: 1, max: 2 }
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna"
+    wymagane: [procedura-lista]

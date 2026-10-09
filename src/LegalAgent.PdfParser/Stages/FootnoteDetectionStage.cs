@@ -100,10 +100,11 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
             for (int w = 0; w < line.Words.Count; w++)
             {
                 IReadOnlyList<LayoutGlyph> glyphs = line.Words[w].Glyphs;
+                double baseline = SegmentBaseline(line, line.Words[w], lineSize);
                 int start = glyphs.Count;
                 while (start > 0
                     && glyphs[start - 1].PointSize <= MarkerSizeRatio * lineSize
-                    && line.Baseline - glyphs[start - 1].Baseline >= MarkerRaiseEm * lineSize)
+                    && baseline - glyphs[start - 1].Baseline >= MarkerRaiseEm * lineSize)
                 {
                     start--;
                 }
@@ -122,6 +123,22 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
         }
 
         return result;
+    }
+
+    /// <summary>
+    /// The baseline of the text around <paramref name="word"/>: of its segment's full-size glyphs. A line merged from
+    /// two columns (FR-030) whose baselines are offset carries the baseline of one of them only.
+    /// </summary>
+    private static double SegmentBaseline(LayoutLine line, LayoutWord word, double lineSize)
+    {
+        LineSegment? segment = line.Segments.FirstOrDefault(s => s.Words.Contains(word));
+        List<double> baselines = (segment?.Words ?? line.Words)
+            .SelectMany(w => w.Glyphs)
+            .Where(g => g.PointSize > MarkerSizeRatio * lineSize && !string.IsNullOrWhiteSpace(g.Text))
+            .Select(g => g.Baseline)
+            .Order()
+            .ToList();
+        return baselines.Count > 0 ? baselines[baselines.Count / 2] : line.Baseline;
     }
 
     private static List<LayoutLine> FootnoteArea(LayoutPage page, double maxSize, HashSet<string> referenced)

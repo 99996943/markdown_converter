@@ -1,0 +1,103 @@
+bloki:
+  # --- Odpowiedzialności (ustępy)
+  - id: incydenty-role-wlasciciele-systemow-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Właściciele systemów i procesów** odpowiadają za {gotowość|przygotowanie} swoich systemów do obsługi incydentów oraz za współpracę z Zespołem w trakcie ich trwania. W szczególności:"
+        punkty:
+          - "utrzymują aktualny opis architektury systemu, jego zależności od innych systemów i dostawców oraz listę osób technicznie odpowiedzialnych za jego działanie;"
+          - "{wskazują|określają} dla każdego systemu maksymalny dopuszczalny czas przestoju i maksymalną dopuszczalną utratę danych, a wartości te {uzgadniają|potwierdzają} z Jednostką ciągłości działania co najmniej raz w roku;"
+          - "w ciągu godziny od wezwania udostępniają Zespołowi niezbędne dostępy, dzienniki zdarzeń i wiedzę specjalistyczną;"
+          - "{zatwierdzają|akceptują} decyzję o ponownym uruchomieniu systemu po incydencie po sprawdzeniu, że przyczyna została usunięta lub skutecznie ograniczona."
+      - ustep: "Właściciel systemu nie może samodzielnie zamknąć incydentu ani zmienić jego klasyfikacji; może jedynie wnioskować o to do Kierownika incydentu, przedstawiając uzasadnienie na piśmie."
+
+  - id: incydenty-role-kierownicy-jednostek-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Kierownicy jednostek organizacyjnych** odpowiadają za {znajomość|przestrzeganie} niniejszej procedury przez podległych pracowników. Kierownik jednostki:"
+        punkty:
+          - "{zapewnia|dba o to}, aby każdy nowy pracownik został przeszkolony w zakresie zgłaszania incydentów w wymaganym terminie;"
+          - "niezwłocznie przekazuje Dyżurnemu informacje o zdarzeniach zauważonych w jednostce, także gdy nie zostały zgłoszone przez pracownika;"
+          - "wyznacza zastępstwo osób kluczowych dla obsługi incydentów na czas urlopów i nieobecności;"
+          - "{udostępnia|oddelegowuje} na prośbę Kierownika incydentu pracowników posiadających wiedzę o procesach objętych zdarzeniem."
+      - ustep: "Kierownik jednostki, w której wystąpił incydent, uczestniczy w przeglądzie po incydencie i odpowiada za terminową realizację zaleceń dotyczących jego jednostki."
+
+  - id: incydenty-role-komitet-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Komitet nadzorujący bezpieczeństwo** {obraduje|zbiera się} co kwartał oraz doraźnie po każdym incydencie o klasyfikacji krytycznej. Do zadań Komitetu należy:"
+        punkty:
+          - "ocena trendów w liczbie, rodzaju i skutkach incydentów na podstawie raportów kwartalnych;"
+          - "{zatwierdzanie|akceptowanie} priorytetów działań naprawczych, które wymagają nakładów finansowych lub zmian w organizacji pracy;"
+          - "rozstrzyganie sporów kompetencyjnych między jednostkami, które pojawiły się podczas obsługi incydentu;"
+          - "informowanie Zarządu o zagrożeniach istotnych dla ciągłości działania Banku."
+      - ustep: "Z posiedzeń Komitetu sporządza się protokół, który przechowuje się razem z dokumentacją incydentów, do których się odnosi."
+
+  - id: incydenty-role-prawnik-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Radca prawny** wspiera Zespół w zakresie oceny skutków prawnych incydentu i obowiązków informacyjnych Banku. Radca prawny:"
+        punkty:
+          - "{ocenia|weryfikuje}, czy zdarzenie wypełnia przesłanki naruszenia ochrony danych osobowych lub incydentu podlegającego zgłoszeniu organowi nadzoru;"
+          - "opiniuje treść zawiadomień kierowanych do organów, klientów i kontrahentów;"
+          - "{doradza|wskazuje} sposób zabezpieczenia dowodów, aby mogły zostać wykorzystane w postępowaniu cywilnym lub karnym;"
+          - "ocenia roszczenia klientów wynikające z incydentu i przygotowuje stanowisko Banku."
+      - ustep: "Opinie radcy prawnego wydane w trakcie incydentu są dołączane do karty incydentu jako odrębne załączniki."
+
+  - id: incydenty-role-ochrona-danych-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Inspektor ochrony danych** jest informowany o każdym incydencie, który może dotyczyć danych osobowych, nie później niż w terminie {{fakt:termin.incydent.klasyfikacja}} od zaklasyfikowania incydentu. Inspektor:"
+        punkty:
+          - "{ocenia|analizuje} ryzyko naruszenia praw i wolności osób, których dane dotyczą, niezależnie od oceny dokonanej przez Zespół;"
+          - "przedstawia stanowisko co do konieczności zgłoszenia naruszenia organowi nadzoru i zawiadomienia osób, których dane dotyczą;"
+          - "prowadzi rejestr naruszeń ochrony danych i dba o jego zgodność z rejestrem incydentów;"
+          - "jest punktem kontaktowym dla organu nadzoru w sprawach naruszeń; dane kontaktowe Inspektora to {{fakt:kontakt.email-iod}}."
+      - ustep: "Zespół nie może ograniczać Inspektorowi dostępu do informacji o incydencie ani wywierać wpływu na wyrażane przez niego stanowisko."
+
+  - id: incydenty-role-audyt-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Jednostka audytu wewnętrznego** w ramach swoich zadań ocenia skuteczność procesu obsługi incydentów, nie uczestniczy jednak w bieżących działaniach Zespołu, aby zachować niezależność. Audyt:"
+        punkty:
+          - "{raz w roku|co roku} bada próbkę zamkniętych incydentów pod kątem zgodności z procedurą i kompletności dokumentacji;"
+          - "weryfikuje, czy zalecenia z przeglądów po incydentach zostały wdrożone w wyznaczonych terminach;"
+          - "ocenia adekwatność zasobów i kompetencji Zespołu do skali i charakteru zagrożeń;"
+          - "{przekazuje|przedstawia} wyniki badań Zarządowi i Komitetowi nadzorującemu bezpieczeństwo."
+
+  - id: incydenty-role-pracownik-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Każdy pracownik i współpracownik Banku** jest obowiązany do niezwłocznego zgłoszenia zdarzenia, które może być incydentem, w terminie {{fakt:termin.incydent.zgloszenie-pracownika}} od jego zauważenia. Pracownik:"
+        punkty:
+          - "{zgłasza|przekazuje} zdarzenie Dyżurnemu pod numerem {{fakt:incydent.dyzur-telefon}} lub w systemie {{fakt:incydent.system-zgloszen}}, nawet jeżeli nie jest pewien, czy jest ono incydentem;"
+          - "nie podejmuje na własną rękę działań naprawczych ani prób ustalenia sprawcy, jeżeli nie otrzymał takiego polecenia;"
+          - "zachowuje w niezmienionym stanie urządzenie, wiadomość lub dokument, których dotyczy zdarzenie, do czasu decyzji Zespołu;"
+          - "udziela Zespołowi informacji i pomocy w wyjaśnieniu okoliczności zdarzenia."
+      - ustep: "Zgłoszenie incydentu w dobrej wierze nie może być podstawą negatywnych konsekwencji wobec zgłaszającego, także wtedy, gdy zgłoszenie okazało się nieuzasadnione."
+
+  - id: incydenty-role-dostawcy-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Opiekun relacji z dostawcą** odpowiada za przepływ informacji między Bankiem a dostawcą, którego usługa została dotknięta incydentem lub który jest jego źródłem. Opiekun:"
+        punkty:
+          - "{zna|posiada} aktualne dane kontaktowe dostawcy do spraw incydentów oraz zakres jego zobowiązań wynikających z umowy;"
+          - "żąda od dostawcy bieżących informacji o przyczynach, zakresie i przewidywanym czasie usunięcia skutków incydentu;"
+          - "dokumentuje przekazane przez dostawcę informacje i niezwłocznie przekazuje je Kierownikowi incydentu;"
+          - "{rozlicza|ocenia} po zakończeniu incydentu wykonanie zobowiązań dostawcy, w tym terminów powiadomienia Banku."

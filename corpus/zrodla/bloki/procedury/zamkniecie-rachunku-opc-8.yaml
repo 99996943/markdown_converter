@@ -1,0 +1,91 @@
+bloki:
+  - id: zamkniecie-n-krok-klient-nieobecny
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - akapit: "Klient, który nie może osobiście zgłosić się do placówki, może złożyć wypowiedzenie w innej formie dopuszczonej umową. Pracownik wyjaśnia dostępne możliwości, wskazując, który sposób jest najszybszy i najbezpieczniejszy w konkretnej sytuacji Klienta."
+      - tabela:
+          kolumny:
+            - naglowek: "Sposób złożenia"
+              waga: 2
+            - naglowek: "Warunki skuteczności"
+              waga: 3
+            - naglowek: "Uwagi"
+              waga: 2
+          wiersze:
+            - ["Bankowość elektroniczna", "Uwierzytelnienie dwuskładnikowe, potwierdzenie dyspozycji", "Nie dotyczy rachunków firmowych o ograniczonych uprawnieniach"]
+            - ["List polecony", "Podpis poświadczony lub porównany ze wzorem w Banku", "Bieg terminu od daty wpływu do Banku"]
+            - ["Infolinia {{fakt:kontakt.infolinia}}", "Wyłącznie informacja i rejestracja zgłoszenia", "Nie rozwiązuje umowy; wymaga dalszej dyspozycji"]
+            - ["Pełnomocnik", "Pełnomocnictwo z uprawnieniem do zamknięcia rachunku", "Weryfikacja pełnomocnika jak Klienta"]
+      - akapit: "Jeżeli Klient wybiera sposób, który nie pozwala na natychmiastowe potwierdzenie dyspozycji, pracownik informuje go o orientacyjnym czasie realizacji."
+
+  - id: zamkniecie-n-krok-bank-dokumenty-zwrot
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-bank
+    elementy:
+      - akapit: "Po rozwiązaniu umowy z inicjatywy Banku Klientowi zwraca się dokumenty i przedmioty przekazane Bankowi w związku z umową, w szczególności oryginały dokumentów, zabezpieczenia i pełnomocnictwa. Zwrot jest elementem rozliczenia, a jego brak może być podstawą roszczenia Klienta."
+      - kroki:
+          - tekst: "{Sporządź|Przygotuj} wykaz dokumentów i przedmiotów podlegających zwrotowi na podstawie akt rachunku i potwierdź go z kierownikiem placówki."
+          - tekst: "{Zawiadom|Powiadom} Klienta o możliwości odbioru, wskazując placówkę, termin i wymagane dokumenty; Klient odbiera dokumenty osobiście lub przez pełnomocnika."
+            podkroki:
+              - tekst: "Dokumenty nieodebrane w ciągu {{fakt:zamkniecie.termin.wezwanie-do-zaplaty}} od zawiadomienia wysyła się listem poleconym na ostatni znany adres."
+              - tekst: "Zwrot dokumentów potwierdza się protokołem podpisanym przez Klienta i pracownika."
+          - tekst: "Dokumenty, których Bank ma prawo zachować w kopii (np. potwierdzenia tożsamości), zatrzymuje się zgodnie z przepisami, o czym informuje się Klienta."
+
+  - id: zamkniecie-n-rozl-weryfikacja-koncowa
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-rozliczenie
+    elementy:
+      - akapit: "Przed ostatecznym zamknięciem rachunku w systemie pracownik jednostki operacyjnej wykonuje weryfikację końcową, której celem jest upewnienie się, że wszystkie zobowiązania zostały rozliczone, a Klient nie poniesie szkody z powodu zamknięcia."
+      - ustep: "Weryfikacja końcowa obejmuje sprawdzenie, że:"
+        punkty:
+          - "{saldo|stan} rachunku wynosi zero, a wszystkie transakcje oczekujące zostały zaksięgowane lub anulowane;"
+          - "{wszystkie|każda z} kart i usług powiązanych z rachunkiem została wyłączona, a zlecenia i polecenia zapłaty zostały zamknięte;"
+          - "{opłaty|prowizje} i odsetki zostały naliczone do dnia rozwiązania umowy i prawidłowo zaksięgowane;"
+          - "{dokumentacja|akta} rachunku są kompletne, a w rejestrze {{fakt:zamkniecie.system.rejestr}} odnotowano datę zamknięcia;"
+          - "{Klient|posiadacz rachunku} otrzymał potwierdzenie zamknięcia w terminie {{fakt:zamkniecie.termin.potwierdzenie}}."
+      - akapit: "Weryfikację końcową zatwierdza druga osoba, która nie uczestniczyła w wykonywaniu dyspozycji."
+
+  - id: zamkniecie-n-rozl-zwrot-oplat
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-rozliczenie
+    elementy:
+      - akapit: "Jeżeli Klient zapłacił z góry opłatę za okres po dniu zamknięcia rachunku (np. abonamentową opłatę za pakiet usług), Bank zwraca jej część przypadającą na okres po rozwiązaniu umowy. Zwrot następuje automatycznie, jeżeli system pozwala na wyliczenie należnej kwoty, a w pozostałych przypadkach — na podstawie ręcznego wyliczenia."
+      - kroki:
+          - tekst: "{Sprawdź|Ustal} w systemie, czy za okres po dniu zamknięcia rachunku zostały pobrane opłaty z góry, i {wylicz|oblicz} kwotę do zwrotu proporcjonalnie do niewykorzystanego okresu."
+          - tekst: "Zwrot dołącz do kwoty wypłacanej Klientowi w ramach rozliczenia końcowego i wskaż go w zestawieniu jako odrębną pozycję."
+            podkroki:
+              - tekst: "Jeżeli Klient korzystał z promocji, której warunki wymagały utrzymania rachunku przez określony czas, nie zwracaj opłat, dla których taka zasada wynika z regulaminu promocji."
+              - tekst: "Rozbieżności co do wysokości zwrotu rozstrzyga {{fakt:jednostka.operacje}} w terminie {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}}."
+          - tekst: "Zwrot dokumentuj w aktach rachunku i uwzględnij w potwierdzeniu zamknięcia."
+
+  - id: zamkniecie-n-odp-pelnomocnik-ds-skarg
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - akapit: "**Biuro Reklamacji** „{{fakt:jednostka.reklamacje}}” {rozpatruje|obsługuje} reklamacje Klientów związane z zamknięciem rachunku, w tym dotyczące opóźnień, błędnych rozliczeń i sposobu obsługi. Rozpatrzenie reklamacji obejmuje zbadanie dokumentacji sprawy i, w razie potrzeby, wyjaśnienia od jednostek zaangażowanych w proces."
+      - ustep: "Pracownicy Biura w szczególności:"
+        punkty:
+          - "{rejestrują|przyjmują} reklamacje w sposób zapewniający im numer sprawy i potwierdzenie wpływu dla Klienta;"
+          - "{żądają|zwracają się o} dokumentacji i wyjaśnień od jednostek i zapewniają ich terminowe dostarczenie;"
+          - "{udzielają|przekazują} Klientowi pisemnej odpowiedzi w terminie określonym przepisami, ze wskazaniem uzasadnienia i pouczeniem o dalszych środkach;"
+          - "{przekazują|zgłaszają} właścicielowi procedury wnioski z reklamacji, które wskazują na potrzebę zmiany procedury."
+
+  - id: zamkniecie-n-zasady-zgodnosc-prawna
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "Procedura została opracowana z uwzględnieniem zasad ochrony konsumentów, ochrony danych osobowych, przeciwdziałania praniu pieniędzy oraz przepisów dotyczących rachunków płatniczych. W przypadku zmiany przepisów pracownicy stosują je od dnia wejścia w życie, nawet jeżeli procedura nie została jeszcze zmieniona."
+      - ustep: "Zasady wyznaczone przepisami, które nie mogą być zmienione przez postanowienia umowne ani procedurę, to w szczególności:"
+        punkty:
+          - "{prawo|uprawnienie} Klienta do wypowiedzenia umowy rachunku w każdym czasie, bez podawania przyczyny, w trybie przewidzianym w umowie;"
+          - "{zakaz|niedopuszczalność} pobierania od konsumenta opłat za zamknięcie rachunku płatniczego, o ile przepisy tak stanowią;"
+          - "{obowiązek|powinność} informowania Klienta o skutkach wypowiedzenia w sposób zrozumiały i na trwałym nośniku;"
+          - "{obowiązek|powinność} zwrotu środków w terminie wynikającym z przepisów oraz zachowania tajemnicy bankowej."
+      - akapit: "Wątpliwości co do zgodności procedury z przepisami zgłasza się do {{fakt:jednostka.prawny}}, który odpowiada na nie w ciągu {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}}."

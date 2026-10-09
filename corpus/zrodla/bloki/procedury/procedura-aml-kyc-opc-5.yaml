@@ -1,0 +1,165 @@
+bloki:
+  - id: procedura-aml-kyc-krok-ewd-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "Zastosuj środki wzmocnione wobec klienta powiązanego z krajem wysokiego ryzyka."
+            podkroki:
+              - tekst: "Ustal, na czym polega powiązanie: siedziba, miejsce zamieszkania, rachunki zagraniczne, kontrahenci lub pochodzenie środków; wynik zapisz w formularzu oceny ryzyka."
+              - tekst: "Zażądaj dodatkowych informacji o celu pobytu lub prowadzenia działalności w Polsce oraz o powodach wyboru Banku."
+              - tekst: "Zatwierdzenie relacji należy do kierownika jednostki zgodności ({{fakt:jednostka.zgodnosc}}), który może uzależnić je od dodatkowych warunków, na przykład obniżenia limitów transakcji."
+          - tekst: "Potwierdź źródło majątku i źródło środków."
+            podkroki:
+              - tekst: "Zbierz dokumenty o niezależnym pochodzeniu, takie jak zeznania podatkowe, umowy sprzedaży, wyciągi z rachunków innych instytucji lub dokumenty spadkowe."
+              - tekst: "Potwierdzenie źródła powinno nastąpić w terminie {{fakt:termin.aml.potwierdzenie-zrodla-ewd}} od rozpoczęcia czynności; do tego czasu relacja pozostaje w trybie ograniczonym."
+          - tekst: "Ustanów zwiększoną intensywność monitorowania."
+            podkroki:
+              - tekst: "W {{fakt:aml.system-monitoringu}} oznacz klienta jako objętego wzmocnionym nadzorem, co skraca progi alertów i obejmuje wszystkie rodzaje transakcji."
+              - tekst: "Wyniki monitorowania omawiaj z kierownikiem jednostki zgodności co miesiąc, a wnioski odnotowuj w karcie klienta."
+
+  - id: procedura-aml-kyc-krok-ewd-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "Rozpoznaj osobę zajmującą eksponowane stanowisko polityczne."
+            podkroki:
+              - tekst: "Przy każdym nowym kliencie zadaj pytanie o pełnienie funkcji publicznej przez niego, członków jego rodziny oraz osoby znane jako bliscy współpracownicy."
+              - tekst: "Odpowiedź zweryfikuj w narzędziu zewnętrznym i w wykazie funkcji publicznych prowadzonym przez Bank; samo oświadczenie klienta nie wystarcza."
+              - tekst: "Gdy wyniki są rozbieżne, traktuj klienta jak osobę eksponowaną do czasu wyjaśnienia sprawy przez {{fakt:aml.zespol-analiz}}."
+          - tekst: "Zatwierdź relację z osobą eksponowaną."
+            podkroki:
+              - tekst: "Zgodę na nawiązanie lub kontynuowanie relacji wydaje członek kadry kierowniczej wyższego szczebla wskazany w regulaminie wewnętrznym, po zapoznaniu się z oceną sporządzoną przez jednostkę zgodności."
+              - tekst: "Zgoda jest wydawana na piśmie i obejmuje zakres produktów, które mogą być uruchomione."
+          - tekst: "Ustal źródło majątku osoby eksponowanej."
+            podkroki:
+              - tekst: "Zażądaj wyjaśnienia, w jaki sposób osoba zgromadziła majątek, oraz dokumentów potwierdzających wskazane źródła, w szczególności oświadczeń majątkowych, jeżeli są jawne."
+              - tekst: "Porównaj zadeklarowane dochody z faktycznymi obrotami; znaczące różnice wymagają pisemnego wyjaśnienia."
+          - tekst: "Obserwuj relację także po zakończeniu funkcji publicznej."
+            podkroki:
+              - tekst: "Środki wzmocnione stosuj nadal przez {{fakt:termin.aml.pep-okres-po-funkcji}} od zakończenia pełnienia funkcji, a następnie oceń indywidualnie, czy ryzyko nadal jest podwyższone."
+              - tekst: "Decyzję o zakończeniu stosowania środków wzmocnionych zatwierdza kierownik jednostki zgodności i zapisuje uzasadnienie."
+
+  - id: procedura-aml-kyc-krok-ewd-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ewd
+    elementy:
+      - kroki:
+          - tekst: "Zastosuj środki uproszczone wobec klienta o niskim ryzyku."
+            podkroki:
+              - tekst: "Środki uproszczone stosuj wyłącznie po udokumentowanym stwierdzeniu, że ryzyko jest niskie, na podstawie oceny ryzyka Banku i wyniku scoringu."
+              - tekst: "Uproszczenie może dotyczyć zakresu i częstotliwości aktualizacji danych, ale nie zwalnia z identyfikacji klienta ani z monitorowania transakcji."
+          - tekst: "Wycofaj uproszczenia, gdy pojawią się przesłanki podwyższenia ryzyka."
+            podkroki:
+              - tekst: "Przesłanką jest w szczególności alert z systemu monitoringu, podejrzenie podania nieprawdziwych danych, transakcja nietypowa dla profilu klienta lub zmiana struktury właścicielskiej."
+              - tekst: "Od dnia stwierdzenia przesłanki stosuj środki bezpieczeństwa finansowego w pełnym zakresie i przeprowadź przegląd klienta."
+          - tekst: "Prowadź rejestr uzasadnień dla klientów objętych uproszczeniem."
+            podkroki:
+              - tekst: "W {{fakt:aml.system-klienci}} zapisz powody uznania ryzyka za niskie, datę decyzji i osobę, która ją podjęła."
+              - tekst: "Raz w roku jednostka „{{fakt:jednostka.zgodnosc}}” sprawdza próbkę takich decyzji i raportuje wyniki koordynatorowi (stanowisko „{{fakt:aml.koordynator}}”)."
+
+  - id: procedura-aml-kyc-krok-mon-3
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "Przeanalizuj alert dotyczący wpłat gotówkowych."
+            podkroki:
+              - tekst: "Otwórz alert w {{fakt:aml.system-monitoringu}} i porównaj kwoty oraz częstotliwość wpłat z deklaracją klienta o przewidywanych obrotach."
+              - tekst: "Zwróć uwagę na wpłaty dzielone na mniejsze kwoty, dokonywane w krótkich odstępach czasu lub w różnych placówkach; zestaw je z progiem {{fakt:aml.prog-gotowka}}."
+              - tekst: "Jeżeli klient wpłaca środki i w krótkim czasie je wypłaca lub przelewa dalej, odnotuj to jako cechę typową dla rozwarstwiania środków."
+          - tekst: "Zbierz wyjaśnienia klienta."
+            podkroki:
+              - tekst: "Skontaktuj się z klientem przez opiekuna lub placówkę i poproś o wyjaśnienie pochodzenia środków; nie ujawniaj, że sprawa jest przedmiotem analizy sygnalizacyjnej."
+              - tekst: "Wyjaśnienia i przedłożone dokumenty dołącz do sprawy; brak dokumentów samodzielnie nie stanowi podstawy zawiadomienia, lecz podlega ocenie."
+          - tekst: "Podejmij decyzję w sprawie alertu."
+            podkroki:
+              - tekst: "Alert zamykasz jako nieuzasadniony, jeśli wyjaśnienia są spójne z profilem klienta; wpisz uzasadnienie wystarczające do odtworzenia decyzji przez inną osobę."
+              - tekst: "Jeżeli wątpliwości nie zostały usunięte, eskaluj sprawę do {{fakt:aml.zespol-analiz}} w terminie {{fakt:termin.aml.eskalacja-alertu}}."
+
+  - id: procedura-aml-kyc-krok-mon-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-monitorowanie
+    elementy:
+      - kroki:
+          - tekst: "Przeanalizuj alert dotyczący przelewów międzynarodowych."
+            podkroki:
+              - tekst: "Sprawdź kraj odbiorcy lub nadawcy, tytuł płatności oraz relację między stronami; porównaj te dane z wykazem „{{fakt:aml.wykaz-krajow}}”."
+              - tekst: "Przy przelewach powyżej {{fakt:aml.prog-przelew-informacje}} zweryfikuj kompletność danych płatnika i odbiorcy; płatności bez wymaganych danych {zatrzymaj|wstrzymaj} do czasu ich uzupełnienia."
+          - tekst: "Oceń zgodność z profilem klienta."
+            podkroki:
+              - tekst: "Porównaj płatność z dotychczasową historią rachunku i celem relacji zapisanym w karcie klienta."
+              - tekst: "Zwróć uwagę na nagłą zmianę kierunków płatności, nowych kontrahentów w jurysdykcjach o niskim poziomie przejrzystości oraz fakturowanie niewspółmierne do rodzaju działalności."
+          - tekst: "Zażądaj dokumentów uzasadniających transakcję."
+            podkroki:
+              - tekst: "Od klienta firmowego zażądaj umowy, faktury lub dokumentu przewozowego; od osoby fizycznej — dokumentu wskazującego tytuł płatności, takiego jak umowa kupna lub dyspozycja darowizny."
+              - tekst: "Gdy dokumenty nie wyjaśniają celu transakcji, przekaż sprawę do dalszej analizy, a płatność wstrzymaj do czasu decyzji {{fakt:aml.zespol-analiz}}."
+
+  - id: procedura-aml-kyc-krok-pod-4
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "Zgłoś podejrzenie wewnętrzne."
+            podkroki:
+              - tekst: "Pracownik, który poweźmie podejrzenie, że transakcja lub okoliczność wiąże się z praniem pieniędzy, niezwłocznie wypełnia wewnętrzny formularz zgłoszenia i przekazuje go na adres {{fakt:aml.email}}."
+              - tekst: "Zgłoszenie zawiera opis okoliczności, dane klienta i kontrahentów, kwoty, daty oraz wskazanie, dlaczego transakcja wydaje się nietypowa."
+              - tekst: "Zgłaszającemu nie wolno informować klienta ani współpracowników spoza łańcucha służbowego o złożeniu zgłoszenia."
+          - tekst: "Przeprowadź analizę zgłoszenia."
+            podkroki:
+              - tekst: "Analityk z {{fakt:aml.zespol-analiz}} zbiera dane z systemów Banku, ustala powiązania między rachunkami i klientami oraz zestawia je z typologiami."
+              - tekst: "Analiza kończy się w terminie {{fakt:termin.aml.analiza-alertu}}, a jej wynik zawiera rekomendację: zamknięcie sprawy, dalsze monitorowanie lub zawiadomienie organu."
+          - tekst: "Podejmij decyzję o zawiadomieniu."
+            podkroki:
+              - tekst: "Decyzję o zawiadomieniu {{fakt:aml.giif}} podejmuje koordynator (stanowisko „{{fakt:aml.koordynator}}”) i zapisuje uzasadnienie niezależnie od kierunku rozstrzygnięcia."
+              - tekst: "Zawiadomienie przekazuje się w terminie {{fakt:termin.aml.zawiadomienie-giif}} od potwierdzenia uzasadnionego podejrzenia, za pośrednictwem systemu teleinformatycznego organu."
+          - tekst: "Potwierdź zawiadomienie i zachowaj tajemnicę."
+            podkroki:
+              - tekst: "Urzędowe poświadczenie przyjęcia zawiadomienia dołącz do akt sprawy w {{fakt:aml.rejestr-podejrzanych}}."
+              - tekst: "Do dnia otrzymania informacji z organu nie zmieniaj sposobu obsługi klienta w sposób dla niego zauważalny, chyba że wymaga tego bezpieczeństwo środków."
+
+  - id: procedura-aml-kyc-krok-pod-5
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "Wstrzymaj transakcję na wniosek lub z własnej inicjatywy Banku."
+            podkroki:
+              - tekst: "Gdy istnieje uzasadnione podejrzenie, że transakcja ma związek z praniem pieniędzy, koordynator może zdecydować o jej wstrzymaniu i niezwłocznie poinformować organ."
+              - tekst: "Wstrzymanie trwa nie dłużej niż {{fakt:termin.aml.blokada-giif}} od dnia zawiadomienia, chyba że organ postanowi inaczej w drodze żądania."
+              - tekst: "Pracownik obsługujący klienta, pytany o przyczynę, informuje wyłącznie o wystąpieniu przeszkody technicznej w realizacji dyspozycji."
+          - tekst: "Obsłuż żądanie prokuratora o dalsze wstrzymanie."
+            podkroki:
+              - tekst: "Żądanie prokuratora o zablokowanie rachunku przyjmij w jednostce „{{fakt:jednostka.prawny}}”, sprawdź jego formę i podpis oraz przekaż do wykonania."
+              - tekst: "Blokada na podstawie takiego żądania obowiązuje przez okres wskazany w przepisach, nie dłużej niż {{fakt:termin.aml.blokada-prokurator}}."
+          - tekst: "Zakończ blokadę po upływie terminu."
+            podkroki:
+              - tekst: "Jeżeli w terminie nie wpłynie postanowienie o zajęciu lub zabezpieczeniu, zwolnij blokadę w {{fakt:zajecie.system-centralny}}."
+              - tekst: "Przed zwolnieniem blokady sprawdź w rejestrze, czy nie ma w sprawie innych żądań organów."
+
+  - id: procedura-aml-kyc-krok-pod-6
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-podejrzane
+    elementy:
+      - kroki:
+          - tekst: "Odmów zawarcia umowy albo wykonania transakcji, gdy nie można zastosować środków bezpieczeństwa finansowego."
+            podkroki:
+              - tekst: "Odmowa następuje, gdy klient nie udostępni danych lub dokumentów, odmawia wskazania beneficjenta rzeczywistego albo nie wyjaśnia celu relacji."
+              - tekst: "Pracownik informuje klienta wyłącznie o tym, że Bank nie może nawiązać relacji lub wykonać dyspozycji, bez podania szczegółów oceny ryzyka."
+          - tekst: "Zawiadom o odmowie wewnątrz Banku."
+            podkroki:
+              - tekst: "Opis okoliczności odmowy przekaż na adres {{fakt:aml.email}} w tym samym dniu roboczym, w którym odmówiono wykonania czynności."
+              - tekst: "Analityk ocenia, czy okoliczności uzasadniają zawiadomienie organu, także wtedy, gdy umowa nie została zawarta."
+          - tekst: "Zastosuj zakaz tworzenia anonimowych produktów."
+            podkroki:
+              - tekst: "Nie zakładaj ani nie prowadź rachunków anonimowych, rachunków na fikcyjne dane ani rachunków powiązanych z numerem, który nie pozwala ustalić właściciela."
+              - tekst: "O wykryciu takiego rachunku niezwłocznie powiadom {{fakt:aml.zespol-analiz}}; rachunek podlega zablokowaniu i wyjaśnieniu."

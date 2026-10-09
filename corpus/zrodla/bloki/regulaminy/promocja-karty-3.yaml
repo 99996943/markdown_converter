@@ -1,0 +1,130 @@
+bloki:
+  - id: cashback-org-odpowiedzialnosc
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-org-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {odpowiada|ponosi odpowiedzialność} za prawidłowe wykonanie Promocji na zasadach określonych w Regulaminie i w przepisach prawa. Odpowiedzialność Banku nie obejmuje {szkód|strat} powstałych wskutek okoliczności, za które Bank nie ponosi winy, w tym działania siły wyższej."
+      - ustep: "Bank nie odpowiada za jakość towarów i usług nabywanych przez uczestnika za pomocą karty promocyjnej, ani za działania sprzedawców, w tym za odmowę przyjęcia płatności kartą. Roszczenia z tego tytułu uczestnik kieruje do sprzedawcy, {z zastrzeżeniem|bez uszczerbku dla} uprawnień wynikających z przepisów o usługach płatniczych."
+      - ustep: "Udział w Promocji {nie wyłącza|nie ogranicza} uprawnień uczestnika wynikających z umowy o kartę i umowy rachunku."
+
+  - id: cashback-uczestnik-oswiadczenia
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Składając wniosek o kartę promocyjną, uczestnik oświadcza, że {spełnia|spełnia łącznie} warunki udziału w Promocji, a podane przez niego dane są {prawdziwe|zgodne z prawdą} i kompletne."
+      - ustep: "Uczestnik oświadcza także, że zapoznał się z Regulaminem oraz z dokumentem „{{ref:dokument:regulamin-kart-debetowych}}” i że {rozumie|jest świadomy}, iż Zwrot jest świadczeniem uzależnionym od spełnienia warunków w każdym miesiącu rozliczeniowym z osobna."
+      - ustep: "Oświadczenia składane w związku z Promocją {są składane|składa się} pod rygorem odpowiedzialności przewidzianej w Regulaminie, w tym utraty prawa do Zwrotu."
+
+  - id: cashback-okres-kalendarz
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-okres-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {publikuje|udostępnia} w bankowości elektronicznej harmonogram miesięcy rozliczeniowych uczestnika, wskazujący dla każdego miesiąca dzień jego zakończenia i przewidywaną datę wypłaty Zwrotu."
+      - ustep: "Harmonogram ma charakter {informacyjny|pomocniczy}; w razie rozbieżności z Regulaminem stosuje się postanowienia Regulaminu. Zmiana harmonogramu wynikająca z dni ustawowo wolnych od pracy nie jest zmianą Regulaminu."
+      - ustep: "W przypadku wniosku złożonego w ostatnim dniu Promocji harmonogram jest {tworzony|generowany} po aktywacji karty, a nie w dniu złożenia wniosku."
+
+  - id: cashback-warunki-karta-dodatkowa
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Płatności dokonane kartą dodatkową wydaną do rachunku powiązanego innej osobie nie są uwzględniane przy ocenie warunków Promocji, {chyba że|z wyjątkiem sytuacji, gdy} uczestnik jest jednocześnie jej użytkownikiem."
+      - ustep: "Płatności dokonane przez pełnomocnika uczestnika jego kartą promocyjną są uwzględniane, {o ile|jeżeli} karta została wydana imiennie uczestnikowi, a pełnomocnik działał w granicach udzielonego pełnomocnictwa."
+      - ustep: "Udostępnienie karty promocyjnej osobie trzeciej wbrew {Regulaminowi kart|postanowieniom regulaminu kart} nie wpływa na zaliczenie płatności, ale uczestnik ponosi {odpowiedzialność|skutki} takiego udostępnienia na zasadach tam określonych."
+
+  - id: cashback-warunki-limity-karty
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik może zmieniać limity dzienne płatności kartą w ramach {dostępnych|przewidzianych} w bankowości elektronicznej ustawień; Bank nie gwarantuje, że ustawione limity pozwolą na spełnienie warunków Promocji."
+      - ustep: "Zablokowanie przez uczestnika płatności internetowych lub zbliżeniowych zgodnie z jego dyspozycją nie stanowi przeszkody w udziale w Promocji, lecz płatności, których nie można było wykonać z powodu blokady, nie są uwzględniane."
+      - ustep: "Płatności odrzucone z powodu braku środków na rachunku, przekroczenia limitu lub niepoprawnego kodu PIN {nie są płatnościami kwalifikowanymi|nie stanowią płatności kwalifikowanych}."
+
+  - id: cashback-wysokosc-pierwszy-miesiac
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wysokosc-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Podwyższona stawka za pierwszy miesiąc rozliczeniowy dotyczy {wyłącznie|jedynie} płatności dokonanych w tym miesiącu i nie jest stosowana w kolejnych miesiącach, także jeżeli w pierwszym miesiącu nie osiągnięto limitu Zwrotu."
+      - ustep: "Jeżeli w pierwszym miesiącu rozliczeniowym uczestnik nie spełnił warunków Promocji, nie traci prawa do udziału w następnych miesiącach, lecz traci możliwość otrzymania Zwrotu według podwyższonej stawki."
+      - ustep: "Pierwszy miesiąc rozliczeniowy wyznacza się {raz|jednokrotnie} dla każdej karty promocyjnej; wymiana karty na nową w okresie premiowanym nie powoduje ponownego zastosowania podwyższonej stawki."
+
+  - id: cashback-wyplata-podatek-przelew
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wyplata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Bank jest zobowiązany do pobrania podatku od Zwrotu, wypłacana kwota jest {pomniejszona|zmniejszona} o należny podatek, a w opisie operacji Bank wskazuje kwotę brutto, kwotę podatku i kwotę netto."
+      - ustep: "Uczestnik, który uważa, że w jego przypadku obowiązują zwolnienia podatkowe, powinien {zgłosić|przedstawić} Bankowi stosowne oświadczenie lub dokument przed dniem wypłaty. Zwolnienie zgłoszone po wypłacie Bank uwzględnia na zasadach przewidzianych w przepisach podatkowych."
+      - ustep: "Bank nie {świadczy|udziela} doradztwa podatkowego; informacje zawarte w Regulaminie mają charakter ogólny."
+
+  - id: cashback-wylaczenia-hazard
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wylaczenia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wyłączenie płatności za gry hazardowe obejmuje {płatności|transakcje} na rzecz podmiotów prowadzących działalność w zakresie gier losowych, zakładów wzajemnych, gier na automatach i kasyn internetowych, niezależnie od formy ich prowadzenia."
+      - ustep: "Wyłączeniu podlegają także płatności na rzecz pośredników, którzy {przyjmują|gromadzą} środki z przeznaczeniem na takie gry, w tym doładowania kont graczy."
+      - ustep: "W razie wątpliwości co do charakteru sprzedawcy Bank kieruje się kodem kategorii sprzedawcy; uczestnik może wykazać, że płatność dotyczyła usługi niewchodzącej w zakres wyłączenia."
+
+  - id: cashback-utrata-blokada-karty
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Blokada karty promocyjnej założona przez Bank z powodu podejrzenia nieautoryzowanego użycia nie powoduje utraty prawa do Zwrotu, {jeżeli|o ile} podejrzenie okaże się nieuzasadnione albo karta zostanie zastąpiona nową."
+      - ustep: "Płatności dokonane kartą w okresie blokady nie są uwzględniane, a okres blokady nie przedłuża okresu premiowanego, {chyba że|z wyjątkiem sytuacji, gdy} blokada wynikała z błędu Banku."
+      - ustep: "Jeżeli blokada została nałożona z powodu naruszenia przez uczestnika zasad korzystania z karty, Bank może zdecydować o utracie prawa do Zwrotu na podstawie postanowień Regulaminu."
+
+  - id: cashback-rekl-forma-odpowiedzi
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-rekl-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odpowiedź na reklamację Bank udziela na papierze albo, za zgodą uczestnika, na innym trwałym nośniku, w szczególności pocztą elektroniczną lub w bankowości elektronicznej."
+      - ustep: "Jeżeli rozpatrzenie reklamacji w terminie nie jest możliwe, Bank przed jego upływem informuje uczestnika o przyczynie opóźnienia, okolicznościach wymagających ustalenia i przewidywanym terminie odpowiedzi, który {nie może|nie powinien} przekraczać terminu maksymalnego."
+      - ustep: "Brak odpowiedzi w terminie nie jest równoznaczny z uwzględnieniem reklamacji, lecz uprawnia uczestnika do skorzystania z środków ochrony prawnej przewidzianych w przepisach."
+
+  - id: cashback-dane-profilowanie
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank nie podejmuje wobec uczestnika decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, które wywoływałyby skutki prawne lub w podobny sposób istotnie na niego wpływały, z wyjątkiem automatycznej oceny warunków Promocji, która ma charakter {rachunkowy|obliczeniowy}."
+      - ustep: "Uczestnik może zażądać ponownej oceny spełnienia warunków Promocji przez pracownika Banku; wniosek w tej sprawie można złożyć w ramach reklamacji."
+      - ustep: "Wyniki oceny nie są wykorzystywane do podejmowania decyzji o zdolności kredytowej uczestnika ani do zmiany warunków innych produktów."
+
+  - id: cashback-koncowe-wypowiedzenie
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Promocja wygasa z upływem okresu premiowanego ostatniego uczestnika, który złożył wniosek w okresie obowiązywania Promocji; po tym dniu Regulamin pozostaje w mocy w zakresie niezbędnym do rozliczenia Zwrotów i rozpatrzenia reklamacji."
+      - ustep: "Wygaśnięcie Promocji nie wpływa na umowy o kartę i rachunek, które {kontynuuje się|są nadal wykonywane} na zasadach ogólnych, w tym na zasadach opłat określonych w dokumencie „{{ref:dokument:taryfa-karty}}”."
+      - ustep: "Zasady dalszego korzystania z karty po upływie okresu premiowanego, w tym wznowienia karty, {określa|reguluje} dokument „{{ref:dokument:regulamin-kart-debetowych}}”."
+
+  - id: cashback-koncowe-doreczenia
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Oświadczenia i informacje dotyczące Promocji Bank przekazuje uczestnikowi {w bankowości elektronicznej|za pośrednictwem bankowości elektronicznej} lub pocztą elektroniczną, a w przypadku braku dostępu uczestnika do tych kanałów — pisemnie na ostatnio wskazany adres korespondencyjny."
+      - ustep: "Oświadczenie uznaje się za doręczone w dniu udostępnienia go w bankowości elektronicznej w sposób umożliwiający zapoznanie się z jego treścią, a w przypadku korespondencji papierowej — w dniu jej odebrania lub po upływie terminu awizo."
+      - ustep: "Uczestnik składa oświadczenia w placówce Banku, w bankowości elektronicznej lub pisemnie na adres korespondencyjny Banku wskazany w Regulaminie; oświadczenie przesłane w innej formie Bank rozpatruje, jeżeli jest ono {jednoznaczne|zrozumiałe} i pozwala na identyfikację uczestnika."

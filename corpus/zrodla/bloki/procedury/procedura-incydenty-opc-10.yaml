@@ -1,0 +1,81 @@
+bloki:
+  # --- Zabezpieczenie dowodów, przywrócenie działania i przegląd
+  - id: incydenty-przyw-kolejnosc-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - akapit: "Przywracanie działania systemów odbywa się w kolejności wynikającej z ich krytyczności dla Banku i klientów. Kolejność ustala Kierownik incydentu na podstawie analizy wpływu na działalność, z uwzględnieniem zależności technicznych."
+      - kroki:
+          - tekst: "Ustalenie kolejności przywracania."
+            podkroki:
+              - tekst: "W pierwszej kolejności przywraca się systemy niezbędne do realizacji płatności i autoryzacji transakcji klientów oraz systemy bezpieczeństwa."
+              - tekst: "W drugiej kolejności przywraca się kanały obsługi klientów: bankowość elektroniczną i aplikację mobilną, a następnie systemy placówek."
+              - tekst: "W ostatniej kolejności przywraca się systemy wspierające, takie jak raportowe i analityczne."
+          - tekst: "Warunki przywrócenia. System można ponownie udostępnić dopiero po spełnieniu wszystkich poniższych warunków:"
+            podkroki:
+              - tekst: "przyczyna incydentu została usunięta albo skutecznie ograniczona, co potwierdził Zespół;"
+              - tekst: "system został przetestowany pod kątem poprawności działania i integralności danych;"
+              - tekst: "dostępy do systemu zostały sprawdzone, a podejrzane konta zlikwidowane;"
+              - tekst: "właściciel systemu i Kierownik incydentu zatwierdzili przywrócenie na piśmie."
+          - tekst: "Stopniowe udostępnianie. Po przywróceniu system przez pierwsze godziny podlega wzmożonemu monitorowaniu, a o wszelkich anomaliach niezwłocznie informuje się Kierownika incydentu."
+
+  - id: incydenty-przyw-kopie-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - akapit: "Odtwarzanie danych z kopii zapasowych jest jednym z podstawowych sposobów przywrócenia działania po incydencie. Zasady wykonywania i przechowywania kopii są określone w odrębnych dokumentach; poniższe zasady dotyczą postępowania w trakcie incydentu."
+      - kroki:
+          - tekst: "Wybór punktu odtworzenia. Właściciel systemu {wskazuje|proponuje} punkt odtworzenia, uwzględniając moment rozpoczęcia incydentu i dopuszczalną utratę danych."
+            podkroki:
+              - tekst: "Wybiera się najpóźniejszy punkt sprzed rozpoczęcia incydentu, co do którego istnieje pewność, że nie zawiera złośliwego oprogramowania ani zmian dokonanych przez sprawcę."
+              - tekst: "Jeżeli moment rozpoczęcia incydentu nie jest znany, odtwarzanie rozpoczyna się od testowania kolejnych, coraz starszych kopii."
+          - tekst: "Odtworzenie w środowisku odizolowanym. Dane odtwarza się najpierw w środowisku testowym, w którym weryfikuje się ich kompletność i integralność."
+          - tekst: "Uzgodnienie danych. Jednostka operacji uzgadnia salda i transakcje z okresu między punktem odtworzenia a chwilą incydentu, na podstawie dzienników, potwierdzeń kanałów płatniczych i dokumentów źródłowych."
+          - tekst: "Rejestr odtworzenia. Z odtworzenia danych sporządza się protokół, który zawiera datę, zakres, użyte kopie, wyniki weryfikacji oraz osoby odpowiedzialne."
+
+  - id: incydenty-przyw-ciaglosc-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - akapit: "Jeżeli czas usunięcia incydentu przekracza dopuszczalny czas przestoju usługi, Kierownik incydentu wnioskuje do Jednostki ciągłości działania o uruchomienie planu ciągłości działania dla dotkniętego procesu."
+      - kroki:
+          - tekst: "Decyzja o uruchomieniu planu. Decyzję podejmuje dyrektor Jednostki ciągłości działania lub osoba przez niego upoważniona, po zapoznaniu się z oceną wpływu na działalność."
+          - tekst: "Procesy zastępcze. Po uruchomieniu planu właściciel procesu wdraża procedury zastępcze."
+            podkroki:
+              - tekst: "Procesy realizowane ręcznie lub w systemach zapasowych dokumentuje się w sposób umożliwiający późniejsze wprowadzenie danych do systemów podstawowych."
+              - tekst: "Zwiększa się nadzór nad poprawnością i bezpieczeństwem operacji wykonywanych w trybie zastępczym."
+          - tekst: "Komunikacja o trybie awaryjnym. Klientów i pracowników informuje się o ograniczeniach w dostępności usług i o sposobach ich obejścia."
+          - tekst: "Powrót do normalnej pracy. Powrót do działania w trybie podstawowym wymaga zatwierdzenia przez Kierownika incydentu i właściciela procesu oraz uzgodnienia danych zgromadzonych w trakcie pracy w trybie awaryjnym."
+
+  - id: incydenty-przyw-dowody-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - akapit: "Zabezpieczenie dowodów odbywa się równolegle z działaniami naprawczymi. Dowody muszą być zbierane w sposób, który nie narusza ich wartości w postępowaniu wewnętrznym, cywilnym lub karnym."
+      - kroki:
+          - tekst: "Zasady ogólne. Czynności związane z dowodami wykonują wyłącznie osoby przeszkolone, wyznaczone przez Kierownika incydentu."
+            podkroki:
+              - tekst: "Dowody zbiera się w kolejności ulotności: najpierw dane w pamięci operacyjnej i połączenia sieciowe, następnie obrazy dysków, na końcu dzienniki i dokumenty."
+              - tekst: "Oryginalnych nośników nie modyfikuje się; analizy przeprowadza się na kopiach, których zgodność z oryginałem potwierdza się skrótem kryptograficznym."
+          - tekst: "Protokół zabezpieczenia. Każdy zabezpieczony dowód opisuje się w protokole {{fakt:incydent.protokol-dowodow}}: podaje się jego rodzaj, miejsce i czas zabezpieczenia, osobę zabezpieczającą oraz skrót kontrolny."
+          - tekst: "Łańcuch dowodowy. Każde przekazanie dowodu między osobami odnotowuje się w protokole z datą, godziną i podpisami osoby przekazującej oraz przyjmującej."
+          - tekst: "Przechowywanie. Dowody przechowuje się w zamkniętym i oznaczonym miejscu, do którego dostęp mają tylko upoważnione osoby, przez {{fakt:termin.incydent.retencja-dokumentacji}} lub dłużej, jeżeli toczy się postępowanie."
+
+  - id: incydenty-przyw-przeglad-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - akapit: "Przegląd po incydencie ma pozwolić Bankowi wyciągnąć wnioski i zapobiegać podobnym zdarzeniom w przyszłości. Przegląd przeprowadza się w sposób konstruktywny; jego celem nie jest wskazanie winnych, lecz usunięcie słabości procesu."
+      - kroki:
+          - tekst: "Spotkanie podsumowujące. Przegląd odbywa się w terminie {{fakt:termin.incydent.przeglad}} od zamknięcia incydentu, z udziałem wszystkich osób, które brały udział w jego obsłudze."
+            podkroki:
+              - tekst: "Uczestnicy omawiają przebieg incydentu na osi czasu: co się wydarzyło, kiedy i jakie decyzje podjęto."
+              - tekst: "Wskazuje się, co zadziałało prawidłowo, a co wymaga poprawy, w tym czas wykrycia, czas reakcji i skuteczność komunikacji."
+          - tekst: "Analiza przyczyn źródłowych. Zespół ustala przyczynę incydentu z użyciem metody pięciu pytań „dlaczego” lub równoważnej, rozróżniając przyczyny techniczne, organizacyjne i ludzkie."
+          - tekst: "Zalecenia. Z przeglądu wynika lista zaleceń, z których każde ma właściciela i termin realizacji, nieprzekraczający {{fakt:termin.incydent.realizacja-zalecen}}."
+          - tekst: "Raport z przeglądu. Raport w formularzu {{fakt:incydent.raport-przegladu}} zatwierdza Kierownik incydentu w terminie {{fakt:termin.incydent.zatwierdzenie-raportu}}, a następnie przekazuje się go do Komitetu nadzorującego bezpieczeństwo."

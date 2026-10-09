@@ -1,0 +1,136 @@
+bloki:
+  - id: procedura-reklamacje-odpowiedz-forma
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Wybierz} formę odpowiedzi zgodnie z preferencją klienta wskazaną w reklamacji lub w umowie."
+            podkroki:
+              - tekst: "Odpowiedź w postaci papierowej wysyła się listem poleconym na adres do korespondencji; dowód nadania zachowuje się w karcie sprawy."
+              - tekst: "Odpowiedź na trwałym nośniku udostępnia się w bankowości elektronicznej lub przesyła na adres e-mail wskazany przez klienta, jeżeli klient wyraził na to zgodę."
+              - tekst: "W sprawach dotyczących usług płatniczych odpowiedź przesyła się w postaci papierowej lub, za zgodą klienta, na innym trwałym nośniku."
+          - tekst: "Sporządź odpowiedź w języku polskim; jeżeli klient złożył reklamację w innym języku i umowa przewiduje obsługę w tym języku, przygotuj także tłumaczenie."
+          - tekst: "W odpowiedzi użyj stylu {rzeczowego|formalnego, lecz zrozumiałego}, unikaj skrótów wewnętrznych i odnoś się do każdego zarzutu klienta w kolejności, w jakiej został przedstawiony."
+          - tekst: "Jeżeli odpowiedź zawiera dane objęte tajemnicą bankową, wyślij ją wyłącznie na adres wskazany w umowie albo udostępnij w bankowości elektronicznej."
+          - tekst: "{Wyślij|Nadaj} odpowiedź przed upływem terminu ustawowego i zapisz w rejestrze REK datę wysyłki lub udostępnienia oraz numer przesyłki."
+          - tekst: "Jeżeli odpowiedź nie została doręczona z przyczyn leżących po stronie adresata, stosuj zasady doręczania przesyłek niedoręczonych obowiązujące w Banku."
+
+  - id: procedura-reklamacje-odpowiedz-oddalenie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - akapit: "Odpowiedź, w której reklamacja nie jest uwzględniona w całości, wymaga szczególnej staranności, ponieważ stanowi podstawę ewentualnego sporu przed Rzecznikiem Finansowym lub sądem."
+      - kroki:
+          - tekst: "{Opisz|Przedstaw} stan faktyczny ustalony w toku analizy, wskazując źródła ustaleń (np. zapisy systemowe, dokumenty umowne), bez ujawniania danych innych osób."
+          - tekst: "{Wskaż|Podaj} podstawę prawną lub umowną odmowy, przywołując konkretne postanowienie umowy lub regulaminu albo przepis."
+          - tekst: "{Wyjaśnij|Opisz} klientowi, jakich dowodów lub okoliczności zabrakło, aby reklamację uwzględnić, oraz — jeśli to możliwe — jakie dokumenty mogłyby zmienić rozstrzygnięcie."
+          - tekst: "Zamieść w odpowiedzi pouczenie:"
+            podkroki:
+              - tekst: "o prawie do złożenia odwołania w terminie {{fakt:termin.reklamacje-proc.odwolanie}} i o miejscu jego złożenia;"
+              - tekst: "o możliwości zwrócenia się do Rzecznika Finansowego z wnioskiem o rozpatrzenie sprawy w trybie pozasądowego postępowania;"
+              - tekst: "o możliwości wystąpienia z powództwem do sądu powszechnego, a w przypadku konsumentów — także do stałego polubownego sądu konsumenckiego, jeśli strony wyrażą zgodę."
+          - tekst: "Nie używaj sformułowań, które mogłyby zostać odczytane jako zarzut wobec klienta lub sugestia nadużycia, jeżeli nie ma na to potwierdzenia w dokumentach sprawy."
+          - tekst: "Odpowiedź odmowną przed wysyłką zatwierdza kierownik zespołu, a w sprawach o wartości powyżej {{fakt:limit.reklamacje-proc.biuro}} — dyrektor jednostki rozpatrującej reklamacje."
+
+  - id: procedura-reklamacje-odpowiedz-czesciowe
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - kroki:
+          - tekst: "{W przypadku|Przy} częściowym uwzględnieniu reklamacji wskaż wprost, które żądania uznano za zasadne, a które odrzucono, i wyodrębnij kwoty uznane od kwot nieuwzględnionych."
+          - tekst: "{Gdy|Jeżeli} reklamację uwzględniono w całości, w odpowiedzi opisz sposób wykonania rozstrzygnięcia, w tym kwotę, rachunek, tytuł księgowania i datę uznania."
+          - tekst: "{Przeproś|Wyraź ubolewanie} za nieprawidłowość, jeżeli została potwierdzona, w sposób rzeczowy i bez wskazywania na winę pracownika."
+          - tekst: "Jeżeli ustalono, że przyczyną sporu był błąd systemowy lub organizacyjny, nie opisuj w odpowiedzi szczegółów technicznych, lecz poinformuj o podjętych działaniach naprawczych w zakresie, w jakim dotyczą klienta."
+          - tekst: "Odpowiedzi przyznającej rekompensatę ponad kwotę wynikającą z umowy (np. jako gest dobrej woli) nie traktuj jako uznania roszczenia; sposób sformułowania takiej rekompensaty uzgodnij z jednostką odpowiedzialną za sprawy prawne ({{fakt:jednostka.prawny}})."
+          - tekst: "W odpowiedzi nie zamieszczaj wniosków o wycofanie skargi z Rzecznika Finansowego ani żadnych oświadczeń o zrzeczeniu się roszczeń, chyba że takie oświadczenie zostało przygotowane przez jednostkę odpowiedzialną za sprawy prawne."
+
+  - id: procedura-reklamacje-odpowiedz-sprostowanie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli po wysłaniu odpowiedzi okaże się, że zawiera ona błąd (np. błędną kwotę, niewłaściwą datę lub nieprawidłowe pouczenie), {niezwłocznie|bez zbędnej zwłoki} powiadom kierownika zespołu."
+            podkroki:
+              - tekst: "Kierownik ocenia wagę błędu i decyduje, czy konieczne jest sprostowanie."
+              - tekst: "Błąd w pouczeniu o terminie lub trybie odwołania wymaga sprostowania w każdym przypadku."
+          - tekst: "{Wyślij|Prześlij} sprostowanie w tym samym kanale co odpowiedź, wskazując, które elementy poprzedniej odpowiedzi ulegają zmianie, i potwierdź jego doręczenie."
+          - tekst: "Jeżeli błędna odpowiedź wpłynęła na decyzje klienta (np. zrezygnował z odwołania lub zwlekał z innymi czynnościami), zapisz to w karcie sprawy i oceń, czy należy uwzględnić ten fakt przy ponownym rozpatrzeniu."
+          - tekst: "{Wszystkie sprostowania zlicza się|Liczbę sprostowań uwzględnia się} w raporcie miesięcznym jako zdarzenia jakościowe i analizuje pod kątem przyczyn."
+
+  - id: procedura-reklamacje-uznanie-oplaty
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-uznanie
+    elementy:
+      - kroki:
+          - tekst: "{Zwrot|Korekta} opłat pobranych nienależnie obejmuje kwotę opłaty, prowizję od niej (jeżeli została naliczona) oraz skutki dla odsetek od zadłużenia lub salda debetowego."
+            podkroki:
+              - tekst: "Korektę księguje się z datą pierwotnej operacji, aby naliczenia odsetkowe zostały przeliczone za cały okres."
+              - tekst: "Jeżeli korekta wymaga przeliczenia kilku okresów rozliczeniowych, analityk przygotowuje zestawienie, które dołącza do karty sprawy."
+          - tekst: "{Zwróć|Wypłać} klientowi odsetki ustawowe od kwoty nienależnie pobranej, jeżeli wynika to z przepisów lub decyzji organu decyzyjnego."
+          - tekst: "{Gdy|Jeżeli} klient posiada kilka rachunków, uznanie następuje na rachunek, z którego opłata została pobrana, chyba że klient wskaże inny rachunek w Banku."
+          - tekst: "Jeżeli rachunek został zamknięty, a klient nie wskazał rachunku do zwrotu, wyślij informację z prośbą o podanie numeru rachunku w innym banku i dokonaj przelewu zgodnie z dyspozycją."
+          - tekst: "Zwrotu nie dokonuje się gotówką w placówce bez wcześniejszego zlecenia z rejestru REK i weryfikacji tożsamości odbiorcy."
+
+  - id: procedura-reklamacje-uznanie-odwrocenie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-uznanie
+    elementy:
+      - akapit: "Uznanie rachunku może zostać {cofnięte|odwrócone} wyłącznie w sytuacjach wskazanych poniżej i po zapisaniu decyzji organu, który podjął pierwotną decyzję lub organu wyższego szczebla."
+      - kroki:
+          - tekst: "Uznanie tymczasowe, do kwoty {{fakt:limit.reklamacje-proc.uznanie-tymczasowe}}, można odwrócić, jeżeli po zakończeniu wyjaśnień {okaże się|wyniknie}, że roszczenie klienta jest bezzasadne; o odwróceniu informuje się klienta z wyprzedzeniem."
+          - tekst: "Uznanie w sprawie chargeback można odwrócić, jeżeli akceptant wykaże prawidłowość transakcji w postępowaniu prowadzonym według zasad organizacji kartowej."
+            podkroki:
+              - tekst: "Przed odwróceniem poinformuj klienta o wyniku postępowania i wskaż dokumenty przedstawione przez akceptanta."
+              - tekst: "Klientowi przysługuje prawo do złożenia odwołania od decyzji o odwróceniu uznania na zasadach ogólnych."
+          - tekst: "{Gdy|Jeżeli} uznanie zostało dokonane omyłkowo (np. na błędny rachunek), wystąp do klienta o zwrot środków, a w razie braku zgody — wykonaj czynności windykacyjne zgodnie z odrębną procedurą."
+          - tekst: "Odwrócenia nie wykonuje się bez uprzedniego powiadomienia klienta na trwałym nośniku z podaniem kwoty, terminu i podstawy odwrócenia."
+
+  - id: procedura-reklamacje-odwolania-rzecznik
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odwolania
+    elementy:
+      - akapit: "Klient, który nie zgadza się z rozstrzygnięciem lub nie otrzymał odpowiedzi w terminie, może zwrócić się do Rzecznika Finansowego, którego stanowisko jest publikowane na stronie {{fakt:rzecznik.strona}}. Współpraca z Rzecznikiem Finansowym jest zadaniem jednostki rozpatrującej reklamacje ({{fakt:jednostka.reklamacje}})."
+      - kroki:
+          - tekst: "Wniosek Rzecznika o przedstawienie stanowiska {rejestruj|wprowadź} w rejestrze REK w dniu wpływu, oznaczając go jako sprawę priorytetową."
+          - tekst: "Zgromadź pełną dokumentację sprawy, w tym oryginalną reklamację, notatkę z analizy, odpowiedzi i dowody wysyłki, i przedstaw ją jednostce odpowiedzialnej za sprawy prawne ({{fakt:jednostka.prawny}})."
+          - tekst: "{Przygotuj|Opracuj} stanowisko Banku w terminie wyznaczonym w piśmie Rzecznika i zatwierdź je przed wysyłką u dyrektora jednostki rozpatrującej reklamacje."
+            podkroki:
+              - tekst: "Stanowisko Banku zawiera ustalony stan faktyczny, ocenę prawną, argumenty oraz — jeśli to zasadne — propozycję ugodowego załatwienia sprawy."
+              - tekst: "Gdy Bank uwzględnia roszczenie klienta w toku postępowania przed Rzecznikiem, informuje o tym zarówno klienta, jak i Rzecznika."
+          - tekst: "{Zapisz|Odnotuj} w rejestrze REK datę wpływu wniosku, termin odpowiedzi, wynik postępowania i dalsze działania Banku."
+          - tekst: "Wnioski z postępowań przed Rzecznikiem Finansowym omawiaj kwartalnie z jednostkami produktowymi i uwzględniaj w programie szkoleń pracowników."
+
+  - id: procedura-reklamacje-odwolania-sad
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odwolania
+    elementy:
+      - kroki:
+          - tekst: "Pozew lub wezwanie do próby ugodowej złożone przez klienta {przekaż|skieruj} niezwłocznie, nie później niż następnego dnia roboczego, do jednostki odpowiedzialnej za sprawy prawne ({{fakt:jednostka.prawny}}), która przejmuje prowadzenie sprawy."
+          - tekst: "Wraz z pismem {przekaż|dołącz} pełną dokumentację reklamacji, w tym wszystkie wersje odpowiedzi, notatki z analizy, protokoły i nagrania rozmów oraz potwierdzenia wysyłki."
+          - tekst: "Zaznacz w rejestrze REK, że sprawa trafiła na drogę sądową, a rozpatrywanie nowych pism klienta w tej sprawie konsultuj z jednostką odpowiedzialną za sprawy prawne."
+            podkroki:
+              - tekst: "Nie podejmuj z klientem rozmów dotyczących ugody poza ustaleniami jednostki prawnej."
+              - tekst: "Dokumentację sprawy {zabezpiecz|zachowaj} przed usunięciem lub zniszczeniem do prawomocnego zakończenia postępowania."
+          - tekst: "Po prawomocnym zakończeniu postępowania zapisz jego wynik i uwzględnij w analizie jakości wszystkie wnioski wynikające z uzasadnienia orzeczenia."
+
+  - id: procedura-reklamacje-odwolania-organy
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odwolania
+    elementy:
+      - kroki:
+          - tekst: "Wezwania i zapytania organów nadzoru (w szczególności Komisji Nadzoru Finansowego) oraz Rzecznika Praw Konsumentów i Prezesa Urzędu Ochrony Konkurencji i Konsumentów {kieruj|przekazuj} do jednostki zgodności ({{fakt:jednostka.zgodnosc}}) niezwłocznie po ich otrzymaniu."
+          - tekst: "Jednostka zgodności ustala, który zespół odpowiada na pismo, wyznacza termin wewnętrzny krótszy o {{fakt:termin.reklamacje-proc.alert}} od terminu wskazanego przez organ i nadzoruje dotrzymanie terminów."
+            podkroki:
+              - tekst: "Do przygotowania stanowiska {włącza się|angażuje się} jednostkę, której działań dotyczy skarga."
+              - tekst: "Stanowisko do organu nadzoru wysyła wyłącznie osoba upoważniona do reprezentowania Banku wobec organów."
+          - tekst: "Skargi kierowane do organów, w których klient kwestionuje sposób rozpatrzenia reklamacji, rejestruje się w rejestrze REK jako sprawy powiązane z reklamacją pierwotną."
+          - tekst: "Wnioski z interwencji organów {włącza się|uwzględnia się} do oceny jakości procesu i ewentualnych zmian procedury."

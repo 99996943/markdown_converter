@@ -1,0 +1,138 @@
+bloki:
+  # ---------------------------------------------------------------- V. Rachunki bieżące i pomocnicze
+  - id: taryfa-firmy-rachunki-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Opłaty w tej części dotyczą czynności związanych z prowadzeniem rachunków bieżących, pomocniczych, lokacyjnych i walutowych, niezależnie od segmentu, do którego zalicza się Klient. Opłaty za prowadzenie rachunków właściwe dla segmentu wskazano w częściach II–IV Taryfy."
+
+  - id: taryfa-firmy-rachunki-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Otwarcie rachunku pomocniczego", stawka: "bez opłat", tryb: "jednorazowo"}
+          - usluga: "Prowadzenie rachunku walutowego[^1]"
+            stawka: "{{fakt:oplata.firma.rachunek-walutowy-prowadzenie}}"
+            tryb: "miesięcznie"
+            podpozycje:
+              - {usluga: "rachunek w euro", stawka: "{{fakt:oplata.firma.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie"}
+              - {usluga: "rachunek w dolarach amerykańskich", stawka: "{{fakt:oplata.firma.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie"}
+              - {usluga: "rachunek we frankach szwajcarskich lub funtach brytyjskich", stawka: "15,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Zamknięcie rachunku na wniosek Klienta", stawka: "{{fakt:oplata.firma.zamkniecie-rachunku}}", tryb: "jednorazowo"}
+          - {usluga: "Zamknięcie rachunku w pierwszych 12 miesiącach od otwarcia", stawka: "100,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Oprocentowanie środków na rachunku bieżącym", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}} w stosunku rocznym", tryb: "rocznie"}
+          - usluga: "Odsetki od przekroczenia salda (debet nieuzgodniony)"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym"
+            tryb: "rocznie"
+          - {usluga: "Upomnienie w sprawie zadłużenia na rachunku", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każde upomnienie"}
+          - {usluga: "Wyciąg z rachunku w formie papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg"}
+          - {usluga: "Duplikat wyciągu lub potwierdzenia operacji", stawka: "15,00 zł", tryb: "za dokument"}
+          - {usluga: "Odpis umowy rachunku", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument"}
+          - {usluga: "Ustanowienie lub odwołanie pełnomocnictwa do rachunku", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za dyspozycję"}
+          - {usluga: "Blokada środków na rachunku na wniosek Klienta (rachunek escrow)", stawka: "0,10% blokowanej kwoty, min. 100,00 zł", tryb: "jednorazowo"}
+    przypisy:
+      1: "Rachunki walutowe prowadzone są w walutach wymienionych w Tabeli kursów walut Banku. W przypadku braku obrotów w okresie 12 miesięcy Bank może zawiesić pobieranie opłaty do czasu pierwszej operacji."
+
+  # ---------------------------------------------------------------- VI. Przelewy krajowe i podzielona płatność
+  - id: taryfa-firmy-przelewy-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Za przelewy krajowe w złotych uznaje się dyspozycje płatnicze realizowane w systemach Elixir, Express Elixir i SORBNET na rachunki prowadzone w bankach na terytorium Rzeczypospolitej Polskiej. Przelewy w mechanizmie podzielonej płatności {mogą|można} składać wyłącznie w złotych, z wykorzystaniem rachunku rozliczeń VAT."
+
+  - id: taryfa-firmy-przelewy-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew krajowy złożony przez bankowość elektroniczną"
+            stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}"
+            tryb: "za przelew"
+            podpozycje:
+              - {usluga: "do rachunku w Banku", stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}", tryb: "za przelew"}
+              - {usluga: "do rachunku w innym banku", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew"}
+          - {usluga: "Przelew krajowy złożony w placówce Banku[^1]", stawka: "{{fakt:oplata.firma.przelew-placowka}}", tryb: "za przelew"}
+          - {usluga: "Przelew natychmiastowy", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za przelew"}
+          - {usluga: "Przelew w systemie SORBNET (kwoty od 1 000 000,00 zł)", stawka: "{{fakt:oplata.firma.przelew-sorbnet}}", tryb: "za przelew"}
+          - {usluga: "Przelew w mechanizmie podzielonej płatności", stawka: "{{fakt:oplata.firma.przelew-podzielona-platnosc}}", tryb: "za przelew"}
+          - {usluga: "Przelew podatkowy do urzędu skarbowego lub składka do Zakładu Ubezpieczeń Społecznych", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew"}
+          - {usluga: "Przelew z paczki importowanej z systemu księgowego", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za każdy przelew w paczce"}
+          - {usluga: "Zlecenie stałe — realizacja", stawka: "{{fakt:oplata.firma.zlecenie-stale}}", tryb: "za każdą realizację"}
+          - {usluga: "Polecenie zapłaty — realizacja", stawka: "{{fakt:oplata.firma.polecenie-zaplaty}}", tryb: "za każdą realizację"}
+          - {usluga: "Zwrot przelewu na wniosek zleceniodawcy[^2]", stawka: "{{fakt:oplata.firma.zwrot-przelewu-na-wniosek}}", tryb: "za wniosek"}
+          - {usluga: "Odwołanie przelewu z przyszłą datą realizacji", stawka: "{{fakt:oplata.firma.odwolanie-przelewu}}", tryb: "za odwołanie"}
+          - {usluga: "Przyjęcie przelewu przychodzącego z innego banku", stawka: "bez opłat", tryb: "za przelew"}
+    przypisy:
+      1: "Przelewy w placówce przyjmowane są w godzinach pracy kas. Dyspozycje złożone po godzinie granicznej są realizowane następnego dnia roboczego."
+      2: "Bank nie gwarantuje zwrotu środków, jeżeli odbiorca nie wyrazi zgody na zwrot lub rachunek odbiorcy został zamknięty. Opłatę pobiera się niezależnie od wyniku postępowania."
+
+  # ---------------------------------------------------------------- VII. Przelewy zagraniczne
+  - id: taryfa-firmy-zagranica-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Przelewy zagraniczne obejmują przelewy w walutach obcych oraz przelewy w złotych na rachunki prowadzone poza terytorium Rzeczypospolitej Polskiej. Klient wybiera jedną z opcji pokrycia kosztów: SHA (koszty dzielone), OUR (wszystkie koszty ponosi zleceniodawca) albo BEN (koszty ponosi odbiorca)."
+
+  - id: taryfa-firmy-zagranica-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew w euro w ramach jednolitego obszaru płatności (SEPA)", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - usluga: "Przelew zagraniczny w opcji SHA lub BEN[^1]"
+            stawka: "{{fakt:oplata.firma.przelew-zagraniczny-prowizja}} kwoty, min. {{fakt:oplata.firma.przelew-zagraniczny-minimum}}, maks. {{fakt:oplata.firma.przelew-zagraniczny-maksimum}}"
+            tryb: "od kwoty przelewu"
+          - {usluga: "Dopłata za opcję OUR", stawka: "60,00 zł", tryb: "za przelew"}
+          - {usluga: "Dopłata za realizację w trybie pilnym (waluta dnia)", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-pilny}}", tryb: "za przelew"}
+          - {usluga: "Przelew przychodzący z zagranicy", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-przychodzacy}}", tryb: "za przelew"}
+          - {usluga: "Przelew przychodzący w ramach SEPA", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Zmiana lub odwołanie dyspozycji przelewu zagranicznego po jej wykonaniu", stawka: "{{fakt:oplata.firma.zmiana-dyspozycji-zagranicznej}}", tryb: "za dyspozycję"}
+          - {usluga: "Poszukiwanie przelewu zagranicznego na wniosek Klienta[^2]", stawka: "{{fakt:oplata.firma.poszukiwanie-przelewu}}", tryb: "za wniosek"}
+          - {usluga: "Przeliczenie waluty przy przelewie według Tabeli kursów walut Banku", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia"}
+          - {usluga: "Przelew w złotych na rachunek zagraniczny", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Potwierdzenie wykonania przelewu zagranicznego w formie komunikatu SWIFT", stawka: "30,00 zł", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie dewizowe dla potrzeb organów celnych i statystycznych", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+    przypisy:
+      1: "Opłaty banków pośredniczących i banku odbiorcy, pobierane poza Bankiem, nie są objęte Taryfą i mogą pomniejszać kwotę wypłaconą odbiorcy w opcjach SHA i BEN."
+      2: "Jeżeli poszukiwanie wykaże błąd po stronie Banku, opłata nie jest pobierana, a pobrana zostaje zwrócona w terminie {{fakt:termin.zwrot-oplat}}."
+
+  # ---------------------------------------------------------------- VIII. Gotówka i wpłatomaty
+  - id: taryfa-firmy-gotowka-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Operacje gotówkowe są realizowane w wybranych placówkach Banku wyposażonych w kasy oraz w sieci wpłatomatów. Wypłaty gotówki w kwocie przekraczającej {{fakt:limit.firma.awizo-wyplaty}} wymagają zgłoszenia z co najmniej dwudniowym wyprzedzeniem."
+
+  - id: taryfa-firmy-gotowka-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wpłata gotówkowa na rachunek w kasie placówki"
+            stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}"
+            tryb: "od kwoty wpłaty"
+            podpozycje:
+              - {usluga: "wpłata na rachunek własny do kwoty 1 000,00 zł", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za wpłatę"}
+              - {usluga: "wpłata z dowodem wpłaty zbiorczej (kilka rachunków)[^1]", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówkowa we wpłatomacie Banku", stawka: "{{fakt:oplata.firma.wplata-wplatomat-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wypłata gotówki z rachunku w kasie placówki", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wypłata gotówki w kwocie powyżej {{fakt:limit.firma.awizo-wyplaty}} bez wcześniejszego awizowania", stawka: "dodatkowo 0,10% kwoty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Odwołanie awizowanej wypłaty po godzinie 12:00 w dniu poprzedzającym", stawka: "50,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Wpłata zamknięta (w worku lub kasecie) przyjmowana do przeliczenia[^2]", stawka: "{{fakt:oplata.firma.wplata-zamknieta}}", tryb: "za każdy worek"}
+          - {usluga: "Wpłata wpływów dziennych w kasetach depozytowych (kasa nocna)", stawka: "25,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Przeliczenie i wpłata bilonu", stawka: "{{fakt:oplata.firma.bilon-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wypłata gotówki w wybranych nominałach (zamówienie nominałów)", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wypłata gotówki z bankomatu innego niż bankomat Banku kartą firmową", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za wypłatę"}
+          - {usluga: "Rozmiana banknotów i monet (do 500 sztuk)", stawka: "bez opłat", tryb: "za operację"}
+    przypisy:
+      1: "Opłatę pobiera się jednokrotnie od łącznej kwoty wpłaty, a w razie dzielenia wpłaty na kilka rachunków Klienta w Banku — od każdej części osobno."
+      2: "Wpłata zamknięta zostaje zaksięgowana na rachunku po przeliczeniu w obecności dwóch pracowników Banku, w terminie jednego dnia roboczego od dnia przyjęcia. Rozbieżności wykazuje się w protokole podpisywanym przez Klienta."

@@ -1,0 +1,160 @@
+bloki:
+  - id: zgon-b-zalacznik-1
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik-opc
+    wspolny: false
+    elementy:
+      - akapit: "{Poniższe|Niniejsze} zestawienie {określa|wskazuje} terminy kolejnych czynności w sprawie zgonu klienta, liczone od dnia, w którym Bank otrzymał odpis aktu zgonu."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność"
+              waga: 4
+            - naglowek: "Odpowiedzialny"
+              waga: 3
+            - naglowek: "Termin"
+              waga: 2
+          siatka: true
+          wiersze:
+            - ["Potwierdzenie przyjęcia zgłoszenia", "pracownik przyjmujący zgłoszenie", "{{fakt:termin.zgon.potwierdzenie}}"]
+            - ["Ustalenie produktów zmarłego", "zespół spadkowy", "{{fakt:termin.zgon.ustalenie-produktow}}"]
+            - ["Informacja dla spadkobierców", "zespół spadkowy", "{{fakt:termin.zgon.informacja-spadkobiercy}}"]
+            - ["Zgłoszenie zdarzenia ubezpieczycielowi", "jednostka ubezpieczeń", "{{fakt:termin.zgon.ubezpieczyciel}}"]
+            - ["Wypłata kosztów pogrzebu", "zespół spadkowy", "{{fakt:termin.zgon.koszty-pogrzebu}}"]
+            - ["Zamknięcie rachunku po rozliczeniu", "pracownik rachunkowości", "{{fakt:termin.zgon.zamkniecie-rachunku}}"]
+
+  - id: zgon-b-zalacznik-2
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik-opc
+    wspolny: false
+    elementy:
+      - akapit: "Wzór informacji dla spadkobierców o produktach zmarłego pracownik zespołu spadkowego {uzupełnia|wypełnia} w każdej sprawie na podstawie wykazu produktów i przekazuje spadkobiercom w terminie {{fakt:termin.zgon.informacja-spadkobiercy}}."
+      - tabela:
+          kolumny:
+            - naglowek: "Część informacji"
+              waga: 2
+            - naglowek: "Zawartość"
+              waga: 5
+          siatka: true
+          wiersze:
+            - ["Dane sprawy", "numer sprawy w rejestrze {{fakt:zgon.system.rejestr}}, data zgłoszenia zgonu, dane kontaktowe prowadzącego sprawę"]
+            - ["Wykaz produktów", "rodzaj produktu, numer, saldo na dzień zgonu, informacja o dyspozycji na wypadek śmierci"]
+            - ["Zobowiązania", "kredyty, limity, zadłużenie na kartach, poręczenia i ich stan na dzień zgonu"]
+            - ["Wymagane dokumenty", "odpis aktu zgonu, dokument potwierdzający prawo do spadku, dokumenty tożsamości, pełnomocnictwa"]
+            - ["Dalsze kroki", "sposób składania wniosku o wypłatę, możliwość wypłaty kosztów pogrzebu, planowane terminy"]
+            - ["Pouczenie", "informacja o ochronie danych osobowych oraz o braku możliwości udzielania porad prawnych przez Bank"]
+
+  - id: zgon-b-zalacznik-3
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik-opc
+    wspolny: false
+    elementy:
+      - akapit: "Zestawienie wskazuje, jakich dokumentów wymaga Bank od uposażonych z dyspozycji na wypadek śmierci, w zależności od ich sytuacji. Lista nie jest wyczerpująca, a w uzasadnionych przypadkach zespół spadkowy może zażądać dodatkowych dokumentów."
+      - tabela:
+          kolumny:
+            - naglowek: "Sytuacja uposażonego"
+              waga: 3
+            - naglowek: "Dokumenty"
+              waga: 5
+          siatka: true
+          wiersze:
+            - ["Uposażony pełnoletni", "odpis aktu zgonu, dokument tożsamości, kopia dyspozycji lub jej numer"]
+            - ["Uposażony małoletni", "odpis aktu zgonu, odpis aktu urodzenia uposażonego, dokument tożsamości przedstawiciela ustawowego, zgoda sądu opiekuńczego, jeśli jest wymagana"]
+            - ["Uposażony reprezentowany przez pełnomocnika", "pełnomocnictwo z podpisem uposażonego poświadczonym w sposób przewidziany przepisami, dokument tożsamości pełnomocnika"]
+            - ["Uposażony zamieszkały za granicą", "dokumenty z urzędowym tłumaczeniem, a w razie potrzeby z legalizacją lub apostille"]
+            - ["Uposażony będący osobą prawną", "odpis z rejestru, dokument potwierdzający umocowanie osób działających w jej imieniu"]
+
+  - id: zgon-b-zalacznik-4
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik-opc
+    wspolny: false
+    elementy:
+      - akapit: "Formularz notatki z rozmowy ze zgłaszającym zgon {{fakt:zgon.formularz.notatka}} pracownik wypełnia podczas lub bezpośrednio po rozmowie. Poniżej opisano jego układ i sposób wypełniania poszczególnych pól."
+      - tabela:
+          kolumny:
+            - naglowek: "Pole formularza"
+              waga: 2
+            - naglowek: "Sposób wypełnienia"
+              waga: 5
+          siatka: true
+          wiersze:
+            - ["Dane zgłaszającego", "imię, nazwisko, numer telefonu, adres, relacja ze zmarłym; numeru dokumentu tożsamości nie wpisuje się w treści notatki"]
+            - ["Data i godzina", "data i godzina rozmowy według czasu systemowego"]
+            - ["Przebieg rozmowy", "zwięzły opis tego, co zgłaszający powiedział, bez ocen i domysłów"]
+            - ["Ustalenia", "wykonane czynności, w tym blokady produktów, oraz informacje przekazane zgłaszającemu"]
+            - ["Dalsze kroki", "termin i sposób kontaktu, dokumenty do dostarczenia, osoba prowadząca sprawę"]
+
+  - id: zgon-b-zalacznik-5
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik-opc
+    wspolny: false
+    elementy:
+      - akapit: "Matryca poniżej określa, które jednostki Banku {należy poinformować|powinny zostać poinformowane} o zgonie klienta w zależności od rodzaju produktów, z których zmarły korzystał. Informację przekazuje pracownik zespołu spadkowego w ciągu jednego dnia roboczego od przyjęcia odpisu aktu zgonu."
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj produktu"
+              waga: 3
+            - naglowek: "Jednostka"
+              waga: 3
+            - naglowek: "Zakres informacji"
+              waga: 4
+          siatka: true
+          wiersze:
+            - ["Kredyt hipoteczny", "{{fakt:jednostka.kredyty-hipoteczne}}", "zadłużenie na dzień zgonu, dane zabezpieczeń, informacja o ubezpieczeniu"]
+            - ["Lokata i produkty oszczędnościowe", "{{fakt:jednostka.produkty-oszczednosciowe}}", "stan lokaty, termin zapadalności, dyspozycja na wypadek śmierci"]
+            - ["Ubezpieczenie", "{{fakt:zgon.jednostka.ubezpieczenia}}", "numer polisy, dane uposażonych, informacja o zgłoszeniu zdarzenia"]
+            - ["Zadłużenie przeterminowane", "{{fakt:zgon.jednostka.windykacja}}", "kwota zadłużenia, informacja o wstrzymaniu czynności windykacyjnych"]
+            - ["Rozliczenia i podatki", "{{fakt:zgon.jednostka.rachunkowosc}}", "wypłaty, odsetki naliczone do dnia zgonu, koszty pogrzebu"]
+
+  - id: zgon-b-zalacznik-6
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zalacznik-opc
+    wspolny: false
+    elementy:
+      - akapit: "Zestawienie przedstawia typowe przyczyny wstrzymania sprawy zgonu oraz zalecany sposób postępowania pracownika. Zestawienie służy do ujednolicenia praktyki i nie zastępuje oceny okoliczności konkretnej sprawy."
+      - tabela:
+          kolumny:
+            - naglowek: "Przyczyna wstrzymania"
+              waga: 3
+            - naglowek: "Zalecane postępowanie"
+              waga: 5
+          siatka: true
+          wiersze:
+            - ["Brak dokumentu potwierdzającego prawo do spadku", "wezwać spadkobierców do uzupełnienia w terminie {{fakt:termin.zgon.uzupelnienie-dokumentow}} i poinformować o możliwości wypłaty kosztów pogrzebu"]
+            - ["Spór między spadkobiercami", "wstrzymać wypłatę w zakresie sporu, powiadomić „{{fakt:jednostka.prawny}}” i przekazać stronom pisemną informację"]
+            - ["Zajęcie egzekucyjne", "zachować zajęcie w mocy, powiadomić organ egzekucyjny o zgonie i wypłacać tylko środki wolne od zajęcia"]
+            - ["Niezgodność danych w dokumentach", "poprosić o dokument potwierdzający prawidłowe dane i odnotować rozbieżność w notatce"]
+            - ["Podejrzenie nadużycia", "zablokować produkty i powiadomić „{{fakt:jednostka.bezpieczenstwo}}”"]
+
+  - id: zgon-b-dokumentacja-3
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-dokumentacja-opc
+    wspolny: false
+    elementy:
+      - ustep: "Pisma kierowane do spadkobierców w sprawie zgonu klienta sporządza się według następujących zasad:"
+        punkty:
+          - "pismo jest napisane prostym i uprzejmym językiem, bez zbędnych sformułowań prawniczych, i zawiera numer sprawy oraz dane osoby prowadzącej sprawę;"
+          - "pismo wskazuje, czego Bank oczekuje od adresata i w jakim terminie, a w razie braku odpowiedzi — jakie będą skutki;"
+          - "{pisma|korespondencję} wysyła się listem poleconym lub w inny sposób umożliwiający potwierdzenie doręczenia, a kopię zachowuje w aktach;"
+          - "treści pisma nie przekazuje się osobom, które nie wykazały uprawnienia do informacji, nawet jeśli twierdzą, że działają w imieniu spadkobierców."
+      - akapit: "Wzory pism zatwierdza właściciel procedury; pracownicy nie zmieniają ich treści bez konsultacji z „{{fakt:jednostka.prawny}}”."
+
+  - id: zgon-b-role-5
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-role-opc
+    wspolny: false
+    elementy:
+      - ustep: "**Jednostka ubezpieczeń** {odpowiada za|zajmuje się} obsługę zdarzeń zgonu w obszarze ubezpieczeń powiązanych z produktami Banku, a w szczególności:"
+        punkty:
+          - "ustala na podstawie danych w systemie, z jakich polis korzystał zmarły, i zestawia je w wykazie dołączanym do akt sprawy;"
+          - "{zgłasza|przekazuje} zdarzenie ubezpieczycielowi, a następnie śledzi stan jego rozpatrzenia i informuje zespół spadkowy o decyzji;"
+          - "udziela uposażonym informacji o dokumentach wymaganych przez ubezpieczyciela, nie występując jednak w roli pełnomocnika żadnej ze stron;"
+          - "{zapewnia|dba o} to, aby rozliczenie świadczenia z polisy było prawidłowo odzwierciedlone w rozliczeniu produktów zmarłego."
+      - akapit: "Jednostka ubezpieczeń nie ocenia zasadności roszczeń ubezpieczeniowych; odpowiedzialność za decyzję w tym zakresie ponosi ubezpieczyciel."

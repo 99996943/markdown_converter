@@ -1,0 +1,68 @@
+bloki:
+  - id: blokady-cel
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-cel-req
+    elementy:
+      - akapit: "Procedura {określa|reguluje} zasady postępowania pracowników Banku przy przyjmowaniu, rejestrowaniu i wykonywaniu zajęć egzekucyjnych rachunków bankowych oraz innych blokad środków na rachunkach Klientów, a także przy ich zwalnianiu i rozliczaniu. Jej celem jest {zapewnienie|zagwarantowanie}, że Bank wykonuje polecenia uprawnionych organów {rzetelnie|prawidłowo}, w terminach wynikających z przepisów oraz zgodnie z obowiązkiem zachowania tajemnicy bankowej."
+      - akapit: "Procedura {służy|ma także służyć} ochronie interesów Klienta: {gwarantuje|zapewnia} pozostawienie mu do dyspozycji środków wolnych od zajęcia, wyklucza blokowanie środków w zakresie szerszym niż wynika z tytułu lub postanowienia oraz porządkuje sposób informowania Klienta o dokonanych czynnościach. Podstawę prawną stanowią w szczególności przepisy: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - ustep: "Realizacja procedury ma w szczególności:"
+        punkty:
+          - "{zapobiegać wypłacie|wykluczać wypłatę} środków objętych zajęciem lub blokadą;"
+          - "ograniczać ryzyko odpowiedzialności Banku wobec wierzyciela i organu egzekucyjnego;"
+          - "{ujednolicić|uporządkować} sposób dokumentowania czynności oraz przekazywania informacji między jednostkami Banku."
+  - id: blokady-zakres
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-zakres-req
+    elementy:
+      - akapit: "Procedurę stosują wszystkie {jednostki|komórki} Banku, które przyjmują, rejestrują lub wykonują zawiadomienia o zajęciu rachunku, postanowienia o zabezpieczeniu, polecenia wstrzymania transakcji lub dyspozycje blokady. Dotyczy ona rachunków wszystkich Klientów — osób fizycznych, przedsiębiorców i podmiotów niebędących osobami fizycznymi — oraz rachunków oszczędnościowych, lokat i rachunków kart."
+      - ustep: "Procedura obejmuje następujące rodzaje blokad:"
+        punkty:
+          - "zajęcie wierzytelności z rachunku w egzekucji prowadzonej przez komornika sądowego;"
+          - "zajęcie rachunku w egzekucji administracyjnej prowadzonej przez naczelnika urzędu skarbowego, Zakład Ubezpieczeń Społecznych lub inny organ egzekucyjny;"
+          - "zabezpieczenie majątkowe i zajęcie rachunku zarządzone przez prokuratora lub sąd;"
+          - "blokadę rachunku i wstrzymanie transakcji w związku z przeciwdziałaniem praniu pieniędzy;"
+          - "blokadę {ustanowioną|założoną} na wniosek Klienta;"
+          - "blokadę rachunku zmarłego Klienta."
+      - akapit: "Procedura nie reguluje zasad ustanawiania zabezpieczeń kredytów (zastawu, cesji ani blokady środków na rzecz Banku jako wierzyciela), które opisują odrębne dokumenty kredytowe, ani zastrzegania instrumentów płatniczych."
+  - id: blokady-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-odp-req
+    elementy:
+      - ustep: "{Właścicielem|Gestorem} procedury jest {{fakt:jednostka.operacje}}. Do jego zadań należy:"
+        punkty:
+          - "prowadzenie rejestru {{fakt:zajecie.rejestr}} oraz obsługa blokad w systemie {{fakt:zajecie.system-centralny}};"
+          - "obsługa wspólnej skrzynki {{fakt:zajecie.skrzynka}}, do której kierowane są zawiadomienia elektroniczne;"
+          - "nadzór nad terminowością i poprawnością wykonywania zajęć oraz ich zwalniania;"
+          - "aktualizowanie procedury i szkolenie pracowników."
+      - ustep: "Pracownik placówki:"
+        punkty:
+          - "przyjmuje zawiadomienia złożone na papierze lub osobiście, {potwierdza|odnotowuje} datę i godzinę wpływu i {niezwłocznie|bez zwłoki} przekazuje je do jednostki „{{fakt:jednostka.operacje}}”;"
+          - "nie udziela Klientowi ani osobom trzecim informacji o treści zawiadomienia wykraczających poza zakres dozwolony przepisami;"
+          - "nie dokonuje wypłat ze środków objętych blokadą, także za zgodą Klienta."
+      - ustep: "Kierownik placówki {nadzoruje|odpowiada za} prawidłowe przyjmowanie korespondencji z organów oraz {zapewnia|dba o} to, aby pracownicy znali aktualną wersję procedury."
+      - ustep: "{{fakt:jednostka.zgodnosc}} opiniuje blokady związane z przeciwdziałaniem praniu pieniędzy, {prowadzi|realizuje} kontakt z Generalnym Inspektorem Informacji Finansowej i {ocenia|weryfikuje} zgodność postępowania z przepisami."
+      - ustep: "{{fakt:jednostka.prawny}} {udziela wsparcia prawnego|zapewnia wsparcie prawne} w sprawach spornych, w szczególności przy zbiegu zajęć, zajęciach nietypowych i wątpliwościach co do ważności tytułu."
+      - ustep: "{{fakt:jednostka.bezpieczenstwo}} {wyjaśnia|bada} podejrzenia fałszerstw dokumentów organów oraz przypadki próby obejścia blokady."
+      - ustep: "{{fakt:jednostka.obsluga-klienta}} odpowiada za kontakt z Klientem w sprawach niewymagających decyzji organu oraz za przyjmowanie reklamacji dotyczących wykonania zajęcia."
+  - id: blokady-definicje
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-def-req
+    elementy:
+      - ustep: "Na potrzeby procedury przyjmuje się dodatkowo następujące znaczenia:"
+        punkty:
+          - "**Zajęcie** — czynność {organu egzekucyjnego|komornika lub organu egzekucyjnego} skutkująca ograniczeniem w dysponowaniu środkami z rachunku do wysokości egzekwowanej należności;"
+          - "**Zawiadomienie o zajęciu** — dokument organu egzekucyjnego doręczony Bankowi jako dłużnikowi zajętej wierzytelności;"
+          - "**Organ egzekucyjny** — komornik sądowy albo organ prowadzący egzekucję administracyjną;"
+          - "**Tytuł wykonawczy** — dokument będący podstawą egzekucji, w szczególności wykonawczy tytuł sądowy lub tytuł wykonawczy wystawiony przez organ administracji;"
+          - "**Dłużnik** — Klient, wobec którego prowadzona jest egzekucja;"
+          - "**Wierzyciel** — podmiot, na rzecz którego prowadzona jest egzekucja;"
+          - "**Blokada** — {zablokowanie|ograniczenie dostępności} środków na rachunku w wysokości wynikającej z zawiadomienia lub dyspozycji;"
+          - "**Kwota wolna od zajęcia** — część środków na rachunku, która zgodnie z przepisami nie podlega zajęciu i pozostaje do dyspozycji Klienta;"
+          - "**Zbieg zajęć** — sytuacja, w której na ten sam rachunek wpłynęły dwa lub więcej zawiadomień o zajęciu;"
+          - "**Karencja** — okres, przed którego upływem Bank nie przekazuje zajętych środków organowi egzekucyjnemu;"
+          - "**Rejestr zajęć** — wewnętrzny rejestr {{fakt:zajecie.rejestr}} zawiadomień o zajęciach i blokadach, prowadzony przez jednostkę „{{fakt:jednostka.operacje}}”;"
+          - "**GIIF** — Generalny Inspektor Informacji Finansowej."

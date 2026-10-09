@@ -1,0 +1,104 @@
+bloki:
+  # ---------------------------------------------------------------- VIII. Skrytki sejfowe
+  - id: taryfa-kasa-skrytki-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Skrytki sejfowe są {udostępniane|wynajmowane} w wybranych placówkach Banku w trzech wielkościach: małej (do 5 cm wysokości), średniej (do 15 cm) i dużej (powyżej 15 cm). Opłaty miesięczne za wynajem obejmują {{fakt:limit.kasa.skrytka-wejscia-w-cenie}}; każde kolejne wejście do skrytki jest odpłatne. Wynajęcie skrytki wymaga zawarcia umowy, okazania dokumentu tożsamości i wpłaty kaucji za klucz, która podlega zwrotowi po zwrocie klucza w stanie nieuszkodzonym."
+      - ustep: "Skrytkę {można wypowiedzieć|wypowiada się} z zachowaniem terminu {{fakt:termin.kasa.skrytka-wypowiedzenie}}. Jeżeli Klient zalega z opłatami ponad {{fakt:termin.kasa.skrytka-zaleglosc-przed-otwarciem}}, Bank {ma prawo|może} otworzyć skrytkę w obecności komisji i sporządzić protokół zawartości."
+
+  - id: taryfa-kasa-skrytki-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wynajem skrytki sejfowej[^1]"
+            stawka: "wg wielkości skrytki"
+            tryb: "miesięcznie"
+            podpozycje:
+              - {usluga: "skrytka mała", stawka: "{{fakt:oplata.kasa.skrytka-mala-miesiecznie}}", tryb: "miesięcznie"}
+              - {usluga: "skrytka średnia", stawka: "{{fakt:oplata.taryfa-indywidualni.skrytka-miesiecznie}}", tryb: "miesięcznie"}
+              - {usluga: "skrytka duża", stawka: "{{fakt:oplata.kasa.skrytka-duza-miesiecznie}}", tryb: "miesięcznie"}
+              - {usluga: "skrytka bardzo duża (szafka depozytowa)", stawka: "{{fakt:oplata.kasa.skrytka-bardzo-duza-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Kaucja za klucz do skrytki (zwrotna)", stawka: "{{fakt:oplata.kasa.skrytka-kaucja-klucz}}", tryb: "jednorazowo"}
+          - {usluga: "Zawarcie umowy najmu skrytki", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Dodatkowe wejście do skrytki ponad liczbę wejść w cenie najmu", stawka: "{{fakt:oplata.kasa.skrytka-wejscie-dodatkowe}}", tryb: "za każde wejście"}
+          - {usluga: "Utrata lub zniszczenie klucza do skrytki", stawka: "{{fakt:oplata.kasa.skrytka-utrata-klucza}}", tryb: "za zdarzenie"}
+          - {usluga: "Wymiana zamka w skrytce po utracie klucza", stawka: "{{fakt:oplata.kasa.skrytka-wymiana-zamka}}", tryb: "za zdarzenie"}
+          - {usluga: "Otwarcie skrytki w trybie przymusowym (zaległość lub wygaśnięcie umowy)", stawka: "{{fakt:oplata.kasa.skrytka-otwarcie-przymusowe}}", tryb: "za zdarzenie"}
+          - {usluga: "Dodanie lub zmiana osoby uprawnionej do skrytki", stawka: "30,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Zmiana skrytki na skrytkę o innej wielkości", stawka: "40,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Ubezpieczenie zawartości skrytki (suma ubezpieczenia do 50 000,00 zł)", stawka: "120,00 zł", tryb: "rocznie"}
+    przypisy:
+      1: "Opłata miesięczna jest pobierana z góry za cały miesiąc; w przypadku rozwiązania umowy w trakcie miesiąca opłaty nie zwraca się, chyba że umowa stanowi inaczej."
+
+  # ---------------------------------------------------------------- IX. Depozyty
+  - id: taryfa-kasa-depozyty-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Bank przyjmuje do przechowania depozyty zamknięte (w opakowaniu zabezpieczonym plombą przez Klienta), depozyty dokumentów oraz depozyty wartościowe, tj. przedmioty z metali szlachetnych, biżuterię i inne przedmioty o wartości zadeklarowanej przez Klienta. Przyjęcie depozytu następuje na podstawie umowy i protokołu przyjęcia. Depozyt niepodjęty w terminie {{fakt:termin.kasa.depozyt-niepodjety}} od dnia wygaśnięcia umowy może zostać przekazany do depozytu sądowego, co {powoduje|wiąże się z} obciążeniem Klienta kosztami tej czynności."
+
+  - id: taryfa-kasa-depozyty-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przyjęcie depozytu zamkniętego do przechowania", stawka: "{{fakt:oplata.kasa.depozyt-przyjecie}}", tryb: "jednorazowo"}
+          - {usluga: "Przechowywanie depozytu zamkniętego", stawka: "{{fakt:oplata.kasa.depozyt-zamkniety-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Przyjęcie depozytu dokumentów", stawka: "{{fakt:oplata.kasa.depozyt-przyjecie}}", tryb: "jednorazowo"}
+          - {usluga: "Przechowywanie depozytu dokumentów (koperta A4 lub teczka)[^1]", stawka: "{{fakt:oplata.kasa.depozyt-dokumentow-miesiecznie}}", tryb: "miesięcznie"}
+          - {usluga: "Przyjęcie i przechowywanie depozytu wartościowego", stawka: "{{fakt:oplata.kasa.depozyt-wartosci-procent}} zadeklarowanej wartości, min. 40,00 zł", tryb: "rocznie"}
+          - {usluga: "Wycena i spisanie protokołu depozytu wartościowego przez komisję", stawka: "60,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Wydanie depozytu Klientowi lub osobie upoważnionej", stawka: "{{fakt:oplata.kasa.depozyt-wydanie}}", tryb: "za wydanie"}
+          - {usluga: "Częściowe wydanie lub uzupełnienie depozytu", stawka: "{{fakt:oplata.kasa.depozyt-wydanie}}", tryb: "za dyspozycję"}
+          - {usluga: "Wgląd w depozyt w obecności pracownika Banku", stawka: "15,00 zł", tryb: "za każdy wgląd"}
+          - {usluga: "Przekazanie depozytu niepodjętego do depozytu sądowego", stawka: "100,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Depozyt w postaci kluczy lub dokumentów powierzonych osobie trzeciej na zlecenie Klienta (depozyt z warunkiem wydania)", stawka: "120,00 zł", tryb: "jednorazowo"}
+    przypisy:
+      1: "Do depozytu dokumentów nie przyjmuje się dokumentów o wartości pieniężnej, w tym papierów wartościowych na okaziciela; takie dokumenty przyjmuje się jako depozyt wartościowy."
+
+  # ---------------------------------------------------------------- X. Zaświadczenia i odpisy
+  - id: taryfa-kasa-zaswiadczenia-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Zaświadczenia i odpisy dokumentów dotyczących operacji kasowych, skrytek i depozytów {wydaje się|są wydawane} w terminie {{fakt:termin.kasa.wydanie-zaswiadczenia}} od dnia złożenia wniosku. Wniosek o wydanie dokumentu w trybie pilnym jest realizowany następnego dnia roboczego. Dokumenty wydawane są osobom uprawnionym do rachunku, skrytki lub depozytu; osobom trzecim — wyłącznie na podstawie pełnomocnictwa lub z powołaniem się na przepisy prawa."
+
+  - id: taryfa-kasa-zaswiadczenia-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zaświadczenie o posiadaniu rachunku lub skrytki", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie wydane w trybie pilnym[^1]", stawka: "{{fakt:oplata.kasa.zaswiadczenie-pilne}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie w języku obcym", stawka: "{{fakt:oplata.taryfa-indywidualni.zaswiadczenie-obcojezyczne}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o przyjęciu depozytu", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Odpis umowy najmu skrytki sejfowej lub umowy depozytu", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument"}
+          - {usluga: "Odpis dokumentu kasowego (dowodu wpłaty lub wypłaty)", stawka: "{{fakt:oplata.kasa.odpis-dokumentu-kasowego}}", tryb: "za dokument"}
+          - {usluga: "Duplikat potwierdzenia wpłaty", stawka: "{{fakt:oplata.kasa.duplikat-potwierdzenia-wplaty}}", tryb: "za dokument"}
+          - {usluga: "Opinia bankowa o kliencie", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie salda dla audytora", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument"}
+          - {usluga: "Poświadczenie zgodności kopii dokumentu z oryginałem przechowywanym w Banku", stawka: "10,00 zł", tryb: "za stronę"}
+          - {usluga: "Zaświadczenie o numerach banknotów wpłaconych na rachunek", stawka: "40,00 zł", tryb: "za dokument"}
+    przypisy:
+      1: "Tryb pilny dotyczy wniosków złożonych do godziny 12:00 w dniu roboczym; wnioski złożone później są rozpatrywane w następnym dniu roboczym."
+
+  # ---------------------------------------------------------------- XI. Objaśnienia
+  - id: taryfa-kasa-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-objasnienia
+    elementy:
+      - ustep: "**Awizo** oznacza zgłoszenie przez Klienta zamiaru wypłaty gotówki w określonej kwocie i dniu, składane w sposób przewidziany w Taryfie."
+      - ustep: "**Wrzutnia nocna** oznacza urządzenie umożliwiające złożenie wpłaty w zamkniętym worku poza godzinami pracy kasy, z uznaniem rachunku po przeliczeniu zawartości."
+      - ustep: "**Konwój** oznacza usługę transportu wartości pieniężnych przez wyspecjalizowaną firmę ochrony wskazaną przez Bank, na podstawie odrębnej umowy."
+      - ustep: "**Depozyt** oznacza rzecz oddaną Bankowi do przechowania na podstawie umowy; Bank odpowiada za jej zwrot w stanie niezmienionym, a w przypadku depozytu zamkniętego — za nienaruszenie opakowania."
+      - ustep: "**Skrytka sejfowa** oznacza zamykaną szafkę w skarbcu Banku, wynajmowaną Klientowi do przechowywania rzeczy i dokumentów; klucz do skrytki posiada wyłącznie Klient."
+      - akapit: "Taryfa {wchodzi w życie|obowiązuje} od dnia wskazanego na okładce. Do czynności objętych Taryfą stosuje się odpowiednio postanowienia dokumentu „{{ref:dokument:regulamin-rachunku-osobistego}}” oraz przepisy prawa bankowego — zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."

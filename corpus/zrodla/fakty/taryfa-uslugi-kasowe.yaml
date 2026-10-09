@@ -1,0 +1,256 @@
+fakty:
+  - id: oplata.kasa.liczenie-banknotow-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.20
+    alternatywy: [0.10, 0.30]
+  - id: oplata.kasa.liczenie-banknotow-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+      - od: 2027-01-01
+        wartosc: 10.00
+    alternatywy: [5.00, 12.00]
+  - id: oplata.kasa.liczenie-bilonu-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.80
+      - od: 2027-01-01
+        wartosc: 2.00
+    alternatywy: [1.20, 2.50]
+  - id: oplata.kasa.liczenie-bilonu-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [6.00, 15.00]
+  - id: oplata.kasa.przyjecie-uszkodzonych-do-wymiany
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+      - od: 2026-04-01
+        wartosc: 25.00
+    alternatywy: [0.00, 35.00]
+  - id: oplata.kasa.rozmiana-firma-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.80
+    alternatywy: [0.50, 1.20]
+  - id: oplata.kasa.operacja-nieklient-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.00
+    alternatywy: [0.50, 1.50]
+  - id: oplata.kasa.operacja-nieklient-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+      - od: 2027-01-01
+        wartosc: 20.00
+    alternatywy: [10.00, 25.00]
+  - id: oplata.kasa.zamowienie-gotowki-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.10
+    alternatywy: [0.05, 0.20]
+  - id: oplata.kasa.zamowienie-nominalow-specjalnych
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [15.00, 40.00]
+  - id: oplata.kasa.awizo-niepodjeta-firma
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [60.00, 150.00]
+  - id: oplata.kasa.wrzutnia-abonament
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+      - od: 2027-01-01
+        wartosc: 70.00
+    alternatywy: [45.00, 90.00]
+  - id: oplata.kasa.wrzutnia-worek-wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [15.00, 40.00]
+  - id: oplata.kasa.wrzutnia-wplata-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.20
+    alternatywy: [0.10, 0.35]
+  - id: oplata.kasa.wrzutnia-wplata-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+    alternatywy: [3.00, 8.00]
+  - id: oplata.kasa.konwoj-wizyta
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+      - od: 2026-04-01
+        wartosc: 140.00
+    alternatywy: [90.00, 180.00]
+  - id: oplata.kasa.konwoj-dodatkowy-odbior
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 90.00
+    alternatywy: [60.00, 130.00]
+  - id: oplata.kasa.konwoj-ubezpieczenie-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.05
+    alternatywy: [0.03, 0.10]
+  - id: oplata.kasa.skrytka-mala-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+      - od: 2027-01-01
+        wartosc: 28.00
+    alternatywy: [15.00, 35.00]
+  - id: oplata.kasa.skrytka-duza-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 55.00
+    alternatywy: [40.00, 70.00]
+  - id: oplata.kasa.skrytka-bardzo-duza-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 90.00
+      - od: 2026-04-01
+        wartosc: 95.00
+    alternatywy: [70.00, 120.00]
+  - id: oplata.kasa.skrytka-kaucja-klucz
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00, 250.00]
+  - id: oplata.kasa.skrytka-utrata-klucza
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 400.00
+    alternatywy: [250.00, 600.00]
+  - id: oplata.kasa.skrytka-wymiana-zamka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 600.00
+      - od: 2027-01-01
+        wartosc: 650.00
+    alternatywy: [400.00, 800.00]
+  - id: oplata.kasa.skrytka-otwarcie-przymusowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 800.00
+    alternatywy: [500.00, 1200.00]
+  - id: oplata.kasa.skrytka-wejscie-dodatkowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: limit.kasa.skrytka-wejscia-w-cenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 wejścia w roku"
+      - od: 2026-04-01
+        wartosc: "12 wejść w roku"
+    alternatywy: ["bez limitu wejść"]
+  - id: termin.kasa.skrytka-wypowiedzenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: termin.kasa.skrytka-zaleglosc-przed-otwarciem
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+    alternatywy: [60, 120]
+  - id: oplata.kasa.depozyt-zamkniety-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+    alternatywy: [12.00, 30.00]
+  - id: oplata.kasa.depozyt-dokumentow-miesiecznie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+      - od: 2027-01-01
+        wartosc: 15.00
+    alternatywy: [8.00, 20.00]
+  - id: oplata.kasa.depozyt-wartosci-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.15
+    alternatywy: [0.10, 0.25]
+  - id: oplata.kasa.depozyt-przyjecie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 45.00]
+  - id: oplata.kasa.depozyt-wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+    alternatywy: [0.00, 30.00]
+  - id: termin.kasa.depozyt-niepodjety
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesiące"]
+  - id: oplata.kasa.zaswiadczenie-pilne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 45.00
+      - od: 2027-01-01
+        wartosc: 50.00
+    alternatywy: [30.00, 70.00]
+  - id: oplata.kasa.odpis-dokumentu-kasowego
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [10.00, 25.00]
+  - id: oplata.kasa.duplikat-potwierdzenia-wplaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.kasa.potwierdzenie-dla-audytora
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+    alternatywy: [80.00, 160.00]
+  - id: limit.kasa.wplata-bez-awizo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+    alternatywy: [30000.00, 100000.00]
+  - id: limit.kasa.bilon-bez-prowizji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "50 sztuk monet"
+    alternatywy: ["100 sztuk monet", "20 sztuk monet"]
+  - id: termin.kasa.awizo-wyplaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+      - od: 2026-04-01
+        wartosc: 3
+    alternatywy: [1, 5]
+  - id: termin.kasa.godzina-konca-obslugi-kasowej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "16:00"
+      - od: 2026-04-01
+        wartosc: "15:30"
+    alternatywy: ["15:00", "17:00"]
+  - id: termin.kasa.wrzutnia-uznanie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "następnego dnia roboczego do godziny 12:00"
+    alternatywy: ["w dniu odbioru worka"]
+  - id: termin.kasa.wydanie-zaswiadczenia
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+      - od: 2026-04-01
+        wartosc: 5
+    alternatywy: [1, 7]

@@ -17,6 +17,12 @@ public sealed class ReadingOrderStage : IPipelineStage
 {
     private const int MinLinesPerColumn = 2;
 
+    /// <summary>Share of the gutter width, at its right end, that a line crossing it reaches.</summary>
+    private const double CrossReach = 0.25;
+
+    /// <summary>Coverage (share of the page height) within which bins count as equally empty.</summary>
+    private const double EmptiestSlack = 0.02;
+
     /// <inheritdoc />
     public int Order => StageOrder.ReadingOrder;
 
@@ -37,6 +43,13 @@ public sealed class ReadingOrderStage : IPipelineStage
 
             if (FindGutter(page, options) is { } gutter)
             {
+                // Without the lines of a table inside one column, the free band can reach into that column: the gutter
+                // measured on all lines before table detection, when this one contains it, is the real one.
+                if (page.ColumnGutter is { } before && gutter.Start <= before.Start + 1 && gutter.End >= before.End - 1)
+                {
+                    gutter = before;
+                }
+
                 Reorder(page, gutter);
             }
         }
@@ -63,7 +76,8 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
 
         // Scan 1-pt bins between the outermost text edges and collect runs of "free" bins. A bin is measured over the
-        // height where text lies on both of its sides, so a shorter column (the last page) does not look free itself.
+        // height where text lies on both of its sides, so a shorter column (the last page) does not look free itself;
+        // a column has lines, so a lone piece beyond the bin (a centred unit label) does not make a column there.
         int binCount = (int)Math.Ceiling(maxRight - minLeft);
         var free = new bool[binCount];
         for (int i = 0; i < binCount; i++)
@@ -72,7 +86,7 @@ public sealed class ReadingOrderStage : IPipelineStage
             double x1 = x0 + 1;
             List<Rect> left = pieces.Where(p => p.Right <= x0).ToList();
             List<Rect> right = pieces.Where(p => p.Left >= x1).ToList();
-            if (left.Count == 0 || right.Count == 0)
+            if (left.Count < MinLinesPerColumn || right.Count < MinLinesPerColumn)
             {
                 continue;
             }
@@ -103,6 +117,11 @@ public sealed class ReadingOrderStage : IPipelineStage
             else if (!isFree && runStart >= 0)
             {
                 (double Start, double End) run = (minLeft + runStart, minLeft + i);
+                if (run.End - run.Start >= minWidth && !IsColumnSplit(flow, run, page.Width, options))
+                {
+                    run = EmptiestStretch(pieces, run, regionTop, regionBottom);
+                }
+
                 if (run.End - run.Start >= minWidth
                     && IsColumnSplit(flow, run, page.Width, options)
                     && (best is null || run.End - run.Start > best.Value.End - best.Value.Start))
@@ -115,6 +134,46 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
 
         return best;
+    }
+
+    /// <summary>
+    /// A free run that does not split the page into columns may reach into a column whose lines are ragged, beside a
+    /// short other column (the band where text lies on both sides is then only a few lines high): its stretch least
+    /// covered over the whole page height is the real gap between the columns.
+    /// </summary>
+    private static (double Start, double End) EmptiestStretch(List<Rect> pieces, (double Start, double End) run, double top, double bottom)
+    {
+        int bins = (int)Math.Round(run.End - run.Start);
+        var coverage = new double[bins];
+        for (int i = 0; i < bins; i++)
+        {
+            double x0 = run.Start + i;
+            double x1 = x0 + 1;
+            coverage[i] = CoveredHeight(pieces.Where(p => p.Left < x1 && p.Right > x0)) / (bottom - top);
+        }
+
+        double least = coverage.Min() + EmptiestSlack;
+        (int Start, int End) longest = (0, 0);
+        int start = -1;
+        for (int i = 0; i <= bins; i++)
+        {
+            bool empty = i < bins && coverage[i] <= least;
+            if (empty && start < 0)
+            {
+                start = i;
+            }
+            else if (!empty && start >= 0)
+            {
+                if (i - start > longest.End - longest.Start)
+                {
+                    longest = (start, i);
+                }
+
+                start = -1;
+            }
+        }
+
+        return (run.Start + longest.Start, run.Start + longest.End);
     }
 
     private static bool IsColumnSplit(List<LayoutLine> lines, (double Start, double End) gutter, double pageWidth, LayoutOptions options)
@@ -224,9 +283,22 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
 
         double middle = (gutter.Start + gutter.End) / 2;
+        static string TableOf(LayoutLine line) => line.Annotations.TryGetValue(LayoutAnnotations.TableIndex, out string? index) ? index : string.Empty;
+        Dictionary<string, (double Top, double Bottom)> tableSpans = page.Lines
+            .Where(l => l.Role == LineRole.Table)
+            .GroupBy(TableOf)
+            .ToDictionary(g => g.Key, g => (g.Min(l => l.Box.Top), g.Max(l => l.Box.Bottom)), StringComparer.Ordinal);
         foreach (LayoutLine line in page.Lines)
         {
-            if (!IsFlowText(line) || PiecesOf(line).Any(p => p.Left < middle && p.Right > middle))
+            // A table inside one column beside text of the other column (FR-031) is read in its column; other non-flow
+            // lines, and a table between the column blocks, stand between the columns.
+            bool columnTable = line.Role == LineRole.Table && tableSpans.TryGetValue(TableOf(line), out (double Top, double Bottom) span)
+                && !Crosses(line.Box, gutter)
+                && page.Lines.Any(o => IsFlowText(o)
+                    && (line.Box.CenterX < middle ? o.Box.CenterX >= middle : o.Box.CenterX < middle)
+                    && !Crosses(o.Box, gutter)
+                    && o.Baseline > span.Top && o.Baseline < span.Bottom);
+            if ((!IsFlowText(line) && !columnTable) || (line.Segments.Count <= 1 && Crosses(line.Box, gutter)) || PiecesOf(line).Any(p => Spans(p, gutter)))
             {
                 Flush();
                 ordered.Add(line);
@@ -246,8 +318,8 @@ public sealed class ReadingOrderStage : IPipelineStage
 
         Flush();
 
-        AnnotateColumn(ordered, line => line.Box.Right <= middle);
-        AnnotateColumn(ordered, line => line.Box.Left >= middle);
+        AnnotateColumn(ordered, line => line.Box.CenterX < middle && !Crosses(line.Box, gutter));
+        AnnotateColumn(ordered, line => line.Box.CenterX >= middle && !Crosses(line.Box, gutter));
 
         page.Lines.Clear();
         foreach (LayoutLine line in ordered)
@@ -255,6 +327,16 @@ public sealed class ReadingOrderStage : IPipelineStage
             page.Lines.Add(line);
         }
     }
+
+    /// <summary>
+    /// A line starting left of the gutter crosses it when it reaches its last quarter or is centred in it (a heading
+    /// over both columns); the lines of a ragged left column may end anywhere before that.
+    /// </summary>
+    private static bool Crosses(Rect line, (double Start, double End) gutter) =>
+        Spans(line, gutter) || (line.Left < gutter.Start && line.CenterX > gutter.Start && line.CenterX < gutter.End);
+
+    private static bool Spans(Rect piece, (double Start, double End) gutter) =>
+        piece.Left < gutter.Start && piece.Right > gutter.End - (CrossReach * (gutter.End - gutter.Start));
 
     /// <summary>Records the column bounds on every flow line of one column (consumed by paragraph assembly).</summary>
     private static void AnnotateColumn(List<LayoutLine> lines, Func<LayoutLine, bool> inColumn)

@@ -1,0 +1,47 @@
+bloki:
+  # --- Kontrola i nadzór
+  - id: incydenty-kontr-samoocena-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-kontrola-opis
+    elementy:
+      - akapit: "Przestrzeganie procedury podlega kontroli na trzech poziomach: bieżącej kontroli funkcjonalnej wykonywanej przez Kierownika incydentu, kontroli prowadzonej przez Jednostkę bezpieczeństwa oraz niezależnego audytu."
+      - kroki:
+          - tekst: "Kontrola bieżąca. Kierownik incydentu sprawdza kompletność dokumentacji podczas incydentu i przed jego zamknięciem."
+            podkroki:
+              - tekst: "Sprawdza się, czy zarejestrowano wszystkie istotne zdarzenia i decyzje, czy dochowano terminów oraz czy powiadomiono wszystkie osoby wskazane w macierzy komunikacji."
+              - tekst: "Braki w dokumentacji uzupełnia się przed zamknięciem; zamknięcie incydentu z brakami jest dopuszczalne wyłącznie za zgodą Jednostki bezpieczeństwa."
+          - tekst: "Kontrola jednostki. Jednostka bezpieczeństwa co kwartał analizuje próbkę incydentów zamkniętych w danym okresie, obejmującą co najmniej każdy incydent krytyczny i wysoki oraz 10% pozostałych."
+          - tekst: "Wnioski z kontroli. Wyniki kontroli przedstawia się kierownikom jednostek, których dotyczyły stwierdzone nieprawidłowości, a ci przedstawiają plan naprawczy z terminami."
+
+  - id: incydenty-kontr-raportowanie-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-kontrola-opis
+    elementy:
+      - akapit: "Zarząd i organy nadzorcze Banku otrzymują regularne informacje o stanie bezpieczeństwa i obsłudze incydentów. Jednostka bezpieczeństwa przygotowuje je według jednolitego wzoru, aby umożliwić porównanie okresów."
+      - kroki:
+          - tekst: "Raport kwartalny. Raport zawiera:"
+            podkroki:
+              - tekst: "liczbę i rodzaje incydentów w podziale na klasyfikacje;"
+              - tekst: "omówienie incydentów krytycznych i wysokich, w tym przyczyny i podjęte działania;"
+              - tekst: "wskaźniki skuteczności obsługi incydentów;"
+              - tekst: "stan realizacji zaleceń z przeglądów i ćwiczeń oraz działania opóźnione."
+          - tekst: "Raport roczny. Raz w roku Jednostka bezpieczeństwa przedstawia Zarządowi ocenę adekwatności procesu obsługi incydentów, zawierającą wnioski dotyczące zasobów, narzędzi i szkoleń."
+          - tekst: "Informacje nadzwyczajne. O każdym incydencie krytycznym Zarząd jest informowany niezwłocznie, niezależnie od cyklu raportowania."
+          - tekst: "Archiwizacja raportów. Raporty przechowuje się wraz z dokumentacją incydentów przez okres {{fakt:termin.incydent.retencja-dokumentacji}}."
+
+  - id: incydenty-kontr-dzienniki-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-kontrola-opis
+    elementy:
+      - akapit: "Dzienniki zdarzeń systemów są podstawowym źródłem informacji o incydentach i dowodem w postępowaniach, dlatego ich gromadzenie, ochrona i przechowywanie podlegają szczególnemu nadzorowi."
+      - kroki:
+          - tekst: "Zakres rejestrowania. Dzienniki obejmują co najmniej logowania, zmiany uprawnień, dostęp do danych klientów, dyspozycje płatnicze oraz czynności administracyjne."
+          - tekst: "Ochrona dzienników. Dzienniki przesyła się na bieżąco do centralnego systemu {{fakt:incydent.siem}}, w którym są chronione przed zmianą i usunięciem."
+            podkroki:
+              - tekst: "Dostęp do dzienników mają wyłącznie wyznaczeni pracownicy Jednostki bezpieczeństwa, a każde ich użycie jest rejestrowane."
+              - tekst: "Administratorzy systemów nie mają możliwości modyfikowania dzienników własnych systemów."
+          - tekst: "Okres przechowywania. Dzienniki przechowuje się przez okres {{fakt:termin.incydent.retencja-logow}}, a dzienniki dotyczące incydentów — przez okres przechowywania dokumentacji incydentu."
+          - tekst: "Kontrola kompletności. Co miesiąc Jednostka bezpieczeństwa sprawdza, czy nie występują luki w ciągłości dzienników, a stwierdzone luki wyjaśnia z właścicielem systemu."

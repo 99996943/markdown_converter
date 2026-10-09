@@ -1,0 +1,145 @@
+bloki:
+  - id: incydenty-testy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Skuteczność procedury {weryfikuje się|sprawdza się} w praktyce poprzez regularne testy i ćwiczenia. Ich harmonogram na dany rok zatwierdza dyrektor Jednostki bezpieczeństwa do końca stycznia."
+      - kroki:
+          - tekst: "Testy planów reagowania. Plany reagowania na incydenty i plany odtwarzania systemów testuje się {{fakt:termin.incydent.test-planow}}. Test obejmuje {co najmniej|przynajmniej} scenariusze: awarii systemu centralnego, ataku szyfrującego dane i niedostępności kluczowego dostawcy."
+          - tekst: "Ćwiczenia stołowe. Zespół uczestniczy w ćwiczeniach stołowych {{fakt:termin.incydent.cwiczenia-stolowe}}. W ćwiczeniu omawia się {wymyślony|przygotowany} scenariusz incydentu, role członków Zespołu, decyzje i komunikaty; z ćwiczenia sporządza się krótką notatkę z wnioskami."
+          - tekst: "Ćwiczenia praktyczne. Przynajmniej raz w roku {przeprowadza|wykonuje} się ćwiczenie praktyczne z użyciem środowiska testowego lub kontrolowanej symulacji ataku, w którym sprawdza się działanie narzędzi wykrywania, kanałów powiadamiania i czasy reakcji."
+          - tekst: "Ocena wyników. Wyniki testów i ćwiczeń ocenia się według kryteriów: dotrzymanie czasów reakcji, kompletność powiadomień, poprawność decyzji oraz jakość dokumentacji. Stwierdzone nieprawidłowości traktuje się jak zalecenia po incydencie."
+
+  - id: incydenty-szczegolne-wstep
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Poniżej opisano sytuacje, w których postępowanie według zasad ogólnych wymaga {uzupełnienia|modyfikacji}. Pozostałe postanowienia procedury stosuje się odpowiednio."
+      - ustep: "Zasady wspólne dla przypadków szczególnych:"
+        punkty:
+          - "{w razie|w przypadku} wątpliwości co do tego, który tryb obowiązuje, stosuje się tryb bardziej rygorystyczny;"
+          - "kierownik incydentu może odstąpić od kolejności czynności określonej w procedurze, {jeżeli|gdy} wymaga tego ochrona Klientów lub ich środków; odstąpienie i jego uzasadnienie odnotowuje w dzienniku zdarzeń;"
+          - "w przypadku jednoczesnego wystąpienia kilku incydentów priorytet nadaje się według poziomu ważności, a przy tym samym poziomie — według liczby dotkniętych Klientów."
+
+  - id: incydenty-kontrola
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "{Przestrzeganie procedury|Stosowanie procedury} podlega kontroli w ramach systemu kontroli wewnętrznej Banku, zgodnie z wymogami wynikającymi z przepisów prawa bankowego — zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - ustep: "Kontrola obejmuje:"
+        punkty:
+          - "kontrolę funkcjonalną, czyli bieżącą weryfikację kompletności wpisów w Rejestrze przez Jednostkę bezpieczeństwa (co miesiąc);"
+          - "kontrolę Jednostki zgodności, czyli ocenę dotrzymywania terminów zawiadomień dla organów zewnętrznych (co kwartał);"
+          - "audyt wewnętrzny, czyli niezależną ocenę adekwatności i skuteczności procedury, prowadzoną przez Jednostkę audytu zgodnie z planem audytów."
+      - ustep: "Wskaźniki monitorowane w ramach nadzoru nad procedurą to {w szczególności|zwłaszcza}:"
+        punkty:
+          - "liczba incydentów w podziale na poziomy ważności i kategorie;"
+          - "średni czas wykrycia, klasyfikacji i zamknięcia incydentu;"
+          - "odsetek incydentów, w których dotrzymano czasu pierwszej reakcji;"
+          - "odsetek zawiadomień przekazanych w terminie;"
+          - "liczba przeterminowanych zaleceń po incydentach."
+      - akapit: "Jednostka bezpieczeństwa {przedstawia|przekazuje} Zarządowi {kwartalne|cokwartalne} sprawozdanie z incydentów, a {w razie|w przypadku} incydentu krytycznego — niezwłoczną informację. Nieprawidłowości stwierdzone w kontroli są podstawą do zaleceń, których wykonanie monitoruje Jednostka zgodności."
+
+  - id: incydenty-dokumentacja
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Dokumentację incydentu {stanowią|tworzą}: wpis w Rejestrze, karta incydentu ({{fakt:incydent.karta}}), dziennik zdarzeń z pokoju operacyjnego, protokoły zabezpieczenia dowodów ({{fakt:incydent.protokol-dowodow}}), kopie zawiadomień i korespondencji z organami zewnętrznymi oraz raporty z przeglądu ({{fakt:incydent.raport-przegladu}})."
+      - ustep: "Dokumentację przechowuje się w następujący sposób:"
+        punkty:
+          - "w postaci elektronicznej, w systemie zgłoszeń i w repozytorium dokumentów Jednostki bezpieczeństwa, z dostępem ograniczonym do osób uprawnionych;"
+          - "przez okres {{fakt:termin.incydent.retencja-dokumentacji}} od zamknięcia incydentu, a w przypadku toczących się postępowań — do ich prawomocnego zakończenia;"
+          - "z zabezpieczeniem przed zmianą — poprawki wpisów dokonuje się przez dopisek, bez usuwania poprzedniej treści."
+      - akapit: "Po upływie okresu przechowywania dokumentację {niszczy się|usuwa się} w sposób uniemożliwiający jej odtworzenie, za zgodą Jednostki prawnej, a protokół zniszczenia dołącza się do ewidencji dokumentów. Dokumentacja zawierająca tajemnicę bankową może być udostępniona {wyłącznie|jedynie} na zasadach określonych w przepisach prawa bankowego."
+
+  - id: incydenty-koncowe
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Procedura wchodzi w życie z dniem {{param:od}} i {obowiązuje|jest wiążąca dla} wszystkich pracowników Banku. Z tym dniem {traci moc|przestaje obowiązywać} poprzednia wersja procedury obsługi incydentów."
+      - akapit: "Właścicielem procedury jest {{param:wlasciciel}}, który przegląda jej treść {co najmniej|przynajmniej} raz w roku oraz po każdym incydencie krytycznym i po każdej zmianie przepisów lub wytycznych organu nadzoru wpływającej na jej treść."
+      - akapit: "Załączniki stanowią {integralną|nierozerwalną} część procedury. Wzory formularzy {wymienionych|wskazanych} w procedurze {udostępnia|publikuje} właściciel procedury w repozytorium dokumentów wewnętrznych."
+
+  - id: incydenty-zal-macierz
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Macierz {służy do przypisania|pozwala przypisać} incydent do poziomu ważności. Gdy incydent spełnia kryteria {kilku poziomów|co najmniej dwóch poziomów}, przyjmuje się poziom najwyższy."
+      - tabela:
+          kolumny:
+            - naglowek: "Kryterium"
+              waga: 2
+            - naglowek: "Krytyczny"
+              waga: 2
+            - naglowek: "Wysoki"
+              waga: 2
+            - naglowek: "Średni"
+              waga: 2
+          wiersze:
+            - ["Liczba dotkniętych Klientów", "{{fakt:incydent.prog.klienci-krytyczny}}", "{{fakt:incydent.prog.klienci-wysoki}}", "mniej niż 100 Klientów"]
+            - ["Czas niedostępności usługi", "{{fakt:incydent.prog.przestoj-krytyczny}}", "{{fakt:incydent.prog.przestoj-wysoki}}", "krócej niż 30 minut"]
+            - ["Potencjalna strata finansowa", "powyżej {{fakt:incydent.prog.kwota-krytyczna}}", "powyżej {{fakt:incydent.prog.kwota-wysoka}}", "poniżej {{fakt:incydent.prog.kwota-wysoka}}"]
+            - ["Dane osobowe", "ujawnienie danych o wysokim ryzyku lub danych szczególnych kategorii", "ujawnienie danych zwykłych bez ryzyka wysokiego", "brak ujawnienia"]
+            - ["Pierwsza reakcja — do", "{{fakt:incydent.czas-reakcji.krytyczny}}", "{{fakt:incydent.czas-reakcji.wysoki}}", "{{fakt:incydent.czas-reakcji.sredni}}"]
+            - ["Obsługa", "Zespół, {informacja dla członka Zarządu|powiadomienie członka Zarządu}", "Zespół, {informacja dla dyrektorów|powiadomienie dyrektorów}", "dyżurny i właściwa jednostka"]
+          siatka: true
+          przypisy: ["Incydent o poziomie niskim obsługuje dyżurny w czasie do {{fakt:incydent.czas-reakcji.niski}}."]
+
+  - id: incydenty-zal-karta
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - naglowek: "Wzór karty incydentu"
+        poziom: 2
+      - akapit: "Karta incydentu ({{fakt:incydent.karta}}) {zawiera|obejmuje} następujące pola:"
+      - tabela:
+          kolumny:
+            - naglowek: "Pole"
+              waga: 2
+            - naglowek: "Zawartość"
+              waga: 3
+          wiersze:
+            - ["Numer incydentu", "numer {nadany|przypisany} w Rejestrze"]
+            - ["Data i godzina wykrycia", "moment wykrycia oraz zgłoszenia"]
+            - ["Zgłaszający", "imię i nazwisko, jednostka, kanał zgłoszenia"]
+            - ["Opis zdarzenia", "co się stało, jakich systemów lub procesów dotyczy"]
+            - ["Kategoria i poziom ważności", "kategoria incydentu, poziom nadany i ewentualne zmiany z godziną"]
+            - ["Kierownik incydentu", "imię i nazwisko, skład Zespołu"]
+            - ["Skutki", "liczba Klientów, wartość operacji, czas niedostępności"]
+            - ["Podjęte działania", "{chronologiczna lista|chronologiczny wykaz} czynności z godzinami"]
+            - ["Zawiadomienia", "adresaci, terminy, numery zawiadomień"]
+            - ["Przyczyna źródłowa", "ustalona przyczyna lub {informacja o jej braku|wzmianka o braku ustaleń}"]
+            - ["Zalecenia", "zalecenia, osoby odpowiedzialne, terminy"]
+          siatka: true
+
+  - id: incydenty-lista
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Listę wypełnia kierownik incydentu (lub dyżurny — dla incydentów średnich i niskich) i dołącza do karty incydentu."
+      - lista-kontrolna:
+          forma: tekst
+          pozycje:
+            - "Zgłoszenie zarejestrowane w Rejestrze i potwierdzone osobie zgłaszającej."
+            - "Poziom ważności nadany {w terminie|w ciągu} {{fakt:termin.incydent.klasyfikacja}} od zgłoszenia."
+            - "Wyznaczono kierownika incydentu; {w razie|w przypadku} potrzeby powołano Zespół."
+            - "Otwarto pokój operacyjny i prowadzony jest dziennik zdarzeń."
+            - "Zabezpieczono materiał dowodowy, a protokół {{fakt:incydent.protokol-dowodow}} wypełniono."
+            - "Podjęto działania ograniczające skutki, a ich wpływ na Klientów oceniono."
+            - "Jednostka zgodności i Inspektor ocenili obowiązki wobec podmiotów zewnętrznych."
+            - "Zawiadomienie wstępne dla organu nadzoru przekazano w terminie {{fakt:termin.incydent.powiadomienie-wstepne}} ({jeżeli|gdy} dotyczy)."
+            - "Naruszenie ochrony danych zgłoszono w terminie {{fakt:termin.incydent.naruszenie-danych}} (jeżeli dotyczy)."
+            - "Klientów poinformowano w terminie {{fakt:termin.incydent.powiadomienie-klientow}} (jeżeli dotyczy)."
+            - "Usunięto przyczynę, a usługi przywrócono i zweryfikowano."
+            - "Skorygowano błędne księgowania i zwrócono nieautoryzowane transakcje."
+            - "Zawiadomienie pośrednie i raport końcowy przekazano w terminach (jeżeli dotyczy)."
+            - "Przegląd po incydencie przeprowadzono w terminie {{fakt:termin.incydent.przeglad}}, a zalecenia wpisano do planu działań."
+            - "Incydent zamknięto w Rejestrze."

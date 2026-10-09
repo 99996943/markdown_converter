@@ -1,0 +1,81 @@
+bloki:
+  - id: incydenty-wykr-falszywe-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - akapit: "Nie każde zgłoszenie okazuje się incydentem. Zgłoszenia, które po analizie nie spełniają definicji incydentu, zamyka się z odpowiednim uzasadnieniem, ale nie usuwa się ich z rejestru, ponieważ stanowią źródło wiedzy o typowych błędach i zagrożeniach."
+      - kroki:
+          - tekst: "Kategorie zamknięcia bez incydentu."
+            podkroki:
+              - tekst: "zdarzenie normalne: działanie systemu zgodne z założeniami, choć niezrozumiałe dla zgłaszającego;"
+              - tekst: "błąd użytkownika bez skutków dla bezpieczeństwa lub działalności Banku;"
+              - tekst: "alarm fałszywy wygenerowany przez system monitorowania;"
+              - tekst: "zdarzenie zgłoszone podwójnie, które połączono z istniejącym zgłoszeniem."
+          - tekst: "Informacja zwrotna. Dyżurny informuje zgłaszającego o wyniku analizy i dziękuje mu za zgłoszenie, a w razie potrzeby wyjaśnia, dlaczego zdarzenie nie jest incydentem."
+          - tekst: "Wykorzystanie wniosków. Jednostka bezpieczeństwa raz na kwartał analizuje zgłoszenia zamknięte bez incydentu i, jeżeli zawierają one powtarzające się błędy, przekazuje wnioski do szkolenia pracowników."
+
+  - id: incydenty-klas-dane-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - akapit: "Ocena incydentu opiera się na rzetelnych danych. W początkowej fazie informacje bywają niepełne i sprzeczne, dlatego klasyfikujący powinien jasno odróżniać fakty potwierdzone od przypuszczeń."
+      - kroki:
+          - tekst: "Źródła danych do oceny. Klasyfikujący korzysta z następujących źródeł:"
+            podkroki:
+              - tekst: "dzienniki z systemu {{fakt:incydent.siem}} oraz dzienniki dotkniętych systemów;"
+              - tekst: "informacje od zgłaszającego i właściciela systemu;"
+              - tekst: "dane z systemu {{fakt:incydent.system-cbs}} o liczbie klientów i wartości operacji;"
+              - tekst: "komunikaty dostawców i zewnętrznych zespołów reagowania."
+          - tekst: "Oznaczanie pewności. Każde ustalenie w karcie incydentu oznacza się jako potwierdzone, prawdopodobne albo niepotwierdzone."
+          - tekst: "Założenie ostrożności. Jeżeli nie można rozstrzygnąć, które z możliwych skutków wystąpiły, przyjmuje się założenie bardziej niekorzystne, aż do uzyskania danych pozwalających je zweryfikować."
+          - tekst: "Aktualizacja. Klasyfikujący aktualizuje ocenę co najmniej raz na godzinę w przypadku incydentów krytycznych i co kilka godzin w pozostałych przypadkach."
+
+  - id: incydenty-reag-wyciek-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - akapit: "Podejrzenie wycieku danych wymaga szybkiego ustalenia, jakie dane i czyje dane zostały ujawnione, oraz zatrzymania dalszego wypływu informacji."
+      - kroki:
+          - tekst: "Zatrzymanie wycieku. Zablokuj kanał, którym dane mogły opuszczać Bank: konto użytkownika, połączenie sieciowe, usługę zewnętrzną lub nośnik."
+            podkroki:
+              - tekst: "Jeżeli kanałem jest usługa udostępniania plików, wycofaj uprawnienia do udostępnionych zasobów i zmień linki."
+              - tekst: "Jeżeli kanałem jest wiadomość e-mail, spróbuj wycofać wiadomość i poproś odbiorców o jej skasowanie."
+          - tekst: "Ustalenie zakresu. Ustal, jakie zbiory danych zostały ujawnione, ilu osób dotyczą i jakie kategorie danych zawierają."
+          - tekst: "Ocena użyteczności danych. Oceń, czy dane są zaszyfrowane lub zanonimizowane, czy sprawca mógł je wykorzystać, oraz czy dane zostały już opublikowane."
+          - tekst: "Obserwacja rynku. Jednostka bezpieczeństwa monitoruje źródła, w których mogą się pojawić ujawnione dane, i w razie ich wykrycia wnioskuje o ich usunięcie."
+          - tekst: "Przekazanie sprawy. O ustaleniach niezwłocznie informuje się Inspektora ochrony danych, który ocenia obowiązki wobec organu nadzoru i osób, których dane dotyczą."
+
+  - id: incydenty-kom-klienci-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-komunikacja-opis
+    elementy:
+      - akapit: "Komunikaty dla klientów muszą być zrozumiałe, rzetelne i przekazane w odpowiednim czasie. Powinny informować o tym, co się stało, jakie to ma skutki dla klienta oraz co klient powinien zrobić."
+      - kroki:
+          - tekst: "Wybór kanałów. Jednostka komunikacji dobiera kanały przekazu do charakteru incydentu."
+            podkroki:
+              - tekst: "Komunikat w bankowości elektronicznej i aplikacji mobilnej przy incydentach dotyczących dostępności usług."
+              - tekst: "Wiadomość SMS lub e-mail przy incydentach wymagających działania klienta, takich jak zmiana hasła."
+              - tekst: "Informacja w placówkach i na infolinii, aby pracownicy mogli odpowiadać na pytania."
+          - tekst: "Treść komunikatu. Komunikat zawiera: opis zdarzenia bez szczegółów technicznych, informację o danych lub usługach, których dotyczy, czynności zalecane klientowi oraz kontakt do infolinii pod numerem {{fakt:kontakt.infolinia}}."
+          - tekst: "Terminy. W przypadku naruszenia ochrony danych o wysokim ryzyku komunikat przekazuje się w terminie {{fakt:termin.incydent.powiadomienie-klientow}}."
+          - tekst: "Zakończenie komunikacji. Po usunięciu skutków incydentu przekazuje się klientom informację o przywróceniu normalnego działania i, w razie potrzeby, o zwrocie poniesionych kosztów."
+
+  - id: incydenty-przyw-weryfikacja-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-przywracanie-opis
+    elementy:
+      - akapit: "Przed zamknięciem incydentu należy zweryfikować, czy przyczyna została skutecznie usunięta oraz czy nie pozostały żadne ślady obecności sprawcy w systemach. Zamknięcie incydentu zbyt wcześnie grozi jego powtórzeniem."
+      - kroki:
+          - tekst: "Weryfikacja techniczna. Analityk bezpieczeństwa potwierdza, że:"
+            podkroki:
+              - tekst: "złośliwe oprogramowanie zostało usunięte, a luka, którą wykorzystano, została załatana lub zabezpieczona;"
+              - tekst: "przejęte konta zostały zablokowane, a dane uwierzytelniające zmienione;"
+              - tekst: "nie występują nietypowe połączenia sieciowe z adresami związanymi z incydentem."
+          - tekst: "Okres wzmożonej obserwacji. Po przywróceniu działania system objęty incydentem monitoruje się w sposób wzmożony przez co najmniej siedem dni, a analityk raz dziennie raportuje wyniki Kierownikowi incydentu."
+          - tekst: "Zamknięcie incydentu. Kierownik incydentu zamyka incydent w rejestrze {{fakt:incydent.rejestr}} po spełnieniu powyższych warunków, sprawdzeniu kompletności karty incydentu i zatwierdzeniu zamknięcia przez Jednostkę bezpieczeństwa."
+          - tekst: "Ponowne otwarcie. Jeżeli w okresie obserwacji ujawnią się nowe okoliczności, incydent otwiera się ponownie z zachowaniem historii wpisów."

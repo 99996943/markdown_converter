@@ -1,0 +1,43 @@
+bloki:
+  - id: bankowosc-elektroniczna-opc-polecenie-zaplaty
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma możliwość} w bankowości elektronicznej zarządzać zgodami na obciążanie rachunku w ramach polecenia zapłaty. W serwisie internetowym i aplikacji mobilnej dostępna jest lista aktywnych zgód wraz z danymi odbiorców i terminami ostatnich obciążeń."
+      - ustep: "Klient może:"
+        punkty:
+          - "odwołać zgodę na polecenie zapłaty najpóźniej do końca dnia roboczego poprzedzającego dzień obciążenia;"
+          - "ustanowić limit kwotowy lub częstotliwości obciążeń;"
+          - "zablokować obciążenia z rachunku przez wskazanego odbiorcę."
+      - ustep: "Odwołanie zgody w bankowości elektronicznej nie zwalnia Klienta z zobowiązań wobec odbiorcy wynikających z umowy, w związku z którą zgoda została udzielona. Bank nie odpowiada za skutki cywilnoprawne odwołania zgody w stosunku między Klientem a odbiorcą."
+
+  - id: bankowosc-elektroniczna-opc-prywatnosc-aplikacji
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-aplikacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Aplikacja mobilna żąda od systemu operacyjnego uprawnień niezbędnych do jej działania. Klient {może|ma prawo} nie udzielić części uprawnień, co może ograniczyć funkcjonalność aplikacji."
+      - ustep: "Aplikacja mobilna może korzystać z następujących zasobów urządzenia:"
+        punkty:
+          - "połączenia z Internetem — w celu komunikacji z systemami Banku;"
+          - "aparatu — w celu skanowania kodów i dokumentów, jeżeli Klient wybierze taką funkcję;"
+          - "powiadomień — w celu przekazywania informacji o zdarzeniach;"
+          - "lokalizacji — wyłącznie za zgodą Klienta i wyłącznie dla potrzeb ochrony przed nadużyciami."
+      - ustep: "Dane zbierane przez aplikację mobilną są przetwarzane zgodnie z zasadami określonymi w rozdziale dotyczącym postanowień końcowych oraz w komunikacie o przetwarzaniu danych dostępnym na stronie {{fakt:bank.strona}}. Aplikacja nie odczytuje treści prywatnych wiadomości ani nie przetwarza zawartości innych aplikacji."
+
+  - id: bankowosc-elektroniczna-opc-wspolpraca-z-organami
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-odpowiedzialnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank jest obowiązany udostępniać informacje o korzystaniu z bankowości elektronicznej uprawnionym organom, w zakresie i w trybie przewidzianych przepisami prawa, w szczególności w związku z postępowaniami karnymi, egzekucyjnymi, podatkowymi i prowadzonymi na podstawie przepisów o przeciwdziałaniu praniu pieniędzy."
+      - ustep: "Jeżeli Bank powziął uzasadnione podejrzenie, że doszło do przestępstwa z wykorzystaniem bankowości elektronicznej, {może|ma prawo}:"
+        punkty:
+          - "zawiadomić właściwe organy ścigania;"
+          - "wstrzymać wykonanie dyspozycji lub zablokować rachunek na czas niezbędny do wyjaśnienia sprawy;"
+          - "przekazać dane niezbędne do ustalenia sprawcy, w granicach dopuszczonych prawem."
+      - ustep: "Bank nie ponosi odpowiedzialności za szkody wynikające z działań podjętych zgodnie z żądaniem uprawnionego organu, jeżeli Bank działał zgodnie z prawem. O takich działaniach Bank informuje Klienta, o ile prawo na to pozwala."

@@ -1,0 +1,226 @@
+bloki:
+  # ---------- Przypadki szczególne ----------
+  - id: zamkniecie-n-szczegolne-zagraniczny
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Zamykanie rachunków Klientów, którzy wyjechali za granicę, mają tam miejsce zamieszkania lub nie mają stałego kontaktu z Polską, wymaga szczególnej uwagi do bezpieczeństwa dyspozycji. Utrudniona weryfikacja tożsamości zwiększa ryzyko wyłudzenia środków."
+      - kroki:
+          - tekst: "Wypowiedzenie złożone korespondencyjnie lub przez bankowość elektroniczną {potwierdź|zweryfikuj} dodatkowo w kontakcie zwrotnym na numer telefonu lub adres zapisany w systemie, a nie na dane podane w wypowiedzeniu."
+          - tekst: "Wypłatę salda zrealizuj wyłącznie przelewem na rachunek należący do Klienta, wskazany w umowie lub potwierdzony dokumentem banku prowadzącego ten rachunek."
+            podkroki:
+              - tekst: "Jeżeli Klient prosi o wypłatę na rachunek osoby trzeciej, wymagaj odrębnego oświadczenia z podpisem poświadczonym przez notariusza lub konsula."
+              - tekst: "Przelew w walucie obcej realizuj po kursie obowiązującym w dniu wykonania, informując Klienta o opłatach banków pośredniczących."
+          - tekst: "Kartę i dokumenty Klient może zwrócić pocztą lub za pośrednictwem pełnomocnika; zwrot karty potwierdź w systemie i zniszcz nośnik po jego otrzymaniu."
+          - tekst: "Jeżeli Klient jest nieosiągalny pod znanymi danymi, postępuj zgodnie z zasadami dotyczącymi braku kontaktu z Klientem."
+
+  - id: zamkniecie-n-szczegolne-upadlosc
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Ogłoszenie upadłości lub wszczęcie postępowania restrukturyzacyjnego wobec posiadacza rachunku zmienia zasady dysponowania środkami i może wymagać zamknięcia rachunku w sposób odmienny niż w sprawach zwykłych. Prawa do dysponowania rachunkiem przechodzą na osobę wskazaną w orzeczeniu sądu."
+      - ustep: "W takiej sytuacji pracownik:"
+        punkty:
+          - "{wstrzymuje|zawiesza} realizację dyspozycji składanych przez dłużnika, dopóki nie zostanie wyjaśniony zakres jego uprawnień;"
+          - "{przekazuje|kieruje} sprawę niezwłocznie do {{fakt:jednostka.prawny}}, dołączając orzeczenie sądu lub informację z rejestru;"
+          - "{przyjmuje|akceptuje} dyspozycje syndyka lub zarządcy dopiero po weryfikacji jego tożsamości i dokumentu powołania;"
+          - "{zamyka|rozlicza} rachunek na wniosek syndyka lub zarządcy, a środki wypłaca wyłącznie na rachunek masy upadłości."
+      - akapit: "Zamknięcia rachunku przed ustaleniem zakresu zajęć i zabezpieczeń nie wykonuje się, a wszystkie czynności dokumentuje w aktach sprawy."
+
+  - id: zamkniecie-n-szczegolne-zmarla-firma
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Wykreślenie przedsiębiorcy z rejestru, jego likwidacja lub śmierć prowadzącego jednoosobową działalność gospodarczą wpływają na sposób zamknięcia rachunku firmowego. Rachunek ten nie wygasa z mocy prawa, ale jego dalsze prowadzenie wymaga ustalenia, kto jest uprawniony do dysponowania środkami."
+      - kroki:
+          - tekst: "{Ustal|Zweryfikuj} w rejestrach publicznych, czy podmiot został wykreślony, czy jest w likwidacji, czy kontynuuje działalność (np. przez spadkobierców lub zarząd sukcesyjny)."
+            podkroki:
+              - tekst: "Przy likwidacji dyspozycje przyjmuj wyłącznie od likwidatora po przedstawieniu dokumentu potwierdzającego jego uprawnienia."
+              - tekst: "Przy śmierci przedsiębiorcy sprawdź, czy ustanowiono zarządcę sukcesyjnego, i postępuj zgodnie z jego uprawnieniami."
+          - tekst: "Zawiadom {{fakt:jednostka.zgodnosc}} o zmianie statusu podmiotu, aby zaktualizować ocenę ryzyka klienta i wykluczyć wykorzystanie rachunku w nieuprawniony sposób."
+          - tekst: "Saldo rachunku wypłać po przedstawieniu postanowienia sądu, dokumentu likwidatora albo innego dokumentu potwierdzającego prawo do środków, zgodnie z zasadami dotyczącymi rachunków zmarłego Klienta."
+
+  - id: zamkniecie-n-szczegolne-konto-zbiorcze
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Rachunki prowadzone dla podmiotów, które gromadzą środki w imieniu innych osób (np. rachunki powiernicze, rachunki zbiorcze wspólnot i spółdzielni, rachunki deweloperskie), mają szczególny reżim zamykania. Środki zgromadzone na takim rachunku nie należą do jego posiadacza, a ich wypłata może być dopuszczalna tylko na rzecz uprawnionych osób."
+      - ustep: "Przed zamknięciem rachunku tego typu należy:"
+        punkty:
+          - "{sprawdzić|ustalić} w umowie, komu przysługują środki i na jakich warunkach można dokonać ich wypłaty;"
+          - "{uzyskać|zebrać} potwierdzenie od wszystkich osób, na rzecz których gromadzono środki, albo dokument właściwego organu lub sądu;"
+          - "{rozliczyć|uzgodnić} sposób zwrotu środków poszczególnym uprawnionym, w tym sposób dokumentowania rozliczeń;"
+          - "{poinformować|powiadomić} {{fakt:jednostka.zgodnosc}} o zamiarze zamknięcia i uzyskać jej opinię co do sposobu realizacji."
+      - akapit: "Zamknięcia nie realizuje się w placówce; dyspozycję kieruje się do jednostki centralnej, która prowadzi tego rodzaju rachunki."
+
+  - id: zamkniecie-n-szczegolne-blokada
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Rachunek objęty blokadą z powodu podejrzenia nadużyć, wniosku organu publicznego, postępowania wyjaśniającego lub sporu dotyczącego środków nie podlega zamknięciu do czasu uchylenia blokady. Klient powinien zostać poinformowany o przyczynach, o ile przepisy nie zabraniają ujawnienia takiej informacji."
+      - kroki:
+          - tekst: "Po otrzymaniu wypowiedzenia {sprawdź|zweryfikuj} w systemie, czy rachunek jest objęty blokadą, zajęciem lub zastrzeżeniem, i {odnotuj|zapisz} rodzaj ograniczenia."
+          - tekst: "Wypowiedzenie przyjmij, ale rozwiązanie umowy i zamknięcie rachunku odłóż do dnia uchylenia ograniczenia; Klientowi wyjaśnij, że blokada nie wynika z woli Banku, jeżeli pochodzi od organu."
+            podkroki:
+              - tekst: "Jeżeli blokadę nałożył organ, nie podawaj Klientowi informacji wykraczających poza to, co organ dopuścił."
+              - tekst: "Jeżeli blokadę nałożył Bank, wskaż Klientowi, jak może ją zakwestionować."
+          - tekst: "Prowadź monitoring statusu blokady co miesiąc i po jej uchyleniu zrealizuj zamknięcie w terminie {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}}."
+          - tekst: "Opłat za prowadzenie rachunku nie nalicza się od dnia, w którym wygasłby okres wypowiedzenia, jeżeli opóźnienie wynika z blokady nałożonej przez organ."
+
+  - id: zamkniecie-n-szczegolne-roszczenia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "W trakcie obowiązywania umowy mogą powstać wobec Banku lub Klienta roszczenia, które wymagają zachowania dokumentacji i danych po zamknięciu rachunku. Pracownik nie może zniechęcać Klienta do składania roszczeń ani utrudniać dostępu do dokumentów."
+      - ustep: "Jeżeli Klient zgłasza roszczenie albo zastrzeżenie dotyczące rachunku przed jego zamknięciem lub po jego zamknięciu, należy:"
+        punkty:
+          - "{zarejestrować|przyjąć} zgłoszenie jako reklamację i przekazać do {{fakt:jednostka.reklamacje}}, nawet jeżeli Klient nie użył słowa „reklamacja”;"
+          - "{zabezpieczyć|zachować} dokumentację rachunku, w tym historię operacji, korespondencję i nagrania rozmów, aż do ostatecznego rozstrzygnięcia sprawy;"
+          - "{poinformować|zawiadomić} {{fakt:jednostka.prawny}}, jeżeli roszczenie jest kierowane przeciwko Bankowi na drodze sądowej lub dotyczy znacznej kwoty;"
+          - "{wstrzymać|odroczyć} zniszczenie dokumentów, nawet jeżeli upłynął ich standardowy okres przechowywania."
+      - akapit: "Zamknięcie rachunku nie powoduje utraty prawa Klienta do dochodzenia roszczeń ani prawa do uzyskania dokumentów potwierdzających operacje na rachunku."
+
+  - id: zamkniecie-n-szczegolne-konsument-umowa-zdalna
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Klient, który zawarł umowę rachunku na odległość lub poza lokalem Banku, może odstąpić od umowy w ustawowym terminie bez podawania przyczyny. Odstąpienie od umowy ma inne skutki niż jej wypowiedzenie i wymaga odrębnego rozliczenia."
+      - kroki:
+          - tekst: "{Ustal|Sprawdź} datę zawarcia umowy i datę wpływu oświadczenia, aby stwierdzić, czy termin do odstąpienia nie upłynął."
+            podkroki:
+              - tekst: "Termin biegnie od dnia zawarcia umowy albo od dnia otrzymania warunków umowy, jeżeli nastąpiło to później."
+              - tekst: "Oświadczenie jest skuteczne, jeżeli zostało wysłane przed upływem terminu, nawet jeżeli dotarło do Banku po jego upływie."
+          - tekst: "Rozlicz rachunek tak, jak przy wypowiedzeniu, z tym że nie pobieraj opłat za okres po dniu odstąpienia; opłaty za czynności wykonane na wniosek Klienta przed odstąpieniem pobiera się w należnej wysokości."
+          - tekst: "Zwrot środków Klientowi {zrealizuj|wykonaj} bez zbędnej zwłoki, nie później niż w terminie wynikającym z regulaminu, jednym z przewidzianych kanałów."
+          - tekst: "Jeżeli oświadczenie złożono po terminie, traktuj je jako wypowiedzenie i postępuj według zasad wypowiedzenia przez Klienta, o czym poinformuj Klienta."
+
+  - id: zamkniecie-n-szczegolne-mlodziez
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Rachunki prowadzone dla osób małoletnich oraz rachunki dla młodzieży wymagają udziału przedstawiciela ustawowego przy składaniu dyspozycji. Po osiągnięciu pełnoletności posiadacz rachunku może samodzielnie dysponować środkami i zamykać rachunek."
+      - ustep: "Przy zamykaniu rachunku osoby małoletniej obowiązują zasady:"
+        punkty:
+          - "{wypowiedzenie|dyspozycję zamknięcia} składa przedstawiciel ustawowy, który {wykazuje|potwierdza} swoją tożsamość i umocowanie;"
+          - "{środki|saldo} wypłaca się wyłącznie na rachunek małoletniego lub, za zgodą sądu opiekuńczego, jeżeli przepisy tego wymagają, na wskazany przez sąd rachunek;"
+          - "{wypłata|przekazanie} gotówki osobie innej niż małoletni lub przedstawiciel ustawowy nie jest dopuszczalne;"
+          - "{rodzice|opiekunowie} nie mogą zamknąć rachunku w celu przejęcia środków wbrew interesowi dziecka; w razie podejrzeń pracownik zawiadamia {{fakt:jednostka.prawny}}."
+      - akapit: "Rachunek młodzieżowy, który po osiągnięciu pełnoletności przekształca się w zwykły rachunek, wymaga od pracownika poinformowania posiadacza o zmianach w tabeli opłat przed ewentualnym zamknięciem."
+
+  # ---------- Kontrola ----------
+  - id: zamkniecie-n-kontrola-klient-tajemniczy
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - akapit: "Jakość obsługi wypowiedzeń rachunków bada się także metodą tajemniczego klienta. Badanie wykonuje komórka kontroli jakości lub podmiot zewnętrzny, z którym Bank zawarł umowę zobowiązującą do zachowania tajemnicy bankowej."
+      - ustep: "W badaniu ocenia się w szczególności, czy pracownik:"
+        punkty:
+          - "{przyjął|zarejestrował} wypowiedzenie bez nacisków na zmianę decyzji Klienta i bez utrudniania procedury;"
+          - "{poinformował|wyjaśnił} Klientowi o skutkach zamknięcia rachunku, w tym o kartach, zleceniach i wpływach;"
+          - "{wydał|przekazał} potwierdzenie przyjęcia i podał termin rozwiązania umowy;"
+          - "{zachował|zastosował} zasady bezpieczeństwa przy weryfikacji tożsamości i wypłacie gotówki."
+      - akapit: "Wyniki badań omawia się w placówkach w ciągu {{fakt:zamkniecie.termin.kontrola-wyrywkowa}} od ich przekazania, a działania naprawcze rejestruje się w planie kierownika placówki."
+
+  - id: zamkniecie-n-kontrola-reklamacje
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - akapit: "Źródłem informacji o jakości procedury są także reklamacje składane przez Klientów w związku z zamknięciem rachunku. {{fakt:jednostka.reklamacje}} przekazuje właścicielowi procedury co kwartał zestawienie takich reklamacji z podziałem na przyczyny."
+      - kroki:
+          - tekst: "{Przeanalizuj|Przejrzyj} zestawienie i {wskaż|wyodrębnij} przyczyny powtarzające się, np. opóźnienia w zamknięciu rachunku, błędne naliczenie opłat, zwroty wpływów po wypowiedzeniu."
+          - tekst: "Dla każdej powtarzającej się przyczyny ustal, czy źródłem jest błąd pracownika, luka w procedurze, czy usterka systemu, i zleć odpowiednie działania."
+            podkroki:
+              - tekst: "Błędy pracowników omawia się z kierownikiem placówki i uwzględnia w szkoleniach."
+              - tekst: "Luki w procedurze są podstawą zmiany jej treści zgodnie z zasadami nowelizacji."
+              - tekst: "Usterki systemowe zgłasza się do jednostki informatycznej jako zdarzenia z określonym priorytetem."
+          - tekst: "Wyniki analizy przedstaw w sprawozdaniu rocznym, wskazując, czy liczba reklamacji maleje."
+
+  - id: zamkniecie-n-kontrola-skutecznosc
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - akapit: "Skuteczność działań naprawczych po stwierdzeniu nieprawidłowości sprawdza się ponownie po upływie ustalonego okresu. Samo wdrożenie działania nie oznacza, że problem został usunięty."
+      - kroki:
+          - tekst: "Po upływie trzech miesięcy od zakończenia działania naprawczego {pobierz|wylosuj} nową próbę spraw z tego samego obszaru i {oceń|zbadaj} ją według tych samych kryteriów."
+          - tekst: "Porównaj wyniki z badaniem pierwotnym; jeżeli odsetek błędów nie zmalał, {ustal|wskaż} przyczyny i zaplanuj dodatkowe działanie, np. zmianę narzędzia lub bezpośredni nadzór."
+            podkroki:
+              - tekst: "W razie utrzymywania się błędów po drugim badaniu sprawę przedstaw dyrektorowi właściwego pionu."
+              - tekst: "Szczególnie istotne nieprawidłowości, np. wypłata salda osobie nieuprawnionej, zgłasza się do Zarządu niezwłocznie."
+          - tekst: "Wyniki weryfikacji skuteczności wpisz do planu działań naprawczych i zamknij pozycję dopiero po stwierdzeniu poprawy."
+
+  # ---------- Archiwum ----------
+  - id: zamkniecie-n-archiwum-teczka
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "Dokumentacja każdej sprawy zamknięcia rachunku jest składana w teczce, która umożliwia odtworzenie przebiegu zdarzeń po latach. Teczkę zakłada się w dniu zamknięcia rachunku, a jej zawartość sprawdza kierownik placówki."
+      - ustep: "Teczka zawiera:"
+        punkty:
+          - "{wypowiedzenie|oświadczenie} Klienta lub pismo Banku wraz z dowodem doręczenia;"
+          - "{potwierdzenie|dokument} weryfikacji tożsamości i, jeżeli dotyczy, pełnomocnictwo oraz dokumenty uprawniające do działania w imieniu Klienta;"
+          - "{rozliczenie|zestawienie} salda, opłat i wypłat, z podpisami osób, które je wykonały;"
+          - "{protokół|dowód} zwrotu lub zniszczenia kart oraz potwierdzenie odbioru środków;"
+          - "{korespondencję|notatki} z Klientem, w tym ewentualne reklamacje i odpowiedzi."
+      - akapit: "Teczka otrzymuje numer odpowiadający numerowi sprawy w rejestrze {{fakt:zamkniecie.system.rejestr}}, co umożliwia szybkie jej odnalezienie w archiwum {{fakt:zamkniecie.system.archiwum}}."
+
+  - id: zamkniecie-n-archiwum-elektroniczne
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "Dokumenty wytworzone w postaci papierowej mogą być digitalizowane w celu ich przechowywania w archiwum elektronicznym {{fakt:zamkniecie.system.archiwum}}. Digitalizacja ma ułatwić dostęp do dokumentów, ale nie może prowadzić do osłabienia ich wartości dowodowej."
+      - kroki:
+          - tekst: "Zeskanuj dokumenty w jakości umożliwiającej odczytanie wszystkich podpisów i pieczęci; nie stosuj kompresji, która pogarsza czytelność."
+          - tekst: "Sprawdź zgodność skanu z oryginałem i potwierdź ją podpisem elektronicznym lub adnotacją w systemie z danymi osoby, która dokonała sprawdzenia."
+            podkroki:
+              - tekst: "Skan nie zastępuje oryginału w przypadku dokumentów, które według przepisów muszą być przechowywane w oryginale."
+              - tekst: "Brak możliwości odczytania dokumentu po zeskanowaniu jest podstawą ponownego skanowania."
+          - tekst: "Dopiero po potwierdzeniu poprawności zapisu możliwe jest przekazanie oryginału do archiwum fizycznego lub, jeżeli przepisy na to pozwalają, jego zniszczenie."
+
+  - id: zamkniecie-n-archiwum-udostepnianie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "Klient lub jego następca prawny może żądać udostępnienia dokumentów dotyczących zamkniętego rachunku, w tym duplikatów potwierdzeń i zestawień operacji. Żądanie rozpatruje się niezależnie od tego, czy od zamknięcia rachunku upłynęło niewiele, czy wiele lat, o ile dokumentacja jest przechowywana."
+      - kroki:
+          - tekst: "{Zweryfikuj|Potwierdź} tożsamość osoby składającej żądanie i jej uprawnienie do uzyskania informacji; w przypadku następców prawnych wymagaj dokumentu potwierdzającego prawa do spadku."
+          - tekst: "Wystąp do archiwum {{fakt:zamkniecie.system.archiwum}} o udostępnienie dokumentów, wskazując numer sprawy lub dane rachunku."
+          - tekst: "Dokumenty przekaż w formie odpowiadającej żądaniu (kopia, wydruk, plik w bankowości elektronicznej) i odnotuj w aktach sprawy, kto, kiedy i jakie dokumenty otrzymał."
+            podkroki:
+              - tekst: "Za udostępnienie dokumentów starszych niż okres bezpłatny pobiera się opłatę zgodnie z tabelą opłat."
+              - tekst: "Dokumentów dotyczących innych osób nie udostępnia się bez ich zgody lub podstawy w przepisach."
+
+  # ---------- Postanowienia końcowe ----------
+  - id: zamkniecie-n-koncowe-wdrozenie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-koncowe-opc
+    elementy:
+      - akapit: "Wejście w życie procedury poprzedza okres przygotowawczy. Właściciel procedury organizuje szkolenia dla pracowników wszystkich jednostek zaangażowanych w zamykanie rachunków, tak aby w dniu wejścia w życie każdy z nich znał nowe zasady."
+      - ustep: "W okresie wdrożenia właściciel procedury:"
+        punkty:
+          - "{przekazuje|udostępnia} pracownikom tekst procedury w intranecie wraz z zestawieniem najważniejszych zmian;"
+          - "{organizuje|przeprowadza} szkolenia w formie spotkań i kursu elektronicznego zakończonego testem;"
+          - "{wyznacza|ustala} osoby kontaktowe w poszczególnych jednostkach, które odpowiadają na pytania i zbierają uwagi;"
+          - "{monitoruje|bada} pierwsze miesiące stosowania procedury i w razie potrzeby wprowadza korekty."
+
+  - id: zamkniecie-n-koncowe-zgodnosc
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-koncowe-opc
+    elementy:
+      - akapit: "W sprawach nieuregulowanych w procedurze stosuje się odpowiednio przepisy powszechnie obowiązujące, umowy rachunków, regulaminy produktów oraz inne regulacje wewnętrzne Banku. W razie rozbieżności między procedurą a przepisami powszechnie obowiązującymi pierwszeństwo mają przepisy, a pracownik zawiadamia właściciela procedury o stwierdzonej rozbieżności."
+      - akapit: "Wątpliwości dotyczące wykładni postanowień procedury rozstrzyga {{fakt:jednostka.operacje}} w porozumieniu z {{fakt:jednostka.prawny}}. Interpretacje o znaczeniu ogólnym {publikuje się|udostępnia się} w intranecie jako wyjaśnienia do procedury."

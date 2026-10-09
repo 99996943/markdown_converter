@@ -1,0 +1,285 @@
+bloki:
+  - id: taryfa-kredyty-czynnosci-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-wymagane-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Aneks do umowy kredytu gotówkowego"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.aneks}}"
+            tryb: "za każdy aneks"
+          - usluga: "Aneks do umowy kredytu hipotecznego"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.aneks}}"
+            tryb: "za każdy aneks"
+          - usluga: "Aneks do umowy kredytu dla przedsiębiorcy"
+            stawka: "{{fakt:oplata.kredyt-firmowy.aneks}}"
+            tryb: "za każdy aneks"
+          - usluga: "Zaświadczenie o spłacie kredytu, wydane w terminie {{fakt:termin.kredyt-gotowkowy.wydanie-zaswiadczenia}} od wniosku"
+            stawka: "{{fakt:oplata.zaswiadczenie}}[^1]"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o wysokości zadłużenia wg stanu na wskazany dzień"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.zaswiadczenie-o-zadluzeniu}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Duplikat umowy kredytu"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za każdy dokument"
+          - usluga: "{Duplikat|Kopia} harmonogramu spłat"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.harmonogram-duplikat}}"
+            tryb: "za każdy dokument"
+          - usluga: "Zmiana rachunku spłaty kredytu"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.zmiana-rachunku-splaty}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Zmiana terminu spłaty raty"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.zmiana-terminu-splaty}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Wysłanie dokumentu kredytowego listem poleconym"
+            stawka: "{{fakt:oplata.wyciag-papierowy}} oraz koszt przesyłki"
+            tryb: "za każdą przesyłkę"
+          - usluga: "Zwolnienie hipoteki po spłacie kredytu"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.zwolnienie-hipoteki}}[^2]"
+            tryb: "za każde oświadczenie"
+          - usluga: "Promesa zwolnienia z hipoteki"
+            stawka: "{{fakt:oplata.kredyt-hipoteczny.promesa-zwolnienia}}"
+            tryb: "za każdą promesę"
+          - usluga: "{Zmiana|Aktualizacja} danych Klienta w umowie kredytu (nazwisko, adres, dane kontaktowe)"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+          - usluga: "{Sporządzenie|Wykonanie} kopii dokumentów z archiwum kredytowego Banku"
+            stawka: "1,00 zł za stronę, min. 10,00 zł"
+            tryb: "za każdą kopię"
+          - usluga: "Wizyta pracownika Banku w miejscu wskazanym przez Klienta w celu podpisania aneksu"
+            stawka: "150,00 zł[^3]"
+            tryb: "za każdą wizytę"
+    przypisy:
+      1: "Pierwsze w roku kalendarzowym zaświadczenie o spłacie kredytu, o którym mowa w przepisach o kredycie konsumenckim, {jest wydawane|Bank wydaje} bez opłat; opłata dotyczy kolejnych zaświadczeń."
+      2: "Opłaty nie pobiera się, jeżeli oświadczenie do wykreślenia hipoteki Bank {przekazuje|wydaje} w formie elektronicznej do właściwego sądu wieczystoksięgowego w ramach postępowania prowadzonego w systemie teleinformatycznym."
+      3: "Wizyta {jest możliwa|odbywa się} wyłącznie na terytorium Rzeczypospolitej Polskiej, po wcześniejszym umówieniu terminu z infolinią Banku."
+
+  - id: taryfa-kredyty-czynnosci-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zmiana wysokości raty kredytu na wniosek Klienta {bez zmiany|ze zmianą} okresu kredytowania"
+            stawka: "100,00 zł"
+            tryb: "za każdą zmianę"
+          - usluga: "{Przeniesienie|Przepisanie} kredytu do innego oddziału Banku"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana danych współkredytobiorcy w umowie"
+            stawka: "bez opłat"
+            tryb: "za każdą zmianę"
+          - usluga: "Zmiana pełnomocnika do {obsługi|reprezentowania w sprawach} kredytu"
+            stawka: "30,00 zł"
+            tryb: "za każdą zmianę"
+          - usluga: "Rejestracja wzoru podpisu pełnomocnika w dokumentach kredytowych"
+            stawka: "bez opłat"
+            tryb: "za każdą rejestrację"
+          - usluga: "Przyjęcie dyspozycji na wypadek śmierci kredytobiorcy (zgłoszenie osoby kontaktowej)"
+            stawka: "bez opłat"
+            tryb: "za każde zgłoszenie"
+          - usluga: "Przejście praw i obowiązków kredytobiorcy na spadkobierców — przyjęcie dokumentów"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "{Sporządzenie|Przygotowanie} ugody dotyczącej spłaty kredytu"
+            stawka: "100,00 zł"
+            tryb: "za każdą ugodę"
+          - usluga: "Zmiana wzoru umowy na dwujęzyczny po zawarciu umowy"
+            stawka: "150,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Udzielenie informacji o stanie kredytu telefonicznie po weryfikacji tożsamości"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+
+  - id: taryfa-kredyty-czynnosci-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zaświadczenie o zdolności kredytowej {wydane|sporządzone} na wniosek Klienta"
+            stawka: "40,00 zł"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o wysokości rat kredytu dla celów podatkowych"
+            stawka: "bez opłat"
+            tryb: "raz w roku"
+          - usluga: "Zaświadczenie o zapłaconych odsetkach w wersji angielskojęzycznej"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o terminowej spłacie dla urzędu lub kontrahenta"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o kredytach posiadanych w Banku (zestawienie zobowiązań)"
+            stawka: "30,00 zł"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie pilne — {wydanie|wystawienie} w ciągu 1 dnia roboczego"
+            stawka: "2-krotność stawki zaświadczenia"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Potwierdzenie ustanowienia zabezpieczenia na rzecz Banku"
+            stawka: "30,00 zł"
+            tryb: "za każde potwierdzenie"
+          - usluga: "Oświadczenie Banku o braku roszczeń z {tytułu|powodu} kredytu"
+            stawka: "50,00 zł"
+            tryb: "za każde oświadczenie"
+          - usluga: "Potwierdzenie wpłaty na rachunek kredytowy"
+            stawka: "bez opłat"
+            tryb: "za każde potwierdzenie"
+          - usluga: "Informacja dla organu egzekucyjnego o stanie zadłużenia"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+
+  - id: taryfa-kredyty-czynnosci-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Zwolnienie|Uwolnienie} z poręczenia osoby trzeciej"
+            stawka: "150,00 zł"
+            tryb: "za każde zwolnienie"
+          - usluga: "{Zastąpienie|Zmiana} poręczyciela nowym poręczycielem"
+            stawka: "200,00 zł"
+            tryb: "za każdą zmianę"
+          - usluga: "Zwolnienie blokady środków na rachunku stanowiących zabezpieczenie kredytu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zwrot oryginału weksla in blanco wraz z deklaracją wekslową po {spłacie|całkowitej spłacie} kredytu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zwolnienie przewłaszczenia lub zastawu rejestrowego po spłacie kredytu"
+            stawka: "200,00 zł"
+            tryb: "za każde zwolnienie"
+          - usluga: "Wniosek o wykreślenie zastawu rejestrowego z rejestru zastawów (opłata sądowa)"
+            stawka: "{{fakt:oplata.kredyt-firmowy.wpis-zastawu}}"
+            tryb: "za każdy wniosek"
+          - usluga: "Zwolnienie cesji praw z polisy ubezpieczeniowej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zwrot dokumentów własności pojazdu po spłacie kredytu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie klucza lub karty pojazdu przechowywanych w depozycie"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Przekazanie dokumentacji zabezpieczenia do kancelarii notarialnej wskazanej przez Klienta"
+            stawka: "60,00 zł"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-czynnosci-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Rozpatrzenie|Analiza} wniosku o zmianę warunków umowy kredytowej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rozpatrzenie wniosku o umorzenie części zadłużenia"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rozpatrzenie wniosku o ugodę w sprawie rozłożenia zaległości na raty"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Wniosek o czasowe obniżenie raty (kredyt w okresie trudności finansowych)"
+            stawka: "bez opłat"
+            tryb: "za każdy wniosek"
+          - usluga: "Wniosek o wydłużenie terminu ważności decyzji kredytowej"
+            stawka: "50,00 zł"
+            tryb: "za każdy wniosek"
+          - usluga: "Wniosek o zmianę zabezpieczenia na {inne zabezpieczenie|inne}, wskazane przez Klienta"
+            stawka: "300,00 zł"
+            tryb: "za każdy wniosek"
+          - usluga: "Wniosek o zgodę na obciążenie nieruchomości na rzecz osoby trzeciej"
+            stawka: "250,00 zł"
+            tryb: "za każdy wniosek"
+          - usluga: "Wniosek o zmianę ubezpieczyciela przedmiotu zabezpieczenia"
+            stawka: "100,00 zł"
+            tryb: "za każdy wniosek"
+          - usluga: "Reklamacja dotycząca {naliczenia|pobrania} opłat lub prowizji"
+            stawka: "bez opłat"
+            tryb: "za każdą reklamację"
+          - usluga: "Wniosek o udostępnienie dokumentów w trybie przepisów o ochronie danych osobowych"
+            stawka: "bez opłat"
+            tryb: "pierwsza kopia"
+
+  - id: taryfa-kredyty-czynnosci-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Opłata za wysyłkę powiadomień o zmianie oprocentowania w formie papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za każde powiadomienie"
+          - usluga: "Powiadomienia SMS o terminach spłaty rat"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "miesięcznie"
+          - usluga: "Powiadomienia {e-mail|pocztą elektroniczną} o terminach spłaty rat"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Powiadomienia push w aplikacji mobilnej o terminach spłaty rat"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Wyciąg z rachunku kredytowego w formie elektronicznej"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+          - usluga: "Wyciąg z rachunku kredytowego w formie papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "miesięcznie"
+          - usluga: "{Odbiór|Odbiór osobisty} dokumentów kredytowych w placówce zamiast wysyłki"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "{Wysyłka|Przesłanie} dokumentów kurierem na wniosek Klienta"
+            stawka: "35,00 zł"
+            tryb: "za każdą przesyłkę"
+          - usluga: "Wysyłka dokumentów za granicę"
+            stawka: "60,00 zł"
+            tryb: "za każdą przesyłkę"
+          - usluga: "Dodatkowy egzemplarz formularza informacyjnego dla Klienta"
+            stawka: "bez opłat"
+            tryb: "za każdy egzemplarz"
+
+  - id: taryfa-kredyty-czynnosci-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-czynnosci
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Weryfikacja tożsamości Klienta składającego dyspozycję kredytową w placówce"
+            stawka: "bez opłat"
+            tryb: "za każdą dyspozycję"
+          - usluga: "{Weryfikacja|Sprawdzenie} pełnomocnictwa notarialnego do czynności kredytowych"
+            stawka: "50,00 zł"
+            tryb: "za każde pełnomocnictwo"
+          - usluga: "Weryfikacja dokumentów zagranicznych (wraz z tłumaczeniem przysięgłym wskazanym przez Bank)"
+            stawka: "100,00 zł"
+            tryb: "za każdy dokument"
+          - usluga: "Złożenie dyspozycji kredytowej przez pełnomocnika"
+            stawka: "30,00 zł"
+            tryb: "za każdą dyspozycję"
+          - usluga: "Złożenie dyspozycji kredytowej drogą korespondencyjną z poświadczeniem podpisu"
+            stawka: "20,00 zł"
+            tryb: "za każdą dyspozycję"
+          - usluga: "{Odwołanie|Cofnięcie} dyspozycji kredytowej przed jej realizacją"
+            stawka: "bez opłat"
+            tryb: "za każde odwołanie"
+          - usluga: "Odwołanie dyspozycji po rozpoczęciu realizacji"
+            stawka: "40,00 zł"
+            tryb: "za każde odwołanie"
+          - usluga: "Rezygnacja z zawarcia umowy po {przygotowaniu|sporządzeniu} dokumentów"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Sporządzenie dodatkowego projektu umowy na wniosek Klienta"
+            stawka: "bez opłat"
+            tryb: "za każdy projekt"
+          - usluga: "Sprawdzenie zgodności danych w dokumentach z rejestrami publicznymi"
+            stawka: "30,00 zł"
+            tryb: "za każde sprawdzenie"

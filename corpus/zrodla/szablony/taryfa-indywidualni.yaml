@@ -1,0 +1,45 @@
+id: taryfa-indywidualni
+typ: taryfy
+temat: taryfa-indywidualni
+tytul:
+  - "Taryfa opłat i prowizji {{param:bank}} dla klientów indywidualnych"
+  - "Taryfa {opłat i prowizji|prowizji i opłat} {{param:bank}} za rachunki osobiste i usługi dla klientów indywidualnych"
+uklady: [taryfa-siatka]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-indywidualni-ogolne]
+  - rodzaj: sekcja-taryfy
+    tytul: "Konto Standard"
+    wymagane: [taryfa-indywidualni-standard-opis, taryfa-indywidualni-standard-1, taryfa-indywidualni-standard-2]
+    opcjonalne: { kategorie: [pozycje-ind-standard], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Konto Premium"
+    wymagane: [taryfa-indywidualni-premium-opis, taryfa-indywidualni-premium-1]
+    opcjonalne: { kategorie: [pozycje-ind-premium], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Konto dla seniora"
+    wymagane: [taryfa-indywidualni-senior-opis, taryfa-indywidualni-senior-1]
+    opcjonalne: { kategorie: [pozycje-ind-senior], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy i zlecenia"
+    wymagane: [taryfa-indywidualni-przelewy-opis, taryfa-indywidualni-przelewy-1, taryfa-indywidualni-przelewy-2]
+    opcjonalne: { kategorie: [pozycje-ind-przelewy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Operacje gotówkowe"
+    wymagane: [taryfa-indywidualni-gotowka-opis, taryfa-indywidualni-gotowka-1]
+    opcjonalne: { kategorie: [pozycje-ind-gotowka], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty debetowe"
+    wymagane: [taryfa-indywidualni-karty-opis, taryfa-indywidualni-karty-1, taryfa-indywidualni-karty-2]
+    opcjonalne: { kategorie: [pozycje-ind-karty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Usługi dodatkowe i dokumenty"
+    wymagane: [taryfa-indywidualni-uslugi-opis, taryfa-indywidualni-uslugi-1, taryfa-indywidualni-uslugi-2]
+    opcjonalne: { kategorie: [pozycje-ind-uslugi], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i przepisy końcowe"
+    wymagane: [taryfa-indywidualni-objasnienia]
+    opcjonalne: { kategorie: [objasnienie-ind], min: 0, max: 40 }
+parametry: {}

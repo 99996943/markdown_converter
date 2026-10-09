@@ -1,0 +1,79 @@
+bloki:
+  # --- Otwarcie rachunku na odległość
+  - id: otwarcie-zdalne-start-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Proces otwarcia rachunku na odległość rozpoczyna się, gdy klient wypełni formularz internetowy lub aplikacyjny. System weryfikuje kompletność danych i automatycznie sprawdza klienta w rejestrach przed przekazaniem sprawy pracownikowi."
+      - kroki:
+          - tekst: "Wypełnienie formularza. Klient podaje dane osobowe, dane kontaktowe, informacje o celu rachunku i źródle środków, a także składa oświadczenia wymagane przepisami."
+            podkroki:
+              - tekst: "Formularz nie pozwala przejść dalej, dopóki wszystkie pola obowiązkowe nie zostaną wypełnione."
+              - tekst: "Klient może zapisać formularz i dokończyć go w ciągu {{fakt:termin.otwarcie.wniosek-wstepny-waznosc}}."
+          - tekst: "Zapoznanie z dokumentami. Klient pobiera regulamin, tabelę opłat i informacje obowiązkowe oraz potwierdza ich otrzymanie na trwałym nośniku."
+          - tekst: "Wstępne sprawdzenie. System sprawdza, czy numer ewidencyjny i adres e-mail nie figurują już w bazie, czy dane osobowe nie występują na listach sankcyjnych i czy klient nie jest zapisany jako osoba zajmująca eksponowane stanowisko polityczne."
+          - tekst: "Przekazanie do weryfikacji. Wniosek, który przeszedł wstępne sprawdzenie, trafia do kolejki pracowników {{fakt:jednostka.obsluga-klienta}}."
+
+  - id: otwarcie-zdalne-wideo-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Weryfikacja tożsamości klienta może odbyć się za pomocą połączenia wideo w systemie {{fakt:system.otwarcie.wideo}}. Sesja trwa nie dłużej niż {{fakt:termin.otwarcie.sesja-wideo-czas}}, a jej powtórzenie jest możliwe w ramach {{fakt:limit.otwarcie.proby-wideo}}."
+      - kroki:
+          - tekst: "Przygotowanie sesji. Przed rozpoczęciem połączenia pracownik sprawdza, czy ma dostęp do wniosku klienta, i potwierdza, że rozmowa będzie nagrywana."
+            podkroki:
+              - tekst: "Poinformuj klienta, że nagranie jest przechowywane przez {{fakt:termin.otwarcie.przechowywanie-nagrania}} i służy dokumentowaniu weryfikacji."
+              - tekst: "Jeżeli klient nie zgadza się na nagrywanie, zaproponuj weryfikację w placówce."
+          - tekst: "Weryfikacja dokumentu. Poproś klienta o pokazanie dokumentu tożsamości z obu stron, odchylenie go względem światła w celu pokazania zabezpieczeń oraz przybliżenie zdjęcia do kamery."
+          - tekst: "Weryfikacja osoby. Zadaj klientowi pytania dotyczące danych we wniosku, poproś o wykonanie prostych poleceń, na przykład obrócenia głowy lub powiedzenia wskazanej frazy, aby wykluczyć użycie nagrania lub zdjęcia."
+          - tekst: "Protokół. Wynik weryfikacji zapisz w protokole {{fakt:formularz.otwarcie.protokol-wideo}} i zaznacz, czy weryfikacja zakończyła się powodzeniem."
+          - tekst: "Brak powodzenia. Jeżeli weryfikacja nie powiodła się, zaproponuj klientowi ponowną próbę w innym terminie albo weryfikację w placówce."
+
+  - id: otwarcie-zdalne-przelew-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Alternatywną metodą weryfikacji tożsamości jest przelew weryfikacyjny z rachunku klienta prowadzonego w innym banku. Metoda ta jest dopuszczalna wyłącznie dla klientów o niskim i średnim ryzyku oraz gdy rachunek źródłowy został wcześniej zweryfikowany w innym banku z zachowaniem odpowiednich standardów."
+      - kroki:
+          - tekst: "Instrukcja przelewu. System przekazuje klientowi dane do wykonania przelewu weryfikacyjnego oraz kod, który należy wpisać w tytule."
+            podkroki:
+              - tekst: "Przelew weryfikacyjny jest na kwotę {{fakt:limit.otwarcie.przelew-weryfikacyjny}}."
+              - tekst: "Kod w tytule przelewu jest ważny przez {{fakt:termin.otwarcie.waznosc-przelewu-weryfikacyjnego}}."
+          - tekst: "Porównanie danych. Po wpływie przelewu system porównuje dane nadawcy z danymi we wniosku; niezgodność w imieniu lub nazwisku uniemożliwia zakończenie weryfikacji tą metodą."
+          - tekst: "Ocena przez pracownika. Pracownik ocenia wyniki porównania i, jeśli ma wątpliwości, kontaktuje się z klientem lub kieruje go do weryfikacji wideo."
+          - tekst: "Zwrot przelewu. Kwotę przelewu weryfikacyjnego zwraca się klientowi po otwarciu rachunku lub w razie odmowy jego otwarcia, na rachunek, z którego przelew wykonano."
+
+  - id: otwarcie-zdalne-bezpieczenstwo-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Otwieranie rachunków na odległość wiąże się z podwyższonym ryzykiem prób wyłudzenia przez osoby podszywające się pod innych. Pracownik powinien zachować szczególną czujność i zwracać uwagę na sygnały ostrzegawcze."
+      - kroki:
+          - tekst: "Sygnały ostrzegawcze. Zwiększ stopień weryfikacji, jeżeli zauważysz:"
+            podkroki:
+              - tekst: "dane kontaktowe klienta, które zostały użyte we wcześniejszych wnioskach innych osób;"
+              - tekst: "wnioski składane w krótkim czasie z tego samego urządzenia lub adresu sieciowego na różne dane;"
+              - tekst: "adres zamieszkania, który jest adresem hotelu, skrytki pocztowej lub miejsca, które nie jest miejscem zamieszkania;"
+              - tekst: "klienta, który ma trudności z udzieleniem odpowiedzi na pytania o dane z wniosku."
+          - tekst: "Dodatkowa weryfikacja. W razie wątpliwości poproś klienta o dodatkowy dokument, wykonanie sesji wideo lub wizytę w placówce."
+          - tekst: "Zgłoszenie. Podejrzenie próby wyłudzenia zgłoś niezwłocznie do {{fakt:jednostka.bezpieczenstwo}}, a wniosek pozostaw bez rozpatrzenia do czasu wyjaśnienia."
+          - tekst: "Zapis. Odnotuj w systemie powód podwyższenia stopnia weryfikacji i jej wynik."
+
+  - id: otwarcie-zdalne-umowa-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zdalne-opc
+    elementy:
+      - akapit: "Po pozytywnej weryfikacji klient zawiera umowę rachunku w formie elektronicznej. Umowa jest zawierana na odległość, dlatego klient musi otrzymać wszystkie informacje, o których mowa w przepisach, przed jej zawarciem."
+      - kroki:
+          - tekst: "Prezentacja umowy. System wyświetla treść umowy i wymaga przewinięcia jej do końca przed możliwością jej zaakceptowania."
+          - tekst: "Akceptacja. Klient akceptuje umowę za pomocą kodu jednorazowego przesłanego na zweryfikowany numer telefonu."
+            podkroki:
+              - tekst: "Numer telefonu musi być zgodny z numerem podanym we wniosku i potwierdzonym w trakcie weryfikacji."
+              - tekst: "Kod jest ważny przez ograniczony czas, po którym należy wygenerować nowy."
+          - tekst: "Potwierdzenie zawarcia umowy. System wysyła klientowi na adres e-mail egzemplarz umowy w formacie, który umożliwia jego zapisanie i wydrukowanie."
+          - tekst: "Aktywacja rachunku. Rachunek jest aktywowany w terminie {{fakt:termin.otwarcie.aktywacja-rachunku}} od zawarcia umowy, o czym klient otrzymuje powiadomienie."

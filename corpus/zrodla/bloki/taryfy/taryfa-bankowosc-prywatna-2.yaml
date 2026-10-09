@@ -1,0 +1,172 @@
+bloki:
+  # ======================================================== Pakiet Prywatny — pozycje opcjonalne
+  - id: taryfa-bankowosc-prywatna-pakiet-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Roczny przegląd sytuacji finansowej Klienta z doradcą", stawka: "{bez opłat|brak opłaty}", tryb: "rocznie" }
+          - { usluga: "Sporządzenie {zestawienia|podsumowania} aktywów Klienta w Banku", stawka: "{bez opłat|brak opłaty}", tryb: "kwartalnie" }
+          - { usluga: "Sporządzenie zestawienia aktywów na dzień wskazany przez Klienta", stawka: "40,00 zł", tryb: "za zestawienie" }
+          - { usluga: "Analiza oferty depozytowej {dopasowanej|przygotowanej} dla Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach pakietu" }
+          - { usluga: "{Przygotowanie|Opracowanie} propozycji lokaty negocjowanej", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach pakietu" }
+          - { usluga: "Spotkanie z doradcą przez komunikator wideo", stawka: "{bez opłat|brak opłaty}", tryb: "za spotkanie" }
+          - { usluga: "Spotkanie z doradcą w dzień wolny od pracy", stawka: "{{fakt:oplata.prywatna.wizyta-poza-oddzialem}}", tryb: "za spotkanie" }
+          - { usluga: "Zmiana doradcy {na wniosek|na żądanie} Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zastępstwo doradcy w czasie jego nieobecności", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach pakietu" }
+          - { usluga: "Dodatkowa konsultacja prawno-podatkowa z udziałem specjalisty Banku", stawka: "{{fakt:oplata.prywatna.doradca-konsultacja-dodatkowa}}", tryb: "za godzinę" }
+
+  - id: taryfa-bankowosc-prywatna-pakiet-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dostęp do bankowości {elektronicznej|internetowej}", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Dostęp do aplikacji mobilnej", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Autoryzacja operacji w aplikacji mobilnej", stawka: "{bez opłat|brak opłaty}", tryb: "za operację" }
+          - { usluga: "Autoryzacja operacji kodem SMS", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za kod" }
+          - { usluga: "Wydanie dodatkowego urządzenia autoryzującego (token)", stawka: "50,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Wymiana uszkodzonego urządzenia autoryzującego", stawka: "50,00 zł", tryb: "jednorazowo" }
+          - { usluga: "Zmiana limitów transakcji w kanałach elektronicznych", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Powiadomienia push o operacjach na rachunku", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Zablokowanie dostępu do bankowości {elektronicznej|internetowej} na wniosek Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Odblokowanie dostępu do bankowości {elektronicznej|internetowej} w {oddziale|placówce}", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+
+  - id: taryfa-bankowosc-prywatna-pakiet-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata gotówki z bankomatów Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki z bankomatów innych banków w kraju (do czterech wypłat w miesiącu)", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki z bankomatów innych banków w kraju ponad limit pakietu", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za wypłatę" }
+          - { usluga: "Wpłata gotówki we wpłatomacie Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za wpłatę" }
+          - { usluga: "Wpłata gotówki w kasie placówki", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za wpłatę" }
+          - { usluga: "Wypłata gotówki w kasie placówki", stawka: "{bez opłat|brak opłaty}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki w kasie placówki bez zapowiedzi, powyżej {{fakt:limit.rachunek-osobisty.wyplata-awizo}}", stawka: "0,5% kwoty wypłaty", tryb: "od kwoty wypłaty" }
+          - { usluga: "Wpłata gotówki powyżej {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}} (wymaga {złożenia|przedstawienia} wyjaśnień co do źródła środków)", stawka: "{bez opłat|brak opłaty}", tryb: "za wpłatę" }
+          - { usluga: "Wyciąg z rachunku w postaci elektronicznej", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Odpis wyciągu z rachunku z poprzednich okresów", stawka: "{{fakt:oplata.rachunek-osobisty.odpis-wyciagu}}", tryb: "{za dokument|za każdy dokument}" }
+
+  - id: taryfa-bankowosc-prywatna-pakiet-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Ubezpieczenie {kart|kart płatniczych} od skutków utraty lub kradzieży", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Ubezpieczenie gotówki pobranej z bankomatu (do 48 godzin od wypłaty)", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Ubezpieczenie zakupów dokonanych kartą", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Ochrona dokumentów i kluczy (usługa assistance)", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Usługa odtworzenia zagubionych dokumentów tożsamości — pomoc organizacyjna", stawka: "w ramach pakietu", tryb: "za zdarzenie" }
+          - { usluga: "Infolinia assistance {czynna całą dobę|dostępna przez całą dobę}", stawka: "{bez opłat|brak opłaty}", tryb: "za połączenie" }
+          - { usluga: "Rozszerzenie ochrony ubezpieczeniowej o członków rodziny Klienta", stawka: "99,00 zł", tryb: "rocznie" }
+          - { usluga: "Zgłoszenie szkody ubezpieczeniowej za pośrednictwem doradcy", stawka: "{bez opłat|brak opłaty}", tryb: "za zgłoszenie" }
+          - { usluga: "{Wystawienie|Sporządzenie} duplikatu polisy lub certyfikatu ubezpieczenia", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Rezygnacja z ochrony ubezpieczeniowej w pakiecie", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+
+  - id: taryfa-bankowosc-prywatna-pakiet-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zawarcie umowy o Pakiet Prywatny", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zmiana Pakietu Prywatnego na Pakiet Prywatny Plus", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zmiana Pakietu Prywatnego Plus na Pakiet Prywatny", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Rezygnacja z pakietu {w ciągu|w terminie} {{fakt:termin.odstapienie-od-umowy}} od zawarcia umowy", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Rozwiązanie umowy o pakiet za wypowiedzeniem Klienta (termin wypowiedzenia {{fakt:termin.wypowiedzenie-przez-klienta}})", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie zaświadczenia o korzystaniu z pakietu", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Wydanie duplikatu umowy o pakiet", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Wysłanie upomnienia o zaległej opłacie za pakiet", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za upomnienie" }
+          - { usluga: "Zmiana danych Klienta w umowie o pakiet", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Zmiana rachunku, z którego pobierana jest opłata za pakiet", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+
+  # ======================================================== Pakiet Prywatny Plus — pozycje opcjonalne
+  - id: taryfa-bankowosc-prywatna-plus-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dostęp do linii telefonicznej dla Klientów bankowości prywatnej", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach pakietu" }
+          - { usluga: "Złożenie zlecenia przelewu przez doradcę telefonicznie", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Złożenie zlecenia wymiany walut przez dealera telefonicznie", stawka: "{bez opłat|brak opłaty}", tryb: "za zlecenie" }
+          - { usluga: "Potwierdzenie {tożsamości|identyfikacja} Klienta w rozmowie telefonicznej z użyciem hasła ustnego", stawka: "{bez opłat|brak opłaty}", tryb: "za rozmowę" }
+          - { usluga: "Nagranie rozmowy telefonicznej udostępnione {na wniosek|na żądanie} Klienta", stawka: "60,00 zł", tryb: "za nagranie" }
+          - { usluga: "Zapewnienie tłumacza podczas spotkania w placówce (język angielski, niemiecki)", stawka: "180,00 zł", tryb: "za godzinę" }
+          - { usluga: "Zapewnienie tłumacza podczas spotkania (pozostałe języki)", stawka: "wg wyceny", tryb: "za godzinę" }
+          - { usluga: "Zapewnienie sali spotkań w {placówce|oddziale} Banku", stawka: "{bez opłat|brak opłaty}", tryb: "za spotkanie" }
+          - { usluga: "Zapewnienie sali spotkań w {placówce|oddziale} Banku ponad cztery godziny", stawka: "100,00 zł", tryb: "za godzinę" }
+          - { usluga: "Obsługa pełnomocnika Klienta przez doradcę", stawka: "{bez opłat|brak opłaty}", tryb: "w ramach pakietu" }
+
+  - id: taryfa-bankowosc-prywatna-plus-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Prowadzenie rachunku w euro w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku w dolarach amerykańskich w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku we frankach szwajcarskich w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku w funtach szterlingach w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku w koronach norweskich, szwedzkich lub duńskich w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku w jenach japońskich lub dolarach kanadyjskich w ramach pakietu", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Wielowalutowy {widok|podgląd} sald w bankowości elektronicznej", stawka: "{bez opłat|brak opłaty}", tryb: "miesięcznie" }
+          - { usluga: "Przewalutowanie środków między własnymi rachunkami Klienta po kursie negocjowanym", stawka: "marża {{fakt:kurs.prywatna.marza-negocjowana}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Przewalutowanie środków między własnymi rachunkami Klienta poniżej {{fakt:limit.prywatna.kurs-negocjowany-minimum}}", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Zlecenie wymiany walut z limitem kursu (zlecenie warunkowe)", stawka: "0,10% kwoty, min. 50,00 zł", tryb: "od kwoty transakcji" }
+
+  - id: taryfa-bankowosc-prywatna-plus-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dostęp do saloników lotniskowych — wejście Klienta w {ramach|granicach} limitu", stawka: "{bez opłat|brak opłaty}", tryb: "za wejście" }
+          - { usluga: "Dostęp do saloników lotniskowych — wejście ponad limit", stawka: "{{fakt:oplata.prywatna.salonik-wejscie}}", tryb: "za wejście" }
+          - { usluga: "Dostęp do saloników lotniskowych — wejście osoby towarzyszącej", stawka: "{{fakt:oplata.prywatna.salonik-wejscie}}", tryb: "za wejście" }
+          - { usluga: "{Rezerwacja|Zarezerwowanie} miejsca parkingowego przy lotnisku w ramach pakietu", stawka: "w ramach pakietu", tryb: "za rezerwację" }
+          - { usluga: "Ubezpieczenie kosztów leczenia za granicą (suma ubezpieczenia wg warunków ubezpieczenia)", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Ubezpieczenie {bagażu podróżnego|bagażu w podróży}", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Ubezpieczenie odwołania podróży", stawka: "w ramach pakietu", tryb: "rocznie" }
+          - { usluga: "Rozszerzenie ubezpieczenia podróżnego o sporty ryzykowne", stawka: "150,00 zł", tryb: "rocznie" }
+          - { usluga: "Dostarczenie karty zastępczej do hotelu lub miejsca pobytu za granicą", stawka: "{{fakt:oplata.prywatna.karta-kurier}}", tryb: "jednorazowo" }
+          - { usluga: "Infolinia dla Klientów podróżujących za granicą", stawka: "połączenie wg stawki operatora", tryb: "za połączenie" }
+
+  - id: taryfa-bankowosc-prywatna-plus-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Kwartalny raport o stanie aktywów Klienta w Banku", stawka: "{bez opłat|brak opłaty}", tryb: "kwartalnie" }
+          - { usluga: "Raport podsumowujący opłaty i odsetki za rok kalendarzowy", stawka: "{bez opłat|brak opłaty}", tryb: "rocznie" }
+          - { usluga: "Wycena portfela instrumentów finansowych na wskazany dzień", stawka: "80,00 zł", tryb: "za wycenę" }
+          - { usluga: "Raport o strukturze walutowej aktywów", stawka: "{bez opłat|brak opłaty}", tryb: "kwartalnie" }
+          - { usluga: "Raport o obrotach na rachunkach w układzie tematycznym", stawka: "60,00 zł", tryb: "za raport" }
+          - { usluga: "Zestawienie transakcji walutowych za wybrany okres", stawka: "40,00 zł", tryb: "za zestawienie" }
+          - { usluga: "Zestawienie odsetek dla celów podatkowych w układzie szczegółowym", stawka: "{bez opłat|brak opłaty}", tryb: "rocznie" }
+          - { usluga: "Przekazanie raportu na adres wskazany przez Klienta (doradca podatkowy, księgowy)", stawka: "{bez opłat|brak opłaty}", tryb: "za przekazanie" }
+          - { usluga: "{Przygotowanie|Opracowanie} zestawienia w wersji w języku angielskim", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Zestawienie zbiorcze dla grupy rachunków członków rodziny", stawka: "100,00 zł", tryb: "za zestawienie" }
+
+  - id: taryfa-bankowosc-prywatna-plus-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zawarcie umowy o Pakiet Prywatny Plus", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zmiana warunków pakietu {na wniosek|na żądanie} Klienta", stawka: "{bez opłat|brak opłaty}", tryb: "{za dyspozycję|za każdą dyspozycję}" }
+          - { usluga: "Dodanie do pakietu współposiadacza rachunków", stawka: "{{fakt:oplata.prywatna.pakiet-wspolposiadacz}}", tryb: "miesięcznie" }
+          - { usluga: "Dodanie do pakietu karty dodatkowej dla członka rodziny", stawka: "{{fakt:oplata.prywatna.karta-dodatkowa-roczna}}", tryb: "rocznie" }
+          - { usluga: "Przywrócenie pakietu po jego zawieszeniu", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zawieszenie pakietu na okres nieobecności Klienta (do 6 miesięcy)", stawka: "50% opłaty miesięcznej", tryb: "miesięcznie" }
+          - { usluga: "Rozwiązanie umowy o pakiet — termin wypowiedzenia {{fakt:termin.wypowiedzenie-przez-klienta}}", stawka: "{bez opłat|brak opłaty}", tryb: "jednorazowo" }
+          - { usluga: "Zaświadczenie o korzystaniu z Pakietu Prywatnego Plus", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "{za dokument|za każdy dokument}" }
+          - { usluga: "Upomnienie o zaległej opłacie za pakiet", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za upomnienie" }
+          - { usluga: "Duplikat umowy o pakiet", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "{za dokument|za każdy dokument}" }

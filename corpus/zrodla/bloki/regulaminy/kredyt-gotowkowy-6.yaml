@@ -1,0 +1,72 @@
+bloki:
+  - id: kredyt-gotowkowy-ogolne-7
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {zapewnia|gwarantuje} Klientom z niepełnosprawnościami równy dostęp do informacji o kredycie, w tym możliwość otrzymania dokumentów w formie dostępnej, oraz pomoc pracownika placówki przy składaniu wniosku i podpisywaniu umowy."
+      - ustep: "Na wniosek Klienta Bank udziela informacji o warunkach kredytu także w trakcie rozmowy z doradcą, a notatkę ze spotkania przekazuje na trwałym nośniku, jeżeli Klient o to poprosi."
+
+  - id: kredyt-gotowkowy-wniosek-8
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient prowadzący równolegle działalność gospodarczą wskazuje we wniosku, czy kredyt będzie przeznaczony na cele niezwiązane z tą działalnością. Jeżeli kredyt ma służyć celom prowadzonej działalności, Bank {rozpatruje|traktuje} wniosek na zasadach przewidzianych dla kredytów dla przedsiębiorców, a nie na podstawie Regulaminu."
+      - ustep: "Klient oświadcza także, czy jest osobą zajmującą eksponowane stanowisko polityczne lub członkiem rodziny takiej osoby. Oświadczenie to Bank wykorzystuje do określenia środków bezpieczeństwa finansowego wymaganych przepisami — zob. {{ref:akt:dz-u-2025-644-aml}}."
+
+  - id: kredyt-gotowkowy-umowa-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient zawiera umowę na odległość, Bank {przed zawarciem|przed złożeniem oświadczenia woli} przekazuje mu informacje wymagane przepisami o prawach konsumenta, w tym o tożsamości przedsiębiorcy, głównych cechach usługi, całkowitym koszcie oraz o prawie odstąpienia. Zasady te określa {{ref:akt:dz-u-2020-287-prawa-konsumenta}}."
+      - ustep: "Klient może w każdym czasie zażądać, aby Bank przekazał mu treść umowy zawartej na odległość w postaci papierowej, bez opłat. Żądanie takie nie wpływa na ważność ani skuteczność umowy."
+
+  - id: kredyt-gotowkowy-wyplata-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-wyplata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może zażądać przekazania środków na rachunek osoby trzeciej wskazanej w dyspozycji, jeżeli kredyt jest przeznaczony na zapłatę za towar lub usługę. Dyspozycja taka wymaga {potwierdzenia|akceptacji} przez Klienta w sposób zapewniający bezpieczeństwo transakcji."
+      - ustep: "Bank nie odpowiada za nienależyte wykonanie zobowiązania przez osobę trzecią, której przekazano środki, ani za spory między Klientem a sprzedawcą dotyczące towaru lub usługi, chyba że przepisy prawa przewidują inaczej."
+
+  - id: kredyt-gotowkowy-splata-7
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-splata
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie zmiany przepisów dotyczących wskaźników referencyjnych Bank nie zmienia oprocentowania kredytu, ponieważ jest ono stałe. Zmiany takie nie mają wpływu na wysokość rat ani na harmonogram spłat, a Klient nie jest obowiązany do składania w tym zakresie jakichkolwiek oświadczeń."
+      - ustep: "Jeżeli Klient zmienił numer rachunku, adres lub inne dane kontaktowe, a Bank nie został o tym poinformowany, skutki niepowiadomienia — w tym możliwość niedoręczenia korespondencji — ponosi Klient."
+
+  - id: kredyt-gotowkowy-opoznienie-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który po terminie spłaty raty dokona wpłaty obejmującej zaległość wraz z odsetkami, {nie ponosi|jest zwolniony z} dalszych konsekwencji opóźnienia, z wyjątkiem opłat naliczonych za czynności faktycznie wykonane przez Bank, i może kontynuować spłatę zgodnie z harmonogramem."
+      - ustep: "Bank informuje Klienta o planowanym przekazaniu danych o zadłużeniu do biura informacji kredytowej co najmniej {{fakt:termin.kredyt-gotowkowy.zawiadomienie-przed-rejestrem}} przed przekazaniem, jeżeli opóźnienie przekracza {{fakt:termin.kredyt-gotowkowy.opoznienie-do-rejestru}}. Informacja zawiera dane umożliwiające Klientowi uregulowanie zaległości."
+
+  - id: kredyt-gotowkowy-koncowe-6
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin jest dostępny w placówkach Banku, na stronie {{fakt:bank.strona}} oraz w bankowości elektronicznej. Klient {może|ma prawo} w każdym czasie żądać udostępnienia go na trwałym nośniku, a także aktualnych wzorców umów i formularzy stosowanych przez Bank."
+      - ustep: "Wszelkie spory wynikające z umowy kredytu Bank i Klient starają się rozwiązywać polubownie, z uwzględnieniem postępowania reklamacyjnego opisanego w {{ref:blok:wspolne-reklamacje-regulamin}}. Wniesienie reklamacji nie pozbawia Klienta prawa do dochodzenia roszczeń na drodze sądowej."
+
+  - id: kredyt-gotowkowy-oprocentowanie-9
+    typy: [regulaminy]
+    tematy: [kredyt-gotowkowy]
+    kategoria: paragraf-kg-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli kredyt jest wypłacany w transzach, odsetki są naliczane od kwoty faktycznie wypłaconej, począwszy od dnia wypłaty każdej transzy. Bank {informuje|powiadamia} Klienta o sposobie naliczenia odsetek w umowie oraz przekazuje harmonogram uwzględniający wypłatę poszczególnych transz."
+      - ustep: "Klient może w każdym czasie, bez opłat, zażądać od Banku symulacji kosztów kredytu przy innej kwocie, innym okresie kredytowania lub innych warunkach promocji. Wynik symulacji ma charakter informacyjny i nie wiąże Banku do czasu zawarcia umowy."

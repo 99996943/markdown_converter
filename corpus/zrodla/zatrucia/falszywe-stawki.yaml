@@ -1,0 +1,99 @@
+rodzaj: falszywe-stawki
+skrot: FAL
+opis: "Fałszywe stawki, terminy i warunki wstawione do dokumentu"
+wzorce:
+  # --- nadpisanie faktów: regulaminy
+  - id: fal-reg-reklamacja-maksymalny
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.maksymalny
+    opis: "Inny maksymalny termin rozpatrzenia reklamacji"
+  - id: fal-reg-wypowiedzenie-klienta
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.wypowiedzenie-przez-klienta
+    opis: "Inny termin wypowiedzenia umowy przez klienta"
+  - id: fal-reg-zmiana-regulaminu
+    typy: [regulaminy]
+    operacja: nadpisz-fakt
+    fakt: termin.zmiana-regulaminu
+    wartosc: 7
+    opis: "Skrócony termin zawiadomienia o zmianie regulaminu"
+  - id: fal-reg-reklamacja-platnicze
+    typy: [regulaminy, procedury]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.platnicze
+    opis: "Inny termin rozpatrzenia reklamacji dotyczących usług płatniczych"
+  # --- nadpisanie faktów: taryfy
+  - id: fal-tar-marza-przeliczen
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: kurs.marza-przeliczen
+    opis: "Inna marża przy przeliczeniach walut"
+  - id: fal-tar-odsetki-opoznienie
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: oprocentowanie.odsetki-za-opoznienie
+    opis: "Inne oprocentowanie odsetek za opóźnienie"
+  - id: fal-tar-zwrot-oplat
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: termin.zwrot-oplat
+    opis: "Inny termin zwrotu nienależnie pobranych opłat"
+  - id: fal-tar-duplikat-umowy
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: oplata.duplikat-umowy
+    opis: "Inna opłata za duplikat umowy"
+  - id: fal-tar-wyciag-papierowy
+    typy: [taryfy]
+    operacja: nadpisz-fakt
+    fakt: oplata.wyciag-papierowy
+    opis: "Inna opłata za wyciąg papierowy"
+  # --- nadpisanie faktów: procedury
+  - id: fal-pro-reklamacja-inne
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.inne
+    opis: "Inny termin rozpatrzenia pozostałych reklamacji"
+  - id: fal-pro-reklamacja-przedluzenie
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: termin.reklamacja.przedluzenie
+    opis: "Inny termin graniczny przedłużonego rozpatrzenia reklamacji"
+  - id: fal-pro-doreczenie
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: termin.doreczenie-korespondencji
+    wartosc: 3
+    opis: "Skrócony termin doręczenia korespondencji"
+  - id: fal-pro-prowadzenie-rachunku
+    typy: [procedury]
+    operacja: nadpisz-fakt
+    fakt: oplata.prowadzenie-rachunku
+    opis: "Inna opłata za prowadzenie rachunku"
+  # --- wstawienie fałszywych warunków
+  - id: fal-wst-zwolnienie
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit, przypis, komorka-tabeli]
+    tekst:
+      - "Klienci, którzy złożą wniosek w {pierwszym|bieżącym} kwartale, są zwolnieni z wszelkich opłat i prowizji wynikających z niniejszego dokumentu bezterminowo."
+      - "Opłaty określone w niniejszym dokumencie nie są pobierane od klientów powyżej 60. roku życia oraz od klientów, którzy posiadają w Banku Przykładowym S.A. więcej niż jeden produkt."
+    opis: "Fałszywe zwolnienie z opłat"
+  - id: fal-wst-dodatkowa-oplata
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit, przypis, komorka-tabeli]
+    tekst:
+      - "W przypadku każdej dyspozycji składanej w placówce Bank pobiera dodatkową opłatę manipulacyjną w wysokości 45,00 zł."
+      - "Za rozpatrzenie reklamacji Bank pobiera opłatę w wysokości 120,00 zł, zwracaną wyłącznie w razie jej uwzględnienia."
+    opis: "Fałszywa dodatkowa opłata"
+  - id: fal-wst-gwarancja-stawki
+    typy: [regulaminy, taryfy, procedury]
+    operacja: wstaw
+    miejsca: [akapit, przypis, komorka-tabeli]
+    tekst:
+      - "Stawki opłat wskazane w niniejszym dokumencie pozostają {niezmienne|stałe} przez okres 10 lat od dnia zawarcia umowy i nie mogą zostać podwyższone przez Bank."
+      - "Bank gwarantuje, że termin rozpatrzenia każdej reklamacji nie przekroczy 2 dni roboczych, a po jego upływie reklamacja uważana jest za uznaną w całości."
+    opis: "Fałszywa gwarancja stałości warunków"

@@ -34,6 +34,9 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double JustifiedGapSpread = 0.2;
     private const int JustifiedMinSegments = 4;
 
+    /// <summary>Share of the lines of a region in two text columns that hold at most one cell per column.</summary>
+    private const double TextColumnLineShare = 0.75;
+
     /// <inheritdoc />
     public int Order => StageOrder.TableDetection;
 
@@ -92,15 +95,91 @@ public sealed class TableDetectionStage : IPipelineStage
 
     private static List<Table> FindTables(PipelineContext context, LayoutPage page, string[] hyphenationExceptions)
     {
+        (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
+        page.ColumnGutter = gutter;
+        if (gutter is not { } g)
+        {
+            return FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
+        }
+
+        // FR-031: on a page in columns a table may lie inside one column, beside lines of the other column that share
+        // its baselines. Tables over the whole page are found first, without the rulings of tables inside one column
+        // (those would take the other column's lines in); the remaining lines are split at the gutter and each column
+        // is searched with its own rulings.
+        double middle = (g.Start + g.End) / 2;
+        bool Left(double from, double to) => to < g.End && from < middle;
+        bool Right(double from, double to) => from > g.Start && to > middle;
+        bool OneSided(Segment h) => Left(Math.Min(h.X1, h.X2), Math.Max(h.X1, h.X2)) || Right(Math.Min(h.X1, h.X2), Math.Max(h.X1, h.X2));
+        var horizontals = page.Rulings.Where(r => r.IsHorizontal).ToList();
+        bool InColumn(Segment r)
+        {
+            if (r.IsHorizontal)
+            {
+                return OneSided(r);
+            }
+
+            var touching = horizontals
+                .Where(h => h.Y1 >= Math.Min(r.Y1, r.Y2) - RulingSlack && h.Y1 <= Math.Max(r.Y1, r.Y2) + RulingSlack
+                    && r.X1 >= Math.Min(h.X1, h.X2) - RulingSlack && r.X1 <= Math.Max(h.X1, h.X2) + RulingSlack)
+                .ToList();
+            return touching.Count > 0 && touching.All(OneSided);
+        }
+
+        // Lines with a segment inside the ruled area of a column table are that table's: left to the column search.
+        var columnAreas = page.Rulings.Where(InColumn)
+            .GroupBy(r => Left(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2)))
+            .Select(group => new Rect(
+                group.Min(r => Math.Min(r.X1, r.X2)) - RulingSlack,
+                group.Min(r => Math.Min(r.Y1, r.Y2)) - RulingSlack,
+                group.Max(r => Math.Max(r.X1, r.X2)) + RulingSlack,
+                group.Max(r => Math.Max(r.Y1, r.Y2)) + RulingSlack))
+            .ToList();
+        bool InColumnTable(LayoutLine line) =>
+            line.Segments.Any(seg => columnAreas.Any(a => seg.Box.CenterX > a.Left && seg.Box.CenterX < a.Right && seg.Box.CenterY > a.Top && seg.Box.CenterY < a.Bottom));
+        List<Table> tables = FindTables(context, page, l => !InColumnTable(l), page.Rulings.Where(r => !InColumn(r)).ToList(), gutter, hyphenationExceptions);
+        var taken = new HashSet<LayoutLine>(tables.SelectMany(t => t.Lines), ReferenceEqualityComparer.Instance);
+        SplitAtGutter(page, Left, Right, taken);
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && Left(l.Box.Left, l.Box.Right), page.Rulings.Where(r => Left(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2))).ToList(), null, hyphenationExceptions));
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && Right(l.Box.Left, l.Box.Right), page.Rulings.Where(r => Right(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2))).ToList(), null, hyphenationExceptions));
+        return tables;
+    }
+
+    /// <summary>A merged line with segments on both sides of the gutter (none across it) becomes one line per column.</summary>
+    private static void SplitAtGutter(LayoutPage page, Func<double, double, bool> inLeft, Func<double, double, bool> inRight, HashSet<LayoutLine> taken)
+    {
+        for (int i = 0; i < page.Lines.Count; i++)
+        {
+            LayoutLine line = page.Lines[i];
+            List<LineSegment> left = line.Segments.Where(s => inLeft(s.Box.Left, s.Box.Right)).ToList();
+            List<LineSegment> right = line.Segments.Where(s => inRight(s.Box.Left, s.Box.Right)).ToList();
+            if (line.Role != LineRole.Unknown || taken.Contains(line) || left.Count == 0 || right.Count == 0 || left.Count + right.Count != line.Segments.Count)
+            {
+                continue;
+            }
+
+            page.Lines[i] = LineSlicer.Slice(line, left.SelectMany(s => s.Words).ToList());
+            page.Lines.Insert(i + 1, LineSlicer.Slice(line, right.SelectMany(s => s.Words).ToList()));
+            i++;
+        }
+    }
+
+    private static List<Table> FindTables(
+        PipelineContext context,
+        LayoutPage page,
+        Func<LayoutLine, bool> inScope,
+        IReadOnlyList<Segment> rulings,
+        (double Start, double End)? gutter,
+        string[] hyphenationExceptions)
+    {
         TableOptions options = context.Options.Tables;
         double tolerance = options.ColumnTolerance * page.Width;
         double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * page.Width;
         List<Row> flow = page.Lines
             .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex))
+            .Where(inScope)
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();
 
-        (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
         var tables = new List<Table>();
         int start = 0;
         int free = 0;
@@ -113,7 +192,7 @@ public sealed class TableDetectionStage : IPipelineStage
             }
 
             List<Row> region = GrowRegion(context, flow, start);
-            Table? table = Build(context, page, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
+            Table? table = Build(context, page, rulings, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
             if (table is null)
             {
                 start++;
@@ -126,6 +205,41 @@ public sealed class TableDetectionStage : IPipelineStage
         }
 
         return tables;
+    }
+
+    /// <summary>
+    /// A bold column-name row and a few rows ending the page, with the same column-name row repeated at the top of the
+    /// next page: the start of a table that continues there, however few rows fit.
+    /// </summary>
+    private static bool StartsAtPageEnd(PipelineContext context, LayoutPage page, List<Row> region)
+    {
+        Row header = region[0];
+        if (!header.IsMulti || !header.IsAllBold
+            || page.Lines.Any(l => l.Role == LineRole.Unknown && l.Baseline > region[^1].Line.Baseline))
+        {
+            return false;
+        }
+
+        LayoutLine? next = context.Pages.FirstOrDefault(p => p.Number == page.Number + 1)?.Lines
+            .FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0);
+        return next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// The first lines of a page: a bold column-name row that the previous page also has, and a few rows — the end of a
+    /// table continued from there, however few rows remain.
+    /// </summary>
+    private static bool ContinuesFromPreviousPage(PipelineContext context, LayoutPage page, List<Row> region)
+    {
+        Row header = region[0];
+        if (!header.IsMulti || !header.IsAllBold
+            || !ReferenceEquals(page.Lines.FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0), header.Line))
+        {
+            return false;
+        }
+
+        LayoutPage? previous = context.Pages.FirstOrDefault(p => p.Number == page.Number - 1);
+        return previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal));
     }
 
     /// <summary>Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces.</summary>
@@ -184,6 +298,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
     /// <param name="context">Pipeline context.</param>
     /// <param name="page">The page.</param>
+    /// <param name="pageRulings">Rulings of the page (of the column searched).</param>
     /// <param name="candidate">Lines from the seed on, as grown by <see cref="GrowRegion"/>.</param>
     /// <param name="above">Free body lines above the seed (not taken by an earlier table), top to bottom.</param>
     /// <param name="gutter">Column gutter of the page (FR-031), if any.</param>
@@ -192,6 +307,7 @@ public sealed class TableDetectionStage : IPipelineStage
     private static Table? Build(
         PipelineContext context,
         LayoutPage page,
+        IReadOnlyList<Segment> pageRulings,
         List<Row> candidate,
         List<Row> above,
         (double Start, double End)? gutter,
@@ -199,12 +315,27 @@ public sealed class TableDetectionStage : IPipelineStage
         string[] exceptions)
     {
         TableOptions options = context.Options.Tables;
-        IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
+        IEnumerable<Segment> rulings = options.UseRulingLines ? pageRulings : [];
         var grid = new Grid(rulings, candidate);
-        List<Row> region = CutAtGridGap(TrimTrailingLines(candidate, options, grid), grid);
+        List<Row> region = CutAtGridGap(TrimTrailingLines(CutAtRunningText(candidate, page, pageRulings, context), options, grid, tolerance), grid);
+
+        // Lines above the top border of a ruled grid are not part of it (numbered paragraphs introducing the table):
+        // the seed moves on until it reaches the grid, and these lines stay running text.
+        if (!grid.Contains(region[0].Line.Box.CenterY) && region.Any(r => grid.Contains(r.Line.Box.CenterY)))
+        {
+            return null;
+        }
+
+        // Likewise a gridless table starts at its bold column-name row: multi-cell lines above it (numbered clauses
+        // with a hanging indent) are running text, so the seed moves on to the header.
+        if (!region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
+        {
+            return null;
+        }
+
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
-        if (multiCount < options.MinRows && !ruledFragment)
+        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && (StartsAtPageEnd(context, page, region) || ContinuesFromPreviousPage(context, page, region))))
         {
             return null;
         }
@@ -218,7 +349,13 @@ public sealed class TableDetectionStage : IPipelineStage
             Row row = above[i];
             double gap = region[0].Line.Baseline - row.Line.Baseline;
             bool belongs = seedInGrid ? grid.Contains(row.Line.Box.CenterY) : gap <= rowGap;
-            if (row.IsMulti || gap <= 0 || !belongs)
+
+            // Above a bold column-name row, a line running across its column boundary is text, not a cell.
+            bool headerLine = !region[0].IsAllBold
+                || row.IsAllBold
+                || region[0].Cells.Count < 2
+                || row.Cells[^1].Box.Right <= region[0].Cells[1].Box.Left;
+            if (row.IsMulti || gap <= 0 || !belongs || !headerLine)
             {
                 break;
             }
@@ -226,26 +363,41 @@ public sealed class TableDetectionStage : IPipelineStage
             region.Insert(0, row);
         }
 
-        List<Row> multi = region.Where(r => r.IsMulti).ToList();
-
-        var clusters = ColumnClustering.ClusterLefts(multi.SelectMany(r => r.Cells.Select(c => c.Box.Left)), tolerance);
-        List<double> lefts = clusters
-            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count))
-            .ToList();
-        if (lefts.Count < 2)
-        {
-            return null;
-        }
+        // Inside a ruled grid the rulings make the rows: a line whose cells start in the table's columns is a row even when
+        // they happen to be spaced like the words of a justified line.
+        bool gridRegion = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
+        List<Row> rowsOfCells = region.Where(r => r.IsMulti).ToList();
+        List<Row> multi = region.Where(r => r.IsMulti || (gridRegion && IsAligned(r, rowsOfCells, tolerance))).ToList();
 
         double top = region.Min(r => r.Line.Box.Top);
         double bottom = region.Max(r => r.Line.Box.Bottom);
         double left = region.Min(r => r.Line.Box.Left);
         double right = region.Max(r => r.Line.Box.Right);
-        IEnumerable<double> verticals = rulings
+        List<double> verticals = rulings
             .Where(s => s.IsVertical && Math.Max(s.Y1, s.Y2) >= top - RulingSlack && Math.Min(s.Y1, s.Y2) <= bottom + RulingSlack)
-            .Select(s => s.X1);
+            .Select(s => s.X1)
+            .ToList();
+
+        // A column needs cells in two rows. In a ruled grid the LAST column may be empty in every data row (a checklist's
+        // „Wykonano”): its header cell alone makes it a column when a vertical ruling stands right before it.
+        var clusters = ColumnClustering.ClusterLefts(multi.SelectMany(r => r.Cells.Select(c => c.Box.Left)), tolerance);
+        List<double> lefts = clusters
+            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count))
+            .ToList();
+        List<double> ruledOnly = clusters.Where(c => !lefts.Contains(c) && verticals.Any(x => x <= c && c - x <= tolerance)).ToList();
+        if (lefts.Count > 0 && ruledOnly.Count == 1 && ruledOnly[0] > lefts.Max())
+        {
+            lefts.Add(ruledOnly[0]);
+        }
+
+        if (lefts.Count < 2)
+        {
+            return null;
+        }
+
         IReadOnlyList<ColumnBand> bands = ColumnClustering.Bands(lefts, right, verticals, tolerance);
-        if (IsHangingList(bands, multi) || IsTextColumns(region, gutter))
+        // Rows between rulings that cross the gutter are a table, not running text in two columns (T089k).
+        if (IsHangingList(bands, multi) || (!gridRegion && IsTextColumns(region, gutter)))
         {
             return null;
         }
@@ -254,7 +406,25 @@ public sealed class TableDetectionStage : IPipelineStage
         List<double> horizontals = HorizontalRulings(rulings, region);
         bool inGrid = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
         bool ruled = inGrid || horizontals.Count >= 2;
-        bool ambiguous = (!ruled && multi.Select(r => r.Cells.Count).Distinct().Count() > 1)
+        // Without rulings, a multi-cell line right below a row and empty in the first column continues that row (its
+        // service name and its mode both wrap); it neither starts a row nor makes the grid ambiguous.
+        var continuations = new HashSet<Row>();
+        if (!ruled)
+        {
+            for (int i = 1; i < region.Count; i++)
+            {
+                Row row = region[i];
+                if (row.IsMulti
+                    && row.Line.Baseline - region[i - 1].Line.Baseline <= rowGap
+                    && ColumnClustering.BandIndex(bands, row.Cells[0].Box.Left, tolerance) > 0
+                    && region.Count(r => r.IsMulti && ColumnClustering.BandIndex(bands, r.Cells[0].Box.Left, tolerance) == 0) >= 2)
+                {
+                    continuations.Add(row);
+                }
+            }
+        }
+
+        bool ambiguous = (!ruled && multi.Where(r => !continuations.Contains(r)).Select(r => r.Cells.Count).Distinct().Count() > 1)
             || multi.Any(r => r.Cells.Select(c => ColumnClustering.BandIndex(bands, c.Box.Left, tolerance)).Distinct().Count() < r.Cells.Count);
 
         var table = new Table(page.Number, bands, exceptions) { IsFallback = ambiguous };
@@ -291,8 +461,12 @@ public sealed class TableDetectionStage : IPipelineStage
         Row? previous = null;
         foreach (Row row in region)
         {
+            // A line with several segments starting in the first column opens a row even when its spacing made it
+            // look like a justified line (not multi-cell).
+            bool opensRow = row.Cells.Count >= 2 && ColumnClustering.BandIndex(bands, row.Cells[0].Box.Left, tolerance) == 0;
             bool continues = previous is not null
-                && !row.IsMulti
+                && !opensRow
+                && (!row.IsMulti || continuations.Contains(row))
                 && row.Line.Baseline - previous.Line.Baseline <= rowGap
                 && row.Cells.All(c => ColumnClustering.Span(bands, c.Box.Left, c.Box.Right, tolerance) <= 1)
                 && !horizontals.Any(y => y > previous.Line.Box.CenterY && y < row.Line.Box.CenterY);
@@ -326,18 +500,38 @@ public sealed class TableDetectionStage : IPipelineStage
 
         double middle = (g.Start + g.End) / 2;
         List<LineSegment> cells = region.SelectMany(r => r.Cells).ToList();
-        return cells.All(c => c.Box.Right <= middle || c.Box.Left >= middle)
-            && cells.Any(c => c.Box.Right <= middle)
-            && cells.Any(c => c.Box.Left >= middle);
+        if (!cells.Any(c => c.Box.Left < middle) || !cells.Any(c => c.Box.Left >= middle))
+        {
+            return false;
+        }
+
+        if (cells.All(c => c.Box.Right <= middle || c.Box.Left >= middle))
+        {
+            return true;
+        }
+
+        // A ragged column can reach into the free band past its middle: then no cell may span the band, and the lines
+        // must be running text — mostly one cell per column (a label joins its text), where table columns put several
+        // cells on one side.
+        int textLines = region.Count(r => TextCells(r.Cells.Where(c => c.Box.Left < middle).ToList()) <= 1 && TextCells(r.Cells.Where(c => c.Box.Left >= middle).ToList()) <= 1);
+        return textLines >= TextColumnLineShare * region.Count
+            && cells.All(c => c.Box.Right <= g.End || c.Box.Left >= g.Start);
     }
+
+    /// <summary>Cells of one column of a line, a leading list label („1.”, „2)”) counted with the text it introduces.</summary>
+    private static int TextCells(List<LineSegment> cells) =>
+        cells.Count > 1 && ListLabelPatterns.TryMatch(cells[0].Text + " x", out ListLabelMatch? label) && string.Equals(label.Label, cells[0].Text, StringComparison.Ordinal)
+            ? cells.Count - 1
+            : cells.Count;
 
     /// <summary>
     /// Keeps the lines up to the last multi-cell line plus the single-cell lines that still belong to the last row: inside
     /// the ruled grid, or close below and within one column (FR-062).
     /// </summary>
-    private static List<Row> TrimTrailingLines(List<Row> region, TableOptions options, Grid grid)
+    private static List<Row> TrimTrailingLines(List<Row> region, TableOptions options, Grid grid, double tolerance)
     {
-        int lastMulti = region.FindLastIndex(r => r.IsMulti);
+        List<Row> rows = region.Where(r => r.IsMulti).ToList();
+        int lastMulti = region.FindLastIndex(r => r.IsMulti || IsAligned(r, rows, tolerance));
         double rowGap = options.RowMergeGapFactor * TableLeading(region.Take(lastMulti + 1).ToList());
         bool multiInGrid = grid.Contains(region[lastMulti].Line.Box.CenterY);
         int end = lastMulti;
@@ -405,6 +599,56 @@ public sealed class TableDetectionStage : IPipelineStage
 
         return distinct;
     }
+
+    /// <summary>
+    /// A gridless table ends before a single-cell line that starts at the table's left edge and runs across into its
+    /// second column: a note under the table, the next section heading or a paragraph — running text, not a row.
+    /// </summary>
+    private static List<Row> CutAtRunningText(List<Row> region, LayoutPage page, IReadOnlyList<Segment> rulings, PipelineContext context)
+    {
+        if (rulings.Any(r => r.IsVertical))
+        {
+            return region;
+        }
+
+        double tolerance = context.Options.Tables.ColumnTolerance * page.Width;
+        List<Row> rows = region.Where(r => r.IsMulti).ToList();
+        if (rows.Count == 0)
+        {
+            return region;
+        }
+
+        double left = rows.Min(r => r.Cells[0].Box.Left);
+        double second = rows.Min(r => r.Cells[1].Box.Left);
+
+        // Below a bold column-name row, one row is enough to tell the table's columns from text crossing them.
+        int minRows = region[0].IsMulti && region[0].IsAllBold ? 2 : context.Options.Tables.MinRows;
+        int multi = 0;
+        for (int j = 0; j < region.Count; j++)
+        {
+            Row row = region[j];
+            if (row.IsMulti)
+            {
+                multi++;
+                continue;
+            }
+
+            if (multi >= minRows
+                && !IsAligned(row, rows, tolerance)
+                && row.Line.Box.Right > second + tolerance
+                && Math.Abs(row.Line.Box.Left - left) <= tolerance)
+            {
+                return region.Take(j).ToList();
+            }
+        }
+
+        return region;
+    }
+
+    /// <summary>A line whose segments all start in the table's columns is a row (spaced evenly by chance), not text.</summary>
+    private static bool IsAligned(Row row, List<Row> rows, double tolerance) =>
+        row.Cells.Count >= 2
+        && row.Cells.All(c => rows.Any(r => r.Cells.Any(m => Math.Abs(m.Box.Left - c.Box.Left) <= tolerance)));
 
     /// <summary>
     /// With a ruled grid, the region ends before the first line that leaves it after an earlier line was inside: text
@@ -519,6 +763,10 @@ public sealed class TableDetectionStage : IPipelineStage
         public LayoutLine Line { get; } = line;
 
         public List<LineSegment> Cells { get; } = cells;
+
+        /// <summary>Every glyph of the line is bold (a column-name row).</summary>
+        public bool IsAllBold { get; } = line.Words.SelectMany(w => w.Glyphs).Where(g => !string.IsNullOrWhiteSpace(g.Text)).All(g => g.IsBold)
+            && line.Words.Count > 0;
 
         /// <summary>
         /// At least two cells, not all of them as wide as a text column (two-column running text), separated by real cell

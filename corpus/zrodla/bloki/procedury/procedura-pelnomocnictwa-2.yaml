@@ -1,0 +1,86 @@
+bloki:
+  - id: procedura-pelnomocnictwa-przyjecie-kroki
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Określ} rodzaj przedłożonego pełnomocnictwa i cel, w jakim Klient chce z niego skorzystać."
+            podkroki:
+              - tekst: "Zapytaj mocodawcę lub pełnomocnika, jakich czynności ma dotyczyć umocowanie: dysponowania rachunkiem, lokatą, kartą, bankowością elektroniczną czy zawarcia pojedynczej umowy."
+              - tekst: "Zakwalifikuj dokument jako ogólne, rodzajowe, szczególne albo jednorazowe, według definicji z punktu 4 procedury; w razie wątpliwości {opieraj się na treści|kieruj się treścią} dokumentu, a nie jego tytułem."
+              - tekst: "Pełnomocnictwa ogólnego nie przyjmuj jako podstawy do dysponowania środkami na rachunku, jeżeli nie wymienia ono wprost takiej czynności."
+          - tekst: "{Sprawdź|Oceń} formę pełnomocnictwa pod kątem rodzaju czynności, do której ma ono upoważniać."
+            podkroki:
+              - tekst: "Dla dyspozycji rachunkiem i lokatą wymagaj formy pisemnej z podpisem mocodawcy złożonym w obecności pracownika Banku na formularzu F-PEŁ-01 albo z podpisem poświadczonym notarialnie."
+              - tekst: "Dla umowy kredytu hipotecznego i ustanowienia zabezpieczenia na nieruchomości wymagaj wyłącznie aktu notarialnego."
+              - tekst: "Dla kart kredytowych oraz zmiany limitów powyżej {{fakt:pelnomocnictwo.limit.druga-weryfikacja}} wymagaj pełnomocnictwa szczególnego z podpisem poświadczonym notarialnie."
+          - tekst: "Zbadaj {zakres|treść} umocowania i ustal, czy jest jednoznaczny."
+            podkroki:
+              - tekst: "Sprawdź, czy dokument wskazuje imię, nazwisko, numer PESEL lub datę urodzenia mocodawcy i pełnomocnika oraz rachunki lub produkty objęte umocowaniem."
+              - tekst: "Zwróć uwagę na ograniczenia: kwotowe, terminowe, dotyczące kanałów (placówka, bankowość elektroniczna) oraz zakaz udzielania dalszych pełnomocnictw."
+              - tekst: "Gdy pełnomocnictwo zawiera postanowienia sprzeczne lub niejasne, nie przyjmuj go i poproś Klienta o doprecyzowanie; kopię i uwagi {dołącz|załącz} do karty weryfikacji."
+          - tekst: "Poinformuj Klienta o zasadach i kosztach związanych z pełnomocnictwem."
+            podkroki:
+              - tekst: "Poinformuj, że opłata za przyjęcie pełnomocnictwa do rachunku osobistego wynosi zgodnie z Taryfą {{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}, o ile pełnomocnictwo składane jest w placówce na formularzu Banku."
+              - tekst: "Zwróć uwagę, że mocodawca odpowiada za działania pełnomocnika jak za własne, a pełnomocnictwo pozostaje skuteczne wobec Banku do chwili otrzymania wiadomości o jego odwołaniu lub wygaśnięciu."
+              - tekst: "Poinformuj o możliwości ustanowienia nie więcej niż {{fakt:pelnomocnictwo.limit.liczba-pelnomocnikow}} do jednego rachunku, chyba że kierownik placówki wyrazi zgodę na większą liczbę."
+
+  - id: procedura-pelnomocnictwa-przyjecie-opc-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Przy składaniu pełnomocnictwa w placówce {przeprowadź|wykonaj} czynności w obecności mocodawcy."
+            podkroki:
+              - tekst: "Poproś mocodawcę o okazanie dokumentu tożsamości i porównaj dane z danymi w systemie; różnice odnotuj i wyjaśnij przed dalszymi czynnościami."
+              - tekst: "Wydrukuj formularz F-PEŁ-01 z modułu pełnomocnictw, uzupełnij dane pełnomocnika i zakres umocowania zgodnie z oświadczeniem mocodawcy."
+              - tekst: "Poproś mocodawcę o podpisanie formularza w Twojej obecności; podpis złożony poza obecnością pracownika uznaje się za niezłożony."
+          - tekst: "Zapoznaj mocodawcę z treścią oświadczeń zawartych w formularzu."
+            podkroki:
+              - tekst: "Wyjaśnij, że pełnomocnik nie może składać oświadczeń o wypowiedzeniu umowy rachunku ani ustanawiać dalszych pełnomocników, o ile formularz nie stanowi inaczej."
+              - tekst: "Poinformuj, że pełnomocnictwo może zostać w każdym czasie odwołane i że zrzeczenie się prawa odwołania nie wywołuje skutków wobec Banku."
+          - tekst: "Wręcz mocodawcy kopię formularza i odnotuj jej wydanie w karcie weryfikacji."
+
+  - id: procedura-pelnomocnictwa-przyjecie-opc-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Przy pełnomocnictwie jednorazowym {postępuj|działaj} {zgodnie z poniższymi zasadami|według opisu poniżej}."
+            podkroki:
+              - tekst: "Upewnij się, że dokument wskazuje jedną konkretną dyspozycję lub czynność, kwotę maksymalną i termin jej wykonania."
+              - tekst: "Przyjmij pełnomocnictwo jednorazowe tylko wtedy, gdy zostanie wykorzystane w ciągu {{fakt:pelnomocnictwo.termin.jednorazowe-waznosc}} od daty jego sporządzenia; po upływie tego okresu poproś o nowy dokument."
+              - tekst: "Nie wpisuj pełnomocnictwa jednorazowego do modułu pełnomocnictw jako trwałego; zarejestruj je z datą końca ważności równą dacie wykonania dyspozycji."
+          - tekst: "Po wykonaniu dyspozycji {wyłącz|zamknij} pełnomocnictwo w systemie i dołącz dowód wykonania do akt."
+            podkroki:
+              - tekst: "Wpisz w polu uwag numer dyspozycji i datę realizacji."
+              - tekst: "Jeżeli dyspozycja nie została wykonana w całości, odnotuj kwotę pozostałą do wykorzystania i nie zamykaj pełnomocnictwa przed upływem terminu jego ważności."
+
+  - id: procedura-pelnomocnictwa-przyjecie-opc-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "W razie braków w dokumentacji {wezwij|poproś} Klienta o ich uzupełnienie."
+            podkroki:
+              - tekst: "Sporządź wykaz brakujących dokumentów i przekaż go Klientowi na papierze albo w bankowości elektronicznej."
+              - tekst: "Wyznacz termin uzupełnienia wynoszący {{fakt:pelnomocnictwo.termin.uzupelnienie-brakow}} od dnia przekazania wykazu."
+              - tekst: "Po bezskutecznym upływie terminu zamknij sprawę w systemie z adnotacją o braku uzupełnienia i poinformuj Klienta, że może złożyć nowy wniosek."
+          - tekst: "Nie przyjmuj do akt dokumentów w postaci kopii niepotwierdzonych, jeżeli przepisy lub procedura wymagają oryginału lub odpisu."
+
+  - id: procedura-pelnomocnictwa-przyjecie-opc-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Zbadaj, czy osoba wskazana jako pełnomocnik {może działać|jest uprawniona do działania} w tym charakterze."
+            podkroki:
+              - tekst: "Pełnomocnikiem może być osoba fizyczna mająca co najmniej ograniczoną zdolność do czynności prawnych; do dysponowania środkami na rachunku wymagaj pełnoletniości pełnomocnika."
+              - tekst: "Nie przyjmuj jako pełnomocnika osoby, wobec której w systemie występuje oznaczenie dotyczące zakazu prowadzenia działalności bankowej lub inne ograniczenie wskazane przez komórkę „{{fakt:jednostka.bezpieczenstwo}}”."
+              - tekst: "Zwróć uwagę na sytuację, w której pełnomocnikiem ma zostać pracownik Banku — wymaga to zgody komórki „{{fakt:jednostka.zgodnosc}}” ze względu na ryzyko konfliktu interesów."
+          - tekst: "Gdy mocodawca ustanawia pełnomocnika, który jest jednocześnie współposiadaczem rachunku, wyjaśnij, że pełnomocnictwo nie ogranicza jego uprawnień jako współposiadacza."

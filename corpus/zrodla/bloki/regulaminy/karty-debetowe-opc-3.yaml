@@ -1,0 +1,215 @@
+bloki:
+  - id: karty-debetowe-opc-saldo-blokady
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta {umożliwia|pozwala na} dysponowanie wyłącznie środkami dostępnymi na rachunku, czyli saldem rachunku pomniejszonym o blokady środków z tytułu autoryzowanych, a jeszcze nierozliczonych transakcji kartowych, o zajęcia i inne ograniczenia w dysponowaniu środkami oraz o niezapłacone opłaty i prowizje wymagalne w dniu transakcji."
+      - ustep: "Jeżeli w wyniku rozliczenia transakcji saldo rachunku zostanie przekroczone, w szczególności z powodu zmiany kursu waluty między autoryzacją a rozliczeniem albo z powodu rozliczenia transakcji, której akceptant nie przekazał do rozliczenia w terminie, powstaje zadłużenie przeterminowane. Posiadacz jest obowiązany spłacić je niezwłocznie, a Bank:"
+        punkty:
+          - "nalicza od niego odsetki za opóźnienie w wysokości {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym;"
+          - "może wstrzymać możliwość wykonywania dalszych transakcji kartą do czasu spłaty zadłużenia;"
+          - "może pobrać opłatę za wezwanie do zapłaty w wysokości {{fakt:oplata.upomnienie}}."
+      - ustep: "Posiadacz {sprawdza|może sprawdzić} dostępne środki oraz zablokowane kwoty w bankowości elektronicznej, w bankomacie lub na Infolinii. Bank zwalnia blokadę środków po rozliczeniu transakcji albo po upływie okresu wskazanego w Regulaminie, jeżeli akceptant nie przekazał transakcji do rozliczenia."
+
+  - id: karty-debetowe-opc-obowiazki-banku
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {zobowiązuje się|jest zobowiązany} do:"
+        punkty:
+          - "zapewnienia Użytkownikowi możliwości zgłoszenia utraty, kradzieży lub nieuprawnionego użycia karty przez całą dobę;"
+          - "zablokowania karty niezwłocznie po przyjęciu zgłoszenia;"
+          - "zapewnienia, aby indywidualne dane uwierzytelniające nie były dostępne osobom innym niż Użytkownik;"
+          - "powstrzymania się od wysyłania niezamówionych kart, chyba że wydawana karta zastępuje kartę dotychczasową;"
+          - "udostępniania Użytkownikowi, na jego żądanie, dokumentacji dotyczącej transakcji kartowej przez okres 5 lat od jej wykonania;"
+          - "stosowania środków bezpieczeństwa adekwatnych do ryzyka, w tym mechanizmów monitorowania i silnego uwierzytelniania."
+      - ustep: "Bank ponosi ryzyko związane z wysłaniem do Użytkownika karty lub środków umożliwiających jej użycie, w szczególności PIN-u. Jeżeli przesyłka z kartą lub PIN-em nie dotrze do adresata, a Użytkownik niezwłocznie zawiadomi o tym Bank, Bank anuluje taką kartę i wyda nową bez pobierania opłat."
+      - ustep: "Bank {informuje|powiadamia} Klientów o aktualnych zagrożeniach związanych z użyciem kart, w tym o nowych metodach oszustw, za pomocą komunikatów w bankowości elektronicznej i na stronie {{fakt:bank.strona}}."
+
+  - id: karty-debetowe-opc-odbior-placowka
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Posiadacz wybrał odbiór karty w placówce, Bank powiadamia go o gotowości karty do odbioru wiadomością w bankowości elektronicznej lub SMS-em. Karta jest przechowywana w placówce przez {{fakt:termin.karta-debetowa.aktywacja}} od dnia powiadomienia, po upływie którego jest niszczona."
+      - ustep: "Przy odbiorze karty pracownik Banku weryfikuje tożsamość Użytkownika na podstawie ważnego dokumentu tożsamości. Karta nie jest wydawana osobie trzeciej, nawet jeśli posiada ona pełnomocnictwo do rachunku, chyba że pełnomocnictwo wyraźnie upoważnia do odbioru karty, a Użytkownikiem jest sam pełnomocnik."
+      - ustep: "Użytkownik potwierdza odbiór karty własnoręcznym podpisem na dokumencie przekazania albo w formie elektronicznej na urządzeniu w placówce. W momencie odbioru Użytkownik {może|ma możliwość} ustalić PIN, a pracownik Banku nie ma wglądu w jego treść. Karta wydana w placówce może być aktywowana na miejscu."
+      - ustep: "Niedostarczenie karty w sposób wskazany we wniosku z przyczyn niezależnych od Banku, w szczególności z powodu niepodjęcia przesyłki przez Użytkownika, nie rodzi odpowiedzialności Banku. Ponowne wysłanie karty podlega opłacie według Taryfy."
+
+  - id: karty-debetowe-opc-kilku-uzytkownikow
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-uzytkownik
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do rachunku Posiadacza może zostać wydanych kilka kart różnym Użytkownikom. Każdy z nich używa własnej karty, a transakcje ze wszystkich kart obciążają ten sam rachunek. Dostępne środki i limity są współdzielone, chyba że Posiadacz ustalił dla poszczególnych kart odrębne limity."
+      - ustep: "Posiadacz {odpowiada|ponosi odpowiedzialność} za działania wszystkich Użytkowników. Posiadacz zapewnia, że każdy Użytkownik zapoznał się z Regulaminem przed pierwszym użyciem karty, a Bank może zażądać potwierdzenia tego faktu."
+      - ustep: "Użytkownik niebędący Posiadaczem może:"
+        punkty:
+          - "sprawdzać historię transakcji wykonanych swoją kartą;"
+          - "zastrzegać swoją kartę oraz czasowo ją blokować;"
+          - "zmieniać PIN i limity swojej karty w granicach ustalonych przez Posiadacza;"
+          - tekst: "składać reklamacje dotyczące transakcji własną kartą, o ile Posiadacz nie zastrzegł sobie wyłączności w tym zakresie, przy czym:"
+            litery:
+              - "odpowiedź na reklamację Bank przekazuje Posiadaczowi;"
+              - "Użytkownik może otrzymać kopię odpowiedzi na swój wniosek."
+
+  - id: karty-debetowe-opc-platnosci-cykliczne
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik może wyrazić zgodę na cykliczne obciążanie karty, w szczególności za usługi abonamentowe. Zgoda jest udzielana akceptantowi, który zapisuje dane karty i inicjuje kolejne transakcje bez udziału Użytkownika. Pierwsza transakcja wymaga silnego uwierzytelnienia, a kolejne — o stałej kwocie i częstotliwości — mogą być przeprowadzane bez niego."
+      - ustep: "Użytkownik {odpowiada|ponosi odpowiedzialność} za anulowanie zgody w serwisie akceptanta przed rezygnacją z usługi lub wymianą karty. Samo zastrzeżenie karty nie zawsze powoduje zaprzestanie pobierania opłat, ponieważ akceptant może posługiwać się usługą aktualizacji danych kart oferowaną przez organizację płatniczą."
+      - ustep: "Użytkownik, który stwierdzi, że akceptant obciążył kartę po cofnięciu zgody, {zgłasza|powinien zgłosić} to Bankowi, dołączając dowód cofnięcia zgody. Bank może wszcząć procedurę zwrotną; do czasu jej zakończenia nie ponosi odpowiedzialności za zwrot środków, których nie otrzymał od akceptanta."
+      - ustep: "Na wniosek Użytkownika Bank blokuje obciążenia przez wskazanego akceptanta cyklicznego. Blokada nie wpływa na prawa i obowiązki wynikające z umowy zawartej między Użytkownikiem a akceptantem."
+
+  - id: karty-debetowe-opc-odrzucone
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Najczęstsze przyczyny odmowy autoryzacji transakcji kartą oraz zalecane przez Bank postępowanie przedstawia poniższa tabela:"
+      - tabela:
+          kolumny:
+            - naglowek: "Przyczyna odmowy"
+              waga: 2
+            - naglowek: "Postępowanie Użytkownika"
+              waga: 3
+          wiersze:
+            - ["Brak środków lub przekroczenie limitu", "Sprawdzić saldo i limity w bankowości elektronicznej; w razie potrzeby zmienić limit lub zasilić rachunek."]
+            - ["Karta zablokowana lub nieaktywna", "Aktywować kartę albo odblokować ją w bankowości elektronicznej; w razie zastrzeżenia — wystąpić o nową kartę."]
+            - ["Błędny PIN lub kod", "Użyć prawidłowego PIN-u; po zablokowaniu odczekać do jego odblokowania lub skontaktować się z Infolinią."]
+            - ["Brak silnego uwierzytelniania", "Potwierdzić transakcję w aplikacji mobilnej; w razie braku aplikacji skorzystać z innego sposobu uwierzytelniania."]
+            - ["Podejrzenie nadużycia", "Potwierdzić transakcję w odpowiedzi na komunikat Banku albo skontaktować się z Infolinią pod numerem {{fakt:kontakt.infolinia}}."]
+          siatka: true
+      - ustep: "Bank nie ponosi odpowiedzialności za szkody wynikające z odmowy autoryzacji transakcji, jeżeli odmowa była uzasadniona okolicznościami opisanymi w Regulaminie. Odrzucona transakcja {nie powoduje|nie wiąże się z} blokady środków ani opłat."
+
+  - id: karty-debetowe-opc-zaufani-akceptanci
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-autoryzacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik może dodać akceptanta do listy zaufanych odbiorców w bankowości elektronicznej, po potwierdzeniu dyspozycji silnym uwierzytelnianiem. Transakcje na rzecz tak wskazanych akceptantów mogą być autoryzowane bez dodatkowego potwierdzenia, o ile Bank nie stwierdzi podwyższonego ryzyka."
+      - ustep: "Bank {może|ma prawo} nie uwzględnić wskazania akceptanta, jeżeli ma wątpliwości co do jego wiarygodności lub jeżeli akceptant został wskazany jako podejrzany w danych posiadanych przez Bank. Usunięcie akceptanta z listy następuje niezwłocznie po złożeniu dyspozycji."
+      - ustep: "Użytkownik ponosi ryzyko transakcji realizowanych na rzecz akceptantów z listy zaufanych odbiorców, o ile Bank dochował należytej staranności; nie dotyczy to transakcji, w których akceptant został przejęty przez osoby trzecie, o czym Bank powziął wiadomość i nie powstrzymał się od autoryzacji."
+      - ustep: "Dodanie akceptanta do listy zaufanych odbiorców nie zwalnia Użytkownika z obowiązku sprawdzania historii rachunku i zgłaszania transakcji nieautoryzowanych w terminie {{fakt:termin.karta-debetowa.zgloszenie-nieautoryzowanej}}."
+
+  - id: karty-debetowe-opc-urzadzenia-noszone
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zblizeniowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartę można zarejestrować także w urządzeniach noszonych, takich jak zegarek lub opaska, które współpracują z portfelem mobilnym. Rejestracja wymaga uwierzytelnienia w aplikacji mobilnej Banku i spełnienia wymogów technicznych określonych na stronie {{fakt:bank.strona}}."
+      - ustep: "Płatności urządzeniem noszonym podlegają tym samym limitom i zasadom bezpieczeństwa co płatności telefonem. Użytkownik odblokowuje urządzenie noszone kodem lub cechą biometryczną; urządzenie, które zostało zdjęte z nadgarstka, {blokuje się|powinno się blokować} automatycznie, jeżeli funkcja ta jest obsługiwana przez producenta."
+      - ustep: "W razie utraty urządzenia noszonego Użytkownik {postępuje|powinien postąpić} zgodnie z zasadami dotyczącymi utraty urządzenia mobilnego. Dane karty są przechowywane w urządzeniu w postaci tokenu i nie są ujawniane akceptantowi."
+
+  - id: karty-debetowe-opc-wspolpraca-organy
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {współpracuje|współdziała} z organami ścigania i innymi uprawnionymi podmiotami w sprawach dotyczących nielegalnego użycia kart. W szczególności Bank udostępnia im dane o transakcjach kartowych w zakresie i na zasadach określonych przepisami prawa."
+      - ustep: "Bank nie ujawnia Użytkownikowi informacji, których udostępnienie mogłoby utrudnić postępowanie karne lub jest zabronione przepisami, w szczególności przepisami dotyczącymi przeciwdziałania praniu pieniędzy i finansowaniu terroryzmu."
+      - ustep: "Jeżeli w związku z postępowaniem organu publicznego rachunek lub karta zostały zablokowane, Bank {informuje|powiadamia} Posiadacza o fakcie blokady w zakresie, w jakim nie narusza to przepisów, i wskazuje organ, do którego można się zwrócić. Posiadacz nie może żądać od Banku zniesienia blokady dokonanej przez organ publiczny."
+
+  - id: karty-debetowe-opc-oszustwa
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-nieautoryzowane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Szczególnym przypadkiem są transakcje wykonane w następstwie oszustwa polegającego na wprowadzeniu Użytkownika w błąd (phishing, vishing, podszywanie się pod pracownika Banku lub instytucje publiczne). Jeżeli Użytkownik sam zainicjował lub potwierdził transakcję, nawet pod wpływem manipulacji, transakcja jest transakcją autoryzowaną."
+      - ustep: "Jeżeli Użytkownik został oszukany, a środki zostały przekazane na rzecz akceptanta lub odbiorcy działającego w złej wierze, Bank na wniosek Użytkownika {podejmuje|przeprowadza} czynności w celu ich odzyskania, w szczególności:"
+        punkty:
+          - "występuje do banku akceptanta lub odbiorcy z żądaniem zwrotu środków;"
+          - "przekazuje informacje o oszustwie organom ścigania;"
+          - "blokuje kartę i wydaje nową."
+      - ustep: "Bank nie gwarantuje odzyskania środków. Jeżeli Użytkownik naruszył obowiązki określone w Regulaminie, w szczególności ujawnił PIN lub dane uwierzytelniające osobie trzeciej, Bank może uznać, że do transakcji doszło wskutek rażącego niedbalstwa Użytkownika; ocena następuje w każdym przypadku indywidualnie, z uwzględnieniem okoliczności zdarzenia.[^1]"
+    przypisy:
+      1: "Bank prowadzi kampanię informacyjną dotyczącą aktualnych oszustw; materiały są dostępne na stronie {{fakt:bank.strona}}."
+
+  - id: karty-debetowe-opc-informacje-kursy
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waluty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kursy walut stosowane do przeliczeń transakcji kartowych Bank ogłasza w {{fakt:karta-debetowa.zrodlo-kursu}}, dostępnej w placówkach, w bankowości elektronicznej i na stronie {{fakt:bank.strona}}. Tabela jest aktualizowana w dni robocze, nie później niż do godziny {{fakt:kurs.godzina-tabeli}}."
+      - ustep: "W okresie między aktualizacjami tabeli Bank stosuje kurs z ostatniej aktualizacji. W przypadku gwałtownych zmian na rynku walutowym Bank {może|ma prawo} zaktualizować tabelę częściej, o czym informuje w bankowości elektronicznej."
+      - ustep: "Marża przeliczeniowa Banku wynosi {{fakt:kurs.marza-przeliczen}} i jest stała, o ile Taryfa nie stanowi inaczej. Zmiana wysokości marży następuje w trybie zmiany Regulaminu lub Taryfy."
+      - ustep: "Użytkownik może samodzielnie oszacować kurs rozliczenia transakcji na podstawie tabeli kursów i marży; faktyczny kurs zależy jednak od kursu ustalonego przez organizację płatniczą w dniu rozliczenia, który może się różnić od kursu w dniu transakcji."
+
+  - id: karty-debetowe-opc-tabela-oplat
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-oplaty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zestawienie wybranych opłat związanych z obsługą karty, obowiązujących w dniu wejścia w życie Regulaminu, przedstawia tabela. W razie rozbieżności między zestawieniem a {{ref:dokument:taryfa-karty}} {rozstrzygają|przeważają} postanowienia Taryfy."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność"
+              waga: 3
+            - naglowek: "Opłata"
+              waga: 1
+          wiersze:
+            - ["Wydanie karty", "{{fakt:oplata.karta-debetowa.wydanie}}"]
+            - ["Opłata miesięczna za kartę", "{{fakt:oplata.karta-debetowa.prowadzenie-miesieczna}}"]
+            - ["Wydanie karty w trybie pilnym", "{{fakt:oplata.karta-debetowa.wydanie-pilne}}"]
+            - ["Duplikat karty", "{{fakt:oplata.karta.wydanie-duplikatu}}"]
+            - ["Zastrzeżenie karty", "{{fakt:oplata.karta.zastrzezenie}}"]
+            - ["Wypłata w bankomacie obcym w kraju", "{{fakt:oplata.bankomat-obcy}}"]
+            - ["Wypłata w bankomacie za granicą", "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}"]
+          siatka: true
+      - ustep: "Wskazane kwoty są podane w złotych polskich i obejmują wszystkie opłaty pobierane przez Bank. Opłaty operatorów bankomatów i akceptantów nie są tu uwzględnione."
+
+  - id: karty-debetowe-opc-wygasniecie-rachunku
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-waznosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W przypadku rozwiązania umowy rachunku, do którego wydano kartę, umowa o kartę wygasa z tym samym dniem. Bank informuje Posiadacza o skutkach rozwiązania rachunku dla karty w wypowiedzeniu lub potwierdzeniu zamknięcia rachunku."
+      - ustep: "Do dnia rozwiązania umowy Posiadacz {powinien|jest obowiązany}:"
+        punkty:
+          - "zapewnić na rachunku środki na pokrycie transakcji nierozliczonych oraz opłat;"
+          - "wyłączyć cykliczne obciążenia karty u akceptantów;"
+          - "usunąć tokeny karty z urządzeń mobilnych, jeżeli Bank nie dezaktywował ich automatycznie;"
+          - "zwrócić kartę albo zniszczyć ją przez przecięcie chipa i paska magnetycznego."
+      - ustep: "Transakcje autoryzowane przed wygaśnięciem umowy, a rozliczone po tym dniu, obciążają rachunek Posiadacza, nawet jeśli rachunek został już zamknięty; w takim przypadku Posiadacz jest zobowiązany wpłacić środki w terminie wskazanym przez Bank. Bank {może|ma prawo} dochodzić takiej należności na zasadach ogólnych."
+
+  - id: karty-debetowe-opc-dane-transakcyjne
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W celu wykonania transakcji kartowej Bank przekazuje organizacji płatniczej, bankowi akceptanta i akceptantowi dane niezbędne do jej realizacji, w szczególności numer karty, datę ważności, kwotę i datę transakcji, oraz dane identyfikujące urządzenie. Przekazanie danych jest niezbędne do świadczenia usługi."
+      - ustep: "Dane o transakcjach kartowych Bank {wykorzystuje|przetwarza} również w celu:"
+        punkty:
+          - "wykrywania i zapobiegania nadużyciom;"
+          - "rozpatrywania reklamacji i dochodzenia roszczeń;"
+          - "wypełniania obowiązków wynikających z przepisów prawa, w szczególności przepisów o przeciwdziałaniu praniu pieniędzy;"
+          - "prowadzenia statystyk i analiz w formie nieumożliwiającej identyfikacji Klienta."
+      - ustep: "Szczegółowe zasady przetwarzania danych osobowych, w tym prawa osób, których dane dotyczą, i dane kontaktowe {{fakt:jednostka.iod}}, są określone w klauzuli informacyjnej Banku, dostępnej na stronie {{fakt:bank.strona}} oraz w placówkach. Kontakt z inspektorem ochrony danych jest możliwy pod adresem {{fakt:kontakt.email-iod}}."
+
+  - id: karty-debetowe-opc-rozdzielnosc
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: paragraf-karty-debetowe-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli którekolwiek z postanowień Regulaminu zostanie uznane przez sąd lub inny uprawniony organ za nieważne lub niewiążące, pozostałe postanowienia pozostają w mocy. W miejsce postanowienia nieważnego stosuje się odpowiedni przepis prawa, a jeżeli takiego brak — postanowienie najbardziej zbliżone do zamiaru stron, o ile nie narusza ono praw konsumenta."
+      - ustep: "Żadne postanowienie Regulaminu nie ogranicza uprawnień konsumenta wynikających z bezwzględnie obowiązujących przepisów prawa, w tym ustawy o prawach konsumenta {{ref:akt:dz-u-2020-287-prawa-konsumenta}}. W razie sprzeczności Regulaminu z takimi przepisami stosuje się przepisy."
+      - ustep: "Zrzeczenie się przez Bank wykonywania któregokolwiek uprawnienia wynikającego z Regulaminu w jednym przypadku nie oznacza zrzeczenia się go w innych przypadkach. Załączniki i aneksy do Regulaminu stanowią jego integralną część."

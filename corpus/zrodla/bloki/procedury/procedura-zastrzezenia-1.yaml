@@ -1,0 +1,132 @@
+bloki:
+  - id: zastrzezenia-cel
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Procedura {określa|ustala} jednolity sposób {przyjmowania i realizacji|postępowania przy przyjmowaniu i realizacji} zgłoszeń o utracie, kradzieży, przywłaszczeniu lub nieuprawnionym użyciu kart płatniczych i danych uwierzytelniających, {blokowania|zablokowania} kart {oraz|a także} dostępu do bankowości elektronicznej, a także {rozpatrywania|prowadzenia postępowania w sprawie} zgłoszeń dotyczących transakcji nieautoryzowanych."
+      - akapit: "Celem procedury jest {ograniczenie|zminimalizowanie} strat Klientów i Banku wynikających z nadużyć, {zapewnienie|gwarancja} dotrzymania terminów wynikających z przepisów — zob. {{ref:akt:dz-u-2024-30-uslugi-platnicze}} — {oraz|a także} zapewnienie spójności postępowania z postanowieniami dokumentów „{{ref:dokument:regulamin-kart-debetowych}}” i „{{ref:dokument:regulamin-kart-kredytowych}}”."
+
+  - id: zastrzezenia-zakres
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Procedura {obowiązuje|ma zastosowanie} w {placówkach|jednostkach sprzedaży} Banku, na Infolinii, w jednostkach „{{fakt:jednostka.obsluga-klienta}}” i „{{fakt:jednostka.centrum-monitorowania}}” {oraz|a także} w komórkach {Departamentu Operacji|operacyjnych} uczestniczących w obsłudze kart i bankowości elektronicznej."
+      - ustep: "Procedurą objęte są:"
+        punkty:
+          - "karty debetowe wydane do rachunków osobistych i firmowych {oraz|a także} karty kredytowe, w tym karty dodatkowe i karty użytkowników;"
+          - "tokeny kart zarejestrowane w aplikacjach płatności mobilnych;"
+          - "dostęp do bankowości elektronicznej i aplikacji mobilnej, {jeżeli|jeśli} istnieje podejrzenie przejęcia danych uwierzytelniających lub urządzenia zaufanego;"
+          - "zgłoszenia transakcji nieautoryzowanych, niewykonanych lub wykonanych nienależycie, dokonanych kartą lub za pośrednictwem bankowości elektronicznej."
+      - ustep: "Procedura nie obejmuje reklamacji dotyczących jakości usług, opłat i prowizji niezwiązanych z transakcją nieautoryzowaną ani sporów handlowych z akceptantem co do jakości towaru lub usługi — te sprawy {prowadzi się|rozpatruje się} według procedury reklamacyjnej Banku; {w razie|w przypadku} wątpliwości co do kwalifikacji zgłoszenia pracownik konsultuje się z jednostką „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: zastrzezenia-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - ustep: "**Pracownik placówki i konsultant Infolinii** {odpowiadają za|są odpowiedzialni za}:"
+        punkty:
+          - "przyjęcie zgłoszenia w każdej formie i o każdej porze, bez odmawiania z powodu braku właściwości lub godzin pracy placówki;"
+          - "weryfikację osoby zgłaszającej zgodnie z procedurami bezpieczeństwa;"
+          - "natychmiastowe zablokowanie karty lub dostępu w systemie centralnym {{fakt:system.zastrzezenia.cbs}} {oraz|a także} zarejestrowanie zgłoszenia w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}};"
+          - "przekazanie Klientowi informacji o skutkach zastrzeżenia i dalszych krokach {oraz|a także} potwierdzenie zastrzeżenia."
+      - ustep: "**Kierownik placówki lub kierownik zmiany Infolinii**:"
+        punkty:
+          - "nadzoruje terminowość i kompletność zgłoszeń przyjętych w jego jednostce;"
+          - "rozstrzyga wątpliwości co do tożsamości zgłaszającego i podejmuje decyzję o odmowie realizacji dyspozycji;"
+          - "przekazuje do jednostki „{{fakt:jednostka.centrum-monitorowania}}” sprawy, w których kwota spornych transakcji przekracza {{fakt:limit.zastrzezenia.kwota-eskalacji}} lub istnieje podejrzenie nadużycia."
+      - ustep: "**{{fakt:jednostka.centrum-monitorowania}}** — zespół w strukturze jednostki „{{fakt:jednostka.bezpieczenstwo}}” — prowadzi całodobowy monitoring transakcji, kontaktuje się z Klientami w sprawie transakcji podejrzanych, analizuje zgłoszenia transakcji nieautoryzowanych, przygotowuje {dokumentację|akta} sporów z organizacją płatniczą {oraz|a także} prowadzi rejestr zdarzeń nadużyć."
+      - ustep: "**{{fakt:jednostka.bezpieczenstwo}}** — właściciel procedury — odpowiada za jej aktualność, rozstrzyga sprawy wymagające decyzji o odmowie lub wstrzymaniu zwrotu, kontaktuje się z organami ścigania i ocenia skuteczność mechanizmów przeciwdziałania nadużyciom."
+      - ustep: "**{{fakt:jednostka.operacje}}** — realizuje zwroty kwot na rachunki Klientów, wydaje karty zastępcze i prowadzi rozliczenia z organizacją płatniczą."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** — {opiniuje|ocenia} zmiany procedury, monitoruje zgodność z przepisami o usługach płatniczych i ocenia ryzyko związane z wyjątkami od terminów, a **{{fakt:jednostka.reklamacje}}** — prowadzi odwołania Klientów od rozstrzygnięć w sprawach transakcji nieautoryzowanych."
+
+  - id: zastrzezenia-definicje
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: definicje
+    elementy:
+      - ustep: "Ponadto w procedurze użyto określeń:"
+        punkty:
+          - "**Zastrzeżenie karty** — trwała i nieodwracalna blokada karty, po której karta nie może być ponownie użyta, nawet {jeżeli|jeśli} została odnaleziona;"
+          - "**Blokada czasowa** — odwracalne ograniczenie możliwości użycia karty lub dostępu do bankowości elektronicznej, {które może zostać zniesione|znoszone} po wyjaśnieniu okoliczności;"
+          - "**Transakcja nieautoryzowana** — transakcja płatnicza, na której wykonanie płatnik nie wyraził zgody w sposób przewidziany w umowie;"
+          - "**Silne uwierzytelnianie** — uwierzytelnianie oparte na co najmniej dwóch niezależnych elementach, spośród wiedzy, posiadania i cechy użytkownika;"
+          - "**Organizacja płatnicza** — podmiot zarządzający systemem rozliczeń transakcji kartowych, z którym Bank zawarł umowę o uczestnictwo;"
+          - "**Spór z organizacją płatniczą** — procedura odzyskania od banku akceptanta środków z kwestionowanej transakcji kartowej, prowadzona na zasadach określonych przez organizację płatniczą;"
+          - "**Akceptant** — przedsiębiorca przyjmujący płatności kartami;"
+          - "**{{fakt:system.zastrzezenia.cbs}}** — system, w którym blokuje się karty i dostęp {oraz|a także} odnotowuje dyspozycje Klientów;"
+          - "**rejestr zgłoszeń {{fakt:system.zastrzezenia.rejestr}}** — rejestr, w którym odnotowuje się każde zgłoszenie zastrzeżenia i zgłoszenie transakcji nieautoryzowanej wraz z historią czynności;"
+          - "**{{fakt:system.zastrzezenia.monitoring}}** — system oceniający ryzyko transakcji w czasie rzeczywistym i generujący alerty;"
+          - "**Dane uwierzytelniające** — PIN, hasło, kody jednorazowe, dane karty {oraz|a także} urządzenie zaufane Klienta."
+
+  - id: zastrzezenia-schemat
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - schemat:
+          - nazwa: "Przyjęcie zgłoszenia"
+            wyjasnienie: "Pracownik {przyjmuje|odbiera} zgłoszenie w dowolnym kanale i rejestruje je w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}}."
+          - nazwa: "Weryfikacja zgłaszającego"
+            wyjasnienie:
+              - "Pracownik potwierdza tożsamość osoby zgłaszającej metodą przewidzianą w procedurach bezpieczeństwa."
+              - "W razie niepowodzenia stosuje blokadę zachowawczą."
+          - nazwa: "Blokada i potwierdzenie"
+            wyjasnienie: "Karta i, {w razie|w przypadku} potrzeby, dostęp do bankowości elektronicznej zostają zablokowane, a Klient otrzymuje potwierdzenie."
+          - nazwa: "Karta zastępcza"
+            wyjasnienie: "Na wniosek Klienta {zamawiana jest|zostaje zamówiona} nowa karta z nowym numerem."
+          - nazwa: "Analiza transakcji"
+            wyjasnienie:
+              - "{{fakt:jednostka.centrum-monitorowania}} ocenia kwestionowane transakcje."
+              - "Zgłoszenie nieautoryzowanej transakcji uruchamia postępowanie wyjaśniające."
+          - nazwa: "Zwrot lub spór"
+            wyjasnienie: "Bank {zwraca środki w terminie|dokonuje zwrotu w terminie} albo, w uzasadnionych przypadkach, odmawia zwrotu i prowadzi spór z organizacją płatniczą."
+
+  - id: zastrzezenia-przyjecie
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - akapit: "Zgłoszenie utraty, kradzieży, przywłaszczenia lub nieuprawnionego użycia karty {przyjmuje każdy pracownik|musi zostać przyjęte przez każdego pracownika} {w każdym czasie|bez względu na porę}. Zgłoszenia przyjmowane są telefonicznie pod numerem {{fakt:kontakt.infolinia-zastrzezenia}} (z zagranicy: {{fakt:kontakt.infolinia-zagranica}}), czynnym całą dobę, w bankowości elektronicznej i aplikacji mobilnej, w placówce {oraz|a także} — {w razie|w przypadku} niemożności skorzystania z tych kanałów — za pośrednictwem dowolnej jednostki Banku."
+      - kroki:
+          - tekst: "{Przyjmij|Odbierz} zgłoszenie i {ustal|zidentyfikuj} jego przedmiot."
+            podkroki:
+              - tekst: "Zapytaj, czy zgłoszenie dotyczy karty fizycznej, tokenu płatności mobilnej, danych karty, czy dostępu do bankowości elektronicznej."
+              - tekst: "Ustal, czy Klient posiada kartę, czy została utracona, {oraz|a także} czy w ostatnim czasie dokonywał transakcji, których nie rozpoznaje."
+              - tekst: "{Jeżeli|Jeśli} zgłoszenie dotyczy karty użytkownika dodatkowego, przyjmij je od posiadacza rachunku lub od samego użytkownika."
+          - tekst: "{Zweryfikuj|Potwierdź tożsamość} osobę zgłaszającą."
+            podkroki:
+              - tekst: "W placówce zażądaj dokumentu tożsamości i porównaj dane ze wzorem w systemie centralnym {{fakt:system.zastrzezenia.cbs}}."
+              - tekst: "Na Infolinii zadaj pytania weryfikacyjne dostępne w systemie; po {{fakt:limit.zastrzezenia.proby-weryfikacji}} nieudanych próbach nie ujawniaj informacji o rachunku i zastosuj zasady opisane w części o przypadkach szczególnych."
+              - tekst: "W bankowości elektronicznej zgłoszenie złożone po zalogowaniu z silnym uwierzytelnianiem uznaje się za zweryfikowane."
+              - tekst: "Nigdy nie proś o podanie pełnego numeru PIN, hasła do bankowości ani kodów jednorazowych."
+          - tekst: "{Zarejestruj|Wprowadź} zgłoszenie w rejestrze zgłoszeń {{fakt:system.zastrzezenia.rejestr}}."
+            podkroki:
+              - tekst: "Wpisz datę i godzinę przyjęcia, kanał zgłoszenia, dane osoby zgłaszającej {oraz|a także} okoliczności zdarzenia podane przez Klienta."
+              - tekst: "{Odnotuj|Zapisz} numer zgłoszenia nadany przez system i podaj go Klientowi."
+              - tekst: "{Jeżeli|Jeśli} zgłoszenie przyjęto w placówce, wypełnij formularz {{fakt:formularz.zastrzezenia.zgloszenie}} w dwóch egzemplarzach i wydaj Klientowi jeden z nich po podpisaniu."
+          - tekst: "{Zapytaj|Dopytaj} o okoliczności zdarzenia, które mogą wskazywać na oszustwo."
+            podkroki:
+              - tekst: "Czy Klient udostępnił komukolwiek dane karty lub kody, {na przykład|przykładowo} w rozmowie telefonicznej, wiadomości lub na stronie internetowej?"
+              - tekst: "Czy na urządzeniu Klienta zainstalowano aplikację zdalnego dostępu?"
+              - tekst: "Czy Klient zgłosił już sprawę policji?"
+      - ramka: "{Uwaga|Pamiętaj}: zgłoszenia utraty lub kradzieży karty nie wolno odkładać do czasu przybycia Klienta do placówki ani uzależniać od złożenia pisemnego wniosku. Zgłoszenie złożone w dowolnym kanale jest równoważne i wywołuje skutki od chwili jego przyjęcia."
+
+  - id: zastrzezenia-przyjecie-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: wymagane-zastrzezenia
+    elementy:
+      - kroki:
+          - tekst: "{Wyjaśnij|Poinformuj} Klienta o rodzajach blokady i {pozwól mu wybrać|ustal z nim} właściwy wariant."
+            podkroki:
+              - tekst: "**Zastrzeżenie** stosuje się {w razie|w przypadku} utraty, kradzieży, przywłaszczenia karty lub ujawnienia jej danych; jest ono nieodwracalne."
+              - tekst: "**Blokadę czasową** stosuje się, gdy Klient nie ma pewności, gdzie jest karta; Klient może samodzielnie odblokować kartę w bankowości elektronicznej, a pracownik nie odblokowuje karty, {jeżeli|jeśli} podejrzewa kradzież."
+              - tekst: "{Jeżeli|Jeśli} Klient nie potrafi wskazać, czy karta została utracona, zastosuj blokadę czasową i zaproponuj zastrzeżenie, gdy karta nie zostanie odnaleziona w ciągu dnia."
+          - tekst: "{Wskaż|Przedstaw} Klientowi skutki zastrzeżenia."
+            podkroki:
+              - tekst: "Blokada obejmuje wszystkie transakcje wymagające autoryzacji, w tym płatności internetowe, zbliżeniowe i w aplikacjach płatności mobilnych."
+              - tekst: "Transakcje autoryzowane przed zgłoszeniem, które nie zostały jeszcze rozliczone, mogą obciążyć rachunek po zgłoszeniu."
+              - tekst: "Zastrzeżenie karty nie powoduje pobrania opłaty — stawka wynosi {{fakt:oplata.karta.zastrzezenie}}."

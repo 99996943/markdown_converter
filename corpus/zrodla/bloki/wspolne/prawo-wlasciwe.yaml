@@ -1,0 +1,15 @@
+bloki:
+  - id: wspolne-prawo-wlasciwe-regulamin
+    typy: [regulaminy]
+    tematy: [prawo-wlasciwe]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawem {właściwym|miarodajnym} dla stosunków między Bankiem a Klientem, w tym dla zawarcia umowy i {wykonywania jej postanowień|jej wykonywania}, jest prawo polskie. Umowa jest zawierana i {wykonywana|realizowana} w języku polskim, o ile strony nie postanowią inaczej."
+      - ustep: "Do spraw nieuregulowanych w Regulaminie {stosuje się|mają zastosowanie} przepisy powszechnie obowiązujące; dotyczy to w szczególności następujących aktów:"
+        punkty:
+          - "{{ref:akt:dz-u-2024-1646-prawo-bankowe}};"
+          - "{{ref:akt:dz-u-2024-30-uslugi-platnicze}};"
+          - "Kodeks cywilny."
+      - ustep: "Spory wynikłe z umowy {rozstrzyga|rozpoznaje} sąd powszechny właściwy zgodnie z przepisami Kodeksu postępowania cywilnego. Klient będący konsumentem {może|ma prawo} również skorzystać z pozasądowych metod rozwiązywania sporów, w tym z postępowania przed Rzecznikiem Finansowym. Jeżeli którekolwiek z postanowień Regulaminu okaże się nieważne, {pozostałe postanowienia|pozostała część Regulaminu} zachowują moc."

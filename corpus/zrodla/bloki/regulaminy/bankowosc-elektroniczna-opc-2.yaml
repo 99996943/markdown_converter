@@ -1,0 +1,144 @@
+bloki:
+  # ===== Pula: Dyspozycje i limity =====
+  - id: bankowosc-elektroniczna-opc-przelewy
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przelew składany w bankowości elektronicznej powinien zawierać numer rachunku odbiorcy w formacie NRB, nazwę odbiorcy, kwotę oraz tytuł przelewu. Bank wykonuje przelew wyłącznie na podstawie numeru rachunku odbiorcy; nazwa odbiorcy {nie jest|nie stanowi} podstawy do weryfikacji poprawności rachunku."
+      - ustep: "Klient odpowiada za poprawność danych w dyspozycji. W razie podania błędnego numeru rachunku Bank {podejmie|podejmuje} na wniosek Klienta próby odzyskania środków, jednak nie gwarantuje ich zwrotu, a za czynność tę może pobrać opłatę zgodną z Taryfą."
+      - ustep: "Przelew {można|można również} zaplanować na wybrany dzień w przyszłości. Środki na realizację przelewu z odroczoną datą są sprawdzane w dniu jego wykonania; brak środków w tym dniu powoduje odmowę wykonania przelewu, o czym Bank informuje Klienta powiadomieniem."
+
+  - id: bankowosc-elektroniczna-opc-zlecenia-stale
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zlecenie stałe {polega|jest dyspozycją polegającą} na cyklicznym wykonywaniu przez Bank przelewów w ustalonej kwocie, w wybranych terminach i na wskazany rachunek. Zlecenie stałe ustanawia, zmienia i odwołuje Klient w serwisie internetowym lub w aplikacji mobilnej po silnym uwierzytelnieniu."
+      - ustep: "Zlecenie stałe jest realizowane w dniu określonym w dyspozycji, a jeżeli wypada on w dniu wolnym od pracy — w pierwszym dniu roboczym po nim następującym. Jeżeli w dniu realizacji na rachunku brak wystarczających środków, Bank {nie realizuje|odmawia realizacji} zlecenia w tym terminie i ponawia próbę zgodnie z zasadami określonymi w umowie rachunku."
+      - ustep: "Zmianę lub odwołanie zlecenia stałego należy złożyć najpóźniej w dniu roboczym poprzedzającym dzień jego realizacji. Dyspozycje złożone później są wykonywane od najbliższego terminu następującego po terminie, w którym zmiana mogła zostać uwzględniona."
+
+  - id: bankowosc-elektroniczna-opc-nowy-odbiorca
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W celu ochrony przed oszustwami przelewy na rachunki, które nie zostały dotąd zapisane na liście zaufanych odbiorców, podlegają dodatkowym zabezpieczeniom. Pierwszy przelew do nowego odbiorcy {jest ograniczony|może być wykonany} do kwoty {{fakt:limit.bankowosc.nowy-odbiorca}}."
+      - ustep: "Po dodaniu odbiorcy do listy zaufanych Klient {może|ma prawo} wykonywać na jego rzecz przelewy w wyższych kwotach, jednak nie wcześniej niż po upływie {{fakt:bankowosc.karencja-odbiorca}} od dodania odbiorcy. Okres ten może zostać skrócony, jeżeli Klient potwierdzi dyspozycję w placówce Banku."
+      - ustep: "Bank {może|ma prawo} wyświetlić Klientowi ostrzeżenie dotyczące odbiorcy, jeżeli rachunek został wcześniej zgłoszony jako wykorzystywany do oszustw lub jego wcześniejsze użycie budzi uzasadnione wątpliwości. Ostrzeżenie nie jest przesądzeniem o nieuczciwości odbiorcy; decyzję o wykonaniu przelewu podejmuje Klient."
+
+  - id: bankowosc-elektroniczna-opc-godziny
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dyspozycje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Godziną graniczną dla przelewów krajowych składanych w bankowości elektronicznej jest {{fakt:termin.rachunek-osobisty.godzina-graniczna}} w dniu roboczym. Przelewy złożone i autoryzowane do tej godziny są przekazywane do realizacji w tym samym dniu roboczym; przelewy złożone po tej godzinie — w następnym dniu roboczym."
+      - ustep: "Przelewy natychmiastowe są realizowane przez całą dobę, we wszystkie dni roku, o ile bank odbiorcy uczestniczy w takim systemie rozliczeń. Za przelew natychmiastowy Bank pobiera opłatę zgodną z {{ref:dokument:taryfa-bankowosc-elektroniczna}}, w wysokości {{fakt:oplata.przelew-natychmiastowy}}.[^1]"
+      - ustep: "Jeżeli przelew natychmiastowy nie może zostać wykonany z przyczyn leżących po stronie odbiorcy lub systemu rozliczeniowego, Bank informuje Klienta o jego odrzuceniu i {udostępnia|przywraca} środki do dyspozycji Klienta niezwłocznie, nie później niż w terminie wskazanym w umowie rachunku."
+    przypisy:
+      1: "Limit pojedynczego przelewu natychmiastowego wynosi {{fakt:limit.rachunek-osobisty.przelew-natychmiastowy}} i {może|może on} być obniżony przez Klienta w ustawieniach limitów."
+
+  # ===== Pula: Powiadomienia =====
+  - id: bankowosc-elektroniczna-opc-push
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-powiadomienia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Powiadomienia push są wysyłane do aplikacji mobilnej zainstalowanej na urządzeniach zaufanych, pod warunkiem że Klient włączył ich odbiór w ustawieniach systemu operacyjnego i aplikacji. Zablokowanie powiadomień może uniemożliwić Klientowi otrzymanie informacji o ważnych zdarzeniach."
+      - ustep: "Klient {może|ma możliwość} samodzielnie wybrać rodzaje powiadomień, które chce otrzymywać, w tym o:"
+        punkty:
+          - "wpływach i obciążeniach rachunku powyżej wskazanej kwoty;"
+          - "zbliżającym się terminie zlecenia stałego lub płatności;"
+          - "niskim saldzie lub przekroczeniu ustalonego progu;"
+          - "ofertach i informacjach o produktach, o ile Klient wyraził na to zgodę."
+      - ustep: "Powiadomienia związane z bezpieczeństwem konta, takie jak informacja o logowaniu z nowego urządzenia lub zmianie danych, nie mogą być wyłączone. Treść powiadomień push {nie zawiera|nie powinna zawierać} danych uwierzytelniających."
+
+  - id: bankowosc-elektroniczna-opc-alerty
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-powiadomienia
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wysyła|przekazuje} Klientowi alerty bezpieczeństwa, gdy system wykryje zdarzenie wskazujące na podwyższone ryzyko, w szczególności:"
+        punkty:
+          - "wielokrotne nieudane próby logowania;"
+          - "operację niezgodną z dotychczasowym zachowaniem Klienta, w tym przelew na nietypową kwotę lub do nietypowego kraju;"
+          - "zmianę numeru telefonu lub adresu e-mail dokonaną w bankowości elektronicznej;"
+          - "logowanie z urządzenia, które nie jest urządzeniem zaufanym."
+      - ustep: "Alert zawiera informację o zdarzeniu i zalecenie postępowania. Jeżeli Klient nie rozpoznaje zdarzenia, {powinien|jest zobowiązany} niezwłocznie zablokować dostęp do bankowości elektronicznej i skontaktować się z Bankiem pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+      - ustep: "Alerty bezpieczeństwa wysyłane są w formie powiadomienia push, wiadomości SMS lub e-mail, w zależności od dostępnych kanałów. Bank {nie pobiera|nie nalicza} opłat za alerty bezpieczeństwa."
+
+  # ===== Pula: Bezpieczeństwo i obowiązki Klienta =====
+  - id: bankowosc-elektroniczna-opc-phishing
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-bezpieczenstwo
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Fałszywe wiadomości (phishing) polegają na podszywaniu się pod Bank w celu wyłudzenia danych logowania, kodów lub środków. Klient {powinien|jest zobowiązany} weryfikować wiadomości otrzymywane rzekomo od Banku, a w razie wątpliwości {skontaktować się|zasięgnąć informacji} z Bankiem na numer infolinii {{fakt:kontakt.infolinia}}."
+      - ustep: "Bank nie wysyła wiadomości zawierających:"
+        punkty:
+          - "odnośniki do logowania do bankowości elektronicznej;"
+          - "załączniki wymagające instalacji oprogramowania;"
+          - "żądania podania Hasła, kodu PIN aplikacji lub kodów jednorazowych;"
+          - "żądania wykonania przelewu na wskazany rachunek w celu „ochrony środków”."
+      - ustep: "Do logowania Klient korzysta wyłącznie z adresu {{fakt:bankowosc.adres-serwisu}} wpisanego ręcznie lub zapisanego we własnych zakładkach oraz z aplikacji pobranej z oficjalnego sklepu. Wiadomości podejrzane należy przekazywać Bankowi bez klikania w zawarte w nich odnośniki."
+
+  - id: bankowosc-elektroniczna-opc-sieci-publiczne
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-bezpieczenstwo
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Korzystanie z bankowości elektronicznej w publicznych sieciach bezprzewodowych oraz na urządzeniach obcych wiąże się z podwyższonym ryzykiem przechwycenia danych. Klient {powinien|jest zobowiązany} unikać logowania w takich warunkach, a jeżeli nie ma takiej możliwości, stosować dodatkowe zabezpieczenia, w szczególności szyfrowane połączenie prywatne."
+      - ustep: "Klient nie powinien logować się do bankowości elektronicznej:"
+        punkty:
+          - "na komputerach ogólnodostępnych, w szczególności w kawiarniach internetowych, hotelach i bibliotekach;"
+          - "z urządzeń, których stanu zabezpieczeń nie może zweryfikować;"
+          - "w obecności osób postronnych, które mogłyby podejrzeć wprowadzane dane."
+      - ustep: "Po zalogowaniu z nietypowej sieci system może poprosić o dodatkowe uwierzytelnienie, a Bank {może|ma prawo} ograniczyć dostępne funkcje. Takie działania nie stanowią naruszenia Regulaminu i służą ochronie środków Klienta."
+
+  - id: bankowosc-elektroniczna-opc-aktualizacje
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-bezpieczenstwo
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bezpieczne korzystanie z bankowości elektronicznej wymaga utrzymywania urządzeń i oprogramowania w stanie aktualnym. Klient jest zobowiązany do:"
+        punkty:
+          - "instalowania aktualizacji systemu operacyjnego i aplikacji niezwłocznie po ich udostępnieniu;"
+          - "stosowania programów zabezpieczających, które wykrywają i blokują złośliwe oprogramowanie;"
+          - "nieotwierania załączników i odnośników pochodzących z niezaufanych źródeł;"
+          - "regularnego przeglądu listy urządzeń zaufanych i usuwania z niej urządzeń nieużywanych."
+      - ustep: "Bank na bieżąco publikuje w serwisie internetowym zalecenia dotyczące bezpieczeństwa, a w razie wykrycia nowych zagrożeń informuje o nich Klientów także w aplikacji mobilnej. Zalecenia Banku {mają charakter pomocniczy|stanowią uzupełnienie Regulaminu} i nie zwalniają Klienta z obowiązków wynikających z jego postanowień."
+      - ustep: "Zaniedbanie przez Klienta obowiązków opisanych w niniejszym paragrafie może być uwzględnione przy ocenie, czy doszło do rażącego niedbalstwa, o którym mowa w przepisach o usługach płatniczych."
+
+  # ===== Pula: Blokada dostępu =====
+  - id: bankowosc-elektroniczna-opc-odblokowanie
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-blokada
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odblokowanie dostępu zablokowanego z powodu przekroczenia limitu nieudanych prób logowania następuje w jednym z trybów:"
+        punkty:
+          - "samoobsługowo w aplikacji mobilnej, po potwierdzeniu tożsamości biometrią lub kodem PIN aplikacji;"
+          - "na Infolinii, po pozytywnej weryfikacji tożsamości przez konsultanta;"
+          - "w placówce Banku, po okazaniu dokumentu tożsamości."
+      - ustep: "Po odblokowaniu dostępu Klient {powinien|jest zobowiązany} zmienić Hasło. Do czasu zmiany Hasła Bank {może|ma prawo} ograniczyć zakres dostępnych funkcji."
+      - ustep: "Odblokowanie dostępu zablokowanego przez Bank z przyczyn bezpieczeństwa następuje po ustaniu przyczyny blokady i po potwierdzeniu przez Klienta, że zdarzenie, które ją spowodowało, zostało wyjaśnione. Bank {dokonuje|przeprowadza} odblokowania {{fakt:bankowosc.odblokowanie}}, licząc od dnia otrzymania kompletnego wniosku."
+
+  - id: bankowosc-elektroniczna-opc-nieaktywnosc
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-blokada
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient nie zalogował się do bankowości elektronicznej przez okres {{fakt:bankowosc.nieaktywnosc}}, Bank {może|ma prawo} zablokować dostęp do tej usługi ze względów bezpieczeństwa. O zamiarze zablokowania Bank {informuje|powiadamia} Klienta z odpowiednim wyprzedzeniem, wysyłając wiadomość na adres e-mail lub numer telefonu wskazany w umowie."
+      - ustep: "Zablokowanie dostępu z powodu nieaktywności nie wpływa na rachunek ani środki zgromadzone na rachunku. Klient {może|ma prawo} w każdej chwili wystąpić o ponowną aktywację dostępu na zasadach określonych w Regulaminie, w tym po weryfikacji tożsamości w placówce lub na Infolinii."
+      - ustep: "Bank {ma prawo|może} usunąć dane uwierzytelniające dla dostępu nieużywanego, jeżeli nie został on ponownie aktywowany w terminie dwunastu miesięcy od blokady. Usunięcie danych nie jest równoznaczne z rozwiązaniem umowy o korzystanie z bankowości elektronicznej."

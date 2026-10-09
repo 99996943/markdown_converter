@@ -1,0 +1,129 @@
+bloki:
+  # ===== Pula: Odpowiedzialność =====
+  - id: bankowosc-elektroniczna-opc-sila-wyzsza
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-odpowiedzialnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank nie ponosi odpowiedzialności za niewykonanie lub nienależyte wykonanie dyspozycji w przypadku, gdy było ono następstwem siły wyższej, to jest zdarzenia zewnętrznego, niemożliwego do przewidzenia i któremu nie można było zapobiec. Za siłę wyższą uznaje się w szczególności:"
+        punkty:
+          - "klęski żywiołowe, pożary i powodzie;"
+          - "ataki na infrastrukturę telekomunikacyjną o szczególnie dużej skali;"
+          - "awarie zasilania lub sieci niezależne od Banku;"
+          - "działania organów władzy publicznej, w tym wprowadzenie ograniczeń w obrocie płatniczym."
+      - ustep: "Bank {podejmuje|jest zobowiązany podjąć} działania zmierzające do usunięcia skutków zdarzenia i przywrócenia dostępności usług bez zbędnej zwłoki. O przyczynach i przewidywanym czasie przywrócenia usług Bank informuje Klientów w serwisie internetowym i za pośrednictwem Infolinii."
+      - ustep: "Postanowienia niniejszego paragrafu nie wyłączają odpowiedzialności Banku za szkodę wyrządzoną umyślnie ani nie ograniczają praw Klienta wynikających z bezwzględnie obowiązujących przepisów."
+
+  - id: bankowosc-elektroniczna-opc-zgloszenie
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-odpowiedzialnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zgłoszenie nieautoryzowanej, niewykonanej lub nienależycie wykonanej dyspozycji Klient {może|ma prawo} złożyć telefonicznie, pisemnie, w placówce albo w bankowości elektronicznej. Zgłoszenie powinno zawierać dane Klienta, opis zdarzenia, datę i kwotę operacji oraz — jeżeli to możliwe — okoliczności, w jakich doszło do ujawnienia danych uwierzytelniających."
+      - ustep: "Po otrzymaniu zgłoszenia Bank:"
+        punkty:
+          - "niezwłocznie blokuje dostęp do bankowości elektronicznej lub urządzenie zaufane, jeżeli Klient o to wnioskuje;"
+          - "wszczyna postępowanie wyjaśniające i informuje Klienta o jego wynikach;"
+          - "w razie potrzeby występuje o dodatkowe informacje i dokumenty niezbędne do rozpatrzenia zgłoszenia."
+      - ustep: "Zgłoszenie nieautoryzowanej operacji nie jest równoznaczne ze złożeniem reklamacji, chyba że Klient wyraźnie wskazał, że zgłoszenie ma taki charakter. Reklamacje rozpatrywane są na zasadach określonych w rozdziale dotyczącym postanowień końcowych."
+
+  # ===== Pula: Dostępność i przerwy techniczne =====
+  - id: bankowosc-elektroniczna-opc-przerwy-planowe
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostepnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Planowane przerwy techniczne są zapowiadane w serwisie internetowym i aplikacji mobilnej z wyprzedzeniem co najmniej {{fakt:bankowosc.przerwa-zapowiedz}}. Komunikat o przerwie zawiera datę i godzinę jej rozpoczęcia oraz przewidywany czas trwania."
+      - ustep: "Podczas przerwy technicznej Klient może być pozbawiony dostępu do wybranych funkcji lub do całej bankowości elektronicznej. Bank {dokłada starań|stara się}, aby przerwy odbywały się w godzinach najmniejszego obciążenia systemu, w szczególności w nocy {{fakt:bankowosc.okno-serwisowe}}."
+      - ustep: "Jeżeli w dniu planowanej przerwy mają zostać zrealizowane zlecenia stałe lub przelewy z odroczoną datą, Bank wykonuje je niezwłocznie po wznowieniu działania systemu, a kwotę ewentualnych odsetek lub opłat za opóźnienie spowodowane przerwą Bank pokrywa z własnych środków."
+
+  - id: bankowosc-elektroniczna-opc-awarie
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostepnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W przypadku awarii powodującej niedostępność bankowości elektronicznej Bank {niezwłocznie|bez zbędnej zwłoki} podejmuje działania naprawcze i informuje Klientów o awarii oraz o przewidywanym terminie jej usunięcia. Informacja jest publikowana na stronie {{fakt:bank.strona}} oraz przekazywana konsultantom Infolinii."
+      - ustep: "W czasie awarii Klient {może|ma możliwość} skorzystać z kanałów zastępczych, w szczególności:"
+        punkty:
+          - "złożyć dyspozycję w placówce Banku;"
+          - "złożyć dyspozycję na Infolinii, po weryfikacji tożsamości;"
+          - "skorzystać z karty płatniczej i bankomatu, jeżeli nie dotyczy ich awaria."
+      - ustep: "Jeżeli niedostępność usług trwa dłużej niż {{fakt:bankowosc.przerwa-maks}}, Bank {niezwłocznie|bez zbędnej zwłoki} poinformuje Klientów o zastosowanych środkach zaradczych. Po usunięciu awarii Bank weryfikuje, czy dyspozycje złożone w okresie jej trwania zostały prawidłowo przetworzone, i usuwa skutki ewentualnych nieprawidłowości."
+
+  # ===== Pula: Opłaty =====
+  - id: bankowosc-elektroniczna-opc-pobieranie
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-oplaty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Opłaty i prowizje związane z usługami bankowości elektronicznej Bank {pobiera|nalicza} w wysokości określonej w Taryfie obowiązującej w dniu wykonania czynności. Opłaty za czynności jednorazowe są pobierane z rachunku Klienta w dniu ich wykonania, a opłaty cykliczne — w terminach określonych w umowie rachunku."
+      - ustep: "Jeżeli na rachunku Klienta brak środków na pokrycie należnej opłaty, Bank {może|ma prawo}:"
+        punkty:
+          - "pobrać opłatę z innego rachunku Klienta prowadzonego w Banku, o ile umowa rachunku na to zezwala;"
+          - "pobrać opłatę niezwłocznie po wpływie środków na rachunek;"
+          - "wezwać Klienta do uregulowania należności, naliczając opłatę za upomnienie w wysokości {{fakt:oplata.upomnienie}}, o ile Taryfa tak przewiduje."
+      - ustep: "Zmiana Taryfy następuje na zasadach określonych w rozdziale dotyczącym zmiany Regulaminu. Klient jest informowany o zmianie opłat na trwałym nośniku z wyprzedzeniem wskazanym w Regulaminie."
+
+  - id: bankowosc-elektroniczna-opc-tabela-oplat
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-oplaty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wybrane opłaty związane z bankowością elektroniczną, według stanu na dzień wejścia w życie Regulaminu, przedstawia poniższa tabela. Pełny wykaz opłat zawiera {{ref:dokument:taryfa-bankowosc-elektroniczna}}."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność lub usługa"
+              waga: 3
+            - naglowek: "Opłata"
+              waga: 2
+          wiersze:
+            - ["Dostęp do bankowości elektronicznej i aplikacji mobilnej", "{{fakt:oplata.bankowosc.dostep}}"]
+            - ["Wydanie tokena sprzętowego", "{{fakt:oplata.bankowosc.token}}"]
+            - ["Ponowne wydanie kodu aktywacyjnego", "{{fakt:oplata.bankowosc.nowy-kod-aktywacyjny}}"]
+            - ["Zmiana limitu w placówce", "{{fakt:oplata.bankowosc.zmiana-limitu-placowka}}"]
+            - ["Powiadomienie SMS o transakcji (za wiadomość)", "{{fakt:oplata.powiadomienie-sms}}"]
+            - ["Wyciąg elektroniczny", "{{fakt:oplata.bankowosc.wyciag-elektroniczny}}"]
+          siatka: true
+      - ustep: "W razie rozbieżności między tabelą a Taryfą stosuje się postanowienia Taryfy obowiązujące w dniu wykonania czynności, chyba że są one mniej korzystne dla Klienta niż postanowienia umowy."
+
+  # ===== Pula: Zmiana Regulaminu =====
+  - id: bankowosc-elektroniczna-opc-zmiana-funkcji
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-zmiana
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmiana zakresu funkcji bankowości elektronicznej niewymagająca zmiany Regulaminu, w szczególności wprowadzenie nowych funkcji, które nie rodzą dodatkowych opłat ani obowiązków Klienta, jest ogłaszana w serwisie internetowym i aplikacji mobilnej z co najmniej tygodniowym wyprzedzeniem."
+      - ustep: "Zmiany wynikające z konieczności natychmiastowego wprowadzenia zabezpieczeń lub usunięcia luki bezpieczeństwa mogą wejść w życie bez wyprzedzenia. W takim przypadku Bank {informuje|powiadamia} Klienta o zmianie niezwłocznie po jej wprowadzeniu."
+      - ustep: "Zmiana wymagań technicznych, w szczególności wycofanie obsługi starszych wersji przeglądarek i systemów operacyjnych, jest ogłaszana na stronie {{fakt:bankowosc.adres-serwisu}} oraz w aplikacji mobilnej. Klient, który nie zgadza się na zmiany, {może|ma prawo} wypowiedzieć umowę zgodnie z postanowieniami Regulaminu."
+
+  # ===== Pula: Postanowienia końcowe =====
+  - id: bankowosc-elektroniczna-opc-wsparcie
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pomocy w korzystaniu z bankowości elektronicznej udziela Infolinia, dostępna pod numerem {{fakt:kontakt.infolinia}} {{fakt:kontakt.godziny-infolinii}}, a w sprawach nagłych — całodobowa linia zastrzeżeń pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}. Z zagranicy należy dzwonić na numer {{fakt:kontakt.infolinia-zagranica}}."
+      - ustep: "Przed przystąpieniem do rozmowy konsultant weryfikuje tożsamość Klienta, zadając pytania dotyczące danych posiadanych przez Bank. Konsultant nie prosi o Hasło, kod PIN aplikacji ani kody jednorazowe."
+      - ustep: "Szczegółowe instrukcje korzystania z bankowości elektronicznej, w tym poradniki i odpowiedzi na często zadawane pytania, są dostępne na stronie {{fakt:bank.strona}}. Instrukcje mają charakter informacyjny i nie zmieniają postanowień Regulaminu."
+
+  - id: bankowosc-elektroniczna-opc-zgodnosc
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank, jako instytucja obowiązana w rozumieniu {{ref:akt:dz-u-2025-644-aml}}, {może|ma prawo} stosować środki bezpieczeństwa finansowego także w odniesieniu do dyspozycji składanych w bankowości elektronicznej. W szczególności Bank może zażądać od Klienta:"
+        punkty:
+          - "wyjaśnień co do źródła pochodzenia środków lub celu transakcji;"
+          - "dokumentów potwierdzających informacje podane w dyspozycji;"
+          - "potwierdzenia dyspozycji w placówce Banku."
+      - ustep: "Do czasu przekazania żądanych informacji Bank {może|ma prawo} wstrzymać wykonanie dyspozycji. Wstrzymanie wykonania dyspozycji z tej przyczyny nie stanowi niewykonania lub nienależytego wykonania zobowiązania przez Bank."
+      - ustep: "Bank może odmówić zawarcia umowy o korzystanie z bankowości elektronicznej lub rozwiązać ją, jeżeli dalsze świadczenie usługi byłoby sprzeczne z obowiązującymi przepisami, w tym ograniczeniami wynikającymi z sankcji międzynarodowych."

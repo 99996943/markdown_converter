@@ -1,0 +1,40 @@
+bloki:
+  - id: reklamacje-eskalacja
+    typy: [procedury]
+    tematy: [reklamacje]
+    kategoria: krok
+    elementy:
+      - akapit: "Sprawę nierozstrzygniętą w terminie przekaż kierownikowi."
+  - id: reklamacje-terminy
+    typy: [procedury]
+    tematy: [reklamacje]
+    kategoria: krok
+    elementy:
+      - akapit: "Termin odpowiedzi liczy się od dnia wpływu reklamacji."
+  - id: zastrzezenia-blokada
+    typy: [procedury]
+    tematy: [zastrzezenia]
+    kategoria: krok
+    elementy:
+      - akapit: "Zablokuj instrument płatniczy po zgłoszeniu Klienta."
+  - id: zastrzezenia-odblokowanie
+    typy: [procedury]
+    tematy: [zastrzezenia]
+    kategoria: krok
+    elementy:
+      - akapit: "Odblokuj instrument wyłącznie po weryfikacji Klienta."
+  - id: ogolne-archiwizacja
+    typy: [procedury]
+    kategoria: krok
+    elementy:
+      - akapit: "Zarchiwizuj dokumentację sprawy po jej zamknięciu."
+  - id: ogolne-kontrola
+    typy: [procedury]
+    kategoria: krok
+    elementy:
+      - akapit: "Kontroluj poprawność wykonania procedury."
+  - id: ogolne-szkolenie
+    typy: [procedury]
+    kategoria: krok
+    elementy:
+      - akapit: "Pracownik zna aktualną wersję procedury."

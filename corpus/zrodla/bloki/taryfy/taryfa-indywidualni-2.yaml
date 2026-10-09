@@ -1,0 +1,192 @@
+bloki:
+  # ===== V. Przelewy i zlecenia =====
+  - id: taryfa-indywidualni-przelewy-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Stawki z tej sekcji dotyczą wszystkich pakietów kont, chyba że w sekcji pakietu przewidziano zwolnienie lub niższą opłatę. Godzinę graniczną przyjmowania przelewów krajowych w złotych ({{fakt:termin.rachunek-osobisty.godzina-graniczna}}) określa regulamin rachunku, a opłatę pobiera się niezależnie od tego, czy przelew zostanie rozliczony w dniu zlecenia, czy w następnym dniu roboczym."
+      - akapit: "Przelew zagraniczny i przelew w walucie obcej {jest rozliczany|podlega rozliczeniu} według Tabeli kursów walut Banku; do jego opłaty nie wlicza się prowizji banków pośredniczących, które mogą pomniejszyć kwotę otrzymywaną przez odbiorcę."
+  - id: taryfa-indywidualni-przelewy-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew wewnętrzny (między rachunkami w Banku Przykładowym S.A.)"
+            stawka: "bez opłat"
+            tryb: "za operację"
+          - usluga: "Przelew krajowy w złotych do rachunku w innym banku"
+            stawka: "zależnie od kanału zlecenia"
+            tryb: "za operację"
+            podpozycje:
+              - { usluga: "zlecony w bankowości elektronicznej lub mobilnej", stawka: "bez opłat", tryb: "za operację" }
+              - { usluga: "zlecony w placówce", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+              - { usluga: "zlecony telefonicznie przez konsultanta infolinii[^1]", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-infolinia}}", tryb: "za operację" }
+          - { usluga: "Przelew natychmiastowy w złotych", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "Przelew SEPA w euro do rachunku w państwie Europejskiego Obszaru Gospodarczego", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sepa}}", tryb: "za operację" }
+          - { usluga: "Przelew krajowy w złotych w trybie SORBNET (kwoty wysokie, realizacja w dniu zlecenia)", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-sorbnet}}", tryb: "za operację" }
+          - { usluga: "Przelew do urzędu skarbowego lub Zakładu Ubezpieczeń Społecznych", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew do rachunku w złotych z użyciem formularza przelewu blankietowego[^2]", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Maksymalna kwota przelewu zleconego w placówce", stawka: "{{fakt:limit.rachunek-osobisty.przelew-placowka}}", tryb: "za operację" }
+          - { usluga: "Zlecenie stałe zakładane w bankowości elektronicznej", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za każde wykonanie" }
+          - { usluga: "Zlecenie stałe zakładane lub zmieniane w placówce", stawka: "{{fakt:oplata.taryfa-indywidualni.zlecenie-stale-placowka}}", tryb: "za dyspozycję" }
+          - { usluga: "Polecenie zapłaty (obsługa zgody i realizacja obciążenia)", stawka: "{{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}}", tryb: "za każde obciążenie" }
+          - { usluga: "Odwołanie przelewu z przyszłą datą realizacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+    przypisy:
+      1: "Opłata dotyczy przelewów zleconych po pozytywnej weryfikacji tożsamości Klienta; zlecenia przyjęte przez konsultanta, których Klient nie potwierdził kodem, nie są realizowane."
+      2: "Przelew blankietowy jest przyjmowany wyłącznie w placówkach prowadzących obsługę kasową, a zlecenie jest realizowane najpóźniej w następnym dniu roboczym."
+  - id: taryfa-indywidualni-przelewy-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew zagraniczny wychodzący w walucie obcej"
+            stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-procent}} kwoty przelewu, min. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-minimum}}, max. {{fakt:oplata.taryfa-indywidualni.przelew-zagraniczny-maksimum}}"
+            tryb: "od kwoty przelewu"
+          - { usluga: "Przelew zagraniczny wychodzący z opcją kosztów OUR (wszystkie koszty ponosi zleceniodawca)", stawka: "{{fakt:oplata.taryfa-indywidualni.opcja-koszty-our}} (dodatkowo)", tryb: "za operację" }
+          - { usluga: "Przelew walutowy wychodzący z rachunku prowadzonego w złotych", stawka: "{{fakt:oplata.rachunek-osobisty.przelew-walutowy}}", tryb: "za operację" }
+          - { usluga: "Przelew zagraniczny przychodzący (w tym SEPA)", stawka: "{{fakt:oplata.taryfa-indywidualni.przelew-walutowy-przychodzacy}}", tryb: "za operację" }
+          - { usluga: "Zwrot przelewu otrzymanego omyłkowo, na wniosek nadawcy", stawka: "{{fakt:oplata.taryfa-indywidualni.zwrot-przelewu}}", tryb: "za operację" }
+          - { usluga: "Wniosek o odwołanie przelewu już zrealizowanego (reklamacja przelewu)", stawka: "{{fakt:oplata.taryfa-indywidualni.odwolanie-przelewu}}", tryb: "za wniosek" }
+          - { usluga: "Zmiana lub uzupełnienie danych odbiorcy w zleceniu zagranicznym", stawka: "{{fakt:oplata.taryfa-indywidualni.odwolanie-przelewu}}", tryb: "za dyspozycję" }
+          - { usluga: "Przelew do rachunku w złotych prowadzonego przez bank zagraniczny", stawka: "zgodnie z pozycją „Przelew zagraniczny wychodzący”", tryb: "za operację" }
+          - { usluga: "Przeliczenie waluty przy rozliczeniu przelewu", stawka: "kurs z Tabeli kursów walut Banku", tryb: "w dniu operacji" }
+          - { usluga: "Potwierdzenie wykonania przelewu w formie papierowej", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie wykonania przelewu w formie elektronicznej", stawka: "bez opłat", tryb: "za każdy dokument" }
+  # ===== VI. Operacje gotówkowe =====
+  - id: taryfa-indywidualni-gotowka-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Operacje gotówkowe wykonywane są w placówkach prowadzących obsługę kasową oraz we wpłatomatach i bankomatach Banku. Wypłata gotówki w kwocie wyższej niż {{fakt:limit.rachunek-osobisty.wyplata-awizo}} wymaga awizacji w placówce najpóźniej w dniu roboczym poprzedzającym wypłatę. Wpłata gotówki na rachunek osoby trzeciej podlega opłacie podanej w tabeli, a Klient jest zobowiązany do złożenia oświadczenia o pochodzeniu środków w przypadku wpłaty powyżej {{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}}."
+  - id: taryfa-indywidualni-gotowka-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wpłata gotówki w złotych na własny rachunek w placówce", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki w złotych na własny rachunek we wpłatomacie Banku[^1]", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-wplatomat}}", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki w złotych na rachunek osoby trzeciej prowadzony w Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.wplata-na-cudzy-rachunek}}", tryb: "za operację" }
+          - usluga: "Wypłata gotówki w złotych w placówce z rachunku osobistego"
+            stawka: "zależnie od kwoty wypłaty"
+            tryb: "za operację"
+            podpozycje:
+              - { usluga: "do kwoty awizacji", stawka: "bez opłat", tryb: "za operację" }
+              - { usluga: "powyżej kwoty awizacji, za wypłatę awizowaną", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-placowka-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.wyplata-placowka-minimum}}", tryb: "od kwoty wypłaty" }
+              - { usluga: "powyżej kwoty awizacji, za wypłatę nieawizowaną[^2]", stawka: "nie jest realizowana", tryb: "za operację" }
+          - { usluga: "Niepodjęcie w terminie gotówki zaawizowanej do wypłaty", stawka: "{{fakt:oplata.taryfa-indywidualni.awizo-niepodjeta}}", tryb: "za każdą awizację" }
+          - { usluga: "Wypłata gotówki z bankomatu Banku w kraju", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki kartą z bankomatu obcego w kraju", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki kartą z bankomatu za granicą", stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w walucie obcej w placówce", stawka: "{{fakt:oplata.taryfa-indywidualni.wyplata-gotowki-walutowej}} kwoty wypłaty", tryb: "od kwoty wypłaty" }
+          - { usluga: "Rozmiana pieniędzy i wymiana banknotów na drobne nominały (powyżej 50 sztuk)", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji" }
+          - { usluga: "Wydanie zabezpieczonej torby kasowej", stawka: "{{fakt:oplata.taryfa-indywidualni.wydanie-torby-kasowej}}", tryb: "za sztukę" }
+          - { usluga: "Wpłata gotówki z użyciem karty debetowej we wpłatomacie, kwota maksymalna jednorazowa", stawka: "{{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}", tryb: "za operację" }
+    przypisy:
+      1: "Wpłatomat przyjmuje banknoty w złotych; wpłata monet i banknotów w walucie obcej jest możliwa wyłącznie w placówce."
+      2: "Bank może odmówić wypłaty bez awizacji lub wypłacić część kwoty, jeżeli zasoby gotówki w placówce są niewystarczające."
+  # ===== VII. Karty debetowe =====
+  - id: taryfa-indywidualni-karty-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Stawki z tej sekcji obowiązują dla kart debetowych wydawanych do rachunków osobistych we wszystkich pakietach, o ile sekcja pakietu nie przewiduje zwolnienia. Zasady korzystania z karty, w tym warunki ustalania i zmiany limitów, określa {{ref:dokument:regulamin-kart-debetowych}}. Opłaty za wydanie i prowadzenie karty są pobierane z rachunku, do którego karta została wydana."
+  - id: taryfa-indywidualni-karty-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wydanie karty debetowej (pierwszej do rachunku)", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie karty debetowej w pakiecie Konto Standard[^1]", stawka: "{{fakt:oplata.karta-debetowa.prowadzenie-miesieczna}}", tryb: "miesięcznie" }
+          - { usluga: "Wydanie karty dodatkowej dla pełnomocnika lub współposiadacza rachunku", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-dodatkowa}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie duplikatu karty po utracie, zniszczeniu lub zastrzeżeniu", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty w trybie pilnym (dostawa kurierska w kraju)", stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty w trybie awaryjnym za granicą", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-wydanie-za-granica}}", tryb: "jednorazowo" }
+          - { usluga: "Wznowienie karty po upływie okresu ważności", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zastrzeżenie karty", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "jednorazowo" }
+          - { usluga: "Czasowa blokada i odblokowanie karty w aplikacji mobilnej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zmiana numeru PIN w bankomacie lub w bankowości elektronicznej", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za operację" }
+          - { usluga: "Zmiana limitów transakcyjnych karty", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-zmiana-limitu}}", tryb: "za dyspozycję" }
+          - { usluga: "Powiadomienie o transakcji kartą", stawka: "{{fakt:oplata.karta-debetowa.powiadomienie-o-transakcji}}", tryb: "za każde powiadomienie" }
+    przypisy:
+      1: "Opłata za prowadzenie karty nie jest pobierana w miesiącu, w którym wartość transakcji bezgotówkowych wykonanych kartą wyniosła co najmniej {{fakt:limit.karta-debetowa.zblizeniowy-skumulowany}}."
+  - id: taryfa-indywidualni-karty-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Płatność kartą w kraju w punkcie handlowo-usługowym", stawka: "bez opłat", tryb: "za transakcję" }
+          - { usluga: "Płatność kartą w internecie z uwierzytelnieniem silnym", stawka: "bez opłat", tryb: "za transakcję" }
+          - { usluga: "Transakcja kartą w walucie obcej (przeliczana według kursu Banku)[^1]", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-transakcja-walutowa-prowizja}} kwoty transakcji", tryb: "od kwoty transakcji" }
+          - { usluga: "Dzienny limit transakcji gotówkowych (ustawienie domyślne)", stawka: "{{fakt:limit.karta.dzienny-gotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Dzienny limit transakcji bezgotówkowych (ustawienie domyślne)", stawka: "{{fakt:limit.karta.dzienny-bezgotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Dzienny limit transakcji internetowych (ustawienie domyślne)", stawka: "{{fakt:limit.karta-debetowa.internet-dzienny}}", tryb: "dziennie" }
+          - { usluga: "Limit transakcji zbliżeniowych bez PIN i bez potwierdzenia", stawka: "{{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}", tryb: "za transakcję" }
+          - { usluga: "Limit płatności w usłudze płatności mobilnych", stawka: "{{fakt:limit.platnosci-mobilne.dzienny}}", tryb: "dziennie" }
+          - { usluga: "Maksymalny limit transakcji gotówkowych możliwy do ustawienia przez Klienta", stawka: "{{fakt:limit.karta-debetowa.maksymalny-ustawiany-gotowkowy}}", tryb: "dziennie" }
+          - { usluga: "Reklamacja transakcji kartą uznana za bezzasadną[^2]", stawka: "{{fakt:oplata.taryfa-indywidualni.karta-reklamacja-nieuzasadniona}}", tryb: "za reklamację" }
+          - { usluga: "Wyjaśnienie transakcji nieautoryzowanej zgłoszonej w terminie", stawka: "bez opłat", tryb: "za reklamację" }
+    przypisy:
+      1: "Przeliczenie następuje według {{fakt:karta-debetowa.zrodlo-kursu}}; prowizja jest doliczana do kwoty transakcji i prezentowana w historii rachunku odrębnie."
+      2: "Opłata jest pobierana wyłącznie wtedy, gdy po rozpatrzeniu reklamacji Bank stwierdzi, że transakcja została autoryzowana przez Klienta, a Klient został o możliwości pobrania opłaty uprzednio poinformowany."
+  # ===== VIII. Usługi dodatkowe i dokumenty =====
+  - id: taryfa-indywidualni-uslugi-opis
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - akapit: "Dokumenty wydawane na wniosek Klienta są przygotowywane w terminie do {{fakt:termin.rachunek-osobisty.weryfikacja-pelnomocnictwa}} roboczych od dnia złożenia wniosku, a w przypadku dokumentów z archiwum — do {{fakt:termin.reklamacja.rozpatrzenie}}. Opłatę pobiera się w dniu złożenia wniosku. Jeżeli wniosek dotyczy dokumentu, który Bank zobowiązany jest przekazać nieodpłatnie na podstawie przepisów prawa, opłata nie jest pobierana."
+  - id: taryfa-indywidualni-uslugi-1
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zaświadczenie o posiadaniu rachunku i jego saldzie", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie w języku obcym (angielskim lub niemieckim)", stawka: "{{fakt:oplata.taryfa-indywidualni.zaswiadczenie-obcojezyczne}}", tryb: "za każdy dokument" }
+          - { usluga: "Opinia bankowa o Kliencie", stawka: "{{fakt:oplata.taryfa-indywidualni.opinia-bankowa}}", tryb: "za każdy dokument" }
+          - { usluga: "Duplikat umowy rachunku", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za każdy dokument" }
+          - { usluga: "Odpis wyciągu z rachunku za miesiąc wcześniejszy", stawka: "{{fakt:oplata.rachunek-osobisty.odpis-wyciagu}}", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie wykonania operacji wystawione w placówce", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Kopia dokumentu z archiwum Banku[^1]", stawka: "{{fakt:oplata.taryfa-indywidualni.kopia-dokumentu-archiwum}}", tryb: "za każdy dokument" }
+          - { usluga: "Poszukiwanie dokumentu w archiwum bez wskazania daty operacji", stawka: "{{fakt:oplata.taryfa-indywidualni.poszukiwanie-dokumentu}}", tryb: "za wniosek" }
+          - { usluga: "Informacja o rachunku dla biegłego rewidenta lub komornika", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "za każdy dokument" }
+          - { usluga: "Blokada środków na rachunku na wniosek Klienta", stawka: "{{fakt:oplata.taryfa-indywidualni.blokada-na-wniosek}}", tryb: "za dyspozycję" }
+          - { usluga: "Wydanie tokena sprzętowego do autoryzacji dyspozycji", stawka: "{{fakt:oplata.taryfa-indywidualni.token-sprzetowy}}", tryb: "jednorazowo" }
+          - { usluga: "Wynajem skrytki sejfowej w placówce (rozmiar standardowy)", stawka: "{{fakt:oplata.taryfa-indywidualni.skrytka-miesiecznie}}", tryb: "miesięcznie" }
+    przypisy:
+      1: "Opłata dotyczy dokumentów starszych niż rok od dnia ich sporządzenia; kopie dokumentów z bieżącego roku Bank wydaje według pozycji „Odpis wyciągu z rachunku”."
+  - id: taryfa-indywidualni-uslugi-2
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Powiadomienia SMS o wybranych zdarzeniach na rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg papierowy wysyłany pocztą", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+          - { usluga: "Wyciąg elektroniczny w bankowości elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Zmiana adresu korespondencyjnego w bankowości elektronicznej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Pisemne wezwanie do uzupełnienia dokumentów", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Zajęcie wierzytelności z rachunku przez organ egzekucyjny", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "za każde zajęcie" }
+          - { usluga: "Przekazanie środków po zgonie posiadacza rachunku (dyspozycja spadkobierców)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Przedłużenie okresu obowiązywania limitu zadłużenia w rachunku", stawka: "{{fakt:oplata.taryfa-indywidualni.debet-przedluzenie-procent}} kwoty limitu", tryb: "od kwoty limitu" }
+          - { usluga: "Zmiana numeru telefonu do autoryzacji w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Dodatkowa weryfikacja tożsamości w placówce na wniosek Klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Pierwsza dyspozycja w bankowości mobilnej po zmianie urządzenia", stawka: "bez opłat", tryb: "za dyspozycję" }
+  # ===== IX. Objaśnienia =====
+  - id: taryfa-indywidualni-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-indywidualni]
+    kategoria: wymagane-taryfa-ind
+    elementy:
+      - ustep: "Użyte w Taryfie określenie „dzień roboczy” oznacza dzień inny niż sobota, niedziela lub dzień ustawowo wolny od pracy. „Kwota progowa” oznacza kwotę wpływów na rachunek w miesiącu kalendarzowym, od której zależy zwolnienie z opłaty za prowadzenie rachunku w danym pakiecie."
+      - ustep: "Stawki podane w procentach i z oznaczeniem „min.” lub „max.” stosuje się w ten sposób, że opłata nie może być niższa od kwoty minimalnej ani wyższa od kwoty maksymalnej, niezależnie od wartości procentowej wynikającej z kwoty operacji."
+      - ustep: "Pytania dotyczące stawek Klient może kierować na infolinię pod numerem {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) albo na adres korespondencyjny: {{fakt:bank.adres}}. Reklamacje dotyczące pobranych opłat rozpatruje {{fakt:jednostka.reklamacje}} w terminie {{fakt:termin.reklamacja.rozpatrzenie}}."
+      - akapit: "Taryfa obowiązuje od dnia wskazanego na okładce. Czynności rozpoczęte przed tym dniem i zakończone po jego upływie rozlicza się według stawek obowiązujących w dniu ich zlecenia, chyba że Taryfa stanowi inaczej."

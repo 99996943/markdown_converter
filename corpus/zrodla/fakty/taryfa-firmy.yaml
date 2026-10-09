@@ -1,0 +1,364 @@
+fakty:
+  # --- rachunki
+  - id: oplata.firma.prowadzenie-rachunku-mikro
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 19.00
+      - od: 2027-01-01
+        wartosc: 24.00
+    alternatywy: [0.00, 29.00]
+  - id: oplata.firma.prowadzenie-rachunku-msp
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 39.00
+      - od: 2026-04-01
+        wartosc: 45.00
+    alternatywy: [29.00, 59.00]
+  - id: oplata.firma.prowadzenie-rachunku-instytucjonalny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 29.00
+    alternatywy: [19.00, 49.00]
+  - id: oplata.firma.prowadzenie-rachunku-wspolnota
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+      - od: 2027-01-01
+        wartosc: 18.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.firma.prowadzenie-rachunku-pomocniczego
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+    alternatywy: [0.00, 12.00]
+  - id: oplata.firma.rachunek-vat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [5.00]
+  - id: oplata.firma.otwarcie-rachunku
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [50.00, 100.00]
+  - id: oplata.firma.zamkniecie-rachunku
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [0.00, 100.00]
+  - id: oplata.firma.rachunek-powierniczy-otwarcie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2027-01-01
+        wartosc: 350.00
+    alternatywy: [200.00, 500.00]
+  - id: oplata.firma.zmiana-reprezentacji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [0.00, 80.00]
+  - id: oplata.firma.zajecie-egzekucyjne
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [30.00, 100.00]
+  - id: oplata.firma.opinia-bankowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 80.00
+      - od: 2024-09-01
+        wartosc: 90.00
+      - od: 2026-03-01
+        wartosc: 100.00
+    alternatywy: [60.00, 120.00]
+  - id: oplata.firma.potwierdzenie-salda-audyt
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2026-04-01
+        wartosc: 120.00
+    alternatywy: [0.00, 150.00]
+  # --- przelewy krajowe
+  - id: oplata.firma.przelew-elektroniczny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.40
+      - od: 2027-01-01
+        wartosc: 0.50
+    alternatywy: [0.00, 0.80]
+  - id: oplata.firma.przelew-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 12.00
+    alternatywy: [8.00, 18.00]
+  - id: oplata.firma.przelew-sorbnet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+      - od: 2027-01-01
+        wartosc: 30.00
+    alternatywy: [20.00, 40.00]
+  - id: oplata.firma.przelew-podzielona-platnosc
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.50
+    alternatywy: [0.00, 1.00]
+  - id: oplata.firma.przelew-zus-us
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.30
+    alternatywy: [0.00, 0.60]
+  - id: oplata.firma.przelew-wewnetrzny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2025-06-01
+        wartosc: 0.10
+    alternatywy: [0.20, 0.50]
+  - id: oplata.firma.paczka-przelewow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.25
+    alternatywy: [0.15, 0.40]
+  - id: oplata.firma.zlecenie-stale
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 4.00
+    alternatywy: [0.00, 6.00]
+  - id: oplata.firma.polecenie-zaplaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [0.00, 5.00]
+  - id: oplata.firma.zwrot-przelewu-na-wniosek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 50.00]
+  - id: oplata.firma.odwolanie-przelewu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [15.00, 40.00]
+  # --- przelewy zagraniczne
+  - id: oplata.firma.przelew-sepa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2027-01-01
+        wartosc: 6.00
+    alternatywy: [0.00, 9.00]
+  - id: oplata.firma.przelew-zagraniczny-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.20
+      - od: 2026-04-01
+        wartosc: 0.25
+    alternatywy: [0.10, 0.40]
+  - id: oplata.firma.przelew-zagraniczny-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+    alternatywy: [15.00, 30.00]
+  - id: oplata.firma.przelew-zagraniczny-maksimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00, 250.00]
+  - id: oplata.firma.przelew-zagraniczny-pilny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 40.00
+    alternatywy: [30.00, 60.00]
+  - id: oplata.firma.przelew-zagraniczny-przychodzacy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.firma.zmiana-dyspozycji-zagranicznej
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+    alternatywy: [40.00, 90.00]
+  - id: oplata.firma.poszukiwanie-przelewu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 80.00
+    alternatywy: [50.00, 120.00]
+  - id: oplata.firma.rachunek-walutowy-prowadzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  # --- gotówka
+  - id: oplata.firma.wplata-gotowkowa-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.30
+      - od: 2027-01-01
+        wartosc: 0.35
+    alternatywy: [0.10, 0.50]
+  - id: oplata.firma.wplata-gotowkowa-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+      - od: 2025-01-01
+        wartosc: 7.00
+    alternatywy: [3.00, 10.00]
+  - id: oplata.firma.wyplata-gotowkowa-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.50
+    alternatywy: [0.30, 0.80]
+  - id: oplata.firma.wyplata-gotowkowa-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+    alternatywy: [5.00, 12.00]
+  - id: oplata.firma.wplata-wplatomat-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.15
+    alternatywy: [0.00, 0.25]
+  - id: oplata.firma.wplata-zamknieta
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 15.00]
+  - id: oplata.firma.bilon-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.50
+    alternatywy: [1.00, 2.50]
+  - id: limit.firma.awizo-wyplaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20000.00
+    alternatywy: [10000.00, 50000.00]
+  # --- karty firmowe
+  - id: oplata.firma.karta-wydanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [25.00]
+  - id: oplata.firma.karta-prowadzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 9.00
+      - od: 2027-01-01
+        wartosc: 11.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.firma.karta-kredytowa-roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+    alternatywy: [90.00, 180.00]
+  - id: oplata.firma.karta-wyplata-zagranica
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [2.00, 4.00]
+  - id: oplata.firma.karta-zmiana-pin
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: limit.firma.karta-dzienny-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+    alternatywy: [5000.00, 20000.00]
+  - id: limit.firma.karta-dzienny-bezgotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+      - od: 2027-01-01
+        wartosc: 60000.00
+    alternatywy: [20000.00]
+  # --- bankowość elektroniczna
+  - id: oplata.firma.bankowosc-abonament
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 29.00
+      - od: 2026-04-01
+        wartosc: 35.00
+    alternatywy: [0.00, 49.00]
+  - id: oplata.firma.token-sprzetowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 49.00
+    alternatywy: [35.00, 70.00]
+  - id: oplata.firma.integracja-api
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00, 250.00]
+  - id: oplata.firma.wyciag-mt940
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 25.00
+    alternatywy: [0.00, 40.00]
+  - id: limit.firma.przelew-dzienny-internet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100000.00
+      - od: 2027-01-01
+        wartosc: 150000.00
+    alternatywy: [50000.00, 200000.00]
+  - id: limit.firma.przelew-natychmiastowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+    alternatywy: [20000.00, 100000.00]
+  # --- gwarancje i akredytywy
+  - id: oplata.firma.gwarancja-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.50
+      - od: 2027-01-01
+        wartosc: 1.75
+    alternatywy: [1.00, 2.50]
+  - id: oplata.firma.gwarancja-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+    alternatywy: [200.00, 500.00]
+  - id: oplata.firma.gwarancja-zmiana
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [150.00, 350.00]
+  - id: oplata.firma.akredytywa-otwarcie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.40
+    alternatywy: [0.25, 0.60]
+  - id: oplata.firma.akredytywa-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [150.00, 400.00]
+  - id: oplata.firma.akredytywa-awizo
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.15
+    alternatywy: [0.10, 0.30]
+  # --- godziny graniczne
+  - id: termin.firma.godzina-odciecia-elixir
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "15:30"
+    alternatywy: ["14:00"]
+  - id: termin.firma.godzina-odciecia-sorbnet
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "16:00"
+      - od: 2026-04-01
+        wartosc: "15:45"
+    alternatywy: ["14:30"]
+  - id: termin.firma.godzina-odciecia-zagraniczne
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "14:00"
+    alternatywy: ["12:00"]

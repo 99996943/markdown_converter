@@ -1,0 +1,133 @@
+bloki:
+  # ---------------------------------------------------------------- I. ogólne (akapity)
+  - id: taryfa-firmy-opc-ogolne-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: akapity-firmy-ogolne
+    elementy:
+      - akapit: "Opłaty za czynności wykonywane w walucie obcej, dla których Taryfa nie wskazuje stawki w tej walucie, {pobiera się|Bank pobiera} w złotych, po przeliczeniu według kursu sprzedaży z Tabeli kursów walut Banku obowiązującego w dniu pobrania opłaty."
+      - akapit: "Opłaty z tytułu czynności zleconych przez {pełnomocnika|osobę upoważnioną} obciążają rachunek mocodawcy, chyba że z umowy wynika inny sposób rozliczenia."
+      - akapit: "Bank nie pobiera opłat za czynności, które wykonuje z urzędu na podstawie przepisów prawa, w szczególności za przekazanie informacji organom uprawnionym do ich żądania, o ile przepisy nie stanowią inaczej."
+
+  - id: taryfa-firmy-opc-ogolne-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: akapity-firmy-ogolne
+    elementy:
+      - ustep: "Klient {może|ma prawo} wnioskować o przegląd stawek po upływie 12 miesięcy od zawarcia umowy lub od poprzedniego przeglądu. Bank rozpatruje wniosek w terminie {{fakt:termin.reklamacja.inne}}, uwzględniając obroty na rachunkach i wykorzystanie produktów."
+      - ustep: "Rezygnacja z usługi abonamentowej jest skuteczna z końcem miesiąca, w którym dyspozycję złożono, a opłata za ten miesiąc podlega pobraniu w pełnej wysokości."
+      - akapit: "W razie rozwiązania umowy rachunku Bank pobiera należne opłaty z salda rachunku przed jego wypłatą, a ewentualne zadłużenie podlega rozliczeniu na zasadach określonych w umowie."
+
+  - id: taryfa-firmy-opc-ogolne-3
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: akapity-firmy-ogolne
+    elementy:
+      - akapit: "Stawki procentowe oznaczone w Taryfie jako „od kwoty” {są liczone|oblicza się} od kwoty brutto dyspozycji, a w przypadku operacji walutowych — od równowartości operacji w złotych według kursu średniego Narodowego Banku Polskiego z dnia poprzedzającego wykonanie operacji."
+      - akapit: "Zwrot opłaty pobranej za usługę, której Bank nie wykonał z przyczyn leżących po jego stronie, następuje {automatycznie|z urzędu} na rachunek, z którego opłatę pobrano, bez konieczności składania wniosku przez Klienta."
+
+  # ---------------------------------------------------------------- II. Mikroprzedsiębiorstwa
+  - id: taryfa-firmy-opc-mikro-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-mikro
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Pakiet startowy dla nowej firmy (pierwsze 6 miesięcy działalności)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Rachunek dla przedsiębiorcy prowadzącego działalność nierejestrową", stawka: "9,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Przelew do klienta zagranicznego w euro z rachunku złotowego", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Terminal płatniczy POS — aktywacja", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Terminal płatniczy POS — dzierżawa", stawka: "29,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Prowizja od transakcji kartami płatniczymi przyjmowanymi w terminalu", stawka: "1,29%", tryb: "od kwoty transakcji"}
+          - {usluga: "Pakiet {powiadomień|alertów} o wpływach i obciążeniach rachunku (e-mail i SMS)", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie"}
+          - {usluga: "Wyciąg miesięczny przesyłany pocztą", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za wyciąg"}
+          - {usluga: "Obsługa zlecenia stałego na rzecz Zakładu Ubezpieczeń Społecznych", stawka: "{{fakt:oplata.firma.zlecenie-stale}}", tryb: "za każdą realizację"}
+          - {usluga: "Zawieszenie działalności — obsługa rachunku", stawka: "bez opłat", tryb: "miesięcznie, do 24 miesięcy"}
+
+  - id: taryfa-firmy-opc-mikro-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-mikro
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zmiana formy prawnej działalności (przeniesienie rachunku)", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "jednorazowo"}
+          - {usluga: "Przejęcie rachunku przez następcę prawnego przedsiębiorcy", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Zaświadczenie o posiadaniu rachunku dla potrzeb urzędu lub kontrahenta", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Ustanowienie dyspozycji na wypadek śmierci przedsiębiorcy", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przekazanie środków na rachunek zarządcy sukcesyjnego", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Wypłata gotówki w kasie placówki do kwoty 5 000,00 zł", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "za wypłatę"}
+          - {usluga: "Wpłata utargu we wpłatomacie Banku", stawka: "{{fakt:oplata.firma.wplata-wplatomat-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Odwołanie przelewu złożonego w bankowości elektronicznej", stawka: "{{fakt:oplata.firma.odwolanie-przelewu}}", tryb: "za odwołanie"}
+          - {usluga: "Dostęp do raportów dla księgowego (rola „księgowy” w bankowości)", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Zestawienie transakcji kartowych w formacie CSV", stawka: "10,00 zł", tryb: "za zestawienie"}
+
+  # ---------------------------------------------------------------- III. MSP
+  - id: taryfa-firmy-opc-msp-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-msp
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Opieka dedykowanego doradcy klienta", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku w ramach struktury kilku podmiotów powiązanych kapitałowo", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-msp}}", tryb: "miesięcznie, za podmiot"}
+          - {usluga: "Przegląd stawek indywidualnych na wniosek Klienta", stawka: "bez opłat", tryb: "rocznie"}
+          - {usluga: "Przelew SORBNET z rachunku w złotych", stawka: "{{fakt:oplata.firma.przelew-sorbnet}}", tryb: "za przelew"}
+          - {usluga: "Przelew zbiorczy do pracowników (lista płac)", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za każdy przelew w paczce"}
+          - {usluga: "Obsługa pakietu wynagrodzeń — rachunki pracowników", stawka: "2,00 zł", tryb: "za rachunek, miesięcznie"}
+          - {usluga: "Linia gwarancyjna — rezerwacja limitu", stawka: "0,25% kwoty limitu", tryb: "rocznie"}
+          - {usluga: "Rachunek lokat overnight", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Sprawozdanie dzienne o saldach rachunków (raport zbiorczy)", stawka: "{{fakt:oplata.firma.wyciag-mt940}}", tryb: "miesięcznie"}
+          - {usluga: "Elektroniczna obsługa należności (identyfikacja wpłat kontrahentów)", stawka: "0,05 zł", tryb: "za każdą zidentyfikowaną wpłatę"}
+          - {usluga: "Przygotowanie zestawienia obrotów dla potrzeb badania sprawozdania", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za zestawienie"}
+
+  - id: taryfa-firmy-opc-msp-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-msp
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zmiana wysokości limitu w rachunku bieżącym w trakcie okresu kredytowania", stawka: "0,5% kwoty zmiany, min. 100,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Rozpatrzenie wniosku o zawieszenie spłaty limitu", stawka: "200,00 zł", tryb: "za wniosek"}
+          - {usluga: "Prowizja za gotowość (niewykorzystana część limitu)", stawka: "0,2% niewykorzystanej kwoty", tryb: "kwartalnie"}
+          - {usluga: "Cesja wierzytelności z rachunku — rejestracja", stawka: "150,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Ustanowienie blokady środków jako zabezpieczenia na rachunku", stawka: "100,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Pełnomocnictwo generalne dla pracownika Klienta", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za pełnomocnictwo"}
+          - {usluga: "Zlecenie stałe do wielu odbiorców (harmonogram zbiorczy)", stawka: "{{fakt:oplata.firma.zlecenie-stale}}", tryb: "za każdą realizację"}
+          - {usluga: "Polecenie zapłaty — rejestracja zgody dłużnika", stawka: "5,00 zł", tryb: "za zgodę"}
+          - {usluga: "Terminal płatniczy POS — dodatkowy punkt akceptacji", stawka: "19,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Wypłata gotówki w kasie placówki powyżej 20 000,00 zł z awizem", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty", tryb: "od kwoty wypłaty"}
+
+  # ---------------------------------------------------------------- IV. instytucjonalni
+  - id: taryfa-firmy-opc-inst-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Prowadzenie rachunku jednostki budżetowej", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku zakładowego funduszu świadczeń socjalnych", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku Rady Rodziców lub komitetu rodzicielskiego", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Prowadzenie rachunku fundacji lub stowarzyszenia", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-instytucjonalny}}", tryb: "miesięcznie"}
+          - {usluga: "Przelew do organów administracji publicznej", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew"}
+          - {usluga: "Wpłata datków i składek członkowskich za pośrednictwem rachunków wirtualnych", stawka: "0,10 zł", tryb: "za każdy numer, miesięcznie"}
+          - {usluga: "Obsługa rachunku projektu współfinansowanego ze środków zewnętrznych", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - {usluga: "Rozliczenie projektu — zestawienie obrotów z podziałem na źródła finansowania", stawka: "50,00 zł", tryb: "za zestawienie"}
+          - {usluga: "Przygotowanie dokumentu potwierdzającego prowadzenie rachunku do wniosku grantowego", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zmiana składu organów uprawnionych do reprezentacji", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za zmianę"}
+
+  - id: taryfa-firmy-opc-inst-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-inst
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Obsługa wpłat czynszowych wspólnoty — tablica ewidencji lokali", stawka: "15,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Naliczanie odsetek od środków funduszu remontowego", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Przelew z funduszu remontowego do wykonawcy robót", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew"}
+          - {usluga: "Wypłata zaliczki z rachunku wspólnoty w kasie placówki", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wyplata-gotowkowa-minimum}}", tryb: "od kwoty wypłaty"}
+          - {usluga: "Zestawienie wpłat właściciela lokalu za bieżący rok", stawka: "bez opłat", tryb: "za zestawienie"}
+          - {usluga: "Potwierdzenie salda rachunku wspólnoty dla potrzeb uchwały o wydatkach", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Obsługa kredytu termomodernizacyjnego wspólnoty — rachunek obsługi", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - {usluga: "Udostępnienie kopii uchwał i dokumentów rachunkowych przekazanych Bankowi", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za komplet"}
+          - {usluga: "Przeniesienie rachunku wspólnoty do innego zarządcy", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Przechowywanie środków w depozycie na czas sporu o zarząd", stawka: "100,00 zł", tryb: "miesięcznie"}

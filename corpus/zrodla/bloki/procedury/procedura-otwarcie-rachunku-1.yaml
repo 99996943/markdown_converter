@@ -1,0 +1,107 @@
+bloki:
+  - id: otwarcie-cel
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-cel
+    elementy:
+      - akapit: "Celem procedury jest {ujednolicenie|określenie jednolitych} zasad postępowania pracowników Banku przy otwieraniu rachunków osobistych dla klientów indywidualnych, tak aby każdy rachunek był otwierany {zgodnie z przepisami prawa|w sposób zgodny z przepisami}, bezpiecznie dla Banku i bez zbędnych utrudnień dla klienta."
+      - ustep: "Procedura {opisuje|przedstawia} kolejne czynności, które pracownik wykonuje od przyjęcia wniosku o otwarcie rachunku do uruchomienia rachunku w Banku. Obejmuje ona w szczególności:"
+        punkty:
+          - "identyfikację klienta i weryfikację jego tożsamości na podstawie dokumentu, w placówce albo na odległość;"
+          - "zastosowanie środków bezpieczeństwa finansowego i ocenę ryzyka związanego z klientem (zob. {{ref:akt:dz-u-2025-644-aml}});"
+          - "zawarcie umowy o rachunek osobisty i uruchomienie rachunku;"
+          - "postępowanie w przypadkach szczególnych, w tym przy rachunkach małoletnich, rachunkach wspólnych i obsłudze cudzoziemców;"
+          - "odmowę otwarcia rachunku i dokumentowanie tej odmowy."
+      - akapit: "Procedura {służy|ma służyć} także wykonaniu obowiązków Banku wynikających z przepisów o bankowości (zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}}) oraz zapewnieniu spójności z postanowieniami dokumentu „{{ref:dokument:regulamin-rachunku-osobistego}}” i z opłatami określonymi w dokumencie „{{ref:dokument:taryfa-indywidualni}}”."
+
+  - id: otwarcie-zakres
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-zakres
+    elementy:
+      - ustep: "Procedurę stosują wszyscy pracownicy Banku uprawnieni do przyjmowania wniosków o otwarcie rachunków osobistych: pracownicy placówek, doradcy infolinii oraz pracownicy zespołu wideoweryfikacji. Procedura dotyczy rachunków osobistych prowadzonych dla osób fizycznych niebędących przedsiębiorcami, w szczególności:"
+        punkty:
+          - "konta w pakietach Standard, Premium i dla seniora, opisanych w dokumencie „{{ref:dokument:taryfa-indywidualni}}”;"
+          - "rachunków osobistych małoletnich prowadzonych przez przedstawiciela ustawowego;"
+          - "rachunków wspólnych dwóch lub większej liczby osób fizycznych;"
+          - "rachunków osób niemających miejsca zamieszkania w Rzeczypospolitej Polskiej."
+      - akapit: "{Procedura obejmuje|Procedura dotyczy} trzy kanały otwarcia rachunku: {wniosek składany|otwarcie} w placówce, wniosek złożony na odległość przez bankowość elektroniczną z wideoweryfikacją tożsamości oraz wniosek złożony za pośrednictwem infolinii, który kończy się podpisaniem umowy w jednym z dwóch pierwszych kanałów."
+      - akapit: "Procedury nie stosuje się do rachunków prowadzonych na potrzeby działalności gospodarczej, rachunków lokat terminowych otwieranych do istniejącego rachunku osobistego oraz do rachunków bankowości prywatnej; dla nich obowiązują {odrębne regulacje wewnętrzne|odrębne dokumenty wewnętrzne}."
+
+  - id: otwarcie-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-odpowiedzialnosci
+    elementy:
+      - ustep: "W procesie otwierania rachunku role i odpowiedzialności {rozkładają się|są podzielone} następująco:"
+        punkty:
+          - "**pracownik placówki** — przyjmuje wniosek, identyfikuje klienta, zbiera dokumenty, wypełnia {{fakt:formularz.otwarcie.wniosek}} i {{fakt:formularz.otwarcie.kwestionariusz-ryzyka}} oraz rejestruje sprawę w systemie {{fakt:system.otwarcie.cbs}}; odpowiada za kompletność i prawdziwość odnotowanych danych;"
+          - "**kierownik placówki** — rozstrzyga sprawy wątpliwe, zatwierdza otwarcie rachunku przy ryzyku średnim, wydaje decyzje o odmowie, nadzoruje przestrzeganie procedury w placówce i odpowiada za szkolenia pracowników;"
+          - "**doradca infolinii i pracownik zespołu wideoweryfikacji** — prowadzą rozmowę z klientem na odległość, przeprowadzają sesję wideoweryfikacji w systemie {{fakt:system.otwarcie.wideo}} i sporządzają {{fakt:formularz.otwarcie.protokol-wideo}};"
+          - "**{{fakt:jednostka.zgodnosc}}** — ocenia klientów o wysokim ryzyku, zatwierdza nawiązanie stosunków gospodarczych z osobami zajmującymi eksponowane stanowiska polityczne, prowadzi kontakty z Generalnym Inspektorem Informacji Finansowej oraz opiniuje zmiany procedury;"
+          - "**{{fakt:jednostka.ryzyko}}** — {dostarcza|utrzymuje} metodykę oceny ryzyka klienta i aktualizuje punktację określoną w załączniku do procedury;"
+          - "**{{fakt:jednostka.bezpieczenstwo}}** — odpowiada za zasady bezpieczeństwa wideoweryfikacji, analizuje podejrzenia fałszerstw dokumentów i wyłudzeń tożsamości;"
+          - "**{{fakt:jednostka.operacje}}** — {zapewnia|utrzymuje} działanie systemu {{fakt:system.otwarcie.cbs}} i archiwum {{fakt:system.otwarcie.archiwum}} oraz uruchamia rachunki;"
+          - "**{{fakt:jednostka.obsluga-klienta}}** — jako właściciel procedury odpowiada za jej aktualność, interpretację i szkolenia, a także rozpatruje wnioski o wyjątki od jej stosowania."
+      - akapit: "Pracownik, który {poweźmie|nabierze} wątpliwości co do tożsamości klienta, autentyczności dokumentu lub celu otwarcia rachunku, jest obowiązany wstrzymać czynności i przekazać sprawę kierownikowi placówki, a w razie podejrzenia przestępstwa — także komórce „{{fakt:jednostka.zgodnosc}}”. Nikt nie może {wywierać nacisku|naciskać} na pracownika w celu pominięcia czynności wymaganych procedurą."
+
+  - id: otwarcie-definicje
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: definicje
+    elementy:
+      - ustep: "Ponadto w procedurze {używa się|stosuje się} następujących określeń:"
+        punkty:
+          - "**Rachunek** — rachunek osobisty prowadzony na podstawie dokumentu „{{ref:dokument:regulamin-rachunku-osobistego}}”;"
+          - "**Środki bezpieczeństwa finansowego** — czynności Banku wobec klienta wymagane przepisami o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu, w tym identyfikacja, weryfikacja tożsamości, ustalenie beneficjenta rzeczywistego i bieżąca analiza transakcji;"
+          - "**Wideoweryfikacja** — weryfikacja tożsamości klienta na odległość, w czasie rzeczywistym, {przy użyciu|z wykorzystaniem} transmisji obrazu i dźwięku z udziałem pracownika Banku;"
+          - "**Beneficjent rzeczywisty** — osoba fizyczna sprawująca ostateczną kontrolę nad klientem lub w jej imieniu albo na jej rzecz nawiązywane są stosunki gospodarcze;"
+          - "**Osoba zajmująca eksponowane stanowisko polityczne (PEP)** — osoba pełniąca znaczące funkcje publiczne, a także członkowie jej rodziny i osoby znane jako bliscy współpracownicy, w rozumieniu przepisów;"
+          - "**Przedstawiciel ustawowy** — rodzic, opiekun lub inna osoba uprawniona z mocy ustawy lub orzeczenia sądu do działania w imieniu osoby małoletniej;"
+          - "**Kwestionariusz ryzyka** — formularz {{fakt:formularz.otwarcie.kwestionariusz-ryzyka}}, na podstawie którego ustala się poziom ryzyka klienta;"
+          - "**Wniosek wstępny** — wniosek o otwarcie rachunku złożony na odległość, niepodpisany jeszcze umową;"
+          - "**GIIF** — Generalny Inspektor Informacji Finansowej, {organ przyjmujący|organ odbierający} zawiadomienia o podejrzanych transakcjach;"
+          - "**{{fakt:system.otwarcie.cbs}}** — system centralny, w którym rejestruje się klientów, wnioski i rachunki."
+
+  - id: otwarcie-schemat
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad
+    elementy:
+      - akapit: "{Poniższy schemat przedstawia|Schemat poniżej ilustruje} ogólny przebieg otwierania rachunku; szczegółowe czynności opisano w kolejnych sekcjach."
+      - schemat:
+          - nazwa: "Przyjęcie wniosku"
+            wyjasnienie: "{Pracownik ustala|Pracownik poznaje} potrzeby klienta i sprawdza, czy rachunek może być otwarty w wybranym kanale. {Rejestruje|Wprowadza} wniosek w systemie centralnym i zbiera niezbędne dokumenty."
+          - nazwa: "Identyfikacja klienta"
+            wyjasnienie: "Pracownik weryfikuje tożsamość klienta na podstawie ważnego dokumentu, w placówce albo na odległość. Wynik weryfikacji {dokumentuje|zapisuje} w systemie."
+          - nazwa: "Ocena ryzyka"
+            wyjasnienie: "Pracownik wypełnia kwestionariusz ryzyka i sprawdza klienta w systemie filtrowania. Poziom ryzyka decyduje o tym, kto zatwierdza otwarcie rachunku."
+          - nazwa: "Zawarcie umowy"
+            wyjasnienie: "Klient {otrzymuje|dostaje} warunki umowy na trwałym nośniku i składa podpis. Pracownik potwierdza zawarcie umowy w systemie."
+          - nazwa: "Uruchomienie rachunku"
+            wyjasnienie: "Departament Operacji nadaje numer rachunku i aktywuje usługi. Klient otrzymuje dostęp do bankowości elektronicznej."
+
+  - id: otwarcie-kroki-przygotowanie
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-przeglad
+    elementy:
+      - kroki:
+          - tekst: "{Ustal|Wyjaśnij} z klientem cel otwarcia rachunku i wybrany pakiet konta."
+            podkroki:
+              - tekst: "{Przedstaw|Omów} klientowi warunki pakietów wraz z opłatami, w tym opłatę za prowadzenie rachunku w wysokości {{fakt:oplata.prowadzenie-rachunku}} miesięcznie i warunki jej obniżenia, zgodnie z dokumentem „{{ref:dokument:taryfa-indywidualni}}”."
+              - tekst: "Poinformuj klienta, że pierwsza wpłata na rachunek wynosi {{fakt:limit.rachunek-osobisty.pierwsza-wplata}}, a otwarcie rachunku nie wymaga wpłaty początkowej."
+              - tekst: "{Zapytaj|Ustal}, czy klient ma już w Banku inne produkty, aby uniknąć duplikatu danych w systemie."
+          - tekst: "{Sprawdź|Zweryfikuj}, czy klient spełnia warunki podmiotowe otwarcia rachunku."
+            podkroki:
+              - tekst: "Ustal wiek klienta: osoba, która ukończyła {{fakt:wiek.rachunek-osobisty.pelnoletnosc}}, ma pełną zdolność do czynności prawnych i może otworzyć rachunek samodzielnie."
+              - tekst: "Wobec osoby w wieku od {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}} do ukończenia {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} oraz wobec młodszych dzieci stosuj zasady przewidziane dla małoletnich."
+              - tekst: "W przypadku osoby ubezwłasnowolnionej lub objętej opieką wstrzymaj czynności i skieruj sprawę do kierownika placówki."
+          - tekst: "Wybierz kanał otwarcia rachunku i przekaż klientowi listę wymaganych dokumentów."
+            podkroki:
+              - tekst: "Wskaż dokumenty wymienione w załączniku do procedury odpowiednio do sytuacji klienta."
+              - tekst: "Jeżeli klient nie ma przy sobie wszystkich dokumentów, wyznacz termin uzupełnienia, nie dłuższy niż {{fakt:termin.otwarcie.uzupelnienie-dokumentow}}."
+          - tekst: "Załóż sprawę w systemie {{fakt:system.otwarcie.cbs}}."
+            podkroki:
+              - tekst: "Sprawdź, czy klient nie jest już zarejestrowany; w razie znalezienia rekordu zaktualizuj dane, a nie zakładaj nowego."
+              - tekst: "Wprowadź dane z {{fakt:formularz.otwarcie.wniosek}} i nadaj sprawie numer, który podaj klientowi."

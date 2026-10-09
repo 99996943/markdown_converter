@@ -1,0 +1,355 @@
+bloki:
+  # ===== Przypadki szczególne =====
+  - id: zastrzezenia-b-szczegolne-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Klient przebywający za granicą.** Zgłoszenie utraty karty za granicą wymaga szczególnej szybkości, ponieważ Klient często nie ma dostępu do innych środków płatniczych, a ryzyko nadużycia jest wyższe."
+      - ustep: "W takim przypadku pracownik {postępuje|działa} następująco:"
+        punkty:
+          - "przyjmuje zgłoszenie przez numer {{fakt:kontakt.infolinia-zagranica}} lub w dowolnym innym kanale, a blokadę wykonuje niezwłocznie, bez względu na strefę czasową Klienta;"
+          - "ustala, czy Klient dysponuje drugą kartą lub dostępem do bankowości elektronicznej, i opisuje opcje awaryjnej wypłaty gotówki oraz awaryjnej wymiany karty oferowane przez organizację płatniczą;"
+          - "{informuje|poucza} Klienta, że czas dostarczenia karty zastępczej za granicę jest dłuższy niż w kraju, i wskazuje szacowany termin;"
+          - "{przekazuje|udostępnia} Klientowi numer zgłoszenia i adres e-mail do dalszego kontaktu, ponieważ połączenia telefoniczne z zagranicy mogą być utrudnione."
+
+  - id: zastrzezenia-b-szczegolne-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Karty wydane osobom małoletnim.** Kartę wydaną osobie niepełnoletniej zastrzega się na takich samych zasadach jak kartę osoby dorosłej, z uwzględnieniem roli przedstawiciela ustawowego."
+      - ustep: "{W tym przypadku|W takim przypadku} pracownik:"
+        punkty:
+          - "przyjmuje zgłoszenie od małoletniego posiadacza karty lub jego przedstawiciela ustawowego, bez konieczności wcześniejszego uwierzytelniania opiekuna, jeżeli pozwala to szybciej zabezpieczyć środki;"
+          - "po wykonaniu blokady {informuje|zawiadamia} przedstawiciela ustawowego, chyba że istnieją przesłanki, że jego interes jest sprzeczny z interesem małoletniego;"
+          - "karty zastępczej nie wydaje bez zgody przedstawiciela ustawowego, jeżeli wymaga jej umowa o rachunek;"
+          - "w razie sporu między przedstawicielami ustawowymi co do blokady lub odblokowania stosuje blokadę czasową do czasu przedstawienia orzeczenia sądu lub zgodnego oświadczenia stron."
+
+  - id: zastrzezenia-b-szczegolne-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Karty firmowe i karty wydane do rachunku przedsiębiorcy.** Zgłoszenia dotyczące kart firmowych przyjmuje się od użytkownika karty lub osoby upoważnionej do dysponowania rachunkiem."
+      - ustep: "Szczególne zasady obejmują:"
+        punkty:
+          - "obowiązek poinformowania osoby upoważnionej do dysponowania rachunkiem o zastrzeżeniu karty, nawet jeżeli zgłoszenia dokonał sam użytkownik;"
+          - "odrębne zasady odpowiedzialności za transakcje nieautoryzowane, określone w umowie rachunku, z uwzględnieniem tego, że przepisy o ochronie konsumentów nie zawsze mają zastosowanie;"
+          - "{możliwość|prawo} zlecenia wydania karty zastępczej tylko przez osobę upoważnioną, a w razie jej nieobecności — przez pełnomocnika zgodnie z wzorem podpisów;"
+          - "konieczność {sprawdzenia|zweryfikowania}, czy blokada karty nie utrudni realizacji płatności masowych lub rozliczeń z kontrahentami, co należy omówić z osobą upoważnioną."
+
+  - id: zastrzezenia-b-szczegolne-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Zgłoszenie złożone w czasie awarii systemów Banku.** W razie niedostępności systemu {{fakt:system.zastrzezenia.cbs}} pracownicy stosują procedurę zastępczą, która zapewnia możliwość przyjęcia zgłoszenia i zabezpieczenia środków Klienta."
+      - kroki:
+          - tekst: "{Przyjmij|Zarejestruj} zgłoszenie w formie papierowej."
+            podkroki:
+              - tekst: "Wypełnij awaryjny formularz zgłoszenia, wpisując dane Klienta, numer karty (jeżeli jest znany), godzinę zgłoszenia oraz opis zdarzenia."
+              - tekst: "Formularz podpisz i przekaż kierownikowi zmiany, który potwierdza przyjęcie zgłoszenia własnoręcznym podpisem i podaje Klientowi tymczasowy numer zgłoszenia."
+          - tekst: "{Zleć|Przekaż} blokadę innym kanałem."
+            podkroki:
+              - tekst: "Zadzwoń do centrum obsługi organizacji płatniczej lub do dostawcy usług procesingowych i poproś o zablokowanie karty na podstawie jej numeru."
+              - tekst: "Po przywróceniu działania systemu w ciągu jednego dnia roboczego wprowadź wszystkie zgłoszenia do rejestru i sprawdź, czy blokady są odzwierciedlone w systemie."
+
+  - id: zastrzezenia-b-szczegolne-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Zgłoszenie od Klienta znajdującego się w szczególnie trudnej sytuacji.** Zgłoszenia dokonują niekiedy osoby w stanie silnego stresu, po napadzie, kradzieży lub w trakcie uzyskiwania pomocy medycznej."
+      - ustep: "Pracownik przyjmujący takie zgłoszenie:"
+        punkty:
+          - "{rozpoczyna|zaczyna} od blokady karty i dopiero po jej wykonaniu pyta o szczegóły, tak aby ograniczyć ryzyko dalszych strat;"
+          - "{rezygnuje|odstępuje} z pełnej weryfikacji, jeżeli Klient nie może jej przeprowadzić, i stosuje blokadę czasową, którą później zamienia na trwałą po potwierdzeniu danych;"
+          - "{proponuje|oferuje} połączenie z odpowiednimi służbami, gdy Klient zgłasza napad lub groźbę, i przypomina o możliwości złożenia zawiadomienia;"
+          - "nie ponagla Klienta i nie przerywa rozmowy przed upewnieniem się, że Klient wie, jak postępować dalej."
+
+  - id: zastrzezenia-b-szczegolne-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Podejrzenie wewnętrznego nadużycia.** Jeżeli analiza wykaże, że dane karty lub rachunku mogły zostać udostępnione przez pracownika Banku lub podmiot współpracujący, sprawa wychodzi poza zakres zwykłego postępowania w sprawie transakcji nieautoryzowanych."
+      - ustep: "{W takim przypadku|Wówczas} analityk:"
+        punkty:
+          - "natychmiast wstrzymuje dalsze czynności wobec Klienta, które mogłyby ujawnić podejrzenie osobie, której sprawa dotyczy;"
+          - "powiadamia dyrektora „{{fakt:jednostka.bezpieczenstwo}}” oraz „{{fakt:jednostka.zgodnosc}}” przez wyznaczony bezpieczny kanał, bez używania ogólnodostępnych skrzynek pocztowych;"
+          - "zabezpiecza dziennik dostępu do danych Klienta za okres, w którym mogło dojść do nadużycia, i nie dopuszcza do jego zmiany;"
+          - "przekazuje Klientowi wyłącznie informacje niezbędne do wyjaśnienia sprawy i nie ujawnia ustaleń dotyczących pracowników."
+      - akapit: "Dalsze postępowanie prowadzi wyznaczony zespół, a wszystkie czynności dokumentuje się odrębnie od zwykłej dokumentacji zgłoszenia."
+
+  - id: zastrzezenia-b-szczegolne-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Seria zgłoszeń związana z masowym wyciekiem danych.** Gdy w krótkim czasie napływa wiele zgłoszeń dotyczących kart użytych u tego samego akceptanta lub w tej samej sieci, Bank traktuje to jako zdarzenie zbiorcze."
+      - kroki:
+          - tekst: "{Rozpoznaj|Zidentyfikuj} zdarzenie zbiorcze."
+            podkroki:
+              - tekst: "Kierownik zmiany przekazuje do „{{fakt:jednostka.centrum-monitorowania}}” informację o więcej niż pięciu zgłoszeniach, w których wspólnym punktem jest ten sam akceptant lub bankomat."
+              - tekst: "Centrum monitorowania {potwierdza|weryfikuje} hipotezę przez analizę transakcji także tych klientów, którzy dotąd nie zgłosili problemu."
+          - tekst: "{Zabezpiecz|Ochroń} potencjalnie narażonych klientów."
+            podkroki:
+              - tekst: "Zdecyduj o masowej wymianie kart po uzgodnieniu z organizacją płatniczą; wymianę wykonuje się bez opłaty."
+              - tekst: "Przygotuj komunikat dla klientów zgodny z wzorem zatwierdzonym przez „{{fakt:jednostka.prawny}}”, a kierownikom zmian przekaż jednolite wytyczne do rozmów."
+              - tekst: "O zdarzeniu poinformuj Zarząd oraz, jeśli wymagają tego przepisy, organ nadzoru, w terminie wskazanym w odrębnej procedurze incydentów."
+
+  # ===== Monitorowanie =====
+  - id: zastrzezenia-b-monitoring-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - akapit: "System monitorowania {{fakt:system.zastrzezenia.monitoring}} ocenia każdą transakcję kartową w czasie rzeczywistym na podstawie reguł oraz modelu analitycznego, który uwzględnia dotychczasowe zachowanie posiadacza karty."
+      - ustep: "Reguły systemu obejmują w szczególności:"
+        punkty:
+          - "{wykrywanie|identyfikację} serii transakcji o niskiej wartości wykonanych w krótkim czasie w różnych punktach;"
+          - "porównywanie lokalizacji kolejnych transakcji oraz wykrywanie przemieszczeń niemożliwych do wykonania w danym czasie;"
+          - "ocenę transakcji w kategoriach akceptantów, które charakteryzują się podwyższonym ryzykiem nadużyć, takich jak sprzedaż kart podarunkowych lub usługi hazardowe;"
+          - "{zwiększanie|podnoszenie} oceny ryzyka po niedawnej zmianie danych kontaktowych, urządzenia lub limitów."
+      - akapit: "Zestaw reguł {przegląda|ocenia} co najmniej raz na kwartał zespół „{{fakt:jednostka.centrum-monitorowania}}”, a zmiany wprowadza się po zatwierdzeniu przez dyrektora „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: zastrzezenia-b-monitoring-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Rozpatrz} alert wygenerowany przez system monitorowania."
+            podkroki:
+              - tekst: "Pracownik centrum monitorowania {otwiera|przegląda} alert w ciągu czasu wskazanego w {{fakt:limit.zastrzezenia.progi-alarmu}} i ocenia, czy transakcja odpowiada profilowi Klienta."
+              - tekst: "{Jeżeli|Jeśli} ocena jest niejednoznaczna, pracownik kontaktuje się z Klientem telefonicznie, korzystając wyłącznie z numeru zapisanego w systemie, i prosi o potwierdzenie transakcji."
+              - tekst: "Przed rozmową z Klientem pracownik nie ujawnia kwoty ani nazwy akceptanta, dopóki Klient nie zostanie zweryfikowany."
+          - tekst: "{Podejmij|Wykonaj} działanie wynikające z oceny."
+            podkroki:
+              - tekst: "Jeżeli Klient potwierdził transakcję, zamknij alert z adnotacją „potwierdzona przez Klienta” i, w razie potrzeby, dodaj wyjątek do profilu."
+              - tekst: "Jeżeli Klient zaprzeczył lub nie można się z nim skontaktować w ciągu {{fakt:termin.zastrzezenia.oddzwonienie-monitoring}}, zablokuj kartę i zarejestruj zgłoszenie jak w przypadku zgłoszenia Klienta."
+
+  - id: zastrzezenia-b-monitoring-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - ustep: "Jakość monitorowania {jest oceniana|podlega ocenie} na podstawie wskaźników raportowanych miesięcznie, takich jak:"
+        punkty:
+          - "odsetek alertów prawdziwych, czyli takich, które zakończyły się wykryciem nadużycia, w stosunku do wszystkich alertów;"
+          - "średni czas od wygenerowania alertu do jego rozpatrzenia, w podziale na kategorie ryzyka;"
+          - "wartość transakcji, które zostały zablokowane lub odrzucone zapobiegawczo, oraz wartość strat, których nie udało się uniknąć;"
+          - "liczba skarg Klientów na nieuzasadnione blokady kart oraz średni czas przywracania dostępu do karty po fałszywym alarmie."
+      - akapit: "Wskaźniki omawia się na posiedzeniu zespołu ds. nadużyć; jeżeli odsetek alertów prawdziwych spada poniżej poziomu uznanego za akceptowalny, zespół zleca korektę reguł."
+
+  - id: zastrzezenia-b-monitoring-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - akapit: "Wzmożone monitorowanie jest narzędziem tymczasowym, stosowanym wobec rachunków i kart, co do których istnieje uzasadnione podejrzenie zagrożenia, na przykład po przejęciu danych lub po zgłoszeniu oszustwa socjotechnicznego."
+      - ustep: "Wzmożone monitorowanie:"
+        punkty:
+          - "{jest włączane|włącza się} na wniosek pracownika zgłoszenia lub analityka, z podaniem przyczyny i planowanego czasu trwania;"
+          - "obejmuje obniżenie progów alertów oraz dodatkową weryfikację transakcji zagranicznych i internetowych;"
+          - "trwa nie dłużej niż 30 dni, chyba że dyrektor „{{fakt:jednostka.bezpieczenstwo}}” zdecyduje o przedłużeniu, co odnotowuje się w rejestrze;"
+          - "{jest wyłączane|wygasa} automatycznie, a Klient jest informowany o jego zakończeniu, jeżeli został poinformowany o jego rozpoczęciu."
+
+  - id: zastrzezenia-b-monitoring-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - akapit: "Informacje o wykrytych nadużyciach są wykorzystywane do ulepszania zabezpieczeń Banku, jednak ich wykorzystanie podlega ograniczeniom wynikającym z przepisów o ochronie danych osobowych."
+      - kroki:
+          - tekst: "{Wykorzystaj|Przeanalizuj} wnioski ze zdarzeń."
+            podkroki:
+              - tekst: "Po każdym kwartale zespół „{{fakt:jednostka.centrum-monitorowania}}” przygotowuje zestawienie typowych schematów nadużyć wraz z przykładami z zanonimizowanych spraw."
+              - tekst: "Zestawienie przekazuje się konsultantom linii zastrzeżeń oraz placówkom jako materiał szkoleniowy; nie zawiera ono danych osobowych Klientów."
+          - tekst: "{Zaktualizuj|Popraw} procedury i komunikaty dla Klientów."
+            podkroki:
+              - tekst: "Jeżeli zestawienie wskazuje nowy schemat oszustwa, dział komunikacji przygotowuje ostrzeżenie dla Klientów w bankowości elektronicznej i na stronie internetowej w ciągu kilku dni roboczych."
+              - tekst: "Właściciel procedury {ocenia|rozważa}, czy schemat wymaga zmiany procedury, i odnotowuje decyzję w rejestrze zmian."
+
+  - id: zastrzezenia-b-monitoring-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - ustep: "Współpraca z zewnętrznymi podmiotami w zakresie przeciwdziałania nadużyciom:"
+        punkty:
+          - "Bank {wymienia|przekazuje} informacje o kartach skompromitowanych z organizacją płatniczą i bankami wydającymi karty, w zakresie przewidzianym przepisami i umowami;"
+          - "dane o wykrytych numerach rachunków wykorzystywanych do oszustw są przekazywane innym instytucjom finansowym zgodnie z zasadami ustalonymi w ramach uzgodnionych procedur branżowych;"
+          - "zawiadomienia o przestępstwach przygotowuje „{{fakt:jednostka.prawny}}” na podstawie dokumentacji z „{{fakt:jednostka.bezpieczenstwo}}” w terminie {{fakt:termin.zastrzezenia.zawiadomienie-organow}};"
+          - "wszelkie kontakty z organami ścigania prowadzi wyłącznie wyznaczony przedstawiciel Banku, a ich zakres dokumentuje się odrębnie."
+      - akapit: "Pracownicy linii zastrzeżeń nie przekazują informacji o nadużyciach podmiotom zewnętrznym {samodzielnie|z własnej inicjatywy}; wszystkie takie prośby kieruje się do dyrektora „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  # ===== Kontrola =====
+  - id: zastrzezenia-b-kontrola-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - akapit: "Kontrola funkcjonalna procedury jest prowadzona w trzech poziomach: przez kierowników zmian (poziom pierwszy), przez właściciela procedury (poziom drugi) oraz przez jednostkę zgodności i audyt wewnętrzny (poziom trzeci)."
+      - ustep: "W ramach kontroli pierwszego poziomu kierownik zmiany {sprawdza|ocenia} codziennie:"
+        punkty:
+          - "czy wszystkie zgłoszenia przyjęte w poprzednim dniu zostały wpisane do rejestru z godziną zgłoszenia i godziną blokady;"
+          - "{czy|czy też} żadne zgłoszenie nie pozostało bez decyzji dłużej niż przewiduje procedura;"
+          - "czy karty zastępcze zostały zamówione w terminie, a Klienci poinformowani o terminie ich dostarczenia;"
+          - "czy w dzienniku dyżuru odnotowano wszystkie awarie systemów i sposób ich obejścia."
+
+  - id: zastrzezenia-b-kontrola-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Przeprowadź|Wykonaj} kwartalną kontrolę próby zgłoszeń."
+            podkroki:
+              - tekst: "Wylosuj z rejestru zgłoszeń z ostatniego kwartału co najmniej 30 zgłoszeń, uwzględniając wszystkie kanały zgłaszania i wszystkie rodzaje decyzji."
+              - tekst: "Dla każdego zgłoszenia {sprawdź|zweryfikuj} zgodność z procedurą: weryfikację tożsamości, czas blokady, kompletność dokumentacji i terminowość decyzji."
+              - tekst: "Wyniki wpisz do arkusza kontroli i oceń każde zgłoszenie jako zgodne, zgodne z uwagami lub niezgodne."
+          - tekst: "{Przedstaw|Przekaż} wyniki kontroli."
+            podkroki:
+              - tekst: "Sporządź sprawozdanie, w którym wskażesz liczbę zgłoszeń niezgodnych, ich przyczyny i proponowane działania naprawcze, a następnie przekaż je dyrektorowi właściciela procedury."
+              - tekst: "Dla zgłoszeń niezgodnych ustal termin usunięcia uchybień i sprawdź jego dotrzymanie w następnym kwartale."
+
+  - id: zastrzezenia-b-kontrola-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - ustep: "Kontrola nagrań rozmów na linii zastrzeżeń {obejmuje|polega na}:"
+        punkty:
+          - "{losowym|wyrywkowym} odsłuchaniu co najmniej dwóch rozmów każdego konsultanta w miesiącu przez kierownika zmiany, który nie prowadził tych rozmów;"
+          - "ocenie zgodności rozmowy ze schematem postępowania, w tym przeprowadzenia weryfikacji, wykonania blokady i przekazania wymaganych informacji Klientowi;"
+          - "ocenie sposobu prowadzenia rozmowy, w tym empatii, jasności komunikatów i unikania nacisku na Klienta;"
+          - "przekazaniu konsultantowi informacji zwrotnej w ciągu kilku dni roboczych oraz, w razie potrzeby, skierowaniu go na dodatkowe szkolenie."
+      - akapit: "Wyniki odsłuchów wykorzystuje się wyłącznie do doskonalenia jakości obsługi i nie stanowią one samodzielnej podstawy ocen okresowych pracownika."
+
+  - id: zastrzezenia-b-kontrola-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - akapit: "Przegląd uprawnień do blokowania i odblokowywania kart jest jedną z kluczowych kontroli procedury, ponieważ nieuprawnione zdjęcie blokady może prowadzić do poważnych strat."
+      - kroki:
+          - tekst: "{Przeprowadź|Wykonaj} przegląd uprawnień."
+            podkroki:
+              - tekst: "Raz na {{fakt:termin.zastrzezenia.przeglad-uprawnien}} właściciel procedury zestawia z jednostką informatyki listę osób, które mają uprawnienia do operacji blokady i odblokowania."
+              - tekst: "Dla każdej osoby {potwierdź|zweryfikuj} u bezpośredniego przełożonego, że uprawnienie jest nadal uzasadnione zakresem obowiązków."
+              - tekst: "Uprawnienia, które nie są uzasadnione, cofnij w ciągu dwóch dni roboczych i zapisz w rejestrze przeglądu."
+          - tekst: "{Zbadaj|Przeanalizuj} wykorzystanie uprawnień."
+            podkroki:
+              - tekst: "Sprawdź, czy któryś z pracowników wykonywał operacje odblokowania na kartach klientów, z którymi miał powiązania prywatne, oraz czy odblokowania nie koncentrowały się w nietypowych godzinach."
+              - tekst: "Nieprawidłowości zgłoś jednostce zgodności i dyrektorowi właściciela procedury."
+
+  - id: zastrzezenia-b-kontrola-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - ustep: "Wnioski z kontroli procedury są wykorzystywane w następujący sposób:"
+        punkty:
+          - "zalecenia pokontrolne otrzymują termin realizacji, osobę odpowiedzialną i miarę wykonania, a ich realizację śledzi się w rejestrze zaleceń;"
+          - "powtarzające się uchybienia kwalifikuje się jako problem systemowy i kieruje do analizy przyczyn źródłowych, a nie wyłącznie do działań wobec pracownika;"
+          - "{istotne|poważne} nieprawidłowości, które mogły skutkować stratą Klienta lub Banku, są zgłaszane Zarządowi w ciągu {{fakt:termin.zastrzezenia.przeglad-uprawnien}} od ich stwierdzenia;"
+          - "wyniki kontroli są uwzględniane przy planowaniu szkoleń oraz przy corocznym przeglądzie procedury."
+      - akapit: "Dyrektor właściciela procedury {potwierdza|zatwierdza} wykonanie zaleceń w rejestrze i informuje jednostkę zgodności o ich zamknięciu."
+
+  # ===== Dokumentacja =====
+  - id: zastrzezenia-b-dokumentacja-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - akapit: "Dokumentacja zgłoszenia zastrzeżenia karty i transakcji nieautoryzowanej tworzy akta sprawy, które prowadzi się w systemie {{fakt:system.zastrzezenia.rejestr}}. Akta są jedynym kompletnym źródłem informacji o sprawie i podstawą ewentualnej obrony Banku w sporze."
+      - ustep: "Akta sprawy {zawierają|obejmują}:"
+        punkty:
+          - "formularz zgłoszenia lub jego odpowiednik elektroniczny wraz z identyfikatorem nagrania rozmowy;"
+          - "notatkę z analizy transakcji i dowody, na których oparto ustalenia;"
+          - "całą korespondencję z Klientem, w tym kopie pism i wiadomości oraz potwierdzenia ich doręczenia;"
+          - "dokumentację sporu z organizacją płatniczą i wynik rozstrzygnięcia;"
+          - "decyzje o uznaniu lub obciążeniu rachunku wraz z podpisami osób, które je zatwierdziły."
+
+  - id: zastrzezenia-b-dokumentacja-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zarchiwizuj|Zamknij} akta sprawy."
+            podkroki:
+              - tekst: "Po zakończeniu sprawy sprawdź, czy wszystkie dokumenty są kompletne, zapisane w odpowiednim formacie i opatrzone numerem zgłoszenia."
+              - tekst: "Ustaw w rejestrze status „zakończona” i datę zamknięcia; od tej daty liczy się okres przechowywania wynoszący {{fakt:termin.zastrzezenia.archiwizacja}}."
+              - tekst: "Dokumenty papierowe przekaż do archiwum w pudełku z opisem zawierającym numer zgłoszenia i datę zniszczenia akt."
+          - tekst: "{Zniszcz|Usuń} dokumenty po upływie okresu przechowywania."
+            podkroki:
+              - tekst: "Raz na kwartał archiwum zestawia listę spraw, dla których minął okres przechowywania, i przekazuje ją właścicielowi procedury do akceptacji."
+              - tekst: "Zniszczenie wykonuje się komisyjnie, a protokół z niszczenia przechowuje się w archiwum przez pięć lat."
+
+  - id: zastrzezenia-b-dokumentacja-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - ustep: "Nagrania rozmów prowadzonych na linii zastrzeżeń podlegają następującym zasadom:"
+        punkty:
+          - "{są przechowywane|przechowuje się je} w odrębnym repozytorium z ograniczonym dostępem, w formacie uniemożliwiającym modyfikację zapisu;"
+          - "dostęp do nagrań mają wyłącznie osoby wymienione na liście zatwierdzonej przez dyrektora właściciela procedury, a każde odsłuchanie jest rejestrowane;"
+          - "nagranie powiązane ze sprawą w toku lub ze sporem jest wyłączone z automatycznego usuwania do czasu zakończenia sprawy;"
+          - "{na wniosek|na żądanie} Klienta, w granicach określonych przepisami o ochronie danych osobowych, Bank udostępnia kopię nagrania dotyczącego jego zgłoszenia."
+      - akapit: "Wniosek o udostępnienie nagrania rozpatruje „{{fakt:jednostka.iod}}” w uzgodnieniu z właścicielem procedury i odpowiada na niego w terminie określonym przepisami."
+
+  - id: zastrzezenia-b-dokumentacja-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - akapit: "Rejestr zgłoszeń jest podstawowym narzędziem nadzoru nad procedurą, dlatego jego kompletność i rzetelność ma szczególne znaczenie. Wprowadzanie danych do rejestru podlega zasadom jakości opisanym poniżej."
+      - ustep: "Każdy wpis w rejestrze musi:"
+        punkty:
+          - "{być wprowadzony|zostać wprowadzony} nie później niż przed zakończeniem zmiany, w której przyjęto zgłoszenie;"
+          - "zawierać wszystkie wymagane pola, w tym kanał zgłoszenia, przyczynę zastrzeżenia, godzinę blokady i wartość kwestionowanych transakcji;"
+          - "być zapisany w sposób neutralny, bez ocen i opinii niezwiązanych z faktami, ponieważ może zostać udostępniony Klientowi lub sądowi;"
+          - "{podlegać|mieć} możliwość sprostowania wyłącznie przez dopisanie adnotacji z datą i imieniem osoby korygującej, a nie przez usunięcie poprzedniej treści."
+
+  - id: zastrzezenia-b-dokumentacja-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Udostępnij|Przekaż} dokumentację sprawy uprawnionym podmiotom."
+            podkroki:
+              - tekst: "Wniosek Klienta o udostępnienie akt jego sprawy przekaż do „{{fakt:jednostka.prawny}}”, który określa zakres udostępnianych dokumentów po wyłączeniu informacji objętych tajemnicą Banku."
+              - tekst: "Żądania organów ścigania i sądów rozpatruje „{{fakt:jednostka.prawny}}”; pracownicy nie przekazują dokumentów bez jego zgody."
+              - tekst: "Każde udostępnienie zapisz w rejestrze, wskazując podmiot, podstawę prawną, zakres i datę."
+          - tekst: "{Zabezpiecz|Chroń} dokumentację przed nieuprawnionym dostępem."
+            podkroki:
+              - tekst: "Dokumentację w postaci papierowej przechowuj w zamykanych szafach, a po zakończeniu zmiany nie pozostawiaj jej na biurku."
+              - tekst: "Dokumenty elektroniczne przesyłaj wyłącznie wewnętrznymi kanałami Banku z szyfrowaniem; nie wysyłaj ich na prywatne adresy pracowników ani Klientów w postaci nieszyfrowanej."

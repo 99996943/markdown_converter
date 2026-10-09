@@ -1,0 +1,93 @@
+bloki:
+  # ---------------------------------------------------------------- V. Wymiana i liczenie wartości pieniężnych
+  - id: taryfa-kasa-wymiana-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Wymiana nominałów, przeliczanie wartości pieniężnych i przyjmowanie uszkodzonych znaków pieniężnych {są wykonywane|odbywają się} w kasach wybranych placówek Banku. Bank przyjmuje do wymiany wyłącznie banknoty i monety polskie oraz wymienialne waluty obce {wskazane|określone} w Tabeli kursów walut. Znaki pieniężne uszkodzone w stopniu uniemożliwiającym ich przyjęcie w kasie Bank {przekazuje|kieruje} do wymiany w Narodowym Banku Polskim; opłata obejmuje wówczas koszt czynności pośredniczących."
+
+  - id: taryfa-kasa-wymiana-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wymiana banknotów na banknoty o innych nominałach dla klienta Banku", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana monet na banknoty dla klienta Banku", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} kwoty, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana banknotów na monety", stawka: "{{fakt:oplata.taryfa-indywidualni.rozmiana-procent}} kwoty, min. {{fakt:oplata.taryfa-indywidualni.rozmiana-minimum}}", tryb: "od kwoty operacji"}
+          - usluga: "Liczenie banknotów[^1]"
+            stawka: "{{fakt:oplata.kasa.liczenie-banknotow-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-banknotow-minimum}}"
+            tryb: "od wartości przeliczanej"
+            podpozycje:
+              - {usluga: "wpłata posortowana według nominałów", stawka: "{{fakt:oplata.kasa.liczenie-banknotow-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-banknotow-minimum}}", tryb: "od wartości przeliczanej"}
+              - {usluga: "wpłata nieposortowana lub w paczkach bez banderol", stawka: "0,40% wartości, min. 15,00 zł", tryb: "od wartości przeliczanej"}
+          - {usluga: "Liczenie bilonu", stawka: "{{fakt:oplata.kasa.liczenie-bilonu-procent}} wartości, min. {{fakt:oplata.kasa.liczenie-bilonu-minimum}}", tryb: "od wartości przeliczanej"}
+          - {usluga: "Przeliczenie bilonu w woreczkach foliowych dostarczonych przez Klienta", stawka: "{{fakt:oplata.firma.bilon-prowizja}} wartości", tryb: "od wartości przeliczanej"}
+          - {usluga: "Przyjęcie do wymiany uszkodzonych lub zniszczonych banknotów", stawka: "{{fakt:oplata.kasa.przyjecie-uszkodzonych-do-wymiany}}", tryb: "za każdy wniosek"}
+          - {usluga: "Przyjęcie do wymiany monet wycofanych z obiegu lub kolekcjonerskich", stawka: "{{fakt:oplata.kasa.przyjecie-uszkodzonych-do-wymiany}}", tryb: "za każdy wniosek"}
+          - {usluga: "Wymiana banknotów lub monet dla osoby niebędącej klientem Banku", stawka: "{{fakt:oplata.kasa.operacja-nieklient-procent}} kwoty, min. {{fakt:oplata.kasa.operacja-nieklient-minimum}}", tryb: "od kwoty operacji"}
+          - {usluga: "Wymiana gotówki walutowej na złote po kursie z Tabeli kursów walut (kantor)", stawka: "bez dodatkowych opłat", tryb: "za operację"}
+          - {usluga: "Ekspertyza autentyczności banknotu lub monety na wniosek Klienta", stawka: "20,00 zł", tryb: "za sztukę"}
+    przypisy:
+      1: "Przy liczeniu banknotów stwierdzone w trakcie przeliczania znaki pieniężne budzące wątpliwości co do autentyczności są zatrzymywane i przekazywane do ekspertyzy; Klient otrzymuje pokwitowanie zatrzymania."
+
+  # ---------------------------------------------------------------- VI. Zamówienia gotówki
+  - id: taryfa-kasa-zamowienia-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Zamówienie gotówki {składa się|należy składać} w placówce, w bankowości elektronicznej lub telefonicznie, najpóźniej na {{fakt:termin.kasa.awizo-wyplaty}} przed planowanym dniem odbioru. Zamówienie określa kwotę, strukturę nominałów, placówkę odbioru oraz dane osoby upoważnionej do odbioru. Bank {potwierdza|informuje o} przyjęciu zamówienia w dniu jego złożenia; gotówka jest przygotowana do odbioru przez jeden dzień roboczy po terminie realizacji."
+
+  - id: taryfa-kasa-zamowienia-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zamówienie gotówki w złotych w strukturze nominałów wskazanej przez Klienta", stawka: "{{fakt:oplata.kasa.zamowienie-gotowki-procent}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki w złotych w nominałach standardowych (bez wskazania struktury)", stawka: "bez opłat", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie nominałów specjalnych (monety kolekcjonerskie, banknoty o niskich numerach)", stawka: "{{fakt:oplata.kasa.zamowienie-nominalow-specjalnych}}", tryb: "za zamówienie"}
+          - {usluga: "Zamówienie gotówki w walucie obcej, odbiór w kasie placówki", stawka: "0,50% kwoty, min. 15,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie bilonu w rolkach", stawka: "{{fakt:oplata.firma.bilon-prowizja}} kwoty", tryb: "od kwoty zamówienia"}
+          - {usluga: "Zamówienie gotówki na wypłatę wynagrodzeń (kasetki z podziałem na koperty)", stawka: "0,20% kwoty, min. 40,00 zł", tryb: "od kwoty zamówienia"}
+          - {usluga: "Odwołanie lub zmiana zamówienia w terminie krótszym niż jeden dzień roboczy przed odbiorem", stawka: "50,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Niepodjęcie zamówionej gotówki w placówce (klient indywidualny)", stawka: "{{fakt:oplata.taryfa-indywidualni.awizo-niepodjeta}}", tryb: "za zamówienie"}
+          - {usluga: "Niepodjęcie zamówionej gotówki w placówce (przedsiębiorca)", stawka: "{{fakt:oplata.kasa.awizo-niepodjeta-firma}}", tryb: "za zamówienie"}
+          - {usluga: "Odbiór gotówki przez osobę upoważnioną na podstawie pisemnego upoważnienia", stawka: "bez opłat", tryb: "za odbiór"}
+
+  # ---------------------------------------------------------------- VII. Wrzutnia nocna i konwój
+  - id: taryfa-kasa-wrzutnia-opis
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Wrzutnia nocna {umożliwia|służy do} składania wpłat gotówkowych poza godzinami pracy kas, w workach zabezpieczonych plombą, w wybranych placówkach Banku. Środki z wrzutni są uznawane na rachunku Klienta {{fakt:termin.kasa.wrzutnia-uznanie}}, po komisyjnym otwarciu worka i przeliczeniu zawartości. Za odbiór wartości pieniężnych przez konwój Banku odpowiada Bank od chwili podpisania protokołu odbioru; do tego momentu ryzyko ponosi Klient."
+
+  - id: taryfa-kasa-wrzutnia-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-uslugi-kasowe]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Umowa o korzystanie z wrzutni nocnej — zawarcie", stawka: "bez opłat", tryb: "jednorazowo"}
+          - {usluga: "Abonament za korzystanie z wrzutni nocnej", stawka: "{{fakt:oplata.kasa.wrzutnia-abonament}}", tryb: "miesięcznie"}
+          - {usluga: "Wydanie worka wrzutowego z plombą jednorazową", stawka: "{{fakt:oplata.kasa.wrzutnia-worek-wydanie}}", tryb: "za worek"}
+          - {usluga: "Wydanie kluczyka lub karty dostępu do wrzutni", stawka: "40,00 zł", tryb: "za sztukę"}
+          - {usluga: "Wpłata gotówki z wrzutni nocnej[^1]", stawka: "{{fakt:oplata.kasa.wrzutnia-wplata-procent}} kwoty, min. {{fakt:oplata.kasa.wrzutnia-wplata-minimum}}", tryb: "od kwoty wpłaty"}
+          - {usluga: "Przeliczenie wpłaty z wrzutni w obecności Klienta na jego wniosek", stawka: "60,00 zł", tryb: "za wniosek"}
+          - {usluga: "Sporządzenie protokołu rozbieżności po otwarciu worka", stawka: "bez opłat", tryb: "za protokół"}
+          - usluga: "Odbiór wartości pieniężnych przez konwój Banku z siedziby Klienta[^2]"
+            stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}"
+            tryb: "za każdą wizytę"
+            podpozycje:
+              - {usluga: "odbiór w dni robocze w stałych godzinach według harmonogramu", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}", tryb: "za każdą wizytę"}
+              - {usluga: "odbiór dodatkowy poza harmonogramem", stawka: "{{fakt:oplata.kasa.konwoj-dodatkowy-odbior}} powyżej opłaty za wizytę", tryb: "za każdy odbiór"}
+              - {usluga: "odbiór w sobotę, niedzielę lub dzień ustawowo wolny od pracy", stawka: "2-krotność opłaty za wizytę", tryb: "za każdą wizytę"}
+          - {usluga: "Ubezpieczenie wartości pieniężnych w transporcie", stawka: "{{fakt:oplata.kasa.konwoj-ubezpieczenie-procent}} wartości", tryb: "od wartości transportu"}
+          - {usluga: "Dostarczenie gotówki przez konwój do siedziby Klienta", stawka: "{{fakt:oplata.kasa.konwoj-wizyta}}", tryb: "za każdą wizytę"}
+          - {usluga: "Rezygnacja z wizyty konwoju zgłoszona w dniu odbioru", stawka: "50,00 zł", tryb: "za zgłoszenie"}
+    przypisy:
+      1: "Opłata minimalna jest pobierana także wtedy, gdy po otwarciu worka okaże się, że zawiera on mniejszą kwotę niż zadeklarowana; zadeklarowana kwota nie jest uznawana na rachunku do czasu wyjaśnienia rozbieżności."
+      2: "Odbiór przez konwój jest dostępny dla Klientów, których obroty gotówkowe w poprzednim kwartale przekroczyły kwotę wskazaną w umowie o usługę konwojową."

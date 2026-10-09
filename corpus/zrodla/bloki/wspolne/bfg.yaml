@@ -1,0 +1,18 @@
+bloki:
+  - id: wspolne-bfg-regulamin
+    typy: [regulaminy]
+    tematy: [bfg]
+    kategoria: paragraf-wspolny
+    wspolny: true
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki pieniężne zgromadzone na rachunkach w Banku {podlegają|są objęte} ochronie w ramach systemu gwarantowania depozytów, prowadzonego przez Bankowy Fundusz Gwarancyjny, na zasadach określonych w obowiązujących przepisach."
+      - ustep: "Gwarancją {są objęte|podlegają} środki każdego deponenta, {do wysokości|do kwoty} stanowiącej {{fakt:bfg.gwarancja}}, łącznie z odsetkami naliczonymi na dzień spełnienia warunku gwarancji. Gwarancja {obejmuje|dotyczy} w szczególności:"
+        punkty:
+          - "środki na rachunkach oszczędnościowych i rozliczeniowych;"
+          - "środki na rachunkach lokat terminowych;"
+          - tekst: "środki, których objęcie gwarancją wynika z przepisów, z wyłączeniem:"
+            litery:
+              - "środków deponentów wskazanych w przepisach jako wyłączeni z ochrony;"
+              - "wartości instrumentów finansowych niebędących depozytami."
+      - ustep: "Szczegółowe informacje o systemie gwarantowania depozytów {Bank udostępnia|są dostępne} w placówkach oraz na stronie {{fakt:bank.strona}}. {Klient otrzymuje|Bank przekazuje Klientowi} formularz informacyjny dla deponentów przed zawarciem umowy rachunku."

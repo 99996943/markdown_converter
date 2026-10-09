@@ -1,0 +1,62 @@
+bloki:
+  - id: otwarcie-placowka-zamkniecie-wizyty-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-placowka-opc
+    elementy:
+      - akapit: "Zakończenie wizyty klienta w placówce wymaga sprawdzenia, czy wszystkie czynności zostały wykonane, a dokumentacja jest kompletna. Pracownik nie kończy obsługi, dopóki lista kontrolna nie zostanie w całości wypełniona."
+      - kroki:
+          - tekst: "Przegląd listy kontrolnej. Przejdź z klientem przez listę kontrolną otwarcia rachunku i potwierdź, że każda pozycja została zrealizowana."
+            podkroki:
+              - tekst: "Pozycje niewykonane uzupełnij natychmiast albo wpisz powód i termin uzupełnienia."
+              - tekst: "Listę kontrolną podpisuje pracownik, a w przypadku rachunków podwyższonego ryzyka także osoba weryfikująca."
+          - tekst: "Przekazanie dokumentów. Przekaż klientowi dokumenty, do których ma prawo, oraz oryginały jego dokumentów, które zostały okazane lub złożone."
+          - tekst: "Informacja o kolejnych krokach. Poinformuj klienta, kiedy rachunek zostanie uruchomiony, kiedy otrzyma kartę i w jaki sposób będzie mógł się skontaktować z Bankiem."
+          - tekst: "Ankieta satysfakcji. Zaproponuj klientowi udział w krótkiej ankiecie, wyjaśniając, że jest ona dobrowolna i nie wpływa na warunki umowy."
+
+  - id: otwarcie-aml-profil-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Na podstawie informacji uzyskanych od klienta pracownik tworzy profil oczekiwanej aktywności na rachunku. Profil jest punktem odniesienia dla systemu monitorującego transakcje i dla późniejszych przeglądów."
+      - kroki:
+          - tekst: "Elementy profilu. Zapisz w systemie {{fakt:system.otwarcie.aml}} następujące dane:"
+            podkroki:
+              - tekst: "przewidywane miesięczne wpływy i ich źródła;"
+              - tekst: "przewidywane miesięczne wydatki i ich rodzaje;"
+              - tekst: "planowane operacje zagraniczne, ich kierunki i częstotliwość;"
+              - tekst: "planowane wpłaty i wypłaty gotówkowe."
+          - tekst: "Realistyczność profilu. Oceń, czy wartości podane przez klienta odpowiadają jego sytuacji; zbyt niskie lub zbyt wysokie wartości omów z klientem."
+          - tekst: "Zmiany profilu. Poinformuj klienta, że w razie zmiany okoliczności powinien zaktualizować profil, a Bank może poprosić o wyjaśnienia, jeżeli transakcje będą od niego odbiegać."
+          - tekst: "Zatwierdzenie. Profil zatwierdza pracownik, a w przypadku ryzyka wysokiego — także osoba weryfikująca."
+
+  - id: otwarcie-szcz-wspolny-zmiana-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-szczegolne
+    elementy:
+      - akapit: "Po otwarciu rachunku wspólnego może pojawić się potrzeba zmiany jego składu lub sposobu dysponowania. Zmiany takie wymagają zgody wszystkich współposiadaczy i zachowania formy określonej w umowie."
+      - kroki:
+          - tekst: "Dodanie współposiadacza. Nowy współposiadacz przechodzi pełną procedurę identyfikacji i oceny ryzyka jak przy otwieraniu rachunku."
+            podkroki:
+              - tekst: "Liczba współposiadaczy nie może przekraczać {{fakt:limit.otwarcie.wspolposiadacze}}."
+              - tekst: "Wszyscy dotychczasowi współposiadacze podpisują aneks do umowy."
+          - tekst: "Wystąpienie współposiadacza. Współposiadacz może zrezygnować z uczestnictwa w rachunku na piśmie, a pozostali współposiadacze potwierdzają, że zapoznali się z tą zmianą."
+          - tekst: "Zmiana sposobu dysponowania. Zmiana z dysponowania łącznego na samodzielne lub odwrotnie wymaga podpisu wszystkich współposiadaczy i jest zapisywana w systemie z datą wejścia w życie."
+          - tekst: "Spór między współposiadaczami. Jeżeli współposiadacze pozostają w sporze, Bank może ograniczyć możliwość dysponowania rachunkiem do czasu uzgodnienia stanowisk lub rozstrzygnięcia sądu."
+
+  - id: otwarcie-dok-zmiany-danych-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-dokumentacja-opc
+    elementy:
+      - akapit: "Zmiany dokonywane w dokumentacji klienta po zawarciu umowy muszą pozostawiać ślad umożliwiający ustalenie, kto, kiedy i dlaczego wprowadził zmianę. Pierwotnych zapisów nie usuwa się; zastępuje się je nowymi wraz z oznaczeniem wersji."
+      - kroki:
+          - tekst: "Zasady wprowadzania zmian. Każdą zmianę danych klienta pracownik wprowadza na podstawie dokumentu lub dyspozycji klienta."
+            podkroki:
+              - tekst: "W polu uzasadnienia zmiany wpisuje się powód i odwołanie do dokumentu źródłowego."
+              - tekst: "Zmiany danych identyfikacyjnych, takich jak imię, nazwisko lub numer dokumentu, wymagają zatwierdzenia drugiej osoby."
+          - tekst: "Historia zmian. System {{fakt:system.otwarcie.cbs}} automatycznie zapisuje historię zmian z podaniem daty, identyfikatora pracownika i poprzedniej wartości."
+          - tekst: "Kontrola zmian. Raz na miesiąc kierownik placówki przegląda zestawienie zmian danych klientów i weryfikuje ich zasadność, zwracając szczególną uwagę na zmiany dokonane tuż przed dyspozycją wypłaty środków."
+          - tekst: "Zmiany w dokumentach papierowych. Jeżeli oryginał dokumentu wymaga poprawy, pracownik nie nanosi poprawek, lecz sporządza nowy dokument i przechowuje oba."

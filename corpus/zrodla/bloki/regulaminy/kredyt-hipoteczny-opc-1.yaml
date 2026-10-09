@@ -1,0 +1,194 @@
+bloki:
+  # ===== Postanowienia ogólne =====
+  - id: hip-ogolne-kredytobiorca
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorcą może być osoba fizyczna będąca konsumentem, {posiadająca|mająca} pełną zdolność do czynności prawnych, która ukończyła 18 lat i ma miejsce zamieszkania na terytorium Rzeczypospolitej Polskiej albo przebywa w niej na podstawie dokumentu uprawniającego do pobytu i pracy."
+      - ustep: "Kredyt może być udzielony {jednemu|kilku} Kredytobiorcom. Współkredytobiorcy odpowiadają za zobowiązania wynikające z umowy {solidarnie|łącznie i każdy z osobna}, a oświadczenia złożone przez jednego z nich Bank może uznać za skuteczne wobec pozostałych, o ile umowa nie stanowi inaczej."
+      - ustep: "Jeżeli Kredytobiorca pozostaje w związku małżeńskim, a nieruchomość wchodzi w skład majątku wspólnego, Bank {wymaga|może wymagać} przystąpienia małżonka do umowy albo jego pisemnej zgody na zaciągnięcie zobowiązania i ustanowienie hipoteki."
+
+  - id: hip-ogolne-pelnomocnik
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Czynności związane z kredytem Klient {może|ma prawo} wykonywać przez pełnomocnika, z zastrzeżeniem że umowę kredytu i oświadczenie o ustanowieniu hipoteki składa osobiście lub przez pełnomocnika legitymującego się pełnomocnictwem w formie aktu notarialnego."
+      - ustep: "Pełnomocnictwo do czynności bankowych powinno wskazywać zakres umocowania. Bank {może|ma prawo} odmówić przyjęcia pełnomocnictwa, jeżeli budzi ono wątpliwości co do autentyczności lub zakresu umocowania, albo jeżeli pełnomocnik nie przedstawi dokumentu tożsamości."
+      - ustep: "Odwołanie lub wygaśnięcie pełnomocnictwa wywołuje skutki wobec Banku od dnia otrzymania przez Bank pisemnego zawiadomienia."
+
+  - id: hip-ogolne-posrednik
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} oferować kredyt hipoteczny za pośrednictwem pośredników kredytu hipotecznego, którzy działają na jego rzecz i wpisani są do rejestru prowadzonego przez organ nadzoru. Dane pośrednika Klient otrzymuje przed rozpoczęciem czynności."
+      - ustep: "Pośrednik nie jest uprawniony do:"
+        punkty:
+          - "podejmowania decyzji kredytowej w imieniu Banku;"
+          - "przyjmowania wpłat na poczet kredytu lub prowizji w gotówce;"
+          - "składania oświadczeń woli w zakresie zmiany umowy kredytu."
+      - ustep: "Wynagrodzenie pośrednika działającego na rzecz Banku {płaci|pokrywa} Bank; Klient nie ponosi z tego tytułu żadnych opłat, o ile nie zawarł odrębnej umowy z pośrednikiem działającym wyłącznie na jego rzecz."
+
+  - id: hip-ogolne-nosnik
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Informacje, zawiadomienia i dokumenty dotyczące kredytu Bank przekazuje Klientowi {na trwałym nośniku|w postaci papierowej lub elektronicznej}, w tym w bankowości elektronicznej, jeżeli Klient wyraził na to zgodę."
+      - ustep: "Klient może w każdym czasie zażądać przekazania informacji w postaci papierowej, bez dodatkowej opłaty. Dokumenty uznaje się za doręczone w dniu ich udostępnienia w bankowości elektronicznej, o ile Klient został o tym powiadomiony wiadomością SMS lub e-mail."
+      - ustep: "Język korespondencji i obsługi to język polski; na wniosek Klienta Bank {może|ma prawo} udostępnić tłumaczenie informacji standardowych na inny język, bez zmiany ich znaczenia prawnego."
+
+  # ===== Przeznaczenie kredytu i wkład własny =====
+  - id: hip-przeznaczenie-rynek-pierwotny
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-przeznaczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy zakupie nieruchomości na rynku pierwotnym od dewelopera Bank {wypłaca|przekazuje} środki zgodnie z harmonogramem wpłat określonym w umowie deweloperskiej, na rachunek powierniczy, o którym mowa w ustawie o ochronie praw nabywcy lokalu mieszkalnego."
+      - ustep: "Przed pierwszą wypłatą Klient przedstawia:"
+        punkty:
+          - "umowę deweloperską zawartą w formie aktu notarialnego;"
+          - "prospekt informacyjny wraz z załącznikami;"
+          - "zaświadczenie o numerze rachunku powierniczego."
+      - ustep: "Jeżeli deweloper nie uzyska pozwolenia na użytkowanie w terminie określonym w umowie deweloperskiej, Bank {może|ma prawo} wstrzymać dalsze wypłaty do czasu wyjaśnienia sytuacji."
+
+  - id: hip-przeznaczenie-rynek-wtorny
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-przeznaczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy zakupie nieruchomości na rynku wtórnym wypłata następuje {na podstawie|po przedłożeniu} aktu notarialnego umowy sprzedaży, a środki są przekazywane na rachunek sprzedawcy wskazany w akcie, po uprzednim potwierdzeniu przez notariusza złożenia wniosku o wpis hipoteki."
+      - ustep: "Bank {sprawdza|weryfikuje} stan prawny nieruchomości na podstawie aktualnego odpisu księgi wieczystej i dokumentów potwierdzających tytuł prawny sprzedawcy. Jeżeli w księdze wieczystej ujawniono wpisy hipotek innych wierzycieli, ich wykreślenie albo spłata z ceny sprzedaży jest warunkiem wypłaty."
+      - ustep: "Z kwoty kredytu Bank {może|ma prawo} przekazać wierzycielowi dotychczasowej hipoteki środki potrzebne na jej spłatę, na podstawie zaświadczenia o wysokości zadłużenia."
+
+  - id: hip-przeznaczenie-budowa
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-przeznaczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt na budowę domu jednorodzinnego jest udzielany pod warunkiem przedstawienia:"
+        punkty:
+          - "prawomocnego pozwolenia na budowę lub zgłoszenia, wobec którego organ nie wniósł sprzeciwu;"
+          - "tytułu prawnego do gruntu i aktualnej księgi wieczystej;"
+          - "kosztorysu i harmonogramu robót zatwierdzonego przez Bank;"
+          - "dziennika budowy i oświadczenia kierownika budowy."
+      - ustep: "Okres budowy nie może przekraczać {{fakt:limit.hipoteka.okres-budowy}}; po jego upływie Kredytobiorca jest zobowiązany przedstawić zawiadomienie o zakończeniu budowy lub pozwolenie na użytkowanie, a Bank {może|ma prawo} przekształcić kredyt w kredyt spłacany ratami kapitałowo-odsetkowymi."
+      - ustep: "W okresie budowy Kredytobiorca płaci wyłącznie odsetki od wypłaconych transz, o ile umowa nie stanowi inaczej."
+
+  - id: hip-przeznaczenie-remont
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-przeznaczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt na remont lub modernizację {może|jest przeznaczony wyłącznie na} prace budowlane i wykończeniowe w nieruchomości będącej własnością Kredytobiorcy. Przed wypłatą Kredytobiorca przedstawia kosztorys oraz, w przypadku robót wymagających zgłoszenia, dokument potwierdzający brak sprzeciwu organu."
+      - ustep: "Koszty zakupu wyposażenia ruchomego, w tym mebli i sprzętu gospodarstwa domowego, mogą być sfinansowane z kredytu w części nieprzekraczającej {{fakt:limit.hipoteka.wyposazenie-udzial}} kwoty kredytu, o ile wynikają z faktur lub rachunków wystawionych na Kredytobiorcę."
+      - ustep: "Zakończenie prac Kredytobiorca potwierdza protokołem odbioru lub oświadczeniem o ich zakończeniu, a Bank {może|ma prawo} przeprowadzić oględziny nieruchomości."
+
+  - id: hip-wklad-udokumentowanie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-przeznaczenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wniesienie wkładu własnego Kredytobiorca dokumentuje {wyciągami|zestawieniami} z rachunków bankowych, dowodami wpłat na rzecz sprzedawcy lub dewelopera albo umową darowizny, jeżeli środki pochodzą od członka rodziny."
+      - ustep: "Darowizna środków na wkład własny jest uznawana, jeżeli:"
+        punkty:
+          - "została dokonana przez osobę z najbliższej rodziny Kredytobiorcy;"
+          - "została udokumentowana pisemną umową lub oświadczeniem darczyńcy złożonym z podpisem urzędowo poświadczonym;"
+          - "pochodzenie środków u darczyńcy nie budzi wątpliwości Banku."
+      - ustep: "Jeżeli Kredytobiorca nie udokumentuje wniesienia wkładu własnego w wysokości wskazanej w {{ref:blok:hip-wklad}}, Bank {może|ma prawo} pomniejszyć kwotę kredytu proporcjonalnie lub odmówić wypłaty."
+
+  # ===== Wniosek i zdolność =====
+  - id: hip-wniosek-dochody
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dochody Klienta dokumentuje się w zależności od ich źródła. W przypadku umowy o pracę Klient przedstawia zaświadczenie od pracodawcy oraz wyciągi z rachunku z ostatnich {3|6} miesięcy; dla działalności gospodarczej — zeznania podatkowe za ostatnie dwa lata i zaświadczenia o niezaleganiu wobec organów publicznych."
+      - ustep: "Za dochody niestabilne uznaje się w szczególności wynagrodzenie z umów zlecenia i o dzieło uzyskiwane krócej niż 12 miesięcy, premie i dodatki o nieregularnym charakterze oraz dochody z zagranicy bez udokumentowania ich źródła i stałości. Dochody te uwzględnia się w ocenie zdolności w części ustalonej przez Bank, a w razie wątpliwości {pomija|nie bierze pod uwagę} w całości."
+
+  - id: hip-wniosek-biuro
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Składając wniosek, Klient upoważnia Bank do uzyskania informacji o swoich zobowiązaniach, terminowości ich spłaty i wpisach w bazach danych, w tym w Biurze Informacji Kredytowej oraz biurach informacji gospodarczej."
+      - ustep: "Klient {może|ma prawo} uzyskać informację o oddziaływaniu zapytań o kredyt na jego historię kredytową. Zapytania Banku mają charakter {zapytań kredytowych|zapytań o wiarygodność} i są odnotowywane w bazie."
+      - ustep: "Jeżeli w wyniku sprawdzenia okaże się, że Klient podał nieprawdziwe informacje o zobowiązaniach lub dochodach, Bank odmawia udzielenia kredytu."
+
+  - id: hip-wniosek-wspolkredytobiorca
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli wniosek składa kilka osób, Bank ocenia zdolność kredytową każdej z nich oraz łączną zdolność gospodarstwa domowego. Dochody i zobowiązania wnioskodawców sumuje się, a miesięczne koszty utrzymania ustala dla całego gospodarstwa."
+      - ustep: "Wnioskodawcy {zobowiązani są|powinni} wskazać osobę uprawnioną do kontaktów z Bankiem. Zmiana tej osoby wymaga pisemnego zawiadomienia podpisanego przez wszystkich Kredytobiorców."
+      - ustep: "Wyłączenie jednego z Kredytobiorców z umowy w trakcie jej trwania jest możliwe wyłącznie za zgodą Banku, po ponownej ocenie zdolności kredytowej, i wymaga aneksu do umowy; opłata za zmianę wynosi {{fakt:oplata.hipoteka.zmiana-warunkow}}."
+
+  - id: hip-wniosek-zrodlo
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wniosek
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank stosuje wobec Klienta środki bezpieczeństwa finansowego zgodnie z przepisami: {{ref:akt:dz-u-2025-644-aml}}. W ramach tych środków Bank {może|ma prawo} żądać dokumentów potwierdzających tożsamość oraz źródło pochodzenia środków przeznaczonych na wkład własny."
+      - ustep: "Klient jest obowiązany poinformować Bank, czy jest osobą zajmującą eksponowane stanowisko polityczne, a także o beneficjentach rzeczywistych w razie, gdy działa w imieniu innej osoby."
+      - ustep: "Odmowa przedstawienia dokumentów lub udzielenia informacji uprawnia Bank do odmowy udzielenia kredytu oraz zakończenia procedury bez ponoszenia odpowiedzialności za szkodę Klienta."
+
+  # ===== Wycena =====
+  - id: hip-wycena-rzeczoznawca
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wycena
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rzeczoznawca majątkowy sporządza operat szacunkowy zgodnie z przepisami o gospodarce nieruchomościami i standardami zawodowymi. Bank {zapewnia|dba o} to, by rzeczoznawca był niezależny od sprzedawcy, dewelopera, pośrednika i Klienta."
+      - ustep: "Klient jest obowiązany umożliwić rzeczoznawcy oględziny nieruchomości w terminie uzgodnionym z nim, nie dłuższym niż {{fakt:termin.hipoteka.kontrola-nieruchomosci}} od dnia zlecenia wyceny, oraz udostępnić dokumenty techniczne, w tym rzuty i pozwolenia."
+      - ustep: "Jeżeli oględziny nie odbędą się z przyczyn leżących po stronie Klienta, Bank {może|ma prawo} zawiesić rozpatrywanie wniosku, a opłatę za wycenę pobrać także wtedy, gdy rzeczoznawca przyjechał na miejsce, a oględzin nie przeprowadzono."
+
+  - id: hip-wycena-wartosc
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wycena
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W operacie szacunkowym określa się wartość rynkową nieruchomości oraz — dla celów ostrożnościowych — wartość kredytowaną, która uwzględnia długoterminowe cechy nieruchomości i odrzuca przejściowe wahania cen."
+      - ustep: "Bank do wyliczenia LTV przyjmuje:"
+        punkty:
+          - "w przypadku zakupu — niższą z wartości: ceny nabycia i wartości rynkowej;"
+          - "w przypadku budowy — wartość nieruchomości po ukończeniu inwestycji, pomniejszoną o ryzyko niedokończenia robót;"
+          - "w przypadku refinansowania — aktualną wartość rynkową nieruchomości."
+      - ustep: "Bank {nie ponosi|nie odpowiada za} skutków różnic między wartością z wyceny a ceną uzyskiwaną przy sprzedaży nieruchomości w przyszłości."
+
+  - id: hip-wycena-monitoring
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wycena
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W trakcie trwania umowy Bank {monitoruje|śledzi} wartość nieruchomości na podstawie statystycznych modeli wyceny i danych o cenach transakcyjnych w danej lokalizacji. Monitoring nie wymaga udziału Kredytobiorcy ani nie wiąże się z opłatą."
+      - ustep: "Jeżeli monitoring wykaże spadek wartości nieruchomości o więcej niż {{fakt:limit.hipoteka.spadek-wartosci}} w stosunku do wartości w dniu udzielenia kredytu, Bank {może|ma prawo} zlecić wycenę kontrolną, o czym zawiadamia Kredytobiorcę."
+      - ustep: "Koszt wyceny kontrolnej ponosi Bank, chyba że została zlecona na wniosek Kredytobiorcy albo w związku ze zmianą stanu nieruchomości."
+
+  - id: hip-wycena-reklamacja
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: paragraf-hip-wycena
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który kwestionuje wynik wyceny, {może|ma prawo} w terminie {{fakt:termin.hipoteka.weryfikacja-wyceny}} od otrzymania operatu złożyć uzasadniony wniosek o jej weryfikację, przedstawiając dowody, że wartość została ustalona na podstawie błędnych danych lub nieprawidłowych porównań."
+      - ustep: "Bank przekazuje wniosek rzeczoznawcy, który w ciągu 7 dni roboczych potwierdza lub koryguje operat. Ponowna wycena przeprowadzona na wniosek Klienta, a niewynikająca z błędu rzeczoznawcy, jest dodatkowo płatna zgodnie z Taryfą."
+      - ustep: "Złożenie wniosku o weryfikację nie wstrzymuje biegu terminu ważności wyceny ani nie wpływa na termin decyzji kredytowej, chyba że Bank postanowi inaczej."

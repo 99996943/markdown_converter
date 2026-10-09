@@ -1,0 +1,183 @@
+fakty:
+  - id: oprocentowanie.lokata-1m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.2
+      - od: 2026-04-01
+        wartosc: 3.0
+    alternatywy: [4.8]
+  - id: oprocentowanie.lokata-24m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 4.6
+      - od: 2027-01-01
+        wartosc: 4.3
+    alternatywy: [6.6]
+  - id: oprocentowanie.lokata.zerwanie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.1
+    alternatywy: [0.5, 1.0]
+  - id: oprocentowanie.lokata.odnowienie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+      - od: 2026-04-01
+        wartosc: 1.2
+    alternatywy: [3.0]
+  - id: oprocentowanie.rachunek-oszczednosciowy.promocyjne
+    rodzaj: procent
+    wartosci:
+      - wartosc: 5.0
+      - od: 2027-01-01
+        wartosc: 4.5
+    alternatywy: [6.0]
+  - id: podatek.odsetki
+    rodzaj: procent
+    wartosci:
+      - wartosc: 19.0
+    alternatywy: [18.0, 20.0]
+  - id: limit.lokata.minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+      - od: 2027-01-01
+        wartosc: 500.00
+    alternatywy: [100.00, 5000.00]
+  - id: limit.lokata.maksymalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2000000.00
+    alternatywy: [1000000.00, 5000000.00]
+  - id: limit.lokata.negocjowana
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200000.00
+      - od: 2026-04-01
+        wartosc: 250000.00
+    alternatywy: [100000.00]
+  - id: limit.rachunek-oszczednosciowy.otwarcie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [0.00, 500.00]
+  - id: limit.rachunek-oszczednosciowy.wyplata-dzienna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+      - od: 2027-01-01
+        wartosc: 40000.00
+    alternatywy: [100000.00]
+  - id: limit.rachunek-oszczednosciowy.bezplatne-wyplaty
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "3 wypłaty lub przelewy"
+      - od: 2026-04-01
+        wartosc: "2 wypłaty lub przelewy"
+    alternatywy: ["5 wypłat lub przelewów"]
+  - id: oplata.rachunek-oszczednosciowy.wyplata-ponad-limit
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+      - od: 2027-01-01
+        wartosc: 12.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.lokata.zerwanie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [30.00, 50.00]
+  - id: oplata.lokata.wyplata-gotowkowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2027-01-01
+        wartosc: 5.00
+    alternatywy: [10.00]
+  - id: oplata.lokata.potwierdzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 25.00]
+  - id: termin.lokata.odnowienie-dyspozycja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [2, 5]
+  - id: termin.lokata.zerwanie-realizacja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [3, 5]
+  - id: termin.lokata.okres-1m
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [31]
+  - id: termin.lokata.okres-3m
+    rodzaj: termin
+    wartosci:
+      - wartosc: 91
+    alternatywy: [90]
+  - id: termin.lokata.okres-6m
+    rodzaj: termin
+    wartosci:
+      - wartosc: 182
+    alternatywy: [180]
+  - id: termin.lokata.okres-12m
+    rodzaj: termin
+    wartosci:
+      - wartosc: 365
+    alternatywy: [360]
+  - id: termin.lokata.dyspozycja-po-terminie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+      - od: 2026-04-01
+        wartosc: 5
+    alternatywy: [14]
+  - id: termin.rachunek-oszczednosciowy.nieaktywnosc
+    rodzaj: termin
+    wartosci:
+      - wartosc: 365
+    alternatywy: [180, 730]
+  - id: termin.lokata.potwierdzenie-umowy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+    alternatywy: [7]
+  - id: termin.podatek.informacja-roczna
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [60]
+  - id: jednostka.produkty-oszczednosciowe
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Produktów Oszczędnościowych"
+    alternatywy: ["Biuro Produktów Depozytowych"]
+  - id: lokata.kapitalizacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "na koniec okresu umownego"
+    alternatywy: ["na koniec każdego miesiąca kalendarzowego"]
+  - id: lokata.rok-odsetkowy
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "365 dni"
+    alternatywy: ["360 dni"]
+  - id: lokata.nazwa-lokata-klasyczna
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Lokata Stabilna"
+    alternatywy: ["Lokata Standardowa"]
+  - id: lokata.nazwa-lokata-negocjowana
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Lokata Indywidualna"
+    alternatywy: ["Lokata Negocjowana"]
+  - id: lokata.nazwa-rachunek
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Rachunek Oszczędnościowy Plus"
+    alternatywy: ["Rachunek Oszczędnościowy Standard"]

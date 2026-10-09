@@ -1,0 +1,403 @@
+bloki:
+  - id: lokaty-opt-ogolne-jezyk
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {zawiera umowy|komunikuje się z Klientem} w języku polskim, a dokumenty i oświadczenia składane przez Klienta w innym języku {powinny|muszą} zostać dołączone wraz z tłumaczeniem sporządzonym przez tłumacza przysięgłego, jeżeli Bank tak zażąda. Koszty tłumaczenia ponosi Klient."
+      - ustep: "Wszelkie informacje, które Bank jest zobowiązany przekazać Klientowi na trwałym nośniku, Bank {udostępnia|przekazuje} w szczególności:"
+        punkty:
+          - "w formie papierowej, w placówce lub przesyłką pocztową na adres korespondencyjny;"
+          - "w formie elektronicznej, w bankowości elektronicznej, w postaci pliku możliwego do zapisania i wydrukowania;"
+          - "w wiadomości przesłanej na adres poczty elektronicznej wskazany przez Klienta, jeżeli Klient wyraził zgodę na taką formę kontaktu."
+      - ustep: "Klient ma prawo w każdym czasie żądać od Banku bezpłatnego udostępnienia treści Regulaminu oraz wzoru umowy, a także zmiany wybranej formy otrzymywania informacji. Zmiana formy przekazywania informacji wchodzi w życie w terminie {{fakt:termin.lokata.odnowienie-dyspozycja}} roboczych od dnia złożenia dyspozycji."
+
+  - id: lokaty-opt-ogolne-pelnomocnik
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może ustanowić pełnomocnika do dysponowania środkami zgromadzonymi na rachunku oszczędnościowym lub lokacie. Pełnomocnictwo {wymaga|powinno zostać udzielone w} formie pisemnej i {powinno być|musi zostać} złożone w obecności pracownika Banku albo opatrzone podpisem poświadczonym notarialnie."
+      - ustep: "Pełnomocnik może składać dyspozycje w zakresie określonym w pełnomocnictwie. Jeżeli pełnomocnictwo nie stanowi inaczej, pełnomocnik nie jest uprawniony do:"
+        punkty:
+          - "zawierania i rozwiązywania umów rachunku oszczędnościowego;"
+          - "udzielania dalszych pełnomocnictw;"
+          - tekst: "dokonywania czynności, które z natury rzeczy wymagają osobistego działania Klienta, w szczególności:"
+            litery:
+              - "składania oświadczeń o odstąpieniu od umowy;"
+              - "zmiany danych osobowych Klienta oraz jego rezydencji podatkowej."
+      - ustep: "Pełnomocnictwo wygasa z chwilą jego odwołania, wypowiedzenia, zgonu Klienta lub pełnomocnika, o ile Bank został o tym fakcie poinformowany. Odwołanie pełnomocnictwa jest skuteczne wobec Banku od dnia następującego po dniu, w którym oświadczenie wpłynęło do Banku."
+
+  - id: lokaty-opt-ogolne-zgon
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może w każdym czasie złożyć w Banku dyspozycję wkładem na wypadek śmierci, wskazując jedną lub kilka osób uprawnionych do otrzymania środków zgromadzonych na rachunku lub lokacie. Wskazanie może zostać zmienione lub odwołane w każdym czasie, na piśmie, w placówce Banku."
+      - ustep: "Po otrzymaniu odpisu aktu zgonu Bank {wypłaca|dokonuje wypłaty} środków osobom uprawnionym, do wysokości określonej w dyspozycji, w terminie {{fakt:termin.lokata.zerwanie-realizacja}} roboczych od dnia zgłoszenia i przedstawienia przez nie dokumentu tożsamości. Wypłata następuje bez konieczności przeprowadzania postępowania spadkowego."
+      - ustep: "W razie zgonu Klienta lokata terminowa nie ulega zerwaniu z mocy prawa. Osoba uprawniona albo spadkobierca może zażądać wypłaty środków przed terminem; w takim przypadku nie stosuje się obniżonej stopy procentowej określonej w {{ref:blok:lokaty-zerwanie-skutki}}, a odsetki są naliczane według stawki umownej do dnia zgonu, o ile osoba ta przedstawi dokumenty potwierdzające prawa do spadku."
+      - ustep: "Bank nie ponosi odpowiedzialności za skutki dokonania wypłaty osobie wskazanej w dyspozycji, która została wydana w dobrej wierze, jeżeli Bank nie otrzymał wcześniej informacji o ustaniu uprawnienia."
+
+  - id: lokaty-opt-ogolne-bezpieczenstwo
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest obowiązany {chronić|zabezpieczać} dane uwierzytelniające służące do korzystania z bankowości elektronicznej oraz nie udostępniać ich osobom nieuprawnionym. Bank nigdy nie prosi Klienta o podanie pełnego hasła ani kodu autoryzacyjnego w rozmowie telefonicznej lub w wiadomości elektronicznej."
+      - ustep: "Jeżeli Klient podejrzewa, że dane uwierzytelniające wpadły w niepowołane ręce, powinien niezwłocznie powiadomić Bank:"
+        punkty:
+          - "telefonicznie pod numerem {{fakt:kontakt.infolinia-zastrzezenia}};"
+          - "z zagranicy — pod numerem {{fakt:kontakt.infolinia-zagranica}};"
+          - "osobiście w placówce Banku, w godzinach jej otwarcia."
+      - ustep: "Po otrzymaniu zgłoszenia Bank {blokuje|niezwłocznie blokuje} dostęp do bankowości elektronicznej. Dyspozycje złożone przed zgłoszeniem przez osobę nieuprawnioną obciążają Klienta wyłącznie w zakresie wynikającym z przepisów prawa, w szczególności: {{ref:akt:dz-u-2024-30-uslugi-platnicze}}, a w pozostałych przypadkach Bank zwraca środki w terminie wskazanym w tych przepisach."
+
+  - id: lokaty-opt-ogolne-dane
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Administratorem danych osobowych Klienta przetwarzanych w związku z zawarciem i wykonywaniem umowy rachunku oszczędnościowego lub lokaty jest Bank. Dane przetwarzane są w celu zawarcia i wykonania umowy, wypełnienia obowiązków prawnych ciążących na Banku oraz dla prawnie uzasadnionych interesów Banku, takich jak dochodzenie roszczeń i zapobieganie nadużyciom."
+      - ustep: "Klientowi przysługuje prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania i przenoszenia, a także prawo wniesienia sprzeciwu, w zakresie przewidzianym przepisami. W sprawach ochrony danych osobowych można kontaktować się z {{fakt:jednostka.iod}} pod adresem {{fakt:kontakt.email-iod}}."
+      - ustep: "Dane osobowe Klienta Bank przechowuje przez okres trwania umowy oraz przez okres, w którym przepisy nakazują ich przechowywanie, w szczególności przez {pięć|5} lat od zakończenia stosunku umownego, a w razie sporu — do jego prawomocnego rozstrzygnięcia."
+
+  - id: lokaty-opt-rachunek-wspolny
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rachunek oszczędnościowy może być prowadzony jako rachunek wspólny dla dwóch osób fizycznych. Współposiadacze {ponoszą|odpowiadają} wobec Banku solidarnie za zobowiązania wynikające z umowy, w szczególności za ewentualne zadłużenie rachunku."
+      - ustep: "Każdy ze współposiadaczy jest uprawniony do samodzielnego dysponowania środkami na rachunku, chyba że w umowie postanowiono, że dyspozycje wymagają zgodnego oświadczenia obu stron. Każdy ze współposiadaczy może:"
+        punkty:
+          - "dokonywać wpłat oraz wypłat do wysokości limitu określonego w {{ref:blok:lokaty-ro-wyplaty}};"
+          - "składać dyspozycje dotyczące lokat zakładanych ze środków rachunku wspólnego;"
+          - "wypowiedzieć umowę rachunku wspólnego, co powoduje jej rozwiązanie w stosunku do wszystkich współposiadaczy po upływie okresu wypowiedzenia."
+      - ustep: "W razie sprzecznych dyspozycji współposiadaczy Bank {może wstrzymać|ma prawo wstrzymać} ich wykonanie do czasu uzgodnienia stanowisk, informując o tym obu współposiadaczy. Po zgonie jednego ze współposiadaczy rachunek jest prowadzony dalej dla pozostałego, a udział zmarłego podlega rozliczeniu na zasadach dziedziczenia, z uwzględnieniem dyspozycji wkładem na wypadek śmierci."
+
+  - id: lokaty-opt-rachunek-maloletni
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rachunek oszczędnościowy może zostać otwarty dla małoletniego, który nie ukończył osiemnastu lat, przez jego przedstawiciela ustawowego. Do otwarcia rachunku {niezbędne jest|wymagane jest} okazanie dokumentu tożsamości przedstawiciela oraz odpisu skróconego aktu urodzenia dziecka."
+      - ustep: "Małoletni, który ukończył trzynaście lat, może samodzielnie dokonywać wpłat i wypłat do wysokości środków, którymi może swobodnie dysponować na podstawie przepisów o władzy rodzicielskiej. Dyspozycje przekraczające te środki wymagają zgody przedstawiciela ustawowego, a w niektórych przypadkach — zezwolenia sądu opiekuńczego."
+      - ustep: "Po ukończeniu osiemnastu lat Klient staje się jedynym dysponentem rachunku, a dotychczasowy przedstawiciel ustawowy traci prawo do składania dyspozycji. Bank {informuje|powiadamia} Klienta o zmianie na trwałym nośniku, kierując korespondencję na ostatni znany adres. Do czasu dostarczenia nowych danych kontaktowych rachunek nie podlega dodatkowym ograniczeniom."
+
+  - id: lokaty-opt-rachunek-zajecie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie otrzymania zajęcia rachunku oszczędnościowego lub lokaty przez komornika sądowego albo organ egzekucyjny Bank dokonuje blokady środków w zakresie wynikającym z przepisów oraz przekazuje środki zgodnie z poleceniem organu. Bank {niezwłocznie informuje|zawiadamia niezwłocznie} Klienta o dokonaniu zajęcia, o ile przepisy tego nie zakazują."
+      - ustep: "Zajęcie środków na lokacie terminowej nie powoduje jej zerwania. Jeżeli jednak przekazanie środków organowi egzekucyjnemu wymaga zerwania lokaty, Bank dokonuje go z zastosowaniem postanowień o zerwaniu lokaty przed terminem, a koszty tego zdarzenia ponosi Klient."
+      - ustep: "Pozostała część środków, która nie podlega zajęciu, pozostaje do dyspozycji Klienta. Bank nie ponosi odpowiedzialności za skutki wykonania zajęcia dokonanego zgodnie z przepisami, w tym za utratę odsetek za okres, w którym środki były niedostępne."
+
+  - id: lokaty-opt-rachunek-wyciagi
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank udostępnia Klientowi miesięczne zestawienie operacji na rachunku oszczędnościowym (wyciąg) w bankowości elektronicznej, a w przypadku rachunków, na których w danym miesiącu nie dokonano żadnej operacji — raz w roku, zgodnie z przepisami."
+      - ustep: "Na wniosek Klienta wyciąg może być przekazywany w formie papierowej. Za każdy wyciąg papierowy Bank pobiera opłatę w wysokości {{fakt:oplata.wyciag-papierowy}}, chyba że Klient jest osobą, która nie korzysta z bankowości elektronicznej i ukończyła siedemdziesiąty rok życia."
+      - ustep: "Klient jest obowiązany sprawdzać zgodność operacji ujętych na wyciągu ze swoimi dyspozycjami i niezwłocznie zgłaszać Bankowi stwierdzone niezgodności. Zgłoszenie nieautoryzowanej lub nieprawidłowo wykonanej operacji należy złożyć nie później niż w terminie trzynastu miesięcy od dnia obciążenia rachunku."
+      - ustep: "Bank {koryguje|poprawia} zauważone błędy księgowe niezwłocznie po ich stwierdzeniu, bez dodatkowej dyspozycji Klienta, a o korekcie informuje na trwałym nośniku, jeżeli korekta dotyczy kwoty wyższej niż jeden złoty."
+
+  - id: lokaty-opt-rachunek-powiadomienia
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może aktywować usługę powiadomień o operacjach na rachunku oszczędnościowym, przesyłanych w formie wiadomości SMS lub komunikatów w aplikacji mobilnej. Za wiadomości SMS Bank pobiera opłatę w wysokości {{fakt:oplata.powiadomienie-sms}} miesięcznie, natomiast komunikaty w aplikacji są bezpłatne."
+      - ustep: "Powiadomienia mogą dotyczyć:"
+        punkty:
+          - "wpłat i wypłat środków oraz zleceń stałych;"
+          - "kapitalizacji odsetek i pobrania podatku;"
+          - "zbliżającego się terminu zapadalności lokaty oraz zmiany oprocentowania."
+      - ustep: "Powiadomienia mają charakter informacyjny i nie zastępują wyciągu ani potwierdzenia operacji. Bank nie odpowiada za opóźnienia w ich doręczeniu wynikające z przyczyn leżących po stronie operatora sieci telekomunikacyjnej lub wyłączenia telefonu przez Klienta."
+
+  - id: lokaty-opt-lokata-ladowanie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{{fakt:lokata.nazwa-lokata-negocjowana}} może zostać założona wyłącznie w placówce Banku albo za pośrednictwem doradcy po uzgodnieniu warunków, w szczególności kwoty, okresu i stopy procentowej. Warunki zostają potwierdzone w odrębnej umowie, która uzupełnia Regulamin."
+      - ustep: "Stopa procentowa lokaty negocjowanej jest ustalana indywidualnie i nie może być niższa od stawki obowiązującej dla lokaty o takim samym okresie w tabeli oprocentowania, o której mowa w {{ref:blok:lokaty-oprocentowanie}}. Minimalna kwota lokaty negocjowanej wynosi {{fakt:limit.lokata.negocjowana}}."
+      - ustep: "W przypadku lokaty negocjowanej Bank {może zastrzec|ma prawo zastrzec}, że zerwanie lokaty przed terminem powoduje utratę odsetek w całości lub w części, o ile zastrzeżenie to zostało wyraźnie wskazane w umowie i w potwierdzeniu założenia lokaty. Postanowienie takie nie może pozbawiać Klienta zwrotu kwoty wpłaconej na lokatę."
+
+  - id: lokaty-opt-lokata-promocyjna
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank może ogłaszać czasowe oferty promocyjne lokat terminowych, w których stopa procentowa jest wyższa od stawki standardowej, lub w których Klientowi przysługują dodatkowe korzyści. Warunki promocji, w tym okres jej trwania, grupę Klientów oraz limit środków, Bank określa w regulaminie promocji."
+      - ustep: "W okresie trwania promocji lokata promocyjna może zostać założona wyłącznie przez Klienta, który:"
+        punkty:
+          - "nie posiadał w Banku lokaty terminowej w okresie dwunastu miesięcy poprzedzających dzień złożenia dyspozycji;"
+          - "przekazał na lokatę środki pochodzące spoza Banku, które wpłynęły na rachunek w okresie trwania promocji;"
+          - "spełnia pozostałe warunki określone w regulaminie promocji."
+      - ustep: "Postanowienia Regulaminu stosuje się do lokaty promocyjnej odpowiednio, z uwzględnieniem postanowień regulaminu promocji. W razie sprzeczności pierwszeństwo mają postanowienia regulaminu promocji, o ile są korzystniejsze dla Klienta. Po zakończeniu okresu lokaty promocyjnej odnowienie następuje na zasadach standardowych."
+
+  - id: lokaty-opt-lokata-walutowa
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Lokata terminowa może być zakładana w złotych polskich. Jeżeli Klient posiada środki w walucie obcej, może dokonać ich przewalutowania przed założeniem lokaty po kursie z tabeli kursów walut Banku, obowiązującym w momencie przewalutowania. Tabela kursów jest publikowana codziennie o godzinie {{fakt:kurs.godzina-tabeli}}."
+      - ustep: "Przy przewalutowaniu Bank stosuje kurs kupna lub sprzedaży ustalony z uwzględnieniem marży w wysokości {{fakt:kurs.marza-przeliczen}} względem kursu średniego ogłaszanego przez Narodowy Bank Polski. Marża ta jest wskazana w „{{ref:dokument:taryfa-oszczednosci}}”."
+      - ustep: "Środki z lokaty wypłacane w walucie obcej podlegają przewalutowaniu na takich samych zasadach. Klient ponosi ryzyko kursowe związane ze zmianą kursu waluty w okresie pomiędzy założeniem lokaty a jej wypłatą."
+
+  - id: lokaty-opt-lokata-zabezpieczenie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Lokata terminowa może zostać ustanowiona jako zabezpieczenie zobowiązań Klienta wobec Banku, w szczególności kredytu lub limitu w rachunku. Ustanowienie zabezpieczenia wymaga złożenia odrębnego oświadczenia w formie pisemnej."
+      - ustep: "Do czasu wygaśnięcia zabezpieczenia Klient nie może:"
+        punkty:
+          - "zerwać lokaty w całości lub w części;"
+          - "dokonać cesji praw z lokaty na rzecz osoby trzeciej;"
+          - "zmienić rachunku, na który mają być przekazane środki w dniu zapadalności."
+      - ustep: "Jeżeli Klient nie wykona zobowiązania zabezpieczonego, Bank może zaspokoić swoje roszczenia z lokaty po uprzednim wezwaniu Klienta do zapłaty i wyznaczeniu dodatkowego terminu nie krótszego niż {{fakt:termin.doreczenie-korespondencji}}. W takim przypadku do kwoty lokaty stosuje się obniżoną stopę procentową określoną w {{ref:blok:lokaty-zerwanie-skutki}}."
+
+  - id: lokaty-opt-lokata-zdalna
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Lokatę terminową można założyć za pośrednictwem bankowości elektronicznej po zalogowaniu i wybraniu parametrów lokaty. Przed zatwierdzeniem dyspozycji Bank wyświetla Klientowi:"
+        punkty:
+          - "kwotę lokaty, okres i datę zapadalności;"
+          - "stopę procentową oraz informację o jej stałym charakterze;"
+          - "wysokość odsetek brutto oraz szacunkową wysokość odsetek po potrąceniu podatku."
+      - ustep: "Dyspozycja założenia lokaty jest autoryzowana w sposób wskazany przez Bank, w szczególności za pomocą kodu przesłanego na zarejestrowany numer telefonu albo w aplikacji mobilnej. Bank potwierdza założenie lokaty komunikatem w bankowości elektronicznej, a następnie dostarcza potwierdzenie w terminie {{fakt:termin.lokata.potwierdzenie-umowy}}."
+      - ustep: "Jeżeli w trakcie składania dyspozycji wystąpi przerwa w działaniu bankowości elektronicznej, Klient powinien sprawdzić w historii rachunku, czy lokata została założona, przed ponownym złożeniem dyspozycji. Bank nie odpowiada za wielokrotne założenie lokaty wynikające z wielokrotnego zatwierdzenia dyspozycji przez Klienta."
+
+  - id: lokaty-opt-lokata-podzial
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może zażądać podziału lokaty na kilka lokat o mniejszych kwotach, o ile każda z nich spełnia wymóg minimalnej kwoty lokaty. Podział nie zmienia okresu ani stopy procentowej lokaty, a jedynie jej kwotę."
+      - ustep: "Dyspozycję podziału lokaty Klient składa najpóźniej w dniu poprzedzającym dzień zapadalności lokaty. Bank {wykonuje|realizuje} podział w terminie {{fakt:termin.lokata.zerwanie-realizacja}} roboczych, pod warunkiem że lokata nie jest przedmiotem blokady ani zabezpieczeniem."
+      - ustep: "Podział lokaty nie wymaga wypłaty odsetek ani pobrania podatku, a odsetki naliczone do dnia podziału są rozdzielane proporcjonalnie do kwot nowo utworzonych lokat. Za dokonanie podziału Bank nie pobiera opłaty, chyba że „{{ref:dokument:taryfa-oszczednosci}}” stanowi inaczej."
+
+  - id: lokaty-opt-lokata-cesja
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawa z lokaty terminowej nie mogą być zbywane ani obciążane bez zgody Banku, wyrażonej na piśmie. Bank odmawia wyrażenia zgody, jeżeli cesja miałaby naruszać przepisy o przeciwdziałaniu praniu pieniędzy lub zasady bezpieczeństwa obrotu."
+      - ustep: "Zgoda Banku na zmianę posiadacza lokaty wymaga złożenia wspólnego oświadczenia przez dotychczasowego i nowego posiadacza, wraz z dokumentami tożsamości obu stron. Nowy posiadacz wstępuje we wszystkie prawa i obowiązki wynikające z umowy lokaty, w tym obowiązek zapłaty podatku od odsetek naliczonych w okresie posiadania lokaty."
+
+  - id: lokaty-opt-odsetki-przyklad
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-odsetki
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dla ilustracji zasad naliczania odsetek przyjmuje się, że Klient założył lokatę na kwotę 10 000 zł na okres 3 miesięcy, trwający {{fakt:termin.lokata.okres-3m}}, przy oprocentowaniu {{fakt:oprocentowanie.lokata-3m}} w skali roku."
+      - ustep: "W takim przypadku:"
+        punkty:
+          - "odsetki brutto wynoszą 10 000 zł × stopa procentowa × liczba dni lokaty ÷ liczba dni w roku odsetkowym;"
+          - "podatek od odsetek wynosi {{fakt:podatek.odsetki}} odsetek brutto, zaokrąglony do pełnych groszy;"
+          - tekst: "kwota wypłacona w dniu zapadalności jest równa sumie kwoty lokaty i odsetek netto, z uwzględnieniem:"
+            litery:
+              - "ewentualnych opłat pobieranych zgodnie z „{{ref:dokument:taryfa-oszczednosci}}”;"
+              - "dyspozycji dotyczącej odnowienia lokaty."
+      - ustep: "Przykład ma charakter wyłącznie poglądowy i nie stanowi oferty ani gwarancji uzyskania określonych odsetek. Wiążące obliczenia są zawarte w potwierdzeniu założenia lokaty."
+
+  - id: lokaty-opt-odsetki-roczne
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-odsetki
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dla porównania ofert lokat o różnych okresach Bank podaje w potwierdzeniu założenia lokaty także efektywną stopę oprocentowania, która uwzględnia kapitalizację odsetek i jest wyrażona w skali roku. Efektywna stopa jest wartością informacyjną i nie zmienia sposobu naliczania odsetek."
+      - ustep: "Efektywna stopa oprocentowania lokaty zakładanej na okres krótszy niż rok jest obliczana przy założeniu, że lokata zostałaby odnowiona na takich samych warunkach przez pozostałą część roku. W przypadku lokat o oprocentowaniu zmiennym efektywną stopę oblicza się dla stawki obowiązującej w dniu założenia lokaty."
+      - ustep: "Klient zainteresowany szczegółowym wyliczeniem może zwrócić się do doradcy w placówce lub na Infolinię pod numer {{fakt:kontakt.infolinia}}. Informacje te nie podlegają opłacie."
+
+  - id: lokaty-opt-odsetki-dni
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-odsetki
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli lokata została założona na okres wyrażony w miesiącach, jej okres kończy się w dniu odpowiadającym datą dniowi założenia lokaty, a gdy w danym miesiącu brak takiego dnia — w ostatnim dniu tego miesiąca. Przy ustalaniu liczby dni odsetkowych uwzględnia się rzeczywistą liczbę dni kalendarzowych."
+      - ustep: "Przykładowo, lokata założona na jeden miesiąc w dniu 31 stycznia kończy się w ostatnim dniu lutego. Jeżeli ten dzień nie jest dniem roboczym, odsetki nie są naliczane za dni następujące po dniu zapadalności, a środki są udostępniane w najbliższym dniu roboczym, w sposób opisany w {{ref:blok:lokaty-odnowienie}}."
+      - ustep: "Do obliczeń odsetkowych wartości stóp procentowych są zaokrąglane do dwóch miejsc po przecinku, a kwoty — do pełnych groszy, zgodnie z zasadami matematycznymi."
+
+  - id: lokaty-opt-zerwanie-czesciowe
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-zerwanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zerwanie lokaty w części powoduje, że odsetki od wypłacanej kwoty są naliczane według obniżonej stopy procentowej określonej w {{ref:blok:lokaty-zerwanie-skutki}}, natomiast pozostała część lokaty jest oprocentowana według stopy umownej do końca okresu."
+      - ustep: "Dyspozycja częściowego zerwania lokaty powinna wskazywać kwotę, która ma zostać wypłacona, oraz rachunek, na który mają zostać przekazane środki. Jeżeli Klient nie wskaże rachunku, środki są przekazywane na rachunek oszczędnościowy Klienta w Banku."
+      - ustep: "W przypadku wielokrotnego częściowego zerwania lokaty w trakcie tego samego okresu odsetki obniżone są liczone odrębnie od każdej wypłaconej części, od dnia założenia lokaty do dnia poprzedzającego dzień wypłaty. Bank informuje Klienta o wysokości odsetek, podatku oraz kwocie do wypłaty przed wykonaniem dyspozycji, a Klient potwierdza ją przed jej wykonaniem."
+
+  - id: lokaty-opt-zerwanie-sytuacje
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-zerwanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank może zrezygnować z zastosowania obniżonej stopy procentowej przy zerwaniu lokaty, jeżeli wypłata środków następuje w związku z:"
+        punkty:
+          - "zgonem Klienta lub ciężką chorobą Klienta, potwierdzoną dokumentami medycznymi;"
+          - "utratą pracy, potwierdzoną świadectwem pracy lub zaświadczeniem z urzędu pracy;"
+          - tekst: "zdarzeniem losowym, w szczególności:"
+            litery:
+              - "pożarem, zalaniem lub innym zniszczeniem mienia;"
+              - "klęską żywiołową, na którą wskazuje decyzja organu administracji publicznej."
+      - ustep: "Wniosek o zastosowanie korzystniejszych zasad Klient składa w placówce Banku, wraz z dokumentami potwierdzającymi okoliczności, w terminie {{fakt:termin.lokata.dyspozycja-po-terminie}} od dnia zerwania lokaty. Bank rozpatruje wniosek w terminie {{fakt:termin.reklamacja.inne}}."
+      - ustep: "Zastosowanie wyjątku wymaga każdorazowo indywidualnej oceny przez Bank, a jego odmowa nie wyłącza prawa Klienta do złożenia reklamacji zgodnie z {{ref:blok:wspolne-reklamacje-regulamin}}."
+
+  - id: lokaty-opt-zerwanie-blokada
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-zerwanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank może odmówić wykonania dyspozycji zerwania lokaty, jeżeli:"
+        punkty:
+          - "dyspozycja została złożona przez osobę nieuprawnioną lub Bank ma uzasadnione wątpliwości co do tożsamości składającego;"
+          - "na lokacie ustanowiono blokadę lub zajęcie przez uprawniony organ;"
+          - "wykonanie dyspozycji byłoby sprzeczne z przepisami prawa lub z prawomocnym orzeczeniem sądu."
+      - ustep: "O odmowie wykonania dyspozycji Bank informuje Klienta niezwłocznie, wskazując przyczynę odmowy, chyba że przepisy zakazują jej ujawnienia. Odmowa wykonania dyspozycji nie wpływa na dalsze oprocentowanie lokaty."
+      - ustep: "Jeżeli przyczyna odmowy ustała, Klient może ponowić dyspozycję zerwania lokaty. Odsetki są wówczas naliczane do dnia poprzedzającego dzień ponownego złożenia dyspozycji, a Bank wykonuje ją w terminie określonym w {{ref:blok:lokaty-zerwanie}}."
+
+  - id: lokaty-opt-podatek-rezydencja
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-podatek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest obowiązany złożyć Bankowi oświadczenie o rezydencji podatkowej przy zawarciu umowy oraz niezwłocznie informować o jej zmianie. Bank {może żądać|jest uprawniony żądać} dokumentów potwierdzających złożone oświadczenie."
+      - ustep: "Jeżeli Klient ma rezydencję podatkową w więcej niż jednym państwie lub w państwie innym niż Rzeczpospolita Polska, Bank:"
+        punkty:
+          - "zbiera dodatkowe dane, w szczególności numer identyfikacji podatkowej nadany przez te państwa;"
+          - "przekazuje wymagane informacje o rachunku właściwym organom podatkowym, na zasadach określonych w przepisach o wymianie informacji podatkowych;"
+          - "stosuje stawkę podatku wynikającą z właściwej umowy o unikaniu podwójnego opodatkowania, jeżeli Klient udokumentuje uprawnienie do jej zastosowania."
+      - ustep: "Odmowa złożenia oświadczenia lub dokumentów może skutkować zawieszeniem możliwości dokonywania wypłat z rachunku do czasu ich dostarczenia, w zakresie dopuszczalnym przepisami."
+
+  - id: lokaty-opt-podatek-zwolnienia
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-podatek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank nie pobiera podatku od odsetek, jeżeli Klient przedstawi dokument potwierdzający zwolnienie z opodatkowania na podstawie przepisów prawa podatkowego, przed dniem naliczenia lub wypłaty odsetek. Dokument ten Bank przechowuje do czasu upływu terminu przedawnienia zobowiązań podatkowych."
+      - ustep: "W przypadku odsetek od środków zgromadzonych na rachunkach, dla których przepisy przewidują preferencje podatkowe, Bank stosuje je wyłącznie wtedy, gdy Klient wskaże wprost w umowie lub w odrębnym oświadczeniu, że spełnia przesłanki ich zastosowania."
+      - ustep: "Klient odpowiada za prawidłowość oświadczeń składanych w tym zakresie. Jeżeli okaże się, że podatek nie został pobrany bez podstawy prawnej, Bank jest uprawniony do wezwania Klienta do wpłaty brakującej kwoty oraz do poinformowania właściwego organu podatkowego, zgodnie z obowiązującymi przepisami."
+
+  - id: lokaty-opt-spory-mediacja
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-spory
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient nie zgadza się ze stanowiskiem Banku wyrażonym w odpowiedzi na reklamację, może zwrócić się o rozstrzygnięcie sprawy do Rzecznika Finansowego, którego strona internetowa to {{fakt:rzecznik.strona}}. Postępowanie przed Rzecznikiem Finansowym jest dobrowolne i nie pozbawia Klienta prawa do dochodzenia roszczeń przed sądem."
+      - ustep: "Bank {zobowiązuje się|deklaruje} uczestniczyć w postępowaniu przed Rzecznikiem Finansowym w sprawach dotyczących umów rachunków oszczędnościowych i lokat zawartych z konsumentami. W razie braku porozumienia Klient może wnieść powództwo do sądu właściwego według przepisów ogólnych."
+      - ustep: "Klient będący konsumentem może także zwrócić się do miejskiego lub powiatowego rzecznika konsumentów albo do organizacji społecznej, do której zadań statutowych należy ochrona konsumentów, o pomoc w sprawie. Dostęp do tych możliwości nie jest uzależniony od uprzedniego złożenia reklamacji."
+
+  - id: lokaty-opt-spory-nadzor
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-spory
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Działalność Banku podlega nadzorowi Komisji Nadzoru Finansowego, a w zakresie ochrony praw konsumentów — także Prezesa Urzędu Ochrony Konkurencji i Konsumentów. Klient ma prawo zwrócić się do tych organów z informacją o naruszeniu przepisów przez Bank."
+      - ustep: "Zasady składania i rozpatrywania skarg i reklamacji określa {{ref:akt:dz-u-2026-823-reklamacje}}. Bank prowadzi rejestr reklamacji i przechowuje dokumentację dotyczącą ich rozpatrzenia przez okres wymagany przepisami."
+      - ustep: "Szczegółowe informacje o drodze postępowania reklamacyjnego Bank udostępnia w placówkach, na stronie {{fakt:bank.strona}} oraz za pośrednictwem Infolinii pod numerem {{fakt:kontakt.infolinia}}."
+
+  - id: lokaty-opt-koncowe-dzien-roboczy
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dyspozycje składane w dniu roboczym po godzinie granicznej, wskazanej w „{{ref:dokument:taryfa-oszczednosci}}”, są traktowane jako złożone w następnym dniu roboczym. Godziny graniczne mogą być różne dla różnych kanałów dostępu i rodzajów dyspozycji."
+      - ustep: "Jeżeli termin do wykonania czynności przez Bank lub Klienta upływa w dniu, który nie jest dniem roboczym, termin ten upływa w najbliższym dniu roboczym, chyba że przepisy stanowią inaczej."
+      - ustep: "Czynności, które Bank wykonuje w dniu roboczym, obejmują w szczególności księgowanie wpłat i wypłat, zakładanie i likwidację lokat oraz kapitalizację odsetek. Dla celów naliczania odsetek za dzień roboczy uznaje się także dzień ustawowo wolny od pracy, jeżeli taka jest zasada przyjęta w umowie."
+
+  - id: lokaty-opt-koncowe-czas-umowy
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa rachunku oszczędnościowego zawierana jest na czas nieokreślony. Umowa lokaty terminowej zawierana jest na czas oznaczony i wygasa z dniem zapadalności lokaty, a w razie automatycznego odnowienia — z dniem zapadalności ostatniej lokaty, której Klient nie odnowił."
+      - ustep: "Klient może rozwiązać umowę rachunku oszczędnościowego, o ile na rachunku nie ma blokad ani zajęć oraz saldo wynosi zero, albo — gdy saldo jest dodatnie — Klient wskaże rachunek, na który mają zostać przekazane środki. Umowa rachunku oszczędnościowego rozwiązuje się z dniem wypłaty całości środków, jeżeli Klient złoży takie oświadczenie."
+      - ustep: "Rozwiązanie umowy nie wpływa na prawa i obowiązki stron powstałe przed jej rozwiązaniem, w tym na obowiązek zapłaty zaległych opłat i podatku od odsetek."
+
+  - id: lokaty-opt-koncowe-informacje
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank informuje Klientów o ofercie rachunków oszczędnościowych i lokat terminowych w placówkach, na stronie {{fakt:bank.strona}} oraz za pośrednictwem Infolinii. Informacje te mają charakter informacyjny i nie stanowią oferty w rozumieniu Kodeksu cywilnego, o ile nie wskazano inaczej."
+      - ustep: "Bank może zaprzestać oferowania wybranych rodzajów lokat lub zmienić ich parametry w odniesieniu do lokat zakładanych w przyszłości, w szczególności:"
+        punkty:
+          - "okresy, na jakie zakładane są lokaty;"
+          - "minimalne i maksymalne kwoty lokat;"
+          - "kanały, za pośrednictwem których można założyć lokatę."
+      - ustep: "Zmiany, o których mowa w ust. 2, nie wpływają na prawa i obowiązki wynikające z umów zawartych przed ich wejściem w życie i nie wymagają zmiany Regulaminu."
+
+  - id: lokaty-opt-koncowe-zalaczniki
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Integralną częścią Regulaminu jest „{{ref:dokument:taryfa-oszczednosci}}”, której postanowienia stosuje się do opłat i prowizji związanych z rachunkami oszczędnościowymi i lokatami terminowymi, oraz formularz informacyjny dla deponenta."
+      - ustep: "Informacje o oprocentowaniu, które nie wynikają z Regulaminu, w szczególności aktualne stawki dla poszczególnych okresów lokat, są podawane w tabeli oprocentowania. Tabela jest udostępniana na stronie {{fakt:bank.strona}} oraz w placówkach, i może być aktualizowana częściej niż Regulamin."
+      - ustep: "W razie rozbieżności pomiędzy Regulaminem a tabelą oprocentowania, dla lokat założonych przed zmianą tabeli wiążąca jest stawka wskazana w potwierdzeniu założenia lokaty, a dla lokat zakładanych po zmianie — stawka z tabeli obowiązującej w dniu ich założenia."

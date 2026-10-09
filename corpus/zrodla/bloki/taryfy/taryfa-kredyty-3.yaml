@@ -1,0 +1,285 @@
+bloki:
+  - id: taryfa-kredyty-limity-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-wymagane-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "{Prowizja|Opłata} za przyznanie limitu w rachunku osobistym (debetu)"
+            stawka: "{{fakt:oplata.limit-odnawialny.prowizja-przyznanie}} min. {{fakt:oplata.limit-odnawialny.prowizja-minimalna}}[^1]"
+            tryb: "od kwoty limitu, jednorazowo"
+          - usluga: "{Przedłużenie|Odnowienie} limitu w rachunku osobistym na kolejny okres"
+            stawka: "{{fakt:oplata.limit-odnawialny.prowizja-przedluzenie}} min. {{fakt:oplata.limit-odnawialny.prowizja-minimalna}}"
+            tryb: "od kwoty limitu"
+          - usluga: "Podwyższenie limitu w rachunku osobistym"
+            stawka: "{{fakt:oplata.limit-odnawialny.prowizja-podwyzszenie}} od kwoty podwyższenia"
+            tryb: "jednorazowo"
+          - usluga: "Utrzymanie limitu odnawialnego w okresie jego dostępności"
+            stawka: "{{fakt:oplata.limit-odnawialny.utrzymanie}}"
+            tryb: "miesięcznie"
+          - usluga: "Zmiana (obniżenie) {wysokości|kwoty} limitu na wniosek Klienta"
+            stawka: "{{fakt:oplata.limit-odnawialny.zmiana-limitu}}"
+            tryb: "za każdą zmianę"
+          - usluga: "Odsetki od wykorzystanego limitu w rachunku osobistym[^2]"
+            stawka: "{{fakt:oprocentowanie.debet}} w stosunku rocznym"
+            tryb: "od kwoty zadłużenia"
+          - usluga: "Maksymalna kwota limitu w rachunku osobistym"
+            stawka: "{{fakt:limit.rachunek-osobisty.debet}}"
+            tryb: "limit jednorazowy"
+          - usluga: "Opłata za przekroczenie przyznanego limitu (zadłużenie ponad limit)"
+            stawka: "{{fakt:oplata.karta.przekroczenie-limitu}}[^3]"
+            tryb: "za każde przekroczenie"
+          - usluga: "Limit kredytowy w karcie kredytowej — minimalna kwota przyznania"
+            stawka: "{{fakt:limit.karta.kredytowy-min}}"
+            tryb: "jednorazowo"
+          - usluga: "Limit kredytowy w karcie kredytowej — maksymalna kwota przyznania"
+            stawka: "{{fakt:limit.karta.kredytowy-max}}"
+            tryb: "jednorazowo"
+          - usluga: "Okres bezodsetkowy dla transakcji bezgotówkowych kartą kredytową"
+            stawka: "do {{fakt:termin.karta.okres-bezodsetkowy}}"
+            tryb: "od dnia transakcji"
+          - usluga: "Wypłata gotówki z limitu kartowego — prowizja"
+            stawka: "{{fakt:oplata.karta.gotowka-prowizja}}"
+            tryb: "od kwoty wypłaty"
+          - usluga: "Zamiana transakcji kartą kredytową na raty"
+            stawka: "{{fakt:oplata.karta.prowizja-rata}}"
+            tryb: "od kwoty transakcji"
+          - usluga: "{Zamknięcie|Likwidacja} limitu odnawialnego na wniosek Klienta"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rezygnacja z limitu w terminie {{fakt:termin.odstapienie-od-umowy}} od zawarcia umowy"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+    przypisy:
+      1: "Prowizja {jest pobierana|jest potrącana} z rachunku Klienta w dniu udostępnienia limitu; nie podlega zwrotowi w razie zamknięcia limitu przed upływem okresu, na który został przyznany, z wyjątkiem odstąpienia od umowy."
+      2: "Odsetki {są naliczane|nalicza się} codziennie od faktycznego zadłużenia i pobierane w ostatnim dniu miesiąca kalendarzowego; wysokość stopy może ulec zmianie na zasadach określonych w umowie."
+      3: "Opłata nie jest pobierana, jeżeli przekroczenie wynika z operacji, której Bank nie mógł odmówić na podstawie przepisów o usługach płatniczych, oraz gdy zadłużenie ponad limit zostanie spłacone w dniu jego powstania."
+
+  - id: taryfa-kredyty-limity-opc-1
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Rozpatrzenie wniosku o limit w rachunku osobistym {złożonego|wysłanego} w bankowości internetowej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Limit w rachunku osobistym przyznany z automatu na podstawie historii wpływów — prowizja"
+            stawka: "1,0% min. 20,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Limit w rachunku osobistym dla klientów z wpływami powyżej 3 000,00 zł miesięcznie — prowizja"
+            stawka: "1,5% min. 30,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Limit w rachunku osobistym dla klientów z wpływami do 3 000,00 zł miesięcznie — prowizja"
+            stawka: "2,5% min. 30,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Limit w rachunku osobistym dla seniorów — prowizja"
+            stawka: "1,0% min. 20,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Limit w rachunku wspólnym dwóch posiadaczy — dodatkowa prowizja za drugiego współposiadacza"
+            stawka: "0,5%"
+            tryb: "od kwoty limitu"
+          - usluga: "{Przywrócenie|Odblokowanie} limitu zawieszonego z powodu opóźnienia w spłacie"
+            stawka: "50,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Okres dostępności limitu — 12 miesięcy od dnia przyznania"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "{Automatyczne|Samoczynne} wznowienie limitu po okresie dostępności"
+            stawka: "1,0% min. 30,00 zł"
+            tryb: "od kwoty limitu"
+          - usluga: "Rezygnacja z {automatycznego|samoczynnego} wznowienia limitu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+
+  - id: taryfa-kredyty-limity-opc-2
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Karta kredytowa — prowizja za przyznanie limitu kredytowego"
+            stawka: "{{fakt:oplata.limit-odnawialny.prowizja-przyznanie}} min. {{fakt:oplata.limit-odnawialny.prowizja-minimalna}}"
+            tryb: "od kwoty limitu"
+          - usluga: "Podwyższenie limitu w karcie kredytowej"
+            stawka: "{{fakt:oplata.limit-odnawialny.prowizja-podwyzszenie}}"
+            tryb: "od kwoty podwyższenia"
+          - usluga: "{Czasowe|Tymczasowe} podwyższenie limitu kartowego (do 3 miesięcy)"
+            stawka: "30,00 zł"
+            tryb: "za każde podwyższenie"
+          - usluga: "Obniżenie limitu w karcie kredytowej na wniosek Klienta"
+            stawka: "{{fakt:oplata.limit-odnawialny.zmiana-limitu}}"
+            tryb: "za każdą zmianę"
+          - usluga: "{Spłata minimalna|Minimalna rata} karty kredytowej — udział w zadłużeniu"
+            stawka: "5,0% zadłużenia min. 50,00 zł"
+            tryb: "miesięcznie"
+          - usluga: "Przekroczenie limitu karty kredytowej"
+            stawka: "{{fakt:oplata.karta.przekroczenie-limitu}}"
+            tryb: "za każde przekroczenie"
+          - usluga: "Odsetki od zadłużenia karty kredytowej po upływie okresu bezodsetkowego"
+            stawka: "wg umowy"
+            tryb: "rocznie"
+          - usluga: "Wypłata gotówki z karty kredytowej w bankomacie Banku"
+            stawka: "{{fakt:oplata.karta.gotowka-prowizja}}"
+            tryb: "od kwoty wypłaty"
+          - usluga: "Wypłata gotówki z karty kredytowej w bankomacie obcym"
+            stawka: "{{fakt:oplata.bankomat-obcy}} oraz {{fakt:oplata.karta.gotowka-prowizja}}"
+            tryb: "za każdą wypłatę"
+          - usluga: "Przelew z karty kredytowej na {rachunek|rachunek bankowy}"
+            stawka: "{{fakt:oplata.karta.gotowka-prowizja}} min. 10,00 zł"
+            tryb: "od kwoty przelewu"
+
+  - id: taryfa-kredyty-limity-opc-3
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Spłata zadłużenia karty kredytowej {gotówką|wpłatą gotówkową} w placówce"
+            stawka: "{{fakt:oplata.wplata-gotowkowa}}"
+            tryb: "za każdą wpłatę"
+          - usluga: "Spłata zadłużenia karty kredytowej przelewem z rachunku w Banku"
+            stawka: "bez opłat"
+            tryb: "za każdy przelew"
+          - usluga: "Spłata zadłużenia karty kredytowej przelewem z innego banku"
+            stawka: "według taryfy banku Klienta"
+            tryb: "za każdy przelew"
+          - usluga: "{Zlecenie stałe|Stałe zlecenie} spłaty minimalnej kwoty zadłużenia"
+            stawka: "bez opłat"
+            tryb: "za każde zlecenie"
+          - usluga: "Zlecenie stałe spłaty pełnej kwoty zadłużenia"
+            stawka: "bez opłat"
+            tryb: "za każde zlecenie"
+          - usluga: "{Zestawienie|Wykaz} transakcji kartą kredytową w formie papierowej"
+            stawka: "{{fakt:oplata.wyciag-papierowy}}"
+            tryb: "za każde zestawienie"
+          - usluga: "Duplikat zestawienia transakcji karty kredytowej"
+            stawka: "10,00 zł"
+            tryb: "za każdy duplikat"
+          - usluga: "Powiadomienie SMS o transakcji kartą kredytową"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "miesięcznie"
+          - usluga: "Zastrzeżenie karty kredytowej"
+            stawka: "{{fakt:oplata.karta.zastrzezenie}}"
+            tryb: "jednorazowo"
+          - usluga: "Wydanie duplikatu karty kredytowej"
+            stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}"
+            tryb: "za każdy duplikat"
+
+  - id: taryfa-kredyty-limity-opc-4
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Pożyczka odnawialna w {bankowości mobilnej|aplikacji mobilnej} — prowizja za uruchomienie"
+            stawka: "1,0% min. 20,00 zł"
+            tryb: "od kwoty uruchomienia"
+          - usluga: "Pożyczka odnawialna — prowizja za wznowienie po spłacie"
+            stawka: "0,5% min. 10,00 zł"
+            tryb: "od kwoty wznowienia"
+          - usluga: "Pożyczka odnawialna — opłata za utrzymanie limitu"
+            stawka: "{{fakt:oplata.limit-odnawialny.utrzymanie}}"
+            tryb: "miesięcznie"
+          - usluga: "Limit w koncie dla młodych — maksymalna kwota limitu"
+            stawka: "1 000,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Limit w koncie dla młodych — prowizja za przyznanie"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Limit „ratalny” na zakupy w sklepach partnerskich — prowizja"
+            stawka: "wg umowy"
+            tryb: "od kwoty transakcji"
+          - usluga: "Opłata za zmianę rachunku, do którego przypisany jest limit"
+            stawka: "40,00 zł"
+            tryb: "za każdą zmianę"
+          - usluga: "Opłata za przeniesienie limitu do nowego produktu rachunkowego"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "{Zawieszenie|Wstrzymanie} możliwości korzystania z limitu na wniosek Klienta"
+            stawka: "bez opłat"
+            tryb: "za każde zawieszenie"
+          - usluga: "{Przywrócenie|Odnowienie} możliwości korzystania z limitu po zawieszeniu"
+            stawka: "bez opłat"
+            tryb: "za każde przywrócenie"
+
+  - id: taryfa-kredyty-limity-opc-5
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Zaświadczenie o {wysokości|kwocie} przyznanego limitu"
+            stawka: "{{fakt:oplata.zaswiadczenie}}"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Zaświadczenie o historii wykorzystania limitu"
+            stawka: "30,00 zł"
+            tryb: "za każde zaświadczenie"
+          - usluga: "Informacja o saldzie zadłużenia w limicie w placówce Banku"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+          - usluga: "Informacja o saldzie zadłużenia w limicie {przez infolinię|telefonicznie}"
+            stawka: "bez opłat"
+            tryb: "za każdą informację"
+          - usluga: "Opinia bankowa o sposobie obsługi limitu"
+            stawka: "60,00 zł"
+            tryb: "za każdą opinię"
+          - usluga: "Duplikat umowy o limit"
+            stawka: "{{fakt:oplata.duplikat-umowy}}"
+            tryb: "za każdy dokument"
+          - usluga: "{Sporządzenie|Przygotowanie} aneksu do umowy o limit"
+            stawka: "70,00 zł"
+            tryb: "za każdy aneks"
+          - usluga: "Weryfikacja zdolności kredytowej przy wniosku o podwyższenie limitu"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość SMS"
+            stawka: "{{fakt:oplata.powiadomienie-sms}}"
+            tryb: "za każde powiadomienie"
+          - usluga: "Powiadomienie o zbliżaniu się do wyczerpania limitu — wiadomość w aplikacji"
+            stawka: "bez opłat"
+            tryb: "za każde powiadomienie"
+
+  - id: taryfa-kredyty-limity-opc-6
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: pozycje-kredyty-limity
+    wspolny: false
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Opłata za brak spłaty minimalnej kwoty zadłużenia w terminie"
+            stawka: "{{fakt:oplata.upomnienie}}"
+            tryb: "za każdy miesiąc zaległości"
+          - usluga: "Odsetki od kwot przeterminowanych w limicie"
+            stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}"
+            tryb: "rocznie, od kwoty zaległości"
+          - usluga: "{Blokada|Zablokowanie} karty kredytowej z powodu zaległości"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "{Odblokowanie|Przywrócenie działania} karty kredytowej po spłacie zaległości"
+            stawka: "20,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Wypowiedzenie umowy o limit przez Bank z powodu zaległości"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Rozłożenie zadłużenia z karty kredytowej na raty (restrukturyzacja)"
+            stawka: "{{fakt:oplata.kredyt-gotowkowy.restrukturyzacja}}"
+            tryb: "jednorazowo"
+          - usluga: "{Ugoda|Porozumienie} dotyczące spłaty zadłużenia w limicie"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Przeniesienie zadłużenia z limitu do kredytu gotówkowego"
+            stawka: "1,0% przeniesionej kwoty min. 50,00 zł"
+            tryb: "jednorazowo"
+          - usluga: "Zmniejszenie limitu z urzędu z powodu pogorszenia zdolności kredytowej"
+            stawka: "bez opłat"
+            tryb: "jednorazowo"
+          - usluga: "Zmiana terminu spłaty zadłużenia w karcie kredytowej (dnia zestawienia)"
+            stawka: "20,00 zł"
+            tryb: "za każdą zmianę"

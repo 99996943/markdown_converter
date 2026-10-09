@@ -1,0 +1,59 @@
+id: regulamin-kredytu-gotowkowego
+typ: regulaminy
+temat: kredyt-gotowkowy
+tytul:
+  - "Regulamin udzielania kredytów gotówkowych dla konsumentów {{param:bank}}"
+  - "Regulamin {udzielania|zawierania umów} kredytu gotówkowego dla klientów indywidualnych"
+uklady: [jedna-kolumna]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje-regulamin, kredyt-gotowkowy-zakres, kredyt-gotowkowy-definicje, kredyt-gotowkowy-dokumenty]
+    opcjonalne: { kategorie: [paragraf-kg-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wniosek i ocena zdolności kredytowej"
+    wymagane: [kredyt-gotowkowy-wniosek, kredyt-gotowkowy-zdolnosc]
+    opcjonalne: { kategorie: [paragraf-kg-wniosek], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zawarcie umowy i formularz informacyjny"
+    wymagane: [kredyt-gotowkowy-formularz, kredyt-gotowkowy-umowa]
+    opcjonalne: { kategorie: [paragraf-kg-umowa], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypłata kredytu"
+    wymagane: [kredyt-gotowkowy-wyplata]
+    opcjonalne: { kategorie: [paragraf-kg-wyplata], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Oprocentowanie, RRSO i prowizje"
+    wymagane: [kredyt-gotowkowy-oprocentowanie, kredyt-gotowkowy-koszty, kredyt-gotowkowy-koszty-tabela]
+    opcjonalne: { kategorie: [paragraf-kg-oprocentowanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Harmonogram i spłata kredytu"
+    wymagane: [kredyt-gotowkowy-harmonogram, kredyt-gotowkowy-splata]
+    opcjonalne: { kategorie: [paragraf-kg-splata], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wcześniejsza spłata kredytu"
+    wymagane: [kredyt-gotowkowy-wczesna-splata]
+    opcjonalne: { kategorie: [paragraf-kg-wczesna], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Odstąpienie od umowy"
+    wymagane: [kredyt-gotowkowy-odstapienie]
+    opcjonalne: { kategorie: [paragraf-kg-odstapienie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Ubezpieczenie kredytu (opcjonalne)"
+    wymagane: [kredyt-gotowkowy-ubezpieczenie]
+    opcjonalne: { kategorie: [paragraf-kg-ubezpieczenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Opóźnienie w spłacie i windykacja"
+    wymagane: [kredyt-gotowkowy-opoznienie, kredyt-gotowkowy-windykacja]
+    opcjonalne: { kategorie: [paragraf-kg-opoznienie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypowiedzenie umowy"
+    wymagane: [kredyt-gotowkowy-wypowiedzenie]
+    opcjonalne: { kategorie: [paragraf-kg-wypowiedzenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [kredyt-gotowkowy-koncowe, wspolne-reklamacje-regulamin, wspolne-zmiany-regulamin, wspolne-ochrona-danych-regulamin]
+    opcjonalne: { kategorie: [paragraf-kg-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "kredytu gotówkowego"

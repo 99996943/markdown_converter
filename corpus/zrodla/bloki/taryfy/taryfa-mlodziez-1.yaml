@@ -1,0 +1,156 @@
+bloki:
+  # ===== I. Postanowienia ogólne =====
+  - id: taryfa-mlodziez-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - ustep: "Niniejsza Taryfa {określa opłaty za rachunki, karty i usługi|dotyczy rachunków, kart i usług} Banku dla osób fizycznych w wieku od {{fakt:wiek.mlodziez.dziecko-min}} do {{fakt:wiek.mlodziez.student-max}}, w podziale na trzy pakiety: Konto Junior (dzieci do {{fakt:wiek.mlodziez.dziecko-max}}), Konto Teen (młodzież od {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}} do {{fakt:wiek.mlodziez.nastolatek-max}}) oraz Konto Student (osoby od {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} do {{fakt:wiek.mlodziez.student-max}}, posiadające status studenta)."
+      - ustep: "Osoba małoletnia nie posiada pełnej zdolności do czynności prawnych, dlatego umowę rachunku zawiera w jej imieniu przedstawiciel ustawowy (rodzic lub opiekun prawny), a w przypadku osoby w wieku od {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}} do ukończenia {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} — małoletni za zgodą przedstawiciela ustawowego. Zakres samodzielnych dyspozycji małoletniego {określa|reguluje} {{ref:dokument:regulamin-rachunku-osobistego}}, a przepisy o usługach płatniczych — {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+      - ustep: "Opłaty i prowizje wyrażone w złotych {zawierają|uwzględniają} podatek od towarów i usług, o ile czynność nie jest z niego zwolniona. Czynności wykonywane na rzecz konsumentów są co do zasady zwolnione z tego podatku, a podane stawki są stawkami ostatecznymi."
+      - ustep: "Jeżeli w danej sekcji pakietu nie wymieniono odrębnie czynności, {stosuje się|obowiązuje} stawka z sekcji produktowej (Karty, Przelewy, Gotówka, Usługi dodatkowe). Zwolnienie z opłaty przyznane w pakiecie nie obejmuje czynności zleconych przez Klienta po utracie uprawnień do pakietu."
+      - akapit: "Przy pozycjach podano tryb pobierania: „miesięcznie” oznacza opłatę pobieraną w ostatnim dniu roboczym miesiąca, „za operację” — w dniu wykonania pojedynczej czynności, „jednorazowo” — raz, najpóźniej w dniu zakończenia czynności. Opłaty z rachunku małoletniego nie są pobierane z rachunku przedstawiciela ustawowego, chyba że przedstawiciel wyraził na to odrębną zgodę."
+  # ===== II. Konto dla dziecka =====
+  - id: taryfa-mlodziez-dziecko-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Konto Junior jest rachunkiem w złotych dla dzieci w wieku od {{fakt:wiek.mlodziez.dziecko-min}} do ukończenia {{fakt:wiek.mlodziez.dziecko-max}}. Rachunek jest otwierany i {prowadzony|obsługiwany} pod kontrolą przedstawiciela ustawowego, który {zatwierdza|akceptuje} każdą dyspozycję dziecka przekraczającą limit samodzielnej płatności, ustala limity karty i ma wgląd w historię rachunku w bankowości elektronicznej."
+      - akapit: "Dziecko korzysta z aplikacji w trybie uproszczonym: widzi saldo i historię operacji, może zlecać przelewy do wysokości limitu samodzielnej płatności, zakładać cele oszczędnościowe i odbierać kieszonkowe. Opłata za prowadzenie rachunku wynosi {{fakt:oplata.mlodziez.prowadzenie-dziecko}} {miesięcznie|w każdym miesiącu}, a środki zgromadzone na rachunku są oprocentowane stawką {{fakt:oprocentowanie.mlodziez.rachunek-dziecko}} w stosunku rocznym."
+  - id: taryfa-mlodziez-dziecko-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku Konto Junior przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Prowadzenie|Obsługa} rachunku Konto Junior", stawka: "{{fakt:oplata.mlodziez.prowadzenie-dziecko}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku Konto Junior", stawka: "{{fakt:oprocentowanie.mlodziez.rachunek-dziecko}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Minimalna wpłata początkowa na rachunek", stawka: "{{fakt:limit.rachunek-osobisty.pierwsza-wplata}}", tryb: "jednorazowo" }
+          - usluga: "Dostęp dziecka do aplikacji mobilnej w trybie uproszczonym"
+            stawka: "bez opłat"
+            tryb: "miesięcznie"
+            podpozycje:
+              - { usluga: "podgląd salda i historii operacji", stawka: "bez opłat", tryb: "miesięcznie" }
+              - { usluga: "zlecanie przelewów do limitu samodzielnej płatności[^1]", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Cel oszczędnościowy dziecka (skarbonka) — założenie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Oprocentowanie środków zgromadzonych w celu oszczędnościowym", stawka: "{{fakt:oprocentowanie.mlodziez.cel-oszczednosciowy}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Minimalna wpłata na cel oszczędnościowy", stawka: "{{fakt:limit.mlodziez.cel-oszczednosciowy-min-wplata}}", tryb: "za operację" }
+          - { usluga: "Wypłata środków z celu oszczędnościowego na rachunek Konto Junior", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Powiadomienie przedstawiciela ustawowego o operacji dziecka (wiadomość w aplikacji)", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+    przypisy:
+      1: "Samodzielna płatność dziecka jest możliwa do kwoty {{fakt:limit.mlodziez.przelew-dziecko-akceptacja}}; przelew na wyższą kwotę czeka na akceptację przedstawiciela ustawowego, a w razie jej braku w ciągu doby jest odrzucany."
+  - id: taryfa-mlodziez-dziecko-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Kieszonkowe — zlecenie stałe z rachunku przedstawiciela ustawowego na Konto Junior w Banku", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Kieszonkowe — zlecenie stałe z rachunku w innym banku (przelew przychodzący)", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "{Przekształcenie|Zmiana typu} rachunku Konto Junior w Konto Teen po ukończeniu {{fakt:wiek.mlodziez.dziecko-max}}[^1]", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wniosek o zamknięcie rachunku Konto Junior złożony przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypłata środków po zamknięciu rachunku na rachunek wskazany przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zaświadczenie o posiadaniu rachunku przez małoletniego", stawka: "{{fakt:oplata.mlodziez.zaswiadczenie-opiekuna}}", tryb: "za każdy dokument" }
+          - { usluga: "Duplikat umowy rachunku małoletniego", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za każdy dokument" }
+          - { usluga: "Zablokowanie rachunku dziecka na wniosek przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Odblokowanie rachunku dziecka na wniosek przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wyciąg z rachunku dziecka w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku dziecka w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+    przypisy:
+      1: "Bank informuje przedstawiciela ustawowego o planowanym przekształceniu na trwałym nośniku nie później niż na {{fakt:termin.mlodziez.powiadomienie-o-przeksztalceniu}} przed jego dokonaniem; przedstawiciel może w tym czasie zmienić pakiet lub zamknąć rachunek bez opłat."
+  # ===== III. Konto dla nastolatka =====
+  - id: taryfa-mlodziez-nastolatek-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Konto Teen jest rachunkiem dla małoletnich w wieku od {{fakt:wiek.rachunek-osobisty.ograniczona-zdolnosc}} do ukończenia {{fakt:wiek.mlodziez.nastolatek-max}}. Małoletni dysponuje środkami samodzielnie w granicach zgody przedstawiciela ustawowego, a dyspozycje wykraczające poza te granice — w szczególności przelewy powyżej {{fakt:limit.mlodziez.przelew-nastolatek-akceptacja}} — {wymagają|podlegają} akceptacji przedstawiciela w aplikacji."
+      - akapit: "Opłata za prowadzenie rachunku Konto Teen wynosi {{fakt:oplata.mlodziez.prowadzenie-nastolatek}} miesięcznie. Z dniem ukończenia {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} rachunek jest przekształcany w Konto Student (jeżeli klient potwierdzi status studenta) albo w rachunek osobisty w pakiecie Konto Standard, według stawek właściwych dla tych pakietów."
+  - id: taryfa-mlodziez-nastolatek-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku Konto Teen za zgodą przedstawiciela ustawowego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Prowadzenie|Obsługa} rachunku Konto Teen", stawka: "{{fakt:oplata.mlodziez.prowadzenie-nastolatek}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku Konto Teen", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Dostęp do bankowości elektronicznej i aplikacji mobilnej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - usluga: "Zgoda przedstawiciela ustawowego na dyspozycje małoletniego"
+            stawka: "bez opłat"
+            tryb: "za dyspozycję"
+            podpozycje:
+              - { usluga: "zgoda ogólna udzielona w placówce lub w aplikacji[^1]", stawka: "bez opłat", tryb: "jednorazowo" }
+              - { usluga: "zgoda jednorazowa na przelew powyżej progu akceptacji", stawka: "bez opłat", tryb: "za operację" }
+              - { usluga: "cofnięcie zgody ogólnej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Cel oszczędnościowy nastolatka (np. wakacje, sprzęt) — założenie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Oprocentowanie środków zgromadzonych w celu oszczędnościowym", stawka: "{{fakt:oprocentowanie.mlodziez.cel-oszczednosciowy}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Automatyczne odkładanie reszty z transakcji kartowych na cel oszczędnościowy", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Powiadomienie SMS o operacji na rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za każde powiadomienie" }
+    przypisy:
+      1: "Zgodę ogólną składa przedstawiciel ustawowy; określa ona dzienny limit przelewów małoletniego, który nie może przekroczyć {{fakt:limit.mlodziez.przelew-nastolatek-dzienny}}. Przedstawiciel może zmienić lub cofnąć zgodę w każdym czasie ze skutkiem od następnego dnia roboczego."
+  - id: taryfa-mlodziez-nastolatek-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Kieszonkowe — zlecenie stałe od przedstawiciela ustawowego na Konto Teen", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Zmiana kwoty lub terminu kieszonkowego przez przedstawiciela ustawowego w aplikacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Przekształcenie Konta Teen w Konto Student po osiągnięciu pełnoletności", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Zablokowanie|Czasowe zablokowanie} dostępu małoletniego do bankowości elektronicznej na wniosek przedstawiciela", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wniosek o zamknięcie rachunku Konto Teen", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zaświadczenie o posiadaniu i saldzie rachunku małoletniego", stawka: "{{fakt:oplata.mlodziez.zaswiadczenie-opiekuna}}", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie operacji w postaci papierowej wydane w placówce", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Wyciąg z rachunku w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+          - { usluga: "Duplikat umowy rachunku", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za każdy dokument" }
+  # ===== IV. Konto studenckie =====
+  - id: taryfa-mlodziez-student-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Konto Student jest rachunkiem osobistym dla pełnoletnich osób do ukończenia {{fakt:wiek.mlodziez.student-max}}, które posiadają status studenta lub doktoranta. Status potwierdza ważna legitymacja studencka, legitymacja doktoranta albo zaświadczenie uczelni; dokument należy przedstawić w placówce lub przesłać przez aplikację w ciągu {{fakt:termin.mlodziez.potwierdzenie-statusu}} od otwarcia rachunku, a następnie na początku każdego roku akademickiego."
+      - akapit: "Po utracie statusu studenta lub po ukończeniu {{fakt:wiek.mlodziez.student-max}} Bank stosuje przez {{fakt:termin.mlodziez.okres-przejsciowy}} dotychczasowe stawki, a następnie przekształca rachunek w Konto Standard. W pakiecie Konto Student Plus opłata za prowadzenie rachunku wynosi {{fakt:oplata.mlodziez.prowadzenie-student-plus}} miesięcznie i nie jest pobierana w miesiącu, w którym wpływy na rachunek wyniosły co najmniej {{fakt:oplata.mlodziez.prog-wplywow-student-plus}}."
+  - id: taryfa-mlodziez-student-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Otwarcie rachunku Konto Student po przedstawieniu legitymacji studenckiej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - usluga: "{Prowadzenie|Obsługa} rachunku osobistego w pakiecie Konto Student"
+            stawka: "{{fakt:oplata.mlodziez.prowadzenie-student}}"
+            tryb: "miesięcznie"
+            podpozycje:
+              - { usluga: "przy ważnym potwierdzeniu statusu studenta[^1]", stawka: "{{fakt:oplata.mlodziez.prowadzenie-student}}", tryb: "miesięcznie" }
+              - { usluga: "w okresie przejściowym po utracie statusu studenta", stawka: "{{fakt:oplata.mlodziez.prowadzenie-student}}", tryb: "miesięcznie" }
+              - { usluga: "po zakończeniu okresu przejściowego (Konto Standard)", stawka: "{{fakt:oplata.prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunku w pakiecie Konto Student Plus", stawka: "{{fakt:oplata.mlodziez.prowadzenie-student-plus}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku Konto Student", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Dostęp do bankowości elektronicznej, aplikacji mobilnej i płatności mobilnych", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Ubezpieczenie podróży dla studentów w pakiecie Konto Student Plus", stawka: "{{fakt:oplata.mlodziez.ubezpieczenie-podrozy-student}}", tryb: "miesięcznie" }
+          - { usluga: "Potwierdzenie statusu studenta przesłane w aplikacji mobilnej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Potwierdzenie statusu studenta złożone w placówce", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana pakietu Konto Student na Konto Student Plus i odwrotnie", stawka: "bez opłat", tryb: "za dyspozycję" }
+    przypisy:
+      1: "Za ważne uznaje się potwierdzenie statusu studenta przedstawione w terminie; po jego upływie Bank stosuje stawki okresu przejściowego, a brak potwierdzenia do końca tego okresu skutkuje przekształceniem rachunku w pakiet Konto Standard."
+  - id: taryfa-mlodziez-student-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dopuszczalne zadłużenie w rachunku (debet) dla studenta — wniosek", stawka: "wg umowy", tryb: "jednorazowo" }
+          - { usluga: "Limit debetowy dla studentów — odsetki od wykorzystanej kwoty", stawka: "{{fakt:oprocentowanie.debet}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Stypendium i świadczenia uczelni — przyjęcie przelewu przychodzącego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Zaświadczenie|Zaświadczenie bankowe} o posiadaniu rachunku (dla uczelni, domu studenckiego)", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie przelewu czesnego lub opłaty za akademik w postaci elektronicznej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Potwierdzenie przelewu czesnego lub opłaty za akademik w postaci papierowej", stawka: "{{fakt:oplata.rachunek-osobisty.potwierdzenie-operacji}}", tryb: "za każdy dokument" }
+          - { usluga: "Wyciąg z rachunku w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+          - { usluga: "Dyspozycja wypłaty środków na wypadek śmierci", stawka: "{{fakt:oplata.rachunek-osobisty.dyspozycja-smierci}}", tryb: "jednorazowo" }
+          - { usluga: "Zamknięcie rachunku Konto Student", stawka: "{{fakt:oplata.rachunek-osobisty.zamkniecie}}", tryb: "jednorazowo" }

@@ -1,0 +1,139 @@
+bloki:
+  - id: zgon-zakres-powiazania
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-zakres-opc
+    wspolny: false
+    elementy:
+      - akapit: "Procedura {uzupełnia|jest powiązana z} innymi regulacjami wewnętrznymi Banku i nie {zastępuje|uchyla} ich w zakresie, w jakim dotyczą one tej samej sprawy z innego punktu widzenia. W szczególności zasady identyfikacji i oceny ryzyka określają przepisy wewnętrzne o przeciwdziałaniu praniu pieniędzy (zob. {{ref:akt:dz-u-2025-644-aml}}), a tryb przyjmowania skarg i wniosków — procedura reklamacyjna."
+      - ustep: "{W razie|W przypadku} zbiegu postępowań:"
+        punkty:
+          - "{gdy|jeżeli} w sprawie spadkowej pojawi się podejrzenie operacji o charakterze prania pieniędzy, pracownik stosuje procedurę AML jako nadrzędną i {niezwłocznie|bez zwłoki} powiadamia „{{fakt:jednostka.zgodnosc}}”;"
+          - "{gdy|jeżeli} spadkobierca składa reklamację na działanie Banku w sprawie zgonu, reklamację rozpatruje się według zasad ogólnych, a {zespół spadkowy|zespół obsługujący sprawy spadkowe} dostarcza dokumentację w terminie {{fakt:termin.zgon.dokumentacja-reklamacji}};"
+          - "{gdy|jeżeli} sprawa dotyczy jednocześnie zgonu i zajęcia egzekucyjnego, pierwszeństwo mają obowiązki wynikające z przepisów o egzekucji, a procedurę stosuje się w zakresie niesprzecznym z tymi przepisami."
+      - akapit: "Procedura obowiązuje od dnia wejścia w życie także w sprawach przyjętych wcześniej, lecz niezakończonych; czynności już wykonane zgodnie z poprzednimi zasadami nie wymagają powtarzania."
+
+  - id: zgon-role-infolinia
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-role-opc
+    wspolny: false
+    elementy:
+      - ustep: "**Konsultant infolinii** przyjmujący zgłoszenie telefoniczne:"
+        punkty:
+          - "{odnotowuje|rejestruje} zgłoszenie w systemie centralnym {{fakt:zgon.system.cbs}} z adnotacją „zgłoszenie telefoniczne bez dokumentu”;"
+          - "poucza zgłaszającego, że {dalsze czynności|kolejne czynności} wymagają wizyty w placówce lub przesłania dokumentów na adres {{fakt:zgon.email}};"
+          - "nie dokonuje blokady produktów w sposób trwały bez dokumentu potwierdzającego zgon, lecz — {gdy|jeżeli} istnieje ryzyko nadużycia — wykonuje blokadę tymczasową kart i bankowości elektronicznej na czas do {{fakt:termin.zgon.uzupelnienie-dokumentow}};"
+          - "{przekazuje|kieruje} sprawę do placówki wskazanej przez zgłaszającego albo do „{{fakt:zgon.jednostka.zespol-spadkowy}}”, jeżeli zgłaszający mieszka poza obszarem działania placówek Banku."
+      - ustep: "**Kierownik infolinii** {nadzoruje|czuwa nad} jakością obsługi zgłoszeń zgonu, {w szczególności|zwłaszcza}:"
+        punkty:
+          - "{wyrywkowo|losowo} odsłuchuje nagrania rozmów dotyczących zgonów, nie rzadziej niż raz na kwartał;"
+          - "zapewnia, że konsultanci są przeszkoleni w zakresie prowadzenia rozmów z osobami w żałobie;"
+          - "{raportuje|przekazuje} właścicielowi procedury liczbę zgłoszeń przyjętych telefonicznie oraz liczbę zgłoszeń uzupełnionych dokumentami w terminie."
+
+  - id: zgon-role-kontrole-it
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-role-opc
+    wspolny: false
+    elementy:
+      - ustep: "**Jednostka informatyki** odpowiedzialna za system centralny {{fakt:zgon.system.cbs}} {zapewnia|gwarantuje}:"
+        punkty:
+          - "dostępność statusu „klient zmarły”, który blokuje dysponowanie produktami w kanałach zdalnych oraz zlecenia wychodzące, bez usuwania danych;"
+          - "rejestrowanie w historii klienta każdej zmiany statusu wraz z identyfikatorem pracownika, który ją wykonał, oraz datą i godziną;"
+          - "raport dzienny operacji zlecanych na rachunkach ze statusem „klient zmarły”, przekazywany „{{fakt:jednostka.bezpieczenstwo}}”."
+      - ustep: "**Audyt wewnętrzny** może w każdym czasie {skontrolować|zbadać} sprawy spadkowe pod kątem zgodności z procedurą; pracownicy {udostępniają|przekazują} audytorom akta spraw w systemie obiegu dokumentów {{fakt:zgon.system.obieg}} oraz wyjaśniają wątpliwości w terminie wskazanym w wezwaniu."
+
+  - id: zgon-krok-przyjecie-organy
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Zgłoszenie od notariusza, sądu lub organu.** {Gdy|Jeżeli} informacja o śmierci Klienta wpływa od podmiotu urzędowego (sądu, notariusza, komornika, urzędu skarbowego, organu rentowego), pracownik rejestruje pismo w systemie obiegu dokumentów {{fakt:zgon.system.obieg}} i traktuje je jako zgłoszenie udokumentowane."
+            podkroki:
+              - tekst: "Sprawdza, czy pismo zawiera dane umożliwiające identyfikację zmarłego (imiona, nazwisko, PESEL lub datę urodzenia, datę zgonu) i, jeżeli ich brakuje, zwraca się do nadawcy o uzupełnienie w terminie {{fakt:termin.zgon.uzupelnienie-dokumentow}}."
+              - tekst: "Blokadę produktów {wykonuje się|realizuje się} {{fakt:zgon.termin.blokada}}; nadawcę {informuje|zawiadamia} się o wykonaniu blokady w odpowiedzi na pismo, jeżeli pismo tego wymaga."
+          - tekst: "**Odpowiedź na pismo.** Odpowiedzi na pisma organów dotyczące zmarłego Klienta przygotowuje „{{fakt:zgon.jednostka.zespol-spadkowy}}” w terminie wskazanym w piśmie, a {gdy|jeżeli} go nie wskazano — w terminie {{fakt:termin.zgon.informacja-spadkobiercy}}."
+            podkroki:
+              - tekst: "Odpowiedź obejmuje jedynie informacje, do których uzyskania organ jest uprawniony na podstawie przepisów; zakres odpowiedzi uzgadnia się z „{{fakt:jednostka.prawny}}”, {gdy|jeżeli} pismo żąda danych szerszych niż stan rachunku na dzień zgonu."
+              - tekst: "Kopię pisma i odpowiedzi {dołącza się do akt|włącza się do akt} sprawy."
+          - tekst: "**Zgłoszenie od pracodawcy lub instytucji wypłacającej świadczenia.** Informację o zgonie od pracodawcy, organu rentowego lub innej instytucji, która wypłaca środki na rachunek zmarłego, rejestruje się jak zgłoszenie od organu."
+            podkroki:
+              - tekst: "Pracownik {sprawdza|bada}, czy po dacie zgonu na rachunek wpłynęły środki z tej instytucji; jeśli tak, {wstrzymuje|zawiesza} ich dalsze rozliczanie i {przekazuje|kieruje} sprawę do jednostki „{{fakt:zgon.jednostka.rachunkowosc}}”."
+              - tekst: "Zwrot świadczeń nienależnie pobranych po śmierci świadczeniobiorcy realizuje się zgodnie z przepisami i z poleceniem instytucji wypłacającej."
+
+  - id: zgon-krok-przyjecie-rozmowa
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Zasady rozmowy z rodziną zmarłego.** Pracownik prowadzi rozmowę {spokojnie|w sposób wyważony}, bez pośpiechu i unika języka żargonowego. Osoba zgłaszająca zgon może być w stanie szoku i mieć trudność z zapamiętaniem informacji, dlatego pracownik przekazuje najważniejsze ustalenia także {na piśmie|pisemnie}."
+            podkroki:
+              - tekst: "Pracownik zaczyna od wyjaśnienia, co Bank może zrobić w pierwszej kolejności (zabezpieczyć produkty zmarłego), a dopiero potem opisuje formalności dotyczące spadku."
+              - tekst: "{Gdy|Jeżeli} rozmowa odbywa się w placówce, pracownik zapewnia dyskretne miejsce obsługi, a jeżeli to możliwe — osobne stanowisko lub pokój."
+              - tekst: "Pracownik nie komentuje sytuacji rodzinnej i majątkowej zmarłego, nie zadaje pytań o przyczynę śmierci ani o testament."
+          - tekst: "**Informacje, których pracownik {nie ujawnia|nie udostępnia}.** Do czasu wykazania praw do informacji pracownik {nie ujawnia|nie udostępnia} salda rachunków zmarłego, historii operacji, istnienia dyspozycji na wypadek śmierci ani danych współposiadaczy."
+            podkroki:
+              - tekst: "Pracownik informuje, że na żądanie spadkobierców po przedłożeniu dokumentów Bank udzieli pełnych informacji o stanie rachunków w terminie {{fakt:termin.zgon.informacja-spadkobiercy}}."
+              - tekst: "Wyjątek stanowi informacja, czy zmarły posiadał w Banku jakiekolwiek produkty — tej informacji można udzielić osobie, która przedstawi akt zgonu i wykaże pokrewieństwo, po uzgodnieniu z „{{fakt:zgon.jednostka.zespol-spadkowy}}”."
+          - tekst: "**Obsługa skarg w trakcie sprawy.** Jeżeli osoba zgłaszająca wyrazi niezadowolenie z obsługi, pracownik przyjmuje skargę zgodnie z procedurą reklamacyjną i {informuje|zawiadamia} kierownika placówki; skarga nie {wstrzymuje|zawiesza} biegu sprawy spadkowej."
+
+  - id: zgon-krok-produkty-karty
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-produkty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Karty debetowe zmarłego.** Pracownik zastrzega karty debetowe wydane zmarłemu i anuluje wydanie kart będących w trakcie realizacji; za zastrzeżenie nie pobiera się opłaty ({{fakt:oplata.karta.zastrzezenie}})."
+            podkroki:
+              - tekst: "Zastrzeżenie karty jest czynnością nieodwracalną; karty nie przywraca się po wykryciu błędu zgłoszenia, lecz wydaje się duplikat zgodnie z regulaminem — zob. dokument „{{ref:dokument:regulamin-kart-debetowych}}”."
+              - tekst: "Transakcje autoryzowane przed zgłoszeniem zgonu, a rozliczone po nim, obciążają rachunek zmarłego; transakcje zainicjowane po dacie zgonu przekazuje się „{{fakt:jednostka.bezpieczenstwo}}” do wyjaśnienia."
+          - tekst: "**Karty dodatkowe i karty współposiadaczy.** Zastrzeżeniu podlegają wyłącznie karty zmarłego. Karty wydane do rachunku wspólnego innym współposiadaczom i użytkownikom pozostają aktywne, {o ile|jeśli} umowa nie stanowi inaczej."
+            podkroki:
+              - tekst: "{Gdy|Jeżeli} karta została wydana osobie nieposiadającej uprawnień do rachunku (na przykład pełnomocnikowi), pracownik ją zastrzega, bo pełnomocnictwo wygasło wraz ze śmiercią mocodawcy."
+              - tekst: "Posiadaczom kart informacje o blokadzie przekazuje się w zakresie, w jakim dotyczy ich bezpośrednio."
+          - tekst: "**Karta kredytowa zmarłego.** Zastrzeżenie karty kredytowej nie wygasza zobowiązania z tytułu zadłużenia na karcie; zadłużenie przekazuje się „{{fakt:zgon.jednostka.windykacja}}” według procedury kredytowej."
+            podkroki:
+              - tekst: "Zespół ustala wysokość zadłużenia na dzień zgonu, w tym odsetki i opłaty naliczone do tego dnia; limit karty zostaje zablokowany, a dalsze odsetki nalicza się według regulaminu karty."
+              - tekst: "{Gdy|Jeżeli} karta była objęta ubezpieczeniem spłaty zadłużenia, „{{fakt:zgon.jednostka.ubezpieczenia}}” zgłasza zdarzenie w terminie {{fakt:termin.zgon.ubezpieczyciel}}."
+          - tekst: "**Płatności cykliczne i mobilne.** Pracownik usuwa tokeny kart zmarłego z portfeli płatności mobilnych oraz {wstrzymuje|zawiesza} płatności cykliczne zlecone kartą; o zmianie powiadamia się sprzedawców dopiero na wniosek spadkobierców."
+
+  - id: zgon-krok-produkty-lokaty
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-produkty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Lokaty terminowe zmarłego.** Zgon posiadacza nie powoduje automatycznego zerwania lokaty; lokata pozostaje w mocy do końca okresu umownego, {o ile|jeśli} spadkobiercy lub osoby uprawnione z dyspozycji na wypadek śmierci nie złożą wniosku o jej zerwanie."
+            podkroki:
+              - tekst: "{Zespół spadkowy|Zespół obsługujący sprawy spadkowe} blokuje odnawianie lokaty na kolejny okres (jeżeli umowa przewiduje odnowienie automatyczne) i {odnotowuje|zapisuje} to w systemie centralnym {{fakt:zgon.system.cbs}}."
+              - tekst: "W okresie do końca lokaty odsetki nalicza się według stawki umownej: dla lokat 3-miesięcznych {{fakt:oprocentowanie.lokata-3m}}, 6-miesięcznych {{fakt:oprocentowanie.lokata-6m}} i rocznych {{fakt:oprocentowanie.lokata-12m}}, {o ile|jeśli} regulamin w danym dniu nie stanowi inaczej."
+          - tekst: "**Zerwanie lokaty na wniosek spadkobierców.** Spadkobiercy lub osoby uprawnione mogą złożyć wniosek o zerwanie lokaty przed terminem; w takim przypadku odsetki nalicza się według zasad dla przedterminowego zerwania lokaty, określonych w dokumencie „{{ref:dokument:regulamin-lokat}}”."
+            podkroki:
+              - tekst: "{Gdy|Jeżeli} wniosek o zerwanie lokaty wynika z potrzeby pokrycia kosztów pogrzebu, kierownik placówki może zastosować korzystniejsze naliczenie odsetek, jeżeli regulamin lokaty tak przewiduje."
+              - tekst: "Od odsetek pobiera się podatek według stawki {{fakt:podatek.odsetki}}; kwotę podatku wykazuje się w pokwitowaniu wypłaty."
+          - tekst: "**Lokata z dyspozycją na wypadek śmierci.** Wypłatę z lokaty osobie uprawnionej na podstawie dyspozycji traktuje się jak wypłatę z rachunku, z zachowaniem warunków limitu {{fakt:zgon.limit.dyspozycja}}; za zerwanie lokaty w tym trybie nie pobiera się opłat."
+
+  - id: zgon-krok-produkty-bankowosc
+    typy: [procedury]
+    tematy: [procedura-zgon-klienta]
+    kategoria: zgon-krok-produkty
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "**Bankowość elektroniczna i płatności mobilne.** Pracownik zleca „{{fakt:jednostka.bezpieczenstwo}}” zablokowanie profilu zmarłego w bankowości elektronicznej, usunięcie urządzeń zaufanych i unieważnienie aplikacji mobilnej."
+            podkroki:
+              - tekst: "Blokada obejmuje także profile pełnomocników zmarłego; ich dostęp do rachunku wygasa wraz z pełnomocnictwem."
+              - tekst: "Profil współposiadacza rachunku wspólnego pozostaje aktywny; zmienia się wyłącznie jego uprawnienia do operacji, które zależały od zgody zmarłego (na przykład podwójna autoryzacja)."
+              - tekst: "Po zamknięciu rachunków zmarłego profil usuwa się, a historię operacji archiwizuje się zgodnie z przepisami o przechowywaniu dokumentów."
+          - tekst: "**Powiadomienia i wyciągi.** Wysyłkę wyciągów, powiadomień SMS i wiadomości do zmarłego {wstrzymuje|zawiesza} się, a {w razie|w przypadku} potrzeby doręcza się je spadkobiercom po wykazaniu praw."
+            podkroki:
+              - tekst: "Za wysyłkę powiadomień SMS pobierano {{fakt:oplata.powiadomienie-sms}}; od dnia zgonu usługę wyłącza się, a opłaty nie pobiera."
+              - tekst: "Wyciągi papierowe ({{fakt:oplata.wyciag-papierowy}} za wyciąg) kieruje się do osoby wskazanej przez spadkobierców po przedłożeniu dokumentu dziedziczenia."
+          - tekst: "**Zlecenia stałe i polecenia zapłaty.** Pracownik {wstrzymuje|zawiesza} zlecenia stałe i polecenia zapłaty. Kontrahentów, którzy dochodzą należności, {informuje|zawiadamia} się, że rachunek jest zablokowany z powodu zdarzenia, które uniemożliwia realizację zleceń; przyczyny {nie ujawnia|nie udostępnia} się osobom nieuprawnionym."

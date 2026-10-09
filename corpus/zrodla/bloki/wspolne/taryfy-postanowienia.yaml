@@ -1,0 +1,32 @@
+bloki:
+  - id: wspolne-taryfa-postanowienia-ogolne
+    typy: [taryfy]
+    tematy: [postanowienia-ogolne]
+    kategoria: wspolny-taryfa
+    wspolny: true
+    elementy:
+      - akapit: "Taryfa {określa|ustala} wysokość opłat i prowizji pobieranych przez Bank Przykładowy S.A. z tytułu {świadczenia|wykonywania} czynności bankowych oraz usług dodatkowych. Taryfa stanowi integralną część umów zawieranych z Klientami i {obowiązuje|ma zastosowanie} w brzmieniu z dnia dokonania danej czynności."
+      - ustep: "Do spraw nieuregulowanych w Taryfie {stosuje się|mają zastosowanie} postanowienia regulaminów właściwych dla danego produktu. W razie rozbieżności {pierwszeństwo mają|przeważają} postanowienia umowy zawartej z Klientem."
+      - ustep: "Taryfa {jest dostępna|została udostępniona} w placówkach Banku oraz na stronie {{fakt:bank.strona}}. Informacji o stawkach {udzielają|udzielają także} pracownicy infolinii pod numerem {{fakt:kontakt.infolinia}}."
+      - akapit: "O zmianie Taryfy Bank informuje Klientów na trwałym nośniku {nie później niż|z wyprzedzeniem nie krótszym niż} {{fakt:termin.zmiana-regulaminu}} przed dniem wejścia zmian w życie."
+
+  - id: wspolne-taryfa-zasady-pobierania
+    typy: [taryfy]
+    tematy: [zasady-pobierania-oplat]
+    kategoria: wspolny-taryfa
+    wspolny: true
+    elementy:
+      - ustep: "Opłaty i prowizje są pobierane w walucie rachunku, z którego {realizowana jest|wykonywana jest} czynność, {w dniu jej wykonania|w dniu realizacji}, chyba że Taryfa lub umowa stanowi inaczej."
+      - ustep: "Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank {może|ma prawo} pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane {są oprocentowane|podlegają oprocentowaniu} odsetkami za opóźnienie w wysokości {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym."
+      - ustep: "Opłaty, które zostały pobrane {nienależnie|bez podstawy}, Bank zwraca {w terminie|nie później niż w ciągu} {{fakt:termin.zwrot-oplat}} od dnia stwierdzenia błędu."
+      - akapit: "Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat {zaokrągla się|zaokrągla się w górę} do pełnego grosza."
+
+  - id: wspolne-taryfa-kursy-walut
+    typy: [taryfy]
+    tematy: [kursy-walut]
+    kategoria: wspolny-taryfa
+    wspolny: true
+    elementy:
+      - ustep: "Transakcje wymagające przeliczenia walut {są rozliczane|rozlicza się} według kursów z Tabeli kursów walut Banku, obowiązującej w chwili {realizacji|wykonania} transakcji. Tabela {jest sporządzana|jest ustalana} w dni robocze o godzinie {{fakt:kurs.godzina-tabeli}} i publikowana na stronie {{fakt:bank.strona}}."
+      - ustep: "Kurs kupna i kurs sprzedaży {są ustalane|są wyznaczane} na podstawie kursu średniego, {pomniejszonego albo powiększonego|odpowiednio obniżonego lub podwyższonego} o marżę w wysokości {{fakt:kurs.marza-przeliczen}}."
+      - akapit: "Przeliczeń między walutami obcymi {dokonuje się|Bank dokonuje} za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji."

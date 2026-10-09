@@ -1,0 +1,79 @@
+bloki:
+  - id: promocja-warunki-wspolne-zasady
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wszystkie warunki Promocji {muszą|powinny} być spełnione w tym samym miesiącu rozliczeniowym. Spełnienie jednego warunku w jednym miesiącu, a drugiego w innym {nie uprawnia|nie daje prawa} do premii za żaden z tych miesięcy."
+      - ustep: "Nadwyżka wpływów lub obrotów ponad wymagany próg nie przechodzi na kolejny miesiąc rozliczeniowy i nie {może być|jest} wykorzystywana do spełnienia warunków w miesiącu następnym."
+      - ustep: "Uczestnik może w każdej chwili sprawdzić stan realizacji warunków w bankowości elektronicznej {lub|albo} poprzez kontakt z {Infolinią|infolinią Banku}."
+
+  - id: promocja-warunki-przelewy-wlasne
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przelewy z rachunków uczestnika prowadzonych w innych bankach na rachunek promocyjny {są|stają się} wpływami kwalifikowanymi wyłącznie wtedy, gdy tytuł przelewu wskazuje na wynagrodzenie, emeryturę, rentę, zasiłek, stypendium lub inne świadczenie okresowe."
+      - ustep: "Przelew własny, czyli zlecony przez uczestnika z rachunku w innym banku, {zalicza się|będzie zaliczony} do wpływów kwalifikowanych, {jeżeli|jeśli} został zrealizowany nie wcześniej niż {{fakt:promocja.warunek.wplyw-pierwszy-termin}} po poprzednim takim przelewie i nie służy wyłącznie uzyskaniu premii."
+      - ustep: "W razie wątpliwości co do charakteru wpływu Bank {może|ma prawo} zastosować kryteria wskazane w {{ref:blok:promocja-warunki-wplywy}}."
+
+  - id: promocja-warunki-zmiana-progu
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-warunki-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Progi wpływów, transakcji kartowych i logowań wskazane w Regulaminie {obowiązują|mają zastosowanie} w całym okresie premiowanym uczestnika, który złożył wniosek w czasie ich obowiązywania, niezależnie od późniejszych zmian zasad Promocji dla nowych wniosków."
+      - ustep: "Zmiana progów dla nowych uczestników nie jest zmianą Regulaminu w rozumieniu zasad dotyczących wprowadzania zmian, jeśli następuje przez opublikowanie nowej wersji Regulaminu, która dotyczy wyłącznie wniosków składanych po jej wejściu w życie."
+
+  - id: promocja-premia-rozliczenie-roczne
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-premia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W przypadku gdy okres premiowany obejmuje dwa lata kalendarzowe, premie wypłacone w każdym z tych lat {podlegają|są objęte} odrębnemu rozliczeniu podatkowemu, a informacje o przychodach Bank przekazuje osobno za każdy rok."
+      - ustep: "Łączna kwota premii podlegająca limitowi z {{ref:blok:promocja-premia}} ust. 2 obejmuje wszystkie premie wypłacone w całym okresie premiowanym, niezależnie od roku ich wypłaty."
+      - ustep: "Premie wypłacone w poprzednim roku podatkowym nie podlegają zwrotowi z powodu zmiany zasad Promocji dla nowych uczestników."
+
+  - id: promocja-premia-karta-dodatkowa
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-premia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta debetowa wydana w ramach Promocji jest kartą podstawową do rachunku promocyjnego. Zasady jej używania, limity transakcji, w tym dzienny limit transakcji bezgotówkowych w wysokości {{fakt:limit.karta.dzienny-bezgotowkowy}}, {oraz|a także} zasady zastrzegania określa Regulamin rachunku."
+      - ustep: "Zastrzeżenie karty nie powoduje utraty prawa do premii, {jeżeli|jeśli} uczestnik w terminie {{fakt:promocja.termin.zgloszenie}} od zastrzeżenia złoży wniosek o wydanie nowej karty; opłata za wydanie duplikatu karty wynosi {{fakt:oplata.karta.wydanie-duplikatu}}."
+      - ustep: "Zablokowaną kartę uczestnik może zastrzec całą dobę pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+
+  - id: promocja-wyplata-blad
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-premia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} premia została zaksięgowana na rachunku uczestnika w wysokości wyższej niż należna z powodu błędu technicznego, Bank {koryguje|poprawia} księgowanie, informując uczestnika o korekcie w bankowości elektronicznej."
+      - ustep: "Korekta nie wymaga zgody uczestnika, o ile wynika z oczywistego błędu i nie przekracza kwoty błędnie zaksięgowanej. Korekta nie narusza praw uczestnika wynikających z przepisów o usługach płatniczych."
+      - ustep: "{Jeżeli|Gdy} saldo rachunku nie wystarcza do dokonania korekty, powstałe zadłużenie traktuje się jako zadłużenie przeterminowane na zasadach określonych w Regulaminie rachunku."
+
+  - id: promocja-uczestnik-zgloszenie
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-uczestnik-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik może zrezygnować z udziału w Promocji w każdym czasie, składając oświadczenie w placówce, w bankowości elektronicznej lub pisemnie. Rezygnacja {nie powoduje|nie wywołuje} skutków dla umowy rachunku, ale oznacza utratę prawa do premii za miesiące rozliczeniowe następujące po dacie rezygnacji."
+      - ustep: "Premia za miesiące rozliczeniowe zakończone przed datą rezygnacji, za które uczestnik spełnił warunki, zostaje wypłacona na zasadach ogólnych, w terminie {{fakt:promocja.termin.wyplata-premii}} od dnia zakończenia miesiąca rozliczeniowego."
+      - ustep: "Uczestnik, który zrezygnował z Promocji, nie może do niej powrócić w odniesieniu do tego samego rachunku."
+
+  - id: promocja-dane-kontakt
+    typy: [regulaminy]
+    tematy: [promocja-konto]
+    kategoria: promocja-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Administratorem danych osobowych uczestników Promocji jest Bank. Dane kontaktowe Inspektora Ochrony Danych: {{fakt:jednostka.iod}}, adres e-mail {{fakt:kontakt.email-iod}}, adres korespondencyjny: {{fakt:kontakt.adres-korespondencyjny}}."
+      - ustep: "Podanie danych jest dobrowolne, ale niezbędne do otwarcia rachunku i wzięcia udziału w Promocji; odmowa ich podania uniemożliwia zawarcie umowy i przyznanie premii."
+      - ustep: "Uczestnik ma prawo wniesienia skargi do organu nadzorczego właściwego w sprawach ochrony danych osobowych, {jeżeli|jeśli} uzna, że przetwarzanie jego danych narusza przepisy prawa."

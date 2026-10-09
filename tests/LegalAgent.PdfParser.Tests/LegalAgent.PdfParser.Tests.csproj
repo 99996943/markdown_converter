@@ -14,13 +14,14 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="Xunit" />
+    <Using Include="LegalAgent.Corpus.Pdf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
     <ProjectReference Include="..\..\src\LegalAgent.PdfParser.Cli\LegalAgent.PdfParser.Cli.csproj" />
+    <ProjectReference Include="..\..\src\LegalAgent.Corpus\LegalAgent.Corpus.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Fixtures\Fonts\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Fixtures\Fonts" />
     <Content Include="Corpus\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="Corpus" />
   </ItemGroup>
 </Project>

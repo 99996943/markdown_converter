@@ -1,0 +1,168 @@
+bloki:
+  # ===== Rozdział: Postanowienia ogólne =====
+  - id: karty-debetowe-zakres
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin {określa|reguluje} zasady {wydawania|wydawania, aktywowania} i używania {kart debetowych|debetowych kart płatniczych} wydawanych przez {{param:bank}} (zwany dalej „Bankiem”) {klientom indywidualnym|osobom fizycznym niebędącym przedsiębiorcami}, a także prawa i obowiązki stron umowy o kartę debetową."
+      - ustep: "Karta debetowa jest {instrumentem płatniczym|instrumentem płatniczym w rozumieniu przepisów o usługach płatniczych}, który umożliwia dysponowanie środkami zgromadzonymi na rachunku płatniczym, do którego została wydana. Transakcje wykonane kartą obciążają {ten rachunek|rachunek Posiadacza} bez udzielania kredytu, a jej użycie jest ograniczone do wysokości dostępnych środków i ustalonych limitów.[^1]"
+      - ustep: "W zakresie nieuregulowanym w Regulaminie {stosuje się|mają zastosowanie} postanowienia umowy rachunku, do którego wydano kartę, {oraz|a także} {{ref:akt:dz-u-2024-30-uslugi-platnicze}}. W razie rozbieżności między Regulaminem a umową szczególne znaczenie mają postanowienia umowy o kartę debetową."
+      - ustep: "Regulamin {jest udostępniany|jest przekazywany} Klientowi przed zawarciem umowy na trwałym nośniku, w {placówce|placówce Banku} oraz na stronie {{fakt:bank.strona}}. Klient {może|ma prawo} w każdym czasie {zażądać|otrzymać} jego bezpłatnego odpisu."
+    przypisy:
+      1: "Zasady prowadzenia rachunku, do którego wydano kartę, określa odrębny regulamin rachunków; nie wyłącza on stosowania {niniejszego Regulaminu|Regulaminu kart debetowych} w zakresie obsługi karty."
+
+  - id: karty-debetowe-definicje
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Ponadto, na potrzeby stosowania Regulaminu, {poszczególne określenia|użyte w nim określenia} oznaczają:"
+        punkty:
+          - "**Karta** — karta debetowa wydana przez Bank, {fizyczna|w formie plastikowej} lub wirtualna, powiązana z rachunkiem Posiadacza;"
+          - "**Posiadacz** — {osoba fizyczna|konsument}, która zawarła z Bankiem umowę rachunku i umowę o kartę;"
+          - "**Użytkownik** — osoba wskazana przez Posiadacza we wniosku, której Bank wydał kartę i która jest uprawniona do jej używania;"
+          - "**PIN** — poufny, zindywidualizowany numer identyfikacyjny, służący do {potwierdzania|autoryzacji} transakcji;"
+          - "**Organizacja płatnicza** — podmiot, którego zasady określają {sposób|tryb} przetwarzania transakcji kartowych i rozliczeń między bankami;"
+          - "**Akceptant** — przedsiębiorca przyjmujący płatności kartą, w tym przez terminal, stronę internetową lub aplikację;"
+          - "**Transakcja bezgotówkowa** — płatność kartą za towary lub usługi, wykonana w punkcie handlowym, przez Internet lub {na odległość|w inny sposób na odległość};"
+          - "**Transakcja gotówkowa** — wypłata lub wpłata gotówki w bankomacie, wpłatomacie albo u akceptanta oferującego taką usługę;"
+          - "**Transakcja zbliżeniowa** — transakcja inicjowana przez zbliżenie karty lub urządzenia mobilnego do czytnika terminala;"
+          - "**Silne uwierzytelnianie** — uwierzytelnianie oparte na co najmniej dwóch elementach należących do kategorii wiedzy, posiadania i cechy użytkownika, które są od siebie niezależne;"
+          - "**Autoryzacja** — wyrażenie zgody na wykonanie transakcji w sposób określony w Regulaminie;"
+          - "**Blokada środków** — czasowe zmniejszenie salda dostępnego na rachunku o kwotę autoryzowanej transakcji do czasu jej rozliczenia."
+
+  - id: karty-debetowe-umowa
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa o kartę debetową {zostaje zawarta|jest zawierana} na podstawie wniosku Klienta, który posiada w Banku rachunek płatniczy w złotych polskich, i {po jego akceptacji|po jego pozytywnym rozpatrzeniu} przez Bank. {Wniosek można złożyć|Wniosek może zostać złożony}:"
+        punkty:
+          - "w placówce Banku, na formularzu {papierowym|udostępnionym przez pracownika};"
+          - "za pośrednictwem bankowości elektronicznej, po {pozytywnym|prawidłowym} uwierzytelnieniu Klienta;"
+          - "telefonicznie na Infolinii, jeżeli Bank udostępnia taki kanał dla danego rodzaju karty."
+      - ustep: "Bank odmawia wydania karty, jeżeli:"
+        punkty:
+          - "Klient nie spełnia {warunków|wymogów} określonych w Regulaminie lub w umowie rachunku;"
+          - "rachunek jest {zajęty|objęty egzekucją} lub zablokowany na podstawie przepisów prawa;"
+          - "dane podane we wniosku są {niezgodne z danymi|sprzeczne z danymi} posiadanymi przez Bank albo budzą uzasadnione wątpliwości co do ich prawdziwości;"
+          - tekst: "zachodzą okoliczności uzasadniające odmowę, w szczególności:"
+            litery:
+              - "podejrzenie wykorzystania karty do celów niezgodnych z prawem;"
+              - "naruszenie przez Klienta postanowień wcześniejszych umów z Bankiem;"
+              - "brak możliwości zastosowania środków bezpieczeństwa finansowego, o których mowa w przepisach o przeciwdziałaniu praniu pieniędzy.[^1]"
+      - ustep: "Klient {może|ma prawo} odstąpić od umowy o kartę bez podania przyczyny w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia jej zawarcia, składając Bankowi oświadczenie na piśmie lub za pośrednictwem bankowości elektronicznej. Odstąpienie nie wpływa na umowę rachunku."
+    przypisy:
+      1: "Zakres stosowanych środków określa {{ref:akt:dz-u-2025-644-aml}}; Bank może {zażądać|poprosić o} dodatkowych dokumentów lub informacji."
+
+  # ===== Rozdział: Wydanie i aktywacja karty =====
+  - id: karty-debetowe-wydanie
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wydaje kartę w terminie {{fakt:termin.karta-debetowa.wydanie}} od dnia zawarcia umowy o kartę i przekazuje ją Użytkownikowi {w placówce|za pośrednictwem przesyłki kurierskiej lub pocztowej} albo udostępnia w formie wirtualnej w bankowości elektronicznej. {Termin ten może ulec wydłużeniu|Termin ten może zostać wydłużony} w przypadku wydania karty na prośbę Klienta z indywidualnym projektem graficznym."
+      - ustep: "Przesyłka z kartą jest wysyłana na {adres korespondencyjny wskazany przez Klienta|ostatni adres korespondencyjny zgłoszony Bankowi}. Klient {powinien|jest zobowiązany} niezwłocznie zawiadomić Bank, jeżeli przesyłka nie dotarła w terminie {{fakt:termin.karta-debetowa.wydanie}} od dnia jej wysłania lub została {doręczona|dostarczona} w stanie wskazującym na naruszenie opakowania."
+      - ustep: "PIN do karty {jest ustalany|jest nadawany} przez Użytkownika w bankowości elektronicznej, w bankomacie lub na Infolinii albo — jeżeli Klient wybrał taką opcję — przesyłany w odrębnej przesyłce w terminie {{fakt:termin.karta-debetowa.dostarczenie-pin}} od wysłania karty. Bank nie {zna|przechowuje} PIN-u ustalonego przez Użytkownika."
+      - ustep: "Wydanie karty w trybie pilnym, w tym wydanie karty zastępczej w ciągu kilku dni roboczych, podlega opłacie wskazanej w {{ref:dokument:taryfa-karty}}.[^1] Bank {informuje|powiadamia} Klienta o możliwości skorzystania z tego trybu przy składaniu wniosku."
+    przypisy:
+      1: "Aktualna wysokość opłaty za wydanie karty w trybie pilnym wynosi {{fakt:oplata.karta-debetowa.wydanie-pilne}}."
+
+  - id: karty-debetowe-aktywacja
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karta {jest przekazywana|jest doręczana} jako nieaktywna. Użytkownik {aktywuje|może aktywować} ją przed pierwszym użyciem, w jeden z następujących sposobów:"
+        punkty:
+          - "w bankowości elektronicznej, po {podaniu|wpisaniu} numeru karty i potwierdzeniu dyspozycji;"
+          - "na Infolinii, po pozytywnym {uwierzytelnieniu|zweryfikowaniu tożsamości};"
+          - "poprzez wykonanie pierwszej transakcji z użyciem układu elektronicznego karty (chipa) wraz z wprowadzeniem PIN-u, w bankomacie lub terminalu."
+      - ustep: "Aktywacji należy dokonać w terminie {{fakt:termin.karta-debetowa.aktywacja}} od dnia wydania karty. Po upływie tego terminu Bank {może|ma prawo} zablokować nieaktywowaną kartę i — po ponownym wniosku Klienta — wydać nową, bez pobierania opłaty za wydanie."
+      - ustep: "Użytkownik niezwłocznie po otrzymaniu fizycznej karty {składa na niej|umieszcza na niej} swój podpis w miejscu do tego przeznaczonym, o ile karta posiada pasek podpisu. Brak podpisu {nie wpływa na|nie ogranicza} możliwości wykonywania transakcji, jednakże akceptant {może|jest uprawniony} odmówić przyjęcia płatności kartą niepodpisaną."
+      - ustep: "Do czasu aktywacji nie można zrealizować transakcji kartą. Bank {nie ponosi odpowiedzialności|nie odpowiada} za skutki zwłoki w aktywacji, jeżeli wynikła ona z okoliczności, za które odpowiada Klient."
+
+  # ===== Rozdział: Użytkownik karty =====
+  - id: karty-debetowe-uzytkownik
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartę {wydaje się|wydaje Bank} Posiadaczowi rachunku albo — na jego wniosek — innej osobie fizycznej, która ukończyła 13 lat i której Posiadacz udzielił upoważnienia do dysponowania środkami na rachunku w zakresie transakcji kartą (Użytkownik). Wydanie karty osobie, która nie ukończyła 18 lat, {wymaga|jest uzależnione od} zgody przedstawiciela ustawowego."
+      - ustep: "Posiadacz {ponosi odpowiedzialność|odpowiada} za transakcje wykonane kartą Użytkownika {tak samo jak|na tych samych zasadach, co} za transakcje własne. Użytkownik {nie jest uprawniony|nie ma prawa} do:"
+        punkty:
+          - "zmiany umowy rachunku lub umowy o kartę;"
+          - "zamknięcia rachunku oraz wypowiedzenia umowy o kartę;"
+          - "ustanawiania innych pełnomocnictw do rachunku;"
+          - "zmiany danych Posiadacza w systemach Banku."
+      - ustep: "Posiadacz {może|ma prawo} w każdym czasie odwołać upoważnienie Użytkownika, składając Bankowi dyspozycję w placówce, w bankowości elektronicznej lub telefonicznie. Karta Użytkownika zostaje wtedy {zablokowana|zastrzeżona} nie później niż do końca dnia roboczego następującego po dniu przyjęcia dyspozycji."
+      - ustep: "Użytkownik {zobowiązany jest|powinien} stosować się do Regulaminu. Naruszenie Regulaminu przez Użytkownika {uznaje się za|traktuje się jak} naruszenie przez Posiadacza."
+
+  - id: karty-debetowe-ochrona-karty
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik {jest zobowiązany|ma obowiązek} używać karty zgodnie z Regulaminem oraz zachować wszelkie środki ostrożności służące ochronie karty i indywidualnych danych uwierzytelniających. W szczególności Użytkownik:"
+        punkty:
+          - "nie udostępnia karty ani jej numeru, daty ważności i kodu zabezpieczającego {osobom nieuprawnionym|osobom trzecim}, z wyjątkiem akceptanta w zakresie niezbędnym do wykonania transakcji;"
+          - "nie zapisuje PIN-u w postaci {umożliwiającej|która umożliwia} jego odczytanie przez inne osoby, w szczególności na karcie lub na przedmiotach przechowywanych razem z nią;"
+          - "nie ujawnia PIN-u, haseł jednorazowych ani kodów z aplikacji mobilnej nikomu, w tym osobom podającym się za pracowników Banku;"
+          - tekst: "zabezpiecza urządzenia mobilne i komputery, z których korzysta w związku z kartą, w szczególności:"
+            litery:
+              - "stosuje aktualne oprogramowanie oraz ochronę przed złośliwym kodem;"
+              - "nie instaluje aplikacji pochodzących z nieznanych źródeł;"
+              - "blokuje urządzenie hasłem, kodem lub cechą biometryczną."
+      - ustep: "Użytkownik {niezwłocznie sprawdza|regularnie sprawdza} historię transakcji oraz powiadomienia przesyłane przez Bank, w szczególności komunikaty dotyczące transakcji kartowych, {i|oraz} reaguje na każdą nieprawidłową operację zgodnie z postanowieniami Regulaminu o zgłaszaniu transakcji nieautoryzowanych."
+      - ustep: "Karta {jest własnością|pozostaje własnością} Banku i na jego żądanie {powinna zostać zwrócona|musi zostać zwrócona} albo zniszczona poprzez przecięcie układu elektronicznego i paska magnetycznego, w szczególności po wygaśnięciu umowy o kartę."
+
+  # ===== Rozdział: Transakcje i limity =====
+  - id: karty-debetowe-transakcje
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartą można {wykonywać|dokonywać} następujących rodzajów transakcji, w kraju i za granicą, w punktach oznaczonych znakiem organizacji płatniczej wskazanej na karcie:"
+        punkty:
+          - "płatności bezgotówkowych za towary i usługi w punktach handlowych i usługowych, w tym u akceptantów internetowych;"
+          - "wypłat gotówki w bankomatach oraz w innych punktach akceptujących karty, jeżeli oferują taką usługę;"
+          - "wpłat gotówki we wpłatomatach Banku, do wysokości określonej w {{ref:blok:karty-debetowe-limity}};"
+          - "zleceń płatniczych w usłudze płatności cyklicznych, jeżeli Użytkownik wyraził na nie zgodę."
+      - ustep: "Bank {realizuje|wykonuje} transakcję kartą, jeżeli {została ona prawidłowo zautoryzowana|jej autoryzacja nastąpiła zgodnie z Regulaminem}, na rachunku są dostępne środki wystarczające do pokrycia kwoty transakcji i należnych opłat, a limity nie zostały przekroczone."
+      - ustep: "Po autoryzacji transakcji Bank {dokonuje|zakłada} blokady środków na rachunku w kwocie transakcji. Blokada jest utrzymywana do czasu rozliczenia transakcji, jednak nie dłużej niż przez {{fakt:termin.karta-debetowa.blokada-autoryzacji}}, chyba że akceptant wcześniej zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w terminie {{fakt:termin.karta-debetowa.rozliczenie-transakcji}} od dnia otrzymania przez Bank jej zapisu od organizacji płatniczej.[^1]"
+      - ustep: "W niektórych typach transakcji (w szczególności przy rezerwacji hotelowej, wynajmie pojazdu lub opłacie na stacji paliw) akceptant {może wnioskować|może wystąpić} o blokadę kwoty wyższej niż ostateczna wartość transakcji; różnica jest {uwalniana|zwalniana} po rozliczeniu."
+    przypisy:
+      1: "Terminy liczone są w dniach roboczych, chyba że Regulamin stanowi inaczej; {nie obejmują|nie zawierają} one czasu potrzebnego akceptantowi na przekazanie transakcji do rozliczenia."
+
+  - id: karty-debetowe-limity
+    typy: [regulaminy]
+    tematy: [karty-debetowe]
+    kategoria: wymagane-karty-debetowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcje kartą podlegają dziennym limitom kwotowym. {Domyślne limity|Limity ustawione przez Bank w dniu wydania karty} wynoszą:"
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj transakcji"
+              waga: 3
+            - naglowek: "Limit dzienny"
+              waga: 2
+          wiersze:
+            - ["Transakcje gotówkowe", "{{fakt:limit.karta.dzienny-gotowkowy}}"]
+            - ["Transakcje bezgotówkowe", "{{fakt:limit.karta.dzienny-bezgotowkowy}}"]
+            - ["Transakcje internetowe", "{{fakt:limit.karta-debetowa.internet-dzienny}}"]
+            - ["Wpłaty we wpłatomatach", "{{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}"]
+          siatka: true
+      - ustep: "Użytkownik {może zmienić|ma możliwość zmiany} limity w bankowości elektronicznej lub w placówce, w granicach od {{fakt:limit.karta-debetowa.minimalny-ustawiany}} do {{fakt:limit.karta-debetowa.maksymalny-ustawiany-gotowkowy}}. Zmiana limitu na wyższy {jest wprowadzana|zostaje wprowadzona} po dodatkowym uwierzytelnieniu i może wymagać oceny ryzyka przez Bank.[^1]"
+      - ustep: "Bank {może|ma prawo} czasowo obniżyć limity, jeżeli {wymaga tego|jest to uzasadnione} względami bezpieczeństwa, a także w przypadku podejrzenia nieuprawnionego użycia karty. O obniżeniu limitów Bank {informuje|powiadamia} Klienta niezwłocznie po jego dokonaniu, o ile nie stoi temu na przeszkodzie wzgląd na bezpieczeństwo. Opłaty związane z transakcjami określa {{ref:dokument:taryfa-karty}}."
+    przypisy:
+      1: "Limity zdefiniowane przez Użytkownika nie mogą przekraczać kwot wskazanych w tabeli, chyba że Bank {wyrazi zgodę|zaakceptuje to} w odrębnym trybie."

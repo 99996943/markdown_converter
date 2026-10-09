@@ -1,0 +1,120 @@
+fakty:
+  # --- jednostki i role
+  - id: pelnomocnictwo.jednostka.weryfikacja
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Zespół Weryfikacji Pełnomocnictw"
+    alternatywy: ["Zespół Obsługi Pełnomocnictw"]
+  - id: pelnomocnictwo.jednostka.audyt
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Departament Audytu Wewnętrznego"
+    alternatywy: ["Biuro Audytu Wewnętrznego"]
+  - id: pelnomocnictwo.jednostka.aml
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Koordynator do spraw przeciwdziałania praniu pieniędzy"
+    alternatywy: ["Oficer ds. AML"]
+
+  # --- terminy
+  - id: pelnomocnictwo.termin.jednorazowe-waznosc
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2027-01-01
+        wartosc: 21
+    alternatywy: [14, 60]
+  - id: pelnomocnictwo.termin.odwolanie-wprowadzenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+      - od: 2026-04-01
+        wartosc: "w dniu otrzymania oświadczenia"
+    alternatywy: ["w ciągu 3 dni roboczych"]
+  - id: pelnomocnictwo.termin.zawiadomienie-mocodawcy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 3
+    alternatywy: [7, 14]
+  - id: pelnomocnictwo.termin.zgloszenie-zgodnosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "w tym samym dniu roboczym"
+    alternatywy: ["w ciągu 2 dni roboczych"]
+  - id: pelnomocnictwo.termin.potwierdzenie-aktualnosci
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "24 miesiące"
+      - od: 2027-01-01
+        wartosc: "12 miesięcy"
+    alternatywy: ["36 miesięcy"]
+  - id: pelnomocnictwo.termin.uzupelnienie-brakow
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: pelnomocnictwo.termin.przekazanie-do-opinii
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "następnego dnia roboczego"
+    alternatywy: ["w ciągu 2 dni roboczych"]
+  - id: pelnomocnictwo.termin.opinia-prawna
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+      - od: 2027-01-01
+        wartosc: 3
+    alternatywy: [7, 10]
+  - id: pelnomocnictwo.termin.blokada-po-zgonie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "niezwłocznie, nie później niż w następnym dniu roboczym"
+    alternatywy: ["w ciągu 3 dni roboczych"]
+
+  # --- limity i liczby
+  - id: pelnomocnictwo.limit.wyplata-bez-potwierdzenia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 5000.00
+    alternatywy: [2000.00, 20000.00]
+  - id: pelnomocnictwo.limit.druga-weryfikacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50000.00
+    alternatywy: [20000.00, 100000.00]
+  - id: pelnomocnictwo.limit.liczba-pelnomocnikow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzech pełnomocników"
+    alternatywy: ["pięciu pełnomocników"]
+  - id: pelnomocnictwo.limit.proba-kontrolna
+    rodzaj: procent
+    wartosci:
+      - wartosc: 5
+    alternatywy: [10]
+
+  # --- okresy
+  - id: pelnomocnictwo.okres.wiek-dokumentu-zagranicznego
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesiące"]
+  - id: pelnomocnictwo.okres.wzor-podpisu
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 lat"
+    alternatywy: ["3 lata"]
+  - id: pelnomocnictwo.okres.archiwizacja-oryginalow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "10 lat"
+    alternatywy: ["5 lat"]
+  - id: pelnomocnictwo.okres.audyt
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "raz w roku"
+      - od: 2027-01-01
+        wartosc: "raz na pół roku"
+    alternatywy: ["raz na dwa lata"]

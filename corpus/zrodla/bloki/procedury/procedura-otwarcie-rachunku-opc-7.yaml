@@ -1,0 +1,83 @@
+bloki:
+  # --- Środki bezpieczeństwa finansowego
+  - id: otwarcie-aml-kwestionariusz-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Ocena ryzyka klienta jest wykonywana przy użyciu kwestionariusza {{fakt:formularz.otwarcie.kwestionariusz-ryzyka}} i obejmuje czynniki związane z klientem, produktem, kanałem dostępu oraz położeniem geograficznym. Kwestionariusz jest ważny przez {{fakt:termin.otwarcie.waznosc-kwestionariusza}}."
+      - kroki:
+          - tekst: "Ocena czynników klienta."
+            podkroki:
+              - tekst: "Sprawdź rodzaj działalności zawodowej klienta, jego status rezydenta i ewentualne powiązania z osobami zajmującymi eksponowane stanowiska."
+              - tekst: "Zwróć uwagę na klientów, których struktura majątkowa lub styl życia nie odpowiada deklarowanym dochodom."
+          - tekst: "Ocena czynników produktu i kanału. Uwzględnij, czy klient będzie korzystał z płatności zagranicznych, wpłat gotówkowych w dużych kwotach i czy rachunek jest otwierany bez osobistej obecności klienta."
+          - tekst: "Ocena czynników geograficznych. Uwzględnij kraj pochodzenia klienta, kraj, z którym prowadzi transakcje, oraz to, czy kraj figuruje na liście państw wysokiego ryzyka."
+          - tekst: "Wynik oceny. Każdemu czynnikowi przypisuje się punkty, a sumę punktów porównuje z progami: ryzyko niskie — {{fakt:limit.otwarcie.punkty-ryzyko-niskie}}, średnie — {{fakt:limit.otwarcie.punkty-ryzyko-srednie}}, wysokie — {{fakt:limit.otwarcie.punkty-ryzyko-wysokie}}."
+          - tekst: "Zatwierdzenie oceny. Ocenę ryzyka zatwierdza pracownik wykonujący czynności, a w przypadku ryzyka wysokiego — także {{fakt:jednostka.zgodnosc}}."
+
+  - id: otwarcie-aml-pep-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Szczególnych środków wymaga otwieranie rachunku osobom zajmującym eksponowane stanowiska polityczne, ich członkom rodzin oraz osobom znanym jako bliscy współpracownicy takich osób. Status ustala się na podstawie oświadczenia klienta oraz weryfikacji w bazach danych."
+      - kroki:
+          - tekst: "Oświadczenie klienta. Poproś klienta o złożenie oświadczenia w formularzu {{fakt:formularz.otwarcie.oswiadczenie-pep}}, wyjaśniając, jakie osoby zalicza się do tej kategorii."
+          - tekst: "Weryfikacja w bazach. Sprawdź dane klienta w systemie {{fakt:system.otwarcie.aml}}; wynik pozytywny traktuj jako sygnał wymagający dalszych czynności, nawet jeżeli klient złożył oświadczenie negatywne."
+          - tekst: "Dodatkowe środki."
+            podkroki:
+              - tekst: "Uzyskaj zgodę członka kierownictwa wyższego szczebla na nawiązanie relacji z klientem; zgodę uzyskuje się przed otwarciem rachunku."
+              - tekst: "Ustal źródło majątku klienta i źródło środków wykorzystywanych w relacji oraz zapisz je w kwestionariuszu ryzyka."
+              - tekst: "Zakwalifikuj klienta do grupy ryzyka wysokiego i objąć go pogłębioną analizą transakcji."
+          - tekst: "Okres obserwacji. Status osoby zajmującej eksponowane stanowisko utrzymuje się przez okres wskazany w przepisach po zaprzestaniu pełnienia funkcji, a ocenę klienta powtarza się według harmonogramu dla ryzyka wysokiego."
+
+  - id: otwarcie-aml-sankcje-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Przed otwarciem rachunku Bank sprawdza, czy klient lub osoby z nim powiązane nie są objęte krajowymi i międzynarodowymi środkami ograniczającymi. Sprawdzenie następuje automatycznie w systemie {{fakt:system.otwarcie.aml}} i jest powtarzane w trakcie trwania relacji."
+      - kroki:
+          - tekst: "Wynik negatywny. Jeżeli system nie wskazuje zbieżności, odnotuj wynik w dokumentacji klienta i kontynuuj proces."
+          - tekst: "Wynik pozytywny lub wątpliwy. Jeżeli system wskazuje zbieżność, wstrzymaj proces i przekaż sprawę do analizy."
+            podkroki:
+              - tekst: "Analiza polega na porównaniu danych klienta z danymi osoby wymienionej na liście: imienia, nazwiska, daty urodzenia, obywatelstwa i innych dostępnych informacji."
+              - tekst: "Zbieżność niepotwierdzoną analityk oznacza jako fałszywą, wpisując uzasadnienie; potwierdzoną — zgłasza do {{fakt:jednostka.zgodnosc}}."
+          - tekst: "Zakaz informowania. Nie informuj klienta, że jest weryfikowany pod kątem sankcji, ani o wynikach tej weryfikacji, jeżeli wynik jest pozytywny."
+          - tekst: "Odmowa. W razie potwierdzenia, że klient jest objęty środkami ograniczającymi, Bank odmawia otwarcia rachunku i postępuje zgodnie z przepisami, w tym zgłasza sprawę właściwym organom."
+
+  - id: otwarcie-aml-beneficjent-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "W przypadku klientów indywidualnych Bank ustala, czy klient działa we własnym imieniu i na własny rachunek. Jeżeli występuje podejrzenie, że klient działa na rzecz innej osoby, ustala się osobę rzeczywiście kontrolującą rachunek."
+      - kroki:
+          - tekst: "Pytanie kontrolne. Zapytaj klienta wprost, czy rachunek będzie wykorzystywany wyłącznie w jego własnych interesach i czy ktokolwiek inny będzie nim dysponował lub z niego korzystał."
+          - tekst: "Wykrywanie nietypowych okoliczności. Zwróć uwagę, czy klient wydaje się działać pod presją osoby trzeciej, czy towarzyszy mu osoba, która odpowiada na pytania zamiast niego, oraz czy klient potrafi samodzielnie opisać cel rachunku."
+            podkroki:
+              - tekst: "W razie takich sygnałów przeprowadź rozmowę z klientem bez obecności osoby towarzyszącej."
+              - tekst: "Jeżeli podejrzenia się potwierdzą, wstrzymaj otwarcie rachunku i zgłoś sprawę."
+          - tekst: "Rzeczywisty beneficjent. Jeżeli klient potwierdza, że działa na rzecz innej osoby, zbierz dane tej osoby i zweryfikuj je jak dane klienta."
+          - tekst: "Dokumentacja. Wynik ustaleń zapisz w kwestionariuszu ryzyka i opisz okoliczności, które wzbudziły wątpliwość."
+
+  - id: otwarcie-aml-przeglad-okresowy-b
+    typy: [procedury]
+    tematy: [procedura-otwarcie-rachunku]
+    kategoria: otwarcie-aml-opc
+    elementy:
+      - akapit: "Środki bezpieczeństwa finansowego stosuje się nie tylko przy otwarciu rachunku, ale także w trakcie trwania relacji z klientem. Częstotliwość przeglądu zależy od poziomu ryzyka klienta."
+      - tabela:
+          kolumny:
+            - naglowek: "Poziom ryzyka"
+              waga: 2
+            - naglowek: "Częstotliwość przeglądu"
+              waga: 2
+            - naglowek: "Zakres"
+              waga: 4
+          wiersze:
+            - ["Niskie", "co {{fakt:termin.otwarcie.przeglad-ryzyko-niskie}}", "aktualizacja danych identyfikacyjnych i sprawdzenie list sankcyjnych"]
+            - ["Średnie", "co {{fakt:termin.otwarcie.przeglad-ryzyko-srednie}}", "aktualizacja danych, ocena zgodności transakcji z profilem klienta"]
+            - ["Wysokie", "co {{fakt:termin.otwarcie.przeglad-ryzyko-wysokie}}", "pełny przegląd z udziałem Jednostki zgodności, weryfikacja źródła środków"]
+      - akapit: "Przegląd może zostać przeprowadzony wcześniej, jeżeli zmieni się sytuacja klienta, pojawią się informacje o jego powiązaniach z podmiotami ryzykownymi lub jeśli transakcje odbiegają od oczekiwanego profilu."

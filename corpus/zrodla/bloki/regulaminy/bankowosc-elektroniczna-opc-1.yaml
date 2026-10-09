@@ -1,0 +1,193 @@
+bloki:
+  # ===== Pula: Postanowienia ogólne =====
+  - id: bankowosc-elektroniczna-opc-kanaly
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {udostępnia|oferuje} Klientom następujące kanały dostępu do usług bankowości elektronicznej:"
+        punkty:
+          - "serwis internetowy, dostępny w przeglądarce internetowej na komputerze i urządzeniu mobilnym;"
+          - "aplikację mobilną instalowaną na urządzeniu z obsługiwanym systemem operacyjnym;"
+          - "usługę telefoniczną, w której zakres czynności jest ograniczony do informacji o produktach i dyspozycji niewymagających silnego uwierzytelnienia."
+      - ustep: "Zakres funkcji dostępnych w poszczególnych kanałach może się różnić. Bank {zastrzega|informuje}, że niektóre dyspozycje, w szczególności związane z zawieraniem umów lub zmianą danych osobowych, mogą być dostępne wyłącznie w wybranym kanale albo w placówce."
+      - ustep: "Dyspozycja złożona w jednym kanale {nie może być|nie jest} modyfikowana w innym, jeżeli Regulamin nie stanowi inaczej. Klient {może|ma prawo} w każdej chwili korzystać z kilku kanałów jednocześnie, z zachowaniem odrębnych sesji w każdym z nich."
+
+  - id: bankowosc-elektroniczna-opc-zakres-funkcji
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W ramach bankowości elektronicznej Klient może korzystać z {funkcji informacyjnych|usług informacyjnych}, które obejmują:"
+        punkty:
+          - "wgląd w salda i historię operacji na rachunkach za okres {{fakt:bankowosc.historia-operacji}} wstecz;"
+          - "pobieranie wyciągów, potwierdzeń transakcji i zaświadczeń w postaci elektronicznej;"
+          - "podgląd warunków lokat, kredytów i kart oraz harmonogramów spłat;"
+          - "korzystanie z kalkulatorów i narzędzi do planowania budżetu."
+      - ustep: "Funkcje transakcyjne obejmują składanie dyspozycji płatniczych, zarządzanie kartami, otwieranie produktów oszczędnościowych oraz składanie wniosków. Bank {może|ma prawo} udostępniać nowe funkcje w ramach testów, o czym informuje Klienta w serwisie internetowym lub w aplikacji mobilnej."
+      - ustep: "Bank {może|ma prawo} wycofać funkcję bankowości elektronicznej, jeżeli jej utrzymywanie stało się nieuzasadnione z przyczyn technicznych, prawnych lub organizacyjnych, z zachowaniem zasad zmiany Regulaminu."
+
+  - id: bankowosc-elektroniczna-opc-pelnomocnicy
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma prawo} udzielić pełnomocnictwa do dysponowania rachunkiem za pośrednictwem bankowości elektronicznej. Pełnomocnik otrzymuje własny Identyfikator i dane uwierzytelniające, a jego uprawnienia {nie mogą przekraczać|są ograniczone do} zakresu pełnomocnictwa."
+      - ustep: "Zakres uprawnień pełnomocnika może obejmować:"
+        punkty:
+          - "dostęp wyłącznie do informacji o rachunku;"
+          - "składanie dyspozycji do ustalonego limitu kwotowego;"
+          - "pełne dysponowanie rachunkiem, z wyłączeniem zmiany danych Klienta i rezygnacji z bankowości elektronicznej."
+      - ustep: "Klient odpowiada za działania i zaniechania pełnomocnika jak za własne. Odwołanie pełnomocnictwa powoduje niezwłoczne zablokowanie dostępu pełnomocnika; odwołanie jest skuteczne wobec Banku od chwili jego otrzymania i zarejestrowania w systemie."
+
+  # ===== Pula: Dostęp i aktywacja =====
+  - id: bankowosc-elektroniczna-opc-pierwsze-logowanie
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostep
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Pierwsze logowanie do bankowości elektronicznej odbywa się pod adresem {{fakt:bankowosc.adres-serwisu}} lub w aplikacji mobilnej. Przed rozpoczęciem logowania Klient {powinien|jest zobowiązany} sprawdzić, czy adres strony jest zgodny z podanym oraz czy połączenie jest szyfrowane."
+      - ustep: "Podczas pierwszego logowania system {żąda|wymaga} od Klienta:"
+        punkty:
+          - "zmiany Hasła tymczasowego na Hasło własne;"
+          - "zapoznania się z Regulaminem i potwierdzenia jego akceptacji;"
+          - "weryfikacji danych kontaktowych, w tym adresu e-mail i numeru telefonu komórkowego."
+      - ustep: "Hasło tymczasowe ma {charakter jednorazowy|jednorazowy charakter} i nie może być używane po zakończeniu pierwszego logowania. Jeżeli Klient nie zmieni Hasła w terminie wskazanym w komunikacie Banku, dostęp zostanie zablokowany, a odblokowanie będzie wymagało nowej weryfikacji."
+
+  - id: bankowosc-elektroniczna-opc-ponowny-kod
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostep
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient utracił Hasło, nie pamięta Identyfikatora lub nie aktywował dostępu w terminie ważności kodu aktywacyjnego, {może|ma prawo} złożyć wniosek o ich ponowne wydanie. Wniosek można złożyć w placówce, na Infolinii lub — jeżeli Klient posiada aktywną aplikację mobilną — w aplikacji."
+      - ustep: "Warunkiem wydania nowych danych dostępowych jest:"
+        punkty:
+          - "pozytywna weryfikacja tożsamości Klienta;"
+          - "potwierdzenie wniosku jednorazowym kodem wysłanym na numer telefonu zapisany w Banku;"
+          - "zaakceptowanie opłaty za ponowne wydanie kodu aktywacyjnego, jeżeli zgodnie z {{ref:dokument:taryfa-bankowosc-elektroniczna}} jest ona należna."
+      - ustep: "Wydanie nowych danych dostępowych unieważnia dotychczasowe. Bank {informuje|powiadamia} Klienta o wydaniu nowych danych na adres e-mail wskazany w umowie."
+
+  - id: bankowosc-elektroniczna-opc-rezygnacja-dostepu
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-dostep
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma prawo} zrezygnować z poszczególnych kanałów dostępu, w szczególności z aplikacji mobilnej, nie rezygnując z całej bankowości elektronicznej. Rezygnacja dla danego kanału następuje po złożeniu dyspozycji w serwisie internetowym, w placówce lub na Infolinii."
+      - ustep: "Rezygnacja z aplikacji mobilnej powoduje usunięcie wszystkich urządzeń zaufanych z listy oraz unieważnienie kodów PIN aplikacji. Dla dalszego korzystania z funkcji wymagających silnego uwierzytelnienia Bank {zaproponuje|zapewni} inny dostępny sposób potwierdzania dyspozycji, w szczególności kody SMS lub token sprzętowy."
+      - ustep: "Po rezygnacji z kanału Bank {nie ponosi odpowiedzialności|nie odpowiada} za niemożność złożenia dyspozycji za jego pośrednictwem. Klient może w każdej chwili wnioskować o ponowne uruchomienie kanału; takie uruchomienie wymaga ponownej aktywacji."
+
+  # ===== Pula: Wymagania techniczne =====
+  - id: bankowosc-elektroniczna-opc-przegladarka
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-wymagania
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Serwis internetowy {działa|jest przystosowany do działania} w przeglądarkach internetowych obsługujących szyfrowanie połączenia w standardzie aktualnie wskazanym przez Bank. Wykaz obsługiwanych przeglądarek jest dostępny na stronie {{fakt:bankowosc.adres-serwisu}}."
+      - ustep: "Dla bezpiecznego korzystania z serwisu internetowego Klient powinien:"
+        punkty:
+          - "korzystać z przeglądarki w wersji aktualnej, objętej wsparciem producenta;"
+          - "nie instalować dodatków do przeglądarki pochodzących z niezweryfikowanych źródeł;"
+          - "po zakończeniu pracy {wylogować się|zakończyć sesję przez wylogowanie} i zamknąć okno przeglądarki;"
+          - tekst: "nie zapisywać w przeglądarce Hasła ani kodów, w szczególności:"
+            litery:
+              - "nie korzystać z funkcji automatycznego uzupełniania danych logowania na urządzeniach współdzielonych;"
+              - "nie przechowywać kodów jednorazowych w notatkach lub wiadomościach."
+      - ustep: "Bank nie gwarantuje poprawnego działania serwisu w przeglądarkach niewskazanych na liście obsługiwanych oraz w trybach pracy ograniczających działanie mechanizmów zabezpieczających."
+
+  - id: bankowosc-elektroniczna-opc-system-mobilny
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-wymagania
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Aplikacja mobilna działa na urządzeniach z systemem operacyjnym w wersji wskazanej na stronie {{fakt:bank.strona}} oraz w opisie aplikacji w sklepie z aplikacjami. Bank {może|ma prawo} zaprzestać obsługi starszych wersji systemów, o czym informuje Klientów z odpowiednim wyprzedzeniem."
+      - ustep: "Aplikacja mobilna {może|jest w stanie} wykryć, że urządzenie zostało zmodyfikowane w sposób obniżający jego bezpieczeństwo (w szczególności przez uzyskanie uprawnień administracyjnych lub zainstalowanie oprogramowania z nieznanych źródeł). W takim przypadku Bank {może|ma prawo}:"
+        punkty:
+          - "wyświetlić ostrzeżenie o podwyższonym ryzyku;"
+          - "ograniczyć dostępne funkcje, w szczególności dyspozycje płatnicze;"
+          - "odmówić aktywacji aplikacji na takim urządzeniu."
+      - ustep: "Aktualizacje aplikacji mobilnej są udostępniane w sklepach z aplikacjami. Klient {powinien|jest zobowiązany} instalować je niezwłocznie, ponieważ aktualizacje mogą zawierać poprawki bezpieczeństwa; nieaktualna wersja aplikacji może zostać zablokowana."
+
+  # ===== Pula: Uwierzytelnianie =====
+  - id: bankowosc-elektroniczna-opc-haslo
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-uwierzytelnianie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Hasło do bankowości elektronicznej {ustala|tworzy} Klient samodzielnie, w sposób nieujawniający go pracownikom Banku. Hasło nie może być zbieżne z Identyfikatorem, numerem telefonu, datą urodzenia ani zawierać łatwych do odgadnięcia sekwencji znaków."
+      - ustep: "Klient {powinien|jest zobowiązany} zmienić Hasło niezwłocznie po stwierdzeniu lub podejrzeniu, że stało się znane osobie nieuprawnionej, a także na żądanie Banku, gdy wymaga tego bezpieczeństwo. Zmiana Hasła w serwisie internetowym wymaga silnego uwierzytelnienia."
+      - ustep: "Nowe Hasło nie może być identyczne z żadnym z kilku ostatnio używanych haseł. W razie zapomnienia Hasła Klient może skorzystać z procedury jego zresetowania, która {wymaga|obejmuje} weryfikacji tożsamości kodem jednorazowym oraz potwierdzenia w aplikacji mobilnej."
+
+  - id: bankowosc-elektroniczna-opc-sesja
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-uwierzytelnianie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Sesja w bankowości elektronicznej rozpoczyna się z chwilą pozytywnego uwierzytelnienia i trwa do wylogowania Klienta albo do upływu okresu bezczynności wynoszącego {{fakt:bankowosc.timeout-sesji}}. Na {chwilę|krótko} przed zakończeniem sesji system wyświetla komunikat umożliwiający jej przedłużenie."
+      - ustep: "W trakcie jednej sesji Klient {nie może|nie ma możliwości} logować się jednocześnie z kilku urządzeń z użyciem tego samego Identyfikatora; zalogowanie na nowym urządzeniu kończy sesję wcześniejszą."
+      - ustep: "Bank {może|ma prawo} skrócić czas bezczynności dla wybranych kanałów lub funkcji, jeżeli wymagają tego względy bezpieczeństwa. Przedłużenie sesji nie zwalnia Klienta z obowiązku potwierdzenia dyspozycji kodem lub w aplikacji mobilnej, jeżeli Regulamin przewiduje takie potwierdzenie."
+
+  - id: bankowosc-elektroniczna-opc-kody-sms
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-uwierzytelnianie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kod jednorazowy SMS {służy|jest wykorzystywany} do potwierdzania dyspozycji w serwisie internetowym wtedy, gdy Klient nie korzysta z aplikacji mobilnej. Kod jest ważny {{fakt:bankowosc.waznosc-kodu-sms}} od chwili wysłania i może być użyty tylko raz."
+      - ustep: "Przed wprowadzeniem kodu Klient jest obowiązany sprawdzić, czy treść wiadomości — w tym kwota, odbiorca i rodzaj dyspozycji — odpowiada dyspozycji składanej przez niego. W razie rozbieżności Klient nie wprowadza kodu i niezwłocznie kontaktuje się z Bankiem."
+      - ustep: "Bank {nie ponosi odpowiedzialności|nie odpowiada} za niedostarczenie wiadomości SMS z przyczyn leżących po stronie operatora telekomunikacyjnego, braku zasięgu sieci lub nieaktualnego numeru telefonu Klienta. Kody SMS są {bezpłatne|wolne od opłat}; opłatę nalicza się wyłącznie za dodatkowe powiadomienia, o których mowa w rozdziale dotyczącym powiadomień."
+
+  - id: bankowosc-elektroniczna-opc-token
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-uwierzytelnianie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który nie może korzystać z aplikacji mobilnej ani odbierać wiadomości SMS, {może|ma prawo} wystąpić o wydanie tokena sprzętowego. Wydanie tokena podlega opłacie w wysokości {{fakt:oplata.bankowosc.token}}, zgodnie z {{ref:dokument:taryfa-bankowosc-elektroniczna}}."
+      - ustep: "Token sprzętowy generuje kody jednorazowe, które Klient wprowadza podczas logowania i potwierdzania dyspozycji. Token pozostaje własnością Klienta od chwili wydania, a jego utratę, kradzież lub uszkodzenie należy niezwłocznie zgłosić Bankowi."
+      - ustep: "Bank {może|ma prawo} wyłączyć lub unieważnić token, jeżeli istnieje podejrzenie, że został on skopiowany, wykorzystany w sposób nieuprawniony lub jest niesprawny. Nowy token wydawany jest po złożeniu dyspozycji w placówce lub na Infolinii, po weryfikacji tożsamości Klienta."
+
+  # ===== Pula: Aplikacja mobilna i urządzenia zaufane =====
+  - id: bankowosc-elektroniczna-opc-biometria
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-aplikacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma prawo} włączyć w aplikacji mobilnej logowanie i potwierdzanie dyspozycji za pomocą biometrii, jeżeli urządzenie zaufane obsługuje taką funkcję. Biometria stanowi element cechy użytkownika w rozumieniu przepisów o silnym uwierzytelnianiu."
+      - ustep: "Dane biometryczne są {przechowywane|zapisywane} wyłącznie w bezpiecznym module urządzenia i nie są przekazywane Bankowi. Bank otrzymuje jedynie informację o wyniku weryfikacji przeprowadzonej przez system operacyjny urządzenia."
+      - ustep: "Klient, który włącza biometrię, {powinien|jest zobowiązany} zadbać o to, aby na urządzeniu zostały zarejestrowane wyłącznie jego cechy biometryczne. Zapisanie cech innej osoby powoduje, że osoba ta może składać dyspozycje w imieniu Klienta, a ryzyko takich dyspozycji ponosi Klient. Klient {może|ma prawo} w każdej chwili wyłączyć biometrię w ustawieniach aplikacji."
+
+  - id: bankowosc-elektroniczna-opc-platnosci-mobilne
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-aplikacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Aplikacja mobilna umożliwia płatności mobilne, w tym zbliżeniowe płatności za pomocą urządzenia zaufanego oraz płatności na odległość. Warunkiem korzystania z płatności mobilnych jest aktywacja tej funkcji w aplikacji i potwierdzenie jej silnym uwierzytelnieniem."
+      - ustep: "Dzienny limit płatności mobilnych wynosi {{fakt:limit.platnosci-mobilne.dzienny}}. Klient {może|ma możliwość} go obniżyć w ustawieniach aplikacji; zwiększenie limitu wymaga silnego uwierzytelnienia."
+      - ustep: "Zasady wykonywania i rozliczania transakcji kartowych, w tym płatności mobilnych inicjowanych z użyciem karty, określa regulamin odpowiedniej karty. W razie utraty urządzenia Klient {powinien|jest zobowiązany} zablokować aplikację oraz zawiadomić Bank, aby uniemożliwić dalsze płatności z jego użyciem."
+
+  - id: bankowosc-elektroniczna-opc-zmiana-urzadzenia
+    typy: [regulaminy]
+    tematy: [bankowosc-elektroniczna]
+    kategoria: paragraf-bankowosc-aplikacja
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie zmiany urządzenia mobilnego Klient {musi|powinien} zarejestrować nowe urządzenie jako zaufane. Do czasu zakończenia tej procedury aplikacja na nowym urządzeniu nie umożliwia składania dyspozycji."
+      - ustep: "Rejestracja nowego urządzenia zaufanego {przebiega|odbywa się} w następujących krokach:"
+        punkty:
+          - "zainstalowanie aplikacji mobilnej na nowym urządzeniu;"
+          - "zalogowanie się za pomocą Identyfikatora i Hasła;"
+          - "potwierdzenie rejestracji na dotychczasowym urządzeniu zaufanym albo — w razie jego braku — kodem aktywacyjnym otrzymanym od Banku;"
+          - "ustalenie nowego kodu PIN aplikacji."
+      - ustep: "Po zakończeniu rejestracji nowego urządzenia Bank {może|ma prawo} zablokować na okres próbny wybrane funkcje, w szczególności zwiększanie limitów lub dodawanie nowych odbiorców, jeżeli wymagają tego względy bezpieczeństwa. Przed zbyciem lub oddaniem urządzenia do serwisu Klient jest obowiązany usunąć je z listy urządzeń zaufanych i odinstalować aplikację."

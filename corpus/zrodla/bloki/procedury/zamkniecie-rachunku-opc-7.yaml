@@ -1,0 +1,159 @@
+bloki:
+  - id: zamkniecie-n-szczegolne-rachunek-walutowy
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Zamknięcie rachunku walutowego lub rachunku wielowalutowego wymaga rozstrzygnięcia, w jakiej walucie i po jakim kursie zostaną wypłacone środki. Klient ma prawo wybrać walutę wypłaty spośród dostępnych w Banku, a Bank nie może narzucać przewalutowania, jeżeli umowa pozwala na wypłatę w walucie rachunku."
+      - kroki:
+          - tekst: "{Zapytaj|Ustal} Klienta, czy chce otrzymać saldo w walucie rachunku, czy po przewalutowaniu na złote; zapis wyboru Klienta {dołącz|zachowaj} w aktach sprawy."
+            podkroki:
+              - tekst: "Przy wypłacie gotówki w walucie obcej sprawdź dostępność banknotów w placówce i, jeżeli ich brak, uzgodnij z Klientem termin odbioru."
+              - tekst: "Przy przewalutowaniu poinformuj Klienta o kursie, który zostanie zastosowany, i o dniu, według którego będzie ustalony."
+          - tekst: "Wypłatę w innej walucie niż waluta rachunku zrealizuj po kursie obowiązującym w tabeli kursów Banku w dniu wykonania dyspozycji, a kurs wpisz do potwierdzenia."
+          - tekst: "Przelew w walucie obcej na rachunek w innym banku wykonaj zgodnie z zasadami przelewów zagranicznych, informując Klienta o opłatach banków pośredniczących, które mogą pomniejszyć kwotę przekazaną."
+
+  - id: zamkniecie-n-szczegolne-przeterminowane
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Przy zamykaniu rachunku zdarza się, że dokument tożsamości Klienta jest nieważny albo że dane w systemie nie odpowiadają danym w dokumencie. Taka sytuacja nie może być powodem odmowy zamknięcia rachunku, ale wymaga dodatkowych czynności zapewniających bezpieczeństwo."
+      - ustep: "Jeżeli Klient okazuje dokument, który utracił ważność, pracownik:"
+        punkty:
+          - "{prosi|wzywa} o okazanie innego ważnego dokumentu ze zdjęciem, np. paszportu lub prawa jazdy, jeżeli regulamin go dopuszcza;"
+          - "{sprawdza|porównuje} dane z dokumentu z danymi w systemie, w tym nazwisko, numer ewidencyjny i adres;"
+          - "{przeprowadza|wykonuje} dodatkowe uwierzytelnienie, np. połączenie zwrotne lub pytania weryfikacyjne dotyczące rachunku;"
+          - "{informuje|zawiadamia} {{fakt:jednostka.bezpieczenstwo}}, jeżeli dokument budzi wątpliwości co do autentyczności, a Klienta nie uprzedza o podejrzeniu."
+      - akapit: "Wypłatę salda do rąk Klienta, którego tożsamości nie udało się w pełni potwierdzić, zastępuje się przelewem na rachunek wskazany w umowie rachunku."
+
+  - id: zamkniecie-n-szczegolne-zmiana-danych
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Zmiana nazwiska lub adresu Klienta w okresie obowiązywania umowy może powodować rozbieżności w dokumentacji i utrudniać zamknięcie rachunku. Rozbieżności należy wyjaśnić przed wykonaniem dyspozycji, ponieważ są jednym ze źródeł oszustw."
+      - kroki:
+          - tekst: "{Zapytaj|Sprawdź} Klienta o przyczynę rozbieżności i poproś o dokument potwierdzający zmianę (np. akt małżeństwa, orzeczenie sądu lub zaświadczenie o zmianie adresu)."
+          - tekst: "{Zaktualizuj|Uzupełnij} dane w systemie {{fakt:zamkniecie.system.glowny}} zgodnie z dokumentem i {zachowaj|zapisz} kopię dokumentu w aktach sprawy."
+            podkroki:
+              - tekst: "Przy zmianie nazwiska zweryfikuj, czy dokumenty związane z rachunkiem, np. karty i pełnomocnictwa, nie wymagają aktualizacji."
+              - tekst: "Przy zmianie adresu zapewnij, że korespondencja końcowa zostanie wysłana na nowy adres."
+          - tekst: "Jeżeli Klient nie może przedstawić dokumentu, kieruj sprawę do {{fakt:jednostka.operacje}}, która ustali dalszy sposób postępowania i ewentualnie wyda zalecenie dodatkowej weryfikacji."
+
+  - id: zamkniecie-n-szczegolne-brak-pelnomocnika
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Klient niezdolny do osobistego złożenia dyspozycji (np. z powodu choroby, pobytu w szpitalu lub zakładzie karnym) może wypowiedzieć umowę przez pełnomocnika albo w formie oświadczenia podpisanego w obecności osoby uprawnionej do poświadczenia podpisu. Bank nie może odmówić przyjęcia takiego oświadczenia, ale może wymagać zachowania wymogów bezpieczeństwa."
+      - ustep: "Przy dyspozycji składanej w takiej sytuacji:"
+        punkty:
+          - "{oświadczenie|wypowiedzenie} powinno być opatrzone podpisem poświadczonym przez notariusza, lekarza prowadzącego, dyrektora zakładu lub inną osobę uprawnioną przepisami;"
+          - "{pracownik|doradca} potwierdza telefonicznie lub w wizycie u Klienta, że dyspozycja odpowiada jego woli, jeżeli jest to możliwe i dopuszczalne;"
+          - "{środki|saldo} wypłaca się wyłącznie na rachunek Klienta albo osobie wskazanej w pełnomocnictwie notarialnym obejmującym uprawnienie do odbioru środków;"
+          - "{wątpliwości|zastrzeżenia} co do prawidłowości dyspozycji zgłasza się do {{fakt:jednostka.prawny}} i do czasu ich wyjaśnienia dyspozycji nie wykonuje się."
+
+  - id: zamkniecie-n-szczegolne-awaria
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Awaria systemu głównego {{fakt:zamkniecie.system.glowny}} lub rejestru zamknięć {{fakt:zamkniecie.system.rejestr}} nie może prowadzić do odmowy przyjęcia dyspozycji Klienta ani do niezachowania terminów. W takiej sytuacji obowiązuje tryb awaryjny, który zapewnia ciągłość przyjmowania wypowiedzeń."
+      - kroki:
+          - tekst: "Dyspozycje zamknięcia przyjmuj na formularzach papierowych {{fakt:zamkniecie.formularz.wypowiedzenie}}, zapisując datę i godzinę przyjęcia w sposób niebudzący wątpliwości."
+          - tekst: "Wydaj Klientowi potwierdzenie ręcznie wypełnione i opatrzone pieczęcią placówki; drugi egzemplarz zachowaj w kopercie opisanej datą awarii."
+            podkroki:
+              - tekst: "Po usunięciu awarii wprowadź wszystkie przyjęte dyspozycje do systemu w kolejności ich wpływu, z zachowaniem daty faktycznego przyjęcia."
+              - tekst: "Skutki finansowe dyspozycji liczy się od daty przyjęcia, a nie od daty wprowadzenia do systemu."
+          - tekst: "Zamknięcie rachunku wykonuj dopiero po przywróceniu systemu i sprawdzeniu salda; nie wykonuj ręcznych zapisów poza systemem."
+          - tekst: "Po awarii kierownik placówki sporządza notatkę z listą dyspozycji przyjętych w trybie awaryjnym i przekazuje ją do {{fakt:jednostka.operacje}}."
+
+  - id: zamkniecie-n-szczegolne-powtorne
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-szczegolne
+    elementy:
+      - akapit: "Klient, który zamknął rachunek, może po pewnym czasie złożyć wniosek o otwarcie nowego rachunku w Banku. Poprzednie zamknięcie nie wyklucza zawarcia nowej umowy, ale historia współpracy może mieć znaczenie przy ocenie ryzyka i weryfikacji klienta."
+      - ustep: "Przy ponownym nawiązywaniu współpracy pracownik:"
+        punkty:
+          - "{sprawdza|weryfikuje} w systemie, czy poprzedni rachunek został zamknięty z inicjatywy Klienta, czy Banku, i z jakiej przyczyny;"
+          - "{nie odmawia|nie odrzuca} wniosku wyłącznie z powodu wcześniejszej rezygnacji, ale uwzględnia zapisy dotyczące nadużyć lub zadłużenia;"
+          - "{wykorzystuje|stosuje} dane z poprzedniego procesu identyfikacji Klienta wyłącznie w zakresie, w jakim pozwalają na to przepisy, i aktualizuje je;"
+          - "{kieruje|przekazuje} sprawę do {{fakt:jednostka.zgodnosc}}, jeżeli rachunek został zamknięty z powodu podejrzenia nadużyć."
+
+  - id: zamkniecie-n-kontrola-wyrywkowa
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-kontrola-opc
+    elementy:
+      - akapit: "Kontrola wyrywkowa zamknięć rachunków obejmuje {{fakt:zamkniecie.procent.kontrola-prob}} spraw zakończonych w kwartale i jest wykonywana w terminie {{fakt:zamkniecie.termin.kontrola-wyrywkowa}} od jego zakończenia. Wybór spraw odbywa się losowo, z zapewnieniem, że w próbie znajdą się sprawy ze wszystkich placówek."
+      - tabela:
+          kolumny:
+            - naglowek: "Obszar kontroli"
+              waga: 2
+            - naglowek: "Co się sprawdza"
+              waga: 3
+          wiersze:
+            - ["Przyjęcie dyspozycji", "Uprawnienia osoby składającej wypowiedzenie, forma oświadczenia, potwierdzenie tożsamości"]
+            - ["Terminy", "Zarejestrowanie wypowiedzenia, wydanie potwierdzenia, zamknięcie rachunku, wypłata salda"]
+            - ["Rozliczenie", "Prawidłowość naliczenia opłat i odsetek, zgodność kwoty wypłaconej z saldem"]
+            - ["Produkty powiązane", "Zablokowanie kart, anulowanie zleceń, postępowanie z lokatami i kredytami"]
+            - ["Dokumentacja", "Kompletność teczki, podpisy, zgodność z rejestrem, miejsce przechowywania"]
+      - akapit: "Każdą nieprawidłowość opisuje się w protokole z kontroli wraz z oceną jej wagi i zaleceniem, a protokół przekazuje kierownikowi kontrolowanej jednostki."
+
+  - id: zamkniecie-n-archiwum-zajecia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "Dokumentacja dotycząca zajęć rachunku, blokad i zabezpieczeń ustanowionych w związku z zamykanym rachunkiem jest przechowywana odrębnie od zwykłych akt rachunku, w systemie {{fakt:zamkniecie.system.zajecia}}. Pozwala to na jej szybkie odnalezienie w razie postępowań egzekucyjnych lub sporów."
+      - ustep: "Teczka zajęcia obejmuje:"
+        punkty:
+          - "{tytuł|dokument} stanowiący podstawę zajęcia lub blokady oraz dowód jego doręczenia Bankowi;"
+          - "{korespondencję|pisma} z organem, który nałożył zajęcie, w tym zawiadomienia o uchyleniu;"
+          - "{zestawienie|wykaz} kwot zablokowanych, przekazanych i zwolnionych, z datami operacji;"
+          - "{potwierdzenie|dowód} zawiadomienia Klienta o zajęciu, jeżeli było dopuszczalne."
+      - akapit: "Okres przechowywania tej dokumentacji liczy się od dnia zakończenia postępowania, a nie od dnia zamknięcia rachunku, jeżeli jest to termin późniejszy."
+
+  - id: zamkniecie-n-archiwum-aml
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "Dokumenty i informacje zgromadzone w celu stosowania środków bezpieczeństwa finansowego, w szczególności dokumenty identyfikacji i weryfikacji tożsamości oraz wyniki bieżącej analizy transakcji, przechowuje się przez okres wynikający z przepisów o przeciwdziałaniu praniu pieniędzy, tj. {{fakt:zamkniecie.termin.archiwum-aml}}, liczony od końca roku kalendarzowego, w którym zakończono relację z Klientem."
+      - kroki:
+          - tekst: "Wyodrębnij dokumenty z obszaru AML od pozostałych akt rachunku, aby po upływie krótszego okresu przechowywania zwykłej dokumentacji można je było nadal zachować."
+          - tekst: "Oznacz je w archiwum {{fakt:zamkniecie.system.archiwum}} jako dokumenty AML i przypisz im odrębny termin przechowywania."
+            podkroki:
+              - tekst: "Dostęp do tych dokumentów mają wyłącznie pracownicy {{fakt:jednostka.zgodnosc}} i osoby przez nią upoważnione."
+              - tekst: "Na żądanie organów uprawnionych dokumenty są udostępniane w trybie określonym w odrębnych regulacjach."
+          - tekst: "Po upływie okresu przechowywania dokumenty AML niszczy się w sposób opisany w procedurze niszczenia dokumentacji, po uprzednim potwierdzeniu braku postępowań, które mogą wymagać ich zachowania."
+
+  - id: zamkniecie-n-archiwum-zniszczenie-protokol
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-archiwum
+    elementy:
+      - akapit: "Zniszczenie dokumentacji po upływie okresu jej przechowywania (dla dokumentacji zamknięcia — {{fakt:zamkniecie.termin.archiwum-dokumentacja}}) wymaga sporządzenia protokołu, który jest dowodem zgodnego z prawem wykonania tej czynności."
+      - ustep: "Protokół zniszczenia zawiera:"
+        punkty:
+          - "{wykaz|spis} zniszczonych teczek z numerami spraw i datami zamknięcia rachunków;"
+          - "{datę|termin} i sposób zniszczenia (np. niszczarka o odpowiednim poziomie ochrony albo firma specjalistyczna z certyfikatem);"
+          - "{imiona|dane} osób, które uczestniczyły w czynności, oraz ich podpisy;"
+          - "{potwierdzenie|oświadczenie} właściciela procedury i jednostki prawnej o braku przeszkód do zniszczenia."
+      - akapit: "Dokumentację zawierającą dane osobowe niszczy się w sposób uniemożliwiający odtworzenie jej treści; nośniki elektroniczne czyści się w sposób zapewniający trwałe usunięcie danych, a protokół przechowuje się przez okres dalszych {{fakt:zamkniecie.termin.archiwum-aml}}."
+
+  - id: zamkniecie-n-koncowe-wyjatki
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-koncowe-opc
+    elementy:
+      - akapit: "Odstępstwa od procedury są dopuszczalne wyjątkowo, wyłącznie w przypadku, gdy ścisłe stosowanie jej postanowień naruszałoby przepisy lub prowadziłoby do rażąco niekorzystnych skutków dla Klienta. Każdy wyjątek wymaga uprzedniej zgody wskazanej poniżej osoby."
+      - kroki:
+          - tekst: "Pracownik, który stwierdzi potrzebę odstępstwa, zgłasza ją kierownikowi placówki w formie pisemnej, wskazując przepis procedury, okoliczności i proponowany sposób postępowania."
+          - tekst: "Zgodę na odstępstwo wydaje {{fakt:jednostka.operacje}} w porozumieniu z {{fakt:jednostka.zgodnosc}}; w sprawach pilnych zgodę można wydać telefonicznie, z potwierdzeniem na piśmie w ciągu {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}}."
+            podkroki:
+              - tekst: "Odstępstwo nie może dotyczyć zasad bezpieczeństwa, weryfikacji tożsamości ani obowiązków wynikających z przepisów o przeciwdziałaniu praniu pieniędzy."
+              - tekst: "Zgoda dotyczy konkretnej sprawy i nie jest podstawą do stosowania jej w innych."
+          - tekst: "Wszystkie odstępstwa rejestruje się i przedstawia właścicielowi procedury w sprawozdaniu rocznym; ich częstotliwość jest wskaźnikiem potrzeby zmiany procedury."

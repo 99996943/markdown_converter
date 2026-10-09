@@ -1,0 +1,236 @@
+bloki:
+  # ===== Rozdział: Zastrzeżenie karty =====
+  - id: karty-kredytowe-zastrzezenie
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest obowiązany niezwłocznie zgłosić Bankowi utratę, kradzież, przywłaszczenie lub nieuprawnione użycie karty albo jej danych, w szczególności jeżeli:"
+        punkty:
+          - "karta została zgubiona, skradziona lub zniszczona;"
+          - "numer PIN lub dane karty zostały ujawnione osobie nieuprawnionej;"
+          - "stwierdzono transakcje, których Klient nie dokonał."
+      - ustep: "Zgłoszenia można dokonać całodobowo, przez wszystkie dni w roku, telefonicznie pod numerem {{fakt:kontakt.infolinia-zastrzezenia}} (z zagranicy: {{fakt:kontakt.infolinia-zagranica}}), w bankowości elektronicznej lub osobiście w placówce Banku w godzinach jej otwarcia. Zgłoszenie telefoniczne Bank potwierdza na trwałym nośniku."
+      - ustep: "Z chwilą zgłoszenia Bank niezwłocznie blokuje kartę, a następnie — na wniosek Klienta — wydaje duplikat. Zastrzeżenie karty jest czynnością {nieodwracalną|ostateczną}; zastrzeżonej karty nie można odblokować, nawet jeśli została odnaleziona.[^1]"
+    przypisy:
+      1: "Zastrzeżenie karty jest bezpłatne ({{fakt:oplata.karta.zastrzezenie}}); opłata za wydanie duplikatu została określona w dokumencie: {{ref:dokument:taryfa-karty}}."
+
+  - id: karty-kredytowe-zastrzezenie-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po otrzymaniu zgłoszenia Bank zbiera od Klienta informacje niezbędne do wyjaśnienia sprawy, w szczególności:"
+        punkty:
+          - "datę, godzinę i miejsce, w którym stwierdzono utratę karty lub ostatnie jej użycie;"
+          - "okoliczności utraty karty, jeżeli są znane Klientowi;"
+          - "informacje o transakcjach, których Klient nie dokonał, w tym ich kwoty i daty."
+      - ustep: "Klient zobowiązany jest do współdziałania z Bankiem i organami ścigania w wyjaśnianiu okoliczności zdarzenia, w tym do złożenia zawiadomienia o podejrzeniu popełnienia przestępstwa, jeżeli Bank o to wystąpi. Bank nie może uzależniać zwrotu nieautoryzowanej transakcji od złożenia zawiadomienia."
+      - ustep: "Bank {może|ma prawo} zablokować kartę również z własnej inicjatywy, gdy podejrzewa jej nieuprawnione użycie, o czym informuje Klienta niezwłocznie po zablokowaniu, chyba że ujawnienie powodów blokady byłoby sprzeczne z przepisami."
+
+  - id: karty-kredytowe-zastrzezenie-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do chwili zgłoszenia zastrzeżenia Klient odpowiada za nieautoryzowane transakcje do wysokości {{fakt:karta.odpowiedzialnosc-limit}}, chyba że utrata karty nastąpiła w wyniku umyślnego działania lub rażącego niedbalstwa Klienta. Po dokonaniu zgłoszenia Klient nie ponosi odpowiedzialności za transakcje dokonane po jego otrzymaniu przez Bank, chyba że działał umyślnie."
+      - ustep: "Nie ponosi się odpowiedzialności za nieautoryzowane transakcje, jeżeli nie miał możliwości stwierdzenia utraty instrumentu przed wykonaniem transakcji albo jeżeli utrata nastąpiła wskutek działania lub zaniechania pracownika Banku lub podmiotu działającego w imieniu Banku."
+      - ustep: "Bank zapewnia w każdym czasie odpowiednie środki umożliwiające dokonanie zgłoszenia, a na żądanie Klienta, w ciągu 18 miesięcy od dnia zgłoszenia, przekazuje dowód dokonania zgłoszenia."
+
+  - id: karty-kredytowe-zastrzezenie-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Poza zastrzeżeniem karty Klient może ją czasowo zablokować w bankowości elektronicznej lub na infolinii {{fakt:kontakt.infolinia}}, na przykład w razie zagubienia karty w miejscu, w którym możliwe jest jej odnalezienie. Zablokowana czasowo karta może zostać odblokowana przez Klienta po uwierzytelnieniu."
+      - ustep: "W okresie blokady czasowej Bank nie autoryzuje transakcji kartą, ale nadal nalicza odsetki i opłaty zgodnie z Regulaminem. Blokada czasowa nie zwalnia Klienta z obowiązku spłaty zadłużenia."
+      - ustep: "Jeżeli Klient nie odblokuje karty w ciągu 30 dni od dnia blokady czasowej, Bank może zastrzec kartę i wydać duplikat po uprzednim powiadomieniu Klienta."
+
+  - id: karty-kredytowe-zastrzezenie-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} zablokować kartę lub odmówić wykonania transakcji z przyczyn związanych z bezpieczeństwem karty, w tym w razie:"
+        punkty:
+          - "uzasadnionego podejrzenia nieuprawnionego użycia karty lub umyślnego doprowadzenia do nieautoryzowanej transakcji;"
+          - "zwiększenia ryzyka utraty przez Klienta zdolności do spłaty kredytu;"
+          - "wykrycia nietypowych wzorców transakcji, wskazujących na możliwość oszustwa."
+      - ustep: "O zablokowaniu karty Bank informuje Klienta telefonicznie, wiadomością SMS lub w bankowości elektronicznej, przed zablokowaniem, a jeżeli nie jest to możliwe — niezwłocznie po nim. Bank odblokowuje kartę lub zastępuje ją nową kartą, gdy ustaną przyczyny blokady."
+
+  - id: karty-kredytowe-zastrzezenie-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zastrzezenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zastrzeżenie karty głównej obejmuje także karty dodatkowe wydane do rachunku karty. Zastrzeżenie karty dodatkowej może zgłosić zarówno jej użytkownik, jak i Posiadacz rachunku karty, a zastrzeżenie nie wpływa na ważność pozostałych kart."
+      - ustep: "W razie wątpliwości co do tożsamości osoby zgłaszającej zastrzeżenie Bank {może|ma prawo} zażądać podania danych weryfikujących, w szczególności daty urodzenia, numeru PESEL lub nazwiska rodowego matki, a jeżeli weryfikacja się nie powiedzie — zablokować kartę na czas wyjaśnienia sprawy."
+
+  # ===== Rozdział: Opóźnienie w spłacie i windykacja =====
+  - id: karty-kredytowe-opoznienie
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli w terminie spłaty na rachunek karty nie wpłynie co najmniej minimalna kwota do zapłaty, Bank traktuje zadłużenie w niezapłaconej części jako przeterminowane i nalicza od niego odsetki za opóźnienie według stawki {{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku, od dnia następującego po upływie terminu spłaty."
+      - ustep: "W razie opóźnienia Bank {może|ma prawo}:"
+        punkty:
+          - "zablokować kartę, a także obniżyć lub zablokować limit kredytowy;"
+          - "wysłać Klientowi upomnienie, za które pobiera opłatę w wysokości {{fakt:oplata.upomnienie}};"
+          - "podjąć czynności zmierzające do odzyskania należności, w tym wezwać Klienta do zapłaty;"
+          - "wpisać zobowiązanie do rejestru dłużników, na zasadach określonych w przepisach."
+      - ustep: "Opłaty za upomnienia i czynności windykacyjne odpowiadają rzeczywistym kosztom poniesionym przez Bank i nie mogą przekroczyć wysokości określonej w przepisach aktu prawnego: {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}. Bank nie pobiera kilku opłat za ten sam rodzaj czynności w tym samym okresie."
+
+  - id: karty-kredytowe-opoznienie-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli zadłużenie nie zostanie spłacone w terminie, Bank przekazuje Klientowi przypomnienie o zaległości w formie komunikatu SMS, wiadomości elektronicznej lub rozmowy telefonicznej, a następnie — w razie braku spłaty — pisemne wezwanie do zapłaty. Wezwanie wskazuje wysokość zaległości, termin jej spłaty oraz skutki jej niespłacenia."
+      - ustep: "Kontakt telefoniczny z Klientem w sprawie zaległości odbywa się w godzinach od 8:00 do 20:00 i nie może być uciążliwy. Pracownik Banku przedstawia się i informuje Klienta o celu rozmowy. Bank nie ujawnia informacji o zadłużeniu osobom trzecim, chyba że posiadają one pełnomocnictwo lub prawo wynikające z przepisów."
+      - ustep: "Klient może w okresie opóźnienia złożyć wniosek o rozłożenie zaległości na raty, jeżeli przyczyną opóźnienia są okoliczności, których nie mógł przewidzieć, takie jak utrata pracy, choroba lub zdarzenie losowe."
+
+  - id: karty-kredytowe-opoznienie-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wezwanie do zapłaty przed wypowiedzeniem umowy Bank wysyła na adres wskazany przez Klienta jako adres korespondencyjny. W wezwaniu Bank wyznacza dodatkowy termin spłaty zaległości, nie krótszy niż {{fakt:termin.karta.wezwanie-do-zaplaty}}, i informuje Klienta o możliwości złożenia wniosku o restrukturyzację zadłużenia."
+      - ustep: "Bank informuje Klienta w tym samym wezwaniu o skutkach braku spłaty, w tym o możliwości wypowiedzenia umowy, postawienia całego zadłużenia w stan wymagalności i skierowania sprawy na drogę postępowania sądowego."
+      - ustep: "Klient, który zaległość spłaci w dodatkowym terminie, nie ponosi dalszych skutków braku terminowej spłaty, z wyjątkiem odsetek za opóźnienie oraz opłat za upomnienia naliczonych do dnia spłaty."
+
+  - id: karty-kredytowe-opoznienie-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} przekazać dane dotyczące zadłużenia Klienta do biura informacji gospodarczej, jeżeli łącznie spełnione są następujące przesłanki:"
+        punkty:
+          - "zobowiązanie jest wymagalne od co najmniej 60 dni;"
+          - "Bank co najmniej na 14 dni przed przekazaniem danych wezwał Klienta do zapłaty, ostrzegając o zamiarze ich przekazania;"
+          - "wezwanie do zapłaty zostało wysłane listem poleconym lub w inny sposób zapewniający dowód doręczenia."
+      - ustep: "Przekazanie informacji o zadłużeniu do biura informacji kredytowej następuje na zasadach określonych w przepisach aktu prawnego: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}. Klient ma prawo do bezpłatnego dostępu do danych o sobie zgromadzonych w biurze oraz do żądania ich sprostowania."
+
+  - id: karty-kredytowe-opoznienie-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank może zlecić czynności odzyskiwania należności podmiotowi zewnętrznemu lub sprzedać wierzytelność z tytułu karty, o czym zawiadamia Klienta w sposób przewidziany przepisami. Przeniesienie wierzytelności nie zmienia warunków spłaty określonych w umowie."
+      - ustep: "Podmioty, którym Bank powierza czynności windykacyjne, mają obowiązek przestrzegania zasad ochrony danych osobowych i tajemnicy bankowej w zakresie, w jakim dotyczą one danych Klienta."
+      - ustep: "Dochodzenie roszczeń na drodze sądowej następuje po bezskutecznym upływie terminu wyznaczonego w wezwaniu do zapłaty. Koszty postępowania sądowego i egzekucyjnego ponosi Klient w zakresie wynikającym z przepisów o kosztach sądowych."
+
+  - id: karty-kredytowe-opoznienie-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-opoznienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który znalazł się w trudnej sytuacji finansowej, powinien niezwłocznie skontaktować się z Bankiem, zanim dojdzie do opóźnienia w spłacie. Bank {może|ma prawo} zaproponować Klientowi:"
+        punkty:
+          - "czasowe zawieszenie spłaty rat kapitałowych;"
+          - "zmianę terminu spłaty, w tym dnia zakończenia cyklu rozliczeniowego;"
+          - "restrukturyzację zadłużenia, w tym rozłożenie go na raty oraz obniżenie minimalnej kwoty do zapłaty."
+      - ustep: "Zgoda na restrukturyzację wymaga złożenia wniosku wraz z dokumentami potwierdzającymi sytuację finansową Klienta, a Bank rozpatruje go w terminie {{fakt:termin.karta.rozpatrzenie-wniosku}} od dnia otrzymania kompletu dokumentów. Do czasu rozpatrzenia wniosku odsetki za opóźnienie naliczane są na dotychczasowych zasadach."
+
+  # ===== Rozdział: Wypowiedzenie umowy =====
+  - id: karty-kredytowe-wypowiedzenie
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {może|ma prawo} wypowiedzieć umowę o kartę kredytową w każdym czasie, z zachowaniem terminu wypowiedzenia wynoszącego {{fakt:termin.wypowiedzenie-przez-klienta}}, składając oświadczenie na piśmie lub na innym trwałym nośniku. Wypowiedzenie nie wymaga uzasadnienia."
+      - ustep: "Bank {może|ma prawo} wypowiedzieć umowę z zachowaniem {{fakt:termin.wypowiedzenie-przez-bank}} terminu wypowiedzenia, jeżeli zachodzi co najmniej jedna z następujących ważnych przyczyn:"
+        punkty:
+          - "Klient naruszył istotne postanowienia umowy lub Regulaminu, w szczególności przez używanie karty niezgodnie z jej przeznaczeniem;"
+          - "wystąpiła utrata zdolności kredytowej Klienta albo istotne jej zmniejszenie;"
+          - "Klient podał nieprawdziwe informacje przy zawieraniu umowy;"
+          - "Klient nie używał karty przez okres {{fakt:karta.bezczynnosc}}."
+      - ustep: "Bank może wypowiedzieć umowę w razie niespłacenia zaległości mimo wezwania do zapłaty i wyznaczenia dodatkowego terminu, o którym mowa w postanowieniach o windykacji; w takim przypadku okres wypowiedzenia wynosi nie mniej niż {{fakt:termin.karta.wezwanie-do-zaplaty}}, a wypowiedzenie następuje na piśmie."
+
+  - id: karty-kredytowe-wypowiedzenie-skutki
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Z dniem rozwiązania umowy:"
+        punkty:
+          - "karta traci ważność, a Klient jest obowiązany zwrócić ją Bankowi albo zniszczyć;"
+          - "całe zadłużenie, wraz z odsetkami, opłatami i prowizjami, staje się wymagalne, o ile umowa nie stanowi inaczej;"
+          - "Bank dokonuje rozliczenia rachunku karty i zwraca Klientowi ewentualną nadpłatę w terminie 14 dni;"
+          - "karty dodatkowe tracą ważność."
+      - ustep: "Klient może rozwiązać umowę bez wypowiedzenia, jeżeli spłacił całe zadłużenie i zwrócił kartę, za zgodą Banku, w drodze porozumienia stron. Zgoda Banku nie może być bezpodstawnie odmówiona."
+      - ustep: "Rozwiązanie umowy nie zwalnia Klienta z obowiązku spłaty zadłużenia powstałego do dnia rozwiązania umowy, w tym transakcji autoryzowanych, a rozliczonych po tym dniu."
+
+  - id: karty-kredytowe-wypowiedzenie-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypowiedzenie umowy przez Bank następuje na piśmie albo na innym trwałym nośniku i zawiera uzasadnienie. Bank wskazuje w nim przyczynę wypowiedzenia, termin jego upływu oraz informację o prawach Klienta."
+      - ustep: "Klient, który nie zgadza się z wypowiedzeniem, może złożyć reklamację na zasadach określonych w Regulaminie. Złożenie reklamacji nie wstrzymuje biegu terminu wypowiedzenia, chyba że Bank postanowi inaczej."
+      - ustep: "Jeżeli wypowiedzenie dokonane przez Bank okaże się nieuzasadnione, Bank {przywraca|odtwarza} Klientowi uprawnienia wynikające z umowy lub, jeżeli jest to niemożliwe, naprawia szkodę poniesioną w związku z wypowiedzeniem, na zasadach ogólnych."
+
+  - id: karty-kredytowe-wypowiedzenie-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W okresie wypowiedzenia Klient może korzystać z karty na dotychczasowych zasadach, chyba że Bank wypowiedział umowę z powodu zaległości w spłacie lub zagrożenia bezpieczeństwa karty; w takim przypadku Bank może zablokować kartę od dnia doręczenia wypowiedzenia."
+      - ustep: "W okresie wypowiedzenia limit kredytowy nie ulega odnowieniu w zakresie, w jakim Klient spłaca zadłużenie, jeżeli Bank wypowiedział umowę. Klient spłaca zadłużenie w terminach określonych w zestawieniach transakcji, a po upływie okresu wypowiedzenia — w terminie wskazanym w piśmie rozliczającym umowę."
+      - ustep: "Po rozwiązaniu umowy Bank {wystawia|przekazuje} Klientowi, na jego żądanie, potwierdzenie spłaty zobowiązań i zamknięcia rachunku karty, w terminie {{fakt:termin.zwrot-oplat}} od dnia otrzymania żądania."
+
+  - id: karty-kredytowe-wypowiedzenie-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa wygasa z chwilą śmierci Klienta. Spadkobiercy Klienta odpowiadają za zadłużenie z tytułu karty na zasadach określonych w przepisach prawa spadkowego, w tym w granicach ustalonych w przepisach o odpowiedzialności za długi spadkowe."
+      - ustep: "Bank po otrzymaniu informacji o śmierci Klienta blokuje kartę oraz karty dodatkowe, a następnie wstrzymuje naliczanie opłat. Odsetki są naliczane do dnia rozliczenia zadłużenia z uwzględnieniem postanowień przepisów szczególnych."
+      - ustep: "Do czasu zakończenia postępowania spadkowego Bank nie podejmuje czynności windykacyjnych wobec osób niebędących spadkobiercami Klienta."
+
+  - id: karty-kredytowe-wypowiedzenie-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wypowiedzenie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do czasu rozliczenia umowy Klient nie może złożyć w Banku wniosku o nową kartę kredytową ani o zwiększenie innych limitów kredytowych, chyba że Bank wyrazi na to zgodę."
+      - ustep: "Bank może odmówić zawarcia nowej umowy o kartę kredytową z Klientem, którego poprzednią umowę wypowiedział z powodu zaległości w spłacie, przez okres nie dłuższy niż 12 miesięcy od dnia całkowitej spłaty zadłużenia."
+      - ustep: "Umowa wygasa także z upływem terminu ważności karty, jeżeli karta nie została wznowiona zgodnie z postanowieniami dotyczącymi wznowienia."
+
+  # ===== Rozdział: Postanowienia końcowe =====
+  - id: karty-kredytowe-koncowe-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawem właściwym dla umowy o kartę kredytową jest prawo polskie. Spory wynikające z umowy rozstrzygają sądy powszechne właściwe według przepisów Kodeksu postępowania cywilnego, a Klient będący konsumentem może dochodzić roszczeń także przed sądem właściwym dla jego miejsca zamieszkania."
+      - ustep: "Klient może skorzystać z pozasądowych metod rozwiązywania sporów, w tym z postępowania przed Rzecznikiem Finansowym, na zasadach określonych w przepisach aktu prawnego: {{ref:akt:dz-u-2026-823-reklamacje}}, oraz zwrócić się do miejskiego lub powiatowego rzecznika konsumentów."
+
+  - id: karty-kredytowe-koncowe-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-koncowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank podlega nadzorowi Komisji Nadzoru Finansowego. Bank jest uczestnikiem obowiązkowego systemu gwarantowania depozytów, który nie obejmuje jednak zobowiązań Klienta z tytułu karty kredytowej ani środków stanowiących nadpłatę na rachunku karty."
+      - ustep: "Bank nie ponosi odpowiedzialności za szkody wynikające z siły wyższej, w tym z działań wojennych, aktów terroryzmu, awarii systemów łączności lub zakłóceń w działaniu systemów rozliczeniowych niezależnych od Banku, chyba że wynika ona z jego winy."
+      - ustep: "Regulamin w brzmieniu obowiązującym od dnia {{param:od}} stosuje się do umów zawartych od tego dnia oraz — po upływie terminu wskazanego w powiadomieniu o zmianie — do umów zawartych wcześniej."

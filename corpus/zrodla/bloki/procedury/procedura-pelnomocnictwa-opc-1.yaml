@@ -1,0 +1,233 @@
+bloki:
+  - id: procedura-pelnomocnictwa-dod-przyjecie-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy Klient zgłasza zamiar ustanowienia pełnomocnika, {zapytaj|ustal} na początku rozmowy, do jakich czynności ma on być umocowany, na jaki okres oraz czy pełnomocnik ma działać samodzielnie, czy łącznie z innymi osobami."
+            podkroki:
+              - tekst: "Wyjaśnij mocodawcy różnicę między pełnomocnictwem ogólnym, rodzajowym i szczególnym oraz wskaż, że szerszy zakres oznacza większe ryzyko nadużycia."
+              - tekst: "Zaproponuj wzór F-PEŁ-01 i wskaż, że Klient może użyć własnego dokumentu, jeżeli spełnia wymogi formy i treści określone w procedurze."
+          - tekst: "Poinformuj mocodawcę, że pełnomocnik uzyskuje dostęp do informacji o rachunku wyłącznie w granicach umocowania, a każde jego działanie jest rejestrowane w systemie z oznaczeniem osoby."
+          - tekst: "Sprawdź, czy liczba pełnomocników do rachunku nie przekracza limitu wynikającego z umowy ({{fakt:pelnomocnictwo.limit.liczba-pelnomocnikow}}); przy próbie przekroczenia limitu {nie przyjmuj|odmów przyjęcia} dokumentu i wskaż Klientowi możliwość odwołania wcześniejszego umocowania."
+          - tekst: "Jeżeli Klient chce złożyć pełnomocnictwo, które nie zostało jeszcze podpisane, {umów|zaproponuj} podpisanie go w placówce w obecności pracownika; pozwala to uniknąć sporów co do autentyczności podpisu."
+          - tekst: "Przed przyjęciem dokumentu zapisz w karcie weryfikacji F-PEŁ-04 datę, godzinę i kanał zgłoszenia, imię i nazwisko pracownika oraz wskazanie, czy pełnomocnictwo złożono osobiście przez mocodawcę, czy przez pełnomocnika."
+
+  - id: procedura-pelnomocnictwa-dod-przyjecie-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - akapit: "Pełnomocnictwo może zostać złożone przez samego pełnomocnika, na przykład gdy mocodawca przebywa za granicą lub nie może się stawić z powodu choroby. W takim przypadku {obowiązują|stosuje się} zaostrzone zasady przyjęcia, opisane poniżej, ponieważ Bank nie ma wówczas bezpośredniego kontaktu z mocodawcą."
+      - ustep: "Pracownik przyjmujący pełnomocnictwo od pełnomocnika:"
+        punkty:
+          - "żąda oryginału dokumentu lub jego odpisu wydanego przez notariusza; kopia zwykła i skan nie są wystarczające;"
+          - "sprawdza, czy z treści pełnomocnictwa wynika wprost prawo do złożenia dokumentu w Banku oraz do rejestracji umocowania w systemie;"
+          - "{ustala|potwierdza} tożsamość pełnomocnika na podstawie ważnego dokumentu ze zdjęciem i odnotowuje numer dokumentu w karcie weryfikacji;"
+          - "kontaktuje się z mocodawcą pod numerem telefonu lub adresem zapisanym w systemie przed złożeniem dokumentu, nie zaś pod numerem podanym przez pełnomocnika;"
+          - "w razie braku możliwości kontaktu z mocodawcą kieruje sprawę do kierownika placówki, który decyduje o dalszym postępowaniu."
+      - akapit: "Jeżeli kontakt z mocodawcą nie jest możliwy w ciągu {{fakt:pelnomocnictwo.termin.uzupelnienie-brakow}}, pełnomocnictwo nie jest rejestrowane, a pełnomocnikowi przekazuje się informację o konieczności osobistego stawiennictwa mocodawcy lub przedłożenia dokumentu w formie aktu notarialnego."
+
+  - id: procedura-pelnomocnictwa-dod-przyjecie-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Oceń, czy treść pełnomocnictwa jest {jednoznaczna|zrozumiała i jednoznaczna}, a zakres umocowania nie budzi wątpliwości interpretacyjnych."
+            podkroki:
+              - tekst: "Jeżeli pełnomocnictwo zawiera sformułowania ogólne („do wszelkich czynności w Banku”), ustal z mocodawcą, czy obejmuje ono wyłącznie czynności zwykłego zarządu, i zapisz ustalenie w karcie weryfikacji."
+              - tekst: "Jeżeli dokument wymienia numery rachunków, porównaj je z numerami w systemie i zwróć uwagę na rachunki zamknięte lub nienależące do mocodawcy."
+              - tekst: "Jeżeli w treści występują zapisy sprzeczne lub wzajemnie się wykluczające, wstrzymaj przyjęcie i poproś Klienta o poprawienie dokumentu."
+          - tekst: "Zwróć uwagę na dopiski odręczne, skreślenia i nakładki; każda zmiana w treści dokumentu powinna być zaparafowana przez mocodawcę lub potwierdzona przez notariusza."
+          - tekst: "Ustal, czy pełnomocnictwo przewiduje prawo substytucji (udzielania dalszego umocowania). Jeżeli tak, każdorazowo wymagaj przedłożenia pełnomocnictwa pierwotnego i dokumentu udzielającego substytucji."
+          - tekst: "Wątpliwości, których nie możesz rozstrzygnąć samodzielnie, przekaż kierownikowi placówki, a w sprawach niestandardowych — do {{fakt:pelnomocnictwo.jednostka.weryfikacja}} w terminie {{fakt:pelnomocnictwo.termin.przekazanie-do-opinii}}."
+
+  - id: procedura-pelnomocnictwa-dod-przyjecie-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - ustep: "Przy przyjęciu pełnomocnictwa pracownik zbiera dane niezbędne do identyfikacji obu stron i dokumentuje je w sposób opisany w {tabeli|zestawieniu} poniżej. Dane zbiera się w minimalnym zakresie, niezbędnym do realizacji celu procedury."
+      - tabela:
+          kolumny:
+            - naglowek: "Dane"
+              waga: 2
+            - naglowek: "Mocodawca"
+              waga: 3
+            - naglowek: "Pełnomocnik"
+              waga: 3
+          wiersze:
+            - ["Imię i nazwisko", "Zgodne z dokumentem tożsamości i danymi w systemie", "Zgodne z dokumentem tożsamości okazanym w placówce"]
+            - ["Numer PESEL lub data urodzenia", "Zgodny z danymi w systemie; w razie rozbieżności wymagane wyjaśnienie", "Wymagany; dla cudzoziemców numer dokumentu i data urodzenia"]
+            - ["Adres zamieszkania", "Potwierdzony zgodnie z zasadami identyfikacji Klienta", "Adres do korespondencji; w razie potrzeby oświadczenie pełnomocnika"]
+            - ["Dane kontaktowe", "Numer telefonu i adres e-mail używane w kontaktach z Bankiem", "Numer telefonu do kontaktu w sprawie dyspozycji"]
+            - ["Wzór podpisu", "Złożony na karcie F-PEŁ-02, jeżeli dotychczas go nie złożono", "Złożony na karcie F-PEŁ-02 w obecności pracownika"]
+            - ["Oświadczenia", "Oświadczenie o zapoznaniu się z zakresem udzielonego umocowania", "Oświadczenie o zapoznaniu się z klauzulą informacyjną ({{fakt:rodo.formularz.pelnomocnictwo}})"]
+      - akapit: "Dane z karty weryfikacji pracownik porównuje z danymi widocznymi na ekranie systemu przed zatwierdzeniem wpisu. Wszelkie rozbieżności wyjaśnia z Klientem przed wprowadzeniem pełnomocnictwa do modułu."
+
+  - id: procedura-pelnomocnictwa-dod-weryfikacja-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "{Zweryfikuj|Sprawdź} autentyczność dokumentu tożsamości pełnomocnika i mocodawcy, korzystając z zabezpieczeń widocznych gołym okiem oraz, jeżeli placówka dysponuje czytnikiem, z odczytu elektronicznego."
+            podkroki:
+              - tekst: "Porównaj zdjęcie z osobą, która stawiła się w placówce, i ustal, czy dokument jest ważny; dokument, którego termin ważności upłynął, nie stanowi podstawy identyfikacji."
+              - tekst: "Sprawdź, czy dokument nie figuruje w rejestrze dokumentów zastrzeżonych; w razie trafienia wstrzymaj czynność i powiadom kierownika placówki."
+          - tekst: "Zwróć uwagę na zgodność numeru dokumentu z numerem wskazanym w pełnomocnictwie oraz zgodność imion i nazwisk w obu dokumentach, w tym diakrytyków i zapisu nazwisk dwuczłonowych."
+          - tekst: "Jeżeli pełnomocnik jest cudzoziemcem, wymagaj paszportu lub innego dokumentu uznawanego w obrocie międzynarodowym i sprawdź, czy dokument posiada transkrypcję danych w alfabecie łacińskim."
+          - tekst: "Wynik weryfikacji zapisz w karcie F-PEŁ-04, zaznaczając sprawdzone zabezpieczenia i ewentualne zastrzeżenia, a następnie opatrz kartę podpisem i datą."
+
+  - id: procedura-pelnomocnictwa-dod-weryfikacja-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - akapit: "Potwierdzenie woli mocodawcy jest niezbędne zawsze wtedy, gdy zakres pełnomocnictwa jest szeroki, gdy dokument nie został sporządzony w obecności pracownika Banku albo gdy pełnomocnik składa dyspozycję o wysokiej wartości. Potwierdzenie ma na celu upewnienie się, że pełnomocnictwo jest aktualne i zostało udzielone dobrowolnie."
+      - ustep: "Potwierdzenie z mocodawcą uzyskuje się jedną z następujących metod:"
+        punkty:
+          - "rozmowa telefoniczna z mocodawcą pod numerem zapisanym w systemie, z zastosowaniem pytań weryfikujących, które znają jedynie mocodawca i Bank;"
+          - "wiadomość z kodem potwierdzającym wysłana na telefon mocodawcy zarejestrowany w systemie i przepisany przez pełnomocnika w obecności pracownika;"
+          - "potwierdzenie w bankowości elektronicznej, jeżeli mocodawca posiada dostęp i może je złożyć w czasie rzeczywistym;"
+          - "osobiste stawiennictwo mocodawcy w placówce — w przypadku dyspozycji o szczególnie wysokiej wartości."
+      - akapit: "Pracownik zapisuje w karcie weryfikacji metodę, datę, godzinę oraz wynik potwierdzenia. Odmowa potwierdzenia lub brak możliwości kontaktu w czasie przewidzianym na realizację dyspozycji uniemożliwia jej wykonanie."
+
+  - id: procedura-pelnomocnictwa-dod-weryfikacja-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - kroki:
+          - tekst: "Zbierz wzór podpisu pełnomocnika na karcie F-PEŁ-02, w obecności pracownika, który przyjmuje pełnomocnictwo."
+            podkroki:
+              - tekst: "Poproś o złożenie co najmniej dwóch podpisów, aby ocenić ich powtarzalność; nie przyjmuj wzoru podpisu przesłanego pocztą lub kurierem."
+              - tekst: "Zapisz na karcie, że podpis został złożony w obecności pracownika, oraz wskaż jego imię i nazwisko oraz numer identyfikacyjny."
+              - tekst: "Jeżeli pełnomocnik nie może złożyć podpisu z powodu niepełnosprawności, ustal sposób składania dyspozycji z kierownikiem placówki, zgodnie z zasadami obsługi Klientów ze szczególnymi potrzebami."
+          - tekst: "Wzór podpisu obowiązuje przez okres wskazany w procedurze ({{fakt:pelnomocnictwo.okres.wzor-podpisu}}); po jego upływie pracownik zwraca się do pełnomocnika o jego odnowienie przy najbliższej dyspozycji."
+          - tekst: "Przy porównywaniu podpisów pod dyspozycjami z wzorem oceniaj zasadnicze cechy graficzne, a nie drobne różnice wynikające z naturalnej zmienności; w razie wątpliwości zasięgnij opinii drugiego pracownika."
+
+  - id: procedura-pelnomocnictwa-dod-weryfikacja-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - ustep: "Weryfikacja uwzględnia również kontekst współpracy z Klientem. Pracownik {sprawdza|bada} w szczególności:"
+        punkty:
+          - "czy pełnomocnik nie jest już pełnomocnikiem do innych rachunków mocodawcy lub rachunków osób niezwiązanych ze sobą, co może wskazywać na obsługę wielu Klientów przez jedną osobę;"
+          - "czy mocodawca nie figuruje w systemie z oznaczeniem szczególnej ostrożności, na przykład z powodu wcześniejszych prób nadużyć;"
+          - "czy pełnomocnik lub mocodawca nie są objęci blokadą wynikającą z listy sankcyjnej, z której korzysta Bank przy badaniu transakcji;"
+          - "czy w ostatnim czasie nie zmieniono danych kontaktowych mocodawcy w sposób wskazujący na przejęcie kontroli nad rachunkiem przez osobę trzecią."
+      - akapit: "Stwierdzenie którejkolwiek z tych okoliczności nie przesądza o odmowie przyjęcia pełnomocnictwa, ale wymaga zasięgnięcia opinii kierownika placówki oraz zapisania w karcie weryfikacji wyjaśnień Klienta i decyzji o dalszym postępowaniu."
+
+  - id: procedura-pelnomocnictwa-dod-zagraniczne-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Gdy Klient przedkłada pełnomocnictwo sporządzone poza granicami Polski, ustal, w jakim państwie je sporządzono i przez jaki organ zostało wystawione lub poświadczone."
+            podkroki:
+              - tekst: "Jeżeli państwo jest stroną konwencji haskiej, wymagaj apostille wydanej przez właściwy organ tego państwa."
+              - tekst: "Jeżeli państwo nie jest stroną konwencji, wymagaj legalizacji dokonanej przez polski organ konsularny, chyba że umowa międzynarodowa stanowi inaczej."
+              - tekst: "W razie wątpliwości co do statusu państwa skorzystaj z wykazu prowadzonego przez {{fakt:jednostka.prawny}}."
+          - tekst: "Sprawdź, czy od daty wystawienia dokumentu nie upłynął okres dopuszczony w procedurze ({{fakt:pelnomocnictwo.okres.wiek-dokumentu-zagranicznego}}); starszych dokumentów nie przyjmuj bez opinii komórki centralnej."
+          - tekst: "Skieruj dokument wraz z tłumaczeniem do {{fakt:pelnomocnictwo.jednostka.weryfikacja}}; wskaż, czy sprawa jest pilna, i podaj przewidywany termin dyspozycji."
+
+  - id: procedura-pelnomocnictwa-dod-zagraniczne-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - akapit: "Do pełnomocnictwa sporządzonego w języku obcym {dołącza się|załącza się} tłumaczenie przysięgłe na język polski. Tłumaczenie powinno obejmować całość dokumentu, w tym pieczęcie, klauzule i wzmianki o poświadczeniu, a nie jedynie część właściwą pełnomocnictwa."
+      - ustep: "Pracownik komórki centralnej, oceniając tłumaczenie, sprawdza w szczególności:"
+        punkty:
+          - "czy tłumacz posiada uprawnienia tłumacza przysięgłego i czy jego dane są zgodne z pieczęcią na tłumaczeniu;"
+          - "czy tłumaczenie jest połączone z oryginałem lub jego kopią w sposób uniemożliwiający wymianę stron;"
+          - "czy nazwy własne i funkcje osób (notariusz, urzędnik, pełnomocnik) przetłumaczono spójnie w całym dokumencie;"
+          - "czy w tłumaczeniu odtworzono zapisy dotyczące zakresu umocowania, prawa do substytucji oraz okresu obowiązywania."
+      - akapit: "Jeżeli treść tłumaczenia różni się od oryginału w sposób wpływający na zakres umocowania, komórka centralna odmawia uznania dokumentu i informuje placówkę o konieczności ponownego tłumaczenia."
+
+  - id: procedura-pelnomocnictwa-dod-zagraniczne-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli mocodawca przebywa za granicą i chce udzielić pełnomocnictwa Bankowi nieznanemu mu osobiście lub pełnomocnikowi w kraju, wskaż mu dostępne sposoby podpisania dokumentu."
+            podkroki:
+              - tekst: "Poinformuj, że podpis może zostać złożony przed polskim konsulem, który sporządzi lub poświadczy dokument w trybie przewidzianym dla czynności konsularnych."
+              - tekst: "Wskaż możliwość podpisania pełnomocnictwa przed notariuszem miejscowym wraz z apostille lub legalizacją zgodnie z zasadami opisanymi wyżej."
+              - tekst: "Nie przyjmuj pełnomocnictwa podpisanego bez udziału organu poświadczającego, nawet jeżeli mocodawca przesyła skan dokumentu tożsamości."
+          - tekst: "Zaznacz w karcie weryfikacji, że umocowanie pochodzi z zagranicy, i przypisz sprawie wyższy priorytet przeglądu przy kontroli kwartalnej."
+          - tekst: "Poinformuj Klienta o orientacyjnym czasie weryfikacji dokumentu oraz o tym, że wykonanie dyspozycji pełnomocnika możliwe jest dopiero po zakończeniu oceny przez komórkę centralną."
+
+  - id: procedura-pelnomocnictwa-dod-zagraniczne-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-zagraniczne
+    elementy:
+      - ustep: "Pełnomocnictwa zagraniczne mogą być udzielane na zasadach określonych prawem innego państwa. Komórka centralna ocenia je według następujących kryteriów:"
+        punkty:
+          - "czy forma, w której dokument sporządzono, jest uznawana przez prawo właściwe dla czynności, do której pełnomocnik ma być umocowany;"
+          - "czy zakres umocowania nie jest szerszy niż dopuszcza polskie prawo bankowe w odniesieniu do danej czynności;"
+          - "czy w dokumencie nie ma zastrzeżeń, które według prawa miejsca jego sporządzenia powodują wygaśnięcie umocowania, na przykład po upływie określonego czasu lub po zdarzeniu wskazanym w treści;"
+          - "czy mocodawca był zdolny do czynności prawnych w chwili udzielenia pełnomocnictwa — ocena opiera się na dostępnych informacjach i oświadczeniach, bez żądania dokumentacji medycznej."
+      - akapit: "Jeżeli ocena wymaga opinii prawnej, {{fakt:jednostka.prawny}} przekazuje ją w terminie {{fakt:pelnomocnictwo.termin.opinia-prawna}}; do tego czasu pełnomocnictwo nie jest rejestrowane w module, a Klient otrzymuje informację o wydłużeniu terminu."
+
+  - id: procedura-pelnomocnictwa-dod-firmy-1
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "Przy przyjęciu pełnomocnictwa udzielanego przez przedsiębiorcę sprawdź, kto jest uprawniony do jego udzielenia, a następnie zweryfikuj to w odpisie z właściwego rejestru."
+            podkroki:
+              - tekst: "Odpis z rejestru nie może być starszy niż okres wskazany w procedurze ({{fakt:termin.firma.aktualnosc-odpisu}}); starszy odpis odrzuć i poproś o aktualny."
+              - tekst: "Ustal sposób reprezentacji spółki: samodzielny albo łączny, oraz czy pełnomocnictwo podpisała liczba osób odpowiadająca zasadom reprezentacji."
+              - tekst: "W przypadku spółek osobowych sprawdź, czy pełnomocnictwo podpisali wspólnicy uprawnieni do reprezentowania spółki lub prokurent."
+          - tekst: "Jeżeli o udzieleniu pełnomocnictwa zdecydował organ spółki, sprawdź uchwałę lub inne postanowienie organu oraz jego zgodność z umową lub statutem."
+          - tekst: "Zwróć uwagę, czy zakres pełnomocnictwa nie wymaga zgody zgromadzenia wspólników lub rady nadzorczej; brak wymaganej zgody oznacza, że umocowanie jest nieskuteczne."
+
+  - id: procedura-pelnomocnictwa-dod-firmy-2
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - akapit: "Prokura jest szczególnym rodzajem pełnomocnictwa, którego udzielenie podlega wpisowi do rejestru przedsiębiorców. Z tego powodu jej przyjęcie w Banku wymaga potwierdzenia tego wpisu w aktualnym odpisie, a nie jedynie okazania uchwały o jej ustanowieniu."
+      - ustep: "Pracownik przyjmujący dokumenty prokurenta:"
+        punkty:
+          - "sprawdza, czy prokura jest wpisana do rejestru i czy nie została odwołana lub wygaszona;"
+          - "ustala, czy prokura jest samoistna, czy łączna, oraz czy prokurent może działać samodzielnie w odniesieniu do danej czynności;"
+          - "pamięta, że prokura nie obejmuje zbywania przedsiębiorstwa, oddania go do czasowego korzystania ani zbywania i obciążania nieruchomości, chyba że udzielono pełnomocnictwa szczególnego;"
+          - "w razie wątpliwości co do zakresu prokury kieruje sprawę do {{fakt:pelnomocnictwo.jednostka.weryfikacja}}."
+      - akapit: "Jeżeli prokurent jednocześnie jest pełnomocnikiem do rachunku, pracownik rejestruje oba umocowania osobno, aby wygaśnięcie jednego z nich nie wpływało na drugie."
+
+  - id: procedura-pelnomocnictwa-dod-firmy-3
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - kroki:
+          - tekst: "Przy obsłudze Klientów będących organizacjami społecznymi, fundacjami, stowarzyszeniami, wspólnotami mieszkaniowymi i innymi podmiotami niebędącymi przedsiębiorcami {ustal|zbadaj} źródło umocowania osób działających w imieniu podmiotu."
+            podkroki:
+              - tekst: "Dla stowarzyszeń i fundacji sprawdź odpis z Krajowego Rejestru Sądowego lub inny rejestr, w którym podmiot jest ujęty, oraz statut określający zasady reprezentacji."
+              - tekst: "Dla wspólnot mieszkaniowych wymagaj uchwały właścicieli o wyborze zarządu lub umowy z zarządcą wraz z pełnomocnictwem do prowadzenia rachunku."
+              - tekst: "Dla jednostek organizacyjnych niemających osobowości prawnej sprawdź dokument wskazujący osoby uprawnione do składania oświadczeń woli."
+          - tekst: "Zapisz w karcie weryfikacji, na jakiej podstawie ustalono sposób reprezentacji, i dołącz kopie dokumentów, z których wynika umocowanie."
+          - tekst: "Jeżeli sposób reprezentacji jest niejasny lub dokumenty są sprzeczne, nie rejestruj pełnomocnictwa, lecz przekaż sprawę do komórki centralnej wraz z listą pytań, które należy zadać Klientowi."
+
+  - id: procedura-pelnomocnictwa-dod-firmy-4
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-firmy
+    elementy:
+      - ustep: "Pełnomocnictwa udzielane w imieniu przedsiębiorców podlegają zasadom szczególnej ostrożności ze względu na zwiększone ryzyko nadużyć w obrocie gospodarczym. Pracownik dodatkowo:"
+        punkty:
+          - "ustala, kto jest beneficjentem rzeczywistym Klienta, i sprawdza, czy pełnomocnik nie jest z nim powiązany w sposób, który wymaga szczególnej oceny;"
+          - "ocenia, czy zakres umocowania jest adekwatny do rodzaju prowadzonej działalności oraz skali operacji na rachunku;"
+          - "{zwraca uwagę|sprawdza}, czy pełnomocnictwo nie zostało udzielone krótko przed zmianą zarządu, sprzedażą udziałów lub ogłoszeniem upadłości;"
+          - "dokumentuje w karcie weryfikacji oceny dokonane w zakresie ryzyka, w tym uwagi dotyczące niejasnych relacji pełnomocnika z Klientem."
+      - akapit: "Pełnomocnictwa do rachunków podmiotów o podwyższonym ryzyku, w szczególności związanych z państwami wysokiego ryzyka lub osobami zajmującymi eksponowane stanowiska polityczne, wymagają zatwierdzenia przez {{fakt:pelnomocnictwo.jednostka.aml}} przed rejestracją w systemie."

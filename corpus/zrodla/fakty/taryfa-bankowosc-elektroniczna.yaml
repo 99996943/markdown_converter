@@ -1,0 +1,330 @@
+fakty:
+  # --- klienci indywidualni: abonamenty i pakiety
+  - id: oplata.bankowosc-elektroniczna.pakiet-rozszerzony
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 9.00
+      - od: 2027-01-01
+        wartosc: 12.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.bankowosc-elektroniczna.pakiet-rodzinny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 14.00
+    alternatywy: [9.00, 19.00]
+  - id: oplata.bankowosc-elektroniczna.opiekun-dodatkowe-urzadzenie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2026-04-01
+        wartosc: 6.00
+    alternatywy: [0.00, 10.00]
+  - id: oplata.bankowosc-elektroniczna.zmiana-limitu-infolinia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [0.00, 5.00]
+  - id: oplata.bankowosc-elektroniczna.odblokowanie-dostepu-infolinia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [5.00]
+  - id: oplata.bankowosc-elektroniczna.odblokowanie-dostepu-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+    alternatywy: [0.00, 12.00]
+
+  # --- narzędzia uwierzytelniania
+  - id: oplata.bankowosc-elektroniczna.token-wymiana
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 29.00
+      - od: 2027-01-01
+        wartosc: 35.00
+    alternatywy: [19.00, 45.00]
+  - id: oplata.bankowosc-elektroniczna.token-odblokowanie-pin
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.bankowosc-elektroniczna.karta-kodow-jednorazowych
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.bankowosc-elektroniczna.kurier-token
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 24.00
+      - od: 2026-04-01
+        wartosc: 28.00
+    alternatywy: [18.00, 35.00]
+  - id: oplata.bankowosc-elektroniczna.certyfikat-firmowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 120.00
+      - od: 2027-01-01
+        wartosc: 140.00
+    alternatywy: [90.00, 180.00]
+  - id: oplata.bankowosc-elektroniczna.biometria-aktywacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00]
+
+  # --- powiadomienia
+  - id: oplata.bankowosc-elektroniczna.pakiet-sms
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 9.00
+      - od: 2026-04-01
+        wartosc: 11.00
+    alternatywy: [6.00, 15.00]
+  - id: oplata.bankowosc-elektroniczna.sms-saldo
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1.00
+    alternatywy: [0.50, 2.00]
+  - id: oplata.bankowosc-elektroniczna.powiadomienie-push
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [0.20]
+  - id: oplata.bankowosc-elektroniczna.powiadomienie-email
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [0.30]
+  - id: oplata.bankowosc-elektroniczna.powiadomienie-firma-pakiet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 19.00
+    alternatywy: [12.00, 29.00]
+
+  # --- dyspozycje w kanałach elektronicznych
+  - id: oplata.bankowosc-elektroniczna.przelew-natychmiastowy-wysoki
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 9.00
+      - od: 2027-01-01
+        wartosc: 10.00
+    alternatywy: [7.00, 12.00]
+  - id: oplata.bankowosc-elektroniczna.przelew-zlecony-infolinia
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+      - od: 2027-01-01
+        wartosc: 8.00
+    alternatywy: [4.00, 10.00]
+  - id: oplata.bankowosc-elektroniczna.zlecenie-stale-modyfikacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 3.00
+    alternatywy: [0.00, 5.00]
+  - id: oplata.bankowosc-elektroniczna.zlecenie-stale-ustanowienie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00]
+  - id: oplata.bankowosc-elektroniczna.przelew-pilny-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.1
+      - od: 2027-01-01
+        wartosc: 0.12
+    alternatywy: [0.05, 0.2]
+  - id: oplata.bankowosc-elektroniczna.przelew-pilny-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+    alternatywy: [10.00, 25.00]
+  - id: oplata.bankowosc-elektroniczna.potwierdzenie-papierowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+      - od: 2026-04-01
+        wartosc: 10.00
+    alternatywy: [5.00, 12.00]
+  - id: oplata.bankowosc-elektroniczna.odwolanie-przelewu-konsument
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.bankowosc-elektroniczna.przelew-zagraniczny-internet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 20.00
+      - od: 2027-01-01
+        wartosc: 25.00
+    alternatywy: [15.00, 30.00]
+  - id: oplata.bankowosc-elektroniczna.przelew-na-telefon
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [0.50, 1.00]
+  - id: oplata.bankowosc-elektroniczna.przelew-na-telefon-limit
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+      - od: 2027-01-01
+        wartosc: 2000.00
+    alternatywy: [500.00, 5000.00]
+
+  # --- płatności mobilne
+  - id: oplata.bankowosc-elektroniczna.platnosc-mobilna-aktywacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [3.00]
+  - id: oplata.bankowosc-elektroniczna.platnosc-mobilna-zagranica
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+      - od: 2026-04-01
+        wartosc: 1.75
+    alternatywy: [1.0, 2.5]
+  - id: oplata.bankowosc-elektroniczna.wyplata-mobilna-bankomat
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00]
+  - id: oplata.bankowosc-elektroniczna.platnosc-mobilna-limit-jednorazowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+      - od: 2027-01-01
+        wartosc: 1500.00
+    alternatywy: [500.00, 2000.00]
+  - id: oplata.bankowosc-elektroniczna.platnosc-kodem-sklep
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [0.50]
+
+  # --- agregacja, e-dokumenty, API
+  - id: oplata.bankowosc-elektroniczna.agregacja-rachunkow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [3.00]
+  - id: oplata.bankowosc-elektroniczna.agregacja-dodatkowy-rachunek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+      - od: 2027-01-01
+        wartosc: 3.00
+    alternatywy: [1.00, 5.00]
+  - id: oplata.bankowosc-elektroniczna.e-archiwum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 4.00
+    alternatywy: [0.00, 6.00]
+  - id: oplata.bankowosc-elektroniczna.e-dokument-kopia-papierowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+      - od: 2026-04-01
+        wartosc: 8.00
+    alternatywy: [4.00, 10.00]
+  - id: oplata.bankowosc-elektroniczna.api-sandbox
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [49.00]
+  - id: oplata.bankowosc-elektroniczna.api-limit-zapytan
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "100 000 zapytań miesięcznie"
+      - od: 2027-01-01
+        wartosc: "150 000 zapytań miesięcznie"
+    alternatywy: ["50 000 zapytań miesięcznie", "500 000 zapytań miesięcznie"]
+  - id: oplata.bankowosc-elektroniczna.api-zapytanie-ponad-limit
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.02
+    alternatywy: [0.01, 0.05]
+  - id: oplata.bankowosc-elektroniczna.api-certyfikat-tpp
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [200.00]
+
+  # --- moduły bankowości dla firm
+  - id: oplata.bankowosc-elektroniczna.modul-przelewy-masowe
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 49.00
+      - od: 2027-01-01
+        wartosc: 59.00
+    alternatywy: [39.00, 79.00]
+  - id: oplata.bankowosc-elektroniczna.modul-import-plikow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 19.00
+    alternatywy: [0.00, 29.00]
+  - id: oplata.bankowosc-elektroniczna.modul-akceptacje
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+      - od: 2026-04-01
+        wartosc: 18.00
+    alternatywy: [9.00, 25.00]
+  - id: oplata.bankowosc-elektroniczna.modul-multikonto
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 35.00
+    alternatywy: [25.00, 50.00]
+  - id: oplata.bankowosc-elektroniczna.modul-fx
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 39.00
+    alternatywy: [29.00, 69.00]
+  - id: oplata.bankowosc-elektroniczna.uzytkownik-dodatkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 9.00
+      - od: 2027-01-01
+        wartosc: 11.00
+    alternatywy: [5.00, 15.00]
+  - id: oplata.bankowosc-elektroniczna.uzytkownicy-w-cenie
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "trzech użytkowników"
+    alternatywy: ["dwóch użytkowników", "pięciu użytkowników"]
+
+  # --- pomoc techniczna
+  - id: oplata.bankowosc-elektroniczna.pomoc-zdalna-sesja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 49.00
+      - od: 2026-04-01
+        wartosc: 59.00
+    alternatywy: [29.00, 79.00]
+  - id: oplata.bankowosc-elektroniczna.szkolenie-godzina
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 250.00
+    alternatywy: [180.00, 350.00]
+  - id: oplata.bankowosc-elektroniczna.wdrozenie-dzien
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 800.00
+      - od: 2027-01-01
+        wartosc: 900.00
+    alternatywy: [600.00, 1200.00]
+  - id: oplata.bankowosc-elektroniczna.dedykowany-opiekun
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 99.00
+    alternatywy: [79.00, 149.00]
+  - id: termin.bankowosc-elektroniczna.aktywacja-uslugi
+    rodzaj: termin
+    wartosci:
+      - wartosc: 2
+    alternatywy: [1, 5]
+  - id: termin.bankowosc-elektroniczna.wypowiedzenie-modulu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>legalagent-corpus</AssemblyName>
+    <RootNamespace>LegalAgent.Corpus.Cli</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LegalAgent.Corpus\LegalAgent.Corpus.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,179 @@
+bloki:
+  # ===== Odpowiedzialności =====
+  - id: zastrzezenia-odp-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    elementy:
+      - ustep: "**Konsultant Infolinii** — poza obowiązkami {wymienionymi|określonymi} powyżej — {zobowiązany jest|ma obowiązek}:"
+        punkty:
+          - "prowadzić rozmowę w sposób spokojny i {zrozumiały|jasny}, z uwzględnieniem stanu emocjonalnego Klienta, który często zgłasza zdarzenie w stresie;"
+          - "nie odmawiać przyjęcia zgłoszenia także wtedy, gdy numer, z którego dzwoni Klient, nie jest zapisany w systemie;"
+          - "przekazać rozmowę kierownikowi zmiany, {jeżeli|jeśli} Klient żąda decyzji, do której konsultant nie jest uprawniony;"
+          - "zapisać w rejestrze streszczenie rozmowy bezpośrednio po jej zakończeniu, a nie później niż przed zamknięciem zmiany."
+      - akapit: "Konsultant nie {podejmuje|rozstrzyga} decyzji o odmowie zwrotu środków ani o przypisaniu Klientowi odpowiedzialności za transakcję — decyzje takie należą do wyznaczonych jednostek {Departamentu Bezpieczeństwa|właściciela procedury}."
+
+  - id: zastrzezenia-odp-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    elementy:
+      - ustep: "**Dyrektor właściciela procedury** {odpowiada za|zapewnia}:"
+        punkty:
+          - "obsadę całodobowej linii zastrzeżeń {oraz|a także} zastępstwa na wypadek awarii systemów lub nieobecności pracowników;"
+          - "coroczny przegląd procedury i jej aktualizację po każdej zmianie przepisów o usługach płatniczych lub regulaminów kart;"
+          - "przeprowadzenie szkoleń wstępnych i okresowych, ze szczególnym uwzględnieniem rozpoznawania oszustw socjotechnicznych;"
+          - "przekazywanie Zarządowi półrocznej informacji o liczbie zgłoszeń, wysokości strat i skuteczności zwrotów od organizacji płatniczej."
+      - akapit: "**Pracownik placówki**, który {nie jest pewien|ma wątpliwości}, czy zgłoszenie podlega procedurze, przyjmuje je jako zgłoszenie zastrzeżenia i konsultuje się z kierownikiem; nigdy nie odsyła Klienta do innej jednostki bez wykonania blokady."
+
+  # ===== Przyjęcie zgłoszenia =====
+  - id: zastrzezenia-krok-przyjecie-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Rozpoznaj|Zwróć uwagę na} próby wyłudzenia danych podczas zgłoszenia."
+            podkroki:
+              - tekst: "{Jeżeli|Jeśli} dzwoniący nie potrafi odpowiedzieć na pytania weryfikacyjne, ale zna szczegóły rachunku, może to wskazywać na wcześniejsze przejęcie danych."
+              - tekst: "{Jeżeli|Jeśli} osoba zgłaszająca prosi o zdjęcie blokady zaraz po zastrzeżeniu, odmów i zaproponuj kartę zastępczą."
+              - tekst: "Podejrzane zgłoszenia {przekaż|skieruj} do jednostki „{{fakt:jednostka.centrum-monitorowania}}” wraz z numerem telefonu i godziną rozmowy."
+          - tekst: "{Obsłuż|Przyjmij} zgłoszenie od Klienta o ograniczonej zdolności komunikacyjnej."
+            podkroki:
+              - tekst: "W przypadku Klienta niesłyszącego lub niedosłyszącego zaproponuj kontakt za pomocą wiadomości w bankowości elektronicznej lub wizytę w placówce."
+              - tekst: "W przypadku Klienta, który nie mówi po polsku, skorzystaj z pomocy tłumacza wskazanego przez kierownika zmiany; nie zwlekaj z blokadą z powodu bariery językowej."
+              - tekst: "Zgłoszenie złożone przez pełnomocnika przyjmij tylko wtedy, gdy pełnomocnictwo obejmuje zastrzeganie kart; w przeciwnym razie zastosuj blokadę czasową i poproś o kontakt posiadacza rachunku."
+
+  - id: zastrzezenia-krok-przyjecie-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Przyjmij} zgłoszenie złożone w placówce."
+            podkroki:
+              - tekst: "Zaproś Klienta do stanowiska obsługi i zadbaj, aby rozmowa nie była słyszana przez inne osoby."
+              - tekst: "Zażądaj okazania dokumentu tożsamości i {sprawdź|zweryfikuj} jego ważność; dane z dokumentu porównaj ze wzorem w systemie."
+              - tekst: "Wykonaj blokadę w trakcie rozmowy, a następnie wypełnij formularz {{fakt:formularz.zastrzezenia.zgloszenie}}."
+          - tekst: "{Obsłuż|Przyjmij} zgłoszenie złożone w bankowości elektronicznej."
+            podkroki:
+              - tekst: "Zgłoszenie złożone w aplikacji po zalogowaniu z silnym uwierzytelnianiem jest wykonywane automatycznie; pracownik potwierdza je telefonicznie, {jeżeli|jeśli} kwota zakwestionowanych transakcji przekracza {{fakt:limit.zastrzezenia.kwota-zawiadomienia}}."
+              - tekst: "W razie awarii funkcji zastrzegania w aplikacji kieruj Klientów na linię {{fakt:kontakt.infolinia-zastrzezenia}}."
+          - tekst: "{Obsłuż|Przyjmij} zgłoszenie przekazane przez inną jednostkę Banku."
+            podkroki:
+              - tekst: "Zgłoszenie przekazane e-mailem lub komunikatorem wewnętrznym wymaga potwierdzenia, że osoba przekazująca zweryfikowała Klienta."
+              - tekst: "{Jeżeli|Jeśli} weryfikacja nie została wykonana, zweryfikuj Klienta samodzielnie, a do tego czasu stosuj blokadę czasową."
+
+  - id: zastrzezenia-krok-przyjecie-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    elementy:
+      - akapit: "Nagranie rozmowy na linii zastrzeżeń jest {dowodem|materiałem dowodowym} zgłoszenia. Konsultant informuje Klienta o nagrywaniu rozmowy na początku połączenia, a {w razie|w przypadku} sporu co do godziny zgłoszenia przyjmuje się czas wskazany w nagraniu, nie czas wprowadzenia wpisu."
+      - kroki:
+          - tekst: "{Zabezpiecz|Zachowaj} dowody zgłoszenia."
+            podkroki:
+              - tekst: "Zaznacz w rejestrze, że rozmowa została nagrana, i wpisz identyfikator nagrania."
+              - tekst: "{Jeżeli|Jeśli} nagranie nie jest dostępne z powodu awarii, sporządź notatkę służbową i {niezwłocznie|bez zbędnej zwłoki} powiadom kierownika zmiany."
+          - tekst: "{Wyjaśnij|Opisz} Klientowi, jakich informacji nie wolno przekazywać."
+            podkroki:
+              - tekst: "Bank nigdy nie prosi o podanie pełnego numeru karty, PIN ani kodu CVV w wiadomości lub rozmowie zainicjowanej przez Bank."
+              - tekst: "{Jeżeli|Jeśli} do zgłoszenia doszło po rozmowie z osobą podającą się za pracownika Banku, {poinformuj|powiadom} Klienta, że jest to najczęstszy schemat oszustwa, i zaproponuj zmianę danych uwierzytelniających."
+
+  # ===== Blokada =====
+  - id: zastrzezenia-krok-blokada-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    elementy:
+      - kroki:
+          - tekst: "{Zastosuj|Wykonaj} blokadę zachowawczą."
+            podkroki:
+              - tekst: "Blokadę zachowawczą stosuje się, gdy tożsamość zgłaszającego nie została potwierdzona, a zgłoszenie jest wiarygodne."
+              - tekst: "Blokada zachowawcza trwa do czasu skontaktowania się z posiadaczem rachunku i nie może przekroczyć {{fakt:termin.zastrzezenia.dostep-tymczasowy}}, chyba że kierownik jednostki zadecyduje inaczej."
+              - tekst: "O założeniu blokady {poinformuj|powiadom} posiadacza rachunku wiadomością w bankowości elektronicznej {oraz|a także} SMS-em."
+          - tekst: "{Sprawdź|Zweryfikuj} skuteczność blokady."
+            podkroki:
+              - tekst: "Po wykonaniu blokady {sprawdź|zweryfikuj} w systemie historię autoryzacji; {jeżeli|jeśli} widoczne są transakcje po godzinie zgłoszenia, {natychmiast|bezzwłocznie} powiadom jednostkę „{{fakt:jednostka.centrum-monitorowania}}”."
+              - tekst: "Transakcje autoryzowane offline, {na przykład|przykładowo} w terminalach bez łączności z Bankiem, mogą być rozliczone po blokadzie; {odnotuj|zapisz} je w rejestrze i {przekaż|skieruj} do analizy."
+
+  - id: zastrzezenia-krok-blokada-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    elementy:
+      - kroki:
+          - tekst: "{Zniesienie|Odwołanie} blokady czasowej."
+            podkroki:
+              - tekst: "Blokadę czasową może zdjąć Klient w bankowości elektronicznej albo pracownik po potwierdzeniu tożsamości Klienta i zapytaniu o okoliczności zdarzenia."
+              - tekst: "Pracownik nie zdejmuje blokady, {jeżeli|jeśli} Klient podaje, że karta została skradziona, ujawniono dane karty lub w ostatnim czasie wystąpiły nierozpoznane transakcje — w takich przypadkach przeprowadź zastrzeżenie."
+              - tekst: "Zdjęcie blokady {odnotuj|zapisz} w rejestrze wraz z godziną i sposobem weryfikacji."
+          - tekst: "{Obsłuż|Zrealizuj} blokadę założoną z inicjatywy Banku."
+            podkroki:
+              - tekst: "{Jeżeli|Jeśli} blokadę założył {{fakt:system.zastrzezenia.monitoring}} na podstawie alertu, nie zdejmuj jej bez konsultacji z jednostką „{{fakt:jednostka.centrum-monitorowania}}”."
+              - tekst: "Poinformuj Klienta o przyczynie blokady w zakresie, w jakim nie narusza to bezpieczeństwa Banku ani wymogów prawa, {oraz|a także} o sposobie jej zniesienia."
+              - tekst: "Gdy Klient potwierdzi transakcje, zamknij alert i {odnotuj|zapisz} uwagę, a analityk może zdjąć blokadę w ciągu {{fakt:termin.zastrzezenia.oddzwonienie-monitoring}}."
+
+  - id: zastrzezenia-krok-blokada-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    elementy:
+      - akapit: "W razie awarii {{fakt:system.zastrzezenia.cbs}} lub utraty łączności z systemem autoryzacyjnym stosuje się procedurę awaryjną, zapewniającą, że zgłoszenia przyjmowane są bez przerwy."
+      - kroki:
+          - tekst: "{Zastosuj|Uruchom} tryb awaryjny przyjmowania zgłoszeń."
+            podkroki:
+              - tekst: "Wpisz zgłoszenie do arkusza awaryjnego z datą, godziną, danymi Klienta i numerem karty."
+              - tekst: "{Przekaż|Skieruj} dane telefonicznie do dyżurnego jednostki „{{fakt:jednostka.centrum-monitorowania}}”, który zablokuje kartę bezpośrednio w systemie autoryzacyjnym lub w panelu organizacji płatniczej."
+              - tekst: "Po przywróceniu systemu uzupełnij wpisy w rejestrze i oznacz je jako „wprowadzone po awarii”."
+          - tekst: "{Powiadom|Zawiadom} kierownika o awarii."
+            podkroki:
+              - tekst: "Kierownik zmiany informuje właściciela procedury o czasie trwania awarii i liczbie zgłoszeń przyjętych w trybie awaryjnym."
+              - tekst: "Zgłoszenia z trybu awaryjnego podlegają kontroli kompletności w ciągu jednego dnia roboczego od zakończenia awarii."
+
+  # ===== Transakcje nieautoryzowane =====
+  - id: zastrzezenia-krok-nieaut-1
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    elementy:
+      - ustep: "Przy rozpatrywaniu zgłoszeń transakcji nieautoryzowanych dokonanych kartą {należy rozróżniać|rozróżnia się} następujące typy zdarzeń:"
+        punkty:
+          - "**transakcja z użyciem utraconej lub skradzionej karty** — zwykle z PIN lub zbliżeniowa, z bankomatu lub terminala, wykonana wkrótce po utracie karty;"
+          - "**transakcja z użyciem skopiowanych danych karty** — zwykle internetowa, w kraju lub za granicą, bez udziału karty fizycznej;"
+          - "**transakcja po wyłudzeniu danych** — Klient ujawnił dane uwierzytelniające lub kod jednorazowy w odpowiedzi na fałszywy komunikat;"
+          - "**transakcja zainicjowana przez akceptanta bez zgody Klienta** — {na przykład|przykładowo} obciążenie po rezygnacji z subskrypcji;"
+          - "**transakcja po przejęciu konta bankowości elektronicznej** — przelew lub płatność autoryzowane przez osobę nieuprawnioną."
+      - akapit: "Typ zdarzenia {decyduje o|wpływa na} sposobie analizy, możliwościach sporu z organizacją płatniczą {oraz|a także} ocenie odpowiedzialności Klienta. W razie wątpliwości co do typu pracownik jednostki „{{fakt:jednostka.centrum-monitorowania}}” {rozstrzyga je|określa typ} na podstawie dostępnych danych autoryzacji."
+
+  - id: zastrzezenia-krok-nieaut-2
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    elementy:
+      - kroki:
+          - tekst: "{Oceń|Przeanalizuj} sposób uwierzytelnienia transakcji."
+            podkroki:
+              - tekst: "{Jeżeli|Jeśli} transakcja zbliżeniowa została wykonana bez PIN w granicach limitu bez PIN, a karta została utracona, zastosuj ograniczoną odpowiedzialność Klienta."
+              - tekst: "{Jeżeli|Jeśli} transakcja internetowa nie została potwierdzona silnym uwierzytelnianiem, a akceptant nie skorzystał z wyjątku przewidzianego w przepisach, uznaj, że Klient nie odpowiada za transakcję, chyba że działał umyślnie."
+              - tekst: "{Jeżeli|Jeśli} do transakcji użyto kodu jednorazowego wysłanego do Klienta, ustal, czy wiadomość zawierała informację o kwocie i odbiorcy, a Klient ją zatwierdził."
+          - tekst: "{Zbadaj|Sprawdź} wiarygodność zgłoszenia."
+            podkroki:
+              - tekst: "Zwróć uwagę na rozbieżności między relacją Klienta a danymi systemowymi, {na przykład|przykładowo} transakcje zakwestionowane po wielu miesiącach od obciążenia lub kilka zgłoszeń tej samej osoby w krótkim czasie."
+              - tekst: "Rozbieżności nie są jeszcze dowodem oszustwa — nie wstrzymuj zwrotu bez zgody jednostki „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: zastrzezenia-krok-nieaut-3
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    elementy:
+      - kroki:
+          - tekst: "{Poinformuj|Powiadom} Klienta o wyniku postępowania wyjaśniającego."
+            podkroki:
+              - tekst: "O rozstrzygnięciu {zawiadom|powiadom} Klienta na trwałym nośniku, wskazując kwotę zwrotu lub uzasadnienie odmowy, przepisy, na których oparto decyzję, {oraz|a także} pouczenie o prawie do złożenia reklamacji."
+              - tekst: "W razie odmowy zwrotu wskaż możliwość odwołania do jednostki „{{fakt:jednostka.reklamacje}}” {oraz|a także} skorzystania z pozasądowego rozwiązywania sporów i drogi sądowej."
+          - tekst: "{Obsłuż|Rozpatrz} odwołanie Klienta od rozstrzygnięcia."
+            podkroki:
+              - tekst: "Odwołanie rozpatruje inna osoba niż ta, która prowadziła sprawę w pierwszej instancji."
+              - tekst: "Odpowiedź udzielana jest w terminie przewidzianym dla reklamacji dotyczących usług płatniczych, czyli {{fakt:termin.reklamacja.platnicze}}."
+              - tekst: "{Jeżeli|Jeśli} w toku odwołania ujawnią się nowe okoliczności, wznów postępowanie i, gdy to uzasadnione, wypłać Klientowi zwrot."

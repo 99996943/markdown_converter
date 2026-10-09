@@ -1,0 +1,164 @@
+bloki:
+  - id: procedura-reklamacje-odp-zespol-klasyfikacji
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-odpowiedzialnosci-opc
+    elementy:
+      - ustep: "**Zespół klasyfikacji i rejestru** działający w jednostce rozpatrującej reklamacje ({{fakt:jednostka.reklamacje}}) {odpowiada|jest odpowiedzialny} za:"
+        punkty:
+          - "codzienny przegląd wpływu reklamacji ze wszystkich kanałów oraz usuwanie błędów rejestracji;"
+          - "przypisanie rodzaju sprawy i wyliczenie terminu odpowiedzi w dniu wpływu lub — najpóźniej — w następnym dniu roboczym;"
+          - "{monitorowanie|nadzór nad} datami ostrzegawczymi i codzienne zestawienie spraw zagrożonych przekroczeniem terminu;"
+          - "przekazywanie spraw do właściwych analityków według obowiązującego podziału specjalizacji."
+      - ustep: "**Analitycy reklamacji** {prowadzą|wykonują} analizę spraw, przygotowują projekty odpowiedzi i zapisują notatki z analizy. Analityk nie może rozstrzygać sprawy, w której sam uczestniczył jako pracownik obsługujący klienta, ani sprawy dotyczącej jego własnych produktów bankowych lub produktów osób bliskich."
+      - akapit: "{W razie|Na wypadek} nieobecności osoby wyznaczonej do czynności określonych w procedurze jej obowiązki przejmuje zastępca wskazany w regulaminie organizacyjnym jednostki; zastępstwo odnotowuje się w rejestrze REK, aby nie przerywać biegu terminów."
+
+  - id: procedura-reklamacje-odp-it
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-odpowiedzialnosci-opc
+    elementy:
+      - ustep: "**Jednostki informatyczne i obsługujące kanały elektroniczne** wspierają procedurę w następującym zakresie:"
+        punkty:
+          - "zapewniają dostępność rejestru REK oraz dziennika zdarzeń bankowości elektronicznej i {udostępniają|przekazują} logi w terminie wskazanym w zapytaniu;"
+          - "{wskazują|potwierdzają} przyczyny awarii systemów, które mogły wpłynąć na realizację operacji klienta, wraz z czasem trwania zakłóceń;"
+          - "przekazują informacje o błędach masowych, aby można było objąć nimi wszystkich poszkodowanych klientów;"
+          - "wykonują poprawki w danych i ustawieniach rachunków zgodnie z decyzją, po uprzednim zapisaniu dyspozycji w rejestrze REK."
+      - akapit: "Dostęp pracowników do rejestru REK i do kart spraw jest przyznawany zgodnie z zasadą minimalnych uprawnień. Przeglądu uprawnień dokonuje się {co kwartał|raz na kwartał}, a zmiany stanowiska pracownika wymagają bieżącej aktualizacji dostępu."
+
+  - id: procedura-reklamacje-przyjecie-placowka
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Przyjmując|Przy przyjmowaniu} reklamację w placówce, zapewnij klientowi możliwość spokojnego przedstawienia zastrzeżeń, w miarę możliwości w oddzielnym stanowisku lub pomieszczeniu."
+          - tekst: "Zaproponuj klientowi złożenie reklamacji na formularzu, lecz nie uzależniaj od tego jej przyjęcia."
+            podkroki:
+              - tekst: "Jeżeli klient wypełnia formularz samodzielnie, sprawdź jego kompletność i czytelność oraz poproś o podpis i datę."
+              - tekst: "Jeżeli klient odmawia podpisania formularza, odnotuj to na formularzu i w rejestrze REK; brak podpisu nie wstrzymuje biegu terminu."
+          - tekst: "{Przy|W przypadku} reklamacji ustnej zapisz najważniejsze elementy wypowiedzi klienta, odczytaj mu protokół i, jeśli to możliwe, uzyskaj jego podpis."
+          - tekst: "Wydaj klientowi kopię złożonej reklamacji lub protokołu z potwierdzeniem daty wpływu; kopię opatrz pieczęcią placówki lub zapisem elektronicznym."
+          - tekst: "{Przekaż|Prześlij} oryginał dokumentów oraz skan do kierownika placówki, który w terminie {{fakt:termin.reklamacje-proc.przekazanie}} przekazuje sprawę do jednostki rozpatrującej reklamacje, chyba że sam rozstrzyga ją w ramach przysługującego limitu."
+          - tekst: "Nie wyrażaj przed klientem oceny zasadności reklamacji ani nie składaj zapewnień co do jej rozstrzygnięcia, dopóki nie zostanie podjęta decyzja przez właściwy organ."
+
+  - id: procedura-reklamacje-przyjecie-telefon
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Podczas|W trakcie} rozmowy telefonicznej, w której klient zgłasza zastrzeżenia, poinformuj go, że zgłoszenie zostanie zarejestrowane jako reklamacja, a rozmowa może być nagrywana."
+          - tekst: "Zweryfikuj tożsamość klienta przy użyciu pytań uwierzytelniających i nie przystępuj do omawiania szczegółów rachunku przed zakończeniem weryfikacji."
+          - tekst: "{Zadawaj|Zadaj} pytania pozwalające ustalić: rodzaj produktu, datę i kwotę spornej operacji, miejsce zdarzenia, dotychczasowe próby wyjaśnienia sprawy oraz oczekiwany przez klienta sposób załatwienia."
+          - tekst: "Zarejestruj reklamację w rejestrze REK {podczas rozmowy|w trakcie rozmowy} lub {niezwłocznie|bez zbędnej zwłoki} po jej zakończeniu i przekaż klientowi numer sprawy."
+            podkroki:
+              - tekst: "Jeżeli klient żąda potwierdzenia na piśmie, wyślij je na adres z umowy; potwierdzenie można przesłać także w bankowości elektronicznej."
+              - tekst: "Jeżeli rozmowa dotyczy pilnego zdarzenia (np. utraty karty lub nieautoryzowanej transakcji), najpierw wykonaj czynności zabezpieczające, a dopiero później uzupełnij dane reklamacji."
+          - tekst: "Jeżeli klient zgłasza jedynie pytanie lub prośbę o informację, udziel odpowiedzi w rozmowie i nie rejestruj reklamacji; w razie wątpliwości co do intencji klienta zapytaj, czy chce złożyć reklamację."
+
+  - id: procedura-reklamacje-przyjecie-elektronicznie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Reklamacje przesłane na adres {{fakt:kontakt.email-reklamacje}} oraz złożone za pośrednictwem bankowości elektronicznej {rejestruje|wprowadza do rejestru REK} zespół klasyfikacji w dniu wpływu."
+            podkroki:
+              - tekst: "Wiadomości odebrane po godzinach pracy rejestruje się w pierwszym dniu roboczym, lecz jako datę wpływu wpisuje się datę faktycznego odebrania wiadomości."
+              - tekst: "Wiadomości wysłane na inne adresy służbowe Banku przekazuje się niezwłocznie, nie później niż następnego dnia roboczego, do zespołu klasyfikacji, zachowując oryginalną datę wpływu."
+          - tekst: "{Sprawdź|Zbadaj} załączniki pod kątem bezpieczeństwa; załączniki, które nie mogą zostać otwarte lub zawierają złośliwe oprogramowanie, {odnotuj|zapisz} w rejestrze, a klienta poproś o ponowne przesłanie dokumentów."
+          - tekst: "Potwierdź przyjęcie reklamacji w tym samym kanale, w którym wpłynęła, a przy wiadomościach e-mail — odpowiedzią automatyczną z numerem sprawy oraz informacją o terminie odpowiedzi."
+          - tekst: "Jeżeli klient wskazał w reklamacji, że oczekuje odpowiedzi w bankowości elektronicznej, udostępnij ją w skrzynce wiadomości; w przeciwnym razie wyślij ją w formie pisemnej na adres z umowy."
+          - tekst: "Nie {wymagaj|żądaj} od klienta ponownego złożenia reklamacji w innym kanale ani podania dodatkowych danych, jeżeli możliwe jest ustalenie sprawy na podstawie dostępnych informacji."
+
+  - id: procedura-reklamacje-przyjecie-niekompletne
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "W razie {niekompletnej|wymagającej uzupełnienia} reklamacji wezwij klienta do uzupełnienia danych na trwałym nośniku, wskazując, czego brakuje i w jakim terminie należy to zrobić ({{fakt:termin.reklamacje-proc.uzupelnienie}})."
+            podkroki:
+              - tekst: "Wezwanie nie przerywa i nie zawiesza biegu terminu odpowiedzi, o czym nie informuje się klienta w sposób sugerujący odwrotnie."
+              - tekst: "Jeżeli klient nie uzupełni danych w terminie, rozpatrz reklamację na podstawie dostępnych informacji i w odpowiedzi wskaż, że rozstrzygnięcie zapadło bez dodatkowych wyjaśnień."
+          - tekst: "Reklamację powtórną, czyli {dotyczącą|odnoszącą się do} tego samego stanu faktycznego i niezawierającą nowych argumentów, połącz z pierwotną sprawą i odnotuj w rejestrze REK jako „powtórną”."
+            podkroki:
+              - tekst: "Na reklamację powtórną udziel odpowiedzi w terminie właściwym dla nowej reklamacji, odwołując się do wcześniejszego stanowiska."
+              - tekst: "Gdy klient wskazuje nowe okoliczności lub dowody, traktuj pismo jako odwołanie i postępuj zgodnie z sekcją „Odwołania i Rzecznik Finansowy”."
+          - tekst: "Reklamację anonimową, to jest niepozwalającą na identyfikację klienta, zarejestruj i przeanalizuj w celu usunięcia wskazanych nieprawidłowości, lecz nie udzielaj odpowiedzi."
+          - tekst: "Reklamację dotyczącą spraw, których Bank nie świadczy (np. produktów innego podmiotu), zarejestruj i {poinformuj|powiadom} klienta, że reklamacja nie dotyczy działalności Banku, wskazując, jeśli to możliwe, właściwy podmiot."
+
+  - id: procedura-reklamacje-klasyfikacja-watpliwosci
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - kroki:
+          - tekst: "{Rozstrzygnij|Rozpatrz} wątpliwości klasyfikacyjne w dniu ich wystąpienia, a jeżeli rozstrzygnięcie wymaga konsultacji — przyjmij wariant korzystniejszy dla klienta, czyli krótszy termin odpowiedzi."
+            podkroki:
+              - tekst: "Gdy sprawa dotyczy kilku produktów, rozdziel żądania klienta i przypisz każdemu z nich właściwy rodzaj, zachowując jedną sprawę główną i sprawy powiązane."
+              - tekst: "Gdy nie można jednoznacznie ustalić, czy sprawa dotyczy usługi płatniczej, uznaj ją za płatniczą i zastosuj termin {{fakt:termin.reklamacja.platnicze}}."
+          - tekst: "Sprawę, w której klient żąda wyłącznie przedstawienia informacji o stanie rachunku lub historii transakcji bez zarzutów wobec Banku, {zakwalifikuj|uznaj} jako wniosek i {przekaż|skieruj} do obsługi bieżącej."
+          - tekst: "Zmianę rodzaju sprawy {w trakcie jej trwania|w toku jej rozpatrywania} (np. z niepłatniczej na płatniczą) zapisz w rejestrze REK wraz z uzasadnieniem, a termin odpowiedzi ustal według rodzaju korzystniejszego dla klienta."
+          - tekst: "Jeżeli klasyfikacja budzi poważne wątpliwości prawne, skonsultuj ją z jednostką odpowiedzialną za sprawy prawne ({{fakt:jednostka.prawny}}); konsultacja nie przedłuża terminu odpowiedzi."
+
+  - id: procedura-reklamacje-klasyfikacja-powiazanie
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} w rejestrze REK, czy klient nie złożył wcześniej reklamacji dotyczącej tej samej operacji, produktu lub zdarzenia."
+            podkroki:
+              - tekst: "Jeżeli taka reklamacja jest w toku, powiąż sprawy i powierz je temu samemu analitykowi."
+              - tekst: "Jeżeli sprawa została zamknięta, a nowa reklamacja zawiera nowe argumenty, zastosuj zasady rozpatrywania odwołań."
+          - tekst: "{Dla|W odniesieniu do} spraw, które dotyczą co najmniej pięciu klientów w tej samej sprawie i mają wspólną przyczynę, utwórz sprawę zbiorczą oznaczoną „błąd masowy” i wyznacz jednego koordynatora, który odpowiada za spójność odpowiedzi."
+          - tekst: "{Wpisz|Wprowadź} do rejestru REK znaczniki dodatkowe: priorytet, kanał wpływu, produkt, kwota sporna, czy sprawa dotyczy osoby wymagającej szczególnego wsparcia, oraz czy zgłosił ją pełnomocnik."
+          - tekst: "Przy sprawach, w których klient wskazuje, że poniósł szkodę finansową, wskaż w rejestrze kwotę zgłoszonej szkody i przekaż informację do jednostki odpowiedzialnej za sprawy prawne ({{fakt:jednostka.prawny}}), jeżeli roszczenie przekracza kwotę sporną w reklamacji."
+
+  - id: procedura-reklamacje-analiza-dowody
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - akapit: "{Dokumentacja|Materiał dowodowy} powinna pozwolić odtworzyć przebieg zdarzenia z perspektywy klienta i Banku. Analityk zabezpiecza dowody w momencie rozpoczęcia analizy, aby nie uległy zniszczeniu zgodnie z terminami przechowywania."
+      - kroki:
+          - tekst: "Wystąp o zabezpieczenie dowodów, które mają krótki okres przechowywania, w szczególności nagrań rozmów telefonicznych, zapisów monitoringu bankomatów i logów systemów informatycznych."
+            podkroki:
+              - tekst: "Wniosek o zabezpieczenie zawiera numer sprawy, dokładny czas zdarzenia (z tolerancją godziny) i zakres danych."
+              - tekst: "Zabezpieczone dane przechowuje się w karcie sprawy z oznaczeniem, że nie podlegają usunięciu do zakończenia sprawy."
+          - tekst: "{Porównaj|Zestaw} oświadczenia klienta z danymi systemowymi: godziną logowania, adresem IP, urządzeniem, metodą potwierdzenia operacji, sposobem autoryzacji i ustawieniami limitów."
+          - tekst: "Gdy dowody są {sprzeczne albo niekompletne|niespójne lub niepełne}, wystąp do klienta z prośbą o dodatkowe wyjaśnienia lub dokumenty, a w odpowiedzi opisz, które okoliczności uznano za ustalone, a które nie zostały potwierdzone."
+          - tekst: "W sprawach, w których klient zarzuca nieprawidłowe działanie systemu, wymagaj od jednostek informatycznych oświadczenia o stanie systemów w czasie zdarzenia, w tym o awariach i pracach serwisowych."
+          - tekst: "Wykorzystuj wyłącznie dane niezbędne do rozpatrzenia sprawy i nie udostępniaj jednostkom biznesowym danych dotyczących innych klientów."
+
+  - id: procedura-reklamacje-analiza-oplaty
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - kroki:
+          - tekst: "{Przy|W przypadku} reklamacji dotyczącej opłat, prowizji lub oprocentowania ustal, jaka wersja umowy, regulaminu i tabeli opłat obowiązywała w dniu zdarzenia."
+            podkroki:
+              - tekst: "Sprawdź, czy zmiana wprowadzona w trybie określonym w regulaminie została klientowi skutecznie zakomunikowana i czy upłynął termin przewidziany na jej akceptację lub sprzeciw."
+              - tekst: "Sprawdź, czy klient nie spełniał warunków uprawniających do niższej opłaty lub zwolnienia (np. warunków promocji)."
+          - tekst: "Przeliczając odsetki, zastosuj stopę procentową obowiązującą w okresie, którego dotyczy reklamacja, i porównaj wyniki z wydrukiem z {{fakt:system.reklamacje-proc.cbs}}."
+          - tekst: "{Jeżeli|Gdy} ustalisz, że opłata została naliczona nieprawidłowo, ustal skalę problemu i sprawdź, czy ten sam błąd dotyczy innych klientów; jeżeli tak, powiadom o tym jednostkę odpowiedzialną za produkt."
+          - tekst: "Gdy opłata została naliczona prawidłowo, w {uzasadnieniu|treści uzasadnienia} odpowiedzi wskaż postanowienie umowy lub regulaminu, na którym oparto naliczenie, oraz sposób obliczenia kwoty."
+          - tekst: "Rozważ, czy zastosowanie wyjątkowego zwolnienia z opłaty jest zasadne ze względu na dotychczasową współpracę z klientem; takie zwolnienie nie jest uznaniem reklamacji i wymaga odrębnego zapisu w karcie sprawy."
+
+  - id: procedura-reklamacje-analiza-eskalacja
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli jednostka biznesowa nie udzieli wyjaśnień w terminie {{fakt:termin.reklamacje-proc.odpowiedz-jednostki}}, {przypomnij|ponów} zapytanie w rejestrze REK i poinformuj kierownika tej jednostki."
+          - tekst: "W razie braku odpowiedzi w ciągu kolejnych dwóch dni roboczych eskaluj sprawę do dyrektora jednostki zwlekającej z wyjaśnieniami oraz do dyrektora jednostki rozpatrującej reklamacje."
+            podkroki:
+              - tekst: "Eskalację zapisz w rejestrze REK z podaniem daty, adresata i przewidywanego terminu otrzymania wyjaśnień."
+              - tekst: "Eskalacja nie zwalnia z obowiązku dotrzymania terminu ustawowego."
+          - tekst: "Jeżeli wyjaśnienia jednostki są {niewystarczające|niedostateczne} do ustalenia stanu faktycznego, zwołaj krótkie spotkanie robocze z udziałem przedstawicieli zaangażowanych jednostek i {zapisz|odnotuj} jego wnioski w karcie sprawy."
+          - tekst: "W sprawach o szczególnej złożoności (np. o wartości przekraczającej {{fakt:limit.reklamacje-proc.biuro}} albo dotyczących wielu produktów) powołaj zespół roboczy, w którym uczestniczy przedstawiciel jednostki odpowiedzialnej za sprawy prawne."
+          - tekst: "Z zakończenia analizy sporządź notatkę oraz przedstaw rekomendację organowi decyzyjnemu co najmniej {{fakt:termin.reklamacje-proc.alert}} przed końcem terminu odpowiedzi."

@@ -1,0 +1,88 @@
+bloki:
+  # --- Załączniki
+  - id: incydenty-zal-role-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "Zestawienie ról w obsłudze incydentu"
+        poziom: 2
+      - akapit: "Zestawienie wskazuje główne zadania poszczególnych ról i moment, w którym rola przystępuje do działań. Szczegółowe zasady określono w rozdziale o odpowiedzialnościach."
+      - tabela:
+          kolumny:
+            - naglowek: "Rola"
+              waga: 2
+            - naglowek: "Główne zadanie"
+              waga: 4
+            - naglowek: "Moment włączenia"
+              waga: 2
+          wiersze:
+            - ["Dyżurny", "przyjęcie i rejestracja zgłoszenia, wstępna klasyfikacja", "od zgłoszenia"]
+            - ["Kierownik incydentu", "koordynacja działań, decyzje, dziennik zdarzeń", "po zaklasyfikowaniu"]
+            - ["Analityk bezpieczeństwa", "analiza techniczna, zabezpieczenie dowodów", "po zaklasyfikowaniu"]
+            - ["Właściciel systemu", "wsparcie techniczne, zatwierdzenie przywrócenia", "na wezwanie"]
+            - ["Radca prawny", "ocena obowiązków prawnych, opiniowanie zawiadomień", "przy incydentach wysokich i krytycznych"]
+            - ["Inspektor ochrony danych", "ocena naruszeń danych osobowych", "przy zdarzeniach dotyczących danych"]
+            - ["Jednostka komunikacji", "komunikaty dla klientów, pracowników i mediów", "przy incydentach wysokich i krytycznych"]
+      - akapit: "Jedna osoba może pełnić kilka ról, jeżeli nie narusza to zasady rozdziału obowiązków określonej w procedurze."
+
+  - id: incydenty-zal-wzor-raportu-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "Układ raportu końcowego z incydentu"
+        poziom: 2
+      - akapit: "Raport końcowy sporządza się w formularzu {{fakt:incydent.raport-koncowy-formularz}}. Poniższe zestawienie wskazuje elementy, które musi zawierać każdy raport."
+      - tabela:
+          kolumny:
+            - naglowek: "Część raportu"
+              waga: 2
+            - naglowek: "Zawartość"
+              waga: 5
+          wiersze:
+            - ["Dane ogólne", "numer incydentu, klasyfikacja i rodzaj, daty wykrycia i zamknięcia, Kierownik incydentu"]
+            - ["Opis zdarzenia", "chronologiczny opis incydentu z godzinami kluczowych zdarzeń i decyzji"]
+            - ["Skutki", "dotknięte systemy i procesy, liczba klientów, czas niedostępności, straty finansowe, skutki prawne"]
+            - ["Przyczyny", "przyczyny bezpośrednie i źródłowe wraz z uzasadnieniem"]
+            - ["Działania", "podjęte działania naprawcze, ograniczające i przywracające"]
+            - ["Komunikacja", "wykaz zawiadomień przekazanych klientom, organom i kontrahentom"]
+            - ["Zalecenia", "działania zapobiegawcze z właścicielami i terminami"]
+      - akapit: "Raport podpisuje Kierownik incydentu, a zatwierdza dyrektor Departamentu Bezpieczeństwa."
+
+  - id: incydenty-zal-wskazniki-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "Zestawienie czasów reakcji według klasyfikacji"
+        poziom: 2
+      - tabela:
+          kolumny:
+            - naglowek: "Klasyfikacja"
+              waga: 2
+            - naglowek: "Czas reakcji"
+              waga: 2
+            - naglowek: "Osoba decydująca"
+              waga: 3
+          wiersze:
+            - ["Krytyczna", "{{fakt:incydent.czas-reakcji.krytyczny}}", "Kierownik incydentu i członek Zarządu"]
+            - ["Wysoka", "{{fakt:incydent.czas-reakcji.wysoki}}", "Kierownik incydentu"]
+            - ["Średnia", "{{fakt:incydent.czas-reakcji.sredni}}", "Analityk bezpieczeństwa"]
+            - ["Niska", "{{fakt:incydent.czas-reakcji.niski}}", "Dyżurny"]
+      - akapit: "Czas reakcji liczy się od chwili zaklasyfikowania incydentu albo od chwili podwyższenia jego klasyfikacji."
+
+  - id: incydenty-zal-dziennik-b
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "Wzór wpisu w dzienniku zdarzeń incydentu"
+        poziom: 2
+      - akapit: "Dziennik zdarzeń prowadzi się chronologicznie. Każdy wpis składa się z poniższych elementów, a wpisów nie usuwa się; błędny wpis prostuje się kolejnym wpisem."
+      - kroki:
+          - tekst: "Data i godzina wpisu oraz data i godzina opisywanego zdarzenia, jeżeli się różnią."
+          - tekst: "Autor wpisu oraz jego rola w obsłudze incydentu."
+          - tekst: "Treść wpisu: ustalony fakt, podjęta decyzja albo wykonana czynność."
+          - tekst: "Podstawa: dokument, dziennik systemu lub osoba, od której pochodzi informacja."
+          - tekst: "Zlecone działania: kto ma coś zrobić i do kiedy."

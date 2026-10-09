@@ -1,0 +1,79 @@
+bloki:
+  - id: rodo-n-rejestr-zamkniecie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-rejestr-dod
+    elementy:
+      - akapit: "Sprawa zostaje zamknięta w rejestrze wniosków dopiero po spełnieniu wszystkich warunków wskazanych w tym punkcie. Przedwczesne zamknięcie sprawy utrudnia kontrolę terminów i bywa przyczyną pominięcia czynności następczych."
+      - ustep: "Zamknięcie sprawy w rejestrze wymaga, aby:"
+        punkty:
+          - "{wysłano|przekazano} odpowiedź wnioskodawcy i potwierdzono jej doręczenie lub zwrot przesyłki;"
+          - "{zrealizowano|wykonano} wszystkie czynności wynikające z rozstrzygnięcia, np. usunięcie danych, powiadomienie odbiorców, zmianę zgód;"
+          - "{wpisano|zapisano} w rejestrze datę udzielenia odpowiedzi oraz liczbę dni, jakie upłynęły od wpływu wniosku;"
+          - "{sporządzono|dołączono} listę kontrolną sprawy z podpisem osoby odpowiedzialnej;"
+          - "{ustalono|wpisano} datę, do której akta sprawy mogą być przechowywane, zgodnie z okresem {{fakt:rodo.retencja.rejestr-wnioskow}}."
+      - akapit: "Sprawę zamkniętą można ponownie otworzyć wyłącznie na podstawie nowych okoliczności, np. zwrotu przesyłki, nowego wniosku w tej samej sprawie lub postępowania przed organem nadzorczym. Powód ponownego otwarcia wpisuje się w rejestrze."
+
+  - id: rodo-n-rejestr-spoznione
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-rejestr-dod
+    elementy:
+      - akapit: "System rejestru wniosków {{fakt:rodo.system.rejestr}} automatycznie ostrzega o zbliżaniu się terminu odpowiedzi. IOD korzysta z tych ostrzeżeń do bieżącego zarządzania obciążeniem zespołu i wczesnego reagowania na zagrożenia terminowości."
+      - kroki:
+          - tekst: "W połowie terminu odpowiedzi {sprawdź|zweryfikuj} stan sprawy; jeżeli brak jeszcze danych od jednostek, {ponów|powtórz} zapytanie i poinformuj kierownika jednostki o zagrożeniu terminu."
+          - tekst: "Na dwa tygodnie przed upływem terminu odpowiedzi podejmij decyzję, czy konieczne jest przedłużenie terminu ze względu na złożoność sprawy lub liczbę żądań."
+            podkroki:
+              - tekst: "Przedłużenie jest dopuszczalne wyłącznie wtedy, gdy sprawa jest rzeczywiście złożona, i wymaga uzasadnienia w aktach."
+              - tekst: "Wnioskodawcę o przedłużeniu informuje się przed upływem podstawowego terminu, podając przyczynę."
+          - tekst: "Jeżeli termin został przekroczony, odpowiedź wyślij natychmiast, wyjaśniając przyczynę opóźnienia, a sprawę zgłoś do {{fakt:jednostka.zgodnosc}} jako przypadek naruszenia terminu."
+          - tekst: "Przypadki przekroczenia terminu analizuje się w sprawozdaniu okresowym, a ich przyczyny wykorzystuje przy planowaniu zasobów."
+
+  - id: rodo-n-kontrola-probka
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-kontrola-dod
+    elementy:
+      - akapit: "Co kwartał {{fakt:jednostka.zgodnosc}} bada losowo wybraną próbę zakończonych spraw, obejmującą co najmniej jedną sprawę z każdego rodzaju żądania. Próba obejmuje także wszystkie sprawy zakończone odmową oraz sprawy, w których przedłużono termin."
+      - ustep: "Podczas badania sprawdza się w szczególności, czy:"
+        punkty:
+          - "{wniosek|żądanie} zostało rozpoznane prawidłowo i zakwalifikowane do właściwego trybu;"
+          - "{tożsamość|dane identyfikacyjne} wnioskodawcy zweryfikowano w sposób proporcjonalny, bez żądania nadmiarowych dokumentów;"
+          - "{odpowiedź|rozstrzygnięcie} udzielono w terminie i zawierała wszystkie informacje wymagane przepisami;"
+          - "{uzasadnienie|podstawa} odmowy, jeśli ją zastosowano, było zgodne z przepisami i zrozumiałe;"
+          - "{dokumentacja|akta sprawy} są kompletne i umożliwiają odtworzenie przebiegu postępowania."
+      - akapit: "Wnioski z badania przedstawia się IOD, który ustala działania naprawcze. Powtarzające się błędy tego samego rodzaju są podstawą zmiany procedury lub dodatkowego szkolenia."
+
+  - id: rodo-n-kontrola-zarzad
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-kontrola-dod
+    elementy:
+      - akapit: "Zarząd Banku {nadzoruje|ocenia} skuteczność procedury na podstawie sprawozdań IOD i wyników kontroli niezależnych jednostek. Co najmniej raz w roku IOD przedstawia Zarządowi pełną ocenę funkcjonowania procedury, obejmującą zarówno dane liczbowe, jak i analizę jakościową."
+      - kroki:
+          - tekst: "Przedstaw Zarządowi zbiorcze dane za rok kalendarzowy, w tym liczbę wniosków, terminowość i odmowy, oraz porównanie z rokiem poprzednim."
+          - tekst: "Wskaż najważniejsze ryzyka, np. wzrost liczby wniosków zbiorczych, ograniczenia techniczne w usuwaniu danych z archiwów czy braki kadrowe w zespole obsługującym wnioski."
+            podkroki:
+              - tekst: "Do każdego ryzyka dołącz propozycję działań ograniczających i termin ich wykonania."
+              - tekst: "Zarząd rozstrzyga o przyznaniu zasobów i zatwierdza harmonogram wdrożenia."
+          - tekst: "Z posiedzenia sporządza się protokół, który przechowuje {{fakt:jednostka.iod}} razem z materiałami; zalecenia Zarządu wpisuje się do planu działań."
+
+  - id: rodo-n-wzor-iod-kontakt
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór — informacja o przedłużeniu terminu ze względu na liczbę żądań"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w nawiązaniu do Państwa wniosków z dni (daty) {informujemy|zawiadamiamy}, że ze względu na liczbę i złożony charakter żądań, które dotyczą (zakres żądań), nie możemy udzielić odpowiedzi w podstawowym terminie. Termin ulega przedłużeniu o okres nie dłuższy niż {{fakt:termin.rodo.przedluzenie}}, to jest do dnia (data)."
+      - akapit: "Przyczyną przedłużenia jest (opis przyczyny: konieczność zebrania danych z wielu systemów, ocena żądań wymagająca konsultacji prawnych, zbieg żądań). Informacje, które możemy przekazać już teraz, przekazujemy w załączeniu. W razie pytań prosimy o kontakt z IOD: {{fakt:kontakt.email-iod}}, telefon {{fakt:rodo.kanal.telefon-iod}}. Z poważaniem, (imię i nazwisko, stanowisko)"
+
+  - id: rodo-n-wzor-ograniczenie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór — zawiadomienie o ograniczeniu przetwarzania danych"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w związku z Państwa wnioskiem z dnia (data) {informujemy|zawiadamiamy}, że od dnia (data) ograniczyliśmy przetwarzanie następujących danych: (zakres danych). Przyczyną ograniczenia jest (przyczyna: zakwestionowanie prawidłowości danych, sprzeciw w toku rozpatrywania, przetwarzanie niezgodne z prawem przy braku zgody na usunięcie)."
+      - akapit: "W okresie ograniczenia dane są wyłącznie przechowywane i nie będą wykorzystywane do innych celów, chyba że wyrażą Państwo na to zgodę albo będzie to niezbędne do dochodzenia lub obrony roszczeń albo do ochrony praw innej osoby. O uchyleniu ograniczenia poinformujemy Państwa przed jego zniesieniem. Z poważaniem, (imię i nazwisko, stanowisko)"

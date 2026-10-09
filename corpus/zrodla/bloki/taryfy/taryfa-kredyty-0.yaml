@@ -1,0 +1,84 @@
+bloki:
+  - id: taryfa-kredyty-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - ustep: "Niniejsza Taryfa {obejmuje wyłącznie opłaty i prowizje|dotyczy wyłącznie opłat i prowizji} związanych z kredytami, pożyczkami i limitami odnawialnymi udzielanymi przez Bank Przykładowy S.A.: kredytami gotówkowymi, kredytami hipotecznymi, limitami w rachunku osobistym, limitami kartowymi oraz kredytami dla przedsiębiorców. Opłaty za prowadzenie rachunków, kart i usługi płatnicze określają odrębne taryfy."
+      - ustep: "Warunki udzielenia i spłaty kredytu, w tym oprocentowanie, całkowity koszt kredytu i rzeczywista roczna stopa oprocentowania, określa umowa kredytu, a przed jej zawarciem — formularz informacyjny doręczany Klientowi na trwałym nośniku. Zasady dotyczące kredytów konsumenckich określa {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}, a kredytów zabezpieczonych hipoteką — {{ref:akt:dz-u-2025-720-kredyt-hipoteczny}}."
+      - ustep: "Prowizje i opłaty za czynności związane z kredytem gotówkowym są także wskazane w dokumencie „{{ref:dokument:regulamin-kredytu-gotowkowego}}”, a związane z kredytem hipotecznym — w dokumencie „{{ref:dokument:regulamin-kredytu-hipotecznego}}”. W razie rozbieżności {obowiązują|stosuje się} stawki wskazane w umowie kredytu, a gdy umowa ich nie określa — stawki z Taryfy."
+      - ustep: "Prowizja za udzielenie kredytu {jest wliczana|wchodzi} do całkowitego kosztu kredytu. Klient {może|ma prawo} zdecydować, że prowizja zostanie doliczona do kwoty kredytu i spłacana w ratach; w takim przypadku od jej kwoty naliczane są odsetki na zasadach przewidzianych dla kapitału."
+      - akapit: "Opłaty za czynności wykonywane na wniosek Klienta, których Taryfa nie wymienia, Bank {ustala|kalkuluje} indywidualnie, nie wyższe jednak niż koszt ich wykonania, o czym informuje Klienta przed przyjęciem dyspozycji."
+
+  - id: taryfa-kredyty-gotowkowe-wstep
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - akapit: "Niniejsza sekcja dotyczy kredytów gotówkowych i pożyczek ratalnych udzielanych osobom fizycznym {niebędącym przedsiębiorcami|niewykonującym działalności gospodarczej}, w kwotach od {{fakt:limit.kredyt-gotowkowy.kwota-min}} do {{fakt:limit.kredyt-gotowkowy.kwota-max}}. {Prowizję|Prowizję za przygotowanie i udzielenie kredytu} Bank {pobiera|nalicza} od kwoty przyznanego kredytu, nie niższą jednak niż {{fakt:oplata.kredyt-gotowkowy.prowizja-minimalna}}."
+      - akapit: "Prowizja za udzielenie {nie podlega zwrotowi|nie jest zwracana} w przypadku odstąpienia od umowy kredytu w terminie {{fakt:termin.odstapienie-od-umowy}}, jeżeli kredyt został już uruchomiony i Klient nie zwrócił kapitału w terminie wynikającym z umowy; w pozostałych przypadkach Bank zwraca prowizję w terminie {{fakt:termin.zwrot-oplat}}."
+
+  - id: taryfa-kredyty-hipoteczne-wstep
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - akapit: "Niniejsza sekcja dotyczy kredytów zabezpieczonych hipoteką na nieruchomości {mieszkalnej|przeznaczonej na cele mieszkaniowe}, przeznaczonych na {zakup|nabycie}, budowę, remont lub refinansowanie. Prowizję za przygotowanie i udzielenie kredytu Bank {oblicza|ustala} od kwoty przyznanego kredytu, nie niższą jednak niż {{fakt:oplata.kredyt-hipoteczny.prowizja-minimalna}}."
+      - akapit: "Opłaty sądowe i wpisy do ksiąg wieczystych, opłaty notarialne oraz podatki nie są przychodem Banku i są {pobierane|doliczane} według stawek wynikających z przepisów prawa; w Taryfie wskazano je {dla informacji Klienta|wyłącznie informacyjnie}."
+
+  - id: taryfa-kredyty-limity-wstep
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - akapit: "Niniejsza sekcja dotyczy odnawialnych limitów kredytowych: debetu w rachunku osobistym (do kwoty {{fakt:limit.rachunek-osobisty.debet}}) oraz limitów kredytowych w kartach kredytowych (od {{fakt:limit.karta.kredytowy-min}} do {{fakt:limit.karta.kredytowy-max}}). Limit {przyznawany jest|może zostać przyznany} do {{fakt:limit.limit-odnawialny.przyznanie-maksymalne}} na rachunku, z zastrzeżeniem oceny zdolności kredytowej."
+      - akapit: "Od kwoty wykorzystanego limitu Bank {nalicza|pobiera} odsetki według stopy wskazanej w umowie; w dniu wejścia Taryfy w życie odsetki od zadłużenia w rachunku wynoszą {{fakt:oprocentowanie.debet}} w stosunku rocznym. Prowizje od limitu {są pobierane|nalicza się} od kwoty przyznanego limitu, a nie od kwoty wykorzystanej."
+
+  - id: taryfa-kredyty-firmowe-wstep
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - akapit: "Niniejsza sekcja dotyczy kredytów obrotowych, inwestycyjnych, linii kredytowych i kredytów w rachunku bieżącym {udzielanych|oferowanych} przedsiębiorcom, w tym osobom fizycznym prowadzącym działalność gospodarczą. Stawki ustalone w umowie z przedsiębiorcą {mogą|mogą być} niższe od stawek Taryfy; Taryfa stanowi stawki maksymalne."
+      - akapit: "Prowizję przygotowawczą Bank {pobiera|nalicza} od kwoty kredytu, nie mniej niż {{fakt:oplata.kredyt-firmowy.prowizja-minimalna}}, w dniu zawarcia umowy lub uruchomienia kredytu — zgodnie z umową. Opłata za rozpatrzenie wniosku wynosi {{fakt:oplata.kredyt-firmowy.rozpatrzenie-wniosku}} i {nie podlega zwrotowi|nie jest zwracana} w razie {odmowy udzielenia kredytu|negatywnej decyzji kredytowej}."
+
+  - id: taryfa-kredyty-czynnosci-wstep
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - akapit: "Niniejsza sekcja dotyczy czynności wykonywanych w {trakcie obowiązywania|okresie trwania} umowy kredytu na wniosek Klienta lub w jego interesie: zmian warunków umowy, wydawania zaświadczeń i dokumentów, zwolnień zabezpieczeń. Opłaty {pobierane są|pobiera się} jednorazowo, {przed wykonaniem czynności|przed jej wykonaniem}, chyba że Taryfa stanowi inaczej."
+      - akapit: "Bank nie pobiera opłat za informacje, które zgodnie z przepisami prawa {udostępnia|przekazuje} Klientowi nieodpłatnie, w szczególności za harmonogram spłat przekazywany {raz w roku|co najmniej raz w roku} oraz za informację o saldzie zadłużenia w kanałach elektronicznych."
+
+  - id: taryfa-kredyty-windykacja-wstep
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - akapit: "Opłaty z niniejszej sekcji są pobierane wyłącznie w razie {opóźnienia|zwłoki} w spłacie zobowiązania i wyłącznie za czynności {faktycznie podjęte|rzeczywiście wykonane} przez Bank. SMS przypominający o zbliżającym się terminie raty nie jest zaliczany do monitów i nie podlega opłacie."
+      - ustep: "Pierwszy monit Bank kieruje do Klienta w terminie {{fakt:termin.windykacja.monit-po-terminie}} od dnia wymagalności raty, wezwanie do zapłaty — nie wcześniej niż po upływie {{fakt:termin.windykacja.wezwanie-do-zaplaty}} od doręczenia monitu. Wypowiedzenie umowy kredytu poprzedza wezwanie do zapłaty z wyznaczeniem terminu {{fakt:termin.windykacja.wypowiedzenie-umowy}} na spłatę zaległości."
+      - akapit: "Od kwot przeterminowanych Bank {nalicza|pobiera} odsetki za opóźnienie w wysokości {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym, w granicach wynikających z przepisów prawa."
+
+  - id: taryfa-kredyty-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-kredyty]
+    kategoria: tekst-taryfa
+    wspolny: false
+    elementy:
+      - ustep: "Użyte w Taryfie {określenia|pojęcia} oznaczają:"
+        punkty:
+          - "**kwota kredytu** — suma środków pieniężnych udostępnionych Klientowi na podstawie umowy, bez kosztów kredytu;"
+          - "**prowizja za udzielenie** — jednorazowa opłata za rozpatrzenie wniosku, przygotowanie umowy i udostępnienie środków;"
+          - "**limit odnawialny** — kwota środków, z których Klient może korzystać wielokrotnie, w miarę spłaty wykorzystanej części;"
+          - "**aneks** — pisemna zmiana warunków umowy kredytu zawarta między Bankiem a Klientem;"
+          - "**promesa** — oświadczenie Banku o gotowości do zwolnienia zabezpieczenia po spłacie zobowiązania;"
+          - "**dzień roboczy** — dzień inny niż sobota, niedziela i dzień ustawowo wolny od pracy."
+      - ustep: "Stawki wyrażone w procentach odnoszą się do kwoty wskazanej w kolumnie „Tryb pobierania”: kwoty kredytu, limitu, kapitału przedterminowo spłaconego lub zadłużenia przeterminowanego. Zapis „wg umowy” oznacza, że opłatę {ustala|określa} umowa zawarta z Klientem."
+      - akapit: "W sprawach dotyczących opłat i prowizji Klient może {skontaktować się z Bankiem|zwrócić się do Banku} pod numerem {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) lub w placówce Banku pod adresem {{fakt:bank.adres}}."

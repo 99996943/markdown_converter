@@ -1,0 +1,159 @@
+bloki:
+  # ===== Rozdział: Wypłata kredytu w transzach =====
+  - id: hip-wyplata
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłata kredytu następuje {jednorazowo|w jednej kwocie} albo w transzach, w zależności od celu kredytu. Kredyt przeznaczony na budowę lub remont jest wypłacany wyłącznie w transzach, w liczbie nie większej niż {{fakt:limit.hipoteka.liczba-transz}}."
+      - ustep: "Warunkami wypłaty pierwszej transzy są:"
+        punkty:
+          - "ustanowienie zabezpieczeń przewidzianych w umowie i złożenie wniosku o wpis hipoteki do księgi wieczystej;"
+          - "przedstawienie polisy ubezpieczeniowej z potwierdzoną cesją praw na rzecz Banku;"
+          - "wniesienie wkładu własnego i udokumentowanie jego wniesienia;"
+          - "zapłata prowizji, o ile nie została doliczona do kwoty kredytu;"
+          - "brak zdarzeń, o których mowa w {{ref:blok:hip-decyzja}}, uzasadniających wstrzymanie wypłaty."
+      - ustep: "Wypłata kolejnych transz następuje na wniosek Kredytobiorcy, po przedstawieniu dokumentów potwierdzających postęp prac, i może być poprzedzona kontrolą nieruchomości przeprowadzoną przez Bank lub rzeczoznawcę w terminie {{fakt:termin.hipoteka.kontrola-nieruchomosci}} od dnia złożenia wniosku. Za wypłatę każdej transzy pobiera się opłatę w wysokości {{fakt:oplata.hipoteka.wyplata-transzy}}."
+      - ustep: "Bank wypłaca środki w terminie {{fakt:termin.hipoteka.wyplata-po-warunkach}} (liczonym w dniach roboczych) od dnia spełnienia warunków wypłaty, w sposób wskazany w umowie: na rachunek sprzedawcy, dewelopera lub wykonawcy albo na rachunek Kredytobiorcy, jeżeli umowa tak stanowi."
+      - ustep: "Jeżeli wypłata nie nastąpi z przyczyn leżących po stronie Kredytobiorcy w terminie wskazanym w umowie, Bank {może|ma prawo} odstąpić od umowy, a niewypłaconą część kredytu uznać za niewykorzystaną."
+
+  # ===== Rozdział: Oprocentowanie =====
+  - id: hip-oprocentowanie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt jest oprocentowany według zmiennej stopy procentowej, która stanowi sumę wskaźnika referencyjnego i stałej w całym okresie kredytowania marży Banku, albo — jeżeli umowa tak stanowi — według stopy okresowo stałej."
+      - ustep: "Marża Banku w dniu wejścia w życie Regulaminu wynosi {{fakt:oprocentowanie.hipoteka.marza}} w skali roku. Marża nie ulega zmianie w okresie obowiązywania umowy, z zastrzeżeniem podwyższenia, o którym mowa w {{ref:blok:hip-hipoteka}}, oraz obniżenia przewidzianego w umowie z tytułu spełnienia warunków promocyjnych."
+      - ustep: "Stopa okresowo stała w okresie pierwszych {{fakt:wskaznik.hipoteka.okres-stalosci}} wynosi {{fakt:oprocentowanie.hipoteka.okresowo-stale}} w skali roku. Po upływie tego okresu kredyt jest oprocentowany według stopy zmiennej, chyba że strony uzgodnią kolejny okres stałej stopy."
+      - ustep: "Odsetki są naliczane od kwoty wykorzystanego kredytu, za okresy miesięczne, przy założeniu, że rok liczy 365 dni, a miesiąc — rzeczywistą liczbę dni. Odsetki od kwoty transz wypłaconych w trakcie okresu rozliczeniowego są naliczane od dnia wypłaty."
+      - ustep: "RRSO kredytu, wskazana w formularzu informacyjnym i umowie, została obliczona przy założeniu, że umowa będzie wykonana w terminach i na warunkach w niej określonych, a oprocentowanie i opłaty nie ulegną zmianie."
+
+  - id: hip-wskaznik
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wskaźnikiem referencyjnym stosowanym w kredycie hipotecznym jest {{fakt:wskaznik.hipoteka.nazwa}}, ogłaszany przez administratora wskaźnika w ostatnim dniu roboczym przed początkiem okresu zmiany oprocentowania.[^1]"
+      - ustep: "Oprocentowanie kredytu zmienia się {co|nie rzadziej niż co} {{fakt:wskaznik.hipoteka.okres-zmiany}}, od pierwszego dnia okresu rozliczeniowego następującego po dniu zmiany wartości wskaźnika. Zmiana wskaźnika powoduje zmianę wysokości raty lub okresu kredytowania, w sposób określony w umowie."
+      - ustep: "O zmianie oprocentowania Bank informuje Kredytobiorcę na trwałym nośniku w terminie {{fakt:termin.hipoteka.powiadomienie-stopa}} od jej wystąpienia, wskazując nową wysokość raty, saldo zadłużenia i pozostały okres spłaty."
+      - ustep: "Jeżeli wskaźnik referencyjny przestanie być publikowany lub jego metodologia ulegnie istotnej zmianie, Bank zastosuje wskaźnik zastępczy wskazany przez administratora, organ nadzoru lub ustawę, a w ich braku wskaźnik o najbardziej zbliżonym charakterze. Zmiana nie może zwiększyć marży ani kosztu kredytu ponad skutek wynikający z samej wymiany wskaźnika."
+    przypisy:
+      1: "Aktualna wartość wskaźnika jest {publikowana|dostępna} na stronie internetowej Banku {{fakt:bank.strona}} oraz w placówkach; wartość z dnia zawarcia umowy podano w umowie kredytu."
+
+  # ===== Rozdział: Spłata, wakacje, wcześniejsza spłata =====
+  - id: hip-splata
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt wraz z odsetkami spłaca się w ratach miesięcznych: równych (annuitetowych) albo malejących, zgodnie z umową. Harmonogram spłat Bank przekazuje Kredytobiorcy po wypłacie kredytu i po każdej zmianie oprocentowania."
+      - ustep: "Raty są płatne w dniu wskazanym w umowie, przelewem z rachunku wskazanego w umowie lub w drodze polecenia zapłaty. Za dzień spłaty uznaje się dzień uznania rachunku kredytowego; jeżeli termin płatności przypada w dniu wolnym od pracy, spłata jest wymagalna w najbliższym dniu roboczym."
+      - ustep: "Wpłaty Kredytobiorcy zalicza się na poczet należności w następującej kolejności:"
+        punkty:
+          - "koszty i opłaty windykacyjne;"
+          - "odsetki za opóźnienie;"
+          - "odsetki kapitałowe wymagalne;"
+          - "kapitał wymagalny;"
+          - "należności niewymagalne, w tym kapitał i odsetki z kolejnych rat."
+      - ustep: "Kredytobiorca {może|ma prawo} złożyć dyspozycję zmiany dnia płatności raty lub rodzaju rat. Zmiana wymaga zgody Banku i jest dokonywana za opłatą w wysokości {{fakt:oplata.hipoteka.zmiana-warunkow}}, o ile umowa nie stanowi inaczej."
+
+  - id: hip-wakacje
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca będący konsumentem {może|ma prawo} wnioskować o zawieszenie spłaty rat kapitałowo-odsetkowych (wakacje kredytowe) na okres nie dłuższy niż {{fakt:limit.hipoteka.wakacje-liczba}} miesięcy w roku kalendarzowym, jeżeli kredyt został zaciągnięty na zaspokojenie własnych potrzeb mieszkaniowych."
+      - ustep: "Wniosek o wakacje kredytowe składa się nie później niż {{fakt:termin.hipoteka.wakacje-wniosek}} przed terminem płatności pierwszej raty objętej zawieszeniem. Opłata za rozpatrzenie wniosku wynosi {{fakt:oplata.hipoteka.wakacje}}."
+      - ustep: "W okresie wakacji kredytowych:"
+        punkty:
+          - "odsetki za okres zawieszenia nie są naliczane od kwoty kapitału, a ich równowartość nie podlega kapitalizacji;"
+          - "termin spłaty kredytu ulega przedłużeniu o okres zawieszenia;"
+          - "Kredytobiorca nie ponosi dodatkowych opłat z tytułu samej zmiany harmonogramu;"
+          - "obowiązują dotychczasowe zabezpieczenia i ubezpieczenia, których składki Kredytobiorca opłaca na bieżąco."
+      - ustep: "Wakacji kredytowych nie stosuje się do rat, które zostały wymagalne przed dniem złożenia wniosku, oraz wobec Kredytobiorców, których umowa została wypowiedziana."
+
+  - id: hip-wczesna-splata
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca {może|ma prawo} w każdym czasie spłacić kredyt w całości lub w części przed terminem określonym w umowie. O zamiarze całkowitej spłaty informuje Bank na trwałym nośniku, na co najmniej {{fakt:termin.hipoteka.wczesna-splata-zawiadomienie}} przed planowanym dniem spłaty."
+      - ustep: "W przypadku wcześniejszej spłaty Kredytobiorca zapłaci odsetki naliczone do dnia spłaty. Bank zwraca proporcjonalnie część prowizji i innych kosztów, które zależą od czasu trwania umowy, zgodnie z przepisami: {{ref:akt:dz-u-2025-720-kredyt-hipoteczny}}."
+      - ustep: "Za wcześniejszą spłatę kredytu w okresie {{fakt:oplata.hipoteka.okres-oplaty-wczesnej}} od dnia zawarcia umowy Bank {pobiera|może pobrać} prowizję w wysokości {{fakt:oplata.hipoteka.wczesna-splata}} spłacanej kwoty, nie większą jednak niż poniesione przez Bank udokumentowane koszty związane ze spłatą. Po upływie tego okresu prowizji nie pobiera się."
+      - ustep: "Po całkowitej spłacie kredytu Bank, w terminie {{fakt:termin.hipoteka.zwolnienie-hipoteki}}, wystawia dokument umożliwiający wykreślenie hipoteki z księgi wieczystej i zwraca dokumenty stanowiące zabezpieczenie, w tym weksel i deklarację wekslową."
+
+  # ===== Rozdział: Ubezpieczenia =====
+  - id: hip-ubezpieczenia
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W związku z kredytem hipotecznym Kredytobiorca zawiera i utrzymuje w mocy w całym okresie kredytowania:"
+        punkty:
+          - "ubezpieczenie nieruchomości, o którym mowa w {{ref:blok:hip-cesja}};"
+          - "ubezpieczenie niskiego wkładu własnego, jeżeli wkład własny jest niższy niż {{fakt:limit.hipoteka.wklad-wlasny}}, a LTV mieści się w limicie {{fakt:limit.hipoteka.ltv-z-ubezpieczeniem}};"
+          - "ubezpieczenie od następstw utraty pracy lub trwałej niezdolności do pracy — dobrowolnie, na zasadach określonych w umowie z zakładem ubezpieczeń."
+      - ustep: "Składka z tytułu ubezpieczenia niskiego wkładu własnego wynosi {{fakt:oplata.hipoteka.ubezpieczenie-niskiego-wkladu}} kwoty, o którą wkład własny jest niższy od wymaganego, i jest płatna jednorazowo lub doliczana do kwoty kredytu. Ubezpieczenie obowiązuje do czasu, gdy wskaźnik LTV spadnie poniżej poziomu {{fakt:limit.hipoteka.ltv}}."
+      - ustep: "Zawarcie ubezpieczeń dobrowolnych nie jest warunkiem udzielenia kredytu ani nie wpływa na wysokość marży, chyba że umowa przewiduje wyraźnie obniżenie marży w zamian za ubezpieczenie; wówczas warunki obniżki i skutki rezygnacji opisuje umowa."
+      - ustep: "Jeżeli Kredytobiorca nie przedłuży ubezpieczenia nieruchomości, Bank {może|ma prawo} zawrzeć je we własnym imieniu na koszt Kredytobiorcy, po uprzednim wezwaniu go do uzupełnienia polisy w wyznaczonym terminie."
+
+  # ===== Rozdział: Obowiązki kredytobiorcy =====
+  - id: hip-obowiazki
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredytobiorca jest obowiązany w szczególności:"
+        punkty:
+          - "wykorzystać kredyt zgodnie z celem określonym w umowie i na żądanie Banku udokumentować jego wykorzystanie;"
+          - "terminowo spłacać raty kredytu wraz z odsetkami oraz opłatami i prowizjami;"
+          - "utrzymywać nieruchomość w należytym stanie technicznym i nie dokonywać zmian zmniejszających jej wartość;"
+          - "informować Bank o zmianie danych kontaktowych w terminie {{fakt:termin.hipoteka.zawiadomienie-zmiany-danych}};"
+          - "niezwłocznie zawiadomić Bank o zdarzeniach mogących wpłynąć na zdolność spłaty lub wartość zabezpieczenia."
+      - ustep: "Bez zgody Banku Kredytobiorca nie może:"
+        punkty:
+          - "zbywać nieruchomości lub obciążać jej ograniczonymi prawami rzeczowymi;"
+          - "oddawać nieruchomości w najem lub użyczenie na okres dłuższy niż jeden rok albo na cele inne niż mieszkaniowe;"
+          - "rozpoczynać prac budowlanych wymagających pozwolenia na budowę, jeżeli nie były objęte celem kredytu."
+      - ustep: "Bank {ma prawo|może} kontrolować wykorzystanie kredytu i stan nieruchomości w czasie obowiązywania umowy. Kontrola odbywa się po uprzednim powiadomieniu Kredytobiorcy, w terminie uzgodnionym z nim, nie krótszym niż {{fakt:termin.hipoteka.kontrola-nieruchomosci}}."
+
+  # ===== Rozdział: Opóźnienie i wypowiedzenie =====
+  - id: hip-opoznienie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Od kwoty zadłużenia przeterminowanego Bank pobiera odsetki za opóźnienie w wysokości odsetek maksymalnych za opóźnienie, nie wyższych niż {{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku, w okresie od dnia następującego po terminie płatności do dnia spłaty włącznie."
+      - ustep: "W razie opóźnienia Bank {może|ma prawo}:"
+        punkty:
+          - "wysłać Kredytobiorcy przypomnienie wiadomością elektroniczną lub telefonicznie;"
+          - "wezwać Kredytobiorcę do zapłaty zaległości, wyznaczając termin {{fakt:termin.hipoteka.wezwanie-do-zaplaty}}, i pobrać opłatę za wezwanie w wysokości {{fakt:oplata.upomnienie}};"
+          - "zaproponować restrukturyzację zadłużenia, w tym zmianę harmonogramu spłat."
+      - ustep: "W wezwaniu do zapłaty Bank informuje Kredytobiorcę o skutkach braku płatności, w tym o możliwości wypowiedzenia umowy i wszczęcia postępowania egzekucyjnego, oraz o możliwości złożenia wniosku o restrukturyzację zadłużenia."
+      - ustep: "Informacje o zadłużeniu przeterminowanym Bank może przekazać do biur informacji gospodarczej na zasadach określonych w przepisach, po spełnieniu przewidzianych w nich warunków, w tym po uprzednim wezwaniu do zapłaty."
+
+  - id: hip-wypowiedzenie
+    typy: [regulaminy]
+    tematy: [kredyt-hipoteczny]
+    kategoria: wymagany-hip
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} wypowiedzieć umowę kredytu z zachowaniem okresu wypowiedzenia wynoszącego {{fakt:termin.hipoteka.wypowiedzenie-przez-bank}}, jeżeli:"
+        punkty:
+          - "Kredytobiorca zalega ze spłatą co najmniej {{fakt:termin.hipoteka.zaleglosc-raty}} i mimo wezwania do zapłaty w terminie {{fakt:termin.hipoteka.wezwanie-do-zaplaty}} nie uregulował zaległości;"
+          - "Kredytobiorca wykorzystał kredyt niezgodnie z umową albo podał nieprawdziwe informacje, które miały wpływ na decyzję Banku;"
+          - "wartość zabezpieczenia uległa obniżeniu w stopniu zagrażającym spłacie, a Kredytobiorca nie ustanowił dodatkowego zabezpieczenia;"
+          - "Kredytobiorca nie utrzymuje ubezpieczenia nieruchomości lub nie dokonał cesji praw z polisy."
+      - ustep: "Wypowiedzenie następuje na piśmie lub na innym trwałym nośniku. W okresie wypowiedzenia Kredytobiorca {może|ma prawo} spłacić zaległość i kontynuować umowę, a wniosek o restrukturyzację złożony w tym okresie wstrzymuje wszczęcie egzekucji do czasu jego rozpatrzenia."
+      - ustep: "Kredytobiorca {może|ma prawo} wypowiedzieć umowę kredytu w każdym czasie, składając oświadczenie z zachowaniem terminu określonego w {{ref:blok:hip-wczesna-splata}} i spłacając całość zadłużenia."
+      - ustep: "Po upływie okresu wypowiedzenia całe zadłużenie staje się natychmiast wymagalne, a Bank {może|ma prawo} dochodzić zaspokojenia z zabezpieczeń, w szczególności z nieruchomości obciążonej hipoteką, na zasadach określonych w przepisach i umowie."

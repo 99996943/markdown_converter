@@ -1,0 +1,82 @@
+bloki:
+  - id: procedura-pelnomocnictwa-cel
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-cel
+    elementy:
+      - akapit: "Procedura {określa|ustala} jednolite zasady {przyjmowania|przyjmowania, oceny} i weryfikacji pełnomocnictw składanych w Banku, a także zasady ich {rejestrowania|wprowadzania} w systemie, wykonywania w ich ramach dyspozycji, odwoływania i archiwizowania. Jej celem jest {zapewnienie|zagwarantowanie}, że Bank wykonuje dyspozycje wyłącznie od osób rzeczywiście umocowanych, w granicach umocowania udzielonego przez mocodawcę."
+      - akapit: "Procedura ma też {chronić|zabezpieczać} Klientów i Bank przed skutkami posłużenia się pełnomocnictwem sfałszowanym, nieaktualnym, wygasłym lub udzielonym pod przymusem albo w wyniku wprowadzenia w błąd, a także {zapewnić|umożliwić} spełnienie wymogów wynikających z przepisów: {{ref:akt:dz-u-2025-644-aml}} oraz {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - akapit: "Zasady procedury stanowią uzupełnienie postanowień dokumentów „{{ref:dokument:regulamin-rachunku-osobistego}}” oraz „{{ref:dokument:regulamin-rachunku-firmowego}}”, które określają prawa i obowiązki Klienta wobec Banku w zakresie ustanawiania pełnomocników. Procedura jest adresowana do pracowników i nie stanowi wzorca umowy w rozumieniu przepisów o ochronie konsumentów."
+
+  - id: procedura-pelnomocnictwa-zakres
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-zakres
+    elementy:
+      - ustep: "Procedurę stosuje się do wszystkich pełnomocnictw przedłożonych Bankowi lub składanych w Banku, w tym do:"
+        punkty:
+          - "pełnomocnictw ogólnych, rodzajowych i szczególnych udzielonych przez osoby fizyczne do rachunków, lokat, kart i usług bankowości elektronicznej;"
+          - "pełnomocnictw jednorazowych do wykonania pojedynczej dyspozycji lub czynności;"
+          - "pełnomocnictw w formie aktu notarialnego lub z podpisem poświadczonym notarialnie;"
+          - "pełnomocnictw sporządzonych za granicą, opatrzonych apostille albo zalegalizowanych, wraz z tłumaczeniem przysięgłym;"
+          - "prokury oraz umocowania osób reprezentujących przedsiębiorców, wynikającego z rejestru, umowy spółki, statutu lub uchwał organów."
+      - ustep: "Procedurę stosują {pracownicy|wszyscy pracownicy} placówek, {doradcy|doradcy Klienta} obsługujący Klientów firmowych oraz komórki centralne uczestniczące w weryfikacji, w szczególności {{fakt:pelnomocnictwo.jednostka.weryfikacja}}, {{fakt:jednostka.prawny}}, {{fakt:jednostka.zgodnosc}} i {{fakt:jednostka.bezpieczenstwo}}."
+      - ustep: "Procedura nie dotyczy:"
+        punkty:
+          - "umocowania przedstawiciela ustawowego małoletniego lub osoby ubezwłasnowolnionej, wynikającego z orzeczenia sądu albo z przepisów, które regulują odrębne instrukcje;"
+          - "pełnomocnictw procesowych i pełnomocnictw do reprezentowania Klienta przed organami państwa, jeżeli Bank jest jedynie adresatem odpisu;"
+          - "dyspozycji składanych przez Klienta osobiście lub przez niego samego w bankowości elektronicznej, w których nie występuje działanie przez przedstawiciela."
+
+  - id: procedura-pelnomocnictwa-odpowiedzialnosci
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-odp
+    elementy:
+      - akapit: "Za stosowanie procedury odpowiadają {osoby i komórki wymienione|wymienione poniżej osoby i komórki}, każda w zakresie swoich zadań."
+      - ustep: "**Pracownik placówki** {przyjmuje|odbiera} pełnomocnictwo, {ustala|potwierdza} tożsamość mocodawcy i pełnomocnika, ocenia formę i treść dokumentu, składa wniosek o rejestrację w systemie oraz {wykonuje|obsługuje} dyspozycje w granicach umocowania. Pracownik odpowiada za kompletność akt oraz za zgodność kopii z okazanym oryginałem."
+      - ustep: "**Kierownik placówki** {zatwierdza|akceptuje} pełnomocnictwa niestandardowe, rozstrzyga wątpliwości co do formy dokumentu, przeprowadza kontrolę drugiej pary oczu przy dyspozycjach powyżej {{fakt:pelnomocnictwo.limit.druga-weryfikacja}} oraz nadzoruje przekazywanie dokumentacji do archiwum."
+      - ustep: "**{{fakt:pelnomocnictwo.jednostka.weryfikacja}}** {rozpatruje|weryfikuje} pełnomocnictwa zagraniczne, pełnomocnictwa budzące wątpliwości oraz dokumenty rejestrowe Klientów firmowych, prowadzi moduł pełnomocnictw w systemie centralnym CBS-PRZYKŁAD i odpowiada za terminowe wprowadzanie odwołań."
+      - ustep: "**{{fakt:jednostka.prawny}}**, jako właściciel procedury, {wydaje|przygotowuje} opinie w sprawach spornych, utrzymuje wzory formularzy F-PEŁ-01 do F-PEŁ-05, uaktualnia procedurę po zmianach przepisów oraz prowadzi wykaz państw, z których dokumenty wymagają apostille lub legalizacji."
+      - ustep: "**{{fakt:jednostka.zgodnosc}}** oraz **{{fakt:pelnomocnictwo.jednostka.aml}}** {oceniają|analizują} zgłoszenia podejrzanych pełnomocnictw pod kątem ryzyka prania pieniędzy i finansowania terroryzmu oraz decydują o dalszych krokach, w tym o zgłoszeniu transakcji właściwemu organowi."
+      - ustep: "**{{fakt:jednostka.bezpieczenstwo}}** {bada|analizuje} przypadki podrobienia dokumentów i podpisów, prowadzi rejestr dokumentów zastrzeżonych i, w razie potrzeby, występuje o weryfikację do organów ścigania."
+      - ustep: "**{{fakt:pelnomocnictwo.jednostka.audyt}}** {ocenia|bada} przestrzeganie procedury w cyklach określonych w planie audytu, nie rzadziej niż {{fakt:pelnomocnictwo.okres.audyt}}."
+
+  - id: procedura-pelnomocnictwa-definicje
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: definicje
+    elementy:
+      - ustep: "W procedurze dodatkowo {stosuje się|używa się} następujących określeń:"
+        punkty:
+          - "**Mocodawca** — osoba fizyczna, osoba prawna lub jednostka organizacyjna, która {udziela|ustanawia} pełnomocnictwa;"
+          - "**Pełnomocnik** — osoba umocowana do działania w imieniu i na rzecz mocodawcy w zakresie określonym w pełnomocnictwie;"
+          - "**Pełnomocnictwo ogólne** — umocowanie obejmujące czynności zwykłego zarządu; do czynności przekraczających ten zakres wymagane jest umocowanie szczegółowe;"
+          - "**Pełnomocnictwo rodzajowe** — umocowanie do czynności określonego rodzaju, na przykład do dysponowania rachunkiem;"
+          - "**Pełnomocnictwo szczególne** — umocowanie do dokonania wskazanej czynności prawnej lub kilku wskazanych czynności;"
+          - "**Pełnomocnictwo jednorazowe** — umocowanie do wykonania jednej dyspozycji lub zawarcia jednej umowy, które {wygasa|przestaje obowiązywać} z chwilą jej wykonania;"
+          - "**Prokura** — szczególny rodzaj pełnomocnictwa udzielanego przez przedsiębiorcę podlegającego obowiązkowi wpisu do rejestru, obejmujący czynności sądowe i pozasądowe związane z prowadzeniem przedsiębiorstwa;"
+          - "**Apostille** — poświadczenie pochodzenia dokumentu urzędowego, wydawane zgodnie z konwencją haską znoszącą wymóg legalizacji zagranicznych dokumentów urzędowych;"
+          - "**Tłumaczenie przysięgłe** — tłumaczenie sporządzone lub poświadczone przez tłumacza przysięgłego wpisanego na listę prowadzoną przez ministra sprawiedliwości;"
+          - "**Wzór podpisu** — podpis złożony przez pełnomocnika lub mocodawcę w obecności pracownika Banku na karcie F-PEŁ-02, służący do porównania z podpisami na dyspozycjach;"
+          - "**Moduł pełnomocnictw** — część systemu centralnego CBS-PRZYKŁAD, w której rejestruje się zakres, limity i okres obowiązywania pełnomocnictw;"
+          - "**Karta weryfikacji** — formularz F-PEŁ-04, na którym pracownik dokumentuje wynik sprawdzenia pełnomocnictwa."
+
+  - id: procedura-pelnomocnictwa-schemat
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-schemat
+    elementy:
+      - akapit: "Poniższy schemat przedstawia ogólny przebieg postępowania z pełnomocnictwem od jego przyjęcia do wygaśnięcia. Szczegółowe zasady opisano w kolejnych punktach procedury."
+      - schemat:
+          - nazwa: "Przyjęcie dokumentu"
+            wyjasnienie: "Pracownik {przyjmuje|odbiera} pełnomocnictwo, ustala jego rodzaj i sprawdza kompletność załączników. Braki zgłasza Klientowi na piśmie."
+          - nazwa: "Weryfikacja osób"
+            wyjasnienie: "Pracownik potwierdza tożsamość mocodawcy i pełnomocnika oraz zbiera wzór podpisu. Sprawdza także, czy dokument nie został zastrzeżony."
+          - nazwa: "Ocena umocowania"
+            wyjasnienie: "Pracownik ocenia formę, zakres i okres obowiązywania pełnomocnictwa. Dokumenty zagraniczne i budzące wątpliwości przekazuje do komórki centralnej."
+          - nazwa: "Rejestracja w systemie"
+            wyjasnienie: "Pracownik rejestruje pełnomocnictwo w module pełnomocnictw wraz z zakresem i limitami. Druga osoba zatwierdza wpis."
+          - nazwa: "Wykonywanie dyspozycji"
+            wyjasnienie: "Przy każdej dyspozycji pracownik sprawdza tożsamość pełnomocnika i granice umocowania. Dyspozycje wykraczające poza zakres odrzuca."
+          - nazwa: "Wygaśnięcie umocowania"
+            wyjasnienie: "Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocnictwo w systemie. Mocodawcę informuje o skutkach."

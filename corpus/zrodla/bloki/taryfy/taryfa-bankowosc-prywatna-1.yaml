@@ -1,0 +1,317 @@
+bloki:
+  # ---------------------------------------------------------------- postanowienia ogólne
+  - id: taryfa-bankowosc-prywatna-ogolne
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Niniejsza Taryfa {dotyczy|obejmuje} Klientów obsługiwanych w ramach bankowości prywatnej, to jest osób fizycznych, które {zawarły|podpisały} z Bankiem umowę o świadczenie usług bankowości prywatnej i {utrzymują|posiadają} w Banku aktywa o łącznej wartości nie niższej niż {{fakt:limit.prywatna.prog-wejscia}}."
+      - ustep: "Każdemu Klientowi {zostaje przypisany|przydzielany jest} doradca, który {jest|pozostaje} jego głównym {punktem kontaktu|rozmówcą} w Banku. Doradca {nie pobiera|nie otrzymuje} od Klienta wynagrodzenia poza opłatami wskazanymi w Taryfie."
+      - ustep: "Do aktywów, o których mowa w niniejszej części Taryfy, {zalicza się|wlicza się} środki na rachunkach i lokatach, wartość rynkową papierów wartościowych zapisanych na rachunku papierów wartościowych prowadzonym przez Bank oraz {jednostki|tytuły uczestnictwa} funduszy inwestycyjnych nabyte za pośrednictwem Banku. Wartość aktywów {ustalana jest|jest ustalana} na koniec każdego miesiąca kalendarzowego."
+      - ustep: "Jeżeli średnia wartość aktywów Klienta w trzech kolejnych miesiącach spadnie poniżej {{fakt:limit.prywatna.prog-wejscia}}, Bank {może zaproponować|proponuje} przejście na ofertę właściwą dla segmentu {podstawowego|detalicznego}. Zmiana nie wymaga wypowiedzenia umowy i {następuje|jest dokonywana} za zgodą Klienta."
+      - akapit: "Opłaty w walutach obcych {są pobierane|pobiera się} w walucie rachunku, z którego następuje obciążenie. Jeżeli stawka została wyrażona w złotych, a rachunek prowadzony jest w walucie obcej, Bank {przelicza|dokonuje przeliczenia} opłatę po kursie z Tabeli kursów walut, o której mowa w niniejszej Taryfie."
+
+  # ---------------------------------------------------------------- Pakiet Prywatny
+  - id: taryfa-bankowosc-prywatna-opis-pakiet
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Pakiet Prywatny {jest zestawem|stanowi zestaw} usług przeznaczonym dla Klientów, którzy {zdecydowali się|wybrali możliwość} korzystania z rachunku w złotych, rachunku walutowego i karty premium na preferencyjnych zasadach. Opłata za pakiet {obejmuje|pokrywa} wskazane w Taryfie czynności w ramach limitów podanych w kolumnie „Stawka”."
+      - ustep: "Opłata miesięczna za Pakiet Prywatny nie jest pobierana w miesiącu, w którym średnie saldo środków Klienta na rachunkach i lokatach w Banku w poprzednim miesiącu {wyniosło|było równe} co najmniej {{fakt:limit.prywatna.pakiet-prywatny-saldo}}."
+      - ustep: "Czynności przekraczające zakres pakietu {są rozliczane|rozlicza się} według stawek z części Taryfy dotyczących danego rodzaju usługi."
+
+  - id: taryfa-bankowosc-prywatna-pakiet-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-pakiet-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Opłata za {prowadzenie|obsługę} Pakietu Prywatnego[^1]", stawka: "{{fakt:oplata.prywatna.pakiet-prywatny-miesieczna}}", tryb: "miesięcznie" }
+          - { usluga: "Dodatkowy współposiadacz rachunku w ramach pakietu", stawka: "{{fakt:oplata.prywatna.pakiet-wspolposiadacz}}", tryb: "miesięcznie" }
+          - usluga: "Opieka {dedykowanego doradcy|doradcy przypisanego do Klienta}"
+            stawka: "bez opłat"
+            tryb: "w ramach pakietu"
+            podpozycje:
+              - { usluga: "{Spotkanie|Wizyta} w {oddziale|placówce} Banku", stawka: "bez opłat", tryb: "za spotkanie" }
+              - { usluga: "{Spotkanie|Wizyta} poza placówką Banku[^2]", stawka: "{{fakt:oplata.prywatna.wizyta-poza-oddzialem}}", tryb: "za spotkanie" }
+              - { usluga: "Konsultacja ponad limit określony w pakiecie[^3]", stawka: "{{fakt:oplata.prywatna.doradca-konsultacja-dodatkowa}}", tryb: "za godzinę" }
+          - { usluga: "Prowadzenie rachunku w złotych w ramach pakietu", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie jednego rachunku walutowego w ramach pakietu", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wydanie i obsługa karty debetowej premium w ramach pakietu", stawka: "bez opłat", tryb: "rocznie" }
+          - { usluga: "Przelewy krajowe w złotych {zlecane|składane} w bankowości elektronicznej", stawka: "bez opłat", tryb: "za przelew" }
+          - { usluga: "Wypłaty gotówki z bankomatów Banku", stawka: "bez opłat", tryb: "za wypłatę" }
+          - { usluga: "Powiadomienia SMS o operacjach na rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za wyciąg" }
+    przypisy:
+      1: "Opłata nie jest pobierana, jeżeli średnie saldo środków w poprzednim miesiącu wyniosło co najmniej {{fakt:limit.prywatna.pakiet-prywatny-saldo}}."
+      2: "Spotkanie poza placówką odbywa się na terenie {kraju|Rzeczypospolitej Polskiej}, po uzgodnieniu terminu z doradcą."
+      3: "Limit konsultacji dodatkowych określa umowa o świadczenie usług bankowości prywatnej."
+
+  # ---------------------------------------------------------------- Pakiet Prywatny Plus
+  - id: taryfa-bankowosc-prywatna-opis-plus
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Pakiet Prywatny Plus {rozszerza|uzupełnia} zakres Pakietu Prywatnego o usługi dodatkowe, w szczególności rachunki walutowe w wielu walutach, kartę premium plus oraz {pierwszeństwo|priorytet} w obsłudze zleceń składanych telefonicznie. Z pakietu mogą korzystać Klienci, którzy {spełniają|wypełniają} warunki określone w umowie."
+      - ustep: "Opłata miesięczna za Pakiet Prywatny Plus nie jest pobierana, jeżeli średnie saldo aktywów Klienta w poprzednim miesiącu {wyniosło|przekroczyło lub było równe} {{fakt:limit.prywatna.pakiet-plus-saldo}}."
+      - ustep: "Klient może w każdym czasie {zmienić|przejść z} Pakiet Prywatny Plus na Pakiet Prywatny, składając dyspozycję u doradcy. Zmiana {wchodzi w życie|następuje} z początkiem kolejnego miesiąca kalendarzowego."
+
+  - id: taryfa-bankowosc-prywatna-plus-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-plus-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Opłata za {prowadzenie|obsługę} Pakietu Prywatnego Plus[^1]", stawka: "{{fakt:oplata.prywatna.pakiet-plus-miesieczna}}", tryb: "miesięcznie" }
+          - { usluga: "Prowadzenie rachunków walutowych w ramach pakietu (bez ograniczenia liczby walut)", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wydanie i obsługa karty premium plus w ramach pakietu", stawka: "bez opłat", tryb: "rocznie" }
+          - { usluga: "Wydanie i obsługa jednej karty dodatkowej do rachunku", stawka: "bez opłat", tryb: "rocznie" }
+          - usluga: "Dostęp do saloników lotniskowych[^2]"
+            stawka: "w ramach pakietu"
+            tryb: "za wejście"
+            podpozycje:
+              - { usluga: "Wejście Klienta w ramach limitu pakietu", stawka: "bez opłat", tryb: "za wejście" }
+              - { usluga: "Wejście Klienta ponad limit pakietu", stawka: "{{fakt:oplata.prywatna.salonik-wejscie}}", tryb: "za wejście" }
+              - { usluga: "Wejście osoby towarzyszącej", stawka: "{{fakt:oplata.prywatna.salonik-wejscie}}", tryb: "za wejście" }
+          - { usluga: "Przelewy SEPA {zlecane|składane} w bankowości elektronicznej", stawka: "bez opłat", tryb: "za przelew" }
+          - { usluga: "Wymiana walut po kursie negocjowanym[^3]", stawka: "marża {{fakt:kurs.prywatna.marza-negocjowana}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Przelewy natychmiastowe w {złotych|walucie polskiej}", stawka: "bez opłat", tryb: "za przelew" }
+          - { usluga: "Zlecenia telefoniczne przyjmowane przez linię dedykowaną dla Klientów bankowości prywatnej", stawka: "bez opłat", tryb: "za zlecenie" }
+          - { usluga: "Ubezpieczenie podróżne {w zakresie określonym w umowie ubezpieczenia|zgodnie z warunkami ubezpieczenia}", stawka: "w ramach pakietu", tryb: "rocznie" }
+    przypisy:
+      1: "Opłata nie jest pobierana, jeżeli średnie saldo aktywów w poprzednim miesiącu wyniosło co najmniej {{fakt:limit.prywatna.pakiet-plus-saldo}}."
+      2: "Limit wejść w roku kalendarzowym określa regulamin karty premium plus."
+      3: "Kurs negocjowany stosuje się do transakcji o wartości co najmniej {{fakt:limit.prywatna.kurs-negocjowany-minimum}}; poniżej tej kwoty stosuje się marżę {{fakt:kurs.marza-przeliczen}}."
+
+  # ---------------------------------------------------------------- Rachunki
+  - id: taryfa-bankowosc-prywatna-opis-rachunki
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Klient bankowości prywatnej może {prowadzić|posiadać} rachunki w złotych oraz w walutach obcych, których wykaz {jest dostępny|podaje} Tabela kursów walut. Rachunki walutowe {nie są|nie stanowią} rachunków oszczędnościowych i nie mogą być wykorzystywane do rozliczeń karty w walucie, której Bank nie obsługuje."
+      - ustep: "Opłaty za rachunek prowadzony poza pakietem {są pobierane|pobiera się} miesięcznie z dołu, w ostatnim dniu roboczym miesiąca. W miesiącu otwarcia lub zamknięcia rachunku opłatę pobiera się w pełnej wysokości."
+
+  - id: taryfa-bankowosc-prywatna-rachunki-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rachunki-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Otwarcie|Założenie} rachunku w złotych", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie rachunku w złotych poza pakietem", stawka: "{{fakt:oplata.prowadzenie-rachunku}}", tryb: "miesięcznie" }
+          - { usluga: "{Otwarcie|Założenie} rachunku walutowego", stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-otwarcie}}", tryb: "jednorazowo" }
+          - usluga: "Prowadzenie rachunku walutowego poza pakietem[^1]"
+            stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-prowadzenie}}"
+            tryb: "miesięcznie"
+            podpozycje:
+              - { usluga: "rachunek w euro (EUR)", stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie" }
+              - { usluga: "rachunek w dolarach amerykańskich (USD)", stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie" }
+              - { usluga: "rachunek we frankach szwajcarskich (CHF) lub funtach szterlingach (GBP)", stawka: "{{fakt:oplata.prywatna.rachunek-walutowy-prowadzenie}}", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie środków na rachunku w złotych", stawka: "{{fakt:oprocentowanie.rachunek-osobisty}} w stosunku rocznym", tryb: "rocznie" }
+          - { usluga: "Wpłata gotówki w {oddziale|placówce} Banku", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za wpłatę" }
+          - { usluga: "Wypłata gotówki w kasie, na podstawie zapowiedzi[^2]", stawka: "bez opłat", tryb: "za wypłatę" }
+          - { usluga: "Zlecenie stałe", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za zlecenie" }
+          - { usluga: "Polecenie zapłaty", stawka: "{{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}}", tryb: "za realizację" }
+          - { usluga: "Ustanowienie pełnomocnictwa do rachunku", stawka: "{{fakt:oplata.rachunek-osobisty.pelnomocnictwo}}", tryb: "jednorazowo" }
+          - { usluga: "Zamknięcie rachunku", stawka: "{{fakt:oplata.rachunek-osobisty.zamkniecie}}", tryb: "jednorazowo" }
+    przypisy:
+      1: "W przypadku Klientów korzystających z pakietów opłatę pobiera się wyłącznie od rachunków ponad liczbę wskazaną w opisie pakietu."
+      2: "Wypłatę gotówki przekraczającą {{fakt:limit.rachunek-osobisty.wyplata-awizo}} należy zapowiedzieć doradcy z wyprzedzeniem {{fakt:termin.prywatna.sejf-awizo}}."
+
+  # ---------------------------------------------------------------- Przelewy
+  - id: taryfa-bankowosc-prywatna-opis-przelewy
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Przelewy {zlecane|składane} w bankowości elektronicznej oraz za pośrednictwem doradcy {są realizowane|realizuje się} zgodnie z regulaminem rachunku i terminami w nim określonymi. Przelew zagraniczny {obejmuje|oznacza} przelew w walucie obcej oraz przelew w złotych na rachunek prowadzony poza terytorium Rzeczypospolitej Polskiej."
+      - ustep: "Prowizja od przelewu zagranicznego {jest naliczana|naliczana jest} od kwoty przelewu i wynosi {{fakt:oplata.prywatna.przelew-swift-prowizja}}, nie mniej niż {{fakt:oplata.prywatna.przelew-swift-minimum}} i nie więcej niż {{fakt:oplata.prywatna.przelew-swift-maksimum}}."
+      - ustep: "Opłaty banków pośredniczących i banku odbiorcy {obciążają|pokrywa} zleceniodawcę albo odbiorcę, zależnie od wskazanej opcji kosztowej. Bank nie ma wpływu na wysokość tych opłat."
+
+  - id: taryfa-bankowosc-prywatna-przelewy-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-przelewy-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Przelew krajowy w złotych"
+            stawka: "bez opłat"
+            tryb: "za przelew"
+            podpozycje:
+              - { usluga: "{zlecony|złożony} w bankowości elektronicznej lub mobilnej", stawka: "bez opłat", tryb: "za przelew" }
+              - { usluga: "{zlecony|złożony} w {oddziale|placówce} Banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za przelew" }
+              - { usluga: "{zlecony|złożony} za pośrednictwem doradcy", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za przelew" }
+          - { usluga: "Przelew natychmiastowy", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za przelew" }
+          - { usluga: "Przelew w ramach Banku", stawka: "bez opłat", tryb: "za przelew" }
+          - { usluga: "Przelew SEPA w euro", stawka: "{{fakt:oplata.prywatna.przelew-sepa}}", tryb: "za przelew" }
+          - usluga: "Przelew zagraniczny w opcji kosztowej SHA[^1]"
+            stawka: "{{fakt:oplata.prywatna.przelew-swift-prowizja}}, min. {{fakt:oplata.prywatna.przelew-swift-minimum}}, maks. {{fakt:oplata.prywatna.przelew-swift-maksimum}}"
+            tryb: "od kwoty przelewu"
+          - { usluga: "Przelew zagraniczny w opcji kosztowej OUR", stawka: "{{fakt:oplata.prywatna.przelew-swift-prowizja}}, min. {{fakt:oplata.prywatna.przelew-swift-minimum}}, maks. {{fakt:oplata.prywatna.przelew-swift-maksimum}}, powiększona o opłaty banków pośredniczących", tryb: "od kwoty przelewu" }
+          - { usluga: "Dopłata za realizację przelewu zagranicznego w trybie pilnym[^2]", stawka: "{{fakt:oplata.prywatna.przelew-pilny-doplata}}", tryb: "za przelew" }
+          - { usluga: "Przelew przychodzący z zagranicy", stawka: "{{fakt:oplata.prywatna.przelew-przychodzacy-swift}}", tryb: "za przelew" }
+          - { usluga: "Wymiana walut po kursie z Tabeli kursów walut Banku", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Zlecenie wymiany walut po kursie negocjowanym[^3]", stawka: "marża {{fakt:kurs.prywatna.marza-negocjowana}}", tryb: "od kwoty transakcji" }
+          - { usluga: "Dzienny limit przelewów zlecanych w kanałach elektronicznych", stawka: "{{fakt:limit.przelew-dzienny-domyslny}}", tryb: "dziennie" }
+    przypisy:
+      1: "W opcji SHA koszty banku zleceniodawcy ponosi zleceniodawca, a koszty banku odbiorcy ponosi odbiorca."
+      2: "Przelew w trybie pilnym jest realizowany z datą waluty dnia zlecenia, jeżeli zlecenie wpłynie przed godziną graniczną określoną w regulaminie rachunku."
+      3: "Kurs negocjowany ustala dealer Banku na wniosek Klienta, przy transakcjach od {{fakt:limit.prywatna.kurs-negocjowany-minimum}}."
+
+  # ---------------------------------------------------------------- Karty premium
+  - id: taryfa-bankowosc-prywatna-opis-karty
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Karty premium {są wydawane|wydaje się} Klientom bankowości prywatnej jako karty debetowe i karty kredytowe, w wariantach „premium” oraz „premium plus”. Opłaty za karty pobierane są z rachunku wskazanego w umowie, a w przypadku kart kredytowych — z rachunku karty."
+      - ustep: "Dodatkowe karty wydawane do rachunku {podlegają|są objęte} opłatami według stawek dla kart dodatkowych. Karta może być wydana wyłącznie osobie {wskazanej|wyznaczonej} przez posiadacza rachunku {pisemnie|w formie określonej w umowie}."
+      - ustep: "{Limity|Granice} transakcji kartą ustala się w umowie o kartę. Limity dzienne wynoszą, jeżeli posiadacz karty nie ustalił {niższych|mniejszych}, {{fakt:limit.prywatna.karta-dzienny-gotowkowy}} dla wypłat gotówki oraz {{fakt:limit.prywatna.karta-dzienny-bezgotowkowy}} dla transakcji bezgotówkowych."
+
+  - id: taryfa-bankowosc-prywatna-karty-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-karty-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Wydanie|Wystawienie} karty debetowej premium", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Obsługa karty debetowej premium[^1]", stawka: "{{fakt:oplata.prywatna.karta-premium-roczna}}", tryb: "rocznie" }
+          - { usluga: "Obsługa karty debetowej premium plus[^1]", stawka: "{{fakt:oplata.prywatna.karta-premium-plus-roczna}}", tryb: "rocznie" }
+          - { usluga: "{Obsługa|Utrzymanie} karty dodatkowej", stawka: "{{fakt:oplata.prywatna.karta-dodatkowa-roczna}}", tryb: "rocznie" }
+          - { usluga: "Obsługa karty kredytowej premium (karta główna)", stawka: "{{fakt:oplata.karta.roczna}}", tryb: "rocznie" }
+          - { usluga: "Obsługa karty kredytowej premium (karta dodatkowa)", stawka: "{{fakt:oplata.karta.dodatkowa-roczna}}", tryb: "rocznie" }
+          - { usluga: "Wydanie duplikatu karty", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Zastrzeżenie karty", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "jednorazowo" }
+          - { usluga: "Dostarczenie karty kurierem na {wskazany|podany przez Klienta} adres", stawka: "{{fakt:oplata.prywatna.karta-kurier}}", tryb: "za przesyłkę" }
+          - { usluga: "Awaryjne wydanie karty lub gotówki za granicą[^2]", stawka: "{{fakt:oplata.prywatna.karta-awaryjna-zagranica}}", tryb: "jednorazowo" }
+          - { usluga: "Wypłata gotówki w bankomacie {innego banku|obcym} w kraju", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za wypłatę" }
+          - { usluga: "Wypłata gotówki w bankomacie za granicą", stawka: "{{fakt:oplata.prywatna.karta-gotowka-zagranica-prowizja}}, min. {{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "od kwoty wypłaty" }
+          - { usluga: "Wypłata gotówki kartą kredytową", stawka: "{{fakt:oplata.karta.gotowka-prowizja}}, min. {{fakt:oplata.karta.gotowka-minimum}}", tryb: "od kwoty wypłaty" }
+          - { usluga: "Zmiana kodu PIN", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za zmianę" }
+    przypisy:
+      1: "Opłata nie jest pobierana, jeżeli karta jest wydana w ramach pakietu, a w poprzednich dwunastu miesiącach wartość transakcji bezgotówkowych wyniosła co najmniej {{fakt:limit.prywatna.pakiet-prywatny-saldo}}."
+      2: "Awaryjne wydanie karty lub gotówki jest realizowane za pośrednictwem sieci współpracującej z Bankiem; warunki i czas realizacji podaje infolinia {{fakt:kontakt.infolinia-zagranica}}."
+
+  # ---------------------------------------------------------------- Lokaty
+  - id: taryfa-bankowosc-prywatna-opis-lokaty
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach określonych w regulaminie lokat oraz lokaty negocjowane, których oprocentowanie ustalane jest indywidualnie. Lokata negocjowana {wymaga|jest dostępna przy} kwocie nie niższej niż {{fakt:limit.lokata.negocjowana}}."
+      - ustep: "Oprocentowanie lokat {jest stałe|nie ulega zmianie} w okresie umownym. Odsetki kapitalizowane są {{fakt:lokata.kapitalizacja}}, a do ich obliczania przyjmuje się rok liczący {{fakt:lokata.rok-odsetkowy}}."
+      - ustep: "Odsetki od lokat podlegają opodatkowaniu na zasadach określonych w przepisach podatkowych. Bank {pobiera|potrąca} podatek od dochodów z odsetek i odprowadza go do właściwego urzędu skarbowego."
+
+  - id: taryfa-bankowosc-prywatna-lokaty-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-lokaty-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Założenie|Otwarcie} lokaty terminowej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - usluga: "Oprocentowanie lokaty „{{fakt:lokata.nazwa-lokata-klasyczna}}”[^1]"
+            stawka: "wg poniższych stawek"
+            tryb: "rocznie"
+            podpozycje:
+              - { usluga: "okres 1 miesiąca", stawka: "{{fakt:oprocentowanie.lokata-1m}}", tryb: "rocznie" }
+              - { usluga: "okres 3 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-3m}}", tryb: "rocznie" }
+              - { usluga: "okres 6 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-6m}}", tryb: "rocznie" }
+              - { usluga: "okres 12 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-12m}}", tryb: "rocznie" }
+              - { usluga: "okres 24 miesięcy", stawka: "{{fakt:oprocentowanie.lokata-24m}}", tryb: "rocznie" }
+          - { usluga: "Oprocentowanie lokaty „{{fakt:lokata.nazwa-lokata-negocjowana}}”[^2]", stawka: "wg indywidualnej oferty", tryb: "rocznie" }
+          - { usluga: "Minimalna kwota lokaty „{{fakt:lokata.nazwa-lokata-negocjowana}}”", stawka: "{{fakt:limit.lokata.negocjowana}}", tryb: "jednorazowo" }
+          - { usluga: "Oprocentowanie środków przy zerwaniu lokaty przed terminem", stawka: "{{fakt:oprocentowanie.lokata.zerwanie}}", tryb: "rocznie" }
+          - { usluga: "Opłata za zerwanie lokaty {przed terminem|przed upływem okresu umownego}", stawka: "{{fakt:oplata.lokata.zerwanie}}", tryb: "jednorazowo" }
+          - { usluga: "Oprocentowanie po automatycznym odnowieniu lokaty", stawka: "{{fakt:oprocentowanie.lokata.odnowienie}}", tryb: "rocznie" }
+          - { usluga: "Wypłata środków z lokaty w {gotówce|kasie placówki}", stawka: "{{fakt:oplata.lokata.wyplata-gotowkowa}}", tryb: "za wypłatę" }
+          - { usluga: "{Wystawienie|Sporządzenie} potwierdzenia założenia lokaty", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "za dokument" }
+          - { usluga: "Oprocentowanie rachunku oszczędnościowego", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy}}", tryb: "rocznie" }
+    przypisy:
+      1: "Stawka obowiązuje przy kwocie lokaty w przedziale od {{fakt:limit.lokata.minimalna}} do {{fakt:limit.lokata.maksymalna}}."
+      2: "Oprocentowanie ustala się na wniosek Klienta w dniu zawarcia umowy lokaty i potwierdza na trwałym nośniku w terminie {{fakt:termin.lokata.potwierdzenie-umowy}}."
+
+  # ---------------------------------------------------------------- Rachunek papierów wartościowych
+  - id: taryfa-bankowosc-prywatna-opis-rpw
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Bank prowadzi dla Klientów rachunki papierów wartościowych wraz z rachunkami pieniężnymi służącymi do ich obsługi oraz świadczy usługi powiernicze polegające na przechowywaniu i rozliczaniu instrumentów finansowych. Opłaty za usługi powiernicze {nie obejmują|nie zawierają} opłat pobieranych przez izby rozliczeniowe, depozytariuszy zagranicznych i organizatorów rynków."
+      - ustep: "Opłata za prowadzenie rachunku papierów wartościowych jest naliczana od średniej wartości instrumentów finansowych zapisanych na rachunku w danym kwartale, według wyceny na koniec każdego miesiąca, i pobierana z dołu {w pierwszym tygodniu|do siódmego dnia} kolejnego kwartału."
+      - ustep: "Prowizje od zleceń kupna i sprzedaży instrumentów finansowych {określa|zawiera} odrębna tabela prowizji udostępniana Klientowi przy zawarciu umowy o prowadzenie rachunku papierów wartościowych."
+
+  - id: taryfa-bankowosc-prywatna-rpw-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-rpw-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Otwarcie|Założenie} rachunku papierów wartościowych", stawka: "{{fakt:oplata.prywatna.rpw-otwarcie}}", tryb: "jednorazowo" }
+          - { usluga: "Prowadzenie rachunku papierów wartościowych[^1]", stawka: "{{fakt:oplata.prywatna.rpw-prowadzenie-roczna}}, min. {{fakt:oplata.prywatna.rpw-prowadzenie-minimum}} kwartalnie", tryb: "rocznie od wartości aktywów" }
+          - usluga: "Rozliczenie transakcji na instrumentach finansowych"
+            stawka: "wg poniższych stawek"
+            tryb: "za rozliczenie"
+            podpozycje:
+              - { usluga: "{na rynku krajowym|w obrocie krajowym}", stawka: "{{fakt:oplata.prywatna.rpw-rozliczenie-krajowe}}", tryb: "za rozliczenie" }
+              - { usluga: "{na rynkach zagranicznych|w obrocie zagranicznym}[^2]", stawka: "{{fakt:oplata.prywatna.rpw-rozliczenie-zagraniczne}}", tryb: "za rozliczenie" }
+          - { usluga: "Przeniesienie instrumentów finansowych do innego podmiotu prowadzącego rachunek", stawka: "{{fakt:oplata.prywatna.rpw-przeniesienie}}", tryb: "za instrument" }
+          - { usluga: "Obsługa wypłaty dywidendy lub odsetek od obligacji", stawka: "{{fakt:oplata.prywatna.rpw-dywidenda-prowizja}}, min. 5,00 zł", tryb: "od kwoty wypłaty" }
+          - { usluga: "Przyjęcie zlecenia nabycia lub umorzenia jednostek funduszy inwestycyjnych", stawka: "{{fakt:oplata.prywatna.fundusz-dystrybucja-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "Zaświadczenie o stanie rachunku papierów wartościowych[^3]", stawka: "{{fakt:oplata.prywatna.rpw-zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Zablokowanie instrumentów finansowych na rzecz osoby trzeciej", stawka: "{{fakt:oplata.prywatna.rpw-zaswiadczenie}}", tryb: "za dyspozycję" }
+          - { usluga: "{Zestawienie|Informacja} dla celów podatkowych (roczne)", stawka: "bez opłat", tryb: "rocznie" }
+    przypisy:
+      1: "Opłata jest naliczana kwartalnie w wysokości jednej czwartej stawki rocznej, nie mniej niż minimum kwartalne."
+      2: "Do stawki Bank dolicza opłaty depozytariusza zagranicznego, o ile je poniósł."
+      3: "Zaświadczenie wydaje się w terminie {{fakt:termin.zwrot-oplat}} od dnia złożenia wniosku; stawkę stosuje się odrębnie do każdego rachunku."
+
+  # ---------------------------------------------------------------- Usługi dodatkowe
+  - id: taryfa-bankowosc-prywatna-opis-uslugi
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Usługi dodatkowe {obejmują|dotyczą} w szczególności wynajem skrytek sejfowych, usługi dokumentowe oraz usługi organizacyjne świadczone Klientom na ich zlecenie, takie jak rezerwacje, organizacja podróży i wydarzeń. Usługi organizacyjne {są realizowane|realizuje się} przez podmioty współpracujące z Bankiem; Bank pośredniczy w ich zleceniu, a koszty usługi podmiotu trzeciego ponosi Klient."
+      - ustep: "Skrytka sejfowa jest {wynajmowana|oddawana do używania} na podstawie odrębnej umowy zawieranej na okres roku. Wysokość opłaty zależy od rozmiaru skrytki. Klient otrzymuje {dwa klucze|dwa egzemplarze kluczy}, a za każdy z nich wnosi kaucję {zwrotną|podlegającą zwrotowi}."
+      - ustep: "Zawartość skrytki jest ubezpieczona na kwotę do {{fakt:limit.prywatna.sejf-ubezpieczenie}}. Bank nie {bada|sprawdza} zawartości skrytki."
+
+  - id: taryfa-bankowosc-prywatna-uslugi-wymagane
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: pozycje-prywatna-uslugi-wymagane
+    elementy:
+      - pozycje-taryfy:
+          - usluga: "Wynajem skrytki sejfowej[^1]"
+            stawka: "wg poniższych stawek"
+            tryb: "rocznie"
+            podpozycje:
+              - { usluga: "skrytka mała", stawka: "{{fakt:oplata.prywatna.sejf-maly}}", tryb: "rocznie" }
+              - { usluga: "skrytka średnia", stawka: "{{fakt:oplata.prywatna.sejf-sredni}}", tryb: "rocznie" }
+              - { usluga: "skrytka duża", stawka: "{{fakt:oplata.prywatna.sejf-duzy}}", tryb: "rocznie" }
+          - { usluga: "Kaucja {zwrotna|podlegająca zwrotowi} za klucz do skrytki", stawka: "{{fakt:oplata.prywatna.sejf-kaucja}}", tryb: "za klucz" }
+          - { usluga: "Wymiana zamka w przypadku utraty klucza", stawka: "{{fakt:oplata.prywatna.sejf-wymiana-zamka}}", tryb: "jednorazowo" }
+          - { usluga: "Dostęp do skrytki poza godzinami pracy placówki[^2]", stawka: "{{fakt:oplata.prywatna.sejf-dostep-dodatkowy}}", tryb: "za wizytę" }
+          - { usluga: "Realizacja zlecenia concierge (rezerwacje, organizacja podróży lub wydarzeń)[^3]", stawka: "od {{fakt:oplata.prywatna.concierge-zlecenie}}", tryb: "za zlecenie" }
+          - { usluga: "{Doręczenie|Dostarczenie} dokumentów kurierem na wskazany adres", stawka: "{{fakt:oplata.prywatna.doreczenie-kurierskie-dokumentow}}", tryb: "za przesyłkę" }
+          - { usluga: "Zaświadczenie o posiadaniu rachunku i saldzie {środków|zgromadzonych środków}", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Zaświadczenie o saldzie na rachunku walutowym", stawka: "{{fakt:oplata.prywatna.zaswiadczenie-saldo-walutowe}}", tryb: "za dokument" }
+          - { usluga: "Opinia bankowa", stawka: "{{fakt:oplata.prywatna.opinia-bankowa}}", tryb: "za dokument" }
+          - { usluga: "Potwierdzenie sald dla biegłego rewidenta", stawka: "{{fakt:oplata.prywatna.potwierdzenie-audytorskie}}", tryb: "za dokument" }
+          - { usluga: "{Duplikat|Odpis} umowy", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument" }
+    przypisy:
+      1: "Opłatę pobiera się z góry za cały rok, w dniu zawarcia umowy najmu, a w latach kolejnych — w rocznicę jej zawarcia."
+      2: "Jeżeli Klient nie zgłosi wizyty w terminie {{fakt:termin.prywatna.sejf-awizo}} przed jej planowanym terminem, Bank może odmówić dostępu poza godzinami pracy."
+      3: "Stawka obejmuje wyłącznie pośrednictwo Banku; koszty usługi świadczonej przez podmiot trzeci Klient pokrywa odrębnie."
+
+  # ---------------------------------------------------------------- Objaśnienia
+  - id: taryfa-bankowosc-prywatna-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-bankowosc-prywatna]
+    kategoria: opis-prywatna
+    elementy:
+      - akapit: "Użyte w Taryfie określenia {oznaczają|mają następujące znaczenie}: **doradca** — pracownik Banku przypisany do Klienta bankowości prywatnej; **aktywa** — suma środków i instrumentów finansowych Klienta wskazanych w części „Postanowienia ogólne”; **średnie saldo** — średnia arytmetyczna sald z końca każdego dnia kalendarzowego danego miesiąca."
+      - ustep: "Zaległe opłaty z tytułu usług dodatkowych, w tym zaległą opłatę za skrytkę sejfową trwającą dłużej niż {{fakt:termin.prywatna.sejf-zaleglosc}}, Bank {może|ma prawo} potrącić z rachunków Klienta. Po upływie tego terminu Bank {jest uprawniony|może} wypowiedzieć umowę najmu skrytki."
+      - ustep: "Pytania dotyczące Taryfy można {kierować|zgłaszać} do doradcy lub na infolinię pod numerem {{fakt:kontakt.infolinia}}, czynną {{fakt:kontakt.godziny-infolinii}}."
