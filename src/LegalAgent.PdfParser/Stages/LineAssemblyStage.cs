@@ -492,13 +492,28 @@ public sealed class LineAssemblyStage : IPipelineStage
             }
         }
 
+        // The leading is the distance to the next line below in the same column (horizontally overlapping): lines of two
+        // columns with offset baselines interleave top to bottom.
         var distances = new List<double>();
         foreach (List<(LayoutLine Line, double Size)> lines in perPage)
         {
             for (int i = 0; i + 1 < lines.Count; i++)
             {
                 (LayoutLine a, double sa) = lines[i];
-                (LayoutLine b, double sb) = lines[i + 1];
+                int j = i + 1;
+                while (j < lines.Count
+                    && (lines[j].Line.Box.Right <= a.Box.Left || lines[j].Line.Box.Left >= a.Box.Right)
+                    && lines[j].Line.Baseline - a.Baseline <= bodySize * MaxLeadingInFontSizes)
+                {
+                    j++;
+                }
+
+                if (j == lines.Count)
+                {
+                    continue;
+                }
+
+                (LayoutLine b, double sb) = lines[j];
                 if (a.Zone != LineZone.Body || b.Zone != LineZone.Body || sa != bodySize || sb != bodySize)
                 {
                     continue;
