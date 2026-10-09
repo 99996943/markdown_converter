@@ -11,8 +11,10 @@ preambuła (albo preambuła = bloki fragmentu wstępu), jedna `Section` z tym sa
 przypisy części (R5), `Children = []`. Renderujemy go publicznym `IMarkdownRenderer.Render` z
 `RenderingOptions { PageMarkers = false }` (pozostałe opcje jak w konwersji). `SkippedPageBlock` nie
 trafia do fragmentów (jego komentarz nie jest tekstem PDF). Gdy część zaczyna się od pozycji
-zagnieżdżonej listy (R3), renderujemy ją jako listę głębokości 0, a każdą niepustą linię poprzedzamy
-`2 × głębokość` spacjami — dokładnie wcięciem, którego używa renderer.
+zagnieżdżonej listy (R3), jej pozostałe pozycje każdego poziomu są osobnymi `ListBlock`-ami (od
+najgłębszego) renderowanymi od kolumny 0 — bez wcięcia, bo wcięcie ≥ 4 spacji na początku treści
+CommonMark czyta jako blok kodu (spec FR-222, doprecyzowanie z T006); zagnieżdżenie wewnątrz pozycji
+zostaje, a położenie części opisują `listLabels`.
 
 **Uzasadnienie**: renderer jest czystą funkcją modelu; nie trzeba zmieniać jego API ani wyniku (FR-204,
 SC-046). Heading, escaping, przypisy i tabele GFM wychodzą identyczne jak w pliku `.md`, więc treść
@@ -48,7 +50,7 @@ UTF-16 wyrenderowanej treści, łącznie z nagłówkiem i przypisami części):
      limit, tworzy część z `exceedsLimit = true` (FR-224);
    - `ListBlock` — rozkładamy na pozycje najwyższego poziomu; pozycja, która się nie mieści, jest
      rozkładana rekurencyjnie: jej własny tekst (z akapitami-dziećmi) jest atomem, a jej zagnieżdżone
-     listy — kolejnymi pozycjami. Część zaczynająca się od pozycji zagnieżdżonej ma wcięcie wg R1, a jej
+     listy — kolejnymi pozycjami. Część zaczynająca się od pozycji zagnieżdżonej jest bez wcięcia (R1), a jej
      `listLabels` to etykiety pozycji i jej przodków (FR-241);
    - `TableBlock` — atomami są wiersze; każda część tabeli zaczyna się od `Header` (jeśli jest), FR-223.
      Tabela zastępcza (`IsFallback`) tak samo.

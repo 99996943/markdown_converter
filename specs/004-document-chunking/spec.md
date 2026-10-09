@@ -38,6 +38,7 @@ błędy struktury poprawia się w parserze, nie w podziale.
 - Q: Jaki ma być domyślny limit długości fragmentu (znaki treści Markdown)? → A: 2000 znaków (FR-221).
 - Q: Czy kolejne części jednostki podzielonej na kilka fragmentów zaczynają się od nagłówka tej jednostki? → A: Tak, każda część zaczyna się od własnego nagłówka jednostki (oryginalny tekst, powtarzany jak wiersz nagłówka tabeli); nagłówki sekcji nadrzędnych i tytuł dokumentu tylko w metadanych (FR-231).
 - Q: Czy oznaczenie do cytatu zawiera etykiety pozycji listy dosłownie, czy gotowy cytat w formie „§ 13 ust. 3 pkt 2”? → A: Dosłownie: oznaczenie jednostki i oryginalne etykiety pozycji (np. „3.”, „2)”); sformułowanie cytatu należy do aplikacji RAG (FR-241).
+- (implementacja T006) Część zaczynająca się od pozycji zagnieżdżonej listy nie zachowuje wcięcia: wcięcie ≥ 4 spacji na początku treści CommonMark czyta jako blok kodu; położenie pozycji opisują `listLabels` (FR-222).
 - Q: Czy każda linia pliku JSONL zawiera pełne metadane dokumentu? → A: Tak, każda linia jest samodzielna: wersja schematu, pełne metadane dokumentu i fragment (FR-251).
 
 ## User Scenarios & Testing *(mandatory)*
@@ -237,7 +238,9 @@ wyniku względem kontraktu.
   granicach bloków (akapitów, list, tabel), pozycji listy lub wierszy tabeli, tak by każda część
   możliwie najlepiej wykorzystywała limit. Podział NIE MOŻE przeciąć tekstu pozycji listy, wiersza
   tabeli ani akapitu. Lista może być dzielona między pozycjami dowolnego poziomu zagnieżdżenia;
-  część zaczynająca się od pozycji zagnieżdżonej zachowuje jej oryginalne wcięcie i etykietę.
+  część zaczynająca się od pozycji zagnieżdżonej zaczyna się bez wcięcia (wcięcie o 4 spacje byłoby w
+  Markdown blokiem kodu), zachowuje zagnieżdżenie względne i oryginalną etykietę, a jej położenie w liście
+  opisują etykiety w metadanych (FR-241).
 - **FR-223**: Tabela dłuższa niż limit MUSI być dzielona po całych wierszach; jeśli tabela ma wiersz
   nagłówka, każda część tabeli MUSI zaczynać się od tego wiersza nagłówka.
 - **FR-224**: Element niepodzielny dłuższy niż limit (FR-222) MUSI trafić w całości do jednego
