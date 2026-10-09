@@ -58,6 +58,27 @@ public static class Program
         ArgumentNullException.ThrowIfNull(environment);
         ArgumentNullException.ThrowIfNull(configDirectory);
 
+        try
+        {
+            return await RunCoreAsync(stdin, stdout, stderr, environment, configDirectory, handler, cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception e) when (e is not OperationCanceledException)
+        {
+            await stderr.WriteLineAsync($"Błąd nieoczekiwany: {e.Message}").ConfigureAwait(false);
+            return 1;
+        }
+    }
+
+    private static async Task<int> RunCoreAsync(
+        TextReader stdin,
+        TextWriter stdout,
+        TextWriter stderr,
+        IReadOnlyDictionary<string, string?> environment,
+        string configDirectory,
+        HttpMessageHandler? handler,
+        CancellationToken cancellationToken)
+    {
         DownloadOptions options = AppSettings.Load(configDirectory, environment).ToOptions();
         using HttpClient httpClient = CreateHttpClient(handler);
         var downloader = new DocumentDownloader(httpClient, options);
@@ -70,7 +91,7 @@ public static class Program
             return 2;
         }
 
-        var report = new ConsoleReport(stdout, RequiredCount);
+        var report = new ConsoleReport(stdout, stderr, RequiredCount);
         DownloadRun run = await downloader.DownloadAllAsync(addresses, report, cancellationToken).ConfigureAwait(false);
         report.Summary(run, Path.GetFullPath(options.OutputDirectory));
         return run.AllSucceeded ? 0 : 3;

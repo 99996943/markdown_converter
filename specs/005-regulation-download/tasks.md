@@ -124,8 +124,8 @@ niekompletnych plików, kod 3.
 
 ### Aplikacja
 
-- [ ] T034 [P] [US2] Test (red) w `apptests/ErrorReportingTests.cs` (FR-330, FR-331, Independent Test US2): 3 PDF + 404 + timeout (`environment` `FAQGEN__Download__TimeoutSeconds=0.2`, atrapa wstrzymana do anulowania) → linie `[n/5] błąd: <adres> — <przyczyna>`, podsumowanie „Pobrano 3 z 5 plików”, pozycje „n. BŁĄD <adres> — <przyczyna>”, `Detail` na stderr, kod 3; wszystkie nieudane → kod 3; nieobsłużony wyjątek z biblioteki → komunikat na stderr i kod 1
-- [ ] T035 [US2] Implementacja (green) w `app/ConsoleReport.cs` i `app/Program.cs` (kody 3 i 1 wg contracts/cli.md)
+- [X] T034 [P] [US2] Test (red) w `apptests/ErrorReportingTests.cs` (FR-330, FR-331, Independent Test US2): 3 PDF + 404 + timeout (`environment` `FAQGEN__Download__TimeoutSeconds=0.2`, atrapa wstrzymana do anulowania) → linie `[n/5] błąd: <adres> — <przyczyna>`, podsumowanie „Pobrano 3 z 5 plików”, pozycje „n. BŁĄD <adres> — <przyczyna>”, `Detail` na stderr, kod 3; wszystkie nieudane → kod 3; nieobsłużony wyjątek z biblioteki → komunikat na stderr i kod 1
+- [X] T035 [US2] Implementacja (green) w `app/ConsoleReport.cs` i `app/Program.cs` (kody 3 i 1 wg contracts/cli.md)
 
 **Checkpoint**: US1 + US2 — obsługa błędów kompletna.
 
