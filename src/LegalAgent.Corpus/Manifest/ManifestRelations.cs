@@ -66,7 +66,14 @@ public static class ManifestRelations
     }
 
     /// <summary>The manifest form of an element unit: without the final period; a bare section number becomes „sekcja N”.</summary>
-    public static string UnitLabel(string unit) => throw new NotImplementedException();
+    public static string UnitLabel(string unit)
+    {
+        ArgumentNullException.ThrowIfNull(unit);
+        string label = unit.TrimEnd('.');
+        return label.Length > 0 && (label.All(char.IsDigit) || label.All(c => "IVXLC".Contains(c, StringComparison.Ordinal)))
+            ? "sekcja " + label
+            : label;
+    }
 
     /// <summary>The value of <paramref name="fact"/> as <paramref name="doc"/> prints it.</summary>
     private static string Printed(ContentLibrary content, DocumentPlan doc, string fact)
@@ -105,6 +112,6 @@ public static class ManifestRelations
         }
 
         int page = fit.Typeset.ElementPages.TryGetValue(use.ElementId, out PageSpan span) ? span.First : 1;
-        return ((unit ?? "metryczka").TrimEnd('.'), page);
+        return (UnitLabel(unit ?? "metryczka"), page);
     }
 }
