@@ -263,6 +263,129 @@ public sealed partial class TableDocumentsIntegrationTests
         Assert.Matches(@"(?m)^- nie udostępniaj nikomu[^\n]*\n- korzystaj wyłącznie z oficjalnej aplikacji", md);
     }
 
+    /// <summary>
+    /// Two table-document pages; the first row's cell holds a paragraph, a ruled three-column table of its own (rulings
+    /// within the right cell only) and a closing paragraph, as in the corpus promotion terms (REG-05 p. 11).
+    /// </summary>
+    private static byte[] RuledTableInACellDocument()
+    {
+        var b = new SyntheticPdfBuilder().Title("Regulamin premii");
+        b.Page();
+        double y = 89;
+        var edges = new List<double> { 72 };
+        b.Text(60, y, "Premie", 10, bold: true);
+        foreach (string l in WrapWords(LongA, 343))
+        {
+            b.Text(186, y, l, 10);
+            y += 15;
+        }
+
+        // Inner table: rulings at x 186 / 300 / 380 / 529, a bold column-name row and two rows, one cell wrapped.
+        double[] xs = [186, 300, 380, 529];
+        string[][] rows =
+        [
+            ["Rodzaj premii", "Wysokość", "Za co"],
+            ["Premia powitalna", "200,00 zł", "Spełnienie warunków za|pierwszy miesiąc"],
+            ["Premia miesięczna", "50,00 zł", "Każdy miesiąc ze spełnionymi|warunkami"],
+        ];
+        double tableTop = y - 6;
+        var rules = new List<double> { tableTop };
+        y = tableTop + 14;
+        for (int r = 0; r < rows.Length; r++)
+        {
+            int height = rows[r].Max(c => c.Split('|').Length);
+            for (int c = 0; c < 3; c++)
+            {
+                string[] cellLines = rows[r][c].Split('|');
+                for (int k = 0; k < cellLines.Length; k++)
+                {
+                    b.Text(xs[c] + 4, y + (k * 13), cellLines[k], 9, bold: r == 0);
+                }
+            }
+
+            y += (height - 1) * 13;
+            rules.Add(y + 6);
+            y += 20;
+        }
+
+        foreach (double rule in rules)
+        {
+            b.HLine(xs[0], xs[^1], rule, 0.5);
+        }
+
+        foreach (double x in xs)
+        {
+            b.VLine(x, tableTop, rules[^1], 0.5);
+        }
+
+        y = rules[^1] + 20;
+        foreach (string l in WrapWords("Premie wypłacamy na rachunek promocyjny w terminie 30 dni od dnia zakończenia miesiąca rozliczeniowego.", 343))
+        {
+            b.Text(186, y, l, 10);
+            y += 15;
+        }
+
+        edges.Add(y - 15 + 8);
+        Frame(b, edges);
+
+        b.Page();
+        y = 89;
+        edges = [72];
+        b.Text(60, y, "Zasady", 10, bold: true);
+        b.Text(60, y + 15, "bezpieczeństwa", 10, bold: true);
+        foreach (string l in WrapWords(LongB, 343))
+        {
+            b.Text(186, y, l, 10);
+            y += 15;
+        }
+
+        b.Text(190, y, "•", 10);
+        b.Text(208, y, "nie udostępniaj nikomu danych do logowania ani kodów autoryzacyjnych,", 10);
+        y += 15;
+        b.Text(190, y, "•", 10);
+        b.Text(208, y, "korzystaj wyłącznie z oficjalnej aplikacji i strony Banku.", 10);
+        y += 15;
+        edges.Add(y - 15 + 8);
+        Frame(b, edges);
+        return b.Build();
+
+        static void Frame(SyntheticPdfBuilder pb, List<double> es)
+        {
+            foreach (double e in es)
+            {
+                pb.HLine(55, 181, e, 0.75);
+                pb.HLine(181, 541, e, 0.75);
+            }
+
+            foreach (double x in new[] { 54.0, 181.0, 541.0 })
+            {
+                pb.VLine(x, 72, es[^1], 0.75);
+            }
+        }
+    }
+
+    [Fact]
+    public async Task RuledTableInsideACell_IsAGfmTableOfItsSection()
+    {
+        PdfConversionResult result = await ConvertAsync(RuledTableInACellDocument());
+        string md = result.Markdown.Replace("\r\n", "\n", StringComparison.Ordinal);
+
+        Assert.Single(result.Report.TableDocuments);
+        Assert.Equal(1, result.Report.TableCount);
+        Assert.Contains(
+            "| Rodzaj premii | Wysokość | Za co |\n| --- | --- | --- |\n| Premia powitalna | 200,00 zł | Spełnienie warunków za pierwszy miesiąc |\n| Premia miesięczna | 50,00 zł | Każdy miesiąc ze spełnionymi warunkami |",
+            md,
+            StringComparison.Ordinal);
+
+        // The table stands in its section, between the paragraphs of the cell, before the next section name.
+        int heading = md.IndexOf("## Premie", StringComparison.Ordinal);
+        int before = md.IndexOf("w powiadomieniach.", StringComparison.Ordinal);
+        int table = md.IndexOf("| Rodzaj premii", StringComparison.Ordinal);
+        int after = md.IndexOf("Premie wypłacamy na rachunek promocyjny", StringComparison.Ordinal);
+        int next = md.IndexOf("## Zasady bezpieczeństwa", StringComparison.Ordinal);
+        Assert.True(heading >= 0 && heading < before && before < table && table < after && after < next, md);
+    }
+
     private static IEnumerable<Section> Flatten(IEnumerable<Section> sections) =>
         sections.SelectMany(s => new[] { s }.Concat(Flatten(s.Children)));
 
