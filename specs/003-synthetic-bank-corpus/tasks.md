@@ -215,6 +215,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [X] T089a [US2] Test (red): tabela z siatką bezpośrednio pod akapitami numerowanymi „1.” z wcięciem wiszącym → lista zachowana, tabela GFM bez wierszy spoza siatki (`ptests/Integration/CorpusLayoutsIntegrationTests.cs`); poprawka w `TableDetectionStage` (green) — wiersze nad górną linią siatki nie należą do tabeli z siatką
 - [X] T089c [US2] Taryfy bez siatki (pomiar T076, T083b–T083i w `CorpusLayoutsIntegrationTests`): wiersz zawinięty w dwóch kolumnach, akapit nad pogrubionym nagłówkiem kolumn, tekst między dwiema tabelami, kontynuacja na kolejnej stronie (także z podpozycjami), wiersz o prawie równych odstępach, nagłówek z jednym wierszem na dole strony i kontynuacja z jednym wierszem na górze strony — poprawki w `TableDetectionStage`
 - [X] T089b [US2] Test (red): tytuł rozdziału zawinięty w dwa wiersze pod „Rozdział 6” (REG-06) → jeden nagłówek z całym tytułem; poprawka w `HeadingDetectionStage` (green)
+- [ ] T089d [US2] Test (red): kod formularza „(F-BEZ-05).” przeniesiony na początek strony (PRO-07-w1) → koniec akapitu, nie nagłówek; poprawka w `HeadingDetectionStage` (wersaliki: litery ≥ połowy znaków wiersza) (green)
 - [X] T090 [US2] Dodaj polecenie `refresh` (konwersja istniejących PDF bez składania, przepisanie manifestu) w `corpus-lib/CorpusGenerator.cs` i `src/LegalAgent.Corpus.Cli/Program.cs` z testem w `ctests/Cli/ProgramTests.cs` (red → green); uruchom `refresh`, przejrzyj diff `corpus/**/*.md`, zacommituj; pełny zestaw `CorpusFull` zielony
 
 **Checkpoint**: SC-022 – SC-026 spełnione na całym korpusie; goldeny parsera bez niezatwierdzonych zmian.
@@ -239,7 +240,7 @@ między typami), wszystko w treści i w manifeście.
 - [X] T094 [US3] Rozszerz `corpus-lib/Planning/CorpusPlanner.cs` o wersje, nieaktualne i pary sprzeczne — T091 green
 - [X] T095 [US3] Rozszerz `corpus-lib/Manifest/ManifestWriter.cs` i `corpus-lib/Composition/DocumentComposer.cs` (śledzenie jednostek zmienionych faktów) — T092 green
 - [X] T096 [US3] Rozszerz `corpus-lib/CorpusGenerator.cs` i `CorpusWriter` o nazwy plików wersji — T093 green
-- [ ] T097 [US3] Treść: historia wartości i `alternatywy` w `corpus/zrodla/fakty.yaml` dla faktów używanych przez co najmniej 3 dokumenty każdego typu; warianty bloków „po zmianie” (np. nowe brzmienie postanowienia) w odpowiednich plikach `bloki/`
+- [X] T097 [US3] Treść: historia wartości i `alternatywy` w `corpus/zrodla/fakty.yaml` dla faktów używanych przez co najmniej 3 dokumenty każdego typu; warianty bloków „po zmianie” (np. nowe brzmienie postanowienia) w odpowiednich plikach `bloki/` — zmiany między wersjami realizują nadpisania faktów z historią (`wartosci` z `od`) i `alternatywy`; osobne warianty bloków nie były potrzebne
 - [ ] T098 [US3] Ustaw w `corpus/przebieg.json` wersje/nieaktualne/sprzeczności wg domyślnych, `generate`, przejrzyj i zacommituj korpus; rozszerz `CorpusFullTests` o SC-028 (wersje rozłączne i ciągłe) i spójność odwołań manifestu (`previousVersion`, `with` istnieją); próbka (T072) obejmuje wszystkie wersje pierwszego wersjonowanego dokumentu
 
 **Checkpoint**: aplikacja RAG ma wersje, dokumenty nieaktualne i sprzeczne z prawdą w manifeście.
