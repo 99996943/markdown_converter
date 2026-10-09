@@ -1045,6 +1045,43 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("| tekst prawej", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087g: clause „1.” wraps from the bottom of the left column to the top of the right column (REG-02 page 7), where
+    /// its sub-points follow: the wrapped line continues the clause and the sub-points nest under it.
+    /// </summary>
+    [Fact]
+    public async Task ClauseWrappedIntoTheRightColumn_KeepsItsContinuationAndSubPoints()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        double y = 92;
+        for (int i = 0; i < 50; i++, y += 12.5)
+        {
+            b.Text(50, y, $"Treść postanowienia regulaminu w wierszu {i + 1},", 9.5);
+        }
+
+        b.Text(50, y + 3, "1.", 9.5).Text(68, y + 3, "Użytkownik ma obowiązek używać karty", 9.5);
+        b.Text(68, y + 15.5, "zgodnie z Regulaminem. W szczególności", 9.5);
+        b.Text(331, 92, "Użytkownik:", 9.5);
+        b.Text(331, 107.5, "1)", 9.5).Text(349, 107.5, "nie udostępnia karty osobom trzecim;", 9.5);
+        b.Text(331, 123, "2)", 9.5).Text(349, 123, "nie zapisuje PIN-u na karcie.", 9.5);
+        b.Text(313, 138.5, "2.", 9.5).Text(331, 138.5, "Użytkownik sprawdza historię transakcji.", 9.5);
+        y = 160;
+        for (int i = 0; i < 45; i++, y += 12.5)
+        {
+            b.Text(313, y, $"Dalsza treść prawej kolumny w wierszu {i + 1},", 9.5);
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087g.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("- 1\\. Użytkownik ma obowiązek używać karty zgodnie z Regulaminem. W szczególności Użytkownik:\n", md, StringComparison.Ordinal);
+        Assert.Contains("  - 1\\) nie udostępnia karty osobom trzecim;\n", md, StringComparison.Ordinal);
+        Assert.Contains("- 2\\. Użytkownik sprawdza historię transakcji.", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
