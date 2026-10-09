@@ -21,5 +21,6 @@
     <ProjectReference Include="..\..\src\LegalAgent.Corpus\LegalAgent.Corpus.csproj" />
     <ProjectReference Include="..\..\src\LegalAgent.Corpus.Cli\LegalAgent.Corpus.Cli.csproj" />
     <ProjectReference Include="..\..\src\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
+    <ProjectReference Include="..\..\src\LegalAgent.Chunking\LegalAgent.Chunking.csproj" />
   </ItemGroup>
 </Project>

@@ -68,9 +68,12 @@ public sealed class CorpusGeneratorTests : IDisposable
         Assert.Equal(
             [
                 "manifest.json",
-                "procedury/PRO-01.md", "procedury/PRO-01.pdf", "procedury/PRO-02.md", "procedury/PRO-02.pdf",
-                "regulaminy/REG-01.md", "regulaminy/REG-01.pdf", "regulaminy/REG-02.md", "regulaminy/REG-02.pdf",
-                "taryfy/TAR-01.md", "taryfy/TAR-01.pdf", "taryfy/TAR-02.md", "taryfy/TAR-02.pdf",
+                "procedury/PRO-01.chunks.jsonl", "procedury/PRO-01.md", "procedury/PRO-01.pdf",
+                "procedury/PRO-02.chunks.jsonl", "procedury/PRO-02.md", "procedury/PRO-02.pdf",
+                "regulaminy/REG-01.chunks.jsonl", "regulaminy/REG-01.md", "regulaminy/REG-01.pdf",
+                "regulaminy/REG-02.chunks.jsonl", "regulaminy/REG-02.md", "regulaminy/REG-02.pdf",
+                "taryfy/TAR-01.chunks.jsonl", "taryfy/TAR-01.md", "taryfy/TAR-01.pdf",
+                "taryfy/TAR-02.chunks.jsonl", "taryfy/TAR-02.md", "taryfy/TAR-02.pdf",
             ],
             files);
         Assert.Equal(6, result.Documents.Count);
