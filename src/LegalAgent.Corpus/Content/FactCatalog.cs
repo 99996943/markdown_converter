@@ -42,6 +42,25 @@ public sealed class FactCatalog
     /// Value of fact <paramref name="id"/> on <paramref name="date"/>: the override when present, otherwise the
     /// last entry whose <c>From</c> is null or not after the date.
     /// </summary>
-    public FactValue ValueAt(string id, DateOnly date, IReadOnlyDictionary<string, FactValue>? overrides = null) =>
-        throw new NotImplementedException();
+    public FactValue ValueAt(string id, DateOnly date, IReadOnlyDictionary<string, FactValue>? overrides = null)
+    {
+        var fact = Get(id);
+        if (overrides is not null && overrides.TryGetValue(id, out var overridden))
+        {
+            return overridden;
+        }
+
+        var current = fact.Values[0].Value;
+        foreach (var entry in fact.Values)
+        {
+            if (entry.From is { } from && from > date)
+            {
+                break;
+            }
+
+            current = entry.Value;
+        }
+
+        return current;
+    }
 }
