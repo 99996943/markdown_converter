@@ -1,0 +1,49 @@
+bloki:
+  - id: blokady-schemat
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-schemat-req
+    elementy:
+      - akapit: "Poniższy schemat przedstawia ogólny przebieg obsługi zajęcia rachunku. Szczegółowe czynności opisano w kolejnych sekcjach."
+      - schemat:
+          - nazwa: "Przyjęcie zawiadomienia"
+            wyjasnienie: "Pracownik przyjmuje zawiadomienie w formie elektronicznej lub papierowej i odnotowuje datę oraz godzinę wpływu."
+          - nazwa: "Rejestracja i weryfikacja"
+            wyjasnienie:
+              - "{{fakt:jednostka.operacje}} rejestruje sprawę w rejestrze {{fakt:zajecie.rejestr}}."
+              - "Sprawdza ważność dokumentu i tożsamość dłużnika."
+          - nazwa: "Wykonanie blokady"
+            wyjasnienie: "Operator zakłada blokadę na rachunkach dłużnika do wysokości zajęcia, z pozostawieniem kwoty wolnej od zajęcia."
+          - nazwa: "Informacja i karencja"
+            wyjasnienie: "Bank informuje organ i Klienta o wykonaniu zajęcia, a środki pozostają zablokowane do upływu karencji."
+          - nazwa: "Przekazanie środków"
+            wyjasnienie: "Po upływie karencji Bank przekazuje zajęte środki na rachunek wskazany przez organ egzekucyjny."
+          - nazwa: "Zwolnienie i archiwum"
+            wyjasnienie: "Po otrzymaniu zawiadomienia o zwolnieniu lub wyczerpaniu zajęcia Bank zdejmuje blokadę i archiwizuje dokumentację."
+  - id: blokady-kroki-przyjecie
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kroki-przyjecie-req
+    elementy:
+      - kroki:
+          - tekst: "{Przyjmij|Odbierz} zawiadomienie o zajęciu lub inne polecenie blokady niezależnie od kanału, którym wpłynęło."
+            podkroki:
+              - tekst: "{Zawiadomienia|Pisma} elektroniczne od komorników sądowych i organów administracji wpływają na skrzynkę {{fakt:zajecie.skrzynka}} oraz kanałem elektronicznego doręczania. {Operator|Pracownik} jednostki „{{fakt:jednostka.operacje}}” sprawdza je co najmniej {raz|jeden raz} w każdej godzinie pracy Banku."
+              - tekst: "Zawiadomienia papierowe i przesyłki doręczone osobiście w placówce {zarejestruj|odnotuj} na kopercie lub pierwszej stronie: data, godzina wpływu, imię i nazwisko przyjmującego, a następnie przekaż je w ciągu dnia do jednostki „{{fakt:jednostka.operacje}}” lub zeskanuj i prześlij na skrzynkę {{fakt:zajecie.skrzynka}}."
+              - tekst: "Dokument, który wpłynął po godzinie granicznej {{fakt:termin.zajecie.godzina-graniczna}}, traktuje się jako przyjęty tego dnia, ale — w zakresie czynności operacyjnych — {obsługuje|realizuje} się go w pierwszej kolejności następnego dnia roboczego. Data i godzina wpływu pozostają datą i godziną faktycznego otrzymania dokumentu i nie mogą być zmieniane."
+          - tekst: "{Zarejestruj|Wprowadź} zawiadomienie w rejestrze {{fakt:zajecie.rejestr}} na formularzu {{fakt:zajecie.formularz-rejestracji}}."
+            podkroki:
+              - tekst: "Wpisz: numer sprawy nadany przez rejestr, rodzaj organu, sygnaturę akt, datę wystawienia zawiadomienia, datę i godzinę wpływu, dane dłużnika oraz wierzyciela, kwotę egzekwowanej należności z odsetkami i kosztami oraz rachunek, na który mają zostać przekazane środki."
+              - tekst: "{Dołącz|Załącz} skan pełnej treści zawiadomienia wraz z załącznikami (tytuł wykonawczy, jeżeli został doręczony) i potwierdzeniem sposobu doręczenia."
+              - tekst: "Oznacz priorytet sprawy: „pilny” dla zawiadomień o zajęciu rachunku, „zwykły” dla zapytań i próśb o informacje."
+          - tekst: "Zbadaj, czy dokument jest {kompletny|zupełny} i pochodzi od uprawnionego organu."
+            podkroki:
+              - tekst: "{Sprawdź|Zbadaj}, czy zawiadomienie zawiera: oznaczenie organu, pieczęć lub podpis (w tym kwalifikowany podpis elektroniczny), sygnaturę, dane dłużnika (imię i nazwisko albo firmę oraz numer PESEL, NIP lub REGON), wysokość należności i wskazanie rachunku do przekazania środków."
+              - tekst: "W razie wątpliwości co do autentyczności (nietypowy nadawca, adres e-mail spoza domen organów, błędy w treści) {potwierdź|zweryfikuj} dokument telefonicznie w sekretariacie organu, korzystając z numeru ustalonego niezależnie od treści zawiadomienia, i poinformuj {{fakt:jednostka.bezpieczenstwo}}."
+              - tekst: "Braki formalne, które nie {uniemożliwiają|wykluczają} zajęcia (np. brak numeru rachunku do przekazania środków), nie wstrzymują blokady; uzupełnij je w korespondencji z organem po wykonaniu zajęcia."
+          - tekst: "Ustal, czy zawiadomienie dotyczy {klienta Banku|osoby będącej Klientem Banku}."
+            podkroki:
+              - tekst: "{Wyszukaj|Wskaż} dłużnika w systemie {{fakt:zajecie.system-centralny}} według numeru PESEL, NIP lub REGON, a w razie ich braku według nazwiska i daty urodzenia lub nazwy firmy i adresu."
+              - tekst: "Przy trafieniu niepewnym (zbieżność samego nazwiska, imienia lub adresu) nie zakładaj blokady na podstawie samego podobieństwa; przekaż sprawę kierownikowi zespołu do weryfikacji."
+              - tekst: "Gdy dłużnik nie jest Klientem Banku, przygotuj odpowiedź negatywną na formularzu {{fakt:zajecie.formularz-odpowiedzi}} i wyślij ją organowi w terminie {{fakt:termin.zajecie.odpowiedz-organowi}} od wpływu zawiadomienia."
+          - tekst: "{Potwierdź|Odnotuj} w rejestrze zakończenie przyjęcia i przekaż sprawę do wykonania zajęcia. Zawiadomienie o zajęciu rachunku przekaż operatorowi bezzwłocznie, bez oczekiwania na kompletne dane uzupełniające."

@@ -1,0 +1,85 @@
+bloki:
+  - id: blokady-opc-wykonanie-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-wykonanie
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Wykonaj} zawiadomienie, które wpłynęło w dniu wolnym od pracy lub po godzinach pracy jednostki."
+            podkroki:
+              - tekst: "Zawiadomienie otrzymane w sobotę, w niedzielę lub w święto {zarejestruj|odnotuj} automatycznie w skrzynce {{fakt:zajecie.skrzynka}}; dyżurny operator sprawdza skrzynkę w tych dniach co najmniej raz, o stałej porze ustalonej w grafiku."
+              - tekst: "Zajęcie rachunku wykonuje się w tym samym dniu, w którym zawiadomienie zostało przeczytane przez dyżurnego, nie później niż w pierwszym dniu roboczym do godziny granicznej {{fakt:termin.zajecie.godzina-graniczna}}."
+          - tekst: "Zabezpiecz środki w trakcie dnia przed wykonaniem blokady."
+            podkroki:
+              - tekst: "Jeżeli saldo rachunku dłużnika jest wysokie, a zawiadomienie wpłynęło w godzinach pracy, {wstrzymaj|zawieś} wypłaty z rachunku na czas założenia blokady, nie dłużej niż do końca dnia roboczego."
+              - tekst: "Wypłaty gotówkowe oraz przelewy zlecone w trakcie wstrzymania odrzucaj lub {wstrzymuj|odkładaj} do czasu wykonania blokady, informując Klienta o chwilowym ograniczeniu dostępu do środków bez ujawniania przyczyny."
+          - tekst: "Zarejestruj wynik wykonania zajęcia."
+            podkroki:
+              - tekst: "W rejestrze oznacz zajęcie jako „wykonane”, „wykonane częściowo” lub „bez środków” i wpisz kwotę zablokowaną. Każdy z tych statusów wymaga odpowiedzi dla organu."
+              - tekst: "Zajęcia „bez środków” {monitoruj|sprawdzaj} codziennie przez {{fakt:termin.zajecie.ponowna-weryfikacja}} od wpływu, a następnie co tydzień, do czasu wygaśnięcia zajęcia."
+  - id: blokady-opc-przekazanie-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przekazanie
+    elementy:
+      - kroki:
+          - tekst: "{Wyjaśnij|Rozpatrz} zgłoszenie Klienta, że środki zostały zajęte nienależnie."
+            podkroki:
+              - tekst: "Zgłoszenie przyjmij na piśmie wraz z dokumentami wskazującymi źródło środków (umowa, wyciąg, decyzja przyznająca świadczenie) i przekaż je organowi egzekucyjnemu w terminie {{fakt:termin.zajecie.odpowiedz-organowi}}."
+              - tekst: "Nie przekazuj środków wierzycielowi, jeżeli organ potwierdzi, że zgłoszenie Klienta zostało uwzględnione, ani w czasie, gdy trwa postępowanie sądowe o uchylenie zajęcia, o którym Bank został zawiadomiony."
+          - tekst: "Rozlicz zwrot środków dla Klienta po uchyleniu zajęcia."
+            podkroki:
+              - tekst: "Po zdjęciu blokady środki są {niezwłocznie|natychmiast} dostępne dla Klienta; nie wymaga to żadnej dodatkowej dyspozycji."
+              - tekst: "Jeżeli środki zostały już przekazane organowi, Bank nie dokonuje zwrotu we własnym zakresie; Klienta kieruje się do organu, który zajęcie zarządził."
+          - tekst: "Zamknij sprawę po przekazaniu informacji końcowej organowi i Klientowi."
+            podkroki:
+              - tekst: "Po upływie {{fakt:termin.zajecie.powiadomienie-klienta}} od zdjęcia blokady potwierdź w rejestrze, że wszystkie powiadomienia zostały wysłane."
+              - tekst: "Zlecenia stałe i polecenia zapłaty wstrzymane na czas zajęcia przywróć w ciągu {{fakt:termin.zajecie.zwolnienie}}, o ile Klient nie dysponujee inaczej."
+  - id: blokady-opc-inne-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-inne
+    elementy:
+      - kroki:
+          - tekst: "{Zapewnij|Zagwarantuj} zachowanie poufności w sprawach objętych zakazem ujawniania."
+            podkroki:
+              - tekst: "Dostęp do spraw objętych zakazem ujawniania mają wyłącznie wskazani w rejestrze pracownicy jednostek „{{fakt:jednostka.zgodnosc}}” i „{{fakt:jednostka.operacje}}”. Rejestr dostępów weryfikuje się raz w miesiącu."
+              - tekst: "W czasie rozmów z Klientem, które mogą dotyczyć takiej blokady, pracownicy stosują formułę wskazaną przez jednostkę „{{fakt:jednostka.zgodnosc}}” i nie odwołują się do postępowania ani przyczyny ograniczenia."
+          - tekst: "Rozpatrz wniosek Klienta o odblokowanie środków po ustaniu przyczyny blokady."
+            podkroki:
+              - tekst: "Blokadę rachunku niewynikającą z orzeczenia organu, np. założoną z powodu niepełnych danych identyfikacyjnych, zdejmij po uzupełnieniu danych i pozytywnej weryfikacji przez jednostkę „{{fakt:jednostka.zgodnosc}}”."
+              - tekst: "O zdjęciu blokady poinformuj Klienta tego samego dnia, w którym ją zdjęto, chyba że przepisy lub polecenie organu zakazują ujawniania takiej informacji."
+  - id: blokady-opc-przyjecie-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "{Sprawdź|Zweryfikuj} zawiadomienie pod kątem zbieżności danych dłużnika z danymi Klienta."
+            podkroki:
+              - tekst: "Porównaj numer PESEL, NIP lub REGON; zgodność imienia i nazwiska bez zgodności identyfikatora nie wystarcza do założenia blokady, chyba że zawiadomienie nie zawiera identyfikatora, a dane adresowe są identyczne."
+              - tekst: "W przypadku wątpliwości zwróć się do organu o wskazanie dodatkowych danych (data urodzenia, adres zamieszkania) i odnotuj datę wysłania zapytania w rejestrze."
+          - tekst: "Zbadaj, czy Klient nie posiada w Banku więcej niż jednego profilu."
+            podkroki:
+              - tekst: "Wyszukaj profile powiązane przez identyfikator, adres, numer telefonu lub rachunki wspólne; zajęcie dotyczy wszystkich rachunków Klienta, nawet jeżeli zostały otwarte w różnych placówkach."
+              - tekst: "Wyniki wyszukiwania zapisz w rejestrze {{fakt:zajecie.rejestr}}, aby kolejne zawiadomienia wobec tego samego dłużnika były obsługiwane na podstawie jednej analizy."
+  - id: blokady-opc-szczegolne-4
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-opt
+    elementy:
+      - ustep: "Zawiadomienie otrzymane od organu zagranicznego (np. na podstawie umowy o pomocy prawnej lub unijnego rozporządzenia o zabezpieczeniu rachunków) {nie wykonuje się|nie jest wykonywane} bezpośrednio; przekazuje się je do jednostki „{{fakt:jednostka.prawny}}” w dniu wpływu i wykonuje po otrzymaniu jej opinii o podstawie prawnej."
+      - ustep: "Zajęcie dotyczy rachunku, na którym gromadzone są środki z funduszu wspólnoty mieszkaniowej, rachunku powierniczego lub rachunku zbiorczego prowadzonego dla osób trzecich: blokadę zakłada się tylko w zakresie, w jakim środki należą do dłużnika; {{fakt:jednostka.prawny}} {ustala|określa} ten zakres na podstawie umowy rachunku."
+      - ustep: "Klient żąda wypłaty środków przed upływem czasu, w którym organ mógł uchylić zajęcie: Bank nie wypłaca środków objętych blokadą, nawet jeżeli Klient okaże dokument wskazujący, że zajęcie zostało uchylone; konieczne jest oficjalne zawiadomienie organu."
+  - id: blokady-opc-bledy-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-bledy-opt
+    elementy:
+      - ustep: "Pracownik, który zakłada blokadę, sprawdza po jej wykonaniu wydruk kontrolny z systemu {{fakt:zajecie.system-centralny}}. Typowe błędy wykrywane przy tej kontroli to:"
+        punkty:
+          - "{pomylenie|zamiana} cyfr w numerze rachunku;"
+          - "użycie niewłaściwego kodu blokady (np. kodu dla blokady AML zamiast kodu zajęcia komorniczego);"
+          - "{wprowadzenie|zapisanie} kwoty bez uwzględnienia odsetek wskazanych w zawiadomieniu;"
+          - "przeoczenie rachunku wspólnego lub rachunku w walucie obcej."
+      - ustep: "Błąd wykryty przed wysłaniem odpowiedzi do organu poprawia się bez zawiadamiania go; błąd wykryty po wysłaniu odpowiedzi wymaga korekty odpowiedzi i krótkiego wyjaśnienia, w terminie {{fakt:termin.zajecie.korekta-bledu}} od wykrycia."

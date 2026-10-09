@@ -1,0 +1,134 @@
+bloki:
+  - id: blokady-klient
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-klient-req
+    elementy:
+      - akapit: "Klient jest informowany o zajęciu rachunku i o jego skutkach, z uwzględnieniem ograniczeń wynikających z przepisów i poleceń organów. Zasadą jest informacja pisemna na trwałym nośniku; w razie zakazu ujawniania treści (zob. sekcja o blokadach z innych podstaw) Klienta nie informuje się wcale."
+      - ustep: "Informacja do Klienta o zajęciu rachunku zawiera:"
+        punkty:
+          - "nazwę organu egzekucyjnego, sygnaturę akt i datę zawiadomienia;"
+          - "kwotę zajęcia oraz numery rachunków objętych blokadą;"
+          - "informację o kwocie wolnej od zajęcia ({{fakt:zajecie.kwota-wolna-miesieczna}} miesięcznie dla rachunku osoby fizycznej) i o sposobie dysponowania nią;"
+          - "pouczenie, że zarzuty co do zasadności zajęcia Klient kieruje do organu egzekucyjnego, a nie do Banku;"
+          - "dane kontaktowe: infolinia {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) oraz placówka prowadząca rachunek."
+      - ustep: "Informację wysyła się w terminie {{fakt:termin.zajecie.powiadomienie-klienta}} od wykonania blokady, w formie wybranej przez Klienta do kontaktów z Bankiem — w bankowości elektronicznej albo listem poleconym. Po zwolnieniu zajęcia Klienta informuje się w tym samym trybie."
+      - ustep: "Za wykonanie zajęcia Bank pobiera opłatę zgodnie z taryfą ({{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}} dla rachunku osoby fizycznej i {{fakt:oplata.firma.zajecie-egzekucyjne}} dla rachunku przedsiębiorcy). Pracownik na żądanie Klienta wyjaśnia podstawę opłaty, nie podejmuje jednak decyzji o jej zwrocie bez zgody {{fakt:jednostka.operacje}}."
+      - ustep: "Pracownik rozmawiający z Klientem o zajęciu nie {ocenia|komentuje} zasadności egzekucji, nie doradza w sprawie zaspokojenia wierzyciela ani nie wskazuje sposobów obejścia zajęcia. Wolno mu wyłącznie wyjaśnić skutki blokady dla rachunku i wskazać organ właściwy do rozpatrzenia sprzeciwu."
+  - id: blokady-bledy
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-bledy-req
+    elementy:
+      - akapit: "Wykonanie zajęcia z naruszeniem procedury lub zwłoka mogą skutkować odpowiedzialnością Banku wobec wierzyciela albo szkodą Klienta. Poniższe zasady określają sposób wykrywania, zgłaszania i korygowania błędów."
+      - ustep: "Za błąd w obsłudze zajęcia uznaje się w szczególności:"
+        punkty:
+          - "niezałożenie lub opóźnione założenie blokady;"
+          - "zablokowanie środków w kwocie wyższej niż wynika z zawiadomienia lub z naruszeniem kwoty wolnej od zajęcia;"
+          - "wypłatę zajętych środków Klientowi albo przekazanie ich na nieprawidłowy rachunek;"
+          - "niewłaściwą kolejność wykonania zajęć w zbiegu;"
+          - "przekroczenie terminu odpowiedzi organowi lub poinformowania Klienta."
+      - ustep: "Pracownik, który stwierdzi błąd, niezwłocznie powiadamia kierownika zespołu i {{fakt:jednostka.operacje}}, a ten w dniu wykrycia:"
+        punkty:
+          - "{zabezpiecza|zatrzymuje} dalsze skutki błędu (zakłada brakującą blokadę, wstrzymuje przekazanie);"
+          - "wpisuje zdarzenie do rejestru {{fakt:zajecie.rejestr}} z opisem przyczyny;"
+          - "ocenia, czy konieczne jest powiadomienie organu egzekucyjnego, Klienta lub {{fakt:jednostka.zgodnosc}}."
+      - ustep: "Korektę błędu wykonuje się w terminie {{fakt:termin.zajecie.korekta-bledu}} od wykrycia, a w przypadku błędnego przekazania środków — niezwłocznie po uzgodnieniu z odbiorcą sposobu zwrotu. Szkodę Klienta wynikającą z błędu Banku rozpatruje się w trybie reklamacji, z uwzględnieniem zasad określonych w {{ref:akt:dz-u-2026-823-reklamacje}}."
+      - ustep: "Błędy istotne (wypłata zajętych środków, naruszenie zakazu informowania, błędna identyfikacja dłużnika) {{fakt:jednostka.operacje}} zgłasza {{fakt:jednostka.ryzyko}} jako zdarzenia ryzyka operacyjnego, w ciągu {{fakt:termin.zajecie.korekta-bledu}} od ich wykrycia."
+  - id: blokady-szczegolne
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-req
+    elementy:
+      - akapit: "Poniższe przypadki wymagają odstępstw od zasad ogólnych i, o ile nie wskazano inaczej, ich rozstrzygnięcie należy do kierownika zespołu w jednostce „{{fakt:jednostka.operacje}}” po konsultacji z jednostką „{{fakt:jednostka.prawny}}”."
+      - ustep: "Zajęcie dotyczy rachunku, który został zamknięty przed wpływem zawiadomienia: odpowiedz organowi, że rachunek nie istniał w dniu doręczenia, wskazując datę zamknięcia i — jeżeli nie narusza to tajemnicy bankowej ponad zakres dozwolony — rachunki, na które środki zostały przeniesione na polecenie Klienta."
+      - ustep: "Zajęcie wpłynęło do Banku, gdy Klient złożył wcześniej dyspozycję wypłaty lub przelewu: dyspozycję wykonaną i rozliczoną przed doręczeniem zawiadomienia traktuje się jako skuteczną; dyspozycje przyjęte, lecz niewykonane w chwili doręczenia, odrzuca się w zakresie objętym zajęciem."
+      - ustep: "Zajęcie rachunku z wpływami kredytu lub środków przeznaczonych na wypłatę wynagrodzeń: blokada obejmuje wpływy na zasadach ogólnych; Klient, który wykaże przeznaczenie środków, kieruje wniosek o wyłączenie spod zajęcia do organu egzekucyjnego."
+      - ustep: "Zajęcie lokaty terminowej: zablokuj środki na lokacie i nie wykonuj jej zerwania z urzędu; jeżeli zajęcie dotyczy lokaty, której termin upływa w czasie trwania blokady, po jej zakończeniu przelej kapitał i odsetki na rachunek wskazany w umowie, pozostawiając je pod blokadą."
+      - ustep: "Zajęcie wierzytelności Klienta wobec Banku z innych tytułów (np. z kredytu odnawialnego, z tytułu zwrotu opłat): zajęcie obejmuje wyłącznie wierzytelność istniejącą w dniu doręczenia; wierzytelności przyszłe objęte są zajęciem w zakresie określonym zawiadomieniem."
+      - ustep: "Zawiadomienie dotyczy osoby o tym samym imieniu i nazwisku co Klient (tzw. zbieżność danych): nie zakładaj blokady do czasu potwierdzenia tożsamości na podstawie numeru PESEL lub NIP; w razie braku identyfikatora w zawiadomieniu zwróć się do organu o ich uzupełnienie, a w odpowiedzi opisz podstawy, dla których dłużnika nie zidentyfikowano."
+      - ustep: "Klient kwestionuje zajęcie (twierdzi, że zobowiązanie zostało spłacone lub że rachunek jest chroniony): przyjmij pisemne oświadczenie i przekaż je organowi; do czasu otrzymania zwolnienia utrzymaj blokadę. Nie zwalniaj zajęcia na podstawie dokumentów przedstawionych przez Klienta lub wierzyciela."
+  - id: blokady-kontrola
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kontrola-req
+    elementy:
+      - akapit: "Przestrzeganie procedury podlega kontroli na trzech poziomach: bieżącym (kontrola operacyjna), funkcjonalnym (zgodność) oraz niezależnym (audyt wewnętrzny)."
+      - ustep: "Kontrola bieżąca obejmuje:"
+        punkty:
+          - "weryfikację każdej blokady przez drugą osobę przed jej zatwierdzeniem w rejestrze {{fakt:zajecie.rejestr}};"
+          - "codzienny przegląd listy zawiadomień oczekujących i niezrealizowanych w terminie;"
+          - "{cotygodniowe|tygodniowe} uzgodnienie salda blokad w systemie {{fakt:zajecie.system-centralny}} z saldem rejestru zajęć;"
+          - "kontrolę poprawności odnowienia kwoty wolnej w pierwszym dniu roboczym miesiąca."
+      - ustep: "{{fakt:jednostka.zgodnosc}} co kwartał {sprawdza|bada} próbę nie mniej niż dwudziestu spraw zamkniętych w okresie, ocenia zgodność z terminami i zasadą pierwszeństwa zajęć oraz sporządza raport dla jednostki „{{fakt:jednostka.operacje}}”. Wyniki raportu uwzględnia się przy aktualizacji procedury."
+      - ustep: "{{fakt:jednostka.ryzyko}} monitoruje wskaźniki: odsetek zajęć wykonanych w dniu wpływu, liczbę błędów istotnych i liczbę reklamacji związanych z zajęciami. Przekroczenie wartości progowych ustalonych przez Zarząd wymaga planu naprawczego w ciągu {{fakt:termin.zajecie.ponowna-weryfikacja}}."
+      - ustep: "Audyt wewnętrzny bada stosowanie procedury zgodnie z rocznym planem audytu. Kierownicy jednostek udostępniają dokumentację i systemy oraz wdrażają zalecenia w wyznaczonych terminach."
+  - id: blokady-dokumentacja
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-dok-req
+    elementy:
+      - akapit: "Dokumentację sprawy zajęcia prowadzi się w formie elektronicznej w rejestrze {{fakt:zajecie.rejestr}}, a oryginały dokumentów papierowych przechowuje się w jednostce „{{fakt:jednostka.operacje}}” w sposób zabezpieczony przed dostępem osób nieupoważnionych."
+      - ustep: "Akta sprawy obejmują:"
+        punkty:
+          - "zawiadomienie lub postanowienie wraz z załącznikami i dowodem doręczenia;"
+          - "formularze {{fakt:zajecie.formularz-rejestracji}}, {{fakt:zajecie.formularz-odpowiedzi}} i {{fakt:zajecie.formularz-zwolnienia}};"
+          - "wydruki kontrolne z systemu {{fakt:zajecie.system-centralny}} potwierdzające założenie, zmianę i zdjęcie blokady;"
+          - "korespondencję z organem, wierzycielem i Klientem oraz notatki z rozmów;"
+          - "potwierdzenia przelewów środków oraz dokumentację korekt i błędów."
+      - ustep: "Dokumentację przechowuje się przez {{fakt:okres.zajecie.przechowywanie}}, licząc od końca roku kalendarzowego, w którym zajęcie wygasło lub zostało zwolnione. W przypadku sporu sądowego lub kontroli okres ten ulega przedłużeniu do czasu zakończenia sprawy."
+      - ustep: "Po upływie okresu przechowywania dokumentację niszczy się w trybie określonym w instrukcji kancelaryjnej, a fakt zniszczenia odnotowuje w rejestrze. Zniszczenie zatwierdza kierownik {{fakt:jednostka.operacje}}."
+  - id: blokady-koncowe
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-konc-req
+    elementy:
+      - akapit: "Procedura obowiązuje od dnia wskazanego w metryczce i {zastępuje|uchyla} poprzednie instrukcje w sprawie obsługi zajęć rachunków. Sprawy wszczęte przed jej wejściem w życie kończy się według zasad dotychczasowych, chyba że procedura wprowadza rozwiązania korzystniejsze dla Klienta."
+      - akapit: "W sprawach nieuregulowanych procedurą stosuje się przepisy powszechnie obowiązującego prawa, w szczególności {{ref:akt:dz-u-2024-1646-prawo-bankowe}}, oraz regulacje wewnętrzne dotyczące zachowania tajemnicy bankowej i przeciwdziałania praniu pieniędzy. Opłaty za czynności związane z zajęciami określają taryfy opłat i prowizji, np. {{ref:dokument:taryfa-firmy}} i {{ref:dokument:taryfa-indywidualni}}."
+      - akapit: "Wątpliwości interpretacyjne rozstrzyga {{fakt:jednostka.operacje}} w porozumieniu z jednostką „{{fakt:jednostka.prawny}}”. Interpretacje o znaczeniu ogólnym {{fakt:jednostka.operacje}} publikuje w postaci komunikatu dla pracowników."
+  - id: blokady-lista
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: lista-kontrolna
+    elementy:
+      - akapit: "Lista kontrolna wypełniana jest przez operatora dla każdego zajęcia i dołączana do akt sprawy. Każdy punkt potwierdza data i podpis wykonującego."
+      - lista-kontrolna:
+          forma: wektor
+          pozycje:
+            - "Odnotowano datę i godzinę wpływu zawiadomienia."
+            - "Zarejestrowano sprawę w rejestrze {{fakt:zajecie.rejestr}} na formularzu {{fakt:zajecie.formularz-rejestracji}}."
+            - "Zweryfikowano autentyczność dokumentu i uprawnienia organu."
+            - "Zidentyfikowano dłużnika na podstawie PESEL, NIP lub REGON."
+            - "Ustalono wszystkie rachunki objęte zajęciem."
+            - "Obliczono kwotę wolną od zajęcia i sprawdzono, czy nie została już wykorzystana."
+            - "Założono blokadę w systemie {{fakt:zajecie.system-centralny}} z właściwym kodem."
+            - "Druga osoba potwierdziła poprawność blokady."
+            - "Sprawdzono istnienie wcześniejszych zajęć i ustalono kolejność."
+            - "Odpowiedź organowi wysłano w terminie {{fakt:termin.zajecie.odpowiedz-organowi}} (formularz {{fakt:zajecie.formularz-odpowiedzi}})."
+            - "Klienta poinformowano w terminie {{fakt:termin.zajecie.powiadomienie-klienta}}."
+            - "Zachowano karencję {{fakt:termin.firma.zajecie-wyplata}} przed przekazaniem środków."
+            - "Pobrano opłatę zgodnie z taryfą."
+            - "Przekazano środki na rachunek wskazany przez organ i potwierdzono przekazanie."
+            - "Zdjęto blokadę po zwolnieniu lub wyczerpaniu zajęcia (formularz {{fakt:zajecie.formularz-zwolnienia}})."
+            - "Dokumentację przekazano do archiwum."
+  - id: blokady-zal-tabela
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-zal-req
+    elementy:
+      - akapit: "Poniższa tabela zestawia rodzaje blokad, podstawy ich ustanowienia i terminy wykonania."
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj blokady"
+            - naglowek: "Podstawa"
+            - naglowek: "Termin wykonania"
+            - naglowek: "Informowanie Klienta"
+          siatka: true
+          wiersze:
+            - ["Zajęcie komornicze", "Zawiadomienie komornika sądowego", "W dniu przyjęcia, odpowiedź organowi w ciągu {{fakt:termin.zajecie.odpowiedz-organowi}}", "W ciągu {{fakt:termin.zajecie.powiadomienie-klienta}}"]
+            - ["Zajęcie administracyjne", "Zawiadomienie organu egzekucyjnego administracji", "W dniu przyjęcia, odpowiedź organowi w ciągu {{fakt:termin.zajecie.odpowiedz-organowi}}", "W ciągu {{fakt:termin.zajecie.powiadomienie-klienta}}"]
+            - ["Zabezpieczenie prokuratorskie", "Postanowienie prokuratora", "Niezwłocznie", "Zgodnie z postanowieniem, bez ujawniania treści w razie zakazu"]
+            - ["Zabezpieczenie sądowe", "Postanowienie sądu", "Niezwłocznie", "W ciągu {{fakt:termin.zajecie.powiadomienie-klienta}}"]
+            - ["Blokada AML", "Żądanie GIIF lub decyzja Banku", "Niezwłocznie, nie dłużej niż {{fakt:termin.zajecie.aml-blokada-bank}} bez dalszego polecenia", "Nie informuje się"]
+            - ["Blokada na wniosek Klienta", "Dyspozycja Klienta", "W dniu złożenia dyspozycji", "Potwierdzenie dyspozycji"]
+            - ["Rachunek zmarłego", "Informacja o śmierci", "W dniu otrzymania informacji", "Informacja dla zgłaszającego"]

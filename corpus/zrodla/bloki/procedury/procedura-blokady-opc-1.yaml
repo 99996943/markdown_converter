@@ -1,0 +1,115 @@
+bloki:
+  - id: blokady-opc-cel-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-cel-opt
+    elementy:
+      - akapit: "Bank jest {zobowiązany|obowiązany} wykonywać zawiadomienia o zajęciu rachunku z chwilą ich doręczenia i ponosi odpowiedzialność za szkody wynikające z wypłaty środków zajętych po tej chwili. Procedura wyznacza więc {jednoznaczny|czytelny} podział czynności, tak aby żadne zawiadomienie nie pozostało bez obsługi dłużej niż jeden dzień roboczy, a każda czynność została udokumentowana."
+      - akapit: "Dodatkowym celem procedury jest {ograniczenie|zmniejszenie} liczby błędów polegających na zajęciu rachunku niewłaściwej osoby, na blokowaniu środków wolnych od zajęcia oraz na opóźnieniach w zwalnianiu blokad, które pozbawiają Klientów dostępu do ich pieniędzy ponad czas niezbędny."
+  - id: blokady-opc-zakres-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-zakres-opt
+    elementy:
+      - akapit: "Procedura obejmuje zarówno zawiadomienia doręczone Bankowi bezpośrednio, jak i przesyłane za pośrednictwem pełnomocnika organu, platform elektronicznego doręczania oraz — w przypadku zajęć w egzekucji administracyjnej — za pomocą systemów teleinformatycznych administracji publicznej. Wszystkie te kanały są {równorzędne|traktowane jednakowo}, a data wpływu liczy się od chwili, w której zawiadomienie znalazło się w dyspozycji Banku."
+      - akapit: "Procedurę stosuje się odpowiednio do rachunków prowadzonych w walutach obcych, rachunków powierniczych oraz rachunków pomocniczych (np. rachunków VAT), z zastrzeżeniem szczególnych zasad dla tych rachunków opisanych w sekcji o przypadkach szczególnych."
+  - id: blokady-opc-odp-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-odp-opt
+    elementy:
+      - ustep: "Operator zajęć w jednostce „{{fakt:jednostka.operacje}}”:"
+        punkty:
+          - "wykonuje blokady w systemie {{fakt:zajecie.system-centralny}} wyłącznie na podstawie zarejestrowanego zawiadomienia;"
+          - "dba o kompletność formularzy {{fakt:zajecie.formularz-rejestracji}}, {{fakt:zajecie.formularz-odpowiedzi}} i {{fakt:zajecie.formularz-zwolnienia}};"
+          - "kieruje do kierownika zespołu sprawy nietypowe, w tym zbieg zajęć o różnych podstawach;"
+          - "nie dysponuje uprawnieniami do zatwierdzania własnych blokad."
+      - ustep: "Kierownik zespołu zajęć zatwierdza blokady wysokokwotowe, przekazanie środków powyżej limitu {{fakt:zajecie.limit-zatwierdzenia-przekazania}}, korekty błędów oraz wyjątki od terminów. Decyzje wyjątkowe dokumentuje w rejestrze wraz z uzasadnieniem."
+  - id: blokady-opc-odp-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-odp-opt
+    elementy:
+      - ustep: "Każdy pracownik Banku ma obowiązek niezwłocznego przekazania zawiadomienia o zajęciu, które otrzymał niezależnie od swojego stanowiska (także pocztą elektroniczną na adres służbowy lub w rozmowie telefonicznej z organem). Zaniechanie przekazania zawiadomienia jest naruszeniem obowiązków pracowniczych."
+      - ustep: "Pracownik, który otrzymał polecenie organu wstrzymania wypłat telefonicznie, nie wykonuje go samodzielnie; prosi o przesłanie pisemnego zawiadomienia na adres {{fakt:zajecie.skrzynka}} i informuje o rozmowie kierownika zespołu zajęć, który może zdecydować o tymczasowym zawieszeniu wypłat do czasu wpływu pisma."
+  - id: blokady-opc-def-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-def-opt
+    elementy:
+      - ustep: "Dodatkowo w procedurze używa się określeń:"
+        punkty:
+          - "**Operator zajęć** — pracownik jednostki „{{fakt:jednostka.operacje}}” uprawniony do zakładania i zdejmowania blokad w systemie {{fakt:zajecie.system-centralny}};"
+          - "**Kontrola na cztery oczy** — weryfikacja czynności przez drugą osobę niezależną od wykonującej;"
+          - "**Odpowiedź negatywna** — informacja dla organu, że dłużnik nie jest Klientem Banku lub nie posiada rachunku podlegającego zajęciu;"
+          - "**Rachunek środków chronionych** — rachunek oznaczony w systemie jako przeznaczony do gromadzenia środków wolnych od egzekucji;"
+          - "**Godzina graniczna** — godzina {{fakt:termin.zajecie.godzina-graniczna}}, po której przyjęte dokumenty obsługuje się według zasad dla następnego dnia roboczego."
+  - id: blokady-opc-przyjecie-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż zawiadomienie doręczone w placówce przez komornika lub przedstawiciela organu."
+            podkroki:
+              - tekst: "Poproś o {okazanie|przedstawienie} legitymacji służbowej lub upoważnienia i {odnotuj|zapisz} imię, nazwisko, numer dokumentu oraz nazwę organu."
+              - tekst: "Przyjmij pismo, nie odmawiając jego odbioru, także gdy {brakuje|nie ma} części załączników; na kopii dla doręczającego potwierdź datę, godzinę i podpis przyjmującego."
+              - tekst: "Nie udzielaj komornikowi informacji o saldach ani produktach, jeżeli nie wynikają one z uprawnienia zawartego w zawiadomieniu; w razie wątpliwości przekaż rozmowę kierownikowi placówki."
+          - tekst: "Obsłuż zawiadomienie otrzymane faksem lub zwykłą pocztą elektroniczną."
+            podkroki:
+              - tekst: "Zawiadomienie przesłane niewłaściwym kanałem {traktuj|przyjmuj} jako doręczone, jeżeli jest {czytelne|zrozumiałe} i pochodzi od {uprawnionego|właściwego} organu; skieruj je do rejestracji w tym samym trybie, a przy wątpliwościach co do autentyczności — zweryfikuj zgodnie z zasadami ogólnymi."
+              - tekst: "Poproś organ o doręczenie oryginału lub potwierdzenie przez właściwy kanał, nie wstrzymuj jednak wykonania zajęcia do czasu jego otrzymania."
+  - id: blokady-opc-przyjecie-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Wyodrębnij rodzaje spraw i ustal ich kolejność obsługi."
+            podkroki:
+              - tekst: "W pierwszej kolejności {obsługuj|realizuj} zawiadomienia o zajęciu rachunku, następnie postanowienia o zabezpieczeniu, polecenia wstrzymania transakcji, a na końcu zapytania i prośby o informacje."
+              - tekst: "{Gdy|Jeżeli} do Banku wpłynęło wiele zawiadomień jednocześnie, kolejność ich wykonania ustal według daty i godziny wpływu, a przy tej samej godzinie — według numeru w rejestrze."
+          - tekst: "Sporządź listę dziennych zawiadomień."
+            podkroki:
+              - tekst: "Na koniec każdego dnia roboczego operator {przygotowuje|sporządza} listę zawiadomień przyjętych i wykonanych, a także oczekujących. Kierownik zespołu potwierdza jej kompletność do godziny granicznej następnego dnia."
+              - tekst: "Zawiadomienia niewykonane w dniu wpływu wymagają wpisu o przyczynie opóźnienia i zgłoszenia kierownikowi zespołu."
+          - tekst: "Zabezpiecz zawiadomienia przed utratą."
+            podkroki:
+              - tekst: "Oryginały zawiadomień papierowych {przechowuj|trzymaj} w zamykanej szafie jednostki „{{fakt:jednostka.operacje}}”; kopie elektroniczne zapisuj w rejestrze {{fakt:zajecie.rejestr}} z zabezpieczeniem przed modyfikacją."
+              - tekst: "Zawiadomienia zawierające dane wrażliwe wysyłaj wewnętrznie wyłącznie kanałami szyfrowanymi, nigdy zwykłą pocztą elektroniczną."
+  - id: blokady-opc-wykonanie-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-wykonanie
+    elementy:
+      - kroki:
+          - tekst: "Wykonaj zajęcie rachunku z saldem dodatnim."
+            podkroki:
+              - tekst: "Ustaw w systemie {{fakt:zajecie.system-centralny}} blokadę na wskazaną kwotę i wpisz w polu opisu sygnaturę akt oraz numer sprawy w rejestrze {{fakt:zajecie.rejestr}}."
+              - tekst: "{Zapisz|Odnotuj} kwotę salda dostępnego przed blokadą, saldo po blokadzie i godzinę jej założenia."
+          - tekst: "Wykonaj zajęcie rachunku z saldem zerowym lub debetowym."
+            podkroki:
+              - tekst: "Rachunek z saldem zerowym {objęty jest|podlega} zajęciu w zakresie wpływów, które nastąpią w czasie jego trwania; załóż blokadę „wpływy”, która {automatycznie|samoczynnie} zablokuje środki do wysokości zajęcia."
+              - tekst: "Rachunek z limitem debetowym lub kredytem odnawialnym — zajęcie nie obejmuje niewykorzystanego limitu, ponieważ nie jest to wierzytelność Klienta; odnotuj to w odpowiedzi dla organu."
+          - tekst: "Wykonaj zajęcie rachunku z wpływami świadczeń."
+            podkroki:
+              - tekst: "Jeżeli na rachunek wpływają świadczenia, które według przepisów podlegają szczególnej ochronie, {sprawdź|zbadaj} treść tytułu przelewów w dniu zajęcia i w okresie ostatnich dwóch miesięcy."
+              - tekst: "Środki pochodzące ze świadczeń chronionych {pozostaw|zostaw} wolne od blokady i zaznacz to w odpowiedzi udzielanej organowi."
+  - id: blokady-opc-wykonanie-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-wykonanie
+    elementy:
+      - kroki:
+          - tekst: "Wykonaj zajęcie rachunku przedsiębiorcy."
+            podkroki:
+              - tekst: "Zajęcie obejmuje wszystkie rachunki bieżące i pomocnicze przedsiębiorcy, także rachunki w walutach obcych oraz rachunek VAT, o ile zawiadomienie lub przepisy na to pozwalają."
+              - tekst: "Środki na rachunku VAT blokuj zgodnie ze szczególnymi zasadami przepisów podatkowych — przekazanie takich środków wierzycielowi możliwe jest tylko w przypadkach przewidzianych ustawowo; w razie wątpliwości zasięgnij opinii jednostki „{{fakt:jednostka.prawny}}”."
+          - tekst: "Wykonaj zajęcie na rachunku wspólnym."
+            podkroki:
+              - tekst: "Dla rachunku wspólnego małżonków sprawdź, czy zawiadomienie dotyczy jednego z małżonków czy obojga; gdy tylko jednego, zajęcie obejmuje środki w zakresie, w jakim dłużnik ma do nich prawo, co ustala {{fakt:jednostka.prawny}}."
+              - tekst: "Do czasu rozstrzygnięcia nie wypłacaj współposiadaczowi środków przekraczających jego udział, jeżeli wynika on wprost z umowy rachunku."
+          - tekst: "Wstrzymaj instrukcje podległe zajęciu."
+            podkroki:
+              - tekst: "{Zawieś|Wstrzymaj} ustawione przez dłużnika automatyczne dyspozycje (lokaty odnawialne, plany oszczędnościowe), jeżeli prowadziłyby do wypłaty zajętych środków."
+              - tekst: "O wstrzymaniu zleceń {poinformuj|powiadom} Klienta w ramach zawiadomienia o zajęciu, wskazując przyczynę i sposób odblokowania."

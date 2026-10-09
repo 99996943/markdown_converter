@@ -1,0 +1,108 @@
+bloki:
+  - id: blokady-opc-kwoty-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-kwoty
+    elementy:
+      - kroki:
+          - tekst: "Zastosuj kwotę wolną przy wpływie wynagrodzenia za pracę."
+            podkroki:
+              - tekst: "Wynagrodzenie za pracę wpływające na rachunek osoby fizycznej podlega {szczególnej|szczególnej, ustawowej} ochronie; środki te są objęte kwotą wolną w ramach {{fakt:zajecie.kwota-wolna-procent}} minimalnego wynagrodzenia za pracę, to jest {{fakt:zajecie.kwota-wolna-miesieczna}} miesięcznie."
+              - tekst: "{Jeżeli|Gdy} Klient posiada wynagrodzenie na rachunku powyżej kwoty wolnej, nadwyżka podlega blokadzie w dniu wpływu."
+              - tekst: "{Nie weryfikuj|Nie badaj} tytułu przelewu poza zakresem potrzebnym do ustalenia ochrony; ocena, czy środki stanowią wynagrodzenie, należy do organu egzekucyjnego."
+          - tekst: "Zastosuj kwotę wolną przy kilku zajęciach jednocześnie."
+            podkroki:
+              - tekst: "Kwotę wolną {uwzględnia się|stosuje się} raz, niezależnie od liczby zawiadomień; dla każdego zawiadomienia oblicz kwotę do zablokowania jako saldo pomniejszone o kwotę wolną i o blokady wcześniejsze."
+              - tekst: "Jeżeli po pierwszej blokadzie nie pozostają środki ponad kwotę wolną, kolejne zawiadomienie rejestruj jako zajęcie bez blokady środków i informuj o tym organ."
+          - tekst: "Obsłuż wniosek Klienta o potwierdzenie kwoty wolnej."
+            podkroki:
+              - tekst: "Na żądanie Klienta {wydaj|sporządź} zaświadczenie o wysokości środków dostępnych oraz kwoty wolnej obowiązującej w danym miesiącu. Opłatę za zaświadczenie pobierz zgodnie z taryfą ({{fakt:oplata.zaswiadczenie}})."
+              - tekst: "Zaświadczenie podpisuje pracownik jednostki „{{fakt:jednostka.operacje}}” po sprawdzeniu danych w systemie {{fakt:zajecie.system-centralny}}."
+  - id: blokady-opc-kwoty-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-kwoty
+    elementy:
+      - kroki:
+          - tekst: "Zbadaj, czy środki wpłacone na rachunek są wolne od zajęcia z innych przyczyn."
+            podkroki:
+              - tekst: "Środki pochodzące z tytułów wskazanych w przepisach jako wyłączone z egzekucji (np. świadczenia na dzieci, zasiłki z pomocy społecznej, świadczenia alimentacyjne) {rozpoznaj|identyfikuj} po kodach tytułu przelewu lub po nadawcy wpływu."
+              - tekst: "W razie {niepewności|wątpliwości} zablokuj środki, a Klientowi wskaż możliwość wystąpienia do organu egzekucyjnego o wyłączenie ich spod zajęcia, dołączając dokumenty wskazujące ich źródło."
+          - tekst: "Przeprowadź ponowną weryfikację kwoty wolnej po zmianie przepisów."
+            podkroki:
+              - tekst: "Gdy zmienia się wysokość minimalnego wynagrodzenia (obecnie {{fakt:zajecie.minimalne-wynagrodzenie}}), jednostka „{{fakt:jednostka.operacje}}” aktualizuje parametr w systemie {{fakt:zajecie.system-centralny}} w dniu wejścia zmiany w życie i sprawdza wszystkie rachunki objęte zajęciem."
+              - tekst: "Nadpłacone w wyniku błędu kwoty wolne korygujesz zgodnie z zasadami obsługi błędów, nie później niż w terminie {{fakt:termin.zajecie.korekta-bledu}}."
+  - id: blokady-opc-przekazanie-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przekazanie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż zawiadomienie o zmianie rachunku odbiorcy lub danych organu."
+            podkroki:
+              - tekst: "Zmianę rachunku, na który mają być przekazywane środki, {wykonuj|wprowadzaj} wyłącznie po otrzymaniu pisemnego zawiadomienia podpisanego przez organ, zweryfikowanego telefonicznie przy użyciu danych z urzędowego wykazu."
+              - tekst: "Wiadomości o zmianie rachunku przesłane pocztą elektroniczną bez podpisu {traktuj|uznaj} za próbę wyłudzenia i {zgłoś|przekaż} do jednostki „{{fakt:jednostka.bezpieczenstwo}}”."
+          - tekst: "Wykonaj częściowe przekazanie środków."
+            podkroki:
+              - tekst: "Gdy zajęcie jest wyższe niż środki dostępne, przekaż organowi całość środków zablokowanych (po odliczeniu kwoty wolnej) i pozostaw zajęcie w mocy do czasu dalszych wpływów."
+              - tekst: "Każde przekazanie częściowe {odnotuj|wpisz} w rejestrze i potwierdź organowi, podając kwotę pozostałą do zaspokojenia."
+          - tekst: "Zakończ sprawę po wyczerpaniu zajęcia."
+            podkroki:
+              - tekst: "Zajęcie uznaje się za wyczerpane, gdy suma przekazanych środków równa się egzekwowanej należności. {Zdejmij|Zwolnij} blokadę i potwierdź organowi zakończenie."
+              - tekst: "Nadwyżkę środków nad kwotę należności niezwłocznie odblokuj; w razie wątpliwości co do wysokości należności zwróć się do organu o wskazanie aktualnej kwoty."
+  - id: blokady-opc-przekazanie-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przekazanie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż wniosek Klienta o zwolnienie zajęcia."
+            podkroki:
+              - tekst: "Wniosek Klienta o zwolnienie zajęcia (np. wskutek spłaty zadłużenia) {przyjmij|odbierz} i przekaż organowi egzekucyjnemu; Bank nie zwalnia zajęcia na podstawie wniosku Klienta ani wierzyciela, jeżeli nie otrzyma zawiadomienia od organu."
+              - tekst: "{Poinformuj Klienta|Wyjaśnij Klientowi}, że dokument potwierdzający zwolnienie należy doręczyć Bankowi bezpośrednio z organu, co zwykle przyspiesza zdjęcie blokady."
+          - tekst: "Obsłuż zawiadomienie o umorzeniu postępowania lub jego zawieszeniu."
+            podkroki:
+              - tekst: "Zawiadomienie o umorzeniu postępowania skutkuje zwolnieniem zajęcia; zawiadomienie o zawieszeniu utrzymuje blokadę bez możliwości przekazania środków wierzycielowi."
+              - tekst: "Upływ czasu, na jaki ustanowiono zabezpieczenie, nie zwalnia automatycznie blokady, jeżeli organ nie potwierdził jej wygaśnięcia; w razie wątpliwości zwróć się do organu o potwierdzenie."
+  - id: blokady-opc-inne-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-inne
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż polecenie prokuratora lub sądu o wydaniu dokumentów dotyczących rachunku."
+            podkroki:
+              - tekst: "Wydanie informacji objętych tajemnicą bankową następuje wyłącznie na podstawie postanowienia lub zarządzenia wydanego w granicach przepisów (zob. {{ref:akt:dz-u-2024-1646-prawo-bankowe}})."
+              - tekst: "Odpowiedź {przygotowuje|opracowuje} jednostka „{{fakt:jednostka.prawny}}” w terminie {{fakt:termin.zajecie.odpowiedz-organowi}}; dokumenty przekazuje się w kopiach potwierdzonych za zgodność, a rejestr wydań prowadzi jednostka „{{fakt:jednostka.operacje}}”."
+          - tekst: "Obsłuż polecenie wstrzymania transakcji przez Bank na podstawie własnej oceny."
+            podkroki:
+              - tekst: "Pracownik, który poweźmie podejrzenie, że transakcja ma związek z praniem pieniędzy, nie wykonuje jej do czasu decyzji jednostki „{{fakt:jednostka.zgodnosc}}” i niezwłocznie przekazuje zgłoszenie na adres {{fakt:zajecie.skrzynka-aml}}."
+              - tekst: "Klientowi nie {podaje się|wskazuje się} przyczyny wstrzymania; wyjaśnienia ogranicza się do informacji, że transakcja wymaga dodatkowej weryfikacji."
+  - id: blokady-opc-inne-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-inne
+    elementy:
+      - kroki:
+          - tekst: "Wykonaj blokadę na wniosek Klienta w razie zagrożenia bezpieczeństwa środków."
+            podkroki:
+              - tekst: "Klient zgłasza podejrzenie przejęcia dostępu do rachunku telefonicznie ({{fakt:kontakt.infolinia-zastrzezenia}}) albo w placówce. Pracownik zakłada blokadę rachunku w trybie {pilnym|natychmiastowym}, bez konieczności składania pisemnego wniosku, po uwierzytelnieniu Klienta."
+              - tekst: "Blokadę przekaż do jednostki „{{fakt:jednostka.bezpieczenstwo}}”, która ocenia zasadność zgłoszenia, a po wyjaśnieniu sprawy umożliwia Klientowi dalsze korzystanie z rachunku."
+          - tekst: "Obsłuż dyspozycję blokady środków jako zabezpieczenia umowy z osobą trzecią."
+            podkroki:
+              - tekst: "Klient może złożyć dyspozycję blokady określonej kwoty na rachunku jako zabezpieczenia zobowiązania wobec osoby trzeciej (np. kaucji). Dyspozycja wymaga pisemnego potwierdzenia przez beneficjenta zabezpieczenia i wskazania okresu blokady."
+              - tekst: "Blokada ta ma {niższy|słabszy} priorytet niż zajęcie egzekucyjne; w razie zbiegu środki wykorzystuje się najpierw na zajęcie."
+  - id: blokady-opc-zmarly-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-zmarly
+    elementy:
+      - kroki:
+          - tekst: "Ustal sytuację rachunków wspólnych i dyspozycji na wypadek śmierci."
+            podkroki:
+              - tekst: "{Gdy|Jeżeli} rachunek jest wspólny, współposiadacz zachowuje prawo dysponowania środkami; informację o śmierci jednego z posiadaczy odnotuj w systemie bez blokowania rachunku."
+              - tekst: "Jeżeli zmarły złożył dyspozycję wypłaty na wypadek śmierci, wypłać środki wskazanym osobom do wysokości przewidzianej przepisami, a pozostałą część — na zasadach dziedziczenia."
+          - tekst: "Zawiadom spadkobierców i zabezpiecz dokumentację."
+            podkroki:
+              - tekst: "Osoba zgłaszająca zgon otrzymuje {informację|pouczenie} o wymaganych dokumentach oraz o terminie {{fakt:termin.zajecie.wniosek-spadkobiercow}} na rozpatrzenie wniosku o wypłatę."
+              - tekst: "Kopie dokumentów dołącz do akt rachunku; informacje o stanie środków udostępnij wyłącznie osobom, które wykażą swój status spadkobiercy lub inne uprawnienie."

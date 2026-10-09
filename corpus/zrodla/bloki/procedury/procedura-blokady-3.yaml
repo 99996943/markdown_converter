@@ -1,0 +1,135 @@
+bloki:
+  - id: blokady-kroki-wykonanie
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kroki-wykonanie-req
+    elementy:
+      - akapit: "Zajęcie wykonuje się {niezwłocznie|bezzwłocznie} po przyjęciu i zarejestrowaniu zawiadomienia. Z chwilą doręczenia Bankowi zawiadomienia o zajęciu Bank nie może wypłacać zajętych środków ani wykonywać dyspozycji Klienta w zakresie objętym zajęciem."
+      - kroki:
+          - tekst: "{Zidentyfikuj|Ustal} wszystkie rachunki dłużnika objęte zawiadomieniem."
+            podkroki:
+              - tekst: "Zawiadomienie wskazujące konkretny rachunek obejmuje wyłącznie ten rachunek; zawiadomienie ogólne, bez numeru rachunku, obejmuje wszystkie rachunki dłużnika prowadzone w Banku, w tym rachunki oszczędnościowe, lokaty i rachunki kart."
+              - tekst: "Rachunki wspólne wielu posiadaczy blokuj w całości tylko wtedy, gdy zawiadomienie dotyczy wszystkich współposiadaczy; w pozostałych przypadkach przekaż sprawę do jednostki „{{fakt:jednostka.prawny}}” i do czasu odpowiedzi zablokuj środki w wysokości odpowiadającej udziałowi dłużnika, jeżeli wynika on z umowy."
+              - tekst: "Rachunków prowadzonych dla dłużnika jako przedstawiciela lub pełnomocnika cudzego rachunku nie blokuj."
+          - tekst: "Ustal wysokość blokady."
+            podkroki:
+              - tekst: "Kwota blokady to {suma|łączna wartość} należności głównej, odsetek i kosztów egzekucji wskazanych w zawiadomieniu, powiększona — jeżeli wynika to z zawiadomienia — o odsetki naliczane do dnia zapłaty."
+              - tekst: "Zablokuj środki do wysokości tej kwoty, z zastrzeżeniem kwoty wolnej od zajęcia opisanej w sekcji dotyczącej kwot wolnych. Gdy saldo jest niższe, zablokuj całe dostępne saldo i obejmij blokadą także wpływy kolejnych dni aż do wyczerpania zajęcia."
+              - tekst: "Środki w walucie obcej przelicz po kursie średnim Banku z dnia zajęcia i zablokuj w walucie rachunku do wysokości równowartości zajęcia."
+          - tekst: "Wykonaj blokadę w systemie {{fakt:zajecie.system-centralny}}."
+            podkroki:
+              - tekst: "Wybierz kod blokady zgodnie z tabelą w załączniku (zob. {{ref:zalacznik:blokady-zal-tabela}}; rodzaj organu i podstawa zajęcia), wpisz numer sprawy z rejestru i kwotę blokady."
+              - tekst: "{Zablokuj|Zawieś} także instrumenty zapewniające dostęp do zajętych środków (karty debetowe, polecenia zapłaty, zlecenia stałe) wyłącznie w zakresie, w którym ich wykonanie naruszyłoby zajęcie; nie zastrzegaj kart ani nie wyłączaj dostępu do bankowości elektronicznej."
+              - tekst: "Zlecenia stałe i polecenia zapłaty na kwoty przekraczające środki wolne od zajęcia odrzucaj z komunikatem o braku środków; nie wykonuj ich częściowo."
+          - tekst: "{Zweryfikuj|Sprawdź} poprawność założonej blokady."
+            podkroki:
+              - tekst: "{Druga osoba|Inny pracownik} (kontrola „na cztery oczy”) porównuje kod, kwotę i listę rachunków z treścią zawiadomienia i potwierdza zgodność w rejestrze {{fakt:zajecie.rejestr}}."
+              - tekst: "Zajęcia na kwotę równą lub większą niż {{fakt:zajecie.limit-zatwierdzenia-przekazania}} wymagają dodatkowo zatwierdzenia przez kierownika zespołu."
+          - tekst: "Poinformuj organ egzekucyjny o wykonaniu zajęcia, odpowiadając na formularzu {{fakt:zajecie.formularz-odpowiedzi}} w terminie {{fakt:termin.zajecie.odpowiedz-organowi}} od wpływu zawiadomienia, chyba że organ wskazał termin krótszy."
+            podkroki:
+              - tekst: "W odpowiedzi {podaj|wskaż} numery zajętych rachunków, saldo w dniu zajęcia, kwotę zablokowaną, kwotę pozostawioną jako wolną od zajęcia oraz informację o innych zajęciach wpisanych wcześniej na te rachunki."
+              - tekst: "Nie podawaj informacji o rachunkach, których zajęcie nie dotyczy, ani o innych produktach dłużnika."
+  - id: blokady-kroki-kwoty
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kroki-kwoty-req
+    elementy:
+      - akapit: "Zajęcie rachunku nie obejmuje środków, które według przepisów są wolne od zajęcia. Bank stosuje w tym zakresie wyłącznie obowiązujące przepisy i nie może rozszerzać ani zawężać ochrony ponad ich treść."
+      - kroki:
+          - tekst: "Ustal rodzaj Klienta i charakter rachunku."
+            podkroki:
+              - tekst: "Rachunek osoby fizycznej prowadzony w celach niezwiązanych z działalnością gospodarczą jest chroniony kwotą wolną od zajęcia w wysokości {{fakt:zajecie.kwota-wolna-procent}} minimalnego wynagrodzenia za pracę ({{fakt:zajecie.minimalne-wynagrodzenie}}), czyli {{fakt:zajecie.kwota-wolna-miesieczna}} na miesiąc kalendarzowy."
+              - tekst: "Rachunek przedsiębiorcy i rachunek podmiotu niebędącego osobą fizyczną nie podlega ochronie kwotą wolną; zajęcie obejmuje całość środków do wysokości egzekwowanej należności, z zastrzeżeniem środków na wynagrodzenia pracowników i należności publicznoprawnych wskazanych przepisami, o ile Klient wykaże ich przeznaczenie."
+              - tekst: "Rachunek, na który wpływają wyłącznie świadczenia z pomocy społecznej, świadczenia rodzinne lub inne środki wskazane w przepisach jako wolne od egzekucji, oznacz w systemie jako rachunek środków chronionych; środki te są wolne od zajęcia w {{fakt:zajecie.kwota-wolna-swiadczenia-procent}}."
+          - tekst: "Oblicz kwotę wolną od zajęcia na dany miesiąc kalendarzowy."
+            podkroki:
+              - tekst: "{Kwota wolna|Ochrona kwotą wolną} przysługuje raz w miesiącu kalendarzowym, niezależnie od liczby rachunków dłużnika w Banku. Gdy dłużnik ma kilka rachunków, wskaż w systemie {{fakt:zajecie.system-centralny}} rachunek, na którym kwota wolna jest utrzymywana (domyślnie rachunek, na który wpływa wynagrodzenie, a w razie jego braku — rachunek najstarszy)."
+              - tekst: "Kwotę wolną ustala się według wysokości minimalnego wynagrodzenia obowiązującej w dniu zajęcia; zmiana tej wysokości od nowego roku kalendarzowego zmienia kwotę wolną dopiero od dnia jej wejścia w życie. System aktualizuje wartość automatycznie, a operator weryfikuje ją przy każdym przekazaniu środków."
+              - tekst: "Kwota wolna dotyczy łącznie wszystkich zajęć na rachunku — niezależnie od liczby zawiadomień nie jest ona zwielokrotniana."
+          - tekst: "Odblokuj środki w granicach kwoty wolnej."
+            podkroki:
+              - tekst: "Jeżeli w dniu zajęcia saldo przekracza kwotę wolną, zablokuj tylko nadwyżkę (do wysokości zajęcia), a kwotę wolną pozostaw dostępną."
+              - tekst: "Jeżeli saldo jest niższe lub równe kwocie wolnej, nie blokuj środków, a zajęcie {odnotuj|wpisz} w rejestrze jako „wykonane — kwota wolna”. Wpływy kolejnych dni sprawdzaj na bieżąco; blokadą obejmuje się je dopiero po przekroczeniu kwoty wolnej w danym miesiącu."
+              - tekst: "Na początku każdego miesiąca kalendarzowego system odnawia kwotę wolną; operator sprawdza w pierwszym dniu roboczym miesiąca, czy odnowienie zadziałało prawidłowo."
+          - tekst: "Rozstrzygaj zbieg zajęć."
+            podkroki:
+              - tekst: "Przy kilku zawiadomieniach dotyczących tego samego rachunku wykonuj je {w kolejności wpływu|według kolejności wpływu} do Banku, mierzonej datą i godziną odnotowanymi w rejestrze. Zajęcie wcześniejsze ma pierwszeństwo przed późniejszym."
+              - tekst: "Zajęcia na rzecz tego samego wierzyciela i tego samego organu traktuj jako jedno zajęcie, jeżeli zawiadomienie dotyczy tej samej należności; w razie wątpliwości ustal to z organem."
+              - tekst: "Zajęcia z egzekucji sądowej i administracyjnej, które nie mogą być wykonane jednocześnie, przekaż do jednostki „{{fakt:jednostka.prawny}}”, który ustali kolejność zaspokojenia zgodnie z przepisami; do czasu jego opinii utrzymaj wszystkie blokady."
+              - tekst: "Gdy środki nie wystarczają na wszystkie zajęcia, informuj każdy organ o istnieniu pozostałych zajęć i o ich kolejności, nie ujawniając danych wierzycieli ponad dozwolony zakres."
+  - id: blokady-kroki-przekazanie
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kroki-przekazanie-req
+    elementy:
+      - kroki:
+          - tekst: "Zachowaj karencję przed wypłatą zajętych środków."
+            podkroki:
+              - tekst: "Środki zablokowane na podstawie zawiadomienia komornika lub organu administracyjnego nie mogą być przekazane przed upływem {{fakt:termin.firma.zajecie-wyplata}} od daty doręczenia zawiadomienia, chyba że organ polecił inaczej na piśmie."
+              - tekst: "Karencja służy ochronie Klienta, który może w tym czasie zgłosić zarzuty lub wykazać, że środki są wolne od zajęcia."
+          - tekst: "{Przygotuj|Wykonaj} przekazanie po upływie karencji."
+            podkroki:
+              - tekst: "W terminie {{fakt:termin.zajecie.przekazanie-po-karencji}} od upływu karencji przelej zablokowane środki na rachunek organu wskazany w zawiadomieniu, z tytułem przelewu zawierającym sygnaturę akt i dane dłużnika."
+              - tekst: "Zajęcia do kwoty {{fakt:zajecie.limit-zatwierdzenia-przekazania}} operator realizuje samodzielnie po kontroli drugiej osoby; powyżej tego limitu przekazanie wymaga zatwierdzenia kierownika zespołu i jednostki „{{fakt:jednostka.operacje}}”."
+              - tekst: "Jeżeli przed upływem karencji wpłynęło zawiadomienie o zwolnieniu zajęcia lub postanowienie sądu o jego wstrzymaniu, wstrzymaj przekazanie i postępuj według dalszych punktów tej sekcji."
+          - tekst: "{Rozlicz|Pobierz} opłatę za wykonanie zajęcia."
+            podkroki:
+              - tekst: "Opłatę pobierz zgodnie z obowiązującą taryfą: {{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}} z rachunku osoby fizycznej oraz {{fakt:oplata.firma.zajecie-egzekucyjne}} z rachunku przedsiębiorcy."
+              - tekst: "Opłatę pobiera się ze środków wolnych od zajęcia; nie pobieraj jej ze środków objętych blokadą ani z kwoty wolnej od zajęcia, jeżeli przepisy tego zakazują. Jeżeli środków wolnych brak, odnotuj należność w rejestrze i pobierz ją przy najbliższym wpływie."
+          - tekst: "Potwierdź organowi przekazanie środków."
+            podkroki:
+              - tekst: "Wyślij organowi informację o przekazaniu środków, ze wskazaniem daty, kwoty, numeru rachunku, z którego dokonano przelewu, oraz salda pozostałego na rachunku."
+              - tekst: "Jeżeli zajęcie zostało wyczerpane w całości, poinformuj o tym organ i zdejmij blokadę. W przypadku zajęcia niewyczerpanego pozostaw blokadę i monitoruj wpływy do czasu spłaty, zwolnienia lub umorzenia egzekucji."
+          - tekst: "Zwolnij blokadę po otrzymaniu zawiadomienia o zwolnieniu, umorzeniu egzekucji lub uchyleniu postanowienia."
+            podkroki:
+              - tekst: "{Zdejmij|Zwolnij} blokadę najpóźniej w terminie {{fakt:termin.zajecie.zwolnienie}} od wpływu zawiadomienia, wypełniając formularz {{fakt:zajecie.formularz-zwolnienia}} i po weryfikacji autentyczności dokumentu zgodnie z zasadami przyjmowania zawiadomień."
+              - tekst: "Zwolnienie częściowe wykonuj tylko w zakresie wskazanym przez organ i przelicz pozostałą blokadę; nie zwalniaj zajęcia na podstawie samego oświadczenia Klienta lub wierzyciela, jeżeli nie potwierdzi go organ."
+              - tekst: "Poinformuj Klienta o zwolnieniu zajęcia w terminie {{fakt:termin.zajecie.powiadomienie-klienta}} i zamknij sprawę w rejestrze {{fakt:zajecie.rejestr}}."
+  - id: blokady-kroki-inne
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kroki-inne-req
+    elementy:
+      - akapit: "Obok zajęć egzekucyjnych Bank wykonuje blokady z innych podstaw. Zasady rejestracji i weryfikacji dokumentu są takie same jak w przypadku zawiadomień egzekucyjnych, z odmiennościami opisanymi poniżej."
+      - kroki:
+          - tekst: "Postanowienia prokuratora o zabezpieczeniu majątkowym lub zajęciu rachunku."
+            podkroki:
+              - tekst: "Wykonaj postanowienie {niezwłocznie|bez zwłoki}, w zakresie i na czas w nim wskazany. Prokurator może zażądać wstrzymania wszelkich wypłat, także poniżej kwoty wolnej od zajęcia; w takim wypadku zakres blokady określa wyłącznie postanowienie."
+              - tekst: "Nie informuj Klienta o postanowieniu, jeżeli zawiera ono zakaz ujawniania; w takim wypadku odnotuj ten zakaz w rejestrze i przekaż sprawę do jednostki „{{fakt:jednostka.zgodnosc}}”."
+              - tekst: "Blokadę zdejmij po otrzymaniu postanowienia o uchyleniu lub upływie terminu, na jaki została ustanowiona, po potwierdzeniu z prokuraturą."
+          - tekst: "Postanowienia sądu o zabezpieczeniu powództwa lub roszczenia."
+            podkroki:
+              - tekst: "Zabezpieczenie wykonuj {jak zajęcie|tak jak zajęcie egzekucyjne}, w zakresie wynikającym z postanowienia (kwota, rachunki, okres)."
+              - tekst: "Środki objęte zabezpieczeniem nie są przekazywane wierzycielowi; Bank utrzymuje blokadę do czasu uchylenia lub zmiany zabezpieczenia albo do dnia, w którym zabezpieczenie zostanie zamienione na zajęcie egzekucyjne."
+          - tekst: "Wstrzymanie transakcji i blokada rachunku w związku z przeciwdziałaniem praniu pieniędzy."
+            podkroki:
+              - tekst: "Wstrzymanie transakcji lub blokadę rachunku na podstawie żądania GIIF albo własnej oceny ryzyka {{fakt:jednostka.zgodnosc}} wykonuje {{fakt:jednostka.operacje}} wyłącznie na polecenie jednostki „{{fakt:jednostka.zgodnosc}}” przekazane przez skrzynkę {{fakt:zajecie.skrzynka-aml}}."
+              - tekst: "Blokada ustanowiona przez Bank trwa nie dłużej niż {{fakt:termin.zajecie.aml-blokada-bank}} od jej ustanowienia, chyba że w tym czasie GIIF lub prokurator wyda dalsze polecenie; kolejne przedłużenie, na wniosek prokuratora, może trwać do {{fakt:termin.zajecie.aml-blokada-prokurator}} (zob. {{ref:akt:dz-u-2025-644-aml}})."
+              - tekst: "Nie informuj Klienta ani osób trzecich o wstrzymaniu transakcji ani o przekazaniu informacji do GIIF; zakaz ujawniania obowiązuje wszystkich pracowników, którzy znają sprawę. W rozmowie z Klientem posługuj się formułą ustaloną przez jednostkę „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "Blokada ustanowiona na wniosek Klienta."
+            podkroki:
+              - tekst: "Klient może złożyć dyspozycję blokady środków (np. w związku z podejrzeniem nieautoryzowanego dostępu lub do celu zabezpieczenia transakcji) w placówce po okazaniu dokumentu tożsamości, w bankowości elektronicznej albo telefonicznie po uwierzytelnieniu przez jednostkę „{{fakt:jednostka.obsluga-klienta}}”."
+              - tekst: "Blokadę założoną na wniosek Klienta zdejmuje się na jego dyspozycję, po tym samym uwierzytelnieniu. Jeżeli na rachunek wpłynęło zajęcie, blokada Klienta nie ogranicza obowiązku wykonania zajęcia."
+  - id: blokady-kroki-zmarly
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kroki-zmarly-req
+    elementy:
+      - akapit: "Po otrzymaniu informacji o śmierci posiadacza rachunku Bank zachowuje szczególną ostrożność: chroni środki zmarłego przed nieuprawnionym dostępem, a jednocześnie umożliwia pokrycie kosztów pogrzebu i wypłatę środków osobom uprawnionym."
+      - kroki:
+          - tekst: "Przyjmij informację o śmierci Klienta."
+            podkroki:
+              - tekst: "Podstawą jest {odpis skrócony aktu zgonu|skrócony odpis aktu zgonu} albo zaświadczenie urzędu stanu cywilnego; sama informacja ustna nie wystarcza do zamknięcia rachunku, ale uzasadnia założenie tymczasowej blokady zapobiegającej nadużyciom."
+              - tekst: "{Zarejestruj|Odnotuj} datę zgonu, dane osoby zgłaszającej oraz sposób, w jaki informacja wpłynęła do Banku."
+          - tekst: "Zablokuj rachunek zmarłego zgodnie z zasadą ochrony środków."
+            podkroki:
+              - tekst: "{Zawieś|Zablokuj} dostęp do bankowości elektronicznej, kart i pełnomocnictw wygasłych z chwilą śmierci mocodawcy oraz zablokuj wypłaty z rachunku. Zlecenia stałe i polecenia zapłaty wstrzymaj, z wyjątkiem należności publicznoprawnych wskazanych przez jednostkę „{{fakt:jednostka.prawny}}”."
+              - tekst: "Zdejmij blokadę z rachunku wspólnego, jeżeli umowa przewiduje, że współposiadacz może dysponować środkami po śmierci drugiego; informacje o dziedziczeniu i prawie do środków nie wpływają na jego bieżące dyspozycje."
+          - tekst: "Wypłać środki na koszty pogrzebu."
+            podkroki:
+              - tekst: "Osobie, która {przedstawi|okaże} rachunki za pogrzeb i dokument tożsamości, wypłać środki z rachunku zmarłego do wysokości poniesionych kosztów, nie więcej niż {{fakt:zajecie.limit-kosztow-pogrzebu}}, na podstawie zgody kierownika placówki."
+              - tekst: "Wypłatę odnotuj w rejestrze i dołącz kopie rachunków do akt rachunku; pierwotne rachunki zwróć wnioskodawcy."
+          - tekst: "Wypłać środki spadkobiercom."
+            podkroki:
+              - tekst: "Środki wypłać na podstawie prawomocnego postanowienia sądu o stwierdzeniu nabycia spadku, aktu poświadczenia dziedziczenia albo europejskiego poświadczenia spadkowego, a w przypadku dyspozycji na wypadek śmierci — na podstawie złożonej dyspozycji, w granicach przewidzianych w przepisach."
+              - tekst: "Wniosek o wypłatę {rozpatrz|zrealizuj} w terminie {{fakt:termin.zajecie.wniosek-spadkobiercow}} od dostarczenia kompletnych dokumentów. Sprawdź, czy na rachunku nie ma zajęć; zajęcia wykonuje się także po śmierci dłużnika, jeżeli egzekucja została wszczęta przed śmiercią lub jest kontynuowana wobec spadkobierców."

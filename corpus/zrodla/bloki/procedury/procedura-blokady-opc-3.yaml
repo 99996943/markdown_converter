@@ -1,0 +1,110 @@
+bloki:
+  - id: blokady-opc-klient-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-klient-opt
+    elementy:
+      - ustep: "Jeżeli Klient {zgłosi się|przyjdzie} do placówki z pytaniem o zajęcie, pracownik {udziela|przekazuje} mu informacji wyłącznie po uwierzytelnieniu, w zakresie dotyczącym jego rachunków. Pracownik nie odczytuje treści zawiadomienia w całości ani nie udostępnia jego kopii, chyba że organ wyraźnie na to zezwolił; Klient może uzyskać dokumenty bezpośrednio od organu egzekucyjnego."
+      - ustep: "{Pytania|Wątpliwości} Klienta dotyczące kwoty wolnej od zajęcia pracownik {wyjaśnia|objaśnia} w następujący sposób:"
+        punkty:
+          - "kwota wolna wynosi {{fakt:zajecie.kwota-wolna-miesieczna}} miesięcznie i przysługuje raz w miesiącu kalendarzowym;"
+          - "{środki|kwoty} wolne od zajęcia pozostają dostępne na rachunku w dniu zajęcia, a w kolejnych miesiącach kwota wolna odnawia się z początkiem miesiąca;"
+          - "kwota wolna nie dotyczy rachunków przedsiębiorców, chyba że przepisy stanowią inaczej."
+  - id: blokady-opc-klient-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-klient-opt
+    elementy:
+      - ustep: "Klient, który {utracił|stracił} dostęp do środków wskutek zajęcia, {może|ma prawo} złożyć w Banku reklamację dotyczącą sposobu wykonania zajęcia (nie zaś jego zasadności). Reklamację przyjmuje i rozpatruje {{fakt:jednostka.reklamacje}} w terminie {{fakt:termin.reklamacja.rozpatrzenie}}, o ile przepisy nie przewidują terminu odmiennego."
+      - ustep: "Zarzuty dotyczące zasadności samego zajęcia, wysokości należności lub tytułu wykonawczego rozpatruje wyłącznie organ egzekucyjny lub sąd. Pracownik {informuje|pouczy} o tym Klienta i może wskazać adres organu na podstawie korespondencji."
+      - ustep: "W rozmowie telefonicznej z Klientem pod numerem {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) udziela się wyłącznie informacji ogólnych; informacje o konkretnej sprawie zajęcia przekazuje się po pełnym uwierzytelnieniu Klienta."
+  - id: blokady-opc-bledy-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-bledy-opt
+    elementy:
+      - ustep: "Błędy {wynikające|powstałe} z awarii systemu informatycznego (niedziałanie {{fakt:zajecie.system-centralny}}, brak dostępu do rejestru) obsługuje się w następującym trybie:"
+        punkty:
+          - "zawiadomienia o zajęciu wykonuje się ręcznie na podstawie awaryjnej listy rachunków, prowadzonej przez jednostkę „{{fakt:jednostka.operacje}}”;"
+          - "wszystkie ręczne blokady wprowadza się do systemu niezwłocznie po przywróceniu jego działania i uzgadnia z rejestrem w ciągu {{fakt:termin.zajecie.korekta-bledu}};"
+          - "w czasie awarii wypłaty gotówkowe w placówkach z rachunków dłużników z listy awaryjnej są wstrzymane."
+      - ustep: "Awarię trwającą dłużej niż jeden dzień roboczy {{fakt:jednostka.operacje}} zgłasza {{fakt:jednostka.ryzyko}} oraz informuje organy, jeżeli dochowanie terminu odpowiedzi może być zagrożone."
+  - id: blokady-opc-bledy-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-bledy-opt
+    elementy:
+      - ustep: "{Jeżeli|Gdy} organ egzekucyjny zakwestionuje prawidłowość wykonania zajęcia (np. wskazując, że środki zostały wypłacone po doręczeniu zawiadomienia), {{fakt:jednostka.operacje}} przygotowuje wyjaśnienie w terminie {{fakt:termin.zajecie.odpowiedz-organowi}}, a w sprawach wymagających oceny prawnej konsultuje je z jednostką „{{fakt:jednostka.prawny}}”."
+      - ustep: "Jeżeli ustalono, że w wyniku błędu Banku wypłacono zajęte środki, Bank:"
+        punkty:
+          - "{niezwłocznie|bez zwłoki} informuje organ egzekucyjny o zdarzeniu i przedstawia plan jego usunięcia;"
+          - "{występuje|zwraca się} do Klienta o zwrot środków, wskazując podstawę prawną;"
+          - "w razie braku możliwości odzyskania środków od Klienta pokrywa należność organu ze środków własnych, o ile decyzję o tym podejmie Zarząd Banku."
+  - id: blokady-opc-szczegolne-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-opt
+    elementy:
+      - ustep: "Zajęcie rachunku Klienta niebędącego rezydentem lub prowadzącego rachunek w walucie obcej wymaga dodatkowo sprawdzenia, czy zawiadomienie dotyczy rachunku prowadzonego w Polsce oraz czy nie wynikają z niego ograniczenia związane z sankcjami międzynarodowymi. Wątpliwości {rozstrzyga|opiniuje} {{fakt:jednostka.zgodnosc}}."
+      - ustep: "Zajęcie rachunku w sytuacji, gdy dłużnik jest jednocześnie kredytobiorcą Banku: zajęcie wykonuje się niezależnie od wierzytelności Banku; Bank może skorzystać z potrącenia swojej wymagalnej wierzytelności tylko do wysokości i w zakresie dopuszczonym przepisami, nie naruszając kwoty wolnej od zajęcia."
+      - ustep: "Zajęcie rachunku dłużnika, wobec którego ogłoszono upadłość: po otrzymaniu postanowienia sądu o ogłoszeniu upadłości Bank wstrzymuje wykonanie zajęć egzekucyjnych, a środki przekazuje zgodnie z poleceniem syndyka. Sprawę przekazuje się do jednostki „{{fakt:jednostka.prawny}}” w dniu wpływu dokumentu."
+  - id: blokady-opc-szczegolne-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-opt
+    elementy:
+      - ustep: "Zajęcie dotyczy rachunku prowadzonego dla małoletniego lub osoby ubezwłasnowolnionej: przed wykonaniem zajęcia przekaż sprawę do jednostki „{{fakt:jednostka.prawny}}”, która ocenia, czy środki nie są wolne od zajęcia z mocy przepisów o ochronie majątku małoletnich. Do czasu odpowiedzi utrzymaj blokadę."
+      - ustep: "Zajęcie lokaty prowadzonej w ramach rachunku wspólnego z osobą trzecią: blokada obejmuje tylko udział dłużnika; gdy udziałów nie da się ustalić, zablokuj środki w połowie i poinformuj organ o statusie rachunku."
+      - ustep: "Zawiadomienie wpłynęło po zamknięciu rachunku, a środki zostały przeniesione na inny rachunek Klienta w Banku: zajęcie obejmuje środki na nowym rachunku tylko wtedy, gdy zawiadomienie obejmuje wszystkie rachunki dłużnika."
+  - id: blokady-opc-szczegolne-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-opt
+    elementy:
+      - ustep: "Zajęcie dotyczy kilku dłużników o tym samym adresie lub spółek powiązanych kapitałowo: każde zawiadomienie obsługuje się odrębnie, a środki innych podmiotów nie podlegają blokadzie, nawet jeżeli rachunki są zarządzane przez te same osoby."
+      - ustep: "Zajęciu podlegają także środki na rachunku, który otwarto po dacie zawiadomienia, jeżeli zawiadomienie wprost obejmuje rachunki przyszłe (tzw. zajęcie przyszłych wierzytelności) — w takim przypadku jednostka „{{fakt:jednostka.operacje}}” monitoruje otwieranie nowych rachunków przez dłużnika przez okres {{fakt:termin.zajecie.ponowna-weryfikacja}}."
+      - ustep: "Po dostrzeżeniu próby ominięcia zajęcia (np. nagłe przelewy środków na rachunki osób trzecich bezpośrednio po otrzymaniu zawiadomienia) pracownik zgłasza to jednostce „{{fakt:jednostka.bezpieczenstwo}}” i nie informuje Klienta o podejrzeniu."
+  - id: blokady-opc-kontrola-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kontrola-opt
+    elementy:
+      - ustep: "Wskaźnikami skuteczności procedury są:"
+        punkty:
+          - "odsetek zawiadomień wykonanych w dniu wpływu (cel: {powyżej|co najmniej} 98%);"
+          - "średni czas od wpływu zawiadomienia do wpisu blokady w systemie {{fakt:zajecie.system-centralny}};"
+          - "liczba odpowiedzi udzielonych organom po terminie;"
+          - "liczba reklamacji związanych z zajęciami oraz odsetek uznanych za zasadne."
+      - ustep: "Wyniki wskaźników {{fakt:jednostka.operacje}} omawia na {kwartalnym|comiesięcznym} przeglądzie z udziałem jednostek „{{fakt:jednostka.zgodnosc}}” i „{{fakt:jednostka.ryzyko}}”, a wnioski wpisuje do protokołu."
+  - id: blokady-opc-kontrola-2
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kontrola-opt
+    elementy:
+      - ustep: "Pracownicy {{fakt:jednostka.operacje}} oraz placówek, którzy przyjmują zawiadomienia, {przechodzą|uczestniczą w} szkoleniu z procedury przed rozpoczęciem pracy i ponownie co rok. Szkolenie obejmuje m.in. ćwiczenie rozpoznawania podrobionych zawiadomień oraz symulację zajęcia z kwotą wolną."
+      - ustep: "Zakończenie szkolenia potwierdza test, który należy zaliczyć w co najmniej 80%. Pracownik, który nie zaliczył testu, nie jest dopuszczony do samodzielnej obsługi zajęć do czasu ponownego zaliczenia."
+  - id: blokady-opc-dok-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-dok-opt
+    elementy:
+      - ustep: "{Dostęp|Uprawnienia dostępu} do dokumentacji zajęć mają wyłącznie pracownicy jednostki „{{fakt:jednostka.operacje}}” oraz osoby upoważnione przez kierownika tej jednostki. Każde udostępnienie dokumentacji (w tym audytorom i organom) odnotowuje się w rejestrze z podaniem celu i daty."
+      - ustep: "Dokumentacji nie wynosi się poza siedzibę Banku, a dane zawarte w zawiadomieniach nie mogą być kopiowane do dokumentów roboczych ani przesyłane poza Bank bez zgody jednostki „{{fakt:jednostka.zgodnosc}}”."
+  - id: blokady-opc-zal-1
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-zal-opt
+    elementy:
+      - akapit: "Poniższa tabela zestawia formularze i systemy używane do obsługi zajęć."
+      - tabela:
+          kolumny:
+            - naglowek: "Oznaczenie"
+            - naglowek: "Przeznaczenie"
+            - naglowek: "Kto wypełnia"
+          siatka: true
+          wiersze:
+            - ["{{fakt:zajecie.formularz-rejestracji}}", "Rejestracja zawiadomienia o zajęciu", "Operator zajęć"]
+            - ["{{fakt:zajecie.formularz-odpowiedzi}}", "Odpowiedź dla organu egzekucyjnego", "Operator zajęć, zatwierdza kierownik zespołu"]
+            - ["{{fakt:zajecie.formularz-zwolnienia}}", "Zwolnienie zajęcia", "Operator zajęć"]
+            - ["{{fakt:zajecie.rejestr}}", "Rejestr zawiadomień i blokad", "Jednostka „{{fakt:jednostka.operacje}}”"]
+            - ["{{fakt:zajecie.system-centralny}}", "System centralny do zakładania blokad", "Operator zajęć"]
