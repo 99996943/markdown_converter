@@ -1433,6 +1433,58 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("| ", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T089h: a ruled table filling the width of the left column beside right-column text, on a page whose ragged left
+    /// column makes the free band start well before the column edge (ZAT-REG-SPR-02 page 16): the table is read in the
+    /// left column, so the left text after it comes before the right column.
+    /// </summary>
+    [Fact]
+    public async Task RuledTableFillingTheLeftColumnOfARaggedPage_IsReadInTheLeftColumn()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        string[] lines = ["treść postanowienia umowy o kartę,", "dalszy ciąg tego zdania umowy o kartę,", "kolejne zdanie umowy karty klienta,", "treść postanowienia umowy w krótszym wierszu,"];
+        double y = 92;
+        for (int i = 0; i < 16; i++, y += 12.5)
+        {
+            b.Text(68, y, lines[i % 4], 9.5);
+        }
+
+        double[] x = [50, 189, 282];
+        string[][] rows = [["Rodzaj warunku", "Wartość"], ["Oprocentowanie transakcji", "19,9%"], ["Odsetki za opóźnienie", "17%"], ["Roczna opłata za kartę", "99,00 zł"], ["Minimalna kwota", "5% salda, nie mniej niż"]];
+        double top = y;
+        b.HLine(x[0], x[^1], top);
+        foreach (string[] row in rows)
+        {
+            b.Text(x[0] + 5, top + 13, row[0], 9, bold: row == rows[0]).Text(x[1] + 5, top + 13, row[1], 9, bold: row == rows[0]);
+            top += 18.5;
+            b.HLine(x[0], x[^1], top);
+        }
+
+        foreach (double vx in x)
+        {
+            b.VLine(vx, y, top);
+        }
+
+        y = top + 20;
+        b.Text(68, y, "Wiersz lewej kolumny po tabeli.", 9.5);
+        for (int i = 1; i < 20; i++)
+        {
+            b.Text(68, y + (i * 12.5), lines[i % 4], 9.5);
+        }
+
+        for (int i = 0; i < 50; i++)
+        {
+            b.Text(331, 92 + (i * 12.5), $"tekst prawej kolumny w wierszu {i + 1},", 9.5);
+        }
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("| Roczna opłata za kartę | 99,00 zł |", md, StringComparison.Ordinal);
+        int afterTable = md.IndexOf("Wiersz lewej kolumny po tabeli.", StringComparison.Ordinal);
+        int right = md.IndexOf("tekst prawej kolumny w wierszu 1,", StringComparison.Ordinal);
+        Assert.True(afterTable >= 0 && right > afterTable, $"lewa po tabeli: {afterTable}, prawa: {right}");
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
