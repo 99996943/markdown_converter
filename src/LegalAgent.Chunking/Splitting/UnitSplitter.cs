@@ -12,8 +12,10 @@ internal sealed record UnitPart(string Content, IReadOnlyList<string> ListLabels
 
 /// <summary>
 /// Splits a unit into parts within the length limit (research R3). The unit's blocks are broken into atoms
-/// (indivisible pieces) that are packed greedily in document order; the length of a candidate part is measured by
-/// rendering it. A unit that fits is one part.
+/// (indivisible pieces: a paragraph, a list item's own text with its paragraphs, every nested item separately) that
+/// are packed greedily in document order; the length of a candidate part is measured by rendering it. A unit that
+/// fits is one part. Every part is rendered from blocks rebuilt from its atoms, so a list keeps its nesting and a
+/// part starting inside a nested list starts with that list at column 0.
 /// </summary>
 internal static class UnitSplitter
 {
@@ -52,7 +54,8 @@ internal static class UnitSplitter
         for (int g = 0; g < groups.Count; g++)
         {
             string content = Render(unit, renderer, groups[g], last: g == groups.Count - 1);
-            parts.Add(new UnitPart(content, [], Pages(unit), content.Length > maxLength));
+            IReadOnlyList<string> labels = g > 0 && groups[g].Count > 0 && groups[g][0] is ItemAtom first ? first.Node.Labels() : [];
+            parts.Add(new UnitPart(content, labels, Pages(unit), content.Length > maxLength));
         }
 
         return parts;
@@ -61,9 +64,116 @@ internal static class UnitSplitter
     private static string Render(Unit unit, FragmentRenderer renderer, IReadOnlyList<Atom> atoms, bool last) =>
         renderer.Render(unit.Section, Blocks(atoms), last ? unit.Footnotes : []);
 
-    private static List<Atom> Atoms(IReadOnlyList<ContentBlock> blocks) => blocks.Select(b => new Atom(b)).ToList();
+    private static List<Atom> Atoms(IReadOnlyList<ContentBlock> blocks)
+    {
+        var atoms = new List<Atom>();
+        foreach (ContentBlock block in blocks)
+        {
+            if (block is ListBlock list)
+            {
+                AddItems(list, null, -1, atoms);
+            }
+            else
+            {
+                atoms.Add(new BlockAtom(block));
+            }
+        }
 
-    private static List<ContentBlock> Blocks(IReadOnlyList<Atom> atoms) => atoms.Select(a => a.Block).ToList();
+        return atoms;
+    }
+
+    // Pre-order: an item's own atom, then the items of its nested lists.
+    private static void AddItems(ListBlock list, ItemNode? parent, int childIndex, List<Atom> atoms)
+    {
+        foreach (ListItem item in list.Items)
+        {
+            var node = new ItemNode(item, list, parent, childIndex);
+            atoms.Add(new ItemAtom(node));
+            for (int k = 0; k < item.Children.Count; k++)
+            {
+                if (item.Children[k] is ListBlock nested)
+                {
+                    AddItems(nested, node, k, atoms);
+                }
+            }
+        }
+    }
+
+    private static List<ContentBlock> Blocks(IReadOnlyList<Atom> atoms)
+    {
+        var blocks = new List<ContentBlock>();
+        int i = 0;
+        while (i < atoms.Count)
+        {
+            if (atoms[i] is BlockAtom block)
+            {
+                blocks.Add(block.Block);
+                i++;
+                continue;
+            }
+
+            var run = new List<ItemNode>();
+            while (i < atoms.Count && atoms[i] is ItemAtom item)
+            {
+                run.Add(item.Node);
+                i++;
+            }
+
+            blocks.AddRange(ListBlocks(run));
+        }
+
+        return blocks;
+    }
+
+    /// <summary>
+    /// Rebuilds lists from a run of item nodes: nodes whose parent is not in the run start a list of their own
+    /// (consecutive ones of the same source list share it); the others become nested items of their parent.
+    /// </summary>
+    private static List<ListBlock> ListBlocks(IReadOnlyList<ItemNode> run)
+    {
+        var inRun = new HashSet<ItemNode>(run);
+        var lists = new List<ListBlock>();
+        var roots = new List<ItemNode>();
+        foreach (ItemNode node in run.Where(n => n.Parent is null || !inRun.Contains(n.Parent)))
+        {
+            if (roots.Count > 0 && !(ReferenceEquals(roots[0].Owner, node.Owner) && ReferenceEquals(roots[0].Parent, node.Parent)))
+            {
+                lists.Add(new ListBlock(roots[0].Owner.Pages, roots.Select(r => Item(r, run)).ToList()));
+                roots = [];
+            }
+
+            roots.Add(node);
+        }
+
+        if (roots.Count > 0)
+        {
+            lists.Add(new ListBlock(roots[0].Owner.Pages, roots.Select(r => Item(r, run)).ToList()));
+        }
+
+        return lists;
+    }
+
+    private static ListItem Item(ItemNode node, IReadOnlyList<ItemNode> run)
+    {
+        var children = new List<ContentBlock>();
+        for (int k = 0; k < node.Item.Children.Count; k++)
+        {
+            ContentBlock child = node.Item.Children[k];
+            if (child is not ListBlock nested)
+            {
+                children.Add(child);
+                continue;
+            }
+
+            List<ListItem> items = run.Where(n => ReferenceEquals(n.Parent, node) && n.ChildIndex == k).Select(n => Item(n, run)).ToList();
+            if (items.Count > 0)
+            {
+                children.Add(new ListBlock(nested.Pages, items));
+            }
+        }
+
+        return node.Item with { Children = children };
+    }
 
     private static PageSpan Pages(Unit unit)
     {
@@ -78,5 +188,39 @@ internal static class UnitSplitter
     }
 
     /// <summary>An indivisible piece of a unit's content.</summary>
-    private sealed record Atom(ContentBlock Block);
+    private abstract record Atom;
+
+    /// <summary>A whole block (paragraph, table).</summary>
+    private sealed record BlockAtom(ContentBlock Block) : Atom;
+
+    /// <summary>A list item's own text and paragraphs, without its nested lists.</summary>
+    private sealed record ItemAtom(ItemNode Node) : Atom;
+
+    /// <summary>A list item in its source tree.</summary>
+    /// <param name="item">The item.</param>
+    /// <param name="owner">The list holding the item.</param>
+    /// <param name="parent">The item whose nested list holds this one; null at the top level.</param>
+    /// <param name="childIndex">Index of <paramref name="owner"/> in the parent's children; -1 at the top level.</param>
+    private sealed class ItemNode(ListItem item, ListBlock owner, ItemNode? parent, int childIndex)
+    {
+        public ListItem Item { get; } = item;
+
+        public ListBlock Owner { get; } = owner;
+
+        public ItemNode? Parent { get; } = parent;
+
+        public int ChildIndex { get; } = childIndex;
+
+        /// <summary>Labels of the ancestors and the item, outermost first.</summary>
+        public List<string> Labels()
+        {
+            var labels = new List<string>();
+            for (ItemNode? n = this; n is not null; n = n.Parent)
+            {
+                labels.Insert(0, n.Item.Label);
+            }
+
+            return labels;
+        }
+    }
 }
