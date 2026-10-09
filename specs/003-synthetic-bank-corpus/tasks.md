@@ -203,7 +203,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [ ] T078 [US2] Poprawka dla T077 w `src/LegalAgent.PdfParser/Stages/` (green)
 - [ ] T079 [US2] Test (red): kroki „4.1.”, „4.1.1.” po nagłówku „4. Opis postępowania” (krok bywa pogrubiony) → pozycje list z oryginalnym oznaczeniem i poziomem z hierarchii, nie nagłówki (R11, FR-161)
 - [ ] T080 [US2] Poprawka dla T079 (green)
-- [ ] T081 [US2] Test (red): lista kontrolna z polem wektorowym i w tabeli „Lp. | Czynność | Wykonano” → pozycje/wiersze z pełnym tekstem
+- [X] T081 [US2] Test (red): lista kontrolna z polem wektorowym i w tabeli „Lp. | Czynność | Wykonano” → pozycje/wiersze z pełnym tekstem
 - [ ] T082 [US2] Poprawka dla T081 (green)
 - [X] T083 [US2] Test (red): taryfa bez siatki przez 3 strony z powtarzanym nagłówkiem i przypisami „1)” pod tabelą → jedna tabela GFM, przypisy jako akapity/przypisy po tabeli, znacznik przypisu w komórce stawki
 - [ ] T084 [US2] Poprawka dla T083 (green)

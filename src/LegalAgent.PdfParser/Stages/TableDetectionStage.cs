@@ -243,22 +243,27 @@ public sealed class TableDetectionStage : IPipelineStage
 
         List<Row> multi = region.Where(r => r.IsMulti).ToList();
 
+        double top = region.Min(r => r.Line.Box.Top);
+        double bottom = region.Max(r => r.Line.Box.Bottom);
+        double left = region.Min(r => r.Line.Box.Left);
+        double right = region.Max(r => r.Line.Box.Right);
+        List<double> verticals = rulings
+            .Where(s => s.IsVertical && Math.Max(s.Y1, s.Y2) >= top - RulingSlack && Math.Min(s.Y1, s.Y2) <= bottom + RulingSlack)
+            .Select(s => s.X1)
+            .ToList();
+
+        // A column needs cells in two rows — or, in a ruled grid, a vertical ruling right before it: a column that is
+        // empty in every data row (a checklist's „Wykonano”) still has its header cell.
         var clusters = ColumnClustering.ClusterLefts(multi.SelectMany(r => r.Cells.Select(c => c.Box.Left)), tolerance);
         List<double> lefts = clusters
-            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count))
+            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count)
+                || verticals.Any(x => x <= c && c - x <= tolerance))
             .ToList();
         if (lefts.Count < 2)
         {
             return null;
         }
 
-        double top = region.Min(r => r.Line.Box.Top);
-        double bottom = region.Max(r => r.Line.Box.Bottom);
-        double left = region.Min(r => r.Line.Box.Left);
-        double right = region.Max(r => r.Line.Box.Right);
-        IEnumerable<double> verticals = rulings
-            .Where(s => s.IsVertical && Math.Max(s.Y1, s.Y2) >= top - RulingSlack && Math.Min(s.Y1, s.Y2) <= bottom + RulingSlack)
-            .Select(s => s.X1);
         IReadOnlyList<ColumnBand> bands = ColumnClustering.Bands(lefts, right, verticals, tolerance);
         if (IsHangingList(bands, multi) || IsTextColumns(region, gutter))
         {
