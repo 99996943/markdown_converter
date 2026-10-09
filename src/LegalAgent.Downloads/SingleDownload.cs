@@ -9,12 +9,19 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
 {
     private const int BufferSize = 81920;
     private static readonly byte[] PdfSignature = "%PDF-"u8.ToArray();
+    private static readonly CultureInfo Polish = CultureInfo.GetCultureInfo("pl-PL");
 
     /// <summary>Downloads the planned item into the directory; failures become results.</summary>
+    /// <exception cref="OperationCanceledException">Cancelled by the user.</exception>
     public async Task<DownloadResult> RunAsync(PlannedDownload item, string directory, CancellationToken cancellationToken)
     {
         string target = Path.Combine(directory, item.FileName);
         string part = target + ".part";
+
+        // One limit for the whole download: headers, body and write (research R4).
+        using var limit = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        limit.CancelAfter(options.Timeout);
+        CancellationToken token = limit.Token;
         try
         {
             using var request = new HttpRequestMessage(HttpMethod.Get, item.Address);
@@ -24,7 +31,7 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
             }
 
             using HttpResponseMessage response = await httpClient
-                .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+                .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, token)
                 .ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
@@ -36,7 +43,12 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                     code));
             }
 
-            (long size, string sha256) = await WritePartAsync(response.Content, part, cancellationToken).ConfigureAwait(false);
+            if (response.Content.Headers.ContentLength > options.MaxFileSizeBytes)
+            {
+                throw TooLarge();
+            }
+
+            (long size, string sha256) = await WritePartAsync(response.Content, part, token).ConfigureAwait(false);
             File.Move(part, target, overwrite: true);
 
             return new DownloadResult
@@ -54,6 +66,11 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
         {
             return Failed(item, failure.Error);
         }
+        catch (OperationCanceledException e) when (!cancellationToken.IsCancellationRequested)
+        {
+            // Our limit elapsed (or the client's own timeout fired): not a cancellation by the user.
+            return Failed(item, new DownloadError(DownloadErrorKind.Timeout, TimeoutMessage(options.Timeout), Detail: e.Message));
+        }
         catch (HttpRequestException e)
         {
             return Failed(item, new DownloadError(
@@ -68,10 +85,12 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
     }
 
     /// <summary>Message for an elapsed time limit (pl-PL number format).</summary>
-    internal static string TimeoutMessage(TimeSpan timeout) => throw new NotImplementedException();
+    internal static string TimeoutMessage(TimeSpan timeout) =>
+        string.Create(Polish, $"przekroczono limit czasu {timeout.TotalSeconds:0.##} s");
 
     /// <summary>Message for a file above the size limit (pl-PL number format).</summary>
-    internal static string TooLargeMessage(long maxBytes) => throw new NotImplementedException();
+    internal static string TooLargeMessage(long maxBytes) =>
+        string.Create(Polish, $"plik przekracza limit rozmiaru {maxBytes / (1024.0 * 1024.0):0.##} MB");
 
     private static DownloadResult Failed(PlannedDownload item, DownloadError error) => new()
     {
@@ -89,7 +108,27 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
         return canonical.ReasonPhrase;
     }
 
-    private static async Task<(long Size, string Sha256)> WritePartAsync(HttpContent content, string part, CancellationToken cancellationToken)
+    private static async Task<int> ReadAtLeastAsync(Stream body, byte[] buffer, int minimum, CancellationToken cancellationToken)
+    {
+        int total = 0;
+        while (total < minimum)
+        {
+            int read = await body.ReadAsync(buffer.AsMemory(total), cancellationToken).ConfigureAwait(false);
+            if (read == 0)
+            {
+                break;
+            }
+
+            total += read;
+        }
+
+        return total;
+    }
+
+    private DownloadFailureException TooLarge() =>
+        new(new DownloadError(DownloadErrorKind.TooLarge, TooLargeMessage(options.MaxFileSizeBytes)));
+
+    private async Task<(long Size, string Sha256)> WritePartAsync(HttpContent content, string part, CancellationToken cancellationToken)
     {
         using var hash = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
         Stream body = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
@@ -109,32 +148,20 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                 int read = head;
                 while (read > 0)
                 {
+                    size += read;
+                    if (size > options.MaxFileSizeBytes)
+                    {
+                        throw TooLarge();
+                    }
+
                     hash.AppendData(buffer, 0, read);
                     await file.WriteAsync(buffer.AsMemory(0, read), cancellationToken).ConfigureAwait(false);
-                    size += read;
                     read = await body.ReadAsync(buffer, cancellationToken).ConfigureAwait(false);
                 }
 
                 return (size, Convert.ToHexStringLower(hash.GetHashAndReset()));
             }
         }
-    }
-
-    private static async Task<int> ReadAtLeastAsync(Stream body, byte[] buffer, int minimum, CancellationToken cancellationToken)
-    {
-        int total = 0;
-        while (total < minimum)
-        {
-            int read = await body.ReadAsync(buffer.AsMemory(total), cancellationToken).ConfigureAwait(false);
-            if (read == 0)
-            {
-                break;
-            }
-
-            total += read;
-        }
-
-        return total;
     }
 }
 
