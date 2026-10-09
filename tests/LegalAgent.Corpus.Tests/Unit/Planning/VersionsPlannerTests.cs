@@ -36,7 +36,7 @@ public class VersionsPlannerTests
     {
         CorpusPlan plan = Plan();
 
-        foreach (DocumentPlan latest in plan.Documents.Where(d => d.Version > 1))
+        foreach (DocumentPlan latest in plan.Documents.Where(d => d.Version > 1 && !d.Id.Contains("-w", StringComparison.Ordinal)))
         {
             List<DocumentPlan> versions = Versions(plan, latest);
             Assert.Equal(Enumerable.Range(1, latest.Version), versions.Select(v => v.Version));
@@ -68,13 +68,17 @@ public class VersionsPlannerTests
     {
         CorpusPlan plan = Plan();
 
-        foreach (DocumentPlan latest in plan.Documents.Where(d => d.Version > 1))
+        foreach (DocumentPlan latest in plan.Documents.Where(d => d.Version > 1 && !d.Id.Contains("-w", StringComparison.Ordinal)))
         {
-            foreach (DocumentPlan earlier in Versions(plan, latest).Where(v => v.Id != latest.Id))
+            List<DocumentPlan> versions = Versions(plan, latest);
+            for (int k = 0; k < versions.Count - 1; k++)
             {
-                FactOverride change = Assert.Single(earlier.FactOverrides, o => o.Reason == OverrideReason.Wersja);
+                FactOverride change = Assert.Single(versions[k].FactOverrides, o => o.Reason == OverrideReason.Wersja);
                 Assert.Contains(change.FactId, CorpusPlanner.GuaranteedFacts(Mini, Mini.Templates.Single(t => t.Id == latest.Template)));
-                Assert.NotEqual(Mini.Facts.ValueAt(change.FactId, latest.ValidFrom), change.Value);
+                DocumentPlan next = versions[k + 1];
+                FactValue following = next.FactOverrides.FirstOrDefault(o => o.FactId == change.FactId)?.Value
+                    ?? Mini.Facts.ValueAt(change.FactId, next.ValidFrom);
+                Assert.NotEqual(following, change.Value);
             }
 
             Assert.DoesNotContain(latest.FactOverrides, o => o.Reason == OverrideReason.Wersja);

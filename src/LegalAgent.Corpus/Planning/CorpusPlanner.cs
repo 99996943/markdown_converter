@@ -7,7 +7,7 @@ namespace LegalAgent.Corpus.Planning;
 /// <summary>Plans the base documents of a corpus run.</summary>
 public static class CorpusPlanner
 {
-    /// <summary>Plans the base documents.</summary>
+    /// <summary>Plans the documents: the base documents, their versions, outdated documents and contradiction pairs.</summary>
     /// <param name="content">The loaded content.</param>
     /// <param name="parameters">The run parameters.</param>
     /// <returns>The plan: documents ordered by type (typy.yaml order) then id.</returns>
@@ -34,7 +34,7 @@ public static class CorpusPlanner
             .SelectMany(s => s.Required)
             .ToHashSet(StringComparer.Ordinal);
 
-        var documents = new List<DocumentPlan>();
+        var types = new List<List<DocumentPlan>>();
         foreach (DocumentTypeDef type in content.Types)
         {
             if (requested is not null && !requested.Contains(type.Id, StringComparer.Ordinal))
@@ -42,18 +42,22 @@ public static class CorpusPlanner
                 continue;
             }
 
-            documents.AddRange(PlanType(content, parameters, type, requiredBlocks));
+            types.Add(PlanType(content, parameters, type, requiredBlocks));
         }
 
-        return new CorpusPlan(documents);
+        return new CorpusPlan(DocumentStates.Apply(content, parameters, types));
     }
 
     /// <summary>
     /// Facts a document of <paramref name="template"/> certainly states: used by its required blocks outside variant
     /// groups (<c>{a|b}</c>), in ordinal order.
     /// </summary>
-    public static IReadOnlyList<string> GuaranteedFacts(ContentLibrary content, DocumentTemplate template) =>
-        throw new NotImplementedException();
+    public static IReadOnlyList<string> GuaranteedFacts(ContentLibrary content, DocumentTemplate template)
+    {
+        ArgumentNullException.ThrowIfNull(content);
+        ArgumentNullException.ThrowIfNull(template);
+        return DocumentStates.GuaranteedFacts(content, template);
+    }
 
     private static List<DocumentPlan> PlanType(
         ContentLibrary content,
