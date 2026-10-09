@@ -27,7 +27,11 @@ przykładu; pola o wartości `null` pomijane. Bez znaczników czasu uruchomienia
       "url": "https://www.mbank.pl/pdf/stary.pdf",
       "status": "failed",
       "file": "stary.pdf",
-      "error": { "kind": "http-status", "httpStatus": 404, "message": "serwer zwrócił 404 Not Found" }
+      "error": {
+        "kind": "http-status",
+        "httpStatus": 404,
+        "message": "serwer zwrócił 404 Not Found"
+      }
     }
   ]
 }
