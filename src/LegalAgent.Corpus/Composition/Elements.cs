@@ -183,6 +183,9 @@ public sealed record FrontMatter(string Bank, string Title, string Designation, 
     /// <summary>Change history (metryczka).</summary>
     public IReadOnlyList<HistoryEntry> History { get; init; } = [];
 
+    /// <summary>Extra record-card rows (key, value), e.g. a row inserted by a poison operation (FR-132).</summary>
+    public IReadOnlyList<KeyValuePair<string, string>> ExtraFields { get; init; } = [];
+
     /// <summary>Text inserted on the cover by a poison operation (FR-132), shown as an ordinary cover line.</summary>
     public IReadOnlyList<Inline>? CoverNote { get; init; }
 }

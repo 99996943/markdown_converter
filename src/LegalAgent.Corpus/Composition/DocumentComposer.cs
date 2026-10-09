@@ -19,9 +19,18 @@ public sealed record CompositionResult(
     IReadOnlyDictionary<string, IReadOnlyList<string>> FactElements,
     int OptionalBlocks)
 {
+    /// <summary>Gets the places of the document's poison (FR-142); empty for documents that are not poisoned.</summary>
+    public IReadOnlyList<ComposedPoison> Poison { get; init; } = [];
+
     /// <summary>Gets, per fact id, its uses in document order: the element and, in a tariff row, the position („poz. 4.7”).</summary>
     public IReadOnlyDictionary<string, IReadOnlyList<FactUse>> FactUses { get; init; } = new Dictionary<string, IReadOnlyList<FactUse>>(StringComparer.Ordinal);
 }
+
+/// <summary>A place of a poison in the composed document.</summary>
+/// <param name="ElementId">The element holding the text; <c>okladka</c> or <c>metryczka</c> for the front matter.</param>
+/// <param name="Element">The kind of place: <c>akapit</c>, <c>przypis</c>, <c>komorka-tabeli</c>, <c>metryczka</c>, <c>okladka</c>, <c>ramka</c>.</param>
+/// <param name="Text">The verbatim poison text as printed.</param>
+public sealed record ComposedPoison(string ElementId, string Element, string Text);
 
 /// <summary>A use of a fact in the composed document.</summary>
 /// <param name="ElementId">The element whose text states the fact (empty: the front matter).</param>
