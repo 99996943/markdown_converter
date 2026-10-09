@@ -41,6 +41,7 @@ Brak znacznika czasu uruchomienia (powtarzalność).
 | `status` | `obowiazujacy` \| `nieaktualny` | względem `run.referenceDate`; dla zatrutych — status **rzeczywisty** (np. dokument nieaktualny przedstawiony jako obowiązujący ma `nieaktualny`) |
 | `previousVersion` | string? | `id` wersji poprzedniej |
 | `pdf`, `markdown` | string | ścieżki względne od `corpus/`, separator `/` |
+| `chunks` | string | (spec 004) plik fragmentów `<id>.chunks.jsonl` obok Markdown, ścieżka względna od `corpus/`; format: `specs/004-document-chunking/contracts/chunks-json.md` |
 | `pages` | number | liczba stron PDF |
 | `template`, `layout`, `seed` | string, string, number | tylko dokumenty syntetyczne |
 | `sharedWordShare`, `repeatedWordShare` | number | udział słów bloków wspólnych / powtórzonych (0–1, 3 miejsca) |
@@ -72,7 +73,7 @@ Brak znacznika czasu uruchomienia (powtarzalność).
 
 ## Gwarancje dla aplikacji RAG
 
-- Każdy `pdf`/`markdown` istnieje; każde `previousVersion`, `with`, `imitates` wskazuje istniejący `id`.
+- Każdy `pdf`/`markdown`/`chunks` istnieje; każde `previousVersion`, `with`, `imitates` wskazuje istniejący `id`.
 - Każdy `places[].text` występuje dosłownie w PDF dokumentu (warstwa tekstu) i — po zwykłym
   odescapowaniu Markdown — w jego Markdown (SC-023).
 - Dla jednego `designation` wersje mają rozłączne, ciągłe okresy `validFrom`–`validTo`.

@@ -22,10 +22,9 @@ public sealed class ManifestChunksTests
     {
         string json = ManifestWriter.Write(Sample(Reg01), ["regulaminy"]).ReplaceLineEndings("\n");
 
-        Assert.Contains(
-            "\"markdown\": \"regulaminy/REG-01.md\",\n      \"chunks\": \"regulaminy/REG-01.chunks.jsonl\",\n      \"pages\": 12,",
-            json,
-            StringComparison.Ordinal);
+        Assert.Matches(
+            "\"markdown\": \"regulaminy/REG-01\\.md\",\\n *\"chunks\": \"regulaminy/REG-01\\.chunks\\.jsonl\",\\n *\"pages\": 12",
+            json);
         Assert.Contains("\"schemaVersion\": 1,", json, StringComparison.Ordinal);
     }
 
