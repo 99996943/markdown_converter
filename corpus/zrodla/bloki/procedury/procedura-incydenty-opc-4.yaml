@@ -1,0 +1,269 @@
+bloki:
+  # --- Testy i ćwiczenia (kroki)
+  - id: incydenty-testy-scenariusze
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - kroki:
+          - tekst: "Scenariusze ćwiczeń. Scenariusze ćwiczeń {przygotowuje|opracowuje} Jednostka bezpieczeństwa w oparciu o rzeczywiste zagrożenia i wnioski z incydentów. Każdy scenariusz opisuje:"
+            podkroki:
+              - tekst: "cel ćwiczenia i oczekiwane zachowania uczestników;"
+              - tekst: "przebieg zdarzeń w czasie, w tym momenty podawania uczestnikom nowych informacji;"
+              - tekst: "role uczestników oraz obserwatorów;"
+              - tekst: "kryteria oceny wykonania ćwiczenia."
+          - tekst: "Zakres tematyczny. W {ciągu cyklu rocznego|cyklu rocznym} ćwiczenia {obejmują|dotyczą} {co najmniej|przynajmniej}: atak szyfrujący dane, wyciek danych osobowych, niedostępność systemu centralnego, przejęcie konta uprzywilejowanego, incydent u kluczowego dostawcy oraz kampanię wyłudzającą dane Klientów."
+
+  - id: incydenty-testy-szkolenia
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - kroki:
+          - tekst: "Szkolenia pracowników. {Wszyscy pracownicy przechodzą|Każdy pracownik przechodzi} szkolenie z rozpoznawania i zgłaszania incydentów przy zatrudnieniu, {w terminie|w ciągu} {{fakt:termin.incydent.szkolenie-wstepne}}, oraz powtarzają je co roku."
+            podkroki:
+              - tekst: "Szkolenie obejmuje przykłady wiadomości wyłudzających dane, zasady zgłaszania zdarzeń oraz skutki zaniechania zgłoszenia."
+              - tekst: "Członkowie Zespołu przechodzą dodatkowe szkolenie specjalistyczne obejmujące narzędzia, zasady zabezpieczania dowodów i komunikacji w czasie incydentu."
+              - tekst: "Udział w szkoleniach rejestruje Jednostka kadr, a Jednostka bezpieczeństwa otrzymuje raport o osobach, które nie ukończyły szkolenia w terminie."
+
+  - id: incydenty-testy-dostawcy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - kroki:
+          - tekst: "Testy z udziałem dostawców. W umowach z kluczowymi dostawcami Bank {zastrzega|zachowuje} prawo do udziału w testach awaryjnych dostawcy oraz do żądania wyników testów odtwarzania usług."
+            podkroki:
+              - tekst: "Wyniki testów dostawcy {ocenia|analizuje} właściciel umowy {wspólnie z|razem z} Jednostką bezpieczeństwa."
+              - tekst: "Negatywne wyniki testów {skutkują wezwaniem|powodują wezwanie} dostawcy do {przedstawienia|przekazania} planu naprawczego w {ustalonym|wyznaczonym} terminie."
+
+  - id: incydenty-testy-ocena
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-testy-opis
+    elementy:
+      - kroki:
+          - tekst: "Sprawozdanie z testów. Po każdym ćwiczeniu Jednostka bezpieczeństwa {sporządza|przygotowuje} sprawozdanie, które {zawiera|obejmuje} ocenę wykonania, listę zaobserwowanych braków i propozycje zmian."
+          - tekst: "Wykorzystanie sprawozdań. Zalecenia ze sprawozdań {wprowadza się|wpisuje się} do planu działań na takich samych zasadach jak zalecenia po incydentach. Zbiorcze wyniki testów Jednostka bezpieczeństwa przedstawia Zarządowi raz w roku, wraz z oceną gotowości Banku do reagowania na incydenty."
+
+  # --- Przypadki szczególne
+  - id: incydenty-szczegolne-oprogramowanie-szyfrujace
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Atak oprogramowania szyfrującego dane. W razie stwierdzenia szyfrowania danych w systemach Banku postępuje się następująco:"
+            podkroki:
+              - tekst: "{niezwłocznie|bez zbędnej zwłoki} odłącza się zainfekowane stacje i serwery od sieci, nie wyłączając ich zasilania;"
+              - tekst: "zabezpiecza się kopie zapasowe przed zaszyfrowaniem poprzez odłączenie ich nośników lub repozytoriów od sieci produkcyjnej;"
+              - tekst: "{informuje|powiadamia} się niezwłocznie dyrektora Jednostki bezpieczeństwa i członka Zarządu nadzorującego ryzyko, gdyż incydent klasyfikuje się {co najmniej|przynajmniej} jako wysoki;"
+              - tekst: "dokumentuje się treść żądania sprawców, w tym adres, na jaki żądano płatności, i przekazuje je organom ścigania."
+          - tekst: "Zakaz negocjacji. Pracownicy nie wchodzą w kontakt ze sprawcami i nie dokonują żadnych płatności. Decyzję o ewentualnym kontakcie ze sprawcami podejmuje {wyłącznie|jedynie} Zarząd po zasięgnięciu opinii Jednostki prawnej i organów ścigania."
+
+  - id: incydenty-szczegolne-wyludzenie
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Kampania wyłudzająca dane Klientów. {Jeżeli|Gdy} sprawcy podszywają się pod Bank (fałszywe strony, wiadomości SMS, rozmowy telefoniczne), Jednostka bezpieczeństwa:"
+            podkroki:
+              - tekst: "zbiera przykłady wiadomości i adresów oraz zgłasza fałszywe strony do usunięcia ich dostawcom usług hostingowych i rejestratorom domen;"
+              - tekst: "wnioskuje o zablokowanie fałszywych domen i numerów telefonicznych;"
+              - tekst: "przekazuje Jednostce komunikacji informacje potrzebne do ostrzeżenia Klientów;"
+              - tekst: "identyfikuje Klientów, którzy mogli ujawnić dane, i {czasowo|tymczasowo} zabezpiecza ich rachunki oraz instrumenty płatnicze."
+          - tekst: "Rozmowa z Klientem poszkodowanym. Klientowi, który ujawnił dane uwierzytelniające, pracownik przekazuje zalecenia: zmiana hasła, zablokowanie karty, kontakt z infolinią {{fakt:kontakt.infolinia-zastrzezenia}} i złożenie zawiadomienia o przestępstwie, {jeżeli|gdy} poniósł szkodę."
+
+  - id: incydenty-szczegolne-odmowa-uslugi
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Atak odmowy usługi. W razie ataku przeciążeniowego na kanały elektroniczne Jednostka informatyki:"
+            podkroki:
+              - tekst: "uruchamia mechanizmy filtrowania ruchu i, {w razie|w przypadku} potrzeby, usługę ochrony udostępnioną przez operatora łączy;"
+              - tekst: "przekierowuje ruch Klientów do zapasowych punktów dostępu, {o ile|jeżeli} takie istnieją;"
+              - tekst: "zbiera dane o źródłach i charakterze ruchu na potrzeby analizy i zawiadomienia o przestępstwie."
+          - tekst: "Komunikacja podczas ataku. Jednostka komunikacji {informuje|powiadamia} Klientów o utrudnieniach w dostępie do bankowości elektronicznej i o możliwości skorzystania z placówek i infolinii. Komunikat nie {zawiera|obejmuje} informacji o zastosowanych zabezpieczeniach."
+
+  - id: incydenty-szczegolne-wyciek-danych
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Wyciek lub utrata danych osobowych. Przy podejrzeniu wycieku danych Klientów lub pracowników, w tym w wyniku wysłania wiadomości do niewłaściwego adresata lub zgubienia dokumentów, pracownik {niezwłocznie|bez zbędnej zwłoki} zgłasza zdarzenie dyżurnemu i Inspektorowi."
+            podkroki:
+              - tekst: "Inspektor ocenia ryzyko zgodnie z zasadami opisanymi w procedurze i {w terminie|w ciągu} {{fakt:termin.incydent.naruszenie-danych}} od stwierdzenia naruszenia decyduje o zgłoszeniu do organu ochrony danych."
+              - tekst: "Jednostka bezpieczeństwa podejmuje działania ograniczające skutki, np. wnioskuje do niewłaściwego adresata o usunięcie wiadomości i potwierdzenie jej usunięcia."
+              - tekst: "Wszystkie naruszenia, {także|również} niezgłoszone organowi ochrony danych, wpisuje się do Rejestru wraz z uzasadnieniem."
+
+  - id: incydenty-szczegolne-dostawca
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Incydent u kluczowego dostawcy. {Jeżeli|Gdy} dostawca po{informuje|powiadamia} o incydencie w swoich systemach lub awarii usługi istotnej dla Banku, Jednostka bezpieczeństwa:"
+            podkroki:
+              - tekst: "rejestruje incydent i klasyfikuje go według wpływu na usługi Banku;"
+              - tekst: "ustala, czy dane Banku lub Klientów zostały ujawnione lub utracone;"
+              - tekst: "{w razie|w przypadku} potrzeby uruchamia rozwiązania zastępcze przewidziane w planie ciągłości działania, w tym przejście na alternatywnego dostawcę lub tryb ręczny;"
+              - tekst: "w przypadku incydentu poważnego dotyczącego usługi zleconej na zewnątrz informuje organ nadzoru, jak dla incydentu własnego."
+
+  - id: incydenty-szczegolne-karty
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Masowa kompromitacja kart. {Jeżeli|Gdy} organizacja kartowa, operator systemu płatności lub sprzedawca po{informuje|powiadamia} Bank o kompromitacji numerów kart, Jednostka operacji:"
+            podkroki:
+              - tekst: "{ustala|określa} listę dotkniętych kart i {czasowo|tymczasowo} je blokuje, niezwłocznie wydając Klientom nowe karty bez opłat;"
+              - tekst: "monitoruje transakcje dokonane kartami ujętymi na liście przed ich zablokowaniem;"
+              - tekst: "uruchamia procedurę zwrotu nieautoryzowanych transakcji, zgodnie z terminami wynikającymi z przepisów o usługach płatniczych."
+          - tekst: "Komunikacja z Klientami. Klientów, których karty zablokowano, informuje się o przyczynie blokady i o sposobie odbioru nowej karty. Informację można przekazać telefonicznie, wiadomością SMS lub w bankowości elektronicznej."
+
+  - id: incydenty-szczegolne-bankomaty
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Ingerencja w bankomaty lub terminale. Gdy pracownik lub serwis stwierdzi nietypowe urządzenia, nakładki lub ślady ingerencji w bankomacie albo terminalu, obowiązują następujące zasady:"
+            podkroki:
+              - tekst: "urządzenie wyłącza się z {eksploatacji|użytkowania} i {zabezpiecza|chroni} przed {dotykiem|dostępem} osób nieupoważnionych;"
+              - tekst: "{dokumentuje|rejestruje} się stan urządzenia fotograficznie, bez usuwania nakładek;"
+              - tekst: "{zawiadamia się|powiadamia się} Jednostkę bezpieczeństwa i policję;"
+              - tekst: "Jednostka operacji identyfikuje karty użyte w urządzeniu w ostatnim okresie i ocenia konieczność ich zablokowania."
+
+  - id: incydenty-szczegolne-urzadzenia
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Utrata lub kradzież urządzenia służbowego. Pracownik, który utracił komputer, telefon, nośnik danych lub token, zgłasza to {niezwłocznie|bez zbędnej zwłoki} dyżurnemu, nie później niż {w terminie|w ciągu} {{fakt:termin.incydent.zgloszenie-pracownika}} od stwierdzenia utraty."
+            podkroki:
+              - tekst: "Jednostka informatyki blokuje konta i certyfikaty powiązane z urządzeniem oraz, {o ile|jeżeli} to możliwe, zdalnie usuwa z niego dane."
+              - tekst: "Jednostka bezpieczeństwa ocenia, jakie dane mogły znajdować się na urządzeniu i czy były zaszyfrowane; wynik oceny jest podstawą decyzji o zgłoszeniu naruszenia ochrony danych."
+              - tekst: "Pracownik składa pisemne wyjaśnienie okoliczności utraty, a {w razie|w przypadku} podejrzenia przestępstwa — zawiadomienie na policję."
+
+  - id: incydenty-szczegolne-wewnetrzny
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Podejrzenie nadużycia przez pracownika. {Gdy|Jeżeli} podejrzenie dotyczy pracownika Banku lub osoby mającej dostęp do jego systemów, obsługę incydentu prowadzi się z {zachowaniem szczególnej poufności|zachowaniem szczególnej dyskrecji}."
+            podkroki:
+              - tekst: "Informacje o podejrzeniu otrzymują {wyłącznie|jedynie} osoby, które muszą je znać do przeprowadzenia czynności."
+              - tekst: "Jednostka kadr i Jednostka prawna uczestniczą w czynnościach wobec pracownika, dbając o zgodność z przepisami prawa pracy i ochrony danych osobowych."
+              - tekst: "Dostęp pracownika do systemów można ograniczyć lub zawiesić po zabezpieczeniu śladów jego aktywności."
+              - tekst: "Pracownik ma prawo do przedstawienia wyjaśnień, a decyzje wobec niego podejmuje się na podstawie całości ustaleń, nie wyłącznie danych z systemów monitorujących."
+
+  - id: incydenty-szczegolne-awaria-platnosci
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-szczegolne
+    elementy:
+      - kroki:
+          - tekst: "Awaria systemu płatności lub rozliczeń. W razie awarii, która uniemożliwia realizację przelewów lub rozliczeń, Jednostka operacji:"
+            podkroki:
+              - tekst: "{ustala|określa} listę zleceń nierealizowanych, w tym zleceń natychmiastowych oraz z terminami, których niedotrzymanie powoduje dla Klienta dodatkowe skutki;"
+              - tekst: "po przywróceniu systemu realizuje zlecenia w kolejności ich złożenia, z uwzględnieniem priorytetów;"
+              - tekst: "{informuje|powiadamia} Jednostkę zgodności o terminie wznowienia, aby oceniła, czy incydent podlega zgłoszeniu organowi nadzoru jako incydent poważny."
+          - tekst: "Skutki dla Klientów. Opłaty i odsetki naliczone Klientom w wyniku opóźnienia spowodowanego awarią Bank zwraca z urzędu."
+
+  # --- Kontrola i nadzór
+  - id: incydenty-kontrola-wskazniki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-kontrola-opis
+    elementy:
+      - ustep: "Jednostka bezpieczeństwa {prowadzi|monitoruje} wskaźniki ryzyka (KRI) dotyczące incydentów, dla których Zarząd {ustala|określa} poziomy ostrzegawcze. Przekroczenie poziomu ostrzegawczego wymaga:"
+        punkty:
+          - "pisemnego wyjaśnienia przyczyn przez właściciela procesu;"
+          - "planu działań naprawczych z terminami;"
+          - "informacji w najbliższym sprawozdaniu dla Zarządu."
+      - akapit: "Wskaźniki obejmują {m.in.|między innymi} liczbę incydentów krytycznych w kwartale, średni czas wykrycia, odsetek niedotrzymanych terminów zawiadomień oraz liczbę incydentów powtarzających się."
+
+  - id: incydenty-kontrola-probna
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-kontrola-opis
+    elementy:
+      - ustep: "Jednostka zgodności raz na kwartał {przeprowadza|wykonuje} kontrolę próbną, która obejmuje:"
+        punkty:
+          - "wybór losowej próby incydentów z Rejestru i sprawdzenie kompletności ich dokumentacji;"
+          - "sprawdzenie, czy poziom ważności został nadany prawidłowo;"
+          - "sprawdzenie dotrzymania terminów zawiadomień dla organu nadzoru i organu ochrony danych;"
+          - "ocenę, czy zalecenia z przeglądu zostały zrealizowane."
+      - akapit: "Wyniki kontroli {przekazuje się|przedstawia się} dyrektorowi Jednostki bezpieczeństwa, który {odpowiada za|zapewnia} usunięcie nieprawidłowości."
+
+  - id: incydenty-kontrola-samoocena
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-kontrola-opis
+    elementy:
+      - akapit: "Raz w roku Jednostka bezpieczeństwa dokonuje samooceny {dojrzałości|poziomu rozwoju} procesu obsługi incydentów, porównując go z uznanymi standardami zarządzania incydentami. Wyniki samooceny, wraz z {ustalonymi|wskazanymi} obszarami do poprawy, {przedstawia|przekazuje} Zarządowi. Obszary do poprawy wprowadza się do planu działań na kolejny rok."
+      - akapit: "{Niezależnie od samooceny|Poza samooceną} Jednostka audytu ocenia w cyklu audytowym, czy procedura jest stosowana w całym Banku, w tym w oddziałach i jednostkach zależnych."
+
+  # --- Załączniki (opcjonalne)
+  - id: incydenty-zal-kontakty
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "{Wykaz|Zestawienie} kontaktów alarmowych"
+        poziom: 2
+      - tabela:
+          kolumny:
+            - naglowek: "Funkcja"
+              waga: 2
+            - naglowek: "Kontakt"
+              waga: 3
+          wiersze:
+            - ["Dyżurny Jednostki bezpieczeństwa", "telefon {{fakt:incydent.dyzur-telefon}}, adres e-mail {{fakt:incydent.dyzur-email}}"]
+            - ["Inspektor", "adres e-mail {{fakt:kontakt.email-iod}}"]
+            - ["Infolinia dla Klientów", "{{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}})"]
+            - ["Zastrzeganie instrumentów płatniczych", "{{fakt:kontakt.infolinia-zastrzezenia}}"]
+            - ["Dyżurny Jednostki informatyki", "{numer służbowy zgodny z aktualnym harmonogramem dyżurów|numer podany w aktualnym harmonogramie dyżurów}"]
+            - ["Organ nadzoru", "kanał {wskazany|wyznaczony} przez organ nadzoru dla zawiadomień o incydentach poważnych"]
+          siatka: true
+
+  - id: incydenty-zal-terminy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "{Zestawienie|Wykaz} terminów"
+        poziom: 2
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność"
+              waga: 3
+            - naglowek: "Termin"
+              waga: 2
+          wiersze:
+            - ["Zgłoszenie zdarzenia przez pracownika", "do {{fakt:termin.incydent.zgloszenie-pracownika}} od {zauważenia|stwierdzenia zdarzenia}"]
+            - ["Klasyfikacja incydentu", "do {{fakt:termin.incydent.klasyfikacja}} od {rejestracji|zarejestrowania zgłoszenia}"]
+            - ["Zawiadomienie wstępne dla organu nadzoru", "do {{fakt:termin.incydent.powiadomienie-wstepne}} od zaklasyfikowania incydentu jako poważnego"]
+            - ["Zawiadomienie pośrednie", "do {{fakt:termin.incydent.powiadomienie-posrednie}} od zawiadomienia wstępnego"]
+            - ["Raport końcowy", "do {{fakt:termin.incydent.raport-koncowy}} od zawiadomienia pośredniego"]
+            - ["Zgłoszenie naruszenia danych osobowych", "do {{fakt:termin.incydent.naruszenie-danych}} od stwierdzenia naruszenia"]
+            - ["Powiadomienie Klientów", "do {{fakt:termin.incydent.powiadomienie-klientow}} od potwierdzenia, że incydent ich dotyczy"]
+            - ["Przegląd po incydencie", "do {{fakt:termin.incydent.przeglad}} od {zamknięcia incydentu|zakończenia obsługi incydentu}"]
+          siatka: true
+
+  - id: incydenty-zal-komunikat
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-zalacznik
+    elementy:
+      - naglowek: "Wzór komunikatu dla Klientów"
+        poziom: 2
+      - akapit: "Wzór {służy jako punkt wyjścia|stanowi punkt wyjścia}; treść każdego komunikatu {uzgadnia|ustala} kierownik incydentu z Jednostką komunikacji."
+      - ramka: "{Szanowni Państwo|Drodzy Klienci}, {informujemy|przekazujemy informację}, że w dniu \\{data\\} Bank wykrył zdarzenie, które mogło wpłynąć na \\{rodzaj usługi\\}. {Podjęliśmy|Wdrożyliśmy} działania, aby {chronić|zabezpieczyć} Państwa środki i dane. Prosimy o zmianę hasła do bankowości elektronicznej i o {zachowanie ostrożności|ostrożność} wobec wiadomości podszywających się pod Bank. Bank nigdy nie prosi o podanie pełnych danych uwierzytelniających. W razie pytań prosimy o kontakt z infolinią {{fakt:kontakt.infolinia}}."

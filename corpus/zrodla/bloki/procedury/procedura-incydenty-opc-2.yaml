@@ -1,0 +1,135 @@
+bloki:
+  # --- Klasyfikacja i ocena (kroki)
+  - id: incydenty-klasyfikacja-kategorie
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Kategorie szczegółowe. Przy rejestracji incydentu wskazuje się kategorię główną i, {jeżeli|gdy} to możliwe, podkategorię. Przyjęto następujące kategorie główne:"
+            podkroki:
+              - tekst: "złośliwe oprogramowanie — wirusy, trojany, oprogramowanie szyfrujące i szpiegujące;"
+              - tekst: "nieuprawniony dostęp — przejęcie konta, obejście uwierzytelniania, nadużycie uprawnień;"
+              - tekst: "odmowa usługi — celowe przeciążenie systemów lub sieci;"
+              - tekst: "wyłudzenie danych — wiadomości lub rozmowy, w których sprawca podszywa się pod Bank lub Klienta;"
+              - tekst: "wyciek danych — ujawnienie danych osobom nieuprawnionym;"
+              - tekst: "awaria — niezamierzona niedostępność lub nieprawidłowe działanie systemu;"
+              - tekst: "błąd przetwarzania — nieprawidłowe zaksięgowanie, naliczenie lub przekazanie operacji;"
+              - tekst: "incydent dostawcy — incydent po stronie podmiotu zewnętrznego wpływający na usługi Banku;"
+              - tekst: "incydent fizyczny — kradzież, włamanie, pożar, zalanie lub inne zdarzenie w lokalu."
+          - tekst: "Zmiana kategorii. Kategorię można zmienić po uzyskaniu nowych informacji; zmianę {odnotowuje się|wpisuje się} w Rejestrze, a pierwotną kategorię zachowuje się w historii wpisu."
+
+  - id: incydenty-klasyfikacja-skutki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Szacowanie skutków finansowych. Przy klasyfikacji {szacuje się|określa się} potencjalną stratę finansową, {obejmującą|w której uwzględnia się}:"
+            podkroki:
+              - tekst: "bezpośrednie straty Klientów i Banku wynikające z nieautoryzowanych lub błędnych operacji;"
+              - tekst: "koszty usunięcia skutków incydentu, w tym pracę zespołów i usługi zewnętrzne;"
+              - tekst: "przewidywane odszkodowania, kary lub rekompensaty dla Klientów;"
+              - tekst: "utracone przychody z tytułu niedostępności usług."
+          - tekst: "Szacunek wstępny. Szacunek wstępny jest {szacunkiem zachowawczym|oceną ostrożnościową} — przyjmuje się wartość {górnej granicy|górnego kresu} rozsądnego przedziału. Jednostka ryzyka weryfikuje szacunek po zamknięciu incydentu i przekazuje wartość rzeczywistą do Rejestru."
+          - tekst: "Skutki niefinansowe. {Obok|Oprócz} skutków finansowych ocenia się wpływ na zaufanie Klientów, relacje z organem nadzoru, możliwość wykonywania zobowiązań wobec partnerów rozliczeniowych oraz bezpieczeństwo pracowników."
+
+  - id: incydenty-klasyfikacja-wielokrotne
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Incydenty powiązane. {Jeżeli|Gdy} kilka zgłoszeń ma tę samą przyczynę, rejestruje się jeden incydent nadrzędny, a pozostałe zgłoszenia łączy się z nim jako zdarzenia podrzędne. Poziom ważności {ustala|określa} się dla całości."
+          - tekst: "Incydenty jednoczesne. {Gdy|Jeżeli} w tym samym czasie występuje kilka niepowiązanych incydentów, kierownik Jednostki bezpieczeństwa ustala kolejność ich obsługi i wyznacza odrębnych kierowników incydentów; Zespół może być w takim przypadku podzielony na grupy."
+          - tekst: "Incydent nawracający. Incydent, który powtarza się z tą samą przyczyną w ciągu ostatnich sześciu miesięcy, klasyfikuje się {co najmniej|przynajmniej} o jeden poziom wyżej niż poprzednie wystąpienie, a przegląd po incydencie jest obowiązkowy niezależnie od poziomu."
+
+  - id: incydenty-klasyfikacja-dostawcy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Incydenty po stronie dostawców. Incydent po stronie dostawcy rejestruje się i klasyfikuje według tych samych kryteriów co incydent własny, uwzględniając wpływ na usługi dla Klientów, a nie wagę, jaką nadał mu dostawca."
+            podkroki:
+              - tekst: "Jednostka bezpieczeństwa prosi dostawcę o informacje pozwalające ocenić zakres incydentu, {w szczególności|zwłaszcza} o dane dotyczące wpływu na dane Banku."
+              - tekst: "{Jeżeli|Gdy} dostawca nie przekazuje informacji w uzgodnionym terminie, przyjmuje się założenie najgorszego wiarygodnego scenariusza."
+              - tekst: "Właściciel umowy z dostawcą {dokumentuje|rejestruje} przypadki niedotrzymania obowiązków informacyjnych i {uwzględnia je|bierze je pod uwagę} w ocenie dostawcy."
+
+  - id: incydenty-klasyfikacja-dane
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-klasyfikacja-opis
+    elementy:
+      - kroki:
+          - tekst: "Ocena ryzyka naruszenia danych. Inspektor ocenia ryzyko dla osób, których dane dotyczą, uwzględniając:"
+            podkroki:
+              - tekst: "rodzaj i wrażliwość danych (dane identyfikacyjne, finansowe, dane szczególnych kategorii);"
+              - tekst: "liczbę osób i łatwość ich identyfikacji na podstawie ujawnionych danych;"
+              - tekst: "zakres zabezpieczeń zastosowanych do danych, {w szczególności|zwłaszcza} szyfrowanie, które mogłoby uniemożliwić zapoznanie się z nimi;"
+              - tekst: "prawdopodobne skutki dla osób, takie jak kradzież tożsamości, strata finansowa, dyskryminacja lub naruszenie dobrego imienia."
+          - tekst: "Dokumentowanie oceny. Wynik oceny, wraz z uzasadnieniem, Inspektor wpisuje do Rejestru, {także|również} wtedy, gdy uznaje, że zgłoszenie do organu ochrony danych nie jest wymagane."
+
+  # --- Reagowanie i ograniczanie skutków (kroki)
+  - id: incydenty-reagowanie-izolacja
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Izolacja systemów i sieci. Izolację zainfekowanych lub przejętych systemów {przeprowadza|wykonuje} Jednostka informatyki na polecenie kierownika incydentu. Przed izolacją ocenia się, czy odłączenie nie spowoduje większej szkody niż pozostawienie systemu w sieci."
+            podkroki:
+              - tekst: "Dla systemów krytycznych decyzję o izolacji podejmuje kierownik incydentu w porozumieniu z właścicielem systemu."
+              - tekst: "Systemy odłączone oznacza się w Rejestrze i w dzienniku zdarzeń, ze wskazaniem godziny odłączenia i osoby, która tego dokonała."
+              - tekst: "{Do ponownego podłączenia|Aby ponownie podłączyć system,} wymagana jest zgoda kierownika incydentu."
+          - tekst: "Segmentacja. Zespół stosuje istniejący podział sieci na segmenty, aby ograniczyć rozprzestrzenianie się incydentu; {w razie|w przypadku} potrzeby {czasowo|tymczasowo} zamyka połączenia między segmentami."
+
+  - id: incydenty-reagowanie-uwierzytelnianie
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Zarządzanie danymi uwierzytelniającymi. Gdy istnieje podejrzenie przejęcia kont, Jednostka informatyki:"
+            podkroki:
+              - tekst: "zmienia hasła i unieważnia sesje oraz tokeny kont, których dotyczy podejrzenie;"
+              - tekst: "w pierwszej kolejności zabezpiecza konta uprzywilejowane i konta usługowe;"
+              - tekst: "zmienia klucze i certyfikaty, {jeżeli|gdy} mogły zostać ujawnione;"
+              - tekst: "{sprawdza|weryfikuje} ostatnie logowania pod kątem wcześniejszej, niezauważonej aktywności atakującego."
+          - tekst: "Zablokowanie kart i rachunków Klientów. {Jeżeli|Gdy} incydent może prowadzić do nieautoryzowanych transakcji na kartach lub rachunkach Klientów, Jednostka operacji — na polecenie kierownika incydentu — {czasowo|tymczasowo} blokuje dotknięte instrumenty płatnicze i rachunki oraz uruchamia proces wydania nowych instrumentów bez opłat dla Klienta."
+
+  - id: incydenty-reagowanie-awaryjne
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Tryb awaryjny. {Jeżeli|Gdy} przywrócenie usługi w czasie wynikającym z RTO nie jest możliwe, kierownik incydentu wraz z Jednostką ciągłości wnioskuje do członka Zarządu o uruchomienie planu ciągłości działania."
+            podkroki:
+              - tekst: "Plan ciągłości działania uruchamia się decyzją członka Zarządu nadzorującego operacje lub osoby przez niego upoważnionej; decyzję {odnotowuje się|wpisuje się} w dzienniku zdarzeń."
+              - tekst: "W trybie awaryjnym placówki obsługują Klientów według uproszczonych zasad i w ograniczonym zakresie czynności, zgodnie z planem."
+              - tekst: "Operacje wykonane w trybie awaryjnym oznacza się i po przywróceniu systemów rekonsyliuje z danymi systemu centralnego {{fakt:incydent.system-cbs}}."
+
+  - id: incydenty-reagowanie-zmiany
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Zmiany w systemach w trakcie incydentu. Zmiany w systemach {wykonywane|dokonywane} w trakcie obsługi incydentu (poprawki, zmiany konfiguracji, wyłączenia) wymagają zgody kierownika incydentu i są odnotowywane w dzienniku zdarzeń. Procedura zarządzania zmianą w trybie przyspieszonym obejmuje następujące uproszczenia:"
+            podkroki:
+              - tekst: "zgodę na zmianę {wydaje|udziela} kierownik incydentu zamiast zwykłego komitetu zmian;"
+              - tekst: "dokumentację zmiany uzupełnia się nie później niż {w terminie|w ciągu} {{fakt:termin.incydent.zatwierdzenie-raportu}} po zamknięciu incydentu;"
+              - tekst: "zmiany niekonieczne do ograniczenia skutków odkłada się do czasu zakończenia incydentu."
+
+  - id: incydenty-reagowanie-wspolpraca
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-reagowanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Współpraca z wyspecjalizowanymi podmiotami. {Jeżeli|Gdy} Bank nie dysponuje wystarczającymi zasobami do analizy lub usunięcia skutków incydentu, kierownik incydentu może za zgodą dyrektora Jednostki bezpieczeństwa skorzystać ze wsparcia zewnętrznego zespołu specjalistów, z którym Bank ma zawartą umowę ramową."
+            podkroki:
+              - tekst: "Umowa z zewnętrznym zespołem {zawiera|obejmuje} klauzule poufności i zapewnia, że zespół działa pod nadzorem Banku."
+              - tekst: "Dostęp zespołu do systemów i danych ogranicza się do niezbędnego zakresu i rejestruje."
+              - tekst: "Wyniki analizy zespół przekazuje {wyłącznie|jedynie} Bankowi."

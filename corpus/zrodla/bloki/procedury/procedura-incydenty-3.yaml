@@ -1,0 +1,108 @@
+bloki:
+  - id: incydenty-komunikacja-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Komunikację w trakcie incydentu prowadzi się {wyłącznie|jedynie} według zasad poniżej. Pracownicy nieupoważnieni do kontaktu z mediami, Klientami lub instytucjami zewnętrznymi nie udzielają informacji o incydencie i kierują wszelkie pytania do Jednostki komunikacji."
+      - kroki:
+          - tekst: "Komunikacja wewnętrzna. Kierownik incydentu informuje o incydencie osoby i jednostki, które muszą podjąć działania, w zakresie {niezbędnym|koniecznym} do ich wykonania."
+            podkroki:
+              - tekst: "Informacje o incydentach krytycznych i wysokich przekazuje się w pokoju operacyjnym, a gdy ten jest niedostępny — telefonicznie."
+              - tekst: "Pracownikom placówek i infolinii przekazuje się krótką instrukcję: co wiadomo, co mówić Klientom i dokąd kierować pytania."
+              - tekst: "Informacje o przyczynach i sprawcach incydentu nie są przekazywane pracownikom spoza Zespołu do czasu zakończenia analizy."
+          - tekst: "Komunikacja z Klientami. Jeżeli incydent {dotyczy Klientów|ma wpływ na Klientów}, Jednostka komunikacji przygotowuje komunikat, który:"
+            podkroki:
+              - tekst: "w prosty sposób informuje, czego incydent dotyczy i jakich usług lub produktów;"
+              - tekst: "wskazuje zalecane działania Klienta (np. zmiana hasła, unikanie wskazanych linków) oraz numer infolinii {{fakt:kontakt.infolinia}};"
+              - tekst: "nie zawiera szczegółów technicznych, które mogłyby ułatwić dalsze ataki;"
+              - tekst: "przypomina, że Bank nie prosi o podanie pełnych danych uwierzytelniających."
+          - tekst: "Termin powiadomienia Klientów. Klientów, których dotyczy incydent o wysokim ryzyku dla ich środków lub danych, powiadamia się {w terminie|w ciągu} {{fakt:termin.incydent.powiadomienie-klientow}} od potwierdzenia, że incydent ich dotyczy. Gdy tożsamość dotkniętych Klientów nie jest jeszcze znana, zamieszcza się komunikat ogólny w bankowości elektronicznej i na stronie {{fakt:bank.strona}}."
+
+  - id: incydenty-raportowanie-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Incydenty poważne oraz naruszenia ochrony danych osobowych podlegają zgłoszeniu w terminach określonych poniżej. Terminy liczy się w godzinach, a nie w dniach roboczych — obejmują one dni ustawowo wolne od pracy, noce i weekendy."
+      - kroki:
+          - tekst: "Kwalifikacja incydentu poważnego. Jednostka zgodności wspólnie z Jednostką bezpieczeństwa ustala, czy incydent jest incydentem poważnym. Przy ocenie uwzględnia się {w szczególności|zwłaszcza} liczbę dotkniętych Klientów, czas trwania, zasięg, wartość transakcji, wpływ na inne instytucje i skutki dla reputacji Banku. Decyzję odnotowuje się w Rejestrze."
+          - tekst: "Zawiadomienie wstępne. Zawiadomienie wstępne dla organu nadzoru przekazuje się {w terminie|w ciągu} {{fakt:termin.incydent.powiadomienie-wstepne}} od zaklasyfikowania incydentu jako poważnego, a w każdym razie nie później niż w terminie {{fakt:termin.incydent.powiadomienie-wstepne-granica}} od momentu, w którym Bank dowiedział się o incydencie."
+            podkroki:
+              - tekst: "Zawiadomienie przygotowuje Jednostka bezpieczeństwa na formularzu {{fakt:incydent.zawiadomienie-nadzor}}, a opiniuje Jednostka zgodności."
+              - tekst: "Zawiadomienie zawiera dane Banku, datę i godzinę wykrycia, wstępny opis incydentu, szacowany zasięg i rodzaj dotkniętych usług, informację o podjętych działaniach i dane osoby kontaktowej."
+              - tekst: "Zawiadomienie przekazuje się bezpiecznym kanałem wskazanym przez organ nadzoru; brak pełnych danych nie jest powodem opóźnienia — uzupełnia się je w zawiadomieniach kolejnych."
+          - tekst: "Zawiadomienie pośrednie. Zawiadomienie pośrednie przekazuje się w terminie {{fakt:termin.incydent.powiadomienie-posrednie}} od zawiadomienia wstępnego albo niezwłocznie po istotnej zmianie stanu incydentu, {jeżeli|gdy} nastąpi ona wcześniej."
+            podkroki:
+              - tekst: "Zawiadomienie pośrednie zawiera zaktualizowany opis incydentu, ustaloną przyczynę (jeśli jest znana), liczbę dotkniętych Klientów, wartość operacji, podjęte działania naprawcze i przewidywany czas przywrócenia usług."
+              - tekst: "Kolejne aktualizacje przekazuje się w miarę potrzeb, aż do zakończenia incydentu."
+          - tekst: "Raport końcowy. Raport końcowy przekazuje się w terminie {{fakt:termin.incydent.raport-koncowy}} od zawiadomienia pośredniego albo od ustania incydentu, zależnie od tego, które zdarzenie nastąpi później. Raport według formularza {{fakt:incydent.raport-koncowy-formularz}} obejmuje analizę przyczyny źródłowej, pełne skutki, wykonane i planowane środki zaradcze oraz informacje o ewentualnych kosztach."
+          - tekst: "Naruszenie ochrony danych osobowych — zgłoszenie. {Jeżeli|Gdy} Inspektor stwierdzi, że naruszenie może skutkować ryzykiem naruszenia praw lub wolności osób fizycznych, Bank zgłasza je organowi ochrony danych bez zbędnej zwłoki, w miarę możliwości nie później niż w terminie {{fakt:termin.incydent.naruszenie-danych}} od stwierdzenia naruszenia. Zgłoszenie dokonane po tym terminie wymaga wyjaśnienia przyczyn opóźnienia."
+            podkroki:
+              - tekst: "Zgłoszenie obejmuje charakter naruszenia, kategorie i przybliżoną liczbę osób oraz rekordów, dane kontaktowe Inspektora ({{fakt:kontakt.email-iod}}), możliwe skutki oraz środki zastosowane lub proponowane."
+              - tekst: "Podstawę prawną zgłoszenia stanowią przepisy o ochronie danych osobowych — zob. {{ref:akt:dz-u-2019-1781-ochrona-danych}}."
+          - tekst: "Naruszenie ochrony danych osobowych — powiadomienie osób. Jeżeli naruszenie może powodować wysokie ryzyko naruszenia praw lub wolności osób, których dane dotyczą, Inspektor wspólnie z Jednostką komunikacji przygotowuje powiadomienie tych osób, napisane prostym językiem, i przekazuje je bez zbędnej zwłoki."
+
+  - id: incydenty-dowody-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Zasady zabezpieczania materiału dowodowego. Materiał dowodowy zabezpiecza się w sposób, który {pozwala|umożliwia} wykazać jego autentyczność i nienaruszalność. Czynności wykonują wyłącznie osoby wyznaczone przez kierownika incydentu."
+            podkroki:
+              - tekst: "Przed każdą czynnością zmieniającą stan systemu wykonuje się kopię logów, obraz dysku lub zrzut pamięci, a dla każdej kopii oblicza się sumę kontrolną."
+              - tekst: "Oryginały dowodów przechowuje się w oznaczonym, zabezpieczonym miejscu; analizę prowadzi się na kopiach."
+              - tekst: "Każde przekazanie dowodu odnotowuje się w protokole według formularza {{fakt:incydent.protokol-dowodow}} (łańcuch dowodowy): data, godzina, osoba przekazująca, osoba przyjmująca, cel."
+          - tekst: "Rodzaje zabezpieczanych danych. Zabezpiecza się {w szczególności|zwłaszcza}:"
+            podkroki:
+              - tekst: "logi systemowe, aplikacyjne, sieciowe i uwierzytelniania z okresu {co najmniej|przynajmniej} {{fakt:termin.incydent.retencja-logow}} wstecz — o ile taki okres jest dostępny;"
+              - tekst: "obrazy dysków i zrzuty pamięci zainfekowanych stacji i serwerów;"
+              - tekst: "wiadomości phishingowe wraz z nagłówkami technicznymi;"
+              - tekst: "zapisy rozmów telefonicznych i korespondencję z osobami zgłaszającymi;"
+              - tekst: "zapisy z monitoringu wizyjnego i rejestry wejść w przypadku incydentów fizycznych."
+          - tekst: "Wstrzymanie usuwania danych. Na czas obsługi incydentu i do zamknięcia wszystkich związanych z nim postępowań Jednostka informatyki wstrzymuje automatyczne usuwanie logów i kopii objętych incydentem (blokada prawna na wniosek Jednostki prawnej)."
+          - tekst: "Ochrona danych w materiale dowodowym. Materiał dowodowy {zawiera|obejmuje} często dane osobowe i tajemnicę bankową. Dostęp do niego mają wyłącznie osoby, które go potrzebują do obsługi incydentu; dostęp rejestruje się, a przekazanie materiału poza Bank wymaga zgody Jednostki prawnej."
+
+  - id: incydenty-przywracanie-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Plan przywrócenia. Kierownik incydentu wraz z Jednostką informatyki i Jednostką ciągłości {ustala|określa} kolejność przywracania usług, opierając się na priorytetach określonych w planie ciągłości działania i wartościach RTO oraz RPO. Priorytet mają usługi umożliwiające Klientom dostęp do środków i realizację płatności."
+          - tekst: "Przywrócenie z kopii. Przywracanie systemów z kopii zapasowych poprzedza sprawdzenie, że kopie nie zostały zainfekowane. Systemy, które były przejęte, przywraca się z zaufanych, zweryfikowanych źródeł, nigdy przez proste usunięcie śladów."
+            podkroki:
+              - tekst: "Przed uruchomieniem systemu wykonuje się skanowanie antywirusowe i weryfikację integralności konfiguracji."
+              - tekst: "Wszystkie hasła, klucze i certyfikaty związane z przywracanym systemem są zmieniane."
+              - tekst: "System włącza się najpierw w trybie ograniczonym, z podwyższonym monitoringiem."
+          - tekst: "Weryfikacja poprawności danych. Jednostka operacji porównuje stan rachunków i rozliczeń z danymi sprzed incydentu, ustala operacje wykonane w trakcie awarii oraz koryguje wszelkie nieprawidłowe księgowania. Korekty dokonuje się przez zapisy odwracające, z odniesieniem do numeru incydentu."
+          - tekst: "Skutki finansowe dla Klientów. {Jeżeli|Gdy} w wyniku incydentu doszło do nieautoryzowanych transakcji na rachunkach Klientów, Bank zwraca kwotę nieautoryzowanej transakcji {{fakt:termin.incydent.zwrot-nieautoryzowanej}} po stwierdzeniu lub zgłoszeniu takiej transakcji, chyba że istnieją uzasadnione i udokumentowane podstawy podejrzewania oszustwa po stronie Klienta — o czym zawiadamia się właściwy organ. Zasady te wynikają z przepisów o usługach płatniczych — zob. {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+          - tekst: "Zakończenie przywracania. Kierownik incydentu zamyka fazę przywracania po łącznym spełnieniu warunków:"
+            podkroki:
+              - tekst: "usługi działają stabilnie w uzgodnionym oknie obserwacji;"
+              - tekst: "przyczyna incydentu została usunięta lub skutecznie zneutralizowana;"
+              - tekst: "dotknięci Klienci zostali poinformowani, a ich środki zabezpieczone;"
+              - tekst: "wszystkie wymagane zawiadomienia zostały przekazane."
+          - tekst: "Zamknięcie incydentu. Incydent zamyka dyżurny Jednostki bezpieczeństwa po akceptacji kierownika incydentu, uzupełniając Rejestr o datę i godzinę zakończenia, ostateczny poziom ważności, przyczynę źródłową i wartość strat."
+
+  - id: incydenty-przeglad-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Przegląd po incydencie. Dla każdego incydentu o poziomie wysokim lub krytycznym oraz dla każdego incydentu, który spowodował wyjątkowe skutki, Jednostka bezpieczeństwa {przeprowadza|wykonuje} przegląd {w terminie|w ciągu} {{fakt:termin.incydent.przeglad}} od zamknięcia incydentu."
+            podkroki:
+              - tekst: "W przeglądzie biorą udział kierownik incydentu, członkowie Zespołu i przedstawiciele jednostek, których incydent dotyczył; spotkanie prowadzi osoba niezwiązana bezpośrednio z obsługą incydentu."
+              - tekst: "Przegląd ma charakter wyjaśniający, a nie wskazujący winnych; jego celem jest ustalenie, co zadziałało, a co nie."
+          - tekst: "Zakres przeglądu. W przeglądzie {analizuje|bada} się:"
+            podkroki:
+              - tekst: "przyczynę źródłową i czynniki, które umożliwiły incydent;"
+              - tekst: "skuteczność wykrycia, czyli czas od początku incydentu do jego wykrycia;"
+              - tekst: "skuteczność reakcji: czasy klasyfikacji, ograniczenia skutków i przywrócenia usług w porównaniu z wymaganiami;"
+              - tekst: "jakość komunikacji z Klientami, kierownictwem i podmiotami zewnętrznymi oraz dotrzymanie terminów zawiadomień;"
+              - tekst: "kompletność dokumentacji i materiału dowodowego."
+          - tekst: "Raport z przeglądu. Wyniki przeglądu opisuje się w raporcie według formularza {{fakt:incydent.raport-przegladu}}, który w ciągu {{fakt:termin.incydent.zatwierdzenie-raportu}} od przeglądu zatwierdza dyrektor Jednostki bezpieczeństwa. Raport o incydencie krytycznym przekazuje się Zarządowi."
+          - tekst: "Wnioski i zalecenia. Z przeglądu wynikają zalecenia z przypisanymi właścicielami i terminami. Zalecenia wprowadza się do wspólnego planu działań, a ich realizację monitoruje Jednostka zgodności; termin realizacji zaleceń nie powinien przekraczać {{fakt:termin.incydent.realizacja-zalecen}} od zatwierdzenia raportu, chyba że Jednostka bezpieczeństwa zatwierdzi inny, uzasadniony termin."
+          - tekst: "Wykorzystanie wniosków. Wnioski z przeglądu wykorzystuje się do aktualizacji reguł systemu SIEM, scenariuszy ćwiczeń, szkoleń pracowników, planów ciągłości działania, ocen dostawców oraz niniejszej procedury."

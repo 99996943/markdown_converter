@@ -1,0 +1,146 @@
+bloki:
+  # --- Odpowiedzialności (ustępy)
+  - id: incydenty-role-kierownik-incydentu
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Kierownik incydentu** {koordynuje|prowadzi} obsługę konkretnego incydentu od jego zaklasyfikowania do zamknięcia. W szczególności:"
+        punkty:
+          - "{przydziela|rozdziela} zadania członkom Zespołu i {pilnuje|nadzoruje} ich wykonania;"
+          - "podejmuje decyzje o ograniczeniu skutków, w tym o czasowym wyłączeniu usługi, w granicach uprawnień określonych w procedurze;"
+          - "{zapewnia|gwarantuje} prowadzenie dziennika zdarzeń oraz kompletność karty incydentu ({{fakt:incydent.karta}});"
+          - "eskaluje sprawy przekraczające jego uprawnienia i przekazuje kierownictwu rzetelne informacje o stanie incydentu."
+
+  - id: incydenty-role-dyzurny
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Dyżurny Jednostki bezpieczeństwa** pełni dyżur {całodobowo|w systemie całodobowym}, w tym w dni ustawowo wolne od pracy, i jest pierwszym punktem kontaktu dla zgłoszeń pod numerem {{fakt:incydent.dyzur-telefon}} i na adres {{fakt:incydent.dyzur-email}}. Dyżurny:"
+        punkty:
+          - "przyjmuje i {rejestruje|wprowadza} zgłoszenia, dokonuje wstępnej klasyfikacji i uruchamia dalsze kroki procedury;"
+          - "prowadzi listę kontaktów alarmowych i {sprawdza|weryfikuje} jej aktualność co kwartał;"
+          - "przekazuje dyżur następnej osobie w sposób udokumentowany, ze wskazaniem trwających incydentów."
+
+  - id: incydenty-role-komunikacja
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - akapit: "**Jednostka komunikacji** ({{fakt:incydent.jednostka.komunikacja}}) {przygotowuje|opracowuje} komunikaty dla Klientów, mediów i pracowników, uzgodnione z kierownikiem incydentu, a w sprawach prawnych — {także|również} z Jednostką prawną. Jednostka komunikacji jest jedynym podmiotem uprawnionym do kontaktu z mediami w sprawie incydentu."
+      - akapit: "**Jednostka obsługi klienta** ({{fakt:jednostka.obsluga-klienta}}) przekazuje Klientom uzgodnione komunikaty, {zbiera|rejestruje} zgłoszenia Klientów dotyczące incydentu i przekazuje kierownikowi incydentu zbiorcze informacje o ich liczbie i charakterze, nie rzadziej niż w odstępach ustalonych w raporcie stanu."
+
+  - id: incydenty-role-prawny-operacje
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - akapit: "**Jednostka prawna** ({{fakt:jednostka.prawny}}) {doradza|udziela wsparcia} w zakresie obowiązków prawnych Banku, zabezpieczenia dowodów, zawiadomień o podejrzeniu popełnienia przestępstwa, treści oświadczeń oraz roszczeń związanych z incydentem. Jednostka prawna ocenia {także|również}, czy {ujawnienie|przekazanie} informacji podmiotom zewnętrznym nie narusza tajemnicy bankowej."
+      - akapit: "**Jednostka operacji** ({{fakt:jednostka.operacje}}) ocenia wpływ incydentu na realizację transakcji i rozliczeń, wstrzymuje lub wznawia przetwarzanie operacji, koryguje błędnie zaksięgowane operacje oraz {ustala|określa} listę rachunków i Klientów dotkniętych incydentem."
+
+  - id: incydenty-role-ciaglosc-ryzyko
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - akapit: "**Jednostka ciągłości** ({{fakt:incydent.jednostka.ciaglosc}}) uruchamia plany ciągłości działania, gdy incydent {zagraża realizacji|utrudnia realizację} kluczowych procesów, koordynuje przejście na tryb awaryjny oraz pilnuje wartości RTO i RPO."
+      - akapit: "**Jednostka ryzyka** ({{fakt:jednostka.ryzyko}}) {uwzględnia|bierze pod uwagę} dane o incydentach w ocenie ryzyka operacyjnego, {ustala|określa} poziomy tolerancji ryzyka dla incydentów i przedstawia Zarządowi zbiorcze analizy strat poniesionych w wyniku incydentów."
+
+  - id: incydenty-role-kadry-audyt
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - akapit: "**Jednostka kadr** ({{fakt:incydent.jednostka.kadry}}) {uczestniczy w|bierze udział w} obsłudze incydentów, w których zachodzi podejrzenie nieprawidłowego działania pracownika, prowadzi postępowania wyjaśniające zgodnie z przepisami prawa pracy i {zapewnia|dba o to}, aby czynności wobec pracownika nie naruszały jego praw."
+      - akapit: "**Jednostka audytu** ({{fakt:incydent.jednostka.audyt}}) niezależnie {ocenia|sprawdza}, czy procedura jest stosowana prawidłowo i czy jej postanowienia są adekwatne do ryzyka. Nie uczestniczy w bieżącej obsłudze incydentów, aby {zachować|zapewnić} niezależność."
+
+  - id: incydenty-role-wlasciciele-systemow
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - akapit: "**Właściciel systemu lub procesu** odpowiada za to, aby dla jego systemu lub procesu istniały aktualne: opis zależności od innych systemów, dane kontaktowe dostawców i administratorów, instrukcja awaryjnego zatrzymania i uruchomienia oraz opis dopuszczalnego czasu niedostępności. Właściciel potwierdza te informacje {co roku|raz w roku} {na wezwanie|na prośbę} Jednostki bezpieczeństwa."
+      - akapit: "**Administrator systemu** wykonuje czynności techniczne {zlecone|powierzone} przez kierownika incydentu, rejestruje wszystkie wykonane operacje (z godziną i identyfikatorem konta) i nie dokonuje zmian poza zakresem zlecenia."
+
+  - id: incydenty-role-dostawcy
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-role
+    elementy:
+      - ustep: "**Dostawcy usług zewnętrznych** są {zobowiązani|obowiązani} w umowach do {niezwłocznego|natychmiastowego} informowania Banku o incydentach, które dotyczą świadczonych usług lub danych Banku, oraz do współpracy w ich {wyjaśnieniu|wyjaśnianiu}. Umowy {powinny wskazywać|powinny określać}:"
+        punkty:
+          - "maksymalny czas przekazania informacji o incydencie;"
+          - "osobę lub kanał kontaktowy dostępny całodobowo;"
+          - "obowiązek udostępnienia logów i raportu z analizy przyczyn;"
+          - "prawo Banku do przeprowadzenia kontroli u dostawcy po incydencie."
+      - akapit: "Za nadzór nad {wykonaniem|realizacją} tych obowiązków {odpowiada|jest odpowiedzialny} właściciel umowy z dostawcą wskazany w rejestrze umów Banku."
+
+  # --- Wykrywanie i rejestracja (kroki)
+  - id: incydenty-wykrywanie-siem
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Obsługa alertów z systemu SIEM. Analitycy Jednostki bezpieczeństwa {przeglądają|analizują} alerty z systemu SIEM w sposób ciągły, w kolejności wynikającej z priorytetu reguły, która alert wygenerowała."
+            podkroki:
+              - tekst: "Alert o priorytecie wysokim analityk {podejmuje|weryfikuje} bezzwłocznie; jeżeli potwierdza zdarzenie, rejestruje je jako incydent."
+              - tekst: "Alert fałszywie dodatni analityk oznacza w systemie wraz z krótkim uzasadnieniem, aby przy kolejnym przeglądzie reguł {ograniczyć|zmniejszyć} liczbę podobnych alertów."
+              - tekst: "Alerty niepotwierdzone, ale powtarzające się w krótkim czasie, łączy się i analizuje łącznie."
+          - tekst: "Przegląd reguł. Jednostka bezpieczeństwa przegląda reguły korelacji zdarzeń {co najmniej|przynajmniej} raz na kwartał oraz po każdym incydencie, w którym zdarzenie nie zostało wykryte przez system lub zostało wykryte z opóźnieniem."
+
+  - id: incydenty-wykrywanie-klienci
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Zgłoszenia Klientów. Pracownik infolinii, placówki lub Jednostki obsługi klienta, który otrzyma od Klienta informację sugerującą incydent, postępuje następująco:"
+            podkroki:
+              - tekst: "wysłuchuje Klienta, nie żądając od niego pełnych danych uwierzytelniających, i zapisuje przebieg zdarzenia, w tym godzinę, kanał i sposób, w jaki Klient zorientował się o nieprawidłowości;"
+              - tekst: "{poleca|zaleca} Klientowi zmianę hasła lub zablokowanie instrumentu płatniczego, {jeżeli|gdy} istnieje ryzyko dalszych nieautoryzowanych operacji;"
+              - tekst: "zgłasza sprawę dyżurnemu Jednostki bezpieczeństwa {w terminie|w ciągu} {{fakt:termin.incydent.zgloszenie-pracownika}}, wskazując, czy podobne zgłoszenia już wpłynęły;"
+              - tekst: "informuje Klienta, że sprawa zostanie wyjaśniona, a o jej wyniku Klient zostanie poinformowany w terminie wynikającym z przepisów o usługach płatniczych — zob. {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+          - tekst: "Wzrost liczby zgłoszeń. {Jeżeli|Gdy} w ciągu godziny wpłynie nietypowo duża liczba podobnych zgłoszeń Klientów, kierownik zmiany infolinii zgłasza to dyżurnemu Jednostki bezpieczeństwa jako możliwy incydent masowy, nawet przed ustaleniem jego przyczyny."
+
+  - id: incydenty-wykrywanie-naduzycia
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Monitoring transakcji. Jednostka bezpieczeństwa prowadzi monitoring transakcji pod kątem nadużyć, korzystając z reguł wykrywania wzorców charakterystycznych dla oszustw płatniczych, takich jak:"
+            podkroki:
+              - tekst: "seria transakcji o nietypowych wartościach lub w krótkich odstępach czasu;"
+              - tekst: "logowanie z nowych urządzeń lub lokalizacji, połączone z szybką zmianą danych kontaktowych Klienta;"
+              - tekst: "nagłe podwyższenie limitów, po którym następują wypłaty lub przelewy na nowe rachunki;"
+              - tekst: "zbieżność wielu transakcji na ten sam rachunek odbiorcy, co może wskazywać na rachunek wykorzystywany do wyprowadzania środków."
+          - tekst: "Postępowanie po {alarmie|wykryciu podejrzenia}. Gdy reguła wykryje podejrzaną transakcję, analityk w pierwszej kolejności {wstrzymuje|blokuje} jej realizację, {o ile|jeżeli} pozwala na to system, a następnie kontaktuje się z Klientem kanałem zgodnym z danymi zapisanymi w Banku, aby potwierdzić autentyczność operacji."
+          - tekst: "Przekazanie do Jednostki zgodności. {Jeżeli|Gdy} podejrzenie nadużycia wskazuje również na ryzyko prania pieniędzy, analityk przekazuje sprawę Jednostce zgodności, nie informując Klienta o możliwym zgłoszeniu transakcji do właściwych organów — zob. {{ref:akt:dz-u-2025-644-aml}}."
+
+  - id: incydenty-wykrywanie-dyzury
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Dyżury i dostępność. Jednostka bezpieczeństwa i Jednostka informatyki zapewniają dyżury w trybie całodobowym. Harmonogram dyżurów jest dostępny w systemie zgłoszeń i przekazywany dyżurnym telefonicznie na początku każdego miesiąca."
+          - tekst: "Zasady dyżuru poza godzinami pracy. Dyżurny poza godzinami pracy:"
+            podkroki:
+              - tekst: "jest osiągalny pod numerem służbowym i podejmuje zgłoszenie w czasie pierwszej reakcji właściwym dla poziomu ważności;"
+              - tekst: "ma zdalny dostęp do Rejestru i systemu SIEM oraz aktualną listę kontaktów alarmowych;"
+              - tekst: "{w razie|w przypadku} niemożności objęcia dyżuru {niezwłocznie|bez zbędnej zwłoki} {informuje|powiadamia} kierownika Jednostki bezpieczeństwa, który wyznacza zastępstwo."
+          - tekst: "Lista kontaktów alarmowych. Lista kontaktów alarmowych obejmuje numery służbowe członków Zespołu, dyrektorów jednostek, kluczowych dostawców, zespołu CSIRT i organu nadzoru. Lista jest przechowywana {także|również} w postaci papierowej w zabezpieczonym miejscu, tak aby była dostępna w razie niedostępności systemów."
+
+  - id: incydenty-wykrywanie-podatnosci
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wykrywanie-opis
+    elementy:
+      - kroki:
+          - tekst: "Podatności i zdarzenia wykryte w testach. Zdarzenia, w których test penetracyjny, skan podatności lub audyt wykażą możliwość nieuprawnionego dostępu do danych Klientów, ocenia Jednostka bezpieczeństwa pod kątem tego, czy podatność została już wykorzystana."
+            podkroki:
+              - tekst: "{Jeżeli|Gdy} istnieją ślady wykorzystania podatności, zdarzenie rejestruje się jako incydent i klasyfikuje według zasad ogólnych."
+              - tekst: "Jeżeli brak takich śladów, podatność ujmuje się w rejestrze podatności i usuwa w terminie zależnym od jej krytyczności, a Rejestr {zawiera|obejmuje} odniesienie do decyzji o nierejestrowaniu incydentu."
+          - tekst: "Informacje z zewnątrz. Ostrzeżenia o nowych zagrożeniach otrzymane od zespołu CSIRT, producentów oprogramowania lub z publicznych źródeł Jednostka bezpieczeństwa porównuje z zasobami Banku i {w razie|w przypadku} potrzeby inicjuje działania zapobiegawcze, zanim dojdzie do incydentu."

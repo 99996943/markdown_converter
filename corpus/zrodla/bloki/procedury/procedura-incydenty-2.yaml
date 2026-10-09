@@ -1,0 +1,100 @@
+bloki:
+  - id: incydenty-wykrywanie-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Źródła wykrywania. Incydenty {wykrywa|identyfikuje} się na podstawie następujących źródeł:"
+            podkroki:
+              - tekst: "alertów systemu SIEM ({{fakt:incydent.siem}}), który koreluje zdarzenia z systemów informatycznych, zapór sieciowych, systemów antywirusowych i systemów kontroli dostępu;"
+              - tekst: "zgłoszeń pracowników przekazywanych przez system zgłoszeń {{fakt:incydent.system-zgloszen}}, telefonicznie pod numerem dyżurnym {{fakt:incydent.dyzur-telefon}} lub pocztą elektroniczną na adres {{fakt:incydent.dyzur-email}};"
+              - tekst: "zgłoszeń Klientów przyjmowanych na infolinii {{fakt:kontakt.infolinia}}, w placówkach i w reklamacjach;"
+              - tekst: "komunikatów dostawców zewnętrznych, partnerów rozliczeniowych, zespołu CSIRT oraz organu nadzoru;"
+              - tekst: "wyników kontroli, audytów, testów penetracyjnych i monitoringu transakcji pod kątem nadużyć."
+          - tekst: "Zgłoszenie przez pracownika. Pracownik, który {zauważy|stwierdzi} zdarzenie mogące być incydentem, zgłasza je w terminie {{fakt:termin.incydent.zgloszenie-pracownika}} od jego zauważenia."
+            podkroki:
+              - tekst: "Zgłoszenie obejmuje opis zdarzenia, czas jego zauważenia, nazwę systemu lub procesu, liczbę i rodzaj podejrzanych operacji oraz dane osoby zgłaszającej; wzór zgłoszenia stanowi formularz {{fakt:incydent.formularz-zgloszenia}}."
+              - tekst: "Jeżeli zdarzenie może mieć skutki krytyczne (np. niedostępność systemu centralnego, wyciek danych, podejrzenie przejęcia kont uprzywilejowanych), pracownik {najpierw dzwoni|w pierwszej kolejności dzwoni} na numer dyżurny, a dopiero potem uzupełnia formularz."
+              - tekst: "Pracownik zachowuje wiadomość, plik lub zrzut ekranu, które wzbudziły podejrzenie, i nie przekazuje ich dalej poza kanały służbowe."
+          - tekst: "Przyjęcie zgłoszenia. Dyżurny Jednostki bezpieczeństwa przyjmuje zgłoszenie w systemie zgłoszeń, {potwierdza|niezwłocznie potwierdza} jego przyjęcie osobie zgłaszającej i weryfikuje kompletność zgłoszenia."
+            podkroki:
+              - tekst: "Gdy zgłoszenie jest niekompletne, dyżurny uzupełnia je w rozmowie z osobą zgłaszającą, nie wstrzymując rejestracji."
+              - tekst: "Zgłoszenia wielokrotne dotyczące tego samego zdarzenia łączy się w jeden wpis, zachowując ich historię."
+          - tekst: "Rejestracja incydentu. Dyżurny zakłada wpis w Rejestrze i {nadaje|przypisuje} mu unikalny numer. Do wpisu wprowadza się co najmniej:"
+            podkroki:
+              - tekst: "datę i godzinę wykrycia oraz zgłoszenia, a także źródło informacji;"
+              - tekst: "opis zdarzenia i systemy lub procesy, których dotyczy;"
+              - tekst: "wstępną ocenę skutków, w tym liczbę Klientów i wartość operacji objętych incydentem;"
+              - tekst: "imię i nazwisko osoby odpowiedzialnej za dalszą obsługę oraz kartę incydentu według formularza {{fakt:incydent.karta}}."
+          - tekst: "Wstępna weryfikacja. Dyżurny {sprawdza|ustala} w ciągu kilkunastu minut, czy zdarzenie rzeczywiście jest incydentem, a nie fałszywym alarmem. Fałszywy alarm zamyka się z adnotacją o przyczynie; wpis pozostaje w Rejestrze."
+          - tekst: "Powiadomienie dyżurnych. Przy zdarzeniach, które mogą mieć poziom wysoki lub krytyczny, dyżurny niezwłocznie powiadamia kierownika Jednostki bezpieczeństwa i dyżurnego Jednostki informatyki."
+
+  - id: incydenty-klasyfikacja-wstep
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - akapit: "Klasyfikacja incydentu {służy ustaleniu|ma na celu ustalenie} wymaganego czasu reakcji, składu zespołu obsługującego incydent i zakresu zawiadomień. Poziom ważności {ustala|określa} się na podstawie najpoważniejszego ze skutków wskazanych w tabeli. Pełną macierz klasyfikacji {zawiera|obejmuje} {{ref:zalacznik:incydenty-zal-macierz}}."
+      - tabela:
+          kolumny:
+            - naglowek: "Poziom ważności"
+              waga: 1
+            - naglowek: "Kryteria (wystarczy spełnienie jednego)"
+              waga: 3
+            - naglowek: "Pierwsza reakcja — do"
+              waga: 1
+          wiersze:
+            - ["Krytyczny", "incydent dotyczy {{fakt:incydent.prog.klienci-krytyczny}}, albo niedostępność kluczowej usługi trwa {{fakt:incydent.prog.przestoj-krytyczny}}, albo potencjalna strata przekracza {{fakt:incydent.prog.kwota-krytyczna}}, albo doszło do naruszenia danych o wysokim ryzyku", "{{fakt:incydent.czas-reakcji.krytyczny}}"]
+            - ["Wysoki", "incydent dotyczy {{fakt:incydent.prog.klienci-wysoki}}, albo niedostępność usługi trwa {{fakt:incydent.prog.przestoj-wysoki}}, albo potencjalna strata przekracza {{fakt:incydent.prog.kwota-wysoka}}", "{{fakt:incydent.czas-reakcji.wysoki}}"]
+            - ["Średni", "ograniczone zakłócenie jednego procesu lub kanału, bez wpływu na rozliczenia, z istniejącym obejściem", "{{fakt:incydent.czas-reakcji.sredni}}"]
+            - ["Niski", "zdarzenie bez wpływu na Klientów i procesy, zablokowane w całości przez zabezpieczenia", "{{fakt:incydent.czas-reakcji.niski}}"]
+          siatka: true
+
+  - id: incydenty-klasyfikacja-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Ocena wstępna. Dyżurny Jednostki bezpieczeństwa dokonuje wstępnej klasyfikacji {w terminie|w ciągu} {{fakt:termin.incydent.klasyfikacja}} od zarejestrowania zgłoszenia."
+            podkroki:
+              - tekst: "Klasyfikacja obejmuje ocenę wpływu na poufność, integralność i dostępność informacji, liczbę dotkniętych Klientów, wartość operacji i ryzyko dla reputacji Banku."
+              - tekst: "Gdy dane są niepełne, przyjmuje się poziom wyższy; obniżenie poziomu jest możliwe dopiero po uzyskaniu pełnych danych."
+          - tekst: "Ustalenie rodzaju incydentu. Dyżurny przypisuje incydent do kategorii: złośliwe oprogramowanie, nieuprawniony dostęp, odmowa usługi, wyłudzenie danych, wyciek danych, awaria systemu, błąd przetwarzania, incydent dostawcy lub incydent fizyczny. Kategoria {decyduje o|wpływa na} doborze członków Zespołu."
+          - tekst: "Ocena obowiązków zewnętrznych. Jednostka zgodności oraz Inspektor oceniają, czy incydent:"
+            podkroki:
+              - tekst: "spełnia kryteria incydentu poważnego i wymaga zawiadomienia organu nadzoru;"
+              - tekst: "stanowi naruszenie ochrony danych osobowych wymagające zgłoszenia do organu ochrony danych lub powiadomienia osób, których dane dotyczą;"
+              - tekst: "wymaga zawiadomienia organów ścigania lub innych uprawnionych instytucji."
+          - tekst: "Powołanie Zespołu. Incydent o poziomie wysokim lub krytycznym obsługuje Zespół, którego kierownikiem jest wyznaczony przedstawiciel Jednostki bezpieczeństwa. Dla incydentów średnich i niskich obsługę prowadzi dyżurny wraz z właściwą jednostką."
+          - tekst: "Zmiana poziomu ważności. Poziom ważności może zostać zmieniony w trakcie obsługi, {jeżeli|gdy} pojawią się nowe informacje. Zmianę wraz z uzasadnieniem i godziną {odnotowuje się|wpisuje się} w Rejestrze; podwyższenie poziomu uruchamia obowiązki właściwe dla nowego poziomu od chwili zmiany."
+          - tekst: "Eskalacja. Incydent krytyczny kierownik Jednostki bezpieczeństwa niezwłocznie zgłasza członkowi Zarządu nadzorującemu ryzyko; incydent wysoki — dyrektorom departamentów dotkniętych incydentem."
+
+  - id: incydenty-reagowanie-kroki
+    typy: [procedury]
+    tematy: [procedura-incydenty]
+    kategoria: incydenty-wymagane
+    elementy:
+      - kroki:
+          - tekst: "Uruchomienie Zespołu. Kierownik incydentu zwołuje Zespół w czasie pierwszej reakcji właściwym dla poziomu ważności i otwiera pokój operacyjny, w którym prowadzi się chronologiczny zapis ustaleń i decyzji."
+            podkroki:
+              - tekst: "Każdy członek Zespołu potwierdza gotowość i podaje zakres swoich działań."
+              - tekst: "Kierownik incydentu przydziela zadania i wyznacza osobę prowadzącą dziennik zdarzeń."
+          - tekst: "Ocena zakresu. Jednostka informatyki ustala, które systemy, dane i konta są dotknięte incydentem, od kiedy i w jaki sposób do niego doszło, oraz czy incydent trwa."
+          - tekst: "Ograniczenie skutków. Zespół podejmuje działania zatrzymujące rozprzestrzenianie się incydentu, dobierając je do rodzaju zdarzenia:"
+            podkroki:
+              - tekst: "odłączenie zainfekowanych stacji i segmentów od sieci Banku bez wyłączania zasilania (aby zachować zawartość pamięci);"
+              - tekst: "zablokowanie lub zmiana danych uwierzytelniających przejętych kont, tokenów i certyfikatów;"
+              - tekst: "zablokowanie złośliwych adresów, domen i nadawców wiadomości na urządzeniach brzegowych;"
+              - tekst: "czasowe wyłączenie podatnej funkcji lub kanału, {o ile|jeżeli} jest to proporcjonalne do ryzyka;"
+              - tekst: "wstrzymanie wypłat lub zleceń płatniczych objętych podejrzeniem nadużycia, w uzgodnieniu z Jednostką operacji."
+          - tekst: "Decyzje o wyłączeniu usług. Decyzję o wyłączeniu kanału lub usługi dla Klientów podejmuje kierownik incydentu w porozumieniu z dyrektorem Jednostki operacji; w przypadku incydentu krytycznego {informuje|powiadamia} się o niej członka Zarządu. Wyłączenie ma trwać jak najkrócej, a jego przyczyny, czas i zakres {odnotowuje się|wpisuje się} w dzienniku zdarzeń."
+          - tekst: "Zabezpieczenie dowodów przed naprawą. Zanim wykona się czynności zmieniające stan systemów (restart, reinstalacja, czyszczenie), zabezpiecza się materiał dowodowy zgodnie z zasadami opisanymi w dalszej części procedury."
+          - tekst: "Usunięcie przyczyny. Po ograniczeniu skutków Zespół usuwa przyczynę incydentu:"
+            podkroki:
+              - tekst: "usuwa złośliwe oprogramowanie i wszelkie mechanizmy trwałej obecności atakującego;"
+              - tekst: "instaluje poprawki i zmienia konfiguracje, które umożliwiły incydent;"
+              - tekst: "sprawdza, czy w innych systemach nie występują te same słabości;"
+              - tekst: "dokumentuje wykonane czynności w karcie incydentu."
+          - tekst: "Raport stanu. Kierownik incydentu przygotowuje cykliczny raport stanu: dla incydentu krytycznego co godzinę, dla wysokiego — co cztery godziny. Raport {zawiera|obejmuje} status, podjęte działania, planowane czynności i szacowany czas przywrócenia usług."

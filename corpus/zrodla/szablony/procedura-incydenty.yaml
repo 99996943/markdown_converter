@@ -1,0 +1,74 @@
+id: procedura-incydenty
+typ: procedury
+temat: procedura-incydenty
+tytul:
+  - "Procedura obsługi incydentów bezpieczeństwa i incydentów operacyjnych"
+  - "Procedura postępowania w przypadku incydentów bezpieczeństwa i operacyjnych"
+  - "Procedura zarządzania incydentami bezpieczeństwa i operacyjnymi"
+uklady: [procedura]
+czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, od, wlasciciel, zatwierdzil] }
+parametry:
+  wlasciciel: "Departament Bezpieczeństwa"
+  zatwierdzil: "Zarząd Banku Przykładowego S.A."
+sekcje:
+  - rodzaj: sekcja
+    tytul: "Cel"
+    wymagane: [incydenty-cel]
+  - rodzaj: sekcja
+    tytul: "Zakres stosowania"
+    wymagane: [incydenty-zakres]
+  - rodzaj: sekcja
+    tytul: "Podstawy prawne i dokumenty powiązane"
+    wymagane: [incydenty-podstawy]
+  - rodzaj: sekcja
+    tytul: "Odpowiedzialności"
+    wymagane: [incydenty-odpowiedzialnosci]
+    opcjonalne: { kategorie: [incydenty-role], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Definicje"
+    wymagane: [wspolne-definicje-procedura, incydenty-definicje]
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — wykrywanie i rejestracja incydentu"
+    wymagane: [incydenty-schemat, incydenty-wykrywanie-kroki]
+    opcjonalne: { kategorie: [incydenty-wykrywanie-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — klasyfikacja i ocena incydentu"
+    wymagane: [incydenty-klasyfikacja-wstep, incydenty-klasyfikacja-kroki]
+    opcjonalne: { kategorie: [incydenty-klasyfikacja-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — reagowanie i ograniczanie skutków"
+    wymagane: [incydenty-reagowanie-kroki]
+    opcjonalne: { kategorie: [incydenty-reagowanie-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — komunikacja i raportowanie"
+    wymagane: [incydenty-komunikacja-kroki, incydenty-raportowanie-kroki]
+    opcjonalne: { kategorie: [incydenty-komunikacja-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Opis postępowania — zabezpieczenie dowodów, przywrócenie działania i przegląd"
+    wymagane: [incydenty-dowody-kroki, incydenty-przywracanie-kroki, incydenty-przeglad-kroki]
+    opcjonalne: { kategorie: [incydenty-przywracanie-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Testy i ćwiczenia"
+    wymagane: [incydenty-testy]
+    opcjonalne: { kategorie: [incydenty-testy-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Przypadki szczególne"
+    wymagane: [incydenty-szczegolne-wstep]
+    opcjonalne: { kategorie: [incydenty-szczegolne], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Kontrola i nadzór"
+    wymagane: [incydenty-kontrola]
+    opcjonalne: { kategorie: [incydenty-kontrola-opis], min: 0, max: 40 }
+  - rodzaj: sekcja
+    tytul: "Dokumentacja i archiwizacja"
+    wymagane: [incydenty-dokumentacja, wspolne-ochrona-danych-procedura]
+  - rodzaj: sekcja
+    tytul: "Postanowienia końcowe"
+    wymagane: [incydenty-koncowe, wspolne-zmiany-procedura, wspolne-kontakt-procedura]
+  - rodzaj: zalacznik
+    tytul: "Macierz klasyfikacji incydentów i wzór karty incydentu"
+    wymagane: [incydenty-zal-macierz, incydenty-zal-karta]
+    opcjonalne: { kategorie: [incydenty-zalacznik], min: 0, max: 40 }
+  - rodzaj: zalacznik
+    tytul: "Lista kontrolna obsługi incydentu"
+    wymagane: [incydenty-lista]
