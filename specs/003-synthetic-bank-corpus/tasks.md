@@ -241,7 +241,7 @@ między typami), wszystko w treści i w manifeście.
 - [X] T095 [US3] Rozszerz `corpus-lib/Manifest/ManifestWriter.cs` i `corpus-lib/Composition/DocumentComposer.cs` (śledzenie jednostek zmienionych faktów) — T092 green
 - [X] T096 [US3] Rozszerz `corpus-lib/CorpusGenerator.cs` i `CorpusWriter` o nazwy plików wersji — T093 green
 - [X] T097 [US3] Treść: historia wartości i `alternatywy` w `corpus/zrodla/fakty.yaml` dla faktów używanych przez co najmniej 3 dokumenty każdego typu; warianty bloków „po zmianie” (np. nowe brzmienie postanowienia) w odpowiednich plikach `bloki/` — zmiany między wersjami realizują nadpisania faktów z historią (`wartosci` z `od`) i `alternatywy`; osobne warianty bloków nie były potrzebne
-- [ ] T098 [US3] Ustaw w `corpus/przebieg.json` wersje/nieaktualne/sprzeczności wg domyślnych, `generate`, przejrzyj i zacommituj korpus; rozszerz `CorpusFullTests` o SC-028 (wersje rozłączne i ciągłe) i spójność odwołań manifestu (`previousVersion`, `with` istnieją); próbka (T072) obejmuje wszystkie wersje pierwszego wersjonowanego dokumentu
+- [X] T098 [US3] Ustaw w `corpus/przebieg.json` wersje/nieaktualne/sprzeczności wg domyślnych, `generate`, przejrzyj i zacommituj korpus; rozszerz `CorpusFullTests` o SC-028 (wersje rozłączne i ciągłe) i spójność odwołań manifestu (`previousVersion`, `with` istnieją); próbka (T072) obejmuje wszystkie wersje pierwszego wersjonowanego dokumentu
 
 **Checkpoint**: aplikacja RAG ma wersje, dokumenty nieaktualne i sprzeczne z prawdą w manifeście.
 

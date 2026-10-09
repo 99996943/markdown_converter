@@ -37,7 +37,7 @@ public sealed class CorpusFullTests
 
         foreach (string type in new[] { "regulaminy", "taryfy", "procedury" })
         {
-            var documents = manifest.Documents.Where(d => d.Type == type && d.PreviousVersion is null && !d.Id.StartsWith("ZAT-", StringComparison.Ordinal) && !d.Id.Contains("-w", StringComparison.Ordinal)).ToList();
+            var documents = manifest.Documents.Where(d => d.Type == type && !d.Id.StartsWith("ZAT-", StringComparison.Ordinal) && !d.Id.Contains("-w", StringComparison.Ordinal)).ToList();
             Assert.Equal(parameters.DocumentsPerType, documents.Count);
             Assert.All(documents, d => Assert.InRange(d.Pages, parameters.Pages.Min, parameters.Pages.Max));
             Assert.All(documents, d => Assert.True(File.Exists(Path.Combine(CorpusSampleTests.RepoRoot(), "corpus", d.Pdf)), d.Pdf));
