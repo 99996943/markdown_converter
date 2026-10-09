@@ -25,7 +25,7 @@ public partial class ManifestChangesTests
             Mini.Facts.Get(fact).Kind,
             doc.FactOverrides.LastOrDefault(o => o.FactId == fact)?.Value ?? Mini.Facts.ValueAt(fact, doc.ValidFrom));
 
-    [GeneratedRegex(@"^(§ \d+( ust\. \d+)?( pkt \d+)?( lit\. [a-z])?|poz\. \d+(\.\d+)*|krok \d+(\.\d+)*|metryczka|Rozdział \d+|\d+(\.\d+)*|Załącznik nr \d+)$")]
+    [GeneratedRegex(@"^(§ \d+( ust\. \d+)?( pkt \d+)?( lit\. [a-z])?|poz\. \d+(\.\d+)*|krok \d+(\.\d+)*|metryczka|Rozdział \d+|sekcja (\d+|[IVXLC]+)|Załącznik nr \d+)$")]
     private static partial Regex UnitFormat();
 
     [Fact]
@@ -46,6 +46,16 @@ public partial class ManifestChangesTests
             Assert.Matches(UnitFormat(), change.Unit);
             Assert.All(changes, c => Assert.NotEqual(c.Before, c.After));
         }
+    }
+
+    [Theory]
+    [InlineData("I", "sekcja I")]
+    [InlineData("12", "sekcja 12")]
+    [InlineData("§ 3.", "§ 3")]
+    [InlineData("poz. 4.7", "poz. 4.7")]
+    public void UnitLabels_OfSections_NameTheSection(string unit, string expected)
+    {
+        Assert.Equal(expected, ManifestRelations.UnitLabel(unit));
     }
 
     [Fact]

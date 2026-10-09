@@ -65,6 +65,9 @@ public static class ManifestRelations
         return result;
     }
 
+    /// <summary>The manifest form of an element unit: without the final period; a bare section number becomes „sekcja N”.</summary>
+    public static string UnitLabel(string unit) => throw new NotImplementedException();
+
     /// <summary>The value of <paramref name="fact"/> as <paramref name="doc"/> prints it.</summary>
     private static string Printed(ContentLibrary content, DocumentPlan doc, string fact)
     {
