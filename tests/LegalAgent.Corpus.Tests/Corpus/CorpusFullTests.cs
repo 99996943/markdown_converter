@@ -83,6 +83,35 @@ public sealed class CorpusFullTests
         Assert.True(failures.Count == 0, string.Join("\n", failures));
     }
 
+    /// <summary>
+    /// SC-028 and the manifest guarantees: versions of one designation have continuous, disjoint periods; every
+    /// <c>previousVersion</c> and <c>contradictions[].with</c> names a document of the manifest.
+    /// </summary>
+    [Fact]
+    public async Task Manifest_VersionsAreContinuous_AndReferencesExist()
+    {
+        SkipUnlessEnabled();
+        string path = Path.Combine(CorpusSampleTests.RepoRoot(), "corpus", "manifest.json");
+        Manifest.Manifest manifest = ManifestWriter.Read(await File.ReadAllTextAsync(path, TestContext.Current.CancellationToken));
+        var ids = manifest.Documents.Select(d => d.Id).ToHashSet(StringComparer.Ordinal);
+
+        foreach (ManifestDocument doc in manifest.Documents)
+        {
+            Assert.True(doc.PreviousVersion is null || ids.Contains(doc.PreviousVersion), $"{doc.Id}: previousVersion {doc.PreviousVersion}");
+            Assert.All(doc.Contradictions ?? [], c => Assert.True(ids.Contains(c.With), $"{doc.Id}: contradiction with {c.With}"));
+        }
+
+        foreach (IGrouping<string?, ManifestDocument> versions in manifest.Documents.Where(d => d.Designation is not null && d.Type != "akty").GroupBy(d => d.Designation))
+        {
+            var ordered = versions.OrderBy(d => d.Version).ToList();
+            for (int k = 0; k + 1 < ordered.Count; k++)
+            {
+                Assert.Equal(ordered[k + 1].ValidFrom, ordered[k].ValidTo?.AddDays(1));
+                Assert.Equal(ordered[k].Id, ordered[k + 1].PreviousVersion);
+            }
+        }
+    }
+
     /// <summary>The thresholds of SC-022 – SC-026 that <paramref name="q"/> misses, one message per metric.</summary>
     internal static List<string> ThresholdFailures(DocumentPlan doc, QualityReport q)
     {

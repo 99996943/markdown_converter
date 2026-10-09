@@ -28,9 +28,20 @@ public sealed class CorpusSampleTests
 
     internal static CorpusGeneratorOptions Options() => new() { BaseDirectory = RepoRoot() };
 
-    /// <summary>The first document of every (type, layout) pair, in plan order.</summary>
-    internal static IReadOnlyList<DocumentPlan> Sample(CorpusPlan plan) =>
-        plan.Documents.GroupBy(d => (d.Type, d.Layout)).Select(g => g.First()).ToList();
+    /// <summary>
+    /// The first document of every (type, layout) pair, in plan order, and every version of the first versioned
+    /// document (research R10).
+    /// </summary>
+    internal static IReadOnlyList<DocumentPlan> Sample(CorpusPlan plan)
+    {
+        var sample = plan.Documents.GroupBy(d => (d.Type, d.Layout)).Select(g => g.First()).ToList();
+        if (plan.Documents.FirstOrDefault(d => d.PreviousVersionId is not null) is { } versioned)
+        {
+            sample.AddRange(plan.Documents.Where(d => d.Designation == versioned.Designation && !sample.Contains(d)));
+        }
+
+        return sample;
+    }
 
     [Fact]
     public async Task SampleDocuments_EqualTheCommittedFiles()
