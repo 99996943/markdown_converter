@@ -10,6 +10,8 @@ namespace LegalAgent.Chunking.Splitting;
 /// </summary>
 internal sealed class FragmentRenderer
 {
+    private static readonly SourceInfo NoSource = new(null, 1, null, 0, string.Empty);
+
     private readonly IMarkdownRenderer _renderer;
     private readonly RenderingOptions _options;
 
@@ -20,9 +22,20 @@ internal sealed class FragmentRenderer
         ArgumentNullException.ThrowIfNull(options);
         _renderer = renderer;
         _options = ChunkingOptions.CopyRendering(options);
+        _options.PageMarkers = false;
     }
 
     /// <summary>Renders a part of <paramref name="unit"/> (null for the preamble), without a trailing line feed.</summary>
-    public string Render(Section? unit, IReadOnlyList<ContentBlock> blocks, IReadOnlyList<Footnote> footnotes) =>
-        _renderer is null || _options is null ? string.Empty : throw new NotImplementedException();
+    public string Render(Section? unit, IReadOnlyList<ContentBlock> blocks, IReadOnlyList<Footnote> footnotes)
+    {
+        ArgumentNullException.ThrowIfNull(blocks);
+        ArgumentNullException.ThrowIfNull(footnotes);
+
+        // A skipped page is rendered as a comment, which is not text of the PDF (spec 004, FR-230).
+        List<ContentBlock> content = blocks.Where(b => b is not SkippedPageBlock).ToList();
+        LegalDocument document = unit is null
+            ? new LegalDocument(NoSource, null, content, footnotes, [])
+            : new LegalDocument(NoSource, null, [], [], [unit with { Blocks = content, Footnotes = footnotes, Children = [] }]);
+        return _renderer.Render(document, _options).TrimEnd('\n');
+    }
 }
