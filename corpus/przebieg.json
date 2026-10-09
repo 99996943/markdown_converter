@@ -11,7 +11,28 @@
   "outdatedPerType": 2,
   "contradictionPairsPerType": 1,
   "crossTypeContradictionPairs": 1,
-  "poison": [],
+  "poison": [
+    {
+      "kind": "falszywe-stawki",
+      "perType": 2
+    },
+    {
+      "kind": "polecenia-dla-ai",
+      "perType": 2
+    },
+    {
+      "kind": "podszywanie",
+      "perType": 2
+    },
+    {
+      "kind": "nieaktualny-jako-obowiazujacy",
+      "perType": 2
+    },
+    {
+      "kind": "sprzecznosc-z-oryginalem",
+      "perType": 2
+    }
+  ],
   "strictUniqueness": true,
   "maxSharedShare": 20,
   "outputDirectory": "corpus",

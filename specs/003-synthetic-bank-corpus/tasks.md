@@ -275,7 +275,7 @@ między typami), wszystko w treści i w manifeście.
 - [X] T107 [P] [US4] Treść: `corpus/zrodla/zatrucia/podszywanie.yaml` (inna jednostka banku, fałszywe zatwierdzenie w metryczce, fałszywe pismo „Zarządu” w ramce)
 - [X] T108 [P] [US4] Treść: `corpus/zrodla/zatrucia/nieaktualny-jako-obowiazujacy.yaml` (`przesun-daty`, okładka/metryczka twierdząca obowiązywanie)
 - [X] T109 [P] [US4] Treść: `corpus/zrodla/zatrucia/sprzecznosc-z-oryginalem.yaml` (zmienione postanowienia i stawki względem dokumentu oryginalnego)
-- [ ] T110 [US4] Ustaw `Poison` w `corpus/przebieg.json` (5 rodzajów × 2 na typ), `generate`, przejrzyj i zacommituj `corpus/zatrute/**`; rozszerz `CorpusFullTests` o SC-023 (100% `places[].text` dosłownie w Markdown, w jednostce z manifestu) i SC-028 (≥ 2 na parę, `imitates` istnieje); próbka (T072) obejmuje pierwszy dokument każdej pary typ × rodzaj; nowe problemy biblioteki z zatrutymi układami → pary red/green jak T089
+- [X] T110 [US4] Ustaw `Poison` w `corpus/przebieg.json` (5 rodzajów × 2 na typ), `generate`, przejrzyj i zacommituj `corpus/zatrute/**`; rozszerz `CorpusFullTests` o SC-023 (100% `places[].text` dosłownie w Markdown, w jednostce z manifestu) i SC-028 (≥ 2 na parę, `imitates` istnieje); próbka (T072) obejmuje pierwszy dokument każdej pary typ × rodzaj; nowe problemy biblioteki z zatrutymi układami → pary red/green jak T089
 
 **Checkpoint**: komplet dokumentów zatrutych z prawdą referencyjną.
 
