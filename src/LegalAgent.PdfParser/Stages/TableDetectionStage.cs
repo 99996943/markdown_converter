@@ -236,7 +236,7 @@ public sealed class TableDetectionStage : IPipelineStage
         TableOptions options = context.Options.Tables;
         IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
         var grid = new Grid(rulings, candidate);
-        List<Row> region = CutAtGridGap(TrimTrailingLines(CutAtRunningText(candidate, page, context), options, grid), grid);
+        List<Row> region = CutAtGridGap(TrimTrailingLines(CutAtRunningText(candidate, page, context), options, grid, tolerance), grid);
 
         // Lines above the top border of a ruled grid are not part of it (numbered paragraphs introducing the table):
         // the seed moves on until it reaches the grid, and these lines stay running text.
@@ -423,9 +423,10 @@ public sealed class TableDetectionStage : IPipelineStage
     /// Keeps the lines up to the last multi-cell line plus the single-cell lines that still belong to the last row: inside
     /// the ruled grid, or close below and within one column (FR-062).
     /// </summary>
-    private static List<Row> TrimTrailingLines(List<Row> region, TableOptions options, Grid grid)
+    private static List<Row> TrimTrailingLines(List<Row> region, TableOptions options, Grid grid, double tolerance)
     {
-        int lastMulti = region.FindLastIndex(r => r.IsMulti);
+        List<Row> rows = region.Where(r => r.IsMulti).ToList();
+        int lastMulti = region.FindLastIndex(r => r.IsMulti || IsAligned(r, rows, tolerance));
         double rowGap = options.RowMergeGapFactor * TableLeading(region.Take(lastMulti + 1).ToList());
         bool multiInGrid = grid.Contains(region[lastMulti].Line.Box.CenterY);
         int end = lastMulti;
@@ -527,11 +528,8 @@ public sealed class TableDetectionStage : IPipelineStage
                 continue;
             }
 
-            // A line whose segments all start in the table's columns is a row (spaced evenly by chance), not text.
-            bool aligned = row.Cells.Count >= 2
-                && row.Cells.All(c => rows.Any(r => r.Cells.Any(m => Math.Abs(m.Box.Left - c.Box.Left) <= tolerance)));
             if (multi >= minRows
-                && !aligned
+                && !IsAligned(row, rows, tolerance)
                 && row.Line.Box.Right > second + tolerance
                 && Math.Abs(row.Line.Box.Left - left) <= tolerance)
             {
@@ -541,6 +539,11 @@ public sealed class TableDetectionStage : IPipelineStage
 
         return region;
     }
+
+    /// <summary>A line whose segments all start in the table's columns is a row (spaced evenly by chance), not text.</summary>
+    private static bool IsAligned(Row row, List<Row> rows, double tolerance) =>
+        row.Cells.Count >= 2
+        && row.Cells.All(c => rows.Any(r => r.Cells.Any(m => Math.Abs(m.Box.Left - c.Box.Left) <= tolerance)));
 
     /// <summary>
     /// With a ruled grid, the region ends before the first line that leaves it after an earlier line was inside: text
