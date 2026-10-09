@@ -67,6 +67,12 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
         }
     }
 
+    /// <summary>Message for an elapsed time limit (pl-PL number format).</summary>
+    internal static string TimeoutMessage(TimeSpan timeout) => throw new NotImplementedException();
+
+    /// <summary>Message for a file above the size limit (pl-PL number format).</summary>
+    internal static string TooLargeMessage(long maxBytes) => throw new NotImplementedException();
+
     private static DownloadResult Failed(PlannedDownload item, DownloadError error) => new()
     {
         Index = item.Index,
