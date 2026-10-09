@@ -212,7 +212,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [ ] T087 [US2] Test (red): dwie kolumny z przypisami i „§ N.” w obu kolumnach → kolejność lewa→prawa, nagłówki w kolejności, przypisy kompletne
 - [ ] T088 [US2] Poprawka dla T087 (green)
 - [ ] T089 [US2] Inne niepowodzenia z pomiaru T076 — każde jako para red/green dopisana tutaj (T089a, T089b, …) przed implementacją; zachowanie sprzeczne ze spec → doprecyzowanie FR w spec.md w commicie red
-- [ ] T089a [US2] Test (red): tabela z siatką bezpośrednio pod akapitami numerowanymi „1.” z wcięciem wiszącym → lista zachowana, tabela GFM bez wierszy spoza siatki (`ptests/Integration/CorpusLayoutsIntegrationTests.cs`); poprawka w `TableDetectionStage` (green) — wiersze nad górną linią siatki nie należą do tabeli z siatką
+- [X] T089a [US2] Test (red): tabela z siatką bezpośrednio pod akapitami numerowanymi „1.” z wcięciem wiszącym → lista zachowana, tabela GFM bez wierszy spoza siatki (`ptests/Integration/CorpusLayoutsIntegrationTests.cs`); poprawka w `TableDetectionStage` (green) — wiersze nad górną linią siatki nie należą do tabeli z siatką
 - [ ] T090 [US2] Dodaj polecenie `refresh` (konwersja istniejących PDF bez składania, przepisanie manifestu) w `corpus-lib/CorpusGenerator.cs` i `src/LegalAgent.Corpus.Cli/Program.cs` z testem w `ctests/Cli/ProgramTests.cs` (red → green); uruchom `refresh`, przejrzyj diff `corpus/**/*.md`, zacommituj; pełny zestaw `CorpusFull` zielony
 
 **Checkpoint**: SC-022 – SC-026 spełnione na całym korpusie; goldeny parsera bez niezatwierdzonych zmian.

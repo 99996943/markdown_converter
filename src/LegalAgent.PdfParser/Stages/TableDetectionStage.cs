@@ -202,6 +202,14 @@ public sealed class TableDetectionStage : IPipelineStage
         IEnumerable<Segment> rulings = options.UseRulingLines ? page.Rulings : [];
         var grid = new Grid(rulings, candidate);
         List<Row> region = CutAtGridGap(TrimTrailingLines(candidate, options, grid), grid);
+
+        // Lines above the top border of a ruled grid are not part of it (numbered paragraphs introducing the table):
+        // the seed moves on until it reaches the grid, and these lines stay running text.
+        if (!grid.Contains(region[0].Line.Box.CenterY) && region.Any(r => grid.Contains(r.Line.Box.CenterY)))
+        {
+            return null;
+        }
+
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
         if (multiCount < options.MinRows && !ruledFragment)
