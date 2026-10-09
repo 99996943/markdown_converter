@@ -1341,6 +1341,40 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("(F-BEZ-05).", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T089e: a ruled tariff fragment at the bottom of a page — the column-name row and one row whose four cells are
+    /// spaced almost evenly (ZAT-TAR-POD-01 page 11): inside the grid it is a row, so the fragment is a GFM table.
+    /// </summary>
+    [Fact]
+    public async Task RuledFragmentWithAnEvenlySpacedRow_IsATable()
+    {
+        var b = new SyntheticPdfBuilder().PageNumberFooter("Strona {n}");
+        b.Page();
+        b.Text(Left, 60, "Taryfa prowizji i opłat", 18, bold: true);
+        Body(b, 100, 40);
+        double[] x = [56, 97, 345, 445, 539];
+        foreach (double y in new[] { 695.0, 713.5, 743.5 })
+        {
+            b.HLine(x[0], x[^1], y);
+        }
+
+        foreach (double vx in x)
+        {
+            b.VLine(vx, 695, 743.5);
+        }
+
+        b.Text(61, 707.5, "Lp.", 9, bold: true).Text(102.2, 707.5, "Wyszczególnienie czynności", 9, bold: true)
+            .Text(349.6, 707.5, "Tryb pobierania", 9, bold: true).Text(449.8, 707.5, "Stawka", 9, bold: true);
+        b.Text(61, 726, "173.", 9).Text(102.2, 726, "Prowizja za przyznanie limitu w rachunku osobistym", 9)
+            .Text(349.6, 726, "od kwoty limitu,", 9).Text(449.8, 726, "2% min. 30,00 zł 1)", 9);
+        b.Text(102.2, 737.5, "(debetu)", 9).Text(349.6, 737.5, "jednorazowo", 9);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+        Assert.Contains("| 173. | Prowizja za przyznanie limitu w rachunku osobistym (debetu) | od kwoty limitu, jednorazowo | 2% min. 30,00 zł 1) |", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()

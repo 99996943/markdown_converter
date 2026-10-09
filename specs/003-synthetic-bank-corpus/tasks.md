@@ -216,6 +216,7 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [X] T089c [US2] Taryfy bez siatki (pomiar T076, T083b–T083i w `CorpusLayoutsIntegrationTests`): wiersz zawinięty w dwóch kolumnach, akapit nad pogrubionym nagłówkiem kolumn, tekst między dwiema tabelami, kontynuacja na kolejnej stronie (także z podpozycjami), wiersz o prawie równych odstępach, nagłówek z jednym wierszem na dole strony i kontynuacja z jednym wierszem na górze strony — poprawki w `TableDetectionStage`
 - [X] T089b [US2] Test (red): tytuł rozdziału zawinięty w dwa wiersze pod „Rozdział 6” (REG-06) → jeden nagłówek z całym tytułem; poprawka w `HeadingDetectionStage` (green)
 - [X] T089d [US2] Test (red): kod formularza „(F-BEZ-05).” przeniesiony na początek strony (PRO-07-w1) → koniec akapitu, nie nagłówek; poprawka w `HeadingDetectionStage` (wersaliki: litery ≥ połowy znaków wiersza) (green)
+- [ ] T089e [US2] Test (red): fragment taryfy z siatką (nagłówek + wiersz o prawie równych odstępach komórek) na dole strony (ZAT-TAR-POD-01) → tabela GFM; poprawka w `TableDetectionStage` (w siatce wiersz z ≥ 2 komórkami jest wierszem tabeli) (green)
 - [X] T090 [US2] Dodaj polecenie `refresh` (konwersja istniejących PDF bez składania, przepisanie manifestu) w `corpus-lib/CorpusGenerator.cs` i `src/LegalAgent.Corpus.Cli/Program.cs` z testem w `ctests/Cli/ProgramTests.cs` (red → green); uruchom `refresh`, przejrzyj diff `corpus/**/*.md`, zacommituj; pełny zestaw `CorpusFull` zielony
 
 **Checkpoint**: SC-022 – SC-026 spełnione na całym korpusie; goldeny parsera bez niezatwierdzonych zmian.
