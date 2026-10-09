@@ -371,11 +371,13 @@ public static class CorpusGenerator
 
         var documents = new List<GeneratedDocument>(plans.Count);
         var files = new List<CorpusFile>();
+        var index = Enumerable.Range(0, plans.Count).ToDictionary(i => plans[i].Id, StringComparer.Ordinal);
         for (int i = 0; i < plans.Count; i++)
         {
             DocumentPlan doc = plans[i];
             FitResult fit = fits[i];
-            ManifestDocument entry = Entry(doc, fit);
+            FitResult? previous = doc.PreviousVersionId is { } p ? fits[index[p]] : null;
+            ManifestDocument entry = Entry(content, plans, doc, fit, previous);
             documents.Add(new GeneratedDocument(doc, fit.Typeset.Pdf, markdown[i], entry, fit));
             files.Add(new CorpusFile(entry.Pdf, fit.Typeset.Pdf));
             files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(markdown[i])));
@@ -411,14 +413,18 @@ public static class CorpusGenerator
         options ??= new CorpusGeneratorOptions();
         parameters.Validate();
         ContentLibrary content = ContentLoader.Load(Resolve(options.BaseDirectory, parameters.ContentDirectory));
-        DocumentPlan doc = CorpusPlanner.Plan(content, parameters).Documents.FirstOrDefault(d => d.Id == documentId)
+        CorpusPlan plan = CorpusPlanner.Plan(content, parameters);
+        DocumentPlan doc = plan.Documents.FirstOrDefault(d => d.Id == documentId)
             ?? throw new CorpusGenerationException("Brak dokumentu w planie: " + documentId) { DocumentId = documentId };
         FitResult fit = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages);
+        FitResult? previous = doc.PreviousVersionId is { } p
+            ? PageFitter.Fit(plan.Documents.First(d => d.Id == p), content, parameters.Seed, parameters.Pages)
+            : null;
         string markdown = await ConvertAsync(Converter(parameters, options), fit.Typeset.Pdf, PdfPath(doc), cancellationToken).ConfigureAwait(false);
-        return new GeneratedDocument(doc, fit.Typeset.Pdf, markdown, Entry(doc, fit), fit);
+        return new GeneratedDocument(doc, fit.Typeset.Pdf, markdown, Entry(content, plan.Documents, doc, fit, previous), fit);
     }
 
-    private static ManifestDocument Entry(DocumentPlan doc, FitResult fit) => new(
+    private static ManifestDocument Entry(ContentLibrary content, IReadOnlyList<DocumentPlan> plan, DocumentPlan doc, FitResult fit, FitResult? previous) => new(
         doc.Id,
         doc.Type,
         fit.Composition.Document.Front.Title,
@@ -434,7 +440,13 @@ public static class CorpusGenerator
         doc.Template,
         doc.Layout,
         doc.Seed,
-        Math.Round(SharedShare(fit), 3));
+        Math.Round(SharedShare(fit), 3),
+        Changes: previous is null
+            ? null
+            : NullIfEmpty(ManifestRelations.Changes(content, doc, fit, plan.First(d => d.Id == doc.PreviousVersionId), previous)),
+        Contradictions: NullIfEmpty(ManifestRelations.Contradictions(content, doc, fit, plan)));
+
+    private static IReadOnlyList<T>? NullIfEmpty<T>(IReadOnlyList<T> list) => list.Count == 0 ? null : list;
 
     private static void Check(RunParameters parameters, IReadOnlyList<DocumentPlan> plans, FitResult[] fits, string[] markdown, ContentLibrary content)
     {

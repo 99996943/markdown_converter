@@ -17,7 +17,16 @@ public sealed record CompositionResult(
     IReadOnlyList<RenderedBlock> Blocks,
     IReadOnlyList<UnresolvedReference> Unresolved,
     IReadOnlyDictionary<string, IReadOnlyList<string>> FactElements,
-    int OptionalBlocks);
+    int OptionalBlocks)
+{
+    /// <summary>Gets, per fact id, its uses in document order: the element and, in a tariff row, the position („poz. 4.7”).</summary>
+    public IReadOnlyDictionary<string, IReadOnlyList<FactUse>> FactUses { get; init; } = new Dictionary<string, IReadOnlyList<FactUse>>(StringComparer.Ordinal);
+}
+
+/// <summary>A use of a fact in the composed document.</summary>
+/// <param name="ElementId">The element whose text states the fact (empty: the front matter).</param>
+/// <param name="Unit">The tariff position stating it, or null to take the element's unit.</param>
+public sealed record FactUse(string ElementId, string? Unit);
 
 /// <summary>
 /// Turns a <see cref="DocumentPlan"/> into a <see cref="ComposedDocument"/>: renders the template sections with their
@@ -173,6 +182,8 @@ public static class DocumentComposer
         private readonly List<RenderedBlock> _rendered = [];
         private readonly List<UnresolvedReference> _unresolved = [];
         private readonly Dictionary<string, List<string>> _factElements = new(StringComparer.Ordinal);
+        private readonly Dictionary<string, List<FactUse>> _factUses = new(StringComparer.Ordinal);
+        private string? _currentPosition;
 
         private int _elementCounter;
         private string _currentElement = string.Empty;
@@ -211,7 +222,10 @@ public static class DocumentComposer
                 _rendered,
                 _unresolved,
                 _factElements.ToDictionary(p => p.Key, p => (IReadOnlyList<string>)p.Value, StringComparer.Ordinal),
-                _optional.Sum(s => s.Count));
+                _optional.Sum(s => s.Count))
+            {
+                FactUses = _factUses.ToDictionary(p => p.Key, p => (IReadOnlyList<FactUse>)p.Value, StringComparer.Ordinal),
+            };
         }
 
         // ------------------------------------------------------------ ITemplateContext
@@ -228,6 +242,18 @@ public static class DocumentComposer
             if (_currentElement.Length > 0 && (elements.Count == 0 || elements[^1] != _currentElement))
             {
                 elements.Add(_currentElement);
+            }
+
+            var use = new FactUse(_currentElement, _currentPosition);
+            if (!_factUses.TryGetValue(id, out List<FactUse>? uses))
+            {
+                uses = [];
+                _factUses[id] = uses;
+            }
+
+            if (!uses.Contains(use))
+            {
+                uses.Add(use);
             }
 
             return (fact.Kind, _content.Facts.ValueAt(id, _plan.ValidFrom, _overrides));
@@ -485,6 +511,7 @@ public static class DocumentComposer
                         number = prefix + (++k).ToString(CultureInfo.InvariantCulture);
                     }
 
+                    _currentPosition = "poz. " + number;
                     IReadOnlyList<TableCell> row =
                     [
                         TableCell.Of(number + "."),
@@ -492,6 +519,7 @@ public static class DocumentComposer
                         new TableCell(notes.Markers(Render(item.Mode))),
                         new TableCell(notes.Markers(Render(item.Rate))),
                     ];
+                    _currentPosition = null;
                     _tariff.Rows.Add(row);
 
                     // Positions are flushed into the table later; their text still belongs to this block (checks).
