@@ -142,7 +142,7 @@ fragmentów 5 dokumentów.
 - [X] T045 [P] [US2] Test kategorii `CorpusFull` w `chtests/Corpus/CorpusChunksFullTests.cs` (obok pomocnika pokrycia słów) (SC-040 – SC-042, SC-044; `LEGALAGENT_CORPUS_FULL`): każdy wpis manifestu ma plik fragmentów zgodny z kontraktem; pokrycie słów (FR-234) względem `<stem>.md`; każdy fragment w limicie albo `exceedsLimit` z jednym atomem; `chunk.id` unikalne w całym korpusie; poprawki (green), jeśli test padnie
 - [X] T045a [US1] Test (red) w `chtests/Unit/UnitCollectorTests.cs` + implementacja (green) w `chunk-lib/Splitting/UnitCollector.cs` (FR-220, z T045): sekcja bez treści i bez podsekcji tworzy jednostkę z samym nagłówkiem; `refresh` korpusu (commit `data:`), T045 zielony
 
-- [ ] T046 [P] [US2] Test wydajności (kategoria `Performance`) w `chtests/PerformanceTests.cs` (SC-045): podział największego dokumentu korpusu z gotowego wyniku konwersji < 1 s; ręczny pomiar `refresh` przed i po (≤ +20%) zapisany w handoffie
+- [X] T046 [P] [US2] Test wydajności (kategoria `Performance`) w `chtests/PerformanceTests.cs` (SC-045): podział największego dokumentu korpusu z gotowego wyniku konwersji < 1 s; ręczny pomiar `refresh` przed i po (≤ +20%) zapisany w handoffie
 
 **Checkpoint**: wszystkie historyjki gotowe i sprawdzone na korpusie.
 
