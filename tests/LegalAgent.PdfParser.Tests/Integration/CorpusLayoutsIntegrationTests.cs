@@ -382,6 +382,52 @@ public sealed class CorpusLayoutsIntegrationTests
     }
 
     /// <summary>
+    /// T083i: a gridless tariff continued on the next page with only the repeated column-name row and one row (TAR-09
+    /// page 18), followed there by its notes, the next section heading, a paragraph and the next table: the notes and
+    /// the paragraph are text, the heading is a heading, and the row joins the table of the previous page.
+    /// </summary>
+    [Fact]
+    public async Task GridlessContinuationWithOneRowThenTheNextSection_EndsAfterThatRow()
+    {
+        var b = new SyntheticPdfBuilder().PageNumberFooter("Strona {n}");
+        b.Page();
+        b.Text(Left, 60, "Taryfa opłat dla młodzieży", 18, bold: true);
+        b.Text(Left, 95, "V. Karty", 13, bold: true);
+        string[] mode = ["za operację"];
+        var first = Enumerable.Range(1, 26).Select(i => ($"{i}.", new[] { $"Czynność bankowa numer {i} w placówce" }, mode, $"{i},00 zł")).ToArray();
+        GridlessTariff(b, 125, first);
+        b.Page();
+        double y = GridlessTariff(b, 70, [("27.", ["Przeliczenie transakcji w walucie obcej według", "Tabeli kursów walut"], ["od kwoty"], "1,5%")]);
+        b.Text(Left, y, "1) Opłata nie jest pobierana w miesiącu, w którym wartość transakcji bezgotówkowych wykonanych kartą", 8.5);
+        b.Text(Left, y + 11, "wyniosła co najmniej kwotę wskazaną w opisie sekcji.", 8.5);
+        y += 11 + 8 + 30;
+        b.Text(Left, y, "VI. Przelewy", 13, bold: true);
+        y += 24;
+        b.Text(Left, y, "Dzienne limity przelewów małoletniego wynikają ze zgody przedstawiciela ustawowego i nie mogą", Size);
+        b.Text(Left, y + 13.5, "przekroczyć kwot wskazanych w Taryfie.", Size);
+        y += 13.5 + 22;
+        y = GridlessTariff(b, y,
+        [
+            ("28.", ["Przelew wewnętrzny w Banku"], ["za operację"], "bez opłat"),
+            ("29.", ["Przelew krajowy w złotych do innego banku"], ["za operację"], "0,00 zł"),
+            ("30.", ["Przelew natychmiastowy w złotych"], ["za operację"], "1,00 zł"),
+        ]);
+        Body(b, y + 30, 6);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t083i.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("## VI. Przelewy", md, StringComparison.Ordinal);
+        Assert.Contains("| 27. | Przeliczenie transakcji w walucie obcej według Tabeli kursów walut | od kwoty | 1,5% |", md, StringComparison.Ordinal);
+        Assert.Equal(2, md.Split('\n').Count(l => l.StartsWith("| **Lp.**", StringComparison.Ordinal)));
+        Assert.DoesNotContain("| 1) Opłata", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| Dzienne limity", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// T083f: the continuation page of a gridless tariff as typeset in the corpus (TAR-06 page 4): sub-positions „2.1.”,
     /// „2.2.” with wrapped service names, then „3.” wrapped, „4.” … — all rows of the one table.
     /// </summary>
