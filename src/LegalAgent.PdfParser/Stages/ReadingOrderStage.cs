@@ -17,6 +17,9 @@ public sealed class ReadingOrderStage : IPipelineStage
 {
     private const int MinLinesPerColumn = 2;
 
+    /// <summary>Share of the gutter width, at its right end, that a line crossing it reaches.</summary>
+    private const double CrossReach = 0.25;
+
     /// <summary>Coverage (share of the page height) within which bins count as equally empty.</summary>
     private const double EmptiestSlack = 0.02;
 
@@ -294,7 +297,7 @@ public sealed class ReadingOrderStage : IPipelineStage
                 && page.Lines.Any(o => IsFlowText(o)
                     && (line.Box.Right <= middle ? o.Box.Left >= middle : o.Box.Right <= middle)
                     && o.Baseline > span.Top && o.Baseline < span.Bottom);
-            if ((!IsFlowText(line) && !columnTable) || PiecesOf(line).Any(p => p.Left < middle && p.Right > middle))
+            if ((!IsFlowText(line) && !columnTable) || PiecesOf(line).Any(p => Crosses(p, gutter)))
             {
                 Flush();
                 ordered.Add(line);
@@ -314,8 +317,8 @@ public sealed class ReadingOrderStage : IPipelineStage
 
         Flush();
 
-        AnnotateColumn(ordered, line => line.Box.Right <= middle);
-        AnnotateColumn(ordered, line => line.Box.Left >= middle);
+        AnnotateColumn(ordered, line => line.Box.CenterX < middle && !Crosses(line.Box, gutter));
+        AnnotateColumn(ordered, line => line.Box.CenterX >= middle && !Crosses(line.Box, gutter));
 
         page.Lines.Clear();
         foreach (LayoutLine line in ordered)
@@ -323,6 +326,14 @@ public sealed class ReadingOrderStage : IPipelineStage
             page.Lines.Add(line);
         }
     }
+
+    /// <summary>
+    /// A piece starting left of the gutter crosses it when it reaches its last quarter or is centred in it (a heading
+    /// over both columns); the lines of a ragged left column may end anywhere before that.
+    /// </summary>
+    private static bool Crosses(Rect piece, (double Start, double End) gutter) =>
+        piece.Left < gutter.Start
+        && (piece.Right > gutter.End - (CrossReach * (gutter.End - gutter.Start)) || (piece.CenterX > gutter.Start && piece.CenterX < gutter.End));
 
     /// <summary>Records the column bounds on every flow line of one column (consumed by paragraph assembly).</summary>
     private static void AnnotateColumn(List<LayoutLine> lines, Func<LayoutLine, bool> inColumn)
