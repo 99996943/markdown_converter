@@ -591,6 +591,71 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("## V. Wymiana i liczenie wartości pieniężnych", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087: two columns (REG-02 page 2) — the left one opens with „Rozdział 1” and its title in a larger bold font,
+    /// the right one continues a numbered list in body text whose baselines fall between the heading lines: the
+    /// heading stays whole and the list item keeps its wrapped line.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnsWithAChapterHeadingBesideBodyLines_KeepBothColumnsApart()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(50, 42, "Regulamin kart debetowych dla klientów indywidualnych", 7.5);
+        b.Text(50, 92, "Rozdział 1", 12, bold: true);
+        b.Text(50, 108, "Postanowienia ogólne", 12, bold: true);
+        b.Text(158, 134, "§ 1.", 10.5, bold: true);
+        string[] left =
+        [
+            "1. Regulamin określa zasady wydawania",
+            "i używania kart debetowych wydawanych przez",
+            "Bank osobom fizycznym niebędącym",
+            "przedsiębiorcami, a także prawa i obowiązki",
+            "stron umowy o kartę debetową.",
+            "2. Karta debetowa jest instrumentem płatniczym,",
+            "który umożliwia dysponowanie środkami",
+            "zgromadzonymi na rachunku płatniczym, do",
+            "którego została wydana. Transakcje wykonane",
+            "kartą obciążają ten rachunek bez udzielania",
+            "kredytu.",
+        ];
+        double y = 155;
+        foreach (string line in left)
+        {
+            b.Text(line.Length > 2 && char.IsDigit(line[0]) ? 50 : 68, y, line, 9.5);
+            y += 12.5;
+        }
+
+        (double Y, double X, string Text)[] right =
+        [
+            (92, 313, "5)"), (92, 331, "Taryfa — obowiązująca w Banku taryfa opłat"),
+            (104, 331, "i prowizji;"),
+            (120, 313, "6)"), (120, 331, "Placówka — punkt Banku obsługujący"),
+            (132, 331, "Klientów;"),
+            (148, 313, "7)"), (148, 331, "Bankowość elektroniczna — usługa"),
+            (160, 331, "umożliwiająca dostęp do rachunku i składanie"),
+            (173, 331, "dyspozycji przez Internet lub aplikację mobilną;"),
+            (188, 313, "8)"), (188, 331, "Infolinia — telefoniczny punkt obsługi"),
+            (201, 331, "Klientów, dostępny pod numerem 800 000 001;"),
+            (216, 313, "9)"), (216, 331, "Instrument płatniczy — zindywidualizowane"),
+            (229, 331, "urządzenie lub zestaw procedur, za pomocą"),
+            (242, 331, "którego Klient składa zlecenie płatnicze;"),
+        ];
+        foreach ((double ry, double rx, string text) in right)
+        {
+            b.Text(rx, ry, text, 9.5);
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("## Rozdział 1. Postanowienia ogólne\n", md, StringComparison.Ordinal);
+        Assert.Contains("5\\) Taryfa — obowiązująca w Banku taryfa opłat i prowizji;", md, StringComparison.Ordinal);
+        Assert.Contains("6\\) Placówka — punkt Banku obsługujący Klientów;", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
