@@ -20,5 +20,9 @@ jobs:
         run: dotnet test LegalAgent.slnx -c Release --no-build --filter "Category!=Performance"
       - name: Corpus verify
         run: dotnet run --project src/LegalAgent.Corpus.Cli -c Release --no-build -- verify
+      - name: Corpus full
+        run: dotnet test LegalAgent.slnx -c Release --no-build --filter "Category=CorpusFull"
+        env:
+          LEGALAGENT_CORPUS_FULL: 1
       - name: Performance tests
         run: dotnet test LegalAgent.slnx -c Release --no-build --filter "Category=Performance" --ignore-exit-code 8

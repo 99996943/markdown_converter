@@ -54,6 +54,10 @@ public sealed class CorpusFullTests
 
         var failures = new List<string>();
         var details = new List<string>();
+        var content = Content.ContentLoader.Load(Path.Combine(corpus, "zrodla"));
+        var texts = new List<Validation.RenderedText>();
+        var blocks = new List<Validation.RenderedBlock>();
+        var words = new List<Validation.DocumentWords>();
         var table = new StringBuilder("| Dokument | Układ | Słowa | Spoza PDF | Kolejność | Nagłówki | Fałszywe | Listy | Wiersze | Tabele GFM | Komórki |\n|---|---|---|---|---|---|---|---|---|---|---|\n");
         foreach (DocumentPlan doc in plan.Documents)
         {
@@ -68,12 +72,26 @@ public sealed class CorpusFullTests
                 failures.Add($"{doc.Id}: Markdown różni się od wyniku biblioteki");
             }
 
+            // SC-027: the PDF text (truth words) and the Markdown; SC-031: blocks of the base documents.
+            texts.Add(new Validation.RenderedText(doc.Id, null, string.Join(" ", built.Fit.Typeset.Truth.Words)));
+            texts.Add(new Validation.RenderedText(doc.Id, null, built.Markdown));
+            if (doc.Poison is null)
+            {
+                blocks.AddRange(built.Fit.Composition.Blocks);
+                var shared = built.Fit.Composition.Blocks.Where(b => b.Shared).Select(b => b.BlockId).ToHashSet(StringComparer.Ordinal);
+                words.Add(new Validation.DocumentWords(doc.Id, built.Fit.Typeset.Truth.Words.Count, built.Fit.Typeset.BlockWordCounts.Where(p => shared.Contains(p.Key)).Sum(p => p.Value)));
+            }
+
             QualityReport q = QualityMetrics.Measure(doc.Id, built.Fit.Typeset.Truth, built.Markdown);
             details.AddRange(q.Failures);
             table.Append(CultureInfo.InvariantCulture, $"| {doc.Id} | {doc.Layout} | {q.WordCompleteness:P2} | {q.ExtraWords} | {q.ReadingOrder:P1} | {q.HeadingRecall:P1} | {q.FalseHeadingShare:P1} | {q.ListRecall:P1} | {q.RowsIntact:P1} | {q.TablesAsSingleGfm:P0} | {q.CellAgreement:P1} |\n");
 
             failures.AddRange(ThresholdFailures(doc, q));
         }
+
+        failures.AddRange(Validation.CorpusChecks.ForbiddenNames(texts, content.ForbiddenNames).Select(v => "SC-027 " + v.Message));
+        failures.AddRange(Validation.CorpusChecks.Uniqueness(blocks).Select(v => "SC-031 " + v.Message));
+        failures.AddRange(Validation.CorpusChecks.SharedShare(words, parameters.MaxSharedShare / 100.0).Select(v => "SC-031 " + v.Message));
 
         if (Environment.GetEnvironmentVariable("LEGALAGENT_CORPUS_REPORT") is { } report)
         {
