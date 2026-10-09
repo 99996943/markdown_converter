@@ -1,11 +1,13 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/LegalAgent.Chunking/LegalAgent.Chunking.csproj" />
     <Project Path="src/LegalAgent.Corpus.Cli/LegalAgent.Corpus.Cli.csproj" />
     <Project Path="src/LegalAgent.Corpus/LegalAgent.Corpus.csproj" />
     <Project Path="src/LegalAgent.PdfParser.Cli/LegalAgent.PdfParser.Cli.csproj" />
     <Project Path="src/LegalAgent.PdfParser/LegalAgent.PdfParser.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/LegalAgent.Chunking.Tests/LegalAgent.Chunking.Tests.csproj" />
     <Project Path="tests/LegalAgent.Corpus.Tests/LegalAgent.Corpus.Tests.csproj" />
     <Project Path="tests/LegalAgent.PdfParser.Tests/LegalAgent.PdfParser.Tests.csproj" />
   </Folder>
