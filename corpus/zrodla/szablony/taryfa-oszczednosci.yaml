@@ -1,0 +1,41 @@
+id: taryfa-oszczednosci
+typ: taryfy
+temat: taryfa-oszczednosci
+tytul:
+  - "Taryfa opłat i prowizji oraz tabela oprocentowania {{param:bank}} — rachunki oszczędnościowe i lokaty"
+  - "Taryfa {opłat i prowizji|prowizji i opłat} wraz z tabelą oprocentowania {{param:bank}} dla rachunków oszczędnościowych i lokat terminowych"
+uklady: [taryfa-siatka]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-oszczednosci-ogolne]
+  - rodzaj: sekcja-taryfy
+    tytul: "Rachunki oszczędnościowe — klienci indywidualni"
+    wymagane: [taryfa-oszczednosci-rachunki-opis, taryfa-oszczednosci-rachunki-1, taryfa-oszczednosci-rachunki-2]
+    opcjonalne: { kategorie: [pozycje-osz-rachunki], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Lokaty terminowe w złotych"
+    wymagane: [taryfa-oszczednosci-lokaty-opis, taryfa-oszczednosci-lokaty-1, taryfa-oszczednosci-lokaty-2]
+    opcjonalne: { kategorie: [pozycje-osz-lokaty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Lokaty w walutach obcych"
+    wymagane: [taryfa-oszczednosci-waluty-opis, taryfa-oszczednosci-waluty-1]
+    opcjonalne: { kategorie: [pozycje-osz-waluty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Lokaty negocjowane"
+    wymagane: [taryfa-oszczednosci-negocjowane-opis, taryfa-oszczednosci-negocjowane-1]
+    opcjonalne: { kategorie: [pozycje-osz-negocjowane], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Rachunki i lokaty dla przedsiębiorców"
+    wymagane: [taryfa-oszczednosci-firmy-opis, taryfa-oszczednosci-firmy-1, taryfa-oszczednosci-firmy-2]
+    opcjonalne: { kategorie: [pozycje-osz-firmy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Czynności dodatkowe"
+    wymagane: [taryfa-oszczednosci-czynnosci-opis, taryfa-oszczednosci-czynnosci-1, taryfa-oszczednosci-czynnosci-2]
+    opcjonalne: { kategorie: [pozycje-osz-czynnosci], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i przepisy końcowe"
+    wymagane: [taryfa-oszczednosci-objasnienia]
+    opcjonalne: { kategorie: [objasnienie-osz], min: 0, max: 40 }
+parametry: {}

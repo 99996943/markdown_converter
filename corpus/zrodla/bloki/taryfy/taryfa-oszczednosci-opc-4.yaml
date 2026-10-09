@@ -1,0 +1,34 @@
+bloki:
+  # ===== Objaśnienia — pula opcjonalna =====
+  - id: taryfa-oszczednosci-opc-objasnienie-1
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: objasnienie-osz
+    elementy:
+      - ustep: "Odsetki od środków na rachunku oszczędnościowym {oblicza się|Bank oblicza} od dnia wpłaty do dnia poprzedzającego dzień wypłaty, przy czym podstawą obliczeń jest rok liczący {{fakt:lokata.rok-odsetkowy}}. Wysokość odsetek jest ustalana według wzoru: saldo pomnożone przez stopę procentową i przez liczbę dni, podzielone przez liczbę dni w roku odsetkowym."
+      - ustep: "Odsetki od lokaty naliczane są od dnia założenia do dnia poprzedzającego dzień zakończenia okresu umownego. Jeżeli dzień zakończenia lokaty {przypada|wypada} na dzień wolny od pracy, wypłata następuje w pierwszym dniu roboczym po nim, a za dodatkowy okres odsetki nie są naliczane."
+      - akapit: "Odsetki od lokaty jednomiesięcznej, założonej na okres {{fakt:termin.lokata.okres-1m}} przy stawce {{fakt:oprocentowanie.lokata-1m}} w skali roku, Bank oblicza dla rzeczywistej liczby dni okresu umownego; podana w Taryfie stawka ma charakter nominalny, a {faktyczny|rzeczywisty} zysk Klienta po odliczeniu podatku jest niższy."
+  - id: taryfa-oszczednosci-opc-objasnienie-2
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: objasnienie-osz
+    elementy:
+      - ustep: "Określenie „lokata negocjowana” {oznacza|to} lokatę, której warunki — w tym okres i stopa procentowa — zostały uzgodnione indywidualnie między Klientem a Bankiem i potwierdzone w odrębnej umowie. Stawki podane w Taryfie dla tego rodzaju lokat mają charakter {orientacyjny|informacyjny} i stanowią granice, w jakich Bank oferuje oprocentowanie."
+      - ustep: "Określenie „zerwanie lokaty” oznacza zakończenie lokaty przed upływem okresu umownego na wniosek Klienta. Od środków wypłacanych w ten sposób Bank {wypłaca|przekazuje} odsetki w wysokości {{fakt:oprocentowanie.lokata.zerwanie}} w skali roku, chyba że umowa lokaty negocjowanej stanowi inaczej."
+      - akapit: "Określenie „kapitalizacja odsetek” oznacza doliczenie naliczonych odsetek do kapitału lokaty lub rachunku, po którym odsetki podlegają dalszemu oprocentowaniu; w przypadku lokat Bank kapitalizuje odsetki {{fakt:lokata.kapitalizacja}}."
+  - id: taryfa-oszczednosci-opc-objasnienie-3
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: objasnienie-osz
+    elementy:
+      - ustep: "Podatek dochodowy od odsetek od rachunków i lokat osób fizycznych Bank {pobiera|potrąca} w wysokości {{fakt:podatek.odsetki}} w chwili kapitalizacji lub wypłaty odsetek i przekazuje do właściwego urzędu skarbowego. Informację o dochodach z tytułu odsetek Bank przekazuje Klientowi w terminie {{fakt:termin.podatek.informacja-roczna}} po zakończeniu roku podatkowego."
+      - ustep: "{Klienci niebędący rezydentami podatkowymi w Polsce mogą być objęci|Osoby niebędące rezydentami podatkowymi w Polsce mogą być objęte} niższą stawką podatku na podstawie umowy o unikaniu podwójnego opodatkowania, jeżeli przedstawią Bankowi certyfikat rezydencji podatkowej. Dokument należy {dostarczyć|przedłożyć} przed dniem wypłaty odsetek."
+      - akapit: "Odsetki od lokat osób prowadzących działalność gospodarczą są elementem przychodu z tej działalności i rozlicza je Klient we własnym zakresie; Bank udziela informacji o wysokości naliczonych odsetek na wniosek."
+  - id: taryfa-oszczednosci-opc-objasnienie-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: objasnienie-osz
+    elementy:
+      - ustep: "Środki zgromadzone na rachunkach oszczędnościowych i lokatach są {objęte|chronione} gwarancjami Bankowego Funduszu Gwarancyjnego do kwoty stanowiącej {{fakt:bfg.gwarancja}}; gwarancją objęte są łącznie wszystkie środki Klienta w Banku, a nie każdy rachunek odrębnie."
+      - ustep: "Spory dotyczące opłat, oprocentowania i innych postanowień Taryfy Klient może {zgłosić|przekazać} do Rzecznika Finansowego ({{fakt:rzecznik.strona}}) po wyczerpaniu postępowania reklamacyjnego w Banku, a także skierować do sądu powszechnego właściwego według przepisów kodeksu postępowania cywilnego."
+      - akapit: "Zasady składania reklamacji oraz tryb ich rozpatrywania {określa|reguluje} ustawa wskazana w Regulaminie; dodatkowe zasady wynikają z przepisów prawa — zob. {{ref:akt:dz-u-2026-823-reklamacje}}."

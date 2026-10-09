@@ -1,0 +1,220 @@
+fakty:
+  # --- oprocentowanie lokat walutowych
+  - id: oprocentowanie.taryfa-oszczednosci.lokata-eur-3m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.8
+      - od: 2026-04-01
+        wartosc: 1.6
+    alternatywy: [2.8]
+  - id: oprocentowanie.taryfa-oszczednosci.lokata-eur-12m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.1
+      - od: 2027-01-01
+        wartosc: 1.9
+    alternatywy: [3.1]
+  - id: oprocentowanie.taryfa-oszczednosci.lokata-usd-3m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.4
+    alternatywy: [4.4]
+  - id: oprocentowanie.taryfa-oszczednosci.lokata-usd-12m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.7
+      - od: 2027-01-01
+        wartosc: 3.5
+    alternatywy: [4.7]
+  - id: oprocentowanie.taryfa-oszczednosci.lokata-gbp-6m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.1
+    alternatywy: [4.1]
+  - id: oprocentowanie.taryfa-oszczednosci.lokata-chf-6m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.4
+      - od: 2026-04-01
+        wartosc: 0.3
+    alternatywy: [1.4]
+  # --- oprocentowanie rachunków i lokat — pozostałe
+  - id: oprocentowanie.taryfa-oszczednosci.premia-lojalnosciowa
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+      - od: 2027-01-01
+        wartosc: 0.3
+    alternatywy: [1.0]
+  - id: oprocentowanie.taryfa-oszczednosci.rachunek-junior
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.8
+    alternatywy: [4.8]
+  - id: oprocentowanie.taryfa-oszczednosci.rachunek-saldo-wysokie
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.0
+    alternatywy: [1.0, 3.0]
+  - id: oprocentowanie.taryfa-oszczednosci.negocjowana-od
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.9
+      - od: 2026-04-01
+        wartosc: 3.7
+    alternatywy: [4.9]
+  - id: oprocentowanie.taryfa-oszczednosci.negocjowana-do
+    rodzaj: procent
+    wartosci:
+      - wartosc: 5.2
+      - od: 2027-01-01
+        wartosc: 4.9
+    alternatywy: [6.2]
+  - id: oprocentowanie.taryfa-oszczednosci.firma-rachunek
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+    alternatywy: [2.5]
+  - id: oprocentowanie.taryfa-oszczednosci.firma-lokata-overnight
+    rodzaj: procent
+    wartosci:
+      - wartosc: 2.5
+      - od: 2026-04-01
+        wartosc: 2.3
+    alternatywy: [3.5]
+  - id: oprocentowanie.taryfa-oszczednosci.firma-lokata-1m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.0
+    alternatywy: [4.0]
+  - id: oprocentowanie.taryfa-oszczednosci.firma-lokata-3m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.4
+      - od: 2026-04-01
+        wartosc: 3.2
+    alternatywy: [4.4]
+  - id: oprocentowanie.taryfa-oszczednosci.firma-lokata-6m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.7
+    alternatywy: [4.7]
+  - id: oprocentowanie.taryfa-oszczednosci.firma-lokata-12m
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.9
+      - od: 2027-01-01
+        wartosc: 3.6
+    alternatywy: [4.9]
+  # --- limity
+  - id: limit.taryfa-oszczednosci.lokata-waluta-minimum
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "500 jednostek waluty lokaty"
+      - od: 2027-01-01
+        wartosc: "300 jednostek waluty lokaty"
+    alternatywy: ["1000 jednostek waluty lokaty"]
+  - id: limit.taryfa-oszczednosci.lokata-firma-minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+      - od: 2027-01-01
+        wartosc: 5000.00
+    alternatywy: [1000.00, 20000.00]
+  - id: limit.taryfa-oszczednosci.rachunek-firma-otwarcie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [100.00, 1000.00]
+  - id: limit.taryfa-oszczednosci.rachunek-saldo-prog
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500000.00
+      - od: 2027-01-01
+        wartosc: 400000.00
+    alternatywy: [250000.00]
+  - id: limit.taryfa-oszczednosci.junior-wiek
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do ukończenia 18 lat"
+    alternatywy: ["do ukończenia 13 lat"]
+  - id: limit.taryfa-oszczednosci.godzina-graniczna
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "15:00"
+      - od: 2026-04-01
+        wartosc: "14:00"
+    alternatywy: ["16:00"]
+  - id: limit.taryfa-oszczednosci.godzina-graniczna-waluty
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13:00"
+    alternatywy: ["12:00"]
+  # --- opłaty
+  - id: oplata.taryfa-oszczednosci.firma-prowadzenie-rachunku
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 8.00
+      - od: 2027-01-01
+        wartosc: 10.00
+    alternatywy: [0.00, 15.00]
+  - id: oplata.taryfa-oszczednosci.firma-zerwanie-lokaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [0.00, 100.00]
+  - id: oplata.taryfa-oszczednosci.wyplata-gotowkowa-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+      - od: 2027-01-01
+        wartosc: 0.6
+    alternatywy: [0.0, 1.0]
+  - id: oplata.taryfa-oszczednosci.wyplata-gotowkowa-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 15.00]
+  - id: oplata.taryfa-oszczednosci.wplata-waluta-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.3
+    alternatywy: [0.0, 0.5]
+  - id: oplata.taryfa-oszczednosci.wplata-waluta-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5.00
+      - od: 2026-04-01
+        wartosc: 6.00
+    alternatywy: [3.00]
+  - id: oplata.taryfa-oszczednosci.wyplata-waluta-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 0.5
+      - od: 2027-01-01
+        wartosc: 0.6
+    alternatywy: [1.0]
+  - id: oplata.taryfa-oszczednosci.informacja-podatkowa
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 15.00
+      - od: 2027-01-01
+        wartosc: 20.00
+    alternatywy: [0.00, 25.00]
+  - id: oplata.taryfa-oszczednosci.blokada-lokaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [50.00, 150.00]
+  - id: oplata.taryfa-oszczednosci.cesja-lokaty
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+      - od: 2026-04-01
+        wartosc: 180.00
+    alternatywy: [100.00]
+  - id: oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60.00
+    alternatywy: [0.00, 90.00]

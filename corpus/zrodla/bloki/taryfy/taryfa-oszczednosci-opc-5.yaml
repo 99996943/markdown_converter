@@ -1,0 +1,122 @@
+bloki:
+  - id: taryfa-oszczednosci-opc-rachunki-5
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dostęp do rachunku oszczędnościowego w {bankowości elektronicznej|serwisie internetowym Banku}", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Dostęp do rachunku oszczędnościowego w aplikacji mobilnej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Podgląd salda rachunku oszczędnościowego bez logowania (widżet w aplikacji)", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wypłata środków z rachunku oszczędnościowego na rachunek bieżący własny w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata środków z rachunku oszczędnościowego na rachunek bieżący własny w innym banku", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "{Informacja|Komunikat} o limicie bezpłatnych wypłat w bieżącym miesiącu", stawka: "bez opłat", tryb: "za zapytanie" }
+          - { usluga: "Wniosek o jednorazowe zwolnienie z opłaty za wypłatę ponad limit[^1]", stawka: "bez opłat", tryb: "za wniosek" }
+          - { usluga: "Zmiana dyspozycji dotyczącej wypłaty odsetek z rachunku (wypłata zamiast kapitalizacji)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Wypłata|Przekazanie} odsetek na rachunek bieżący w Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Zaświadczenie|Poświadczenie} o saldzie rachunku oszczędnościowego na wskazany dzień", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Zlecenie stałe wpłaty na rachunek oszczędnościowy z rachunku w innym banku (przyjęcie dyspozycji)", stawka: "bez opłat", tryb: "za dyspozycję" }
+    przypisy:
+      1: "Zwolnienie jest przyznawane jednorazowo w roku kalendarzowym i wymaga złożenia wniosku w ciągu {{fakt:termin.zwrot-oplat}} od dnia pobrania opłaty; Bank rozpatruje wniosek według własnej oceny sytuacji Klienta."
+  - id: taryfa-oszczednosci-opc-rachunki-6
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zamknięcie rachunku oszczędnościowego po {upływie|zakończeniu} okresu wypowiedzenia", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypowiedzenie umowy rachunku oszczędnościowego przez Klienta", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypowiedzenie umowy rachunku oszczędnościowego przez Bank (termin wypowiedzenia)", stawka: "{{fakt:termin.wypowiedzenie-przez-bank}}", tryb: "od dnia doręczenia" }
+          - { usluga: "Wypowiedzenie umowy rachunku oszczędnościowego przez Klienta (termin wypowiedzenia)", stawka: "{{fakt:termin.wypowiedzenie-przez-klienta}}", tryb: "od dnia złożenia oświadczenia" }
+          - { usluga: "Wypłata salda po zamknięciu rachunku przelewem na rachunek wskazany przez Klienta", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata salda po zamknięciu rachunku w gotówce w placówce", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przekazanie środków z zamkniętego rachunku do depozytu sądowego, jeżeli Klient nie wskazał rachunku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Wydanie|Sporządzenie} zaświadczenia o zamknięciu rachunku oszczędnościowego", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "{Kontynuacja|Przejęcie} rachunku oszczędnościowego przez spadkobierców po zmarłym Kliencie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana posiadacza rachunku w drodze cesji praw wymagającej zgody Banku", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "jednorazowo" }
+          - { usluga: "Przeniesienie rachunku oszczędnościowego do innej placówki Banku", stawka: "bez opłat", tryb: "jednorazowo" }
+  - id: taryfa-oszczednosci-opc-lokaty-5
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-lokaty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wniosek o {przeniesienie|przekazanie} lokaty w ramach spadku na rzecz spadkobierców", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Potwierdzenie|Pokwitowanie} dokonania zerwania lokaty przed terminem", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Potwierdzenie wypłaty środków z lokaty w postaci papierowej", stawka: "{{fakt:oplata.lokata.potwierdzenie}}", tryb: "za dokument" }
+          - { usluga: "Potwierdzenie wypłaty środków z lokaty w postaci elektronicznej", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "{Zestawienie|Wykaz} odsetek naliczonych od lokaty w roku kalendarzowym", stawka: "bez opłat", tryb: "rocznie" }
+          - { usluga: "Dyspozycja nieodnawiania lokaty w terminie określonym w Regulaminie", stawka: "{{fakt:termin.lokata.odnowienie-dyspozycja}}", tryb: "przed końcem okresu" }
+          - { usluga: "Dyspozycja po zakończeniu lokaty — termin na zmianę dyspozycji", stawka: "{{fakt:termin.lokata.dyspozycja-po-terminie}}", tryb: "od dnia zakończenia" }
+          - { usluga: "Złożenie wniosku o zmianę danych osobowych posiadacza lokaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgłoszenie utraty dokumentu potwierdzającego założenie lokaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wydanie nowego potwierdzenia założenia lokaty po zgłoszeniu utraty", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument" }
+          - { usluga: "Przeliczenie odsetek po korekcie błędnie podanej daty założenia lokaty", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-oszczednosci-opc-waluty-5
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-waluty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Wpłata|Wpływ} środków w euro przelewem SEPA na rachunek lokaty walutowej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata środków w dolarach przelewem zagranicznym na rachunek lokaty", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata środków w funtach przelewem zagranicznym na rachunek lokaty", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata środków w euro przelewem SEPA z lokaty", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew" }
+          - { usluga: "Wypłata środków w dolarach przelewem zagranicznym z lokaty", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-minimum}}", tryb: "za przelew" }
+          - { usluga: "{Prowadzenie|Obsługa} rachunku lokaty walutowej w trakcie okresu umownego", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Zaświadczenie o posiadaniu lokaty walutowej w języku polskim", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "{Wyciąg|Zestawienie} z rachunku lokaty walutowej w postaci elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wyciąg z rachunku lokaty walutowej w postaci papierowej", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za każdy wyciąg" }
+          - { usluga: "Kurs stosowany do przeliczenia środków — termin publikacji Tabeli kursów walut", stawka: "{{fakt:kurs.godzina-tabeli}}", tryb: "w dni robocze" }
+          - { usluga: "Zlecenie wymiany walut z rachunku bieżącego na lokatę walutową w kantorze internetowym Banku", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia" }
+  - id: taryfa-oszczednosci-opc-negocjowane-4
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-negocjowane
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Obsługa Klienta lokaty negocjowanej przez {wyznaczonego|przypisanego} doradcę", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Przegląd warunków lokaty negocjowanej przed {jej odnowieniem|odnowieniem na kolejny okres}", stawka: "bez opłat", tryb: "za przegląd" }
+          - { usluga: "Zestawienie ofert lokat negocjowanych porównujące okresy i stawki", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "{Spotkanie|Konsultacja} z doradcą w placówce umówione telefonicznie lub przez aplikację", stawka: "bez opłat", tryb: "za spotkanie" }
+          - { usluga: "Telefoniczna zmiana dyspozycji dotyczącej lokaty negocjowanej po weryfikacji tożsamości", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Umowa lokaty negocjowanej zawarta przez pełnomocnika na podstawie pełnomocnictwa szczególnego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Weryfikacja pełnomocnictwa do zawarcia umowy lokaty negocjowanej", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Wniosek o wydłużenie okresu lokaty negocjowanej za zgodą Banku", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Wniosek o zamianę lokaty negocjowanej na lokatę z tabeli oprocentowania", stawka: "{{fakt:oplata.taryfa-oszczednosci.negocjacja-zmiana-warunkow}}", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata środków z lokaty negocjowanej przekazana kurierem do placówki wskazanej przez Klienta", stawka: "{{fakt:oplata.wyciag-papierowy}}", tryb: "za przesyłkę" }
+          - { usluga: "Potwierdzenie salda lokaty negocjowanej dla instytucji finansowej Klienta", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+  - id: taryfa-oszczednosci-opc-firmy-5
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-firmy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Lokata terminowa dla {przedsiębiorcy|podmiotu prowadzącego działalność} w placówce — założenie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata terminowa dla przedsiębiorcy w bankowości elektronicznej dla firm — {założenie|otwarcie}", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Lokata terminowa dla przedsiębiorcy — zmiana sposobu wypłaty odsetek", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Lokata terminowa dla przedsiębiorcy — dyspozycja nieodnawiania", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Rachunek oszczędnościowy przedsiębiorcy — wniosek o zwiększenie limitu przelewów", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Rachunek oszczędnościowy przedsiębiorcy — dyspozycja przelewu zbiorczego z rachunku bieżącego", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za każdy przelew w paczce" }
+          - { usluga: "Zaświadczenie o posiadaniu rachunku dla potrzeb przetargu publicznego", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument" }
+          - { usluga: "Wadium wniesione w formie lokaty — ustanowienie blokady", stawka: "{{fakt:oplata.taryfa-oszczednosci.blokada-lokaty}}", tryb: "jednorazowo" }
+          - { usluga: "Wadium wniesione w formie lokaty — zwolnienie blokady po rozstrzygnięciu przetargu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Informacja|Zestawienie} o stanie lokat dla właściciela lub wspólnika spółki cywilnej", stawka: "bez opłat", tryb: "za zapytanie" }
+          - { usluga: "Zmiana oznaczenia podmiotu w związku ze zmianą firmy lub siedziby", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-oszczednosci-opc-czynnosci-5
+    typy: [taryfy]
+    tematy: [taryfa-oszczednosci]
+    kategoria: pozycje-osz-czynnosci
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Informacja o produktach oszczędnościowych Banku udzielona w {placówce|oddziale}", stawka: "bez opłat", tryb: "za zapytanie" }
+          - { usluga: "{Aktualna|Bieżąca} tabela oprocentowania lokat w postaci papierowej wydana w placówce", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Formularz informacyjny dla deponenta przekazany przed zawarciem umowy", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "{Dodatkowy|Kolejny} egzemplarz formularza informacyjnego dla deponenta na wniosek Klienta", stawka: "bez opłat", tryb: "za dokument" }
+          - { usluga: "Zestawienie opłat za usługi związane z rachunkiem oszczędnościowym w roku kalendarzowym", stawka: "bez opłat", tryb: "rocznie" }
+          - { usluga: "Wydanie dokumentów dla potrzeb rozliczenia podatkowego za rok ubiegły (kolejny egzemplarz)", stawka: "{{fakt:oplata.taryfa-oszczednosci.informacja-podatkowa}}", tryb: "za dokument" }
+          - { usluga: "Kontakt z infolinią w sprawie lokat i rachunków oszczędnościowych (połączenie z numeru krajowego)", stawka: "bez opłat", tryb: "za połączenie" }
+          - { usluga: "Kontakt z infolinią z zagranicy pod numerem dla połączeń międzynarodowych", stawka: "wg cennika operatora", tryb: "za połączenie" }
+          - { usluga: "Zgłoszenie zastrzeżenia karty powiązanej z rachunkiem oszczędnościowym lub bieżącym", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "za dyspozycję" }
+          - { usluga: "Wydanie duplikatu karty powiązanej z rachunkiem", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Zlecenie czynności z wykorzystaniem pocztowego potwierdzenia nadania", stawka: "bez opłat", tryb: "za dyspozycję" }
