@@ -214,7 +214,7 @@ public sealed class SyntheticPdfBuilder
             }
         }
 
-        return builder.Build();
+        return PdfIdNormalizer.Normalize(builder.Build());
     }
 
     /// <summary>Advance width in points of <paramref name="text"/> set in the given face, for laying out wrapped text.</summary>
