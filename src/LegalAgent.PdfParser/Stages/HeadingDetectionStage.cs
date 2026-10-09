@@ -202,7 +202,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && !entry.Text.EndsWith(';')
                 && (entry.Enlarged || entry.BoldSignal || entry.Caps || entry.Centered);
 
-            entry.Plain = InTableDocumentPart(context, entry)
+            entry.InTableDocument = InTableDocumentPart(context, entry);
+            entry.Plain = entry.InTableDocument
                 || (options.ValidityLineAsParagraph && entry.Page == entries[0].Page && ValidityLine().IsMatch(entry.Text))
                 || (options.DetectImageCaptions && IsImageCaption(entry));
             if (entry.Plain)
@@ -549,6 +550,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
             open.Push(h);
         }
+
+        // FR-087: from a table-document on, the section names (level 2) are the top level; units and the structure
+        // within a section stand below them.
+        foreach (Detected h in headings.Where(h => h.Entry.InTableDocument))
+        {
+            h.Level = Math.Min(MaxLevel, h.Level + 1);
+        }
     }
 
     private static void Apply(List<Detected> headings)
@@ -670,6 +678,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
         /// <summary>Plain text whatever its typography: table-document part, validity line or image caption (spec 002).</summary>
         public bool Plain { get; set; }
+
+        /// <summary>From the start of the first table-document on (spec 002, FR-087).</summary>
+        public bool InTableDocument { get; set; }
 
         public LegalUnitMatch? Legal { get; set; }
 
