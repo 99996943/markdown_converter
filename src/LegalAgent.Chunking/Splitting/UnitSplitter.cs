@@ -12,7 +12,8 @@ internal sealed record UnitPart(string Content, IReadOnlyList<string> ListLabels
 
 /// <summary>
 /// Splits a unit into parts within the length limit (research R3). The unit's blocks are broken into atoms
-/// (indivisible pieces: a paragraph, a list item's own text with its paragraphs, every nested item separately) that
+/// (indivisible pieces: a paragraph, a table row, a list item's own text with its paragraphs, every nested item
+/// separately) that
 /// are packed greedily in document order; the length of a candidate part is measured by rendering it. A unit that
 /// fits is one part. Every part is rendered from blocks rebuilt from its atoms, so a list keeps its nesting and a
 /// part starting inside a nested list starts with that list at column 0.
@@ -73,6 +74,10 @@ internal static class UnitSplitter
             {
                 AddItems(list, null, -1, atoms);
             }
+            else if (block is TableBlock { Rows.Count: > 0 } table)
+            {
+                atoms.AddRange(Enumerable.Range(0, table.Rows.Count).Select(r => new RowAtom(table, r)));
+            }
             else
             {
                 atoms.Add(new BlockAtom(block));
@@ -109,6 +114,20 @@ internal static class UnitSplitter
             {
                 blocks.Add(block.Block);
                 i++;
+                continue;
+            }
+
+            if (atoms[i] is RowAtom first)
+            {
+                // Rows of one table make one table again, with its header row (FR-223).
+                var rows = new List<TableRow>();
+                while (i < atoms.Count && atoms[i] is RowAtom row && ReferenceEquals(row.Table, first.Table))
+                {
+                    rows.Add(row.Table.Rows[row.Row]);
+                    i++;
+                }
+
+                blocks.Add(first.Table with { Rows = rows });
                 continue;
             }
 
@@ -190,8 +209,11 @@ internal static class UnitSplitter
     /// <summary>An indivisible piece of a unit's content.</summary>
     private abstract record Atom;
 
-    /// <summary>A whole block (paragraph, table).</summary>
+    /// <summary>A whole block (paragraph, table without body rows).</summary>
     private sealed record BlockAtom(ContentBlock Block) : Atom;
+
+    /// <summary>One body row of a table; rendered under the table's header row.</summary>
+    private sealed record RowAtom(TableBlock Table, int Row) : Atom;
 
     /// <summary>A list item's own text and paragraphs, without its nested lists.</summary>
     private sealed record ItemAtom(ItemNode Node) : Atom;
