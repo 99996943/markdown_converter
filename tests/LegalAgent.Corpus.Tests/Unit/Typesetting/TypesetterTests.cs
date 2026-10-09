@@ -103,16 +103,52 @@ public sealed class TypesetterTests
         TypesetResult result = Typesetter.Typeset(Doc(elements, footnotes), style);
 
         int page = result.ElementPages["fn"].First;
-        List<Word> words = PageWords(result.Pdf)[page - 1];
-        Word marker = words.First(w => w.Text.StartsWith("oprocentowania", StringComparison.Ordinal));
-        Assert.Equal("oprocentowania.¹", marker.Text);
+        List<Letter> letters = PageLetters(result.Pdf)[page - 1];
 
+        // The reference marker is a smaller, raised digit glued to the word (the parser's convention, FR-026).
+        int dot = letters.FindIndex(l => l.Value == "." && letters.IndexOf(l) > 0 && letters[letters.IndexOf(l) - 1].Value == "a");
+        Letter marker = letters[dot + 1];
+        Assert.Equal("1", marker.Value);
+        Assert.True(marker.PointSize < letters[dot].PointSize * 0.85, "marker is smaller");
+        Assert.True(marker.StartBaseLine.Y > letters[dot].StartBaseLine.Y + 1, "marker is raised");
+
+        // The footnote starts with its plain label at the bottom of the page, in a small font.
+        List<Word> words = PageWords(result.Pdf)[page - 1];
         Word note = words.First(w => w.Text == "placówkach");
+        Word label = words.Last(w => Baseline(w) == Baseline(words.First(x => x.Text == "Tabela" && Baseline(x) > style.Bottom - 40)) && w.Letters[0].StartBaseLine.X < note.Letters[0].StartBaseLine.X - 50);
+        Assert.Equal("1", label.Text);
         Assert.True(Baseline(note) > style.Bottom - 40, "footnote at the bottom of the page");
         Assert.True(Baseline(note) < style.FooterBaseline, "footnote above the footer");
-        Assert.True(Baseline(note) > words.Where(w => w.Text != "placówkach" && Baseline(w) < style.FooterBaseline - 1).Where(w => w.Letters[0].PointSize > 9).Max(Baseline));
+
+        // Truth words: no marker digits and no footnote labels (the Markdown has [^1] for both).
+        Assert.Contains("oprocentowania.", result.Truth.Words);
         Assert.Contains("placówkach", result.Truth.Words);
-        Assert.Equal(result.Truth.Words.Order(StringComparer.Ordinal), BodyWords(result.Pdf, style).Order(StringComparer.Ordinal));
+        Assert.DoesNotContain("1", result.Truth.Words);
+    }
+
+    [Fact]
+    public void TwoFootnotesOnOnePage_AreSeparateLabelledLines()
+    {
+        IReadOnlyList<Inline> text =
+        [
+            new Inline("Pierwsze zdanie."), new Inline("1", Kind: InlineKind.FootnoteRef),
+            new Inline(" Drugie zdanie."), new Inline("2", Kind: InlineKind.FootnoteRef),
+        ];
+        var footnotes = new Dictionary<int, IReadOnlyList<Inline>>
+        {
+            [1] = T("Pierwszy przypis. " + LongSentence),
+            [2] = T("Drugi przypis."),
+        };
+
+        LayoutStyle style = Style();
+        TypesetResult result = Typesetter.Typeset(Doc([new ParagraphElement(text)], footnotes), style);
+
+        List<Word> bottom = PageWords(result.Pdf)[0].Where(w => Baseline(w) > style.Bottom - 60 && Baseline(w) < style.FooterBaseline - 1).ToList();
+        double first = Baseline(bottom.First(w => w.Text == "Pierwszy"));
+        double second = Baseline(bottom.First(w => w.Text == "Drugi"));
+        Assert.Contains(bottom, w => w.Text == "1" && Baseline(w) == first);
+        Assert.Contains(bottom, w => w.Text == "2" && Baseline(w) == second);
+        Assert.True(second > first);
     }
 
     [Fact]
