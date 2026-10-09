@@ -128,6 +128,24 @@ public sealed class TableDetectionStage : IPipelineStage
         return tables;
     }
 
+    /// <summary>
+    /// A bold column-name row and a few rows ending the page, with the same column-name row repeated at the top of the
+    /// next page: the start of a table that continues there, however few rows fit.
+    /// </summary>
+    private static bool StartsAtPageEnd(PipelineContext context, LayoutPage page, List<Row> region)
+    {
+        Row header = region[0];
+        if (!header.IsMulti || !header.IsAllBold
+            || page.Lines.Any(l => l.Role == LineRole.Unknown && l.Baseline > region[^1].Line.Baseline))
+        {
+            return false;
+        }
+
+        LayoutLine? next = context.Pages.FirstOrDefault(p => p.Number == page.Number + 1)?.Lines
+            .FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0);
+        return next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal);
+    }
+
     /// <summary>Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces.</summary>
     private static List<LineSegment> CellsOf(LayoutLine line)
     {
@@ -219,7 +237,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
-        if (multiCount < options.MinRows && !ruledFragment)
+        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && StartsAtPageEnd(context, page, region)))
         {
             return null;
         }
