@@ -1,0 +1,227 @@
+bloki:
+  - id: rachunek-firmowy-przelewy
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wykonuje z rachunku Posiadacza {następujące|wymienione poniżej} zlecenia płatnicze:"
+        punkty:
+          - "przelew wewnętrzny — na rachunek prowadzony w Banku;"
+          - "przelew zewnętrzny w złotych, realizowany w systemie rozliczeń międzybankowych, w tym przelew w trybie natychmiastowym;"
+          - "przelew o wysokiej wartości, realizowany w systemie rozrachunku brutto w czasie rzeczywistym;"
+          - "przelew walutowy i transgraniczny, w tym w ramach jednolitego obszaru płatności w euro;"
+          - "polecenie zapłaty, zlecenie stałe oraz przelew z terminem płatności odroczonym."
+      - ustep: "Zlecenie przelewu {wymaga podania|powinno zawierać} numeru rachunku odbiorcy w formacie NRB lub IBAN, nazwy odbiorcy, kwoty, waluty i tytułu płatności. Bank wykonuje zlecenie na podstawie unikatowego identyfikatora, to jest numeru rachunku, i nie weryfikuje zgodności tego numeru z nazwą odbiorcy, chyba że usługa weryfikacji nazwy została uruchomiona w bankowości elektronicznej."
+      - ustep: "Dzienny limit przelewów z rachunku wynosi {{fakt:limit.firma.przelew-dzienny-domyslny}}, a limit pojedynczego przelewu w bankowości elektronicznej — {{fakt:limit.firma.przelew-jednorazowy}}. Posiadacz {może|ma prawo} zawnioskować o zmianę limitów; Bank rozpatruje wniosek {z uwzględnieniem|biorąc pod uwagę} profilu ryzyka Posiadacza i zasad bezpieczeństwa.[^1]"
+      - ustep: "Za przelew natychmiastowy Bank {pobiera|nalicza} opłatę w wysokości {{fakt:oplata.przelew-natychmiastowy}}, a za przelewy zewnętrzne w złotych — {{fakt:oplata.firma.przelew-elixir}} za przelew zlecony w bankowości elektronicznej."
+    przypisy:
+      1: "Podwyższenie limitu ponad kwotę {{fakt:limit.firma.przelew-dzienny-domyslny}} wymaga złożenia wniosku w formie pisemnej i może być uzależnione od przedstawienia dokumentów potwierdzających charakter transakcji."
+
+  - id: rachunek-firmowy-realizacja
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Momentem otrzymania zlecenia płatniczego jest chwila, w której zlecenie dotarło do Banku. Zlecenie otrzymane po godzinie granicznej lub w dniu niebędącym dniem roboczym uważa się za otrzymane w następnym dniu roboczym."
+      - ustep: "Godziny graniczne przyjmowania zleceń w dniu roboczym wynoszą:"
+        punkty:
+          - "przelewy zewnętrzne w złotych, w tym przelewy do urzędów skarbowych i Zakładu Ubezpieczeń Społecznych — {{fakt:godzina.firma.przelew-zewnetrzny}};"
+          - "przelewy o wysokiej wartości — {{fakt:godzina.firma.przelew-wysokiej-wartosci}};"
+          - "przelewy w walutach obcych oraz przelewy transgraniczne — {{fakt:godzina.firma.przelew-walutowy}};"
+          - "przelewy wewnętrzne oraz przelewy natychmiastowe — przez całą dobę, w każdym dniu."
+      - ustep: "Bank uznaje rachunek dostawcy odbiorcy zlecenia płatniczego w złotych najpóźniej do końca następnego dnia roboczego po otrzymaniu zlecenia, a {w przypadku|w razie} zleceń transgranicznych w ramach jednolitego obszaru płatności w euro — w terminie określonym przepisami. Wyższe niż ustawowe czasy realizacji nie są stosowane wobec Posiadacza, który nie jest konsumentem, {jeżeli|o ile} umowa stanowi inaczej."
+      - ustep: "Posiadacz {może|ma prawo} odwołać zlecenie płatnicze do momentu jego otrzymania przez Bank, a zlecenie z terminem płatności odroczonym — do końca dnia roboczego poprzedzającego uzgodniony dzień wykonania. Po upływie tych terminów odwołanie jest możliwe wyłącznie za zgodą Banku i odbiorcy; za działania Banku związane z próbą zwrotu pobiera się opłatę według Taryfy."
+
+  - id: rachunek-firmowy-podzielona
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do rachunku bieżącego Bank prowadzi rachunek VAT, {służący do gromadzenia|przeznaczony do gromadzenia} środków z tytułu podatku od towarów i usług otrzymywanych w mechanizmie podzielonej płatności. Rachunek VAT otwierany jest automatycznie, wraz z rachunkiem bieżącym, {i nie jest oprocentowany|a środki na nim nie podlegają oprocentowaniu}."
+      - ustep: "Zlecenie podzielonej płatności {zawiera odrębnie|wskazuje odrębnie} kwotę brutto, kwotę podatku od towarów i usług, numer faktury oraz numer identyfikacji podatkowej wystawcy faktury. Bank {obciąża|debetuje} rachunek bieżący kwotą netto, a rachunek VAT — kwotą podatku, i uznaje odpowiednio rachunek odbiorcy oraz jego rachunek VAT."
+      - ustep: "Środki z rachunku VAT mogą być {wykorzystane|przeznaczone} wyłącznie na:"
+        punkty:
+          - "zapłatę podatku od towarów i usług kontrahentowi w podzielonej płatności;"
+          - "zapłatę podatku od towarów i usług do urzędu skarbowego;"
+          - "zapłatę innych zobowiązań publicznoprawnych, w zakresie dopuszczonym przepisami;"
+          - "przeniesienie na rachunek bieżący, za zgodą właściwego organu, w zakresie wskazanym w przepisach."
+      - ustep: "Zlecenia dotyczące rachunku VAT realizowane są w godzinach granicznych przewidzianych dla przelewów zewnętrznych w złotych. Bank nie ponosi odpowiedzialności za skutki podatkowe wynikające z niewłaściwego użycia rachunku VAT, w tym za błędy w danych faktury podanych przez Posiadacza."
+
+  - id: rachunek-firmowy-urzad-skarbowy
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przelewy do urzędów skarbowych oraz organów celnych z tytułu zobowiązań podatkowych Posiadacz zleca na indywidualny rachunek podatkowy, wskazany przez organ. Zlecenie wymaga podania identyfikatora podatnika oraz symbolu formularza lub tytułu zobowiązania, zgodnie z zasadami określonymi w przepisach podatkowych."
+      - ustep: "Bank {nie odpowiada|nie ponosi odpowiedzialności} za skutki wskazania błędnego numeru rachunku podatkowego, nieprawidłowego identyfikatora lub okresu rozliczeniowego. Dniem dokonania zapłaty podatku jest dzień obciążenia rachunku Posiadacza, o ile na rachunku znajdowały się środki wystarczające na pokrycie zlecenia, a zlecenie zostało złożone przed godziną graniczną."
+      - ustep: "Za przelew podatkowy w bankowości elektronicznej Bank {pobiera|nalicza} opłatę w wysokości {{fakt:oplata.firma.przelew-podatkowy}}. Opłata nie jest pobierana za przelewy zlecone w złotych do Zakładu Ubezpieczeń Społecznych w ramach pakietu, o którym mowa w Taryfie, chyba że umowa przewiduje inaczej.[^1]"
+      - ustep: "Jeżeli zlecenie podatkowe nie może być wykonane z przyczyn leżących po stronie Banku, Bank {niezwłocznie|bez zbędnej zwłoki} powiadamia o tym Posiadacza oraz pokrywa uzasadnione koszty odsetek za zwłokę, jakie Posiadacz poniósł wobec organu na skutek opóźnienia Banku, po przedstawieniu dokumentów potwierdzających ich wysokość."
+    przypisy:
+      1: "Szczegółowy zakres pakietu przelewów do Zakładu Ubezpieczeń Społecznych {określa|wskazuje} „{{ref:dokument:taryfa-firmy}}”."
+
+  - id: rachunek-firmowy-wplaty
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wpłaty gotówkowe na rachunek Posiadacz {może|ma prawo} dokonywać w kasach placówek Banku, we wpłatomatach lub przez zamknięte worki wpłatowe z użyciem kopert depozytowych, na podstawie odrębnej umowy. Wpłata zaksięgowana do godziny {{fakt:godzina.firma.wplaty-kasa}} w dniu roboczym zwiększa saldo dostępne w tym samym dniu, a później — w następnym dniu roboczym."
+      - ustep: "Wypłata gotówki z rachunku w kwocie przekraczającej {{fakt:limit.firma.wyplata-bez-awiza}} wymaga uprzedniego zgłoszenia (awizo) najpóźniej do godziny {{fakt:godzina.firma.awizo-wyplaty}} dnia roboczego poprzedzającego wypłatę. Bank {może|ma prawo} odmówić wypłaty bez awizo lub zrealizować ją w terminie późniejszym, gdy nie dysponuje wystarczającym zasobem gotówki."
+      - ustep: "Przy wpłatach i wypłatach gotówkowych Bank stosuje środki bezpieczeństwa finansowego, w tym:"
+        punkty:
+          - "żąda ustalenia tożsamości osoby dokonującej transakcji i jej umocowania;"
+          - "żąda wskazania źródła pochodzenia środków przy wpłatach przekraczających kwotę określoną w przepisach;"
+          - tekst: "odmawia wykonania transakcji lub ją wstrzymuje, {jeżeli|o ile}:"
+            litery:
+              - "dane o źródle środków nie zostaną przedstawione albo budzą wątpliwości;"
+              - "transakcja wskazuje na związek z praniem pieniędzy lub finansowaniem terroryzmu."
+      - ustep: "Dzienny limit wpłat we wpłatomacie wynosi {{fakt:limit.firma.wplatomat-dzienny}}. Opłata za wpłatę gotówkową w kasie wynosi {{fakt:oplata.firma.wplata-gotowkowa-procent}} kwoty wpłaty, nie mniej jednak niż {{fakt:oplata.firma.wplata-gotowkowa-minimum}}."
+
+  - id: rachunek-firmowy-pomocnicze
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Na wniosek|Na żądanie} Posiadacza Bank otwiera rachunki pomocnicze do rachunku bieżącego w złotych oraz w walutach: euro, dolar amerykański, funt szterling i frank szwajcarski, a po uzgodnieniu — w innych walutach z tabeli kursów Banku. Do rachunków pomocniczych stosuje się odpowiednio postanowienia dotyczące rachunku bieżącego, z zastrzeżeniami wynikającymi z tego rozdziału."
+      - ustep: "Rachunek walutowy {może być wykorzystywany|służy} do przyjmowania wpłat z zagranicy oraz do realizacji zleceń na rzecz odbiorców krajowych i zagranicznych. Przeliczenia walut przy transakcjach niewymagających przewalutowania, a dokonywanych w walucie rachunku, nie następują; w pozostałych przypadkach stosuje się kurs z tabeli Banku obowiązujący w momencie realizacji transakcji, z marżą w wysokości {{fakt:kurs.marza-przeliczen}}."
+      - ustep: "Tabela kursów walut jest {publikowana|ogłaszana} w dni robocze około godziny {{fakt:kurs.godzina-tabeli}} i w ciągu dnia może być aktualizowana. Posiadacz {może|ma prawo} uzgodnić z Bankiem indywidualny kurs dla transakcji o wartości powyżej kwoty wskazanej w Taryfie."
+      - ustep: "Opłata za prowadzenie rachunku pomocniczego wynosi {{fakt:oplata.firma.prowadzenie-pomocniczego}} miesięcznie. Rachunki pomocnicze są zamykane wraz z zamknięciem rachunku bieżącego, do którego zostały otwarte."
+
+  - id: rachunek-firmowy-bankowosc
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} uzyskać dostęp do rachunków przez bankowość elektroniczną dla firm, obejmującą serwis internetowy i aplikację mobilną. Dostęp udzielany jest wskazanym przez Posiadacza użytkownikom, którym nadaje się role i uprawnienia, w tym uprawnienia do przeglądania rachunku, przygotowywania dyspozycji lub ich autoryzacji."
+      - ustep: "Dyspozycje w bankowości elektronicznej wymagają silnego uwierzytelnienia. Użytkownik autoryzuje je za pomocą aplikacji mobilnej, tokena sprzętowego lub innego narzędzia wskazanego przez Bank. Wydanie tokena sprzętowego jest płatne według Taryfy, w kwocie {{fakt:oplata.firma.token}}."
+      - ustep: "Posiadacz odpowiada za działania użytkowników i zapewnia, aby korzystali oni z bankowości elektronicznej zgodnie z Regulaminem. Posiadacz zobowiązany jest {w szczególności|zwłaszcza} do:"
+        punkty:
+          - "zachowania w tajemnicy danych uwierzytelniających i niedopuszczenia do ich ujawnienia osobom trzecim;"
+          - "bieżącego {zawiadamia|informuje}nia Banku o zmianie uprawnień użytkowników;"
+          - "stosowania aktualnego oprogramowania zabezpieczającego na urządzeniach, z których korzysta;"
+          - "niezwłocznego zgłoszenia utraty lub nieuprawnionego użycia danych uwierzytelniających pod numerem {{fakt:kontakt.infolinia-zastrzezenia}}."
+      - ustep: "Posiadacz, który nie jest konsumentem, zgłasza Bankowi nieautoryzowane, niewykonane lub nienależycie wykonane transakcje płatnicze {niezwłocznie|bez zbędnej zwłoki}, nie później niż w terminie {{fakt:termin.firma.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku. Upływ terminu powoduje wygaśnięcie roszczeń wobec Banku z tego tytułu. Bank odpowiada za transakcje nieautoryzowane na zasadach określonych w umowie, a Posiadacz ponosi pełną odpowiedzialność za transakcje dokonane z jego winy umyślnej lub rażącego niedbalstwa.[^1]"
+    przypisy:
+      1: "Skrócenie terminu i zasady odpowiedzialności wynikają z możliwości wyłączenia przepisów ustawy o usługach płatniczych w relacjach z podmiotami niebędącymi konsumentami; zob. {{ref:akt:dz-u-2024-30-uslugi-platnicze}}."
+
+  - id: rachunek-firmowy-zajecia
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wykonuje zajęcia rachunku dokonywane przez komorników sądowych, organy egzekucyjne administracji, w tym naczelników urzędów skarbowych, oraz inne uprawnione organy, w granicach wynikających z przepisów. Z chwilą doręczenia zawiadomienia o zajęciu Bank wstrzymuje wypłaty z rachunku do wysokości zajęcia wraz z przewidywanymi kosztami."
+      - ustep: "Po zajęciu Bank {informuje|powiadamia} Posiadacza o zajęciu oraz o jego zakresie, a {także|również} przekazuje organowi zajmującemu informacje o stanie rachunku, na zasadach wynikających z przepisów. Wypłata środków na rzecz organu następuje nie wcześniej niż po upływie {{fakt:termin.firma.zajecie-wyplata}} od doręczenia zawiadomienia, chyba że przepisy przewidują inny termin."
+      - ustep: "Do rachunku firmowego nie stosuje się przepisów o ochronie środków do wysokości kwoty wolnej od zajęcia, przewidzianej dla rachunków osób fizycznych, o ile przepisy nie stanowią inaczej. W przypadku zbiegu zajęć Bank wykonuje je według kolejności ich doręczenia, a gdy zajęć dokonano jednocześnie — proporcjonalnie, z uwzględnieniem przepisów o pierwszeństwie należności."
+      - ustep: "Za czynności związane z obsługą zajęcia Bank pobiera opłatę w wysokości {{fakt:oplata.firma.zajecie-egzekucyjne}}, a {w przypadku|w razie} zajęcia rachunku przez organ egzekucyjny administracji — {jeżeli|o ile} przepisy nie wyłączają prawa do pobrania opłaty. Opłatę potrąca się z kwoty niepodlegającej zajęciu albo z innych środków Posiadacza."
+
+  - id: rachunek-firmowy-aml
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank, jako instytucja obowiązana, stosuje środki bezpieczeństwa finansowego przewidziane w {{ref:akt:dz-u-2025-644-aml}}. W szczególności identyfikuje i weryfikuje tożsamość Posiadacza, osób go reprezentujących oraz jego beneficjentów rzeczywistych, ocenia cel i zamierzony charakter stosunków gospodarczych oraz prowadzi bieżącą analizę transakcji."
+      - ustep: "Posiadacz przekazuje Bankowi informacje o beneficjencie rzeczywistym, {w szczególności|zwłaszcza} o:"
+        punkty:
+          - "osobach fizycznych sprawujących bezpośrednio lub pośrednio kontrolę nad Posiadaczem;"
+          - "osobach, którym przysługuje ponad {{fakt:limit.firma.beneficjent-udzial}} udziałów lub głosów albo prawo do powoływania większości organów;"
+          - "sposobie sprawowania kontroli oraz strukturze własności, w tym łańcuchu zależności prowadzącym do beneficjenta;"
+          - "osobach zajmujących wyższe stanowisko kierownicze, {jeżeli|o ile} nie można ustalić beneficjenta rzeczywistego."
+      - ustep: "Posiadacz aktualizuje informacje o beneficjencie rzeczywistym w terminie {{fakt:termin.firma.aktualizacja-danych}} od dnia zmiany, a ponadto na każde żądanie Banku, nie rzadziej niż raz na {{fakt:okres.firma.aktualizacja-beneficjenta}}.[^1] Bank {może|ma prawo} porównać oświadczenie Posiadacza z danymi z Centralnego Rejestru Beneficjentów Rzeczywistych."
+      - ustep: "Bank {może|ma prawo} odmówić przeprowadzenia transakcji, wstrzymać ją lub zablokować rachunek, jeżeli nie jest możliwe zastosowanie środków bezpieczeństwa finansowego albo transakcja budzi uzasadnione podejrzenia. Bank nie informuje Posiadacza o przekazaniu zawiadomienia do organu właściwego do spraw przeciwdziałania praniu pieniędzy, a w razie wstrzymania transakcji udziela informacji w zakresie dozwolonym przepisami."
+    przypisy:
+      1: "Oświadczenie jest składane przez osoby uprawnione do reprezentacji Posiadacza pod rygorem odpowiedzialności za złożenie nieprawdziwych informacji, o czym Bank informuje w treści formularza."
+
+  - id: rachunek-firmowy-oplaty
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za czynności związane z prowadzeniem rachunku i realizacją dyspozycji Bank {pobiera|nalicza} opłaty i prowizje w wysokości określonej w Taryfie, a w zakresie nieuregulowanym w Taryfie — w wysokości uzgodnionej w umowie. Taryfa jest integralną częścią umowy i wiąże Posiadacza od dnia jej doręczenia."
+      - ustep: "Opłata za prowadzenie rachunku bieżącego wynosi {{fakt:oplata.firma.prowadzenie-rachunku}} miesięcznie. Opłata jest pobierana z dołu, w ostatnim dniu roboczym miesiąca, a {jeżeli|o ile} rachunek został otwarty lub zamknięty w trakcie miesiąca, w kwocie proporcjonalnej do okresu jego prowadzenia."
+      - ustep: "Pozostałe opłaty, {w szczególności|zwłaszcza} za przelewy, wpłaty, wypłaty, wyciągi papierowe, zaświadczenia i opinie bankowe, wynoszą odpowiednio:"
+        punkty:
+          - "przelew zewnętrzny w złotych — {{fakt:oplata.firma.przelew-elixir}};"
+          - "przelew o wysokiej wartości — {{fakt:oplata.firma.przelew-wysokiej-wartosci}};"
+          - "wyciąg w formie papierowej — {{fakt:oplata.wyciag-papierowy}};"
+          - "zaświadczenie o posiadaniu rachunku — {{fakt:oplata.zaswiadczenie}};"
+          - "opinia bankowa — {{fakt:oplata.firma.opinia-bankowa}};"
+          - "powiadomienie SMS — {{fakt:oplata.powiadomienie-sms}} miesięcznie."
+      - ustep: "Bank pobiera opłaty i prowizje z rachunku Posiadacza, obciążając go w dniu wykonania czynności lub w terminach określonych w Taryfie. Jeżeli środki na rachunku nie wystarczają na pokrycie należności, Bank {może|ma prawo} pobrać je z innych rachunków Posiadacza w Banku."
+
+  - id: rachunek-firmowy-oprocentowanie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki na rachunku bieżącym są oprocentowane według {zmiennej|zmieniającej się} stawki w stosunku rocznym, wynoszącej {{fakt:oprocentowanie.firma.rachunek-biezacy}}. Odsetki naliczane są od dnia wpływu środków do dnia poprzedzającego ich wypłatę, przy założeniu, że rok liczy {{fakt:okres.firma.liczba-dni-roku}}."
+      - ustep: "Odsetki są {kapitalizowane i dopisywane|dopisywane i kapitalizowane} do rachunku w ostatnim dniu roboczym każdego miesiąca kalendarzowego oraz w dniu zamknięcia rachunku. Od odsetek Bank {potrąca|pobiera} podatek dochodowy, {jeżeli|o ile} przepisy tego wymagają."
+      - ustep: "Zmiana stawki oprocentowania następuje w razie zmiany jednej lub kilku z następujących okoliczności, jeżeli ma ona wpływ na koszty lub przychody Banku:"
+        punkty:
+          - "wysokości stóp procentowych ustalanych przez Narodowy Bank Polski;"
+          - "wysokości stawek referencyjnych rynku pieniężnego;"
+          - "wysokości stopy rezerwy obowiązkowej lub kosztów pozyskania środków przez Bank;"
+          - "zmiany przepisów prawa wpływających na koszty prowadzenia rachunków."
+      - ustep: "Zmiana oprocentowania rachunku bieżącego nie stanowi zmiany Regulaminu i następuje przez ogłoszenie informacji w bankowości elektronicznej oraz w placówkach, w terminie {{fakt:termin.firma.zmiana-oprocentowania}} przed dniem jej wejścia w życie, chyba że zmiana jest korzystna dla Posiadacza — wówczas następuje bez zachowania terminu."
+
+  - id: rachunek-firmowy-wypowiedzenie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} wypowiedzieć umowę rachunku {na piśmie|w formie pisemnej} z zachowaniem terminu wypowiedzenia wynoszącego {{fakt:termin.wypowiedzenie-przez-klienta}}, liczonego od dnia doręczenia wypowiedzenia Bankowi, chyba że umowa stanowi inaczej. Oświadczenie wymaga podpisów osób uprawnionych do reprezentacji."
+      - ustep: "Bank {może|ma prawo} wypowiedzieć umowę z zachowaniem terminu {{fakt:termin.wypowiedzenie-przez-bank}}, jeżeli zachodzi co najmniej jedna z następujących przyczyn:"
+        punkty:
+          - "rażące naruszenie postanowień umowy lub Regulaminu przez Posiadacza;"
+          - "brak operacji na rachunku przez okres co najmniej {{fakt:termin.firma.nieaktywnosc}};"
+          - "ujawnienie okoliczności uzasadniających podejrzenie wykorzystywania rachunku do działalności przestępczej;"
+          - "niezastosowanie się przez Posiadacza do obowiązków wynikających z przepisów o przeciwdziałaniu praniu pieniędzy;"
+          - "wszczęcie postępowania upadłościowego lub likwidacyjnego wobec Posiadacza."
+      - ustep: "Bank może rozwiązać umowę bez zachowania terminu wypowiedzenia w razie ogłoszenia upadłości Posiadacza lub cofnięcia mu zezwolenia, jeżeli prowadzona działalność wymaga takiego zezwolenia, a także w przypadkach, w których dalsze prowadzenie rachunku byłoby sprzeczne z przepisami."
+      - ustep: "Po rozwiązaniu umowy Bank rozlicza rachunek w terminie {{fakt:termin.firma.zamkniecie-rozliczenie}}. Saldo dodatnie Bank wypłaca lub przekazuje na wskazany rachunek, a saldo ujemne Posiadacz spłaca {niezwłocznie|bez zbędnej zwłoki}. Karty płatnicze wydane do rachunku podlegają zwrotowi lub zniszczeniu, a lokaty — rozliczeniu na zasadach określonych w odrębnych umowach."
+
+  - id: rachunek-firmowy-reklamacje
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} zgłaszać reklamacje dotyczące usług świadczonych przez Bank pisemnie na adres: {{fakt:kontakt.adres-korespondencyjny}}, elektronicznie na adres {{fakt:kontakt.email-reklamacje}} lub za pośrednictwem bankowości elektronicznej, a {także|również} telefonicznie pod numerem {{fakt:kontakt.infolinia}}."
+      - ustep: "Reklamacja powinna zawierać dane Posiadacza i osoby ją składającej wraz z dokumentem potwierdzającym umocowanie, opis zastrzeżeń oraz żądanie Posiadacza. Bank rozpatruje reklamację bez zbędnej zwłoki, nie później niż w terminie {{fakt:termin.firma.reklamacja}} od dnia jej otrzymania, a w sprawach szczególnie skomplikowanych — nie później niż w terminie {{fakt:termin.reklamacja.maksymalny}}, o czym {zawiadamia|informuje} Posiadacza przed upływem pierwszego terminu."
+      - ustep: "Odpowiedź na reklamację Bank przekazuje w formie pisemnej lub, za zgodą Posiadacza, na trwałym nośniku, w tym za pośrednictwem bankowości elektronicznej. Odpowiedź nie wymaga zachowania dodatkowych wymogów formalnych, które przepisy przewidują dla konsumentów."
+      - ustep: "Po wyczerpaniu postępowania reklamacyjnego Posiadacz może dochodzić roszczeń przed sądem powszechnym. Posiadacz niebędący konsumentem nie korzysta z uprawnień przewidzianych dla konsumentów w postępowaniu przed Rzecznikiem Finansowym, o ile przepisy nie stanowią inaczej."
+
+  - id: rachunek-firmowy-koncowe
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin {obowiązuje|wchodzi w życie i obowiązuje} od dnia {{param:od}}. Do umów zawartych przed tym dniem stosuje się Regulamin w brzmieniu doręczonym Posiadaczowi, z zastrzeżeniem zmian wprowadzonych zgodnie z jego postanowieniami."
+      - ustep: "Posiadacz oświadcza, że {otrzymał|odebrał} Regulamin i Taryfę przed zawarciem umowy oraz że zapoznał się z ich treścią. Regulamin w aktualnym brzmieniu jest {dostępny|udostępniony} w placówkach Banku i na stronie {{fakt:bank.strona}}."
+      - ustep: "Informacje i oświadczenia Banku dotyczące umowy Bank {przekazuje|doręcza} Posiadaczowi na trwałym nośniku, w tym w bankowości elektronicznej. Bank jest uprawniony do przekazywania informacji o produktach i usługach Banku, o ile Posiadacz nie wniesie sprzeciwu."
+      - ustep: "Nieważność lub bezskuteczność któregokolwiek postanowienia Regulaminu nie wpływa na ważność pozostałych postanowień. Postanowienie nieważne strony zastąpią postanowieniem możliwie najbliższym ich zamiarowi gospodarczemu."

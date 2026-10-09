@@ -1,0 +1,192 @@
+bloki:
+  - id: rachunek-firmowy-zajecie-zawiadomienie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-zajecia
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po otrzymaniu zawiadomienia o zajęciu Bank {sprawdza|bada} jego skuteczność formalną, w tym prawidłowość oznaczenia dłużnika, wierzyciela i organu egzekucyjnego oraz wysokość egzekwowanej należności. Zawiadomienie niezawierające wymaganych danych Bank {zwraca|odsyła} organowi z prośbą o uzupełnienie, informując jednocześnie Posiadacza o jego otrzymaniu."
+      - ustep: "Zajęcie obejmuje środki znajdujące się na rachunku w chwili doręczenia zawiadomienia oraz wpływy późniejsze, do wysokości określonej w zawiadomieniu. Zajęcie nie obejmuje środków lokat ani rachunków pomocniczych, chyba że zawiadomienie wyraźnie je wskazuje lub dotyczy wszystkich rachunków dłużnika."
+      - ustep: "Do czasu przekazania środków organowi lub {uchylenia|ustania} zajęcia Posiadacz nie może rozporządzać środkami objętymi zajęciem. Bank dopuszcza dysponowanie kwotą przewyższającą zajęcie, z uwzględnieniem wymaganego zabezpieczenia kosztów."
+
+  - id: rachunek-firmowy-zajecie-administracyjne
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-zajecia
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zajęcie rachunku dokonane w postępowaniu egzekucyjnym w administracji, zwłaszcza przez naczelnika urzędu skarbowego, Zakład Ubezpieczeń Społecznych lub inny organ, jest wykonywane na podstawie tytułu wykonawczego lub zawiadomienia o zajęciu wierzytelności. Bank wstrzymuje wypłaty do wysokości egzekwowanej należności wraz z odsetkami i kosztami egzekucyjnymi."
+      - ustep: "Posiadacz {może|ma prawo} zwrócić się do organu o zwolnienie spod zajęcia środków, {jeżeli|o ile} przepisy to przewidują, na przykład środków przeznaczonych na wynagrodzenia pracowników. Bank wykonuje decyzję organu o zwolnieniu {niezwłocznie|bez zbędnej zwłoki} po jej doręczeniu."
+      - ustep: "Zajęcie dokonane przez organ egzekucyjny administracji może obejmować {także|również} środki zgromadzone na rachunku VAT, w zakresie określonym w przepisach podatkowych. Bank informuje Posiadacza o zakresie zajęcia."
+
+  - id: rachunek-firmowy-zajecie-kolejnosc
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-zajecia
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli do Banku wpłynie kilka zawiadomień o zajęciu rachunku, Bank wykonuje je w kolejności ich doręczenia, a gdy środki nie wystarczają na zaspokojenie wszystkich egzekwowanych należności — {zawiadamia|informuje} o tym organy, które dokonały zajęć, i postępuje zgodnie z przepisami o podziale sumy uzyskanej z egzekucji."
+      - ustep: "Zajęcie dokonane po wypłaceniu środków na podstawie wcześniejszego zlecenia Posiadacza nie wywołuje skutków w zakresie środków wypłaconych. Bank dokonuje wypłat z rachunku zajętego w granicach kwoty wolnej od zajęcia, {jeżeli|o ile} taka kwota wynika z przepisów mających zastosowanie do rodzaju rachunku."
+      - ustep: "Przekazanie środków organowi egzekucyjnemu następuje na rachunek wskazany w zawiadomieniu, w terminie wynikającym z przepisów. Bank {pobiera|nalicza} opłatę za wykonanie zajęcia w wysokości {{fakt:oplata.firma.zajecie-egzekucyjne}}, a {w przypadku|w razie} wykonywania zajęcia przez organ egzekucyjny administracji — w wysokości nie wyższej niż przewidują przepisy."
+
+  - id: rachunek-firmowy-zajecie-zabezpieczenie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-zajecia
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wykonuje postanowienia sądu o zabezpieczeniu roszczenia oraz decyzje organów o zabezpieczeniu, obejmujące zakaz wypłat lub blokadę środków na rachunku Posiadacza. Zabezpieczenie obowiązuje {do czasu|do momentu} jego uchylenia lub wygaśnięcia, co potwierdza organ lub sąd."
+      - ustep: "Bank {informuje|zawiadamia} Posiadacza o otrzymaniu postanowienia o zabezpieczeniu, {jeżeli|o ile} przepisy nie zakazują takiej informacji. Posiadacz kieruje wszelkie wnioski o uchylenie lub zmianę zabezpieczenia do organu lub sądu; Bank nie jest stroną postępowania w tym zakresie."
+      - ustep: "Szkody powstałe u Posiadacza wskutek prawidłowego wykonania zabezpieczenia przez Bank nie obciążają Banku."
+
+  - id: rachunek-firmowy-aml-ocena
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-aml
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {ocenia|określa} ryzyko związane z Posiadaczem i jego działalnością, uwzględniając rodzaj klienta, obszar geograficzny, rodzaj usług, kanały dystrybucji oraz charakter transakcji. W zależności od poziomu ryzyka Bank stosuje zwykłe lub wzmożone środki bezpieczeństwa finansowego."
+      - ustep: "Wzmożone środki {obejmują|polegają} {w szczególności|zwłaszcza}:"
+        punkty:
+          - "pozyskanie dodatkowych informacji o źródle środków i źródle majątku Posiadacza oraz beneficjentów rzeczywistych;"
+          - "uzyskanie zgody kadry zarządzającej Banku na nawiązanie lub kontynuację stosunków gospodarczych;"
+          - "zwiększoną częstotliwość monitorowania transakcji i aktualizacji danych;"
+          - "żądanie dokumentów potwierdzających cel i charakter planowanych transakcji."
+      - ustep: "Posiadacz {jest obowiązany|ma obowiązek} współpracować z Bankiem w zakresie stosowania środków bezpieczeństwa finansowego i udzielać informacji w terminie wyznaczonym przez Bank, nie krótszym niż {{fakt:termin.firma.aml-odpowiedz}}. Niezastosowanie się do żądania może skutkować ograniczeniem możliwości składania dyspozycji."
+
+  - id: rachunek-firmowy-aml-pep
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-aml
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {oświadcza|informuje}, czy osoby reprezentujące go, jego beneficjenci rzeczywiści lub członkowie ich rodzin oraz osoby z nimi blisko współpracujące zajmują lub zajmowały eksponowane stanowiska polityczne w rozumieniu przepisów. Oświadczenie składa się na formularzu Banku, a jego zmiany zgłasza się w terminie {{fakt:termin.firma.aktualizacja-danych}}."
+      - ustep: "{Jeżeli|Gdy} Bank stwierdzi, że osoba jest osobą zajmującą eksponowane stanowisko polityczne, stosuje wobec Posiadacza wzmożone środki bezpieczeństwa finansowego, w tym ustala źródło majątku i środków wykorzystywanych w transakcjach. Zgoda kadry zarządzającej Banku na kontynuację stosunku jest wymagana {także|również} po zmianie statusu."
+      - ustep: "{Status|Fakt bycia} osoby zajmującej eksponowane stanowisko polityczne nie stanowi samodzielnej podstawy do odmowy zawarcia umowy; Bank ocenia ryzyko indywidualnie."
+
+  - id: rachunek-firmowy-aml-transakcje
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-aml
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank rejestruje transakcje, których równowartość przekracza kwotę określoną w przepisach o przeciwdziałaniu praniu pieniędzy, a {także|również} transakcje powiązane, {jeżeli|o ile} okoliczności wskazują, że mogą one wynikać z jednej umowy lub być dzielone w celu uniknięcia obowiązków. Rejestracja obejmuje transakcje gotówkowe i bezgotówkowe."
+      - ustep: "Bank przekazuje właściwemu organowi informacje o transakcjach, o których przepisy tak stanowią, oraz o transakcjach i okolicznościach mogących wskazywać na związek z praniem pieniędzy lub finansowaniem terroryzmu. Przekazanie informacji nie stanowi naruszenia tajemnicy bankowej ani nie rodzi odpowiedzialności Banku wobec Posiadacza."
+      - ustep: "Posiadacz ma obowiązek {niezwłocznie|bez zbędnej zwłoki} wyjaśnić charakter transakcji o nietypowej wartości lub strukturze. Do czasu otrzymania wyjaśnień Bank {może|ma prawo} wstrzymać wykonanie transakcji w zakresie, w jakim pozwalają na to przepisy."
+
+  - id: rachunek-firmowy-aml-fatca
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-aml
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {ma obowiązek|jest zobowiązany} gromadzić i przekazywać organom podatkowym informacje o rachunkach prowadzonych dla podmiotów, których rezydencja podatkowa znajduje się poza Rzecząpospolitą Polską, zgodnie z przepisami o wymianie informacji podatkowych z innymi państwami."
+      - ustep: "Posiadacz {składa|przedkłada} oświadczenie o statusie podatkowym, wskazując państwa rezydencji, numery identyfikacji podatkowej oraz status podmiotu (instytucja finansowa, podmiot niefinansowy czynny albo bierny). Podmiot niefinansowy bierny wskazuje osoby kontrolujące i ich rezydencje podatkowe."
+      - ustep: "{Brak oświadczenia|Niezłożenie oświadczenia}, nieprawdziwe dane lub ich brak aktualizacji w terminie {{fakt:termin.firma.aktualizacja-danych}} od zmiany uprawniają Bank do zastosowania domniemań wynikających z przepisów oraz do ograniczenia usług."
+
+  - id: rachunek-firmowy-oplaty-zmiana
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-oplaty
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} zmienić Taryfę z ważnych przyczyn, {w szczególności|zwłaszcza} w razie zmiany przepisów prawa, wzrostu kosztów usług obcych, zmiany zakresu lub formy świadczonych usług albo wzrostu wskaźnika cen towarów i usług konsumpcyjnych ogłoszonego przez Główny Urząd Statystyczny."
+      - ustep: "O zmianie Taryfy Bank {zawiadamia|informuje} Posiadacza na trwałym nośniku z wyprzedzeniem {{fakt:termin.firma.zmiana-taryfy}} przed dniem jej wejścia w życie. Zmiana nie wymaga zawarcia aneksu, {jeżeli|o ile} Posiadacz nie wypowie umowy przed tym dniem, a jeżeli nie zgłosi sprzeciwu — uważa się, że ją przyjął."
+      - ustep: "Zmiana opłat na korzyść Posiadacza może następować bez zachowania terminu. Zmiana Taryfy przewidziana w zdaniu poprzednim nie dotyczy opłat już naliczonych."
+
+  - id: rachunek-firmowy-oplaty-pakiety
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-oplaty
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} wybrać pakiet usług, który obejmuje prowadzenie rachunku, określoną liczbę przelewów, kartę debetową oraz dostęp do bankowości elektronicznej za jedną opłatę miesięczną. Skład i opłatę pakietu {określa|wskazuje} Taryfa, a jego aktywacja następuje {na wniosek|na żądanie} Posiadacza."
+      - ustep: "Czynności przekraczające pakiet są rozliczane według stawek podstawowych z Taryfy. Pakiet może przewidywać obniżenie opłaty, {jeżeli|o ile} w danym miesiącu obroty na rachunku przekroczą określoną kwotę, co Bank sprawdza na koniec miesiąca."
+      - ustep: "Rezygnacja z pakietu następuje z końcem miesiąca kalendarzowego, w którym Bank otrzymał oświadczenie, a od następnego miesiąca stosuje się stawki podstawowe. Zmiana pakietu na inny nie wymaga zmiany umowy rachunku."
+
+  - id: rachunek-firmowy-oplaty-potracenie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-oplaty
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {pobiera|nalicza} należne opłaty, prowizje, odsetki oraz inne zobowiązania Posiadacza wynikające z umowy bezpośrednio z rachunku, w dniu ich wymagalności, bez odrębnej dyspozycji Posiadacza. Posiadacz upoważnia Bank do takiego obciążenia rachunku."
+      - ustep: "Jeżeli saldo rachunku nie pozwala na pobranie należności, powstaje zadłużenie przeterminowane, od którego Bank nalicza odsetki według stawki {{fakt:oprocentowanie.odsetki-za-opoznienie}} w stosunku rocznym. Za wezwanie do zapłaty Bank {pobiera|może pobrać} opłatę w wysokości {{fakt:oplata.upomnienie}}."
+      - ustep: "Spłata zadłużenia zaliczana jest w pierwszej kolejności na koszty, {następnie|w dalszej kolejności} na odsetki za opóźnienie, a w dalszej kolejności na należności główne, od najdawniej wymagalnych."
+
+  - id: rachunek-firmowy-wypowiedzenie-skutki
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wypowiedzenie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Z dniem rozwiązania umowy {wygasają|tracą moc} wszystkie dyspozycje, zlecenia stałe, polecenia zapłaty oraz pełnomocnictwa do dysponowania rachunkiem. Posiadacz {zawiadamia|informuje} odbiorców i kontrahentów o zmianie rachunku, a Bank nie ponosi odpowiedzialności za skutki nieprzekazania takiej informacji."
+      - ustep: "{Środki wpływające|Wpłaty i przelewy wpływające} na rachunek po jego zamknięciu Bank zwraca nadawcy, a jeśli nie jest to możliwe — przekazuje na rachunek wskazany przez Posiadacza, po potrąceniu należnych opłat. Dane rachunku zamkniętego Bank przechowuje przez okres wymagany przepisami."
+      - ustep: "Zamknięcie rachunku wymaga uprzedniego uregulowania zobowiązań Posiadacza wobec Banku. W razie zadłużenia Bank podejmuje czynności windykacyjne, a Posiadacz obowiązany jest do zapłaty odsetek za opóźnienie do dnia pełnej spłaty."
+
+  - id: rachunek-firmowy-wypowiedzenie-upadlosc
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wypowiedzenie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie ogłoszenia upadłości Posiadacza Bank {wykonuje|realizuje} obowiązki wynikające z przepisów prawa upadłościowego, {w szczególności|zwłaszcza} zamyka rachunki bieżące i przekazuje środki syndykowi. Dysponowanie rachunkiem po ogłoszeniu upadłości następuje wyłącznie przez syndyka na podstawie postanowienia sądu."
+      - ustep: "W przypadku likwidacji Posiadacza rachunek może być {prowadzony|obsługiwany} przez likwidatora, który składa wzór podpisu i {przedstawia|przedkłada} dokumenty potwierdzające jego umocowanie. Po zakończeniu likwidacji i wykreśleniu Posiadacza z rejestru Bank zamyka rachunek, a pozostałe środki przekazuje uprawnionym osobom, na podstawie dokumentów rejestrowych."
+      - ustep: "Przekształcenie, połączenie lub podział Posiadacza wymaga przedstawienia dokumentów potwierdzających sukcesję. Bank {kontynuuje|utrzymuje} stosunek umowny z następcą prawnym po spełnieniu wymogów weryfikacji."
+
+  - id: rachunek-firmowy-wypowiedzenie-zmiany
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wypowiedzenie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypowiedzenie umowy przez Bank następuje {na piśmie|w formie pisemnej} i zawiera uzasadnienie, o ile przepisy nie zakazują jego podania. Bank doręcza wypowiedzenie na adres do doręczeń wskazany przez Posiadacza lub przez bankowość elektroniczną."
+      - ustep: "W okresie wypowiedzenia Posiadacz {może|ma prawo} dysponować rachunkiem na dotychczasowych zasadach, z wyjątkiem przypadków, w których wypowiedzenie nastąpiło z powodu naruszenia przepisów o przeciwdziałaniu praniu pieniędzy — wtedy Bank {może|ma prawo} ograniczyć lub wstrzymać dyspozycje."
+      - ustep: "Jeżeli Posiadacz w okresie wypowiedzenia nie wskaże rachunku, na który mają zostać przekazane środki, Bank po upływie okresu wypowiedzenia przenosi środki na rachunek wewnętrzny, nieoprocentowany, i {informuje|powiadamia} o tym Posiadacza. Za prowadzenie takiego rachunku Bank nie pobiera opłat, a po upływie terminu przedawnienia przekazuje środki zgodnie z przepisami."
+
+  - id: rachunek-firmowy-koncowe-zgodnosc
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {podlega nadzorowi|jest nadzorowany przez} organu nadzoru nad rynkiem finansowym, a jego działalność w zakresie świadczenia usług płatniczych {określa|wskazuje} {{ref:akt:dz-u-2024-30-uslugi-platnicze}}. Informacje o Banku i organie nadzoru dostępne są na stronie {{fakt:bank.strona}}."
+      - ustep: "Bank {przetwarza|wykorzystuje} dane osobowe osób reprezentujących Posiadacza, pełnomocników, użytkowników i beneficjentów rzeczywistych w celu zawarcia i wykonania umowy, wypełnienia obowiązków prawnych oraz dochodzenia roszczeń, na zasadach opisanych w klauzuli informacyjnej udostępnianej tym osobom. Kontakt z inspektorem ochrony danych: {{fakt:kontakt.email-iod}}."
+      - ustep: "Posiadacz {przekazuje|udostępnia} osobom, których dane udostępnia Bankowi, klauzulę informacyjną Banku i zapewnia, że ma podstawę prawną do przekazania ich danych."
+
+  - id: rachunek-firmowy-koncowe-spory
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Strony dążą do polubownego rozwiązania sporów wynikających z umowy. Spory, które nie zostały rozwiązane w drodze reklamacji albo negocjacji prowadzonych przez okres nie dłuższy niż {{fakt:termin.firma.negocjacje}}, rozstrzyga sąd powszechny właściwy miejscowo dla siedziby Banku."
+      - ustep: "Zrzeczenie się przez Posiadacza roszczeń wobec Banku wymaga formy pisemnej. Cesja wierzytelności Posiadacza wobec Banku wynikających z umowy rachunku wymaga zgody Banku wyrażonej {na piśmie|w formie pisemnej} pod rygorem nieważności."
+      - ustep: "Bank {może|ma prawo} przenieść prawa i obowiązki wynikające z umowy na inny podmiot uprawniony do prowadzenia rachunków bankowych, o czym {zawiadamia|informuje} Posiadacza z wyprzedzeniem {{fakt:termin.zmiana-regulaminu}}; Posiadacz {może|ma prawo} w tym terminie wypowiedzieć umowę bez dodatkowych opłat."
+
+  - id: rachunek-firmowy-koncowe-zalaczniki
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Integralną część umowy rachunku stanowią|Integralnymi częściami umowy rachunku są}: Regulamin, Taryfa, karta wzorów podpisów oraz formularze, w tym oświadczenie o beneficjentach rzeczywistych i oświadczenie o statusie podatkowym. Dokumenty te Bank udostępnia Posiadaczowi na trwałym nośniku."
+      - ustep: "Zmiana lub uzupełnienie umowy {wymaga|następuje w} formy pisemnej, chyba że Regulamin stanowi inaczej. Oświadczenia składane w bankowości elektronicznej w sposób przewidziany przez Bank mają skutki oświadczeń woli złożonych w formie pisemnej."
+      - ustep: "Terminy wyrażone w dniach {liczy się|oblicza się} jako dni kalendarzowe, chyba że Regulamin wskazuje dni robocze. Jeżeli koniec terminu przypada na dzień wolny od pracy, termin upływa następnego dnia roboczego."

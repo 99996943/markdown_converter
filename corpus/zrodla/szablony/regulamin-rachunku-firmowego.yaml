@@ -1,0 +1,67 @@
+id: regulamin-rachunku-firmowego
+typ: regulaminy
+temat: rachunek-firmowy
+tytul:
+  - "Regulamin rachunków bankowych dla przedsiębiorców {{param:bank}}"
+  - "Regulamin {prowadzenia|otwierania i prowadzenia} rachunków bankowych dla przedsiębiorców (rachunek bieżący i pomocniczy, firmowe lokaty i karty) {{param:bank}}"
+uklady: [jedna-kolumna]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje-regulamin, rachunek-firmowy-zakres, rachunek-firmowy-rodzaje]
+    opcjonalne: { kategorie: [paragraf-rf-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Otwarcie rachunku i dokumenty rejestrowe"
+    wymagane: [rachunek-firmowy-otwarcie, rachunek-firmowy-dokumenty]
+    opcjonalne: { kategorie: [paragraf-rf-otwarcie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Reprezentacja i pełnomocnicy"
+    wymagane: [rachunek-firmowy-reprezentacja, rachunek-firmowy-pelnomocnicy]
+    opcjonalne: { kategorie: [paragraf-rf-reprezentacja], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Karta wzorów podpisów"
+    wymagane: [rachunek-firmowy-kwp]
+    opcjonalne: { kategorie: [paragraf-rf-kwp], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dysponowanie rachunkiem"
+    wymagane: [rachunek-firmowy-dysponowanie, rachunek-firmowy-saldo]
+    opcjonalne: { kategorie: [paragraf-rf-dysponowanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Przelewy, w tym podzielona płatność i przelewy do urzędu skarbowego"
+    wymagane: [rachunek-firmowy-przelewy, rachunek-firmowy-realizacja, rachunek-firmowy-podzielona, rachunek-firmowy-urzad-skarbowy]
+    opcjonalne: { kategorie: [paragraf-rf-przelewy], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wpłaty i wypłaty gotówkowe"
+    wymagane: [rachunek-firmowy-wplaty]
+    opcjonalne: { kategorie: [paragraf-rf-gotowka], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Rachunki pomocnicze i walutowe, firmowe lokaty i karty"
+    wymagane: [rachunek-firmowy-pomocnicze]
+    opcjonalne: { kategorie: [paragraf-rf-pomocnicze], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Bankowość elektroniczna dla firm"
+    wymagane: [rachunek-firmowy-bankowosc]
+    opcjonalne: { kategorie: [paragraf-rf-bankowosc], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zajęcia egzekucyjne"
+    wymagane: [rachunek-firmowy-zajecia]
+    opcjonalne: { kategorie: [paragraf-rf-zajecia], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Obowiązki informacyjne (beneficjent rzeczywisty)"
+    wymagane: [rachunek-firmowy-aml]
+    opcjonalne: { kategorie: [paragraf-rf-aml], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Opłaty i oprocentowanie"
+    wymagane: [rachunek-firmowy-oplaty, rachunek-firmowy-oprocentowanie]
+    opcjonalne: { kategorie: [paragraf-rf-oplaty], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypowiedzenie umowy"
+    wymagane: [rachunek-firmowy-wypowiedzenie]
+    opcjonalne: { kategorie: [paragraf-rf-wypowiedzenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-zmiany-regulamin, wspolne-bfg-regulamin, wspolne-prawo-wlasciwe-regulamin, rachunek-firmowy-reklamacje, rachunek-firmowy-koncowe]
+    opcjonalne: { kategorie: [paragraf-rf-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "rachunku firmowego"

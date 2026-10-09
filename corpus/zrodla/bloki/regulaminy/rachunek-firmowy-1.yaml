@@ -1,0 +1,151 @@
+bloki:
+  - id: rachunek-firmowy-zakres
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin określa {zasady|warunki} otwierania i prowadzenia przez Bank rachunków bankowych dla przedsiębiorców, {w szczególności|w tym} rachunków bieżących i pomocniczych, a także zasady składania dyspozycji, rozliczeń pieniężnych, korzystania z bankowości elektronicznej oraz zawierania umów o firmowe lokaty i karty płatnicze w ramach tych rachunków."
+      - ustep: "Regulamin stosuje się do umów zawieranych z osobami prawnymi, jednostkami organizacyjnymi niebędącymi osobami prawnymi, którym ustawa przyznaje zdolność prawną, oraz z osobami fizycznymi {wykonującymi|prowadzącymi} działalność gospodarczą lub zawodową we własnym imieniu, zwanymi dalej Posiadaczami. Rachunek firmowy nie może służyć do zaspokajania potrzeb osobistych Posiadacza będącego osobą fizyczną, które nie mają związku z prowadzoną działalnością."
+      - ustep: "Posiadacz nie jest konsumentem w rozumieniu przepisów o ochronie konsumentów. W zakresie dopuszczalnym przez prawo strony {wyłączają|nie stosują} w stosunku do siebie przepisów, które mogą być wyłączone w relacjach z klientami niebędącymi konsumentami; dotyczy to w szczególności przepisów o terminach i trybie zgłaszania transakcji nieautoryzowanych, opisanych w rozdziale o bankowości elektronicznej."
+      - ustep: "Podstawę prawną działalności Banku w zakresie objętym Regulaminem stanowią w szczególności {{ref:akt:dz-u-2024-1646-prawo-bankowe}} oraz {{ref:akt:dz-u-2024-30-uslugi-platnicze}}. Opłaty i prowizje wynikają z dokumentu „{{ref:dokument:taryfa-firmy}}”, zwanego dalej Taryfą.[^1]"
+      - ustep: "{W razie|W przypadku} rozbieżności między umową a Regulaminem {pierwszeństwo mają|rozstrzygają} postanowienia umowy, a w sprawach nieuregulowanych w umowie — postanowienia Regulaminu."
+    przypisy:
+      1: "Taryfa jest {udostępniana|doręczana} Posiadaczowi przed zawarciem umowy na trwałym nośniku oraz w {placówkach|oddziałach} Banku i na stronie {{fakt:bank.strona}}. Zmiana Taryfy następuje na zasadach określonych w rozdziale o postanowieniach końcowych."
+
+  - id: rachunek-firmowy-rodzaje
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank prowadzi dla Posiadaczy następujące rachunki:"
+        punkty:
+          - "rachunek bieżący — rachunek rozliczeniowy służący do gromadzenia środków pieniężnych oraz do przeprowadzania krajowych rozliczeń pieniężnych związanych z prowadzoną działalnością;"
+          - tekst: "rachunki pomocnicze, prowadzone do rachunku bieżącego, w tym:"
+            litery:
+              - "rachunki w walutach wymienialnych, służące do rozliczeń w walutach obcych;"
+              - "rachunki przeznaczone do wyodrębnienia środków na określony cel, na przykład na zobowiązania publicznoprawne lub zabezpieczenie umów z kontrahentami;"
+              - "rachunki rozliczeniowe dla wydzielonych jednostek organizacyjnych Posiadacza;"
+          - "rachunki lokat terminowych i lokat typu overnight, prowadzone na podstawie odrębnych umów lub dyspozycji Posiadacza;"
+          - "rachunki techniczne obsługujące karty płatnicze wydane do rachunku."
+      - ustep: "Rachunek bieżący otrzymuje numer rachunku w międzynarodowym formacie IBAN. Rachunek pomocniczy otrzymuje odrębny numer, a jego saldo i obroty są {ujmowane|wykazywane} na wyciągu rachunku bieżącego, do którego został otwarty."
+      - ustep: "Posiadacz może posiadać więcej niż jeden rachunek bieżący, jeżeli uzasadnia to prowadzona działalność, w szczególności ze względu na odrębne źródła przychodów lub obowiązki wynikające z przepisów. Bank {może|ma prawo} odmówić otwarcia kolejnego rachunku, {jeżeli|gdy} nie zostanie przedstawione uzasadnienie lub gdy wystąpią przesłanki, o których mowa w rozdziale o otwarciu rachunku."
+      - ustep: "Środki na rachunkach Posiadacza są oprocentowane według stawek podanych w Taryfie lub w umowie, a {oprocentowanie rachunku bieżącego|stawka dla rachunku bieżącego} wynosi {{fakt:oprocentowanie.firma.rachunek-biezacy}} w stosunku rocznym, chyba że umowa stanowi inaczej."
+
+  - id: rachunek-firmowy-otwarcie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rachunek jest otwierany na podstawie umowy zawartej na wniosek Posiadacza, złożony w {placówce|oddziale} Banku, za pośrednictwem pracownika Banku odwiedzającego siedzibę Posiadacza lub, w przypadkach przewidzianych przez Bank, w formie elektronicznej. Bank rozpatruje wniosek w terminie {{fakt:termin.firma.rozpatrzenie-wniosku}} od dnia przedstawienia kompletu dokumentów."
+      - ustep: "Bank {może|ma prawo} odmówić zawarcia umowy, {w szczególności|zwłaszcza} gdy:"
+        punkty:
+          - "Posiadacz lub osoba działająca w jego imieniu nie przedstawi wymaganych dokumentów albo informacji;"
+          - "nie jest możliwe zastosowanie środków bezpieczeństwa finansowego określonych w {{ref:akt:dz-u-2025-644-aml}};"
+          - "dane z dokumentów budzą uzasadnione wątpliwości co do ich zgodności z rzeczywistością;"
+          - tekst: "Posiadacz lub osoba z nim powiązana:"
+            litery:
+              - "została wpisana na listę osób i podmiotów objętych sankcjami;"
+              - "prowadziła dotychczas rachunek w Banku niezgodnie z umową, co skutkowało jej wypowiedzeniem z winy Posiadacza."
+      - ustep: "O odmowie zawarcia umowy Bank informuje wnioskodawcę {niezwłocznie|bez zbędnej zwłoki}, nie podając przyczyn, jeżeli przepisy zakazują ich ujawnienia. Opłata za otwarcie rachunku wynosi {{fakt:oplata.firma.otwarcie}}.[^1]"
+      - ustep: "Umowa rachunku zawierana jest na czas nieokreślony. Rachunek jest uruchamiany po zawarciu umowy, złożeniu karty wzorów podpisów oraz zakończeniu weryfikacji dokumentów. Do tego czasu Posiadacz nie może składać dyspozycji obciążających rachunek."
+    przypisy:
+      1: "Posiadacz otwierający rachunek pomocniczy nie ponosi opłaty za otwarcie, o ile Taryfa nie stanowi inaczej; opłatę za prowadzenie rachunku pomocniczego ustala „{{ref:dokument:taryfa-firmy}}”."
+
+  - id: rachunek-firmowy-dokumenty
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy otwarciu rachunku Posiadacz przedstawia dokumenty potwierdzające jego byt prawny i uprawnienia osób go reprezentujących. W zależności od formy prawnej są to w szczególności:"
+        punkty:
+          - "odpis z Krajowego Rejestru Sądowego lub zaświadczenie o wpisie do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, nie starsze niż {{fakt:termin.firma.aktualnosc-odpisu}};"
+          - "dokumenty potwierdzające numer identyfikacji podatkowej oraz numer w rejestrze REGON;"
+          - "umowa lub statut Posiadacza oraz uchwały organów w sprawie powołania osób uprawnionych do reprezentacji;"
+          - "dokumenty tożsamości osób reprezentujących Posiadacza oraz pełnomocników;"
+          - "oświadczenie o beneficjencie rzeczywistym i strukturze własności, na formularzu Banku."
+      - ustep: "Dokumenty sporządzone w języku obcym {Posiadacz przedkłada|należy przedłożyć} wraz z tłumaczeniem przysięgłym na język polski. Dokumenty wydane za granicą powinny być zalegalizowane lub opatrzone apostille, chyba że umowa międzynarodowa lub przepisy stanowią inaczej."
+      - ustep: "Bank {może|ma prawo} żądać okazania oryginałów dokumentów albo przedłożenia kopii poświadczonych notarialnie. Dokumenty rejestrowe dostępne w publicznych rejestrach elektronicznych Bank {może|ma prawo} pobrać samodzielnie, o czym informuje Posiadacza."
+      - ustep: "Posiadacz {jest obowiązany|ma obowiązek} informować Bank o każdej zmianie danych i dokumentów przedstawionych przy otwarciu rachunku, w tym o zmianie siedziby, składu organów, wpisów w rejestrze, w terminie {{fakt:termin.firma.aktualizacja-danych}} od dnia zmiany lub — gdy zmiana wymaga wpisu — od dnia jego dokonania. Zmiana wywiera skutek wobec Banku od dnia otrzymania zawiadomienia wraz z dokumentami."
+
+  - id: rachunek-firmowy-reprezentacja
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz działa wobec Banku przez osoby uprawnione do jego reprezentacji zgodnie z przepisami, umową spółki lub statutem oraz dokumentami rejestrowymi. Bank {opiera się|polega} na dokumentach przedstawionych przez Posiadacza oraz na danych z rejestrów publicznych, {chyba że|o ile} nie wie, że są one nieaktualne."
+      - ustep: "Jeżeli sposób reprezentacji Posiadacza jest łączny, dyspozycje wymagają podpisów {co najmniej|nie mniej niż} dwóch osób wskazanych w dokumentach rejestrowych albo jednej osoby łącznie z prokurentem. Bank {nie realizuje|odmawia realizacji} dyspozycji podpisanych przez mniejszą liczbę osób, niż wymaga reprezentacja."
+      - ustep: "Zmiana osób uprawnionych do reprezentacji staje się skuteczna wobec Banku od dnia, w którym Bank otrzymał dokumenty ją potwierdzające i przeprowadził ich weryfikację. Bank dokonuje weryfikacji w terminie {{fakt:termin.firma.weryfikacja-dokumentow}} od dnia ich otrzymania."
+      - ustep: "Bank nie ponosi odpowiedzialności za skutki realizacji dyspozycji złożonej przez osobę, której uprawnienia wygasły, jeżeli Posiadacz nie zawiadomił Banku o ich wygaśnięciu, a Bank działał w dobrej wierze i z należytą starannością."
+
+  - id: rachunek-firmowy-pelnomocnicy
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz {może|ma prawo} ustanowić jednego lub kilku pełnomocników do dysponowania rachunkiem. Pełnomocnictwo wymaga formy pisemnej z podpisem Posiadacza złożonym w obecności pracownika Banku albo poświadczonym notarialnie, a {w przypadku|w razie} osób prawnych — podpisów osób uprawnionych do reprezentacji."
+      - ustep: "Pełnomocnictwo określa jego zakres, w tym:"
+        punkty:
+          - "rodzaj dyspozycji, do których pełnomocnik jest umocowany, na przykład wpłaty, wypłaty, przelewy, zlecenia stałe;"
+          - "rachunki objęte pełnomocnictwem;"
+          - "wysokość maksymalnej kwoty jednorazowej dyspozycji lub dziennej sumy dyspozycji;"
+          - tekst: "sposób składania dyspozycji:"
+            litery:
+              - "samodzielnie albo łącznie z innym pełnomocnikiem lub osobą reprezentującą;"
+              - "w placówce lub w bankowości elektronicznej."
+      - ustep: "Pełnomocnik nie może udzielać dalszych pełnomocnictw ani składać oświadczeń o wypowiedzeniu umowy, zamknięciu rachunku lub zmianie karty wzorów podpisów, chyba że pełnomocnictwo wyraźnie stanowi inaczej, a Bank takie umocowanie przyjął. Ustanowienie pełnomocnika nie wiąże się z opłatą, {zgodnie z Taryfą|według Taryfy}."
+      - ustep: "Odwołanie lub wypowiedzenie pełnomocnictwa wywołuje skutki wobec Banku z dniem otrzymania pisemnego zawiadomienia. Pełnomocnictwo wygasa {także|również} z dniem wykreślenia Posiadacza z rejestru, śmierci pełnomocnika oraz upływu okresu, na który zostało udzielone."
+
+  - id: rachunek-firmowy-kwp
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Osoby uprawnione do dysponowania rachunkiem składają wzory podpisów na karcie wzorów podpisów, w obecności pracownika Banku, po okazaniu dokumentu tożsamości. Karta wzorów podpisów zawiera dane osób uprawnionych, zakres ich umocowania oraz sposób składania dyspozycji, zgodny z reprezentacją Posiadacza."
+      - ustep: "Podpis na dyspozycji składanej w formie papierowej jest weryfikowany przez Bank przez porównanie ze wzorem podpisu. Bank {odmawia|może odmówić} realizacji dyspozycji, jeżeli podpis {istotnie odbiega od wzoru|nie jest zgodny ze wzorem} lub budzi uzasadnione wątpliwości, i informuje o tym osobę składającą dyspozycję."
+      - ustep: "Zmiana karty wzorów podpisów następuje na wniosek Posiadacza złożony w {placówce|oddziale} Banku. Do czasu przyjęcia nowej karty Bank stosuje wzory dotychczasowe. Opłata za zmianę karty wynosi {{fakt:oplata.firma.zmiana-kwp}}, a przy zmianie wynikającej z wpisu w rejestrze nie jest pobierana, jeżeli Posiadacz przedstawi odpis dokumentujący zmianę.[^1]"
+      - ustep: "Karta wzorów podpisów wraz z dyspozycją jej zmiany przechowywana jest przez Bank przez okres wymagany przepisami o archiwizacji dokumentów bankowych, nie krócej niż przez {{fakt:okres.firma.przechowywanie-dokumentow}} od zakończenia stosunku umowy."
+    przypisy:
+      1: "Bank {może|ma prawo} uzależnić przyjęcie nowej karty wzorów podpisów od przedstawienia aktualnego odpisu z rejestru, nie starszego niż {{fakt:termin.firma.aktualnosc-odpisu}}, oraz od ponownej weryfikacji tożsamości osób wskazanych w karcie."
+
+  - id: rachunek-firmowy-dysponowanie
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Posiadacz dysponuje środkami na rachunku w ramach salda dostępnego, składając dyspozycje wypłat gotówkowych, zlecenia płatnicze, polecenia zapłaty, zlecenia stałe oraz instrukcje dotyczące rachunków pomocniczych. Dyspozycje mogą być składane osobiście, przez pełnomocników oraz w bankowości elektronicznej."
+      - ustep: "Dyspozycja powinna być jednoznaczna i zawierać dane niezbędne do jej wykonania. Bank {może|ma prawo} odmówić wykonania dyspozycji, gdy:"
+        punkty:
+          - "jest niezgodna z prawem, umową lub Regulaminem;"
+          - "jest niekompletna albo nieczytelna;"
+          - "środki na rachunku są niewystarczające na jej wykonanie wraz z należnymi opłatami;"
+          - "została złożona przez osobę nieuprawnioną lub zachodzi uzasadniona wątpliwość co do jej tożsamości lub uprawnień;"
+          - "rachunek jest zablokowany albo zajęty, w zakresie objętym blokadą lub zajęciem."
+      - ustep: "Bank {informuje|powiadamia} o odmowie wykonania dyspozycji i, {jeżeli|o ile} to możliwe, o jej przyczynach, w sposób uzgodniony z Posiadaczem, chyba że zakazują tego przepisy. Odmowa wykonania zlecenia płatniczego, które spełnia warunki umowy, nie powoduje pobrania opłaty, o ile Taryfa nie stanowi inaczej."
+      - ustep: "Dyspozycje w formie papierowej Bank przyjmuje w godzinach pracy placówek, a po godzinie granicznej uznaje się je za złożone w następnym dniu roboczym. Godziny graniczne dla przelewów wskazuje {{ref:blok:rachunek-firmowy-realizacja}}."
+
+  - id: rachunek-firmowy-saldo
+    typy: [regulaminy]
+    tematy: [rachunek-firmowy]
+    kategoria: paragraf-rf-wymagany
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank prowadzi rachunek w złotych oraz, {na wniosek|na żądanie} Posiadacza, w walutach obcych wymienianych w tabeli kursów Banku. Środki na rachunku są dostępne bezpośrednio po ich zaksięgowaniu, z zastrzeżeniem środków objętych blokadą."
+      - ustep: "Na wniosek Posiadacza Bank {może|ma prawo} udzielić dopuszczalnego zadłużenia na rachunku bieżącym (debetu) do kwoty określonej w odrębnej umowie. Od wykorzystanej kwoty naliczane są odsetki według stawki {{fakt:oprocentowanie.firma.debet}} w stosunku rocznym, a od zadłużenia przeterminowanego — według stawki odsetek za opóźnienie, wynoszącej {{fakt:oprocentowanie.odsetki-za-opoznienie}}."
+      - ustep: "Posiadacz jest zobowiązany do utrzymywania na rachunku środków wystarczających na pokrycie zobowiązań wynikających z umowy. W razie powstania zadłużenia przeterminowanego Bank {może|ma prawo} potrącić je z innych wierzytelności Posiadacza wobec Banku, w tym z lokat, o czym zawiadomi Posiadacza z wyprzedzeniem {{fakt:termin.firma.potracenie-zawiadomienie}}, {jeżeli|o ile} przepisy nie stanowią inaczej."
