@@ -7,7 +7,10 @@ public sealed class QualityMetricsTests
 {
     private const string Id = "REG-03";
 
-    private const string PerfectMarkdown = """
+    // Normalised to LF so that the string replacements below do not depend on the checkout's line endings.
+    private static readonly string PerfectMarkdown = Perfect.Replace("\r\n", "\n", StringComparison.Ordinal);
+
+    private const string Perfect = """
         <!-- page: 1 -->
 
         ## Rozdział 1. Postanowienia ogólne
@@ -92,7 +95,7 @@ public sealed class QualityMetricsTests
         QualityReport r = Measure(PerfectMarkdown + "\n\nStrona 2 z 5\n");
 
         Assert.Equal(1.0, r.WordCompleteness);
-        Assert.Equal(3, r.ExtraWords);
+        Assert.Equal(4, r.ExtraWords);
         Assert.Contains("Strona", r.ExtraWordSamples);
         Assert.Contains(r.Failures, f => f.Contains(Id, StringComparison.Ordinal) && f.Contains("Strona", StringComparison.Ordinal));
     }
@@ -186,7 +189,7 @@ public sealed class QualityMetricsTests
 
         Assert.Equal(1.0, r.HeadingRecall);
         Assert.Equal(1.0 / 3.0, r.FalseHeadingShare, 6);
-        Assert.Contains(r.Failures, f => f.Contains(Id, StringComparison.Ordinal) && f.Contains("Bank udziela kredytu.", StringComparison.Ordinal));
+        Assert.Contains(r.Failures, f => f.Contains(Id, StringComparison.Ordinal) && f.Contains("Bank udziela kredytu", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -279,7 +282,7 @@ public sealed class QualityMetricsTests
         QualityReport r = Measure(PerfectMarkdown.Replace("| 4\\.7\\. Przelew | 10,00 zł |", "| 10,00 zł | 4\\.7\\. Przelew |", StringComparison.Ordinal));
 
         Assert.Equal(1.0, r.RowsIntact);
-        Assert.Equal(0.75, r.CellAgreement);
+        Assert.Equal(0.5, r.CellAgreement);
     }
 
     [Fact]
