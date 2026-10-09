@@ -122,6 +122,27 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
     }
 
+    /// <summary>T081: a ruled checklist table „Lp. | Czynność | Wykonano” whose last column is empty in every row.</summary>
+    [Fact]
+    public async Task RuledChecklistWithAnEmptyColumn_IsAGfmTableWithEmptyCells()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 80, "Załącznik nr 1 Lista kontrolna", 13, bold: true);
+        double y = GridTable(b, 110, ["Lp.", "Czynność", "Wykonano"],
+        [
+            ["1.", "Sprawdzono dokument tożsamości.", string.Empty],
+            ["2.", "Zarejestrowano wniosek w systemie.", string.Empty],
+            ["3.", "Wydano potwierdzenie Klientowi.", string.Empty],
+        ]);
+        Body(b, y + 30, 14);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("| **Lp.** | **Czynność** | **Wykonano** |", md, StringComparison.Ordinal);
+        Assert.Contains("| 2. | Zarejestrowano wniosek w systemie. |  |", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
