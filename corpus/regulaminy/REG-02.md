@@ -145,9 +145,9 @@ tożsamości;
 - 3\. Użytkownik potwierdza odbiór karty własnoręcznym podpisem na dokumencie przekazania albo w formie elektronicznej na urządzeniu w placówce. W momencie odbioru Użytkownik może ustalić PIN, a pracownik Banku nie ma wglądu w jego treść. Karta wydana w placówce może być aktywowana na miejscu.
 - 4\. Niedostarczenie karty w sposób wskazany we wniosku z przyczyn niezależnych od Banku, <!-- page: 6 --> w szczególności z powodu niepodjęcia przesyłki przez Użytkownika, nie rodzi odpowiedzialności Banku. Ponowne wysłanie karty podlega opłacie według Taryfy.
 
-[^14]: Zasady przekazywania Klientowi informacji o transakcjach płatniczych określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); Bank udostępnia je także w wyciągu z rachunku.
+[^15]: Zasady przekazywania Klientowi informacji o transakcjach płatniczych określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); Bank udostępnia je także w wyciągu z rachunku.
 
-[^15]: Aktualna wysokość opłaty za wydanie karty w trybie pilnym wynosi 70,00 zł.
+[^16]: Aktualna wysokość opłaty za wydanie karty w trybie pilnym wynosi 70,00 zł.
 
 ### § 13.
 
@@ -250,9 +250,7 @@ wymagań.
 <!-- page: 9 -->
 ### § 23.
 
-zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w terminie 3 dni od
-
-- 1\. W razie śmierci Posiadacza Bank blokuje kartę dnia otrzymania przez Bank jej zapisu od z chwilą uzyskania wiarygodnej informacji o zdarzeniu. Transakcje autoryzowane przed śmiercią Posiadacza, a rozliczone po niej, mogą obciążać rachunek, chyba że przepisy prawa stanowią inaczej.
+- 1\. W razie śmierci Posiadacza Bank blokuje kartę z chwilą uzyskania wiarygodnej informacji o zdarzeniu. Transakcje autoryzowane przed śmiercią Posiadacza, a rozliczone po niej, mogą obciążać rachunek, chyba że przepisy prawa stanowią inaczej.
 - 2\. Użytkownik, który nie jest Posiadaczem, nie jest już uprawniony do prawo używania karty z chwilą śmierci Posiadacza; osoba, w której posiadaniu znajduje się karta, jest obowiązana zwrócić ją Bankowi albo zniszczyć.
 - 3\. W razie śmierci Użytkownika niebędącego Posiadaczem umowa o kartę wygasa w odniesieniu do tej karty z dniem otrzymania przez Bank informacji o śmierci, a pozostałe karty wydane do rachunku są obsługiwane bez zmian.
 
@@ -266,7 +264,10 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
   - 3\) wpłat gotówki we wpłatomatach Banku, do wysokości określonej w § 25;
   - 4\) zleceń płatniczych w usłudze płatności cyklicznych, jeżeli Użytkownik wyraził na nie zgodę.
 - 2\. Bank realizuje transakcję kartą, jeżeli jej autoryzacja nastąpiła zgodnie z Regulaminem, na rachunku są dostępne środki wystarczające do pokrycia kwoty transakcji i należnych opłat, a limity nie zostały przekroczone.
-- 3\. Po autoryzacji transakcji Bank dokonuje blokady środków na rachunku w kwocie transakcji. Blokada jest utrzymywana do czasu rozliczenia transakcji, jednak nie dłużej niż przez 7 dni, chyba że akceptant wcześniej <!-- page: 10 --> organizacji płatniczej.[^3]
+- 3\. Po autoryzacji transakcji Bank dokonuje blokady środków na rachunku w kwocie transakcji. Blokada jest utrzymywana do czasu rozliczenia transakcji, jednak nie dłużej niż przez 7 dni, chyba że akceptant wcześniej
+
+zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w terminie 3 dni od dnia otrzymania przez Bank jej zapisu od <!-- page: 10 --> organizacji płatniczej.[^3]
+
 - 4\. W niektórych typach transakcji (w szczególności przy rezerwacji hotelowej, wynajmie pojazdu lub opłacie na stacji paliw) akceptant może wystąpić o blokadę kwoty wyższej niż ostateczna wartość transakcji; różnica jest zwalniana po rozliczeniu.
 
 [^3]: Terminy liczone są w dniach roboczych, chyba że Regulamin stanowi inaczej; nie zawierają one czasu potrzebnego akceptantowi na przekazanie transakcji do rozliczenia.
@@ -275,9 +276,12 @@ zażąda rozliczenia. Rozliczenie transakcji następuje nie później niż w ter
 
 - 1\. Transakcje kartą podlegają dziennym limitom kwotowym. Limity ustawione przez Bank w dniu wydania karty wynoszą:
 
-### Rodzaj transakcji Limit dzienny
-
-Transakcje gotówkowe 5 000,00 zł Transakcje bezgotówkowe 15 000,00 zł Transakcje internetowe 10 000,00 zł Wpłaty we wpłatomatach 10 000,00 zł
+| **Rodzaj transakcji** | **Limit dzienny** |
+| --- | --- |
+| Transakcje gotówkowe | 5 000,00 zł |
+| Transakcje bezgotówkowe | 15 000,00 zł |
+| Transakcje internetowe | 10 000,00 zł |
+| Wpłaty we wpłatomatach | 10 000,00 zł |
 
 - 2\. Użytkownik ma możliwość zmiany limity w bankowości elektronicznej lub w placówce, w granicach od 100,00 zł do 20 000,00 zł. Zmiana limitu na wyższy jest wprowadzana po dodatkowym uwierzytelnieniu i może wymagać oceny ryzyka przez Bank.6
 - 3\. Bank może czasowo obniżyć limity, jeżeli wymaga tego względami bezpieczeństwa, a także w przypadku podejrzenia nieuprawnionego użycia karty. O obniżeniu limitów Bank powiadamia Klienta niezwłocznie po jego dokonaniu, o ile nie stoi temu na przeszkodzie wzgląd na bezpieczeństwo. Opłaty związane z transakcjami określa Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
@@ -299,7 +303,7 @@ kwota zwrotu w złotych może różnić się od pierwotnie obciążonej kwoty. R
 - 3\. Jeżeli Użytkownik nie odbierze gotówki lub karty w czasie wskazanym przez bankomat, urządzenie może pobrać je z powrotem. Gotówka zostaje wtedy zwrócona na rachunek, a karta jest przechowywana w bankomacie. Użytkownik niezwłocznie kontaktuje się z Bankiem w celu odebrania lub wydania nowej karty.
 - 4\. Wypłata gotówki w bankomacie innego operatora, a w szczególności za granicą, podlega opłatom wskazanym w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze; w przypadku bankomatów należących do operatora krajowego opłata wynosi 6,00 zł.
 
-[^16]: Limity zdefiniowane przez Użytkownika nie mogą przekraczać kwot wskazanych w tabeli, chyba że Bank zaakceptuje to w odrębnym trybie.
+[^17]: Limity zdefiniowane przez Użytkownika nie mogą przekraczać kwot wskazanych w tabeli, chyba że Bank zaakceptuje to w odrębnym trybie.
 
 <!-- page: 11 -->
 ### § 28.
@@ -394,67 +398,31 @@ w których akceptant został przejęty przez osoby trzecie, o czym Bank powzią�
   - 1\) odrzucić transakcję i przesłać do Użytkownika powiadomienie z prośbą o potwierdzenie;
   - 2\) skontaktować się z Użytkownikiem telefonicznie, nigdy nie żądając podania PIN-u, haseł ani kodów jednorazowych;
   - 3\) czasowo zablokować kartę do czasu wyjaśnienia sprawy.
-- 3\. Użytkownik, który otrzymał z Banku telefon lub wiadomość z prośbą o potwierdzenie transakcji, jest obowiązany zweryfikować prawdziwość kontaktu, kończąc rozmowę i dzwoniąc samodzielnie na numer Infolinii 800 000 001. Pracownik Banku nie prosi o przelanie środków na „bezpieczne konto”, o instalację aplikacji zdalnego dostępu ani o podanie danych karty
+- 3\. Użytkownik, który otrzymał z Banku telefon lub wiadomość z prośbą o potwierdzenie transakcji, jest obowiązany zweryfikować prawdziwość kontaktu, kończąc rozmowę i dzwoniąc samodzielnie na numer Infolinii 800 000 001. Pracownik Banku nie prosi o przelanie środków na „bezpieczne konto”, o instalację aplikacji zdalnego dostępu ani o podanie danych karty <!-- page: 14 --> w rozmowie telefonicznej.[^7]
 
-<!-- page: 14 -->
-w rozmowie telefonicznej. 10 \| 2. \| Rejestracja karty wymaga potwierdzenia silnym
+[^7]: Zasady bezpiecznego korzystania z kart Bank publikuje także na stronie https://bank.example w zakładce poświęconej bezpieczeństwu.
 
-uwierzytelnianiem. Podczas rejestracji dla karty
+## Rozdział 6. Płatności zbliżeniowe i mobilne
 
-tworzony jest odrębny identyfikator (token),
+### § 37.
 
-**Rozdział 6**
-
-który rzeczywisty numer karty nie jest
-
-**Płatności zbliżeniowe i mobilne**
-
-przekazywany akceptantowi. Token jest
-
-powiązany z konkretnym urządzeniem; utrata
-
-**§ 37.** \| urządzenia nie wymaga zastrzegania karty,
-
-jeżeli Użytkownik wyłączy token w bankowości
-
-1\. \| Karta jest standardowo wyposażona w funkcję
-
-zbliżeniową, która umożliwia płatność po
-
-zbliżeniu karty do czytnika terminala bez
-
-konieczności wkładania jej do czytnika. Funkcja
-
-ta zostaje włączona po pierwszej transakcji
-
-z użyciem chipa i PIN-u.
-
-2\. \| Pojedyncza transakcja zbliżeniowa może zostać
-
-wykonana bez wprowadzania PIN-u do kwoty 100,00 zł. Bank wymaga potwierdzenia PIN-em, jeżeli:
-
-- 1\) kwota transakcji przekracza wskazany próg;
-- 2\) łączna kwota kolejnych transakcji zbliżeniowych bez PIN-u przekroczyła 300,00 zł;
-- 3\) liczba kolejnych transakcji zbliżeniowych bez PIN-u wyniosła pięć;
-- 4\) terminal nie obsługuje transakcji zbliżeniowych w trybie bez PIN-u, np. poza granicami kraju.
+- 1\. Karta jest standardowo wyposażona w funkcję zbliżeniową, która umożliwia płatność po zbliżeniu karty do czytnika terminala bez konieczności wkładania jej do czytnika. Funkcja ta zostaje włączona po pierwszej transakcji z użyciem chipa i PIN-u.
+- 2\. Pojedyncza transakcja zbliżeniowa może zostać wykonana bez wprowadzania PIN-u do kwoty 100,00 zł. Bank wymaga potwierdzenia PIN-em, jeżeli:
+  - 1\) kwota transakcji przekracza wskazany próg;
+  - 2\) łączna kwota kolejnych transakcji zbliżeniowych bez PIN-u przekroczyła 300,00 zł;
+  - 3\) liczba kolejnych transakcji zbliżeniowych bez PIN-u wyniosła pięć;
+  - 4\) terminal nie obsługuje transakcji zbliżeniowych w trybie bez PIN-u, np. poza granicami kraju.
 - 3\. Użytkownik może wyłączyć lub ponownie włączyć funkcję zbliżeniową w bankowości elektronicznej albo w placówce. Zmiana nie wymaga wymiany karty. Wyłączenie funkcji nie ma wpływu na możliwość wykonywania transakcji z użyciem chipa i PIN-u lub paska magnetycznego.
 - 4\. Użytkownik przechowuje kartę w sposób ograniczający ryzyko niezamierzonego zbliżenia do czytnika. Bank nie ponosi odpowiedzialności za transakcje zbliżeniowe, do których Użytkownik przyczynił się przez umyślne lub rażąco niedbałe udostępnienie karty.
 
 ### § 38.
 
-1\. Użytkownik może zarejestrować kartę
-
-w portfelu mobilnym udostępnianym przez Bank lub przez dostawcę rozwiązania płatności mobilnych, współpracującego z Bankiem, i płacić za pomocą urządzenia mobilnego. Do jednego urządzenia można dodać karty w liczbie wskazanej w aplikacji, a do jednej karty — pięć urządzeń.
-
-<!-- page: 15 -->
-elektronicznej lub zwróci się o to do Banku.[^7]
-
+- 1\. Użytkownik może zarejestrować kartę w portfelu mobilnym udostępnianym przez Bank lub przez dostawcę rozwiązania płatności mobilnych, współpracującego z Bankiem, i płacić za pomocą urządzenia mobilnego. Do jednego urządzenia można dodać karty w liczbie wskazanej w aplikacji, a do jednej karty — pięć urządzeń.
+- 2\. Rejestracja karty wymaga potwierdzenia silnym uwierzytelnianiem. Podczas rejestracji dla karty tworzony jest odrębny identyfikator (token), który rzeczywisty numer karty nie jest przekazywany akceptantowi. Token jest powiązany z konkretnym urządzeniem; utrata urządzenia nie wymaga zastrzegania karty, jeżeli Użytkownik wyłączy token w bankowości <!-- page: 15 --> elektronicznej lub zwróci się o to do Banku.[^8]
 - 3\. Dzienny limit płatności mobilnych wynosi 5 000,00 zł, o ile Użytkownik nie ustawił limitu niższego. Płatności mobilne podlegają także limitom karty, o których mowa w § 25; wykorzystanie limitu karty zmniejsza kwotę dostępną w płatnościach mobilnych i odwrotnie.
 - 4\. Użytkownik zobowiązany jest zabezpieczyć urządzenie mobilne kodem blokady lub cechą biometryczną oraz nie udostępniać urządzenia osobom trzecim. Jeżeli do zarejestrowania w urządzeniu dodano cechy biometryczne innej osoby, Użytkownik odpowiada za transakcje przez nią wykonane.
 
-[^7]: Usunięcie tokenu z urządzenia nie powoduje zablokowania samej karty ani tokenów zarejestrowanych na innych urządzeniach.
-
-[^17]: Zasady bezpiecznego korzystania z kart Bank publikuje także na stronie https://bank.example w zakładce poświęconej bezpieczeństwu.
+[^8]: Usunięcie tokenu z urządzenia nie powoduje zablokowania samej karty ani tokenów zarejestrowanych na innych urządzeniach.
 
 ### § 39.
 
@@ -550,10 +518,10 @@ a akceptant otrzymał polecenie jej zatrzymania;
   - 2\) nazwę akceptanta, jeżeli jest znana;
   - 3\) opis okoliczności, w szczególności informację o tym, czy karta była w posiadaniu Użytkownika;
   - 4\) wskazanie, czy Użytkownik zgłosił sprawę policji lub innym organom.
-- 3\. Bank przeprowadza postępowanie wyjaśniające i może zażądać od Użytkownika dodatkowych informacji lub dokumentów, a także zawiadomić organy ścigania. Zwrot kwoty zwrotu transakcji nieautoryzowanej następuje <!-- page: 18 --> do końca następnego dnia roboczego po stwierdzeniu transakcji lub otrzymaniu zgłoszenia, chyba że Bank ma uzasadnione i należycie udokumentowane podstawy, by podejrzewać oszustwo, i powiadomi o tym organy ścigania.[^8]
+- 3\. Bank przeprowadza postępowanie wyjaśniające i może zażądać od Użytkownika dodatkowych informacji lub dokumentów, a także zawiadomić organy ścigania. Zwrot kwoty zwrotu transakcji nieautoryzowanej następuje <!-- page: 18 --> do końca następnego dnia roboczego po stwierdzeniu transakcji lub otrzymaniu zgłoszenia, chyba że Bank ma uzasadnione i należycie udokumentowane podstawy, by podejrzewać oszustwo, i powiadomi o tym organy ścigania.[^9]
 - 4\. Przywrócenie rachunku do stanu sprzed transakcji obejmuje również opłaty i odsetki, którymi został obciążony rachunek wskutek tej transakcji. Jeżeli w toku postępowania Bank stwierdzi, że transakcja była autoryzowana, może ponownie obciążyć rachunek, informując o tym Posiadacza.
 
-[^8]: Zasady te nie ograniczają prawa Posiadacza do dochodzenia roszczeń na drodze sądowej ani do skorzystania z pozasądowych metod rozwiązywania sporów.
+[^9]: Zasady te nie ograniczają prawa Posiadacza do dochodzenia roszczeń na drodze sądowej ani do skorzystania z pozasądowych metod rozwiązywania sporów.
 
 ### § 49.
 
@@ -561,12 +529,12 @@ a akceptant otrzymał polecenie jej zatrzymania;
   - 1\) Użytkownik nie mógł stwierdzić utraty, kradzieży lub przywłaszczenia karty przed wykonaniem transakcji, chyba że działał umyślnie;
   - 2\) utrata karty została spowodowana działaniem lub zaniechaniem pracownika Banku albo podmiotu, za który Bank ponosi odpowiedzialność.
 - 2\. Posiadacz ponosi pełną odpowiedzialność za nieautoryzowane transakcje, jeżeli doprowadził do nich umyślnie albo w wyniku umyślnego lub będącego skutkiem rażącego niedbalstwa naruszenia obowiązków określonych w Regulaminie, w szczególności obowiązku ochrony karty, PIN-u i danych uwierzytelniających oraz obowiązku niezwłocznego zgłoszenia utraty karty.
-- 3\. Po zgłoszeniu utraty, kradzieży, przywłaszczenia lub nieuprawnionego użycia karty zgodnie z Regulaminem Posiadacz nie odpowiada za nieautoryzowane transakcje wykonane po zgłoszeniu, chyba że doprowadził do nich umyślnie. Odpowiedzialność ta nie obejmuje także transakcji, w których Bank nie wymagał silnego uwierzytelniania, chyba że Użytkownik działał umyślnie.[^9]
+- 3\. Po zgłoszeniu utraty, kradzieży, przywłaszczenia lub nieuprawnionego użycia karty zgodnie z Regulaminem Posiadacz nie odpowiada za nieautoryzowane transakcje wykonane po zgłoszeniu, chyba że doprowadził do nich umyślnie. Odpowiedzialność ta nie obejmuje także transakcji, w których Bank nie wymagał silnego uwierzytelniania, chyba że Użytkownik działał umyślnie.[^10]
 - 4\. Bank odpowiada wobec Posiadacza za niewykonanie lub nienależyte wykonanie
 
 autoryzowanej transakcji, chyba że wykaże, że rachunek akceptanta został uznany we właściwym terminie, albo że niewykonanie nastąpiło wskutek siły wyższej lub okoliczności, za które ponosi odpowiedzialność inny podmiot.
 
-[^9]: Zakres odpowiedzialności płatnika wynika z przepisów ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); postanowienia umowy nie mogą go zmieniać na niekorzyść konsumenta.
+[^10]: Zakres odpowiedzialności płatnika wynika z przepisów ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); postanowienia umowy nie mogą go zmieniać na niekorzyść konsumenta.
 
 ### § 50.
 
@@ -581,9 +549,9 @@ autoryzowanej transakcji, chyba że wykaże, że rachunek akceptanta został uzn
   - 1\) potwierdzenie zamówienia, rezerwacji lub zakupu;
   - 2\) korespondencję z akceptantem, w której <!-- page: 19 --> Użytkownik próbował rozwiązać sporną kwestię;
   - 3\) dowód odstąpienia od umowy, zwrotu towaru lub rezygnacji z usługi, jeżeli sprawa dotyczy takiego zdarzenia.
-- 3\. Procedura zwrotna jest ograniczona terminami określonymi przez organizację płatniczą, dlatego wniosek należy złożyć niezwłocznie, nie później niż w terminie 120 dni od dnia rozliczenia transakcji. Bank powiadomi Użytkownika o wyniku procedury; jej wszczęcie nie gwarantuje zwrotu środków.[^10]
+- 3\. Procedura zwrotna jest ograniczona terminami określonymi przez organizację płatniczą, dlatego wniosek należy złożyć niezwłocznie, nie później niż w terminie 120 dni od dnia rozliczenia transakcji. Bank powiadomi Użytkownika o wyniku procedury; jej wszczęcie nie gwarantuje zwrotu środków.[^11]
 
-[^10]: Terminy procedury zwrotnej mają charakter zasad organizacji płatniczej; Bank nie ma wpływu na ich wysokość ani na rozstrzygnięcie w stosunkach między bankami.
+[^11]: Terminy procedury zwrotnej mają charakter zasad organizacji płatniczej; Bank nie ma wpływu na ich wysokość ani na rozstrzygnięcie w stosunkach między bankami.
 
 ### § 52.
 
@@ -607,20 +575,20 @@ zaniechania zostaną wykonane kolejne transakcje, Bank może uznać, że za tran
   - 1\) występuje do banku akceptanta lub odbiorcy z żądaniem zwrotu środków;
   - 2\) przekazuje informacje o oszustwie organom ścigania;
   - 3\) blokuje kartę i wydaje nową.
-- 3\. Bank nie gwarantuje odzyskania środków. Jeżeli Użytkownik naruszył obowiązki określone w Regulaminie, w szczególności ujawnił PIN lub dane uwierzytelniające osobie trzeciej, Bank może uznać, że do transakcji doszło wskutek rażącego niedbalstwa Użytkownika; ocena następuje w każdym przypadku indywidualnie, <!-- page: 20 --> z uwzględnieniem okoliczności zdarzenia.[^11]
+- 3\. Bank nie gwarantuje odzyskania środków. Jeżeli Użytkownik naruszył obowiązki określone w Regulaminie, w szczególności ujawnił PIN lub dane uwierzytelniające osobie trzeciej, Bank może uznać, że do transakcji doszło wskutek rażącego niedbalstwa Użytkownika; ocena następuje w każdym przypadku indywidualnie, <!-- page: 20 --> z uwzględnieniem okoliczności zdarzenia.[^12]
 
-[^11]: Bank prowadzi kampanię informacyjną dotyczącą aktualnych oszustw; materiały są dostępne na stronie https://bank.example.
+[^12]: Bank prowadzi kampanię informacyjną dotyczącą aktualnych oszustw; materiały są dostępne na stronie https://bank.example.
 
 ## Rozdział 9. Rozliczanie transakcji walutowych
 
 ### § 55.
 
 - 1\. Rachunek, do którego wydano kartę, jest prowadzony w złotych polskich. Transakcje dokonane w innej walucie niż złoty są rozliczane przez organizację płatniczą w walucie rozliczeniowej, a następnie przeliczane przez Bank na złote.
-- 2\. Przeliczenie transakcji w walucie obcej na złote następuje według kursu obowiązującego w tabeli kursów walut Banku, ogłaszanej w dniu rozliczenia transakcji o godzinie 9:00, powiększonego o marżę przeliczeniową w wysokości 1,5%.[^12] Jeżeli transakcja jest rozliczana w walucie innej niż euro lub dolar amerykański, organizacja płatnicza może dokonać najpierw przeliczenia na walutę rozliczeniową, co wpływa na ostateczną kwotę obciążenia.
+- 2\. Przeliczenie transakcji w walucie obcej na złote następuje według kursu obowiązującego w tabeli kursów walut Banku, ogłaszanej w dniu rozliczenia transakcji o godzinie 9:00, powiększonego o marżę przeliczeniową w wysokości 1,5%.[^13] Jeżeli transakcja jest rozliczana w walucie innej niż euro lub dolar amerykański, organizacja płatnicza może dokonać najpierw przeliczenia na walutę rozliczeniową, co wpływa na ostateczną kwotę obciążenia.
 - 3\. Przy płatnościach za granicą akceptant lub operator bankomatu może zaproponować dokonanie transakcji w złotych według własnego kursu (usługa dynamicznej konwersji walut). Wybór tej opcji oznacza, że kurs ustala podmiot trzeci, a nie Bank; Bank nie ponosi odpowiedzialności za jego wysokość. Użytkownik, który chce skorzystać z kursu Banku, powinien odmówić przeliczenia i wybrać płatność w walucie lokalnej.
 - 4\. Informacja o wysokości kursu zastosowanego do transakcji oraz o łącznej kwocie obciążenia jest prezentowana w historii rachunku. Na wniosek Użytkownika Bank udostępnia zestawienie transakcji walutowych na trwałym nośniku, a także informacje o łącznej wysokości opłat za przeliczenie, wyrażonej jako odsetek ostatniego kursu referencyjnego Europejskiego Banku Centralnego dla danej waluty, w wiadomości przekazywanej po pierwszej płatności w walucie państwa Unii Europejskiej innej niż złoty.
 
-[^12]: Kurs przeliczeniowy Banku w dniu dokonania transakcji może różnić się od kursu w dniu jej rozliczenia; różnice kursowe obciążają Posiadacza.
+[^13]: Kurs przeliczeniowy Banku w dniu dokonania transakcji może różnić się od kursu w dniu jej rozliczenia; różnice kursowe obciążają Posiadacza.
 
 ### § 56.
 
@@ -640,46 +608,83 @@ Banku, dostępnej w placówkach, w bankowości elektronicznej i na stronie https
 
 ### § 58.
 
-- 1\. Zwrot transakcji dokonanej w walucie obcej jest przeliczany na złote według kursu <!-- page: 21 --> obowiązującego w dniu rozliczenia zwrotu, a nie w dniu pierwotnej transakcji. W konsekwencji kwota zwrotu może być niższa lub wyższa niż kwota pierwotnie obciążona.
-- 2\. Jeżeli transakcja walutowa została anulowana przed rozliczeniem, blokada środków jest zwalniana w złotych, w kwocie, w jakiej została założona, bez zastosowania kursu rozliczeniowego.
+- 1\. Zwrot transakcji dokonanej w walucie obcej jest przeliczany na złote według kursu <!-- page: 21 --> obowiązującego w dniu rozliczenia zwrotu,
+
+4\.
+
+a nie w dniu pierwotnej transakcji.
+
+W konsekwencji kwota zwrotu może być niższa lub wyższa niż kwota pierwotnie obciążona.
+
+- 2\. Jeżeli transakcja walutowa została anulowana przed rozliczeniem, blokada środków jest zwalniana w złotych, w kwocie, w jakiej została założona, bez zastosowania kursu 1. rozliczeniowego.
 - 3\. W historii rachunku Bank podaje kwotę transakcji w walucie oryginalnej, kwotę w złotych oraz — jeżeli to technicznie możliwe — zastosowany kurs. Dane te Użytkownik wykorzystuje przy ewentualnym wnioskowaniu o wyjaśnienie transakcji.
 
-## Rozdział 10. Opłaty
-
-### § 59.
-
-- 1\. Za czynności związane z wydaniem i używaniem karty Bank pobiera opłaty i prowizje w wysokości określonej w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze, obowiązującej w dniu dokonania czynności. W dniu wejścia w życie Regulaminu opłaty te wynoszą w szczególności:
-  - 1\) wydanie karty — 0,00 zł;
-  - 2\) prowadzenie karty (opłata miesięczna) — 6,00 zł;
-  - 3\) wydanie duplikatu karty — 30,00 zł;
-  - 4\) zmiana PIN-u — 5,00 zł;
-  - 5\) wypłata gotówki w bankomacie innego operatora — 6,00 zł;
-  - 6\) wypłata gotówki w bankomacie za granicą — 10,00 zł.
-- 2\. Opłata miesięczna za kartę jest pobierana z rachunku w ostatnim dniu miesiąca kalendarzowego, a w razie braku środków — w dniu ich wpływu, wraz z odsetkami za opóźnienie wynikającymi z zadłużenia. Pierwsza opłata jest pobierana za miesiąc, w którym karta została aktywowana.[^13]
-- 3\. Bank nie pobiera opłat za zastrzeżenie karty, powiadomienia o transakcjach wysyłane do aplikacji mobilnej oraz za odrzucone transakcje. Za wiadomości SMS Bank pobiera opłatę zgodnie z umową rachunku.
-- 4\. Niezależnie od opłat Banku operatorzy bankomatów i akceptanci są uprawnieni do pobierania własne prowizje, o których informują przed wykonaniem transakcji. Bank nie ma wpływu na ich wysokość.
-
-[^13]: Jeżeli karta została wydana w trakcie miesiąca, opłata miesięczna za pierwszy miesiąc nie jest naliczana proporcjonalnie, chyba że umowa o kartę stanowi inaczej.
+Niezależnie od opłat Banku operatorzy bankomatów i akceptanci są uprawnieni do pobierania własne prowizje, o których informują przed wykonaniem transakcji. Bank nie ma wpływu na ich wysokość.
 
 ### § 60.
 
-- 1\. Zestawienie wybranych opłat związanych z obsługą karty, obowiązujących w dniu wejścia w życie Regulaminu, przedstawia tabela. W razie rozbieżności między zestawieniem a Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze rozstrzygają postanowienia Taryfy.
+Zestawienie wybranych opłat związanych z obsługą karty, obowiązujących w dniu wejścia w życie Regulaminu, przedstawia tabela. W razie rozbieżności między zestawieniem a Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze rozstrzygają postanowienia Taryfy.
 
-### Czynność Opłata
+| **Czynność** | **Opłata** |
+| --- | --- |
+| Wydanie karty | 0,00 zł |
+| Opłata miesięczna za kartę | 6,00 zł |
+| Wydanie karty w trybie pilnym | 70,00 zł |
+| Duplikat karty | 30,00 zł |
+| Zastrzeżenie karty | 0,00 zł |
+| Wypłata w bankomacie obcym w kraju | 6,00 zł |
+| Wypłata w bankomacie za granicą | 10,00 zł |
 
-Wydanie karty 0,00 zł
+## Rozdział 10
 
-Opłata miesięczna za kartę 6,00 zł Wydanie karty w trybie pilnym 70,00 zł Duplikat karty 30,00 zł Zastrzeżenie karty 0,00 zł
+**Opłaty**
 
-Wypłata w bankomacie obcym w kraju 6,00 zł Wypłata w bankomacie za granicą 10,00 zł
+### § 59.
 
-- 2\. Wskazane kwoty są podane w złotych polskich i obejmują wszystkie opłaty pobierane przez Bank. Opłaty operatorów bankomatów i akceptantów nie są tu uwzględnione.
+- 1\. Za czynności związane z wydaniem i używaniem karty Bank pobiera opłaty i prowizje
+
+w wysokości określonej w Bank Przykładowy
+
+S.A. — Taryfa opłat i prowizji za karty płatnicze, obowiązującej w dniu dokonania czynności.
+
+W dniu wejścia w życie Regulaminu opłaty te wynoszą w szczególności:
+
+2\.
+
+- 1\) wydanie karty — 0,00 zł;
+- 2\) prowadzenie karty (opłata miesięczna) — 6,00 zł;
+- 3\) wydanie duplikatu karty — 30,00 zł;
+- 4\) zmiana PIN-u — 5,00 zł;
+- 5\) wypłata gotówki w bankomacie innego
+
+1\.
+
+operatora — 6,00 zł;
+
+- 6\) wypłata gotówki w bankomacie za granicą — 10,00 zł.
+- 2\. Opłata miesięczna za kartę jest pobierana z rachunku w ostatnim dniu miesiąca kalendarzowego, a w razie braku środków — w dniu ich wpływu, wraz z odsetkami za opóźnienie wynikającymi z zadłużenia. Pierwsza
+
+2\.
+
+opłata jest pobierana za miesiąc, w którym karta została aktywowana.[^14]
+
+- 3\. Bank nie pobiera opłat za zastrzeżenie karty, powiadomienia o transakcjach wysyłane do aplikacji mobilnej oraz za odrzucone transakcje. Za wiadomości SMS Bank pobiera opłatę
+
+3\.
+
+zgodnie z umową rachunku.
+
+Wskazane kwoty są podane w złotych polskich i obejmują wszystkie opłaty pobierane przez Bank. Opłaty operatorów bankomatów i akceptantów nie są tu uwzględnione.
+
+[^14]: Jeżeli karta została wydana w trakcie miesiąca, opłata miesięczna za pierwszy miesiąc nie jest naliczana proporcjonalnie, chyba że umowa o kartę stanowi inaczej.
 
 ### § 61.
 
-- 1\. Bank pobiera opłaty z rachunku, do którego wydano kartę, w dniu wykonania czynności lub w terminach wskazanych w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze. Jeżeli na rachunku nie ma wystarczających środków, Bank może pobrać opłatę w dniu ich wpływu, powodując powstanie zadłużenia przeterminowanego.
-- 2\. Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie w wysokości 17% w stosunku rocznym. Za wezwanie do zapłaty Bank pobiera opłatę 15,00 zł, o ile poprzednie wezwanie nie zostało wysłane w ciągu ostatnich 30 dni.
-- 3\. Zmiana wysokości opłat następuje na zasadach określonych w postanowieniach o zmianie Regulaminu. Bank zwraca Posiadaczowi opłatę <!-- page: 22 --> pobraną nienależnie, w terminie 14 dni od dnia stwierdzenia błędu albo otrzymania żądania Posiadacza.
+Bank pobiera opłaty z rachunku, do którego wydano kartę, w dniu wykonania czynności lub w terminach wskazanych w Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze. Jeżeli na rachunku nie ma wystarczających środków, Bank może pobrać opłatę w dniu ich wpływu, powodując powstanie zadłużenia przeterminowanego.
+
+Od zadłużenia przeterminowanego Bank nalicza odsetki za opóźnienie w wysokości 17% w stosunku rocznym. Za wezwanie do zapłaty Bank pobiera opłatę 15,00 zł, o ile poprzednie wezwanie nie zostało wysłane w ciągu ostatnich 30 dni.
+
+Zmiana wysokości opłat następuje na zasadach określonych w postanowieniach o zmianie Regulaminu. Bank zwraca Posiadaczowi opłatę <!-- page: 22 --> pobraną nienależnie, w terminie 14 dni od dnia stwierdzenia błędu albo otrzymania żądania Posiadacza.
 
 ## Rozdział 11. Ważność, wznowienie i rezygnacja
 

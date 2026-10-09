@@ -497,36 +497,29 @@ opóźnienie.
 ### § 64.
 
 - 1\. Okres bezodsetkowy nie przysługuje w przypadku, gdy Klient nie spłacił w terminie pełnej kwoty zadłużenia z poprzedniego zestawienia. W takiej sytuacji odsetki są naliczane również od transakcji dokonanych w bieżącym cyklu rozliczeniowym, począwszy od dnia ich dokonania, aż do czasu spłaty całego zadłużenia.
-- 2\. Okres bezodsetkowy odnawia się po spłacie
+- 2\. Okres bezodsetkowy odnawia się po spłacie pełnego zadłużenia wykazanego w zestawieniu. Klient odzyskuje prawo do bezodsetkowego okresu dla transakcji dokonanych w kolejnym cyklu rozliczeniowym, począwszy od cyklu następującego po cyklu, w którym spłacił całe zadłużenie.
+- 3\. Zmiana długości okresu bezodsetkowego na niekorzyść Klienta wymaga powiadomienia go z wyprzedzeniem wskazanym w postanowieniach o zmianie oprocentowania.
+
+### Zestawienie podstawowych warunków finansowych karty
+
+| **Rodzaj warunku** | **Wartość** |
+| --- | --- |
+| Oprocentowanie transakcji bezgotówkowych (w skali roku) | 19,9% |
+| Oprocentowanie wypłat gotówki (w skali roku) | 23,9% |
+| Odsetki za opóźnienie (w skali roku) | 17% |
+| Maksymalny okres bezodsetkowy | 50 dni |
+| Minimalna kwota do zapłaty | 5% salda, nie mniej niż 50,00 zł |
+| Roczna opłata za kartę | 99,00 zł |
 
 ### § 65.
 
 - 1\. Do obliczania odsetek stosuje się następujący sposób: kwotę odsetek za dany dzień uzyskuje się, mnożąc saldo zadłużenia na koniec dnia przez roczną stopę procentową i dzieląc przez liczbę dni w roku. Odsetki za cykl rozliczeniowy są sumą odsetek dziennych.
 - 2\. Jeżeli w cyklu rozliczeniowym do rachunku karty zaksięgowano transakcje z okresem bezodsetkowym oraz transakcje gotówkowe, odsetki dla poszczególnych rodzajów transakcji naliczane są oddzielnie i wykazywane w zestawieniu w osobnych pozycjach.
-- 3\. Odsetki za opóźnienie naliczane są od kwoty zadłużenia przeterminowanego, od dnia następującego po upływie terminu spłaty do dnia spłaty, nie więcej niż w wysokości ustawowych odsetek maksymalnych za opóźnienie. pełnego zadłużenia wykazanego w zestawieniu. Klient odzyskuje prawo do bezodsetkowego okresu dla transakcji dokonanych w kolejnym cyklu rozliczeniowym, począwszy od cyklu następującego po cyklu, w którym spłacił całe zadłużenie.
-
-3\. Zmiana długości okresu bezodsetkowego na
-
-niekorzyść Klienta wymaga powiadomienia go z wyprzedzeniem wskazanym
+- 3\. Odsetki za opóźnienie naliczane są od kwoty zadłużenia przeterminowanego, od dnia następującego po upływie terminu spłaty do dnia spłaty, nie więcej niż w wysokości ustawowych odsetek maksymalnych za opóźnienie.
 
 ### § 66.
 
-- 1\. Rzeczywista roczna stopa oprocentowania (RRSO) wyraża całkowity koszt kredytu ponoszony przez Klienta w stosunku rocznym i obejmuje odsetki, opłaty, prowizje oraz inne koszty, które Klient jest obowiązany ponieść w związku z umową. Dla reprezentatywnego przykładu, w którym całkowita kwota kredytu w postanowieniach o zmianie oprocentowania.
-
-### Zestawienie podstawowych warunków finansowych karty
-
-### Rodzaj warunku Wartość
-
-Oprocentowanie transakcji 19,9% bezgotówkowych (w skali roku) Oprocentowanie wypłat 23,9% gotówki (w skali roku) Odsetki za opóźnienie (w skali 17% roku)
-
-Maksymalny okres 50 dni bezodsetkowy Minimalna kwota do zapłaty 5% salda, nie mniej
-
-niż 50,00 zł
-
-Roczna opłata za kartę 99,00 zł
-
-wynosi 5 000,00 zł, a kredyt jest wykorzystany w całości na dzień zawarcia umowy, RRSO wynosi 26,4%.
-
+- 1\. Rzeczywista roczna stopa oprocentowania (RRSO) wyraża całkowity koszt kredytu ponoszony przez Klienta w stosunku rocznym i obejmuje odsetki, opłaty, prowizje oraz inne koszty, które Klient jest obowiązany ponieść w związku z umową. Dla reprezentatywnego przykładu, w którym całkowita kwota kredytu wynosi 5 000,00 zł, a kredyt jest wykorzystany w całości na dzień zawarcia umowy, RRSO wynosi 26,4%.
 - 2\. Do wyliczenia RRSO przyjęto założenie, że umowa obowiązuje przez 12 miesięcy, Klient dokonuje transakcji bezgotówkowych oprocentowanych według stawki 19,9%, a roczna opłata za kartę wynosi 99,00 zł. Rzeczywista wartość RRSO może się różnić w zależności od sposobu korzystania z karty.
 - 3\. Całkowitą kwotę do zapłaty i całkowity koszt kredytu Bank przedstawia Klientowi w formularzu informacyjnym oraz w umowie.
 
