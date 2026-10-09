@@ -263,6 +263,50 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("| Poniższe opłaty", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T083d: after a gridless tariff come its notes „1) …”, the next section heading „III. …” (larger bold), a paragraph
+    /// and the next table: the notes and the paragraph are text, the heading is a heading, and there are two tables.
+    /// </summary>
+    [Fact]
+    public async Task TextBetweenTwoGridlessTables_IsNotPartOfThem()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 60, "Taryfa opłat dla firm", 18, bold: true);
+        b.Text(Left, 95, "II. Mikroprzedsiębiorstwa", 13, bold: true);
+        double y = GridlessTariff(b, 125,
+        [
+            ("1.", ["Prowadzenie rachunku bieżącego 1)"], ["miesięcznie"], "29,00 zł"),
+            ("2.", ["Prowadzenie rachunku pomocniczego"], ["miesięcznie"], "5,00 zł"),
+            ("3.", ["Przelew elektroniczny do innego banku"], ["za przelew"], "0,50 zł"),
+        ]);
+        b.Text(Left, y, "1) Opłata nie jest pobierana w pierwszych trzech miesiącach od otwarcia rachunku bieżącego", 8.5);
+        b.Text(Left, y + 11, "i w miesiącach, w których wpływy na rachunek przekroczyły 10 000,00 zł.", 8.5);
+        y += 11 + 8 + 10 + 18;
+        b.Text(Left, y, "III. Małe i średnie przedsiębiorstwa", 13, bold: true);
+        y += 13 * 1.35 + 9;
+        b.Text(Left, y, "Do segmentu należą Klienci zatrudniający średniorocznie od 10 do 249 pracowników, których", Size);
+        b.Text(Left, y + 13.5, "roczny obrót netto nie przekracza równowartości 50 milionów euro.", Size);
+        y += 13.5 + 13.5 + 8 + 10;
+        y = GridlessTariff(b, y,
+        [
+            ("4.", ["Rachunek bieżący w pakiecie MSP"], ["miesięcznie"], "39,00 zł"),
+            ("5.", ["Rachunek pomocniczy (kolejny)"], ["miesięcznie"], "8,00 zł"),
+        ]);
+        Body(b, y + 30, 6);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t083d.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("## III. Małe i średnie przedsiębiorstwa", md, StringComparison.Ordinal);
+        Assert.Equal(2, md.Split('\n').Count(l => l.StartsWith("| **Lp.**", StringComparison.Ordinal)));
+        Assert.Contains("| 3. | Przelew elektroniczny do innego banku | za przelew | 0,50 zł |\n\n", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| Do segmentu", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| 1) Opłata", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
