@@ -4,15 +4,17 @@ fakty:
     rodzaj: tekst
     wartosci:
       - wartosc: "ul. Przykładowa 1, 00-001 Warszawa"
-    alternatywy: ["ul. Przykładowa 15, 00-002 Warszawa"]
+    alternatywy: ["ul. Przykładowa 15, 00-002 Warszawa", "ul. Przykładowa 7, 00-003 Warszawa"]
   - id: bank.krs
     rodzaj: tekst
     wartosci:
       - wartosc: "0000000000"
+    alternatywy: ["0000000001", "0000000002"]
   - id: bank.nip
     rodzaj: tekst
     wartosci:
       - wartosc: "000-000-00-00"
+    alternatywy: ["000-000-00-01", "000-000-00-02"]
   - id: bank.regon
     rodzaj: tekst
     wartosci:
@@ -21,7 +23,7 @@ fakty:
     rodzaj: tekst
     wartosci:
       - wartosc: "https://bank.example"
-    alternatywy: ["https://bank-przyklad.invalid"]
+    alternatywy: ["https://bank-przyklad.invalid", "https://www.bank.example"]
   - id: bank.kapital-zakladowy
     rodzaj: kwota
     wartosci:
@@ -35,138 +37,165 @@ fakty:
     rodzaj: tekst
     wartosci:
       - wartosc: "800 000 001"
-    alternatywy: ["800 000 099"]
+    alternatywy: ["800 000 099", "800 000 100"]
   - id: kontakt.infolinia-zastrzezenia
     rodzaj: tekst
     wartosci:
       - wartosc: "800 000 002"
-    alternatywy: ["800 000 098"]
+    alternatywy: ["800 000 098", "800 000 096"]
   - id: kontakt.infolinia-zagranica
     rodzaj: tekst
     wartosci:
       - wartosc: "+48 800 000 003"
+    alternatywy: ["+48 800 000 097", "+48 22 000 00 03"]
   - id: kontakt.godziny-infolinii
     rodzaj: tekst
     wartosci:
       - wartosc: "codziennie przez całą dobę"
       - od: 2026-04-01
         wartosc: "w dni robocze od 7:00 do 21:00"
-    alternatywy: ["w dni robocze od 8:00 do 18:00"]
+    alternatywy: ["w dni robocze od 8:00 do 18:00", "codziennie od 6:00 do 22:00"]
   - id: kontakt.email-reklamacje
     rodzaj: tekst
     wartosci:
       - wartosc: "reklamacje@bank.example"
-    alternatywy: ["skargi@bank.example"]
+    alternatywy: ["skargi@bank.example", "reklamacje@bank-przyklad.example"]
   - id: kontakt.email-iod
     rodzaj: tekst
     wartosci:
       - wartosc: "iod@bank.example"
+    alternatywy: ["inspektor@bank.example", "dane-osobowe@bank.example"]
   - id: kontakt.adres-korespondencyjny
     rodzaj: tekst
     wartosci:
       - wartosc: "Bank Przykładowy S.A., Biuro Reklamacji, ul. Przykładowa 1, 00-001 Warszawa"
-    alternatywy: ["Bank Przykładowy S.A., skrytka pocztowa 100, 00-950 Warszawa"]
+    alternatywy: ["Bank Przykładowy S.A., skrytka pocztowa 100, 00-950 Warszawa", "Bank Przykładowy S.A., Departament Obsługi Klienta, ul. Przykładowa 1, 00-001 Warszawa"]
 
   # --- jednostki organizacyjne
   - id: jednostka.zarzad
     rodzaj: tekst
     wartosci:
       - wartosc: "Zarząd Banku"
+    alternatywy: ["Zarząd Banku Przykładowego", "Zarząd Spółki"]
   - id: jednostka.zgodnosc
     rodzaj: tekst
     wartosci:
       - wartosc: "Departament Zgodności"
-    alternatywy: ["Biuro Zgodności"]
+    alternatywy: ["Biuro Zgodności", "Departament Compliance"]
   - id: jednostka.operacje
     rodzaj: tekst
     wartosci:
       - wartosc: "Departament Operacji"
-    alternatywy: ["Departament Operacji Bankowych"]
+    alternatywy: ["Departament Operacji Bankowych", "Centrum Operacji"]
   - id: jednostka.reklamacje
     rodzaj: tekst
     wartosci:
       - wartosc: "Biuro Reklamacji"
-    alternatywy: ["Zespół Reklamacji"]
+    alternatywy: ["Zespół Reklamacji", "Departament Reklamacji"]
   - id: jednostka.bezpieczenstwo
     rodzaj: tekst
     wartosci:
       - wartosc: "Departament Bezpieczeństwa"
+    alternatywy: ["Departament Bezpieczeństwa Informacji", "Biuro Bezpieczeństwa"]
   - id: jednostka.ryzyko
     rodzaj: tekst
     wartosci:
       - wartosc: "Departament Ryzyka"
+    alternatywy: ["Departament Zarządzania Ryzykiem", "Biuro Ryzyka"]
   - id: jednostka.prawny
     rodzaj: tekst
     wartosci:
       - wartosc: "Departament Prawny"
+    alternatywy: ["Departament Prawny i Regulacji", "Biuro Prawne"]
   - id: jednostka.iod
     rodzaj: tekst
     wartosci:
       - wartosc: "Inspektor Ochrony Danych"
+    alternatywy: ["Inspektor Ochrony Danych Osobowych", "Zespół Ochrony Danych"]
   - id: jednostka.obsluga-klienta
     rodzaj: tekst
     wartosci:
       - wartosc: "Departament Obsługi Klienta"
-    alternatywy: ["Centrum Obsługi Klienta"]
+    alternatywy: ["Centrum Obsługi Klienta", "Biuro Obsługi Klienta"]
 
   # --- terminy
   - id: termin.reklamacja.rozpatrzenie
     rodzaj: termin
     wartosci:
       - wartosc: 15
+      - od: 2025-02-01
+        wartosc: 12
     alternatywy: [30, 14]
   - id: termin.reklamacja.przedluzenie
     rodzaj: termin
     wartosci:
       - wartosc: 35
-    alternatywy: [45]
+      - od: 2025-05-01
+        wartosc: 40
+    alternatywy: [45, 28]
   - id: termin.reklamacja.platnicze
     rodzaj: termin
     wartosci:
       - wartosc: 15
-    alternatywy: [30]
+      - od: 2024-09-01
+        wartosc: 14
+    alternatywy: [30, 10]
   - id: termin.reklamacja.inne
     rodzaj: termin
     wartosci:
       - wartosc: 30
+      - od: 2025-01-01
+        wartosc: 25
     alternatywy: [14, 21]
   - id: termin.reklamacja.maksymalny
     rodzaj: termin
     wartosci:
       - wartosc: 60
-    alternatywy: [90]
+      - od: 2025-03-01
+        wartosc: 45
+    alternatywy: [90, 120]
   - id: termin.zmiana-regulaminu
     rodzaj: termin
     wartosci:
       - wartosc: 60
       - od: 2027-01-01
         wartosc: 30
-    alternatywy: [14]
+    alternatywy: [14, 45]
   - id: termin.odstapienie-od-umowy
     rodzaj: termin
     wartosci:
       - wartosc: 14
-    alternatywy: [30]
+      - od: 2025-07-01
+        wartosc: 21
+    alternatywy: [30, 7]
   - id: termin.wypowiedzenie-przez-klienta
     rodzaj: termin
     wartosci:
       - wartosc: 30
+      - od: 2024-10-01
+        wartosc: 21
     alternatywy: [14, 60]
   - id: termin.wypowiedzenie-przez-bank
     rodzaj: termin
     wartosci:
       - wartosc: 60
-    alternatywy: [30]
+      - od: 2025-09-01
+        wartosc: 90
+    alternatywy: [30, 45]
   - id: termin.doreczenie-korespondencji
     rodzaj: termin
     wartosci:
       - wartosc: 14
+      - od: 2025-01-01
+        wartosc: 10
     alternatywy: [7, 21]
   - id: termin.zwrot-oplat
     rodzaj: termin
     wartosci:
       - wartosc: 14
-    alternatywy: [30]
+      - od: 2024-12-01
+        wartosc: 10
+    alternatywy: [30, 7]
 
   # --- opłaty ogólne
   - id: oplata.zaswiadczenie
@@ -180,6 +209,8 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 30.00
+      - od: 2024-07-01
+        wartosc: 35.00
     alternatywy: [0.00, 50.00]
   - id: oplata.wyciag-papierowy
     rodzaj: kwota
@@ -187,7 +218,7 @@ fakty:
       - wartosc: 10.00
       - od: 2026-04-01
         wartosc: 12.00
-    alternatywy: [0.00]
+    alternatywy: [0.00, 15.00]
   - id: oplata.przelew-zewnetrzny-placowka
     rodzaj: kwota
     wartosci:
@@ -199,27 +230,40 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 5.00
+      - od: 2024-05-01
+        wartosc: 4.00
+      - od: 2026-02-01
+        wartosc: 3.50
     alternatywy: [0.00, 9.00]
   - id: oplata.wplata-gotowkowa
     rodzaj: kwota
     wartosci:
       - wartosc: 3.00
-    alternatywy: [0.00]
+      - od: 2024-06-01
+        wartosc: 3.50
+    alternatywy: [0.00, 5.00]
   - id: oplata.powiadomienie-sms
     rodzaj: kwota
     wartosci:
       - wartosc: 2.00
       - od: 2026-04-01
         wartosc: 3.00
+    alternatywy: [1.00, 4.00]
   - id: oplata.upomnienie
     rodzaj: kwota
     wartosci:
       - wartosc: 15.00
-    alternatywy: [25.00]
+      - od: 2024-03-01
+        wartosc: 18.00
+      - od: 2025-09-01
+        wartosc: 20.00
+    alternatywy: [25.00, 30.00]
   - id: oplata.karta.zastrzezenie
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
+      - od: 2025-08-01
+        wartosc: 10.00
     alternatywy: [25.00, 30.00]
   - id: oplata.karta.wydanie-duplikatu
     rodzaj: kwota
@@ -272,21 +316,25 @@ fakty:
     rodzaj: procent
     wartosci:
       - wartosc: 0.1
-    alternatywy: [1.0]
+      - od: 2024-04-01
+        wartosc: 0.2
+      - od: 2025-10-01
+        wartosc: 0.15
+    alternatywy: [1.0, 0.5]
   - id: oprocentowanie.debet
     rodzaj: procent
     wartosci:
       - wartosc: 18.5
       - od: 2027-01-01
         wartosc: 17.5
-    alternatywy: [24.0]
+    alternatywy: [24.0, 15.0]
   - id: oprocentowanie.odsetki-za-opoznienie
     rodzaj: procent
     wartosci:
       - wartosc: 17.0
       - od: 2027-01-01
         wartosc: 16.5
-    alternatywy: [20.0]
+    alternatywy: [20.0, 14.0]
 
   # --- limity
   - id: limit.karta.dzienny-gotowkowy
@@ -319,7 +367,7 @@ fakty:
     rodzaj: tekst
     wartosci:
       - wartosc: "równowartość 100 000 euro"
-    alternatywy: ["równowartość 50 000 euro"]
+    alternatywy: ["równowartość 50 000 euro", "równowartość 150 000 euro"]
   - id: rzecznik.strona
     rodzaj: tekst
     wartosci:
@@ -331,12 +379,16 @@ fakty:
     rodzaj: procent
     wartosci:
       - wartosc: 1.5
-    alternatywy: [2.5]
+      - od: 2025-04-01
+        wartosc: 1.3
+    alternatywy: [2.5, 3.0]
   - id: kurs.godzina-tabeli
     rodzaj: tekst
     wartosci:
       - wartosc: "9:00"
-    alternatywy: ["15:00"]
+      - od: 2025-09-01
+        wartosc: "8:30"
+    alternatywy: ["15:00", "11:00"]
   - id: data.wejscie-w-zycie-regulaminow
     rodzaj: data
     wartosci:

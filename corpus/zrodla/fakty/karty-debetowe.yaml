@@ -4,6 +4,8 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
+      - od: 2025-04-01
+        wartosc: 10.00
     alternatywy: [15.00, 20.00]
   - id: oplata.karta-debetowa.prowadzenie-miesieczna
     rodzaj: kwota
@@ -23,6 +25,8 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 5.00
+      - od: 2024-11-01
+        wartosc: 6.00
     alternatywy: [0.00, 10.00]
   - id: oplata.karta-debetowa.wyplata-bankomat-zagranica
     rodzaj: kwota
@@ -35,7 +39,9 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
-    alternatywy: [1.00]
+      - od: 2024-10-01
+        wartosc: 0.50
+    alternatywy: [1.00, 2.00]
   # --- limity
   - id: limit.karta-debetowa.zblizeniowy-bez-pin
     rodzaj: kwota

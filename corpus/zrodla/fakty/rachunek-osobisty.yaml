@@ -90,17 +90,23 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 1.50
+      - od: 2025-05-01
+        wartosc: 2.00
     alternatywy: [0.00, 3.00]
   - id: oplata.rachunek-osobisty.pelnomocnictwo
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
-    alternatywy: [20.00]
+      - od: 2024-12-01
+        wartosc: 10.00
+    alternatywy: [20.00, 30.00]
   - id: oplata.rachunek-osobisty.dyspozycja-smierci
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
-    alternatywy: [40.00]
+      - od: 2025-03-01
+        wartosc: 10.00
+    alternatywy: [40.00, 60.00]
   - id: oplata.rachunek-osobisty.odpis-wyciagu
     rodzaj: kwota
     wartosci:
@@ -124,12 +130,18 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 35.00
+      - od: 2024-08-01
+        wartosc: 38.00
+      - od: 2026-01-01
+        wartosc: 40.00
     alternatywy: [25.00, 50.00]
   - id: oplata.rachunek-osobisty.zamkniecie
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
-    alternatywy: [50.00]
+      - od: 2026-05-01
+        wartosc: 10.00
+    alternatywy: [50.00, 30.00]
   # --- limity
   - id: limit.rachunek-osobisty.wplata-wyjasnienia
     rodzaj: kwota
@@ -147,6 +159,8 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 10000.00
+      - od: 2025-02-01
+        wartosc: 15000.00
     alternatywy: [5000.00, 20000.00]
   - id: limit.rachunek-osobisty.zblizeniowa-bez-pin
     rodzaj: kwota

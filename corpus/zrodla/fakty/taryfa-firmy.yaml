@@ -67,6 +67,10 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 80.00
+      - od: 2024-09-01
+        wartosc: 90.00
+      - od: 2026-03-01
+        wartosc: 100.00
     alternatywy: [60.00, 120.00]
   - id: oplata.firma.potwierdzenie-salda-audyt
     rodzaj: kwota
@@ -109,7 +113,9 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 0.00
-    alternatywy: [0.20]
+      - od: 2025-06-01
+        wartosc: 0.10
+    alternatywy: [0.20, 0.50]
   - id: oplata.firma.paczka-przelewow
     rodzaj: kwota
     wartosci:
@@ -197,6 +203,8 @@ fakty:
     rodzaj: kwota
     wartosci:
       - wartosc: 6.00
+      - od: 2025-01-01
+        wartosc: 7.00
     alternatywy: [3.00, 10.00]
   - id: oplata.firma.wyplata-gotowkowa-prowizja
     rodzaj: procent
