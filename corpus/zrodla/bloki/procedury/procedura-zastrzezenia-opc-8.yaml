@@ -1,0 +1,243 @@
+bloki:
+  - id: zastrzezenia-b-odp-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Pracownik archiwum** {odpowiada za|zajmuje się} przyjmowanie i przechowywanie dokumentacji zgłoszeń w postaci papierowej, a w szczególności:"
+        punkty:
+          - "{przyjmuje|odbiera} akta sprawy od właściwej jednostki po sprawdzeniu ich kompletności względem wykazu dołączonego do przekazania;"
+          - "nadaje pudełkom archiwalnym numery i wprowadza ich lokalizację do ewidencji, tak aby każde zgłoszenie można było odnaleźć w ciągu jednego dnia roboczego;"
+          - "wydaje dokumenty wyłącznie osobom upoważnionym, na podstawie zapisu w ewidencji wypożyczeń, i żąda ich zwrotu w ustalonym terminie;"
+          - "{zgłasza|przekazuje} właścicielowi procedury listę dokumentacji, której okres przechowywania upłynął, i niszczy ją dopiero po otrzymaniu pisemnej zgody."
+      - akapit: "Pracownik archiwum nie ocenia treści dokumentów ani nie udziela informacji o sprawach osobom, które nie wykażą uprawnienia do dostępu."
+
+  - id: zastrzezenia-b-odp-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-odp
+    wspolny: false
+    elementy:
+      - ustep: "**Pracownik placówki** przyjmujący zgłoszenie osobiste {wykonuje|realizuje} dodatkowo następujące czynności:"
+        punkty:
+          - "sprawdza, czy Klient ma przy sobie inne karty lub urządzenia, które mogły zostać utracone razem z kartą, i ocenia konieczność blokady także tych narzędzi;"
+          - "{przekazuje|wręcza} Klientowi pisemne potwierdzenie przyjęcia zgłoszenia, zawierające numer zgłoszenia, godzinę blokady i dane kontaktowe do dalszych pytań;"
+          - "w razie wątpliwości co do autentyczności dokumentu tożsamości powiadamia kierownika placówki i nie wydaje karty zastępczej do czasu wyjaśnienia;"
+          - "wyjaśnia Klientowi w prostych słowach, jak rozpoznać próby wyłudzenia danych, i wręcza mu ulotkę z zasadami bezpiecznego korzystania z kart."
+      - akapit: "Kierownik placówki odpowiada za to, by w każdym punkcie obsługi znajdował się aktualny schemat postępowania na wypadek zgłoszenia utraty karty oraz wzory dokumentów, a pracownicy znali numery telefonów do linii zastrzeżeń."
+
+  - id: zastrzezenia-b-krok-przyjecie-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Przyjmij} zgłoszenie w wiadomości pisemnej, na przykład w wiadomości elektronicznej."
+            podkroki:
+              - tekst: "Pracownik odczytuje wiadomość najpóźniej w ciągu godziny od wpływu w godzinach pracy; wiadomości otrzymane po godzinach odczytuje kierownik pierwszej zmiany."
+              - tekst: "Wiadomość, w której Klient informuje o utracie karty, traktuj jako zgłoszenie od chwili wpływu, nawet jeżeli nie jest ona kompletna, i niezwłocznie wykonaj blokadę czasową."
+              - tekst: "Skontaktuj się z Klientem telefonicznie na numer zapisany w systemie, aby zweryfikować jego tożsamość i potwierdzić blokadę; nie odpowiadaj na adres, z którego przyszła wiadomość, jeśli różni się od zapisanego w systemie."
+          - tekst: "{Zarejestruj|Odnotuj} zgłoszenie jako zgłoszenie pisemne."
+            podkroki:
+              - tekst: "W rejestrze podaj godzinę wpływu wiadomości, godzinę blokady i godzinę kontaktu z Klientem; różnice w czasie wyjaśnij w polu uwag."
+              - tekst: "Oryginał wiadomości zachowaj w aktach sprawy w postaci umożliwiającej odczytanie nagłówków technicznych."
+
+  - id: zastrzezenia-b-krok-blokada-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-blokada
+    wspolny: false
+    elementy:
+      - ustep: "Pracownik, który przywraca Klientowi dostęp do bankowości elektronicznej po blokadzie, {musi|jest obowiązany}:"
+        punkty:
+          - "potwierdzić tożsamość Klienta w placówce przy użyciu dokumentu tożsamości lub, w razie niemożności, przez połączenie wideo prowadzone według zatwierdzonego scenariusza;"
+          - "ustalić, czy urządzenia, z których Klient korzystał, nie zostały utracone ani zainfekowane, i w razie wątpliwości {zdezaktywować|wyłączyć} je oraz zarejestrować nowe;"
+          - "ustawić nowe dane uwierzytelniające, tak aby Klient samodzielnie wybrał nowe hasło lub kod, a pracownik nie poznał jego treści;"
+          - "{pouczyć|poinformować} Klienta o konieczności sprawdzenia ustawień powiadomień i limitów oraz o sposobie ich zmiany."
+      - akapit: "Przywrócenie dostępu pracownik odnotowuje w rejestrze, wskazując wykonaną weryfikację oraz zarejestrowane urządzenia."
+
+  - id: zastrzezenia-b-krok-nieaut-12
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zbadaj|Oceń} zachowanie Klienta pod kątem należytej staranności."
+            podkroki:
+              - tekst: "Ustal, czy Klient chronił dane uwierzytelniające karty zgodnie z umową, w szczególności czy nie zapisał kodu PIN razem z kartą i nie udostępnił go innej osobie."
+              - tekst: "Sprawdź, ile czasu upłynęło od chwili, w której Klient stwierdził utratę karty lub nieautoryzowaną transakcję, do chwili zgłoszenia, i czy opóźnienie ma uzasadnienie."
+              - tekst: "Ocenę oprzyj na konkretnych faktach z akt sprawy; nie uzasadniaj odmowy ogólnikami, takimi jak „Klient działał nieostrożnie”."
+          - tekst: "{Rozstrzygnij|Zdecyduj} o odpowiedzialności Klienta."
+            podkroki:
+              - tekst: "Przypisanie Klientowi odpowiedzialności za transakcję z powodu rażącego niedbalstwa wymaga akceptacji kierownika zespołu analiz oraz opinii „{{fakt:jednostka.prawny}}”."
+              - tekst: "Ciężar wykazania autoryzacji transakcji spoczywa na Banku; jeżeli dowody nie pozwalają jej jednoznacznie wykazać, rachunek Klienta uznaje się kwotą transakcji."
+
+  - id: zastrzezenia-b-krok-nieaut-13
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - akapit: "Zgłoszenia dotyczące wypłat gotówki w bankomatach wymagają ustaleń, które różnią się od ustaleń w sprawach transakcji bezgotówkowych, ponieważ w grę wchodzi możliwość zainstalowania na urządzeniu nakładki kopiującej dane karty."
+      - ustep: "{W takim przypadku|W tych sprawach} analityk:"
+        punkty:
+          - "wnioskuje do operatora bankomatu o kontrolę urządzenia pod kątem obecności nakładek i kamer oraz o zabezpieczenie nagrań z okresu transakcji;"
+          - "porównuje dane innych kart użytych w tym samym bankomacie w podobnym czasie, aby stwierdzić, czy nie doszło do zbiorowego skopiowania danych;"
+          - "{wskazuje|oznacza} bankomat w systemie jako wymagający wzmożonego nadzoru, jeśli kilka zgłoszeń wskazuje na tę samą lokalizację;"
+          - "informuje Klienta, że ustalenie okoliczności może wymagać czasu, i zapewnia o tymczasowym uznaniu rachunku w terminach przewidzianych przepisami."
+
+  - id: zastrzezenia-b-krok-zwrot-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - ustep: "Jeżeli Klient nie zgadza się z decyzją o odmowie uznania rachunku, Bank:"
+        punkty:
+          - "{przyjmuje|rejestruje} jego sprzeciw jako reklamację niezależnie od formy, w jakiej został złożony, i wskazuje Klientowi numer reklamacji;"
+          - "przekazuje sprawę do ponownego rozpatrzenia osobie, która nie uczestniczyła w pierwotnej analizie, aby zapewnić niezależną ocenę;"
+          - "{informuje|zawiadamia} Klienta o rozstrzygnięciu w terminie przewidzianym dla reklamacji, a w odpowiedzi odnosi się do wszystkich zarzutów podniesionych w reklamacji;"
+          - "w razie podtrzymania odmowy poucza Klienta o możliwości odwołania się do rzecznika finansowego, sądu polubownego lub sądu powszechnego."
+      - akapit: "Do czasu rozpatrzenia reklamacji Bank nie podejmuje wobec Klienta czynności windykacyjnych w zakresie kwoty spornej transakcji, ani nie przekazuje jego danych do rejestrów dłużników z tego tytułu."
+
+  - id: zastrzezenia-b-krok-zwrot-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Odzyskaj|Dochodź} należności po uznaniu rachunku, jeśli sprawca jest znany."
+            podkroki:
+              - tekst: "Jeżeli w toku analizy ustalono, że środki trafiły na rachunek prowadzony w Banku, zleć jego zablokowanie w zakresie kwoty transakcji i powiadom „{{fakt:jednostka.zgodnosc}}”."
+              - tekst: "Wobec posiadacza takiego rachunku wystąp o zwrot środków i poinformuj go o możliwości wyjaśnienia sprawy; jeżeli nie odpowie w wyznaczonym terminie, przekaż sprawę do „{{fakt:jednostka.prawny}}”."
+          - tekst: "{Rozlicz|Zaksięguj} odzyskane środki."
+            podkroki:
+              - tekst: "Odzyskane środki zaksięguj na koncie rozliczeń nadużyć, a następnie dokonaj korekty straty Banku w ewidencji."
+              - tekst: "Jeżeli odzyskana kwota przekracza stratę poniesioną przez Bank, nadwyżkę zwróć Klientowi lub podmiotowi, który poniósł szkodę."
+
+  - id: zastrzezenia-b-szczegolne-12
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Zgon posiadacza karty.** Jeżeli zgłaszający informuje, że posiadacz karty zmarł, a z karty korzystała osoba trzecia lub istnieje ryzyko jej użycia, pracownik przyjmuje zgłoszenie jak zgłoszenie utraty karty."
+      - ustep: "Pracownik:"
+        punkty:
+          - "wykonuje blokadę karty i zawiesza płatności cykliczne zlecone kartą, jeżeli zgłaszający o to prosi, informując go o skutkach dla usług, z których zmarły korzystał;"
+          - "{poucza|informuje} zgłaszającego o dalszym postępowaniu w sprawach spadkowych i o konieczności przedstawienia aktu zgonu w placówce;"
+          - "nie ujawnia zgłaszającemu danych o rachunku ani o transakcjach, chyba że ma on do tego tytuł prawny, który zostanie wykazany dokumentami;"
+          - "przekazuje sprawę zgodnie z odrębną procedurą obsługi zgonu klienta i dołącza numer zgłoszenia do akt tamtej sprawy."
+
+  - id: zastrzezenia-b-szczegolne-13
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Transakcje wykonane przez osobę, której Klient udostępnił kartę.** Częstą przyczyną zgłoszeń jest sytuacja, w której Klient użyczył karty członkowi rodziny lub znajomemu, a następnie kwestionuje transakcje wykonane przez tę osobę."
+      - kroki:
+          - tekst: "{Ustal|Wyjaśnij} okoliczności udostępnienia karty."
+            podkroki:
+              - tekst: "Zapytaj Klienta, czy świadomie udostępnił kartę oraz kod PIN i czy zakres upoważnienia obejmował kwestionowane transakcje."
+              - tekst: "Poinformuj Klienta, że udostępnienie karty i kodu osobie trzeciej stanowi naruszenie umowy, a Bank nie odpowiada za transakcje wykonane w ramach takiego udostępnienia."
+          - tekst: "{Zaproponuj|Wskaż} Klientowi rozwiązania na przyszłość."
+            podkroki:
+              - tekst: "Wyjaśnij możliwość wydania karty dodatkowej dla osoby zaufanej z własnym kodem i limitami."
+              - tekst: "Przypomnij o możliwości ustawienia limitów transakcji oraz powiadomień o każdej płatności w aplikacji."
+
+  - id: zastrzezenia-b-monitoring-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - ustep: "Dostęp do systemu monitorowania {{fakt:system.zastrzezenia.monitoring}} podlega następującym zasadom:"
+        punkty:
+          - "uprawnienia nadaje się na podstawie zakresu obowiązków, w rozróżnieniu na uprawnienia do przeglądania alertów, ich rozstrzygania i zmiany reguł;"
+          - "zmiana reguł wymaga akceptacji dwóch osób: autora zmiany i osoby niezależnej, która sprawdza jej wpływ na liczbę alertów w środowisku testowym;"
+          - "{każda|wszystkie} czynności w systemie są rejestrowane, a zapisy zdarzeń chronione przed zmianą i przechowywane przez okres wskazany w polityce rejestrowania zdarzeń;"
+          - "konta nieużywane przez ponad 60 dni są blokowane, a uprawnienia osób zmieniających stanowisko — cofane najpóźniej w dniu zmiany."
+      - akapit: "Przegląd uprawnień do systemu przeprowadza się wraz z przeglądem uprawnień do blokowania kart i dokumentuje w tym samym protokole."
+
+  - id: zastrzezenia-b-monitoring-12
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-monitoring
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zarządzaj|Obsługuj} listą akceptantów i punktów o podwyższonym ryzyku."
+            podkroki:
+              - tekst: "Zespół „{{fakt:jednostka.centrum-monitorowania}}” prowadzi listę akceptantów, bankomatów i krajów, w których odnotowano zwiększoną liczbę nadużyć, wraz z datą wpisu i uzasadnieniem."
+              - tekst: "Wpis na listę wymaga akceptacji kierownika zespołu i jest przeglądany co miesiąc; wpis nieuzasadniony usuwa się, a przyczynę usunięcia odnotowuje."
+          - tekst: "{Zastosuj|Wykorzystaj} listę w ocenie transakcji."
+            podkroki:
+              - tekst: "Transakcje u akceptantów z listy otrzymują podwyższoną ocenę ryzyka, co nie oznacza automatycznego odrzucenia."
+              - tekst: "Wobec Klientów, którzy regularnie korzystają z usług takiego akceptanta, stosuje się indywidualne wyjątki, aby uniknąć niepotrzebnych blokad."
+
+  - id: zastrzezenia-b-kontrola-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - ustep: "Audyt wewnętrzny, badając procedurę, {ocenia|weryfikuje} w szczególności:"
+        punkty:
+          - "czy podział obowiązków zapobiega sytuacji, w której jedna osoba przyjmuje zgłoszenie, rozstrzyga o jego skutkach i księguje zwrot;"
+          - "czy liczba i jakość środków kontrolnych odpowiada poziomowi ryzyka nadużyć, a ich wykonanie jest udokumentowane;"
+          - "czy systemy informatyczne wspierające procedurę działają zgodnie z założeniami, a dane w rejestrze są zgodne z danymi w systemie bankowym;"
+          - "czy wnioski z poprzednich kontroli zostały wykonane i czy przyniosły oczekiwany skutek."
+      - akapit: "Audyt informuje Zarząd o wynikach w ramach rocznego sprawozdania, a w razie stwierdzenia nieprawidłowości o dużym znaczeniu — niezwłocznie, odrębnym pismem."
+
+  - id: zastrzezenia-b-kontrola-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-kontrola
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zbadaj|Przeanalizuj} przypadki przekroczenia terminów."
+            podkroki:
+              - tekst: "Raz w miesiącu wygeneruj z rejestru zestawienie zgłoszeń, w których przekroczono którykolwiek z terminów określonych w procedurze, z podziałem na przyczyny."
+              - tekst: "Dla każdego przypadku ustal, czy przyczyną było obciążenie pracą, awaria systemu, brak informacji od Klienta czy błąd pracownika."
+              - tekst: "Przypadki o znaczeniu systemowym omów na spotkaniu zespołu, a pozostałe wyjaśnij z kierownikiem zmiany."
+          - tekst: "{Wdróż|Wprowadź} środki zaradcze."
+            podkroki:
+              - tekst: "W razie powtarzającego się przekraczania terminów przez analityków zaproponuj zmianę obsady lub rozdziału spraw."
+              - tekst: "Skuteczność środków sprawdź w kolejnym miesiącu i odnotuj w sprawozdaniu."
+
+  - id: zastrzezenia-b-dokumentacja-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - ustep: "Wzory dokumentów stosowanych w procedurze, takich jak formularz zgłoszenia, wzór pisma do Klienta i wniosek o spór, podlegają następującym zasadom:"
+        punkty:
+          - "wzory zatwierdza właściciel procedury, a ich zmiany wymagają opinii „{{fakt:jednostka.prawny}}” pod kątem zgodności z przepisami;"
+          - "{aktualne|obowiązujące} wzory udostępnia się w repozytorium dokumentów wewnętrznych, a poprzednie wersje oznacza jako archiwalne i wyłącza z użycia;"
+          - "pracownicy nie modyfikują wzorów na własną rękę, a potrzebę zmiany zgłaszają właścicielowi procedury;"
+          - "każdy wzór zawiera numer wersji i datę wejścia w życie, co pozwala ustalić, który z nich obowiązywał w chwili przyjęcia zgłoszenia."
+      - akapit: "Przy zmianie wzoru właściciel procedury sprawdza, czy konieczne jest poinformowanie Klientów, i przygotowuje stosowny komunikat."
+
+  - id: zastrzezenia-b-dokumentacja-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-dokumentacja
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Przygotuj|Sporządź} sprawozdanie okresowe z działania procedury."
+            podkroki:
+              - tekst: "Zestaw dane z rejestru: liczbę zgłoszeń według kanałów, liczbę blokad, wartość transakcji nieautoryzowanych, kwoty zwrotów i kwoty odzyskane od organizacji płatniczej."
+              - tekst: "Oblicz średnie czasy: od zgłoszenia do blokady, od zgłoszenia do decyzji i od decyzji do zwrotu środków, oraz porównaj je z wymaganiami procedury."
+              - tekst: "Opisz najważniejsze trendy i wnioski, w tym nowe schematy nadużyć i zalecane zmiany."
+          - tekst: "{Przekaż|Przedstaw} sprawozdanie."
+            podkroki:
+              - tekst: "Sprawozdanie półroczne przekaż Zarządowi i jednostce zgodności w ciągu miesiąca po zakończeniu półrocza."
+              - tekst: "Sprawozdanie przechowuj razem z dokumentacją procedury przez okres wskazany w instrukcji kancelaryjnej."

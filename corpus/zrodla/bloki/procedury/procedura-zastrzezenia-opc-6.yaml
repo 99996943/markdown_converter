@@ -1,0 +1,193 @@
+bloki:
+  # ===== Transakcje nieautoryzowane =====
+  - id: zastrzezenia-b-krok-nieaut-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Przyjmij|Zarejestruj} zgłoszenie transakcji, której Klient nie rozpoznaje."
+            podkroki:
+              - tekst: "Zapisz dla każdej kwestionowanej operacji datę, kwotę, nazwę akceptanta widoczną na wyciągu oraz sposób użycia karty zgodnie z oświadczeniem Klienta: z kodem PIN, zbliżeniowo, w internecie lub na podstawie danych karty podanych telefonicznie."
+              - tekst: "Zapytaj, czy karta była w posiadaniu Klienta w chwili transakcji i czy komukolwiek ją udostępniał, w tym członkom rodziny; odpowiedzi zapisz w brzmieniu zbliżonym do wypowiedzi Klienta."
+              - tekst: "Nie sugeruj Klientowi odpowiedzi ani nie oceniaj jego wiarygodności; ocena należy wyłącznie do analityka."
+          - tekst: "{Pouczaj|Poinformuj} Klienta o dalszych krokach."
+            podkroki:
+              - tekst: "Wyjaśnij, że Bank potwierdzi przyjęcie zgłoszenia w terminie {{fakt:termin.zastrzezenia.potwierdzenie-zgloszenia-nieautoryzowanej}} i że w tym czasie Klient nie musi składać odrębnego pisma."
+              - tekst: "Poproś o niezwłoczne zgłaszanie kolejnych nieznanych transakcji, które pojawią się na rachunku w trakcie postępowania."
+
+  - id: zastrzezenia-b-krok-nieaut-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - akapit: "Transakcje wykonane w internecie wymagają odrębnej oceny, ponieważ ich autoryzacja zależy od silnego uwierzytelniania Klienta, a w niektórych przypadkach — od wyjątków przewidzianych przepisami."
+      - ustep: "Analityk, badając transakcję internetową, {ustala|sprawdza}:"
+        punkty:
+          - "czy transakcja została poprzedzona silnym uwierzytelnianiem, a jeżeli nie — jaka podstawa zwolnienia z tego wymogu została zastosowana przez akceptanta lub jego bank;"
+          - "{czy|jaki} kod jednorazowy lub potwierdzenie w aplikacji został wygenerowany, na jakie urządzenie, o której godzinie i z jakiego adresu sieciowego;"
+          - "czy urządzenie użyte do potwierdzenia było dotąd wykorzystywane przez Klienta i jak dawno zostało powiązane z jego profilem;"
+          - "czy w okresie bezpośrednio poprzedzającym transakcję zmieniono numer telefonu, dane kontaktowe lub limity, co mogłoby wskazywać na przejęcie dostępu przez osobę trzecią."
+      - akapit: "{Jeżeli|Jeśli} z danych wynika, że potwierdzenie zostało wykonane na urządzeniu Klienta w jego zwykłym miejscu pobytu, analityk rozważa możliwość oszustwa socjotechnicznego i zbiera dodatkowe informacje od Klienta, nie przesądzając o jego odpowiedzialności."
+
+  - id: zastrzezenia-b-krok-nieaut-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zbadaj|Oceń} transakcje wykonane kartą fizycznie, w terminalu lub bankomacie."
+            podkroki:
+              - tekst: "Sprawdź, czy zapis z terminala wskazuje na użycie układu scalonego i weryfikację kodem PIN, czy tylko paska magnetycznego, oraz czy akceptant należy do kategorii, w której taki sposób użycia jest dopuszczalny."
+              - tekst: "Porównaj miejsce transakcji z lokalizacją poprzednich operacji Klienta; zwróć uwagę na dwie transakcje w odległych miejscach wykonane w czasie, który wyklucza fizyczne przemieszczenie karty."
+              - tekst: "W przypadku transakcji w bankomacie {zażądaj|poproś} od operatora urządzenia zapisu z kamer oraz dziennika zdarzeń; w sprawach spornych jest to podstawowy dowód."
+          - tekst: "{Zabezpiecz|Zgromadź} materiał dowodowy."
+            podkroki:
+              - tekst: "Wszystkie dane techniczne zapisz w aktach sprawy w sposób umożliwiający późniejsze przedstawienie ich Klientowi, organizacji płatniczej lub sądowi."
+              - tekst: "Nie przekazuj Klientowi surowych danych technicznych bez uprzedniego zanonimizowania informacji dotyczących innych klientów lub systemów Banku."
+
+  - id: zastrzezenia-b-krok-nieaut-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - ustep: "Analityk {uznaje|przyjmuje}, że transakcja może być nieautoryzowana, a sprawa wymaga pogłębionej analizy, jeżeli stwierdzi co najmniej jedną z następujących okoliczności:"
+        punkty:
+          - "{transakcja|operacja} została wykonana po zgłoszeniu zastrzeżenia karty lub po zablokowaniu dostępu do rachunku;"
+          - "kilka operacji o niskich kwotach wykonano w krótkich odstępach w tym samym punkcie, co może wskazywać na próbę ominięcia limitów;"
+          - "transakcja została wykonana w kraju, w którym Klient nie przebywał, a dane karty nie były używane tam wcześniej;"
+          - "Klient zgłasza, że w tym samym czasie otrzymał wiadomość lub telefon od osoby podającej się za pracownika Banku lub innej instytucji."
+      - akapit: "W każdym z tych przypadków analityk {wydłuża|przedłuża} analizę wstępną o czas niezbędny do uzyskania dodatkowych danych, informuje o tym Klienta i dokumentuje przyczynę; analiza wstępna nie może jednak trwać dłużej niż wynika to z terminów przewidzianych przepisami."
+
+  - id: zastrzezenia-b-krok-nieaut-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Rozpatrz} zgłoszenie dotyczące oszustwa socjotechnicznego."
+            podkroki:
+              - tekst: "Ustal, czy Klient sam wykonał transakcję pod wpływem manipulacji, na przykład po telefonie od osoby udającej konsultanta, i opisz przebieg rozmowy w notatce."
+              - tekst: "Pouczenie o charakterze oszustwa przekaż Klientowi bez zarzutu i bez użycia sformułowań sugerujących jego winę."
+              - tekst: "{Zgłoś|Przekaż} sprawę do „{{fakt:jednostka.centrum-monitorowania}}”, aby zablokować rachunki odbiorców, jeżeli są prowadzone w Banku, oraz poinformować inne banki, jeżeli odbiorca jest klientem innej instytucji."
+          - tekst: "{Zwróć uwagę na|Rozważ} obowiązek zawiadomienia organów ścigania."
+            podkroki:
+              - tekst: "Zaproponuj Klientowi złożenie zawiadomienia o przestępstwie i wyjaśnij, że kopia zawiadomienia przyspiesza analizę sprawy."
+              - tekst: "{Jeżeli|Jeśli} kwota przekracza próg określony w {{fakt:limit.zastrzezenia.kwota-zawiadomienia}}, Bank dokonuje zawiadomienia samodzielnie, niezależnie od decyzji Klienta."
+
+  - id: zastrzezenia-b-krok-nieaut-10
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - ustep: "Notatka z analizy transakcji nieautoryzowanej zawiera co najmniej:"
+        punkty:
+          - "numer zgłoszenia, datę i godzinę wpływu zgłoszenia oraz datę i godzinę wykonania każdej kwestionowanej transakcji;"
+          - "opis zastosowanego sposobu autoryzacji wraz ze wskazaniem dokumentów i zapisów, z których ten sposób wynika;"
+          - "{ustalenia|wnioski} dotyczące zachowania Klienta, w tym informacje o tym, czy powiadomił on Bank bez zbędnej zwłoki po stwierdzeniu utraty karty lub nieautoryzowanej transakcji;"
+          - "{rozstrzygnięcie|stanowisko} analityka co do uznania lub odmowy uznania rachunku, uzasadnienie oraz, w razie odmowy, wskazanie podstawy prawnej;"
+          - "imię i nazwisko analityka oraz osoby, która zaakceptowała decyzję."
+      - akapit: "Notatkę akceptuje kierownik zespołu analiz, a w sprawach przekraczających próg określony w {{fakt:limit.zastrzezenia.kwota-eskalacji}} — dyrektor „{{fakt:jednostka.bezpieczenstwo}}”."
+
+  - id: zastrzezenia-b-krok-nieaut-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Komunikuj|Przekaż} Klientowi wynik analizy wstępnej."
+            podkroki:
+              - tekst: "Poinformuj Klienta, czy rachunek został uznany kwotą transakcji, oraz o terminie, w którym środki zostaną udostępnione, w sposób wskazany przez niego przy zgłoszeniu."
+              - tekst: "W razie odmowy uznania przedstaw uzasadnienie w sposób zrozumiały, bez przytaczania szczegółów, których ujawnienie osłabiłoby zabezpieczenia Banku."
+              - tekst: "Poinformuj o prawie do złożenia reklamacji oraz o możliwości skorzystania z pomocy rzecznika finansowego lub sądu polubownego."
+          - tekst: "{Zarejestruj|Odnotuj} wynik w rejestrze."
+            podkroki:
+              - tekst: "Wpisz w rejestrze decyzję, termin jej przekazania Klientowi i sposób doręczenia; dołącz kopię wysłanej wiadomości."
+              - tekst: "Jeżeli Klient nie odebrał wiadomości, podejmij co najmniej dwie dodatkowe próby kontaktu w odstępie kilku dni roboczych."
+
+  # ===== Zwrot środków i spór =====
+  - id: zastrzezenia-b-krok-zwrot-5
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Wykonaj|Zrealizuj} zwrot środków na rachunek Klienta."
+            podkroki:
+              - tekst: "Uznaj rachunek kwotą nieautoryzowanej transakcji wraz z opłatami i odsetkami naliczonymi przez Bank w związku z transakcją, tak aby przywrócić rachunek do stanu sprzed jej wykonania."
+              - tekst: "Zwrot wykonaj z datą waluty nie późniejszą niż data obciążenia rachunku, o ile przepisy tak stanowią."
+              - tekst: "Operację zwrotu zaksięguj pod odrębnym tytułem, który wskazuje numer zgłoszenia, aby Klient mógł łatwo powiązać wpływ z wnioskiem."
+          - tekst: "{Sprawdź|Zweryfikuj} poprawność zwrotu."
+            podkroki:
+              - tekst: "Drugi pracownik porównuje kwotę zwrotu z kwotą transakcji i z notatką analityka, a następnie potwierdza w systemie {{fakt:system.zastrzezenia.rejestr}} poprawność operacji."
+              - tekst: "Niezgodność kwot wyjaśnia się w ciągu jednego dnia roboczego; do tego czasu Klientowi nie wolno przekazać informacji o ostatecznym wyniku."
+
+  - id: zastrzezenia-b-krok-zwrot-6
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - akapit: "Uznanie rachunku Klienta w trakcie postępowania nie oznacza ostatecznego rozstrzygnięcia o odpowiedzialności; Bank może ponownie obciążyć rachunek, jeżeli w toku dalszej analizy lub sporu z organizacją płatniczą wykaże, że transakcja została autoryzowana albo że Klient umyślnie lub w wyniku rażącego niedbalstwa naruszył swoje obowiązki."
+      - ustep: "Przed ponownym obciążeniem rachunku Klienta Bank:"
+        punkty:
+          - "{sporządza|przygotowuje} uzasadnienie wskazujące konkretne dowody oraz podstawę prawną i umowną obciążenia;"
+          - "uzyskuje akceptację dyrektora „{{fakt:jednostka.bezpieczenstwo}}” oraz opinię „{{fakt:jednostka.prawny}}”;"
+          - "{wysyła|przekazuje} Klientowi pisemne zawiadomienie z wyprzedzeniem co najmniej 14 dni i informację o prawie do złożenia reklamacji;"
+          - "{odstępuje|powstrzymuje się} od obciążenia, jeżeli Klient złożył reklamację, dopóki nie zostanie ona rozpatrzona."
+
+  - id: zastrzezenia-b-krok-zwrot-7
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Przygotuj|Zbierz} dokumentację do sporu z organizacją płatniczą."
+            podkroki:
+              - tekst: "Zestaw komplet dokumentów: zgłoszenie Klienta, notatkę z analizy, zapisy autoryzacji, potwierdzenie zablokowania karty oraz korespondencję z Klientem."
+              - tekst: "Sprawdź, czy sprawa mieści się w terminie przewidzianym na wszczęcie sporu — {{fakt:termin.zastrzezenia.spor-zgloszenie}} od daty transakcji lub jej księgowania — i zaznacz w rejestrze termin graniczny."
+              - tekst: "Wybierz kod przyczyny sporu zgodny ze stanem faktycznym; błędny kod jest najczęstszą przyczyną odrzucenia wniosku."
+          - tekst: "{Złóż|Skieruj} wniosek o spór."
+            podkroki:
+              - tekst: "Wniosek składa pracownik „{{fakt:jednostka.operacje}}” przez system rozliczeniowy organizacji płatniczej, a kopię wniosku wprowadza do rejestru."
+              - tekst: "Odpowiedź akceptanta lub jego banku jest oczekiwana w terminie {{fakt:termin.zastrzezenia.spor-odpowiedz}}; brak odpowiedzi w tym czasie skutkuje eskalacją sprawy do kolejnego etapu."
+
+  - id: zastrzezenia-b-krok-zwrot-8
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - ustep: "Po otrzymaniu rozstrzygnięcia sporu przez organizację płatniczą Bank:"
+        punkty:
+          - "{rozlicza|księguje} uzyskaną kwotę na koncie wewnętrznym rozliczeń i porównuje ją z kwotą zwróconą Klientowi;"
+          - "w razie rozstrzygnięcia korzystnego dla Banku zamyka sprawę bez dodatkowych czynności wobec Klienta, o ile wcześniej uznano jego rachunek;"
+          - "w razie rozstrzygnięcia niekorzystnego ocenia, czy sprawa kwalifikuje się do arbitrażu, uwzględniając wartość sprawy, koszty i szanse powodzenia;"
+          - "{sporządza|przygotowuje} podsumowanie sprawy do rocznego raportu o stratach z tytułu nadużyć kartowych."
+      - akapit: "Decyzję o skierowaniu sprawy do arbitrażu podejmuje dyrektor „{{fakt:jednostka.bezpieczenstwo}}” po konsultacji z „{{fakt:jednostka.prawny}}”; decyzję uzasadnia się na piśmie."
+
+  - id: zastrzezenia-b-krok-zwrot-9
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-zwrot
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Obsłuż|Rozlicz} zwrot dla transakcji, w których kwota nie była znana w chwili autoryzacji."
+            podkroki:
+              - tekst: "Dotyczy to przede wszystkim rezerwacji w hotelach, wypożyczalniach pojazdów i na stacjach paliw, gdzie ostateczna kwota przekracza kwotę, której Klient mógł się rozsądnie spodziewać."
+              - tekst: "Ustal, czy Klient wyraził zgodę na blokadę środków w określonej wysokości, oraz czy kwota rozliczona przekracza tę wysokość w stopniu, którego nie można uzasadnić okolicznościami."
+              - tekst: "Wniosek o zwrot Klient może złożyć w terminie ośmiu tygodni od obciążenia rachunku; po tym terminie wniosek rozpatruje się według zasad ogólnych."
+          - tekst: "{Zdecyduj|Rozstrzygnij} w sprawie wniosku."
+            podkroki:
+              - tekst: "Poproś Klienta o dokumenty potwierdzające okoliczności zawarcia umowy z akceptantem, na przykład rezerwację lub umowę najmu."
+              - tekst: "Decyzję przekaż Klientowi w terminie {{fakt:termin.zastrzezenia.reklamacja-zwrotu}} od otrzymania kompletu dokumentów."

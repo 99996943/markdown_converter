@@ -1,0 +1,47 @@
+bloki:
+  - id: zastrzezenia-b-krok-nieaut-14
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-nieaut
+    wspolny: false
+    elementy:
+      - ustep: "Zgłoszenie dotyczące płatności w sklepach internetowych, w których Klient twierdzi, że nie otrzymał towaru, nie jest transakcją nieautoryzowaną, lecz sporem handlowym. Pracownik:"
+        punkty:
+          - "{wyjaśnia|tłumaczy} Klientowi różnicę między transakcją nieautoryzowaną a transakcją autoryzowaną, w której sprzedawca nie wykonał swojego świadczenia;"
+          - "{zaleca|proponuje} Klientowi próbę wyjaśnienia sprawy ze sprzedawcą i zachowanie korespondencji, zrzutów ekranu i potwierdzeń zamówienia;"
+          - "przyjmuje od Klienta wniosek o spór z organizacją płatniczą w zakresie transakcji, w której sprzedawca nie dostarczył towaru lub usługi;"
+          - "informuje o terminie, w którym spór można wszcząć, i o dokumentach niezbędnych do jego rozpatrzenia."
+      - akapit: "Zgłoszenie złożone w tym trybie rozpatrywane jest według zasad sporu kartowego, a nie według zasad dotyczących nieautoryzowanych transakcji płatniczych."
+
+  - id: zastrzezenia-b-krok-przyjecie-11
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-krok-przyjecie
+    wspolny: false
+    elementy:
+      - kroki:
+          - tekst: "{Zapewnij|Zabezpiecz} poufność rozmowy z Klientem w placówce."
+            podkroki:
+              - tekst: "Rozmowę o zgłoszeniu prowadź w sposób, który nie pozwala innym klientom usłyszeć danych osobowych, numerów kart ani opisu zdarzenia."
+              - tekst: "Nie wypowiadaj na głos pełnego numeru karty ani kwot transakcji; w razie potrzeby pokaż je Klientowi na ekranie lub kartce, którą następnie zniszczysz."
+          - tekst: "{Zachowaj|Wykaż} należytą staranność w stosunku do danych Klienta."
+            podkroki:
+              - tekst: "Nie zapisuj numeru PIN, kodu CVV ani haseł do bankowości elektronicznej, nawet na kartkach roboczych."
+              - tekst: "Wydruki i notatki zawierające dane Klienta po zakończeniu obsługi umieść w niszczarce lub zamykanym pojemniku na dokumenty do zniszczenia."
+
+  - id: zastrzezenia-b-szczegolne-15
+    typy: [procedury]
+    tematy: [procedura-zastrzezenia]
+    kategoria: zastrzezenia-szczegolne
+    wspolny: false
+    elementy:
+      - akapit: "**Seria transakcji nieautoryzowanych po utracie telefonu z aplikacją bankową.** Utrata telefonu stwarza ryzyko dostępu do rachunku przez osobę, która nie zna kodu karty, lecz może próbować wykorzystać aplikację i płatności mobilne."
+      - kroki:
+          - tekst: "{Zabezpiecz|Zablokuj} wszystkie narzędzia powiązane z telefonem."
+            podkroki:
+              - tekst: "Wyłącz dostęp do aplikacji bankowej dla urządzenia zgłoszonego jako utracone i unieważnij tokeny płatności mobilnych."
+              - tekst: "Sprawdź, czy Klient nie przechowywał w telefonie danych dostępowych w notatkach lub w menedżerze haseł, i zaproponuj ich zmianę."
+          - tekst: "{Zaproponuj|Doradź} Klientowi dodatkowe czynności."
+            podkroki:
+              - tekst: "Zalecaj zablokowanie karty SIM u operatora telefonicznego oraz zdalne zablokowanie lub wymazanie danych z urządzenia."
+              - tekst: "Po zarejestrowaniu nowego urządzenia sprawdź z Klientem historię operacji z ostatnich dni i zapytaj o transakcje, których nie rozpoznaje."
