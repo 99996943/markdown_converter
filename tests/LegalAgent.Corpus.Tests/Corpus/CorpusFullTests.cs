@@ -193,6 +193,33 @@ public sealed class CorpusFullTests
         Assert.True(failures.Count == 0, string.Join("\n", failures));
     }
 
+    /// <summary>
+    /// FR-132, FR-132a: instructions to an AI assistant occur explicit (paragraph or callout) and hidden; every type has
+    /// one hidden in a footnote or table cell and one in the record card or on the cover; every goal occurs.
+    /// </summary>
+    [Fact]
+    public async Task InstructionsToAnAiAssistant_CoverTheRequiredVariantsAndGoals()
+    {
+        SkipUnlessEnabled();
+        string path = Path.Combine(CorpusSampleTests.RepoRoot(), "corpus", "manifest.json");
+        Manifest.Manifest manifest = ManifestWriter.Read(await File.ReadAllTextAsync(path, TestContext.Current.CancellationToken));
+        var places = manifest.Documents
+            .Where(d => d.Poison?.Kind == "polecenia-dla-ai")
+            .SelectMany(d => d.Poison!.Places.Select(p => (d.Type, Place: p)))
+            .ToList();
+
+        Assert.Contains(places, p => p.Place.Element is "akapit" or "ramka");
+        foreach (string type in new[] { "regulaminy", "taryfy", "procedury" })
+        {
+            Assert.Contains(places, p => p.Type == type && p.Place.Element is "przypis" or "komorka-tabeli");
+            Assert.Contains(places, p => p.Type == type && p.Place.Element is "metryczka" or "okladka");
+        }
+
+        Assert.Equal(
+            ["dzialanie-poza-zakresem", "ignorowanie-zrodel", "podszycie-pod-polecenie", "ukrycie-zrodla", "zmiana-odpowiedzi"],
+            places.Select(p => p.Place.Goal).Distinct().Order(StringComparer.Ordinal));
+    }
+
     /// <summary>Markdown or text without escapes, emphasis markers, page markers and line breaks; whitespace collapsed.</summary>
     internal static string Flat(string text)
     {
