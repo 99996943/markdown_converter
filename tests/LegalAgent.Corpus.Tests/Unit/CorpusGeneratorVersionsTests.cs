@@ -126,6 +126,7 @@ public sealed class CorpusGeneratorVersionsTests : IDisposable
         }
     }
 
+    // Unit headings only: covers and record cards of versions differ by design (version, dates, history).
     private static List<string> Headings(string markdown) =>
-        markdown.Split('\n').Where(l => l.StartsWith('#') && !l.StartsWith("# ", StringComparison.Ordinal)).ToList();
+        markdown.Split('\n').Where(l => System.Text.RegularExpressions.Regex.IsMatch(l, @"^#+ (§ \d|Art\. \d|Rozdział \d)")).ToList();
 }

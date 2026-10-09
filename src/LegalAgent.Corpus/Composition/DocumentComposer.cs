@@ -111,11 +111,13 @@ public static class DocumentComposer
     {
         var byId = content.Blocks.ToDictionary(b => b.Id, StringComparer.Ordinal);
         var pool = plan.BlockPool.Where(byId.ContainsKey).ToList();
-        DeterministicRandom.Derive(plan.Seed, "opcjonalne", plan.Id).Shuffle(pool);
+        // FR-120: the versions of a document draw their optional blocks like the latest version.
+        string series = plan.SeriesId ?? plan.Id;
+        DeterministicRandom.Derive(plan.Seed, "opcjonalne", series).Shuffle(pool);
 
         // FR-103b: blocks of other documents only after the document's own pool.
         var repeats = plan.RepeatPool.Where(byId.ContainsKey).ToList();
-        DeterministicRandom.Derive(plan.Seed, "powtorzone", plan.Id).Shuffle(repeats);
+        DeterministicRandom.Derive(plan.Seed, "powtorzone", series).Shuffle(repeats);
         pool.AddRange(repeats);
 
         var result = template.Sections.Select(_ => new List<string>()).ToList();

@@ -491,17 +491,24 @@ public static class CorpusGenerator
         IPdfMarkdownConverter converter = Converter(parameters, options);
         IDocumentChunker chunker = Chunker(parameters, converter);
         int done = 0;
-        await Parallel.ForEachAsync(
-            Enumerable.Range(0, plans.Count),
-            new ParallelOptions { CancellationToken = cancellationToken, MaxDegreeOfParallelism = Environment.ProcessorCount },
-            async (i, ct) =>
-            {
-                DocumentPlan doc = plans[i];
-                fits[i] = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages);
-                results[i] = await ConvertResultAsync(converter, fits[i].Typeset.Pdf, PdfPath(doc), ct).ConfigureAwait(false);
-                int n = Interlocked.Increment(ref done);
-                options.Progress?.Report($"dokument {n}/{plans.Count}: {doc.Id} ({fits[i].Typeset.PageCount} str.)");
-            }).ConfigureAwait(false);
+        var index = Enumerable.Range(0, plans.Count).ToDictionary(i => plans[i].Id, StringComparer.Ordinal);
+
+        // FR-120: earlier versions are fitted after their latest version and take its number of optional blocks.
+        foreach (bool earlierVersions in new[] { false, true })
+        {
+            await Parallel.ForEachAsync(
+                Enumerable.Range(0, plans.Count).Where(i => (plans[i].SeriesId is not null) == earlierVersions),
+                new ParallelOptions { CancellationToken = cancellationToken, MaxDegreeOfParallelism = Environment.ProcessorCount },
+                async (i, ct) =>
+                {
+                    DocumentPlan doc = plans[i];
+                    int? optional = doc.SeriesId is { } series ? fits[index[series]].OptionalBlocks : null;
+                    fits[i] = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages, optional);
+                    results[i] = await ConvertResultAsync(converter, fits[i].Typeset.Pdf, PdfPath(doc), ct).ConfigureAwait(false);
+                    int n = Interlocked.Increment(ref done);
+                    options.Progress?.Report($"dokument {n}/{plans.Count}: {doc.Id} ({fits[i].Typeset.PageCount} str.)");
+                }).ConfigureAwait(false);
+        }
 
         string[] markdown = [.. results.Select(m => m.Markdown)];
         Check(parameters, plans, fits, markdown, content);
@@ -515,7 +522,6 @@ public static class CorpusGenerator
             : CorpusChecks.RepeatedBlocks(fits.Where((f, i) => plans[i].Poison is null).SelectMany(f => f.Composition.Blocks));
         int RepeatedWords(DocumentPlan doc, FitResult fit) =>
             fit.Typeset.BlockWordCounts.Where(p => repeated!.Contains((doc.Id, p.Key))).Sum(p => p.Value);
-        var index = Enumerable.Range(0, plans.Count).ToDictionary(i => plans[i].Id, StringComparer.Ordinal);
         for (int i = 0; i < plans.Count; i++)
         {
             DocumentPlan doc = plans[i];
@@ -577,12 +583,21 @@ public static class CorpusGenerator
         CorpusPlan plan = CorpusPlanner.Plan(content, parameters);
         DocumentPlan doc = plan.Documents.FirstOrDefault(d => d.Id == documentId)
             ?? throw new CorpusGenerationException("Brak dokumentu w planie: " + documentId) { DocumentId = documentId };
-        FitResult fit = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages);
+        FitResult fit = FitVersion(doc, plan.Documents, content, parameters);
         FitResult? previous = doc.PreviousVersionId is { } p
-            ? PageFitter.Fit(plan.Documents.First(d => d.Id == p), content, parameters.Seed, parameters.Pages)
+            ? FitVersion(plan.Documents.First(d => d.Id == p), plan.Documents, content, parameters)
             : null;
         string markdown = await ConvertAsync(Converter(parameters, options), fit.Typeset.Pdf, PdfPath(doc), cancellationToken).ConfigureAwait(false);
         return new GeneratedDocument(doc, fit.Typeset.Pdf, markdown, Entry(content, plan.Documents, doc, fit, previous), fit);
+    }
+
+    /// <summary>Fits one document as <see cref="BuildAsync"/> does: an earlier version takes its latest version's optional block count.</summary>
+    private static FitResult FitVersion(DocumentPlan doc, IReadOnlyList<DocumentPlan> plans, ContentLibrary content, RunParameters parameters)
+    {
+        int? optional = doc.SeriesId is { } series
+            ? PageFitter.Fit(plans.First(d => d.Id == series), content, parameters.Seed, parameters.Pages).OptionalBlocks
+            : null;
+        return PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages, optional);
     }
 
     private static ManifestDocument Entry(ContentLibrary content, IReadOnlyList<DocumentPlan> plan, DocumentPlan doc, FitResult fit, FitResult? previous) => new(
