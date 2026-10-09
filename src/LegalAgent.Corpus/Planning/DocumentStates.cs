@@ -115,7 +115,8 @@ internal static partial class DocumentStates
             }
         }
 
-        for (int p = 0; p < parameters.CrossTypeContradictionPairs; p++)
+        // A run of one type has no pair of types: no cross-type pair is planted (the quota applies to runs of several).
+        for (int p = 0; p < parameters.CrossTypeContradictionPairs && typePairs.Count > 0; p++)
         {
             (DocumentPlan, DocumentPlan, string)? found = null;
             for (int k = 0; k < typePairs.Count && found is null; k++)
