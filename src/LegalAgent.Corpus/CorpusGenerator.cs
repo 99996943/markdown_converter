@@ -444,7 +444,8 @@ public static class CorpusGenerator
         Changes: previous is null
             ? null
             : NullIfEmpty(ManifestRelations.Changes(content, doc, fit, plan.First(d => d.Id == doc.PreviousVersionId), previous)),
-        Contradictions: NullIfEmpty(ManifestRelations.Contradictions(content, doc, fit, plan)));
+        Contradictions: NullIfEmpty(ManifestRelations.Contradictions(content, doc, fit, plan)),
+        Poison: doc.Poison is null ? null : ManifestRelations.Poison(content, doc, fit));
 
     private static IReadOnlyList<T>? NullIfEmpty<T>(IReadOnlyList<T> list) => list.Count == 0 ? null : list;
 
@@ -468,7 +469,8 @@ public static class CorpusGenerator
         problems.AddRange(CorpusChecks.References(fits.SelectMany(f => f.Composition.Unresolved)));
         if (parameters.StrictUniqueness)
         {
-            problems.AddRange(CorpusChecks.Uniqueness(fits.SelectMany(f => f.Composition.Blocks)));
+            // A poisoned document copies the document it imitates (FR-131): its blocks repeat by design.
+            problems.AddRange(CorpusChecks.Uniqueness(fits.Where((f, i) => plans[i].Poison is null).SelectMany(f => f.Composition.Blocks)));
         }
 
         problems.AddRange(CorpusChecks.SharedShare(
@@ -492,9 +494,13 @@ public static class CorpusGenerator
     private static double SharedShare(FitResult fit) =>
         fit.Typeset.Truth.Words.Count == 0 ? 0 : (double)SharedWords(fit) / fit.Typeset.Truth.Words.Count;
 
-    internal static string PdfPath(DocumentPlan plan) => plan.Type + "/" + plan.Id + ".pdf";
+    internal static string PdfPath(DocumentPlan plan) => Folder(plan) + plan.Id + ".pdf";
 
-    internal static string MarkdownPath(DocumentPlan plan) => plan.Type + "/" + plan.Id + ".md";
+    internal static string MarkdownPath(DocumentPlan plan) => Folder(plan) + plan.Id + ".md";
+
+    /// <summary>The directory of a document: its type, or <c>zatrute/&lt;typ&gt;/&lt;rodzaj&gt;/</c> for a poisoned one (FR-130).</summary>
+    private static string Folder(DocumentPlan plan) =>
+        plan.Poison is { } poison ? $"zatrute/{plan.Type}/{poison.Kind}/" : plan.Type + "/";
 
     private static string ManifestParameters(RunParameters parameters, CorpusGeneratorOptions options)
     {

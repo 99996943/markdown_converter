@@ -65,6 +65,32 @@ public static class ManifestRelations
         return result;
     }
 
+    /// <summary>
+    /// The poison of a poisoned document (FR-142): kind, imitated document, the pattern's description and every place
+    /// with its page, unit, kind of element, verbatim text and — for instructions to an AI — the goal.
+    /// </summary>
+    public static PoisonInfo Poison(ContentLibrary content, DocumentPlan doc, FitResult fit)
+    {
+        ArgumentNullException.ThrowIfNull(content);
+        ArgumentNullException.ThrowIfNull(doc);
+        ArgumentNullException.ThrowIfNull(fit);
+        PoisonPlan plan = doc.Poison ?? throw new ArgumentException("Dokument nie jest zatruty: " + doc.Id, nameof(doc));
+        PoisonPattern pattern = content.PoisonPatterns.First(p => string.Equals(p.Id, plan.PatternId, StringComparison.Ordinal));
+        var places = fit.Composition.Poison
+            .Select(p =>
+            {
+                (string unit, int page) = p.ElementId switch
+                {
+                    "okladka" => ("okładka", 1),
+                    "metryczka" => ("metryczka", fit.Typeset.ElementPages.TryGetValue("metryczka", out PageSpan card) ? card.First : 1),
+                    _ => Place(fit, new FactUse(p.ElementId, null)),
+                };
+                return new PoisonPlace(page, unit, p.Element, p.Text, pattern.Goal);
+            })
+            .ToList();
+        return new PoisonInfo(plan.Kind, plan.ImitatesId, pattern.Description, places);
+    }
+
     /// <summary>The manifest form of an element unit: without the final period; a bare section number becomes „sekcja N”.</summary>
     public static string UnitLabel(string unit)
     {

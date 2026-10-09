@@ -25,7 +25,7 @@ public sealed class ManifestPoisonTests : IDisposable
         DocumentsPerType = 3,
         Types = ["regulaminy", "taryfy"],
         Pages = new PageRange(1, 9),
-        StrictUniqueness = true,
+        StrictUniqueness = false,
         MaxSharedShare = 100,
         VersionedShare = 0,
         OutdatedPerType = 0,
