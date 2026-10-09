@@ -260,9 +260,7 @@ public sealed partial class TableDocumentsIntegrationTests
     {
         string md = (await ConvertAsync(WideGapsDocument())).Markdown;
 
-        Assert.Matches(@"(?m)^- nie udostępniaj nikomu[^
-]*
-- korzystaj wyłącznie z oficjalnej aplikacji", md);
+        Assert.Matches(@"(?m)^- nie udostępniaj nikomu[^\n]*\n- korzystaj wyłącznie z oficjalnej aplikacji", md);
     }
 
     private static IEnumerable<Section> Flatten(IEnumerable<Section> sections) =>
