@@ -38,7 +38,7 @@ public sealed record DocumentWords(string DocumentId, int TotalWords, int Shared
 public sealed record UnresolvedReference(string DocumentId, string BlockId, string Target);
 
 /// <summary>Corpus-level validation checks (FR-103a, FR-103b, FR-105, FR-110-FR-112, FR-114).</summary>
-public static class CorpusChecks
+public static partial class CorpusChecks
 {
     private const string TemplateStructureCheck = "TemplateStructure";
 
@@ -97,7 +97,9 @@ public static class CorpusChecks
         foreach (var group in groups)
         {
             var docs = group.Select(x => x.Block.DocumentId).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToList();
-            if (docs.Count < 2)
+
+            // FR-120: versions of one document („REG-03-w1”, „REG-03”) repeat its text by design.
+            if (docs.Select(BaseId).Distinct(StringComparer.Ordinal).Count() < 2)
             {
                 continue;
             }
@@ -112,6 +114,11 @@ public static class CorpusChecks
 
         return Sort(result);
     }
+
+    private static string BaseId(string documentId) => VersionSuffix().Replace(documentId, string.Empty);
+
+    [System.Text.RegularExpressions.GeneratedRegex(@"-w\d+$", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex VersionSuffix();
 
     /// <summary>FR-103a: share of shared words per document.</summary>
     public static IReadOnlyList<CheckViolation> SharedShare(IEnumerable<DocumentWords> documents, double maxShare)
