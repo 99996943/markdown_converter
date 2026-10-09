@@ -533,7 +533,7 @@ public static class DocumentComposer
 
         private IReadOnlyList<Inline> Render(string template)
         {
-            IReadOnlyList<Inline> runs = Resolve(TextTemplate.Render(template, this, _random));
+            List<Inline> runs = SinglePeriods(Resolve(TextTemplate.Render(template, this, _random)));
             if (_currentBlock is null)
             {
                 return runs;
@@ -550,6 +550,41 @@ public static class DocumentComposer
                 }
 
                 result.Add(run with { Text = FootnoteNumber(_currentBlock, run.Text).ToString(CultureInfo.InvariantCulture) });
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// A value ending with a period („1 maja 2026 r.”, „Bank Przykładowy S.A.”) before the sentence's own period gives
+        /// one period, not two (an ellipsis of three periods is kept).
+        /// </summary>
+        private static System.Text.RegularExpressions.Regex DoublePeriod() => DoublePeriodRegex;
+
+        private static readonly System.Text.RegularExpressions.Regex DoublePeriodRegex = new(@"(?<!\.)\.\.(?!\.)", System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+        private static List<Inline> SinglePeriods(IReadOnlyList<Inline> runs)
+        {
+            var result = new List<Inline>(runs.Count);
+            foreach (Inline run in runs)
+            {
+                if (run.Kind != InlineKind.Text)
+                {
+                    result.Add(run);
+                    continue;
+                }
+
+                string text = DoublePeriod().Replace(run.Text, ".");
+                if (text.StartsWith('.') && !text.StartsWith("..", StringComparison.Ordinal)
+                    && result.Count > 0 && result[^1].Kind == InlineKind.Text && result[^1].Text.EndsWith('.') && !result[^1].Text.EndsWith("..", StringComparison.Ordinal))
+                {
+                    text = text[1..];
+                }
+
+                if (text.Length > 0)
+                {
+                    result.Add(run with { Text = text });
+                }
             }
 
             return result;
