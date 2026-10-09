@@ -129,6 +129,174 @@
   },
   "documents": [
     {
+      "id": "dz-u-2019-1781-ochrona-danych",
+      "type": "akty",
+      "title": "Ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych",
+      "designation": "Dz. U. 2019 poz. 1781",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2019-1781-ochrona-danych.pdf",
+      "markdown": "akty/dz-u-2019-1781-ochrona-danych.md",
+      "pages": 34,
+      "source": {
+        "journal": "Dz. U. 2019 poz. 1781",
+        "consolidatedTextDate": "2019-08-30",
+        "url": "https://dziennikustaw.gov.pl/D2019000178101.pdf",
+        "downloadedOn": "2026-10-08",
+        "notes": "Nie uwzględnia zmian wprowadzonych w Dz. U. 2026 poz. 252 i 548."
+      }
+    },
+    {
+      "id": "dz-u-2020-287-prawa-konsumenta",
+      "type": "akty",
+      "title": "Ustawa z dnia 30 maja 2014 r. o prawach konsumenta",
+      "designation": "Dz. U. 2020 poz. 287",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2020-287-prawa-konsumenta.pdf",
+      "markdown": "akty/dz-u-2020-287-prawa-konsumenta.md",
+      "pages": 16,
+      "source": {
+        "journal": "Dz. U. 2020 poz. 287",
+        "consolidatedTextDate": "2020-01-28",
+        "url": "https://dziennikustaw.gov.pl/D2020000028701.pdf",
+        "downloadedOn": "2026-10-07",
+        "notes": "Obwieszczenie Marszałka Sejmu z dnia 28 stycznia 2020 r.; 16 stron."
+      }
+    },
+    {
+      "id": "dz-u-2024-1497-kredyt-konsumencki",
+      "type": "akty",
+      "title": "Ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim",
+      "designation": "Dz. U. 2024 poz. 1497",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2024-1497-kredyt-konsumencki.pdf",
+      "markdown": "akty/dz-u-2024-1497-kredyt-konsumencki.md",
+      "pages": 36,
+      "source": {
+        "journal": "Dz. U. 2024 poz. 1497",
+        "consolidatedTextDate": "2024-09-26",
+        "url": "https://dziennikustaw.gov.pl/D2024000149701.pdf",
+        "downloadedOn": "2026-10-07",
+        "notes": "Obwieszczenie Marszałka Sejmu z dnia 26 września 2024 r.; 36 stron."
+      }
+    },
+    {
+      "id": "dz-u-2024-1646-prawo-bankowe",
+      "type": "akty",
+      "title": "Ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe",
+      "designation": "Dz. U. 2024 poz. 1646",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2024-1646-prawo-bankowe.pdf",
+      "markdown": "akty/dz-u-2024-1646-prawo-bankowe.md",
+      "pages": 147,
+      "source": {
+        "journal": "Dz. U. 2024 poz. 1646",
+        "consolidatedTextDate": "2024-09-26",
+        "url": "https://dziennikustaw.gov.pl/D2024000164601.pdf",
+        "downloadedOn": "2026-10-07",
+        "notes": "Obwieszczenie Marszałka Sejmu z dnia 26 września 2024 r.; 147 stron."
+      }
+    },
+    {
+      "id": "dz-u-2024-30-uslugi-platnicze",
+      "type": "akty",
+      "title": "Ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych",
+      "designation": "Dz. U. 2024 poz. 30",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2024-30-uslugi-platnicze.pdf",
+      "markdown": "akty/dz-u-2024-30-uslugi-platnicze.md",
+      "pages": 114,
+      "source": {
+        "journal": "Dz. U. 2024 poz. 30",
+        "consolidatedTextDate": "2023-12-07",
+        "url": "https://dziennikustaw.gov.pl/D2024000003001.pdf",
+        "downloadedOn": "2026-10-07",
+        "notes": "Obwieszczenie Marszałka Sejmu z dnia 7 grudnia 2023 r.; 114 stron (dokument powyżej 100 stron)."
+      }
+    },
+    {
+      "id": "dz-u-2025-644-aml",
+      "type": "akty",
+      "title": "Ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu",
+      "designation": "Dz. U. 2025 poz. 644",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2025-644-aml.pdf",
+      "markdown": "akty/dz-u-2025-644-aml.md",
+      "pages": 67,
+      "source": {
+        "journal": "Dz. U. 2025 poz. 644",
+        "consolidatedTextDate": "2025-05-09",
+        "url": "https://dziennikustaw.gov.pl/D2025000064401.pdf",
+        "downloadedOn": "2026-10-08",
+        "notes": "Nie uwzględnia zmiany Dz. U. 2025 poz. 1669."
+      }
+    },
+    {
+      "id": "dz-u-2025-720-kredyt-hipoteczny",
+      "type": "akty",
+      "title": "Ustawa z dnia 23 marca 2017 r. o kredycie hipotecznym oraz o nadzorze nad pośrednikami kredytu hipotecznego i agentami",
+      "designation": "Dz. U. 2025 poz. 720",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2025-720-kredyt-hipoteczny.pdf",
+      "markdown": "akty/dz-u-2025-720-kredyt-hipoteczny.md",
+      "pages": 47,
+      "source": {
+        "journal": "Dz. U. 2025 poz. 720",
+        "consolidatedTextDate": "2025-05-21",
+        "url": "https://dziennikustaw.gov.pl/D2025000072001.pdf",
+        "downloadedOn": "2026-10-08"
+      }
+    },
+    {
+      "id": "dz-u-2026-1298-obwieszczenie-msz",
+      "type": "akty",
+      "title": "Obwieszczenie Ministra Spraw Zagranicznych z dnia 15 września 2026 r. w sprawie ogłoszenia jednolitego tekstu rozporządzenia w sprawie opłat konsularnych",
+      "designation": "Dz. U. 2026 poz. 1298",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2026-1298-obwieszczenie-msz.pdf",
+      "markdown": "akty/dz-u-2026-1298-obwieszczenie-msz.md",
+      "pages": 9,
+      "source": {
+        "journal": "Dz. U. 2026 poz. 1298",
+        "consolidatedTextDate": "2026-09-15",
+        "url": "https://dziennikustaw.gov.pl/D20261298.pdf",
+        "downloadedOn": "2026-10-07",
+        "notes": "Plik Dziennika Ustaw (D20261298.pdf) przekazany przez właściciela projektu; 9 stron, wielostronicowa taryfa opłat."
+      }
+    },
+    {
+      "id": "dz-u-2026-823-reklamacje",
+      "type": "akty",
+      "title": "Ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej",
+      "designation": "Dz. U. 2026 poz. 823",
+      "status": "obowiazujacy",
+      "pdf": "akty/dz-u-2026-823-reklamacje.pdf",
+      "markdown": "akty/dz-u-2026-823-reklamacje.md",
+      "pages": 18,
+      "source": {
+        "journal": "Dz. U. 2026 poz. 823",
+        "consolidatedTextDate": "2026-06-12",
+        "url": "https://dziennikustaw.gov.pl/D2026000082301.pdf",
+        "downloadedOn": "2026-10-08"
+      }
+    },
+    {
+      "id": "ustawa-o-sluzbie-cywilnej",
+      "type": "akty",
+      "title": "Ustawa z dnia 21 listopada 2008 r. o służbie cywilnej",
+      "designation": "Dz. U. 2026 poz. 590",
+      "status": "obowiazujacy",
+      "pdf": "akty/ustawa-o-sluzbie-cywilnej.pdf",
+      "markdown": "akty/ustawa-o-sluzbie-cywilnej.md",
+      "pages": 71,
+      "source": {
+        "journal": "Dz. U. 2026 poz. 590",
+        "consolidatedTextDate": "2026-10-07",
+        "url": "https://isap.sejm.gov.pl/",
+        "downloadedOn": "2026-10-07",
+        "notes": "Tekst ujednolicony ISAP (Dz. U. z 2026 r. poz. 590) przekazany przez właściciela projektu; 71 stron. Data tekstu jednolitego nie jest podana w pliku, wpisano datę pobrania."
+      }
+    },
+    {
       "id": "REG-01",
       "type": "regulaminy",
       "title": "Regulamin promocji „Karta z cashbackiem”",
