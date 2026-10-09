@@ -1,0 +1,76 @@
+bloki:
+  - id: blokady-opc-przyjecie-12
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Przyjmij zawiadomienie doręczone osobiście przez pracownika organu lub komornika."
+            podkroki:
+              - tekst: "Poproś doręczającego o okazanie legitymacji służbowej i dokumentu upoważnienia; dane osoby i organu zapisz w rejestrze odbioru."
+              - tekst: "Potwierdź odbiór na kopii dokumentu pieczęcią z datą i godziną wpływu oraz podpisem pracownika, który przyjął przesyłkę."
+          - tekst: "Obsłuż żądanie natychmiastowego wykonania zajęcia w obecności doręczającego."
+            podkroki:
+              - tekst: "Jeżeli doręczający oczekuje na miejscu informacji o stanie rachunku, przekaż dokument do jednostki „{{fakt:jednostka.operacje}}” i poproś o pilną obsługę."
+              - tekst: "Informacje o saldzie przekazuj wyłącznie na piśmie, w sposób zatwierdzony przez kierownika zespołu zajęć."
+          - tekst: "Zachowaj kopię i oryginał."
+            podkroki:
+              - tekst: "Oryginał przekaż do zespołu zajęć w dniu przyjęcia; kopię z pieczęcią zostaw w placówce na okres siedmiu dni."
+              - tekst: "Zawiadomienie wpisz do dziennika korespondencji placówki z numerem pozycji i datą."
+
+  - id: blokady-opc-wykonanie-11
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-wykonanie
+    elementy:
+      - kroki:
+          - tekst: "Wykonaj zajęcie w sytuacji, gdy klient jest w trakcie dyspozycji obciążającej rachunek."
+            podkroki:
+              - tekst: "Dyspozycje przyjęte przed założeniem blokady, ale niezrealizowane, wstrzymaj, jeżeli ich wykonanie spowodowałoby spadek środków poniżej kwoty zajęcia."
+              - tekst: "Klienta poinformuj, że dyspozycja została odrzucona z powodu zajęcia, nie ujawniając szczegółów sprawy poza informacją wynikającą z zawiadomienia."
+          - tekst: "Rozstrzygnij wątpliwości co do kolejności zdarzeń."
+            podkroki:
+              - tekst: "Jeżeli czas autoryzacji dyspozycji i czas wpływu zawiadomienia są bliskie, sprawdź zapis czasu w systemie transakcyjnym i oprzyj decyzję na jednoznacznych znacznikach."
+              - tekst: "W razie niemożności ustalenia kolejności zdarzeń przekaż sprawę do jednostki „{{fakt:jednostka.prawny}}”."
+          - tekst: "Sprawdź skutki dla powiązanych produktów kredytowych."
+            podkroki:
+              - tekst: "Jeżeli rachunek jest źródłem spłaty rat kredytu, poinformuj komórkę kredytową o zajęciu, aby mogła ocenić ryzyko zaległości."
+              - tekst: "Raty niespłacone w terminie z powodu zajęcia nie powodują naliczenia opłat dodatkowych, o ile klient wyraźnie wskazał taki powód."
+
+  - id: blokady-opc-inne-10
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-inne
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż blokadę wynikającą z umowy o zastaw rejestrowy lub zastaw na wierzytelności z rachunku."
+            podkroki:
+              - tekst: "Po otrzymaniu zawiadomienia o ustanowieniu zastawu sprawdź treść umowy i zablokuj środki do kwoty wskazanej jako zabezpieczenie."
+              - tekst: "Zastaw rejestruj w {{fakt:zajecie.rejestr}} jako odrębny rodzaj blokady i nie przekazuj z niego środków bez dyspozycji zastawnika lub orzeczenia."
+          - tekst: "Obsłuż realizację zastawu."
+            podkroki:
+              - tekst: "Wypłatę na rzecz zastawnika wykonuj po otrzymaniu pisemnego wezwania i potwierdzenia, że nastąpiło zdarzenie uprawniające do zaspokojenia."
+              - tekst: "O wykonaniu wypłaty poinformuj klienta, wskazując podstawę i kwotę."
+          - tekst: "Zwolnij zastaw."
+            podkroki:
+              - tekst: "Po otrzymaniu zgody zastawnika na zwolnienie zastawu zdejmij blokadę w terminie {{fakt:termin.zajecie.zwolnienie}}."
+              - tekst: "Zgodę przechowuj w aktach razem z umową zastawu."
+
+  - id: blokady-opc-przekazanie-9
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przekazanie
+    elementy:
+      - kroki:
+          - tekst: "Zwróć organowi środki przekazane omyłkowo przez Bank."
+            podkroki:
+              - tekst: "Po stwierdzeniu, że przekazanie nastąpiło w kwocie wyższej niż należna, wystąp do organu o zwrot nadwyżki, wskazując numer operacji, kwotę i podstawę żądania."
+              - tekst: "Do czasu zwrotu środków nie pobieraj od klienta kwoty, która została przekazana omyłkowo, i odnotuj sprawę w rejestrze błędów."
+          - tekst: "Rozlicz ewentualne odsetki i koszty."
+            podkroki:
+              - tekst: "Jeżeli klient poniósł szkodę wskutek omyłki, rozpatrz jego reklamację w terminie {{fakt:termin.reklamacja.rozpatrzenie}} i wskaż sposób wyrównania."
+              - tekst: "Decyzję o wypłacie odszkodowania zatwierdza dyrektor jednostki „{{fakt:jednostka.operacje}}” po zasięgnięciu opinii jednostki „{{fakt:jednostka.prawny}}”."
+          - tekst: "Zapobiegaj powtórzeniu błędu."
+            podkroki:
+              - tekst: "Zmień ustawienia dyspozycji lub formularza, jeżeli błąd wynikał z ich konstrukcji, i poinformuj zespół o zmianie."
+              - tekst: "Omów zdarzenie na najbliższym spotkaniu zespołu zajęć."

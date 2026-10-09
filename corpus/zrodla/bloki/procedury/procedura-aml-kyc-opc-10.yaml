@@ -1,0 +1,38 @@
+bloki:
+  - id: procedura-aml-kyc-krok-id-11
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-identyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Zidentyfikuj klienta w trakcie wizyty w placówce, gdy osoba reprezentuje kilku klientów."
+            podkroki:
+              - tekst: "Zweryfikuj tożsamość każdej osoby osobno i sprawdź, czy dokumenty umocowania obejmują dyspozycje, które mają zostać złożone."
+              - tekst: "Jeżeli jedna osoba składa dyspozycje w imieniu wielu niepowiązanych klientów, odnotuj to w karcie każdego z nich i poinformuj kierownika placówki."
+          - tekst: "Uwzględnij pochodzenie dokumentów przedstawionych przez klienta."
+            podkroki:
+              - tekst: "Dokumenty wydane za granicą przyjmuj z apostille lub legalizacją, o ile wymagają tego przepisy, i z tłumaczeniem przysięgłym, gdy są sporządzone w języku obcym."
+              - tekst: "Dokumenty, których autentyczność budzi wątpliwości, zatrzymaj do czasu wyjaśnienia i skonsultuj z jednostką „{{fakt:jednostka.bezpieczenstwo}}”."
+          - tekst: "Zapisz wynik identyfikacji."
+            podkroki:
+              - tekst: "W {{fakt:aml.system-klienci}} wpisz rodzaj dokumentu, jego numer, datę ważności i organ wydający, a skan dołącz do karty klienta."
+              - tekst: "Zapisz imię pracownika, który przeprowadził identyfikację, aby umożliwić późniejszą weryfikację."
+
+  - id: procedura-aml-kyc-krok-ryzyko-8
+    typy: [procedury]
+    tematy: [procedura-aml-kyc]
+    kategoria: aml-krok-ryzyko
+    elementy:
+      - kroki:
+          - tekst: "Oceń ryzyko związane z nowym produktem lub usługą przed jej wprowadzeniem."
+            podkroki:
+              - tekst: "Jednostka wprowadzająca produkt przekazuje jednostce „{{fakt:jednostka.zgodnosc}}” opis produktu, grupę docelową, kanały dystrybucji i przewidywane limity."
+              - tekst: "Jednostka zgodności ocenia, czy produkt może być użyty do prania pieniędzy, i wskazuje środki ograniczające ryzyko, takie jak limity, dodatkowa weryfikacja lub monitorowanie."
+          - tekst: "Zatwierdź wprowadzenie produktu."
+            podkroki:
+              - tekst: "Produkt może być wprowadzony po zatwierdzeniu oceny przez koordynatora (stanowisko „{{fakt:aml.koordynator}}”); wynik oceny dołącza się do dokumentacji produktu."
+              - tekst: "W razie stwierdzenia wysokiego ryzyka resztkowego decyzję podejmuje komitet zarządczy."
+          - tekst: "Przeprowadź ocenę po wdrożeniu."
+            podkroki:
+              - tekst: "Po sześciu miesiącach od wdrożenia produktu sprawdź alerty i sprawy z nim związane, a wnioski przekaż właścicielowi produktu."
+              - tekst: "Jeżeli ocena wykaże wzrost ryzyka, zmień limity lub zasady dystrybucji."

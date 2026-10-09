@@ -1,0 +1,315 @@
+bloki:
+  - id: blokady-opc-przyjecie-9
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż zawiadomienie o zajęciu wierzytelności z rachunku firmowego."
+            podkroki:
+              - tekst: "Sprawdź, czy dłużnik prowadzi rachunki jako przedsiębiorca, i oznacz w rejestrze, że sprawa dotyczy rachunku firmowego; zajęcie obejmuje rachunki bieżące, pomocnicze i rachunki VAT."
+              - tekst: "Środki zgromadzone na rachunku VAT zajmuje się tylko w zakresie, na jaki zezwalają przepisy o podzielonej płatności; kwotę zajęcia ustal z uwzględnieniem tych ograniczeń."
+          - tekst: "Ustal, czy firma korzysta z linii kredytowej lub kredytu obrotowego."
+            podkroki:
+              - tekst: "Zajęcie nie obejmuje środków pochodzących z kredytu, które Bank udostępnił, lecz klient ich nie wykorzystał; poinformuj o tym organ w odpowiedzi."
+              - tekst: "Jeżeli klient w dniu zajęcia dokonywał spłaty kredytu z rachunku, potwierdź, że spłata nastąpiła przed wpływem zawiadomienia."
+          - tekst: "Poinformuj opiekuna firmowego klienta."
+            podkroki:
+              - tekst: "Opiekun otrzymuje komunikat o zajęciu w dniu jego wykonania, aby mógł przygotować rozmowę z klientem i ocenić wpływ zajęcia na obsługę firmy."
+              - tekst: "Opiekun nie ma dostępu do akt sprawy poza informacją o rodzajach i kwotach blokad."
+
+  - id: blokady-opc-przyjecie-10
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Postępuj z zawiadomieniem otrzymanym od komornika zagranicznego lub organu innego państwa."
+            podkroki:
+              - tekst: "Dokumenty zagraniczne przekaż niezwłocznie do jednostki „{{fakt:jednostka.prawny}}”, która ocenia, czy mają moc wykonawczą w Polsce, oraz czy wymagają tłumaczenia przysięgłego."
+              - tekst: "Do czasu opinii prawnej nie zajmuj rachunku, lecz zarejestruj dokument w rejestrze z odpowiednim znacznikiem."
+          - tekst: "Rozpoznaj zawiadomienie wydane w ramach współpracy transgranicznej."
+            podkroki:
+              - tekst: "Zawiadomienia wydane na podstawie rozporządzeń unijnych o europejskim nakazie zajęcia rachunku bankowego wykonuj w terminach wskazanych w tych przepisach."
+              - tekst: "O wykonaniu lub niemożności wykonania nakazu poinformuj organ na formularzu przewidzianym w rozporządzeniu."
+          - tekst: "Ustal język i sposób doręczenia."
+            podkroki:
+              - tekst: "Jeżeli dokument jest w języku niezrozumiałym dla Banku, zleć tłumaczenie w trybie pilnym; koszt tłumaczenia obciąża Bank."
+              - tekst: "Terminy liczone od doręczenia biegną od dnia, w którym Bank otrzymał dokument w zrozumiałym języku, jeżeli przepisy tak stanowią."
+
+  - id: blokady-opc-wykonanie-8
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-wykonanie
+    elementy:
+      - kroki:
+          - tekst: "Zareaguj na wpływ środków na rachunek objęty zajęciem."
+            podkroki:
+              - tekst: "System automatycznie blokuje wpływy do wysokości niezaspokojonej należności; operator sprawdza raz dziennie raport blokad wykonanych automatycznie i porównuje go z rejestrem."
+              - tekst: "Wpływy, które nie zostały zablokowane z powodu błędu systemu, zablokuj ręcznie w tym samym dniu roboczym."
+          - tekst: "Rozpoznaj wpływy, które podlegają szczególnej ochronie."
+            podkroki:
+              - tekst: "Zatrzymaj blokadę wpływu, jeżeli nadawca i tytuł wskazują na świadczenie wolne od zajęcia; dokumenty uzupełniające zbierz od klienta w terminie {{fakt:termin.zajecie.ponowna-weryfikacja}}."
+              - tekst: "Klienta poinformuj, że może przekazać Bankowi dodatkowe dokumenty potwierdzające charakter wpływu."
+          - tekst: "Obsłuż spłatę zadłużenia przez dłużnika."
+            podkroki:
+              - tekst: "Wpłatę dokonaną bezpośrednio do organu lub wierzyciela uwzględnij dopiero po otrzymaniu od organu pisemnego zawiadomienia o spłacie."
+              - tekst: "Po otrzymaniu takiego zawiadomienia zwolnij zajęcie zgodnie z procedurą zwolnienia."
+
+  - id: blokady-opc-wykonanie-9
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-wykonanie
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż zajęcie rachunku, do którego wydano karty płatnicze."
+            podkroki:
+              - tekst: "Po zajęciu środków karty płatnicze wydane do rachunku działają do wysokości środków dostępnych po uwzględnieniu blokady; nie blokuj kart bez potrzeby."
+              - tekst: "Jeżeli saldo dostępne spadło do zera, poinformuj klienta, że transakcje kartą będą odrzucane do czasu, aż pojawią się środki wolne od zajęcia."
+          - tekst: "Obsłuż transakcje kartowe rozliczane po założeniu blokady."
+            podkroki:
+              - tekst: "Transakcje autoryzowane przed zajęciem, a rozliczone po nim, obciążają rachunek do wysokości środków niezablokowanych; ich nadwyżka stanowi zadłużenie klienta wobec Banku."
+              - tekst: "Zadłużenie to nie podlega uwzględnieniu przy ustalaniu kwoty zajęcia i jest dochodzone na zasadach ogólnych."
+          - tekst: "Obsłuż zajęcie rachunku w czasie podróży klienta za granicę."
+            podkroki:
+              - tekst: "Informacje o ograniczeniach w dostępie do środków przekaż klientowi przez dostępny kanał, w tym przez infolinię {{fakt:kontakt.infolinia-zagranica}}."
+              - tekst: "Klienta nie obciążaj opłatami za odrzucone transakcje powstałe w wyniku zajęcia."
+
+  - id: blokady-opc-kwoty-6
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-kwoty
+    elementy:
+      - kroki:
+          - tekst: "Zastosuj ograniczenia egzekucji z rachunku, na który wpływa wynagrodzenie, gdy zajęcie dotyczy należności alimentacyjnych."
+            podkroki:
+              - tekst: "W przypadku należności alimentacyjnych kwota wolna jest niższa niż przy innych należnościach; zastosuj wartość podaną w zawiadomieniu lub wynikającą z przepisów."
+              - tekst: "Jeżeli zawiadomienie nie wskazuje kwoty wolnej, a rodzaj należności jest jasny, poproś organ o potwierdzenie obliczeń przed przekazaniem środków."
+          - tekst: "Zabezpiecz środki, które po wyczerpaniu zajęcia alimentacyjnego pozostają dla innych wierzycieli."
+            podkroki:
+              - tekst: "Zajęcia alimentacyjne wykonuj z pierwszeństwem przed innymi, jeżeli przepisy tak stanowią, i uwzględnij to w planie podziału."
+              - tekst: "Przekazanie środków innemu wierzycielowi nastąpi dopiero po zaspokojeniu należności alimentacyjnych lub po wskazaniu organu."
+          - tekst: "Poinformuj klienta o zasadach obliczania kwoty wolnej."
+            podkroki:
+              - tekst: "W informacji wskaż, według jakiej zasady ustalono kwotę wolną, oraz uwzględnij aktualne minimalne wynagrodzenie ({{fakt:zajecie.minimalne-wynagrodzenie}})."
+              - tekst: "Nie udzielaj porad dotyczących zmiany wysokości kwot wolnych; kieruj klienta do organu."
+
+  - id: blokady-opc-przekazanie-6
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przekazanie
+    elementy:
+      - kroki:
+          - tekst: "Rozpatrz wniosek organu o zmianę zakresu zajęcia."
+            podkroki:
+              - tekst: "Zmniejszenie lub zwiększenie kwoty zajęcia wykonaj po otrzymaniu nowego zawiadomienia z podpisem organu; zmiana wchodzi w życie w dniu jej zarejestrowania."
+              - tekst: "O wykonaniu zmiany poinformuj organ i klienta w terminach przewidzianych dla zajęcia pierwotnego."
+          - tekst: "Obsłuż zawiadomienie o umorzeniu postępowania."
+            podkroki:
+              - tekst: "Po otrzymaniu zawiadomienia o umorzeniu zwolnij blokadę w terminie {{fakt:termin.zajecie.zwolnienie}} i sprawdź, czy nie ma innych zawiadomień dotyczących tego samego dłużnika."
+              - tekst: "Środki, które zostały już przekazane wierzycielowi, nie podlegają zwrotowi przez Bank."
+          - tekst: "Obsłuż zawiadomienie o zmianie wierzyciela."
+            podkroki:
+              - tekst: "Po otrzymaniu zawiadomienia o zmianie wierzyciela w toku egzekucji zaktualizuj dane odbiorcy w rejestrze, zachowując pierwotną kolejność zaspokojenia."
+              - tekst: "Przekazanie środków nowemu wierzycielowi wykonuj dopiero po weryfikacji zgodnie z zasadami dotyczącymi zmiany rachunku odbiorcy."
+
+  - id: blokady-opc-przekazanie-7
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-przekazanie
+    elementy:
+      - kroki:
+          - tekst: "Zamknij sprawę zajęcia po jej całkowitym rozliczeniu."
+            podkroki:
+              - tekst: "Sprawdź w rejestrze, czy wszystkie kwoty zostały przekazane, a blokady zdjęte, i czy w sprawie nie pozostały nierozliczone opłaty."
+              - tekst: "Wpisz do rejestru datę zakończenia sprawy i uzupełnij pole „sposób zakończenia”: wyczerpanie zajęcia, umorzenie, wygaśnięcie lub zwolnienie na wniosek."
+          - tekst: "Zweryfikuj kompletność akt."
+            podkroki:
+              - tekst: "Operator sprawdza kompletność akt według listy kontrolnej, a kierownik zespołu zatwierdza zamknięcie sprawy w systemie."
+              - tekst: "Sprawy niekompletne wracają do operatora z listą braków do uzupełnienia w ciągu pięciu dni roboczych."
+          - tekst: "Przekaż akta do archiwum."
+            podkroki:
+              - tekst: "Akta zamkniętych spraw przekazuje się do archiwum Banku nie rzadziej niż raz na kwartał, z wykazem, który zawiera sygnatury i okres przechowywania."
+              - tekst: "Dostęp do archiwalnych akt udzielany jest wyłącznie za zgodą kierownika zespołu zajęć lub jednostki „{{fakt:jednostka.zgodnosc}}”."
+
+  - id: blokady-opc-inne-7
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-inne
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż blokadę rachunku na wniosek samego klienta."
+            podkroki:
+              - tekst: "Klient może złożyć wniosek o zablokowanie dostępu do rachunku, na przykład w razie podejrzenia nieuprawnionego dostępu; wniosek przyjmuje się w placówce albo przez infolinię po silnym uwierzytelnieniu klienta."
+              - tekst: "Blokadę założoną na wniosek klienta oznacz odrębnym kodem i nie traktuj jej jako zajęcia; zniesienie wymaga dyspozycji klienta."
+          - tekst: "Obsłuż blokadę rachunku z powodu niezgodności danych."
+            podkroki:
+              - tekst: "Gdy dane klienta są nieaktualne lub budzą wątpliwości, a nie udało się ich zaktualizować w terminie, ogranicz usługi zgodnie z regulaminem rachunku."
+              - tekst: "O blokadzie poinformuj klienta, wskazując, jakie dokumenty należy przedstawić, aby ją znieść."
+          - tekst: "Obsłuż blokadę wynikającą z wyroku sądu o ubezwłasnowolnieniu."
+            podkroki:
+              - tekst: "Po otrzymaniu prawomocnego orzeczenia ogranicz dyspozycje klienta do czynności dopuszczalnych przez prawo i ustal osobę uprawnioną do reprezentowania."
+              - tekst: "Kopię orzeczenia przechowuj w aktach klienta i odnotuj datę wejścia w życie ograniczeń."
+
+  - id: blokady-opc-inne-8
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-opis-inne
+    elementy:
+      - kroki:
+          - tekst: "Obsłuż blokadę środków w związku z podejrzeniem oszustwa."
+            podkroki:
+              - tekst: "Na wniosek jednostki „{{fakt:jednostka.bezpieczenstwo}}” zablokuj środki, które mogły zostać uzyskane w wyniku oszustwa, na czas nie dłuższy niż wskazany w polityce bezpieczeństwa."
+              - tekst: "Poinformuj bank odbiorcy o podejrzeniu oszustwa i poproś o wstrzymanie środków, jeżeli to możliwe."
+          - tekst: "Zawiadom organy ścigania."
+            podkroki:
+              - tekst: "Decyzję o zawiadomieniu prokuratury lub policji podejmuje jednostka „{{fakt:jednostka.bezpieczenstwo}}” po konsultacji z jednostką „{{fakt:jednostka.prawny}}”."
+              - tekst: "Dokumentację dotyczącą oszustwa zachowaj w oryginalnej postaci do czasu zakończenia postępowania."
+          - tekst: "Zwróć środki poszkodowanemu klientowi."
+            podkroki:
+              - tekst: "Zwrot wykonaj po potwierdzeniu, że środki zostały uzyskane w wyniku oszustwa, i po otrzymaniu zgody osoby, która rozporządzała środkami."
+              - tekst: "W razie sporu między klientami zwrot nastąpi dopiero po rozstrzygnięciu przez sąd lub po zawarciu ugody."
+
+  - id: blokady-opc-klient-5
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-klient-opt
+    elementy:
+      - kroki:
+          - tekst: "Prześlij klientowi informację o wykonaniu zajęcia w sposób zgodny z ustalonym trybem."
+            podkroki:
+              - tekst: "Informację wysyła się listem poleconym lub przez bankowość elektroniczną, jeżeli klient wyraził zgodę na ten sposób komunikacji; wybór kanału zapisuje się w rejestrze."
+              - tekst: "Jeżeli klient nie odebrał listu, ponów wysyłkę w ciągu {{fakt:termin.doreczenie-korespondencji}} i zachowaj dowód nadania."
+          - tekst: "Poinformuj klienta o zwolnieniu zajęcia."
+            podkroki:
+              - tekst: "Po zdjęciu blokady wyślij informację w terminie {{fakt:termin.zajecie.powiadomienie-klienta}}, wskazując datę zdjęcia i kwotę, która stała się dostępna."
+              - tekst: "Gdy zdjęcie nastąpiło tylko częściowo, opisz, jaka część środków pozostaje zajęta."
+          - tekst: "Przekaż klientowi informację o możliwościach reklamacji."
+            podkroki:
+              - tekst: "Wskaż, że klient może złożyć reklamację dotyczącą sposobu wykonania zajęcia przez Bank, a nie zasadności zajęcia, i podaj adres {{fakt:kontakt.email-reklamacje}}."
+              - tekst: "Reklamację rozpatruje się w terminie {{fakt:termin.reklamacja.rozpatrzenie}}, zgodnie z procedurą reklamacyjną Banku."
+
+  - id: blokady-opc-bledy-6
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-bledy-opt
+    elementy:
+      - kroki:
+          - tekst: "Zareaguj na niedotrzymanie terminu wykonania zajęcia."
+            podkroki:
+              - tekst: "Gdy zajęcie nie zostało wykonane w terminie, operator niezwłocznie informuje kierownika zespołu, wskazując przyczynę opóźnienia oraz stan środków na rachunku."
+              - tekst: "Kierownik zespołu zarządza wykonanie zajęcia w trybie pilnym i ocenia, czy powstało ryzyko szkody po stronie wierzyciela."
+          - tekst: "Poinformuj organ o opóźnieniu."
+            podkroki:
+              - tekst: "W odpowiedzi dla organu opisz przyczynę opóźnienia i datę wykonania zajęcia; nie podawaj informacji o wewnętrznych błędach technicznych poza koniecznymi."
+              - tekst: "Jeżeli środki zostały wypłacone przed założeniem blokady, poinformuj organ o tym fakcie."
+          - tekst: "Przeanalizuj przyczyny opóźnienia."
+            podkroki:
+              - tekst: "Jednostka „{{fakt:jednostka.operacje}}” sporządza w ciągu pięciu dni roboczych notatkę z analizą przyczyn i działaniami zapobiegawczymi."
+              - tekst: "Wnioski z notatki przedstawia się na najbliższym spotkaniu zespołu i uwzględnia w aktualizacji procedury."
+
+  - id: blokady-opc-bledy-7
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-bledy-opt
+    elementy:
+      - akapit: "Błąd w obsłudze zajęcia może wynikać z działania pracownika, awarii systemu lub nieprawidłowych danych w zawiadomieniu organu. Sposób reakcji zależy od jego przyczyny i skutków, a każdy błąd podlega rejestracji."
+      - ustep: "W rejestrze błędów zapisuje się:"
+        punkty:
+          - "datę stwierdzenia błędu i datę jego powstania;"
+          - "opis zdarzenia, w tym rachunki, których dotyczy błąd, oraz kwoty;"
+          - "przyczynę, wskazaną jako działanie pracownika, awarię systemu lub błąd danych wejściowych;"
+          - "działania naprawcze i datę ich zakończenia;"
+          - "skutki dla klienta, organu i Banku oraz wynik rozmowy z klientem, jeżeli była konieczna."
+      - akapit: "Rejestr błędów prowadzi jednostka „{{fakt:jednostka.operacje}}”, a jego zestawienie przekazuje się raz na kwartał jednostce „{{fakt:jednostka.ryzyko}}” do oceny ryzyka operacyjnego."
+
+  - id: blokady-opc-szcz-7
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-opt
+    elementy:
+      - kroki:
+          - tekst: "Postępuj przy zajęciu rachunku klienta, który znajduje się w stanie upadłości lub restrukturyzacji."
+            podkroki:
+              - tekst: "Po otrzymaniu postanowienia sądu o ogłoszeniu upadłości zablokuj rachunki upadłego i wstrzymaj wykonywanie zajęć dotyczących wierzytelności objętych postępowaniem."
+              - tekst: "Rachunki upadłego przeksięguj lub udostępnij syndykowi na jego pisemną dyspozycję, po sprawdzeniu dokumentów potwierdzających jego umocowanie."
+          - tekst: "Obsłuż zawiadomienia o zajęciach dotyczących okresu przed upadłością."
+            podkroki:
+              - tekst: "Zawiadomienia o zajęciach, które wpłynęły przed ogłoszeniem upadłości, przekaż syndykowi wraz ze stanem środków na dzień ogłoszenia."
+              - tekst: "Zawiadomień złożonych po ogłoszeniu upadłości nie wykonuj; poinformuj organ o stanie postępowania."
+          - tekst: "Zabezpiecz prawa Banku."
+            podkroki:
+              - tekst: "Jednostka „{{fakt:jednostka.prawny}}” zgłasza wierzytelności Banku do masy upadłości w terminie wskazanym w postanowieniu."
+              - tekst: "Kompensatę wzajemnych wierzytelności przeprowadza się wyłącznie po uzgodnieniu z jednostką prawną."
+
+  - id: blokady-opc-szcz-8
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-szczegolne-opt
+    elementy:
+      - kroki:
+          - tekst: "Postępuj przy zajęciu rachunku klienta przebywającego za granicą lub niemającego kontaktu z Bankiem."
+            podkroki:
+              - tekst: "Wykonaj zajęcie i powiadom klienta na wszystkie dostępne adresy, w tym adres e-mail i numer telefonu zapisane w systemie."
+              - tekst: "Jeżeli korespondencja wraca niedoręczona, sprawdź aktualność adresu i dołącz zwrot do akt; brak doręczenia nie wstrzymuje wykonania zajęcia."
+          - tekst: "Postępuj, gdy klient kwestionuje tożsamość dłużnika."
+            podkroki:
+              - tekst: "Klient, który twierdzi, że zajęcie dotyczy innej osoby, składa pisemne wyjaśnienie wraz z dokumentem tożsamości; wyjaśnienie przekaż organowi w ciągu trzech dni roboczych."
+              - tekst: "Blokadę utrzymuj do czasu rozstrzygnięcia organu, chyba że oczywista pomyłka co do identyfikatorów pozwala ją zdjąć wcześniej na polecenie kierownika zespołu."
+          - tekst: "Postępuj, gdy klient grozi pracownikowi lub zachowuje się agresywnie."
+            podkroki:
+              - tekst: "Pracownik zachowuje spokój, zawiadamia przełożonego i, jeżeli to konieczne, wzywa ochronę."
+              - tekst: "Zdarzenie opisuje się w notatce przekazanej jednostce „{{fakt:jednostka.bezpieczenstwo}}”, a klientowi proponuje się dalszy kontakt w formie pisemnej."
+
+  - id: blokady-opc-kontrola-5
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-kontrola-opt
+    elementy:
+      - kroki:
+          - tekst: "Przeprowadź uzgodnienie rejestru zajęć ze stanem systemu."
+            podkroki:
+              - tekst: "Raz w miesiącu porównaj liczbę i kwoty blokad w {{fakt:zajecie.rejestr}} z danymi z {{fakt:zajecie.system-centralny}} i opisz każdą różnicę."
+              - tekst: "Różnice wyjaśnia operator w ciągu trzech dni roboczych, a sprawy nierozstrzygnięte przekazuje kierownikowi zespołu."
+          - tekst: "Przeprowadź przegląd uprawnień operatorów."
+            podkroki:
+              - tekst: "Co kwartał jednostka „{{fakt:jednostka.operacje}}” sprawdza, czy uprawnienia do zakładania i zdejmowania blokad mają wyłącznie osoby upoważnione."
+              - tekst: "Uprawnienia osób, które zmieniły stanowisko lub opuściły Bank, odbiera się w dniu zmiany."
+          - tekst: "Przeprowadź audyt procesu."
+            podkroki:
+              - tekst: "Audyt wewnętrzny ocenia proces obsługi zajęć co najmniej raz na dwa lata, zwracając uwagę na terminowość, kompletność dokumentacji i rozdział obowiązków."
+              - tekst: "Zalecenia audytu wdraża się zgodnie z planem zatwierdzonym przez dyrektora jednostki „{{fakt:jednostka.operacje}}”."
+
+  - id: blokady-opc-dok-3
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-dok-opt
+    elementy:
+      - kroki:
+          - tekst: "Zabezpiecz dokumentację zajęć przed nieuprawnionym dostępem."
+            podkroki:
+              - tekst: "Dokumenty papierowe przechowuj w zamykanych szafach w pomieszczeniu o ograniczonym dostępie; klucze wydaje i rejestruje kierownik zespołu zajęć."
+              - tekst: "Dokumenty elektroniczne przechowuj wyłącznie w repozytorium zatwierdzonym przez Bank, z uprawnieniami nadawanymi według ról."
+          - tekst: "Zapewnij odtwarzalność akt."
+            podkroki:
+              - tekst: "Raz w roku wykonaj próbę odtworzenia wybranych akt z archiwum i sprawdź, czy dokumentacja pozwala odtworzyć przebieg sprawy."
+              - tekst: "Wyniki próby zapisz w sprawozdaniu i przekaż jednostce „{{fakt:jednostka.zgodnosc}}”."
+          - tekst: "Udostępniaj akta uprawnionym podmiotom."
+            podkroki:
+              - tekst: "Akta sprawy udostępnia się organom i sądom na podstawie pisemnego żądania; kopie wydaje jednostka „{{fakt:jednostka.prawny}}” i prowadzi rejestr udostępnień."
+              - tekst: "Klientowi udostępnia się wyłącznie dokumenty, które dotyczą jego rachunku i nie naruszają tajemnicy innych osób."
+
+  - id: blokady-opc-odp-4
+    typy: [procedury]
+    tematy: [procedura-blokady]
+    kategoria: blokady-odp-opt
+    elementy:
+      - akapit: "Poza zadaniami wskazanymi we wcześniejszych punktach w obsłudze zajęć uczestniczą także jednostki wspierające, których rola polega na zapewnieniu ciągłości i bezpieczeństwa procesu."
+      - ustep: "Do zadań jednostek wspierających należy:"
+        punkty:
+          - "**Jednostka informatyczna** — utrzymanie dostępności systemu {{fakt:zajecie.system-centralny}} i skrzynki {{fakt:zajecie.skrzynka}}, a także usuwanie awarii zgłoszonych przez operatorów;"
+          - "**{{fakt:jednostka.prawny}}** — udzielanie opinii prawnych w sprawach spornych, ocena dokumentów zagranicznych i reprezentowanie Banku wobec organów w razie potrzeby;"
+          - "**{{fakt:jednostka.bezpieczenstwo}}** — weryfikacja autentyczności wątpliwych zawiadomień i zajmowanie się podejrzeniami nadużyć;"
+          - "**{{fakt:jednostka.zgodnosc}}** — kontrola przestrzegania procedury i sprawdzanie jakości dokumentacji;"
+          - "**{{fakt:jednostka.reklamacje}}** — rozpatrywanie reklamacji klientów dotyczących sposobu wykonania zajęcia."
+      - akapit: "Jednostki wspierające wykonują zadania na wniosek jednostki „{{fakt:jednostka.operacje}}” lub z własnej inicjatywy, jeżeli stwierdzą okoliczności wymagające reakcji."
