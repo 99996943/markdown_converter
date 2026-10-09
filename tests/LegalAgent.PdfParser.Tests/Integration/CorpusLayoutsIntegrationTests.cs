@@ -656,6 +656,50 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("6\\) Placówka — punkt Banku obsługujący Klientów;", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087b: two columns of numbered clauses whose baselines are offset by half a line (REG-02): the body leading is the
+    /// line spacing within a column, so the interleaved lines are neither a table nor broken paragraphs.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnsWithOffsetBaselines_AreTwoColumnsOfClauses()
+    {
+        var b = new SyntheticPdfBuilder().Page().Page();
+        string[] words = ["Bank", "wydaje", "kartę", "na", "wniosek", "Klienta", "po", "zawarciu", "umowy", "rachunku", "płatniczego", "w", "placówce", "albo", "przez", "Internet"];
+        foreach ((double x, double top, int first) in new[] { (50.0, 92.0, 1), (313.0, 98.0, 31) })
+        {
+            double y = top;
+            int n = first;
+            for (int k = 0; k < 10; k++, n++)
+            {
+                for (int line = 0; line < 4; line++)
+                {
+                    string text = string.Join(' ', Enumerable.Range(0, 6).Select(i => words[(n + line + i) % words.Length]));
+                    if (line == 0)
+                    {
+                        b.Text(x, y, $"{n}.", 9.5).Text(x + 18, y, text, 9.5);
+                    }
+                    else
+                    {
+                        b.Text(x + 18, y, line == 3 ? text + "." : text, 9.5);
+                    }
+
+                    y += 12.5;
+                }
+            }
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087b.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| ", md, StringComparison.Ordinal);
+        Assert.All(md.Split('\n').Where(l => l.Length > 0 && !l.StartsWith("<!--", StringComparison.Ordinal)), l => Assert.StartsWith("- ", l, StringComparison.Ordinal));
+        Assert.Equal(20, md.Split('\n').Count(l => System.Text.RegularExpressions.Regex.IsMatch(l, @"^- \d+\\\. ")));
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
