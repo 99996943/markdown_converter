@@ -1,0 +1,62 @@
+id: taryfa-firmy
+typ: taryfy
+temat: taryfa-firmy
+tytul:
+  - "Taryfa opłat i prowizji {{param:bank}} dla przedsiębiorców i klientów instytucjonalnych"
+  - "Taryfa opłat i prowizji dla {przedsiębiorców|firm} i klientów instytucjonalnych {{param:bank}}"
+uklady: [taryfa-bez-siatki]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
+sekcje:
+  - rodzaj: sekcja-taryfy
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-taryfa-postanowienia-ogolne, taryfa-firmy-zakres, wspolne-taryfa-zasady-pobierania, wspolne-taryfa-kursy-walut, taryfa-firmy-zasady-szczegolowe]
+    opcjonalne: { kategorie: [akapity-firmy-ogolne], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Mikroprzedsiębiorstwa"
+    wymagane: [taryfa-firmy-mikro-opis, taryfa-firmy-mikro-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-mikro], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Małe i średnie przedsiębiorstwa"
+    wymagane: [taryfa-firmy-msp-opis, taryfa-firmy-msp-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-msp], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Klienci instytucjonalni i wspólnoty mieszkaniowe"
+    wymagane: [taryfa-firmy-inst-opis, taryfa-firmy-inst-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-inst], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Rachunki bieżące i pomocnicze"
+    wymagane: [taryfa-firmy-rachunki-opis, taryfa-firmy-rachunki-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-rachunki], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy krajowe i podzielona płatność"
+    wymagane: [taryfa-firmy-przelewy-opis, taryfa-firmy-przelewy-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-przelewy], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Przelewy zagraniczne"
+    wymagane: [taryfa-firmy-zagranica-opis, taryfa-firmy-zagranica-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-zagranica], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Gotówka i wpłatomaty"
+    wymagane: [taryfa-firmy-gotowka-opis, taryfa-firmy-gotowka-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-gotowka], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Karty firmowe"
+    wymagane: [taryfa-firmy-karty-opis, taryfa-firmy-karty-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-karty], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Bankowość elektroniczna dla firm"
+    wymagane: [taryfa-firmy-bankowosc-opis, taryfa-firmy-bankowosc-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-bankowosc], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Gwarancje i akredytywy"
+    wymagane: [taryfa-firmy-gwarancje-opis, taryfa-firmy-gwarancje-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-gwarancje], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Usługi dodatkowe"
+    wymagane: [taryfa-firmy-uslugi-opis, taryfa-firmy-uslugi-pozycje]
+    opcjonalne: { kategorie: [pozycje-firmy-uslugi], min: 0, max: 40 }
+  - rodzaj: sekcja-taryfy
+    tytul: "Objaśnienia i postanowienia końcowe"
+    wymagane: [taryfa-firmy-objasnienia]
+parametry:
+  produkt: "usług bankowych dla przedsiębiorców"

@@ -1,0 +1,144 @@
+bloki:
+  # ---------------------------------------------------------------- V. Rachunki
+  - id: taryfa-firmy-opc-rachunki-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Rachunek lokacyjny dla przedsiębiorców — prowadzenie", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Rachunek oszczędnościowy dla firm — prowadzenie", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Oprocentowanie rachunku oszczędnościowego dla firm", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Oprocentowanie lokaty terminowej na 3 miesiące (od kwoty 10 000,00 zł)", stawka: "{{fakt:oprocentowanie.lokata-3m}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Oprocentowanie lokaty terminowej na 12 miesięcy (od kwoty 10 000,00 zł)", stawka: "{{fakt:oprocentowanie.lokata-12m}} w stosunku rocznym", tryb: "rocznie"}
+          - {usluga: "Zerwanie lokaty przed terminem", stawka: "utrata odsetek, naliczenie odsetek według stopy rachunku bieżącego", tryb: "za każdą lokatę"}
+          - {usluga: "Rachunek zastrzeżony dla wpłat wadium", stawka: "{{fakt:oplata.firma.prowadzenie-rachunku-pomocniczego}}", tryb: "miesięcznie"}
+          - {usluga: "Wydanie potwierdzenia założenia lokaty", stawka: "bez opłat", tryb: "za dokument"}
+          - {usluga: "Zmiana dyspozycji dotyczącej odnowienia lokaty", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Sprzeciw wobec uznania rachunku za nieaktywny", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Prowadzenie rachunku nieaktywnego (brak obrotów przez 12 miesięcy)", stawka: "5,00 zł", tryb: "miesięcznie"}
+
+  - id: taryfa-firmy-opc-rachunki-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-rachunki
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Ustanowienie rachunku powierniczego", stawka: "{{fakt:oplata.firma.rachunek-powierniczy-otwarcie}}", tryb: "jednorazowo"}
+          - {usluga: "Prowadzenie rachunku powierniczego", stawka: "50,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Zwolnienie środków z rachunku powierniczego po spełnieniu warunków umowy", stawka: "0,1% kwoty, min. 150,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Otwarty mieszkaniowy rachunek powierniczy — rozliczenie etapu inwestycji", stawka: "400,00 zł", tryb: "za etap"}
+          - {usluga: "Ustanowienie zastawu rejestrowego lub finansowego na rachunku", stawka: "{{fakt:oplata.firma.gwarancja-zmiana}}", tryb: "jednorazowo"}
+          - {usluga: "Obsługa zajęcia wierzytelności z rachunku przez komornika", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za zajęcie"}
+          - {usluga: "Realizacja zajęcia egzekucyjnego — przelew do organu egzekucyjnego", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Odpowiedź na zapytanie biegłego rewidenta o salda i obroty", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za odpowiedź"}
+          - {usluga: "Zmiana rachunku do rozliczeń z urzędem skarbowym (zgłoszenie rachunku do wykazu podatników)", stawka: "bez opłat", tryb: "za zgłoszenie"}
+          - {usluga: "Zmiana waluty rachunku", stawka: "{{fakt:oplata.firma.zmiana-reprezentacji}}", tryb: "za zmianę"}
+
+  # ---------------------------------------------------------------- VI. Przelewy krajowe
+  - id: taryfa-firmy-opc-przelewy-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew do rachunku w innym banku złożony w aplikacji mobilnej dla firm", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew"}
+          - {usluga: "Przelew z datą przyszłą (do 12 miesięcy)", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew"}
+          - {usluga: "Przelew cykliczny z kalendarza płatności", stawka: "{{fakt:oplata.firma.zlecenie-stale}}", tryb: "za każdą realizację"}
+          - {usluga: "Przelew z załączonym plikiem (e-faktura) do kontrahenta", stawka: "{{fakt:oplata.firma.przelew-elektroniczny}}", tryb: "za przelew"}
+          - {usluga: "Przelew z powiadomieniem odbiorcy o płatności (e-mail)", stawka: "0,20 zł", tryb: "za powiadomienie"}
+          - {usluga: "Przelew z niepełnymi danymi odbiorcy wymagający ręcznej weryfikacji", stawka: "5,00 zł", tryb: "za przelew"}
+          - {usluga: "Płatność masowa z pliku w formacie Elixir-O", stawka: "{{fakt:oplata.firma.paczka-przelewow}}", tryb: "za każdy przelew w paczce"}
+          - {usluga: "Zwrot środków na rachunek zleceniodawcy po odrzuceniu przelewu przez bank odbiorcy", stawka: "bez opłat", tryb: "za zwrot"}
+          - {usluga: "Płatność z rachunku VAT na rachunek rozliczeń z urzędem skarbowym", stawka: "{{fakt:oplata.firma.przelew-zus-us}}", tryb: "za przelew"}
+          - {usluga: "Przelew podzielonej płatności zainicjowany w placówce", stawka: "{{fakt:oplata.firma.przelew-placowka}}", tryb: "za przelew"}
+          - {usluga: "Potwierdzenie wykonania przelewu w formie papierowej", stawka: "10,00 zł", tryb: "za dokument"}
+
+  - id: taryfa-firmy-opc-przelewy-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zwolnienie środków z rachunku VAT na rachunek bieżący na wniosek podatnika", stawka: "{{fakt:oplata.firma.rachunek-vat}}", tryb: "za dyspozycję"}
+          - {usluga: "Zwolnienie środków z rachunku VAT na podstawie decyzji naczelnika urzędu skarbowego", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Wniosek o korektę błędnej płatności z podzieloną płatnością", stawka: "{{fakt:oplata.firma.zwrot-przelewu-na-wniosek}}", tryb: "za wniosek"}
+          - {usluga: "Przelew natychmiastowy powyżej {{fakt:limit.firma.przelew-natychmiastowy}}", stawka: "niedostępny; realizacja jako przelew standardowy", tryb: "za przelew"}
+          - {usluga: "Ustanowienie dziennego limitu przelewów powyżej {{fakt:limit.firma.przelew-dzienny-internet}}", stawka: "50,00 zł", tryb: "za zmianę"}
+          - {usluga: "Przelew SORBNET złożony po godzinie granicznej, na zlecenie pilne", stawka: "{{fakt:oplata.firma.przelew-sorbnet}} oraz 50,00 zł dopłaty", tryb: "za przelew"}
+          - {usluga: "Odwołanie przelewu SORBNET", stawka: "{{fakt:oplata.firma.odwolanie-przelewu}}", tryb: "za odwołanie"}
+          - {usluga: "Uznanie rachunku kwotą wpływającą z błędnym numerem rachunku (ręczne dopasowanie)", stawka: "20,00 zł", tryb: "za wpływ"}
+          - {usluga: "Zwrot środków wpłaconych omyłkowo — realizacja na wniosek odbiorcy", stawka: "{{fakt:oplata.firma.zwrot-przelewu-na-wniosek}}", tryb: "za wniosek"}
+          - {usluga: "Przyjęcie polecenia zapłaty (Bank jako bank dłużnika) — obsługa zgody", stawka: "bez opłat", tryb: "za zgodę"}
+          - {usluga: "Odrzucenie polecenia zapłaty z powodu braku środków", stawka: "{{fakt:oplata.firma.polecenie-zaplaty}}", tryb: "za odrzucenie"}
+
+  # ---------------------------------------------------------------- VII. Przelewy zagraniczne
+  - id: taryfa-firmy-opc-zagranica-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-zagranica
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Przelew SEPA Instant w euro", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Przelew do kraju spoza Europejskiego Obszaru Gospodarczego w opcji SHA", stawka: "{{fakt:oplata.firma.przelew-zagraniczny-prowizja}} kwoty, min. {{fakt:oplata.firma.przelew-zagraniczny-minimum}}, maks. {{fakt:oplata.firma.przelew-zagraniczny-maksimum}}", tryb: "od kwoty przelewu"}
+          - {usluga: "Przelew w złotych do banku za granicą", stawka: "{{fakt:oplata.firma.przelew-sepa}}", tryb: "za przelew"}
+          - {usluga: "Przelew w walucie obcej między rachunkami Klienta w Banku", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew w walucie obcej do innego klienta Banku", stawka: "{{fakt:oplata.firma.przelew-wewnetrzny}}", tryb: "za przelew"}
+          - {usluga: "Przelew zagraniczny złożony w placówce Banku", stawka: "dodatkowo {{fakt:oplata.firma.przelew-placowka}}", tryb: "za przelew"}
+          - {usluga: "Przelew zagraniczny z rachunku złotowego w walucie obcej (konwersja)", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty przeliczenia"}
+          - {usluga: "Przelew przychodzący z zagranicy w opcji OUR (zwrot kosztów zleceniodawcy)", stawka: "bez opłat", tryb: "za przelew"}
+          - {usluga: "Przelew przychodzący z kraju spoza EOG wymagający wyjaśnienia tytułu płatności", stawka: "30,00 zł", tryb: "za przelew"}
+          - {usluga: "Anulowanie przelewu zagranicznego przed wysłaniem do banku pośredniczącego", stawka: "{{fakt:oplata.firma.odwolanie-przelewu}}", tryb: "za anulowanie"}
+          - {usluga: "Reklamacja dotycząca przelewu zagranicznego — wykonanie dochodzenia (investigation)", stawka: "{{fakt:oplata.firma.poszukiwanie-przelewu}}", tryb: "za wniosek"}
+
+  - id: taryfa-firmy-opc-zagranica-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-zagranica
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zlecenie kupna lub sprzedaży waluty po kursie negocjowanym (dealing)", stawka: "wg umowy, minimalna kwota transakcji 10 000,00 EUR", tryb: "od kwoty transakcji"}
+          - {usluga: "Transakcja natychmiastowa (spot) na platformie walutowej Banku", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Zlecenie z limitem kursowym (stop-loss, take-profit)", stawka: "50,00 zł", tryb: "za zlecenie"}
+          - {usluga: "Transakcja terminowa forward — wycena i zawarcie", stawka: "0,10% wartości kontraktu, min. 100,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Rolowanie transakcji terminowej", stawka: "0,05% wartości kontraktu, min. 100,00 zł", tryb: "za każde rolowanie"}
+          - {usluga: "Wniosek o wydanie zaświadczenia o dokonaniu płatności dla organów podatkowych", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Dokumentowanie płatności z tytułu importu usług (potwierdzenie szczegółów przelewu)", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Sprawozdawczość dla Narodowego Banku Polskiego z tytułu rozliczeń z nierezydentami", stawka: "bez opłat", tryb: "za sprawozdanie"}
+          - {usluga: "Dostarczenie komunikatu SWIFT MT103 z potwierdzeniem wykonania", stawka: "30,00 zł", tryb: "za komunikat"}
+          - {usluga: "Prowadzenie rachunku walutowego w walucie niewymienionej w Tabeli kursów", stawka: "wg umowy", tryb: "miesięcznie"}
+
+  # ---------------------------------------------------------------- VIII. Gotówka
+  - id: taryfa-firmy-opc-gotowka-1
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wpłata gotówkowa na rachunek w walucie obcej w kasie placówki", stawka: "0,5% kwoty, min. 10,00 EUR", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wypłata gotówki w walucie obcej w kasie placówki (zamówienie z 2-dniowym wyprzedzeniem)", stawka: "0,5% kwoty, min. 10,00 EUR", tryb: "od kwoty wypłaty"}
+          - {usluga: "Wpłata gotówkowa na rachunek innego klienta Banku", stawka: "{{fakt:oplata.firma.wplata-gotowkowa-prowizja}} kwoty, min. {{fakt:oplata.firma.wplata-gotowkowa-minimum}}", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówkowa przy użyciu karty wpłatomatowej", stawka: "{{fakt:oplata.firma.wplata-wplatomat-prowizja}} kwoty", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wpłata gotówkowa w ramach pakietu kasowego (do 100 wpłat miesięcznie)", stawka: "200,00 zł", tryb: "miesięcznie"}
+          - {usluga: "Wpłata w kopertach zabezpieczonych — usługa „wpłata wrzutowa”", stawka: "{{fakt:oplata.firma.wplata-zamknieta}}", tryb: "za każdą kopertę"}
+          - {usluga: "Dostarczenie worków i kopert do wpłat zamkniętych", stawka: "2,00 zł", tryb: "za sztukę"}
+          - {usluga: "Przeliczenie banknotów wymagających sortowania i weryfikacji autentyczności", stawka: "1,00% kwoty, min. 30,00 zł", tryb: "od kwoty wpłaty"}
+          - {usluga: "Wymiana zniszczonych lub uszkodzonych banknotów", stawka: "bez opłat", tryb: "za operację"}
+          - {usluga: "Przyjęcie do weryfikacji banknotu podejrzanego o sfałszowanie", stawka: "bez opłat", tryb: "za banknot"}
+
+  - id: taryfa-firmy-opc-gotowka-2
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: pozycje-firmy-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Konwój wartości pieniężnych do siedziby Klienta — dostawa gotówki", stawka: "wg umowy z podmiotem konwojującym", tryb: "za kurs"}
+          - {usluga: "Odbiór utargu z siedziby Klienta przez konwojenta", stawka: "wg umowy z podmiotem konwojującym", tryb: "za odbiór"}
+          - {usluga: "Dostęp do wpłatomatu cyklicznego w siedzibie Klienta — instalacja", stawka: "wg umowy", tryb: "jednorazowo"}
+          - {usluga: "Wypłata gotówki z bankomatu Banku kartą firmową powyżej dziennego limitu {{fakt:limit.firma.karta-dzienny-gotowkowy}}", stawka: "niedostępna; zwiększenie limitu wymaga dyspozycji", tryb: "za wypłatę"}
+          - {usluga: "Zlecenie wypłaty gotówki z awizem przekraczającym 100 000,00 zł", stawka: "{{fakt:oplata.firma.wyplata-gotowkowa-prowizja}} kwoty plus 0,20% dopłaty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Przechowywanie gotówki w depozycie skarbcowym Banku", stawka: "0,05% kwoty depozytu", tryb: "miesięcznie"}
+          - {usluga: "Wypłata gotówki z rachunku w dniu niebędącym dniem roboczym (wyjątkowo)", stawka: "100,00 zł", tryb: "za wypłatę"}
+          - {usluga: "Wypłata gotówki w kasie placówki w wybranych nominałach — nominały drobne", stawka: "{{fakt:oplata.firma.bilon-prowizja}} kwoty", tryb: "od kwoty wypłaty"}
+          - {usluga: "Potwierdzenie wpłaty lub wypłaty gotówkowej na życzenie Klienta", stawka: "bez opłat", tryb: "za dokument"}
+          - {usluga: "Przekazanie gotówki kurierowi Klienta po weryfikacji upoważnienia", stawka: "20,00 zł", tryb: "za wypłatę"}

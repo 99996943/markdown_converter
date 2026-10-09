@@ -1,0 +1,143 @@
+bloki:
+  # ---------------------------------------------------------------- IX. Karty firmowe
+  - id: taryfa-firmy-karty-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Karty firmowe są wydawane do rachunków bieżących Klientów na wniosek osoby uprawnionej do dysponowania rachunkiem, dla wskazanych użytkowników. Domyślne dzienne limity transakcji wynoszą: gotówkowych {{fakt:limit.firma.karta-dzienny-gotowkowy}}, bezgotówkowych {{fakt:limit.firma.karta-dzienny-bezgotowkowy}}; Klient {może|ma możliwość} je zmieniać w bankowości elektronicznej."
+
+  - id: taryfa-firmy-karty-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Wydanie karty debetowej dla firmy", stawka: "{{fakt:oplata.firma.karta-wydanie}}", tryb: "jednorazowo"}
+          - usluga: "{Prowadzenie|Obsługa} karty debetowej dla firmy[^1]"
+            stawka: "{{fakt:oplata.firma.karta-prowadzenie}}"
+            tryb: "miesięcznie"
+          - {usluga: "Roczna opłata za kartę kredytową dla firmy", stawka: "{{fakt:oplata.firma.karta-kredytowa-roczna}}", tryb: "rocznie"}
+          - {usluga: "Wydanie duplikatu karty", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo"}
+          - {usluga: "Zastrzeżenie karty", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "jednorazowo"}
+          - {usluga: "Zmiana numeru PIN w placówce lub bankomacie Banku", stawka: "{{fakt:oplata.firma.karta-zmiana-pin}}", tryb: "za zmianę"}
+          - {usluga: "Wypłata gotówki z bankomatów Banku", stawka: "bez opłat", tryb: "za wypłatę"}
+          - {usluga: "Wypłata gotówki z bankomatu innego banku w kraju", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za wypłatę"}
+          - {usluga: "Wypłata gotówki z bankomatu za granicą[^2]", stawka: "{{fakt:oplata.firma.karta-wyplata-zagranica}} kwoty, min. 10,00 zł", tryb: "od kwoty wypłaty"}
+          - {usluga: "Płatność kartą w kraju i za granicą u akceptantów", stawka: "bez opłat", tryb: "za transakcję"}
+          - {usluga: "Przeliczenie transakcji w walucie obcej według Tabeli kursów walut", stawka: "marża {{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji"}
+          - {usluga: "Zmiana limitów transakcji ponad poziom domyślny, na czas oznaczony", stawka: "20,00 zł", tryb: "za zmianę"}
+          - {usluga: "Pilna wysyłka karty kurierem", stawka: "60,00 zł", tryb: "za przesyłkę"}
+          - {usluga: "Powiadomienie SMS o transakcji kartą", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie"}
+    przypisy:
+      1: "Opłatę za prowadzenie karty zawiesza się w miesiącu, w którym łączna wartość transakcji bezgotówkowych dokonanych kartą wyniosła co najmniej 1 000,00 zł."
+      2: "Do opłaty doliczana jest opłata operatora sieci bankomatowej, o ile pobiera ją właściciel bankomatu; informację o niej wyświetla bankomat przed potwierdzeniem transakcji."
+
+  # ---------------------------------------------------------------- X. Bankowość elektroniczna
+  - id: taryfa-firmy-bankowosc-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Bankowość elektroniczna dla firm umożliwia składanie dyspozycji płatniczych, zarządzanie rachunkami i kartami oraz pobieranie wyciągów w formatach elektronicznych. Domyślny dzienny limit przelewów w bankowości elektronicznej wynosi {{fakt:limit.firma.przelew-dzienny-internet}}, a przelewów natychmiastowych {{fakt:limit.firma.przelew-natychmiastowy}}; wyższe limity {wymagają|są ustalane na podstawie} pisemnego wniosku i oceny ryzyka."
+
+  - id: taryfa-firmy-bankowosc-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Abonament za dostęp do bankowości elektronicznej dla firm[^1]", stawka: "{{fakt:oplata.firma.bankowosc-abonament}}", tryb: "miesięcznie"}
+          - {usluga: "Aplikacja mobilna dla firm", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Token sprzętowy — wydanie", stawka: "{{fakt:oplata.firma.token-sprzetowy}}", tryb: "za każdy token"}
+          - {usluga: "Token sprzętowy — wymiana uszkodzonego z winy użytkownika", stawka: "{{fakt:oplata.firma.token-sprzetowy}}", tryb: "za każdy token"}
+          - {usluga: "Hasła jednorazowe SMS do autoryzacji dyspozycji", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "miesięcznie"}
+          - {usluga: "Wyciągi elektroniczne w formacie MT940 lub XML", stawka: "{{fakt:oplata.firma.wyciag-mt940}}", tryb: "miesięcznie"}
+          - {usluga: "Integracja z systemem finansowo-księgowym przez interfejs API[^2]", stawka: "{{fakt:oplata.firma.integracja-api}}", tryb: "miesięcznie"}
+          - {usluga: "Dodatkowy użytkownik bankowości elektronicznej (powyżej trzech)", stawka: "10,00 zł", tryb: "za użytkownika, miesięcznie"}
+          - {usluga: "Reset dostępu i ponowne nadanie uprawnień w placówce", stawka: "bez opłat", tryb: "za dyspozycję"}
+          - {usluga: "Powiadomienia e-mail o wpływach i obciążeniach rachunku", stawka: "bez opłat", tryb: "miesięcznie"}
+          - {usluga: "Infolinia dla firm — obsługa dyspozycji telefonicznych", stawka: "5,00 zł", tryb: "za dyspozycję"}
+          - {usluga: "Złożenie dyspozycji na formularzu papierowym zamiast w bankowości elektronicznej", stawka: "{{fakt:oplata.firma.przelew-placowka}}", tryb: "za dyspozycję"}
+    przypisy:
+      1: "Opłatę obniża się o połowę w miesiącach, w których Klient zrealizował co najmniej 20 przelewów przez bankowość elektroniczną. Pierwsze trzy miesiące od aktywacji dostępu są wolne od opłaty."
+      2: "Uruchomienie integracji wymaga zawarcia odrębnej umowy oraz akceptacji warunków bezpieczeństwa Banku. Opłata obejmuje do pięciu tysięcy zapytań dziennie."
+
+  # ---------------------------------------------------------------- XI. Gwarancje i akredytywy
+  - id: taryfa-firmy-gwarancje-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Gwarancje bankowe i akredytywy są udzielane na podstawie odrębnej umowy po przeprowadzeniu analizy zdolności zobowiązaniowej Klienta. Prowizje wskazane w Taryfie mają charakter stawek wyjściowych; w indywidualnych przypadkach wysokość prowizji może zależeć od rodzaju i wysokości zabezpieczenia."
+
+  - id: taryfa-firmy-gwarancje-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Rozpatrzenie wniosku o gwarancję lub akredytywę", stawka: "200,00 zł", tryb: "jednorazowo"}
+          - usluga: "Prowizja za udzielenie gwarancji bankowej[^1]"
+            stawka: "{{fakt:oplata.firma.gwarancja-prowizja}} kwoty gwarancji, min. {{fakt:oplata.firma.gwarancja-minimum}}"
+            tryb: "za każdy rozpoczęty kwartał"
+            podpozycje:
+              - {usluga: "gwarancja zapłaty", stawka: "{{fakt:oplata.firma.gwarancja-prowizja}} kwoty gwarancji, min. {{fakt:oplata.firma.gwarancja-minimum}}", tryb: "za każdy rozpoczęty kwartał"}
+              - {usluga: "gwarancja należytego wykonania kontraktu", stawka: "{{fakt:oplata.firma.gwarancja-prowizja}} kwoty gwarancji, min. {{fakt:oplata.firma.gwarancja-minimum}}", tryb: "za każdy rozpoczęty kwartał"}
+              - {usluga: "gwarancja wadialna", stawka: "0,5% kwoty gwarancji, min. 150,00 zł", tryb: "za każdy rozpoczęty miesiąc"}
+          - {usluga: "Zmiana warunków gwarancji (kwota, termin, beneficjent)", stawka: "{{fakt:oplata.firma.gwarancja-zmiana}}", tryb: "za zmianę"}
+          - {usluga: "Realizacja roszczenia z gwarancji przez beneficjenta[^2]", stawka: "0,5% wypłaconej kwoty, min. 500,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Otwarcie akredytywy importowej", stawka: "{{fakt:oplata.firma.akredytywa-otwarcie}} kwoty akredytywy, min. {{fakt:oplata.firma.akredytywa-minimum}}", tryb: "za każdy rozpoczęty kwartał"}
+          - {usluga: "Awizowanie akredytywy eksportowej", stawka: "{{fakt:oplata.firma.akredytywa-awizo}} kwoty akredytywy, min. 200,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Sprawdzenie dokumentów przedstawionych w ramach akredytywy", stawka: "0,15% kwoty dokumentów, min. 250,00 zł", tryb: "za komplet dokumentów"}
+          - {usluga: "Zmiana warunków akredytywy", stawka: "{{fakt:oplata.firma.gwarancja-zmiana}}", tryb: "za zmianę"}
+          - {usluga: "Inkaso dokumentowe — przyjęcie dokumentów do inkasa", stawka: "0,2% kwoty inkasa, min. 120,00 zł", tryb: "jednorazowo"}
+          - {usluga: "Potwierdzenie autentyczności gwarancji wystawionej przez Bank", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+    przypisy:
+      1: "Prowizję pobiera się z góry za pierwszy okres gwarancji, a następnie z góry za każdy kolejny kwartał, do dnia wygaśnięcia gwarancji lub zwrotu jej oryginału do Banku."
+      2: "Prowizja za realizację roszczenia nie obejmuje opłat za przelew środków do beneficjenta ani kosztów banków pośredniczących."
+
+  # ---------------------------------------------------------------- XII. Usługi dodatkowe
+  - id: taryfa-firmy-uslugi-opis
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-opis
+    elementy:
+      - akapit: "Część obejmuje usługi o charakterze informacyjnym, dokumentowym i pomocniczym, które Bank wykonuje na indywidualne zlecenie Klienta. Wydanie dokumentów następuje w terminie do 5 dni roboczych od dnia złożenia dyspozycji, chyba że z opisu usługi wynika inny termin."
+
+  - id: taryfa-firmy-uslugi-pozycje
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-pozycje
+    elementy:
+      - pozycje-taryfy:
+          - {usluga: "Zaświadczenie o prowadzeniu rachunku i jego saldzie", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Zaświadczenie o terminowym regulowaniu zobowiązań wobec Banku", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za dokument"}
+          - {usluga: "Opinia bankowa", stawka: "{{fakt:oplata.firma.opinia-bankowa}}", tryb: "za dokument"}
+          - {usluga: "Potwierdzenie salda dla biegłego rewidenta", stawka: "{{fakt:oplata.firma.potwierdzenie-salda-audyt}}", tryb: "za dokument"}
+          - {usluga: "Odpis umowy lub aneksu", stawka: "{{fakt:oplata.duplikat-umowy}}", tryb: "za dokument"}
+          - {usluga: "Kopia dokumentu z archiwum Banku starszego niż 2 lata[^1]", stawka: "40,00 zł", tryb: "za dokument"}
+          - {usluga: "Udzielenie odpowiedzi na pytanie organu egzekucyjnego lub sądu o stanie rachunku", stawka: "{{fakt:oplata.firma.zajecie-egzekucyjne}}", tryb: "za odpowiedź"}
+          - {usluga: "Uwierzytelnienie podpisu na dokumencie w placówce Banku", stawka: "30,00 zł", tryb: "za podpis"}
+          - {usluga: "Wynajem skrytki sejfowej (mała)", stawka: "400,00 zł", tryb: "rocznie"}
+          - {usluga: "Wynajem skrytki sejfowej (duża)", stawka: "900,00 zł", tryb: "rocznie"}
+          - {usluga: "Przyjęcie depozytu zamkniętego", stawka: "200,00 zł", tryb: "rocznie"}
+          - {usluga: "Przesłanie dokumentów kurierem na adres Klienta", stawka: "35,00 zł", tryb: "za przesyłkę"}
+          - {usluga: "Wysłanie korespondencji listem poleconym", stawka: "12,00 zł", tryb: "za przesyłkę"}
+    przypisy:
+      1: "Opłata dotyczy dokumentów, których odtworzenie wymaga dostępu do archiwum zewnętrznego. Dokumenty dotyczące bieżących operacji z ostatnich dwóch lat są wydawane na zasadach ogólnych."
+
+  # ---------------------------------------------------------------- XIII. Objaśnienia
+  - id: taryfa-firmy-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-firmy]
+    kategoria: wymagany-objasnienia
+    elementy:
+      - ustep: "Użyte w Taryfie określenia oznaczają:"
+        punkty:
+          - "**dzień roboczy** — dzień inny niż sobota, niedziela i dzień ustawowo wolny od pracy;"
+          - "**mikroprzedsiębiorstwo**, **małe przedsiębiorstwo** i **średnie przedsiębiorstwo** — przedsiębiorcy spełniający kryteria zatrudnienia i obrotu wskazane w częściach II i III Taryfy;"
+          - "**rachunek rozliczeń VAT** — wyodrębniony rachunek służący do rozliczeń w mechanizmie podzielonej płatności;"
+          - "**opcja SHA, OUR, BEN** — sposoby podziału kosztów przelewu zagranicznego między zleceniodawcę a odbiorcę;"
+          - "**stawka indywidualna** — stawka uzgodniona z Klientem w umowie, odmienna od stawki z Taryfy."
+      - akapit: "Informacje o aktualnych stawkach i możliwości ich negocjowania {udziela|udzielają} doradcy w placówkach Banku oraz infolinia dla firm pod numerem {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}). Reklamacje dotyczące naliczonych opłat {rozpatrywane są|są rozpatrywane} w terminie {{fakt:termin.reklamacja.rozpatrzenie}}."
