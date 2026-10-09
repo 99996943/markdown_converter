@@ -396,7 +396,8 @@ public sealed class TableDetectionStage : IPipelineStage
         }
 
         IReadOnlyList<ColumnBand> bands = ColumnClustering.Bands(lefts, right, verticals, tolerance);
-        if (IsHangingList(bands, multi) || IsTextColumns(region, gutter))
+        // Rows between rulings that cross the gutter are a table, not running text in two columns (T089k).
+        if (IsHangingList(bands, multi) || (!gridRegion && IsTextColumns(region, gutter)))
         {
             return null;
         }
