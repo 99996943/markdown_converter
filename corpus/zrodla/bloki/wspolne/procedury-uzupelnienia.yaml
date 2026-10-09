@@ -11,7 +11,7 @@ bloki:
           - "wskazanie nowej wersji i daty jej wejścia w życie;"
           - "zwięzły opis zmienionych postanowień wraz z uzasadnieniem;"
           - "{informację|wzmiankę} o konieczności przeszkolenia pracowników."
-      - akapit: "Poprzednie wersje {przechowuje się|archiwizuje się} i udostępnia na żądanie {{fakt:jednostka.zgodnosc}}. Pracownicy są informowani o zmianie przed dniem jej wejścia w życie."
+      - akapit: "Poprzednie wersje {przechowuje się|archiwizuje się} i udostępnia na żądanie komórki ds. zgodności ({{fakt:jednostka.zgodnosc}}). Pracownicy są informowani o zmianie przed dniem jej wejścia w życie."
 
   - id: wspolne-doreczenia-procedura
     typy: [procedury]
