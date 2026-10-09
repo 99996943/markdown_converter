@@ -262,7 +262,7 @@ internal sealed class PageWriter
                 .Replace("{n}", number, StringComparison.Ordinal)
                 .Replace("{N}", total, StringComparison.Ordinal);
 
-            if (_style.HeaderFormat is { } header)
+            if (_style.HeaderFormat is { } header && Page > 1)
             {
                 Margin(_style.Left, _style.HeaderBaseline, Fill(header));
             }

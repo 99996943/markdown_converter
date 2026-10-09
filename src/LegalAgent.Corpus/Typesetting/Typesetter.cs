@@ -134,6 +134,12 @@ public static class Typesetter
             case ListItemElement li:
                 ListItem(w, li);
                 break;
+            case TableElement t:
+                TableLayout.Table(w, t);
+                break;
+            case KeyValueTableElement kv:
+                TableLayout.KeyValue(w, kv);
+                break;
             case PageBreakElement:
                 if (!(w.AtTopOfColumn && w.Column == 0))
                 {
