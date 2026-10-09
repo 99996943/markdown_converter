@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Security.Cryptography;
 using LegalAgent.Downloads.Model;
 
@@ -7,8 +8,9 @@ namespace LegalAgent.Downloads;
 internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions options)
 {
     private const int BufferSize = 81920;
+    private static readonly byte[] PdfSignature = "%PDF-"u8.ToArray();
 
-    /// <summary>Downloads the planned item into the directory.</summary>
+    /// <summary>Downloads the planned item into the directory; failures become results.</summary>
     public async Task<DownloadResult> RunAsync(PlannedDownload item, string directory, CancellationToken cancellationToken)
     {
         string target = Path.Combine(directory, item.FileName);
@@ -25,6 +27,15 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                 .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
                 .ConfigureAwait(false);
 
+            if (!response.IsSuccessStatusCode)
+            {
+                int code = (int)response.StatusCode;
+                throw new DownloadFailureException(new DownloadError(
+                    DownloadErrorKind.HttpStatus,
+                    string.Create(CultureInfo.InvariantCulture, $"serwer zwrócił {code} {StandardReasonPhrase(response.StatusCode)}"),
+                    code));
+            }
+
             (long size, string sha256) = await WritePartAsync(response.Content, part, cancellationToken).ConfigureAwait(false);
             File.Move(part, target, overwrite: true);
 
@@ -39,10 +50,37 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
                 LastModified = response.Content.Headers.LastModified?.ToUniversalTime(),
             };
         }
+        catch (DownloadFailureException failure)
+        {
+            return Failed(item, failure.Error);
+        }
+        catch (HttpRequestException e)
+        {
+            return Failed(item, new DownloadError(
+                DownloadErrorKind.Connection,
+                $"nie można połączyć się z serwerem {item.Address.Host}",
+                Detail: e.Message));
+        }
         finally
         {
             File.Delete(part);
         }
+    }
+
+    private static DownloadResult Failed(PlannedDownload item, DownloadError error) => new()
+    {
+        Index = item.Index,
+        Address = item.Address,
+        FileName = item.FileName,
+        Status = DownloadStatus.Failed,
+        Error = error,
+    };
+
+    /// <summary>Canonical reason phrase of a status code (servers may send none or their own).</summary>
+    private static string? StandardReasonPhrase(System.Net.HttpStatusCode code)
+    {
+        using var canonical = new HttpResponseMessage(code);
+        return canonical.ReasonPhrase;
     }
 
     private static async Task<(long Size, string Sha256)> WritePartAsync(HttpContent content, string part, CancellationToken cancellationToken)
@@ -51,21 +89,52 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
         Stream body = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
         await using (body.ConfigureAwait(false))
         {
+            byte[] buffer = new byte[BufferSize];
+            int head = await ReadAtLeastAsync(body, buffer, PdfSignature.Length, cancellationToken).ConfigureAwait(false);
+            if (head < PdfSignature.Length || !buffer.AsSpan(0, PdfSignature.Length).SequenceEqual(PdfSignature))
+            {
+                throw new DownloadFailureException(new DownloadError(DownloadErrorKind.NotPdf, "pod adresem nie ma pliku PDF"));
+            }
+
             var file = new FileStream(part, FileMode.Create, FileAccess.Write, FileShare.None, BufferSize, useAsync: true);
             await using (file.ConfigureAwait(false))
             {
-                byte[] buffer = new byte[BufferSize];
                 long size = 0;
-                int read;
-                while ((read = await body.ReadAsync(buffer, cancellationToken).ConfigureAwait(false)) > 0)
+                int read = head;
+                while (read > 0)
                 {
                     hash.AppendData(buffer, 0, read);
                     await file.WriteAsync(buffer.AsMemory(0, read), cancellationToken).ConfigureAwait(false);
                     size += read;
+                    read = await body.ReadAsync(buffer, cancellationToken).ConfigureAwait(false);
                 }
 
                 return (size, Convert.ToHexStringLower(hash.GetHashAndReset()));
             }
         }
     }
+
+    private static async Task<int> ReadAtLeastAsync(Stream body, byte[] buffer, int minimum, CancellationToken cancellationToken)
+    {
+        int total = 0;
+        while (total < minimum)
+        {
+            int read = await body.ReadAsync(buffer.AsMemory(total), cancellationToken).ConfigureAwait(false);
+            if (read == 0)
+            {
+                break;
+            }
+
+            total += read;
+        }
+
+        return total;
+    }
+}
+
+/// <summary>Ends one download with the given error (caught by <see cref="SingleDownload"/>).</summary>
+internal sealed class DownloadFailureException(DownloadError error) : Exception(error.Message)
+{
+    /// <summary>The failure.</summary>
+    public DownloadError Error { get; } = error;
 }
