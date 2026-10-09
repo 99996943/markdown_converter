@@ -35,6 +35,16 @@ public static class Program
           --types <a,b>         lista typów dokumentów
           --count <n>           liczba dokumentów na typ
           --pages <min>-<max>   zakres stron dokumentu
+          --reference-date <rrrr-mm-dd>
+                                data odniesienia statusu obowiązywania
+          --versioned <procent> udział dokumentów w wielu wersjach (0-100)
+          --outdated <n>        liczba dokumentów nieaktualnych na typ
+          --contradictions <n>[,<m>]
+                                pary sprzeczności na typ [i między typami]
+          --poison <rodzaj>=<n>[,...]
+                                dokumenty zatrute na typ (powtarzalna); --poison none usuwa
+          --no-strict-uniqueness
+                                wyłącza ścisłą unikalność bloków (duże przebiegi)
           --truth <katalog>     zapis prawdy referencyjnej (JSON na dokument)
           --save-params         po udanym generate zapisz parametry do <out>/przebieg.json
 
@@ -135,9 +145,21 @@ public static class Program
         }
     }
 
+    private static readonly string[] CorpusValued =
+    [
+        "--params", "--out", "--content", "--seed", "--types", "--count", "--pages", "--truth",
+        "--reference-date", "--versioned", "--outdated", "--contradictions", "--poison",
+    ];
+
+    private static readonly string[] CorpusFlags = ["--save-params", "--no-strict-uniqueness"];
+
+    /// <summary>Resolves the effective parameters of generate/verify from the arguments after the command.</summary>
+    internal static RunParameters ResolveParameters(string[] args, string baseDirectory) =>
+        LoadParameters(Options.Parse(args, CorpusValued, CorpusFlags), baseDirectory);
+
     private static int RunCorpus(string[] args, bool generate, TextWriter stdout, TextWriter stderr, string baseDirectory)
     {
-        Options o = Options.Parse(args, ["--params", "--out", "--content", "--seed", "--types", "--count", "--pages", "--truth"], ["--save-params"]);
+        Options o = Options.Parse(args, CorpusValued, CorpusFlags);
         if (o.Flag("--save-params") && !generate)
         {
             throw new UsageException("opcja --save-params dotyczy tylko polecenia generate");
@@ -285,6 +307,48 @@ public static class Program
             parameters = parameters with { Pages = ParsePages(pages) };
         }
 
+        if (o.Value("--reference-date") is { } date)
+        {
+            parameters = parameters with { ReferenceDate = ParseDate(date) };
+        }
+
+        if (o.Value("--versioned") is { } versioned)
+        {
+            parameters = parameters with { VersionedShare = ParseInt("--versioned", versioned) };
+        }
+
+        if (o.Value("--outdated") is { } outdated)
+        {
+            parameters = parameters with { OutdatedPerType = ParseInt("--outdated", outdated) };
+        }
+
+        if (o.Value("--contradictions") is { } contradictions)
+        {
+            string[] parts = contradictions.Split(',', StringSplitOptions.TrimEntries);
+            if (parts.Length > 2)
+            {
+                throw new UsageException($"opcja --contradictions wymaga postaci <n>[,<między-typami>], otrzymano '{contradictions}'");
+            }
+
+            parameters = parameters with
+            {
+                ContradictionPairsPerType = ParseInt("--contradictions", parts[0]),
+                CrossTypeContradictionPairs = parts.Length == 2
+                    ? ParseInt("--contradictions", parts[1])
+                    : parameters.CrossTypeContradictionPairs,
+            };
+        }
+
+        if (o.All("--poison").Count > 0)
+        {
+            parameters = parameters with { Poison = ParsePoison(o.All("--poison")) };
+        }
+
+        if (o.Flag("--no-strict-uniqueness"))
+        {
+            parameters = parameters with { StrictUniqueness = false };
+        }
+
         if (applyOut && o.Value("--out") is { } outDir)
         {
             parameters = parameters with { OutputDirectory = outDir };
@@ -312,6 +376,36 @@ public static class Program
             ? value
             : throw new UsageException($"opcja {option} wymaga liczby całkowitej nieujemnej, otrzymano '{text}'");
 
+    private static DateOnly ParseDate(string text) =>
+        DateOnly.TryParseExact(text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateOnly value)
+            ? value
+            : throw new UsageException($"opcja --reference-date wymaga daty rrrr-mm-dd, otrzymano '{text}'");
+
+    private static List<PoisonQuota> ParsePoison(IReadOnlyList<string> values)
+    {
+        var items = values.SelectMany(v => v.Split(',', StringSplitOptions.TrimEntries)).ToList();
+        if (items.Contains("none", StringComparer.Ordinal))
+        {
+            return items.Count == 1
+                ? []
+                : throw new UsageException("opcja --poison none nie łączy się z innymi rodzajami");
+        }
+
+        var quotas = new List<PoisonQuota>();
+        foreach (string item in items)
+        {
+            int eq = item.IndexOf('=', StringComparison.Ordinal);
+            if (eq <= 0)
+            {
+                throw new UsageException($"opcja --poison wymaga postaci <rodzaj>=<n> lub none, otrzymano '{item}'");
+            }
+
+            quotas.Add(new PoisonQuota(item[..eq], ParseInt("--poison", item[(eq + 1)..])));
+        }
+
+        return quotas;
+    }
+
     private static PageRange ParsePages(string text)
     {
         string[] parts = text.Split('-');
@@ -338,11 +432,11 @@ public static class Program
         }
     }
 
-    private sealed record Options(Dictionary<string, string> Values, HashSet<string> Flags)
+    private sealed record Options(Dictionary<string, List<string>> Values, HashSet<string> Flags)
     {
         public static Options Parse(string[] args, string[] valued, string[] flags)
         {
-            var values = new Dictionary<string, string>(StringComparer.Ordinal);
+            var values = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             var set = new HashSet<string>(StringComparer.Ordinal);
             for (int i = 0; i < args.Length; i++)
             {
@@ -358,7 +452,12 @@ public static class Program
                         throw new UsageException($"brak wartości dla opcji {arg}");
                     }
 
-                    values[arg] = args[++i];
+                    if (!values.TryGetValue(arg, out List<string>? list))
+                    {
+                        values[arg] = list = [];
+                    }
+
+                    list.Add(args[++i]);
                 }
                 else
                 {
@@ -369,7 +468,9 @@ public static class Program
             return new Options(values, set);
         }
 
-        public string? Value(string name) => Values.TryGetValue(name, out string? v) ? v : null;
+        public string? Value(string name) => Values.TryGetValue(name, out List<string>? v) ? v[^1] : null;
+
+        public List<string> All(string name) => Values.TryGetValue(name, out List<string>? v) ? v : [];
 
         public bool Flag(string name) => Flags.Contains(name);
     }
