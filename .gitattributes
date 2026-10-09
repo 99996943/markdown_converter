@@ -1,6 +1,4 @@
-# LF everywhere: golden files (*.expected.md) are compared byte-for-byte on Windows and Linux.
-* text=auto eol=lf
-
-*.pdf binary
-*.ttf binary
-*.png binary
+corpus/**/*.md text eol=lf
+corpus/**/*.json text eol=lf
+corpus/**/*.yaml text eol=lf
+corpus/**/*.pdf binary
