@@ -1,0 +1,264 @@
+bloki:
+  # ---------- Odpowiedzialności ----------
+  - id: zamkniecie-n-odp-kierownik
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - ustep: "**Kierownik placówki** {odpowiada|ponosi odpowiedzialność} za prawidłowe przyjmowanie i realizację wypowiedzeń rachunków w placówce. W szczególności:"
+        punkty:
+          - "{zatwierdza|akceptuje} w systemie {{fakt:zamkniecie.system.glowny}} zamknięcia rachunków o wysokim saldzie lub wysokim ryzyku, zgodnie z ustalonymi limitami uprawnień;"
+          - "{sprawdza|weryfikuje} codziennie, czy wypowiedzenia przyjęte poprzedniego dnia zostały zarejestrowane w terminie {{fakt:zamkniecie.termin.rejestracja-korespondencji}};"
+          - "{rozstrzyga|wyjaśnia} wątpliwości pracowników co do wypowiedzeń złożonych przez pełnomocników, osoby małoletnie lub cudzoziemców;"
+          - "{zapewnia|dba o} bezpieczne przechowywanie dokumentacji papierowej do czasu przekazania jej do archiwum."
+      - akapit: "W razie nieobecności kierownika jego uprawnienia wykonuje zastępca wskazany w regulaminie placówki; czynności zatwierdzające nie mogą być wykonywane przez osobę, która sama przyjęła wypowiedzenie."
+
+  - id: zamkniecie-n-odp-operacje
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - akapit: "**Jednostka operacyjna** „{{fakt:jednostka.operacje}}” {prowadzi|realizuje} centralnie czynności techniczne związane z zamykaniem rachunków. Odpowiada za terminowe wykonanie dyspozycji, które wpłynęły ze wszystkich kanałów, i za spójność danych w systemie głównym i w rejestrze zamknięć {{fakt:zamkniecie.system.rejestr}}."
+      - ustep: "Zadania jednostki obejmują w szczególności:"
+        punkty:
+          - "{zamknięcie|techniczne zamknięcie} rachunku po stwierdzeniu, że saldo wynosi zero, wygasły zlecenia, karty i powiązane usługi;"
+          - "{przeniesienie|przeksięgowanie} środków niepodjętych na rachunek techniczny, wraz ze sporządzeniem zestawienia ich pochodzenia;"
+          - "{obsługę|rozpatrywanie} zapytań placówek w sprawach nietypowych, w terminie {{fakt:zamkniecie.termin.weryfikacja-dyspozycji}};"
+          - "{prowadzenie|aktualizację} kolejki spraw oczekujących i raportowanie jej stanu kierownikowi właściwego działu."
+
+  - id: zamkniecie-n-odp-ryzyko
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - akapit: "**Departament Ryzyka** {ocenia|analizuje} wpływ zamknięć rachunków na portfel kredytowy i płynność Banku. Dotyczy to w szczególności zamykania rachunków, na które wpływają wynagrodzenia i z których spłacane są zobowiązania kredytowe Klienta."
+      - akapit: "W razie istotnego wzrostu liczby zamknięć w krótkim okresie, np. wskutek kampanii konkurencji lub zmian cen, Departament informuje Zarząd i wskazuje działania, które ograniczają ryzyko odpływu depozytów. Dane do analiz dostarcza jednostka operacyjna na podstawie rejestru zamknięć {{fakt:zamkniecie.system.rejestr}}; dane osobowe wykorzystuje się wyłącznie w postaci zagregowanej."
+
+  - id: zamkniecie-n-odp-zgodnosc
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-odp
+    elementy:
+      - akapit: "**Departament Zgodności** {nadzoruje|czuwa nad} stosowaniem przepisów o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu w procesie zamykania rachunków. Zamknięcie rachunku nie zwalnia Banku z obowiązków związanych z oceną transakcji i zgłaszaniem informacji właściwym organom."
+      - ustep: "Do zadań Departamentu należy w szczególności:"
+        punkty:
+          - "{ocena|analiza} wypowiedzeń, które mogą wskazywać na próbę ukrycia środków lub uniknięcia kontroli, np. zamknięcie rachunku niedługo po zleceniu podejrzanej transakcji;"
+          - "{wydawanie|przekazywanie} zaleceń wstrzymania wypłaty salda do czasu zakończenia analizy, jeżeli przepisy dopuszczają takie działanie;"
+          - "{zapewnienie|dopilnowanie}, aby dokumentacja zamknięcia zawierała dane wymagane przez przepisy, w tym o beneficjentach rzeczywistych rachunków firmowych;"
+          - "{informowanie|powiadamianie} jednostek o zmianach w przepisach, które wpływają na procedurę."
+
+  # ---------- Zasady ogólne ----------
+  - id: zamkniecie-n-zasady-dokumenty
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "Do zamknięcia rachunku niezbędny jest zestaw dokumentów, którego zakres zależy od rodzaju rachunku i sposobu złożenia dyspozycji. Pracownik nie żąda dokumentów niewymaganych, a Klientowi {wyjaśnia|informuje}, dlaczego potrzebne są dokumenty, o które prosi."
+      - tabela:
+          kolumny:
+            - naglowek: "Sytuacja"
+              waga: 2
+            - naglowek: "Wymagane dokumenty"
+              waga: 3
+          wiersze:
+            - ["Wypowiedzenie złożone przez Klienta w placówce", "Dokument tożsamości, formularz {{fakt:zamkniecie.formularz.wypowiedzenie}} lub oświadczenie własnoręcznie podpisane"]
+            - ["Wypowiedzenie przez pełnomocnika", "Dokument tożsamości pełnomocnika, pełnomocnictwo obejmujące uprawnienie do zamknięcia rachunku"]
+            - ["Wypowiedzenie rachunku wspólnego", "Oświadczenie wszystkich współposiadaczy albo oświadczenie jednego z nich, jeżeli umowa na to pozwala; formularz {{fakt:zamkniecie.formularz.wspolny}}"]
+            - ["Wypowiedzenie rachunku firmowego", "Dokument tożsamości osoby uprawnionej do reprezentacji, aktualny dokument rejestrowy, wzór podpisu"]
+            - ["Zamknięcie z przeniesieniem do innego banku", "Formularz {{fakt:zamkniecie.formularz.zmiana-banku}} i dane rachunku w nowym banku"]
+      - akapit: "Braki formalne nie mogą być powodem odmowy przyjęcia oświadczenia; Klienta wzywa się do ich uzupełnienia w sposób opisany w dalszej części procedury."
+
+  - id: zamkniecie-n-zasady-saldo
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "Rachunek można zamknąć wyłącznie wtedy, gdy jego saldo wynosi zero, a wszystkie zobowiązania związane z rachunkiem zostały rozliczone. Obowiązek doprowadzenia salda do zera spoczywa na Banku i na Kliencie w następujący sposób."
+      - ustep: "Przed zamknięciem rachunku:"
+        punkty:
+          - "{Klient|posiadacz rachunku} wskazuje sposób wypłaty dodatniego salda: gotówką w placówce, przelewem na rachunek własny w innym banku albo na rachunek prowadzony w Banku;"
+          - "{{fakt:jednostka.operacje}} {księguje|nalicza} należne opłaty i prowizje, a także odsetki naliczone do dnia rozwiązania umowy;"
+          - "w przypadku salda ujemnego Bank informuje Klienta o wysokości zadłużenia i wzywa do jego spłaty w terminie {{fakt:zamkniecie.termin.wezwanie-do-zaplaty}};"
+          - "saldo nieprzekraczające {{fakt:zamkniecie.limit.saldo-bagatelne}} może być zaksięgowane na rzecz Banku albo Klienta zgodnie z regulaminem, jeżeli koszty rozliczenia przekraczałyby wartość salda."
+      - akapit: "Rachunek z saldem różnym od zera zamyka się dopiero po rozliczeniu różnicy; wyjątkiem jest przeniesienie środków na rachunek techniczny, opisane w dalszej części procedury."
+
+  - id: zamkniecie-n-zasady-wplywy
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-zasady
+    elementy:
+      - akapit: "Przed zamknięciem rachunku należy ustalić, jakie wpływy i obciążenia mogą jeszcze nastąpić. Zamknięcie rachunku, na który wpływają wynagrodzenie, świadczenia lub płatności cykliczne, bez uprzedzenia Klienta powoduje zwroty przelewów i może narazić go na szkodę."
+      - kroki:
+          - tekst: "Sprawdź w systemie {{fakt:zamkniecie.system.glowny}} historię operacji z ostatnich miesięcy i zidentyfikuj zlecenia stałe, polecenia zapłaty, regularne wpływy i płatności kartą cykliczne."
+          - tekst: "{Poinformuj|Przekaż} Klientowi listę takich operacji i {wskaż|zaproponuj} konieczność ich zmiany przed dniem zamknięcia rachunku."
+            podkroki:
+              - tekst: "Wskaż, że Klient powinien poinformować pracodawcę, urzędy i dostawców usług o nowym numerze rachunku."
+              - tekst: "Zaproponuj usługę przekierowania wpływów na nowy rachunek, jeżeli jest dostępna i Klient chce z niej skorzystać."
+          - tekst: "Jeżeli Klient mimo ostrzeżenia chce zamknąć rachunek bez zmiany operacji, zapisz to w dokumentacji i poproś o podpis na oświadczeniu o przyjęciu skutków."
+
+  # ---------- Wypowiedzenie przez Klienta ----------
+  - id: zamkniecie-n-krok-klient-rozmowa
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - akapit: "Rozmowa z Klientem, który zamierza zamknąć rachunek, jest okazją do ustalenia powodów rezygnacji. Pracownik nie może jednak utrudniać złożenia dyspozycji ani wywierać presji, aby Klient ją wycofał."
+      - kroki:
+          - tekst: "{Zapytaj|Dowiedz się} Klienta, co skłoniło go do rezygnacji (np. wysokie opłaty, zmiana pracodawcy, nieodpowiadająca oferta), i {zapisz|odnotuj} odpowiedź w formularzu ankiety, jeżeli Klient wyrazi na to zgodę."
+          - tekst: "Jeżeli Klient jest zainteresowany, {przedstaw|zaprezentuj} alternatywne rozwiązania, np. przejście na inny pakiet rachunku lub zmianę zasad prowadzenia rachunku; nie powtarzaj propozycji, jeżeli Klient odmówił."
+            podkroki:
+              - tekst: "Nie podawaj niepełnych ani nieprawdziwych informacji o skutkach zamknięcia rachunku, aby zniechęcić Klienta do rezygnacji."
+              - tekst: "Nie uzależniaj przyjęcia wypowiedzenia od odbycia rozmowy z doradcą."
+          - tekst: "Jeżeli Klient podtrzymuje decyzję, {przejdź|przystąp} bezzwłocznie do przyjęcia oświadczenia zgodnie z dalszymi punktami procedury."
+          - tekst: "Skargi na sposób obsługi, które Klient zgłasza podczas rozmowy, przyjmij jako reklamację i przekaż do {{fakt:jednostka.reklamacje}}."
+
+  - id: zamkniecie-n-krok-klient-potwierdzenie
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - akapit: "Klient otrzymuje potwierdzenie przyjęcia wypowiedzenia, które jest dla niego dowodem złożenia oświadczenia i wskazuje przewidywaną datę rozwiązania umowy."
+      - kroki:
+          - tekst: "Potwierdzenie {wydaj|przekaż} Klientowi w chwili złożenia wypowiedzenia w placówce, a w przypadku innych kanałów — w terminie {{fakt:zamkniecie.termin.potwierdzenie}} od jego wpływu."
+          - tekst: "Potwierdzenie zawiera: oznaczenie rachunku, datę i godzinę wpływu oświadczenia, datę rozwiązania umowy, wskazany sposób wypłaty salda oraz informację o dokumentach, które Klient powinien złożyć."
+            podkroki:
+              - tekst: "Potwierdzenie zamknięcia rachunku jest wydawane bezpłatnie ({{fakt:zamkniecie.oplata.potwierdzenie-zamkniecia}}); Klient może żądać jego duplikatu w każdym czasie."
+              - tekst: "Potwierdzenie nie zawiera pełnego numeru rachunku, jeżeli jest przesyłane drogą elektroniczną w sposób niezabezpieczony."
+          - tekst: "Kopię potwierdzenia {dołącz|zachowaj} w aktach sprawy i wpisz jej datę do rejestru zamknięć {{fakt:zamkniecie.system.rejestr}}."
+
+  - id: zamkniecie-n-krok-klient-karty
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-klient
+    elementy:
+      - akapit: "Zamknięcie rachunku powoduje wygaśnięcie kart płatniczych wydanych do tego rachunku, w tym kart dodatkowych i kart wydanych użytkownikom rachunku. Aby uniknąć nieuprawnionych transakcji, karty należy zablokować i zwrócić do Banku w uporządkowany sposób."
+      - ustep: "W związku z zamknięciem rachunku pracownik:"
+        punkty:
+          - "{ustala|sprawdza}, jakie karty (debetowe, wirtualne, dodatkowe) są powiązane z rachunkiem, i informuje o tym Klienta;"
+          - "{blokuje|zastrzega} karty w terminie określonym w regulaminie, a Klienta poucza o konieczności ich zwrotu w terminie {{fakt:zamkniecie.termin.zwrot-karty}};"
+          - "{odbiera|przyjmuje} zwrócone karty, niszczy ich nośnik fizyczny i sporządza protokół zniszczenia z podpisem drugiej osoby;"
+          - "{informuje|poucza} Klienta o usunięciu karty z portfeli płatności mobilnych oraz o rozliczeniu transakcji, które nie zostały jeszcze zaksięgowane."
+      - akapit: "Transakcje kartą dokonane przed blokadą, ale zaksięgowane po niej, mogą spowodować saldo ujemne; w takim przypadku Bank postępuje zgodnie z zasadami rozliczeń opisanymi w dalszej części procedury."
+
+  # ---------- Wypowiedzenie przez Bank ----------
+  - id: zamkniecie-n-krok-bank-powody
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-bank
+    elementy:
+      - akapit: "Bank może wypowiedzieć umowę rachunku wyłącznie z ważnych powodów wskazanych w umowie i w regulaminie. Wypowiedzenie bez wskazania przyczyny nie jest dopuszczalne, a decyzja wymaga udokumentowania podstaw."
+      - ustep: "Do ważnych powodów zalicza się w szczególności:"
+        punkty:
+          - "{rażące|poważne} naruszenie postanowień umowy lub regulaminu, w tym użycie rachunku do celów niezgodnych z jego przeznaczeniem;"
+          - "{podanie|przedstawienie} nieprawdziwych informacji przy otwieraniu rachunku lub w trakcie jego prowadzenia;"
+          - "{brak|nieuzupełnienie} danych niezbędnych do wypełnienia obowiązków wynikających z przepisów o przeciwdziałaniu praniu pieniędzy, mimo wezwania;"
+          - "{utratę|brak} zdolności Klienta do prowadzenia rachunku, np. wskutek ograniczenia zdolności do czynności prawnych, jeżeli nie ma przedstawiciela;"
+          - "{wykorzystywanie|użycie} rachunku do czynności o znamionach przestępstwa lub wyłudzenia, potwierdzone ustaleniami Departamentu Bezpieczeństwa."
+      - akapit: "Wypowiedzenie z powodu, który nie został wskazany w umowie, jest bezskuteczne; w razie wątpliwości pracownik zwraca się do {{fakt:jednostka.prawny}}."
+
+  - id: zamkniecie-n-krok-bank-wniosek
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-bank
+    elementy:
+      - akapit: "Pracownik, który stwierdzi podstawy do wypowiedzenia umowy przez Bank, nie wypowiada jej samodzielnie, lecz składa wniosek zatwierdzany przez uprawnione osoby. Wymóg ten ma na celu zapewnienie jednolitego stosowania zasad wobec wszystkich Klientów."
+      - kroki:
+          - tekst: "{Sporządź|Przygotuj} wniosek o wypowiedzenie umowy, w którym {opiszesz|wskażesz} stan faktyczny, przyczynę wypowiedzenia, podstawę umowną i dołączysz dokumenty, które potwierdzają ustalenia."
+          - tekst: "Wniosek skieruj do kierownika placówki, który sprawdza jego kompletność i przekazuje go dalej wraz z opinią."
+            podkroki:
+              - tekst: "W sprawach związanych z podejrzeniem nadużyć wniosek trafia dodatkowo do {{fakt:jednostka.bezpieczenstwo}}."
+              - tekst: "W sprawach dotyczących obowiązków AML wniosek opiniuje {{fakt:jednostka.zgodnosc}}."
+          - tekst: "Decyzję o wypowiedzeniu podejmuje osoba uprawniona zgodnie z macierzą uprawnień; decyzję i jej uzasadnienie zapisuje się w rejestrze zamknięć {{fakt:zamkniecie.system.rejestr}}."
+          - tekst: "Dopiero po wydaniu decyzji sporządza się pismo wypowiadające umowę i przekazuje je Klientowi w sposób określony w umowie."
+
+  - id: zamkniecie-n-krok-bank-pismo
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-bank
+    elementy:
+      - akapit: "Pismo wypowiadające umowę rachunku jest dokumentem o szczególnym znaczeniu dla Klienta. Musi być napisane zrozumiale, zawierać wszystkie elementy wymagane przez przepisy i nie może powodować wątpliwości co do daty, od której umowa przestaje obowiązywać."
+      - ustep: "Pismo wypowiadające zawiera:"
+        punkty:
+          - "{oznaczenie|dane} stron umowy i rachunku, którego dotyczy wypowiedzenie, w sposób niepozwalający na pomyłkę z innymi produktami Klienta;"
+          - "{wskazanie|opis} przyczyny wypowiedzenia oraz podstawy umownej i prawnej;"
+          - "{termin|okres} wypowiedzenia i dzień, w którym umowa ulega rozwiązaniu;"
+          - "{pouczenie|informację} o sposobie wypłaty salda, o obowiązku zwrotu kart i o konieczności zmiany zleceń związanych z rachunkiem;"
+          - "{informację|pouczenie} o prawie do złożenia reklamacji i o możliwości skorzystania z pozasądowych metod rozwiązywania sporów."
+      - akapit: "Pismo podpisują dwie osoby upoważnione do działania w imieniu Banku. Kopię pisma i dowód doręczenia przechowuje się w aktach rachunku {{fakt:zamkniecie.system.archiwum}}."
+
+  # ---------- Produkty powiązane i rozliczenie ----------
+  - id: zamkniecie-n-rozl-lokata
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-rozliczenie
+    elementy:
+      - akapit: "Zamknięcie rachunku, z którym powiązana jest lokata, rachunek oszczędnościowy lub inny produkt depozytowy, wymaga rozstrzygnięcia, co stanie się z tymi środkami. Nie można zamknąć rachunku rozliczeniowego, jeżeli powiązana lokata jest obsługiwana wyłącznie przez ten rachunek, bez wcześniejszego ustalenia sposobu jej dalszej obsługi."
+      - kroki:
+          - tekst: "{Wskaż|Ustal} wszystkie produkty depozytowe powiązane z rachunkiem i {zapytaj|zaproponuj Klientowi}, czy chce je zamknąć, czy przenieść na inny rachunek w Banku."
+            podkroki:
+              - tekst: "Lokata zamykana przed terminem może wiązać się z utratą odsetek lub z opłatą w wysokości {{fakt:zamkniecie.oplata.zamkniecie-przed-okresem}}; poinformuj o tym Klienta przed złożeniem dyspozycji."
+              - tekst: "Jeżeli Klient chce zachować lokatę do końca okresu, ustal nowy rachunek, na który zostaną przekazane odsetki i kapitał."
+          - tekst: "Dyspozycję w sprawie lokaty zapisz razem z wypowiedzeniem rachunku; nie realizuj jej w sposób dorozumiany."
+          - tekst: "Zamknij rachunek dopiero po wykonaniu dyspozycji dotyczących wszystkich produktów powiązanych."
+
+  - id: zamkniecie-n-rozl-oplaty
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-rozliczenie
+    elementy:
+      - akapit: "Rozliczenie opłat i prowizji należnych Bankowi odbywa się według tabeli opłat obowiązującej w dniu wykonania czynności. Opłat nie pobiera się za samo zamknięcie rachunku, chyba że przepisy lub umowa przewidują inaczej."
+      - tabela:
+          kolumny:
+            - naglowek: "Czynność"
+              waga: 2
+            - naglowek: "Opłata"
+            - naglowek: "Uwagi"
+              waga: 2
+          wiersze:
+            - ["Potwierdzenie zamknięcia rachunku", "{{fakt:zamkniecie.oplata.potwierdzenie-zamkniecia}}", "Na żądanie Klienta, w formie papierowej lub elektronicznej"]
+            - ["Przelew salda na rachunek w innym banku", "{{fakt:zamkniecie.oplata.przelew-salda-na-rachunek-zewnetrzny}}", "Dla Klientów indywidualnych przy zamykaniu rachunku"]
+            - ["Wypłata z rachunku technicznego", "{{fakt:zamkniecie.oplata.wyplata-z-rachunku-technicznego}}", "Po zamknięciu rachunku, przy podjęciu środków niepodjętych"]
+            - ["Zamknięcie lokaty przed terminem", "{{fakt:zamkniecie.oplata.zamkniecie-przed-okresem}}", "Zgodnie z umową lokaty"]
+      - akapit: "W razie rozbieżności między wysokością opłat w tabeli a naliczoną w systemie pracownik zgłasza sprawę do {{fakt:jednostka.operacje}} i do czasu wyjaśnienia nie pobiera środków od Klienta."
+
+  - id: zamkniecie-n-rozl-karta-kredytowa
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-rozliczenie
+    elementy:
+      - akapit: "Rachunek, z którego spłacane jest zadłużenie z tytułu karty kredytowej, limitu w rachunku lub kredytu odnawialnego, nie może zostać zamknięty bez ustalenia, w jaki sposób będzie obsługiwany dalszy sposób spłaty zobowiązań. Zamknięcie rachunku może stanowić podstawę wypowiedzenia umów o te produkty, jeżeli umowa tak stanowi."
+      - ustep: "W takiej sytuacji pracownik:"
+        punkty:
+          - "{sprawdza|ustala} w systemie, jakie zobowiązania Klienta są spłacane z rachunku, i informuje go o skutkach zamknięcia;"
+          - "{proponuje|oferuje} zmianę rachunku spłat na inny rachunek Klienta w Banku lub rachunek w innym banku, jeżeli umowa na to pozwala;"
+          - "{wskazuje|informuje}, że brak spłaty w terminie spowoduje naliczenie odsetek i może prowadzić do wypowiedzenia umowy kredytowej;"
+          - "{odnotowuje|zapisuje} ustalenia w aktach rachunku i przekazuje informację do jednostki odpowiedzialnej za dany produkt kredytowy."
+
+  # ---------- Zmiana banku ----------
+  - id: zamkniecie-n-bank-zmiana-dokumenty
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-zmiana-banku
+    elementy:
+      - akapit: "Przeniesienie rachunku do innego banku odbywa się według jednolitych zasad, które mają na celu ochronę Klienta przed przerwą w dostępie do środków i w obsłudze płatności. Wniosek Klienta o zmianę banku jest wiążący dla Banku od chwili jego wpływu."
+      - kroki:
+          - tekst: "Przyjmij od Klienta wniosek {{fakt:zamkniecie.formularz.zmiana-banku}} i {zweryfikuj|sprawdź} jego kompletność, w szczególności dane nowego rachunku i datę, od której Klient chce korzystać z nowego rachunku."
+          - tekst: "Wydaj Klientowi potwierdzenie przyjęcia wniosku i poinformuj o dalszych etapach, w tym o terminie przekazania informacji nowemu bankowi: {{fakt:zamkniecie.termin.zmiana-banku-przekazanie}} od dnia otrzymania wniosku."
+            podkroki:
+              - tekst: "Wskaż Klientowi, że przeniesienie nie obejmuje produktów kredytowych ani kart, których warunki wymagają odrębnej umowy."
+              - tekst: "Poinformuj o możliwości przeniesienia także zleceń stałych i poleceń zapłaty, jeżeli Klient zaznaczył to we wniosku."
+          - tekst: "Zgromadzone informacje o zleceniach i poleceniach zapłaty {przekaż|udostępnij} nowemu bankowi w terminie wynikającym z przepisów, a kopię przekazanych danych wydaj Klientowi na jego żądanie."
+
+  - id: zamkniecie-n-bank-zmiana-zlecenia
+    typy: [procedury]
+    tematy: [procedura-zamkniecie-rachunku]
+    kategoria: zamkniecie-krok-zmiana-banku
+    elementy:
+      - akapit: "Po otrzymaniu informacji od nowego banku Bank wykonuje czynności związane z przeniesieniem zleceń płatniczych. Terminy tych czynności są ustalone przepisami i umową, a ich naruszenie może powodować szkodę po stronie Klienta."
+      - ustep: "W ramach tej procedury Bank:"
+        punkty:
+          - "{anuluje|zamyka} zlecenia stałe i polecenia zapłaty z dniem wskazanym we wniosku, po upływie terminu {{fakt:zamkniecie.termin.zmiana-banku-zlecenia}} od otrzymania informacji od nowego banku;"
+          - "{przekazuje|przesyła} nowemu bankowi wykaz nadawców wpływów regularnych, jeżeli Klient wyraził na to zgodę;"
+          - "{informuje|powiadamia} Klienta o wszelkich zleceniach, których nie można było przenieść, wraz z przyczyną;"
+          - "{wskazuje|ustala} dzień zamknięcia rachunku w porozumieniu z Klientem, tak aby nie doszło do zwrotu płatności przychodzących."
+      - akapit: "Przychodzące płatności na zamknięty rachunek są przekierowywane na nowy rachunek Klienta przez okres {{fakt:zamkniecie.termin.przekierowanie-wplywow}}; po tym okresie są zwracane nadawcy."

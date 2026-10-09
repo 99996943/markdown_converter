@@ -1,0 +1,250 @@
+bloki:
+  # ---------- Odpowiedź, odmowa i skargi ----------
+  - id: rodo-n-opis-odpowiedz-jezyk
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-odpowiedz
+    elementy:
+      - akapit: "Odpowiedź udzielana wnioskodawcy musi być zwięzła, przejrzysta, zrozumiała i łatwo dostępna, sformułowana jasnym i prostym językiem. Ma to szczególne znaczenie, gdy odpowiedź dotyczy osoby małoletniej, osoby starszej lub osoby, która zgłasza trudności w rozumieniu dokumentów bankowych."
+      - ustep: "Przy redagowaniu odpowiedzi {stosuje się|należy stosować} następujące zasady:"
+        punkty:
+          - "{unika się|nie używa się} terminologii prawniczej bez wyjaśnienia; odwołania do przepisów podaje się w uzupełnieniu, a nie zamiast uzasadnienia;"
+          - "na początku odpowiedzi {wskazuje się|podaje się} rozstrzygnięcie (zrealizowano, zrealizowano częściowo, odmówiono), a dopiero potem szczegóły;"
+          - "każde odrębne żądanie wnioskodawcy {omawia się|rozpatruje się} w osobnym akapicie, aby widać było, co zrobiono w odniesieniu do każdego z nich;"
+          - "pismo podpisuje osoba upoważniona przez {{fakt:jednostka.iod}}, a w stopce zamieszcza się dane do kontaktu."
+      - akapit: "Wzór odpowiedzi {sprawdza|czyta} przed wysłaniem druga osoba, jeżeli sprawa dotyczy odmowy albo odpowiedź jest dłuższa niż dwie strony."
+
+  - id: rodo-n-opis-odpowiedz-wysylka
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-odpowiedz
+    elementy:
+      - akapit: "Sposób przekazania odpowiedzi musi gwarantować poufność danych. Dane w odpowiedzi mogą być bardziej wrażliwe niż sam wniosek, dlatego wybór kanału nie może zależeć wyłącznie od wygody Banku."
+      - kroki:
+          - tekst: "Odpowiedź {kieruj|wysyłaj} tym kanałem, którego użył wnioskodawca, o ile zapewnia on odpowiedni poziom bezpieczeństwa."
+            podkroki:
+              - tekst: "Dane o znacznej wrażliwości (np. dane o transakcjach, o zadłużeniu, o stanie zdrowia) przekazuj wyłącznie przez bezpieczną skrzynkę w bankowości elektronicznej albo w postaci zaszyfrowanego pliku, którego hasło {wyślij|przekaż} odrębnym kanałem."
+              - tekst: "Zwykłej poczty e-mail nie używaj do przesyłania kopii danych, chyba że wnioskodawca wyraźnie o to prosi, po uprzednim poinformowaniu go o ryzyku."
+          - tekst: "Wysyłkę papierową realizuj listem poleconym, a w razie przesyłania danych szczególnie wrażliwych — za potwierdzeniem odbioru do rąk własnych."
+          - tekst: "Fakt wysłania, datę i numer przesyłki {zapisz|wpisz} w rejestrze wniosków {{fakt:rodo.system.rejestr}}; po zwrocie przesyłki {powiadom|zawiadom} wnioskodawcę dostępnym kanałem i, jeśli to konieczne, wyślij ją ponownie na zweryfikowany adres."
+
+  - id: rodo-n-opis-odpowiedz-bledne-dane
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-odpowiedz
+    elementy:
+      - akapit: "Zdarza się, że po wysłaniu odpowiedzi Bank stwierdza, iż wysłano ją niewłaściwej osobie albo że zawierała dane, których nie powinna była zawierać. Takie zdarzenie jest naruszeniem ochrony danych osobowych i wymaga natychmiastowej reakcji."
+      - kroki:
+          - tekst: "Pracownik, który stwierdzi błąd, {niezwłocznie|bezzwłocznie} zawiadamia IOD i {{fakt:jednostka.bezpieczenstwo}}, nie próbując samodzielnie naprawiać skutków."
+          - tekst: "IOD ocenia ryzyko dla praw i wolności osoby, której dane ujawniono, i przeprowadza postępowanie zgodnie z procedurą zarządzania incydentami."
+            podkroki:
+              - tekst: "Podejmuje próbę odzyskania przesyłki lub potwierdzenia jej usunięcia przez nieuprawnionego odbiorcę."
+              - tekst: "Decyduje o konieczności zgłoszenia naruszenia organowi nadzorczemu oraz o zawiadomieniu osoby, której dane ujawniono."
+          - tekst: "Prawidłową odpowiedź wysyła się wnioskodawcy po zakończeniu czynności zabezpieczających; informuje się go także o błędzie, jeżeli dotyczył jego danych."
+          - tekst: "Przyczynę błędu {analizuje się|bada się} i, jeżeli wynikała z luki w procedurze, wprowadza się zmianę, o której informuje się pracowników."
+
+  - id: rodo-n-opis-odpowiedz-skarga
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-odpowiedz
+    elementy:
+      - akapit: "Wnioskodawca niezadowolony z odpowiedzi może wnieść skargę do {{fakt:rodo.organ-nadzorczy-dopelniacz}} albo dochodzić roszczeń przed sądem. Może też zwrócić się do Banku z prośbą o ponowne rozpatrzenie sprawy. Banku nie wolno zniechęcać do korzystania z tych środków ani uzależniać ich od uprzedniego wyczerpania drogi wewnętrznej."
+      - kroki:
+          - tekst: "Prośbę o ponowne rozpatrzenie {rejestruj|traktuj} jako nowy wniosek powiązany z poprzednią sprawą i {przekaż|skieruj} do IOD, który nie powinien być osobą podpisującą pierwotną odpowiedź."
+          - tekst: "Po otrzymaniu zawiadomienia od organu nadzorczego o skardze lub wezwania do złożenia wyjaśnień {zabezpiecz|zgromadź} całą dokumentację sprawy, w tym korespondencję, notatki, wydruki z rejestru i dzienniki systemowe."
+            podkroki:
+              - tekst: "Projekt wyjaśnień przygotowuje IOD we współpracy z {{fakt:jednostka.prawny}} i właściwą jednostką merytoryczną."
+              - tekst: "Wyjaśnienia podpisuje członek Zarządu albo osoba przez niego upoważniona; kopię zachowuje się w aktach sprawy."
+          - tekst: "Termin wyznaczony przez organ nadzorczy {jest nieprzekraczalny|nie podlega przedłużeniu bez zgody organu}; o zagrożeniu terminu IOD informuje Zarząd z odpowiednim wyprzedzeniem."
+          - tekst: "O przebiegu i wyniku postępowania przed organem nadzorczym {informuje się|zawiadamia się} wszystkie jednostki, których dotyczyły ustalenia, aby mogły wdrożyć zalecenia."
+
+  # ---------- Przypadki szczególne ----------
+  - id: rodo-n-szczegolne-spadek
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Prawa przewidziane w przepisach o ochronie danych osobowych przysługują osobom żyjącym; po śmierci Klienta nie przechodzą na spadkobierców. Spadkobiercy mogą jednak żądać informacji o stanie rachunków i zobowiązań zmarłego na podstawie przepisów dotyczących tajemnicy bankowej."
+      - kroki:
+          - tekst: "Wniosek o udostępnienie danych dotyczących zmarłego Klienta {skieruj|przekaż} do jednostki obsługującej sprawy spadkowe, a IOD poinformuj o jego wpływie."
+          - tekst: "Spadkobiercę {zidentyfikuj|zweryfikuj} na podstawie dokumentu stwierdzającego prawa do spadku (postanowienie sądu, akt poświadczenia dziedziczenia lub europejskie poświadczenie spadkowe)."
+            podkroki:
+              - tekst: "Nie wydawaj danych osobie, która powołuje się wyłącznie na pokrewieństwo, bez dokumentu potwierdzającego jej prawa."
+              - tekst: "Dane innych osób, np. współposiadaczy rachunków, pełnomocników lub osób wskazanych jako uposażeni, wydawaj w zakresie, w jakim wynika to z przepisów."
+          - tekst: "Nie stosuj do takich wniosków terminów i formularzy RODO w sposób, który ograniczałby prawa spadkobierców wynikające z przepisów szczególnych; odpowiedź przygotuj w uzgodnieniu z {{fakt:jednostka.prawny}}."
+
+  - id: rodo-n-szczegolne-organy
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Żądania organów publicznych (prokuratury, sądów, organów skarbowych, komorników) o udostępnienie danych Klientów nie są wnioskami osób, których dane dotyczą, i nie podlegają niniejszej procedurze, lecz odrębnym regulacjom wewnętrznym. W praktyce jednak zdarza się, że Klient prosi o informację, czy takie żądanie wpłynęło."
+      - ustep: "W takim przypadku pracownik postępuje następująco:"
+        punkty:
+          - "{nie potwierdza|nie udziela informacji} Klientowi ani osobie trzeciej, czy organ zwrócił się do Banku o dane, jeżeli przepisy lub treść żądania zakazują ujawniania tego faktu;"
+          - "{kieruje|przekazuje} pytanie Klienta do IOD i do {{fakt:jednostka.prawny}}, które wspólnie ustalają, czy i w jakim zakresie można odpowiedzieć;"
+          - "{odnotowuje|wpisuje} w aktach sprawy podstawę prawną udzielonej lub odmówionej informacji;"
+          - "w odpowiedzi do Klienta nie ujawnia danych identyfikujących funkcjonariusza ani szczegółów postępowania."
+
+  - id: rodo-n-szczegolne-grupa
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Dane Klienta mogą być przetwarzane również przez inne podmioty należące do tej samej grupy kapitałowej, co Bank, np. w celu zarządzania ryzykiem lub prowadzenia wspólnych kampanii. Wniosek o dostęp lub usunięcie danych może wtedy obejmować więcej niż jednego administratora."
+      - kroki:
+          - tekst: "Ustal na podstawie umowy o współadministrowaniu lub umowy powierzenia, który podmiot jest odpowiedzialny za wykonanie żądania i kto jest punktem kontaktowym dla osób, których dane dotyczą."
+          - tekst: "Jeżeli odpowiedzialny jest inny podmiot z grupy, {przekaż|prześlij} mu wniosek w terminie {{fakt:termin.rodo.rejestracja}} i {powiadom|poinformuj} o tym wnioskodawcę, wskazując dane kontaktowe tego podmiotu."
+            podkroki:
+              - tekst: "Przekazanie wniosku nie zwalnia Banku z obowiązku udzielenia odpowiedzi w zakresie danych, które sam przetwarza."
+              - tekst: "Odpowiedź w zakresie danych przetwarzanych przez Bank przygotuj niezależnie od działań drugiego podmiotu."
+          - tekst: "Wniosek wnioskodawcy wobec któregokolwiek ze współadministratorów rozpatruj tak, jakby został skierowany do Banku, jeżeli umowa wskazuje Bank jako podmiot realizujący prawa osób, których dane dotyczą."
+
+  - id: rodo-n-szczegolne-niewiarygodne
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Jeżeli istnieją uzasadnione wątpliwości co do tożsamości osoby składającej wniosek, a wniosek dotyczy szczególnie wrażliwych danych lub wygląda na próbę wyłudzenia informacji, IOD może zastosować dodatkowe środki weryfikacji. Dotyczy to w szczególności wniosków nadsyłanych z adresów, które nie są znane Bankowi, i wniosków o niezwykłym zakresie."
+      - ustep: "Dodatkowa weryfikacja może polegać na:"
+        punkty:
+          - "{kontakcie|połączeniu} zwrotnym na numer telefonu zapisany w systemie Banku, a nie na numer podany we wniosku;"
+          - "{poproszeniu|zażądaniu} o odpowiedzi na pytania dotyczące produktów, których znajomość jest dostępna wyłącznie dla Klienta, bez ujawniania prawidłowych odpowiedzi;"
+          - "{wezwaniu|zaproszeniu} do osobistego stawiennictwa w placówce z dokumentem tożsamości;"
+          - "{wysłaniu|przekazaniu} odpowiedzi na adres korespondencyjny zapisany w umowie, a nie na adres wskazany w nowym wniosku."
+      - akapit: "Dodatkowa weryfikacja musi być proporcjonalna; nie wolno żądać więcej danych, niż potrzeba do ustalenia tożsamości. Gdy podejrzenie wyłudzenia się potwierdzi, IOD informuje {{fakt:jednostka.bezpieczenstwo}} i zachowuje materiał dowodowy."
+
+  - id: rodo-n-szczegolne-kredytobiorca
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Wnioski składane przez osoby, które są stroną umowy kredytowej, współkredytobiorcą, poręczycielem albo ustanowiły zabezpieczenie na rzecz Banku, dotyczą danych przetwarzanych w wielu systemach i w dokumentacji różnych komórek. Dane takie bywają przechowywane przez długi okres, który wynika z umowy i z przepisów o rachunkowości."
+      - kroki:
+          - tekst: "Ustal, jaką rolę pełni wnioskodawca w umowie kredytowej, i wyszukaj jego dane we wszystkich systemach, w których występuje, w tym w systemie kredytowym, w dokumentacji zabezpieczeń i w archiwum {{fakt:rodo.system.archiwum}}."
+          - tekst: "Pamiętaj, że dane o kredycie dotyczą często kilku osób; kopii wydawanej jednej z nich nie uzupełniaj o dane identyfikujące pozostałe poza tymi, które są niezbędne do zrozumienia umowy."
+            podkroki:
+              - tekst: "Współkredytobiorca ma prawo do danych o całej umowie, ale nie do danych osobowych drugiego współkredytobiorcy, które nie wynikają z dokumentów wspólnych."
+              - tekst: "Poręczyciel ma prawo do danych dotyczących własnego zobowiązania oraz informacji niezbędnych do oceny swojej odpowiedzialności."
+          - tekst: "Wniosek o usunięcie danych w trakcie obowiązywania umowy {odmów|odrzuć}, wskazując, że przetwarzanie jest niezbędne do wykonania umowy, a następnie przez okres wynikający z przepisów i roszczeń (zob. {{fakt:rodo.retencja.roszczenia}})."
+
+  - id: rodo-n-szczegolne-publiczne
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Osoby pełniące eksponowane stanowiska publiczne, członkowie ich rodzin oraz osoby blisko z nimi związane są objęte przez Bank szczególnym nadzorem w ramach przeciwdziałania praniu pieniędzy. Wniosek takiej osoby o dostęp lub usunięcie danych wymaga uwzględnienia tych obowiązków."
+      - kroki:
+          - tekst: "{Skonsultuj|Uzgodnij} zakres odpowiedzi z komórką ds. przeciwdziałania praniu pieniędzy, aby nie ujawnić informacji o czynnościach, których ujawnienie jest zakazane."
+          - tekst: "Dane przetwarzane w celu wykonania obowiązków wynikających z przepisów o przeciwdziałaniu praniu pieniędzy przechowuj przez okres wskazany w przepisach ({{fakt:rodo.retencja.aml}}) i nie usuwaj ich na żądanie wnioskodawcy."
+            podkroki:
+              - tekst: "Odpowiedź powinna wskazywać, że część danych jest przetwarzana na podstawie obowiązku prawnego, bez opisywania szczegółów analiz."
+              - tekst: "Nie informuj wnioskodawcy o tym, czy wobec niego prowadzono analizę transakcji lub zgłoszono informacje do organu."
+          - tekst: "Sposób odpowiedzi zatwierdza IOD, a o jego wyniku informuje się {{fakt:jednostka.zgodnosc}}."
+
+  # ---------- Rejestr ----------
+  - id: rodo-n-rejestr-pola
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-rejestr-dod
+    elementy:
+      - akapit: "Rejestr wniosków prowadzony w systemie {{fakt:rodo.system.rejestr}} jest dowodem należytego wykonywania obowiązków Banku. Każdy wpis musi być na tyle kompletny, aby po latach można było odtworzyć przebieg sprawy bez sięgania do pamięci pracowników."
+      - tabela:
+          kolumny:
+            - naglowek: "Pole rejestru"
+              waga: 2
+            - naglowek: "Zawartość"
+              waga: 3
+          wiersze:
+            - ["Numer sprawy", "Unikalny numer nadany automatycznie, niezmieniany po zarejestrowaniu"]
+            - ["Data i kanał wpływu", "Data, godzina i kanał, którym wniosek dotarł do Banku, z numerem nagrania lub przesyłki"]
+            - ["Rodzaj żądania", "Prawo, którego dotyczy wniosek, np. dostęp, sprostowanie, usunięcie, sprzeciw"]
+            - ["Tożsamość", "Sposób weryfikacji tożsamości i data jej potwierdzenia, bez kopii dokumentów"]
+            - ["Terminy", "Termin odpowiedzi, ewentualne przedłużenie z przyczyną i data zawiadomienia"]
+            - ["Rozstrzygnięcie", "Uwzględniono, uwzględniono częściowo, odmówiono wraz z podstawą"]
+            - ["Wykonawca", "Pracownik i jednostka odpowiedzialni za sprawę oraz osoba zatwierdzająca odpowiedź"]
+      - akapit: "Wpisów nie usuwa się, a ich korekta jest możliwa wyłącznie przez dopisanie adnotacji z datą i danymi osoby dokonującej zmiany. Dostęp do rejestru mają osoby wyznaczone przez {{fakt:jednostka.iod}}."
+
+  - id: rodo-n-rejestr-uprawnienia
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-rejestr-dod
+    elementy:
+      - akapit: "Rejestr zawiera dane osobowe wnioskodawców, a często także informacje o ich sytuacji życiowej i finansowej, dlatego dostęp do niego podlega ścisłemu nadzorowi. Uprawnienia są nadawane według zasady minimalnych koniecznych uprawnień."
+      - ustep: "Zasady dostępu do rejestru obejmują:"
+        punkty:
+          - "{nadawanie|przydzielanie} uprawnień wyłącznie na wniosek kierownika jednostki, po zatwierdzeniu przez {{fakt:jednostka.iod}};"
+          - "{rozdzielenie|oddzielenie} uprawnień do rejestracji wniosków, ich rozpatrywania i zatwierdzania odpowiedzi, tak aby żadna osoba nie obsługiwała sprawy od początku do końca bez kontroli;"
+          - "{przegląd|weryfikację} uprawnień co kwartał, a także niezwłocznie po zmianie stanowiska lub rozwiązaniu stosunku pracy;"
+          - "{rejestrowanie|zapisywanie} w dzienniku systemowym wszystkich odczytów i zmian, wraz z możliwością ich analizy przez {{fakt:jednostka.bezpieczenstwo}}."
+      - akapit: "Nadużycie dostępu do rejestru, w szczególności ciekawość w odniesieniu do spraw osób znanych pracownikowi, jest traktowane jako poważne naruszenie obowiązków pracowniczych."
+
+  # ---------- Kontrola ----------
+  - id: rodo-n-kontrola-testy
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-kontrola-dod
+    elementy:
+      - akapit: "Poza kontrolą bieżącą IOD przeprowadza raz w roku testy skuteczności procedury, w których sprawdza, czy pracownicy rozpoznają wnioski i czy prawidłowo reagują na żądania w różnych kanałach."
+      - kroki:
+          - tekst: "{Przygotuj|Opracuj} zestaw scenariuszy testowych obejmujących co najmniej wniosek złożony w placówce, na Infolinii, w wiadomości e-mail i w korespondencji papierowej oraz wniosek niekompletny."
+          - tekst: "Testy przeprowadza się metodą tajemniczego klienta lub symulacji, bez wcześniejszego uprzedzenia placówek; wyniki przedstawia się kierownikom jednostek w ciągu {{fakt:termin.rodo.projekt-odpowiedzi}} od zakończenia testu."
+            podkroki:
+              - tekst: "Ocenie podlega wyłącznie sposób postępowania pracownika, a nie jego umiejętności osobiste."
+              - tekst: "Dane osób biorących udział w testach nie są wykorzystywane do innych celów."
+          - tekst: "W razie stwierdzenia nieprawidłowości {zaplanuj|wyznacz} działania korygujące i termin ich wykonania, a następnie sprawdź, czy zostały skutecznie wdrożone."
+
+  - id: rodo-n-kontrola-raport
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-kontrola-dod
+    elementy:
+      - akapit: "Sprawozdanie z obsługi wniosków sporządza IOD co {{fakt:rodo.raport-okres}} i przekazuje Zarządowi oraz {{fakt:jednostka.zgodnosc}}. Sprawozdanie jest podstawą oceny, czy zasoby przeznaczone na obsługę wniosków są wystarczające."
+      - ustep: "Sprawozdanie zawiera:"
+        punkty:
+          - "{liczbę|zestawienie liczbowe} wniosków w podziale na rodzaje żądań i kanały wpływu;"
+          - "{informację|dane} o terminowości odpowiedzi, przedłużeniach terminu i sprawach przeterminowanych wraz z przyczynami;"
+          - "{wykaz|zestawienie} odmów oraz ich podstaw prawnych;"
+          - "{opis|omówienie} skarg, wezwań organu nadzorczego i wniosków o ponowne rozpatrzenie;"
+          - "{propozycje|rekomendacje} zmian w procedurze, narzędziach i szkoleniach."
+
+  # ---------- Wzory ----------
+  - id: rodo-n-wzor-sprostowanie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór — odpowiedź na wniosek o sprostowanie danych"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w odpowiedzi na Państwa wniosek z dnia (data) o sprostowanie danych osobowych {informujemy|zawiadamiamy}, że po weryfikacji dokumentów (wskazanie dokumentów) {poprawiliśmy|skorygowaliśmy} następujące dane: (zakres danych przed i po zmianie). O dokonanej zmianie powiadomiliśmy odbiorców, którym dane zostały wcześniej przekazane, to jest (lista odbiorców). Na Państwa żądanie możemy poinformować o tych odbiorcach."
+      - akapit: "{Prosimy|Uprzejmie prosimy} o sprawdzenie poprawności danych w bankowości elektronicznej i o zgłoszenie ewentualnych dalszych uwag IOD pod adresem {{fakt:kontakt.email-iod}}. Z poważaniem, (imię i nazwisko, stanowisko)"
+
+  - id: rodo-n-wzor-sprzeciw
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór — odpowiedź na sprzeciw wobec przetwarzania danych"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w odpowiedzi na Państwa sprzeciw z dnia (data) wobec przetwarzania danych osobowych w celu (cel przetwarzania) {informujemy|zawiadamiamy}, że (wariant a: uwzględniliśmy sprzeciw i zaprzestaliśmy przetwarzania danych w tym celu od dnia (data); wariant b: nie uwzględniliśmy sprzeciwu, ponieważ istnieją ważne, prawnie uzasadnione podstawy, które przeważają nad Państwa interesami, prawami i wolnościami, a mianowicie (uzasadnienie))."
+      - akapit: "{Przysługuje Państwu|Mają Państwo} prawo wniesienia skargi do {{fakt:rodo.organ-nadzorczy-dopelniacz}} oraz wystąpienia z powództwem do sądu. W razie pytań prosimy o kontakt z IOD: {{fakt:kontakt.email-iod}}. Z poważaniem, (imię i nazwisko, stanowisko)"
+
+  - id: rodo-n-wzor-wezwanie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór — wezwanie do potwierdzenia tożsamości lub doprecyzowania żądania"
+        poziom: 2
+      - akapit: "Szanowni Państwo, w związku z Państwa wnioskiem z dnia (data), nr sprawy (numer sprawy), {informujemy|zawiadamiamy}, że w celu jego rozpatrzenia potrzebujemy dodatkowych informacji, a mianowicie: (wskazanie informacji lub dokumentów). Informacje te prosimy przekazać w terminie {{fakt:termin.rodo.uzupelnienie-wniosku}} od otrzymania niniejszego pisma, za pośrednictwem (kanał)."
+      - akapit: "Zwracamy uwagę, że o ile bieg terminu na udzielenie odpowiedzi nie ulega zawieszeniu, brak odpowiedzi może uniemożliwić zrealizowanie żądania w całości lub w części. {Odpowiadamy|Udzielimy odpowiedzi} w zakresie, który jest możliwy do ustalenia. Z poważaniem, (imię i nazwisko, stanowisko)"
+
+  - id: rodo-n-wzor-zgoda
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-wzor
+    elementy:
+      - naglowek: "Wzór — potwierdzenie cofnięcia zgody na przetwarzanie danych"
+        poziom: 2
+      - akapit: "Szanowni Państwo, potwierdzamy, że w dniu (data) przyjęliśmy Państwa oświadczenie o cofnięciu zgody na (zakres zgody). Od dnia (data) nie będziemy przetwarzać Państwa danych w tym celu. Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania, którego dokonano przed jej cofnięciem."
+      - akapit: "Informujemy, że (wariant: dane są nadal przetwarzane na podstawie umowy lub obowiązku prawnego, ponieważ cofnięta zgoda nie była jedyną podstawą ich przetwarzania). {Zgodę można udzielić ponownie|Mogą Państwo ponownie wyrazić zgodę} w każdym czasie, w placówce lub w bankowości elektronicznej. Z poważaniem, (imię i nazwisko, stanowisko)"

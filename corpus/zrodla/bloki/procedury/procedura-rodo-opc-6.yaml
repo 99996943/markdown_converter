@@ -1,0 +1,188 @@
+bloki:
+  - id: rodo-n-odp-pelnomocnik-iod
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - akapit: "**Zastępca Inspektora Ochrony Danych** {przejmuje|wykonuje} zadania IOD w czasie jego nieobecności i w sprawach, w których występuje konflikt interesów po stronie IOD. Zastępcę wyznacza Zarząd na wniosek IOD, a jego dane kontaktowe są dostępne w intranecie i podawane organowi nadzorczemu."
+      - ustep: "Zastępca IOD w szczególności:"
+        punkty:
+          - "{prowadzi|obsługuje} sprawy, które IOD przekazał do rozpatrzenia z powodu nieobecności lub nadmiernego obciążenia, i nie dopuszcza do przekroczenia terminów;"
+          - "{zastępuje|reprezentuje} IOD w kontaktach z organem nadzorczym, jeżeli IOD nie może wziąć w nich udziału;"
+          - "{uczestniczy|bierze udział} w przeglądach rejestru wniosków i w szkoleniach, aby znać bieżącą praktykę;"
+          - "{wnioskuje|zgłasza} do Zarządu potrzebę zwiększenia zasobów, gdy liczba wniosków przekracza możliwości zespołu."
+
+  - id: rodo-n-odp-wlasciciel-procesu
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - akapit: "**Właściciel procesu biznesowego** ponosi odpowiedzialność za dane przetwarzane w ramach prowadzonego przez niego procesu (np. kredytowego, depozytowego, kartowego) i jest pierwszym adresatem pytań IOD dotyczących tych danych."
+      - ustep: "Do jego obowiązków należy w szczególności:"
+        punkty:
+          - "{wskazywanie|ustalanie} IOD systemów, dokumentów i okresów przechowywania właściwych dla procesu;"
+          - "{ocena|rozstrzyganie} we współpracy z IOD, czy dane mogą zostać usunięte, czy muszą być zachowane z mocy przepisów lub dla obrony roszczeń;"
+          - "{zapewnienie|zagwarantowanie} dostępności osoby merytorycznej w terminie {{fakt:termin.rodo.dane-od-jednostek}} roboczych od zapytania IOD;"
+          - "{zgłaszanie|informowanie o} zmianach w procesie, które wpływają na zakres przetwarzanych danych lub systemy, w których się znajdują."
+
+  - id: rodo-n-opis-przyjecie-priorytety
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Wnioski zróżnicowane są pod względem pilności i złożoności. Aby zapewnić terminowość, IOD przyporządkowuje każdy zarejestrowany wniosek do jednej z kategorii obsługi już w dniu wpływu."
+      - tabela:
+          kolumny:
+            - naglowek: "Kategoria"
+            - naglowek: "Przykład sprawy"
+              waga: 2
+            - naglowek: "Sposób obsługi"
+              waga: 2
+          wiersze:
+            - ["Prosta", "Pytanie o to, czy Bank przetwarza dane; cofnięcie zgody marketingowej", "Odpowiedź przygotowuje pracownik zespołu IOD, bez konsultacji z jednostkami"]
+            - ["Standardowa", "Wniosek o kopię danych z jednego produktu; sprostowanie adresu", "Zapytanie do właściciela procesu, odpowiedź w terminie podstawowym"]
+            - ["Złożona", "Dostęp do danych ze wszystkich systemów; usunięcie danych z archiwów", "Zespół roboczy, ocena prawna, ewentualne przedłużenie terminu"]
+            - ["Szczególna", "Wniosek pełnomocnika, sprawa spadkowa, żądanie wobec nagrań", "Udział Departamentu Prawnego, zatwierdzenie przez IOD"]
+      - akapit: "Kategorię można zmienić w toku sprawy, jeżeli okaże się, że zakres jest większy niż pierwotnie zakładano; zmianę i jej przyczynę odnotowuje się w rejestrze wniosków {{fakt:rodo.system.rejestr}}."
+
+  - id: rodo-n-opis-przyjecie-potwierdzenie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Wnioskodawca powinien otrzymać potwierdzenie przyjęcia wniosku. Potwierdzenie nie jest odpowiedzią na wniosek i nie zastępuje informacji o sposobie jego załatwienia, ale wskazuje, że sprawa jest w toku i kiedy można się spodziewać odpowiedzi."
+      - kroki:
+          - tekst: "Potwierdzenie {wyślij|przekaż} w terminie {{fakt:termin.rodo.rejestracja}} od wpływu wniosku, tym samym kanałem, którego użył wnioskodawca, chyba że wskazał on inny."
+          - tekst: "W potwierdzeniu {podaj|umieść}: numer sprawy, datę wpływu, przewidywany termin odpowiedzi oraz dane kontaktowe do IOD."
+            podkroki:
+              - tekst: "Jeżeli sprawa wymaga potwierdzenia tożsamości, umieść w potwierdzeniu odpowiednie wezwanie."
+              - tekst: "Nie podawaj w potwierdzeniu danych wnioskodawcy poza imieniem i nazwiskiem."
+          - tekst: "Wnioskodawcy, który pyta o stan sprawy, {udziel|przekaż} informacji o etapie postępowania po ustaleniu jego tożsamości; nie {wskazuj|podawaj} nazwisk pracowników zajmujących się sprawą."
+
+  - id: rodo-n-opis-dostep-zapytania
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Przygotowanie odpowiedzi na wniosek o dostęp wymaga zebrania danych z wielu jednostek. Aby proces przebiegał sprawnie, IOD kieruje do jednostek zapytanie w ustalonej formie, a jednostki odpowiadają według jednolitego wzoru."
+      - ustep: "Zapytanie IOD do jednostki zawiera:"
+        punkty:
+          - "{dane identyfikujące|identyfikację} wnioskodawcy w zakresie niezbędnym do wyszukania danych, bez zbędnych informacji z jego wniosku;"
+          - "{zakres|określenie} żądanych danych oraz okres, którego dotyczy wniosek;"
+          - "{termin|datę} odpowiedzi, nie dłuższy niż {{fakt:termin.rodo.dane-od-jednostek}} roboczych;"
+          - "{pytania|prośby} o wskazanie celów przetwarzania, odbiorców, okresów przechowywania i podstaw prawnych dla poszczególnych zbiorów danych."
+      - akapit: "Jednostka odpowiada, nawet jeżeli nie przetwarza danych wnioskodawcy; odpowiedź negatywna musi być jednoznaczna i potwierdzona wyszukaniem we wskazanych systemach. Brak odpowiedzi w terminie IOD eskaluje do kierownika jednostki, a następnie do członka Zarządu nadzorującego obszar."
+
+  - id: rodo-n-opis-dostep-weryfikacja-wyniku
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-dostep
+    elementy:
+      - akapit: "Zebrane dane przed wydaniem wnioskodawcy poddaje się kontroli jakości, która ma wykluczyć wydanie danych niekompletnych, nieaktualnych lub dotyczących innej osoby."
+      - kroki:
+          - tekst: "{Sprawdź|Porównaj} zgodność danych identyfikacyjnych w każdym zestawie z danymi wnioskodawcy; w razie rozbieżności (np. zbieżność imion i nazwisk różnych Klientów) {wyjaśnij|ustal} przyczynę przed wydaniem danych."
+          - tekst: "Oceń kompletność zestawienia, porównując je z mapą przetwarzania danych i z odpowiedziami jednostek; wszelkie braki {uzupełnij|wyjaśnij} lub opisz."
+            podkroki:
+              - tekst: "Jeżeli jakiegoś zbioru nie dało się przeszukać z przyczyn technicznych, zaznacz to w odpowiedzi i podaj przewidywany termin dostarczenia danych."
+              - tekst: "Zestawienie podpisuje (elektronicznie lub odręcznie) osoba, która dokonała kontroli."
+          - tekst: "Przeprowadź kontrolę czterech oczu: odpowiedź zatwierdza drugi pracownik zespołu IOD, który nie przygotowywał zestawienia."
+          - tekst: "Wyniki kontroli {zapisz|dołącz} do akt sprawy, aby można było wykazać staranność Banku."
+
+  - id: rodo-n-opis-usuniecie-lista
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Przed wykonaniem żądania usunięcia danych IOD sporządza listę kontrolną, która ma zapobiec zarówno bezprawnemu zachowaniu danych, jak i nieuzasadnionemu ich usunięciu. Usunięcie danych jest czynnością nieodwracalną, dlatego dokonuje się go dopiero po zatwierdzeniu listy."
+      - ustep: "Lista kontrolna obejmuje potwierdzenie, że:"
+        punkty:
+          - "{ustalono|sprawdzono}, że wnioskodawca jest osobą, której dane dotyczą, i że wniosek dotyczy danych, które Bank rzeczywiście przetwarza;"
+          - "{ocena|analiza} przesłanek usunięcia została dokonana i uzasadniona na piśmie, w tym ocena istnienia podstaw do zachowania danych;"
+          - "{zidentyfikowano|ustalono} wszystkie systemy, w których dane są przechowywane, razem z archiwami i kopiami bezpieczeństwa;"
+          - "{ustalono|zaplanowano} sposób powiadomienia odbiorców, którym dane ujawniono, oraz podmiotów przetwarzających;"
+          - "{wskazano|zapisano} dane, które pozostają w Banku, wraz z podstawą prawną i okresem przechowywania."
+      - akapit: "Lista jest podpisywana przez osobę przygotowującą i zatwierdzana przez {{fakt:jednostka.iod}}; jej kopię dołącza się do akt sprawy."
+
+  - id: rodo-n-opis-usuniecie-weryfikacja
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-usuniecie
+    elementy:
+      - akapit: "Po zrealizowaniu usunięcia lub sprostowania IOD sprawdza, czy zlecona czynność została wykonana skutecznie we wszystkich systemach. Weryfikacja ma zapobiec sytuacji, w której dane pozostają np. w systemie analitycznym lub w kopii roboczej."
+      - kroki:
+          - tekst: "Zleć jednostkom informatycznym wykonanie ponownego wyszukiwania danych wnioskodawcy we wszystkich systemach objętych usunięciem po upływie terminu {{fakt:termin.rodo.ograniczenie-wdrozenie}}."
+          - tekst: "Porównaj wyniki wyszukiwania z listą danych, które miały zostać zachowane; wszelkie rozbieżności {wyjaśnij|zbadaj} i {usuń|napraw} bez zbędnej zwłoki."
+            podkroki:
+              - tekst: "Jeżeli dane pozostały w systemie z powodu błędu technicznego, zgłoś go jako zdarzenie i monitoruj naprawę."
+              - tekst: "Jeżeli dane pozostały z powodu błędnej oceny, popraw ocenę i poinformuj wnioskodawcę o zmianie sposobu załatwienia sprawy."
+          - tekst: "Wynik weryfikacji {zapisz|odnotuj} w rejestrze wniosków i w aktach sprawy; dopiero wtedy sprawę można uznać za zakończoną w zakresie usunięcia danych."
+
+  - id: rodo-n-opis-sprzeciw-marketing
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-sprzeciw
+    elementy:
+      - akapit: "Sprzeciw wobec przetwarzania danych do celów marketingu bezpośredniego, w tym profilowania związanego z takim marketingiem, jest dla Banku wiążący i nie wymaga uzasadnienia ani oceny równowagi interesów. Po jego otrzymaniu Bank nie może przetwarzać danych w tym celu."
+      - kroki:
+          - tekst: "{Zarejestruj|Przyjmij} sprzeciw, niezależnie od formy oświadczenia (np. odpowiedź na wiadomość z ofertą, kliknięcie w odnośnik rezygnacji, rozmowa z doradcą)."
+          - tekst: "Zlecenie zaprzestania wysyłki {przekaż|prześlij} do jednostki prowadzącej kampanie w dniu rejestracji, a zaprzestanie kontaktów zapewnij w terminie {{fakt:termin.rodo.blokada-marketingu}}."
+            podkroki:
+              - tekst: "Zaprzestanie obejmuje wszystkie kanały marketingowe, chyba że wnioskodawca ograniczył sprzeciw do wybranego kanału."
+              - tekst: "Wiadomości o charakterze wyłącznie informacyjnym lub dotyczące wykonania umowy (np. o zmianie regulaminu) nie są marketingiem i mogą być wysyłane nadal."
+          - tekst: "Potwierdź wnioskodawcy zaprzestanie przetwarzania i wyjaśnij, że wiadomości niezwiązane z marketingiem będą nadal wysyłane, jeżeli są niezbędne do wykonania umowy."
+
+  - id: rodo-n-opis-sprzeciw-monitoring
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-sprzeciw
+    elementy:
+      - akapit: "Klienci i inne osoby przebywające w placówkach Banku mogą wnosić sprzeciw wobec przetwarzania ich wizerunku w ramach monitoringu wizyjnego. Monitoring jest prowadzony w celu zapewnienia bezpieczeństwa osób i mienia, a jego zakres ogranicza się do pomieszczeń, w których jest to uzasadnione."
+      - kroki:
+          - tekst: "Wniosek o ograniczenie lub zaprzestanie monitoringu {przekaż|skieruj} do {{fakt:jednostka.bezpieczenstwo}}, która ocenia, czy w konkretnym przypadku cel monitoringu przeważa nad interesem wnioskodawcy."
+          - tekst: "Jeżeli sprzeciw dotyczy pojedynczego nagrania, {rozważ|oceń} możliwość jego usunięcia po zakończeniu okresu przechowywania lub wcześniej, o ile nie jest potrzebne do wyjaśnienia zdarzenia."
+            podkroki:
+              - tekst: "Nagrań, które mogą stanowić dowód w toczącym się postępowaniu, nie usuwa się do czasu jego zakończenia."
+              - tekst: "Wnioskodawcę informuje się o zasadach przechowywania nagrań i o miejscu, w którym zawieszono oznaczenia o monitoringu."
+          - tekst: "Wnioskodawcy, który nie chce być nagrywany w placówce, {zaproponuj|zaoferuj} obsługę w sposób niewymagający pobytu w placówce, np. przez bankowość elektroniczną lub Infolinię {{fakt:kontakt.infolinia}}."
+
+  - id: rodo-n-opis-odpowiedz-odmowa
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-odpowiedz
+    elementy:
+      - akapit: "Odmowa realizacji żądania jest rozstrzygnięciem szczególnie wrażliwym: musi mieć podstawę w przepisach, być uzasadniona i poprzedzona analizą ewentualnych mniej restrykcyjnych rozwiązań, np. częściowego wykonania żądania."
+      - ustep: "Uzasadnienie odmowy zawiera:"
+        punkty:
+          - "{wskazanie|opis} żądania, którego odmowa dotyczy, oraz zakresu danych objętych odmową;"
+          - "{podstawę|przepis} prawną odmowy, na przykład obowiązek przechowywania danych, konieczność obrony roszczeń lub ochrona praw i wolności innych osób;"
+          - "{wyjaśnienie|opis} przyczyn w sposób zrozumiały dla wnioskodawcy, bez ogólnikowych odwołań do polityk wewnętrznych;"
+          - "{informację|pouczenie} o prawie do wniesienia skargi do organu nadzorczego i do dochodzenia roszczeń przed sądem."
+      - akapit: "Projekt odmowy zatwierdza {{fakt:jednostka.iod}}, a w sprawach wątpliwych — {{fakt:jednostka.prawny}}. Odmowę przekazuje się wnioskodawcy w terminie podstawowym, nawet jeżeli część żądania wymaga jeszcze rozpatrzenia; w takim przypadku wnioskodawcę informuje się o dalszym toku postępowania."
+
+  - id: rodo-n-szczegolne-zagranica
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Wnioski składane przez osoby przebywające za granicą lub dotyczące transakcji z zagranicą wymagają uwzględnienia dodatkowych okoliczności związanych z przekazywaniem danych poza Europejski Obszar Gospodarczy i z właściwością organów nadzorczych."
+      - kroki:
+          - tekst: "Ustal, czy wnioskodawca mieszka w państwie członkowskim Unii Europejskiej, czy poza nią, i na tej podstawie {określ|wskaż} właściwy organ nadzorczy, do którego może wnieść skargę."
+          - tekst: "Weryfikację tożsamości przeprowadź, wykorzystując dokumenty tożsamości wydane przez organy zagraniczne, które są akceptowane w Banku, albo bezpieczny kanał elektroniczny."
+            podkroki:
+              - tekst: "Dokumenty w języku obcym, które nie są objęte wykazem akceptowanych dokumentów, przekaż do oceny {{fakt:jednostka.zgodnosc}}."
+              - tekst: "Nie wymagaj tłumaczenia przysięgłego, jeżeli dokument można zweryfikować w inny sposób."
+          - tekst: "Odpowiedź sporządź w języku polskim, a na prośbę wnioskodawcy także w języku angielskim, z zastrzeżeniem że wiążąca jest wersja polska; wersję angielską przygotowuje się w terminie nieprowadzącym do przekroczenia terminu odpowiedzi."
+          - tekst: "Jeżeli wniosek dotyczy danych przekazanych poza Europejski Obszar Gospodarczy, wskaż w odpowiedzi odbiorców i podstawę przekazania."
+
+  - id: rodo-n-szczegolne-pracownik-banku
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-szczegolne
+    elementy:
+      - akapit: "Pracownik Banku może być jednocześnie jego Klientem. W takim przypadku wniosek dotyczący danych z rachunku lub kredytu pracownika wymaga zachowania zasad bezstronności i ochrony przed niewłaściwym dostępem."
+      - ustep: "W sprawach dotyczących danych pracownika jako Klienta:"
+        punkty:
+          - "{wniosek|sprawę} obsługuje IOD lub jego zastępca, a nie pracownik jednostki, w której zatrudniony jest wnioskodawca;"
+          - "{zestawienie|wykaz} danych obejmuje również informacje o dostępach pracowników do rachunku wnioskodawcy, jeżeli wnioskodawca o nie wnosi;"
+          - "{sprawdza się|weryfikuje się} dzienniki dostępu, czy rachunek wnioskodawcy nie był przeglądany bez uzasadnienia;"
+          - "{stwierdzone|ujawnione} nieuprawnione przeglądanie danych jest zgłaszane jako naruszenie ochrony danych i prowadzi do wyjaśnienia na zasadach określonych w regulaminie pracy."

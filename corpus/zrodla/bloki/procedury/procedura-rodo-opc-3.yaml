@@ -1,0 +1,117 @@
+bloki:
+  # ---------- Odpowiedzialności ----------
+  - id: rodo-n-odp-dod-kadry
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - ustep: "**Komórka kadrowa** {odpowiada|jest odpowiedzialna} za obsługę wniosków składanych przez pracowników, byłych pracowników i kandydatów do pracy, a w szczególności za:"
+        punkty:
+          - "{rozpoznawanie|wyodrębnianie} żądań dotyczących danych kadrowych i przekazywanie ich do IOD w dniu wpływu, z zachowaniem poufności akt osobowych;"
+          - "{wyszukiwanie|zestawianie} danych w systemie kadrowo-płacowym oraz w aktach osobowych prowadzonych w postaci papierowej;"
+          - "{ocenę|wskazanie}, które dane muszą być zachowane z mocy przepisów prawa pracy i ubezpieczeń społecznych, i przedstawienie jej IOD na piśmie;"
+          - "{zabezpieczenie|ochronę} danych innych osób, które występują w dokumentach pracownika, np. członków rodziny wskazanych jako osoby uprawnione."
+      - akapit: "Wnioski osób zatrudnionych w Banku nie mogą być rozpatrywane przez ich bezpośrednich przełożonych ani przez osoby, które pozostają z wnioskodawcą w relacji podległości służbowej; {{fakt:jednostka.iod}} wskazuje w takim przypadku inną osobę {prowadzącą|obsługującą} sprawę."
+
+  - id: rodo-n-odp-dod-it
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - akapit: "**Jednostki informatyczne** {zapewniają|utrzymują} techniczną możliwość wykonania żądań osób, których dane dotyczą, w systemach, którymi administrują. Właściciel każdego systemu wskazanego w mapie przetwarzania danych wyznacza co najmniej dwie osoby zdolne do wykonania eksportu, usunięcia i ograniczenia przetwarzania danych w tym systemie, tak aby nieobecność jednego z administratorów nie wydłużała postępowania."
+      - ustep: "Do obowiązków jednostek informatycznych należy w szczególności:"
+        punkty:
+          - "{dostarczanie|przekazywanie} danych w uzgodnionym formacie w terminie {{fakt:termin.rodo.dane-od-jednostek}} roboczych od zapytania IOD;"
+          - "{rejestrowanie|odnotowywanie} w dzienniku systemowym każdego eksportu, usunięcia i zmiany danych wykonanych w związku z wnioskiem;"
+          - "{zgłaszanie|sygnalizowanie} IOD ograniczeń technicznych, które uniemożliwiają selektywne usunięcie danych, wraz z propozycją rozwiązania zastępczego;"
+          - "{uwzględnianie|wdrażanie} wymogów procedury przy projektowaniu nowych systemów i zmian w istniejących."
+
+  - id: rodo-n-odp-dod-kierownik-placowki
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - akapit: "**Kierownik placówki** odpowiada za to, aby wszyscy pracownicy placówki {znali|rozumieli} procedurę i potrafili rozpoznać wniosek, który nie został w ten sposób nazwany przez Klienta."
+      - ustep: "W ramach tej odpowiedzialności kierownik placówki:"
+        punkty:
+          - "{dba|czuwa}, aby w placówce były dostępne aktualne druki wniosków i informacja o kanałach kontaktu z IOD;"
+          - "{sprawdza|weryfikuje} na bieżąco, czy wnioski przyjęte w placówce zostały zarejestrowane w terminie {{fakt:termin.rodo.rejestracja}};"
+          - "{rozstrzyga|wyjaśnia} wątpliwości pracowników co do tożsamości wnioskodawcy, a w sprawach spornych zwraca się do {{fakt:jednostka.iod}};"
+          - "{zapewnia|organizuje} zastępstwo na wypadek nieobecności osoby odpowiedzialnej za rejestrację wniosków."
+
+  - id: rodo-n-odp-dod-komorka-zgodnosci
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-odpowiedzialnosci
+    elementy:
+      - akapit: "**Departament Zgodności** {sprawuje|wykonuje} drugą linię kontroli w zakresie realizacji praw osób, których dane dotyczą. Na jego zadania składa się ocena ryzyka niezgodności procedury z przepisami i wytycznymi organu nadzorczego, opiniowanie jej zmian oraz weryfikacja, czy wnioski są załatwiane z zachowaniem zasad ustanowionych w Banku."
+      - akapit: "Departament przeprowadza niezależne badania próby spraw, a ich wyniki przedstawia Zarządowi wraz z zaleceniami. Odnotowane nieprawidłowości {wymagają|podlegają} planowi naprawczemu, którego wykonanie nadzoruje {{fakt:jednostka.iod}}, a o jego realizacji informuje się Zarząd w najbliższym sprawozdaniu."
+
+  # ---------- Przyjęcie ----------
+  - id: rodo-n-opis-przyjecie-placowka
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy wniosek składa Klient osobiście w placówce, {przyjmij|odbierz} go niezależnie od tego, czy Klient użył formularza {{fakt:rodo.formularz.wniosek}}; brak formularza nie jest podstawą odmowy przyjęcia."
+            podkroki:
+              - tekst: "{Zapytaj|Ustal} Klienta, jakiego prawa dotyczy żądanie, i {zanotuj|zapisz} jego słowa możliwie dosłownie."
+              - tekst: "Jeżeli Klient nie potrafi sformułować żądania, {zaproponuj|pomóż mu wybrać} odpowiednią pozycję z formularza, ale nie sugeruj treści wniosku."
+          - tekst: "{Potwierdź|Zweryfikuj} tożsamość Klienta na podstawie dokumentu ze zdjęciem i {odnotuj|wpisz} w rejestrze wniosków {{fakt:rodo.system.rejestr}} rodzaj i numer okazanego dokumentu, bez wykonywania jego kopii, o ile nie jest to niezbędne."
+          - tekst: "Wydaj Klientowi potwierdzenie przyjęcia wniosku ({{fakt:rodo.formularz.potwierdzenie}}) z numerem sprawy i datą wpływu; drugi egzemplarz {dołącz|włóż} do akt sprawy."
+          - tekst: "Wniosek przekaż do IOD tego samego dnia za pośrednictwem rejestru wniosków; oryginał dokumentów w postaci papierowej {wyślij|dostarcz} przesyłką wewnętrzną w terminie {{fakt:termin.rodo.rejestracja}}."
+
+  - id: rodo-n-opis-przyjecie-poczta
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Wnioski przesyłane pocztą tradycyjną lub kurierem trafiają do komórki obsługującej korespondencję przychodzącą. Pracownik tej komórki rozpoznaje je po treści koperty, oznaczeniach nadawcy albo po tym, że po otwarciu pisma okazuje się, że dotyczy ono danych osobowych."
+      - kroki:
+          - tekst: "{Zarejestruj|Wpisz} pismo w dzienniku korespondencji z datą stempla wpływu i {oznacz|opatrz} je adnotacją „RODO”."
+          - tekst: "Nie odrzucaj wniosku z powodu braku podpisu, niewłaściwego adresata wewnętrznego lub zwykłej formy pisma; braki {uzupełnia się|usuwa się} w toku postępowania."
+            podkroki:
+              - tekst: "Kopertę z datą nadania {zachowaj|dołącz} do pisma, ponieważ może stanowić dowód daty wpływu."
+              - tekst: "Pismo skieruj niezwłocznie do IOD, nie później niż w terminie {{fakt:termin.rodo.rejestracja}} od wpływu."
+          - tekst: "Jeżeli przesyłka zawiera wniosek dotyczący kilku spraw (np. reklamację i żądanie dostępu do danych), {rozdziel|podziel} go na odrębne sprawy i każdą skieruj do właściwej jednostki, informując o tym nadawcę."
+
+  - id: rodo-n-opis-przyjecie-media
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Żądania dotyczące danych mogą pojawić się także w kanałach, które nie służą do składania wniosków, np. w komentarzach na profilach Banku w mediach społecznościowych, w czacie z doradcą lub w wiadomościach kierowanych do działu marketingu. Wniosek jest skuteczny niezależnie od kanału, którym został przesłany."
+      - kroki:
+          - tekst: "Pracownik, który zauważy takie żądanie, {niezwłocznie|w dniu zauważenia} zgłasza je do IOD, podając adres wpisu lub numer rozmowy."
+          - tekst: "Na publiczny wpis nie odpowiada się danymi Klienta ani informacją o tym, czy Klient posiada rachunek w Banku; w odpowiedzi {zaprasza się|kieruje się} autora do kontaktu z IOD pod adresem {{fakt:kontakt.email-iod}}."
+            podkroki:
+              - tekst: "Odpowiedź publiczna powinna być krótka, uprzejma i niezawierająca żadnych danych identyfikujących Klienta."
+              - tekst: "Jeżeli autor wpisu wyraźnie sobie tego życzy, {rozmowę przenosi się|dalszą korespondencję prowadzi się} do kanału prywatnego."
+          - tekst: "Termin na odpowiedź liczy się od chwili, w której żądanie dotarło do Banku w dowolnym kanale, a nie od chwili przekazania go do IOD; opóźnienie w przekazaniu {odnotowuje się|wpisuje się} w rejestrze jako uchybienie."
+
+  - id: rodo-n-opis-przyjecie-niepelnoletni
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Wnioski dotyczące danych osób małoletnich oraz wnioski składane przez osoby, które nie mają pełnej zdolności do czynności prawnych, wymagają dodatkowych ustaleń. Zasady te dotyczą w szczególności rachunków prowadzonych dla młodzieży."
+      - kroki:
+          - tekst: "Ustal, kto składa wniosek: małoletni, jego przedstawiciel ustawowy czy osoba trzecia powołująca się na umocowanie."
+            podkroki:
+              - tekst: "Wniosek przedstawiciela ustawowego {wymaga|obejmuje} wykazania tego statusu, np. aktem urodzenia lub orzeczeniem sądu, oraz potwierdzenia jego tożsamości."
+              - tekst: "Jeżeli małoletni ma pełną zdolność do czynności prawnych w zakresie rachunku (np. po osiągnięciu wieku określonego w umowie), wniosek rozpatruje się wprost z jego udziałem."
+          - tekst: "Nie wydawaj przedstawicielowi ustawowemu danych, jeżeli {zachodzą|istnieją} uzasadnione przesłanki, że wniosek jest sprzeczny z dobrem dziecka; sprawę kieruj do IOD i do {{fakt:jednostka.prawny}}."
+          - tekst: "Odpowiedź kieruj na adres wskazany w umowie rachunku lub na adres przedstawiciela ustawowego potwierdzony w toku weryfikacji."
+
+  - id: rodo-n-opis-przyjecie-uzupelnienie
+    typy: [procedury]
+    tematy: [procedura-rodo]
+    kategoria: rodo-opis-przyjecie
+    elementy:
+      - akapit: "Jeżeli treść wniosku nie pozwala ustalić, czego dotyczy żądanie, IOD może zwrócić się do wnioskodawcy o doprecyzowanie. Wezwanie do uzupełnienia nie może być pretekstem do wydłużenia postępowania ani warunkiem uwzględnienia wniosku w zakresie, który jest jasny."
+      - kroki:
+          - tekst: "Wezwanie do doprecyzowania wysyłaj {bez zbędnej zwłoki|niezwłocznie}, nie później niż w terminie {{fakt:termin.rodo.uzupelnienie-wniosku}} od wpływu wniosku, tym samym kanałem, którego użył wnioskodawca."
+          - tekst: "W wezwaniu {wskaż|opisz} konkretnie, jakich informacji brakuje, wyjaśnij, dlaczego są potrzebne, i {podaj|poinformuj o} sposobie ich przekazania."
+          - tekst: "Jeżeli wnioskodawca nie odpowie, {ponów|powtórz} wezwanie jednokrotnie po upływie terminu {{fakt:termin.rodo.uzupelnienie-wniosku}}; po jego bezskutecznym upływie wniosek rozpatrz w zakresie, który można ustalić, i {wskaż|poinformuj}, jakiej części nie zrealizowano oraz dlaczego."
+          - tekst: "Fakt doprecyzowania oraz jego datę wpisz do rejestru wniosków, aby było widoczne, że bieg terminu nie został zawieszony."
