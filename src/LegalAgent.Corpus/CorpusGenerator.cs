@@ -119,6 +119,19 @@ public static class CorpusGenerator
         return CorpusWriter.Compare(Resolve(options.BaseDirectory, parameters.OutputDirectory), built.Files, built.ManagedDirectories);
     }
 
+    /// <summary>
+    /// Authoring check of one template: composes it alone in every allowed layout with all candidate optional blocks
+    /// of its type and topic, reports the reachable page range and violations, and writes samples to
+    /// <paramref name="outputDirectory"/> when given.
+    /// </summary>
+    public static Task<TemplateCheckReport> CheckTemplateAsync(
+        RunParameters parameters,
+        string templateId,
+        string? outputDirectory,
+        CorpusGeneratorOptions? options = null,
+        CancellationToken cancellationToken = default) =>
+        throw new NotImplementedException();
+
     internal static string Resolve(string baseDirectory, string path) =>
         Path.GetFullPath(Path.IsPathRooted(path) ? path : Path.Combine(baseDirectory, path));
 
