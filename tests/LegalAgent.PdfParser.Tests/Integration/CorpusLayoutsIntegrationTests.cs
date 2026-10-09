@@ -1375,13 +1375,8 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("| 173. | Prowizja za przyznanie limitu w rachunku osobistym (debetu) | od kwoty limitu, jednorazowo | 2% min. 30,00 zł 1) |", md, StringComparison.Ordinal);
     }
 
-    /// <summary>
-    /// T089f: two columns on shared baselines whose left column has ragged line ends, a few reaching its right edge
-    /// (ZAT-REG-SPR-02 page 16): the free band starts well left of the column edge, but lines ending inside the gutter
-    /// do not cross it — the page is two columns of clauses, not a table.
-    /// </summary>
-    [Fact]
-    public async Task TwoColumnsWithRaggedLeftColumn_AreNotATable()
+    /// <summary>Two columns on shared baselines; a quarter of the left lines reach the column edge (T089f, T089g).</summary>
+    private static SyntheticPdfBuilder RaggedTwoColumns()
     {
         var b = new SyntheticPdfBuilder().Page();
         string[] shortLines = ["treść postanowienia umowy o kartę,", "dalszy ciąg tego zdania umowy o kartę,", "kolejne zdanie umowy karty klienta,"];
@@ -1401,6 +1396,32 @@ public sealed class CorpusLayoutsIntegrationTests
                 b.Text(331, y, "dalszy tekst prawej kolumny w kolejnym wierszu", 9.5);
             }
         }
+
+        return b;
+    }
+
+    /// <summary>
+    /// T089g: on the page of T089f the long left lines, which end past the middle of the free band, are read in the left
+    /// column — not joined with the right-column line beside them.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnsWithRaggedLeftColumn_KeepTheLongLinesInTheLeftColumn()
+    {
+        string md = await MarkdownAsync(RaggedTwoColumns().Build());
+
+        Assert.DoesNotContain("krótszym wierszu, dalszy tekst prawej", md, StringComparison.Ordinal);
+        Assert.Contains("krótszym wierszu, dalszy ciąg tego zdania umowy o kartę,", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// T089f: two columns on shared baselines whose left column has ragged line ends, a few reaching its right edge
+    /// (ZAT-REG-SPR-02 page 16): the free band starts well left of the column edge, but lines ending inside the gutter
+    /// do not cross it — the page is two columns of clauses, not a table.
+    /// </summary>
+    [Fact]
+    public async Task TwoColumnsWithRaggedLeftColumn_AreNotATable()
+    {
+        SyntheticPdfBuilder b = RaggedTwoColumns();
 
         string md = await MarkdownAsync(b.Build());
         if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
