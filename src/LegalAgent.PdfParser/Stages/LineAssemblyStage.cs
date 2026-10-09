@@ -254,6 +254,7 @@ public sealed class LineAssemblyStage : IPipelineStage
             LayoutGlyph glyph = page.Glyphs[index];
             LineBuilder? best = null;
             double bestDelta = double.MaxValue;
+            bool bestFar = true;
 
             foreach (LineBuilder line in lines)
             {
@@ -262,11 +263,15 @@ public sealed class LineAssemblyStage : IPipelineStage
                     continue;
                 }
 
+                // A marker (a small raised glyph after the last word of its line) joins the line beside it rather than one
+                // far to the side whose baseline happens to be nearer — a line of the other column (FR-030).
                 double delta = Math.Abs(line.Baseline - glyph.Baseline);
-                if (delta < bestDelta)
+                bool far = line.IsFarMarker(glyph);
+                if ((bestFar && !far && best is not null) || (far == bestFar && delta < bestDelta) || best is null)
                 {
                     best = line;
                     bestDelta = delta;
+                    bestFar = far;
                 }
             }
 
@@ -584,6 +589,13 @@ public sealed class LineAssemblyStage : IPipelineStage
 
             double minHeight = Math.Min(_core.Height, glyph.Box.Height);
             return minHeight > 0 && _core.VerticalOverlap(glyph.Box) / minHeight >= layout.LineOverlapRatio;
+        }
+
+        /// <summary>A marker-sized glyph more than <see cref="NearGlyphEm"/> to the side of the line's glyphs.</summary>
+        public bool IsFarMarker(LayoutGlyph glyph)
+        {
+            double distance = Math.Max(0, Math.Max(_left - glyph.Box.Right, glyph.Box.Left - _right));
+            return glyph.PointSize < MarkerSizeRatio * _seedSize && distance > NearGlyphEm * _seedSize;
         }
 
         public void Add(LayoutGlyph glyph, int index)
