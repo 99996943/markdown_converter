@@ -168,3 +168,6 @@ dokumentu i znaczników stron pominiętych) — uzgodnienie z R1/R5.
 FR-206/FR-221), U1 (FR-243: najkrótsza unikalna ścieżka), F1 (jedna nazwa: „oznaczenie wspólne dla
 wersji” / `SeriesKey` / `document.designation`), C1 (`--allow-partial` w T034) oraz drobne C2, C6 (T014,
 T016) i O1 (wspólny `push` T037–T040).
+
+**Pliki wzorcowe fragmentów (T044, FR-271)**: REG-06, REG-05, TAR-04, PRO-07, dz-u-2019-1781 — zaakceptowane
+przez właściciela 2026-10-09 (identyczne z plikami fragmentów korpusu po T045a).
