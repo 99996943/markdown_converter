@@ -201,4 +201,8 @@ public sealed record ComposedDocument(
     string Layout,
     FrontMatter Front,
     IReadOnlyList<Element> Elements,
-    IReadOnlyDictionary<int, IReadOnlyList<Inline>> Footnotes);
+    IReadOnlyDictionary<int, IReadOnlyList<Inline>> Footnotes)
+{
+    /// <summary>Gets the places of the document's poison, recorded in the truth by the typesetter.</summary>
+    public IReadOnlyList<ComposedPoison> Poison { get; init; } = [];
+}

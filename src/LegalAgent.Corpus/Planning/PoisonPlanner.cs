@@ -155,8 +155,8 @@ internal static class PoisonPlanner
         return placed && pattern.Operation switch
         {
             "nadpisz-fakt" => pattern.Fact is { } fact && DocumentStates.GuaranteedFacts(content, template).Contains(fact, StringComparer.Ordinal),
-            "zmien-czolo" => template.Front.RecordCard || template.Front.Cover,
-            "przesun-daty" => doc.Status == DocumentStatus.Nieaktualny && doc.ValidTo is not null,
+            "zmien-czolo" => template.Front.RecordCard,
+            "przesun-daty" => template.Front.Cover && doc.Status == DocumentStatus.Nieaktualny && doc.ValidTo is not null,
             _ => true,
         };
     }

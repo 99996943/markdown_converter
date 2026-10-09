@@ -225,7 +225,14 @@ public static class DocumentComposer
             }
 
             FlushTariff();
-            var document = new ComposedDocument(_plan.Id, _plan.Layout, Front(), _elements, _footnotes);
+            FrontMatter front = Front();
+            var poison = new List<ComposedPoison>();
+            if (_plan.Poison is { } plan)
+            {
+                front = ApplyPoison(plan, front, poison);
+            }
+
+            var document = new ComposedDocument(_plan.Id, _plan.Layout, front, _elements, _footnotes) { Poison = poison };
             return new CompositionResult(
                 document,
                 _rendered,
@@ -234,6 +241,7 @@ public static class DocumentComposer
                 _optional.Sum(s => s.Count))
             {
                 FactUses = _factUses.ToDictionary(p => p.Key, p => (IReadOnlyList<FactUse>)p.Value, StringComparer.Ordinal),
+                Poison = poison,
             };
         }
 
@@ -554,6 +562,158 @@ public static class DocumentComposer
         }
 
         // ------------------------------------------------------------ elements and text
+
+        // ------------------------------------------------------------ poison (US4, research R8)
+
+        /// <summary>
+        /// Applies the poison pattern of the plan: <c>wstaw</c> puts the text at its place in the style of that place,
+        /// <c>nadpisz-fakt</c> is already in the plan's overrides (the place is where the document first states the fact),
+        /// <c>zmien-czolo</c> replaces record-card fields, <c>przesun-daty</c> drops the end date from the cover.
+        /// </summary>
+        private FrontMatter ApplyPoison(PoisonPlan plan, FrontMatter front, List<ComposedPoison> places)
+        {
+            PoisonPattern pattern = _content.PoisonPatterns.First(p => string.Equals(p.Id, plan.PatternId, StringComparison.Ordinal));
+            switch (pattern.Operation)
+            {
+                case "wstaw":
+                    _currentBlock = null;
+                    _currentElement = string.Empty;
+                    _random = PoisonRandom("tekst");
+                    return Insert(plan.Placement, Render(pattern.TextVariants[plan.Variant]), front, places);
+                case "nadpisz-fakt":
+                    {
+                        string fact = pattern.Fact!;
+                        FactUse use = _factUses.TryGetValue(fact, out List<FactUse>? uses) && uses.Count > 0
+                            ? uses[0]
+                            : throw new CorpusGenerationException($"Dokument {_plan.Id} nie zawiera faktu '{fact}' wzorca {pattern.Id}.") { DocumentId = _plan.Id };
+                        string printed = PolishFormat.Format(_content.Facts.Get(fact).Kind, _content.Facts.ValueAt(fact, _plan.ValidFrom, _overrides));
+                        Element? host = _elements.FirstOrDefault(e => string.Equals(e.Id, use.ElementId, StringComparison.Ordinal));
+                        string kind = host switch
+                        {
+                            null => "metryczka",
+                            TableElement => "komorka-tabeli",
+                            CalloutElement => "ramka",
+                            _ => "akapit",
+                        };
+                        places.Add(new ComposedPoison(host is null ? "metryczka" : use.ElementId, kind, printed));
+                        return front;
+                    }
+
+                case "zmien-czolo":
+                    foreach ((string field, string value) in pattern.FrontFields.OrderBy(p => p.Key, StringComparer.Ordinal))
+                    {
+                        front = field switch
+                        {
+                            "zatwierdzil" => front with { ApprovedBy = value },
+                            "wlasciciel" => front with { Owner = value },
+                            _ => throw new CorpusGenerationException($"Wzorzec {pattern.Id}: nieznane pole czoła '{field}'.") { DocumentId = _plan.Id },
+                        };
+                        places.Add(new ComposedPoison("metryczka", "metryczka", value));
+                    }
+
+                    return front;
+                case "przesun-daty":
+                    places.Add(new ComposedPoison("okladka", "okladka", "Obowiązuje od " + front.ValidFrom));
+                    return front with { ValidTo = null };
+                default:
+                    throw new CorpusGenerationException($"Wzorzec {pattern.Id}: nieznana operacja '{pattern.Operation}'.") { DocumentId = _plan.Id };
+            }
+        }
+
+        private FrontMatter Insert(string placement, IReadOnlyList<Inline> text, FrontMatter front, List<ComposedPoison> places)
+        {
+            string plain = Inline.PlainText(text);
+            switch (placement)
+            {
+                case "metryczka":
+                    places.Add(new ComposedPoison("metryczka", placement, plain));
+                    return front with { ExtraFields = [.. front.ExtraFields, new KeyValuePair<string, string>("Uwagi", plain)] };
+                case "okladka":
+                    places.Add(new ComposedPoison("okladka", placement, plain));
+                    return front with { CoverNote = text };
+                case "komorka-tabeli":
+                    {
+                        var tables = Enumerable.Range(0, _elements.Count).Where(i => _elements[i] is TableElement { Rows.Count: > 0 }).ToList();
+                        int index = tables.Count > 0
+                            ? tables[PoisonRandom("tabela").Next(tables.Count)]
+                            : throw new CorpusGenerationException($"Dokument {_plan.Id} nie ma tabeli na zatrucie.") { DocumentId = _plan.Id };
+                        var table = (TableElement)_elements[index];
+                        int row = PoisonRandom("wiersz").Next(table.Rows.Count);
+                        int cell = table.Rows[row].Count > 1 ? 1 : 0;
+                        var rows = table.Rows.Select(r => r.ToList()).ToList();
+                        TableCell target = rows[row][cell];
+                        rows[row][cell] = target with { Text = [.. target.Text, new Inline(" "), .. Restyled(text, target.Text)] };
+                        _elements[index] = table with { Rows = rows.Select(r => (IReadOnlyList<TableCell>)r).ToList() };
+                        places.Add(new ComposedPoison(table.Id, placement, plain));
+                        return front;
+                    }
+
+                default:
+                    {
+                        // akapit, ramka, przypis: a paragraph or clause of the body (for a footnote, one after every
+                        // existing footnote reference, so the numbers stay in reading order).
+                        int lastNote = _elements.FindLastIndex(e => TextOf(e)?.Any(r => r.Kind == InlineKind.FootnoteRef) == true);
+                        var hosts = Enumerable.Range(0, _elements.Count)
+                            .Where(i => TextOf(_elements[i]) is { Count: > 0 } && (placement != "przypis" || i > lastNote))
+                            .ToList();
+                        if (hosts.Count == 0)
+                        {
+                            hosts = Enumerable.Range(0, _elements.Count).Where(i => TextOf(_elements[i]) is { Count: > 0 }).ToList();
+                        }
+
+                        int index = hosts.Count > 0
+                            ? hosts[PoisonRandom("akapit").Next(hosts.Count)]
+                            : throw new CorpusGenerationException($"Dokument {_plan.Id} nie ma akapitu na zatrucie.") { DocumentId = _plan.Id };
+                        Element host = _elements[index];
+                        IReadOnlyList<Inline> hostText = TextOf(host)!;
+                        if (placement == "ramka")
+                        {
+                            string id = NextId();
+                            _elements.Insert(index + 1, new CalloutElement(text) { Id = id, BlockId = host.BlockId, Unit = host.Unit });
+                            places.Add(new ComposedPoison(id, placement, plain));
+                            return front;
+                        }
+
+                        IReadOnlyList<Inline> appended;
+                        if (placement == "przypis")
+                        {
+                            int number = _footnotes.Count == 0 ? 1 : _footnotes.Keys.Max() + 1;
+                            _footnotes[number] = text;
+                            appended = [.. hostText, new Inline(number.ToString(CultureInfo.InvariantCulture), hostText[^1].Style, InlineKind.FootnoteRef)];
+                        }
+                        else
+                        {
+                            appended = [.. hostText, new Inline(" ", hostText[^1].Style), .. Restyled(text, hostText)];
+                        }
+
+                        _elements[index] = host switch
+                        {
+                            ParagraphElement p => p with { Text = appended },
+                            ListItemElement l => l with { Text = appended },
+                            _ => host,
+                        };
+                        places.Add(new ComposedPoison(host.Id, placement, plain));
+                        return front;
+                    }
+            }
+        }
+
+        /// <summary>The poison text in the style of the host text it joins (FR-131: no visual difference).</summary>
+        private static IEnumerable<Inline> Restyled(IReadOnlyList<Inline> text, IReadOnlyList<Inline> host)
+        {
+            InlineStyle style = host.Count > 0 ? host[^1].Style : InlineStyle.Regular;
+            return text.Select(r => r with { Style = style });
+        }
+
+        private static IReadOnlyList<Inline>? TextOf(Element element) => element switch
+        {
+            ParagraphElement p => p.Text,
+            ListItemElement l => l.Text,
+            _ => null,
+        };
+
+        private DeterministicRandom PoisonRandom(string purpose) => DeterministicRandom.Derive(_plan.Seed, "zatrucie-" + purpose, _plan.Id);
+
 
         private string NextId() => "e" + (++_elementCounter).ToString(CultureInfo.InvariantCulture);
 

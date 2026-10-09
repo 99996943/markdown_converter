@@ -43,7 +43,17 @@ public static class Typesetter
     private static PageWriter Pass(ComposedDocument document, LayoutStyle style, int totalPages)
     {
         var w = new PageWriter(style, document.Front, document.Footnotes, totalPages);
+        foreach (ComposedPoison poison in document.Poison)
+        {
+            w.Truth.PoisonTexts.Add(new TruthPoison(poison.ElementId, poison.Text));
+        }
+
         FrontPages(w, document.Front);
+        if (document.Front.Cover)
+        {
+            w.ElementPages["okladka"] = new PageSpan(1, 1);
+        }
+
         if (document.Front.RecordCard)
         {
             RecordCard(w, document.Front);
@@ -138,6 +148,10 @@ public static class Typesetter
         Add("Data zatwierdzenia", front.ApprovalDate);
         Add("Obowiązuje od", front.ValidFrom);
         Add("Obowiązuje do", front.ValidTo);
+        foreach (KeyValuePair<string, string> field in front.ExtraFields)
+        {
+            Add(field.Key, field.Value);
+        }
         w.Begin(new KeyValueTableElement(pairs) { Id = "metryczka" });
         TableLayout.KeyValue(w, new KeyValueTableElement(pairs));
 
