@@ -460,17 +460,37 @@ public static class CorpusGenerator
         var metadata = new DocumentMetadata(entry.Id)
         {
             Designation = entry.Designation,
-            Type = entry.Type,
+            Type = English(EnglishTypes, entry.Type, "typ", entry.Id),
             Title = entry.Title,
             Version = entry.Version,
             ValidFrom = entry.ValidFrom,
             ValidTo = entry.ValidTo,
-            Status = entry.Status,
+            Status = English(EnglishStatuses, entry.Status, "status", entry.Id),
             PreviousVersion = entry.PreviousVersion,
         };
         ChunkedDocument chunks = await chunker.ChunkAsync(result, metadata, cancellationToken: cancellationToken).ConfigureAwait(false);
         return new CorpusFile(entry.Chunks!, CorpusWriter.TextBytes(ChunkJson.ToJsonLines(chunks)));
     }
+
+    // Spec 004: metadata values that reach the model are English; the manifest keeps its Polish values (spec 003).
+    private static readonly Dictionary<string, string> EnglishTypes = new(StringComparer.Ordinal)
+    {
+        ["regulaminy"] = "regulation",
+        ["taryfy"] = "tariff",
+        ["procedury"] = "procedure",
+        [ActType] = "act",
+    };
+
+    private static readonly Dictionary<string, string> EnglishStatuses = new(StringComparer.Ordinal)
+    {
+        ["obowiazujacy"] = "in-force",
+        ["nieaktualny"] = "outdated",
+    };
+
+    private static string English(Dictionary<string, string> names, string value, string what, string documentId) =>
+        names.TryGetValue(value, out string? english)
+            ? english
+            : throw new CorpusGenerationException($"Brak angielskiej nazwy dla wartości „{value}” ({what}) w metadanych fragmentów.") { DocumentId = documentId };
 
     private sealed record Built(IReadOnlyList<GeneratedDocument> Documents, Manifest.Manifest Manifest, IReadOnlyList<CorpusFile> Files, IReadOnlyList<string> ManagedDirectories);
 

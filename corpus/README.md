@@ -66,6 +66,10 @@ parsera; format opisuje kontrakt [`contracts/chunks-json.md`](../specs/004-docum
 - Jedna linia JSON na fragment; każda linia jest samodzielna: `schemaVersion`, `document` (metadane z wpisu manifestu:
   `id`, `designation`, `type`, `title`, `version`, `validFrom`, `validTo`, `status`, `previousVersion`, dane źródła) i
   `chunk` (`id`, `unitKey`, `part`/`partCount`, `citation`, `listLabels`, `sectionPath`, `pages`, `content`, …).
+- Wartości metadanych, które trafiają do modelu, są po angielsku: `type` = `regulation` / `tariff` / `procedure` /
+  `act` (manifest: regulaminy / taryfy / procedury / akty), `status` = `in-force` / `outdated` (manifest:
+  obowiazujacy / nieaktualny), wstęp w kluczu jednostki to `~preamble`. Tekst dokumentu (treść, tytuł, nagłówki,
+  cytaty) pozostaje oryginalny.
 - Fragment to jedna jednostka dokumentu (paragraf, artykuł, sekcja taryfy/procedury/tabeli-dokumentu, wstęp) albo jej
   część, gdy jednostka ma więcej niż 2000 znaków; `content` to oryginalny tekst w Markdown, bez dopisanych słów.
 - `unitKey` jest wspólny dla tej samej jednostki we wszystkich wersjach dokumentu (np. `BP/REG/06 | § 30` w REG-06 i

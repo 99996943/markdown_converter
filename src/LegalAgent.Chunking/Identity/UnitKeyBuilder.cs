@@ -12,7 +12,7 @@ namespace LegalAgent.Chunking.Identity;
 internal static partial class UnitKeyBuilder
 {
     /// <summary>Segment of the preamble (metadata only, never content).</summary>
-    public const string PreambleSegment = "~wstep";
+    public const string PreambleSegment = "~preamble";
 
     private const string KeySeparator = " | ";
     private const string PathSeparator = " > ";

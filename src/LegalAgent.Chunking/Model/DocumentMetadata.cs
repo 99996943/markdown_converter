@@ -10,7 +10,7 @@ public sealed record DocumentMetadata(string DocumentId)
     /// <summary>Designation shared by all versions of the document (for example "BP/REG/05"); the identifier when null.</summary>
     public string? Designation { get; init; }
 
-    /// <summary>Document type, for example "regulaminy" or "akty".</summary>
+    /// <summary>Document type in English, for example "regulation", "tariff", "procedure" or "act".</summary>
     public string? Type { get; init; }
 
     /// <summary>Title; takes precedence over the title detected by the parser.</summary>
@@ -25,7 +25,7 @@ public sealed record DocumentMetadata(string DocumentId)
     /// <summary>Last day the document is in force; not earlier than <see cref="ValidFrom"/>.</summary>
     public DateOnly? ValidTo { get; init; }
 
-    /// <summary>Status, for example "obowiazujacy" or "nieaktualny".</summary>
+    /// <summary>Status in English, for example "in-force" or "outdated".</summary>
     public string? Status { get; init; }
 
     /// <summary><see cref="DocumentId"/> of the previous version.</summary>
