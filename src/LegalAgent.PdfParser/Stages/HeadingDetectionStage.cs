@@ -36,6 +36,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const double CaptionWidthMargin = 0.1;
     private const double CaptionGapInLineHeights = 3;
     private const double CaptionTolerance = 1;
+    private const char OpeningQuote = '\u201E';
+    private const char ClosingQuote = '\u201D';
+    private const char EnglishClosingQuote = '\u201C';
 
     /// <inheritdoc />
     public int Order => StageOrder.HeadingDetection;
@@ -71,6 +74,10 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private static List<Entry> Collect(PipelineContext context)
     {
         var entries = new List<Entry>();
+
+        // Open quotations („…”) in the running text, list items included: units quoted from another act (an
+        // announcement quoting amending articles) are text of the quotation, not units of the document.
+        int quotes = 0;
         foreach (LayoutPage page in context.Pages)
         {
             context.CancellationToken.ThrowIfCancellationRequested();
@@ -83,12 +90,24 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                     continue;
                 }
 
-                if (line.Role == LineRole.Unknown)
+                string text = string.Join(' ', line.Words.Where(w => w.FootnoteId is null).Select(w => w.Text)).Trim();
+                if (line.Role == LineRole.Unknown && text.Length > 0)
                 {
-                    string text = string.Join(' ', line.Words.Where(w => w.FootnoteId is null).Select(w => w.Text)).Trim();
-                    if (text.Length > 0)
+                    entries.Add(new Entry(page, line, previous, text) { Quoted = quotes > 0 });
+                }
+
+                if (line.Role is LineRole.Unknown or LineRole.ListItem or LineRole.ListContinuation)
+                {
+                    foreach (char c in text)
                     {
-                        entries.Add(new Entry(page, line, previous, text));
+                        if (c == OpeningQuote)
+                        {
+                            quotes++;
+                        }
+                        else if (c is ClosingQuote or EnglishClosingQuote && quotes > 0)
+                        {
+                            quotes--;
+                        }
                     }
                 }
 
@@ -168,6 +187,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             // leading and in the same style, fills the column and ends mid-sentence; the text goes on in lowercase) is
             // a word of that sentence, not a unit.
             if (options.DetectLegalUnits
+                && !entry.Quoted
                 && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
                 && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0])))
             {
@@ -652,6 +672,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         public bool Plain { get; set; }
 
         public LegalUnitMatch? Legal { get; set; }
+
+        /// <summary>The line starts inside a quotation opened by „ in an earlier line.</summary>
+        public bool Quoted { get; init; }
     }
 
     private sealed class Detected(Entry entry, SectionKind kind)
