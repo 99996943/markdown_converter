@@ -56,6 +56,72 @@ public sealed class CorpusLayoutsIntegrationTests
         return y;
     }
 
+    /// <summary>
+    /// T083: a gridless tariff table (bold column-name row, „1.” in the Lp. column, wrapped service names, a note marker
+    /// „1)” in a rate cell) right below numbered paragraphs: the paragraphs stay a list and the table is one GFM table.
+    /// </summary>
+    [Fact]
+    public async Task GridlessTableBelowNumberedParagraphs_StartsAtItsBoldColumnNameRow()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 80, "I. Przelewy zagraniczne", 13, bold: true);
+        double y = 110;
+        foreach ((string label, string[] lines) in new[]
+        {
+            ("1.", new[] { "Opłaty pobiera się w dniu realizacji dyspozycji, z rachunku wskazanego", "przez Zleceniodawcę." }),
+            ("2.", new[] { "Zleceniodawca ponosi odpowiedzialność za prawidłowość danych odbiorcy,", "w tym numeru rachunku i kodu banku." }),
+        })
+        {
+            b.Text(Left, y, label, Size);
+            foreach (string line in lines)
+            {
+                b.Text(Left + 18, y, line, Size);
+                y += Leading;
+            }
+
+            y += 3;
+        }
+
+        double[] x = [Left, Left + 40, 330, 440];
+        y += 8;
+        string[] header = ["Lp.", "Wyszczególnienie czynności", "Tryb pobierania", "Stawka"];
+        for (int c = 0; c < 4; c++)
+        {
+            b.Text(x[c], y, header[c], 9.5, bold: true);
+        }
+
+        y += 24;
+        (string No, string[] Service, string Mode, string Rate)[] rows =
+        [
+            ("1.", ["Przelew SEPA w euro do rachunku w państwie", "członkowskim EOG"], "za operację", "2,00 zł"),
+            ("2.", ["Przelew walutowy poza SEPA w opcji SHA"], "od kwoty", "0,2% 1)"),
+            ("3.", ["Dopłata za opcję kosztów OUR"], "za operację", "60,00 zł"),
+            ("4.", ["Zmiana lub anulowanie dyspozycji przelewu", "zagranicznego na wniosek Klienta"], "za dyspozycję", "40,00 zł"),
+        ];
+        foreach ((string no, string[] service, string mode, string rate) in rows)
+        {
+            b.Text(x[0], y, no, 9.5).Text(x[2], y, mode, 9.5).Text(x[3], y, rate, 9.5);
+            for (int k = 0; k < service.Length; k++)
+            {
+                b.Text(x[1], y + (k * 12), service[k], 9.5);
+            }
+
+            y += (service.Length * 12) + 12;
+        }
+
+        b.Text(Left, y + 6, "1) Minimum 25,00 zł, maksimum 200,00 zł.", 8.5);
+        Body(b, y + 40, 12);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("- 1\\. Opłaty pobiera się w dniu realizacji dyspozycji", md, StringComparison.Ordinal);
+        Assert.Contains("- 2\\. Zleceniodawca ponosi odpowiedzialność", md, StringComparison.Ordinal);
+        Assert.Contains("| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |", md, StringComparison.Ordinal);
+        Assert.Contains("| 1. | Przelew SEPA w euro do rachunku w państwie członkowskim EOG | za operację | 2,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 4. | Zmiana lub anulowanie dyspozycji przelewu zagranicznego na wniosek Klienta | za dyspozycję | 40,00 zł |", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
