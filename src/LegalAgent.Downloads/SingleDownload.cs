@@ -10,6 +10,7 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
     private const int BufferSize = 81920;
     private static readonly byte[] PdfSignature = "%PDF-"u8.ToArray();
     private static readonly CultureInfo Polish = CultureInfo.GetCultureInfo("pl-PL");
+    private readonly HostAllowList hosts = new(options.AllowedHosts);
 
     /// <summary>Downloads the planned item into the directory; failures become results.</summary>
     /// <exception cref="OperationCanceledException">Cancelled by the user.</exception>
@@ -24,15 +25,7 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
         CancellationToken token = limit.Token;
         try
         {
-            using var request = new HttpRequestMessage(HttpMethod.Get, item.Address);
-            if (!string.IsNullOrWhiteSpace(options.UserAgent))
-            {
-                request.Headers.TryAddWithoutValidation("User-Agent", options.UserAgent);
-            }
-
-            using HttpResponseMessage response = await httpClient
-                .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, token)
-                .ConfigureAwait(false);
+            using HttpResponseMessage response = await SendFollowingRedirectsAsync(item.Address, token).ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -123,6 +116,59 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
         }
 
         return total;
+    }
+
+    private static bool IsRedirect(System.Net.HttpStatusCode code) =>
+        (int)code is 301 or 302 or 303 or 307 or 308;
+
+    /// <summary>
+    /// Sends the request and follows redirects manually, checking every target against the scheme rule and the
+    /// allowed hosts before any request is sent to it (research R3).
+    /// </summary>
+    private async Task<HttpResponseMessage> SendFollowingRedirectsAsync(Uri address, CancellationToken cancellationToken)
+    {
+        Uri current = address;
+        for (int redirects = 0; ; redirects++)
+        {
+            using var request = new HttpRequestMessage(HttpMethod.Get, current);
+            if (!string.IsNullOrWhiteSpace(options.UserAgent))
+            {
+                request.Headers.TryAddWithoutValidation("User-Agent", options.UserAgent);
+            }
+
+            HttpResponseMessage response = await httpClient
+                .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+                .ConfigureAwait(false);
+            if (!IsRedirect(response.StatusCode) || response.Headers.Location is not { } location)
+            {
+                return response;
+            }
+
+            response.Dispose();
+            Uri next = location.IsAbsoluteUri ? location : new Uri(current, location);
+            if (redirects >= options.MaxRedirects)
+            {
+                throw new DownloadFailureException(new DownloadError(
+                    DownloadErrorKind.TooManyRedirects,
+                    string.Create(CultureInfo.InvariantCulture, $"za dużo przekierowań (limit {options.MaxRedirects})")));
+            }
+
+            if (!AddressValidator.IsSchemeAllowed(next, options))
+            {
+                throw new DownloadFailureException(new DownloadError(
+                    DownloadErrorKind.RedirectNotAllowed,
+                    $"przekierowanie na niedozwolony adres {next.Scheme}://{next.Host}"));
+            }
+
+            if (next.UserInfo.Length > 0 || !hosts.IsAllowed(next))
+            {
+                throw new DownloadFailureException(new DownloadError(
+                    DownloadErrorKind.RedirectNotAllowed,
+                    $"przekierowanie na niedozwolony host {next.Host}"));
+            }
+
+            current = next;
+        }
     }
 
     private DownloadFailureException TooLarge() =>
