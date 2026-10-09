@@ -1,0 +1,153 @@
+fakty:
+  - id: cashback.nazwa
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "Karta z cashbackiem"
+    alternatywy: ["Karta ze zwrotem"]
+  - id: cashback.data-start
+    rodzaj: data
+    wartosci:
+      - wartosc: 2026-10-01
+    alternatywy: [2026-11-01]
+  - id: cashback.data-koniec
+    rodzaj: data
+    wartosci:
+      - wartosc: 2027-03-31
+      - od: 2027-01-01
+        wartosc: 2027-09-30
+    alternatywy: [2027-02-28]
+  - id: cashback.okres-premiowany
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 miesięcy"
+      - od: 2027-01-01
+        wartosc: "4 miesięcy"
+    alternatywy: ["9 miesięcy"]
+  - id: cashback.stawka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 5
+      - od: 2027-01-01
+        wartosc: 3
+    alternatywy: [2, 10]
+  - id: cashback.stawka-podwyzszona
+    rodzaj: procent
+    wartosci:
+      - wartosc: 10
+      - od: 2027-01-01
+        wartosc: 7
+    alternatywy: [8, 15]
+  - id: cashback.limit-miesieczny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+      - od: 2027-01-01
+        wartosc: 40.00
+    alternatywy: [75.00, 30.00]
+  - id: cashback.limit-calkowity
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2027-01-01
+        wartosc: 200.00
+    alternatywy: [400.00, 250.00]
+  - id: cashback.limit-pojedynczej-platnosci
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [500.00, 1500.00]
+  - id: cashback.prog.liczba-platnosci
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 płatności"
+      - od: 2027-01-01
+        wartosc: "8 płatności"
+    alternatywy: ["3 płatności"]
+  - id: cashback.prog.kwota-platnosci
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 20.00]
+  - id: cashback.prog.kwota-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2027-01-01
+        wartosc: 400.00
+    alternatywy: [200.00, 500.00]
+  - id: cashback.prog.wyplata-minimalna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1.00
+    alternatywy: [5.00]
+  - id: cashback.termin.aktywacja
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2027-01-01
+        wartosc: 21
+    alternatywy: [14, 60]
+  - id: cashback.termin.wyplata
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+      - od: 2027-01-01
+        wartosc: 21
+    alternatywy: [7, 30]
+  - id: cashback.termin.utrzymanie-karty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+      - od: 2027-01-01
+        wartosc: 120
+    alternatywy: [60, 180]
+  - id: cashback.termin.zgloszenie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+    alternatywy: [14, 60]
+  - id: cashback.termin.wyjasnienia
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 21]
+  - id: cashback.termin.informacja-o-zmianie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: cashback.termin.cofniecie-zgody
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [3, 14]
+  - id: cashback.okres-karencji
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesięcy"]
+  - id: cashback.wiek-minimalny
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "ukończyła 18 lat"
+    alternatywy: ["ukończyła 16 lat"]
+  - id: cashback.limit-uczestnikow
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "jednej karty w ramach jednej promocji tego rodzaju"
+    alternatywy: ["dwóch kart w ramach jednej promocji tego rodzaju"]
+  - id: cashback.podatek.stawka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 19
+    alternatywy: [17, 20]
+  - id: cashback.podatek.zwolnienie
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [100.00, 300.00]
+  - id: cashback.kontakt-email
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "cashback@bank.example"
+    alternatywy: ["promocje@bank.example"]

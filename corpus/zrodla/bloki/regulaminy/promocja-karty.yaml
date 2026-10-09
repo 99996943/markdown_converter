@@ -1,0 +1,207 @@
+bloki:
+  - id: cashback-organizator
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Organizatorem promocji „{{fakt:cashback.nazwa}}” ({{param:oznaczenie}}), zwanej dalej „Promocją”, jest {{param:bank}} z siedzibą pod adresem {{fakt:bank.adres}}, wpisany do rejestru przedsiębiorców pod numerem KRS {{fakt:bank.krs}}, NIP {{fakt:bank.nip}}, REGON {{fakt:bank.regon}}, zwany dalej „Bankiem”."
+      - ustep: "Promocja {polega na comiesięcznym zwrocie|obejmuje comiesięczny zwrot} na rachunek posiadacza części kwoty płatności zrealizowanych {nową|wydaną w okresie Promocji} kartą debetową, na warunkach i w granicach określonych w niniejszym Regulaminie."
+      - ustep: "Zasady wydawania i używania kart debetowych, w tym zasady autoryzacji transakcji, ustalania limitów i zastrzegania kart, {określa|reguluje} dokument „{{ref:dokument:regulamin-kart-debetowych}}”. Regulamin Promocji {uzupełnia tamte postanowienia|stanowi uzupełnienie tamtych postanowień} i {nie zmienia|nie modyfikuje} ich w zakresie nieobjętym Promocją.[^1]"
+      - ustep: "Regulamin jest {dostępny|udostępniony} w {placówkach|oddziałach} Banku, w bankowości elektronicznej {oraz|a także} na stronie {{fakt:bank.strona}}; na żądanie uczestnika Bank {przekazuje|doręcza} go na trwałym nośniku."
+    przypisy:
+      1: "Opłaty i prowizje związane z kartą {określa|wskazuje} {{ref:dokument:taryfa-karty}}; udział w Promocji nie zmienia ich wysokości, chyba że Regulamin stanowi inaczej."
+
+  - id: cashback-uczestnik
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W Promocji może wziąć udział {osoba fizyczna|konsument}, która {spełnia łącznie|spełnia jednocześnie} następujące warunki:"
+        punkty:
+          - "{posiada|ma} pełną zdolność do czynności prawnych i {{fakt:cashback.wiek-minimalny}};"
+          - "jest {posiadaczem|właścicielem} rachunku osobistego prowadzonego przez Bank, do którego może zostać wydana karta debetowa;"
+          - "w okresie {{fakt:cashback.okres-karencji}} poprzedzającym dzień złożenia wniosku o kartę {nie była|nie występowała jako} użytkownikiem karty debetowej wydanej przez Bank;"
+          - tekst: "złoży w okresie obowiązywania Promocji wniosek o wydanie karty debetowej, w tym:"
+            litery:
+              - "w placówce Banku;"
+              - "za pośrednictwem bankowości elektronicznej lub aplikacji mobilnej;"
+              - "w {sposób|trybie} umożliwiającym zawarcie umowy o kartę na odległość;"
+          - "zaakceptuje Regulamin Promocji {przy składaniu|w trakcie składania} wniosku."
+      - ustep: "Uczestnik może skorzystać z {{fakt:cashback.limit-uczestnikow}}. W przypadku rachunku wspólnego z Promocji korzysta wyłącznie osoba, na której rzecz wydano kartę."
+
+  - id: cashback-okres
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Promocja {trwa|jest prowadzona} od dnia {{fakt:cashback.data-start}} do dnia {{fakt:cashback.data-koniec}} {włącznie|(włącznie z tym dniem)}, z zastrzeżeniem ust. 3."
+      - ustep: "Wniosek o wydanie karty {złożony|wniesiony} i {przyjęty|zaakceptowany} przez Bank w okresie, o którym mowa w ust. 1, {uprawnia|daje prawo} do udziału w Promocji, {nawet jeśli|także gdy} karta zostanie wydana po zakończeniu Promocji, nie później jednak niż w terminie {{fakt:termin.karta-debetowa.wydanie}} od dnia zawarcia umowy o kartę."
+      - ustep: "Bank {może|ma prawo} zakończyć Promocję przed upływem terminu, o którym mowa w ust. 1, {jeżeli|jeśli} wyczerpie się pula środków przeznaczona na zwroty; informację o tym Bank {publikuje|zamieszcza} na stronie {{fakt:bank.strona}} z wyprzedzeniem co najmniej {{fakt:cashback.termin.informacja-o-zmianie}}. Wnioski złożone przed dniem zakończenia Promocji są realizowane na dotychczasowych zasadach."
+      - ustep: "Zwrot przysługuje za płatności dokonane w okresie premiowanym, który wynosi {{fakt:cashback.okres-premiowany}} i jest liczony od pierwszego pełnego miesiąca kalendarzowego następującego po dniu aktywacji karty."
+
+  - id: cashback-definicje
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na potrzeby Promocji {poszczególne określenia|użyte w Regulaminie określenia} oznaczają:"
+        punkty:
+          - "**Zwrot** — kwota odpowiadająca części wartości płatności kwalifikowanych, wypłacana uczestnikowi w wysokości określonej w Regulaminie;"
+          - "**Płatność kwalifikowana** — rozliczona płatność kartą za towary lub usługi w punkcie handlowo-usługowym albo w Internecie, o wartości nie niższej niż {{fakt:cashback.prog.kwota-platnosci}}, niewyłączona na podstawie Regulaminu;"
+          - "**Miesiąc rozliczeniowy** — {pełny|kolejny} miesiąc kalendarzowy okresu premiowanego, w którym ocenia się spełnienie warunków Promocji;"
+          - "**Karta promocyjna** — karta debetowa wydana uczestnikowi na podstawie wniosku złożonego w okresie Promocji;"
+          - "**Aktywacja** — {pierwsze użycie|pierwsza transakcja} karty z wykorzystaniem kodu PIN albo potwierdzenie {odbioru karty|jej otrzymania} w bankowości elektronicznej;"
+          - "**Zgody promocyjne** — zgody uczestnika dotyczące przetwarzania danych o płatnościach i przekazywania informacji o Promocji, od których zależy przyznanie Zwrotu;"
+          - "**Rachunek powiązany** — rachunek osobisty, do którego wydano kartę promocyjną i na który wypłaca się Zwrot."
+
+  - id: cashback-warunki
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrot Bank przyznaje za miesiąc rozliczeniowy, w którym uczestnik {spełnił łącznie|spełnił jednocześnie} następujące warunki:"
+        punkty:
+          - "karta promocyjna została aktywowana w terminie {{fakt:cashback.termin.aktywacja}} od dnia jej odbioru lub udostępnienia;"
+          - "uczestnik wykonał kartą co najmniej {{fakt:cashback.prog.liczba-platnosci}} kwalifikowanych;"
+          - "łączna wartość płatności kwalifikowanych {nie była|nie okazała się} niższa niż {{fakt:cashback.prog.kwota-miesieczna}};"
+          - "rachunek powiązany i karta promocyjna {były|pozostawały} w całym miesiącu rozliczeniowym {czynne i niezablokowane|czynne i wolne od blokady}."
+      - ustep: "Do wartości płatności {wlicza się|zalicza się} wyłącznie płatności rozliczone w miesiącu rozliczeniowym; płatności zrealizowane w ostatnich dniach miesiąca, a rozliczone w następnym, {zalicza się|uwzględnia się} do miesiąca rozliczenia.[^1]"
+      - ustep: "Warunki, o których mowa w ust. 1, {ocenia|weryfikuje} Bank {automatycznie|na podstawie danych z własnych systemów}; uczestnik nie składa w tym zakresie odrębnych oświadczeń."
+    przypisy:
+      1: "Moment rozliczenia płatności kartą określa {{ref:dokument:regulamin-kart-debetowych}}; zwykle następuje on w terminie {{fakt:termin.karta-debetowa.rozliczenie-transakcji}} od daty transakcji, a data wykonania płatności może się różnić od daty jej zaksięgowania."
+
+  - id: cashback-warunki-platnosci
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za płatności kwalifikowane {uznaje się|przyjmuje się} płatności kartą promocyjną dokonane:"
+        punkty:
+          - "zbliżeniowo lub z użyciem czytnika w punktach handlowo-usługowych;"
+          - "w Internecie, po uwierzytelnieniu transakcji w sposób wymagany przez Bank;"
+          - tekst: "z wykorzystaniem płatności mobilnych, w tym:"
+            litery:
+              - "w terminalach płatniczych wyposażonych w funkcję zbliżeniową;"
+              - "w aplikacjach sprzedawców, jeżeli karta została zapisana jako sposób płatności."
+      - ustep: "Do obliczenia Zwrotu bierze się pod uwagę wartość pojedynczej płatności kwalifikowanej nie wyższą niż {{fakt:cashback.limit-pojedynczej-platnosci}}; nadwyżka ponad tę kwotę nie podlega zwrotowi."
+      - ustep: "Płatność zwróconą lub anulowaną po rozliczeniu {pomniejsza|zmniejsza} podstawę obliczenia Zwrotu za miesiąc, w którym nastąpił zwrot płatności, a gdy Zwrot za miesiąc płatności został już wypłacony — Bank {potrąca|pomniejsza o nią} kolejną wypłatę."
+
+  - id: cashback-zgody
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przyznanie Zwrotu jest uzależnione od udzielenia przez uczestnika zgód, o których mowa w ust. 3, {przed złożeniem|najpóźniej w dniu złożenia} wniosku o kartę promocyjną."
+      - ustep: "Zgody mają charakter {dobrowolny|dobrowolnych oświadczeń}, lecz ich brak uniemożliwia udział w Promocji, ponieważ {bez nich|bez ich udzielenia} Bank nie może {ocenić|zweryfikować} spełnienia warunków i obliczyć Zwrotu."
+      - ustep: "Uczestnik wyraża zgodę na:"
+        punkty:
+          - "przetwarzanie przez Bank danych o jego płatnościach kartą w zakresie niezbędnym do oceny warunków Promocji;"
+          - "przekazywanie mu informacji o przebiegu Promocji w bankowości elektronicznej, w aplikacji mobilnej oraz wiadomościami e-mail lub SMS;"
+          - "udostępnienie danych niezbędnych do rozliczenia Zwrotu podmiotom, którym Bank powierzył przetwarzanie danych w związku z Promocją."
+      - ustep: "Uczestnik może cofnąć zgody w każdym czasie; cofnięcie wywołuje skutki od {chwili|momentu} jego otrzymania przez Bank i {oznacza|jest równoznaczne z} rezygnacją z Promocji w terminie {{fakt:cashback.termin.cofniecie-zgody}} od dnia cofnięcia, chyba że uczestnik w tym czasie ponownie je potwierdzi."
+
+  - id: cashback-wysokosc
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrot za miesiąc rozliczeniowy wynosi {{fakt:cashback.stawka}} wartości płatności kwalifikowanych, a za pierwszy miesiąc rozliczeniowy — {{fakt:cashback.stawka-podwyzszona}} tej wartości."
+      - ustep: "Zwrot miesięczny nie może przekroczyć {{fakt:cashback.limit-miesieczny}}. Łączna wysokość Zwrotów przyznanych jednemu uczestnikowi w całym okresie premiowanym nie może przekroczyć {{fakt:cashback.limit-calkowity}}; Zwroty, których przyznanie przekroczyłoby ten limit, {przyznaje się|wypłaca się} do wysokości limitu."
+      - ustep: "Zwrot stanowi {nagrodę|świadczenie} za wykonanie czynności określonych w Regulaminie, a nie {oprocentowanie|odsetki od środków} na rachunku ani obniżenie ceny towarów lub usług nabytych od sprzedawców."
+      - tabela:
+          kolumny:
+            - naglowek: "Okres"
+              waga: 2
+            - naglowek: "Stawka"
+            - naglowek: "Limit za miesiąc"
+          wiersze:
+            - ["Pierwszy miesiąc rozliczeniowy", "{{fakt:cashback.stawka-podwyzszona}}", "{{fakt:cashback.limit-miesieczny}}"]
+            - ["Kolejne miesiące okresu premiowanego", "{{fakt:cashback.stawka}}", "{{fakt:cashback.limit-miesieczny}}"]
+          siatka: true
+
+  - id: cashback-wysokosc-obliczanie
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Podstawę obliczenia Zwrotu stanowi suma wartości płatności kwalifikowanych rozliczonych w miesiącu rozliczeniowym, w złotych. Płatności w walucie obcej Bank przelicza po kursie zastosowanym do rozliczenia transakcji na rachunku powiązanym."
+      - ustep: "Zwrot zaokrągla się do pełnych groszy w sposób {matematyczny|zgodny z zasadami zaokrąglania}. Zwrot niższy niż {{fakt:cashback.prog.wyplata-minimalna}} nie jest wypłacany, lecz {jest|zostaje} przeniesiony na kolejny miesiąc rozliczeniowy i {sumuje się|łączy się} z należnym za ten miesiąc."
+      - ustep: "Bank {udostępnia|prezentuje} uczestnikowi w bankowości elektronicznej zestawienie płatności uwzględnionych przy obliczaniu Zwrotu za każdy miesiąc rozliczeniowy, wraz ze wskazaniem płatności wyłączonych i przyczyny wyłączenia."
+
+  - id: cashback-wyplata
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {wypłaca|przekazuje} Zwrot przez uznanie rachunku powiązanego, w terminie {{fakt:cashback.termin.wyplata}} od dnia zakończenia miesiąca rozliczeniowego, za który Zwrot przysługuje."
+      - ustep: "Zwrot {jest wypłacany|zostaje wypłacony} w złotych. Tytuł przelewu zawiera nazwę Promocji {oraz|a także} wskazanie miesiąca rozliczeniowego, co umożliwia uczestnikowi {identyfikację|weryfikację} wpływu w historii rachunku."
+      - ustep: "{Jeżeli|Gdy} w dniu wypłaty rachunek powiązany jest zamknięty lub objęty wypowiedzeniem umowy, Zwrot nie jest wypłacany, z zastrzeżeniem ust. 4."
+      - ustep: "{Jeżeli|Gdy} rachunek został zajęty na podstawie {przepisów prawa|obowiązujących przepisów}, w tym tytułu wykonawczego, Zwrot wypłaca się na zasadach przewidzianych dla innych wpływów na rachunek, a środki podlegają zajęciu w takim zakresie, w jakim przepisy to przewidują.[^1]"
+    przypisy:
+      1: "Zasady zajęcia rachunku bankowego i kwoty wolne od zajęcia określają przepisy ustawy z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego oraz {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+
+  - id: cashback-wylaczenia
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do płatności kwalifikowanych {nie zalicza się|nie wlicza się}:"
+        punkty:
+          - "wypłat gotówki z bankomatów i kasomatów oraz operacji gotówkowych realizowanych u sprzedawców przy okazji zakupu;"
+          - "przelewów i płatności z rachunku, w tym przelewów na rachunek własny, rachunki powiązanych osób lub rachunki w innych bankach;"
+          - tekst: "zasilania instrumentów wartości pieniężnej, w szczególności:"
+            litery:
+              - "doładowań kont w portfelach elektronicznych i kart przedpłaconych;"
+              - "zakupu bonów, kuponów, kryptoaktywów i walut wirtualnych;"
+          - "płatności za gry hazardowe, zakłady wzajemne i usługi o podobnym charakterze;"
+          - "opłat i prowizji należnych Bankowi oraz płatności na rzecz organów publicznych, w tym podatków, opłat sądowych i administracyjnych;"
+          - "płatności ratalnych i spłat zobowiązań kredytowych."
+      - ustep: "Bank ocenia charakter płatności na podstawie kodu kategorii sprzedawcy i danych przekazanych przez organizację płatniczą w procesie rozliczenia. Ocena ta ma charakter {ostateczny|rozstrzygający}, o ile uczestnik nie wykaże, że sprzedawca został przypisany do niewłaściwej kategorii."
+
+  - id: cashback-utrata
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik traci prawo do Zwrotu, w tym do Zwrotu już naliczonego, a niewypłaconego, {jeżeli|jeśli}:"
+        punkty:
+          - "rozwiąże umowę o kartę promocyjną lub umowę rachunku powiązanego albo otrzyma jej wypowiedzenie przed upływem {{fakt:cashback.termin.utrzymanie-karty}} od dnia aktywacji karty;"
+          - "{podał|przekazał} Bankowi w związku z udziałem w Promocji dane niezgodne ze stanem faktycznym;"
+          - "zastrzeże kartę z powodu jej utraty więcej niż jeden raz w okresie premiowanym, {jeżeli|o ile} przyczyną była jego rażąca niedbałość;"
+          - tekst: "dopuścił się nadużycia, w tym sztucznego zwiększania obrotów kartowych, polegającego na:"
+            litery:
+              - "wzajemnych płatnościach pomiędzy powiązanymi osobami bez rzeczywistej podstawy gospodarczej;"
+              - "zawieraniu i anulowaniu transakcji w celu wygenerowania obrotu."
+      - ustep: "O utracie prawa do Zwrotu Bank informuje uczestnika {na trwałym nośniku|w bankowości elektronicznej lub wiadomością e-mail}, wskazując przyczynę."
+
+  - id: cashback-reklamacje
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik może złożyć reklamację dotyczącą nieprzyznania lub nieprawidłowej wysokości Zwrotu w terminie {{fakt:cashback.termin.zgloszenie}} od dnia, w którym Zwrot powinien zostać wypłacony, {co nie wyłącza|nie ograniczając} jego prawa do złożenia reklamacji w terminie późniejszym na zasadach ogólnych."
+      - ustep: "Do reklamacji dołącza się, o ile to możliwe, zestawienie płatności potwierdzających spełnienie warunków Promocji. Reklamacje dotyczące Promocji można również przesyłać na adres {{fakt:cashback.kontakt-email}}."
+      - ustep: "Reklamacja dotycząca nieautoryzowanej lub nieprawidłowo wykonanej transakcji kartą jest rozpatrywana na zasadach określonych w dokumencie „{{ref:dokument:regulamin-kart-debetowych}}”, a nie w niniejszym rozdziale."
+
+  - id: cashback-koncowe
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wymagane
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik, który jest konsumentem, może w terminie {{fakt:termin.odstapienie-od-umowy}} od zawarcia umowy o kartę na odległość odstąpić od niej bez podawania przyczyny, na zasadach określonych w {{ref:akt:dz-u-2020-287-prawa-konsumenta}}. Odstąpienie od umowy w tym terminie powoduje wygaśnięcie prawa do Zwrotu."
+      - ustep: "Regulamin {wchodzi w życie|obowiązuje} od dnia {{param:od}}, a w razie jego zmiany stosuje się wersję {{param:wersja}} do wniosków złożonych w okresie jej obowiązywania."
+      - ustep: "Do spraw nieuregulowanych w Regulaminie {stosuje się|mają zastosowanie} postanowienia dokumentu „{{ref:dokument:regulamin-kart-debetowych}}” {oraz|a także} powszechnie obowiązujące przepisy prawa."

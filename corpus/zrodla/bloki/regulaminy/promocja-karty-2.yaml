@@ -1,0 +1,232 @@
+bloki:
+  - id: cashback-wyplata-forma
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wyplata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrot jest wypłacany wyłącznie na rachunek powiązany. Uczestnik nie może {wskazać|wybrać} innego rachunku ani {zażądać|domagać się} wypłaty w gotówce lub w innej formie niż uznanie rachunku."
+      - ustep: "{Jeżeli|Gdy} w okresie premiowanym uczestnik zmienił rachunek, do którego wydano kartę promocyjną, Bank wypłaca Zwrot na rachunek, do którego karta jest przypisana w dniu wypłaty, {o ile|pod warunkiem że} rachunek ten jest prowadzony na rzecz uczestnika."
+      - ustep: "Wypłata Zwrotu nie jest transakcją płatniczą zleconą przez uczestnika, w związku z czym nie podlega opłatom ani limitom operacji na rachunku."
+
+  - id: cashback-wyplata-zwloka
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wyplata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} Zwrot nie został wypłacony w terminie określonym w Regulaminie z przyczyn leżących po stronie Banku, uczestnik może {zażądać|domagać się} jego wypłaty wraz z odsetkami ustawowymi za opóźnienie, liczonymi od dnia następującego po upływie terminu."
+      - ustep: "Bank nie ponosi odpowiedzialności za opóźnienie w wypłacie spowodowane okolicznościami, za które nie odpowiada, {w szczególności|między innymi} awarią systemów rozliczeniowych organizacji płatniczej, zdarzeniem siły wyższej albo błędnymi lub niepełnymi danymi przekazanymi przez uczestnika."
+      - ustep: "O wystąpieniu opóźnienia, którego przewidywany czas przekracza {{fakt:cashback.termin.wyjasnienia}}, Bank {informuje|powiadamia} uczestnika w bankowości elektronicznej."
+
+  - id: cashback-wyplata-dokumentacja
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wyplata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Wypłatę Zwrotu {ujmuje się|odnotowuje się} w historii rachunku powiązanego jako odrębną operację z opisem zawierającym nazwę Promocji. Zwrot jest ujmowany w wyciągu z rachunku za miesiąc, w którym nastąpiło uznanie."
+      - ustep: "Na żądanie uczestnika Bank wydaje zaświadczenie o kwotach wypłaconych Zwrotów za okres Promocji; wydanie zaświadczenia podlega opłacie, o ile przewiduje ją dokument „{{ref:dokument:taryfa-karty}}”."
+      - ustep: "Dokumentację dotyczącą Promocji Bank przechowuje {przez okres|przez czas} wymagany przepisami, a uczestnik może z niej korzystać w zakresie dotyczącym jego Zwrotów."
+
+  - id: cashback-wyplata-ostatnia
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wyplata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrot za ostatni miesiąc rozliczeniowy okresu premiowanego jest {wypłacany|przekazywany} na zasadach ogólnych, także wtedy, gdy w dniu wypłaty Promocja została już zakończona."
+      - ustep: "Zwrot zatrzymany lub niewypłacony z powodu niezakończonego postępowania wyjaśniającego jest {wypłacany|przekazywany} w terminie {{fakt:cashback.termin.wyplata}} od dnia jego zakończenia, {o ile|jeżeli} postępowanie potwierdzi prawo uczestnika do Zwrotu."
+      - ustep: "Zwrot niewypłacony wskutek utraty prawa do Zwrotu na podstawie Regulaminu nie podlega {zaliczeniu|zaliczeniu ani przeniesieniu} na poczet innych świadczeń Banku."
+
+  - id: cashback-wylaczenia-sprzedawcy
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wylaczenia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {publikuje|zamieszcza} na stronie {{fakt:bank.strona}} wykaz kategorii sprzedawców, których płatności są wyłączone z Promocji. Wykaz może być aktualizowany, z zastrzeżeniem, że zmiana nie dotyczy płatności dokonanych przed dniem jej publikacji."
+      - ustep: "Płatność kartą u sprzedawcy, który został przypisany do kategorii wyłączonej, nie podlega Zwrotowi, {nawet jeżeli|także gdy} przedmiotem płatności był towar lub usługa niewymieniona wprost w wykazie."
+      - ustep: "Uczestnik, który uważa, że płatność została {niesłusznie|błędnie} zaklasyfikowana jako wyłączona, może {zgłosić|złożyć} reklamację w trybie określonym w Regulaminie, dołączając dowód zakupu lub inne dokumenty potwierdzające charakter płatności."
+
+  - id: cashback-wylaczenia-platnosci-bez-karty
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wylaczenia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zwrotem nie są objęte płatności zrealizowane innym instrumentem niż karta promocyjna, {w szczególności|na przykład} przelewem, poleceniem zapłaty, zleceniem stałym, a także kartą wydaną do innego rachunku lub kartą kredytową."
+      - ustep: "Płatności zrealizowane kartą promocyjną dodaną do cyfrowego portfela lub aplikacji dostawcy usług płatniczych są uwzględniane na takich samych zasadach jak płatności fizyczną kartą, {jeżeli|o ile} rozliczenie transakcji nastąpiło na rachunku powiązanym."
+      - ustep: "Płatności z wykorzystaniem karty wirtualnej, wydanej do tego samego rachunku w okresie Promocji, są uwzględniane, {o ile|pod warunkiem że} została ona oznaczona w systemach Banku jako karta promocyjna."
+
+  - id: cashback-wylaczenia-zwroty
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wylaczenia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Płatność, której przedmiotem jest towar lub usługa zwrócone sprzedawcy, a także płatność objęta procedurą reklamacyjną organizacji płatniczej, nie podlega Zwrotowi, a Zwrot wypłacony od takiej płatności Bank {potrąca|pomniejsza} z kolejnych wypłat."
+      - ustep: "{Jeżeli|Gdy} zwrot środków z tytułu transakcji nastąpi po zakończeniu okresu premiowanego, Bank {może obciążyć|ma prawo obciążyć} rachunek powiązany kwotą Zwrotu odpowiadającą zwróconej płatności, po uprzednim poinformowaniu uczestnika."
+      - ustep: "Zwrot płatności częściowej {pomniejsza|zmniejsza} Zwrot proporcjonalnie do wartości zwróconej części, z uwzględnieniem stawki obowiązującej w miesiącu płatności."
+
+  - id: cashback-wylaczenia-abonamenty
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-wylaczenia-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Z Promocji {wyłączone są|wyłącza się} płatności z tytułu składek ubezpieczeniowych, składek członkowskich do organizacji, opłat czynszowych oraz rat umów leasingu, chyba że sprzedawca został przez Bank wyraźnie wskazany w wykazie jako kwalifikowany."
+      - ustep: "Płatności za media, usługi telekomunikacyjne i abonamenty cyfrowe {uwzględnia się|zalicza się}, {jeżeli|o ile} nie zostały dokonane za pośrednictwem pośrednika płatności, który w danych rozliczeniowych nie identyfikuje sprzedawcy końcowego."
+      - ustep: "W przypadku płatności dokonanych za pośrednictwem agregatorów płatności Bank ocenia charakter płatności na podstawie danych przekazanych w rozliczeniu, {bez obowiązku|nie będąc zobowiązanym do} ustalania sprzedawcy końcowego."
+
+  - id: cashback-utrata-nadu-zycia
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} Bank poweźmie uzasadnione podejrzenie nadużycia, może {wstrzymać|zawiesić} wypłatę Zwrotów na czas niezbędny do wyjaśnienia sprawy, nie dłużej jednak niż {{fakt:cashback.termin.wyjasnienia}} od dnia wezwania uczestnika do złożenia wyjaśnień."
+      - ustep: "Uczestnik jest obowiązany przedstawić wyjaśnienia i dokumenty potwierdzające rzeczywisty charakter płatności w terminie wskazanym w wezwaniu. Brak wyjaśnień w tym terminie Bank {traktuje|uznaje} jako okoliczność przemawiającą za uznaniem płatności za nadużycie."
+      - ustep: "Po zakończeniu postępowania wyjaśniającego Bank informuje uczestnika o jego wyniku na trwałym nośniku, wskazując podstawę rozstrzygnięcia oraz sposób złożenia reklamacji."
+
+  - id: cashback-utrata-zwrot-swiadczen
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "{Jeżeli|Gdy} uczestnik utracił prawo do Zwrotu po wypłacie części Zwrotów, Bank {może żądać|ma prawo żądać} zwrotu kwot wypłaconych za okres, w którym warunki Promocji nie były spełnione, w szczególności w razie podania nieprawdziwych danych albo dokonania nadużycia."
+      - ustep: "Bank {obciąża|pobiera} należną kwotę z rachunku powiązanego, a jeżeli środki na rachunku nie wystarczają — wzywa uczestnika do zapłaty w terminie {{fakt:cashback.termin.wyjasnienia}}."
+      - ustep: "Rozwiązanie umowy rachunku lub karty w terminie wskazanym w Regulaminie nie obliguje uczestnika do zwrotu Zwrotów wypłaconych przed rozwiązaniem, {jeżeli|o ile} rozwiązanie nastąpiło z przyczyn niezależnych od uczestnika, w tym wskutek wypowiedzenia umowy przez Bank bez wskazania naruszenia Regulaminu przez uczestnika."
+
+  - id: cashback-utrata-rezygnacja
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik może zrezygnować z udziału w Promocji {w każdym czasie|w dowolnym momencie}, składając Bankowi oświadczenie w bankowości elektronicznej, w placówce lub przez infolinię; rezygnacja nie wymaga uzasadnienia i nie powoduje obowiązku zapłaty jakiejkolwiek opłaty."
+      - ustep: "Rezygnacja skutkuje zaprzestaniem naliczania Zwrotów od miesiąca rozliczeniowego następującego po miesiącu, w którym oświadczenie zostało złożone. Zwrot za miesiące poprzednie, {jeżeli|o ile} spełnione zostały warunki Promocji, jest {wypłacany|przekazywany} na zasadach ogólnych."
+      - ustep: "Rezygnacja z Promocji nie {powoduje|oznacza} rozwiązania umowy o kartę ani umowy rachunku powiązanego."
+
+  - id: cashback-utrata-zmiana-karty
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-utrata-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zamknięcie rachunku powiązanego lub rozwiązanie umowy o kartę przez uczestnika przed upływem okresu wskazanego w Regulaminie {powoduje|skutkuje} utratę prawa do Zwrotów niewypłaconych w dniu rozwiązania umowy."
+      - ustep: "Zamiana karty promocyjnej na kartę innego rodzaju, w tym na kartę o wyższym standardzie, nie powoduje utraty prawa do Zwrotu, {o ile|jeżeli} uczestnik dokonał jej na podstawie oferty Banku i karta nowa jest wydana do tego samego rachunku."
+      - ustep: "Wypowiedzenie umowy przez Bank bez ważnej przyczyny nie powoduje utraty prawa do Zwrotu; Zwroty niewypłacone w dniu wygaśnięcia umowy Bank {wypłaca|przekazuje} w terminie {{fakt:cashback.termin.wyplata}} od jej rozwiązania."
+
+  - id: cashback-rekl-tryb
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-rekl-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Reklamację dotyczącą Promocji można {złożyć|zgłosić} w placówce Banku, telefonicznie pod numerem {{fakt:kontakt.infolinia}}, w bankowości elektronicznej albo pisemnie na adres {{fakt:kontakt.adres-korespondencyjny}}."
+      - ustep: "Reklamacja powinna {zawierać|obejmować} dane uczestnika, opis zastrzeżeń, wskazanie miesiąca rozliczeniowego, którego dotyczy, oraz, {jeżeli|o ile} uczestnik żąda konkretnego rozstrzygnięcia, jego treść."
+      - ustep: "Bank potwierdza {otrzymanie|przyjęcie} reklamacji w sposób wybrany przez uczestnika i {rozpatruje|rozstrzyga} ją w terminie określonym w przepisach, o którym mowa w postanowieniach o reklamacjach."
+
+  - id: cashback-rekl-odpowiedz
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-rekl-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Odpowiedź na reklamację dotyczącą Promocji zawiera, {jeżeli|gdy} uczestnik ma być pozbawiony Zwrotu lub otrzymać Zwrot niższy od oczekiwanego, wskazanie postanowienia Regulaminu, na którym oparto rozstrzygnięcie, oraz zestawienie płatności uwzględnionych i pominiętych."
+      - ustep: "Uwzględnienie reklamacji {skutkuje|powoduje} wypłatę należnego Zwrotu w terminie {{fakt:cashback.termin.wyplata}} od dnia jej rozpatrzenia, bez konieczności składania dodatkowych dyspozycji."
+      - ustep: "Uczestnik, który nie {zgadza się|godzi się} z rozstrzygnięciem, może {skorzystać|również skorzystać} z pozasądowych metod rozstrzygania sporów oraz dochodzić roszczeń przed sądem powszechnym, na zasadach określonych w przepisach prawa."
+
+  - id: cashback-rekl-dowody
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-rekl-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dowodem spełnienia warunków Promocji są dane z systemów Banku, {w szczególności|zwłaszcza} zapis operacji na rachunku powiązanym i dane rozliczeniowe organizacji płatniczej. Uczestnik może {przedstawić|złożyć} dowody przeciwne, w tym potwierdzenia płatności wystawione przez sprzedawców."
+      - ustep: "W razie rozbieżności między danymi uczestnika a danymi Banku Bank może zwrócić się do organizacji płatniczej lub agenta rozliczeniowego o udostępnienie szczegółowych danych transakcji, co przedłuża rozpatrzenie reklamacji o czas niezbędny do uzyskania odpowiedzi, o czym informuje uczestnika."
+      - ustep: "Reklamacje złożone po terminie, o którym mowa w Regulaminie, są {rozpatrywane|rozstrzygane}, lecz Bank nie ma obowiązku odtwarzania danych szczegółowych, które zgodnie z przepisami nie są już przechowywane."
+
+  - id: cashback-dane-zakres
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Administratorem danych osobowych uczestnika w związku z Promocją jest Bank. Dane {przetwarzane są|są przetwarzane} w celu przeprowadzenia Promocji, obliczenia i wypłaty Zwrotu, rozpatrywania reklamacji oraz wykonania obowiązków wynikających z przepisów prawa, w tym podatkowych."
+      - ustep: "Podstawą przetwarzania jest zawarta umowa oraz zgoda uczestnika w zakresie, w jakim Regulamin tego wymaga, a także {prawnie uzasadniony interes|uzasadniony interes} Banku polegający na zapobieganiu nadużyciom i dochodzeniu roszczeń.[^1]"
+      - ustep: "Dane o płatnościach uczestnika są {wykorzystywane|używane} w ramach Promocji wyłącznie w zakresie niezbędnym do oceny spełnienia jej warunków i nie służą do tworzenia profilu uczestnika w celach marketingowych bez jego odrębnej zgody."
+    przypisy:
+      1: "Zasady przetwarzania danych osobowych określa {{ref:akt:dz-u-2019-1781-ochrona-danych}} oraz przepisy rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679."
+
+  - id: cashback-dane-prawa
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnikowi {przysługuje|służy} prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz sprzeciwu wobec przetwarzania, w zakresie wynikającym z przepisów prawa."
+      - ustep: "W sprawach dotyczących danych osobowych można {kontaktować się|skontaktować się} z inspektorem ochrony danych pod adresem {{fakt:kontakt.email-iod}}. Uczestnik {ma również|ma ponadto} prawo wniesienia skargi do organu nadzorczego."
+      - ustep: "Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem; skutki cofnięcia zgody dla udziału w Promocji określa Regulamin."
+
+  - id: cashback-dane-przechowywanie
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dane osobowe uczestnika w związku z Promocją są {przechowywane|zachowywane} przez okres jej trwania oraz okres niezbędny do rozpatrzenia reklamacji, dochodzenia roszczeń i wykonania obowiązków podatkowych i rachunkowych, a następnie {usuwane|anonimizowane}."
+      - ustep: "Dane mogą być {powierzone|powierzane} podmiotom świadczącym na rzecz Banku usługi informatyczne, rozliczeniowe i obsługi korespondencji, związanym z Bankiem umowami powierzenia przetwarzania. Dane nie są przekazywane poza Europejski Obszar Gospodarczy, chyba że przepisy dopuszczają takie przekazanie i zapewniono odpowiednie zabezpieczenia."
+      - ustep: "Bank stosuje {środki techniczne i organizacyjne|odpowiednie środki techniczne i organizacyjne} zapewniające bezpieczeństwo danych, w tym kontrolę dostępu, szyfrowanie transmisji i rejestrowanie operacji wykonywanych na danych."
+
+  - id: cashback-dane-marketing
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-dane-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zgoda na otrzymywanie informacji handlowych jest {dobrowolna|całkowicie dobrowolna} i nie jest warunkiem udziału w Promocji. Brak tej zgody nie wpływa na prawo do Zwrotu."
+      - ustep: "Informacje o przebiegu Promocji, w tym o wysokości naliczonego Zwrotu, terminach i zmianach Regulaminu, nie stanowią informacji handlowej i są {przekazywane|udostępniane} na podstawie Regulaminu, niezależnie od zgód marketingowych."
+      - ustep: "Uczestnik może {w każdym czasie|w dowolnym momencie} zmienić ustawienia zgód w bankowości elektronicznej, w placówce lub przez infolinię; zmiana ustawień zostaje uwzględniona w terminie {{fakt:cashback.termin.cofniecie-zgody}}."
+
+  - id: cashback-koncowe-zmiany
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmiana Regulaminu, która pogarsza sytuację uczestnika, nie dotyczy uczestników, którzy złożyli wniosek przed jej {wprowadzeniem|wejściem w życie}, chyba że zmiana wynika z bezwzględnie obowiązujących przepisów prawa lub decyzji organu."
+      - ustep: "Zmiana korzystna dla uczestnika, w tym {podwyższenie|zwiększenie} stawki lub limitów, może być stosowana do wszystkich uczestników od dnia wskazanego przez Bank, o czym Bank informuje w sposób przewidziany w Regulaminie."
+      - ustep: "O zmianach Regulaminu Bank {informuje|powiadamia} na stronie {{fakt:bank.strona}} oraz w bankowości elektronicznej z wyprzedzeniem co najmniej {{fakt:cashback.termin.informacja-o-zmianie}}."
+
+  - id: cashback-koncowe-przeniesienie
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Uczestnik nie może {przenieść|przekazać} praw wynikających z Promocji, w tym prawa do Zwrotu, na osobę trzecią bez zgody Banku, z wyjątkiem przypadków przewidzianych w przepisach prawa."
+      - ustep: "W razie śmierci uczestnika w okresie premiowanym Zwroty naliczone i niewypłacone Bank {wypłaca|przekazuje} na rachunek wskazany przez spadkobierców po przedstawieniu dokumentów potwierdzających nabycie praw do spadku; Zwroty za okres po dniu śmierci nie są naliczane."
+      - ustep: "Połączenie Banku z innym podmiotem lub {przeniesienie|przejęcie} praw i obowiązków Banku wynikających z Promocji nie pogarsza sytuacji uczestników; Bank informuje o takiej zmianie z wyprzedzeniem."
+
+  - id: cashback-koncowe-pozasadowe
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Spory dotyczące Promocji mogą być {rozstrzygane|załatwiane} polubownie w postępowaniu przed Rzecznikiem Finansowym lub w innym postępowaniu pozasądowym, na zasadach określonych w przepisach prawa; Bank nie zobowiązuje się do udziału w postępowaniu przed innym podmiotem."
+      - ustep: "Konsument może {dochodzić roszczeń|dochodzić swoich praw} także przed sądem powszechnym właściwym według przepisów ogólnych."
+      - ustep: "Informacje o podmiotach uprawnionych do prowadzenia postępowań pozasądowych Bank {udostępnia|zamieszcza} na stronie {{fakt:bank.strona}} oraz w placówkach."
+
+  - id: cashback-koncowe-jezyk
+    typy: [regulaminy]
+    tematy: [promocja-karty]
+    kategoria: cashback-koncowe-par
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin oraz komunikacja Banku z uczestnikiem w związku z Promocją są {prowadzone|redagowane} w języku polskim, chyba że uczestnik i Bank uzgodnią inaczej."
+      - ustep: "Tłumaczenie Regulaminu na inny język ma charakter {wyłącznie informacyjny|jedynie informacyjny}; w razie rozbieżności rozstrzygające znaczenie ma wersja w języku polskim."
+      - ustep: "Regulamin w wersji obowiązującej w dniu złożenia wniosku Bank {udostępnia|przekazuje} uczestnikowi na jego żądanie przez cały okres Promocji i okres premiowany, także po wprowadzeniu zmian."

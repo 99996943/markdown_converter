@@ -1,0 +1,58 @@
+id: regulamin-promocji-karty
+typ: regulaminy
+temat: promocja-karty
+tytul:
+  - "Regulamin promocji „{{fakt:cashback.nazwa}}” {{param:bank}}"
+  - "Regulamin promocji „{{fakt:cashback.nazwa}}”"
+uklady: [tabela-dokument]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Organizator promocji"
+    wymagane: [cashback-organizator]
+    opcjonalne: { kategorie: [cashback-org-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Uczestnik promocji"
+    wymagane: [cashback-uczestnik]
+    opcjonalne: { kategorie: [cashback-uczestnik-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Okres promocji"
+    wymagane: [cashback-okres]
+    opcjonalne: { kategorie: [cashback-okres-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Ważne pojęcia"
+    wymagane: [wspolne-definicje-regulamin, cashback-definicje]
+  - rodzaj: rozdzial
+    tytul: "Warunki zwrotu"
+    wymagane: [cashback-warunki, cashback-warunki-platnosci, cashback-zgody]
+    opcjonalne: { kategorie: [cashback-warunki-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wysokość zwrotu"
+    wymagane: [cashback-wysokosc, cashback-wysokosc-obliczanie]
+    opcjonalne: { kategorie: [cashback-wysokosc-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypłata zwrotu"
+    wymagane: [cashback-wyplata]
+    opcjonalne: { kategorie: [cashback-wyplata-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wyłączenia"
+    wymagane: [cashback-wylaczenia]
+    opcjonalne: { kategorie: [cashback-wylaczenia-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Utrata prawa do zwrotu"
+    wymagane: [cashback-utrata]
+    opcjonalne: { kategorie: [cashback-utrata-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Reklamacje"
+    wymagane: [wspolne-reklamacje-regulamin, cashback-reklamacje]
+    opcjonalne: { kategorie: [cashback-rekl-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Dane osobowe"
+    wymagane: [wspolne-ochrona-danych-regulamin]
+    opcjonalne: { kategorie: [cashback-dane-par], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [cashback-koncowe, wspolne-zmiany-regulamin, wspolne-prawo-wlasciwe-regulamin]
+    opcjonalne: { kategorie: [cashback-koncowe-par], min: 0, max: 40 }
+parametry:
+  produkt: "karty debetowej w promocji"
