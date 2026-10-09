@@ -172,7 +172,7 @@ Elementy obowiązkowe każdego szablonu (pole `wymagane-elementy` typu w `typy.y
 
 - [X] T072 [US1] Testy próbki w `ctests/Corpus/CorpusSampleTests.cs` (red): wybór automatyczny z `corpus/przebieg.json` (R10: pierwszy dokument dla każdej pary typ × styl układu); dla każdego: PDF odtworzony w pamięci == plik w `corpus/`, Markdown z biblioteki == plik, liczba stron w zakresie, wpis manifestu z polami FR-140. Zapisz `corpus/przebieg.json` (parametry domyślne, `Poison` puste do US4, wersje/sprzeczności 0 do US3); test pada na asercji „brak pliku corpus/regulaminy/REG-01.pdf”
 - [X] T073 [US1] Uruchom `generate` wg `corpus/przebieg.json` i zacommituj `corpus/{regulaminy,taryfy,procedury}/*` i `manifest.json` (commit `data:`) — T072 green; `verify` = 0; drugi `generate` bez zmian w `git status`
-- [ ] T072a [US1] Dodaj do `.github/workflows/ci.yml` krok po testach: `dotnet run --project src/LegalAgent.Corpus.Cli -c Release --no-build -- verify` (kod ≠ 0 = błąd CI); wypchnij gałąź i potwierdź, że `verify` na Ubuntu przechodzi na korpusie wygenerowanym na Windows (FR-101, SC-021). Różnice bajtów → diagnoza (np. formatowanie liczb w PdfPig) i poprawka w `corpus-lib/Pdf/` test-first przed dalszymi fazami
+- [X] T072a [US1] Dodaj do `.github/workflows/ci.yml` krok po testach: `dotnet run --project src/LegalAgent.Corpus.Cli -c Release --no-build -- verify` (kod ≠ 0 = błąd CI); wypchnij gałąź i potwierdź, że `verify` na Ubuntu przechodzi na korpusie wygenerowanym na Windows (FR-101, SC-021). Różnice bajtów → diagnoza (np. formatowanie liczb w PdfPig) i poprawka w `corpus-lib/Pdf/` test-first przed dalszymi fazami
 
 **Checkpoint**: MVP — korpus 10 × 3 w repozytorium, odtwarzalny jednym poleceniem.
 

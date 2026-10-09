@@ -379,7 +379,7 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 - 2\. O zablokowaniu dostępu Bank informuje Klienta przed zablokowaniem, a jeżeli nie jest to możliwe — niezwłocznie po jego dokonaniu, chyba że przekazanie takiej informacji byłoby nieuzasadnione ze względów bezpieczeństwa lub zakazane przepisami prawa.[^9]
 - 3\. Bank odblokowuje dostęp niezwłocznie po ustaniu przyczyny blokady. Blokada nie wpływa na prawa Klienta do rachunku i środków na nim zgromadzonych.
 
-[^9]: Przesłanki blokady instrumentu płatniczego wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); Bank dokumentuje decyzję o blokadzie wraz z jej uzasadnieniem. 10)Zasady odpowiedzialności za nieautoryzowane transakcje płatnicze określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); ocena, czy doszło do rażącego niedbalstwa, uwzględnia okoliczności konkretnego przypadku.
+[^9]: Przesłanki blokady instrumentu płatniczego wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); Bank dokumentuje decyzję o blokadzie wraz z jej uzasadnieniem.
 
 ### § 35.
 
@@ -416,7 +416,9 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 
 - 1\. Klient jest zobowiązany do niezwłocznego zawiadomienia Banku o stwierdzonym nieautoryzowanym, niewykonanym lub nienależycie wykonanym zleceniu płatniczym, nie później jednak niż w terminie 13 miesięcy od dnia obciążenia rachunku.
 - 2\. W przypadku nieautoryzowanej transakcji Bank zwraca Klientowi kwotę transakcji do końca następnego dnia roboczego po stwierdzeniu transakcji albo po otrzymaniu zgłoszenia, z wyjątkiem sytuacji, gdy Bank ma uzasadnione i należycie udokumentowane podstawy do podejrzewania oszustwa i powiadomi o tym organy ścigania.
-- 3\. Klient odpowiada za nieautoryzowane transakcje do kwoty stanowiącej równowartość 50 euro, jeżeli transakcja jest skutkiem posłużenia się utraconym lub skradzionym <!-- page: 17 --> instrumentem płatniczym albo jego przywłaszczenia. Klient odpowiada w pełnej wysokości, jeżeli doprowadził do nieautoryzowanej transakcji umyślnie albo w wyniku rażącego niedbalstwa, w szczególności przez naruszenie obowiązków określonych w Regulaminie.10
+- 3\. Klient odpowiada za nieautoryzowane transakcje do kwoty stanowiącej równowartość 50 euro, jeżeli transakcja jest skutkiem posłużenia się utraconym lub skradzionym <!-- page: 17 --> instrumentem płatniczym albo jego przywłaszczenia. Klient odpowiada w pełnej wysokości, jeżeli doprowadził do nieautoryzowanej transakcji umyślnie albo w wyniku rażącego niedbalstwa, w szczególności przez naruszenie obowiązków określonych w Regulaminie.[^10]
+
+[^10]: Zasady odpowiedzialności za nieautoryzowane transakcje płatnicze określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); ocena, czy doszło do rażącego niedbalstwa, uwzględnia okoliczności konkretnego przypadku.
 
 ### § 39.
 

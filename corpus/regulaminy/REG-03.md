@@ -318,7 +318,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 [^8]: Przykład: przy lokacie 10 000 zł założonej na rok, zerwanej po 100 dniach, odsetki brutto wynoszą 10 000 zł × stawka za zerwanie × 100 dni podzielone przez liczbę dni w roku odsetkowym.
 
-[^9]: Szczegółowe zasady odstąpienia od umowy zawartej na odległość określa ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287). 10)Informacje o wypłatach gwarantowanych środków ogłasza Bankowy Fundusz Gwarancyjny; Bank nie pośredniczy w ich wypłacie.
+[^9]: Szczegółowe zasady odstąpienia od umowy zawartej na odległość określa ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
 
 ### § 33.
 
@@ -396,9 +396,11 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 42.
 
-- 1\. Gwarancją objęte są łącznie wszystkie środki Klienta zgromadzone w Banku, w tym na rachunkach oszczędnościowych i lokatach terminowych, niezależnie od liczby rachunków. Limit gwarancji dotyczy sumy tych środków, a nie każdego rachunku z osobna.10
+- 1\. Gwarancją objęte są łącznie wszystkie środki Klienta zgromadzone w Banku, w tym na rachunkach oszczędnościowych i lokatach terminowych, niezależnie od liczby rachunków. Limit gwarancji dotyczy sumy tych środków, a nie każdego rachunku z osobna.[^10]
 <!-- page: 18 -->
 - 2\. W razie rachunku wspólnego środki dzieli się, jeżeli umowa nie stanowi inaczej, w równych częściach pomiędzy współposiadaczy, a limit gwarancji stosuje się odrębnie do udziału każdego z nich.
+
+[^10]: Informacje o wypłatach gwarantowanych środków ogłasza Bankowy Fundusz Gwarancyjny; Bank nie pośredniczy w ich wypłacie.
 
 ## Rozdział 8. Reklamacje i pozasądowe rozstrzyganie sporów
 

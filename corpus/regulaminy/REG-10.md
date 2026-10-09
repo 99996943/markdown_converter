@@ -356,7 +356,7 @@ Przykładowy kredyt gotówkowy zaprezentowano w poniższej tabeli. Wartości maj
 - 2\. Oświadczenie o odstąpieniu składa się na piśmie, w bankowości elektronicznej albo w innej formie wskazanej w umowie. Do zachowania terminu wystarczy nadanie oświadczenia w placówce pocztowej lub jego złożenie w oddziale Banku.
 - 3\. W razie odstąpienia od umowy Klient jest obowiązany niezwłocznie, nie później niż w terminie 30 dni od dnia złożenia oświadczenia, zwrócić Bankowi kapitał wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, według stopy określonej w umowie. Bank nie może żądać zwrotu innych kosztów, z wyjątkiem opłat uiszczonych przez Bank organom administracji publicznej, których nie można <!-- page: 14 --> odzyskać.[^9]
 
-[^9]: Prawo odstąpienia i skutki jego wykonania określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497); w zakresie umów zawieranych na odległość zob. także ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287). 10)Informacje o zakresie ochrony, wyłączeniach odpowiedzialności i trybie zgłaszania roszczeń zawiera dokument informacyjny o produkcie ubezpieczeniowym, który Klient otrzymuje przed zawarciem umowy ubezpieczenia. 11)Zasady ujawniania informacji o zobowiązaniach reguluje ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); ochrona danych — ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781). 12)Szczegółowy tryb wypowiedzenia umowy kredytu konsumenckiego określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
+[^9]: Prawo odstąpienia i skutki jego wykonania określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497); w zakresie umów zawieranych na odległość zob. także ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
 
 ### § 42.
 
@@ -381,8 +381,10 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
 ### § 45.
 
 - 1\. Zawarcie przez Klienta umowy ubezpieczenia na życie lub od utraty pracy nie jest warunkiem udzielenia kredytu ani warunkiem wypłaty jego środków. Ubezpieczenie jest oferowane Klientowi dodatkowo, a jego brak nie wpływa na decyzję kredytową.
-- 2\. Klient, który wybierze ubezpieczenie, opłaca jednorazową składkę w wysokości 2,5% kwoty kredytu. Składkę można sfinansować ze środków kredytu, co zwiększa kwotę zadłużenia i całkowity koszt kredytu, o czym Bank informuje w formularzu informacyjnym.10
+- 2\. Klient, który wybierze ubezpieczenie, opłaca jednorazową składkę w wysokości 2,5% kwoty kredytu. Składkę można sfinansować ze środków kredytu, co zwiększa kwotę zadłużenia i całkowity koszt kredytu, o czym Bank informuje w formularzu informacyjnym.[^10]
 - 3\. Klient może odstąpić od umowy ubezpieczenia w terminie 30 dni od dnia jej zawarcia. W razie odstąpienia składka podlega zwrotowi w całości; gdy składkę sfinansowano <!-- page: 15 --> z kredytu, zwrot zalicza się na poczet kapitału.
+
+[^10]: Informacje o zakresie ochrony, wyłączeniach odpowiedzialności i trybie zgłaszania roszczeń zawiera dokument informacyjny o produkcie ubezpieczeniowym, który Klient otrzymuje przed zawarciem umowy ubezpieczenia.
 
 ### § 46.
 
@@ -420,7 +422,9 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
 
 - 1\. Jeżeli Klient znajduje się w trudnej sytuacji finansowej, może złożyć do Banku wniosek o zmianę warunków spłaty, w tym o wydłużenie okresu kredytowania, obniżenie raty lub zawieszenie spłaty. Bank rozpatruje wniosek w terminie 7 dni i informuje Klienta o skutkach proponowanej zmiany dla kosztów kredytu.
 - 2\. Czynności windykacyjne prowadzone są z poszanowaniem dóbr osobistych Klienta. Bank nie kontaktuje się z Klientem w porze nocnej ani w dni ustawowo wolne od pracy, o ile Klient nie wyraził na to zgody, i nie ujawnia osobom trzecim informacji objętych tajemnicą bankową.
-- 3\. Bank może udostępnić informacje o zadłużeniu do biura informacji kredytowej, jeżeli opóźnienie w spłacie przekracza 60 dni, a od poinformowania Klienta o zamiarze przekazania danych upłynęło co najmniej 30 dni.11
+- 3\. Bank może udostępnić informacje o zadłużeniu do biura informacji kredytowej, jeżeli opóźnienie w spłacie przekracza 60 dni, a od poinformowania Klienta o zamiarze przekazania danych upłynęło co najmniej 30 dni.[^11]
+
+[^11]: Zasady ujawniania informacji o zobowiązaniach reguluje ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); ochrona danych — ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781).
 
 ### § 51.
 
@@ -444,8 +448,10 @@ Odstąpienie od umowy kredytu powoduje także skutki w odniesieniu do umów doda
 
 - 1\. Bank może wypowiedzieć umowę kredytu w razie zaległości w spłacie, po uprzednim wezwaniu Klienta do zapłaty w terminie 14 dni od dnia otrzymania wezwania. Wezwanie zawiera pouczenie o możliwości złożenia w terminie 14 dni wniosku o restrukturyzację zadłużenia.
 - 2\. Wypowiedzenie umowy przez Bank następuje na piśmie, a okres wypowiedzenia wynosi 30 dni. W tym okresie Klient może spłacić zaległość i kontynuować umowę na dotychczasowych warunkach.
-- 3\. Klient może wypowiedzieć umowę kredytu składając oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie 30 dni od dnia otrzymania oświadczenia przez Bank.12
+- 3\. Klient może wypowiedzieć umowę kredytu składając oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie 30 dni od dnia otrzymania oświadczenia przez Bank.[^12]
 - 4\. Po upływie okresu wypowiedzenia całość zadłużenia staje się wymagalna, a odsetki od zadłużenia przeterminowanego są naliczane według stopy odsetek za opóźnienie.
+
+[^12]: Szczegółowy tryb wypowiedzenia umowy kredytu konsumenckiego określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
 
 ### § 55.
 
