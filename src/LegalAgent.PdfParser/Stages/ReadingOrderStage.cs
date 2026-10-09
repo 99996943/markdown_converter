@@ -17,6 +17,9 @@ public sealed class ReadingOrderStage : IPipelineStage
 {
     private const int MinLinesPerColumn = 2;
 
+    /// <summary>Coverage (share of the page height) within which bins count as equally empty.</summary>
+    private const double EmptiestSlack = 0.02;
+
     /// <inheritdoc />
     public int Order => StageOrder.ReadingOrder;
 
@@ -104,6 +107,11 @@ public sealed class ReadingOrderStage : IPipelineStage
             else if (!isFree && runStart >= 0)
             {
                 (double Start, double End) run = (minLeft + runStart, minLeft + i);
+                if (run.End - run.Start >= minWidth && !IsColumnSplit(flow, run, page.Width, options))
+                {
+                    run = EmptiestStretch(pieces, run, regionTop, regionBottom);
+                }
+
                 if (run.End - run.Start >= minWidth
                     && IsColumnSplit(flow, run, page.Width, options)
                     && (best is null || run.End - run.Start > best.Value.End - best.Value.Start))
@@ -116,6 +124,46 @@ public sealed class ReadingOrderStage : IPipelineStage
         }
 
         return best;
+    }
+
+    /// <summary>
+    /// A free run that does not split the page into columns may reach into a column whose lines are ragged, beside a
+    /// short other column (the band where text lies on both sides is then only a few lines high): its stretch least
+    /// covered over the whole page height is the real gap between the columns.
+    /// </summary>
+    private static (double Start, double End) EmptiestStretch(List<Rect> pieces, (double Start, double End) run, double top, double bottom)
+    {
+        int bins = (int)Math.Round(run.End - run.Start);
+        var coverage = new double[bins];
+        for (int i = 0; i < bins; i++)
+        {
+            double x0 = run.Start + i;
+            double x1 = x0 + 1;
+            coverage[i] = CoveredHeight(pieces.Where(p => p.Left < x1 && p.Right > x0)) / (bottom - top);
+        }
+
+        double least = coverage.Min() + EmptiestSlack;
+        (int Start, int End) longest = (0, 0);
+        int start = -1;
+        for (int i = 0; i <= bins; i++)
+        {
+            bool empty = i < bins && coverage[i] <= least;
+            if (empty && start < 0)
+            {
+                start = i;
+            }
+            else if (!empty && start >= 0)
+            {
+                if (i - start > longest.End - longest.Start)
+                {
+                    longest = (start, i);
+                }
+
+                start = -1;
+            }
+        }
+
+        return (run.Start + longest.Start, run.Start + longest.End);
     }
 
     private static bool IsColumnSplit(List<LayoutLine> lines, (double Start, double End) gutter, double pageWidth, LayoutOptions options)
