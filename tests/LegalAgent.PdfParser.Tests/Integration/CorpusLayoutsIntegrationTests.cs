@@ -1478,6 +1478,10 @@ public sealed class CorpusLayoutsIntegrationTests
         }
 
         string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t089h.md"), md, TestContext.Current.CancellationToken);
+        }
 
         Assert.Contains("| Roczna opłata za kartę | 99,00 zł |", md, StringComparison.Ordinal);
         int afterTable = md.IndexOf("Wiersz lewej kolumny po tabeli.", StringComparison.Ordinal);

@@ -293,11 +293,12 @@ public sealed class ReadingOrderStage : IPipelineStage
             // A table inside one column beside text of the other column (FR-031) is read in its column; other non-flow
             // lines, and a table between the column blocks, stand between the columns.
             bool columnTable = line.Role == LineRole.Table && tableSpans.TryGetValue(TableOf(line), out (double Top, double Bottom) span)
-                && (line.Box.Right <= middle || line.Box.Left >= middle)
+                && !Crosses(line.Box, gutter)
                 && page.Lines.Any(o => IsFlowText(o)
-                    && (line.Box.Right <= middle ? o.Box.Left >= middle : o.Box.Right <= middle)
+                    && (line.Box.CenterX < middle ? o.Box.CenterX >= middle : o.Box.CenterX < middle)
+                    && !Crosses(o.Box, gutter)
                     && o.Baseline > span.Top && o.Baseline < span.Bottom);
-            if ((!IsFlowText(line) && !columnTable) || PiecesOf(line).Any(p => Crosses(p, gutter)))
+            if ((!IsFlowText(line) && !columnTable) || (line.Segments.Count <= 1 && Crosses(line.Box, gutter)) || PiecesOf(line).Any(p => Spans(p, gutter)))
             {
                 Flush();
                 ordered.Add(line);
@@ -328,12 +329,14 @@ public sealed class ReadingOrderStage : IPipelineStage
     }
 
     /// <summary>
-    /// A piece starting left of the gutter crosses it when it reaches its last quarter or is centred in it (a heading
+    /// A line starting left of the gutter crosses it when it reaches its last quarter or is centred in it (a heading
     /// over both columns); the lines of a ragged left column may end anywhere before that.
     /// </summary>
-    private static bool Crosses(Rect piece, (double Start, double End) gutter) =>
-        piece.Left < gutter.Start
-        && (piece.Right > gutter.End - (CrossReach * (gutter.End - gutter.Start)) || (piece.CenterX > gutter.Start && piece.CenterX < gutter.End));
+    private static bool Crosses(Rect line, (double Start, double End) gutter) =>
+        Spans(line, gutter) || (line.Left < gutter.Start && line.CenterX > gutter.Start && line.CenterX < gutter.End);
+
+    private static bool Spans(Rect piece, (double Start, double End) gutter) =>
+        piece.Left < gutter.Start && piece.Right > gutter.End - (CrossReach * (gutter.End - gutter.Start));
 
     /// <summary>Records the column bounds on every flow line of one column (consumed by paragraph assembly).</summary>
     private static void AnnotateColumn(List<LayoutLine> lines, Func<LayoutLine, bool> inColumn)

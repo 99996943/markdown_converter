@@ -97,30 +97,50 @@ public sealed class TableDetectionStage : IPipelineStage
     {
         (double Start, double End)? gutter = context.Options.Layout.DetectColumns ? ReadingOrderStage.FindGutter(page, context.Options.Layout) : null;
         page.ColumnGutter = gutter;
-        List<Table> tables = FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
         if (gutter is not { } g)
         {
-            return tables;
+            return FindTables(context, page, _ => true, [.. page.Rulings], gutter, hyphenationExceptions);
         }
 
         // FR-031: on a page in columns a table may lie inside one column, beside lines of the other column that share
-        // its baselines — the remaining lines are split at the gutter and each column is searched with its own rulings.
+        // its baselines. Tables over the whole page are found first, without the rulings of tables inside one column
+        // (those would take the other column's lines in); the remaining lines are split at the gutter and each column
+        // is searched with its own rulings.
         double middle = (g.Start + g.End) / 2;
+        bool Left(double from, double to) => to < g.End && from < middle;
+        bool Right(double from, double to) => from > g.Start && to > middle;
+        bool OneSided(Segment h) => Left(Math.Min(h.X1, h.X2), Math.Max(h.X1, h.X2)) || Right(Math.Min(h.X1, h.X2), Math.Max(h.X1, h.X2));
+        var horizontals = page.Rulings.Where(r => r.IsHorizontal).ToList();
+        bool InColumn(Segment r)
+        {
+            if (r.IsHorizontal)
+            {
+                return OneSided(r);
+            }
+
+            var touching = horizontals
+                .Where(h => h.Y1 >= Math.Min(r.Y1, r.Y2) - RulingSlack && h.Y1 <= Math.Max(r.Y1, r.Y2) + RulingSlack
+                    && r.X1 >= Math.Min(h.X1, h.X2) - RulingSlack && r.X1 <= Math.Max(h.X1, h.X2) + RulingSlack)
+                .ToList();
+            return touching.Count > 0 && touching.All(OneSided);
+        }
+
+        List<Table> tables = FindTables(context, page, _ => true, page.Rulings.Where(r => !InColumn(r)).ToList(), gutter, hyphenationExceptions);
         var taken = new HashSet<LayoutLine>(tables.SelectMany(t => t.Lines), ReferenceEqualityComparer.Instance);
-        SplitAtGutter(page, middle, taken);
-        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && l.Box.Right <= middle, page.Rulings.Where(r => Math.Max(r.X1, r.X2) <= middle).ToList(), null, hyphenationExceptions));
-        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && l.Box.Left >= middle, page.Rulings.Where(r => Math.Min(r.X1, r.X2) >= middle).ToList(), null, hyphenationExceptions));
+        SplitAtGutter(page, Left, Right, taken);
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && Left(l.Box.Left, l.Box.Right), page.Rulings.Where(r => Left(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2))).ToList(), null, hyphenationExceptions));
+        tables.AddRange(FindTables(context, page, l => !taken.Contains(l) && Right(l.Box.Left, l.Box.Right), page.Rulings.Where(r => Right(Math.Min(r.X1, r.X2), Math.Max(r.X1, r.X2))).ToList(), null, hyphenationExceptions));
         return tables;
     }
 
     /// <summary>A merged line with segments on both sides of the gutter (none across it) becomes one line per column.</summary>
-    private static void SplitAtGutter(LayoutPage page, double middle, HashSet<LayoutLine> taken)
+    private static void SplitAtGutter(LayoutPage page, Func<double, double, bool> inLeft, Func<double, double, bool> inRight, HashSet<LayoutLine> taken)
     {
         for (int i = 0; i < page.Lines.Count; i++)
         {
             LayoutLine line = page.Lines[i];
-            List<LineSegment> left = line.Segments.Where(s => s.Box.Right <= middle).ToList();
-            List<LineSegment> right = line.Segments.Where(s => s.Box.Left >= middle).ToList();
+            List<LineSegment> left = line.Segments.Where(s => inLeft(s.Box.Left, s.Box.Right)).ToList();
+            List<LineSegment> right = line.Segments.Where(s => inRight(s.Box.Left, s.Box.Right)).ToList();
             if (line.Role != LineRole.Unknown || taken.Contains(line) || left.Count == 0 || right.Count == 0 || left.Count + right.Count != line.Segments.Count)
             {
                 continue;
