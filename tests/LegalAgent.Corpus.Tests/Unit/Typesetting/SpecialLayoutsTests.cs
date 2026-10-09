@@ -112,7 +112,7 @@ public sealed class SpecialLayoutsTests
     }
 
     [Fact]
-    public void TableDocument_PrintsSectionNamesWithoutChapterLabelsAndNoUnitLabels()
+    public void TableDocument_PrintsSectionNamesWithoutChapterLabelsAndUnitLabelsAsBoldLinesInTheCell()
     {
         LayoutStyle style = Style(s => s with { TableDocument = true });
         Element[] elements =
@@ -121,19 +121,30 @@ public sealed class SpecialLayoutsTests
             new HeadingElement(3, "§ 1.", []) { Unit = "§ 1" },
             P("Promocję organizuje Bank Przykładowy S.A."),
             new HeadingElement(2, "Rozdział 2", T("Uczestnik promocji")),
-            new HeadingElement(3, "§ 2.", []),
+            new HeadingElement(3, "§ 2.", T("Kto może uczestniczyć")),
             P("W promocji mogą uczestniczyć konsumenci."),
         ];
 
         TypesetResult result = Typesetter.Typeset(Doc(elements), style);
 
-        string text = string.Join(' ', PageWords(result.Pdf).SelectMany(p => p).Select(w => w.Text));
-        Assert.DoesNotContain("Rozdział", text, StringComparison.Ordinal);
-        Assert.DoesNotContain("§", text, StringComparison.Ordinal);
+        List<Word> words = PageWords(result.Pdf).SelectMany(p => p).ToList();
+        Assert.DoesNotContain(words, w => w.Text == "Rozdział");
+
+        // „§ N.” stands in the right cell as a bold line of its own, so a citation of the paragraph finds its text.
+        Word unit = words.First(w => w.Text == "§");
+        Assert.True(IsBold(unit));
+        Assert.InRange(X(unit), 182, 200);
+        Assert.Equal(Baseline(unit), Baseline(words.First(w => w.Text == "1.")), 1);
+        Assert.True(Baseline(words.First(w => w.Text == "Promocję")) > Baseline(unit) + 1);
+        Assert.Contains(words, w => w.Text == "Kto" && IsBold(w) && Math.Abs(Baseline(w) - Baseline(words.Last(u => u.Text == "§"))) < 1);
+
+        // A unit in a table-document is text of the section, not a heading.
         Assert.Equal(
             [new TruthHeading(2, null, "Organizator promocji"), new TruthHeading(2, null, "Uczestnik promocji")],
             result.Truth.Headings.Skip(1));
         Assert.DoesNotContain("Rozdział", result.Truth.Words);
+        Assert.Equal(["§", "1.", "Promocję"], result.Truth.Words.SkipWhile(w => w != "§").Take(3));
+        Assert.Equal(["§", "2.", "Kto", "może", "uczestniczyć", "W"], result.Truth.Words.Skip(result.Truth.Words.ToList().LastIndexOf("§")).Take(6));
     }
 
     [Fact]
