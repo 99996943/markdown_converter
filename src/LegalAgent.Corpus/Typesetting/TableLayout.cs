@@ -56,6 +56,31 @@ internal static class TableLayout
         double rowGap = grid ? 0 : lead;
         double firstBaseline = grid ? Padding + size : size;
 
+        // Each column is at least as wide as its longest word (otherwise the word would run into the next cell).
+        var minimum = new double[weights.Length];
+        void Need(IReadOnlyList<IReadOnlyList<Inline>> cells, bool bold)
+        {
+            for (int c = 0; c < cells.Count && c < minimum.Length; c++)
+            {
+                foreach (Token token in TextMeasure.Tokenize(cells[c]))
+                {
+                    InlineStyle style = bold || (boldFirstColumn && c == 0) ? InlineStyle.Bold : token.Style;
+                    minimum[c] = Math.Max(minimum[c], TextMeasure.Width(token.Text, size, style) + (2 * Padding) + 1);
+                }
+            }
+        }
+
+        if (header is not null)
+        {
+            Need(header, bold: true);
+        }
+
+        foreach (List<IReadOnlyList<Inline>> row in rows)
+        {
+            Need(row, bold: false);
+        }
+
+        weights = Fit(weights, minimum, w.ColumnWidth);
         double[] x = Edges(w, weights);
         double top = w.Y - size;
         double segmentTop = top;
@@ -144,6 +169,43 @@ internal static class TableLayout
 
         CloseSegment();
         w.Y = top - rowGap + size + s.Leading;
+    }
+
+    /// <summary>Weights adjusted so no column is narrower than its minimum width (the others give up space proportionally).</summary>
+    private static double[] Fit(double[] weights, double[] minimum, double total)
+    {
+        double sum = weights.Sum();
+        double[] widths = weights.Select(v => total * v / sum).ToArray();
+        for (int round = 0; round < weights.Length; round++)
+        {
+            double deficit = 0;
+            for (int i = 0; i < widths.Length; i++)
+            {
+                if (widths[i] < minimum[i])
+                {
+                    deficit += minimum[i] - widths[i];
+                    widths[i] = minimum[i];
+                }
+            }
+
+            if (deficit <= 0)
+            {
+                break;
+            }
+
+            double spare = widths.Select((v, i) => Math.Max(0, v - minimum[i])).Sum();
+            if (spare <= 0)
+            {
+                break;
+            }
+
+            for (int i = 0; i < widths.Length; i++)
+            {
+                widths[i] -= deficit * Math.Max(0, widths[i] - minimum[i]) / spare;
+            }
+        }
+
+        return widths;
     }
 
     private static double[] Edges(PageWriter w, double[] weights)
