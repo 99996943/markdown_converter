@@ -62,6 +62,19 @@ public sealed class CorpusChecksTests
     }
 
     [Fact]
+    public void Uniqueness_VersionsOfOneDocument_NoViolation()
+    {
+        var result = CorpusChecks.Uniqueness(
+        [
+            new RenderedBlock("REG-03-w1", "x", false, "Ten sam tekst."),
+            new RenderedBlock("REG-03-w2", "x", false, "Ten sam tekst."),
+            new RenderedBlock("REG-03", "x", false, "Ten sam tekst."),
+        ]);
+
+        Assert.Empty(result);
+    }
+
+    [Fact]
     public void Uniqueness_SharedBlocksAndSameDocument_NoViolation()
     {
         var result = CorpusChecks.Uniqueness(
