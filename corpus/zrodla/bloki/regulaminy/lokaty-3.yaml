@@ -1,0 +1,208 @@
+bloki:
+  - id: lokaty-opt-ogolne-aml
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank stosuje środki bezpieczeństwa finansowego określone w przepisach o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu. W szczególności Bank {może żądać|jest uprawniony żądać} od Klienta informacji o celu i zamierzonym charakterze stosunków gospodarczych, a także o źródle pochodzenia środków."
+      - ustep: "Jeżeli Klient nie udzieli informacji wymaganych przez przepisy, Bank:"
+        punkty:
+          - "odmawia zawarcia umowy rachunku oszczędnościowego lub lokaty;"
+          - "wstrzymuje wykonanie dyspozycji do czasu uzupełnienia danych;"
+          - "może rozwiązać umowę zawartą wcześniej, jeżeli brak współpracy Klienta uniemożliwia dalsze stosowanie środków bezpieczeństwa."
+      - ustep: "Bank nie jest zobowiązany do informowania Klienta o zawiadomieniu właściwego organu o podejrzeniu popełnienia przestępstwa. Przekazanie informacji w dobrej wierze nie stanowi naruszenia tajemnicy bankowej ani nie rodzi odpowiedzialności Banku wobec Klienta."
+
+  - id: lokaty-opt-ogolne-tajemnica
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Informacje dotyczące rachunków oszczędnościowych i lokat Klienta objęte są tajemnicą bankową. Bank ujawnia te informacje wyłącznie wtedy, gdy Klient wyrazi na to zgodę na piśmie albo gdy obowiązek lub uprawnienie do ich ujawnienia wynika z przepisów prawa, w szczególności: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - ustep: "Informacje stanowiące tajemnicę bankową mogą być udostępniane w szczególności:"
+        punkty:
+          - "sądom i prokuraturze, w zakresie prowadzonych postępowań;"
+          - "organom podatkowym, w sprawach określonych w przepisach;"
+          - "Bankowemu Funduszowi Gwarancyjnemu, w zakresie niezbędnym do wypłaty środków gwarantowanych."
+      - ustep: "Klient może w każdym czasie cofnąć zgodę na ujawnienie informacji objętych tajemnicą bankową, z zachowaniem skuteczności ujawnień dokonanych przed jej cofnięciem."
+
+  - id: lokaty-opt-ogolne-zmiany-danych
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-ogolne
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Zmiana danych Klienta może zostać zgłoszona w placówce Banku, za pośrednictwem bankowości elektronicznej lub — w przypadku danych kontaktowych — przez Infolinię, po pozytywnym uwierzytelnieniu. Zmiana nazwiska oraz numeru dokumentu tożsamości wymaga przedstawienia odpowiednich dokumentów."
+      - ustep: "Bank nie ponosi odpowiedzialności za skutki niepowiadomienia o zmianie danych, w szczególności za doręczenie korespondencji na dotychczasowy adres lub nieskuteczność powiadomień wysłanych na dotychczasowy numer telefonu. Korespondencję kierowaną na ostatni znany adres uważa się za doręczoną zgodnie z zasadami opisanymi w {{ref:blok:lokaty-koncowe}}."
+      - ustep: "Jeżeli Bank stwierdzi, że dane Klienta są nieaktualne, a próby kontaktu zakończyły się niepowodzeniem, może oznaczyć rachunek jako wymagający aktualizacji danych. Do czasu aktualizacji Bank {może ograniczyć|ma prawo ograniczyć} możliwość składania nowych dyspozycji dotyczących zakładania lokat."
+
+  - id: lokaty-opt-rachunek-limity
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może samodzielnie zmienić dzienny limit wypłat z rachunku oszczędnościowego w ramach maksymalnej kwoty określonej w {{ref:blok:lokaty-ro-wyplaty}}. Obniżenie limitu następuje niezwłocznie po złożeniu dyspozycji, a jego podwyższenie — po upływie {{fakt:termin.lokata.zerwanie-realizacja}} roboczych."
+      - ustep: "Bank może czasowo obniżyć limit wypłat, jeżeli:"
+        punkty:
+          - "występuje uzasadnione podejrzenie nieautoryzowanego użycia rachunku;"
+          - "wymagają tego przepisy prawa lub decyzja uprawnionego organu;"
+          - "Klient nie dostarczył dokumentów lub informacji wymaganych przez Bank w ramach środków bezpieczeństwa finansowego."
+      - ustep: "O obniżeniu limitu Bank informuje Klienta niezwłocznie, wskazując przyczynę, chyba że ujawnienie jej byłoby sprzeczne z przepisami. Limit zostaje przywrócony niezwłocznie po ustaniu przyczyny jego obniżenia."
+
+  - id: lokaty-opt-rachunek-zlecenie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może ustanowić zlecenie stałe, na podstawie którego Bank będzie przekazywał w określonych terminach kwotę z rachunku Klienta w innym banku lub w Banku na rachunek oszczędnościowy. Zlecenie stałe może zostać zmienione lub odwołane w każdym czasie, najpóźniej na jeden dzień roboczy przed terminem wykonania."
+      - ustep: "Jeżeli w dniu wykonania zlecenia stałego na rachunku obciążanym brak środków wystarczających na jego wykonanie, Bank nie realizuje zlecenia, a o jego niewykonaniu informuje Klienta za pomocą wybranego kanału powiadomień. Bank nie ponawia próby wykonania zlecenia po terminie, chyba że umowa stanowi inaczej."
+      - ustep: "Opłata za realizację zlecenia stałego jest określona w „{{ref:dokument:taryfa-oszczednosci}}”; w dniu wejścia Regulaminu w życie przelewy wewnętrzne na rachunek oszczędnościowy prowadzony w Banku są bezpłatne, natomiast przelew natychmiastowy z rachunku oszczędnościowego jest obciążony opłatą {{fakt:oplata.przelew-natychmiastowy}}."
+
+  - id: lokaty-opt-rachunek-cel
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W ramach rachunku oszczędnościowego Klient może utworzyć wydzielone subkonta służące gromadzeniu środków na określone cele, na przykład wakacje, remont lub tzw. poduszkę finansową. Subkonta nie stanowią odrębnych rachunków bankowych i nie mają własnych numerów, a środki na nich zgromadzone są częścią salda rachunku głównego."
+      - ustep: "Dla każdego z subkont Klient może:"
+        punkty:
+          - "wskazać kwotę docelową i planowany termin jej osiągnięcia;"
+          - "ustawić automatyczne wpłaty cykliczne z rachunku powiązanego;"
+          - "przenosić środki pomiędzy subkontami bezpłatnie i bez wpływu na limity wypłat."
+      - ustep: "Subkonta nie są oprocentowane odrębnie; odsetki naliczane są od łącznego salda rachunku oszczędnościowego według stawki określonej w {{ref:blok:lokaty-ro-otwarcie}}. Wypłata środków z subkonta stanowi wypłatę z rachunku w rozumieniu przepisów o limitach określonych w Regulaminie."
+
+  - id: lokaty-opt-rachunek-zamkniecie
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-rachunek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rozwiązanie umowy rachunku oszczędnościowego przez Klienta następuje na podstawie dyspozycji złożonej w placówce Banku albo w bankowości elektronicznej. W dyspozycji Klient wskazuje rachunek, na który mają zostać przekazane środki."
+      - ustep: "Przed rozwiązaniem umowy Bank:"
+        punkty:
+          - "kapitalizuje naliczone odsetki i pobiera podatek;"
+          - "rozlicza opłaty należne Bankowi, o których mowa w „{{ref:dokument:taryfa-oszczednosci}}”;"
+          - "informuje Klienta o niewykonanych zleceniach stałych oraz lokatach zawartych w ramach rachunku."
+      - ustep: "Jeżeli na rachunku znajdują się środki zgromadzone na lokatach terminowych, rozwiązanie umowy rachunku nie powoduje zerwania lokat; w takim przypadku Bank prowadzi lokaty do końca ich okresu, a środki przekazuje na rachunek wskazany przez Klienta w dniu zapadalności."
+
+  - id: lokaty-opt-lokata-cykliczna
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może zlecić Bankowi cykliczne zakładanie nowych lokat terminowych z kwot odkładanych w ramach zlecenia stałego (lokata cykliczna). Każda z lokat zakładanych w ramach cyklu stanowi odrębną lokatę i jest oprocentowana według stawki obowiązującej w dniu jej założenia."
+      - ustep: "Zlecenie lokaty cyklicznej określa:"
+        punkty:
+          - "kwotę lokaty zakładanej w każdym cyklu, nie niższą od kwoty minimalnej {{fakt:limit.lokata.minimalna}};"
+          - "okres każdej lokaty oraz częstotliwość jej zakładania, nie rzadziej niż raz na miesiąc;"
+          - "rachunek, z którego będą pobierane środki, oraz dyspozycję dotyczącą wypłaty środków w dniu zapadalności."
+      - ustep: "Jeżeli w dniu zakładania lokaty na rachunku brak środków, Bank pomija dany cykl, a zlecenie jest realizowane w następnym terminie. Po opuszczeniu trzech kolejnych cykli z rzędu Bank {może zawiesić|ma prawo zawiesić} zlecenie, informując o tym Klienta."
+
+  - id: lokaty-opt-lokata-rolowana
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dyspozycja automatycznego odnowienia lokaty może zostać złożona w trzech wariantach, które Klient wybiera przy zakładaniu lokaty i może zmienić w każdym czasie przed dniem zapadalności:"
+        punkty:
+          - "odnowienie kwoty początkowej wraz z odsetkami — w takiej sytuacji odsetki zostają dopisane do kwoty nowej lokaty;"
+          - "odnowienie wyłącznie kwoty początkowej — odsetki zostają przekazane na rachunek wskazany przez Klienta;"
+          - "odnowienie z wypłatą części kwoty — Klient wskazuje kwotę, która ma zostać wypłacona w dniu zapadalności."
+      - ustep: "Odnowiona lokata może zostać założona wyłącznie wtedy, gdy kwota, która ma zostać odnowiona, jest nie niższa niż minimalna kwota określona w {{ref:blok:lokaty-rodzaje}}. W przeciwnym razie środki zostają przekazane na rachunek Klienta w dniu zapadalności."
+      - ustep: "Bank informuje Klienta o zbliżającym się terminie zapadalności lokaty z automatycznym odnowieniem co najmniej na {{fakt:termin.doreczenie-korespondencji}} przed tym terminem, na trwałym nośniku, wskazując stawkę oprocentowania nowej lokaty, jeżeli jest już znana."
+
+  - id: lokaty-opt-lokata-kapitalizacja
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-lokata
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient wybiera przy zakładaniu lokaty sposób postępowania z odsetkami naliczonymi w trakcie jej trwania. Dostępne są następujące opcje, o ile oferta Banku dla danego rodzaju lokaty je przewiduje:"
+        punkty:
+          - "kapitalizacja odsetek — odsetki zwiększają kwotę lokaty;"
+          - "wypłata odsetek na rachunek — odsetki są przekazywane we wskazanych terminach;"
+          - "wypłata odsetek w dniu zapadalności — odsetki pozostają na lokacie do końca okresu i są wypłacane łącznie z kwotą lokaty."
+      - ustep: "Zmiana wybranej opcji w trakcie trwania lokaty jest możliwa tylko za zgodą Banku i wymaga złożenia dyspozycji w placówce. Zgoda nie może być uzależniona od dodatkowych opłat, o ile zmiana nie wymaga wykonania czynności, za które taryfa przewiduje opłaty."
+      - ustep: "Bank prezentuje Klientowi porównanie efektów poszczególnych opcji w kalkulatorze lokat dostępnym w bankowości elektronicznej i na stronie {{fakt:bank.strona}}. Kalkulator ma charakter poglądowy."
+
+  - id: lokaty-opt-odsetki-nieznane
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-odsetki
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Środki na rachunku oszczędnościowym nie są oprocentowane w dniach, w których na rachunku nie było dodatniego salda na koniec dnia. Za dzień naliczania odsetek uznaje się dzień kalendarzowy, a saldo ustala się na koniec dnia, po zaksięgowaniu wszystkich operacji."
+      - ustep: "Jeżeli w wyniku błędu Bank naliczył lub wypłacił odsetki w wysokości innej niż należna, Bank dokona korekty niezwłocznie po stwierdzeniu błędu. W przypadku odsetek naliczonych w nadmiernej wysokości Bank może obciążyć rachunek Klienta kwotą nadwyżki, poinformowawszy o tym Klienta na trwałym nośniku, a w przypadku niedopłaty — uzupełnia odsetki z dniem korekty."
+      - ustep: "Odsetek nie nalicza się za dzień wypłaty środków, natomiast za dzień wpłaty odsetki są naliczane."
+
+  - id: lokaty-opt-odsetki-zmiany-prawa
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-odsetki
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli w wyniku zmiany przepisów prawa zmieni się wysokość stawki podatku od odsetek lub sposób jego poboru, Bank stosuje nowe przepisy od dnia ich wejścia w życie, także do lokat założonych przed tym dniem. Zmiana taka nie stanowi zmiany stopy procentowej lokaty."
+      - ustep: "Stawka podatku obowiązująca w dniu wejścia Regulaminu w życie wynosi {{fakt:podatek.odsetki}}. O zmianie stawki Bank informuje Klientów w placówkach i na stronie {{fakt:bank.strona}}."
+      - ustep: "Zmiana stawki podatku nie uprawnia Klienta do zerwania lokaty bez zastosowania obniżonej stopy procentowej, chyba że przepisy przejściowe stanowią inaczej."
+
+  - id: lokaty-opt-zerwanie-ponowne
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-zerwanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Po zerwaniu lokaty Klient może założyć nową lokatę na zasadach ogólnych, z zastrzeżeniem, że Bank nie ma obowiązku zakładania lokaty o tych samych parametrach, jeżeli oferta nie jest już dostępna."
+      - ustep: "Środki pochodzące z zerwanej lokaty nie podlegają dodatkowym ograniczeniom w zakresie ponownego ich przeznaczenia na lokatę. Bank {zastrzega|może zastrzec} jednak, że lokata promocyjna nie może być założona ze środków pochodzących z zerwania innej lokaty w Banku w okresie {{fakt:termin.lokata.dyspozycja-po-terminie}} dni od zerwania."
+      - ustep: "Zerwanie lokaty nie wpływa na prawo Klienta do korzystania z innych produktów Banku ani na oprocentowanie rachunku oszczędnościowego, na który przekazano środki."
+
+  - id: lokaty-opt-zerwanie-oplaty
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-zerwanie
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za wypłatę środków z lokaty po jej zerwaniu Bank nie pobiera dodatkowych opłat, jeżeli środki zostają przekazane na rachunek w Banku lub na rachunek w innym banku w kraju. Za wypłatę gotówkową w placówce Bank pobiera opłatę w wysokości {{fakt:oplata.lokata.wyplata-gotowkowa}}."
+      - ustep: "Za wystawienie potwierdzenia zerwania lokaty na wniosek Klienta Bank pobiera opłatę w wysokości {{fakt:oplata.lokata.potwierdzenie}}, natomiast potwierdzenie wydawane automatycznie w bankowości elektronicznej jest bezpłatne."
+      - ustep: "Zasady pobierania opłat, ich wysokość oraz tryb wprowadzania zmian są określone w „{{ref:dokument:taryfa-oszczednosci}}”. Opłaty obowiązujące w dniu zerwania lokaty ustala się według tabeli opłat obowiązującej w tym dniu."
+
+  - id: lokaty-opt-podatek-zwrot
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-podatek
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli w wyniku korekty odsetek, błędu Banku lub zmiany interpretacji przepisów podatek od odsetek został pobrany w wysokości wyższej od należnej, Bank dokonuje zwrotu nadpłaty na rachunek Klienta w terminie {{fakt:termin.zwrot-oplat}} od dnia stwierdzenia nadpłaty."
+      - ustep: "Zwrot podatku pobranego w nieprawidłowej wysokości może nastąpić także na wniosek Klienta, który złoży dokumenty potwierdzające podstawę prawną żądania. Bank rozpatruje wniosek w terminie {{fakt:termin.reklamacja.inne}} i informuje Klienta o wyniku na trwałym nośniku."
+      - ustep: "Bank nie odpowiada za rozliczenie podatku w zeznaniu rocznym Klienta, w szczególności za zaliczenie podatku pobranego od odsetek do zobowiązania podatkowego Klienta. Informacja przekazywana przez Bank nie stanowi porady podatkowej."
+
+  - id: lokaty-opt-koncowe-wersje
+    typy: [regulaminy]
+    tematy: [lokaty]
+    kategoria: paragraf-lokaty-koncowe
+    wspolny: false
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank udostępnia aktualną i poprzednie wersje Regulaminu na stronie {{fakt:bank.strona}}, z podaniem daty początku i końca ich obowiązywania. Klient może w każdym czasie zażądać wydania mu treści Regulaminu obowiązującego w dniu zawarcia umowy."
+      - ustep: "Regulamin w brzmieniu obowiązującym w dniu zawarcia umowy stosuje się do umów zawartych w okresie jego obowiązywania, o ile Klient nie przyjął zmian, o których mowa w {{ref:blok:wspolne-zmiany-regulamin}}. Zmiany postanowień dotyczących wyłącznie oferty nowych lokat nie wymagają informowania dotychczasowych Klientów."
+      - ustep: "Oznaczenie i numer wersji Regulaminu, wskazane na okładce, służą jednoznacznej identyfikacji dokumentu w korespondencji z Bankiem."
