@@ -29,7 +29,10 @@ typy:
 Nowy typ dokumentu = nowy wpis + szablon(y) w istniejących stylach układu; bez zmiany kodu (FR-102).
 Katalog wyjściowy `<id>/` i `zatrute/<id>/`.
 
-## `fakty.yaml`
+## `fakty.yaml` (oraz opcjonalnie `fakty/*.yaml`)
+
+Fakty można dzielić na pliki `fakty/<temat>.yaml` o tym samym formacie (wczytywane w porządku ordinal po
+`fakty.yaml`); identyfikator faktu jest unikalny we wszystkich plikach.
 
 ```yaml
 fakty:

@@ -73,7 +73,16 @@ public static class ContentLoader
             var hash = ComputeHash(files);
 
             var types = LoadTypes(Required(files, "typy.yaml"));
-            var facts = LoadFacts(Required(files, "fakty.yaml"));
+            var factFiles = files
+                .Where(f => f.Key == "fakty.yaml" || (f.Key.StartsWith("fakty/", StringComparison.Ordinal) && f.Key.EndsWith(".yaml", StringComparison.Ordinal)))
+                .Select(f => (f.Key, f.Value))
+                .ToList();
+            if (factFiles.Count == 0)
+            {
+                Required(files, "fakty.yaml");
+            }
+
+            var facts = LoadFacts(factFiles);
             var forbidden = files.TryGetValue("zabronione.yaml", out var zab) ? LoadForbidden(("zabronione.yaml", zab)) : [];
             var acts = files.TryGetValue("akty.yaml", out var akty) ? LoadActs(("akty.yaml", akty)) : [];
 
@@ -224,12 +233,22 @@ public static class ContentLoader
 
         // ---------------------------------------------------------------- fakty.yaml
 
-        private FactCatalog LoadFacts((string Rel, string Text) file)
+        private FactCatalog LoadFacts(IReadOnlyList<(string Rel, string Text)> files)
+        {
+            var list = new List<Fact>();
+            var ids = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var file in files)
+            {
+                LoadFactFile(file, list, ids);
+            }
+
+            return new FactCatalog(list);
+        }
+
+        private void LoadFactFile((string Rel, string Text) file, List<Fact> list, HashSet<string> ids)
         {
             var src = Source(file.Rel);
             var root = src.Map(src.ParseRoot(file.Text), string.Empty);
-            var list = new List<Fact>();
-            var ids = new HashSet<string>(StringComparer.Ordinal);
             foreach (var (node, path) in src.Seq(root.Req("fakty"), root.P("fakty")))
             {
                 var m = src.Map(node, path);
@@ -289,7 +308,6 @@ public static class ContentLoader
             }
 
             root.Finish();
-            return new FactCatalog(list);
         }
 
         private static FactKind ParseKind(YamlSource src, MapReader m)
