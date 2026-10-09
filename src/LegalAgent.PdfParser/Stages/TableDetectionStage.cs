@@ -463,10 +463,11 @@ public sealed class TableDetectionStage : IPipelineStage
             return false;
         }
 
+        // A ragged column can reach into the free band past its middle; a cell crosses only when it spans the band.
         double middle = (g.Start + g.End) / 2;
         List<LineSegment> cells = region.SelectMany(r => r.Cells).ToList();
-        return cells.All(c => c.Box.Right <= middle || c.Box.Left >= middle)
-            && cells.Any(c => c.Box.Right <= middle)
+        return cells.All(c => c.Box.Right <= g.End || c.Box.Left >= g.Start)
+            && cells.Any(c => c.Box.Left < middle)
             && cells.Any(c => c.Box.Left >= middle);
     }
 

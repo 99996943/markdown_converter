@@ -1384,8 +1384,8 @@ public sealed class CorpusLayoutsIntegrationTests
     public async Task TwoColumnsWithRaggedLeftColumn_AreNotATable()
     {
         var b = new SyntheticPdfBuilder().Page();
-        string[] shortLines = ["treść postanowienia w krótkim wierszu,", "dalszy ciąg postanowienia,", "kolejne zdanie umowy karty,"];
-        const string LongLine = "wiersz sięgający prawie do prawej krawędzi kolumny,";
+        string[] shortLines = ["treść postanowienia umowy o kartę,", "dalszy ciąg tego zdania umowy o kartę,", "kolejne zdanie umowy karty klienta,"];
+        const string LongLine = "treść postanowienia umowy w krótszym wierszu,";
         double y = 92;
         for (int i = 0; i < 44; i++, y += 12.5)
         {
