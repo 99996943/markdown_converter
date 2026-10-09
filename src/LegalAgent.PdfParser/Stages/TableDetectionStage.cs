@@ -252,13 +252,18 @@ public sealed class TableDetectionStage : IPipelineStage
             .Select(s => s.X1)
             .ToList();
 
-        // A column needs cells in two rows — or, in a ruled grid, a vertical ruling right before it: a column that is
-        // empty in every data row (a checklist's „Wykonano”) still has its header cell.
+        // A column needs cells in two rows. In a ruled grid the LAST column may be empty in every data row (a checklist's
+        // „Wykonano”): its header cell alone makes it a column when a vertical ruling stands right before it.
         var clusters = ColumnClustering.ClusterLefts(multi.SelectMany(r => r.Cells.Select(c => c.Box.Left)), tolerance);
         List<double> lefts = clusters
-            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count)
-                || verticals.Any(x => x <= c && c - x <= tolerance))
+            .Where(c => multi.Count(r => r.Cells.Any(cell => cell.Box.Left >= c && cell.Box.Left - c <= tolerance)) >= Math.Min(MinBandSupport, multi.Count))
             .ToList();
+        List<double> ruledOnly = clusters.Where(c => !lefts.Contains(c) && verticals.Any(x => x <= c && c - x <= tolerance)).ToList();
+        if (lefts.Count > 0 && ruledOnly.Count == 1 && ruledOnly[0] > lefts.Max())
+        {
+            lefts.Add(ruledOnly[0]);
+        }
+
         if (lefts.Count < 2)
         {
             return null;
