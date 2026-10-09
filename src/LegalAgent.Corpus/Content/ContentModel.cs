@@ -3,7 +3,11 @@ using LegalAgent.Corpus.Composition;
 namespace LegalAgent.Corpus.Content;
 
 /// <summary>Document type from <c>typy.yaml</c>.</summary>
-public sealed record DocumentTypeDef(string Id, string Prefix, string DesignationPattern, string Name, IReadOnlyList<string> RequiredElements);
+public sealed record DocumentTypeDef(string Id, string Prefix, string DesignationPattern, string Name, IReadOnlyList<string> RequiredElements)
+{
+    /// <summary>Gets the minimum number of base documents of this type per layout id (<c>uklady-min</c>); empty when absent.</summary>
+    public IReadOnlyDictionary<string, int> MinLayouts { get; init; } = new Dictionary<string, int>(StringComparer.Ordinal);
+}
 
 /// <summary>Front matter specification of a template.</summary>
 public sealed record FrontSpec(bool Cover, bool RecordCard, IReadOnlyList<string> Fields);

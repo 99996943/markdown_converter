@@ -1,0 +1,48 @@
+bloki:
+  - id: karty-limity
+    typy: [regulaminy]
+    tematy: [karty]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Limity transakcji kartą ustala Bank Przykładowy S.A. w Tabeli opłat."
+  - id: karty-blokada
+    typy: [regulaminy]
+    tematy: [karty]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Bank Przykładowy S.A. blokuje kartę po zgłoszeniu jej utraty."
+  - id: rachunki-prowadzenie
+    typy: [regulaminy]
+    tematy: [rachunki]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Rachunek jest prowadzony w złotych polskich."
+  - id: rachunki-zamkniecie
+    typy: [regulaminy]
+    tematy: [rachunki]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Posiadacz rachunku może wypowiedzieć umowę na piśmie."
+  - id: ogolne-reklamacje
+    typy: [regulaminy]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Reklamacje można składać w każdej placówce Banku."
+  - id: ogolne-zmiany
+    typy: [regulaminy]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Bank informuje o zmianach regulaminu z wyprzedzeniem."
+  - id: rachunki-powiadomienia
+    typy: [regulaminy]
+    tematy: [rachunki]
+    kategoria: paragraf
+    jednostka: "§ {n}."
+    elementy:
+      - akapit: "Powiadomienia o saldzie są wysyłane wiadomością tekstową."

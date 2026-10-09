@@ -1,11 +1,11 @@
-id: taryfa-karty
+id: taryfa-rachunki
 typ: taryfy
-temat: karty
-tytul: ["Taryfa opłat i prowizji {{param:bank}}"]
+temat: rachunki
+tytul: ["Taryfa opłat i prowizji za rachunki {{param:bank}}"]
 uklady: [taryfa-siatka, taryfa-bez-siatki, tabela-dokument]
 czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
 sekcje:
   - rodzaj: sekcja-taryfy
-    tytul: "Karty płatnicze"
+    tytul: "Rachunki"
     wymagane: [taryfa-karty-oplaty]
     opcjonalne: { kategorie: [pozycja-taryfy], min: 1, max: 2 }

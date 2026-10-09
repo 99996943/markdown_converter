@@ -1,0 +1,13 @@
+id: regulamin-karty-premium
+typ: regulaminy
+temat: karty
+tytul: ["Regulamin kart premium {{param:bank}}"]
+uklady: [dwie-kolumny, tabela-dokument]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje]
+    opcjonalne: { kategorie: [paragraf], min: 1, max: 2 }
+parametry:
+  produkt: "karty premium"

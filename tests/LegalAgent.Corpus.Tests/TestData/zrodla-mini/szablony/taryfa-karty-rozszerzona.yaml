@@ -1,8 +1,8 @@
-id: taryfa-karty
+id: taryfa-karty-rozszerzona
 typ: taryfy
 temat: karty
-tytul: ["Taryfa opłat i prowizji {{param:bank}}"]
-uklady: [taryfa-siatka, taryfa-bez-siatki, tabela-dokument]
+tytul: ["Taryfa opłat i prowizji za karty {{param:bank}}"]
+uklady: [taryfa-siatka, taryfa-bez-siatki]
 czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od] }
 sekcje:
   - rodzaj: sekcja-taryfy

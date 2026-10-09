@@ -1,14 +1,14 @@
-id: procedura-reklamacji
+id: procedura-reklamacji-pisemnej
 typ: procedury
 temat: reklamacje
-tytul: ["Procedura obsługi reklamacji"]
+tytul: ["Procedura obsługi reklamacji pisemnych"]
 uklady: [procedura]
 czolo: { okladka: false, metryczka: true, pola: [oznaczenie, wersja, wlasciciel, zatwierdzil] }
 sekcje:
   - rodzaj: sekcja
     tytul: "Przebieg procedury"
     wymagane: [procedura-kroki, procedura-schemat]
+    opcjonalne: { kategorie: [krok], min: 1, max: 2 }
   - rodzaj: zalacznik
     tytul: "Lista kontrolna"
     wymagane: [procedura-lista]
-    opcjonalne: { kategorie: [krok], min: 1, max: 2 }

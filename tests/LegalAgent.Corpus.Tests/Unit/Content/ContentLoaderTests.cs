@@ -12,8 +12,8 @@ public class ContentLoaderTests
 
         Assert.Equal(["procedury", "regulaminy", "taryfy"], lib.Types.Select(t => t.Id).Order(StringComparer.Ordinal));
         Assert.Equal(5, lib.Facts.All.Count);
-        Assert.Equal(3, lib.Templates.Count);
-        Assert.Equal(7, lib.Blocks.Count);
+        Assert.Equal(9, lib.Templates.Count);
+        Assert.Equal(28, lib.Blocks.Count);
         Assert.Single(lib.PoisonKinds);
         Assert.Equal("POL", lib.PoisonKinds[0].Abbreviation);
         Assert.Single(lib.PoisonPatterns);
@@ -109,6 +109,40 @@ public class ContentLoaderTests
         Assert.Equal("polecenia-dla-ai", pattern.Kind);
         Assert.Equal("zmiana-odpowiedzi", pattern.Goal);
         Assert.Equal(["przypis", "komorka-tabeli", "akapit"], pattern.Placements);
+    }
+
+    [Fact]
+    public void Load_TypeWithoutMinLayouts_HasEmptyMap()
+        => Assert.All(MiniContent.Load().Types, t => Assert.Empty(t.MinLayouts));
+
+    [Fact]
+    public void Load_MinLayouts_AreRead()
+    {
+        var lib = MiniContent.LoadModified(dir => MiniContent.Replace(
+            dir, "typy.yaml", "    nazwa: regulamin\n", "    nazwa: regulamin\n    uklady-min: { dwie-kolumny: 2, tabela-dokument: 1 }\n"));
+
+        var map = lib.Types.Single(t => t.Id == "regulaminy").MinLayouts;
+        Assert.Equal(2, map["dwie-kolumny"]);
+        Assert.Equal(1, map["tabela-dokument"]);
+    }
+
+    [Fact]
+    public void Load_MinLayoutsUnknownLayout_NamesPath()
+    {
+        var ex = Assert.Throws<ContentException>(() => MiniContent.LoadModified(dir => MiniContent.Replace(
+            dir, "typy.yaml", "    nazwa: regulamin\n", "    nazwa: regulamin\n    uklady-min: { trzy-kolumny: 2 }\n")));
+
+        Assert.Equal("typy.yaml", ex.File);
+        Assert.Contains("trzy-kolumny", ex.Message, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void Load_MinLayoutsBelowOne_Throws()
+    {
+        var ex = Assert.Throws<ContentException>(() => MiniContent.LoadModified(dir => MiniContent.Replace(
+            dir, "typy.yaml", "    nazwa: regulamin\n", "    nazwa: regulamin\n    uklady-min: { dwie-kolumny: 0 }\n")));
+
+        Assert.Equal("typy.yaml", ex.File);
     }
 
     [Fact]
@@ -230,6 +264,7 @@ public class ContentLoaderTests
     {
         var ids = MiniContent.Load().Blocks.Select(b => b.Id).ToList();
 
+        // Files in ordinal path order (procedury, regulaminy, taryfy, wspolne), blocks in file order within a file.
         Assert.Equal(
             [
                 "procedura-kroki", "procedura-schemat", "procedura-lista",
@@ -237,7 +272,10 @@ public class ContentLoaderTests
                 "taryfa-karty-oplaty",
                 "wspolne-definicje",
             ],
-            ids);
+            ids.Where(i => i is "procedura-kroki" or "procedura-schemat" or "procedura-lista" or "karty-zastrzezenie" or "karty-tabela" or "taryfa-karty-oplaty" or "wspolne-definicje"));
+        Assert.True(ids.IndexOf("procedura-lista") < ids.IndexOf("karty-zastrzezenie"));
+        Assert.True(ids.IndexOf("karty-tabela") < ids.IndexOf("taryfa-karty-oplaty"));
+        Assert.Equal("wspolne-definicje", ids[^1]);
     }
 
     [Fact]

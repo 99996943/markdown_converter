@@ -1,0 +1,13 @@
+id: regulamin-rachunki
+typ: regulaminy
+temat: rachunki
+tytul: ["Regulamin rachunków {{param:bank}}"]
+uklady: [jedna-kolumna, dwie-kolumny, tabela-dokument]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje]
+    opcjonalne: { kategorie: [paragraf], min: 1, max: 2 }
+parametry:
+  produkt: "rachunku"

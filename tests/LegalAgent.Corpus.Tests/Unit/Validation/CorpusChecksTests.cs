@@ -108,7 +108,7 @@ public sealed class CorpusChecksTests
         var lib = MiniContent.LoadModified(dir => MiniContent.Replace(
             dir, "typy.yaml", "wymagane-elementy: [kroki]", "wymagane-elementy: [kroki, ramka]"));
 
-        var v = Assert.Single(CorpusChecks.TemplateStructure(lib));
+        var v = Assert.Single(CorpusChecks.TemplateStructure(lib), x => x.Template == "procedura-reklamacji");
         Assert.Equal("procedura-reklamacji", v.Template);
         Assert.Contains("ramka", v.Message, StringComparison.Ordinal);
     }
@@ -119,7 +119,7 @@ public sealed class CorpusChecksTests
         var lib = MiniContent.LoadModified(dir => MiniContent.Replace(
             dir, "typy.yaml", "wymagane-elementy: [kroki]", "wymagane-elementy: [kroki, nieznany]"));
 
-        var v = Assert.Single(CorpusChecks.TemplateStructure(lib));
+        var v = Assert.Single(CorpusChecks.TemplateStructure(lib), x => x.Template == "procedura-reklamacji");
         Assert.Contains("nieznany", v.Message, StringComparison.Ordinal);
         Assert.Contains("procedury", v.Message, StringComparison.Ordinal);
     }
@@ -130,7 +130,7 @@ public sealed class CorpusChecksTests
         var lib = MiniContent.LoadModified(dir => MiniContent.Replace(
             dir, "typy.yaml", "wymagane-elementy: [paragrafy]", "wymagane-elementy: [paragrafy:99]"));
 
-        var v = Assert.Single(CorpusChecks.TemplateStructure(lib));
+        var v = Assert.Single(CorpusChecks.TemplateStructure(lib), x => x.Template == "regulamin-karty");
         Assert.Equal("regulamin-karty", v.Template);
         Assert.Contains("paragrafy", v.Message, StringComparison.Ordinal);
     }
