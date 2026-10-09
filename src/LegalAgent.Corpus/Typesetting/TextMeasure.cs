@@ -14,6 +14,9 @@ internal sealed record Token(string Text, InlineStyle Style, bool Glued, int Foo
 internal sealed record SetLine(IReadOnlyList<Token> Tokens)
 {
     public string Text => string.Concat(Tokens.Select((t, i) => (i > 0 && !t.Glued ? " " : string.Empty) + t.Text));
+
+    /// <summary>The words of the line without footnote markers (what the reference truth records).</summary>
+    public string ContentText => string.Concat(Tokens.Select((t, i) => t.Footnote > 0 ? string.Empty : (i > 0 && !t.Glued ? " " : string.Empty) + t.Text));
 }
 
 /// <summary>Measured text widths (cached; the PdfPig measurement is slow and serialised) and line breaking.</summary>
@@ -25,6 +28,16 @@ internal static class TextMeasure
         text.Length == 0
             ? 0
             : Widths.GetOrAdd((text, size, style, mono), k => SyntheticPdfBuilder.TextWidth(k.Text, k.Size, k.Style == InlineStyle.Bold, k.Style == InlineStyle.Italic, k.Mono));
+
+    /// <summary>Size of a footnote reference marker relative to the text.</summary>
+    public const double MarkerScale = 0.6;
+
+    /// <summary>How far a footnote marker is raised, relative to the text size.</summary>
+    public const double MarkerRaise = 0.38;
+
+    /// <summary>Width of a token; footnote markers are set smaller.</summary>
+    public static double TokenWidth(Token token, double size) =>
+        Width(token.Text, token.Footnote > 0 ? size * MarkerScale : size, token.Style);
 
     /// <summary>Width of one space in the regular face.</summary>
     public static double Space(double size) => Width("a a", size) - (2 * Width("a", size));
@@ -40,7 +53,7 @@ internal static class TextMeasure
             {
                 case InlineKind.FootnoteRef:
                     tokens.Add(new Token(
-                        Inline.Superscript(run.Text),
+                        run.Text,
                         InlineStyle.Regular,
                         Glued: tokens.Count > 0,
                         int.Parse(run.Text, System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture)));
@@ -131,7 +144,7 @@ internal static class TextMeasure
         double w = 0;
         for (int i = 0; i < unit.Count; i++)
         {
-            w += (i > 0 && !unit[i].Glued ? space : 0) + Width(unit[i].Text, size, unit[i].Style);
+            w += (i > 0 && !unit[i].Glued ? space : 0) + TokenWidth(unit[i], size);
         }
 
         return w;

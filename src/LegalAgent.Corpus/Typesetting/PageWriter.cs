@@ -14,6 +14,8 @@ internal sealed class PageWriter
 {
     private const double FootnoteSeparatorGap = 8;
     private const double FootnoteAreaAboveFooter = 22;
+    private const double FootnoteIndent = 11;
+    private const double FootnoteGap = 2;
 
     private readonly LayoutStyle _style;
     private readonly FrontMatter _front;
@@ -190,8 +192,22 @@ internal sealed class PageWriter
         IReadOnlyList<Token> tokens = line.Tokens;
         while (i < tokens.Count)
         {
+            if (tokens[i].Footnote > 0)
+            {
+                // Footnote reference: smaller digits raised above the baseline (FR-026 convention).
+                Builder.Text(x, y - (size * TextMeasure.MarkerRaise), tokens[i].Text, size * TextMeasure.MarkerScale);
+                x += TextMeasure.TokenWidth(tokens[i], size);
+                i++;
+                if (i < tokens.Count && !tokens[i].Glued)
+                {
+                    x += space;
+                }
+
+                continue;
+            }
+
             int j = i + 1;
-            while (j < tokens.Count && tokens[j].Style == tokens[i].Style)
+            while (j < tokens.Count && tokens[j].Style == tokens[i].Style && tokens[j].Footnote == 0)
             {
                 j++;
             }
@@ -223,7 +239,7 @@ internal sealed class PageWriter
 
         if (record)
         {
-            Words(line.Text);
+            Words(line.ContentText);
         }
     }
 
@@ -314,13 +330,17 @@ internal sealed class PageWriter
         Builder.HLine(_style.Left, _style.Left + 120, y - _style.FootnoteSize - 3, 0.5);
         Element? saved = _current;
         _current = null;
-        foreach ((int _, List<SetLine> lines) in _pageFootnotes)
+        foreach ((int number, List<SetLine> lines) in _pageFootnotes)
         {
+            // The label stands alone at the margin; it is not a truth word (the Markdown shows it as the definition key).
+            Builder.Text(_style.Left, y, number.ToString(CultureInfo.InvariantCulture) + ")", _style.FootnoteSize);
             foreach (SetLine line in lines)
             {
-                Draw(line, _style.Left, y, _style.FootnoteSize);
+                Draw(line, _style.Left + FootnoteIndent, y, _style.FootnoteSize);
                 y += _style.FootnoteLeading;
             }
+
+            y += FootnoteGap;
         }
 
         _current = saved;
@@ -328,7 +348,7 @@ internal sealed class PageWriter
 
     private double FootnoteTop(double height) => _style.FooterBaseline - FootnoteAreaAboveFooter - height;
 
-    private double FootnoteBlockHeight(int number) => FootnoteLines(number).Count * _style.FootnoteLeading;
+    private double FootnoteBlockHeight(int number) => (FootnoteLines(number).Count * _style.FootnoteLeading) + FootnoteGap;
 
     private List<SetLine> FootnoteLines(int number)
     {
@@ -337,8 +357,6 @@ internal sealed class PageWriter
             throw new InvalidOperationException("Missing footnote " + number.ToString(CultureInfo.InvariantCulture));
         }
 
-        var runs = new List<Inline> { new(Inline.Superscript(number.ToString(CultureInfo.InvariantCulture)) + " ") };
-        runs.AddRange(text);
-        return TextMeasure.Wrap(TextMeasure.Tokenize(runs), _style.Right - _style.Left, _style.FootnoteSize);
+        return TextMeasure.Wrap(TextMeasure.Tokenize(text), _style.Right - _style.Left - FootnoteIndent, _style.FootnoteSize);
     }
 }

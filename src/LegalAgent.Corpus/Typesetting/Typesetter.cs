@@ -302,7 +302,7 @@ public static class Typesetter
     }
 
     internal static string FirstWords(IReadOnlyList<Inline> text) =>
-        string.Join(' ', Inline.PlainText(text).Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(FirstWordsInTruth));
+        string.Join(' ', Inline.PlainText(text.Where(r => r.Kind != InlineKind.FootnoteRef)).Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(FirstWordsInTruth));
 
     private static List<Token> Tokens(string text, InlineStyle style) => TextMeasure.Tokenize([new Inline(text, style)]);
 

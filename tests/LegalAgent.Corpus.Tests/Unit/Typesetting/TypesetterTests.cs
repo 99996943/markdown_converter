@@ -106,24 +106,28 @@ public sealed class TypesetterTests
         List<Letter> letters = PageLetters(result.Pdf)[page - 1];
 
         // The reference marker is a smaller, raised digit glued to the word (the parser's convention, FR-026).
-        int dot = letters.FindIndex(l => l.Value == "." && letters.IndexOf(l) > 0 && letters[letters.IndexOf(l) - 1].Value == "a");
-        Letter marker = letters[dot + 1];
-        Assert.Equal("1", marker.Value);
+        int at = letters.FindIndex(l => l.Value == "1" && l.PointSize < style.BodySize * 0.85 && 842 - l.StartBaseLine.Y < style.Bottom);
+        Assert.True(at > 0, "a small marker digit in the body");
+        int dot = at - 1;
+        Letter marker = letters[at];
+        Assert.Equal(".", letters[dot].Value);
+        Assert.Equal("a", letters[dot - 1].Value);
         Assert.True(marker.PointSize < letters[dot].PointSize * 0.85, "marker is smaller");
         Assert.True(marker.StartBaseLine.Y > letters[dot].StartBaseLine.Y + 1, "marker is raised");
 
         // The footnote starts with its plain label at the bottom of the page, in a small font.
         List<Word> words = PageWords(result.Pdf)[page - 1];
         Word note = words.First(w => w.Text == "placówkach");
-        Word label = words.Last(w => Baseline(w) == Baseline(words.First(x => x.Text == "Tabela" && Baseline(x) > style.Bottom - 40)) && w.Letters[0].StartBaseLine.X < note.Letters[0].StartBaseLine.X - 50);
-        Assert.Equal("1", label.Text);
+        double noteLine = Baseline(words.First(x => x.Text == "Tabela" && Baseline(x) > style.Bottom - 40));
+        Word label = words.Where(w => Math.Abs(Baseline(w) - noteLine) < 0.5).OrderBy(w => w.Letters[0].StartBaseLine.X).First();
+        Assert.Equal("1)", label.Text);
         Assert.True(Baseline(note) > style.Bottom - 40, "footnote at the bottom of the page");
         Assert.True(Baseline(note) < style.FooterBaseline, "footnote above the footer");
 
         // Truth words: no marker digits and no footnote labels (the Markdown has [^1] for both).
         Assert.Contains("oprocentowania.", result.Truth.Words);
         Assert.Contains("placówkach", result.Truth.Words);
-        Assert.DoesNotContain("1", result.Truth.Words);
+        Assert.Equal(1, result.Truth.Words.Count(w => w == "1")); // only „1 stycznia” of the front matter
     }
 
     [Fact]
@@ -146,8 +150,8 @@ public sealed class TypesetterTests
         List<Word> bottom = PageWords(result.Pdf)[0].Where(w => Baseline(w) > style.Bottom - 60 && Baseline(w) < style.FooterBaseline - 1).ToList();
         double first = Baseline(bottom.First(w => w.Text == "Pierwszy"));
         double second = Baseline(bottom.First(w => w.Text == "Drugi"));
-        Assert.Contains(bottom, w => w.Text == "1" && Baseline(w) == first);
-        Assert.Contains(bottom, w => w.Text == "2" && Baseline(w) == second);
+        Assert.Contains(bottom, w => w.Text == "1)" && Baseline(w) == first);
+        Assert.Contains(bottom, w => w.Text == "2)" && Baseline(w) == second);
         Assert.True(second > first);
     }
 
