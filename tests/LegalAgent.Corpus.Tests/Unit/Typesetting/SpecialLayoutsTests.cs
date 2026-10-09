@@ -138,9 +138,14 @@ public sealed class SpecialLayoutsTests
         Assert.True(Baseline(words.First(w => w.Text == "Promocję")) > Baseline(unit) + 1);
         Assert.Contains(words, w => w.Text == "Kto" && IsBold(w) && Math.Abs(Baseline(w) - Baseline(words.Last(u => u.Text == "§"))) < 1);
 
-        // A unit in a table-document is text of the section, not a heading.
+        // A unit in a table-document is a heading below its section name (FR-087).
         Assert.Equal(
-            [new TruthHeading(2, null, "Organizator promocji"), new TruthHeading(2, null, "Uczestnik promocji")],
+            [
+                new TruthHeading(2, null, "Organizator promocji"),
+                new TruthHeading(3, "§ 1.", string.Empty),
+                new TruthHeading(2, null, "Uczestnik promocji"),
+                new TruthHeading(3, "§ 2.", "Kto może uczestniczyć"),
+            ],
             result.Truth.Headings.Skip(1));
         Assert.DoesNotContain("Rozdział", result.Truth.Words);
         Assert.Equal(["§", "1.", "Promocję"], result.Truth.Words.SkipWhile(w => w != "§").Take(3));
