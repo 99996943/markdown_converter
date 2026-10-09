@@ -40,6 +40,7 @@ błędy struktury poprawia się w parserze, nie w podziale.
 - Q: Czy oznaczenie do cytatu zawiera etykiety pozycji listy dosłownie, czy gotowy cytat w formie „§ 13 ust. 3 pkt 2”? → A: Dosłownie: oznaczenie jednostki i oryginalne etykiety pozycji (np. „3.”, „2)”); sformułowanie cytatu należy do aplikacji RAG (FR-241).
 - (implementacja T006) Część zaczynająca się od pozycji zagnieżdżonej listy nie zachowuje wcięcia: wcięcie ≥ 4 spacji na początku treści CommonMark czyta jako blok kodu; położenie pozycji opisują `listLabels` (FR-222).
 - (implementacja T033a) Przypisy jednostki bez odwołania są pakowane na końcu jednostki jak inne niepodzielne elementy — gdy nie mieszczą się w ostatniej części, tworzą kolejne części (prawo bankowe, Art. 4: przypisy tytułu ustawy dawały część 3796 znaków) (FR-232).
+- (implementacja T045) Nagłówki sekcji bez własnej treści (np. „Rozdział 1. Przepisy ogólne” nad samymi artykułami) nie trafiają do treści żadnego fragmentu, tylko do `sectionPath` fragmentów podrzędnych; FR-234 je pomija (FR-220, FR-234).
 - Q: Czy każda linia pliku JSONL zawiera pełne metadane dokumentu? → A: Tak, każda linia jest samodzielna: wersja schematu, pełne metadane dokumentu i fragment (FR-251).
 
 ## User Scenarios & Testing *(mandatory)*
@@ -266,9 +267,10 @@ wyniku względem kontraktu.
 - **FR-233**: Treść fragmentu NIE MOŻE zawierać znaczników stron; strony fragmentu są wyłącznie w
   metadanych (FR-242).
 - **FR-234**: Połączona treść wszystkich fragmentów dokumentu MUSI zawierać każde słowo Markdown
-  całego dokumentu (z pominięciem znaczników stron, znaczników stron pominiętych i wiersza tytułu
-  dokumentu, który jest w metadanych) dokładnie tyle razy, ile występuje w dokumencie, z wyjątkiem
-  słów powtórzonych zgodnie z FR-231 i FR-232.
+  całego dokumentu (z pominięciem znaczników stron, znaczników stron pominiętych, wiersza tytułu
+  dokumentu i nagłówków sekcji bez własnej treści — te są w metadanych: tytuł i ścieżki sekcji
+  fragmentów) dokładnie tyle razy, ile występuje w dokumencie, z wyjątkiem słów powtórzonych zgodnie z
+  FR-231 i FR-232.
 
 #### Metadane fragmentu
 

@@ -5,7 +5,8 @@ namespace LegalAgent.Chunking.Tests.Fixtures;
 
 /// <summary>
 /// FR-234 / SC-041: the chunks of a document hold every word of its Markdown (without page markers, skipped-page
-/// comments and the title line) as many times as the document does; words beyond that may only come from the
+/// comments, the title line and the headings of sections without own content, which must be in a chunk's section
+/// path instead) as many times as the document does; words beyond that may only come from the
 /// repetitions the spec allows — the unit heading in continuation parts (FR-231), table header rows with their GFM
 /// separator (FR-223) and
 /// footnote definitions (FR-232).
@@ -24,7 +25,27 @@ public static partial class WordCoverage
             text = text[(text.IndexOf('\n', StringComparison.Ordinal) + 1)..];
         }
 
-        Dictionary<string, int> expected = Count(Words(text));
+        // Headings that start no chunk belong to sections without own content: they are in the section paths only.
+        var chunkHeadings = new HashSet<string>(chunks.Select(c => c.Content.Split('\n')[0]), StringComparer.Ordinal);
+        var paths = new HashSet<string>(chunks.SelectMany(c => c.SectionPath).Select(Normalise), StringComparer.Ordinal);
+        var lines = new List<string>();
+        var pathOnly = new List<string>();
+        foreach (string line in text.Split('\n'))
+        {
+            if (line.StartsWith('#') && !chunkHeadings.Contains(line))
+            {
+                pathOnly.Add(line);
+            }
+            else
+            {
+                lines.Add(line);
+            }
+        }
+
+        var notInPaths = pathOnly.Where(h => !paths.Contains(Normalise(h.TrimStart('#').Replace("\\", string.Empty, StringComparison.Ordinal)))).ToList();
+        Assert.True(notInPaths.Count == 0, "Nagłówki bez fragmentu i bez ścieżki sekcji: " + string.Join(" | ", notInPaths.Take(10)));
+
+        Dictionary<string, int> expected = Count(Words(string.Join('\n', lines)));
         Dictionary<string, int> actual = Count(chunks.SelectMany(c => Words(c.Content)));
         Dictionary<string, int> repeatable = Count(chunks.SelectMany(Repeatable));
 
@@ -56,6 +77,8 @@ public static partial class WordCoverage
             }
         }
     }
+
+    private static string Normalise(string text) => string.Join(' ', Words(text));
 
     private static string[] Words(string text) => text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries);
 
