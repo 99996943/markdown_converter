@@ -281,7 +281,8 @@ public sealed class CorpusLayoutsIntegrationTests
         ]);
         b.Text(Left, y, "1) Opłata nie jest pobierana w pierwszych trzech miesiącach od otwarcia rachunku bieżącego", 8.5);
         b.Text(Left, y + 11, "i w miesiącach, w których wpływy na rachunek przekroczyły 10 000,00 zł.", 8.5);
-        y += 11 + 8 + 10 + 18;
+        b.Text(Left, y + 22, "2) Dotyczy przelewów w złotych realizowanych w systemie bankowości elektronicznej.", 8.5);
+        y += 22 + 11 + 8 + 10;
         b.Text(Left, y, "III. Małe i średnie przedsiębiorstwa", 13, bold: true);
         y += 13 * 1.35 + 9;
         b.Text(Left, y, "Do segmentu należą Klienci zatrudniający średniorocznie od 10 do 249 pracowników, których", Size);
@@ -305,6 +306,144 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("| 3. | Przelew elektroniczny do innego banku | za przelew | 0,50 zł |\n\n", md, StringComparison.Ordinal);
         Assert.DoesNotContain("| Do segmentu", md, StringComparison.Ordinal);
         Assert.DoesNotContain("| 1) Opłata", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// T083e: a gridless tariff continued on the next page under a repeated bold column-name row (the first row there
+    /// wraps) is one GFM table with the header once and all rows in order.
+    /// </summary>
+    [Fact]
+    public async Task GridlessTableOverTwoPages_IsOneTableWithoutTheRepeatedHeader()
+    {
+        var b = new SyntheticPdfBuilder().PageNumberFooter("Strona {n}");
+        b.Page();
+        b.Text(Left, 60, "Taryfa opłat dla firm", 18, bold: true);
+        b.Text(Left, 95, "II. Mikroprzedsiębiorstwa", 13, bold: true);
+        string[] mode = ["za operację"];
+        var first = Enumerable.Range(1, 26).Select(i => ($"{i}.", new[] { $"Czynność bankowa numer {i} w placówce" }, mode, $"{i},00 zł")).ToArray();
+        GridlessTariff(b, 125, first);
+        b.Page();
+        double y = GridlessTariff(b, 70,
+        [
+            ("27.", ["Prowadzenie rachunku pomocniczego (każdy", "kolejny)"], ["miesięcznie"], "8,00 zł"),
+            ("28.", ["Prowadzenie rachunku rozliczeń VAT"], ["miesięcznie"], "0,00 zł"),
+            ("29.", ["Przelew elektroniczny do innego banku"], ["za przelew"], "0,40 zł"),
+        ]);
+        Body(b, y + 30, 10);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t083e.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Equal(1, md.Split('\n').Count(l => l.StartsWith("| **Lp.**", StringComparison.Ordinal)));
+        Assert.Contains("| 26. | Czynność bankowa numer 26 w placówce | za operację | 26,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 27. | Prowadzenie rachunku pomocniczego (każdy kolejny) | miesięcznie | 8,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 29. | Przelew elektroniczny do innego banku | za przelew | 0,40 zł |", md, StringComparison.Ordinal);
+        Assert.Equal(1, md.Split('\n').Count(l => l.StartsWith("| --- |", StringComparison.Ordinal)));
+    }
+
+    /// <summary>
+    /// T083f: the continuation page of a gridless tariff as typeset in the corpus (TAR-06 page 4): sub-positions „2.1.”,
+    /// „2.2.” with wrapped service names, then „3.” wrapped, „4.” … — all rows of the one table.
+    /// </summary>
+    [Fact]
+    public async Task GridlessContinuationPageWithSubPositions_KeepsEveryRowInTheTable()
+    {
+        var b = new SyntheticPdfBuilder().PageNumberFooter("{n} / 2");
+        b.Page();
+        b.Text(64, 60, "Taryfa opłat dla firm", 18, bold: true);
+        b.Text(64, 95, "II. Mikroprzedsiębiorstwa", 13, bold: true);
+        double[] x = [64, 104, 343, 440];
+        void Row(double y, string no, string service, string mode, string rate, string? wrap = null)
+        {
+            b.Text(x[0], y, no, 9.5).Text(x[1], y, service, 9.5).Text(x[2], y, mode, 9.5).Text(x[3], y, rate, 9.5);
+            if (wrap is not null)
+            {
+                b.Text(x[1], y + 12, wrap, 9.5);
+            }
+        }
+
+        void Header(double y)
+        {
+            b.Text(x[0], y, "Lp.", 9.5, bold: true).Text(x[1], y, "Wyszczególnienie czynności", 9.5, bold: true)
+                .Text(x[2], y, "Tryb pobierania", 9.5, bold: true).Text(x[3], y, "Stawka", 9.5, bold: true);
+        }
+
+        Header(130);
+        double top = 154;
+        for (int i = 1; i <= 24; i++)
+        {
+            Row(top, $"{i}.", $"Czynność numer {i} w placówce Banku", "za operację", "1,00 zł");
+            top += 24;
+        }
+
+        Row(top, "25.", "Prowadzenie rachunku bieżącego w pakiecie dla", "za miesiąc", "19,00 zł", "mikroprzedsiębiorstw");
+        b.Page();
+        Header(92);
+        Row(116, "25.1.", "w pierwszych trzech miesiącach od otwarcia", "miesięcznie", "bez opłat", "rachunku");
+        Row(152, "25.2.", "przy wpływach na rachunek co najmniej 5 000,00 zł", "miesięcznie", "bez opłat", "w miesiącu");
+        Row(188, "26.", "Prowadzenie rachunku pomocniczego (każdy", "miesięcznie", "8,00 zł", "kolejny)");
+        Row(224, "27.", "Prowadzenie rachunku rozliczeń VAT", "miesięcznie", "0,00 zł");
+        Row(248, "28.", "Przelew elektroniczny w złotych do innego banku", "za przelew", "0,40 zł");
+        Row(272, "28.1.", "pierwsze 10 przelewów w miesiącu", "miesięcznie", "bez opłat");
+        double next = 296;
+        for (int i = 29; i <= 46; i++)
+        {
+            Row(next, $"{i}.", $"Usługa dodatkowa numer {i}", "za operację", "2,00 zł");
+            next += 24;
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t083f.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Equal(1, md.Split('\n').Count(l => l.StartsWith("| **Lp.**", StringComparison.Ordinal)));
+        Assert.Contains("| 26. | Prowadzenie rachunku pomocniczego (każdy kolejny) | miesięcznie | 8,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 28.1. | pierwsze 10 przelewów w miesiącu | miesięcznie | bez opłat |", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// T083g: a gridless row whose cell gaps happen to be nearly equal (33.5, 39.2, 46 pt, as in TAR-06) is a table row,
+    /// not a justified line — its service cell holds several words at normal spacing.
+    /// </summary>
+    [Fact]
+    public async Task GridlessRowWithNearlyEqualCellGaps_IsATableRow()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(64, 60, "Taryfa opłat dla firm", 18, bold: true);
+        b.Text(64, 92, "Lp.", 9.5, bold: true).Text(104.8, 92, "Wyszczególnienie czynności", 9.5, bold: true)
+            .Text(343.9, 92, "Tryb pobierania", 9.5, bold: true).Text(440.3, 92, "Stawka", 9.5, bold: true);
+        (string No, string Service, string Mode, string Rate)[] rows =
+        [
+            ("1.", "Otwarcie rachunku bieżącego", "jednorazowo", "0,00 zł"),
+            ("2.", "Prowadzenie rachunku rozliczeń VAT", "miesięcznie", "0,00 zł"),
+            ("3.", "Prowadzenie rachunku pomocniczego (każdy", "miesięcznie", "8,00 zł"),
+            ("4.", "Przelew natychmiastowy", "za przelew", "5,00 zł"),
+        ];
+        double y = 116;
+        foreach ((string no, string service, string mode, string rate) in rows)
+        {
+            b.Text(64.4, y, no, 9.5).Text(104.8, y, service, 9.5).Text(343.9, y, mode, 9.5).Text(440.3, y, rate, 9.5);
+            if (no == "3.")
+            {
+                y += 12;
+                b.Text(104.8, y, "kolejny)", 9.5);
+            }
+
+            y += 24;
+        }
+
+        Body(b, y + 30, 12);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("| 3. | Prowadzenie rachunku pomocniczego (każdy kolejny) | miesięcznie | 8,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 4. | Przelew natychmiastowy | za przelew | 5,00 zł |", md, StringComparison.Ordinal);
     }
 
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
