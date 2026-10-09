@@ -70,7 +70,9 @@ public static class Program
             return 2;
         }
 
-        DownloadRun run = await downloader.DownloadAllAsync(addresses, null, cancellationToken).ConfigureAwait(false);
+        var report = new ConsoleReport(stdout, RequiredCount);
+        DownloadRun run = await downloader.DownloadAllAsync(addresses, report, cancellationToken).ConfigureAwait(false);
+        report.Summary(run, Path.GetFullPath(options.OutputDirectory));
         return run.AllSucceeded ? 0 : 3;
     }
 
