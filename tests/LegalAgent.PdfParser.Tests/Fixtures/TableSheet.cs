@@ -58,9 +58,10 @@ internal sealed class TableSheet
     /// Adds a row: <paramref name="name"/> (null = empty left cell, a continuation) split into lines of at most two words,
     /// and <paramref name="words"/> words of content. <paramref name="bullet"/> starts the content with „•”;
     /// <paramref name="paragraphs"/> leaves a paragraph gap in the middle; <paramref name="underline"/> draws a short
-    /// link underline (and a shaded link box) inside the right cell in the middle of the row.
+    /// link underline (and a shaded link box) inside the right cell in the middle of the row; <paramref name="ruled"/> =
+    /// false leaves out the ruling under the row (the next row is not ruled off from it).
     /// </summary>
-    public TableSheet Row(string? name, int words, bool bullet = false, bool paragraphs = false, bool underline = false, bool boldContent = false, double nameOffset = 0)
+    public TableSheet Row(string? name, int words, bool bullet = false, bool paragraphs = false, bool underline = false, bool boldContent = false, double nameOffset = 0, bool ruled = true)
     {
         if (!_open)
         {
@@ -130,7 +131,15 @@ internal sealed class TableSheet
             _y += Leading;
         }
 
-        AddEdge(_y - Leading + LineHeight + 4);
+        if (ruled)
+        {
+            AddEdge(_y - Leading + LineHeight + 4);
+        }
+        else
+        {
+            _y += 12;
+        }
+
         return this;
     }
 
