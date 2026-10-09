@@ -1661,4 +1661,56 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("| Lokata negocjowana | 6 miesięcy | wg umowy |", md, StringComparison.Ordinal);
         Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
     }
+
+    /// <summary>
+    /// T089k: page 25 of PRO-01 — a ruled two-column table alone on a page (wrapped cells, nothing else but the running
+    /// header and footer) is one GFM table, not two columns of text.
+    /// </summary>
+    [Fact]
+    public async Task RuledTwoColumnTableAloneOnAPage_IsOneTable()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(70.0, 42.0, "BP/PRO/01 – Procedura obsługi reklamacji – Bank Przykładowy S.A.", 8.0);
+        b.Text(75.0, 97.0, "Przyczyna nieuwzględnienia", 9.0, bold: true);
+        b.Text(257.0, 97.0, "Dokumenty", 9.0, bold: true);
+        b.Text(312.0, 97.0, "wymagane", 9.0, bold: true);
+        b.Text(363.7, 97.0, "w karcie sprawy", 9.0, bold: true);
+        b.Text(75.0, 115.5, "Operacja prawidłowo autoryzowana", 9.0);
+        b.Text(257.0, 115.5, "Zapis autoryzacji, dziennik zdarzeń, metoda potwierdzenia", 9.0);
+        b.Text(75.0, 127.0, "przez klienta", 9.0);
+        b.Text(257.0, 127.0, "operacji", 9.0);
+        b.Text(75.0, 145.5, "Opłata naliczona zgodnie z tabelą opłat", 9.0);
+        b.Text(257.0, 145.5, "Umowa, tabela opłat obowiązująca w dniu zdarzenia, wydruk", 9.0);
+        b.Text(257.0, 157.0, "naliczenia", 9.0);
+        b.Text(75.0, 175.5, "Roszczenie wniesione po terminie na", 9.0);
+        b.Text(257.0, 175.5, "Data obciążenia, data zgłoszenia, potwierdzenie przyjęcia", 9.0);
+        b.Text(75.0, 187.0, "zgłoszenie", 9.0);
+        b.Text(257.0, 187.0, "reklamacji", 9.0);
+        b.Text(75.0, 205.5, "Brak dowodów", 9.0);
+        b.Text(140.7, 205.5, "uzasadniających zarzut", 9.0);
+        b.Text(257.0, 205.5, "Wezwanie klienta do uzupełnienia, brak odpowiedzi lub", 9.0);
+        b.Text(257.0, 217.0, "niekompletne dokumenty", 9.0);
+        b.Text(75.0, 235.5, "Sprawa dotyczy podmiotu innego niż", 9.0);
+        b.Text(257.0, 235.5, "Umowa", 9.0);
+        b.Text(291.9, 235.5, "z podmiotem trzecim, wyciąg z rachunku,", 9.0);
+        b.Text(75.0, 247.0, "Bank", 9.0);
+        b.Text(257.0, 247.0, "korespondencja", 9.0);
+        b.Text(70.0, 805.0, "Dokument wewnętrzny – Bank Przykładowy S.A.", 8.0);
+        b.Text(471.8, 805.0, "Strona 25 z 26", 8.0);
+        foreach (double y in new[] { 83.0, 101.5, 131.5, 161.5, 191.5, 221.5, 251.5 })
+        {
+            b.HLine(70.0, 525.0, y);
+        }
+
+        b.VLine(70.0, 83.0, 251.5);
+        b.VLine(252.0, 83.0, 251.5);
+        b.VLine(525.0, 83.0, 251.5);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("| **Przyczyna nieuwzględnienia** | **Dokumenty wymagane w karcie sprawy** |", md, StringComparison.Ordinal);
+        Assert.Contains("| Operacja prawidłowo autoryzowana przez klienta | Zapis autoryzacji, dziennik zdarzeń, metoda potwierdzenia operacji |", md, StringComparison.Ordinal);
+        Assert.Contains("| Sprawa dotyczy podmiotu innego niż Bank | Umowa z podmiotem trzecim, wyciąg z rachunku, korespondencja |", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("#", md, StringComparison.Ordinal);
+    }
 }
