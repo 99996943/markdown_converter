@@ -1,0 +1,206 @@
+bloki:
+  - id: procedura-reklamacje-dod3-przyjecie-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy klient składa reklamację w placówce w obecności innych osób, zadbaj o dyskrecję rozmowy; zaproponuj przejście do wydzielonego stanowiska lub umówienie spotkania w innym terminie."
+          - tekst: "Poproś klienta o przedstawienie dokumentów potwierdzających zastrzeżenia, takich jak potwierdzenia operacji, korespondencja, umowy i zrzuty ekranu; skopiuj je w jego obecności i zwróć oryginały."
+            podkroki:
+              - tekst: "Jeżeli klient nie posiada dokumentów, nie odmawiaj przyjęcia reklamacji; zapisz, że klient oświadczył o ich braku, i wskaż, że jednostka rozpatrująca sama zgromadzi niezbędne dane."
+              - tekst: "Jeżeli klient przynosi dokumenty obejmujące dane osób trzecich, ustal, czy ich przetwarzanie jest niezbędne, i w razie potrzeby poproś o ich zanonimizowanie."
+          - tekst: "Wyjaśnij klientowi, w jaki sposób zostanie poinformowany o dalszych etapach i jak może sprawdzić status sprawy; podaj numer sprawy w sposób, który klient może zanotować."
+          - tekst: "Zakończ rozmowę podsumowaniem: co zostało zapisane, kiedy klient otrzyma odpowiedź i co należy zrobić, gdyby odpowiedź nie nadeszła w terminie."
+
+  - id: procedura-reklamacje-dod3-przyjecie-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - akapit: "Zdarza się, że klient składa zastrzeżenia w sposób nacechowany emocjami, a rozmowa przybiera ostry ton. Pracownik zachowuje spokój i profesjonalizm, pamiętając, że emocje klienta wynikają zazwyczaj z poczucia krzywdy lub bezradności."
+      - ustep: "W kontakcie z niezadowolonym klientem pracownik stosuje następujące zasady:"
+        punkty:
+          - "słucha uważnie, nie przerywa i nie wchodzi w polemikę, a w razie potrzeby powtarza własnymi słowami to, co zrozumiał;"
+          - "okazuje zrozumienie dla sytuacji klienta, nie przyjmując odpowiedzialności za zdarzenia, których przyczyny nie zostały jeszcze ustalone;"
+          - "zadaje pytania otwarte, które pozwalają ustalić fakty, a nie pytania sugerujące winę klienta;"
+          - "mówi jasnym językiem, bez skrótów i terminologii wewnętrznej;"
+          - "w razie obraźliwego zachowania klienta uprzejmie informuje o konsekwencjach i, jeżeli zachowanie nie ustaje, przerywa rozmowę, odnotowując to w rejestrze."
+      - akapit: "Pracownik, który odczuwa nadmierne obciążenie rozmową, ma prawo poprosić przełożonego o przejęcie sprawy; kierownik zapewnia mu wsparcie i możliwość krótkiej przerwy."
+
+  - id: procedura-reklamacje-dod3-przyjecie-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Wydając klientowi potwierdzenie przyjęcia reklamacji, zadbaj, aby zawierało ono wszystkie elementy niezbędne do późniejszej identyfikacji sprawy."
+            podkroki:
+              - tekst: "Wpisz numer sprawy, datę i godzinę wpływu oraz dane pracownika, który przyjął reklamację."
+              - tekst: "Wskaż przewidywany termin udzielenia odpowiedzi, uwzględniając rodzaj sprawy i terminy określone w przepisach."
+              - tekst: "Dołącz informację o sposobie sprawdzenia statusu sprawy i o adresie {{fakt:kontakt.email-reklamacje}}, pod którym można uzyskać dodatkowe informacje."
+          - tekst: "Potwierdzenie na piśmie lub na trwałym nośniku wyślij w terminie {{fakt:termin.reklamacje-proc.potwierdzenie}} od wpływu reklamacji, jeżeli klient nie otrzymał go w momencie jej składania."
+          - tekst: "Jeżeli reklamacja złożona została w sposób uniemożliwiający wydanie potwierdzenia na miejscu, na przykład poprzez skrzynkę podawczą lub e-mailem, wyślij potwierdzenie na wskazany przez klienta adres lub do jego bankowości elektronicznej."
+
+  - id: procedura-reklamacje-dod3-klasyfikacja-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - akapit: "Poprawna klasyfikacja zgłoszenia determinuje cały dalszy przebieg sprawy. Pomyłki w tym etapie prowadzą do przekroczenia terminów, niewłaściwego doboru analityka lub niewłaściwych pouczeń dla klienta, dlatego procedura wymaga stosowania jednolitych kryteriów."
+      - tabela:
+          kolumny:
+            - naglowek: "Treść zgłoszenia"
+              waga: 4
+            - naglowek: "Klasyfikacja"
+              waga: 3
+            - naglowek: "Uzasadnienie"
+              waga: 4
+          wiersze:
+            - ["„Nie zgadzam się z opłatą pobraną za kartę”", "Reklamacja usługi bankowej", "Klient kwestionuje należność pobraną przez Bank"]
+            - ["„Dlaczego nie mogę zalogować się do bankowości?”", "Zapytanie lub zgłoszenie techniczne", "Brak zastrzeżeń do działania Banku; w razie niezadowolenia klienta zarejestruj reklamację"]
+            - ["„Chciałbym zmienić limit karty”", "Wniosek o zmianę produktu", "Nie dotyczy zastrzeżeń; obsługuje się według procedury produktowej"]
+            - ["„Pracownik zachował się nieuprzejmie”", "Reklamacja dotycząca obsługi", "Zarzut dotyczy sposobu świadczenia usługi"]
+            - ["„Odebrano mi środki z konta bez mojej zgody”", "Reklamacja usługi płatniczej, priorytet podwyższony", "Dotyczy możliwej nieautoryzowanej transakcji"]
+
+  - id: procedura-reklamacje-dod3-klasyfikacja-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-klasyfikacja
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli reklamacja zawiera kilka odrębnych zarzutów, ustal, czy każdy z nich dotyczy tego samego stanu faktycznego, czy odmiennych zdarzeń."
+            podkroki:
+              - tekst: "Gdy zarzuty dotyczą tego samego zdarzenia, prowadź jedną sprawę i w odpowiedzi odnieś się do każdego z nich oddzielnie."
+              - tekst: "Gdy zarzuty dotyczą różnych zdarzeń lub produktów, rozdziel sprawy w rejestrze REK, nadaj im osobne numery i powiąż je z reklamacją pierwotną."
+              - tekst: "Poinformuj klienta, że jego zgłoszenie zostało podzielone, i wskaż, jakie numery spraw otrzymały poszczególne zarzuty."
+          - tekst: "Dla każdej wyodrębnionej sprawy ustal osobno termin odpowiedzi; jeżeli terminy są różne, możesz udzielić jednej odpowiedzi łącznej nie później niż w najkrótszym z nich."
+          - tekst: "W razie wątpliwości, czy podział nie utrudni klientowi zrozumienia rozstrzygnięć, skonsultuj sposób prowadzenia sprawy z kierownikiem zespołu klasyfikacji."
+
+  - id: procedura-reklamacje-dod3-analiza-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - ustep: "Dowody zgromadzone w sprawie powinny zostać ocenione pod względem wiarygodności i znaczenia. Analityk stosuje następujące zasady oceny:"
+        punkty:
+          - "dokumenty sporządzone w toku zwykłej działalności Banku, na przykład zapisy w systemach, uznaje się za wiarygodne, o ile nie ma podstaw do kwestionowania ich integralności;"
+          - "oświadczenia pracowników ocenia się w kontekście dokumentów i zapisów z systemów, a nie w oderwaniu od nich;"
+          - "oświadczenia klienta uwzględnia się z taką samą starannością jak dokumenty, nie zakładając z góry ich nieprawdziwości;"
+          - "nagrania rozmów odsłuchuje się w całości, a nie wyłącznie w wybranych fragmentach, i zapisuje się w notatce kluczowe ustalenia wraz z czasem nagrania;"
+          - "dowody, których nie udało się zebrać z przyczyn niezależnych od Banku, wskazuje się w notatce wraz z opisem podjętych starań."
+      - akapit: "Jeżeli dowody są sprzeczne, a sprzeczności nie da się usunąć, analityk wskazuje to w notatce i proponuje rozstrzygnięcie na korzyść klienta, o ile przepisy lub zasady wewnętrzne nie stanowią inaczej."
+
+  - id: procedura-reklamacje-dod3-analiza-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - kroki:
+          - tekst: "Gdy reklamacja dotyczy kwot pobranych na podstawie umowy ramowej o prowadzenie rachunku, sprawdź podstawę pobrania i zgodność z aktualnie obowiązującą tabelą opłat."
+            podkroki:
+              - tekst: "Ustal wersję tabeli opłat, regulaminu i umowy obowiązujące w dniu pobrania; zmiany wprowadzone po tej dacie nie mają znaczenia dla oceny."
+              - tekst: "Sprawdź, czy klient został poinformowany o zmianie opłat w terminie i w sposób przewidziany w umowie oraz czy miał możliwość sprzeciwu."
+              - tekst: "Zbadaj, czy opłata została naliczona od właściwej podstawy i w prawidłowej wysokości, w tym czy uwzględniono ewentualne zwolnienia i promocje."
+          - tekst: "Porównaj sprawę z innymi sprawami o podobnym stanie faktycznym i ustal, czy rozstrzygnięcie jest spójne z dotychczasowymi decyzjami Banku."
+          - tekst: "Jeżeli opłata została naliczona błędnie, sprawdź, czy błąd dotyczył także innych klientów, i zgłoś ten fakt właścicielowi produktu oraz jednostce rozpatrującej jako możliwy błąd masowy."
+
+  - id: procedura-reklamacje-dod3-analiza-3
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-analiza
+    elementy:
+      - akapit: "Reklamacje dotyczące bankomatów i wpłatomatów wymagają ustalenia, czy urządzenie działało prawidłowo w czasie transakcji, oraz czy rozliczenie gotówki zgadza się z zapisami systemu. Dane z urządzeń są dostępne w systemie monitoringu i w raportach z rozliczenia kaset."
+      - kroki:
+          - tekst: "Zwróć się do jednostki zarządzającej siecią urządzeń o dane dotyczące transakcji: dziennik urządzenia, stan kaset przed i po transakcji, zapis ewentualnych błędów technicznych."
+          - tekst: "Sprawdź, czy urządzenie nie zgłaszało usterek w czasie transakcji, oraz czy w dniu rozliczenia stwierdzono nadwyżkę lub niedobór gotówki."
+            podkroki:
+              - tekst: "Jeżeli stwierdzono nadwyżkę gotówki w kwocie zbliżonej do wartości reklamowanej wpłaty, uznaj rachunek klienta po ustaleniu tożsamości operacji."
+              - tekst: "Jeżeli rozliczenie nie wykazuje różnicy, zażądaj zapisu z kamery monitoringu, o ile okres jego przechowywania na to pozwala."
+          - tekst: "Przy transakcjach w bankomatach obcych sieci zwróć się do operatora urządzenia o dane i dokumenty rozliczeniowe w terminie {{fakt:termin.reklamacje-proc.chargeback-dokumenty}}."
+
+  - id: procedura-reklamacje-dod3-odpowiedz-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - ustep: "Zatwierdzenie odpowiedzi na reklamację następuje według limitów decyzyjnych. Poziom zatwierdzenia zależy od wartości roszczenia i rodzaju rozstrzygnięcia:"
+        punkty:
+          - "analityk zatwierdza odpowiedzi w sprawach niepodlegających wyższym limitom, w których rozstrzygnięcie jest zgodne z utrwaloną praktyką Banku;"
+          - "kierownik placówki zatwierdza rozstrzygnięcia o wartości do {{fakt:limit.reklamacje-proc.kierownik-placowki}};"
+          - "kierownik jednostki rozpatrującej zatwierdza odpowiedzi w sprawach powyżej tego limitu do kwoty {{fakt:limit.reklamacje-proc.biuro}};"
+          - "dyrektor jednostki rozpatrującej zatwierdza rozstrzygnięcia do kwoty {{fakt:limit.reklamacje-proc.dyrektor}} oraz sprawy precedensowe;"
+          - "powyżej tej kwoty o rozstrzygnięciu decyduje Zarząd Banku na wniosek dyrektora jednostki."
+      - akapit: "Limity dotyczą łącznej wartości roszczenia w sprawie, w tym odsetek i opłat. Nie wolno dzielić roszczenia na mniejsze kwoty w celu ominięcia limitu, a próby takie traktuje się jako naruszenie procedury."
+
+  - id: procedura-reklamacje-dod3-odpowiedz-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: krok-reklamacje-odpowiedz
+    elementy:
+      - kroki:
+          - tekst: "Zanim wyślesz odpowiedź, przeprowadź końcową kontrolę, która ma wychwycić błędy faktyczne, redakcyjne i formalne."
+            podkroki:
+              - tekst: "Sprawdź zgodność danych klienta, numeru sprawy, kwot, dat i numerów produktów z danymi w rejestrze i systemach źródłowych."
+              - tekst: "Zweryfikuj, czy odpowiedź odnosi się do wszystkich zarzutów, a pouczenie jest zgodne z wymogami przepisów."
+              - tekst: "Przeczytaj odpowiedź z perspektywy klienta i sprawdź, czy rozstrzygnięcie jest zrozumiałe bez znajomości wewnętrznej terminologii."
+          - tekst: "Zwróć uwagę na ton odpowiedzi; unikaj sformułowań kategorycznych i oskarżających, a w przypadku odmowy — wyjaśnij, co klient może zrobić dalej."
+          - tekst: "Po wysłaniu odpowiedzi oznacz sprawę w rejestrze REK jako odpowiedzianą i ustaw przypomnienie o upływie terminu na wniesienie odwołania."
+          - tekst: "W razie stwierdzenia błędu po wysłaniu odpowiedzi postępuj zgodnie z zasadami sprostowania, nie czekając na reakcję klienta."
+
+  - id: procedura-reklamacje-dod3-szczegolne-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje dotyczące usług ubezpieczeniowych i inwestycyjnych oferowanych za pośrednictwem Banku.** Bank często występuje jako pośrednik w sprzedaży produktów podmiotów zewnętrznych. W takich przypadkach reklamacja może dotyczyć zarówno sposobu sprzedaży, za który odpowiada Bank, jak i samego produktu, za który odpowiada jego wystawca."
+      - ustep: "Pracownik rozpatrujący taką reklamację:"
+        punkty:
+          - "ustala, czy zarzuty dotyczą czynności wykonanych przez Bank (informacja przedumowna, doradztwo, przyjęcie wniosku), czy też wykonania umowy przez podmiot zewnętrzny;"
+          - "w zakresie czynności Banku rozpatruje reklamację samodzielnie zgodnie z procedurą i w terminie przewidzianym dla usług innego rodzaju;"
+          - "w pozostałym zakresie przekazuje reklamację podmiotowi zewnętrznemu zgodnie z umową współpracy, informując o tym klienta i wskazując, gdzie ma kierować dalszą korespondencję;"
+          - "w razie wątpliwości, kto jest odpowiedzialny za sporną czynność, nie odsyła klienta do innej instytucji, lecz ustala podział odpowiedzialności z jednostką prawną."
+      - akapit: "Odpowiedź w sprawach dotyczących usług inwestycyjnych uwzględnia przepisy o ochronie inwestorów i obowiązki informacyjne, o których klient powinien być poinformowany."
+
+  - id: procedura-reklamacje-dod3-szczegolne-2
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-szczegolne
+    elementy:
+      - akapit: "**Reklamacje zgłaszane po wygaśnięciu stosunku z klientem.** Klient, który zamknął rachunki i zakończył współpracę z Bankiem, może nadal składać reklamacje dotyczące okresu jej trwania. Bank rozpatruje takie reklamacje na zasadach ogólnych, o ile roszczenie nie uległo przedawnieniu."
+      - kroki:
+          - tekst: "Zidentyfikuj klienta na podstawie danych archiwalnych; ponieważ klient nie ma już dostępu do bankowości elektronicznej, poproś o potwierdzenie tożsamości innymi sposobami, na przykład kopią dokumentu."
+          - tekst: "Pobierz z archiwum dokumentację dotyczącą spornego zdarzenia; jeżeli dokumenty zostały zniszczone po upływie okresu przechowywania, odnotuj ten fakt w notatce."
+            podkroki:
+              - tekst: "Brak dokumentów nie jest sam w sobie podstawą oddalenia reklamacji; oceń dostępne dane i oświadczenia klienta."
+              - tekst: "O braku dokumentacji powiadom jednostkę prawną, która oceni skutki dla stanowiska Banku."
+          - tekst: "Wyślij odpowiedź na adres podany w reklamacji; jeżeli odbiega od adresu w systemie, zweryfikuj go, aby uniknąć wysłania danych osobie nieuprawnionej."
+
+  - id: procedura-reklamacje-dod3-kontrola-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-kontrola
+    elementy:
+      - akapit: "Niezależnie od kontroli wewnętrznej w jednostce rozpatrującej, jakość obsługi reklamacji bada się z perspektywy klienta. Badanie opiera się na ankietach, analizie skarg na sposób prowadzenia reklamacji oraz obserwacji kontaktów z klientami."
+      - ustep: "W tym celu jednostka rozpatrująca reklamacje:"
+        punkty:
+          - "przesyła klientom po zakończeniu sprawy krótką ankietę dotyczącą szybkości, zrozumiałości i uprzejmości kontaktu;"
+          - "analizuje wyniki ankiet raz na kwartał i porównuje je z danymi o terminowości i odsetku uznań;"
+          - "przeprowadza wybrane rozmowy z klientami, którzy wyrazili zgodę, aby poznać ich oczekiwania i doświadczenia;"
+          - "ocenia komunikaty i wzory odpowiedzi pod kątem prostoty języka, korzystając z wiedzy specjalistów ds. komunikacji;"
+          - "opracowuje rekomendacje usprawnień i przekazuje je do właścicieli procesów."
+      - akapit: "Wyniki badania nie służą ocenie indywidualnej pracowników, lecz doskonaleniu procesu, chyba że wskazują na rażące naruszenia, które rozpatruje się według odrębnych zasad."
+
+  - id: procedura-reklamacje-dod3-archiwizacja-1
+    typy: [procedury]
+    tematy: [procedura-reklamacje]
+    kategoria: reklamacje-archiwizacja-opc
+    elementy:
+      - ustep: "Brakowanie dokumentacji reklamacyjnej po upływie okresu przechowywania przebiega w następujący sposób:"
+        punkty:
+          - "jednostka rozpatrująca co roku sporządza wykaz spraw, dla których okres przechowywania upłynął, i przesyła go do jednostki prawnej oraz jednostki zgodności w celu sprawdzenia, czy nie istnieją przeszkody do zniszczenia;"
+          - "dokumentacji objętej zakazem niszczenia, na przykład w związku z kontrolą, postępowaniem sądowym lub zgłoszeniem do organu, nie usuwa się, a okres jej przechowywania przedłuża się do czasu ustania przyczyny;"
+          - "po uzyskaniu akceptacji dokumenty papierowe niszczy się w sposób uniemożliwiający odtworzenie, a dane elektroniczne usuwa się trwale lub poddaje anonimizacji;"
+          - "z czynności sporządza się protokół zawierający liczbę spraw, daty zniszczenia i podpisy osób uczestniczących;"
+          - "protokoły brakowania przechowuje się przez {{fakt:okres.reklamacje-proc.archiwum-biezace}}, aby można było wykazać zgodność z zasadami przechowywania."
+      - akapit: "Dokumentacji nie wolno niszczyć selektywnie, w sposób zmieniający jej treść lub utrudniający ocenę przebiegu sprawy."

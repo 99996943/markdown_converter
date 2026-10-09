@@ -1,0 +1,79 @@
+bloki:
+  - id: procedura-pelnomocnictwa-dod-przyjecie-8
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-przyjecie
+    elementy:
+      - kroki:
+          - tekst: "Jeżeli mocodawca chce ograniczyć czas obowiązywania pełnomocnictwa, zaproponuj mu wybór jednej z form: umocowania na czas oznaczony, do dnia zdarzenia wskazanego w dokumencie albo bezterminowego z obowiązkiem okresowego potwierdzania aktualności."
+            podkroki:
+              - tekst: "Dla pełnomocnictw jednorazowych wskaż, że termin ważności dokumentu wynosi {{fakt:pelnomocnictwo.termin.jednorazowe-waznosc}}, a po jego upływie dyspozycja nie zostanie wykonana."
+              - tekst: "Dla pełnomocnictw na czas oznaczony zapisz datę końcową w systemie i ustaw przypomnienie dla placówki na okres poprzedzający wygaśnięcie."
+          - tekst: "Wyjaśnij mocodawcy, że wygaśnięcie pełnomocnictwa nie wymaga jego osobnego oświadczenia, ale zalecane jest poinformowanie pełnomocnika i zwrot oryginału dokumentu."
+          - tekst: "Zwróć uwagę, że zapisy o nieograniczonym czasie trwania umocowania nie wyłączają prawa mocodawcy do jego odwołania w każdym czasie."
+
+  - id: procedura-pelnomocnictwa-dod-weryfikacja-8
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-weryfikacja
+    elementy:
+      - akapit: "Weryfikacja dokumentu pełnomocnictwa obejmuje ocenę jego formy zewnętrznej i treści. Pracownik nie ocenia skutków prawnych w sposób wiążący, lecz sprawdza, czy dokument spełnia wymagania Banku i nie zawiera cech wskazujących na nieprawidłowość."
+      - ustep: "Podczas oceny dokumentu pracownik zwraca uwagę na:"
+        punkty:
+          - "ciągłość tekstu i numerację stron, zwłaszcza w dokumentach wielostronicowych, w których strony mogły zostać wymienione;"
+          - "rodzaj i jakość papieru, druku oraz tuszu podpisów, w tym ślady kopiowania lub nakładania podpisu z innego dokumentu;"
+          - "zgodność daty sporządzenia z datą poświadczenia i datą wpływu do Banku;"
+          - "nazwy i adres mocodawcy, w szczególności w odniesieniu do przedsiębiorców, wobec których dane muszą być zgodne z rejestrem;"
+          - "informację o zastrzeżeniach, warunkach lub terminach skuteczności umocowania, które mogą ograniczać jego zakres."
+      - akapit: "Dokumenty złożone w formie elektronicznej, opatrzone kwalifikowanym podpisem elektronicznym, weryfikuje się przy użyciu narzędzi wskazanych przez {{fakt:pelnomocnictwo.jednostka.weryfikacja}}; ocenę zapisuje się w karcie weryfikacji."
+
+  - id: procedura-pelnomocnictwa-dod-wygasniecie-5
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-opis-wygasniecie
+    elementy:
+      - kroki:
+          - tekst: "Gdy pełnomocnik składa rezygnację z pełnienia funkcji, przyjmij jego oświadczenie na formularzu F-PEŁ-03 i zweryfikuj jego tożsamość tak jak przy składaniu dyspozycji."
+            podkroki:
+              - tekst: "Poinformuj pełnomocnika, że rezygnacja nie zwalnia go z odpowiedzialności za czynności dokonane wcześniej ani z obowiązku rozliczenia się z mocodawcą."
+              - tekst: "Zaznacz w module datę rezygnacji i zablokuj dostęp pełnomocnika do bankowości elektronicznej oraz kart."
+          - tekst: "Powiadom mocodawcę o rezygnacji pełnomocnika w terminie {{fakt:pelnomocnictwo.termin.zawiadomienie-mocodawcy}}, w sposób wskazany w umowie, i poinformuj go o możliwości ustanowienia nowego pełnomocnika."
+          - tekst: "Jeżeli pełnomocnik był jedyną osobą uprawnioną do dyspozycji na rachunku, na przykład na rachunku podmiotu zbiorowego, powiadom kierownika placówki o ryzyku braku możliwości obsługi rachunku."
+          - tekst: "Dołącz oświadczenie o rezygnacji do akt pełnomocnictwa i oznacz teczkę adnotacją o zakończeniu umocowania."
+
+  - id: procedura-pelnomocnictwa-dod-szczegolne-7
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-szczegolne-opc
+    elementy:
+      - akapit: "Zdarza się, że pełnomocnik zwraca się do Banku o informacje na temat rachunku mocodawcy, które wykraczają poza jego umocowanie lub służą celom innym niż wykonanie pełnomocnictwa. Pracownik pamięta o tym, że obowiązek zachowania tajemnicy bankowej wobec mocodawcy jest nadrzędny wobec oczekiwań pełnomocnika."
+      - ustep: "W takich sytuacjach pracownik:"
+        punkty:
+          - "ogranicza udzielane informacje do tych, które są niezbędne do wykonania konkretnej czynności zleconej przez pełnomocnika;"
+          - "nie udostępnia historii rachunku, danych o innych produktach mocodawcy ani danych jego rodziny, jeżeli pełnomocnictwo wyraźnie ich nie obejmuje;"
+          - "odmawia wydania zaświadczeń o stanie środków, jeżeli mocodawca nie upoważnił do tego pełnomocnika w sposób wyraźny;"
+          - "w razie nacisków lub prób obejścia ograniczeń informuje kierownika placówki i zapisuje zdarzenie w rejestrze incydentów;"
+          - "poucza pełnomocnika, że o rozszerzenie zakresu informacji może zwrócić się mocodawca."
+      - akapit: "Zasady te stosuje się odpowiednio wobec Klientów firmowych, w których pełnomocnicy pełnią funkcje księgowych lub doradców, jeżeli nie wynika z umowy szerszy zakres uprawnień."
+
+  - id: procedura-pelnomocnictwa-dod-kontrola-7
+    typy: [procedury]
+    tematy: [procedura-pelnomocnictwa]
+    kategoria: pelnomocnictwa-kontrola
+    elementy:
+      - tabela:
+          kolumny:
+            - naglowek: "Rodzaj kontroli"
+              waga: 3
+            - naglowek: "Zakres"
+              waga: 4
+            - naglowek: "Częstotliwość"
+              waga: 2
+            - naglowek: "Wykonawca"
+              waga: 3
+          wiersze:
+            - ["Kontrola bieżąca", "Próba pełnomocnictw zarejestrowanych w placówce w poprzednim miesiącu", "Co miesiąc", "Kierownik placówki"]
+            - ["Kontrola kwartalna", "Próba pełnomocnictw ze wszystkich placówek, ze szczególnym uwzględnieniem zagranicznych i firmowych", "Co kwartał", "{{fakt:pelnomocnictwo.jednostka.weryfikacja}}"]
+            - ["Przegląd aktualności", "Umocowania bezterminowe i okresowe po terminie potwierdzenia", "Co {{fakt:pelnomocnictwo.termin.potwierdzenie-aktualnosci}}", "Komórka centralna"]
+            - ["Kontrola ryzyka", "Dyspozycje pełnomocników w kontekście przeciwdziałania praniu pieniędzy", "Zgodnie z planem", "{{fakt:pelnomocnictwo.jednostka.aml}}"]
+            - ["Audyt wewnętrzny", "Ocena stosowania procedury i skuteczności kontroli", "Nie rzadziej niż {{fakt:pelnomocnictwo.okres.audyt}}", "{{fakt:pelnomocnictwo.jednostka.audyt}}"]
