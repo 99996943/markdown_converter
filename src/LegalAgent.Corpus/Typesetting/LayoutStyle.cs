@@ -40,7 +40,7 @@ public sealed record LayoutStyle
     public double Leading { get; init; } = 14;
 
     /// <summary>Extra space after a paragraph or list item.</summary>
-    public double ParagraphGap { get; init; } = 5;
+    public double ParagraphGap { get; init; } = 8;
 
     /// <summary>Indentation step of nested list levels.</summary>
     public double ListIndent { get; init; } = 18;
@@ -56,9 +56,6 @@ public sealed record LayoutStyle
 
     /// <summary>Whether level-3 unit headings are centred on the column.</summary>
     public bool CenterUnits { get; init; } = true;
-
-    /// <summary>Whether a level-2 heading with a label prints the label and the text on two lines.</summary>
-    public bool ChapterOnTwoLines { get; init; }
 
     /// <summary>Footnote font size.</summary>
     public double FootnoteSize { get; init; } = 8;

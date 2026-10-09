@@ -119,7 +119,7 @@ public sealed class TypesetterTests
     public void RunningHeaderFooterAndPageNumbers_AreArtifactsWithTheTotalPageCount()
     {
         LayoutStyle style = Style();
-        TypesetResult result = Typesetter.Typeset(Doc(Paragraphs(14)), style);
+        TypesetResult result = Typesetter.Typeset(Doc(Paragraphs(24)), style);
 
         Assert.True(result.PageCount >= 3);
         List<List<Word>> pages = PageWords(result.Pdf);
