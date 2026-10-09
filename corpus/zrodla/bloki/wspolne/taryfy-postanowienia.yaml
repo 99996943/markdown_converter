@@ -7,7 +7,7 @@ bloki:
     elementy:
       - akapit: "Taryfa {określa|ustala} wysokość opłat i prowizji pobieranych przez Bank Przykładowy S.A. z tytułu {świadczenia|wykonywania} czynności bankowych oraz usług dodatkowych. Taryfa stanowi integralną część umów zawieranych z Klientami i {obowiązuje|ma zastosowanie} w brzmieniu z dnia dokonania danej czynności."
       - ustep: "Do spraw nieuregulowanych w Taryfie {stosuje się|mają zastosowanie} postanowienia regulaminów właściwych dla danego produktu. W razie rozbieżności {pierwszeństwo mają|przeważają} postanowienia umowy zawartej z Klientem."
-      - ustep: "Taryfa {jest dostępna|została udostępniona} w placówkach Banku oraz na stronie {{fakt:bank.strona}}. Informacji o stawkach {udziela|udzielają także} pracownicy infolinii pod numerem {{fakt:kontakt.infolinia}}."
+      - ustep: "Taryfa {jest dostępna|została udostępniona} w placówkach Banku oraz na stronie {{fakt:bank.strona}}. Informacji o stawkach {udzielają|udzielają także} pracownicy infolinii pod numerem {{fakt:kontakt.infolinia}}."
       - akapit: "O zmianie Taryfy Bank informuje Klientów na trwałym nośniku {nie później niż|z wyprzedzeniem nie krótszym niż} {{fakt:termin.zmiana-regulaminu}} przed dniem wejścia zmian w życie."
 
   - id: wspolne-taryfa-zasady-pobierania
@@ -28,5 +28,5 @@ bloki:
     wspolny: true
     elementy:
       - ustep: "Transakcje wymagające przeliczenia walut {są rozliczane|rozlicza się} według kursów z Tabeli kursów walut Banku, obowiązującej w chwili {realizacji|wykonania} transakcji. Tabela {jest sporządzana|jest ustalana} w dni robocze o godzinie {{fakt:kurs.godzina-tabeli}} i publikowana na stronie {{fakt:bank.strona}}."
-      - ustep: "Kurs kupna i kurs sprzedaży {wynikają|są ustalane} na podstawie kursu średniego, {pomniejszonego albo powiększonego|odpowiednio obniżonego lub podwyższonego} o marżę w wysokości {{fakt:kurs.marza-przeliczen}}."
+      - ustep: "Kurs kupna i kurs sprzedaży {są ustalane|są wyznaczane} na podstawie kursu średniego, {pomniejszonego albo powiększonego|odpowiednio obniżonego lub podwyższonego} o marżę w wysokości {{fakt:kurs.marza-przeliczen}}."
       - akapit: "Przeliczeń między walutami obcymi {dokonuje się|Bank dokonuje} za pośrednictwem złotego, chyba że umowa przewiduje inny sposób. Zmiana kursu w ciągu dnia nie powoduje korekty rozliczonych już transakcji."
