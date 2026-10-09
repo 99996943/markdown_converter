@@ -190,7 +190,7 @@ dla wszystkich dokumentów (quickstart.md §2).
 
 - [X] T074 [P] [US2] Testy w `ctests/Unit/QualityMetricsTests.cs` (red) dla `ctests/Corpus/QualityMetrics.cs` na małych `DocumentTruth` + Markdown/model: kompletność słów (z odescapowaniem Markdown i usunięciem `<!-- page: N -->`; słowo spoza PDF wykryte), kolejność czytania, nagłówki (poziom i oryginalne oznaczenie; fałszywy nagłówek liczony), pozycje list (label, głębokość), tabele (stawka w wierszu nazwy usługi i numeru pozycji; jedna tabela na tabelę źródłową; brak powtórzonych nagłówków; zgodność komórek), raport wskazuje dokument i jednostkę przy niepowodzeniu
 - [X] T075 [US2] Zaimplementuj `ctests/Corpus/QualityMetrics.cs` — T074 green
-- [ ] T076 [US2] Rozszerz `ctests/Corpus/CorpusSampleTests.cs` o metryki SC-022 (≥ 99,5% słów, 0 słów spoza PDF), SC-024 (≥ 98% nagłówków, ≤ 1% fałszywych), SC-025 (≥ 98% list), SC-026 (100% stawek w wierszu, 100% tabel taryf jako GFM bez powtórzonych nagłówków, ≥ 98% komórek); utwórz `ctests/Corpus/CorpusFullTests.cs` (`[Trait("Category","CorpusFull")]`, `Skip` gdy brak `LEGALAGENT_CORPUS_FULL`) z tymi samymi asercjami dla wszystkich dokumentów + SC-020; uruchom pełny zestaw i zapisz wyniki pomiaru (odsetki per dokument i lista niepowodzeń) w `specs/003-synthetic-bank-corpus/research.md` „Pomiar korpusu” — niepowodzenia to czerwone stany dla T077–T088
+- [X] T076 [US2] Rozszerz `ctests/Corpus/CorpusSampleTests.cs` o metryki SC-022 (≥ 99,5% słów, 0 słów spoza PDF), SC-024 (≥ 98% nagłówków, ≤ 1% fałszywych), SC-025 (≥ 98% list), SC-026 (100% stawek w wierszu, 100% tabel taryf jako GFM bez powtórzonych nagłówków, ≥ 98% komórek); utwórz `ctests/Corpus/CorpusFullTests.cs` (`[Trait("Category","CorpusFull")]`, `Skip` gdy brak `LEGALAGENT_CORPUS_FULL`) z tymi samymi asercjami dla wszystkich dokumentów + SC-020; uruchom pełny zestaw i zapisz wyniki pomiaru (odsetki per dokument i lista niepowodzeń) w `specs/003-synthetic-bank-corpus/research.md` „Pomiar korpusu” — niepowodzenia to czerwone stany dla T077–T088
 
 ### Implementation for User Story 2 (poprawki biblioteki — tylko potwierdzone pomiarem T076)
 
@@ -199,8 +199,8 @@ Każda para: czerwony test na minimalnym PDF z `SyntheticPdfBuilder` w `ptests/I
 bez zmian (inaczej zgoda właściciela, FR-163). Zadania niepotwierdzone pomiarem oznaczyć `[X]` z
 adnotacją „nie dotyczy — pomiar T076”.
 
-- [ ] T077 [US2] Test (red): metryczka procedury (tabela klucz–wartość z siatką, 8 wierszy, 1. strona) → tabela GFM 2-kolumnowa, nie tabela-dokument ani nagłówki (R11)
-- [ ] T078 [US2] Poprawka dla T077 w `src/LegalAgent.PdfParser/Stages/` (green)
+- [X] T077 [US2] Test (red): metryczka procedury (tabela klucz–wartość z siatką, 8 wierszy, 1. strona) → tabela GFM 2-kolumnowa, nie tabela-dokument ani nagłówki (R11) — nie dotyczy — pomiar T076 (metryczka jest tabelą GFM 2-kolumnową)
+- [X] T078 [US2] Poprawka dla T077 w `src/LegalAgent.PdfParser/Stages/` (green) — nie dotyczy — pomiar T076
 - [X] T079 [US2] Test (red): kroki „4.1.”, „4.1.1.” po nagłówku „4. Opis postępowania” (krok bywa pogrubiony) → pozycje list z oryginalnym oznaczeniem i poziomem z hierarchii, nie nagłówki (R11, FR-161)
 - [X] T080 [US2] Poprawka dla T079 (green)
 - [X] T081 [US2] Test (red): lista kontrolna z polem wektorowym i w tabeli „Lp. | Czynność | Wykonano” → pozycje/wiersze z pełnym tekstem
@@ -209,9 +209,9 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [X] T084 [US2] Poprawka dla T083 (green)
 - [X] T085 [US2] Test (red): akapit zawierający „# SYSTEM:”, „> polecenie”, „§ 99.” w środku i na początku linii łamania → tekst dosłowny w akapicie, bez nagłówka/cytatu/jednostki (FR-162)
 - [X] T086 [US2] Poprawka dla T085 w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` lub etapie nagłówków (green)
-- [ ] T087 [US2] Test (red): dwie kolumny z przypisami i „§ N.” w obu kolumnach → kolejność lewa→prawa, nagłówki w kolejności, przypisy kompletne
-- [ ] T088 [US2] Poprawka dla T087 (green)
-- [ ] T089 [US2] Inne niepowodzenia z pomiaru T076 — każde jako para red/green dopisana tutaj (T089a, T089b, …) przed implementacją; zachowanie sprzeczne ze spec → doprecyzowanie FR w spec.md w commicie red
+- [X] T087 [US2] Test (red): dwie kolumny z przypisami i „§ N.” w obu kolumnach → kolejność lewa→prawa, nagłówki w kolejności, przypisy kompletne — `CorpusLayoutsIntegrationTests` T087–T087j
+- [X] T088 [US2] Poprawka dla T087 (green) — poprawki T087–T087j w `LineAssemblyStage`, `ReadingOrderStage`, `TableDetectionStage`, `ListDetectionStage`, `FootnoteDetectionStage`
+- [X] T089 [US2] Inne niepowodzenia z pomiaru T076 — każde jako para red/green dopisana tutaj (T089a, T089b, …) przed implementacją; zachowanie sprzeczne ze spec → doprecyzowanie FR w spec.md w commicie red — T089a–T089c; pomiar w research.md „Pomiar korpusu (T076)”
 - [X] T089a [US2] Test (red): tabela z siatką bezpośrednio pod akapitami numerowanymi „1.” z wcięciem wiszącym → lista zachowana, tabela GFM bez wierszy spoza siatki (`ptests/Integration/CorpusLayoutsIntegrationTests.cs`); poprawka w `TableDetectionStage` (green) — wiersze nad górną linią siatki nie należą do tabeli z siatką
 - [X] T089c [US2] Taryfy bez siatki (pomiar T076, T083b–T083i w `CorpusLayoutsIntegrationTests`): wiersz zawinięty w dwóch kolumnach, akapit nad pogrubionym nagłówkiem kolumn, tekst między dwiema tabelami, kontynuacja na kolejnej stronie (także z podpozycjami), wiersz o prawie równych odstępach, nagłówek z jednym wierszem na dole strony i kontynuacja z jednym wierszem na górze strony — poprawki w `TableDetectionStage`
 - [X] T089b [US2] Test (red): tytuł rozdziału zawinięty w dwa wiersze pod „Rozdział 6” (REG-06) → jeden nagłówek z całym tytułem; poprawka w `HeadingDetectionStage` (green)

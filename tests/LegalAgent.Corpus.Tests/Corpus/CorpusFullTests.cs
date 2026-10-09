@@ -72,25 +72,7 @@ public sealed class CorpusFullTests
             details.AddRange(q.Failures);
             table.Append(CultureInfo.InvariantCulture, $"| {doc.Id} | {doc.Layout} | {q.WordCompleteness:P2} | {q.ExtraWords} | {q.ReadingOrder:P1} | {q.HeadingRecall:P1} | {q.FalseHeadingShare:P1} | {q.ListRecall:P1} | {q.RowsIntact:P1} | {q.TablesAsSingleGfm:P0} | {q.CellAgreement:P1} |\n");
 
-            void Check(bool ok, string what)
-            {
-                if (!ok)
-                {
-                    failures.Add($"{doc.Id} ({doc.Layout}): {what}");
-                }
-            }
-
-            Check(q.WordCompleteness >= MinWordCompleteness, $"SC-022 kompletność słów {q.WordCompleteness:P2}");
-            Check(q.ExtraWords == 0, $"SC-022 słowa spoza PDF: {q.ExtraWords} ({string.Join(", ", q.ExtraWordSamples.Take(5))})");
-            Check(q.HeadingRecall >= MinHeadingRecall, $"SC-024 nagłówki {q.HeadingRecall:P1}");
-            Check(q.FalseHeadingShare <= MaxFalseHeadingShare, $"SC-024 fałszywe nagłówki {q.FalseHeadingShare:P1}");
-            Check(q.ListRecall >= MinListRecall, $"SC-025 listy {q.ListRecall:P1}");
-            if (doc.Type == "taryfy")
-            {
-                Check(q.RowsIntact >= 1.0, $"SC-026 stawki w wierszu {q.RowsIntact:P1}");
-                Check(q.TablesAsSingleGfm >= 1.0, $"SC-026 tabele jako jedna GFM {q.TablesAsSingleGfm:P0}");
-                Check(q.CellAgreement >= MinCellAgreement, $"SC-026 komórki {q.CellAgreement:P1}");
-            }
+            failures.AddRange(ThresholdFailures(doc, q));
         }
 
         if (Environment.GetEnvironmentVariable("LEGALAGENT_CORPUS_REPORT") is { } report)
@@ -99,5 +81,32 @@ public sealed class CorpusFullTests
         }
 
         Assert.True(failures.Count == 0, string.Join("\n", failures));
+    }
+
+    /// <summary>The thresholds of SC-022 – SC-026 that <paramref name="q"/> misses, one message per metric.</summary>
+    internal static List<string> ThresholdFailures(DocumentPlan doc, QualityReport q)
+    {
+        var failures = new List<string>();
+        void Check(bool ok, string what)
+        {
+            if (!ok)
+            {
+                failures.Add($"{doc.Id} ({doc.Layout}): {what}");
+            }
+        }
+
+        Check(q.WordCompleteness >= MinWordCompleteness, $"SC-022 kompletność słów {q.WordCompleteness:P2}");
+        Check(q.ExtraWords == 0, $"SC-022 słowa spoza PDF: {q.ExtraWords} ({string.Join(", ", q.ExtraWordSamples.Take(5))})");
+        Check(q.HeadingRecall >= MinHeadingRecall, $"SC-024 nagłówki {q.HeadingRecall:P1}");
+        Check(q.FalseHeadingShare <= MaxFalseHeadingShare, $"SC-024 fałszywe nagłówki {q.FalseHeadingShare:P1}");
+        Check(q.ListRecall >= MinListRecall, $"SC-025 listy {q.ListRecall:P1}");
+        if (doc.Type == "taryfy")
+        {
+            Check(q.RowsIntact >= 1.0, $"SC-026 stawki w wierszu {q.RowsIntact:P1}");
+            Check(q.TablesAsSingleGfm >= 1.0, $"SC-026 tabele jako jedna GFM {q.TablesAsSingleGfm:P0}");
+            Check(q.CellAgreement >= MinCellAgreement, $"SC-026 komórki {q.CellAgreement:P1}");
+        }
+
+        return failures;
     }
 }

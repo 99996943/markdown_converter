@@ -227,3 +227,48 @@ z nadpisaniem), Markdown/manifest w UTF-8 bez BOM z `\n`. Zarządzane katalogi: 
 `taryfy/`, `procedury/`, `zatrute/` (rekurencyjnie) i plik `manifest.json`; pliki `*.pdf`/`*.md` w
 nich, których nie ma w nowym planie, są usuwane po udanym przebiegu. `akty/`, `zrodla/`, `README.md`,
 `przebieg.json` nie są usuwane (FR-108).
+
+## Pomiar korpusu (T076)
+
+Przebieg z `corpus/przebieg.json` (ziarno 20261008, 10 dokumentów na typ, 20–30 stron, bez wersji,
+sprzeczności i zatruć), pomiar `CorpusFullTests` (`LEGALAGENT_CORPUS_FULL=1`,
+`LEGALAGENT_CORPUS_REPORT=<plik>`) względem prawdy generatora. Progi: SC-022 ≥ 99,5% słów i 0 słów
+spoza PDF, SC-024 ≥ 98% nagłówków i ≤ 1% fałszywych, SC-025 ≥ 98% pozycji list, SC-026 100% stawek
+w wierszu i tabel taryf jako jednej tabeli GFM, ≥ 98% komórek.
+
+**Pierwszy pomiar** (przed poprawkami T083–T087), zakres wyników per układ:
+
+| Układ | Dokumenty | Spoza PDF | Nagłówki | Fałszywe | Listy | Wiersze | Tabele GFM | Komórki |
+|---|---|---|---|---|---|---|---|---|
+| jedna-kolumna | REG-03, 06–10 | 0–6 | 98,5–100% | 0–1,5% | 100% | 100% | 100% | 100% |
+| dwie-kolumny | REG-02, REG-04 | 3–48 | 84,8–88,4% | 24,1–25,7% | 16,8–22,3% | 0% | 0% | 0% |
+| tabela-dokument | REG-01, REG-05 | 0 | 100% | 0% | 100% | — | — | — |
+| taryfa-siatka | TAR-01, 04, 07, 08, 10 | 0 | 100% | 0% | 100% | 100% | 100% | 100% |
+| taryfa-bez-siatki | TAR-02, 03, 05, 06, 09 | 575–1357 | 21,4–66,7% | 0% | 80–100% | 13,2–58,5% | 0–9% | 28–74,5% |
+| procedura | PRO-01 – PRO-10 | 0 | 100% | 4,2–5,9% | 100% | 100% | 100% | 100% |
+
+Niepowodzenia (czerwone stany T077–T089) i ich poprawki:
+
+- taryfy bez siatki — tabela nie wykrywana albo pochłaniająca akapity, przypisy i nagłówki sekcji;
+  wiersze zawinięte w dwóch kolumnach; tabela na kilku stronach z powtórzonym nagłówkiem; fragment
+  „nagłówek + 1 wiersz” na końcu/początku strony; wiersz o prawie równych odstępach: T083, T083b–T083j
+  (`TableDetectionStage`);
+- tabela z siatką pod akapitami numerowanymi: T089a; lista kontrolna z pustą kolumną: T081;
+  kroki procedury „4.1.” po nagłówku „4.”: T079 (`ListDetectionStage`);
+- tytuł rozdziału zawinięty w dwa wiersze: T089b (`HeadingDetectionStage`; dwa goldeny aktów zmienione
+  — do akceptacji właściciela, FR-163);
+- dwie kolumny: tekst obok większego nagłówka sklejany w jedną linię, interlinia mierzona przez
+  przeplecione kolumny, rynna sięgająca w kolumnę (wyśrodkowane „§ N.”, krótka kolumna, tabela
+  w kolumnie), tabele w kolumnie, lista przechodząca do następnej kolumny lub strony, znaczniki
+  przypisów przy linii drugiej kolumny: T087–T087j (`LineAssemblyStage`, `ReadingOrderStage`,
+  `TableDetectionStage`, `ListDetectionStage`, `FootnoteDetectionStage`);
+- metryka: etykieta listy kontrolnej „□” zapisana jako znacznik listy Markdown nie jest brakującym
+  słowem (`QualityMetrics`).
+- Metryczka procedury (T077) i zatrucia w akapicie (T085, sprawdzone testem): T077/T078 bez zmian
+  biblioteki; T085/T086 — „§ 99.” na początku zawiniętego wiersza zdania był nagłówkiem, poprawione.
+
+**Po poprawkach**: wszystkie 30 dokumentów spełniają SC-022 – SC-026 (`CorpusFullTests` zielony);
+goldeny parsera i prywatny korpus właściciela bez zmian poza dwoma goldenami aktów z T089b. Pozostałe
+odchylenia poniżej progów: REG-04 — jeden nagłówek tabeli („Zestawienie podstawowych warunków
+finansowych karty”) i jedna pozycja listy; tabele w regulaminach „tabela-dokument” nie są tabelami GFM
+(układ zapisywany zgodnie z FR-080 jako sekcje, metryka tabel nie dotyczy tego układu).

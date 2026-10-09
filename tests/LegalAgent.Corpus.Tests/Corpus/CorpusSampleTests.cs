@@ -6,7 +6,8 @@ namespace LegalAgent.Corpus.Tests.Corpus;
 
 /// <summary>
 /// Sample of the committed corpus (research R10): the first document of every (type, layout) pair of the recorded run
-/// is rebuilt in memory and must equal the committed PDF, Markdown and manifest entry (FR-165).
+/// is rebuilt in memory and must equal the committed PDF, Markdown and manifest entry (FR-165) and meet the quality
+/// metrics SC-022 – SC-026 (FR-164).
 /// </summary>
 public sealed class CorpusSampleTests
 {
@@ -47,6 +48,7 @@ public sealed class CorpusSampleTests
         Assert.Contains(sample, d => d.Layout == "taryfa-bez-siatki");
 
         Manifest.Manifest manifest = ManifestWriter.Read(await File.ReadAllTextAsync(manifestPath, TestContext.Current.CancellationToken));
+        var quality = new List<string>();
         foreach (DocumentPlan doc in sample)
         {
             GeneratedDocument built = await CorpusGenerator.BuildDocumentAsync(parameters, doc.Id, Options(), TestContext.Current.CancellationToken);
@@ -65,6 +67,10 @@ public sealed class CorpusSampleTests
             Assert.False(string.IsNullOrEmpty(entry.Title));
             Assert.NotNull(entry.Designation);
             Assert.NotNull(entry.ValidFrom);
+
+            quality.AddRange(CorpusFullTests.ThresholdFailures(doc, QualityMetrics.Measure(doc.Id, built.Fit.Typeset.Truth, built.Markdown)));
         }
+
+        Assert.True(quality.Count == 0, string.Join("\n", quality));
     }
 }
