@@ -39,6 +39,7 @@ błędy struktury poprawia się w parserze, nie w podziale.
 - Q: Czy kolejne części jednostki podzielonej na kilka fragmentów zaczynają się od nagłówka tej jednostki? → A: Tak, każda część zaczyna się od własnego nagłówka jednostki (oryginalny tekst, powtarzany jak wiersz nagłówka tabeli); nagłówki sekcji nadrzędnych i tytuł dokumentu tylko w metadanych (FR-231).
 - Q: Czy oznaczenie do cytatu zawiera etykiety pozycji listy dosłownie, czy gotowy cytat w formie „§ 13 ust. 3 pkt 2”? → A: Dosłownie: oznaczenie jednostki i oryginalne etykiety pozycji (np. „3.”, „2)”); sformułowanie cytatu należy do aplikacji RAG (FR-241).
 - (implementacja T006) Część zaczynająca się od pozycji zagnieżdżonej listy nie zachowuje wcięcia: wcięcie ≥ 4 spacji na początku treści CommonMark czyta jako blok kodu; położenie pozycji opisują `listLabels` (FR-222).
+- (implementacja T033a) Przypisy jednostki bez odwołania są pakowane na końcu jednostki jak inne niepodzielne elementy — gdy nie mieszczą się w ostatniej części, tworzą kolejne części (prawo bankowe, Art. 4: przypisy tytułu ustawy dawały część 3796 znaków) (FR-232).
 - Q: Czy każda linia pliku JSONL zawiera pełne metadane dokumentu? → A: Tak, każda linia jest samodzielna: wersja schematu, pełne metadane dokumentu i fragment (FR-251).
 
 ## User Scenarios & Testing *(mandatory)*
@@ -259,8 +260,9 @@ wyniku względem kontraktu.
   NIE są powtarzane.
 - **FR-232**: Treść fragmentu MUSI zawierać definicje przypisów, do których się odwołuje (przypis,
   do którego odwołuje się kilka części jednostki, jest w każdej z nich). Przypisy jednostki, do których
-  nie odwołuje się żadna jej część, trafiają do ostatniej części jednostki; poza tym fragment nie
-  zawiera definicji przypisów.
+  nie odwołuje się żadna jej część, trafiają na koniec jednostki: do ostatniej części, a gdy się w niej
+  nie mieszczą — do kolejnych części z nagłówkiem jednostki; poza tym fragment nie zawiera definicji
+  przypisów.
 - **FR-233**: Treść fragmentu NIE MOŻE zawierać znaczników stron; strony fragmentu są wyłącznie w
   metadanych (FR-242).
 - **FR-234**: Połączona treść wszystkich fragmentów dokumentu MUSI zawierać każde słowo Markdown

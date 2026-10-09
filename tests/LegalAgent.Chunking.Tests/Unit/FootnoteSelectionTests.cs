@@ -49,6 +49,21 @@ public sealed class FootnoteSelectionTests
     }
 
     [Fact]
+    public async Task ChunkAsync_UnreferencedFootnotesThatDoNotFitGoToFurtherPartsWithTheHeading()
+    {
+        string text = Words(1, 90);
+        string third = Words(3, 120);
+        string fourth = Words(4, 120);
+        Section unit = Section(3, SectionKind.Paragraph, "§ 6", "§ 6.", 1, 2, [Para(text)], [Footnote(4, fourth, 2), Footnote(3, third, 2)]);
+
+        IReadOnlyList<Model.Chunk> chunks = await Chunk(Document(null, null, unit));
+
+        Assert.Equal([$"### § 6.\n\n{text}", $"### § 6.\n\n[^3]: {third}", $"### § 6.\n\n[^4]: {fourth}"], chunks.Select(c => c.Content));
+        Assert.All(chunks, c => Assert.False(c.ExceedsLimit, c.Content));
+        Assert.Equal([new PageSpan(1, 1), new PageSpan(2, 2), new PageSpan(2, 2)], chunks.Select(c => c.Pages));
+    }
+
+    [Fact]
     public async Task ChunkAsync_ReferencesInListItemsAndTableCellsCount()
     {
         string a = Words(1, 90);

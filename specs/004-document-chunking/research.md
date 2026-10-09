@@ -90,7 +90,9 @@ komórek jako `PageBreak` — zmieniłoby model treści komórek i ryzykowało w
 **Decyzja**: przypisy jednostki = `Section.Footnotes` (wstęp: `PreambleFootnotes`). Część dostaje
 przypisy, do których prowadzi `FootnoteRef` w jej blokach (także w komórkach i pozycjach list), w
 kolejności numerów; przypis z odwołaniami w kilku częściach jest w każdej. Przypisy jednostki bez
-żadnego odwołania w jednostce (np. `IsOrphan`) trafiają do ostatniej części (spec FR-232).
+żadnego odwołania w jednostce (np. `IsOrphan`) są atomami na końcu jednostki (po jednym na przypis, w
+kolejności numerów): trafiają do ostatniej części, a gdy się nie mieszczą — do kolejnych (spec FR-232,
+T033a).
 
 ## R6. Klucz jednostki
 

@@ -100,6 +100,8 @@ treść i metadane zgodne z FR-220 – FR-244; pokrycie słów FR-234.
 - [X] T032 [P] [US1] Test w `chtests/Determinism/DeterminismTests.cs` (FR-205): 5 kolejnych i 16 równoległych podziałów tego samego wyniku konwersji (`Parallel.ForEachAsync`) na jednej instancji z DI oraz pod kulturami `pl-PL` i `tr-TR` dają identyczne bajty `ToJsonLines`; poprawki (green), jeśli test padnie
 - [X] T033 [P] [US1] Test w `chtests/Unit/WordCoverageTests.cs` (FR-234, SC-041) z pomocnikiem `chtests/Fixtures/WordCoverage.cs`: wielozbiór słów połączonej treści fragmentów minus słowa powtórzone wg FR-231 (nagłówek jednostki w częściach 2+) i FR-232 (przypisy powtórzone) = wielozbiór słów Markdown całego dokumentu bez znaczników stron, znaczników stron pominiętych i wiersza `# tytułu`; na modelach z T016–T022 i na `corpus/taryfy/TAR-04.pdf`; poprawki (green), jeśli test padnie
 
+- [ ] T033a [US1] Test (red) w `chtests/Unit/FootnoteSelectionTests.cs` + implementacja (green) w `chunk-lib/Splitting/UnitSplitter.cs` (FR-232, R5; z przeglądu na korpusie): przypisy jednostki bez odwołania są atomami na końcu jednostki — gdy nie mieszczą się w ostatniej części, przechodzą do kolejnych części z nagłówkiem jednostki; część złożona tylko z przypisów ma strony przypisów
+
 **Checkpoint**: US1 działa samodzielnie — serwis może dzielić dokumenty i serializować wynik (MVP).
 
 ---
