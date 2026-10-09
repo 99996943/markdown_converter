@@ -55,6 +55,28 @@ W przypadku zbiegu postępowań:
 
 Procedura obowiązuje od dnia wejścia w życie także w sprawach przyjętych wcześniej, lecz niezakończonych; czynności już wykonane zgodnie z poprzednimi zasadami nie wymagają powtarzania.
 
+Procedura obejmuje wszystkie produkty i usługi, z których zmarły korzystał jako posiadacz, współposiadacz, pełnomocnik, przedstawiciel ustawowy, kredytobiorca, poręczyciel lub użytkownik karty dodatkowej. Taki zakres wynika z tego, że śmierć klienta może wywoływać skutki także w stosunkach prawnych, w których nie był on stroną główną umowy.
+
+Procedury nie stosuje się wprost w następujących sytuacjach, w których obowiązują odrębne zasady:
+
+- 1\) gdy zmarły był przedsiębiorcą prowadzącym rachunek firmowy — w takim przypadku pracownik stosuje procedurę w zakresie, w jakim jest to możliwe, a sprawę kieruje dodatkowo do jednostki obsługującej klientów biznesowych;
+- 2\) gdy zgłoszenie dotyczy osoby uznanej za zaginioną lub ogłoszonej za zmarłą orzeczeniem sądu — do czasu uprawomocnienia się orzeczenia stosuje się procedurę blokad na podstawie decyzji organów;
+- 3\) gdy zmarłym jest pracownik Banku — obok niniejszej procedury stosuje się wewnętrzne zasady dotyczące rozliczeń z pracownikami;
+- 4\) gdy zgon dotyczy klienta objętego sankcjami międzynarodowymi — sprawę prowadzi „Departament Zgodności” według odrębnych zasad.
+
+Procedura dotyczy wszystkich kanałów, w których Bank może otrzymać informację o zgonie klienta, a także wszystkich osób, które taką informację przekazują. Informacja o zgonie może pochodzić z różnych źródeł, a jej wiarygodność wymaga oceny.
+
+Do źródeł informacji o zgonie należą:
+
+- 1\) zgłoszenie rodziny, spadkobierców lub osoby bliskiej, złożone telefonicznie, w placówce lub pisemnie;
+- 2\) odpis aktu zgonu przedstawiony przez zgłaszającego albo przekazany przez organ publiczny;
+- 3\) informacja od notariusza, komornika lub sądu, w związku z prowadzonym postępowaniem spadkowym lub egzekucyjnym;
+- 4\) wiadomość od innej instytucji finansowej, ubezpieczyciela lub zakładu pracy, który uzyskał informację o zgonie klienta wspólnego;
+- 5\) doniesienie medialne lub nieoficjalna informacja, które nie stanowią podstawy do czynności, lecz obligują pracownika do ostrożnej weryfikacji.
+
+Informacji z ostatniej grupy nie wprowadza się do systemu jako zgonu klienta; pracownik odnotowuje ją w notatce i zwraca się do osób uprawnionych o dokument potwierdzający.
+
+<!-- page: 4 -->
 ## 3. Odpowiedzialności
 
 Za prawidłowe stosowanie procedury odpowiadają następujące osoby i komórki organizacyjne, każda w zakresie swoich uprawnień:
@@ -75,22 +97,24 @@ Za prawidłowe stosowanie procedury odpowiadają następujące osoby i komórki 
   - 4\) prowadzi rejestr spraw spadkowych RSS i odpowiada za kompletność akt sprawy.
 - 4\. **Departament Operacji** jako właściciel procedury jest odpowiedzialny za jej aktualność, przegląd co najmniej raz w roku, szkolenia pracowników oraz akceptację wypłat powyżej kwoty 250 000,00 zł.
 - 5\. **Departament Zgodności** opiniuje wypłaty o podwyższonym ryzyku, w szczególności gdy zachodzi podejrzenie wyłudzenia, prania pieniędzy lub posłużenia się sfałszowanym dokumentem, oraz sprawuje niezależną kontrolę stosowania procedury.
-- 6\. **Departament Windykacji i Restrukturyzacji** prowadzi sprawy zobowiązań zmarłego z tytułu kredytów, **Zespół Bancassurance** — zgłoszenia do ubezpieczycieli, a **Departament Finansów i Rachunkowości** — rozliczenia księgowe i podatkowe <!-- page: 4 --> związane z wypłatami.
+- 6\. **Departament Windykacji i Restrukturyzacji** prowadzi sprawy zobowiązań zmarłego z tytułu kredytów, **Zespół Bancassurance** — zgłoszenia do ubezpieczycieli, a **Departament Finansów i Rachunkowości** — rozliczenia księgowe i podatkowe związane z wypłatami.
 - 7\. **Departament Bezpieczeństwa** zabezpiecza kanały zdalnego dostępu zmarłego oraz bada podejrzane operacje wykonane po dacie zgonu, a **Departament Prawny** udziela opinii w sprawach spornych i w przypadku sprzecznych roszczeń spadkobierców.
+
+**Kierownik placówki** odpowiada za prawidłowe stosowanie procedury w placówce, w szczególności:
+
+<!-- page: 5 -->
+- 1\) akceptuje czynności wykonywane w sprawach zgonu do kwoty określonej jako 20 000,00 zł i zatwierdza dokumentację sprawy przed przekazaniem do zespołu;
+- 2\) wyznacza w placówce pracowników przeszkolonych w obsłudze takich spraw i dba o zapewnienie osobnego stanowiska, w którym rozmowa nie jest słyszana przez inne osoby;
+- 3\) kieruje do „Zespół Obsługi Spadków” sprawy trudne, w tym spory między spadkobiercami, sprawy zagraniczne i sprawy z udziałem organów ścigania;
+- 4\) monitoruje terminowość przekazywania dokumentów oraz jakość informacji udzielanych zgłaszającym.
+
+Kierownik placówki nie podejmuje decyzji o wypłacie środków spadkobiercom, jeżeli sam obsługiwał zgłaszającego w sposób wykraczający poza jego rolę; decyzję podejmuje wtedy kierownik innej placówki lub zespół spadkowy.
+
 - 1\. **Jednostka informatyki** odpowiedzialna za system centralny CBS-PRZYKŁAD zapewnia:
   - 1\) dostępność statusu „klient zmarły”, który blokuje dysponowanie produktami w kanałach zdalnych oraz zlecenia wychodzące, bez usuwania danych;
   - 2\) rejestrowanie w historii klienta każdej zmiany statusu wraz z identyfikatorem pracownika, który ją wykonał, oraz datą i godziną;
   - 3\) raport dzienny operacji zlecanych na rachunkach ze statusem „klient zmarły”, przekazywany „Departament Bezpieczeństwa”.
 - 2\. **Audyt wewnętrzny** może w każdym czasie skontrolować sprawy spadkowe pod kątem zgodności z procedurą; pracownicy przekazują audytorom akta spraw w systemie obiegu dokumentów EOD oraz wyjaśniają wątpliwości w terminie wskazanym w wezwaniu.
-- 1\. **Konsultant infolinii** przyjmujący zgłoszenie telefoniczne:
-  - 1\) odnotowuje zgłoszenie w systemie centralnym CBS-PRZYKŁAD z adnotacją „zgłoszenie telefoniczne bez dokumentu”;
-  - 2\) poucza zgłaszającego, że dalsze czynności wymagają wizyty w placówce lub przesłania dokumentów na adres zgony@bank.example;
-  - 3\) nie dokonuje blokady produktów w sposób trwały bez dokumentu potwierdzającego zgon, lecz — jeżeli istnieje ryzyko nadużycia — wykonuje blokadę tymczasową kart i bankowości elektronicznej na czas do 30 dni;
-  - 4\) kieruje sprawę do placówki wskazanej przez zgłaszającego albo do „Zespół Obsługi Spadków”, jeżeli zgłaszający mieszka poza obszarem działania placówek Banku.
-- 2\. **Kierownik infolinii** czuwa nad jakością obsługi zgłoszeń zgonu, w szczególności:
-  - 1\) losowo odsłuchuje nagrania rozmów dotyczących zgonów, nie rzadziej niż raz na kwartał;
-  - 2\) zapewnia, że konsultanci są przeszkoleni w zakresie prowadzenia rozmów z osobami w żałobie;
-  - 3\) raportuje właścicielowi procedury liczbę zgłoszeń przyjętych telefonicznie oraz liczbę zgłoszeń uzupełnionych dokumentami w terminie.
 
 ## 4. Definicje
 
@@ -100,13 +124,13 @@ Użyte w procedurze określenia oznaczają:
 - 2\) **Klient** — osoba, która zamierza korzystać z produktów lub usług Banku;
 - 3\) **Pracownik** — osoba zatrudniona w Banku, realizująca czynności objęte procedurą;
 - 4\) **Właściciel procedury** — komórka organizacyjna odpowiedzialna za jej aktualność i stosowanie;
-- 5\) **Dzień roboczy** — dzień od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych <!-- page: 5 --> od pracy;
+- 5\) **Dzień roboczy** — dzień od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;
 - 6\) **Trwały nośnik** — nośnik umożliwiający przechowywanie informacji w sposób dostępny do późniejszego wykorzystania;
 - 7\) **Placówka** — jednostka Banku obsługująca Klientów;
 - 8\) **Infolinia** — telefoniczny punkt obsługi Klientów, numer 800 000 001;
 - 9\) **Eskalacja** — przekazanie sprawy do jednostki lub osoby o wyższych uprawnieniach decyzyjnych.
 
-W niniejszej procedurze, oprócz określeń podanych powyżej, zastosowano następujących określeń:
+W niniejszej procedurze, oprócz określeń podanych powyżej, zastosowano następujących <!-- page: 6 --> określeń:
 
 - 1\) **Zmarły** — Klient, którego zgon został przekazany do wiadomości Bankowi lub który zmarł według wiarygodnych informacji posiadanych przez Bank;
 - 2\) **Zgłaszający** — osoba, która informuje Bank o śmierci Klienta, w szczególności członek rodziny, współposiadacz rachunku, osoba organizująca pogrzeb albo notariusz;
@@ -123,7 +147,6 @@ W niniejszej procedurze, oprócz określeń podanych powyżej, zastosowano nast�
 
 Pojęcia nieokreślone w procedurze należy rozumieć zgodnie z przepisami prawa cywilnego, bankowego i prawa spadkowego oraz regulaminami produktów.
 
-<!-- page: 6 -->
 ## 5. Opis postępowania — przyjęcie zgłoszenia i zabezpieczenie produktów
 
 ### Przegląd przebiegu procedury
@@ -132,6 +155,7 @@ Pojęcia nieokreślone w procedurze należy rozumieć zgodnie z przepisami prawa
 
 Pracownik rejestruje informację o zgonie, weryfikuje zgłaszającego i zakłada sprawę spadkową. Dokumenty i dane zgłaszającego przekazuje do zespołu spadkowego.
 
+<!-- page: 7 -->
 **Blokada produktów**
 
 Pracownik blokuje karty, bankowość elektroniczną, zlecenia stałe i dostęp pełnomocników. Rachunek w dalszym ciągu księguje należności, a środki pozostają na nim.
@@ -155,10 +179,10 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
 - 5.1\. **Przyjęcie zgłoszenia.** Pracownik, który przyjął informację o śmierci Klienta — osobiście w placówce, telefonicznie na infolinii 800 000 001, pisemnie lub w wiadomości elektronicznej na adres zgony@bank.example — niezwłocznie rozpoczyna obsługę zgłoszenia zgodnie z poniższymi czynnościami.
   - 5.1.1\. Zgłoszenie przyjmuje się od każdej osoby, także jeżeli nie jest ona Klientem Banku. Pracownik wyraża współczucie w sposób zwyczajowy, nie zadaje pytań nieistotnych dla sprawy i informuje zgłaszającego o dalszych krokach.
   - 5.1.2\. Jeżeli zgłoszenie wpłynęło telefonicznie lub elektronicznie, pracownik zapisuje je w systemie centralnym CBS-PRZYKŁAD z adnotacją „zgłoszenie niepotwierdzone dokumentem” i informuje zgłaszającego, że ostateczna blokada produktów wymaga przedłożenia aktu zgonu.
-  - 5.1.3\. Pracownik nie żąda od zgłaszającego okazania dokumentów w chwili pierwszego kontaktu, jeżeli osoba jest w oczywisty sposób poruszona; ustala wtedy wspólnie <!-- page: 7 --> z nią termin wizyty w placówce lub przesłania skanów.
+  - 5.1.3\. Pracownik nie żąda od zgłaszającego okazania dokumentów w chwili pierwszego kontaktu, jeżeli osoba jest w oczywisty sposób poruszona; ustala wtedy wspólnie z nią termin wizyty w placówce lub przesłania skanów.
 - 5.2\. **Weryfikacja zgłaszającego.** Pracownik ustala, kim jest zgłaszający i w jakim charakterze występuje (członek rodziny, współposiadacz, pełnomocnik, osoba organizująca pogrzeb, notariusz, urząd).
   - 5.2.1\. Zgłaszającego obecnego w placówce weryfikuje na podstawie dokumentu tożsamości; dane zgłaszającego odnotowuje się w formularzu F-OR-31.
-  - 5.2.2\. Zgłaszającego telefonicznego pracownik prosi o podanie imienia, nazwiska i numeru telefonu do kontaktu oraz imienia, nazwiska i numeru PESEL zmarłego. Nie ujawnia przy tym żadnych danych zmarłego, których zgłaszający nie podał sam.
+  - 5.2.2\. Zgłaszającego telefonicznego pracownik prosi o podanie imienia, nazwiska i numeru telefonu do kontaktu oraz imienia, nazwiska i numeru PESEL zmarłego. <!-- page: 8 --> Nie ujawnia przy tym żadnych danych zmarłego, których zgłaszający nie podał sam.
   - 5.2.3\. Przyjęcie informacji o zgonie nie jest równoznaczne z uznaniem uprawnień zgłaszającego do informacji o produktach zmarłego ani do dysponowania nimi.
 - 5.3\. **Weryfikacja zgonu.** Pracownik ustala, czy zgon jest potwierdzony wiarygodnym dokumentem lub źródłem.
   - 5.3.1\. Za wystarczające uznaje się odpis aktu zgonu, zaświadczenie o zgonie wydane przez urząd stanu cywilnego, zawiadomienie notariusza, sądu, organu egzekucyjnego lub urzędu skarbowego oraz informację z urzędowego rejestru, do którego Bank ma dostęp.
@@ -172,30 +196,31 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
   - 5.5.1\. Blokuje dostęp zmarłego do bankowości elektronicznej i płatności mobilnych oraz unieważnia aktywne autoryzacje (hasła, tokeny, urządzenia zaufane).
   - 5.5.2\. Zastrzega karty debetowe i kredytowe zmarłego; karty dodatkowe wydane do rachunku zmarłego innym osobom blokuje tylko wtedy, gdy rachunek nie jest rachunkiem wspólnym.
   - 5.5.3\. Wstrzymuje zlecenia stałe, polecenia zapłaty oraz płatności cykliczne, z wyjątkiem tych, które służą spłacie zobowiązań zmarłego wobec Banku.
-  <!-- page: 8 -->
   - 5.5.4\. Blokuje możliwość składania dyspozycji przez pełnomocników zmarłego; pełnomocnictwo wygasa z chwilą śmierci mocodawcy, a dyspozycje złożone przed tą chwilą, lecz niewykonane, wykonuje się wyłącznie po konsultacji z „Zespół Obsługi Spadków”.
   - 5.5.5\. Wpływy na rachunek zmarłego księguje się nadal, w szczególności świadczenia emerytalne i rentowe oraz wynagrodzenia, o ile nie wskazano ich zwrotu zgodnie z odrębnymi przepisami.
-- 5.6\. **Informacja dla zgłaszającego.** Pracownik wręcza zgłaszającemu lub wysyła mu w terminie 3 dni pisemne potwierdzenie przyjęcia zgłoszenia, zawierające numer sprawy, listę dokumentów potrzebnych do dalszych czynności oraz dane kontaktowe „Zespół Obsługi Spadków”.
+- 5.6\. **Informacja dla zgłaszającego.** Pracownik wręcza zgłaszającemu lub wysyła mu <!-- page: 9 --> w terminie 3 dni pisemne potwierdzenie przyjęcia zgłoszenia, zawierające numer sprawy, listę dokumentów potrzebnych do dalszych czynności oraz dane kontaktowe „Zespół Obsługi Spadków”.
   - 5.6.1\. Pracownik wyjaśnia, że Bank wypłaci środki na koszty pogrzebu na podstawie rachunków, a pozostałe środki — po wykazaniu praw do spadku lub zrealizowaniu dyspozycji na wypadek śmierci.
   - 5.6.2\. Pracownik nie udziela porad prawnych ani podatkowych; w razie pytań o dziedziczenie wskazuje notariusza lub sąd właściwy ze względu na ostatnie miejsce zamieszkania zmarłego.
 - 5.7\. **Przekazanie sprawy.** Pracownik przekazuje komplet dokumentów i formularz F-OR-31 do „Zespół Obsługi Spadków” przez system obiegu dokumentów EOD tego samego dnia roboczego, a dokumenty papierowe — najbliższą przesyłką wewnętrzną.
-- 5.8\. **Zgłoszenie od notariusza, sądu lub organu.** Jeżeli informacja o śmierci Klienta wpływa od podmiotu urzędowego (sądu, notariusza, komornika, urzędu skarbowego, organu rentowego), pracownik rejestruje pismo w systemie obiegu dokumentów EOD i traktuje je jako zgłoszenie udokumentowane.
-  - 5.8.1\. Sprawdza, czy pismo zawiera dane umożliwiające identyfikację zmarłego (imiona, nazwisko, PESEL lub datę urodzenia, datę zgonu) i, jeżeli ich brakuje, zwraca się do nadawcy o uzupełnienie w terminie 30 dni.
-  - 5.8.2\. Blokadę produktów wykonuje się w dniu przyjęcia zgłoszenia, nie później niż do końca dnia roboczego; nadawcę zawiadamia się o wykonaniu blokady w odpowiedzi na pismo, jeżeli pismo tego wymaga.
-- 5.9\. **Odpowiedź na pismo.** Odpowiedzi na pisma organów dotyczące zmarłego Klienta przygotowuje „Zespół Obsługi Spadków” w terminie wskazanym w piśmie, a gdy go nie wskazano — w terminie 14 dni.
-  - 5.9.1\. Odpowiedź obejmuje jedynie informacje, do których uzyskania organ jest uprawniony na podstawie przepisów; zakres odpowiedzi uzgadnia się z „Departament Prawny”, jeżeli pismo żąda danych szerszych niż stan rachunku na dzień zgonu.
-  - 5.9.2\. Kopię pisma i odpowiedzi dołącza się do akt sprawy.
-- 5.10\. **Zgłoszenie od pracodawcy lub instytucji wypłacającej świadczenia.** Informację o zgonie od pracodawcy, organu rentowego lub innej instytucji, która wypłaca środki na rachunek zmarłego, rejestruje się jak zgłoszenie od organu.
-  - 5.10.1\. Pracownik bada, czy po dacie zgonu na rachunek wpłynęły środki z tej instytucji; jeśli tak, wstrzymuje ich dalsze rozliczanie i kieruje sprawę do jednostki <!-- page: 9 --> „Departament Finansów i Rachunkowości”.
-  - 5.10.2\. Zwrot świadczeń nienależnie pobranych po śmierci świadczeniobiorcy realizuje się zgodnie z przepisami i z poleceniem instytucji wypłacającej.
-- 5.11\. **Wyjątki od blokady.** Blokada produktów zmarłego nie obejmuje operacji, które są niezbędne do zachowania interesów spadkobierców lub wynikają z przepisów.
-  - 5.11.1\. Wykonuje się w dalszym ciągu zapłatę rat kredytów zmarłego z salda jego rachunku, o ile umowa kredytu przewiduje pobranie raty w dniu spłaty.
-  - 5.11.2\. Wykonuje się tytuły wykonawcze i zajęcia egzekucyjne, które wpłynęły przed zgłoszeniem zgonu lub po nim, zgodnie z przepisami o postępowaniu egzekucyjnym.
-  - 5.11.3\. Można wykonać pojedyncze zlecenie zapłaty przez spadkobiercę lub współposiadacza z rachunku wspólnego, na zasadach rachunku wspólnego, jeżeli blokada zmarłego nie dotyczy tej operacji.
-- 5.12\. **Zdjęcie blokady.** Blokada produktu zmarłego jest zdejmowana wyłącznie przez „Zespół Obsługi Spadków” po wypłacie środków spadkobiercom lub osobom uprawnionym albo po zamknięciu rachunku.
-  - 5.12.1\. W przypadku błędnego zgłoszenia zgonu blokadę zdejmuje kierownik placówki po akceptacji „Departament Bezpieczeństwa” i weryfikacji tożsamości Klienta.
-  - 5.12.2\. Każde zdjęcie blokady dokumentuje się w systemie obiegu dokumentów EOD z podaniem przyczyny i identyfikatora pracownika.
+- 5.8\. Obsłuż osobę zgłaszającą zgon w placówce.
+  - 5.8.1\. Zaproś zgłaszającego do stanowiska, które zapewnia dyskrecję rozmowy, i wyraź współczucie w sposób powściągliwy, bez nadmiernej poufałości.
+  - 5.8.2\. Poproś o okazanie dokumentu tożsamości zgłaszającego i, jeżeli jest dostępny, odpisu aktu zgonu; ustal, w jakim charakterze zgłaszający występuje: jako członek rodziny, spadkobierca, przedstawiciel albo osoba, która pokryła koszty pogrzebu.
+  - 5.8.3\. Wyjaśnij, że Bank nie ujawni informacji o produktach zmarłego, dopóki zgłaszający nie wykaże uprawnienia do ich uzyskania.
+- 5.9\. Zarejestruj zgłoszenie.
+  - 5.9.1\. Wypełnij formularz F-OR-31, wpisując dane zmarłego, datę zgonu, dane zgłaszającego i informacje o znanych produktach.
+  - 5.9.2\. Wprowadź zgłoszenie do systemu CBS-PRZYKŁAD i nadaj sprawie numer w rejestrze RSS.
+  - 5.9.3\. Wydaj zgłaszającemu potwierdzenie przyjęcia zgłoszenia w terminie 3 dni.
 
+Pracownik przyjmujący zgłoszenie przekazuje zgłaszającemu następujące informacje o dalszym postępowaniu:
+
+- 1\) jakie dokumenty należy dostarczyć do Banku, aby można było przekazać informacje o produktach i rozpocząć rozliczenie, wraz z terminem uzupełnienia dokumentów określonym jako 30 dni;
+- 2\) że Bank wystąpi do spadkobierców o dodatkowe dokumenty dopiero wtedy, gdy będzie to niezbędne do rozstrzygnięcia sprawy;
+- 3\) do kogo zgłaszający może zwrócić się po wyjaśnienia, wraz z numerem sprawy i danymi kontaktowymi zespołu zgony@bank.example;
+- 4\) że Bank nie żąda opłat za przyjęcie zgłoszenia zgonu ani za udzielenie informacji o produktach zmarłego uprawnionym osobom.
+
+Pracownik nie składa obietnic dotyczących terminu ani wysokości wypłat środków, ponieważ zależą one od ustaleń w sprawie spadkowej.
+
+<!-- page: 10 -->
 ## 6. Opis postępowania — ustalenie produktów zmarłego i koszty pogrzebu
 
 - 6.1\. **Ustalenie produktów zmarłego.** „Zespół Obsługi Spadków” w terminie 3 dni od otrzymania sprawy sporządza pełny wykaz produktów, w których zmarły występował w jakiejkolwiek roli.
@@ -203,7 +228,7 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
   - 6.1.2\. Weryfikuje, czy zmarły nie występował pod innymi danymi (na przykład po zmianie nazwiska) lub w produktach prowadzonych w systemach pobocznych.
   - 6.1.3\. Wynik przeglądu zapisuje w formularzu F-OR-35 z podziałem na produkty własne, współdzielone i takie, w których zmarły był jedynie pełnomocnikiem lub poręczycielem.
 - 6.2\. **Zestawienie stanu na dzień zgonu.** Zespół obsługujący sprawy spadkowe sporządza zestawienie sald wszystkich rachunków i lokat zmarłego na dzień zgonu oraz zestawienie zobowiązań.
-  - 6.2.1\. Do salda doliczana jest należna kwota odsetek naliczonych do dnia poprzedzającego dzień zgonu; dla lokat terminowych przyjmuje się oprocentowanie przewidziane dla wcześniejszego zerwania lokaty, jeśli regulamin lokaty nie stanowi inaczej — zob. dokument „Regulamin rachunków <!-- page: 10 --> oszczędnościowych oraz lokat terminowych Bank Przykładowy S.A. dla konsumentów”.
+  - 6.2.1\. Do salda doliczana jest należna kwota odsetek naliczonych do dnia poprzedzającego dzień zgonu; dla lokat terminowych przyjmuje się oprocentowanie przewidziane dla wcześniejszego zerwania lokaty, jeśli regulamin lokaty nie stanowi inaczej — zob. dokument „Regulamin rachunków oszczędnościowych oraz lokat terminowych Bank Przykładowy S.A. dla konsumentów”.
   - 6.2.2\. Operacje, które zostały zaksięgowane po dacie zgonu, lecz zlecone przed nią, wyróżnia się w zestawieniu; operacje zlecone po dacie zgonu przekazuje się „Departament Bezpieczeństwa” do wyjaśnienia.
   - 6.2.3\. Zestawienie nie jest ujawniane osobom nieuprawnionym; uprawnionym spadkobiercom wydaje się je dopiero po wykazaniu przez nich praw do spadku.
 - 6.3\. **Weryfikacja dyspozycji i pełnomocnictw.** Zespół obsługujący sprawy spadkowe sprawdza, czy zmarły złożył dyspozycję na wypadek śmierci, czy ustanowił pełnomocników i czy zawarł umowy z użytkownikami kart dodatkowych.
@@ -212,6 +237,7 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
 - 6.4\. **Zabezpieczenie rachunku.** Zespół spadkowy przenosi rachunek zmarłego na status „rachunek po zgonie”, który wyłącza naliczanie opłat za prowadzenie rachunku oraz opłat za karty.
   - 6.4.1\. Od dnia zgonu nie pobiera się opłaty za prowadzenie rachunku (zwykle 9,00 zł miesięcznie), jeżeli rachunek został zablokowany zgodnie z procedurą.
   - 6.4.2\. Opłaty naliczone przed dniem zgonu pozostają należne i są pobierane z salda rachunku; nie koryguje się ich ze względu na późniejsze zgłoszenie zgonu.
+  <!-- page: 11 -->
   - 6.4.3\. Odsetki od środków na rachunku zmarłego nalicza się według stawki rachunku, tj. 0,15% w skali roku, do dnia wypłaty lub zamknięcia rachunku.
 - 6.5\. **Wniosek o zwrot kosztów pogrzebu.** Osobie, która poniosła koszty pogrzebu, Bank wypłaca z rachunku zmarłego kwotę odpowiadającą tym kosztom, nie wyższą jednak niż 8 000,00 zł i nie wyższą niż saldo rachunku. Wypłata nie wymaga wykazania praw do spadku.
   - 6.5.1\. Pracownik przyjmuje wniosek na formularzu F-OR-33 od osoby, która wykaże, że poniosła koszty (rachunki lub faktury wystawione na jej dane albo na dane zmarłego, z potwierdzeniem zapłaty).
@@ -219,27 +245,26 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
   - 6.5.3\. Wypłatę przekazuje się przelewem na rachunek wnioskodawcy; wypłata gotówkowa jest możliwa tylko do kwoty 15 000,00 zł.
 - 6.6\. **Ocena dokumentów kosztowych.** Pracownik ocenia, czy przedłożone dokumenty dotyczą kosztów pogrzebu, i ustala kwotę do wypłaty.
   - 6.6.1\. Za koszty pogrzebu uznaje się w szczególności: opłaty za usługi zakładu pogrzebowego, trumnę lub urnę, opłaty cmentarne i kremacyjne, kwiaty i wieńce, transport zwłok, ceremonię i oprawę oraz przyjęcie żałobne w rozsądnej wysokości.
-  - 6.6.2\. Nie uznaje się kosztów, które nie mają związku z pogrzebem, zwłaszcza zakupu <!-- page: 11 --> pomnika w nadmiernej wysokości, odzieży żałobnej, kosztów podróży o charakterze prywatnym i wydatków, które nie zostały udokumentowane.
+  - 6.6.2\. Nie uznaje się kosztów, które nie mają związku z pogrzebem, zwłaszcza zakupu pomnika w nadmiernej wysokości, odzieży żałobnej, kosztów podróży o charakterze prywatnym i wydatków, które nie zostały udokumentowane.
   - 6.6.3\. W razie wątpliwości co do charakteru wydatku pracownik zasięga opinii kierownika placówki; wypłata może zostać zmniejszona o kwotę, której związku z pogrzebem nie udokumentowano.
 - 6.7\. **Wypłata.** Bank wypłaca kwotę kosztów pogrzebu w ciągu 5 dni od dnia złożenia kompletu dokumentów.
   - 6.7.1\. Pracownik rejestruje wypłatę w systemie centralnym CBS-PRZYKŁAD z tytułem „koszty pogrzebu — numer sprawy” i wiąże operację z odpowiednim dokumentem w systemie obiegu dokumentów EOD.
   - 6.7.2\. Wypłatę kwoty wyższej niż 20 000,00 zł akceptuje „Zespół Obsługi Spadków”; w tym przypadku termin liczy się od dnia zaakceptowania wniosku.
   - 6.7.3\. Jeżeli na rachunku zmarłego nie ma wystarczających środków, wypłata obejmuje saldo dostępne i nie powstaje roszczenie wnioskodawcy wobec Banku o różnicę.
   - 6.7.4\. Jeżeli koszty pogrzebu ponosiło kilka osób, wypłaty realizuje się w kolejności złożenia wniosków, do wysokości kwoty wskazanej w kroku pierwszym łącznie dla wszystkich wnioskodawców.
-- 6.8\. **Lokaty terminowe zmarłego.** Zgon posiadacza nie powoduje automatycznego zerwania lokaty; lokata pozostaje w mocy do końca okresu umownego, jeśli spadkobiercy lub osoby uprawnione z dyspozycji na wypadek śmierci nie złożą wniosku o jej zerwanie.
-  - 6.8.1\. Zespół spadkowy blokuje odnawianie lokaty na kolejny okres (jeżeli umowa przewiduje odnowienie automatyczne) i zapisuje to w systemie centralnym CBS-PRZYKŁAD.
-  - 6.8.2\. W okresie do końca lokaty odsetki nalicza się według stawki umownej: dla lokat 3-miesięcznych 3,75%, 6-miesięcznych 4,2% i rocznych 4,4%, o ile regulamin w danym dniu nie stanowi inaczej.
-- 6.9\. **Zerwanie lokaty na wniosek spadkobierców.** Spadkobiercy lub osoby uprawnione mogą złożyć wniosek o zerwanie lokaty przed terminem; w takim przypadku odsetki nalicza się według zasad dla przedterminowego zerwania lokaty, określonych w dokumencie „Regulamin rachunków oszczędnościowych oraz lokat terminowych Bank Przykładowy S.A. dla konsumentów”.
-  - 6.9.1\. Gdy wniosek o zerwanie lokaty wynika z potrzeby pokrycia kosztów pogrzebu, kierownik placówki może zastosować korzystniejsze naliczenie odsetek, jeżeli regulamin lokaty tak przewiduje.
-  - 6.9.2\. Od odsetek pobiera się podatek według stawki 19%; kwotę podatku wykazuje się w pokwitowaniu wypłaty.
-- 6.10\. **Lokata z dyspozycją na wypadek śmierci.** Wypłatę z lokaty osobie uprawnionej na podstawie dyspozycji traktuje się jak wypłatę z rachunku, z zachowaniem warunków limitu 120 000,00 zł; za zerwanie lokaty w tym trybie nie pobiera się opłat.
-- 6.11\. **Poinformowanie wnioskodawcy.** Pracownik informuje wnioskodawcę, że wypłata kosztów pogrzebu nie przesądza o uprawnieniach do spadku, a osoba, która pobrała środki, może być obowiązana do rozliczenia się ze spadkobiercami.
-  <!-- page: 12 -->
-  - 6.11.1\. Wypłata nie jest wypłatą z tytułu dyspozycji na wypadek śmierci i nie wpływa na jej realizację, o ile łączna kwota nie przekracza salda rachunku.
-  - 6.11.2\. Bank nie weryfikuje, czy wnioskodawca jest spadkobiercą, ani nie rozstrzyga o prawie do zwrotu kosztów między osobami uprawnionymi.
-- 6.12\. **Zwrot nadpłaconych kosztów.** Jeżeli po wypłacie okaże się, że wnioskodawca otrzymał kwotę wyższą niż udokumentowane koszty (na przykład z powodu korekty faktury), zespół obsługujący sprawy spadkowe wzywa go do zwrotu różnicy.
-  - 6.12.1\. Wezwanie wysyła się pisemnie, z podaniem podstawy i kwoty; zwrot jest dokonywana na rachunek zmarłego.
-  - 6.12.2\. Jeżeli wnioskodawca nie zwraca różnicy, sprawę przekazuje się „Departament Prawny” w celu oceny dalszych działań.
+- 6.8\. Obsłuż karty płatnicze i zobowiązania z nimi związane.
+  - 6.8.1\. Zlicz transakcje kartowe zaksięgowane i oczekujące na rozliczenie na dzień zgonu oraz opłaty i prowizje należne do dnia zgłoszenia.
+  - 6.8.2\. Kartę kredytową zmarłego traktuj jako kredyt i stosuj zasady opisane w części dotyczącej kredytów; zadłużenie na dzień zgonu zgłoś do „Departament <!-- page: 12 --> Windykacji i Restrukturyzacji”.
+  - 6.8.3\. Kartę debetową zastrzeż i zniszcz po upływie okresu przechowywania zgodnie z instrukcją postępowania z nośnikami.
+- 6.9\. Zakończ usługi dodatkowe.
+  - 6.9.1\. Wyłącz usługi powiadomień SMS i płatności mobilne związane z kartą oraz sprawdź, czy zmarły nie korzystał z programów lojalnościowych wymagających osobnego rozliczenia.
+  - 6.9.2\. Poinformuj spadkobierców o usługach, których nie można wypowiedzieć bez ich udziału.
+- 6.10\. **Poinformowanie wnioskodawcy.** Pracownik informuje wnioskodawcę, że wypłata kosztów pogrzebu nie przesądza o uprawnieniach do spadku, a osoba, która pobrała środki, może być obowiązana do rozliczenia się ze spadkobiercami.
+  - 6.10.1\. Wypłata nie jest wypłatą z tytułu dyspozycji na wypadek śmierci i nie wpływa na jej realizację, o ile łączna kwota nie przekracza salda rachunku.
+  - 6.10.2\. Bank nie weryfikuje, czy wnioskodawca jest spadkobiercą, ani nie rozstrzyga o prawie do zwrotu kosztów między osobami uprawnionymi.
+- 6.11\. **Zwrot nadpłaconych kosztów.** Jeżeli po wypłacie okaże się, że wnioskodawca otrzymał kwotę wyższą niż udokumentowane koszty (na przykład z powodu korekty faktury), zespół obsługujący sprawy spadkowe wzywa go do zwrotu różnicy.
+  - 6.11.1\. Wezwanie wysyła się pisemnie, z podaniem podstawy i kwoty; zwrot jest dokonywana na rachunek zmarłego.
+  - 6.11.2\. Jeżeli wnioskodawca nie zwraca różnicy, sprawę przekazuje się „Departament Prawny” w celu oceny dalszych działań.
 
 ## 7. Opis postępowania — dyspozycja na wypadek śmierci
 
@@ -249,11 +274,12 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
 - 7.2\. **Sprawdzenie limitu.** Zespół spadkowy bada, czy łączna kwota wypłat na podstawie dyspozycji mieści się w limicie.
   - 7.2.1\. Łączna kwota wypłat z dyspozycji nie może przekroczyć kwoty 120 000,00 zł ani salda rachunku na dzień śmierci; limit stosuje się łącznie do wszystkich dyspozycji zmarłego.
   - 7.2.2\. Jeżeli dyspozycja wskazuje kwoty, które łącznie przekraczają limit lub saldo, wypłaty realizuje się proporcjonalnie, zachowując stosunek określony przez posiadacza, a różnicę pozostawia na rachunku jako składnik spadku.
+  <!-- page: 13 -->
   - 7.2.3\. Jeżeli dyspozycja nie określa kwot, środki dzieli się między osoby uprawnione w równych częściach, w granicach salda i limitu.
 - 7.3\. **Zawiadomienie osoby uprawnionej.** Zespół spadkowy zawiadamia osoby uprawnione o istnieniu dyspozycji w ciągu 14 dni od dnia, w którym Bank otrzymał akt zgonu.
   - 7.3.1\. Zawiadomienie wysyła się listem poleconym lub w inny sposób, który zapewnia potwierdzenie doręczenia, na adres osoby uprawnionej wskazany w dyspozycji; w razie braku adresu wykorzystuje się dane z systemu centralnego CBS-PRZYKŁAD.
   - 7.3.2\. Zawiadomienie informuje o kwocie, która przypada osobie uprawnionej, o dokumentach potrzebnych do wypłaty i o możliwości ich złożenia w dowolnej placówce Banku.
-  - 7.3.3\. Zawiadomienia nie wysyła się do osób, których dane nie pozwalają na kontakt; <!-- page: 13 --> w takim przypadku odnotowuje się to w rejestrze spraw spadkowych RSS i podejmuje czynności z sekcji „Przypadki szczególne”.
+  - 7.3.3\. Zawiadomienia nie wysyła się do osób, których dane nie pozwalają na kontakt; w takim przypadku odnotowuje się to w rejestrze spraw spadkowych RSS i podejmuje czynności z sekcji „Przypadki szczególne”.
 - 7.4\. **Wypłata osobie uprawnionej.** Wypłaty dokonuje się w terminie 30 dni od dnia dostarczenia kompletu dokumentów.
   - 7.4.1\. Osoba uprawniona okazuje dokument tożsamości i przedkłada akt zgonu (jeżeli Bank nie otrzymał go wcześniej); składa wniosek na formularzu F-OR-32 wskazując numer rachunku do przelewu.
   - 7.4.2\. Pracownik sprawdza zgodność danych osoby uprawnionej z danymi wskazanymi w dyspozycji; rozbieżności w zapisie imion lub nazwisk, wynikające z oczywistych omyłek, wyjaśnia się na podstawie dokumentów tożsamości.
@@ -261,25 +287,9 @@ Zespół obsługujący sprawy spadkowe zamyka rachunki, rozlicza zobowiązania i
 - 7.5\. **Skutki wypłaty.** Po wypłacie środków z dyspozycji zespół spadkowy pomniejsza saldo rachunku w zestawieniu o wypłaconą kwotę i zapisuje w aktach sprawy, że kwota nie wchodzi w skład spadku.
   - 7.5.1\. Zespół zawiadamia osoby uprawnione, że wypłata z tytułu dyspozycji nie podlega podziałowi między spadkobierców, lecz może być uwzględniona przy obliczaniu zachowku zgodnie z przepisami prawa spadkowego; Bank nie rozstrzyga w tym zakresie.
   - 7.5.2\. Wypłaty z dyspozycji na rzecz osoby spoza kręgu najbliższej rodziny zmarłego mogą podlegać podatkowi od spadków i darowizn, o czym informuje się osobę uprawnioną, nie udzielając jej porad podatkowych.
-
-### Przykłady ustalania kwot z dyspozycji
-
-Poniższe przykłady ilustrują sposób obliczania kwot wypłat z dyspozycji, przy założeniu, że limit łączny wynosi 120 000,00 zł. Dane osób i kwoty są fikcyjne i mają charakter poglądowy.
-
-| **Sytuacja** | **Sposób postępowania** |
-| --- | --- |
-| Dyspozycja wskazuje dwie osoby uprawnione bez określenia kwot; saldo rachunku jest niższe niż limit | Środki dzielimy na dwie równe części; każda osoba otrzymuje połowę salda na dzień zgonu |
-| Dyspozycja wskazuje kwoty, których suma przekracza limit | Wypłaty pomniejszamy proporcjonalnie, tak aby suma równała się kwocie limitu |
-| Dyspozycja wskazuje kwoty, których suma jest wyższa niż saldo rachunku | Wypłaty pomniejszamy proporcjonalnie do salda; rachunek zostaje wyzerowany |
-| Dyspozycja wskazuje osobę uprawnioną na część środków (na przykład 40% salda) | Obliczamy kwotę od salda na dzień zgonu, z uwzględnieniem limitu; resztę pozostawiamy w spadku |
-| Rachunek jest obciążony zajęciem egzekucyjnym ustanowionym przed śmiercią posiadacza | Wypłatę realizujemy dopiero po uwzględnieniu zajęcia w zakresie, w jakim przepisy to przewidują; przypadek konsultujemy z jednostką „Departament Prawny” |
-
-W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób obliczenia kwot w notatce służbowej i dołącza ją do akt sprawy.
-
-<!-- page: 14 -->
 - 7.6\. **Dyspozycja nieczytelna lub niepełna.** Jeżeli dyspozycja na wypadek śmierci nie wskazuje jednoznacznie osoby uprawnionej (na przykład brak numeru PESEL, nieczytelne nazwisko), zespół obsługujący sprawy spadkowe ustala tożsamość osoby uprawnionej na podstawie danych w systemie centralnym CBS-PRZYKŁAD oraz oryginału dyspozycji.
   - 7.6.1\. Jeżeli ustalenie nie jest możliwe, zespół zwraca się do „Departament Prawny” o opinię i do czasu jej uzyskania zawiesza wypłatę w części, której dotyczy wątpliwość.
-  - 7.6.2\. Wypłaty na rzecz pozostałych osób uprawnionych, co do których nie ma wątpliwości, realizuje się w terminie 30 dni.
+  - 7.6.2\. Wypłaty na rzecz pozostałych osób uprawnionych, co do których nie ma <!-- page: 14 --> wątpliwości, realizuje się w terminie 30 dni.
 - 7.7\. **Śmierć osoby uprawnionej przed posiadaczem.** Gdy osoba uprawniona zmarła przed posiadaczem rachunku, jej część dyspozycji wygasa, chyba że dyspozycja przewiduje osobę zastępującą.
   - 7.7.1\. Kwotę niewypłaconą wskutek wygaśnięcia dyspozycji pozostawia się na rachunku jako składnik spadku.
   - 7.7.2\. Spadkobiercom osoby uprawnionej nie wypłaca się środków z dyspozycji, o ile dyspozycja nie stanowi inaczej.
@@ -290,12 +300,20 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
   - 7.9.1\. Wcześniejsze dyspozycje oznacza się w systemie jako zastąpione, a notatkę o tym dołącza do akt.
   - 7.9.2\. Jeżeli dyspozycje dotyczą różnych rachunków, limit 120 000,00 zł stosuje się łącznie.
 
+Wypłata z tytułu dyspozycji na wypadek śmierci podlega ograniczeniu kwotowemu, określonemu jako 120 000,00 zł. Kwota ponad ten limit należy do masy spadkowej i jest wypłacana na zasadach ogólnych.
+
+Przy realizacji dyspozycji pracownik:
+
+- 1\) ustala kwotę przypadającą każdemu uposażonemu zgodnie ze wskazanymi udziałami, a gdy udziałów nie wskazano — w częściach równych;
+- 2\) żąda od uposażonego okazania dokumentu tożsamości i odpisu aktu zgonu, a gdy uposażony jest małoletni — postępowania zgodnie z zasadami dotyczącymi przedstawiciela ustawowego;
+- 3\) wypłaca środki na rachunek uposażonego lub w gotówce w granicach ustalonych dla wypłat w kasie, o ile uposażony tak zażąda;
+- 4\) zapisuje wypłatę w rejestrze i informuje spadkobierców o wysokości wypłaconej kwoty i o pozostałych środkach.
+
 ## 8. Opis postępowania — spadkobiercy i rachunki wspólne
 
 - 8.1\. **Przyjęcie wniosku spadkobiercy.** Wypłata środków pozostających na rachunkach zmarłego (po uwzględnieniu dyspozycji na wypadek śmierci i kosztów pogrzebu) następuje na wniosek spadkobierców, złożony na formularzu F-OR-32.
-  - 8.1.1\. Wniosek składa osobiście każdy ze spadkobierców albo pełnomocnik działający na podstawie pełnomocnictwa z podpisem notarialnie poświadczonym, a gdy spadkobiercą jest małoletni — jego przedstawiciel ustawowy.
+  - 8.1.1\. Wniosek składa osobiście każdy ze spadkobierców albo pełnomocnik działający na <!-- page: 15 --> podstawie pełnomocnictwa z podpisem notarialnie poświadczonym, a gdy spadkobiercą jest małoletni — jego przedstawiciel ustawowy.
   - 8.1.2\. Pracownik sprawdza tożsamość wnioskodawcy i sprawdza, czy zgłoszenie zgonu zostało już wprowadzone do rejestru spraw spadkowych RSS; jeżeli nie, przeprowadza czynności z sekcji o przyjęciu zgłoszenia.
-<!-- page: 15 -->
 - 8.2\. **Dokumenty potwierdzające prawa do spadku.** Pracownik żąda jednego z następujących dokumentów w oryginale lub w odpisie poświadczonym przez sąd bądź notariusza:
   - 8.2.1\. prawomocnego postanowienia sądu o stwierdzeniu nabycia spadku — dokument ten wiąże Bank co do kręgu spadkobierców i wysokości ich udziałów;
   - 8.2.2\. aktu poświadczenia dziedziczenia sporządzonego przez notariusza wraz z wypisem z rejestru aktów poświadczenia dziedziczenia (potwierdzającym zarejestrowanie aktu) — ma skutki prawomocnego postanowienia sądu;
@@ -309,9 +327,9 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
   - 8.4.2\. Jeżeli spadkobierca żąda wypłaty całości środków na rzecz innej osoby, wymaga się oświadczenia wszystkich spadkobierców z podpisami poświadczonymi notarialnie lub złożonymi w obecności pracownika Banku.
   - 8.4.3\. Wypłata całości środków jednemu ze spadkobierców bez pisemnej zgody pozostałych nie jest dozwolona.
 - 8.5\. **Wypłata.** Wypłaty realizuje się w terminie 30 dni od dnia dostarczenia kompletu dokumentów, przelewem na rachunek wskazany przez spadkobiercę albo gotówką, jeżeli jej kwota nie przekracza 15 000,00 zł.
+  <!-- page: 16 -->
   - 8.5.1\. Wypłaty do kwoty 20 000,00 zł akceptuje kierownik placówki, wypłaty wyższe — „Zespół Obsługi Spadków”, a powyżej kwoty 250 000,00 zł — Departament Operacji.
   - 8.5.2\. Każdą wypłatę potwierdza się pisemnym pokwitowaniem odbioru środków wydawanym spadkobiercy; kopię dołącza się do akt sprawy.
-  <!-- page: 16 -->
   - 8.5.3\. Za samą wypłatę środków spadkobiercom Bank nie pobiera opłaty; za zaświadczenia i odpisy wydawane spadkobiercom pobiera się opłaty określone w taryfie.
 - 8.6\. **Rachunek wspólny — blokada zmarłego.** Po zgłoszeniu zgonu jednego ze współposiadaczy rachunku wspólnego umowa rachunku nie wygasa wobec pozostałych współposiadaczy; pracownik blokuje wyłącznie możliwość dysponowania rachunkiem przez zmarłego i jego pełnomocników oraz karty wydane zmarłemu.
   - 8.6.1\. Pozostałych współposiadaczy zawiadamia się pisemnie o przyjęciu zgłoszenia i o tym, że mogą dysponować środkami na rachunku na dotychczasowych zasadach.
@@ -323,16 +341,17 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
 - 8.9\. **Informacje dla spadkobierców współposiadacza.** Spadkobiercom zmarłego współposiadacza udziela się, po przedłożeniu dokumentu potwierdzającego prawa do spadku, informacji o stanie rachunku na dzień śmierci.
   - 8.9.1\. Zakres informacji obejmuje saldo na dzień zgonu oraz historię operacji z okresu, który jest konieczny do ustalenia stanu spadku (zwykle ostatnie 12 miesięcy przed zgonem), a także operacje wykonane po zgonie.
   - 8.9.2\. Informacji o danych osobowych pozostałych współposiadaczy ani o ich oddzielnych produktach nie udziela się.
-- 8.10\. **Testament.** Samego testamentu nie uznaje się za dokument uprawniający do wypłaty środków z rachunku zmarłego. Pracownik wyjaśnia spadkobiercy, że prawa wynikające z testamentu potwierdza dopiero postanowienie sądu o stwierdzeniu nabycia spadku lub akt poświadczenia dziedziczenia.
-  - 8.10.1\. Przedłożonego testamentu nie kopiuje się do akt, jeżeli zawiera on dane osobowe osób niebędących stronami sprawy; w aktach zapisuje się wyłącznie fakt jego okazania.
-  <!-- page: 17 -->
-  - 8.10.2\. Wyjątek od tej zasady stanowi sytuacja, w której testament wskazuje wykonawcę testamentu; wykonawcę uwzględnia się dopiero po przedstawieniu orzeczenia sądu.
-- 8.11\. **Odrzucenie spadku.** Jeżeli ze spadkobierców, którym przysługuje spadek, część złożyła oświadczenie o odrzuceniu spadku, w ustalaniu udziałów zespół obsługujący sprawy spadkowe opiera się wyłącznie na treści postanowienia sądu lub aktu poświadczenia dziedziczenia.
-  - 8.11.1\. Oświadczenie o odrzuceniu spadku nie jest samodzielną podstawą do zmiany podziału środków.
-  - 8.11.2\. Pracownik nie ocenia skuteczności oświadczenia; w przypadku wątpliwości kieruje sprawę do „Departament Prawny”.
-- 8.12\. **Wielu spadkobierców.** W sprawach z wieloma spadkobiercami zespół obsługujący sprawy spadkowe prowadzi jedną sprawę i dokonuje wypłat jednocześnie albo w kolejności, w jakiej spadkobiercy złożą kompletne wnioski.
-  - 8.12.1\. Wypłata na rzecz jednego spadkobiercy nie wymaga zgody pozostałych, jeżeli dotyczy jego udziału określonego w orzeczeniu.
-  - 8.12.2\. Każdy spadkobierca otrzymuje oddzielne pokwitowanie i oddzielne zaświadczenie o wypłaconej kwocie.
+
+Rachunek wspólny wymaga odrębnego podejścia, ponieważ po śmierci jednego ze współposiadaczy prawa pozostałych nie wygasają, a środki na rachunku nie zawsze <!-- page: 17 --> podlegają dziedziczeniu w całości.
+
+Pracownik obsługujący rachunek wspólny:
+
+- 1\) ustala, jaki rodzaj rachunku wspólnego prowadzono, i sprawdza w umowie, czy współposiadacze mogą dysponować środkami samodzielnie, czy tylko łącznie;
+- 2\) pozostawia dostęp współposiadaczowi do rachunku w zakresie wynikającym z umowy, chyba że istnieją przesłanki wskazujące na ryzyko nadużycia;
+- 3\) informuje współposiadacza, że część środków przypadająca zmarłemu wchodzi w skład spadku i wymaga potwierdzenia praw spadkobierców, a Bank może zażądać wyjaśnienia, jak ustalić proporcje;
+- 4\) wypełnia wraz ze współposiadaczem formularz F-OR-34 i dołącza go do akt.
+
+Zmarłego współposiadacza usuwa się z umowy dopiero po ustaleniu przez zespół spadkowy dalszego sposobu prowadzenia rachunku.
 
 ## 9. Opis postępowania — kredyty, ubezpieczenia i informowanie jednostek
 
@@ -344,9 +363,9 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
   - 9.2.1\. Jeżeli ubezpieczenie obejmowało śmierć kredytobiorcy, „Zespół Bancassurance” zgłasza zdarzenie ubezpieczycielowi w terminie 3 dni od otrzymania aktu zgonu.
   - 9.2.2\. Do czasu decyzji ubezpieczyciela spłata kredytu jest zawieszana na wniosek spadkobierców, o ile umowa kredytu to przewiduje; zawieszenie wymaga zgody „Departament Windykacji i Restrukturyzacji”.
   - 9.2.3\. O decyzji ubezpieczyciela informuje się spadkobierców na piśmie.
-- 9.3\. **Współkredytobiorcy i poręczyciele.** Zgon jednego ze współkredytobiorców nie <!-- page: 18 --> zwalnia pozostałych z obowiązku spłaty kredytu.
+- 9.3\. **Współkredytobiorcy i poręczyciele.** Zgon jednego ze współkredytobiorców nie zwalnia pozostałych z obowiązku spłaty kredytu.
   - 9.3.1\. Zespół ustala dane współkredytobiorców i poręczycieli i przekazuje je do jednostki „Departament Windykacji i Restrukturyzacji”, która zawiadamia ich o zgonie i o dalszym trybie spłaty.
-  - 9.3.2\. Gdy zmarły był poręczycielem, zobowiązanie z tytułu poręczenia przechodzi na spadkobierców, o ile umowa poręczenia nie stanowi inaczej.
+  - 9.3.2\. Gdy zmarły był poręczycielem, zobowiązanie z tytułu poręczenia przechodzi na <!-- page: 18 --> spadkobierców, o ile umowa poręczenia nie stanowi inaczej.
 - 9.4\. **Kredyt hipoteczny.** W sprawach kredytów zabezpieczonych hipoteką zespół uzgadnia z „Departament Windykacji i Restrukturyzacji” dalszy tryb postępowania, w tym wymianę dłużnika, zmianę harmonogramu lub restrukturyzację.
   - 9.4.1\. Spadkobiercy mogą złożyć wniosek o przejęcie długu lub o zmianę warunków kredytu; wniosek rozpatruje się według zasad opisanych w dokumencie „Regulamin udzielania i obsługi kredytu hipotecznego dla konsumentów”.
   - 9.4.2\. Wypłata środków z ubezpieczenia nieruchomości lub ubezpieczenia na życie, związanych z kredytem, podlega odrębnym postanowieniom umowy.
@@ -356,31 +375,33 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
   - 9.6.2\. „Departament Finansów i Rachunkowości” otrzymuje informację o saldach na dzień zgonu, o wypłatach i o kwotach z tytułu podatku od odsetek.
   - 9.6.3\. „Departament Obsługi Klienta” otrzymuje informację o zablokowaniu produktów, aby odpowiadać na pytania spadkobierców bez ujawniania danych poufnych.
   - 9.6.4\. Jednostki marketingowe i sprzedażowe wyłączają zmarłego Klienta z kontaktów handlowych i ofert; dane zmarłego nie są wykorzystywane do celów marketingowych.
-- 9.7\. **Kredyt hipoteczny — pierwsze czynności.** Gdy zmarły był kredytobiorcą lub współkredytobiorcą kredytu hipotecznego, zespół obsługujący sprawy spadkowe bezzwłocznie powiadamia „Departament Windykacji i Restrukturyzacji” i jednostkę obsługującą zabezpieczenia.
-  - 9.7.1\. Bank nie wypowiada umowy kredytu ze względu na samą śmierć kredytobiorcy, jeżeli spłata jest kontynuowana zgodnie z harmonogramem.
-  - 9.7.2\. Rachunek, z którego pobierano raty, pozostaje aktywny w zakresie niezbędnym do spłaty kredytu, a środki na ratę pobiera się z salda w okresie do wypłaty środków spadkobiercom.
-- 9.8\. **Ubezpieczenie nieruchomości i ubezpieczenie niskiego wkładu.** Zespół sprawdza, czy polisy dotyczące nieruchomości pozostają w mocy oraz czy składki są opłacone.
-  - 9.8.1\. Brak ciągłości ubezpieczenia nieruchomości zgłasza się „Departament Windykacji i Restrukturyzacji”, bo może on stanowić podstawę do działań zabezpieczających.
-  <!-- page: 19 -->
-  - 9.8.2\. O potrzebie wznowienia ubezpieczenia zawiadamia się spadkobierców pisemnie.
-- 9.9\. **Przejęcie długu i zmiana kredytobiorcy.** Spadkobiercy mogą złożyć wniosek o przejęcie długu przez jednego ze spadkobierców, o zmianę harmonogramu lub o restrukturyzację; wniosek rozpatruje się według kryteriów zdolności kredytowej, jak dla nowego wniosku, z uwzględnieniem sytuacji spadkobierców.
-  - 9.9.1\. Rozpatrzenie wniosku zasady określa dokument „Regulamin udzielania i obsługi kredytu hipotecznego dla konsumentów”.
-  - 9.9.2\. Do czasu decyzji Bank nie żąda przedterminowej spłaty ani nie wszczyna postępowań egzekucyjnych, o ile spadkobiercy utrzymują spłatę rat.
-- 9.10\. **Polisy powiązane z produktami.** „Zespół Bancassurance” bada, czy zmarły był ubezpieczonym lub ubezpieczającym w polisach oferowanych przez Bank, zwłaszcza w ubezpieczeniu na życie, ubezpieczeniu spłaty kredytu, ubezpieczeniu rachunku lub karty oraz ubezpieczeniu nieruchomości.
-  - 9.10.1\. Wykaz polis sporządza się na podstawie danych z systemu centralnego CBS-PRZYKŁAD i uzupełnia o informacje od partnerów ubezpieczeniowych.
-  - 9.10.2\. Polisy, w których zmarły był ubezpieczającym, a ubezpieczonym jest inna osoba (na przykład współmałżonek), pozostają w mocy; o zmianie ubezpieczającego decyduje ubezpieczyciel.
-- 9.11\. **Zgłoszenie zdarzenia ubezpieczycielowi.** Zespół zgłasza zgon ubezpieczycielowi w terminie 3 dni od dnia, w którym Bank otrzymał akt zgonu, jeżeli umowa ubezpieczenia obejmuje zdarzenie śmierci.
-  - 9.11.1\. Do zgłoszenia dołącza się kopię aktu zgonu oraz — jeżeli ubezpieczyciel tego wymaga — dokumentację medyczną dostarczoną przez spadkobierców; Bank nie gromadzi dokumentacji medycznej na własny użytek.
-  - 9.11.2\. Bank nie ocenia zasadności wypłaty odszkodowania ani nie odpowiada za decyzje ubezpieczyciela.
-- 9.12\. **Informowanie osób uprawnionych do świadczenia.** Osoby uprawnione z polisy (uposażeni) informuje się pisemnie o możliwości zgłoszenia roszczenia; Bank nie ujawnia im danych poza zakresem niezbędnym do realizacji prawa.
-  - 9.12.1\. Wypłata świadczenia z polisy następuje bezpośrednio z ubezpieczyciela; środki nie wpływają na rachunek zmarłego, chyba że umowa przewiduje wypłatę na rachunek.
-  - 9.12.2\. Jeżeli świadczenie z polisy zostanie wypłacone na rachunek zmarłego, traktuje się je jako środki podlegające podziałowi spadku, chyba że ubezpieczyciel wskazał uposażonego.
+
+Spadkobiercy mogą przejąć spłatę kredytu na dotychczasowych warunkach, zaproponować jego restrukturyzację lub spłacić go w całości. Każdą z tych możliwości rozpatruje się indywidualnie, z uwzględnieniem zdolności kredytowej spadkobierców i wartości zabezpieczeń.
+
+Rozmowa ze spadkobiercami o przyszłości kredytu obejmuje w szczególności:
+
+- 1\) przedstawienie aktualnego zadłużenia oraz harmonogramu spłat z uwzględnieniem skutków ewentualnej przedpłaty;
+- 2\) wyjaśnienie warunków przejęcia długu przez wybranego spadkobiercę, w tym wymogu oceny jego zdolności kredytowej i zgody Banku;
+- 3\) omówienie możliwości zmiany harmonogramu spłat na okres przejściowy, jeżeli sytuacja finansowa spadkobierców tego wymaga;
+- 4\) informację o skutkach zaniechania spłaty, w tym o możliwości wypowiedzenia umowy i dochodzenia roszczeń z zabezpieczeń.
+
+Wynik rozmowy odnotowuje się w notatce wraz z wnioskami spadkobierców; ostateczną decyzję w sprawie kredytu podejmuje „Departament Windykacji i Restrukturyzacji” zgodnie z zasadami oceny ryzyka.
+
+<!-- page: 19 -->
+Jeżeli zmarły był poręczycielem lub współkredytobiorcą, Bank:
+
+- 1\) bada wpływ zgonu na zabezpieczenie spłaty kredytu i sprawdza, czy umowa przewiduje obowiązek ustanowienia dodatkowego zabezpieczenia;
+- 2\) zawiadamia pozostałych kredytobiorców i dłużników o zgonie w sposób przewidziany umową, nie ujawniając danych osobowych zmarłego poza koniecznymi;
+- 3\) nie wypowiada umowy wyłącznie z powodu zgonu poręczyciela, jeżeli pozostałe zabezpieczenia i zdolność kredytowa kredytobiorcy gwarantują spłatę;
+- 4\) wzywa kredytobiorcę do przedstawienia nowego poręczyciela lub innego zabezpieczenia w terminie wskazanym w umowie, a ewentualne konsekwencje opisuje w piśmie.
+
+Decyzje w sprawach poręczeń podejmuje jednostka właściwa do spraw ryzyka kredytowego, z uwzględnieniem sytuacji życiowej kredytobiorcy.
 
 ## 10. Opis postępowania — wypłaty, podatki i zamknięcie sprawy
 
 - 10.1\. **Wypłata środków spadkobiercom.** Po akceptacji wniosku zespół spadkowy zleca wypłatę środków w terminie 30 dni od dnia dostarczenia kompletu dokumentów.
   - 10.1.1\. Zlecenie wypłaty zawiera numer sprawy, dane spadkobiercy, kwotę, rachunek docelowy oraz podstawę wypłaty (dokument dziedziczenia lub dyspozycja).
-  - 10.1.2\. Wypłaty w walucie obcej realizuje się według kursu zgodnie z tabelą kursów <!-- page: 20 --> Banku z godziny 8:30 w dniu wypłaty, z uwzględnieniem marży 1,3%.
+  - 10.1.2\. Wypłaty w walucie obcej realizuje się według kursu zgodnie z tabelą kursów Banku z godziny 8:30 w dniu wypłaty, z uwzględnieniem marży 1,3%.
   - 10.1.3\. Przed wypłatą sprawdza się, czy na rachunku nie ustanowiono zajęcia egzekucyjnego ani blokady wynikającej z przepisów o przeciwdziałaniu praniu pieniędzy.
 - 10.2\. **Zamknięcie rachunków.** Po wypłacie wszystkich środków zespół spadkowy zamyka rachunki zmarłego w terminie 14 dni.
   - 10.2.1\. Przed zamknięciem sprawdza się, czy nie występują należności Banku (opłaty, odsetki, raty kredytu) lub zobowiązania z tytułu operacji kartowych; należności potrąca się z salda.
@@ -390,23 +411,30 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
   - 10.3.1\. Zaświadczenie wydaje się w terminie 7 dni od dnia złożenia wniosku; opłata wynosi 20,00 zł.
   - 10.3.2\. Odpisy wyciągów wydaje się za opłatą 15,00 zł za każdy odpis; w sprawach spadkowych kierownik placówki może odstąpić od opłaty na wniosek spadkobiercy.
 - 10.4\. **Zamknięcie sprawy.** Po wykonaniu wszystkich czynności zespół spadkowy zamyka sprawę w rejestrze spraw spadkowych RSS i przekazuje akta do archiwum.
+  <!-- page: 20 -->
   - 10.4.1\. Zamknięcie musi poprzedzać sprawdzenie według listy kontrolnej (zob. Załącznik nr 1).
   - 10.4.2\. Dane zmarłego i produkty zamknięte oznacza się w systemie centralnym CBS-PRZYKŁAD statusem „zamknięte — zgon”; dostęp do nich ogranicza się do uprawnionych pracowników.
-- 10.5\. **Odmowa wypłaty.** Gdy zespół spadkowy odmawia wypłaty środków (na przykład z powodu braków dokumentów, sporu między spadkobiercami, zajęcia egzekucyjnego), przygotowuje pisemną informację o przyczynie odmowy.
-  - 10.5.1\. Informacja wskazuje, jakich dokumentów brakuje lub jakie przeszkody uniemożliwiają wypłatę, oraz co spadkobierca może zrobić, aby je usunąć.
-  - 10.5.2\. Informację przekazuje się w ciągu 14 dni od dnia złożenia wniosku, listem poleconym lub w inny sposób umożliwiający potwierdzenie doręczenia.
-- 10.6\. **Reklamacja spadkobiercy.** Spadkobierca może złożyć reklamację dotyczącą sposobu obsługi sprawy. Reklamację rozpatruje się według zasad ogólnych; odpowiedź udziela się w terminie 12 dni, a w sprawach szczególnie skomplikowanych — nie później niż w terminie 40 dni.
-  - 10.6.1\. Reklamację rejestruje się w rejestrze reklamacji i przekazuje „Biuro Reklamacji”; zespół obsługujący sprawy spadkowe dostarcza dokumentację w terminie 3 dni.
-  - 10.6.2\. Odpowiedź zawiera uzasadnienie i pouczenie o możliwości zwrócenia się do Rzecznika Finansowego lub o dochodzenie roszczeń na drodze sądowej.
-<!-- page: 21 -->
-- 10.7\. **Wypłata po wyroku sądu.** Wypłaty środków na podstawie prawomocnego wyroku lub postanowienia sądu, które rozstrzygnęło spór, realizuje się bez dodatkowych warunków, po weryfikacji klauzuli prawomocności.
-- 10.8\. **Rachunki w walucie obcej.** Wypłata spadkobiercom środków z rachunku walutowego jest dokonywana w walucie rachunku, chyba że spadkobierca zażąda przewalutowania.
-  - 10.8.1\. Przy przewalutowaniu stosuje się kurs z tabeli kursów Banku obowiązującej o godzinie 8:30 w dniu wypłaty, z uwzględnieniem marży 1,3% zgodnie z taryfą.
-  - 10.8.2\. Wypłata w gotówce w walucie obcej jest dopuszczalna do kwoty określonej w zasadach obsługi gotówkowej placówki, a w pozostałych przypadkach — przelewem.
-- 10.9\. **Przelew zagraniczny.** Gdy spadkobierca mieszka za granicą i żąda przelewu na rachunek zagraniczny, zespół spadkowy stosuje zasady przelewów zagranicznych, a opłatę pobiera zgodnie z taryfą Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.
-  - 10.9.1\. Przed zleceniem przelewu potwierdza się tożsamość odbiorcy na podstawie kopii dokumentu tożsamości uwierzytelnionej przez notariusza lub konsula.
-  - 10.9.2\. Przelew powyżej kwoty 20 000,00 zł podlega dodatkowej weryfikacji „Departament Zgodności” pod kątem ryzyka prania pieniędzy.
-- 10.10\. **Wypłata gotówkowa.** Wypłaty gotówkowe dla spadkobierców dokonuje się do kwoty 15 000,00 zł jednorazowo; wypłaty wyższe wymagają awizowania z 3 dni wyprzedzeniem.
+- 10.5\. Wypłać koszty pogrzebu z rachunku zmarłego.
+  - 10.5.1\. Przyjmij wniosek na formularzu F-OR-33 wraz z rachunkami lub fakturami wystawionymi na osobę, która pokryła koszty, i odpisem aktu zgonu.
+  - 10.5.2\. Sprawdź, czy kwota wniosku nie przekracza limitu określonego jako 8 000,00 zł; kwoty wyższe wymagają decyzji kierownika zespołu spadkowego.
+  - 10.5.3\. Wypłatę wykonaj w terminie 5 dni od przyjęcia kompletnego wniosku i zapisz ją w rejestrze.
+- 10.6\. Rozlicz wypłatę wobec spadkobierców.
+  - 10.6.1\. Wypłacone koszty pogrzebu wlicz w ciężar spadku przy późniejszym podziale środków i poinformuj o tym spadkobierców w piśmie.
+  - 10.6.2\. Jeżeli w trakcie sprawy okaże się, że osoba pobierająca środki nie poniosła kosztów, wystąp o zwrot środków na rachunek zmarłego.
+
+### Podatki i obowiązki informacyjne
+
+- 1\. Pracownik zespołu spadkowego informuje spadkobierców i osoby uprawnione, że:
+  - 1\) Bank nie pobiera podatku od spadków i darowizn od wypłacanych środków; obowiązek zgłoszenia nabycia spadku organowi podatkowemu spoczywa na nabywcy, a zgłoszenia dokonuje się w terminie 6 miesięcy od dnia powstania obowiązku podatkowego;
+  - 2\) od odsetek naliczonych do dnia zgonu Bank pobiera podatek od dochodów z odsetek według stawki 19%, jeżeli odsetki te podlegają opodatkowaniu zgodnie z przepisami;
+  - 3\) zaświadczenie o stanie rachunku na dzień zgonu, wydane przez Bank, może posłużyć do zgłoszenia nabycia spadku; Bank nie sporządza za spadkobierców deklaracji podatkowych;
+  - 4\) pracownik nie udziela porad podatkowych, a w przypadku pytań wskazuje właściwy urząd skarbowy lub doradcę podatkowego.
+- 2\. „Departament Finansów i Rachunkowości”:
+  - 1\) księguje wypłaty ze spadku w sposób umożliwiający późniejsze sporządzenie informacji dla organów podatkowych;
+  - 2\) przekazuje informacje o saldach i wypłatach organom uprawnionym na podstawie przepisów, w terminie wskazanym w wezwaniu;
+  - 3\) „Departament Prawny” akceptuje każdą odpowiedź na wezwanie organu dotyczącą zmarłego Klienta, zanim zostanie wysłana.
+
+Pracownik nie udostępnia organom ani osobom trzecim informacji objętych tajemnicą bankową, z wyjątkiem sytuacji, w których uprawnienie do uzyskania informacji wynika z przepisów prawa, zwłaszcza z przepisami prawa bankowego (zob. ustawa z dnia 29 <!-- page: 21 --> sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646)). W przypadku wątpliwości co do zakresu uprawnienia pracownik kieruje sprawę do „Departament Prawny”.
 
 ## 11. Przypadki szczególne
 
@@ -417,32 +445,28 @@ W każdym przypadku zespół obsługujący sprawy spadkowe dokumentuje sposób o
 - 2\. Jeżeli spadkobiercą jest osoba małoletnia lub ubezwłasnowolniona, Bank wypłaca środki wyłącznie przedstawicielowi ustawowemu i po przedłożeniu orzeczenia sądu opiekuńczego zezwalającego na dokonanie czynności przekraczającej zwykły zarząd, jeśli wypłata przekracza zwykły zarząd majątkiem dziecka.
 - 3\. Jeżeli spadkobiercy złożyli sprzeczne roszczenia lub zachodzi spór co do ważności testamentu, zespół spadkowy wstrzymuje wypłatę do czasu uprawomocnienia się orzeczenia sądu albo zgodnego oświadczenia wszystkich zainteresowanych i zawiadamia o tym spadkobierców pisemnie.
 - 4\. Gdy po zgłoszeniu zgonu na rachunek wpłynęły świadczenia z tytułu emerytury lub renty za okres po dacie zgonu, Bank zwraca je na żądanie organu rentowego w zakresie i terminie określonym w przepisach; zwrot realizuje „Departament Finansów i Rachunkowości” po zatwierdzeniu przez „Zespół Obsługi Spadków”.
-<!-- page: 22 -->
 - 5\. Jeżeli na rachunku ustanowiono zajęcie egzekucyjne, wypłata środków spadkobiercom jest dokonywana po uwzględnieniu zajęcia; komornika zawiadamia się o śmierci dłużnika w odpowiedzi na zawiadomienie o zajęciu.
 - 6\. Gdy zmarły był cudzoziemcem, a spadkobiercy przedstawili zagraniczne dokumenty, sprawę przekazuje się do „Departament Prawny” w celu oceny skuteczności dokumentów oraz tłumaczenia przysięgłego.
-- 1\. Pracownik zwraca szczególną uwagę na sygnały mogące wskazywać próbę nadużycia, zwłaszcza gdy:
-  - 1\) dokument zgonu lub dokument dziedziczenia budzi wątpliwości co do autentyczności (niespójność danych, ślady przeróbek, brak pieczęci lub podpisu);
-  - 2\) osoba żądająca wypłaty wywiera nacisk czasowy, odmawia okazania dokumentu tożsamości albo dąży do ominięcia standardowych kroków;
-  - 3\) w krótkim czasie przed zgłoszeniem zgonu wykonano nietypowe operacje (wypłaty, zmiany dyspozycji, ustanowienie pełnomocnictwa);
-  - 4\) kilku zgłaszających przedstawia sprzeczne informacje o zmarłym lub o swoich uprawnieniach.
-- 2\. W przypadku zaistnienia sygnałów, o których mowa wyżej, pracownik:
-  - 1\) zawiesza wypłatę i nie informuje osoby żądającej o podejrzeniach;
-  - 2\) bezzwłocznie powiadamia kierownika placówki, który zgłasza sprawę do „Departament Zgodności” i „Departament Bezpieczeństwa”;
-  - 3\) zabezpiecza dokumenty i zapis monitoringu z wizyty, o ile są dostępne;
-  - 4\) zapisuje zdarzenie w rejestrze spraw spadkowych RSS bez oceniającego opisu zachowania osoby.
 
-Decyzję o dalszym postępowaniu, w tym o zawiadomieniu organów ścigania, podejmuje „Departament Zgodności” w porozumieniu z „Departament Prawny”.
+**Zgon osoby, której majątek jest objęty zajęciem lub egzekucją.** Śmierć dłużnika nie kończy automatycznie postępowania egzekucyjnego, a Bank obowiązany jest stosować się do zajęć dokonanych przed zgonem.
 
-Gdy zgon nastąpił za granicą lub spadkobiercy powołują się na dokumenty zagraniczne:
+W takim przypadku pracownik:
 
-- 1\) akt zgonu wydany przez organ zagraniczny przyjmuje się po jego legalizacji lub zaopatrzeniu w apostille (chyba że umowa międzynarodowa lub prawo unijne zwalnia z tego wymogu) i po przedłożeniu tłumaczenia przysięgłego na język polski;
-- 2\) zagraniczne orzeczenie spadkowe lub inny dokument oceniany jest przez „Departament Prawny” pod kątem skuteczności w Polsce, przy czym ocena powinna być sporządzona w terminie 30 dni;
-- 3\) europejskie poświadczenie spadkowe przyjmuje się bez dodatkowej legalizacji, jeżeli jest wydane przez właściwy organ państwa członkowskiego;
-- 4\) koszty tłumaczeń i legalizacji ponoszą osoby składające dokumenty.
+- 1\) sprawdza, czy na rachunkach zmarłego ustanowiono zajęcie przez komornika lub organ administracji, i zachowuje je w mocy;
+- 2\) nie wypłaca środków spadkobiercom w zakresie objętym zajęciem, a o zgonie zawiadamia organ egzekucyjny w terminie wskazanym w piśmie o zajęciu;
+- 3\) przekazuje komornikowi informacje o spadkobiercach w zakresie wymaganym przepisami, po konsultacji z „Departament Prawny”;
+- 4\) dokumentuje kolejność czynności, ponieważ zajęcie i dziedziczenie mogą prowadzić do sprzecznych obowiązków.
 
-Jeżeli spadkobiercy mieszkają za granicą i nie mogą stawić się w placówce, wniosek o wypłatę może zostać złożony za pośrednictwem pełnomocnika lub z podpisem poświadczonym przez notariusza albo konsula polskiego; zespół obsługujący sprawy spadkowe dokonuje weryfikacji w sposób umożliwiający potwierdzenie tożsamości.
+<!-- page: 22 -->
+**Zgon pełnomocnika lub przedstawiciela ustawowego.** Pełnomocnictwo wygasa ze śmiercią pełnomocnika, a władza rodzicielska lub opieka ustaje wraz ze zgonem opiekuna, co ma wpływ na dostęp do rachunków klientów, którzy z niego korzystali.
 
-<!-- page: 23 -->
+Po otrzymaniu informacji o zgonie pełnomocnika Bank:
+
+- 1\) usuwa dostęp pełnomocnika do rachunków mocodawcy, w tym karty i uprawnienia do bankowości elektronicznej;
+- 2\) zawiadamia mocodawcę o wygaśnięciu pełnomocnictwa i proponuje ustanowienie nowego;
+- 3\) w przypadku małoletniego lub osoby ubezwłasnowolnionej informuje sąd opiekuńczy lub nowego opiekuna, jeżeli został wyznaczony, i zabezpiecza środki do czasu wyjaśnienia sytuacji;
+- 4\) analizuje operacje wykonane przez pełnomocnika w okresie bezpośrednio poprzedzającym zgon, jeżeli mocodawca lub spadkobiercy wyrażą wątpliwości.
+
 ## 12. Kontrola i nadzór
 
 Kontrola stosowania procedury odbywa się na trzech poziomach: bieżącej kontroli funkcjonalnej wykonywanej przez kierowników placówek, kontroli właściciela procedury oraz niezależnej kontroli „Departament Zgodności” i audytu wewnętrznego.
@@ -458,21 +482,17 @@ Właściciel procedury co kwartał sporządza zestawienie spraw spadkowych, w kt
 
 Stwierdzone nieprawidłowości, zwłaszcza wypłaty bez kompletu dokumentów, przekroczenie uprawnień do akceptacji lub brak blokady produktów, podlegają zgłoszeniu do właściciela procedury w terminie 2 dni od ich wykrycia. Właściciel ustala działania naprawcze i termin ich wykonania.
 
-Pracownicy placówek, infolinii i zespołu spadkowego mają obowiązek przejść szkolenie z procedury przed dopuszczeniem do samodzielnej obsługi spraw zgonu oraz szkolenie przypominające co najmniej raz w roku.
-
-Program szkolenia zawiera:
-
-- 1\) zasady przyjmowania zgłoszeń i weryfikacji dokumentów zgonu;
-- 2\) zasady blokady produktów, w tym ograniczenia dotyczące kart, bankowości elektronicznej i zleceń stałych;
-- 3\) podstawy prawa spadkowego w zakresie niezbędnym do obsługi spraw — dokumenty potwierdzające dziedziczenie, dyspozycja na wypadek śmierci, koszty pogrzebu;
-- 4\) zasady rozmowy z osobami w żałobie oraz ochrony informacji objętych tajemnicą bankową;
-- 5\) rozpoznawanie prób nadużyć i tryb powiadamiania „Departament Zgodności”.
-
-Uczestnictwo w szkoleniach rejestruje właściciel procedury; pracownik, który nie ukończył szkolenia w terminie, nie ma uprawnień do akceptowania wypłat w sprawach zgonu do czasu uzupełnienia szkolenia.
+- 12.1\. Przeprowadź przegląd spraw w toku.
+  - 12.1.1\. Raz na 90 dni zestaw z rejestru listę spraw niezakończonych, w podziale na wiek sprawy i etap postępowania.
+  - 12.1.2\. Dla spraw otwartych dłużej niż sześć miesięcy ustal przyczyny: brak dokumentów od spadkobierców, spór lub opóźnienie po stronie Banku.
+  <!-- page: 23 -->
+  - 12.1.3\. Wobec spraw wstrzymanych z powodu braków dokumentowych ponów wezwanie do ich uzupełnienia i odnotuj datę.
+- 12.2\. Zgłoś wyniki przeglądu.
+  - 12.2.1\. Wyniki przeglądu przekaż dyrektorowi właściciela procedury wraz z listą spraw, które wymagają jego decyzji.
+  - 12.2.2\. Opóźnienia spowodowane przez Bank omów na posiedzeniu zespołu i ustal środki zapobiegające powtórzeniu.
 
 Skuteczność procedury ocenia się na podstawie wskaźników, które właściciel procedury raportuje co kwartał. Wskaźniki obliczane są przez „Zespół Obsługi Spadków” na podstawie danych z rejestru spraw spadkowych RSS.
 
-<!-- page: 24 -->
 | **Wskaźnik** | **Wartość docelowa** | **Odpowiedzialny** |
 | --- | --- | --- |
 | Odsetek zgłoszeń zablokowanych w terminie | 100% | Kierownik placówki |
@@ -496,13 +516,12 @@ Akta sprawy zawierają co najmniej:
 - 5\) dokumenty dotyczące kosztów pogrzebu wraz z wnioskiem F-OR-33;
 - 6\) wszelką korespondencję z osobami zainteresowanymi, sądami, notariuszami i organami.
 
-Akta sprawy przechowuje się przez 10 lat od końca roku, w którym zamknięto sprawę, chyba że przepisy lub inne wewnętrzne regulacje Banku przewidują okres dłuższy. Po upływie okresu przechowywania akta niszczy się w sposób uniemożliwiający odtworzenie danych, a fakt zniszczenia zapisuje w protokole.
+Akta sprawy przechowuje się przez 10 lat od końca roku, w którym zamknięto sprawę, chyba że przepisy lub inne wewnętrzne regulacje Banku przewidują okres dłuższy. Po upływie <!-- page: 24 --> okresu przechowywania akta niszczy się w sposób uniemożliwiający odtworzenie danych, a fakt zniszczenia zapisuje w protokole.
 
 Do akt mają dostęp wyłącznie pracownicy „Zespół Obsługi Spadków” oraz osoby upoważnione przez właściciela procedury; każdy dostęp do akt jest rejestrowany. Dane osobowe zmarłego i osób zgłaszających roszczenia są przetwarzane wyłącznie w celu obsługi sprawy spadkowej i wypełnienia obowiązków prawnych Banku.
 
 Dane osobowe Klientów wykorzystuje się wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)) oraz z zasadą minimalizacji danych.
 
-<!-- page: 25 -->
 Pracownik wykonujący czynności objęte procedurą jest obowiązany:
 
 - 1\) zabezpieczać dokumenty i dane przed dostępem osób nieupoważnionych;
@@ -511,17 +530,23 @@ Pracownik wykonujący czynności objęte procedurą jest obowiązany:
 
 Wnioski osób, których dane dotyczą, przekazuje się do inspektora ochrony danych (Inspektor Ochrony Danych, iod@bank.example); informacja o sposobie załatwienia wniosku jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku.
 
-W sprawach zgonu używa się następujące wzory formularzy i pism, dostępne w systemie obiegu dokumentów EOD:
+Akta sprawy zgonu klienta prowadzone są w systemie EOD i obejmują:
 
-| **Kod** | **Dokument** | **Wypełnia** |
-| --- | --- | --- |
-| F-OR-31 | Formularz zgłoszenia zgonu Klienta | Pracownik placówki |
-| F-OR-32 | Wniosek spadkobiercy lub osoby uprawnionej o wypłatę środków | Spadkobierca lub osoba uprawniona z pomocą pracownika |
-| F-OR-33 | Wniosek o zwrot kosztów pogrzebu | Osoba, która poniosła koszty |
-| F-OR-34 | Oświadczenie współposiadacza rachunku wspólnego | Współposiadacz |
-| F-OR-35 | Notatka z ustalenia produktów zmarłego | Zespół Obsługi Spadków |
+- 1\) odpis aktu zgonu oraz dokumenty potwierdzające uprawnienia zgłaszającego i spadkobierców, wraz z notatką o ich weryfikacji;
+- 2\) formularz zgłoszenia, notatkę o czynnościach wykonanych w placówce i wykaz produktów zmarłego;
+- 3\) dokumenty dotyczące wypłat, w tym wnioski, potwierdzenia przelewów i dokumenty rozliczenia kosztów pogrzebu;
+- 4\) korespondencję ze spadkobiercami, ubezpieczycielami, komornikami, sądami i innymi podmiotami, z datami wpływu i wysyłki.
 
-Wzory formularzy uaktualnia właściciel procedury; pracownicy używają wyłącznie aktualne wzory opublikowane w systemie obiegu dokumentów.
+Dokumenty w aktach muszą być czytelne i opatrzone numerem sprawy; dokumenty zawierające dane szczególnej kategorii, na przykład informacje o stanie zdrowia, przechowuje się w odrębnej części akt z ograniczonym dostępem.
+
+Pisma kierowane do spadkobierców w sprawie zgonu klienta sporządza się według następujących zasad:
+
+- 1\) pismo jest napisane prostym i uprzejmym językiem, bez zbędnych sformułowań prawniczych, i zawiera numer sprawy oraz dane osoby prowadzącej sprawę;
+- 2\) pismo wskazuje, czego Bank oczekuje od adresata i w jakim terminie, a w razie braku odpowiedzi — jakie będą skutki;
+- 3\) pisma wysyła się listem poleconym lub w inny sposób umożliwiający potwierdzenie <!-- page: 25 --> doręczenia, a kopię zachowuje w aktach;
+- 4\) treści pisma nie przekazuje się osobom, które nie wykazały uprawnienia do informacji, nawet jeśli twierdzą, że działają w imieniu spadkobierców.
+
+Wzory pism zatwierdza właściciel procedury; pracownicy nie zmieniają ich treści bez konsultacji z „Departament Prawny”.
 
 ## 14. Postanowienia końcowe
 
@@ -531,7 +556,6 @@ W sprawach nieuregulowanych w procedurze stosuje się odpowiednio przepisy powsz
 
 Pracownicy obsługujący sprawy spadkowe odbywają szkolenie z zasad procedury przed dopuszczeniem do pracy oraz co roku szkolenie przypominające; udział w szkoleniu zapisuje się w aktach pracowniczych.
 
-<!-- page: 26 -->
 Zmiany procedury wprowadza się w trybie przewidzianym dla jej pierwotnego przyjęcia. Projekt zmiany przygotowuje właściciel procedury, a opiniuje Departament Zgodności oraz, w razie potrzeby, Departament Prawny.
 
 Każda zmiana musi zawierać:
@@ -542,7 +566,7 @@ Każda zmiana musi zawierać:
 
 Poprzednie wersje archiwizuje się i udostępnia na żądanie komórki ds. zgodności (Departament Zgodności). Pracownicy są informowani o zmianie przed dniem jej wejścia w życie.
 
-<!-- page: 27 -->
+<!-- page: 26 -->
 ## Załącznik nr 1 Lista kontrolna obsługi zgłoszenia zgonu
 
 Lista kontrolna służy do potwierdzenia, czy wszystkie czynności procedury zostały wykonane. Sporządza ją pracownik zespołu spadkowego przed zamknięciem sprawy; podpisaną listę włącza się do akt.
@@ -565,7 +589,7 @@ Lista kontrolna służy do potwierdzenia, czy wszystkie czynności procedury zos
 | 14. | Wydano spadkobiercom zaświadczenia i dokumenty, o które wnioskowali |  |
 | 15. | Akta sprawy skompletowano i przekazano do archiwum |  |
 
-<!-- page: 28 -->
+<!-- page: 27 -->
 ## Załącznik nr 2 Wykaz dokumentów wymaganych od osób zgłaszających roszczenia
 
 Niniejsze zestawienie wymienia dokumenty, których pracownik wymaga od osób zgłaszających roszczenia w poszczególnych typach spraw. Dokumenty składa się w oryginale do wglądu lub w odpisie poświadczonym; pracownik sporządza poświadczoną kopię.
@@ -579,13 +603,25 @@ Niniejsze zestawienie wymienia dokumenty, których pracownik wymaga od osób zg�
 | Rachunek wspólny | Akt zgonu, oświadczenie współposiadacza F-OR-34, dokument tożsamości współposiadacza | „Zespół Obsługi Spadków” |
 | Spadkobierca małoletni | Dokumenty jak w wypłacie spadkobiercom, dokument tożsamości przedstawiciela ustawowego, a w razie potrzeby zezwolenie sądu opiekuńczego | „Zespół Obsługi Spadków” w porozumieniu z „Departament Prawny” |
 
-Niżej opisano układ potwierdzenia przyjęcia zgłoszenia zgonu, które pracownik przekazuje lub wysyła zgłaszającemu w terminie 3 dni. Treść w kolumnie „Treść” pracownik wpisuje indywidualnie w każdej sprawie.
+Poniższe zestawienie określa terminy kolejnych czynności w sprawie zgonu klienta, liczone od dnia, w którym Bank otrzymał odpis aktu zgonu.
 
-| **Element pisma** | **Treść** |
-| --- | --- |
-| Numer sprawy | numer nadany w rejestrze RSS |
-| Dane zgłaszającego | imię i nazwisko, adres do korespondencji, numer telefonu |
-| Wykonane czynności | zablokowanie produktów zmarłego w dniu przyjęcia zgłoszenia, wstrzymanie zleceń stałych, zastrzeżenie kart |
-| Dokumenty do uzupełnienia | lista dokumentów, które należy dostarczyć w terminie 30 dni |
-| Dalsze kroki | informacja o możliwości wypłaty kosztów pogrzebu oraz o procedurze wypłaty środków spadkobiercom |
-| Dane kontaktowe | „Zespół Obsługi Spadków”, adres e-mail zgony@bank.example, infolinia 800 000 001 |
+| **Czynność** | **Odpowiedzialny** | **Termin** |
+| --- | --- | --- |
+| Potwierdzenie przyjęcia zgłoszenia | pracownik przyjmujący zgłoszenie | 3 dni |
+| Ustalenie produktów zmarłego | zespół spadkowy | 3 dni |
+| Informacja dla spadkobierców | zespół spadkowy | 14 dni |
+| Zgłoszenie zdarzenia ubezpieczycielowi | jednostka ubezpieczeń | 3 dni |
+| Wypłata kosztów pogrzebu | zespół spadkowy | 5 dni |
+| Zamknięcie rachunku po rozliczeniu | pracownik rachunkowości | 14 dni |
+
+Poniższa matryca określa, kto akceptuje poszczególne czynności w sprawach zgonu, w zależności od kwoty wypłaty.
+
+<!-- page: 28 -->
+| **Zakres kwotowy** | **Akceptuje** | **Dodatkowe wymogi** |
+| --- | --- | --- |
+| do 20 000,00 zł | Kierownik placówki | Kompletna dokumentacja, weryfikacja tożsamości |
+| powyżej 20 000,00 zł do 250 000,00 zł | Zespół Obsługi Spadków | Weryfikacja dokumentu dziedziczenia, sprawdzenie zajęć egzekucyjnych |
+| powyżej 250 000,00 zł | Departament Operacji | Opinia „Departament Zgodności” i „Departament Prawny” |
+| każda wypłata w sprawie o podwyższonym ryzyku | Departament Zgodności | Opinia na piśmie w aktach sprawy |
+
+Kwoty obejmują łączną wartość wypłat w jednej sprawie spadkowej; dzielenie wypłat na części w celu ominięcia progu akceptacji jest zabronione.

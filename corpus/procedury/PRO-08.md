@@ -83,23 +83,23 @@ Departament Zgodności wykonuje nadzór nad przestrzeganiem procedury w ramach d
 Wnioskodawca ma prawo kontaktować się z IOD bezpośrednio w sprawach związanych z przetwarzaniem jego danych i wykonywaniem jego praw, pod adresem e-mail iod@bank.example, telefonicznie pod numerem 800 000 040 lub listownie na adres: Bank Przykładowy S.A., Inspektor Ochrony Danych, ul. Przykładowa 1, 00-001 Warszawa.
 
 <!-- page: 4 -->
-**Zarząd Banku** zapewnia IOD zasoby i niezależność niezbędne do realizacji zadań. Zarząd w szczególności:
+**Kierownik placówki** odpowiada za to, aby wszyscy pracownicy placówki znali procedurę i potrafili rozpoznać wniosek, który nie został w ten sposób nazwany przez Klienta.
 
-- 1\) zatwierdza procedurę i jej zmiany oraz zapoznaje się ze sprawozdaniem z obsługi wniosków co kwartał;
-- 2\) decyduje w sprawach, w których zdanie Inspektor Ochrony Danych różni się od stanowiska jednostki merytorycznej; odmienne stanowisko IOD zapisuje się w aktach sprawy;
-- 3\) zatwierdza wyjaśnienia kierowane do organu nadzorczego w sprawach o wyższym ryzyku.
+W ramach tej odpowiedzialności kierownik placówki:
 
-Członek Zarządu nadzorujący obszar ryzyka operacyjnego wykonuje bieżący nadzór nad wykonaniem zaleceń IOD oraz komórki ds. zgodności, a także dba o środki techniczne niezbędne do sprawnego wyszukiwania i eksportu danych.
+- 1\) czuwa, aby w placówce były dostępne aktualne druki wniosków i informacja o kanałach kontaktu z IOD;
+- 2\) weryfikuje na bieżąco, czy wnioski przyjęte w placówce zostały zarejestrowane w terminie 2 dni;
+- 3\) rozstrzyga wątpliwości pracowników co do tożsamości wnioskodawcy, a w sprawach spornych zwraca się do Inspektor Ochrony Danych;
+- 4\) zapewnia zastępstwo na wypadek nieobecności osoby odpowiedzialnej za rejestrację wniosków.
 
-Jeżeli dane Klientów są przetwarzane w imieniu Banku przez podmioty zewnętrzne (podmioty przetwarzające), umowy powierzenia przetwarzania powinny zobowiązywać je do pomocy Bankowi w wykonywaniu żądań osób, których dane dotyczą. Odpowiedzialność za nadzór nad takimi podmiotami ponosi Departament Bezpieczeństwa we współpracy z właściwym właścicielem procesu.
+**Jednostki informatyczne** zapewniają techniczną możliwość wykonania żądań osób, których dane dotyczą, w systemach, którymi administrują. Właściciel każdego systemu wskazanego w mapie przetwarzania danych wyznacza co najmniej dwie osoby zdolne do wykonania eksportu, usunięcia i ograniczenia przetwarzania danych w tym systemie, tak aby nieobecność jednego z administratorów nie wydłużała postępowania.
 
-Podmiot przetwarzający zobowiązuje się:
+Do obowiązków jednostek informatycznych należy w szczególności:
 
-- 1\) niezwłocznie przekazać Bankowi każde żądanie otrzymane bezpośrednio od osoby, której dane dotyczą, i nie odpowiadać na nie samodzielnie;
-- 2\) dostarczyć dane lub wykonać czynność (usunięcie, sprostowanie, ograniczenie) w terminie określonym w umowie, nie dłuższym niż 10 dni roboczych od zapytania Banku;
-- 3\) udokumentować wykonanie żądania w sposób umożliwiający Bankowi wykazanie jego realizacji.
-
-Przypadki nieterminowego lub niepełnego wsparcia ze strony podmiotu przetwarzającego odnotowuje się w rejestrze wniosków RODO-REJ jako uchybienie, które Inspektor Ochrony Danych uwzględnia przy ocenie ryzyka związanego z danym dostawcą.
+- 1\) dostarczanie danych w uzgodnionym formacie w terminie 10 dni roboczych od zapytania IOD;
+- 2\) odnotowywanie w dzienniku systemowym każdego eksportu, usunięcia i zmiany danych wykonanych w związku z wnioskiem;
+- 3\) zgłaszanie IOD ograniczeń technicznych, które uniemożliwiają selektywne usunięcie danych, wraz z propozycją rozwiązania zastępczego;
+- 4\) wdrażanie wymogów procedury przy projektowaniu nowych systemów i zmian w istniejących.
 
 ## 4. Definicje
 
@@ -110,9 +110,10 @@ Użyte w procedurze określenia oznaczają:
 - 3\) **Pracownik** — osoba zatrudniona w Banku, realizująca czynności objęte procedurą;
 - 4\) **Właściciel procedury** — komórka organizacyjna odpowiedzialna za jej aktualność i stosowanie;
 - 5\) **Dzień roboczy** — dzień od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;
-- 6\) **Trwały nośnik** — nośnik umożliwiający zachowanie informacji w sposób dostępny do <!-- page: 5 --> późniejszego wykorzystania;
+- 6\) **Trwały nośnik** — nośnik umożliwiający zachowanie informacji w sposób dostępny do późniejszego wykorzystania;
 - 7\) **Placówka** — jednostka Banku obsługująca Klientów;
 - 8\) **Infolinia** — telefoniczny punkt obsługi Klientów, numer 800 000 001;
+<!-- page: 5 -->
 - 9\) **Eskalacja** — przekazanie sprawy do jednostki lub osoby o wyższych uprawnieniach decyzyjnych.
 
 Dodatkowo w procedurze stosuje się następujących określeń:
@@ -195,19 +196,23 @@ Bank wydaje dane osobowe i zmienia je wyłącznie po upewnieniu się, że wniose
   - 5.7.2\. Bieg terminu na udzielenie odpowiedzi nie ulega zawieszeniu w czasie oczekiwania na uzupełnienie informacji, jednak wnioskodawcę należy o tej okoliczności poinformować.
 - 5.8\. Potwierdź wynik weryfikacji w rejestrze wniosków RODO-REJ, wskazując zastosowany sposób oraz osobę, która ją przeprowadziła.
 
-Wnioski składane masowo lub w sposób zorganizowany (np. przez kancelarię, firmę windykacyjną, organizację konsumencką lub w ramach akcji internetowej) wymagają szczególnej uwagi, ponieważ mogą stanowić próbę przeciążenia Banku albo ujawnienia danych podmiotom nieuprawnionym.
+Jeżeli treść wniosku nie pozwala ustalić, czego dotyczy żądanie, IOD może zwrócić się do wnioskodawcy o doprecyzowanie. Wezwanie do uzupełnienia nie może być pretekstem do wydłużenia postępowania ani warunkiem uwzględnienia wniosku w zakresie, który jest jasny.
 
-- 5.9\. Zidentyfikuj wnioski o jednakowej treści lub nadesłane w krótkim czasie z tego samego źródła i zgłoś je do IOD.
-- 5.10\. Każdy wniosek rozpatruj indywidualnie; nie odpowiadaj zbiorczo ani nie przekazuj danych kilku osób jednemu adresatowi.
-  - 5.10.1\. Jeżeli wnioski składa pełnomocnik wielu osób, sprawdź pełnomocnictwo każdej z nich oddzielnie.
-  - 5.10.2\. Dane wydawaj wyłącznie mocodawcy lub pełnomocnikowi, który wykazał umocowanie do ich odbioru.
-- 5.11\. O wniosku wnoszonym w sposób ewidentnie nadmierny lub w złej wierze zawiadom Departament Prawny; decyzję o zastosowaniu procedury odmowy podejmuje Inspektor Ochrony Danych.
-- 5.12\. Informacje o wnioskach zbiorczych uwzględnij w sprawozdaniu dla Zarządu Banku.
-- 5.13\. W przypadku wniosku złożonego za pośrednictwem bezpiecznej skrzynki w bankowości elektronicznej sprawdź, czy wniosek został automatycznie przekierowany do rejestru wniosków RODO-REJ.
-  - 5.13.1\. Jeżeli przekierowanie nie nastąpiło, wprowadź wniosek ręcznie, zachowując datę i godzinę wpływu z komunikatu systemowego.
-  - 5.13.2\. Wiadomości przesłane do niewłaściwej skrzynki (np. do skrzynki reklamacyjnej) prześlij w dniu wpływu do IOD, a nadawcy wyślij informację o przekazaniu.
-- 5.14\. Wnioski wysłane na adres e-mail iod@bank.example obsługuje wyłącznie Inspektor Ochrony Danych; wnioski przesłane na inne adresy Banku przekierowuje się na ten adres bez zmiany daty wpływu.
-- 5.15\. Jeżeli wiadomość zawiera załączniki o niewiadomym pochodzeniu lub podejrzaną zawartość, nie otwieraj ich i powiadom Departament Bezpieczeństwa; wniosek zarejestruj niezależnie od tego i powiadom wnioskodawcę o konieczności ponownego przesłania dokumentów.
+- 5.9\. Wezwanie do doprecyzowania wysyłaj bez zbędnej zwłoki, nie później niż w terminie 14 dni od wpływu wniosku, tym samym kanałem, którego użył wnioskodawca.
+- 5.10\. W wezwaniu opisz konkretnie, jakich informacji brakuje, wyjaśnij, dlaczego są potrzebne, i podaj sposobie ich przekazania.
+- 5.11\. Jeżeli wnioskodawca nie odpowie, ponów wezwanie jednokrotnie po upływie terminu 14 dni; po jego bezskutecznym upływie wniosek rozpatrz w zakresie, który można ustalić, i wskaż, jakiej części nie zrealizowano oraz dlaczego.
+- 5.12\. Fakt doprecyzowania oraz jego datę wpisz do rejestru wniosków, aby było widoczne, że bieg terminu nie został zawieszony.
+
+Wnioski zróżnicowane są pod względem pilności i złożoności. Aby zapewnić terminowość, IOD przyporządkowuje każdy zarejestrowany wniosek do jednej z kategorii obsługi już w dniu wpływu.
+
+| **Kategoria** | **Przykład sprawy** | **Sposób obsługi** |
+| --- | --- | --- |
+| Prosta | Pytanie o to, czy Bank przetwarza dane; cofnięcie zgody marketingowej | Odpowiedź przygotowuje pracownik zespołu IOD, bez konsultacji z jednostkami |
+| Standardowa | Wniosek o kopię danych z jednego produktu; sprostowanie adresu | Zapytanie do właściciela procesu, odpowiedź w terminie podstawowym |
+| Złożona | Dostęp do danych ze wszystkich systemów; usunięcie danych z archiwów | Zespół roboczy, ocena prawna, ewentualne przedłużenie terminu |
+| Szczególna | Wniosek pełnomocnika, sprawa spadkowa, żądanie wobec nagrań | Udział Departamentu Prawnego, zatwierdzenie przez IOD |
+
+Kategorię można zmienić w toku sprawy, jeżeli okaże się, że zakres jest większy niż pierwotnie zakładano; zmianę i jej przyczynę odnotowuje się w rejestrze wniosków RODO-REJ.
 
 <!-- page: 9 -->
 ## 6. Opis postępowania — prawo dostępu i kopia danych
@@ -233,26 +238,25 @@ Wnioskodawca ma prawo uzyskać od Banku potwierdzenie, czy jego dane osobowe są
   - 6.5.1\. Za pierwszą kopię danych nie pobieraj opłaty.
   - 6.5.2\. Za każdą kolejną kopię tych samych danych pobierz opłatę w wysokości 20,00 zł, odpowiadającą kosztom administracyjnym; o opłacie poinformuj wnioskodawcę przed wykonaniem kopii.
 
-Poza kopią danych Bank przekazuje wnioskodawcy informacje, które przepisy RODO przewidują przy realizacji prawa dostępu. Informacje te są w znacznej części zawarte w klauzuli informacyjnej Banku, jednak przy odpowiedzi należy je dostosować do sytuacji wnioskodawcy.
-
-- 6.6\. Wskaż cele przetwarzania i ich podstawy prawne w odniesieniu do danych wnioskodawcy.
-  - 6.6.1\. Jeżeli dane są przetwarzane w kilku celach (np. wykonanie umowy, obowiązki AML, marketing), wskaż je osobno i oznacz zakresy danych przetwarzanych w każdym z celów.
-  - 6.6.2\. Jeżeli podstawą jest prawnie uzasadniony interes Banku, wskaż, na czym ten interes polega.
-- 6.7\. Wymień odbiorców lub kategorie odbiorców, którym dane ujawniono lub ujawni się, w tym odbiorców w państwach trzecich i stosowane zabezpieczenia.
-- 6.8\. Wskaż planowany okres przechowywania danych albo kryteria jego ustalenia, korzystając z macierzy okresów przechowywania.
-- 6.9\. Wskaż źródło pochodzenia danych, jeżeli nie zostały zebrane od wnioskodawcy (np. dane z rejestrów publicznych, od współkredytobiorcy, z biura informacji kredytowej).
-- 6.10\. Poinformuj o istnieniu zautomatyzowanego podejmowania decyzji, w tym profilowania, oraz — co najmniej w tych przypadkach — o zasadach ich stosowania i przewidywanych konsekwencjach dla wnioskodawcy.
-- 6.11\. Przypomnij wnioskodawcy o prawie do sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu, przenoszenia danych, cofnięcia zgody oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.
-
 Szczególnych zasad wymaga udostępnianie nagrań rozmów telefonicznych, zapisów monitoringu wizyjnego w placówkach oraz korespondencji elektronicznej, ponieważ zawierają one zazwyczaj dane osób trzecich.
 
-- 6.12\. Nagranie rozmowy wydaj wnioskodawcy, jeżeli zawiera jego głos lub dane dotyczące go; w razie żądania udostępnienia samego zapisu rozmowy poproś Departament Bezpieczeństwa o sporządzenie kopii.
-  - 6.12.1\. Jeżeli w rozmowie występują dane innych osób (np. drugiego współwłaściciela rachunku, pracownika innego niż konsultant), kopię sporządź po wyciszeniu lub usunięciu tych fragmentów.
-  - 6.12.2\. Gdy nagrania nie ma, ponieważ upłynął okres 6 miesięcy, poinformuj o tym wnioskodawcę w odpowiedzi.
-<!-- page: 11 -->
-- 6.13\. Zapisy monitoringu wizyjnego wydawaj w razie zidentyfikowania wnioskodawcy na nagraniu, po zasłonięciu wizerunków innych osób; jeżeli nie jest to technicznie możliwe, odmowę uzasadnij względami ochrony praw osób trzecich i zaproponuj wgląd w nagranie w siedzibie Banku.
-- 6.14\. Korespondencję elektroniczną pracowników przejrzyj pod kątem danych wnioskodawcy: udostępnia się tylko fragmenty zawierające jego dane osobowe, a nie całą korespondencję.
-- 6.15\. Wyszukiwanie w korespondencji wewnętrznej wykonuje wyłącznie Departament Bezpieczeństwa na zlecenie IOD.
+- 6.6\. Nagranie rozmowy wydaj wnioskodawcy, jeżeli zawiera jego głos lub dane dotyczące go; w razie żądania udostępnienia samego zapisu rozmowy poproś Departament Bezpieczeństwa o sporządzenie kopii.
+  - 6.6.1\. Jeżeli w rozmowie występują dane innych osób (np. drugiego współwłaściciela rachunku, pracownika innego niż konsultant), kopię sporządź po wyciszeniu lub usunięciu tych fragmentów.
+  - 6.6.2\. Gdy nagrania nie ma, ponieważ upłynął okres 6 miesięcy, poinformuj o tym wnioskodawcę w odpowiedzi.
+- 6.7\. Zapisy monitoringu wizyjnego wydawaj w razie zidentyfikowania wnioskodawcy na nagraniu, po zasłonięciu wizerunków innych osób; jeżeli nie jest to technicznie możliwe, odmowę uzasadnij względami ochrony praw osób trzecich i zaproponuj wgląd w nagranie w siedzibie Banku.
+- 6.8\. Korespondencję elektroniczną pracowników przejrzyj pod kątem danych wnioskodawcy: udostępnia się tylko fragmenty zawierające jego dane osobowe, a nie całą korespondencję.
+- 6.9\. Wyszukiwanie w korespondencji wewnętrznej wykonuje wyłącznie Departament Bezpieczeństwa na zlecenie IOD.
+
+Wyszukiwanie danych opiera się na mapie przetwarzania danych prowadzonej przez IOD. Mapa wskazuje systemy, w których mogą znajdować się dane wnioskodawcy, oraz właścicieli tych systemów.
+
+- 6.10\. Zweryfikuj aktualność mapy przetwarzania danych i upewnij się, że nie pominięto żadnego systemu, w którym dane mogą się znajdować.
+  - 6.10.1\. Dane o produktach depozytowych i rachunkach — system centralny CBS-PRZYKŁAD; dane o kredytach — system kredytowy; dane o kartach — system kartowy.
+  - 6.10.2\. Dane o kontaktach z Klientem — system obsługi relacji oraz nagrania rozmów infolinii, korespondencja w bezpiecznej skrzynce w bankowości elektronicznej i skrzynki pocztowe pracowników.
+  - 6.10.3\. Dane o zgodach i preferencjach marketingowych — rejestr zgód i preferencji ZGODY-PRZYKŁAD.
+  - 6.10.4\. Dane archiwalne — archiwum elektroniczne ARCH-PRZYKŁAD oraz archiwum <!-- page: 11 --> papierowe.
+- 6.11\. Poproś właścicieli poszczególnych systemów o pisemne (elektroniczne) potwierdzenie, że przekazane dane są kompletne.
+- 6.12\. Jeżeli dane znajdują się w kopiach bezpieczeństwa, wskaż to w odpowiedzi; nie przywracaj kopii wyłącznie w celu wykonania żądania dostępu, o ile dane w kopii pokrywają się z danymi w systemie produkcyjnym.
+- 6.13\. Wynik wyszukiwania odnotuj w rejestrze wniosków RODO-REJ, wraz z listą systemów, w których dane nie zostały znalezione.
 
 ## 7. Opis postępowania — sprostowanie, usunięcie i ograniczenie przetwarzania
 
@@ -268,7 +272,8 @@ Wnioskodawca ma prawo żądać niezwłocznego sprostowania dotyczących go danyc
   - 7.2.3\. Zmiany w danych przekazywanych do organów podatkowych lub nadzorczych skonsultuj z komórką ds. zgodności.
 - 7.3\. Powiadom odbiorców danych o sprostowaniu w terminie 5 dni roboczych od jego wprowadzenia, chyba że okaże się to niemożliwe lub będzie wymagać niewspółmiernie dużego wysiłku.
   - 7.3.1\. Wykaz odbiorców ustal na podstawie rejestru czynności przetwarzania prowadzonego przez IOD.
-  - 7.3.2\. Jeżeli odstąpiono od powiadomienia, zapisz w rejestrze wniosków RODO-REJ <!-- page: 12 --> uzasadnienie.
+  - 7.3.2\. Jeżeli odstąpiono od powiadomienia, zapisz w rejestrze wniosków RODO-REJ uzasadnienie.
+<!-- page: 12 -->
 - 7.4\. Gdy żądanie nie zasługuje na uwzględnienie (Bank ocenia, że dane są prawidłowe), przygotuj uzasadnioną odmowę zgodnie z punktem o odmowie i poinformuj wnioskodawcę o możliwości przedstawienia dodatkowego oświadczenia, które dołączy się do jego danych.
 
 Prawo do usunięcia danych (prawo do bycia zapomnianym) nie ma charakteru bezwzględnego. W odniesieniu do danych przetwarzanych przez bank znaczna ich część jest przetwarzana na podstawie obowiązku prawnego (w szczególności przepisów o przeciwdziałaniu praniu pieniędzy, przepisów podatkowych, rachunkowych i bankowych — zob. ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646)) albo jest niezbędna do ustalenia, dochodzenia lub obrony roszczeń. W takim zakresie żądanie usunięcia nie może uwzględnieniu.
@@ -284,34 +289,29 @@ Prawo do usunięcia danych (prawo do bycia zapomnianym) nie ma charakteru bezwzg
   - 7.7.4\. Nagrania rozmów telefonicznych przechowuj przez 6 miesięcy, chyba że dotyczą reklamacji lub sporu.
 - 7.8\. Dane objęte wyjątkiem zachowaj w systemach, ale zablokuj do nich dostęp przez przeniesienie do archiwum elektronicznego ARCH-PRZYKŁAD i wyłącz je z bieżącego przetwarzania, w szczególności z celów marketingowych i analitycznych.
 - 7.9\. Dane niepodlegające wyjątkom zleć usunięcie ze wszystkich systemów, w tym z kopii zapasowych w ramach najbliższego cyklu ich nadpisywania.
-  <!-- page: 13 -->
-  - 7.9.1\. Zlecenie usunięcia zapisz w rejestrze wniosków RODO-REJ z listą systemów, w których usunięcie ma nastąpić; wykonawca potwierdza wykonanie datą i podpisem.
+  - 7.9.1\. Zlecenie usunięcia zapisz w rejestrze wniosków RODO-REJ z listą systemów, w których usunięcie ma nastąpić; wykonawca potwierdza wykonanie datą <!-- page: 13 --> i podpisem.
   - 7.9.2\. Jeżeli usunięcie technicznie nie jest możliwe, dane zanonimizuj w sposób uniemożliwiający ich ponowne powiązanie z osobą.
 - 7.10\. Powiadom odbiorców, którym dane ujawniono, o usunięciu, w terminie 5 dni roboczych, a gdy dane zostały upublicznione — zastosuj rozsądne środki, by poinformować administratorów, którzy je przetwarzają, o żądaniu usunięcia.
 - 7.11\. W odpowiedzi do wnioskodawcy wskaż, które dane usunięto, a których nie, oraz podstawę prawną i okres dalszego przechowywania; nie ujawniaj w niej innych szczegółów, niż jest to konieczne.
 
-Wykonanie żądania usunięcia lub ograniczenia nie ogranicza się do systemu głównego. Dane mogą znajdować się w środowiskach testowych, hurtowniach danych, raportach, kopiach bezpieczeństwa i dokumentach papierowych.
+Cofnięcie zgody na przetwarzanie danych nie wymaga uzasadnienia i działa na przyszłość; nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem. Cofnięcie powinno być równie łatwe jak jej wyrażenie.
 
-- 7.12\. Poleć komórce ds. operacji sprawdzenie, w których zbiorach pomocniczych dane występują, na podstawie mapy przetwarzania danych.
-  - 7.12.1\. W środowiskach testowych dane powinny być zanonimizowane; jeżeli znajdziesz dane rzeczywiste, usuń je i zgłoś nieprawidłowość komórce ds. bezpieczeństwa.
-  - 7.12.2\. Dane w raportach archiwalnych, które nie mogą zostać zmienione bez utraty ich wartości dowodowej, oznacz jako zablokowane.
-- 7.13\. Dane w kopiach bezpieczeństwa usuwa się w terminie ich naturalnego wygaśnięcia, nie dłuższym niż 90 dni od wykonania żądania; do tego czasu nie wolno ich przywracać bez zgody IOD.
-- 7.14\. Jeżeli kopia danych musi zostać odtworzona z kopii bezpieczeństwa, ponownie wykonaj usunięcie niezwłocznie po odtworzeniu, korzystając z zapisów rejestru żądań usunięcia.
-- 7.15\. Dokumenty papierowe przekaż do zniszczenia w sposób uniemożliwiający odczytanie danych i sporządź protokół zniszczenia.
+- 7.12\. Ustal w systemie zgód ZGODY-PRZYKŁAD, których zgód dotyczy oświadczenie Klienta (np. marketingowych, na profilowanie lub na kontakt w określonym kanale).
+  - 7.12.1\. Jeżeli oświadczenie jest ogólne, rozumiej je jako cofnięcie wszystkich zgód, które nie są niezbędne do wykonania umowy, i poinformuj o tym Klienta.
+  - 7.12.2\. Jeżeli dane są przetwarzane także na innej podstawie prawnej (np. w celu wykonania umowy), poinformuj Klienta, że cofnięcie zgody nie powoduje ich usunięcia.
+- 7.13\. Wprowadź zmianę w systemie zgód z datą i godziną oświadczenia, a następnie zleć Centrum Obsługi Klienta zaprzestanie działań, których dotyczyła zgoda, w terminie 3 dni.
+- 7.14\. Powiadom Klienta o skutkach cofnięcia zgody oraz o tym, że nie wpływa ono na dostęp do produktów i usług realizowanych na podstawie umowy.
 
-Wnioskodawca często żąda „usunięcia z bazy marketingowej” albo „zaprzestania kontaktu”. Takie żądanie należy każdorazowo przeanalizować pod kątem dwóch praw: cofnięcia zgody (lub sprzeciwu wobec marketingu) oraz usunięcia danych.
+Ograniczenie przetwarzania pozostaje w szczególnej relacji do sporów między Bankiem a Klientem. Wnioskodawca, który kwestionuje prawidłowość danych w toku sporu o rozliczenie, może jednocześnie żądać ich sprostowania i ograniczenia.
 
-- 7.16\. Sprawdź, na jakiej podstawie Bank kontaktuje się z wnioskodawcą w celach marketingowych: zgoda na komunikację elektroniczną i telefoniczną, zgoda na profilowanie, prawnie uzasadniony interes (marketing własnych produktów).
-- 7.17\. Jeżeli wnioskodawca cofa zgodę, wpisz cofnięcie w rejestrze zgód i preferencji ZGODY-PRZYKŁAD ze skutkiem natychmiastowym i wyłącz wnioskodawcę z list kampanijnych w terminie 3 dni roboczych.
-  - 7.17.1\. Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem.
-  - 7.17.2\. Cofnięcie zgody na marketing nie dotyczy komunikatów obowiązkowych, takich jak informacje o zmianie umowy lub regulaminu.
-<!-- page: 14 -->
-- 7.18\. Jeżeli wnioskodawca żąda także usunięcia danych, pozostaw wyłącznie dane niezbędne do wykazania, że sprzeciw lub cofnięcie zgody zostały wykonane (identyfikator, data i zakres), a pozostałe dane marketingowe i segmentacyjne usuń.
-- 7.19\. Poinformuj wnioskodawcę, że jego dane jako Klienta Banku pozostają w systemach w zakresie niezbędnym do wykonywania umowy i obowiązków prawnych, a ich usunięcie jest możliwe dopiero po zakończeniu stosunków z Bankiem i upływie okresów przechowywania.
+- 7.15\. Zanim wdrożysz ograniczenie danych dotyczących należności skonsultuj z komórką prawną, czy dane są potrzebne do ustalenia, dochodzenia lub obrony roszczeń.
+- 7.16\. Jeżeli tak, poinformuj wnioskodawcę, że Bank może nadal przetwarzać dane w tym celu, mimo ograniczenia; zapisz w rejestrze, których danych dotyczy wyłączenie.
+- 7.17\. Wstrzymaj przekazanie spornych danych do biura informacji kredytowej ani podmiotów windykacyjnych do czasu rozstrzygnięcia, jeżeli prawo tego nie wymaga.
+- 7.18\. Po rozstrzygnięciu sporu powiadom wnioskodawcę o uchyleniu ograniczenia, jeżeli ono nastąpiło, oraz o jego prawach w zakresie dalszego przetwarzania.
 
 ## 8. Opis postępowania — przenoszenie danych, sprzeciw i decyzje zautomatyzowane
 
-Wnioskodawca ma prawo wnieść sprzeciw wobec przetwarzania jego danych opartego na prawnie uzasadnionym interesie Banku, z przyczyn związanych z jego szczególną sytuacją. W takim przypadku Bank nie przetwarza już danych, chyba że wykaże istnienie ważnych, prawnie uzasadnionych podstaw do przetwarzania, nadrzędnych wobec interesów, praw i wolności wnioskodawcy, albo podstaw do ustalenia, dochodzenia lub obrony roszczeń.
+Wnioskodawca ma prawo wnieść sprzeciw wobec przetwarzania jego danych opartego na prawnie uzasadnionym interesie Banku, z przyczyn związanych z jego szczególną sytuacją. W takim przypadku Bank nie przetwarza już danych, chyba że wykaże istnienie ważnych, <!-- page: 14 --> prawnie uzasadnionych podstaw do przetwarzania, nadrzędnych wobec interesów, praw i wolności wnioskodawcy, albo podstaw do ustalenia, dochodzenia lub obrony roszczeń.
 
 - 8.1\. Rozpoznaj rodzaj sprzeciwu.
   - 8.1.1\. Sprzeciw wobec przetwarzania do celów marketingu bezpośredniego (w tym profilowania do takich celów) jest bezwzględny — należy go uwzględnić bez oceny przesłanek.
@@ -326,32 +326,32 @@ Wnioskodawca ma prawo wnieść sprzeciw wobec przetwarzania jego danych opartego
 - 8.4\. Do czasu rozstrzygnięcia sprzeciwu oceń zastosowanie ograniczenia przetwarzania i, jeżeli okaże się ono zasadne, zrealizuj je zgodnie z punktem o ograniczeniu.
 - 8.5\. Powiadom wnioskodawcę o rozstrzygnięciu; w razie nieuwzględnienia sprzeciwu wskaż, jakie podstawy uznano za nadrzędne, oraz pouczenie o prawie skargi do organu nadzorczego.
 
-<!-- page: 15 -->
 Sprzeciw wobec profilowania dotyczy najczęściej analiz behawioralnych i segmentacji Klientów prowadzonych w celu doboru ofert, a także zautomatyzowanej oceny ryzyka w procesach monitorowania transakcji. Zakres uwzględnienia sprzeciwu zależy od celu profilowania.
 
 - 8.6\. Zidentyfikuj z komórką ds. ryzyka i komórką ds. zgodności, w jakich procesach dane wnioskodawcy są profilowane i jaki jest cel każdego z nich.
 - 8.7\. Profilowanie do celów marketingowych zakończ bezwarunkowo, w terminie 3 dni roboczych, i usuń wnioskodawcę z modeli doboru ofert.
 - 8.8\. Profilowanie w celach przeciwdziałania praniu pieniędzy i finansowaniu terroryzmu, monitorowania nadużyć oraz oceny zdolności kredytowej pozostaw, jeżeli wynika ono z obowiązku prawnego albo jest niezbędne do zawarcia lub wykonania umowy.
-  - 8.8.1\. Wnioskodawcy wyjaśnij to w odpowiedzi w sposób ogólny, bez ujawniania metod wykrywania nadużyć.
+  - 8.8.1\. Wnioskodawcy wyjaśnij to w odpowiedzi w sposób ogólny, bez ujawniania metod <!-- page: 15 --> wykrywania nadużyć.
   - 8.8.2\. Nie informuj wnioskodawcy o tym, że jego transakcje zostały zgłoszone do organu, jeżeli przepisy o przeciwdziałaniu praniu pieniędzy nie pozwalają na ujawnienie takiej informacji; w razie wątpliwości zasięgnij opinii komórki ds. zgodności przed udzieleniem odpowiedzi.
 - 8.9\. Zapisz w rejestrze wniosków RODO-REJ, które procesy profilowania zostały wyłączone, a które utrzymano, wraz z uzasadnieniem.
 
-Prawo do przenoszenia danych przysługuje, gdy przetwarzanie odbywa się na podstawie zgody albo umowy i w sposób zautomatyzowany. Obejmuje ono dane, które wnioskodawca sam dostarczył Bankowi (w tym dane wygenerowane przez jego aktywność, np. historię transakcji), nie obejmuje zaś danych wtórnych, takich jak wynik scoringu, oceny wewnętrzne i analizy Banku.
+Wnioskodawca ma prawo, aby nie podlegać decyzji opartej wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, wywołującej wobec niego skutki prawne lub w podobny sposób istotnie na niego wpływającej. Dotyczy to w szczególności automatycznej oceny zdolności kredytowej i automatycznego odrzucenia wniosku o produkt. Prawo to nie przysługuje, gdy decyzja jest niezbędna do zawarcia lub wykonania umowy, jest dozwolona prawem albo opiera się na wyraźnej zgodzie, jednak także wówczas Bank gwarantuje środki ochrony.
 
-- 8.10\. Sprawdź przesłanki prawa do przenoszenia danych: podstawę przetwarzania (zgoda lub umowa) oraz zautomatyzowany charakter przetwarzania.
-- 8.11\. Wyeksportuj dane w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego (CSV lub XML) przy użyciu modułu eksportu danych EKS-PRZYKŁAD.
-  - 8.11.1\. Zestaw danych obejmuje dane identyfikacyjne i kontaktowe, historię operacji na rachunkach oraz dane o zawartych umowach, w zakresie dostarczonym przez wnioskodawcę.
-  - 8.11.2\. Pomiń dane innych osób, jeżeli ich przekazanie naruszałoby ich prawa.
-- 8.12\. Jeżeli wnioskodawca żąda przesłania danych bezpośrednio innemu administratorowi, wykonaj to, o ile jest to technicznie możliwe.
-  - 8.12.1\. Zweryfikuj tożsamość odbiorcy i uzyskaj od wnioskodawcy pisemne wskazanie administratora oraz kanału przekazania.
-  - 8.12.2\. Dane przekazuj wyłącznie bezpiecznym, szyfrowanym kanałem uzgodnionym z komórką ds. bezpieczeństwa.
-- 8.13\. Zapisz w rejestrze wniosków RODO-REJ zakres przekazanych danych, format, sposób ich przekazania i datę wykonania. Dane przekazane wnioskodawcy pozostają w Banku, o ile nie wniesiono jednocześnie żądania usunięcia, które podlega odrębnej ocenie.
+- 8.10\. Ustal, czy sprawa dotyczy decyzji podjętej wyłącznie w sposób zautomatyzowany, korzystając z opisu procesu decyzyjnego dostarczonego przez komórkę ds. ryzyka.
+- 8.11\. Zapewnij udział człowieka: skieruj sprawę do doświadczonego analityka kredytowego niezaangażowanego w pierwotną decyzję.
+  - 8.11.1\. Analityk ponownie ocenia sprawę, z uwzględnieniem stanowiska wnioskodawcy i dodatkowych dokumentów, które ten przedstawił.
+  - 8.11.2\. Wynik ponownej weryfikacji przedstaw wnioskodawcy w terminie 14 dni od wpływu żądania, jednak nie później niż w terminie na udzielenie odpowiedzi.
+- 8.12\. Przekaż wnioskodawcy informacje o zasadach działania zautomatyzowanej oceny: jakie kategorie danych brano pod uwagę, jakie jest znaczenie oceny i jakie mogą być jej konsekwencje.
+  - 8.12.1\. Informacje przedstaw w sposób zrozumiały dla konsumenta, bez ujawniania wag i parametrów modeli.
+  - 8.12.2\. W razie odrzucenia wniosku kredytowego wskaż także możliwość uzyskania informacji o wynikach konsultacji w biurze informacji kredytowej, jeżeli decyzja z nich korzystała.
+- 8.13\. Jeżeli ponowna weryfikacja wykaże błąd, skoryguj decyzję i uwzględnij to w danych, które posłużyły do oceny; błędy systemowe zgłoś do komórki ds. ryzyka.
+- 8.14\. Wnioski kredytowe odrzucone w sposób zautomatyzowany przechowuj przez 12 miesięcy, chyba że wnioskodawca żąda ich wcześniejszego usunięcia i nie stoją temu na przeszkodzie przepisy.
 
-<!-- page: 16 -->
 ## 9. Opis postępowania — odpowiedź, odmowa i skargi
 
 Bank udziela wnioskodawcy informacji o działaniach podjętych w związku z wnioskiem bez zbędnej zwłoki, w każdym razie w terminie jednego miesiąca od otrzymania wniosku. W razie potrzeby termin ten może zostać przedłużony o dwa kolejne miesiące z uwagi na skomplikowany charakter żądania lub liczbę żądań.
 
+<!-- page: 16 -->
 - 9.1\. Kontroluj upływ terminu w rejestrze wniosków RODO-REJ; system wysyła przypomnienie po upływie 20 dni od wpływu, jeżeli nie przygotowano projektu odpowiedzi.
   - 9.1.1\. Termin liczy się od dnia wpływu wniosku do dowolnej jednostki Banku, a w razie wezwania do doprecyzowania zakresu lub potwierdzenia tożsamości — od dnia, w którym wnioskodawca dostarczył brakujące informacje, jeżeli bez nich nie można było wykonać żądania.
   - 9.1.2\. Termin upływa w dniu odpowiadającym dniowi wpływu w miesiącu następnym; jeżeli takiego dnia nie ma, upływa ostatniego dnia miesiąca.
@@ -370,9 +370,10 @@ Bank może odmówić podjęcia działań w związku z wnioskiem albo pobrać roz
 - 9.7\. Określ podstawę odmowy. Odmowa jest dopuszczalna, gdy:
   - 9.7.1\. nie można zidentyfikować wnioskodawcy, a pomimo wezwania nie dostarczył on dodatkowych informacji;
   - 9.7.2\. żądanie jest ewidentnie nieuzasadnione lub nadmierne;
-  - 9.7.3\. przepis prawa nakłada na Bank obowiązek dalszego przetwarzania danych (np. <!-- page: 17 --> obowiązek przechowywania dokumentacji) albo przetwarzanie jest niezbędne do dochodzenia lub obrony roszczeń;
+  - 9.7.3\. przepis prawa nakłada na Bank obowiązek dalszego przetwarzania danych (np. obowiązek przechowywania dokumentacji) albo przetwarzanie jest niezbędne do dochodzenia lub obrony roszczeń;
   - 9.7.4\. wykonanie żądania naruszałoby prawa lub wolności innych osób albo tajemnicę prawnie chronioną;
   - 9.7.5\. przepis szczególny wyłącza lub ogranicza dane prawo.
+<!-- page: 17 -->
 - 9.8\. Przygotuj odmowę na formularzu F-IOD-03, wskazując w niej konkretną podstawę prawną i faktyczną rozstrzygnięcia.
   - 9.8.1\. Nie powołuj się na ogólne „względy wewnętrzne”; uzasadnienie musi umożliwiać wnioskodawcy ocenę, czy odmowa była zasadna.
   - 9.8.2\. Jeżeli odmowa jest częściowa, wskaż, w jakim zakresie żądanie uwzględniono.
@@ -380,22 +381,22 @@ Bank może odmówić podjęcia działań w związku z wnioskiem albo pobrać roz
 - 9.10\. Odmowę wyślij w terminie jednego miesiąca od otrzymania wniosku, a gdy termin przedłużono — w przedłużonym terminie.
 - 9.11\. W razie odmowy z powodu nadmierności żądań udokumentuj w rejestrze wniosków RODO-REJ liczbę i daty poprzednich wniosków tej osoby oraz uzasadnienie oceny; samo złożenie kilku wniosków nie jest wystarczającą podstawą.
 
-Przekroczenie terminu udzielenia odpowiedzi stanowi naruszenie prawa wnioskodawcy i może być podstawą skargi do organu nadzorczego oraz administracyjnej kary pieniężnej. Każde przekroczenie podlega analizie przyczyn.
+Sposób przekazania odpowiedzi musi gwarantować poufność danych. Dane w odpowiedzi mogą być bardziej wrażliwe niż sam wniosek, dlatego wybór kanału nie może zależeć wyłącznie od wygody Banku.
 
-- 9.12\. Gdy ustalisz, że terminu nie da się dotrzymać, niezwłocznie powiadom IOD, wskazując przyczynę i przewidywany termin udzielenia odpowiedzi.
-- 9.13\. Inspektor Ochrony Danych rozważa, czy można jeszcze przedłużyć termin (jest to możliwe tylko przed jego upływem i najwyżej o dwa kolejne miesiące) oraz informuje wnioskodawcę.
-- 9.14\. Jeżeli termin upłynął, prześlij odpowiedź w pierwszej kolejności, a w treści przeproś i wyjaśnij przyczynę opóźnienia, bez uchylania się od odpowiedzialności.
-- 9.15\. Zapisz przekroczenie w rejestrze wniosków RODO-REJ jako zdarzenie wymagające analizy, a wnioski z niej uwzględnij w sprawozdaniu dla Zarządu Banku i w programie szkoleń.
+- 9.12\. Odpowiedź wysyłaj tym kanałem, którego użył wnioskodawca, o ile zapewnia on odpowiedni poziom bezpieczeństwa.
+  - 9.12.1\. Dane o znacznej wrażliwości (np. dane o transakcjach, o zadłużeniu, o stanie zdrowia) przekazuj wyłącznie przez bezpieczną skrzynkę w bankowości elektronicznej albo w postaci zaszyfrowanego pliku, którego hasło wyślij odrębnym kanałem.
+  - 9.12.2\. Zwykłej poczty e-mail nie używaj do przesyłania kopii danych, chyba że wnioskodawca wyraźnie o to prosi, po uprzednim poinformowaniu go o ryzyku.
+- 9.13\. Wysyłkę papierową realizuj listem poleconym, a w razie przesyłania danych szczególnie wrażliwych — za potwierdzeniem odbioru do rąk własnych.
+- 9.14\. Fakt wysłania, datę i numer przesyłki wpisz w rejestrze wniosków RODO-REJ; po zwrocie przesyłki zawiadom wnioskodawcę dostępnym kanałem i, jeśli to konieczne, wyślij ją ponownie na zweryfikowany adres.
 
-Wnioskodawca, który uważa, że przetwarzanie jego danych narusza przepisy o ochronie danych osobowych, ma prawo wnieść skargę do organu nadzorczego, którym w Rzeczypospolitej Polskiej jest Prezes Urzędu Ochrony Danych Osobowych. Prawo to przysługuje niezależnie od możliwości wniesienia reklamacji do Banku i dochodzenia roszczeń przed sądem.
+Odpowiedź i dane przekazywane wnioskodawcy muszą być doręczone w sposób zapewniający ich poufność. Wybór kanału zależy od tego, w jaki sposób wnioskodawca złożył wniosek oraz od rodzaju danych.
 
-- 9.16\. W każdej odpowiedzi odmownej i w odpowiedzi nieuwzględniającej żądania w całości umieść pouczenie o prawie wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.
-- 9.17\. Jeżeli wnioskodawca wniesie reklamację na sposób załatwienia wniosku, skieruj ją do komórki ds. reklamacji i niezwłocznie powiadom IOD, który przygotuje stanowisko w sprawie.
-<!-- page: 18 -->
-- 9.18\. Po otrzymaniu wezwania lub zawiadomienia o wszczęciu postępowania przez organ nadzorczy przekaż je w dniu wpływu do IOD, Departament Prawny i Departament Zgodności.
-  - 9.18.1\. Inspektor Ochrony Danych koordynuje przygotowanie wyjaśnień, a odpowiedź dla organu nadzorczego zatwierdza Zarząd Banku lub osoba przez niego upoważniona.
-  - 9.18.2\. Terminy wskazane przez organ nadzorczy traktuj jako bezwzględne; o ryzyku ich przekroczenia informuj IOD natychmiast.
-- 9.19\. Wszelką dokumentację dotyczącą postępowania przed organem nadzorczym przechowuj razem z aktami sprawy źródłowej i oznacz ją w rejestrze wniosków RODO-REJ jako „skarga”.
+- 9.15\. Zastosuj kanał doręczenia odpowiedni do charakteru danych.
+  - 9.15.1\. Odpowiedź zawierającą kopię danych przekaż za pośrednictwem bezpiecznej skrzynki w bankowości elektronicznej; jeżeli wnioskodawca nie korzysta z bankowości elektronicznej — listem poleconym z potwierdzeniem odbioru albo osobiście w placówce.
+  - 9.15.2\. Odpowiedź niezawierającą danych osobowych (np. zawiadomienie o przedłużeniu terminu) może być wysłana zwykłą pocztą elektroniczną na adres, z którego wniosek wpłynął.
+  - 9.15.3\. Nie przesyłaj danych na adres, który nie został zweryfikowany.
+- 9.16\. Dowód wysłania lub doręczenia dołącz do akt sprawy; w przypadku listów poleconych <!-- page: 18 --> zapisz numer nadawczy w rejestrze wniosków RODO-REJ.
+- 9.17\. W razie zwrotu przesyłki powtórz wysyłkę na adres wskazany w systemie centralnym CBS-PRZYKŁAD, a po drugim niedoręczeniu poinformuj IOD; zasady dotyczące niedoręczonych przesyłek określa procedura doręczeń korespondencji.
 
 ## 10. Przypadki szczególne
 
@@ -409,22 +410,27 @@ Pełnomocnictwo jest skuteczne, jeżeli:
 
 Odpowiedź udziela się mocodawcy, chyba że pełnomocnictwo wyraźnie przewiduje inaczej. Jeżeli odpowiedź ma zostać przekazana pełnomocnikowi, Inspektor Ochrony Danych bada, czy nie zachodzi ryzyko, że pełnomocnik działa wbrew interesowi mocodawcy, w szczególności przy żądaniu dostępu do danych o stanie rachunków.
 
-Zdarza się, że wniosek o dostęp do danych jest składany jako element sporu z Bankiem (np. w celu zebrania dowodów w sprawie o nieuprawnioną transakcję). Taki cel nie wyłącza prawa dostępu, a Bank nie może odmówić wykonania wniosku tylko z tego powodu.
+Wnioski składane przez osoby przebywające za granicą lub dotyczące transakcji z zagranicą wymagają uwzględnienia dodatkowych okoliczności związanych z przekazywaniem danych poza Europejski Obszar Gospodarczy i z właściwością organów nadzorczych.
 
-W sprawach, w których wniosek jest powiązany ze sporem, pracownik:
+- 10.1\. Ustal, czy wnioskodawca mieszka w państwie członkowskim Unii Europejskiej, czy poza nią, i na tej podstawie określ właściwy organ nadzorczy, do którego może wnieść skargę.
+- 10.2\. Weryfikację tożsamości przeprowadź, wykorzystując dokumenty tożsamości wydane przez organy zagraniczne, które są akceptowane w Banku, albo bezpieczny kanał elektroniczny.
+  - 10.2.1\. Dokumenty w języku obcym, które nie są objęte wykazem akceptowanych dokumentów, przekaż do oceny Departament Zgodności.
+  - 10.2.2\. Nie wymagaj tłumaczenia przysięgłego, jeżeli dokument można zweryfikować w inny sposób.
+- 10.3\. Odpowiedź sporządź w języku polskim, a na prośbę wnioskodawcy także w języku angielskim, z zastrzeżeniem że wiążąca jest wersja polska; wersję angielską przygotowuje się w terminie nieprowadzącym do przekroczenia terminu odpowiedzi.
+- 10.4\. Jeżeli wniosek dotyczy danych przekazanych poza Europejski Obszar Gospodarczy, wskaż w odpowiedzi odbiorców i podstawę przekazania.
 
-- 1\) rozdziela wniosek od ewentualnej reklamacji i załatwia je w odrębnych trybach, z zachowaniem terminów właściwych dla każdego z nich (zob. ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823));
-- 2\) powiadamia komórkę prawną i komórkę ds. reklamacji o sprawie;
-- 3\) nie ujawnia dokumentów wewnętrznych objętych tajemnicą adwokacką lub radcowską ani notatek sporządzonych na potrzeby obrony Banku;
-- 4\) udostępnia dane obiektywne (zapisy operacji, logowań, nagrania rozmów, <!-- page: 19 --> korespondencję z Klientem) w zakresie wynikającym z prawa dostępu.
+Rachunki wspólne, kredyty zaciągnięte przez kilka osób oraz rachunki z poręczeniem <!-- page: 19 --> powodują, że dane jednej osoby występują w dokumentach dotyczących innych osób. Każda z tych osób ma własne prawa, które realizuje się niezależnie od pozostałych.
 
-Wnioski o udostępnienie danych składane przez sądy, prokuraturę, Policję, organy podatkowe, komorników sądowych oraz inne organy publiczne nie są wnioskami osób, których dane dotyczą, i nie podlegają procedurze. Są one załatwiane w trybie odrębnych procedur, z uwzględnieniem przepisów o tajemnicy bankowej.
+Przy obsłudze wniosku w sprawach rachunków lub kredytów wspólnych:
 
-Jeżeli wniosek wpłynął jednak od wnioskodawcy powołującego się na działania organu (np. żądanie ujawnienia, kto i kiedy uzyskał informacje o jego rachunkach), pracownik:
+- 1\) wydaj wnioskodawcy dane dotyczące jego samego, a także dane o wspólnym produkcie w zakresie niezbędnym do wykonania prawa dostępu;
+- 2\) wyłącz z kopii dane osobowe drugiej osoby inne niż te, które są niezbędne do wykazania wspólnego charakteru produktu (imię, nazwisko, rola w umowie);
+- 3\) nie ujawniaj danych adresowych, kontaktowych ani informacji o dochodach drugiej osoby;
+- 4\) żądanie usunięcia lub sprostowania danych jednej osoby nie powoduje zmiany danych drugiej osoby.
 
-- 1\) wprowadza wniosek w rejestrze jako dotyczący prawa dostępu;
-- 2\) Inspektor Ochrony Danych ustala, czy wiadomości o zapytaniach organów mogą zostać ujawnione, uwzględniając przepisy o tajemnicy postępowania i zakazie informowania o zgłoszeniach AML;
-- 3\) odpowiedź ogranicza się do informacji, których ujawnienie jest dozwolone, a w pozostałej części zawiera wskazanie ogólnej podstawy ograniczenia.
+Jeżeli wnioskodawca żąda zmiany danych wspólnych (np. wspólnego adresu
+
+korespondencyjnego), należy uzyskać potwierdzenie każdej z osób, chyba że umowa przewiduje samodzielne działanie jednej z nich.
 
 ## 11. Rejestr wniosków i współpraca z Inspektorem Ochrony Danych
 
@@ -446,24 +452,23 @@ Dane osobowe Klientów wykorzystuje się wyłącznie w zakresie niezbędnym do r
 
 Pracownik wykonujący czynności objęte procedurą jest obowiązany:
 
-- 1\) zabezpieczać dokumenty i dane przed dostępem osób nieupoważnionych;
 <!-- page: 20 -->
+- 1\) zabezpieczać dokumenty i dane przed dostępem osób nieupoważnionych;
 - 2\) nie przekazywać danych poza Bank bez podstawy prawnej;
 - 3\) niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych: inspektorowi ochrony danych (Inspektor Ochrony Danych) oraz jednostce bezpieczeństwa (Departament Bezpieczeństwa).
 
 Wnioski osób, których dane dotyczą, przekazuje się do inspektora ochrony danych (Inspektor Ochrony Danych, iod@bank.example); odpowiedź jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku.
 
-Pracownicy są obowiązani ściśle współpracować z IOD w sprawach dotyczących realizacji praw osób, których dane dotyczą. Inspektor Ochrony Danych ma dostęp do danych osobowych i operacji przetwarzania w zakresie niezbędnym do wykonywania zadań, a jednostki nie mogą odmawiać mu dostępu, powołując się na tajemnicę bankową.
+Rejestr wniosków zawiera dane osobowe wnioskodawców, w tym informacje o ich sytuacji finansowej i sporach z Bankiem; dlatego dostęp do niego wymaga szczególnych zabezpieczeń.
 
-W ramach współpracy IOD:
+Zabezpieczenia rejestru obejmują:
 
-- 1\) formułuje opinie w sprawach wątpliwych, w tym w sprawach zakresu danych podlegających wydaniu i przesłanek odmowy;
-- 2\) monitoruje dotrzymywanie terminów i wskazuje kierownikom jednostek nieprawidłowości;
-- 3\) prowadzi szkolenia pracowników mających kontakt z Klientami raz w roku;
-- 4\) przedstawia Zarządowi Banku sprawozdanie z obsługi wniosków co kwartał, zawierające liczbę wniosków według rodzajów, średni czas ich załatwienia, liczbę odmów oraz wykaz skarg;
-- 5\) jest punktem kontaktowym dla Prezesa Urzędu Ochrony Danych Osobowych w sprawach związanych z przetwarzaniem.
+- 1\) nadawanie uprawnień wyłącznie osobom wskazanym przez IOD, z zachowaniem zasady najmniejszych uprawnień;
+- 2\) zapisywanie w dzienniku zdarzeń każdego otwarcia, zmiany i eksportu sprawy;
+- 3\) coroczny przegląd uprawnień wykonywany przez komórkę ds. bezpieczeństwa;
+- 4\) zakaz kopiowania zawartości rejestru na nośniki przenośne i do prywatnych urządzeń.
 
-Pracownik, który dowie się o możliwym naruszeniu praw osoby, której dane dotyczą, informuje o tym IOD w terminie jednego dnia roboczego; informację przekazuje się także wówczas, gdy sprawa jest już załatwiana przez inną jednostkę.
+Naruszenie tych zasad przez pracownika jest naruszeniem obowiązków pracowniczych i może skutkować odpowiedzialnością przewidzianą w przepisach prawa pracy.
 
 ## 12. Kontrola i nadzór
 
@@ -476,10 +481,9 @@ Kontrola funkcjonalna i nadzór obejmują w szczególności:
 - 3\) wyrywkową kontrolę co najmniej 10% zamkniętych spraw w ramach przeglądu przeprowadzanego co kwartał pod kątem prawidłowości weryfikacji tożsamości, kompletności przekazanych danych i trafności odmów;
 - 4\) ocenę, czy pracownicy ukończyli wymagane szkolenia.
 
-<!-- page: 21 -->
 Departament Zgodności przedstawia Zarządowi Banku wyniki kontroli. W razie stwierdzenia nieprawidłowości właściciel procedury przygotowuje plan działań naprawczych z terminami realizacji i osobami odpowiedzialnymi. Uchybienia pracowników mogą stanowić podstawę odpowiedzialności porządkowej lub dyscyplinarnej, a w razie naruszenia obowiązku zachowania tajemnicy także odpowiedzialności przewidzianej w przepisach prawa.
 
-Szkolenia z zakresu procedury są obowiązkowe dla wszystkich pracowników, którzy mogą otrzymać wniosek osoby, której dane dotyczą. Prowadzi je Inspektor Ochrony Danych wspólnie z działem szkoleń raz w roku.
+Szkolenia z zakresu procedury są obowiązkowe dla wszystkich pracowników, którzy mogą <!-- page: 21 --> otrzymać wniosek osoby, której dane dotyczą. Prowadzi je Inspektor Ochrony Danych wspólnie z działem szkoleń raz w roku.
 
 Program szkolenia obejmuje:
 
@@ -504,12 +508,11 @@ Dokumentację archiwizuje się według następujących zasad:
 
 Do dokumentacji sprawy nie dołącza się danych w szerszym zakresie, niż jest to niezbędne do wykazania prawidłowości załatwienia wniosku (zasada minimalizacji).
 
-<!-- page: 22 -->
 ## 14. Postanowienia końcowe
 
 Procedura obowiązuje z dniem wskazanym w metryczce i uchyla dotychczasowe zasady obsługi wniosków osób, których dane dotyczą. Wnioski, które wpłynęły przed tym dniem, załatwia się według zasad dotychczasowych, z zachowaniem terminów wynikających z RODO.
 
-Niezapoznanie się z procedurą nie zwalnia pracownika z odpowiedzialności za jej niewykonanie. Każdy pracownik składa oświadczenie o zapoznaniu się z procedurą, a oświadczenie dołącza się do akt osobowych.
+Niezapoznanie się z procedurą nie zwalnia pracownika z odpowiedzialności za jej <!-- page: 22 --> niewykonanie. Każdy pracownik składa oświadczenie o zapoznaniu się z procedurą, a oświadczenie dołącza się do akt osobowych.
 
 W sprawach nieuregulowanych w procedurze stosuje się przepisy RODO oraz krajowe przepisy o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)), a także wytyczne organów nadzorczych w zakresie praw osób, których dane dotyczą. Wątpliwości interpretacyjne rozstrzyga Inspektor Ochrony Danych.
 
@@ -581,20 +584,14 @@ W załączeniu przekazujemy kopię danych osobowych, które przetwarzamy, w form
 
 Z poważaniem, (imię i nazwisko, stanowisko)
 
-## Wzór nr 3 — odpowiedź na wniosek o usunięcie danych (odmowa częściowa)
+## Wzór — potwierdzenie cofnięcia zgody na przetwarzanie danych
 
-Szanowni Państwo, w odpowiedzi na Państwa wniosek z dnia (data) o usunięcie danych osobowych informujemy, że usunęliśmy następujące dane: (zakres danych usuniętych). Pozostałe dane (zakres danych zachowanych) musimy zachować, ponieważ Bank jest zobowiązany przepisami (podstawa prawna) do ich przechowywania przez okres (okres przechowywania), liczony od (data początkowa). W tym czasie dane są przechowywane z ograniczeniem dostępu i nie będą wykorzystywane do innych celów.
+Szanowni Państwo, potwierdzamy, że w dniu (data) przyjęliśmy Państwa oświadczenie o cofnięciu zgody na (zakres zgody). Od dnia (data) nie będziemy przetwarzać Państwa danych w tym celu. Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania, którego dokonano przed jej cofnięciem.
+
+Informujemy, że (wariant: dane są nadal przetwarzane na podstawie umowy lub obowiązku prawnego, ponieważ cofnięta zgoda nie była jedyną podstawą ich przetwarzania). Zgodę można udzielić ponownie w każdym czasie, w placówce lub w bankowości elektronicznej.
 
 <!-- page: 25 -->
-Przypominamy, że przysługuje Państwu prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych oraz dochodzenia roszczeń przed sądem.
-
-## Wzór nr 4 — zawiadomienie o przedłużeniu terminu
-
-Szanowni Państwo, w związku z Państwa wnioskiem z dnia (data), nr sprawy (numer sprawy), informujemy, że termin udzielenia odpowiedzi zostaje przedłużony o dwa kolejne miesiące, to jest do dnia (data), z uwagi na (przyczyna przedłużenia: skomplikowany charakter żądania lub liczba żądań). Dołożymy starań, aby odpowiedzieć wcześniej. Z poważaniem, (imię i nazwisko, stanowisko)
-
-## Wzór nr 5 — odmowa realizacji żądania
-
-Szanowni Państwo, po rozpatrzeniu Państwa wniosku z dnia (data) zawiadamiamy, że nie możemy uwzględnić żądania (wskazanie żądania), ponieważ (podstawa faktyczna i prawna odmowy). Mogą Państwo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych oraz dochodzić roszczeń przed sądem. W sprawach związanych z przetwarzaniem danych można się kontaktować z IOD: iod@bank.example. Z poważaniem, (imię i nazwisko, stanowisko)
+Z poważaniem, (imię i nazwisko, stanowisko)
 
 <!-- page: 26 -->
 ## Załącznik nr 3 Macierz praw i okresów przechowywania danych

@@ -57,6 +57,18 @@ Procedura nie reguluje zasad prowadzenia rachunku po jego otwarciu, rozpatrywani
 procedura, stosuje się przepisy lub decyzję, a pracownik niezwłocznie zawiadamia właściciela procedury.
 
 <!-- page: 3 -->
+Procedura nie obejmuje zakładania rachunków dla klientów prowadzących działalność gospodarczą, rachunków lokat i kont oszczędnościowych otwieranych jako produkty dodatkowe do rachunku osobistego ani rachunków powierniczych. Zasady otwierania tych rachunków określają odrębne dokumenty.
+
+W sprawach nieuregulowanych w niniejszej procedurze pracownik postępuje zgodnie z regulaminem rachunku osobistego oraz z zasadami środków bezpieczeństwa finansowego obowiązującymi w Banku. W razie wątpliwości co do zakresu procedury pracownik zwraca się do kierownika placówki albo do Departament Zgodności.
+
+Procedurę stosuje się niezależnie od kanału, w którym klient składa wniosek o otwarcie rachunku. Poszczególne kanały różnią się sposobem identyfikacji klienta i składania podpisu, nie różnią się natomiast wymaganiami co do oceny ryzyka ani dokumentowania czynności.
+
+- 2.1\. Placówka. Klient zgłasza się osobiście do placówki Banku, a pracownik przeprowadza wszystkie czynności w jego obecności.
+- 2.2\. Kanał zdalny. Klient składa wniosek za pośrednictwem strony internetowej lub aplikacji mobilnej, a jego tożsamość weryfikuje się w sposób opisany w części poświęconej otwieraniu rachunku na odległość.
+- 2.3\. Doradca w miejscu wskazanym przez klienta. W wyjątkowych przypadkach, za zgodą kierownika placówki, doradca może otworzyć rachunek poza placówką, zachowując wszystkie wymagania obowiązujące w placówce.
+
+Niezależnie od kanału obowiązuje ta sama lista dokumentów i takie same kryteria odmowy otwarcia rachunku.
+
 ## 3. Odpowiedzialności
 
 W procesie otwierania rachunku role i odpowiedzialności rozkładają się następująco:
@@ -66,11 +78,22 @@ W procesie otwierania rachunku role i odpowiedzialności rozkładają się nast�
 - 3\) **doradca infolinii i pracownik zespołu wideoweryfikacji** — prowadzą rozmowę z klientem na odległość, przeprowadzają sesję wideoweryfikacji w systemie WERYFIKACJA-WIDEO i sporządzają F-OR-03;
 - 4\) **Departament Zgodności** — ocenia klientów o wysokim ryzyku, zatwierdza nawiązanie stosunków gospodarczych z osobami zajmującymi eksponowane stanowiska polityczne, prowadzi kontakty z Generalnym Inspektorem Informacji Finansowej oraz opiniuje zmiany procedury;
 - 5\) **Departament Ryzyka** — utrzymuje metodykę oceny ryzyka klienta i aktualizuje punktację określoną w załączniku do procedury;
-- 6\) **Departament Bezpieczeństwa** — odpowiada za zasady bezpieczeństwa wideoweryfikacji, analizuje podejrzenia fałszerstw dokumentów i wyłudzeń tożsamości;
+- 6\) **Departament Bezpieczeństwa** — odpowiada za zasady bezpieczeństwa <!-- page: 4 --> wideoweryfikacji, analizuje podejrzenia fałszerstw dokumentów i wyłudzeń tożsamości;
 - 7\) **Departament Operacji** — utrzymuje działanie systemu CBS-PRZYKŁAD i archiwum EAD oraz uruchamia rachunki;
 - 8\) **Departament Obsługi Klienta** — jako właściciel procedury odpowiada za jej aktualność, interpretację i szkolenia, a także rozpatruje wnioski o wyjątki od jej stosowania.
 
 Pracownik, który nabierze wątpliwości co do tożsamości klienta, autentyczności dokumentu lub celu otwarcia rachunku, jest obowiązany wstrzymać czynności i przekazać sprawę kierownikowi placówki, a w razie podejrzenia przestępstwa — także komórce „Departament Zgodności”. Nikt nie może wywierać nacisku na pracownika w celu pominięcia czynności wymaganych procedurą.
+
+- 1\. **Doradca klienta** odpowiada za prawidłowe przeprowadzenie procesu otwarcia rachunku w placówce lub w kanale zdalnym. W szczególności:
+  - 1\) identyfikuje klienta i weryfikuje jego tożsamość na podstawie ważnego dokumentu;
+  - 2\) przeprowadza z klientem rozmowę, w trakcie której ustala cel i charakter relacji gospodarczej oraz źródło środków;
+  - 3\) uzupełnia wniosek i kwestionariusz ryzyka, a wszystkie dane zapisuje w systemie CBS-PRZYKŁAD;
+  - 4\) przekazuje klientowi informacje o produkcie przed zawarciem umowy.
+- 2\. **Kierownik placówki** nadzoruje pracę doradców i podejmuje decyzje w sprawach wymagających jego zgody, w tym w terminie 1 dzień rozstrzyga o wyjątkach od standardowych wymagań dokumentowych.
+- 3\. **Departament Zgodności** zatwierdza otwarcie rachunków klientów o podwyższonym ryzyku i rozstrzyga w sprawach wątpliwych w terminie 2 dni.
+- 1\. Pracownik przed rozpoczęciem samodzielnej obsługi klientów przechodzi szkolenie obejmujące zasady otwierania rachunków, weryfikację tożsamości, środki bezpieczeństwa finansowego, ochronę danych osobowych oraz rozpoznawanie prób oszustwa. Szkolenie kończy się sprawdzianem wiedzy.
+- 2\. Szkolenia powtarza się co roku. Kierownik placówki prowadzi listę osób przeszkolonych i, w razie zmian w przepisach lub procedurach, organizuje szkolenie uzupełniające w terminie wyznaczonym przez Departament Zgodności.
+- 3\. Pracownik, który uzyskał negatywny wynik sprawdzianu, nie może samodzielnie otwierać rachunków do czasu ponownego przeszkolenia i uzyskania wyniku pozytywnego.
 
 Każdy pracownik uprawniony do otwierania rachunków jest obowiązany w szczególności:
 
@@ -78,9 +101,10 @@ Każdy pracownik uprawniony do otwierania rachunków jest obowiązany w szczegó
 - 2\) uczestniczyć co najmniej raz w roku w szkoleniu odświeżającym i zdać test wiedzy;
 - 3\) stosować wyłącznie aktualną wersję formularzy i wzorów umów udostępnioną w systemie;
 - 4\) zgłaszać kierownikowi placówki każdą próbę otwarcia rachunku, która wzbudza wątpliwości, nawet jeżeli nie doszło do zawarcia umowy;
+<!-- page: 5 -->
 - 5\) nie zawierać umowy, jeżeli nie zostały zrealizowane wszystkie czynności wymagane procedurą.
 
-Kierownik placówki przydziela uprawnienia do otwierania rachunków w systemie po stwierdzeniu, że pracownik ukończył szkolenia, i odbiera je niezwłocznie, jeżeli pracownik <!-- page: 4 --> przestaje spełniać te warunki. Departament Obsługi Klienta prowadzi rejestr osób posiadających uprawnienia i weryfikuje go co kwartał.
+Kierownik placówki przydziela uprawnienia do otwierania rachunków w systemie po stwierdzeniu, że pracownik ukończył szkolenia, i odbiera je niezwłocznie, jeżeli pracownik przestaje spełniać te warunki. Departament Obsługi Klienta prowadzi rejestr osób posiadających uprawnienia i weryfikuje go co kwartał.
 
 Naruszenie procedury może stanowić naruszenie obowiązków pracowniczych. Pracownik, który zgłosił nieprawidłowość w dobrej wierze, nie może być z tego powodu traktowany niekorzystnie; zgłoszenia można dokonać także anonimowo, za pośrednictwem kanału zgłoszeń nieprawidłowości prowadzonego przez komórkę „Departament Zgodności”.
 
@@ -104,9 +128,8 @@ Ponadto w procedurze stosuje się następujących określeń:
 - 2\) **Środki bezpieczeństwa finansowego** — czynności Banku wobec klienta wymagane przepisami o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu, w tym identyfikacja, weryfikacja tożsamości, ustalenie beneficjenta rzeczywistego i bieżąca analiza transakcji;
 - 3\) **Wideoweryfikacja** — weryfikacja tożsamości klienta na odległość, w czasie rzeczywistym, z wykorzystaniem transmisji obrazu i dźwięku z udziałem pracownika Banku;
 - 4\) **Beneficjent rzeczywisty** — osoba fizyczna sprawująca ostateczną kontrolę nad klientem lub w jej imieniu albo na jej rzecz nawiązywane są stosunki gospodarcze;
-- 5\) **Osoba zajmująca eksponowane stanowisko polityczne (PEP)** — osoba pełniąca znaczące funkcje publiczne, a także członkowie jej rodziny i osoby znane jako bliscy współpracownicy, w rozumieniu przepisów;
+- 5\) **Osoba zajmująca eksponowane stanowisko polityczne (PEP)** — osoba pełniąca <!-- page: 6 --> znaczące funkcje publiczne, a także członkowie jej rodziny i osoby znane jako bliscy współpracownicy, w rozumieniu przepisów;
 - 6\) **Przedstawiciel ustawowy** — rodzic, opiekun lub inna osoba uprawniona z mocy ustawy lub orzeczenia sądu do działania w imieniu osoby małoletniej;
-<!-- page: 5 -->
 - 7\) **Kwestionariusz ryzyka** — formularz F-OR-02, na podstawie którego ustala się poziom ryzyka klienta;
 - 8\) **Wniosek wstępny** — wniosek o otwarcie rachunku złożony na odległość, niepodpisany jeszcze umową;
 - 9\) **GIIF** — Generalny Inspektor Informacji Finansowej, organ odbierający zawiadomienia o podejrzanych transakcjach;
@@ -137,9 +160,9 @@ Klient dostaje warunki umowy na trwałym nośniku i składa podpis. Pracownik po
 Departament Operacji nadaje numer rachunku i aktywuje usługi. Klient otrzymuje dostęp do bankowości elektronicznej.
 
 - 5.1\. Wyjaśnij z klientem cel otwarcia rachunku i wybrany pakiet konta.
-  - 5.1.1\. Omów klientowi warunki pakietów wraz z opłatami, w tym opłatę za prowadzenie rachunku w wysokości 9,00 zł miesięcznie i warunki jej obniżenia, zgodnie z dokumentem „Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych”.
+  - 5.1.1\. Omów klientowi warunki pakietów wraz z opłatami, w tym opłatę za prowadzenie rachunku w wysokości 9,00 zł miesięcznie i warunki jej obniżenia, zgodnie z dokumentem „Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste <!-- page: 7 --> i usługi dla klientów indywidualnych”.
   - 5.1.2\. Poinformuj klienta, że pierwsza wpłata na rachunek wynosi 0,00 zł, a otwarcie rachunku nie wymaga wpłaty początkowej.
-  - 5.1.3\. Zapytaj, czy klient ma już w Banku inne produkty, aby uniknąć duplikatu danych <!-- page: 6 --> w systemie.
+  - 5.1.3\. Zapytaj, czy klient ma już w Banku inne produkty, aby uniknąć duplikatu danych w systemie.
 - 5.2\. Zweryfikuj, czy klient spełnia warunki podmiotowe otwarcia rachunku.
   - 5.2.1\. Ustal wiek klienta: osoba, która ukończyła 18 lat, ma pełną zdolność do czynności prawnych i może otworzyć rachunek samodzielnie.
   - 5.2.2\. Wobec osoby w wieku od 13 lat do ukończenia 18 lat oraz wobec młodszych dzieci stosuj zasady przewidziane dla małoletnich.
@@ -150,6 +173,23 @@ Departament Operacji nadaje numer rachunku i aktywuje usługi. Klient otrzymuje 
 - 5.4\. Załóż sprawę w systemie CBS-PRZYKŁAD.
   - 5.4.1\. Sprawdź, czy klient nie jest już zarejestrowany; w razie znalezienia rekordu zaktualizuj dane, a nie zakładaj nowego.
   - 5.4.2\. Wprowadź dane z F-OR-01 i nadaj sprawie numer, który podaj klientowi.
+
+Klient może rozpocząć proces otwarcia rachunku przez złożenie wniosku wstępnego, a następnie uzupełnić formalności w placówce lub zdalnie. Wniosek wstępny nie jest umową ani zobowiązaniem żadnej ze stron.
+
+- 5.5\. Przyjęcie wniosku wstępnego. W formularzu F-OR-01 zapisz podstawowe dane klienta i rodzaj wnioskowanego rachunku.
+  - 5.5.1\. Wniosek wstępny zachowuje ważność przez 14 dni, po czym dane z niego usuwa się, o ile klient nie dokończył procesu.
+  - 5.5.2\. Poinformuj klienta, jakie dokumenty powinien przynieść lub przesłać, i w jakim terminie może uzupełnić brakujące dokumenty: 30 dni.
+- 5.6\. Wstępne sprawdzenie klienta. Przed wizytą klienta sprawdź w systemie CBS-PRZYKŁAD, czy klient nie ma już rachunku ani zapisów utrudniających zawarcie umowy.
+- 5.7\. Umówienie spotkania. Jeżeli klient wymaga osobistej obsługi, ustal termin wizyty w placówce i przypomnij o konieczności zabrania dokumentu tożsamości.
+
+Przed przystąpieniem do właściwych czynności pracownik sprawdza, czy klient przedstawił komplet dokumentów. Brak któregokolwiek z nich nie zwalnia z obowiązku zachowania należytej staranności.
+
+- 5.8\. Dokument tożsamości. Sprawdź ważność dokumentu, jego stan zewnętrzny i zgodność zdjęcia z wyglądem klienta.
+  - 5.8.1\. Nie przyjmuj dokumentów uszkodzonych w sposób utrudniający odczyt danych <!-- page: 8 --> ani noszących ślady przerobienia.
+  - 5.8.2\. Jeżeli masz wątpliwości co do autentyczności dokumentu, zwróć się do Departament Bezpieczeństwa.
+- 5.9\. Potwierdzenie adresu. Jeżeli adres zamieszkania klienta nie wynika z dokumentu tożsamości, wymagaj dokumentu potwierdzającego adres wystawionego nie wcześniej niż 3 miesięcy przed dniem złożenia wniosku.
+- 5.10\. Numer identyfikacyjny. Zapisz numer ewidencyjny klienta; w przypadku osób, które go nie posiadają, zapisz datę urodzenia i rodzaj oraz numer dokumentu tożsamości.
+- 5.11\. Wynik przeglądu. Wynik sprawdzenia zapisz w liście kontrolnej, a w razie braków wskaż klientowi, co należy uzupełnić.
 
 Bez względu na kanał otwarcia rachunku obowiązują następujące zasady ogólne, których pracownik przestrzega na każdym etapie procesu:
 
@@ -168,10 +208,10 @@ Jeżeli w trakcie procesu wystąpi niejasność co do zastosowania procedury, pr
 Klient zgłaszający się do placówki obsługiwany jest przez pracownika, który samodzielnie prowadzi całą sprawę, chyba że wymaga ona udziału kierownika placówki. Wobec klienta fizycznie obecnego w placówce weryfikację tożsamości przeprowadza się na podstawie oryginału dokumentu.
 
 - 6.1\. Zwróć się do klienta o okazanie oryginału ważnego dokumentu tożsamości.
-  <!-- page: 7 -->
   - 6.1.1\. Przyjmij dowód osobisty albo paszport; w przypadku cudzoziemca — dokument podróży oraz, gdy wymagają tego przepisy, dokument potwierdzający prawo pobytu.
   - 6.1.2\. Nie przyjmuj dokumentów uszkodzonych w sposób utrudniający odczyt, nieważnych, zastrzeżonych ani wydanych w formie kopii lub wydruku.
   - 6.1.3\. Porównaj zdjęcie w dokumencie z wyglądem osoby i sprawdź zabezpieczenia dokumentu zgodnie z instrukcją pracownika.
+<!-- page: 9 -->
 - 6.2\. Zweryfikuj dane z dokumentu i wprowadź je do systemu CBS-PRZYKŁAD.
   - 6.2.1\. Wprowadź imiona, nazwisko, numer PESEL (a w razie jego braku datę urodzenia), obywatelstwo, serię i numer dokumentu oraz datę jego ważności.
   - 6.2.2\. Zeskanuj dokument i dołącz skan do sprawy w archiwum EAD; skan musi być czytelny i obejmować obie strony dokumentu.
@@ -190,40 +230,36 @@ Klient zgłaszający się do placówki obsługiwany jest przez pracownika, któr
 
 W razie awarii systemu CBS-PRZYKŁAD pracownik przyjmuje wniosek na formularzu papierowym i wprowadza dane do systemu niezwłocznie po usunięciu awarii; rachunek nie jest wtedy uruchamiany przed zarejestrowaniem sprawy.
 
-Klient może dokonać pierwszej wpłaty na rachunek w placówce w dniu otwarcia rachunku; nie jest ona warunkiem otwarcia rachunku, ponieważ wymagana pierwsza wpłata wynosi 0,00 zł.
+Identyfikacja i weryfikacja tożsamości klienta w placówce są podstawą wszystkich dalszych czynności. Pracownik wykonuje je przed zebraniem jakichkolwiek informacji o planowanym korzystaniu z rachunku, a ich wynik dokumentuje.
 
-- 6.7\. Przyjmuj wpłatę gotówkową dopiero po uruchomieniu rachunku w systemie.
-  <!-- page: 8 -->
-  - 6.7.1\. Wpłatę przelicz w obecności klienta i potwierdź jej kwotę.
-  - 6.7.2\. Wpłatę przekraczającą 5 000,00 zł wykonaj w kasie, po uzgodnieniu z kierownikiem placówki.
-- 6.8\. Jeżeli kwota wpłaty gotówkowej przekracza 15 000,00 zł, poproś klienta o wyjaśnienie pochodzenia środków.
-  - 6.8.1\. Zapisz wyjaśnienia w systemie i dołącz potwierdzające je dokumenty, jeśli klient je posiada.
-  - 6.8.2\. Gdy wyjaśnienia są niewiarygodne lub klient odmawia ich złożenia, wstrzymaj przyjęcie wpłaty i zawiadom komórkę „Departament Zgodności”.
-- 6.9\. Wydaj klientowi potwierdzenie wpłaty i poinformuj o dostępności środków na rachunku.
+- 6.7\. Okazanie dokumentu. Poproś klienta o okazanie ważnego dokumentu tożsamości z fotografią; nie przyjmuj kopii ani fotografii dokumentu.
+  - 6.7.1\. Porównaj zdjęcie z wizerunkiem klienta, zwracając uwagę na cechy, które nie zmieniają się w czasie.
+  - 6.7.2\. Sprawdź zabezpieczenia dokumentu zgodnie z wytycznymi Departament Bezpieczeństwa i, jeżeli to możliwe, odczytaj dane z elektronicznej warstwy dokumentu.
+  - 6.7.3\. Zwróć uwagę na zachowanie klienta; jeżeli klient wydaje się niepewny co do <!-- page: 10 --> własnych danych, zwiększ stopień weryfikacji.
+- 6.8\. Zapisanie danych. Wprowadź do systemu CBS-PRZYKŁAD imię i nazwisko, numer ewidencyjny, datę i miejsce urodzenia, obywatelstwo, adres zamieszkania oraz dane dokumentu.
+- 6.9\. Weryfikacja w rejestrach. Sprawdź w systemie AML-FILTR, czy dokument nie figuruje jako zastrzeżony, a klient — na listach sankcyjnych.
+- 6.10\. Kopia dokumentu. Zrób kopię dokumentu tożsamości, jeżeli wymagają tego przepisy, i przechowuj ją zgodnie z zasadami ochrony danych osobowych; poinformuj klienta o celu kopiowania.
 
-Obsługa klientów starszych, osób z niepełnosprawnościami oraz klientów, którzy nie czują się pewnie w kontaktach z bankiem, wymaga dostosowania sposobu przekazywania informacji, ale nie zwalnia z żadnej czynności procedury.
+Umowę rachunku klient podpisuje w placówce na urządzeniu do podpisu elektronicznego albo własnoręcznie na dokumencie papierowym. Przed podpisaniem pracownik daje klientowi czas na zapoznanie się z treścią umowy.
 
-- 6.10\. Dostosuj sposób obsługi do potrzeb klienta.
-  - 6.10.1\. Zapewnij miejsce przy stanowisku z krzesłem oraz zadbaj o ciszę potrzebną do rozmowy.
-  - 6.10.2\. Przedstaw najważniejsze informacje o rachunku prostym językiem, bez skrótów i terminów specjalistycznych, i upewnij się, że klient je rozumie.
-  - 6.10.3\. Na życzenie klienta wydrukuj dokumenty w powiększonej czcionce.
-- 6.11\. Jeżeli klient przychodzi z osobą towarzyszącą, rozmawiaj z klientem.
-  - 6.11.1\. Poproś osobę towarzyszącą o zachowanie dyskrecji przy omawianiu danych; w razie potrzeby poproś klienta o zgodę na obecność tej osoby.
-  - 6.11.2\. Jeżeli masz uzasadnione podejrzenie, że klient działa pod presją lub nie rozumie zawieranej umowy, wstrzymaj czynności i poproś o rozmowę z klientem bez osoby towarzyszącej.
-- 6.12\. Poinformuj klienta o możliwości skorzystania z konta w pakiecie dla seniora, jeżeli klient ukończył 60 lat, zgodnie z warunkami opisanymi w dokumencie „Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych”.
-- 6.13\. Nie podpisuj dokumentów za klienta; w razie niemożności samodzielnego podpisania skieruj sprawę do kierownika placówki, który ustali sposób złożenia oświadczenia woli zgodny z przepisami.
+- 6.11\. Wydruk lub wyświetlenie umowy. Umowa zawiera dane klienta, numer rachunku, opłaty, oprocentowanie i terminy; sprawdź z klientem poprawność danych.
+- 6.12\. Podpis klienta.
+  - 6.12.1\. Przy podpisie elektronicznym sprawdź, czy klient podpisuje się osobiście, a nie przekazuje urządzenia innej osobie.
+  - 6.12.2\. Przy podpisie papierowym porównaj podpis ze wzorem w dokumencie tożsamości; jeżeli klient nie może się podpisać, postępuj zgodnie z zasadami określonymi dla osób niepełnosprawnych.
+- 6.13\. Wzór podpisu. Zapisz wzór podpisu klienta w systemie; wzór ten służy do późniejszej weryfikacji dyspozycji składanych w placówce.
+- 6.14\. Przekazanie egzemplarza. Przekaż klientowi egzemplarz umowy i regulaminu w formie papierowej lub na trwałym nośniku, zgodnie z wyborem klienta.
 
 ## 7. Opis postępowania — otwarcie rachunku na odległość
 
 Rachunek na odległość może otworzyć wyłącznie klient pełnoletni, który ma dokument tożsamości z warstwą zdjęciową, numer telefonu i adres poczty elektronicznej. Wniosek składa się w serwisie internetowym albo w aplikacji mobilnej, a tożsamość klienta potwierdza się w trakcie wideoweryfikacji prowadzonej w systemie WERYFIKACJA-WIDEO.
 
 - 7.1\. Przyjmij wniosek wstępny złożony przez klienta w bankowości elektronicznej.
-  - 7.1.1\. Upewnij się, czy klient wypełnił wszystkie pola F-OR-01 i zaakceptował klauzule <!-- page: 9 --> informacyjne oraz warunki rachunku.
+  - 7.1.1\. Upewnij się, czy klient wypełnił wszystkie pola F-OR-01 i zaakceptował klauzule informacyjne oraz warunki rachunku.
   - 7.1.2\. Wniosek wstępny pozostaje w systemie przez 14 dni; po upływie tego terminu wygasa i klient musi złożyć nowy.
 - 7.2\. Potwierdź dane kontaktowe klienta jednorazowym kodem wysłanym na wskazany numer telefonu i adres poczty elektronicznej.
 - 7.3\. Zaplanuj sesję wideoweryfikacji i przeprowadź ją w terminie ustalonym z klientem.
   - 7.3.1\. Upewnij się, że klient znajduje się w pomieszczeniu bez osób postronnych i ma dobre oświetlenie oraz stabilne łącze.
-  - 7.3.2\. Rozpocznij nagrywanie sesji dopiero po poinformowaniu klienta o celu i podstawie prawnej nagrania oraz uzyskaniu jego zgody na dalszy przebieg sesji.
+  - 7.3.2\. Rozpocznij nagrywanie sesji dopiero po poinformowaniu klienta o celu <!-- page: 11 --> i podstawie prawnej nagrania oraz uzyskaniu jego zgody na dalszy przebieg sesji.
   - 7.3.3\. Poproś o pokazanie przed kamerą obu stron dokumentu tożsamości, jego pochylenie w celu ujawnienia zabezpieczeń oraz zdjęcie twarzy w pełnej ostrości.
   - 7.3.4\. Porównaj twarz klienta ze zdjęciem w dokumencie, a w razie wątpliwości poproś o wykonanie prostych poleceń (obrót głowy, mrugnięcie), które wykluczają użycie zapisu lub zdjęcia.
   - 7.3.5\. Czas trwania sesji nie powinien przekraczać 20 minut; po jego upływie przerwij sesję i zaproponuj nowy termin.
@@ -238,18 +274,16 @@ Rachunek na odległość może otworzyć wyłącznie klient pełnoletni, który 
 
 Gdy sesja zostaje przerwana z przyczyn technicznych, pracownik odnotowuje przerwę w protokole i umawia klienta na nowy termin; przerwa z przyczyn technicznych nie wlicza się do liczby prób, o której mowa wyżej.
 
-W przypadku awarii systemu wideoweryfikacji lub bankowości elektronicznej Bank zapewnia ciągłość obsługi wniosków w sposób opisany poniżej. Awarie, które utrudniają otwieranie rachunków, zgłasza się niezwłocznie do komórki „Departament Operacji”.
+Klient może zgłosić zamiar otwarcia rachunku także telefonicznie, za pośrednictwem infolinii dostępnej pod numerem 800 000 001, czynną codziennie przez całą dobę. Rozmowa na infolinii nie zastępuje weryfikacji tożsamości; jej celem jest przyjęcie wniosku wstępnego.
 
-- 7.7\. Powiadom klienta o przerwie i o przewidywanym czasie jej usunięcia.
-  - 7.7.1\. Jeżeli czas usunięcia awarii nie jest znany, zaproponuj klientowi kontakt telefoniczny następnego dnia roboczego lub wizytę w placówce.
-  <!-- page: 10 -->
-  - 7.7.2\. Nie proś klienta o przesyłanie skanów dokumentów tożsamości pocztą elektroniczną; takie kanały nie zapewniają odpowiedniego poziomu ochrony danych.
-- 7.8\. Wniosek wstępny złożony przed awarią pozostaje w systemie i zachowuje ważność przez 14 dni, liczone od dnia jego złożenia.
-- 7.9\. Po przywróceniu działania systemu sprawdź, czy nagrania sesji prowadzonych w czasie awarii zostały zapisane w całości.
-  - 7.9.1\. Jeżeli nagranie jest niepełne lub uszkodzone, sesję uznaje się za niezakończoną i należy ją powtórzyć.
-  - 7.9.2\. Przypadek odnotuj w rejestrze zdarzeń, który prowadzi Departament Bezpieczeństwa.
+- 7.7\. Zweryfikuj rozmówcę zgodnie z zasadami bezpieczeństwa obowiązującymi na infolinii.
+  - 7.7.1\. Poproś o dane potrzebne do założenia wniosku: imiona, nazwisko, PESEL, adres poczty elektronicznej.
+  - 7.7.2\. Nie proś klienta o podanie danych uwierzytelniających do bankowości elektronicznej innych banków ani o numer PIN karty.
+- 7.8\. Zarejestruj wniosek wstępny w systemie CBS-PRZYKŁAD i wyślij klientowi na wskazany adres poczty elektronicznej odnośnik do dokończenia wniosku w serwisie.
+- 7.9\. Poinformuj klienta, że wniosek wstępny jest ważny 14 dni, a do otwarcia rachunku niezbędna jest wideoweryfikacja lub wizyta w placówce.
+- 7.10\. Zakończ rozmowę podsumowaniem uzgodnień i, jeżeli klient wyraził zgodę, zapisz rozmowę zgodnie z zasadami nagrywania rozmów.
 
-Otwarcie rachunku na odległość jest narażone na próby wyłudzenia tożsamości. Pracownik wideoweryfikacji zwraca szczególną uwagę na sygnały ostrzegawcze opisane poniżej i w razie ich wystąpienia kończy sesję.
+Otwarcie rachunku na odległość jest narażone na próby wyłudzenia tożsamości. Pracownik <!-- page: 12 --> wideoweryfikacji zwraca szczególną uwagę na sygnały ostrzegawcze opisane poniżej i w razie ich wystąpienia kończy sesję.
 
 Do sygnałów ostrzegawczych należą w szczególności:
 
@@ -258,19 +292,9 @@ Do sygnałów ostrzegawczych należą w szczególności:
 - 3\) obecność osoby podpowiadającej klientowi lub wyraźne czytanie odpowiedzi z ekranu;
 - 4\) dane we wniosku niezgodne z danymi w dokumencie, a także adres poczty elektronicznej lub numer telefonu założone bezpośrednio przed złożeniem wniosku;
 - 5\) wiele wniosków z tego samego urządzenia lub z tego samego adresu IP na różne dane osobowe.
-- 7.10\. Po stwierdzeniu sygnału ostrzegawczego przerwij sesję bez ujawniania klientowi jej powodu.
-- 7.11\. Zapisz obserwacje w F-OR-03 i niezwłocznie przekaż sprawę do komórki „Departament Bezpieczeństwa”.
-- 7.12\. Zablokuj wniosek w systemie i oznacz dane klienta jako wymagające zwiększonej uwagi; odblokować wniosek może wyłącznie Departament Bezpieczeństwa.
-
-Klient może zgłosić zamiar otwarcia rachunku także telefonicznie, za pośrednictwem infolinii dostępnej pod numerem 800 000 001, czynną codziennie przez całą dobę. Rozmowa na infolinii nie zastępuje weryfikacji tożsamości; jej celem jest przyjęcie wniosku wstępnego.
-
-- 7.13\. Zweryfikuj rozmówcę zgodnie z zasadami bezpieczeństwa obowiązującymi na infolinii.
-  - 7.13.1\. Poproś o dane potrzebne do założenia wniosku: imiona, nazwisko, PESEL, adres poczty elektronicznej.
-  - 7.13.2\. Nie proś klienta o podanie danych uwierzytelniających do bankowości elektronicznej innych banków ani o numer PIN karty.
-- 7.14\. Zarejestruj wniosek wstępny w systemie CBS-PRZYKŁAD i wyślij klientowi na wskazany adres poczty elektronicznej odnośnik do dokończenia wniosku w serwisie.
-<!-- page: 11 -->
-- 7.15\. Poinformuj klienta, że wniosek wstępny jest ważny 14 dni, a do otwarcia rachunku niezbędna jest wideoweryfikacja lub wizyta w placówce.
-- 7.16\. Zakończ rozmowę podsumowaniem uzgodnień i, jeżeli klient wyraził zgodę, zapisz rozmowę zgodnie z zasadami nagrywania rozmów.
+- 7.11\. Po stwierdzeniu sygnału ostrzegawczego przerwij sesję bez ujawniania klientowi jej powodu.
+- 7.12\. Zapisz obserwacje w F-OR-03 i niezwłocznie przekaż sprawę do komórki „Departament Bezpieczeństwa”.
+- 7.13\. Zablokuj wniosek w systemie i oznacz dane klienta jako wymagające zwiększonej uwagi; odblokować wniosek może wyłącznie Departament Bezpieczeństwa.
 
 ## 8. Opis postępowania — środki bezpieczeństwa finansowego
 
@@ -286,6 +310,7 @@ Klient może zgłosić zamiar otwarcia rachunku także telefonicznie, za pośred
 - 8.4\. Ustal, czy klient jest osobą zajmującą eksponowane stanowisko polityczne.
   - 8.4.1\. Poproś klienta o wypełnienie F-OR-06.
   - 8.4.2\. Sprawdź klienta w systemie AML-FILTR, który weryfikuje listy osób i podmiotów objętych sankcjami oraz listę osób zajmujących eksponowane stanowiska.
+  <!-- page: 13 -->
   - 8.4.3\. Przy trafieniu na liście sankcyjnej wstrzymaj czynności i niezwłocznie powiadom komórkę „Departament Zgodności”.
 - 8.5\. Wypełnij kwestionariusz ryzyka i ustal poziom ryzyka klienta.
   - 8.5.1\. Zsumuj punkty przypisane odpowiedziom według załącznika „Punktacja ryzyka klienta”; ryzyko niskie — do 3 punktów, średnie — od 4 do 6 punktów, a wysokie — 7 punktów i więcej.
@@ -295,64 +320,35 @@ Klient może zgłosić zamiar otwarcia rachunku także telefonicznie, za pośred
   - 8.6.2\. Przy ryzyku średnim otwarcie rachunku zatwierdza kierownik placówki; termin na decyzję, liczony w dniach roboczych, wynosi 1 dzień.
   - 8.6.3\. Przy ryzyku wysokim stosuje się wzmożoną analizę, a decyzję podejmuje Departament Zgodności; termin na decyzję, liczony w dniach roboczych, wynosi 2 dni.
 
-<!-- page: 12 -->
 Jeżeli Bank nie może zastosować któregokolwiek ze środków bezpieczeństwa finansowego,
 
 nie nawiązuje stosunków gospodarczych i nie otwiera rachunku; w takim przypadku analizuje się także, czy zachodzą przesłanki do zawiadomienia GIIF, o czym decyduje wyłącznie Departament Zgodności. Pracownik nie informuje klienta o skierowaniu zawiadomienia.
 
-Poziom ryzyka ustalony przy otwarciu rachunku nie jest niezmienny. Podlega on aktualizacji w trakcie trwania stosunków gospodarczych, a pracownik, który stwierdzi okoliczności mogące go zmienić, informuje o tym komórkę „Departament Zgodności”.
+Na podstawie informacji uzyskanych od klienta pracownik tworzy profil oczekiwanej aktywności na rachunku. Profil jest punktem odniesienia dla systemu monitorującego transakcje i dla późniejszych przeglądów.
 
-Zmianę poziomu ryzyka powinny wywołać w szczególności:
+- 8.7\. Elementy profilu. Zapisz w systemie AML-FILTR następujące dane:
+  - 8.7.1\. przewidywane miesięczne wpływy i ich źródła;
+  - 8.7.2\. przewidywane miesięczne wydatki i ich rodzaje;
+  - 8.7.3\. planowane operacje zagraniczne, ich kierunki i częstotliwość;
+  - 8.7.4\. planowane wpłaty i wypłaty gotówkowe.
+- 8.8\. Realistyczność profilu. Oceń, czy wartości podane przez klienta odpowiadają jego sytuacji; zbyt niskie lub zbyt wysokie wartości omów z klientem.
+- 8.9\. Zmiany profilu. Poinformuj klienta, że w razie zmiany okoliczności powinien zaktualizować profil, a Bank może poprosić o wyjaśnienia, jeżeli transakcje będą od niego odbiegać.
+- 8.10\. Zatwierdzenie. Profil zatwierdza pracownik, a w przypadku ryzyka wysokiego — także osoba weryfikująca.
 
-- 1\) zmiana danych klienta, w tym rezydencji podatkowej lub obywatelstwa;
-- 2\) uzyskanie przez klienta statusu osoby zajmującej eksponowane stanowisko polityczne;
-- 3\) nietypowe transakcje niewynikające z deklarowanego celu rachunku;
-- 4\) informacje z mediów lub z innych źródeł wskazujące na powiązanie klienta z przestępstwem;
-- 5\) upływ terminu okresowego przeglądu: 36 miesięcy przy ryzyku niskim, 24 miesięcy przy ryzyku średnim i 12 miesięcy przy ryzyku wysokim.
+Przed otwarciem rachunku Bank sprawdza, czy klient lub osoby z nim powiązane nie są objęte krajowymi i międzynarodowymi środkami ograniczającymi. Sprawdzenie następuje automatycznie w systemie AML-FILTR i jest powtarzane w trakcie trwania relacji.
 
-Wynik przeglądu odnotowuje się w systemie CBS-PRZYKŁAD wraz z datą, uzasadnieniem i danymi osoby, która dokonała przeglądu. Jeżeli klient nie przekazuje informacji niezbędnych do przeglądu, Departament Zgodności decyduje o ograniczeniu usług lub o rozwiązaniu stosunków gospodarczych.
-
-Osoba zajmująca eksponowane stanowisko polityczne (PEP) stwarza podwyższone ryzyko i jej obsługa wymaga zastosowania dodatkowych środków. Statusem PEP objęte są także osoby bliskie, w szczególności małżonek, dzieci i ich małżonkowie oraz rodzice, a także osoby znane jako bliscy współpracownicy takiej osoby.
-
-- 8.7\. Po ustaleniu, że klient jest PEP, wstrzymaj otwarcie rachunku i przekaż wniosek do komórki „Departament Zgodności”.
-- 8.8\. Uzyskaj dodatkowe informacje.
-  - 8.8.1\. Ustal funkcję, którą klient pełni lub pełnił, oraz datę jej zakończenia, jeżeli dotyczy.
-  - 8.8.2\. Poproś o dokumenty potwierdzające źródło majątku i źródło środków przewidywanych do wpłaty na rachunek.
-  - 8.8.3\. Uzyskaj od klienta oświadczenie o gotowości do składania wyjaśnień w ramach bieżącego monitorowania.
-- 8.9\. Po otrzymaniu zgody komórki „Departament Zgodności” (termin: 2 dni) otwórz rachunek i oznacz klienta w systemie jako PEP.
-- 8.10\. Ustal częstotliwość przeglądu relacji: nie rzadziej niż co 12 miesięcy.
-
-Klient przestaje być traktowany jako PEP po upływie roku od dnia, w którym zakończył pełnienie eksponowanej funkcji, jeżeli analiza ryzyka nie wskazuje na dalszą potrzebę stosowania podwyższonych środków; decyzję podejmuje Departament Zgodności.
-
-Wobec klienta zakwalifikowanego do wysokiego ryzyka stosuje się wzmożone środki bezpieczeństwa finansowego. Mają one na celu dokładniejsze poznanie klienta i lepsze <!-- page: 13 --> zrozumienie przewidywanych transakcji.
-
-- 8.11\. Przekaż do komórki „Departament Zgodności” kompletną dokumentację sprawy wraz z kwestionariuszem ryzyka i uzasadnieniem punktacji.
-- 8.12\. Zbierz od klienta dodatkowe informacje.
-  - 8.12.1\. Zapytaj o szczegółowe źródło środków, zawód, pracodawcę lub źródło dochodów.
-  - 8.12.2\. Poproś o dokumenty potwierdzające podane informacje, na przykład umowę o pracę, zaświadczenie o dochodach lub umowę sprzedaży majątku.
-  - 8.12.3\. Uzyskaj informacje o planowanych przelewach zagranicznych i o państwach, do których klient zamierza przekazywać środki.
-- 8.13\. Uruchom po otwarciu rachunku wzmożone monitorowanie.
-  - 8.13.1\. Ustaw w systemie oznaczenie klienta o podwyższonym ryzyku, które powoduje wygenerowanie alertu przy każdej transakcji powyżej progu ustalonego przez komórkę „Departament Zgodności”.
-  - 8.13.2\. Zaplanuj przegląd relacji w terminie 12 miesięcy od dnia otwarcia rachunku.
-
-Zatwierdzenie otwarcia rachunku dla klienta wysokiego ryzyka wymaga zgody kierownika wyższego szczebla niż kierownik placówki; w sprawach dotyczących PEP — zgody osoby wskazanej w wewnętrznej polityce przeciwdziałania praniu pieniędzy.
-
-Gdy pracownik poweźmie podejrzenie, że otwarcie rachunku lub zachowanie klienta może mieć związek z praniem pieniędzy lub finansowaniem terroryzmu, jest obowiązany przekazać informację do komórki „Departament Zgodności”. Zasady zawiadamiania Generalnego Inspektora Informacji Finansowej określa ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
-
-W takim przypadku pracownik:
-
-- 1\) nie ujawnia klientowi ani osobom trzecim, że przekazał informację lub że prowadzone jest postępowanie;
-- 2\) sporządza krótką notatkę służbową z opisem okoliczności, faktów i przyczyn podejrzenia, bez własnych ocen prawnych;
-- 3\) zabezpiecza dokumenty, nagrania i zapisy z systemów, a w razie wątpliwości co do dalszych czynności wykonuje polecenia komórki „Departament Zgodności”;
-- 4\) kontynuuje obsługę klienta w sposób niebudzący jego podejrzeń, jeżeli nie ma przeszkód do jej kontynuowania.
-
-Decyzję o zawiadomieniu GIIF oraz o ewentualnym wstrzymaniu transakcji podejmuje wyłącznie Departament Zgodności. Pracownik, który w dobrej wierze przekazał informację, nie ponosi z tego tytułu odpowiedzialności dyscyplinarnej ani cywilnoprawnej.
+- 8.11\. Wynik negatywny. Jeżeli system nie wskazuje zbieżności, odnotuj wynik w dokumentacji klienta i kontynuuj proces.
+<!-- page: 14 -->
+- 8.12\. Wynik pozytywny lub wątpliwy. Jeżeli system wskazuje zbieżność, wstrzymaj proces i przekaż sprawę do analizy.
+  - 8.12.1\. Analiza polega na porównaniu danych klienta z danymi osoby wymienionej na liście: imienia, nazwiska, daty urodzenia, obywatelstwa i innych dostępnych informacji.
+  - 8.12.2\. Zbieżność niepotwierdzoną analityk oznacza jako fałszywą, wpisując uzasadnienie; potwierdzoną — zgłasza do Departament Zgodności.
+- 8.13\. Zakaz informowania. Nie informuj klienta, że jest weryfikowany pod kątem sankcji, ani o wynikach tej weryfikacji, jeżeli wynik jest pozytywny.
+- 8.14\. Odmowa. W razie potwierdzenia, że klient jest objęty środkami ograniczającymi, Bank odmawia otwarcia rachunku i postępuje zgodnie z przepisami, w tym zgłasza sprawę właściwym organom.
 
 ## 9. Opis postępowania — zawarcie umowy i uruchomienie rachunku
 
 Umowę o rachunek osobisty zawiera się na piśmie albo w postaci elektronicznej na trwałym nośniku. Klient, który zawarł umowę na odległość, może od niej odstąpić w terminie 21 dni bez podania przyczyny.
 
-<!-- page: 14 -->
 - 9.1\. Przygotuj umowę w systemie CBS-PRZYKŁAD.
   - 9.1.1\. Wygeneruj umowę na podstawie zatwierdzonego wniosku; nie edytuj ręcznie treści standardowych postanowień.
   - 9.1.2\. Sprawdź, czy dane klienta, wybrany pakiet i sposób dostarczania wyciągów są zgodne z wnioskiem.
@@ -367,47 +363,32 @@ Umowę o rachunek osobisty zawiera się na piśmie albo w postaci elektronicznej
   - 9.4.1\. Przy ryzyku średnim lub wysokim upewnij się, że w systemie znajduje się wymagana decyzja o otwarciu rachunku.
   - 9.4.2\. Zleć komórce „Departament Operacji” nadanie numeru rachunku; rachunek zostaje uruchomiony w dniu roboczym następującym po zawarciu umowy.
 - 9.5\. Przekaż klientowi dostęp do rachunku.
+  <!-- page: 15 -->
   - 9.5.1\. Wyślij kod aktywacyjny do bankowości elektronicznej; jest ważny przez 7 dni.
   - 9.5.2\. Wydaj kartę debetową, jeżeli została zamówiona, po uprzednim potwierdzeniu tożsamości odbiorcy.
   - 9.5.3\. Poinformuj klienta o aplikacji Bank Przykładowy Mobile i o numerze infolinii 800 000 001.
 - 9.6\. Zamknij sprawę, zarchiwizuj dokumenty w archiwum EAD i wypełnij listę kontrolną z załącznika.
 
-Przed zawarciem umowy Bank musi przekazać klientowi informacje wymagane przepisami, a po jej zawarciu — potwierdzenie jej warunków. Dokumenty przekazuje się na trwałym nośniku, to jest w postaci papierowej albo jako plik w bankowości elektronicznej, którego klient nie może samodzielnie zmienić.
+Przy zawieraniu umowy klient wybiera sposób otrzymywania wyciągów z rachunku. Wybór wpływa na wysokość opłat i na dostępność informacji o rachunku, dlatego pracownik wyjaśnia różnice między możliwymi formami.
 
-Zestaw dokumentów przekazywanych klientowi obejmuje:
-
-- 1\) tekst umowy rachunku z załączonym dokumentem „Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.”;
-- 2\) tabelę opłat i prowizji, o której mowa w dokumencie „Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych”;
-<!-- page: 15 -->
-- 3\) informację o gwarancjach Bankowego Funduszu Gwarancyjnego dla środków na rachunku;
-- 4\) informację o przetwarzaniu danych osobowych, zawierającą dane kontaktowe osoby pełniącej funkcję „Inspektor Ochrony Danych” (iod@bank.example);
-- 5\) informację o sposobie składania reklamacji, w tym adres reklamacje@bank.example;
-- 6\) w przypadku umowy na odległość — pouczenie o prawie odstąpienia od umowy.
-
-Pracownik sprawdza i odnotowuje w systemie, że wszystkie dokumenty zostały przekazane. Klient może w każdym czasie żądać udostępnienia kopii umowy; pierwszą kopię na życzenie klienta wydaje się bezpłatnie, a za kolejne Bank pobiera opłatę zgodnie z Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.
-
-Razem z rachunkiem klient może zamówić kartę debetową i dostęp do bankowości elektronicznej. Zamówienie tych usług jest odrębną dyspozycją klienta; pracownik nie uzależnia otwarcia rachunku od ich zamówienia.
-
-- 9.7\. Zapytaj klienta o chęć korzystania z bankowości elektronicznej i aplikacji Bank Przykładowy Mobile.
-  - 9.7.1\. Przy zamówieniu usługi zapisz numer telefonu, na który będą wysyłane kody autoryzacyjne; numer musi być zgodny z numerem zweryfikowanym przy otwarciu rachunku.
-  - 9.7.2\. Przedstaw klientowi zasady bezpiecznego korzystania z bankowości: zakaz udostępniania haseł i kodów, wymóg samodzielnego ustalenia hasła o minimalnej długości 10 znaków oraz konieczność zgłoszenia utraty urządzenia.
-- 9.8\. Przy zamówieniu karty debetowej ustal wariant karty i limity.
-  - 9.8.1\. Odnotuj adres doręczenia karty; karta jest wysyłana na adres do korespondencji albo wydawana w placówce.
-  - 9.8.2\. Poinformuj klienta o numerze do zastrzeżenia karty: 800 000 002, dostępnym także z zagranicy pod numerem +48 800 000 003.
-- 9.9\. Po wygenerowaniu kodu aktywacyjnego poinformuj klienta, że jest on ważny przez 7 dni i że po wygaśnięciu ważności nowy kod wygenerujesz na jego dyspozycję.
-- 9.10\. Zarejestruj zamówione usługi w systemie i wyślij klientowi potwierdzenie na trwałym nośniku.
+- 9.7\. Wyciąg elektroniczny. Podstawową formą jest wyciąg dostępny w bankowości elektronicznej, udostępniany bezpłatnie co miesiąc.
+- 9.8\. Wyciąg papierowy. Klient może zażądać wyciągu w formie papierowej, przesyłanego na adres korespondencyjny; opłata za wyciąg papierowy wynosi 10,00 zł.
+  - 9.8.1\. Poinformuj klienta, że wyciąg papierowy jest doręczany w terminie 10 dni od jego sporządzenia.
+  - 9.8.2\. Zapisz w systemie adres do korespondencji i sprawdź jego poprawność z klientem.
+- 9.9\. Obowiązek sprawdzania wyciągów. Przypomnij klientowi, że powinien regularnie sprawdzać operacje na rachunku i niezwłocznie zgłaszać niezgodności.
+- 9.10\. Zmiana formy. Wyjaśnij, że formę wyciągu można zmienić w dowolnym momencie.
 
 Klient, który zawarł umowę rachunku na odległość, ma prawo odstąpić od niej bez podania przyczyny w terminie 21 dni od dnia zawarcia umowy lub od dnia otrzymania warunków umowy, jeżeli nastąpiło to później. Zasady wykonywania tego prawa wynikają z ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
 
 - 9.11\. Przyjmij oświadczenie o odstąpieniu złożone w placówce, pisemnie albo w bankowości elektronicznej.
   - 9.11.1\. Zapisz datę wpływu oświadczenia; liczy się data wysłania, jeżeli oświadczenie wysłano przed upływem terminu.
   - 9.11.2\. Nie wymagaj od klienta podania przyczyny odstąpienia ani nie zniechęcaj klienta do skorzystania z tego prawa.
-- 9.12\. Zleć komórce „Departament Operacji” zamknięcie rachunku i rozliczenie środków <!-- page: 16 --> w ciągu 10 dni od dnia otrzymania oświadczenia.
+- 9.12\. Zleć komórce „Departament Operacji” zamknięcie rachunku i rozliczenie środków w ciągu 10 dni od dnia otrzymania oświadczenia.
   - 9.12.1\. Zwróć klientowi pobrane opłaty, z wyjątkiem opłat za usługi faktycznie wykonane na jego wyraźne żądanie przed odstąpieniem.
   - 9.12.2\. Jeżeli na rachunku znajdują się środki, wypłać je na wskazany przez klienta rachunek w innym banku lub w gotówce.
 - 9.13\. Załącz oświadczenie i potwierdzenie rozliczenia do dokumentacji sprawy.
 
-W sprawach rachunków zamykanych z innych przyczyn niż odstąpienie od umowy stosuje się dokument „Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.”, a w sprawach terminu rozliczenia — termin 14 dni.
+W sprawach rachunków zamykanych z innych przyczyn niż odstąpienie od umowy stosuje się dokument „Regulamin prowadzenia rachunków osobistych <!-- page: 16 --> (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.”, a w sprawach terminu rozliczenia — termin 14 dni.
 
 ## 10. Przypadki szczególne
 
@@ -429,12 +410,11 @@ Rachunek dla osoby małoletniej zakłada się w placówce, w obecności przedsta
 
 Rachunek wspólny można otworzyć dla osób fizycznych, z których każda spełnia warunki otwarcia rachunku osobistego. Liczba współposiadaczy nie może przekraczać czterech.
 
-<!-- page: 17 -->
 - 10.6\. Wobec każdego współposiadacza przeprowadź odrębnie identyfikację, weryfikację tożsamości i ocenę ryzyka.
   - 10.6.1\. Poziom ryzyka rachunku wspólnego odpowiada najwyższemu poziomowi ryzyka spośród współposiadaczy.
   - 10.6.2\. Jeżeli jeden ze współposiadaczy nie może stawić się osobiście, a pozostali nie są obecni, odmów podpisania umowy; wyjątki określa kierownik placówki.
 - 10.7\. Sporządź F-OR-05 i ustal zasady dysponowania rachunkiem.
-  - 10.7.1\. Zapisz, czy każdy ze współposiadaczy może dysponować rachunkiem samodzielnie, czy tylko łącznie z pozostałymi.
+  - 10.7.1\. Zapisz, czy każdy ze współposiadaczy może dysponować rachunkiem <!-- page: 17 --> samodzielnie, czy tylko łącznie z pozostałymi.
   - 10.7.2\. Poinformuj, że współposiadacze odpowiadają solidarnie za zobowiązania z tytułu rachunku, w tym za ujemne saldo.
 - 10.8\. Wyjaśnij skutki jednostronnego wypowiedzenia lub zmiany sposobu dysponowania rachunkiem przez jednego ze współposiadaczy.
   - 10.8.1\. Poinformuj, że o takiej czynności Bank zawiadamia pozostałych współposiadaczy.
@@ -453,54 +433,28 @@ Rachunek może być otwarty dla cudzoziemca, w tym osoby niemającej miejsca zam
 - 10.12\. Ustal cel otwarcia rachunku i źródło środków.
   - 10.12.1\. Zwróć się o dokumenty potwierdzające cel pobytu: umowę o pracę, zaświadczenie z uczelni lub inny dokument.
   - 10.12.2\. Wpłaty gotówkowe powyżej 15 000,00 zł wymagają złożenia wyjaśnień dotyczących pochodzenia środków.
-- 10.13\. Wobec osób z państw wskazanych jako wysokiego ryzyka zastosuj wzmożone środki <!-- page: 18 --> bezpieczeństwa finansowego i przekaż sprawę do komórki „Departament Zgodności”.
+- 10.13\. Wobec osób z państw wskazanych jako wysokiego ryzyka zastosuj wzmożone środki bezpieczeństwa finansowego i przekaż sprawę do komórki „Departament Zgodności”.
 - 10.14\. Przy pełnomocnictwie wystawionym za granicą sprawdź jego legalizację lub apostille; pełnomocnictwo zagraniczne jest przyjmowane, jeżeli zostało wystawione nie wcześniej niż 12 miesięcy przed jego okazaniem.
 
-Osoba z niepełnosprawnością wzroku, słuchu lub ruchu ma prawo do otwarcia rachunku na takich samych zasadach jak pozostali klienci. Bank gwarantuje sposób obsługi dostosowany do rodzaju niepełnosprawności.
+Klient, który zmienia bank, może skorzystać z usługi ułatwiającej przeniesienie rachunku. Usługa polega na tym, że nowy bank przejmuje od dotychczasowego banku informacje o zleceniach stałych i poleceniach zapłaty i uruchamia je w nowym banku.
 
-- 10.15\. Ustal potrzeby klienta w zakresie obsługi i zaproponuj odpowiednie rozwiązanie.
-  - 10.15.1\. W przypadku osoby niewidomej lub słabowidzącej przeczytaj na głos treść umowy i najważniejsze oświadczenia, a na życzenie przygotuj dokumenty w wersji powiększonej lub elektronicznej.
-  - 10.15.2\. W przypadku osoby niesłyszącej zaproponuj kontakt pisemny albo skorzystanie z tłumacza języka migowego zamówionego z wyprzedzeniem.
-  - 10.15.3\. W przypadku osoby poruszającej się na wózku zapewnij dostęp do stanowiska obsługi na parterze lub wizytę w miejscu wskazanym przez klienta, o ile kierownik placówki wyrazi na to zgodę.
-- 10.16\. Ustal, czy klient życzy sobie obecności osoby zaufanej, i odnotuj jej imię i nazwisko w dokumentacji.
-- 10.17\. Podpis na dokumentach składa klient; jeżeli nie może podpisać się samodzielnie, skorzystaj z formy przewidzianej przepisami, w uzgodnieniu z kierownikiem placówki.
+<!-- page: 18 -->
+- 10.15\. Wniosek klienta. Klient składa pisemne upoważnienie dla nowego banku do wystąpienia o przekazanie informacji o zleceniach i poleceniach zapłaty.
+- 10.16\. Zlecenie do dotychczasowego banku. Bank przekazuje dyspozycję dotychczasowemu bankowi, a ten w ustawowym terminie przekazuje wykaz zleceń i poleceń zapłaty.
+  - 10.16.1\. Poinformuj klienta, że w międzyczasie dotychczasowy rachunek pozostaje czynny, a klient powinien zadbać o zachowanie na nim środków potrzebnych do wykonania zleceń.
+  - 10.16.2\. Klient odpowiada za poinformowanie płatników o zmianie numeru rachunku, a Bank udostępnia mu wzór pisma do pracodawcy i kontrahentów.
+- 10.17\. Uruchomienie zleceń. Po otrzymaniu danych ustal z klientem, które zlecenia mają zostać uruchomione, i uruchom je w terminie wskazanym w umowie.
+- 10.18\. Zamknięcie dotychczasowego rachunku. Zamknięcie dotychczasowego rachunku następuje na dyspozycję klienta, a Bank informuje klienta o skutkach zamknięcia.
 
-Dodatkowe usługi związane z obsługą osoby z niepełnosprawnością, w szczególności korzystanie z tłumacza języka migowego, nie powodują naliczenia opłat po stronie klienta.
+Klient młody, który ukończył osiemnaście lat, ale nie osiągnął jeszcze stabilnej sytuacji zawodowej, może otworzyć rachunek na warunkach przewidzianych dla młodzieży, jeżeli Taryfa przewiduje dla takiej grupy preferencyjne warunki.
 
-Bank ma obowiązek ustalić rezydencję podatkową klienta i, jeżeli klient jest rezydentem podatkowym innego państwa, przekazywać informacje o jego rachunku właściwym organom na zasadach określonych w przepisach o wymianie informacji podatkowych.
+- 10.19\. Potwierdzenie uprawnienia. Sprawdź, czy klient spełnia warunki wskazane w dokumencie „Taryfa opłat i prowizji Bank Przykładowy S.A. dla dzieci, młodzieży i studentów”, na przykład wiek lub status ucznia albo studenta.
+  - 10.19.1\. Status studenta potwierdza ważna legitymacja albo zaświadczenie z uczelni, wystawione w terminie wskazanym w Taryfie.
+  - 10.19.2\. Brak potwierdzenia nie wyklucza otwarcia rachunku, ale rachunek jest prowadzony na zasadach ogólnych.
+- 10.20\. Ocena zdolności. Zweryfikuj, czy klient ma pełną zdolność do czynności prawnych, a w razie wątpliwości poproś o wyjaśnienie.
+- 10.21\. Informacje dodatkowe. Wyjaśnij klientowi zasady korzystania z debetu w koncie, o ile jest dostępny, oraz skutki zadłużenia, a także zaproponuj ustawienie powiadomień o saldzie.
+- 10.22\. Zmiana warunków. Poinformuj klienta, że po utracie uprawnień, na przykład po ukończeniu studiów, rachunek będzie prowadzony na zasadach ogólnych, a Bank powiadomi o tym z odpowiednim wyprzedzeniem.
 
-- 10.18\. Poproś klienta o złożenie oświadczenia o rezydencji podatkowej na F-OR-01.
-  - 10.18.1\. Wyjaśnij, że klient wskazuje wszystkie państwa, w których jest rezydentem podatkowym, wraz z numerem identyfikacji podatkowej.
-  - 10.18.2\. Nie doradzaj klientowi, w którym państwie jest rezydentem; to klient ponosi odpowiedzialność za prawdziwość oświadczenia.
-- 10.19\. Sprawdź spójność oświadczenia z innymi danymi klienta.
-  - 10.19.1\. Wskazania obcego miejsca urodzenia, obcego adresu lub obcego numeru telefonu mogą świadczyć o rezydencji w innym państwie; jeżeli oświadczenie temu przeczy, poproś o dokument wyjaśniający.
-  - 10.19.2\. Jeżeli klient odmawia złożenia oświadczenia, nie otwieraj rachunku.
-- 10.20\. Zapisz wskazane państwa w systemie CBS-PRZYKŁAD i poinformuj klienta o obowiązku zawiadomienia Banku o zmianie rezydencji podatkowej w terminie 7 dni.
-
-Wniosek o otwarcie rachunku składa klient osobiście. Złożenie wniosku przez pełnomocnika <!-- page: 19 --> jest dopuszczalne wyłącznie wyjątkowo, po uprzedniej zgodzie kierownika placówki i przy spełnieniu warunków wymienionych poniżej.
-
-- 10.21\. Zweryfikuj pełnomocnictwo.
-  - 10.21.1\. Pełnomocnictwo musi być sporządzone w formie pisemnej z podpisem notarialnie poświadczonym, a jeśli wystawiono je za granicą — zalegalizowane lub opatrzone apostille.
-  - 10.21.2\. Pełnomocnictwo musi wyraźnie upoważniać do zawarcia umowy rachunku i do dysponowania rachunkiem; nie akceptuj pełnomocnictw ogólnych.
-  - 10.21.3\. Zweryfikuj tożsamość pełnomocnika i ustal, czy nie jest on osobą zajmującą eksponowane stanowisko polityczne.
-- 10.22\. Zastosuj środki bezpieczeństwa finansowego wobec mocodawcy.
-  - 10.22.1\. Zweryfikuj tożsamość mocodawcy na podstawie kopii jego dokumentu poświadczonej notarialnie lub w inny dopuszczony sposób.
-  - 10.22.2\. Wypełnij kwestionariusz ryzyka dla mocodawcy i uwzględnij okoliczność działania przez pełnomocnika jako czynnik podnoszący ryzyko.
-- 10.23\. Potwierdź pełnomocnictwo u mocodawcy telefonicznie na numer podany w dokumentach, a nie w piśmie pełnomocnika; weryfikacja pełnomocnictwa trwa nie dłużej niż 3 dni.
-- 10.24\. Po otwarciu rachunku poinformuj mocodawcę o zawarciu umowy i o zakresie uprawnień pełnomocnika; opłata za ustanowienie pełnomocnictwa do rachunku wynosi 10,00 zł.
-
-W trakcie otwierania rachunku i po jego otwarciu klient może zgłosić zmianę danych podanych we wniosku. Zmiana danych identyfikacyjnych i dotyczących ryzyka wymaga aktualizacji dokumentacji.
-
-Pracownik rejestruje zgłoszenie zmiany danych w następujący sposób:
-
-- 1\) zmiana nazwiska, numeru dokumentu lub adresu wymaga okazania dokumentu potwierdzającego zmianę;
-- 2\) zmianę numeru telefonu wykorzystywanego do autoryzacji dyspozycji potwierdza się w placówce albo w wideoweryfikacji;
-- 3\) zmianę rezydencji podatkowej uwzględnia się w oświadczeniu klienta i w kwestionariuszu ryzyka, który należy zaktualizować;
-- 4\) klient jest obowiązany zawiadomić Bank o zmianie danych w terminie 7 dni od jej wystąpienia.
-
-Aktualizacji danych w systemie CBS-PRZYKŁAD dokonuje się bez zbędnej zwłoki po przedstawieniu dokumentów, a dane archiwalne są zachowywane z oznaczeniem daty zmiany. Jeżeli klient nie odpowiada na wezwanie do uzupełnienia danych, pracownik informuje o tym kierownika placówki i komórkę „Departament Zgodności”, która może zdecydować o ograniczeniu dysponowania rachunkiem.
-
-<!-- page: 20 -->
 ## 11. Odmowa otwarcia rachunku
 
 - 1\. Bank jest obowiązany odmówić otwarcia rachunku, jeżeli:
@@ -508,6 +462,7 @@ Aktualizacji danych w systemie CBS-PRZYKŁAD dokonuje się bez zbędnej zwłoki 
   - 2\) klient przedstawia dokument nieważny, uszkodzony albo budzący uzasadnione wątpliwości co do autentyczności;
   - 3\) wynik wideoweryfikacji jest negatywny, a klient nie zgadza się na weryfikację w placówce;
   - 4\) dane klienta znajdują się na liście osób i podmiotów objętych sankcjami;
+  <!-- page: 19 -->
   - 5\) klient jest objęty wewnętrznym zakazem współpracy z Bankiem wpisanym przez komórkę „Departament Bezpieczeństwa”;
   - 6\) klient złożył nieprawdziwe oświadczenie lub zataił istotne informacje.
 - 2\. Odmowę otwarcia rachunku wydaje kierownik placówki, a w przypadku klientów wysokiego ryzyka — Departament Zgodności. Postępowanie jest następujące:
@@ -518,26 +473,24 @@ Aktualizacji danych w systemie CBS-PRZYKŁAD dokonuje się bez zbędnej zwłoki 
 
 Odmowa nie pozbawia prawa klienta do ponownego złożenia wniosku po usunięciu przyczyny odmowy. Klientowi przysługuje także prawo złożenia reklamacji zgodnie z zasadami opisanymi w sekcji „Reklamacje i kontakt z klientem”.
 
-Wszystkie odmowy otwarcia rachunku odnotowuje się w rejestrze odmów prowadzonym w systemie CBS-PRZYKŁAD. Rejestr służy analizie przyczyn odmów, ocenie jakości procesu i wykrywaniu prób wyłudzeń.
+Klient, któremu odmówiono otwarcia rachunku, może ponownie złożyć wniosek, jeżeli przyczyna odmowy ustała. Ponowne rozpatrzenie wymaga jednak ostrożności, aby nie obejść wcześniejszej decyzji.
 
-Wpis w rejestrze obejmuje:
+- 11.1\. Sprawdzenie wcześniejszych odmów. Przed przyjęciem wniosku sprawdź w systemie CBS-PRZYKŁAD, czy klient ma wcześniejszą odmowę i z jakiego powodu.
+- 11.2\. Ocena zmiany okoliczności. Ustal, czy przyczyna odmowy ustała, i poproś o dokumenty, które to potwierdzają.
+  - 11.2.1\. Jeżeli odmowa wynikała z braku dokumentów — sprawdź, czy zostały uzupełnione.
+  - 11.2.2\. Jeżeli odmowa wynikała z oceny ryzyka — sprawę przekaż do Departament Zgodności, która rozstrzyga, czy ponowny wniosek może zostać rozpatrzony.
+- 11.3\. Zakaz obchodzenia decyzji. Nie przyjmuj wniosku złożonego w innej placówce lub kanale w celu uniknięcia wcześniejszej odmowy, a stwierdzoną próbę zgłoś kierownikowi placówki.
+- 11.4\. Przechowywanie danych o odmowie. Dane o odmowie przechowuje się przez 5 lat.
 
-- 1\) numer sprawy, datę odmowy i kanał, w którym złożono wniosek;
-- 2\) podstawę odmowy wybraną z listy zamkniętej, a w przypadku podstawy „inne” — krótki opis;
-- 3\) dane osoby, która podjęła decyzję;
-- 4\) informację o przekazaniu sprawy do komórki „Departament Zgodności” lub „Departament Bezpieczeństwa”, jeżeli to nastąpiło.
+Każda odmowa otwarcia rachunku jest rejestrowana w systemie, co pozwala Bankowi analizować jej przyczyny i dostrzegać próby nadużyć. Rejestr odmów prowadzi Departament Zgodności.
 
-Departament Zgodności przegląda rejestr odmów co miesiąc i raz w kwartale przedstawia właścicielowi procedury zestawienie przyczyn odmów oraz rekomendacje zmian. Dane z rejestru są archiwizowane przez 5 lat.
-
-Klient, któremu odmówiono otwarcia rachunku, może zwrócić się o ponowne rozpatrzenie sprawy. Wniosek o ponowne rozpatrzenie może złożyć w placówce, listownie albo <!-- page: 21 --> w bankowości elektronicznej.
-
-- 11.1\. Odbierz wniosek o ponowne rozpatrzenie i zarejestruj go jako wniosek, a nie reklamację.
-  - 11.1.1\. Sprawdź, czy wniosek zawiera nowe okoliczności lub dokumenty, których klient nie przedstawił wcześniej.
-  - 11.1.2\. Jeżeli klient kwestionuje samą odmowę, a nie zgłasza nowych okoliczności, poinformuj go o możliwości złożenia reklamacji.
-- 11.2\. Przekaż sprawę do kierownika placówki, a w sprawach wysokiego ryzyka — do komórki „Departament Zgodności”.
-- 11.3\. Poinformuj klienta o wyniku w terminie 5 dni od dnia otrzymania kompletnego wniosku.
-
-Ponowne rozpatrzenie nie może prowadzić do ominięcia środków bezpieczeństwa finansowego. Jeżeli przyczyną odmowy był brak możliwości zastosowania tych środków, rachunek może być otwarty tylko wtedy, gdy klient usunął przeszkodę, a ocena ryzyka wypada pozytywnie.
+- 11.5\. Wpis do rejestru. Pracownik, który przekazał sprawę do decyzji, wprowadza do rejestru dane klienta, datę, powód odmowy i numer decyzji.
+- 11.6\. Kategorie przyczyn. Przyczyny klasyfikuje się według kategorii: brak dokumentów, wątpliwości co do tożsamości, wynik weryfikacji sankcyjnej, ocena ryzyka, inne.
+  - 11.6.1\. Dla każdej kategorii analizuje się liczbę odmów w ujęciu kwartalnym.
+  - 11.6.2\. Nagły wzrost liczby odmów w danej kategorii jest sygnałem do przeprowadzenia analizy procesu lub szkolenia.
+<!-- page: 20 -->
+- 11.7\. Dostęp do rejestru. Dostęp mają wyłącznie osoby wyznaczone przez Departament Zgodności, a każde zapytanie jest rejestrowane.
+- 11.8\. Okres przechowywania. Wpisy przechowuje się przez 5 lat.
 
 ## 12. Reklamacje i kontakt z klientem
 
@@ -557,7 +510,6 @@ W rozmowie z Klientem pracownik:
 
 - 1\) przedstawia się i nazwę jednostki Banku;
 - 2\) potwierdza tożsamość Klienta metodą przewidzianą w procedurach bezpieczeństwa;
-<!-- page: 22 -->
 - 3\) nie prosi o podanie haseł, kodów jednorazowych ani numeru PIN.
 
 Sprawy wymagające eskalacji przekazuje się do jednostki właściwej (Departament Obsługi Klienta), a podejrzenia nadużyć — do jednostki bezpieczeństwa (Departament Bezpieczeństwa).
@@ -568,6 +520,7 @@ Przestrzeganie procedury podlega kontroli na trzech poziomach: bieżącej kontro
 
 - 1\. W ramach kontroli bieżącej kierownik placówki:
   - 1\) sprawdza co tydzień losowo wybrane wnioski o otwarcie rachunków pod kątem kompletności dokumentacji i poprawności oceny ryzyka;
+  <!-- page: 21 -->
   - 2\) analizuje zestawienie spraw wstrzymanych, odmów i wyjątków od procedury;
   - 3\) weryfikuje, czy pracownicy ukończyli wymagane szkolenia.
 - 2\. Departament Zgodności raz w kwartale:
@@ -590,7 +543,21 @@ Do wskaźników należą w szczególności:
 
 Jeżeli wskaźnik przekroczy wartość progową ustaloną przez właściciela procedury w porozumieniu z komórką „Departament Ryzyka”, wszczyna się postępowanie wyjaśniające, a jego wyniki wykorzystuje się do doskonalenia procedury i szkoleń.
 
-<!-- page: 23 -->
+Jakość procesu otwierania rachunków mierzy się za pomocą wskaźników, które
+
+Departament Obsługi Klienta zestawia kwartalnie i przedstawia kierownictwu.
+
+- 13.1\. Wskaźniki jakości.
+  - 13.1.1\. odsetek rachunków otwartych bez nieprawidłowości stwierdzonych w kontroli;
+  - 13.1.2\. odsetek wniosków odrzuconych z powodu braków w dokumentach oraz średni czas ich uzupełnienia;
+  - 13.1.3\. liczba odmów otwarcia rachunku i ich główne przyczyny;
+  - 13.1.4\. odsetek klientów wysokiego ryzyka w ogólnej liczbie nowych klientów.
+- 13.2\. Wskaźniki sprawności.
+  - 13.2.1\. średni czas od złożenia wniosku do uruchomienia rachunku w podziale na kanały;
+  - 13.2.2\. odsetek procesów w kanale zdalnym zakończonych powodzeniem w pierwszej próbie weryfikacji;
+  - 13.2.3\. liczba reklamacji dotyczących otwierania rachunków.
+- 13.3\. Wnioski. Wyniki analizuje się pod kątem potrzeby zmiany procedury, usprawnienia <!-- page: 22 --> narzędzi i szkoleń, a decyzje w tych sprawach podejmuje kierownictwo Departament Obsługi Klienta.
+
 ## 14. Dokumentacja i archiwizacja
 
 Dokumentację sprawy otwarcia rachunku gromadzi się w archiwum EAD. W skład dokumentacji wchodzą:
@@ -619,11 +586,20 @@ Wnioski osób, których dane dotyczą, przekazuje się do inspektora ochrony dan
 Utratę, zniszczenie lub ujawnienie osobom nieupoważnionym dokumentów dotyczących otwarcia rachunku traktuje się jako incydent bezpieczeństwa. Pracownik, który stwierdzi taki incydent, postępuje następująco.
 
 - 14.1\. Zabezpiecz miejsce zdarzenia i pozostałe dokumenty, aby zapobiec dalszej utracie danych.
+<!-- page: 23 -->
 - 14.2\. Niezwłocznie zawiadom kierownika placówki, komórkę „Departament Bezpieczeństwa” oraz osobę pełniącą funkcję „Inspektor Ochrony Danych” (iod@bank.example).
-<!-- page: 24 -->
 - 14.3\. Przygotuj opis zdarzenia: czas, okoliczności, rodzaj dokumentów i liczbę osób, których dane dotyczą.
 - 14.4\. Wykonaj polecenia osoby pełniącej funkcję „Inspektor Ochrony Danych”, która ocenia, czy konieczne jest zawiadomienie organu nadzorczego i osób, których dane dotyczą, zgodnie z ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781).
 - 14.5\. Po wyjaśnieniu sprawy uzupełnij wykaz incydentów i, w razie potrzeby, zaproponuj właścicielowi procedury zmiany zapobiegające powtórzeniu zdarzenia.
+
+Zmiany dokonywane w dokumentacji klienta po zawarciu umowy muszą pozostawiać ślad umożliwiający ustalenie, kto, kiedy i dlaczego wprowadził zmianę. Pierwotnych zapisów nie usuwa się; zastępuje się je nowymi wraz z oznaczeniem wersji.
+
+- 14.6\. Zasady wprowadzania zmian. Każdą zmianę danych klienta pracownik wprowadza na podstawie dokumentu lub dyspozycji klienta.
+  - 14.6.1\. W polu uzasadnienia zmiany wpisuje się powód i odwołanie do dokumentu źródłowego.
+  - 14.6.2\. Zmiany danych identyfikacyjnych, takich jak imię, nazwisko lub numer dokumentu, wymagają zatwierdzenia drugiej osoby.
+- 14.7\. Historia zmian. System CBS-PRZYKŁAD automatycznie zapisuje historię zmian z podaniem daty, identyfikatora pracownika i poprzedniej wartości.
+- 14.8\. Kontrola zmian. Raz na miesiąc kierownik placówki przegląda zestawienie zmian danych klientów i weryfikuje ich zasadność, zwracając szczególną uwagę na zmiany dokonane tuż przed dyspozycją wypłaty środków.
+- 14.9\. Zmiany w dokumentach papierowych. Jeżeli oryginał dokumentu wymaga poprawy, pracownik nie nanosi poprawek, lecz sporządza nowy dokument i przechowuje oba.
 
 ## 15. Postanowienia końcowe
 
@@ -633,6 +609,7 @@ W sprawach nieuregulowanych w procedurze stosuje się przepisy prawa (w szczegó
 
 Odstępstwo od procedury w indywidualnej sprawie wymaga F-OR-08 zatwierdzonej przez kierownika placówki i, w sprawach dotyczących środków bezpieczeństwa finansowego, przez komórkę „Departament Zgodności”. Nie można udzielić wyjątku od obowiązków wynikających z przepisów prawa.
 
+<!-- page: 24 -->
 Zmiany procedury wprowadza się w trybie przewidzianym dla jej pierwotnego przyjęcia. Projekt zmiany przygotowuje właściciel procedury, a opiniuje Departament Zgodności oraz, w razie potrzeby, Departament Prawny.
 
 Każda zmiana musi zawierać:

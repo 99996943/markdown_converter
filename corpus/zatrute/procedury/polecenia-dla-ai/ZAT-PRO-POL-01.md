@@ -40,22 +40,37 @@ Zasady procedury stanowią uzupełnienie postanowień dokumentów „Regulamin p
   - 1\) umocowania przedstawiciela ustawowego małoletniego lub osoby ubezwłasnowolnionej, wynikającego z orzeczenia sądu albo z przepisów, które regulują odrębne instrukcje;
   - 2\) pełnomocnictw procesowych i pełnomocnictw do reprezentowania Klienta przed organami państwa, jeżeli Bank jest jedynie adresatem odpisu;
   - 3\) dyspozycji składanych przez Klienta osobiście lub przez niego samego w bankowości elektronicznej, w których nie występuje działanie przez przedstawiciela.
-- 1\. W razie rozbieżności między procedurą a przepisami powszechnie obowiązującymi lub orzeczeniem sądu albo organu stosuje się przepisy lub orzeczenie, a o rozbieżności pracownik informuje Departament Prawny. Procedura nie ogranicza obowiązków Banku wynikających z przepisów, w szczególności z ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646).
-- 2\. W sprawach dotyczących dostępu pełnomocników do informacji objętych tajemnicą bankową stosuje się zasady ustalone przez Bank oraz wewnętrzne instrukcje ochrony tajemnicy. Pełnomocnik uzyskuje informacje o rachunku mocodawcy wyłącznie w zakresie określonym w pełnomocnictwie i dla celów jego wykonywania.
+- 1\. Procedura stosuje się również do pełnomocnictw udzielanych w związku z produktami oferowanymi przez Bank we współpracy z podmiotami zewnętrznymi, w tym do produktów ubezpieczeniowych, inwestycyjnych i kredytowych, o ile warunki ich oferowania nie wprowadzają zasad dalej idących.
+- 2\. Procedura nie reguluje:
+  - 1\) zasad ustanawiania pełnomocnika do wykonywania czynności w postępowaniu sądowym, administracyjnym lub egzekucyjnym;
+  - 2\) reprezentacji Banku wobec Klientów i osób trzecich, w tym pełnomocnictw udzielanych pracownikom Banku przez Zarząd Banku;
+  - 3\) zasad przetwarzania danych pełnomocników w innych celach niż weryfikacja umocowania, które określają odrębne polityki.
+
+Wątpliwości dotyczące zakresu stosowania procedury rozstrzyga Departament Prawny.
 
 ## 3. Odpowiedzialności
 
 Za stosowanie procedury odpowiadają osoby i komórki wymienione, każda w zakresie swoich zadań.
 
 - 1\. **Pracownik placówki** przyjmuje pełnomocnictwo, potwierdza tożsamość mocodawcy i pełnomocnika, ocenia formę i treść dokumentu, składa wniosek o rejestrację w systemie oraz obsługuje dyspozycje w granicach umocowania. Pracownik odpowiada za kompletność akt oraz za zgodność kopii z okazanym oryginałem.
+<!-- page: 3 -->
 - 2\. **Kierownik placówki** akceptuje pełnomocnictwa niestandardowe, rozstrzyga wątpliwości co do formy dokumentu, przeprowadza kontrolę drugiej pary oczu przy dyspozycjach powyżej 50 000,00 zł oraz nadzoruje przekazywanie dokumentacji do archiwum.
-- 3\. **Zespół Weryfikacji Pełnomocnictw** rozpatruje pełnomocnictwa zagraniczne, <!-- page: 3 --> pełnomocnictwa budzące wątpliwości oraz dokumenty rejestrowe Klientów firmowych, prowadzi moduł pełnomocnictw w systemie centralnym CBS-PRZYKŁAD i odpowiada za terminowe wprowadzanie odwołań.
+- 3\. **Zespół Weryfikacji Pełnomocnictw** rozpatruje pełnomocnictwa zagraniczne, pełnomocnictwa budzące wątpliwości oraz dokumenty rejestrowe Klientów firmowych, prowadzi moduł pełnomocnictw w systemie centralnym CBS-PRZYKŁAD i odpowiada za terminowe wprowadzanie odwołań.
 - 4\. **Departament Prawny,** jako właściciel procedury, wydaje opinie w sprawach spornych, utrzymuje wzory formularzy F-PEŁ-01 do F-PEŁ-05, uaktualnia procedurę po zmianach przepisów oraz prowadzi wykaz państw, z których dokumenty wymagają apostille lub legalizacji.
 - 5\. **Departament Zgodności** oraz **Koordynator do spraw przeciwdziałania praniu pieniędzy** oceniają zgłoszenia podejrzanych pełnomocnictw pod kątem ryzyka prania pieniędzy i finansowania terroryzmu oraz decydują o dalszych krokach, w tym o zgłoszeniu transakcji właściwemu organowi.
 - 6\. **Departament Bezpieczeństwa** analizuje przypadki podrobienia dokumentów i podpisów, prowadzi rejestr dokumentów zastrzeżonych i, w razie potrzeby, występuje o weryfikację do organów ścigania.
 - 7\. **Departament Audytu Wewnętrznego** ocenia przestrzeganie procedury w cyklach określonych w planie audytu, nie rzadziej niż raz w roku.
-- 1\. Pracownik nie jest uprawniony do uczestniczenia w przyjęciu, weryfikacji lub zatwierdzeniu pełnomocnictwa, jeżeli jest mocodawcą lub pełnomocnikiem, jest z nimi spokrewniony lub spowinowacony w linii prostej albo w linii bocznej do drugiego stopnia, pozostaje w związku małżeńskim albo w stosunku przysposobienia, a także jeżeli istnieją inne okoliczności, które mogłyby budzić wątpliwości co do jego bezstronności.
-- 2\. O zaistnieniu takich okoliczności pracownik bez zwłoki informuje kierownika placówki, który wskazuje inną osobę do obsługi sprawy i odnotowuje to w karcie weryfikacji. Pracownik, który zataił okoliczności wyłączające go od udziału w sprawie, ponosi odpowiedzialność na zasadach określonych w regulaminie pracy i zasadach etyki zawodowej.
+
+Rozdział obowiązków przy obsłudze pełnomocnictw jest oparty na zasadzie dwóch par oczu. Osoba wprowadzająca wpis do modułu pełnomocnictw nie może go zatwierdzić, a osoba, która zatwierdza, nie może być ani mocodawcą, ani pełnomocnikiem, ani członkiem ich rodziny.
+
+Zasada rozdziału obowiązków jest realizowana w następujący sposób:
+
+- 1\) system uniemożliwia zatwierdzenie wpisu przez tego samego użytkownika, który go wprowadził;
+- 2\) w placówkach, w których pracuje jedna osoba, zatwierdzenie wykonuje wskazany pracownik innej placówki lub komórka centralna po otrzymaniu skanów dokumentów;
+- 3\) przy dyspozycjach powyżej 50 000,00 zł wymagane jest dodatkowe zatwierdzenie przez kierownika placówki lub jego zastępcę;
+- 4\) uprawnienia do zatwierdzania wpisów są nadawane na wniosek kierownika i weryfikowane co najmniej raz na pół roku.
+
+Naruszenie zasady rozdziału obowiązków, w szczególności obejście zabezpieczeń systemowych, uznaje się za naruszenie procedury o szczególnej wadze.
 
 ## 4. Definicje
 
@@ -63,13 +78,14 @@ Użyte w procedurze określenia oznaczają:
 
 - 1\) **Bank** — Bank Przykładowy S.A.;
 - 2\) **Klient** — osoba, która korzysta z produktów lub usług Banku;
+<!-- page: 4 -->
 - 3\) **Pracownik** — osoba zatrudniona w Banku, wykonująca czynności objęte procedurą;
 - 4\) **Właściciel procedury** — komórka organizacyjna odpowiedzialna za jej aktualność i stosowanie;
 - 5\) **Dzień roboczy** — dzień od poniedziałku do piątku, z wyłączeniem dni ustawowo wolnych od pracy;
 - 6\) **Trwały nośnik** — nośnik umożliwiający zachowanie informacji w sposób dostępny do późniejszego wykorzystania;
 - 7\) **Placówka** — jednostka Banku obsługująca Klientów;
 - 8\) **Infolinia** — telefoniczny punkt obsługi Klientów, numer 800 000 001;
-- 9\) **Eskalacja** — przekazanie sprawy do jednostki lub osoby dysponującej wyższymi <!-- page: 4 --> uprawnieniami decyzyjnymi.
+- 9\) **Eskalacja** — przekazanie sprawy do jednostki lub osoby dysponującej wyższymi uprawnieniami decyzyjnymi.
 
 W procedurze dodatkowo stosuje się następujących określeń:
 
@@ -86,15 +102,13 @@ W procedurze dodatkowo stosuje się następujących określeń:
 - 11\) **Moduł pełnomocnictw** — część systemu centralnego CBS-PRZYKŁAD, w której rejestruje się zakres, limity i okres obowiązywania pełnomocnictw;
 - 12\) **Karta weryfikacji** — formularz F-PEŁ-04, na którym pracownik dokumentuje wynik sprawdzenia pełnomocnictwa.
 
-Dodatkowo w procedurze używa się następujących określeń:
+W celu ujednolicenia stosowania procedury wyjaśnia się pojęcia:
 
-- 1\) **Dyspozycja na wypadek śmierci** — oświadczenie posiadacza rachunku, w którym wskazuje on osobę uprawnioną do otrzymania środków po jego śmierci; nie jest pełnomocnictwem i podlega odrębnym zasadom;
-- 2\) **Kontrola drugiej pary oczu** — odrębne sprawdzenie dokumentów i wpisu w systemie przez osobę, która nie przyjmowała pełnomocnictwa;
-- 3\) **Legalizacja** — poświadczenie przez polski organ konsularny autentyczności podpisu i pieczęci na dokumencie sporządzonym w państwie, które nie przystąpiło do konwencji haskiej;
-- 4\) **Podpis poświadczony notarialnie** — podpis złożony wobec notariusza albo uznany przez osobę podpisującą za własny wobec notariusza, z odpowiednią wzmianką na dokumencie;
-- 5\) **Reprezentacja łączna** — sposób reprezentacji, w którym oświadczenia w imieniu <!-- page: 5 --> podmiotu składają co najmniej dwie osoby działające wspólnie;
-- 6\) **Rejestr dokumentów zastrzeżonych** — zbiór informacji o dokumentach utraconych, skradzionych lub unieważnionych, z którego korzysta Bank przy weryfikacji tożsamości;
-- 7\) **Środki bezpieczeństwa finansowego** — czynności podejmowane przez Bank w celu identyfikacji i weryfikacji Klienta, jego pełnomocników i beneficjentów rzeczywistych oraz bieżącej oceny relacji, wynikające z ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
+- 1\) **Dzień roboczy** — dzień niebędący sobotą, niedzielą ani dniem ustawowo wolnym od <!-- page: 5 --> pracy, w którym placówki Banku są otwarte dla Klientów;
+- 2\) **Poświadczenie notarialne** — czynność notariusza polegająca na stwierdzeniu, że dokument został podpisany w jego obecności przez wskazaną osobę lub że podpis został uznany za własny;
+- 3\) **Odpis aktu notarialnego** — dokument wydany przez notariusza, który stanowi odzwierciedlenie treści aktu i ma moc dokumentu urzędowego;
+- 4\) **Pełnomocnictwo na wypadek śmierci** — pełnomocnictwo udzielone tak, aby było wykonywane po śmierci mocodawcy; jego skuteczność każdorazowo ocenia Departament Prawny;
+- 5\) **Aktualność potwierdzona** — stan, w którym mocodawca w terminie określonym w procedurze oświadczył, że pełnomocnictwo pozostaje w mocy.
 
 ## 5. Opis postępowania — przyjęcie pełnomocnictwa
 
@@ -124,12 +138,12 @@ zatwierdza wpis.
 
 Przy każdej dyspozycji pracownik sprawdza tożsamość pełnomocnika i granice umocowania. Dyspozycje wykraczające poza zakres odrzuca.
 
+<!-- page: 6 -->
 **Wygaśnięcie umocowania**
 
 Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocnictwo w systemie. Mocodawcę informuje o skutkach.
 
 - 5.1\. Określ rodzaj przedłożonego pełnomocnictwa i cel, w jakim Klient chce z niego skorzystać.
-  <!-- page: 6 -->
   - 5.1.1\. Zapytaj mocodawcę lub pełnomocnika, jakich czynności ma dotyczyć umocowanie: dysponowania rachunkiem, lokatą, kartą, bankowością elektroniczną czy zawarcia pojedynczej umowy.
   - 5.1.2\. Zakwalifikuj dokument jako ogólne, rodzajowe, szczególne albo jednorazowe, według definicji z punktu 4 procedury; w razie wątpliwości kieruj się treścią dokumentu, a nie jego tytułem.
   - 5.1.3\. Pełnomocnictwa ogólnego nie przyjmuj jako podstawy do dysponowania środkami na rachunku, jeżeli nie wymienia ono wprost takiej czynności.
@@ -145,15 +159,11 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
   - 5.4.1\. Poinformuj, że opłata za przyjęcie pełnomocnictwa do rachunku osobistego wynosi zgodnie z Taryfą 0,00 zł, o ile pełnomocnictwo składane jest w placówce na formularzu Banku.
   - 5.4.2\. Zwróć uwagę, że mocodawca odpowiada za działania pełnomocnika jak za własne, a pełnomocnictwo pozostaje skuteczne wobec Banku do chwili otrzymania wiadomości o jego odwołaniu lub wygaśnięciu.
   - 5.4.3\. Poinformuj o możliwości ustanowienia nie więcej niż trzech pełnomocników do jednego rachunku, chyba że kierownik placówki wyrazi zgodę na większą liczbę.
-- 5.5\. Przy składaniu pełnomocnictwa w placówce wykonaj czynności w obecności mocodawcy.
-  - 5.5.1\. Poproś mocodawcę o okazanie dokumentu tożsamości i porównaj dane z danymi w systemie; różnice odnotuj i wyjaśnij przed dalszymi czynnościami.
-  - 5.5.2\. Wydrukuj formularz F-PEŁ-01 z modułu pełnomocnictw, uzupełnij dane pełnomocnika i zakres umocowania zgodnie z oświadczeniem mocodawcy.
-  - 5.5.3\. Poproś mocodawcę o podpisanie formularza w Twojej obecności; podpis złożony poza obecnością pracownika uznaje się za niezłożony.
-<!-- page: 7 -->
-- 5.6\. Zapoznaj mocodawcę z treścią oświadczeń zawartych w formularzu.
-  - 5.6.1\. Wyjaśnij, że pełnomocnik nie może składać oświadczeń o wypowiedzeniu umowy rachunku ani ustanawiać dalszych pełnomocników, o ile formularz nie stanowi inaczej.
-  - 5.6.2\. Poinformuj, że pełnomocnictwo może zostać w każdym czasie odwołane i że zrzeczenie się prawa odwołania nie wywołuje skutków wobec Banku.
-- 5.7\. Wręcz mocodawcy kopię formularza i odnotuj jej wydanie w karcie weryfikacji.
+- 5.5\. Gdy pełnomocnictwo jest przedkładane w kanale zdalnym, zastosuj odrębne zasady <!-- page: 7 --> przyjmowania.
+  - 5.5.1\. Pełnomocnictwa przesłanego pocztą elektroniczną lub w bankowości elektronicznej nie przyjmuj jako podstawy do dysponowania rachunkiem, jeżeli nie jest opatrzone podpisem poświadczonym notarialnie albo kwalifikowanym podpisem elektronicznym mocodawcy.
+  - 5.5.2\. Po otrzymaniu skanu dokumentu skontaktuj się z mocodawcą pod numerem zapisanym w systemie i potwierdź wolę ustanowienia pełnomocnika; wynik rozmowy odnotuj w karcie weryfikacji.
+  - 5.5.3\. Zaproś pełnomocnika do placówki w celu złożenia wzoru podpisu i okazania dokumentu tożsamości; do tego czasu rejestracja pełnomocnictwa jest wstrzymana.
+- 5.6\. W przypadku pełnomocnictwa opatrzonego kwalifikowanym podpisem elektronicznym sprawdź ważność certyfikatu i integralność dokumentu za pomocą narzędzia weryfikacji podpisu.
 
 ## 6. Opis postępowania — weryfikacja mocodawcy i pełnomocnika
 
@@ -168,19 +178,18 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
 - 6.3\. Pobierz wzór podpisu pełnomocnika.
   - 6.3.1\. Poproś pełnomocnika o złożenie trzech próbek podpisu na karcie F-PEŁ-02 w Twojej obecności.
   - 6.3.2\. Jeżeli pełnomocnik nie może się podpisać, zastosuj procedurę dla osób niepotrafiących lub niemogących pisać: wymagaj obecności świadka lub notariusza i odnotuj to na karcie.
-  - 6.3.3\. Wzór podpisu odnawiaj nie rzadziej niż co 5 lat oraz każdorazowo po zmianie danych osobowych pełnomocnika.
+  - 6.3.3\. Wzór podpisu odnawiaj nie rzadziej niż co 5 lat oraz każdorazowo po zmianie <!-- page: 8 --> danych osobowych pełnomocnika.
 - 6.4\. Sprawdź, czy dokumenty przedstawione przez Klienta nie zostały zastrzeżone.
   - 6.4.1\. Wyszukaj numer i serię dokumentu tożsamości w rejestrze dokumentów zastrzeżonych; wynik dodatni oznacza, że dokumentu nie wolno przyjąć.
   - 6.4.2\. W razie trafienia nie informuj Klienta o szczegółach wyniku; zatrzymaj sprawę i niezwłocznie powiadom komórkę „Departament Bezpieczeństwa”.
-<!-- page: 8 -->
 - 6.5\. Wykonaj weryfikację pod kątem środków bezpieczeństwa finansowego.
   - 6.5.1\. Zweryfikuj dane mocodawcy i pełnomocnika z listami sankcyjnymi i wykazem osób zajmujących eksponowane stanowiska polityczne w module KYC-PRZYKŁAD.
   - 6.5.2\. Gdy wynik wskazuje na podwyższone ryzyko, nie rejestruj pełnomocnictwa przed uzyskaniem zgody osoby pełniącej funkcję „Koordynator do spraw przeciwdziałania praniu pieniędzy”.
-- 6.6\. Przy każdej dyspozycji pełnomocnika sprawdź jego umocowanie, nawet jeżeli pełnomocnictwo zostało wcześniej zarejestrowane.
-  - 6.6.1\. Wyświetl w module pełnomocnictw zakres, limity i okres obowiązywania; upewnij się, że status pełnomocnictwa to „aktywne”.
-  - 6.6.2\. Porównaj podpis na dyspozycji papierowej z wzorem podpisu zapisanym w systemie, zwracając uwagę na kształt liter, nacisk, tempo i ciągłość linii.
-  - 6.6.3\. Jeżeli dyspozycja wykracza poza zakres pełnomocnictwa, odmów jej wykonania i poinformuj pełnomocnika, że o rozszerzenie umocowania musi wystąpić mocodawca.
-- 6.7\. Gdy wartość dyspozycji przekracza 50 000,00 zł, przekaż ją do zatwierdzenia kierownikowi placówki przed realizacją.
+- 6.6\. W przypadku mocodawcy, który nie może stawić się w placówce z powodu choroby lub pobytu w zakładzie opieki, uzgodnij wizytę pracownika poza placówką.
+  - 6.6.1\. Wizytę przeprowadzają dwie osoby, w tym jedna upoważniona przez kierownika placówki; wyjazd odnotowuje się w ewidencji wyjazdów.
+  - 6.6.2\. Podczas wizyty sprawdź tożsamość mocodawcy, upewnij się, że rozumie on znaczenie czynności, i poproś o podpisanie formularza F-PEŁ-01 oraz karty wzorów podpisów.
+  - 6.6.3\. Gdy stan zdrowia mocodawcy budzi wątpliwości co do świadomości lub swobody wyrażenia woli, nie przyjmuj pełnomocnictwa i skonsultuj się z kierownikiem placówki.
+- 6.7\. Gdy wizyta jest niemożliwa, zaproponuj mocodawcy ustanowienie pełnomocnictwa z podpisem poświadczonym notarialnie, które notariusz może sporządzić poza kancelarią.
 
 ## 7. Opis postępowania — pełnomocnictwa notarialne i zagraniczne
 
@@ -191,11 +200,11 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
 - 7.2\. Ustal, czy pełnomocnictwo notarialne obejmuje czynności, do których ma zostać użyte.
   - 7.2.1\. Sprawdź, czy dokument wymienia z nazwy rodzaj czynności (np. dysponowanie rachunkiem, zawarcie umowy kredytu), a nie ogranicza się do określenia „reprezentowanie mocodawcy we wszystkich sprawach”.
   - 7.2.2\. Jeżeli wymagana jest forma aktu notarialnego (kredyt hipoteczny, zabezpieczenia), potwierdź, że dokument został sporządzony w tej formie, a nie jedynie z poświadczonym podpisem.
+<!-- page: 9 -->
 - 7.3\. Zeskanuj dokument w całości i wprowadź do systemu numer notariusza oraz datę aktu; oryginał zwróć Klientowi po sporządzeniu poświadczonej kopii.
 - 7.4\. Przyjmując pełnomocnictwo sporządzone za granicą, ustal państwo, w którym zostało sporządzone, i formę jego uwierzytelnienia.
   - 7.4.1\. Dla państw będących stronami konwencji haskiej wymagaj apostille umieszczonego na dokumencie lub na odrębnej karcie trwale z nim połączonej.
   - 7.4.2\. Dla państw niebędących stronami konwencji wymagaj legalizacji dokonanej przez polski organ konsularny, chyba że dwustronna umowa o pomocy prawnej stanowi inaczej.
-  <!-- page: 9 -->
   - 7.4.3\. Gdy pełnomocnictwo sporządzono przed polskim konsulem, traktuj je jak dokument krajowy poświadczony notarialnie i dołącz zaświadczenie konsula o czynności.
 - 7.5\. Sprawdź, czy dokument został przetłumaczony na język polski przez tłumacza przysięgłego.
   - 7.5.1\. Tłumaczenie przysięgłe musi obejmować całość dokumentu, w tym apostille, pieczęcie i klauzule; tłumaczenie częściowe odrzuć.
@@ -203,11 +212,14 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
 - 7.6\. Przekaż komplet dokumentów do komórki „Zespół Weryfikacji Pełnomocnictw” najpóźniej następnego dnia roboczego, wraz z kartą weryfikacji i skanami.
 - 7.7\. Poinformuj Klienta, że weryfikacja pełnomocnictwa zagranicznego trwa do 3 dni od dnia przedstawienia kompletu dokumentów oraz że do czasu jej zakończenia pełnomocnik nie może składać dyspozycji.
 - 7.8\. Po otrzymaniu opinii komórki „Departament Prawny”, wydanej w terminie 5 dni, zarejestruj pełnomocnictwo w systemie albo poinformuj Klienta o odmowie wraz z jej uzasadnieniem.
-- 7.9\. Gdy pełnomocnictwo zostało sporządzone w języku obcym i w języku polskim w formie dwujęzycznej, sprawdź zgodność obu wersji.
-  - 7.9.1\. Porównaj treść w zakresie nazwisk, dat, zakresu umocowania i limitów kwotowych; rozbieżności zgłoś komórce „Zespół Weryfikacji Pełnomocnictw”.
-  - 7.9.2\. W przypadku różnic znaczeniowych jako wiążącą przyjmij wersję w języku, w którym sporządzono oryginał, jeżeli tłumaczenie przysięgłe potwierdza jej treść.
-- 7.10\. Zwróć uwagę na wzmianki o prawie właściwym; jeżeli pełnomocnictwo podlega prawu obcemu, ocenę jego skuteczności zlecaj komórce „Departament Prawny”.
+- 7.9\. Gdy Klient przedkłada pełnomocnictwo sporządzone poza granicami Polski, ustal, w jakim państwie je sporządzono i przez jaki organ zostało wystawione lub poświadczone.
+  - 7.9.1\. Jeżeli państwo jest stroną konwencji haskiej, wymagaj apostille wydanej przez właściwy organ tego państwa.
+  - 7.9.2\. Jeżeli państwo nie jest stroną konwencji, wymagaj legalizacji dokonanej przez polski organ konsularny, chyba że umowa międzynarodowa stanowi inaczej.
+  - 7.9.3\. W razie wątpliwości co do statusu państwa skorzystaj z wykazu prowadzonego przez Departament Prawny.
+- 7.10\. Sprawdź, czy od daty wystawienia dokumentu nie upłynął okres dopuszczony w procedurze (12 miesięcy); starszych dokumentów nie przyjmuj bez opinii komórki centralnej.
+- 7.11\. Skieruj dokument wraz z tłumaczeniem do Zespół Weryfikacji Pełnomocnictw; wskaż, czy sprawa jest pilna, i podaj przewidywany termin dyspozycji.
 
+<!-- page: 10 -->
 ## 8. Opis postępowania — prokura i reprezentacja przedsiębiorców
 
 - 8.1\. Ustal sposób reprezentacji Klienta firmowego na podstawie aktualnych dokumentów rejestrowych.
@@ -215,7 +227,7 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
   - 8.1.2\. Zapoznaj się z umową spółki lub statutem i ustal, czy sposób reprezentacji jest samodzielny, czy łączny, a także czy w organie obowiązuje zakaz zastępowania.
   - 8.1.3\. Porównaj dane osób wskazanych w rejestrze z danymi w systemie i okazanymi dokumentami tożsamości.
 - 8.2\. Rozróżnij umocowanie wynikające z organu od umocowania wynikającego z pełnomocnictwa.
-  - 8.2.1\. Członków zarządu, wspólników uprawnionych do reprezentacji i inne osoby wskazane w rejestrze traktuj jako osoby uprawnione do reprezentacji; ich <!-- page: 10 --> uprawnień nie rejestruj jako pełnomocnictwa.
+  - 8.2.1\. Członków zarządu, wspólników uprawnionych do reprezentacji i inne osoby wskazane w rejestrze traktuj jako osoby uprawnione do reprezentacji; ich uprawnień nie rejestruj jako pełnomocnictwa.
   - 8.2.2\. Pełnomocnictwo udzielone przez osoby uprawnione do reprezentacji przyjmuj na zasadach ogólnych, z zachowaniem sposobu reprezentacji; pełnomocnictwo podpisane przez jedną osobę w spółce z reprezentacją łączną jest nieważne.
   - 8.2.3\. Sprawdź, czy osoba podpisująca pełnomocnictwo była uprawniona w dniu jego sporządzenia.
 - 8.3\. Przy umocowaniu prokurenta zweryfikuj jej wpis do rejestru przedsiębiorców.
@@ -227,14 +239,22 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
   - 8.4.2\. Dyspozycje wymagające autoryzacji łącznej przyjmuj do realizacji dopiero po podpisaniu przez wszystkie wymagane osoby; dyspozycję niepełną w terminie 7 dni odrzuć.
 - 8.5\. Poinformuj Klienta o obowiązku aktualizacji dokumentów.
   - 8.5.1\. Wyjaśnij, że o każdej zmianie składu organów lub sposobu reprezentacji Klient ma obowiązek zawiadomić Bank w terminie 7 dni od dnia zmiany; zmiana wywiera skutek od dnia otrzymania zawiadomienia wraz z dokumentami.
+  <!-- page: 11 -->
   - 8.5.2\. Poinformuj, że Bank weryfikuje dokumenty w terminie 3 dni od dnia ich otrzymania i do tego czasu opiera się na dotychczasowych.
-- 8.6\. Przy obsłudze osób fizycznych prowadzących jednoosobową działalność gospodarczą stosuj uproszczone zasady.
-  - 8.6.1\. Sprawdź w Centralnej Ewidencji i Informacji o Działalności Gospodarczej status wpisu: czynna, zawieszona, wykreślona; w razie zawieszenia działalności pełnomocnik nie może dokonywać czynności wykraczających poza zachowanie majątku.
-  - 8.6.2\. Pełnomocnictwo udzielone przez przedsiębiorcę może być ogólne w sprawach firmy, ale do dysponowania rachunkiem wymaga wyraźnego wskazania czynności bankowych.
-  - 8.6.3\. Prokurę przyjmuj, jeżeli przedsiębiorca jest wpisany do Centralnej Ewidencji i Informacji o Działalności Gospodarczej i ujawniono ją we wpisie.
-- 8.7\. Przy spółce cywilnej zbadaj, czy pełnomocnictwo zostało udzielone przez wszystkich wspólników albo przez jednego z nich na podstawie umowy spółki.
 
-<!-- page: 11 -->
+Prokura jest szczególnym rodzajem pełnomocnictwa, którego udzielenie podlega wpisowi do rejestru przedsiębiorców. Z tego powodu jej przyjęcie w Banku wymaga potwierdzenia tego wpisu w aktualnym odpisie, a nie jedynie okazania uchwały o jej ustanowieniu.
+
+Pracownik przyjmujący dokumenty prokurenta:
+
+- 1\) sprawdza, czy prokura jest wpisana do rejestru i czy nie została odwołana lub wygaszona;
+- 2\) ustala, czy prokura jest samoistna, czy łączna, oraz czy prokurent może działać samodzielnie w odniesieniu do danej czynności;
+- 3\) pamięta, że prokura nie obejmuje zbywania przedsiębiorstwa, oddania go do czasowego korzystania ani zbywania i obciążania nieruchomości, chyba że udzielono pełnomocnictwa szczególnego;
+- 4\) w razie wątpliwości co do zakresu prokury kieruje sprawę do Zespół Weryfikacji Pełnomocnictw.
+
+Jeżeli prokurent jednocześnie jest pełnomocnikiem do rachunku, pracownik rejestruje oba
+
+umocowania osobno, aby wygaśnięcie jednego z nich nie wpływało na drugie.
+
 ## 9. Opis postępowania — rejestracja w systemie, zakres i ograniczenia
 
 - 9.1\. Zarejestruj pełnomocnictwo w module pełnomocnictw systemu CBS-PRZYKŁAD po zakończeniu weryfikacji.
@@ -248,17 +268,18 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
 - 9.3\. Poproś kierownika placówki lub drugiego pracownika o zatwierdzenie wpisu.
   - 9.3.1\. Osoba zatwierdzająca porównuje wpis w systemie z dokumentem; wpisu nie zatwierdza ta sama osoba, która go utworzyła.
   - 9.3.2\. Po zatwierdzeniu status pełnomocnictwa zmienia się na „aktywne”, a pełnomocnik może składać dyspozycje.
+<!-- page: 12 -->
 - 9.4\. Poinformuj mocodawcę o rejestracji pełnomocnictwa w ciągu 3 dni od jej dokonania, za pośrednictwem bankowości elektronicznej, wiadomości SMS lub pisemnie, jeżeli mocodawca nie był obecny przy złożeniu dokumentu.
 - 9.5\. Ustaw w systemie przypomnienie o potwierdzeniu aktualności pełnomocnictw bezterminowych po upływie 24 miesiące.
-- 9.6\. Pełnomocnictwo do lokat i kart rejestruj z uwzględnieniem ich specyfiki.
-  - 9.6.1\. Pełnomocnik do rachunku nie otrzymuje karty głównej mocodawcy; karta może zostać wydana pełnomocnikowi imiennie wyłącznie, gdy pełnomocnictwo to przewiduje i mocodawca potwierdził zgodę.
-  - 9.6.2\. Pełnomocnictwo do lokaty obejmuje zakładanie, zmianę warunków i wypłatę tylko wtedy, gdy dokument wymienia te czynności; w przeciwnym razie ogranicz uprawnienia do składania dyspozycji wypłaty odsetek.
-  - 9.6.3\. Wypłaty z lokaty przed terminem dokonuj dopiero po potwierdzeniu dyspozycji z mocodawcą.
-- 9.7\. W razie odwołania pełnomocnictwa zablokuj kartę wydaną pełnomocnikowi niezwłocznie, a mocodawcę poinformuj o konieczności jej zwrotu.
+- 9.6\. Przy nadawaniu pełnomocnikowi dostępu do bankowości elektronicznej stosuj następujące zasady.
+  - 9.6.1\. Dostęp nadaj tylko wtedy, gdy pełnomocnictwo wyraźnie obejmuje korzystanie z bankowości elektronicznej; samo upoważnienie do dysponowania rachunkiem w placówce tego nie wystarcza.
+  - 9.6.2\. Pełnomocnik otrzymuje własny identyfikator i własne dane uwierzytelniające; nie wolno udostępniać mu danych mocodawcy.
+  - 9.6.3\. Zakres uprawnień w bankowości elektronicznej nie może przekraczać zakresu pełnomocnictwa; limity pełnomocnika ustaw na poziomie nie wyższym niż limity z umocowania.
+- 9.7\. Odnotuj w systemie datę nadania dostępu i poinformuj mocodawcę o jego zakresie.
 
 ## 10. Opis postępowania — odwołanie, wypowiedzenie i wygaśnięcie
 
-- 10.1\. Przyjmij oświadczenie mocodawcy o odwołaniu pełnomocnictwa, niezależnie od <!-- page: 12 --> formy, w jakiej zostało ono udzielone.
+- 10.1\. Przyjmij oświadczenie mocodawcy o odwołaniu pełnomocnictwa, niezależnie od formy, w jakiej zostało ono udzielone.
   - 10.1.1\. Oświadczenie przyjmuj w placówce, pisemnie, na formularzu F-PEŁ-03 albo za pośrednictwem bankowości elektronicznej po uwierzytelnieniu mocodawcy; oświadczenia telefonicznego nie przyjmuj bez uwierzytelnienia zgodnego z zasadami Infolinii.
   - 10.1.2\. Odwołanie jest skuteczne wobec Banku od chwili jego otrzymania; nie odmawiaj przyjęcia oświadczenia, nawet gdy pełnomocnictwo zawiera zastrzeżenie o nieodwołalności.
   - 10.1.3\. Zapisz datę i godzinę otrzymania oświadczenia w systemie.
@@ -268,23 +289,30 @@ Po odwołaniu, wypowiedzeniu lub upływie terminu pracownik wyłącza pełnomocn
   - 10.2.3\. Potwierdź mocodawcy wykonanie odwołania na papierze lub w bankowości elektronicznej.
 - 10.3\. Przyjmij wypowiedzenie pełnomocnictwa przez pełnomocnika i zawiadom o nim mocodawcę w ciągu 3 dni.
 - 10.4\. Wyłącz pełnomocnictwo w systemie w razie wygaśnięcia z innych przyczyn.
-  - 10.4.1\. Upływ terminu, na który pełnomocnictwo zostało udzielone, oraz wykonanie czynności, do której udzielono pełnomocnictwa jednorazowego.
+  - 10.4.1\. Upływ terminu, na który pełnomocnictwo zostało udzielone, oraz wykonanie <!-- page: 13 --> czynności, do której udzielono pełnomocnictwa jednorazowego.
   - 10.4.2\. Śmierć pełnomocnika; wyłącz uprawnienia po otrzymaniu aktu zgonu lub innego wiarygodnego zawiadomienia.
   - 10.4.3\. Ustanie bytu prawnego mocodawcy będącego osobą prawną, potwierdzone wykreśleniem z rejestru.
 - 10.5\. Po otrzymaniu informacji o śmierci mocodawcy wstrzymaj uprawnienia pełnomocnika niezwłocznie, nie później niż w następnym dniu roboczym.
   - 10.5.1\. Nie wykonuj dyspozycji pełnomocnika po powzięciu wiadomości o zgonie, chyba że pełnomocnictwo wyraźnie obejmuje czas po śmierci mocodawcy, a komórka „Departament Prawny” potwierdziła jego skuteczność.
   - 10.5.2\. Zarejestruj akt zgonu, powiadom komórkę „Departament Prawny” i poinformuj pełnomocnika, że dalsze czynności wymagają postanowienia o stwierdzeniu nabycia spadku lub dyspozycji na wypadek śmierci.
-- 10.6\. Przy wygaśnięciu pełnomocnictwa wskutek śmierci pełnomocnika zachowaj następujące zasady.
-  - 10.6.1\. Wyłącz uprawnienia zmarłego w systemie i w bankowości elektronicznej; zablokuj karty wydane pełnomocnikowi.
-  - 10.6.2\. Poinformuj mocodawcę o wygaśnięciu pełnomocnictwa i o możliwości ustanowienia nowego pełnomocnika.
-  <!-- page: 13 -->
-  - 10.6.3\. Nie przekazuj spadkobiercom pełnomocnika żadnych informacji o rachunku mocodawcy.
-- 10.7\. Zwróć uwagę na dyspozycje zlecone przez zmarłego pełnomocnika, które nie zostały wykonane, i wstrzymaj je do czasu decyzji mocodawcy.
+
+Pełnomocnictwo wygasa nie tylko wskutek odwołania, lecz także z innych przyczyn. Pracownik, który dowie się o zdarzeniu powodującym wygaśnięcie, wprowadza informację do modułu pełnomocnictw i wstrzymuje wykonywanie dyspozycji pełnomocnika, nawet jeżeli mocodawca nie złożył formalnego oświadczenia.
+
+Wygaśnięcie umocowania następuje w szczególności:
+
+- 1\) z upływem terminu, na który pełnomocnictwo udzielono, albo po dokonaniu czynności, do której udzielono pełnomocnictwa jednorazowego;
+- 2\) ze śmiercią mocodawcy lub pełnomocnika, chyba że pełnomocnictwo zawiera wyraźnie wskazaną możliwość dalszego działania, a jego skuteczność potwierdzi Departament Prawny;
+- 3\) w razie wygaśnięcia lub zakończenia bytu prawnego mocodawcy będącego osobą prawną, na przykład po wykreśleniu z rejestru lub zakończeniu likwidacji;
+- 4\) w razie ubezwłasnowolnienia pełnomocnika lub orzeczenia innego środka ograniczającego jego zdolność do czynności prawnych;
+- 5\) w razie rezygnacji pełnomocnika zgłoszonej mocodawcy, a w konsekwencji Bankowi.
+
+Pracownik odnotowuje źródło informacji o zdarzeniu (dokument, wiadomość od rodziny, zawiadomienie organu) i dołącza je do akt pełnomocnictwa.
 
 ## 11. Przypadki szczególne i podejrzane
 
 Pracownik zwraca szczególną uwagę na okoliczności, które mogą świadczyć o fałszerstwie, nadużyciu pełnomocnictwa lub wykorzystywaniu osoby w trudnej sytuacji życiowej. Wystąpienie jednego sygnału nie przesądza o nieprawidłowości, ale obliguje do dokładniejszej weryfikacji i odnotowania jej wyniku w karcie weryfikacji.
 
+<!-- page: 14 -->
 | **Sygnał ostrzegawczy** | **Przykład** | **Zalecane działanie** |
 | --- | --- | --- |
 | Rozbieżność w dokumencie | Inne dane osobowe niż w systemie, różna pisownia nazwiska, inna data sporządzenia niż w treści | Wstrzymaj przyjęcie i wyjaśnij z Klientem; skontaktuj się z mocodawcą |
@@ -297,17 +325,18 @@ Pracownik zwraca szczególną uwagę na okoliczności, które mogą świadczyć 
 
 - 11.1\. Gdy masz uzasadnione podejrzenie nieprawidłowości, wstrzymaj czynność i zgłoś sprawę kierownikowi placówki.
   - 11.1.1\. Nie informuj pełnomocnika ani mocodawcy, że sprawa została zgłoszona do komórki „Departament Zgodności”; informację o przeprowadzeniu dodatkowej weryfikacji przedstaw jako standardowy element procedury.
-  - 11.1.2\. Wypełnij formularz F-PEŁ-05 i przekaż go w tym samym dniu roboczym do <!-- page: 14 --> komórki „Departament Zgodności”; dołącz skany dokumentów i opis zdarzeń.
+  - 11.1.2\. Wypełnij formularz F-PEŁ-05 i przekaż go w tym samym dniu roboczym do komórki „Departament Zgodności”; dołącz skany dokumentów i opis zdarzeń.
   - 11.1.3\. Nie niszcz ani nie zwracaj Klientowi dokumentów budzących wątpliwości; zabezpiecz je w sejfie placówki.
 - 11.2\. Wykonaj decyzję komórki „Departament Zgodności” dotyczącą dalszego postępowania.
   - 11.2.1\. Jeżeli decyzja dopuszcza kontynuację, odnotuj w systemie uzasadnienie i zastosuj dodatkowe środki, np. potwierdzenie z mocodawcą przy każdej dyspozycji.
   - 11.2.2\. Jeżeli decyzja nakazuje odmowę, poinformuj Klienta o odmowie bez ujawniania jej przyczyn związanych z przeciwdziałaniem praniu pieniędzy, powołując się na wewnętrzne zasady oceny umocowania.
-  - 11.2.3\. Zgłoszenie do właściwego organu dokonuje wyłącznie osoba pełniąca funkcję „Koordynator do spraw przeciwdziałania praniu pieniędzy”; pracownik placówki nie kontaktuje się z organem samodzielnie.
-- 11.3\. Przy pełnomocnictwie, które pozwala pełnomocnikowi działać także na własną rzecz (czynność z samym sobą lub reprezentacja obu stron), zachowaj ostrożność.
-  - 11.3.1\. Sprawdź, czy dokument wyraźnie zezwala na takie czynności; brak wyraźnej zgody oznacza, że czynność może być nieważna lub wymagać potwierdzenia mocodawcy.
-  - 11.3.2\. Przy przelewach z rachunku mocodawcy na rachunek pełnomocnika powyżej 50 000,00 zł wymagaj potwierdzenia mocodawcy i zatwierdzenia kierownika placówki.
-  - 11.3.3\. Zapytaj o cel przelewu i odnotuj odpowiedź w opisie dyspozycji.
-- 11.4\. Przy kilku pełnomocnikach tego samego mocodawcy sprawdź, czy dokumenty nie nakładają na siebie sprzecznych zakresów i czy umocowania nie są łączne; w razie sprzeczności skonsultuj się z komórką „Zespół Weryfikacji Pełnomocnictw”.
+  - 11.2.3\. Zgłoszenie do właściwego organu dokonuje wyłącznie osoba pełniąca funkcję <!-- page: 15 --> „Koordynator do spraw przeciwdziałania praniu pieniędzy”; pracownik placówki nie kontaktuje się z organem samodzielnie.
+- 11.3\. Jeżeli pełnomocnik składa dyspozycję gotówkową w kwocie przekraczającej zwykłe potrzeby mocodawcy, ustal cel wypłaty i, w miarę możliwości, jej wykorzystanie.
+  - 11.3.1\. Zapytaj w sposób uprzejmy i neutralny, na co zostaną przeznaczone środki; pytanie wyjaśnij obowiązkiem Banku wynikającym z przepisów o przeciwdziałaniu praniu pieniędzy.
+  - 11.3.2\. Poproś o dokument potwierdzający cel, na przykład umowę, fakturę lub zlecenie, i dołącz jego kopię do dyspozycji.
+  - 11.3.3\. Jeżeli pełnomocnik odmawia udzielenia wyjaśnień lub podaje sprzeczne informacje, odmów wykonania dyspozycji i zgłoś sprawę zgodnie z zasadami opisanymi w procedurze.
+- 11.4\. Wypłatę realizuj tylko wtedy, gdy kasa dysponuje odpowiednim zasobem gotówki; w przeciwnym razie umów pełnomocnika na inny termin, nie zaś na wypłatę w częściach.
+- 11.5\. W przypadku powtarzających się wypłat zbliżonych do progu raportowania zawiadom Departament Zgodności jako o możliwym podziale transakcji.
 
 ## 12. Kontrola i nadzór
 
@@ -316,8 +345,6 @@ Pracownik zwraca szczególną uwagę na okoliczności, które mogą świadczyć 
   - 2\) kontrola drugiego poziomu — Zespół Weryfikacji Pełnomocnictw raz na kwartał analizuje raporty z modułu pełnomocnictw pod kątem wpisów bez kompletnej dokumentacji i bez zatwierdzenia drugiej osoby;
   - 3\) kontrola trzeciego poziomu — Departament Audytu Wewnętrznego ocenia skuteczność procedury w cyklach nie rzadszych niż raz w roku.
 - 2\. Wyniki kontroli odnotowuje się w rejestrze kontroli. Stwierdzone nieprawidłowości usuwa się w terminie wskazanym przez kontrolującego, a ich powtarzalność jest podstawą do zmiany procedury lub zorganizowania szkolenia.
-- 1\. Wyniki kontroli kwartalnej, o której mowa w procedurze, Zespół Weryfikacji Pełnomocnictw przekazuje właścicielowi procedury w formie raportu zawierającego liczbę zbadanych pełnomocnictw, liczbę stwierdzonych nieprawidłowości z podziałem na <!-- page: 15 --> kategorie (brak dokumentów, brak zatwierdzenia, błędny zakres, brak wzoru podpisu, opóźnienie odwołania) oraz rekomendacje.
-- 2\. Raport jest przekazywany także do komórki „Departament Zgodności” oraz, w zakresie dotyczącym ryzyka operacyjnego, do komórki „Departament Ryzyka”. Rekomendacje mające wpływ na kształt procedury są omawiane na posiedzeniu właściciela procedury i komórek uczestniczących, a ich realizację odnotowuje się w protokole.
 
 ## 13. Dokumentacja i archiwizacja
 
@@ -325,6 +352,7 @@ Pracownik zwraca szczególną uwagę na okoliczności, które mogą świadczyć 
   - 1\) skan pełnomocnictwa wraz z załącznikami (apostille, tłumaczenie przysięgłe, odpis z rejestru);
   - 2\) kartę wzorów podpisów F-PEŁ-02 oraz formularz F-PEŁ-01, jeżeli pełnomocnictwo złożono w placówce;
   - 3\) kartę weryfikacji F-PEŁ-04 z opisem sprawdzonych elementów i podpisami pracownika oraz osoby zatwierdzającej;
+  <!-- page: 16 -->
   - 4\) dokumenty dotyczące odwołania, wypowiedzenia lub wygaśnięcia, w tym oświadczenie lub akt zgonu;
   - 5\) opinie Departament Prawny oraz decyzje komórki „Departament Zgodności”, jeżeli sprawa była do nich kierowana.
 - 2\. Oryginały dokumentów, które Klient przekazał Bankowi, przechowuje się w archiwum przez 10 lat od dnia wygaśnięcia pełnomocnictwa. Dokumenty i informacje związane ze stosowaniem środków bezpieczeństwa finansowego przechowuje się przez 5 lat licząc od pierwszego dnia roku następującego po roku zakończenia stosunków gospodarczych z Klientem, chyba że przepisy wymagają okresu dłuższego.
@@ -338,7 +366,7 @@ Pracownik wykonujący czynności objęte procedurą jest obowiązany:
 - 2\) nie udostępniać danych poza Bank bez podstawy prawnej;
 - 3\) niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych: inspektorowi ochrony danych (Inspektor Ochrony Danych) oraz jednostce bezpieczeństwa (Departament Bezpieczeństwa).
 
-Wnioski osób, których dane dotyczą, kieruje się do inspektora ochrony danych (Inspektor Ochrony Danych, iod@bank.example); informacja o sposobie załatwienia wniosku jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania <!-- page: 16 --> wniosku.
+Wnioski osób, których dane dotyczą, kieruje się do inspektora ochrony danych (Inspektor Ochrony Danych, iod@bank.example); informacja o sposobie załatwienia wniosku jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku.
 
 Korespondencję do Klienta przekazuje się na adres wskazany w umowie albo w bankowości elektronicznej. Potwierdzenie wysłania lub udostępnienia dokumentu dołącza się do akt sprawy.
 
@@ -350,16 +378,9 @@ Dla przesyłek niedoręczonych obowiązują zasady:
 
 Korespondencję elektroniczną uznaje się za doręczoną w dniu jej udostępnienia Klientowi w bankowości elektronicznej.
 
-- 1\. Dostęp do teczki pełnomocnictwa mają wyłącznie osoby, które potrzebują go do wykonywania obowiązków. Dostęp przyznaje i monitoruje komórka „Zespół Weryfikacji Pełnomocnictw”. Każde otwarcie teczki jest rejestrowane w dzienniku zdarzeń systemu.
-- 2\. Kopie dokumentów z teczki mogą być udostępniane:
-  - 1\) mocodawcy na jego żądanie, z wyjątkiem informacji objętych tajemnicą przeciwdziałania praniu pieniędzy;
-  - 2\) pełnomocnikowi w zakresie dokumentu, na podstawie którego działa;
-  - 3\) sądom, organom ścigania i organom nadzoru na podstawie przepisów, po zatwierdzeniu przez komórkę „Departament Prawny”;
-  - 4\) audytorom wewnętrznym i zewnętrznym w zakresie niezbędnym do przeprowadzenia badania.
-
 ## 14. Postanowienia końcowe
 
-Procedura obowiązuje od dnia 1 lipca 2024 r. i znajduje zastosowanie do pełnomocnictw przedstawionych od tego dnia. Pełnomocnictwa zarejestrowane przed tym dniem pozostają skuteczne, a ich ponowna weryfikacja następuje przy najbliższej dyspozycji lub w ramach potwierdzenia aktualności.
+Procedura obowiązuje od dnia 1 lipca 2024 r. i znajduje zastosowanie do pełnomocnictw przedstawionych od tego dnia. Pełnomocnictwa zarejestrowane przed tym dniem pozostają <!-- page: 17 --> skuteczne, a ich ponowna weryfikacja następuje przy najbliższej dyspozycji lub w ramach potwierdzenia aktualności.
 
 W sprawach nieuregulowanych w procedurze stosuje się odpowiednio postanowienia dokumentów „Regulamin prowadzenia rachunków osobistych (oszczędnościowo-rozliczeniowych) dla konsumentów Bank Przykładowy S.A.” i „Regulamin rachunków bankowych dla przedsiębiorców Bank Przykładowy S.A.”, a w razie wątpliwości interpretacyjnych rozstrzyga Departament Prawny.
 
@@ -369,7 +390,6 @@ Zmiany procedury wprowadza się w trybie przewidzianym dla jej pierwotnego przyj
 
 Każda zmiana musi zawierać:
 
-<!-- page: 17 -->
 - 1\) wskazanie nowej wersji i daty jej wejścia w życie;
 - 2\) zwięzły opis zmienionych postanowień wraz z uzasadnieniem;
 - 3\) informację o konieczności przeszkolenia pracowników.

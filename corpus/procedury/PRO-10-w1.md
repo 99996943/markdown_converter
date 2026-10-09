@@ -52,15 +52,15 @@ Procedura ma zastosowanie w placówkach Banku, na Infolinii, w jednostkach „De
 - 5\. **Departament Operacji** — realizuje zwroty kwot na rachunki Klientów, wydaje karty zastępcze i prowadzi rozliczenia z organizacją płatniczą.
 - 6\. **Departament Zgodności** — opiniuje zmiany procedury, monitoruje zgodność z przepisami o usługach płatniczych i ocenia ryzyko związane z wyjątkami od terminów, a **Biuro Reklamacji** — prowadzi odwołania Klientów od rozstrzygnięć w sprawach transakcji nieautoryzowanych.
 
-**Analityk jednostki „Centrum Monitorowania Transakcji”** jest odpowiedzialny za:
+**Pracownik jednostki reklamacji** bierze udział w procedurze w zakresie, w jakim zgłoszenie transakcji nieautoryzowanej ma postać reklamacji:
 
 <!-- page: 3 -->
-- 1\) rzetelną i bezstronną analizę zgłoszeń transakcji nieautoryzowanych, opartą na danych systemowych, a nie wyłącznie na relacji Klienta lub pracownika placówki;
-- 2\) przygotowanie rekomendacji rozstrzygnięcia z uzasadnieniem, które pozwala przełożonemu zweryfikować tok rozumowania;
-- 3\) terminowe przekazanie dyspozycji zwrotu do jednostki „Departament Operacji”;
-- 4\) prowadzenie dokumentacji sporu z organizacją płatniczą i pilnowanie terminów wniesienia sporu.
+- 1\) wprowadza reklamację w systemie, jeżeli Klient wyraźnie zażądał jej rozpatrzenia lub nie zgodził się ze stanowiskiem Banku;
+- 2\) powiadamia Klienta pisemnie o stanie sprawy i o przysługujących mu środkach odwoławczych, w tym o prawie do skorzystania z pozasądowych metod rozwiązywania sporów;
+- 3\) współpracuje z „Biuro Reklamacji” przy ustalaniu terminu odpowiedzi, tak aby nie została przekroczona granica określona przepisami;
+- 4\) przekazuje do „Departament Bezpieczeństwa” kopię każdej reklamacji, w której Klient podnosi zarzut wadliwego działania zabezpieczeń Banku.
 
-Analityk nie może rozpatrywać zgłoszeń dotyczących własnych rachunków ani rachunków osób bliskich; w takim przypadku sprawę przejmuje inny analityk, wskazany przez kierownika.
+Sprawy, w których reklamacja dotyczy zachowania pracownika Banku, są przekazywane również do jednostki zgodności, niezależnie od ustaleń w zakresie samej transakcji.
 
 ## 4. Definicje
 
@@ -83,8 +83,7 @@ Ponadto w procedurze użyto określeń:
 - 3\) **Transakcja nieautoryzowana** — transakcja płatnicza, na której wykonanie płatnik nie wyraził zgody w sposób przewidziany w umowie;
 - 4\) **Silne uwierzytelnianie** — uwierzytelnianie oparte na co najmniej dwóch niezależnych elementach, spośród wiedzy, posiadania i cechy użytkownika;
 - 5\) **Organizacja płatnicza** — podmiot zarządzający systemem rozliczeń transakcji kartowych, z którym Bank zawarł umowę o uczestnictwo;
-- 6\) **Spór z organizacją płatniczą** — procedura odzyskania od banku akceptanta środków z kwestionowanej transakcji kartowej, prowadzona na zasadach określonych przez organizację płatniczą;
-<!-- page: 4 -->
+- 6\) **Spór z organizacją płatniczą** — procedura odzyskania od banku akceptanta środków z kwestionowanej transakcji kartowej, prowadzona na zasadach określonych przez <!-- page: 4 --> organizację płatniczą;
 - 7\) **Akceptant** — przedsiębiorca przyjmujący płatności kartami;
 - 8\) **CBS-PRZYKŁAD** — system, w którym blokuje się karty i dostęp oraz odnotowuje dyspozycje Klientów;
 - 9\) **rejestr zgłoszeń RZK** — rejestr, w którym odnotowuje się każde zgłoszenie zastrzeżenia i zgłoszenie transakcji nieautoryzowanej wraz z historią czynności;
@@ -125,7 +124,7 @@ Zgłoszenie nieautoryzowanej transakcji uruchamia postępowanie wyjaśniające.
 
 Bank zwraca środki w terminie albo, w uzasadnionych przypadkach, odmawia zwrotu i prowadzi spór z organizacją płatniczą.
 
-Zgłoszenie utraty, kradzieży, przywłaszczenia lub nieuprawnionego użycia karty przyjmuje każdy pracownik w każdym czasie. Zgłoszenia przyjmowane są telefonicznie pod numerem <!-- page: 5 --> 800 000 002 (z zagranicy: +48 800 000 003), czynnym całą dobę, w bankowości elektronicznej i aplikacji mobilnej, w placówce a także — w razie niemożności skorzystania z tych kanałów — za pośrednictwem dowolnej jednostki Banku.
+Zgłoszenie utraty, kradzieży, przywłaszczenia lub nieuprawnionego użycia karty przyjmuje <!-- page: 5 --> każdy pracownik w każdym czasie. Zgłoszenia przyjmowane są telefonicznie pod numerem 800 000 002 (z zagranicy: +48 800 000 003), czynnym całą dobę, w bankowości elektronicznej i aplikacji mobilnej, w placówce a także — w razie niemożności skorzystania z tych kanałów — za pośrednictwem dowolnej jednostki Banku.
 
 - 5.1\. Przyjmij zgłoszenie i zidentyfikuj jego przedmiot.
   - 5.1.1\. Zapytaj, czy zgłoszenie dotyczy karty fizycznej, tokenu płatności mobilnej, danych karty, czy dostępu do bankowości elektronicznej.
@@ -149,20 +148,22 @@ Pamiętaj: zgłoszenia utraty lub kradzieży karty nie wolno odkładać do czasu
 
 - 5.5\. Wyjaśnij Klienta o rodzajach blokady i pozwól mu wybrać właściwy wariant.
   - 5.5.1\. **Zastrzeżenie** stosuje się w przypadku utraty, kradzieży, przywłaszczenia karty lub ujawnienia jej danych; jest ono nieodwracalne.
-  - 5.5.2\. **Blokadę czasową** stosuje się, gdy Klient nie ma pewności, gdzie jest karta; Klient może samodzielnie odblokować kartę w bankowości elektronicznej, a pracownik <!-- page: 6 --> nie odblokowuje karty, jeżeli podejrzewa kradzież.
+  - 5.5.2\. **Blokadę czasową** stosuje się, gdy Klient nie ma pewności, gdzie jest karta; Klient <!-- page: 6 --> może samodzielnie odblokować kartę w bankowości elektronicznej, a pracownik nie odblokowuje karty, jeżeli podejrzewa kradzież.
   - 5.5.3\. Jeśli Klient nie potrafi wskazać, czy karta została utracona, zastosuj blokadę czasową i zaproponuj zastrzeżenie, gdy karta nie zostanie odnaleziona w ciągu dnia.
 - 5.6\. Wskaż Klientowi skutki zastrzeżenia.
   - 5.6.1\. Blokada obejmuje wszystkie transakcje wymagające autoryzacji, w tym płatności internetowe, zbliżeniowe i w aplikacjach płatności mobilnych.
   - 5.6.2\. Transakcje autoryzowane przed zgłoszeniem, które nie zostały jeszcze rozliczone, mogą obciążyć rachunek po zgłoszeniu.
   - 5.6.3\. Zastrzeżenie karty nie powoduje pobrania opłaty — stawka wynosi 0,00 zł.
-- 5.7\. Oceń pilność zgłoszenia.
-  - 5.7.1\. Zgłoszenia, w których Klient informuje o trwającym obciążaniu rachunku, traktuj priorytetowo i zablokuj kartę przed zebraniem szczegółów zdarzenia.
-  - 5.7.2\. Zgłoszenia o utracie karty bez nierozpoznanych transakcji można obsłużyć w standardowej kolejności, lecz blokady nie wolno odkładać.
-  - 5.7.3\. Gdy do zgłoszenia dochodzi po godzinach pracy placówki, skieruj je konsultantowi dyżurnemu i nie umawiaj Klienta na wizytę przed wykonaniem blokady.
-- 5.8\. Ustal stan rachunku i karty.
-  - 5.8.1\. Zweryfikuj w systemie status karty, datę wydania, limity oraz ostatnie autoryzacje.
-  - 5.8.2\. Zwróć uwagę, czy karta nie została niedawno zastrzeżona lub wymieniona — w takim przypadku zweryfikuj, czy kwestionowane transakcje dotyczą starej karty.
-  - 5.8.3\. Jeżeli rachunek jest objęty blokadą lub zajęciem, zablokuj kartę, lecz nie zmieniaj statusu rachunku.
+- 5.7\. Przyjmij zgłoszenie złożone w placówce.
+  - 5.7.1\. Zaproś Klienta do stanowiska obsługi i zadbaj, aby rozmowa nie była słyszana przez inne osoby.
+  - 5.7.2\. Zażądaj okazania dokumentu tożsamości i zweryfikuj jego ważność; dane z dokumentu porównaj ze wzorem w systemie.
+  - 5.7.3\. Wykonaj blokadę w trakcie rozmowy, a następnie wypełnij formularz F-BEZ-01.
+- 5.8\. Przyjmij zgłoszenie złożone w bankowości elektronicznej.
+  - 5.8.1\. Zgłoszenie złożone w aplikacji po zalogowaniu z silnym uwierzytelnianiem jest wykonywane automatycznie; pracownik potwierdza je telefonicznie, jeśli kwota zakwestionowanych transakcji przekracza 1 000,00 zł.
+  - 5.8.2\. W razie awarii funkcji zastrzegania w aplikacji kieruj Klientów na linię 800 000 002.
+- 5.9\. Obsłuż zgłoszenie przekazane przez inną jednostkę Banku.
+  - 5.9.1\. Zgłoszenie przekazane e-mailem lub komunikatorem wewnętrznym wymaga potwierdzenia, że osoba przekazująca zweryfikowała Klienta.
+  - 5.9.2\. Jeżeli weryfikacja nie została wykonana, zweryfikuj Klienta samodzielnie, a do tego czasu stosuj blokadę czasową.
 
 ## 6. Opis postępowania — blokada karty i dostępu
 
@@ -173,9 +174,9 @@ Blokadę wykonuje się bezzwłocznie po zweryfikowaniu zgłaszającego, nie pó�
   - 6.1.2\. Wybierz status „zastrzeżona” albo „blokada czasowa” zgodnie z ustaleniem z Klientem.
   - 6.1.3\. Sprawdź, czy system potwierdził zmianę statusu i czy status został przekazany do systemu autoryzacyjnego.
 - 6.2\. Wyłącz tokeny kart w aplikacjach płatności mobilnych.
+  <!-- page: 7 -->
   - 6.2.1\. Zastrzeżenie karty obejmuje wszystkie powiązane z nią tokeny; wyjątek stanowi tylko wyraźne żądanie Klienta, aby zablokować jedynie kartę fizyczną.
   - 6.2.2\. Jeśli zgłoszenie dotyczy tylko utraty urządzenia mobilnego, wyłącz token powiązany z tym urządzeniem i pozostaw kartę fizyczną aktywną.
-<!-- page: 7 -->
 - 6.3\. Ustal, czy konieczne jest zablokowanie dostępu do bankowości elektronicznej.
   - 6.3.1\. Zablokuj dostęp, jeżeli karta lub dane uwierzytelniające zostały utracone razem z urządzeniem zaufanym albo Klient ujawnił hasło lub kod jednorazowy.
   - 6.3.2\. Zablokuj dostęp także wtedy, gdy zlecono nierozpoznane przelewy lub zmieniono dane kontaktowe Klienta w ostatnich dniach.
@@ -199,9 +200,11 @@ Zablokowanie dostępu do bankowości elektronicznej stosuje się w celu ochrony 
   - 6.7.2\. Usunięcie z urządzenia aplikacji zdalnego dostępu i przeskanowanie urządzenia programem zabezpieczającym.
   - 6.7.3\. Zgłoszenie podejrzenia przestępstwa na policji.
 
-Karta zastępcza jest wydawana z nowym numerem i nowym kodem zabezpieczającym. Zasady jej wydania, w tym opłaty, określają dokumenty „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.” i „Regulamin kart kredytowych Bank Przykładowy S.A.” a także właściwa taryfa opłat i prowizji; zastrzeżenie karty jest bezpłatne (0,00 zł).
+Karta zastępcza jest wydawana z nowym numerem i nowym kodem zabezpieczającym.
 
 <!-- page: 8 -->
+Zasady jej wydania, w tym opłaty, określają dokumenty „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.” i „Regulamin kart kredytowych Bank Przykładowy S.A.” a także właściwa taryfa opłat i prowizji; zastrzeżenie karty jest bezpłatne (0,00 zł).
+
 - 6.8\. Ustal Klienta, czy chce otrzymać kartę zastępczą.
   - 6.8.1\. Jeśli Klient zrezygnuje z karty zastępczej, zapisz to w rejestrze zgłoszeń RZK i powiadom o możliwości złożenia wniosku później.
   - 6.8.2\. Zweryfikuj aktualność adresu korespondencyjnego i numeru telefonu Klienta; w razie wątpliwości co do ich aktualności nie wysyłaj karty do czasu potwierdzenia.
@@ -214,17 +217,16 @@ Karta zastępcza jest wydawana z nowym numerem i nowym kodem zabezpieczającym. 
 - 6.11\. Zakończ obsługę zgłoszenia o utracie.
   - 6.11.1\. Oznacz zgłoszenie w rejestrze zgłoszeń RZK jako „zablokowano” i wskaż numer zamówienia karty zastępczej.
   - 6.11.2\. Jeżeli Klient kwestionuje transakcje, nie zamykaj sprawy, lecz przejdź do zgłoszenia transakcji nieautoryzowanej.
-- 6.12\. Zastosuj blokadę zachowawczą.
-  - 6.12.1\. Blokadę zachowawczą stosuje się, gdy tożsamość zgłaszającego nie została potwierdzona, a zgłoszenie jest wiarygodne.
-  - 6.12.2\. Blokada zachowawcza trwa do czasu skontaktowania się z posiadaczem rachunku i nie może przekroczyć 72 godziny, chyba że kierownik jednostki zadecyduje inaczej.
-  - 6.12.3\. O założeniu blokady powiadom posiadacza rachunku wiadomością w bankowości elektronicznej oraz SMS-em.
-- 6.13\. Zweryfikuj skuteczność blokady.
-  - 6.13.1\. Po wykonaniu blokady zweryfikuj w systemie historię autoryzacji; jeżeli widoczne są transakcje po godzinie zgłoszenia, bezzwłocznie powiadom jednostkę „Centrum Monitorowania Transakcji”.
-  - 6.13.2\. Transakcje autoryzowane offline, przykładowo w terminalach bez łączności z Bankiem, mogą być rozliczone po blokadzie; zapisz je w rejestrze i skieruj do analizy.
+- 6.12\. Zweryfikuj skuteczność blokady po jej wykonaniu.
+  - 6.12.1\. Po wykonaniu blokady wywołaj w systemie podgląd statusu karty i potwierdź, że karta widnieje jako zastrzeżona w systemie autoryzacyjnym, a nie tylko w systemie obsługi klienta.
+  - 6.12.2\. Sprawdź, czy w ciągu kilku minut po blokadzie nie zarejestrowano próby autoryzacji; jeżeli tak, zgłoś to jako incydent do „Centrum Monitorowania Transakcji”.
+- 6.13\. Poinformuj Klienta o zastrzeżeniu pisemnie.
+  - 6.13.1\. Potwierdzenie zastrzeżenia wyślij Klientowi na nośniku, który wskazał, w terminie do końca następnego dnia roboczego.
+  - 6.13.2\. Potwierdzenie zawiera numer zgłoszenia, godzinę blokady oraz informację, że od tej chwili Klient nie ponosi odpowiedzialności za transakcje wykonane kartą, z zastrzeżeniem przepisów szczególnych.
 
 ## 7. Opis postępowania — transakcje nieautoryzowane
 
-Zgłoszenie transakcji nieautoryzowanej, niewykonanej lub wykonanej nienależycie Klient może złożyć na Infolinii, w bankowości elektronicznej, w placówce lub jako reklamację. Klient traci uprawnienie do żądania zwrotu, jeśli nie zgłosi sprawy w terminie 13 miesięcy od dnia obciążenia rachunku — termin ten dotyczy zarówno kart debetowych, jak i kart kredytowych <!-- page: 9 --> (zob. ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30)). Pracownik nie może odmówić przyjęcia zgłoszenia złożonego po terminie; jego ocenę zastrzega się dla jednostki „Centrum Monitorowania Transakcji”.
+Zgłoszenie transakcji nieautoryzowanej, niewykonanej lub wykonanej nienależycie Klient może złożyć na Infolinii, w bankowości elektronicznej, w placówce lub jako reklamację. Klient <!-- page: 9 --> traci uprawnienie do żądania zwrotu, jeśli nie zgłosi sprawy w terminie 13 miesięcy od dnia obciążenia rachunku — termin ten dotyczy zarówno kart debetowych, jak i kart kredytowych (zob. ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30)). Pracownik nie może odmówić przyjęcia zgłoszenia złożonego po terminie; jego ocenę zastrzega się dla jednostki „Centrum Monitorowania Transakcji”.
 
 - 7.1\. Przyjmij zgłoszenie transakcji nieautoryzowanej.
   - 7.1.1\. Zweryfikuj tożsamość zgłaszającego zgodnie z częścią o przyjmowaniu zgłoszeń.
@@ -249,8 +251,8 @@ Analizę zgłoszenia prowadzi jednostka „Centrum Monitorowania Transakcji”. 
   - 7.5.2\. Zweryfikuj historię alertów w systemie monitorowania transakcji SMT-PRZYKŁAD a także wcześniejszy kontakt z Klientem.
   - 7.5.3\. Porównaj miejsce i czas transakcji z lokalizacją Klienta a także jego dotychczasowym profilem użycia karty.
 - 7.6\. Zbadaj okoliczności transakcji.
-  - 7.6.1\. Zweryfikuj, czy transakcja została poprawnie uwierzytelniona i czy nie wystąpiły nieprawidłowości po stronie Banku lub akceptanta.
-  - 7.6.2\. Zweryfikuj, czy zachowanie Klienta nie wskazuje na umyślne lub rażąco niedbałe <!-- page: 10 --> naruszenie obowiązków, w szczególności udostępnienie danych uwierzytelniających.
+  - 7.6.1\. Zweryfikuj, czy transakcja została poprawnie uwierzytelniona i czy nie wystąpiły <!-- page: 10 --> nieprawidłowości po stronie Banku lub akceptanta.
+  - 7.6.2\. Zweryfikuj, czy zachowanie Klienta nie wskazuje na umyślne lub rażąco niedbałe naruszenie obowiązków, w szczególności udostępnienie danych uwierzytelniających.
   - 7.6.3\. Oceń, czy zachodzą okoliczności wskazujące na oszustwo ze strony Klienta; wniosek taki wymaga udokumentowanych podstaw, a nie samych podejrzeń.
 - 7.7\. Podejmij rekomendację co do rozstrzygnięcia.
   - 7.7.1\. Rekomendacja: zwrot, zwrot z jednoczesnym sporem z organizacją płatniczą, odmowa zwrotu w przypadku uzasadnionego podejrzenia oszustwa albo uznanie transakcji za autoryzowaną.
@@ -267,20 +269,16 @@ Reklamację rejestruje każdy pracownik Banku, niezależnie od formy jej złoże
   - 7.10.1\. Gdy termin jest zagrożony, powiadom Klienta o przyczynie i nowym terminie, nie dłuższym niż 35 dni.
 - 7.11\. Wyślij odpowiedź w trybie przewidzianym przepisami (zob. ustawa z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. 2026 poz. 823)) i zamknij sprawę w rejestrze.
 
-Zgłoszenia dotyczące transakcji wykonanych za pośrednictwem bankowości elektronicznej, a nie kartą, wymagają dodatkowych czynności, ponieważ w tym przypadku nie ma możliwości sporu z organizacją płatniczą, a środki trafiają często do odbiorcy w innym banku.
+Zgłoszenie dotyczące płatności w sklepach internetowych, w których Klient twierdzi, że nie otrzymał towaru, nie jest transakcją nieautoryzowaną, lecz sporem handlowym. Pracownik:
 
-- 7.12\. Zwróć się do banku odbiorcy o wstrzymanie środków.
-  - 7.12.1\. Wyślij w dniu zgłoszenia prośbę o zwrot lub wstrzymanie środków na rachunku odbiorcy, podając dane przelewu i krótki opis zdarzenia.
-  - 7.12.2\. Prośbę przekaż za pośrednictwem kanału przeznaczonego do współpracy między bankami oraz powiadom o niej organy ścigania.
-- 7.13\. Przeanalizuj okoliczności zlecenia przelewu.
-  - 7.13.1\. Sprawdź, z jakiego urządzenia i adresu IP zlecono przelew a także czy urządzenie było wcześniej znane Bankowi.
-  - 7.13.2\. Sprawdź, czy przed przelewem nie dodano nowego odbiorcy, nie zmieniono limitów albo nie zarejestrowano nowego urządzenia zaufanego.
-  <!-- page: 11 -->
-  - 7.13.3\. Ustal, jaki element silnego uwierzytelniania został użyty i czy zachodziło ryzyko, że został udostępniony przez Klienta.
-- 7.14\. Oceń zakres zwrotu.
-  - 7.14.1\. Jeżeli Klient nie wyraził zgody na transakcję, zastosuj terminy i zasady zwrotu przewidziane dla transakcji nieautoryzowanych.
-  - 7.14.2\. Jeżeli Klient sam zlecił przelew pod wpływem oszusta, transakcja jest autoryzowana; powiadom Klienta o możliwościach dochodzenia środków i zgłoś sprawę policji.
+- 1\) tłumaczy Klientowi różnicę między transakcją nieautoryzowaną a transakcją autoryzowaną, w której sprzedawca nie wykonał swojego świadczenia;
+- 2\) zaleca Klientowi próbę wyjaśnienia sprawy ze sprzedawcą i zachowanie korespondencji, zrzutów ekranu i potwierdzeń zamówienia;
+- 3\) przyjmuje od Klienta wniosek o spór z organizacją płatniczą w zakresie transakcji, w której sprzedawca nie dostarczył towaru lub usługi;
+- 4\) informuje o terminie, w którym spór można wszcząć, i o dokumentach niezbędnych do jego rozpatrzenia.
 
+Zgłoszenie złożone w tym trybie rozpatrywane jest według zasad sporu kartowego, a nie według zasad dotyczących nieautoryzowanych transakcji płatniczych.
+
+<!-- page: 11 -->
 ## 8. Opis postępowania — zwrot środków i spór z organizacją płatniczą
 
 Co do zasady Bank zwraca kwotę transakcji nieautoryzowanej do końca następnego dnia roboczego po stwierdzeniu transakcji nieautoryzowanej lub po otrzymaniu zgłoszenia, przywracając rachunek do stanu sprzed obciążenia, z uwzględnieniem opłat i odsetek, którymi rachunek został obciążony. Termin ten liczy się od przyjęcia zgłoszenia przez dowolnego pracownika, a nie od zakończenia analizy. Dla kart kredytowych obowiązuje termin: do końca następnego dnia roboczego.
@@ -297,13 +295,13 @@ Co do zasady Bank zwraca kwotę transakcji nieautoryzowanej do końca następneg
   - 8.3.2\. Zawiadomienie organów ścigania następuje w terminie 2 dni roboczych od podjęcia decyzji o wstrzymaniu zwrotu.
   - 8.3.3\. O wstrzymaniu zwrotu powiadom Klienta pisemnie, wskazując, że Bank przekazał sprawę właściwym organom, bez ujawniania informacji, których przekazanie jest zabronione.
 
-Ocena zakresu odpowiedzialności Klienta za transakcje nieautoryzowane następuje tylko na podstawie okoliczności ustalonych w toku postępowania wyjaśniającego, zgodnie z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30), i nie może prowadzić do pogorszenia sytuacji Klienta w stosunku do postanowień dokumentów „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.” i „Regulamin kart <!-- page: 12 --> kredytowych Bank Przykładowy S.A.”.
+Ocena zakresu odpowiedzialności Klienta za transakcje nieautoryzowane następuje tylko na podstawie okoliczności ustalonych w toku postępowania wyjaśniającego, zgodnie z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30), i nie może prowadzić do pogorszenia sytuacji Klienta w stosunku do postanowień dokumentów „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.” i „Regulamin kart kredytowych Bank Przykładowy S.A.”.
 
 Przy ocenie odpowiedzialności stosuje się zasady:
 
 - 1\) w przypadku transakcji nieautoryzowanych wynikłych z utraty karty, jej kradzieży lub przywłaszczenia Klient odpowiada do kwoty 50,00 zł w odniesieniu do kart debetowych, a w odniesieniu do kart kredytowych — do równowartość 50 euro;
 - 2\) odpowiedzialność ograniczona nie ma zastosowania, jeśli Klient nie mógł stwierdzić utraty, kradzieży lub przywłaszczenia karty przed transakcją, jeżeli utrata wynikała z działania pracownika Banku lub jeśli Bank nie wymagał silnego uwierzytelniania;
-- 3\) Klient ponosi pełną odpowiedzialność za transakcje, które umożliwił umyślnie lub wskutek umyślnego albo rażąco niedbałego naruszenia obowiązków, zwłaszcza przez ujawnienie PIN, hasła lub kodów jednorazowych;
+- 3\) Klient ponosi pełną odpowiedzialność za transakcje, które umożliwił umyślnie lub <!-- page: 12 --> wskutek umyślnego albo rażąco niedbałego naruszenia obowiązków, zwłaszcza przez ujawnienie PIN, hasła lub kodów jednorazowych;
 - 4\) po przyjęciu zgłoszenia utraty, kradzieży lub nieuprawnionego użycia Klient nie odpowiada za transakcje wykonane po zgłoszeniu, chyba że działał umyślnie.
 
 Przypisanie Klientowi odpowiedzialności za rażące niedbalstwo wymaga zatwierdzenia przez kierownika jednostki „Centrum Monitorowania Transakcji” i odnotowania w rejestrze uzasadnienia. Samo użycie prawidłowego PIN lub kodu jednorazowego nie jest wystarczającym dowodem rażącego niedbalstwa.
@@ -322,16 +320,20 @@ płatniczej, a Bank zwrócił Klientowi środki, jednostka „Centrum Monitorowa
   - 8.6.1\. Spór należy wnieść najpóźniej w terminie 120 dni od dnia transakcji lub dnia, w którym usługa miała być wykonana, o ile zasady organizacji płatniczej nie przewidują terminu krótszego.
   - 8.6.2\. Spór wnosi się za pośrednictwem systemu rozliczeniowego; potwierdzenie wniesienia dołącz do akt.
 - 8.7\. Obsłuż odpowiedź banku akceptanta.
-  - 8.7.1\. Bank akceptanta może uznać spór albo przedstawić dowody; odpowiedź należy <!-- page: 13 --> ocenić w terminie wskazanym przez organizację płatniczą, nie dłuższym niż 45 dni od jej otrzymania.
+  - 8.7.1\. Bank akceptanta może uznać spór albo przedstawić dowody; odpowiedź należy ocenić w terminie wskazanym przez organizację płatniczą, nie dłuższym niż 45 dni od jej otrzymania.
   - 8.7.2\. Jeżeli spór został uznany, zaksięguj odzyskane środki na rachunku wewnętrznym i rozlicz je z kosztami; Klient nie jest ponownie obciążany.
   - 8.7.3\. Jeśli odpowiedź jest dla Banku niekorzystna, rozważ ponowne wniesienie sporu lub zamknięcie sprawy i odnotuj stratę w rejestrze nadużyć.
 
-Spór z organizacją płatniczą prowadzi się niezależnie od zwrotu na rzecz Klienta, ale wymaga zachowania dowodów. Poniżej opisano, jak postępować w typowych sytuacjach.
+Jeżeli Klient kwestionuje autoryzowaną transakcję kartową, której kwota nie była znana w chwili autoryzacji (na przykład rezerwacja hotelowa, wypożyczenie pojazdu), a kwota przekracza to, czego Klient mógł się spodziewać, Bank rozpatruje sprawę jako żądanie <!-- page: 13 --> zwrotu transakcji autoryzowanej, której kwota nie była znana. Klient może wystąpić o zwrot w terminie ośmiu tygodni od dnia obciążenia.
 
-- 1\. **Transakcja internetowa bez silnego uwierzytelniania.** Spór oparty jest na braku uwierzytelnienia po stronie akceptanta; do wniosku dołącza się dane autoryzacji. Jeśli akceptant przedstawi dowód, że transakcja została uwierzytelniona, sprawę zamyka się i ocenia ponownie odpowiedzialność Klienta.
-- 2\. **Transakcja z kartą utraconą.** Spór opiera się na oświadczeniu Klienta oraz dowodzie zgłoszenia utraty; transakcje po zgłoszeniu są podstawą dla roszczeń wobec akceptanta, jeżeli akceptant nie zastosował wymaganych zabezpieczeń.
-- 3\. **Towar lub usługa niezgodne z umową.** Klient najpierw próbuje rozwiązać sprawę z akceptantem; do wniosku o spór dołącza korespondencję, a Bank przyjmuje wniosek tylko wtedy, gdy nie upłynął termin 120 dni od transakcji lub od dnia, w którym usługa miała być wykonana.
-- 4\. **Dwukrotne obciążenie.** Sprawdź, czy nie ma dwóch różnych transakcji o tej samej kwocie; jeśli dane wskazują na duplikat, spór wnosi się bez zbędnej zwłoki, a Klientowi zwraca się kwotę podwójnego obciążenia.
+Warunki zwrotu takiej transakcji:
+
+- 1\) autoryzacja nie określała dokładnej kwoty transakcji;
+- 2\) kwota przekroczyła wartość, jakiej Klient mógł się spodziewać z uwzględnieniem dotychczasowych wzorców wydatków i okoliczności;
+- 3\) Klient przedstawi informacje faktyczne dotyczące transakcji — Bank może poprosić o dokumenty, zwłaszcza potwierdzenie rezerwacji lub umowę;
+- 4\) Klient nie wyraził zgody na transakcję bezpośrednio wobec Banku i nie otrzymał informacji o transakcji co najmniej cztery tygodnie przed jej dokonaniem.
+
+Bank w ciągu 3 dni roboczych potwierdza przyjęcie wniosku, a decyzję w sprawie zwrotu podejmuje po otrzymaniu kompletu informacji. Odmowę zwrotu uzasadnia się na piśmie.
 
 ## 9. Przypadki szczególne
 
@@ -340,15 +342,15 @@ Spór z organizacją płatniczą prowadzi się niezależnie od zwrotu na rzecz K
 - 3\. **Znaleziona karta Klienta.** Jeżeli Klient odnajdzie kartę po jej zastrzeżeniu, nie może jej użyć; karta jest niszczona w obecności pracownika albo przyjmowana do zniszczenia.
 - 4\. **Karta pozostająca w bankomacie.** Karta zatrzymana przez bankomat jest blokowana przez system; Klient może zażądać wydania karty zastępczej. trzykrotne błędne wprowadzenie PIN powoduje zablokowanie karty i jej zatrzymanie w bankomacie.
 - 5\. **Zgłoszenie z zagranicy.** Klient dzwoni pod numer +48 800 000 003. Karta zastępcza może zostać wysłana na adres za granicą lub, w nagłych przypadkach, wydana w formie awaryjnej przez sieć organizacji płatniczej; koszty takiej usługi określa taryfa opłat i prowizji.
-- 6\. **Karta kredytowa i karty dodatkowe.** Zastrzeżenie karty głównej powoduje <!-- page: 14 --> zastrzeżenie kart dodatkowych na żądanie posiadacza; zastrzeżenie karty dodatkowej nie wpływa na kartę główną. Zasady rozliczenia zadłużenia określa „Regulamin kart kredytowych Bank Przykładowy S.A.”.
+- 6\. **Karta kredytowa i karty dodatkowe.** Zastrzeżenie karty głównej powoduje zastrzeżenie kart dodatkowych na żądanie posiadacza; zastrzeżenie karty dodatkowej nie wpływa na kartę główną. Zasady rozliczenia zadłużenia określa „Regulamin kart kredytowych Bank Przykładowy S.A.”.
 - 7\. **Klient nie rozpoznaje transakcji, lecz nie utracił karty.** Pracownik zakłada, że dane karty mogły zostać skopiowane, zastrzega kartę i traktuje sprawę jako zgłoszenie transakcji nieautoryzowanej.
-- 8\. **Zgłoszenie dotyczące transakcji autoryzowanej przez Klienta.** Jeśli Klient przyznaje, że wykonał transakcję, lecz został wprowadzony w błąd przez oszusta, transakcja co do zasady jest autoryzowana; pracownik przyjmuje zgłoszenie, informuje Klienta o możliwościach odzyskania środków, zgłasza sprawę do jednostki „Centrum Monitorowania Transakcji” i zaleca powiadomienie policji. O obowiązku zwrotu rozstrzyga jednostka „Departament Bezpieczeństwa”.
+- 8\. **Zgłoszenie dotyczące transakcji autoryzowanej przez Klienta.** Jeśli Klient przyznaje, że wykonał transakcję, lecz został wprowadzony w błąd przez oszusta, transakcja co do zasady jest autoryzowana; pracownik przyjmuje zgłoszenie, informuje Klienta <!-- page: 14 --> o możliwościach odzyskania środków, zgłasza sprawę do jednostki „Centrum Monitorowania Transakcji” i zaleca powiadomienie policji. O obowiązku zwrotu rozstrzyga jednostka „Departament Bezpieczeństwa”.
 - 9\. **Klient w trudnej sytuacji życiowej** (choroba, brak możliwości wizyty w placówce). Kierownik placówki może zdecydować o przyjęciu oświadczenia drogą elektroniczną lub telefonicznie, o ile tożsamość Klienta została potwierdzona.
-- 1\. **Karta wspólna dla współposiadaczy rachunku.** Każdy ze współposiadaczy może zgłosić zastrzeżenie karty wydanej do wspólnego rachunku; zgłoszenie jednego z nich skutkuje zablokowaniem karty wszystkich użytkowników, chyba że umowa stanowi inaczej.
-- 2\. **Karta wydana osobie niepełnoletniej.** Zastrzeżenie może zgłosić zarówno użytkownik, jak i przedstawiciel ustawowy. O fakcie zastrzeżenia informuje się przedstawiciela ustawowego, a kartę zastępczą wydaje się według zasad przewidzianych dla kart tego typu.
-- 3\. **Karta firmowa.** Zgłoszenia przyjmuje się od użytkownika karty a także od osób upoważnionych do reprezentowania firmy; o zastrzeżeniu informuje się osobę wskazaną w umowie jako opiekuna rachunku. Zasady odpowiedzialności przedsiębiorcy za transakcje nieautoryzowane są odrębne i wynikają z umowy rachunku firmowego.
-- 4\. **Zgon posiadacza karty.** Po powzięciu informacji o zgonie karty zablokuj trwale, zatrzymaj wydawanie kart zastępczych i skieruj sprawę do jednostki obsługującej spadki; nie przyjmuj zgłoszeń od osób, które nie wykazały uprawnień.
-- 5\. **Skradziona tożsamość.** Jeśli Klient twierdzi, że karta lub rachunek zostały założone przez osobę, która posłużyła się jego danymi, zastrzeż produkty, wstrzymaj korespondencję na adres wskazany we wniosku i skieruj sprawę jednostce „Departament Bezpieczeństwa” a także jednostce „Departament Zgodności”.
+- 1\. **Transakcje wykonane przez osobę bliską.** Jeśli Klient przyznaje, że kartę wykorzystała bliska osoba bez jego wiedzy, zgłoszenie rozpatruje się jak zgłoszenie transakcji nieautoryzowanej, ale bierze się pod uwagę, czy Klient udostępnił jej PIN lub kartę; w razie umyślnego udostępnienia odpowiedzialność ponosi Klient.
+- 2\. **Transakcja na kwotę wyższą niż autoryzowana.** Dotyczy to przykładowo hoteli i wypożyczalni, gdzie akceptant obciąża kartę kwotą wyższą od uzgodnionej. Zgłoszenie przekazuje się do sporu z organizacją płatniczą, a Klient — jeśli kwestionuje część kwoty — otrzymuje zwrot kwoty różnicy po analizie.
+- 3\. **Transakcje z państw o podwyższonym ryzyku.** Zgłoszenia dotyczące kilku transakcji dokonanych w krótkim czasie w państwach, w których Klient nie przebywał, kieruje się do natychmiastowej oceny jednostki „Centrum Monitorowania Transakcji” i zalecenia zmiany ustawień kart na czas podróży.
+- 4\. **Klient pozostający w sporze z akceptantem.** Gdy kwestionowana transakcja była autoryzowana, a spór dotyczy realizacji umowy, pracownik wyjaśnia, że zgłoszenie nie jest zgłoszeniem transakcji nieautoryzowanej, i informuje o możliwości złożenia reklamacji oraz wszczęcia sporu na zasadach organizacji płatniczej.
+- 5\. **Zgłoszenie nadmiernej liczby transakcji w krótkim czasie.** Jeżeli ten sam Klient zgłasza trzecie zdarzenie w ciągu roku lub czwarte w ciągu dwóch lat, sprawa przekazywana jest do oceny przez jednostkę „Departament Bezpieczeństwa”, która może zalecić dodatkowe środki bezpieczeństwa.
 
 ## 10. Monitorowanie transakcji i przeciwdziałanie nadużyciom
 
@@ -356,12 +358,12 @@ Centrum Monitorowania Transakcji prowadzi całodobowy monitoring transakcji kart
 
 Sygnałami wymagającymi natychmiastowej weryfikacji są w szczególności:
 
-<!-- page: 15 -->
 - 1\) trzy transakcje w ciągu 10 minut w różnych krajach lub u akceptantów o podwyższonym ryzyku;
 - 2\) transakcja w krótkim odstępie czasu od zmiany danych kontaktowych, hasła lub urządzenia zaufanego;
 - 3\) seria transakcji o niskiej kwocie służąca sprawdzeniu ważności karty;
 - 4\) transakcja internetowa bez poprawnego silnego uwierzytelniania z urządzenia nieznanego Bankowi;
 - 5\) wypłata gotówki w bankomacie za granicą bezpośrednio po transakcji w kraju.
+<!-- page: 15 -->
 - 10.1\. Zbadaj alert i podejmij decyzję.
   - 10.1.1\. Skontaktuj się z Klientem telefonicznie w terminie 30 minut od powstania alertu, używając numeru zapisanego w systemie, a nie numeru podanego w wiadomości.
   - 10.1.2\. Jeżeli Klient potwierdza transakcję, zamknij alert i zapisz uwagę do profilu.
@@ -370,16 +372,14 @@ Sygnałami wymagającymi natychmiastowej weryfikacji są w szczególności:
   - 10.2.1\. Wpisz typ nadużycia (karta utracona, skradziona, skopiowana, phishing, przejęcie konta, oszustwo socjotechniczne), kwotę i akceptanta.
   - 10.2.2\. Przekaż do jednostki „Departament Bezpieczeństwa” informacje o nowych schematach, aby uzupełnić reguły monitoringu.
 
-Reguły monitoringu przygotowuje analityk jednostki „Departament Bezpieczeństwa”, a zatwierdza je kierownik jednostki. Reguły dzielą się na trzy grupy: reguły blokujące (transakcja jest odrzucana), reguły alertujące (transakcja jest realizowana, a analityk otrzymuje alert) a także reguły informacyjne (zdarzenie jest tylko rejestrowane do analiz).
+Dostęp do systemu monitorowania SMT-PRZYKŁAD podlega następującym zasadom:
 
-Każda nowa reguła, przed wprowadzeniem do systemu monitorowania:
+- 1\) uprawnienia nadaje się na podstawie zakresu obowiązków, w rozróżnieniu na uprawnienia do przeglądania alertów, ich rozstrzygania i zmiany reguł;
+- 2\) zmiana reguł wymaga akceptacji dwóch osób: autora zmiany i osoby niezależnej, która sprawdza jej wpływ na liczbę alertów w środowisku testowym;
+- 3\) każda czynności w systemie są rejestrowane, a zapisy zdarzeń chronione przed zmianą i przechowywane przez okres wskazany w polityce rejestrowania zdarzeń;
+- 4\) konta nieużywane przez ponad 60 dni są blokowane, a uprawnienia osób zmieniających stanowisko — cofane najpóźniej w dniu zmiany.
 
-- 1\) jest testowana na danych historycznych, aby oszacować liczbę fałszywych alarmów;
-- 2\) jest oceniana pod kątem wpływu na doświadczenie Klientów, zwłaszcza ryzyka odrzucenia prawidłowych transakcji;
-- 3\) otrzymuje opis w repozytorium reguł wraz z datą wprowadzenia, autorem i przesłanką biznesową;
-- 4\) jest wprowadzana etapowo — najpierw w trybie obserwacji, następnie w trybie alertów, a dopiero po pozytywnej ocenie w trybie blokującym.
-
-Reguły są przeglądane co kwartał. Reguły o niskiej skuteczności są wyłączane lub modyfikowane.
+Przegląd uprawnień do systemu przeprowadza się wraz z przeglądem uprawnień do blokowania kart i dokumentuje w tym samym protokole.
 
 ## 11. Kontrola i nadzór
 
@@ -387,14 +387,13 @@ Kontrola przestrzegania procedury jest prowadzona na trzech poziomach: bieżące
 
 Kontrola obejmuje w szczególności:
 
-<!-- page: 16 -->
 - 1\) wyrywkowe sprawdzenie, czy czas blokady karty nie przekroczył 5 minut;
 - 2\) kompletność wpisów w rejestrze zgłoszeń RZK a także zgodność statusów z dokumentacją;
 - 3\) dotrzymanie terminu zwrotu do końca następnego dnia roboczego oraz uzasadnienie każdego wyjątku od niego;
 - 4\) poprawność weryfikacji tożsamości zgłaszających, w tym próby nieuprawnionego ujawnienia informacji;
 - 5\) przegląd uprawnień pracowników do zastrzegania kart i odblokowywania dostępu, wykonywany co kwartał.
 
-Wyniki kontroli są przekazywane właścicielowi procedury. Stwierdzone nieprawidłowości wymagają planu naprawczego z terminem wykonania; w razie powtarzających się uchybień kierownik jednostki może zostać zobowiązany do przeprowadzenia dodatkowego szkolenia pracowników.
+Wyniki kontroli są przekazywane właścicielowi procedury. Stwierdzone nieprawidłowości <!-- page: 16 --> wymagają planu naprawczego z terminem wykonania; w razie powtarzających się uchybień kierownik jednostki może zostać zobowiązany do przeprowadzenia dodatkowego szkolenia pracowników.
 
 Miesięczne sprawozdanie dla właściciela procedury zawiera wskaźniki:
 
@@ -417,10 +416,7 @@ Dokumentację sprawy stanowią:
 - 5\) korespondencja z Klientem, organami ścigania, akceptantem i organizacją płatniczą;
 - 6\) decyzje o odmowie lub wstrzymaniu zwrotu wraz z uzasadnieniem.
 
-Dokumentację przechowuje się przez 5 lat od zamknięcia sprawy, a w przypadku sprawy objętej postępowaniem karnym lub sądowym — do jego prawomocnego zakończenia.
-
-<!-- page: 17 -->
-Dostęp do dokumentacji mają wyłącznie osoby upoważnione; każdy dostęp jest odnotowywany w systemie.
+Dokumentację przechowuje się przez 5 lat od zamknięcia sprawy, a w przypadku sprawy objętej postępowaniem karnym lub sądowym — do jego prawomocnego zakończenia. Dostęp do dokumentacji mają wyłącznie osoby upoważnione; każdy dostęp jest odnotowywany w systemie.
 
 Dane osobowe Klientów wykorzystuje się wyłącznie w zakresie niezbędnym do realizacji zadań opisanych w procedurze, zgodnie z przepisami o ochronie danych osobowych (zob. ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781)) oraz z zasadą minimalizacji danych.
 
@@ -428,9 +424,17 @@ Pracownik wykonujący czynności objęte procedurą jest obowiązany:
 
 - 1\) zabezpieczać dokumenty i dane przed dostępem osób nieupoważnionych;
 - 2\) nie przekazywać danych poza struktury Banku bez podstawy prawnej;
-- 3\) niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych: inspektorowi ochrony danych (Inspektor Ochrony Danych) oraz jednostce bezpieczeństwa (Departament Bezpieczeństwa).
+- 3\) niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych: inspektorowi <!-- page: 17 --> ochrony danych (Inspektor Ochrony Danych) oraz jednostce bezpieczeństwa (Departament Bezpieczeństwa).
 
 Wnioski osób, których dane dotyczą, kieruje się do inspektora ochrony danych (Inspektor Ochrony Danych, iod@bank.example); informacja o sposobie załatwienia wniosku jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku.
+
+- 12.1\. Sporządź sprawozdanie okresowe z działania procedury.
+  - 12.1.1\. Zestaw dane z rejestru: liczbę zgłoszeń według kanałów, liczbę blokad, wartość transakcji nieautoryzowanych, kwoty zwrotów i kwoty odzyskane od organizacji płatniczej.
+  - 12.1.2\. Oblicz średnie czasy: od zgłoszenia do blokady, od zgłoszenia do decyzji i od decyzji do zwrotu środków, oraz porównaj je z wymaganiami procedury.
+  - 12.1.3\. Opisz najważniejsze trendy i wnioski, w tym nowe schematy nadużyć i zalecane zmiany.
+- 12.2\. Przedstaw sprawozdanie.
+  - 12.2.1\. Sprawozdanie półroczne przekaż Zarządowi i jednostce zgodności w ciągu miesiąca po zakończeniu półrocza.
+  - 12.2.2\. Sprawozdanie przechowuj razem z dokumentacją procedury przez okres wskazany w instrukcji kancelaryjnej.
 
 ## 13. Postanowienia końcowe
 
