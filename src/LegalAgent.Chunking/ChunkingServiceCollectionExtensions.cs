@@ -1,4 +1,6 @@
 using LegalAgent.Chunking;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -17,7 +19,15 @@ public static class ChunkingServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services);
         services.AddLegalAgentPdfParser();
-        services.AddSingleton<IDocumentChunker, DocumentChunker>();
+        services.AddOptions<ChunkingOptions>();
+        services.TryAddEnumerable(ServiceDescriptor.Singleton<IValidateOptions<ChunkingOptions>, ChunkingOptionsValidator>());
+        services.TryAddSingleton<IDocumentChunker, DocumentChunker>();
+
+        if (configure is not null)
+        {
+            services.Configure(configure);
+        }
+
         return services;
     }
 }

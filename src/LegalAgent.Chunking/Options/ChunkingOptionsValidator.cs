@@ -9,5 +9,11 @@ public sealed class ChunkingOptionsValidator : IValidateOptions<ChunkingOptions>
     public const int MinChunkLength = 200;
 
     /// <inheritdoc />
-    public ValidateOptionsResult Validate(string? name, ChunkingOptions options) => ValidateOptionsResult.Success;
+    public ValidateOptionsResult Validate(string? name, ChunkingOptions options)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+        return options.MaxChunkLength < MinChunkLength
+            ? ValidateOptionsResult.Fail($"MaxChunkLength musi wynosić co najmniej {MinChunkLength} znaków (jest {options.MaxChunkLength}).")
+            : ValidateOptionsResult.Success;
+    }
 }
