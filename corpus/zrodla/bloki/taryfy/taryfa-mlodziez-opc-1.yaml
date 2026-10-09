@@ -1,0 +1,196 @@
+bloki:
+  # ===== Konto Junior — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-dziecko-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-dziecko
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Założenie dodatkowego celu oszczędnościowego dziecka (do {pięciu|5} aktywnych celów)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana nazwy lub ikony celu oszczędnościowego w aplikacji dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana kwoty docelowej celu oszczędnościowego przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zamknięcie osiągniętego celu oszczędnościowego i przeniesienie środków na rachunek", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata ze skarbonki przed osiągnięciem kwoty docelowej za zgodą przedstawiciela", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Nagroda za regularne oszczędzanie (premia odsetkowa) — przyznanie", stawka: "wg regulaminu promocji", tryb: "za okres rozliczeniowy" }
+          - { usluga: "Zlecenie cyklicznego odkładania części kieszonkowego na cel oszczędnościowy", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "{Powiadomienie|Komunikat} w aplikacji o osiągnięciu celu oszczędnościowego", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "Wydruk potwierdzenia salda skarbonki w placówce", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Zmiana ikony lub nazwy rachunku dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-dziecko-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-dziecko
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wniosek o otwarcie rachunku Konto Junior złożony w placówce przez oboje rodziców", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wniosek o otwarcie rachunku Konto Junior złożony przez jednego rodzica z oświadczeniem o zgodzie drugiego rodzica", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Weryfikacja aktu urodzenia dziecka przedstawionego w placówce", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Weryfikacja wypisu z aktu urodzenia dziecka w formie elektronicznej", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "{Rejestracja|Zapisanie} numeru PESEL dziecka w systemach Banku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana danych dziecka (nazwisko, adres) po przedstawieniu dokumentu", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Ustanowienie drugiego przedstawiciela ustawowego z dostępem do rachunku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Odwołanie dostępu drugiego przedstawiciela do rachunku dziecka", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Aktywacja aplikacji dziecka (kod aktywacyjny przekazany przedstawicielowi)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Ponowne wystawienie kodu aktywacyjnego aplikacji dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-dziecko-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-dziecko
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Dostęp do edukacyjnych materiałów finansowych w aplikacji dziecka", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "{Wirtualne|Elektroniczne} zadania domowe z wynagrodzeniem ustalonym przez przedstawiciela (zlecenie zadania)", stawka: "bez opłat", tryb: "za każde zadanie" }
+          - { usluga: "Wypłata wynagrodzenia za wykonane zadanie z rachunku przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za każdą wypłatę" }
+          - { usluga: "Przekazanie środków między rachunkami rodzeństwa w Banku (za zgodą przedstawicieli)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Prezent pieniężny od krewnych — przelew przychodzący z tytułem okolicznościowym", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Dodanie dziecka do wspólnego widoku wydatków rodziny w aplikacji przedstawiciela", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Ustawienie dziennego limitu wydatków dziecka przez przedstawiciela", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zablokowanie możliwości zakładania nowych celów oszczędnościowych przez dziecko", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zawieszenie wysyłania powiadomień przedstawicielowi na okres do 30 dni", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Pobranie zestawienia operacji dziecka w formacie pliku", stawka: "bez opłat", tryb: "za każdy plik" }
+  - id: taryfa-mlodziez-opc-dziecko-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-dziecko
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata środków dziecka w placówce w obecności przedstawiciela ustawowego — kwoty powyżej limitu samodzielnej wypłaty", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata środków dziecka na cele wskazane w zezwoleniu sądu opiekuńczego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przyjęcie i weryfikacja zezwolenia sądu opiekuńczego na czynność przekraczającą zwykły zarząd", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "{Przelew|Przekazanie} świadczenia na dziecko z rachunku przedstawiciela — przelew wewnętrzny", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przyjęcie świadczeń wychowawczych i rodzinnych na rachunek dziecka", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Przyjęcie alimentów na rachunek dziecka", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Przyjęcie nagrody lub stypendium szkolnego na rachunek dziecka", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Wypłata środków dziecka w związku z zakończeniem opieki prawnej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Informacja o stanie rachunku dziecka dla drugiego rodzica nieposiadającego dostępu", stawka: "{{fakt:oplata.mlodziez.zaswiadczenie-opiekuna}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie o wysokości odsetek naliczonych na rachunku dziecka w roku kalendarzowym", stawka: "bez opłat", tryb: "za każdy dokument" }
+  # ===== Konto Teen — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-nastolatek-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-nastolatek
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Samodzielne logowanie nastolatka do bankowości elektronicznej z użyciem biometrii", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Potwierdzanie operacji w aplikacji mobilnej kodem lub biometrią", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zmiana limitu dziennego przelewów nastolatka przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana limitu dziennego przelewów nastolatka — wniosek złożony przez nastolatka (wymaga zgody)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zablokowanie|Zawieszenie} płatności internetowych kartą na wniosek przedstawiciela", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Dodanie karty nastolatka do portfela płatności mobilnych (za zgodą przedstawiciela)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Limit transakcji płatności mobilnych nastolatka", stawka: "{{fakt:limit.platnosci-mobilne.dzienny}}", tryb: "za dobę" }
+          - { usluga: "Odblokowanie dostępu do bankowości elektronicznej po {trzykrotnym|wielokrotnym} błędnym logowaniu", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Przypomnienie hasła lub kodu aktywacyjnego aplikacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zmiana numeru telefonu do kodów jednorazowych za zgodą przedstawiciela", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-nastolatek-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-nastolatek
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Cel oszczędnościowy nastolatka — dodatkowy cel (do {dziesięciu|10} aktywnych celów)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wypłata ze środków celu oszczędnościowego przed terminem docelowym", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Rozliczenie kosztów wspólnych (podział rachunku) z innymi użytkownikami aplikacji", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Prośba o płatność wysłana do rodzica z poziomu aplikacji nastolatka", stawka: "bez opłat", tryb: "za każdą prośbę" }
+          - { usluga: "Odbiór kieszonkowego i premii za oszczędzanie na rachunek nastolatka", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Zlecenie stałe nastolatka do wysokości limitu dziennego (kwoty cykliczne)", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za każde wykonanie" }
+          - { usluga: "Zlecenie stałe nastolatka na rachunek w Banku", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "{Podgląd|Wgląd w} kategorie wydatków i miesięczne zestawienie budżetu", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Ustawienie miesięcznego budżetu wydatków i alertu o jego przekroczeniu", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Eksport historii operacji do pliku", stawka: "bez opłat", tryb: "za każdy plik" }
+  - id: taryfa-mlodziez-opc-nastolatek-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-nastolatek
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przyjęcie wynagrodzenia za pracę dorywczą lub praktykę uczniowską na rachunek nastolatka", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Zaświadczenie o wysokości wpływów na rachunek nastolatka (dla pracodawcy lub urzędu)", stawka: "{{fakt:oplata.mlodziez.zaswiadczenie-opiekuna}}", tryb: "za każdy dokument" }
+          - { usluga: "Zgoda przedstawiciela ustawowego na otrzymywanie wynagrodzenia za pracę małoletniego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zestawienie wpływów i wydatków nastolatka na potrzeby rozliczenia podatkowego", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "{Przelew|Przekazanie} środków na rachunek nastolatka z konta przedstawiciela w innym banku", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Zgłoszenie podejrzenia nieautoryzowanej transakcji przez nastolatka lub przedstawiciela", stawka: "bez opłat", tryb: "za zgłoszenie" }
+          - { usluga: "Reklamacja operacji na rachunku nastolatka złożona przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Reklamacja operacji uznana za bezzasadną", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Dostęp przedstawiciela do wglądu w limity i ustawienia bezpieczeństwa nastolatka", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Zmiana pakietu Konto Teen na Konto Junior (powrót do trybu uproszczonego)", stawka: "bez opłat", tryb: "jednorazowo" }
+  - id: taryfa-mlodziez-opc-nastolatek-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-nastolatek
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przygotowanie rachunku do przekształcenia w Konto Student po ukończeniu {{fakt:wiek.rachunek-osobisty.pelnoletnosc}}", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Przeniesienie celów oszczędnościowych na rachunek po przekształceniu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Przeniesienie zleceń stałych i kieszonkowego po przekształceniu rachunku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Wydanie|Wydanie nowej} karty debetowej w związku z osiągnięciem pełnoletności", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - { usluga: "Wygaśnięcie zgód i limitów ustalonych przez przedstawiciela po osiągnięciu pełnoletności", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Informacja o przekształceniu rachunku przesłana nastolatkowi i przedstawicielowi", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Złożenie oświadczenia o odmowie przekształcenia rachunku i zamknięciu go", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zamknięcie rachunku Konto Teen z wypłatą środków na wskazany rachunek", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zestawienie opłat i prowizji pobranych w ostatnich 12 miesiącach z rachunku nastolatka", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Ponowne wydanie zaświadczenia o posiadaniu rachunku (kolejny egzemplarz)", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+  # ===== Konto Student — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-student-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-student
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Potwierdzenie statusu studenta na podstawie elektronicznej legitymacji studenckiej", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Potwierdzenie statusu doktoranta na podstawie legitymacji doktoranta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Potwierdzenie statusu na podstawie zaświadczenia uczelni lub wydruku z systemu uczelni", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Przypomnienie|Powiadomienie} o konieczności potwierdzenia statusu studenta (SMS lub aplikacja)", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "Przedłużenie okresu przejściowego na wniosek klienta (urlop dziekański, obrona pracy dyplomowej)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana uczelni lub kierunku — aktualizacja danych w umowie", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgłoszenie utraty statusu studenta przez klienta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Dostęp do ofert partnerów dla studentów w aplikacji", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Kod rabatowy na bilet komunikacji miejskiej dla studentów (promocja czasowa)", stawka: "wg regulaminu promocji", tryb: "za każdy kod" }
+          - { usluga: "Konto Student dla studenta zagranicznego — weryfikacja dokumentów uczelni", stawka: "bez opłat", tryb: "jednorazowo" }
+  - id: taryfa-mlodziez-opc-student-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-student
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Rachunek oszczędnościowy dla studenta (cel: czesne, mieszkanie) — prowadzenie", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Oprocentowanie rachunku oszczędnościowego dla studenta", stawka: "{{fakt:oprocentowanie.rachunek-oszczednosciowy}}", tryb: "w stosunku rocznym" }
+          - { usluga: "Wpłata na rachunek oszczędnościowy z rachunku Konto Student", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata z rachunku oszczędnościowego na rachunek Konto Student", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Automatyczne odkładanie nadwyżek na rachunek oszczędnościowy", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Kantor walutowy w aplikacji — wymiana walut (wyjazd na stypendium zagraniczne)", stawka: "wg Tabeli kursów walut", tryb: "za operację" }
+          - { usluga: "{Konto|Rachunek} walutowy w euro dla studenta — otwarcie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Konto walutowe w euro — prowadzenie", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Zlecenie wypłaty stypendium zagranicznego — przyjęcie przelewu w euro", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zaświadczenie o posiadaniu środków dla celów wizowych lub rekrutacyjnych", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+  - id: taryfa-mlodziez-opc-student-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-student
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przyjęcie wynagrodzenia z umowy zlecenia lub o dzieło na rachunek studenta", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Przyjęcie stypendium socjalnego, naukowego lub ministra na rachunek studenta", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Przyjęcie zwrotu podatku od urzędu skarbowego na rachunek studenta", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Zlecenie stałe na opłatę za akademik lub wynajem pokoju", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za każde wykonanie" }
+          - { usluga: "Zlecenie stałe na opłatę za akademik do rachunku w Banku", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "{Polecenie zapłaty|Obciążenie z tytułu polecenia zapłaty} za abonament telefoniczny lub internetowy", stawka: "{{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}}", tryb: "za każde obciążenie" }
+          - { usluga: "Wspólny rachunek dla współlokatorów — otwarcie (do {czterech|4} współposiadaczy)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wspólny rachunek dla współlokatorów — prowadzenie", stawka: "{{fakt:oplata.mlodziez.prowadzenie-student}}", tryb: "miesięcznie" }
+          - { usluga: "Rozliczanie wydatków współlokatorów w aplikacji (podział rachunku)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Dodanie lub usunięcie współposiadacza rachunku wspólnego", stawka: "bez opłat", tryb: "jednorazowo" }
+  - id: taryfa-mlodziez-opc-student-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-student
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Pierwszy wniosek o kredyt dla studenta — rozpatrzenie wstępnej wersji wniosku", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Kredyt studencki — prowizja za udzielenie", stawka: "wg umowy", tryb: "jednorazowo" }
+          - { usluga: "Informacja o historii kredytowej udostępniona studentowi w aplikacji", stawka: "bez opłat", tryb: "za każdy dokument" }
+          - { usluga: "Wniosek o zwiększenie dopuszczalnego salda debetowego", stawka: "wg umowy", tryb: "jednorazowo" }
+          - { usluga: "Wcześniejsza spłata zadłużenia w rachunku (debet)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Odsetki od przeterminowanego zadłużenia w rachunku", stawka: "{{fakt:oprocentowanie.odsetki-za-opoznienie}}", tryb: "w stosunku rocznym" }
+          - { usluga: "{Upomnienie|Wezwanie} do zapłaty wysłane w związku z przeterminowanym zadłużeniem", stawka: "{{fakt:oplata.upomnienie}}", tryb: "za każde wezwanie" }
+          - { usluga: "Zawieszenie spłaty zadłużenia w rachunku na wniosek studenta (do 3 miesięcy)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Plan spłaty zadłużenia w ratach — przygotowanie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Spłata zadłużenia z rachunku przedstawiciela lub poręczyciela", stawka: "bez opłat", tryb: "za operację" }

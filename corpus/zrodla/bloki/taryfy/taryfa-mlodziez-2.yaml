@@ -1,0 +1,188 @@
+bloki:
+  # ===== V. Karty =====
+  - id: taryfa-mlodziez-karty-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Karta debetowa dla dziecka i nastolatka jest wydawana do rachunku małoletniego na wniosek przedstawiciela ustawowego, który {ustala|określa} limity transakcji i może je w każdej chwili zmienić lub zablokować kartę w aplikacji. Zasady używania karty i ustalania limitów {opisuje|reguluje} {{ref:dokument:regulamin-kart-debetowych}}; poniższe stawki mają pierwszeństwo przed stawkami ogólnymi dla kart debetowych."
+      - akapit: "Karta wydawana dziecku nie umożliwia transakcji internetowych bez zgody przedstawiciela ustawowego ani wypłat w bankomatach za granicą. Karta studencka ma funkcje takie jak karta wydawana do rachunku osobistego dla dorosłych, a opłata za jej prowadzenie nie jest pobierana w miesiącu, w którym transakcje bezgotówkowe osiągnęły co najmniej {{fakt:limit.mlodziez.student-prog-transakcji}}."
+  - id: taryfa-mlodziez-karty-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wydanie karty debetowej do rachunku małoletniego lub studenta", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+          - usluga: "{Prowadzenie|Obsługa} karty debetowej"
+            stawka: "zależnie od pakietu"
+            tryb: "miesięcznie"
+            podpozycje:
+              - { usluga: "karta dziecka (Konto Junior)", stawka: "{{fakt:oplata.mlodziez.karta-dziecko-miesieczna}}", tryb: "miesięcznie" }
+              - { usluga: "karta nastolatka (Konto Teen)", stawka: "{{fakt:oplata.mlodziez.karta-nastolatek-miesieczna}}", tryb: "miesięcznie" }
+              - { usluga: "karta studenta (Konto Student)[^1]", stawka: "{{fakt:oplata.mlodziez.karta-student-miesieczna}}", tryb: "miesięcznie" }
+          - usluga: "Dzienny limit transakcji bezgotówkowych ustawiony domyślnie"
+            stawka: "zależnie od pakietu"
+            tryb: "za dobę"
+            podpozycje:
+              - { usluga: "Konto Junior", stawka: "{{fakt:limit.mlodziez.karta-dziecko-bezgotowkowy}}", tryb: "za dobę" }
+              - { usluga: "Konto Teen", stawka: "{{fakt:limit.mlodziez.karta-nastolatek-bezgotowkowy}}", tryb: "za dobę" }
+              - { usluga: "Konto Student", stawka: "{{fakt:limit.karta.dzienny-bezgotowkowy}}", tryb: "za dobę" }
+          - usluga: "Dzienny limit wypłat gotówki ustawiony domyślnie"
+            stawka: "zależnie od pakietu"
+            tryb: "za dobę"
+            podpozycje:
+              - { usluga: "Konto Junior", stawka: "{{fakt:limit.mlodziez.karta-dziecko-gotowkowy}}", tryb: "za dobę" }
+              - { usluga: "Konto Teen", stawka: "{{fakt:limit.mlodziez.karta-nastolatek-gotowkowy}}", tryb: "za dobę" }
+              - { usluga: "Konto Student", stawka: "{{fakt:limit.mlodziez.karta-student-gotowkowy}}", tryb: "za dobę" }
+          - { usluga: "Najwyższy limit, jaki przedstawiciel ustawowy może ustawić na karcie dziecka", stawka: "{{fakt:limit.mlodziez.karta-dziecko-max-ustawiany}}", tryb: "za dobę" }
+          - { usluga: "Dzienny limit transakcji internetowych karty nastolatka", stawka: "{{fakt:limit.mlodziez.karta-nastolatek-internet}}", tryb: "za dobę" }
+          - { usluga: "Dzienny limit transakcji internetowych karty studenta", stawka: "{{fakt:limit.mlodziez.karta-student-internet}}", tryb: "za dobę" }
+          - { usluga: "Limit płatności zbliżeniowych bez PIN", stawka: "{{fakt:limit.karta-debetowa.zblizeniowy-bez-pin}}", tryb: "za transakcję" }
+    przypisy:
+      1: "Opłata nie jest pobierana w miesiącu, w którym wartość transakcji bezgotówkowych wykonanych kartą wyniosła co najmniej kwotę wskazaną w opisie sekcji; pozostałe miesiące są rozliczane według stawki z Taryfy obowiązującej w dniu pobrania opłaty."
+  - id: taryfa-mlodziez-karty-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zmiana limitów karty dziecka przez przedstawiciela ustawowego w aplikacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Czasowe zablokowanie karty przez przedstawiciela ustawowego lub właściciela rachunku", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zastrzeżenie karty w razie utraty lub kradzieży", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "za dyspozycję" }
+          - { usluga: "Wydanie duplikatu karty po zastrzeżeniu lub zniszczeniu", stawka: "{{fakt:oplata.karta.wydanie-duplikatu}}", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty w trybie pilnym", stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}", tryb: "jednorazowo" }
+          - { usluga: "Zmiana numeru PIN w bankomacie lub w aplikacji[^1]", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata gotówki z bankomatu za granicą (karta nastolatka i studenta)", stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z bankomatu za granicą (karta dziecka)", stawka: "usługa niedostępna", tryb: "za operację" }
+          - { usluga: "Powiadomienie o transakcji kartą wysyłane przedstawicielowi ustawowemu", stawka: "{{fakt:oplata.karta-debetowa.powiadomienie-o-transakcji}}", tryb: "za każde powiadomienie" }
+          - { usluga: "Wznowienie karty po upływie terminu ważności", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Rezygnacja z karty i jej zwrot do Banku", stawka: "bez opłat", tryb: "jednorazowo" }
+    przypisy:
+      1: "Zmiana numeru PIN karty dziecka wymaga potwierdzenia przez przedstawiciela ustawowego w aplikacji; nowy PIN obowiązuje od chwili potwierdzenia."
+  # ===== VI. Przelewy =====
+  - id: taryfa-mlodziez-przelewy-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Dzienne limity przelewów małoletniego wynikają ze zgody przedstawiciela ustawowego i nie mogą przekroczyć kwot wskazanych w Taryfie: {{fakt:limit.mlodziez.przelew-dziecko-dzienny}} w pakiecie Konto Junior oraz {{fakt:limit.mlodziez.przelew-nastolatek-dzienny}} w pakiecie Konto Teen. Przelew powyżej progu akceptacji jest realizowany po zatwierdzeniu go przez przedstawiciela w aplikacji, a niezatwierdzony w ciągu doby — odrzucany."
+      - akapit: "Dla Konta Student obowiązuje dzienny limit przelewów w wysokości {{fakt:limit.przelew-dzienny-domyslny}}, który Klient może zmienić w bankowości elektronicznej. Godzinę graniczną przyjmowania przelewów ({{fakt:termin.rachunek-osobisty.godzina-graniczna}}) określa regulamin rachunku, a stawki z tej sekcji pobiera się niezależnie od dnia rozliczenia przelewu."
+  - id: taryfa-mlodziez-przelewy-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew wewnętrzny (między rachunkami w Banku)", stawka: "bez opłat", tryb: "za operację" }
+          - usluga: "Przelew krajowy w złotych do rachunku w innym banku"
+            stawka: "zależnie od kanału zlecenia"
+            tryb: "za operację"
+            podpozycje:
+              - { usluga: "zlecony w bankowości elektronicznej lub mobilnej", stawka: "bez opłat", tryb: "za operację" }
+              - { usluga: "zlecony w placówce przez przedstawiciela ustawowego lub pełnoletniego klienta", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "Przelew natychmiastowy w złotych — Konto Junior i Konto Teen[^1]", stawka: "{{fakt:oplata.mlodziez.przelew-natychmiastowy-nastolatek}}", tryb: "za operację" }
+          - { usluga: "Przelew natychmiastowy w złotych — Konto Student", stawka: "{{fakt:oplata.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "Maksymalna kwota przelewu natychmiastowego (Konto Student)", stawka: "{{fakt:limit.rachunek-osobisty.przelew-natychmiastowy}}", tryb: "za operację" }
+          - { usluga: "Dzienny limit przelewów — Konto Junior", stawka: "{{fakt:limit.mlodziez.przelew-dziecko-dzienny}}", tryb: "za dobę" }
+          - { usluga: "Dzienny limit przelewów — Konto Teen", stawka: "{{fakt:limit.mlodziez.przelew-nastolatek-dzienny}}", tryb: "za dobę" }
+          - { usluga: "Próg akceptacji przelewu przez przedstawiciela ustawowego — Konto Teen", stawka: "{{fakt:limit.mlodziez.przelew-nastolatek-akceptacja}}", tryb: "za operację" }
+          - { usluga: "Przelew do urzędu skarbowego lub Zakładu Ubezpieczeń Społecznych (Konto Student)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew na rachunek uczelni (czesne, opłaty rekrutacyjne, akademik)", stawka: "bez opłat", tryb: "za operację" }
+    przypisy:
+      1: "Przelew natychmiastowy zlecony z rachunku małoletniego jest realizowany do wysokości dziennego limitu przelewów, a w razie przekroczenia progu akceptacji — po zatwierdzeniu przez przedstawiciela ustawowego."
+  - id: taryfa-mlodziez-przelewy-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Kieszonkowe — zlecenie stałe założone przez przedstawiciela ustawowego w aplikacji", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Kieszonkowe — zlecenie stałe założone lub zmienione w placówce", stawka: "{{fakt:oplata.mlodziez.kieszonkowe-placowka}}", tryb: "za dyspozycję" }
+          - { usluga: "Zlecenie stałe do rachunku w innym banku (Konto Student)", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za każde wykonanie" }
+          - { usluga: "Polecenie zapłaty (Konto Student)", stawka: "{{fakt:oplata.rachunek-osobisty.polecenie-zaplaty}}", tryb: "za każde obciążenie" }
+          - { usluga: "Przelew na cel oszczędnościowy dziecka lub nastolatka", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew walutowy lub zagraniczny (wyłącznie Konto Student)", stawka: "{{fakt:oplata.rachunek-osobisty.przelew-walutowy}}", tryb: "za operację" }
+          - { usluga: "Przelew zagraniczny z rachunku małoletniego", stawka: "usługa niedostępna", tryb: "za operację" }
+          - { usluga: "Zlecenie przelewu na numer telefonu odbiorcy", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Odwołanie przelewu z przyszłą datą realizacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zwrot przelewu odrzuconego przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za operację" }
+  # ===== VII. Gotówka =====
+  - id: taryfa-mlodziez-gotowka-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Dziecko może samodzielnie wypłacić w placówce gotówkę do kwoty {{fakt:limit.mlodziez.wyplata-placowka-dziecko}}; wypłaty wyższe wymagają obecności przedstawiciela ustawowego i okazania dokumentu tożsamości. Nastolatek może wypłacić w placówce bez awizacji do {{fakt:limit.mlodziez.wyplata-awizo-nastolatek}}, a wyższe kwoty — po uprzednim zgłoszeniu i za zgodą przedstawiciela."
+      - akapit: "Wypłaty w bankomatach Banku z użyciem karty wydanej do rachunku są wolne od opłat w liczbie wskazanej w pozycjach poniżej ({{fakt:limit.mlodziez.bankomat-wlasny-bezplatne}}); za kolejne i za wypłaty w bankomatach obcych pobiera się opłatę zgodnie z Taryfą. Wpłaty gotówkowe są przyjmowane w placówkach i wpłatomatach."
+  - id: taryfa-mlodziez-gotowka-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata gotówki w bankomacie Banku — pierwsze wypłaty w miesiącu", stawka: "{{fakt:limit.mlodziez.bankomat-wlasny-bezplatne}} bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wypłata gotówki w bankomacie Banku — kolejne wypłaty w miesiącu", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w bankomacie innego banku w kraju[^1]", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w bankomacie za granicą (Konto Teen, Konto Student)", stawka: "{{fakt:oplata.karta-debetowa.wyplata-bankomat-zagranica}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w placówce przez dziecko samodzielnie, do limitu", stawka: "{{fakt:limit.mlodziez.wyplata-placowka-dziecko}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w placówce przez nastolatka bez awizacji, do limitu", stawka: "{{fakt:limit.mlodziez.wyplata-awizo-nastolatek}}", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w placówce przez studenta", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki we wpłatomacie z użyciem karty debetowej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki w placówce — Konto Junior i Konto Teen", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki w placówce — Konto Student", stawka: "{{fakt:oplata.mlodziez.wplata-placowka-student}}", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki z dodatkowym wyjaśnieniem pochodzenia środków — próg", stawka: "{{fakt:limit.rachunek-osobisty.wplata-wyjasnienia}}", tryb: "za operację" }
+    przypisy:
+      1: "Opłatę pobiera Bank wydający kartę; operator bankomatu może dodatkowo naliczyć własną prowizję, o czym informuje przed zatwierdzeniem transakcji na ekranie bankomatu."
+  # ===== VIII. Usługi dodatkowe i rola przedstawiciela ustawowego =====
+  - id: taryfa-mlodziez-uslugi-opis
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - akapit: "Przedstawiciel ustawowy małoletniego składa oświadczenia i dyspozycje dotyczące rachunku, w szczególności wyraża zgodę na otwarcie rachunku, ustala limity i może zablokować dostęp małoletniego do rachunku. Wymagane jest okazanie dokumentu tożsamości przedstawiciela oraz dokumentu potwierdzającego jego uprawnienie (akt urodzenia dziecka lub orzeczenie sądu). Zasady zawierania umów określa {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+      - akapit: "W razie zmiany przedstawiciela ustawowego (np. w wyniku orzeczenia sądu) nowy przedstawiciel składa dokument potwierdzający zmianę, a dotychczasowe zgody wygasają z dniem rejestracji zmiany w systemach Banku. Z dniem ukończenia {{fakt:wiek.rachunek-osobisty.pelnoletnosc}} uprawnienia przedstawiciela do rachunku wygasają, a dotychczasowy małoletni staje się jego jedynym dysponentem."
+  - id: taryfa-mlodziez-uslugi-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "{Zgoda|Oświadczenie} przedstawiciela ustawowego na otwarcie rachunku małoletniego", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zmiana przedstawiciela ustawowego w umowie rachunku", stawka: "{{fakt:oplata.mlodziez.zmiana-przedstawiciela}}", tryb: "jednorazowo" }
+          - { usluga: "Dostęp przedstawiciela ustawowego do historii rachunku w bankowości elektronicznej", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Cykliczne zestawienie wydatków małoletniego przesyłane przedstawicielowi", stawka: "{{fakt:oplata.mlodziez.zestawienie-przedstawiciela}}", tryb: "miesięcznie" }
+          - { usluga: "Zaświadczenie dla opiekuna o rachunku i operacjach małoletniego", stawka: "{{fakt:oplata.mlodziez.zaswiadczenie-opiekuna}}", tryb: "za każdy dokument" }
+          - { usluga: "Zaświadczenie o posiadaniu rachunku wystawione na życzenie pełnoletniego klienta", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Przedstawienie orzeczenia sądu o ustanowieniu opiekuna prawnego — weryfikacja dokumentu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Powiadomienie SMS o operacjach na rachunku", stawka: "{{fakt:oplata.powiadomienie-sms}}", tryb: "za każde powiadomienie" }
+          - { usluga: "Wniosek o zmianę danych kontaktowych małoletniego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgłoszenie utraty dokumentu tożsamości i blokada dostępu do bankowości elektronicznej", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-uslugi-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Zaświadczenie z Banku o statusie klienta dla uczelni lub ubezpieczyciela[^1]", stawka: "{{fakt:oplata.zaswiadczenie}}", tryb: "za każdy dokument" }
+          - { usluga: "Pakiet Konto Student Plus — ubezpieczenie podróży i assistance", stawka: "{{fakt:oplata.mlodziez.ubezpieczenie-podrozy-student}}", tryb: "miesięcznie" }
+          - { usluga: "Rezygnacja z ubezpieczenia podróży w pakiecie Konto Student Plus", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Odpis wyciągu z rachunku za okres starszy niż 12 miesięcy", stawka: "{{fakt:oplata.rachunek-osobisty.odpis-wyciagu}}", tryb: "za każdy dokument" }
+          - { usluga: "Przekształcenie Konta Student w Konto Standard po utracie statusu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Ponowne potwierdzenie statusu studenta po przekształceniu w Konto Standard", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Realizacja zajęcia egzekucyjnego rachunku", stawka: "{{fakt:oplata.rachunek-osobisty.zajecie-egzekucyjne}}", tryb: "jednorazowo" }
+          - { usluga: "Wypłata środków zgromadzonych na rachunku małoletniego po osiągnięciu pełnoletności", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zamknięcie rachunku małoletniego i wypłata środków na rachunek przedstawiciela", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Informacja o rachunku i jego saldzie przekazana na wniosek sądu opiekuńczego", stawka: "bez opłat", tryb: "za każdy dokument" }
+    przypisy:
+      1: "Zaświadczenie wydawane jest w postaci papierowej lub elektronicznej w ciągu {{fakt:termin.rachunek-osobisty.rozpatrzenie-wniosku}} od dnia złożenia wniosku."
+  # ===== IX. Objaśnienia =====
+  - id: taryfa-mlodziez-objasnienia
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: wymagane-taryfa-mlodziez
+    elementy:
+      - ustep: "Przez „przedstawiciela ustawowego” rozumie się rodzica małoletniego albo jego opiekuna prawnego ustanowionego przez sąd, uprawnionego do składania oświadczeń woli w jego imieniu. Przez „małoletniego” rozumie się osobę, która nie ukończyła {{fakt:wiek.rachunek-osobisty.pelnoletnosc}}."
+      - ustep: "Przez „status studenta” rozumie się fakt kształcenia na uczelni lub w szkole doktorskiej, potwierdzony ważną legitymacją albo zaświadczeniem uczelni. Bank może poprosić o ponowne potwierdzenie statusu raz w roku akademickim."
+      - ustep: "Przez „limit samodzielnej płatności” rozumie się kwotę, do której małoletni może wykonać pojedynczą płatność bez dodatkowej akceptacji przedstawiciela ustawowego. Wartość limitu wynika z pakietu i może zostać obniżona przez przedstawiciela."
+      - akapit: "Pytania o stawki Taryfy można kierować na infolinię {{fakt:kontakt.infolinia}} ({{fakt:kontakt.godziny-infolinii}}) lub do placówki. Reklamacje dotyczące opłat Bank rozpatruje w terminie określonym w regulaminie rachunku."

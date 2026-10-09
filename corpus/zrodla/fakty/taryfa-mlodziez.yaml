@@ -1,0 +1,242 @@
+fakty:
+  # --- wiek i terminy
+  - id: wiek.mlodziez.dziecko-min
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "6 lat"
+    alternatywy: ["7 lat", "5 lat"]
+  - id: wiek.mlodziez.dziecko-max
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 lat"
+    alternatywy: ["13 lat", "11 lat"]
+  - id: wiek.mlodziez.nastolatek-max
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "17 lat"
+    alternatywy: ["16 lat"]
+  - id: wiek.mlodziez.student-max
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "26 lat"
+    alternatywy: ["25 lat", "27 lat"]
+  - id: termin.mlodziez.potwierdzenie-statusu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2026-04-01
+        wartosc: 14
+    alternatywy: [10, 60]
+  - id: termin.mlodziez.okres-przejsciowy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 90
+    alternatywy: [60, 30]
+  - id: termin.mlodziez.powiadomienie-o-przeksztalceniu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 30
+      - od: 2026-04-01
+        wartosc: 21
+    alternatywy: [14, 45]
+  # --- prowadzenie rachunku
+  - id: oplata.mlodziez.prowadzenie-dziecko
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00, 4.00]
+  - id: oplata.mlodziez.prowadzenie-nastolatek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [3.00, 5.00]
+  - id: oplata.mlodziez.prowadzenie-student
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2027-01-01
+        wartosc: 4.00
+    alternatywy: [2.00, 6.00]
+  - id: oplata.mlodziez.prowadzenie-student-plus
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 7.00
+      - od: 2027-01-01
+        wartosc: 9.00
+    alternatywy: [0.00, 12.00]
+  - id: oplata.mlodziez.prog-wplywow-student-plus
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [300.00, 800.00]
+  - id: oprocentowanie.mlodziez.rachunek-dziecko
+    rodzaj: procent
+    wartosci:
+      - wartosc: 1.5
+    alternatywy: [1.0, 2.0]
+  - id: oprocentowanie.mlodziez.cel-oszczednosciowy
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.0
+      - od: 2026-04-01
+        wartosc: 3.5
+    alternatywy: [2.0, 4.0]
+  - id: limit.mlodziez.cel-oszczednosciowy-min-wplata
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 50.00]
+  # --- karty
+  - id: oplata.mlodziez.karta-dziecko-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [2.00, 3.00]
+  - id: oplata.mlodziez.karta-nastolatek-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+      - od: 2027-01-01
+        wartosc: 3.00
+    alternatywy: [0.00, 4.00]
+  - id: oplata.mlodziez.karta-student-miesieczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+      - od: 2027-01-01
+        wartosc: 4.00
+    alternatywy: [2.00, 6.00]
+  - id: limit.mlodziez.student-prog-transakcji
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+    alternatywy: [100.00, 400.00]
+  - id: limit.mlodziez.karta-dziecko-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [30.00, 100.00]
+  - id: limit.mlodziez.karta-dziecko-bezgotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 200.00
+      - od: 2027-01-01
+        wartosc: 300.00
+    alternatywy: [100.00, 500.00]
+  - id: limit.mlodziez.karta-dziecko-max-ustawiany
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [300.00, 1000.00]
+  - id: limit.mlodziez.karta-nastolatek-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 300.00
+      - od: 2027-01-01
+        wartosc: 400.00
+    alternatywy: [200.00, 600.00]
+  - id: limit.mlodziez.karta-nastolatek-bezgotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [800.00, 1500.00]
+  - id: limit.mlodziez.karta-nastolatek-internet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [300.00, 1000.00]
+  - id: limit.mlodziez.karta-student-gotowkowy
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2000.00
+    alternatywy: [1500.00, 3000.00]
+  - id: limit.mlodziez.karta-student-internet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 5000.00
+      - od: 2027-01-01
+        wartosc: 6000.00
+    alternatywy: [3000.00, 8000.00]
+  # --- przelewy
+  - id: limit.mlodziez.przelew-dziecko-dzienny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2027-01-01
+        wartosc: 150.00
+    alternatywy: [50.00, 200.00]
+  - id: limit.mlodziez.przelew-dziecko-akceptacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 30.00
+    alternatywy: [20.00, 50.00]
+  - id: limit.mlodziez.przelew-nastolatek-dzienny
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2000.00
+      - od: 2027-01-01
+        wartosc: 2500.00
+    alternatywy: [1000.00, 3000.00]
+  - id: limit.mlodziez.przelew-nastolatek-akceptacja
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 500.00
+    alternatywy: [300.00, 800.00]
+  - id: oplata.mlodziez.przelew-natychmiastowy-nastolatek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1.00
+    alternatywy: [0.00, 2.00]
+  - id: oplata.mlodziez.kieszonkowe-placowka
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+      - od: 2026-04-01
+        wartosc: 3.00
+    alternatywy: [0.00, 4.00]
+  # --- gotówka
+  - id: limit.mlodziez.wyplata-placowka-dziecko
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+    alternatywy: [50.00, 200.00]
+  - id: limit.mlodziez.wyplata-awizo-nastolatek
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [500.00, 2000.00]
+  - id: oplata.mlodziez.wplata-placowka-student
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 2.00
+      - od: 2027-01-01
+        wartosc: 3.00
+    alternatywy: [0.00, 4.00]
+  - id: limit.mlodziez.bankomat-wlasny-bezplatne
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "5 wypłat miesięcznie"
+    alternatywy: ["3 wypłaty miesięcznie", "bez ograniczeń"]
+  # --- usługi
+  - id: oplata.mlodziez.zmiana-przedstawiciela
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [10.00]
+  - id: oplata.mlodziez.zestawienie-przedstawiciela
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 0.00
+    alternatywy: [3.00]
+  - id: oplata.mlodziez.zaswiadczenie-opiekuna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+      - od: 2027-01-01
+        wartosc: 12.00
+    alternatywy: [0.00, 20.00]
+  - id: oplata.mlodziez.ubezpieczenie-podrozy-student
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 6.00
+    alternatywy: [4.00, 9.00]

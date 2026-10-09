@@ -1,0 +1,180 @@
+bloki:
+  # ===== Karty — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-karty-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wydanie karty debetowej w kolorze i wzorze dla młodzieży (karta personalizowana)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty z imieniem dziecka wytłoczonym na awersie", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Aktywacja karty w aplikacji po odbiorze przesyłki", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Nadanie PIN do karty dziecka przez przedstawiciela ustawowego w aplikacji", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Dostarczenie|Wysyłka} karty kurierem na adres wskazany przez przedstawiciela", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Dostarczenie karty kurierem w trybie pilnym (następny dzień roboczy)", stawka: "{{fakt:oplata.karta-debetowa.wydanie-pilne}}", tryb: "jednorazowo" }
+          - { usluga: "Odbiór karty w placówce", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Ponowne wysłanie karty zwróconej z powodu nieodebrania przesyłki", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zniszczenie nieodebranej karty po upływie okresu przechowywania", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wydanie drugiej karty do rachunku nastolatka lub studenta", stawka: "{{fakt:oplata.karta-debetowa.wydanie}}", tryb: "jednorazowo" }
+  - id: taryfa-mlodziez-opc-karty-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Karta wirtualna do płatności internetowych dla nastolatka (wydanie)", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Karta wirtualna do płatności internetowych — prowadzenie", stawka: "bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Karta wirtualna — limit dzienny transakcji ustawiany przez przedstawiciela", stawka: "do {{fakt:limit.mlodziez.karta-nastolatek-internet}}", tryb: "za dobę" }
+          - { usluga: "Zablokowanie karty wirtualnej po wykryciu nietypowej transakcji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wydanie nowej karty wirtualnej po zablokowaniu", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "{Włączenie|Aktywacja} płatności bezstykowych na karcie dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wyłączenie płatności bezstykowych na karcie dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Limit transakcji bezstykowych bez PIN — łączna kwota do czasu wprowadzenia PIN", stawka: "{{fakt:limit.karta-debetowa.zblizeniowy-skumulowany}}", tryb: "za cykl" }
+          - { usluga: "Włączenie transakcji internetowych na karcie dziecka na wniosek przedstawiciela", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wyłączenie transakcji internetowych na karcie dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-karty-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Blokada kategorii transakcji na karcie dziecka (np. gry losowe, treści dla dorosłych)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Ograniczenie użycia karty dziecka do wskazanych kategorii sprzedawców (np. szkoła, sklepy spożywcze)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Ograniczenie godzin korzystania z karty dziecka (np. zakaz transakcji w nocy)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Ustawienie powiadomienia w aplikacji przy każdej transakcji dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Ustawienie|Konfiguracja} limitu pojedynczej transakcji kartą dziecka", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgoda przedstawiciela na jednorazowe przekroczenie limitu karty dziecka", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Podniesienie limitu karty nastolatka na czas wyjazdu zagranicznego (do 30 dni)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zgłoszenie podróży zagranicznej dla karty nastolatka lub studenta", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Informacja o limitach karty wysłana przedstawicielowi po każdej ich zmianie", stawka: "bez opłat", tryb: "za każde powiadomienie" }
+          - { usluga: "Wstrzymanie karty dziecka na czas wakacji lub obozu wskazany przez przedstawiciela", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-karty-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-karty
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Reklamacja transakcji kartą zgłoszona przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Wyjaśnienie transakcji nieautoryzowanej zgłoszonej w terminie", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Reklamacja transakcji uznana za bezzasadną", stawka: "bez opłat", tryb: "za reklamację" }
+          - { usluga: "Chargeback — zgłoszenie sporu z akceptantem w procedurze organizacji kartowej", stawka: "bez opłat", tryb: "za zgłoszenie" }
+          - { usluga: "Wydanie karty zastępczej w razie wady produkcyjnej", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Wydanie karty w związku ze zmianą nazwiska", stawka: "bez opłat", tryb: "jednorazowo" }
+          - { usluga: "Zastrzeżenie karty przez infolinię (dostępną całodobowo)", stawka: "{{fakt:oplata.karta.zastrzezenie}}", tryb: "za dyspozycję" }
+          - { usluga: "Zgłoszenie utraty karty za granicą — wydanie karty awaryjnej", stawka: "wg cennika organizacji kartowej", tryb: "jednorazowo" }
+          - { usluga: "Wypłata gotówki awaryjnej za granicą po utracie karty", stawka: "wg cennika organizacji kartowej", tryb: "za operację" }
+          - { usluga: "Przeliczenie transakcji w walucie obcej według Tabeli kursów walut", stawka: "{{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji" }
+  # ===== Przelewy — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-przelewy-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew krajowy zlecony z datą przyszłą w bankowości elektronicznej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew krajowy zlecony z datą przyszłą w placówce", stawka: "{{fakt:oplata.przelew-zewnetrzny-placowka}}", tryb: "za operację" }
+          - { usluga: "{Przelew|Przekazanie środków} na rachunek odbiorcy wskazanego numerem telefonu", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew z użyciem kodu QR odbiorcy", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew na konto rodzica z poziomu aplikacji dziecka (do limitu samodzielnej płatności)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew do skarbonki lub celu oszczędnościowego innej osoby (prezent)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew powyżej limitu dziennego małoletniego — odmowa realizacji", stawka: "nie jest realizowany", tryb: "za operację" }
+          - { usluga: "Przelew z rachunku małoletniego na rachunek osoby trzeciej powyżej progu akceptacji — wymaga zatwierdzenia", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zatwierdzenie przelewu przez przedstawiciela ustawowego w aplikacji", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Odrzucenie przelewu przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za operację" }
+  - id: taryfa-mlodziez-opc-przelewy-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Kieszonkowe tygodniowe — założenie zlecenia stałego w aplikacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Kieszonkowe miesięczne — założenie zlecenia stałego w aplikacji", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Kieszonkowe w dniu wskazanym przez przedstawiciela (np. 1. i 15. dzień miesiąca)", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Zmiana kwoty kieszonkowego z uwzględnieniem premii za wykonane zadania", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Zawieszenie|Wstrzymanie} kieszonkowego na wskazany okres", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wznowienie zawieszonego kieszonkowego", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wykonanie kieszonkowego w następnym dniu roboczym po dniu wolnym od pracy", stawka: "bez opłat", tryb: "za każde wykonanie" }
+          - { usluga: "Niewykonanie kieszonkowego z powodu braku środków na rachunku przedstawiciela", stawka: "bez opłat", tryb: "za każde zlecenie" }
+          - { usluga: "Zlecenie kieszonkowego z rachunku przedstawiciela prowadzonego w innym banku", stawka: "bez opłat", tryb: "za każde wpłynięcie" }
+          - { usluga: "Zmiana rachunku przedstawiciela, z którego pobierane jest kieszonkowe", stawka: "bez opłat", tryb: "za dyspozycję" }
+  - id: taryfa-mlodziez-opc-przelewy-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew SEPA w euro do rachunku w państwie Europejskiego Obszaru Gospodarczego (Konto Student)", stawka: "2,00 zł", tryb: "za operację" }
+          - { usluga: "Przelew krajowy w złotych w trybie SORBNET (Konto Student)", stawka: "30,00 zł", tryb: "za operację" }
+          - { usluga: "Przelew do rachunku w walucie obcej w tym samym banku (Konto Student)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Przelew zagraniczny poza EOG — opcja kosztowa SHA (Konto Student)", stawka: "0,2% min. 20,00 zł", tryb: "od kwoty transakcji" }
+          - { usluga: "Przelew zagraniczny poza EOG — opcja kosztowa OUR (Konto Student)", stawka: "0,3% min. 40,00 zł", tryb: "od kwoty transakcji" }
+          - { usluga: "{Przyjęcie|Obsługa} przelewu przychodzącego z zagranicy", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zlecenie zwrotu przelewu przychodzącego z zagranicy", stawka: "{{fakt:oplata.rachunek-osobisty.przelew-walutowy}}", tryb: "za operację" }
+          - { usluga: "Dochodzenie dotyczące losów przelewu zagranicznego", stawka: "50,00 zł", tryb: "za każde dochodzenie" }
+          - { usluga: "Zmiana lub odwołanie przelewu zagranicznego przed realizacją", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Zapłata za zakupy online w walucie obcej z rachunku Konto Student (przewalutowanie)", stawka: "{{fakt:kurs.marza-przeliczen}}", tryb: "od kwoty transakcji" }
+  - id: taryfa-mlodziez-opc-przelewy-4
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-przelewy
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Przelew do rachunku bankowego zlecony przez nastolatka z użyciem hasła jednorazowego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Lista zaufanych odbiorców nastolatka — dodanie odbiorcy (wymaga akceptacji przedstawiciela)", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Lista zaufanych odbiorców nastolatka — usunięcie odbiorcy", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Przelew do odbiorcy spoza listy zaufanych — wymaga akceptacji przedstawiciela", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Szablon przelewu zapisany w aplikacji nastolatka", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "{Płatność|Opłata} za bilet lub abonament komunikacji miejskiej z rachunku nastolatka", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Płatność za wycieczkę szkolną lub ubezpieczenie szkolne przelewem z rachunku przedstawiciela", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Płatność składki na komitet rodzicielski przez przedstawiciela ustawowego", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Zlecenie stałe na opłatę za zajęcia dodatkowe (nastolatek)", stawka: "{{fakt:oplata.rachunek-osobisty.zlecenie-stale}}", tryb: "za każde wykonanie" }
+          - { usluga: "Potwierdzenie przelewu w formie pliku w aplikacji", stawka: "bez opłat", tryb: "za każdy dokument" }
+  # ===== Gotówka — pozycje dodatkowe =====
+  - id: taryfa-mlodziez-opc-gotowka-1
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wypłata gotówki z bankomatu Banku — karta dziecka (do limitu dziennego)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki z bankomatu Banku — karta nastolatka", stawka: "{{fakt:limit.mlodziez.bankomat-wlasny-bezplatne}} bez opłat", tryb: "miesięcznie" }
+          - { usluga: "Wypłata gotówki z bankomatu Banku — karta studenta", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w bankomacie z funkcją cash-back przy płatności w sklepie", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w bankomacie innego banku — karta studenta", stawka: "{{fakt:oplata.bankomat-obcy}}", tryb: "za operację" }
+          - { usluga: "{Sprawdzenie|Zapytanie o} salda w bankomacie Banku", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Sprawdzenie salda w bankomacie innego banku", stawka: "1,00 zł", tryb: "za operację" }
+          - { usluga: "Zmiana PIN w bankomacie Banku", stawka: "{{fakt:oplata.karta-debetowa.zmiana-pin}}", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata bez karty w bankomacie z użyciem kodu z aplikacji mobilnej (Konto Teen i Konto Student)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Maksymalna kwota wypłaty w bankomacie Banku w ciągu doby — ustawienie przez przedstawiciela", stawka: "do {{fakt:limit.mlodziez.karta-dziecko-max-ustawiany}}", tryb: "za dobę" }
+  - id: taryfa-mlodziez-opc-gotowka-2
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Wpłata gotówki we wpłatomacie bez użycia karty (kod z aplikacji)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki na rachunek dziecka dokonana przez dziadków lub inne osoby w placówce", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata monet w placówce (powyżej 100 sztuk)", stawka: "2% min. 5,00 zł", tryb: "od kwoty wpłaty" }
+          - { usluga: "Wpłata monet w placówce (do 100 sztuk)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Wpłata|Dokonanie wpłaty} w kasie placówki z wyjaśnieniem pochodzenia środków", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata gotówki na cel oszczędnościowy dziecka w placówce", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata na rachunek dziecka z użyciem formularza wpłaty własnej", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wpłata na rachunek studenta w placówce — przekazana przez osobę trzecią", stawka: "{{fakt:oplata.wplata-gotowkowa}}", tryb: "za operację" }
+          - { usluga: "Maksymalna wpłata gotówki we wpłatomacie jednorazowo", stawka: "{{fakt:limit.karta-debetowa.maksymalna-wplata-wplatomat}}", tryb: "za operację" }
+          - { usluga: "Przeliczenie i sortowanie nominałów (dla wpłat zbiorczych przekraczających 200 sztuk banknotów)", stawka: "wg wyceny indywidualnej", tryb: "za operację" }
+  - id: taryfa-mlodziez-opc-gotowka-3
+    typy: [taryfy]
+    tematy: [taryfa-mlodziez]
+    kategoria: pozycje-mlodziez-gotowka
+    elementy:
+      - pozycje-taryfy:
+          - { usluga: "Awizacja wypłaty gotówki dla nastolatka powyżej {{fakt:limit.mlodziez.wyplata-awizo-nastolatek}}", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata gotówki w placówce przez przedstawiciela ustawowego z rachunku dziecka", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata gotówki w placówce z rachunku studenta powyżej {{fakt:limit.rachunek-osobisty.wyplata-awizo}} — wymaga awizacji", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "{Anulowanie|Odwołanie} awizowanej wypłaty gotówki", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Niepodjęcie awizowanej wypłaty gotówki w terminie", stawka: "bez opłat", tryb: "za dyspozycję" }
+          - { usluga: "Wypłata gotówki w placówce w walucie obcej (Konto Student)", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wymiana gotówki w kantorze placówki (dla klientów posiadających rachunek)", stawka: "wg Tabeli kursów walut", tryb: "za operację" }
+          - { usluga: "Wydanie zabezpieczonej koperty na gotówkę dla dziecka", stawka: "bez opłat", tryb: "za sztukę" }
+          - { usluga: "Wypłata gotówki z rachunku dziecka w placówce przy zmianie przedstawiciela — wypłata kontrolowana", stawka: "bez opłat", tryb: "za operację" }
+          - { usluga: "Wypłata całości środków przy zamknięciu rachunku w kasie placówki", stawka: "bez opłat", tryb: "jednorazowo" }
