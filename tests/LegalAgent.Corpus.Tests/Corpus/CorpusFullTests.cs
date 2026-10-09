@@ -83,6 +83,29 @@ public sealed class CorpusFullTests
         Assert.True(failures.Count == 0, string.Join("\n", failures));
     }
 
+    /// <summary>SC-020 for the legal acts: every act of <c>akty.yaml</c> has its PDF, Markdown and manifest entry with a source.</summary>
+    [Fact]
+    public void Acts_HaveTheirFilesAndManifestEntries()
+    {
+        SkipUnlessEnabled();
+        string corpus = Path.Combine(CorpusSampleTests.RepoRoot(), "corpus");
+        var acts = Content.ContentLoader.Load(Path.Combine(corpus, "zrodla")).Acts;
+        Manifest.Manifest manifest = ManifestWriter.Read(File.ReadAllText(Path.Combine(corpus, "manifest.json")));
+
+        Assert.True(acts.Count >= 10, $"aktów w akty.yaml: {acts.Count}");
+        foreach (var act in acts)
+        {
+            ManifestDocument entry = Assert.Single(manifest.Documents, d => d.Id == act.Id);
+            Assert.Equal("akty", entry.Type);
+            Assert.NotNull(entry.Source);
+            Assert.False(string.IsNullOrEmpty(entry.Source!.Url));
+            Assert.True(File.Exists(Path.Combine(corpus, entry.Pdf)), entry.Pdf);
+            Assert.True(File.Exists(Path.Combine(corpus, entry.Markdown)), entry.Markdown);
+        }
+
+        Assert.True(File.Exists(Path.Combine(corpus, "akty", "ZRODLA.md")));
+    }
+
     /// <summary>
     /// SC-028 and the manifest guarantees: versions of one designation have continuous, disjoint periods; every
     /// <c>previousVersion</c> and <c>contradictions[].with</c> names a document of the manifest.
