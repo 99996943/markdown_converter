@@ -991,6 +991,60 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("- 1\\. Karta jest standardowo wyposażona w funkcję zbliżeniową,", md, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// T087f: a ruled table inside the left column (REG-02 page 10) beside running text of the right column whose lines
+    /// fall between its rows: the table is a GFM table of its own rows, the right column stays one paragraph after it.
+    /// </summary>
+    [Fact]
+    public async Task RuledTableInTheLeftColumnBesideRightColumnText_IsATableOfItsOwnRows()
+    {
+        var b = new SyntheticPdfBuilder().Page().Page();
+        double y = 92;
+        for (int i = 0; i < 12; i++, y += 12.5)
+        {
+            b.Text(50, y, $"Wiersz lewej kolumny numer {i + 1} przed tabelą.", 9.5);
+        }
+
+        double[] x = [50, 189, 282];
+        string[][] rows = [["Rodzaj transakcji", "Limit dzienny"], ["Transakcje gotówkowe", "5 000,00 zł"], ["Transakcje bezgotówkowe", "15 000,00 zł"], ["Transakcje internetowe", "10 000,00 zł"], ["Wpłaty we wpłatomatach", "10 000,00 zł"]];
+        double top = y;
+        b.HLine(x[0], x[^1], top);
+        foreach (string[] row in rows)
+        {
+            b.Text(x[0] + 5, top + 13, row[0], 9, bold: row == rows[0]).Text(x[1] + 5, top + 13, row[1], 9, bold: row == rows[0]);
+            top += 18.5;
+            b.HLine(x[0], x[^1], top);
+        }
+
+        foreach (double vx in x)
+        {
+            b.VLine(vx, y, top);
+        }
+
+        y = top + 20;
+        for (int i = 0; i < 25; i++, y += 12.5)
+        {
+            b.Text(50, y, $"Dalszy wiersz lewej kolumny numer {i + 1} po tabeli.", 9.5);
+        }
+
+        y = 98;
+        for (int i = 0; i < 50; i++, y += 12.5)
+        {
+            b.Text(313, y, $"tekst prawej kolumny w wierszu {i + 1} bez przerwy", 9.5);
+        }
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t087f.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("| **Rodzaj transakcji** | **Limit dzienny** |\n| --- | --- |\n| Transakcje gotówkowe | 5 000,00 zł |\n", md, StringComparison.Ordinal);
+        Assert.Contains("| Wpłaty we wpłatomatach | 10 000,00 zł |\n\n", md, StringComparison.Ordinal);
+        Assert.Contains("w wierszu 12 bez przerwy tekst prawej kolumny w wierszu 13 bez przerwy", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| tekst prawej", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
