@@ -188,6 +188,81 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
     }
 
+    /// <summary>A gridless tariff with a bold column-name row; rows (number, service lines, mode lines, rate).</summary>
+    private static double GridlessTariff(SyntheticPdfBuilder b, double y, (string No, string[] Service, string[] Mode, string Rate)[] rows)
+    {
+        double[] x = [Left, Left + 40, 330, 440];
+        string[] header = ["Lp.", "Wyszczególnienie czynności", "Tryb pobierania", "Stawka"];
+        for (int c = 0; c < 4; c++)
+        {
+            b.Text(x[c], y, header[c], 9.5, bold: true);
+        }
+
+        y += 24;
+        foreach ((string no, string[] service, string[] mode, string rate) in rows)
+        {
+            b.Text(x[0], y, no, 9.5).Text(x[3], y, rate, 9.5);
+            for (int k = 0; k < service.Length; k++)
+            {
+                b.Text(x[1], y + (k * 12), service[k], 9.5);
+            }
+
+            for (int k = 0; k < mode.Length; k++)
+            {
+                b.Text(x[2], y + (k * 12), mode[k], 9.5);
+            }
+
+            y += (Math.Max(service.Length, mode.Length) * 12) + 12;
+        }
+
+        return y;
+    }
+
+    /// <summary>T083b: a gridless row whose service AND mode both wrap continues with a two-cell line; still one table.</summary>
+    [Fact]
+    public async Task GridlessRowWrappingInTwoColumns_StaysOneRowOfOneTable()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 60, "Taryfa opłat za karty", 18, bold: true);
+        double y = GridlessTariff(b, 100,
+        [
+            ("1.", ["Zastrzeżenie karty kredytowej"], ["jednorazowo"], "0,00 zł"),
+            ("2.", ["Upomnienie w związku z opóźnieniem w spłacie", "minimalnej kwoty"], ["za każde", "upomnienie"], "15,00 zł"),
+            ("3.", ["Zmiana terminu spłaty zadłużenia na karcie"], ["za każdą zmianę"], "10,00 zł"),
+            ("4.", ["Restrukturyzacja zadłużenia na wniosek", "klienta"], ["jednorazowo"], "50,00 zł"),
+        ]);
+        Body(b, y + 30, 12);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("| 2. | Upomnienie w związku z opóźnieniem w spłacie minimalnej kwoty | za każde upomnienie | 15,00 zł |", md, StringComparison.Ordinal);
+        Assert.Contains("| 4. | Restrukturyzacja zadłużenia na wniosek klienta | jednorazowo | 50,00 zł |", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("\\|", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>T083c: a paragraph close above the bold column-name row of a gridless table is not part of the table.</summary>
+    [Fact]
+    public async Task ParagraphCloseAboveAGridlessHeader_IsNotATableRow()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        b.Text(Left, 60, "Taryfa opłat za karty", 18, bold: true);
+        double y = Body(b, 100, 5);
+        b.Text(Left, y, "Poniższe opłaty są niezależne od odsetek od wykorzystanego limitu kredytowego.", Size);
+        y += 13.5;
+        y = GridlessTariff(b, y,
+        [
+            ("1.", ["Wydanie karty kredytowej"], ["jednorazowo"], "0,00 zł"),
+            ("2.", ["Roczna opłata za kartę kredytową"], ["rocznie"], "99,00 zł"),
+            ("3.", ["Wydanie duplikatu karty kredytowej"], ["jednorazowo"], "25,00 zł"),
+        ]);
+        Body(b, y + 30, 8);
+
+        string md = await MarkdownAsync(b.Build());
+
+        Assert.Contains("\n| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("| Poniższe opłaty", md, StringComparison.Ordinal);
+    }
+
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
     [Fact]
     public async Task RuledTableBelowNumberedParagraphs_KeepsTheListAndTheTableApart()
