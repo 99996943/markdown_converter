@@ -28,5 +28,5 @@ bloki:
         punkty:
           - "{chronić|zabezpieczać} dokumenty i dane przed dostępem osób nieupoważnionych;"
           - "nie {przekazywać|udostępniać} danych poza {Bank|struktury Banku} bez podstawy prawnej;"
-          - "niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych do {{fakt:jednostka.iod}} oraz do {{fakt:jednostka.bezpieczenstwo}}."
-      - akapit: "Wnioski osób, których dane dotyczą, {kieruje się|przekazuje się} do {{fakt:jednostka.iod}} ({{fakt:kontakt.email-iod}}); {odpowiedź|informacja o sposobie załatwienia wniosku} jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku."
+          - "niezwłocznie zgłaszać każde podejrzenie naruszenia ochrony danych: inspektorowi ochrony danych ({{fakt:jednostka.iod}}) oraz jednostce bezpieczeństwa ({{fakt:jednostka.bezpieczenstwo}})."
+      - akapit: "Wnioski osób, których dane dotyczą, {kieruje się|przekazuje się} do inspektora ochrony danych ({{fakt:jednostka.iod}}, {{fakt:kontakt.email-iod}}); {odpowiedź|informacja o sposobie załatwienia wniosku} jest udzielana bez zbędnej zwłoki, nie później niż w terminie miesiąca od dnia otrzymania wniosku."

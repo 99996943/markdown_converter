@@ -27,4 +27,4 @@ bloki:
           - "{przedstawia się|podaje imię} i {nazwę|nazwę jednostki} Banku;"
           - "{potwierdza|weryfikuje} tożsamość Klienta metodą przewidzianą w procedurach bezpieczeństwa;"
           - "nie prosi o podanie haseł, kodów jednorazowych ani numeru PIN."
-      - akapit: "Sprawy {wymagające|które wymagają} eskalacji przekazuje się do {{fakt:jednostka.obsluga-klienta}}, a podejrzenia nadużyć — do {{fakt:jednostka.bezpieczenstwo}}."
+      - akapit: "Sprawy {wymagające|które wymagają} eskalacji przekazuje się do jednostki właściwej ({{fakt:jednostka.obsluga-klienta}}), a podejrzenia nadużyć — do jednostki bezpieczeństwa ({{fakt:jednostka.bezpieczenstwo}})."
