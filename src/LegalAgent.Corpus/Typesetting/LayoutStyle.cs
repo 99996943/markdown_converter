@@ -51,6 +51,9 @@ public sealed record LayoutStyle
     /// <summary>Level-2 heading size (chapters, top-level sections).</summary>
     public double ChapterSize { get; init; } = 13;
 
+    /// <summary>Extra space above a level-2 heading (chapter, section of a tariff or procedure).</summary>
+    public double ChapterSpaceAbove { get; init; } = 10;
+
     /// <summary>Level-3 heading size (units such as "§ N.").</summary>
     public double UnitSize { get; init; } = 11;
 

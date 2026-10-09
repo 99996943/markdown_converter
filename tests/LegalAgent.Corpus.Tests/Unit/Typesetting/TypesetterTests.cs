@@ -34,6 +34,20 @@ public sealed class TypesetterTests
     }
 
     [Fact]
+    public void ChapterHeading_KeepsTheStylesSpaceAbove()
+    {
+        Element[] elements = [P("Akapit przed nagłówkiem."), new HeadingElement(2, "II.", T("Karty płatnicze")), P("Akapit po nagłówku.")];
+        LayoutStyle style = Style(s => s with { ChapterSpaceAbove = 30 });
+
+        TypesetResult result = Typesetter.Typeset(Doc(elements), style);
+
+        List<Word> words = PageWords(result.Pdf)[0];
+        double before = Baseline(words.First(w => w.Text == "nagłówkiem."));
+        double heading = Baseline(words.First(w => w.Text == "II."));
+        Assert.True(heading - before >= style.Leading + style.ParagraphGap + 30 - 0.5, $"gap {heading - before}");
+    }
+
+    [Fact]
     public void Headings_AreRecordedWithLevelsAndLabels()
     {
         Element[] elements =
