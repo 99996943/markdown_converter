@@ -1,0 +1,63 @@
+id: regulamin-kart-kredytowych
+typ: regulaminy
+temat: karty-kredytowe
+tytul:
+  - "Regulamin {kart kredytowych|korzystania z kart kredytowych} {{param:bank}}"
+  - "Regulamin kart kredytowych dla klientów indywidualnych"
+uklady: [dwie-kolumny]
+czolo: { okladka: true, metryczka: false, pola: [oznaczenie, wersja, od, do] }
+sekcje:
+  - rodzaj: rozdzial
+    tytul: "Postanowienia ogólne"
+    wymagane: [wspolne-definicje-regulamin, karty-kredytowe-zakres, karty-kredytowe-dokumenty]
+    opcjonalne: { kategorie: [paragraf-karty-ogolne], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Umowa o kartę kredytową i limit kredytowy"
+    wymagane: [karty-kredytowe-umowa, karty-kredytowe-limit]
+    opcjonalne: { kategorie: [paragraf-karty-umowa], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Badanie zdolności kredytowej"
+    wymagane: [karty-kredytowe-zdolnosc]
+    opcjonalne: { kategorie: [paragraf-karty-zdolnosc], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wydanie karty i karty dodatkowe"
+    wymagane: [karty-kredytowe-wydanie, karty-kredytowe-dodatkowe]
+    opcjonalne: { kategorie: [paragraf-karty-wydanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Transakcje"
+    wymagane: [karty-kredytowe-transakcje, karty-kredytowe-autoryzacja]
+    opcjonalne: { kategorie: [paragraf-karty-transakcje], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zestawienie transakcji i spłata zadłużenia"
+    wymagane: [karty-kredytowe-zestawienie, karty-kredytowe-splata]
+    opcjonalne: { kategorie: [paragraf-karty-zestawienie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Minimalna kwota do zapłaty"
+    wymagane: [karty-kredytowe-minimum]
+    opcjonalne: { kategorie: [paragraf-karty-minimum], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Oprocentowanie, okres bezodsetkowy i RRSO"
+    wymagane: [karty-kredytowe-oprocentowanie, karty-kredytowe-okres-bezodsetkowy]
+    opcjonalne: { kategorie: [paragraf-karty-oprocentowanie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Raty i plany spłat"
+    wymagane: [karty-kredytowe-raty]
+    opcjonalne: { kategorie: [paragraf-karty-raty], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Zastrzeżenie karty"
+    wymagane: [karty-kredytowe-zastrzezenie, wspolne-kontakt-regulamin]
+    opcjonalne: { kategorie: [paragraf-karty-zastrzezenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Opóźnienie w spłacie i windykacja"
+    wymagane: [karty-kredytowe-opoznienie]
+    opcjonalne: { kategorie: [paragraf-karty-opoznienie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Wypowiedzenie umowy"
+    wymagane: [karty-kredytowe-wypowiedzenie, karty-kredytowe-wypowiedzenie-skutki]
+    opcjonalne: { kategorie: [paragraf-karty-wypowiedzenie], min: 0, max: 40 }
+  - rodzaj: rozdzial
+    tytul: "Postanowienia końcowe"
+    wymagane: [wspolne-reklamacje-regulamin, wspolne-zmiany-regulamin, wspolne-ochrona-danych-regulamin]
+    opcjonalne: { kategorie: [paragraf-karty-koncowe], min: 0, max: 40 }
+parametry:
+  produkt: "karty kredytowej"

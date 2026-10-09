@@ -1,0 +1,343 @@
+bloki:
+  # ===== Rozdział: Transakcje =====
+  - id: karty-kredytowe-transakcje
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kartą kredytową można dokonywać, w granicach dostępnego limitu i limitów transakcyjnych, następujących transakcji:"
+        punkty:
+          - "płatności bezgotówkowych w punktach handlowo-usługowych, w tym zbliżeniowych i z użyciem numeru PIN;"
+          - "płatności w sieci Internet i na odległość;"
+          - "wypłat gotówki w bankomatach i placówkach przyjmujących karty;"
+          - "płatności za pomocą urządzeń mobilnych, po dodaniu karty do aplikacji płatniczej."
+      - ustep: "Dzienny limit transakcji internetowych wynosi {{fakt:limit.karta.dzienny-internet}}, a dzienny limit wypłat gotówki — {{fakt:limit.karta.dzienny-gotowkowy}}. Klient {może|ma prawo} zmienić limity w {bankowości elektronicznej|serwisie transakcyjnym}, w granicach określonych przez Bank."
+      - ustep: "Za wypłaty gotówki Bank pobiera prowizję w wysokości {{fakt:oplata.karta.gotowka-prowizja}} kwoty wypłaty, nie mniej niż {{fakt:oplata.karta.gotowka-minimum}}.[^1] Od wypłat gotówki odsetki są naliczane od dnia wypłaty, bez okresu bezodsetkowego."
+    przypisy:
+      1: "Prowizja jest naliczana niezależnie od odsetek i opłat wskazanych w dokumencie: {{ref:dokument:taryfa-karty}}, a jej wysokość zależy od daty dokonania wypłaty."
+
+  - id: karty-kredytowe-autoryzacja
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcja jest autoryzowana, jeżeli Klient wyraził zgodę na jej wykonanie w jeden ze sposobów wskazanych poniżej:"
+        punkty:
+          - "przez zbliżenie karty do terminala, w przypadku transakcji, których wartość nie przekracza {{fakt:limit.karta.bez-pin}}, bez konieczności wprowadzania numeru PIN;"
+          - "przez wprowadzenie numeru PIN lub złożenie podpisu na potwierdzeniu transakcji;"
+          - tekst: "w przypadku płatności internetowych — przez zastosowanie silnego uwierzytelnienia, obejmującego co najmniej dwa spośród następujących elementów:"
+            litery:
+              - "element wiedzy, czyli coś, co zna tylko Klient;"
+              - "element posiadania, czyli coś, co posiada wyłącznie Klient, na przykład urządzenie mobilne;"
+              - "element cechy charakterystycznej Klienta, na przykład dane biometryczne."
+      - ustep: "Z chwilą autoryzacji Bank blokuje kwotę transakcji w ciężar dostępnego limitu, a zlecenie płatnicze nie może zostać odwołane, chyba że przepisy lub Regulamin stanowią inaczej."
+      - ustep: "Bank może odmówić wykonania transakcji, jeżeli jest to uzasadnione względami bezpieczeństwa, brakiem dostępnego limitu albo jeżeli transakcja jest sprzeczna z przepisami prawa. O odmowie Bank informuje Klienta, o ile nie jest to zabronione przepisami."
+
+  - id: karty-kredytowe-transakcje-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcje dokonane w walucie innej niż złoty polski są przeliczane na złote po kursie stosowanym przez organizację płatniczą w dniu rozliczenia transakcji, powiększonym o marżę Banku w wysokości {{fakt:kurs.marza-przeliczen}}. Bank nie stosuje własnej tabeli kursów walutowych."
+      - ustep: "Ponieważ między dniem dokonania transakcji a dniem jej rozliczenia mogą upłynąć kolejne dni, kurs użyty do przeliczenia może różnić się od kursu obowiązującego w dniu transakcji. Różnice kursowe obciążają Klienta lub — jeżeli są dla niego korzystne — zmniejszają jego zadłużenie."
+      - ustep: "Jeżeli w punkcie płatności Klientowi zaproponowano przewalutowanie transakcji na złote przez agenta rozliczeniowego, Klient {powinien|ma prawo} zapoznać się z zaproponowanym kursem i prowizją i może odmówić takiej usługi; Bank nie ponosi odpowiedzialności za warunki przewalutowania ustalone poza Bankiem."
+
+  - id: karty-kredytowe-transakcje-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Płatności zbliżeniowe poniżej kwoty {{fakt:limit.karta.bez-pin}} mogą być realizowane bez wprowadzania numeru PIN. Po przekroczeniu określonej przez organizację płatniczą liczby kolejnych transakcji zbliżeniowych lub łącznej ich kwoty terminal może zażądać wprowadzenia numeru PIN."
+      - ustep: "Klient {może|ma prawo} wyłączyć lub włączyć funkcję zbliżeniową w bankowości elektronicznej albo na infolinii {{fakt:kontakt.infolinia}}. Wyłączenie funkcji zbliżeniowej nie wpływa na możliwość dokonywania innych transakcji."
+      - ustep: "Bank zwraca uwagę, że karta wyposażona w funkcję zbliżeniową może zostać użyta przez osobę trzecią w razie jej utraty, dlatego o utracie karty należy zawiadomić Bank natychmiast po stwierdzeniu zdarzenia."
+
+  - id: karty-kredytowe-transakcje-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dokonując płatności w sieci Internet, Klient {powinien|jest obowiązany} zachować szczególną ostrożność, w szczególności:"
+        punkty:
+          - "korzystać wyłącznie ze stron sprzedawców, których wiarygodność została zweryfikowana;"
+          - "nie podawać danych karty w odpowiedzi na wiadomości e-mail, SMS-y lub rozmowy telefoniczne, w których rozmówca podaje się za pracownika Banku;"
+          - "sprawdzać, czy treść komunikatu autoryzacyjnego odpowiada dokonywanej transakcji, w tym wysokości kwoty i nazwie odbiorcy;"
+          - "korzystać z aktualnego oprogramowania zabezpieczającego urządzenia."
+      - ustep: "Autoryzacja transakcji internetowej przekraczającej {{fakt:limit.karta.dzienny-internet}} w ciągu doby nie jest możliwa, chyba że Klient zwiększył limit w sposób opisany w Regulaminie."
+
+  - id: karty-kredytowe-transakcje-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli transakcja została dokonana bez zgody Klienta lub została wykonana nieprawidłowo, Klient jest obowiązany niezwłocznie zawiadomić o tym Bank, nie później jednak niż w terminie {{fakt:karta.zgloszenie-nieautoryzowanej}} od dnia obciążenia rachunku karty. Upływ tego terminu powoduje wygaśnięcie roszczeń Klienta względem Banku z tytułu nieautoryzowanej transakcji."
+      - ustep: "Bank zwraca kwotę nieautoryzowanej transakcji {{fakt:karta.zwrot-nieautoryzowanej}} po stwierdzeniu transakcji albo po otrzymaniu zgłoszenia, chyba że ma uzasadnione i należycie udokumentowane podstawy, by podejrzewać oszustwo, i poinformuje o tym organy powołane do ścigania przestępstw. Przy zwrocie przywraca się rachunek karty do stanu, jaki istniałby, gdyby nie doszło do transakcji."
+      - ustep: "Odpowiedzialność Klienta za nieautoryzowane transakcje spowodowane utratą karty, jej kradzieżą lub przywłaszczeniem ograniczona jest do kwoty stanowiącej {{fakt:karta.odpowiedzialnosc-limit}}, z zastrzeżeniem, że Klient ponosi pełną odpowiedzialność, jeżeli do nieautoryzowanej transakcji doszło na skutek umyślnego naruszenia Regulaminu lub rażącego niedbalstwa."
+
+  - id: karty-kredytowe-transakcje-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie sporu z akceptantem co do transakcji, w szczególności w przypadku niedostarczenia towaru, niewykonania usługi lub obciążenia kwotą wyższą od uzgodnionej, Klient w pierwszej kolejności {kontaktuje się|zwraca się} do akceptanta. Jeżeli kontakt nie przynosi rezultatu, Klient może złożyć w Banku wniosek o przeprowadzenie procedury reklamacyjnej dotyczącej transakcji kartowej."
+      - ustep: "Do wniosku Klient dołącza dokumenty potwierdzające okoliczności sprawy, w szczególności potwierdzenie transakcji, korespondencję z akceptantem oraz dokumenty dotyczące zwrotu towaru lub rezygnacji z usługi."
+      - ustep: "Bank rozpatruje wniosek w terminach wskazanych w postanowieniach o reklamacjach. Do czasu rozstrzygnięcia sprawy Klient jest obowiązany spłacać zadłużenie na zasadach ogólnych, w tym zapłacić minimalną kwotę wymaganą w zestawieniu transakcji, chyba że Bank wyraził zgodę na wstrzymanie spłaty spornej kwoty."
+
+  - id: karty-kredytowe-transakcje-6
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcje z udziałem karty kredytowej Bank rozlicza w dniu otrzymania od organizacji płatniczej informacji o transakcji; dzień ten może być późniejszy niż dzień jej dokonania o kilka dni roboczych. Do czasu rozliczenia kwota transakcji jest blokowana na rachunku karty."
+      - ustep: "Blokada kwoty transakcji jest zwalniana po jej rozliczeniu albo po upływie 7 dni od dnia jej założenia, jeżeli akceptant nie przekazał do Banku informacji o rozliczeniu. Zwolnienie blokady nie anuluje zobowiązania Klienta wobec akceptanta; jeżeli transakcja zostanie rozliczona później, Bank obciąży nią rachunek karty."
+      - ustep: "W przypadku zwrotu towaru lub usługi akceptant przekazuje do Banku informację o zwrocie, a kwota zwrotu uznaje rachunek karty w dniu otrzymania przez Bank zlecenia zwrotu. Zwrot nie powoduje zwrotu opłat ani prowizji naliczonych przy dokonaniu transakcji, chyba że Taryfa stanowi inaczej."
+
+  - id: karty-kredytowe-transakcje-7
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-transakcje
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Transakcje cykliczne, w tym płatności za subskrypcje i abonamenty, Klient autoryzuje jednorazowo, wyrażając zgodę na obciążanie karty przez danego akceptanta. Odwołanie zgody na transakcje cykliczne Klient składa bezpośrednio u akceptanta; Bank {może|ma prawo} na wniosek Klienta zablokować kolejne obciążenia."
+      - ustep: "W razie wznowienia lub wymiany karty Bank może przekazać organizacji płatniczej nowe dane karty w celu ich automatycznej aktualizacji u akceptantów, chyba że Klient wyłączył tę funkcję w bankowości elektronicznej."
+      - ustep: "Bank nie ponosi odpowiedzialności za odmowę przyjęcia karty przez akceptanta, jakość towarów i usług oraz za zasady ustalone przez akceptanta, w szczególności dotyczące minimalnej kwoty transakcji i opłat dodatkowych."
+
+  # ===== Rozdział: Zestawienie transakcji i spłata zadłużenia =====
+  - id: karty-kredytowe-zestawienie
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank sporządza co miesiąc zestawienie transakcji za cykl rozliczeniowy, obejmujące wszystkie transakcje, odsetki, opłaty, prowizje i wpłaty zaksięgowane na rachunku karty w okresie rozliczeniowym. Zestawienie jest udostępniane Klientowi nieodpłatnie na trwałym nośniku w bankowości elektronicznej najpóźniej w {{fakt:termin.karta.dostarczenie-zestawienia}} od zakończenia cyklu rozliczeniowego."
+      - ustep: "Zestawienie zawiera w szczególności:"
+        punkty:
+          - "saldo zadłużenia na początek i na koniec cyklu rozliczeniowego;"
+          - "wysokość przyznanego i dostępnego limitu kredytowego;"
+          - "minimalną kwotę do zapłaty oraz całkowitą kwotę zadłużenia;"
+          - "termin spłaty, w tym ostatni dzień okresu bezodsetkowego;"
+          - "informację o skutkach braku spłaty w terminie."
+      - ustep: "Na wniosek Klienta Bank wysyła zestawienie w formie papierowej na adres korespondencyjny. Za przesłanie zestawienia w formie papierowej pobierana jest opłata w wysokości {{fakt:oplata.wyciag-papierowy}}."
+
+  - id: karty-kredytowe-splata
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient spłaca zadłużenie z tytułu karty przelewem na indywidualny numer rachunku karty wskazany w zestawieniu transakcji, w terminie {{fakt:termin.karta.splata-po-zestawieniu}} od dnia zakończenia cyklu rozliczeniowego. Za dzień spłaty uważa się dzień uznania rachunku karty."
+      - ustep: "Klient może spłacić zadłużenie:"
+        punkty:
+          - "w całości — w tym przypadku koszt kredytu z tytułu transakcji bezgotówkowych wynosi zero, pod warunkiem spłaty w okresie bezodsetkowym;"
+          - "w części, nie niższej jednak niż minimalna kwota do zapłaty;"
+          - "w dowolnym terminie, także przed otrzymaniem zestawienia, w pełnej wysokości lub części."
+      - ustep: "Wpłaty zaliczane są na poczet zadłużenia w następującej kolejności: opłaty i prowizje, odsetki za opóźnienie, odsetki umowne, koszty upomnień i windykacji, a następnie kapitał, przy czym w ramach kapitału w pierwszej kolejności spłaca się transakcje z najwyższym oprocentowaniem."
+      - ustep: "Klient może udzielić Bankowi zlecenia stałego lub polecenia zapłaty na spłatę zadłużenia z rachunku bieżącego prowadzonego w Banku. Zlecenie może obejmować spłatę minimalnej kwoty do zapłaty albo całego zadłużenia."
+
+  - id: karty-kredytowe-zestawienie-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Cykl rozliczeniowy rozpoczyna się pierwszego dnia miesiąca kalendarzowego i kończy ostatniego dnia tego miesiąca, chyba że umowa przewiduje inny dzień zakończenia cyklu. Klient może wnioskować o zmianę dnia zakończenia cyklu rozliczeniowego, nie częściej niż raz na 12 miesięcy."
+      - ustep: "Zmiana dnia zakończenia cyklu rozliczeniowego powoduje przesunięcie terminu spłaty i może skrócić lub wydłużyć jednorazowo okres bezodsetkowy. Bank informuje Klienta o skutkach zmiany przed jej wprowadzeniem."
+
+  - id: karty-kredytowe-zestawienie-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest obowiązany sprawdzić poprawność transakcji ujętych w zestawieniu. Zastrzeżenia do zestawienia, w tym dotyczące transakcji niedokonanych przez Klienta, należy zgłaszać niezwłocznie, a zgłoszenie po terminie {{fakt:karta.zgloszenie-nieautoryzowanej}} od obciążenia nie podlega rozpatrzeniu jako zgłoszenie nieautoryzowanej transakcji."
+      - ustep: "Zgłoszenie zastrzeżeń do zestawienia nie zwalnia Klienta z obowiązku zapłaty minimalnej kwoty w terminie. Jeżeli reklamacja zostanie uwzględniona, Bank koryguje zadłużenie i odpowiednio zmniejsza naliczone odsetki oraz opłaty."
+      - ustep: "Brak zestawienia, np. wskutek nieotrzymania przesyłki, nie zwalnia Klienta ze spłaty zadłużenia w terminie; informację o zadłużeniu Klient może w każdej chwili uzyskać w bankowości elektronicznej lub na infolinii {{fakt:kontakt.infolinia}}."
+
+  - id: karty-kredytowe-zestawienie-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może w każdym czasie dokonać wcześniejszej spłaty całości lub części zadłużenia z tytułu karty. W razie wcześniejszej spłaty Bank nie pobiera prowizji ani innych opłat z tego tytułu."
+      - ustep: "Wpłaty dokonywane w placówkach Banku w gotówce na rachunek karty podlegają opłacie w wysokości {{fakt:oplata.wplata-gotowkowa}}. Wpłaty przelewem z rachunku prowadzonego w Banku są bezpłatne."
+      - ustep: "Wpłata wpływająca na rachunek karty po godzinie granicznej wskazanej w komunikacie Banku jest księgowana w następnym dniu roboczym, a skutki opóźnienia ponosi Klient."
+
+  - id: karty-kredytowe-zestawienie-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zestawienie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli na rachunku karty powstanie nadpłata w wyniku wpłaty przekraczającej zadłużenie lub zwrotu transakcji, Klient może nią swobodnie dysponować w ramach limitów transakcyjnych albo zażądać jej zwrotu na rachunek bieżący."
+      - ustep: "Nadpłata jest zaliczana na poczet przyszłych transakcji i spłaca opłaty oraz odsetki naliczone w kolejnych cyklach rozliczeniowych w pierwszej kolejności. Nadpłata nie wpływa na wysokość limitu kredytowego i nie zwiększa go."
+
+  # ===== Rozdział: Minimalna kwota do zapłaty =====
+  - id: karty-kredytowe-minimum
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Minimalna kwota do zapłaty stanowi sumę następujących składników:"
+        punkty:
+          - "{{fakt:splata.karta.minimum-procent}} salda zadłużenia z tytułu transakcji na koniec cyklu rozliczeniowego, nie mniej jednak niż {{fakt:splata.karta.minimum-kwota}};"
+          - "naliczonych odsetek, opłat i prowizji za cykl rozliczeniowy;"
+          - "kwoty przekroczenia limitu kredytowego, o ile wystąpiło;"
+          - "wymagalnych kwot zaległych z poprzednich cykli rozliczeniowych."
+      - ustep: "Jeżeli saldo zadłużenia na koniec cyklu jest niższe niż {{fakt:splata.karta.minimum-kwota}}, minimalna kwota do zapłaty odpowiada saldu zadłużenia. Minimalna kwota do zapłaty jest podawana w zestawieniu transakcji.[^1]"
+      - ustep: "Spłata wyłącznie minimalnej kwoty do zapłaty powoduje utratę okresu bezodsetkowego dla transakcji bezgotówkowych w kolejnym cyklu rozliczeniowym i naliczenie odsetek od salda niespłaconego w całości, na zasadach opisanych w rozdziale o oprocentowaniu."
+    przypisy:
+      1: "Spłata kwoty niższej niż minimalna kwota do zapłaty w terminie jest traktowana jako opóźnienie w spłacie zadłużenia, z konsekwencjami wskazanymi w Regulaminie i w dokumencie: {{ref:dokument:taryfa-karty}}."
+
+  - id: karty-kredytowe-minimum-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-minimum
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dla zobrazowania działania minimalnej kwoty do zapłaty przyjmuje się, że saldo zadłużenia z tytułu transakcji wynosi 4 000,00 zł, a procent wymagany do spłaty — {{fakt:splata.karta.minimum-procent}}. Minimalny składnik kapitałowy wynosi wówczas 200,00 zł i powiększa się o odsetki i opłaty naliczone za cykl. Przykład ma charakter poglądowy i nie stanowi oferty Banku."
+      - ustep: "Spłata wyłącznie minimalnej kwoty w kolejnych miesiącach powoduje, że zadłużenie spłacane jest przez długi okres, a całkowity koszt kredytu — w tym odsetki — jest wyższy niż w razie spłaty w całości w okresie bezodsetkowym."
+      - ustep: "Bank {zachęca|zaleca} Klientów do regularnej spłaty wyższych kwot niż kwota minimalna, aby ograniczyć łączny koszt zadłużenia."
+
+  - id: karty-kredytowe-minimum-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-minimum
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} podwyższyć wymaganą minimalną kwotę do zapłaty w stosunku do Klienta, u którego stwierdzono zwiększone ryzyko niewypłacalności, na przykład z powodu opóźnień w spłacie innych zobowiązań lub utraty dochodów. Podwyższenie jest możliwe wyłącznie po uprzednim powiadomieniu Klienta na trwałym nośniku."
+      - ustep: "Procent wymagany do spłaty ma wartość stałą w okresie obowiązywania umowy, z zastrzeżeniem zmian dokonywanych w trybie przewidzianym w Regulaminie. Zmiana procentu nie ma wpływu na kwoty zaległości powstałe przed dniem jej wejścia w życie."
+      - ustep: "Klient, który zamierza spłacać zadłużenie w kwocie niższej niż minimalna kwota do zapłaty z powodu przejściowych trudności finansowych, może zwrócić się do Banku o zawarcie porozumienia w sprawie tymczasowego obniżenia wysokości rat albo o restrukturyzację zadłużenia."
+
+  - id: karty-kredytowe-minimum-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-minimum
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli ostatni dzień terminu spłaty przypada na dzień wolny od pracy, za termin spłaty uważa się następny dzień roboczy, o ile umowa nie stanowi inaczej. Dla prawidłowego zaksięgowania wpłaty Klient powinien uwzględnić czas niezbędny do przekazania środków między bankami."
+      - ustep: "Wpłata dokonana w terminie, ale zaksięgowana po jego upływie wskutek błędnego wskazania numeru rachunku karty, nie jest uważana za wpłatę terminową. Klient ponosi skutki błędnego wskazania numeru rachunku."
+      - ustep: "Bank może wysyłać Klientowi przypomnienia o zbliżającym się terminie spłaty, w formie komunikatów SMS lub powiadomień w aplikacji mobilnej. Za wysyłanie przypomnień SMS pobiera się opłatę w wysokości {{fakt:oplata.powiadomienie-sms}} miesięcznie, o ile Klient wyraził zgodę na tę usługę."
+
+  # ===== Rozdział: Oprocentowanie, okres bezodsetkowy, RRSO =====
+  - id: karty-kredytowe-oprocentowanie
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Kredyt w ramach limitu jest oprocentowany według zmiennej stopy procentowej, której wysokość w dniu wejścia w życie Regulaminu wynosi:"
+        punkty:
+          - "{{fakt:oprocentowanie.karta.zakupy}} w skali roku — dla transakcji bezgotówkowych;"
+          - "{{fakt:oprocentowanie.karta.gotowka}} w skali roku — dla wypłat gotówki i transakcji im równoważnych;"
+          - "{{fakt:oprocentowanie.odsetki-za-opoznienie}} w skali roku — dla zadłużenia przeterminowanego, czyli odsetki za opóźnienie."
+      - ustep: "Odsetki naliczane są codziennie od salda zadłużenia, w oparciu o rzeczywistą liczbę dni w roku, i są kapitalizowane w ostatnim dniu cyklu rozliczeniowego, zgodnie z zasadami określonymi w umowie. Zmiana oprocentowania następuje na zasadach przewidzianych w umowie, w tym z uwzględnieniem zmian wskaźników rynkowych."
+      - ustep: "Maksymalne oprocentowanie kredytu nie może przekroczyć wysokości określonej w przepisach o maksymalnych odsetkach w stosunkach cywilnoprawnych, a w szczególności wysokości odsetek maksymalnych za opóźnienie. Całkowity koszt kredytu, z wyłączeniem opłat za niewykonanie lub nienależyte wykonanie zobowiązania, nie może przekroczyć ustawowych limitów pozaodsetkowych kosztów kredytu."
+
+  - id: karty-kredytowe-okres-bezodsetkowy
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dla transakcji bezgotówkowych Bank stosuje okres bezodsetkowy, którego maksymalna długość wynosi {{fakt:termin.karta.okres-bezodsetkowy}}. Okres bezodsetkowy rozpoczyna się w dniu dokonania transakcji i trwa do ostatniego dnia terminu spłaty określonego w zestawieniu transakcji za cykl, w którym transakcję rozliczono."
+      - ustep: "Klient zachowuje prawo do okresu bezodsetkowego, jeżeli w terminie spłaty:"
+        punkty:
+          - "spłaci całkowitą kwotę zadłużenia wykazaną w zestawieniu transakcji;"
+          - "poprzedni cykl rozliczeniowy został rozliczony w całości, bez salda pozostałego do zapłaty."
+      - ustep: "Okres bezodsetkowy nie dotyczy wypłat gotówki, transakcji o charakterze gotówkowym (w szczególności zakupu bonów, żetonów i walut oraz doładowań kont w systemach płatniczych), opłat, prowizji i odsetek. Od takich transakcji odsetki są naliczane od dnia ich dokonania według stawki dla wypłat gotówki."
+
+  - id: karty-kredytowe-oprocentowanie-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Rzeczywista roczna stopa oprocentowania (RRSO) wyraża całkowity koszt kredytu ponoszony przez Klienta w stosunku rocznym i obejmuje odsetki, opłaty, prowizje oraz inne koszty, które Klient jest obowiązany ponieść w związku z umową. Dla reprezentatywnego przykładu, w którym całkowita kwota kredytu wynosi 5 000,00 zł, a kredyt jest wykorzystany w całości na dzień zawarcia umowy, RRSO wynosi {{fakt:rrso.karta.przyklad}}."
+      - ustep: "Do wyliczenia RRSO przyjęto założenie, że umowa obowiązuje przez 12 miesięcy, Klient dokonuje transakcji bezgotówkowych oprocentowanych według stawki {{fakt:oprocentowanie.karta.zakupy}}, a roczna opłata za kartę wynosi {{fakt:oplata.karta.roczna}}. Rzeczywista wartość RRSO może się różnić w zależności od sposobu korzystania z karty."
+      - ustep: "Całkowitą kwotę do zapłaty i całkowity koszt kredytu Bank przedstawia Klientowi w formularzu informacyjnym oraz w umowie."
+
+  - id: karty-kredytowe-oprocentowanie-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} zmienić wysokość oprocentowania kredytu w przypadku zmiany wysokości stóp procentowych Narodowego Banku Polskiego, zmiany wskaźnika referencyjnego stosowanego przez Bank albo zmiany kosztów finansowania Banku o wartość nie mniejszą niż 0,25 punktu procentowego."
+      - ustep: "Zmiana oprocentowania na korzyść Klienta może nastąpić bez uprzedzenia, ze skutkiem od dnia wskazanego przez Bank. Zmiana oprocentowania na niekorzyść Klienta następuje po uprzednim powiadomieniu Klienta na trwałym nośniku, z wyprzedzeniem nie krótszym niż {{fakt:termin.zmiana-regulaminu}}."
+      - ustep: "Jeżeli Klient nie zgadza się na zmianę oprocentowania, może wypowiedzieć umowę na zasadach określonych w rozdziale o wypowiedzeniu umowy, bez ponoszenia dodatkowych opłat."
+
+  - id: karty-kredytowe-oprocentowanie-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Do obliczania odsetek stosuje się następujący sposób: kwotę odsetek za dany dzień uzyskuje się, mnożąc saldo zadłużenia na koniec dnia przez roczną stopę procentową i dzieląc przez liczbę dni w roku. Odsetki za cykl rozliczeniowy są sumą odsetek dziennych."
+      - ustep: "Jeżeli w cyklu rozliczeniowym do rachunku karty zaksięgowano transakcje z okresem bezodsetkowym oraz transakcje gotówkowe, odsetki dla poszczególnych rodzajów transakcji naliczane są oddzielnie i wykazywane w zestawieniu w osobnych pozycjach."
+      - ustep: "Odsetki za opóźnienie naliczane są od kwoty zadłużenia przeterminowanego, od dnia następującego po upływie terminu spłaty do dnia spłaty, nie więcej niż w wysokości ustawowych odsetek maksymalnych za opóźnienie."
+
+  - id: karty-kredytowe-oprocentowanie-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-oprocentowanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient, który wykorzystuje kartę w celach innych niż osobiste, w szczególności w ramach działalności gospodarczej, jest obowiązany poinformować o tym Bank. W takim przypadku Bank {może|ma prawo} zmienić warunki umowy, w tym oprocentowanie, z uwzględnieniem przepisów dotyczących umów zawieranych z przedsiębiorcami."
+      - ustep: "Wszelkie informacje o wysokości oprocentowania, opłat i prowizji Klient może uzyskać w dokumencie: {{ref:dokument:taryfa-karty}}, w bankowości elektronicznej oraz na infolinii {{fakt:kontakt.infolinia}}."
+
+  # ===== Rozdział: Raty i plany spłat =====
+  - id: karty-kredytowe-raty
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może zażądać rozłożenia wybranej transakcji bezgotówkowej lub salda zadłużenia na równe raty miesięczne (plan spłat), składając dyspozycję w {bankowości elektronicznej|serwisie transakcyjnym} albo na infolinii {{fakt:kontakt.infolinia}}. Rozłożenie na raty jest możliwe w okresie od 3 do 36 miesięcy, w granicach dostępnego limitu kredytowego."
+      - ustep: "Za uruchomienie planu spłat Bank pobiera jednorazową prowizję w wysokości {{fakt:oplata.karta.prowizja-rata}} kwoty rozłożonej na raty. Kwota objęta planem jest oprocentowana według stawki {{fakt:oprocentowanie.karta.rata}} w skali roku, niezależnie od oprocentowania pozostałej części zadłużenia."
+      - ustep: "Rata planu spłat składa się z części kapitałowej i odsetkowej i jest doliczana do minimalnej kwoty do zapłaty. Klient może w każdym czasie spłacić plan przed terminem, w całości lub w części, bez dodatkowych opłat."
+
+  - id: karty-kredytowe-raty-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-raty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Plan spłat można uruchomić dla transakcji, których kwota wynosi co najmniej 300,00 zł, jeżeli od dnia ich dokonania nie upłynęło więcej niż 60 dni. Bank może odmówić uruchomienia planu spłat, jeżeli Klient zalega ze spłatą zadłużenia albo jeżeli limit kredytowy został zablokowany lub obniżony."
+      - ustep: "Kwota rozłożona na raty pomniejsza dostępny limit kredytowy do czasu spłaty poszczególnych rat; w miarę spłat limit jest odnawiany."
+
+  - id: karty-kredytowe-raty-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-raty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed uruchomieniem planu spłat Bank przekazuje Klientowi na trwałym nośniku harmonogram rat, obejmujący liczbę, wysokość i terminy płatności rat, wysokość prowizji, odsetek oraz całkowity koszt planu. Plan zostaje uruchomiony po potwierdzeniu przez Klienta warunków w sposób wskazany przez Bank."
+      - ustep: "Raport przygotowany dla Klienta zawiera także informację o zmianie wysokości minimalnej kwoty do zapłaty, która powstaje w wyniku uruchomienia planu spłat, aby Klient mógł ocenić jego wpływ na budżet domowy."
+      - ustep: "W okresie trwania planu spłat Klient nie traci prawa do okresu bezodsetkowego dla pozostałych transakcji bezgotówkowych, o ile spłaca całość zadłużenia z tytułu tych transakcji w terminie."
+
+  - id: karty-kredytowe-raty-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-raty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} wypowiedzieć plan spłat i postawić w stan natychmiastowej wymagalności pozostałą do spłaty część planu, jeżeli Klient nie zapłaci w terminie dwóch kolejnych rat albo jeżeli wypowiedziano umowę o kartę kredytową. Wypowiedzenie planu spłat jest poprzedzone wezwaniem do zapłaty."
+      - ustep: "Jeżeli rozłożona na raty transakcja zostanie zwrócona przez akceptanta, kwota zwrotu zmniejsza kapitał planu spłat, a harmonogram jest przeliczany. O nowych warunkach spłaty Bank powiadamia Klienta na trwałym nośniku."
+
+  - id: karty-kredytowe-raty-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-raty
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient może także skorzystać z usługi konsolidacji zadłużenia z tytułu karty z kredytem gotówkowym, jeżeli jest to korzystne dla niego ze względu na wysokość oprocentowania. Warunki konsolidacji przedstawia Bank w odrębnej ofercie, po przeprowadzeniu oceny zdolności kredytowej."
+      - ustep: "Decyzję o konsolidacji Klient podejmuje samodzielnie, a Bank nie może uzależnić zawarcia umowy o kartę od jednoczesnego zawarcia umowy konsolidacyjnej."

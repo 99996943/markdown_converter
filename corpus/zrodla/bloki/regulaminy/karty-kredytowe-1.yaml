@@ -1,0 +1,305 @@
+bloki:
+  # ===== Rozdział: Postanowienia ogólne =====
+  - id: karty-kredytowe-zakres
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Regulamin określa {zasady|warunki} wydawania i używania kart kredytowych przez {{param:bank}} oraz {zasady|warunki} udzielania i spłaty kredytu odnawialnego w ramach limitu kredytowego przyznanego Klientowi na rachunku karty."
+      - ustep: "Karta kredytowa jest {instrumentem płatniczym|zindywidualizowanym instrumentem płatniczym} umożliwiającym dokonywanie transakcji do wysokości przyznanego limitu kredytowego. Kwoty transakcji {nie obciążają|nie pomniejszają} środków na rachunku bieżącym Klienta, lecz zwiększają zadłużenie na rachunku karty, które Klient spłaca zgodnie z postanowieniami niniejszego Regulaminu."
+      - ustep: "Regulamin stanowi integralną część umowy o kartę kredytową. W sprawach nieuregulowanych w umowie i Regulaminie stosuje się przepisy następujących aktów prawnych: {{ref:akt:dz-u-2024-1497-kredyt-konsumencki}}, {{ref:akt:dz-u-2024-30-uslugi-platnicze}} oraz {{ref:akt:dz-u-2024-1646-prawo-bankowe}}."
+
+  - id: karty-kredytowe-dokumenty
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Prawa i obowiązki stron wynikają z następujących dokumentów, które Bank {przekazuje|udostępnia} Klientowi przed zawarciem umowy na trwałym nośniku:"
+        punkty:
+          - "umowy o kartę kredytową wraz z załącznikami;"
+          - "formularza informacyjnego dotyczącego kredytu konsumenckiego;"
+          - "niniejszego Regulaminu;"
+          - "taryfy opłat i prowizji, tj. dokumentu: {{ref:dokument:taryfa-karty}} (zwanej dalej „Taryfą”).[^1]"
+      - ustep: "W razie rozbieżności między postanowieniami umowy a Regulaminem {pierwszeństwo mają|rozstrzygające są} postanowienia umowy. Jeżeli umowa nie stanowi inaczej, opłaty i prowizje są pobierane w wysokości określonej w Taryfie obowiązującej w dniu ich naliczenia."
+    przypisy:
+      1: "Taryfa jest dostępna w {placówkach|oddziałach} Banku oraz na stronie {{fakt:bank.strona}}; wysokość opłat za czynności związane z kartą kredytową podano w odrębnych pozycjach Taryfy."
+
+  - id: karty-kredytowe-ogolne-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Karty kredytowe są wydawane {wyłącznie|jedynie} osobom fizycznym posiadającym pełną zdolność do czynności prawnych, które ukończyły 18 lat i mają miejsce zamieszkania lub stałe źródło dochodów na terytorium Rzeczypospolitej Polskiej."
+      - ustep: "Bank {oferuje|udostępnia} karty kredytowe w następujących wariantach:"
+        punkty:
+          - "karta standardowa, z limitem kredytowym od {{fakt:limit.karta.kredytowy-min}};"
+          - "karta z rozszerzonym limitem, przyznawana Klientom o ponadprzeciętnej zdolności kredytowej, z limitem nieprzekraczającym {{fakt:limit.karta.kredytowy-max}};"
+          - "karta dodatkowa wydawana osobie wskazanej przez Posiadacza rachunku karty."
+      - ustep: "Zakres funkcji karty, w tym możliwość dokonywania transakcji zbliżeniowych, internetowych i wypłat gotówki, określa umowa; Klient {może|ma prawo} zmienić ustawienia tych funkcji w {bankowości elektronicznej|serwisie transakcyjnym} lub w {placówce|oddziale} Banku."
+
+  - id: karty-kredytowe-ogolne-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {prowadzi|zakłada} dla każdej karty kredytowej rachunek karty, na którym {ewidencjonuje|rejestruje} transakcje, odsetki, opłaty i prowizje, a także wpłaty dokonywane przez Klienta na poczet spłaty zadłużenia."
+      - ustep: "Rachunek karty jest rachunkiem technicznym służącym wyłącznie do rozliczania zadłużenia z tytułu karty. Środki zgromadzone na rachunku karty ponad wysokość zadłużenia ({nadpłata|saldo dodatnie}) nie są oprocentowane, a Klient może nimi dysponować za pomocą karty lub zażądać ich zwrotu na wskazany rachunek bieżący."
+      - ustep: "Rachunek karty prowadzony jest w złotych polskich. Transakcje w innych walutach są przeliczane zgodnie z postanowieniami rozdziału dotyczącego transakcji."
+
+  - id: karty-kredytowe-ogolne-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest {obowiązany|zobowiązany} do używania karty kredytowej zgodnie z Regulaminem, a w szczególności do:"
+        punkty:
+          - "niezwłocznego podpisania karty, jeżeli na jej odwrocie przewidziano pole na podpis;"
+          - "{nieudostępniania|nieprzekazywania} karty, numeru PIN i innych danych uwierzytelniających osobom nieuprawnionym;"
+          - tekst: "przechowywania karty w sposób {zabezpieczający|chroniący} ją przed utratą, zniszczeniem lub kradzieżą, w tym:"
+            litery:
+              - "nieprzechowywania numeru PIN razem z kartą;"
+              - "niezapisywania numeru PIN na karcie ani na przedmiotach przechowywanych razem z nią;"
+              - "niewpisywania danych karty na stronach, co do których {zachodzi podejrzenie|istnieje podejrzenie}, że służą wyłudzeniu danych."
+      - ustep: "Karta jest własnością Banku. Klient jest obowiązany zwrócić kartę na żądanie Banku lub zniszczyć ją w sposób uniemożliwiający odczytanie danych, jeżeli umowa wygasła albo została rozwiązana."
+
+  - id: karty-kredytowe-ogolne-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-ogolne
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {zapewnia|gwarantuje} Klientowi stały dostęp do informacji o saldzie zadłużenia, dostępnym limicie, terminie spłaty i historii transakcji za pośrednictwem bankowości elektronicznej oraz {infolinii|telefonicznego centrum obsługi} pod numerem {{fakt:kontakt.infolinia}}."
+      - ustep: "Przed zawarciem umowy Bank przekazuje Klientowi informacje o całkowitym koszcie kredytu, rzeczywistej rocznej stopie oprocentowania (RRSO) oraz całkowitej kwocie do zapłaty, obliczone dla reprezentatywnego przykładu. Reprezentatywna wartość RRSO wynosi {{fakt:rrso.karta.przyklad}} i została wyliczona przy założeniach określonych w formularzu informacyjnym."
+      - ustep: "Bank {informuje|powiadamia} Klienta o istotnych zmianach dotyczących karty, w tym o wygaśnięciu jej ważności, na trwałym nośniku, z zachowaniem terminów określonych w Regulaminie."
+
+  # ===== Rozdział: Umowa o kartę kredytową i limit kredytowy =====
+  - id: karty-kredytowe-umowa
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Umowa o kartę kredytową jest zawierana na czas nieoznaczony, w formie pisemnej lub — za zgodą Klienta — w postaci elektronicznej, za pośrednictwem bankowości elektronicznej. Umowa zostaje zawarta z chwilą jej podpisania przez obie strony."
+      - ustep: "Przed zawarciem umowy Klient jest obowiązany złożyć wniosek, do którego dołącza:"
+        punkty:
+          - "dokument tożsamości;"
+          - "dokumenty potwierdzające źródło i wysokość dochodów;"
+          - tekst: "oświadczenia dotyczące zobowiązań finansowych, w tym:"
+            litery:
+              - "kredytów i pożyczek zaciągniętych w Banku i w innych instytucjach;"
+              - "poręczeń i gwarancji udzielonych osobom trzecim;"
+              - "zobowiązań alimentacyjnych i innych zobowiązań wynikających z orzeczeń.[^1]"
+      - ustep: "Bank rozpatruje wniosek w terminie {{fakt:termin.karta.rozpatrzenie-wniosku}} od dnia złożenia kompletu dokumentów. Termin ten może zostać wydłużony, jeżeli {konieczne jest|zachodzi potrzeba} uzupełnienia informacji lub weryfikacji danych w rejestrach."
+    przypisy:
+      1: "Oświadczenia składa się na formularzu udostępnionym przez Bank; {niepodanie|zatajenie} prawdziwych informacji może skutkować odmową zawarcia umowy lub jej wypowiedzeniem."
+
+  - id: karty-kredytowe-limit
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Limit kredytowy jest {maksymalną kwotą|najwyższą kwotą} zadłużenia, do której Klient może korzystać z karty. Wysokość limitu ustala się indywidualnie na podstawie oceny zdolności kredytowej; limit nie może być niższy niż {{fakt:limit.karta.kredytowy-min}} ani wyższy niż {{fakt:limit.karta.kredytowy-max}}."
+      - ustep: "Dostępny limit jest pomniejszany o kwoty zrealizowanych transakcji, o kwoty transakcji zablokowanych oraz o naliczone odsetki, opłaty i prowizje. Spłata zadłużenia {odnawia|przywraca} limit w wysokości dokonanej spłaty kapitału."
+      - ustep: "Jeżeli transakcje, opłaty lub odsetki spowodują przekroczenie limitu kredytowego, Bank {może|ma prawo} pobrać opłatę w wysokości {{fakt:oplata.karta.przekroczenie-limitu}}, a Klient jest obowiązany spłacić kwotę przekroczenia niezwłocznie, nie później niż w terminie spłaty wskazanym w najbliższym zestawieniu transakcji."
+
+  - id: karty-kredytowe-umowa-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {ma prawo|może} zwiększyć lub zmniejszyć limit kredytowy, składając odpowiednią dyspozycję w {bankowości elektronicznej|placówce Banku|serwisie transakcyjnym}. Zwiększenie limitu wymaga ponownej oceny zdolności kredytowej i zgody Banku."
+      - ustep: "Zmniejszenie limitu następuje w terminie {{fakt:termin.karta.rozpatrzenie-wniosku}} od dnia złożenia dyspozycji, o ile zadłużenie Klienta na rachunku karty nie przekracza nowej wysokości limitu. W przeciwnym razie Klient jest obowiązany spłacić kwotę przekroczenia."
+      - ustep: "Bank może zaproponować Klientowi zwiększenie limitu z własnej inicjatywy. Propozycja taka nie stanowi oferty w rozumieniu przepisów Kodeksu cywilnego i nie wiąże Banku, a zwiększenie limitu następuje wyłącznie za zgodą Klienta wyrażoną na trwałym nośniku."
+
+  - id: karty-kredytowe-umowa-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {może|ma prawo} obniżyć albo zablokować limit kredytowy w całości lub w części, jeżeli:"
+        punkty:
+          - "nastąpiło istotne pogorszenie zdolności kredytowej Klienta, w szczególności w razie utraty dochodów lub zaległości wobec innych wierzycieli;"
+          - "Klient dopuścił się opóźnienia w spłacie zadłużenia przekraczającego termin wskazany w Regulaminie;"
+          - "zachodzi uzasadnione podejrzenie nieuprawnionego użycia karty lub wyłudzenia kredytu."
+      - ustep: "O obniżeniu lub zablokowaniu limitu Bank {informuje|powiadamia} Klienta niezwłocznie, nie później niż w dniu jego obniżenia lub zablokowania, podając przyczynę. Jeżeli powiadomienie przed obniżeniem limitu nie jest możliwe ze względów bezpieczeństwa, Bank informuje o tym fakcie bezpośrednio po jego zaistnieniu."
+      - ustep: "Po ustaniu przyczyn, które spowodowały obniżenie lub zablokowanie limitu, Bank na wniosek Klienta {przywraca|odtwarza} dotychczasową wysokość limitu, o ile wynik oceny zdolności kredytowej jest pozytywny."
+
+  - id: karty-kredytowe-umowa-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Za wydanie i obsługę karty kredytowej Bank pobiera roczną opłatę w wysokości {{fakt:oplata.karta.roczna}}, naliczaną z góry za każdy kolejny rok używania karty. Opłata jest obciążana na rachunku karty w {pierwszym|najbliższym} cyklu rozliczeniowym po wydaniu karty oraz w rocznicę jej wydania."
+      - ustep: "Pozostałe opłaty i prowizje związane z kartą, w tym prowizję od wypłat gotówki, opłatę za wydanie duplikatu karty oraz opłaty za usługi dodatkowe, określa Taryfa. Bank nie pobiera opłat, które nie zostały wskazane w umowie lub w Taryfie."
+      - ustep: "Zwrot proporcjonalnej części rocznej opłaty za kartę {przysługuje|jest dokonywany} w razie wypowiedzenia umowy przez Klienta w terminie wynikającym z przepisów o odstąpieniu od umowy o kredyt konsumencki, a w pozostałych przypadkach — wyłącznie jeżeli przewiduje to umowa."
+
+  - id: karty-kredytowe-umowa-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient {ma prawo|może} odstąpić od umowy o kartę kredytową bez podania przyczyny w terminie {{fakt:termin.odstapienie-od-umowy}} od dnia jej zawarcia lub od dnia otrzymania postanowień umowy i informacji wymaganych przez przepisy, jeżeli ten dzień jest późniejszy."
+      - ustep: "Oświadczenie o odstąpieniu składa się na piśmie albo na innym trwałym nośniku. Dla zachowania terminu wystarczy wysłanie oświadczenia przed jego upływem."
+      - ustep: "W razie odstąpienia od umowy Klient jest obowiązany zwrócić Bankowi wykorzystany kapitał wraz z odsetkami naliczonymi od dnia skorzystania z limitu do dnia spłaty, nie później niż w terminie 30 dni od dnia wysłania oświadczenia o odstąpieniu. Bank nie może żądać innych opłat niż opłaty urzędowe poniesione w związku z umową."
+
+  - id: karty-kredytowe-umowa-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-umowa
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Klient jest obowiązany {niezwłocznie|bez zbędnej zwłoki} powiadomić Bank o każdej zmianie danych podanych we wniosku, w szczególności:"
+        punkty:
+          - "nazwiska, adresu zamieszkania i adresu korespondencyjnego;"
+          - "numeru telefonu i adresu poczty elektronicznej, które służą do kontaktu i do przesyłania kodów autoryzacyjnych;"
+          - "zmianie pracodawcy, źródła dochodów lub utracie dochodów."
+      - ustep: "Skutki braku powiadomienia o zmianie danych, w tym nieotrzymanie korespondencji i zestawień transakcji, ponosi Klient. Korespondencję wysłaną na ostatni wskazany Bankowi adres uważa się za doręczoną zgodnie z postanowieniami o doręczeniach."
+
+  # ===== Rozdział: Badanie zdolności kredytowej =====
+  - id: karty-kredytowe-zdolnosc
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przed zawarciem umowy o kartę kredytową oraz przed każdym zwiększeniem limitu Bank dokonuje {rzetelnej|wnikliwej} oceny zdolności kredytowej Klienta, opierając się na informacjach uzyskanych od Klienta oraz — w niezbędnym zakresie — na danych pochodzących z baz danych, w tym z biura informacji kredytowej i biur informacji gospodarczej.[^1]"
+      - ustep: "Ocena zdolności kredytowej uwzględnia w szczególności:"
+        punkty:
+          - "wysokość, stabilność i źródło dochodów Klienta;"
+          - "wysokość dotychczasowych zobowiązań i miesięcznych obciążeń z ich tytułu, w tym limitów kredytowych przyznanych w innych instytucjach, niezależnie od stopnia ich wykorzystania;"
+          - "liczbę osób pozostających na utrzymaniu Klienta;"
+          - "historię terminowości spłat dotychczasowych zobowiązań."
+      - ustep: "Bank nie udziela kredytu, jeżeli wynik oceny zdolności kredytowej jest negatywny. O odmowie zawarcia umowy Bank informuje Klienta niezwłocznie i nieodpłatnie, a jeżeli odmowa wynika z wyniku zapytania do bazy danych — wskazuje tę bazę i przekazuje dane, na których oparto ocenę."
+    przypisy:
+      1: "Dostęp do danych z baz danych następuje na zasadach określonych w przepisach aktu prawnego: {{ref:akt:dz-u-2024-1646-prawo-bankowe}}; Klient jest informowany o przetwarzaniu jego danych w klauzuli informacyjnej."
+
+  - id: karty-kredytowe-zdolnosc-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Dochody Klienta uwzględnia się w ocenie zdolności kredytowej w wysokości {netto|uzyskiwanej po odliczeniu podatków i składek}, po zweryfikowaniu ich w sposób wskazany w umowie. W zależności od źródła dochodów Bank {może żądać|wymaga} następujących dokumentów:"
+        punkty:
+          - "w przypadku umowy o pracę — zaświadczenia od pracodawcy lub wyciągu z rachunku, na który wpływa wynagrodzenie;"
+          - "w przypadku działalności gospodarczej — dokumentów potwierdzających wysokość przychodów i rozliczenia z organami podatkowymi;"
+          - "w przypadku emerytury lub renty — decyzji organu rentowego lub odcinka świadczenia."
+      - ustep: "Dochody uzyskiwane w walucie obcej oraz dochody o nieregularnym charakterze są uwzględniane w zmniejszonej wysokości, zgodnie z zasadami przyjętymi przez {{fakt:jednostka.ryzyko}}."
+
+  - id: karty-kredytowe-zdolnosc-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Przy ocenie zdolności kredytowej Bank przyjmuje, że każda przyznana Klientowi karta kredytowa generuje zobowiązanie w wysokości określonego odsetka przyznanego limitu, niezależnie od tego, czy Klient faktycznie z limitu korzysta. Zasada ta dotyczy także limitów przyznanych przez inne banki."
+      - ustep: "Bank {stosuje|uwzględnia} bufor bezpieczeństwa na wypadek wzrostu stóp procentowych, aby zapewnić, że Klient będzie w stanie obsługiwać zadłużenie również w sytuacji wzrostu raty. Parametry bufora określa wewnętrzna polityka kredytowa Banku."
+      - ustep: "Na wniosek Klienta Bank {wyjaśnia|przedstawia} w sposób zrozumiały, jakie czynniki wpłynęły na ocenę jego zdolności kredytowej, w zakresie, w jakim nie narusza to tajemnicy bankowej ani praw osób trzecich."
+
+  - id: karty-kredytowe-zdolnosc-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli decyzja o udzieleniu kredytu została podjęta w sposób zautomatyzowany, w tym na podstawie profilowania, Klient {ma prawo|może} żądać interwencji pracownika Banku, wyrażenia własnego stanowiska oraz zakwestionowania decyzji."
+      - ustep: "Wniosek o ponowne rozpatrzenie decyzji Klient składa w {placówce|oddziale} Banku, na infolinii {{fakt:kontakt.infolinia}} lub za pośrednictwem bankowości elektronicznej. Bank rozpatruje go w terminie {{fakt:termin.karta.rozpatrzenie-wniosku}} od dnia jego otrzymania."
+      - ustep: "Ponowne rozpatrzenie wniosku nie zwalnia Klienta z obowiązku dostarczenia dokumentów niezbędnych do oceny zdolności kredytowej."
+
+  - id: karty-kredytowe-zdolnosc-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-zdolnosc
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank {okresowo|cyklicznie} dokonuje ponownej oceny zdolności kredytowej Klienta w trakcie trwania umowy, w szczególności w razie wystąpienia zdarzeń wskazujących na ryzyko niewypłacalności, takich jak zaległości w spłacie, zajęcie wynagrodzenia lub rachunku bankowego albo wzrost zadłużenia Klienta w innych instytucjach."
+      - ustep: "Wyniki ponownej oceny mogą stanowić podstawę obniżenia limitu kredytowego, zgodnie z postanowieniami dotyczącymi limitu. Klient jest o tym informowany z zachowaniem zasad przewidzianych w Regulaminie."
+      - ustep: "Klient wyraża zgodę na przekazywanie przez Bank informacji o jego zobowiązaniach z tytułu karty do biura informacji kredytowej na zasadach wynikających z przepisów prawa bankowego."
+
+  # ===== Rozdział: Wydanie karty i karty dodatkowe =====
+  - id: karty-kredytowe-wydanie
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wydaje kartę w terminie {{fakt:termin.karta.wydanie}} od dnia zawarcia umowy i przekazuje ją Klientowi listem poleconym lub kurierem na adres wskazany we wniosku albo, na życzenie Klienta, w {placówce|oddziale} Banku. Karta jest wydawana w stanie nieaktywnym."
+      - ustep: "Aktywacja karty następuje po jej otrzymaniu, w jeden z poniższych sposobów:"
+        punkty:
+          - "w bankowości elektronicznej, po uwierzytelnieniu;"
+          - "telefonicznie, na infolinii {{fakt:kontakt.infolinia}}, po weryfikacji tożsamości Klienta;"
+          - "poprzez dokonanie pierwszej transakcji z użyciem numeru PIN."
+      - ustep: "Numer PIN Klient ustala samodzielnie w bankowości elektronicznej albo otrzymuje go w odrębnej przesyłce. Karta jest ważna do ostatniego dnia miesiąca wskazanego na jej awersie; okres ważności karty wynosi {{fakt:karta.waznosc}}."
+
+  - id: karty-kredytowe-dodatkowe
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: wymagany-karty-kredytowe
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Na wniosek Posiadacza rachunku karty Bank może wydać kartę dodatkową osobie fizycznej o pełnej zdolności do czynności prawnych wskazanej przez Posiadacza (użytkownik karty dodatkowej). Karta dodatkowa korzysta z tego samego limitu kredytowego co karta główna."
+      - ustep: "Posiadacz rachunku karty {odpowiada|ponosi odpowiedzialność} wobec Banku za wszystkie transakcje dokonane kartą dodatkową oraz za opłaty i prowizje z nią związane, w tym za roczną opłatę w wysokości {{fakt:oplata.karta.dodatkowa-roczna}}."
+      - ustep: "Posiadacz rachunku karty {może|ma prawo} w każdej chwili zrezygnować z karty dodatkowej, składając dyspozycję w {placówce|bankowości elektronicznej}. Użytkownik karty dodatkowej jest uprawniony do dokonywania transakcji, nie może jednak dysponować rachunkiem karty w zakresie zmiany limitu ani wypowiadać umowy."
+
+  - id: karty-kredytowe-wydanie-1
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Jeżeli Klient nie otrzyma karty w terminie {{fakt:termin.karta.wydanie}} od dnia zawarcia umowy, jest obowiązany niezwłocznie poinformować o tym Bank. Bank {sprawdza|wyjaśnia} okoliczności doręczenia i — w razie potrzeby — unieważnia przesyłkę oraz wydaje kartę ponownie, bez dodatkowych opłat."
+      - ustep: "Przesyłkę z kartą Klient odbiera osobiście. Jeżeli opakowanie jest uszkodzone lub nosi ślady naruszenia, Klient {powinien|jest obowiązany} odmówić przyjęcia przesyłki i niezwłocznie powiadomić Bank, a karta zostanie zastrzeżona."
+
+  - id: karty-kredytowe-wydanie-2
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Bank wznawia kartę na kolejny okres ważności automatycznie, o ile Klient spełnia łącznie następujące warunki:"
+        punkty:
+          - "w okresie poprzedzającym wznowienie karty nie występowały zaległości w spłacie zadłużenia;"
+          - "Klient dokonywał transakcji kartą w okresie ostatnich {{fakt:karta.bezczynnosc}};"
+          - "Klient nie złożył dyspozycji rezygnacji z wznowienia karty."
+      - ustep: "Jeżeli Bank nie zamierza wznowić karty, informuje o tym Klienta co najmniej {{fakt:termin.karta.niewznowienie}} przed upływem terminu ważności karty. Klient może zrezygnować z wznowienia karty najpóźniej na 30 dni przed upływem jej ważności."
+      - ustep: "Wznowiona karta jest przekazywana w sposób określony w przepisach niniejszego rozdziału. Dotychczasową kartę, której ważność upłynęła, Klient niszczy w sposób uniemożliwiający odczytanie danych."
+
+  - id: karty-kredytowe-wydanie-3
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "W razie zniszczenia, uszkodzenia lub utraty karty Bank wydaje, na wniosek Klienta, duplikat karty z nowym numerem. Wydanie duplikatu {podlega|wiąże się z} opłacie w wysokości {{fakt:oplata.karta.wydanie-duplikatu}}, chyba że zniszczenie karty nastąpiło z przyczyn niezależnych od Klienta."
+      - ustep: "Jeżeli Klient znajduje się za granicą i utracił kartę, Bank może — na jego wniosek — zorganizować awaryjną wypłatę gotówki albo awaryjne wydanie karty zastępczej. Za czynności te Bank pobiera opłatę w wysokości {{fakt:oplata.karta.pilna-wymiana}}."
+      - ustep: "Po otrzymaniu duplikatu karty dotychczasowa karta, która została odnaleziona, nie może być używana; Klient jest obowiązany ją zniszczyć albo zwrócić Bankowi."
+
+  - id: karty-kredytowe-wydanie-4
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Numer PIN ma charakter poufny. Klient {nie może|nie powinien} go zapisywać w sposób umożliwiający odczytanie przez inne osoby ani ujawniać go pracownikom Banku, członkom rodziny ani osobom trzecim. Pracownik Banku nigdy nie żąda podania numeru PIN, hasła do bankowości elektronicznej ani pełnych danych karty."
+      - ustep: "Zablokowanie numeru PIN następuje po trzykrotnym wprowadzeniu błędnej wartości. Odblokowanie wymaga kontaktu z infolinią {{fakt:kontakt.infolinia}} i potwierdzenia tożsamości Klienta albo wydania nowej karty."
+      - ustep: "Klient {może|ma prawo} w każdej chwili zmienić numer PIN w bankowości elektronicznej oraz w wybranych bankomatach Banku."
+
+  - id: karty-kredytowe-wydanie-5
+    typy: [regulaminy]
+    tematy: [karty-kredytowe]
+    kategoria: paragraf-karty-wydanie
+    jednostka: "§ {n}."
+    elementy:
+      - ustep: "Użytkownik karty dodatkowej otrzymuje własny numer PIN oraz własne dane do uwierzytelniania transakcji internetowych. Posiadacz rachunku karty zapoznaje użytkownika z treścią Regulaminu i jest odpowiedzialny za przestrzeganie przez niego postanowień Regulaminu."
+      - ustep: "Bank może udostępniać Posiadaczowi rachunku karty informacje o transakcjach dokonanych kartą dodatkową, a użytkownikowi karty dodatkowej — wyłącznie informacje o transakcjach dokonanych jego kartą."
+      - ustep: "Zastrzeżenie, blokada lub rezygnacja z karty głównej powoduje zastrzeżenie, zablokowanie lub rezygnację także ze wszystkich kart dodatkowych."

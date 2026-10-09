@@ -1,0 +1,166 @@
+fakty:
+  - id: oprocentowanie.karta.zakupy
+    rodzaj: procent
+    wartosci:
+      - wartosc: 19.9
+      - od: 2027-01-01
+        wartosc: 18.9
+    alternatywy: [24.0, 17.5]
+  - id: oprocentowanie.karta.gotowka
+    rodzaj: procent
+    wartosci:
+      - wartosc: 23.9
+      - od: 2026-04-01
+        wartosc: 24.9
+    alternatywy: [28.0]
+  - id: oprocentowanie.karta.rata
+    rodzaj: procent
+    wartosci:
+      - wartosc: 12.9
+    alternatywy: [15.9, 9.9]
+  - id: rrso.karta.przyklad
+    rodzaj: procent
+    wartosci:
+      - wartosc: 26.4
+      - od: 2027-01-01
+        wartosc: 25.1
+    alternatywy: [31.2]
+  - id: termin.karta.okres-bezodsetkowy
+    rodzaj: termin
+    wartosci:
+      - wartosc: 50
+      - od: 2027-01-01
+        wartosc: 45
+    alternatywy: [56, 40]
+  - id: termin.karta.splata-po-zestawieniu
+    rodzaj: termin
+    wartosci:
+      - wartosc: 20
+    alternatywy: [14, 25]
+  - id: termin.karta.dostarczenie-zestawienia
+    rodzaj: termin
+    wartosci:
+      - wartosc: 5
+    alternatywy: [7]
+  - id: splata.karta.minimum-procent
+    rodzaj: procent
+    wartosci:
+      - wartosc: 5.0
+      - od: 2027-01-01
+        wartosc: 4.0
+    alternatywy: [3.0, 10.0]
+  - id: splata.karta.minimum-kwota
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 50.00
+    alternatywy: [30.00, 100.00]
+  - id: oplata.karta.roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 99.00
+      - od: 2027-01-01
+        wartosc: 119.00
+    alternatywy: [0.00, 149.00]
+  - id: oplata.karta.dodatkowa-roczna
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 49.00
+      - od: 2027-01-01
+        wartosc: 59.00
+    alternatywy: [0.00]
+  - id: oplata.karta.gotowka-prowizja
+    rodzaj: procent
+    wartosci:
+      - wartosc: 4.0
+      - od: 2026-04-01
+        wartosc: 4.5
+    alternatywy: [3.0]
+  - id: oplata.karta.gotowka-minimum
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10.00
+    alternatywy: [5.00, 15.00]
+  - id: oplata.karta.przekroczenie-limitu
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 35.00
+    alternatywy: [50.00, 0.00]
+  - id: oplata.karta.prowizja-rata
+    rodzaj: procent
+    wartosci:
+      - wartosc: 3.0
+    alternatywy: [0.0, 5.0]
+  - id: oplata.karta.pilna-wymiana
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 150.00
+    alternatywy: [100.00, 250.00]
+  - id: limit.karta.kredytowy-min
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 1000.00
+    alternatywy: [500.00, 2000.00]
+  - id: limit.karta.kredytowy-max
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 60000.00
+      - od: 2027-01-01
+        wartosc: 80000.00
+    alternatywy: [50000.00]
+  - id: limit.karta.dzienny-internet
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 10000.00
+    alternatywy: [5000.00, 20000.00]
+  - id: limit.karta.bez-pin
+    rodzaj: kwota
+    wartosci:
+      - wartosc: 100.00
+      - od: 2027-01-01
+        wartosc: 150.00
+    alternatywy: [50.00, 200.00]
+  - id: termin.karta.rozpatrzenie-wniosku
+    rodzaj: termin
+    wartosci:
+      - wartosc: 10
+    alternatywy: [14, 30]
+  - id: termin.karta.wydanie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 7
+    alternatywy: [14, 3]
+  - id: termin.karta.wezwanie-do-zaplaty
+    rodzaj: termin
+    wartosci:
+      - wartosc: 14
+    alternatywy: [7, 30]
+  - id: termin.karta.niewznowienie
+    rodzaj: termin
+    wartosci:
+      - wartosc: 45
+    alternatywy: [30]
+  - id: karta.waznosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "4 lata"
+    alternatywy: ["3 lata", "5 lat"]
+  - id: karta.odpowiedzialnosc-limit
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "równowartość 50 euro"
+    alternatywy: ["równowartość 150 euro"]
+  - id: karta.zgloszenie-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "13 miesięcy"
+    alternatywy: ["6 miesięcy"]
+  - id: karta.zwrot-nieautoryzowanej
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "do końca następnego dnia roboczego"
+    alternatywy: ["w ciągu 3 dni roboczych"]
+  - id: karta.bezczynnosc
+    rodzaj: tekst
+    wartosci:
+      - wartosc: "12 miesięcy"
+    alternatywy: ["6 miesięcy", "24 miesiące"]
