@@ -186,8 +186,36 @@ public static class ContentLoader
                 var pattern = m.ReqStr("oznaczenie");
                 var name = m.ReqStr("nazwa");
                 var required = m.Opt("wymagane-elementy") is { } r ? src.StrList(r, m.P("wymagane-elementy")) : [];
+                var minLayouts = new Dictionary<string, int>(StringComparer.Ordinal);
+                if (m.Opt("uklady-min") is { } minNode)
+                {
+                    var minPath = m.P("uklady-min");
+                    if (minNode is not YamlMappingNode minMap)
+                    {
+                        throw src.Fail(minPath, "Expected a mapping of layout id to a minimum count.", minNode);
+                    }
+
+                    foreach (var (k, v) in minMap.Children)
+                    {
+                        var layout = src.Scalar(k, minPath);
+                        var layoutPath = minPath + "." + layout;
+                        if (!Layouts.Contains(layout))
+                        {
+                            throw src.Fail(layoutPath, $"Unknown layout style '{layout}'.", k);
+                        }
+
+                        var count = src.Int(v, layoutPath);
+                        if (count < 1)
+                        {
+                            throw src.Fail(layoutPath, $"The minimum count for layout '{layout}' must be at least 1.", v);
+                        }
+
+                        minLayouts[layout] = count;
+                    }
+                }
+
                 m.Finish();
-                list.Add(new DocumentTypeDef(id, prefix, pattern, name, required));
+                list.Add(new DocumentTypeDef(id, prefix, pattern, name, required) { MinLayouts = minLayouts });
             }
 
             root.Finish();
