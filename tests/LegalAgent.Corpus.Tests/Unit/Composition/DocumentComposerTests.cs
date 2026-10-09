@@ -99,6 +99,7 @@ public sealed class DocumentComposerTests
               - akapit: "Reklamacje regulują {{ref:blok:test-reklamacje}} oraz {{ref:zalacznik:test-zalacznik}}; opłaty – {{ref:dokument:taryfa-test}}.[^1]"
               - akapit: "Zobacz też {{ref:blok:test-nieobecny}}."
               - akapit: "Niniejszy dokument to {{ref:dokument:regulamin-test}}."
+              - akapit: "Obowiązuje od {{param:od}}. Wydał {{param:bank}}."
             przypisy:
               1: "Drugi przypis dokumentu."
           - id: test-zalacznik
