@@ -110,98 +110,54 @@ Opłata za prowadzenie karty nie jest pobierana w miesiącu, w którym łączna 
 | 67. | Wydanie karty zastępczej w razie wady produkcyjnej | jednorazowo | bez opłat |
 | 68. | Wydanie karty zastępczej w razie uszkodzenia paska lub układu zbliżeniowego | jednorazowo | 25,00 zł |
 | 69. | Zaświadczenie o posiadaniu karty i jej limitach | za dokument | 20,00 zł |
-| 1) Opłata nie jest pobierana w miesiącu, w którym spełniono warunek wskazany we wstępie do niniejszej sekcji; jest |  |  |  |
-| naliczana w ostatnim dniu miesiąca kalendarzowego. |  |  |  |
-| 2) Karta w trybie pilnym jest przygotowywana w ciągu 3 dni roboczych i doręczana kurierem; opłatę za przesyłkę |  |  |  |
-| kurierską podano w sekcji o usługach dodatkowych. |  |  |  |
-| 3) Usługa jest dostępna przy płatności w punktach handlowych, które ją oferują; wypłata nie może przekraczać kwoty |  |  |  |
-| 200,00 zł jednorazowo. |  |  |  |
-| **III. Karty kredytowe** |  |  |  |
-| Karta kredytowa umożliwia wykonywanie transakcji do wysokości przyznanego limitu kredytowego, |  |  |  |
-| który wynosi od 1 000,00 zł do 60 000,00 zł. Wysokość limitu określa Bank na podstawie oceny |  |  |  |
-| zdolności kredytowej wnioskodawcy. |  |  |  |
-| Poniższe opłaty i prowizje są niezależne od odsetek od wykorzystanego limitu. Oprocentowanie |  |  |  |
-| wynosi 19,9% w stosunku rocznym dla transakcji bezgotówkowych oraz 23,9% dla wypłat gotówki; |  |  |  |
-| kredyt na zakupy rozłożone na raty jest oprocentowany stawką 12,9%. |  |  |  |
+
+<!-- page: 6 -->
+- 1\) Opłata nie jest pobierana w miesiącu, w którym spełniono warunek wskazany we wstępie do niniejszej sekcji; jest
+
+naliczana w ostatnim dniu miesiąca kalendarzowego.
+
+- 2\) Karta w trybie pilnym jest przygotowywana w ciągu 3 dni roboczych i doręczana kurierem; opłatę za przesyłkę
+
+kurierską podano w sekcji o usługach dodatkowych.
+
+- 3\) Usługa jest dostępna przy płatności w punktach handlowych, które ją oferują; wypłata nie może przekraczać kwoty
+
+200,00 zł jednorazowo.
+
+## III. Karty kredytowe
+
+Karta kredytowa umożliwia wykonywanie transakcji do wysokości przyznanego limitu kredytowego, który wynosi od 1 000,00 zł do 60 000,00 zł. Wysokość limitu określa Bank na podstawie oceny zdolności kredytowej wnioskodawcy.
+
+Poniższe opłaty i prowizje są niezależne od odsetek od wykorzystanego limitu. Oprocentowanie wynosi 19,9% w stosunku rocznym dla transakcji bezgotówkowych oraz 23,9% dla wypłat gotówki; kredyt na zakupy rozłożone na raty jest oprocentowany stawką 12,9%.
+
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
 | 70. | Wydanie karty kredytowej | jednorazowo | 0,00 zł |
 | 71. | Roczna opłata za kartę kredytową 1) | rocznie | 99,00 zł |
 | 72. | Roczna opłata za dodatkową kartę kredytową | rocznie | 49,00 zł |
 | 73. | Wydanie duplikatu karty kredytowej | jednorazowo | 25,00 zł |
 | 74. | Pilna wymiana karty kredytowej 2) | jednorazowo | 150,00 zł |
-
-<!-- page: 7 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-75\. \| Zastrzeżenie karty kredytowej \| jednorazowo \| 0,00 zł
-
-76\. \| Wypłata gotówki z karty kredytowej w bankomacie \| od kwoty wypłaty \| 4%, min. 10,00 zł
-
-lub w placówce
-
-77\. \| Przelew z karty kredytowej na rachunek \| od kwoty przelewu \| 3,5%
-
-78\. \| Zakupy ratalne z karty kredytowej: prowizja \| od kwoty transakcji \| 3%
-
-przygotowawcza
-
-79\. \| Przekroczenie przyznanego limitu kredytowego \| za każde \| 35,00 zł
-
-przekroczenie
-
-80\. \| Zwiększenie limitu kredytowego na wniosek klienta \| jednorazowo \| 0,00 zł
-
-81\. \| Zmiana terminu spłaty zadłużenia na karcie \| za każdą zmianę \| 10,00 zł
-
-82\. \| Upomnienie w związku z opóźnieniem w spłacie \| za każde \| 15,00 zł
-
-minimalnej kwoty \| upomnienie
-
-83\. \| Restrukturyzacja zadłużenia na karcie na wniosek \| jednorazowo \| 50,00 zł
-
-klienta
-
-84\. \| Papierowe zestawienie transakcji doręczane pocztą \| za zestawienie \| 10,00 zł
-
-85\. \| Elektroniczne zestawienie transakcji w bankowości \| za zestawienie \| bez opłat
-
-elektronicznej
-
-86\. \| Spłata zadłużenia na karcie w placówce Banku \| za wpłatę \| 3,00 zł
-
-87\. \| Spłata zadłużenia przelewem z rachunku w Banku \| za operację \| bez opłat
-
-88\. \| Karta kredytowa w pakiecie premium: roczna \| rocznie \| 99,00 zł
-
-opłata za kartę
-
-88\.1. \| w pierwszym roku użytkowania \| rocznie \| bez opłat
-
-88\.2. \| w kolejnych latach \| rocznie \| 99,00 zł
-
-89\. \| Wypłata gotówki z karty kredytowej w bankomacie \| od kwoty wypłaty \| 4%, min. 10,00 zł
-
-Banku
-
-90\. \| Wypłata gotówki z karty kredytowej w bankomacie \| od kwoty wypłaty \| 4%, min. 10,00 zł
-
-innego operatora
-
-91\. \| Transakcja kartą kredytową w kasynie lub \| od kwoty transakcji \| 4%, min. 10,00 zł
-
-u organizatora zakładów wzajemnych
-
-92\. \| Doładowanie karty przedpłaconej lub portfela \| od kwoty transakcji \| 4%, min. 10,00 zł
-
-elektronicznego kartą kredytową
-
-93\. \| Zakup walut lub czeków podróżnych kartą \| od kwoty transakcji \| 4%, min. 10,00 zł
-
-kredytową
-
-<!-- page: 8 -->
-| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
-| --- | --- | --- | --- |
+| 75. | Zastrzeżenie karty kredytowej | jednorazowo | 0,00 zł |
+| 76. | Wypłata gotówki z karty kredytowej w bankomacie lub w placówce | od kwoty wypłaty | 4%, min. 10,00 zł |
+| 77. | Przelew z karty kredytowej na rachunek | od kwoty przelewu | 3,5% |
+| 78. | Zakupy ratalne z karty kredytowej: prowizja przygotowawcza | od kwoty transakcji | 3% |
+| 79. | Przekroczenie przyznanego limitu kredytowego | za każde przekroczenie | 35,00 zł |
+| 80. | Zwiększenie limitu kredytowego na wniosek klienta | jednorazowo | 0,00 zł |
+| 81. | Zmiana terminu spłaty zadłużenia na karcie | za każdą zmianę | 10,00 zł |
+| 82. | Upomnienie w związku z opóźnieniem w spłacie minimalnej kwoty | za każde upomnienie | 15,00 zł |
+| 83. | Restrukturyzacja zadłużenia na karcie na wniosek klienta | jednorazowo | 50,00 zł |
+| 84. | Papierowe zestawienie transakcji doręczane pocztą | za zestawienie | 10,00 zł |
+| 85. | Elektroniczne zestawienie transakcji w bankowości elektronicznej | za zestawienie | bez opłat |
+| 86. | Spłata zadłużenia na karcie w placówce Banku | za wpłatę | 3,00 zł |
+| 87. | Spłata zadłużenia przelewem z rachunku w Banku | za operację | bez opłat |
+| 88. | Karta kredytowa w pakiecie premium: roczna opłata za kartę | rocznie | 99,00 zł |
+| 88.1. | w pierwszym roku użytkowania | rocznie | bez opłat |
+| 88.2. | w kolejnych latach | rocznie | 99,00 zł |
+| 89. | Wypłata gotówki z karty kredytowej w bankomacie Banku | od kwoty wypłaty | 4%, min. 10,00 zł |
+| 90. | Wypłata gotówki z karty kredytowej w bankomacie innego operatora | od kwoty wypłaty | 4%, min. 10,00 zł |
+| 91. | Transakcja kartą kredytową w kasynie lub u organizatora zakładów wzajemnych | od kwoty transakcji | 4%, min. 10,00 zł |
+| 92. | Doładowanie karty przedpłaconej lub portfela elektronicznego kartą kredytową | od kwoty transakcji | 4%, min. 10,00 zł |
+| 93. | Zakup walut lub czeków podróżnych kartą kredytową | od kwoty transakcji | 4%, min. 10,00 zł |
 | 94. | Płatność kartą kredytową za rachunki i opłaty publiczne | za transakcję | bez opłat |
 | 95. | Płatność kartą kredytową w sklepach internetowych | za transakcję | bez opłat |
 | 96. | Płatność zbliżeniowa do kwoty 100,00 zł bez PIN | za transakcję | bez opłat |
@@ -221,101 +177,50 @@ kredytową
 | 110. | Zmiana rodzaju karty kredytowej na kartę o niższym limicie | jednorazowo | bez opłat |
 | 111. | Przeniesienie zadłużenia z karty innego wydawcy | od kwoty przeniesienia | 1,5% min. 25,00 zł |
 | 112. | Zmiana adresu korespondencyjnego dla zestawień | za zmianę | bez opłat |
-
-<!-- page: 9 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-113\. \| Zmiana sposobu doręczania zestawień (papierowo \| za zmianę \| bez opłat
-
-lub elektronicznie)
-
-114\. \| Dodanie karty kredytowej do portfela płatności \| za urządzenie \| bez opłat
-
-mobilnych
-
-115\. \| Zawieszenie karty na czas wyjazdu zagranicznego \| za zawieszenie \| bez opłat
-
-116\. \| Zwrot nadpłaty z karty kredytowej na rachunek \| jednorazowo \| bez opłat
-
-wskazany przez klienta
-
-117\. \| Zwrot nadpłaty z karty kredytowej na rachunek \| za przelew \| 8,00 zł
-
-w innym banku
-
-118\. \| Dzienny limit wypłat gotówki z karty kredytowej \| dziennie \| bez opłat
-
-w wysokości do 5 000,00 zł
-
-119\. \| Dzienny limit transakcji bezgotówkowych \| dziennie \| bez opłat
-
-w wysokości do 15 000,00 zł
-
-120\. \| Zmiana dziennych limitów transakcji kartą \| za każdą zmianę \| bez opłat
-
-kredytową
-
-121\. \| Ustawienie limitu na transakcje w internecie \| za każdą zmianę \| bez opłat
-
-122\. \| Zgłoszenie utraty karty kredytowej pod numerem \| za zgłoszenie \| bez opłat
-
-infolinii 800 000 002
-
-123\. \| Zgłoszenie utraty karty kredytowej z zagranicy pod \| za połączenie \| wg taryfy
-
-numerem +48 800 000 003 \| operatora
-
-124\. \| Wydanie karty zastępczej po zastrzeżeniu \| jednorazowo \| 25,00 zł
-
-125\. \| Wydanie karty kredytowej z nowym numerem po \| jednorazowo \| bez opłat
-
-wykryciu próby oszustwa
-
-126\. \| Odwołanie nieuznanej transakcji w trybie \| za reklamację \| bez opłat
-
-reklamacji kartowej
-
-127\. \| Odwołanie transakcji uznanej za prawidłowo \| za reklamację \| 50,00 zł
-
-autoryzowaną 3)
-
-128\. \| Zestawienie transakcji: doręczenie w terminie 5 dni \| za zestawienie \| bez opłat
-
-po zamknięciu okresu rozliczeniowego
-
-129\. \| Duplikat zestawienia transakcji za okres do 12 \| za dokument \| 30,00 zł
-
-miesięcy wstecz
-
-130\. \| Duplikat zestawienia transakcji za okres powyżej 12 \| za dokument \| 20,00 zł
-
-miesięcy wstecz
-
-131\. \| Zaświadczenie o wysokości zadłużenia na karcie \| za dokument \| 20,00 zł
-
-kredytowej
-
-<!-- page: 10 -->
-| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
-| --- | --- | --- | --- |
+| 113. | Zmiana sposobu doręczania zestawień (papierowo lub elektronicznie) | za zmianę | bez opłat |
+| 114. | Dodanie karty kredytowej do portfela płatności mobilnych | za urządzenie | bez opłat |
+| 115. | Zawieszenie karty na czas wyjazdu zagranicznego | za zawieszenie | bez opłat |
+| 116. | Zwrot nadpłaty z karty kredytowej na rachunek wskazany przez klienta | jednorazowo | bez opłat |
+| 117. | Zwrot nadpłaty z karty kredytowej na rachunek w innym banku | za przelew | 8,00 zł |
+| 118. | Dzienny limit wypłat gotówki z karty kredytowej w wysokości do 5 000,00 zł | dziennie | bez opłat |
+| 119. | Dzienny limit transakcji bezgotówkowych w wysokości do 15 000,00 zł | dziennie | bez opłat |
+| 120. | Zmiana dziennych limitów transakcji kartą kredytową | za każdą zmianę | bez opłat |
+| 121. | Ustawienie limitu na transakcje w internecie | za każdą zmianę | bez opłat |
+| 122. | Zgłoszenie utraty karty kredytowej pod numerem infolinii 800 000 002 | za zgłoszenie | bez opłat |
+| 123. | Zgłoszenie utraty karty kredytowej z zagranicy pod numerem +48 800 000 003 | za połączenie | wg taryfy operatora |
+| 124. | Wydanie karty zastępczej po zastrzeżeniu | jednorazowo | 25,00 zł |
+| 125. | Wydanie karty kredytowej z nowym numerem po wykryciu próby oszustwa | jednorazowo | bez opłat |
+| 126. | Odwołanie nieuznanej transakcji w trybie reklamacji kartowej | za reklamację | bez opłat |
+| 127. | Odwołanie transakcji uznanej za prawidłowo autoryzowaną 3) | za reklamację | 50,00 zł |
+| 128. | Zestawienie transakcji: doręczenie w terminie 5 dni po zamknięciu okresu rozliczeniowego | za zestawienie | bez opłat |
+| 129. | Duplikat zestawienia transakcji za okres do 12 miesięcy wstecz | za dokument | 30,00 zł |
+| 130. | Duplikat zestawienia transakcji za okres powyżej 12 miesięcy wstecz | za dokument | 20,00 zł |
+| 131. | Zaświadczenie o wysokości zadłużenia na karcie kredytowej | za dokument | 20,00 zł |
 | 132. | Zaświadczenie o spłacie zadłużenia i zamknięciu karty | za dokument | 20,00 zł |
 | 133. | Informacja o historii spłat karty dla innej instytucji finansowej | za dokument | 30,00 zł |
 | 134. | Kopia umowy o kartę kredytową | za dokument | 30,00 zł |
 | 135. | Powiadomienie o transakcji kartą kredytową w aplikacji mobilnej | za powiadomienie | bez opłat |
 | 136. | Informacja o saldzie i terminie spłaty wiadomością tekstową | za wiadomość | 2,00 zł |
 | 137. | Przypomnienie o terminie spłaty w aplikacji mobilnej | za przypomnienie | bez opłat |
-| 1) Opłata nie jest pobierana za dany rok użytkowania, jeżeli łączna wartość transakcji bezgotówkowych wykonanych |  |  |  |
-| kartą w poprzednich dwunastu miesiącach wyniosła co najmniej 12 000,00 zł. |  |  |  |
-| 2) Nowa karta jest doręczana w ciągu 7 dni od dnia złożenia dyspozycji; opłatę pobiera się w dniu zamówienia karty. |  |  |  |
-| 3) Opłata jest pobierana, gdy z dokumentacji transakcji wynika, że została ona potwierdzona przez użytkownika karty |  |  |  |
-| zgodnie z regulaminem karty kredytowej. |  |  |  |
-| **IV. Karty przedpłacone** |  |  |  |
-| Karta przedpłacona jest oferowana bez konieczności posiadania rachunku w Banku i umożliwia |  |  |  |
-| wykonywanie transakcji wyłącznie do wysokości środków wcześniej wpłaconych na kartę. Środki |  |  |  |
-| zgromadzone na karcie nie są oprocentowane i nie stanowią depozytu. |  |  |  |
-| Maksymalne saldo karty przedpłaconej wynosi 10 000,00 zł, a dzienny limit transakcji — 3 000,00 zł. |  |  |  |
-| Opłatę za nieaktywną kartę pobiera się po 12 miesiącach nieużywania karty. |  |  |  |
+
+<!-- page: 10 -->
+- 1\) Opłata nie jest pobierana za dany rok użytkowania, jeżeli łączna wartość transakcji bezgotówkowych wykonanych
+
+kartą w poprzednich dwunastu miesiącach wyniosła co najmniej 12 000,00 zł.
+
+- 2\) Nowa karta jest doręczana w ciągu 7 dni od dnia złożenia dyspozycji; opłatę pobiera się w dniu zamówienia karty.
+- 3\) Opłata jest pobierana, gdy z dokumentacji transakcji wynika, że została ona potwierdzona przez użytkownika karty
+
+zgodnie z regulaminem karty kredytowej.
+
+## IV. Karty przedpłacone
+
+Karta przedpłacona jest oferowana bez konieczności posiadania rachunku w Banku i umożliwia wykonywanie transakcji wyłącznie do wysokości środków wcześniej wpłaconych na kartę. Środki zgromadzone na karcie nie są oprocentowane i nie stanowią depozytu.
+
+Maksymalne saldo karty przedpłaconej wynosi 10 000,00 zł, a dzienny limit transakcji — 3 000,00 zł. Opłatę za nieaktywną kartę pobiera się po 12 miesiącach nieużywania karty.
+
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
 | 138. | Wydanie karty przedpłaconej imiennej | jednorazowo | 19,00 zł |
 | 139. | Wydanie karty przedpłaconej na okaziciela 1) | jednorazowo | 19,00 zł |
 | 140. | Prowadzenie karty przedpłaconej | miesięcznie | 5,00 zł |
@@ -325,156 +230,46 @@ kredytowej
 | 144. | Wypłata gotówki z karty w bankomacie 2) | za operację | 5,00 zł |
 | 145. | Płatność kartą przedpłaconą w punktach handlowo-usługowych | za transakcję | bez opłat |
 | 146. | Płatność kartą przedpłaconą w internecie | za transakcję | bez opłat |
-
-<!-- page: 11 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-147\. \| Wydanie duplikatu karty przedpłaconej \| jednorazowo \| 25,00 zł
-
-148\. \| Zastrzeżenie karty przedpłaconej \| jednorazowo \| 0,00 zł
-
-149\. \| Zmiana numeru PIN do karty przedpłaconej \| za każdą zmianę \| 5,00 zł
-
-150\. \| Wypłata niewykorzystanych środków (wykup \| jednorazowo \| 15,00 zł
-
-wartości pieniężnej) 3)
-
-151\. \| Sprawdzenie salda karty w bankomacie Banku \| za zapytanie \| bez opłat
-
-152\. \| Sprawdzenie salda karty w bankowości \| za zapytanie \| bez opłat
-
-elektronicznej lub aplikacji
-
-153\. \| Karta przedpłacona wielowalutowa: opłata za \| jednorazowo \| 19,00 zł
-
-wydanie
-
-154\. \| Karta przedpłacona wielowalutowa: \| od kwoty \| marża 1,5%
-
-przewalutowanie salda między walutami \| przewalutowania
-
-155\. \| Karta przedpłacona turystyczna: prowadzenie \| miesięcznie \| 5,00 zł
-
-156\. \| Karta przedpłacona turystyczna: wypłata \| za operację \| 10,00 zł
-
-w bankomacie za granicą
-
-157\. \| Karta przedpłacona turystyczna: wymiana waluty \| od kwoty \| marża 1,5%
-
-w aplikacji \| przewalutowania
-
-158\. \| Karta przedpłacona dla pracownika: doładowanie \| za doładowanie \| wg umowy
-
-zbiorcze przez pracodawcę
-
-159\. \| Karta przedpłacona dla pracownika: zwrot salda \| jednorazowo \| 15,00 zł
-
-pracodawcy
-
-160\. \| Karta przedpłacona na prezent: doładowanie \| jednorazowo \| bez opłat
-
-jednorazowe
-
-161\. \| Karta przedpłacona na prezent: ważność 12 \| miesięcznie \| bez opłat
-
-miesięcy bez opłaty za prowadzenie
-
-162\. \| Karta przedpłacona na prezent: aktywacja przez \| jednorazowo \| bez opłat
-
-obdarowanego
-
-163\. \| Pobranie gotówki z karty przedpłaconej \| za operację \| 5,00 zł
-
-w bankomacie innego operatora w kraju
-
-164\. \| Wypłata gotówki z karty przedpłaconej \| za operację \| 10,00 zł
-
-w bankomacie za granicą
-
-165\. \| Wypłata gotówki z karty przedpłaconej w kasie \| za operację \| bez opłat
-
-punktu handlowego (cashback)
-
-166\. \| Dzienny limit wypłat gotówki z karty przedpłaconej \| dziennie \| bez opłat
-
-w wysokości do 3 000,00 zł
-
-<!-- page: 12 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-167\. \| Dzienny limit płatności zbliżeniowych bez PIN do \| za transakcję \| bez opłat
-
-100,00 zł
-
-168\. \| Łączna wartość kolejnych płatności zbliżeniowych \| łącznie \| bez opłat
-
-bez PIN do 300,00 zł
-
-169\. \| Płatność kartą przedpłaconą za granicą w walucie \| od kwoty transakcji \| wg kursu Banku
-
-obcej
-
-170\. \| Płatność kartą przedpłaconą za granicą w złotych \| za transakcję \| bez opłat
-
-171\. \| Autoryzacja z blokadą środków (hotel, wynajem \| za transakcję \| bez opłat
-
-pojazdu)
-
-172\. \| Zwrot transakcji kartą przedpłaconą zrealizowany \| za zwrot \| bez opłat
-
-przez akceptanta
-
-173\. \| Aktywacja karty przedpłaconej w aplikacji mobilnej \| jednorazowo \| bez opłat
-
-174\. \| Aktywacja karty przedpłaconej na infolinii \| jednorazowo \| bez opłat
-
-175\. \| Weryfikacja tożsamości posiadacza karty imiennej \| jednorazowo \| bez opłat
-
-w placówce
-
-176\. \| Weryfikacja tożsamości posiadacza karty zdalnie \| jednorazowo \| bez opłat
-
-przez wideorozmowę
-
-177\. \| Przekształcenie karty na okaziciela w kartę imienną \| jednorazowo \| bez opłat
-
-178\. \| Wydanie karty przedpłaconej w wersji prezentowej \| jednorazowo \| 19,00 zł
-
-z kopertą
-
-179\. \| Wydanie karty przedpłaconej dla dziecka w wieku \| jednorazowo \| bez opłat
-
-od 10 do 17 lat
-
-180\. \| Prowadzenie karty przedpłaconej dla dziecka \| miesięcznie \| bez opłat
-
-181\. \| Nadanie karcie przedpłaconej indywidualnego \| jednorazowo \| 15,00 zł
-
-wizerunku
-
-182\. \| Wydanie karty przedpłaconej w pakiecie \| za kartę \| wg umowy
-
-wielokrotnym (od 10 sztuk) dla pracodawcy
-
-183\. \| Doładowanie karty w bankowości elektronicznej \| za doładowanie \| 0,00 zł
-
-z rachunku w Banku
-
-184\. \| Doładowanie karty przelewem z rachunku w innym \| za doładowanie \| 8,00 zł
-
-banku
-
-185\. \| Zasilenie karty kartą debetową lub kredytową \| od kwoty \| 1,5% min. 2,00 zł
-
-innego wydawcy \| doładowania
-
-186\. \| Doładowanie karty w punkcie partnerskim \| od kwoty \| 2,0% min. 3,00 zł
-
-doładowania
-
-<!-- page: 13 -->
-| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
-| --- | --- | --- | --- |
+| 147. | Wydanie duplikatu karty przedpłaconej | jednorazowo | 25,00 zł |
+| 148. | Zastrzeżenie karty przedpłaconej | jednorazowo | 0,00 zł |
+| 149. | Zmiana numeru PIN do karty przedpłaconej | za każdą zmianę | 5,00 zł |
+| 150. | Wypłata niewykorzystanych środków (wykup wartości pieniężnej) 3) | jednorazowo | 15,00 zł |
+| 151. | Sprawdzenie salda karty w bankomacie Banku | za zapytanie | bez opłat |
+| 152. | Sprawdzenie salda karty w bankowości elektronicznej lub aplikacji | za zapytanie | bez opłat |
+| 153. | Karta przedpłacona wielowalutowa: opłata za wydanie | jednorazowo | 19,00 zł |
+| 154. | Karta przedpłacona wielowalutowa: przewalutowanie salda między walutami | od kwoty przewalutowania | marża 1,5% |
+| 155. | Karta przedpłacona turystyczna: prowadzenie | miesięcznie | 5,00 zł |
+| 156. | Karta przedpłacona turystyczna: wypłata w bankomacie za granicą | za operację | 10,00 zł |
+| 157. | Karta przedpłacona turystyczna: wymiana waluty w aplikacji | od kwoty przewalutowania | marża 1,5% |
+| 158. | Karta przedpłacona dla pracownika: doładowanie zbiorcze przez pracodawcę | za doładowanie | wg umowy |
+| 159. | Karta przedpłacona dla pracownika: zwrot salda pracodawcy | jednorazowo | 15,00 zł |
+| 160. | Karta przedpłacona na prezent: doładowanie jednorazowe | jednorazowo | bez opłat |
+| 161. | Karta przedpłacona na prezent: ważność 12 miesięcy bez opłaty za prowadzenie | miesięcznie | bez opłat |
+| 162. | Karta przedpłacona na prezent: aktywacja przez obdarowanego | jednorazowo | bez opłat |
+| 163. | Pobranie gotówki z karty przedpłaconej w bankomacie innego operatora w kraju | za operację | 5,00 zł |
+| 164. | Wypłata gotówki z karty przedpłaconej w bankomacie za granicą | za operację | 10,00 zł |
+| 165. | Wypłata gotówki z karty przedpłaconej w kasie punktu handlowego (cashback) | za operację | bez opłat |
+| 166. | Dzienny limit wypłat gotówki z karty przedpłaconej w wysokości do 3 000,00 zł | dziennie | bez opłat |
+| 167. | Dzienny limit płatności zbliżeniowych bez PIN do 100,00 zł | za transakcję | bez opłat |
+| 168. | Łączna wartość kolejnych płatności zbliżeniowych bez PIN do 300,00 zł | łącznie | bez opłat |
+| 169. | Płatność kartą przedpłaconą za granicą w walucie obcej | od kwoty transakcji | wg kursu Banku |
+| 170. | Płatność kartą przedpłaconą za granicą w złotych | za transakcję | bez opłat |
+| 171. | Autoryzacja z blokadą środków (hotel, wynajem pojazdu) | za transakcję | bez opłat |
+| 172. | Zwrot transakcji kartą przedpłaconą zrealizowany przez akceptanta | za zwrot | bez opłat |
+| 173. | Aktywacja karty przedpłaconej w aplikacji mobilnej | jednorazowo | bez opłat |
+| 174. | Aktywacja karty przedpłaconej na infolinii | jednorazowo | bez opłat |
+| 175. | Weryfikacja tożsamości posiadacza karty imiennej w placówce | jednorazowo | bez opłat |
+| 176. | Weryfikacja tożsamości posiadacza karty zdalnie przez wideorozmowę | jednorazowo | bez opłat |
+| 177. | Przekształcenie karty na okaziciela w kartę imienną | jednorazowo | bez opłat |
+| 178. | Wydanie karty przedpłaconej w wersji prezentowej z kopertą | jednorazowo | 19,00 zł |
+| 179. | Wydanie karty przedpłaconej dla dziecka w wieku od 10 do 17 lat | jednorazowo | bez opłat |
+| 180. | Prowadzenie karty przedpłaconej dla dziecka | miesięcznie | bez opłat |
+| 181. | Nadanie karcie przedpłaconej indywidualnego wizerunku | jednorazowo | 15,00 zł |
+| 182. | Wydanie karty przedpłaconej w pakiecie wielokrotnym (od 10 sztuk) dla pracodawcy | za kartę | wg umowy |
+| 183. | Doładowanie karty w bankowości elektronicznej z rachunku w Banku | za doładowanie | 0,00 zł |
+| 184. | Doładowanie karty przelewem z rachunku w innym banku | za doładowanie | 8,00 zł |
+| 185. | Zasilenie karty kartą debetową lub kredytową innego wydawcy | od kwoty doładowania | 1,5% min. 2,00 zł |
+| 186. | Doładowanie karty w punkcie partnerskim | od kwoty doładowania | 2,0% min. 3,00 zł |
 | 187. | Doładowanie karty cykliczne zleceniem stałym | za doładowanie | bez opłat |
 | 188. | Minimalna kwota pojedynczego doładowania | za doładowanie | 10,00 zł |
 | 189. | Maksymalna kwota pojedynczego doładowania | za doładowanie | 3 000,00 zł |
@@ -492,6 +287,7 @@ doładowania
 | 201. | Przeniesienie karty na innego posiadacza | — | nie jest możliwe |
 | 202. | Weryfikacja salda karty na wniosek spadkobierców posiadacza | jednorazowo | bez opłat |
 
+<!-- page: 13 -->
 - 1\) Karta na okaziciela może być doładowana łącznie kwotą do równowartości 150 euro w ciągu roku kalendarzowego;
 
 wyższe kwoty wymagają przekształcenia karty w kartę imienną po zweryfikowaniu tożsamości.
@@ -501,11 +297,11 @@ wyższe kwoty wymagają przekształcenia karty w kartę imienną po zweryfikowan
 
 z karty w terminie 14 dni od zawarcia umowy.
 
-- V\. **Karty dla przedsiębiorców**
+<!-- page: 14 -->
+## V. Karty dla przedsiębiorców
 
 Karty dla przedsiębiorców są wydawane do rachunków firmowych osobom upoważnionym przez posiadacza rachunku. Posiadacz rachunku odpowiada za wszystkie transakcje wykonane kartami wydanymi na jego wniosek.
 
-<!-- page: 14 -->
 Dzienny limit wypłat gotówki dla kart firmowych wynosi domyślnie 20 000,00 zł, a dzienny limit transakcji bezgotówkowych — 50 000,00 zł. Wysokość limitów można zmienić na wniosek posiadacza rachunku.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
@@ -528,83 +324,25 @@ Dzienny limit wypłat gotówki dla kart firmowych wynosi domyślnie 20 000,00 z�
 | 218. | Powiadomienie o transakcji kartą firmową wiadomością tekstową | za wiadomość | 2,00 zł |
 | 219. | Pobranie gotówki kartą firmową w bankomacie Banku do limitu dziennego | za operację | bez opłat |
 | 220. | Wypłata gotówki kartą firmową w bankomacie za granicą | za operację | 10,00 zł |
-
-<!-- page: 15 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-221\. \| Wpłata utargu we wpłatomacie Banku do kwoty 10 \| za operację \| bez opłat
-
-000,00 zł miesięcznie
-
-222\. \| Wpłata utargu we wpłatomacie Banku powyżej \| od kwoty wpłaty \| 0,1% min. 3,00 zł
-
-kwoty bezpłatnej
-
-223\. \| Wpłata utargu w workach zamykanych w oddziale \| od kwoty wpłaty \| 0,2% min. 10,00 zł
-
-224\. \| Rozliczenie transakcji kartą firmową w terminie 3 \| za transakcję \| bez opłat
-
-dni
-
-225\. \| Płatność kartą firmową w internecie \| za transakcję \| bez opłat
-
-226\. \| Płatność kartą firmową za granicą w walucie obcej \| od kwoty transakcji \| marża 1,5%
-
-227\. \| Zwrot transakcji kartą firmową zrealizowany przez \| za zwrot \| bez opłat
-
-akceptanta
-
-228\. \| Zestawienie transakcji karty firmowej dla \| za zestawienie \| bez opłat
-
-pojedynczego użytkownika
-
-229\. \| Wypłata gotówki z karty kredytowej firmowej \| od kwoty wypłaty \| 4%, min. 10,00 zł
-
-w bankomacie
-
-230\. \| Roczna opłata za dodatkową kartę kredytową \| rocznie \| 49,00 zł
-
-firmową
-
-231\. \| Okres bezodsetkowy dla transakcji \| za okres \| bez opłat
-
-bezgotówkowych kartą kredytową firmową do 50 \| rozliczeniowy
-
-dni
-
-232\. \| Zestawienie zbiorczy dla karty kredytowej firmowej \| za zestawienie \| 10,00 zł
-
-w formie papierowej
-
-233\. \| Zestawienie zbiorcze dla karty kredytowej firmowej \| za zestawienie \| bez opłat
-
-w bankowości elektronicznej
-
-234\. \| Przekroczenie przyznanego limitu karty kredytowej \| za każde \| 35,00 zł
-
-firmowej \| przekroczenie
-
-235\. \| Upomnienie w związku z opóźnieniem w spłacie \| za każde \| 15,00 zł
-
-karty kredytowej firmowej \| upomnienie
-
-236\. \| Zwiększenie limitu kredytowego karty firmowej \| jednorazowo \| 0,00 zł
-
-237\. \| Spłata zadłużenia na karcie firmowej z rachunku \| za operację \| bez opłat
-
-firmowego w Banku
-
-238\. \| Rozłożenie transakcji karty firmowej na raty: \| od kwoty transakcji \| 3%
-
-prowizja
-
-239\. \| Karta firmowa dla jednoosobowej działalności \| miesięcznie \| 12,00 zł
-
-gospodarczej: prowadzenie
-
-<!-- page: 16 -->
-| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
-| --- | --- | --- | --- |
+| 221. | Wpłata utargu we wpłatomacie Banku do kwoty 10 000,00 zł miesięcznie | za operację | bez opłat |
+| 222. | Wpłata utargu we wpłatomacie Banku powyżej kwoty bezpłatnej | od kwoty wpłaty | 0,1% min. 3,00 zł |
+| 223. | Wpłata utargu w workach zamykanych w oddziale | od kwoty wpłaty | 0,2% min. 10,00 zł |
+| 224. | Rozliczenie transakcji kartą firmową w terminie 3 dni | za transakcję | bez opłat |
+| 225. | Płatność kartą firmową w internecie | za transakcję | bez opłat |
+| 226. | Płatność kartą firmową za granicą w walucie obcej | od kwoty transakcji | marża 1,5% |
+| 227. | Zwrot transakcji kartą firmową zrealizowany przez akceptanta | za zwrot | bez opłat |
+| 228. | Zestawienie transakcji karty firmowej dla pojedynczego użytkownika | za zestawienie | bez opłat |
+| 229. | Wypłata gotówki z karty kredytowej firmowej w bankomacie | od kwoty wypłaty | 4%, min. 10,00 zł |
+| 230. | Roczna opłata za dodatkową kartę kredytową firmową | rocznie | 49,00 zł |
+| 231. | Okres bezodsetkowy dla transakcji bezgotówkowych kartą kredytową firmową do 50 dni | za okres rozliczeniowy | bez opłat |
+| 232. | Zestawienie zbiorczy dla karty kredytowej firmowej w formie papierowej | za zestawienie | 10,00 zł |
+| 233. | Zestawienie zbiorcze dla karty kredytowej firmowej w bankowości elektronicznej | za zestawienie | bez opłat |
+| 234. | Przekroczenie przyznanego limitu karty kredytowej firmowej | za każde przekroczenie | 35,00 zł |
+| 235. | Upomnienie w związku z opóźnieniem w spłacie karty kredytowej firmowej | za każde upomnienie | 15,00 zł |
+| 236. | Zwiększenie limitu kredytowego karty firmowej | jednorazowo | 0,00 zł |
+| 237. | Spłata zadłużenia na karcie firmowej z rachunku firmowego w Banku | za operację | bez opłat |
+| 238. | Rozłożenie transakcji karty firmowej na raty: prowizja | od kwoty transakcji | 3% |
+| 239. | Karta firmowa dla jednoosobowej działalności gospodarczej: prowadzenie | miesięcznie | 12,00 zł |
 | 240. | Karta firmowa dla spółki: prowadzenie karty pierwszego użytkownika | miesięcznie | 12,00 zł |
 | 241. | Karta firmowa dla rolnika prowadzącego gospodarstwo: prowadzenie | miesięcznie | 8,00 zł |
 | 242. | Karta firmowa dla organizacji pozarządowej: prowadzenie | miesięcznie | bez opłat |
@@ -625,76 +363,37 @@ gospodarczej: prowadzenie
 | 257. | Wydanie karty firmowej w placówce wskazanej przez przedsiębiorcę | jednorazowo | bez opłat |
 | 258. | Wysyłka karty firmowej kurierem na adres siedziby | za przesyłkę | 25,00 zł |
 
+<!-- page: 17 -->
 - 1\) Opłata za prowadzenie karty jest pobierana z rachunku firmowego, do którego karta została wydana;
 
-<!-- page: 17 -->
 w pierwszych trzech miesiącach od zawarcia umowy o rachunek opłaty nie pobiera się.
 
 - 2\) Stawkę procentową stosuje się do wpłat przekraczających 10 000,00 zł miesięcznie; wpłaty do tej kwoty są wolne
 
 od opłat.
 
-- VI\. **Operacje kartami za granicą**
+## VI. Operacje kartami za granicą
 
 Transakcje wykonane kartą za granicą, a także transakcje w walucie innej niż waluta rachunku lub karty, są przeliczane według kursu z tabeli kursów walut Banku, obowiązującego w dniu rozliczenia transakcji. Do kursu stosuje się marżę w wysokości 1,5%.
 
 Użytkownik karty powinien otrzymać przed wykonaniem transakcji informację o łącznej wysokości opłat za przewalutowanie, jeżeli akceptant lub operator bankomatu oferuje wybór waluty rozliczenia. Przyjęcie przeliczenia po kursie akceptanta powoduje, że kursów Banku nie stosuje się.
 
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-259\. \| Przewalutowanie transakcji kartą w walucie innej \| od kwoty transakcji \| marża 1,5%
-
-niż waluta rachunku 1)
-
-260\. \| Wypłata gotówki kartą debetową w bankomacie za \| za operację \| 10,00 zł
-
-granicą
-
-261\. \| Wypłata gotówki kartą kredytową w bankomacie za \| od kwoty wypłaty \| 4%, min. 10,00 zł
-
-granicą
-
-262\. \| Płatność kartą debetową u akceptanta za granicą \| za transakcję \| bez opłat
-
-263\. \| Płatność kartą kredytową u akceptanta za granicą \| od kwoty transakcji \| 1%
-
-2\)
-
-264\. \| Zapytanie o saldo w bankomacie za granicą \| za zapytanie \| 2,00 zł
-
-265\. \| Odrzucona autoryzacja transakcji za granicą \| za transakcję \| 0,00 zł
-
-266\. \| Awaryjna wypłata gotówki za granicą po utracie \| jednorazowo \| 120,00 zł
-
-karty 3)
-
-267\. \| Wydanie karty awaryjnej za granicą po utracie \| jednorazowo \| 400,00 zł
-
-karty
-
-268\. \| Zgłoszenie utraty karty za granicą pod numerem \| za połączenie \| koszt połączenia
-
-\+48 800 000 003 \| wg taryfy
-
-operatora
-
-269\. \| Zastrzeżenie karty za granicą \| jednorazowo \| 0,00 zł
-
-270\. \| Płatność kartą w walucie obcej w internecie \| od kwoty transakcji \| marża 1,5%
-
-u zagranicznego sprzedawcy
-
-271\. \| Włączenie transakcji zagranicznych w bankowości \| za zmianę \| bez opłat
-
-elektronicznej
-
-272\. \| Zwrot transakcji zagranicznej przeliczony po kursie \| za zwrot \| bez opłat
-
-z dnia zwrotu
-
-<!-- page: 18 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
+| 259. | Przewalutowanie transakcji kartą w walucie innej niż waluta rachunku 1) | od kwoty transakcji | marża 1,5% |
+| 260. | Wypłata gotówki kartą debetową w bankomacie za granicą | za operację | 10,00 zł |
+| 261. | Wypłata gotówki kartą kredytową w bankomacie za granicą | od kwoty wypłaty | 4%, min. 10,00 zł |
+| 262. | Płatność kartą debetową u akceptanta za granicą | za transakcję | bez opłat |
+| 263. | Płatność kartą kredytową u akceptanta za granicą 2) | od kwoty transakcji | 1% |
+| 264. | Zapytanie o saldo w bankomacie za granicą | za zapytanie | 2,00 zł |
+| 265. | Odrzucona autoryzacja transakcji za granicą | za transakcję | 0,00 zł |
+| 266. | Awaryjna wypłata gotówki za granicą po utracie karty 3) | jednorazowo | 120,00 zł |
+| 267. | Wydanie karty awaryjnej za granicą po utracie karty | jednorazowo | 400,00 zł |
+| 268. | Zgłoszenie utraty karty za granicą pod numerem +48 800 000 003 | za połączenie | koszt połączenia wg taryfy operatora |
+| 269. | Zastrzeżenie karty za granicą | jednorazowo | 0,00 zł |
+| 270. | Płatność kartą w walucie obcej w internecie u zagranicznego sprzedawcy | od kwoty transakcji | marża 1,5% |
+| 271. | Włączenie transakcji zagranicznych w bankowości elektronicznej | za zmianę | bez opłat |
+| 272. | Zwrot transakcji zagranicznej przeliczony po kursie z dnia zwrotu | za zwrot | bez opłat |
 | 273. | Transakcja w euro w państwie należącym do Europejskiego Obszaru Gospodarczego | od kwoty transakcji | marża 1,5% |
 | 274. | Płatność w funtach szterlingach | od kwoty transakcji | marża 1,5% |
 | 275. | Płatność w dolarach amerykańskich | od kwoty transakcji | marża 1,5% |
@@ -715,98 +414,48 @@ z dnia zwrotu
 | 290. | Dokumentacja transakcji zagranicznej na potrzeby rozliczenia delegacji | za dokument | 8,00 zł |
 | 291. | Zaświadczenie o limitach transakcji zagranicznych dla konsulatu | za dokument | 20,00 zł |
 | 292. | Zgłoszenie szkody z tytułu kradzieży karty za granicą do ubezpieczyciela | za zgłoszenie | bez opłat |
-
-<!-- page: 19 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-293\. \| Transakcja kartą w hotelu z blokadą środków na \| za transakcję \| bez opłat
-
-poczet pobytu
-
-294\. \| Płatność kartą w wypożyczalni pojazdów z kaucją \| za transakcję \| bez opłat
-
-295\. \| Płatność kartą na stacjach paliw za granicą \| za transakcję \| bez opłat
-
-(blokada do ustalonej kwoty)
-
-296\. \| Płatność kartą za przejazd autostradą bez udziału \| od kwoty transakcji \| marża 1,5%
-
-użytkownika
-
-297\. \| Płatność kartą za bilety komunikacji miejskiej za \| od kwoty transakcji \| marża 1,5%
-
-granicą w systemie bezkontaktowym
-
-298\. \| Płatność zbliżeniowa za granicą do kwoty 100,00 zł \| za transakcję \| bez opłat
-
-299\. \| Płatność mobilna za granicą \| za transakcję \| bez opłat
-
-300\. \| Płatność za granicą w trybie rozliczenia \| od kwoty transakcji \| wg kursu
-
-dynamicznego (wybór waluty przez akceptanta) \| akceptanta
-
-301\. \| Rezerwacja kartą z późniejszym obciążeniem \| od kwoty transakcji \| wg kursu z dnia
-
-w innej walucie niż w dniu rezerwacji \| rozliczenia
-
-302\. \| Przeliczenie transakcji rozliczonej po upływie 7 dni \| od kwoty transakcji \| wg kursu z dnia
-
-od dnia autoryzacji \| rozliczenia
-
-303\. \| Informacja o kursie przeliczenia transakcji \| za informację \| bez opłat
-
-zagranicznej w aplikacji mobilnej
-
-304\. \| Tabela kursów walut Banku w bankowości \| za dostęp \| bez opłat
-
-elektronicznej
-
-305\. \| Tabela kursów walut Banku sporządzana \| za dostęp \| bez opłat
-
-o godzinie 9:00 w dni robocze
-
-306\. \| Kurs wymiany walut w placówce Banku przy \| od kwoty transakcji \| wg kursu Banku
-
-realizacji transakcji kartą
-
-307\. \| Przeliczenie transakcji w walucie nieobjętej tabelą \| od kwoty transakcji \| marża 3,0%
-
-po kursie średnim operatora rozliczeń
-
-308\. \| Zlecenie stałe zasilania karty przedpłaconej \| za zlecenie \| bez opłat
-
-w walucie obcej
-
-309\. \| Zwrot transakcji zagranicznej, gdy kurs z dnia \| od kwoty zwrotu \| wg kursu z dnia
-
-zwrotu jest niższy niż z dnia transakcji \| zwrotu
-
-310\. \| Korekta przewalutowania po reklamacji uznanej za \| za korektę \| bez opłat
-
-zasadną
-
-311\. \| Potwierdzenie przewalutowania transakcji wydane \| za dokument \| 8,00 zł
-
-na wniosek
+| 293. | Transakcja kartą w hotelu z blokadą środków na poczet pobytu | za transakcję | bez opłat |
+| 294. | Płatność kartą w wypożyczalni pojazdów z kaucją | za transakcję | bez opłat |
+| 295. | Płatność kartą na stacjach paliw za granicą (blokada do ustalonej kwoty) | za transakcję | bez opłat |
+| 296. | Płatność kartą za przejazd autostradą bez udziału użytkownika | od kwoty transakcji | marża 1,5% |
+| 297. | Płatność kartą za bilety komunikacji miejskiej za granicą w systemie bezkontaktowym | od kwoty transakcji | marża 1,5% |
+| 298. | Płatność zbliżeniowa za granicą do kwoty 100,00 zł | za transakcję | bez opłat |
+| 299. | Płatność mobilna za granicą | za transakcję | bez opłat |
+| 300. | Płatność za granicą w trybie rozliczenia dynamicznego (wybór waluty przez akceptanta) | od kwoty transakcji | wg kursu akceptanta |
+| 301. | Rezerwacja kartą z późniejszym obciążeniem w innej walucie niż w dniu rezerwacji | od kwoty transakcji | wg kursu z dnia rozliczenia |
+| 302. | Przeliczenie transakcji rozliczonej po upływie 7 dni od dnia autoryzacji | od kwoty transakcji | wg kursu z dnia rozliczenia |
+| 303. | Informacja o kursie przeliczenia transakcji zagranicznej w aplikacji mobilnej | za informację | bez opłat |
+| 304. | Tabela kursów walut Banku w bankowości elektronicznej | za dostęp | bez opłat |
+| 305. | Tabela kursów walut Banku sporządzana o godzinie 9:00 w dni robocze | za dostęp | bez opłat |
+| 306. | Kurs wymiany walut w placówce Banku przy realizacji transakcji kartą | od kwoty transakcji | wg kursu Banku |
+| 307. | Przeliczenie transakcji w walucie nieobjętej tabelą po kursie średnim operatora rozliczeń | od kwoty transakcji | marża 3,0% |
+| 308. | Zlecenie stałe zasilania karty przedpłaconej w walucie obcej | za zlecenie | bez opłat |
+| 309. | Zwrot transakcji zagranicznej, gdy kurs z dnia zwrotu jest niższy niż z dnia transakcji | od kwoty zwrotu | wg kursu z dnia zwrotu |
+| 310. | Korekta przewalutowania po reklamacji uznanej za zasadną | za korektę | bez opłat |
+| 311. | Potwierdzenie przewalutowania transakcji wydane na wniosek | za dokument | 8,00 zł |
+| 312. | Wyłączenie przewalutowania dynamicznego (blokada wyboru waluty u akceptanta) | za zmianę | bez opłat |
 
 <!-- page: 20 -->
+- 1\) Marżę stosuje się jednorazowo do przewalutowania z waluty transakcji na walutę rozliczenia; przeliczenia między
+
+walutami obcymi dokonuje się za pośrednictwem złotego, zgodnie z postanowieniami ogólnymi Taryfy.
+
+- 2\) Prowizji nie pobiera się od transakcji wykonanych w złotych na terytorium Rzeczypospolitej Polskiej, nawet jeśli
+
+akceptant ma siedzibę za granicą.
+
+- 3\) Gotówka jest wydawana w oddziale lub punkcie obsługi kart wskazanym przez infolinię, do wysokości wskazanej
+
+przez Bank, nie więcej niż dzienny limit karty.
+
+## VII. Usługi dodatkowe do kart
+
+Usługi dodatkowe do kart są udostępniane na wniosek posiadacza rachunku lub karty i mogą być wykupione niezależnie od rodzaju karty, chyba że warunki danej usługi stanowią inaczej. Opłaty za usługi dodatkowe są pobierane z rachunku, do którego wydano kartę, a w przypadku karty kredytowej — obciążają limit karty.
+
+Rezygnacja z usługi dodatkowej jest skuteczna od końca miesiąca kalendarzowego, w którym wniosek o rezygnację wpłynął do Banku, o ile warunki usługi nie stanowią inaczej.
+
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
-| 312. | Wyłączenie przewalutowania dynamicznego (blokada wyboru waluty u akceptanta) | za zmianę | bez opłat |
-| 1) Marżę stosuje się jednorazowo do przewalutowania z waluty transakcji na walutę rozliczenia; przeliczenia między |  |  |  |
-| walutami obcymi dokonuje się za pośrednictwem złotego, zgodnie z postanowieniami ogólnymi Taryfy. |  |  |  |
-| 2) Prowizji nie pobiera się od transakcji wykonanych w złotych na terytorium Rzeczypospolitej Polskiej, nawet jeśli |  |  |  |
-| akceptant ma siedzibę za granicą. |  |  |  |
-| 3) Gotówka jest wydawana w oddziale lub punkcie obsługi kart wskazanym przez infolinię, do wysokości wskazanej |  |  |  |
-| przez Bank, nie więcej niż dzienny limit karty. |  |  |  |
-| **VII. Usługi dodatkowe do kart** |  |  |  |
-| Usługi dodatkowe do kart są udostępniane na wniosek posiadacza rachunku lub karty i mogą być |  |  |  |
-| wykupione niezależnie od rodzaju karty, chyba że warunki danej usługi stanowią inaczej. Opłaty za |  |  |  |
-| usługi dodatkowe są pobierane z rachunku, do którego wydano kartę, a w przypadku karty |  |  |  |
-| kredytowej — obciążają limit karty. |  |  |  |
-| Rezygnacja z usługi dodatkowej jest skuteczna od końca miesiąca kalendarzowego, w którym |  |  |  |
-| wniosek o rezygnację wpłynął do Banku, o ile warunki usługi nie stanowią inaczej. |  |  |  |
-| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | 313. | Pakiet ubezpieczeniowy karty od skutków utraty i nieuprawnionego użycia 1) | miesięcznie | 6,90 zł |
 | 314. | Pakiet assistance dla użytkownika karty | miesięcznie | 9,00 zł |
 | 315. | Wydanie karty z indywidualnym wizerunkiem | jednorazowo | 15,00 zł |
@@ -841,73 +490,27 @@ na wniosek
 | 344. | Wiadomość tekstowa z informacją o saldzie karty | za wiadomość | 2,00 zł |
 | 345. | Powiadomienie e-mailowe o transakcji kartą | za wiadomość | bez opłat |
 | 346. | Alert o próbie nieuprawnionego użycia karty | za powiadomienie | bez opłat |
-
-<!-- page: 22 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-347\. \| Połączenie z infolinią w sprawach karty pod \| za połączenie \| wg taryfy
-
-numerem 800 000 001 \| operatora
-
-348\. \| Doręczenie karty kurierem w terminie 3 dni \| za przesyłkę \| 25,00 zł
-
-349\. \| Doręczenie karty kurierem w sobotę \| za przesyłkę \| 35,00 zł
-
-350\. \| Doręczenie numeru PIN pocztą w terminie 7 dni \| za przesyłkę \| bez opłat
-
-351\. \| Ponowne doręczenie karty kurierem po \| za przesyłkę \| 25,00 zł
-
-nieodebraniu przesyłki
-
-352\. \| Odbiór karty w punkcie partnerskim \| jednorazowo \| bez opłat
-
-353\. \| Odbiór karty w placówce Banku \| jednorazowo \| bez opłat
-
-354\. \| Zmiana miejsca doręczenia karty po wysłaniu \| za zmianę \| 10,00 zł
-
-przesyłki
-
-355\. \| Przechowywanie karty w placówce Banku ponad 30 \| jednorazowo \| bez opłat
-
-dni
-
-356\. \| Odnowienie karty wysłane automatycznie przed \| jednorazowo \| bez opłat
-
-upływem ważności
-
-357\. \| Wysyłka karty za granicę \| za przesyłkę \| 70,00 zł
-
-358\. \| Ochrona ubezpieczeniowy karty w wariancie \| miesięcznie \| 6,90 zł
-
-rozszerzonym
-
-359\. \| Ubezpieczenie zakupów dokonanych kartą \| miesięcznie \| 9,90 zł
-
-360\. \| Ubezpieczenie podróży zagranicznych dla \| miesięcznie \| 12,90 zł
-
-posiadacza karty
-
-361\. \| Ubezpieczenie podróży zagranicznych dla \| miesięcznie \| 19,90 zł
-
-posiadacza karty i członków rodziny
-
-362\. \| Rezygnacja z ubezpieczenia karty w terminie 14 dni \| jednorazowo \| bez opłat
-
-od jego zawarcia
-
-363\. \| Zgłoszenie szkody z tytułu ubezpieczenia karty \| za zgłoszenie \| bez opłat
-
-364\. \| Duplikat polisy ubezpieczenia karty \| za dokument \| bez opłat
-
-365\. \| Zmiana osoby uprawnionej do świadczenia \| za zmianę \| bez opłat
-
-z ubezpieczenia
-
-366\. \| Pakiet assistance w podróży: pomoc medyczna \| miesięcznie \| 9,00 zł
-
-i prawna
-
-367\. \| Pakiet assistance domowy dla posiadacza karty \| miesięcznie \| 7,00 zł
+| 347. | Połączenie z infolinią w sprawach karty pod numerem 800 000 001 | za połączenie | wg taryfy operatora |
+| 348. | Doręczenie karty kurierem w terminie 3 dni | za przesyłkę | 25,00 zł |
+| 349. | Doręczenie karty kurierem w sobotę | za przesyłkę | 35,00 zł |
+| 350. | Doręczenie numeru PIN pocztą w terminie 7 dni | za przesyłkę | bez opłat |
+| 351. | Ponowne doręczenie karty kurierem po nieodebraniu przesyłki | za przesyłkę | 25,00 zł |
+| 352. | Odbiór karty w punkcie partnerskim | jednorazowo | bez opłat |
+| 353. | Odbiór karty w placówce Banku | jednorazowo | bez opłat |
+| 354. | Zmiana miejsca doręczenia karty po wysłaniu przesyłki | za zmianę | 10,00 zł |
+| 355. | Przechowywanie karty w placówce Banku ponad 30 dni | jednorazowo | bez opłat |
+| 356. | Odnowienie karty wysłane automatycznie przed upływem ważności | jednorazowo | bez opłat |
+| 357. | Wysyłka karty za granicę | za przesyłkę | 70,00 zł |
+| 358. | Ochrona ubezpieczeniowy karty w wariancie rozszerzonym | miesięcznie | 6,90 zł |
+| 359. | Ubezpieczenie zakupów dokonanych kartą | miesięcznie | 9,90 zł |
+| 360. | Ubezpieczenie podróży zagranicznych dla posiadacza karty | miesięcznie | 12,90 zł |
+| 361. | Ubezpieczenie podróży zagranicznych dla posiadacza karty i członków rodziny | miesięcznie | 19,90 zł |
+| 362. | Rezygnacja z ubezpieczenia karty w terminie 14 dni od jego zawarcia | jednorazowo | bez opłat |
+| 363. | Zgłoszenie szkody z tytułu ubezpieczenia karty | za zgłoszenie | bez opłat |
+| 364. | Duplikat polisy ubezpieczenia karty | za dokument | bez opłat |
+| 365. | Zmiana osoby uprawnionej do świadczenia z ubezpieczenia | za zmianę | bez opłat |
+| 366. | Pakiet assistance w podróży: pomoc medyczna i prawna | miesięcznie | 9,00 zł |
+| 367. | Pakiet assistance domowy dla posiadacza karty | miesięcznie | 7,00 zł |
 
 <!-- page: 23 -->
 - 1\) Ubezpieczenie jest oferowane przez zakład ubezpieczeń współpracujący z Bankiem; szczegółowe warunki, w tym
@@ -918,7 +521,8 @@ wyłączenia odpowiedzialności i limity świadczeń, określa umowa ubezpieczen
 
 dokumentu tożsamości.
 
-- VIII\. **Objaśnienia i postanowienia końcowe**
+## VIII. Objaśnienia i postanowienia końcowe
+
 - 1\. Użyte w Taryfie określenie „za operację” oznacza opłatę pobieraną za każdą pojedynczą wypłatę, wpłatę lub zapytanie; „od kwoty transakcji” — opłatę liczoną procentowo od wartości transakcji; „miesięcznie” i „rocznie” — opłatę naliczaną cyklicznie, za dany miesiąc lub rok użytkowania karty.
 - 2\. Zwrot opłaty za kartę pobranej za okres, w którym karta nie była użytkowana z powodu jej zastrzeżenia, następuje na wniosek klienta, w terminie 14 dni od dnia jego otrzymania.
 - 3\. Informacje o opłatach za transakcje wykonane kartą są prezentowane w zestawieniu transakcji lub w historii rachunku. Zakwestionowanie opłaty odbywa się w trybie reklamacji, zgodnie z regulaminem karty, w terminie nie dłuższym niż 13 miesięcy od dnia obciążenia rachunku.

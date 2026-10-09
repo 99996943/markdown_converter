@@ -178,6 +178,7 @@ Klient bankowości prywatnej może posiadać rachunki w złotych oraz w walutach
 
 Opłaty za rachunek prowadzony poza pakietem pobiera się miesięcznie z dołu, w ostatnim dniu roboczym miesiąca. W miesiącu otwarcia lub zamknięcia rachunku opłatę pobiera się w pełnej wysokości.
 
+<!-- page: 8 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 101. | Otwarcie rachunku w złotych | jednorazowo | bez opłat |
@@ -235,7 +236,7 @@ Opłaty za rachunek prowadzony poza pakietem pobiera się miesięcznie z dołu, 
 | 150. | Przeliczenie wpłaty gotówkowej w kasie na żądanie Klienta | za przeliczenie | 5,00 zł |
 | 151. | Przygotowanie gotówki w opakowaniu zabezpieczonym (kasetka) | za wypłatę | 40,00 zł |
 
-<!-- page: 9 -->
+<!-- page: 10 -->
 - 1\) W przypadku Klientów korzystających z pakietów opłatę pobiera się wyłącznie od rachunków ponad liczbę wskazaną
 
 w opisie pakietu.
@@ -246,7 +247,6 @@ w opisie pakietu.
 
 Przelewy zlecane w bankowości elektronicznej oraz za pośrednictwem doradcy są realizowane zgodnie z regulaminem rachunku i terminami w nim określonymi. Przelew zagraniczny obejmuje przelew w walucie obcej oraz przelew w złotych na rachunek prowadzony poza terytorium Rzeczypospolitej Polskiej.
 
-<!-- page: 10 -->
 - 1\. Prowizja od przelewu zagranicznego jest naliczana od kwoty przelewu i wynosi 0,25%, nie mniej niż 40,00 zł i nie więcej niż 250,00 zł.
 - 2\. Opłaty banków pośredniczących i banku odbiorcy obciążają zleceniodawcę albo odbiorcę, zależnie od wskazanej opcji kosztowej. Bank nie ma wpływu na wysokość tych opłat.
 
@@ -390,7 +390,7 @@ i czas realizacji podaje infolinia +48 800 000 003.
 
 ## VII. Lokaty negocjowane i produkty oszczędnościowe
 
-Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach określonych w regulaminie lokat oraz lokaty negocjowane, których oprocentowanie ustalane jest indywidualnie. Lokata negocjowana jest dostępna przy kwocie nie niższej niż 250 000,00 zł.
+Klienci bankowości prywatnej mogą zakładać lokaty terminowe na zasadach określonych <!-- page: 15 --> w regulaminie lokat oraz lokaty negocjowane, których oprocentowanie ustalane jest indywidualnie. Lokata negocjowana jest dostępna przy kwocie nie niższej niż 250 000,00 zł.
 
 - 1\. Oprocentowanie lokat jest stałe w okresie umownym. Odsetki kapitalizowane są na koniec okresu umownego, a do ich obliczania przyjmuje się rok liczący 365 dni.
 - 2\. Odsetki od lokat podlegają opodatkowaniu na zasadach określonych w przepisach podatkowych. Bank potrąca podatek od dochodów z odsetek i odprowadza go do właściwego urzędu skarbowego.
@@ -529,7 +529,7 @@ rachunku.
 
 ## IX. Usługi dodatkowe
 
-Usługi dodatkowe obejmują w szczególności wynajem skrytek sejfowych, usługi dokumentowe oraz usługi organizacyjne świadczone Klientom na ich zlecenie, takie jak rezerwacje, organizacja podróży i wydarzeń. Usługi organizacyjne realizuje się przez podmioty współpracujące z Bankiem; Bank pośredniczy w ich zleceniu, a koszty usługi podmiotu trzeciego ponosi Klient.
+Usługi dodatkowe obejmują w szczególności wynajem skrytek sejfowych, usługi dokumentowe oraz usługi organizacyjne świadczone Klientom na ich zlecenie, takie jak rezerwacje, organizacja podróży i wydarzeń. Usługi organizacyjne realizuje się przez podmioty współpracujące z Bankiem; Bank <!-- page: 20 --> pośredniczy w ich zleceniu, a koszty usługi podmiotu trzeciego ponosi Klient.
 
 - 1\. Skrytka sejfowa jest wynajmowana na podstawie odrębnej umowy zawieranej na okres roku. Wysokość opłaty zależy od rozmiaru skrytki. Klient otrzymuje dwa klucze, a za każdy z nich wnosi kaucję zwrotną.
 - 2\. Zawartość skrytki jest ubezpieczona na kwotę do 200 000,00 zł. Bank nie bada zawartości skrytki.

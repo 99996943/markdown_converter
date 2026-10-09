@@ -343,7 +343,7 @@ Od kwoty wykorzystanego limitu Bank pobiera odsetki według stopy wskazanej w um
 | 246. | Automatyczne wznowienie limitu po okresie dostępności | od kwoty limitu | 1,0% min. 30,00 zł |
 | 247. | Rezygnacja z samoczynnego wznowienia limitu | jednorazowo | bez opłat |
 
-<!-- page: 14 -->
+<!-- page: 15 -->
 - 1\) Prowizja jest potrącana z rachunku Klienta w dniu udostępnienia limitu; nie podlega zwrotowi w razie zamknięcia
 
 limitu przed upływem okresu, na który został przyznany, z wyjątkiem odstąpienia od umowy.
@@ -356,7 +356,6 @@ wysokość stopy może ulec zmianie na zasadach określonych w umowie.
 
 przepisów o usługach płatniczych, oraz gdy zadłużenie ponad limit zostanie spłacone w dniu jego powstania.
 
-<!-- page: 15 -->
 ## V. Kredyty dla przedsiębiorców
 
 Niniejsza sekcja dotyczy kredytów obrotowych, inwestycyjnych, linii kredytowych i kredytów w rachunku bieżącym oferowanych przedsiębiorcom, w tym osobom fizycznym prowadzącym działalność gospodarczą. Stawki ustalone w umowie z przedsiębiorcą mogą niższe od stawek Taryfy; Taryfa stanowi stawki maksymalne.
@@ -464,6 +463,7 @@ przedterminowej spłaty dokonanej w ostatnich 3 miesiącach przed końcem okresu
 
 Niniejsza sekcja dotyczy czynności wykonywanych w okresie trwania umowy kredytu na wniosek Klienta lub w jego interesie: zmian warunków umowy, wydawania zaświadczeń i dokumentów, zwolnień zabezpieczeń. Opłaty pobierane są jednorazowo, przed jej wykonaniem, chyba że Taryfa stanowi inaczej.
 
+<!-- page: 19 -->
 Bank nie pobiera opłat za informacje, które zgodnie z przepisami prawa udostępnia Klientowi nieodpłatnie, w szczególności za harmonogram spłat przekazywany raz w roku oraz za informację o saldzie zadłużenia w kanałach elektronicznych.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
@@ -654,11 +654,11 @@ wypowiedzenia umowy; opłatę pobiera się po doręczeniu wezwania.
 
 8:00–20:00 w dniach roboczych; opłaty nie pobiera się, jeżeli Klient nie został zastany w miejscu wskazanym w umowie z przyczyn niezależnych od Banku.
 
+<!-- page: 26 -->
 - 4\) Koszty zewnętrzne nie mogą przekroczyć kwoty niezbędnej i uzasadnionej, a Bank na wniosek Klienta przedstawia ich
 
 szczegółowe zestawienie; koszty nie dotyczą okresu wstrzymania czynności windykacyjnych.
 
-<!-- page: 26 -->
 ## VIII. Objaśnienia i definicje
 
 - 1\. Użyte w Taryfie pojęcia oznaczają:

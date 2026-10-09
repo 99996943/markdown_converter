@@ -71,239 +71,77 @@ Stawki poniżej dotyczą osób fizycznych niebędących przedsiębiorcami, któr
 | 9. | Zmiana lub anulowanie dyspozycji przelewu zagranicznego po jej przekazaniu do realizacji | za dyspozycję | 40,00 zł |
 | 10. | Poszukiwanie przelewu zagranicznego na wniosek Klienta | za zlecenie | 50,00 zł |
 | 11. | Zwrot przelewu zagranicznego na wniosek zleceniodawcy 3) | za operację | 45,00 zł |
-
-<!-- page: 5 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-12\. \| Kopia potwierdzenia przelewu w formacie \| za dokument \| 30,00 zł
-
-komunikatu SWIFT
-
-13\. \| Potwierdzenie wykonania przelewu w formie \| za dokument \| 15,00 zł
-
-papierowej
-
-14\. \| Wymiana walut w bankowości internetowej (kantor \| od kwoty transakcji \| kurs z marżą 0,3%
-
-internetowy)
-
-15\. \| Wymiana walut w placówce Banku \| od kwoty transakcji \| kurs z marżą 1,5%
-
-16\. \| Prowadzenie rachunku walutowego Klienta \| miesięcznie \| 0,00 zł
-
-indywidualnego
-
-17\. \| Wypłata gotówki w walucie obcej w placówce \| od kwoty transakcji \| 1% kwoty wypłaty
-
-18\. \| Przeliczenie transakcji kartą debetową w walucie \| od kwoty transakcji \| 2% kwoty
-
-innej niż waluta rachunku \| transakcji
-
-19\. \| Zaświadczenie o dokonanych przelewach \| za dokument \| 20,00 zł
-
-zagranicznych
-
-20\. \| Przelew zagraniczny — zlecenie stałe w walucie \| za operację \| 0,2% kwoty, min.
-
-obcej, jedna realizacja \| 20,00 zł
-
-21\. \| Przelew zagraniczny z datą przyszłą (zlecenie \| za operację \| bez dopłaty
-
-zaplanowane)
-
-22\. \| Anulowanie zlecenia przelewu zagranicznego \| za dyspozycję \| bez opłat
-
-z datą przyszłą przed dniem realizacji
-
-23\. \| Odwołanie przelewu zagranicznego po przekazaniu \| za dyspozycję \| 40,00 zł
-
-do realizacji (próba)
-
-24\. \| Odwołanie przelewu krajowego w walucie obcej do \| za dyspozycję \| 15,00 zł
-
-rachunku w Banku
-
-25\. \| Zwrot przelewu zagranicznego, który został \| za operację \| bez opłat
-
-odrzucony przez bank odbiorcy
-
-26\. \| Zwrot przelewu zagranicznego z opłatą przekazaną \| za operację \| wg rzeczywistych
-
-przez bank pośredniczący \| kosztów banku
-
-pośredniczącego
-
-27\. \| Przelew dewizowy związany z zakupem \| za zlecenie \| 40,00 zł
-
-nieruchomości za granicą — obsługa dokumentów
-
-28\. \| Dołączenie faktury lub umowy do dyspozycji \| za każdy dokument \| 25,00 zł
-
-przelewu zagranicznego
-
-29\. \| Potwierdzenie przelewu zagranicznego w języku \| za dokument \| 15,00 zł
-
-angielskim
-
-<!-- page: 6 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-30\. \| Przelew między własnymi rachunkami walutowymi \| za operację \| bez opłat
-
-w tej samej walucie
-
-31\. \| Przelew między własnymi rachunkami w różnych \| od kwoty transakcji \| kurs z marżą 0,3%
-
-walutach (z przeliczeniem po kursie kantorowym)
-
-32\. \| Przelew walutowy do innego klienta Banku \| za operację \| 0,00 zł
-
-w bankowości internetowej
-
-33\. \| Przelew walutowy do innego klienta Banku \| za operację \| 15,00 zł
-
-w placówce
-
-34\. \| Przelew na rachunek walutowy dziecka (rachunek \| za operację \| bez opłat
-
-dla małoletniego)
-
-35\. \| Prowadzenie rachunku walutowego dla \| miesięcznie \| bez opłat
-
-małoletniego
-
-36\. \| Karta wielowalutowa — dodatkowa opłata za \| od kwoty transakcji \| 2% kwoty
-
-obsługę waluty obcej \| transakcji
-
-37\. \| Zamknięcie rachunku walutowego z wypłatą salda \| jednorazowo \| 20,00 zł +
-
-w gotówce \| prowizja za
-
-wypłatę gotówki
-
-38\. \| Zaświadczenie o źródle pochodzenia środków \| za dokument \| 20,00 zł
-
-z przelewu przychodzącego
-
-39\. \| Wyciąg z rachunku walutowego w formie \| za każdy wyciąg \| 12,00 zł
-
-papierowej
-
-40\. \| Przelew w dolarach amerykańskich do banku poza \| od kwoty transakcji \| 0,2% kwoty, min.
-
-SEPA (opcja SHA) \| 20,00 zł, maks.
-
-150,00 zł
-
-41\. \| Przelew w funtach szterlingach do banku \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w Wielkiej Brytanii \| 20,00 zł, maks.
-
-150,00 zł
-
-42\. \| Przelew we frankach szwajcarskich do banku \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w Szwajcarii \| 20,00 zł, maks.
-
-150,00 zł
-
-43\. \| Przelew w koronach czeskich, szwedzkich lub \| od kwoty transakcji \| 0,2% kwoty, min.
-
-norweskich do banku w Europie \| 20,00 zł, maks.
-
-150,00 zł
-
-44\. \| Przelew w euro do banku w kraju spoza obszaru \| od kwoty transakcji \| 0,2% kwoty, min.
-
-SEPA \| 20,00 zł, maks.
-
-150,00 zł
-
-45\. \| Przelew zagraniczny złożony za pośrednictwem \| za operację \| 4,00 zł
-
-infolinii 4) \| (dodatkowo)
+| 12. | Kopia potwierdzenia przelewu w formacie komunikatu SWIFT | za dokument | 30,00 zł |
+| 13. | Potwierdzenie wykonania przelewu w formie papierowej | za dokument | 15,00 zł |
+| 14. | Wymiana walut w bankowości internetowej (kantor internetowy) | od kwoty transakcji | kurs z marżą 0,3% |
+| 15. | Wymiana walut w placówce Banku | od kwoty transakcji | kurs z marżą 1,5% |
+| 16. | Prowadzenie rachunku walutowego Klienta indywidualnego | miesięcznie | 0,00 zł |
+| 17. | Wypłata gotówki w walucie obcej w placówce | od kwoty transakcji | 1% kwoty wypłaty |
+| 18. | Przeliczenie transakcji kartą debetową w walucie innej niż waluta rachunku | od kwoty transakcji | 2% kwoty transakcji |
+| 19. | Zaświadczenie o dokonanych przelewach zagranicznych | za dokument | 20,00 zł |
+| 20. | Przelew zagraniczny — zlecenie stałe w walucie obcej, jedna realizacja | za operację | 0,2% kwoty, min. 20,00 zł |
+| 21. | Przelew zagraniczny z datą przyszłą (zlecenie zaplanowane) | za operację | bez dopłaty |
+| 22. | Anulowanie zlecenia przelewu zagranicznego z datą przyszłą przed dniem realizacji | za dyspozycję | bez opłat |
+| 23. | Odwołanie przelewu zagranicznego po przekazaniu do realizacji (próba) | za dyspozycję | 40,00 zł |
+| 24. | Odwołanie przelewu krajowego w walucie obcej do rachunku w Banku | za dyspozycję | 15,00 zł |
+| 25. | Zwrot przelewu zagranicznego, który został odrzucony przez bank odbiorcy | za operację | bez opłat |
+| 26. | Zwrot przelewu zagranicznego z opłatą przekazaną przez bank pośredniczący | za operację | wg rzeczywistych kosztów banku pośredniczącego |
+| 27. | Przelew dewizowy związany z zakupem nieruchomości za granicą — obsługa dokumentów | za zlecenie | 40,00 zł |
+| 28. | Dołączenie faktury lub umowy do dyspozycji przelewu zagranicznego | za każdy dokument | 25,00 zł |
+| 29. | Potwierdzenie przelewu zagranicznego w języku angielskim | za dokument | 15,00 zł |
+| 30. | Przelew między własnymi rachunkami walutowymi w tej samej walucie | za operację | bez opłat |
+| 31. | Przelew między własnymi rachunkami w różnych walutach (z przeliczeniem po kursie kantorowym) | od kwoty transakcji | kurs z marżą 0,3% |
+| 32. | Przelew walutowy do innego klienta Banku w bankowości internetowej | za operację | 0,00 zł |
+| 33. | Przelew walutowy do innego klienta Banku w placówce | za operację | 15,00 zł |
+| 34. | Przelew na rachunek walutowy dziecka (rachunek dla małoletniego) | za operację | bez opłat |
+| 35. | Prowadzenie rachunku walutowego dla małoletniego | miesięcznie | bez opłat |
+| 36. | Karta wielowalutowa — dodatkowa opłata za obsługę waluty obcej | od kwoty transakcji | 2% kwoty transakcji |
+| 37. | Zamknięcie rachunku walutowego z wypłatą salda w gotówce | jednorazowo | 20,00 zł + prowizja za wypłatę gotówki |
+| 38. | Zaświadczenie o źródle pochodzenia środków z przelewu przychodzącego | za dokument | 20,00 zł |
+| 39. | Wyciąg z rachunku walutowego w formie papierowej | za każdy wyciąg | 12,00 zł |
+| 40. | Przelew w dolarach amerykańskich do banku poza SEPA (opcja SHA) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 41. | Przelew w funtach szterlingach do banku w Wielkiej Brytanii | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 42. | Przelew we frankach szwajcarskich do banku w Szwajcarii | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 43. | Przelew w koronach czeskich, szwedzkich lub norweskich do banku w Europie | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 44. | Przelew w euro do banku w kraju spoza obszaru SEPA | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 45. | Przelew zagraniczny złożony za pośrednictwem infolinii 4) | za operację | 4,00 zł (dodatkowo) |
+| 46. | Przelew zagraniczny w opcji kosztów BEN | za operację | bez dopłaty |
+| 47. | Przelew wychodzący w złotych na rachunek w banku za granicą | za operację | 2,00 zł |
+| 48. | Przelew zagraniczny z rachunku walutowego do banku w kraju zamieszkania Klienta (przekaz środków własnych) | za operację | 2,00 zł |
+| 49. | Przelew do państwa objętego ograniczeniami (wymaga dodatkowej weryfikacji dyspozycji) | za operację | wg wyceny indywidualnej |
 
 <!-- page: 7 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-46\. \| Przelew zagraniczny w opcji kosztów BEN \| za operację \| bez dopłaty
-
-47\. \| Przelew wychodzący w złotych na rachunek \| za operację \| 2,00 zł
-
-w banku za granicą
-
-48\. \| Przelew zagraniczny z rachunku walutowego do \| za operację \| 2,00 zł
-
-banku w kraju zamieszkania Klienta (przekaz
-
-środków własnych)
-
-49\. \| Przelew do państwa objętego ograniczeniami \| za operację \| wg wyceny
-
-(wymaga dodatkowej weryfikacji dyspozycji) \| indywidualnej
-
-1\) Opłaty banków pośredniczących i banku odbiorcy nie są wliczone do prowizji Banku. Jeżeli nie wybrano opcji OUR,
+- 1\) Opłaty banków pośredniczących i banku odbiorcy nie są wliczone do prowizji Banku. Jeżeli nie wybrano opcji OUR,
 
 mogą one pomniejszyć kwotę otrzymaną przez odbiorcę.
 
-2\) Stawka dotyczy przelewów w walutach spoza SEPA zleconych w placówce w ramach konta osobistego i zastępuje
+- 2\) Stawka dotyczy przelewów w walutach spoza SEPA zleconych w placówce w ramach konta osobistego i zastępuje
 
 prowizję procentową; zasady określa regulamin rachunku osobistego.
 
-3\) Bank zwraca środki po ich otrzymaniu od banku odbiorcy, w kwocie pomniejszonej o opłaty banków
+- 3\) Bank zwraca środki po ich otrzymaniu od banku odbiorcy, w kwocie pomniejszonej o opłaty banków
 
 pośredniczących; kwota zwrotu jest przeliczana po kursie kupna obowiązującym w dniu zwrotu.
 
-4\) Dyspozycja złożona telefonicznie wymaga uwierzytelnienia Klienta i jest realizowana wyłącznie w kwocie do limitu
+- 4\) Dyspozycja złożona telefonicznie wymaga uwierzytelnienia Klienta i jest realizowana wyłącznie w kwocie do limitu
 
 dziennego określonego w umowie.
 
-**III. Przedsiębiorcy**
+## III. Przedsiębiorcy
 
-Stawki dla przedsiębiorców obejmują osoby fizyczne prowadzące działalność gospodarczą, spółki,
+Stawki dla przedsiębiorców obejmują osoby fizyczne prowadzące działalność gospodarczą, spółki, stowarzyszenia, fundacje i inne podmioty niebędące konsumentami. Dla klientów korzystających z platformy bankowości internetowej dla firm Bank stosuje limity dzienne określone w umowie; przekroczenie limitu wymaga potwierdzenia dyspozycji telefonicznie lub w placówce.
 
-stowarzyszenia, fundacje i inne podmioty niebędące konsumentami. Dla klientów korzystających
-
-z platformy bankowości internetowej dla firm Bank stosuje limity dzienne określone w umowie;
-
-przekroczenie limitu wymaga potwierdzenia dyspozycji telefonicznie lub w placówce.
-
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-50\. \| Przelew w euro w ramach jednolitego obszaru \| za przelew \| 5,00 zł
-
-płatności (SEPA)
-
-51\. \| Przelew walutowy poza SEPA w opcji SHA 1) \| od kwoty transakcji \| 0,2% kwoty, min.
-
-20,00 zł, maks.
-
-150,00 zł
-
-52\. \| Dopłata za opcję kosztów OUR \| za przelew \| 70,00 zł
-
-53\. \| Dopłata za realizację w trybie pilnym (waluta dnia) \| za przelew \| 40,00 zł
-
-54\. \| Dopłata za realizację w trybie ekspresowym (tego \| za przelew \| 80,00 zł
-
-samego dnia, do godziny granicznej)
-
-55\. \| Przelew w złotych na rachunek w banku za granicą \| za przelew \| 5,00 zł
-
-56\. \| Przelew walutowy między rachunkami Klienta \| za przelew \| 0,00 zł
-
-w Banku
-
-57\. \| Przelew walutowy do innego klienta Banku zlecony \| za przelew \| 15,00 zł
-
-w placówce
-
-58\. \| Przelew przychodzący z zagranicy \| za przelew \| 15,00 zł
-
-<!-- page: 8 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
+| 50. | Przelew w euro w ramach jednolitego obszaru płatności (SEPA) | za przelew | 5,00 zł |
+| 51. | Przelew walutowy poza SEPA w opcji SHA 1) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 52. | Dopłata za opcję kosztów OUR | za przelew | 70,00 zł |
+| 53. | Dopłata za realizację w trybie pilnym (waluta dnia) | za przelew | 40,00 zł |
+| 54. | Dopłata za realizację w trybie ekspresowym (tego samego dnia, do godziny granicznej) | za przelew | 80,00 zł |
+| 55. | Przelew w złotych na rachunek w banku za granicą | za przelew | 5,00 zł |
+| 56. | Przelew walutowy między rachunkami Klienta w Banku | za przelew | 0,00 zł |
+| 57. | Przelew walutowy do innego klienta Banku zlecony w placówce | za przelew | 15,00 zł |
+| 58. | Przelew przychodzący z zagranicy | za przelew | 15,00 zł |
 | 59. | Zmiana dyspozycji przelewu zagranicznego po przekazaniu do realizacji | za dyspozycję | 60,00 zł |
 | 60. | Poszukiwanie przelewu zagranicznego (zapytanie do banku zagranicznego) 2) | za zlecenie | 80,00 zł |
 | 61. | Zwrot przelewu zagranicznego na wniosek zleceniodawcy | za operację | 45,00 zł |
@@ -323,164 +161,56 @@ w placówce
 | 75. | Naprawa instrukcji płatniczej przed wysłaniem przelewu | za przelew | 30,00 zł |
 | 76. | Poszukiwanie przelewu zagranicznego | za zlecenie | 80,00 zł |
 | 77. | Kopia komunikatu SWIFT dotyczącego przelewu | za dokument | 30,00 zł |
-
-<!-- page: 9 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-78\. \| Przelew walutowy między rachunkami Klienta \| za przelew \| 0,00 zł
-
-w Banku
-
-79\. \| Przelew walutowy do innego klienta Banku \| za przelew \| 0,00 zł
-
-w bankowości internetowej
-
-80\. \| Przelew walutowy do innego klienta Banku zlecony \| za przelew \| 15,00 zł
-
-w placówce
-
-81\. \| Wymiana walut na rachunkach firmowych \| od kwoty transakcji \| kurs z marżą 0,3%
-
-w kantorze internetowym
-
-82\. \| Wymiana walut na rachunkach firmowych według \| od kwoty transakcji \| kurs z marżą 1,5%
-
-Tabeli kursów walut
-
-83\. \| Obsługa rachunku walutowego z dostępem \| miesięcznie \| 10,00 zł
-
-w ramach bankowości dla firm
-
-84\. \| Opinia bankowa dla kontrahenta zagranicznego (w \| za dokument \| 80,00 zł
-
-języku angielskim)
-
-85\. \| Potwierdzenie salda rachunku walutowego dla \| za dokument \| 100,00 zł
-
-biegłego rewidenta
-
-86\. \| Przygotowanie zestawienia przelewów \| za zestawienie \| 25,00 zł
-
-zagranicznych za wskazany okres (format
-
-elektroniczny)
-
-87\. \| Przekazanie informacji o transakcjach dewizowych \| za zlecenie \| 40,00 zł
-
-do raportowania statystycznego (na wniosek)
-
-88\. \| Przelew w dolarach amerykańskich do banku poza \| od kwoty transakcji \| 0,2% kwoty, min.
-
-SEPA (opcja SHA) \| 20,00 zł, maks.
-
-150,00 zł
-
-89\. \| Przelew w funtach szterlingach do banku \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w Wielkiej Brytanii \| 20,00 zł, maks.
-
-150,00 zł
-
-90\. \| Przelew we frankach szwajcarskich do banku \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w Szwajcarii \| 20,00 zł, maks.
-
-150,00 zł
-
-91\. \| Przelew w juanach, jenach lub dolarach \| od kwoty transakcji \| 0,2% kwoty, min.
-
-kanadyjskich do banku poza Europą \| 20,00 zł, maks.
-
-150,00 zł
-
-92\. \| Przelew w złotych na rachunek w banku za granicą \| za przelew \| 5,00 zł
-
-(opcja SHA)
-
-93\. \| Przelew w euro do kraju poza obszarem SEPA (np. \| od kwoty transakcji \| 0,2% kwoty, min.
-
-Turcja, Ukraina) \| 20,00 zł, maks.
-
-150,00 zł
+| 78. | Przelew walutowy między rachunkami Klienta w Banku | za przelew | 0,00 zł |
+| 79. | Przelew walutowy do innego klienta Banku w bankowości internetowej | za przelew | 0,00 zł |
+| 80. | Przelew walutowy do innego klienta Banku zlecony w placówce | za przelew | 15,00 zł |
+| 81. | Wymiana walut na rachunkach firmowych w kantorze internetowym | od kwoty transakcji | kurs z marżą 0,3% |
+| 82. | Wymiana walut na rachunkach firmowych według Tabeli kursów walut | od kwoty transakcji | kurs z marżą 1,5% |
+| 83. | Obsługa rachunku walutowego z dostępem w ramach bankowości dla firm | miesięcznie | 10,00 zł |
+| 84. | Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim) | za dokument | 80,00 zł |
+| 85. | Potwierdzenie salda rachunku walutowego dla biegłego rewidenta | za dokument | 100,00 zł |
+| 86. | Przygotowanie zestawienia przelewów zagranicznych za wskazany okres (format elektroniczny) | za zestawienie | 25,00 zł |
+| 87. | Przekazanie informacji o transakcjach dewizowych do raportowania statystycznego (na wniosek) | za zlecenie | 40,00 zł |
+| 88. | Przelew w dolarach amerykańskich do banku poza SEPA (opcja SHA) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 89. | Przelew w funtach szterlingach do banku w Wielkiej Brytanii | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 90. | Przelew we frankach szwajcarskich do banku w Szwajcarii | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 91. | Przelew w juanach, jenach lub dolarach kanadyjskich do banku poza Europą | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 92. | Przelew w złotych na rachunek w banku za granicą (opcja SHA) | za przelew | 5,00 zł |
+| 93. | Przelew w euro do kraju poza obszarem SEPA (np. Turcja, Ukraina) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 94. | Przelew do państwa wymagającego dodatkowych dokumentów celnych 3) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł + 40,00 zł |
+| 95. | Przelew zagraniczny składany w paczce z systemu finansowo-księgowego | za przelew w paczce | 0,2% kwoty, min. 20,00 zł |
+| 96. | Przelew zagraniczny złożony za pośrednictwem opiekuna klienta | za przelew | 12,00 zł (dodatkowo) |
+| 97. | Przelew do spółki powiązanej kapitałowo w ramach rozliczeń grupy | za przelew | wg umowy |
 
 <!-- page: 10 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-94\. \| Przelew do państwa wymagającego dodatkowych \| od kwoty transakcji \| 0,2% kwoty, min.
-
-dokumentów celnych 3) \| 20,00 zł + 40,00 zł
-
-95\. \| Przelew zagraniczny składany w paczce z systemu \| za przelew \| 0,2% kwoty, min.
-
-finansowo-księgowego \| w paczce \| 20,00 zł
-
-96\. \| Przelew zagraniczny złożony za pośrednictwem \| za przelew \| 12,00 zł
-
-opiekuna klienta \| (dodatkowo)
-
-97\. \| Przelew do spółki powiązanej kapitałowo w ramach \| za przelew \| wg umowy
-
-rozliczeń grupy
-
-1\) Stawka dotyczy przelewów w walucie obcej do banków poza SEPA oraz przelewów w walucie innej niż euro. Opłaty
+- 1\) Stawka dotyczy przelewów w walucie obcej do banków poza SEPA oraz przelewów w walucie innej niż euro. Opłaty
 
 banków pośredniczących, jeżeli nie wybrano opcji OUR, pomniejszają kwotę przekazywaną odbiorcy.
 
-2\) Jeżeli poszukiwanie wykaże błąd leżący po stronie Banku, opłaty nie pobiera się, a pobraną opłatę zwraca się
+- 2\) Jeżeli poszukiwanie wykaże błąd leżący po stronie Banku, opłaty nie pobiera się, a pobraną opłatę zwraca się
 
 w terminie 14 dni.
 
-3\) Opłata za weryfikację dokumentów jest pobierana jednorazowo, jeżeli do przelewu załączono więcej niż jeden
+- 3\) Opłata za weryfikację dokumentów jest pobierana jednorazowo, jeżeli do przelewu załączono więcej niż jeden
 
 dokument dotyczący tej samej transakcji.
 
-**IV. Przelewy SEPA**
+## IV. Przelewy SEPA
 
-Przelew SEPA jest przelewem w euro na rachunek prowadzony w państwie uczestniczącym
+Przelew SEPA jest przelewem w euro na rachunek prowadzony w państwie uczestniczącym w jednolitym obszarze płatności w euro, z wykorzystaniem numeru IBAN odbiorcy i opcji kosztów SHA. Bank realizuje przelew SEPA nie później niż do końca następnego dnia roboczego po dniu przyjęcia zlecenia. Przelew SEPA Instant jest dostępny całodobowo, jeżeli bank odbiorcy uczestniczy w tym schemacie, a kwota przelewu nie przekracza limitu określonego w umowie.
 
-w jednolitym obszarze płatności w euro, z wykorzystaniem numeru IBAN odbiorcy i opcji kosztów
-
-SHA. Bank realizuje przelew SEPA nie później niż do końca następnego dnia roboczego po dniu
-
-przyjęcia zlecenia. Przelew SEPA Instant jest dostępny całodobowo, jeżeli bank odbiorcy uczestniczy
-
-w tym schemacie, a kwota przelewu nie przekracza limitu określonego w umowie.
-
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-98\. \| Przelew SEPA wychodzący w euro (klient \| za operację \| 2,00 zł
-
-indywidualny)
-
-98\.1. \| zlecony w bankowości internetowej lub aplikacji \| za operację \| 2,00 zł
-
-mobilnej
-
-98\.2. \| zlecony w placówce Banku \| za operację \| 2,00 zł
-
-99\. \| Przelew SEPA wychodzący w euro (przedsiębiorca) \| za przelew \| 5,00 zł
-
-100\. \| Przelew SEPA Instant w euro (przedsiębiorca) \| za przelew \| 5,00 zł
-
-101\. \| Przelew SEPA przychodzący (klient indywidualny) \| za operację \| 10,00 zł
-
-102\. \| Przelew SEPA przychodzący (przedsiębiorca) \| za przelew \| 15,00 zł
-
-103\. \| Zlecenie stałe SEPA w euro — realizacja jednego \| za operację \| 2,00 zł
-
-przelewu 1)
-
-104\. \| Zwrot przelewu SEPA przychodzącego na wniosek \| za operację \| 10,00 zł
-
-odbiorcy 2)
-
-105\. \| Anulowanie przelewu SEPA przed przekazaniem do \| za dyspozycję \| bez opłat
-
-realizacji
-
-<!-- page: 11 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
+| 98. | Przelew SEPA wychodzący w euro (klient indywidualny) | za operację | 2,00 zł |
+| 98.1. | zlecony w bankowości internetowej lub aplikacji mobilnej | za operację | 2,00 zł |
+| 98.2. | zlecony w placówce Banku | za operację | 2,00 zł |
+| 99. | Przelew SEPA wychodzący w euro (przedsiębiorca) | za przelew | 5,00 zł |
+| 100. | Przelew SEPA Instant w euro (przedsiębiorca) | za przelew | 5,00 zł |
+| 101. | Przelew SEPA przychodzący (klient indywidualny) | za operację | 10,00 zł |
+| 102. | Przelew SEPA przychodzący (przedsiębiorca) | za przelew | 15,00 zł |
+| 103. | Zlecenie stałe SEPA w euro — realizacja jednego przelewu 1) | za operację | 2,00 zł |
+| 104. | Zwrot przelewu SEPA przychodzącego na wniosek odbiorcy 2) | za operację | 10,00 zł |
+| 105. | Anulowanie przelewu SEPA przed przekazaniem do realizacji | za dyspozycję | bez opłat |
 | 106. | Odwołanie przelewu SEPA po przekazaniu do realizacji (przedsiębiorca) | za dyspozycję | 25,00 zł |
 | 107. | Poszukiwanie przelewu SEPA w banku odbiorcy | za zlecenie | 50,00 zł |
 | 108. | Anulowanie przelewu SEPA zleconego z datą przyszłą | za dyspozycję | bez opłat |
@@ -526,213 +256,59 @@ gwarantowany. W razie braku zwrotu opłaty nie zwraca się.
 
 ## V. Przelewy zagraniczne poza SEPA
 
-Przelewy zagraniczne poza SEPA realizowane są za pośrednictwem międzynarodowej sieci komunikacji międzybankowej SWIFT, na podstawie kodu BIC banku odbiorcy i numeru rachunku odbiorcy. Do przelewu w walucie innej niż euro lub do państwa poza obszarem SEPA Klient wskazuje opcję kosztów. Przy dyspozycji OUR Bank pobiera dopłatę, a bank pośredniczący nie pomniejsza kwoty przelewu o własne prowizje; rzeczywiste koszty banków zagranicznych mogą jednak zostać odrębnie rozliczone z Bankiem i przeniesione na Klienta.
-
-<!-- page: 13 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-138\. \| Przelew zagraniczny wychodzący poza SEPA w opcji \| od kwoty transakcji \| 0,2% kwoty, min.
-
-SHA — klient indywidualny \| 20,00 zł, maks.
-
-150,00 zł
-
-139\. \| Przelew zagraniczny wychodzący poza SEPA w opcji \| od kwoty transakcji \| 0,2% kwoty, min.
-
-SHA — przedsiębiorca \| 20,00 zł, maks.
-
-150,00 zł
-
-140\. \| Opcje kosztów przelewu zagranicznego 1) \| za przelew \| wg opcji
-
-140\.1. \| SHA — koszty dzielone między zleceniodawcę \| za przelew \| bez dopłaty
-
-i odbiorcę
-
-140\.2. \| OUR — wszystkie koszty ponosi zleceniodawca \| za przelew \| 60,00 zł
-
-(klient indywidualny)
-
-140\.3. \| OUR — wszystkie koszty ponosi zleceniodawca \| za przelew \| 70,00 zł
-
-(przedsiębiorca)
-
-140\.4. \| BEN — koszty ponosi odbiorca \| za przelew \| bez dopłaty
-
-141\. \| Tryb realizacji przelewu zagranicznego \| za przelew \| wg trybu
-
-141\.1. \| zwykły (D+2, waluta dwa dni po przyjęciu zlecenia) \| za przelew \| bez dopłaty
-
-141\.2. \| pilny (D+1, waluta następnego dnia roboczego) — \| za przelew \| 45,00 zł
-
-klient indywidualny
-
-141\.3. \| pilny (D+1, waluta następnego dnia roboczego) — \| za przelew \| 40,00 zł
-
-przedsiębiorca
-
-141\.4. \| ekspresowy (D+0, waluta tego samego dnia) 2) \| za przelew \| 80,00 zł
-
-142\. \| Przelew walutowy zlecony w placówce z rachunku \| za operację \| 35,00 zł
-
-osobistego
-
-143\. \| Zmiana lub odwołanie dyspozycji przelewu \| za dyspozycję \| 60,00 zł
-
-zagranicznego — przedsiębiorca
-
-144\. \| Zmiana lub odwołanie dyspozycji przelewu \| za dyspozycję \| 40,00 zł
-
-zagranicznego — klient indywidualny
-
-145\. \| Zwrot przelewu zagranicznego (recall) na wniosek \| za operację \| 45,00 zł
-
-zleceniodawcy 3)
-
-146\. \| Naprawa błędnej lub niepełnej instrukcji płatniczej \| za przelew \| 30,00 zł
-
-przed wysłaniem przelewu
-
-147\. \| Przelew zwykły (D+2) poza SEPA \| za przelew \| bez dopłaty
-
-148\. \| Przelew pilny (D+1) poza SEPA — klient \| za przelew \| 45,00 zł
-
-indywidualny
-
-149\. \| Przelew pilny (D+1) poza SEPA — przedsiębiorca \| za przelew \| 40,00 zł
-
-<!-- page: 14 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-150\. \| Przelew ekspresowy (D+0) poza SEPA 4) \| za przelew \| 80,00 zł
-
-151\. \| Potwierdzenie kursu przed złożeniem dyspozycji \| za zlecenie \| 10,00 zł
-
-(kurs gwarantowany na czas do godziny
-
-granicznej)
-
-152\. \| Zlecenie przelewu zagranicznego po kursie \| za zlecenie \| 0,00 zł
-
-negocjowanym z dealerem Banku
-
-153\. \| Złożenie zlecenia przelewu zagranicznego po \| za przelew \| niedostępne
-
-godzinie granicznej z żądaniem realizacji tego
-
-samego dnia
-
-154\. \| Przelew zagraniczny wymagający ręcznej obsługi \| za przelew \| 30,00 zł
-
-(dane niezgodne z formatem STP)
-
-155\. \| Przelew zagraniczny do banku niepodającego kodu \| za przelew \| 30,00 zł
-
-BIC (wymaga ręcznego ustalenia banku odbiorcy)
-
-156\. \| Odrzucenie przelewu zagranicznego przez Bank \| za przelew \| bez opłat
-
-z powodu braków w dyspozycji
-
-157\. \| Opcja OUR — przelew w euro poza SEPA (klient \| za przelew \| 60,00 zł
-
-indywidualny)
-
-158\. \| Opcja OUR — przelew w dolarach amerykańskich \| za przelew \| 60,00 zł
-
-(klient indywidualny)
-
-159\. \| Opcja OUR — przelew w euro poza SEPA \| za przelew \| 70,00 zł
-
-(przedsiębiorca)
-
-160\. \| Opcja OUR — przelew w dolarach amerykańskich \| za przelew \| 70,00 zł
-
-(przedsiębiorca)
-
-161\. \| Opcja OUR — rozliczenie dodatkowych opłat \| za przelew \| wg rzeczywistych
-
-banków zagranicznych przekraczających dopłatę \| kosztów
-
-162\. \| Opcja BEN — przelew w walucie wymienialnej do \| za przelew \| bez dopłaty
-
-banku w dozwolonym państwie
-
-163\. \| Opcja SHA — przelew w walucie wymienialnej \| za przelew \| bez dopłaty
-
-164\. \| Zmiana opcji kosztów po przyjęciu dyspozycji \| za dyspozycję \| 40,00 zł
-
-przelewu do realizacji
-
-165\. \| Gwarancja pokrycia kosztów banków \| za dokument \| 15,00 zł
-
-zagranicznych — potwierdzenie na piśmie
-
-166\. \| Zwrot dopłaty OUR w razie odrzucenia przelewu \| za przelew \| zwrot w pełnej
-
-przez bank odbiorcy \| wysokości
-
-167\. \| Przelew SWIFT do Stanów Zjednoczonych \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w dolarach amerykańskich — klient indywidualny \| 20,00 zł, maks.
-
-150,00 zł
+Przelewy zagraniczne poza SEPA realizowane są za pośrednictwem międzynarodowej sieci komunikacji międzybankowej SWIFT, na podstawie kodu BIC banku odbiorcy i numeru rachunku odbiorcy. Do przelewu w walucie innej niż euro lub do państwa poza obszarem SEPA Klient wskazuje opcję kosztów. Przy dyspozycji OUR Bank pobiera dopłatę, a bank pośredniczący nie <!-- page: 13 --> pomniejsza kwoty przelewu o własne prowizje; rzeczywiste koszty banków zagranicznych mogą jednak zostać odrębnie rozliczone z Bankiem i przeniesione na Klienta.
+
+| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
+| 138. | Przelew zagraniczny wychodzący poza SEPA w opcji SHA — klient indywidualny | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 139. | Przelew zagraniczny wychodzący poza SEPA w opcji SHA — przedsiębiorca | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 140. | Opcje kosztów przelewu zagranicznego 1) | za przelew | wg opcji |
+| 140.1. | SHA — koszty dzielone między zleceniodawcę i odbiorcę | za przelew | bez dopłaty |
+| 140.2. | OUR — wszystkie koszty ponosi zleceniodawca (klient indywidualny) | za przelew | 60,00 zł |
+| 140.3. | OUR — wszystkie koszty ponosi zleceniodawca (przedsiębiorca) | za przelew | 70,00 zł |
+| 140.4. | BEN — koszty ponosi odbiorca | za przelew | bez dopłaty |
+| 141. | Tryb realizacji przelewu zagranicznego | za przelew | wg trybu |
+| 141.1. | zwykły (D+2, waluta dwa dni po przyjęciu zlecenia) | za przelew | bez dopłaty |
+| 141.2. | pilny (D+1, waluta następnego dnia roboczego) — klient indywidualny | za przelew | 45,00 zł |
+| 141.3. | pilny (D+1, waluta następnego dnia roboczego) — przedsiębiorca | za przelew | 40,00 zł |
+| 141.4. | ekspresowy (D+0, waluta tego samego dnia) 2) | za przelew | 80,00 zł |
+| 142. | Przelew walutowy zlecony w placówce z rachunku osobistego | za operację | 35,00 zł |
+| 143. | Zmiana lub odwołanie dyspozycji przelewu zagranicznego — przedsiębiorca | za dyspozycję | 60,00 zł |
+| 144. | Zmiana lub odwołanie dyspozycji przelewu zagranicznego — klient indywidualny | za dyspozycję | 40,00 zł |
+| 145. | Zwrot przelewu zagranicznego (recall) na wniosek zleceniodawcy 3) | za operację | 45,00 zł |
+| 146. | Naprawa błędnej lub niepełnej instrukcji płatniczej przed wysłaniem przelewu | za przelew | 30,00 zł |
+| 147. | Przelew zwykły (D+2) poza SEPA | za przelew | bez dopłaty |
+| 148. | Przelew pilny (D+1) poza SEPA — klient indywidualny | za przelew | 45,00 zł |
+| 149. | Przelew pilny (D+1) poza SEPA — przedsiębiorca | za przelew | 40,00 zł |
+| 150. | Przelew ekspresowy (D+0) poza SEPA 4) | za przelew | 80,00 zł |
+| 151. | Potwierdzenie kursu przed złożeniem dyspozycji (kurs gwarantowany na czas do godziny granicznej) | za zlecenie | 10,00 zł |
+| 152. | Zlecenie przelewu zagranicznego po kursie negocjowanym z dealerem Banku | za zlecenie | 0,00 zł |
+| 153. | Złożenie zlecenia przelewu zagranicznego po godzinie granicznej z żądaniem realizacji tego samego dnia | za przelew | niedostępne |
+| 154. | Przelew zagraniczny wymagający ręcznej obsługi (dane niezgodne z formatem STP) | za przelew | 30,00 zł |
+| 155. | Przelew zagraniczny do banku niepodającego kodu BIC (wymaga ręcznego ustalenia banku odbiorcy) | za przelew | 30,00 zł |
+| 156. | Odrzucenie przelewu zagranicznego przez Bank z powodu braków w dyspozycji | za przelew | bez opłat |
+| 157. | Opcja OUR — przelew w euro poza SEPA (klient indywidualny) | za przelew | 60,00 zł |
+| 158. | Opcja OUR — przelew w dolarach amerykańskich (klient indywidualny) | za przelew | 60,00 zł |
+| 159. | Opcja OUR — przelew w euro poza SEPA (przedsiębiorca) | za przelew | 70,00 zł |
+| 160. | Opcja OUR — przelew w dolarach amerykańskich (przedsiębiorca) | za przelew | 70,00 zł |
+| 161. | Opcja OUR — rozliczenie dodatkowych opłat banków zagranicznych przekraczających dopłatę | za przelew | wg rzeczywistych kosztów |
+| 162. | Opcja BEN — przelew w walucie wymienialnej do banku w dozwolonym państwie | za przelew | bez dopłaty |
+| 163. | Opcja SHA — przelew w walucie wymienialnej | za przelew | bez dopłaty |
+| 164. | Zmiana opcji kosztów po przyjęciu dyspozycji przelewu do realizacji | za dyspozycję | 40,00 zł |
+| 165. | Gwarancja pokrycia kosztów banków zagranicznych — potwierdzenie na piśmie | za dokument | 15,00 zł |
+| 166. | Zwrot dopłaty OUR w razie odrzucenia przelewu przez bank odbiorcy | za przelew | zwrot w pełnej wysokości |
+| 167. | Przelew SWIFT do Stanów Zjednoczonych w dolarach amerykańskich — klient indywidualny | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 168. | Przelew SWIFT do Stanów Zjednoczonych w dolarach amerykańskich — przedsiębiorca | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 169. | Przelew SWIFT do Wielkiej Brytanii w funtach szterlingach — klient indywidualny | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 170. | Przelew SWIFT do Wielkiej Brytanii w funtach szterlingach — przedsiębiorca | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 171. | Przelew SWIFT do Chin w juanach (CNY) — wymaga podania celu płatności | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 172. | Przelew SWIFT do Japonii w jenach (JPY) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 173. | Przelew SWIFT do Szwajcarii we frankach szwajcarskich (CHF) | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 174. | Przelew SWIFT do Ukrainy w hrywnach lub dolarach amerykańskich | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 175. | Przelew SWIFT do Emiratów Arabskich w dirhamach lub dolarach | od kwoty transakcji | 0,2% kwoty, min. 20,00 zł, maks. 150,00 zł |
+| 176. | Przelew SWIFT w walucie niewymienionej w Tabeli kursów walut (waluta egzotyczna) 5) | za przelew | wg wyceny indywidualnej |
 
 <!-- page: 15 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-168\. \| Przelew SWIFT do Stanów Zjednoczonych \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w dolarach amerykańskich — przedsiębiorca \| 20,00 zł, maks.
-
-150,00 zł
-
-169\. \| Przelew SWIFT do Wielkiej Brytanii w funtach \| od kwoty transakcji \| 0,2% kwoty, min.
-
-szterlingach — klient indywidualny \| 20,00 zł, maks.
-
-150,00 zł
-
-170\. \| Przelew SWIFT do Wielkiej Brytanii w funtach \| od kwoty transakcji \| 0,2% kwoty, min.
-
-szterlingach — przedsiębiorca \| 20,00 zł, maks.
-
-150,00 zł
-
-171\. \| Przelew SWIFT do Chin w juanach (CNY) — wymaga \| od kwoty transakcji \| 0,2% kwoty, min.
-
-podania celu płatności \| 20,00 zł, maks.
-
-150,00 zł
-
-172\. \| Przelew SWIFT do Japonii w jenach (JPY) \| od kwoty transakcji \| 0,2% kwoty, min.
-
-20,00 zł, maks.
-
-150,00 zł
-
-173\. \| Przelew SWIFT do Szwajcarii we frankach \| od kwoty transakcji \| 0,2% kwoty, min.
-
-szwajcarskich (CHF) \| 20,00 zł, maks.
-
-150,00 zł
-
-174\. \| Przelew SWIFT do Ukrainy w hrywnach lub \| od kwoty transakcji \| 0,2% kwoty, min.
-
-dolarach amerykańskich \| 20,00 zł, maks.
-
-150,00 zł
-
-175\. \| Przelew SWIFT do Emiratów Arabskich \| od kwoty transakcji \| 0,2% kwoty, min.
-
-w dirhamach lub dolarach \| 20,00 zł, maks.
-
-150,00 zł
-
-176\. \| Przelew SWIFT w walucie niewymienionej w Tabeli \| za przelew \| wg wyceny
-
-kursów walut (waluta egzotyczna) 5) \| indywidualnej
-
 - 1\) Opcje kosztów są dostępne w zależności od waluty i kraju banku odbiorcy; wykaz ograniczeń publikuje Bank na
 
 stronie internetowej. Opłaty obcych banków pobierane w opcji SHA obciążają odbiorcę i mogą się różnić w zależności od banku.
@@ -753,386 +329,104 @@ wskazanej w komunikacie Banku, a waluta przelewu jest obsługiwana w trybie D+0.
 
 możliwości wykonania i kursu; wycena obejmuje koszty banku korespondenta.
 
+<!-- page: 16 -->
 ## VI. Przelewy przychodzące
 
-Przelewy przychodzące z zagranicy są księgowane na rachunku Klienta w dniu otrzymania środków przez Bank, najpóźniej w dniu roboczym następującym po tym dniu, jeżeli instrukcja płatnicza jest prawidłowa. Jeżeli waluta przelewu jest inna niż waluta rachunku, wpływ jest przeliczany według kursu kupna z Tabeli kursów walut obowiązującej w chwili księgowania, chyba że Klient wskazał <!-- page: 16 --> inny kurs w umowie.
-
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-177\. \| Przelew przychodzący z zagranicy w walucie obcej \| za operację \| 10,00 zł
-
-— klient indywidualny
-
-178\. \| Przelew przychodzący z zagranicy w walucie obcej \| za przelew \| 15,00 zł
-
-— przedsiębiorca
-
-179\. \| Przelew przychodzący z państwa Europejskiego \| za operację \| 10,00 zł
-
-Obszaru Gospodarczego w euro (SEPA) — klient
-
-indywidualny
-
-180\. \| Przelew przychodzący z instytucji Unii Europejskiej \| za przelew \| bez opłat
-
-lub organizacji międzynarodowej (dotacje,
-
-wynagrodzenia) 1)
-
-181\. \| Przeliczenie wpływu w walucie innej niż waluta \| od kwoty transakcji \| kurs kupna
-
-rachunku \| z marżą 1,5%
-
-182\. \| Zwrot przelewu przychodzącego do nadawcy na \| za operację \| 10,00 zł
-
-wniosek Klienta
-
-183\. \| Uzupełnienie lub poprawienie danych przelewu \| za przelew \| 30,00 zł
-
-przychodzącego (naprawa instrukcji)
-
-184\. \| Zapytanie do banku zagranicznego o brakujący \| za zlecenie \| 50,00 zł
-
-przelew przychodzący (poszukiwanie)
-
-185\. \| Potwierdzenie wpływu środków z zagranicy dla \| za dokument \| 15,00 zł
-
-celów dokumentacyjnych
-
-186\. \| Poszukiwanie przelewu przychodzącego \| za zlecenie \| 50,00 zł
-
-z zagranicy — klient indywidualny
-
-187\. \| Poszukiwanie przelewu przychodzącego \| za zlecenie \| 80,00 zł
-
-z zagranicy — przedsiębiorca
-
-188\. \| Awizo wpływu środków z zagranicy przesyłane \| miesięcznie \| 2,00 zł
-
-wiadomością SMS 2)
-
-189\. \| Awizo wpływu środków z zagranicy przesyłane \| miesięcznie \| bez opłat
-
-wiadomością elektroniczną
-
-190\. \| Przeliczenie wpływu po kursie kupna z Tabeli \| od kwoty transakcji \| kurs kupna
-
-kursów walut \| z marżą 1,5%
-
-191\. \| Przeliczenie wpływu po kursie kantorowym (na \| od kwoty transakcji \| kurs z marżą 0,3%
-
-rachunek w innej walucie)
-
-192\. \| Przeliczenie wpływu po kursie negocjowanym \| za transakcję \| kurs indywidualny
-
-(powyżej progu transakcji dealerskich)
-
-193\. \| Automatyczne przewalutowanie wpływów na \| od kwoty transakcji \| kurs kupna
-
-rachunek złotowy (stałe zlecenie wymiany) \| z marżą 1,5%
-
-<!-- page: 17 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-194\. \| Przekazanie wpływu z zagranicy na wskazany \| za operację \| wg taryf
-
-rachunek w innym banku (przelew dalszy) \| przelewów
-
-wychodzących
-
-195\. \| Zamknięcie rachunku do obsługi wpływów \| jednorazowo \| 20,00 zł
-
-z zagranicy (przekazanie salda)
-
-196\. \| Przelew przychodzący z błędnym lub niepełnym \| za przelew \| 30,00 zł
-
-numerem rachunku odbiorcy (ustalenie rachunku)
-
-197\. \| Przelew przychodzący bez możliwości identyfikacji \| za operację \| 10,00 zł
-
-odbiorcy — zwrot do nadawcy
-
-198\. \| Zwrot przelewu przychodzącego na wniosek \| za operację \| 10,00 zł
-
-Klienta po zaksięgowaniu
-
-199\. \| Zwrot przelewu przychodzącego na podstawie \| za operację \| 10,00 zł
-
-żądania zagranicznego banku nadawcy (recall)
-
-200\. \| Obsługa wniosku zagranicznego banku o zwrot \| za wniosek \| bez opłat
-
-środków wpłyniętych omyłkowo 3)
-
-201\. \| Uzupełnienie dokumentów wymaganych przy \| za zlecenie \| 40,00 zł
-
-wpływie powyżej progu weryfikacyjnego
-
-202\. \| Zaświadczenie o otrzymanym przelewie \| za dokument \| 20,00 zł
-
-przychodzącym z zagranicy
-
-203\. \| Potwierdzenie wpływu środków w języku \| za dokument \| 15,00 zł
-
-angielskim
-
-204\. \| Kopia komunikatu SWIFT dotycząca przelewu \| za dokument \| 30,00 zł
-
-przychodzącego
-
-205\. \| Wstrzymanie księgowania wpływu do czasu \| za wniosek \| bez opłat
-
-wyjaśnienia (na wniosek Klienta)
-
-206\. \| Przelew przychodzący w euro z państwa \| za operację \| 10,00 zł
-
-Europejskiego Obszaru Gospodarczego — klient
-
-indywidualny
-
-207\. \| Przelew przychodzący w dolarach amerykańskich \| za operację \| 10,00 zł
-
-— klient indywidualny
-
-208\. \| Przelew przychodzący w funtach szterlingach — \| za operację \| 10,00 zł
-
-klient indywidualny
-
-209\. \| Przelew przychodzący w euro z państwa \| za przelew \| 15,00 zł
-
-Europejskiego Obszaru Gospodarczego —
-
-przedsiębiorca
-
-210\. \| Przelew przychodzący w dolarach amerykańskich \| za przelew \| 15,00 zł
-
-— przedsiębiorca
+Przelewy przychodzące z zagranicy są księgowane na rachunku Klienta w dniu otrzymania środków przez Bank, najpóźniej w dniu roboczym następującym po tym dniu, jeżeli instrukcja płatnicza jest prawidłowa. Jeżeli waluta przelewu jest inna niż waluta rachunku, wpływ jest przeliczany według kursu kupna z Tabeli kursów walut obowiązującej w chwili księgowania, chyba że Klient wskazał inny kurs w umowie.
+
+| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
+| 177. | Przelew przychodzący z zagranicy w walucie obcej — klient indywidualny | za operację | 10,00 zł |
+| 178. | Przelew przychodzący z zagranicy w walucie obcej — przedsiębiorca | za przelew | 15,00 zł |
+| 179. | Przelew przychodzący z państwa Europejskiego Obszaru Gospodarczego w euro (SEPA) — klient indywidualny | za operację | 10,00 zł |
+| 180. | Przelew przychodzący z instytucji Unii Europejskiej lub organizacji międzynarodowej (dotacje, wynagrodzenia) 1) | za przelew | bez opłat |
+| 181. | Przeliczenie wpływu w walucie innej niż waluta rachunku | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 182. | Zwrot przelewu przychodzącego do nadawcy na wniosek Klienta | za operację | 10,00 zł |
+| 183. | Uzupełnienie lub poprawienie danych przelewu przychodzącego (naprawa instrukcji) | za przelew | 30,00 zł |
+| 184. | Zapytanie do banku zagranicznego o brakujący przelew przychodzący (poszukiwanie) | za zlecenie | 50,00 zł |
+| 185. | Potwierdzenie wpływu środków z zagranicy dla celów dokumentacyjnych | za dokument | 15,00 zł |
+| 186. | Poszukiwanie przelewu przychodzącego z zagranicy — klient indywidualny | za zlecenie | 50,00 zł |
+| 187. | Poszukiwanie przelewu przychodzącego z zagranicy — przedsiębiorca | za zlecenie | 80,00 zł |
+| 188. | Awizo wpływu środków z zagranicy przesyłane wiadomością SMS 2) | miesięcznie | 2,00 zł |
+| 189. | Awizo wpływu środków z zagranicy przesyłane wiadomością elektroniczną | miesięcznie | bez opłat |
+| 190. | Przeliczenie wpływu po kursie kupna z Tabeli kursów walut | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 191. | Przeliczenie wpływu po kursie kantorowym (na rachunek w innej walucie) | od kwoty transakcji | kurs z marżą 0,3% |
+| 192. | Przeliczenie wpływu po kursie negocjowanym (powyżej progu transakcji dealerskich) | za transakcję | kurs indywidualny |
+| 193. | Automatyczne przewalutowanie wpływów na rachunek złotowy (stałe zlecenie wymiany) | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 194. | Przekazanie wpływu z zagranicy na wskazany rachunek w innym banku (przelew dalszy) | za operację | wg taryf przelewów wychodzących |
+| 195. | Zamknięcie rachunku do obsługi wpływów z zagranicy (przekazanie salda) | jednorazowo | 20,00 zł |
+| 196. | Przelew przychodzący z błędnym lub niepełnym numerem rachunku odbiorcy (ustalenie rachunku) | za przelew | 30,00 zł |
+| 197. | Przelew przychodzący bez możliwości identyfikacji odbiorcy — zwrot do nadawcy | za operację | 10,00 zł |
+| 198. | Zwrot przelewu przychodzącego na wniosek Klienta po zaksięgowaniu | za operację | 10,00 zł |
+| 199. | Zwrot przelewu przychodzącego na podstawie żądania zagranicznego banku nadawcy (recall) | za operację | 10,00 zł |
+| 200. | Obsługa wniosku zagranicznego banku o zwrot środków wpłyniętych omyłkowo 3) | za wniosek | bez opłat |
+| 201. | Uzupełnienie dokumentów wymaganych przy wpływie powyżej progu weryfikacyjnego | za zlecenie | 40,00 zł |
+| 202. | Zaświadczenie o otrzymanym przelewie przychodzącym z zagranicy | za dokument | 20,00 zł |
+| 203. | Potwierdzenie wpływu środków w języku angielskim | za dokument | 15,00 zł |
+| 204. | Kopia komunikatu SWIFT dotycząca przelewu przychodzącego | za dokument | 30,00 zł |
+| 205. | Wstrzymanie księgowania wpływu do czasu wyjaśnienia (na wniosek Klienta) | za wniosek | bez opłat |
+| 206. | Przelew przychodzący w euro z państwa Europejskiego Obszaru Gospodarczego — klient indywidualny | za operację | 10,00 zł |
+| 207. | Przelew przychodzący w dolarach amerykańskich — klient indywidualny | za operację | 10,00 zł |
+| 208. | Przelew przychodzący w funtach szterlingach — klient indywidualny | za operację | 10,00 zł |
+| 209. | Przelew przychodzący w euro z państwa Europejskiego Obszaru Gospodarczego — przedsiębiorca | za przelew | 15,00 zł |
+| 210. | Przelew przychodzący w dolarach amerykańskich — przedsiębiorca | za przelew | 15,00 zł |
+| 211. | Przelew przychodzący w funtach szterlingach — przedsiębiorca | za przelew | 15,00 zł |
+| 212. | Przelew przychodzący w walucie, której Bank nie obsługuje (przekazanie przez bank korespondenta) | za przelew | 15,00 zł + koszty banku korespondenta |
+| 213. | Przelew przychodzący w złotych z zagranicy | za operację | 10,00 zł |
+| 214. | Przelew przychodzący od zagranicznego pracodawcy (wynagrodzenie) — regularny wpływ | za przelew | bez opłat |
+| 215. | Przelew przychodzący z tytułu świadczeń emerytalnych lub rentowych z zagranicy | za przelew | bez opłat |
 
 <!-- page: 18 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
+- 1\) Zwolnienie z opłaty dotyczy wpływów, w których tytule przelewu lub w komunikacie SWIFT wskazano numer
 
-211\. \| Przelew przychodzący w funtach szterlingach — \| za przelew \| 15,00 zł
+umowy dotacji albo oznaczenie instytucji; Klient przedstawia w razie potrzeby dokument potwierdzający źródło środków.
 
-przedsiębiorca
-
-212\. \| Przelew przychodzący w walucie, której Bank nie \| za przelew \| 15,00 zł + koszty
-
-obsługuje (przekazanie przez bank korespondenta) \| banku
-
-korespondenta
-
-213\. \| Przelew przychodzący w złotych z zagranicy \| za operację \| 10,00 zł
-
-214\. \| Przelew przychodzący od zagranicznego \| za przelew \| bez opłat
-
-pracodawcy (wynagrodzenie) — regularny wpływ
-
-215\. \| Przelew przychodzący z tytułu świadczeń \| za przelew \| bez opłat
-
-emerytalnych lub rentowych z zagranicy
-
-1\) Zwolnienie z opłaty dotyczy wpływów, w których tytule przelewu lub w komunikacie SWIFT wskazano numer
-
-umowy dotacji albo oznaczenie instytucji; Klient przedstawia w razie potrzeby dokument potwierdzający źródło
-
-środków.
-
-2\) Opłata dotyczy usługi powiadomień SMS o operacjach na rachunku obejmującej także awizo wpływów z zagranicy;
+- 2\) Opłata dotyczy usługi powiadomień SMS o operacjach na rachunku obejmującej także awizo wpływów z zagranicy;
 
 nie jest pobierana odrębnie od opłaty za powiadomienia.
 
-3\) Bank wstrzymuje zwrot środków, jeżeli nie uzyskał zgody Klienta, i informuje wnioskodawcę o przebiegu sprawy,
+- 3\) Bank wstrzymuje zwrot środków, jeżeli nie uzyskał zgody Klienta, i informuje wnioskodawcę o przebiegu sprawy,
 
 z zachowaniem przepisów o tajemnicy bankowej.
 
-**VII. Wymiana walut**
+## VII. Wymiana walut
 
-Wymiana walut polega na kupnie lub sprzedaży waluty obcej za złote albo na zamianie jednej
+Wymiana walut polega na kupnie lub sprzedaży waluty obcej za złote albo na zamianie jednej waluty obcej na inną. Kursy stosowane przez Bank wynikają z Tabeli kursów walut Banku, a w kantorze internetowym — z kursów kantorowych aktualizowanych w ciągu dnia. Dla transakcji o wartości powyżej progu 50 000,00 zł Klient może wnioskować o kurs negocjowany z dealerem Banku.
 
-waluty obcej na inną. Kursy stosowane przez Bank wynikają z Tabeli kursów walut Banku,
-
-a w kantorze internetowym — z kursów kantorowych aktualizowanych w ciągu dnia. Dla transakcji
-
-o wartości powyżej progu 50 000,00 zł Klient może wnioskować o kurs negocjowany z dealerem
-
-Banku.
-
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-216\. \| Wymiana walut według Tabeli kursów walut Banku \| od kwoty transakcji \| kurs z marżą 1,5%
-
-(placówka, infolinia)
-
-217\. \| Wymiana walut w kantorze internetowym \| od kwoty transakcji \| kurs z marżą 0,3%
-
-w bankowości internetowej i aplikacji mobilnej
-
-218\. \| Wymiana walut w placówce według kursu \| od kwoty transakcji \| kurs z marżą 1%
-
-preferencyjnego dla klientów pakietów premium
-
-219\. \| Wymiana walut po kursie negocjowanym \| za transakcję \| 0,00 zł (kurs
-
-(transakcja dealerska powyżej progu) 1) \| indywidualny)
-
-220\. \| Zlecenie wymiany walut z limitem kursu (zlecenie \| za zlecenie \| 10,00 zł
-
-kursowe)
-
-221\. \| Wymiana walut w ramach płatności kartą w walucie \| od kwoty transakcji \| 2% kwoty
-
-innej niż waluta rachunku \| transakcji
-
-222\. \| Wymiana walut przy wypłacie gotówki \| od kwoty transakcji \| kurs z Tabeli
-
-z bankomatu za granicą (rachunek złotowy) \| z marżą 1,5%
-
-<!-- page: 19 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-223\. \| Przeliczenie wpływu z zagranicy na rachunek \| od kwoty transakcji \| kurs kupna
-
-w innej walucie \| z marżą 1,5%
-
-224\. \| Przeliczenie opłaty za czynność wykonywaną \| za operację \| kurs średni Tabeli
-
-z rachunku walutowego 2)
-
-225\. \| Potwierdzenie kursu zastosowanego w transakcji \| za dokument \| 15,00 zł
-
-walutowej
-
-226\. \| Kupno euro za złote w placówce Banku (według \| od kwoty transakcji \| kurs sprzedaży
-
-Tabeli kursów walut) \| z marżą 1,5%
-
-227\. \| Sprzedaż euro za złote w placówce Banku (według \| od kwoty transakcji \| kurs kupna
-
-Tabeli kursów walut) \| z marżą 1,5%
-
-228\. \| Kupno i sprzedaż dolarów amerykańskich \| od kwoty transakcji \| kurs z marżą 1,5%
-
-w placówce Banku
-
-229\. \| Kupno i sprzedaż funtów szterlingów lub franków \| od kwoty transakcji \| kurs z marżą 1,5%
-
-szwajcarskich w placówce Banku
-
-230\. \| Wymiana walut w placówce dla klientów pakietów \| od kwoty transakcji \| kurs z marżą 1%
-
-premium (kurs preferencyjny)
-
-231\. \| Wymiana walut przez infolinię po uwierzytelnieniu \| od kwoty transakcji \| kurs z marżą 1,5%
-
-Klienta
-
-232\. \| Wymiana walut w placówce w kwocie \| od kwoty transakcji \| kurs z marżą 1,5%
-
-przekraczającej awizo (wymaga zamówienia
-
-waluty)
-
-233\. \| Wymiana banknotów obcych na złote bez rachunku \| od kwoty transakcji \| kurs kupna
-
-w Banku (transakcja jednorazowa) \| z marżą 1,5%
-
-234\. \| Wymiana drobnych monet obcych na złote \| za transakcję \| wg wyceny
-
-(przyjęcie do inkasa) \| indywidualnej
-
-235\. \| Wymiana walut z rachunku złotowego na rachunek \| od kwoty transakcji \| kurs z marżą 1,5%
-
-walutowy tego samego Klienta w placówce
-
-236\. \| Kupno euro za złote w kantorze internetowym \| od kwoty transakcji \| kurs sprzedaży
-
-z marżą 0,3%
-
-237\. \| Sprzedaż euro za złote w kantorze internetowym \| od kwoty transakcji \| kurs kupna
-
-z marżą 0,3%
-
-238\. \| Kupno dolarów amerykańskich za złote w kantorze \| od kwoty transakcji \| kurs sprzedaży
-
-internetowym \| z marżą 0,3%
-
-239\. \| Sprzedaż dolarów amerykańskich za złote \| od kwoty transakcji \| kurs kupna
-
-w kantorze internetowym \| z marżą 0,3%
-
-240\. \| Kupno franków szwajcarskich lub funtów \| od kwoty transakcji \| kurs sprzedaży
-
-szterlingów za złote w kantorze internetowym \| z marżą 0,3%
+| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
+| 216. | Wymiana walut według Tabeli kursów walut Banku (placówka, infolinia) | od kwoty transakcji | kurs z marżą 1,5% |
+| 217. | Wymiana walut w kantorze internetowym w bankowości internetowej i aplikacji mobilnej | od kwoty transakcji | kurs z marżą 0,3% |
+| 218. | Wymiana walut w placówce według kursu preferencyjnego dla klientów pakietów premium | od kwoty transakcji | kurs z marżą 1% |
+| 219. | Wymiana walut po kursie negocjowanym (transakcja dealerska powyżej progu) 1) | za transakcję | 0,00 zł (kurs indywidualny) |
+| 220. | Zlecenie wymiany walut z limitem kursu (zlecenie kursowe) | za zlecenie | 10,00 zł |
+| 221. | Wymiana walut w ramach płatności kartą w walucie innej niż waluta rachunku | od kwoty transakcji | 2% kwoty transakcji |
+| 222. | Wymiana walut przy wypłacie gotówki z bankomatu za granicą (rachunek złotowy) | od kwoty transakcji | kurs z Tabeli z marżą 1,5% |
+| 223. | Przeliczenie wpływu z zagranicy na rachunek w innej walucie | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 224. | Przeliczenie opłaty za czynność wykonywaną z rachunku walutowego 2) | za operację | kurs średni Tabeli |
+| 225. | Potwierdzenie kursu zastosowanego w transakcji walutowej | za dokument | 15,00 zł |
+| 226. | Kupno euro za złote w placówce Banku (według Tabeli kursów walut) | od kwoty transakcji | kurs sprzedaży z marżą 1,5% |
+| 227. | Sprzedaż euro za złote w placówce Banku (według Tabeli kursów walut) | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 228. | Kupno i sprzedaż dolarów amerykańskich w placówce Banku | od kwoty transakcji | kurs z marżą 1,5% |
+| 229. | Kupno i sprzedaż funtów szterlingów lub franków szwajcarskich w placówce Banku | od kwoty transakcji | kurs z marżą 1,5% |
+| 230. | Wymiana walut w placówce dla klientów pakietów premium (kurs preferencyjny) | od kwoty transakcji | kurs z marżą 1% |
+| 231. | Wymiana walut przez infolinię po uwierzytelnieniu Klienta | od kwoty transakcji | kurs z marżą 1,5% |
+| 232. | Wymiana walut w placówce w kwocie przekraczającej awizo (wymaga zamówienia waluty) | od kwoty transakcji | kurs z marżą 1,5% |
+| 233. | Wymiana banknotów obcych na złote bez rachunku w Banku (transakcja jednorazowa) | od kwoty transakcji | kurs kupna z marżą 1,5% |
+| 234. | Wymiana drobnych monet obcych na złote (przyjęcie do inkasa) | za transakcję | wg wyceny indywidualnej |
+| 235. | Wymiana walut z rachunku złotowego na rachunek walutowy tego samego Klienta w placówce | od kwoty transakcji | kurs z marżą 1,5% |
+| 236. | Kupno euro za złote w kantorze internetowym | od kwoty transakcji | kurs sprzedaży z marżą 0,3% |
+| 237. | Sprzedaż euro za złote w kantorze internetowym | od kwoty transakcji | kurs kupna z marżą 0,3% |
+| 238. | Kupno dolarów amerykańskich za złote w kantorze internetowym | od kwoty transakcji | kurs sprzedaży z marżą 0,3% |
+| 239. | Sprzedaż dolarów amerykańskich za złote w kantorze internetowym | od kwoty transakcji | kurs kupna z marżą 0,3% |
+| 240. | Kupno franków szwajcarskich lub funtów szterlingów za złote w kantorze internetowym | od kwoty transakcji | kurs sprzedaży z marżą 0,3% |
+| 241. | Wymiana jednej waluty obcej na inną (przez złotego) w kantorze internetowym | od kwoty transakcji | kursy kantorowe z marżą 0,3% przy każdej wymianie |
+| 242. | Wymiana walut w kantorze internetowym w dniach wolnych od pracy i w nocy 3) | od kwoty transakcji | kurs z marżą 0,3% (kurs bazowy z ostatniego dnia roboczego) |
+| 243. | Wymiana walut w aplikacji mobilnej z użyciem powiadomienia o kursie | od kwoty transakcji | kurs z marżą 0,3% |
+| 244. | Zlecenie wymiany z limitem kursu (zlecenie kursowe), w tym dla pary walutowej EUR/USD | za zlecenie | 10,00 zł |
+| 245. | Anulowanie zlecenia kursowego przed jego wykonaniem | za zlecenie | bez opłat |
 
 <!-- page: 20 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-241\. \| Wymiana jednej waluty obcej na inną (przez \| od kwoty transakcji \| kursy kantorowe
-
-złotego) w kantorze internetowym \| z marżą 0,3% przy
-
-każdej wymianie
-
-242\. \| Wymiana walut w kantorze internetowym w dniach \| od kwoty transakcji \| kurs z marżą 0,3%
-
-wolnych od pracy i w nocy 3) \| (kurs bazowy
-
-z ostatniego dnia
-
-roboczego)
-
-243\. \| Wymiana walut w aplikacji mobilnej z użyciem \| od kwoty transakcji \| kurs z marżą 0,3%
-
-powiadomienia o kursie
-
-244\. \| Zlecenie wymiany z limitem kursu (zlecenie \| za zlecenie \| 10,00 zł
-
-kursowe), w tym dla pary walutowej EUR/USD
-
-245\. \| Anulowanie zlecenia kursowego przed jego \| za zlecenie \| bez opłat
-
-wykonaniem
-
-246\. \| Transakcja dealerska — kupno lub sprzedaż waluty \| za transakcję \| kurs
-
-powyżej progu 50 000,00 zł 4) \| indywidualny,
-
-0,00 zł prowizji
-
-247\. \| Transakcja natychmiastowa (spot) po kursie \| za transakcję \| kurs indywidualny
-
-ustalonym z dealerem
-
-248\. \| Transakcja z datą rozliczenia w ciągu 2 dni \| za transakcję \| kurs indywidualny
-
-roboczych (spot T+2)
-
-249\. \| Zlecenie wymiany z kursem warunkowym (take \| za zlecenie \| 10,00 zł
-
-profit / stop loss)
-
-250\. \| Ustanowienie stałego zlecenia wymiany walut \| za zlecenie \| bez opłat
-
-(cyklicznie, w wybranym dniu miesiąca)
-
-251\. \| Realizacja stałego zlecenia wymiany walut \| od kwoty transakcji \| kurs z marżą 0,3%
-
-252\. \| Potwierdzenie transakcji walutowej wystawione na \| za dokument \| 15,00 zł
-
-wniosek Klienta
-
-253\. \| Zestawienie transakcji wymiany walut za wskazany \| za zestawienie \| 25,00 zł
-
-okres (przedsiębiorca)
-
-254\. \| Rozliczenie rozbieżności kursowych na rachunku \| za sprawę \| bez opłat
-
-firmowym w związku z reklamacją
-
-255\. \| Przeliczenie opłat pobieranych z rachunku \| za operację \| kurs średni Tabeli
-
-walutowego według kursu średniego
-
 - 1\) Kurs negocjowany ustala dealer Banku telefonicznie w godzinach pracy dealingu; ustalenie kursu jest wiążące po
 
 potwierdzeniu transakcji przez Klienta. Prowizji nie pobiera się, a marża jest zawarta w kursie.
@@ -1142,147 +436,48 @@ potwierdzeniu transakcji przez Klienta. Prowizji nie pobiera się, a marża jest
 
 z ostatniego dnia roboczego, powiększony o dodatkowy spread, o którym Klient jest informowany przed potwierdzeniem transakcji.
 
-<!-- page: 21 -->
-- 4\) Transakcje dealerskie są zawierane telefonicznie w godzinach pracy dealingu, a zawarcie transakcji jest
-
-potwierdzane pisemnie; kurs ustalony przez dealera nie podlega zmianie po potwierdzeniu.
-
 ## VIII. Rachunki walutowe
 
 Bank prowadzi rachunki walutowe w euro, dolarach amerykańskich, funtach szterlingach, frankach szwajcarskich oraz innych walutach wskazanych w Tabeli kursów walut. Rachunek walutowy może być prowadzony jako rachunek pojedynczy albo jako rachunek wielowalutowy, na którym wyodrębnia się subkonta w poszczególnych walutach. Wypłata środków z rachunku walutowego następuje w walucie rachunku, a wypłata w złotych wymaga wymiany waluty.
 
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-256\. \| Otwarcie rachunku walutowego \| jednorazowo \| 0,00 zł
-
-257\. \| Prowadzenie rachunku walutowego 1) \| miesięcznie \| wg segmentu
-
-257\.1. \| klient indywidualny \| miesięcznie \| 0,00 zł
-
-257\.2. \| przedsiębiorca \| miesięcznie \| 10,00 zł
-
-258\. \| Prowadzenie rachunku wielowalutowego (opłata za \| miesięcznie \| 12,00 zł
-
-każdą subwalutę ponad pierwszą)
-
-259\. \| Zamknięcie rachunku walutowego \| jednorazowo \| 20,00 zł
-
-260\. \| Wyciąg z rachunku walutowego w formie \| za każdy wyciąg \| 12,00 zł
-
-papierowej
-
-261\. \| Wyciąg z rachunku walutowego w formie \| miesięcznie \| bez opłat
-
-elektronicznej
-
-262\. \| Dopuszczalne saldo ujemne na rachunku \| rocznie \| 14% w stosunku
-
-walutowym (oprocentowanie od zadłużenia) 2) \| rocznym
-
-263\. \| Wpłata gotówki w walucie obcej na rachunek \| od kwoty transakcji \| 0,5% kwoty, min.
-
-walutowy \| 8,00 zł
-
-264\. \| Wypłata gotówki w walucie obcej z rachunku \| od kwoty transakcji \| 1% kwoty wypłaty
-
-walutowego — klient indywidualny
-
-265\. \| Wypłata gotówki w walucie obcej z rachunku \| od kwoty transakcji \| 1,2% kwoty, min.
-
-walutowego — przedsiębiorca \| 15,00 zł
-
-266\. \| Wypłata gotówki w walucie obcej wymagająca \| za zamówienie \| bez dodatkowej
-
-wcześniejszego zamówienia (awizo) 3) \| opłaty
-
-267\. \| Weryfikacja autentyczności banknotów obcych na \| za zlecenie \| 10,00 zł
-
-wniosek Klienta
-
-268\. \| Wyciąg z rachunku walutowego w formie \| miesięcznie \| bez opłat
-
-elektronicznej
-
-269\. \| Wyciąg z rachunku walutowego w formie \| za każdy wyciąg \| 12,00 zł
-
-papierowej
+| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
+| 246. | Otwarcie rachunku walutowego | jednorazowo | 0,00 zł |
+| 247. | Prowadzenie rachunku walutowego 1) | miesięcznie | wg segmentu |
+| 247.1. | klient indywidualny | miesięcznie | 0,00 zł |
+| 247.2. | przedsiębiorca | miesięcznie | 10,00 zł |
+| 248. | Prowadzenie rachunku wielowalutowego (opłata za każdą subwalutę ponad pierwszą) | miesięcznie | 12,00 zł |
+| 249. | Zamknięcie rachunku walutowego | jednorazowo | 20,00 zł |
+| 250. | Wyciąg z rachunku walutowego w formie papierowej | za każdy wyciąg | 12,00 zł |
+| 251. | Wyciąg z rachunku walutowego w formie elektronicznej | miesięcznie | bez opłat |
+| 252. | Dopuszczalne saldo ujemne na rachunku walutowym (oprocentowanie od zadłużenia) 2) | rocznie | 14% w stosunku rocznym |
+| 253. | Wpłata gotówki w walucie obcej na rachunek walutowy | od kwoty transakcji | 0,5% kwoty, min. 8,00 zł |
+| 254. | Wypłata gotówki w walucie obcej z rachunku walutowego — klient indywidualny | od kwoty transakcji | 1% kwoty wypłaty |
+| 255. | Wypłata gotówki w walucie obcej z rachunku walutowego — przedsiębiorca | od kwoty transakcji | 1,2% kwoty, min. 15,00 zł |
+| 256. | Wypłata gotówki w walucie obcej wymagająca wcześniejszego zamówienia (awizo) 3) | za zamówienie | bez dodatkowej opłaty |
+| 257. | Weryfikacja autentyczności banknotów obcych na wniosek Klienta | za zlecenie | 10,00 zł |
+| 258. | Wyciąg z rachunku walutowego w formie elektronicznej | miesięcznie | bez opłat |
+| 259. | Wyciąg z rachunku walutowego w formie papierowej | za każdy wyciąg | 12,00 zł |
+| 260. | Wyciąg z rachunku walutowego wydany na żądanie za okres bieżący | za dokument | 15,00 zł |
+| 261. | Duplikat wyciągu z rachunku walutowego (starszy niż 12 miesięcy) | za dokument | 12,00 zł |
+| 262. | Oprocentowanie zadłużenia przeterminowanego na rachunku walutowym | rocznie | 14% w stosunku rocznym |
+| 263. | Zamknięcie rachunku walutowego — klient indywidualny | jednorazowo | 20,00 zł |
+| 264. | Zamknięcie rachunku walutowego — przedsiębiorca | jednorazowo | 20,00 zł |
+| 265. | Przekazanie salda zamykanego rachunku walutowego na rachunek w innym banku za granicą | jednorazowo | 2,00 zł |
+| 266. | Zajęcie egzekucyjne rachunku walutowego — obsługa | za każde zajęcie | 50,00 zł |
+| 267. | Zaświadczenie o numerze rachunku walutowego i danych do przelewów z zagranicy (IBAN, BIC) | za dokument | 20,00 zł |
+| 268. | Otwarcie rachunku walutowego w euro | jednorazowo | 0,00 zł |
+| 269. | Otwarcie rachunku walutowego w dolarach amerykańskich | jednorazowo | 0,00 zł |
+| 270. | Otwarcie rachunku walutowego w funtach szterlingach lub frankach szwajcarskich | jednorazowo | 0,00 zł |
+| 271. | Otwarcie rachunku w innej walucie z Tabeli kursów walut | jednorazowo | 0,00 zł |
+| 272. | Otwarcie rachunku wielowalutowego (do pięciu walut) | jednorazowo | 0,00 zł |
+| 273. | Dodanie kolejnej waluty do rachunku wielowalutowego | jednorazowo | bez opłat |
+| 274. | Prowadzenie rachunku walutowego — klient indywidualny | miesięcznie | 0,00 zł |
+| 275. | Prowadzenie rachunku walutowego — przedsiębiorca | miesięcznie | 10,00 zł |
+| 276. | Prowadzenie subwaluty rachunku wielowalutowego (każda ponad pierwszą) | miesięcznie | 12,00 zł |
+| 277. | Zmiana waluty rachunku (przeniesienie salda na rachunek w innej walucie) | od kwoty transakcji | kurs z marżą 0,3% |
 
 <!-- page: 22 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-270\. \| Wyciąg z rachunku walutowego wydany na żądanie \| za dokument \| 15,00 zł
-
-za okres bieżący
-
-271\. \| Duplikat wyciągu z rachunku walutowego (starszy \| za dokument \| 12,00 zł
-
-niż 12 miesięcy)
-
-272\. \| Oprocentowanie zadłużenia przeterminowanego \| rocznie \| 14% w stosunku
-
-na rachunku walutowym \| rocznym
-
-273\. \| Zamknięcie rachunku walutowego — klient \| jednorazowo \| 20,00 zł
-
-indywidualny
-
-274\. \| Zamknięcie rachunku walutowego — \| jednorazowo \| 20,00 zł
-
-przedsiębiorca
-
-275\. \| Przekazanie salda zamykanego rachunku \| jednorazowo \| 2,00 zł
-
-walutowego na rachunek w innym banku za
-
-granicą
-
-276\. \| Zajęcie egzekucyjne rachunku walutowego — \| za każde zajęcie \| 50,00 zł
-
-obsługa
-
-277\. \| Zaświadczenie o numerze rachunku walutowego \| za dokument \| 20,00 zł
-
-i danych do przelewów z zagranicy (IBAN, BIC)
-
-278\. \| Otwarcie rachunku walutowego w euro \| jednorazowo \| 0,00 zł
-
-279\. \| Otwarcie rachunku walutowego w dolarach \| jednorazowo \| 0,00 zł
-
-amerykańskich
-
-280\. \| Otwarcie rachunku walutowego w funtach \| jednorazowo \| 0,00 zł
-
-szterlingach lub frankach szwajcarskich
-
-281\. \| Otwarcie rachunku w innej walucie z Tabeli kursów \| jednorazowo \| 0,00 zł
-
-walut
-
-282\. \| Otwarcie rachunku wielowalutowego (do pięciu \| jednorazowo \| 0,00 zł
-
-walut)
-
-283\. \| Dodanie kolejnej waluty do rachunku \| jednorazowo \| bez opłat
-
-wielowalutowego
-
-284\. \| Prowadzenie rachunku walutowego — klient \| miesięcznie \| 0,00 zł
-
-indywidualny
-
-285\. \| Prowadzenie rachunku walutowego — \| miesięcznie \| 10,00 zł
-
-przedsiębiorca
-
-286\. \| Prowadzenie subwaluty rachunku \| miesięcznie \| 12,00 zł
-
-wielowalutowego (każda ponad pierwszą)
-
-287\. \| Zmiana waluty rachunku (przeniesienie salda na \| od kwoty transakcji \| kurs z marżą 0,3%
-
-rachunek w innej walucie)
-
-<!-- page: 23 -->
 - 1\) Opłata nie jest pobierana w miesiącach, w których na rachunku walutowym zaksięgowano wpływ z zagranicy
 
 o równowartości co najmniej wskazanej w umowie.
@@ -1299,117 +494,39 @@ w placówce nie później niż na 2 dni robocze przed planowaną wypłatą.
 
 Bank przyjmuje do inkasa czeki wystawione na rzecz Klienta i płatne za granicą oraz wystawia czeki bankowe w walutach obcych. Czeki przyjęte do inkasa są rozliczane po otrzymaniu środków od banku trasata; kredytowanie rachunku przed ostatecznym rozliczeniem czeku (skup czeku) wymaga odrębnej zgody Banku i wiąże się z ryzykiem zwrotu czeku, którym obciążany jest Klient.
 
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-288\. \| Przyjęcie czeku zagranicznego do inkasa \| od kwoty transakcji \| 0,3% kwoty czeku,
-
-(rozliczenie po otrzymaniu środków) 1) \| min. 50,00 zł
-
-289\. \| Skup czeku zagranicznego (natychmiastowe \| od kwoty transakcji \| 0,5% kwoty czeku,
-
-uznanie rachunku) \| min. 30,00 zł
-
-290\. \| Zwrot czeku niezapłaconego przez bank trasata \| za czek \| 80,00 zł
-
-(obciążenie rachunku)
-
-291\. \| Wystawienie czeku bankowego w walucie obcej \| za czek \| 60,00 zł
-
-292\. \| Inkaso dokumentowe — przyjęcie dokumentów do \| od kwoty transakcji \| 0,25% kwoty, min.
-
-inkasa 2) \| 150,00 zł
-
-293\. \| Zmiana warunków inkasa po przyjęciu \| za zmianę \| 100,00 zł
-
-dokumentów
-
-294\. \| Obsługa inkasa niezapłaconego lub zwróconego \| za zlecenie \| 120,00 zł
-
-295\. \| Dołączenie kopii dokumentów handlowych do \| za każdy dokument \| 25,00 zł
-
-dyspozycji
-
-296\. \| Wystawienie czeku bankowego w euro \| za czek \| 60,00 zł
-
-297\. \| Wystawienie czeku bankowego w dolarach \| za czek \| 60,00 zł
-
-amerykańskich
-
-298\. \| Wystawienie czeku bankowego w innej walucie \| za czek \| 60,00 zł
-
-wymienialnej
-
-299\. \| Wystawienie duplikatu czeku bankowego po jego \| za czek \| 60,00 zł + koszty
-
-utracie 3) \| banku
-
-zagranicznego
-
-300\. \| Unieważnienie czeku bankowego \| za czek \| 80,00 zł
-
-niezrealizowanego w terminie ważności
-
-301\. \| Przekazanie czeku bankowego kurierem pod \| za przesyłkę \| wg cennika
-
-wskazany adres za granicą \| przewoźnika
+<!-- page: 23 -->
+| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
+| 278. | Przyjęcie czeku zagranicznego do inkasa (rozliczenie po otrzymaniu środków) 1) | od kwoty transakcji | 0,3% kwoty czeku, min. 50,00 zł |
+| 279. | Skup czeku zagranicznego (natychmiastowe uznanie rachunku) | od kwoty transakcji | 0,5% kwoty czeku, min. 30,00 zł |
+| 280. | Zwrot czeku niezapłaconego przez bank trasata (obciążenie rachunku) | za czek | 80,00 zł |
+| 281. | Wystawienie czeku bankowego w walucie obcej | za czek | 60,00 zł |
+| 282. | Inkaso dokumentowe — przyjęcie dokumentów do inkasa 2) | od kwoty transakcji | 0,25% kwoty, min. 150,00 zł |
+| 283. | Zmiana warunków inkasa po przyjęciu dokumentów | za zmianę | 100,00 zł |
+| 284. | Obsługa inkasa niezapłaconego lub zwróconego | za zlecenie | 120,00 zł |
+| 285. | Dołączenie kopii dokumentów handlowych do dyspozycji | za każdy dokument | 25,00 zł |
+| 286. | Wystawienie czeku bankowego w euro | za czek | 60,00 zł |
+| 287. | Wystawienie czeku bankowego w dolarach amerykańskich | za czek | 60,00 zł |
+| 288. | Wystawienie czeku bankowego w innej walucie wymienialnej | za czek | 60,00 zł |
+| 289. | Wystawienie duplikatu czeku bankowego po jego utracie 3) | za czek | 60,00 zł + koszty banku zagranicznego |
+| 290. | Unieważnienie czeku bankowego niezrealizowanego w terminie ważności | za czek | 80,00 zł |
+| 291. | Przekazanie czeku bankowego kurierem pod wskazany adres za granicą | za przesyłkę | wg cennika przewoźnika |
+| 292. | Przyjęcie czeku do depozytu na wniosek Klienta | za czek | bez opłat |
+| 293. | Wydanie czeku z depozytu przed upływem terminu przechowywania | za czek | 25,00 zł |
+| 294. | Potwierdzenie przyjęcia czeku do inkasa | za dokument | bez opłat |
+| 295. | Informacja o statusie czeku przyjętego do inkasa | za zapytanie | bez opłat |
+| 296. | Inkaso dokumentowe eksportowe — przyjęcie dokumentów handlowych (D/P — dokumenty za zapłatę) | od kwoty transakcji | 0,25% kwoty, min. 150,00 zł |
+| 297. | Inkaso dokumentowe eksportowe — przyjęcie dokumentów handlowych (D/A — dokumenty za akceptację) | od kwoty transakcji | 0,25% kwoty, min. 150,00 zł |
+| 298. | Inkaso dokumentowe importowe — obsługa dokumentów od banku zagranicznego | od kwoty transakcji | 0,25% kwoty, min. 150,00 zł |
+| 299. | Zmiana warunków inkasa po przyjęciu dokumentów | za zmianę | 100,00 zł |
+| 300. | Wycofanie dokumentów z inkasa przed ich przedstawieniem | za zlecenie | 100,00 zł |
+| 301. | Obsługa inkasa niezapłaconego lub zwróconego (zwrot dokumentów, protest) | za zlecenie | 120,00 zł |
+| 302. | Awizo o przyjęciu dokumentów przez bank zagraniczny | za dokument | bez opłat |
+| 303. | Dołączenie kopii dokumentów handlowych do dyspozycji inkasa | za każdy dokument | 25,00 zł |
+| 304. | Dochodzenie zapłaty należności z inkasa po terminie | za zlecenie | 80,00 zł |
+| 305. | Rozliczenie inkasa w walucie innej niż waluta rachunku | od kwoty transakcji | kurs kupna z marżą 1,5% |
 
 <!-- page: 24 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-302\. \| Przyjęcie czeku do depozytu na wniosek Klienta \| za czek \| bez opłat
-
-303\. \| Wydanie czeku z depozytu przed upływem terminu \| za czek \| 25,00 zł
-
-przechowywania
-
-304\. \| Potwierdzenie przyjęcia czeku do inkasa \| za dokument \| bez opłat
-
-305\. \| Informacja o statusie czeku przyjętego do inkasa \| za zapytanie \| bez opłat
-
-306\. \| Inkaso dokumentowe eksportowe — przyjęcie \| od kwoty transakcji \| 0,25% kwoty, min.
-
-dokumentów handlowych (D/P — dokumenty za \| 150,00 zł
-
-zapłatę)
-
-307\. \| Inkaso dokumentowe eksportowe — przyjęcie \| od kwoty transakcji \| 0,25% kwoty, min.
-
-dokumentów handlowych (D/A — dokumenty za \| 150,00 zł
-
-akceptację)
-
-308\. \| Inkaso dokumentowe importowe — obsługa \| od kwoty transakcji \| 0,25% kwoty, min.
-
-dokumentów od banku zagranicznego \| 150,00 zł
-
-309\. \| Zmiana warunków inkasa po przyjęciu \| za zmianę \| 100,00 zł
-
-dokumentów
-
-310\. \| Wycofanie dokumentów z inkasa przed ich \| za zlecenie \| 100,00 zł
-
-przedstawieniem
-
-311\. \| Obsługa inkasa niezapłaconego lub zwróconego \| za zlecenie \| 120,00 zł
-
-(zwrot dokumentów, protest)
-
-312\. \| Awizo o przyjęciu dokumentów przez bank \| za dokument \| bez opłat
-
-zagraniczny
-
-313\. \| Dołączenie kopii dokumentów handlowych do \| za każdy dokument \| 25,00 zł
-
-dyspozycji inkasa
-
-314\. \| Dochodzenie zapłaty należności z inkasa po \| za zlecenie \| 80,00 zł
-
-terminie
-
-315\. \| Rozliczenie inkasa w walucie innej niż waluta \| od kwoty transakcji \| kurs kupna
-
-rachunku \| z marżą 1,5%
-
 - 1\) Prowizja obejmuje wysyłkę czeku do banku trasata kurierem; koszty obcych banków i opłaty zagranicznej poczty
 
 obciążają Klienta według rzeczywistej wysokości.
@@ -1424,159 +541,60 @@ potwierdzenia banku zagranicznego, że czek nie został przedstawiony do zapłat
 
 ## X. Czynności dodatkowe
 
-Za czynności dodatkowe uważa się czynności wykonywane na wniosek Klienta, niewchodzące w skład podstawowej usługi płatniczej, w szczególności wyjaśnianie i śledzenie przelewów, wystawianie dokumentów i potwierdzeń oraz weryfikację dokumentów wymaganych przy <!-- page: 25 --> rozliczeniach z zagranicą. Zlecenie przelewu z datą przyszłą można złożyć z wyprzedzeniem do 30 dni.
+Za czynności dodatkowe uważa się czynności wykonywane na wniosek Klienta, niewchodzące w skład podstawowej usługi płatniczej, w szczególności wyjaśnianie i śledzenie przelewów, wystawianie dokumentów i potwierdzeń oraz weryfikację dokumentów wymaganych przy rozliczeniach z zagranicą. Zlecenie przelewu z datą przyszłą można złożyć z wyprzedzeniem do 30 dni.
 
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-316\. \| Poszukiwanie przelewu zagranicznego — klient \| za zlecenie \| 50,00 zł
-
-indywidualny
-
-317\. \| Poszukiwanie przelewu zagranicznego — \| za zlecenie \| 80,00 zł
-
-przedsiębiorca
-
-318\. \| Zapytanie o status przelewu zagranicznego \| za zapytanie \| bez opłat
-
-(potwierdzenie zakończenia rozliczenia) 1)
-
-319\. \| Kopia potwierdzenia przelewu w formacie \| za dokument \| 30,00 zł
-
-komunikatu SWIFT
-
-320\. \| Potwierdzenie wykonania przelewu zagranicznego \| za dokument \| 15,00 zł
-
-w formie papierowej
-
-321\. \| Weryfikacja dokumentów związanych z transakcją \| za zlecenie \| 40,00 zł
-
-z zagranicą
-
-322\. \| Opinia bankowa dla kontrahenta zagranicznego (w \| za dokument \| 80,00 zł
-
-języku angielskim)
-
-323\. \| Potwierdzenie salda rachunku walutowego dla \| za dokument \| 100,00 zł
-
-biegłego rewidenta
-
-324\. \| Zaświadczenie o posiadanych rachunkach \| za dokument \| 20,00 zł
-
-walutowych
-
-325\. \| Duplikat dokumentu potwierdzającego operację \| za dokument \| 30,00 zł
-
-walutową
-
-326\. \| Kopia komunikatu SWIFT (potwierdzenie \| za dokument \| 30,00 zł
-
-wykonania przelewu zagranicznego)
-
-327\. \| Potwierdzenie wykonania przelewu w języku \| za dokument \| 15,00 zł
-
-angielskim, opatrzone podpisem Banku
-
-328\. \| Zaświadczenie o rachunkach i saldach w walutach \| za dokument \| 20,00 zł
-
-obcych (dla celów urzędowych)
-
-329\. \| Zaświadczenie o dokonanych przelewach \| za dokument \| 20,00 zł
-
-zagranicznych w danym roku
-
-330\. \| Opinia bankowa o Kliencie dla kontrahenta \| za dokument \| 80,00 zł
-
-zagranicznego
-
-331\. \| Potwierdzenie salda rachunku walutowego dla \| za dokument \| 100,00 zł
-
-biegłego rewidenta
-
-332\. \| Tłumaczenie przysięgłe dokumentu bankowego na \| za dokument \| wg faktury
-
-język obcy (koszt rzeczywisty) \| tłumacza
+| **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
+| --- | --- | --- | --- |
+| 306. | Poszukiwanie przelewu zagranicznego — klient indywidualny | za zlecenie | 50,00 zł |
+| 307. | Poszukiwanie przelewu zagranicznego — przedsiębiorca | za zlecenie | 80,00 zł |
+| 308. | Zapytanie o status przelewu zagranicznego (potwierdzenie zakończenia rozliczenia) 1) | za zapytanie | bez opłat |
+| 309. | Kopia potwierdzenia przelewu w formacie komunikatu SWIFT | za dokument | 30,00 zł |
+| 310. | Potwierdzenie wykonania przelewu zagranicznego w formie papierowej | za dokument | 15,00 zł |
+| 311. | Weryfikacja dokumentów związanych z transakcją z zagranicą | za zlecenie | 40,00 zł |
+| 312. | Opinia bankowa dla kontrahenta zagranicznego (w języku angielskim) | za dokument | 80,00 zł |
+| 313. | Potwierdzenie salda rachunku walutowego dla biegłego rewidenta | za dokument | 100,00 zł |
+| 314. | Zaświadczenie o posiadanych rachunkach walutowych | za dokument | 20,00 zł |
+| 315. | Duplikat dokumentu potwierdzającego operację walutową | za dokument | 30,00 zł |
+| 316. | Kopia komunikatu SWIFT (potwierdzenie wykonania przelewu zagranicznego) | za dokument | 30,00 zł |
+| 317. | Potwierdzenie wykonania przelewu w języku angielskim, opatrzone podpisem Banku | za dokument | 15,00 zł |
+| 318. | Zaświadczenie o rachunkach i saldach w walutach obcych (dla celów urzędowych) | za dokument | 20,00 zł |
+| 319. | Zaświadczenie o dokonanych przelewach zagranicznych w danym roku | za dokument | 20,00 zł |
+| 320. | Opinia bankowa o Kliencie dla kontrahenta zagranicznego | za dokument | 80,00 zł |
+| 321. | Potwierdzenie salda rachunku walutowego dla biegłego rewidenta | za dokument | 100,00 zł |
+| 322. | Tłumaczenie przysięgłe dokumentu bankowego na język obcy (koszt rzeczywisty) | za dokument | wg faktury tłumacza |
+| 323. | Duplikat potwierdzenia operacji walutowej | za dokument | 30,00 zł |
+| 324. | Wydanie dokumentów w trybie pilnym (w ciągu 24 godzin) | za dokument | dwukrotność opłaty podstawowej |
+| 325. | Wysłanie dokumentów kurierem za granicę na wniosek Klienta | za przesyłkę | wg cennika przewoźnika |
+| 326. | Weryfikacja dokumentów dotyczących transakcji z zagranicą (faktura, umowa, zamówienie) | za zlecenie | 40,00 zł |
+| 327. | Weryfikacja dokumentów dla przelewów powyżej progu wskazanego w komunikacie Banku 2) | za zlecenie | 40,00 zł |
+| 328. | Weryfikacja dokumentów przy przelewie do państwa wysokiego ryzyka | za zlecenie | 40,00 zł |
+| 329. | Dostarczenie dokumentów uzupełniających po wstrzymaniu przelewu przez Bank | za zlecenie | bez opłat |
+| 330. | Naprawa błędnej instrukcji płatniczej na wniosek Klienta | za przelew | 30,00 zł |
+| 331. | Dołączenie kopii dokumentów handlowych do dyspozycji | za każdy dokument | 25,00 zł |
+| 332. | Pomoc w wypełnieniu zlecenia przelewu zagranicznego w placówce | za zlecenie | bez opłat |
+| 333. | Udzielenie informacji o kosztach przelewu zagranicznego przed jego wykonaniem (kalkulacja) | za zapytanie | bez opłat |
+| 334. | Przesłanie zestawienia opłat i prowizji dotyczących rachunku walutowego | raz w roku | bez opłat |
+| 335. | Zestawienie opłat i prowizji — dodatkowy egzemplarz w formie papierowej | za dokument | 12,00 zł |
 
 <!-- page: 26 -->
-**Lp.** \| **Wyszczególnienie czynności** \| **Tryb pobierania** \| **Stawka**
-
-333\. \| Duplikat potwierdzenia operacji walutowej \| za dokument \| 30,00 zł
-
-334\. \| Wydanie dokumentów w trybie pilnym (w ciągu 24 \| za dokument \| dwukrotność
-
-godzin) \| opłaty
-
-podstawowej
-
-335\. \| Wysłanie dokumentów kurierem za granicę na \| za przesyłkę \| wg cennika
-
-wniosek Klienta \| przewoźnika
-
-336\. \| Weryfikacja dokumentów dotyczących transakcji \| za zlecenie \| 40,00 zł
-
-z zagranicą (faktura, umowa, zamówienie)
-
-337\. \| Weryfikacja dokumentów dla przelewów powyżej \| za zlecenie \| 40,00 zł
-
-progu wskazanego w komunikacie Banku 2)
-
-338\. \| Weryfikacja dokumentów przy przelewie do \| za zlecenie \| 40,00 zł
-
-państwa wysokiego ryzyka
-
-339\. \| Dostarczenie dokumentów uzupełniających po \| za zlecenie \| bez opłat
-
-wstrzymaniu przelewu przez Bank
-
-340\. \| Naprawa błędnej instrukcji płatniczej na wniosek \| za przelew \| 30,00 zł
-
-Klienta
-
-341\. \| Dołączenie kopii dokumentów handlowych do \| za każdy dokument \| 25,00 zł
-
-dyspozycji
-
-342\. \| Pomoc w wypełnieniu zlecenia przelewu \| za zlecenie \| bez opłat
-
-zagranicznego w placówce
-
-343\. \| Udzielenie informacji o kosztach przelewu \| za zapytanie \| bez opłat
-
-zagranicznego przed jego wykonaniem (kalkulacja)
-
-344\. \| Przesłanie zestawienia opłat i prowizji dotyczących \| raz w roku \| bez opłat
-
-rachunku walutowego
-
-345\. \| Zestawienie opłat i prowizji — dodatkowy \| za dokument \| 12,00 zł
-
-egzemplarz w formie papierowej
-
-1\) Opłata za status dotyczy zapytania zgłoszonego w terminie nie krótszym niż 3 dni robocze od daty przelewu;
+- 1\) Opłata za status dotyczy zapytania zgłoszonego w terminie nie krótszym niż 3 dni robocze od daty przelewu;
 
 zapytania zgłaszane wcześniej Bank rozpatruje w trybie poszukiwania.
 
-2\) Próg weryfikacyjny jest określany w komunikacie Banku zgodnie z przepisami o przeciwdziałaniu praniu pieniędzy
+- 2\) Próg weryfikacyjny jest określany w komunikacie Banku zgodnie z przepisami o przeciwdziałaniu praniu pieniędzy
 
-oraz wewnętrznymi procedurami Banku; Bank może go obniżyć w stosunku do klientów, wobec których zastosowano
+oraz wewnętrznymi procedurami Banku; Bank może go obniżyć w stosunku do klientów, wobec których zastosowano zwiększone środki bezpieczeństwa finansowego.
 
-zwiększone środki bezpieczeństwa finansowego.
-
-**XI. Objaśnienia i postanowienia końcowe**
+## XI. Objaśnienia i postanowienia końcowe
 
 Użyte w Taryfie określenia oznaczają:
 
-1\. \| **SEPA** — jednolity obszar płatności w euro, w którym przelewy w euro realizowane są według
-
-jednolitych zasad i z wykorzystaniem numeru IBAN, z opcją kosztów SHA;
-
-2\. \| **SWIFT** — międzynarodowa sieć komunikacji międzybankowej, za pośrednictwem której
-
-przekazywane są przelewy poza SEPA, identyfikowana kodem BIC banku;
-
-<!-- page: 27 -->
+- 1\. **SEPA** — jednolity obszar płatności w euro, w którym przelewy w euro realizowane są według jednolitych zasad i z wykorzystaniem numeru IBAN, z opcją kosztów SHA;
+- 2\. **SWIFT** — międzynarodowa sieć komunikacji międzybankowej, za pośrednictwem której przekazywane są przelewy poza SEPA, identyfikowana kodem BIC banku;
 - 3\. **IBAN** — międzynarodowy numer rachunku bankowego, złożony z kodu kraju, cyfr kontrolnych i krajowego numeru rachunku;
 - 4\. **opcja SHA, OUR, BEN** — sposób podziału kosztów przelewu: SHA — koszty dzielone, OUR — wszystkie koszty ponosi zleceniodawca, BEN — koszty ponosi odbiorca;
 - 5\. **waluta dnia (D+0), D+1, D+2** — termin uznania rachunku banku odbiorcy, liczony w dniach roboczych od dnia przyjęcia zlecenia;
+<!-- page: 27 -->
 - 6\. **Tabela kursów walut** — tabela kursów kupna, sprzedaży i średnich, sporządzana przez Bank w dni robocze i obowiązująca w chwili realizacji transakcji;
 - 7\. **dzień roboczy** — dzień niebędący sobotą ani dniem ustawowo wolnym od pracy, a w przypadku przelewów zagranicznych — dzień roboczy także w państwie waluty przelewu.
 

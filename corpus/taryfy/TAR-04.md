@@ -136,11 +136,11 @@ Pakiety rozszerzone są świadczone na wniosek Klienta i mogą być wypowiedzian
 <!-- page: 6 -->
 - 1\) Pakiet rozszerzony obejmuje m.in. zwiększony pakiet powiadomień, rozszerzoną historię operacji oraz dostęp do
 
+<!-- page: 7 -->
 e-archiwum dokumentów; pełny zakres pakietu opisano w sekcji o usługach dodatkowych.
 
 - 2\) Opłaty nie pobiera się, jeżeli blokada dostępu nastąpiła z przyczyn leżących po stronie Banku, w szczególności
 
-<!-- page: 7 -->
 w wyniku awarii systemu lub błędnego rozpoznania operacji jako podejrzanej.
 
 - 3\) Opłata jest pobierana wyłącznie za przelew zrealizowany w trybie natychmiastowym; przelew, którego nie udało się
@@ -749,4 +749,5 @@ nie pobiera opłaty za dostęp tych podmiotów do danych w zakresie, w którym u
 - 2\. Przez „kanały elektroniczne” rozumie się serwis internetowy, aplikację mobilną Bank Przykładowy Mobile oraz interfejsy programistyczne Banku. Dyspozycje składane przez Infolinię i w placówce Banku nie są dyspozycjami składanymi w kanałach elektronicznych, nawet jeżeli są realizowane z użyciem systemu bankowości elektronicznej.
 - 3\. Reklamacje dotyczące opłat pobranych za usługi bankowości elektronicznej Bank rozpatruje w terminie 15 dni, a w sprawach dotyczących usług płatniczych — w terminie 15 dni od dnia ich otrzymania. Reklamację można złożyć w serwisie internetowym, w placówce, na adres reklamacje@bank.example lub telefonicznie pod numerem 800 000 001.
 
+<!-- page: 29 -->
 Opłaty nie obejmują kosztów po stronie Klienta związanych z korzystaniem z usług, w tym opłat operatora telekomunikacyjnego za transmisję danych i wiadomości, które ustala operator zgodnie z własnym cennikiem.

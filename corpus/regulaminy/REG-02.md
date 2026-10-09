@@ -617,55 +617,14 @@ z użyciem chipa i PIN-u.
 
 2\. \| Pojedyncza transakcja zbliżeniowa może zostać
 
-wykonana bez wprowadzania PIN-u do kwoty
+wykonana bez wprowadzania PIN-u do kwoty 100,00 zł. Bank wymaga potwierdzenia PIN-em, jeżeli:
 
-100,00 zł. Bank wymaga potwierdzenia PIN-em,
-
-jeżeli:
-
-1\) kwota transakcji przekracza wskazany próg;
-
-2\) łączna kwota kolejnych transakcji
-
-zbliżeniowych bez PIN-u przekroczyła
-
-300,00 zł;
-
-3\) liczba kolejnych transakcji zbliżeniowych
-
-bez PIN-u wyniosła pięć;
-
-4\) terminal nie obsługuje transakcji
-
-zbliżeniowych w trybie bez PIN-u, np. poza
-
-granicami kraju.
-
-3\. \| Użytkownik może wyłączyć lub ponownie
-
-włączyć funkcję zbliżeniową w bankowości
-
-elektronicznej albo w placówce. Zmiana nie
-
-wymaga wymiany karty. Wyłączenie funkcji nie
-
-ma wpływu na możliwość wykonywania
-
-transakcji z użyciem chipa i PIN-u lub paska
-
-magnetycznego.
-
-4\. \| Użytkownik przechowuje kartę w sposób
-
-ograniczający ryzyko niezamierzonego zbliżenia
-
-do czytnika. Bank nie ponosi odpowiedzialności
-
-za transakcje zbliżeniowe, do których
-
-Użytkownik przyczynił się przez umyślne lub
-
-rażąco niedbałe udostępnienie karty.
+- 1\) kwota transakcji przekracza wskazany próg;
+- 2\) łączna kwota kolejnych transakcji zbliżeniowych bez PIN-u przekroczyła 300,00 zł;
+- 3\) liczba kolejnych transakcji zbliżeniowych bez PIN-u wyniosła pięć;
+- 4\) terminal nie obsługuje transakcji zbliżeniowych w trybie bez PIN-u, np. poza granicami kraju.
+- 3\. Użytkownik może wyłączyć lub ponownie włączyć funkcję zbliżeniową w bankowości elektronicznej albo w placówce. Zmiana nie wymaga wymiany karty. Wyłączenie funkcji nie ma wpływu na możliwość wykonywania transakcji z użyciem chipa i PIN-u lub paska magnetycznego.
+- 4\. Użytkownik przechowuje kartę w sposób ograniczający ryzyko niezamierzonego zbliżenia do czytnika. Bank nie ponosi odpowiedzialności za transakcje zbliżeniowe, do których Użytkownik przyczynił się przez umyślne lub rażąco niedbałe udostępnienie karty.
 
 ### § 38.
 

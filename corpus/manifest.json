@@ -325,7 +325,7 @@
       "status": "obowiazujacy",
       "pdf": "taryfy/TAR-04.pdf",
       "markdown": "taryfy/TAR-04.md",
-      "pages": 28,
+      "pages": 29,
       "template": "taryfa-bankowosc-elektroniczna",
       "layout": "taryfa-siatka",
       "seed": 4060715809051253564,

@@ -696,9 +696,9 @@ wydaje według pozycji „Odpis wyciągu z rachunku”.
 - 2\. Stawki podane w procentach i z oznaczeniem „min.” lub „max.” stosuje się w ten sposób, że opłata nie może być niższa od kwoty minimalnej ani wyższa od kwoty maksymalnej, niezależnie od wartości procentowej wynikającej z kwoty operacji.
 - 3\. Pytania dotyczące stawek Klient może kierować na infolinię pod numerem 800 000 001 (codziennie przez całą dobę) albo na adres korespondencyjny: ul. Przykładowa 1, 00-001 Warszawa. Reklamacje dotyczące pobranych opłat rozpatruje Biuro Reklamacji w terminie 15 dni.
 
+<!-- page: 27 -->
 Taryfa obowiązuje od dnia wskazanego na okładce. Czynności rozpoczęte przed tym dniem i zakończone po jego upływie rozlicza się według stawek obowiązujących w dniu ich zlecenia, chyba że Taryfa stanowi inaczej.
 
-<!-- page: 27 -->
 - 1\. Opłaty z tytułu wykonywania czynności, które nie zostały wymienione w Taryfie, Bank ustala na podstawie rzeczywistych kosztów poniesionych w związku z ich wykonaniem, informując Klienta o ich wysokości przed wykonaniem czynności.
 - 2\. W razie wątpliwości co do tego, która pozycja Taryfy ma zastosowanie do danej czynności, przyjmuje się stawkę korzystniejszą dla Klienta.
 - 1\. Stawki dotyczące kart debetowych mają zastosowanie także do kart wydanych przed dniem wejścia w życie Taryfy, od pierwszego dnia miesiąca następującego po dniu, w którym upłynął termin wypowiedzenia zmiany.

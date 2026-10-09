@@ -374,11 +374,10 @@ pozostałych okresów Bank podaje w tabeli oprocentowania dostępnej w placówka
 
 ## V. Lokaty negocjowane
 
-Lokata Indywidualna jest zakładana dla kwoty co najmniej 200 000,00 zł na okres i na warunkach uzgodnionych z doradcą Banku. Oprocentowanie lokaty negocjowanej mieści się w przedziale od 3,9% do 5,2% w skali roku, przy czym nie może być niższe od stawki z tabeli oprocentowania lokat dla tego samego okresu.
+Lokata Indywidualna jest zakładana dla kwoty co najmniej 200 000,00 zł na okres i na warunkach uzgodnionych z doradcą Banku. Oprocentowanie lokaty negocjowanej mieści się w przedziale od 3,9% <!-- page: 15 --> do 5,2% w skali roku, przy czym nie może być niższe od stawki z tabeli oprocentowania lokat dla tego samego okresu.
 
 Parametry lokaty — kwota, okres, stopa procentowa, sposób wypłaty odsetek i skutki zerwania — Bank i Klient potwierdzają w odrębnej umowie. W sprawach nieuregulowanych w umowie mają zastosowanie Regulamin oraz niniejszą Taryfę. Opłaty dotyczące czynności dodatkowych pobiera się na zasadach ogólnych.
 
-<!-- page: 15 -->
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
 | 223. | Założenie lokaty negocjowanej w placówce lub u doradcy | jednorazowo | bez opłat |
@@ -638,10 +637,9 @@ Poniższe stawki dotyczą czynności związanych z rachunkami oszczędnościowym
 | 425. | Odwołanie zlecenia stałego z rachunku oszczędnościowego | za dyspozycję | bez opłat |
 | 426. | Zwrot przelewu z rachunku oszczędnościowego na wniosek Klienta | za operację | 8,00 zł |
 
-<!-- page: 24 -->
+<!-- page: 25 -->
 - 1\) Informację w postaci elektronicznej Klient pobiera w bankowości elektronicznej bez opłat; opłatę pobiera się wyłącznie
 
-<!-- page: 25 -->
 za duplikat sporządzony w postaci papierowej i wysłany pocztą.
 
 - 2\) Opłata nie jest pobierana, jeżeli zajęcie nie obejmuje żadnych środków znajdujących się na rachunku w dniu
@@ -668,9 +666,10 @@ Określenie „kapitalizacja odsetek” oznacza doliczenie naliczonych odsetek d
 - 1\. Podatek dochodowy od odsetek od rachunków i lokat osób fizycznych Bank pobiera w wysokości 19% w chwili kapitalizacji lub wypłaty odsetek i przekazuje do właściwego urzędu skarbowego. Informację o dochodach z tytułu odsetek Bank przekazuje Klientowi w terminie 30 dni po zakończeniu roku podatkowego.
 - 2\. Osoby niebędące rezydentami podatkowymi w Polsce mogą być objęte niższą stawką podatku na podstawie umowy o unikaniu podwójnego opodatkowania, jeżeli przedstawią Bankowi certyfikat rezydencji podatkowej. Dokument należy dostarczyć przed dniem wypłaty odsetek.
 
+<!-- page: 26 -->
 Odsetki od lokat osób prowadzących działalność gospodarczą są elementem przychodu z tej działalności i rozlicza je Klient we własnym zakresie; Bank udziela informacji o wysokości naliczonych odsetek na wniosek.
 
-- 1\. Odsetki od środków na rachunku oszczędnościowym Bank oblicza od dnia wpłaty do dnia poprzedzającego dzień wypłaty, przy czym podstawą obliczeń jest rok liczący 365 dni. Wysokość odsetek jest ustalana według wzoru: saldo pomnożone przez stopę procentową i przez liczbę dni, <!-- page: 26 --> podzielone przez liczbę dni w roku odsetkowym.
+- 1\. Odsetki od środków na rachunku oszczędnościowym Bank oblicza od dnia wpłaty do dnia poprzedzającego dzień wypłaty, przy czym podstawą obliczeń jest rok liczący 365 dni. Wysokość odsetek jest ustalana według wzoru: saldo pomnożone przez stopę procentową i przez liczbę dni, podzielone przez liczbę dni w roku odsetkowym.
 - 2\. Odsetki od lokaty naliczane są od dnia założenia do dnia poprzedzającego dzień zakończenia okresu umownego. Jeżeli dzień zakończenia lokaty przypada na dzień wolny od pracy, wypłata następuje w pierwszym dniu roboczym po nim, a za dodatkowy okres odsetki nie są naliczane.
 
 Odsetki od lokaty jednomiesięcznej, założonej na okres 30 dni przy stawce 3,2% w skali roku, Bank oblicza dla rzeczywistej liczby dni okresu umownego; podana w Taryfie stawka ma charakter nominalny, a faktyczny zysk Klienta po odliczeniu podatku jest niższy.
