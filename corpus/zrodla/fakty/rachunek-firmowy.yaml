@@ -123,13 +123,6 @@ fakty:
     wartosci:
       - wartosc: 1.50
     alternatywy: [0.00, 3.00]
-  - id: oplata.firma.przelew-sepa
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 8.00
-      - od: 2027-01-01
-        wartosc: 10.00
-    alternatywy: [0.00, 15.00]
   - id: oplata.firma.wplata-gotowkowa-procent
     rodzaj: procent
     wartosci:
@@ -137,11 +130,6 @@ fakty:
       - od: 2027-01-01
         wartosc: 0.40
     alternatywy: [0.20, 0.50]
-  - id: oplata.firma.wplata-gotowkowa-minimum
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 5.00
-    alternatywy: [3.00, 8.00]
   - id: oplata.firma.zmiana-kwp
     rodzaj: kwota
     wartosci:
@@ -154,23 +142,6 @@ fakty:
       - od: 2026-04-01
         wartosc: 50.00
     alternatywy: [0.00, 80.00]
-  - id: oplata.firma.zajecie-egzekucyjne
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 80.00
-      - od: 2027-01-01
-        wartosc: 100.00
-    alternatywy: [50.00, 150.00]
-  - id: oplata.firma.opinia-bankowa
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 100.00
-    alternatywy: [60.00, 150.00]
-  - id: oplata.firma.karta-wydanie
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 0.00
-    alternatywy: [25.00]
   - id: oplata.firma.karta-roczna
     rodzaj: kwota
     wartosci:

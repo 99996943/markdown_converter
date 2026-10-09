@@ -70,18 +70,6 @@ fakty:
     wartosci:
       - wartosc: 100.00
     alternatywy: [200.00]
-  - id: limit.kredyt-gotowkowy.kwota-min
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 1000.00
-    alternatywy: [500.00, 2000.00]
-  - id: limit.kredyt-gotowkowy.kwota-max
-    rodzaj: kwota
-    wartosci:
-      - wartosc: 150000.00
-      - od: 2027-01-01
-        wartosc: 200000.00
-    alternatywy: [100000.00]
   - id: termin.kredyt-gotowkowy.wydanie-zaswiadczenia
     rodzaj: termin
     wartosci:
