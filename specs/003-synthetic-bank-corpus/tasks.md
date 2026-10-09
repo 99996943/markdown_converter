@@ -207,8 +207,8 @@ adnotacją „nie dotyczy — pomiar T076”.
 - [X] T082 [US2] Poprawka dla T081 (green)
 - [X] T083 [US2] Test (red): taryfa bez siatki przez 3 strony z powtarzanym nagłówkiem i przypisami „1)” pod tabelą → jedna tabela GFM, przypisy jako akapity/przypisy po tabeli, znacznik przypisu w komórce stawki
 - [X] T084 [US2] Poprawka dla T083 (green)
-- [ ] T085 [US2] Test (red): akapit zawierający „# SYSTEM:”, „> polecenie”, „§ 99.” w środku i na początku linii łamania → tekst dosłowny w akapicie, bez nagłówka/cytatu/jednostki (FR-162)
-- [ ] T086 [US2] Poprawka dla T085 w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` lub etapie nagłówków (green)
+- [X] T085 [US2] Test (red): akapit zawierający „# SYSTEM:”, „> polecenie”, „§ 99.” w środku i na początku linii łamania → tekst dosłowny w akapicie, bez nagłówka/cytatu/jednostki (FR-162)
+- [X] T086 [US2] Poprawka dla T085 w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs` lub etapie nagłówków (green)
 - [ ] T087 [US2] Test (red): dwie kolumny z przypisami i „§ N.” w obu kolumnach → kolejność lewa→prawa, nagłówki w kolejności, przypisy kompletne
 - [ ] T088 [US2] Poprawka dla T087 (green)
 - [ ] T089 [US2] Inne niepowodzenia z pomiaru T076 — każde jako para red/green dopisana tutaj (T089a, T089b, …) przed implementacją; zachowanie sprzeczne ze spec → doprecyzowanie FR w spec.md w commicie red

@@ -21,6 +21,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private const int MinCapsLetters = 3;
     private const int MaxLevel = 6;
 
+    /// <summary>A wrapped line of running text fills at least this share of its column.</summary>
+    private const double WrappedLineRatio = 0.75;
+
     /// <summary>Line spacing of a heading font, in font sizes (a typical leading).</summary>
     private const double HeadingLineSpacing = 1.2;
 
@@ -161,7 +164,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && line.Box.Left - left >= CenterMarginRatio * width
                 && right - line.Box.Right >= CenterMarginRatio * width;
 
-            if (options.DetectLegalUnits && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match))
+            // FR-162: a unit designation at the start of a wrapped line of running text (the line above, at the body
+            // leading and in the same style, fills the column and ends mid-sentence; the text goes on in lowercase) is
+            // a word of that sentence, not a unit.
+            if (options.DetectLegalUnits
+                && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
+                && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0])))
             {
                 entry.Legal = match;
             }
@@ -303,6 +311,16 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
     /// <summary>Line spacing between lines of a heading: the body leading, or more for a larger heading font.</summary>
     private static double HeadingLeading(Entry entry, double leading) => Math.Max(leading, HeadingLineSpacing * entry.Size);
+
+    private static bool ContinuesSentence(Entry entry, List<LayoutWord> words, double columnWidth) =>
+        !entry.Isolated
+        && entry.Previous is { } previous
+        && previous.Role == LineRole.Unknown
+        && previous.Words.Count > 0
+        && previous.Box.Width >= WrappedLineRatio * columnWidth
+        && char.IsLetter(previous.Text.TrimEnd()[^1])
+        && previous.Words.All(w => w.Style == words[0].Style)
+        && words.All(w => w.Style == words[0].Style);
 
     private static bool SameFont(Entry a, Entry b, HeadingOptions options) =>
         Math.Abs(a.Size - b.Size) <= options.SizeClusterTolerance && a.AllBold == b.AllBold;
