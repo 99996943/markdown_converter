@@ -9,6 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
+    <ProjectReference Include="..\LegalAgent.Chunking\LegalAgent.Chunking.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Fonts\*.ttf" LogicalName="LegalAgent.Corpus.Fonts.%(Filename)%(Extension)" />

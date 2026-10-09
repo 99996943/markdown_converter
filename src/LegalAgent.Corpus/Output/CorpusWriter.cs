@@ -70,7 +70,7 @@ public static class CorpusWriter
     }
 
     /// <summary>
-    /// Deletes *.pdf and *.md files (recursively) under the managed directories that are not in the plan and returns
+    /// Deletes *.pdf, *.md and *.jsonl (chunk) files (recursively) under the managed directories that are not in the plan and returns
     /// their relative paths (ordinal). Touches nothing else. The caller must invoke it only after a fully successful run.
     /// </summary>
     public static IReadOnlyList<string> Cleanup(string root, IEnumerable<string> plannedRelativePaths, IEnumerable<string> managedDirectories)
@@ -91,7 +91,7 @@ public static class CorpusWriter
 
     /// <summary>
     /// Compares the corpus on disk with <paramref name="expected"/>: different bytes, missing files and unexpected
-    /// *.pdf / *.md files under managed directories.
+    /// *.pdf / *.md / *.jsonl files under managed directories.
     /// </summary>
     public static CorpusDiff Compare(string root, IEnumerable<CorpusFile> expected, IEnumerable<string> managedDirectories)
     {
@@ -121,7 +121,7 @@ public static class CorpusWriter
     private static string Absolute(string root, string relative) =>
         Path.Combine(root, relative.Replace('/', Path.DirectorySeparatorChar));
 
-    /// <summary>Relative '/'-separated paths of *.pdf and *.md files under the managed directories, ordinal-sorted.</summary>
+    /// <summary>Relative '/'-separated paths of *.pdf, *.md and *.jsonl files under the managed directories, ordinal-sorted.</summary>
     private static List<string> ManagedFiles(string root, IEnumerable<string> managedDirectories)
     {
         var result = new List<string>();
@@ -137,7 +137,8 @@ public static class CorpusWriter
             {
                 string extension = Path.GetExtension(file);
                 if (string.Equals(extension, ".pdf", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(extension, ".md", StringComparison.OrdinalIgnoreCase))
+                    || string.Equals(extension, ".md", StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(extension, ".jsonl", StringComparison.OrdinalIgnoreCase))
                 {
                     result.Add(Path.GetRelativePath(root, file).Replace(Path.DirectorySeparatorChar, '/'));
                 }

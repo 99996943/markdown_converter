@@ -2,6 +2,9 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
+using LegalAgent.Chunking;
+using LegalAgent.Chunking.Model;
+using LegalAgent.Chunking.Serialization;
 using LegalAgent.Corpus.Content;
 using LegalAgent.Corpus.Manifest;
 using LegalAgent.Corpus.Output;
@@ -10,6 +13,8 @@ using LegalAgent.Corpus.Typesetting;
 using LegalAgent.Corpus.Validation;
 using LegalAgent.PdfParser;
 using LegalAgent.PdfParser.Model;
+using LegalAgent.PdfParser.Rendering;
+using Microsoft.Extensions.Options;
 
 namespace LegalAgent.Corpus;
 
@@ -149,8 +154,9 @@ public static class CorpusGenerator
         List<ManifestDocument> documents = manifest.Documents.Where(d => d.Type != ActType).ToList();
         string content = Resolve(options.BaseDirectory, parameters.ContentDirectory);
         IReadOnlyList<ActSource> acts = File.Exists(Path.Combine(content, "akty.yaml")) ? ContentLoader.Load(content).Acts : [];
-        var converted = new (string Markdown, int Pages)[documents.Count];
+        var converted = new PdfConversionResult[documents.Count];
         IPdfMarkdownConverter converter = Converter(parameters, options);
+        IDocumentChunker chunker = Chunker(parameters, converter);
         int done = 0;
         await Parallel.ForEachAsync(
             Enumerable.Range(0, documents.Count),
@@ -165,20 +171,22 @@ public static class CorpusGenerator
                 }
 
                 byte[] pdf = await File.ReadAllBytesAsync(pdfPath, ct).ConfigureAwait(false);
-                converted[i] = await ConvertWithPagesAsync(converter, pdf, entry.Pdf, ct).ConfigureAwait(false);
+                converted[i] = await ConvertResultAsync(converter, pdf, entry.Pdf, ct).ConfigureAwait(false);
                 int n = Interlocked.Increment(ref done);
-                options.Progress?.Report($"dokument {n}/{documents.Count}: {entry.Id} ({converted[i].Pages} str.)");
+                options.Progress?.Report($"dokument {n}/{documents.Count}: {entry.Id} ({converted[i].Document.Source.PageCount} str.)");
             }).ConfigureAwait(false);
 
         var files = new List<CorpusFile>();
         var entries = new List<ManifestDocument>(documents.Count);
         for (int i = 0; i < documents.Count; i++)
         {
-            entries.Add(documents[i] with { Pages = converted[i].Pages });
-            files.Add(new CorpusFile(documents[i].Markdown, CorpusWriter.TextBytes(converted[i].Markdown)));
+            ManifestDocument entry = documents[i] with { Pages = converted[i].Document.Source.PageCount, Chunks = ChunksPath(documents[i].Markdown) };
+            entries.Add(entry);
+            files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(converted[i].Markdown)));
+            files.Add(await ChunkFileAsync(chunker, converted[i], entry, cancellationToken).ConfigureAwait(false));
         }
 
-        (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(acts, output, converter, required: true, cancellationToken).ConfigureAwait(false);
+        (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(acts, output, converter, chunker, required: true, cancellationToken).ConfigureAwait(false);
         entries.AddRange(actEntries);
         files.AddRange(actFiles);
 
@@ -203,6 +211,7 @@ public static class CorpusGenerator
         IReadOnlyList<ActSource> acts,
         string output,
         IPdfMarkdownConverter converter,
+        IDocumentChunker chunker,
         bool required,
         CancellationToken cancellationToken)
     {
@@ -224,10 +233,10 @@ public static class CorpusGenerator
             }
 
             byte[] pdf = await File.ReadAllBytesAsync(full, cancellationToken).ConfigureAwait(false);
-            (string markdown, int pages) = await ConvertWithPagesAsync(converter, pdf, pdfPath, cancellationToken).ConfigureAwait(false);
+            PdfConversionResult result = await ConvertResultAsync(converter, pdf, pdfPath, cancellationToken).ConfigureAwait(false);
             string markdownPath = ActType + "/" + act.Id + ".md";
-            files.Add(new CorpusFile(markdownPath, CorpusWriter.TextBytes(markdown)));
-            entries.Add(new ManifestDocument(
+            files.Add(new CorpusFile(markdownPath, CorpusWriter.TextBytes(result.Markdown)));
+            var entry = new ManifestDocument(
                 act.Id,
                 ActType,
                 act.Title,
@@ -239,8 +248,13 @@ public static class CorpusGenerator
                 null,
                 pdfPath,
                 markdownPath,
-                pages,
-                Source: new ActInfo(act.Journal, act.ConsolidatedDate, act.Url, act.DownloadedOn, act.Notes)));
+                result.Document.Source.PageCount,
+                Source: new ActInfo(act.Journal, act.ConsolidatedDate, act.Url, act.DownloadedOn, act.Notes))
+            {
+                Chunks = ChunksPath(markdownPath),
+            };
+            entries.Add(entry);
+            files.Add(await ChunkFileAsync(chunker, result, entry, cancellationToken).ConfigureAwait(false));
             listed.Add(act);
         }
 
@@ -402,6 +416,13 @@ public static class CorpusGenerator
 
     internal static async Task<(string Markdown, int Pages)> ConvertWithPagesAsync(IPdfMarkdownConverter converter, byte[] pdf, string sourceId, CancellationToken cancellationToken)
     {
+        PdfConversionResult result = await ConvertResultAsync(converter, pdf, sourceId, cancellationToken).ConfigureAwait(false);
+        return (result.Markdown, result.Document.Source.PageCount);
+    }
+
+    /// <summary>Converts a PDF; a failed or incomplete conversion is a <see cref="ConversionFailedException"/>.</summary>
+    internal static async Task<PdfConversionResult> ConvertResultAsync(IPdfMarkdownConverter converter, byte[] pdf, string sourceId, CancellationToken cancellationToken)
+    {
         PdfConversionResult result;
         try
         {
@@ -418,7 +439,37 @@ public static class CorpusGenerator
             throw new ConversionFailedException($"Konwersja niekompletna: {sourceId}");
         }
 
-        return (result.Markdown, result.Document.Source.PageCount);
+        return result;
+    }
+
+    /// <summary>Spec 004: the chunk file of a document, next to its Markdown (<c>&lt;stem&gt;.chunks.jsonl</c>).</summary>
+    internal static string ChunksPath(string markdownPath) =>
+        (markdownPath.EndsWith(".md", StringComparison.Ordinal) ? markdownPath[..^".md".Length] : markdownPath) + ".chunks.jsonl";
+
+    /// <summary>The chunker of the corpus: default chunking options, the run's parser options for rendering.</summary>
+    internal static IDocumentChunker Chunker(RunParameters parameters, IPdfMarkdownConverter converter)
+    {
+        var parserOptions = new PdfParserOptions();
+        CopyOptions(parameters.ParserOptions, parserOptions);
+        return new DocumentChunker(converter, new MarkdownRenderer(), Options.Create(new ChunkingOptions()), Options.Create(parserOptions));
+    }
+
+    /// <summary>Spec 004, FR-261: the chunks of a converted document with the metadata of its manifest entry.</summary>
+    private static async Task<CorpusFile> ChunkFileAsync(IDocumentChunker chunker, PdfConversionResult result, ManifestDocument entry, CancellationToken cancellationToken)
+    {
+        var metadata = new DocumentMetadata(entry.Id)
+        {
+            Designation = entry.Designation,
+            Type = entry.Type,
+            Title = entry.Title,
+            Version = entry.Version,
+            ValidFrom = entry.ValidFrom,
+            ValidTo = entry.ValidTo,
+            Status = entry.Status,
+            PreviousVersion = entry.PreviousVersion,
+        };
+        ChunkedDocument chunks = await chunker.ChunkAsync(result, metadata, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return new CorpusFile(entry.Chunks!, CorpusWriter.TextBytes(ChunkJson.ToJsonLines(chunks)));
     }
 
     private sealed record Built(IReadOnlyList<GeneratedDocument> Documents, Manifest.Manifest Manifest, IReadOnlyList<CorpusFile> Files, IReadOnlyList<string> ManagedDirectories);
@@ -436,8 +487,9 @@ public static class CorpusGenerator
         CorpusPlan plan = CorpusPlanner.Plan(content, parameters);
         IReadOnlyList<DocumentPlan> plans = plan.Documents;
         var fits = new FitResult[plans.Count];
-        var markdown = new string[plans.Count];
+        var results = new PdfConversionResult[plans.Count];
         IPdfMarkdownConverter converter = Converter(parameters, options);
+        IDocumentChunker chunker = Chunker(parameters, converter);
         int done = 0;
         await Parallel.ForEachAsync(
             Enumerable.Range(0, plans.Count),
@@ -446,11 +498,12 @@ public static class CorpusGenerator
             {
                 DocumentPlan doc = plans[i];
                 fits[i] = PageFitter.Fit(doc, content, parameters.Seed, parameters.Pages);
-                markdown[i] = await ConvertAsync(converter, fits[i].Typeset.Pdf, PdfPath(doc), ct).ConfigureAwait(false);
+                results[i] = await ConvertResultAsync(converter, fits[i].Typeset.Pdf, PdfPath(doc), ct).ConfigureAwait(false);
                 int n = Interlocked.Increment(ref done);
                 options.Progress?.Report($"dokument {n}/{plans.Count}: {doc.Id} ({fits[i].Typeset.PageCount} str.)");
             }).ConfigureAwait(false);
 
+        string[] markdown = [.. results.Select(m => m.Markdown)];
         Check(parameters, plans, fits, markdown, content);
 
         var documents = new List<GeneratedDocument>(plans.Count);
@@ -478,6 +531,7 @@ public static class CorpusGenerator
             documents.Add(new GeneratedDocument(doc, fit.Typeset.Pdf, markdown[i], entry, fit));
             files.Add(new CorpusFile(entry.Pdf, fit.Typeset.Pdf));
             files.Add(new CorpusFile(entry.Markdown, CorpusWriter.TextBytes(markdown[i])));
+            files.Add(await ChunkFileAsync(chunker, results[i], entry, cancellationToken).ConfigureAwait(false));
             if (options.TruthDirectory is { } truthDirectory)
             {
                 Directory.CreateDirectory(truthDirectory);
@@ -494,7 +548,7 @@ public static class CorpusGenerator
         }
 
         (List<ManifestDocument> actEntries, List<CorpusFile> actFiles) = await ActsAsync(
-            content.Acts, Resolve(options.BaseDirectory, parameters.OutputDirectory), converter, required: false, cancellationToken).ConfigureAwait(false);
+            content.Acts, Resolve(options.BaseDirectory, parameters.OutputDirectory), converter, chunker, required: false, cancellationToken).ConfigureAwait(false);
         files.AddRange(actFiles);
         var manifest = new Manifest.Manifest(run, [.. documents.Select(d => d.Entry), .. actEntries]);
         IReadOnlyList<string> typeOrder = content.Types.Select(t => t.Id).ToList();
@@ -552,7 +606,10 @@ public static class CorpusGenerator
             ? null
             : NullIfEmpty(ManifestRelations.Changes(content, doc, fit, plan.First(d => d.Id == doc.PreviousVersionId), previous)),
         Contradictions: NullIfEmpty(ManifestRelations.Contradictions(content, doc, fit, plan)),
-        Poison: doc.Poison is null ? null : ManifestRelations.Poison(content, doc, fit));
+        Poison: doc.Poison is null ? null : ManifestRelations.Poison(content, doc, fit))
+    {
+        Chunks = ChunksPath(MarkdownPath(doc)),
+    };
 
     private static IReadOnlyList<T>? NullIfEmpty<T>(IReadOnlyList<T> list) => list.Count == 0 ? null : list;
 
