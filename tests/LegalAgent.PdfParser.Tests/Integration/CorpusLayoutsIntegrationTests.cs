@@ -1235,6 +1235,7 @@ public sealed class CorpusLayoutsIntegrationTests
         b.Text(50, y, "i może wymagać oceny ryzyka przez Bank.", 9.5);
         b.Text(50 + SyntheticPdfBuilder.TextWidth("i może wymagać oceny ryzyka przez Bank.", 9.5) + 0.3, y - 3.6, "6", 5.7);
         b.Text(313, y - 2.5, "2. Jeżeli bankomat nie wydał gotówki,", 9.5);
+        b.HLine(50, 170, 755);
         b.Text(50, 769, "6) Limity zdefiniowane przez Użytkownika nie mogą przekraczać kwot z tabeli.", 8);
 
         string md = await MarkdownAsync(b.Build());
@@ -1244,8 +1245,8 @@ public sealed class CorpusLayoutsIntegrationTests
         }
 
         Assert.DoesNotContain("Bank.6", md, StringComparison.Ordinal);
-        Assert.Contains("ryzyka przez Bank.[^6]", md, StringComparison.Ordinal);
-        Assert.Contains("[^6]: Limity zdefiniowane", md, StringComparison.Ordinal);
+        Assert.Contains("ryzyka przez Bank.[^1]", md, StringComparison.Ordinal);
+        Assert.Contains("[^1]: Limity zdefiniowane", md, StringComparison.Ordinal);
     }
 
     /// <summary>T089a: a ruled table right below numbered paragraphs („1.” + hanging text) must not absorb them.</summary>
