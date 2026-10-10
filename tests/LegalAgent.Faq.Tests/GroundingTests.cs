@@ -67,6 +67,20 @@ public sealed class GroundingTests
         Assert.Null(FaqGrounding.Problem(Candidate("§ 10", quote, "Tak."), markdown));
     }
 
+    /// <summary>Spec 008 (T029): letter and Roman dot labels „a.”, „ii.” (Markdown „a\.”, „ii\.”) are labels too.</summary>
+    [Theory]
+    [InlineData("udzielone: w formie pisemnej, w formie elektronicznej")]
+    [InlineData("zawiera: numer rachunku Klienta, imię i nazwisko Klienta, numer rachunku beneficjenta")]
+    public void QuoteAcrossDotLetterAndRomanListItems_IgnoresLabels(string quote)
+    {
+        const string markdown =
+            "### § 12\n\n- 15\\. Pełnomocnictwo musi być udzielone:\n  - a\\. w formie pisemnej,\n"
+            + "  - b\\. w formie elektronicznej.\n- 16\\. Zlecenie zawiera:\n  - i\\. numer rachunku Klienta,\n"
+            + "  - ii\\. imię i nazwisko Klienta,\n  - iii\\. numer rachunku beneficjenta.\n\n### § 13\n";
+
+        Assert.Null(FaqGrounding.Problem(Candidate("§ 12", quote, "Tak."), markdown));
+    }
+
     [Fact]
     public void UnknownUnit_IsProblem()
     {
