@@ -580,7 +580,7 @@ zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokaza�
   do tabeli (TableDetection, ramki „etap”), inna przyczyna; nagłówek schematu kroków w cieniowanej ramce w
   rozdziale 18 nadal jako pogrubione tytuły kroków.
 
-- [ ] T067h Czwarty przebieg: FAQ zapisane, ale odpadło 27 z 45 kandydatów (D2: został 1). Część to prawdziwe
+- [X] T067h Czwarty przebieg: FAQ zapisane, ale odpadło 27 z 45 kandydatów (D2: został 1). Część to prawdziwe
   halucynacje (D2-K3: wiek „13”, „18” spoza rozdziału 5), reszta to:
   - zakres jednostki za wąski: „## Dodatkowe wyjaśnienia” na poziomie rozdziałów ucinał rozdział 4 regulaminu
     reklamacji — rozdział z numerem/oznaczeniem obejmuje następujące po nim nagłówki bez numeru, aż do nagłówka

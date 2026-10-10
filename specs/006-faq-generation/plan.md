@@ -298,7 +298,12 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
 - **T067e–T067g (parser)**: tytuł pod ozdobnym paskiem, nagłówek zawinięty po przecinku, nagłówek na krawędzi
   ramki schematu kroków, spis treści jako rodzic rozdziałów — poprawione bez zmian goldenów i korpusu. Otwarte:
   karty dla firm cz. II rozdz. 3 (nagłówek w tabeli), wiersze tabel jako nagłówki, przypisy, spis treści w treści.
-  Ponowny przebieg do zrobienia.
+- **Czwarty przebieg (2026-10-10)**: FAQ 10/10 zapisane, ale ugruntowanie odrzuciło 27 z 45 kandydatów (D2: 1
+  został). Złapało prawdziwe halucynacje (D2-K3: wiek 13/18 spoza rozdziału), ale też: rozdział 4 reklamacji
+  ucięty przez „## Dodatkowe wyjaśnienia” na poziomie rozdziałów, cytaty niedosłowne. **T067h**: sekcja z numerem
+  obejmuje następne nagłówki bez numeru; cytat z tolerancją (≥ 80% trójek słów, fragmenty po wielokropkach);
+  ostrzeżenie z początkiem cytatu, jedna linia na kandydata. Ponowny przebieg do zrobienia — sprawdzić odsetek
+  odrzuceń i przykłady cytatów w ostrzeżeniach.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

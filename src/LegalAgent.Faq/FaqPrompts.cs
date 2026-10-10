@@ -19,7 +19,7 @@ internal static class FaqPrompts
         - Jeśli dokument nie daje odpowiedzi na pytanie, napisz wprost: „Dokument nie rozstrzyga …” i dokończ, czego nie rozstrzyga.
         - Pisz po polsku, jasno i zwięźle, językiem zrozumiałym dla klienta; kwoty, terminy i warunki przepisuj dokładnie.
         - W polu „unit” podaj jednostkę redakcyjną (nagłówek), z której pochodzi odpowiedź, przepisaną dokładnie z listy „Jednostki dokumentu” podanej pod dokumentem, albo pusty tekst, gdy odpowiedź nie pochodzi z jednej jednostki lub lista jest pusta. Nie twórz oznaczeń, których nie ma na liście (np. „§ 6”, gdy dokument nie ma paragrafów).
-        - W polu „quote” przepisz dosłownie z dokumentu fragment (co najmniej 3 słowa, najlepiej całe zdanie), który potwierdza odpowiedź; fragment musi pochodzić z jednostki podanej w „unit”. Kandydat bez takiego fragmentu zostanie odrzucony.
+        - W polu „quote” przepisz dosłownie z dokumentu jeden ciągły fragment (co najmniej 3 słowa, najlepiej całe zdanie, bez wielokropków, skrótów i zmian słów), który potwierdza odpowiedź; fragment musi pochodzić z jednostki podanej w „unit”. Kandydat bez takiego fragmentu zostanie odrzucony.
         - Liczby (kwoty, terminy, godziny, daty) zapisuj w odpowiedzi tak jak w dokumencie; liczba, której nie ma w tekście jednostki, odrzuca kandydata.
         - Odpowiedz wyłącznie obiektem JSON zgodnym ze schematem.
         """);

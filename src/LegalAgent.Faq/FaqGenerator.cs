@@ -143,18 +143,14 @@ public sealed class FaqGenerator
         var problems = new List<string>();
         foreach (FaqCandidate candidate in candidates)
         {
-            IReadOnlyList<string> found = FaqGrounding.Problems(candidate, markdown);
-            if (found.Count == 0)
+            if (FaqGrounding.Problem(candidate, markdown) is not { } problem)
             {
                 grounded.Add(candidate);
                 continue;
             }
 
-            problems.AddRange(found);
-            foreach (string problem in found)
-            {
-                progress?.Report(new FaqEvent(FaqEventKind.CandidateDropped, documentId, 0, 0, null, null, problem));
-            }
+            problems.Add(problem);
+            progress?.Report(new FaqEvent(FaqEventKind.CandidateDropped, documentId, 0, 0, null, null, problem));
         }
 
         return grounded.Count > 0 ? grounded : throw new FaqResponseException(FaqStep.Candidates, documentId, problems);

@@ -102,12 +102,16 @@ aplikacja przepuszcza każdy komunikat przez `SecretRedactor` (FR-411).
 
 Reguły 1–5 odrzucają całą odpowiedź. Potem ugruntowanie (T067d, `FaqGrounding`) sprawdza każdego kandydata osobno:
 - tekst jednostki = sekcje Markdown, których nagłówek pasuje do `unit` (`UnitMatcher`), każda do następnego
-  nagłówka tego samego lub wyższego poziomu; bez `unit` albo bez pasującego nagłówka — cały dokument;
+  nagłówka wyższego poziomu albo tego samego poziomu; sekcja z numerem lub oznaczeniem („6. …”, „§ 5”, „Art. 3”,
+  „Rozdział 2”) obejmuje też następujące po niej nagłówki bez numeru tego samego poziomu („Dodatkowe
+  wyjaśnienia”, T067h); bez `unit` albo bez pasującego nagłówka — cały dokument;
 - normalizacja: komentarze `<!-- … -->` usunięte, tylko litery i cyfry małymi literami, reszta jako jedna spacja;
-- cytat ma co najmniej 3 słowa i występuje w tekście jednostki (całymi słowami);
+- cytat ma co najmniej 3 słowa; dzielony na fragmenty po wielokropkach; co najmniej 80% trójek kolejnych słów
+  fragmentów występuje w tekście jednostki (T067h: drobne zmiany przechodzą, parafraza nie);
 - każda liczba (ciąg cyfr) odpowiedzi występuje w tekście jednostki.
 
-Kandydat, który nie spełnia tych warunków, odpada (zdarzenie `CandidateDropped`, ostrzeżenie w konsoli). Odpowiedź
+Kandydat, który nie spełnia tych warunków, odpada (zdarzenie `CandidateDropped` z jedną linią „kandydat Dn-Kk:
+powód; powód”, w której jest początek cytatu; ostrzeżenie w konsoli). Odpowiedź
 jest odrzucana (`FaqResponseException`, kod 7) tylko wtedy, gdy z dokumentu nie zostanie żaden kandydat.
 
 **Wybór**:
