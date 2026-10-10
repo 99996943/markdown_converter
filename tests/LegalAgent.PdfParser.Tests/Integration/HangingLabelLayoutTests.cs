@@ -171,6 +171,33 @@ public sealed class HangingLabelLayoutTests
         Assert.Equal(0, result.Report.TableCount);
     }
 
+    /// <summary>
+    /// T014b — a letter „a/” whose enumeration uses lower-case Roman numerals with a dot („i.”, „ii.”, „iii.”) in the
+    /// next label column (D-A p. 43): the run is not a fallback table.
+    /// </summary>
+    [Fact]
+    public async Task Roman_dot_enumeration_under_a_letter_is_not_a_table()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        Item(page, Margin, 54.7, 100, "10.", "Płatności wychodzące:");
+        Item(page, Point, Letter, 110, "1/", "Bank wykona płatność wychodzącą po:");
+        Item(page, Letter, LetterText, 120, "a/", "złożeniu prawidłowego zlecenia, które zawiera:");
+        Item(page, 82.8, 97.1, 130, "i.", "numer rachunku Klienta, z którego wykonujemy płatność,");
+        Item(page, 82.8, 97.0, 140, "ii.", "imię i nazwisko albo nazwę beneficjenta oraz jego dane teleadresowe, które pozwalają go zidentyfikować");
+        page.Text(96.7, 150, "bez wątpliwości,", Size);
+        Item(page, 82.8, 97.1, 160, "iii.", "kwotę i walutę przelewu,");
+        Item(page, Letter, LetterText, 170, "b/", "autoryzacji zlecenia przez Klienta,");
+        Item(page, Margin, 54.7, 180, "11.", "Bank może odmówić wykonania zlecenia, jeżeli zlecenie nie zawiera danych wymaganych przez regulamin.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Contains("- 10\\. Płatności wychodzące:\n  - 1/ Bank wykona płatność wychodzącą po:\n    - a/ złożeniu", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("- 11\\. Bank może odmówić", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
+        Assert.Equal(0, result.Report.TableCount);
+    }
+
     /// <summary>T011 — control: a fee table with three text columns and „1/” in the first column stays a GFM table.</summary>
     [Fact]
     public async Task Data_table_with_slash_numbers_in_the_first_column_stays_a_table()
