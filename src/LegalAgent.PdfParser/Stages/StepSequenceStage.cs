@@ -21,6 +21,7 @@ public sealed class StepSequenceStage : IPipelineStage
     private const double MinBoxHeight = 8;
     private const double HeaderGapFactor = 4;
     private const double HeaderLineGapFactor = 1.5;
+    private const double FlowGapFactor = 1.5;
     private const int MinBoxes = 2;
 
     /// <inheritdoc />
@@ -145,8 +146,14 @@ public sealed class StepSequenceStage : IPipelineStage
 
         List<StepBox> boxes = outer
             .Select(area => new StepBox(page, area, lines.Where(l => l.Box.CenterY >= area.Top - 1 && l.Box.CenterY <= area.Bottom + 1).ToList()))
-            .Where(b => b.Lines.Any(l => l.Words.Any(w => w.Box.CenterX >= b.Area.Right)))
             .ToList();
+        for (int i = 0; i < boxes.Count; i++)
+        {
+            double end = i + 1 < boxes.Count ? boxes[i + 1].Area.Top - 1 : double.MaxValue;
+            boxes[i].Lines.AddRange(FlowBelow(lines, boxes[i], end));
+        }
+
+        boxes = boxes.Where(b => b.Lines.Any(l => l.Words.Any(w => w.Box.CenterX >= b.Area.Right))).ToList();
         var owned = new HashSet<LayoutLine>(boxes.SelectMany(b => b.Lines), ReferenceEqualityComparer.Instance);
         foreach (StepBox box in boxes)
         {
@@ -154,6 +161,30 @@ public sealed class StepSequenceStage : IPipelineStage
         }
 
         return boxes;
+    }
+
+    /// <summary>
+    /// Spec 008 (FR-632): the explanation running on below the box — the lines below it lying wholly right of its edge,
+    /// each closely below the previous one (gap ≤ 1.5 × line height), up to the next box, a line reaching left of the
+    /// edge or a wider gap. Below an empty box (a frame broken by a page boundary) this is the whole explanation.
+    /// </summary>
+    private static List<LayoutLine> FlowBelow(List<LayoutLine> lines, StepBox box, double end)
+    {
+        var flow = new List<LayoutLine>();
+        double previous = box.Lines.Select(l => l.Box.Bottom).Append(box.Area.Bottom).Max();
+        foreach (LayoutLine line in lines.Where(l => l.Box.CenterY > box.Area.Bottom + 1 && l.Box.CenterY < end).OrderBy(l => l.Box.Top))
+        {
+            if (line.Box.Top - previous > FlowGapFactor * line.Box.Height
+                || line.Words.Any(w => w.Box.Left < box.Area.Right - EdgeTolerance))
+            {
+                break;
+            }
+
+            flow.Add(line);
+            previous = line.Box.Bottom;
+        }
+
+        return flow;
     }
 
     /// <summary>

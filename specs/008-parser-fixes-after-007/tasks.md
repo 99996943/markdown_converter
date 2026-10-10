@@ -230,12 +230,12 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
   niepogrubione wiersze pola zostają zwykłym tekstem, „3. Nie stosujemy korekty.” zostaje punktem (regresja corp-5 po T034)
 - [X] T034b [US4] `BlockAssemblyStage`: nazwa kroku częściowo pogrubiona zachowuje niepogrubione wiersze;
   `ListDetectionStage`: kontynuacja ustępu ISAP tylko w tej samej kolumnie — green T034a
-- [ ] T035 [P] [US4] Testy (red) w tym samym pliku: niczyje wiersze po prawej (wszystkie słowa na prawo od prawej
+- [X] T035 [P] [US4] Testy (red) w tym samym pliku: niczyje wiersze po prawej (wszystkie słowa na prawo od prawej
   krawędzi pola) poniżej pola, z odstępem ≤ 1,5 × wysokość wiersza, do następnego pola → objaśnienie tego pola;
   przerwa większa albo obcy tekst po lewej → koniec przelewu; ramka przechodząca przez granicę strony (na
   następnej stronie szare pole bez frazy i dalsza treść po prawej) → treść należy do tej samej ramki, fraza tylko raz
   (przed treścią z pierwszej strony), puste pole nie daje pustego akapitu
-- [ ] T036 [US4] Przelew w `StepSequenceStage.cs` — green T035
+- [X] T036 [US4] Przelew w `StepSequenceStage.cs` — green T035
 - [ ] T037 [P] [US4] Testy (red) w tym samym pliku: niepogrubiony wiersz nad polem nie jest wierszem nagłówków (zostaje
   objaśnieniem / tekstem, nigdy `Artifact`); w całości pogrubiony wiersz nad pierwszym polem nadal jest nagłówkiem
   (istniejący przypadek FR-067)
