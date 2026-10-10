@@ -73,13 +73,13 @@ public sealed class FaqGeneratorErrorTests
             chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
         }
 
-        chat.Respond(FaqJson.Selection([.. FaqJson.SelectionItems(7, 5), new ItemJson("Skąd?", "Z D9.", ["D9-K1"], [new SourceJson("D9")])]));
+        chat.Respond(FaqJson.Selection([.. FaqJson.SelectionItems(7, 5), new ItemJson("Skąd?", "Z D9.", ["D9-K1"])]));
 
         FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate());
 
         Assert.Equal(FaqStep.Selection, e.Step);
         Assert.Equal(
-            ["liczba pozycji 8 zamiast 10", "pozycja 8: kandydat D9-K1 nie istnieje", "pozycja 8: dokument D9 nie istnieje"],
+            ["liczba pozycji 8 zamiast 10", "pozycja 8: kandydat D9-K1 nie istnieje"],
             e.Problems);
         Assert.Equal(6, chat.Calls.Count);
     }

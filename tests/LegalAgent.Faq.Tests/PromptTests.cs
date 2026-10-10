@@ -55,7 +55,8 @@ public sealed class PromptTests
         Assert.Contains("połączyć", system, StringComparison.Ordinal);
         Assert.Contains("faktów, których nie ma w kandydatach", system, StringComparison.Ordinal);
         Assert.Contains("basedOn", system, StringComparison.Ordinal);
-        Assert.Contains("sources", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("sources", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("sources", FaqSchemas.Selection, StringComparison.Ordinal);
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
     }
 

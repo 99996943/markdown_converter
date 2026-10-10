@@ -153,7 +153,7 @@ public sealed class FaqFlowTests : IDisposable
                 i + 1,
                 item.Question,
                 item.Answer,
-                [.. item.Sources.Select(s => new FaqSource(s.DocumentId, null))],
+                [.. item.BasedOn.Select(id => new FaqSource(id[..id.IndexOf('-', StringComparison.Ordinal)], null))],
                 item.BasedOn)),
         ];
         return FaqMarkdownRenderer.Render(

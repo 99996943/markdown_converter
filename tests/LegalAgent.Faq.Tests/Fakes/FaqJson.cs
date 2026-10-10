@@ -6,11 +6,8 @@ namespace LegalAgent.Faq.Tests.Fakes;
 /// <summary>A candidate in a scripted model response.</summary>
 internal sealed record CandidateJson(string Question, string Answer, string Unit = "");
 
-/// <summary>A source in a scripted selection response.</summary>
-internal sealed record SourceJson(string DocumentId, string Unit = "");
-
 /// <summary>An item in a scripted selection response.</summary>
-internal sealed record ItemJson(string Question, string Answer, IReadOnlyList<string> BasedOn, IReadOnlyList<SourceJson> Sources);
+internal sealed record ItemJson(string Question, string Answer, IReadOnlyList<string> BasedOn);
 
 /// <summary>Builds model responses in the shape of contracts/model-exchange.md.</summary>
 internal static class FaqJson
@@ -53,7 +50,7 @@ internal static class FaqJson
 
     /// <summary>
     /// A valid selection of <paramref name="count"/> items: item i is based on candidate K1 of document D((i-1) mod n + 1)
-    /// (or Kk when a document has more), with that document as the only source.
+    /// (or Kk when a document has more).
     /// </summary>
     public static string Selection(int count, int documentCount) =>
         Selection([.. SelectionItems(count, documentCount)]);
@@ -68,7 +65,6 @@ internal static class FaqJson
             return new ItemJson(
                 string.Create(CultureInfo.InvariantCulture, $"Pytanie końcowe {i}?"),
                 string.Create(CultureInfo.InvariantCulture, $"Odpowiedź końcowa {i}."),
-                [string.Create(CultureInfo.InvariantCulture, $"{doc}-K{k}")],
-                [new SourceJson(doc)]);
+                [string.Create(CultureInfo.InvariantCulture, $"{doc}-K{k}")]);
         });
 }

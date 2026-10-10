@@ -42,7 +42,7 @@ public sealed class ResponseParserTests
     public void Selection_ParsesItems()
     {
         string json = FaqJson.Selection(
-            new ItemJson("Pytanie?", "Odpowiedź.", ["D1-K1", "D2-K3"], [new SourceJson("D1", "§ 3"), new SourceJson("D2", " ")]));
+            new ItemJson("Pytanie?", "Odpowiedź.", ["D1-K1", "D2-K3"]));
 
         Parsed<IReadOnlyList<ParsedItem>> parsed = FaqResponseParser.ParseSelection(json);
 
@@ -51,7 +51,6 @@ public sealed class ResponseParserTests
         Assert.Equal("Pytanie?", item.Question);
         Assert.Equal("Odpowiedź.", item.Answer);
         Assert.Equal(["D1-K1", "D2-K3"], item.BasedOn);
-        Assert.Equal([new FaqSource("D1", "§ 3"), new FaqSource("D2", null)], item.Sources);
     }
 
     [Theory]
@@ -76,10 +75,10 @@ public sealed class ResponseParserTests
     }
 
     [Theory]
-    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":\"D1-K1\",\"sources\":[]}]}")]
-    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":[1],\"sources\":[]}]}")]
-    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":[],\"sources\":[{\"documentId\":\"D1\"}]}]}")]
-    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":[]}]}")]
+    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":\"D1-K1\"}]}")]
+    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":[1]}]}")]
+    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\",\"basedOn\":[],\"sources\":[]}]}")]
+    [InlineData("{\"items\":[{\"question\":\"P?\",\"answer\":\"O.\"}]}")]
     [InlineData("{\"candidates\":[]}")]
     [InlineData("")]
     public void Selection_InvalidJson_IsProblem(string json)

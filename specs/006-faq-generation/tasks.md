@@ -540,6 +540,12 @@ nie dotyka klucza.
   - `UnitMatcher`: numer nagłówka numerowanego („6.” w „6. Jakie …”) też jest oznaczeniem jednostki, więc „6”,
     „6.” i „6 ust. 2” pasują, a „§ 6”, „16”, „2” do „2.1. …” nie (`UnitMatcherTests`);
   - aktualizacja `contracts/model-exchange.md` i `data-model.md` („Dopasowanie jednostki”).
+- [ ] T067b Drugi prawdziwy przebieg przeszedł kandydatów, ale krok wyboru odrzucono: model przeredagował jednostkę
+  źródła („3. Co powinna zawierać reklamacja?” zamiast „3. Jak możesz złożyć reklamację?”). Poprawka (decyzja
+  właściciela): model w kroku wyboru nie podaje źródeł — schemat `Selection` to `question`, `answer`, `basedOn`;
+  źródła pozycji liczy kod z kandydatów `basedOn` (dokument + jednostka już sprawdzona w kroku kandydatów), w
+  kolejności `basedOn`, bez powtórzeń, bez źródła bez jednostki, gdy ten sam dokument ma źródło z jednostką.
+  Testy: `ValidatorSelectionTests`, `ResponseParserTests`, `PromptTests`, `FaqGeneratorErrorTests`, `FaqFlowTests`.
 - [X] T068 Handoff „Stan prac i przekazanie” na końcu `specs/006-faq-generation/plan.md`:
   - zrobione zadania, walidacja, odstępstwa od planu, decyzje w trakcie, otwarte punkty;
   - w tym: odsetek odrzuceń walidacji jednostek na prawdziwych danych, 429, model;
