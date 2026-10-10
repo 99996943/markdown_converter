@@ -17,6 +17,9 @@ namespace LegalAgent.PdfParser.Stages;
 public sealed partial class HeadingDetectionStage : IPipelineStage
 {
     private const double CenterMarginRatio = 0.10;
+
+    /// <summary>Margin on each side of a line centred on the page (spec 007), as a share of the page width.</summary>
+    private const double PageCentreMarginRatio = 0.2;
     private const double TitleBlockGapFactor = 2.0;
     private const int MinCapsLetters = 3;
     private const int MaxLevel = 6;
@@ -342,9 +345,21 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     /// a plain „§ 5” wrapped from a sentence is a word of it.
     /// </summary>
     private static bool IsSetApart(Entry entry, HeadingOptions options) =>
-        entry.Centered
-        || Math.Abs(entry.Line.Box.CenterX - (entry.Page.Width / 2)) <= options.CenterTolerance * entry.Page.Width
-        || (entry.Isolated && (entry.AllBold || entry.Enlarged));
+        IsCentredOnPage(entry, options) || (entry.Isolated && (entry.AllBold || entry.Enlarged));
+
+    /// <summary>
+    /// Centred in its column, or on the page (with wide margins on both sides) when the column is not known from the
+    /// plain lines.
+    /// </summary>
+    private static bool IsCentredOnPage(Entry entry, HeadingOptions options)
+    {
+        double width = entry.Page.Width;
+        Rect box = entry.Line.Box;
+        return entry.Centered
+            || (Math.Abs(box.CenterX - (width / 2)) <= options.CenterTolerance * width
+                && box.Left >= PageCentreMarginRatio * width
+                && box.Right <= (1 - PageCentreMarginRatio) * width);
+    }
 
     private static bool ContinuesSentence(Entry entry, List<LayoutWord> words, double columnWidth) =>
         !entry.Isolated
@@ -444,6 +459,22 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
         if (unit.Kind is SectionKind.Article or SectionKind.Paragraph)
         {
+            // Spec 007 (C4): „§ 3. Porady ogólne” printed bold and centred, in a document whose text is not bold, is the
+            // unit with its title — one heading, the title does not go to the content.
+            if (unit.Kind == SectionKind.Paragraph
+                && unit.Rest.Length > 0
+                && entry.BoldSignal
+                && IsCentredOnPage(entry, options)
+                && entry.Text.Length <= options.MaxLength
+                && !unit.Rest.EndsWith('.')
+                && !unit.Rest.EndsWith(',')
+                && !unit.Rest.EndsWith('-'))
+            {
+                heading.Title = unit.Rest;
+                heading.Text = entry.Text;
+                return heading;
+            }
+
             heading.Text = unit.Prefix + unit.Designation + (unit.Bare ? string.Empty : ".");
             heading.SplitRest = unit.Rest.Length > 0;
             return heading;
