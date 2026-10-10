@@ -189,8 +189,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             // FR-162: a unit designation at the start of a wrapped line of running text (the line above, at the body
             // leading and in the same style, fills the column and ends mid-sentence; the text goes on in lowercase) is
             // a word of that sentence, not a unit.
+            // Spec 007 (FR-540): an entry of a table of contents („Rozdział 1. Postanowienia ogólne ......… 3”) names a
+            // section printed further on; it is not a heading itself.
+            bool contentsEntry = ContentsEntry().IsMatch(entry.Text);
             if (options.DetectLegalUnits
                 && !entry.Quoted
+                && !contentsEntry
                 && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
                 && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0]))
                 && (!match.Bare || IsSetApart(entry, options)))
@@ -199,6 +203,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             }
 
             bool styled = entry.Legal is null
+                && !contentsEntry
                 && entry.Isolated
                 && entry.Text.Length <= options.MaxLength
                 && entry.Text.Any(char.IsLetter)
@@ -723,6 +728,10 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         @"^spis\s+(treści|rzeczy)\s*:?$",
         System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
     private static partial System.Text.RegularExpressions.Regex TableOfContents();
+
+    /// <summary>Spec 007 (FR-540): a line ending with leader dots, optionally followed by a page number.</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(@"(?:\.\s?){4,}\s*\d*\s*$|…+\s*\d*\s*$", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex ContentsEntry();
 
     /// <summary>Spec 007: a numbered chapter heading („2. Rachunki bankowe oraz rachunek VAT”).</summary>
     [System.Text.RegularExpressions.GeneratedRegex(@"^\d+\.\s+\p{Lu}", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]

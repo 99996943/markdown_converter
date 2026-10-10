@@ -193,7 +193,7 @@ dzielone 39,7–181,4 i 181,4–555,6 pod każdym wpisem) w
 
 ## Phase 7: User Story 5 — Drobne artefakty (Priority: P3, opcjonalnie — tylko jeśli dzień 8 pozwala)
 
-- [ ] T037 [P] [US5] Replika (red) i poprawka: wiersze spisu treści z kropkami prowadzącymi i numerem strony nie są
+- [X] T037 [P] [US5] Replika (red) i poprawka: wiersze spisu treści z kropkami prowadzącymi i numerem strony nie są
   nagłówkami (FR-540) — `HeadingDetectionStage.cs`, test w `HeadingsIntegrationTests.cs`
 - [ ] T038 [P] [US5] Replika (red) i poprawka: stopka „N/M” nie zostaje w tekście (FR-541) — `ArtifactRemovalStage`,
   test w `ArtifactCleanupIntegrationTests.cs`
