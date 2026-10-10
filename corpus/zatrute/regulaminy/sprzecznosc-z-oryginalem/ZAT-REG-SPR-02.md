@@ -463,9 +463,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) poprzedni cykl rozliczeniowy został rozliczony w całości, bez salda pozostałego do zapłaty.
 - 3\. Okres bezodsetkowy nie dotyczy wypłat gotówki, transakcji o charakterze gotówkowym (w szczególności zakupu bonów, żetonów i walut oraz doładowań kont w systemach płatniczych), opłat, prowizji i odsetek. Od takich transakcji odsetki są naliczane od dnia ich dokonania według stawki dla wypłat gotówki.
 
-**Zestawienie podstawowych warunków**
-
-**finansowych karty**
+### Zestawienie podstawowych warunków finansowych karty
 
 | **Rodzaj warunku** | **Wartość** |
 | --- | --- |

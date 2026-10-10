@@ -476,9 +476,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 2\. Okres bezodsetkowy odnawia się po spłacie pełnego zadłużenia wykazanego w zestawieniu. Klient odzyskuje prawo do bezodsetkowego okresu dla transakcji dokonanych w kolejnym cyklu rozliczeniowym, począwszy od cyklu następującego po cyklu, w którym spłacił całe zadłużenie.
 - 3\. Zmiana długości okresu bezodsetkowego na niekorzyść Klienta wymaga powiadomienia go z wyprzedzeniem wskazanym w postanowieniach o zmianie oprocentowania.
 
-**Zestawienie podstawowych warunków**
-
-**finansowych karty**
+### Zestawienie podstawowych warunków finansowych karty
 
 | **Rodzaj warunku** | **Wartość** |
 | --- | --- |

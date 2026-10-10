@@ -63,7 +63,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             return;
         }
 
-        (double bodySize, bool bodyBold) = BodyStyleOf(entries);
+        (double bodySize, bool bodyBold) = BodyStyleOf(RunningTextLines(context));
         double leading = context.BodyStyle?.Leading is > 0 and var l ? l : bodySize * 1.2;
         Analyse(context, entries, options, bodySize, bodyBold, leading);
 
@@ -121,12 +121,20 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         return entries;
     }
 
-    private static (double Size, bool Bold) BodyStyleOf(List<Entry> entries)
+    /// <summary>
+    /// Lines of running text: unclaimed lines (heading candidates) and list items with their continuations. The body
+    /// style is measured on all of them, so that it does not hinge on how much of the text lists happen to claim
+    /// (spec 008, T010a: a document whose text is mostly lists has its headings as a large share of unclaimed lines).
+    /// </summary>
+    private static IEnumerable<LayoutLine> RunningTextLines(PipelineContext context) =>
+        context.Pages.SelectMany(p => p.Lines).Where(l => l.Role is LineRole.Unknown or LineRole.ListItem or LineRole.ListContinuation);
+
+    private static (double Size, bool Bold) BodyStyleOf(IEnumerable<LayoutLine> lines)
     {
         var counts = new SortedDictionary<(double Size, bool Bold), int>();
-        foreach (Entry entry in entries)
+        foreach (LayoutLine line in lines)
         {
-            foreach (LayoutWord word in entry.Line.Words)
+            foreach (LayoutWord word in line.Words)
             {
                 foreach (LayoutGlyph glyph in word.Glyphs)
                 {
