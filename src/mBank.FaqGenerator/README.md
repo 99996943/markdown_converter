@@ -121,7 +121,7 @@ np. endpoint i adresy na pokaz) → zmienne `FAQGEN__<Sekcja>__<Pole>` → opcje
 | `AzureOpenAI:Deployment`, `Model` | `gpt-4o-mini` | nazwa wdrożenia i modelu (do nagłówka FAQ) |
 | `AzureOpenAI:TimeoutSeconds` | 300 | limit czasu jednego zapytania |
 | `AzureOpenAI:Temperature`, `Seed` | 0, 42 | pusta wartość = nie wysyłaj |
-| `AzureOpenAI:MaxOutputTokens` | 8192 | limit odpowiedzi; odpowiedź ucięta na limicie jest odrzucana z komunikatem „odpowiedź ucięta” |
+| `AzureOpenAI:MaxOutputTokens` | 16384 | limit odpowiedzi; odpowiedź ucięta na limicie jest odrzucana z komunikatem „odpowiedź ucięta” |
 | `Faq:OutputDirectory` | `faq` | katalog pliku FAQ (`--faq-output`) |
 | `Faq:CandidatesPerDocument` | 10 | najwyżej tylu kandydatów z dokumentu (1–30) |
 | `Faq:MaxDocumentTokens` | 100 000 | limit szacowanych tokenów dokumentu |

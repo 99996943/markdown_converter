@@ -236,7 +236,8 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
   kandydaci 26 → 38, FAQ 10/10. D3 przekroczyło `MaxOutputTokens` 8192 (8571 tokenów, nie pętla) — przebieg
   z `FAQGEN__AzureOpenAI__MaxOutputTokens=16384`. Pozostałe odrzucenia cytatów: etykiety „1/”, „a/” nie były
   pomijane przy porównaniu (D-B „§ 10”, „§ 12”, „§ 36”, D-C „§ 42”) — T041a: `FaqGrounding.ListLabel` obejmuje
-  etykiety ukośnikowe. Zostają cytaty, w które model wplata tekst nagłówka („§ 5 System…”, „III. PŁATNOŚCI…”).
+  etykiety ukośnikowe. Zostają cytaty, w które model wplata tekst nagłówka („§ 5 System…”, „III. PŁATNOŚCI…”). T041b (decyzja właściciela): domyślne
+  `AzureOpenAI:MaxOutputTokens` 16384 (`AppSettings`, `appsettings.json`, README, kontrakt CLI spec 006).
 
 ## Complexity Tracking
 
