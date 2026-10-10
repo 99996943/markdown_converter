@@ -198,6 +198,45 @@ public sealed class HangingLabelLayoutTests
         Assert.Equal(0, result.Report.TableCount);
     }
 
+    /// <summary>
+    /// T012 — a two-column box (bold question left, answer right with „1/” and „1.” labels 14 pt before their text, D-A
+    /// p. 26) followed by ustępy with points: the labels stay in their answer cell (no fallback table) and the ustępy
+    /// below the box are a list, not rows of the box.
+    /// </summary>
+    [Fact]
+    public async Task Labels_inside_a_table_cell_stay_with_their_text()
+    {
+        const double question = 59.7, answer = 201.6, answerText = 216.0;
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        page.Text(answer, 105, "Klient wpisuje dane użytkownika w systemie bankowości elektronicznej.", Size);
+        page.Text(question, 115, "Jak ją uruchomić?", Size, bold: true);
+        Item(page, answer, answerText, 115, "1/", "e-mail, na który wyślemy identyfikator tymczasowy,");
+        Item(page, answer, answerText, 125, "2/", "telefon komórkowy, na który wyślemy kod aktywacyjny.");
+        Item(page, answer, answerText, 145, "1.", "Aplikacja mobilna prowadzi użytkownika krok po kroku.");
+        page.Text(question, 155, "Jak ją aktywować?", Size, bold: true);
+        Item(page, answer, answerText, 155, "2.", "Użytkownik, który ukończy aktywację, dostaje identyfikator stały oraz potwierdzenie");
+        page.Text(answerText, 165, "w aplikacji mobilnej.", Size);
+        Item(page, Margin, 54.7, 185, "12.", "Usługa jest płatna zgodnie z taryfą. Opłatę pobieramy, jeżeli Klient zarejestrował i aktywował usługę na co najmniej");
+        page.Text(53.2, 195, "jednym urządzeniu mobilnym.", Size);
+        Item(page, Margin, 54.7, 205, "13.", "Klient może zrezygnować z usługi:");
+        Item(page, Point, Letter, 215, "1/", "w systemie bankowości elektronicznej,");
+        Item(page, Point, Letter, 225, "2/", "w placówce Banku.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Contains("1/ e-mail, na który wyślemy identyfikator tymczasowy,", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains(
+            "- 12\\. Usługa jest płatna zgodnie z taryfą. Opłatę pobieramy, jeżeli Klient zarejestrował i aktywował usługę na co najmniej jednym urządzeniu mobilnym.\n"
+            + "- 13\\. Klient może zrezygnować z usługi:\n"
+            + "  - 1/ w systemie bankowości elektronicznej,\n"
+            + "  - 2/ w placówce Banku.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
+    }
+
     /// <summary>T011 — control: a fee table with three text columns and „1/” in the first column stays a GFM table.</summary>
     [Fact]
     public async Task Data_table_with_slash_numbers_in_the_first_column_stays_a_table()
