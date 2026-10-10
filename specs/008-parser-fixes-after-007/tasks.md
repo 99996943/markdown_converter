@@ -113,34 +113,34 @@ z „1/2 kwoty”, „uchwała nr 12/2024”, etykietą „1/” w treści daje 
 on załącznikiem…” w kolumnie tekstu za etykietą daje element listy z całym tekstem, rozdziały 17–18 na poziomie
 rozdziału; pogrubione „Art. 42.” po „3. (uchylony)” zostaje nagłówkiem.
 
-- [ ] T013 [P] [US2] Test regresji (przechodzi od razu — commit jako test, bez pary red/green) w
+- [X] T013 [P] [US2] Test regresji (przechodzi od razu — commit jako test, bez pary red/green) w
   `tests/LegalAgent.PdfParser.Tests/Integration/GlossaryLayoutTests.cs`: wpis słowniczka „15/” z pogrubionym terminem
   kończącym się „/” i zawiniętym na drugi pogrubiony wiersz (np. „umowa rachunku/” + „umowa”) → `- 15/ **umowa
   rachunku/ umowa** definicja…`, brak nagłówka; zapisz w handoffie, że FR-611 było spełnione po spec 007
-- [ ] T014 [P] [US2] Replika (red) w `tests/LegalAgent.PdfParser.Tests/Integration/CorpusLayoutsIntegrationTests.cs`
+- [X] T014 [P] [US2] Replika (red) w `tests/LegalAgent.PdfParser.Tests/Integration/CorpusLayoutsIntegrationTests.cs`
   (obok T085 spec 007): tekst 7 pt, interlinia 10; pogrubiony 9 pt „16. Prowizje” (x 39,7), wyśrodkowany pogrubiony
   „§ 63”; element „1.” (etykieta x 39,7, tekst x 54,7) na pełną szerokość kończący się „–”; następny wiersz na x 54,7,
   odstęp 10, zwykły 7 pt: „Rozdział I (Prowadzenie rachunków). Jest on załącznikiem do umowy.”; elementy „2.”, „3.”;
   potem pogrubione „17. …”, wyśrodkowane „§ 66”, „18. …”, „§ 67”. Oczekiwane: `- 1\.` z całym tekstem łącznie z
   „Rozdział I (Prowadzenie…)” (bez dopisanej kropki po „I”), brak nagłówka „Rozdział”, „17.” i „18.” na tym samym
   poziomie co „16.”, „§ 66”, „§ 67” na poziomie „§ 63”
-- [ ] T015 [P] [US2] Test ochronny (powinien przejść dziś i po zmianie) w tym samym pliku: akt z „3. (uchylony)” i pod
+- [X] T015 [P] [US2] Test ochronny (powinien przejść dziś i po zmianie) w tym samym pliku: akt z „3. (uchylony)” i pod
   nim pogrubionym „Art. 42.” (odstęp ≈ 2 × interlinia, poprzedni wiersz kończy się „)”) → „Art. 42.” jest nagłówkiem
-- [ ] T016 [P] [US2] Testy (red) jednostkowe pomocnika „wiersz kontynuacji” w
+- [X] T016 [P] [US2] Testy (red) jednostkowe pomocnika „wiersz kontynuacji” w
   `tests/LegalAgent.PdfParser.Tests/Unit/Text/ContinuationLineTests.cs` (`LayoutFactory`): kontynuacja gdy wszystkie
   warunki z `data-model.md` („wiersz powyżej rola Unknown/ListItem/ListContinuation; odstęp ≤ 1,2 × interlinia; ten sam
   dominujący rozmiar ± 0,5 pt i to samo `AllBold`; pierwsze słowo oznaczenia = pogrubienie ostatniego słowa
   poprzedniego wiersza; poprzedni wiersz nie kończy się `.`, `:`, `;`, `!`, `?`; lewa krawędź ≈ lewa krawędź
   poprzedniego wiersza albo początek jego tekstu za etykietą ± 2 pt; wiersz nie wyśrodkowany”); po jednym przypadku
   negatywnym na każdy warunek (w tym pogrubione słowo oznaczenia przy niepogrubionym poprzednim wierszu)
-- [ ] T017 [US2] Pomocnik w `src/LegalAgent.PdfParser/Text/ContinuationLine.cs` (internal; green T016)
-- [ ] T018 [US2] `ListDetectionStage` (`src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs`, ok. l. 131): wiersz
+- [X] T017 [US2] Pomocnik w `src/LegalAgent.PdfParser/Text/ContinuationLine.cs` (internal; green T016)
+- [X] T018 [US2] `ListDetectionStage` (`src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs`, ok. l. 131): wiersz
   pasujący do wzorca jednostki, który jest wierszem kontynuacji, nie dostaje `LegalUnit` i zostaje kontynuacją
   elementu (ciąg „N.” się nie przerywa) — green części listowej T014
-- [ ] T019 [US2] `HeadingDetectionStage` (`src/LegalAgent.PdfParser/Stages/HeadingDetectionStage.cs`, ok. l. 195–202):
+- [X] T019 [US2] `HeadingDetectionStage` (`src/LegalAgent.PdfParser/Stages/HeadingDetectionStage.cs`, ok. l. 195–202):
   wiersz kontynuacji nie jest nagłówkiem jednostki (obok istniejącego `ContinuesSentence`, reguła FR-162 zostaje) —
   green T014 w całości, T015 zielony
-- [ ] T020 [US2] Pełna kontrola FR-643; golden `mbank-corp-1.expected.md`: oczekiwane tylko element „1.” z odwołaniem
+- [X] T020 [US2] Pełna kontrola FR-643; golden `mbank-corp-1.expected.md`: oczekiwane tylko element „1.” z odwołaniem
   jako element listy i rozdziały 17–18 oraz § 66–80 o poziom wyżej — przejrzyj diff, miary nie gorsze, zbiory słów
   czyste (poza znikającą kropką po „I”), zaktualizuj; pozostałe dokumenty, akty, bankowe, `verify` bez zmian; handoff
 

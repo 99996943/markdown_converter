@@ -199,6 +199,24 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   Zbiory słów vs baseline-008: utracone tylko tokeny „N/M” (34, 35) i powtórzony nagłówek ze s. 8 „Kolejność działań |
   Wyjaśnienie” w ind-2; nowych słów brak; nagłówki jednostek bez zmian. Prywatny korpus w pełni zielony (1090 testów
   parsera). Następny krok: US2 (T013).
+- 2026-10-10 (US2, T013–T020 — gotowe): oznaczenie jednostki na początku wiersza, który kontynuuje wiersz powyżej
+  (pomocnik `Text/ContinuationLine`, reguła z `data-model.md`), nie jest jednostką: `ListDetectionStage` nie ustawia
+  `LegalUnit` (wiersz zostaje kontynuacją elementu, ciąg „N.” się nie przerywa), `HeadingDetectionStage` nie tworzy
+  nagłówka (obok FR-162). Dwa zawężenia reguły wymuszone przez istniejące testy jednostkowe nagłówków (jednolita
+  typografia, „DZIAŁ I” nad „Rozdział 1”, „[Art. 31. … naboru.]” nad „<Art. 31. …”): wiersz powyżej musi być pełny
+  (sięga co najmniej tak daleko w prawo jak wiersz, ± 2 pt) oraz znak końca zdania przed zamykającym nawiasem lub
+  cudzysłowem kończy zdanie; dopisane do `data-model.md`, z własnymi przypadkami w `ContinuationLineTests`.
+  FR-611 (termin „15/ …/”) było spełnione już po spec 007 — T013 to sam test regresji (przechodzi od razu); T015
+  (pogrubione „Art. 42.” pod „3. (uchylony)”) zielony przed i po. Commity: test T013 6271582, test T015 bbf06dd,
+  red 30c58e4 (T014, T016), green 0d77e6b (T017–T019).
+  Miary: `UnitHeadingDiff` corp-1 vs baseline-008 — utracone 1 (fałszywy „Rozdział I. (Prowadzenie i obsługa
+  rachunków bankowych). Jest on załącznikiem…”), nowe 0; pozostałe dokumenty 0 / 0. Zbiory słów corp-1 bez zmian
+  (zniknęła tylko dopisana kropka po „I” — interpunkcja); pozostałe miary bez zmian („a.”/„i.” poza listą corp-1 20,
+  corp-3 2, corp-5 9). Golden prywatny zmieniony tylko mbank-corp-1 (przejrzany przez wykonawcę): element „1.” z
+  odwołaniem „Rozdział I (…)” jako jeden element listy, rozdziały 17–18 i § 66–80 o poziom wyżej. Kontrola FR-643:
+  testy solucji zielone; goldeny `Corpus/acts` i `Corpus/banking` bez zmian; `refresh` bez zmian w `corpus/`,
+  `verify` czysty; `CorpusFull` 426/426; prywatny korpus w pełni zielony (1114 testów parsera bez wydajnościowych).
+  Następny krok: US3 (T021).
 
 ## Complexity Tracking
 

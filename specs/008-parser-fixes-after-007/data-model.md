@@ -52,7 +52,8 @@ Wiersz pasujący do wzorca jednostki (`LegalUnitPatterns`) jest kontynuacją, gd
 | odstęp | ≤ 1,2 × interlinia |
 | rozmiar / `AllBold` | ten sam dominujący rozmiar (± 0,5 pt) i to samo `AllBold` |
 | pogrubienie słowa | pierwsze słowo oznaczenia = pogrubienie ostatniego słowa poprzedniego wiersza |
-| koniec poprzedniego wiersza | nie `.`, `:`, `;`, `!`, `?` |
+| koniec poprzedniego wiersza | nie `.`, `:`, `;`, `!`, `?` (także przed zamykającym nawiasem lub cudzysłowem: „naboru.]”) |
+| pełny wiersz powyżej | prawa krawędź wiersza powyżej ≥ prawa krawędź wiersza − 2 pt (T017: zawija się tylko pełny wiersz) |
 | lewa krawędź | ≈ lewa krawędź poprzedniego wiersza albo początek jego tekstu za etykietą (± 2 pt) |
 | wyśrodkowanie | wiersz nie jest wyśrodkowany |
 
