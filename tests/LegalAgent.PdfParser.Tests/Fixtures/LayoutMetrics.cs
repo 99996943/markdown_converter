@@ -13,6 +13,9 @@ namespace LegalAgent.PdfParser.Tests.Fixtures;
 /// <param name="PageFooters">Page numbers „N/M” outside tables.</param>
 public sealed record LayoutMeasures(int Tbl001, int PipeRows, int LooseLabelRows, int ParagraphText, int TocHeadings, int PageFooters);
 
+/// <summary>Difference of two collections: entries only in the first (<paramref name="Lost"/>) and only in the second (<paramref name="New"/>).</summary>
+public sealed record SetDiff(IReadOnlyList<string> Lost, IReadOnlyList<string> New);
+
 /// <summary>Computes <see cref="LayoutMeasures"/> from Markdown and the conversion warnings.</summary>
 public static partial class LayoutMetrics
 {
@@ -58,6 +61,24 @@ public static partial class LayoutMetrics
         int tbl001 = warnings.Count(w => w.Code == "TBL001_AmbiguousGrid");
         return new LayoutMeasures(tbl001, pipeRows, looseLabels, paragraphs, tocHeadings, footers);
     }
+
+    /// <summary>Paragraphs whose whole text is a page number „N/M” (spec 008).</summary>
+    public static int PageNumberParagraphs(string markdown) => throw new NotImplementedException();
+
+    /// <summary>Tokens „a.”, „b.” … / „i.”, „ii.” … of a consecutive run (at least two) that do not start a list item (spec 008).</summary>
+    public static int DotEnumLabelsOutsideList(string markdown) => throw new NotImplementedException();
+
+    /// <summary>Unit headings (Dział, Rozdział, Art., §) present only before / only after, level ignored (spec 008).</summary>
+    public static SetDiff UnitHeadingDiff(string before, string after) => throw new NotImplementedException();
+
+    /// <summary>Frame phrases found inside a table row (GFM or fallback) (spec 008).</summary>
+    public static int FramesAsTable(string markdown, IReadOnlyCollection<string> phrases) => throw new NotImplementedException();
+
+    /// <summary>Frame phrases found inside a list item instead of in a paragraph of their own (spec 008).</summary>
+    public static int FramesWoven(string markdown, IReadOnlyCollection<string> phrases) => throw new NotImplementedException();
+
+    /// <summary>Words (no punctuation or Markdown marks) present only before / only after (spec 008).</summary>
+    public static SetDiff WordSetDiff(string before, string after) => throw new NotImplementedException();
 
     /// <summary>A label „N.” (escaped or bold), „N/” or „x/” at the very start of a line, followed by text.</summary>
     [GeneratedRegex(@"^(?:\*\*)?(?:\d{1,3}[a-z]?(?:\\?\.|/)|[a-z]{1,2}/)(?:\*\*)?\s+\S")]

@@ -80,6 +80,100 @@ public sealed class LayoutMetricsTests
         Assert.Equal(expected, LayoutMetrics.Measure(line + "\n", []).PageFooters);
     }
 
+    [Theory]
+    [InlineData("2/36", 1)]
+    [InlineData("2/36\n\nTekst.\n\n3/36", 2)]
+    [InlineData("  7/36  ", 1)]
+    [InlineData("1/2 kwoty", 0)]
+    [InlineData("- 1/ tekst punktu", 0)]
+    [InlineData("1/", 0)]
+    [InlineData("uchwała nr 12/2024", 0)]
+    [InlineData("| 3/36 | opłata |", 0)]
+    public void PageNumberParagraphs_counts_paragraphs_that_are_only_a_page_number(string markdown, int expected)
+    {
+        Assert.Equal(expected, LayoutMetrics.PageNumberParagraphs(markdown + "\n"));
+    }
+
+    [Theory]
+    [InlineData("- 1\\. Klient może: a. pierwsza, b. druga", 2)]
+    [InlineData("Klient może: a. pierwsza, b. druga, c. trzecia", 3)]
+    [InlineData("a. pierwsza\nb. druga", 2)]
+    [InlineData("Wiersz: i. pierwszy, ii. drugi", 2)]
+    [InlineData("a. tekst \\| b. tekst", 2)]
+    [InlineData("- a\\. pierwsza\n- b\\. druga\n- c\\. trzecia", 0)]
+    [InlineData("- a\\. pierwsza\n- b\\. druga: c. trzecia", 1)]
+    [InlineData("  - i\\. pierwszy\n  - ii\\. drugi", 0)]
+    [InlineData("Zgodnie z art. 5 np. a. oraz r. 2019, tj. J. Kowalski", 0)]
+    [InlineData("Tylko samotne a. w zdaniu", 0)]
+    [InlineData("a. i c. bez ciągu", 0)]
+    [InlineData("Klient: g. x, h. y, i. z", 3)]
+    public void DotEnumLabelsOutsideList_counts_run_tokens_not_starting_a_list_item(string markdown, int expected)
+    {
+        Assert.Equal(expected, LayoutMetrics.DotEnumLabelsOutsideList(markdown + "\n"));
+    }
+
+    [Fact]
+    public void UnitHeadingDiff_reports_unit_headings_only_before_and_only_after_ignoring_levels()
+    {
+        const string before = "## Rozdział I\n### § 5\n### Art. 3.\n## Zasady ogólne\nTekst\n";
+        const string after = "## Rozdział I\n#### § 5\n#### § 6\n## Zasady inne\nTekst\n";
+
+        SetDiff diff = LayoutMetrics.UnitHeadingDiff(before, after);
+
+        Assert.Equal(["Art. 3."], diff.Lost);
+        Assert.Equal(["§ 6"], diff.New);
+    }
+
+    [Fact]
+    public void UnitHeadingDiff_is_empty_for_equal_headings()
+    {
+        SetDiff diff = LayoutMetrics.UnitHeadingDiff("## Dział II\n### Art. 1.\n", "## Dział II\n### Art. 1.\n");
+
+        Assert.Empty(diff.Lost);
+        Assert.Empty(diff.New);
+    }
+
+    [Fact]
+    public void FramesAsTable_counts_phrases_inside_table_rows_only()
+    {
+        string[] phrases = ["Składasz wniosek", "Sprawdzamy dokumenty"];
+        const string markdown = "| **Składasz wniosek** | 1. Wypełniasz |\n|---|---|\nSprawdzamy dokumenty \\| 2. tekst\n**Składasz wniosek**\n\n- 1\\. Treść\n";
+
+        Assert.Equal(2, LayoutMetrics.FramesAsTable(markdown, phrases));
+        Assert.Equal(0, LayoutMetrics.FramesWoven(markdown, phrases));
+    }
+
+    [Fact]
+    public void FramesWoven_counts_phrases_inside_list_items_but_not_paragraphs_of_their_own()
+    {
+        string[] phrases = ["Składasz wniosek", "Sprawdzamy dokumenty"];
+        const string markdown = "**Składasz wniosek**\n\n- 1\\. Wypełniasz\n- 2\\. **Sprawdzamy dokumenty** i kolejny krok\n  - Składasz wniosek ponownie\n";
+
+        Assert.Equal(2, LayoutMetrics.FramesWoven(markdown, phrases));
+        Assert.Equal(0, LayoutMetrics.FramesAsTable(markdown, phrases));
+    }
+
+    [Fact]
+    public void WordSetDiff_reports_lost_and_new_words_ignoring_marks_punctuation_and_order()
+    {
+        const string before = "<!-- page: 1 -->\n**Klient** składa wniosek, a bank (dalej: „Bank”) go sprawdza. 2/36\n";
+        const string after = "<!-- page: 1 -->\n- 1\\. Bank sprawdza wniosek. Klient składa nowy punkt.\n";
+
+        SetDiff diff = LayoutMetrics.WordSetDiff(before, after);
+
+        Assert.Equal(["2", "36", "a", "dalej", "go"], diff.Lost);
+        Assert.Equal(["1", "nowy", "punkt"], diff.New);
+    }
+
+    [Fact]
+    public void WordSetDiff_is_empty_for_the_same_words()
+    {
+        SetDiff diff = LayoutMetrics.WordSetDiff("Kwota 10 zł.\n", "**Kwota** 10 zł\n");
+
+        Assert.Empty(diff.Lost);
+        Assert.Empty(diff.New);
+    }
+
     [Fact]
     public void Measure_takes_the_warnings_of_a_report()
     {
