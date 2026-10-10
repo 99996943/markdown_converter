@@ -319,11 +319,99 @@ nie psuje poprzedniej wersji. Ponowne uruchomienie nadpisuje pliki; po pobraniu 
 bieżącej listy. Niedostępny link (kod błędu, przekroczony czas, brak połączenia, strona HTML zamiast PDF) nie
 przerywa pozostałych pobrań — przyczyna trafia do podsumowania i manifestu.
 
-**Kody wyjścia:** 0 pobrano 5 z 5; 2 błędne argumenty, konfiguracja, lista adresów lub zamknięte wejście przy
+**Kody wyjścia etapu pobierania:** 2 błędne argumenty, konfiguracja, lista adresów lub zamknięte wejście przy
 pytaniach; 3 co najmniej jedno pobranie nieudane; 4 błąd katalogu pobrań (utworzenie, manifest, sprzątanie);
-130 przerwano (Ctrl+C); 1 błąd nieoczekiwany.
+130 przerwano (Ctrl+C); 1 błąd nieoczekiwany. Po pobraniu 5 z 5 aplikacja przechodzi do konwersji i FAQ, a kod 0
+oznacza zapisany plik FAQ (pełna lista kodów — niżej).
 
 Pobrane regulaminy nie są częścią repozytorium (`downloads/` w `.gitignore`).
+
+## Generowanie FAQ (`mBank.FaqGenerator`, `LegalAgent.Faq`)
+
+Po pobraniu 5 z 5 aplikacja:
+1. konwertuje każdy PDF do Markdown parserem z domyślnymi opcjami (`<nazwa>.md` obok PDF-u, zapis atomowy;
+   po udanej konwersji usuwa `*.md` spoza bieżącej listy);
+2. sprawdza rozmiar dokumentów (szacunek: 3 znaki na token, limit `Faq:MaxDocumentTokens`);
+3. pyta o klucz API;
+4. generuje FAQ modelem Azure OpenAI w dwóch krokach: osobno dla każdego dokumentu do 10 kandydatów (kolejno,
+   bez równoległości), potem jedno zapytanie wybierające 10 najważniejszych pytań;
+5. sprawdza każdą odpowiedź (JSON zgodny ze schematem, liczba pozycji, powtórzenia, istniejące dokumenty, kandydaci
+   i jednostki redakcyjne, np. „§ 12”) i zapisuje `faq/FAQ_mBank.md`.
+
+Logika konwersji, generowania, walidacji i renderowania jest w bibliotece **`LegalAgent.Faq`** (zależy tylko od
+`Microsoft.SemanticKernel.Abstractions`). Aplikacja dodaje konektor Azure OpenAI, konfigurację, klucz i komunikaty.
+Specyfikacja: `specs/006-faq-generation/`.
+
+### Zasób Azure OpenAI
+
+```bash
+az login
+scripts/azure/create-openai.sh            # grupa rg-faqgen, zasób faqgen-<skrót subskrypcji>, wdrożenie gpt-4o-mini
+scripts/azure/create-openai.sh --help     # parametry: --resource-group, --location, --name, --deployment, --model, …
+```
+
+Skrypt jest idempotentny (drugie uruchomienie niczego nie tworzy), nie odczytuje klucza i na końcu wypisuje fragment
+`appsettings.Local.json` oraz zmienne `FAQGEN__AzureOpenAI__…`. Na Windows uruchom go w Git Bash.
+
+**Model:** domyślnie `gpt-4o-mini` w wersji `2024-07-18`. Ma on w Azure status *Deprecated* (wycofanie 2027-04-14):
+subskrypcja, która nigdy go nie wdrażała, nie utworzy nowego wdrożenia. Skrypt sprawdza to przed utworzeniem zasobu
+i kończy się kodem 4 z podpowiedzią, np.:
+
+```bash
+scripts/azure/create-openai.sh --model gpt-5.4-mini --model-version 2026-03-17 --deployment gpt-5.4-mini
+```
+
+Modele GPT-5 nie przyjmują temperatury, więc wtedy ustaw `"Temperature": null` (albo `FAQGEN__AzureOpenAI__Temperature=`).
+
+**Usunięcie zasobów** (koniec kosztów): `az group delete --name rg-faqgen --yes`.
+
+### Konfiguracja
+
+Endpoint nie jest sekretem; wpisz go do `src/mBank.FaqGenerator/appsettings.Local.json` (ignorowany przez git,
+kopiowany do katalogu wyjściowego) albo ustaw zmienną `FAQGEN__AzureOpenAI__Endpoint`.
+
+| Klucz | Domyślnie | Znaczenie |
+|-------|-----------|-----------|
+| `AzureOpenAI:Endpoint` | `""` | adres zasobu, wymagany, `https://` |
+| `AzureOpenAI:Deployment` | `gpt-4o-mini` | nazwa wdrożenia, wymagana |
+| `AzureOpenAI:Model` | `gpt-4o-mini` | nazwa modelu do nagłówka FAQ |
+| `AzureOpenAI:TimeoutSeconds` | `300` | limit czasu jednego zapytania (bez ponowień) |
+| `AzureOpenAI:Temperature` | `0` | 0–2; `null` / pusta wartość = nie wysyłaj |
+| `AzureOpenAI:Seed` | `42` | `null` / pusta wartość = nie wysyłaj |
+| `AzureOpenAI:MaxOutputTokens` | `4096` | limit tokenów odpowiedzi |
+| `Faq:OutputDirectory` | `faq` | katalog OKF z `FAQ_mBank.md` (`--faq-output` ma pierwszeństwo) |
+| `Faq:CandidatesPerDocument` | `10` | kandydaci na dokument, 1–30 |
+| `Faq:MaxDocumentTokens` | `100000` | limit szacowanych tokenów jednego dokumentu |
+
+Konfiguracja jest sprawdzana przy starcie, zanim aplikacja zapyta o adresy (brak endpointu → kod 2).
+
+### Klucz API
+
+Klucz **nigdy** nie jest opcją, zmienną środowiskową ani wpisem konfiguracji (`AzureOpenAI:ApiKey` jest odrzucany
+z kodem 2). Aplikacja pyta o niego dopiero po udanym pobraniu i konwersji:
+- **w konsoli:** „Klucz API Azure OpenAI: ” — każdy wpisany lub wklejony znak to jedna `*`, Backspace cofa, Enter
+  kończy, Ctrl+C przerywa (kod 130);
+- **potokiem:** przy przekierowanym wejściu klucz to kolejny wiersz (po adresach, jeśli też były czytane z wejścia):
+
+```bash
+az cognitiveservices account keys list -g rg-faqgen -n <zasób> --query key1 -o tsv \
+  | dotnet run --project src/mBank.FaqGenerator -c Release -- --url <a> --url <b> --url <c> --url <d> --url <e>
+```
+
+Klucz zostaje tylko w pamięci procesu; komunikaty błędów są z niego czyszczone (`***`).
+
+### Wynik
+
+`faq/FAQ_mBank.md` (katalog nie jest ignorowany przez git) to dokument OKF: nagłówek YAML (`type: faq`, `title`,
+`description`, `resource` — 5 adresów, `timestamp`, `model`, `deployment`) i 10 sekcji `## <pytanie>` z odpowiedzią
+i wierszem `Źródło:` / `Źródła:` (link do dokumentu i jednostka). Kontrakt: `specs/006-faq-generation/contracts/faq-file.md`.
+Treść odpowiedzi pochodzi z modelu i może się różnić między uruchomieniami (konstytucja 1.4.0, zasada III);
+poprzedni plik zostaje nienaruszony przy każdym błędzie.
+
+**Kody wyjścia:** 0 pobrano 5 z 5, przekonwertowano 5 z 5 i zapisano FAQ; 1 błąd nieoczekiwany; 2 argumenty,
+konfiguracja, adresy lub brak wejścia (adresów albo klucza); 3 nie wszystkie pliki pobrane; 4 błąd zapisu
+(katalog pobrań, Markdown, FAQ); 5 błąd konwersji; 6 błąd usługi modelu (klucz, wdrożenie, limit 429, filtr treści,
+czas, sieć) albo dokument za długi; 7 odpowiedź modelu odrzucona przy sprawdzaniu; 130 przerwano.
 
 ## Testy
 
@@ -343,6 +431,10 @@ dotnet test LegalAgent.slnx -c Release --filter "Category=Performance"  # tylko 
 - **Pobieranie:** `tests/LegalAgent.Downloads.Tests` (biblioteka) i `tests/mBank.FaqGenerator.Tests` (aplikacja przez
   `Program.RunAsync`) działają bez sieci — odpowiedzi serwera zastępuje atrapa `FakeHttpHandler`, a każdy test aplikacji
   ma własny `appsettings.json` w katalogu tymczasowym.
+- **FAQ:** `tests/LegalAgent.Faq.Tests` (biblioteka: dopasowanie jednostek, parser i walidacja odpowiedzi, renderer z
+  plikiem wzorcowym `Golden/faq.expected.md`, generator, konwersja syntetycznych PDF-ów) i testy aplikacji z atrapami
+  modelu (`FakeChatCompletionService`), klawiatury (`FakeKeyInput`), czasu i HTTP konektora Azure; żaden test nie łączy
+  się z Azure. `AzureScriptTests` uruchamiają skrypt z atrapą `az` i są pomijane, gdy nie ma `bash`.
 - CI (`.github/workflows/ci.yml`, ubuntu-latest) buduje i uruchamia testy z filtrem `Category!=Performance`, a następnie osobno `Category=Performance`.
 
 ## Korpus syntetyczny
