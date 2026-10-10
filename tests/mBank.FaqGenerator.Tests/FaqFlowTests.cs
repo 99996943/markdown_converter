@@ -121,7 +121,7 @@ public sealed class FaqFlowTests : IDisposable
 
         Assert.Equal(0, run.Code);
         Assert.Contains(
-            "[D1] pominięto kandydata D1-K4: cytat nie występuje w dokumencie D1\n[D1] 3 kandydatów",
+            "[D1] pominięto kandydata D1-K4: cytat „tego zdania nie ma w dokumencie” nie występuje w dokumencie D1\n[D1] 3 kandydatów",
             run.Out.ReplaceLineEndings("\n"),
             StringComparison.Ordinal);
     }

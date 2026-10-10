@@ -196,7 +196,7 @@ public sealed class FaqGeneratorTests
 
         Assert.Equal(FaqStep.Candidates, e.Step);
         Assert.Equal("D1", e.DocumentId);
-        Assert.Equal(["kandydat D1-K1: cytat nie występuje w dokumencie D1"], e.Problems);
+        Assert.Equal(["kandydat D1-K1: cytat „tego zdania nie ma w dokumencie” nie występuje w dokumencie D1"], e.Problems);
         Assert.Single(chat.Calls);
     }
 

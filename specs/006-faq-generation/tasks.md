@@ -580,6 +580,16 @@ zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokaza�
   do tabeli (TableDetection, ramki „etap”), inna przyczyna; nagłówek schematu kroków w cieniowanej ramce w
   rozdziale 18 nadal jako pogrubione tytuły kroków.
 
+- [ ] T067h Czwarty przebieg: FAQ zapisane, ale odpadło 27 z 45 kandydatów (D2: został 1). Część to prawdziwe
+  halucynacje (D2-K3: wiek „13”, „18” spoza rozdziału 5), reszta to:
+  - zakres jednostki za wąski: „## Dodatkowe wyjaśnienia” na poziomie rozdziałów ucinał rozdział 4 regulaminu
+    reklamacji — rozdział z numerem/oznaczeniem obejmuje następujące po nim nagłówki bez numeru, aż do nagłówka
+    z numerem/oznaczeniem tego samego lub wyższego poziomu;
+  - cytaty niedosłowne (wielokropek, pojedyncze słowa) — cytat dzielony na fragmenty po „…”/„...”, przyjęty, gdy
+    ≥ 80% trójek kolejnych słów fragmentów (co najmniej 3 słowa) występuje w tekście jednostki;
+  - ostrzeżenie pokazuje początek cytatu, jeden kandydat = jedna linia („kandydat Dn-Kk: powód; powód”), liczby
+    zebrane („liczby „13”, „18” nie występują …”); polecenie: jeden ciągły fragment bez wielokropków.
+
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
   `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.
