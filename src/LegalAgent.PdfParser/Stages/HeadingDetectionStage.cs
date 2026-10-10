@@ -17,6 +17,9 @@ namespace LegalAgent.PdfParser.Stages;
 public sealed partial class HeadingDetectionStage : IPipelineStage
 {
     private const double CenterMarginRatio = 0.10;
+
+    /// <summary>Margin on each side of a line centred on the page (spec 007), as a share of the page width.</summary>
+    private const double PageCentreMarginRatio = 0.2;
     private const double TitleBlockGapFactor = 2.0;
     private const int MinCapsLetters = 3;
     private const int MaxLevel = 6;
@@ -186,15 +189,21 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             // FR-162: a unit designation at the start of a wrapped line of running text (the line above, at the body
             // leading and in the same style, fills the column and ends mid-sentence; the text goes on in lowercase) is
             // a word of that sentence, not a unit.
+            // Spec 007 (FR-540): an entry of a table of contents („Rozdział 1. Postanowienia ogólne ......… 3”) names a
+            // section printed further on; it is not a heading itself.
+            bool contentsEntry = ContentsEntry().IsMatch(entry.Text);
             if (options.DetectLegalUnits
                 && !entry.Quoted
+                && !contentsEntry
                 && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
-                && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0])))
+                && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0]))
+                && (!match.Bare || IsSetApart(entry, options)))
             {
                 entry.Legal = match;
             }
 
             bool styled = entry.Legal is null
+                && !contentsEntry
                 && entry.Isolated
                 && entry.Text.Length <= options.MaxLength
                 && entry.Text.Any(char.IsLetter)
@@ -335,6 +344,28 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     /// <summary>Line spacing between lines of a heading: the body leading, or more for a larger heading font.</summary>
     private static double HeadingLeading(Entry entry, double leading) => Math.Max(leading, HeadingLineSpacing * entry.Size);
 
+    /// <summary>
+    /// Spec 007 (FR-500): a bare „§ 5” is a unit only on a line set apart from the text — centred (even at the body
+    /// leading; on the page when the text column is not known from the plain lines), or isolated and bold or enlarged;
+    /// a plain „§ 5” wrapped from a sentence is a word of it.
+    /// </summary>
+    private static bool IsSetApart(Entry entry, HeadingOptions options) =>
+        IsCentredOnPage(entry, options) || (entry.Isolated && (entry.AllBold || entry.Enlarged));
+
+    /// <summary>
+    /// Centred in its column, or on the page (with wide margins on both sides) when the column is not known from the
+    /// plain lines.
+    /// </summary>
+    private static bool IsCentredOnPage(Entry entry, HeadingOptions options)
+    {
+        double width = entry.Page.Width;
+        Rect box = entry.Line.Box;
+        return entry.Centered
+            || (Math.Abs(box.CenterX - (width / 2)) <= options.CenterTolerance * width
+                && box.Left >= PageCentreMarginRatio * width
+                && box.Right <= (1 - PageCentreMarginRatio) * width);
+    }
+
     private static bool ContinuesSentence(Entry entry, List<LayoutWord> words, double columnWidth) =>
         !entry.Isolated
         && entry.Previous is { } previous
@@ -433,7 +464,24 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
         if (unit.Kind is SectionKind.Article or SectionKind.Paragraph)
         {
-            heading.Text = unit.Prefix + unit.Designation + ".";
+            // Spec 007 (C4): „§ 3. Porady ogólne” printed bold and centred, in a document whose text is not bold, is the
+            // unit with its title — one heading, the title does not go to the content.
+            if (unit.Kind == SectionKind.Paragraph
+                && unit.Rest.Length > 0
+                && entry.BoldSignal
+                && IsCentredOnPage(entry, options)
+                && entry.Text.Length <= options.MaxLength
+                && !unit.Rest.EndsWith('.')
+                && !unit.Rest.EndsWith(',')
+                && !unit.Rest.EndsWith('-'))
+            {
+                heading.Title = unit.Rest;
+                heading.Text = entry.Text;
+                return heading;
+            }
+
+            // A bare „§25” is printed alone: the heading is the line as printed (FR-513, no added text).
+            heading.Text = unit.Bare ? entry.Text : unit.Prefix + unit.Designation + ".";
             heading.SplitRest = unit.Rest.Length > 0;
             return heading;
         }
@@ -526,8 +574,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                     break;
 
                 case SectionKind.Typographic when legalDocument:
-                    // FR-043a: top level outside the legal structure, otherwise below the open section.
-                    h.Level = i < firstLegal || i > lastLegal || i == 0 ? 2 : Math.Min(MaxLevel, headings[i - 1].Level + 1);
+                    // FR-043a: top level outside the legal structure, otherwise below the open section — but a numbered
+                    // chapter („2. Rachunki…”, spec 007) is a sibling of the numbered chapter before it, not below its units.
+                    int sibling = i > 0 && IsNumberedChapter(h) ? headings.FindLastIndex(i - 1, i, IsNumberedChapter) : -1;
+                    h.Level = sibling >= 0
+                        ? headings[sibling].Level
+                        : i < firstLegal || i > lastLegal || i == 0 ? 2 : Math.Min(MaxLevel, headings[i - 1].Level + 1);
                     h.Rank = RankTypographicInLegal;
                     break;
 
@@ -550,14 +602,22 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         var open = new Stack<Detected>();
         foreach (Detected h in headings)
         {
-            while (open.Count > 0 && open.Peek().Rank >= h.Rank)
+            // Spec 007: an unnumbered subheading inside a numbered chapter („2. Rachunki…”) keeps the chapter open.
+            while (open.Count > 0 && open.Peek().Rank >= h.Rank
+                && !(legalDocument && h.Kind == SectionKind.Typographic && IsNumberedChapter(open.Peek()) && !IsNumberedChapter(h)))
             {
                 open.Pop();
             }
 
             if (open.Count > 0)
             {
-                h.Level = Math.Min(h.Level, open.Peek().Level + 1);
+                // Spec 007 (FR-502): a unit under a numbered chapter, or under a subheading of one, stands one level below
+                // that heading.
+                h.Level = h.Kind is SectionKind.Article or SectionKind.Paragraph
+                    && open.Peek() is { Kind: SectionKind.Typographic } parent
+                    && open.Any(IsNumberedChapter)
+                    ? Math.Min(MaxLevel, parent.Level + 1)
+                    : Math.Min(h.Level, open.Peek().Level + 1);
             }
 
             // T067g: a table of contents has no subsections, so the chapters after it never stand below it.
@@ -574,6 +634,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             h.Level = Math.Min(MaxLevel, h.Level + 1);
         }
     }
+
+    private static bool IsNumberedChapter(Detected heading) =>
+        heading.Kind == SectionKind.Typographic && NumberedChapter().IsMatch(heading.Text);
 
     private static void Apply(List<Detected> headings)
     {
@@ -665,6 +728,14 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         @"^spis\s+(treści|rzeczy)\s*:?$",
         System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
     private static partial System.Text.RegularExpressions.Regex TableOfContents();
+
+    /// <summary>Spec 007 (FR-540): a line ending with leader dots, optionally followed by a page number.</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(@"(?:\.\s?){4,}\s*\d*\s*$|…+\s*\d*\s*$", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex ContentsEntry();
+
+    /// <summary>Spec 007: a numbered chapter heading („2. Rachunki bankowe oraz rachunek VAT”).</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(@"^\d+\.\s+\p{Lu}", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex NumberedChapter();
 
     private static double RoundHalf(double value) => Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
 

@@ -23,6 +23,12 @@ public enum ListLabelKind
 
     /// <summary>Outline numbering such as "1.2.3".</summary>
     Outline,
+
+    /// <summary>Number followed by a slash, for example "1/" or "1a/" (corporate regulations, spec 007).</summary>
+    ArabicSlash,
+
+    /// <summary>One or two lower-case letters followed by a slash, for example "a/" or "aa/" (spec 007).</summary>
+    LetterSlash,
 }
 
 /// <summary>An item of a list.</summary>

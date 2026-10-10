@@ -184,27 +184,29 @@ Art. 137. W ustawie z dnia 9 kwietnia 2010 r. o udostępnianiu informacji gospod
 
 Art. 138. W ustawie z dnia 9 kwietnia 2010 r. o Służbie Więziennej (Dz. U. z 2017 r. poz. 631 i 1321 oraz z 2018 r. poz. 138, 730 i 912) w art. 18 w ust. 2 pkt 6 otrzymuje brzmienie:
 
-| „6) | Prezes Urzędu Ochrony Danych Osobowych;”. |
-| --- | --- |
-| Art. 139. W ustawie z dnia 5 sierpnia 2010 r. o ochronie informacji niejawnych (Dz. U. z 2018 r. poz. 412 i 650) w art. 34 w ust. 10 pkt 9 otrzymuje brzmienie: |  |
-| „9) | Prezesa Urzędu Ochrony Danych Osobowych;”. |
-| Art. 140. W ustawie z dnia 5 stycznia 2011 r. – Kodeks wyborczy (Dz. U. z 2018 r. poz. 754) w art. 143 § 4 otrzymuje brzmienie: |  |
-|  | „§ 4. Wykaz wpłat obywateli polskich na rzecz komitetu wyborczego organizacji i komitetu wyborczego |
-| wyborców Państwowa Komisja Wyborcza i komisarz wyborczy udostępniają do wglądu na wniosek, w trybie |  |
-| i na zasadach określonych w przepisach o ochronie danych osobowych.”. |  |
-| Art. 141. W ustawie z dnia 15 lipca 2011 r. o zawodach pielęgniarki i położnej (Dz. U. z 2018 r. poz. 123 i 650) w art. 27 ust. 9 otrzymuje brzmienie: |  |
-|  | „9. Postępowanie w sprawach określonych w ust. 1–6 jest poufne i odbywa się z zachowaniem przepisów |
-| o ochronie danych osobowych.”. |  |
-| Art. 142. W ustawie z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. z 2017 r. poz. 2003 oraz z 2018 r. poz. 62, 650, 723 i 864) art. 10 otrzymuje brzmienie: |  |
-|  | „Art. 10. Dostawcy i podmioty prowadzące systemy płatności mogą przetwarzać dane osobowe w zakresie |
-| niezbędnym do zapobiegania oszustwom związanym z wykonywanymi usługami płatniczymi lub prowadzeniem |  |
-| systemu płatności oraz dochodzenia i wykrywania tego rodzaju oszustw przez właściwe organy, z wyjątkiem da- |  |
-| nych, o których mowa w art. 9 ust. 1 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia |  |
-| 27 kwietnia | 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych |
-| i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie |  |
-| o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1).”. |  |
-| Art. 143. W ustawie z dnia 14 grudnia 2012 r. o odpadach (Dz. U. z 2018 r. poz. 992) w art. 80 w ust. 1 pkt 3 otrzymuje brzmienie: |  |
-| „3) | zapewnia bezpieczeństwo przetwarzanych danych, informacji oraz dokumentów, które otrzymał w związku z prowadzeniem BDO, zgodnie z przepisami o ochronie danych osobowych.”. |
+„6) Prezes Urzędu Ochrony Danych Osobowych;”.
+
+Art. 139. W ustawie z dnia 5 sierpnia 2010 r. o ochronie informacji niejawnych (Dz. U. z 2018 r. poz. 412 i 650) w art. 34 w ust. 10 pkt 9 otrzymuje brzmienie:
+
+„9) Prezesa Urzędu Ochrony Danych Osobowych;”.
+
+Art. 140. W ustawie z dnia 5 stycznia 2011 r. – Kodeks wyborczy (Dz. U. z 2018 r. poz. 754) w art. 143 § 4 otrzymuje brzmienie:
+
+„§ 4. Wykaz wpłat obywateli polskich na rzecz komitetu wyborczego organizacji i komitetu wyborczego wyborców Państwowa Komisja Wyborcza i komisarz wyborczy udostępniają do wglądu na wniosek, w trybie i na zasadach określonych w przepisach o ochronie danych osobowych.”.
+
+Art. 141. W ustawie z dnia 15 lipca 2011 r. o zawodach pielęgniarki i położnej (Dz. U. z 2018 r. poz. 123 i 650) w art. 27 ust. 9 otrzymuje brzmienie:
+
+„9. Postępowanie w sprawach określonych w ust. 1–6 jest poufne i odbywa się z zachowaniem przepisów o ochronie danych osobowych.”.
+
+Art. 142. W ustawie z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. z 2017 r. poz. 2003 oraz z 2018 r. poz. 62, 650, 723 i 864) art. 10 otrzymuje brzmienie:
+
+„Art. 10. Dostawcy i podmioty prowadzące systemy płatności mogą przetwarzać dane osobowe w zakresie niezbędnym do zapobiegania oszustwom związanym z wykonywanymi usługami płatniczymi lub prowadzeniem systemu płatności oraz dochodzenia i wykrywania tego rodzaju oszustw przez właściwe organy, z wyjątkiem danych, o których mowa w art. 9 ust. 1 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1).”.
+
+Art. 143. W ustawie z dnia 14 grudnia 2012 r. o odpadach (Dz. U. z 2018 r. poz. 992) w art. 80 w ust. 1 pkt 3 otrzymuje brzmienie:
+
+„3) zapewnia bezpieczeństwo przetwarzanych danych, informacji oraz dokumentów, które otrzymał w związku
+
+z prowadzeniem BDO, zgodnie z przepisami o ochronie danych osobowych.”.
 
 Art. 144. W ustawie z dnia 20 lutego 2015 r. o odnawialnych źródłach energii (Dz. U. z 2017 r. poz. 1148, 1213 i 1593 oraz z 2018 r. poz. 9 i 650) w art. 159 ust. 1 otrzymuje brzmienie:
 

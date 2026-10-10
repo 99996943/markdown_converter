@@ -27,6 +27,9 @@ public sealed class ListDetectionStage : IPipelineStage
 {
     private const double SizeTolerance = 0.5;
 
+    /// <summary>A line starting this share of the page width into the column is set like a centred heading.</summary>
+    private const double CenteredIndentRatio = 0.2;
+
     /// <inheritdoc />
     public int Order => StageOrder.ListDetection;
 
@@ -120,10 +123,16 @@ public sealed class ListDetectionStage : IPipelineStage
                     continue;
                 }
 
-                entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out _);
                 double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
                 bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
-                entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
+
+                // Spec 007: a bare „§ 5” is a unit only when set apart like a heading (isolated, or set well into the
+                // column like a centred line); plain, it is a wrapped word.
+                entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out LegalUnitMatch? unit)
+                    && (!unit.Bare
+                        || (IsHeadingLike(line, bodySize, sizeRatio) && (isolated || line.Box.Left - columnLeft > CenteredIndentRatio * page.Width)));
+                // Spec 007: a glossary term („1/ **termin**”) is bold but starts a list item, never a heading.
+                entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio) && !line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry);
                 entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);
                 entry.FirstOnPage = above is null;
                 if (!entry.LegalUnit
@@ -188,7 +197,8 @@ public sealed class ListDetectionStage : IPipelineStage
                 && next.Label is null
                 && next.Line.Baseline - entry.Line.Baseline <= gapFactor * leading
                 && StartsLowercase(next.Line.Text);
-            if (label.Kind is ListLabelKind.ArabicParen or ListLabelKind.LetterParen or ListLabelKind.Dash or ListLabelKind.Bullet
+            if (label.Kind is ListLabelKind.ArabicParen or ListLabelKind.LetterParen or ListLabelKind.ArabicSlash or ListLabelKind.LetterSlash
+                    or ListLabelKind.Dash or ListLabelKind.Bullet
                 || runsOn)
             {
                 entry.HeadingLike = false;
@@ -273,9 +283,29 @@ public sealed class ListDetectionStage : IPipelineStage
                 continue;
             }
 
-            bool before = k > 0 && segmentOf[candidates[k - 1]] == segmentOf[candidates[k]] && Follows(entries[candidates[k - 1]], e);
-            bool after = k + 1 < candidates.Count && segmentOf[candidates[k + 1]] == segmentOf[candidates[k]] && Follows(e, entries[candidates[k + 1]]);
-            e.Accepted = before || after;
+            e.Accepted = ContinuesNear(k, -1) || ContinuesNear(k, +1);
+        }
+
+        // The nearest candidate of the same segment continues the numbering — or, past „N.” labels nested at another
+        // indent (spec 007: ustępy „1.” quoted under a point „1/”), the nearest candidate at the same indent.
+        bool ContinuesNear(int k, int step)
+        {
+            Entry e = entries[candidates[k]];
+            for (int j = k + step; j >= 0 && j < candidates.Count && segmentOf[candidates[j]] == segmentOf[candidates[k]]; j += step)
+            {
+                Entry other = entries[candidates[j]];
+                bool sameIndent = Math.Abs(other.LabelX - (e.LabelX - Shift(other.Origin, e.Origin))) <= tolerance;
+                if (j == k + step || sameIndent)
+                {
+                    bool ok = step < 0 ? Follows(other, e) : Follows(e, other);
+                    if (ok || sameIndent)
+                    {
+                        return ok;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 
@@ -553,6 +583,13 @@ public sealed class ListDetectionStage : IPipelineStage
             if (entry.Page != _previous.Page)
             {
                 return entry.Page.Number == _previous.Page.Number + 1;
+            }
+
+            // Spec 007: a glossary puts each term before its definition (and rulings between entries) — its lines
+            // follow each other whatever the spacing.
+            if (entry.Line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry) && _previous.Line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry))
+            {
+                return true;
             }
 
             // FR-031: from the bottom of one column to the top of the next, like a page break.

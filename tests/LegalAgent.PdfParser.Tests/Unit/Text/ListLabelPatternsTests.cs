@@ -92,6 +92,42 @@ public sealed class ListLabelPatternsTests
         Assert.Null(m);
     }
 
+    /// <summary>T007 (spec 007, FR-510) — „1/”, „a/” labels of corporate regulations.</summary>
+    [Theory]
+    [InlineData("1/ gromadzenia środków", "1/", ListLabelKind.ArabicSlash, 1, "gromadzenia środków")]
+    [InlineData("12/ Treść", "12/", ListLabelKind.ArabicSlash, 12, "Treść")]
+    [InlineData("1a/ Treść", "1a/", ListLabelKind.ArabicSlash, 1, "Treść")]
+    [InlineData("a/ zarządzać uprawnieniami", "a/", ListLabelKind.LetterSlash, 1, "zarządzać uprawnieniami")]
+    [InlineData("i/ Strony zmienią warunki", "i/", ListLabelKind.LetterSlash, 9, "Strony zmienią warunki")]
+    [InlineData("aa/ Treść", "aa/", ListLabelKind.LetterSlash, 27, "Treść")]
+    public void Slash_labels_are_classified(string line, string label, ListLabelKind kind, int? ordinal, string rest)
+    {
+        Assert.True(ListLabelPatterns.TryMatch(line, out ListLabelMatch? m));
+        Assert.Equal(label, m.Label);
+        Assert.Equal(kind, m.Kind);
+        Assert.Equal(ordinal, m.Ordinal);
+        Assert.Equal(rest, m.Rest);
+    }
+
+    [Theory]
+    [InlineData("7/2017 z dnia 1 marca")]
+    [InlineData("13/36")]
+    [InlineData("13/36 Treść")]
+    [InlineData("4/49 Treść")]
+    [InlineData("Klient/Klienci mogą")]
+    [InlineData("km/h Treść")]
+    [InlineData("i/lub wnioskiem")]
+    [InlineData("1/")]
+    [InlineData("a/")]
+    [InlineData("1234/ Treść")]
+    [InlineData("abc/ Treść")]
+    [InlineData("A/ Treść")]
+    public void Slash_non_labels_do_not_match(string line)
+    {
+        Assert.False(ListLabelPatterns.TryMatch(line, out ListLabelMatch? m));
+        Assert.Null(m);
+    }
+
     [Theory]
     [InlineData("•", true)]
     [InlineData("", true)]

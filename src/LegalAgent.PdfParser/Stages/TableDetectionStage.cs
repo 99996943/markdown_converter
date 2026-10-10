@@ -31,6 +31,10 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
     private const double MinCellGapEm = 1.0;
+    private const string LeaderDots = "....";
+
+    /// <summary>Widest gap between a hanging „1.”, „1/”, „a/” label and its text (corporate regulations: 0.9–1.5 em).</summary>
+    private const double MaxHangingLabelGapEm = 2.0;
     private const double JustifiedGapSpread = 0.2;
     private const int JustifiedMinSegments = 4;
 
@@ -49,6 +53,9 @@ public sealed class TableDetectionStage : IPipelineStage
         {
             return;
         }
+
+        // Spec 007: glossaries (term | definition, rulings split at the column boundary) become lists, not tables.
+        GlossaryDetection.Mark(context);
 
         string[] hyphenationExceptions = context.Options.Normalization.HyphenationExceptions.ToArray();
         var tables = new List<Table>();
@@ -231,7 +238,7 @@ public sealed class TableDetectionStage : IPipelineStage
         double tolerance = options.ColumnTolerance * page.Width;
         double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * page.Width;
         List<Row> flow = page.Lines
-            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && (inTableDocumentCell || !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
+            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && !l.Annotations.ContainsKey(LayoutAnnotations.DefListEntry) && (inTableDocumentCell || !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
             .Where(inScope)
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();
@@ -298,19 +305,25 @@ public sealed class TableDetectionStage : IPipelineStage
         return previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal));
     }
 
-    /// <summary>Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces.</summary>
+    /// <summary>
+    /// Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces — „1.”, „1/”,
+    /// „a/” only when the text follows within <see cref="MaxHangingLabelGapEm"/> (a hanging label column, spec 007), so
+    /// a „Lp.” column of a table keeps its own cells.
+    /// </summary>
     private static List<LineSegment> CellsOf(LayoutLine line)
     {
         var cells = new List<LineSegment>();
         LineSegment? label = null;
-        foreach (LineSegment segment in line.Segments)
+        for (int i = 0; i < line.Segments.Count; i++)
         {
+            LineSegment segment = line.Segments[i];
             if (label is not null)
             {
                 cells.Add(new LineSegment([.. label.Words, .. segment.Words], label.Box.Union(segment.Box)));
                 label = null;
             }
-            else if (segment.Words.Count == 1 && IsLabel(segment.Text))
+            else if (segment.Words.Count == 1
+                && (IsLabel(segment.Text) || (i + 1 < line.Segments.Count && IsHangingLabelBefore(segment, line.Segments[i + 1]))))
             {
                 label = segment;
             }
@@ -332,6 +345,25 @@ public sealed class TableDetectionStage : IPipelineStage
     private static bool IsLabel(string text) =>
         ListLabelPatterns.TryMatch(text + " x", out ListLabelMatch? label)
         && label.Kind is ListLabelKind.Bullet or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
+
+    /// <summary>
+    /// A single-cell line holding a legal unit designation („§ 5”, „§ 3. Tytuł”, „Art. 5.”) — not an entry of a table of
+    /// contents („§ 10. Tytuł ......”).
+    /// </summary>
+    private static bool IsUnitLine(Row row) =>
+        !row.IsMulti
+        && LegalUnitPatterns.TryMatch(row.Line.Text, out LegalUnitMatch? unit)
+        && unit.Kind is SectionKind.Paragraph or SectionKind.Article
+        && !unit.Rest.Contains(LeaderDots, StringComparison.Ordinal);
+
+    /// <summary>A „1.”, „1/” or „a/” label set close before the text it introduces.</summary>
+    private static bool IsHangingLabelBefore(LineSegment label, LineSegment text)
+    {
+        double size = label.Words[0].Glyphs.Count > 0 ? label.Words[0].Glyphs[0].PointSize : label.Box.Height;
+        return ListLabelPatterns.TryMatch(label.Text + " x", out ListLabelMatch? match)
+            && match.Kind is ListLabelKind.ArabicDot or ListLabelKind.ArabicSlash or ListLabelKind.LetterSlash
+            && text.Box.Left - label.Box.Right <= MaxHangingLabelGapEm * size;
+    }
 
     /// <summary>Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>).</summary>
     private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start)
@@ -382,6 +414,17 @@ public sealed class TableDetectionStage : IPipelineStage
             return null;
         }
 
+        // Spec 007 (C2): without a grid, a unit designation on a line of its own („§ 5”) is never a row — the region ends
+        // before it.
+        if (!grid.Contains(region[0].Line.Box.CenterY))
+        {
+            int unit = region.FindIndex(1, r => IsUnitLine(r));
+            if (unit > 0)
+            {
+                region = region.GetRange(0, unit);
+            }
+        }
+
         // Likewise a gridless table starts at its bold column-name row: multi-cell lines above it (numbered clauses
         // with a hanging indent) are running text, so the seed moves on to the header.
         if (!region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
@@ -411,7 +454,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 || row.IsAllBold
                 || region[0].Cells.Count < 2
                 || row.Cells[^1].Box.Right <= region[0].Cells[1].Box.Left;
-            if (row.IsMulti || gap <= 0 || !belongs || !headerLine)
+            if (row.IsMulti || gap <= 0 || !belongs || !headerLine || (!seedInGrid && IsUnitLine(row)))
             {
                 break;
             }
@@ -538,10 +581,22 @@ public sealed class TableDetectionStage : IPipelineStage
         return table;
     }
 
-    /// <summary>Two bands whose first one holds only list labels („1.”, „a)”): numbered paragraphs with a hanging indent.</summary>
+    /// <summary>
+    /// Rows whose cells are all lone list labels („1.”, „a)”, „1/”) but the last: numbered paragraphs with a hanging
+    /// indent, also nested ones whose labels stand in several columns (spec 007, FR-514).
+    /// </summary>
     private static bool IsHangingList(IReadOnlyList<ColumnBand> bands, List<Row> multi) =>
-        bands.Count == 2
-        && multi.All(r => r.Cells.Count == 2 && r.Cells[0].Words.Count == 1 && ListLabelPatterns.TryMatch(r.Cells[0].Text + " x", out _));
+        bands.Count >= 2
+        && multi.All(r => r.Cells.Count >= 2 && r.Cells.Take(r.Cells.Count - 1).All(c => c.Words.Count == 1 && IsHangingLabel(c.Text)));
+
+    /// <summary>
+    /// A list label, or a letter or lower-case Roman numeral with a dot („a.”, „ii.”) that enumerates in the hanging
+    /// column like one.
+    /// </summary>
+    private static bool IsHangingLabel(string text) =>
+        ListLabelPatterns.TryMatch(text + " x", out _)
+        || (text.Length == 2 && text[0] is >= 'a' and <= 'z' && text[1] == '.')
+        || (text.Length is > 2 and <= 6 && text[^1] == '.' && text[..^1].All(c => c is 'i' or 'v' or 'x'));
 
     /// <summary>
     /// Running text in two columns is left to reading order (FR-031) even where lines of both columns share a baseline:
