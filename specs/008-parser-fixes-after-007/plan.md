@@ -217,6 +217,29 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   testy solucji zielone; goldeny `Corpus/acts` i `Corpus/banking` bez zmian; `refresh` bez zmian w `corpus/`,
   `verify` czysty; `CorpusFull` 426/426; prywatny korpus w pełni zielony (1114 testów parsera bez wydajnościowych).
   Następny krok: US3 (T021).
+- 2026-10-10 (US3, T021–T031 — gotowe): spójne ciągi „a.”, „b.” … i „i.”, „ii.” … zaczynające wiersze PDF są
+  zagnieżdżonymi elementami listy `- a\.`, `- ii\.` (kontrakt 1.3.0, `ListLabelKind.LetterDot`, `RomanDot`).
+  `ListLabelPatterns` klasyfikuje kandydatów („i.”, „v.”, „x.” z dwoma odczytami), bramka
+  `ListDetectionStage.AcceptDotEnumerations` przyjmuje kandydata tylko z poprzednikiem albo następnikiem na tym samym
+  wcięciu (szczegóły w `data-model.md`), `TableDetectionStage.IsHangingLabelBefore` łączy etykietę z tekstem,
+  `TableDocumentStage.HasListOrParagraphs` pomija nowe rodzaje. Odstępstwo od planu (T028): po złączeniu „i.” z
+  tekstem ramka ze s. 38 D-A (siatka z liniami, ostatnie wiersze siatki na całą szerokość) stawała się tabelą GFM z
+  całym fragmentem „1.”–„b)” w jednej komórce — doszła reguła w `TrimTrailingLines`: lista otwierająca się w wierszu
+  siatki na całą ramkę kończy tabelę (opis w `data-model.md`, replika T025). `FaqGrounding.ListLabel` pomija teraz
+  także „a.”, „ii.” (test T029 padał — red/green). Dwie repliki z commita red dostały w green zamykający element „N.”
+  (rodzic „10.”/„1.” bez następnika nie był listą — błąd testu, nie kodu). Commity: red d8e6a4c (T021–T025), green
+  6a9db07 (T026–T028), red 07431b1 i green 558b666 (T029).
+  Miary przed → po: „a.”/„i.” poza listą corp-1 20 → 0, corp-3 2 → 0, corp-5 9 → 0; corp-1 TBL001 5 → 4, wiersze
+  „ \| ” 25 → 19 (tabela zastępcza ze s. 38 jest teraz tabelą GFM do wiersza z drugim podpisem, pod nią lista
+  „1.”, „2.” z „a)”, „i.”, „ii.”, „b)”); pozostałe dokumenty bez zmian miar. Zbiory słów vs baseline-008 bez zmian
+  (0 / 0 we wszystkich trzech dokumentach). Goldeny prywatne zmienione (przejrzane przez wykonawcę, dokumenty dla
+  firm): mbank-corp-1 (ciągi i–ii ×3, i–xii, para ze s. 38 = 20 etykiet; ramka ze s. 38 jak wyżej), mbank-corp-3
+  (definicja „16. **klient**” z `- a\.`, `- b\.`), mbank-corp-5 (a–c, a–b ×3 = 9 etykiet); pozostałe 16 prywatnych
+  dokumentów, w tym ind-1…5, bez zmian. Kontrola FR-643: testy solucji zielone (2131); goldeny `Corpus/acts` i
+  `Corpus/banking` oraz goldeny chunków bez zmian; `refresh` bez zmian w `corpus/`, `verify` czysty; `CorpusFull`
+  426/426; prywatny korpus w pełni zielony (1151 testów parsera bez wydajnościowych). Kontrakt 1.3.0: przykłady w
+  `contracts/markdown-output.md` zgodne z wynikiem replik T023–T024, `CLAUDE.md` („Rendering”) zaktualizowany.
+  Następny krok: US4 (T032).
 
 ## Complexity Tracking
 

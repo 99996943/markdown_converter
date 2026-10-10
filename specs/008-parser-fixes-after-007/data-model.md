@@ -19,6 +19,15 @@ z następnikiem „ii.” — `RomanDot`. Samotna „a.”, „r.”, ciąg nies
 (poza zakresem). Zagnieżdżenie z wcięcia (`Rank` = null). Renderowanie: `- a\.`, `- ii\.` (istniejące
 `EscapeListLabel`).
 
+Uszczegółowienie po implementacji (T026–T028): dopasowanie „i.”, „v.”, „x.” ma rodzaj `LetterDot` i drugi odczyt
+`RomanDot` w `ListLabelMatch.Alternative`; bramka bierze odczyt zgodny z poprzednikiem, a bez niego — z następnikiem.
+Wiersz przerywający szukanie sąsiada: wiersz innej roli (nagłówek, tabela), jednostka redakcyjna albo wiersz nie dalej
+niż kolumna etykiety; odrzucony kandydat traci etykietę (zostaje zwykłym wierszem). Etykieta w nawiasie („[a.”) nie
+jest kandydatem. Dodatkowo (odstępstwo od planu, wymuszone przez s. 38 D-A): w `TableDetectionStage.TrimTrailingLines`
+końcowy wiersz wewnątrz siatki, który otwiera element listy (etykieta złączona z tekstem), w wierszu siatki
+obejmującym całą ramkę (tylko zewnętrzne linie pionowe) kończy tabelę — bez tej reguły po złączeniu „i.” z tekstem
+tabela zastępcza zmieniała się w tabelę GFM z całym fragmentem „1.”, „2.”, „a)”, „i.”, „ii.” w jednej komórce.
+
 Konsumenci wartości enum: `ListDetectionStage` (bramka, `KeepLabelledBoldTextInLists`), `TableDetectionStage`
 (`IsHangingLabelBefore`), `TableDocumentStage.HasListOrParagraphs` (nowe rodzaje **wyłączone**), `GlossaryDetection`
 (bez zmian — filtruje rodzaje), `FaqGrounding.ListLabel` w `LegalAgent.Faq` (sprawdzić, czy pomija etykiety „a.”,

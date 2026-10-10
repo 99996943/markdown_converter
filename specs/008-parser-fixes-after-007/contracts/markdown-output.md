@@ -14,16 +14,25 @@ kontraktu publicznego: **1.3.0** (MINOR — dwie nowe wartości `ListLabelKind` 
 
 ```markdown
 - 15\. Pełnomocnictwo musi być udzielone:
-  - a\. w formie pisemnej w karcie informacyjnej klienta,
-  - b\. w formie elektronicznej za pośrednictwem systemu bankowości internetowej,
+  - a\. w formie pisemnej w karcie informacyjnej Klienta,
+  - b\. w formie elektronicznej za pośrednictwem systemu bankowości elektronicznej, jeżeli Klient korzysta z tego <!-- page: 2 --> systemu,
   - c\. przez złożenie oświadczenia w osobnym dokumencie.
+- 16\. Pełnomocnictwo wygasa z chwilą jego odwołania przez Klienta.
 ```
 
 ```markdown
-- a/ złożenia prawidłowego zlecenia, które zawiera niżej określone dane:
-  - i\. numer rachunku klienta,
-  - ii\. imię i nazwisko lub nazwę klienta,
-  - iii\. numer rachunku beneficjenta,
+- 10\. Płatności wychodzące:
+  - 1/ Bank wykona płatność wychodzącą po:
+    - a/ złożeniu prawidłowego zlecenia, które zawiera niżej określone dane:
+      - i\. numer rachunku Klienta,
+      - ii\. imię i nazwisko lub nazwę Klienta,
+      - iii\. numer rachunku beneficjenta,
+```
+
+```markdown
+- 16\. **klient** osoba fizyczna, którą Klient wskazał w umowie rachunku bankowego. Może ona w imieniu Klienta:
+  - a\. zarządzać uprawnieniami użytkowników systemu bankowości elektronicznej,
+  - b\. uzyskiwać informacje o realizacji umowy,
 ```
 
 ## Numery stron „N/M”

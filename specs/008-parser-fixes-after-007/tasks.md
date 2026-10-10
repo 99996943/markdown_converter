@@ -156,44 +156,44 @@ rozdziału; pogrubione „Art. 42.” po „3. (uchylony)” zostaje nagłówkie
 **Independent Test**: repliki T014a/T014b spec 007 (corp-5 s. 8, D-A s. 43) dają zagnieżdżone `- a\.`, `- i\.` …
 `- xii\.`; akapit z „np.”, „tj.”, „J. Kowalski”, „A. …”, samotnym „a.” i zawiniętym „r. …” bez listy.
 
-- [ ] T021 [P] [US3] Testy (red) wzorców w `tests/LegalAgent.PdfParser.Tests/Unit/Text/ListLabelPatternsTests.cs`:
+- [X] T021 [P] [US3] Testy (red) wzorców w `tests/LegalAgent.PdfParser.Tests/Unit/Text/ListLabelPatternsTests.cs`:
   „a.”, „z.” → `LetterDot` (`^[a-z]\.$`, porządek 1–26); „ii.”, „iv.”, „xii.”, „xxxix.” → `RomanDot` (małe rzymskie
   `i`–`xxxix` + „.”, porządek 1–39); „i.”, „v.”, „x.” → dopasowanie z oboma odczytami (litera i rzymska); NIE etykiety:
   „A.”, „II.”, „np.”, „tj.”, „m.in.”, „r.” bez tekstu po nim, token „a.” bez tekstu po nim
-- [ ] T022 [P] [US3] Testy (red) bramki ciągu w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/ListDetectionStageTests.cs`:
+- [X] T022 [P] [US3] Testy (red) bramki ciągu w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/ListDetectionStageTests.cs`:
   „a.”, „b.”, „c.” na tym samym wcięciu (± 1,5 pt) → elementy; samotne „a.” → tekst; „a.”, „c.” → tekst; „i.”, „iii.”
   → tekst; „h.”, „i.” → litery; „i.”, „ii.” pod „b.” → rzymskie zagnieżdżone pod „b.”; zawinięty wiersz „r. wynosi …”
   → tekst; między dwiema etykietami tylko wiersze wcięte dalej niż etykieta — inaczej ciąg przerwany
-- [ ] T023 [P] [US3] Repliki (red) w `tests/LegalAgent.PdfParser.Tests/Integration/HangingLabelLayoutTests.cs`:
+- [X] T023 [P] [US3] Repliki (red) w `tests/LegalAgent.PdfParser.Tests/Integration/HangingLabelLayoutTests.cs`:
   rozszerz T014a (corp-5 s. 8: „15.” x 39,7, „a.” x 53,9, tekst x 68,0, ciąg a–c przechodzący na następną stronę) i
   T014b (D-A s. 43: „a/” x 68,0, „i.”…„xii.” x 82,2, tekst x 96,4) o asercje zagnieżdżonych `- a\.` / `- i\.` …
   `- xii\.`; zaktualizuj komentarz T014a („stays text”); dodaj akapit negatywny z „np.”, „tj.”, „J. Kowalski”,
   „A. Zdanie…”, samotnym „a.” — bez listy
-- [ ] T024 [P] [US3] Replika (red) słowniczka w `tests/LegalAgent.PdfParser.Tests/Integration/GlossaryLayoutTests.cs`
+- [X] T024 [P] [US3] Replika (red) słowniczka w `tests/LegalAgent.PdfParser.Tests/Integration/GlossaryLayoutTests.cs`
   (corp-3 s. 3: termin „16. **klient**” x 45,4, definicja x 187,1, „a.” x 187,2 nad wierszem terminu, „b.” na linii
   bazowej terminu, tekst x 201,3) → `- 16\. **klient**` z zagnieżdżonymi `- a\.`, `- b\.`
-- [ ] T025 [P] [US3] Replika (red) przy tabeli w `tests/LegalAgent.PdfParser.Tests/Integration/TablesIntegrationTests.cs`
+- [X] T025 [P] [US3] Replika (red) przy tabeli w `tests/LegalAgent.PdfParser.Tests/Integration/TablesIntegrationTests.cs`
   (D-A s. 38: element „d)” z dwukolumnowym wierszem, pod nim „i.”, „ii.” z tekstem na x +14,2) → elementy `- i\.`,
   `- ii\.`, brak wiersza `i. \| …` i brak TBL001 z tego obszaru
-- [ ] T026 [US3] Wartości `LetterDot`, `RomanDot` (XML-doc) w `src/LegalAgent.PdfParser/Model/ListItem.cs` i wzorce w
+- [X] T026 [US3] Wartości `LetterDot`, `RomanDot` (XML-doc) w `src/LegalAgent.PdfParser/Model/ListItem.cs` i wzorce w
   `src/LegalAgent.PdfParser/Text/ListLabelPatterns.cs` (nie przez istniejący `Roman`, który jest przyjmowany od razu)
   — green T021
-- [ ] T027 [US3] Bramka w `src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs`: uogólnione
+- [X] T027 [US3] Bramka w `src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs`: uogólnione
   `AcceptArabicDotSequences` (ok. l. 254–310) na `LetterDot`/`RomanDot` z rozstrzyganiem dwuznacznych „i.”, „v.”, „x.”
   według ciągu; `Rank` = null dla nowych rodzajów (zagnieżdżenie z wcięcia); nowe rodzaje w
   `KeepLabelledBoldTextInLists` — green T022
-- [ ] T028 [US3] `TableDetectionStage.IsHangingLabelBefore` (ok. l. 360–366) łączy `LetterDot`/`RomanDot` z tekstem w
+- [X] T028 [US3] `TableDetectionStage.IsHangingLabelBefore` (ok. l. 360–366) łączy `LetterDot`/`RomanDot` z tekstem w
   `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs`; `TableDocumentStage.HasListOrParagraphs` (ok. l. 374)
   pomija nowe rodzaje w `src/LegalAgent.PdfParser/Stages/TableDocumentStage.cs` — green T023–T025
-- [ ] T029 [US3] Test w `tests/LegalAgent.Faq.Tests/GroundingTests.cs`: cytat obejmujący dwa elementy
+- [X] T029 [US3] Test w `tests/LegalAgent.Faq.Tests/GroundingTests.cs`: cytat obejmujący dwa elementy
   `- a\. …` / `- b\. …` jest znajdowany w jednostce; jeśli pada (red) — `FaqGrounding.ListLabel` w
   `src/LegalAgent.Faq/FaqGrounding.cs` pomija etykiety „a.”, „ii.” na początku elementu (green, jak T041a spec 007);
   jeśli przechodzi — commit tylko testu
-- [ ] T030 [US3] Kontrakt 1.3.0: jak w spec 007, kontraktem jest uzupełnienie
+- [X] T030 [US3] Kontrakt 1.3.0: jak w spec 007, kontraktem jest uzupełnienie
   `specs/008-parser-fixes-after-007/contracts/markdown-output.md` (kontrakt 001 bez zmian); sprawdź, że przykłady w nim
   zgadzają się z wynikiem replik T023–T025 (popraw przykłady, nie kod), a w `CLAUDE.md` (sekcja „Rendering”) zmień
   „contract 1.2.0” na 1.3.0 z dopiskiem o etykietach „a.”/„i.”
-- [ ] T031 [US3] Pełna kontrola FR-643; goldeny corp-1, corp-3, corp-5: tylko 31 etykiet z 10 ciągów jako elementy (i
+- [X] T031 [US3] Pełna kontrola FR-643; goldeny corp-1, corp-3, corp-5: tylko 31 etykiet z 10 ciągów jako elementy (i
   koniec tabeli zastępczej s. 38 w corp-1) — przejrzyj diff, miary nie gorsze (TBL001 nie rośnie), zbiory słów czyste,
   zaktualizuj; akty, bankowe, korpus syntetyczny (`verify`, golden chunków) bez zmian; handoff
 
