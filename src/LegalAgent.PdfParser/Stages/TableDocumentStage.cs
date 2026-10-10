@@ -371,7 +371,9 @@ public sealed class TableDocumentStage : IPipelineStage
     private static bool HasListOrParagraphs(FrameRow row, double leading)
     {
         List<(double Baseline, List<LayoutWord> Words)> lines = row.RightLines();
-        return lines.Any(l => ListLabelPatterns.TryMatch(string.Join(' ', l.Words.Select(w => w.Text)), out _))
+        // Spec 008: „a.” and „ii.” candidates are left out — „r.” (year) would count as a list.
+        return lines.Any(l => ListLabelPatterns.TryMatch(string.Join(' ', l.Words.Select(w => w.Text)), out ListLabelMatch? label)
+                && label.Kind is not (ListLabelKind.LetterDot or ListLabelKind.RomanDot))
             || (leading > 0 && Gaps(lines).Any(g => g > ParagraphGapFactor * leading));
     }
 

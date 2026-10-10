@@ -147,5 +147,12 @@ public sealed class TablesIntegrationTests
             "- ii\\. pierwszym dniem, w którym stosujemy wskaźnik alternatywny ze względu na brak publikacji;\n",
             result.Markdown,
             StringComparison.Ordinal);
+        Assert.Contains(
+            "- 2\\. Korekta jest równa historycznej medianie różnic między wskaźnikiem oraz stopą referencyjną:\n"
+            + "  - a\\) za okres 24 miesięcy (lub krótszy, jeśli wskaźnik publikowano krócej) przed:\n"
+            + "    - i\\. dniem zamiany wskaźnika albo\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
     }
 }

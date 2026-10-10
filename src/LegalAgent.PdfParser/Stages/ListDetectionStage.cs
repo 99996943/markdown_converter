@@ -50,6 +50,7 @@ public sealed class ListDetectionStage : IPipelineStage
         }
 
         List<Entry> entries = Collect(context, articleUsteps);
+        AcceptDotEnumerations(entries, context.Options.Lists.IndentTolerance);
         KeepLabelledBoldTextInLists(entries, context);
         AcceptArabicDotSequences(entries, context.Options.Lists.IndentTolerance);
         new Walker(context).Run(entries);
@@ -145,7 +146,7 @@ public sealed class ListDetectionStage : IPipelineStage
                 {
                     entry.Label = label;
                     entry.ArticleUstep = articleUsteps.Contains(line);
-                    entry.Accepted = label.Kind != ListLabelKind.ArabicDot || entry.ArticleUstep;
+                    entry.Accepted = label.Kind is not (ListLabelKind.ArabicDot or ListLabelKind.LetterDot or ListLabelKind.RomanDot) || entry.ArticleUstep;
                 }
                 else if (!entry.LegalUnit && IsFontBullet(line))
                 {
@@ -202,7 +203,7 @@ public sealed class ListDetectionStage : IPipelineStage
                 && next.Line.Baseline - entry.Line.Baseline <= gapFactor * leading
                 && StartsLowercase(next.Line.Text);
             if (label.Kind is ListLabelKind.ArabicParen or ListLabelKind.LetterParen or ListLabelKind.ArabicSlash or ListLabelKind.LetterSlash
-                    or ListLabelKind.Dash or ListLabelKind.Bullet
+                    or ListLabelKind.LetterDot or ListLabelKind.RomanDot or ListLabelKind.Dash or ListLabelKind.Bullet
                 || runsOn)
             {
                 entry.HeadingLike = false;
@@ -250,6 +251,76 @@ public sealed class ListDetectionStage : IPipelineStage
 
         return bodySize > 0 && chars > 0 && weighted / chars >= sizeRatio * bodySize;
     }
+
+    /// <summary>
+    /// Spec 008 (FR-620, FR-621, FR-623): „a.” and „ii.” are labels only in a sequence — the nearest candidate at the same
+    /// indent before or after it is its predecessor or successor, with only lines indented further than the label in
+    /// between. „i.”, „v.”, „x.” take the reading the sequence gives (after „h.” a letter, before „ii.” a Roman numeral).
+    /// Candidates outside a sequence (a lone „a.”, a wrapped „r. …”, „a., c.”) lose their label and stay text.
+    /// </summary>
+    private static void AcceptDotEnumerations(List<Entry> entries, double tolerance)
+    {
+        var readings = new Dictionary<int, ListLabelMatch?>();
+        for (int i = 0; i < entries.Count; i++)
+        {
+            if (entries[i].Label is { } label && IsDotEnumeration(label.Kind))
+            {
+                ListLabelMatch? reading = null;
+                if (Neighbour(i, -1) is int previous)
+                {
+                    reading = Readings(label).FirstOrDefault(c => Readings(entries[previous].Label!).Any(p => Succeeds(p, c)));
+                }
+
+                if (reading is null && Neighbour(i, +1) is int next)
+                {
+                    reading = Readings(label).FirstOrDefault(c => Readings(entries[next].Label!).Any(n => Succeeds(c, n)));
+                }
+
+                readings[i] = reading;
+            }
+        }
+
+        foreach ((int i, ListLabelMatch? reading) in readings)
+        {
+            entries[i].Label = reading;
+            entries[i].Accepted = reading is not null;
+        }
+
+        // The nearest candidate at the same indent, past lines indented further than the label only.
+        int? Neighbour(int index, int step)
+        {
+            Entry entry = entries[index];
+            for (int j = index + step; j >= 0 && j < entries.Count; j += step)
+            {
+                Entry other = entries[j];
+                double shift = Shift(other.Origin, entry.Origin);
+                if (other.Line.Role != LineRole.Unknown || other.LegalUnit)
+                {
+                    return null;
+                }
+
+                if (other.Label is { } label && IsDotEnumeration(label.Kind) && Math.Abs(other.LabelX - (entry.LabelX - shift)) <= tolerance)
+                {
+                    return j;
+                }
+
+                if (other.Line.Box.Left <= entry.LabelX - shift + tolerance)
+                {
+                    return null;
+                }
+            }
+
+            return null;
+        }
+
+        static IEnumerable<ListLabelMatch> Readings(ListLabelMatch label) =>
+            label.Alternative is { } alternative ? [label, alternative] : [label];
+
+        static bool Succeeds(ListLabelMatch previous, ListLabelMatch next) =>
+            previous.Kind == next.Kind && previous.Ordinal is int p && next.Ordinal == p + 1;
+    }
+
+    private static bool IsDotEnumeration(ListLabelKind kind) => kind is ListLabelKind.LetterDot or ListLabelKind.RomanDot;
 
     /// <summary>
     /// FR-051: „N.” is a label when the nearest „N.” candidate before or after it (with no legal unit line in between,

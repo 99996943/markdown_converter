@@ -299,6 +299,7 @@ public sealed class HangingLabelLayoutTests
         }
 
         Item(page, Letter, LetterText, y, "b/", "autoryzacji zlecenia przez Klienta.");
+        Item(page, Margin, 54.7, y + 10, "11.", "Bank może odmówić wykonania zlecenia, jeżeli zlecenie nie zawiera danych wymaganych przez regulamin.");
 
         PdfConversionResult result = await ConvertAsync(builder.Build());
 

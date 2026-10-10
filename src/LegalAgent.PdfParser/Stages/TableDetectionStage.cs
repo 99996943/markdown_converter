@@ -356,12 +356,13 @@ public sealed class TableDetectionStage : IPipelineStage
         && unit.Kind is SectionKind.Paragraph or SectionKind.Article
         && !unit.Rest.Contains(LeaderDots, StringComparison.Ordinal);
 
-    /// <summary>A „1.”, „1/” or „a/” label set close before the text it introduces.</summary>
+    /// <summary>A „1.”, „1/”, „a/”, „a.” or „ii.” label set close before the text it introduces.</summary>
     private static bool IsHangingLabelBefore(LineSegment label, LineSegment text)
     {
         double size = label.Words[0].Glyphs.Count > 0 ? label.Words[0].Glyphs[0].PointSize : label.Box.Height;
         return ListLabelPatterns.TryMatch(label.Text + " x", out ListLabelMatch? match)
             && match.Kind is ListLabelKind.ArabicDot or ListLabelKind.ArabicSlash or ListLabelKind.LetterSlash
+                or ListLabelKind.LetterDot or ListLabelKind.RomanDot
             && text.Box.Left - label.Box.Right <= MaxHangingLabelGapEm * size;
     }
 
@@ -637,7 +638,8 @@ public sealed class TableDetectionStage : IPipelineStage
 
     /// <summary>
     /// Keeps the lines up to the last multi-cell line plus the single-cell lines that still belong to the last row: inside
-    /// the ruled grid, or close below and within one column (FR-062).
+    /// the ruled grid, or close below and within one column (FR-062). Spec 008: a list opening in a grid row that spans
+    /// the whole box (no inner vertical ruling) is a passage below the columns, not a row of the table — it ends it.
     /// </summary>
     private static List<Row> TrimTrailingLines(List<Row> region, TableOptions options, Grid grid, double tolerance)
     {
@@ -651,7 +653,7 @@ public sealed class TableDetectionStage : IPipelineStage
             LayoutLine line = region[i].Line;
             bool insideGrid = multiInGrid && grid.Contains(line.Box.CenterY);
             bool closeBelow = line.Baseline - region[i - 1].Line.Baseline <= rowGap && region[i].Cells.Count == 1;
-            if (!insideGrid && !closeBelow)
+            if ((!insideGrid && !closeBelow) || (insideGrid && grid.Spans(line.Box.CenterY) && OpensListItem(region[i])))
             {
                 break;
             }
@@ -661,6 +663,14 @@ public sealed class TableDetectionStage : IPipelineStage
 
         return region.Take(end + 1).ToList();
     }
+
+    /// <summary>A single-cell line opening with a list label joined to its text („1. Treść”, „a) Treść”).</summary>
+    private static bool OpensListItem(Row row) =>
+        row.Cells.Count == 1
+        && row.Line.Words.Count > 1
+        && ListLabelPatterns.TryMatch(row.Line.Text, out ListLabelMatch? label)
+        && string.Equals(label.Label, row.Line.Words[0].Text, StringComparison.Ordinal)
+        && label.Kind is not (ListLabelKind.Bullet or ListLabelKind.Dash);
 
     /// <summary>
     /// Distinct Y of horizontal rulings spanning a good part of the region width; collinear pieces (a border drawn cell
@@ -798,16 +808,27 @@ public sealed class TableDetectionStage : IPipelineStage
         public int Rows(List<Row> region) =>
             region.Select(r => r.Line.Box.CenterY).Where(Contains).Select(y => _borders.Count(b => b <= y)).Distinct().Count();
 
-        public bool Contains(double y)
+        public bool Contains(double y) => Middle(y) is double middle && _verticals.Any(v => Crosses(v, middle));
+
+        /// <summary>The grid row holding <paramref name="y"/> has its outer borders only — one cell across the box.</summary>
+        public bool Spans(double y)
         {
-            int k = _borders.Count(b => b <= y);
-            if (k == 0 || k == _borders.Count)
+            if (Middle(y) is not double middle)
             {
                 return false;
             }
 
-            double middle = (_borders[k - 1] + _borders[k]) / 2;
-            return _verticals.Any(v => Math.Min(v.Y1, v.Y2) <= middle && Math.Max(v.Y1, v.Y2) >= middle);
+            List<double> xs = _verticals.Where(v => Crosses(v, middle)).Select(v => v.X1).ToList();
+            return xs.Count > 0 && xs.All(x => x - xs.Min() <= RulingSlack || xs.Max() - x <= RulingSlack);
+        }
+
+        private static bool Crosses(Segment vertical, double y) => Math.Min(vertical.Y1, vertical.Y2) <= y && Math.Max(vertical.Y1, vertical.Y2) >= y;
+
+        /// <summary>The middle of the grid row (band between horizontal borders) holding <paramref name="y"/>; null outside.</summary>
+        private double? Middle(double y)
+        {
+            int k = _borders.Count(b => b <= y);
+            return k == 0 || k == _borders.Count ? null : (_borders[k - 1] + _borders[k]) / 2;
         }
     }
 

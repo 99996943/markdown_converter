@@ -636,7 +636,8 @@ public sealed class ListDetectionStageTests
             ("b. dane beneficjenta:", Indent),
             ("i. imie i nazwisko,", Deep),
             ("ii. adres,", Deep),
-            ("c. kwote przelewu.", Indent)));
+            ("c. kwote przelewu.", Indent),
+            ("2. Bank wykonuje zlecenie.", Margin)));
 
         LayoutLine b = Find(context, "b. dane");
         LayoutLine i = Find(context, "i. imie");
