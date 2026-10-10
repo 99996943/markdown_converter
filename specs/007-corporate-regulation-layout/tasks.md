@@ -209,6 +209,8 @@ dzielone 39,7–181,4 i 181,4–555,6 pod każdym wpisem) w
   w handoffie
 - [X] T041a Test (red) i poprawka: sprawdzanie cytatów FAQ (`FaqGrounding.ListLabel`) pomija też etykiety „1/”, „a/”
   — przebieg FAQ odrzucał cytaty obejmujące punkty „1/” (D-B „§ 10”, „§ 12”, „§ 36”; D-C „§ 42”)
+- [ ] T041b Test (red) i poprawka: domyślne `AzureOpenAI:MaxOutputTokens` 16384 zamiast 8192 — odpowiedź kandydatów
+  D-C (8571 tokenów) przekroczyła limit (przebieg T041)
 - [X] T042 Handoff „Stan prac i przekazanie” w `plan.md`: zrobione zadania, miary przed/po, różnice goldenów i decyzje
   właściciela, otwarte punkty; aktualizacja pamięci projektu
 
