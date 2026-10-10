@@ -313,8 +313,19 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   (zamiast m.in. kart kredytowych dla firm); przebieg na nich do zrobienia.
 - **Siódmy przebieg (te same dokumenty)**: 9 zamiast 10 i 4 pozycje z D1; poprawka naprawiła liczbę, nie
   równowagę (kod 7). **T067l** (decyzja właściciela): model szereguje pulę N…N+5 pozycji, kod wybiera N z
-  równowagą dokumentów; błędne pozycje puli są pomijane z ostrzeżeniem. Przebieg do zrobienia.
-- Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
-  zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
-  `SetNewMaxCompletionTokensEnabled` nieustawione).
-- Gałąź do wypchnięcia i PR (najpierw scalenie 005).
+  równowagą dokumentów; błędne pozycje puli są pomijane z ostrzeżeniem.
+- **Ósmy przebieg (2026-10-10)**: te same 3 dokumenty + 2 nowe (spotkanie poza placówką, rachunek z kartą dla
+  dziecka 0–13 lat); kod 0 bez poprawki, 1 z 45 kandydatów odrzucony (D2-K3, cytat przez listę — fałszywie, stąd
+  **T067m**: etykiety list pomijane przy porównaniu cytatu). Rozkład 3/1/2/2/2, ocena **10/10 poprawnych**. Wynik
+  zapisany w `faq/FAQ_mBank.md` (do prezentacji); adresy w `Download:Urls` w nieśledzonym `appsettings.Local.json`
+  (dostarczany `appsettings.json` ma zgodnie z kontraktem spec 005 pustą listę).
+- Sprostowanie: odrzucany trzykrotnie kandydat z wiekiem „13”/„18” nie był halucynacją — „13-18 lat” jest w
+  rozdziale 3 regulaminu rachunków; model wskazał rozdział 5 (błędna jednostka, odrzucenie zgodne z regułą).
+- Zużycie przebiegu: 107–138 tys. tokenów wejścia, ~15 tys. wyjścia (6 zapytań; 7 z poprawką).
+- **Otwarte / na po prezentacji**: weryfikacja odpowiedzi drugim zapytaniem (w szóstym przebiegu model dopisał
+  „rażące niedbalstwo” do warunku, którego nie łapie ani cytat, ani liczby); parser — numery stron „N/36” w
+  tekście regulaminu rachunków, fałszywy nagłówek kończący schemat kroków („## i… już dziecko może korzystać z
+  karty”), wiersze tabel jako nagłówki, przypisy, spis treści w treści, karty dla firm cz. II rozdz. 3; T067 —
+  klucz potokiem, `az group delete`.
+- Na prawdziwych danych nieznane: zachowanie przy 429 (bez ponowień), zgodność żądania konektora z wdrożeniami
+  GPT-5 (`max_tokens` vs `max_completion_tokens` — `SetNewMaxCompletionTokensEnabled` nieustawione).

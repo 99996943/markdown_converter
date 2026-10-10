@@ -109,7 +109,8 @@ Reguły 1–5 odrzucają całą odpowiedź. Potem ugruntowanie (T067d, `FaqGroun
   wyjaśnienia”, T067h); bez `unit` albo bez pasującego nagłówka — cały dokument;
 - normalizacja: komentarze `<!-- … -->` usunięte, tylko litery i cyfry małymi literami, reszta jako jedna spacja;
 - cytat ma co najmniej 3 słowa; dzielony na fragmenty po wielokropkach; co najmniej 80% trójek kolejnych słów
-  fragmentów występuje w tekście jednostki (T067h: drobne zmiany przechodzą, parafraza nie);
+  fragmentów występuje w tekście jednostki (T067h: drobne zmiany przechodzą, parafraza nie); etykiety list („1)”,
+  „a)”, „1\)”) są przed tym porównaniem usuwane z obu tekstów (T067m);
 - każda liczba (ciąg cyfr) odpowiedzi występuje w tekście jednostki.
 
 Kandydat, który nie spełnia tych warunków, odpada (zdarzenie `CandidateDropped` z jedną linią „kandydat Dn-Kk:

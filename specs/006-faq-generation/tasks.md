@@ -532,6 +532,11 @@ nie dotyka klucza.
   - `az group delete`.
 
   Wymaga klucza i adresów od właściciela. Jeśli niedostępne, zapisz jako otwarte w handoffie.
+
+  Stan (2026-10-10): zasób utworzony w portalu zamiast skryptu (decyzja właściciela; `gpt-4.1-mini`, Poland
+  Central); 8 pełnych przebiegów na Windows (publikacja single-file win-x64), klucz wpisywany z gwiazdkami; ocena
+  odpowiedzi przez właściciela w trakcie T067a–T067m; ostatni przebieg — 10/10 poprawnych, zapisany w
+  `faq/FAQ_mBank.md`. Otwarte: klucz potokiem, `az group delete` (po prezentacji), skrypt na prawdziwym `az`.
 - [X] T067a Pierwszy prawdziwy przebieg (gpt-4.1-mini) odrzucił D1: model podał „§ 6”, „§ 15”…, a regulaminy mBanku
   nie mają § ani Art. — nagłówki to „6. Jakie informacje musisz podać…”. Poprawka:
   - komunikat użytkownika kroku kandydatów kończy się listą „Jednostki dokumentu Dn” (pozycje `Units`) albo
