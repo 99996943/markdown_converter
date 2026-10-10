@@ -77,7 +77,7 @@ kodzie z tekstem regulaminu, bez dodatkowych zapytań do modelu. Szczegóły i r
 
 | Co jest sprawdzane | Jak | Skutek błędu |
 |---|---|---|
-| **źródło** (rozdział) | model wybiera jednostkę z listy nagłówków dokumentu; kod sprawdza, że taka jednostka istnieje | odrzucenie odpowiedzi |
+| **źródło** (rozdział) | model wybiera jednostkę z listy nagłówków dokumentu; kod sprawdza, że taka jednostka istnieje | kandydat odpada |
 | **cytat** | kandydat podaje dosłowny fragment dokumentu; ≥ 80% jego trójek kolejnych słów musi wystąpić w tekście wskazanego rozdziału | kandydat odpada |
 | **liczby** | każda kwota, termin, godzina, data z odpowiedzi musi wystąpić w tekście rozdziału | kandydat odpada |
 | **liczby w FAQ** | każda liczba końcowej odpowiedzi musi wystąpić w odpowiedziach lub cytatach kandydatów, na których się opiera | pozycja odpada |

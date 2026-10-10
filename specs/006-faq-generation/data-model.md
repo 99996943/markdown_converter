@@ -100,9 +100,11 @@ aplikacja przepuszcza każdy komunikat przez `SecretRedactor` (FR-411).
 3. `question`, `answer` niepuste po przycięciu.
 4. Pytania niepowtarzające się (normalizacja: małe litery w kulturze niezmiennej, zwinięte białe znaki, bez
    końcowego `?`).
-5. `unit` pusty albo pasuje do `Units` dokumentu.
+5. (T067n: przeniesione do ugruntowania — patrz niżej.)
 
-Reguły 1–5 odrzucają całą odpowiedź. Potem ugruntowanie (T067d, `FaqGrounding`) sprawdza każdego kandydata osobno:
+Reguły 1–4 odrzucają całą odpowiedź. Potem ugruntowanie (T067d, `FaqGrounding`) sprawdza każdego kandydata osobno:
+- `unit` pusty albo pasuje do `Units` dokumentu (T067n; nieznana jednostka: „kandydat D1-K7: jednostka „…” nie
+  występuje w dokumencie D1”, bez dalszych sprawdzeń);
 - tekst jednostki = sekcje Markdown, których nagłówek pasuje do `unit` (`UnitMatcher`), każda do następnego
   nagłówka wyższego poziomu albo tego samego poziomu; sekcja z numerem lub oznaczeniem („6. …”, „§ 5”, „Art. 3”,
   „Rozdział 2”) obejmuje też następujące po niej nagłówki bez numeru tego samego poziomu („Dodatkowe
@@ -134,7 +136,7 @@ jest odrzucana (`FaqResponseException`, kod 7) tylko wtedy, gdy z dokumentu nie 
 `basedOn`, bez powtórzeń; źródło bez jednostki odpada, gdy ten sam dokument jest też źródłem z jednostką.
 Jednostki kandydatów są już sprawdzone w kroku kandydatów.
 
-Wszystkie problemy są zbierane, nie tylko pierwszy. W kroku kandydatów każdy problem reguł 1–5 odrzuca odpowiedź;
+Wszystkie problemy są zbierane, nie tylko pierwszy. W kroku kandydatów każdy problem reguł 1–4 odrzuca odpowiedź;
 w kroku wyboru — tylko problemy z reguły 4.
 
 **Dopasowanie jednostki**: `UnitMatcher.Matches(cited, units)`:

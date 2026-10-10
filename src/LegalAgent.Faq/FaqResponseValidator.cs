@@ -7,12 +7,14 @@ namespace LegalAgent.Faq;
 /// <summary>Checks parsed responses against the rules of data-model.md („Reguły sprawdzania”, research R5).</summary>
 internal static class FaqResponseValidator
 {
-    /// <summary>Checks the candidates of one document.</summary>
+    /// <summary>
+    /// Checks the candidates of one document: count, texts, repeated questions. Units are checked per candidate by
+    /// <see cref="FaqGrounding"/> (T067n).
+    /// </summary>
     /// <exception cref="FaqResponseException">With all problems found.</exception>
     public static void ValidateCandidates(
         IReadOnlyList<FaqCandidate> candidates,
         string documentId,
-        IReadOnlyCollection<string> units,
         int maxCount)
     {
         var problems = new List<string>();
@@ -27,10 +29,6 @@ internal static class FaqResponseValidator
             FaqCandidate candidate = candidates[i];
             int position = i + 1;
             CheckTexts(candidate.Question, candidate.Answer, position, questions, problems);
-            if (candidate.Unit is { } unit && !UnitMatcher.Matches(unit, units))
-            {
-                problems.Add(UnknownUnit(position, unit, documentId));
-            }
         }
 
         if (problems.Count > 0)
@@ -273,9 +271,6 @@ internal static class FaqResponseValidator
         count == 1 ? "1 pozycja"
         : count % 10 is >= 2 and <= 4 && count % 100 is < 12 or > 14 ? Invariant($"{count} pozycje")
         : Invariant($"{count} pozycji");
-
-    private static string UnknownUnit(int position, string unit, string documentId) =>
-        Invariant($"pozycja {position}: jednostka „{unit}” nie występuje w dokumencie {documentId}");
 
     private static string Invariant(FormattableString text) => text.ToString(CultureInfo.InvariantCulture);
 }
