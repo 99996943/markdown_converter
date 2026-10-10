@@ -71,6 +71,9 @@ osobnym akapitem, a „§ 5” nie jest nagłówkiem. W słowniczku definicje mi
 - Q: Czy na 11 pozostałych dokumentach mBanku dopuszczamy zmiany Markdown, jeśli miary się nie pogarszają? → A: 5
   dokumentów detalicznych (zestaw prezentacji): każda różnica wymaga akceptacji właściciela; 6 dokumentów dla firm:
   wystarczy, że żadna miara się nie pogarsza (różnice przegląda wykonawca i zapisuje w handoffie).
+- Q: Czy zmiany nie popsują innych korpusów (aktów prawnych, korpusu syntetycznego)? → A: największe ryzyko to listy
+  z wysuniętymi etykietami w aktach („1)”, „a)”) i układ „dwie-kolumny” korpusu syntetycznego; ograniczają je FR-502,
+  FR-514 i pełny zestaw kontroli przed każdym commitem (FR-534, SC-087), łącznie z miarami `CorpusFull`.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -235,6 +238,11 @@ zostanie czas przed zamrożeniem (patrz Założenia).
   zapisana w handoffie.
 - **FR-532**: Korpus syntetyczny po `refresh` MUSI przejść `verify`; zmiany jego Markdown i fragmentów wymagają
   przejrzenia i commita jak dotąd.
+- **FR-534**: Przed każdym commitem zmieniającym parser MUSI przejść pełny zestaw kontroli regresji: goldeny parsera
+  (akty prawne z ISAP i syntetyczne regulaminy), prywatny korpus właściciela (4 dotychczasowe dokumenty i 15
+  pobranych dokumentów mBanku), `refresh` i `verify` korpusu syntetycznego oraz miary jakości całego korpusu
+  syntetycznego względem prawdy referencyjnej (kategoria testów `CorpusFull`, uruchamiana jawnie, bo zwykły przebieg
+  testów jej nie obejmuje).
 - **FR-533**: Prawdziwe dokumenty banku NIE MOGĄ trafić do repozytorium; testy jednostkowe i integracyjne używają
   syntetycznych replik stron, a prawdziwe PDF-y są sprawdzane w prywatnym korpusie właściciela.
 
@@ -266,6 +274,9 @@ zostanie czas przed zamrożeniem (patrz Założenia).
   z różnicami zatwierdzonymi przez właściciela.
 - **SC-085**: W 5 dokumentach detalicznych Markdown jest identyczny z punktem odniesienia albo różnice są zaakceptowane
   przez właściciela; w 6 pozostałych dokumentach dla firm żadna miara z tabeli pomiaru wyjściowego nie rośnie.
+- **SC-087**: Miary jakości wszystkich 86 dokumentów korpusu syntetycznego (7 układów, w tym „dwie-kolumny”,
+  „tabela-dokument”, taryfy i procedury) nie pogarszają się względem prawdy referencyjnej; każda zmiana Markdown aktów
+  prawnych z goldenów jest zmianą goldenu wymagającą zgody właściciela.
 - **SC-086**: (US3) W słowniczkach D-A…D-D każda definicja jest jednym elementem zaczynającym się swoim terminem.
 
 ## Assumptions
