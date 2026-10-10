@@ -32,7 +32,7 @@ internal sealed class AppHarness : IDisposable
     public FakeHttpHandler Http { get; } = new();
 
     /// <summary>The fake HTTP handler for the Azure OpenAI connector (used when <see cref="UseConnector"/> is set).</summary>
-    public FakeHttpHandler ModelHttp { get; } = new();
+    public ModelHttpHandler ModelHttp { get; } = new();
 
     /// <summary>The fake model (used unless <see cref="UseConnector"/> is set).</summary>
     public FakeChatCompletionService Model { get; } = new();
