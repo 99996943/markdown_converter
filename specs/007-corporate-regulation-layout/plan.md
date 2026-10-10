@@ -217,6 +217,16 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
   wiersze „ \| ” w D-A to prawdziwe tabele (s. 38, 47–48). Kontrola tekstu (zbiór słów goldenów przed/po): bez utraty.
   Pozostałe 15 dokumentów prywatnych, goldeny aktów/bankowe, `verify`, `CorpusFull` — bez zmian.
 
+- 2026-10-10 (US5, Polish): T037 — wpisy spisu treści z kropkami prowadzącymi nie są nagłówkami (D-B: 9 zdublowanych
+  nagłówków rozdziałów zniknęło). **T038 (stopki „N/M”) nie zrobione** — zmieniłoby dokument detaliczny ind-2
+  (35 wystąpień), więc wymaga decyzji właściciela. T039/T040 — README parsera i CLAUDE.md. **T041 nie wykonane** —
+  przebieg FAQ wymaga klucza Azure właściciela (`quickstart.md` §4); offline: każdy „§ N” D-A…D-D jest nagłówkiem
+  jednostki, więc `UnitMatcher` je znajdzie. Testy wydajności (SC-007) zielone.
+  Stan końcowy: wszystkie testy solucji zielone (2002), prywatny korpus 19/19 z `Category=Layout007`, `verify` czysty,
+  `CorpusFull` zielony. Do decyzji właściciela: (1) zmiana w korpusie syntetycznym `dz-u-2019-1781-ochrona-danych`
+  (US1/T025), (2) T038, (3) otwarte punkty z US1/US2 (fałszywy „Rozdział I.” w D-A, pytania ramek w firm-2,
+  „a.”/„ii.” jako tekst). Gałąź niewypchnięta od 8020df5.
+
 ## Complexity Tracking
 
 Brak naruszeń konstytucji — sekcja pusta.
