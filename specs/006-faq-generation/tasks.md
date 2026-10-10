@@ -328,25 +328,25 @@ contracts/faq-file.md i kod 0.
   `apptests/` zielone.
 
 T033 — połączone z T031/T032 (/speckit-analyze I1: zestaw testów nie może być czerwony między commitami).
-- [ ] T034 [P] [US1] Test (red) w `apptests/FaqWriteTests.cs`:
+- [X] T034 [P] [US1] Test (red) w `apptests/FaqWriteTests.cs`:
   - istniejący `FAQ_mBank.md` zostaje zastąpiony w całości;
   - po zapisie nie ma `FAQ_mBank.md.tmp`;
   - nieudane przeniesienie `.tmp` → `FAQ_mBank.md` (Windows: docelowy plik otwarty z `FileShare.None`; Linux: w
     miejscu pliku docelowego leży katalog `FAQ_mBank.md`) → kod 4, stary plik (Windows) ma niezmienioną treść,
     `FAQ_mBank.md.tmp` usunięty (FR-433).
-- [ ] T035 [US1] Implementacja zapisu atomowego w `app/FaqStage.cs` (usuwanie `.tmp` w `finally`). T034 zielony.
-- [ ] T036 [P] [US1] Test (red) w `faqtests/Conversion/DocumentSetConverterTests.cs` (FR-403) i asercja podsumowania
+- [X] T035 [US1] Implementacja zapisu atomowego w `app/FaqStage.cs` (usuwanie `.tmp` w `finally`). T034 zielony.
+- [X] T036 [P] [US1] Test (red) w `faqtests/Conversion/DocumentSetConverterTests.cs` (FR-403) i asercja podsumowania
   w `apptests/FaqFlowTests.cs`:
   - po udanej konwersji 5/5 z katalogu pobrań znikają `*.md` spoza bieżącego zestawu, a nazwy usuniętych plików są
     w `ConversionRun.RemovedMarkdownFiles` i w podsumowaniu;
   - przy błędzie konwersji żaden `.md` nie jest usuwany;
   - `manifest.json` i podkatalogi nietknięte.
-- [ ] T037 [US1] Implementacja sprzątania `*.md` w `faq-lib/Conversion/DocumentSetConverter.cs` i wypisania w
+- [X] T037 [US1] Implementacja sprzątania `*.md` w `faq-lib/Conversion/DocumentSetConverter.cs` i wypisania w
   `app/ConsoleReport.cs`.
   T036 zielony.
-- [ ] T038 [P] [US1] Test (red) w `apptests/HelpTests.cs`: `--help` zawiera `--faq-output`, sekcje `AzureOpenAI`
+- [X] T038 [P] [US1] Test (red) w `apptests/HelpTests.cs`: `--help` zawiera `--faq-output`, sekcje `AzureOpenAI`
   i `Faq`, sposób podania klucza (konsola lub potok, nigdy opcja ani zmienna) i kody 0–7/130 z contracts/cli.md.
-- [ ] T039 [US1] Aktualizacja `AppArguments.Usage` w `app/AppArguments.cs`. T038 zielony.
+- [X] T039 [US1] Aktualizacja `AppArguments.Usage` w `app/AppArguments.cs`. T038 zielony.
 
 **Checkpoint**: MVP. Pełny przebieg z atrapą modelu daje `FAQ_mBank.md` i kod 0.
 
@@ -359,7 +359,7 @@ T033 — połączone z T031/T032 (/speckit-analyze I1: zestaw testów nie może 
 **Independent Test**: uruchomienia z charakterystycznym kluczem (sukces, 401, odrzucona odpowiedź, przerwanie):
 klucza nie ma w stdout, stderr, plikach pod katalogiem testu ani w środowisku.
 
-- [ ] T040 [P] [US2] Test (red) w `apptests/KeyPromptTests.cs`, konsola (`FakeKeyInput.IsInputRedirected = false`):
+- [X] T040 [P] [US2] Test (red) w `apptests/KeyPromptTests.cs`, konsola (`FakeKeyInput.IsInputRedirected = false`):
   - prompt „Klucz API Azure OpenAI: ”;
   - każdy znak (także sekwencja „wklejona” jako ciąg klawiszy) wypisuje dokładnie jedną `*`, a w stdout nie ma
     żadnego znaku klucza;
@@ -369,29 +369,29 @@ klucza nie ma w stdout, stderr, plikach pod katalogiem testu ani w środowisku.
   - strzałki, Tab i Escape są ignorowane;
   - Ctrl+C (klawisz `C` z `ConsoleModifiers.Control`) → `OperationCanceledException`;
   - `CaptureControlC()` jest wywołane i zwolnione także przy wyjątku.
-- [ ] T041 [US2] Implementacja `app/KeyPrompt.cs` i `app/ConsoleKeyInput.cs` (research R8: `Console.ReadKey(intercept: true)`,
+- [X] T041 [US2] Implementacja `app/KeyPrompt.cs` i `app/ConsoleKeyInput.cs` (research R8: `Console.ReadKey(intercept: true)`,
   `Console.TreatControlCAsInput` ustawiane w `CaptureControlC` i przywracane, `Console.IsInputRedirected`,
   `ReadLine` przez ten sam `TextReader` co adresy). T040 zielony.
-- [ ] T042 [P] [US2] Test (red) w `apptests/KeyPromptTests.cs`, wejście przekierowane:
+- [X] T042 [P] [US2] Test (red) w `apptests/KeyPromptTests.cs`, wejście przekierowane:
   - z `--url` klucz to pierwszy wiersz stdin;
   - przy adresach czytanych ze stdin klucz to szósty wiersz;
   - brak promptu i gwiazdek w stdout;
   - brak wiersza albo pusty wiersz → kod 2 i komunikat z contracts/cli.md („Brak klucza API: wejście jest
     przekierowane…”), bez zapytań do modelu;
   - Ctrl+C podczas pytania w konsoli → kod 130, „Przerwano.” na stderr, brak `FAQ_mBank.md`.
-- [ ] T043 [US2] Obsługa przekierowanego wejścia i kodów w `app/KeyPrompt.cs` i `app/FaqStage.cs`. T042 zielony.
-- [ ] T044 [P] [US2] Test (red) w `apptests/KeyOrderTests.cs` (FR-413):
+- [X] T043 [US2] Obsługa przekierowanego wejścia i kodów w `app/KeyPrompt.cs` i `app/FaqStage.cs`. T042 zielony.
+- [X] T044 [P] [US2] Test (red) w `apptests/KeyOrderTests.cs` (FR-413):
   - `FakeKeyInput` nie jest odczytywany, gdy pobieranie kończy się kodem 3, konwersja kodem 5 albo `CheckInput`
     zgłasza za długi dokument (kod 6, `Faq:MaxDocumentTokens` = 10);
   - przy sukcesie klucz jest czytany dokładnie raz, po komunikacie „Przekonwertowano 5 z 5 plików.”.
-- [ ] T045 [US2] Kolejność etapów w `app/Program.cs` i `app/FaqStage.cs` (`CheckInput` przed `KeyPrompt`). T044 zielony.
-- [ ] T046 [P] [US2] Test (red) w `apptests/SecretRedactorTests.cs`:
+- [X] T045 [US2] Kolejność etapów w `app/Program.cs` i `app/FaqStage.cs` (`CheckInput` przed `KeyPrompt`). T044 zielony.
+- [X] T046 [P] [US2] Test (red) w `apptests/SecretRedactorTests.cs`:
   - wszystkie wystąpienia klucza w tekście zamieniane na `***`;
   - klucz pusty lub `null` → tekst bez zmian;
   - klucz z wyrażeniem regularnym nie psuje zamiany (zamiana zwykła, `StringComparison.Ordinal`).
-- [ ] T047 [US2] Implementacja `app/SecretRedactor.cs` i użycie go dla każdego komunikatu z etapu FAQ w
+- [X] T047 [US2] Implementacja `app/SecretRedactor.cs` i użycie go dla każdego komunikatu z etapu FAQ w
   `app/FaqStage.cs` oraz w ogólnym `catch` w `app/Program.cs`. T046 zielony.
-- [ ] T048 [US2] Test (red lub charakteryzacja) w `apptests/SecretSafetyTests.cs`. Klucz „KLUCZ-7f3a9c-TEST”,
+- [X] T048 [US2] Test (red lub charakteryzacja) w `apptests/SecretSafetyTests.cs`. Klucz „KLUCZ-7f3a9c-TEST”,
   scenariusze:
   - sukces;
   - 401 z treścią odpowiedzi zawierającą ten klucz (przez `ModelTransportTests`/`ChatServiceFactory` i
@@ -405,7 +405,7 @@ klucza nie ma w stdout, stderr, plikach pod katalogiem testu ani w środowisku.
   - klucza nie ma w słowniku `environment` ani w `Environment.GetEnvironmentVariables()` procesu testowego
     (porównanie przed i po);
   - liczba gwiazdek w trybie konsoli jest równa długości klucza (świadomy kompromis z Assumptions).
-- [ ] T049 [US2] Poprawki ujawnione przez T048, jeśli są. Jeśli nie ma, T048 jest commitem charakteryzacji z
+- [X] T049 [US2] Poprawki ujawnione przez T048, jeśli są. Jeśli nie ma, T048 jest commitem charakteryzacji z
   adnotacją. T048 zielony.
 
 **Checkpoint**: US1 i US2 kompletne. Klucz obsługiwany zgodnie z FR-410–413.
