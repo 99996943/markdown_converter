@@ -31,6 +31,7 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
     private const double MinCellGapEm = 1.0;
+    private const string LeaderDots = "....";
 
     /// <summary>Widest gap between a hanging „1.”, „1/”, „a/” label and its text (corporate regulations: 0.9–1.5 em).</summary>
     private const double MaxHangingLabelGapEm = 2.0;
@@ -342,9 +343,15 @@ public sealed class TableDetectionStage : IPipelineStage
         ListLabelPatterns.TryMatch(text + " x", out ListLabelMatch? label)
         && label.Kind is ListLabelKind.Bullet or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
 
-    /// <summary>A single-cell line holding a legal unit designation („§ 5”, „§ 3. Tytuł”, „Art. 5.”).</summary>
+    /// <summary>
+    /// A single-cell line holding a legal unit designation („§ 5”, „§ 3. Tytuł”, „Art. 5.”) — not an entry of a table of
+    /// contents („§ 10. Tytuł ......”).
+    /// </summary>
     private static bool IsUnitLine(Row row) =>
-        !row.IsMulti && LegalUnitPatterns.TryMatch(row.Line.Text, out LegalUnitMatch? unit) && unit.Kind is SectionKind.Paragraph or SectionKind.Article;
+        !row.IsMulti
+        && LegalUnitPatterns.TryMatch(row.Line.Text, out LegalUnitMatch? unit)
+        && unit.Kind is SectionKind.Paragraph or SectionKind.Article
+        && !unit.Rest.Contains(LeaderDots, StringComparison.Ordinal);
 
     /// <summary>A „1.”, „1/” or „a/” label set close before the text it introduces.</summary>
     private static bool IsHangingLabelBefore(LineSegment label, LineSegment text)

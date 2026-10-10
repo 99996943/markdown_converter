@@ -135,6 +135,8 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
 - [X] T025 [US1] Osłona w `TableDetectionStage.cs`: w regionach bez siatki wiersz pasujący do oznaczenia jednostki
   (także gołego) nie jest dołączany nad ziarnem, a region jest przed nim cięty; siatki i tabele-dokumenty bez zmian
   (green T024)
+- [X] T025a [US1] Replika (red) z D-D: wiersz spisu treści „§ 10. | Tytuł ......” (szeroki jak tekst ciągły) nie tnie
+  tabeli spisu treści — wiersz z kropkami prowadzącymi nie jest wierszem jednostki (green)
 - [ ] T026 [US1] Pełna kontrola regresji (FR-534); miara `ParagraphText` = 0 w D-A…D-D (SC-081); goldeny aktów bez
   zmian (SC-087); przegląd różnic i aktualizacja goldenów D-A…D-D po akceptacji
 
