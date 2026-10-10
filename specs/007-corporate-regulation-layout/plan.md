@@ -196,6 +196,27 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
   miary się poprawiły: TBL001 2 → 0, wiersze „ \| ” 17 → 0, etykiety poza listą 34 → 24) bez zmian Markdown; goldeny
   aktów, `verify` i `CorpusFull` (Corpus 425, Chunking 111) zielone po każdym commicie parsera.
 
+- 2026-10-10 (US3, T030–T036): `Stages/GlossaryDetection` (wywoływane przez TableDetection) — linie poziome dzielone na
+  wspólnym x (≥ 2), brak pionowych, lewa strona każdego wpisu = etykieta („1/”, „1.”, „1)”) + pogrubione słowa; wpis =
+  pas między liniami (pierwszy od wiersza nad pierwszą linią, który nie jest zdaniem wstępnym; ostatni do przerwy
+  > 2 interlinii albo oznaczenia jednostki); pierwszy pas strony bez etykiety kontynuuje wpis z poprzedniej strony.
+  Wiersze cięte na granicy kolumn, adnotacje `deflist.entry`/`deflist.side`, termin przed definicją (T034: kolejność
+  ustala GlossaryDetection, ReadingOrder wyłącza te wiersze z wykrywania kolumn). ListDetection: termin nigdy nie
+  jest nagłówkiem, wiersze wpisu idą razem mimo odstępów; `KeepLabelledBoldTextInLists` obejmuje „1/”, „a/”.
+  Miary końcowe (TBL001 / wiersze „ \| ” / etykiety poza listą / „§ N” jako tekst):
+
+  | Dokument | Punkt odniesienia | Po US2+US1+US3 |
+  |---|---|---|
+  | D-A (corp-1) | 132 / 1137 / 1155 / 154 | 5 / 25 / 6 / 0 |
+  | D-B (corp-2) | 16 / 142 / 149 / 36 | 0 / 0 / 0 / 0 |
+  | D-C (corp-3) | 58 / 552 / 566 / 123 | 0 / 0 / 0 / 0 |
+  | D-D (corp-5) | 79 / 665 / 642 / 15 | 0 / 0 / 0 / 0 |
+
+  SC-086: słowniczki D-A (s. 4, 20–21 i w załączniku), D-B, D-C, D-D — każda definicja to jeden element
+  „- 1/ **termin** definicja”, wyliczenia zagnieżdżone, część wspólna po wyliczeniu jako akapit elementu. Pozostałe
+  wiersze „ \| ” w D-A to prawdziwe tabele (s. 38, 47–48). Kontrola tekstu (zbiór słów goldenów przed/po): bez utraty.
+  Pozostałe 15 dokumentów prywatnych, goldeny aktów/bankowe, `verify`, `CorpusFull` — bez zmian.
+
 ## Complexity Tracking
 
 Brak naruszeń konstytucji — sekcja pusta.

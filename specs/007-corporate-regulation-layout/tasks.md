@@ -184,7 +184,7 @@ dzielone 39,7–181,4 i 181,4–555,6 pod każdym wpisem) w
   wiersze `deflist.*` z wykrywania kolumn, więc ich nie przestawia)
 - [X] T035 [US3] Budowa elementu w `ListDetectionStage.cs`: etykieta, pogrubiony termin (zawinięcia złączone), spacja,
   definicja; wyliczenia definicji zagnieżdżone (logika US2) (green T030, T031)
-- [ ] T036 [US3] Pełna kontrola regresji (FR-534); SC-086 sprawdzone na słowniczkach D-A…D-D (D-A ma dwa: s. 4 i
+- [X] T036 [US3] Pełna kontrola regresji (FR-534); SC-086 sprawdzone na słowniczkach D-A…D-D (D-A ma dwa: s. 4 i
   20–21); przegląd różnic i aktualizacja goldenów D-A…D-D po akceptacji
 
 **Checkpoint**: US3 działa; wszystkie kryteria SC-080…SC-087 spełnione.
