@@ -269,6 +269,61 @@ public sealed class StepSequenceStageTests
         Assert.False(page.Lines.Single(l => l.Text.StartsWith("6)", StringComparison.Ordinal)).Annotations.ContainsKey(LayoutAnnotations.StepIndex));
     }
 
+    /// <summary>The arrow between frames as the firm terms print it: an 18 pt symbol-font glyph from the private use area.</summary>
+    private const string Arrow = "";
+
+    /// <summary>T033 — spec 008 FR-635: an arrow line between two boxes is a connector, not text that ends the scheme.</summary>
+    [Fact]
+    public void ArrowGlyphLineBetweenBoxes_IsAnArtifactAndTheSchemeGoesOn()
+    {
+        LayoutLine arrow = Line(Arrow, 127, 135, 13);
+        LayoutPage page = PageWith(
+            1,
+            [
+                Line("Tak brzmi wstęp przed schematem:", 90, 90),
+                Row(117, ("Pierwszy krok", TitleLeft), ("Opis pierwszego kroku.", TextLeft)),
+                arrow,
+                Row(157, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+            ],
+            Box(114, 130),
+            Box(154, 170));
+
+        PipelineContext context = Run(Context([page]));
+
+        Assert.Equal(LineRole.Artifact, arrow.Role);
+        Assert.Equal([("Pierwszy krok", "1"), ("Drugi krok", "2")], Titles(context));
+        Assert.Equal(
+            ["Tak brzmi wstęp przed schematem:", "Pierwszy krok", "Opis pierwszego kroku.", "Drugi krok", "Opis drugiego kroku."],
+            Texts(page));
+    }
+
+    /// <summary>T033 — the arrow glyph shares a line with an item of the explanation: the glyph is dropped, the item stays.</summary>
+    [Fact]
+    public void ArrowGlyphMergedWithAnExplanationLine_IsSplitOff()
+    {
+        LayoutPage page = PageWith(
+            1,
+            [
+                Row(117, ("Pierwszy krok", TitleLeft), ("1. Pierwszy punkt.", TextLeft)),
+                Line("2. Drugi punkt.", TextLeft, 129),
+                Row(141, (Arrow, 127), ("3. Trzeci punkt.", TextLeft)),
+                Row(167, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+            ],
+            Box(114, 152),
+            Box(164, 180));
+
+        PipelineContext context = Run(Context([page]));
+
+        Assert.Equal([("Pierwszy krok", "1"), ("Drugi krok", "2")], Titles(context));
+        Assert.Equal(
+            ["Pierwszy krok", "1. Pierwszy punkt.", "2. Drugi punkt.", "3. Trzeci punkt.", "Drugi krok", "Opis drugiego kroku."],
+            Texts(page));
+        LayoutLine item = page.Lines.Single(l => l.Text == "3. Trzeci punkt.");
+        Assert.Equal(LineRole.Unknown, item.Role);
+        Assert.True(item.Annotations.ContainsKey(LayoutAnnotations.StepIndex));
+        Assert.Contains(page.Lines, l => l.Text == Arrow && l.Role == LineRole.Artifact);
+    }
+
     public static TheoryData<string> NotSchemes() => ["single box", "wide boxes", "nothing to the right", "disabled"];
 
     [Theory]
