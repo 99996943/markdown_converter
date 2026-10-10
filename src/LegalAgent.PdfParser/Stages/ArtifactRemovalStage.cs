@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using LegalAgent.PdfParser.Layout;
 using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Pipeline;
@@ -35,6 +36,7 @@ public sealed class ArtifactRemovalStage : IPipelineStage
         if (options.RemovePageNumbers)
         {
             RemovePageNumbers(context, candidates, removals);
+            RemoveBandPageNumbers(context, options, removals);
         }
 
         if (context.Pages.Count >= options.MinPages)
@@ -103,6 +105,87 @@ public sealed class ArtifactRemovalStage : IPipelineStage
             removals[candidate.Line] = null;
             context.Report.AddRemovedArtifact(ArtifactKind.PageNumber, candidate.Fingerprint, candidate.Page.Number);
         }
+    }
+
+    /// <summary>
+    /// Spec 008 (FR-600 – FR-602): a stand-alone "N/M" page number may sit just above the margin zone. Within the
+    /// wider <see cref="ArtifactOptions.PageNumberBandRatio"/> bands, the lowest (bottom band) or topmost (top band)
+    /// line of a page whose whole text is "N/M" is a candidate when no other line shares its height. Each band's
+    /// candidates are removed all together or not at all: they must span at least two pages, lie at the same
+    /// relative height, carry M equal to the page count and keep one offset N − page number.
+    /// </summary>
+    private static void RemoveBandPageNumbers(
+        PipelineContext context,
+        ArtifactOptions options,
+        Dictionary<LayoutLine, LayoutLine?> removals)
+    {
+        var bottom = new List<BandNumber>();
+        var top = new List<BandNumber>();
+        foreach (LayoutPage page in context.Pages)
+        {
+            context.CancellationToken.ThrowIfCancellationRequested();
+
+            List<LayoutLine> lines = page.Lines.Where(l => !removals.ContainsKey(l)).ToList();
+            if (lines.Count == 0)
+            {
+                continue;
+            }
+
+            LayoutLine lowest = lines.MaxBy(l => l.Box.Bottom)!;
+            if (lowest.Box.Top >= page.Height * (1 - options.PageNumberBandRatio)
+                && lines.All(l => ReferenceEquals(l, lowest) || l.Box.Bottom <= lowest.Box.Top)
+                && TryBandNumber(page, lowest, out BandNumber? number))
+            {
+                bottom.Add(number);
+            }
+
+            LayoutLine topmost = lines.MinBy(l => l.Box.Top)!;
+            if (topmost.Box.Bottom <= page.Height * options.PageNumberBandRatio
+                && lines.All(l => ReferenceEquals(l, topmost) || l.Box.Top >= topmost.Box.Bottom)
+                && TryBandNumber(page, topmost, out BandNumber? headerNumber))
+            {
+                top.Add(headerNumber);
+            }
+        }
+
+        foreach (List<BandNumber> group in new[] { bottom, top })
+        {
+            if (!IsPageNumberSequence(group, context.Pages.Count, options.PositionTolerance))
+            {
+                continue;
+            }
+
+            foreach (BandNumber number in group)
+            {
+                removals[number.Line] = null;
+                context.Report.AddRemovedArtifact(
+                    ArtifactKind.PageNumber,
+                    LineFingerprint.Compute(number.Line.Text),
+                    number.Page.Number);
+            }
+        }
+    }
+
+    private static bool TryBandNumber(LayoutPage page, LayoutLine line, [NotNullWhen(true)] out BandNumber? number)
+    {
+        number = PageNumberPatterns.TryParseOfTotal(line.Text, out int printed, out int total)
+            ? new BandNumber(page, line, line.Box.CenterY / page.Height, printed, total)
+            : null;
+        return number is not null;
+    }
+
+    private static bool IsPageNumberSequence(List<BandNumber> group, int pageCount, double positionTolerance)
+    {
+        if (group.Count < 2)
+        {
+            return false;
+        }
+
+        double minY = group.Min(n => n.RelativeY);
+        double maxY = group.Max(n => n.RelativeY);
+        int offset = group[0].Printed - group[0].Page.Number;
+        return maxY - minY <= positionTolerance
+            && group.All(n => n.Total == pageCount && n.Printed - n.Page.Number == offset);
     }
 
     private static void RemoveRunningArtifacts(
@@ -321,6 +404,8 @@ public sealed class ArtifactRemovalStage : IPipelineStage
         string Fingerprint,
         bool IsPageNumber,
         int PrintedNumber);
+
+    private sealed record BandNumber(LayoutPage Page, LayoutLine Line, double RelativeY, int Printed, int Total);
 
     private sealed class Cluster(LineZone zone, double relativeY, string fingerprint)
     {

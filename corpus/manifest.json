@@ -65,7 +65,8 @@
           "positionTolerance": 0.02,
           "similarity": 0.85,
           "splitOddEven": true,
-          "removePageNumbers": true
+          "removePageNumbers": true,
+          "pageNumberBandRatio": 0.15
         },
         "layout": {
           "lineOverlapRatio": 0.5,
