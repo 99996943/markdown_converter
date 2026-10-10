@@ -1,0 +1,157 @@
+using System.Globalization;
+using System.Text;
+using LegalAgent.Downloads.Model;
+
+namespace LegalAgent.Downloads;
+
+/// <summary>Downloads a list of PDF documents in parallel into the output directory (contracts/library-api.md).</summary>
+public sealed class DocumentDownloader
+{
+    /// <summary>File name of the manifest in the output directory.</summary>
+    public const string ManifestFileName = "manifest.json";
+
+    private readonly HttpClient httpClient;
+    private readonly DownloadOptions options;
+
+    /// <summary>Creates the downloader.</summary>
+    /// <param name="httpClient">Client without automatic redirects and with an infinite timeout.</param>
+    /// <param name="options">Download options.</param>
+    /// <exception cref="ArgumentException">The options are invalid.</exception>
+    public DocumentDownloader(HttpClient httpClient, DownloadOptions options)
+    {
+        ArgumentNullException.ThrowIfNull(httpClient);
+        ArgumentNullException.ThrowIfNull(options);
+        options.Validate();
+        this.httpClient = httpClient;
+        this.options = options;
+    }
+
+    /// <summary>
+    /// Downloads all addresses, writes the manifest and, when everything succeeded, removes PDF files outside the
+    /// current set. Failures of single addresses are results, not exceptions.
+    /// </summary>
+    /// <param name="addresses">Addresses (valid according to <see cref="AddressValidator"/>).</param>
+    /// <param name="progress">Optional progress events.</param>
+    /// <param name="cancellationToken">Cancellation by the user.</param>
+    /// <returns>The run result.</returns>
+    /// <exception cref="ArgumentException">The list is empty or contains an invalid address.</exception>
+    /// <exception cref="DownloadDirectoryException">The output directory cannot be used.</exception>
+    public async Task<DownloadRun> DownloadAllAsync(
+        IReadOnlyList<Uri> addresses,
+        IProgress<DownloadEvent>? progress = null,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(addresses);
+        ValidateAddresses(addresses);
+        cancellationToken.ThrowIfCancellationRequested();
+
+        string directory = Path.GetFullPath(options.OutputDirectory);
+        CreateDirectory(directory);
+
+        IReadOnlyList<PlannedDownload> plan = FileNamePlanner.Plan(addresses);
+        var single = new SingleDownload(httpClient, options);
+        DownloadResult[] results = await Task.WhenAll(
+                plan.Select(item => DownloadOneAsync(single, item, directory, progress, cancellationToken)))
+            .ConfigureAwait(false);
+
+        string manifestPath = Path.Combine(directory, ManifestFileName);
+        WriteManifest(manifestPath, results);
+
+        // The manifest records what was cancelled; the caller still learns about the cancellation.
+        cancellationToken.ThrowIfCancellationRequested();
+
+        IReadOnlyList<string> removed = results.All(r => r.Status == DownloadStatus.Downloaded)
+            ? DirectoryCleaner.RemoveStale(directory, plan.Select(p => p.FileName))
+            : [];
+        return new DownloadRun(results, removed, manifestPath);
+    }
+
+    private static void WriteManifest(string manifestPath, IReadOnlyList<DownloadResult> results)
+    {
+        string part = manifestPath + ".part";
+        try
+        {
+            File.WriteAllText(part, DownloadManifestJson.Serialize(results), new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+            File.Move(part, manifestPath, overwrite: true);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            TryDelete(part);
+            throw new DownloadDirectoryException($"Nie można zapisać manifestu {manifestPath}: {e.Message}", e);
+        }
+    }
+
+    private static void TryDelete(string path)
+    {
+        try
+        {
+            File.Delete(path);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            // The leftover is removed by the next successful run (research R9).
+        }
+    }
+
+    private static async Task<DownloadResult> DownloadOneAsync(
+        SingleDownload single,
+        PlannedDownload item,
+        string directory,
+        IProgress<DownloadEvent>? progress,
+        CancellationToken cancellationToken)
+    {
+        // Yield first so that every download starts before any of them blocks the caller.
+        await Task.Yield();
+        progress?.Report(new DownloadEvent(item.Index, item.Address, DownloadEventKind.Started, null));
+        DownloadResult result;
+        try
+        {
+            result = await single.RunAsync(item, directory, cancellationToken).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            result = new DownloadResult
+            {
+                Index = item.Index,
+                Address = item.Address,
+                FileName = item.FileName,
+                Status = DownloadStatus.Failed,
+                Error = new DownloadError(DownloadErrorKind.Cancelled, "przerwano przez użytkownika"),
+            };
+        }
+
+        progress?.Report(new DownloadEvent(item.Index, item.Address, DownloadEventKind.Finished, result));
+        return result;
+    }
+
+    private void ValidateAddresses(IReadOnlyList<Uri> addresses)
+    {
+        if (addresses.Count == 0)
+        {
+            throw new ArgumentException("Lista adresów jest pusta.", nameof(addresses));
+        }
+
+        IReadOnlyList<AddressCheck> checks = AddressValidator.CheckAll([.. addresses.Select(a => a.OriginalString)], options);
+        for (int i = 0; i < checks.Count; i++)
+        {
+            if (!checks[i].IsValid)
+            {
+                throw new ArgumentException(
+                    string.Create(CultureInfo.InvariantCulture, $"Adres {i + 1}: {checks[i].Message}"),
+                    nameof(addresses));
+            }
+        }
+    }
+
+    private static void CreateDirectory(string directory)
+    {
+        try
+        {
+            Directory.CreateDirectory(directory);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            throw new DownloadDirectoryException($"Nie można utworzyć katalogu pobrań {directory}: {e.Message}", e);
+        }
+    }
+}
