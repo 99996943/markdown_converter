@@ -236,7 +236,7 @@ wspólne dla wszystkich historyjek.
 kluczem i atrapą modelu z poprawnymi odpowiedziami daje 5 plików `.md`, `FAQ_mBank.md` zgodny z
 contracts/faq-file.md i kod 0.
 
-- [ ] T021 [P] [US1] Test (red) w `faqtests/FaqGeneratorTests.cs`:
+- [X] T021 [P] [US1] Test (red) w `faqtests/FaqGeneratorTests.cs`:
   - kolejno N zapytań kandydatów (D1…Dn), potem jedno zapytanie wyboru, bez równoległości (atrapa rejestruje,
     że drugie wywołanie zaczęło się po zakończeniu pierwszego);
   - komunikat użytkownika kroku kandydatów zawiera `Dokument D2: <Name>`, `Źródło: <Resource>` i pełny Markdown;
@@ -249,9 +249,9 @@ contracts/faq-file.md i kod 0.
     `SelectionFinished`, ze znakami i szacunkiem tokenów;
   - `GenerateAsync` wywołuje `CheckInput` przed pierwszym zapytaniem;
   - anulowanie tokenem w trakcie zapytania → `OperationCanceledException`.
-- [ ] T022 [US1] Implementacja `faq-lib/FaqGenerator.cs` (`GenerateAsync`: budowa `ChatHistory`, wywołania
+- [X] T022 [US1] Implementacja `faq-lib/FaqGenerator.cs` (`GenerateAsync`: budowa `ChatHistory`, wywołania
   `GetChatMessageContentsAsync`, parser, walidator, wynik, postęp). T021 zielony.
-- [ ] T023 [P] [US1] Test (red) w `faqtests/PromptTests.cs`. Wymagane elementy poleceń z contracts/model-exchange.md:
+- [X] T023 [P] [US1] Test (red) w `faqtests/PromptTests.cs`. Wymagane elementy poleceń z contracts/model-exchange.md:
   - kandydaci:
     - zakaz informacji spoza dokumentu;
     - fraza „Dokument nie rozstrzyga”;
@@ -263,14 +263,14 @@ contracts/faq-file.md i kod 0.
     - zakaz faktów spoza kandydatów;
     - wymóg `basedOn` i `sources`;
     - „po polsku”.
-- [ ] T024 [US1] Implementacja `faq-lib/FaqPrompts.cs`. T023 zielony.
-- [ ] T025 [P] [US1] Test (red) w `faqtests/UsageTests.cs`:
+- [X] T024 [US1] Implementacja `faq-lib/FaqPrompts.cs`. T023 zielony.
+- [X] T025 [P] [US1] Test (red) w `faqtests/UsageTests.cs`:
   - metadane `Usage` z `InputTokenCount`/`OutputTokenCount` albo `PromptTokens`/`CompletionTokens` są sumowane w
     `FaqResult.Usage` i przekazywane w zdarzeniach `*Finished`;
   - brak lub nieznany kształt metadanych → `null`, bez błędu.
-- [ ] T026 [US1] Implementacja `faq-lib/UsageReader.cs` (refleksja po nazwach właściwości obiektu metadanych,
+- [X] T026 [US1] Implementacja `faq-lib/UsageReader.cs` (refleksja po nazwach właściwości obiektu metadanych,
   bez zależności od typów OpenAI) i podłączenie w `FaqGenerator`. T025 zielony.
-- [ ] T027 [P] [US1] Test (red) w `faqtests/Conversion/DocumentSetConverterTests.cs`, na `DocumentSetConverter` z
+- [X] T027 [P] [US1] Test (red) w `faqtests/Conversion/DocumentSetConverterTests.cs`, na `DocumentSetConverter` z
   prawdziwym parserem (`AddLegalAgentPdfParser()`):
   - dla 5 `PdfSource` z syntetycznymi PDF-ami w katalogu tymczasowym powstają `<nazwa>.md` obok PDF-ów;
   - treść równa `PdfConversionResult.Markdown` z domyślnymi opcjami parsera (porównanie z bezpośrednim
@@ -281,10 +281,10 @@ contracts/faq-file.md i kod 0.
     kolejności dokumentu (także sekcje zagnieżdżone);
   - zdarzenia `Started`/`Converted` w kolejności indeksów;
   - istniejący `<nazwa>.md` jest nadpisywany, a po zapisie nie ma plików `*.tmp`.
-- [ ] T028 [US1] Implementacja `faq-lib/Conversion/DocumentSetConverter.cs` i `faq-lib/Conversion/UnitExtractor.cs`
+- [X] T028 [US1] Implementacja `faq-lib/Conversion/DocumentSetConverter.cs` i `faq-lib/Conversion/UnitExtractor.cs`
   (research R9: wstrzyknięty `IPdfMarkdownConverter`, konwersja kolejno, zapis atomowy `.tmp` +
   `File.Move(overwrite: true)`, jednostki rekurencyjnie z `LegalDocument.Sections`). T027 zielony.
-- [ ] T029 [P] [US1] Test (red) w `apptests/ModelTransportTests.cs`. Prawdziwy konektor przez
+- [X] T029 [P] [US1] Test (red) w `apptests/ModelTransportTests.cs`. Prawdziwy konektor przez
   `ChatServiceFactory` z `AppHost.ModelHandler` = `FakeHttpHandler` zwracającym odpowiedź chat completions
   (JSON w `choices[0].message.content`, `usage`):
   - żądanie idzie na `{Endpoint}openai/deployments/{Deployment}/chat/completions`;
@@ -293,11 +293,11 @@ contracts/faq-file.md i kod 0.
     `temperature: 0`, `seed: 42` i limit tokenów 4096;
   - przy `Temperature: null` pole `temperature` nie jest wysyłane;
   - odpowiedź trafia do `FaqGenerator` jako tekst, a zużycie jako metadane.
-- [ ] T030 [US1] Implementacja `app/ChatServiceFactory.cs` (research R7: `AzureOpenAIClient` z `ApiKeyCredential`,
+- [X] T030 [US1] Implementacja `app/ChatServiceFactory.cs` (research R7: `AzureOpenAIClient` z `ApiKeyCredential`,
   `AzureOpenAIClientOptions` z `NetworkTimeout`, `RetryPolicy` bez ponowień, `Transport` na `HttpClient` z
   `ModelHandler`; `AzureOpenAIChatCompletionService`; fabryka `PromptExecutionSettings` z
   `ChatResponseFormat.CreateJsonSchemaFormat(..., jsonSchemaIsStrict: true)`). T029 zielony.
-- [ ] T031 [US1] Test (red) w `apptests/FaqFlowTests.cs`, pełny przebieg `RunAsync` (z dawnym T033):
+- [X] T031 [US1] Test (red) w `apptests/FaqFlowTests.cs`, pełny przebieg `RunAsync` (z dawnym T033):
   - 5 adresów `--url`, PDF-y z `TestPdfs`, `FakeKeyInput` (konsola, klucz „test-key”), atrapa modelu z 5
     odpowiedziami kandydatów i 1 wyboru;
   - wynik: kod 0, 5 plików `.md` w katalogu pobrań, `FAQ_mBank.md` w `Faq:OutputDirectory` równy tekstowi z
@@ -316,7 +316,7 @@ contracts/faq-file.md i kod 0.
   - dostosuj istniejące testy spec 005 w `apptests/`: scenariusze oczekujące kodu 0 po pobraniu serwują PDF-y z
     `TestPdfs` i mają atrapę modelu z poprawnymi odpowiedziami; scenariusze kodów 2/3/4/130 bez zmian (opisz w
     commicie).
-- [ ] T032 [US1] Implementacja `app/FaqStage.cs`:
+- [X] T032 [US1] Implementacja `app/FaqStage.cs`:
   - `CheckInput` → klucz → `GenerateAsync` → `Render` → zapis;
   - stałe aplikacji: nazwa `FAQ_mBank.md`, tytuł, opis;
   - podłączenie etapów w `app/Program.cs` po udanym pobraniu: mapowanie `DownloadRun.Results` → `PdfSource`,
@@ -475,7 +475,7 @@ nie dotyka klucza.
 **Independent Test**: test z atrapą `az` na `PATH` sprawdza tworzenie, drugie uruchomienie bez `create`, brak
 `keys list` i kody błędów.
 
-- [ ] T062 [US4] Test (red) w `apptests/AzureScriptTests.cs`. Uruchamia `bash scripts/azure/create-openai.sh` z
+- [X] T062 [US4] Test (red) w `apptests/AzureScriptTests.cs`. Uruchamia `bash scripts/azure/create-openai.sh` z
   katalogu repozytorium (ścieżka przez `AppContext.BaseDirectory` w górę do `LegalAgent.slnx`). Atrapa `az` to
   skrypt Bash w katalogu tymczasowym na początku `PATH`: zapisuje argumenty do pliku logu i zwraca odpowiedzi
   sterowane zmiennymi `FAKE_AZ_*`. Przypadki z contracts/azure-script.md:
@@ -493,7 +493,7 @@ nie dotyka klucza.
   - błąd `az` w `account create` → kod 5.
 
   Bez `bash` w `PATH` test jest pomijany: `Assert.SkipUnless(…, "bash not available")`.
-- [ ] T063 [US4] Implementacja `scripts/azure/create-openai.sh` według contracts/azure-script.md:
+- [X] T063 [US4] Implementacja `scripts/azure/create-openai.sh` według contracts/azure-script.md:
   `#!/usr/bin/env bash`, `set -euo pipefail`, `--help`, parametry z wartościami domyślnymi, nazwa domyślna z
   `az account show --query id -o tsv | sha256sum | cut -c1-8`, z możliwością użycia `shasum -a 256` na macOS.
   Plik wykonywalny w git: `git update-index --chmod=+x scripts/azure/create-openai.sh`. T062 zielony.
