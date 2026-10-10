@@ -43,13 +43,15 @@ Jedna solucja `LegalAgent.slnx`:
 |---------|------|
 | `src/mBank.FaqGenerator` | **aplikacja zadania**: argumenty, konfiguracja, klucz API, konsola, kody wyjścia |
 | `src/LegalAgent.Downloads` | biblioteka pobierania listy PDF-ów (hosty, przekierowania, limity, zapis atomowy, manifest) |
-| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown |
-| `src/LegalAgent.Faq` | biblioteka konwersji zestawu PDF-ów i generowania FAQ (dwa kroki, walidacja, renderer OKF) |
+| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown ([zasada działania](src/LegalAgent.PdfParser/README.md)) |
+| `src/LegalAgent.Faq` | biblioteka konwersji zestawu PDF-ów i generowania FAQ (dwa kroki, weryfikacja, renderer OKF) ([zasada działania i weryfikacji](src/LegalAgent.Faq/README.md)) |
 | `src/LegalAgent.PdfParser.Cli` | CLI parsera (`legalagent-pdf`: `convert`, `chunk`) |
-| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG |
-| `src/LegalAgent.Corpus`, `src/LegalAgent.Corpus.Cli` | generator syntetycznego korpusu dokumentów bankowych |
+| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG ([zasada działania](src/LegalAgent.Chunking/README.md)) |
+| `src/LegalAgent.Corpus`, `src/LegalAgent.Corpus.Cli` | generator syntetycznego korpusu dokumentów bankowych ([zasada działania](src/LegalAgent.Corpus/README.md)) |
 | `scripts/azure/create-openai.sh` | utworzenie zasobu i wdrożenia Azure OpenAI |
 | `tests/*` | osobny projekt testów dla każdej biblioteki i aplikacji |
+
+Każda biblioteka ma własne `README.md` z opisem zasady działania.
 
 Biblioteki są ogólne: nie znają mBanku ani Azure (adresy, hosty, tytuł FAQ i konektor modelu należą do aplikacji).
 
