@@ -504,20 +504,20 @@ nie dotyka klucza.
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 
-- [ ] T064 [P] README: nowa sekcja „Generowanie FAQ” po „Pobieraniu regulaminów” (zasada VII, FR-444):
+- [X] T064 [P] README: nowa sekcja „Generowanie FAQ” po „Pobieraniu regulaminów” (zasada VII, FR-444):
   - utworzenie zasobu skryptem; ostrzeżenie o statusie Deprecated `gpt-4o-mini` i jak wybrać inny model (R1);
   - konfiguracja `AzureOpenAI`/`Faq` (`appsettings.Local.json`, zmienne);
   - klucz: konsola z gwiazdkami albo potok, nigdy plik ani zmienna;
   - przebieg i pliki wynikowe; kody 0–7/130;
   - usunięcie zasobów (`az group delete`);
   - uruchamianie nowych testów.
-- [ ] T065 [P] `CLAUDE.md`, sekcja „What this is” i „Commands”:
+- [X] T065 [P] `CLAUDE.md`, sekcja „What this is” i „Commands”:
   - `LegalAgent.Faq` (dwa kroki, walidacja, renderer OKF, zależność tylko od SK Abstractions);
   - etapy aplikacji;
   - skrypt Azure;
   - atrapy w testach (`FakeChatCompletionService`, `FakeKeyInput`, atrapa `az`);
   - klucz nigdy w konfiguracji.
-- [ ] T066 Walidacja:
+- [X] T066 Walidacja:
   - `dotnet build LegalAgent.slnx -c Release` bez ostrzeżeń;
   - `dotnet test LegalAgent.slnx --filter "Category!=Performance"` zielone;
   - `LEGALAGENT_PRIVATE_CORPUS=tests/LegalAgent.PdfParser.Tests/Corpus/private` — pełny zestaw parsera
@@ -532,7 +532,7 @@ nie dotyka klucza.
   - `az group delete`.
 
   Wymaga klucza i adresów od właściciela. Jeśli niedostępne, zapisz jako otwarte w handoffie.
-- [ ] T068 Handoff „Stan prac i przekazanie” na końcu `specs/006-faq-generation/plan.md`:
+- [X] T068 Handoff „Stan prac i przekazanie” na końcu `specs/006-faq-generation/plan.md`:
   - zrobione zadania, walidacja, odstępstwa od planu, decyzje w trakcie, otwarte punkty;
   - w tym: odsetek odrzuceń walidacji jednostek na prawdziwych danych, 429, model;
   - aktualizacja pamięci projektu.

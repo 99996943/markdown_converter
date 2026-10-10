@@ -226,3 +226,65 @@ README.md, CLAUDE.md                         # sekcje FAQ i Azure
 ## Complexity Tracking
 
 Brak odstępstw (zasady III i V objęte konstytucją 1.4.0).
+
+## Stan prac i przekazanie (T068, 2026-10-10)
+
+**Zrobione**: zadania T001–T066 i T068 (`tasks.md`), gałąź `006-faq-generation` (od niescalonej
+`005-regulation-download`, niewypchnięta). Przed implementacją: poprawka konstytucji 1.4.0 (zasada III — wyjątek dla
+treści z modelu i `timestamp`; zasada V — sekret z konsoli lub przekierowanego wejścia), Constitution Check bez
+odstępstw. Każda zmiana zachowania jako para commitów red/green. Charakteryzacje (test przeszedł od razu, opisane w
+commitach): T044, T048, T054, T058, T060, więc T045, T049, T055, T059 i T061 bez zmian w kodzie.
+
+- Biblioteka `LegalAgent.Faq` 1.0.0: `Conversion/DocumentSetConverter` (kolejno, zapis atomowy, błędy parsera,
+  `IsComplete == false` i Markdown bez tekstu → `ConversionFailure`, sprzątanie `*.md` po 5/5), `UnitExtractor`,
+  `FaqGenerator` (`CheckInput`, kandydaci D1…Dn kolejno, wybór), `FaqPrompts`, `FaqResponseParser` (ścisły JSON),
+  `FaqResponseValidator`, `UnitMatcher`, `UsageReader`, `ServiceErrorMapper`, `FaqMarkdownRenderer` (ręczny YAML),
+  `FaqSchemas`. Zależność: tylko `Microsoft.SemanticKernel.Abstractions` 1.80.1.
+- Aplikacja: `AppHost` zamiast parametru `handler`, sekcje `AzureOpenAI`/`Faq` sprawdzane przed pytaniami o adresy,
+  `ApiKey` w konfiguracji → kod 2; `--faq-output`; `FaqStage` (rozmiar → klucz → generowanie → atomowy zapis
+  `FAQ_mBank.md`); `KeyPrompt` (gwiazdki, Backspace, ponowne pytanie, Ctrl+C jako klawisz → 130, przekierowane wejście);
+  `ConsoleKeyInput`; `SecretRedactor`; `ChatServiceFactory` (bez ponowień, `NetworkTimeout`, `json_schema` strict);
+  komunikaty i kody 4/5/6/7 z contracts/cli.md; pomoc z kodami 0–7/130.
+- Skrypt `scripts/azure/create-openai.sh` (wykonywalny, LF) — zrobiony przez agenta Sonnet w worktree, przejrzany i
+  przeniesiony (T062/T063).
+- Testy: `tests/LegalAgent.Faq.Tests` (120) i `tests/mBank.FaqGenerator.Tests` (145, w tym 8 `AzureScriptTests` z
+  atrapą `az`, wykonane w Git Bash), bez sieci i bez Azure.
+- README (sekcja „Generowanie FAQ”), `CLAUDE.md`.
+
+**Walidacja (T066)**: `dotnet build LegalAgent.slnx -c Release` bez ostrzeżeń; `dotnet test LegalAgent.slnx
+--filter "Category!=Performance"` — 1862 zaliczone, 8 pominiętych, 0 błędów; `Category=Performance` — 4/4.
+`LEGALAGENT_PRIVATE_CORPUS` (ścieżka bezwzględna; względna nie działa) — parser 950/951; jedyny błąd to test
+114 stron uruchomiony razem z całym projektem (znane obciążenie, osobno przechodzi). Parser i jego goldeny bez zmian.
+Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimkolwiek żądaniem (brak katalogu
+`downloads`), `FAQGEN__AzureOpenAI__ApiKey` → `--help` 0, uruchomienie 2 bez wypisania wartości.
+
+**Odstępstwa od planu i decyzje w trakcie**:
+
+- `Microsoft.Extensions.DependencyInjection` nie jest referencją aplikacji: konektor SK 1.80.1 wymaga ≥ 10.0.2, a
+  przypięte 9.0.20 dawało NU1605 (obniżenie). DI 10.0.2 przychodzi przechodnio; przechodnio jest też
+  `Azure.AI.OpenAI` **2.9.0-beta.1** (wersja beta wybrana przez konektor).
+- Ostrzeżenie parsera w testach to `IMG001_ImagesIgnored` (obraz w syntetycznym PDF-ie) zamiast `TBL001` — tabeli w
+  formacie zastępczym nie da się łatwo wywołać syntetycznie (tasks.md dopuszczał zamiennik).
+- Modele konwersji w jednym pliku `Conversion/Model/ConversionModels.cs`.
+- Zużycie łączne: `null`, gdy którekolwiek zapytanie nie podało zużycia (częściowa suma byłaby myląca).
+- Opis w nagłówku FAQ liczony z wyniku (forma liczebnika), dla 10/5 równy tekstowi z kontraktu.
+- Liczebniki: „1 kandydat”, poza tym „N kandydatów”; „strona/strony/stron”, „znak/znaki/znaków”, „pytanie/pytania/pytań”.
+- Błędy nieoczekiwane po wpisaniu klucza zgłasza `FaqStage` (kod 1, z `SecretRedactor`); `Program` nigdy nie widzi klucza.
+- Testy spec 005 z kodem 0 serwują syntetyczne regulaminy; `SummaryTests` używa PDF-ów dopełnionych do badanych
+  rozmiarów (20 KB, 24 KB zamiast 512 B i 1 KB, które nie pomieszczą PDF-u), formaty B/KB testuje teoria `FormatSize`.
+- Atrapa modelu w `AppHarness` ma domyślną poprawną odpowiedź (`Fallback`), więc każdy test aplikacji przechodzi
+  etap FAQ bez skryptu.
+- Skrypt: sprawdzenie modelu przez `model list --query "[].[model.name,model.version,join(',',model.skus[].name)]"`
+  (zapytanie JMESPath niesprawdzone na prawdziwym `az`); kod 5 także przy błędzie `model list`.
+
+**Otwarte / do wiadomości**:
+
+- **T067 (ręcznie, wymaga Azure i adresów)**: skrypt na subskrypcji właściciela (czy `gpt-4o-mini` da się wdrożyć),
+  pełny przebieg na 5 prawdziwych regulaminach, gwiazdki przy wklejaniu na Windows, klucz potokiem, ocena 10
+  odpowiedzi (SC-074), `az group delete`. Nic z tego nie było uruchomione — właściciel: „nie będziesz miał połączenia
+  azure, testy zrobimy później”.
+- Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek (model może podawać „§ 12 ust. 3” — pasuje —
+  albo nazwy spoza nagłówków — odrzucenie, kod 7), zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
+  zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
+  `SetNewMaxCompletionTokensEnabled` nieustawione).
+- Gałąź do wypchnięcia i PR (najpierw scalenie 005).
