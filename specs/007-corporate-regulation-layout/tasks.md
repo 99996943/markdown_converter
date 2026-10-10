@@ -130,9 +130,9 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
   nagłówek z całym wierszem, oznaczenie „§ 3”, tytuł nie trafia do treści
 - [X] T023 [US1] `LegalHeading` bez podziału reszty, gdy oznaczenie i reszta są pogrubione, tekst ciągły nie, a wiersz
   jest odosobniony lub wyśrodkowany (green T022) w `HeadingDetectionStage.cs`
-- [ ] T024 [P] [US1] Replika R1b (red): „§ 5” bezpośrednio nad ≥ 3 dwukomórkowymi wierszami bez siatki, które zostają
+- [X] T024 [P] [US1] Replika R1b (red): „§ 5” bezpośrednio nad ≥ 3 dwukomórkowymi wierszami bez siatki, które zostają
   tabelą (np. tabela danych) → „§ 5” nie jest wierszem tabeli
-- [ ] T025 [US1] Osłona w `TableDetectionStage.cs`: w regionach bez siatki wiersz pasujący do oznaczenia jednostki
+- [X] T025 [US1] Osłona w `TableDetectionStage.cs`: w regionach bez siatki wiersz pasujący do oznaczenia jednostki
   (także gołego) nie jest dołączany nad ziarnem, a region jest przed nim cięty; siatki i tabele-dokumenty bez zmian
   (green T024)
 - [ ] T026 [US1] Pełna kontrola regresji (FR-534); miara `ParagraphText` = 0 w D-A…D-D (SC-081); goldeny aktów bez

@@ -342,6 +342,10 @@ public sealed class TableDetectionStage : IPipelineStage
         ListLabelPatterns.TryMatch(text + " x", out ListLabelMatch? label)
         && label.Kind is ListLabelKind.Bullet or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
 
+    /// <summary>A single-cell line holding a legal unit designation („§ 5”, „§ 3. Tytuł”, „Art. 5.”).</summary>
+    private static bool IsUnitLine(Row row) =>
+        !row.IsMulti && LegalUnitPatterns.TryMatch(row.Line.Text, out LegalUnitMatch? unit) && unit.Kind is SectionKind.Paragraph or SectionKind.Article;
+
     /// <summary>A „1.”, „1/” or „a/” label set close before the text it introduces.</summary>
     private static bool IsHangingLabelBefore(LineSegment label, LineSegment text)
     {
@@ -400,6 +404,17 @@ public sealed class TableDetectionStage : IPipelineStage
             return null;
         }
 
+        // Spec 007 (C2): without a grid, a unit designation on a line of its own („§ 5”) is never a row — the region ends
+        // before it.
+        if (!grid.Contains(region[0].Line.Box.CenterY))
+        {
+            int unit = region.FindIndex(1, r => IsUnitLine(r));
+            if (unit > 0)
+            {
+                region = region.GetRange(0, unit);
+            }
+        }
+
         // Likewise a gridless table starts at its bold column-name row: multi-cell lines above it (numbered clauses
         // with a hanging indent) are running text, so the seed moves on to the header.
         if (!region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
@@ -429,7 +444,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 || row.IsAllBold
                 || region[0].Cells.Count < 2
                 || row.Cells[^1].Box.Right <= region[0].Cells[1].Box.Left;
-            if (row.IsMulti || gap <= 0 || !belongs || !headerLine)
+            if (row.IsMulti || gap <= 0 || !belongs || !headerLine || (!seedInGrid && IsUnitLine(row)))
             {
                 break;
             }
