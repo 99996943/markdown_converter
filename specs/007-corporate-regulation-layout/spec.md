@@ -65,6 +65,12 @@ osobnym akapitem, a „§ 5” nie jest nagłówkiem. W słowniczku definicje mi
 - Zakres (decyzja właściciela): **(a)** — etykiety w wysuniętej kolumnie i paragrafy „§ N”. Spis treści z kropkami,
   numery stron „N/M” w tekście i fałszywe nagłówki z wierszy tabel są poza zakresem (US5, opcjonalnie).
 - Biblioteka nie zna mBanku: reguły opisują układ strony, nie nazwy dokumentów ani wydawcę.
+- Q: Jak zapisać w Markdownie definicję ze słowniczka (numerowany termin w lewej kolumnie, definicja w prawej)? → A:
+  jeden element listy — etykieta, pogrubiony termin i od razu definicja (`- 1/ **administrator (kontroler)** osoba
+  fizyczna, którą Klient wskazał…`), bez dopisanych znaków; wyliczenie z definicji zagnieżdżone pod elementem.
+- Q: Czy na 11 pozostałych dokumentach mBanku dopuszczamy zmiany Markdown, jeśli miary się nie pogarszają? → A: 5
+  dokumentów detalicznych (zestaw prezentacji): każda różnica wymaga akceptacji właściciela; 6 dokumentów dla firm:
+  wystarczy, że żadna miara się nie pogarsza (różnice przegląda wykonawca i zapisuje w handoffie).
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -154,8 +160,10 @@ punkt odniesienia) i `verify` korpusu syntetycznego.
 
 1. **Given** goldeny parsera i korpus syntetyczny, **When** pełne testy, **Then** bez zmian (albo zmiany pokazane
    właścicielowi i przez niego zatwierdzone).
-2. **Given** 11 dokumentów mBanku spoza D-A…D-D, **When** konwersja, **Then** żadna miara z tabeli pomiaru nie
-   pogarsza się, a różnice w Markdown są przejrzane.
+2. **Given** 5 dokumentów detalicznych (zestaw prezentacji), **When** konwersja, **Then** Markdown jest identyczny z
+   punktem odniesienia albo każdą różnicę zaakceptował właściciel.
+3. **Given** 6 pozostałych dokumentów dla firm spoza D-A…D-D, **When** konwersja, **Then** żadna miara z tabeli
+   pomiaru nie pogarsza się, a różnice w Markdown są przejrzane i zapisane w handoffie.
 
 ---
 
@@ -213,8 +221,10 @@ zostanie czas przed zamrożeniem (patrz Założenia).
 **Słowniczek**
 
 - **FR-520**: W obszarze, w którym lewa kolumna zawiera numerowany, pogrubiony termin, a prawa wielowierszową
-  definicję, każdy termin z definicją MUSI być jednym elementem listy: etykieta, termin (pogrubiony jak w źródle),
-  potem pełna definicja; definicja zaczynająca się wyżej niż termin nie może zostać rozdzielona.
+  definicję, każdy termin z definicją MUSI być jednym elementem listy w jednym wierszu Markdown: etykieta, termin
+  (pogrubiony jak w źródle), spacja i pełna definicja — np. `- 1/ **administrator (kontroler)** osoba fizyczna, którą
+  Klient wskazał…` — bez dopisanych znaków (np. „–”); definicja zaczynająca się wyżej niż termin nie może zostać
+  rozdzielona.
 - **FR-521**: Wyliczenia wewnątrz definicji MUSZĄ być zagnieżdżone pod jej elementem.
 
 **Ogólność i regresja**
@@ -254,7 +264,8 @@ zostanie czas przed zamrożeniem (patrz Założenia).
   (dziś: m.in. „§ 5.”, „§ 7.”, „§ 10.” w D-D).
 - **SC-084**: Goldeny parsera, prywatny korpus właściciela i `verify` korpusu syntetycznego przechodzą bez zmian albo
   z różnicami zatwierdzonymi przez właściciela.
-- **SC-085**: W 11 pozostałych dokumentach mBanku żadna miara z tabeli pomiaru wyjściowego nie rośnie.
+- **SC-085**: W 5 dokumentach detalicznych Markdown jest identyczny z punktem odniesienia albo różnice są zaakceptowane
+  przez właściciela; w 6 pozostałych dokumentach dla firm żadna miara z tabeli pomiaru wyjściowego nie rośnie.
 - **SC-086**: (US3) W słowniczkach D-A…D-D każda definicja jest jednym elementem zaczynającym się swoim terminem.
 
 ## Assumptions
