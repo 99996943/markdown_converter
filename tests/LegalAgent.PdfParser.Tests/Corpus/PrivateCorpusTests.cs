@@ -15,12 +15,16 @@ namespace LegalAgent.PdfParser.Tests.Corpus;
 /// table to that file path (<c>1</c> means <c>layout-metrics.md</c> in the private directory). The untracked
 /// <c>layout-labels.txt</c> next to the PDFs lists the documents of the hanging-label layout with their SC-080 limits
 /// (<c>name;maxTbl001;maxPipeRows</c>); <see cref="LabelLayoutDocuments_MeetTheirLimits"/> checks them.
+/// Spec 008 (T005): when the untracked files exist, the report also lists the frame measures (<c>frame-phrases.txt</c>,
+/// <c>document;phrase</c>) and the word-set and unit-heading differences against <c>baseline-008/*.expected.md</c>.
 /// </remarks>
 public sealed class PrivateCorpusTests
 {
     private const string Variable = "LEGALAGENT_PRIVATE_CORPUS";
     private const string ReportVariable = "LEGALAGENT_CORPUS_REPORT";
     private const string LabelLayoutList = "layout-labels.txt";
+    private const string FramePhrases = "frame-phrases.txt";
+    private const string BaselineDirectory = "baseline-008";
 
     private static readonly Dictionary<string, Task<IReadOnlyList<Converted>>> Conversions = new(StringComparer.Ordinal);
 
@@ -34,7 +38,7 @@ public sealed class PrivateCorpusTests
         if (Environment.GetEnvironmentVariable(ReportVariable) is { Length: > 0 } report)
         {
             string path = report == "1" ? Path.Combine(directory, "layout-metrics.md") : report;
-            await File.WriteAllTextAsync(path, MeasureTable(documents), TestContext.Current.CancellationToken);
+            await File.WriteAllTextAsync(path, MeasureTable(directory, documents), TestContext.Current.CancellationToken);
         }
 
         foreach (Converted document in documents)
@@ -144,16 +148,86 @@ public sealed class PrivateCorpusTests
         return documents;
     }
 
-    private static string MeasureTable(IReadOnlyList<Converted> documents)
+    private static string MeasureTable(string directory, IReadOnlyList<Converted> documents)
     {
-        var table = new StringBuilder("| Dokument | TBL001 | Wiersze „ \\| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” |\n|---|---|---|---|---|---|---|\n");
+        Dictionary<string, List<string>> frames = LoadFramePhrases(Path.Combine(directory, FramePhrases));
+        string baselineDirectory = Path.Combine(directory, BaselineDirectory);
+        var table = new StringBuilder("| Dokument | TBL001 | Wiersze „ \\| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” | Akapity „N/M” | „a.”/„i.” poza listą | Ramki jako tabela | Ramki wplecione |\n|---|---|---|---|---|---|---|---|---|---|---|\n");
         foreach (Converted document in documents)
         {
-            LayoutMeasures m = LayoutMetrics.Measure(document.Result.Markdown, document.Result.Report);
-            table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {m.Tbl001} | {m.PipeRows} | {m.LooseLabelRows} | {m.ParagraphText} | {m.TocHeadings} | {m.PageFooters} |\n");
+            string markdown = document.Result.Markdown;
+            LayoutMeasures m = LayoutMetrics.Measure(markdown, document.Result.Report);
+            string asTable = "-";
+            string woven = "-";
+            if (frames.TryGetValue(Path.GetFileNameWithoutExtension(document.Name), out List<string>? phrases))
+            {
+                asTable = LayoutMetrics.FramesAsTable(markdown, phrases).ToString(CultureInfo.InvariantCulture);
+                woven = LayoutMetrics.FramesWoven(markdown, phrases).ToString(CultureInfo.InvariantCulture);
+            }
+
+            table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {m.Tbl001} | {m.PipeRows} | {m.LooseLabelRows} | {m.ParagraphText} | {m.TocHeadings} | {m.PageFooters} | {LayoutMetrics.PageNumberParagraphs(markdown)} | {LayoutMetrics.DotEnumLabelsOutsideList(markdown)} | {asTable} | {woven} |\n");
+        }
+
+        if (Directory.Exists(baselineDirectory))
+        {
+            table.Append("\n## Zbiory słów i nagłówki jednostek vs baseline-008\n\n");
+            table.Append("| Dokument | Utracone słowa | Nowe słowa | Nagłówki jednostek: utracone | Nagłówki jednostek: nowe |\n|---|---|---|---|---|\n");
+            var details = new StringBuilder();
+            foreach (Converted document in documents)
+            {
+                string baseline = Path.Combine(baselineDirectory, Path.GetFileNameWithoutExtension(document.Name) + ".expected.md");
+                if (!File.Exists(baseline))
+                {
+                    continue;
+                }
+
+                string before = File.ReadAllText(baseline).Replace("\r\n", "\n", StringComparison.Ordinal);
+                SetDiff words = LayoutMetrics.WordSetDiff(before, document.Result.Markdown);
+                SetDiff headings = LayoutMetrics.UnitHeadingDiff(before, document.Result.Markdown);
+                table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {words.Lost.Count} | {words.New.Count} | {headings.Lost.Count} | {headings.New.Count} |\n");
+                if (words.Lost.Count + words.New.Count + headings.Lost.Count + headings.New.Count > 0)
+                {
+                    details.Append(CultureInfo.InvariantCulture, $"- {document.Name}: lost words [{string.Join(", ", words.Lost.Take(40))}], new words [{string.Join(", ", words.New.Take(40))}], lost headings [{string.Join("; ", headings.Lost.Take(20))}], new headings [{string.Join("; ", headings.New.Take(20))}]\n");
+                }
+            }
+
+            if (details.Length > 0)
+            {
+                table.Append('\n').Append(details);
+            }
         }
 
         return table.ToString();
+    }
+
+    /// <summary>Reads <c>frame-phrases.txt</c> (<c>document;phrase</c>, <c>#</c> comments); empty when the file is missing.</summary>
+    private static Dictionary<string, List<string>> LoadFramePhrases(string path)
+    {
+        var frames = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+        if (!File.Exists(path))
+        {
+            return frames;
+        }
+
+        foreach (string line in File.ReadAllLines(path))
+        {
+            int separator = line.IndexOf(';', StringComparison.Ordinal);
+            if (line.Length == 0 || line.StartsWith('#') || separator <= 0)
+            {
+                continue;
+            }
+
+            string name = line[..separator].Trim();
+            if (!frames.TryGetValue(name, out List<string>? list))
+            {
+                list = [];
+                frames[name] = list;
+            }
+
+            list.Add(line[(separator + 1)..].Trim());
+        }
+
+        return frames;
     }
 
     private sealed record Converted(string Path, string Name, PdfConversionResult Result);

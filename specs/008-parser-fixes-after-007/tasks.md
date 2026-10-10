@@ -26,10 +26,10 @@ stage'uj tylko jawne ścieżki (nigdy `git add -A`); trailer `Co-Authored-By: Cl
 
 ## Phase 1: Setup (punkt odniesienia)
 
-- [ ] T001 Skopiuj bieżące goldeny `tests/LegalAgent.PdfParser.Tests/Corpus/private/*.expected.md` (19 dokumentów,
+- [X] T001 Skopiuj bieżące goldeny `tests/LegalAgent.PdfParser.Tests/Corpus/private/*.expected.md` (19 dokumentów,
   stan po PR #10) do nieśledzonego `tests/LegalAgent.PdfParser.Tests/Corpus/private/baseline-008/`; sprawdź
   `git status`, że nic z `Corpus/private` nie jest śledzone, i że prywatny korpus jest zielony na starcie
-- [ ] T002 Utwórz nieśledzony plik `tests/LegalAgent.PdfParser.Tests/Corpus/private/frame-phrases.txt` z frazami
+- [X] T002 Utwórz nieśledzony plik `tests/LegalAgent.PdfParser.Tests/Corpus/private/frame-phrases.txt` z frazami
   lewych kolumn ramek (po jednej w wierszu, format `dokument;fraza`) dla firm-2 (15 ramek z research R4), firm-4 (3) i
   firm-5 (ok. 25) — odczytane z PDF-ów (nie z goldenów, bo tam są pocięte); plik nie trafia do git
 
@@ -37,7 +37,7 @@ stage'uj tylko jawne ścieżki (nigdy `git add -A`); trailer `Co-Authored-By: Cl
 
 ## Phase 2: Foundational (pomiar — blokuje wszystkie historie)
 
-- [ ] T003 [P] Testy (red) nowych miar w `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/LayoutMetricsTests.cs`:
+- [X] T003 [P] Testy (red) nowych miar w `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/LayoutMetricsTests.cs`:
   `PageNumberParagraphs` (akapit, którego cały tekst to „N/M”; „1/2 kwoty” i „- 1/ tekst” się nie liczą),
   `DotEnumLabelsOutsideList` (tokeny „a.”, „b.” … / „i.”, „ii.” … należące do spójnego ciągu ≥ 2, które nie zaczynają
   elementu listy — w tekście elementu po „:”/„,”, w akapicie, w komórce `a \| b`; „r.”, „np.”, samotne „a.” się nie
@@ -45,8 +45,8 @@ stage'uj tylko jawne ścieżki (nigdy `git add -A`); trailer `Co-Authored-By: Cl
   zmianie — miara fałszywych nagłówków do SC-091/SC-096), `FramesAsTable` / `FramesWoven` (fraza z listy ramek w wierszu tabeli GFM / wewnątrz elementu listy) oraz
   porównanie zbiorów słów `WordSetDiff(before, after)` (słowa bez interpunkcji i znaczników Markdown, wynik: utracone,
   nowe)
-- [ ] T004 Pomocnik (green T003) w `tests/LegalAgent.PdfParser.Tests/Fixtures/LayoutMetrics.cs`
-- [ ] T005 Raport w `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs`: przy `LEGALAGENT_CORPUS_REPORT`
+- [X] T004 Pomocnik (green T003) w `tests/LegalAgent.PdfParser.Tests/Fixtures/LayoutMetrics.cs`
+- [X] T005 Raport w `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs`: przy `LEGALAGENT_CORPUS_REPORT`
   dopisz do `layout-metrics.md` nowe kolumny miar i sekcję „zbiory słów vs baseline-008” (utracone / nowe słowa na
   dokument); wczytaj `frame-phrases.txt`, jeśli istnieje. Uruchom i zapisz wartości wyjściowe w handoffie planu
   (`specs/008-parser-fixes-after-007/plan.md`, „Stan prac i przekazanie”) — oczekiwane: „N/M” 35 (ind-2) / 6 (firm-1),

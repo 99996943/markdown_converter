@@ -154,6 +154,32 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
 - Znane ograniczenie (poza zakresem): `HeadingDetectionStage` łączy oznaczenie i tytuł jednostki kropką
   (`"{Designation}. {Title}"`) także wtedy, gdy w PDF jej nie ma — zachowanie kontraktu 001, dotyczy wielu goldenów.
 - 2026-10-10: tasks.md (T001–T046). Następny krok: `/speckit-implement` od T001 (Setup + Foundational + US1 = MVP).
+- 2026-10-10 (T001–T005, punkt odniesienia i miary): goldeny 19 dokumentów skopiowane do nieśledzonego
+  `Corpus/private/baseline-008/`; `frame-phrases.txt` (nieśledzony) z fraz lewych kolumn ramek odczytanych z PDF-ów
+  (firm-2: 14 niepustych pól + 2 puste pominięte, firm-4: 3, firm-5: 28; zagnieżdżone prostokąty wiersza w firm-4
+  scalone w jedną ramkę). Prywatny korpus zielony na starcie. Nowe miary w `Fixtures/LayoutMetrics.cs`
+  (`PageNumberParagraphs`, `DotEnumLabelsOutsideList`, `UnitHeadingDiff`, `FramesAsTable`, `FramesWoven`,
+  `WordSetDiff`; commity red 5e3d769 i green 6e087b1), raport w `PrivateCorpusTests` (nowe kolumny i sekcja „zbiory
+  słów i nagłówki jednostek vs baseline-008”; bez plików prywatnych nie zawodzi).
+  Wartości wyjściowe (tylko dokumenty z niezerową miarą nowych kolumn; po PR #10):
+
+  | Dokument | Akapity „N/M” (wszystkie „N/M”) | „a.”/„i.” poza listą | Ramki jako tabela / wplecione |
+  |---|---|---|---|
+  | mbank-corp-1 | 0 | 20 | – |
+  | mbank-corp-3 | 0 | 2 | – |
+  | mbank-corp-5 | 0 | 9 | – |
+  | mbank-firm-1 | 6 (6) | 0 | – |
+  | mbank-firm-2 | 0 | 0 | 3 / 1 |
+  | mbank-firm-4 | 0 | 0 | 2 / 0 |
+  | mbank-ind-2 | 16 (35) | 0 | – |
+
+  Zbiory słów i nagłówki jednostek vs baseline: zera we wszystkich 19 dokumentach (punkt odniesienia = bieżący stan).
+  Odchylenia od oczekiwań z tasks.md: (1) w ind-2 tylko 16 z 35 „N/M” to osobne akapity — pozostałe 19 jest wklejone na
+  końcu wierszy tekstu, listy lub przypisu (miara „N/M” = 35 jak dotąd; po US1 oba mają spaść do 0); (2) ramki firm-2
+  jako tabela / wplecione: 3 / 1 zamiast 7 / 6 — fraza z PDF jest w goldenie często pocięta („**Sprawdzamy Twoją**”) lub
+  sklejona z tekstem w jednym akapicie, więc miara oparta na całych frazach ich nie liczy; wartość służy jako
+  punkt odniesienia, nie jako oczekiwane 7 / 6. Miary ramek zerujemy w T041 przez oczekiwany wynik „akapit frazy +
+  lista”, a nie przez liczby z tej tabeli; (3) `UnitHeadingDiff` nie ma wartości wyjściowej (porównanie z samym sobą).
 
 ## Complexity Tracking
 
