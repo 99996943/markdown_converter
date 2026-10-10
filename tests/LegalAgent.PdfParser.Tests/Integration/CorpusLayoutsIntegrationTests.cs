@@ -1713,4 +1713,42 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("| Sprawa dotyczy podmiotu innego niż Bank | Umowa z podmiotem trzecim, wyciąg z rachunku, korespondencja |", md, StringComparison.Ordinal);
         Assert.DoesNotContain("#", md, StringComparison.Ordinal);
     }
+
+    /// <summary>
+    /// Spec 008, T015 (protective; research R2 near-miss in acts and dz-u-2026-823-reklamacje): „Art. 42.” in bold,
+    /// followed by regular text, directly below „3. (uchylony)” — same size, same <c>AllBold</c>, the line above ends
+    /// with „)”, the gap within 1.2 × leading and both at the margin. Only the bold designation word tells it apart from
+    /// a wrapped line: it stays an article heading.
+    /// </summary>
+    [Fact]
+    public async Task BoldArticleBelowARepealedUstep_StaysAHeading()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        void Article(double y, string designation, string text)
+        {
+            b.Text(Left, y, designation, Size, bold: true);
+            b.Text(Left + SyntheticPdfBuilder.TextWidth(designation + " ", Size, bold: true), y, text, Size);
+        }
+
+        b.Text(Left, 60, "USTAWA", 14, bold: true);
+        b.Text(Left, 80, "o służbie w urzędach administracji", 12, bold: true);
+        Article(110, "Art. 41.", "1. Urzędnik jest obowiązany przestrzegać przepisów prawa i sumiennie wykonywać");
+        b.Text(Left, 110 + Leading, "polecenia przełożonego w granicach swoich zadań służbowych.", Size);
+        b.Text(Left, 110 + (2 * Leading), "2. Urzędnik nie może podejmować zajęć sprzecznych z obowiązkami służbowymi.", Size);
+        b.Text(Left, 110 + (3 * Leading), "3. (uchylony)", Size);
+        double y = 110 + (3 * Leading) + (1.15 * Leading);
+        Article(y, "Art. 42.", "1. Dyrektor generalny urzędu zapewnia urzędnikom warunki do podnoszenia");
+        b.Text(Left, y + Leading, "kwalifikacji zawodowych i organizuje dla nich szkolenia.", Size);
+        b.Text(Left, y + (2 * Leading), "2. Szkolenia odbywają się w czasie pracy urzędnika.", Size);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t015.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("# Art. 41.\n", md, StringComparison.Ordinal);
+        Assert.Contains("# Art. 42.\n", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("(uchylony) Art. 42.", md, StringComparison.Ordinal);
+    }
 }
