@@ -41,6 +41,18 @@ public sealed class GroundingTests
         Assert.Equal("kandydat D1-K2: " + reasons, FaqGrounding.Problem(Candidate(unit, quote, answer), Markdown));
     }
 
+    [Theory]
+    [InlineData("Posiadacze rachunku wspólnego zgadzają się nieodwołalnie na to, aby każdy z nich mógł samodzielnie dysponować pieniędzmi na rachunku, wypowiedzieć umowę, odstąpić od umowy")]
+    [InlineData("każdy z nich mógł samodzielnie: a) dysponować pieniędzmi na rachunku, b) wypowiedzieć umowę")]
+    public void QuoteAcrossListItems_IgnoresLabels(string quote)
+    {
+        const string markdown =
+            "## 6. Rachunki wspólne\n\n- 6\\) Posiadacze rachunku wspólnego zgadzają się nieodwołalnie na to, aby każdy z nich mógł samodzielnie:\n"
+            + "  - a\\) dysponować pieniędzmi na rachunku,\n  - b\\) wypowiedzieć umowę,\n  - c\\) odstąpić od umowy.\n";
+
+        Assert.Null(FaqGrounding.Problem(Candidate("6", quote, "Każdy z posiadaczy."), markdown));
+    }
+
     [Fact]
     public void LongQuote_IsShortenedInProblem()
     {
