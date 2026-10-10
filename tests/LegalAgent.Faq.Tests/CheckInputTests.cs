@@ -14,6 +14,9 @@ public sealed class CheckInputTests
         new FaqGeneratorOptions { MaxDocumentTokens = 0 },
         new FaqGeneratorOptions { CharactersPerToken = 0 },
         new FaqGeneratorOptions { CharactersPerToken = double.NaN },
+        new FaqGeneratorOptions { MaxItemsPerDocument = 0 },
+        new FaqGeneratorOptions { MinItemsPerDocument = -1 },
+        new FaqGeneratorOptions { MinItemsPerDocument = 4, MaxItemsPerDocument = 3 },
     };
 
     [Theory]

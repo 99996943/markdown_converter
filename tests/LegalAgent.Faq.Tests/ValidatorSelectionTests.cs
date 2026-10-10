@@ -125,6 +125,32 @@ public sealed class ValidatorSelectionTests
             e.Problems);
     }
 
+    [Fact]
+    public void ItemsPerDocument_OutsideLimits_Rejected()
+    {
+        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
+            [Item(1), Item(2), Item(3) with { BasedOn = ["D2-K1", "D1-K3"] }],
+            Candidates,
+            3,
+            minPerDocument: 1,
+            maxPerDocument: 2));
+
+        Assert.Equal(["dokument D1: 3 pozycje (najwyżej 2)", "dokument D3: brak pozycji (co najmniej 1)"], e.Problems);
+    }
+
+    [Fact]
+    public void ItemsPerDocument_WithinLimits_Accepted()
+    {
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(
+            [Item(1), Item(2) with { BasedOn = ["D2-K1"] }, Item(3) with { BasedOn = ["D3-K1", "D2-K2"] }],
+            Candidates,
+            3,
+            minPerDocument: 1,
+            maxPerDocument: 2);
+
+        Assert.Equal(3, result.Count);
+    }
+
     private static ParsedItem Item(int i) =>
         new($"Pytanie końcowe {i}?", "Odpowiedź końcowa.", [i == 1 ? "D1-K1" : "D1-K2"]);
 }

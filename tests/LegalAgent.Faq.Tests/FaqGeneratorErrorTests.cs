@@ -118,6 +118,34 @@ public sealed class FaqGeneratorErrorTests
     }
 
     [Fact]
+    public async Task UnbalancedSelection_IsCorrected()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        int[] documentOf = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4];
+        ItemJson[] unbalanced =
+        [
+            .. documentOf.Select((d, i) => new ItemJson(
+                Invariant($"Pytanie końcowe {i + 1}?"),
+                "Odpowiedź końcowa.",
+                [Invariant($"D{d}-K{(i % 2) + 1}")])),
+        ];
+        chat.Respond(FaqJson.Selection(unbalanced)).Respond(FaqJson.Selection(10, 5));
+        var events = new List<FaqEvent>();
+
+        FaqResult result = await new FaqGenerator(chat, new FaqGeneratorOptions(), (_, _) => new PromptExecutionSettings())
+            .GenerateAsync(Documents(), new SyncProgress(events), TestContext.Current.CancellationToken);
+
+        Assert.Equal(10, result.Items.Count);
+        Assert.Equal(
+            "dokument D1: 4 pozycje (najwyżej 3); dokument D5: brak pozycji (co najmniej 1)",
+            Assert.Single(events, e => e.Kind == FaqEventKind.SelectionCorrection).Detail);
+    }
+
+    [Fact]
     public async Task SelectionNotJson_IsCorrectedOnce()
     {
         for (int i = 1; i <= 5; i++)

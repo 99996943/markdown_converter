@@ -597,6 +597,17 @@ zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokaza�
   `SelectionCorrection` (Detail = problemy), w konsoli „[wybór] odpowiedź odrzucona (…) — prośba o poprawkę…”.
   Błędy usługi nadal bez ponowień; krok kandydatów bez poprawki.
 
+Szósty przebieg: FAQ 10/10, 8 w pełni poprawnych, 2 z pominiętymi zastrzeżeniami (kogo dotyczy zasada), 0
+zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsługa 1, usługi płatnicze 0.
+
+- [ ] T067j Równowaga dokumentów w kroku wyboru: `FaqGeneratorOptions.MaxItemsPerDocument` (domyślnie 3, ≥ 1) i
+  `MinItemsPerDocument` (domyślnie 1, ≥ 0, ≤ max). Pozycja liczy się dla każdego dokumentu swoich kandydatów
+  `basedOn`. Efektywne granice: max = max(MaxItemsPerDocument, ⌈ItemCount / liczba dokumentów⌉); min = 0, gdy
+  liczba dokumentów × min > ItemCount. Komunikat wyboru je podaje; złamanie to problem walidacji („dokument D1: 4
+  pozycje (najwyżej 3)”, „dokument D5: brak pozycji (co najmniej 1)”), więc działa przez poprawkę z T067i.
+- [ ] T067k Zastrzeżenia: komunikaty obu kroków każą zachować, kogo dotyczy zasada (konsument, firma, klient
+  Private Banking…), oraz jej warunki i wyjątki (`PromptTests`).
+
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
   `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.
