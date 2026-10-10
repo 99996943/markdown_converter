@@ -104,6 +104,11 @@ tabel na osobne bloki.
    (`Similarity`) powtarza się na co najmniej połowie stron, jest nagłówkiem lub stopką strony. Odcisk wiersza
    (`LineFingerprint`) zastępuje cyfry znakiem `#`, więc „Strona 3” i „Strona 4” to ten sam wzorzec. Numer strony
    jest rozpoznawany w formatach `3`, `- 3 -`, `3 / 40`, `Strona 3 z 40`, `iv`.
+   - **Samodzielne „N/M”** tuż nad strefą marginesu (dolny lub górny pas `Artifacts.PageNumberBandRatio`, domyślnie
+     0,15; zmienna `PDFPARSER__Artifacts__PageNumberBandRatio`) są usuwane jako numery stron, gdy tworzą ciąg na co
+     najmniej 2 stronach: M równe liczbie stron, ta sama względna wysokość i stałe przesunięcie N względem numeru
+     strony. Wiersz musi być najniższy (najwyższy) na stronie i zawierać wyłącznie „N/M”; „1/2 kwoty” czy „nr 12/2024”
+     w treści zostają.
 4. **Przypisy.** Odnośnik przyklejony do słowa jest odcinany i dostaje identyfikator. Definicja trafia do sekcji,
    która pierwsza się do niej odwołuje. Numeracja `[^n]` jest globalna, w kolejności pierwszego odwołania.
 5. **Tabele.**
@@ -123,6 +128,9 @@ tabel na osobne bloki.
      zagnieżdżone, a część wspólna po nich jest akapitem elementu.
 7. **Nagłówki.** Rozważane są tylko wiersze, których nie zajął wcześniejszy etap, więc wiersz tabeli ani przypisu
    nigdy nie zostanie nagłówkiem.
+   - **Styl treści** (rozmiar i krój, względem których wyróżnia się nagłówki typograficzne) oraz **kolumna tekstu**,
+     z której wynikają podziały akapitów, są mierzone na tekście ciągłym łącznie z elementami list; w dokumentach
+     złożonych głównie z list pomiar nie zależy więc od obecności stopek ani od samych akapitów.
    - **Jednostki prawne** (`Text/LegalUnitPatterns.cs`):
      - `Księga`, `Część`, `Dział`, `Rozdział`, `Oddział` z numerem;
      - `Art. 5.` i `§ 5.` z kropką po numerze, co odróżnia jednostkę od odwołania „art. 5 ust. 2”;

@@ -180,6 +180,25 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   sklejona z tekstem w jednym akapicie, więc miara oparta na całych frazach ich nie liczy; wartość służy jako
   punkt odniesienia, nie jako oczekiwane 7 / 6. Miary ramek zerujemy w T041 przez oczekiwany wynik „akapit frazy +
   lista”, a nie przez liczby z tej tabeli; (3) `UnitHeadingDiff` nie ma wartości wyjściowej (porównanie z samym sobą).
+- 2026-10-10 (US1, T006–T012 oraz T010a, T010b — gotowe): stopki „N/M” nad strefą marginesu są usuwane jako numery
+  stron (opcja `Artifacts.PageNumberBandRatio`, 0,15). Usunięcie stopek ujawniło dwa błędy, które wcześniej maskowały
+  stopki, więc doszły T010a i T010b: (1) stopki przerywały listy na granicach stron — po ich usunięciu listy przechodzą
+  przez strony, styl treści (mierzony bez elementów list) się odwracał i w ind-2 znikało 35 nagłówków (T010a: styl
+  treści mierzony na tekście ciągłym łącznie z elementami list); (2) szerokość kolumny tekstu w firm-1 zależała od
+  stopki (T010b: kolumna mierzona łącznie z elementami list). Commity: red 5a10e11, green 39d079e (T006–T010);
+  red 79b66c7, green 4297d5b (T010a); red 75bf29b, green 349941e (T010b).
+  Miary przed → po: „N/M” (stopki) ind-2 35 → 0, firm-1 6 → 0; akapity „N/M” ind-2 16 → 0, firm-1 6 → 0; pozostałe
+  miary jak w raporcie `layout-metrics.md` (m.in. „Etykiety poza listą” firm-5 0 → 1 — artefakt miary: akapit spisu
+  treści zaczyna się od `1\.`; „a.”/„i.” poza listą bez zmian: corp-1 20, corp-3 2, corp-5 9).
+  Goldeny prywatne zmienione: ind-2 (stopki usunięte, listy ciągłe przez strony, tabela ze s. 8 → schemat kroków,
+  przypis [^1] bez przyklejonych stopek), ind-3 (jeden nagłówek `## i… już dziecko może korzystać z karty` → `###`),
+  firm-5 (nagłówek `## Spis treści`, przypisy podzielone na akapity, jeden nagłówek `##` → `###`) — zatwierdzone przez
+  właściciela 2026-10-10; firm-1 (tylko stopki) i firm-2 (jeden poziom nagłówka, przejrzane przez wykonawcę).
+  Korpus syntetyczny: REG-04 / ZAT-REG-SPR-02 (podpis → nagłówek; zatwierdzone przez właściciela). `generate` był
+  potrzebny raz, bo migawka opcji w manifeście zyskała `pageNumberBandRatio`; po nim `verify` zielone.
+  Zbiory słów vs baseline-008: utracone tylko tokeny „N/M” (34, 35) i powtórzony nagłówek ze s. 8 „Kolejność działań |
+  Wyjaśnienie” w ind-2; nowych słów brak; nagłówki jednostek bez zmian. Prywatny korpus w pełni zielony (1090 testów
+  parsera). Następny krok: US2 (T013).
 
 ## Complexity Tracking
 

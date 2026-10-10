@@ -64,7 +64,7 @@ stage'uj tylko jawne ścieżki (nigdy `git add -A`); trailer `Co-Authored-By: Cl
 **Independent Test**: replika 3-stronicowa ze stopką „n/3” na ≈ 0,905 wysokości strony (nad strefą marginesu 0,92) i
 z „1/2 kwoty”, „uchwała nr 12/2024”, etykietą „1/” w treści daje Markdown bez stopek i z nietkniętą treścią.
 
-- [ ] T006 [P] [US1] Testy (red) etapu w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/ArtifactRemovalStageTests.cs`
+- [X] T006 [P] [US1] Testy (red) etapu w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/ArtifactRemovalStageTests.cs`
   (`LayoutFactory`): (a) samodzielny wiersz „2/3”, „3/3” na 0,905 H, najniższy na stronie, na stronach 2–3 → usunięty,
   wpis raportu `ArtifactKind.PageNumber`; (b) to samo w górnym pasie (najwyższy wiersz) → usunięty; (c) M ≠ liczba
   stron → zostaje; (d) tylko jedna strona z „N/M” → zostaje; (e) N nie rośnie zgodnie ze stronami (stałe przesunięcie
@@ -72,26 +72,32 @@ z „1/2 kwoty”, „uchwała nr 12/2024”, etykietą „1/” w treści daje 
   (g) „1/2 kwoty”, „12/2024”, „1/ tekst” w treści → zostają; (h) „N/M” jako część dłuższego wiersza stopki → bez
   zmiany względem dotychczasowych reguł; (i) ciąg z luką: „N/M” na stronach 2, 3 i 5 dokumentu 5-stronicowego (bez
   okładki i bez strony 4) → usunięte na stronach 2, 3, 5
-- [ ] T007 [P] [US1] Test (red) opcji w `tests/LegalAgent.PdfParser.Tests/Unit/Options/PdfParserOptionsValidatorTests.cs`:
+- [X] T007 [P] [US1] Test (red) opcji w `tests/LegalAgent.PdfParser.Tests/Unit/Options/PdfParserOptionsValidatorTests.cs`:
   `Artifacts.PageNumberBandRatio` domyślnie 0,15;
   walidacja „0 < x < 0,5 i ≥ `MarginZoneRatio`” — wartość 0,05 przy `MarginZoneRatio` 0,08 i 0,6 → błąd
-- [ ] T008 [P] [US1] Replika (red) w `tests/LegalAgent.PdfParser.Tests/Integration/ArtifactCleanupIntegrationTests.cs`:
+- [X] T008 [P] [US1] Replika (red) w `tests/LegalAgent.PdfParser.Tests/Integration/ArtifactCleanupIntegrationTests.cs`:
   3 strony A4, stopka `.Text(x≈523, y≈765, "n/3", size: 8)` na stronach 2–3 (≈ 0,905 H), na stronie 2 wiersz treści
   kończący się na ≈ 0,903 H, w treści „1/2 kwoty”, „uchwała nr 12/2024” i lista „1/ …”; oczekiwane: brak akapitów
   „2/3”, „3/3”, znaczniki `<!-- page: N -->` są, treść bez zmian
-- [ ] T009 [US1] Opcja `PageNumberBandRatio` (double, domyślnie 0,15, „wysokość dolnego i górnego pasa, w którym szuka
+- [X] T009 [US1] Opcja `PageNumberBandRatio` (double, domyślnie 0,15, „wysokość dolnego i górnego pasa, w którym szuka
   się samodzielnych numerów „N/M””) w `ArtifactOptions` w `src/LegalAgent.PdfParser/Options/PdfParserOptions.cs` i
   reguła w `src/LegalAgent.PdfParser/Options/PdfParserOptionsValidator.cs` (green T007)
-- [ ] T010 [US1] Przebieg po `RemovePageNumbers` w `src/LegalAgent.PdfParser/Stages/ArtifactRemovalStage.cs` (green
+- [X] T010 [US1] Przebieg po `RemovePageNumbers` w `src/LegalAgent.PdfParser/Stages/ArtifactRemovalStage.cs` (green
   T006, T008): kandydat = cały tekst wiersza `^\d{1,3}\s*/\s*\d{1,3}$`, w pasie `PageNumberBandRatio`, najniższy
   (dolny pas) albo najwyższy (górny pas) wiersz strony, bez innego wiersza na tej wysokości; grupa usuwana w całości
   tylko gdy ≥ 2 strony, ta sama względna wysokość (± `PositionTolerance`), to samo M = liczba stron dokumentu i to samo
   przesunięcie N − numer strony; inaczej nic. Wpis raportu jak dla numerów stron
-- [ ] T011 [US1] Pełna kontrola FR-643; goldeny `mbank-ind-2.expected.md` i `mbank-firm-1.expected.md` zaktualizuj
+- [X] T010a [US1] Styl treści do wykrywania nagłówków mierzony na tekście ciągłym łącznie z elementami list (red
+  79b66c7, green 4297d5b): bez stopek listy nie przechodziły przez strony i styl treści w ind-2 się odwracał
+  (znikało 35 nagłówków). Zatwierdzona przez właściciela zmiana korpusu syntetycznego: REG-04, ZAT-REG-SPR-02
+  (podpis → nagłówek)
+- [X] T010b [US1] Kolumna tekstu dla podziałów akapitów mierzona na tekście ciągłym łącznie z elementami list (red
+  75bf29b, green 349941e): szerokość kolumny w firm-1 zależała od stopki
+- [X] T011 [US1] Pełna kontrola FR-643; goldeny `mbank-ind-2.expected.md` i `mbank-firm-1.expected.md` zaktualizuj
   (`UPDATE_GOLDEN=1` na prywatnym korpusie) i sprawdź diffem względem `baseline-008/`, że jedyne zmiany to usunięte
   akapity „N/M” (35 i 6) i ewentualne puste wiersze wokół nich — każda inna różnica: stop; pozostałe 17 dokumentów,
   `Corpus/acts`, `Corpus/banking`, `verify` bez zmian; zapis w handoffie
-- [ ] T012 [US1] README parsera `src/LegalAgent.PdfParser/README.md`: stopki „N/M”
+- [X] T012 [US1] README parsera `src/LegalAgent.PdfParser/README.md`: stopki „N/M”
   nad strefą marginesu i opcja `Artifacts.PageNumberBandRatio` / `PDFPARSER__Artifacts__PageNumberBandRatio`
 
 **Checkpoint**: US1 gotowe — 0 stopek „N/M” w ind-2 i firm-1 (SC-090).
