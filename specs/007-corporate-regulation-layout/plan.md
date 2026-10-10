@@ -175,6 +175,27 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
   że…”) wplata się w tekst elementu listy (było tak i przed zmianą); „a.”, „ii.” zostają tekstem (nie są etykietami
   listy).
 
+- 2026-10-10 (US1, T016–T026 z T019a, T019b, T021a, T025a): goły „§ N” (`LegalUnitMatch.Bare`) jest jednostką tylko
+  na wierszu wyróżnionym (wyśrodkowany w kolumnie albo na stronie z szerokimi marginesami, albo odosobniony i
+  pogrubiony/powiększony); nagłówek to wiersz źródła („§ 5”, „§25” — bez dopisanej kropki ani spacji); ListDetection
+  zamyka listę przed takim wierszem. „§ 3. Tytuł” wyśrodkowany i pogrubiony → jeden nagłówek (tylko „§”, nie artykuły
+  — pogrubione artykuły tekstów jednolitych zostają jak były). Poziomy: numerowany rozdział „2. …” (typograficzny w
+  dokumencie prawnym) jest rodzeństwem poprzedniego numerowanego rozdziału; jednostka pod nim (także pod nienumerowanym
+  śródtytułem w nim) — poziom niżej. TableDetection (bez siatki): wiersz jednostki nie jest dołączany nad ziarnem, a
+  region jest przed nim cięty; wiersz spisu treści z kropkami prowadzącymi nie jest wierszem jednostki.
+  Miary po US1: „§ N” jako tekst 154/36/123/15 → 0/0/0/0 (SC-081); test `Category=Layout007` zielony.
+  **Do akceptacji właściciela**: skutek uboczny w korpusie syntetycznym — `corpus/akty/dz-u-2019-1781-ochrona-danych`
+  (tekst jednolity ustawy): tabela zastępcza z cytowanymi zmianami (ucięta na cytowanym „§ 4.”) staje się tekstem
+  ciągłym; odświeżone `.md` i `.chunks.jsonl`, golden chunków zaktualizowany (bez utraty tekstu; `verify` czysty).
+  Goldeny `Corpus/acts` i `Corpus/banking` bez zmian. Zaktualizowane goldeny prywatne D-A…D-D.
+  Otwarte: w D-A fałszywy nagłówek „Rozdział I. (Prowadzenie…). Jest on załącznikiem” (odwołanie na początku
+  zawiniętego wiersza; było już w punkcie odniesienia) przesuwa rozdziały 17–18 o poziom niżej; w D-A termin
+  słowniczka „15/ umowa rachunku bankowego/” jako nagłówek (US3).
+
+- 2026-10-10 (US4, T027–T029): po US1+US2 — 5 dokumentów detalicznych i pozostałe 6 dla firm (poza firm-2, którego
+  miary się poprawiły: TBL001 2 → 0, wiersze „ \| ” 17 → 0, etykiety poza listą 34 → 24) bez zmian Markdown; goldeny
+  aktów, `verify` i `CorpusFull` (Corpus 425, Chunking 111) zielone po każdym commicie parsera.
+
 ## Complexity Tracking
 
 Brak naruszeń konstytucji — sekcja pusta.

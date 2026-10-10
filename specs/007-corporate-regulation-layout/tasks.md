@@ -139,7 +139,7 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
   (green T024)
 - [X] T025a [US1] Replika (red) z D-D: wiersz spisu treści „§ 10. | Tytuł ......” (szeroki jak tekst ciągły) nie tnie
   tabeli spisu treści — wiersz z kropkami prowadzącymi nie jest wierszem jednostki (green)
-- [ ] T026 [US1] Pełna kontrola regresji (FR-534); miara `ParagraphText` = 0 w D-A…D-D (SC-081); goldeny aktów bez
+- [X] T026 [US1] Pełna kontrola regresji (FR-534); miara `ParagraphText` = 0 w D-A…D-D (SC-081); goldeny aktów bez
   zmian (SC-087); przegląd różnic i aktualizacja goldenów D-A…D-D po akceptacji
 
 **Checkpoint**: US1 i US2 razem — test `Category=Layout007` zielony.
@@ -150,11 +150,11 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
 
 **Goal**: SC-084, SC-085, SC-087 potwierdzone po US1+US2 (i ponownie po US3).
 
-- [ ] T027 [US4] Raport miar dla 15 dokumentów (`LEGALAGENT_CORPUS_REPORT=1`) porównany z wartościami wyjściowymi z
+- [X] T027 [US4] Raport miar dla 15 dokumentów (`LEGALAGENT_CORPUS_REPORT=1`) porównany z wartościami wyjściowymi z
   T006; tabela różnic w handoffie `specs/007-corporate-regulation-layout/plan.md`
-- [ ] T028 [US4] Różnice Markdown 5 dokumentów detalicznych pokazane właścicielowi; po akceptacji aktualizacja ich
+- [X] T028 [US4] Różnice Markdown 5 dokumentów detalicznych pokazane właścicielowi; po akceptacji aktualizacja ich
   goldenów prywatnych (albo poprawka parsera, jeśli różnica jest regresją)
-- [ ] T029 [US4] `LEGALAGENT_CORPUS_FULL=1 dotnet test tests/LegalAgent.Corpus.Tests` i
+- [X] T029 [US4] `LEGALAGENT_CORPUS_FULL=1 dotnet test tests/LegalAgent.Corpus.Tests` i
   `tests/LegalAgent.Chunking.Tests` (`CorpusChunksFullTests`) zielone; wynik w handoffie
 
 ---
