@@ -41,7 +41,7 @@ Jedna solucja `LegalAgent.slnx`:
 
 | Projekt | Rola |
 |---------|------|
-| `src/mBank.FaqGenerator` | **aplikacja zadania**: argumenty, konfiguracja, klucz API, konsola, kody wyjścia |
+| `src/mBank.FaqGenerator` | **aplikacja zadania**: argumenty, konfiguracja, klucz API, konsola, kody wyjścia ([przebieg i konfiguracja](src/mBank.FaqGenerator/README.md)) |
 | `src/LegalAgent.Downloads` | biblioteka pobierania listy PDF-ów (hosty, przekierowania, limity, zapis atomowy, manifest) |
 | `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown ([zasada działania](src/LegalAgent.PdfParser/README.md)) |
 | `src/LegalAgent.Faq` | biblioteka konwersji zestawu PDF-ów i generowania FAQ (dwa kroki, weryfikacja, renderer OKF) ([zasada działania i weryfikacji](src/LegalAgent.Faq/README.md)) |
@@ -51,7 +51,7 @@ Jedna solucja `LegalAgent.slnx`:
 | `scripts/azure/create-openai.sh` | utworzenie zasobu i wdrożenia Azure OpenAI |
 | `tests/*` | osobny projekt testów dla każdej biblioteki i aplikacji |
 
-Każda biblioteka ma własne `README.md` z opisem zasady działania.
+Aplikacja i każda biblioteka mają własne `README.md` z opisem zasady działania.
 
 Biblioteki są ogólne: nie znają mBanku ani Azure (adresy, hosty, tytuł FAQ i konektor modelu należą do aplikacji).
 
