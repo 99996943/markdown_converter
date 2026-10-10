@@ -45,9 +45,58 @@ internal sealed class DownloadSettings
     };
 }
 
+/// <summary>Section <c>AzureOpenAI</c> (contracts/cli.md). The API key is deliberately not a setting.</summary>
+internal sealed class AzureOpenAiSettings
+{
+    /// <summary>Address of the Azure OpenAI resource; absolute https.</summary>
+    public string Endpoint { get; set; } = string.Empty;
+
+    /// <summary>Deployment name.</summary>
+    public string Deployment { get; set; } = "gpt-4o-mini";
+
+    /// <summary>Model name, informative only (FAQ header).</summary>
+    public string Model { get; set; } = "gpt-4o-mini";
+
+    /// <summary>Time limit per request in seconds (may be fractional).</summary>
+    public double TimeoutSeconds { get; set; } = 300;
+
+    /// <summary>Temperature 0–2; <c>null</c> means not sent.</summary>
+    public double? Temperature { get; set; } = 0;
+
+    /// <summary>Seed; <c>null</c> means not sent.</summary>
+    public int? Seed { get; set; } = 42;
+
+    /// <summary>Output token limit per request.</summary>
+    public int MaxOutputTokens { get; set; } = 4096;
+}
+
+/// <summary>Section <c>Faq</c> (contracts/cli.md).</summary>
+internal sealed class FaqSettings
+{
+    /// <summary>OKF directory with <c>FAQ_mBank.md</c>, relative to the working directory.</summary>
+    public string OutputDirectory { get; set; } = "faq";
+
+    /// <summary>Maximum candidates per document, 1–30.</summary>
+    public int CandidatesPerDocument { get; set; } = 10;
+
+    /// <summary>Maximum estimated tokens per document.</summary>
+    public int MaxDocumentTokens { get; set; } = 100_000;
+}
+
+/// <summary>All sections of the application configuration.</summary>
+/// <param name="Download">Section <c>Download</c>.</param>
+/// <param name="AzureOpenAI">Section <c>AzureOpenAI</c>.</param>
+/// <param name="Faq">Section <c>Faq</c>.</param>
+internal sealed record AppConfiguration(DownloadSettings Download, AzureOpenAiSettings AzureOpenAI, FaqSettings Faq);
+
 /// <summary>Loads the configuration layers: appsettings.json → appsettings.Local.json → FAQGEN__ variables (research R10).</summary>
 internal static class AppSettings
 {
+    /// <summary>Reads all sections without validating the AzureOpenAI and Faq values.</summary>
+    /// <exception cref="ConfigurationException">A value cannot be converted.</exception>
+    public static AppConfiguration LoadAll(string configDirectory, IReadOnlyDictionary<string, string?> environment) =>
+        throw new NotImplementedException();
+
     /// <summary>Prefix of environment variables, e.g. <c>FAQGEN__Download__TimeoutSeconds</c>.</summary>
     public const string EnvironmentPrefix = "FAQGEN__";
 
