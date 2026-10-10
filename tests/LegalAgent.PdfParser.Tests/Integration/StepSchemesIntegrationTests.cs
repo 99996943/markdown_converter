@@ -116,6 +116,146 @@ public sealed partial class StepSchemesIntegrationTests
         Assert.DoesNotContain("Krok", md, StringComparison.Ordinal);
     }
 
+    private const double FrameLeft = 59.5;
+    private const double FrameWidth = 141.8;
+    private const double Phrase = 64.9;
+    private const double Content = 206.7;
+    private const double Small = 8;
+
+    /// <summary>
+    /// T032 — spec 008 US4 (FR-630…FR-635): question–answer frames as printed in the firm terms. Three gray boxes without
+    /// a column-name row, joined by arrows set as a symbol-font glyph (a text line without letters or digits); bold 8 pt
+    /// phrases vertically centred, the right column a numbered list from x 206.7 with leading 10. The first phrase sits
+    /// 5 pt off the baselines of the list (woven between items), the second shares their baselines (merged lines), and
+    /// the second box ends above item „3.”, which runs on below it beside the next arrow.
+    /// </summary>
+    internal static byte[] BuildFramesPdf()
+    {
+        var builder = new SyntheticPdfBuilder();
+        builder.Page()
+            .Text(72, 80, "Regulamin rachunku dla firm", 14, bold: true)
+            .Text(54, 100, "2) Jeśli otwarcie rachunku wymaga umowy, zrobimy to tak:", Small)
+            .FilledRect(FrameLeft, 115, FrameWidth, 40, Gray)
+            .Text(Content, 127, "1. przez internet, np. przez naszą stronę internetową,", Small)
+            .Text(Content, 137, "2. w biurze obsługi klienta,", Small)
+            .Text(Phrase, 142, "Składasz wniosek", Small, bold: true)
+            .Text(Content, 147, "3. osobiście, np. w jednej z placówek.", Small)
+            .Text(122, 172, "▼", 18, mono: true)
+            .FilledRect(FrameLeft, 178, FrameWidth, 27, Gray)
+            .Text(Phrase, 190, "Sprawdzamy dokumenty", Small, bold: true)
+            .Text(Content, 190, "1. Zanim zawrzemy umowę, sprawdzimy Twoje dokumenty.", Small)
+            .Text(Phrase, 200, "rejestrowe", Small, bold: true)
+            .Text(Content, 200, "2. Weryfikujemy wpis do rejestru przedsiębiorców.", Small)
+            .Text(Content, 210, "3. Możemy poprosić o dokument tożsamości oraz", Small)
+            .Text(Content + 15, 220, "dokumenty potwierdzające dane z wniosku.", Small)
+            .Text(122, 226, "▼", 18, mono: true)
+            .FilledRect(FrameLeft, 232, FrameWidth, 20, Gray)
+            .Text(Phrase, 245, "Potwierdzamy otwarcie", Small, bold: true)
+            .Text(Content, 245, "Potwierdzenie otwarcia rachunku przekażemy Ci elektronicznie.", Small)
+            .Text(54, 275, "3) Po zawarciu umowy otworzymy dla Ciebie rachunek.", Small);
+
+        // Ordinary running text sets the typical leading, as in a real document.
+        for (int i = 0; i < 14; i++)
+        {
+            builder.Text(54, 300 + (10 * i), $"Wiersz {i + 1} zwykłego tekstu regulaminu dla firm o stałej długości.", Small);
+        }
+
+        return builder.Build();
+    }
+
+    /// <summary>
+    /// T032 control — a real data table of the same document: rules on every column, white cell fills, a bold header row
+    /// and a plain first column. It stays a GFM table.
+    /// </summary>
+    internal static byte[] BuildDataTablePdf()
+    {
+        var builder = new SyntheticPdfBuilder();
+        builder.Page()
+            .Text(72, 80, "Regulamin rachunku dla firm", 14, bold: true)
+            .Text(54, 100, "Opłaty za rachunek znajdziesz w tabeli:", Small);
+        double[] rows = [110, 125, 140, 155];
+        string[][] cells =
+        [
+            ["Rodzaj czynności", "Opłata"],
+            ["Prowadzenie rachunku", "10 zł miesięcznie"],
+            ["Przelew w placówce", "5 zł za przelew"],
+        ];
+        for (int r = 0; r < cells.Length; r++)
+        {
+            builder.FilledRect(FrameLeft, rows[r], FrameWidth, 15, 255).FilledRect(FrameLeft + FrameWidth, rows[r], 300, 15, 255);
+            builder.Text(Phrase, rows[r] + 10.5, cells[r][0], Small, bold: r == 0).Text(Content, rows[r] + 10.5, cells[r][1], Small, bold: r == 0);
+        }
+
+        foreach (double y in rows)
+        {
+            builder.HLine(FrameLeft, FrameLeft + FrameWidth + 300, y);
+        }
+
+        foreach (double x in new[] { FrameLeft, FrameLeft + FrameWidth, FrameLeft + FrameWidth + 300 })
+        {
+            builder.VLine(x, rows[0], rows[^1]);
+        }
+
+        builder.Text(54, 175, "Opłaty pobieramy z rachunku.", Small);
+        for (int i = 0; i < 14; i++)
+        {
+            builder.Text(54, 200 + (10 * i), $"Wiersz {i + 1} zwykłego tekstu regulaminu dla firm o stałej długości.", Small);
+        }
+
+        return builder.Build();
+    }
+
+    private static async Task<PdfConversionResult> ConvertAsync(byte[] pdf)
+    {
+        using var stream = new MemoryStream(pdf);
+        return await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, new PdfConversionRequest(), TestContext.Current.CancellationToken);
+    }
+
+    [Fact]
+    public async Task Frames_JoinedByArrowGlyphs_AreEachAPhraseParagraphFollowedByTheirContent()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildFramesPdf());
+        string md = result.Markdown;
+
+        Assert.Contains(
+            "**Składasz wniosek**\n\n- 1\\. przez internet, np. przez naszą stronę internetową,\n- 2\\. w biurze obsługi klienta,\n"
+            + "- 3\\. osobiście, np. w jednej z placówek.\n",
+            md,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "**Sprawdzamy dokumenty rejestrowe**\n\n- 1\\. Zanim zawrzemy umowę, sprawdzimy Twoje dokumenty.\n"
+            + "- 2\\. Weryfikujemy wpis do rejestru przedsiębiorców.\n"
+            + "- 3\\. Możemy poprosić o dokument tożsamości oraz dokumenty potwierdzające dane z wniosku.\n",
+            md,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "**Potwierdzamy otwarcie**\n\nPotwierdzenie otwarcia rachunku przekażemy Ci elektronicznie.\n",
+            md,
+            StringComparison.Ordinal);
+
+        string[] ordered = ["2) Jeśli otwarcie", "**Składasz wniosek**", "**Sprawdzamy dokumenty rejestrowe**", "**Potwierdzamy otwarcie**", "3) Po zawarciu"];
+        int[] order = ordered.Select(s => md.IndexOf(s, StringComparison.Ordinal)).ToArray();
+        Assert.DoesNotContain(order, i => i < 0);
+        Assert.Equal(order.Order(), order);
+
+        Assert.DoesNotContain("▼", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("|", md, StringComparison.Ordinal);
+        Assert.Equal(0, result.Report.TableCount);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
+    }
+
+    [Fact]
+    public async Task RuledDataTableWithWhiteCellsAndABoldHeaderRow_StaysAGfmTable()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildDataTablePdf());
+        string md = result.Markdown;
+
+        Assert.Equal(1, result.Report.TableCount);
+        Assert.Contains("| --- | --- |", md, StringComparison.Ordinal);
+        Assert.Contains(md.Split('\n'), l => l.StartsWith('|') && l.Contains("Prowadzenie rachunku", StringComparison.Ordinal) && l.Contains("10 zł miesięcznie", StringComparison.Ordinal));
+        Assert.DoesNotContain("**Prowadzenie rachunku**", md, StringComparison.Ordinal);
+    }
+
     [Fact]
     public async Task Scheme_DetectionDisabled_KeepsTheOldBehaviour()
     {
