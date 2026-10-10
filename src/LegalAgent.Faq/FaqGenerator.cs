@@ -27,6 +27,7 @@ public sealed class FaqGenerator
         ArgumentNullException.ThrowIfNull(chat);
         ArgumentNullException.ThrowIfNull(options);
         ArgumentNullException.ThrowIfNull(executionSettings);
+        options.Validate();
         this.chat = chat;
         this.options = options;
         this.executionSettings = executionSettings;
@@ -38,8 +39,47 @@ public sealed class FaqGenerator
     /// <returns>The size of every document.</returns>
     /// <exception cref="ArgumentException">The list is empty or a document is invalid.</exception>
     /// <exception cref="FaqInputTooLongException">The first document over <see cref="FaqGeneratorOptions.MaxDocumentTokens"/>.</exception>
-    public static IReadOnlyList<FaqInputEstimate> CheckInput(IReadOnlyList<FaqDocumentInput> documents, FaqGeneratorOptions options) =>
-        throw new NotImplementedException();
+    public static IReadOnlyList<FaqInputEstimate> CheckInput(IReadOnlyList<FaqDocumentInput> documents, FaqGeneratorOptions options)
+    {
+        ArgumentNullException.ThrowIfNull(documents);
+        ArgumentNullException.ThrowIfNull(options);
+        options.Validate();
+        if (documents.Count == 0)
+        {
+            throw new ArgumentException("Lista dokumentów jest pusta.", nameof(documents));
+        }
+
+        var estimates = new List<FaqInputEstimate>(documents.Count);
+        foreach (FaqDocumentInput document in documents)
+        {
+            ArgumentNullException.ThrowIfNull(document, nameof(documents));
+            if (string.IsNullOrWhiteSpace(document.Name))
+            {
+                throw new ArgumentException("Dokument nie ma nazwy.", nameof(documents));
+            }
+
+            if (document.Resource is null || !document.Resource.IsAbsoluteUri)
+            {
+                throw new ArgumentException($"Adres dokumentu {document.Name} nie jest bezwzględny.", nameof(documents));
+            }
+
+            if (string.IsNullOrWhiteSpace(document.Markdown))
+            {
+                throw new ArgumentException($"Dokument {document.Name} jest pusty.", nameof(documents));
+            }
+
+            int characters = document.Markdown.Length;
+            int tokens = TokenEstimator.Estimate(characters, options.CharactersPerToken);
+            if (tokens > options.MaxDocumentTokens)
+            {
+                throw new FaqInputTooLongException(document.Name, characters, tokens, options.MaxDocumentTokens);
+            }
+
+            estimates.Add(new FaqInputEstimate(document.Name, characters, tokens));
+        }
+
+        return estimates;
+    }
 
     /// <summary>Requests candidates for D1…Dn in turn, then the selection; validates every response.</summary>
     /// <param name="documents">Documents in order; they become D1…Dn.</param>
