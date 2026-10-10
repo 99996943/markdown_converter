@@ -194,13 +194,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 entry.Legal = match;
             }
 
-            entry.Candidate = entry.Legal is null
+            bool styled = entry.Legal is null
                 && entry.Isolated
                 && entry.Text.Length <= options.MaxLength
                 && entry.Text.Any(char.IsLetter)
-                && !entry.Text.EndsWith(',')
-                && !entry.Text.EndsWith(';')
                 && (entry.Enlarged || entry.BoldSignal || entry.Caps || entry.Centered);
+            entry.Candidate = styled && !entry.Text.EndsWith(',') && !entry.Text.EndsWith(';');
+            entry.WrappedAfterComma = styled && entry.Text.EndsWith(',') && (entry.Enlarged || entry.BoldSignal);
 
             entry.InTableDocument = InTableDocumentPart(context, entry);
             entry.Plain = entry.InTableDocument
@@ -209,6 +209,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             if (entry.Plain)
             {
                 entry.Candidate = false;
+                entry.WrappedAfterComma = false;
                 entry.Centered = false;
             }
         }
@@ -377,13 +378,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 continue;
             }
 
-            if (!entry.Candidate)
+            if (!entry.Candidate && !entry.WrappedAfterComma)
             {
                 continue;
             }
 
             var heading = new Detected(entry, SectionKind.Typographic) { Text = entry.Text };
-            entry.Consumed = true;
 
             // Multi-line typographic heading: following lines in the same enlarged or bold style (FR-041, MaxLines).
             Entry last = entry;
@@ -407,8 +407,19 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
                 heading.Merged.Add(follower);
                 heading.Text += " " + follower.Text;
-                follower.Consumed = true;
                 last = follower;
+            }
+
+            // T067f: a line ending with a comma is a heading only when the lines merged into it complete it.
+            if (entry.WrappedAfterComma && (heading.Merged.Count == 0 || heading.Text.EndsWith(',') || heading.Text.EndsWith(';')))
+            {
+                continue;
+            }
+
+            entry.Consumed = true;
+            foreach (Entry merged in heading.Merged)
+            {
+                merged.Consumed = true;
             }
 
             headings.Add(heading);
@@ -674,6 +685,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         public bool Isolated { get; set; }
 
         public bool Candidate { get; set; }
+
+        /// <summary>Would be a candidate but ends with a comma: the first line of a heading wrapped after a comma (T067f).</summary>
+        public bool WrappedAfterComma { get; set; }
 
         public bool Consumed { get; set; }
 

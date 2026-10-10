@@ -101,8 +101,12 @@ public sealed class StepSequenceStage : IPipelineStage
                 continue;
             }
 
+            // Column names stop at the box edge; a line running on across it (a chapter heading above the scheme, T067f)
+            // is text, not a column-name row.
             double gap = header.Count == 0 ? HeaderGapFactor * line.Box.Height : HeaderLineGapFactor * line.Box.Height;
-            if (limit - line.Box.Bottom > gap || line.Words.Any(w => w.Box.CenterX < box.Left))
+            if (limit - line.Box.Bottom > gap
+                || line.Words.Any(w => w.Box.CenterX < box.Left)
+                || line.Words.Any(w => w.Box.Left < box.Right - EdgeTolerance && w.Box.Right > box.Right + EdgeTolerance))
             {
                 break;
             }
