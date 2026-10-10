@@ -69,6 +69,28 @@ ostrzeżenia weryfikacji, np.:
 [wybór] odpowiedź odrzucona (liczba poprawnych pozycji 9, potrzeba co najmniej 10) — prośba o poprawkę…
 ```
 
+## Weryfikacja faktów
+
+Model pisze pytania i odpowiedzi, ale aplikacja **nie przyjmuje ich na wiarę**: każda propozycja jest sprawdzana w
+kodzie z tekstem regulaminu, bez dodatkowych zapytań do modelu. Szczegóły i reguły:
+[README FAQ, „Weryfikacja propozycji modelu”](../LegalAgent.Faq/README.md#weryfikacja-propozycji-modelu).
+
+| Co jest sprawdzane | Jak | Skutek błędu |
+|---|---|---|
+| **źródło** (rozdział) | model wybiera jednostkę z listy nagłówków dokumentu; kod sprawdza, że taka jednostka istnieje | odrzucenie odpowiedzi |
+| **cytat** | kandydat podaje dosłowny fragment dokumentu; ≥ 80% jego trójek kolejnych słów musi wystąpić w tekście wskazanego rozdziału | kandydat odpada |
+| **liczby** | każda kwota, termin, godzina, data z odpowiedzi musi wystąpić w tekście rozdziału | kandydat odpada |
+| **liczby w FAQ** | każda liczba końcowej odpowiedzi musi wystąpić w odpowiedziach lub cytatach kandydatów, na których się opiera | pozycja odpada |
+| **źródła w FAQ** | model ich nie podaje — kod bierze je z kandydatów, na których oparta jest pozycja | — (nie da się wskazać nieistniejącego paragrafu) |
+| **kompletność i równowaga** | 10 pozycji, każdy dokument 1–3; wybiera kod z uszeregowanej przez model puli | jedna prośba o poprawkę, potem kod 7 |
+
+Każde odrzucenie jest widoczne w konsoli z powodem (np. cytatem, którego nie znaleziono, albo liczbą spoza
+rozdziału), więc wynik można zweryfikować ręcznie.
+
+**Czego kod nie sprawdza:** znaczenia odpowiedzi. Model może poprawnie zacytować rozdział, a w odpowiedzi
+przeinaczyć warunek bez liczb (np. dopisać „rażące niedbalstwo” tam, gdzie regulamin mówi tylko „umyślnie”). Na to
+pomaga przegląd człowieka albo — planowane — sprawdzenie odpowiedzi drugim zapytaniem do modelu.
+
 ## Klucz API
 
 Klucz **nigdy nie jest konfiguracją**:
