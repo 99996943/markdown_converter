@@ -87,4 +87,44 @@ public sealed class HeadingsIntegrationTests
         Assert.Equal((3, new PageRange(2, 2)), (art4.Level, art4.Pages));
         Assert.Equal(new PageRange(1, 1), document.Sections[0].Pages);
     }
+
+    /// <summary>
+    /// T037 (spec 007, FR-540) — entries of a table of contents („Rozdział 1. Postanowienia ogólne ......”, 8 pt, leader
+    /// dots to the right margin) are not headings; the chapters in the text are, once each.
+    /// </summary>
+    [Fact]
+    public async Task Contents_entries_with_leader_dots_are_not_headings()
+    {
+        static string Dotted(string title)
+        {
+            string entry = title + " ";
+            while (SyntheticPdfBuilder.TextWidth(entry + ".", 8) < 555 - 87)
+            {
+                entry += ".";
+            }
+
+            return entry;
+        }
+
+        const string Plain = "Bank realizuje polecenia zapłaty na podstawie umowy zawartej z Odbiorcą, w terminach i na warunkach określonych w tym";
+        var builder = new SyntheticPdfBuilder();
+        builder.Page()
+            .Text((595 - SyntheticPdfBuilder.TextWidth("Regulamin polecenia zapłaty", 14, bold: true)) / 2, 40, "Regulamin polecenia zapłaty", 14, bold: true)
+            .Text(40, 70, "Spis treści:", 11, bold: true)
+            .Text(40.6, 93, "Rozdział 1.", 8).Text(87.6, 93, Dotted("Postanowienia ogólne"), 8)
+            .Text(40.6, 106, "Rozdział 2.", 8).Text(87.0, 106, Dotted("Zawarcie umowy"), 8)
+            .Text(40.4, 140, "Rozdział 1. Postanowienia ogólne", 9, bold: true)
+            .Text(39.7, 160, Plain, 7)
+            .Text(39.7, 170, "regulaminie oraz w przepisach o usługach płatniczych, a także zgodnie z zasadami systemu rozliczeń międzybankowych.", 7)
+            .Text(40.4, 195, "Rozdział 2. Zawarcie umowy", 9, bold: true)
+            .Text(39.7, 215, Plain, 7)
+            .Text(39.7, 225, "regulaminie; umowę zawiera się w formie pisemnej albo w systemie bankowości elektronicznej na wniosek Odbiorcy.", 7);
+
+        using var stream = new MemoryStream(builder.Build());
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.DoesNotMatch(@"(?m)^#+ .*\.{4,}", result.Markdown);
+        Assert.Single(System.Text.RegularExpressions.Regex.Matches(result.Markdown, @"(?m)^#+ Rozdział 1\. Postanowienia ogólne$"));
+        Assert.Contains("Postanowienia ogólne ....", result.Markdown, StringComparison.Ordinal);
+    }
 }
