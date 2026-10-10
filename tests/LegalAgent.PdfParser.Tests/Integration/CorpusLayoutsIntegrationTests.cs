@@ -1715,6 +1715,82 @@ public sealed class CorpusLayoutsIntegrationTests
     }
 
     /// <summary>
+    /// Spec 008, T014 (FR-610, FR-612; research R2, D-A p. 14): 7 pt text at a leading of 10; item „1.” (label at 39.7,
+    /// text at 54.7) fills the column and ends with „–”; the next line at 54.7, one leading below, in the same regular
+    /// 7 pt, starts with „Rozdział I (…)”. It is a wrapped line of the item, not a chapter heading, so the „N.” sequence
+    /// goes on and the numbered chapters „17.”, „18.” and their units stay on the level of „16.” and „§ 63”.
+    /// </summary>
+    [Fact]
+    public async Task UnitDesignationWrappedFromAListItem_IsTextOfTheItem()
+    {
+        const double margin = 39.7;
+        const double labelText = 54.7;
+        const double size = 7;
+        const double leading = 10;
+        var b = new SyntheticPdfBuilder().Page();
+        void Centred(double y, string text, double sz, bool bold) =>
+            b.Text((595 - SyntheticPdfBuilder.TextWidth(text, sz, bold: bold)) / 2, y, text, sz, bold: bold);
+        double Item(double y, string label, params string[] lines)
+        {
+            b.Text(margin, y, label, size);
+            foreach (string line in lines)
+            {
+                b.Text(labelText, y, line, size);
+                y += leading;
+            }
+
+            return y;
+        }
+
+        Centred(40, "Regulamin rachunku bankowego dla firm", 14, bold: true);
+        b.Text(margin, 70, "Część I", 12, bold: true);
+        Centred(100, "Rachunek bankowy bieżący i pomocniczy", 12, bold: true);
+        b.Text(margin, 130, "15. Zamknięcie rachunku", 9, bold: true);
+        Centred(150, "§ 62", 9, bold: true);
+        double y = Item(166, "1.",
+            "Jeśli Klient nie zadysponował dodatnim saldem zamkniętego rachunku bieżącego lub pomocniczego w terminie, wymienionym w umowie,",
+            "zaksięgujemy je na nieoprocentowanym rachunku Banku, a środki są do dyspozycji Klienta przez cały okres przedawnienia roszczenia.");
+        y = Item(y, "2.", "Jeśli zamykamy rachunek na mocy orzeczenia sądu, saldo zamkniętego rachunku przekazujemy zgodnie z poleceniem z tego orzeczenia.");
+        y = Item(y, "3.", "Roszczenia o wypłatę salda zamkniętego rachunku przedawniają się po upływie dwóch lat od dnia rozwiązania umowy rachunku.");
+
+        b.Text(margin, y + 15, "16. Prowizje i opłaty", 9, bold: true);
+        Centred(y + 35, "§ 63", 9, bold: true);
+        y = Item(y + 51, "1.",
+            "Prowizje i opłaty z tytułu umowy rachunku bankowego pobieramy zgodnie z Taryfą prowizji i opłat bankowych dla Małych Firm i Korporacji –",
+            "Rozdział I (Prowadzenie rachunków). Jest on załącznikiem do umowy.");
+        y = Item(y, "2.", "Rodzaje lub wysokość prowizji i opłat mogą się zmieniać. Zmiany zależą w szczególności od naszych kosztów obsługi operacji.");
+        y = Item(y, "3.", "Aktualne stawki Taryfy prowizji i opłat bankowych oraz informacje o ich zmianie publikujemy na stronie internetowej Banku.");
+
+        b.Text(margin, y + 15, "17. Reklamacje", 9, bold: true);
+        Centred(y + 35, "§ 66", 9, bold: true);
+        y = Item(y + 51, "1.", "Klient może złożyć reklamację w każdej placówce Banku, przez system bankowości elektronicznej albo listownie na adres Banku.");
+        y = Item(y, "2.", "Odpowiadamy na reklamację bez zbędnej zwłoki, nie później niż w terminie piętnastu dni roboczych od dnia jej otrzymania.");
+
+        b.Text(margin, y + 15, "18. Postanowienia końcowe", 9, bold: true);
+        Centred(y + 35, "§ 67", 9, bold: true);
+        b.Text(margin, y + 51, "W sprawach nieuregulowanych w regulaminie stosujemy przepisy prawa polskiego, w szczególności Kodeksu cywilnego i Prawa bankowego.", size);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t014.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains(
+            "- 1\\. Prowizje i opłaty z tytułu umowy rachunku bankowego pobieramy zgodnie z Taryfą prowizji i opłat bankowych dla Małych Firm i Korporacji – Rozdział I (Prowadzenie rachunków). Jest on załącznikiem do umowy.\n- 2\\. Rodzaje",
+            md,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("# Rozdział", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("Rozdział I.", md, StringComparison.Ordinal);
+        Assert.Contains("\n### 16. Prowizje i opłaty\n", md, StringComparison.Ordinal);
+        Assert.Contains("\n### 17. Reklamacje\n", md, StringComparison.Ordinal);
+        Assert.Contains("\n### 18. Postanowienia końcowe\n", md, StringComparison.Ordinal);
+        Assert.Contains("\n#### § 63\n", md, StringComparison.Ordinal);
+        Assert.Contains("\n#### § 66\n", md, StringComparison.Ordinal);
+        Assert.Contains("\n#### § 67\n", md, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// Spec 008, T015 (protective; research R2 near-miss in acts and dz-u-2026-823-reklamacje): „Art. 42.” in bold,
     /// followed by regular text, directly below „3. (uchylony)” — same size, same <c>AllBold</c>, the line above ends
     /// with „)”, the gap within 1.2 × leading and both at the margin. Only the bold designation word tells it apart from
