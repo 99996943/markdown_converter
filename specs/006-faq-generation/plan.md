@@ -289,7 +289,12 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   numer nagłówka numerowanego jako oznaczenie jednostki. Walidacja pozostaje ścisła.
 - **T067b (2026-10-10)**: drugi przebieg przeszedł kandydatów 5/5, ale krok wyboru odrzucono — model przeredagował
   jednostkę źródła („3. Co powinna zawierać reklamacja?” zamiast „3. Jak możesz złożyć reklamację?”). Model nie
-  podaje już `sources`; źródła liczy kod z kandydatów `basedOn`. Ponowny przebieg do zrobienia.
+  podaje już `sources`; źródła liczy kod z kandydatów `basedOn`.
+- **Trzeci przebieg (2026-10-10)**: FAQ 10/10 zapisane. Ocena: 8 pozycji poprawnych, pozycja 4 łączy dwa tematy,
+  pozycja 5 zniekształca warunki (wybrana opcja obciążenia dotyczy tylko zleceń stałych; pominięte wyjątki).
+- **T067c/T067d**: krok wyboru — jedno pytanie = jedna sprawa; kandydaci mają dosłowny cytat (`quote`) i są
+  ugruntowani w tekście jednostki (cytat + liczby, `FaqGrounding`); nieugruntowany kandydat odpada z ostrzeżeniem
+  (decyzja właściciela), a liczba w pozycji FAQ spoza kandydatów `basedOn` odrzuca wybór. Ponowny przebieg do zrobienia.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

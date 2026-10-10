@@ -18,7 +18,7 @@ public sealed class ModelTransportTests : IDisposable
     [Fact]
     public async Task Request_GoesToDeployment_WithKeyAndStructuredOutput()
     {
-        http.Completion(FaqJson.Candidates("D1", 2), 120, 12).Completion(FaqJson.Selection(1, 1), 30, 3);
+        http.Completion(Candidates(), 120, 12).Completion(FaqJson.Selection(1, 1), 30, 3);
 
         FaqResult result = await GenerateAsync(Settings());
 
@@ -48,7 +48,7 @@ public sealed class ModelTransportTests : IDisposable
     [Fact]
     public async Task NullTemperatureAndSeed_AreNotSent()
     {
-        http.Completion(FaqJson.Candidates("D1", 2)).Completion(FaqJson.Selection(1, 1));
+        http.Completion(Candidates()).Completion(FaqJson.Selection(1, 1));
         AzureOpenAiSettings settings = Settings();
         settings.Temperature = null;
         settings.Seed = null;
@@ -139,7 +139,13 @@ public sealed class ModelTransportTests : IDisposable
             new FaqGeneratorOptions { ItemCount = 1 },
             (step, schema) => ChatServiceFactory.ExecutionSettings(settings, step, schema));
         return await generator.GenerateAsync(
-            [new FaqDocumentInput("Regulamin", new Uri("https://example.test/a.pdf"), "# Regulamin\n\nTreść.\n", [])],
+            [new FaqDocumentInput("Regulamin", new Uri("https://example.test/a.pdf"), "# Regulamin\n\nTreść dokumentu testowego.\n", [])],
             cancellationToken: TestContext.Current.CancellationToken);
     }
+
+    /// <summary>Two candidates quoting the document of <see cref="GenerateAsync"/> (the HTTP fake does not fill quotes).</summary>
+    private static string Candidates() =>
+        FaqJson.Candidates(
+            FaqJson.Candidate("D1", 1) with { Quote = "Treść dokumentu testowego." },
+            FaqJson.Candidate("D1", 2) with { Quote = "Treść dokumentu testowego." });
 }

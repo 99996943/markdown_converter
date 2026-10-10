@@ -6,4 +6,5 @@ namespace LegalAgent.Faq.Model;
 /// <param name="Question">Question.</param>
 /// <param name="Answer">Answer.</param>
 /// <param name="Unit">Cited unit; <c>null</c> when none.</param>
-public sealed record FaqCandidate(string Id, string DocumentId, string Question, string Answer, string? Unit);
+/// <param name="Quote">Verbatim fragment of the document supporting the answer (T067d); <c>null</c> when not given.</param>
+public sealed record FaqCandidate(string Id, string DocumentId, string Question, string Answer, string? Unit, string? Quote = null);

@@ -52,8 +52,8 @@ public sealed class UsageTests
 
     private static readonly FaqDocumentInput[] Documents =
     [
-        new("A", new Uri("https://example.test/a.pdf"), "# A\n\nTreść.\n", []),
-        new("B", new Uri("https://example.test/b.pdf"), "# B\n\nTreść.\n", []),
+        new("A", new Uri("https://example.test/a.pdf"), "# A\n\nTreść dokumentu testowego.\n", []),
+        new("B", new Uri("https://example.test/b.pdf"), "# B\n\nTreść dokumentu testowego.\n", []),
     ];
 
     private static CancellationToken Ct => TestContext.Current.CancellationToken;

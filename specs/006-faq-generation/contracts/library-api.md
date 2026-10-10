@@ -89,7 +89,7 @@ public sealed record FaqInputEstimate(string DocumentName, int Characters, int E
 ```csharp
 public sealed record FaqSourceDocument(string Id, string Name, Uri Resource);
 public sealed record FaqSource(string DocumentId, string? Unit);
-public sealed record FaqCandidate(string Id, string DocumentId, string Question, string Answer, string? Unit);
+public sealed record FaqCandidate(string Id, string DocumentId, string Question, string Answer, string? Unit, string? Quote = null);
 public sealed record FaqItem(int Number, string Question, string Answer, IReadOnlyList<FaqSource> Sources, IReadOnlyList<string> BasedOn);
 public sealed record FaqUsage(long InputTokens, long OutputTokens);
 public sealed record FaqResult(IReadOnlyList<FaqItem> Items, IReadOnlyList<FaqSourceDocument> Documents, IReadOnlyList<FaqCandidate> Candidates, FaqUsage? Usage);
@@ -116,7 +116,7 @@ public static class UnitMatcher
 ## Postęp
 
 ```csharp
-public enum FaqEventKind { CandidatesStarted, CandidatesFinished, SelectionStarted, SelectionFinished }
+public enum FaqEventKind { CandidatesStarted, CandidatesFinished, CandidateDropped, SelectionStarted, SelectionFinished }
 
 public sealed record FaqEvent(
     FaqEventKind Kind,
@@ -124,7 +124,8 @@ public sealed record FaqEvent(
     int Characters,          // rozmiar wysyłanej treści (Started)
     int EstimatedTokens,
     int? Count,              // liczba kandydatów (Finished) / liczba kandydatów wejściowych (SelectionStarted)
-    FaqUsage? Usage);        // Finished
+    FaqUsage? Usage,         // Finished
+    string? Detail = null);  // CandidateDropped: „kandydat D1-K3: …” (T067d)
 ```
 
 ## Wyjątki

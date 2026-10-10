@@ -34,13 +34,14 @@ internal static class FaqResponseParser
             var candidates = new List<FaqCandidate>();
             foreach (JsonElement element in array.EnumerateArray())
             {
-                Shape(element, ["question", "answer", "unit"]);
+                Shape(element, ["question", "answer", "unit", "quote"]);
                 candidates.Add(new FaqCandidate(
                     string.Create(CultureInfo.InvariantCulture, $"{documentId}-K{candidates.Count + 1}"),
                     documentId,
                     String(element, "question"),
                     String(element, "answer"),
-                    Unit(String(element, "unit"))));
+                    Unit(String(element, "unit")),
+                    String(element, "quote")));
             }
 
             return candidates;

@@ -550,9 +550,9 @@ nie dotyka klucza.
 Ocena trzeciego przebiegu (FAQ 10/10 zapisane): 8 pozycji poprawnych, pozycja 4 łączy dwa tematy, pozycja 5
 zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokazał błędy parsera. Decyzje właściciela:
 
-- [ ] T067c Komunikat systemowy kroku wyboru: jedno pytanie = jedna sprawa; łączyć tylko kandydatów o tę samą
+- [X] T067c Komunikat systemowy kroku wyboru: jedno pytanie = jedna sprawa; łączyć tylko kandydatów o tę samą
   sprawę, nie łączyć różnych tematów w jedno pytanie (`PromptTests`).
-- [ ] T067d Ugruntowanie kandydatów (cytat + liczby):
+- [X] T067d Ugruntowanie kandydatów (cytat + liczby):
   - schemat `Candidates` dostaje wymagane pole `quote` — dosłowny fragment dokumentu potwierdzający odpowiedź;
   - tekst jednostki = sekcja Markdown od nagłówka pasującego do `unit` (`UnitMatcher`) do następnego nagłówka tego
     samego lub wyższego poziomu; bez jednostki albo bez pasującego nagłówka — cały dokument;

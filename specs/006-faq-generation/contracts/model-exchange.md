@@ -15,7 +15,9 @@ test sprawdzający, że polecenie je zawiera.
 - język polski;
 - liczbę: „co najwyżej N pytań” (`CandidatesPerDocument`);
 - jednostkę: przepisz jednostkę dokładnie z listy „Jednostki dokumentu” pod dokumentem albo podaj pusty tekst;
-  nie twórz oznaczeń spoza listy (T067a: regulaminy mBanku nie mają § ani Art., a model podawał „§ 6”).
+  nie twórz oznaczeń spoza listy (T067a: regulaminy mBanku nie mają § ani Art., a model podawał „§ 6”);
+- cytat (T067d): w polu „quote” dosłowny fragment dokumentu (co najmniej 3 słowa) z jednostki „unit”, który
+  potwierdza odpowiedź; liczby w odpowiedzi zapisane tak jak w dokumencie.
 
 **Komunikat użytkownika**:
 
@@ -46,11 +48,12 @@ Pozycje to `FaqDocumentInput.Units` (każda w jednym wierszu). Gdy lista jest pu
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["question", "answer", "unit"],
+        "required": ["question", "answer", "unit", "quote"],
         "properties": {
           "question": { "type": "string" },
           "answer": { "type": "string" },
-          "unit": { "type": "string" }
+          "unit": { "type": "string" },
+          "quote": { "type": "string" }
         }
       }
     }
@@ -65,6 +68,8 @@ Kandydaci dostają identyfikatory `D2-K1`, `D2-K2`, … w kolejności z odpowied
 **Komunikat systemowy** musi zawierać:
 - zadanie: wybór dokładnie N (`ItemCount` = 10) najważniejszych pytań dla klienta z listy kandydatów; dozwolone
   połączenie lub przeredagowanie kandydatów, zakaz dodawania faktów, których nie ma w kandydatach;
+- jedno pytanie = jedna sprawa: łączyć tylko kandydatów o tę samą sprawę, nie łączyć różnych tematów (T067c);
+  liczby przepisywane z kandydatów `basedOn`;
 - wymóg wskazania `basedOn` (identyfikatory wszystkich wykorzystanych kandydatów); model nie podaje źródeł —
   źródła pozycji liczy kod z kandydatów `basedOn` (T067b: model przeredagowywał jednostki źródeł);
 - język polski.

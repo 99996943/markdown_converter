@@ -52,7 +52,8 @@ przekazywane do `ConsoleReport`.
 
 ### FaqCandidate
 `Id` (`D2-K3`; K numerowane od 1 w kolejności odpowiedzi modelu), `DocumentId`, `Question`, `Answer`,
-`Unit` (string?).
+`Unit` (string?), `Quote` (string? — dosłowny fragment dokumentu, T067d). Odrzucony kandydat zostawia lukę w
+numeracji (np. D1-K1, D1-K3).
 
 ### FaqItem (wynik)
 `Number` (1–10), `Question`, `Answer`, `Sources` (1..n `FaqSource`, z kandydatów `BasedOn`), `BasedOn`
@@ -75,7 +76,8 @@ przekazywane do `ConsoleReport`.
 | `CharactersPerToken` | 3.0 | > 0 (szacunek, research R3) |
 
 ### FaqProgress (zdarzenia `IProgress<FaqEvent>`)
-`Kind`: `CandidatesStarted(docId, chars, estTokens)` | `CandidatesFinished(docId, count, usage?)` |
+`Kind`: `CandidatesStarted(docId, chars, estTokens)` | `CandidateDropped(docId, detail)` |
+`CandidatesFinished(docId, count, usage?)` |
 `SelectionStarted(candidateCount, chars, estTokens)` | `SelectionFinished(usage?)`.
 
 ### Błędy (wyjątki biblioteki)
@@ -91,12 +93,22 @@ aplikacja przepuszcza każdy komunikat przez `SecretRedactor` (FR-411).
 ## Reguły sprawdzania (FR-430, research R5)
 
 **Kandydaci (na dokument)**:
-1. JSON `{"candidates":[{"question","answer","unit"}]}`.
+1. JSON `{"candidates":[{"question","answer","unit","quote"}]}`.
 2. 1 ≤ liczba ≤ `CandidatesPerDocument`.
 3. `question`, `answer` niepuste po przycięciu.
 4. Pytania niepowtarzające się (normalizacja: małe litery w kulturze niezmiennej, zwinięte białe znaki, bez
    końcowego `?`).
 5. `unit` pusty albo pasuje do `Units` dokumentu.
+
+Reguły 1–5 odrzucają całą odpowiedź. Potem ugruntowanie (T067d, `FaqGrounding`) sprawdza każdego kandydata osobno:
+- tekst jednostki = sekcje Markdown, których nagłówek pasuje do `unit` (`UnitMatcher`), każda do następnego
+  nagłówka tego samego lub wyższego poziomu; bez `unit` albo bez pasującego nagłówka — cały dokument;
+- normalizacja: komentarze `<!-- … -->` usunięte, tylko litery i cyfry małymi literami, reszta jako jedna spacja;
+- cytat ma co najmniej 3 słowa i występuje w tekście jednostki (całymi słowami);
+- każda liczba (ciąg cyfr) odpowiedzi występuje w tekście jednostki.
+
+Kandydat, który nie spełnia tych warunków, odpada (zdarzenie `CandidateDropped`, ostrzeżenie w konsoli). Odpowiedź
+jest odrzucana (`FaqResponseException`, kod 7) tylko wtedy, gdy z dokumentu nie zostanie żaden kandydat.
 
 **Wybór**:
 1. JSON `{"items":[{"question","answer","basedOn":[...]}]}`.
@@ -104,6 +116,7 @@ aplikacja przepuszcza każdy komunikat przez `SecretRedactor` (FR-411).
 3. Pola niepuste; `basedOn` ma ≥ 1 element.
 4. Pytania niepowtarzające się.
 5. Każde `basedOn` to istniejący kandydat.
+6. Każda liczba odpowiedzi występuje w odpowiedziach lub cytatach kandydatów `basedOn` (T067d).
 Źródła pozycji nie pochodzą od modelu (T067b): to dokument i jednostka każdego kandydata `basedOn`, w kolejności
 `basedOn`, bez powtórzeń; źródło bez jednostki odpada, gdy ten sam dokument jest też źródłem z jednostką.
 Jednostki kandydatów są już sprawdzone w kroku kandydatów.

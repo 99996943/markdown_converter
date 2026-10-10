@@ -93,7 +93,7 @@ public sealed class FaqGeneratorErrorTests
         .. Enumerable.Range(1, 5).Select(i => new FaqDocumentInput(
             Invariant($"Regulamin {i}"),
             new Uri(Invariant($"https://example.test/{i}.pdf")),
-            Invariant($"# Regulamin {i}\n\nTreść.\n"),
+            Invariant($"# Regulamin {i}\n\nTreść dokumentu testowego.\n"),
             [])),
     ];
 

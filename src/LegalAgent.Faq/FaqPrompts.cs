@@ -19,6 +19,8 @@ internal static class FaqPrompts
         - Jeśli dokument nie daje odpowiedzi na pytanie, napisz wprost: „Dokument nie rozstrzyga …” i dokończ, czego nie rozstrzyga.
         - Pisz po polsku, jasno i zwięźle, językiem zrozumiałym dla klienta; kwoty, terminy i warunki przepisuj dokładnie.
         - W polu „unit” podaj jednostkę redakcyjną (nagłówek), z której pochodzi odpowiedź, przepisaną dokładnie z listy „Jednostki dokumentu” podanej pod dokumentem, albo pusty tekst, gdy odpowiedź nie pochodzi z jednej jednostki lub lista jest pusta. Nie twórz oznaczeń, których nie ma na liście (np. „§ 6”, gdy dokument nie ma paragrafów).
+        - W polu „quote” przepisz dosłownie z dokumentu fragment (co najmniej 3 słowa, najlepiej całe zdanie), który potwierdza odpowiedź; fragment musi pochodzić z jednostki podanej w „unit”. Kandydat bez takiego fragmentu zostanie odrzucony.
+        - Liczby (kwoty, terminy, godziny, daty) zapisuj w odpowiedzi tak jak w dokumencie; liczba, której nie ma w tekście jednostki, odrzuca kandydata.
         - Odpowiedz wyłącznie obiektem JSON zgodnym ze schematem.
         """);
 
@@ -56,7 +58,9 @@ internal static class FaqPrompts
 
         Zasady:
         - Wybierz dokładnie {itemCount} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń.
-        - Możesz połączyć kilku kandydatów w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach.
+        - Każde pytanie dotyczy jednej sprawy. Łącz kandydatów tylko wtedy, gdy dotyczą tej samej sprawy (np. z różnych dokumentów); nie łącz różnych tematów w jedno pytanie.
+        - Możesz połączyć kilku kandydatów o tę samą sprawę w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach, i nie zmieniaj warunków ani wyjątków.
+        - Liczby przepisuj z kandydatów; liczba, której nie ma w kandydatach z „basedOn”, odrzuca odpowiedź.
         - Jeśli kandydat mówi „Dokument nie rozstrzyga …”, zachowaj to stwierdzenie.
         - W polu „basedOn” podaj identyfikatory wykorzystanych kandydatów (np. D2-K3).
         - Źródła pozycji (dokument i jednostka) zostaną wzięte z kandydatów wskazanych w „basedOn”, więc wskaż wszystkich kandydatów, z których pochodzi odpowiedź.

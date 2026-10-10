@@ -74,6 +74,8 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
                 $"[{value.DocumentId}] kandydaci z {fileNames.GetValueOrDefault(value.DocumentId ?? string.Empty, value.DocumentId ?? string.Empty)} — {Size(value)}…",
             FaqEventKind.CandidatesFinished =>
                 $"[{value.DocumentId}] {Candidates(value.Count ?? 0)} ({Usage(value.Usage)})",
+            FaqEventKind.CandidateDropped =>
+                $"[{value.DocumentId}] pominięto {Dropped(value.Detail ?? string.Empty)}",
             FaqEventKind.SelectionStarted => $"[wybór] {Candidates(value.Count ?? 0)} — {Size(value)}…",
             FaqEventKind.SelectionFinished => $"[wybór] {Questions(value.Count ?? 0)} ({Usage(value.Usage)})",
             _ => null,
@@ -94,6 +96,10 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
         stdout.WriteLine();
         stdout.WriteLine($"Zapisano FAQ: {path} ({Questions(result.Items.Count)}; {usage})");
     }
+
+    /// <summary>„kandydat D1-K3: …” as „kandydata D1-K3: …”.</summary>
+    private static string Dropped(string detail) =>
+        detail.StartsWith("kandydat ", StringComparison.Ordinal) ? "kandydata " + detail["kandydat ".Length..] : detail;
 
     private static string Size(FaqEvent value) =>
         $"{PolishText.Count(value.Characters, "znak", "znaki", "znaków")} (~{PolishText.Number(value.EstimatedTokens)} tokenów)";

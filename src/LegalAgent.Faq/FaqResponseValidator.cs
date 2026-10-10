@@ -81,6 +81,17 @@ internal static class FaqResponseValidator
                 }
             }
 
+            if (basedOn.Count > 0)
+            {
+                var numbers = new HashSet<string>(
+                    basedOn.SelectMany(c => FaqGrounding.Numbers(c.Answer).Concat(FaqGrounding.Numbers(c.Quote ?? string.Empty))),
+                    StringComparer.Ordinal);
+                foreach (string number in FaqGrounding.Numbers(item.Answer).Distinct(StringComparer.Ordinal).Where(n => !numbers.Contains(n)))
+                {
+                    problems.Add(Invariant($"pozycja {position}: liczba „{number}” nie występuje w kandydatach basedOn"));
+                }
+            }
+
             result.Add(new FaqItem(position, item.Question.Trim(), item.Answer.Trim(), SourcesOf(basedOn), item.BasedOn));
         }
 

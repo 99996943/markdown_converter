@@ -115,9 +115,10 @@ public sealed class FaqGenerator
             Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(text, source.Id);
             IReadOnlyList<FaqCandidate> accepted = parsed.Value ?? throw new FaqResponseException(FaqStep.Candidates, source.Id, [parsed.Problem!]);
             FaqResponseValidator.ValidateCandidates(accepted, source.Id, documents[i].Units, options.CandidatesPerDocument);
-            candidates.AddRange(accepted);
+            List<FaqCandidate> grounded = Ground(accepted, source.Id, documents[i].Markdown, progress);
+            candidates.AddRange(grounded);
             total = UsageReader.Add(total, usage, first: i == 0);
-            progress?.Report(new FaqEvent(FaqEventKind.CandidatesFinished, source.Id, 0, 0, accepted.Count, usage));
+            progress?.Report(new FaqEvent(FaqEventKind.CandidatesFinished, source.Id, 0, 0, grounded.Count, usage));
         }
 
         string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
@@ -130,6 +131,33 @@ public sealed class FaqGenerator
         total = UsageReader.Add(total, selectionUsage, first: false);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, selectionUsage));
         return new FaqResult(result, sources, candidates, total);
+    }
+
+    /// <summary>
+    /// Candidates grounded in their units (T067d); the others are dropped and reported. The response is rejected when
+    /// none is left.
+    /// </summary>
+    private static List<FaqCandidate> Ground(IReadOnlyList<FaqCandidate> candidates, string documentId, string markdown, IProgress<FaqEvent>? progress)
+    {
+        var grounded = new List<FaqCandidate>(candidates.Count);
+        var problems = new List<string>();
+        foreach (FaqCandidate candidate in candidates)
+        {
+            IReadOnlyList<string> found = FaqGrounding.Problems(candidate, markdown);
+            if (found.Count == 0)
+            {
+                grounded.Add(candidate);
+                continue;
+            }
+
+            problems.AddRange(found);
+            foreach (string problem in found)
+            {
+                progress?.Report(new FaqEvent(FaqEventKind.CandidateDropped, documentId, 0, 0, null, null, problem));
+            }
+        }
+
+        return grounded.Count > 0 ? grounded : throw new FaqResponseException(FaqStep.Candidates, documentId, problems);
     }
 
     private int Estimate(string text) => TokenEstimator.Estimate(text.Length, options.CharactersPerToken);
