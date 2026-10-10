@@ -103,24 +103,26 @@ public sealed class FaqGenerator
         ];
 
         var candidates = new List<FaqCandidate>();
+        FaqUsage? total = null;
         for (int i = 0; i < documents.Count; i++)
         {
             FaqSourceDocument source = sources[i];
             string user = FaqPrompts.CandidatesUser(source, documents[i].Markdown);
             progress?.Report(new FaqEvent(FaqEventKind.CandidatesStarted, source.Id, user.Length, Estimate(user), null, null));
 
-            string text = await AskAsync(FaqStep.Candidates, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
+            (string text, FaqUsage? usage) = await AskAsync(FaqStep.Candidates, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
                 .ConfigureAwait(false);
             Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(text, source.Id);
             IReadOnlyList<FaqCandidate> accepted = parsed.Value ?? throw new FaqResponseException(FaqStep.Candidates, source.Id, [parsed.Problem!]);
             FaqResponseValidator.ValidateCandidates(accepted, source.Id, documents[i].Units, options.CandidatesPerDocument);
             candidates.AddRange(accepted);
-            progress?.Report(new FaqEvent(FaqEventKind.CandidatesFinished, source.Id, 0, 0, accepted.Count, null));
+            total = UsageReader.Add(total, usage, first: i == 0);
+            progress?.Report(new FaqEvent(FaqEventKind.CandidatesFinished, source.Id, 0, 0, accepted.Count, usage));
         }
 
         string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionStarted, null, selectionUser.Length, Estimate(selectionUser), candidates.Count, null));
-        string selectionText = await AskAsync(FaqStep.Selection, FaqPrompts.SelectionSystem(options.ItemCount), selectionUser, cancellationToken)
+        (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, FaqPrompts.SelectionSystem(options.ItemCount), selectionUser, cancellationToken)
             .ConfigureAwait(false);
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(selectionText);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
@@ -131,14 +133,15 @@ public sealed class FaqGenerator
         }
 
         IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, candidates, unitsByDocument, options.ItemCount);
-        progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, null));
-        return new FaqResult(result, sources, candidates, null);
+        total = UsageReader.Add(total, selectionUsage, first: false);
+        progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, selectionUsage));
+        return new FaqResult(result, sources, candidates, total);
     }
 
     private int Estimate(string text) => TokenEstimator.Estimate(text.Length, options.CharactersPerToken);
 
-    /// <summary>One request: system and user message, settings for the step; returns the text of the first message.</summary>
-    private async Task<string> AskAsync(FaqStep step, string system, string user, CancellationToken cancellationToken)
+    /// <summary>One request: system and user message, settings for the step; returns the text and usage of the first message.</summary>
+    private async Task<(string Text, FaqUsage? Usage)> AskAsync(FaqStep step, string system, string user, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         var history = new ChatHistory();
@@ -147,6 +150,6 @@ public sealed class FaqGenerator
         PromptExecutionSettings settings = executionSettings(step, step == FaqStep.Candidates ? FaqSchemas.Candidates : FaqSchemas.Selection);
         IReadOnlyList<ChatMessageContent> messages = await chat.GetChatMessageContentsAsync(history, settings, null, cancellationToken)
             .ConfigureAwait(false);
-        return messages.Count > 0 ? messages[0].Content ?? string.Empty : string.Empty;
+        return messages.Count > 0 ? (messages[0].Content ?? string.Empty, UsageReader.Read(messages[0].Metadata)) : (string.Empty, null);
     }
 }
