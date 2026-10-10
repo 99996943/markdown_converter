@@ -324,6 +324,102 @@ public sealed class StepSequenceStageTests
         Assert.Contains(page.Lines, l => l.Text == Arrow && l.Role == LineRole.Artifact);
     }
 
+    /// <summary>T035 — spec 008 FR-632: an item of the explanation printed below its box belongs to that box.</summary>
+    [Fact]
+    public void ExplanationRunningOnBelowTheBox_BelongsToThatBox()
+    {
+        LayoutPage page = PageWith(
+            1,
+            [
+                Row(117, ("Pierwszy krok", TitleLeft), ("1. Pierwszy punkt.", TextLeft)),
+                Line("2. Drugi punkt.", TextLeft, 129),
+                Line("3. Trzeci punkt", TextLeft, 141),
+                Line("w dwóch wierszach.", TextLeft + 10, 153),
+                Row(177, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+            ],
+            Box(114, 140),
+            Box(174, 190));
+
+        PipelineContext context = Run(Context([page]));
+
+        Assert.Equal([("Pierwszy krok", "1"), ("Drugi krok", "2")], Titles(context));
+        Assert.Equal(
+            ["Pierwszy krok", "1. Pierwszy punkt.", "2. Drugi punkt.", "3. Trzeci punkt", "w dwóch wierszach.", "Drugi krok", "Opis drugiego kroku."],
+            Texts(page));
+        Assert.All(
+            page.Lines.Where(l => l.Box.Left >= TextLeft),
+            l => Assert.Equal(TextLeft, LayoutAnnotations.GetNumber(l, LayoutAnnotations.ColumnLeft)));
+    }
+
+    public static TheoryData<string> FlowEnds() => ["wide gap", "text on the left"];
+
+    /// <summary>T035 — the explanation below the last box ends at a wider gap or at text reaching left of the box edge.</summary>
+    [Theory]
+    [MemberData(nameof(FlowEnds))]
+    public void ExplanationBelowTheBox_EndsAtAWideGapOrAtTextOnTheLeft(string end)
+    {
+        LayoutLine after = end == "wide gap" ? Line("Akapit po schemacie.", TextLeft, 200) : Line("Dalszy tekst po prawej.", TextLeft, 193);
+        var lines = new List<LayoutLine>
+        {
+            Row(117, ("Pierwszy krok", TitleLeft), ("Opis pierwszego kroku.", TextLeft)),
+            Row(157, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+            Line("ciąg dalszy opisu.", TextLeft, 169),
+        };
+        if (end == "text on the left")
+        {
+            lines.Add(Line("Tekst od lewego marginesu.", 90, 181));
+        }
+
+        lines.Add(after);
+        LayoutPage page = PageWith(1, lines, Box(114, 130), Box(154, 166));
+
+        Run(Context([page]));
+
+        Assert.True(page.Lines.Single(l => l.Text == "ciąg dalszy opisu.").Annotations.ContainsKey(LayoutAnnotations.StepIndex));
+        Assert.False(after.Annotations.ContainsKey(LayoutAnnotations.StepIndex));
+        Assert.Equal(LineRole.Unknown, after.Role);
+        Assert.Equal(after, page.Lines[^1]);
+    }
+
+    /// <summary>
+    /// T035 — a frame broken by a page boundary: on the next page an empty shaded box with the rest of the explanation
+    /// below it continues the step; its phrase is printed once and the empty box gives no step name.
+    /// </summary>
+    [Fact]
+    public void FrameBrokenByAPageBoundary_ContinuesBelowAnEmptyBoxOnTheNextPage()
+    {
+        LayoutPage first = PageWith(
+            1,
+            [
+                Row(637, ("Składasz zlecenie", TitleLeft), ("Zlecenie składasz z datą bieżącą.", TextLeft)),
+                Row(700, ("Autoryzujesz", TitleLeft), ("• Zgadzasz się na przelew", TextLeft)),
+                Line("i podajesz numer", TextLeft + 10, 712),
+            ],
+            Box(634, 650),
+            Box(690, 740));
+        LayoutPage second = PageWith(
+            2,
+            [
+                Line("telefonu odbiorcy.", TextLeft + 10, 72),
+                Line("• Autoryzację opisaliśmy w regulaminie.", TextLeft, 84),
+                Row(140, ("Przyjmujemy zlecenie", TitleLeft), ("Przelew zrealizujemy.", TextLeft)),
+                Line("6) Z jednym numerem telefonu powiązany jest rachunek.", 90, 200),
+            ],
+            Box(60, 70),
+            Box(130, 160));
+
+        PipelineContext context = Run(Context([first, second]));
+
+        Assert.Equal(
+            [("Składasz zlecenie", "1"), ("Autoryzujesz", "2"), ("Przyjmujemy zlecenie", "3")],
+            Titles(context));
+        Assert.Equal(
+            ["telefonu odbiorcy.", "• Autoryzację opisaliśmy w regulaminie.", "Przyjmujemy zlecenie", "Przelew zrealizujemy.",
+                "6) Z jednym numerem telefonu powiązany jest rachunek."],
+            Texts(second));
+        Assert.True(second.Lines[0].Annotations.ContainsKey(LayoutAnnotations.StepIndex));
+    }
+
     public static TheoryData<string> NotSchemes() => ["single box", "wide boxes", "nothing to the right", "disabled"];
 
     [Theory]
