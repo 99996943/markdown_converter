@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.Json;
 using LegalAgent.Faq;
 using LegalAgent.Faq.Model;
@@ -57,6 +58,66 @@ public sealed class ModelTransportTests : IDisposable
         JsonElement json = http.Requests[0].Json;
         Assert.False(json.TryGetProperty("temperature", out _));
         Assert.False(json.TryGetProperty("seed", out _));
+    }
+
+    [Theory]
+    [InlineData(HttpStatusCode.TooManyRequests, "Przekroczono limit zapytań wdrożenia (429) przy dokumencie D1.")]
+    [InlineData(HttpStatusCode.ServiceUnavailable, "503")]
+    public async Task ThrottledOrUnavailable_OneRequestOnly_ExitCode6(HttpStatusCode status, string message)
+    {
+        using AppHarness app = Connected();
+        app.ModelHttp.Error(status, "error", "spróbuj później").Error(status, "error", "spróbuj później").Error(status, "error", "spróbuj później");
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(6, run.Code);
+        Assert.Contains(message, run.Err, StringComparison.Ordinal);
+        Assert.Single(app.ModelHttp.Requests);
+    }
+
+    [Fact]
+    public async Task SlowService_TimeoutFromConfiguration_ExitCode6()
+    {
+        using AppHarness app = Connected(new Dictionary<string, object?> { ["TimeoutSeconds"] = 0.5 });
+        app.ModelHttp.Delay(TimeSpan.FromSeconds(5), FaqJson.Candidates("D1", 3));
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(6, run.Code);
+        Assert.Contains("Brak odpowiedzi usługi w ciągu 0,5 s (krok kandydatów, D1).", run.Err, StringComparison.Ordinal);
+        Assert.Single(app.ModelHttp.Requests);
+    }
+
+    [Fact]
+    public async Task NameResolutionFailure_ExitCode6()
+    {
+        using AppHarness app = Connected();
+        app.ModelHttp.Throw(new HttpRequestException("Nie można rozpoznać nazwy hosta (faq.example.test:443)"));
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(6, run.Code);
+        Assert.Contains("Błąd połączenia z usługą Azure OpenAI: ", run.Err, StringComparison.Ordinal);
+        Assert.Contains("Nie można rozpoznać nazwy hosta", run.Err, StringComparison.Ordinal);
+        Assert.Single(app.ModelHttp.Requests);
+    }
+
+    private static readonly string[] Urls = [.. Enumerable.Range(1, 5).Select(i => $"https://www.example.test/pdf/reg-{i}.pdf")];
+
+    private static CancellationToken Ct => TestContext.Current.CancellationToken;
+
+    private static string[] UrlArgs() => [.. Urls.SelectMany(u => new[] { "--url", u })];
+
+    private static AppHarness Connected(Dictionary<string, object?>? azure = null)
+    {
+        var app = new AppHarness { UseConnector = true };
+        app.ServeRegulations(Urls);
+        if (azure is not null)
+        {
+            app.WriteSettings(new Dictionary<string, object?>(), azure);
+        }
+
+        return app;
     }
 
     private static AzureOpenAiSettings Settings() => new()
