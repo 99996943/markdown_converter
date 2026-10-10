@@ -63,22 +63,172 @@ public static partial class LayoutMetrics
     }
 
     /// <summary>Paragraphs whose whole text is a page number „N/M” (spec 008).</summary>
-    public static int PageNumberParagraphs(string markdown) => throw new NotImplementedException();
+    public static int PageNumberParagraphs(string markdown) =>
+        markdown.Split('\n').Count(line => WholePageNumber().IsMatch(line.Trim()));
 
-    /// <summary>Tokens „a.”, „b.” … / „i.”, „ii.” … of a consecutive run (at least two) that do not start a list item (spec 008).</summary>
-    public static int DotEnumLabelsOutsideList(string markdown) => throw new NotImplementedException();
+    /// <summary>
+    /// Tokens „a.”, „b.” … / „i.”, „ii.” … that belong to a run of at least two consecutive labels and do not start a
+    /// list item (in item text, in a paragraph, in a table cell) (spec 008). The ambiguous „i.”, „v.”, „x.” count
+    /// as a letter and as a Roman numeral; a token is in a run when either reading continues it.
+    /// </summary>
+    public static int DotEnumLabelsOutsideList(string markdown)
+    {
+        var tokens = new List<(string Text, bool StartsItem)>();
+        foreach (string line in markdown.Split('\n'))
+        {
+            int itemStart = ListPrefix().Match(line) is { Success: true } prefix ? prefix.Length : -1;
+            foreach (Match m in DotToken().Matches(line))
+            {
+                tokens.Add((m.Groups[1].Value, m.Index == itemStart));
+            }
+        }
+
+        var inRun = new bool[tokens.Count];
+        MarkRuns(tokens, inRun, static t => t.Length == 1 ? t[0] - 'a' + 1 : 0);
+        MarkRuns(tokens, inRun, RomanValue);
+        return tokens.Where((t, i) => inRun[i] && !t.StartsItem).Count();
+    }
 
     /// <summary>Unit headings (Dział, Rozdział, Art., §) present only before / only after, level ignored (spec 008).</summary>
-    public static SetDiff UnitHeadingDiff(string before, string after) => throw new NotImplementedException();
+    public static SetDiff UnitHeadingDiff(string before, string after) =>
+        Diff(UnitHeadings(before), UnitHeadings(after));
 
     /// <summary>Frame phrases found inside a table row (GFM or fallback) (spec 008).</summary>
-    public static int FramesAsTable(string markdown, IReadOnlyCollection<string> phrases) => throw new NotImplementedException();
+    public static int FramesAsTable(string markdown, IReadOnlyCollection<string> phrases) =>
+        CountPhrases(markdown, phrases, static line => IsTableRow(line));
 
     /// <summary>Frame phrases found inside a list item instead of in a paragraph of their own (spec 008).</summary>
-    public static int FramesWoven(string markdown, IReadOnlyCollection<string> phrases) => throw new NotImplementedException();
+    public static int FramesWoven(string markdown, IReadOnlyCollection<string> phrases) =>
+        CountPhrases(markdown, phrases, static line => !IsTableRow(line) && line.TrimStart().StartsWith("- ", StringComparison.Ordinal));
 
     /// <summary>Words (no punctuation or Markdown marks) present only before / only after (spec 008).</summary>
-    public static SetDiff WordSetDiff(string before, string after) => throw new NotImplementedException();
+    public static SetDiff WordSetDiff(string before, string after) => Diff(Words(before), Words(after));
+
+    private static bool IsTableRow(string line) => line.StartsWith('|') || line.Contains(FallbackSeparator, StringComparison.Ordinal);
+
+    private static int CountPhrases(string markdown, IReadOnlyCollection<string> phrases, Func<string, bool> lineFilter)
+    {
+        string[] wanted = phrases.Select(Normalize).Where(p => p.Length > 0).Distinct(StringComparer.Ordinal).ToArray();
+        int count = 0;
+        foreach (string line in markdown.Split('\n').Where(lineFilter))
+        {
+            string text = Normalize(line);
+            foreach (string phrase in wanted)
+            {
+                for (int at = text.IndexOf(phrase, StringComparison.Ordinal); at >= 0; at = text.IndexOf(phrase, at + phrase.Length, StringComparison.Ordinal))
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    private static string Normalize(string text) =>
+        Whitespace().Replace(text.Replace("**", string.Empty, StringComparison.Ordinal).Replace("\\", string.Empty, StringComparison.Ordinal), " ").Trim();
+
+    private static List<string> UnitHeadings(string markdown) =>
+        markdown.Split('\n')
+            .Select(line => UnitHeading().Match(line))
+            .Where(m => m.Success)
+            .Select(m => m.Groups[1].Value.Trim())
+            .ToList();
+
+    private static HashSet<string> Words(string markdown) =>
+        WordToken().Matches(HtmlComment().Replace(markdown, " ")).Select(m => m.Value.ToLowerInvariant()).ToHashSet(StringComparer.Ordinal);
+
+    private static SetDiff Diff(IEnumerable<string> before, IEnumerable<string> after) =>
+        new(Subtract(before, after), Subtract(after, before));
+
+    /// <summary>Multiset difference <paramref name="from"/> minus <paramref name="what"/>, in ordinal order.</summary>
+    private static List<string> Subtract(IEnumerable<string> from, IEnumerable<string> what)
+    {
+        Dictionary<string, int> remaining = what.GroupBy(s => s, StringComparer.Ordinal).ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
+        var result = new List<string>();
+        foreach (string item in from.Order(StringComparer.Ordinal))
+        {
+            if (remaining.TryGetValue(item, out int left) && left > 0)
+            {
+                remaining[item] = left - 1;
+            }
+            else
+            {
+                result.Add(item);
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>Marks tokens that continue (or are continued by) a +1 sequence of the reading given by <paramref name="value"/>.</summary>
+    private static void MarkRuns(List<(string Text, bool StartsItem)> tokens, bool[] inRun, Func<string, int> value)
+    {
+        int previousIndex = -1;
+        int previousValue = 0;
+        for (int i = 0; i < tokens.Count; i++)
+        {
+            int v = value(tokens[i].Text);
+            if (v == 0)
+            {
+                continue;
+            }
+
+            if (previousIndex >= 0 && v == previousValue + 1)
+            {
+                inRun[previousIndex] = true;
+                inRun[i] = true;
+            }
+
+            previousIndex = i;
+            previousValue = v;
+        }
+    }
+
+    /// <summary>Value of a lower-case Roman numeral i to xxxix, 0 when <paramref name="token"/> is not one.</summary>
+    private static int RomanValue(string token)
+    {
+        if (!RomanNumeral().IsMatch(token))
+        {
+            return 0;
+        }
+
+        int total = 0;
+        for (int i = 0; i < token.Length; i++)
+        {
+            int digit = token[i] switch { 'i' => 1, 'v' => 5, _ => 10 };
+            int next = i + 1 < token.Length ? token[i + 1] switch { 'i' => 1, 'v' => 5, _ => 10 } : 0;
+            total += digit < next ? -digit : digit;
+        }
+
+        return total;
+    }
+
+    [GeneratedRegex(@"^\d{1,3}/\d{1,3}$")]
+    private static partial Regex WholePageNumber();
+
+    /// <summary>A list marker at the start of a line; the label token follows it.</summary>
+    [GeneratedRegex(@"^\s*-\s+")]
+    private static partial Regex ListPrefix();
+
+    /// <summary>A candidate label „a.”, „ii.” (the dot may be escaped) followed by text.</summary>
+    [GeneratedRegex(@"(?<=^|[\s|])([a-z]|[ivx]+)\\?\.(?=\s)")]
+    private static partial Regex DotToken();
+
+    [GeneratedRegex(@"^(?:x{0,3})(?:ix|iv|v?i{0,3})$")]
+    private static partial Regex RomanNumeral();
+
+    [GeneratedRegex(@"^#{1,6}\s+((?:Art\.|§|Rozdział|Dział|Oddział|Tytuł)(?=\s|$).*)$")]
+    private static partial Regex UnitHeading();
+
+    [GeneratedRegex(@"[\p{L}\p{N}]+")]
+    private static partial Regex WordToken();
+
+    [GeneratedRegex(@"<!--.*?-->")]
+    private static partial Regex HtmlComment();
+
+    [GeneratedRegex(@"\s+")]
+    private static partial Regex Whitespace();
 
     /// <summary>A label „N.” (escaped or bold), „N/” or „x/” at the very start of a line, followed by text.</summary>
     [GeneratedRegex(@"^(?:\*\*)?(?:\d{1,3}[a-z]?(?:\\?\.|/)|[a-z]{1,2}/)(?:\*\*)?\s+\S")]
