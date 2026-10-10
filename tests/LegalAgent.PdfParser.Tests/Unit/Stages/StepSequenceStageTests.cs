@@ -215,6 +215,32 @@ public sealed class StepSequenceStageTests
         Assert.Equal([("Wysyłasz prośbę", "1"), ("Płatnik akceptuje", "2")], Titles(context));
     }
 
+    /// <summary>
+    /// T067f — mBank regulation of customer service, page 22: the chapter heading right above the scheme starts left of
+    /// the boxes and runs on across the box edge („przekażemy” straddles it); it is not a column-name row.
+    /// </summary>
+    [Fact]
+    public void HeadingRunningAcrossTheBoxEdge_IsNotAColumnNameRow()
+    {
+        LayoutLine heading = Line("18. Jak i kiedy przekażemy informację o zmianie regulaminu?", BoxLeft - 6, 90);
+        LayoutPage page = PageWith(
+            1,
+            [
+                heading,
+                Row(117, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)),
+                Line("zmian", TitleLeft, 129),
+                Row(160, ("Jak i kiedy", TitleLeft), ("1) Informację o zmianach przekażemy:", TextLeft)),
+                Line("przekażemy", TitleLeft, 172),
+            ],
+            Box(110, 150),
+            Box(152, 200));
+
+        Run(Context([page]));
+
+        Assert.Equal(LineRole.Unknown, heading.Role);
+        Assert.False(heading.Annotations.ContainsKey(LayoutAnnotations.StepIndex));
+    }
+
     [Fact]
     public void TextBetweenBoxes_StartsANewScheme()
     {

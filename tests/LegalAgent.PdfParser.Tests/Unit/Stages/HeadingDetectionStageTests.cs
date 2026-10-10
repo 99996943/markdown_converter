@@ -660,4 +660,97 @@ public sealed class HeadingDetectionStageTests
 
         Assert.Contains("bank.example", Headings(context).Select(h => h.Text));
     }
+
+    // ---------------------------------------------------------------- spec 006, T067e–T067g (real mBank regulations)
+
+    /// <summary>
+    /// T067e — mBank regulation of payment services, page 1: a 9 pt high decorative strip across the top of the page
+    /// (0–595 × 6–15) above a five-line 32 pt title. The title lines are not captions of the strip.
+    /// </summary>
+    [Fact]
+    public void TitleUnderAThinStripAcrossThePage_IsOneTitle_NotCaptions()
+    {
+        var sketch = new PageSketch()
+            .Line("Regulamin usług płatniczych", X, 87, 32, bold: true)
+            .Line("dla osób fizycznych", X, 126, 32, bold: true)
+            .Line("i klientów Private Banking", X, 165, 32, bold: true)
+            .Line("w ramach bankowości", X, 204, 32, bold: true)
+            .Line("detalicznej mBanku S.A.", X, 243, 32, bold: true)
+            .Line("obowiązuje od 26 sierpnia 2026 r.", X, 284, 16, bold: true);
+        for (int i = 0; i < 6; i++)
+        {
+            sketch.Line(BodyText, X, 340 + (i * Leading), Body);
+        }
+
+        sketch.Page.ImageAreas.Add(new Rect(0, 6, 595, 15));
+        PipelineContext context = PageSketch.Assemble(null, sketch);
+        new HeadingDetectionStage().Execute(context);
+
+        HeadingInfo title = Assert.Single(Headings(context));
+        Assert.Equal(SectionKind.DocumentTitle, title.Kind);
+        Assert.Equal(
+            "Regulamin usług płatniczych dla osób fizycznych i klientów Private Banking w ramach bankowości detalicznej mBanku S.A.",
+            title.Text);
+    }
+
+    /// <summary>
+    /// T067f — mBank regulation of customer service, page 17: a bold chapter heading wrapped after a comma onto a second,
+    /// indented line, between bold one-line chapter headings.
+    /// </summary>
+    [Fact]
+    public void BoldHeadingWrappedAfterAComma_IsOneHeadingAtTheLevelOfTheOtherChapters()
+    {
+        PipelineContext context = Run(Page()
+            .Text("13. Jak dbamy o bezpieczeństwo naszych usług i Twoich pieniędzy?", size: 11, bold: true)
+            .Paragraph(3)
+            .Gap().Text("14. Jak będziemy Cię obsługiwać, gdy władze ogłoszą stan nadzwyczajny,", size: 11, bold: true)
+            .Text("stan zagrożenia epidemicznego lub stan epidemii?", size: 11, bold: true, x: X + 25)
+            .Paragraph(3)
+            .Gap().Text("15. Co musisz zrobić, jeśli zmienią się Twoje dane?", size: 11, bold: true)
+            .Paragraph(2));
+
+        HeadingInfo chapter = Heading(
+            context,
+            "14. Jak będziemy Cię obsługiwać, gdy władze ogłoszą stan nadzwyczajny, stan zagrożenia epidemicznego lub stan epidemii?");
+        Assert.Equal(Heading(context, "13. Jak dbamy o bezpieczeństwo naszych usług i Twoich pieniędzy?").Level, chapter.Level);
+        Assert.Equal(LineRole.Heading, LineStarting(context, "stan zagrożenia").Role);
+    }
+
+    [Fact]
+    public void BoldLineEndingWithACommaFollowedByBodyText_IsNotAHeading()
+    {
+        PipelineContext context = Run(Page()
+            .Paragraph(2)
+            .Gap().Text("Pamiętaj, że w każdej chwili możesz to zmienić,", bold: true)
+            .Paragraph(2));
+
+        Assert.Empty(Headings(context));
+    }
+
+    /// <summary>
+    /// T067g — mBank regulation of complaints, pages 2–3: „Spis treści” in 13 pt bold, the chapters in 12 pt bold over an
+    /// 11 pt body. The table of contents has no subsections, so the chapters do not stand below it.
+    /// </summary>
+    [Fact]
+    public void TableOfContentsHeadingInALargerFont_IsNotTheParentOfTheChapters()
+    {
+        PipelineContext context = Run(
+            Page(1)
+                .Text("Regulamin przyjmowania", size: 32, bold: true)
+                .Text("i rozpatrywania reklamacji", size: 32, bold: true)
+                .Gap().Paragraph(2),
+            Page(2)
+                .Text("Spis treści", size: 12, bold: true)
+                .Text("1. Co znajdziesz w regulaminie? ........................ 3")
+                .Text("2. Jak możesz złożyć reklamację? ...................... 4"),
+            Page(3)
+                .Text("1. Co znajdziesz w regulaminie?", size: 11, bold: true)
+                .Paragraph(3)
+                .Gap().Text("2. Jak możesz złożyć reklamację?", size: 11, bold: true)
+                .Paragraph(3));
+
+        Assert.Equal(2, Heading(context, "Spis treści").Level);
+        Assert.Equal(2, Heading(context, "1. Co znajdziesz w regulaminie?").Level);
+        Assert.Equal(2, Heading(context, "2. Jak możesz złożyć reklamację?").Level);
+    }
 }
