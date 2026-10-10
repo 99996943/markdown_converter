@@ -43,7 +43,7 @@ public sealed class RendererTests
         Assert.DoesNotContain("\r", text, StringComparison.Ordinal);
         Assert.DoesNotContain("\n\n\n", text, StringComparison.Ordinal);
         Assert.All(text.Split('\n'), line => Assert.Equal(line.TrimEnd(), line));
-        Assert.EndsWith(".pdf)\n", text, StringComparison.Ordinal);
+        Assert.EndsWith("§ 10\n", text, StringComparison.Ordinal);
         Assert.False(text.EndsWith("\n\n", StringComparison.Ordinal));
     }
 
