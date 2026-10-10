@@ -45,6 +45,12 @@ internal sealed class FakeChatCompletionService : IChatCompletionService
     /// <inheritdoc />
     public IReadOnlyDictionary<string, object?> Attributes { get; } = new Dictionary<string, object?>();
 
+    /// <summary>Answers calls when no step is scripted; <c>null</c> makes such a call fail.</summary>
+    public Func<ChatCall, string>? Fallback { get; set; }
+
+    /// <summary>Usage metadata of the fallback answers.</summary>
+    public object? FallbackUsage { get; set; }
+
     /// <summary>Answers the next call with the text and optional usage metadata.</summary>
     public FakeChatCompletionService Respond(string text, object? usage = null)
     {
@@ -91,7 +97,13 @@ internal sealed class FakeChatCompletionService : IChatCompletionService
         {
             if (!steps.TryDequeue(out Func<CancellationToken, Task<ChatMessageContent>>? step))
             {
-                throw new InvalidOperationException("Atrapa modelu: brak zaprogramowanej odpowiedzi.");
+                if (Fallback is null)
+                {
+                    throw new InvalidOperationException("Atrapa modelu: brak zaprogramowanej odpowiedzi.");
+                }
+
+                var metadata = FallbackUsage is null ? null : new Dictionary<string, object?> { ["Usage"] = FallbackUsage };
+                return [new ChatMessageContent(AuthorRole.Assistant, Fallback(calls.Last()), "fake-model", null, null, metadata)];
             }
 
             return [await step(cancellationToken).ConfigureAwait(false)];

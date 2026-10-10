@@ -26,6 +26,20 @@ internal sealed class AppHarness : IDisposable
     public AppHarness()
     {
         WriteSettings(new Dictionary<string, object?>());
+        Model.Fallback = call => FaqJson.ValidAnswer(call);
+        Model.FallbackUsage = new TestUsage(100, 10);
+    }
+
+    /// <summary>Serves a synthetic regulation „Regulamin n” at each address; <paramref name="warningAt"/> (1-based) adds a parser warning.</summary>
+    public AppHarness ServeRegulations(IReadOnlyList<string> urls, int warningAt = 0)
+    {
+        for (int i = 0; i < urls.Count; i++)
+        {
+            string title = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"Regulamin {i + 1}");
+            Http.Pdf(urls[i], i + 1 == warningAt ? TestPdfs.RegulationWithWarning(urls[i], title) : TestPdfs.Regulation(urls[i], title));
+        }
+
+        return this;
     }
 
     /// <summary>The fake HTTP handler for downloads.</summary>

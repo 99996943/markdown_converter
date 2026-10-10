@@ -11,10 +11,7 @@ public sealed partial class PromptTests : IDisposable
 
     public PromptTests()
     {
-        foreach (string url in Urls)
-        {
-            app.Http.Pdf(url);
-        }
+        app.ServeRegulations(Urls);
     }
 
     public void Dispose() => app.Dispose();

@@ -31,6 +31,22 @@ internal static class FaqJson
             string.Create(CultureInfo.InvariantCulture, $"Pytanie {k} o dokument {documentId}?"),
             string.Create(CultureInfo.InvariantCulture, $"Odpowiedź {k} z dokumentu {documentId}."));
 
+    /// <summary>
+    /// A valid answer to any request of a run: three candidates for „Dokument Dn: …”, otherwise a selection of
+    /// <paramref name="itemCount"/> items over the documents listed in the message.
+    /// </summary>
+    public static string ValidAnswer(ChatCall call, int itemCount = 10)
+    {
+        string user = call.User;
+        if (user.StartsWith("Dokument D", StringComparison.Ordinal))
+        {
+            return Candidates(user["Dokument ".Length..user.IndexOf(':', StringComparison.Ordinal)], 3);
+        }
+
+        int documents = user.Split('\n').TakeWhile(l => l.Length > 0).Count(l => l.StartsWith('D'));
+        return Selection(itemCount, documents);
+    }
+
     /// <summary>A selection response.</summary>
     public static string Selection(params ItemJson[] items) =>
         JsonSerializer.Serialize(new { items }, Options);

@@ -11,10 +11,7 @@ public sealed class AddressSourceTests : IDisposable
 
     public AddressSourceTests()
     {
-        foreach (string url in Urls)
-        {
-            app.Http.Pdf(url);
-        }
+        app.ServeRegulations(Urls);
     }
 
     public void Dispose() => app.Dispose();

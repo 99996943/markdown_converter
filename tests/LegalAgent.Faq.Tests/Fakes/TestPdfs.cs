@@ -14,6 +14,21 @@ internal static class TestPdfs
     public static byte[] RegulationWithWarning(string seed, string title = "Regulamin rachunku") =>
         RegulationBuilder(seed, title).Image(72, 400, 100, 50).Build();
 
+    /// <summary>The PDF followed by a comment that pads it to <paramref name="size"/> bytes (the parser ignores it).</summary>
+    public static byte[] Padded(byte[] pdf, int size)
+    {
+        if (size <= pdf.Length)
+        {
+            throw new ArgumentOutOfRangeException(nameof(size), "The padded size must exceed the PDF size.");
+        }
+
+        byte[] padded = new byte[size];
+        pdf.CopyTo(padded, 0);
+        Array.Fill(padded, (byte)'x', pdf.Length, size - pdf.Length);
+        padded[pdf.Length] = (byte)'%';
+        return padded;
+    }
+
     /// <summary>A PDF with one page and no text.</summary>
     public static byte[] NoText() => new SyntheticPdfBuilder().Page().FilledRect(72, 100, 100, 50).Build();
 
