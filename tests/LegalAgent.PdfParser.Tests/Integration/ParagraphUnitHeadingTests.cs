@@ -1,0 +1,100 @@
+using LegalAgent.PdfParser.Model;
+using LegalAgent.PdfParser.Tests.Fixtures;
+
+namespace LegalAgent.PdfParser.Tests.Integration;
+
+/// <summary>
+/// Spec 007, US1 (T018–T024) — replicas of corporate regulation pages with paragraphs „§ N” (research R2): body text
+/// 7 pt with a leading of 10 pt, numbered chapters bold 9 pt at x 40, „§ N” bold 9 pt centred on the page about 24 pt
+/// below the chapter, ustępy „1.” at x 39.7 with text at 53.9, points „1/” at 53.9 with text at 68.0.
+/// </summary>
+public sealed class ParagraphUnitHeadingTests
+{
+    private const double Size = 7;
+    private const double HeadingSize = 9;
+    private const double Margin = 39.7;
+    private const double Point = 53.9;
+    private const double PointText = 68.0;
+
+    private static SyntheticPdfBuilder Item(SyntheticPdfBuilder page, double labelX, double textX, double y, string label, string text) =>
+        page.Text(labelX, y, label, Size).Text(textX, y, text, Size);
+
+    private static SyntheticPdfBuilder Centered(SyntheticPdfBuilder page, double y, string text) =>
+        page.Text((595 - SyntheticPdfBuilder.TextWidth(text, HeadingSize, bold: true)) / 2, y, text, HeadingSize, bold: true);
+
+    private static IEnumerable<Section> All(IEnumerable<Section> sections) =>
+        sections.SelectMany(s => new[] { s }.Concat(All(s.Children)));
+
+    private static async Task<PdfConversionResult> ConvertAsync(byte[] pdf)
+    {
+        using var stream = new MemoryStream(pdf);
+        return await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+    }
+
+    /// <summary>R1a page: two numbered chapters, each with a centred bold „§ N” and ustępy with points.</summary>
+    internal static byte[] BuildR1a()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text(40, 80, "1. Zasady ogólne", HeadingSize, bold: true);
+        Centered(page, 104, "§ 4");
+        Item(page, Margin, Point, 120, "1.", "Regulamin określa zasady otwierania i prowadzenia rachunków bankowych dla przedsiębiorców oraz innych podmiotów,");
+        page.Text(Point, 130, "które zawarły z Bankiem umowę rachunku.", Size);
+        Item(page, Margin, Point, 140, "2.", "Bank udostępnia regulamin w placówkach oraz na swojej stronie internetowej.");
+        page.Text(40, 165, "2. Rachunki bankowe oraz rachunek VAT", HeadingSize, bold: true);
+        Centered(page, 189, "§ 5");
+        Item(page, Margin, Point, 205, "1.", "Na podstawie umowy Klienci mogą otwierać rachunki bieżące i pomocnicze w złotych oraz w walutach obcych.");
+        Item(page, Margin, Point, 215, "2.", "Rachunek bieżący służy do:");
+        Item(page, Point, PointText, 225, "1/", "gromadzenia środków pieniężnych Klienta,");
+        Item(page, Point, PointText, 235, "2/", "przeprowadzania rozliczeń pieniężnych związanych z działalnością gospodarczą Klienta.");
+        Centered(page, 260, "§ 6");
+        Item(page, Margin, Point, 276, "1.", "Klient może mieć jeden rachunek VAT do każdego rachunku bieżącego, który prowadzi dla niego Bank.");
+        Item(page, Margin, Point, 286, "2.", "Bank otwiera rachunek VAT bez osobnej dyspozycji Klienta.");
+        return builder.Build();
+    }
+
+    /// <summary>T018 — a centred bold „§ 5” is a unit heading printed as in the source, followed by the ustępy as a list.</summary>
+    [Fact]
+    public async Task Centred_bare_paragraph_is_a_unit_heading_without_added_text()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildR1a());
+
+        Assert.Matches(@"(?m)^#+ § 5\n\n- 1\\\. Na podstawie umowy", result.Markdown);
+        Assert.Contains(
+            "- 2\\. Rachunek bieżący służy do:\n"
+            + "  - 1/ gromadzenia środków pieniężnych Klienta,\n"
+            + "  - 2/ przeprowadzania rozliczeń pieniężnych związanych z działalnością gospodarczą Klienta.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("§ 5.", result.Markdown, StringComparison.Ordinal);
+        Assert.Matches(@"(?m)^#+ § 6$", result.Markdown);
+
+        Section chapter = Assert.Single(All(result.Document.Sections), s => s.HeadingText == "2. Rachunki bankowe oraz rachunek VAT");
+        Section unit = Assert.Single(chapter.Children);
+        Assert.Equal(("§ 5", "§ 5", SectionKind.Paragraph), (unit.Designation, unit.HeadingText, unit.Kind));
+    }
+
+    /// <summary>
+    /// T018 (R1d) — negatives: „§ 5 ust. 2” starting a wrapped line, and a lone plain „§ 5” wrapped from a sentence, stay
+    /// text of their paragraph.
+    /// </summary>
+    [Fact]
+    public async Task Paragraph_references_in_running_text_are_not_headings()
+    {
+        const string Wide = "Bank może wypowiedzieć umowę z ważnych powodów, które opisuje regulamin, w szczególności w przypadkach wskazanych w";
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text(40, 80, "3. Wypowiedzenie umowy", HeadingSize, bold: true);
+        page.Text(Margin, 100, Wide, Size);
+        page.Text(Margin, 110, "§ 5 ust. 2 oraz w umowie, z zachowaniem terminu wypowiedzenia określonego w umowie rachunku.", Size);
+        page.Text(Margin, 130, Wide, Size);
+        page.Text(Margin, 140, "§ 5", Size);
+        page.Text(Margin, 150, "Klient może wypowiedzieć umowę w każdym czasie bez podania przyczyny, składając oświadczenie na piśmie.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.DoesNotMatch(@"(?m)^#+ §", result.Markdown);
+        Assert.Contains("wskazanych w § 5 ust. 2 oraz w umowie", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("wskazanych w § 5", result.Markdown, StringComparison.Ordinal);
+    }
+}
