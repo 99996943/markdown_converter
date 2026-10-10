@@ -472,6 +472,64 @@ public sealed class StepSequenceStageTests
         Assert.True(second.Lines[0].Annotations.ContainsKey(LayoutAnnotations.StepIndex));
     }
 
+    public static TheoryData<string> SingleBoxes() =>
+        ["guarded", "plain name", "wide box", "ruling in the band", "nothing to the right", "no name in the box"];
+
+    /// <summary>
+    /// T039 — spec 008 FR-633: a single shaded box is a one-frame scheme only behind the guard — a bold name (≥ 80% of
+    /// its characters) in a box narrower than half the page, text to its right, no ruling across the band of the box.
+    /// White fills never reach <see cref="LayoutPage.FilledAreas"/> (page extraction drops them).
+    /// </summary>
+    [Theory]
+    [MemberData(nameof(SingleBoxes))]
+    public void SingleBox_IsAOneFrameSchemeOnlyBehindTheGuard(string shape)
+    {
+        double right = shape == "wide box" ? 400 : BoxRight;
+        double text = shape == "wide box" ? 420 : TextLeft;
+        LayoutLine name = Line("Sprawdzamy dokumenty", TitleLeft, 127);
+        if (shape != "plain name")
+        {
+            name = Bold(name);
+        }
+
+        var lines = new List<LayoutLine> { Line("Tak brzmi wstęp przed ramką:", 90, 90) };
+        if (shape != "no name in the box")
+        {
+            lines.Add(name);
+        }
+
+        if (shape != "nothing to the right")
+        {
+            lines.Add(Line("1. Zanim zawrzemy umowę, sprawdzimy dokumenty.", text, 117));
+            lines.Add(Line("2. Możemy poprosić o dokumenty.", text, 129));
+            lines.Add(Line("3. Przekażemy Ci szczegóły.", text, 141));
+        }
+
+        LayoutPage page = PageWith(1, lines, new Rect(BoxLeft, 114, right, 154));
+        if (shape == "ruling in the band")
+        {
+            page.Rulings.Add(new Segment(BoxRight + 2, 110, BoxRight + 2, 158));
+        }
+
+        PipelineContext context = Run(Context([page]));
+
+        if (shape == "guarded")
+        {
+            Assert.Equal([("Sprawdzamy dokumenty", "1")], Titles(context));
+            Assert.Equal(
+                ["Tak brzmi wstęp przed ramką:", "Sprawdzamy dokumenty", "1. Zanim zawrzemy umowę, sprawdzimy dokumenty.",
+                    "2. Możemy poprosić o dokumenty.", "3. Przekażemy Ci szczegóły."],
+                Texts(page));
+            Assert.All(page.Lines.Skip(2), l => Assert.Equal(TextLeft, LayoutAnnotations.GetNumber(l, LayoutAnnotations.ColumnLeft)));
+        }
+        else
+        {
+            Assert.Empty(Titles(context));
+            Assert.All(page.Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
+            Assert.All(page.Lines, l => Assert.False(l.Annotations.ContainsKey(LayoutAnnotations.StepIndex), l.Text));
+        }
+    }
+
     public static TheoryData<string> NotSchemes() => ["single box", "wide boxes", "nothing to the right", "disabled"];
 
     [Theory]
