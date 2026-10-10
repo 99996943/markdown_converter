@@ -63,11 +63,38 @@ internal static class FaqStage
         string text = FaqMarkdownRenderer.Render(
             result,
             new FaqFileHeader(Title, Description(result), host.TimeProvider.GetUtcNow(), azure.Model, azure.Deployment));
-        Directory.CreateDirectory(faqDirectory);
         string path = Path.Combine(faqDirectory, FileName);
-        await File.WriteAllTextAsync(path, text, Utf8NoBom, cancellationToken).ConfigureAwait(false);
+        try
+        {
+            await WriteAtomicAsync(faqDirectory, path, text, cancellationToken).ConfigureAwait(false);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            await stderr.WriteLineAsync($"Nie można zapisać {FileName} w {faqDirectory}: {e.Message}").ConfigureAwait(false);
+            return 4;
+        }
+
         report.Saved(path, result);
         return 0;
+    }
+
+    /// <summary>Writes <c>FAQ_mBank.md.tmp</c> and moves it over the file; the previous file stays unless the move succeeds.</summary>
+    private static async Task WriteAtomicAsync(string directory, string path, string text, CancellationToken cancellationToken)
+    {
+        Directory.CreateDirectory(directory);
+        string temporary = path + ".tmp";
+        try
+        {
+            await File.WriteAllTextAsync(temporary, text, Utf8NoBom, cancellationToken).ConfigureAwait(false);
+            File.Move(temporary, path, overwrite: true);
+        }
+        finally
+        {
+            if (File.Exists(temporary))
+            {
+                File.Delete(temporary);
+            }
+        }
     }
 
     private static string Description(FaqResult result) =>
