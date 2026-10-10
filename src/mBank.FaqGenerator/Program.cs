@@ -94,7 +94,7 @@ public static class Program
             return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, host, cancellationToken)
                 .ConfigureAwait(false);
         }
-        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        catch (OperationCanceledException e) when (cancellationToken.IsCancellationRequested || e is KeyPromptCancelledException)
         {
             await stderr.WriteLineAsync("Przerwano.").ConfigureAwait(false);
             return 130;

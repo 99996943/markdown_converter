@@ -44,10 +44,10 @@ internal static class KeyPrompt
         while (true)
         {
             ConsoleKeyInfo info = input.ReadKey();
-            if (info.Key == ConsoleKey.C && info.Modifiers.HasFlag(ConsoleModifiers.Control) || info.KeyChar == '\u0003')
+            if ((info.Key == ConsoleKey.C && info.Modifiers.HasFlag(ConsoleModifiers.Control)) || info.KeyChar == '\u0003')
             {
                 stdout.WriteLine();
-                throw new OperationCanceledException("Przerwano.");
+                throw new KeyPromptCancelledException("Przerwano.");
             }
 
             switch (info.Key)
@@ -75,5 +75,26 @@ internal static class KeyPrompt
 
             stdout.Flush();
         }
+    }
+}
+
+/// <summary>Ctrl+C was pressed while the key was being typed (exit code 130).</summary>
+internal sealed class KeyPromptCancelledException : OperationCanceledException
+{
+    /// <summary>Creates the exception.</summary>
+    public KeyPromptCancelledException()
+    {
+    }
+
+    /// <summary>Creates the exception with a message.</summary>
+    public KeyPromptCancelledException(string message)
+        : base(message)
+    {
+    }
+
+    /// <summary>Creates the exception with a message and a cause.</summary>
+    public KeyPromptCancelledException(string message, Exception innerException)
+        : base(message, innerException)
+    {
     }
 }

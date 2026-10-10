@@ -49,6 +49,9 @@ internal static class FaqStage
         string? key = KeyPrompt.Read(keys, stdout);
         if (key is null)
         {
+            await stderr.WriteLineAsync(
+                "Brak klucza API: wejście jest przekierowane, ale nie zawiera klucza. Przekaż klucz potokiem jako kolejny wiersz, "
+                + "np. `… keys list … -o tsv | mBank.FaqGenerator --url …`, albo uruchom w konsoli.").ConfigureAwait(false);
             return 2;
         }
 
