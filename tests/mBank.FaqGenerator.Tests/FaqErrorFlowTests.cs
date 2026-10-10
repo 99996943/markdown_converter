@@ -97,11 +97,28 @@ public sealed class FaqErrorFlowTests : IDisposable
             app.Model.Respond(FaqJson.Candidates($"D{i}", 3));
         }
 
-        app.Model.Respond(FaqJson.Selection(9, 5));
+        app.Model.Respond(FaqJson.Selection(9, 5)).Respond(FaqJson.Selection(8, 5));
 
         AppRun run = await AssertFailsAsync(7, "Odpowiedź modelu odrzucona (krok wyboru):");
 
-        Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):\n  - liczba pozycji 9 zamiast 10\n", run.Err.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+        Assert.Contains("[wybór] odpowiedź odrzucona (liczba pozycji 9 zamiast 10) — prośba o poprawkę…", run.Out, StringComparison.Ordinal);
+        Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):\n  - liczba pozycji 8 zamiast 10\n", run.Err.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task RejectedSelection_CorrectedOnce_ExitCode0()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            app.Model.Respond(FaqJson.Candidates($"D{i}", 3));
+        }
+
+        app.Model.Respond(FaqJson.Selection(9, 5)).Respond(FaqJson.Selection(10, 5));
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        Assert.Contains("[wybór] odpowiedź odrzucona (liczba pozycji 9 zamiast 10) — prośba o poprawkę…\n[wybór] 10 pytań", run.Out.ReplaceLineEndings("\n"), StringComparison.Ordinal);
     }
 
     [Fact]

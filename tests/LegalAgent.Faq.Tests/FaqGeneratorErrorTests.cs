@@ -3,6 +3,7 @@ using System.Net;
 using LegalAgent.Faq.Model;
 using LegalAgent.Faq.Tests.Fakes;
 using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.ChatCompletion;
 
 namespace LegalAgent.Faq.Tests;
 
@@ -73,7 +74,8 @@ public sealed class FaqGeneratorErrorTests
             chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
         }
 
-        chat.Respond(FaqJson.Selection([.. FaqJson.SelectionItems(7, 5), new ItemJson("Skąd?", "Z D9.", ["D9-K1"])]));
+        string rejected = FaqJson.Selection([.. FaqJson.SelectionItems(7, 5), new ItemJson("Skąd?", "Z D9.", ["D9-K1"])]);
+        chat.Respond(FaqJson.Selection(9, 5)).Respond(rejected);
 
         FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate());
 
@@ -81,7 +83,59 @@ public sealed class FaqGeneratorErrorTests
         Assert.Equal(
             ["liczba pozycji 8 zamiast 10", "pozycja 8: kandydat D9-K1 nie istnieje"],
             e.Problems);
-        Assert.Equal(6, chat.Calls.Count);
+        Assert.Equal(7, chat.Calls.Count);
+    }
+
+    [Fact]
+    public async Task RejectedSelection_IsCorrectedOnce()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        string rejected = FaqJson.Selection(9, 5);
+        chat.Respond(rejected).Respond(FaqJson.Selection(10, 5));
+        var events = new List<FaqEvent>();
+
+        FaqResult result = await new FaqGenerator(chat, new FaqGeneratorOptions(), (_, _) => new PromptExecutionSettings())
+            .GenerateAsync(Documents(), new SyncProgress(events), TestContext.Current.CancellationToken);
+
+        Assert.Equal(10, result.Items.Count);
+        Assert.Equal(7, chat.Calls.Count);
+        IReadOnlyList<ChatMessageContent> history = chat.Calls[6].History;
+        Assert.Equal([AuthorRole.System, AuthorRole.User, AuthorRole.Assistant, AuthorRole.User], history.Select(m => m.Role));
+        Assert.Equal(chat.Calls[5].System, history[0].Content);
+        Assert.Equal(chat.Calls[5].User, history[1].Content);
+        Assert.Equal(rejected, history[2].Content);
+        Assert.Contains("- liczba pozycji 9 zamiast 10\n", history[3].Content, StringComparison.Ordinal);
+        Assert.Contains("dokładnie 10", history[3].Content, StringComparison.Ordinal);
+        FaqEvent correction = Assert.Single(events, e => e.Kind == FaqEventKind.SelectionCorrection);
+        Assert.Equal("liczba pozycji 9 zamiast 10", correction.Detail);
+        Assert.Equal(
+            [FaqEventKind.SelectionStarted, FaqEventKind.SelectionCorrection, FaqEventKind.SelectionFinished],
+            events.Skip(10).Select(e => e.Kind));
+    }
+
+    [Fact]
+    public async Task SelectionNotJson_IsCorrectedOnce()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        chat.Respond("Oto pytania: …").Respond(FaqJson.Selection(10, 5));
+
+        FaqResult result = await Generate();
+
+        Assert.Equal(10, result.Items.Count);
+        Assert.Contains("odpowiedź nie jest poprawnym JSON-em zgodnym ze schematem", chat.Calls[6].History[^1].Content, StringComparison.Ordinal);
+    }
+
+    private sealed class SyncProgress(List<FaqEvent> events) : IProgress<FaqEvent>
+    {
+        public void Report(FaqEvent value) => events.Add(value);
     }
 
     private Task<FaqResult> Generate() =>
