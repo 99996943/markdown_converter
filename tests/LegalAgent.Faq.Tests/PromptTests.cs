@@ -19,8 +19,30 @@ public sealed class PromptTests
         Assert.Contains("Dokument nie rozstrzyga", system, StringComparison.Ordinal);
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
         Assert.Contains("co najwyżej 7", system, StringComparison.Ordinal);
-        Assert.Contains("dokładnie tak, jak w nagłówku dokumentu", system, StringComparison.Ordinal);
+        Assert.Contains("z listy „Jednostki dokumentu”", system, StringComparison.Ordinal);
         Assert.Contains("pusty tekst", system, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task CandidateUserMessage_ListsDocumentUnitsAfterMarkdown()
+    {
+        string[] units = ["Rozdział 1", "6. Jakie informacje musisz podać, gdy składasz zlecenie płatnicze?"];
+
+        string user = (await RunAsync(candidates: 7, units)).Calls[0].User;
+
+        int markdown = user.IndexOf("Treść.", StringComparison.Ordinal);
+        int list = user.IndexOf("Jednostki dokumentu D1", StringComparison.Ordinal);
+        Assert.True(markdown >= 0 && list > markdown, user);
+        Assert.Contains("\n- Rozdział 1\n- 6. Jakie informacje musisz podać, gdy składasz zlecenie płatnicze?\n", user, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task CandidateUserMessage_WithoutUnits_AsksForEmptyUnit()
+    {
+        string user = (await RunAsync(candidates: 7)).Calls[0].User;
+
+        Assert.Contains("Jednostki dokumentu D1: brak", user, StringComparison.Ordinal);
+        Assert.Contains("pusty tekst", user, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -37,7 +59,7 @@ public sealed class PromptTests
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
     }
 
-    private static async Task<FakeChatCompletionService> RunAsync(int candidates)
+    private static async Task<FakeChatCompletionService> RunAsync(int candidates, string[]? units = null)
     {
         var chat = new FakeChatCompletionService()
             .Respond(FaqJson.Candidates("D1", 2))

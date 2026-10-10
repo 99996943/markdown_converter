@@ -532,6 +532,14 @@ nie dotyka klucza.
   - `az group delete`.
 
   Wymaga klucza i adresów od właściciela. Jeśli niedostępne, zapisz jako otwarte w handoffie.
+- [ ] T067a Pierwszy prawdziwy przebieg (gpt-4.1-mini) odrzucił D1: model podał „§ 6”, „§ 15”…, a regulaminy mBanku
+  nie mają § ani Art. — nagłówki to „6. Jakie informacje musisz podać…”. Poprawka:
+  - komunikat użytkownika kroku kandydatów kończy się listą „Jednostki dokumentu Dn” (pozycje `Units`) albo
+    „Jednostki dokumentu Dn: brak” z prośbą o pusty tekst; komunikat systemowy każe przepisać jednostkę z tej listy
+    (`tests/LegalAgent.Faq.Tests/PromptTests.cs`);
+  - `UnitMatcher`: numer nagłówka numerowanego („6.” w „6. Jakie …”) też jest oznaczeniem jednostki, więc „6”,
+    „6.” i „6 ust. 2” pasują, a „§ 6”, „16”, „2” do „2.1. …” nie (`UnitMatcherTests`);
+  - aktualizacja `contracts/model-exchange.md` i `data-model.md` („Dopasowanie jednostki”).
 - [X] T068 Handoff „Stan prac i przekazanie” na końcu `specs/006-faq-generation/plan.md`:
   - zrobione zadania, walidacja, odstępstwa od planu, decyzje w trakcie, otwarte punkty;
   - w tym: odsetek odrzuceń walidacji jednostek na prawdziwych danych, 429, model;

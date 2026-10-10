@@ -36,6 +36,27 @@ public sealed class UnitMatcherTests
         Assert.True(UnitMatcher.Matches("Rozdział 2. Otwarcie rachunku", units));
     }
 
+    [Theory]
+    [InlineData("6.")]
+    [InlineData("6")]
+    [InlineData("6 ust. 2")]
+    [InlineData("6. Jakie informacje musisz podać?")]
+    public void Matches_NumberOfNumberedHeading(string cited)
+    {
+        Assert.True(UnitMatcher.Matches(cited, ["6. Jakie informacje musisz podać?"]));
+    }
+
+    [Theory]
+    [InlineData("§ 6", "6. Jakie informacje musisz podać?")]
+    [InlineData("6", "16. Przelewy")]
+    [InlineData("2", "2.1. Przelewy krajowe")]
+    [InlineData("2.1", "2. Przelewy")]
+    [InlineData("6", "6 miesięcy okresu wypowiedzenia")]
+    public void DoesNotMatch_OtherNumber(string cited, string unit)
+    {
+        Assert.False(UnitMatcher.Matches(cited, [unit]));
+    }
+
     [Fact]
     public void EmptyUnitList_MatchesNothing()
     {
