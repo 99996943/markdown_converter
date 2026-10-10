@@ -475,7 +475,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 return heading;
             }
 
-            heading.Text = unit.Prefix + unit.Designation + (unit.Bare ? string.Empty : ".");
+            // A bare „§25” is printed alone: the heading is the line as printed (FR-513, no added text).
+            heading.Text = unit.Bare ? entry.Text : unit.Prefix + unit.Designation + ".";
             heading.SplitRest = unit.Rest.Length > 0;
             return heading;
         }

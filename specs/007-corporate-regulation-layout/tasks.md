@@ -120,6 +120,8 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
 - [X] T019a [US1] Replika (red) z D-B: wyśrodkowany pogrubiony „§ N” w interlinii tekstu tuż pod elementem listy
   i tuż pod nagłówkiem rozdziału jest nagłówkiem jednostki; wyśrodkowanie (także względem strony, gdy kolumna nie
   wynika z wierszy zwykłego tekstu) wystarcza; ListDetection zamyka listę przed takim wierszem (green)
+- [X] T019b [US1] Replika (red) z D-B: goły „§25” zapisany bez spacji zostaje w nagłówku tak jak w PDF (oznaczenie
+  „§ 25”) — tekst nagłówka gołej jednostki to wiersz źródła (green)
 - [X] T020 [P] [US1] Test (red) poziomu: jednostka pod otwartym nagłówkiem typograficznym `^\d+\.\s+\p{Lu}` (numerowany
   rozdział) dostaje poziom rozdziału + 1; pod nienumerowanym rodzicem — bez zmian (np. „A. Banki państwowe” → Art.) —
   w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/HeadingDetectionStageTests.cs`
