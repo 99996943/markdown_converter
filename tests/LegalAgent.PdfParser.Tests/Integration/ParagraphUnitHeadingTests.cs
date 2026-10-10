@@ -91,6 +91,37 @@ public sealed class ParagraphUnitHeadingTests
     }
 
     /// <summary>
+    /// T021a (D-C) — an unnumbered subheading (9 pt, regular) inside a numbered chapter stays below the chapter, and its
+    /// units below the subheading; the next numbered chapter is a sibling of the first.
+    /// </summary>
+    [Fact]
+    public async Task Subheading_inside_a_numbered_chapter_keeps_the_chapter_open()
+    {
+        const string Plain = "Bank świadczy usługi gotówkowe na podstawie umowy zawartej z klientem, w zakresie i na warunkach określonych w umowie oraz";
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Regulamin usług gotówkowych", 14, bold: true)) / 2, 50, "Regulamin usług gotówkowych", 14, bold: true);
+        page.Text(40, 80, "1. Co znajdziesz w regulaminie", HeadingSize, bold: true);
+        Centered(page, 100, "§ 1");
+        page.Text(Margin, 116, Plain, Size);
+        page.Text(Margin, 126, "w tym regulaminie, który klient otrzymuje przed zawarciem umowy w placówce albo w systemie bankowości elektronicznej.", Size);
+        page.Text(40.7, 151, "Na jakich zasadach klient korzysta z usług", HeadingSize);
+        Centered(page, 171, "§ 3");
+        page.Text(Margin, 187, Plain, Size);
+        page.Text(Margin, 197, "w cenniku usług, który Bank udostępnia w placówkach oraz na swojej stronie internetowej w formie elektronicznej.", Size);
+        page.Text(40, 222, "2. Wpłaty zamknięte w sortowni", HeadingSize, bold: true);
+        Centered(page, 242, "§ 8");
+        page.Text(Margin, 258, Plain, Size);
+        page.Text(Margin, 268, "w zasadach przyjmowania wpłat zamkniętych, które Bank przekazuje klientowi razem z umową i każdą zmianą tych zasad.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Matches(
+            @"(?m)^## 1\. Co znajdziesz w regulaminie\n\n### § 1\n(?:.*\n)+### Na jakich zasadach klient korzysta z usług\n\n#### § 3\n(?:.*\n)+## 2\. Wpłaty zamknięte w sortowni\n\n### § 8$",
+            result.Markdown);
+    }
+
+    /// <summary>
     /// T019a (D-B) — a centred bold „§ N” at the body leading right below the last line of a list item, and right below
     /// a chapter heading, is still a unit heading (centring sets it apart).
     /// </summary>
