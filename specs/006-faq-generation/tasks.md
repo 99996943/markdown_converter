@@ -148,7 +148,7 @@ Kolejność faz: US1 → US2 → US3 → US4.
 **Purpose**: reguły biblioteki (jednostki, rozmiar, parsowanie, walidacja, renderowanie) i konfiguracja aplikacji,
 wspólne dla wszystkich historyjek.
 
-- [ ] T007 [P] Test (red) w `faqtests/UnitMatcherTests.cs`. Przypadki z data-model.md („Dopasowanie jednostki”):
+- [X] T007 [P] Test (red) w `faqtests/UnitMatcherTests.cs`. Przypadki z data-model.md („Dopasowanie jednostki”):
   - „§ 12 ust. 3” pasuje do „§ 12.”;
   - „Art. 5a” NIE pasuje do „Art. 5”;
   - „Rozdział 2” pasuje do zbioru z „Rozdział 2” i „Rozdział 2. Otwarcie rachunku”;
@@ -157,37 +157,37 @@ wspólne dla wszystkich historyjek.
   - „§ 1,” pasuje do „§ 1”;
   - pusta lista jednostek nie pasuje do niczego;
   - „§ 120” NIE pasuje do „§ 12”.
-- [ ] T008 Implementacja `faq-lib/UnitMatcher.cs`:
+- [X] T008 Implementacja `faq-lib/UnitMatcher.cs`:
   - normalizacja: NBSP → spacja, zwinięcie białych znaków, przycięcie, bez końcowej kropki, `ToLowerInvariant`;
   - dopasowanie: równość albo prefiks, po którym jest koniec, spacja lub `,`.
 
   T007 zielony.
-- [ ] T009 [P] Test (red) w `faqtests/CheckInputTests.cs`:
+- [X] T009 [P] Test (red) w `faqtests/CheckInputTests.cs`:
   - walidacja `FaqGeneratorOptions`: `CandidatesPerDocument` „1–30”, `ItemCount` „≥ 1”, `MaxDocumentTokens`
     „> 0”, `CharactersPerToken` „> 0” → `ArgumentException` w konstruktorze `FaqGenerator`;
   - `CheckInput` zwraca `FaqInputEstimate` z `EstimatedTokens = ceil(znaki / CharactersPerToken)`;
   - dokument powyżej `MaxDocumentTokens` → `FaqInputTooLongException` z `DocumentName`, `Characters`,
     `EstimatedTokens`, `Limit` (pierwszy za długi w kolejności listy);
   - pusta lista dokumentów, pusty `Markdown`, pusta `Name` lub względny `Resource` → `ArgumentException`.
-- [ ] T010 Implementacja `faq-lib/TokenEstimator.cs`, walidacji w `faq-lib/FaqGeneratorOptions.cs` i
+- [X] T010 Implementacja `faq-lib/TokenEstimator.cs`, walidacji w `faq-lib/FaqGeneratorOptions.cs` i
   `FaqGenerator.CheckInput`. T009 zielony.
-- [ ] T011 [P] Test (red) w `faqtests/ResponseParserTests.cs`:
+- [X] T011 [P] Test (red) w `faqtests/ResponseParserTests.cs`:
   - poprawne JSON-y obu kroków (contracts/model-exchange.md) dają kandydatów z identyfikatorami `D2-K1`…
     w kolejności odpowiedzi oraz pozycje wyboru;
   - JSON niepoprawny, brak wymaganego pola, zły typ albo tekst przed lub po JSON-ie → problem
     „odpowiedź nie jest poprawnym JSON-em zgodnym ze schematem” (bez wyjątku nieobsłużonego);
   - `unit` pusty lub z samych spacji → `null`.
-- [ ] T012 Implementacja `faq-lib/FaqResponseParser.cs` (`System.Text.Json`, bez refleksji dynamicznej; typy DTO
+- [X] T012 Implementacja `faq-lib/FaqResponseParser.cs` (`System.Text.Json`, bez refleksji dynamicznej; typy DTO
   wewnętrzne). T011 zielony.
-- [ ] T013 [P] Test (red) w `faqtests/ValidatorCandidatesTests.cs`. Reguły kandydatów z data-model.md:
+- [X] T013 [P] Test (red) w `faqtests/ValidatorCandidatesTests.cs`. Reguły kandydatów z data-model.md:
   - „1 ≤ liczba ≤ `CandidatesPerDocument`” (0 i N+1 odrzucone, bez przycinania);
   - pytanie lub odpowiedź pusta po przycięciu;
   - powtórzone pytanie (różnice wielkości liter, spacji, końcowego `?`);
   - `unit` niepasujący do `Units` dokumentu;
   - wszystkie problemy zebrane w `FaqResponseException.Problems` z numerem pozycji, `Step = Candidates`,
     `DocumentId`.
-- [ ] T014 Implementacja `faq-lib/FaqResponseValidator.cs` (część kandydatów). T013 zielony.
-- [ ] T015 [P] Test (red) w `faqtests/ValidatorSelectionTests.cs`. Reguły wyboru z data-model.md:
+- [X] T014 Implementacja `faq-lib/FaqResponseValidator.cs` (część kandydatów). T013 zielony.
+- [X] T015 [P] Test (red) w `faqtests/ValidatorSelectionTests.cs`. Reguły wyboru z data-model.md:
   - „dokładnie `ItemCount` pozycji” (9 i 11 odrzucone);
   - puste pola, puste `basedOn` lub `sources`;
   - powtórzone pytania;
@@ -196,8 +196,8 @@ wspólne dla wszystkich historyjek.
   - dokument źródła, który nie jest dokumentem żadnego z kandydatów `basedOn`;
   - `unit` niepasujący do `Units` dokumentu;
   - poprawna odpowiedź daje `FaqItem` z `Number` 1…10 w kolejności modelu.
-- [ ] T016 Implementacja części wyboru w `faq-lib/FaqResponseValidator.cs`. T015 zielony.
-- [ ] T017 [P] Test (red) w `faqtests/RendererTests.cs`, porównanie z golden
+- [X] T016 Implementacja części wyboru w `faq-lib/FaqResponseValidator.cs`. T015 zielony.
+- [X] T017 [P] Test (red) w `faqtests/RendererTests.cs`, porównanie z golden
   `faqtests/Golden/faq.expected.md` (dodaj `tests/**/Golden/*.md text eol=lf` do `.gitattributes`, jeśli
   wzorzec `*.expected.md` go nie obejmuje). Sprawdza:
   - front matter w kolejności `type`, `title`, `description`, `resource` (lista), `timestamp`
@@ -209,8 +209,8 @@ wspólne dla wszystkich historyjek.
   - jeden pusty wiersz między blokami, brak spacji na końcach, jedno końcowe `\n`;
   - przy `UPDATE_GOLDEN=1` test przepisuje golden, przy niezgodności zapisuje `*.actual.md`
     (wzorzec jak `tests/LegalAgent.PdfParser.Tests/Fixtures/GoldenFile.cs`).
-- [ ] T018 Implementacja `faq-lib/FaqMarkdownRenderer.cs` (ręczny emiter YAML, research R10). T017 zielony.
-- [ ] T019 [P] Test (red) w `apptests/ConfigurationTests.cs`:
+- [X] T018 Implementacja `faq-lib/FaqMarkdownRenderer.cs` (ręczny emiter YAML, research R10). T017 zielony.
+- [X] T019 [P] Test (red) w `apptests/ConfigurationTests.cs`:
   - brak `AzureOpenAI:Endpoint`, `Endpoint` względny lub `http`, pusty `Deployment` → kod 2 z nazwą pola
     (contracts/cli.md: „Błąd konfiguracji: brak AzureOpenAI:Endpoint …”);
   - `FakeHttpHandler` nie dostał żadnego żądania, a pytania o adresy się nie pojawiły;
@@ -220,7 +220,7 @@ wspólne dla wszystkich historyjek.
     „sekret-123” w stdout/stderr;
   - pusta wartość `FAQGEN__AzureOpenAI__Temperature=` → `null`;
   - `--help` działa bez konfiguracji AzureOpenAI (kod 0).
-- [ ] T020 Implementacja `AzureOpenAiSettings`, `FaqSettings`, wiązania i walidacji w `app/AppSettings.cs` oraz
+- [X] T020 Implementacja `AzureOpenAiSettings`, `FaqSettings`, wiązania i walidacji w `app/AppSettings.cs` oraz
   sprawdzenia w `app/Program.cs` przed zbieraniem adresów. T019 zielony.
 
 **Checkpoint**: reguły biblioteki gotowe, konfiguracja sprawdzana. Historyjki mogą się zaczynać.

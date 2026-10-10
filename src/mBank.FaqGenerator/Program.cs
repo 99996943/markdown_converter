@@ -122,7 +122,9 @@ public static class Program
         AppHost host,
         CancellationToken cancellationToken)
     {
-        DownloadSettings settings = AppSettings.Load(configDirectory, environment);
+        AppConfiguration configuration = AppSettings.LoadAll(configDirectory, environment);
+        AppSettings.Validate(configuration);
+        DownloadSettings settings = configuration.Download;
         DownloadOptions options = settings.ToOptions() with { OutputDirectory = arguments.Output ?? settings.OutputDirectory };
         using HttpClient httpClient = CreateHttpClient(host.DownloadHandler);
         DocumentDownloader downloader;
