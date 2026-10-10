@@ -7,13 +7,18 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\LegalAgent.Downloads\LegalAgent.Downloads.csproj" />
+    <ProjectReference Include="..\LegalAgent.PdfParser\LegalAgent.PdfParser.csproj" />
+    <ProjectReference Include="..\LegalAgent.Faq\LegalAgent.Faq.csproj" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+    <!-- Microsoft.Extensions.DependencyInjection (for the parser) comes from the connector (>= 10.0.2). -->
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureOpenAI" />
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="mBank.FaqGenerator.Tests" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="appsettings.Local.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('appsettings.Local.json')" />
   </ItemGroup>
 </Project>
