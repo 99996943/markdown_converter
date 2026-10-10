@@ -622,7 +622,7 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
     nie pozwala zebrać N („po zastosowaniu limitu 3 pozycji na dokument zostają 9 z 10 pozycji”); pominięte
     pozycje są wtedy dopisane do problemów.
 
-- [ ] T067m Ósmy przebieg: D2-K3 odrzucony niesłusznie — cytat z rozdziału 6 regulaminu rachunków ciągnął listę
+- [X] T067m Ósmy przebieg: D2-K3 odrzucony niesłusznie — cytat z rozdziału 6 regulaminu rachunków ciągnął listę
   bez etykiet „a)”, „b)”, a etykiety w tekście przerywały trójki słów (< 80%). Etykiety list (`1)`, `a)`, także
   `1\)` z Markdown) są usuwane z tekstu jednostki i z cytatu przed porównaniem cytatu (nie przy liczbach).
 

@@ -35,7 +35,7 @@ internal static partial class FaqGrounding
         string text = Normalize(section ?? markdown);
         var reasons = new List<string>();
         string quote = (candidate.Quote ?? string.Empty).Trim();
-        switch (QuoteFound(quote, text))
+        switch (QuoteFound(quote, Normalize(ListLabel().Replace(section ?? markdown, " "))))
         {
             case null:
                 reasons.Add(Invariant($"cytat ma mniej niż {MinQuoteWords} słowa"));
@@ -98,7 +98,7 @@ internal static partial class FaqGrounding
     {
         string[][] fragments =
         [
-            .. Ellipsis().Split(quote).Select(f => Normalize(f).Split(' ', StringSplitOptions.RemoveEmptyEntries)),
+            .. Ellipsis().Split(quote).Select(f => Normalize(ListLabel().Replace(f, " ")).Split(' ', StringSplitOptions.RemoveEmptyEntries)),
         ];
         if (fragments.Sum(f => f.Length) < MinQuoteWords)
         {
@@ -191,4 +191,8 @@ internal static partial class FaqGrounding
 
     [GeneratedRegex(@"^(\d+(\.\d+)*\.?\s|§|(art|rozdział|dział|część|oddział|tytuł|załącznik)\b)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
     private static partial Regex Designation();
+
+    /// <summary>A list label („1)”, „a)”, Markdown „1\)”), removed before comparing quotes (T067m).</summary>
+    [GeneratedRegex(@"(?<![\p{L}\p{N}])(\d{1,2}|\p{L})\\?\)", RegexOptions.CultureInvariant)]
+    private static partial Regex ListLabel();
 }
