@@ -13,6 +13,9 @@ klawiatury). Specyfikacje i decyzje projektowe: `specs/`, zasady projektu: `.spe
 
 ## Szybki start
 
+Wymagane: .NET SDK z `global.json` i runtime .NET 9 (szczegóły: [Wymagania](#wymagania)), subskrypcja Azure; skrypt
+zasobu wymaga Basha (na Windows: Git Bash).
+
 ```bash
 dotnet build LegalAgent.slnx -c Release
 
