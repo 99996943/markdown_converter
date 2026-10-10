@@ -154,6 +154,27 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
   | ind-4 | 6 | 82 | 0 | 0 | 0 | 0 |
   | ind-5 | 0 | 0 | 0 | 0 | 0 | 0 |
 
+- 2026-10-10 (US2, T007–T015 z T012a, T013a, T014a, T014b): etykiety „1/”, „a/” (`ArabicSlash`, `LetterSlash`);
+  `IsHangingList` — każda komórka poza ostatnią to samotna etykieta (także „a.”, „ii.”), dowolna liczba pasm;
+  `CellsOf` łączy „1.”, „1/”, „a/” z tekstem przy odstępie ≤ 2 em; ciąg „N.” pomija zagnieżdżone „N.” na innym
+  wcięciu. `Rank` dla etykiet z ukośnikiem świadomie NIE dodany (zagnieżdżenie z wcięcia; ranga zepsułaby „1.” pod
+  „1/”). Miary po US2 (TBL001 / wiersze „ \| ” / etykiety poza listą):
+
+  | Dokument | Przed | Po US2 | SC-080 (≤) |
+  |---|---|---|---|
+  | D-A (corp-1) | 132 / 1137 / 1155 | 6 / 43 / 20 | 13 / 114 ✅ |
+  | D-B (corp-2) | 16 / 142 / 149 | 0 / 0 / 0 | 2 / 14 ✅ |
+  | D-C (corp-3) | 58 / 552 / 566 | 1 / 15 / 25 | 6 / 55 ✅ |
+  | D-D (corp-5) | 79 / 665 / 642 | 2 / 20 / 34 | 8 / 67 ✅ |
+  | firm-2 | 2 / 17 / 34 | 0 / 0 / 24 | nie gorzej ✅ |
+
+  Pozostałe wiersze „ \| ” i etykiety poza listą to głównie słowniczki (US3) i prawdziwe tabele. 5 dokumentów
+  detalicznych i pozostałe dokumenty prywatne — bez zmian; goldeny `Corpus/acts`, `Corpus/banking`, korpus
+  syntetyczny (`refresh`/`verify`) i `CorpusFull` — bez zmian. Zaktualizowane goldeny prywatne: D-A…D-D i firm-2
+  (kopie wyjściowe w `Corpus/private/baseline-007/`). Otwarte: w firm-2 pytanie z lewej kolumny ramki („Potwierdzamy,
+  że…”) wplata się w tekst elementu listy (było tak i przed zmianą); „a.”, „ii.” zostają tekstem (nie są etykietami
+  listy).
+
 ## Complexity Tracking
 
 Brak naruszeń konstytucji — sekcja pusta.

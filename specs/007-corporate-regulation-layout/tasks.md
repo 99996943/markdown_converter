@@ -91,7 +91,7 @@ w pierwszej kolumnie zostaje tabelą GFM.
   liczba pasm (green razem z T014)
 - [X] T014b [US2] Replika (red) z D-A s. 43: wyliczenie „i.”, „ii.”, „iii.” (rzymskie z kropką) pod literą „a/” nie
   jest tabelą zastępczą; `IsHangingLabel` przyjmuje małe rzymskie z kropką (green)
-- [ ] T015 [US2] Pełna kontrola regresji (FR-534), miary D-A…D-D (oczekiwane ≈ TBL001 6/0/1/2), przegląd różnic
+- [X] T015 [US2] Pełna kontrola regresji (FR-534), miary D-A…D-D (oczekiwane ≈ TBL001 6/0/1/2), przegląd różnic
   prywatnego korpusu: 5 detalicznych — pokaż właścicielowi; 6 pozostałych dla firm — miary nie gorsze; zaktualizuj
   goldeny D-A…D-D po akceptacji; commit `refresh` korpusu, jeśli się zmienił
 
