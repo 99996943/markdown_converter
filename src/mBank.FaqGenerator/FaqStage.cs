@@ -55,6 +55,31 @@ internal static class FaqStage
             return 2;
         }
 
+        // From here on every message may echo the key (e.g. an excerpt of a service response): redact it (FR-411).
+        try
+        {
+            return await GenerateAndWriteAsync(documents, inputs, options, azure, faqDirectory, key, stdout, stderr, host, cancellationToken)
+                .ConfigureAwait(false);
+        }
+        catch (Exception e) when (e is not OperationCanceledException)
+        {
+            await stderr.WriteLineAsync(SecretRedactor.Redact($"Błąd nieoczekiwany: {e.Message}", key)).ConfigureAwait(false);
+            return 1;
+        }
+    }
+
+    private static async Task<int> GenerateAndWriteAsync(
+        IReadOnlyList<ConvertedDocument> documents,
+        FaqDocumentInput[] inputs,
+        FaqGeneratorOptions options,
+        AzureOpenAiSettings azure,
+        string faqDirectory,
+        string key,
+        TextWriter stdout,
+        TextWriter stderr,
+        AppHost host,
+        CancellationToken cancellationToken)
+    {
         IChatCompletionService chat = host.ChatFactory?.Invoke(key) ?? ChatServiceFactory.Create(azure, key, host.ModelHandler);
         var generator = new LegalAgent.Faq.FaqGenerator(chat, options, (step, schema) => ChatServiceFactory.ExecutionSettings(azure, step, schema));
         var report = new FaqConsoleReport(
@@ -73,7 +98,8 @@ internal static class FaqStage
         }
         catch (Exception e) when (e is IOException or UnauthorizedAccessException)
         {
-            await stderr.WriteLineAsync($"Nie można zapisać {FileName} w {faqDirectory}: {e.Message}").ConfigureAwait(false);
+            await stderr.WriteLineAsync(SecretRedactor.Redact($"Nie można zapisać {FileName} w {faqDirectory}: {e.Message}", key))
+                .ConfigureAwait(false);
             return 4;
         }
 
