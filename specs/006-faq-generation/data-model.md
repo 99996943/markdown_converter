@@ -78,7 +78,8 @@ numeracji (np. D1-K1, D1-K3).
 ### FaqProgress (zdarzenia `IProgress<FaqEvent>`)
 `Kind`: `CandidatesStarted(docId, chars, estTokens)` | `CandidateDropped(docId, detail)` |
 `CandidatesFinished(docId, count, usage?)` |
-`SelectionStarted(candidateCount, chars, estTokens)` | `SelectionFinished(usage?)`.
+`SelectionStarted(candidateCount, chars, estTokens)` | `SelectionCorrection(problems)` | `SelectionFinished(usage?)`
+(zużycie wyboru obejmuje poprawkę).
 
 ### Błędy (wyjątki biblioteki)
 | Typ | Kiedy | Pola |

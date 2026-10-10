@@ -110,7 +110,7 @@ public sealed class FaqGenerator
             string user = FaqPrompts.CandidatesUser(source, documents[i].Markdown, documents[i].Units);
             progress?.Report(new FaqEvent(FaqEventKind.CandidatesStarted, source.Id, user.Length, Estimate(user), null, null));
 
-            (string text, FaqUsage? usage) = await AskAsync(FaqStep.Candidates, source.Id, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
+            (string text, FaqUsage? usage) = await AskAsync(FaqStep.Candidates, source.Id, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, [], cancellationToken)
                 .ConfigureAwait(false);
             Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(text, source.Id);
             IReadOnlyList<FaqCandidate> accepted = parsed.Value ?? throw new FaqResponseException(FaqStep.Candidates, source.Id, [parsed.Problem!]);
@@ -123,11 +123,29 @@ public sealed class FaqGenerator
 
         string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionStarted, null, selectionUser.Length, Estimate(selectionUser), candidates.Count, null));
-        (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, null, FaqPrompts.SelectionSystem(options.ItemCount), selectionUser, cancellationToken)
+        string selectionSystem = FaqPrompts.SelectionSystem(options.ItemCount);
+        (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, [], cancellationToken)
             .ConfigureAwait(false);
-        Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(selectionText);
-        IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount);
+        IReadOnlyList<FaqItem> result;
+        try
+        {
+            result = Select(selectionText, candidates);
+        }
+        catch (FaqResponseException rejected)
+        {
+            // One correction (T067i): the same conversation, the rejected answer and its problems.
+            progress?.Report(new FaqEvent(FaqEventKind.SelectionCorrection, null, 0, 0, null, null, string.Join("; ", rejected.Problems)));
+            ChatMessageContent[] correction =
+            [
+                new(AuthorRole.Assistant, selectionText),
+                new(AuthorRole.User, FaqPrompts.SelectionCorrection(rejected.Problems, options.ItemCount)),
+            ];
+            (string correctedText, FaqUsage? correctedUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, correction, cancellationToken)
+                .ConfigureAwait(false);
+            selectionUsage = UsageReader.Add(selectionUsage, correctedUsage, first: false);
+            result = Select(correctedText, candidates);
+        }
+
         total = UsageReader.Add(total, selectionUsage, first: false);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, selectionUsage));
         return new FaqResult(result, sources, candidates, total);
@@ -158,13 +176,32 @@ public sealed class FaqGenerator
 
     private int Estimate(string text) => TokenEstimator.Estimate(text.Length, options.CharactersPerToken);
 
-    /// <summary>One request: system and user message, settings for the step; returns the text and usage of the first message.</summary>
-    private async Task<(string Text, FaqUsage? Usage)> AskAsync(FaqStep step, string? documentId, string system, string user, CancellationToken cancellationToken)
+    /// <summary>The parsed and validated selection.</summary>
+    /// <exception cref="FaqResponseException">The text is not JSON of the schema or breaks the rules.</exception>
+    private IReadOnlyList<FaqItem> Select(string text, IReadOnlyList<FaqCandidate> candidates)
+    {
+        Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(text);
+        IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
+        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount);
+    }
+
+    /// <summary>
+    /// One request: system and user message, then <paramref name="followUp"/> (the correction exchange), settings for the
+    /// step; returns the text and usage of the first message.
+    /// </summary>
+    private async Task<(string Text, FaqUsage? Usage)> AskAsync(
+        FaqStep step,
+        string? documentId,
+        string system,
+        string user,
+        IReadOnlyList<ChatMessageContent> followUp,
+        CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         var history = new ChatHistory();
         history.AddSystemMessage(system);
         history.AddUserMessage(user);
+        history.AddRange(followUp);
         PromptExecutionSettings settings = executionSettings(step, step == FaqStep.Candidates ? FaqSchemas.Candidates : FaqSchemas.Selection);
         IReadOnlyList<ChatMessageContent> messages;
         try

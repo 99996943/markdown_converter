@@ -116,7 +116,7 @@ public static class UnitMatcher
 ## Postęp
 
 ```csharp
-public enum FaqEventKind { CandidatesStarted, CandidatesFinished, CandidateDropped, SelectionStarted, SelectionFinished }
+public enum FaqEventKind { CandidatesStarted, CandidatesFinished, CandidateDropped, SelectionStarted, SelectionCorrection, SelectionFinished }
 
 public sealed record FaqEvent(
     FaqEventKind Kind,
@@ -125,7 +125,7 @@ public sealed record FaqEvent(
     int EstimatedTokens,
     int? Count,              // liczba kandydatów (Finished) / liczba kandydatów wejściowych (SelectionStarted)
     FaqUsage? Usage,         // Finished
-    string? Detail = null);  // CandidateDropped: „kandydat D1-K3: …” (T067d)
+    string? Detail = null);  // CandidateDropped: „kandydat D1-K3: …” (T067d); SelectionCorrection: problemy (T067i)
 ```
 
 ## Wyjątki

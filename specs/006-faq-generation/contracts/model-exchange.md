@@ -113,6 +113,19 @@ Kandydaci:
 }
 ```
 
+**Poprawka (T067i, jedna)**: gdy odpowiedź wyboru nie jest JSON-em zgodnym ze schematem albo łamie reguły, to samo
+zapytanie jest wysyłane raz jeszcze z dopisanymi wiadomościami: odrzucona odpowiedź (`assistant`) i komunikat
+użytkownika:
+
+```text
+Twoja odpowiedź została odrzucona:
+- liczba pozycji 9 zamiast 10
+Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z dokładnie 10 pozycjami.
+```
+
+Druga odrzucona odpowiedź kończy generowanie (`FaqResponseException`, kod 7) z jej problemami. Krok kandydatów nie
+ma poprawki; błędy usługi nie są ponawiane (FR-424).
+
 Liczba elementów nie jest wymuszana schematem (`minItems`/`maxItems` nie są obsługiwane w trybie strict wszystkich
 modeli). Wymusza ją walidacja (`data-model.md`, „Reguły sprawdzania”).
 

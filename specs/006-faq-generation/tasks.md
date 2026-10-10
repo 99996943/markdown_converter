@@ -590,7 +590,7 @@ zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokaza�
   - ostrzeżenie pokazuje początek cytatu, jeden kandydat = jedna linia („kandydat Dn-Kk: powód; powód”), liczby
     zebrane („liczby „13”, „18” nie występują …”); polecenie: jeden ciągły fragment bez wielokropków.
 
-- [ ] T067i Piąty przebieg: ugruntowanie odrzuciło 3 z 44 kandydatów (słusznie), ale krok wyboru zwrócił 9 pozycji
+- [X] T067i Piąty przebieg: ugruntowanie odrzuciło 3 z 44 kandydatów (słusznie), ale krok wyboru zwrócił 9 pozycji
   zamiast 10 (kod 7). Decyzja właściciela: jedna poprawka w kroku wyboru — po odrzuceniu (JSON lub reguły)
   aplikacja wysyła tę samą rozmowę + odrzuconą odpowiedź (assistant) + komunikat z listą problemów i prośbą o
   pełny poprawiony JSON z dokładnie N pozycjami; druga zła odpowiedź = kod 7 z jej problemami. Zdarzenie

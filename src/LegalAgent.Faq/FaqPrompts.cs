@@ -88,6 +88,19 @@ internal static class FaqPrompts
         return text.ToString();
     }
 
+    /// <summary>User message asking once for a corrected selection (T067i): the problems and the required item count.</summary>
+    public static string SelectionCorrection(IReadOnlyList<string> problems, int itemCount)
+    {
+        var text = new StringBuilder("Twoja odpowiedź została odrzucona:\n");
+        foreach (string problem in problems)
+        {
+            text.Append("- ").Append(problem).Append('\n');
+        }
+
+        return text.Append(CultureInfo.InvariantCulture, $"Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z dokładnie {itemCount} pozycjami.\n")
+            .ToString();
+    }
+
     private static string OneLine(string text) =>
         string.Join(' ', text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
 }

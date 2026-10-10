@@ -302,8 +302,11 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   został). Złapało prawdziwe halucynacje (D2-K3: wiek 13/18 spoza rozdziału), ale też: rozdział 4 reklamacji
   ucięty przez „## Dodatkowe wyjaśnienia” na poziomie rozdziałów, cytaty niedosłowne. **T067h**: sekcja z numerem
   obejmuje następne nagłówki bez numeru; cytat z tolerancją (≥ 80% trójek słów, fragmenty po wielokropkach);
-  ostrzeżenie z początkiem cytatu, jedna linia na kandydata. Ponowny przebieg do zrobienia — sprawdzić odsetek
-  odrzuceń i przykłady cytatów w ostrzeżeniach.
+  ostrzeżenie z początkiem cytatu, jedna linia na kandydata.
+- **Piąty przebieg (2026-10-10)**: ugruntowanie odrzuciło 3 z 44 kandydatów (wszystkie słusznie: wiek 13/18 spoza
+  rozdziału, „14 dni” spoza rozdziału 7, cytat spoza rozdziału 19), ale wybór zwrócił 9 pozycji zamiast 10 (kod 7).
+  **T067i** (decyzja właściciela): jedna poprawka w kroku wyboru z listą problemów; druga zła odpowiedź = kod 7.
+  Ponowny przebieg do zrobienia.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

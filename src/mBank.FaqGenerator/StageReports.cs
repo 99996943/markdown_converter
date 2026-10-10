@@ -77,6 +77,7 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
             FaqEventKind.CandidateDropped =>
                 $"[{value.DocumentId}] pominięto {Dropped(value.Detail ?? string.Empty)}",
             FaqEventKind.SelectionStarted => $"[wybór] {Candidates(value.Count ?? 0)} — {Size(value)}…",
+            FaqEventKind.SelectionCorrection => $"[wybór] odpowiedź odrzucona ({value.Detail}) — prośba o poprawkę…",
             FaqEventKind.SelectionFinished => $"[wybór] {Questions(value.Count ?? 0)} ({Usage(value.Usage)})",
             _ => null,
         };

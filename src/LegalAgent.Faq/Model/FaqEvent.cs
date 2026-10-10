@@ -15,6 +15,9 @@ public enum FaqEventKind
     /// <summary>The selection request is about to be sent.</summary>
     SelectionStarted,
 
+    /// <summary>The selection was rejected and one correction is requested (T067i); the problems are in Detail.</summary>
+    SelectionCorrection,
+
     /// <summary>The selection was accepted.</summary>
     SelectionFinished,
 }
@@ -26,7 +29,10 @@ public enum FaqEventKind
 /// <param name="EstimatedTokens">Estimated tokens of the sent content (Started events).</param>
 /// <param name="Count">Accepted candidates or items (Finished); input candidates (SelectionStarted).</param>
 /// <param name="Usage">Token usage of the request (Finished events); <c>null</c> when unknown.</param>
-/// <param name="Detail">Why a candidate was dropped (CandidateDropped), starting with „kandydat &lt;id&gt;:”.</param>
+/// <param name="Detail">
+/// Why a candidate was dropped (CandidateDropped), starting with „kandydat &lt;id&gt;:”; the problems of the rejected
+/// selection (SelectionCorrection).
+/// </param>
 public sealed record FaqEvent(
     FaqEventKind Kind,
     string? DocumentId,
