@@ -54,6 +54,17 @@ public sealed class GroundingTests
     }
 
     [Fact]
+    public void UnknownUnit_IsProblem()
+    {
+        string[] units = ["6. Jakie informacje musisz podać?", "7. Jak autoryzujesz transakcję?"];
+
+        Assert.Equal(
+            "kandydat D1-K2: jednostka „Załącznik nr 2” nie występuje w dokumencie D1",
+            FaqGrounding.Problem(Candidate("Załącznik nr 2", "kwotę i walutę", "Kwotę."), Markdown, units));
+        Assert.Null(FaqGrounding.Problem(Candidate("6", "kwotę i walutę", "Kwotę."), Markdown, units));
+    }
+
+    [Fact]
     public void LongQuote_IsShortenedInProblem()
     {
         const string quote = "tego zdania nie ma w dokumencie ani w żadnym innym regulaminie tego banku";

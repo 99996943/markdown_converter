@@ -631,6 +631,11 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
   bez etykiet „a)”, „b)”, a etykiety w tekście przerywały trójki słów (< 80%). Etykiety list (`1)`, `a)`, także
   `1\)` z Markdown) są usuwane z tekstu jednostki i z cytatu przed porównaniem cytatu (nie przy liczbach).
 
+- [ ] T067n Dziewiąty przebieg (regulaminy dla firm): kandydat D1-K7 wskazał „Załącznik nr 2 do Regulaminu…”,
+  którego nie ma wśród jednostek (parser nie rozpoznał nagłówków tego układu), i odrzucił całą odpowiedź D1 (kod 7).
+  Nieznana jednostka jest teraz problemem ugruntowania — odpada tylko ten kandydat („kandydat D1-K7: jednostka „…”
+  nie występuje w dokumencie D1”), spójnie z T067d; `ValidateCandidates` nie sprawdza już jednostek.
+
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
   `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.

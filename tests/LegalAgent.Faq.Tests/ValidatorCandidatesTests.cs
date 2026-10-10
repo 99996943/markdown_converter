@@ -4,12 +4,11 @@ namespace LegalAgent.Faq.Tests;
 
 public sealed class ValidatorCandidatesTests
 {
-    private static readonly string[] Units = ["Rozdział 1", "Rozdział 1. Postanowienia ogólne", "§ 1", "§ 1.", "§ 2", "§ 2."];
 
     [Fact]
     public void ValidCandidates_Accepted()
     {
-        FaqResponseValidator.ValidateCandidates([C(1, "Pytanie?", unit: "§ 1"), C(2, "Inne pytanie?")], "D2", Units, 10);
+        FaqResponseValidator.ValidateCandidates([C(1, "Pytanie?", unit: "§ 1"), C(2, "Inne pytanie?")], "D2", 10);
     }
 
     [Theory]
@@ -20,7 +19,7 @@ public sealed class ValidatorCandidatesTests
         FaqCandidate[] candidates = [.. Enumerable.Range(1, count).Select(k => C(k, $"Pytanie {k}?"))];
 
         FaqResponseException e = Assert.Throws<FaqResponseException>(
-            () => FaqResponseValidator.ValidateCandidates(candidates, "D2", Units, 3));
+            () => FaqResponseValidator.ValidateCandidates(candidates, "D2", 3));
 
         Assert.Equal(FaqStep.Candidates, e.Step);
         Assert.Equal("D2", e.DocumentId);
@@ -32,7 +31,7 @@ public sealed class ValidatorCandidatesTests
     [InlineData(3)]
     public void CountAtBoundary_Accepted(int count)
     {
-        FaqResponseValidator.ValidateCandidates([.. Enumerable.Range(1, count).Select(k => C(k, $"Pytanie {k}?"))], "D2", Units, 3);
+        FaqResponseValidator.ValidateCandidates([.. Enumerable.Range(1, count).Select(k => C(k, $"Pytanie {k}?"))], "D2", 3);
     }
 
     [Fact]
@@ -41,7 +40,6 @@ public sealed class ValidatorCandidatesTests
         FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateCandidates(
             [C(1, "Pytanie?"), C(2, "  "), C(3, "Trzecie?", answer: "\n")],
             "D1",
-            Units,
             10));
 
         Assert.Equal(["pozycja 2: puste pytanie", "pozycja 3: pusta odpowiedź"], e.Problems);
@@ -56,22 +54,16 @@ public sealed class ValidatorCandidatesTests
         FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateCandidates(
             [C(1, "Ile kosztuje karta?"), C(2, repeated)],
             "D1",
-            Units,
             10));
 
         Assert.Equal(["pozycja 2: powtórzone pytanie (jak w pozycji 1)"], e.Problems);
     }
 
     [Fact]
-    public void UnknownUnit_Rejected()
+    public void UnknownUnit_DoesNotRejectResponse()
     {
-        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateCandidates(
-            [C(1, "Pytanie?", unit: "§ 12"), C(2, "Drugie?", unit: "§ 2 ust. 1")],
-            "D1",
-            Units,
-            10));
-
-        Assert.Equal(["pozycja 1: jednostka „§ 12” nie występuje w dokumencie D1"], e.Problems);
+        // T067n: an unknown unit drops only its candidate (FaqGrounding), not the whole response.
+        FaqResponseValidator.ValidateCandidates([C(1, "Pytanie?", unit: "§ 12"), C(2, "Drugie?", unit: "§ 2 ust. 1")], "D1", 10);
     }
 
     [Fact]
@@ -80,14 +72,12 @@ public sealed class ValidatorCandidatesTests
         FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateCandidates(
             [C(1, ""), C(2, "P?", unit: "Art. 5"), C(3, "p"), C(4, "Q?", answer: "")],
             "D4",
-            Units,
             3));
 
         Assert.Equal(
             [
                 "liczba kandydatów 4 poza zakresem 1–3",
                 "pozycja 1: puste pytanie",
-                "pozycja 2: jednostka „Art. 5” nie występuje w dokumencie D4",
                 "pozycja 3: powtórzone pytanie (jak w pozycji 2)",
                 "pozycja 4: pusta odpowiedź",
             ],
