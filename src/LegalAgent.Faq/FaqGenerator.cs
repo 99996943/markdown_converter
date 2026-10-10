@@ -230,6 +230,18 @@ public sealed class FaqGenerator
             // No retries (FR-424): the first failure ends the generation.
             throw mapped;
         }
-        return messages.Count > 0 ? (messages[0].Content ?? string.Empty, UsageReader.Read(messages[0].Metadata)) : (string.Empty, null);
+        if (messages.Count == 0)
+        {
+            return (string.Empty, null);
+        }
+
+        // T067o: a response cut at the output token limit is not valid JSON; say why instead of „nie JSON”.
+        if (messages[0].Metadata?.TryGetValue("FinishReason", out object? reason) == true
+            && string.Equals(reason?.ToString(), "length", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new FaqResponseException(step, documentId, [FaqMessages.Truncated]);
+        }
+
+        return (messages[0].Content ?? string.Empty, UsageReader.Read(messages[0].Metadata));
     }
 }

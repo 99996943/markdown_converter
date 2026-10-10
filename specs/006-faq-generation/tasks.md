@@ -636,7 +636,7 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
   Nieznana jednostka jest teraz problemem ugruntowania — odpada tylko ten kandydat („kandydat D1-K7: jednostka „…”
   nie występuje w dokumencie D1”), spójnie z T067d; `ValidateCandidates` nie sprawdza już jednostek.
 
-- [ ] T067o Dziesiąty przebieg (regulaminy dla firm): D1 (84 tys. tokenów) odrzucony jako „nie JSON” — odpowiedź
+- [X] T067o Dziesiąty przebieg (regulaminy dla firm): D1 (84 tys. tokenów) odrzucony jako „nie JSON” — odpowiedź
   ucięta na `MaxOutputTokens` = 4096; z 8192 przebieg przeszedł (wyjścia 4 513, 6 043, 6 620 tokenów). Poprawka:
   domyślnie 8192 (`AzureOpenAiSettings`, `appsettings.json`); gdy metadane odpowiedzi mają `FinishReason` =
   `length`, odpowiedź jest odrzucana z problemem „odpowiedź ucięta — model osiągnął limit tokenów odpowiedzi; zwiększ

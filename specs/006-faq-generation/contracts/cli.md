@@ -32,7 +32,7 @@ Klucza nie da się podać opcją ani zmienną (FR-412).
     "TimeoutSeconds": 300,
     "Temperature": 0,
     "Seed": 42,
-    "MaxOutputTokens": 4096
+    "MaxOutputTokens": 8192
   },
   "Faq": {
     "OutputDirectory": "faq",

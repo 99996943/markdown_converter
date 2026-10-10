@@ -13,6 +13,9 @@ internal static class FaqMessages
             Polish,
             $"Dokument {documentName} jest za długi dla modelu: {characters:N0} znaków (~{estimatedTokens:N0} tokenów), limit {limit:N0} tokenów.");
 
+    /// <summary>Problem of a response cut at the output token limit (T067o).</summary>
+    public const string Truncated = "odpowiedź ucięta — model osiągnął limit tokenów odpowiedzi; zwiększ MaxOutputTokens";
+
     public static string ResponseRejected(FaqStep step, string? documentId, IReadOnlyList<string> problems) =>
         $"Odpowiedź modelu odrzucona ({StepName(step, documentId)}):\n" + string.Join("\n", problems.Select(p => "  - " + p));
 
