@@ -216,12 +216,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
     /// <summary>
     /// Spec 002, FR-088: a caption — a line lying on an image or whose top is at most three line heights below it, within
-    /// the image's width widened by 10% on each side (a logo with the publisher's address under it).
+    /// the image's width widened by 10% on each side (a logo with the publisher's address under it). An image lower than
+    /// the line (a thin decorative strip across the page, T067e) has no captions.
     /// </summary>
     private static bool IsImageCaption(Entry entry)
     {
         Rect line = entry.Line.Box;
-        foreach (Rect image in entry.Page.ImageAreas)
+        foreach (Rect image in entry.Page.ImageAreas.Where(i => i.Height >= line.Height))
         {
             double margin = CaptionWidthMargin * image.Width;
             bool below = line.Top >= image.Bottom - CaptionTolerance && line.Top - image.Bottom <= CaptionGapInLineHeights * line.Height;
