@@ -256,6 +256,63 @@ public sealed partial class StepSchemesIntegrationTests
         Assert.DoesNotContain("**Prowadzenie rachunku**", md, StringComparison.Ordinal);
     }
 
+    private const double StageText = 201.3;
+
+    /// <summary>
+    /// T034a — spec 008 US4, the corp terms page 22–23: a scheme of stages (bold „Etap N.” over plain lines in each box)
+    /// inside a numbered list ends at the bottom of the page with an explanation item; the next page starts with a bold
+    /// question heading at the margin, then the outer list goes on.
+    /// </summary>
+    internal static byte[] BuildStagesPdf()
+    {
+        const double size = 7;
+        var builder = new SyntheticPdfBuilder();
+        builder.Page()
+            .Text(72, 80, "Załącznik o wskaźnikach", 14, bold: true)
+            .Text(40, 110, "Jak wybieramy wskaźnik alternatywny?", size, bold: true)
+            .Text(40, 125, "1. Strony stosują zasady opisane w tym załączniku.", size)
+            .Text(40, 135, "2. Wskaźnik alternatywny stosujemy w sytuacjach opisanych w umowie.", size)
+            .Text(40, 145, "3. Jak postępujemy, gdy musimy stosować wskaźnik alternatywny?", size)
+            .FilledRect(53.9, 680, 141.7, 38, Gray)
+            .Text(StageText, 692, "1. Jeżeli strony uzgodniły wskaźnik alternatywny, stosujemy go.", size)
+            .Text(60.1, 702, "Etap 1.", size, bold: true)
+            .Text(StageText, 702, "2. Jeżeli strony uzgodniły korektę, stosujemy ją.", size)
+            .Text(121.5, 734, "▼", 14, mono: true)
+            .FilledRect(53.9, 740, 141.7, 58, Gray)
+            .Text(StageText, 752, "1. Stosujemy kurs średni ogłaszany przez bank centralny,", size)
+            .Text(60.1, 757, "Etap 2.", size, bold: true)
+            .Text(StageText + 16, 762, "o ile jest dostępny.", size)
+            .Text(60.3, 767, "jeśli etap 1. nie", size)
+            .Text(StageText, 772, "2. Brak kursu jest przypadkiem rozwiązania transakcji.", size)
+            .Text(74.4, 777, "przyniesie rezultatu", size)
+            .Text(StageText, 782, "3. Nie stosujemy korekty.", size);
+
+        builder.Page()
+            .Text(40, 60, "Co robimy, gdy wskaźnik nie ma pary walutowej?", size, bold: true)
+            .Text(40, 80, "4. Stosujemy jako wskaźnik alternatywny iloraz dwóch kursów.", size)
+            .Text(40, 100, "Czy możemy wrócić do wskaźnika?", size, bold: true)
+            .Text(40, 120, "5. Wracamy do wskaźnika, gdy znów jest publikowany.", size);
+        for (int i = 0; i < 14; i++)
+        {
+            builder.Text(40, 150 + (10 * i), $"Wiersz {i + 1} zwykłego tekstu załącznika o stałej długości linii.", size);
+        }
+
+        return builder.Build();
+    }
+
+    [Fact]
+    public async Task StageSchemeEndingAtThePageBottom_KeepsTheHeadingOfTheNextPageAndThePlainBoxLines()
+    {
+        string md = (await ConvertAsync(BuildStagesPdf())).Markdown;
+        string[] lines = md.Split('\n');
+
+        Assert.Contains(lines, l => l.StartsWith('#') && l.EndsWith(" Co robimy, gdy wskaźnik nie ma pary walutowej?", StringComparison.Ordinal));
+        Assert.Contains(lines, l => l.StartsWith('#') && l.EndsWith(" Czy możemy wrócić do wskaźnika?", StringComparison.Ordinal));
+        Assert.Contains("- 3\\. Nie stosujemy korekty.\n", md, StringComparison.Ordinal);
+        Assert.Contains("**Etap 1.**\n", md, StringComparison.Ordinal);
+        Assert.Contains("**Etap 2.** jeśli etap 1. nie przyniesie rezultatu\n", md, StringComparison.Ordinal);
+    }
+
     [Fact]
     public async Task Scheme_DetectionDisabled_KeepsTheOldBehaviour()
     {
