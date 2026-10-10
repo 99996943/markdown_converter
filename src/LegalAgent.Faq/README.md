@@ -102,8 +102,9 @@ Cała odpowiedź jest **odrzucana** (`FaqResponseException`, w aplikacji kod 7),
 
 - nie jest dokładnie obiektem JSON zgodnym ze schematem (bez tekstu wokół, bez dodatkowych pól);
 - liczba kandydatów jest spoza 1…`CandidatesPerDocument`;
-- pytanie lub odpowiedź jest puste albo pytanie się powtarza;
-- `unit` nie pasuje do żadnej jednostki dokumentu (`UnitMatcher`).
+- pytanie lub odpowiedź jest puste albo pytanie się powtarza.
+
+Nieznana jednostka nie odrzuca całej odpowiedzi — odpada tylko ten kandydat (patrz ugruntowanie niżej).
 
 **Dopasowanie jednostki** (`UnitMatcher`): po normalizacji (spacje, wielkość liter, kropka na końcu) wskazana
 jednostka musi być równa jednostce dokumentu albo zaczynać się od niej i dalej mieć spację lub przecinek — „§ 12
@@ -112,7 +113,9 @@ ust. 3” pasuje do „§ 12.”, „Art. 5a” nie pasuje do „Art. 5”. Nume
 
 ### Ugruntowanie kandydata w tekście (`FaqGrounding`)
 
-Każdy kandydat jest sprawdzany osobno z **tekstem swojej jednostki**: sekcją Markdown od nagłówka pasującego do
+Każdy kandydat jest sprawdzany osobno. Najpierw `unit` musi pasować do jednostki dokumentu (`UnitMatcher`) — inaczej
+kandydat odpada („kandydat D1-K7: jednostka „Załącznik nr 2” nie występuje w dokumencie D1”). Potem cytat i liczby
+są porównywane z **tekstem swojej jednostki**: sekcją Markdown od nagłówka pasującego do
 `unit` do następnego nagłówka tego samego lub wyższego poziomu (sekcja z numerem obejmuje też następujące po niej
 nagłówki bez numeru, np. „Dodatkowe wyjaśnienia”). Bez jednostki — cały dokument.
 

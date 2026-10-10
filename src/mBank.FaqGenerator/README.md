@@ -77,7 +77,7 @@ kodzie z tekstem regulaminu, bez dodatkowych zapytań do modelu. Szczegóły i r
 
 | Co jest sprawdzane | Jak | Skutek błędu |
 |---|---|---|
-| **źródło** (rozdział) | model wybiera jednostkę z listy nagłówków dokumentu; kod sprawdza, że taka jednostka istnieje | odrzucenie odpowiedzi |
+| **źródło** (rozdział) | model wybiera jednostkę z listy nagłówków dokumentu; kod sprawdza, że taka jednostka istnieje | kandydat odpada |
 | **cytat** | kandydat podaje dosłowny fragment dokumentu; ≥ 80% jego trójek kolejnych słów musi wystąpić w tekście wskazanego rozdziału | kandydat odpada |
 | **liczby** | każda kwota, termin, godzina, data z odpowiedzi musi wystąpić w tekście rozdziału | kandydat odpada |
 | **liczby w FAQ** | każda liczba końcowej odpowiedzi musi wystąpić w odpowiedziach lub cytatach kandydatów, na których się opiera | pozycja odpada |
@@ -121,7 +121,7 @@ np. endpoint i adresy na pokaz) → zmienne `FAQGEN__<Sekcja>__<Pole>` → opcje
 | `AzureOpenAI:Deployment`, `Model` | `gpt-4o-mini` | nazwa wdrożenia i modelu (do nagłówka FAQ) |
 | `AzureOpenAI:TimeoutSeconds` | 300 | limit czasu jednego zapytania |
 | `AzureOpenAI:Temperature`, `Seed` | 0, 42 | pusta wartość = nie wysyłaj |
-| `AzureOpenAI:MaxOutputTokens` | 4096 | limit odpowiedzi |
+| `AzureOpenAI:MaxOutputTokens` | 8192 | limit odpowiedzi; odpowiedź ucięta na limicie jest odrzucana z komunikatem „odpowiedź ucięta” |
 | `Faq:OutputDirectory` | `faq` | katalog pliku FAQ (`--faq-output`) |
 | `Faq:CandidatesPerDocument` | 10 | najwyżej tylu kandydatów z dokumentu (1–30) |
 | `Faq:MaxDocumentTokens` | 100 000 | limit szacowanych tokenów dokumentu |

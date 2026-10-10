@@ -114,8 +114,8 @@ public sealed class FaqGenerator
                 .ConfigureAwait(false);
             Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(text, source.Id);
             IReadOnlyList<FaqCandidate> accepted = parsed.Value ?? throw new FaqResponseException(FaqStep.Candidates, source.Id, [parsed.Problem!]);
-            FaqResponseValidator.ValidateCandidates(accepted, source.Id, documents[i].Units, options.CandidatesPerDocument);
-            List<FaqCandidate> grounded = Ground(accepted, source.Id, documents[i].Markdown, progress);
+            FaqResponseValidator.ValidateCandidates(accepted, source.Id, options.CandidatesPerDocument);
+            List<FaqCandidate> grounded = Ground(accepted, source.Id, documents[i].Markdown, documents[i].Units, progress);
             candidates.AddRange(grounded);
             total = UsageReader.Add(total, usage, first: i == 0);
             progress?.Report(new FaqEvent(FaqEventKind.CandidatesFinished, source.Id, 0, 0, grounded.Count, usage));
@@ -161,13 +161,13 @@ public sealed class FaqGenerator
     /// Candidates grounded in their units (T067d); the others are dropped and reported. The response is rejected when
     /// none is left.
     /// </summary>
-    private static List<FaqCandidate> Ground(IReadOnlyList<FaqCandidate> candidates, string documentId, string markdown, IProgress<FaqEvent>? progress)
+    private static List<FaqCandidate> Ground(IReadOnlyList<FaqCandidate> candidates, string documentId, string markdown, IReadOnlyCollection<string> units, IProgress<FaqEvent>? progress)
     {
         var grounded = new List<FaqCandidate>(candidates.Count);
         var problems = new List<string>();
         foreach (FaqCandidate candidate in candidates)
         {
-            if (FaqGrounding.Problem(candidate, markdown) is not { } problem)
+            if (FaqGrounding.Problem(candidate, markdown, units) is not { } problem)
             {
                 grounded.Add(candidate);
                 continue;
@@ -230,6 +230,18 @@ public sealed class FaqGenerator
             // No retries (FR-424): the first failure ends the generation.
             throw mapped;
         }
-        return messages.Count > 0 ? (messages[0].Content ?? string.Empty, UsageReader.Read(messages[0].Metadata)) : (string.Empty, null);
+        if (messages.Count == 0)
+        {
+            return (string.Empty, null);
+        }
+
+        // T067o: a response cut at the output token limit is not valid JSON; say why instead of „nie JSON”.
+        if (messages[0].Metadata?.TryGetValue("FinishReason", out object? reason) == true
+            && string.Equals(reason?.ToString(), "length", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new FaqResponseException(step, documentId, [FaqMessages.Truncated]);
+        }
+
+        return (messages[0].Content ?? string.Empty, UsageReader.Read(messages[0].Metadata));
     }
 }

@@ -173,6 +173,35 @@ public sealed class FaqGeneratorErrorTests
     }
 
     [Fact]
+    public async Task TruncatedCandidates_RejectedAsTruncated()
+    {
+        chat.Respond("{\"candidates\":[", finishReason: "Length");
+
+        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate());
+
+        Assert.Equal((FaqStep.Candidates, "D1"), (e.Step, e.DocumentId));
+        Assert.Equal(["odpowiedź ucięta — model osiągnął limit tokenów odpowiedzi; zwiększ MaxOutputTokens"], e.Problems);
+        Assert.Single(chat.Calls);
+    }
+
+    [Fact]
+    public async Task TruncatedSelection_NotCorrected()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        chat.Respond("{\"items\":[", finishReason: "length");
+
+        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate());
+
+        Assert.Equal(FaqStep.Selection, e.Step);
+        Assert.Equal(["odpowiedź ucięta — model osiągnął limit tokenów odpowiedzi; zwiększ MaxOutputTokens"], e.Problems);
+        Assert.Equal(6, chat.Calls.Count);
+    }
+
+    [Fact]
     public async Task SelectionNotJson_IsCorrectedOnce()
     {
         for (int i = 1; i <= 5; i++)

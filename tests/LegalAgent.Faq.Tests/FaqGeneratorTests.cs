@@ -188,6 +188,30 @@ public sealed class FaqGeneratorTests
     }
 
     [Fact]
+    public async Task Generate_UnknownUnit_DropsOnlyThatCandidate()
+    {
+        chat.Respond(FaqJson.Candidates(
+            FaqJson.Candidate("D1", 1),
+            FaqJson.Candidate("D1", 2),
+            new CandidateJson("Co jest w załączniku?", "Wzór wniosku.", "Załącznik nr 2")));
+        for (int i = 2; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        chat.Respond(FaqJson.Selection(10, 5));
+        var events = new List<FaqEvent>();
+
+        FaqResult result = await Generator().GenerateAsync(Documents(), new SyncProgress(events), Ct);
+
+        Assert.Equal(10, result.Items.Count);
+        Assert.DoesNotContain(result.Candidates, c => c.Id == "D1-K3");
+        Assert.Equal(
+            "kandydat D1-K3: jednostka „Załącznik nr 2” nie występuje w dokumencie D1",
+            Assert.Single(events, e => e.Kind == FaqEventKind.CandidateDropped).Detail);
+    }
+
+    [Fact]
     public async Task Generate_AllCandidatesOfDocumentDropped_RejectsResponse()
     {
         chat.Respond(FaqJson.Candidates(new CandidateJson("Zmyślone?", "Tak.", "", "tego zdania nie ma w dokumencie")));

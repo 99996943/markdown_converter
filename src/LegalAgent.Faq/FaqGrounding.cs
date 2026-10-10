@@ -23,11 +23,18 @@ internal static partial class FaqGrounding
     /// <summary>Why the candidate is not grounded, as one line „kandydat &lt;id&gt;: reason; reason”; <c>null</c> when it is.</summary>
     /// <param name="candidate">The candidate.</param>
     /// <param name="markdown">Markdown of the candidate's document.</param>
+    /// <param name="units">Units of the document; when given, a candidate citing another unit is a problem (T067n).</param>
     /// <returns>The problem or <c>null</c>.</returns>
-    public static string? Problem(FaqCandidate candidate, string markdown)
+    public static string? Problem(FaqCandidate candidate, string markdown, IReadOnlyCollection<string>? units = null)
     {
         ArgumentNullException.ThrowIfNull(candidate);
         ArgumentNullException.ThrowIfNull(markdown);
+        if (units is not null && candidate.Unit is { } cited && !UnitMatcher.Matches(cited, units))
+        {
+            // T067n: an unknown unit drops this candidate only; its quote and numbers have no unit text to check.
+            return Invariant($"kandydat {candidate.Id}: jednostka „{cited}” nie występuje w dokumencie {candidate.DocumentId}");
+        }
+
         string? section = candidate.Unit is { } unit ? UnitText(unit, markdown) : null;
         string scope = section is null
             ? Invariant($"w dokumencie {candidate.DocumentId}")
