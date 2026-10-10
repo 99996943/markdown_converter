@@ -36,6 +36,7 @@ public sealed class ParagraphUnitHeadingTests
     {
         var builder = new SyntheticPdfBuilder();
         SyntheticPdfBuilder page = builder.Page();
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Regulamin rachunków bankowych", 14, bold: true)) / 2, 50, "Regulamin rachunków bankowych", 14, bold: true);
         page.Text(40, 80, "1. Zasady ogólne", HeadingSize, bold: true);
         Centered(page, 104, "§ 4");
         Item(page, Margin, Point, 120, "1.", "Regulamin określa zasady otwierania i prowadzenia rachunków bankowych dla przedsiębiorców oraz innych podmiotów,");
@@ -85,9 +86,8 @@ public sealed class ParagraphUnitHeadingTests
         Section chapter = Assert.Single(All(result.Document.Sections), s => s.HeadingText == "2. Rachunki bankowe oraz rachunek VAT");
         Assert.Equal(["§ 5", "§ 6"], chapter.Children.Select(c => c.Designation));
         Assert.All(chapter.Children, c => Assert.Equal(chapter.Level + 1, c.Level));
-        Assert.Matches(@"(?m)^### 2\. Rachunki bankowe oraz rachunek VAT
-
-#### § 5$", result.Markdown);
+        Assert.Matches(@"(?m)^## 2\. Rachunki bankowe oraz rachunek VAT\n\n### § 5$", result.Markdown);
+        Assert.Matches(@"(?m)^## 1\. Zasady ogólne\n\n### § 4$", result.Markdown);
     }
 
     /// <summary>
