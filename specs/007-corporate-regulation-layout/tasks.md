@@ -72,7 +72,7 @@ w pierwszej kolumnie zostaje tabelą GFM.
   samym pliku testów
 - [X] T011 [P] [US2] Test kontrolny (powinien przejść już dziś i po zmianie): tabela opłat z 3 kolumnami tekstu i
   „1/” w pierwszej kolumnie zostaje tabelą GFM — w `HangingLabelLayoutTests.cs`
-- [ ] T012 [US2] `TableDetectionStage.IsLabel`/`CellsOf` łączą etykiety `ArabicSlash`, `LetterSlash` i (tylko w
+- [X] T012 [US2] `TableDetectionStage.IsLabel`/`CellsOf` łączą etykiety `ArabicSlash`, `LetterSlash` i (tylko w
   obszarze etykiet) `ArabicDot` z tekstem; `KeepLabelledBoldTextInLists` obejmuje nowe rodzaje — w
   `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs`
 - [ ] T013 [US2] `ListDetectionStage.Rank`: `ArabicSlash` = 2, `LetterSlash` = 3 — w

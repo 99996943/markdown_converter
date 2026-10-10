@@ -31,6 +31,9 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
     private const double MinCellGapEm = 1.0;
+
+    /// <summary>Widest gap between a hanging „1.”, „1/”, „a/” label and its text (corporate regulations: 0.9–1.5 em).</summary>
+    private const double MaxHangingLabelGapEm = 2.0;
     private const double JustifiedGapSpread = 0.2;
     private const int JustifiedMinSegments = 4;
 
@@ -298,19 +301,25 @@ public sealed class TableDetectionStage : IPipelineStage
         return previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal));
     }
 
-    /// <summary>Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces.</summary>
+    /// <summary>
+    /// Cells of a line: its segments, with a lone bullet or list label joined to the text it introduces — „1.”, „1/”,
+    /// „a/” only when the text follows within <see cref="MaxHangingLabelGapEm"/> (a hanging label column, spec 007), so
+    /// a „Lp.” column of a table keeps its own cells.
+    /// </summary>
     private static List<LineSegment> CellsOf(LayoutLine line)
     {
         var cells = new List<LineSegment>();
         LineSegment? label = null;
-        foreach (LineSegment segment in line.Segments)
+        for (int i = 0; i < line.Segments.Count; i++)
         {
+            LineSegment segment = line.Segments[i];
             if (label is not null)
             {
                 cells.Add(new LineSegment([.. label.Words, .. segment.Words], label.Box.Union(segment.Box)));
                 label = null;
             }
-            else if (segment.Words.Count == 1 && IsLabel(segment.Text))
+            else if (segment.Words.Count == 1
+                && (IsLabel(segment.Text) || (i + 1 < line.Segments.Count && IsHangingLabelBefore(segment, line.Segments[i + 1]))))
             {
                 label = segment;
             }
@@ -332,6 +341,15 @@ public sealed class TableDetectionStage : IPipelineStage
     private static bool IsLabel(string text) =>
         ListLabelPatterns.TryMatch(text + " x", out ListLabelMatch? label)
         && label.Kind is ListLabelKind.Bullet or ListLabelKind.ArabicParen or ListLabelKind.LetterParen;
+
+    /// <summary>A „1.”, „1/” or „a/” label set close before the text it introduces.</summary>
+    private static bool IsHangingLabelBefore(LineSegment label, LineSegment text)
+    {
+        double size = label.Words[0].Glyphs.Count > 0 ? label.Words[0].Glyphs[0].PointSize : label.Box.Height;
+        return ListLabelPatterns.TryMatch(label.Text + " x", out ListLabelMatch? match)
+            && match.Kind is ListLabelKind.ArabicDot or ListLabelKind.ArabicSlash or ListLabelKind.LetterSlash
+            && text.Box.Left - label.Box.Right <= MaxHangingLabelGapEm * size;
+    }
 
     /// <summary>Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>).</summary>
     private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start)
