@@ -2,6 +2,7 @@ using LegalAgent.Faq.Model;
 
 namespace LegalAgent.Faq.Tests;
 
+/// <summary>Checking the ranked selection and choosing the final items from it (T067l).</summary>
 public sealed class ValidatorSelectionTests
 {
     private static readonly FaqCandidate[] Candidates =
@@ -20,13 +21,14 @@ public sealed class ValidatorSelectionTests
         ParsedItem[] items = [.. Enumerable.Range(1, 3).Select(i => Item(i))];
         items[1] = items[1] with { Question = "  Pytanie z odstępami?  ", Answer = "\nOdpowiedź.\n\nDrugi akapit.\n" };
 
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3);
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 3);
 
-        Assert.Equal([1, 2, 3], result.Select(i => i.Number));
-        Assert.Equal("Pytanie z odstępami?", result[1].Question);
-        Assert.Equal("Odpowiedź.\n\nDrugi akapit.", result[1].Answer);
-        Assert.Equal([new FaqSource("D1", "§ 1")], result[0].Sources);
-        Assert.Equal(["D1-K1"], result[0].BasedOn);
+        Assert.Equal([1, 2, 3], result.Items.Select(i => i.Number));
+        Assert.Equal("Pytanie z odstępami?", result.Items[1].Question);
+        Assert.Equal("Odpowiedź.\n\nDrugi akapit.", result.Items[1].Answer);
+        Assert.Equal([new FaqSource("D1", "§ 1")], result.Items[0].Sources);
+        Assert.Equal(["D1-K1"], result.Items[0].BasedOn);
+        Assert.Empty(result.Skipped);
     }
 
     [Fact]
@@ -39,7 +41,7 @@ public sealed class ValidatorSelectionTests
             Item(3) with { BasedOn = ["D3-K1", "D2-K1"] },
         ];
 
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3);
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3).Items;
 
         Assert.Equal([new FaqSource("D2", "Art. 5"), new FaqSource("D1", "§ 1")], result[0].Sources);
         Assert.Equal([new FaqSource("D1", null)], result[1].Sources);
@@ -51,106 +53,132 @@ public sealed class ValidatorSelectionTests
     {
         ParsedItem[] items = [Item(1) with { BasedOn = ["D1-K2", "D1-K1"] }, Item(2), Item(3)];
 
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3);
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3).Items;
 
         Assert.Equal([new FaqSource("D1", "§ 1")], result[0].Sources);
     }
 
-    [Theory]
-    [InlineData(2)]
-    [InlineData(4)]
-    public void WrongCount_Rejected(int count)
+    [Fact]
+    public void LargerPool_TopRankedChosen()
+    {
+        SelectionResult result = FaqResponseValidator.ValidateSelection([.. Enumerable.Range(1, 5).Select(i => Item(i))], Candidates, 3);
+
+        Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 2?", "Pytanie końcowe 3?"], result.Items.Select(i => i.Question));
+        Assert.Equal([1, 2, 3], result.Items.Select(i => i.Number));
+    }
+
+    [Fact]
+    public void TooFewItems_Rejected()
     {
         FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
-            [.. Enumerable.Range(1, count).Select(i => Item(i))],
+            [Item(1), Item(2)],
             Candidates,
             3));
 
         Assert.Equal(FaqStep.Selection, e.Step);
         Assert.Null(e.DocumentId);
-        Assert.Equal([$"liczba pozycji {count} zamiast 3"], e.Problems);
+        Assert.Equal(["liczba poprawnych pozycji 2, potrzeba co najmniej 3"], e.Problems);
         Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):", e.Message, StringComparison.Ordinal);
     }
 
     [Fact]
-    public void BlankFieldsAndEmptyBasedOn_Rejected()
+    public void InvalidItems_AreSkipped()
     {
-        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
-            [Item(1) with { Question = " " }, Item(2) with { Answer = "" }, Item(3) with { BasedOn = [] }],
-            Candidates,
-            3));
+        ParsedItem[] items =
+        [
+            Item(1) with { Question = " " },
+            Item(2),
+            Item(3) with { Answer = "Masz na to 14 dni." },
+            Item(4) with { BasedOn = ["D1-K2", "D1-K9"] },
+            Item(5) with { Answer = "" },
+            Item(6) with { BasedOn = [] },
+            Item(7) with { Question = "pytanie końcowe 2" },
+            Item(8) with { BasedOn = ["D2-K2"], Answer = "Opłata wynosi 30 zł (O6)." },
+        ];
 
-        Assert.Equal(["pozycja 1: puste pytanie", "pozycja 2: pusta odpowiedź", "pozycja 3: puste basedOn"], e.Problems);
-    }
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2);
 
-    [Fact]
-    public void RepeatedQuestion_Rejected()
-    {
-        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
-            [Item(1), Item(2), Item(3) with { Question = "pytanie końcowe 1" }],
-            Candidates,
-            3));
-
-        Assert.Equal(["pozycja 3: powtórzone pytanie (jak w pozycji 1)"], e.Problems);
-    }
-
-    [Fact]
-    public void UnknownCandidate_Rejected()
-    {
-        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
-            [Item(1), Item(2) with { BasedOn = ["D1-K2", "D1-K9"] }, Item(3)],
-            Candidates,
-            3));
-
-        Assert.Equal(["pozycja 2: kandydat D1-K9 nie istnieje"], e.Problems);
-    }
-
-    [Fact]
-    public void NumberOutsideBasedOnCandidates_Rejected()
-    {
-        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
+        Assert.Equal(["Pytanie końcowe 2?", "Pytanie końcowe 8?"], result.Items.Select(i => i.Question));
+        Assert.Equal(
             [
-                Item(1) with { Answer = "Opłata wynosi 30 zł, a O1 to zasada." },
-                Item(2) with { BasedOn = ["D2-K2"], Answer = "Opłata wynosi 30 zł (O6)." },
-                Item(3) with { Answer = "Masz na to 14 dni." },
+                "pozycja 1: puste pytanie",
+                "pozycja 3: liczba „14” nie występuje w kandydatach basedOn",
+                "pozycja 4: kandydat D1-K9 nie istnieje",
+                "pozycja 5: pusta odpowiedź",
+                "pozycja 6: puste basedOn",
+                "pozycja 7: powtórzone pytanie (jak w pozycji 2)",
             ],
+            result.Skipped);
+    }
+
+    [Fact]
+    public void SkippedItemsLeavingTooFew_RejectedWithReasons()
+    {
+        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
+            [Item(1), Item(2) with { Answer = "Opłata wynosi 30 zł, a O1 to zasada." }, Item(3)],
             Candidates,
             3));
 
         Assert.Equal(
-            [
-                "pozycja 1: liczba „30” nie występuje w kandydatach basedOn",
-                "pozycja 3: liczba „14” nie występuje w kandydatach basedOn",
-            ],
+            ["liczba poprawnych pozycji 2, potrzeba co najmniej 3", "pozycja 2: liczba „30” nie występuje w kandydatach basedOn"],
             e.Problems);
     }
 
     [Fact]
-    public void ItemsPerDocument_OutsideLimits_Rejected()
+    public void Balance_CoversEveryDocumentFirst_ThenFillsInRankOrder()
+    {
+        ParsedItem[] items =
+        [
+            Item(1, "D1-K1"), Item(2, "D1-K2"), Item(3, "D1-K3"), Item(4, "D2-K1"), Item(5, "D3-K1"), Item(6, "D2-K2"),
+        ];
+
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 4, minPerDocument: 1, maxPerDocument: 2);
+
+        Assert.Equal(
+            ["Pytanie końcowe 1?", "Pytanie końcowe 2?", "Pytanie końcowe 4?", "Pytanie końcowe 5?"],
+            result.Items.Select(i => i.Question));
+        Assert.Equal([1, 2, 3, 4], result.Items.Select(i => i.Number));
+    }
+
+    [Fact]
+    public void Balance_ItemOfTwoDocuments_CountsForBoth()
+    {
+        ParsedItem[] items =
+        [
+            Item(1) with { BasedOn = ["D1-K1", "D2-K1"] }, Item(2, "D2-K2"), Item(3, "D1-K2"), Item(4, "D3-K1"),
+        ];
+
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2, minPerDocument: 1, maxPerDocument: 1);
+
+        Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 4?"], result.Items.Select(i => i.Question));
+    }
+
+    [Fact]
+    public void Balance_DocumentWithoutItems_Rejected()
     {
         FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
-            [Item(1), Item(2), Item(3) with { BasedOn = ["D2-K1", "D1-K3"] }],
+            [Item(1, "D1-K1"), Item(2, "D2-K1"), Item(3, "D1-K2")],
             Candidates,
             3,
             minPerDocument: 1,
             maxPerDocument: 2));
 
-        Assert.Equal(["dokument D1: 3 pozycje (najwyżej 2)", "dokument D3: brak pozycji (co najmniej 1)"], e.Problems);
+        Assert.Equal(["dokument D3: brak pozycji (co najmniej 1)"], e.Problems);
     }
 
     [Fact]
-    public void ItemsPerDocument_WithinLimits_Accepted()
+    public void Balance_LimitLeavesTooFew_Rejected()
     {
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(
-            [Item(1), Item(2) with { BasedOn = ["D2-K1"] }, Item(3) with { BasedOn = ["D3-K1", "D2-K2"] }],
+        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
+            [Item(1, "D1-K1"), Item(2, "D1-K2"), Item(3, "D1-K3"), Item(4, "D2-K1"), Item(5, "D3-K1")],
             Candidates,
-            3,
+            5,
             minPerDocument: 1,
-            maxPerDocument: 2);
+            maxPerDocument: 2));
 
-        Assert.Equal(3, result.Count);
+        Assert.Equal(["po zastosowaniu limitu 2 pozycji na dokument zostają 4 z 5 pozycji"], e.Problems);
     }
 
-    private static ParsedItem Item(int i) =>
-        new($"Pytanie końcowe {i}?", "Odpowiedź końcowa.", [i == 1 ? "D1-K1" : "D1-K2"]);
+    private static ParsedItem Item(int i, string candidateId = "") =>
+        new($"Pytanie końcowe {i}?", "Odpowiedź końcowa.", [candidateId.Length > 0 ? candidateId : i == 1 ? "D1-K1" : "D1-K2"]);
 }

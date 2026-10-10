@@ -608,6 +608,20 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
 - [X] T067k Zastrzeżenia: komunikaty obu kroków każą zachować, kogo dotyczy zasada (konsument, firma, klient
   Private Banking…), oraz jej warunki i wyjątki (`PromptTests`).
 
+- [ ] T067l Siódmy przebieg (te same dokumenty): wybór 9 zamiast 10 i D1 = 4 pozycje; poprawka naprawiła liczbę, ale
+  nie równowagę (kod 7) — model nie liczy. Decyzja właściciela: model szereguje, kod wybiera.
+  - komunikat: wybierz od N do N+5 pytań uszeregowanych od najważniejszego, z każdego dokumentu co najmniej min+1;
+    program wybierze N pozycji z od min do max pozycjami na dokument;
+  - pozycje łamiące reguły (puste pola, powtórzone pytanie, nieznany kandydat, liczba spoza `basedOn`) są
+    pomijane z ostrzeżeniem („[wybór] pominięto pozycję 11: …”, zdarzenie `SelectionItemSkipped`);
+  - wybór w kodzie: najpierw dla każdego dokumentu (kolejność D1…Dn) najwyżej oceniona pozycja, której można użyć
+    bez przekroczenia max, aż do min; potem kolejne pozycje w kolejności modelu, które nie przekraczają max; wynik
+    w kolejności modelu, numerowany 1…N;
+  - odrzucenie (poprawka T067i, potem kod 7) tylko, gdy poprawnych pozycji < N („liczba poprawnych pozycji 9,
+    potrzeba co najmniej 10”), dokument nie ma min pozycji („dokument D5: brak pozycji (co najmniej 1)”) albo limit
+    nie pozwala zebrać N („po zastosowaniu limitu 3 pozycji na dokument zostają 9 z 10 pozycji”); pominięte
+    pozycje są wtedy dopisane do problemów.
+
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
   `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.

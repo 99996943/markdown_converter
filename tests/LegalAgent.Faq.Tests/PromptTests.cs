@@ -54,14 +54,16 @@ public sealed class PromptTests
     {
         string system = (await RunAsync(candidates: 7)).Calls[2].System;
 
-        Assert.Contains("dokładnie 2", system, StringComparison.Ordinal);
+        Assert.Contains("Wybierz od 2 do 7", system, StringComparison.Ordinal);
+        Assert.Contains("uszereguj", system, StringComparison.Ordinal);
         Assert.Contains("najważniejsz", system, StringComparison.Ordinal);
         Assert.Contains("połączyć", system, StringComparison.Ordinal);
         Assert.Contains("faktów, których nie ma w kandydatach", system, StringComparison.Ordinal);
         Assert.Contains("basedOn", system, StringComparison.Ordinal);
         Assert.Contains("jednej sprawy", system, StringComparison.Ordinal);
         Assert.Contains("kogo dotyczy", system, StringComparison.Ordinal);
-        Assert.Contains("co najmniej 1 i najwyżej 3 pozycji", system, StringComparison.Ordinal);
+        Assert.Contains("od 1 do 3 pozycji", system, StringComparison.Ordinal);
+        Assert.Contains("z każdego dokumentu co najmniej 2", system, StringComparison.Ordinal);
         Assert.DoesNotContain("sources", system, StringComparison.Ordinal);
         Assert.DoesNotContain("sources", FaqSchemas.Selection, StringComparison.Ordinal);
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
@@ -83,7 +85,7 @@ public sealed class PromptTests
 
         await generator.GenerateAsync(documents, cancellationToken: TestContext.Current.CancellationToken);
 
-        Assert.Contains("co najmniej 1 i najwyżej 5 pozycji", chat.Calls[2].System, StringComparison.Ordinal);
+        Assert.Contains("od 1 do 5 pozycji", chat.Calls[2].System, StringComparison.Ordinal);
     }
 
     private static async Task<FakeChatCompletionService> RunAsync(int candidates, string[]? units = null)

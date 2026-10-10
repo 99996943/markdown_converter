@@ -101,8 +101,8 @@ public sealed class FaqErrorFlowTests : IDisposable
 
         AppRun run = await AssertFailsAsync(7, "Odpowiedź modelu odrzucona (krok wyboru):");
 
-        Assert.Contains("[wybór] odpowiedź odrzucona (liczba pozycji 9 zamiast 10) — prośba o poprawkę…", run.Out, StringComparison.Ordinal);
-        Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):\n  - liczba pozycji 8 zamiast 10\n", run.Err.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+        Assert.Contains("[wybór] odpowiedź odrzucona (liczba poprawnych pozycji 9, potrzeba co najmniej 10) — prośba o poprawkę…", run.Out, StringComparison.Ordinal);
+        Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):\n  - liczba poprawnych pozycji 8, potrzeba co najmniej 10\n", run.Err.ReplaceLineEndings("\n"), StringComparison.Ordinal);
     }
 
     [Fact]
@@ -118,7 +118,26 @@ public sealed class FaqErrorFlowTests : IDisposable
         AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
 
         Assert.Equal(0, run.Code);
-        Assert.Contains("[wybór] odpowiedź odrzucona (liczba pozycji 9 zamiast 10) — prośba o poprawkę…\n[wybór] 10 pytań", run.Out.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+        Assert.Contains("[wybór] odpowiedź odrzucona (liczba poprawnych pozycji 9, potrzeba co najmniej 10) — prośba o poprawkę…\n[wybór] 10 pytań", run.Out.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task SkippedSelectionItem_IsPrinted()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            app.Model.Respond(FaqJson.Candidates($"D{i}", 3));
+        }
+
+        app.Model.Respond(FaqJson.Selection([.. FaqJson.SelectionItems(10, 5), new ItemJson("Pytanie dodatkowe?", "Masz na to 14 dni.", ["D1-K3"])]));
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        Assert.Contains(
+            "[wybór] pominięto pozycję 11: liczba „14” nie występuje w kandydatach basedOn\n[wybór] 10 pytań",
+            run.Out.ReplaceLineEndings("\n"),
+            StringComparison.Ordinal);
     }
 
     [Fact]
