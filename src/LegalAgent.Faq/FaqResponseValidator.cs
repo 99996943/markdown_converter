@@ -45,8 +45,74 @@ internal static class FaqResponseValidator
         IReadOnlyList<ParsedItem> items,
         IReadOnlyList<FaqCandidate> candidates,
         IReadOnlyDictionary<string, IReadOnlyList<string>> unitsByDocument,
-        int itemCount) =>
-        throw new NotImplementedException();
+        int itemCount)
+    {
+        var problems = new List<string>();
+        if (items.Count != itemCount)
+        {
+            problems.Add(Invariant($"liczba pozycji {items.Count} zamiast {itemCount}"));
+        }
+
+        var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
+        var questions = new Dictionary<string, int>(StringComparer.Ordinal);
+        var result = new List<FaqItem>(items.Count);
+        for (int i = 0; i < items.Count; i++)
+        {
+            ParsedItem item = items[i];
+            int position = i + 1;
+            CheckTexts(item.Question, item.Answer, position, questions, problems);
+            if (item.BasedOn.Count == 0)
+            {
+                problems.Add(Invariant($"pozycja {position}: puste basedOn"));
+            }
+
+            if (item.Sources.Count == 0)
+            {
+                problems.Add(Invariant($"pozycja {position}: puste sources"));
+            }
+
+            var basedOnDocuments = new HashSet<string>(StringComparer.Ordinal);
+            foreach (string id in item.BasedOn)
+            {
+                if (candidatesById.TryGetValue(id, out FaqCandidate? candidate))
+                {
+                    basedOnDocuments.Add(candidate.DocumentId);
+                }
+                else
+                {
+                    problems.Add(Invariant($"pozycja {position}: kandydat {id} nie istnieje"));
+                }
+            }
+
+            foreach (FaqSource source in item.Sources)
+            {
+                if (!unitsByDocument.TryGetValue(source.DocumentId, out IReadOnlyList<string>? units))
+                {
+                    problems.Add(Invariant($"pozycja {position}: dokument {source.DocumentId} nie istnieje"));
+                    continue;
+                }
+
+                if (!basedOnDocuments.Contains(source.DocumentId))
+                {
+                    problems.Add(Invariant($"pozycja {position}: dokument {source.DocumentId} nie jest dokumentem żadnego z kandydatów basedOn"));
+                }
+
+                if (source.Unit is { } unit && !UnitMatcher.Matches(unit, units))
+                {
+                    problems.Add(UnknownUnit(position, unit, source.DocumentId));
+                }
+            }
+
+            result.Add(new FaqItem(position, item.Question.Trim(), item.Answer.Trim(), item.Sources, item.BasedOn));
+        }
+
+        if (problems.Count > 0)
+        {
+            throw new FaqResponseException(FaqStep.Selection, null, problems);
+        }
+
+        return result;
+    }
 
     /// <summary>Lower case (invariant), collapsed whitespace, trimmed, without a trailing question mark.</summary>
     internal static string NormalizeQuestion(string question)
