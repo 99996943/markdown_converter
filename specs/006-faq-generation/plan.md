@@ -286,7 +286,10 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
 - **T067a (2026-10-10)**: pierwszy prawdziwy przebieg (`gpt-4.1-mini`, publikacja win-x64) zakończył się kodem 7 już
   na D1 — 10/10 jednostek odrzuconych („§ 6”, „§ 15”…), bo wszystkie 5 regulaminów mBanku ma nagłówki numerowane
   („6. Jakie informacje …”) bez § i Art. Poprawka: lista „Jednostki dokumentu Dn” na końcu komunikatu kandydatów i
-  numer nagłówka numerowanego jako oznaczenie jednostki. Walidacja pozostaje ścisła. Ponowny przebieg do zrobienia.
+  numer nagłówka numerowanego jako oznaczenie jednostki. Walidacja pozostaje ścisła.
+- **T067b (2026-10-10)**: drugi przebieg przeszedł kandydatów 5/5, ale krok wyboru odrzucono — model przeredagował
+  jednostkę źródła („3. Co powinna zawierać reklamacja?” zamiast „3. Jak możesz złożyć reklamację?”). Model nie
+  podaje już `sources`; źródła liczy kod z kandydatów `basedOn`. Ponowny przebieg do zrobienia.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

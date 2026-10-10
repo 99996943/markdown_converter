@@ -59,7 +59,7 @@ internal static class FaqPrompts
         - Możesz połączyć kilku kandydatów w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach.
         - Jeśli kandydat mówi „Dokument nie rozstrzyga …”, zachowaj to stwierdzenie.
         - W polu „basedOn” podaj identyfikatory wykorzystanych kandydatów (np. D2-K3).
-        - W polu „sources” podaj źródła: identyfikator dokumentu (np. D2) i jednostkę przepisaną z kandydatów albo pusty tekst; każdy dokument źródła musi być dokumentem któregoś z kandydatów z „basedOn”.
+        - Źródła pozycji (dokument i jednostka) zostaną wzięte z kandydatów wskazanych w „basedOn”, więc wskaż wszystkich kandydatów, z których pochodzi odpowiedź.
         - Pisz po polsku, jasno i zwięźle.
         - Odpowiedz wyłącznie obiektem JSON zgodnym ze schematem.
         """);

@@ -126,13 +126,7 @@ public sealed class FaqGenerator
             .ConfigureAwait(false);
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(selectionText);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
-        var unitsByDocument = new Dictionary<string, IReadOnlyList<string>>(StringComparer.Ordinal);
-        for (int i = 0; i < documents.Count; i++)
-        {
-            unitsByDocument[sources[i].Id] = documents[i].Units;
-        }
-
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, candidates, unitsByDocument, options.ItemCount);
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount);
         total = UsageReader.Add(total, selectionUsage, first: false);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, selectionUsage));
         return new FaqResult(result, sources, candidates, total);

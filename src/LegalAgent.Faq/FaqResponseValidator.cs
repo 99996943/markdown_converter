@@ -39,12 +39,14 @@ internal static class FaqResponseValidator
         }
     }
 
-    /// <summary>Checks the selection and returns the numbered items with trimmed texts.</summary>
+    /// <summary>
+    /// Checks the selection and returns the numbered items with trimmed texts; the sources of an item come from its
+    /// <c>basedOn</c> candidates (T067b).
+    /// </summary>
     /// <exception cref="FaqResponseException">With all problems found.</exception>
     public static IReadOnlyList<FaqItem> ValidateSelection(
         IReadOnlyList<ParsedItem> items,
         IReadOnlyList<FaqCandidate> candidates,
-        IReadOnlyDictionary<string, IReadOnlyList<string>> unitsByDocument,
         int itemCount)
     {
         var problems = new List<string>();
@@ -66,17 +68,12 @@ internal static class FaqResponseValidator
                 problems.Add(Invariant($"pozycja {position}: puste basedOn"));
             }
 
-            if (item.Sources.Count == 0)
-            {
-                problems.Add(Invariant($"pozycja {position}: puste sources"));
-            }
-
-            var basedOnDocuments = new HashSet<string>(StringComparer.Ordinal);
+            var basedOn = new List<FaqCandidate>(item.BasedOn.Count);
             foreach (string id in item.BasedOn)
             {
                 if (candidatesById.TryGetValue(id, out FaqCandidate? candidate))
                 {
-                    basedOnDocuments.Add(candidate.DocumentId);
+                    basedOn.Add(candidate);
                 }
                 else
                 {
@@ -84,26 +81,7 @@ internal static class FaqResponseValidator
                 }
             }
 
-            foreach (FaqSource source in item.Sources)
-            {
-                if (!unitsByDocument.TryGetValue(source.DocumentId, out IReadOnlyList<string>? units))
-                {
-                    problems.Add(Invariant($"pozycja {position}: dokument {source.DocumentId} nie istnieje"));
-                    continue;
-                }
-
-                if (!basedOnDocuments.Contains(source.DocumentId))
-                {
-                    problems.Add(Invariant($"pozycja {position}: dokument {source.DocumentId} nie jest dokumentem żadnego z kandydatów basedOn"));
-                }
-
-                if (source.Unit is { } unit && !UnitMatcher.Matches(unit, units))
-                {
-                    problems.Add(UnknownUnit(position, unit, source.DocumentId));
-                }
-            }
-
-            result.Add(new FaqItem(position, item.Question.Trim(), item.Answer.Trim(), item.Sources, item.BasedOn));
+            result.Add(new FaqItem(position, item.Question.Trim(), item.Answer.Trim(), SourcesOf(basedOn), item.BasedOn));
         }
 
         if (problems.Count > 0)
@@ -112,6 +90,26 @@ internal static class FaqResponseValidator
         }
 
         return result;
+    }
+
+    /// <summary>
+    /// Document and unit of each candidate, in order, without duplicates; a source without a unit is dropped when the
+    /// same document is also a source with a unit.
+    /// </summary>
+    private static List<FaqSource> SourcesOf(List<FaqCandidate> candidates)
+    {
+        var withUnit = new HashSet<string>(candidates.Where(c => c.Unit is not null).Select(c => c.DocumentId), StringComparer.Ordinal);
+        var sources = new List<FaqSource>();
+        foreach (FaqCandidate candidate in candidates)
+        {
+            var source = new FaqSource(candidate.DocumentId, candidate.Unit);
+            if ((source.Unit is not null || !withUnit.Contains(source.DocumentId)) && !sources.Contains(source))
+            {
+                sources.Add(source);
+            }
+        }
+
+        return sources;
     }
 
     /// <summary>Lower case (invariant), collapsed whitespace, trimmed, without a trailing question mark.</summary>

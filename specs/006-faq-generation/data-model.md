@@ -55,7 +55,7 @@ przekazywane do `ConsoleReport`.
 `Unit` (string?).
 
 ### FaqItem (wynik)
-`Number` (1–10), `Question`, `Answer`, `Sources` (1..n `FaqSource`, kolejność modelu), `BasedOn`
+`Number` (1–10), `Question`, `Answer`, `Sources` (1..n `FaqSource`, z kandydatów `BasedOn`), `BasedOn`
 (1..n identyfikatorów kandydatów).
 
 ### FaqResult
@@ -99,13 +99,14 @@ aplikacja przepuszcza każdy komunikat przez `SecretRedactor` (FR-411).
 5. `unit` pusty albo pasuje do `Units` dokumentu.
 
 **Wybór**:
-1. JSON `{"items":[{"question","answer","basedOn":[...],"sources":[{"documentId","unit"}]}]}`.
+1. JSON `{"items":[{"question","answer","basedOn":[...]}]}`.
 2. Dokładnie `ItemCount` pozycji.
-3. Pola niepuste; `basedOn` i `sources` mają ≥ 1 element.
+3. Pola niepuste; `basedOn` ma ≥ 1 element.
 4. Pytania niepowtarzające się.
 5. Każde `basedOn` to istniejący kandydat.
-6. Każde `sources[].documentId` to jeden z `D1`…`Dn` **i** dokument któregoś z kandydatów `basedOn`.
-7. Każda niepusta `unit` pasuje do `Units` swojego dokumentu.
+Źródła pozycji nie pochodzą od modelu (T067b): to dokument i jednostka każdego kandydata `basedOn`, w kolejności
+`basedOn`, bez powtórzeń; źródło bez jednostki odpada, gdy ten sam dokument jest też źródłem z jednostką.
+Jednostki kandydatów są już sprawdzone w kroku kandydatów.
 
 Wszystkie problemy są zbierane, nie tylko pierwszy. Każdy problem skutkuje odrzuceniem odpowiedzi.
 

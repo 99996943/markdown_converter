@@ -65,8 +65,8 @@ Kandydaci dostają identyfikatory `D2-K1`, `D2-K2`, … w kolejności z odpowied
 **Komunikat systemowy** musi zawierać:
 - zadanie: wybór dokładnie N (`ItemCount` = 10) najważniejszych pytań dla klienta z listy kandydatów; dozwolone
   połączenie lub przeredagowanie kandydatów, zakaz dodawania faktów, których nie ma w kandydatach;
-- wymóg wskazania `basedOn` (identyfikatory kandydatów) i `sources` (identyfikator dokumentu i jednostka
-  przepisana z kandydatów);
+- wymóg wskazania `basedOn` (identyfikatory wszystkich wykorzystanych kandydatów); model nie podaje źródeł —
+  źródła pozycji liczy kod z kandydatów `basedOn` (T067b: model przeredagowywał jednostki źródeł);
 - język polski.
 
 **Komunikat użytkownika**:
@@ -96,23 +96,11 @@ Kandydaci:
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["question", "answer", "basedOn", "sources"],
+        "required": ["question", "answer", "basedOn"],
         "properties": {
           "question": { "type": "string" },
           "answer": { "type": "string" },
-          "basedOn": { "type": "array", "items": { "type": "string" } },
-          "sources": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": ["documentId", "unit"],
-              "properties": {
-                "documentId": { "type": "string" },
-                "unit": { "type": "string" }
-              }
-            }
-          }
+          "basedOn": { "type": "array", "items": { "type": "string" } }
         }
       }
     }

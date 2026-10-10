@@ -28,7 +28,7 @@ public static class FaqSchemas
         }
         """;
 
-    /// <summary>Schema of the selection step: <c>{"items":[{"question","answer","basedOn":[…],"sources":[…]}]}</c>.</summary>
+    /// <summary>Schema of the selection step: <c>{"items":[{"question","answer","basedOn":[…]}]}</c>; sources come from the candidates.</summary>
     public const string Selection =
         """
         {
@@ -41,23 +41,11 @@ public static class FaqSchemas
               "items": {
                 "type": "object",
                 "additionalProperties": false,
-                "required": ["question", "answer", "basedOn", "sources"],
+                "required": ["question", "answer", "basedOn"],
                 "properties": {
                   "question": { "type": "string" },
                   "answer": { "type": "string" },
-                  "basedOn": { "type": "array", "items": { "type": "string" } },
-                  "sources": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": ["documentId", "unit"],
-                      "properties": {
-                        "documentId": { "type": "string" },
-                        "unit": { "type": "string" }
-                      }
-                    }
-                  }
+                  "basedOn": { "type": "array", "items": { "type": "string" } }
                 }
               }
             }

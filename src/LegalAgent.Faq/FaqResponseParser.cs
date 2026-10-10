@@ -15,8 +15,7 @@ internal sealed record Parsed<T>(T? Value, string? Problem)
 /// <param name="Question">Question as returned.</param>
 /// <param name="Answer">Answer as returned.</param>
 /// <param name="BasedOn">Candidate identifiers as returned.</param>
-/// <param name="Sources">Sources; a blank unit is <c>null</c>.</param>
-internal sealed record ParsedItem(string Question, string Answer, IReadOnlyList<string> BasedOn, IReadOnlyList<FaqSource> Sources);
+internal sealed record ParsedItem(string Question, string Answer, IReadOnlyList<string> BasedOn);
 
 /// <summary>
 /// Parses the JSON responses of both steps (contracts/model-exchange.md) without trusting the service schema: the whole
@@ -55,21 +54,14 @@ internal static class FaqResponseParser
             var items = new List<ParsedItem>();
             foreach (JsonElement element in array.EnumerateArray())
             {
-                Shape(element, ["question", "answer", "basedOn", "sources"]);
+                Shape(element, ["question", "answer", "basedOn"]);
                 var basedOn = new List<string>();
                 foreach (JsonElement id in Property(element, "basedOn", JsonValueKind.Array).EnumerateArray())
                 {
                     basedOn.Add(id.ValueKind == JsonValueKind.String ? id.GetString()! : throw new FormatException());
                 }
 
-                var sources = new List<FaqSource>();
-                foreach (JsonElement source in Property(element, "sources", JsonValueKind.Array).EnumerateArray())
-                {
-                    Shape(source, ["documentId", "unit"]);
-                    sources.Add(new FaqSource(String(source, "documentId"), Unit(String(source, "unit"))));
-                }
-
-                items.Add(new ParsedItem(String(element, "question"), String(element, "answer"), basedOn, sources));
+                items.Add(new ParsedItem(String(element, "question"), String(element, "answer"), basedOn));
             }
 
             return items;

@@ -540,7 +540,7 @@ nie dotyka klucza.
   - `UnitMatcher`: numer nagłówka numerowanego („6.” w „6. Jakie …”) też jest oznaczeniem jednostki, więc „6”,
     „6.” i „6 ust. 2” pasują, a „§ 6”, „16”, „2” do „2.1. …” nie (`UnitMatcherTests`);
   - aktualizacja `contracts/model-exchange.md` i `data-model.md` („Dopasowanie jednostki”).
-- [ ] T067b Drugi prawdziwy przebieg przeszedł kandydatów, ale krok wyboru odrzucono: model przeredagował jednostkę
+- [X] T067b Drugi prawdziwy przebieg przeszedł kandydatów, ale krok wyboru odrzucono: model przeredagował jednostkę
   źródła („3. Co powinna zawierać reklamacja?” zamiast „3. Jak możesz złożyć reklamację?”). Poprawka (decyzja
   właściciela): model w kroku wyboru nie podaje źródeł — schemat `Selection` to `question`, `answer`, `basedOn`;
   źródła pozycji liczy kod z kandydatów `basedOn` (dokument + jednostka już sprawdzona w kroku kandydatów), w
