@@ -148,6 +148,44 @@ public sealed class ParagraphUnitHeadingTests
     }
 
     /// <summary>
+    /// T024 (R1b) — a centred bold „§ 5” right above a gridless two-column table (at the body leading) is a unit
+    /// heading, not a row of the table; the table stays a GFM table.
+    /// </summary>
+    [Fact]
+    public async Task Paragraph_right_above_a_gridless_table_is_not_a_table_row()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Zasady wyboru wskaźnika", 14, bold: true)) / 2, 50, "Zasady wyboru wskaźnika", 14, bold: true);
+        page.Text(Margin, 80, "Bank stosuje wskaźnik alternatywny, gdy wskaźnik referencyjny przestaje być publikowany albo organ nadzoru zakaże jego", Size);
+        page.Text(Margin, 90, "stosowania; o zmianie wskaźnika Bank informuje Klienta w sposób określony w umowie albo w tym regulaminie.", Size);
+        Centered(page, 110, "§ 5");
+        (string Event, string When)[] rows =
+        [
+            ("Rodzaj zdarzenia", "Od kiedy stosujemy wskaźnik alternatywny"),
+            ("Wskaźnik nie jest publikowany", "od dnia, w którym wskaźnik nie został opublikowany"),
+            ("Organ nadzoru zakazał stosowania", "od dnia wskazanego przez organ nadzoru"),
+            ("Administrator zaprzestał publikacji", "od dnia następnego po ostatniej publikacji"),
+        ];
+        double y = 120;
+        foreach ((string evt, string when) in rows)
+        {
+            bool header = y == 120;
+            page.Text(Margin, y, evt, Size, bold: header).Text(250, y, when, Size, bold: header);
+            y += 10;
+        }
+
+        page.Text(Margin, y + 15, "Wskaźnik alternatywny Bank stosuje do końca okresu odsetkowego, w którym wystąpiło zdarzenie, a także w kolejnych okresach.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Matches(@"(?m)^#+ § 5\n\n\| \*\*Rodzaj zdarzenia\*\* \|", result.Markdown);
+        Assert.DoesNotMatch(@"\|[^\n]*§ 5", result.Markdown);
+        Assert.Equal(1, result.Report.TableCount);
+        Assert.Equal(0, result.Report.FallbackTableCount);
+    }
+
+    /// <summary>
     /// T019a (D-B) — a centred bold „§ N” at the body leading right below the last line of a list item, and right below
     /// a chapter heading, is still a unit heading (centring sets it apart).
     /// </summary>
