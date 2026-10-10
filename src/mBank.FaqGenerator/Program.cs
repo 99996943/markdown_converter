@@ -1,6 +1,10 @@
 using System.Globalization;
 using LegalAgent.Downloads;
 using LegalAgent.Downloads.Model;
+using LegalAgent.Faq.Conversion;
+using LegalAgent.Faq.Conversion.Model;
+using LegalAgent.PdfParser;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MBank.FaqGenerator;
 
@@ -161,8 +165,47 @@ public static class Program
 
         var report = new ConsoleReport(stdout, stderr, RequiredCount);
         DownloadRun run = await downloader.DownloadAllAsync(addresses, report, cancellationToken).ConfigureAwait(false);
-        report.Summary(run, Path.GetFullPath(options.OutputDirectory));
-        return run.AllSucceeded ? 0 : 3;
+        string downloads = Path.GetFullPath(options.OutputDirectory);
+        report.Summary(run, downloads);
+        if (!run.AllSucceeded)
+        {
+            return 3;
+        }
+
+        ConversionRun conversion = await ConvertAsync(run, downloads, stdout, stderr, cancellationToken).ConfigureAwait(false);
+        if (!conversion.AllSucceeded)
+        {
+            return 5;
+        }
+
+        string faqDirectory = Path.GetFullPath(arguments.FaqOutput ?? configuration.Faq.OutputDirectory);
+        return await FaqStage.RunAsync(
+            conversion.Documents,
+            configuration,
+            faqDirectory,
+            host.KeyInput ?? new ConsoleKeyInput(stdin),
+            stdout,
+            stderr,
+            host,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>Converts the downloaded files with the parser's default options (as <c>legalagent-pdf convert</c>).</summary>
+    private static async Task<ConversionRun> ConvertAsync(
+        DownloadRun run,
+        string downloads,
+        TextWriter stdout,
+        TextWriter stderr,
+        CancellationToken cancellationToken)
+    {
+        using ServiceProvider services = new ServiceCollection().AddLegalAgentPdfParser().BuildServiceProvider();
+        var converter = new DocumentSetConverter(services.GetRequiredService<IPdfMarkdownConverter>());
+        PdfSource[] sources = [.. run.Results.Select(r => new PdfSource(r.Index, r.Address, Path.Combine(downloads, r.FileName)))];
+        var report = new ConversionConsoleReport(stdout, stderr, RequiredCount);
+        report.Start();
+        ConversionRun conversion = await converter.ConvertAllAsync(sources, report, cancellationToken).ConfigureAwait(false);
+        report.Summary(conversion);
+        return conversion;
     }
 
     /// <summary>Checks a list from the arguments or the configuration; reports the first wrong position.</summary>

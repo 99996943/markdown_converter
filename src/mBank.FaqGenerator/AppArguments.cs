@@ -34,6 +34,9 @@ internal sealed record AppArguments
     /// <summary>Value of <c>--output</c>.</summary>
     public string? Output { get; init; }
 
+    /// <summary>Value of <c>--faq-output</c>.</summary>
+    public string? FaqOutput { get; init; }
+
     /// <summary>Whether help was requested.</summary>
     public bool Help { get; init; }
 
@@ -48,6 +51,7 @@ internal sealed record AppArguments
     {
         var urls = new List<string>();
         string? output = null;
+        string? faqOutput = null;
         bool help = false;
         bool version = false;
         for (int i = 0; i < args.Count; i++)
@@ -60,13 +64,16 @@ internal sealed record AppArguments
                 case "--version":
                     version = true;
                     break;
-                case "--url" or "--output" when i + 1 >= args.Count:
+                case "--url" or "--output" or "--faq-output" when i + 1 >= args.Count:
                     return new AppArguments { Error = $"opcja {args[i]} wymaga wartości." };
                 case "--url":
                     urls.Add(args[++i]);
                     break;
                 case "--output":
                     output = args[++i];
+                    break;
+                case "--faq-output":
+                    faqOutput = args[++i];
                     break;
                 default:
                     return new AppArguments { Error = $"nieznany argument „{args[i]}”." };
@@ -83,6 +90,6 @@ internal sealed record AppArguments
             };
         }
 
-        return new AppArguments { Urls = urls, Output = output, Help = help, Version = version };
+        return new AppArguments { Urls = urls, Output = output, FaqOutput = faqOutput, Help = help, Version = version };
     }
 }

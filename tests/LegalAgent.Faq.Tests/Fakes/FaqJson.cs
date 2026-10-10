@@ -43,7 +43,7 @@ internal static class FaqJson
             return Candidates(user["Dokument ".Length..user.IndexOf(':', StringComparison.Ordinal)], 3);
         }
 
-        int documents = user.Split('\n').TakeWhile(l => l.Length > 0).Count(l => l.StartsWith('D'));
+        int documents = user.Split('\n').Skip(1).TakeWhile(l => l.Length > 0).Count();
         return Selection(itemCount, documents);
     }
 
