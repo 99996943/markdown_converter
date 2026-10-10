@@ -273,9 +273,29 @@ public sealed class ListDetectionStage : IPipelineStage
                 continue;
             }
 
-            bool before = k > 0 && segmentOf[candidates[k - 1]] == segmentOf[candidates[k]] && Follows(entries[candidates[k - 1]], e);
-            bool after = k + 1 < candidates.Count && segmentOf[candidates[k + 1]] == segmentOf[candidates[k]] && Follows(e, entries[candidates[k + 1]]);
-            e.Accepted = before || after;
+            e.Accepted = ContinuesNear(k, -1) || ContinuesNear(k, +1);
+        }
+
+        // The nearest candidate of the same segment continues the numbering — or, past „N.” labels nested at another
+        // indent (spec 007: ustępy „1.” quoted under a point „1/”), the nearest candidate at the same indent.
+        bool ContinuesNear(int k, int step)
+        {
+            Entry e = entries[candidates[k]];
+            for (int j = k + step; j >= 0 && j < candidates.Count && segmentOf[candidates[j]] == segmentOf[candidates[k]]; j += step)
+            {
+                Entry other = entries[candidates[j]];
+                bool sameIndent = Math.Abs(other.LabelX - (e.LabelX - Shift(other.Origin, e.Origin))) <= tolerance;
+                if (j == k + step || sameIndent)
+                {
+                    bool ok = step < 0 ? Follows(other, e) : Follows(e, other);
+                    if (ok || sameIndent)
+                    {
+                        return ok;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 

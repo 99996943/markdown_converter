@@ -75,9 +75,13 @@ w pierwszej kolumnie zostaje tabelą GFM.
 - [X] T012 [US2] `TableDetectionStage.IsLabel`/`CellsOf` łączą etykiety `ArabicSlash`, `LetterSlash` i (tylko w
   obszarze etykiet) `ArabicDot` z tekstem; `KeepLabelledBoldTextInLists` obejmuje nowe rodzaje — w
   `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs`
-- [ ] T013 [US2] `ListDetectionStage.Rank`: `ArabicSlash` = 2, `LetterSlash` = 3 — w
+- [X] T013 [US2] `ListDetectionStage.Rank`: `ArabicSlash` = 2, `LetterSlash` = 3 — w
   `src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs`; sprawdź `MarkdownEscaper.EscapeListLabel` (etykieta „1/”
   bez ucieczki) w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs`
+- [X] T013a [US2] Replika (red) z D-A s. 24: ustępy „1.” cytowane pod punktem „1/” zagnieżdżają się według kolumny
+  etykiet; zewnętrzne „1.”, „2.” zostają ciągiem (FR-051: najbliższy kandydat „N.” na tym samym wcięciu, z pominięciem
+  zagnieżdżonych). Decyzja do T013: `Rank` dla `ArabicSlash`/`LetterSlash` NIE został dodany — ranga 1 („1.”) pod
+  rangą 2 („1/”) zamykałaby rodzica; zagnieżdżenie wynika z wcięcia. „1/” renderowane bez ucieczki (sprawdzone)
 - [X] T014 [US2] Jeśli T009/T010 nadal pokazują trzy kolumny: uogólnij `IsHangingList` na „każda kolumna poza ostatnią
   zawiera wyłącznie etykiety” w `TableDetectionStage.cs` (green T009–T010; T011 nadal zielony)
 - [X] T012a [US2] Replika (kontrola regresji): długi ciąg ustępów „9.”–„14.” z dwucyfrowymi etykietami, potem punkty
