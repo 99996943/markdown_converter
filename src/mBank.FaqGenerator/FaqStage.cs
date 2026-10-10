@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using LegalAgent.Faq;
 using LegalAgent.Faq.Conversion.Model;
@@ -43,7 +44,15 @@ internal static class FaqStage
                 d.Markdown,
                 d.Units)),
         ];
-        LegalAgent.Faq.FaqGenerator.CheckInput(inputs, options);
+        try
+        {
+            LegalAgent.Faq.FaqGenerator.CheckInput(inputs, options);
+        }
+        catch (FaqInputTooLongException e)
+        {
+            await stderr.WriteLineAsync(TooLong(e, documents, inputs)).ConfigureAwait(false);
+            return 6;
+        }
 
         stdout.WriteLine();
         string? key = KeyPrompt.Read(keys, stdout);
@@ -61,11 +70,70 @@ internal static class FaqStage
             return await GenerateAndWriteAsync(documents, inputs, options, azure, faqDirectory, key, stdout, stderr, host, cancellationToken)
                 .ConfigureAwait(false);
         }
+        catch (FaqServiceException e)
+        {
+            await stderr.WriteLineAsync(SecretRedactor.Redact(ServiceMessage(e, azure), key)).ConfigureAwait(false);
+            return 6;
+        }
+        catch (FaqInputTooLongException e)
+        {
+            await stderr.WriteLineAsync(SecretRedactor.Redact(TooLong(e, documents, inputs), key)).ConfigureAwait(false);
+            return 6;
+        }
+        catch (FaqResponseException e)
+        {
+            await stderr.WriteLineAsync(SecretRedactor.Redact(e.Message, key)).ConfigureAwait(false);
+            return 7;
+        }
         catch (Exception e) when (e is not OperationCanceledException)
         {
             await stderr.WriteLineAsync(SecretRedactor.Redact($"Błąd nieoczekiwany: {e.Message}", key)).ConfigureAwait(false);
             return 1;
         }
+    }
+
+    /// <summary>The message of contracts/cli.md for a service failure.</summary>
+    private static string ServiceMessage(FaqServiceException e, AzureOpenAiSettings azure)
+    {
+        string step = e.DocumentId is { } id ? $"krok kandydatów, {id}" : "krok wyboru";
+        string status = e.StatusCode?.ToString(CultureInfo.InvariantCulture) ?? "?";
+        return e.Kind switch
+        {
+            FaqServiceErrorKind.Authentication =>
+                $"Usługa Azure OpenAI odrzuciła klucz ({status}): klucz jest nieprawidłowy lub nie ma dostępu do zasobu.",
+            FaqServiceErrorKind.DeploymentNotFound => $"Nie znaleziono wdrożenia „{azure.Deployment}” w zasobie {azure.Endpoint} ({status}).",
+            FaqServiceErrorKind.RateLimited =>
+                $"Przekroczono limit zapytań wdrożenia ({status}) {(e.DocumentId is { } d ? "przy dokumencie " + d : "w kroku wyboru")}. "
+                + "Spróbuj później lub zwiększ przepustowość wdrożenia.",
+            FaqServiceErrorKind.ContentFiltered => $"Usługa zablokowała zapytanie filtrem treści ({e.DocumentId ?? "krok wyboru"}).",
+            FaqServiceErrorKind.Timeout =>
+                $"Brak odpowiedzi usługi w ciągu {azure.TimeoutSeconds.ToString("0.###", PolishText.Culture)} s ({step}).",
+            FaqServiceErrorKind.Network => $"Błąd połączenia z usługą Azure OpenAI: {Cause(e).TrimEnd('.')}.",
+            _ => e.Message,
+        };
+    }
+
+    /// <summary>The message of the innermost transport exception, e.g. a name resolution failure.</summary>
+    private static string Cause(Exception e)
+    {
+        string message = e.Message;
+        for (Exception? inner = e.InnerException; inner is not null; inner = inner.InnerException)
+        {
+            if (inner is HttpRequestException or System.Net.Sockets.SocketException)
+            {
+                message = inner.Message;
+            }
+        }
+
+        return message;
+    }
+
+    private static string TooLong(FaqInputTooLongException e, IReadOnlyList<ConvertedDocument> documents, FaqDocumentInput[] inputs)
+    {
+        int index = Array.FindIndex(inputs, i => string.Equals(i.Name, e.DocumentName, StringComparison.Ordinal));
+        string name = index >= 0 ? documents[index].MarkdownFileName : e.DocumentName;
+        return $"Dokument {name} jest za długi dla modelu: {PolishText.Count(e.Characters, "znak", "znaki", "znaków")} "
+            + $"(~{PolishText.Number(e.EstimatedTokens)} tokenów), limit {PolishText.Number(e.Limit)} tokenów (Faq:MaxDocumentTokens).";
     }
 
     private static async Task<int> GenerateAndWriteAsync(
