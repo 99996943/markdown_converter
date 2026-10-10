@@ -58,11 +58,11 @@ bez TBL001 i bez podziału zawiniętych wierszy (FR-510…FR-515).
 punkt 53,9/68,0, litera 68,0/82,2) dają listy z kontraktu `contracts/markdown-output.md`; kontrola: tabela danych z „1/”
 w pierwszej kolumnie zostaje tabelą GFM.
 
-- [ ] T007 [P] [US2] Testy (red) wzorców w `tests/LegalAgent.PdfParser.Tests/Unit/Text/ListLabelPatternsTests.cs`:
+- [X] T007 [P] [US2] Testy (red) wzorców w `tests/LegalAgent.PdfParser.Tests/Unit/Text/ListLabelPatternsTests.cs`:
   „1/”, „12/”, „1a/” → `ArabicSlash`; „a/”, „aa/” → `LetterSlash` (cały token 1–3 cyfry z opcjonalną literą albo 1–2
   małe litery + „/”, po nim tekst); NIE etykiety: „7/2017”, „13/36”, „4/49”, „Klient/Klienci”, „km/h”, samotne „i/”,
   token bez tekstu po nim
-- [ ] T008 [US2] Wartości `ArabicSlash`, `LetterSlash` w `src/LegalAgent.PdfParser/Model/ListItem.cs` (XML-doc) i
+- [X] T008 [US2] Wartości `ArabicSlash`, `LetterSlash` w `src/LegalAgent.PdfParser/Model/ListItem.cs` (XML-doc) i
   wzorce w `src/LegalAgent.PdfParser/Text/ListLabelPatterns.cs` (green T007)
 - [ ] T009 [P] [US2] Replika (red) „zagnieżdżone 1/”: ustęp „2.” (etykieta x 40, tekst 54) z punktami „1/”, „2/” (x 54 /
   68), drugi punkt zawinięty do x 68, potem ustęp „3.”; oczekiwane `- 2\.` z `  - 1/`, `  - 2/` (scalona kontynuacja),

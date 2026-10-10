@@ -12,7 +12,7 @@ namespace LegalAgent.PdfParser.Text;
 /// <param name="Rest">Text following the label, trimmed.</param>
 internal sealed record ListLabelMatch(string Label, ListLabelKind Kind, int? Ordinal, string Rest);
 
-/// <summary>Classification of list labels (bullets, tirets, „1)”, „a)”, „1.”, Roman numerals, outline numbers).</summary>
+/// <summary>Classification of list labels (bullets, tirets, „1)”, „a)”, „1.”, „1/”, „a/”, Roman numerals, outline numbers).</summary>
 /// <remarks>
 /// The label is the leading whitespace-delimited token and must be followed by text. „N.” is only classified here
 /// (<see cref="ListLabelKind.ArabicDot"/>); whether it really starts a list is decided later (FR-051).
@@ -106,6 +106,14 @@ internal static partial class ListLabelPatterns
             return true;
         }
 
+        m = ArabicSlashLabel().Match(label);
+        if (m.Success)
+        {
+            kind = ListLabelKind.ArabicSlash;
+            ordinal = int.Parse(m.Groups["n"].Value, CultureInfo.InvariantCulture);
+            return true;
+        }
+
         m = UpperRomanLabel().Match(label);
         if (m.Success && RomanValues.TryGetValue(m.Groups["r"].Value, out int upper))
         {
@@ -125,16 +133,26 @@ internal static partial class ListLabelPatterns
         m = LetterLabel().Match(label);
         if (m.Success)
         {
-            string letters = m.Groups["l"].Value;
             kind = ListLabelKind.LetterParen;
-            ordinal = letters.Length == 1
-                ? letters[0] - 'a' + 1
-                : (letters[1] - 'a' + 1) + (26 * (letters[0] - 'a' + 1));
+            ordinal = LetterOrdinal(m.Groups["l"].Value);
+            return true;
+        }
+
+        m = LetterSlashLabel().Match(label);
+        if (m.Success)
+        {
+            kind = ListLabelKind.LetterSlash;
+            ordinal = LetterOrdinal(m.Groups["l"].Value);
             return true;
         }
 
         return false;
     }
+
+    // a, z, aa, zb — ordinal is last + 26 × first, monotonic within a sequence (a…z, aa, ab, …).
+    private static int LetterOrdinal(string letters) => letters.Length == 1
+        ? letters[0] - 'a' + 1
+        : (letters[1] - 'a' + 1) + (26 * (letters[0] - 'a' + 1));
 
     private static Dictionary<string, int> BuildRoman()
     {
@@ -169,7 +187,15 @@ internal static partial class ListLabelPatterns
     [GeneratedRegex(@"^(?<r>[ivx]{2,})\)$", RegexOptions.CultureInvariant)]
     private static partial Regex LowerRomanLabel();
 
-    // a) aa) zb) — ordinal is last + 26 × first, monotonic within a sequence (a…z, aa, ab, …).
+    // a) aa) zb)
     [GeneratedRegex(@"^(?<l>[a-z]{1,2})[¹²³⁴⁵⁶⁷⁸⁹⁰]*\)$", RegexOptions.CultureInvariant)]
     private static partial Regex LetterLabel();
+
+    // 1/ 12/ 1a/ (spec 007) — the whole token, so dates and fractions („7/2017”, „13/36”) are not labels.
+    [GeneratedRegex(@"^(?<n>\d{1,3})[a-z]?/$", RegexOptions.CultureInvariant)]
+    private static partial Regex ArabicSlashLabel();
+
+    // a/ i/ aa/ (spec 007) — „i/lub”, „km/h” and „Klient/Klienci” are not whole tokens ending with the slash.
+    [GeneratedRegex(@"^(?<l>[a-z]{1,2})/$", RegexOptions.CultureInvariant)]
+    private static partial Regex LetterSlashLabel();
 }
