@@ -127,4 +127,40 @@ public sealed class HeadingsIntegrationTests
         Assert.Single(System.Text.RegularExpressions.Regex.Matches(result.Markdown, @"(?m)^#+ Rozdział 1\. Postanowienia ogólne$"));
         Assert.Contains("Postanowienia ogólne ....", result.Markdown, StringComparison.Ordinal);
     }
+
+    /// <summary>
+    /// Spec 008 (US1, T010a) — in a regulation whose text is mostly lists, the 12 pt bold section names outweigh the few
+    /// unclaimed 11 pt lines; the body style is measured on running text including list items, so they stay headings.
+    /// </summary>
+    [Fact]
+    public async Task Bold_section_names_stay_headings_when_most_text_is_in_lists()
+    {
+        string[] headings = ["Jakie rachunki prowadzimy?", "Jak możesz otworzyć rachunek?", "Jak możesz zamknąć rachunek?", "Kto może korzystać z rachunku?"];
+        var builder = new SyntheticPdfBuilder();
+        builder.Page()
+            .Text(Left, 80, headings[0], 12, bold: true)
+            .Text(Left, 105, "Prowadzimy rachunki:")
+            .Text(Left, 125, "1) rachunek oszczędnościowo-rozliczeniowy dla osób fizycznych,")
+            .Text(Left, 140, "2) rachunek oszczędnościowy prowadzony w złotych lub w walucie obcej,")
+            .Text(Left, 155, "3) rachunek walutowy prowadzony w walutach wskazanych w tabeli.")
+            .Text(Left, 185, headings[1], 12, bold: true)
+            .Text(Left, 210, "1) Rachunek otworzymy po zawarciu umowy w oddziale lub przez internet.")
+            .Text(Left, 225, "2) Przed zawarciem umowy potwierdzimy Twoją tożsamość i dane kontaktowe.")
+            .Text(Left, 255, headings[2], 12, bold: true)
+            .Text(Left, 280, "1) Umowę możesz wypowiedzieć w każdym czasie bez podania przyczyny.")
+            .Text(Left, 295, "2) Okres wypowiedzenia wynosi jeden miesiąc od dnia złożenia wypowiedzenia.")
+            .Text(Left, 325, headings[3], 12, bold: true)
+            .Text(Left, 350, "1) Z rachunku może korzystać jego posiadacz oraz ustanowiony pełnomocnik.")
+            .Text(Left, 365, "2) Pełnomocnika możesz ustanowić w oddziale albo w serwisie transakcyjnym.");
+
+        using var stream = new MemoryStream(builder.Build());
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        foreach (string heading in headings)
+        {
+            Assert.Matches($@"(?m)^#+ {System.Text.RegularExpressions.Regex.Escape(heading)}$", result.Markdown);
+        }
+
+        Assert.Contains(@"- 1\) rachunek oszczędnościowo-rozliczeniowy dla osób fizycznych,", result.Markdown, StringComparison.Ordinal);
+    }
 }
