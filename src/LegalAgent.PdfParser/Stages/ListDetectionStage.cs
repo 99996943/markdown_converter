@@ -128,9 +128,13 @@ public sealed class ListDetectionStage : IPipelineStage
 
                 // Spec 007: a bare „§ 5” is a unit only when set apart like a heading (isolated, or set well into the
                 // column like a centred line); plain, it is a wrapped word.
+                // Spec 008 (FR-610): a designation starting a wrapped line of the item or sentence above is a word of it,
+                // so the item goes on and its „N.” sequence is not broken.
+                bool setInto = line.Box.Left - columnLeft > CenteredIndentRatio * page.Width;
                 entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out LegalUnitMatch? unit)
+                    && !ContinuationLine.Continues(line, above, leading, setInto)
                     && (!unit.Bare
-                        || (IsHeadingLike(line, bodySize, sizeRatio) && (isolated || line.Box.Left - columnLeft > CenteredIndentRatio * page.Width)));
+                        || (IsHeadingLike(line, bodySize, sizeRatio) && (isolated || setInto)));
                 // Spec 007: a glossary term („1/ **termin**”) is bold but starts a list item, never a heading.
                 entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio) && !line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry);
                 entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);

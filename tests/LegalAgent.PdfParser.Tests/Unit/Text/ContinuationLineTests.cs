@@ -101,6 +101,21 @@ public sealed class ContinuationLineTests
     public void Line_after_a_finished_sentence_is_not_a_continuation(string last) =>
         Assert.False(ContinuationLine.Continues(Continuation(), Above(last), Leading, centred: false));
 
+    [Theory]
+    [InlineData("firm.]")]
+    [InlineData("firm.”")]
+    [InlineData("firm.)")]
+    public void Line_after_a_sentence_closed_by_a_bracket_or_quote_is_not_a_continuation(string last) =>
+        Assert.False(ContinuationLine.Continues(Continuation(), Above(last), Leading, centred: false));
+
+    [Fact]
+    public void Line_below_a_shorter_line_is_not_a_continuation()
+    {
+        // „DZIAŁ I” above „Rozdział 1 …”: a line that does not fill its width does not wrap a sentence.
+        LayoutLine above = Line("1. Opłaty dla firm –", LabelLeft, Top);
+        Assert.False(ContinuationLine.Continues(Continuation(), above, Leading, centred: false));
+    }
+
     [Fact]
     public void Line_aligned_with_neither_edge_of_the_line_above_is_not_a_continuation() =>
         Assert.False(ContinuationLine.Continues(Continuation(left: TextLeft + 8), Above(), Leading, centred: false));
