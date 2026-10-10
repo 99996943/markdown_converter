@@ -52,7 +52,12 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 .Where(l => l.Role is LineRole.Unknown or LineRole.Body)
                 .ToList();
             double columnLeft = consumable.Count > 0 ? consumable.Min(l => l.Box.Left) : 0;
-            double columnWidth = consumable.Count > 0 ? consumable.Max(l => l.Box.Right) - columnLeft : page.Width;
+            // Spec 008 (T010b): the right edge of the text column is measured on running text, list items included,
+            // so that it does not depend on a page footer being the only unclaimed line that reaches the margin.
+            List<LayoutLine> textLines = page.Lines
+                .Where(l => l.Role is LineRole.Unknown or LineRole.Body or LineRole.ListItem or LineRole.ListContinuation)
+                .ToList();
+            double columnWidth = consumable.Count > 0 ? textLines.Max(l => l.Box.Right) - columnLeft : page.Width;
 
             foreach (LayoutLine line in page.Lines)
             {
