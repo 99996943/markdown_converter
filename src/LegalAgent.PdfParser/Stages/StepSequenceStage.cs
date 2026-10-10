@@ -1,5 +1,6 @@
 using System.Globalization;
 using LegalAgent.PdfParser.Layout;
+using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Pipeline;
 
 namespace LegalAgent.PdfParser.Stages;
@@ -200,6 +201,12 @@ public sealed class StepSequenceStage : IPipelineStage
         bool complete = false;
         foreach (LayoutLine line in candidates.Where(l => l.Box.Bottom <= box.Top + 1).OrderByDescending(l => l.Box.Bottom))
         {
+            // Spec 008 (FR-634): column names are printed wholly bold; a plain line above the box is text.
+            if (!line.Words.All(w => w.Style.HasFlag(TextStyle.Bold)))
+            {
+                break;
+            }
+
             if (complete)
             {
                 // A name centred beside a wrapped one: the line above the wrapped name overlaps the collected row.

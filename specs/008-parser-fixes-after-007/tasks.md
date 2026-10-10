@@ -236,10 +236,10 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
   następnej stronie szare pole bez frazy i dalsza treść po prawej) → treść należy do tej samej ramki, fraza tylko raz
   (przed treścią z pierwszej strony), puste pole nie daje pustego akapitu
 - [X] T036 [US4] Przelew w `StepSequenceStage.cs` — green T035
-- [ ] T037 [P] [US4] Testy (red) w tym samym pliku: niepogrubiony wiersz nad polem nie jest wierszem nagłówków (zostaje
+- [X] T037 [P] [US4] Testy (red) w tym samym pliku: niepogrubiony wiersz nad polem nie jest wierszem nagłówków (zostaje
   objaśnieniem / tekstem, nigdy `Artifact`); w całości pogrubiony wiersz nad pierwszym polem nadal jest nagłówkiem
   (istniejący przypadek FR-067)
-- [ ] T038 [US4] `FindHeader` przyjmuje tylko wiersz w całości pogrubiony w `StepSequenceStage.cs` — green T037
+- [X] T038 [US4] `FindHeader` przyjmuje tylko wiersz w całości pogrubiony w `StepSequenceStage.cs` — green T037
   (koniec utraty tekstu, FR-634)
 - [ ] T039 [P] [US4] Testy (red) w tym samym pliku: pojedyncze pole spełniające osłonę („wypełnienie niebiałe,
   szerokość < 50% strony, brak linii w pasie pola; tekst w polu ≥ 80% pogrubionych znaków”) → schemat z jedną ramką;
