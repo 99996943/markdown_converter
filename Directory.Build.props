@@ -1,5 +1,7 @@
 <Project>
   <PropertyGroup>
+    <!-- One version for all projects and NuGet packages; bump it before packing changed libraries. -->
+    <Version>1.1.0</Version>
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>13</LangVersion>
     <Nullable>enable</Nullable>
