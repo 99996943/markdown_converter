@@ -107,9 +107,9 @@ numerowany rozdział (FR-500…FR-502). Każda przyczyna z research R2 (C1–C5)
 **Independent Test**: repliki R1a–R1d (tekst 7 pt, rozdział pogrubiony 9 pt x 40, „§” pogrubiony 9 pt wyśrodkowany
 x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integration/ParagraphUnitHeadingTests.cs`.
 
-- [ ] T016 [P] [US1] Testy (red) wzorca: goły wiersz „§ 5” (cały wiersz) pasuje jako jednostka; „§ 5 ust. 2”, „§ 5,”
+- [X] T016 [P] [US1] Testy (red) wzorca: goły wiersz „§ 5” (cały wiersz) pasuje jako jednostka; „§ 5 ust. 2”, „§ 5,”
   i „zgodnie z § 5” nie — w `tests/LegalAgent.PdfParser.Tests/Unit/Text/LegalUnitPatternsTests.cs`
-- [ ] T017 [US1] `LegalUnitPatterns.TryMatch` przyjmuje goły wiersz `^§\s*N$` (artykuły bez zmian) w
+- [X] T017 [US1] `LegalUnitPatterns.TryMatch` przyjmuje goły wiersz `^§\s*N$` (artykuły bez zmian) w
   `src/LegalAgent.PdfParser/Text/LegalUnitPatterns.cs` (green T016)
 - [ ] T018 [P] [US1] Replika R1a (red): rozdział „2. Rachunki bankowe oraz rachunek VAT”, pod nim wyśrodkowany „§ 5”,
   potem ustęp „1.” z punktem „1/”; oczekiwane `#### § 5` pod `### 2. …` i lista; negatyw R1d: „§ 5 ust. 2” na początku

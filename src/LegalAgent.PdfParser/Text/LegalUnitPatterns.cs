@@ -15,7 +15,8 @@ internal sealed record LegalUnitMatch(SectionKind Kind, string Designation, stri
 /// <summary>Recognition of Polish legal unit designations (Księga, Część, Dział, Rozdział, Oddział, Art., §).</summary>
 /// <remarks>
 /// Structural units require an upper-case keyword (as printed in acts) and a numeral; articles and paragraphs require
-/// the period after the number, which distinguishes a unit („Art. 5.”) from a reference („Art. 5 ust. 2”).
+/// the period after the number, which distinguishes a unit („Art. 5.”) from a reference („Art. 5 ust. 2”) — except a
+/// paragraph designation standing alone on its line („§ 5”, spec 007).
 /// </remarks>
 internal static partial class LegalUnitPatterns
 {
@@ -45,6 +46,11 @@ internal static partial class LegalUnitPatterns
         }
 
         m = Paragraph().Match(unit);
+        if (!m.Success && prefix.Length == 0)
+        {
+            m = BareParagraph().Match(unit);
+        }
+
         if (m.Success)
         {
             match = Unit(SectionKind.Paragraph, "§ " + m.Groups["n"].Value, m.Groups["n"].Value, unit[m.Length..]) with { Prefix = prefix };
@@ -105,6 +111,10 @@ internal static partial class LegalUnitPatterns
 
     [GeneratedRegex(@"^§\s*(?<n>\d+[a-z]{0,3}[" + Superscripts + @"]*)\.(?=\s|$)", RegexOptions.CultureInvariant)]
     private static partial Regex Paragraph();
+
+    // „§ 5” alone on its line (corporate regulations, spec 007): the whole line, so „§ 5 ust. 2” stays a reference.
+    [GeneratedRegex(@"^§\s*(?<n>\d+[a-z]{0,3}[" + Superscripts + @"]*)$", RegexOptions.CultureInvariant)]
+    private static partial Regex BareParagraph();
 
     [GeneratedRegex(@"^(?<k>KSIĘGA|Księga|CZĘŚĆ|Część|DZIAŁ|Dział|ROZDZIAŁ|Rozdział|ODDZIAŁ|Oddział)\s+(?<n>[\p{L}\d]+)(?=\s|\.|$)", RegexOptions.CultureInvariant)]
     private static partial Regex Structural();
