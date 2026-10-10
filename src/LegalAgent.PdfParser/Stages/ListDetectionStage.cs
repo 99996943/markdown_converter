@@ -569,8 +569,10 @@ public sealed class ListDetectionStage : IPipelineStage
                 return;
             }
 
-            // ISAP ustęp: first line indented, wrapped lines back at the margin.
+            // ISAP ustęp: first line indented, wrapped lines back at the margin — of the same column (spec 008 T034b: a
+            // line at the page margin does not continue an item of a step explanation column).
             if (top.Kind == ListLabelKind.ArabicDot
+                && Math.Abs(top.Origin - entry.Origin) <= _tolerance
                 && top.LabelX > entry.ColumnLeft + _tolerance
                 && x < top.LabelX - _tolerance
                 && ReferenceEquals(_lastOwner, top))

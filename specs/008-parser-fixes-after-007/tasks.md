@@ -211,20 +211,25 @@ wyśrodkowaną pionowo, prawą treścią od x 206,7 (lista „1.”, „2.”, �
 nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna przesunięta o 5 pt, w jednej ramce punkt
 „3.” poniżej pola → akapit frazy + lista dla każdej ramki, w kolejności, z punktem „3.”, bez strzałek, tabel i TBL001.
 
-- [ ] T032 [US4] Replika (red, pierwsza w US4 — commit przed T034) w `tests/LegalAgent.PdfParser.Tests/Integration/StepSchemesIntegrationTests.cs`
+- [X] T032 [US4] Replika (red, pierwsza w US4 — commit przed T034) w `tests/LegalAgent.PdfParser.Tests/Integration/StepSchemesIntegrationTests.cs`
   (wzorowana na `BuildSchemePdf`): geometria z Independent Test powyżej; strzałka jako znak tekstowy (np. „▼” z
   dostępnej czcionki `SyntheticPdfBuilder`; jeśli brak glifu — dodaj do buildera rysowanie znaku z obszaru prywatnego
   albo użyj innego znaku bez liter i cyfr); oczekiwane wg `contracts/markdown-output.md` („Ramki schematu kroków”),
   brak TBL001; osobny przypadek kontrolny: tabela danych z liniami, białymi komórkami i pogrubionym wierszem nagłówków
   zostaje tabelą GFM (powinna przejść już dziś) — część ramek green po T034–T040 (jeśli pada po nich, popraw w tym
   samym zakresie z osobnym red/green)
-- [ ] T033 [P] [US4] Testy (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/StepSequenceStageTests.cs` (wzorzec
+- [X] T033 [P] [US4] Testy (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/StepSequenceStageTests.cs` (wzorzec
   istniejących testów, `FilledAreas`, sklejony `Row`): wiersz ze znakiem strzałki (obszar prywatny Unicode, bez liter i
   cyfr) między dwoma polami → rola `Artifact`, schemat nieprzerwany; sklejony wiersz „strzałka + 3. tekst po prawej” →
   strzałka artefaktem, „3. …” objaśnieniem
-- [ ] T034 [US4] Łączniki w `src/LegalAgent.PdfParser/Stages/StepSequenceStage.cs`: wiersz (albo słowa wiersza na lewo
+- [X] T034 [US4] Łączniki w `src/LegalAgent.PdfParser/Stages/StepSequenceStage.cs`: wiersz (albo słowa wiersza na lewo
   od prawej krawędzi pola) złożony wyłącznie ze znaków bez liter i cyfr, w zakresie x pól, między polami → `Artifact`;
   pomijany przez `Continues` i `FindHeader` — green T033
+- [X] T034a [US4] Replika (red) w `StepSchemesIntegrationTests.cs`: schemat etapów kończący się u dołu strony (pola
+  „Etap 1.”, „Etap 2.” ze strzałką „▼”, nagłówki na następnej stronie) — nagłówek następnej strony zostaje nagłówkiem,
+  niepogrubione wiersze pola zostają zwykłym tekstem, „3. Nie stosujemy korekty.” zostaje punktem (regresja corp-5 po T034)
+- [X] T034b [US4] `BlockAssemblyStage`: nazwa kroku częściowo pogrubiona zachowuje niepogrubione wiersze;
+  `ListDetectionStage`: kontynuacja ustępu ISAP tylko w tej samej kolumnie — green T034a
 - [ ] T035 [P] [US4] Testy (red) w tym samym pliku: niczyje wiersze po prawej (wszystkie słowa na prawo od prawej
   krawędzi pola) poniżej pola, z odstępem ≤ 1,5 × wysokość wiersza, do następnego pola → objaśnienie tego pola;
   przerwa większa albo obcy tekst po lewej → koniec przelewu; ramka przechodząca przez granicę strony (na
