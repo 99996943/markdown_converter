@@ -110,7 +110,7 @@ public sealed class FaqGenerator
             string user = FaqPrompts.CandidatesUser(source, documents[i].Markdown);
             progress?.Report(new FaqEvent(FaqEventKind.CandidatesStarted, source.Id, user.Length, Estimate(user), null, null));
 
-            (string text, FaqUsage? usage) = await AskAsync(FaqStep.Candidates, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
+            (string text, FaqUsage? usage) = await AskAsync(FaqStep.Candidates, source.Id, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
                 .ConfigureAwait(false);
             Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(text, source.Id);
             IReadOnlyList<FaqCandidate> accepted = parsed.Value ?? throw new FaqResponseException(FaqStep.Candidates, source.Id, [parsed.Problem!]);
@@ -122,7 +122,7 @@ public sealed class FaqGenerator
 
         string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionStarted, null, selectionUser.Length, Estimate(selectionUser), candidates.Count, null));
-        (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, FaqPrompts.SelectionSystem(options.ItemCount), selectionUser, cancellationToken)
+        (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, null, FaqPrompts.SelectionSystem(options.ItemCount), selectionUser, cancellationToken)
             .ConfigureAwait(false);
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(selectionText);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
@@ -141,15 +141,23 @@ public sealed class FaqGenerator
     private int Estimate(string text) => TokenEstimator.Estimate(text.Length, options.CharactersPerToken);
 
     /// <summary>One request: system and user message, settings for the step; returns the text and usage of the first message.</summary>
-    private async Task<(string Text, FaqUsage? Usage)> AskAsync(FaqStep step, string system, string user, CancellationToken cancellationToken)
+    private async Task<(string Text, FaqUsage? Usage)> AskAsync(FaqStep step, string? documentId, string system, string user, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         var history = new ChatHistory();
         history.AddSystemMessage(system);
         history.AddUserMessage(user);
         PromptExecutionSettings settings = executionSettings(step, step == FaqStep.Candidates ? FaqSchemas.Candidates : FaqSchemas.Selection);
-        IReadOnlyList<ChatMessageContent> messages = await chat.GetChatMessageContentsAsync(history, settings, null, cancellationToken)
-            .ConfigureAwait(false);
+        IReadOnlyList<ChatMessageContent> messages;
+        try
+        {
+            messages = await chat.GetChatMessageContentsAsync(history, settings, null, cancellationToken).ConfigureAwait(false);
+        }
+        catch (Exception e) when (ServiceErrorMapper.Map(e, step, documentId, cancellationToken) is { } mapped)
+        {
+            // No retries (FR-424): the first failure ends the generation.
+            throw mapped;
+        }
         return messages.Count > 0 ? (messages[0].Content ?? string.Empty, UsageReader.Read(messages[0].Metadata)) : (string.Empty, null);
     }
 }
