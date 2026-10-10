@@ -43,7 +43,7 @@ public static class Program
     /// <param name="stderr">Standard error.</param>
     /// <param name="environment">Environment variables (<c>FAQGEN__…</c>).</param>
     /// <param name="configDirectory">Directory with <c>appsettings*.json</c>.</param>
-    /// <param name="handler">HTTP handler (tests); <c>null</c> uses the network.</param>
+    /// <param name="host">External dependencies (tests); <c>null</c> uses the network, the console and the system clock.</param>
     /// <param name="cancellationToken">Cancellation (Ctrl+C).</param>
     /// <returns>Exit code (contracts/cli.md).</returns>
     public static async Task<int> RunAsync(
@@ -53,7 +53,7 @@ public static class Program
         TextWriter stderr,
         IReadOnlyDictionary<string, string?> environment,
         string configDirectory,
-        HttpMessageHandler? handler = null,
+        AppHost? host = null,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(args);
@@ -62,6 +62,7 @@ public static class Program
         ArgumentNullException.ThrowIfNull(stderr);
         ArgumentNullException.ThrowIfNull(environment);
         ArgumentNullException.ThrowIfNull(configDirectory);
+        host ??= new AppHost();
 
         AppArguments arguments = AppArguments.Parse(args, RequiredCount);
         if (arguments.Error is not null)
@@ -86,7 +87,7 @@ public static class Program
 
         try
         {
-            return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, handler, cancellationToken)
+            return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, host, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
@@ -118,12 +119,12 @@ public static class Program
         TextWriter stderr,
         IReadOnlyDictionary<string, string?> environment,
         string configDirectory,
-        HttpMessageHandler? handler,
+        AppHost host,
         CancellationToken cancellationToken)
     {
         DownloadSettings settings = AppSettings.Load(configDirectory, environment);
         DownloadOptions options = settings.ToOptions() with { OutputDirectory = arguments.Output ?? settings.OutputDirectory };
-        using HttpClient httpClient = CreateHttpClient(handler);
+        using HttpClient httpClient = CreateHttpClient(host.DownloadHandler);
         DocumentDownloader downloader;
         try
         {

@@ -72,7 +72,7 @@ Kolejność faz: US1 → US2 → US3 → US4.
 
 ## Phase 1: Setup
 
-- [ ] T001 Projekty biblioteki i jej testów:
+- [X] T001 Projekty biblioteki i jej testów:
   - utwórz `faq-lib/LegalAgent.Faq.csproj`:
     - class library, `GenerateDocumentationFile`, `RootNamespace` `LegalAgent.Faq`, `Version` 1.0.0;
     - `InternalsVisibleTo` `LegalAgent.Faq.Tests`;
@@ -88,7 +88,7 @@ Kolejność faz: US1 → US2 → US3 → US4.
   - `dotnet build LegalAgent.slnx -c Release` zielony (SK może wymagać `NoWarn` dla ostrzeżeń
     eksperymentalnych `SKEXP*`; dodaj tylko konkretne kody, z komentarzem);
   - treść commita zawiera uzasadnienie nowych zależności (research R2, zasada VI).
-- [ ] T002 Rozszerz `app/mBank.FaqGenerator.csproj`:
+- [X] T002 Rozszerz `app/mBank.FaqGenerator.csproj`:
   - referencje do `src/LegalAgent.PdfParser` i `src/LegalAgent.Faq`;
   - pakiety `Microsoft.SemanticKernel.Connectors.AzureOpenAI` i `Microsoft.Extensions.DependencyInjection`;
   - `<None Update="appsettings.Local.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('appsettings.Local.json')" />`;
@@ -96,13 +96,13 @@ Kolejność faz: US1 → US2 → US3 → US4.
     (dla `TestPdfs`) oraz
     `<Compile Include="..\LegalAgent.Faq.Tests\Fakes\*.cs" LinkBase="Fakes" />`;
   - build zielony.
-- [ ] T003 [P] W `app/appsettings.json` dodaj sekcje dokładnie jak w contracts/cli.md:
+- [X] T003 [P] W `app/appsettings.json` dodaj sekcje dokładnie jak w contracts/cli.md:
   - `AzureOpenAI`: `Endpoint: ""`, `Deployment: "gpt-4o-mini"`, `Model: "gpt-4o-mini"`, `TimeoutSeconds: 300`,
     `Temperature: 0`, `Seed: 42`, `MaxOutputTokens: 4096`;
   - `Faq`: `OutputDirectory: "faq"`, `CandidatesPerDocument: 10`, `MaxDocumentTokens: 100000`;
   - katalogu `faq/` NIE dodawaj do `.gitignore` (rezultat do oddania; spec, „Prywatność”);
   - w `.gitattributes` dodaj `*.sh text eol=lf`.
-- [ ] T004 [P] Szkielet publicznych typów `faq-lib/` z contracts/library-api.md:
+- [X] T004 [P] Szkielet publicznych typów `faq-lib/` z contracts/library-api.md:
   - `FaqGenerator.cs` (konstruktor, `CheckInput`, `GenerateAsync`), `FaqGeneratorOptions.cs`, `FaqSchemas.cs`,
     `FaqMarkdownRenderer.cs`, `UnitMatcher.cs`;
   - modele w `Model/`: `FaqDocumentInput`, `FaqSourceDocument`, `FaqSource`, `FaqCandidate`, `FaqItem`,
@@ -113,14 +113,14 @@ Kolejność faz: US1 → US2 → US3 → US4.
     (`PdfSource`, `ConvertedDocument`, `ConversionFailure`, `ConversionRun`, `ConversionEvent`,
     `ConversionEventKind`) według contracts/library-api.md, „Konwersja”;
   - metody rzucają `NotImplementedException`; XML-doc.
-- [ ] T005 [P] Atrapa modelu w `faqtests/Fakes/FakeChatCompletionService.cs`, implementująca `IChatCompletionService`:
+- [X] T005 [P] Atrapa modelu w `faqtests/Fakes/FakeChatCompletionService.cs`, implementująca `IChatCompletionService`:
   - kolejka skryptowanych kroków: odpowiedź tekstowa z opcjonalnymi metadanymi `Usage` albo wyjątek do rzucenia;
   - rejestr wywołań (kopie `ChatHistory`, `PromptExecutionSettings`);
   - opcjonalne oczekiwanie na token (do testów anulowania);
   - metoda strumieniowa rzuca `NotSupportedException`;
   - plus `faqtests/Fakes/FaqJson.cs`: pomocnicy budujący poprawne JSON-y kandydatów i wyboru (data-model.md,
     „Reguły sprawdzania”).
-- [ ] T006 Infrastruktura testów aplikacji (refaktor bez zmiany zachowania; wszystkie istniejące testy
+- [X] T006 Infrastruktura testów aplikacji (refaktor bez zmiany zachowania; wszystkie istniejące testy
   `apptests/` zielone):
   - wprowadź `app/AppHost.cs`, rekord z polami `DownloadHandler`, `ModelHandler`, `ChatFactory`
     (`Func<string, IChatCompletionService>?`), `KeyInput` (`IKeyInput`), `TimeProvider`;
