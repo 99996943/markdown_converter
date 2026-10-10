@@ -560,7 +560,11 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 h.Level = Math.Min(h.Level, open.Peek().Level + 1);
             }
 
-            open.Push(h);
+            // T067g: a table of contents has no subsections, so the chapters after it never stand below it.
+            if (!TableOfContents().IsMatch(h.Text))
+            {
+                open.Push(h);
+            }
         }
 
         // FR-087: from a table-document on, the section names (level 2) are the top level; units and the structure
@@ -655,6 +659,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         @"^obowiązuje\s+od\b",
         System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
     private static partial System.Text.RegularExpressions.Regex ValidityLine();
+
+    /// <summary>T067g: the heading of a table of contents („Spis treści”, „Spis treści:”).</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(
+        @"^spis\s+(treści|rzeczy)\s*:?$",
+        System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex TableOfContents();
 
     private static double RoundHalf(double value) => Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
 
