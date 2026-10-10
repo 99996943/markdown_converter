@@ -145,8 +145,8 @@ public sealed class HangingLabelLayoutTests
     }
 
     /// <summary>
-    /// T014a — ustępy whose enumeration uses „a.”, „b.” (letter and dot, not a list label of the parser) in the hanging
-    /// column: the run is not a fallback table; the enumeration stays text of the ustęp.
+    /// T014a — ustępy whose enumeration uses „a.”, „b.” in the hanging column: the run is not a fallback table, and (spec
+    /// 008, T023, FR-620) the enumeration is a list nested under its ustęp.
     /// </summary>
     [Fact]
     public async Task Letter_dot_enumeration_in_the_hanging_column_is_not_a_table()
@@ -164,16 +164,81 @@ public sealed class HangingLabelLayoutTests
 
         PdfConversionResult result = await ConvertAsync(builder.Build());
 
-        Assert.Contains("- 2\\. Pełnomocnictwo można udzielić:", result.Markdown, StringComparison.Ordinal);
-        Assert.Contains("- 3\\. Pełnomocnictwo wygasa", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains(
+            "- 2\\. Pełnomocnictwo można udzielić:\n"
+            + "  - a\\. w formie pisemnej w karcie informacyjnej Klienta,\n"
+            + "  - b\\. w formie elektronicznej za pośrednictwem systemu bankowości elektronicznej,\n"
+            + "  - c\\. przez złożenie oświadczenia w placówce w obecności pracownika Banku.\n"
+            + "- 3\\. Pełnomocnictwo wygasa",
+            result.Markdown,
+            StringComparison.Ordinal);
         Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
         Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
         Assert.Equal(0, result.Report.TableCount);
     }
 
     /// <summary>
+    /// Spec 008, T023 (FR-620, FR-622) — replica of corp-5 p. 8: ustęp „15.” at x 39.7, letters „a.” at 53.9 with text at
+    /// 68.0; the run „a.”–„c.” goes on at the top of the next page and the ustęp „16.” follows.
+    /// </summary>
+    [Fact]
+    public async Task Letter_dot_enumeration_continued_on_the_next_page_is_one_nested_list()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        Item(page, Margin, Point, 100, "14.", "Bank wykonuje dyspozycje pełnomocnika w zakresie udzielonego pełnomocnictwa.");
+        Item(page, Margin, Point, 110, "15.", "Pełnomocnictwo musi być udzielone:");
+        Item(page, Point, Letter, 120, "a.", "w formie pisemnej w karcie informacyjnej Klienta,");
+        Item(page, Point, Letter, 130, "b.", "w formie elektronicznej za pośrednictwem systemu bankowości elektronicznej, jeżeli Klient korzysta z tego");
+
+        SyntheticPdfBuilder next = builder.Page().Text(Letter, 80, "systemu,", Size);
+        Item(next, Point, Letter, 90, "c.", "przez złożenie oświadczenia w osobnym dokumencie.");
+        Item(next, Margin, Point, 100, "16.", "Pełnomocnictwo wygasa z chwilą jego odwołania przez Klienta.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Contains(
+            "- 15\\. Pełnomocnictwo musi być udzielone:\n"
+            + "  - a\\. w formie pisemnej w karcie informacyjnej Klienta,\n"
+            + "  - b\\. w formie elektronicznej za pośrednictwem systemu bankowości elektronicznej, jeżeli Klient korzysta z tego <!-- page: 2 --> systemu,\n"
+            + "  - c\\. przez złożenie oświadczenia w osobnym dokumencie.\n"
+            + "- 16\\. Pełnomocnictwo wygasa z chwilą jego odwołania przez Klienta.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
+        Assert.Equal(0, result.Report.TableCount);
+    }
+
+    /// <summary>
+    /// T023 (FR-623) — a paragraph with abbreviations („np.”, „tj.”), initials („J. Kowalski”, „A. …”), a lone „a.” and
+    /// a wrapped „r. …” starting PDF lines is not a list.
+    /// </summary>
+    [Fact]
+    public async Task Abbreviations_initials_and_a_lone_letter_dot_are_not_a_list()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        page.Text(Margin, 100, "Klient może złożyć dyspozycję w każdej formie przewidzianej w umowie, w szczególności przez system bankowości lub", Size);
+        page.Text(Margin, 110, "np. w placówce Banku, przy czym dyspozycja musi zawierać dane wymagane przez Bank, a dzień jej przyjęcia,", Size);
+        page.Text(Margin, 120, "tj. dzień, w którym Bank otrzymał dyspozycję, ustala się według zasad z umowy. Pełnomocnikiem Klienta jest", Size);
+        page.Text(Margin, 130, "J. Kowalski, który działa na podstawie pełnomocnictwa udzielonego dnia 1 marca 2024", Size);
+        page.Text(Margin, 140, "r. w placówce Banku. Pełnomocnictwo obejmuje wszystkie rachunki Klienta.", Size);
+        page.Text(Margin, 160, "A. Zdanie zaczyna się od inicjału i opisuje zasady, na których Bank przyjmuje dyspozycje pełnomocnika Klienta.", Size);
+        page.Text(Margin, 180, "Dyspozycje składa się w formie przewidzianej w umowie:", Size);
+        Item(page, Point, Letter, 190, "a.", "w placówce Banku w godzinach jej pracy.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.DoesNotContain("\n- ", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("\\.", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("1 marca 2024 r. w placówce", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("a. w placówce Banku w godzinach jej pracy.", result.Markdown, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// T014b — a letter „a/” whose enumeration uses lower-case Roman numerals with a dot („i.”, „ii.”, „iii.”) in the
-    /// next label column (D-A p. 43): the run is not a fallback table.
+    /// next label column (D-A p. 43): the run is not a fallback table, and (spec 008, T023, FR-621) it is a list nested
+    /// under the letter.
     /// </summary>
     [Fact]
     public async Task Roman_dot_enumeration_under_a_letter_is_not_a_table()
@@ -192,8 +257,55 @@ public sealed class HangingLabelLayoutTests
 
         PdfConversionResult result = await ConvertAsync(builder.Build());
 
-        Assert.Contains("- 10\\. Płatności wychodzące:\n  - 1/ Bank wykona płatność wychodzącą po:\n    - a/ złożeniu", result.Markdown, StringComparison.Ordinal);
-        Assert.Contains("- 11\\. Bank może odmówić", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains(
+            "- 10\\. Płatności wychodzące:\n"
+            + "  - 1/ Bank wykona płatność wychodzącą po:\n"
+            + "    - a/ złożeniu prawidłowego zlecenia, które zawiera:\n"
+            + "      - i\\. numer rachunku Klienta, z którego wykonujemy płatność,\n"
+            + "      - ii\\. imię i nazwisko albo nazwę beneficjenta oraz jego dane teleadresowe, które pozwalają go zidentyfikować bez wątpliwości,\n"
+            + "      - iii\\. kwotę i walutę przelewu,\n"
+            + "    - b/ autoryzacji zlecenia przez Klienta,\n"
+            + "- 11\\. Bank może odmówić",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
+        Assert.Equal(0, result.Report.TableCount);
+    }
+
+    /// <summary>
+    /// Spec 008, T023 (FR-621) — replica of D-A p. 43: a letter „a/” at x 68.0 with Roman numerals „i.”–„xii.” at 82.2
+    /// and their text at 96.4; „v.” and „x.” are Roman numerals here because the run says so.
+    /// </summary>
+    [Fact]
+    public async Task Roman_dot_run_from_i_to_xii_is_nested_under_the_letter()
+    {
+        string[] data =
+        [
+            "numer rachunku Klienta,", "imię i nazwisko lub nazwę Klienta,", "numer rachunku beneficjenta,", "nazwę beneficjenta,",
+            "adres beneficjenta,", "kwotę przelewu,", "walutę przelewu,", "tytuł przelewu,", "datę wykonania przelewu,",
+            "kod banku beneficjenta,", "tryb wykonania przelewu,", "informację o kosztach przelewu.",
+        ];
+        string[] labels = ["i.", "ii.", "iii.", "iv.", "v.", "vi.", "vii.", "viii.", "ix.", "x.", "xi.", "xii."];
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        Item(page, Margin, 54.7, 100, "10.", "Płatności wychodzące:");
+        Item(page, Point, Letter, 110, "1/", "Bank wykona płatność wychodzącą po:");
+        Item(page, Letter, LetterText, 120, "a/", "złożeniu prawidłowego zlecenia, które zawiera niżej określone dane:");
+        double y = 130;
+        for (int i = 0; i < labels.Length; i++)
+        {
+            Item(page, LetterText, 96.4, y, labels[i], data[i]);
+            y += 10;
+        }
+
+        Item(page, Letter, LetterText, y, "b/", "autoryzacji zlecenia przez Klienta.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        string expected = "    - a/ złożeniu prawidłowego zlecenia, które zawiera niżej określone dane:\n"
+            + string.Concat(labels.Select((l, i) => "      - " + l[..^1] + "\\. " + data[i] + "\n"))
+            + "    - b/ autoryzacji zlecenia przez Klienta.\n";
+        Assert.Contains(expected, result.Markdown, StringComparison.Ordinal);
         Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
         Assert.Equal(0, result.Report.TableCount);
     }

@@ -93,4 +93,59 @@ public sealed class TablesIntegrationTests
         int rightColumn = result.Markdown.IndexOf("Dyspozycje złożone w systemie są realizowane", StringComparison.Ordinal);
         Assert.True(leftColumn >= 0 && rightColumn > leftColumn, "the left column must be read before the right one");
     }
+
+    /// <summary>
+    /// Spec 008, T025 (FR-620, FR-624) — replica of D-A p. 38 (7 pt): a ruled box „Sytuacja | Jak postępujemy?” (verticals
+    /// at x 54.1, 304.6, 555.1) with items „a)”–„d)”, a bold caption row and one cell spanning the box with a numbered
+    /// passage whose letter „a)” has Roman numerals „i.”, „ii.” with their text 14 pt to the right: the numerals join their
+    /// text, so they are list items, not rows „i. | …” of a fallback table.
+    /// </summary>
+    [Fact]
+    public async Task Roman_dot_items_below_a_two_column_box_are_list_items_not_table_rows()
+    {
+        const double size = 7, margin = 39.7, box = 59.5, boxText = 74.1, answer = 310.0;
+        const double left = 54.1, middle = 304.6, right = 555.1;
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page()
+            .Text(margin, 70, "Raz ustaloną korektę stosujemy przez cały czas stosowania wskaźnika alternatywnego, chyba że strony umówią się inaczej.", size)
+            .Text(box, 105.5, "Zasady postępowania, gdy stosujemy wskaźnik alternatywny, który stosuje lub rekomenduje inny podmiot", size, bold: true)
+            .Text(box, 122.5, "Sytuacja", size, bold: true).Text(answer, 122.5, "Jak postępujemy?", size, bold: true)
+            .Text(box, 140, "a)", size).Text(boxText, 140, "podmiot rekomendował korektę", size).Text(answer, 140, "stosujemy taką korektę", size)
+            .Text(box, 157.5, "b)", size).Text(boxText, 157.5, "podmiot nie rekomendował korekty", size).Text(answer, 157.5, "nie stosujemy korekty", size)
+            .Text(answer, 174.5, "stosujemy korektę, którą wyznaczaliśmy w uzasadniony", size)
+            .Text(box, 179.5, "c)", size).Text(boxText, 179.5, "podmiot nie odniósł się do kwestii korekty", size)
+            .Text(answer, 184.5, "ekonomicznie sposób, z myślą o celu korekty", size)
+            .Text(box, 201.5, "d)", size).Text(boxText, 201.5, "jako wskaźnik stosujemy średnią kwotowań", size).Text(answer, 201.5, "nie stosujemy korekty", size)
+            .Text(box, 218.5, "Zasady postępowania, gdy jako wskaźnik alternatywny stosujemy stopę referencyjną banku centralnego", size, bold: true)
+            .Text(59.3, 235.5, "1.", size).Text(74.2, 235.5, "Dodajemy korektę do wartości wskaźnika alternatywnego.", size)
+            .Text(59.3, 245.5, "2.", size).Text(74.2, 245.5, "Korekta jest równa historycznej medianie różnic między wskaźnikiem oraz stopą referencyjną:", size)
+            .Text(73.8, 255.5, "a)", size).Text(87.9, 255.5, "za okres 24 miesięcy (lub krótszy, jeśli wskaźnik publikowano krócej) przed:", size)
+            .Text(88.1, 265.5, "i.", size).Text(102.0, 265.5, "dniem zamiany wskaźnika albo", size)
+            .Text(88.1, 275.5, "ii.", size).Text(102.4, 275.5, "pierwszym dniem, w którym stosujemy wskaźnik alternatywny ze względu na brak publikacji;", size)
+            .Text(74.1, 285.5, "b)", size).Text(87.9, 285.5, "dla różnic z każdego dnia w badanym okresie, w którym publikowano oba wskaźniki.", size)
+            .Text(margin, 310, "Korektę stosujemy od dnia zamiany wskaźnika do dnia zakończenia umowy, o ile strony nie postanowią inaczej.", size);
+
+        // Horizontal rules between the rows; the caption rows and the passage cell span the box (outer verticals only).
+        double[] rules = [93.5, 110.5, 127.5, 145.6, 162.6, 189.6, 206.6, 223.5, 290.5];
+        foreach (double y in rules)
+        {
+            page.HLine(left, right, y);
+        }
+
+        page.VLine(left, 93.5, 290.5).VLine(right, 93.5, 290.5).VLine(middle, 110.5, 206.6);
+
+        using var stream = new MemoryStream(builder.Build());
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.DoesNotContain("i. \\|", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("i\\. \\|", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains(
+            "- i\\. dniem zamiany wskaźnika albo\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "- ii\\. pierwszym dniem, w którym stosujemy wskaźnik alternatywny ze względu na brak publikacji;\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+    }
 }

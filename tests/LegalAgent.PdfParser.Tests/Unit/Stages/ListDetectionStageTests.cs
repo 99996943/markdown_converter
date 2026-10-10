@@ -564,4 +564,116 @@ public sealed class ListDetectionStageTests
 
         Assert.Equal(LineRole.Unknown, Find(context, "6. Jakie").Role);
     }
+
+    /// <summary>Spec 008, T022 (FR-620) — „a.”, „b.”, „c.” at one indent (within 1.5 pt) under „1.” are nested items.</summary>
+    [Fact]
+    public void LetterDotSequence_AtOneIndent_IsNestedUnderTheParentItem_FR620()
+    {
+        PipelineContext context = Run(Page(
+            ("1. Pelnomocnictwo mozna udzielic:", Margin),
+            ("a. w formie pisemnej w karcie informacyjnej,", Indent),
+            ("b. w formie elektronicznej w systemie bankowosci", Indent + 1),
+            ("elektronicznej Banku,", Indent + 15),
+            ("c. przez zlozenie oswiadczenia w placowce.", Indent - 0.5),
+            ("2. Pelnomocnictwo wygasa z chwila odwolania.", Margin)));
+
+        LayoutLine parent = Find(context, "1. Pelnomocnictwo");
+        LayoutLine b = Find(context, "b. w formie");
+        AssertItem(Find(context, "a. w formie"), "a.", ListLabelKind.LetterDot);
+        AssertItem(b, "b.", ListLabelKind.LetterDot);
+        AssertItem(Find(context, "c. przez"), "c.", ListLabelKind.LetterDot);
+        Assert.Equal(Id(parent), Parent(Find(context, "a. w formie")));
+        Assert.Equal(Id(parent), Parent(b));
+        Assert.Equal(Id(parent), Parent(Find(context, "c. przez")));
+        AssertContinues(Find(context, "elektronicznej Banku"), b);
+        Assert.Equal(string.Empty, Parent(Find(context, "2. Pelnomocnictwo")));
+    }
+
+    /// <summary>T022 — a lone „a.” and an inconsistent run „a.”, „c.” stay text of the item above.</summary>
+    [Fact]
+    public void LoneLetterDotAndInconsistentRun_StayText_FR623()
+    {
+        PipelineContext context = Run(Page(
+            ("1. Klient moze zlozyc dyspozycje:", Margin),
+            ("a. w placowce Banku,", Indent),
+            ("2. Bank przyjmuje dyspozycje:", Margin),
+            ("a. w formie pisemnej,", Indent),
+            ("c. w formie elektronicznej.", Indent)));
+
+        LayoutLine first = Find(context, "1. Klient");
+        LayoutLine second = Find(context, "2. Bank");
+        AssertContinues(Find(context, "a. w placowce"), first);
+        AssertContinues(Find(context, "a. w formie"), second);
+        AssertContinues(Find(context, "c. w formie"), second);
+    }
+
+    /// <summary>T022 — „i.”, „iii.” is not a sequence; „h.”, „i.” are letters.</summary>
+    [Fact]
+    public void AmbiguousLabels_AreResolvedByTheSequence_FR621()
+    {
+        PipelineContext context = Run(Page(
+            ("1. Klient wskazuje:", Margin),
+            ("i. numer rachunku,", Indent),
+            ("iii. kwote przelewu.", Indent),
+            ("2. Bank sprawdza:", Margin),
+            ("h. dane zleceniodawcy,", Indent),
+            ("i. dane beneficjenta.", Indent)));
+
+        LayoutLine first = Find(context, "1. Klient");
+        AssertContinues(Find(context, "i. numer"), first);
+        AssertContinues(Find(context, "iii. kwote"), first);
+        AssertItem(Find(context, "h. dane"), "h.", ListLabelKind.LetterDot);
+        AssertItem(Find(context, "i. dane"), "i.", ListLabelKind.LetterDot);
+    }
+
+    /// <summary>T022 — „i.”, „ii.” indented under „b.” are Roman items nested under „b.”, then „c.” goes on.</summary>
+    [Fact]
+    public void RomanDotSequence_UnderALetterDot_IsNestedUnderIt_FR621()
+    {
+        PipelineContext context = Run(Page(
+            ("1. Zlecenie zawiera:", Margin),
+            ("a. numer rachunku,", Indent),
+            ("b. dane beneficjenta:", Indent),
+            ("i. imie i nazwisko,", Deep),
+            ("ii. adres,", Deep),
+            ("c. kwote przelewu.", Indent)));
+
+        LayoutLine b = Find(context, "b. dane");
+        LayoutLine i = Find(context, "i. imie");
+        LayoutLine ii = Find(context, "ii. adres");
+        AssertItem(i, "i.", ListLabelKind.RomanDot);
+        AssertItem(ii, "ii.", ListLabelKind.RomanDot);
+        Assert.Equal(Id(b), Parent(i));
+        Assert.Equal(Id(b), Parent(ii));
+        AssertItem(Find(context, "c. kwote"), "c.", ListLabelKind.LetterDot);
+        Assert.Equal(Id(Find(context, "1. Zlecenie")), Parent(Find(context, "c. kwote")));
+    }
+
+    /// <summary>T022 — a wrapped line „r. wynosi …” (the year abbreviation) stays text.</summary>
+    [Fact]
+    public void WrappedYearAbbreviation_StaysText_FR623()
+    {
+        PipelineContext context = Run(Page(
+            ("Oprocentowanie rachunku od dnia 1 stycznia 2024", Margin),
+            ("r. wynosi 2 procent w skali roku.", Margin),
+            ("Pozostale warunki nie ulegaja zmianie.", Margin),
+            ("s. kolejne zdanie zaczyna sie od skrotu.", Indent)));
+
+        Assert.All(context.Pages[0].Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
+    }
+
+    /// <summary>
+    /// T022 — between two labels only lines indented further than the label: a line at the label column or left of it
+    /// breaks the run.
+    /// </summary>
+    [Fact]
+    public void LineAtTheLabelColumnBetweenLabels_BreaksTheRun_FR620()
+    {
+        PipelineContext context = Run(Page(
+            ("a. pierwszy warunek umowy,", Indent),
+            ("Tresc akapitu miedzy etykietami.", Indent),
+            ("b. drugi warunek umowy.", Indent)));
+
+        Assert.All(context.Pages[0].Lines, l => Assert.Equal(LineRole.Unknown, l.Role));
+    }
 }

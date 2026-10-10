@@ -128,6 +128,78 @@ public sealed class ListLabelPatternsTests
         Assert.Null(m);
     }
 
+    /// <summary>
+    /// Spec 008, T021 (FR-620) — a lower-case letter or lower-case Roman numeral with a dot is a label candidate; whether
+    /// it really starts a list is decided by the sequence gate of list detection.
+    /// </summary>
+    [Theory]
+    [InlineData("a. w formie pisemnej", "a.", ListLabelKind.LetterDot, 1, "w formie pisemnej")]
+    [InlineData("b. Treść", "b.", ListLabelKind.LetterDot, 2, "Treść")]
+    [InlineData("h. Treść", "h.", ListLabelKind.LetterDot, 8, "Treść")]
+    [InlineData("z. Treść", "z.", ListLabelKind.LetterDot, 26, "Treść")]
+    [InlineData("r. wynosi 100 zł", "r.", ListLabelKind.LetterDot, 18, "wynosi 100 zł")]
+    [InlineData("ii. imię i nazwisko", "ii.", ListLabelKind.RomanDot, 2, "imię i nazwisko")]
+    [InlineData("iii. Treść", "iii.", ListLabelKind.RomanDot, 3, "Treść")]
+    [InlineData("iv. Treść", "iv.", ListLabelKind.RomanDot, 4, "Treść")]
+    [InlineData("xii. Treść", "xii.", ListLabelKind.RomanDot, 12, "Treść")]
+    [InlineData("xxxix. Treść", "xxxix.", ListLabelKind.RomanDot, 39, "Treść")]
+    public void Letter_and_roman_dot_labels_are_classified(string line, string label, ListLabelKind kind, int ordinal, string rest)
+    {
+        Assert.True(ListLabelPatterns.TryMatch(line, out ListLabelMatch? m));
+        Assert.Equal(label, m.Label);
+        Assert.Equal(kind, m.Kind);
+        Assert.Equal(ordinal, m.Ordinal);
+        Assert.Equal(rest, m.Rest);
+        Assert.Null(m.Alternative);
+    }
+
+    /// <summary>T021 — „i.”, „v.”, „x.” are a letter and a Roman numeral at once: the match carries both readings.</summary>
+    [Theory]
+    [InlineData("i. numer rachunku", "i.", 9, 1)]
+    [InlineData("v. Treść", "v.", 22, 5)]
+    [InlineData("x. Treść", "x.", 24, 10)]
+    public void Ambiguous_dot_labels_carry_both_readings(string line, string label, int letter, int roman)
+    {
+        Assert.True(ListLabelPatterns.TryMatch(line, out ListLabelMatch? m));
+        Assert.Equal(label, m.Label);
+        Assert.Equal(ListLabelKind.LetterDot, m.Kind);
+        Assert.Equal(letter, m.Ordinal);
+        Assert.NotNull(m.Alternative);
+        Assert.Equal(label, m.Alternative.Label);
+        Assert.Equal(ListLabelKind.RomanDot, m.Alternative.Kind);
+        Assert.Equal(roman, m.Alternative.Ordinal);
+        Assert.Equal(m.Rest, m.Alternative.Rest);
+    }
+
+    /// <summary>T021 — upper-case initials, abbreviations and a lone token are not letter or Roman dot labels.</summary>
+    [Theory]
+    [InlineData("A. Zdanie zaczyna się od inicjału")]
+    [InlineData("J. Kowalski podpisał umowę")]
+    [InlineData("np. przelew")]
+    [InlineData("tj. w dniu")]
+    [InlineData("m.in. opłaty")]
+    [InlineData("r.")]
+    [InlineData("a.")]
+    [InlineData("ii.")]
+    [InlineData("a.Treść")]
+    [InlineData("ab. Treść")]
+    [InlineData("xl. Treść")]
+    [InlineData("iiii. Treść")]
+    public void Letter_and_roman_dot_non_labels_do_not_match(string line)
+    {
+        Assert.False(ListLabelPatterns.TryMatch(line, out ListLabelMatch? m));
+        Assert.Null(m);
+    }
+
+    /// <summary>T021 — upper-case Roman numerals with a dot keep their kind (not a dot enumeration).</summary>
+    [Fact]
+    public void Upper_case_roman_with_a_dot_stays_roman()
+    {
+        Assert.True(ListLabelPatterns.TryMatch("II. Treść", out ListLabelMatch? m));
+        Assert.Equal(ListLabelKind.Roman, m.Kind);
+        Assert.Null(m.Alternative);
+    }
+
     [Theory]
     [InlineData("•", true)]
     [InlineData("", true)]

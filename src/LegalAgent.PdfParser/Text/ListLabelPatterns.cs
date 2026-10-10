@@ -10,7 +10,14 @@ namespace LegalAgent.PdfParser.Text;
 /// <param name="Kind">Classification of the label.</param>
 /// <param name="Ordinal">Ordinal of the label within its sequence; null for bullets, dashes and outline labels.</param>
 /// <param name="Rest">Text following the label, trimmed.</param>
-internal sealed record ListLabelMatch(string Label, ListLabelKind Kind, int? Ordinal, string Rest);
+internal sealed record ListLabelMatch(string Label, ListLabelKind Kind, int? Ordinal, string Rest)
+{
+    /// <summary>
+    /// The other reading of an ambiguous label: „i.”, „v.”, „x.” are a letter (<see cref="ListLabelKind.LetterDot"/>) and
+    /// a Roman numeral (<see cref="ListLabelKind.RomanDot"/>, this reading) at once; null otherwise.
+    /// </summary>
+    public ListLabelMatch? Alternative { get; init; }
+}
 
 /// <summary>Classification of list labels (bullets, tirets, „1)”, „a)”, „1.”, „1/”, „a/”, Roman numerals, outline numbers).</summary>
 /// <remarks>
