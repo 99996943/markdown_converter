@@ -226,6 +226,9 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
   `CorpusFull` zielony. Do decyzji właściciela: (1) zmiana w korpusie syntetycznym `dz-u-2019-1781-ochrona-danych`
   (US1/T025), (2) T038, (3) otwarte punkty z US1/US2 (fałszywy „Rozdział I.” w D-A, pytania ramek w firm-2,
   „a.”/„ii.” jako tekst). Gałąź niewypchnięta od 8020df5.
+- **2026-10-10 — decyzje właściciela.** (1) Zmiana w korpusie syntetycznym `dz-u-2019-1781-ochrona-danych`
+  **zaakceptowana** (tabela zastępcza z cytowanymi zmianami → tekst ciągły, `.md`, `.chunks.jsonl` i golden chunków
+  jak w commicie 68202eb). Gałąź wypchnięta do PR. T038, T041 i otwarte punkty — po merge'u.
 
 ## Complexity Tracking
 
