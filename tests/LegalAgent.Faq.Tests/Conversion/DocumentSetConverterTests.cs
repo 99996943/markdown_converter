@@ -90,6 +90,28 @@ public sealed class DocumentSetConverterTests : IDisposable
     }
 
     [Fact]
+    public async Task ConvertAll_AllSucceeded_RemovesStaleMarkdownOnly()
+    {
+        List<PdfSource> sources = WriteFive();
+        await File.WriteAllTextAsync(directory.Combine("stary.md"), "x", Ct);
+        await File.WriteAllTextAsync(directory.Combine("inny.md"), "x", Ct);
+        await File.WriteAllTextAsync(directory.Combine("manifest.json"), "{}", Ct);
+        await File.WriteAllTextAsync(directory.Combine("notatki.txt"), "x", Ct);
+        Directory.CreateDirectory(directory.Combine("podkatalog"));
+        await File.WriteAllTextAsync(Path.Combine(directory.Combine("podkatalog"), "zostaje.md"), "x", Ct);
+
+        ConversionRun run = await new DocumentSetConverter(Parser).ConvertAllAsync(sources, cancellationToken: Ct);
+
+        Assert.Equal(["inny.md", "stary.md"], run.RemovedMarkdownFiles);
+        Assert.False(File.Exists(directory.Combine("stary.md")));
+        Assert.False(File.Exists(directory.Combine("inny.md")));
+        Assert.True(File.Exists(directory.Combine("manifest.json")));
+        Assert.True(File.Exists(directory.Combine("notatki.txt")));
+        Assert.True(File.Exists(Path.Combine(directory.Combine("podkatalog"), "zostaje.md")));
+        Assert.All(Enumerable.Range(1, 5), i => Assert.True(File.Exists(directory.Combine(Invariant($"reg-{i}.md")))));
+    }
+
+    [Fact]
     public void UnitExtractor_CollectsNestedSectionsWithoutDuplicates()
     {
         Section paragraph = Section(SectionKind.Paragraph, "§ 1", "§ 1.");

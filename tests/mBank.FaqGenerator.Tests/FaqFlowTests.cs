@@ -76,6 +76,22 @@ public sealed class FaqFlowTests : IDisposable
     }
 
     [Fact]
+    public async Task StaleMarkdown_IsRemoved_AndListed()
+    {
+        Directory.CreateDirectory(app.OutputDirectory);
+        await File.WriteAllTextAsync(Path.Combine(app.OutputDirectory, "stary.md"), "x", Ct);
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        Assert.False(File.Exists(Path.Combine(app.OutputDirectory, "stary.md")));
+        Assert.Contains(
+            "Przekonwertowano 5 z 5 plików.\nUsunięto pliki Markdown spoza bieżącej listy: stary.md\n",
+            run.Out.ReplaceLineEndings("\n"),
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public async Task UnknownUsage_IsReportedAsUnknown()
     {
         app.Model.FallbackUsage = null;
