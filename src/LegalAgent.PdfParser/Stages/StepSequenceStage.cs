@@ -35,10 +35,9 @@ public sealed class StepSequenceStage : IPipelineStage
             return;
         }
 
-        List<StepBox> boxes = context.Pages
-            .Where(p => p.Skipped is null)
-            .SelectMany(FindBoxes)
-            .ToList();
+        List<LayoutPage> pages = context.Pages.Where(p => p.Skipped is null).ToList();
+        MarkConnectors(context, pages.SelectMany(p => FindAreas(p).Select(a => (Page: p, Area: a))).ToList());
+        List<StepBox> boxes = pages.SelectMany(FindBoxes).ToList();
 
         int schemeIndex = 0;
         foreach (List<StepBox> scheme in GroupIntoSchemes(context, boxes).Where(s => s.Count >= MinBoxes))
@@ -53,14 +52,95 @@ public sealed class StepSequenceStage : IPipelineStage
         }
     }
 
-    /// <summary>Shaded boxes of a page with text to their right, with the lines they own.</summary>
-    private static List<StepBox> FindBoxes(LayoutPage page)
+    /// <summary>Narrow shaded areas of a page not nested in another one, top to bottom: the candidate boxes.</summary>
+    private static List<Rect> FindAreas(LayoutPage page)
     {
         List<Rect> areas = page.FilledAreas
             .Where(a => a.Width <= MaxBoxWidthRatio * page.Width && a.Height >= MinBoxHeight)
             .Distinct()
             .ToList();
-        List<Rect> outer = areas.Where(a => !areas.Any(o => o != a && Contains(o, a))).OrderBy(a => a.Top).ToList();
+        return areas.Where(a => !areas.Any(o => o != a && Contains(o, a))).OrderBy(a => a.Top).ToList();
+    }
+
+    /// <summary>
+    /// Connectors (spec 008 FR-635): between two consecutive boxes of one column — on one page, or below the last box of
+    /// a page and above the first box of the next — a line made only of characters without letters or digits (an arrow
+    /// set in a symbol font) within the column of the boxes becomes an artifact, so it neither ends the scheme nor turns
+    /// into a step name. Such a glyph sharing a line with explanation text to the right of the box is split off.
+    /// </summary>
+    private static void MarkConnectors(PipelineContext context, List<(LayoutPage Page, Rect Area)> areas)
+    {
+        for (int i = 0; i + 1 < areas.Count; i++)
+        {
+            (LayoutPage page, Rect area) = areas[i];
+            (LayoutPage nextPage, Rect next) = areas[i + 1];
+            if (Math.Abs(area.Left - next.Left) > EdgeTolerance || Math.Abs(area.Right - next.Right) > EdgeTolerance)
+            {
+                continue;
+            }
+
+            if (page == nextPage)
+            {
+                MarkConnectors(page, area, area.Top - 1, next.Bottom + 1);
+            }
+            else if (context.Pages.IndexOf(nextPage) == context.Pages.IndexOf(page) + 1)
+            {
+                MarkConnectors(page, area, area.Top - 1, double.MaxValue);
+                MarkConnectors(nextPage, next, double.MinValue, next.Bottom + 1);
+            }
+        }
+    }
+
+    private static void MarkConnectors(LayoutPage page, Rect column, double top, double bottom)
+    {
+        double left = column.Left - EdgeTolerance;
+        double right = column.Right + EdgeTolerance;
+        for (int index = 0; index < page.Lines.Count; index++)
+        {
+            LayoutLine line = page.Lines[index];
+            if (line.Role != LineRole.Unknown || line.Words.Count == 0 || line.Box.CenterY < top || line.Box.CenterY > bottom)
+            {
+                continue;
+            }
+
+            List<LayoutWord> glyphs = line.Words.Where(w => w.Box.CenterX < column.Right).ToList();
+            if (glyphs.Count == 0 || !glyphs.All(IsSymbol) || glyphs.Any(w => w.Box.Left < left || w.Box.Right > right))
+            {
+                continue;
+            }
+
+            if (glyphs.Count == line.Words.Count)
+            {
+                line.Role = LineRole.Artifact;
+                continue;
+            }
+
+            LayoutLine connector = LineSlicer.Slice(line, glyphs);
+            connector.Role = LineRole.Artifact;
+            List<LayoutWord> rest = line.Words.Where(w => w.Box.CenterX >= column.Right).ToList();
+            LayoutLine text = LineSlicer.Slice(line, rest);
+            text.Baseline = Baseline(rest, line.Baseline);
+            page.Lines[index] = connector;
+            page.Lines.Insert(++index, text);
+        }
+    }
+
+    /// <summary>True for a word without letters and digits (an arrow or another symbol-font glyph).</summary>
+    private static bool IsSymbol(LayoutWord word) => !word.Text.Any(char.IsLetterOrDigit);
+
+    /// <summary>The baseline most glyphs of the words sit on (a part split off a line merged with a taller glyph).</summary>
+    private static double Baseline(IReadOnlyList<LayoutWord> words, double fallback)
+    {
+        List<double> baselines = words.SelectMany(w => w.Glyphs).Select(g => Math.Round(g.Baseline, 1)).ToList();
+        return baselines.Count == 0
+            ? fallback
+            : baselines.GroupBy(b => b).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key;
+    }
+
+    /// <summary>Shaded boxes of a page with text to their right, with the lines they own.</summary>
+    private static List<StepBox> FindBoxes(LayoutPage page)
+    {
+        List<Rect> outer = FindAreas(page);
         List<LayoutLine> lines = page.Lines.Where(l => l.Role == LineRole.Unknown && l.Words.Count > 0).ToList();
 
         List<StepBox> boxes = outer
