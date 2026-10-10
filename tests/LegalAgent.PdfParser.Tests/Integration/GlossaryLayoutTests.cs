@@ -26,7 +26,7 @@ public sealed class GlossaryLayoutTests
     private static SyntheticPdfBuilder Centered(SyntheticPdfBuilder page, double y, string text, double size, bool bold) =>
         page.Text((595 - SyntheticPdfBuilder.TextWidth(text, size, bold: bold)) / 2, y, text, size, bold: bold);
 
-    internal static byte[] BuildGlossary(string[] labels)
+    internal static byte[] BuildGlossary(string[] labels, string termFirstLine = "umowa rachunku", string termSecondLine = "bankowego")
     {
         var builder = new SyntheticPdfBuilder();
         SyntheticPdfBuilder page = builder.Page();
@@ -52,9 +52,9 @@ public sealed class GlossaryLayoutTests
 
         // Entry 3: a term wrapped over two lines beside a three-line definition; no ruling below the last entry.
         page.Text(DefinitionX, 224, "umowa bieżącego lub pomocniczego rachunku bankowego zawarta między Bankiem a Klientem na podstawie", Size);
-        page.Text(LabelX, 229, labels[2], Size, bold: true).Text(TermX, 229, "umowa rachunku", Size, bold: true);
+        page.Text(LabelX, 229, labels[2], Size, bold: true).Text(TermX, 229, termFirstLine, Size, bold: true);
         page.Text(DefinitionX, 234, "regulaminu; na jej podstawie Bank prowadzi dla Klienta rachunek bankowy o numerze podanym", Size);
-        page.Text(TermX, 239, "bankowego", Size, bold: true);
+        page.Text(TermX, 239, termSecondLine, Size, bold: true);
         page.Text(DefinitionX, 244, "w umowie.", Size);
 
         Centered(page, 270, "§ 3", 9, bold: true);
@@ -98,6 +98,23 @@ public sealed class GlossaryLayoutTests
         Assert.Contains("  - b/ uzyskiwać informacje o realizacji umowy,\n- 2\\. **Bank** Bank Przykładowy S.A.;", result.Markdown, StringComparison.Ordinal);
         Assert.Contains("- 3\\. **umowa rachunku bankowego** umowa bieżącego", result.Markdown, StringComparison.Ordinal);
         Assert.Equal(0, result.Report.TableCount);
+    }
+
+    /// <summary>
+    /// Spec 008, T013 (FR-611, regression): a glossary entry „15/” whose bold term ends with „/” and wraps onto a
+    /// second bold line („umowa rachunku bankowego/” + „umowa”) is one list item with the whole term, never a heading.
+    /// </summary>
+    [Fact]
+    public async Task Glossary_term_ending_with_a_slash_and_wrapped_is_a_list_item_not_a_heading()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildGlossary(["13/", "14/", "15/"], "umowa rachunku bankowego/", "umowa"));
+
+        Assert.Contains(
+            "- 15/ **umowa rachunku bankowego/ umowa** umowa bieżącego lub pomocniczego rachunku bankowego zawarta między Bankiem a Klientem na podstawie regulaminu; na jej podstawie Bank prowadzi dla Klienta rachunek bankowy o numerze podanym w umowie.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("# umowa", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("# 15/", result.Markdown, StringComparison.Ordinal);
     }
 
     /// <summary>T031 — control: a ruled tariff with an „Lp.” column („1.”, „2.”) stays a GFM table.</summary>
