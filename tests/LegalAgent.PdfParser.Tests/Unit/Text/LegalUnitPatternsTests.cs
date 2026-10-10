@@ -28,6 +28,9 @@ public sealed class LegalUnitPatternsTests
     [InlineData("§ 5¹.", SectionKind.Paragraph, "§ 5¹", "5¹", "")]
     [InlineData("§ 12a. Treść paragrafu.", SectionKind.Paragraph, "§ 12a", "12a", "Treść paragrafu.")]
     [InlineData("§ 2. 1. Czynności podlegające opłatom", SectionKind.Paragraph, "§ 2", "2", "1. Czynności podlegające opłatom")]
+    [InlineData("§ 5", SectionKind.Paragraph, "§ 5", "5", "")] // T016 (spec 007): a bare „§ N” line, no period
+    [InlineData("§ 7¹", SectionKind.Paragraph, "§ 7¹", "7¹", "")]
+    [InlineData("§12", SectionKind.Paragraph, "§ 12", "12", "")]
     public void TryMatch_RecognisesDesignations(string line, SectionKind kind, string designation, string number, string rest)
     {
         Assert.True(LegalUnitPatterns.TryMatch(line, out LegalUnitMatch? match));
@@ -52,6 +55,10 @@ public sealed class LegalUnitPatternsTests
     [InlineData("zgodnie z § 7 regulaminu")] // not at the start of the line
     [InlineData("Art. 5 ust. 2 stosuje się odpowiednio.")] // reference: no period after the number
     [InlineData("§ 7 ust. 1 stosuje się odpowiednio.")]
+    [InlineData("§ 5 ust. 2")] // T016: a bare designation must be the whole line
+    [InlineData("§ 5,")]
+    [InlineData("§ 5 i 6")]
+    [InlineData("Art. 5")] // articles still need the period
     [InlineData("Rozdziały 1–3 stosuje się do umów.")]
     [InlineData("Dział kredytów prowadzi ewidencję.")]
     [InlineData("Artykuł prasowy nie jest aktem prawnym.")]
