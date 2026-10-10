@@ -126,6 +126,32 @@ public sealed class FaqErrorFlowTests : IDisposable
         Assert.Equal(PreviousFaq, await File.ReadAllTextAsync(app.FaqFile, Ct));
     }
 
+    [Theory]
+    [InlineData(1)]
+    [InlineData(6)]
+    public async Task CancelledDuringRequest_ExitCode130_PreviousFaqIntact(int request)
+    {
+        var started = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        for (int i = 1; i < request; i++)
+        {
+            app.Model.Respond(FaqJson.Candidates($"D{i}", 3));
+        }
+
+        app.Model.Hang(started);
+        using var cancellation = CancellationTokenSource.CreateLinkedTokenSource(Ct);
+
+        Task<AppRun> running = app.RunAsync(UrlArgs(), "", cancellation.Token);
+        await started.Task.WaitAsync(TimeSpan.FromSeconds(30), Ct);
+        await cancellation.CancelAsync();
+        AppRun run = await running;
+
+        Assert.Equal(130, run.Code);
+        Assert.Contains("Przerwano.", run.Err, StringComparison.Ordinal);
+        Assert.Equal(request, app.Model.Calls.Count);
+        Assert.Equal(PreviousFaq, await File.ReadAllTextAsync(app.FaqFile, Ct));
+        Assert.False(File.Exists(app.FaqFile + ".tmp"));
+    }
+
     private async Task<AppRun> AssertFailsAsync(int code, string message)
     {
         AppRun run = await app.RunAsync(UrlArgs(), "", Ct);

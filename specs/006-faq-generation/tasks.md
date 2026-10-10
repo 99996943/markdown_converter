@@ -420,14 +420,14 @@ uszkodzenia poprzedniego `FAQ_mBank.md`.
 **Independent Test**: atrapy zwracające przekroczenie czasu, 429, odpowiedź z 7 pytaniami i powołanie na
 nieistniejący dokument. Każde uruchomienie daje komunikat, kod ≠ 0 i nietknięty poprzedni FAQ.
 
-- [ ] T050 [P] [US3] Test (red) w `faqtests/Conversion/DocumentSetConverterTests.cs` i `apptests/FaqFlowTests.cs`:
+- [X] T050 [P] [US3] Test (red) w `faqtests/Conversion/DocumentSetConverterTests.cs` i `apptests/FaqFlowTests.cs`:
   - uszkodzony PDF (sygnatura `%PDF-`, ale nieczytelna struktura) i PDF bez tekstu wśród 5 → pozostałe pliki
     konwertowane, `ConversionFailure` z nazwą i przyczyną;
   - stderr „Błąd konwersji <plik>: …”, podsumowanie „Przekonwertowano 3 z 5 plików.”, kod 5;
   - brak pytania o klucz i brak zapytań do modelu.
-- [ ] T051 [US3] Obsługa `PdfParserException`, `IsComplete == false` i Markdown bez tekstu poza
+- [X] T051 [US3] Obsługa `PdfParserException`, `IsComplete == false` i Markdown bez tekstu poza
   `<!-- page: N -->` w `faq-lib/Conversion/DocumentSetConverter.cs`; kod 5 w `app/Program.cs`. T050 zielony.
-- [ ] T052 [P] [US3] Test (red) w `faqtests/ServiceErrorMapperTests.cs`. `HttpOperationException` z kodami:
+- [X] T052 [P] [US3] Test (red) w `faqtests/ServiceErrorMapperTests.cs`. `HttpOperationException` z kodami:
   - 401/403 → `Authentication`, 404 → `DeploymentNotFound`, 429 → `RateLimited`;
   - 400 z `content_filter` → `ContentFiltered`, 400 z `context_length_exceeded` → `InputTooLong`;
   - 500/503 → `ServiceUnavailable`;
@@ -435,32 +435,32 @@ nieistniejący dokument. Każde uruchomienie daje komunikat, kod ≠ 0 i nietkni
   - `HttpRequestException` → `Network`, inne → `Other`;
   - anulowany token → `OperationCanceledException` przechodzi dalej;
   - `StatusCode`, `Step`, `DocumentId`, komunikat po polsku ze skrótem odpowiedzi ≤ 300 znaków.
-- [ ] T053 [US3] Implementacja `faq-lib/ServiceErrorMapper.cs` i użycie w `FaqGenerator`. T052 zielony.
-- [ ] T054 [P] [US3] Test (red) w `faqtests/FaqGeneratorErrorTests.cs`:
+- [X] T053 [US3] Implementacja `faq-lib/ServiceErrorMapper.cs` i użycie w `FaqGenerator`. T052 zielony.
+- [X] T054 [P] [US3] Test (red) w `faqtests/FaqGeneratorErrorTests.cs`:
   - błąd usługi przy D3 → `FaqServiceException` z `DocumentId = "D3"`, bez zapytań D4, D5 i wyboru;
   - zła odpowiedź kandydatów lub wyboru → `FaqResponseException` z listą problemów, bez kolejnych zapytań;
   - brak automatycznych ponowień (atrapa dostała dokładnie tyle wywołań, ile kroków do błędu).
-- [ ] T055 [US3] Poprawki przepływu błędów w `faq-lib/FaqGenerator.cs`. T054 zielony.
-- [ ] T056 [P] [US3] Test (red) w `apptests/FaqErrorFlowTests.cs`, kody i komunikaty z tabeli contracts/cli.md:
+- [X] T055 [US3] Poprawki przepływu błędów w `faq-lib/FaqGenerator.cs`. T054 zielony.
+- [X] T056 [P] [US3] Test (red) w `apptests/FaqErrorFlowTests.cs`, kody i komunikaty z tabeli contracts/cli.md:
   - kod 6 dla `Authentication` (401), `DeploymentNotFound` (z nazwą wdrożenia i endpointem), `RateLimited`
     (z „D3”), `ContentFiltered`, `Timeout` (z liczbą sekund i krokiem), `Network`;
   - kod 6 dla dokumentu za długiego, z nazwą, znakami, szacunkiem i limitem w `pl-PL`;
   - kod 7 z „Odpowiedź modelu odrzucona (krok wyboru):” i problemami w wierszach `  - …`;
   - kod 4, gdy `Faq:OutputDirectory` wskazuje istniejący plik (komunikat „Nie można zapisać FAQ_mBank.md w …”);
   - w każdym przypadku wcześniej zapisany `FAQ_mBank.md` ma niezmienioną treść, a `FAQ_mBank.md.tmp` nie istnieje.
-- [ ] T057 [US3] Obsługa wyjątków biblioteki, komunikatów i kodów 4/6/7 w `app/FaqStage.cs`, `app/Program.cs` i
+- [X] T057 [US3] Obsługa wyjątków biblioteki, komunikatów i kodów 4/6/7 w `app/FaqStage.cs`, `app/Program.cs` i
   `app/ConsoleReport.cs`. T056 zielony.
-- [ ] T058 [P] [US3] Test (red) w `apptests/ModelTransportTests.cs`:
+- [X] T058 [P] [US3] Test (red) w `apptests/ModelTransportTests.cs`:
   - 429 i 503 z atrapy HTTP → dokładnie jedno żądanie (brak ponowień SDK), kod 6;
   - `AzureOpenAI:TimeoutSeconds` = 0.5 i atrapa opóźniająca odpowiedź o 5 s → kod 6 z „Brak odpowiedzi usługi
     w ciągu 0,5 s” (format liczby `pl-PL`);
   - błąd DNS (`HttpRequestException`) → kod 6 „Błąd połączenia z usługą Azure OpenAI: …”.
-- [ ] T059 [US3] Poprawki konfiguracji klienta w `app/ChatServiceFactory.cs` (`ClientRetryPolicy(0)`,
+- [X] T059 [US3] Poprawki konfiguracji klienta w `app/ChatServiceFactory.cs` (`ClientRetryPolicy(0)`,
   `NetworkTimeout`). T058 zielony.
-- [ ] T060 [P] [US3] Test (red) w `apptests/FaqErrorFlowTests.cs`: anulowanie tokenem `RunAsync` w trakcie zapytania
+- [X] T060 [P] [US3] Test (red) w `apptests/FaqErrorFlowTests.cs`: anulowanie tokenem `RunAsync` w trakcie zapytania
   kandydatów lub wyboru (atrapa czeka na token) → kod 130, „Przerwano.”, brak `FAQ_mBank.md` i `.tmp`, poprzedni
   FAQ nietknięty.
-- [ ] T061 [US3] Poprawki anulowania w `app/FaqStage.cs`, jeśli potrzebne (inaczej T060 jako charakteryzacja).
+- [X] T061 [US3] Poprawki anulowania w `app/FaqStage.cs`, jeśli potrzebne (inaczej T060 jako charakteryzacja).
   T060 zielony.
 
 **Checkpoint**: wszystkie scenariusze błędów z US3 i SC-073 pokryte.
