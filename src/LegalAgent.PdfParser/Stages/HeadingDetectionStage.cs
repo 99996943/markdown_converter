@@ -537,8 +537,14 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                     break;
 
                 case SectionKind.Typographic when legalDocument:
-                    // FR-043a: top level outside the legal structure, otherwise below the open section.
-                    h.Level = i < firstLegal || i > lastLegal || i == 0 ? 2 : Math.Min(MaxLevel, headings[i - 1].Level + 1);
+                    // FR-043a: top level outside the legal structure, otherwise below the open section — but a numbered
+                    // chapter („2. Rachunki…”, spec 007) is a sibling of the numbered chapter before it, not below its units.
+                    int sibling = i > 0 && NumberedChapter().IsMatch(h.Text)
+                        ? headings.FindLastIndex(i - 1, i, o => o.Kind == SectionKind.Typographic && NumberedChapter().IsMatch(o.Text))
+                        : -1;
+                    h.Level = sibling >= 0
+                        ? headings[sibling].Level
+                        : i < firstLegal || i > lastLegal || i == 0 ? 2 : Math.Min(MaxLevel, headings[i - 1].Level + 1);
                     h.Rank = RankTypographicInLegal;
                     break;
 
@@ -568,7 +574,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
             if (open.Count > 0)
             {
-                h.Level = Math.Min(h.Level, open.Peek().Level + 1);
+                // Spec 007 (FR-502): a unit under an open numbered chapter stands one level below it.
+                h.Level = h.Kind is SectionKind.Article or SectionKind.Paragraph
+                    && open.Peek() is { Kind: SectionKind.Typographic } parent
+                    && NumberedChapter().IsMatch(parent.Text)
+                    ? Math.Min(MaxLevel, parent.Level + 1)
+                    : Math.Min(h.Level, open.Peek().Level + 1);
             }
 
             // T067g: a table of contents has no subsections, so the chapters after it never stand below it.
@@ -676,6 +687,10 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         @"^spis\s+(treści|rzeczy)\s*:?$",
         System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
     private static partial System.Text.RegularExpressions.Regex TableOfContents();
+
+    /// <summary>Spec 007: a numbered chapter heading („2. Rachunki bankowe oraz rachunek VAT”).</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(@"^\d+\.\s+\p{Lu}", System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex NumberedChapter();
 
     private static double RoundHalf(double value) => Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
 

@@ -120,10 +120,10 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
 - [X] T019a [US1] Replika (red) z D-B: wyśrodkowany pogrubiony „§ N” w interlinii tekstu tuż pod elementem listy
   i tuż pod nagłówkiem rozdziału jest nagłówkiem jednostki; wyśrodkowanie (także względem strony, gdy kolumna nie
   wynika z wierszy zwykłego tekstu) wystarcza; ListDetection zamyka listę przed takim wierszem (green)
-- [ ] T020 [P] [US1] Test (red) poziomu: jednostka pod otwartym nagłówkiem typograficznym `^\d+\.\s+\p{Lu}` (numerowany
+- [X] T020 [P] [US1] Test (red) poziomu: jednostka pod otwartym nagłówkiem typograficznym `^\d+\.\s+\p{Lu}` (numerowany
   rozdział) dostaje poziom rozdziału + 1; pod nienumerowanym rodzicem — bez zmian (np. „A. Banki państwowe” → Art.) —
   w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/HeadingDetectionStageTests.cs`
-- [ ] T021 [US1] Poziom w `AssignLevels` (green T020, R1a w pełni) w `HeadingDetectionStage.cs`
+- [X] T021 [US1] Poziom w `AssignLevels` (green T020, R1a w pełni) w `HeadingDetectionStage.cs`
 - [ ] T022 [P] [US1] Replika R1c (red): wyśrodkowany pogrubiony „§ 3. Porady ogólne” nad obszarem etykiet → jeden
   nagłówek z całym wierszem, oznaczenie „§ 3”, tytuł nie trafia do treści
 - [ ] T023 [US1] `LegalHeading` bez podziału reszty, gdy oznaczenie i reszta są pogrubione, tekst ciągły nie, a wiersz
