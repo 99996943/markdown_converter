@@ -5,3 +5,4 @@ corpus/**/*.pdf binary
 tests/**/*.expected.md text eol=lf
 corpus/**/*.jsonl text eol=lf
 tests/**/*.chunks.jsonl text eol=lf
+*.sh text eol=lf
