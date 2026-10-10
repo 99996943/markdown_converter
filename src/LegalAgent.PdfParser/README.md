@@ -65,7 +65,8 @@ Kolejność wyznaczają wartości z `Pipeline/StageOrder.cs`.
 Etapy porozumiewają się głównie przez wiersze strony (`LayoutPage.Lines`). Oznaczają je:
 - rolą `LayoutLine.Role`: `Artifact`, `Footnote`, `Table`, `ListItem`, `Heading`, `StepTitle`, `SideNote`…;
 - informacją o nagłówku `LayoutLine.Heading`;
-- adnotacjami tekstowymi z `Layout/LayoutAnnotations.cs`, np. `table.index`, `list.id`, `tabledoc.index`.
+- adnotacjami tekstowymi z `Layout/LayoutAnnotations.cs`, np. `table.index`, `list.id`, `tabledoc.index`,
+  `deflist.entry` / `deflist.side` (słowniczek, spec 007).
 
 Późniejszy etap zwykle pomija wiersze, które wcześniejszy już „zajął”.
 
@@ -78,9 +79,9 @@ Późniejszy etap zwykle pomija wiersze, które wcześniejszy już „zajął”
 | 500 | `FootnoteDetectionStage` | Odnośniki to mniejsze, podniesione znaki. Definicje to drobny tekst pod kreską separatora na dole strony, także kontynuowany na kolejnej stronie. |
 | 550 | `StepSequenceStage` | Schematy kroków: cieniowane ramki z nazwami kroków i objaśnienia po prawej. Porządkuje je w pary nazwa → objaśnienie. |
 | 560 | `TableDocumentStage` | Dokument w całości złożony z wielostronicowej tabeli z pełną siatką: wąska lewa kolumna z nazwami sekcji, szeroka prawa z treścią (spec 002). |
-| 600 | `TableDetectionStage` | Tabele z wierszy, których segmenty układają się w pasy kolumn (wspomagane liniami siatki). Łączy tabele przechodzące przez strony. |
-| 700 | `ReadingOrderStage` | Strony dwukolumnowe: lewa kolumna przed prawą. Wiersze tabel i schematów zostają na miejscu. |
-| 800 | `ListDetectionStage` | Pozycje list i ich kontynuacje jako drzewo (ustęp „1.” → punkt „1)” → litera „a)” → tiret „–”), wcięcia wiszące, część wspólna. |
+| 600 | `TableDetectionStage` | Najpierw słowniczki (`GlossaryDetection`, spec 007): termin z lewej, definicja z prawej, linie poziome dzielone na granicy kolumn — wiersze dostają adnotacje `deflist.*` zamiast roli tabeli. Potem tabele z wierszy, których segmenty układają się w pasy kolumn (wspomagane liniami siatki). Łączy tabele przechodzące przez strony. |
+| 700 | `ReadingOrderStage` | Strony dwukolumnowe: lewa kolumna przed prawą. Wiersze tabel, schematów i słowniczków zostają na miejscu. |
+| 800 | `ListDetectionStage` | Pozycje list i ich kontynuacje jako drzewo (ustęp „1.” → punkt „1)” lub „1/” → litera „a)” lub „a/” → tiret „–”), wcięcia wiszące, część wspólna; wpis słowniczka jako jeden element. |
 | 900 | `HeadingDetectionStage` | Jednostki prawne, nagłówki typograficzne, tytuł dokumentu i nadanie poziomów. |
 | 1000 | `BlockAssemblyStage` | Akapity, łączenie akapitów przez granice stron, przeniesienia wyrazów, listy i tabele jako bloki, znaczniki zmiany strony. |
 | 1100 | `DocumentBuildStage` | Drzewo sekcji z poziomów nagłówków, preambuła, zakresy stron, przypisy. |
@@ -113,11 +114,21 @@ tabel na osobne bloki.
    - Tabela kończąca stronę łączy się z tabelą na początku następnej strony, a powtórzony nagłówek jest pomijany.
 6. **Listy.** Etykieta jest zachowana dosłownie, z ucieczką, żeby Markdown nie przenumerował listy:
    `- 1\) treść`, `  - a\) treść`. Tiret ma postać `- – treść`. Punktor jest pomijany: `- treść`.
+   - **Etykiety z ukośnikiem** (spec 007): „1/”, „a/” (`ListLabelKind.ArabicSlash`, `LetterSlash`) bez ucieczki:
+     `- 1/ treść`. Etykieta „1.”, „1/”, „a/” w wysuniętej kolumnie (odstęp do tekstu ≤ 2 em) łączy się z tekstem
+     w jedną komórkę, więc taki układ nie jest tabelą; wiersze, w których każda komórka poza ostatnią to samotna
+     etykieta (także „a.”, „ii.”), są listą, nie tabelą zastępczą. Zagnieżdżenie wynika z kolumny etykiety, więc
+     ustępy „1.” cytowane pod punktem „1/” są jego dziećmi.
+   - **Słowniczek:** każda definicja to jeden element `- 1/ **termin** definicja…`, wyliczenia definicji są
+     zagnieżdżone, a część wspólna po nich jest akapitem elementu.
 7. **Nagłówki.** Rozważane są tylko wiersze, których nie zajął wcześniejszy etap, więc wiersz tabeli ani przypisu
    nigdy nie zostanie nagłówkiem.
    - **Jednostki prawne** (`Text/LegalUnitPatterns.cs`):
      - `Księga`, `Część`, `Dział`, `Rozdział`, `Oddział` z numerem;
      - `Art. 5.` i `§ 5.` z kropką po numerze, co odróżnia jednostkę od odwołania „art. 5 ust. 2”;
+     - goły wiersz „§ 5” (spec 007) tylko, gdy jest wyróżniony: wyśrodkowany (w kolumnie albo na stronie) albo
+       odosobniony i pogrubiony lub powiększony; nagłówek to wiersz tak jak w PDF (`#### § 5`, „§25”);
+     - wyśrodkowany pogrubiony „§ 3. Porady ogólne” to jeden nagłówek z tytułem;
      - „Rozdział 3” łączy się z tytułem w następnym wierszu: `## Rozdział 3. Tytuł`;
      - wiersz „Art. 5. Treść…” jest dzielony na nagłówek i pierwszy akapit.
    - **Nagłówki typograficzne:** krótki wiersz (`MaxLength` 120), oddzielony odstępem (`GapFactor`), który jest
@@ -126,7 +137,7 @@ tabel na osobne bloki.
      - Może mieć do `MaxLines` (2) wierszy w tym samym stylu.
      - Wiersz kończący się przecinkiem lub średnikiem jest nagłówkiem tylko wtedy, gdy dołączone wiersze go
        domykają (T067f).
-     - Podpis obrazka i wiersz „Obowiązuje od…” nie są nagłówkami.
+     - Podpis obrazka, wiersz „Obowiązuje od…” i wpis spisu treści z kropkami prowadzącymi nie są nagłówkami.
    - **Tytuł dokumentu** to wiersz pierwszej strony zaczynający się typem aktu („USTAWA”, „OBWIESZCZENIE”…) albo
      największy nagłówek na początku dokumentu, z dołączonymi wierszami bloku tytułowego.
    - **Tabela-dokument:** nazwy sekcji z lewej kolumny stają się nagłówkami.
@@ -134,6 +145,8 @@ tabel na osobne bloki.
      - tytuł ma poziom 1;
      - jednostki strukturalne obecne w dokumencie dostają kolejne poziomy od 2 (Księga → … → Oddział);
      - artykuły i paragrafy są o poziom niżej niż najgłębsza jednostka strukturalna;
+     - numerowany rozdział typograficzny („2. Rachunki…”, spec 007) jest rodzeństwem poprzedniego numerowanego
+       rozdziału, a jednostka pod nim (także pod jego nienumerowanym śródtytułem) — poziom niżej;
      - nagłówki typograficzne dostają poziomy według klas wielkości czcionki;
      - poziom nigdy nie przekracza poziomu rodzica + 1, czyli w hierarchii nie ma luk;
      - nagłówek „Spis treści” nigdy nie jest rodzicem rozdziałów (T067g).
@@ -216,7 +229,13 @@ Zasady:
   („## i… już dziecko może korzystać z karty”).
 - **Przypisy w niektórych bankowych PDF-ach:** trafiają do jednego bloku razem z numerami stron, a znak odnośnika
   zostaje przyklejony do słowa („bilansujący2”).
-- **Spis treści** zostaje w treści jako lista z kropkami prowadzącymi.
+- **Spis treści** zostaje w treści jako lista lub akapit z kropkami prowadzącymi (jego wpisy nie są już nagłówkami).
+- **Wyliczenia „a.”, „ii.”** (litera lub rzymska z kropką) nie są etykietami list: nie tworzą tabeli, ale zostają
+  tekstem elementu nadrzędnego.
+- **Ramki pytanie–odpowiedź** w regulaminach dla firm: pytanie z lewej kolumny ramki bywa wplecione w tekst
+  elementu listy z prawej.
+- **Odwołanie „Rozdział I.” na początku zawiniętego wiersza** bywa uznane za nagłówek rozdziału (regulamin
+  zintegrowanego rachunku).
 - **Obrazy** nie są odczytywane (brak OCR), tylko zgłaszane (`IMG001`).
 - **Nagłówek wciągnięty do tabeli:** w regulaminie kart dla firm (część II, rozdz. 3) nagłówek obok ramek „etap”
   trafia do tabeli.

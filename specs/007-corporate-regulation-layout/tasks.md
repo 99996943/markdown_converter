@@ -202,9 +202,9 @@ dzielone 39,7–181,4 i 181,4–555,6 pod każdym wpisem) w
 
 ## Phase 8: Polish & Cross-Cutting
 
-- [ ] T039 [P] README parsera `src/LegalAgent.PdfParser/README.md`: etykiety „1/”, „a/”, paragrafy „§ N”, słowniczek,
+- [X] T039 [P] README parsera `src/LegalAgent.PdfParser/README.md`: etykiety „1/”, „a/”, paragrafy „§ N”, słowniczek,
   zaktualizowane „Znane ograniczenia”
-- [ ] T040 [P] `CLAUDE.md`: nowe adnotacje `deflist.*` w opisie komunikacji etapów; kontrakt 1.2.0
+- [X] T040 [P] `CLAUDE.md`: nowe adnotacje `deflist.*` w opisie komunikacji etapów; kontrakt 1.2.0
 - [ ] T041 Przebieg FAQ na D-A…D-D (`quickstart.md` §4): brak odrzuceń „jednostka „§ N” nie występuje” (SC-083); wynik
   w handoffie
 - [ ] T042 Handoff „Stan prac i przekazanie” w `plan.md`: zrobione zadania, miary przed/po, różnice goldenów i decyzje
