@@ -27,6 +27,9 @@ public sealed class ListDetectionStage : IPipelineStage
 {
     private const double SizeTolerance = 0.5;
 
+    /// <summary>A line starting this share of the page width into the column is set like a centred heading.</summary>
+    private const double CenteredIndentRatio = 0.2;
+
     /// <inheritdoc />
     public int Order => StageOrder.ListDetection;
 
@@ -123,9 +126,11 @@ public sealed class ListDetectionStage : IPipelineStage
                 double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
                 bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
 
-                // Spec 007: a bare „§ 5” is a unit only when set apart like a heading; plain, it is a wrapped word.
+                // Spec 007: a bare „§ 5” is a unit only when set apart like a heading (isolated, or set well into the
+                // column like a centred line); plain, it is a wrapped word.
                 entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out LegalUnitMatch? unit)
-                    && (!unit.Bare || (isolated && IsHeadingLike(line, bodySize, sizeRatio)));
+                    && (!unit.Bare
+                        || (IsHeadingLike(line, bodySize, sizeRatio) && (isolated || line.Box.Left - columnLeft > CenteredIndentRatio * page.Width)));
                 entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
                 entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);
                 entry.FirstOnPage = above is null;

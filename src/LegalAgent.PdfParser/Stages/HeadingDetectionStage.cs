@@ -190,7 +190,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && !entry.Quoted
                 && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
                 && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0]))
-                && (!match.Bare || IsSetApart(entry)))
+                && (!match.Bare || IsSetApart(entry, options)))
             {
                 entry.Legal = match;
             }
@@ -337,11 +337,14 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     private static double HeadingLeading(Entry entry, double leading) => Math.Max(leading, HeadingLineSpacing * entry.Size);
 
     /// <summary>
-    /// Spec 007 (FR-500): a bare „§ 5” is a unit only on a line of its own set apart from the text — isolated and
-    /// centred, bold or enlarged; a plain „§ 5” wrapped from a sentence is a word of it.
+    /// Spec 007 (FR-500): a bare „§ 5” is a unit only on a line set apart from the text — centred (even at the body
+    /// leading; on the page when the text column is not known from the plain lines), or isolated and bold or enlarged;
+    /// a plain „§ 5” wrapped from a sentence is a word of it.
     /// </summary>
-    private static bool IsSetApart(Entry entry) =>
-        entry.Isolated && (entry.Centered || entry.AllBold || entry.Enlarged);
+    private static bool IsSetApart(Entry entry, HeadingOptions options) =>
+        entry.Centered
+        || Math.Abs(entry.Line.Box.CenterX - (entry.Page.Width / 2)) <= options.CenterTolerance * entry.Page.Width
+        || (entry.Isolated && (entry.AllBold || entry.Enlarged));
 
     private static bool ContinuesSentence(Entry entry, List<LayoutWord> words, double columnWidth) =>
         !entry.Isolated

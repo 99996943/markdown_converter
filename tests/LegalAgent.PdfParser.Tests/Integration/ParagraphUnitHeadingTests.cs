@@ -109,8 +109,8 @@ public sealed class ParagraphUnitHeadingTests
         page.Text(40.5, 176, "Rozdział 3. Odpowiedzialność stron", HeadingSize, bold: true);
         Centered(page, 186, "§ 8");
         page.Text(40.5, 202, "Bank nie odpowiada za szkody, które powstały z przyczyn, za które odpowiedzialności nie ponosi.", Size);
-        page.Text(Margin, 222, "Bank odpowiada za niewykonanie lub nienależyte wykonanie umowy na zasadach określonych w przepisach prawa,", Size);
-        page.Text(Margin, 232, "a w sprawach, których przepisy nie regulują, na zasadach określonych w umowie oraz w tym regulaminie.", Size);
+        page.Text(Margin, 222, "Bank odpowiada za niewykonanie lub nienależyte wykonanie umowy na zasadach określonych w przepisach prawa, w szczególności", Size);
+        page.Text(Margin, 232, "w przepisach o usługach płatniczych, a w sprawach, których przepisy nie regulują, na zasadach określonych w umowie oraz w regulaminie.", Size);
 
         PdfConversionResult result = await ConvertAsync(builder.Build());
 

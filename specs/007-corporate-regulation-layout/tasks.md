@@ -117,6 +117,9 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
 - [X] T019 [US1] HeadingDetection uznaje goły „§ N” tylko, gdy wiersz jest odosobniony i wyróżniony (wyśrodkowany,
   pogrubiony lub powiększony) i nie kontynuuje zdania; ListDetection zamyka listę przed takim wierszem — w
   `src/LegalAgent.PdfParser/Stages/HeadingDetectionStage.cs` i `ListDetectionStage.cs` (green R1a bez poziomu, R1d)
+- [X] T019a [US1] Replika (red) z D-B: wyśrodkowany pogrubiony „§ N” w interlinii tekstu tuż pod elementem listy
+  i tuż pod nagłówkiem rozdziału jest nagłówkiem jednostki; wyśrodkowanie (także względem strony, gdy kolumna nie
+  wynika z wierszy zwykłego tekstu) wystarcza; ListDetection zamyka listę przed takim wierszem (green)
 - [ ] T020 [P] [US1] Test (red) poziomu: jednostka pod otwartym nagłówkiem typograficznym `^\d+\.\s+\p{Lu}` (numerowany
   rozdział) dostaje poziom rozdziału + 1; pod nienumerowanym rodzicem — bez zmian (np. „A. Banki państwowe” → Art.) —
   w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/HeadingDetectionStageTests.cs`
