@@ -186,41 +186,39 @@ public sealed class ParagraphUnitHeadingTests
     }
 
     /// <summary>
-    /// T025a (D-D) — a gridless table of contents „§ N. | Tytuł ....” whose row „§ 10. Tytuł ....” is one segment stays
-    /// one table: a line with leader dots is an entry of the contents, not a unit.
+    /// T025a (D-D) — a gridless table of contents „§ N. | Tytuł ......” (8 pt, label x 40, title x 63, leader dots to the
+    /// right margin, leading 13): rows as wide as running text are not cut out of it as unit lines.
     /// </summary>
     [Fact]
     public async Task Contents_row_with_leader_dots_is_not_a_unit_line()
     {
-        string Dots(string title) => title + " " + new string('.', 120 - (2 * title.Length));
+        const double TocSize = 8;
         var builder = new SyntheticPdfBuilder();
         SyntheticPdfBuilder page = builder.Page();
-        page.Text((595 - SyntheticPdfBuilder.TextWidth("Zasady współpracy", 14, bold: true)) / 2, 50, "Zasady współpracy", 14, bold: true);
-        page.Text(40, 80, "Spis treści", HeadingSize, bold: true);
-        string[] titles = ["Postanowienia ogólne", "Definicje", "Porady ogólne", "Ryzyka", "Zawieranie transakcji", "Platforma transakcyjna", "Potwierdzenie transakcji", "Rozliczanie transakcji", "Przypadki naruszenia", "Skutki naruszenia", "Przypadki rozwiązania"];
-        double y = 100;
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Zasady współpracy", 14, bold: true)) / 2, 30, "Zasady współpracy", 14, bold: true);
+        page.Text(40, 50, "Spis treści", 11, bold: true);
+        string[] titles = ["Postanowienia ogólne", "Definicje", "Porady ogólne", "Ryzyka", "Zawieranie transakcji", "Platforma transakcyjna", "Potwierdzenie transakcji", "Rozliczanie transakcji", "Przypadki naruszenia", "Skutki naruszenia", "Przypadki rozwiązania", "Doręczenia"];
+        double y = 73;
         for (int i = 0; i < titles.Length; i++)
         {
-            string number = $"§ {i + 1}.";
-            if (i == 9)
+            string entry = titles[i] + " ";
+            while (SyntheticPdfBuilder.TextWidth(entry + ".", TocSize) < 555 - 63)
             {
-                page.Text(40, y, number + " " + Dots(titles[i]), Size);
-            }
-            else
-            {
-                page.Text(40, y, number, Size).Text(70, y, Dots(titles[i]), Size);
+                entry += ".";
             }
 
-            y += 10;
+            page.Text(40, y, $"§ {i + 1}.", TocSize).Text(63, y, entry, TocSize);
+            y += 13;
         }
 
         page.Text(Margin, y + 20, "Regulamin określa zasady zawierania transakcji rynku finansowego między Bankiem a Klientem, który nie jest instytucją finansową.", Size);
+        page.Text(Margin, y + 30, "Bank udostępnia regulamin w placówkach oraz na swojej stronie internetowej, a na żądanie Klienta przekazuje go na trwałym nośniku.", Size);
 
         PdfConversionResult result = await ConvertAsync(builder.Build());
 
         Assert.DoesNotMatch(@"(?m)^#+ § ", result.Markdown);
         Assert.Equal(1, result.Report.TableCount);
-        Assert.Contains("§ 10.", result.Markdown, StringComparison.Ordinal);
+        Assert.Matches(@"\| § 10\. \| Skutki naruszenia \.+ \|", result.Markdown);
     }
 
     /// <summary>
