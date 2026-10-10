@@ -46,6 +46,17 @@ public sealed class ModelTransportTests : IDisposable
     }
 
     [Fact]
+    public async Task TruncatedResponse_IsReportedAsTruncated()
+    {
+        http.Completion("{\"candidates\":[{\"question\":\"P?\",\"ans", finishReason: "length");
+
+        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => GenerateAsync(Settings()));
+
+        Assert.Equal(FaqStep.Candidates, e.Step);
+        Assert.Equal(["odpowiedź ucięta — model osiągnął limit tokenów odpowiedzi; zwiększ MaxOutputTokens"], e.Problems);
+    }
+
+    [Fact]
     public async Task NullTemperatureAndSeed_AreNotSent()
     {
         http.Completion(Candidates()).Completion(FaqJson.Selection(1, 1));

@@ -52,12 +52,22 @@ internal sealed class FakeChatCompletionService : IChatCompletionService
     public object? FallbackUsage { get; set; }
 
     /// <summary>Answers the next call with the text and optional usage metadata.</summary>
-    public FakeChatCompletionService Respond(string text, object? usage = null)
+    public FakeChatCompletionService Respond(string text, object? usage = null, string? finishReason = null)
     {
         steps.Enqueue(async _ =>
         {
             await Task.Yield();
-            var metadata = usage is null ? null : new Dictionary<string, object?> { ["Usage"] = usage };
+            var metadata = new Dictionary<string, object?>();
+            if (usage is not null)
+            {
+                metadata["Usage"] = usage;
+            }
+
+            if (finishReason is not null)
+            {
+                metadata["FinishReason"] = finishReason;
+            }
+
             return new ChatMessageContent(AuthorRole.Assistant, text, "fake-model", null, null, metadata);
         });
         return this;

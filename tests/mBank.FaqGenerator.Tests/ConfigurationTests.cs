@@ -1,3 +1,4 @@
+using System.Text.Json;
 using MBank.FaqGenerator.Tests.Fakes;
 
 namespace MBank.FaqGenerator.Tests;
@@ -82,8 +83,17 @@ public sealed class ConfigurationTests : IDisposable
         var settings = new AzureOpenAiSettings();
         var faq = new FaqSettings();
 
-        Assert.Equal(("", "gpt-4o-mini", "gpt-4o-mini", 300d, 0d, 42, 4096), (settings.Endpoint, settings.Deployment, settings.Model, settings.TimeoutSeconds, settings.Temperature, settings.Seed, settings.MaxOutputTokens));
+        Assert.Equal(("", "gpt-4o-mini", "gpt-4o-mini", 300d, 0d, 42, 8192), (settings.Endpoint, settings.Deployment, settings.Model, settings.TimeoutSeconds, settings.Temperature, settings.Seed, settings.MaxOutputTokens));
         Assert.Equal(("faq", 10, 100000), (faq.OutputDirectory, faq.CandidatesPerDocument, faq.MaxDocumentTokens));
+    }
+
+    [Fact]
+    public void ShippedSettings_AllowLongModelResponses()
+    {
+        // T067o: 4096 tokens cut candidate answers of long documents (up to ~6 600 tokens in a real run).
+        using JsonDocument settings = JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "appsettings.json")));
+
+        Assert.Equal(8192, settings.RootElement.GetProperty("AzureOpenAI").GetProperty("MaxOutputTokens").GetInt32());
     }
 
     [Fact]

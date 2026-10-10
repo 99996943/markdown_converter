@@ -26,7 +26,7 @@ internal sealed class ModelHttpHandler : HttpMessageHandler
     public IReadOnlyList<ModelRequest> Requests => [.. requests];
 
     /// <summary>Answers 200 with a chat completion whose message content is <paramref name="content"/>.</summary>
-    public ModelHttpHandler Completion(string content, int promptTokens = 100, int completionTokens = 10)
+    public ModelHttpHandler Completion(string content, int promptTokens = 100, int completionTokens = 10, string finishReason = "stop")
     {
         string body = JsonSerializer.Serialize(new
         {
@@ -36,7 +36,7 @@ internal sealed class ModelHttpHandler : HttpMessageHandler
             model = "gpt-4o-mini",
             choices = new[]
             {
-                new { index = 0, message = new { role = "assistant", content }, finish_reason = "stop" },
+                new { index = 0, message = new { role = "assistant", content }, finish_reason = finishReason },
             },
             usage = new { prompt_tokens = promptTokens, completion_tokens = completionTokens, total_tokens = promptTokens + completionTokens },
         });
