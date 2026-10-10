@@ -69,7 +69,29 @@ public sealed class DocumentSetConverter
             progress?.Report(new ConversionEvent(source.Index, pdfName, ConversionEventKind.Converted, document, null));
         }
 
-        return new ConversionRun(documents, failures, []);
+        IReadOnlyList<string> removed = failures.Count == 0 ? RemoveStaleMarkdown(sources, documents) : [];
+        return new ConversionRun(documents, failures, removed);
+    }
+
+    /// <summary>Removes <c>*.md</c> files of the PDF directories (not subdirectories) that are not part of the set (FR-403).</summary>
+    private static List<string> RemoveStaleMarkdown(IReadOnlyList<PdfSource> sources, List<ConvertedDocument> documents)
+    {
+        var current = new HashSet<string>(documents.Select(d => d.MarkdownFileName), StringComparer.OrdinalIgnoreCase);
+        var removed = new List<string>();
+        foreach (string directory in sources.Select(s => Path.GetDirectoryName(Path.GetFullPath(s.PdfPath))!).Distinct(StringComparer.Ordinal))
+        {
+            foreach (string file in Directory.EnumerateFiles(directory, "*.md").Order(StringComparer.Ordinal))
+            {
+                string name = Path.GetFileName(file);
+                if (!current.Contains(name) && string.Equals(Path.GetExtension(name), ".md", StringComparison.OrdinalIgnoreCase))
+                {
+                    File.Delete(file);
+                    removed.Add(name);
+                }
+            }
+        }
+
+        return removed;
     }
 
     /// <summary>Writes <c>&lt;path&gt;.tmp</c> and moves it over the target; the temporary file never stays behind.</summary>
