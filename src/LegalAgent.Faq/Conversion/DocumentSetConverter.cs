@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using LegalAgent.Faq.Conversion.Model;
 using LegalAgent.PdfParser;
@@ -45,10 +46,34 @@ public sealed class DocumentSetConverter
             progress?.Report(new ConversionEvent(source.Index, pdfName, ConversionEventKind.Started, null, null));
 
             PdfConversionResult result;
-            await using (FileStream pdf = File.OpenRead(source.PdfPath))
+            try
             {
+                await using FileStream pdf = File.OpenRead(source.PdfPath);
                 result = await converter.ConvertAsync(pdf, new PdfConversionRequest { SourceId = pdfName }, cancellationToken)
                     .ConfigureAwait(false);
+            }
+            catch (PdfParserException e)
+            {
+                Fail(new ConversionFailure(source.Index, pdfName, e.Message));
+                continue;
+            }
+
+            if (!result.IsComplete)
+            {
+                string pages = string.Join(", ", result.Report.SkippedPages.Select(p => p.PageNumber.ToString(CultureInfo.InvariantCulture)));
+                Fail(new ConversionFailure(
+                    source.Index,
+                    pdfName,
+                    pages.Length > 0
+                        ? $"część stron nie została przekonwertowana (strony: {pages})."
+                        : "część stron nie została przekonwertowana."));
+                continue;
+            }
+
+            if (!HasText(result.Markdown))
+            {
+                Fail(new ConversionFailure(source.Index, pdfName, "dokument nie zawiera tekstu poza znacznikami stron."));
+                continue;
             }
 
             string markdownName = Path.GetFileNameWithoutExtension(pdfName) + ".md";
@@ -71,7 +96,17 @@ public sealed class DocumentSetConverter
 
         IReadOnlyList<string> removed = failures.Count == 0 ? RemoveStaleMarkdown(sources, documents) : [];
         return new ConversionRun(documents, failures, removed);
+
+        void Fail(ConversionFailure failure)
+        {
+            failures.Add(failure);
+            progress?.Report(new ConversionEvent(failure.Index, failure.PdfFileName, ConversionEventKind.Failed, null, failure));
+        }
     }
+
+    /// <summary>Whether the Markdown has any text besides <c>&lt;!-- page: N --&gt;</c> markers and whitespace.</summary>
+    private static bool HasText(string markdown) =>
+        markdown.Split('\n').Any(line => line.Trim() is { Length: > 0 } t && !(t.StartsWith("<!-- page:", StringComparison.Ordinal) && t.EndsWith("-->", StringComparison.Ordinal)));
 
     /// <summary>Removes <c>*.md</c> files of the PDF directories (not subdirectories) that are not part of the set (FR-403).</summary>
     private static List<string> RemoveStaleMarkdown(IReadOnlyList<PdfSource> sources, List<ConvertedDocument> documents)
