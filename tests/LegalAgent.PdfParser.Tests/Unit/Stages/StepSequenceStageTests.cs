@@ -1,4 +1,5 @@
 using LegalAgent.PdfParser.Layout;
+using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Pipeline;
 using LegalAgent.PdfParser.Stages;
 using static LegalAgent.PdfParser.Tests.Fixtures.LayoutFactory;
@@ -36,7 +37,20 @@ public sealed class StepSequenceStageTests
         return line;
     }
 
-    private static LayoutLine Header(double top) => Row(top, ("Kolejność działań", TitleLeft), ("Wyjaśnienie", TextLeft));
+    /// <summary>The line set bold, as column-name rows are printed.</summary>
+    private static LayoutLine Bold(LayoutLine line)
+    {
+        static LayoutWord Set(LayoutWord w) => w with { Style = TextStyle.Bold };
+        var bold = new LayoutLine(line.Words.Select(Set).ToList(), line.Box, line.Baseline);
+        foreach (LineSegment segment in line.Segments)
+        {
+            bold.Segments.Add(new LineSegment(segment.Words.Select(Set).ToList(), segment.Box));
+        }
+
+        return bold;
+    }
+
+    private static LayoutLine Header(double top) => Bold(Row(top, ("Kolejność działań", TitleLeft), ("Wyjaśnienie", TextLeft)));
 
     private static Rect Box(double top, double bottom) => new(BoxLeft, top, BoxRight, bottom);
 
@@ -192,10 +206,10 @@ public sealed class StepSequenceStageTests
     {
         LayoutLine[] header = shape switch
         {
-            "names on two baselines" => [Line("Wyjaśnienie", TextLeft, 118), Line("Kolejność działań", TitleLeft, 120)],
+            "names on two baselines" => [Bold(Line("Wyjaśnienie", TextLeft, 118)), Bold(Line("Kolejność działań", TitleLeft, 120))],
             "arrow below the names" => [Header(94)],
-            "name wrapped onto two lines" => [Row(110, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)), Line("zmian", TitleLeft, 121)],
-            _ => [Line("Zasady komunikacji", TitleLeft, 103), Line("Opis", TextLeft, 111), Line("zmian", TitleLeft, 119)],
+            "name wrapped onto two lines" => [Bold(Row(110, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft))), Bold(Line("zmian", TitleLeft, 121))],
+            _ => [Bold(Line("Zasady komunikacji", TitleLeft, 103)), Bold(Line("Opis", TextLeft, 111)), Bold(Line("zmian", TitleLeft, 119))],
         };
         LayoutPage page = PageWith(
             1,
@@ -215,6 +229,44 @@ public sealed class StepSequenceStageTests
         Assert.Equal([("Wysyłasz prośbę", "1"), ("Płatnik akceptuje", "2")], Titles(context));
     }
 
+    public static TheoryData<string> NotColumnNameRows() => ["plain above the first box", "partly bold above the first box", "plain between boxes"];
+
+    /// <summary>
+    /// T037 — spec 008 FR-634: column-name rows are printed wholly bold; a plain or partly bold line above a box is text
+    /// (of the document or of an explanation) and never becomes an artifact.
+    /// </summary>
+    [Theory]
+    [MemberData(nameof(NotColumnNameRows))]
+    public void LineAboveABox_NotWhollyBold_IsNotAColumnNameRow(string shape)
+    {
+        bool between = shape == "plain between boxes";
+        LayoutLine line = Row(between ? 182 : 100, ("Uwaga dla klienta", TitleLeft), ("tekst nad polem.", TextLeft));
+        if (shape == "partly bold above the first box")
+        {
+            line = new LayoutLine(
+                line.Words.Select(w => w.Box.Left < BoxRight ? w with { Style = TextStyle.Bold } : w).ToList(), line.Box, line.Baseline);
+            line.Segments.Add(new LineSegment(line.Words, line.Box));
+        }
+
+        LayoutPage page = PageWith(
+            1,
+            [
+                .. between ? Array.Empty<LayoutLine>() : [line],
+                Row(117, ("Pierwszy krok", TitleLeft), ("Opis pierwszego kroku.", TextLeft)),
+                Row(137, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+                .. between ? [line] : Array.Empty<LayoutLine>(),
+                Row(207, ("Trzeci krok", TitleLeft), ("Opis trzeciego kroku.", TextLeft)),
+            ],
+            Box(114, 130),
+            Box(134, 150),
+            Box(204, 220));
+
+        Run(Context([page]));
+
+        Assert.Equal(LineRole.Unknown, line.Role);
+        Assert.Contains("Uwaga dla klienta tekst nad polem.", Texts(page));
+    }
+
     /// <summary>
     /// T067f — mBank regulation of customer service, page 22: the chapter heading right above the scheme starts left of
     /// the boxes and runs on across the box edge („przekażemy” straddles it); it is not a column-name row.
@@ -227,8 +279,8 @@ public sealed class StepSequenceStageTests
             1,
             [
                 heading,
-                Row(117, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft)),
-                Line("zmian", TitleLeft, 129),
+                Bold(Row(117, ("Zasady komunikacji", TitleLeft), ("Opis", TextLeft))),
+                Bold(Line("zmian", TitleLeft, 129)),
                 Row(160, ("Jak i kiedy", TitleLeft), ("1) Informację o zmianach przekażemy:", TextLeft)),
                 Line("przekażemy", TitleLeft, 172),
             ],
