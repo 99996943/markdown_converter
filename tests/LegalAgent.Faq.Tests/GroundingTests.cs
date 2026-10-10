@@ -53,6 +53,20 @@ public sealed class GroundingTests
         Assert.Null(FaqGrounding.Problem(Candidate("6", quote, "Każdy z posiadaczy."), markdown));
     }
 
+    /// <summary>Spec 007 (T041a): slash labels „1/”, „a/” of corporate regulations are labels too.</summary>
+    [Theory]
+    [InlineData("Odbiorca zobowiązuje się: składać dyspozycje polecenia zapłaty: jedynie w odniesieniu do Płatnika")]
+    [InlineData("Reklamacje może składać: w każdej jednostce organizacyjnej Banku, w formie pisemnej")]
+    public void QuoteAcrossSlashListItems_IgnoresLabels(string quote)
+    {
+        const string markdown =
+            "### § 10\n\nOdbiorca zobowiązuje się:\n\n- 1/ składać dyspozycje polecenia zapłaty:\n"
+            + "  - a/ jedynie w odniesieniu do Płatnika, od którego otrzymał zgodę,\n"
+            + "- 2\\. Reklamacje może składać:\n  - 1/ w każdej jednostce organizacyjnej Banku,\n  - 2/ w formie pisemnej,\n\n### § 11\n";
+
+        Assert.Null(FaqGrounding.Problem(Candidate("§ 10", quote, "Tak."), markdown));
+    }
+
     [Fact]
     public void UnknownUnit_IsProblem()
     {

@@ -171,7 +171,7 @@ biblioteki).
 | `TimeoutSeconds` | 300 | > 0 |
 | `Temperature` | 0 | null = nie wysyłaj; 0–2 |
 | `Seed` | 42 | null = nie wysyłaj |
-| `MaxOutputTokens` | 8192 (T067o; było 4096) | > 0 |
+| `MaxOutputTokens` | 16384 (spec 007 T041b; T067o: 8192, wcześniej 4096) | > 0 |
 
 Klucz **nie jest** polem konfiguracji. Jeśli w konfiguracji lub zmiennych pojawi się `AzureOpenAI:ApiKey`,
 aplikacja kończy się kodem 2 z komunikatem, że klucz podaje się tylko w konsoli lub potokiem. To zabezpieczenie

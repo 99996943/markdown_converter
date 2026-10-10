@@ -229,6 +229,15 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
 - **2026-10-10 — decyzje właściciela.** (1) Zmiana w korpusie syntetycznym `dz-u-2019-1781-ochrona-danych`
   **zaakceptowana** (tabela zastępcza z cytowanymi zmianami → tekst ciągły, `.md`, `.chunks.jsonl` i golden chunków
   jak w commicie 68202eb). Gałąź wypchnięta do PR. T038, T041 i otwarte punkty — po merge'u.
+- **2026-10-10 — T041 (SC-083) i T041a.** Przebieg FAQ właściciela (gpt-4.1-mini) na 5 dokumentach dla firm
+  (D-A, D-B, D-C, D-D + załącznik). Pierwszy przebieg szedł na starym `.exe` (zbudowanym przed spec 007; TBL001
+  132/58/79/16) — odrzucenia „jednostka nie występuje” w D1, D2, D3 („§ 5.”), wpis spisu treści jako jednostka w D4.
+  Po przebudowie: konwersja TBL001 5/0/0/0, **zero odrzuceń „jednostka … nie występuje”** (SC-083 spełnione),
+  kandydaci 26 → 38, FAQ 10/10. D3 przekroczyło `MaxOutputTokens` 8192 (8571 tokenów, nie pętla) — przebieg
+  z `FAQGEN__AzureOpenAI__MaxOutputTokens=16384`. Pozostałe odrzucenia cytatów: etykiety „1/”, „a/” nie były
+  pomijane przy porównaniu (D-B „§ 10”, „§ 12”, „§ 36”, D-C „§ 42”) — T041a: `FaqGrounding.ListLabel` obejmuje
+  etykiety ukośnikowe. Zostają cytaty, w które model wplata tekst nagłówka („§ 5 System…”, „III. PŁATNOŚCI…”). T041b (decyzja właściciela): domyślne
+  `AzureOpenAI:MaxOutputTokens` 16384 (`AppSettings`, `appsettings.json`, README, kontrakt CLI spec 006).
 
 ## Complexity Tracking
 

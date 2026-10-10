@@ -199,7 +199,10 @@ internal static partial class FaqGrounding
     [GeneratedRegex(@"^(\d+(\.\d+)*\.?\s|§|(art|rozdział|dział|część|oddział|tytuł|załącznik)\b)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
     private static partial Regex Designation();
 
-    /// <summary>A list label („1)”, „a)”, Markdown „1\)”), removed before comparing quotes (T067m).</summary>
-    [GeneratedRegex(@"(?<![\p{L}\p{N}])(\d{1,2}|\p{L})\\?\)", RegexOptions.CultureInvariant)]
+    /// <summary>
+    /// A list label („1)”, „a)”, Markdown „1\)”; slash labels „1/”, „1a/”, „a/”, spec 007), removed before comparing
+    /// quotes (T067m, T041a).
+    /// </summary>
+    [GeneratedRegex(@"(?<![\p{L}\p{N}])((\d{1,2}|\p{L})\\?\)|(\d{1,3}\p{Ll}?|\p{Ll}{1,2})/)", RegexOptions.CultureInvariant)]
     private static partial Regex ListLabel();
 }

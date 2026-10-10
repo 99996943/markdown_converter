@@ -435,7 +435,7 @@ kopiowany do katalogu wyjściowego) albo ustaw zmienną `FAQGEN__AzureOpenAI__En
 | `AzureOpenAI:TimeoutSeconds` | `300` | limit czasu jednego zapytania (bez ponowień) |
 | `AzureOpenAI:Temperature` | `0` | 0–2; `null` / pusta wartość = nie wysyłaj |
 | `AzureOpenAI:Seed` | `42` | `null` / pusta wartość = nie wysyłaj |
-| `AzureOpenAI:MaxOutputTokens` | `8192` | limit tokenów odpowiedzi (odpowiedź ucięta na limicie: kod 7 z komunikatem „odpowiedź ucięta”) |
+| `AzureOpenAI:MaxOutputTokens` | `16384` | limit tokenów odpowiedzi (odpowiedź ucięta na limicie: kod 7 z komunikatem „odpowiedź ucięta”) |
 | `Faq:OutputDirectory` | `faq` | katalog OKF z `FAQ_mBank.md` (`--faq-output` ma pierwszeństwo) |
 | `Faq:CandidatesPerDocument` | `10` | kandydaci na dokument, 1–30 |
 | `Faq:MaxDocumentTokens` | `100000` | limit szacowanych tokenów jednego dokumentu |

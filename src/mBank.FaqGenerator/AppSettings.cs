@@ -67,7 +67,7 @@ internal sealed class AzureOpenAiSettings
     public int? Seed { get; set; } = 42;
 
     /// <summary>Output token limit per request.</summary>
-    public int MaxOutputTokens { get; set; } = 8192;
+    public int MaxOutputTokens { get; set; } = 16384;
 }
 
 /// <summary>Section <c>Faq</c> (contracts/cli.md).</summary>
