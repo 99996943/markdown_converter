@@ -124,6 +124,8 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
   rozdział) dostaje poziom rozdziału + 1; pod nienumerowanym rodzicem — bez zmian (np. „A. Banki państwowe” → Art.) —
   w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/HeadingDetectionStageTests.cs`
 - [X] T021 [US1] Poziom w `AssignLevels` (green T020, R1a w pełni) w `HeadingDetectionStage.cs`
+- [X] T021a [US1] Replika (red) z D-C: nienumerowany śródtytuł (9 pt, zwykły) w numerowanym rozdziale nie zamyka
+  rozdziału; jego jednostki stoją poziom niżej niż śródtytuł; następny numerowany rozdział jest rodzeństwem (green)
 - [ ] T022 [P] [US1] Replika R1c (red): wyśrodkowany pogrubiony „§ 3. Porady ogólne” nad obszarem etykiet → jeden
   nagłówek z całym wierszem, oznaczenie „§ 3”, tytuł nie trafia do treści
 - [ ] T023 [US1] `LegalHeading` bez podziału reszty, gdy oznaczenie i reszta są pogrubione, tekst ciągły nie, a wiersz

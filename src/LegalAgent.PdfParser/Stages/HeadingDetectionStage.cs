@@ -539,9 +539,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 case SectionKind.Typographic when legalDocument:
                     // FR-043a: top level outside the legal structure, otherwise below the open section — but a numbered
                     // chapter („2. Rachunki…”, spec 007) is a sibling of the numbered chapter before it, not below its units.
-                    int sibling = i > 0 && NumberedChapter().IsMatch(h.Text)
-                        ? headings.FindLastIndex(i - 1, i, o => o.Kind == SectionKind.Typographic && NumberedChapter().IsMatch(o.Text))
-                        : -1;
+                    int sibling = i > 0 && IsNumberedChapter(h) ? headings.FindLastIndex(i - 1, i, IsNumberedChapter) : -1;
                     h.Level = sibling >= 0
                         ? headings[sibling].Level
                         : i < firstLegal || i > lastLegal || i == 0 ? 2 : Math.Min(MaxLevel, headings[i - 1].Level + 1);
@@ -567,17 +565,20 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         var open = new Stack<Detected>();
         foreach (Detected h in headings)
         {
-            while (open.Count > 0 && open.Peek().Rank >= h.Rank)
+            // Spec 007: an unnumbered subheading inside a numbered chapter („2. Rachunki…”) keeps the chapter open.
+            while (open.Count > 0 && open.Peek().Rank >= h.Rank
+                && !(legalDocument && h.Kind == SectionKind.Typographic && IsNumberedChapter(open.Peek()) && !IsNumberedChapter(h)))
             {
                 open.Pop();
             }
 
             if (open.Count > 0)
             {
-                // Spec 007 (FR-502): a unit under an open numbered chapter stands one level below it.
+                // Spec 007 (FR-502): a unit under a numbered chapter, or under a subheading of one, stands one level below
+                // that heading.
                 h.Level = h.Kind is SectionKind.Article or SectionKind.Paragraph
                     && open.Peek() is { Kind: SectionKind.Typographic } parent
-                    && NumberedChapter().IsMatch(parent.Text)
+                    && open.Any(IsNumberedChapter)
                     ? Math.Min(MaxLevel, parent.Level + 1)
                     : Math.Min(h.Level, open.Peek().Level + 1);
             }
@@ -596,6 +597,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             h.Level = Math.Min(MaxLevel, h.Level + 1);
         }
     }
+
+    private static bool IsNumberedChapter(Detected heading) =>
+        heading.Kind == SectionKind.Typographic && NumberedChapter().IsMatch(heading.Text);
 
     private static void Apply(List<Detected> headings)
     {
