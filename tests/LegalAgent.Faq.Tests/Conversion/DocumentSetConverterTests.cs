@@ -112,6 +112,47 @@ public sealed class DocumentSetConverterTests : IDisposable
     }
 
     [Fact]
+    public async Task ConvertAll_CorruptedAndTextless_OthersConverted_FailuresReported()
+    {
+        List<PdfSource> sources = WriteFive();
+        await File.WriteAllBytesAsync(sources[1].PdfPath, TestPdfs.Corrupted(), Ct);
+        await File.WriteAllBytesAsync(sources[3].PdfPath, TestPdfs.NoText(), Ct);
+        await File.WriteAllTextAsync(directory.Combine("stary.md"), "x", Ct);
+        var events = new List<ConversionEvent>();
+
+        ConversionRun run = await new DocumentSetConverter(Parser).ConvertAllAsync(sources, new SyncProgress(events), Ct);
+
+        Assert.False(run.AllSucceeded);
+        Assert.Equal([1, 3, 5], run.Documents.Select(d => d.Index));
+        Assert.Equal([(2, "reg-2.pdf"), (4, "reg-4.pdf")], run.Failures.Select(f => (f.Index, f.PdfFileName)));
+        Assert.All(run.Failures, f => Assert.False(string.IsNullOrWhiteSpace(f.Reason)));
+        Assert.Contains("uszkodzona", run.Failures[0].Reason, StringComparison.Ordinal);
+        Assert.Contains("warstwy tekstowej", run.Failures[1].Reason, StringComparison.Ordinal);
+        Assert.False(File.Exists(directory.Combine("reg-2.md")));
+        Assert.True(File.Exists(directory.Combine("reg-3.md")));
+        Assert.Equal(ConversionEventKind.Failed, events.Single(e => e.Index == 2 && e.Kind != ConversionEventKind.Started).Kind);
+        Assert.Empty(run.RemovedMarkdownFiles);
+        Assert.True(File.Exists(directory.Combine("stary.md")));
+    }
+
+    [Theory]
+    [InlineData(false, "# Tytuł\n\nTreść.\n", "część stron nie została przekonwertowana")]
+    [InlineData(true, "<!-- page: 1 -->\n\n<!-- page: 2 -->\n", "nie zawiera tekstu")]
+    public async Task ConvertAll_IncompleteOrEmptyResult_IsFailure(bool complete, string markdown, string reason)
+    {
+        List<PdfSource> sources = WriteFive();
+        var stub = new StubConverter(Parser, "reg-5.pdf", complete, markdown);
+
+        ConversionRun run = await new DocumentSetConverter(stub).ConvertAllAsync(sources, cancellationToken: Ct);
+
+        ConversionFailure failure = Assert.Single(run.Failures);
+        Assert.Equal(5, failure.Index);
+        Assert.Contains(reason, failure.Reason, StringComparison.Ordinal);
+        Assert.False(File.Exists(directory.Combine("reg-5.md")));
+        Assert.Equal(4, run.Documents.Count);
+    }
+
+    [Fact]
     public void UnitExtractor_CollectsNestedSectionsWithoutDuplicates()
     {
         Section paragraph = Section(SectionKind.Paragraph, "§ 1", "§ 1.");
@@ -144,6 +185,18 @@ public sealed class DocumentSetConverterTests : IDisposable
     private static CancellationToken Ct => TestContext.Current.CancellationToken;
 
     private static string Invariant(FormattableString text) => text.ToString(CultureInfo.InvariantCulture);
+
+    /// <summary>The real parser, except for one file whose result is replaced (incomplete or without text).</summary>
+    private sealed class StubConverter(IPdfMarkdownConverter real, string sourceId, bool complete, string markdown) : IPdfMarkdownConverter
+    {
+        public async Task<PdfConversionResult> ConvertAsync(Stream pdf, PdfConversionRequest? request = null, CancellationToken cancellationToken = default)
+        {
+            PdfConversionResult result = await real.ConvertAsync(pdf, request, cancellationToken);
+            return string.Equals(request?.SourceId, sourceId, StringComparison.Ordinal)
+                ? result with { Markdown = markdown, IsComplete = complete }
+                : result;
+        }
+    }
 
     private sealed class SyncProgress(List<ConversionEvent> events) : IProgress<ConversionEvent>
     {

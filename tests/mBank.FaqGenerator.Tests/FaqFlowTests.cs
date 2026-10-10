@@ -76,6 +76,23 @@ public sealed class FaqFlowTests : IDisposable
     }
 
     [Fact]
+    public async Task ConversionErrors_ExitCode5_OthersConverted_NoKeyNoRequests()
+    {
+        app.Http.Pdf(Urls[1], TestPdfs.Corrupted()).Pdf(Urls[3], TestPdfs.NoText());
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(5, run.Code);
+        Assert.Contains("Błąd konwersji reg-2.pdf: ", run.Err, StringComparison.Ordinal);
+        Assert.Contains("Błąd konwersji reg-4.pdf: ", run.Err, StringComparison.Ordinal);
+        Assert.Contains("Przekonwertowano 3 z 5 plików.", run.Out, StringComparison.Ordinal);
+        Assert.True(File.Exists(Path.Combine(app.OutputDirectory, "reg-5.md")));
+        Assert.Equal(0, app.Keys.Reads);
+        Assert.Empty(app.Model.Calls);
+        Assert.False(File.Exists(app.FaqFile));
+    }
+
+    [Fact]
     public async Task StaleMarkdown_IsRemoved_AndListed()
     {
         Directory.CreateDirectory(app.OutputDirectory);
