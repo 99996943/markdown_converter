@@ -130,6 +130,29 @@ Harmonogram: konsultacje dzień 3, implementacja do dnia 8, zamrożenie dni 9–
 - 2026-10-10: spec (z clarify: format słowniczka, reguła regresji 5+6 dokumentów, FR-534/SC-087), research R1–R5 na
   prawdziwych stronach D-A…D-D, data-model, kontrakt Markdown 1.2.0, quickstart. Następny krok: `/speckit-tasks`.
 - Dane pomiarowe i narzędzia sond (PdfPig) w scratchpadzie sesji — nie są częścią repozytorium.
+- 2026-10-10 (implementacja, T001–T006): prywatny korpus +15 dokumentów (`mbank-ind-1…5`, `mbank-corp-1…5`,
+  `mbank-firm-1…5`; D-A = corp-1, D-B = corp-2, D-C = corp-3, D-D = corp-5) z goldenami obecnego wyniku — prywatny
+  korpus zielony (19 dokumentów). `LayoutMetrics` (test pomocniczy) i raport miar w `PrivateCorpusTests`
+  (`LEGALAGENT_CORPUS_REPORT=1` → `layout-metrics.md` obok PDF-ów; kopia wyjściowa `layout-metrics.baseline.md`);
+  test `Category=Layout007` czerwony zgodnie z planem. Miary wyjściowe:
+
+  | Dokument | TBL001 | Wiersze „ \| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” |
+  |---|---|---|---|---|---|---|
+  | D-A (corp-1) | 132 | 1137 | 1155 | 154 | 0 | 0 |
+  | D-B (corp-2) | 16 | 142 | 149 | 36 | 9 | 0 |
+  | D-C (corp-3) | 58 | 552 | 566 | 123 | 0 | 0 |
+  | corp-4 | 0 | 0 | 0 | 0 | 0 | 0 |
+  | D-D (corp-5) | 79 | 665 | 642 | 15 | 0 | 0 |
+  | firm-1 | 3 | 76 | 0 | 0 | 0 | 6 |
+  | firm-2 | 2 | 17 | 34 | 0 | 0 | 0 |
+  | firm-3 | 0 | 0 | 0 | 0 | 0 | 0 |
+  | firm-4 | 0 | 0 | 7 | 0 | 0 | 0 |
+  | firm-5 | 1 | 2 | 0 | 0 | 0 | 0 |
+  | ind-1 | 0 | 0 | 0 | 0 | 0 | 0 |
+  | ind-2 | 7 | 62 | 0 | 0 | 0 | 35 |
+  | ind-3 | 0 | 0 | 1 | 0 | 0 | 0 |
+  | ind-4 | 6 | 82 | 0 | 0 | 0 | 0 |
+  | ind-5 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 ## Complexity Tracking
 

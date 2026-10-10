@@ -20,13 +20,13 @@ contracts/markdown-output.md, quickstart)
 
 ## Phase 1: Setup (punkt odniesienia)
 
-- [ ] T001 Skopiuj 15 PDF-ów z `publish/mBank.FaqGenerator-win-x64/{ind,corp,downloads}` do
+- [X] T001 Skopiuj 15 PDF-ów z `publish/mBank.FaqGenerator-win-x64/{ind,corp,downloads}` do
   `tests/LegalAgent.PdfParser.Tests/Corpus/private/` pod krótkimi nazwami `mbank-ind-1…5.pdf`, `mbank-corp-1…5.pdf`,
   `mbank-firm-1…5.pdf` (nazwy plików < 60 znaków; katalog jest poza git — sprawdź `git status`, że nic nie jest
   śledzone)
-- [ ] T002 Wygeneruj goldeny obecnego wyniku `mbank-*.expected.md` dla 15 dokumentów (CLI `legalagent-pdf convert`
+- [X] T002 Wygeneruj goldeny obecnego wyniku `mbank-*.expected.md` dla 15 dokumentów (CLI `legalagent-pdf convert`
   albo `UPDATE_GOLDEN=1` w `PrivateCorpusTests`) i uruchom prywatny korpus — wszystko zielone (punkt odniesienia)
-- [ ] T003 Utwórz nieśledzony plik `tests/LegalAgent.PdfParser.Tests/Corpus/private/layout-labels.txt` z nazwami
+- [X] T003 Utwórz nieśledzony plik `tests/LegalAgent.PdfParser.Tests/Corpus/private/layout-labels.txt` z nazwami
   dokumentów „układu etykiet” (D-A = zintegrowany rachunek, D-B = polecenie zapłaty, D-C = usługi gotówkowe, D-D =
   zasady współpracy) i progami SC-080 w formacie `nazwa;maxTbl001;maxPipeRows` (D-A 13;114, D-B 2;14, D-C 6;55, D-D
   8;67)
@@ -35,12 +35,12 @@ contracts/markdown-output.md, quickstart)
 
 ## Phase 2: Foundational (pomiar — blokuje wszystkie historie)
 
-- [ ] T004 [P] Test (red) pomocnika miar na krótkich ciągach Markdown i raporcie: `Tbl001`, `PipeRows`
+- [X] T004 [P] Test (red) pomocnika miar na krótkich ciągach Markdown i raporcie: `Tbl001`, `PipeRows`
   (wiersze z „ \| ”), `LooseLabelRows` (wiersz zaczynający się „N.”, „N/”, „x/”, także pogrubiony, poza elementem
   listy), `ParagraphText` (samodzielny wiersz „§ N” opcjonalnie pogrubiony, z tytułem, poza nagłówkiem),
   `TocHeadings`, `PageFooters` („N/M”) w `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/LayoutMetricsTests.cs`
-- [ ] T005 Pomocnik `LayoutMetrics` (green) w `tests/LegalAgent.PdfParser.Tests/Fixtures/LayoutMetrics.cs`
-- [ ] T006 Raport miar w `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs`: dla każdego dokumentu
+- [X] T005 Pomocnik `LayoutMetrics` (green) w `tests/LegalAgent.PdfParser.Tests/Fixtures/LayoutMetrics.cs`
+- [X] T006 Raport miar w `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs`: dla każdego dokumentu
   wypisz miary przy `LEGALAGENT_CORPUS_REPORT`; dla dokumentów z `layout-labels.txt` sprawdzaj progi SC-080 i
   `ParagraphText == 0` w osobnym teście z cechą `Category=Layout007` (dziś czerwony — oczekiwane do końca US1/US2;
   pozostałe testy prywatnego korpusu zielone). Zapisz wartości wyjściowe w handoffie planu
