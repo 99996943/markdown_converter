@@ -1,18 +1,62 @@
-# LegalAgent.PdfParser
+# Konwerter repozytorium regulaminów
 
-Biblioteka .NET 9 (z cienką aplikacją CLI) konwertująca pliki PDF z polskimi aktami prawnymi
-(ustawy, rozporządzenia, obwieszczenia z ISAP / Dziennika Ustaw) oraz regulaminami bankowymi na
-**ustrukturyzowany model dokumentu** i **Markdown** nadający się do dalszego przetwarzania (np. przez agenta AI).
-Wynik jest deterministyczny: te same bajty i opcje dają ten sam model, Markdown i raport (poza `Elapsed`).
+Aplikacja konsolowa **`mBank.FaqGenerator`** jednym poleceniem:
 
-Biblioteka **`LegalAgent.Chunking`** dzieli wynik parsera na **fragmenty dla aplikacji RAG** (jednostka = paragraf,
-artykuł, sekcja taryfy/procedury/tabeli-dokumentu) z metadanymi do indeksowania, cytowania i porównywania wersji —
-patrz [Podział na fragmenty](#podział-na-fragmenty-legalagentchunking).
+1. **pobiera 5 wskazanych regulaminów PDF** ze strony mBanku do `./downloads` (z `manifest.json` wiążącym pliki z
+   adresami),
+2. **konwertuje je do Markdown** (`<nazwa>.md` obok każdego PDF-u) własnym parserem dokumentów prawnych,
+3. **generuje plik FAQ** `faq/FAQ_mBank.md` (format OKF): 10 najważniejszych pytań i odpowiedzi, każda ze źródłem
+   (dokument i paragraf), przygotowanych przez model Azure OpenAI wyłącznie na podstawie treści regulaminów.
 
-Aplikacja konsolowa **`mBank.FaqGenerator`** (z biblioteką **`LegalAgent.Downloads`**) pobiera 5 publicznych
-regulaminów PDF ze strony mBanku do katalogu `./downloads` — patrz
-[Pobieranie regulaminów](#pobieranie-regulaminów-mbankfaqgenerator). Konwersja do Markdown i generowanie FAQ to
-kolejne etapy tej aplikacji (osobne specyfikacje).
+Rozwiązanie: .NET 9, biblioteki z całą logiką i cienka aplikacja; testy działają offline (atrapy HTTP, modelu i
+klawiatury). Specyfikacje i decyzje projektowe: `specs/`, zasady projektu: `.specify/memory/constitution.md`.
+
+## Szybki start
+
+```bash
+dotnet build LegalAgent.slnx -c Release
+
+# 1. Zasób Azure OpenAI (jednorazowo): skrypt albo portal — patrz „Generowanie FAQ” niżej
+scripts/azure/create-openai.sh
+
+# 2. Endpoint (nie jest sekretem) w src/mBank.FaqGenerator/appsettings.Local.json:
+#    { "AzureOpenAI": { "Endpoint": "https://<zasób>.openai.azure.com/", "Deployment": "<wdrożenie>", "Model": "<model>" } }
+
+# 3. Uruchomienie: 5 adresów PDF z mbank.pl; o klucz API aplikacja zapyta po konwersji (wpisywany jako gwiazdki)
+dotnet run --project src/mBank.FaqGenerator -c Release -- \
+  --url <adres1> --url <adres2> --url <adres3> --url <adres4> --url <adres5>
+```
+
+Wynik: `downloads/*.pdf`, `downloads/*.md`, `downloads/manifest.json` i `faq/FAQ_mBank.md`; kod wyjścia 0. Adresy
+można też wpisać do `Download:Urls` w `appsettings.json` (wtedy wystarczy samo `dotnet run`) albo podać w odpowiedzi
+na pytania aplikacji. Szczegóły: [Pobieranie regulaminów](#pobieranie-regulaminów-mbankfaqgenerator) i
+[Generowanie FAQ](#generowanie-faq-mbankfaqgenerator-legalagentfaq).
+
+## Struktura rozwiązania
+
+Jedna solucja `LegalAgent.slnx`:
+
+| Projekt | Rola |
+|---------|------|
+| `src/mBank.FaqGenerator` | **aplikacja zadania**: argumenty, konfiguracja, klucz API, konsola, kody wyjścia |
+| `src/LegalAgent.Downloads` | biblioteka pobierania listy PDF-ów (hosty, przekierowania, limity, zapis atomowy, manifest) |
+| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown |
+| `src/LegalAgent.Faq` | biblioteka konwersji zestawu PDF-ów i generowania FAQ (dwa kroki, walidacja, renderer OKF) |
+| `src/LegalAgent.PdfParser.Cli` | CLI parsera (`legalagent-pdf`: `convert`, `chunk`) |
+| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG |
+| `src/LegalAgent.Corpus`, `src/LegalAgent.Corpus.Cli` | generator syntetycznego korpusu dokumentów bankowych |
+| `scripts/azure/create-openai.sh` | utworzenie zasobu i wdrożenia Azure OpenAI |
+| `tests/*` | osobny projekt testów dla każdej biblioteki i aplikacji |
+
+Biblioteki są ogólne: nie znają mBanku ani Azure (adresy, hosty, tytuł FAQ i konektor modelu należą do aplikacji).
+
+## Parser PDF (`LegalAgent.PdfParser`)
+
+Biblioteka konwertuje pliki PDF z polskimi aktami prawnymi (ustawy, rozporządzenia, obwieszczenia z ISAP / Dziennika
+Ustaw) oraz regulaminami bankowymi na **ustrukturyzowany model dokumentu** i **Markdown** nadający się do dalszego
+przetwarzania (np. przez agenta AI). Wynik jest deterministyczny: te same bajty i opcje dają ten sam model, Markdown i
+raport (poza `Elapsed`). Biblioteka **`LegalAgent.Chunking`** dzieli wynik parsera na **fragmenty dla aplikacji RAG**
+— patrz [Podział na fragmenty](#podział-na-fragmenty-legalagentchunking).
 
 ## Co robi
 
@@ -353,6 +397,14 @@ scripts/azure/create-openai.sh --help     # parametry: --resource-group, --locat
 Skrypt jest idempotentny (drugie uruchomienie niczego nie tworzy), nie odczytuje klucza i na końcu wypisuje fragment
 `appsettings.Local.json` oraz zmienne `FAQGEN__AzureOpenAI__…`. Na Windows uruchom go w Git Bash.
 
+**Przez portal Azure** (zamiast skryptu):
+1. Utwórz zasób **Azure OpenAI** (warstwa `Standard S0`, dostęp ze wszystkich sieci).
+2. W portalu Foundry wybierz **Wdrożenia → Wdróż model bazowy**, np. `gpt-4.1-mini` (`Global Standard`), i ustaw
+   jak najwyższy limit tokenów na minutę. Pierwsze zapytanie wysyła cały regulamin (~50 tys. tokenów), a aplikacja
+   nie ponawia zapytań po błędzie 429.
+3. Z **Klucze i punkt końcowy** skopiuj punkt końcowy do `appsettings.Local.json`, a nazwę wdrożenia wpisz w
+   `Deployment`. Klucz wkleisz dopiero na pytanie aplikacji.
+
 **Model:** domyślnie `gpt-4o-mini` w wersji `2024-07-18`. Ma on w Azure status *Deprecated* (wycofanie 2027-04-14):
 subskrypcja, która nigdy go nie wdrażała, nie utworzy nowego wdrożenia. Skrypt sprawdza to przed utworzeniem zasobu
 i kończy się kodem 4 z podpowiedzią, np.:
@@ -446,17 +498,12 @@ regulaminy, taryfy i procedury wewnętrzne w wielu wersjach, dokumenty nieaktual
 (`corpus/manifest.json`) opisuje zmiany między wersjami, pary sprzeczności i rodzaje zatruć. Korpus służy do testowania
 konwersji PDF → Markdown (`LegalAgent.PdfParser`) oraz aplikacji RAG. Pełna instrukcja: [`corpus/README.md`](corpus/README.md).
 
-Projekty w solucji (`LegalAgent.slnx`):
+Projekty korpusu (pełna lista: [Struktura rozwiązania](#struktura-rozwiązania)):
 
 | Projekt | Rola |
 |---------|------|
-| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown |
-| `src/LegalAgent.PdfParser.Cli` | aplikacja CLI parsera (`legalagent-pdf`: `convert`, `chunk`) |
-| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG |
 | `src/LegalAgent.Corpus` | generator korpusu syntetycznego (PDF, manifest, czcionki) |
 | `src/LegalAgent.Corpus.Cli` | CLI generatora: `generate`, `refresh`, `verify`, `check` |
-| `tests/LegalAgent.PdfParser.Tests` | testy parsera i CLI |
-| `tests/LegalAgent.Chunking.Tests` | testy podziału na fragmenty |
 | `tests/LegalAgent.Corpus.Tests` | testy generatora i jakości korpusu |
 
 ```bash
