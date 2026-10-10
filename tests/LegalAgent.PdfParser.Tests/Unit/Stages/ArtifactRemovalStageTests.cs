@@ -266,4 +266,138 @@ public sealed class ArtifactRemovalStageTests
             Make().Report.Build(6, TimeSpan.Zero).RemovedArtifacts.Select(a => a.Pattern),
             Make().Report.Build(6, TimeSpan.Zero).RemovedArtifacts.Select(a => a.Pattern));
     }
+
+    // Spec 008 (US1, FR-600 – FR-602): stand-alone "N/M" page numbers just above the margin zone.
+    // A4 height 842: the footer zone starts at 0.92 H = 774.6; a footer line at top 762 lies at ≈ 0.905 H.
+    private const double BandFooterTop = 762;
+
+    // Below the header zone (bottom > 0.08 H = 67.4) but in the 0.15 H top band, above the body lines.
+    private const double BandHeaderTop = 80;
+
+    private static LayoutLine BandFooter(string text) => RightAligned(text, 523, BandFooterTop);
+
+    private static List<ArtifactSummary> PageNumberArtifacts(PipelineContext context, int pageCount) =>
+        context.Report.Build(pageCount, TimeSpan.Zero).RemovedArtifacts.Where(a => a.Kind == ArtifactKind.PageNumber).ToList();
+
+    // (a)
+    [Fact]
+    public void SlashPageNumbersAboveFooterZone_OnLowestLine_AreRemoved()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1 ? Body(n) : Body(n).Append(BandFooter($"{N(n)}/3"))));
+
+        Assert.DoesNotContain(AllLineTexts(context), t => t is "2/3" or "3/3");
+        AssertBodyKept(context);
+        ArtifactSummary summary = Assert.Single(PageNumberArtifacts(context, 3));
+        Assert.Equal([2, 3], summary.Pages);
+        Assert.Equal(2, summary.Occurrences);
+    }
+
+    // (b)
+    [Fact]
+    public void SlashPageNumbersBelowHeaderZone_OnTopmostLine_AreRemoved()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1
+            ? Body(n)
+            : Body(n).Append(RightAligned($"{N(n)}/3", 523, BandHeaderTop))));
+
+        Assert.DoesNotContain(AllLineTexts(context), t => t is "2/3" or "3/3");
+        AssertBodyKept(context);
+        Assert.Equal([2, 3], Assert.Single(PageNumberArtifacts(context, 3)).Pages);
+    }
+
+    // (c)
+    [Fact]
+    public void SlashNumbersWhoseTotalIsNotThePageCount_AreKept()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1 ? Body(n) : Body(n).Append(BandFooter($"{N(n)}/5"))));
+
+        Assert.Contains("2/5", AllLineTexts(context));
+        Assert.Contains("3/5", AllLineTexts(context));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (d)
+    [Fact]
+    public void SlashNumberOnASinglePage_IsKept()
+    {
+        PipelineContext context = Run(Document(3, n => n == 2 ? Body(n).Append(BandFooter("2/3")) : Body(n)));
+
+        Assert.Contains("2/3", AllLineTexts(context));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (e)
+    [Fact]
+    public void SlashNumbersNotFollowingThePages_AreKept()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1 ? Body(n) : Body(n).Append(BandFooter("2/3"))));
+
+        Assert.Equal(2, AllLineTexts(context).Count(t => t == "2/3"));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (f)
+    [Fact]
+    public void SlashNumberThatIsNotTheLowestLine_IsKept()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1
+            ? Body(n)
+            : Body(n).Append(BandFooter($"{N(n)}/3")).Append(Line($"Uwaga końcowa strony {N(n)}.", 72, 780))));
+
+        Assert.Contains("2/3", AllLineTexts(context));
+        Assert.Contains("3/3", AllLineTexts(context));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (f)
+    [Fact]
+    public void SlashNumberSharingItsHeightWithAnotherLine_IsKept()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1
+            ? Body(n)
+            : Body(n).Append(BandFooter($"{N(n)}/3")).Append(Line($"Przypis strony {N(n)}.", 72, BandFooterTop))));
+
+        Assert.Contains("2/3", AllLineTexts(context));
+        Assert.Contains("3/3", AllLineTexts(context));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (g) protective: passes before and after the fix.
+    [Theory]
+    [InlineData("1/2 kwoty")]
+    [InlineData("12/2024")]
+    [InlineData("1/ tekst")]
+    public void SlashTextsThatAreNotPageNumbers_AreKept(string text)
+    {
+        PipelineContext context = Run(Document(3, n => Body(n)
+            .Append(Line(text, 72, 300))
+            .Append(Line(text, 72, BandFooterTop))));
+
+        Assert.Equal(6, AllLineTexts(context).Count(t => t == text));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (h) protective: passes before and after the fix.
+    [Fact]
+    public void SlashNumberInsideALongerFooterLine_IsUnchanged()
+    {
+        PipelineContext context = Run(Document(3, n => n == 1
+            ? Body(n)
+            : Body(n).Append(BandFooter($"Regulamin rachunków {N(n)}/3"))));
+
+        Assert.Contains("Regulamin rachunków 2/3", AllLineTexts(context));
+        Assert.Contains("Regulamin rachunków 3/3", AllLineTexts(context));
+        Assert.Empty(PageNumberArtifacts(context, 3));
+    }
+
+    // (i)
+    [Fact]
+    public void SlashPageNumbersWithGapsInTheSequence_AreRemoved()
+    {
+        PipelineContext context = Run(Document(5, n => n is 2 or 3 or 5 ? Body(n).Append(BandFooter($"{N(n)}/5")) : Body(n)));
+
+        Assert.DoesNotContain(AllLineTexts(context), t => t.EndsWith("/5", StringComparison.Ordinal));
+        AssertBodyKept(context);
+        Assert.Equal([2, 3, 5], Assert.Single(PageNumberArtifacts(context, 5)).Pages);
+    }
 }

@@ -78,6 +78,12 @@ public sealed class ArtifactOptions
     /// <summary>Remove page numbers.</summary>
     public bool RemovePageNumbers { get; set; } = true;
 
+    /// <summary>
+    /// Fraction of page height at the top and bottom searched for stand-alone "N/M" page numbers that lie
+    /// outside the margin zones (spec 008, FR-600).
+    /// </summary>
+    public double PageNumberBandRatio { get; set; }
+
     internal ArtifactOptions Clone() => (ArtifactOptions)MemberwiseClone();
 }
 
