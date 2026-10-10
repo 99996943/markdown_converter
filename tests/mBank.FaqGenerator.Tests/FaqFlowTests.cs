@@ -109,6 +109,24 @@ public sealed class FaqFlowTests : IDisposable
     }
 
     [Fact]
+    public async Task DroppedCandidate_IsPrinted()
+    {
+        app.Model.Respond(FaqJson.Candidates(
+            FaqJson.Candidate("D1", 1),
+            FaqJson.Candidate("D1", 2),
+            FaqJson.Candidate("D1", 3),
+            new CandidateJson("Zmyślone?", "Tak.", "", "tego zdania nie ma w dokumencie")));
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        Assert.Contains(
+            "[D1] pominięto kandydata D1-K4: cytat nie występuje w dokumencie D1\n[D1] 3 kandydatów",
+            run.Out.ReplaceLineEndings("\n"),
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public async Task UnknownUsage_IsReportedAsUnknown()
     {
         app.Model.FallbackUsage = null;

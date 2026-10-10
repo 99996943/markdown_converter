@@ -21,6 +21,9 @@ public sealed class PromptTests
         Assert.Contains("co najwyżej 7", system, StringComparison.Ordinal);
         Assert.Contains("z listy „Jednostki dokumentu”", system, StringComparison.Ordinal);
         Assert.Contains("pusty tekst", system, StringComparison.Ordinal);
+        Assert.Contains("„quote”", system, StringComparison.Ordinal);
+        Assert.Contains("dosłownie", system, StringComparison.Ordinal);
+        Assert.Contains("\"quote\"", FaqSchemas.Candidates, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -30,7 +33,7 @@ public sealed class PromptTests
 
         string user = (await RunAsync(candidates: 7, units)).Calls[0].User;
 
-        int markdown = user.IndexOf("Treść.", StringComparison.Ordinal);
+        int markdown = user.IndexOf("Treść dokumentu testowego.", StringComparison.Ordinal);
         int list = user.IndexOf("Jednostki dokumentu D1", StringComparison.Ordinal);
         Assert.True(markdown >= 0 && list > markdown, user);
         Assert.Contains("\n- Rozdział 1\n- 6. Jakie informacje musisz podać, gdy składasz zlecenie płatnicze?\n", user, StringComparison.Ordinal);
@@ -55,6 +58,7 @@ public sealed class PromptTests
         Assert.Contains("połączyć", system, StringComparison.Ordinal);
         Assert.Contains("faktów, których nie ma w kandydatach", system, StringComparison.Ordinal);
         Assert.Contains("basedOn", system, StringComparison.Ordinal);
+        Assert.Contains("jednej sprawy", system, StringComparison.Ordinal);
         Assert.DoesNotContain("sources", system, StringComparison.Ordinal);
         Assert.DoesNotContain("sources", FaqSchemas.Selection, StringComparison.Ordinal);
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
@@ -72,8 +76,8 @@ public sealed class PromptTests
             (_, _) => new PromptExecutionSettings());
         FaqDocumentInput[] documents =
         [
-            new("A", new Uri("https://example.test/a.pdf"), "# A\n\nTreść.\n", units ?? []),
-            new("B", new Uri("https://example.test/b.pdf"), "# B\n\nTreść.\n", []),
+            new("A", new Uri("https://example.test/a.pdf"), "# A\n\nTreść dokumentu testowego.\n", units ?? []),
+            new("B", new Uri("https://example.test/b.pdf"), "# B\n\nTreść dokumentu testowego.\n", []),
         ];
         await generator.GenerateAsync(documents, cancellationToken: TestContext.Current.CancellationToken);
         return chat;

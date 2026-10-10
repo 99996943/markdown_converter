@@ -11,16 +11,16 @@ public sealed class ResponseParserTests
     public void Candidates_GetIdsInResponseOrder()
     {
         string json = FaqJson.Candidates(
-            new CandidateJson("Ile kosztuje karta?", "10 zł.", "§ 3"),
-            new CandidateJson("Jak zamknąć rachunek?", "Pisemnie.", ""));
+            new CandidateJson("Ile kosztuje karta?", "10 zł.", "§ 3", "Opłata za kartę wynosi 10 zł."),
+            new CandidateJson("Jak zamknąć rachunek?", "Pisemnie.", "", "Umowę wypowiadasz na piśmie."));
 
         Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(json, "D2");
 
         Assert.Null(parsed.Problem);
         Assert.Equal(
             [
-                new FaqCandidate("D2-K1", "D2", "Ile kosztuje karta?", "10 zł.", "§ 3"),
-                new FaqCandidate("D2-K2", "D2", "Jak zamknąć rachunek?", "Pisemnie.", null),
+                new FaqCandidate("D2-K1", "D2", "Ile kosztuje karta?", "10 zł.", "§ 3", "Opłata za kartę wynosi 10 zł."),
+                new FaqCandidate("D2-K2", "D2", "Jak zamknąć rachunek?", "Pisemnie.", null, "Umowę wypowiadasz na piśmie."),
             ],
             parsed.Value);
     }
@@ -62,7 +62,9 @@ public sealed class ResponseParserTests
     [InlineData("{\"candidates\":[{\"answer\":\"O.\",\"unit\":\"\"}]}")]
     [InlineData("{\"candidates\":[{\"question\":5,\"answer\":\"O.\",\"unit\":\"\"}]}")]
     [InlineData("{\"candidates\":[{\"question\":\"P?\",\"answer\":\"O.\",\"unit\":null}]}")]
-    [InlineData("{\"candidates\":[{\"question\":\"P?\",\"answer\":\"O.\",\"unit\":\"\",\"extra\":1}]}")]
+    [InlineData("{\"candidates\":[{\"question\":\"P?\",\"answer\":\"O.\",\"unit\":\"\",\"quote\":\"a b c\",\"extra\":1}]}")]
+    [InlineData("{\"candidates\":[{\"question\":\"P?\",\"answer\":\"O.\",\"unit\":\"\"}]}")]
+    [InlineData("{\"candidates\":[{\"question\":\"P?\",\"answer\":\"O.\",\"unit\":\"\",\"quote\":null}]}")]
     [InlineData("Oto wynik: {\"candidates\":[]}")]
     [InlineData("{\"candidates\":[]} Gotowe.")]
     [InlineData("```json\n{\"candidates\":[]}\n```")]

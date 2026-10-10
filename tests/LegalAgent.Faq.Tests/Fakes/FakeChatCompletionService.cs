@@ -103,10 +103,17 @@ internal sealed class FakeChatCompletionService : IChatCompletionService
                 }
 
                 var metadata = FallbackUsage is null ? null : new Dictionary<string, object?> { ["Usage"] = FallbackUsage };
-                return [new ChatMessageContent(AuthorRole.Assistant, Fallback(calls.Last()), "fake-model", null, null, metadata)];
+                ChatCall call = calls.Last();
+                return [new ChatMessageContent(AuthorRole.Assistant, FaqJson.ReplaceQuote(Fallback(call), call.User), "fake-model", null, null, metadata)];
             }
 
-            return [await step(cancellationToken).ConfigureAwait(false)];
+            ChatMessageContent message = await step(cancellationToken).ConfigureAwait(false);
+            if (message.Content is { } content)
+            {
+                message.Content = FaqJson.ReplaceQuote(content, calls.Last().User);
+            }
+
+            return [message];
         }
         finally
         {

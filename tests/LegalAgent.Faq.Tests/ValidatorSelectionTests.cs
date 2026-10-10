@@ -11,6 +11,7 @@ public sealed class ValidatorSelectionTests
         new("D2-K1", "D2", "P3?", "O3.", "Art. 5"),
         new("D3-K1", "D3", "P4?", "O4.", null),
         new("D1-K3", "D1", "P5?", "O5.", "§ 1"),
+        new("D2-K2", "D2", "P6?", "O6.", null, "Opłata wynosi 30 zł miesięcznie"),
     ];
 
     [Fact]
@@ -104,6 +105,26 @@ public sealed class ValidatorSelectionTests
         Assert.Equal(["pozycja 2: kandydat D1-K9 nie istnieje"], e.Problems);
     }
 
+    [Fact]
+    public void NumberOutsideBasedOnCandidates_Rejected()
+    {
+        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
+            [
+                Item(1) with { Answer = "Opłata wynosi 30 zł, a O1 to zasada." },
+                Item(2) with { BasedOn = ["D2-K2"], Answer = "Opłata wynosi 30 zł (O6)." },
+                Item(3) with { Answer = "Masz na to 14 dni." },
+            ],
+            Candidates,
+            3));
+
+        Assert.Equal(
+            [
+                "pozycja 1: liczba „30” nie występuje w kandydatach basedOn",
+                "pozycja 3: liczba „14” nie występuje w kandydatach basedOn",
+            ],
+            e.Problems);
+    }
+
     private static ParsedItem Item(int i) =>
-        new($"Pytanie końcowe {i}?", $"Odpowiedź końcowa {i}.", [i == 1 ? "D1-K1" : "D1-K2"]);
+        new($"Pytanie końcowe {i}?", "Odpowiedź końcowa.", [i == 1 ? "D1-K1" : "D1-K2"]);
 }

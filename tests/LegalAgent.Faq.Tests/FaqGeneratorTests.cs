@@ -32,7 +32,7 @@ public sealed class FaqGeneratorTests
     [Fact]
     public async Task Generate_SelectionMessageListsDocumentsAndCandidatesWithoutDocumentText()
     {
-        chat.Respond(FaqJson.Candidates(new CandidateJson("Ile kosztuje karta?", "10 zł.", "§ 1"), new CandidateJson("Czy jest limit?", "Nie.")));
+        chat.Respond(FaqJson.Candidates(new CandidateJson("Ile kosztuje karta?", "Dziesięć złotych.", "§ 1"), new CandidateJson("Czy jest limit?", "Nie.")));
         for (int i = 2; i <= 5; i++)
         {
             chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
@@ -47,7 +47,7 @@ public sealed class FaqGeneratorTests
             "Dokumenty:\nD1: Regulamin 1 — https://example.test/pdf/reg-1.pdf\nD2: Regulamin 2 — https://example.test/pdf/reg-2.pdf\n",
             user,
             StringComparison.Ordinal);
-        Assert.Contains("\n\nKandydaci:\n[D1-K1] (D1, § 1) Pytanie: Ile kosztuje karta? | Odpowiedź: 10 zł.\n", user, StringComparison.Ordinal);
+        Assert.Contains("\n\nKandydaci:\n[D1-K1] (D1, § 1) Pytanie: Ile kosztuje karta? | Odpowiedź: Dziesięć złotych.\n", user, StringComparison.Ordinal);
         Assert.Contains("[D1-K2] (D1) Pytanie: Czy jest limit? | Odpowiedź: Nie.\n", user, StringComparison.Ordinal);
         Assert.Contains("[D5-K2] (D5) Pytanie: Pytanie 2 o dokument D5?", user, StringComparison.Ordinal);
         Assert.DoesNotContain("Treść dokumentu", user, StringComparison.Ordinal);
@@ -161,6 +161,43 @@ public sealed class FaqGeneratorTests
         }
 
         chat.Respond(FaqJson.Selection(10, 5));
+    }
+
+    [Fact]
+    public async Task Generate_DropsUngroundedCandidate_AndReportsIt()
+    {
+        chat.Respond(FaqJson.Candidates(
+            FaqJson.Candidate("D1", 1),
+            FaqJson.Candidate("D1", 2),
+            new CandidateJson("Ile kosztuje karta?", "Karta kosztuje 99 zł.", "§ 1")));
+        for (int i = 2; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        chat.Respond(FaqJson.Selection(10, 5));
+        var events = new List<FaqEvent>();
+
+        FaqResult result = await Generator().GenerateAsync(Documents(), new SyncProgress(events), Ct);
+
+        Assert.DoesNotContain(result.Candidates, c => c.Id == "D1-K3");
+        FaqEvent dropped = Assert.Single(events, e => e.Kind == FaqEventKind.CandidateDropped);
+        Assert.Equal("D1", dropped.DocumentId);
+        Assert.Equal("kandydat D1-K3: liczba „99” nie występuje w jednostce „§ 1”", dropped.Detail);
+        Assert.Equal(2, events.First(e => e.Kind == FaqEventKind.CandidatesFinished).Count);
+    }
+
+    [Fact]
+    public async Task Generate_AllCandidatesOfDocumentDropped_RejectsResponse()
+    {
+        chat.Respond(FaqJson.Candidates(new CandidateJson("Zmyślone?", "Tak.", "", "tego zdania nie ma w dokumencie")));
+
+        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generator().GenerateAsync(Documents(), cancellationToken: Ct));
+
+        Assert.Equal(FaqStep.Candidates, e.Step);
+        Assert.Equal("D1", e.DocumentId);
+        Assert.Equal(["kandydat D1-K1: cytat nie występuje w dokumencie D1"], e.Problems);
+        Assert.Single(chat.Calls);
     }
 
     private static string Markdown(int i) =>
