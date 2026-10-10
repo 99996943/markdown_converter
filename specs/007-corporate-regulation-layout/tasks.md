@@ -169,19 +169,20 @@ pogrubiony 59,5 wyśrodkowany pionowo; definicja 187,1, 5 wierszy z „a/”, �
 dzielone 39,7–181,4 i 181,4–555,6 pod każdym wpisem) w
 `tests/LegalAgent.PdfParser.Tests/Integration/GlossaryLayoutTests.cs`.
 
-- [ ] T030 [P] [US3] Replika R3 (red) z trzema wpisami (wyliczenie w definicji, krótki wpis „2/ Bank”, zawinięty termin)
+- [X] T030 [P] [US3] Replika R3 (red) z trzema wpisami (wyliczenie w definicji, krótki wpis „2/ Bank”, zawinięty termin)
   i wariant z etykietami „1.”; oczekiwany wynik z `contracts/markdown-output.md` (słowniczek), bez TBL001
-- [ ] T031 [P] [US3] Test kontrolny: taryfa z kolumną „Lp.” („1.”, „2.”) i siatką pozostaje tabelą GFM
-- [ ] T032 [US3] Adnotacje `deflist.entry` (numer wpisu od 1) i `deflist.side` (`term` / `definition`) w
+- [X] T031 [P] [US3] Test kontrolny: taryfa z kolumną „Lp.” („1.”, „2.”) i siatką pozostaje tabelą GFM
+- [X] T032 [US3] Adnotacje `deflist.entry` (numer wpisu od 1) i `deflist.side` (`term` / `definition`) w
   `src/LegalAgent.PdfParser/Layout/LayoutAnnotations.cs`
-- [ ] T033 [US3] Rozpoznanie słowniczka w `TableDetectionStage.cs`: region bez linii pionowych z ≥ 2 liniami
+- [X] T033 [US3] Rozpoznanie słowniczka w `TableDetectionStage.cs`: region bez linii pionowych z ≥ 2 liniami
   poziomymi dzielonymi na wspólnym x, lewa strona każdego wpisu = etykieta (`ArabicSlash`, `ArabicDot`,
   `ArabicParen`) + pogrubiony termin; wpis = pas między liniami, pierwszy od wiersza przecinającego granicę kolumn
   (albo poprzedzającego nagłówka), strona bez górnej linii kontynuuje wpis; wiersze dostają adnotacje zamiast roli
   `Table`
-- [ ] T034 [US3] Kolejność w `src/LegalAgent.PdfParser/Stages/ReadingOrderStage.cs`: wiersze `term` wpisu, potem
-  `definition` w kolejności y
-- [ ] T035 [US3] Budowa elementu w `ListDetectionStage.cs`: etykieta, pogrubiony termin (zawinięcia złączone), spacja,
+- [X] T034 [US3] Kolejność w `src/LegalAgent.PdfParser/Stages/ReadingOrderStage.cs`: wiersze `term` wpisu, potem
+  `definition` w kolejności y (wykonane: kolejność ustala `GlossaryDetection` przy oznaczaniu wpisu; ReadingOrder wyłącza
+  wiersze `deflist.*` z wykrywania kolumn, więc ich nie przestawia)
+- [X] T035 [US3] Budowa elementu w `ListDetectionStage.cs`: etykieta, pogrubiony termin (zawinięcia złączone), spacja,
   definicja; wyliczenia definicji zagnieżdżone (logika US2) (green T030, T031)
 - [ ] T036 [US3] Pełna kontrola regresji (FR-534); SC-086 sprawdzone na słowniczkach D-A…D-D (D-A ma dwa: s. 4 i
   20–21); przegląd różnic i aktualizacja goldenów D-A…D-D po akceptacji

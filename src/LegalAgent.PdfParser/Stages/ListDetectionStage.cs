@@ -131,7 +131,8 @@ public sealed class ListDetectionStage : IPipelineStage
                 entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out LegalUnitMatch? unit)
                     && (!unit.Bare
                         || (IsHeadingLike(line, bodySize, sizeRatio) && (isolated || line.Box.Left - columnLeft > CenteredIndentRatio * page.Width)));
-                entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
+                // Spec 007: a glossary term („1/ **termin**”) is bold but starts a list item, never a heading.
+                entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio) && !line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry);
                 entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);
                 entry.FirstOnPage = above is null;
                 if (!entry.LegalUnit
@@ -196,7 +197,8 @@ public sealed class ListDetectionStage : IPipelineStage
                 && next.Label is null
                 && next.Line.Baseline - entry.Line.Baseline <= gapFactor * leading
                 && StartsLowercase(next.Line.Text);
-            if (label.Kind is ListLabelKind.ArabicParen or ListLabelKind.LetterParen or ListLabelKind.Dash or ListLabelKind.Bullet
+            if (label.Kind is ListLabelKind.ArabicParen or ListLabelKind.LetterParen or ListLabelKind.ArabicSlash or ListLabelKind.LetterSlash
+                    or ListLabelKind.Dash or ListLabelKind.Bullet
                 || runsOn)
             {
                 entry.HeadingLike = false;
@@ -581,6 +583,13 @@ public sealed class ListDetectionStage : IPipelineStage
             if (entry.Page != _previous.Page)
             {
                 return entry.Page.Number == _previous.Page.Number + 1;
+            }
+
+            // Spec 007: a glossary puts each term before its definition (and rulings between entries) — its lines
+            // follow each other whatever the spacing.
+            if (entry.Line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry) && _previous.Line.Annotations.ContainsKey(LayoutAnnotations.DefListEntry))
+            {
+                return true;
             }
 
             // FR-031: from the bottom of one column to the top of the next, like a page break.

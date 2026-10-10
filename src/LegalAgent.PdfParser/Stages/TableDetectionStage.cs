@@ -54,6 +54,9 @@ public sealed class TableDetectionStage : IPipelineStage
             return;
         }
 
+        // Spec 007: glossaries (term | definition, rulings split at the column boundary) become lists, not tables.
+        GlossaryDetection.Mark(context);
+
         string[] hyphenationExceptions = context.Options.Normalization.HyphenationExceptions.ToArray();
         var tables = new List<Table>();
         foreach (LayoutPage page in context.Pages)
@@ -235,7 +238,7 @@ public sealed class TableDetectionStage : IPipelineStage
         double tolerance = options.ColumnTolerance * page.Width;
         double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * page.Width;
         List<Row> flow = page.Lines
-            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && (inTableDocumentCell || !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
+            .Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0 && !l.Annotations.ContainsKey(LayoutAnnotations.StepIndex) && !l.Annotations.ContainsKey(LayoutAnnotations.DefListEntry) && (inTableDocumentCell || !l.Annotations.ContainsKey(LayoutAnnotations.TableDocumentIndex)))
             .Where(inScope)
             .Select(l => new Row(l, CellsOf(l), wideCell))
             .ToList();

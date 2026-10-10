@@ -50,6 +50,21 @@ public static class LayoutAnnotations
     /// <summary>Number of the step (invariant integer, from 1 within a scheme) on <see cref="LineRole.StepTitle"/> lines.</summary>
     public const string StepNumber = "step.number";
 
+    /// <summary>
+    /// Document-wide number (invariant integer, from 1) of the glossary entry a line belongs to (spec 007, FR-520); set by
+    /// table detection instead of making the glossary a table.
+    /// </summary>
+    public const string DefListEntry = "deflist.entry";
+
+    /// <summary>Side of a glossary entry a line belongs to: <see cref="DefListTerm"/> or <see cref="DefListDefinition"/>.</summary>
+    public const string DefListSide = "deflist.side";
+
+    /// <summary>Value of <see cref="DefListSide"/>: the label and the term.</summary>
+    public const string DefListTerm = "term";
+
+    /// <summary>Value of <see cref="DefListSide"/>: the definition.</summary>
+    public const string DefListDefinition = "definition";
+
     /// <summary>Stores a coordinate annotation in invariant round-trip format.</summary>
     public static void SetNumber(LayoutLine line, string key, double value)
     {
