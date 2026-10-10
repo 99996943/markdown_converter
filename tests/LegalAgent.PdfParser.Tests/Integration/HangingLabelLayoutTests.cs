@@ -97,6 +97,80 @@ public sealed class HangingLabelLayoutTests
         Assert.Equal(0, result.Report.TableCount);
     }
 
+    /// <summary>
+    /// T012a — a long run of ustępy „9.”–„14.” with wrapped lines and two-digit labels, then an ustęp with points „1/”
+    /// and letters „a/”: four label columns on one page are still one list, not a fallback table.
+    /// </summary>
+    [Fact]
+    public async Task Long_run_of_usteps_with_points_and_letters_is_not_a_table()
+    {
+        string[] sentences =
+        [
+            "Klient może odwołać złożoną dyspozycję pod warunkiem, że Bank potwierdzi jej odwołanie przed upływem terminu jej ważności,",
+            "Strony mogą uzgodnić warunki inne niż wskazane w opisie usługi, ale muszą to wyraźnie określić przy zawieraniu umowy oraz",
+            "Jeżeli przepisy wymagają rozliczenia transakcji przez izbę rozliczeniową, Strony uzgadniają wybór izby przed zawarciem",
+            "Strony mogą określić warunki transakcji w sposób odmienny od opisu, jeżeli opis nie obejmuje wszystkich elementów umowy,",
+            "Osobami uprawnionymi do składania dyspozycji w imieniu Klienta są osoby wskazane w karcie informacyjnej Klienta, a także",
+            "Pełnomocnictwo musi być udzielone na piśmie albo w systemie bankowości elektronicznej, w sposób określony w umowie, oraz",
+        ];
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        double y = 100;
+        for (int i = 0; i < sentences.Length; i++)
+        {
+            Item(page, Margin, 54.2, y, $"{9 + i}.", sentences[i]);
+            page.Text(54.6, y + 10, "zawiera wszystkie dane potrzebne do jego wykonania przez Bank.", Size);
+            y += 20;
+        }
+
+        Item(page, Margin, 54.2, y, "15.", "Pełnomocnik może:");
+        Item(page, Point, Letter, y + 10, "1/", "składać dyspozycje, jeżeli:");
+        Item(page, Letter, LetterText, y + 20, "a/", "pełnomocnictwo obejmuje rodzaj dyspozycji,");
+        Item(page, Letter, LetterText, y + 30, "b/", "dyspozycja mieści się w limicie kwoty,");
+        Item(page, Point, Letter, y + 40, "2/", "odbierać potwierdzenia transakcji.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Contains(
+            "- 14\\. Pełnomocnictwo musi być udzielone na piśmie albo w systemie bankowości elektronicznej, w sposób określony w umowie, oraz zawiera wszystkie dane potrzebne do jego wykonania przez Bank.\n"
+            + "- 15\\. Pełnomocnik może:\n"
+            + "  - 1/ składać dyspozycje, jeżeli:\n"
+            + "    - a/ pełnomocnictwo obejmuje rodzaj dyspozycji,\n"
+            + "    - b/ dyspozycja mieści się w limicie kwoty,\n"
+            + "  - 2/ odbierać potwierdzenia transakcji.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
+        Assert.Equal(0, result.Report.TableCount);
+    }
+
+    /// <summary>
+    /// T014a — ustępy whose enumeration uses „a.”, „b.” (letter and dot, not a list label of the parser) in the hanging
+    /// column: the run is not a fallback table; the enumeration stays text of the ustęp.
+    /// </summary>
+    [Fact]
+    public async Task Letter_dot_enumeration_in_the_hanging_column_is_not_a_table()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        Item(page, Margin, 54.2, 100, "1.", "Klient może udzielić pełnomocnictwa do zawierania transakcji w imieniu Klienta osobom wskazanym w umowie,");
+        page.Text(54.6, 110, "jeżeli pełnomocnicy znają zasady zawierania transakcji.", Size);
+        Item(page, Margin, 54.2, 120, "2.", "Pełnomocnictwo można udzielić:");
+        Item(page, 54.3, Letter, 130, "a.", "w formie pisemnej w karcie informacyjnej Klienta,");
+        Item(page, 54.6, Letter, 140, "b.", "w formie elektronicznej za pośrednictwem systemu bankowości elektronicznej,");
+        Item(page, 54.2, Letter, 150, "c.", "przez złożenie oświadczenia w placówce w obecności pracownika");
+        page.Text(68.8, 160, "Banku.", Size);
+        Item(page, Margin, 54.2, 170, "3.", "Pełnomocnictwo wygasa z chwilą jego odwołania przez Klienta albo z upływem terminu, na który je udzielono.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Contains("- 2\\. Pełnomocnictwo można udzielić:", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("- 3\\. Pełnomocnictwo wygasa", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
+        Assert.Equal(0, result.Report.TableCount);
+    }
+
     /// <summary>T011 — control: a fee table with three text columns and „1/” in the first column stays a GFM table.</summary>
     [Fact]
     public async Task Data_table_with_slash_numbers_in_the_first_column_stays_a_table()
