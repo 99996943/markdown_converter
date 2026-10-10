@@ -237,6 +237,39 @@ public sealed class HangingLabelLayoutTests
         Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
     }
 
+    /// <summary>
+    /// T013 — nesting follows the label columns, not a fixed rank of label styles: ustępy „1.” quoted under a point „1/”
+    /// (D-A p. 24) are children of the point, and a point „1/” under them is their child again.
+    /// </summary>
+    [Fact]
+    public async Task Dot_labels_under_a_slash_point_nest_by_their_column()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page().Text(Margin, 80, Opening, Size);
+        Item(page, Margin, 54.7, 100, "1.", "Klient składa oświadczenia w systemie bankowości elektronicznej:");
+        Item(page, Point, 68.8, 110, "1/", "Klient oświadcza, że akceptuje zasady:");
+        Item(page, Letter, 83.0, 120, "1.", "Klient podpisuje umowę metodą autoryzacji, której używa w systemie.");
+        Item(page, Letter, 83.0, 130, "2.", "Podpis składają osoby uprawnione do reprezentacji Klienta:");
+        Item(page, 82.3, 96.7, 140, "1/", "zgodnie z zasadami reprezentacji ujawnionymi w rejestrze,");
+        Item(page, 82.3, 97.1, 150, "2/", "przez pełnomocników Klienta.");
+        Item(page, Point, 68.8, 160, "2/", "Klient przyjmuje, że umowa wiąże strony z chwilą jej podpisania przez Bank.");
+        Item(page, Margin, 54.7, 170, "2.", "Bank udostępnia umowę w systemie bankowości elektronicznej.");
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Contains(
+            "- 1\\. Klient składa oświadczenia w systemie bankowości elektronicznej:\n"
+            + "  - 1/ Klient oświadcza, że akceptuje zasady:\n"
+            + "    - 1\\. Klient podpisuje umowę metodą autoryzacji, której używa w systemie.\n"
+            + "    - 2\\. Podpis składają osoby uprawnione do reprezentacji Klienta:\n"
+            + "      - 1/ zgodnie z zasadami reprezentacji ujawnionymi w rejestrze,\n"
+            + "      - 2/ przez pełnomocników Klienta.\n"
+            + "  - 2/ Klient przyjmuje, że umowa wiąże strony z chwilą jej podpisania przez Bank.\n"
+            + "- 2\\. Bank udostępnia umowę w systemie bankowości elektronicznej.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+    }
+
     /// <summary>T011 — control: a fee table with three text columns and „1/” in the first column stays a GFM table.</summary>
     [Fact]
     public async Task Data_table_with_slash_numbers_in_the_first_column_stays_a_table()
