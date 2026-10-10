@@ -122,6 +122,9 @@ jest odrzucana (`FaqResponseException`, kod 7) tylko wtedy, gdy z dokumentu nie 
 4. Pytania niepowtarzające się.
 5. Każde `basedOn` to istniejący kandydat.
 6. Każda liczba odpowiedzi występuje w odpowiedziach lub cytatach kandydatów `basedOn` (T067d).
+7. Każdy dokument jest źródłem (dokumentem któregoś kandydata `basedOn`) od min do max pozycji (T067j; efektywne
+   granice z `MinItemsPerDocument`/`MaxItemsPerDocument`), np. „dokument D1: 4 pozycje (najwyżej 3)”, „dokument D5:
+   brak pozycji (co najmniej 1)”.
 Źródła pozycji nie pochodzą od modelu (T067b): to dokument i jednostka każdego kandydata `basedOn`, w kolejności
 `basedOn`, bez powtórzeń; źródło bez jednostki odpada, gdy ten sam dokument jest też źródłem z jednostką.
 Jednostki kandydatów są już sprawdzone w kroku kandydatów.

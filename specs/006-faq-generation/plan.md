@@ -306,7 +306,11 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
 - **Piąty przebieg (2026-10-10)**: ugruntowanie odrzuciło 3 z 44 kandydatów (wszystkie słusznie: wiek 13/18 spoza
   rozdziału, „14 dni” spoza rozdziału 7, cytat spoza rozdziału 19), ale wybór zwrócił 9 pozycji zamiast 10 (kod 7).
   **T067i** (decyzja właściciela): jedna poprawka w kroku wyboru z listą problemów; druga zła odpowiedź = kod 7.
-  Ponowny przebieg do zrobienia.
+- **Szósty przebieg (2026-10-10)**: kod 0 bez poprawki; 1 z 43 kandydatów odrzucony (słusznie). FAQ: 8 pozycji w
+  pełni poprawnych, 2 z pominiętymi zastrzeżeniami (kogo dotyczy zasada), 0 zmyślonych faktów; rozkład nierówny
+  (reklamacje 5, usługi płatnicze 0). **T067j/T067k**: granice pozycji na dokument (domyślnie 1–3, walidowane,
+  działa przez poprawkę T067i) i zachowanie zastrzeżeń w obu krokach. Właściciel szuka 5 innych regulaminów
+  (zamiast m.in. kart kredytowych dla firm); przebieg na nich do zrobienia.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

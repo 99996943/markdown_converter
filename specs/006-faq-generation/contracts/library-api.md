@@ -47,6 +47,8 @@ public sealed record FaqGeneratorOptions
 {
     public int CandidatesPerDocument { get; init; } = 10;   // 1–30
     public int ItemCount { get; init; } = 10;               // ≥ 1
+    public int MaxItemsPerDocument { get; init; } = 3;      // ≥ 1; podnoszone do ⌈ItemCount / dokumenty⌉ (T067j)
+    public int MinItemsPerDocument { get; init; } = 1;      // 0–Max; pomijane, gdy dokumenty × Min > ItemCount
     public int MaxDocumentTokens { get; init; } = 100_000;  // > 0
     public double CharactersPerToken { get; init; } = 3.0;  // > 0
 }

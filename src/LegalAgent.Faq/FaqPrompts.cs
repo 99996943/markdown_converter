@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Text;
 using LegalAgent.Faq.Model;
 
@@ -20,6 +21,7 @@ internal static class FaqPrompts
         - Pisz po polsku, jasno i zwięźle, językiem zrozumiałym dla klienta; kwoty, terminy i warunki przepisuj dokładnie.
         - W polu „unit” podaj jednostkę redakcyjną (nagłówek), z której pochodzi odpowiedź, przepisaną dokładnie z listy „Jednostki dokumentu” podanej pod dokumentem, albo pusty tekst, gdy odpowiedź nie pochodzi z jednej jednostki lub lista jest pusta. Nie twórz oznaczeń, których nie ma na liście (np. „§ 6”, gdy dokument nie ma paragrafów).
         - W polu „quote” przepisz dosłownie z dokumentu jeden ciągły fragment (co najmniej 3 słowa, najlepiej całe zdanie, bez wielokropków, skrótów i zmian słów), który potwierdza odpowiedź; fragment musi pochodzić z jednostki podanej w „unit”. Kandydat bez takiego fragmentu zostanie odrzucony.
+        - Podawaj w odpowiedzi, kogo dotyczy zasada (np. konsumenta, osobę fizyczną nieprowadzącą działalności gospodarczej, firmę, klienta Private Banking), oraz jej warunki i wyjątki, jeśli dokument je określa.
         - Liczby (kwoty, terminy, godziny, daty) zapisuj w odpowiedzi tak jak w dokumencie; liczba, której nie ma w tekście jednostki, odrzuca kandydata.
         - Odpowiedz wyłącznie obiektem JSON zgodnym ze schematem.
         """);
@@ -51,7 +53,7 @@ internal static class FaqPrompts
     }
 
     /// <summary>System message of the selection step.</summary>
-    public static string SelectionSystem(int itemCount) => string.Create(
+    public static string SelectionSystem(int itemCount, int minPerDocument, int maxPerDocument) => string.Create(
         CultureInfo.InvariantCulture,
         $"""
         Układasz końcowe FAQ dla klientów banku z kandydatów przygotowanych wcześniej na podstawie kilku dokumentów.
@@ -60,6 +62,8 @@ internal static class FaqPrompts
         - Wybierz dokładnie {itemCount} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń.
         - Każde pytanie dotyczy jednej sprawy. Łącz kandydatów tylko wtedy, gdy dotyczą tej samej sprawy (np. z różnych dokumentów); nie łącz różnych tematów w jedno pytanie.
         - Możesz połączyć kilku kandydatów o tę samą sprawę w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach, i nie zmieniaj warunków ani wyjątków.
+        - {PerDocument(minPerDocument, maxPerDocument)}
+        - Zachowaj w odpowiedzi, kogo dotyczy zasada (np. konsument, osoba fizyczna nieprowadząca działalności gospodarczej, firma, klient Private Banking), oraz jej warunki i wyjątki, jeśli podają je kandydaci.
         - Liczby przepisuj z kandydatów; liczba, której nie ma w kandydatach z „basedOn”, odrzuca odpowiedź.
         - Jeśli kandydat mówi „Dokument nie rozstrzyga …”, zachowaj to stwierdzenie.
         - W polu „basedOn” podaj identyfikatory wykorzystanych kandydatów (np. D2-K3).
@@ -100,6 +104,13 @@ internal static class FaqPrompts
         return text.Append(CultureInfo.InvariantCulture, $"Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z dokładnie {itemCount} pozycjami.\n")
             .ToString();
     }
+
+    /// <summary>The rule on items per document (T067j); a document counts for every item based on its candidates.</summary>
+    private static string PerDocument(int min, int max) =>
+        (min > 0
+            ? FormattableStringFactory.Create("Każdy dokument ma być źródłem co najmniej {0} i najwyżej {1} pozycji FAQ", min, max)
+            : FormattableStringFactory.Create("Żaden dokument nie może być źródłem więcej niż {0} pozycji FAQ", max)).ToString(CultureInfo.InvariantCulture)
+        + " (pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”).";
 
     private static string OneLine(string text) =>
         string.Join(' ', text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));

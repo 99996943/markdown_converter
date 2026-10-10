@@ -47,7 +47,9 @@ internal static class FaqResponseValidator
     public static IReadOnlyList<FaqItem> ValidateSelection(
         IReadOnlyList<ParsedItem> items,
         IReadOnlyList<FaqCandidate> candidates,
-        int itemCount)
+        int itemCount,
+        int minPerDocument = 0,
+        int maxPerDocument = int.MaxValue)
     {
         var problems = new List<string>();
         if (items.Count != itemCount)
@@ -56,6 +58,12 @@ internal static class FaqResponseValidator
         }
 
         var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
+        var itemsPerDocument = new OrderedDictionary<string, int>(StringComparer.Ordinal);
+        foreach (string documentId in candidates.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal))
+        {
+            itemsPerDocument[documentId] = 0;
+        }
+
         var questions = new Dictionary<string, int>(StringComparer.Ordinal);
         var result = new List<FaqItem>(items.Count);
         for (int i = 0; i < items.Count; i++)
@@ -93,6 +101,23 @@ internal static class FaqResponseValidator
             }
 
             result.Add(new FaqItem(position, item.Question.Trim(), item.Answer.Trim(), SourcesOf(basedOn), item.BasedOn));
+            foreach (string documentId in basedOn.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal))
+            {
+                itemsPerDocument[documentId]++;
+            }
+        }
+
+        foreach ((string documentId, int count) in itemsPerDocument)
+        {
+            if (count > maxPerDocument)
+            {
+                problems.Add(Invariant($"dokument {documentId}: {Items(count)} (najwyżej {maxPerDocument})"));
+            }
+            else if (count < minPerDocument)
+            {
+                string found = count == 0 ? "brak pozycji" : Items(count);
+                problems.Add(Invariant($"dokument {documentId}: {found} (co najmniej {minPerDocument})"));
+            }
         }
 
         if (problems.Count > 0)
@@ -164,6 +189,12 @@ internal static class FaqResponseValidator
             problems.Add(Invariant($"pozycja {position}: pusta odpowiedź"));
         }
     }
+
+    /// <summary>„1 pozycja”, „3 pozycje”, „5 pozycji”.</summary>
+    private static string Items(int count) =>
+        count == 1 ? "1 pozycja"
+        : count % 10 is >= 2 and <= 4 && count % 100 is < 12 or > 14 ? Invariant($"{count} pozycje")
+        : Invariant($"{count} pozycji");
 
     private static string UnknownUnit(int position, string unit, string documentId) =>
         Invariant($"pozycja {position}: jednostka „{unit}” nie występuje w dokumencie {documentId}");

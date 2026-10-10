@@ -9,6 +9,18 @@ public sealed record FaqGeneratorOptions
     /// <summary>Number of final items, at least 1.</summary>
     public int ItemCount { get; init; } = 10;
 
+    /// <summary>
+    /// Most final items a document may be a source of, at least 1 (T067j); raised to ⌈ItemCount / documents⌉ when
+    /// lower.
+    /// </summary>
+    public int MaxItemsPerDocument { get; init; } = 3;
+
+    /// <summary>
+    /// Fewest final items every document must be a source of, 0–<see cref="MaxItemsPerDocument"/> (T067j); not
+    /// required when documents × this value exceeds ItemCount.
+    /// </summary>
+    public int MinItemsPerDocument { get; init; } = 1;
+
     /// <summary>Maximum estimated tokens of one document, greater than 0.</summary>
     public int MaxDocumentTokens { get; init; } = 100_000;
 
@@ -27,6 +39,16 @@ public sealed record FaqGeneratorOptions
         if (ItemCount < 1)
         {
             throw new ArgumentException("ItemCount musi być ≥ 1.", nameof(ItemCount));
+        }
+
+        if (MaxItemsPerDocument < 1)
+        {
+            throw new ArgumentException("MaxItemsPerDocument musi być ≥ 1.", nameof(MaxItemsPerDocument));
+        }
+
+        if (MinItemsPerDocument < 0 || MinItemsPerDocument > MaxItemsPerDocument)
+        {
+            throw new ArgumentException("MinItemsPerDocument musi mieścić się w zakresie 0–MaxItemsPerDocument.", nameof(MinItemsPerDocument));
         }
 
         if (MaxDocumentTokens <= 0)

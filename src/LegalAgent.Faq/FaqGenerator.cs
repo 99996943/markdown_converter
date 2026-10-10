@@ -123,13 +123,14 @@ public sealed class FaqGenerator
 
         string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionStarted, null, selectionUser.Length, Estimate(selectionUser), candidates.Count, null));
-        string selectionSystem = FaqPrompts.SelectionSystem(options.ItemCount);
+        (int minPerDocument, int maxPerDocument) = ItemsPerDocument(documents.Count);
+        string selectionSystem = FaqPrompts.SelectionSystem(options.ItemCount, minPerDocument, maxPerDocument);
         (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, [], cancellationToken)
             .ConfigureAwait(false);
         IReadOnlyList<FaqItem> result;
         try
         {
-            result = Select(selectionText, candidates);
+            result = Select(selectionText, candidates, minPerDocument, maxPerDocument);
         }
         catch (FaqResponseException rejected)
         {
@@ -143,7 +144,7 @@ public sealed class FaqGenerator
             (string correctedText, FaqUsage? correctedUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, correction, cancellationToken)
                 .ConfigureAwait(false);
             selectionUsage = UsageReader.Add(selectionUsage, correctedUsage, first: false);
-            result = Select(correctedText, candidates);
+            result = Select(correctedText, candidates, minPerDocument, maxPerDocument);
         }
 
         total = UsageReader.Add(total, selectionUsage, first: false);
@@ -178,11 +179,22 @@ public sealed class FaqGenerator
 
     /// <summary>The parsed and validated selection.</summary>
     /// <exception cref="FaqResponseException">The text is not JSON of the schema or breaks the rules.</exception>
-    private IReadOnlyList<FaqItem> Select(string text, IReadOnlyList<FaqCandidate> candidates)
+    private IReadOnlyList<FaqItem> Select(string text, IReadOnlyList<FaqCandidate> candidates, int minPerDocument, int maxPerDocument)
     {
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(text);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
-        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount);
+        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount, minPerDocument, maxPerDocument);
+    }
+
+    /// <summary>
+    /// Effective limits of items per document (T067j): the maximum covers ItemCount, the minimum is dropped when the
+    /// documents cannot all get it.
+    /// </summary>
+    private (int Min, int Max) ItemsPerDocument(int documentCount)
+    {
+        int max = Math.Max(options.MaxItemsPerDocument, (options.ItemCount + documentCount - 1) / documentCount);
+        int min = documentCount * options.MinItemsPerDocument <= options.ItemCount ? options.MinItemsPerDocument : 0;
+        return (min, max);
     }
 
     /// <summary>

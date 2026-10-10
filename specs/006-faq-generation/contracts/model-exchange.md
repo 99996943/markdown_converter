@@ -17,7 +17,8 @@ test sprawdzający, że polecenie je zawiera.
 - jednostkę: przepisz jednostkę dokładnie z listy „Jednostki dokumentu” pod dokumentem albo podaj pusty tekst;
   nie twórz oznaczeń spoza listy (T067a: regulaminy mBanku nie mają § ani Art., a model podawał „§ 6”);
 - cytat (T067d): w polu „quote” dosłowny fragment dokumentu (co najmniej 3 słowa) z jednostki „unit”, który
-  potwierdza odpowiedź; liczby w odpowiedzi zapisane tak jak w dokumencie.
+  potwierdza odpowiedź; liczby w odpowiedzi zapisane tak jak w dokumencie;
+- zastrzeżenia (T067k): kogo dotyczy zasada (konsument, firma, klient Private Banking…), jej warunki i wyjątki.
 
 **Komunikat użytkownika**:
 
@@ -70,6 +71,8 @@ Kandydaci dostają identyfikatory `D2-K1`, `D2-K2`, … w kolejności z odpowied
   połączenie lub przeredagowanie kandydatów, zakaz dodawania faktów, których nie ma w kandydatach;
 - jedno pytanie = jedna sprawa: łączyć tylko kandydatów o tę samą sprawę, nie łączyć różnych tematów (T067c);
   liczby przepisywane z kandydatów `basedOn`;
+- liczba pozycji na dokument: „co najmniej min i najwyżej max” (albo tylko „najwyżej max”, gdy min = 0) (T067j);
+- zastrzeżenia z kandydatów zachowane: kogo dotyczy zasada, warunki, wyjątki (T067k);
 - wymóg wskazania `basedOn` (identyfikatory wszystkich wykorzystanych kandydatów); model nie podaje źródeł —
   źródła pozycji liczy kod z kandydatów `basedOn` (T067b: model przeredagowywał jednostki źródeł);
 - język polski.
