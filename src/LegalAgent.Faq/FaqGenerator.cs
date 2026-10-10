@@ -1,3 +1,4 @@
+using System.Globalization;
 using LegalAgent.Faq.Model;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
@@ -90,9 +91,62 @@ public sealed class FaqGenerator
     /// <exception cref="FaqServiceException">The service failed.</exception>
     /// <exception cref="FaqResponseException">A response was rejected.</exception>
     /// <exception cref="OperationCanceledException"><paramref name="cancellationToken"/> was cancelled.</exception>
-    public Task<FaqResult> GenerateAsync(
+    public async Task<FaqResult> GenerateAsync(
         IReadOnlyList<FaqDocumentInput> documents,
         IProgress<FaqEvent>? progress = null,
-        CancellationToken cancellationToken = default) =>
-        throw new NotImplementedException();
+        CancellationToken cancellationToken = default)
+    {
+        CheckInput(documents, options);
+        FaqSourceDocument[] sources =
+        [
+            .. documents.Select((d, i) => new FaqSourceDocument(string.Create(CultureInfo.InvariantCulture, $"D{i + 1}"), d.Name, d.Resource)),
+        ];
+
+        var candidates = new List<FaqCandidate>();
+        for (int i = 0; i < documents.Count; i++)
+        {
+            FaqSourceDocument source = sources[i];
+            string user = FaqPrompts.CandidatesUser(source, documents[i].Markdown);
+            progress?.Report(new FaqEvent(FaqEventKind.CandidatesStarted, source.Id, user.Length, Estimate(user), null, null));
+
+            string text = await AskAsync(FaqStep.Candidates, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
+                .ConfigureAwait(false);
+            Parsed<IReadOnlyList<FaqCandidate>> parsed = FaqResponseParser.ParseCandidates(text, source.Id);
+            IReadOnlyList<FaqCandidate> accepted = parsed.Value ?? throw new FaqResponseException(FaqStep.Candidates, source.Id, [parsed.Problem!]);
+            FaqResponseValidator.ValidateCandidates(accepted, source.Id, documents[i].Units, options.CandidatesPerDocument);
+            candidates.AddRange(accepted);
+            progress?.Report(new FaqEvent(FaqEventKind.CandidatesFinished, source.Id, 0, 0, accepted.Count, null));
+        }
+
+        string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
+        progress?.Report(new FaqEvent(FaqEventKind.SelectionStarted, null, selectionUser.Length, Estimate(selectionUser), candidates.Count, null));
+        string selectionText = await AskAsync(FaqStep.Selection, FaqPrompts.SelectionSystem(options.ItemCount), selectionUser, cancellationToken)
+            .ConfigureAwait(false);
+        Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(selectionText);
+        IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
+        var unitsByDocument = new Dictionary<string, IReadOnlyList<string>>(StringComparer.Ordinal);
+        for (int i = 0; i < documents.Count; i++)
+        {
+            unitsByDocument[sources[i].Id] = documents[i].Units;
+        }
+
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, candidates, unitsByDocument, options.ItemCount);
+        progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, null));
+        return new FaqResult(result, sources, candidates, null);
+    }
+
+    private int Estimate(string text) => TokenEstimator.Estimate(text.Length, options.CharactersPerToken);
+
+    /// <summary>One request: system and user message, settings for the step; returns the text of the first message.</summary>
+    private async Task<string> AskAsync(FaqStep step, string system, string user, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        var history = new ChatHistory();
+        history.AddSystemMessage(system);
+        history.AddUserMessage(user);
+        PromptExecutionSettings settings = executionSettings(step, step == FaqStep.Candidates ? FaqSchemas.Candidates : FaqSchemas.Selection);
+        IReadOnlyList<ChatMessageContent> messages = await chat.GetChatMessageContentsAsync(history, settings, null, cancellationToken)
+            .ConfigureAwait(false);
+        return messages.Count > 0 ? messages[0].Content ?? string.Empty : string.Empty;
+    }
 }
