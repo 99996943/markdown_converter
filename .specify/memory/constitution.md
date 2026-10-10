@@ -22,7 +22,13 @@ Uzasadnienie: dokumenty prawne i bankowe nie tolerują błędnych lub zmyślonyc
 Ten sam kod uruchomiony na tych samych danych wejściowych MUSI dawać ten sam wynik, a ponowne
 uruchomienie nie może uszkadzać ani dublować wcześniejszych wyników. Uruchomienie MUSI
 wymagać jednego polecenia, bez ręcznych kroków.
-Uzasadnienie: pozwala śledzić zmiany przez diff w git i ufać wynikom.
+Wyjątek: treść wygenerowana przez model językowy (np. FAQ) oraz znaczniki czasu wymagane przez
+format wyniku (np. `timestamp` w OKF) NIE MUSZĄ być identyczne między uruchomieniami. Wtedy
+losowość modelu MUSI być ograniczona (np. temperatura 0, stały `seed`), wszystkie pozostałe etapy
+(pobranie, konwersja, walidacja, renderowanie) MUSZĄ pozostać deterministyczne i testowane, a
+ponowne uruchomienie nadal nie może uszkadzać ani dublować wyników.
+Uzasadnienie: pozwala śledzić zmiany przez diff w git i ufać wynikom; usługi modeli językowych
+nie gwarantują pełnego determinizmu, więc wymóg obejmuje wszystko, co da się kontrolować.
 
 ### IV. Odporność na błędy zewnętrzne
 Każde wywołanie zewnętrzne (sieć, system plików, usługi) MUSI mieć jawne timeouty i obsługę
@@ -32,8 +38,10 @@ Uzasadnienie: przewidywalne zachowanie przy awariach i brak ukrytych, błędnych
 
 ### V. Bezpieczeństwo i konfiguracja
 W repozytorium NIE WOLNO przechowywać sekretów (klucze, tokeny, hasła); wrażliwa konfiguracja
-MUSI pochodzić ze zmiennych środowiskowych, a repozytorium MOŻE zawierać jedynie plik
-`.env.example`. Dane zmieniające się (np. adresy źródeł) MUSZĄ być zapisane w konfiguracji, a nie
+MUSI pochodzić ze zmiennych środowiskowych albo z interaktywnego lub przekierowanego standardowego
+wejścia, a repozytorium MOŻE zawierać jedynie plik `.env.example`. Sekret odczytany ze
+standardowego wejścia MUSI pozostać wyłącznie w pamięci procesu: NIE WOLNO zapisywać go do plików,
+zmiennych środowiskowych ani logów. Dane zmieniające się (np. adresy źródeł) MUSZĄ być zapisane w konfiguracji, a nie
 w kodzie.
 Uzasadnienie: ochrona poufnych danych i łatwa zmiana źródeł bez edycji logiki.
 
@@ -99,4 +107,4 @@ niezgodna redefinicja zasady; MINOR — dodanie zasady/sekcji lub istotne rozsze
 PATCH — doprecyzowania i poprawki redakcyjne. Zgodność z konstytucją MUSI być weryfikowana przy
 każdym przeglądzie zmian.
 
-**Version**: 1.3.0 | **Ratified**: 2026-10-06 | **Last Amended**: 2026-10-06
+**Version**: 1.4.0 | **Ratified**: 2026-10-06 | **Last Amended**: 2026-10-10

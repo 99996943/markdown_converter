@@ -11,10 +11,7 @@ public sealed partial class PromptTests : IDisposable
 
     public PromptTests()
     {
-        foreach (string url in Urls)
-        {
-            app.Http.Pdf(url);
-        }
+        app.ServeRegulations(Urls);
     }
 
     public void Dispose() => app.Dispose();
@@ -32,7 +29,10 @@ public sealed partial class PromptTests : IDisposable
 
         Assert.Equal(5, Prompts(run.Out).Count);
         Assert.Equal(
-            ["manifest.json", "reg-1.pdf", "reg-2.pdf", "reg-3.pdf", "reg-4.pdf", "reg-5.pdf"],
+            [
+                "manifest.json", "reg-1.md", "reg-1.pdf", "reg-2.md", "reg-2.pdf", "reg-3.md", "reg-3.pdf",
+                "reg-4.md", "reg-4.pdf", "reg-5.md", "reg-5.pdf",
+            ],
             app.Root.FileNames("downloads"));
     }
 

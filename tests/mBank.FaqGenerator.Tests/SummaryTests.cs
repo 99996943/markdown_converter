@@ -1,4 +1,4 @@
-using LegalAgent.Downloads.Tests.Fakes;
+using LegalAgent.Faq.Tests.Fakes;
 using MBank.FaqGenerator.Tests.Fakes;
 
 namespace MBank.FaqGenerator.Tests;
@@ -6,7 +6,7 @@ namespace MBank.FaqGenerator.Tests;
 public sealed class SummaryTests : IDisposable
 {
     private static readonly string[] Urls = [.. Enumerable.Range(1, 5).Select(i => $"https://www.example.test/pdf/reg-{i}.pdf")];
-    private static readonly int[] Sizes = [512, 831898, 1258291, 1024, 1048576];
+    private static readonly int[] Sizes = [20480, 831898, 1258291, 24576, 1048576];
 
     private readonly AppHarness app = new();
 
@@ -14,7 +14,7 @@ public sealed class SummaryTests : IDisposable
     {
         for (int i = 0; i < Urls.Length; i++)
         {
-            app.Http.Pdf(Urls[i], PdfBytes.OfSize(Sizes[i]));
+            app.Http.Pdf(Urls[i], TestPdfs.Padded(TestPdfs.Regulation(Urls[i]), Sizes[i]));
         }
     }
 
@@ -41,16 +41,26 @@ public sealed class SummaryTests : IDisposable
         string expected = string.Join(
             "\n",
             $"Pobrano 5 z 5 plików do {app.OutputDirectory}:",
-            "  1. reg-1.pdf — 512 B",
+            "  1. reg-1.pdf — 20,0 KB",
             "  2. reg-2.pdf — 812,4 KB",
             "  3. reg-3.pdf — 1,2 MB",
-            "  4. reg-4.pdf — 1,0 KB",
+            "  4. reg-4.pdf — 24,0 KB",
             "  5. reg-5.pdf — 1,0 MB",
             $"Manifest: {Path.Combine(app.OutputDirectory, "manifest.json")}");
         Assert.Contains(expected, run.Out.ReplaceLineEndings("\n"), StringComparison.Ordinal);
         Assert.True(
             run.Out.IndexOf("Pobrano 5 z 5", StringComparison.Ordinal) > run.Out.LastIndexOf("] pobrano", StringComparison.Ordinal),
             "the summary follows the progress lines");
+    }
+
+    [Theory]
+    [InlineData(512, "512 B")]
+    [InlineData(1024, "1,0 KB")]
+    [InlineData(831898, "812,4 KB")]
+    [InlineData(1258291, "1,2 MB")]
+    public void FormatSize_PolishUnits(long bytes, string expected)
+    {
+        Assert.Equal(expected, ConsoleReport.FormatSize(bytes));
     }
 
     private static string Input => string.Join("\n", Urls) + "\n";

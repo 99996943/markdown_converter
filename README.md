@@ -1,18 +1,67 @@
-# LegalAgent.PdfParser
+# Konwerter repozytorium regulaminów
 
-Biblioteka .NET 9 (z cienką aplikacją CLI) konwertująca pliki PDF z polskimi aktami prawnymi
-(ustawy, rozporządzenia, obwieszczenia z ISAP / Dziennika Ustaw) oraz regulaminami bankowymi na
-**ustrukturyzowany model dokumentu** i **Markdown** nadający się do dalszego przetwarzania (np. przez agenta AI).
-Wynik jest deterministyczny: te same bajty i opcje dają ten sam model, Markdown i raport (poza `Elapsed`).
+Aplikacja konsolowa **`mBank.FaqGenerator`** jednym poleceniem:
 
-Biblioteka **`LegalAgent.Chunking`** dzieli wynik parsera na **fragmenty dla aplikacji RAG** (jednostka = paragraf,
-artykuł, sekcja taryfy/procedury/tabeli-dokumentu) z metadanymi do indeksowania, cytowania i porównywania wersji —
-patrz [Podział na fragmenty](#podział-na-fragmenty-legalagentchunking).
+1. **pobiera 5 wskazanych regulaminów PDF** ze strony mBanku do `./downloads` (z `manifest.json` wiążącym pliki z
+   adresami),
+2. **konwertuje je do Markdown** (`<nazwa>.md` obok każdego PDF-u) własnym parserem dokumentów prawnych,
+3. **generuje plik FAQ** `faq/FAQ_mBank.md` (format OKF): 10 najważniejszych pytań i odpowiedzi, każda ze źródłem
+   (dokument i paragraf), przygotowanych przez model Azure OpenAI wyłącznie na podstawie treści regulaminów.
 
-Aplikacja konsolowa **`mBank.FaqGenerator`** (z biblioteką **`LegalAgent.Downloads`**) pobiera 5 publicznych
-regulaminów PDF ze strony mBanku do katalogu `./downloads` — patrz
-[Pobieranie regulaminów](#pobieranie-regulaminów-mbankfaqgenerator). Konwersja do Markdown i generowanie FAQ to
-kolejne etapy tej aplikacji (osobne specyfikacje).
+Rozwiązanie: .NET 9, biblioteki z całą logiką i cienka aplikacja; testy działają offline (atrapy HTTP, modelu i
+klawiatury). Specyfikacje i decyzje projektowe: `specs/`, zasady projektu: `.specify/memory/constitution.md`.
+
+## Szybki start
+
+Wymagane: .NET SDK z `global.json` i runtime .NET 9 (szczegóły: [Wymagania](#wymagania)), subskrypcja Azure; skrypt
+zasobu wymaga Basha (na Windows: Git Bash).
+
+```bash
+dotnet build LegalAgent.slnx -c Release
+
+# 1. Zasób Azure OpenAI (jednorazowo): skrypt albo portal — patrz „Generowanie FAQ” niżej
+scripts/azure/create-openai.sh
+
+# 2. Endpoint (nie jest sekretem) w src/mBank.FaqGenerator/appsettings.Local.json:
+#    { "AzureOpenAI": { "Endpoint": "https://<zasób>.openai.azure.com/", "Deployment": "<wdrożenie>", "Model": "<model>" } }
+
+# 3. Uruchomienie: 5 adresów PDF z mbank.pl; o klucz API aplikacja zapyta po konwersji (wpisywany jako gwiazdki)
+dotnet run --project src/mBank.FaqGenerator -c Release -- \
+  --url <adres1> --url <adres2> --url <adres3> --url <adres4> --url <adres5>
+```
+
+Wynik: `downloads/*.pdf`, `downloads/*.md`, `downloads/manifest.json` i `faq/FAQ_mBank.md`; kod wyjścia 0. Adresy
+można też wpisać do `Download:Urls` w `appsettings.json` (wtedy wystarczy samo `dotnet run`) albo podać w odpowiedzi
+na pytania aplikacji. Szczegóły: [Pobieranie regulaminów](#pobieranie-regulaminów-mbankfaqgenerator) i
+[Generowanie FAQ](#generowanie-faq-mbankfaqgenerator-legalagentfaq).
+
+## Struktura rozwiązania
+
+Jedna solucja `LegalAgent.slnx`:
+
+| Projekt | Rola |
+|---------|------|
+| `src/mBank.FaqGenerator` | **aplikacja zadania**: argumenty, konfiguracja, klucz API, konsola, kody wyjścia ([przebieg i konfiguracja](src/mBank.FaqGenerator/README.md)) |
+| `src/LegalAgent.Downloads` | biblioteka pobierania listy PDF-ów (hosty, przekierowania, limity, zapis atomowy, manifest) |
+| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown ([zasada działania](src/LegalAgent.PdfParser/README.md)) |
+| `src/LegalAgent.Faq` | biblioteka konwersji zestawu PDF-ów i generowania FAQ (dwa kroki, weryfikacja, renderer OKF) ([zasada działania i weryfikacji](src/LegalAgent.Faq/README.md)) |
+| `src/LegalAgent.PdfParser.Cli` | CLI parsera (`legalagent-pdf`: `convert`, `chunk`) |
+| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG ([zasada działania](src/LegalAgent.Chunking/README.md)) |
+| `src/LegalAgent.Corpus`, `src/LegalAgent.Corpus.Cli` | generator syntetycznego korpusu dokumentów bankowych ([zasada działania](src/LegalAgent.Corpus/README.md)) |
+| `scripts/azure/create-openai.sh` | utworzenie zasobu i wdrożenia Azure OpenAI |
+| `tests/*` | osobny projekt testów dla każdej biblioteki i aplikacji |
+
+Aplikacja i każda biblioteka mają własne `README.md` z opisem zasady działania.
+
+Biblioteki są ogólne: nie znają mBanku ani Azure (adresy, hosty, tytuł FAQ i konektor modelu należą do aplikacji).
+
+## Parser PDF (`LegalAgent.PdfParser`)
+
+Biblioteka konwertuje pliki PDF z polskimi aktami prawnymi (ustawy, rozporządzenia, obwieszczenia z ISAP / Dziennika
+Ustaw) oraz regulaminami bankowymi na **ustrukturyzowany model dokumentu** i **Markdown** nadający się do dalszego
+przetwarzania (np. przez agenta AI). Wynik jest deterministyczny: te same bajty i opcje dają ten sam model, Markdown i
+raport (poza `Elapsed`). Biblioteka **`LegalAgent.Chunking`** dzieli wynik parsera na **fragmenty dla aplikacji RAG**
+— patrz [Podział na fragmenty](#podział-na-fragmenty-legalagentchunking).
 
 ## Co robi
 
@@ -319,11 +368,107 @@ nie psuje poprzedniej wersji. Ponowne uruchomienie nadpisuje pliki; po pobraniu 
 bieżącej listy. Niedostępny link (kod błędu, przekroczony czas, brak połączenia, strona HTML zamiast PDF) nie
 przerywa pozostałych pobrań — przyczyna trafia do podsumowania i manifestu.
 
-**Kody wyjścia:** 0 pobrano 5 z 5; 2 błędne argumenty, konfiguracja, lista adresów lub zamknięte wejście przy
+**Kody wyjścia etapu pobierania:** 2 błędne argumenty, konfiguracja, lista adresów lub zamknięte wejście przy
 pytaniach; 3 co najmniej jedno pobranie nieudane; 4 błąd katalogu pobrań (utworzenie, manifest, sprzątanie);
-130 przerwano (Ctrl+C); 1 błąd nieoczekiwany.
+130 przerwano (Ctrl+C); 1 błąd nieoczekiwany. Po pobraniu 5 z 5 aplikacja przechodzi do konwersji i FAQ, a kod 0
+oznacza zapisany plik FAQ (pełna lista kodów — niżej).
 
 Pobrane regulaminy nie są częścią repozytorium (`downloads/` w `.gitignore`).
+
+## Generowanie FAQ (`mBank.FaqGenerator`, `LegalAgent.Faq`)
+
+Po pobraniu 5 z 5 aplikacja:
+1. konwertuje każdy PDF do Markdown parserem z domyślnymi opcjami (`<nazwa>.md` obok PDF-u, zapis atomowy;
+   po udanej konwersji usuwa `*.md` spoza bieżącej listy);
+2. sprawdza rozmiar dokumentów (szacunek: 3 znaki na token, limit `Faq:MaxDocumentTokens`);
+3. pyta o klucz API;
+4. generuje FAQ modelem Azure OpenAI w dwóch krokach: osobno dla każdego dokumentu do 10 kandydatów (kolejno,
+   bez równoległości), potem jedno zapytanie wybierające 10 najważniejszych pytań;
+5. sprawdza każdą odpowiedź (JSON zgodny ze schematem, liczba pozycji, powtórzenia, istniejące dokumenty, kandydaci
+   i jednostki redakcyjne, np. „§ 12”) i zapisuje `faq/FAQ_mBank.md`.
+
+Logika konwersji, generowania, walidacji i renderowania jest w bibliotece **`LegalAgent.Faq`** (zależy tylko od
+`Microsoft.SemanticKernel.Abstractions`). Aplikacja dodaje konektor Azure OpenAI, konfigurację, klucz i komunikaty.
+Specyfikacja: `specs/006-faq-generation/`.
+
+### Zasób Azure OpenAI
+
+```bash
+az login
+scripts/azure/create-openai.sh            # grupa rg-faqgen, zasób faqgen-<skrót subskrypcji>, wdrożenie gpt-4o-mini
+scripts/azure/create-openai.sh --help     # parametry: --resource-group, --location, --name, --deployment, --model, …
+```
+
+Skrypt jest idempotentny (drugie uruchomienie niczego nie tworzy), nie odczytuje klucza i na końcu wypisuje fragment
+`appsettings.Local.json` oraz zmienne `FAQGEN__AzureOpenAI__…`. Na Windows uruchom go w Git Bash.
+
+**Przez portal Azure** (zamiast skryptu):
+1. Utwórz zasób **Azure OpenAI** (warstwa `Standard S0`, dostęp ze wszystkich sieci).
+2. W portalu Foundry wybierz **Wdrożenia → Wdróż model bazowy**, np. `gpt-4.1-mini` (`Global Standard`), i ustaw
+   jak najwyższy limit tokenów na minutę. Pierwsze zapytanie wysyła cały regulamin (~50 tys. tokenów), a aplikacja
+   nie ponawia zapytań po błędzie 429.
+3. Z **Klucze i punkt końcowy** skopiuj punkt końcowy do `appsettings.Local.json`, a nazwę wdrożenia wpisz w
+   `Deployment`. Klucz wkleisz dopiero na pytanie aplikacji.
+
+**Model:** domyślnie `gpt-4o-mini` w wersji `2024-07-18`. Ma on w Azure status *Deprecated* (wycofanie 2027-04-14):
+subskrypcja, która nigdy go nie wdrażała, nie utworzy nowego wdrożenia. Skrypt sprawdza to przed utworzeniem zasobu
+i kończy się kodem 4 z podpowiedzią, np.:
+
+```bash
+scripts/azure/create-openai.sh --model gpt-5.4-mini --model-version 2026-03-17 --deployment gpt-5.4-mini
+```
+
+Modele GPT-5 nie przyjmują temperatury, więc wtedy ustaw `"Temperature": null` (albo `FAQGEN__AzureOpenAI__Temperature=`).
+
+**Usunięcie zasobów** (koniec kosztów): `az group delete --name rg-faqgen --yes`.
+
+### Konfiguracja
+
+Endpoint nie jest sekretem; wpisz go do `src/mBank.FaqGenerator/appsettings.Local.json` (ignorowany przez git,
+kopiowany do katalogu wyjściowego) albo ustaw zmienną `FAQGEN__AzureOpenAI__Endpoint`.
+
+| Klucz | Domyślnie | Znaczenie |
+|-------|-----------|-----------|
+| `AzureOpenAI:Endpoint` | `""` | adres zasobu, wymagany, `https://` |
+| `AzureOpenAI:Deployment` | `gpt-4o-mini` | nazwa wdrożenia, wymagana |
+| `AzureOpenAI:Model` | `gpt-4o-mini` | nazwa modelu do nagłówka FAQ |
+| `AzureOpenAI:TimeoutSeconds` | `300` | limit czasu jednego zapytania (bez ponowień) |
+| `AzureOpenAI:Temperature` | `0` | 0–2; `null` / pusta wartość = nie wysyłaj |
+| `AzureOpenAI:Seed` | `42` | `null` / pusta wartość = nie wysyłaj |
+| `AzureOpenAI:MaxOutputTokens` | `4096` | limit tokenów odpowiedzi |
+| `Faq:OutputDirectory` | `faq` | katalog OKF z `FAQ_mBank.md` (`--faq-output` ma pierwszeństwo) |
+| `Faq:CandidatesPerDocument` | `10` | kandydaci na dokument, 1–30 |
+| `Faq:MaxDocumentTokens` | `100000` | limit szacowanych tokenów jednego dokumentu |
+
+Konfiguracja jest sprawdzana przy starcie, zanim aplikacja zapyta o adresy (brak endpointu → kod 2).
+
+### Klucz API
+
+Klucz **nigdy** nie jest opcją, zmienną środowiskową ani wpisem konfiguracji (`AzureOpenAI:ApiKey` jest odrzucany
+z kodem 2). Aplikacja pyta o niego dopiero po udanym pobraniu i konwersji:
+- **w konsoli:** „Klucz API Azure OpenAI: ” — każdy wpisany lub wklejony znak to jedna `*`, Backspace cofa, Enter
+  kończy, Ctrl+C przerywa (kod 130);
+- **potokiem:** przy przekierowanym wejściu klucz to kolejny wiersz (po adresach, jeśli też były czytane z wejścia):
+
+```bash
+az cognitiveservices account keys list -g rg-faqgen -n <zasób> --query key1 -o tsv \
+  | dotnet run --project src/mBank.FaqGenerator -c Release -- --url <a> --url <b> --url <c> --url <d> --url <e>
+```
+
+Klucz zostaje tylko w pamięci procesu; komunikaty błędów są z niego czyszczone (`***`).
+
+### Wynik
+
+`faq/FAQ_mBank.md` (katalog nie jest ignorowany przez git) to dokument OKF: nagłówek YAML (`type: faq`, `title`,
+`description`, `resource` — 5 adresów, `timestamp`, `model`, `deployment`) i 10 sekcji `## <pytanie>` z odpowiedzią
+i wierszem `Źródło:` / `Źródła:` (link do dokumentu i jednostka). Kontrakt: `specs/006-faq-generation/contracts/faq-file.md`.
+Treść odpowiedzi pochodzi z modelu i może się różnić między uruchomieniami (konstytucja 1.4.0, zasada III);
+poprzedni plik zostaje nienaruszony przy każdym błędzie.
+
+**Kody wyjścia:** 0 pobrano 5 z 5, przekonwertowano 5 z 5 i zapisano FAQ; 1 błąd nieoczekiwany; 2 argumenty,
+konfiguracja, adresy lub brak wejścia (adresów albo klucza); 3 nie wszystkie pliki pobrane; 4 błąd zapisu
+(katalog pobrań, Markdown, FAQ); 5 błąd konwersji; 6 błąd usługi modelu (klucz, wdrożenie, limit 429, filtr treści,
+czas, sieć) albo dokument za długi; 7 odpowiedź modelu odrzucona przy sprawdzaniu; 130 przerwano.
 
 ## Testy
 
@@ -343,6 +488,10 @@ dotnet test LegalAgent.slnx -c Release --filter "Category=Performance"  # tylko 
 - **Pobieranie:** `tests/LegalAgent.Downloads.Tests` (biblioteka) i `tests/mBank.FaqGenerator.Tests` (aplikacja przez
   `Program.RunAsync`) działają bez sieci — odpowiedzi serwera zastępuje atrapa `FakeHttpHandler`, a każdy test aplikacji
   ma własny `appsettings.json` w katalogu tymczasowym.
+- **FAQ:** `tests/LegalAgent.Faq.Tests` (biblioteka: dopasowanie jednostek, parser i walidacja odpowiedzi, renderer z
+  plikiem wzorcowym `Golden/faq.expected.md`, generator, konwersja syntetycznych PDF-ów) i testy aplikacji z atrapami
+  modelu (`FakeChatCompletionService`), klawiatury (`FakeKeyInput`), czasu i HTTP konektora Azure; żaden test nie łączy
+  się z Azure. `AzureScriptTests` uruchamiają skrypt z atrapą `az` i są pomijane, gdy nie ma `bash`.
 - CI (`.github/workflows/ci.yml`, ubuntu-latest) buduje i uruchamia testy z filtrem `Category!=Performance`, a następnie osobno `Category=Performance`.
 
 ## Korpus syntetyczny
@@ -354,17 +503,12 @@ regulaminy, taryfy i procedury wewnętrzne w wielu wersjach, dokumenty nieaktual
 (`corpus/manifest.json`) opisuje zmiany między wersjami, pary sprzeczności i rodzaje zatruć. Korpus służy do testowania
 konwersji PDF → Markdown (`LegalAgent.PdfParser`) oraz aplikacji RAG. Pełna instrukcja: [`corpus/README.md`](corpus/README.md).
 
-Projekty w solucji (`LegalAgent.slnx`):
+Projekty korpusu (pełna lista: [Struktura rozwiązania](#struktura-rozwiązania)):
 
 | Projekt | Rola |
 |---------|------|
-| `src/LegalAgent.PdfParser` | biblioteka konwertująca PDF na model dokumentu i Markdown |
-| `src/LegalAgent.PdfParser.Cli` | aplikacja CLI parsera (`legalagent-pdf`: `convert`, `chunk`) |
-| `src/LegalAgent.Chunking` | biblioteka podziału dokumentów na fragmenty dla RAG |
 | `src/LegalAgent.Corpus` | generator korpusu syntetycznego (PDF, manifest, czcionki) |
 | `src/LegalAgent.Corpus.Cli` | CLI generatora: `generate`, `refresh`, `verify`, `check` |
-| `tests/LegalAgent.PdfParser.Tests` | testy parsera i CLI |
-| `tests/LegalAgent.Chunking.Tests` | testy podziału na fragmenty |
 | `tests/LegalAgent.Corpus.Tests` | testy generatora i jakości korpusu |
 
 ```bash

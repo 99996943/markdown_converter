@@ -1,6 +1,10 @@
 using System.Globalization;
 using LegalAgent.Downloads;
 using LegalAgent.Downloads.Model;
+using LegalAgent.Faq.Conversion;
+using LegalAgent.Faq.Conversion.Model;
+using LegalAgent.PdfParser;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MBank.FaqGenerator;
 
@@ -43,7 +47,7 @@ public static class Program
     /// <param name="stderr">Standard error.</param>
     /// <param name="environment">Environment variables (<c>FAQGEN__…</c>).</param>
     /// <param name="configDirectory">Directory with <c>appsettings*.json</c>.</param>
-    /// <param name="handler">HTTP handler (tests); <c>null</c> uses the network.</param>
+    /// <param name="host">External dependencies (tests); <c>null</c> uses the network, the console and the system clock.</param>
     /// <param name="cancellationToken">Cancellation (Ctrl+C).</param>
     /// <returns>Exit code (contracts/cli.md).</returns>
     public static async Task<int> RunAsync(
@@ -53,7 +57,7 @@ public static class Program
         TextWriter stderr,
         IReadOnlyDictionary<string, string?> environment,
         string configDirectory,
-        HttpMessageHandler? handler = null,
+        AppHost? host = null,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(args);
@@ -62,6 +66,7 @@ public static class Program
         ArgumentNullException.ThrowIfNull(stderr);
         ArgumentNullException.ThrowIfNull(environment);
         ArgumentNullException.ThrowIfNull(configDirectory);
+        host ??= new AppHost();
 
         AppArguments arguments = AppArguments.Parse(args, RequiredCount);
         if (arguments.Error is not null)
@@ -86,10 +91,10 @@ public static class Program
 
         try
         {
-            return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, handler, cancellationToken)
+            return await RunCoreAsync(arguments, stdin, stdout, stderr, environment, configDirectory, host, cancellationToken)
                 .ConfigureAwait(false);
         }
-        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        catch (OperationCanceledException e) when (cancellationToken.IsCancellationRequested || e is KeyPromptCancelledException)
         {
             await stderr.WriteLineAsync("Przerwano.").ConfigureAwait(false);
             return 130;
@@ -118,12 +123,14 @@ public static class Program
         TextWriter stderr,
         IReadOnlyDictionary<string, string?> environment,
         string configDirectory,
-        HttpMessageHandler? handler,
+        AppHost host,
         CancellationToken cancellationToken)
     {
-        DownloadSettings settings = AppSettings.Load(configDirectory, environment);
+        AppConfiguration configuration = AppSettings.LoadAll(configDirectory, environment);
+        AppSettings.Validate(configuration);
+        DownloadSettings settings = configuration.Download;
         DownloadOptions options = settings.ToOptions() with { OutputDirectory = arguments.Output ?? settings.OutputDirectory };
-        using HttpClient httpClient = CreateHttpClient(handler);
+        using HttpClient httpClient = CreateHttpClient(host.DownloadHandler);
         DocumentDownloader downloader;
         try
         {
@@ -158,8 +165,47 @@ public static class Program
 
         var report = new ConsoleReport(stdout, stderr, RequiredCount);
         DownloadRun run = await downloader.DownloadAllAsync(addresses, report, cancellationToken).ConfigureAwait(false);
-        report.Summary(run, Path.GetFullPath(options.OutputDirectory));
-        return run.AllSucceeded ? 0 : 3;
+        string downloads = Path.GetFullPath(options.OutputDirectory);
+        report.Summary(run, downloads);
+        if (!run.AllSucceeded)
+        {
+            return 3;
+        }
+
+        ConversionRun conversion = await ConvertAsync(run, downloads, stdout, stderr, cancellationToken).ConfigureAwait(false);
+        if (!conversion.AllSucceeded)
+        {
+            return 5;
+        }
+
+        string faqDirectory = Path.GetFullPath(arguments.FaqOutput ?? configuration.Faq.OutputDirectory);
+        return await FaqStage.RunAsync(
+            conversion.Documents,
+            configuration,
+            faqDirectory,
+            host.KeyInput ?? new ConsoleKeyInput(stdin),
+            stdout,
+            stderr,
+            host,
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>Converts the downloaded files with the parser's default options (as <c>legalagent-pdf convert</c>).</summary>
+    private static async Task<ConversionRun> ConvertAsync(
+        DownloadRun run,
+        string downloads,
+        TextWriter stdout,
+        TextWriter stderr,
+        CancellationToken cancellationToken)
+    {
+        using ServiceProvider services = new ServiceCollection().AddLegalAgentPdfParser().BuildServiceProvider();
+        var converter = new DocumentSetConverter(services.GetRequiredService<IPdfMarkdownConverter>());
+        PdfSource[] sources = [.. run.Results.Select(r => new PdfSource(r.Index, r.Address, Path.Combine(downloads, r.FileName)))];
+        var report = new ConversionConsoleReport(stdout, stderr, RequiredCount);
+        report.Start();
+        ConversionRun conversion = await converter.ConvertAllAsync(sources, report, cancellationToken).ConfigureAwait(false);
+        report.Summary(conversion);
+        return conversion;
     }
 
     /// <summary>Checks a list from the arguments or the configuration; reports the first wrong position.</summary>

@@ -194,13 +194,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 entry.Legal = match;
             }
 
-            entry.Candidate = entry.Legal is null
+            bool styled = entry.Legal is null
                 && entry.Isolated
                 && entry.Text.Length <= options.MaxLength
                 && entry.Text.Any(char.IsLetter)
-                && !entry.Text.EndsWith(',')
-                && !entry.Text.EndsWith(';')
                 && (entry.Enlarged || entry.BoldSignal || entry.Caps || entry.Centered);
+            entry.Candidate = styled && !entry.Text.EndsWith(',') && !entry.Text.EndsWith(';');
+            entry.WrappedAfterComma = styled && entry.Text.EndsWith(',') && (entry.Enlarged || entry.BoldSignal);
 
             entry.InTableDocument = InTableDocumentPart(context, entry);
             entry.Plain = entry.InTableDocument
@@ -209,6 +209,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             if (entry.Plain)
             {
                 entry.Candidate = false;
+                entry.WrappedAfterComma = false;
                 entry.Centered = false;
             }
         }
@@ -216,12 +217,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
     /// <summary>
     /// Spec 002, FR-088: a caption — a line lying on an image or whose top is at most three line heights below it, within
-    /// the image's width widened by 10% on each side (a logo with the publisher's address under it).
+    /// the image's width widened by 10% on each side (a logo with the publisher's address under it). An image lower than
+    /// the line (a thin decorative strip across the page, T067e) has no captions.
     /// </summary>
     private static bool IsImageCaption(Entry entry)
     {
         Rect line = entry.Line.Box;
-        foreach (Rect image in entry.Page.ImageAreas)
+        foreach (Rect image in entry.Page.ImageAreas.Where(i => i.Height >= line.Height))
         {
             double margin = CaptionWidthMargin * image.Width;
             bool below = line.Top >= image.Bottom - CaptionTolerance && line.Top - image.Bottom <= CaptionGapInLineHeights * line.Height;
@@ -376,13 +378,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 continue;
             }
 
-            if (!entry.Candidate)
+            if (!entry.Candidate && !entry.WrappedAfterComma)
             {
                 continue;
             }
 
             var heading = new Detected(entry, SectionKind.Typographic) { Text = entry.Text };
-            entry.Consumed = true;
 
             // Multi-line typographic heading: following lines in the same enlarged or bold style (FR-041, MaxLines).
             Entry last = entry;
@@ -406,8 +407,19 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
                 heading.Merged.Add(follower);
                 heading.Text += " " + follower.Text;
-                follower.Consumed = true;
                 last = follower;
+            }
+
+            // T067f: a line ending with a comma is a heading only when the lines merged into it complete it.
+            if (entry.WrappedAfterComma && (heading.Merged.Count == 0 || heading.Text.EndsWith(',') || heading.Text.EndsWith(';')))
+            {
+                continue;
+            }
+
+            entry.Consumed = true;
+            foreach (Entry merged in heading.Merged)
+            {
+                merged.Consumed = true;
             }
 
             headings.Add(heading);
@@ -548,7 +560,11 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 h.Level = Math.Min(h.Level, open.Peek().Level + 1);
             }
 
-            open.Push(h);
+            // T067g: a table of contents has no subsections, so the chapters after it never stand below it.
+            if (!TableOfContents().IsMatch(h.Text))
+            {
+                open.Push(h);
+            }
         }
 
         // FR-087: from a table-document on, the section names (level 2) are the top level; units and the structure
@@ -644,6 +660,12 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
     private static partial System.Text.RegularExpressions.Regex ValidityLine();
 
+    /// <summary>T067g: the heading of a table of contents („Spis treści”, „Spis treści:”).</summary>
+    [System.Text.RegularExpressions.GeneratedRegex(
+        @"^spis\s+(treści|rzeczy)\s*:?$",
+        System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant)]
+    private static partial System.Text.RegularExpressions.Regex TableOfContents();
+
     private static double RoundHalf(double value) => Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
 
     private sealed class Entry(LayoutPage page, LayoutLine line, LayoutLine? previous, string text)
@@ -673,6 +695,9 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         public bool Isolated { get; set; }
 
         public bool Candidate { get; set; }
+
+        /// <summary>Would be a candidate but ends with a comma: the first line of a heading wrapped after a comma (T067f).</summary>
+        public bool WrappedAfterComma { get; set; }
 
         public bool Consumed { get; set; }
 

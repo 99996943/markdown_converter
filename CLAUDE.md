@@ -13,7 +13,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   parallel (allowed hosts, manual redirects, time/size limits, `.part` + atomic move, `manifest.json`, cleanup); the
   console app asks for 5 regulation URLs (or takes `--url` ×5 / `Download:Urls` from `appsettings.json` and
   `FAQGEN__…` variables) and writes them to `./downloads` (git-ignored — real bank documents). The library knows no
-  hosts; `mbank.pl` and the count 5 live in the app. Conversion and FAQ (OKF) are later stages of the same app.
+  hosts; `mbank.pl` and the count 5 live in the app.
+- **`LegalAgent.Faq`** (spec 006): `Conversion/DocumentSetConverter` writes `<name>.md` next to each PDF (parser
+  defaults, atomic, stale `*.md` removed after 5/5); `FaqGenerator` asks the model in two steps — candidates per
+  document D1…Dn in turn, then one selection of 10 — and validates every JSON response (`FaqResponseParser`,
+  `FaqResponseValidator`, `UnitMatcher`); `FaqMarkdownRenderer` writes the OKF file with a hand-written YAML header.
+  Depends only on `Microsoft.SemanticKernel.Abstractions`; no „mBank”, „Azure” or file name in it. The app stages
+  after a full download: conversion → `CheckInput` → key (`KeyPrompt`: stars in the console, or the next line of
+  redirected stdin) → `FaqGenerator` through `ChatServiceFactory` (Azure OpenAI connector, no retries, per-request
+  timeout, strict JSON schema) → `faq/FAQ_mBank.md` (not git-ignored). Exit codes 5 conversion, 6 service/too long,
+  7 rejected response. `scripts/azure/create-openai.sh` creates the resource group, account and deployment
+  idempotently and never reads the key.
+- **The API key is never configuration**: no option, no environment variable, `AzureOpenAI:ApiKey` is rejected; FAQ
+  messages go through `SecretRedactor`.
 
 The owner communicates in Polish. Specs, the README, `corpus/README.md` and the corpus content are in Polish; code, comments and commit messages are in English.
 
@@ -42,13 +54,26 @@ dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- refresh    # re-con
 dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- verify     # rebuild in memory, compare with disk (CI step)
 dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- check --template <id>
 
-# regulation download (prompts for 5 URLs without --url; exit codes 0/2/3/4/130/1 in specs/005-regulation-download/contracts/cli.md)
+# download → conversion → FAQ (prompts for 5 URLs without --url; exit codes 0–7/130 in specs/006-faq-generation/contracts/cli.md)
 dotnet run --project src/mBank.FaqGenerator -c Release -- --url <a> --url <b> --url <c> --url <d> --url <e> [--output <dir>]
 ```
 
 The download tests never touch the network: `FakeHttpHandler` (in `tests/LegalAgent.Downloads.Tests/Fakes/`, linked
 into the app tests) scripts responses, and app tests run `Program.RunAsync` through `AppHarness` with their own
 `appsettings.json`.
+
+The FAQ tests never touch Azure. `tests/LegalAgent.Faq.Tests/Fakes/` (linked into the app tests) has
+`FakeChatCompletionService` (scripted answers, a `Fallback` that answers any request validly, call log), `FaqJson`
+and `TestPdfs` (synthetic regulations). `AppHarness` passes an `AppHost` with `FakeKeyInput`, a fixed clock, the fake
+model, or the real connector over `ModelHttpHandler` (`UseConnector`). `AzureScriptTests` run the script with a fake
+`az` first on `PATH` and skip without `bash`.
+
+```bash
+# FAQ run (endpoint in appsettings.Local.json or FAQGEN__AzureOpenAI__Endpoint; key typed or piped)
+az cognitiveservices account keys list -g rg-faqgen -n <name> --query key1 -o tsv \
+  | dotnet run --project src/mBank.FaqGenerator -c Release -- --url <a> … --url <e> [--faq-output <dir>]
+scripts/azure/create-openai.sh [--model gpt-5.4-mini --model-version 2026-03-17]   # Bash; Git Bash on Windows
+```
 
 Environment variables used by the tests:
 - **`UPDATE_GOLDEN=1`**: rewrites `*.expected.md` goldens and the chunk goldens `tests/LegalAgent.Chunking.Tests/Golden/*.chunks.jsonl`. On a mismatch, tests write `*.actual.md` / `*.actual.jsonl` (git-ignored).

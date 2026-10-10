@@ -11,10 +11,7 @@ public sealed class ExitCodeTests : IDisposable
 
     public ExitCodeTests()
     {
-        foreach (string url in Urls)
-        {
-            app.Http.Pdf(url);
-        }
+        app.ServeRegulations(Urls);
     }
 
     public void Dispose() => app.Dispose();
