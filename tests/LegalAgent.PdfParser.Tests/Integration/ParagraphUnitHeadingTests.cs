@@ -186,6 +186,44 @@ public sealed class ParagraphUnitHeadingTests
     }
 
     /// <summary>
+    /// T025a (D-D) — a gridless table of contents „§ N. | Tytuł ....” whose row „§ 10. Tytuł ....” is one segment stays
+    /// one table: a line with leader dots is an entry of the contents, not a unit.
+    /// </summary>
+    [Fact]
+    public async Task Contents_row_with_leader_dots_is_not_a_unit_line()
+    {
+        string Dots(string title) => title + " " + new string('.', 120 - (2 * title.Length));
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Zasady współpracy", 14, bold: true)) / 2, 50, "Zasady współpracy", 14, bold: true);
+        page.Text(40, 80, "Spis treści", HeadingSize, bold: true);
+        string[] titles = ["Postanowienia ogólne", "Definicje", "Porady ogólne", "Ryzyka", "Zawieranie transakcji", "Platforma transakcyjna", "Potwierdzenie transakcji", "Rozliczanie transakcji", "Przypadki naruszenia", "Skutki naruszenia", "Przypadki rozwiązania"];
+        double y = 100;
+        for (int i = 0; i < titles.Length; i++)
+        {
+            string number = $"§ {i + 1}.";
+            if (i == 9)
+            {
+                page.Text(40, y, number + " " + Dots(titles[i]), Size);
+            }
+            else
+            {
+                page.Text(40, y, number, Size).Text(70, y, Dots(titles[i]), Size);
+            }
+
+            y += 10;
+        }
+
+        page.Text(Margin, y + 20, "Regulamin określa zasady zawierania transakcji rynku finansowego między Bankiem a Klientem, który nie jest instytucją finansową.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.DoesNotMatch(@"(?m)^#+ § ", result.Markdown);
+        Assert.Equal(1, result.Report.TableCount);
+        Assert.Contains("§ 10.", result.Markdown, StringComparison.Ordinal);
+    }
+
+    /// <summary>
     /// T019a (D-B) — a centred bold „§ N” at the body leading right below the last line of a list item, and right below
     /// a chapter heading, is still a unit heading (centring sets it apart).
     /// </summary>
