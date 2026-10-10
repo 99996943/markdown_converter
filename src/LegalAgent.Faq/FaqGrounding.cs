@@ -200,9 +200,9 @@ internal static partial class FaqGrounding
     private static partial Regex Designation();
 
     /// <summary>
-    /// A list label („1)”, „a)”, Markdown „1\)”; slash labels „1/”, „1a/”, „a/”, spec 007), removed before comparing
-    /// quotes (T067m, T041a).
+    /// A list label („1)”, „a)”, Markdown „1\)”; slash labels „1/”, „1a/”, „a/”, spec 007; letter and Roman dot labels
+    /// „a.”, „ii.”, Markdown „a\.”, spec 008), removed before comparing quotes (T067m, T041a, T029).
     /// </summary>
-    [GeneratedRegex(@"(?<![\p{L}\p{N}])((\d{1,2}|\p{L})\\?\)|(\d{1,3}\p{Ll}?|\p{Ll}{1,2})/)", RegexOptions.CultureInvariant)]
+    [GeneratedRegex(@"(?<![\p{L}\p{N}])((\d{1,2}|\p{L})\\?\)|(\d{1,3}\p{Ll}?|\p{Ll}{1,2})/|(\p{Ll}|[ivx]{2,6})\\?\.(?=\s))", RegexOptions.CultureInvariant)]
     private static partial Regex ListLabel();
 }
