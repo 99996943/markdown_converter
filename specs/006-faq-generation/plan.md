@@ -74,9 +74,9 @@ konfigurację. Nowe kody wyjścia: 5, 6, 7.
 |-----------------------|-------|-------|
 | I. TDD | ✅ | red/green na każdą zmianę zachowania; atrapy modelu, HTTP, klawiatury, czasu i `az`; testy offline i deterministyczne |
 | II. Wierność źródłu | ✅ | polecenia zakazują informacji spoza dokumentu i wymagają „Dokument nie rozstrzyga…”; walidacja odrzuca nieistniejące dokumenty, kandydatów i jednostki; każda odpowiedź ma źródło z adresem; zgodność merytoryczna — ręcznie (SC-074) |
-| III. Powtarzalność | ⚠️ | jedno polecenie ✅ (adresy z `--url`/konfiguracji, klucz potokiem); pobranie, konwersja, walidacja i renderowanie deterministyczne ✅; **treść FAQ z modelu nie jest deterministyczna** — Complexity Tracking |
+| III. Powtarzalność | ✅ | jedno polecenie (adresy z `--url`/konfiguracji, klucz potokiem); pobranie, konwersja, walidacja i renderowanie deterministyczne; treść FAQ z modelu i `timestamp` objęte wyjątkiem z konstytucji 1.4.0 (`Temperature` 0, `Seed`) |
 | IV. Błędy zewnętrzne | ✅ | limit czasu na zapytanie, mapowanie każdego błędu usługi, kody 5/6/7, atomowe zapisy, poprzedni FAQ nietknięty, niepełny wynik nigdy nie kończy się kodem 0 |
-| V. Bezpieczeństwo i konfiguracja | ⚠️ | brak sekretów w repo ✅; endpoint i wdrożenie w konfiguracji ✅; **klucz nie pochodzi ze zmiennych środowiskowych** (decyzja właściciela, stricter) — Complexity Tracking; `AzureOpenAI:ApiKey` w konfiguracji odrzucany |
+| V. Bezpieczeństwo i konfiguracja | ✅ | brak sekretów w repo; endpoint i wdrożenie w konfiguracji; klucz z konsoli lub przekierowanego wejścia, tylko w pamięci procesu (konstytucja 1.4.0); `AzureOpenAI:ApiKey` w konfiguracji odrzucany |
 | VI. Prostota, zależności | ✅ | 2 nowe pakiety (SK Abstractions w bibliotece, konektor w aplikacji), przypięte centralnie, uzasadnione wymaganiem właściciela (R2); bez tokenizera (R3), bez YamlDotNet w bibliotece (R10), bez DI w aplikacji poza parserem |
 | VII. Dokumentacja | ✅ | README: zasób Azure (utworzenie, usunięcie), konfiguracja, klucz (konsola, potok), kody, FAQ; `CLAUDE.md` |
 | Biblioteka + aplikacja | ✅ | logika konwersji i FAQ w `LegalAgent.Faq` (R9); aplikacja: konfiguracja, klucz, klient Azure, konsola, kody |
@@ -87,8 +87,7 @@ konfigurację. Nowe kody wyjścia: 5, 6, 7.
 | Publiczne API udokumentowane | ✅ | `contracts/library-api.md`, komentarze XML, wersja 1.0.0 |
 | Format OKF | ✅ | osobny katalog OKF `faq/` z jednym dokumentem z front matter (`type`, `title`, `description`, `resource`, `timestamp`); nazwa pliku z opisu (R10) |
 
-Ponowna ocena po fazie 1 i po /speckit-analyze: bez nowych odstępstw. Dwa ⚠️ (zasady III i V) są uzasadnione
-poniżej i czekają na poprawkę konstytucji (`/speckit-constitution`, MINOR 1.4.0); po niej zmienią się na ✅.
+Ponowna ocena po fazie 1, po /speckit-analyze i po poprawce konstytucji 1.4.0 (2026-10-10): bez odstępstw.
 
 ## Project Structure
 
@@ -226,7 +225,4 @@ README.md, CLAUDE.md                         # sekcje FAQ i Azure
 
 ## Complexity Tracking
 
-| Odstępstwo | Dlaczego potrzebne | Prostsza / zgodna alternatywa odrzucona, bo |
-|------------|--------------------|---------------------------------------------|
-| Zasada III — treść `FAQ_mBank.md` może się różnić między uruchomieniami | generuje ją model językowy; `timestamp` w OKF zmienia się z definicji | pełnego determinizmu usługa nie gwarantuje; ograniczamy losowość (`Temperature` 0, `Seed`), a wszystkie inne etapy są deterministyczne i testowane golden |
-| Zasada V — klucz z konsoli lub przekierowanego wejścia, nie ze zmiennej środowiskowej | wymaganie właściciela: klucz „WYŁĄCZNIE w pamięci procesu”, bez zmiennych i plików (Clarifications) | zmienna środowiskowa zostaje w środowisku powłoki, w historii i w procesach potomnych; sekret nadal nie trafia do repozytorium, czyli cel zasady jest spełniony mocniej |
+Brak odstępstw (zasady III i V objęte konstytucją 1.4.0).
