@@ -14,8 +14,8 @@ test sprawdzający, że polecenie je zawiera.
   wynika z tekstu (konstytucja, zasada II);
 - język polski;
 - liczbę: „co najwyżej N pytań” (`CandidatesPerDocument`);
-- jednostkę: „podaj oznaczenie jednostki redakcyjnej (np. § 12, Art. 5) dokładnie tak, jak w nagłówku dokumentu,
-  albo pusty tekst”.
+- jednostkę: przepisz jednostkę dokładnie z listy „Jednostki dokumentu” pod dokumentem albo podaj pusty tekst;
+  nie twórz oznaczeń spoza listy (T067a: regulaminy mBanku nie mają § ani Art., a model podawał „§ 6”).
 
 **Komunikat użytkownika**:
 
@@ -24,7 +24,14 @@ Dokument D2: <Name>
 Źródło: <Resource>
 
 <pełny Markdown dokumentu>
+
+Jednostki dokumentu D2 (pole „unit” przepisz dokładnie z tej listy albo podaj pusty tekst):
+- <Units[0]>
+- <Units[1]>
 ```
+
+Pozycje to `FaqDocumentInput.Units` (każda w jednym wierszu). Gdy lista jest pusta, zamiast niej jest wiersz
+„Jednostki dokumentu D2: brak — w polu „unit” podaj pusty tekst.”.
 
 **Schemat odpowiedzi** (`FaqSchemas.Candidates`):
 

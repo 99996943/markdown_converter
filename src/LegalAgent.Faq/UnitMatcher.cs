@@ -1,9 +1,10 @@
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace LegalAgent.Faq;
 
 /// <summary>Matches a unit cited by the model against the units of a document (data-model.md, „Dopasowanie jednostki”).</summary>
-public static class UnitMatcher
+public static partial class UnitMatcher
 {
     /// <summary>
     /// Whether <paramref name="cited"/> equals a unit, or starts with one followed by the end, a space or a comma, after
@@ -25,12 +26,7 @@ public static class UnitMatcher
         foreach (string unit in units)
         {
             string candidate = Normalize(unit);
-            if (candidate.Length == 0 || !normalized.StartsWith(candidate, StringComparison.Ordinal))
-            {
-                continue;
-            }
-
-            if (normalized.Length == candidate.Length || normalized[candidate.Length] is ' ' or ',')
+            if (StartsWithUnit(normalized, candidate) || StartsWithUnit(normalized, HeadingNumber(candidate)))
             {
                 return true;
             }
@@ -38,6 +34,21 @@ public static class UnitMatcher
 
         return false;
     }
+
+    private static bool StartsWithUnit(string cited, string unit) =>
+        unit.Length > 0
+        && cited.StartsWith(unit, StringComparison.Ordinal)
+        && (cited.Length == unit.Length || cited[unit.Length] is ' ' or ',');
+
+    /// <summary>The number of a numbered heading („6” in „6. jakie …”, „2.1” in „2.1. …”), or empty.</summary>
+    private static string HeadingNumber(string unit)
+    {
+        Match match = NumberedHeading().Match(unit);
+        return match.Success ? match.Groups[1].Value : string.Empty;
+    }
+
+    [GeneratedRegex(@"^(\d+(?:\.\d+)*)\. ", RegexOptions.CultureInvariant)]
+    private static partial Regex NumberedHeading();
 
     /// <summary>NBSP to space, collapsed whitespace, trimmed, without a trailing dot, lower case (invariant).</summary>
     internal static string Normalize(string text)

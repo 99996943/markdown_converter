@@ -532,7 +532,7 @@ nie dotyka klucza.
   - `az group delete`.
 
   Wymaga klucza i adresów od właściciela. Jeśli niedostępne, zapisz jako otwarte w handoffie.
-- [ ] T067a Pierwszy prawdziwy przebieg (gpt-4.1-mini) odrzucił D1: model podał „§ 6”, „§ 15”…, a regulaminy mBanku
+- [X] T067a Pierwszy prawdziwy przebieg (gpt-4.1-mini) odrzucił D1: model podał „§ 6”, „§ 15”…, a regulaminy mBanku
   nie mają § ani Art. — nagłówki to „6. Jakie informacje musisz podać…”. Poprawka:
   - komunikat użytkownika kroku kandydatów kończy się listą „Jednostki dokumentu Dn” (pozycje `Units`) albo
     „Jednostki dokumentu Dn: brak” z prośbą o pusty tekst; komunikat systemowy każe przepisać jednostkę z tej listy

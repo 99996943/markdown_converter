@@ -283,8 +283,11 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   pełny przebieg na 5 prawdziwych regulaminach, gwiazdki przy wklejaniu na Windows, klucz potokiem, ocena 10
   odpowiedzi (SC-074), `az group delete`. Nic z tego nie było uruchomione — właściciel: „nie będziesz miał połączenia
   azure, testy zrobimy później”.
-- Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek (model może podawać „§ 12 ust. 3” — pasuje —
-  albo nazwy spoza nagłówków — odrzucenie, kod 7), zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
+- **T067a (2026-10-10)**: pierwszy prawdziwy przebieg (`gpt-4.1-mini`, publikacja win-x64) zakończył się kodem 7 już
+  na D1 — 10/10 jednostek odrzuconych („§ 6”, „§ 15”…), bo wszystkie 5 regulaminów mBanku ma nagłówki numerowane
+  („6. Jakie informacje …”) bez § i Art. Poprawka: lista „Jednostki dokumentu Dn” na końcu komunikatu kandydatów i
+  numer nagłówka numerowanego jako oznaczenie jednostki. Walidacja pozostaje ścisła. Ponowny przebieg do zrobienia.
+- Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).
 - Gałąź do wypchnięcia i PR (najpierw scalenie 005).

@@ -24,7 +24,8 @@ public sealed class FaqGeneratorTests
             string user = chat.Calls[i - 1].User;
             Assert.Contains(Invariant($"Dokument D{i}: Regulamin {i}\n"), user, StringComparison.Ordinal);
             Assert.Contains(Invariant($"Źródło: https://example.test/pdf/reg-{i}.pdf\n"), user, StringComparison.Ordinal);
-            Assert.EndsWith(Markdown(i), user, StringComparison.Ordinal);
+            Assert.Contains(Markdown(i), user, StringComparison.Ordinal);
+            Assert.Contains(Invariant($"\nJednostki dokumentu D{i} ("), user, StringComparison.Ordinal);
         }
     }
 

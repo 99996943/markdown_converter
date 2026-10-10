@@ -114,11 +114,14 @@ Wszystkie problemy są zbierane, nie tylko pierwszy. Każdy problem skutkuje odr
   `OrdinalIgnoreCase` po `ToLowerInvariant`;
 - warunek: równość z dowolnym elementem albo `cited` zaczyna się od elementu, po którym jest koniec, spacja lub
   `,`.
+- numer nagłówka numerowanego też jest oznaczeniem jednostki (T067a): z „6. Jakie …” liczy się „6”, z „2.1. …”
+  „2.1”, z tym samym warunkiem końca.
 
 Przykłady:
 - „§ 12 ust. 3” pasuje do „§ 12.”;
 - „Art. 5a” nie pasuje do „Art. 5”;
 - „Rozdział 2” pasuje do „Rozdział 2. Otwarcie rachunku”, bo oznaczenie „Rozdział 2” jest w zbiorze.
+- „6”, „6.” i „6 ust. 2” pasują do „6. Jakie informacje …”; „§ 6” i „16” nie; „2” nie pasuje do „2.1. …”.
 
 ## Plik FAQ
 

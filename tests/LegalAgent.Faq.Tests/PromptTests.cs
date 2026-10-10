@@ -71,7 +71,7 @@ public sealed class PromptTests
             (_, _) => new PromptExecutionSettings());
         FaqDocumentInput[] documents =
         [
-            new("A", new Uri("https://example.test/a.pdf"), "# A\n\nTreść.\n", []),
+            new("A", new Uri("https://example.test/a.pdf"), "# A\n\nTreść.\n", units ?? []),
             new("B", new Uri("https://example.test/b.pdf"), "# B\n\nTreść.\n", []),
         ];
         await generator.GenerateAsync(documents, cancellationToken: TestContext.Current.CancellationToken);

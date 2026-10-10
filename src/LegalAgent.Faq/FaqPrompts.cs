@@ -18,13 +18,35 @@ internal static class FaqPrompts
         - Odpowiadaj wyłącznie na podstawie treści dokumentu. Nie dodawaj informacji spoza dokumentu, nie zgaduj i nie uogólniaj.
         - Jeśli dokument nie daje odpowiedzi na pytanie, napisz wprost: „Dokument nie rozstrzyga …” i dokończ, czego nie rozstrzyga.
         - Pisz po polsku, jasno i zwięźle, językiem zrozumiałym dla klienta; kwoty, terminy i warunki przepisuj dokładnie.
-        - W polu „unit” podaj oznaczenie jednostki redakcyjnej, z której pochodzi odpowiedź (np. § 12, Art. 5, Rozdział 3), dokładnie tak, jak w nagłówku dokumentu, albo pusty tekst, gdy odpowiedź nie pochodzi z jednej jednostki.
+        - W polu „unit” podaj jednostkę redakcyjną (nagłówek), z której pochodzi odpowiedź, przepisaną dokładnie z listy „Jednostki dokumentu” podanej pod dokumentem, albo pusty tekst, gdy odpowiedź nie pochodzi z jednej jednostki lub lista jest pusta. Nie twórz oznaczeń, których nie ma na liście (np. „§ 6”, gdy dokument nie ma paragrafów).
         - Odpowiedz wyłącznie obiektem JSON zgodnym ze schematem.
         """);
 
-    /// <summary>User message of the candidate step: identifier, name, source and the full Markdown.</summary>
-    public static string CandidatesUser(FaqSourceDocument document, string markdown) =>
-        $"Dokument {document.Id}: {document.Name}\nŹródło: {document.Resource.OriginalString}\n\n{markdown}";
+    /// <summary>User message of the candidate step: identifier, name, source, the full Markdown and the units it may cite.</summary>
+    public static string CandidatesUser(FaqSourceDocument document, string markdown, IReadOnlyList<string> units)
+    {
+        var text = new StringBuilder()
+            .Append("Dokument ").Append(document.Id).Append(": ").Append(document.Name).Append('\n')
+            .Append("Źródło: ").Append(document.Resource.OriginalString).Append("\n\n")
+            .Append(markdown);
+        if (!markdown.EndsWith('\n'))
+        {
+            text.Append('\n');
+        }
+
+        if (units.Count == 0)
+        {
+            return text.Append("\nJednostki dokumentu ").Append(document.Id).Append(": brak — w polu „unit” podaj pusty tekst.\n").ToString();
+        }
+
+        text.Append("\nJednostki dokumentu ").Append(document.Id).Append(" (pole „unit” przepisz dokładnie z tej listy albo podaj pusty tekst):\n");
+        foreach (string unit in units)
+        {
+            text.Append("- ").Append(OneLine(unit)).Append('\n');
+        }
+
+        return text.ToString();
+    }
 
     /// <summary>System message of the selection step.</summary>
     public static string SelectionSystem(int itemCount) => string.Create(

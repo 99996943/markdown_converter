@@ -107,7 +107,7 @@ public sealed class FaqGenerator
         for (int i = 0; i < documents.Count; i++)
         {
             FaqSourceDocument source = sources[i];
-            string user = FaqPrompts.CandidatesUser(source, documents[i].Markdown);
+            string user = FaqPrompts.CandidatesUser(source, documents[i].Markdown, documents[i].Units);
             progress?.Report(new FaqEvent(FaqEventKind.CandidatesStarted, source.Id, user.Length, Estimate(user), null, null));
 
             (string text, FaqUsage? usage) = await AskAsync(FaqStep.Candidates, source.Id, FaqPrompts.CandidatesSystem(options.CandidatesPerDocument), user, cancellationToken)
