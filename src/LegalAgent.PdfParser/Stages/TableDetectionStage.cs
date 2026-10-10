@@ -546,9 +546,14 @@ public sealed class TableDetectionStage : IPipelineStage
         bands.Count >= 2
         && multi.All(r => r.Cells.Count >= 2 && r.Cells.Take(r.Cells.Count - 1).All(c => c.Words.Count == 1 && IsHangingLabel(c.Text)));
 
-    /// <summary>A list label, or a letter with a dot („a.”, „b.”) that enumerates in the hanging column like one.</summary>
+    /// <summary>
+    /// A list label, or a letter or lower-case Roman numeral with a dot („a.”, „ii.”) that enumerates in the hanging
+    /// column like one.
+    /// </summary>
     private static bool IsHangingLabel(string text) =>
-        ListLabelPatterns.TryMatch(text + " x", out _) || (text.Length == 2 && text[0] is >= 'a' and <= 'z' && text[1] == '.');
+        ListLabelPatterns.TryMatch(text + " x", out _)
+        || (text.Length == 2 && text[0] is >= 'a' and <= 'z' && text[1] == '.')
+        || (text.Length is > 2 and <= 6 && text[^1] == '.' && text[..^1].All(c => c is 'i' or 'v' or 'x'));
 
     /// <summary>
     /// Running text in two columns is left to reading order (FR-031) even where lines of both columns share a baseline:
