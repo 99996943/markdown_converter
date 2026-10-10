@@ -294,7 +294,11 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   pozycja 5 zniekształca warunki (wybrana opcja obciążenia dotyczy tylko zleceń stałych; pominięte wyjątki).
 - **T067c/T067d**: krok wyboru — jedno pytanie = jedna sprawa; kandydaci mają dosłowny cytat (`quote`) i są
   ugruntowani w tekście jednostki (cytat + liczby, `FaqGrounding`); nieugruntowany kandydat odpada z ostrzeżeniem
-  (decyzja właściciela), a liczba w pozycji FAQ spoza kandydatów `basedOn` odrzuca wybór. Ponowny przebieg do zrobienia.
+  (decyzja właściciela), a liczba w pozycji FAQ spoza kandydatów `basedOn` odrzuca wybór.
+- **T067e–T067g (parser)**: tytuł pod ozdobnym paskiem, nagłówek zawinięty po przecinku, nagłówek na krawędzi
+  ramki schematu kroków, spis treści jako rodzic rozdziałów — poprawione bez zmian goldenów i korpusu. Otwarte:
+  karty dla firm cz. II rozdz. 3 (nagłówek w tabeli), wiersze tabel jako nagłówki, przypisy, spis treści w treści.
+  Ponowny przebieg do zrobienia.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

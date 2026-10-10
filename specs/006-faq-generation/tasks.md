@@ -563,14 +563,22 @@ zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokaza�
     dopiero, gdy z dokumentu nie zostanie żaden kandydat;
   - krok wyboru: liczba w odpowiedzi pozycji, której nie ma w odpowiedziach ani cytatach kandydatów `basedOn`,
     odrzuca odpowiedź (kod 7).
-- [ ] T067e Parser: tytuł z kilku linii pierwszej strony („**Regulamin usług płatniczych dla osób fizycznych**” +
+- [X] T067e Parser: tytuł z kilku linii pierwszej strony („**Regulamin usług płatniczych dla osób fizycznych**” +
   trzy osobne `# …`) to jeden nagłówek `#` (replika strony w teście).
-- [ ] T067f Parser: dwuwierszowy pogrubiony nagłówek rozdziału („**14. Jak będziemy Cię obsługiwać, gdy władze
+- [X] T067f Parser: dwuwierszowy pogrubiony nagłówek rozdziału („**14. Jak będziemy Cię obsługiwać, gdy władze
   ogłoszą stan nadzwyczajny,**” + „**stan zagrożenia epidemicznego lub stan epidemii?**”) to jeden nagłówek na
   poziomie pozostałych rozdziałów; dziś jego treść trafia do rozdziału 13 (regulamin obsługi klientów: rozdziały 14
   i 18; karty kredytowe dla firm: część II, rozdział 3).
-- [ ] T067g Parser: rozdziały nie mogą być podrozdziałami spisu treści (regulamin reklamacji: `## Spis treści`,
+- [X] T067g Parser: rozdziały nie mogą być podrozdziałami spisu treści (regulamin reklamacji: `## Spis treści`,
   rozdziały `###`).
+
+  Wykonanie: T067e — obraz niższy od linii (pasek ozdobny 9 pt) nie ma podpisów, więc tytuł pod nim zostaje
+  tytułem; T067f — pogrubiony/powiększony wiersz zakończony przecinkiem jest nagłówkiem tylko, gdy dołączony
+  wiersz go domyka (rozdz. 14), a wiersz z wyrazem na krawędzi ramki schematu kroków nie jest wierszem nazw kolumn
+  (rozdz. 18); T067g — nagłówek „Spis treści”/„Spis rzeczy” nigdy nie jest rodzicem. Goldeny, prywatny korpus
+  (956/956) i `corpus/` bez zmian. **Otwarte:** karty kredytowe dla firm, część II, rozdział 3 — nagłówek wchodzi
+  do tabeli (TableDetection, ramki „etap”), inna przyczyna; nagłówek schematu kroków w cieniowanej ramce w
+  rozdziale 18 nadal jako pogrubione tytuły kroków.
 
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
