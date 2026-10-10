@@ -76,6 +76,49 @@ public sealed class ParagraphUnitHeadingTests
         Assert.Equal(("§ 5", SectionKind.Paragraph), (unit.HeadingText, unit.Kind));
     }
 
+    /// <summary>T020 (C5) — a unit under an open numbered chapter („2. Rachunki…”) stands one level below it.</summary>
+    [Fact]
+    public async Task Paragraph_under_a_numbered_chapter_is_one_level_below_it()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildR1a());
+
+        Section chapter = Assert.Single(All(result.Document.Sections), s => s.HeadingText == "2. Rachunki bankowe oraz rachunek VAT");
+        Assert.Equal(["§ 5", "§ 6"], chapter.Children.Select(c => c.Designation));
+        Assert.All(chapter.Children, c => Assert.Equal(chapter.Level + 1, c.Level));
+        Assert.Matches(@"(?m)^### 2\. Rachunki bankowe oraz rachunek VAT
+
+#### § 5$", result.Markdown);
+    }
+
+    /// <summary>
+    /// T019a (D-B) — a centred bold „§ N” at the body leading right below the last line of a list item, and right below
+    /// a chapter heading, is still a unit heading (centring sets it apart).
+    /// </summary>
+    [Fact]
+    public async Task Centred_paragraph_at_body_leading_is_a_unit_heading()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text(40, 80, "Rozdział 2. Zawarcie umowy", HeadingSize, bold: true);
+        Centered(page, 100, "§ 6");
+        Item(page, Margin, Point, 116, "1.", "Umowę zawiera się na czas nieokreślony, w formie pisemnej albo w systemie bankowości elektronicznej.");
+        Item(page, Margin, Point, 126, "2.", "Umowę zawiera się na wniosek Klienta. Wzór wniosku Bank udostępnia w placówkach oraz na stronie internetowej,");
+        page.Text(54.6, 136, "a Klient składa go w placówce Banku.", Size);
+        Centered(page, 146, "§ 7");
+        page.Text(40.5, 156, "Integralną część umowy stanowi regulamin, który Bank przekazuje Klientowi przed zawarciem umowy.", Size);
+        page.Text(40.5, 176, "Rozdział 3. Odpowiedzialność stron", HeadingSize, bold: true);
+        Centered(page, 186, "§ 8");
+        page.Text(40.5, 202, "Bank nie odpowiada za szkody, które powstały z przyczyn, za które odpowiedzialności nie ponosi.", Size);
+        page.Text(Margin, 222, "Bank odpowiada za niewykonanie lub nienależyte wykonanie umowy na zasadach określonych w przepisach prawa,", Size);
+        page.Text(Margin, 232, "a w sprawach, których przepisy nie regulują, na zasadach określonych w umowie oraz w tym regulaminie.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Matches(@"(?m)^#+ § 7\n\nIntegralną część umowy", result.Markdown);
+        Assert.Matches(@"(?m)^#+ § 8\n\nBank nie odpowiada", result.Markdown);
+        Assert.DoesNotContain("**§", result.Markdown, StringComparison.Ordinal);
+    }
+
     /// <summary>
     /// T018 (R1d) — negatives: „§ 5 ust. 2” starting a wrapped line, and a lone plain „§ 5” wrapped from a sentence, stay
     /// text of their paragraph.
