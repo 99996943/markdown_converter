@@ -546,6 +546,35 @@ nie dotyka klucza.
   źródła pozycji liczy kod z kandydatów `basedOn` (dokument + jednostka już sprawdzona w kroku kandydatów), w
   kolejności `basedOn`, bez powtórzeń, bez źródła bez jednostki, gdy ten sam dokument ma źródło z jednostką.
   Testy: `ValidatorSelectionTests`, `ResponseParserTests`, `PromptTests`, `FaqGeneratorErrorTests`, `FaqFlowTests`.
+
+Ocena trzeciego przebiegu (FAQ 10/10 zapisane): 8 pozycji poprawnych, pozycja 4 łączy dwa tematy, pozycja 5
+zniekształca warunki przy łączeniu kandydatów; przegląd Markdownów pokazał błędy parsera. Decyzje właściciela:
+
+- [ ] T067c Komunikat systemowy kroku wyboru: jedno pytanie = jedna sprawa; łączyć tylko kandydatów o tę samą
+  sprawę, nie łączyć różnych tematów w jedno pytanie (`PromptTests`).
+- [ ] T067d Ugruntowanie kandydatów (cytat + liczby):
+  - schemat `Candidates` dostaje wymagane pole `quote` — dosłowny fragment dokumentu potwierdzający odpowiedź;
+  - tekst jednostki = sekcja Markdown od nagłówka pasującego do `unit` (`UnitMatcher`) do następnego nagłówka tego
+    samego lub wyższego poziomu; bez jednostki albo bez pasującego nagłówka — cały dokument;
+  - porównanie po normalizacji: tylko litery i cyfry, małe litery, reszta jako pojedyncza spacja (znaczniki
+    Markdown, etykiety list, cudzysłowy i komentarze stron nie przeszkadzają); cytat ma co najmniej 3 słowa;
+  - kandydat, którego cytatu nie ma w tekście jednostki albo którego odpowiedź zawiera liczbę (ciąg cyfr) spoza
+    tego tekstu, **odpada** z ostrzeżeniem w konsoli (decyzja właściciela); odpowiedź jest odrzucana (kod 7)
+    dopiero, gdy z dokumentu nie zostanie żaden kandydat;
+  - krok wyboru: liczba w odpowiedzi pozycji, której nie ma w odpowiedziach ani cytatach kandydatów `basedOn`,
+    odrzuca odpowiedź (kod 7).
+- [ ] T067e Parser: tytuł z kilku linii pierwszej strony („**Regulamin usług płatniczych dla osób fizycznych**” +
+  trzy osobne `# …`) to jeden nagłówek `#` (replika strony w teście).
+- [ ] T067f Parser: dwuwierszowy pogrubiony nagłówek rozdziału („**14. Jak będziemy Cię obsługiwać, gdy władze
+  ogłoszą stan nadzwyczajny,**” + „**stan zagrożenia epidemicznego lub stan epidemii?**”) to jeden nagłówek na
+  poziomie pozostałych rozdziałów; dziś jego treść trafia do rozdziału 13 (regulamin obsługi klientów: rozdziały 14
+  i 18; karty kredytowe dla firm: część II, rozdział 3).
+- [ ] T067g Parser: rozdziały nie mogą być podrozdziałami spisu treści (regulamin reklamacji: `## Spis treści`,
+  rozdziały `###`).
+
+  T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
+  parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
+  `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.
 - [X] T068 Handoff „Stan prac i przekazanie” na końcu `specs/006-faq-generation/plan.md`:
   - zrobione zadania, walidacja, odstępstwa od planu, decyzje w trakcie, otwarte punkty;
   - w tym: odsetek odrzuceń walidacji jednostek na prawdziwych danych, 429, model;
