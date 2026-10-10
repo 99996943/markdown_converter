@@ -122,6 +122,32 @@ public sealed class ParagraphUnitHeadingTests
     }
 
     /// <summary>
+    /// T022 (R1c) — a centred bold „§ 3. Porady ogólne” above ustępy with hanging labels is one heading with the whole
+    /// line; the designation is „§ 3” and the title does not go to the content.
+    /// </summary>
+    [Fact]
+    public async Task Centred_paragraph_with_title_is_one_heading()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Zasady współpracy", 14, bold: true)) / 2, 50, "Zasady współpracy", 14, bold: true);
+        Centered(page, 80, "§ 3. Porady ogólne");
+        page.Text(40, 100, "Zasady udzielania porad ogólnych", Size);
+        Item(page, Margin, Point, 116, "1.", "Bank może przekazywać Klientowi informacje o instrumentach finansowych, które nie są rekomendacją inwestycyjną, oraz");
+        page.Text(Point, 126, "informacje o rynku, na którym Klient zawiera transakcje.", Size);
+        Item(page, Margin, Point, 136, "2.", "Klient samodzielnie podejmuje decyzje o zawarciu transakcji i ponosi ich skutki, także gdy korzysta z informacji Banku.");
+        page.Text(Margin, 156, "Bank nie odpowiada za decyzje Klienta podjęte na podstawie informacji, o których mowa w ust. 1, chyba że przepisy stanowią", Size);
+        page.Text(Margin, 166, "inaczej albo Bank działał umyślnie, a także gdy informacje były nieaktualne z przyczyn, za które Bank odpowiada.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Matches(@"(?m)^#+ § 3\. Porady ogólne\n\nZasady udzielania porad ogólnych\n\n- 1\\\. Bank może", result.Markdown);
+        Section unit = Assert.Single(All(result.Document.Sections), s => s.Kind == SectionKind.Paragraph);
+        Assert.Equal(("§ 3", "§ 3. Porady ogólne"), (unit.Designation, unit.HeadingText));
+        Assert.DoesNotContain(unit.Blocks, b => b is ParagraphBlock p && p.Inlines.OfType<TextRun>().Any(r => r.Text.Contains("Porady ogólne", StringComparison.Ordinal)));
+    }
+
+    /// <summary>
     /// T019a (D-B) — a centred bold „§ N” at the body leading right below the last line of a list item, and right below
     /// a chapter heading, is still a unit heading (centring sets it apart).
     /// </summary>
