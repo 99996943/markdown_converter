@@ -64,13 +64,13 @@ w pierwszej kolumnie zostaje tabelą GFM.
   token bez tekstu po nim
 - [X] T008 [US2] Wartości `ArabicSlash`, `LetterSlash` w `src/LegalAgent.PdfParser/Model/ListItem.cs` (XML-doc) i
   wzorce w `src/LegalAgent.PdfParser/Text/ListLabelPatterns.cs` (green T007)
-- [ ] T009 [P] [US2] Replika (red) „zagnieżdżone 1/”: ustęp „2.” (etykieta x 40, tekst 54) z punktami „1/”, „2/” (x 54 /
+- [X] T009 [P] [US2] Replika (red) „zagnieżdżone 1/”: ustęp „2.” (etykieta x 40, tekst 54) z punktami „1/”, „2/” (x 54 /
   68), drugi punkt zawinięty do x 68, potem ustęp „3.”; oczekiwane `- 2\.` z `  - 1/`, `  - 2/` (scalona kontynuacja),
   `- 3\.`, brak TBL001 — w `tests/LegalAgent.PdfParser.Tests/Integration/HangingLabelLayoutTests.cs`
-- [ ] T010 [P] [US2] Replika (red) „trzy poziomy i część wspólna”: „1.” → „1/” (tekst kończy się „:”) → „a/”, „b/” (x 68 /
+- [X] T010 [P] [US2] Replika (red) „trzy poziomy i część wspólna”: „1.” → „1/” (tekst kończy się „:”) → „a/”, „b/” (x 68 /
   82), potem wiersz bez etykiety na x 54 (część wspólna ustępu); oraz kontynuacja punktu na następnej stronie — w tym
   samym pliku testów
-- [ ] T011 [P] [US2] Test kontrolny (powinien przejść już dziś i po zmianie): tabela opłat z 3 kolumnami tekstu i
+- [X] T011 [P] [US2] Test kontrolny (powinien przejść już dziś i po zmianie): tabela opłat z 3 kolumnami tekstu i
   „1/” w pierwszej kolumnie zostaje tabelą GFM — w `HangingLabelLayoutTests.cs`
 - [ ] T012 [US2] `TableDetectionStage.IsLabel`/`CellsOf` łączą etykiety `ArabicSlash`, `LetterSlash` i (tylko w
   obszarze etykiet) `ArabicDot` z tekstem; `KeepLabelledBoldTextInLists` obejmuje nowe rodzaje — w
@@ -78,8 +78,13 @@ w pierwszej kolumnie zostaje tabelą GFM.
 - [ ] T013 [US2] `ListDetectionStage.Rank`: `ArabicSlash` = 2, `LetterSlash` = 3 — w
   `src/LegalAgent.PdfParser/Stages/ListDetectionStage.cs`; sprawdź `MarkdownEscaper.EscapeListLabel` (etykieta „1/”
   bez ucieczki) w `src/LegalAgent.PdfParser/Rendering/MarkdownEscaper.cs`
-- [ ] T014 [US2] Jeśli T009/T010 nadal pokazują trzy kolumny: uogólnij `IsHangingList` na „każda kolumna poza ostatnią
+- [X] T014 [US2] Jeśli T009/T010 nadal pokazują trzy kolumny: uogólnij `IsHangingList` na „każda kolumna poza ostatnią
   zawiera wyłącznie etykiety” w `TableDetectionStage.cs` (green T009–T010; T011 nadal zielony)
+- [X] T012a [US2] Replika (kontrola regresji): długi ciąg ustępów „9.”–„14.” z dwucyfrowymi etykietami, potem punkty
+  „1/” i litery „a/” — jedna lista, bez tabeli (przechodzi po T008) — w `HangingLabelLayoutTests.cs`
+- [X] T014a [US2] Replika (red) z D-D s. 8: wyliczenie „a.”, „b.”, „c.” (litera z kropką) w kolumnie etykiet ustępu
+  nie jest tabelą zastępczą; `IsHangingList`: każda komórka poza ostatnią to samotna etykieta (także „a.”), dowolna
+  liczba pasm (green razem z T014)
 - [ ] T015 [US2] Pełna kontrola regresji (FR-534), miary D-A…D-D (oczekiwane ≈ TBL001 6/0/1/2), przegląd różnic
   prywatnego korpusu: 5 detalicznych — pokaż właścicielowi; 6 pozostałych dla firm — miary nie gorsze; zaktualizuj
   goldeny D-A…D-D po akceptacji; commit `refresh` korpusu, jeśli się zmienił
