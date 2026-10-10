@@ -17,6 +17,11 @@ internal sealed record Parsed<T>(T? Value, string? Problem)
 /// <param name="BasedOn">Candidate identifiers as returned.</param>
 internal sealed record ParsedItem(string Question, string Answer, IReadOnlyList<string> BasedOn);
 
+/// <summary>The chosen final items and the pool items skipped as invalid (T067l).</summary>
+/// <param name="Items">Chosen items, numbered 1…N in the model's order.</param>
+/// <param name="Skipped">Problems of the skipped pool items („pozycja 7: …”).</param>
+internal sealed record SelectionResult(IReadOnlyList<FaqItem> Items, IReadOnlyList<string> Skipped);
+
 /// <summary>
 /// Parses the JSON responses of both steps (contracts/model-exchange.md) without trusting the service schema: the whole
 /// text must be one JSON object of exactly the expected shape (required properties, types, no extra properties).

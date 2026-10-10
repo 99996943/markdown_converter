@@ -40,92 +40,170 @@ internal static class FaqResponseValidator
     }
 
     /// <summary>
-    /// Checks the selection and returns the numbered items with trimmed texts; the sources of an item come from its
-    /// <c>basedOn</c> candidates (T067b).
+    /// Checks the ranked selection pool and chooses the final items (T067l): invalid items are skipped; every document
+    /// first gets its best-ranked items up to <paramref name="minPerDocument"/>, then items are taken in the model's
+    /// order while no document exceeds <paramref name="maxPerDocument"/>. The chosen items keep the model's order and are
+    /// numbered 1…<paramref name="itemCount"/>; their sources come from their <c>basedOn</c> candidates (T067b).
     /// </summary>
-    /// <exception cref="FaqResponseException">With all problems found.</exception>
-    public static IReadOnlyList<FaqItem> ValidateSelection(
+    /// <exception cref="FaqResponseException">Fewer than <paramref name="itemCount"/> items can be chosen, or a document lacks its minimum.</exception>
+    public static SelectionResult ValidateSelection(
         IReadOnlyList<ParsedItem> items,
         IReadOnlyList<FaqCandidate> candidates,
         int itemCount,
         int minPerDocument = 0,
         int maxPerDocument = int.MaxValue)
     {
-        var problems = new List<string>();
-        if (items.Count != itemCount)
-        {
-            problems.Add(Invariant($"liczba pozycji {items.Count} zamiast {itemCount}"));
-        }
-
         var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
-        var itemsPerDocument = new OrderedDictionary<string, int>(StringComparer.Ordinal);
-        foreach (string documentId in candidates.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal))
-        {
-            itemsPerDocument[documentId] = 0;
-        }
-
+        string[] documents = [.. candidates.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)];
         var questions = new Dictionary<string, int>(StringComparer.Ordinal);
-        var result = new List<FaqItem>(items.Count);
+        var valid = new List<(FaqItem Item, string[] Documents)>();
+        var skipped = new List<string>();
         for (int i = 0; i < items.Count; i++)
         {
-            ParsedItem item = items[i];
             int position = i + 1;
-            CheckTexts(item.Question, item.Answer, position, questions, problems);
-            if (item.BasedOn.Count == 0)
+            List<string> itemProblems = Check(items[i], position, candidatesById, questions, out List<FaqCandidate> basedOn);
+            if (itemProblems.Count > 0)
             {
-                problems.Add(Invariant($"pozycja {position}: puste basedOn"));
+                skipped.AddRange(itemProblems);
+                continue;
             }
 
-            var basedOn = new List<FaqCandidate>(item.BasedOn.Count);
-            foreach (string id in item.BasedOn)
-            {
-                if (candidatesById.TryGetValue(id, out FaqCandidate? candidate))
-                {
-                    basedOn.Add(candidate);
-                }
-                else
-                {
-                    problems.Add(Invariant($"pozycja {position}: kandydat {id} nie istnieje"));
-                }
-            }
-
-            if (basedOn.Count > 0)
-            {
-                var numbers = new HashSet<string>(
-                    basedOn.SelectMany(c => FaqGrounding.Numbers(c.Answer).Concat(FaqGrounding.Numbers(c.Quote ?? string.Empty))),
-                    StringComparer.Ordinal);
-                foreach (string number in FaqGrounding.Numbers(item.Answer).Distinct(StringComparer.Ordinal).Where(n => !numbers.Contains(n)))
-                {
-                    problems.Add(Invariant($"pozycja {position}: liczba „{number}” nie występuje w kandydatach basedOn"));
-                }
-            }
-
-            result.Add(new FaqItem(position, item.Question.Trim(), item.Answer.Trim(), SourcesOf(basedOn), item.BasedOn));
-            foreach (string documentId in basedOn.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal))
-            {
-                itemsPerDocument[documentId]++;
-            }
+            questions[NormalizeQuestion(items[i].Question)] = position;
+            var item = new FaqItem(position, items[i].Question.Trim(), items[i].Answer.Trim(), SourcesOf(basedOn), items[i].BasedOn);
+            valid.Add((item, [.. basedOn.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)]));
         }
 
-        foreach ((string documentId, int count) in itemsPerDocument)
+        var problems = new List<string>();
+        if (valid.Count < itemCount)
         {
-            if (count > maxPerDocument)
-            {
-                problems.Add(Invariant($"dokument {documentId}: {Items(count)} (najwyżej {maxPerDocument})"));
-            }
-            else if (count < minPerDocument)
-            {
-                string found = count == 0 ? "brak pozycji" : Items(count);
-                problems.Add(Invariant($"dokument {documentId}: {found} (co najmniej {minPerDocument})"));
-            }
+            problems.Add(Invariant($"liczba poprawnych pozycji {valid.Count}, potrzeba co najmniej {itemCount}"));
         }
-
-        if (problems.Count > 0)
+        else
         {
-            throw new FaqResponseException(FaqStep.Selection, null, problems);
+            bool[] chosen = Choose(valid, documents, itemCount, minPerDocument, maxPerDocument, problems);
+            if (problems.Count == 0)
+            {
+                FaqItem[] result =
+                [
+                    .. valid.Where((_, k) => chosen[k]).Select((v, k) => v.Item with { Number = k + 1 }),
+                ];
+                return new SelectionResult(result, skipped);
+            }
         }
 
-        return result;
+        problems.AddRange(skipped);
+        throw new FaqResponseException(FaqStep.Selection, null, problems);
+    }
+
+    /// <summary>Problems of one pool item; the duplicate check uses the questions of the valid items before it.</summary>
+    private static List<string> Check(
+        ParsedItem item,
+        int position,
+        Dictionary<string, FaqCandidate> candidatesById,
+        Dictionary<string, int> questions,
+        out List<FaqCandidate> basedOn)
+    {
+        var problems = new List<string>();
+        if (string.IsNullOrWhiteSpace(item.Question))
+        {
+            problems.Add(Invariant($"pozycja {position}: puste pytanie"));
+        }
+        else if (questions.TryGetValue(NormalizeQuestion(item.Question), out int first))
+        {
+            problems.Add(Invariant($"pozycja {position}: powtórzone pytanie (jak w pozycji {first})"));
+        }
+
+        if (string.IsNullOrWhiteSpace(item.Answer))
+        {
+            problems.Add(Invariant($"pozycja {position}: pusta odpowiedź"));
+        }
+
+        if (item.BasedOn.Count == 0)
+        {
+            problems.Add(Invariant($"pozycja {position}: puste basedOn"));
+        }
+
+        basedOn = new List<FaqCandidate>(item.BasedOn.Count);
+        foreach (string id in item.BasedOn)
+        {
+            if (candidatesById.TryGetValue(id, out FaqCandidate? candidate))
+            {
+                basedOn.Add(candidate);
+            }
+            else
+            {
+                problems.Add(Invariant($"pozycja {position}: kandydat {id} nie istnieje"));
+            }
+        }
+
+        if (basedOn.Count > 0)
+        {
+            var numbers = new HashSet<string>(
+                basedOn.SelectMany(c => FaqGrounding.Numbers(c.Answer).Concat(FaqGrounding.Numbers(c.Quote ?? string.Empty))),
+                StringComparer.Ordinal);
+            foreach (string number in FaqGrounding.Numbers(item.Answer).Distinct(StringComparer.Ordinal).Where(n => !numbers.Contains(n)))
+            {
+                problems.Add(Invariant($"pozycja {position}: liczba „{number}” nie występuje w kandydatach basedOn"));
+            }
+        }
+
+        return problems;
+    }
+
+    /// <summary>Which valid items are chosen; adds a problem for every document below its minimum and when N cannot be reached.</summary>
+    private static bool[] Choose(
+        List<(FaqItem Item, string[] Documents)> valid,
+        string[] documents,
+        int itemCount,
+        int minPerDocument,
+        int maxPerDocument,
+        List<string> problems)
+    {
+        bool[] chosen = new bool[valid.Count];
+        var counts = documents.ToDictionary(d => d, _ => 0, StringComparer.Ordinal);
+        int total = 0;
+        bool CanTake(int k) => !chosen[k] && total < itemCount && valid[k].Documents.All(d => counts[d] < maxPerDocument);
+        void Take(int k)
+        {
+            chosen[k] = true;
+            total++;
+            foreach (string d in valid[k].Documents)
+            {
+                counts[d]++;
+            }
+        }
+
+        foreach (string document in documents)
+        {
+            for (int k = 0; k < valid.Count && counts[document] < minPerDocument; k++)
+            {
+                if (valid[k].Documents.Contains(document, StringComparer.Ordinal) && CanTake(k))
+                {
+                    Take(k);
+                }
+            }
+
+            if (counts[document] < minPerDocument)
+            {
+                string found = counts[document] == 0 ? "brak pozycji" : Items(counts[document]);
+                problems.Add(Invariant($"dokument {document}: {found} (co najmniej {minPerDocument})"));
+            }
+        }
+
+        for (int k = 0; k < valid.Count && total < itemCount; k++)
+        {
+            if (CanTake(k))
+            {
+                Take(k);
+            }
+        }
+
+        if (total < itemCount)
+        {
+            problems.Add(Invariant($"po zastosowaniu limitu {maxPerDocument} pozycji na dokument zostają {total} z {itemCount} pozycji"));
+        }
+
+        return chosen;
     }
 
     /// <summary>

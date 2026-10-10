@@ -127,7 +127,7 @@ public sealed class FaqGenerator
         string selectionSystem = FaqPrompts.SelectionSystem(options.ItemCount, minPerDocument, maxPerDocument);
         (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, [], cancellationToken)
             .ConfigureAwait(false);
-        IReadOnlyList<FaqItem> result;
+        SelectionResult result;
         try
         {
             result = Select(selectionText, candidates, minPerDocument, maxPerDocument);
@@ -147,9 +147,14 @@ public sealed class FaqGenerator
             result = Select(correctedText, candidates, minPerDocument, maxPerDocument);
         }
 
+        foreach (string skipped in result.Skipped)
+        {
+            progress?.Report(new FaqEvent(FaqEventKind.SelectionItemSkipped, null, 0, 0, null, null, skipped));
+        }
+
         total = UsageReader.Add(total, selectionUsage, first: false);
-        progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Count, selectionUsage));
-        return new FaqResult(result, sources, candidates, total);
+        progress?.Report(new FaqEvent(FaqEventKind.SelectionFinished, null, 0, 0, result.Items.Count, selectionUsage));
+        return new FaqResult(result.Items, sources, candidates, total);
     }
 
     /// <summary>
@@ -179,7 +184,7 @@ public sealed class FaqGenerator
 
     /// <summary>The parsed and validated selection.</summary>
     /// <exception cref="FaqResponseException">The text is not JSON of the schema or breaks the rules.</exception>
-    private IReadOnlyList<FaqItem> Select(string text, IReadOnlyList<FaqCandidate> candidates, int minPerDocument, int maxPerDocument)
+    private SelectionResult Select(string text, IReadOnlyList<FaqCandidate> candidates, int minPerDocument, int maxPerDocument)
     {
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(text);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);

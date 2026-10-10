@@ -18,6 +18,9 @@ public enum FaqEventKind
     /// <summary>The selection was rejected and one correction is requested (T067i); the problems are in Detail.</summary>
     SelectionCorrection,
 
+    /// <summary>An invalid item of the selection pool was skipped (T067l); the problem is in Detail.</summary>
+    SelectionItemSkipped,
+
     /// <summary>The selection was accepted.</summary>
     SelectionFinished,
 }
@@ -31,7 +34,7 @@ public enum FaqEventKind
 /// <param name="Usage">Token usage of the request (Finished events); <c>null</c> when unknown.</param>
 /// <param name="Detail">
 /// Why a candidate was dropped (CandidateDropped), starting with „kandydat &lt;id&gt;:”; the problems of the rejected
-/// selection (SelectionCorrection).
+/// selection (SelectionCorrection); why a pool item was skipped (SelectionItemSkipped), starting with „pozycja N:”.
 /// </param>
 public sealed record FaqEvent(
     FaqEventKind Kind,

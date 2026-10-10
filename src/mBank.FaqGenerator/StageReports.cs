@@ -78,6 +78,7 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
                 $"[{value.DocumentId}] pominięto {Dropped(value.Detail ?? string.Empty)}",
             FaqEventKind.SelectionStarted => $"[wybór] {Candidates(value.Count ?? 0)} — {Size(value)}…",
             FaqEventKind.SelectionCorrection => $"[wybór] odpowiedź odrzucona ({value.Detail}) — prośba o poprawkę…",
+            FaqEventKind.SelectionItemSkipped => $"[wybór] pominięto {SkippedItem(value.Detail ?? string.Empty)}",
             FaqEventKind.SelectionFinished => $"[wybór] {Questions(value.Count ?? 0)} ({Usage(value.Usage)})",
             _ => null,
         };
@@ -97,6 +98,10 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
         stdout.WriteLine();
         stdout.WriteLine($"Zapisano FAQ: {path} ({Questions(result.Items.Count)}; {usage})");
     }
+
+    /// <summary>„pozycja 11: …” as „pozycję 11: …”.</summary>
+    private static string SkippedItem(string detail) =>
+        detail.StartsWith("pozycja ", StringComparison.Ordinal) ? "pozycję " + detail["pozycja ".Length..] : detail;
 
     /// <summary>„kandydat D1-K3: …” as „kandydata D1-K3: …”.</summary>
     private static string Dropped(string detail) =>

@@ -67,11 +67,12 @@ Kandydaci dostają identyfikatory `D2-K1`, `D2-K2`, … w kolejności z odpowied
 ## Krok 2 — wybór (jedno zapytanie)
 
 **Komunikat systemowy** musi zawierać:
-- zadanie: wybór dokładnie N (`ItemCount` = 10) najważniejszych pytań dla klienta z listy kandydatów; dozwolone
-  połączenie lub przeredagowanie kandydatów, zakaz dodawania faktów, których nie ma w kandydatach;
+- zadanie (T067l): wybór od N do N+5 (`ItemCount` = 10, `FaqPrompts.PoolExtra` = 5) najważniejszych pytań dla
+  klienta z listy kandydatów, uszeregowanych od najważniejszego; program wybierze z nich N pozycji z od min do max
+  pozycjami na dokument; z każdego dokumentu co najmniej min+1 pozycji; dozwolone połączenie lub przeredagowanie
+  kandydatów, zakaz dodawania faktów, których nie ma w kandydatach;
 - jedno pytanie = jedna sprawa: łączyć tylko kandydatów o tę samą sprawę, nie łączyć różnych tematów (T067c);
   liczby przepisywane z kandydatów `basedOn`;
-- liczba pozycji na dokument: „co najmniej min i najwyżej max” (albo tylko „najwyżej max”, gdy min = 0) (T067j);
 - zastrzeżenia z kandydatów zachowane: kogo dotyczy zasada, warunki, wyjątki (T067k);
 - wymóg wskazania `basedOn` (identyfikatory wszystkich wykorzystanych kandydatów); model nie podaje źródeł —
   źródła pozycji liczy kod z kandydatów `basedOn` (T067b: model przeredagowywał jednostki źródeł);
@@ -122,15 +123,16 @@ użytkownika:
 
 ```text
 Twoja odpowiedź została odrzucona:
-- liczba pozycji 9 zamiast 10
-Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z dokładnie 10 pozycjami.
+- liczba poprawnych pozycji 9, potrzeba co najmniej 10
+Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z co najmniej 10 poprawnymi pozycjami uszeregowanymi od najważniejszej.
 ```
 
 Druga odrzucona odpowiedź kończy generowanie (`FaqResponseException`, kod 7) z jej problemami. Krok kandydatów nie
 ma poprawki; błędy usługi nie są ponawiane (FR-424).
 
 Liczba elementów nie jest wymuszana schematem (`minItems`/`maxItems` nie są obsługiwane w trybie strict wszystkich
-modeli). Wymusza ją walidacja (`data-model.md`, „Reguły sprawdzania”).
+modeli). Model nie liczy dokładnie (przebiegi 5 i 7: 9 zamiast 10, 4 pozycje z jednego dokumentu), więc ostateczne N
+pozycji wybiera kod z uszeregowanej puli (`data-model.md`, „Reguły sprawdzania”, T067l).
 
 ## Ustawienia zapytania
 

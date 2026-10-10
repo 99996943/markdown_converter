@@ -59,10 +59,10 @@ internal static class FaqPrompts
         Układasz końcowe FAQ dla klientów banku z kandydatów przygotowanych wcześniej na podstawie kilku dokumentów.
 
         Zasady:
-        - Wybierz dokładnie {itemCount} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń.
+        - Wybierz od {itemCount} do {itemCount + PoolExtra} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń, i uszereguj je od najważniejszego. Program wybierze z nich {itemCount} pozycji FAQ, tak żeby każdy dokument był źródłem od {minPerDocument} do {maxPerDocument} pozycji (pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”).
         - Każde pytanie dotyczy jednej sprawy. Łącz kandydatów tylko wtedy, gdy dotyczą tej samej sprawy (np. z różnych dokumentów); nie łącz różnych tematów w jedno pytanie.
         - Możesz połączyć kilku kandydatów o tę samą sprawę w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach, i nie zmieniaj warunków ani wyjątków.
-        - {PerDocument(minPerDocument, maxPerDocument)}
+        - {PoolPerDocument(minPerDocument)}
         - Zachowaj w odpowiedzi, kogo dotyczy zasada (np. konsument, osoba fizyczna nieprowadząca działalności gospodarczej, firma, klient Private Banking), oraz jej warunki i wyjątki, jeśli podają je kandydaci.
         - Liczby przepisuj z kandydatów; liczba, której nie ma w kandydatach z „basedOn”, odrzuca odpowiedź.
         - Jeśli kandydat mówi „Dokument nie rozstrzyga …”, zachowaj to stwierdzenie.
@@ -101,16 +101,17 @@ internal static class FaqPrompts
             text.Append("- ").Append(problem).Append('\n');
         }
 
-        return text.Append(CultureInfo.InvariantCulture, $"Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z dokładnie {itemCount} pozycjami.\n")
+        return text.Append(CultureInfo.InvariantCulture, $"Popraw ją i odpowiedz ponownie pełnym obiektem JSON zgodnym ze schematem, z co najmniej {itemCount} poprawnymi pozycjami uszeregowanymi od najważniejszej.\n")
             .ToString();
     }
 
-    /// <summary>The rule on items per document (T067j); a document counts for every item based on its candidates.</summary>
-    private static string PerDocument(int min, int max) =>
-        (min > 0
-            ? FormattableStringFactory.Create("Każdy dokument ma być źródłem co najmniej {0} i najwyżej {1} pozycji FAQ", min, max)
-            : FormattableStringFactory.Create("Żaden dokument nie może być źródłem więcej niż {0} pozycji FAQ", max)).ToString(CultureInfo.InvariantCulture)
-        + " (pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”).";
+    /// <summary>Extra ranked items asked for beyond the item count, so the program can keep the documents balanced (T067l).</summary>
+    public const int PoolExtra = 5;
+
+    /// <summary>The pool rule per document: one more than the minimum, so the program has a choice (T067l).</summary>
+    private static string PoolPerDocument(int min) => min > 0
+        ? FormattableStringFactory.Create("Podaj z każdego dokumentu co najmniej {0} pozycje.", min + 1).ToString(CultureInfo.InvariantCulture)
+        : "Uwzględnij różne dokumenty.";
 
     private static string OneLine(string text) =>
         string.Join(' ', text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));

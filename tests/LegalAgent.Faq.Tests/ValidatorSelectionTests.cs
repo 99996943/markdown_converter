@@ -115,7 +115,7 @@ public sealed class ValidatorSelectionTests
     public void SkippedItemsLeavingTooFew_RejectedWithReasons()
     {
         FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
-            [Item(1), Item(2) with { Answer = "Opłata wynosi 30 zł, a O1 to zasada." }, Item(3)],
+            [Item(1), Item(2, "D1-K1") with { Answer = "Opłata wynosi 30 zł, a O1 to zasada." }, Item(3)],
             Candidates,
             3));
 

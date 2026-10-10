@@ -311,6 +311,9 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   (reklamacje 5, usługi płatnicze 0). **T067j/T067k**: granice pozycji na dokument (domyślnie 1–3, walidowane,
   działa przez poprawkę T067i) i zachowanie zastrzeżeń w obu krokach. Właściciel szuka 5 innych regulaminów
   (zamiast m.in. kart kredytowych dla firm); przebieg na nich do zrobienia.
+- **Siódmy przebieg (te same dokumenty)**: 9 zamiast 10 i 4 pozycje z D1; poprawka naprawiła liczbę, nie
+  równowagę (kod 7). **T067l** (decyzja właściciela): model szereguje pulę N…N+5 pozycji, kod wybiera N z
+  równowagą dokumentów; błędne pozycje puli są pomijane z ostrzeżeniem. Przebieg do zrobienia.
 - Na prawdziwych danych nieznane: odsetek odrzuceń walidacji jednostek po T067a, zachowanie przy 429 (bez ponowień, 5 zapytań po ~50 tys. tokenów),
   zgodność rzeczywistego żądania konektora z wdrożeniem (`max_tokens` vs `max_completion_tokens` dla GPT-5 —
   `SetNewMaxCompletionTokensEnabled` nieustawione).

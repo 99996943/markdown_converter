@@ -78,7 +78,8 @@ numeracji (np. D1-K1, D1-K3).
 ### FaqProgress (zdarzenia `IProgress<FaqEvent>`)
 `Kind`: `CandidatesStarted(docId, chars, estTokens)` | `CandidateDropped(docId, detail)` |
 `CandidatesFinished(docId, count, usage?)` |
-`SelectionStarted(candidateCount, chars, estTokens)` | `SelectionCorrection(problems)` | `SelectionFinished(usage?)`
+`SelectionStarted(candidateCount, chars, estTokens)` | `SelectionCorrection(problems)` | `SelectionItemSkipped(detail)` |
+`SelectionFinished(usage?)`
 (zużycie wyboru obejmuje poprawkę).
 
 ### Błędy (wyjątki biblioteki)
@@ -115,21 +116,25 @@ Kandydat, który nie spełnia tych warunków, odpada (zdarzenie `CandidateDroppe
 powód; powód”, w której jest początek cytatu; ostrzeżenie w konsoli). Odpowiedź
 jest odrzucana (`FaqResponseException`, kod 7) tylko wtedy, gdy z dokumentu nie zostanie żaden kandydat.
 
-**Wybór**:
-1. JSON `{"items":[{"question","answer","basedOn":[...]}]}`.
-2. Dokładnie `ItemCount` pozycji.
-3. Pola niepuste; `basedOn` ma ≥ 1 element.
-4. Pytania niepowtarzające się.
-5. Każde `basedOn` to istniejący kandydat.
-6. Każda liczba odpowiedzi występuje w odpowiedziach lub cytatach kandydatów `basedOn` (T067d).
-7. Każdy dokument jest źródłem (dokumentem któregoś kandydata `basedOn`) od min do max pozycji (T067j; efektywne
-   granice z `MinItemsPerDocument`/`MaxItemsPerDocument`), np. „dokument D1: 4 pozycje (najwyżej 3)”, „dokument D5:
-   brak pozycji (co najmniej 1)”.
+**Wybór** (T067l — model szereguje pulę, kod wybiera):
+1. JSON `{"items":[{"question","answer","basedOn":[...]}]}` — pula pozycji w kolejności ważności.
+2. Pozycja puli jest **pomijana** (zdarzenie `SelectionItemSkipped`, „[wybór] pominięto pozycję 7: …”), gdy: ma puste
+   pytanie lub odpowiedź, powtarza pytanie wcześniejszej poprawnej pozycji, ma puste `basedOn`, wskazuje nieistniejącego
+   kandydata albo zawiera liczbę spoza odpowiedzi i cytatów kandydatów `basedOn` (T067d).
+3. Wybór N = `ItemCount` pozycji (efektywne granice min/max z `MinItemsPerDocument`/`MaxItemsPerDocument`, T067j;
+   pozycja liczy się dla każdego dokumentu swoich kandydatów `basedOn`): najpierw dla każdego dokumentu (D1…Dn)
+   najwyżej oceniona pozycja, której można użyć bez przekroczenia max, aż do min; potem kolejne pozycje w kolejności
+   modelu, które nie przekraczają max. Wynik w kolejności modelu, numerowany 1…N.
+4. Odrzucenie (poprawka T067i, potem kod 7) tylko gdy: poprawnych pozycji < N („liczba poprawnych pozycji 9, potrzeba
+   co najmniej 10”), dokument nie dostaje min („dokument D5: brak pozycji (co najmniej 1)”) albo limit nie pozwala
+   zebrać N („po zastosowaniu limitu 3 pozycji na dokument zostają 9 z 10 pozycji”); problemy pominiętych pozycji są
+   wtedy dopisane.
 Źródła pozycji nie pochodzą od modelu (T067b): to dokument i jednostka każdego kandydata `basedOn`, w kolejności
 `basedOn`, bez powtórzeń; źródło bez jednostki odpada, gdy ten sam dokument jest też źródłem z jednostką.
 Jednostki kandydatów są już sprawdzone w kroku kandydatów.
 
-Wszystkie problemy są zbierane, nie tylko pierwszy. Każdy problem skutkuje odrzuceniem odpowiedzi.
+Wszystkie problemy są zbierane, nie tylko pierwszy. W kroku kandydatów każdy problem reguł 1–5 odrzuca odpowiedź;
+w kroku wyboru — tylko problemy z reguły 4.
 
 **Dopasowanie jednostki**: `UnitMatcher.Matches(cited, units)`:
 - normalizacja: NBSP → spacja, zwinięte białe znaki, przycięcie, bez końcowej kropki, porównanie

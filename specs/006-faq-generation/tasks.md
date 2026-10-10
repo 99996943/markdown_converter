@@ -608,7 +608,7 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
 - [X] T067k Zastrzeżenia: komunikaty obu kroków każą zachować, kogo dotyczy zasada (konsument, firma, klient
   Private Banking…), oraz jej warunki i wyjątki (`PromptTests`).
 
-- [ ] T067l Siódmy przebieg (te same dokumenty): wybór 9 zamiast 10 i D1 = 4 pozycje; poprawka naprawiła liczbę, ale
+- [X] T067l Siódmy przebieg (te same dokumenty): wybór 9 zamiast 10 i D1 = 4 pozycje; poprawka naprawiła liczbę, ale
   nie równowagę (kod 7) — model nie liczy. Decyzja właściciela: model szereguje, kod wybiera.
   - komunikat: wybierz od N do N+5 pytań uszeregowanych od najważniejszego, z każdego dokumentu co najmniej min+1;
     program wybierze N pozycji z od min do max pozycjami na dokument;
