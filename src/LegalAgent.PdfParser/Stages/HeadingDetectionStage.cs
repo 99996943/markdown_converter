@@ -189,7 +189,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             if (options.DetectLegalUnits
                 && !entry.Quoted
                 && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
-                && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0])))
+                && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0]))
+                && (!match.Bare || IsSetApart(entry)))
             {
                 entry.Legal = match;
             }
@@ -335,6 +336,13 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
     /// <summary>Line spacing between lines of a heading: the body leading, or more for a larger heading font.</summary>
     private static double HeadingLeading(Entry entry, double leading) => Math.Max(leading, HeadingLineSpacing * entry.Size);
 
+    /// <summary>
+    /// Spec 007 (FR-500): a bare „§ 5” is a unit only on a line of its own set apart from the text — isolated and
+    /// centred, bold or enlarged; a plain „§ 5” wrapped from a sentence is a word of it.
+    /// </summary>
+    private static bool IsSetApart(Entry entry) =>
+        entry.Isolated && (entry.Centered || entry.AllBold || entry.Enlarged);
+
     private static bool ContinuesSentence(Entry entry, List<LayoutWord> words, double columnWidth) =>
         !entry.Isolated
         && entry.Previous is { } previous
@@ -433,7 +441,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
         if (unit.Kind is SectionKind.Article or SectionKind.Paragraph)
         {
-            heading.Text = unit.Prefix + unit.Designation + ".";
+            heading.Text = unit.Prefix + unit.Designation + (unit.Bare ? string.Empty : ".");
             heading.SplitRest = unit.Rest.Length > 0;
             return heading;
         }

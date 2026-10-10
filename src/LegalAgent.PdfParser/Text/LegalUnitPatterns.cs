@@ -10,7 +10,8 @@ namespace LegalAgent.PdfParser.Text;
 /// <param name="Number">Number part, e.g. „12a”, „3”, „II”, „PIERWSZA”.</param>
 /// <param name="Rest">Text following the designation (and its separating period), trimmed; empty when none.</param>
 /// <param name="Prefix">Amendment bracket printed before the unit („[” repealed, „&lt;” future wording), or empty.</param>
-internal sealed record LegalUnitMatch(SectionKind Kind, string Designation, string Number, string Rest, string Prefix = "");
+/// <param name="Bare">A paragraph designation printed alone without the period („§ 5”, spec 007).</param>
+internal sealed record LegalUnitMatch(SectionKind Kind, string Designation, string Number, string Rest, string Prefix = "", bool Bare = false);
 
 /// <summary>Recognition of Polish legal unit designations (Księga, Część, Dział, Rozdział, Oddział, Art., §).</summary>
 /// <remarks>
@@ -46,14 +47,16 @@ internal static partial class LegalUnitPatterns
         }
 
         m = Paragraph().Match(unit);
-        if (!m.Success && prefix.Length == 0)
-        {
-            m = BareParagraph().Match(unit);
-        }
-
         if (m.Success)
         {
             match = Unit(SectionKind.Paragraph, "§ " + m.Groups["n"].Value, m.Groups["n"].Value, unit[m.Length..]) with { Prefix = prefix };
+            return true;
+        }
+
+        m = BareParagraph().Match(unit);
+        if (m.Success && prefix.Length == 0)
+        {
+            match = Unit(SectionKind.Paragraph, "§ " + m.Groups["n"].Value, m.Groups["n"].Value, string.Empty) with { Bare = true };
             return true;
         }
 

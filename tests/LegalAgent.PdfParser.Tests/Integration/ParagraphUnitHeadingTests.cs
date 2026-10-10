@@ -50,6 +50,9 @@ public sealed class ParagraphUnitHeadingTests
         Centered(page, 260, "§ 6");
         Item(page, Margin, Point, 276, "1.", "Klient może mieć jeden rachunek VAT do każdego rachunku bieżącego, który prowadzi dla niego Bank.");
         Item(page, Margin, Point, 286, "2.", "Bank otwiera rachunek VAT bez osobnej dyspozycji Klienta.");
+        page.Text(Margin, 306, "Środki zgromadzone na rachunku VAT Bank wykorzystuje wyłącznie na cele określone w przepisach o podatku od towarów", Size);
+        page.Text(Margin, 316, "i usług, a Klient nie może dysponować nimi w inny sposób, w szczególności nie może ich przekazać na inny rachunek ani", Size);
+        page.Text(Margin, 326, "wypłacić w gotówce, chyba że przepisy na to pozwalają albo naczelnik urzędu skarbowego wyda na to zgodę.", Size);
         return builder.Build();
     }
 
@@ -69,9 +72,8 @@ public sealed class ParagraphUnitHeadingTests
         Assert.DoesNotContain("§ 5.", result.Markdown, StringComparison.Ordinal);
         Assert.Matches(@"(?m)^#+ § 6$", result.Markdown);
 
-        Section chapter = Assert.Single(All(result.Document.Sections), s => s.HeadingText == "2. Rachunki bankowe oraz rachunek VAT");
-        Section unit = Assert.Single(chapter.Children);
-        Assert.Equal(("§ 5", "§ 5", SectionKind.Paragraph), (unit.Designation, unit.HeadingText, unit.Kind));
+        Section unit = Assert.Single(All(result.Document.Sections), s => s.Designation == "§ 5");
+        Assert.Equal(("§ 5", SectionKind.Paragraph), (unit.HeadingText, unit.Kind));
     }
 
     /// <summary>

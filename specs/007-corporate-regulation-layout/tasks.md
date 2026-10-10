@@ -111,10 +111,10 @@ x 292–304, 24 pt pod rozdziałem) w `tests/LegalAgent.PdfParser.Tests/Integrat
   i „zgodnie z § 5” nie — w `tests/LegalAgent.PdfParser.Tests/Unit/Text/LegalUnitPatternsTests.cs`
 - [X] T017 [US1] `LegalUnitPatterns.TryMatch` przyjmuje goły wiersz `^§\s*N$` (artykuły bez zmian) w
   `src/LegalAgent.PdfParser/Text/LegalUnitPatterns.cs` (green T016)
-- [ ] T018 [P] [US1] Replika R1a (red): rozdział „2. Rachunki bankowe oraz rachunek VAT”, pod nim wyśrodkowany „§ 5”,
+- [X] T018 [P] [US1] Replika R1a (red): rozdział „2. Rachunki bankowe oraz rachunek VAT”, pod nim wyśrodkowany „§ 5”,
   potem ustęp „1.” z punktem „1/”; oczekiwane `#### § 5` pod `### 2. …` i lista; negatyw R1d: „§ 5 ust. 2” na początku
   zawiniętego wiersza i samotne „§ 5” zawinięte ze zdania — bez nagłówka
-- [ ] T019 [US1] HeadingDetection uznaje goły „§ N” tylko, gdy wiersz jest odosobniony i wyróżniony (wyśrodkowany,
+- [X] T019 [US1] HeadingDetection uznaje goły „§ N” tylko, gdy wiersz jest odosobniony i wyróżniony (wyśrodkowany,
   pogrubiony lub powiększony) i nie kontynuuje zdania; ListDetection zamyka listę przed takim wierszem — w
   `src/LegalAgent.PdfParser/Stages/HeadingDetectionStage.cs` i `ListDetectionStage.cs` (green R1a bez poziomu, R1d)
 - [ ] T020 [P] [US1] Test (red) poziomu: jednostka pod otwartym nagłówkiem typograficznym `^\d+\.\s+\p{Lu}` (numerowany

@@ -120,9 +120,12 @@ public sealed class ListDetectionStage : IPipelineStage
                     continue;
                 }
 
-                entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out _);
                 double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * line.Box.Height;
                 bool isolated = above is null || line.Baseline - above.Baseline > gapFactor * leading;
+
+                // Spec 007: a bare „§ 5” is a unit only when set apart like a heading; plain, it is a wrapped word.
+                entry.LegalUnit = LegalUnitPatterns.TryMatch(line.Text, out LegalUnitMatch? unit)
+                    && (!unit.Bare || (isolated && IsHeadingLike(line, bodySize, sizeRatio)));
                 entry.HeadingLike = isolated && IsHeadingLike(line, bodySize, sizeRatio);
                 entry.TitleStyle = entry.HeadingLike && IsTitleStyle(line, bodySize);
                 entry.FirstOnPage = above is null;
