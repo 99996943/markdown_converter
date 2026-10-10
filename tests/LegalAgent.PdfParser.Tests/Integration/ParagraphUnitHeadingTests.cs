@@ -221,6 +221,25 @@ public sealed class ParagraphUnitHeadingTests
         Assert.Matches(@"\| § 10\. \| Skutki naruszenia \.+ \|", result.Markdown);
     }
 
+    /// <summary>T019b (D-B) — „§25” printed without a space keeps its spelling in the heading; the designation is „§ 25”.</summary>
+    [Fact]
+    public async Task Bare_paragraph_heading_keeps_its_printed_spelling()
+    {
+        var builder = new SyntheticPdfBuilder();
+        SyntheticPdfBuilder page = builder.Page();
+        page.Text((595 - SyntheticPdfBuilder.TextWidth("Regulamin polecenia zapłaty", 14, bold: true)) / 2, 50, "Regulamin polecenia zapłaty", 14, bold: true);
+        page.Text(40.5, 80, "Rozdział 7. Postanowienia końcowe", HeadingSize, bold: true);
+        Centered(page, 104, "§25");
+        page.Text(Margin, 120, "W sprawach nieuregulowanych w regulaminie stosuje się przepisy ustawy o usługach płatniczych oraz kodeksu cywilnego, a także", Size);
+        page.Text(Margin, 130, "postanowienia umowy rachunku bankowego zawartej między Bankiem a Odbiorcą, z uwzględnieniem zmian wprowadzonych aneksami.", Size);
+
+        PdfConversionResult result = await ConvertAsync(builder.Build());
+
+        Assert.Matches(@"(?m)^#+ §25$", result.Markdown);
+        Section unit = Assert.Single(All(result.Document.Sections), s => s.Kind == SectionKind.Paragraph);
+        Assert.Equal(("§ 25", "§25"), (unit.Designation, unit.HeadingText));
+    }
+
     /// <summary>
     /// T019a (D-B) — a centred bold „§ N” at the body leading right below the last line of a list item, and right below
     /// a chapter heading, is still a unit heading (centring sets it apart).
