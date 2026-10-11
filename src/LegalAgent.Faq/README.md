@@ -145,8 +145,9 @@ liczbę, której nie ma w odpowiedziach ani cytatach jej kandydatów `basedOn`.
 Z poprawnych pozycji kod wybiera N:
 
 1. dla każdego dokumentu (D1…Dn) jego najwyżej oceniona pozycja — aż do `MinItemsPerDocument`;
-2. potem kolejne pozycje w kolejności modelu, o ile żaden ich dokument nie przekroczy `MaxItemsPerDocument`
-   (pozycja liczy się dla każdego dokumentu swoich kandydatów);
+2. potem kolejne pozycje w kolejności modelu, o ile mieszczą się w `MaxItemsPerDocument` — pozycja liczy się do
+   minimum każdego dokumentu swoich kandydatów, ale do limitu tylko jednego z nich (tego, który ma najmniej
+   pozycji), żeby pytania scalone z podobnych regulaminów nie wyczerpały wszystkich limitów (T067p);
 3. wynik zostaje w kolejności modelu i jest numerowany 1…N.
 
 **Źródła** pozycji to dokument i jednostka każdego kandydata `basedOn` (już sprawdzone w kroku kandydatów), bez

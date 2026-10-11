@@ -329,3 +329,8 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   klucz potokiem, `az group delete`.
 - Na prawdziwych danych nieznane: zachowanie przy 429 (bez ponowień), zgodność żądania konektora z wdrożeniami
   GPT-5 (`max_tokens` vs `max_completion_tokens` — `SetNewMaxCompletionTokensEnabled` nieustawione).
+- 2026-10-11, T067p (gałąź `fix/faq-merged-item-limit` od `009-number-review-fixes`): dwa przebiegi właściciela na
+  pięciu regulaminach kredytowych (gpt-4.1-mini) kończyły się kodem 7 w kroku wyboru (5–6 z 10 po limicie). Pozycje
+  scalone z kilku dokumentów liczą się teraz do limitu jednego dokumentu, problem limitu wymienia dokumenty z
+  miejscem, komunikat wyboru opisuje regułę (red/green 8f89318, 2435dd7; prompt 14ced6e). Pełny zestaw zielony.
+  Do sprawdzenia: ponowny przebieg właściciela na tym samym zestawie po przebudowie `publish/`.
