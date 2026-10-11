@@ -240,6 +240,36 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   426/426; prywatny korpus w pełni zielony (1151 testów parsera bez wydajnościowych). Kontrakt 1.3.0: przykłady w
   `contracts/markdown-output.md` zgodne z wynikiem replik T023–T024, `CLAUDE.md` („Rendering”) zaktualizowany.
   Następny krok: US4 (T032).
+- 2026-10-11 (US4, T032–T040d — gotowe; T041 czeka na decyzję o ind-3): `StepSequenceStage` rozszerzony bez nowego
+  etapu: (1) łączniki — wiersz albo słowa wiersza na lewo od krawędzi pola złożone ze znaków bez liter i cyfr, między
+  polami jednej kolumny (też przez granicę strony) → `Artifact`; (2) przelew — niczyje wiersze w całości na prawo od
+  pola, poniżej niego, z odstępem ≤ 1,5 × wysokość wiersza, do następnego pola / tekstu po lewej / większego odstępu,
+  są objaśnieniem pola (także pod pustym polem na następnej stronie); (3) wiersz nazw kolumn musi być w całości
+  pogrubiony; (4) pojedyncze pole jest ramką tylko za osłoną (≥ 80% pogrubionych znaków nazwy, tekst po prawej, brak
+  linii w pasie pola; wąskie i niebiałe — już przez `FindAreas` i ekstrakcję). Odstępstwa od planu: T034a/T034b —
+  po T034 corp-5 (schemat etapów u dołu strony) tracił nagłówek następnej strony i pogrubiał niepogrubione wiersze
+  pól: `BlockAssemblyStage` pogrubia nazwę kroku w całości tylko, gdy nie ma w niej pogrubionego słowa,
+  `ListDetectionStage` kontynuuje ustęp ISAP tylko w tej samej kolumnie. T040a–T040d — wysoki znak strzałki wciąga do
+  swojego wiersza początek wiersza tekstu (w replice „dokumenty”, w firm-2 etykietę „3.”), reszta wiersza leży osobno
+  na tej samej linii bazowej: po odcięciu strzałki części są łączone (odstęp do 2 × wysokość wyższej części — etykieta
+  z samych cyfr ma 6 pt, odstęp etykiety ≈ 8 pt). Test T032 miał błąd w sprawdzeniu kolejności (szukał „2) Jeśli” bez
+  ucieczki kontraktu `2\)`) — poprawiony w commicie green T040b. Commity: red 8d4c1e8 (T032), red e045cc3 (T033),
+  green 7de2929 (T034), red 7ddc97b / green 6a9d7ab (T034a/b), red 58304af / green f858386 (T035/36), red 4a90007 /
+  green 766f4aa (T037/38; istniejące testy dostały pogrubione wiersze nazw kolumn), red f195c59 / green 86cb673
+  (T039/40), red b4b7809 / green 9c57174 (T040a/b), red 5458bce / green ec39b2e (T040c/d).
+  Miary: ramki jako tabela / wplecione firm-2 3 / 1 → 0 / 0, firm-4 2 / 0 → 0 / 0, firm-5 0 / 0; TBL001 i wiersze
+  „ \| ” bez zmian. Zbiory słów vs baseline-008: nowe tylko w firm-2 — „potwierdzające”, „prawdziwość”,
+  „przekazałeś” (odzyskany punkt „3. Możemy poprosić…”, FR-634); utraconych brak, znikają tylko znaki strzałek.
+  Goldeny prywatne zmienione (przejrzane przez wykonawcę, dokumenty dla firm; kopie poprzednich w scratchpadzie sesji):
+  firm-2, firm-4, firm-5 (ramki → pogrubiony akapit frazy + lista / tekst, w firm-5 odzyskane dwa wiersze wzięte
+  wcześniej za wiersz nagłówków), corp-1 (s. 26 „Mobilna Autoryzacja”: frazy „Jak ją uruchomić?” … jako akapity zamiast
+  wklejenia w elementy listy), corp-5 (schemat „Etap 1.–4.” zamiast tabeli GFM, nagłówek „Co robimy kiedy…” na s. 23
+  odzyskany). **Do decyzji właściciela: ind-3** (dokument detaliczny) — s. 7 „Jak otwieramy rachunek i wydajemy kartę?”
+  zmienia się z rozsypanej tabeli GFM i pociętych fraz („**Sprawdzamy Twoją**” … „**tożsamość**”) na 8 ramek: pogrubiona
+  fraza + lista/tekst; słowa bez zmian. Golden ind-3 nie jest zaktualizowany — do tego czasu prywatny test goldenów
+  pada tylko na ind-3. ind-1, ind-2, firm-3 i pozostałe dokumenty bez zmian. Kontrola FR-643: testy solucji zielone poza
+  goldenem ind-3 (2145); `verify` czysty (korpus syntetyczny bez zmian); goldeny `Corpus/acts`, `Corpus/banking` i
+  chunków bez zmian. Następny krok: decyzja o ind-3, potem US5 (T042).
 
 ## Complexity Tracking
 
