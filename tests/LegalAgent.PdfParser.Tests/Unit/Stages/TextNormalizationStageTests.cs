@@ -140,6 +140,44 @@ public sealed class TextNormalizationStageTests
         Assert.Equal("Art. 12a⁴", TextOf(page));
     }
 
+    /// <summary>Glyphs of <paramref name="text"/> followed by small raised digits (spec 009, US1).</summary>
+    private static List<LayoutGlyph> WithRaised(string text, string digits)
+    {
+        List<LayoutGlyph> glyphs = Glyphs(text);
+        for (int i = 0; i < digits.Length; i++)
+        {
+            glyphs.Add(G(digits[i].ToString(), 50 + ((text.Length + i) * 5), size: 7, baseline: BaselineY - 4));
+        }
+
+        return glyphs;
+    }
+
+    [Theory]
+    [InlineData("art. 66", "1", "art. 66¹")]
+    [InlineData("art. 68", "2", "art. 68²")]
+    [InlineData("art. 479", "115", "art. 479¹¹⁵")]
+    [InlineData("przepisy art. 385", "5", "przepisy art. 385⁵")]
+    [InlineData("Art. 5", "2", "Art. 5²")]
+    [InlineData("§ 7", "1", "§ 7¹")]
+    public void Execute_ConvertsRaisedSmallDigitsAfterLowerCaseArticleNumber(string text, string digits, string expected)
+    {
+        Assert.Equal(expected, TextOf(Run(WithRaised(text, digits))));
+    }
+
+    [Theory]
+    [InlineData("kart. 5", "1", "kart. 51")]
+    [InlineData("umowy", "3", "umowy3")]
+    public void Execute_LeavesRaisedDigitsAfterWordsEndingInArtAlone(string text, string digits, string expected)
+    {
+        Assert.Equal(expected, TextOf(Run(WithRaised(text, digits))));
+    }
+
+    [Fact]
+    public void Execute_LeavesFullSizeDigitAfterLowerCaseArticleNumberAlone()
+    {
+        Assert.Equal("art. 661", TextOf(Run(Glyphs("art. 661"))));
+    }
+
     [Fact]
     public void Execute_LeavesRaisedSmallDigitsAfterOrdinaryWordsAlone()
     {

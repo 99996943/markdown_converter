@@ -1827,4 +1827,60 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("# Art. 42.\n", md, StringComparison.Ordinal);
         Assert.DoesNotContain("(uchylony) Art. 42.", md, StringComparison.Ordinal);
     }
+
+    /// <summary>
+    /// Spec 009, T010 (US1, private corp-5 page 8): „art. 66¹ § 1 do § 3 oraz art. 68²” with 4 pt raised index digits in
+    /// 8 pt text, on a page with footnote „1)” and a reference „¹” after a word. The index digits after the lower-case
+    /// „art. N” become superscript characters, not glued digits („661”) nor false footnote references; the reference after
+    /// the word still links to its note.
+    /// </summary>
+    [Fact]
+    public async Task SuperscriptAfterLowerCaseArticleNumber_IsASuperscript()
+    {
+        const double size = 8;
+        var b = new SyntheticPdfBuilder().Page();
+        double y = 92;
+        for (int i = 0; i < 6; i++, y += 11)
+        {
+            b.Text(50, y, $"Wiersz {i + 1} treści regulaminu rachunku, który ustala zwykły rozmiar i interlinię tekstu.", size);
+        }
+
+        double x = 50;
+        void Run(string text)
+        {
+            b.Text(x, y, text, size);
+            x += SyntheticPdfBuilder.TextWidth(text, size);
+        }
+
+        void Raised(string digit)
+        {
+            b.Text(x, y - 3, digit, size / 2);
+            x += SyntheticPdfBuilder.TextWidth(digit, size / 2);
+        }
+
+        Run("Strony wyłączają stosowanie postanowień art. 66");
+        Raised("1");
+        Run(" § 1 do § 3 oraz art. 68");
+        Raised("2");
+        Run(" Kodeksu cywilnego.");
+        y += 11;
+        x = 50;
+        Run("Postanowienia umowy");
+        Raised("1");
+        Run(" obowiązują od dnia jej zawarcia.");
+        b.HLine(50, 170, 755);
+        b.Text(50, 769, "1) Umowa zawierana jest w formie elektronicznej.", 6.5);
+
+        string md = await MarkdownAsync(b.Build());
+        if (Environment.GetEnvironmentVariable("PROBE_OUT") is { } probe)
+        {
+            await File.WriteAllTextAsync(Path.Combine(probe, "t010-009.md"), md, TestContext.Current.CancellationToken);
+        }
+
+        Assert.Contains("art. 66¹ § 1 do § 3 oraz art. 68² Kodeksu cywilnego.", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("661", md, StringComparison.Ordinal);
+        Assert.DoesNotContain("682", md, StringComparison.Ordinal);
+        Assert.Contains("Postanowienia umowy[^1] obowiązują", md, StringComparison.Ordinal);
+        Assert.Contains("[^1]: Umowa zawierana", md, StringComparison.Ordinal);
+    }
 }
