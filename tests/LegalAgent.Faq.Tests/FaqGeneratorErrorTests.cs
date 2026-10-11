@@ -141,7 +141,7 @@ public sealed class FaqGeneratorErrorTests
 
         Assert.Equal(10, result.Items.Count);
         Assert.Equal(
-            "dokument D5: brak pozycji (co najmniej 1); po zastosowaniu limitu 3 pozycji na dokument zostają 9 z 10 pozycji",
+            "dokument D5: brak pozycji (co najmniej 1); po zastosowaniu limitu 3 pozycji na dokument zostają 9 z 10 pozycji; brakujące pozycje mogą pochodzić tylko z dokumentów: D2, D3, D4, D5",
             Assert.Single(events, e => e.Kind == FaqEventKind.SelectionCorrection).Detail);
     }
 

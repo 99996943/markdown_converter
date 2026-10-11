@@ -69,6 +69,17 @@ public sealed class PromptTests
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
     }
 
+    /// <summary>T067q: by default the selection merges candidates only within one document.</summary>
+    [Fact]
+    public async Task SelectionMessage_MergesOnlyWithinOneDocumentByDefault()
+    {
+        string system = (await RunAsync(candidates: 7)).Calls[2].System;
+
+        Assert.Contains("tylko w obrębie jednego dokumentu", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("z różnych dokumentów", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("do limitu — tylko dla jednego z nich", system, StringComparison.Ordinal);
+    }
+
     [Fact]
     public async Task SelectionMessage_LimitPerDocument_CoversItemCount()
     {
@@ -88,7 +99,18 @@ public sealed class PromptTests
         Assert.Contains("od 1 do 5 pozycji", chat.Calls[2].System, StringComparison.Ordinal);
     }
 
-    private static async Task<FakeChatCompletionService> RunAsync(int candidates, string[]? units = null)
+    /// <summary>With <see cref="FaqGeneratorOptions.MergeDocuments"/> the selection may merge documents (T067c, T067p).</summary>
+    [Fact]
+    public async Task SelectionMessage_WithMergeDocuments_DescribesTheLimitOfMergedItems()
+    {
+        string system = (await RunAsync(candidates: 7, mergeDocuments: true)).Calls[2].System;
+
+        Assert.Contains("(np. z różnych dokumentów)", system, StringComparison.Ordinal);
+        Assert.Contains("do limitu — tylko dla jednego z nich", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("tylko w obrębie jednego dokumentu", system, StringComparison.Ordinal);
+    }
+
+    private static async Task<FakeChatCompletionService> RunAsync(int candidates, string[]? units = null, bool mergeDocuments = false)
     {
         var chat = new FakeChatCompletionService()
             .Respond(FaqJson.Candidates("D1", 2))
@@ -96,7 +118,7 @@ public sealed class PromptTests
             .Respond(FaqJson.Selection(2, 2));
         var generator = new FaqGenerator(
             chat,
-            new FaqGeneratorOptions { CandidatesPerDocument = candidates, ItemCount = 2 },
+            new FaqGeneratorOptions { CandidatesPerDocument = candidates, ItemCount = 2, MergeDocuments = mergeDocuments },
             (_, _) => new PromptExecutionSettings());
         FaqDocumentInput[] documents =
         [

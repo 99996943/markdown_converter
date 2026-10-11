@@ -329,3 +329,16 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   klucz potokiem, `az group delete`.
 - Na prawdziwych danych nieznane: zachowanie przy 429 (bez ponowień), zgodność żądania konektora z wdrożeniami
   GPT-5 (`max_tokens` vs `max_completion_tokens` — `SetNewMaxCompletionTokensEnabled` nieustawione).
+- 2026-10-11, T067p (gałąź `fix/faq-merged-item-limit` od `009-number-review-fixes`): dwa przebiegi właściciela na
+  pięciu regulaminach kredytowych (gpt-4.1-mini) kończyły się kodem 7 w kroku wyboru (5–6 z 10 po limicie). Pozycje
+  scalone z kilku dokumentów liczą się teraz do limitu jednego dokumentu, problem limitu wymienia dokumenty z
+  miejscem, komunikat wyboru opisuje regułę (red/green 8f89318, 2435dd7; prompt 14ced6e). Pełny zestaw zielony.
+  Przebieg właściciela po przebudowie `publish/` (ten sam zestaw, gpt-4.1-mini): 10/10 bez poprawki. 9 z 10
+  pytań łączy kilka regulaminów („kredyt gotówkowy, odnawialny i samochodowy”) — to potwierdza przyczynę; przy
+  podobnych dokumentach FAQ ma charakter porównawczy.
+- 2026-10-11, T067q: przegląd FAQ z przebiegu po T067p wykazał 2 błędy treści w pytaniach łączących regulaminy
+  (szczegóły w `tasks.md`). Domyślnie pozycje łączą kandydatów tylko jednego dokumentu (prompt + pominięcie w kodzie),
+  `MergeDocuments` przywraca łączenie. W źródłach FAQ widać też błędy parsera (kandydaci do spec 010): sklejone
+  odnośniki przypisów w nagłówkach („3. Podstawowe informacje o kredycie1”) ze scalonymi definicjami (`FTN001`
+  „Przypis „””) i fałszywe, ucięte nagłówki z ramek w regulaminie promocji. Do sprawdzenia: przebieg właściciela
+  po przebudowie `publish/` i ponowny przegląd FAQ.

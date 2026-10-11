@@ -41,7 +41,7 @@ public sealed class ValidatorSelectionTests
             Item(3) with { BasedOn = ["D3-K1", "D2-K1"] },
         ];
 
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3).Items;
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3, mergeDocuments: true).Items;
 
         Assert.Equal([new FaqSource("D2", "Art. 5"), new FaqSource("D1", "§ 1")], result[0].Sources);
         Assert.Equal([new FaqSource("D1", null)], result[1].Sources);
@@ -148,7 +148,7 @@ public sealed class ValidatorSelectionTests
             Item(1) with { BasedOn = ["D1-K1", "D2-K1"] }, Item(2, "D2-K2"), Item(3, "D1-K2"), Item(4, "D3-K1"),
         ];
 
-        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2, minPerDocument: 1, maxPerDocument: 1);
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2, minPerDocument: 1, maxPerDocument: 1, mergeDocuments: true);
 
         Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 4?"], result.Items.Select(i => i.Question));
     }
@@ -176,7 +176,44 @@ public sealed class ValidatorSelectionTests
             minPerDocument: 1,
             maxPerDocument: 2));
 
-        Assert.Equal(["po zastosowaniu limitu 2 pozycji na dokument zostają 4 z 5 pozycji"], e.Problems);
+        Assert.Equal(
+            ["po zastosowaniu limitu 2 pozycji na dokument zostają 4 z 5 pozycji; brakujące pozycje mogą pochodzić tylko z dokumentów: D2, D3"],
+            e.Problems);
+    }
+
+    /// <summary>
+    /// T067p (eleventh run, five similar credit regulations): an item merged from several documents counts towards the
+    /// maximum of only one of them — the one with the fewest items so far — and is taken while one of them has room.
+    /// </summary>
+    [Fact]
+    public void Balance_MergedItem_CountsTowardsTheMaximumOfOneDocument()
+    {
+        ParsedItem[] items =
+        [
+            Item(1) with { BasedOn = ["D1-K1", "D2-K1"] },
+            Item(2) with { BasedOn = ["D1-K2", "D2-K2"] },
+            Item(3) with { BasedOn = ["D1-K3", "D2-K1"] },
+            Item(4, "D3-K1"),
+        ];
+
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 3, minPerDocument: 1, maxPerDocument: 1, mergeDocuments: true);
+
+        Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 2?", "Pytanie końcowe 4?"], result.Items.Select(i => i.Question));
+    }
+
+    /// <summary>
+    /// T067q (eleventh run): an item merged from candidates of different documents attributed one product's conditions to
+    /// another; by default such an item is skipped like other invalid items.
+    /// </summary>
+    [Fact]
+    public void MergedItemOfTwoDocuments_IsSkippedByDefault()
+    {
+        ParsedItem[] items = [Item(1) with { BasedOn = ["D1-K1", "D2-K1"] }, Item(2, "D1-K2"), Item(3, "D3-K1")];
+
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2);
+
+        Assert.Equal(["Pytanie końcowe 2?", "Pytanie końcowe 3?"], result.Items.Select(i => i.Question));
+        Assert.Equal(["pozycja 1: łączy kandydatów różnych dokumentów (D1, D2)"], result.Skipped);
     }
 
     private static ParsedItem Item(int i, string candidateId = "") =>
