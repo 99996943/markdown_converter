@@ -10,7 +10,8 @@ namespace LegalAgent.PdfParser.Stages;
 /// <summary>
 /// Unicode normalisation of glyph text (FR-010, research R7): ligature expansion, special spaces to a plain
 /// space, combining marks merged into their base glyph, NFC (never NFKC, which would destroy superscript
-/// digits), and conversion of raised small-font digits after <c>Art. N</c> / <c>§ N</c> to superscript characters.
+/// digits), and conversion of raised small-font digits after <c>art. N</c> / <c>Art. N</c> / <c>§ N</c> to superscript
+/// characters (never after a word ending in „art.”, such as „kart.”).
 /// </summary>
 public sealed partial class TextNormalizationStage : IPipelineStage
 {
@@ -161,6 +162,6 @@ public sealed partial class TextNormalizationStage : IPipelineStage
         return LegalNumberTail().IsMatch(tail.ToString());
     }
 
-    [GeneratedRegex("(?:Art\\.|§)\\s*\\d+[a-z]*[⁰¹²³⁴-⁹]*$", RegexOptions.CultureInvariant)]
+    [GeneratedRegex("(?:(?<!\\p{L})[Aa]rt\\.|§)\\s*\\d+[a-z]*[⁰¹²³⁴-⁹]*$", RegexOptions.CultureInvariant)]
     private static partial Regex LegalNumberTail();
 }
