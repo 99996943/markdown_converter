@@ -138,6 +138,36 @@ parsera, prywatne listy obok PDF-ów.
 - 2026-10-11: spec, clarify (decyzja US3: naprawa w kodzie z wycofaniem wg FR-661; wąska zgoda na zmiany aktów z
   US1), plan, research R1–R4, data-model, kontrakt `number-check.md`, quickstart. Gałąź `009-number-review-fixes`
   bez commitów. `tasks.md`: 24 zadania (T001–T024). Następny krok: `/speckit-implement` od T001.
+- 2026-10-11, US2 (T001–T008): `baseline-009/` (21 goldenów) i `number-check.txt` (15 regulaminów z zestawów FAQ:
+  corp-1, 2, 3, 5, 6, ind-1…5, firm-2…6) w `Corpus/private`, poza git; prywatny korpus zielony na starcie.
+  `NumberCheck` + `RegulationGate` (testy offline), kolumny `Liczby +`, `Liczby −`, `Odnośniki sklejone` w raporcie.
+  - Fałszywy alarm miary (corp-3, ostatnia strona): cyfra stopki 6,7 pt po logo 22,7 pt brana za indeks górny →
+    indeks musi stać ≤ 0,5 em od poprzedniej litery (test `FromPdf_SmallRaisedDigitFarFromThePreviousLetter_IsANumber`).
+  - Klasa spoza specyfikacji: odnośniki przypisów niewykryte przez parser i sklejone ze słowem („Tak4”, „PESEL17”,
+    „1dodaniu”, „pary walutowej1”, „BLIK9,10”) — ind-1, 2, 4, firm-2, 3, 5, 6, corp-5, reg1, regulamin-pdp; bramka
+    byłaby czerwona na 11 z 15 regulaminów. **Decyzja właściciela (2026-10-11)**: miara traktuje liczbę przyklejoną
+    do litery jako odnośnik, gdy ta sama wartość jest w PDF indeksem górnym; liczone osobno („Odnośniki sklejone”),
+    nie jako nadmiarowe. „CO2”, „MT940”, „art. 32a” (pełne cyfry w PDF) bez zmian; „661”, „150.000” dalej nadmiarowe.
+    Naprawa w parserze — kandydat na spec 010; opis w „Znanych ograniczeniach” (T021).
+  - Etykiety definicji przypisów bez „)” scalone przez parser w jeden `[^1]` („[^1]: 1 … 2 … 3 …”, w PDF etykiety to
+    indeks górny): ind-2 „3”, ind-4 „1” — wpisane jako dopuszczone w `number-check.txt` z komentarzem (to samo
+    zjawisko w corp-5 s. 25 „1 W przypadku…” daje sklejony odnośnik „walutowej1”).
+  - **Pomiar wyjściowy** (wersja 1.2.0; + nadmiarowe / − brakujące / odnośniki sklejone):
+
+    | Dokument | + | − | skl. | Wartości |
+    |---|---|---|---|---|
+    | corp-2 | 8 | 1 | 0 | + 0×3, 1×2, 2×3; − 01.01.2022×1 (przepleciona stopka, US3) |
+    | corp-5 | 2 | 2 | 1 | + 661×1, 682×1; − 66×1, 68×1 (US1) |
+    | firm-1 | 6 | 6 | 0 | + 150.000, 230.000, 320.000, 450.000, 7, 9; − 1, 3, 20.000, 30.000, 50.000×2 (poza listą) |
+    | ind-2 | 1 | 0 | 7 | + 3×1 (dopuszczone) |
+    | ind-4 | 1 | 0 | 17 | + 1×1 (dopuszczone) |
+    | reg1, regulamin-pdp | 1 | 0 | 9 | + 6×1 (poza listą) |
+    | firm-2 / firm-3 / firm-5 / firm-6 / ind-1 | 0 | 0 | 4 / 9 / 11 / 1 / 15 | — |
+
+    Pozostałe dokumenty: 0 / 0 / 0.
+  - **Klasyfikacja brakujących (SC-101)** w regulaminach z listy: corp-2 „01.01.2022” — data rozbita przeplecionymi
+    literami stopki (US3); corp-5 „66”, „68” — sklejone z indeksem (US1). Innych brakujących nie ma; utraty tekstu brak.
+  - Bramka `RegulationNumbers_HaveNoExcess` czerwona dokładnie na corp-2 i corp-5 (commit red 48735e6).
 
 ## Complexity Tracking
 

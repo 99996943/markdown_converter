@@ -57,7 +57,7 @@ prywatną dla US1 i US3.
 **Independent Test**: `NumberCheckTests` na syntetycznym PDF (poprawny indeks → 0 rozbieżności, sklejony →
 nadmiarowa); na prywatnym korpusie miara wykrywa corp-5 661/682 i firm-1 150.000/230.000/320.000/450.000.
 
-- [ ] T003 [US2] Testy (red) w nowym `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/NumberCheckTests.cs`:
+- [X] T003 [US2] Testy (red) w nowym `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/NumberCheckTests.cs`:
   - `FromMarkdown`: liczby `[0-9]+(?:[.,][0-9]+)*`; pomija `<!-- page: 3 -->`, `[^2]`, `[^2]:` na początku wiersza,
     ukośniki ucieczki (`- 1\)` → „1”), `**150**` → „150”; „66¹” → tylko „66”; „170 103 364” → trzy liczby;
     „01.01.2022” i „150.000” jako jedna liczba;
@@ -73,7 +73,7 @@ mbank-b;0,0
     `mbank-a: nadmiarowe 661×1, 682×1`; dokument z listy bez wyniku → porażka „no such PDF”; same brakujące → brak
     porażki
   Sprawdź, że testy nie kompilują się / padają przed T004
-- [ ] T004 [US2] Pomocnik (green T003) w nowym `tests/LegalAgent.PdfParser.Tests/Fixtures/NumberCheck.cs` (z klasą
+- [X] T004 [US2] Pomocnik (green T003) w nowym `tests/LegalAgent.PdfParser.Tests/Fixtures/NumberCheck.cs` (z klasą
   `RegulationGate` — parsowanie `number-check.txt` według `contracts/number-check.md` i ocena porażek) według
   `data-model.md`: `NumberDiff(Excess, Missing, PdfCount, MarkdownCount, Skipped)` z wielozbiorami
   `IReadOnlyDictionary<string,int>`; strona PDF — litery PdfPig w kolejności strumienia, podział tokenów na białym
@@ -82,22 +82,22 @@ mbank-b;0,0
   `LineFingerprint.Compute` równym `ArtifactSummary.Pattern` na stronie z `Pages` pomijane (jeśli `LineFingerprint`
   jest niedostępny z testów, sprawdź `InternalsVisibleTo`; nie kopiuj logiki); klucz liczby bez normalizacji
   separatorów
-- [ ] T005 [US2] `tests/LegalAgent.PdfParser.Tests/Fixtures/LayoutMetrics.cs`: pola `NumbersExcess`,
+- [X] T005 [US2] `tests/LegalAgent.PdfParser.Tests/Fixtures/LayoutMetrics.cs`: pola `NumbersExcess`,
   `NumbersMissing` w `LayoutMeasures` (sumy krotności), wypełniane przeciążeniem `Measure(markdown, report, pdfPath)`;
   test w `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/LayoutMetricsTests.cs` (red → green w jednym kroku testów
   pomocniczych, commit jako test pomocnika)
-- [ ] T006 [US2] Raport w `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs`: kolumny `Liczby +` i
+- [X] T006 [US2] Raport w `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs`: kolumny `Liczby +` i
   `Liczby −` w tabeli miar, sekcja `## Liczby nadmiarowe i brakujące` (dokumenty z niezerową miarą, wartości z
   krotnościami, format `+ 661×1, 682×1; − 66×2`), `BaselineDirectory` = `baseline-009` (sekcja zbiorów słów vs
   `baseline-009`); zaktualizuj komentarz `<remarks>` klasy (spec 009)
-- [ ] T007 [US2] Uruchom raport (`quickstart.md` §2) i sprawdź znane przypadki: corp-5 → nadmiarowe 661, 682;
+- [X] T007 [US2] Uruchom raport (`quickstart.md` §2) i sprawdź znane przypadki: corp-5 → nadmiarowe 661, 682;
   firm-1 → 150.000, 230.000, 320.000, 450.000; corp-2 → cyfry przeplecionej daty. Jeśli regulamin z listy ma inną
   nadmiarową liczbę (fałszywy alarm), popraw tokenizację w `NumberCheck.cs` (nie listę) z testem w
   `NumberCheckTests.cs` i opisz przypadek. Zapisz pomiar wyjściowy (liczby + / − dla każdego dokumentu z niezerową
   miarą) w handoffie `specs/009-number-review-fixes/plan.md`, „Stan prac i przekazanie”; dla regulaminów z listy
   sklasyfikuj każdą liczbę brakującą (etykieta definicji przypisu, duplikat warstwy tekstowej, rozbity wiersz, inne —
   „inne” sprawdź w PDF, czy tekst nie zginął; utrata tekstu → nowe zadanie T0xxa i pytanie do właściciela) (SC-101)
-- [ ] T008 [US2] Bramka (red na prywatnym korpusie) `RegulationNumbers_HaveNoExcess` w
+- [X] T008 [US2] Bramka (red na prywatnym korpusie) `RegulationNumbers_HaveNoExcess` w
   `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs` według `contracts/number-check.md`: brak pliku
   `number-check.txt` → `Assert.SkipUnless`; poza tym tylko wywołuje `RegulationGate.Evaluate` (logika przetestowana
   offline w T003) i asertuje brak porażek. Sprawdź, że pada na corp-5 i corp-2; commit jako red (opis: zielony po US1 i US3)
