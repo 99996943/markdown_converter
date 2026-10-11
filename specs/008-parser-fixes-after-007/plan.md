@@ -240,7 +240,7 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   426/426; prywatny korpus w pełni zielony (1151 testów parsera bez wydajnościowych). Kontrakt 1.3.0: przykłady w
   `contracts/markdown-output.md` zgodne z wynikiem replik T023–T024, `CLAUDE.md` („Rendering”) zaktualizowany.
   Następny krok: US4 (T032).
-- 2026-10-11 (US4, T032–T040d — gotowe; T041 czeka na decyzję o ind-3): `StepSequenceStage` rozszerzony bez nowego
+- 2026-10-11 (US4, T032–T041 — gotowe; ind-3 zatwierdzony przez właściciela, zob. US5): `StepSequenceStage` rozszerzony bez nowego
   etapu: (1) łączniki — wiersz albo słowa wiersza na lewo od krawędzi pola złożone ze znaków bez liter i cyfr, między
   polami jednej kolumny (też przez granicę strony) → `Artifact`; (2) przelew — niczyje wiersze w całości na prawo od
   pola, poniżej niego, z odstępem ≤ 1,5 × wysokość wiersza, do następnego pola / tekstu po lewej / większego odstępu,
@@ -270,6 +270,35 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   pada tylko na ind-3. ind-1, ind-2, firm-3 i pozostałe dokumenty bez zmian. Kontrola FR-643: testy solucji zielone poza
   goldenem ind-3 (2145); `verify` czysty (korpus syntetyczny bez zmian); goldeny `Corpus/acts`, `Corpus/banking` i
   chunków bez zmian. Następny krok: decyzja o ind-3, potem US5 (T042).
+- 2026-10-11 (T041, US5 T042–T046 — gotowe; spec 008 zakończony): właściciel zaakceptował zmianę goldenu ind-3
+  (s. 7 → 8 ramek, słowa bez zmian); golden zaktualizowany wynikiem bieżącego kodu. Wersja 1.2.0 w
+  `Directory.Build.props` (commit eda3d00): `refresh` przepisuje tylko `parserVersion`, więc `generatorVersion` w
+  `corpus/manifest.json` poprawiony ręcznie jak przy 1.1.0 (9682755) — poza tym `corpus/` bez zmian, `verify` czysty.
+  README parsera i `CLAUDE.md` opisują zmiany (f4274cc); z „Znanych ograniczeń” README usunięte stopki „N/M”,
+  „a.”/„ii.”, wplecione ramki i „Rozdział I.”, dopisana kropka między oznaczeniem a tytułem jednostki.
+
+  Miary przed → po (dokumenty z niezerową miarą):
+
+  | Dokument | Akapity „N/M” (wszystkie) | Fałszywe nagłówki jednostek | „a.”/„i.” poza listą | Ramki jako tabela / wplecione | Utracony tekst | TBL001 |
+  |---|---|---|---|---|---|---|
+  | mbank-ind-2 | 16 (35) → 0 (0) | – | – | – | – | bez zmian |
+  | mbank-firm-1 | 6 (6) → 0 (0) | – | – | – | – | bez zmian |
+  | mbank-corp-1 | – | 1 → 0 | 20 → 0 | – | – | 5 → 4 |
+  | mbank-corp-3 | – | – | 2 → 0 | – | – | bez zmian |
+  | mbank-corp-5 | – | – | 9 → 0 | – | – | bez zmian |
+  | mbank-firm-2 | – | – | – | 3 / 1 → 0 / 0 | punkt „3. Możemy poprosić…” odzyskany | bez zmian |
+  | mbank-firm-4 | – | – | – | 2 / 0 → 0 / 0 | – | bez zmian |
+
+  Zbiory słów vs baseline-008: utracone tylko tokeny „N/M” (ind-2, firm-1), powtórzony nagłówek tabeli ze s. 8 ind-2
+  i znaki strzałek; nowe tylko „potwierdzające”, „prawdziwość”, „przekazałeś” (odzyskany tekst firm-2).
+  Zmienione goldeny prywatne: ind-2, ind-3, firm-5 (US1, zatwierdzone przez właściciela 2026-10-10), ind-3 (US4,
+  zatwierdzone 2026-10-11), firm-1, firm-2 (US1), corp-1 (US2, US3, US4), corp-3 (US3), corp-5 (US3, US4), firm-2,
+  firm-4, firm-5 (US4) — dokumenty dla firm przejrzane przez wykonawcę; uzasadnienia w wpisach US1–US4. Korpus
+  syntetyczny: REG-04 / ZAT-REG-SPR-02 (US1, zatwierdzone). Goldeny `Corpus/acts`, `Corpus/banking` i chunków bez
+  zmian. Stan końcowy: solucja bez testów wydajności 2146 zielonych / 7 pominiętych przy włączonym prywatnym korpusie
+  (zmienna z bezwzględną ścieżką — względna daje „missing directory”); testy wydajności 4/4 zielone uruchomione osobno
+  (uruchomione razem z resztą test 114-stronicowego aktu przekracza 10 s pod obciążeniem); `CorpusFull` 426/426;
+  `verify` czysty. Gałąź niewypchnięta.
 
 ## Complexity Tracking
 

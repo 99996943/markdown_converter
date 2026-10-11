@@ -254,7 +254,7 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
 - [X] T040c [US4] Test (red): strzałka wciąga etykietę „3.” (wiersz cyfr 6 pt), tekst punktu na tej samej linii
   bazowej po odstępie etykiety ≈ 8 pt — łączy się z etykietą (firm-2 s. 5, „3. Możemy poprosić…”)
 - [X] T040d [US4] Próg łączenia: odstęp etykiety (do 2 × wysokość wyższej części) w `StepSequenceStage.cs` — green T040c
-- [ ] T041 [US4] Pełna kontrola FR-643; goldeny firm-2, firm-4, firm-5: ramki jako akapit + treść, odzyskany punkt
+- [X] T041 [US4] Pełna kontrola FR-643; goldeny firm-2, firm-4, firm-5: ramki jako akapit + treść, odzyskany punkt
   „3. Możemy poprosić…” w firm-2 (jedyne nowe słowa w porównaniu zbiorów), znikają tylko znaki strzałek; ind-1, ind-2,
   firm-3 (schematy już poprawne) bez zmian — każda zmiana w ind-*: stop i pytanie; `verify` (układ `StepSchemeLayout`)
   bez zmian; miary: ramki jako tabela / wplecione = 0; handoff
@@ -275,8 +275,8 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
   ograniczenia (łączenie oznaczenia i tytułu kropką — `HeadingDetectionStage`, poza zakresem)
 - [X] T044 [P] [US5] `CLAUDE.md`: w opisie komunikacji etapów — `StepSequence` (łączniki-glify, przelew treści poniżej
   pola, pojedyncze pole) i stopki „N/M” w `ArtifactRemoval`; bez zmian w innych sekcjach
-- [ ] T045 [US5] Testy wydajności `dotnet test LegalAgent.slnx --filter "Category=Performance"` zielone (SC-007)
-- [ ] T046 [US5] Handoff w `specs/008-parser-fixes-after-007/plan.md`: tabela miar przed/po (akapity „N/M”, fałszywe
+- [X] T045 [US5] Testy wydajności `dotnet test LegalAgent.slnx --filter "Category=Performance"` zielone (SC-007)
+- [X] T046 [US5] Handoff w `specs/008-parser-fixes-after-007/plan.md`: tabela miar przed/po (akapity „N/M”, fałszywe
   nagłówki, etykiety „a.”/„ii.” poza listą, ramki jako tabela / wplecione, utracony tekst, TBL001) dla każdego
   dokumentu z niezerową miarą; wynik porównania zbiorów słów (utracone: tylko „N/M” i strzałki; nowe: tylko odzyskany
   tekst firm-2); lista zmienionych goldenów z uzasadnieniem; stan końcowy testów; aktualizacja pamięci projektu
