@@ -51,6 +51,19 @@ public sealed class NumberCheckTests
             NumberCheck.FromMarkdown(markdown));
     }
 
+    /// <summary>
+    /// T007 (owner's decision): 1–3 digits glued to a letter are an undetected footnote reference („Tak4”, „PESEL17”,
+    /// „1dodaniu”, „K16,17”), not a number; they are counted separately. Digits glued to digits still count („150.000”).
+    /// </summary>
+    [Fact]
+    public void FromMarkdown_DigitsGluedToALetter_AreReferences()
+    {
+        string markdown = "| Tak4 | PESEL17 | oraz 1dodaniu i K16,17 | 150.000 zł | art. 66¹ |";
+
+        Assert.Equal(Bag(("150.000", 1), ("66", 1)), NumberCheck.FromMarkdown(markdown));
+        Assert.Equal(4, NumberCheck.GluedReferences(markdown));
+    }
+
     [Fact]
     public async Task FromPdf_SeparatesSuperscriptDigits_AndSkipsRemovedPageNumbers()
     {
