@@ -27,6 +27,7 @@ public sealed class PrivateCorpusTests
     private const string Variable = "LEGALAGENT_PRIVATE_CORPUS";
     private const string ReportVariable = "LEGALAGENT_CORPUS_REPORT";
     private const string LabelLayoutList = "layout-labels.txt";
+    private const string NumberCheckList = "number-check.txt";
     private const string FramePhrases = "frame-phrases.txt";
     private const string BaselineDirectory = "baseline-009";
 
@@ -111,6 +112,28 @@ public sealed class PrivateCorpusTests
                 failures.Add($"{name}: „§ N” as text {m.ParagraphText}");
             }
         }
+
+        Assert.True(failures.Count == 0, string.Join("\n", failures));
+    }
+
+    /// <summary>
+    /// Spec 009 (FR-658, SC-102) — regulations of the FAQ sets listed in <c>number-check.txt</c>: no number of the
+    /// Markdown is missing from the PDF text layer (glued or changed), beyond the numbers the list allows.
+    /// </summary>
+    [Fact]
+    public async Task RegulationNumbers_HaveNoExcess()
+    {
+        string directory = RequireDirectory();
+        string list = Path.Combine(directory, NumberCheckList);
+        Assert.SkipUnless(File.Exists(list), $"{NumberCheckList} is missing in {directory}.");
+
+        IReadOnlyList<Converted> documents = await ConvertAllAsync(directory);
+        var diffs = documents.ToDictionary(
+            d => Path.GetFileNameWithoutExtension(d.Name),
+            d => NumberCheck.Compare(d.Result.Markdown, d.Path, d.Result.Report),
+            StringComparer.Ordinal);
+
+        IReadOnlyList<string> failures = RegulationGate.Evaluate(await File.ReadAllTextAsync(list, TestContext.Current.CancellationToken), diffs);
 
         Assert.True(failures.Count == 0, string.Join("\n", failures));
     }
