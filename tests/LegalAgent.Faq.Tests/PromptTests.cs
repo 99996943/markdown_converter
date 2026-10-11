@@ -70,6 +70,17 @@ public sealed class PromptTests
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
     }
 
+    /// <summary>T067q: by default the selection merges candidates only within one document.</summary>
+    [Fact]
+    public async Task SelectionMessage_MergesOnlyWithinOneDocumentByDefault()
+    {
+        string system = (await RunAsync(candidates: 7)).Calls[2].System;
+
+        Assert.Contains("tylko w obrębie jednego dokumentu", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("z różnych dokumentów", system, StringComparison.Ordinal);
+        Assert.DoesNotContain("do limitu — tylko dla jednego z nich", system, StringComparison.Ordinal);
+    }
+
     [Fact]
     public async Task SelectionMessage_LimitPerDocument_CoversItemCount()
     {

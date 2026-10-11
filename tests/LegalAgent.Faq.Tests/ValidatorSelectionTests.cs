@@ -201,6 +201,21 @@ public sealed class ValidatorSelectionTests
         Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 2?", "Pytanie końcowe 4?"], result.Items.Select(i => i.Question));
     }
 
+    /// <summary>
+    /// T067q (eleventh run): an item merged from candidates of different documents attributed one product's conditions to
+    /// another; by default such an item is skipped like other invalid items.
+    /// </summary>
+    [Fact]
+    public void MergedItemOfTwoDocuments_IsSkippedByDefault()
+    {
+        ParsedItem[] items = [Item(1) with { BasedOn = ["D1-K1", "D2-K1"] }, Item(2, "D1-K2"), Item(3, "D3-K1")];
+
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2);
+
+        Assert.Equal(["Pytanie końcowe 2?", "Pytanie końcowe 3?"], result.Items.Select(i => i.Question));
+        Assert.Equal(["pozycja 1: łączy kandydatów różnych dokumentów (D1, D2)"], result.Skipped);
+    }
+
     private static ParsedItem Item(int i, string candidateId = "") =>
         new($"Pytanie końcowe {i}?", "Odpowiedź końcowa.", [candidateId.Length > 0 ? candidateId : i == 1 ? "D1-K1" : "D1-K2"]);
 }
