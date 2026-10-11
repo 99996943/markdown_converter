@@ -267,7 +267,7 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
 
 **Goal**: dowód braku regresji, wersje i dokumentacja (FR-643…FR-647, SC-094…SC-097).
 
-- [ ] T042 [US5] `<Version>` 1.1.0 → 1.2.0 w `Directory.Build.props`; `dotnet run --project src/LegalAgent.Corpus.Cli
+- [X] T042 [US5] `<Version>` 1.1.0 → 1.2.0 w `Directory.Build.props`; `dotnet run --project src/LegalAgent.Corpus.Cli
   -c Release -- refresh` i `verify` — `corpus/manifest.json` zapisuje 1.2.0, poza tym bez zmian w `corpus/`; commit
   wersji i manifestu
 - [ ] T043 [P] [US5] README parsera `src/LegalAgent.PdfParser/README.md`: wyliczenia „a.”/„i.”, ramki schematów ze
