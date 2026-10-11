@@ -233,7 +233,7 @@ public sealed partial class StepSchemesIntegrationTests
             md,
             StringComparison.Ordinal);
 
-        string[] ordered = ["2) Jeśli otwarcie", "**Składasz wniosek**", "**Sprawdzamy dokumenty rejestrowe**", "**Potwierdzamy otwarcie**", "3) Po zawarciu"];
+        string[] ordered = ["2\\) Jeśli otwarcie", "**Składasz wniosek**", "**Sprawdzamy dokumenty rejestrowe**", "**Potwierdzamy otwarcie**", "3\\) Po zawarciu"];
         int[] order = ordered.Select(s => md.IndexOf(s, StringComparison.Ordinal)).ToArray();
         Assert.DoesNotContain(order, i => i < 0);
         Assert.Equal(order.Order(), order);

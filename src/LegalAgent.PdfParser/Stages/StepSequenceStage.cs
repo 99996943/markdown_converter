@@ -141,8 +141,72 @@ public sealed class StepSequenceStage : IPipelineStage
             LayoutLine text = LineSlicer.Slice(line, rest);
             text.Baseline = Baseline(rest, line.Baseline);
             page.Lines[index] = connector;
+
+            // The tall glyph may have pulled only the first words of a line into its own line (T040a): rejoin the rest.
+            int partner = FindLineRest(page, text);
+            if (partner >= 0)
+            {
+                text = Join(text, page.Lines[partner]);
+                page.Lines.RemoveAt(partner);
+                if (partner < index)
+                {
+                    index--;
+                }
+            }
+
             page.Lines.Insert(++index, text);
         }
+    }
+
+    /// <summary>The index of an unclassified line on the same baseline right beside <paramref name="part"/>, or -1.</summary>
+    private static int FindLineRest(LayoutPage page, LayoutLine part)
+    {
+        int found = -1;
+        double nearest = part.Box.Height;
+        for (int i = 0; i < page.Lines.Count; i++)
+        {
+            LayoutLine line = page.Lines[i];
+            if (line.Role != LineRole.Unknown || line.Words.Count == 0 || Math.Abs(line.Baseline - part.Baseline) > 1)
+            {
+                continue;
+            }
+
+            double gap = Math.Max(line.Box.Left - part.Box.Right, part.Box.Left - line.Box.Right);
+            if (gap >= 0 && gap <= nearest)
+            {
+                found = i;
+                nearest = gap;
+            }
+        }
+
+        return found;
+    }
+
+    /// <summary>One line of two parts of a visual line; the segments that meet become one.</summary>
+    private static LayoutLine Join(LayoutLine a, LayoutLine b)
+    {
+        (LayoutLine left, LayoutLine right) = a.Box.Left <= b.Box.Left ? (a, b) : (b, a);
+        var line = new LayoutLine([.. left.Words, .. right.Words], left.Box.Union(right.Box), a.Baseline) { Zone = a.Zone };
+        List<LineSegment> segments = [.. left.Segments, .. right.Segments];
+        if (left.Segments.Count > 0 && right.Segments.Count > 0)
+        {
+            LineSegment last = left.Segments[^1];
+            LineSegment first = right.Segments[0];
+            segments.RemoveAt(left.Segments.Count);
+            segments[left.Segments.Count - 1] = new LineSegment([.. last.Words, .. first.Words], last.Box.Union(first.Box));
+        }
+
+        foreach (LineSegment segment in segments)
+        {
+            line.Segments.Add(segment);
+        }
+
+        foreach (KeyValuePair<string, string> annotation in left.Annotations.Concat(right.Annotations))
+        {
+            line.Annotations[annotation.Key] = annotation.Value;
+        }
+
+        return line;
     }
 
     /// <summary>True for a word without letters and digits (an arrow or another symbol-font glyph).</summary>
