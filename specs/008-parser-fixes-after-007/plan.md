@@ -299,6 +299,16 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   (zmienna z bezwzględną ścieżką — względna daje „missing directory”); testy wydajności 4/4 zielone uruchomione osobno
   (uruchomione razem z resztą test 114-stronicowego aktu przekracza 10 s pod obciążeniem); `CorpusFull` 426/426;
   `verify` czysty. Gałąź niewypchnięta.
+- 2026-10-11 (po zakończeniu): `publish/` (exe, `lib/`, `nuget/`) przebudowany w wersji 1.2.0 z bb5d804. Przebiegi
+  FAQ właściciela: korporacje 10/10, klienci indywidualni 10/10 (za drugim razem — za pierwszym model w kroku wyboru
+  pominął D3–D5, kod 7), firmy 10/10; Markdown wszystkich 15 dokumentów identyczny z goldenami. Odrzuceni kandydaci
+  — błędy modelu (cytat ze złej jednostki), z wyjątkiem firm-1. **Znalezione błędy parsera w firm-1 (limity płatności,
+  poza zakresem 008, kandydat na spec 009):** (1) znaczniki przypisów w indeksie górnym (5 pt, podniesione o 3 pt)
+  sklejają się z następną liczbą: „¹50.000 zł/²30.000 zł” → „150.000 zł/230.000 zł” — zmienione kwoty; (2) tabela
+  w 4 stałych kolumnach z komórkami wielowierszowymi bez siatki: kolumna „informacje” ma inne linie bazowe niż
+  kolumny limitów, więc wiersze PDF przeplatają kawałki komórek (TBL001); (3) podtytuł „obowiązują od 6 listopada
+  2025 r.” jest nagłówkiem `##`, więc cały dokument to jedna jednostka. Skutek: odpowiedź FAQ o limitach błędna
+  (kwoty 150.000/230.000 nie istnieją w PDF), 4 z 10 kandydatów odrzuconych.
 
 ## Complexity Tracking
 
