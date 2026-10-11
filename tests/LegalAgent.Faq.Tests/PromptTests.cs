@@ -64,6 +64,7 @@ public sealed class PromptTests
         Assert.Contains("kogo dotyczy", system, StringComparison.Ordinal);
         Assert.Contains("od 1 do 3 pozycji", system, StringComparison.Ordinal);
         Assert.Contains("z każdego dokumentu co najmniej 2", system, StringComparison.Ordinal);
+        Assert.Contains("do limitu — tylko dla jednego z nich", system, StringComparison.Ordinal);
         Assert.DoesNotContain("sources", system, StringComparison.Ordinal);
         Assert.DoesNotContain("sources", FaqSchemas.Selection, StringComparison.Ordinal);
         Assert.Contains("po polsku", system, StringComparison.Ordinal);
