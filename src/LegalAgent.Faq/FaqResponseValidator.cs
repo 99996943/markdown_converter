@@ -42,7 +42,8 @@ internal static class FaqResponseValidator
     /// first gets its best-ranked items up to <paramref name="minPerDocument"/>, then items are taken in the model's
     /// order while no document exceeds <paramref name="maxPerDocument"/> (an item of several documents counts towards the
     /// maximum of one of them). The chosen items keep the model's order and are
-    /// numbered 1…<paramref name="itemCount"/>; their sources come from their <c>basedOn</c> candidates (T067b).
+    /// numbered 1…<paramref name="itemCount"/>; unless <paramref name="mergeDocuments"/>, an item of candidates of different
+    /// documents is skipped (T067q); their sources come from their <c>basedOn</c> candidates (T067b).
     /// </summary>
     /// <exception cref="FaqResponseException">Fewer than <paramref name="itemCount"/> items can be chosen, or a document lacks its minimum.</exception>
     public static SelectionResult ValidateSelection(
@@ -50,7 +51,8 @@ internal static class FaqResponseValidator
         IReadOnlyList<FaqCandidate> candidates,
         int itemCount,
         int minPerDocument = 0,
-        int maxPerDocument = int.MaxValue)
+        int maxPerDocument = int.MaxValue,
+        bool mergeDocuments = false)
     {
         var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
         string[] documents = [.. candidates.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)];
@@ -67,9 +69,16 @@ internal static class FaqResponseValidator
                 continue;
             }
 
+            string[] itemDocuments = [.. basedOn.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)];
+            if (!mergeDocuments && itemDocuments.Length > 1)
+            {
+                skipped.Add(Invariant($"pozycja {position}: łączy kandydatów różnych dokumentów ({string.Join(", ", itemDocuments)})"));
+                continue;
+            }
+
             questions[NormalizeQuestion(items[i].Question)] = position;
             var item = new FaqItem(position, items[i].Question.Trim(), items[i].Answer.Trim(), SourcesOf(basedOn), items[i].BasedOn);
-            valid.Add((item, [.. basedOn.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)]));
+            valid.Add((item, itemDocuments));
         }
 
         var problems = new List<string>();

@@ -53,14 +53,14 @@ internal static class FaqPrompts
     }
 
     /// <summary>System message of the selection step.</summary>
-    public static string SelectionSystem(int itemCount, int minPerDocument, int maxPerDocument) => string.Create(
+    public static string SelectionSystem(int itemCount, int minPerDocument, int maxPerDocument, bool mergeDocuments = false) => string.Create(
         CultureInfo.InvariantCulture,
         $"""
         Układasz końcowe FAQ dla klientów banku z kandydatów przygotowanych wcześniej na podstawie kilku dokumentów.
 
         Zasady:
-        - Wybierz od {itemCount} do {itemCount + PoolExtra} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń, i uszereguj je od najważniejszego. Program wybierze z nich {itemCount} pozycji FAQ, tak żeby każdy dokument był źródłem od {minPerDocument} do {maxPerDocument} pozycji (do minimum pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”, do limitu — tylko dla jednego z nich).
-        - Każde pytanie dotyczy jednej sprawy. Łącz kandydatów tylko wtedy, gdy dotyczą tej samej sprawy (np. z różnych dokumentów); nie łącz różnych tematów w jedno pytanie.
+        - Wybierz od {itemCount} do {itemCount + PoolExtra} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń, i uszereguj je od najważniejszego. Program wybierze z nich {itemCount} pozycji FAQ, tak żeby każdy dokument był źródłem od {minPerDocument} do {maxPerDocument} pozycji{MergedCount(mergeDocuments)}.
+        - Każde pytanie dotyczy jednej sprawy. {MergeRule(mergeDocuments)}
         - Możesz połączyć kilku kandydatów o tę samą sprawę w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach, i nie zmieniaj warunków ani wyjątków.
         - {PoolPerDocument(minPerDocument)}
         - Zachowaj w odpowiedzi, kogo dotyczy zasada (np. konsument, osoba fizyczna nieprowadząca działalności gospodarczej, firma, klient Private Banking), oraz jej warunki i wyjątki, jeśli podają je kandydaci.
@@ -112,6 +112,16 @@ internal static class FaqPrompts
     private static string PoolPerDocument(int min) => min > 0
         ? FormattableStringFactory.Create("Podaj z każdego dokumentu co najmniej {0} pozycje.", min + 1).ToString(CultureInfo.InvariantCulture)
         : "Uwzględnij różne dokumenty.";
+
+    /// <summary>How a merged item counts towards the limits (T067p), only when documents may be merged.</summary>
+    private static string MergedCount(bool mergeDocuments) => mergeDocuments
+        ? " (do minimum pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”, do limitu — tylko dla jednego z nich)"
+        : string.Empty;
+
+    /// <summary>Which candidates may be merged into one item (T067c, T067q).</summary>
+    private static string MergeRule(bool mergeDocuments) => mergeDocuments
+        ? "Łącz kandydatów tylko wtedy, gdy dotyczą tej samej sprawy (np. z różnych dokumentów); nie łącz różnych tematów w jedno pytanie."
+        : "Łącz kandydatów tylko w obrębie jednego dokumentu i tylko wtedy, gdy dotyczą tej samej sprawy; nie łącz różnych tematów w jedno pytanie. Gdy kilka dokumentów odpowiada na podobne pytanie, zadaj osobne pytania o każdy dokument albo wybierz jeden — warunki z jednego dokumentu nie dotyczą produktów z innych dokumentów. Pozycja z kandydatami różnych dokumentów zostanie pominięta.";
 
     private static string OneLine(string text) =>
         string.Join(' ', text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));

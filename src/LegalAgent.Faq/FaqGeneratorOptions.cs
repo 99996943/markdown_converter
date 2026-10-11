@@ -21,6 +21,13 @@ public sealed record FaqGeneratorOptions
     /// </summary>
     public int MinItemsPerDocument { get; init; } = 1;
 
+    /// <summary>
+    /// Whether a final item may merge candidates of different documents (T067q, default false): for documents about
+    /// different products a merged answer attributed one product's conditions to another. When true, a merged item counts
+    /// towards the maximum of one of its documents (T067p).
+    /// </summary>
+    public bool MergeDocuments { get; init; }
+
     /// <summary>Maximum estimated tokens of one document, greater than 0.</summary>
     public int MaxDocumentTokens { get; init; } = 100_000;
 

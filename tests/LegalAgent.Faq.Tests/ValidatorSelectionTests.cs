@@ -41,7 +41,7 @@ public sealed class ValidatorSelectionTests
             Item(3) with { BasedOn = ["D3-K1", "D2-K1"] },
         ];
 
-        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3).Items;
+        IReadOnlyList<FaqItem> result = FaqResponseValidator.ValidateSelection(items, Candidates, 3, mergeDocuments: true).Items;
 
         Assert.Equal([new FaqSource("D2", "Art. 5"), new FaqSource("D1", "§ 1")], result[0].Sources);
         Assert.Equal([new FaqSource("D1", null)], result[1].Sources);
@@ -148,7 +148,7 @@ public sealed class ValidatorSelectionTests
             Item(1) with { BasedOn = ["D1-K1", "D2-K1"] }, Item(2, "D2-K2"), Item(3, "D1-K2"), Item(4, "D3-K1"),
         ];
 
-        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2, minPerDocument: 1, maxPerDocument: 1);
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 2, minPerDocument: 1, maxPerDocument: 1, mergeDocuments: true);
 
         Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 4?"], result.Items.Select(i => i.Question));
     }
@@ -196,7 +196,7 @@ public sealed class ValidatorSelectionTests
             Item(4, "D3-K1"),
         ];
 
-        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 3, minPerDocument: 1, maxPerDocument: 1);
+        SelectionResult result = FaqResponseValidator.ValidateSelection(items, Candidates, 3, minPerDocument: 1, maxPerDocument: 1, mergeDocuments: true);
 
         Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 2?", "Pytanie końcowe 4?"], result.Items.Select(i => i.Question));
     }

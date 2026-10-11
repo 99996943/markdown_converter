@@ -124,7 +124,7 @@ public sealed class FaqGenerator
         string selectionUser = FaqPrompts.SelectionUser(sources, candidates);
         progress?.Report(new FaqEvent(FaqEventKind.SelectionStarted, null, selectionUser.Length, Estimate(selectionUser), candidates.Count, null));
         (int minPerDocument, int maxPerDocument) = ItemsPerDocument(documents.Count);
-        string selectionSystem = FaqPrompts.SelectionSystem(options.ItemCount, minPerDocument, maxPerDocument);
+        string selectionSystem = FaqPrompts.SelectionSystem(options.ItemCount, minPerDocument, maxPerDocument, options.MergeDocuments);
         (string selectionText, FaqUsage? selectionUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, [], cancellationToken)
             .ConfigureAwait(false);
         SelectionResult result;
@@ -188,7 +188,7 @@ public sealed class FaqGenerator
     {
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(text);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
-        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount, minPerDocument, maxPerDocument);
+        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount, minPerDocument, maxPerDocument, options.MergeDocuments);
     }
 
     /// <summary>
