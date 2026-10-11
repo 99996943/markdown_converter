@@ -174,6 +174,34 @@ public sealed class LayoutMetricsTests
         Assert.Empty(diff.New);
     }
 
+    [Theory]
+    [InlineData("art. 661 Kodeksu cywilnego", 1, 1)]
+    [InlineData("art. 66¹ Kodeksu cywilnego", 0, 0)]
+    public async Task Measure_with_a_pdf_path_fills_the_number_measures(string markdown, int excess, int missing)
+    {
+        var builder = new SyntheticPdfBuilder().Page();
+        double x = 72 + SyntheticPdfBuilder.TextWidth("art. 66", 8);
+        builder.Text(72, 100, "art. 66", 8)
+            .Text(x, 97, "1", 4)
+            .Text(x + SyntheticPdfBuilder.TextWidth("1", 4) + 2, 100, "Kodeksu cywilnego stosuje się odpowiednio.", 8);
+        byte[] pdf = builder.Build();
+        using var stream = new MemoryStream(pdf);
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, new PdfConversionRequest(), TestContext.Current.CancellationToken);
+        string path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N") + ".pdf");
+        await File.WriteAllBytesAsync(path, pdf, TestContext.Current.CancellationToken);
+        try
+        {
+            LayoutMeasures m = LayoutMetrics.Measure(markdown, result.Report, path);
+
+            Assert.Equal(excess, m.NumbersExcess);
+            Assert.Equal(missing, m.NumbersMissing);
+        }
+        finally
+        {
+            File.Delete(path);
+        }
+    }
+
     [Fact]
     public void Measure_takes_the_warnings_of_a_report()
     {

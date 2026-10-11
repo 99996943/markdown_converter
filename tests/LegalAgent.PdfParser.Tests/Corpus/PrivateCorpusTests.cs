@@ -17,6 +17,9 @@ namespace LegalAgent.PdfParser.Tests.Corpus;
 /// (<c>name;maxTbl001;maxPipeRows</c>); <see cref="LabelLayoutDocuments_MeetTheirLimits"/> checks them.
 /// Spec 008 (T005): when the untracked files exist, the report also lists the frame measures (<c>frame-phrases.txt</c>,
 /// <c>document;phrase</c>) and the word-set and unit-heading differences against <c>baseline-008/*.expected.md</c>.
+/// Spec 009 (T006): the table has the columns „Liczby +” / „Liczby −” (numbers only in the Markdown / only in the PDF text
+/// layer, <see cref="NumberCheck"/>), a section lists the numbers per document, and the word-set baseline is
+/// <c>baseline-009/*.expected.md</c>.
 /// </remarks>
 public sealed class PrivateCorpusTests
 {
@@ -24,7 +27,7 @@ public sealed class PrivateCorpusTests
     private const string ReportVariable = "LEGALAGENT_CORPUS_REPORT";
     private const string LabelLayoutList = "layout-labels.txt";
     private const string FramePhrases = "frame-phrases.txt";
-    private const string BaselineDirectory = "baseline-008";
+    private const string BaselineDirectory = "baseline-009";
 
     private static readonly Dictionary<string, Task<IReadOnlyList<Converted>>> Conversions = new(StringComparer.Ordinal);
 
@@ -152,11 +155,29 @@ public sealed class PrivateCorpusTests
     {
         Dictionary<string, List<string>> frames = LoadFramePhrases(Path.Combine(directory, FramePhrases));
         string baselineDirectory = Path.Combine(directory, BaselineDirectory);
-        var table = new StringBuilder("| Dokument | TBL001 | Wiersze „ \\| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” | Akapity „N/M” | „a.”/„i.” poza listą | Ramki jako tabela | Ramki wplecione |\n|---|---|---|---|---|---|---|---|---|---|---|\n");
+        var table = new StringBuilder("| Dokument | TBL001 | Wiersze „ \\| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” | Akapity „N/M” | „a.”/„i.” poza listą | Ramki jako tabela | Ramki wplecione | Liczby + | Liczby − |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n");
+        var numberLines = new StringBuilder();
         foreach (Converted document in documents)
         {
             string markdown = document.Result.Markdown;
-            LayoutMeasures m = LayoutMetrics.Measure(markdown, document.Result.Report);
+            NumberDiff numbers = NumberCheck.Compare(markdown, document.Path, document.Result.Report);
+            LayoutMeasures m = LayoutMetrics.Measure(markdown, document.Result.Report, numbers);
+            if (m.NumbersExcess + m.NumbersMissing > 0)
+            {
+                var parts = new List<string>();
+                if (m.NumbersExcess > 0)
+                {
+                    parts.Add($"+ {NumberCheck.Format(numbers.Excess)}");
+                }
+
+                if (m.NumbersMissing > 0)
+                {
+                    parts.Add($"− {NumberCheck.Format(numbers.Missing)}");
+                }
+
+                numberLines.Append(CultureInfo.InvariantCulture, $"- {Path.GetFileNameWithoutExtension(document.Name)}: {string.Join("; ", parts)}\n");
+            }
+
             string asTable = "-";
             string woven = "-";
             if (frames.TryGetValue(Path.GetFileNameWithoutExtension(document.Name), out List<string>? phrases))
@@ -165,12 +186,14 @@ public sealed class PrivateCorpusTests
                 woven = LayoutMetrics.FramesWoven(markdown, phrases).ToString(CultureInfo.InvariantCulture);
             }
 
-            table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {m.Tbl001} | {m.PipeRows} | {m.LooseLabelRows} | {m.ParagraphText} | {m.TocHeadings} | {m.PageFooters} | {LayoutMetrics.PageNumberParagraphs(markdown)} | {LayoutMetrics.DotEnumLabelsOutsideList(markdown)} | {asTable} | {woven} |\n");
+            table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {m.Tbl001} | {m.PipeRows} | {m.LooseLabelRows} | {m.ParagraphText} | {m.TocHeadings} | {m.PageFooters} | {LayoutMetrics.PageNumberParagraphs(markdown)} | {LayoutMetrics.DotEnumLabelsOutsideList(markdown)} | {asTable} | {woven} | {m.NumbersExcess} | {m.NumbersMissing} |\n");
         }
+
+        table.Append("\n## Liczby nadmiarowe i brakujące\n\n").Append(numberLines);
 
         if (Directory.Exists(baselineDirectory))
         {
-            table.Append("\n## Zbiory słów i nagłówki jednostek vs baseline-008\n\n");
+            table.Append("\n## Zbiory słów i nagłówki jednostek vs baseline-009\n\n");
             table.Append("| Dokument | Utracone słowa | Nowe słowa | Nagłówki jednostek: utracone | Nagłówki jednostek: nowe |\n|---|---|---|---|---|\n");
             var details = new StringBuilder();
             foreach (Converted document in documents)
