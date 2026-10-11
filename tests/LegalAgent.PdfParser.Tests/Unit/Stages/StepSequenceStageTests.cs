@@ -472,6 +472,37 @@ public sealed class StepSequenceStageTests
         Assert.True(second.Lines[0].Annotations.ContainsKey(LayoutAnnotations.StepIndex));
     }
 
+    /// <summary>
+    /// T040a — the firm terms: the tall arrow glyph pulls the first word of a wrapped explanation line into its own line,
+    /// the rest of that line is a line of its own on the same baseline; once the arrow is split off, the two parts are
+    /// one line again.
+    /// </summary>
+    [Fact]
+    public void LinePartSplitOffAnArrow_RejoinsTheRestOfItsLine()
+    {
+        double rest = TextLeft + 15 + TextWidth("dalszy x") - TextWidth("x");
+        LayoutPage page = PageWith(
+            1,
+            [
+                Row(117, ("Pierwszy krok", TitleLeft), ("1. Pierwszy punkt.", TextLeft)),
+                Line("2. Drugi punkt oraz", TextLeft, 129),
+                Row(141, (Arrow, 127), ("dalszy", TextLeft + 15)),
+                Line("ciąg punktu.", rest, 141),
+                Row(167, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+            ],
+            Box(114, 140),
+            Box(164, 180));
+
+        Run(Context([page]));
+
+        Assert.Equal(
+            ["Pierwszy krok", "1. Pierwszy punkt.", "2. Drugi punkt oraz", "dalszy ciąg punktu.", "Drugi krok", "Opis drugiego kroku."],
+            Texts(page));
+        LayoutLine joined = page.Lines.Single(l => l.Text == "dalszy ciąg punktu.");
+        Assert.Single(joined.Segments);
+        Assert.True(joined.Annotations.ContainsKey(LayoutAnnotations.StepIndex));
+    }
+
     public static TheoryData<string> SingleBoxes() =>
         ["guarded", "plain name", "wide box", "ruling in the band", "nothing to the right", "no name in the box"];
 

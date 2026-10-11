@@ -247,6 +247,10 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
   treści po prawej albo bez tekstu w polu → zwykły tekst, bez schematu
 - [X] T040 [US4] Osłona pola i pojedyncze pole (wyjątek od `MinBoxes` tylko przy spełnionej osłonie) w
   `StepSequenceStage.cs` — green T039
+- [X] T040a [US4] Test (red) w `StepSequenceStageTests.cs`: wysoki znak strzałki wciąga pierwsze słowo zawiniętego
+  wiersza objaśnienia do swojego wiersza, reszta wiersza to osobny wiersz na tej samej linii bazowej — po odcięciu
+  strzałki obie części są jednym wierszem (ostatni brak repliki T032)
+- [ ] T040b [US4] Ponowne łączenie części wiersza po odcięciu łącznika w `StepSequenceStage.cs` — green T040a i T032
 - [ ] T041 [US4] Pełna kontrola FR-643; goldeny firm-2, firm-4, firm-5: ramki jako akapit + treść, odzyskany punkt
   „3. Możemy poprosić…” w firm-2 (jedyne nowe słowa w porównaniu zbiorów), znikają tylko znaki strzałek; ind-1, ind-2,
   firm-3 (schematy już poprawne) bez zmian — każda zmiana w ind-*: stop i pytanie; `verify` (układ `StepSchemeLayout`)
