@@ -25,7 +25,7 @@ oraz zmian wynikających z przepisów ogłoszonych przed dniem 21 stycznia 2020 
 - 3\) art. 157 pkt 2, który wchodzi w życie z dniem 13 października 2019 r.”;
 - 2\) art. 70 i art. 86 ustawy z dnia 31 lipca 2019 r. o zmianie niektórych ustaw w celu ograniczenia obciążeń regulacyjnych (Dz. U. poz. 1495), które stanowią:
 
-„Art. 70. 1. Przepisów art. 3855, art. 5564, art. 556[^2] i art. 576[^2] ustawy zmienianej w art. 1 nie stosuje się do umów zawartych przed dniem 1 czerwca 2020 r.
+„Art. 70. 1. Przepisów art. 385⁵, art. 556⁴, art. 556⁵ i art. 576⁵ ustawy zmienianej w art. 1 nie stosuje się do umów zawartych przed dniem 1 czerwca 2020 r.
 
 2\. Przepisu art. 38a ustawy zmienianej w art. 55 nie stosuje się do umów zawartych przed dniem 1 czerwca 2020 r.”
 
@@ -59,8 +59,6 @@ Marszałek Sejmu: *E. Witek*
 Załącznik do obwieszczenia Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 28 stycznia 2020 r. (poz. 287)
 
 [^1]: Niniejsza ustawa dokonuje w zakresie swojej regulacji wdrożenia dyrektywy Parlamentu Europejskiego i Rady 2011/83/UE z dnia 25 października 2011 r. w sprawie praw konsumentów, zmieniającej dyrektywę Rady 93/13/EWG i dyrektywę 1999/44/WE Parlamentu Europejskiego i Rady oraz uchylającej dyrektywę Rady 85/577/EWG i dyrektywę 97/7/WE Parlamentu Europejskiego i Rady (Dz. Urz. UE L 304 z 22.11.2011, str. 64), dyrektywy 1999/44/WE Parlamentu Europejskiego i Rady z dnia 25 maja 1999 r. w sprawie niektórych aspektów sprzedaży towarów konsumpcyjnych i związanych z tym gwarancji (Dz. Urz. UE L 171 z 07.07.1999, z późn. zm.) oraz dyrektywy 2002/65/WE Parlamentu Europejskiego i Rady z dnia 23 września 2002 r. dotyczącej sprzedaży konsumentom usług finansowych na odległość oraz zmieniającej dyrektywę Rady 90/619/EWG oraz dyrektywy 97/7/WE i 98/27/WE (Dz. Urz. UE L 271 z 09.10.2002, str. 16, z późn. zm.), ostatnio zmienionej dyrektywą 2007/64/WE Parlamentu Europejskiego i Rady z dnia 13 listopada 2007 r. (Dz. Urz. UE L 319 z 05.12.2007, str. 1).
-
-[^2]: Ustawa została ogłoszona w dniu 24 czerwca 2014 r.
 
 ## USTAWA z dnia 30 maja 2014 r. o prawach konsumenta
 
@@ -115,7 +113,7 @@ Określenia użyte w ustawie oznaczają:
 
 ### Art. 4a.
 
-[^3] 1. Administrator będący przedsiębiorcą, o którym mowa w art. 7 ust. 1 pkt 1 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców (Dz. U. z 2019 r. poz. 1292 i 1495), wykonuje obowiązki, o których mowa w art. 13 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1, z późn. zm.3)), zwanego dalej „rozporządzeniem 2016/679”, w zakresie umów, o których mowa w rozdziałach 2 i 3, przez wywieszenie w widocznym miejscu w lokalu przedsiębiorstwa lub udostępnienie na swojej stronie internetowej stosownych informacji.
+[^2] 1. Administrator będący przedsiębiorcą, o którym mowa w art. 7 ust. 1 pkt 1 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców (Dz. U. z 2019 r. poz. 1292 i 1495), wykonuje obowiązki, o których mowa w art. 13 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1, z późn. zm.3)), zwanego dalej „rozporządzeniem 2016/679”, w zakresie umów, o których mowa w rozdziałach 2 i 3, przez wywieszenie w widocznym miejscu w lokalu przedsiębiorstwa lub udostępnienie na swojej stronie internetowej stosownych informacji.
 
 - 2\. Przepisu ust. 1 nie stosuje się, jeżeli osoba, której dane dotyczą, nie ma możliwości zapoznania się z informacjami, o których mowa w art. 13 rozporządzenia 2016/679.
 <!-- page: 5 -->
@@ -125,9 +123,9 @@ Określenia użyte w ustawie oznaczają:
     - a\) osoba, której dane dotyczą, wyraziła zgodę na udostępnienie swoich danych albo
     - b\) udostępnienie danych jest niezbędne do wypełnienia obowiązku ciążącego na administratorze.
 
-[^3]: Dodany przez art. 126 ustawy z dnia 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. U. poz. 730), która weszła w życie z dniem 4 maja 2019 r.
+[^2]: Dodany przez art. 126 ustawy z dnia 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. U. poz. 730), która weszła w życie z dniem 4 maja 2019 r.
 
-[^5]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 127 z 23.05.2018, str. 2.
+[^4]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 127 z 23.05.2018, str. 2.
 
 ### Art. 5.
 
@@ -375,9 +373,9 @@ Prawo odstąpienia od umowy zawartej poza lokalem przedsiębiorstwa lub na odleg
 
 ### Art. 38a.
 
-[^4] **Przepisy dotyczące konsumenta zawarte w niniejszym rozdziale stosuje się do osoby fizycznej zawierającej umowę bezpośrednio związaną z jej działalnością gospodarczą, gdy z treści tej umowy wynika, że nie posiada ona dla tej osoby charakteru zawodowego, wynikającego w szczególności z przedmiotu wykonywanej przez nią działalności gospodarczej, udostępnionego na podstawie przepisów o Centralnej Ewidencji i Informacji o Działalności Gospodarczej.**
+[^3] **Przepisy dotyczące konsumenta zawarte w niniejszym rozdziale stosuje się do osoby fizycznej zawierającej umowę bezpośrednio związaną z jej działalnością gospodarczą, gdy z treści tej umowy wynika, że nie posiada ona dla tej osoby charakteru zawodowego, wynikającego w szczególności z przedmiotu wykonywanej przez nią działalności gospodarczej, udostępnionego na podstawie przepisów o Centralnej Ewidencji i Informacji o Działalności Gospodarczej.**
 
-[^4]: Dodany przez art. 55 ustawy z dnia 31 lipca 2019 r. o zmianie niektórych ustaw w celu ograniczenia obciążeń regulacyjnych (Dz. U. poz. 1495), która weszła w życie z dniem 1 stycznia 2020 r.; wejdzie w życie z dniem 1 czerwca 2020 r.
+[^3]: Dodany przez art. 55 ustawy z dnia 31 lipca 2019 r. o zmianie niektórych ustaw w celu ograniczenia obciążeń regulacyjnych (Dz. U. poz. 1495), która weszła w życie z dniem 1 stycznia 2020 r.; wejdzie w życie z dniem 1 czerwca 2020 r.
 
 ## Rozdział 5. Umowy dotyczące usług finansowych zawierane na odległość
 
@@ -474,6 +472,8 @@ Ustawa wchodzi w życie po upływie 6 miesięcy od dnia ogłoszenia5).
 
 <!-- page: 14 -->
 Załączniki do ustawy z dnia 30 maja 2014 r.
+
+[^5]: Ustawa została ogłoszona w dniu 24 czerwca 2014 r.
 
 ## Załącznik nr 1
 

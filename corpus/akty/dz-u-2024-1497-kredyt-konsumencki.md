@@ -496,7 +496,7 @@ Jeżeli zgodnie z umową rachunku oszczędnościowo-rozliczeniowego konsumenta m
 - 1a\. Maksymalną wysokość pozaodsetkowych kosztów kredytu dla kredytów o okresie spłaty krótszym niż 30 dni oblicza się według wzoru: *MPKK = K x 5 %* w którym poszczególne symbole oznaczają: *MPKK* – maksymalną wysokość pozaodsetkowych kosztów kredytu, *K* – całkowitą kwotę kredytu.
 - 2\. Pozaodsetkowe koszty kredytu nie mogą być wyższe od 45 % całkowitej kwoty kredytu.
 - 3\. Pozaodsetkowe koszty kredytu wynikające z umowy o kredyt konsumencki nie należą się w części przekraczającej maksymalną wysokość pozaodsetkowych kosztów kredytu obliczoną w sposób określony w ust. 1–2.
-- 4\. Przepisów art. 7202–7205 Kodeksu cywilnego nie stosuje się do umowy pożyczki pieniężnej udzielanej przez instytucję pożyczkową na podstawie przepisów niniejszej ustawy.
+- 4\. Przepisów art. 720²–7205 Kodeksu cywilnego nie stosuje się do umowy pożyczki pieniężnej udzielanej przez instytucję pożyczkową na podstawie przepisów niniejszej ustawy.
 
 <!-- page: 16 -->
 ### Art. 36b.

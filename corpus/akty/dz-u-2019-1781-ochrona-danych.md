@@ -32,7 +32,7 @@ Art. 110. W ustawie z dnia 17 czerwca 1966 r. o postępowaniu egzekucyjnym w adm
 - 2\) w art. 18i § 12 otrzymuje brzmienie: „§ 12. Postępowanie w sprawie sprzeciwu nie wyłącza odpowiedzialności za naruszenie obowiązków wynikających z przepisów o ochronie danych osobowych.”.
 
 <!-- page: 2 -->
-Art. 111. W ustawie z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2018 r. poz. 917) po art. 22[^2] dodaje się art. 22[^3] i art. 22[^4] w brzmieniu:
+Art. 111. W ustawie z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2018 r. poz. 917) po art. 22¹ dodaje się art. 22² i art. 22³ w brzmieniu:
 
 „Art. 22². § 1. Jeżeli jest to niezbędne do zapewnienia bezpieczeństwa pracowników lub ochrony mienia lub kontroli produkcji lub zachowania w tajemnicy informacji, których ujawnienie mogłoby narazić pracodawcę na szkodę, pracodawca może wprowadzić szczególny nadzór nad terenem zakładu pracy lub terenem wokół zakładu pracy w postaci środków technicznych umożliwiających rejestrację obrazu (monitoring).
 
@@ -58,7 +58,7 @@ Art. 22³. § 1. Jeżeli jest to niezbędne do zapewnienia organizacji pracy umo
 
 § 2. Monitoring poczty elektronicznej nie może naruszać tajemnicy korespondencji oraz innych dóbr osobistych pracownika.
 
-§ 3. Przepisy art. 22[^3] § 6–10 stosuje się odpowiednio.
+§ 3. Przepisy art. 22² § 6–10 stosuje się odpowiednio.
 
 § 4. Przepisy § 1–3 stosuje się odpowiednio do innych form monitoringu niż określone w § 1, jeśli ich zastosowanie jest konieczne do realizacji celów określonych w § 1.”.
 
@@ -315,11 +315,7 @@ Załącznik do obwieszczenia Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 3
 
 [^2]: Niniejsza ustawa służy stosowaniu rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
 
-[^3]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę Parlamentu Europejskiego i Rady (UE) 2016/680 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych i wykonywania kar, w sprawie swobodnego przepływu takich danych oraz uchylającą decyzję ramową Rady 2008/977/WSiSW.
-
-[^4]: Dodany przez art. 161 pkt 1 ustawy z dnia 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. U. poz. 730), która weszła w życie z dniem 4 maja 2019 r.
-
-[^14]: a) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 5, 138, 398, 416, 650, 730, 756, 770 i 771. b) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2361 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 685, 723 i 864. c) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2018 r. poz. 3, 5, 106, 138, 771 i 848. d) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 106, 138, 650, 685 i 771. e) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2201 oraz z 2018 r. poz. 138, 398, 650, 730 i 912. f) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2486 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 723, 771 i 864.
+[^13]: a) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 5, 138, 398, 416, 650, 730, 756, 770 i 771. b) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2361 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 685, 723 i 864. c) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2018 r. poz. 3, 5, 106, 138, 771 i 848. d) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2491 oraz z 2018 r. poz. 106, 138, 650, 685 i 771. e) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2201 oraz z 2018 r. poz. 138, 398, 650, 730 i 912. f) Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2017 r. poz. 2486 i 2491 oraz z 2018 r. poz. 62, 106, 138, 650, 723, 771 i 864.
 
 ## USTAWA z dnia 10 maja 2018 r. o ochronie danych osobowych1),
 
@@ -353,6 +349,8 @@ Załącznik do obwieszczenia Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 3
 - 2\. W przypadku, o którym mowa w ust. 1, administrator zapewnia odpowiednie środki służące ochronie interesu lub podstawowych praw i wolności osoby, której dane dotyczą.
 - 3\. Administrator jest obowiązany poinformować osobę, której dane dotyczą, na jej wniosek, bez zbędnej zwłoki, nie później jednak niż w terminie miesiąca od dnia otrzymania wniosku, o podstawie nieprzekazania informacji, o których mowa w art. 13 ust. 3 rozporządzenia 2016/679.
 
+[^14]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę Parlamentu Europejskiego i Rady (UE) 2016/680 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych i wykonywania kar, w sprawie swobodnego przepływu takich danych oraz uchylającą decyzję ramową Rady 2008/977/WSiSW.
+
 ### Art. 4.
 
 - 1\. W zakresie nieuregulowanym w art. 14 ust. 5 rozporządzenia 2016/679 administrator wykonujący zadanie publiczne nie przekazuje informacji, o których mowa w art. 14 ust. 1, 2 i 4 rozporządzenia 2016/679, jeżeli służy to realizacji zadania publicznego i niewykonanie obowiązku, o którym mowa w art. 14 ust. 1, 2 i 4 rozporządzenia 2016/679, jest niezbędne dla realizacji celów, o których mowa w art. 23 ust. 1 tego rozporządzenia, oraz przekazanie tych informacji:
@@ -372,7 +370,7 @@ Załącznik do obwieszczenia Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 3
 
 ### Art. 5a.
 
-[^4] 1. Administrator, który otrzymał dane osobowe od podmiotu realizującego zadanie publiczne, nie wykonuje obowiązków, o których mowa w art. 15 ust. 1–3 rozporządzenia 2016/679, w przypadku gdy podmiot przekazujący dane osobowe wystąpił z żądaniem w tym zakresie ze względu na konieczność prawidłowego wykonania zadania publicznego mającego na celu:
+[^3] 1. Administrator, który otrzymał dane osobowe od podmiotu realizującego zadanie publiczne, nie wykonuje obowiązków, o których mowa w art. 15 ust. 1–3 rozporządzenia 2016/679, w przypadku gdy podmiot przekazujący dane osobowe wystąpił z żądaniem w tym zakresie ze względu na konieczność prawidłowego wykonania zadania publicznego mającego na celu:
 
 - 1\) zapobieganie przestępczości, wykrywanie lub ściganie czynów zabronionych lub wykonywanie kar, w tym ochronę przed zagrożeniami dla bezpieczeństwa publicznego i zapobieganie takim zagrożeniom;
 - 2\) ochronę interesów gospodarczych i finansowych państwa obejmującą w szczególności:
@@ -384,6 +382,8 @@ Załącznik do obwieszczenia Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 3
   - e\) prowadzenie kontroli, w tym kontroli celno-skarbowych.
 
   2\. W przypadku, o którym mowa w ust. 1, administrator udziela odpowiedzi na żądanie wniesione na podstawie art. 15 rozporządzenia 2016/679 w sposób, który uniemożliwia ustalenie, że administrator przetwarza dane osobowe otrzymane od podmiotu wykonującego zadanie publiczne.
+
+[^3]: Dodany przez art. 161 pkt 1 ustawy z dnia 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. U. poz. 730), która weszła w życie z dniem 4 maja 2019 r.
 
 ### Art. 6.
 
@@ -439,12 +439,12 @@ Podmiot, który wyznaczył inspektora, udostępnia dane inspektora, o których m
 
 ### Art. 11a.
 
-[^5] 1. Podmiot, który wyznaczył inspektora, może wyznaczyć osobę zastępującą inspektora w czasie jego nieobecności, z uwzględnieniem kryteriów, o których mowa w art. 37 ust. 5 i 6 rozporządzenia 2016/679.
+[^4] 1. Podmiot, który wyznaczył inspektora, może wyznaczyć osobę zastępującą inspektora w czasie jego nieobecności, z uwzględnieniem kryteriów, o których mowa w art. 37 ust. 5 i 6 rozporządzenia 2016/679.
 
 - 2\. W związku z wykonywaniem obowiązków inspektora w czasie jego nieobecności do osoby go zastępującej stosuje się odpowiednio przepisy dotyczące inspektora.
 - 3\. Podmiot, który wyznaczył osobę zastępującą inspektora, zawiadamia Prezesa Urzędu o jej wyznaczeniu w trybie określonym w art. 10 oraz udostępnia jej dane zgodnie z art. 11.
 
-[^5]: Dodany przez art. 161 pkt 3 ustawy, o której mowa w odnośniku 3.
+[^4]: Dodany przez art. 161 pkt 3 ustawy, o której mowa w odnośniku 3.
 
 ## Rozdział 3. Warunki i tryb udzielania akredytacji podmiotowi certyfikującemu
 
@@ -765,7 +765,7 @@ Rada Ministrów określi, w drodze rozporządzenia, wzór legitymacji służbowe
   - 1\) Rada Ministrów;
   - 2\) Rzecznik Praw Obywatelskich;
   - 3\) izby gospodarcze;
-  - 4\) [^6] podmioty, o których mowa w art. 7 ust. 1 pkt 1, 2 i 4–6 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce (Dz. U. poz. 1668, z późn. zm.8));
+  - 4\) [^5] podmioty, o których mowa w art. 7 ust. 1 pkt 1, 2 i 4–6 ustawy z dnia 20 lipca 2018 r. – Prawo o szkolnictwie wyższym i nauce (Dz. U. poz. 1668, z późn. zm.8));
   - 5\) fundacje i stowarzyszenia wpisane do Krajowego Rejestru Sądowego, których celem statutowym jest działalność na rzecz ochrony danych osobowych.
 <!-- page: 22 -->
 - 8\. Członkiem Rady może być osoba, która:
@@ -788,7 +788,7 @@ Rada Ministrów określi, w drodze rozporządzenia, wzór legitymacji służbowe
 - 16\. Na posiedzenie Rady mogą być zapraszane, przez Prezesa Urzędu oraz przewodniczącego Rady, inne osoby, o ile jest to uzasadnione zadaniami Rady. Przepis ust. 9 stosuje się odpowiednio.
 - 17\. Szczegółowy tryb działania Rady określa regulamin ustanawiany na wniosek Rady przez Prezesa Urzędu.
 
-[^6]: W brzmieniu ustalonym przez art. 168 pkt 1 ustawy z dnia 3 lipca 2018 r. – Przepisy wprowadzające ustawę – Prawo o szkolnictwie wyższym i nauce (Dz. U. poz. 1669), która weszła w życie z dniem 1 października 2018 r.
+[^5]: W brzmieniu ustalonym przez art. 168 pkt 1 ustawy z dnia 3 lipca 2018 r. – Przepisy wprowadzające ustawę – Prawo o szkolnictwie wyższym i nauce (Dz. U. poz. 1669), która weszła w życie z dniem 1 października 2018 r.
 
 [^16]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2018 r. poz. 2024 i 2245 oraz z 2019 r. poz. 276, 447, 534, 577, 730 i 823.
 
@@ -797,7 +797,7 @@ Rada Ministrów określi, w drodze rozporządzenia, wzór legitymacji służbowe
 - 1\. Za udział w pracach Rady członkowi Rady przysługuje wynagrodzenie. Wysokość wynagrodzenia uzależniona jest od zakresu obowiązków związanych z funkcją pełnioną w Radzie oraz liczby posiedzeń, w których uczestniczył.
 - 2\. Wynagrodzenie członka Rady za udział w jednym posiedzeniu stanowi co najmniej 5% przeciętnego wynagrodzenia w gospodarce narodowej w roku kalendarzowym poprzedzającym rok powołania Rady, ogłaszanego przez Prezesa Głównego Urzędu Statystycznego na podstawie art. 20 pkt 1 lit. a ustawy z dnia 17 grudnia 1998 r. o emeryturach i rentach z Funduszu Ubezpieczeń Społecznych, i nie może przekroczyć 25% tego wynagrodzenia.
 - 3\. Rada Ministrów określi, w drodze rozporządzenia, wysokość wynagrodzenia członka Rady za udział w posiedzeniu oraz liczbę posiedzeń Rady w ciągu roku kalendarzowego, uwzględniając zakres obowiązków związanych z funkcją pełnioną w Radzie oraz prawidłową realizację zadań Rady.
-- 4\. Członkom Rady mającym miejsce zamieszkania w innej miejscowości niż siedziba Urzędu przysługują diety oraz zwrot kosztów podróży i zakwaterowania na warunkach określonych w przepisach wykonawczych wydanych na podstawie art. 775 § 2 ustawy z dnia 26 czerwca 1974 r. − Kodeks pracy (Dz. U. z 2019 r. poz. 1040, 1043 i 1495).
+- 4\. Członkom Rady mającym miejsce zamieszkania w innej miejscowości niż siedziba Urzędu przysługują diety oraz zwrot kosztów podróży i zakwaterowania na warunkach określonych w przepisach wykonawczych wydanych na podstawie art. 77⁵ § 2 ustawy z dnia 26 czerwca 1974 r. − Kodeks pracy (Dz. U. z 2019 r. poz. 1040, 1043 i 1495).
 
 ### Art. 50.
 
@@ -845,11 +845,11 @@ Prezes Urzędu, w drodze decyzji:
 
 ### Art. 57.
 
-- 1\. [^7] Administrator może wystąpić do Prezesa Urzędu z wnioskiem o przeprowadzenie uprzednich konsultacji, o których mowa w art. 36 rozporządzenia 2016/679.
+- 1\. [^6] Administrator może wystąpić do Prezesa Urzędu z wnioskiem o przeprowadzenie uprzednich konsultacji, o których mowa w art. 36 rozporządzenia 2016/679.
 - 2\. Do wniosku stosuje się odpowiednio przepis art. 63 ustawy z dnia 14 czerwca 1960 r. – Kodeks postępowania administracyjnego.
 - 3\. Jeżeli wniosek nie spełnia wymogów określonych w art. 36 ust. 3 rozporządzenia 2016/679 oraz art. 63 ustawy z dnia 14 czerwca 1960 r. – Kodeks postępowania administracyjnego, Prezes Urzędu informuje o nieudzieleniu konsultacji, wskazując przyczyny ich nieudzielenia.
 
-[^7]: W brzmieniu ustalonym przez art. 161 pkt 4 ustawy, o której mowa w odnośniku 3.
+[^6]: W brzmieniu ustalonym przez art. 161 pkt 4 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 58.
 
@@ -1049,9 +1049,9 @@ W przypadku otrzymania przez Prezesa Urzędu wniosku organu nadzorczego innego p
 - 4\. W przypadku, o którym mowa w ust. 3, Prezes Urzędu przekazuje potwierdzenie wezwania na piśmie, nie później niż w terminie 3 dni po zakończeniu czynności kontrolnych.
 - 5\. Udzielenie pomocy Policji przy wykonywaniu czynności kontrolnych polega na zapewnieniu kontrolującemu bezpieczeństwa osobistego oraz dostępu do miejsca wykonywania kontroli i porządku w tym miejscu.
 - 6\. Policja, udzielając pomocy kontrolującemu przy wykonywaniu czynności kontrolnych, zapewnia bezpieczeństwo również innym osobom uczestniczącym przy wykonywaniu czynności kontrolnych, mając w szczególności na względzie poszanowanie godności osób biorących udział w kontroli.
-- 7\. [^8] Koszty poniesione przez Policję z tytułu udzielonej pomocy przy wykonywaniu czynności kontrolnych rozlicza się według stawki zryczałtowanej w wysokości 1,5% przeciętnego miesięcznego wynagrodzenia w sektorze przedsiębiorstw bez wypłat nagród z zysku za ubiegły rok, ogłaszanego przez Prezesa Głównego Urzędu Statystycznego na podstawie art. 60 pkt 5 ustawy z dnia 15 lipca 2011 r. o zawodach pielęgniarki i położnej (Dz. U. z 2019 r. poz. 576, 577, 1490 i 1590).
+- 7\. [^7] Koszty poniesione przez Policję z tytułu udzielonej pomocy przy wykonywaniu czynności kontrolnych rozlicza się według stawki zryczałtowanej w wysokości 1,5% przeciętnego miesięcznego wynagrodzenia w sektorze przedsiębiorstw bez wypłat nagród z zysku za ubiegły rok, ogłaszanego przez Prezesa Głównego Urzędu Statystycznego na podstawie art. 60 pkt 5 ustawy z dnia 15 lipca 2011 r. o zawodach pielęgniarki i położnej (Dz. U. z 2019 r. poz. 576, 577, 1490 i 1590).
 
-[^8]: W brzmieniu ustalonym przez art. 168 pkt 2 ustawy, o której mowa w odnośniku 7.
+[^7]: W brzmieniu ustalonym przez art. 168 pkt 2 ustawy, o której mowa w odnośniku 7.
 
 ### Art. 86.
 
@@ -1155,11 +1155,11 @@ Prezes Urzędu może nałożyć na podmiot obowiązany do przestrzegania przepis
 
 ### Art. 101a.
 
-[^9] 1. W związku z toczącym się postępowaniem w sprawie nałożenia administracyjnej kary pieniężnej, podmiot, o którym mowa w art. 101, jest obowiązany do dostarczenia Prezesowi Urzędu, na każde jego żądanie, w terminie 30 dni od dnia otrzymania żądania, danych niezbędnych do określenia podstawy wymiaru administracyjnej kary pieniężnej.
+[^8] 1. W związku z toczącym się postępowaniem w sprawie nałożenia administracyjnej kary pieniężnej, podmiot, o którym mowa w art. 101, jest obowiązany do dostarczenia Prezesowi Urzędu, na każde jego żądanie, w terminie 30 dni od dnia otrzymania żądania, danych niezbędnych do określenia podstawy wymiaru administracyjnej kary pieniężnej.
 
 2\. W przypadku niedostarczenia danych przez podmiot, o którym mowa w art. 101, lub gdy dostarczone przez ten podmiot dane uniemożliwiają ustalenie podstawy wymiaru administracyjnej kary pieniężnej, Prezes Urzędu ustala podstawę wymiaru administracyjnej kary pieniężnej w sposób szacunkowy uwzględniając wielkość podmiotu, specyfikę prowadzonej przez niego działalności lub ogólnie dostępne dane finansowe dotyczące podmiotu.
 
-[^9]: Dodany przez art. 161 pkt 5 ustawy, o której mowa w odnośniku 3.
+[^8]: Dodany przez art. 161 pkt 5 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 102.
 
@@ -1207,21 +1207,21 @@ podlega grzywnie, karze ograniczenia wolności albo pozbawienia wolności do lat
 
 ### Art. 108.
 
-- 1\. [^10] Kto udaremnia lub utrudnia kontrolującemu prowadzenie kontroli przestrzegania przepisów o ochronie danych osobowych, podlega grzywnie, karze ograniczenia wolności albo pozbawienia wolności do lat dwóch.
-- 2\. [^11] Tej samej karze podlega kto, w związku z toczącym się postępowaniem w sprawie nałożenia administracyjnej kary pieniężnej, nie dostarcza danych niezbędnych do określenia podstawy wymiaru administracyjnej kary pieniężnej lub dostarcza dane, które uniemożliwiają ustalenie podstawy wymiaru administracyjnej kary pieniężnej.
+- 1\. [^9] Kto udaremnia lub utrudnia kontrolującemu prowadzenie kontroli przestrzegania przepisów o ochronie danych osobowych, podlega grzywnie, karze ograniczenia wolności albo pozbawienia wolności do lat dwóch.
+- 2\. [^10] Tej samej karze podlega kto, w związku z toczącym się postępowaniem w sprawie nałożenia administracyjnej kary pieniężnej, nie dostarcza danych niezbędnych do określenia podstawy wymiaru administracyjnej kary pieniężnej lub dostarcza dane, które uniemożliwiają ustalenie podstawy wymiaru administracyjnej kary pieniężnej.
 
-[^10]: Oznaczenie ust. 1 nadane przez art. 161 pkt 6 ustawy, o której mowa w odnośniku 3.
+[^9]: Oznaczenie ust. 1 nadane przez art. 161 pkt 6 ustawy, o której mowa w odnośniku 3.
 
-[^11]: Dodany przez art. 161 pkt 6 ustawy, o której mowa w odnośniku 3.
+[^10]: Dodany przez art. 161 pkt 6 ustawy, o której mowa w odnośniku 3.
 
 [^19]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2019 r. poz. 924, 1018, 1495, 1520, 1553 i 1556.
 
 <!-- page: 32 -->
 ## Rozdział 12. Zmiany w przepisach
 
-**Art. 109–157.** (pominięte)[^12]
+**Art. 109–157.** (pominięte)[^11]
 
-[^12]: Zamieszczone w obwieszczeniu.
+[^11]: Zamieszczone w obwieszczeniu.
 
 ## Rozdział 13. Przepisy przejściowe i dostosowujące
 
@@ -1276,7 +1276,7 @@ Dotychczasowe przepisy wykonawcze wydane na podstawie art. 22a ustawy uchylanej 
 ### Art. 167.
 
 - 1\. Z dniem wejścia w życie niniejszej ustawy Biuro Generalnego Inspektora Ochrony Danych Osobowych staje się Urzędem.
-- 2\. Z dniem wejścia w życie niniejszej ustawy pracownicy zatrudnieni w Biurze Generalnego Inspektora Ochrony Danych Osobowych stają się pracownikami Urzędu. Przepis art. 231 ustawy z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2019 r. poz. 1040, 1043 i 1495) stosuje się odpowiednio.
+- 2\. Z dniem wejścia w życie niniejszej ustawy pracownicy zatrudnieni w Biurze Generalnego Inspektora Ochrony Danych Osobowych stają się pracownikami Urzędu. Przepis art. 23¹ ustawy z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2019 r. poz. 1040, 1043 i 1495) stosuje się odpowiednio.
 
 ### Art. 168.
 
@@ -1325,9 +1325,9 @@ Tworzy się Radę.
 
 ### Art. 175.
 
-[^13] Traci moc ustawa z dnia 29 sierpnia 1997 r. o ochronie danych osobowych (Dz. U. z 2016 r. poz. 922 oraz z 2018 r. poz. 138 i 723) z wyjątkiem art. 1, art. 2, art. 3 ust. 1, art. 4–7, art. 14–22, art. 23–28, art. 31 oraz rozdziałów 4, 5 i 7, które zachowują moc w odniesieniu do przetwarzania danych osobowych w celu rozpoznawania, zapobiegania, wykrywania i zwalczania czynów zabronionych, prowadzenia postępowań w sprawach dotyczących tych czynów oraz wykonywania orzeczeń w nich wydanych, kar porządkowych i środków przymusu w zakresie określonym w przepisach stanowiących podstawę działania służb i organów uprawnionych do realizacji zadań w tym zakresie, w terminie do dnia wejścia w życie przepisów wdrażających dyrektywę Parlamentu Europejskiego i Rady (UE) 2016/680 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych i wykonywania kar, w sprawie swobodnego przepływu takich danych oraz uchylającą decyzję ramową Rady 2008/977/WSiSW (Dz. Urz. UE L 119 z 04.05.2016, str. 89).
+[^12] Traci moc ustawa z dnia 29 sierpnia 1997 r. o ochronie danych osobowych (Dz. U. z 2016 r. poz. 922 oraz z 2018 r. poz. 138 i 723) z wyjątkiem art. 1, art. 2, art. 3 ust. 1, art. 4–7, art. 14–22, art. 23–28, art. 31 oraz rozdziałów 4, 5 i 7, które zachowują moc w odniesieniu do przetwarzania danych osobowych w celu rozpoznawania, zapobiegania, wykrywania i zwalczania czynów zabronionych, prowadzenia postępowań w sprawach dotyczących tych czynów oraz wykonywania orzeczeń w nich wydanych, kar porządkowych i środków przymusu w zakresie określonym w przepisach stanowiących podstawę działania służb i organów uprawnionych do realizacji zadań w tym zakresie, w terminie do dnia wejścia w życie przepisów wdrażających dyrektywę Parlamentu Europejskiego i Rady (UE) 2016/680 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych przez właściwe organy do celów zapobiegania przestępczości, prowadzenia postępowań przygotowawczych, wykrywania i ścigania czynów zabronionych i wykonywania kar, w sprawie swobodnego przepływu takich danych oraz uchylającą decyzję ramową Rady 2008/977/WSiSW (Dz. Urz. UE L 119 z 04.05.2016, str. 89).
 
-[^13]: Przepisy art. 1, art. 2, art. 3 ust. 1, art. 4–7, art. 14–22, art. 23–28, art. 31 oraz rozdziały 4, 5 i 7 ustawy z dnia 29 sierpnia 1997 r. o ochronie danych osobowych zachowane w mocy na podstawie art. 175 ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. poz. 1000) utraciły moc z dniem 6 lutego 2019 r. na podstawie art. 107 ustawy z dnia 14 grudnia 2018 r. o ochronie danych osobowych przetwarzanych w związku z zapobieganiem i zwalczaniem przestępczości (Dz. U. z 2019 r. poz. 125), która weszła w życie z dniem 6 lutego 2019 r.
+[^12]: Przepisy art. 1, art. 2, art. 3 ust. 1, art. 4–7, art. 14–22, art. 23–28, art. 31 oraz rozdziały 4, 5 i 7 ustawy z dnia 29 sierpnia 1997 r. o ochronie danych osobowych zachowane w mocy na podstawie art. 175 ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. poz. 1000) utraciły moc z dniem 6 lutego 2019 r. na podstawie art. 107 ustawy z dnia 14 grudnia 2018 r. o ochronie danych osobowych przetwarzanych w związku z zapobieganiem i zwalczaniem przestępczości (Dz. U. z 2019 r. poz. 125), która weszła w życie z dniem 6 lutego 2019 r.
 
 ### Art. 176.
 
