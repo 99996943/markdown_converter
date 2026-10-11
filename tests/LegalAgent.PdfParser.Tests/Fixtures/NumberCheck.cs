@@ -14,12 +14,14 @@ namespace LegalAgent.PdfParser.Tests.Fixtures;
 /// <param name="PdfCount">Number tokens of the PDF.</param>
 /// <param name="MarkdownCount">Number tokens of the Markdown.</param>
 /// <param name="Skipped">Why the document was not measured (no text layer), or <see langword="null"/>.</param>
+/// <param name="GluedReferences">Footnote references glued to a word in the Markdown, not counted as excess.</param>
 public sealed record NumberDiff(
     IReadOnlyDictionary<string, int> Excess,
     IReadOnlyDictionary<string, int> Missing,
     int PdfCount,
     int MarkdownCount,
-    string? Skipped);
+    string? Skipped,
+    int GluedReferences = 0);
 
 /// <summary>
 /// Reads numbers <c>[0-9]+(?:[.,][0-9]+)*</c> from Markdown and directly from the PDF letters (PdfPig, not the parser,
@@ -39,12 +41,8 @@ public static partial class NumberCheck
     /// <summary>Numbers of <paramref name="markdown"/> without page markers, footnote labels and escapes.</summary>
     public static IReadOnlyDictionary<string, int> FromMarkdown(string markdown)
     {
-        string text = Comment().Replace(markdown, " ");
-        text = FootnoteDefinition().Replace(text, " ");
-        text = FootnoteReference().Replace(text, " ");
-        text = text.Replace("\\", string.Empty, StringComparison.Ordinal);
         var numbers = new Dictionary<string, int>(StringComparer.Ordinal);
-        AddNumbers(numbers, text);
+        AddNumbers(numbers, Clean(markdown));
         return numbers;
     }
 
@@ -53,7 +51,71 @@ public static partial class NumberCheck
         FromPdf(File.ReadAllBytes(path), report);
 
     /// <summary>Numbers of <paramref name="pdf"/>; <see langword="null"/> without a text layer.</summary>
-    public static IReadOnlyDictionary<string, int>? FromPdf(byte[] pdf, ConversionReport report)
+    public static IReadOnlyDictionary<string, int>? FromPdf(byte[] pdf, ConversionReport report) =>
+        ReadPdf(pdf, report)?.Numbers;
+
+    /// <summary>Compares the numbers of <paramref name="markdown"/> with the PDF at <paramref name="pdfPath"/>.</summary>
+    public static NumberDiff Compare(string markdown, string pdfPath, ConversionReport report) =>
+        Compare(markdown, File.ReadAllBytes(pdfPath), report);
+
+    /// <summary>Compares the numbers of <paramref name="markdown"/> with <paramref name="pdf"/>.</summary>
+    /// <remarks>
+    /// An excess number glued to a letter in the Markdown („Tak4”, „PESEL17”, „1dodaniu”, „K16,17”) whose value is a
+    /// superscript digit run of the PDF is a footnote reference the parser did not link (a known limitation, spec 009):
+    /// it is counted in <see cref="NumberDiff.GluedReferences"/>, not as excess. Glued full-size numbers („CO2”, „MT940”)
+    /// match the PDF anyway, and a superscript glued to a number („661”, „150.000”) stays excess.
+    /// </remarks>
+    public static NumberDiff Compare(string markdown, byte[] pdf, ConversionReport report)
+    {
+        IReadOnlyDictionary<string, int> fromMarkdown = FromMarkdown(markdown);
+        PdfNumbers? fromPdf = ReadPdf(pdf, report);
+        if (fromPdf is null)
+        {
+            return new NumberDiff(new Dictionary<string, int>(), new Dictionary<string, int>(), 0, fromMarkdown.Values.Sum(), "no text layer");
+        }
+
+        Dictionary<string, int> excess = Subtract(fromMarkdown, fromPdf.Numbers);
+        int references = 0;
+        var superscripts = new Dictionary<string, int>(fromPdf.Superscripts, StringComparer.Ordinal);
+        foreach (Match m in GluedReference().Matches(Clean(markdown)))
+        {
+            string[] parts = m.Value.Split(',');
+            if (excess.GetValueOrDefault(m.Value) == 0
+                || parts.GroupBy(p => p, StringComparer.Ordinal).Any(g => superscripts.GetValueOrDefault(g.Key) < g.Count()))
+            {
+                continue;
+            }
+
+            foreach (string part in parts)
+            {
+                superscripts[part]--;
+            }
+
+            references += parts.Length;
+            if (--excess[m.Value] == 0)
+            {
+                excess.Remove(m.Value);
+            }
+        }
+
+        return new NumberDiff(
+            excess,
+            Subtract(fromPdf.Numbers, fromMarkdown),
+            fromPdf.Numbers.Values.Sum(),
+            fromMarkdown.Values.Sum(),
+            null,
+            references);
+    }
+
+    private static string Clean(string markdown)
+    {
+        string text = Comment().Replace(markdown, " ");
+        text = FootnoteDefinition().Replace(text, " ");
+        text = FootnoteReference().Replace(text, " ");
+        return text.Replace("\\", string.Empty, StringComparison.Ordinal);
+    }
+
+    private static PdfNumbers? ReadPdf(byte[] pdf, ConversionReport report)
     {
         var artifacts = new HashSet<(int Page, string Pattern)>();
         foreach (ArtifactSummary artifact in report.RemovedArtifacts)
@@ -65,12 +127,18 @@ public static partial class NumberCheck
         }
 
         var numbers = new Dictionary<string, int>(StringComparer.Ordinal);
+        var superscripts = new Dictionary<string, int>(StringComparer.Ordinal);
         bool anyText = false;
         using PdfDocument document = PdfDocument.Open(pdf);
         foreach (Page page in document.GetPages())
         {
             List<Token> tokens = Tokenize(page.Letters);
             anyText |= tokens.Count > 0;
+            foreach (Token token in tokens.Where(t => t.Superscript))
+            {
+                superscripts[token.Text] = superscripts.GetValueOrDefault(token.Text) + 1;
+            }
+
             foreach (List<Token> line in RawLines(tokens))
             {
                 string fingerprint = LineFingerprint.Compute(string.Join(' ', line.Select(t => t.Text)));
@@ -86,29 +154,7 @@ public static partial class NumberCheck
             }
         }
 
-        return anyText ? numbers : null;
-    }
-
-    /// <summary>Compares the numbers of <paramref name="markdown"/> with the PDF at <paramref name="pdfPath"/>.</summary>
-    public static NumberDiff Compare(string markdown, string pdfPath, ConversionReport report) =>
-        Compare(markdown, File.ReadAllBytes(pdfPath), report);
-
-    /// <summary>Compares the numbers of <paramref name="markdown"/> with <paramref name="pdf"/>.</summary>
-    public static NumberDiff Compare(string markdown, byte[] pdf, ConversionReport report)
-    {
-        IReadOnlyDictionary<string, int> fromMarkdown = FromMarkdown(markdown);
-        IReadOnlyDictionary<string, int>? fromPdf = FromPdf(pdf, report);
-        if (fromPdf is null)
-        {
-            return new NumberDiff(new Dictionary<string, int>(), new Dictionary<string, int>(), 0, fromMarkdown.Values.Sum(), "no text layer");
-        }
-
-        return new NumberDiff(
-            Subtract(fromMarkdown, fromPdf),
-            Subtract(fromPdf, fromMarkdown),
-            fromPdf.Values.Sum(),
-            fromMarkdown.Values.Sum(),
-            null);
+        return anyText ? new PdfNumbers(numbers, superscripts) : null;
     }
 
     /// <summary>Values with counts ordered by value: <c>661×1, 682×1</c>.</summary>
@@ -146,6 +192,7 @@ public static partial class NumberCheck
         var text = new System.Text.StringBuilder();
         Letter? previous = null;
         Letter? lastInk = null;
+        bool lastSuperscript = false;
         Letter? reference = null;
         bool currentSuperscript = false;
         double x = 0, baseline = 0, size = 0;
@@ -169,6 +216,11 @@ public static partial class NumberCheck
             }
 
             bool superscript = reference is not null && lastInk is not null && IsRaisedSmallDigit(letter, reference, lastInk);
+
+            // A small raised punctuation mark between superscript digits (the comma of „⁹,¹⁰”) is not a full letter.
+            bool betweenSuperscripts = lastSuperscript
+                && char.IsPunctuation(letter.Value[0])
+                && IsSmallRaised(letter, reference!, lastInk!);
             if (previous is not null && (superscript != currentSuperscript || Breaks(previous, letter)))
             {
                 Flush();
@@ -185,7 +237,8 @@ public static partial class NumberCheck
             text.Append(letter.Value);
             previous = letter;
             lastInk = letter;
-            if (!superscript)
+            lastSuperscript = superscript || betweenSuperscripts;
+            if (!superscript && !betweenSuperscripts)
             {
                 reference = letter;
             }
@@ -210,8 +263,12 @@ public static partial class NumberCheck
     /// </summary>
     private static bool IsRaisedSmallDigit(Letter letter, Letter reference, Letter lastInk) =>
         letter.Value.Length == 1
-        && Math.Abs(letter.StartBaseLine.X - lastInk.EndBaseLine.X) <= MaxSuperscriptGapEm * reference.PointSize
         && letter.Value[0] is >= '0' and <= '9'
+        && IsSmallRaised(letter, reference, lastInk);
+
+    private static bool IsSmallRaised(Letter letter, Letter reference, Letter lastInk) =>
+        letter.Value.Length == 1
+        && Math.Abs(letter.StartBaseLine.X - lastInk.EndBaseLine.X) <= MaxSuperscriptGapEm * reference.PointSize
         && letter.PointSize <= reference.PointSize * MaxSuperscriptSizeRatio
         && letter.StartBaseLine.Y >= reference.StartBaseLine.Y + (reference.PointSize * MinRaiseRatio);
 
@@ -240,10 +297,15 @@ public static partial class NumberCheck
         return lines;
     }
 
+    private sealed record PdfNumbers(Dictionary<string, int> Numbers, Dictionary<string, int> Superscripts);
+
     private sealed record Token(string Text, double X, double Baseline, double Size, bool Superscript);
 
     [GeneratedRegex("[0-9]+(?:[.,][0-9]+)*", RegexOptions.CultureInvariant)]
     private static partial Regex Number();
+
+    [GeneratedRegex(@"(?<=\p{L})[0-9]{1,3}(?:,[0-9]{1,3})*(?![0-9.,]?[0-9])|(?<![0-9.,\p{L}])[0-9]{1,3}(?=\p{L})", RegexOptions.CultureInvariant)]
+    private static partial Regex GluedReference();
 
     [GeneratedRegex("<!--.*?-->", RegexOptions.CultureInvariant | RegexOptions.Singleline)]
     private static partial Regex Comment();

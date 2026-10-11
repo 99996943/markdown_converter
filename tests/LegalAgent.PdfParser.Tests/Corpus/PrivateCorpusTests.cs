@@ -18,7 +18,8 @@ namespace LegalAgent.PdfParser.Tests.Corpus;
 /// Spec 008 (T005): when the untracked files exist, the report also lists the frame measures (<c>frame-phrases.txt</c>,
 /// <c>document;phrase</c>) and the word-set and unit-heading differences against <c>baseline-008/*.expected.md</c>.
 /// Spec 009 (T006): the table has the columns „Liczby +” / „Liczby −” (numbers only in the Markdown / only in the PDF text
-/// layer, <see cref="NumberCheck"/>), a section lists the numbers per document, and the word-set baseline is
+/// layer, <see cref="NumberCheck"/>) and „Odnośniki sklejone” (digits glued to a word — footnote references the parser did
+/// not link, a known limitation not counted as numbers), a section lists the numbers per document, and the word-set baseline is
 /// <c>baseline-009/*.expected.md</c>.
 /// </remarks>
 public sealed class PrivateCorpusTests
@@ -155,7 +156,7 @@ public sealed class PrivateCorpusTests
     {
         Dictionary<string, List<string>> frames = LoadFramePhrases(Path.Combine(directory, FramePhrases));
         string baselineDirectory = Path.Combine(directory, BaselineDirectory);
-        var table = new StringBuilder("| Dokument | TBL001 | Wiersze „ \\| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” | Akapity „N/M” | „a.”/„i.” poza listą | Ramki jako tabela | Ramki wplecione | Liczby + | Liczby − |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n");
+        var table = new StringBuilder("| Dokument | TBL001 | Wiersze „ \\| ” | Etykiety poza listą | „§ N” jako tekst | Spis treści | „N/M” | Akapity „N/M” | „a.”/„i.” poza listą | Ramki jako tabela | Ramki wplecione | Liczby + | Liczby − | Odnośniki sklejone |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n");
         var numberLines = new StringBuilder();
         foreach (Converted document in documents)
         {
@@ -186,7 +187,7 @@ public sealed class PrivateCorpusTests
                 woven = LayoutMetrics.FramesWoven(markdown, phrases).ToString(CultureInfo.InvariantCulture);
             }
 
-            table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {m.Tbl001} | {m.PipeRows} | {m.LooseLabelRows} | {m.ParagraphText} | {m.TocHeadings} | {m.PageFooters} | {LayoutMetrics.PageNumberParagraphs(markdown)} | {LayoutMetrics.DotEnumLabelsOutsideList(markdown)} | {asTable} | {woven} | {m.NumbersExcess} | {m.NumbersMissing} |\n");
+            table.Append(CultureInfo.InvariantCulture, $"| {document.Name} | {m.Tbl001} | {m.PipeRows} | {m.LooseLabelRows} | {m.ParagraphText} | {m.TocHeadings} | {m.PageFooters} | {LayoutMetrics.PageNumberParagraphs(markdown)} | {LayoutMetrics.DotEnumLabelsOutsideList(markdown)} | {asTable} | {woven} | {m.NumbersExcess} | {m.NumbersMissing} | {numbers.GluedReferences} |\n");
         }
 
         table.Append("\n## Liczby nadmiarowe i brakujące\n\n").Append(numberLines);

@@ -52,16 +52,42 @@ public sealed class NumberCheckTests
     }
 
     /// <summary>
-    /// T007 (owner's decision): 1–3 digits glued to a letter are an undetected footnote reference („Tak4”, „PESEL17”,
-    /// „1dodaniu”, „K16,17”), not a number; they are counted separately. Digits glued to digits still count („150.000”).
+    /// T007 (owner's decision): a number glued to a letter in the Markdown whose value is a superscript of the PDF is an
+    /// undetected footnote reference („Tak4”, „1dodaniu”), counted apart from excess; a glued full-size number („CO2”)
+    /// matches the PDF; a superscript glued to a number („661”) stays excess.
     /// </summary>
     [Fact]
-    public void FromMarkdown_DigitsGluedToALetter_AreReferences()
+    public async Task Compare_GluedFootnoteReference_IsNotExcess()
     {
-        string markdown = "| Tak4 | PESEL17 | oraz 1dodaniu i K16,17 | 150.000 zł | art. 66¹ |";
+        var b = new SyntheticPdfBuilder().Page();
+        double x = Left + SyntheticPdfBuilder.TextWidth("Tak", Size);
+        b.Text(Left, Top, "Tak", Size).Text(x, Top - 3, "4", Size / 2);
+        b.Text(Left, Top + 12, "emisji CO2 oraz", Size);
+        x = Left + SyntheticPdfBuilder.TextWidth("oraz ", Size);
+        b.Text(Left, Top + 24, "oraz ", Size).Text(x, Top + 21, "17", Size / 2)
+            .Text(x + SyntheticPdfBuilder.TextWidth("17", Size / 2), Top + 24, "dodaniu skanu faktury", Size);
+        byte[] pdf = b.Build();
 
-        Assert.Equal(Bag(("150.000", 1), ("66", 1)), NumberCheck.FromMarkdown(markdown));
-        Assert.Equal(4, NumberCheck.GluedReferences(markdown));
+        NumberDiff diff = NumberCheck.Compare("Tak4 emisji CO2 oraz 17dodaniu skanu faktury art. 661", pdf, await ReportAsync(pdf));
+
+        Assert.Equal(Bag(("661", 1)), diff.Excess);
+        Assert.Equal(2, diff.GluedReferences);
+    }
+
+    /// <summary>T007 (private ind-4): a list of footnote references „⁹,¹⁰” glued to a word is one glued reference list.</summary>
+    [Fact]
+    public async Task Compare_GluedReferenceList_IsNotExcess()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        double x = Left + SyntheticPdfBuilder.TextWidth("transakcje BLIK", Size);
+        b.Text(Left, Top, "transakcje BLIK", Size).Text(x, Top - 3, "9,10", Size / 2);
+        byte[] pdf = b.Build();
+
+        NumberDiff diff = NumberCheck.Compare("transakcje BLIK9,10", pdf, await ReportAsync(pdf));
+
+        Assert.Empty(diff.Excess);
+        Assert.Empty(diff.Missing);
+        Assert.Equal(2, diff.GluedReferences);
     }
 
     [Fact]
