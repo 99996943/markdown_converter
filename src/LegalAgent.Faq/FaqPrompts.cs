@@ -59,7 +59,7 @@ internal static class FaqPrompts
         Układasz końcowe FAQ dla klientów banku z kandydatów przygotowanych wcześniej na podstawie kilku dokumentów.
 
         Zasady:
-        - Wybierz od {itemCount} do {itemCount + PoolExtra} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń, i uszereguj je od najważniejszego. Program wybierze z nich {itemCount} pozycji FAQ, tak żeby każdy dokument był źródłem od {minPerDocument} do {maxPerDocument} pozycji (pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”).
+        - Wybierz od {itemCount} do {itemCount + PoolExtra} najważniejszych dla klienta pytań z listy kandydatów, bez powtórzeń, i uszereguj je od najważniejszego. Program wybierze z nich {itemCount} pozycji FAQ, tak żeby każdy dokument był źródłem od {minPerDocument} do {maxPerDocument} pozycji (do minimum pozycja liczy się dla każdego dokumentu swoich kandydatów z „basedOn”, do limitu — tylko dla jednego z nich).
         - Każde pytanie dotyczy jednej sprawy. Łącz kandydatów tylko wtedy, gdy dotyczą tej samej sprawy (np. z różnych dokumentów); nie łącz różnych tematów w jedno pytanie.
         - Możesz połączyć kilku kandydatów o tę samą sprawę w jedno pytanie albo przeredagować pytanie i odpowiedź, ale nie dodawaj faktów, których nie ma w kandydatach, i nie zmieniaj warunków ani wyjątków.
         - {PoolPerDocument(minPerDocument)}
