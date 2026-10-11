@@ -40,7 +40,8 @@ internal static class FaqResponseValidator
     /// <summary>
     /// Checks the ranked selection pool and chooses the final items (T067l): invalid items are skipped; every document
     /// first gets its best-ranked items up to <paramref name="minPerDocument"/>, then items are taken in the model's
-    /// order while no document exceeds <paramref name="maxPerDocument"/>. The chosen items keep the model's order and are
+    /// order while no document exceeds <paramref name="maxPerDocument"/> (an item of several documents counts towards the
+    /// maximum of one of them). The chosen items keep the model's order and are
     /// numbered 1…<paramref name="itemCount"/>; their sources come from their <c>basedOn</c> candidates (T067b).
     /// </summary>
     /// <exception cref="FaqResponseException">Fewer than <paramref name="itemCount"/> items can be chosen, or a document lacks its minimum.</exception>
@@ -157,10 +158,13 @@ internal static class FaqResponseValidator
         int maxPerDocument,
         List<string> problems)
     {
+        // An item counts towards the minimum of every document it comes from, but towards the maximum of only one of them,
+        // the one with the fewest items so far (T067p): merged items of similar documents must not exhaust them all.
         bool[] chosen = new bool[valid.Count];
         var counts = documents.ToDictionary(d => d, _ => 0, StringComparer.Ordinal);
+        var charged = documents.ToDictionary(d => d, _ => 0, StringComparer.Ordinal);
         int total = 0;
-        bool CanTake(int k) => !chosen[k] && total < itemCount && valid[k].Documents.All(d => counts[d] < maxPerDocument);
+        bool CanTake(int k) => !chosen[k] && total < itemCount && valid[k].Documents.Any(d => charged[d] < maxPerDocument);
         void Take(int k)
         {
             chosen[k] = true;
@@ -169,6 +173,8 @@ internal static class FaqResponseValidator
             {
                 counts[d]++;
             }
+
+            charged[valid[k].Documents.Where(d => charged[d] < maxPerDocument).MinBy(d => charged[d])!]++;
         }
 
         foreach (string document in documents)
@@ -198,7 +204,8 @@ internal static class FaqResponseValidator
 
         if (total < itemCount)
         {
-            problems.Add(Invariant($"po zastosowaniu limitu {maxPerDocument} pozycji na dokument zostają {total} z {itemCount} pozycji"));
+            string room = string.Join(", ", documents.Where(d => charged[d] < maxPerDocument));
+            problems.Add(Invariant($"po zastosowaniu limitu {maxPerDocument} pozycji na dokument zostają {total} z {itemCount} pozycji; brakujące pozycje mogą pochodzić tylko z dokumentów: {room}"));
         }
 
         return chosen;
