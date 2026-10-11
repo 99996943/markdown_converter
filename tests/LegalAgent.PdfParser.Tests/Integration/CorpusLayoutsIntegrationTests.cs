@@ -1883,4 +1883,44 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("Postanowienia umowy[^1] obowiązują", md, StringComparison.Ordinal);
         Assert.Contains("[^1]: Umowa zawierana", md, StringComparison.Ordinal);
     }
+
+    private static readonly string[] BankFooter =
+    [
+        "Bank S.A., ul. Przykładowa 1, 00-950 Warszawa, zarejestrowany w Sądzie Rejonowym dla m.st. Warszawy XII Wydział",
+        "Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS 0000000001, numer identyfikacji",
+        "podatkowej NIP: 000-000-00-00, wysokość kapitału zakładowego według stanu na dzień",
+        "01.01.2022 r. wynosi 100 000 000 zł (w całości wpłacony).",
+    ];
+
+    /// <summary>
+    /// Spec 009 (US3, T014): the last page of a corporate regulation (private corp-1, 2, 3, 5, 6) — a 22.7 pt logo at the
+    /// left on the baseline of the last of four 6.7 pt footer lines. Today the first words of footer lines 2–4 are pulled
+    /// into the logo's line letter by letter.
+    /// </summary>
+    [Fact]
+    public async Task FooterBesideALargeLogo_KeepsItsLinesWhole()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        double y = 92;
+        for (int i = 0; i < 8; i++, y += 11)
+        {
+            b.Text(50, y, $"Wiersz {i + 1} ostatniej strony regulaminu, który ustala zwykły rozmiar i interlinię tekstu.", 8);
+        }
+
+        for (int i = 0; i < BankFooter.Length; i++)
+        {
+            b.Text(175.5, 781 + (7 * i), BankFooter[i], 6.7);
+        }
+
+        b.Text(39.7, 802.3, "Bank.pl", 22.7, bold: true);
+
+        string md = await MarkdownAsync(b.Build());
+
+        foreach (string line in BankFooter)
+        {
+            Assert.Contains(line, md, StringComparison.Ordinal);
+        }
+
+        Assert.Matches(@"(?m)^(\*\*)?Bank\.pl(\*\*)?$", md);
+    }
 }

@@ -549,4 +549,72 @@ public sealed class LineAssemblyStageTests
 
         Assert.Equal(["Regulamin okresla zasady korzystania z", "dyspozycje do momentu jej przyjecia do"], LineTexts(page));
     }
+
+    private static readonly string[] FooterLines =
+    [
+        "Bank S.A., ul. Przykladowa 1, 00-950 Warszawa, zarejestrowany w Sadzie Rejonowym",
+        "Gospodarczy Krajowego Rejestru Sadowego pod numerem KRS 0000000001,",
+        "podatkowej NIP: 000-000-00-00, wysokosc kapitalu zakladowego wedlug stanu na dzien",
+        "01.01.2022 r. wynosi 100 000 000 zl (w calosci wplacony).",
+    ];
+
+    /// <summary>
+    /// Spec 009 (US3, research R3): the last page of a corporate regulation — a 22.7 pt logo at x 39.7 on the baseline of the
+    /// last of four 6.7 pt footer lines starting at x 175.5, 7 pt apart.
+    /// </summary>
+    [Fact]
+    public void FooterBesideALargeLogo_KeepsItsLinesWhole()
+    {
+        var glyphs = new List<LayoutGlyph>();
+        for (int i = 0; i < FooterLines.Length; i++)
+        {
+            glyphs.AddRange(Text(FooterLines[i], 175.5, 781 + (7 * i), 6.7));
+        }
+
+        glyphs.AddRange(Text("Bank.pl", 39.7, 802.3, 22.7, bold: true));
+
+        LayoutPage page = Run(glyphs);
+
+        Assert.Equal([.. FooterLines, "Bank.pl"], LineTexts(page).OrderBy(t => t == "Bank.pl"));
+    }
+
+    [Fact]
+    public void SuperscriptRightAfterTheArticleNumber_StaysInItsLine()
+    {
+        List<LayoutGlyph> glyphs = Text("art. 66", 50, 100, 8);
+        glyphs.AddRange(Text("1", 50 + (6 * 4) + (0.26 * 8), 97, 4));
+        glyphs.AddRange(Text(" § 1 do § 3", 50 + (6 * 4) + (0.26 * 8) + 2, 100, 8));
+
+        LayoutPage page = Run(glyphs);
+
+        LayoutLine line = Assert.Single(page.Lines);
+        Assert.Contains("661", line.Words.Select(w => w.Text));
+    }
+
+    [Theory]
+    [InlineData("***)")]
+    [InlineData("123)")]
+    public void LongMarkerRightAfterAWord_StaysInItsLine(string marker)
+    {
+        List<LayoutGlyph> glyphs = Text("Postanowienia umowy", 50, 100, 8);
+        double end = 50 + (18 * 4) + (0.26 * 8);
+        glyphs.AddRange(Text(marker, end, 97, 5));
+        glyphs.AddRange(Text(" obowiazuja strony", end + (marker.Length * 2.5), 100, 8));
+
+        LayoutPage page = Run(glyphs);
+
+        LayoutLine line = Assert.Single(page.Lines);
+        Assert.Contains("umowy" + marker, line.Words.Select(w => w.Text));
+    }
+
+    [Fact]
+    public void SmallTextBesideALargerHeadingOnItsBaseline_IsOneLine()
+    {
+        List<LayoutGlyph> glyphs = Text("Rozdzial", 50, 100, 14, bold: true);
+        glyphs.AddRange(Text(" tekst pisany drobniej", 50 + (8 * 7), 100, 7));
+
+        LayoutPage page = Run(glyphs);
+
+        Assert.Equal(["Rozdzial tekst pisany drobniej"], LineTexts(page));
+    }
 }
