@@ -184,6 +184,49 @@ public sealed class PdfParserOptionsValidatorTests
     }
 
     [Fact]
+    public void PageNumberBandRatio_DefaultsToFifteenPercent()
+    {
+        Assert.Equal(0.15, new PdfParserOptions().Artifacts.PageNumberBandRatio);
+    }
+
+    [Theory]
+    [InlineData(0.0)]
+    [InlineData(-0.1)]
+    [InlineData(0.05)]
+    [InlineData(0.5)]
+    [InlineData(0.6)]
+    [InlineData(double.NaN)]
+    public void PageNumberBandRatio_OutsideMarginZoneToHalf_IsInvalid(double value)
+    {
+        var o = new PdfParserOptions();
+        o.Artifacts.MarginZoneRatio = 0.08;
+        o.Artifacts.PageNumberBandRatio = value;
+        ValidateOptionsResult result = Validate(o);
+        Assert.True(result.Failed, $"Artifacts.PageNumberBandRatio = {value} should be invalid");
+        Assert.Contains(result.Failures!, f => f.Contains("Artifacts.PageNumberBandRatio", StringComparison.Ordinal));
+    }
+
+    [Theory]
+    [InlineData(0.08)]
+    [InlineData(0.2)]
+    [InlineData(0.49)]
+    public void PageNumberBandRatio_FromMarginZoneBelowHalf_IsValid(double value)
+    {
+        var o = new PdfParserOptions();
+        o.Artifacts.MarginZoneRatio = 0.08;
+        o.Artifacts.PageNumberBandRatio = value;
+        Assert.True(Validate(o).Succeeded);
+    }
+
+    [Fact]
+    public void Clone_CopiesPageNumberBandRatio()
+    {
+        var original = new PdfParserOptions();
+        original.Artifacts.PageNumberBandRatio = 0.2;
+        Assert.Equal(0.2, original.Clone().Artifacts.PageNumberBandRatio);
+    }
+
+    [Fact]
     public void MultipleProblems_AreAllReported()
     {
         var o = new PdfParserOptions();

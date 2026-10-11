@@ -2,7 +2,7 @@ using Microsoft.Extensions.Options;
 
 namespace LegalAgent.PdfParser;
 
-/// <summary>Validates <see cref="PdfParserOptions"/>: ratios in (0, 1], positive counts and sizes, depth 1-6, table-documents spanning at least 2 pages.</summary>
+/// <summary>Validates <see cref="PdfParserOptions"/>: ratios in (0, 1], the "N/M" page-number band in [margin zone, 0.5), positive counts and sizes, depth 1-6, table-documents spanning at least 2 pages.</summary>
 public sealed class PdfParserOptionsValidator : IValidateOptions<PdfParserOptions>
 {
     /// <inheritdoc />
@@ -32,6 +32,7 @@ public sealed class PdfParserOptionsValidator : IValidateOptions<PdfParserOption
         Ratio(failures, "Artifacts.PositionTolerance", options.Artifacts.PositionTolerance);
         Ratio(failures, "Artifacts.Similarity", options.Artifacts.Similarity);
         Positive(failures, "Artifacts.MinPages", options.Artifacts.MinPages);
+        PageNumberBand(failures, options.Artifacts);
 
         Ratio(failures, "Layout.LineOverlapRatio", options.Layout.LineOverlapRatio);
         Ratio(failures, "Layout.BaselineToleranceRatio", options.Layout.BaselineToleranceRatio);
@@ -79,6 +80,21 @@ public sealed class PdfParserOptionsValidator : IValidateOptions<PdfParserOption
         if (!(value > 0 && value <= 1))
         {
             failures.Add($"{name} musi należeć do przedziału (0, 1].");
+        }
+    }
+
+    /// <summary>The "N/M" band lies in (0, 0.5) and is not narrower than the margin zone it extends.</summary>
+    private static void PageNumberBand(List<string> failures, ArtifactOptions artifacts)
+    {
+        double band = artifacts.PageNumberBandRatio;
+        if (!(band > 0 && band < 0.5))
+        {
+            failures.Add("Artifacts.PageNumberBandRatio musi należeć do przedziału (0, 0,5).");
+        }
+        else if (artifacts.MarginZoneRatio < 0.5 && band < artifacts.MarginZoneRatio)
+        {
+            // A margin zone of half the page or more already covers the whole band.
+            failures.Add("Artifacts.PageNumberBandRatio musi być nie mniejsze niż Artifacts.MarginZoneRatio.");
         }
     }
 

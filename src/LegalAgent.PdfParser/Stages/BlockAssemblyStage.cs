@@ -40,6 +40,14 @@ public sealed class BlockAssemblyStage : IPipelineStage
         string? currentStep = null;
         double previousColumnLeft = 0;
 
+        // Spec 008 (T034b): a step name printed partly bold keeps its plain lines plain; only a name without any bold
+        // word is set bold as a whole.
+        var styledSteps = new HashSet<string>(
+            context.Pages.SelectMany(p => p.Lines)
+                .Where(l => l.Role == LineRole.StepTitle && l.Words.Any(w => w.Style.HasFlag(TextStyle.Bold)))
+                .Select(StepKey),
+            StringComparer.Ordinal);
+
         foreach (LayoutPage page in context.Pages)
         {
             context.CancellationToken.ThrowIfCancellationRequested();
@@ -52,7 +60,12 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 .Where(l => l.Role is LineRole.Unknown or LineRole.Body)
                 .ToList();
             double columnLeft = consumable.Count > 0 ? consumable.Min(l => l.Box.Left) : 0;
-            double columnWidth = consumable.Count > 0 ? consumable.Max(l => l.Box.Right) - columnLeft : page.Width;
+            // Spec 008 (T010b): the right edge of the text column is measured on running text, list items included,
+            // so that it does not depend on a page footer being the only unclaimed line that reaches the margin.
+            List<LayoutLine> textLines = page.Lines
+                .Where(l => l.Role is LineRole.Unknown or LineRole.Body or LineRole.ListItem or LineRole.ListContinuation)
+                .ToList();
+            double columnWidth = consumable.Count > 0 ? textLines.Max(l => l.Box.Right) - columnLeft : page.Width;
 
             foreach (LayoutLine line in page.Lines)
             {
@@ -116,14 +129,15 @@ public sealed class BlockAssemblyStage : IPipelineStage
                 if (line.Role == LineRole.StepTitle)
                 {
                     string step = StepKey(line);
+                    LayoutLine name = styledSteps.Contains(step) ? line : Bold(line);
                     if (current is not null && currentStep == step)
                     {
-                        builder.AppendLine(current, Bold(line), page.Number);
+                        builder.AppendLine(current, name, page.Number);
                     }
                     else
                     {
                         Finish(context, ref current, notes);
-                        current = ParagraphBuilder.Start(Bold(line), page.Number, DominantSize(line));
+                        current = ParagraphBuilder.Start(name, page.Number, DominantSize(line));
                         currentStep = step;
                     }
 

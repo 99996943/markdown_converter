@@ -10,12 +10,20 @@ namespace LegalAgent.PdfParser.Text;
 /// <param name="Kind">Classification of the label.</param>
 /// <param name="Ordinal">Ordinal of the label within its sequence; null for bullets, dashes and outline labels.</param>
 /// <param name="Rest">Text following the label, trimmed.</param>
-internal sealed record ListLabelMatch(string Label, ListLabelKind Kind, int? Ordinal, string Rest);
+internal sealed record ListLabelMatch(string Label, ListLabelKind Kind, int? Ordinal, string Rest)
+{
+    /// <summary>
+    /// The other reading of an ambiguous label: „i.”, „v.”, „x.” are a letter (<see cref="ListLabelKind.LetterDot"/>) and
+    /// a Roman numeral (<see cref="ListLabelKind.RomanDot"/>, this reading) at once; null otherwise.
+    /// </summary>
+    public ListLabelMatch? Alternative { get; init; }
+}
 
-/// <summary>Classification of list labels (bullets, tirets, „1)”, „a)”, „1.”, „1/”, „a/”, Roman numerals, outline numbers).</summary>
+/// <summary>Classification of list labels (bullets, tirets, „1)”, „a)”, „1.”, „1/”, „a/”, „a.”, „ii.”, Roman numerals, outline numbers).</summary>
 /// <remarks>
 /// The label is the leading whitespace-delimited token and must be followed by text. „N.” is only classified here
-/// (<see cref="ListLabelKind.ArabicDot"/>); whether it really starts a list is decided later (FR-051).
+/// (<see cref="ListLabelKind.ArabicDot"/>); whether it really starts a list is decided later (FR-051). The same holds for
+/// „a.” and „ii.” (<see cref="ListLabelKind.LetterDot"/>, <see cref="ListLabelKind.RomanDot"/>, spec 008).
 /// </remarks>
 internal static partial class ListLabelPatterns
 {
@@ -58,12 +66,16 @@ internal static partial class ListLabelPatterns
         // „[1)” and „<2a.” mark repealed and future wording in consolidated texts; the bracket stays in the label.
         bool bracketed = label.Length > 1 && label[0] is '[' or '<';
         if (!Classify(bracketed ? label[1..] : label, out ListLabelKind kind, out int? ordinal)
-            || (bracketed && kind is ListLabelKind.Bullet or ListLabelKind.Dash))
+            || (bracketed && kind is ListLabelKind.Bullet or ListLabelKind.Dash or ListLabelKind.LetterDot or ListLabelKind.RomanDot))
         {
             return false;
         }
 
-        match = new ListLabelMatch(label, kind, ordinal, rest);
+        // Spec 008 (FR-621): „i.”, „v.”, „x.” are a letter and a Roman numeral at once — the sequence decides.
+        ListLabelMatch? alternative = kind == ListLabelKind.LetterDot && RomanValues.TryGetValue(label[..^1].ToUpperInvariant(), out int roman)
+            ? new ListLabelMatch(label, ListLabelKind.RomanDot, roman, rest)
+            : null;
+        match = new ListLabelMatch(label, kind, ordinal, rest) { Alternative = alternative };
         return true;
     }
 
@@ -146,6 +158,23 @@ internal static partial class ListLabelPatterns
             return true;
         }
 
+        // Spec 008 (FR-620): „a.” and „ii.” are only candidates — list detection accepts them in a sequence.
+        m = LetterDotLabel().Match(label);
+        if (m.Success)
+        {
+            kind = ListLabelKind.LetterDot;
+            ordinal = LetterOrdinal(m.Groups["l"].Value);
+            return true;
+        }
+
+        m = LowerRomanDotLabel().Match(label);
+        if (m.Success && RomanValues.TryGetValue(m.Groups["r"].Value.ToUpperInvariant(), out int romanDot))
+        {
+            kind = ListLabelKind.RomanDot;
+            ordinal = romanDot;
+            return true;
+        }
+
         return false;
     }
 
@@ -198,4 +227,12 @@ internal static partial class ListLabelPatterns
     // a/ i/ aa/ (spec 007) — „i/lub”, „km/h” and „Klient/Klienci” are not whole tokens ending with the slash.
     [GeneratedRegex(@"^(?<l>[a-z]{1,2})/$", RegexOptions.CultureInvariant)]
     private static partial Regex LetterSlashLabel();
+
+    // a. z. (spec 008) — one lower-case letter; „np.”, „tj.”, „m.in.” and capital initials („J.”) are not labels.
+    [GeneratedRegex(@"^(?<l>[a-z])\.$", RegexOptions.CultureInvariant)]
+    private static partial Regex LetterDotLabel();
+
+    // ii. xii. xxxix. (spec 008) — single-letter numerals („i.”, „v.”, „x.”) are letters with a Roman alternative.
+    [GeneratedRegex(@"^(?<r>[ivx]{2,})\.$", RegexOptions.CultureInvariant)]
+    private static partial Regex LowerRomanDotLabel();
 }

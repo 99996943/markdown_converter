@@ -29,6 +29,18 @@ public enum ListLabelKind
 
     /// <summary>One or two lower-case letters followed by a slash, for example "a/" or "aa/" (spec 007).</summary>
     LetterSlash,
+
+    /// <summary>
+    /// A lower-case letter followed by a dot, for example "a." (spec 008); a list label only within a consistent sequence
+    /// of at least two labels at one indent.
+    /// </summary>
+    LetterDot,
+
+    /// <summary>
+    /// A lower-case Roman numeral from "i." to "xxxix." (spec 008); a list label only within a consistent sequence of at
+    /// least two labels at one indent ("i.", "v.", "x." are told from letters by the sequence).
+    /// </summary>
+    RomanDot,
 }
 
 /// <summary>An item of a list.</summary>

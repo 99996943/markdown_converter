@@ -96,6 +96,14 @@ PageExtraction 100 → TextNormalization 200 → LineAssembly 300 → ArtifactRe
   `deflist.entry` / `deflist.side` (glossary entries from `Stages/GlossaryDetection`, called by `TableDetection`; list
   detection turns each entry into one item, spec 007).
 
+Spec 008 additions:
+- `ArtifactRemoval` also removes standalone „N/M” page numbers just above the margin zone
+  (`Artifacts.PageNumberBandRatio`) when they form a sequence over the pages.
+- `StepSequence` marks glyph arrows between boxes as `Artifact` connectors (re-joining a line part a tall arrow
+  pulled into its own line), assigns lines running on below a box to that box (step index, column right), requires
+  a wholly bold column-name row, and accepts a single box only behind a guard (bold name, text to the right, no
+  ruling in its band). `BlockAssembly` groups step lines by their step index/number annotations.
+
 A later stage usually skips lines that an earlier stage claimed. For example, `TableDetection` and `ReadingOrder` skip lines annotated as belonging to a table-document. When you change one stage, check how the downstream stages read those annotations.
 
 **Text extraction is custom.** The parser does not use PdfPig's `DocumentLayoutAnalysis`; the reasons are in `specs/001-legal-pdf-parser/research.md` R3. Words, lines, segments, columns, tables and headings are all built from letters, rulings and images. This keeps per-letter style (`**bold**` fragments) and keeps wide gaps as table-cell boundaries.
@@ -107,7 +115,7 @@ A later stage usually skips lines that an earlier stage claimed. For example, `T
 
 `AssignLevels` gives structural kinds consecutive levels from 2, puts units one level below the deepest structural kind, and caps typographic levels. The resulting level hierarchy is a contract invariant (no gaps).
 
-**Rendering.** `Rendering/` turns the section tree into CommonMark + GFM. The output contract is `specs/001-legal-pdf-parser/contracts/markdown-output.md`, plus the addenda in spec 002 and spec 007 (contract 1.2.0: slash labels `- 1/`, bare `§ N` units, glossary items `- 1/ **termin** definicja`). It covers page markers `<!-- page: N -->`, footnotes `[^n]`, escaped list labels (`- 1\)`), GFM tables, and a fallback table format (`a \| b`) with warning TBL001.
+**Rendering.** `Rendering/` turns the section tree into CommonMark + GFM. The output contract is `specs/001-legal-pdf-parser/contracts/markdown-output.md`, plus the addenda in spec 002, spec 007 and spec 008 (contract 1.3.0: slash labels `- 1/`, bare `§ N` units, glossary items `- 1/ **termin** definicja`, letter and Roman dot labels `- a\.`, `- ii\.` in a consistent sequence). It covers page markers `<!-- page: N -->`, footnotes `[^n]`, escaped list labels (`- 1\)`), GFM tables, and a fallback table format (`a \| b`) with warning TBL001.
 
 **Output must contain only text from the PDF.** Never synthesize words such as labels or „Krok N:”. Structure is expressed only through Markdown formatting.
 

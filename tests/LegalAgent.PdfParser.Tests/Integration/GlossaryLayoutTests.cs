@@ -26,7 +26,20 @@ public sealed class GlossaryLayoutTests
     private static SyntheticPdfBuilder Centered(SyntheticPdfBuilder page, double y, string text, double size, bool bold) =>
         page.Text((595 - SyntheticPdfBuilder.TextWidth(text, size, bold: bold)) / 2, y, text, size, bold: bold);
 
-    internal static byte[] BuildGlossary(string[] labels)
+    internal static byte[] BuildGlossary(string[] labels, string termFirstLine = "umowa rachunku", string termSecondLine = "bankowego")
+        => BuildGlossary(labels, termFirstLine, termSecondLine, "administrator (kontroler)", ["a/", "b/"], enumerationAboveTerm: false);
+
+    /// <param name="labels">Labels of the three entries.</param>
+    /// <param name="termFirstLine">First line of the wrapped term of the third entry.</param>
+    /// <param name="termSecondLine">Second line of the wrapped term of the third entry.</param>
+    /// <param name="firstTerm">Term of the first entry.</param>
+    /// <param name="enumeration">The two enumeration labels of the first definition.</param>
+    /// <param name="enumerationAboveTerm">
+    /// The first enumeration label sits above the term line and the second on its baseline (corp-3 p. 3); otherwise the
+    /// first sits on the term baseline.
+    /// </param>
+    internal static byte[] BuildGlossary(
+        string[] labels, string termFirstLine, string termSecondLine, string firstTerm, string[] enumeration, bool enumerationAboveTerm)
     {
         var builder = new SyntheticPdfBuilder();
         SyntheticPdfBuilder page = builder.Page();
@@ -40,9 +53,11 @@ public sealed class GlossaryLayoutTests
 
         // Entry 1: definition with an enumeration, term in the middle.
         page.Text(DefinitionX, 168, "osoba fizyczna, którą Klient wskazał w umowie rachunku bankowego. Może ona w imieniu Klienta:", Size);
-        page.Text(LabelX, 178, labels[0], Size, bold: true).Text(TermX, 178, "administrator (kontroler)", Size, bold: true);
-        page.Text(DefinitionX, 178, "a/", Size).Text(DefinitionTextX, 178, "zarządzać uprawnieniami użytkowników systemu bankowości elektronicznej,", Size);
-        page.Text(DefinitionX, 188, "b/", Size).Text(DefinitionTextX, 188, "uzyskiwać informacje o realizacji umowy,", Size);
+        double termY = enumerationAboveTerm ? 188 : 178;
+        double enumerationX = enumerationAboveTerm ? DefinitionX + 0.1 : DefinitionX;
+        page.Text(LabelX, termY, labels[0], Size, bold: true).Text(TermX, termY, firstTerm, Size, bold: true);
+        page.Text(enumerationX, 178, enumeration[0], Size).Text(DefinitionTextX, 178, "zarządzać uprawnieniami użytkowników systemu bankowości elektronicznej,", Size);
+        page.Text(DefinitionX, 188, enumeration[1], Size).Text(DefinitionTextX, 188, "uzyskiwać informacje o realizacji umowy,", Size);
         SplitRuling(page, 194);
 
         // Entry 2: one line.
@@ -52,9 +67,9 @@ public sealed class GlossaryLayoutTests
 
         // Entry 3: a term wrapped over two lines beside a three-line definition; no ruling below the last entry.
         page.Text(DefinitionX, 224, "umowa bieżącego lub pomocniczego rachunku bankowego zawarta między Bankiem a Klientem na podstawie", Size);
-        page.Text(LabelX, 229, labels[2], Size, bold: true).Text(TermX, 229, "umowa rachunku", Size, bold: true);
+        page.Text(LabelX, 229, labels[2], Size, bold: true).Text(TermX, 229, termFirstLine, Size, bold: true);
         page.Text(DefinitionX, 234, "regulaminu; na jej podstawie Bank prowadzi dla Klienta rachunek bankowy o numerze podanym", Size);
-        page.Text(TermX, 239, "bankowego", Size, bold: true);
+        page.Text(TermX, 239, termSecondLine, Size, bold: true);
         page.Text(DefinitionX, 244, "w umowie.", Size);
 
         Centered(page, 270, "§ 3", 9, bold: true);
@@ -98,6 +113,45 @@ public sealed class GlossaryLayoutTests
         Assert.Contains("  - b/ uzyskiwać informacje o realizacji umowy,\n- 2\\. **Bank** Bank Przykładowy S.A.;", result.Markdown, StringComparison.Ordinal);
         Assert.Contains("- 3\\. **umowa rachunku bankowego** umowa bieżącego", result.Markdown, StringComparison.Ordinal);
         Assert.Equal(0, result.Report.TableCount);
+    }
+
+    /// <summary>
+    /// Spec 008, T013 (FR-611, regression): a glossary entry „15/” whose bold term ends with „/” and wraps onto a
+    /// second bold line („umowa rachunku bankowego/” + „umowa”) is one list item with the whole term, never a heading.
+    /// </summary>
+    [Fact]
+    public async Task Glossary_term_ending_with_a_slash_and_wrapped_is_a_list_item_not_a_heading()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildGlossary(["13/", "14/", "15/"], "umowa rachunku bankowego/", "umowa"));
+
+        Assert.Contains(
+            "- 15/ **umowa rachunku bankowego/ umowa** umowa bieżącego lub pomocniczego rachunku bankowego zawarta między Bankiem a Klientem na podstawie regulaminu; na jej podstawie Bank prowadzi dla Klienta rachunek bankowy o numerze podanym w umowie.\n",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("# umowa", result.Markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("# 15/", result.Markdown, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Spec 008, T024 (FR-620, FR-622) — replica of corp-3 p. 3: term „16. **klient**” at x 45.4 beside a definition at
+    /// 187.1 whose enumeration „a.” (x 187.2) sits above the term line and „b.” on its baseline, text at 201.3: the
+    /// letters are items nested under the definition.
+    /// </summary>
+    [Fact]
+    public async Task Letter_dot_enumeration_of_a_definition_is_nested_under_the_glossary_item()
+    {
+        PdfConversionResult result = await ConvertAsync(BuildGlossary(
+            ["16.", "17.", "18."], "umowa rachunku", "bankowego", "klient", ["a.", "b."], enumerationAboveTerm: true));
+
+        Assert.Contains(
+            "- 16\\. **klient** osoba fizyczna, którą Klient wskazał w umowie rachunku bankowego. Może ona w imieniu Klienta:\n"
+            + "  - a\\. zarządzać uprawnieniami użytkowników systemu bankowości elektronicznej,\n"
+            + "  - b\\. uzyskiwać informacje o realizacji umowy,\n"
+            + "- 17\\. **Bank** Bank Przykładowy S.A.;",
+            result.Markdown,
+            StringComparison.Ordinal);
+        Assert.Equal(0, result.Report.TableCount);
+        Assert.DoesNotContain(result.Report.Warnings, w => w.Code == "TBL001_AmbiguousGrid");
     }
 
     /// <summary>T031 — control: a ruled tariff with an „Lp.” column („1.”, „2.”) stays a GFM table.</summary>

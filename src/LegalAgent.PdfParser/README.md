@@ -75,7 +75,7 @@ Późniejszy etap zwykle pomija wiersze, które wcześniejszy już „zajął”
 | 100 | `PageExtractionStage` | Czyta litery, linie siatki (rulings) i obecność obrazów. Odrzuca tekst obrócony i niewidoczny. Strona bez warstwy tekstowej jest pomijana. |
 | 200 | `TextNormalizationStage` | Rozwija ligatury, zamienia specjalne spacje, scala znaki łączące i normalizuje do NFC (nigdy NFKC). Podniesione cyfry po `Art. N`/`§ N` zamienia na indeks górny („§ 5¹”). |
 | 300 | `LineAssemblyStage` | Składa litery w słowa i wiersze wizualne. Duże odstępy poziome dzielą wiersz na segmenty (przyszłe komórki tabel). Wyznacza strefy marginesów, styl tekstu głównego i kolumnę adnotacji bocznych. |
-| 400 | `ArtifactRemovalStage` | Usuwa nagłówki i stopki powtarzające się na stronach oraz numery stron ze stref marginesów. Zapisuje je w raporcie. |
+| 400 | `ArtifactRemovalStage` | Usuwa nagłówki i stopki powtarzające się na stronach oraz numery stron ze stref marginesów (także stopki „N/M” tuż nad strefą). Zapisuje je w raporcie. |
 | 500 | `FootnoteDetectionStage` | Odnośniki to mniejsze, podniesione znaki. Definicje to drobny tekst pod kreską separatora na dole strony, także kontynuowany na kolejnej stronie. |
 | 550 | `StepSequenceStage` | Schematy kroków: cieniowane ramki z nazwami kroków i objaśnienia po prawej. Porządkuje je w pary nazwa → objaśnienie. |
 | 560 | `TableDocumentStage` | Dokument w całości złożony z wielostronicowej tabeli z pełną siatką: wąska lewa kolumna z nazwami sekcji, szeroka prawa z treścią (spec 002). |
@@ -104,6 +104,11 @@ tabel na osobne bloki.
    (`Similarity`) powtarza się na co najmniej połowie stron, jest nagłówkiem lub stopką strony. Odcisk wiersza
    (`LineFingerprint`) zastępuje cyfry znakiem `#`, więc „Strona 3” i „Strona 4” to ten sam wzorzec. Numer strony
    jest rozpoznawany w formatach `3`, `- 3 -`, `3 / 40`, `Strona 3 z 40`, `iv`.
+   - **Samodzielne „N/M”** tuż nad strefą marginesu (dolny lub górny pas `Artifacts.PageNumberBandRatio`, domyślnie
+     0,15; zmienna `PDFPARSER__Artifacts__PageNumberBandRatio`) są usuwane jako numery stron, gdy tworzą ciąg na co
+     najmniej 2 stronach: M równe liczbie stron, ta sama względna wysokość i stałe przesunięcie N względem numeru
+     strony. Wiersz musi być najniższy (najwyższy) na stronie i zawierać wyłącznie „N/M”; „1/2 kwoty” czy „nr 12/2024”
+     w treści zostają.
 4. **Przypisy.** Odnośnik przyklejony do słowa jest odcinany i dostaje identyfikator. Definicja trafia do sekcji,
    która pierwsza się do niej odwołuje. Numeracja `[^n]` jest globalna, w kolejności pierwszego odwołania.
 5. **Tabele.**
@@ -121,8 +126,15 @@ tabel na osobne bloki.
      ustępy „1.” cytowane pod punktem „1/” są jego dziećmi.
    - **Słowniczek:** każda definicja to jeden element `- 1/ **termin** definicja…`, wyliczenia definicji są
      zagnieżdżone, a część wspólna po nich jest akapitem elementu.
+   - **Wyliczenia „a.”, „ii.”** (spec 008): litera albo liczba rzymska z kropką na początku wiersza PDF jest etykietą
+     (`ListLabelKind.LetterDot`, `RomanDot`) z ucieczką: `- a\. treść`, `- ii\. treść`. Etykieta musi mieć sąsiada
+     z tego samego ciągu (poprzednika albo następnika) na tym samym wcięciu, więc samotne „i.” czy „v.” w tekście
+     zostaje tekstem.
 7. **Nagłówki.** Rozważane są tylko wiersze, których nie zajął wcześniejszy etap, więc wiersz tabeli ani przypisu
    nigdy nie zostanie nagłówkiem.
+   - **Styl treści** (rozmiar i krój, względem których wyróżnia się nagłówki typograficzne) oraz **kolumna tekstu**,
+     z której wynikają podziały akapitów, są mierzone na tekście ciągłym łącznie z elementami list; w dokumentach
+     złożonych głównie z list pomiar nie zależy więc od obecności stopek ani od samych akapitów.
    - **Jednostki prawne** (`Text/LegalUnitPatterns.cs`):
      - `Księga`, `Część`, `Dział`, `Rozdział`, `Oddział` z numerem;
      - `Art. 5.` i `§ 5.` z kropką po numerze, co odróżnia jednostkę od odwołania „art. 5 ust. 2”;
@@ -130,7 +142,10 @@ tabel na osobne bloki.
        odosobniony i pogrubiony lub powiększony; nagłówek to wiersz tak jak w PDF (`#### § 5`, „§25”);
      - wyśrodkowany pogrubiony „§ 3. Porady ogólne” to jeden nagłówek z tytułem;
      - „Rozdział 3” łączy się z tytułem w następnym wierszu: `## Rozdział 3. Tytuł`;
-     - wiersz „Art. 5. Treść…” jest dzielony na nagłówek i pierwszy akapit.
+     - wiersz „Art. 5. Treść…” jest dzielony na nagłówek i pierwszy akapit;
+     - **wiersz kontynuacji** (spec 008, `Text/ContinuationLine.cs`) nie jest jednostką: oznaczenie („Rozdział I
+       (…)”) na początku wiersza, który ciągnie pełny wiersz powyżej w tym samym stylu i z małym odstępem, bez końca
+       zdania przed nim, to zawinięty tekst — nie nagłówek ani nowy element listy.
    - **Nagłówki typograficzne:** krótki wiersz (`MaxLength` 120), oddzielony odstępem (`GapFactor`), który jest
      powiększony (`SizeRatio` 1,15 × tekst główny), pogrubiony na tle niepogrubionego tekstu, pisany wersalikami
      lub wyśrodkowany.
@@ -163,7 +178,17 @@ tabel na osobne bloki.
    - **Pogrubienia:** `**…**` per fragment.
    - **Ucieczka znaków** na początku wiersza (`2024\. r.`), żeby akapit nie stał się listą.
    - **Pominięta strona:** `<!-- page N skipped: no-text-layer -->`.
-   - **Schemat kroków:** pogrubiona oryginalna nazwa kroku i objaśnienie jako zwykły tekst, bez dopisanych słów.
+   - **Schemat kroków:** pogrubiona oryginalna nazwa kroku i objaśnienie jako zwykły tekst (albo lista), bez
+     dopisanych słów. Od spec 008 (`StepSequenceStage`):
+     - strzałki między polami złożone ze znaków bez liter i cyfr (także przez granicę strony) są łącznikami i
+       znikają z wyniku, zamiast kończyć schemat; część wiersza tekstu, którą wysoki znak strzałki wciągnął do
+       swojego wiersza (np. etykieta „3.”), wraca do reszty wiersza;
+     - objaśnienie może ciągnąć się poniżej pola — wiersze w całości na prawo od pola, z odstępem do 1,5 × wysokość
+       wiersza, należą do niego aż do następnego pola, tekstu po lewej albo większego odstępu (także pod pustym
+       polem na następnej stronie);
+     - wiersz nazw kolumn nad schematem musi być w całości pogrubiony;
+     - pojedyncze pole jest ramką tylko, gdy co najmniej 80% znaków jego nazwy jest pogrubionych, ma tekst po
+       prawej i żadna linia tabeli nie przecina jego pasa.
 
 **Przykład.** Strona regulaminu:
 - u góry na każdej stronie powtarza się „mBank S.A. – Regulamin rachunków”;
@@ -222,20 +247,14 @@ Zasady:
 
 ## Znane ograniczenia
 
-- **Numery stron w treści:** w regulaminie rachunków mBanku numery stron „13/36” zostają w tekście (czasem w środku
-  zdania), choć format `N/M` jest wśród rozpoznawanych wzorców; przyczyna nie została jeszcze zbadana.
+- **Oznaczenie i tytuł jednostki** są łączone kropką (`## Rozdział 3. Tytuł`) także wtedy, gdy w PDF kropki nie
+  ma (`HeadingDetectionStage`, zachowanie kontraktu 001; dotyczy wielu goldenów).
 - **Wiersze tabel jako nagłówki:** pogrubiony wiersz tabeli bez siatki, np. nagłówek kolumn, bywa uznany za nagłówek
   typograficzny („## waluta transakcji kurs referencyjny…”). Zakończenie schematu kroków bywa nagłówkiem
   („## i… już dziecko może korzystać z karty”).
 - **Przypisy w niektórych bankowych PDF-ach:** trafiają do jednego bloku razem z numerami stron, a znak odnośnika
   zostaje przyklejony do słowa („bilansujący2”).
 - **Spis treści** zostaje w treści jako lista lub akapit z kropkami prowadzącymi (jego wpisy nie są już nagłówkami).
-- **Wyliczenia „a.”, „ii.”** (litera lub rzymska z kropką) nie są etykietami list: nie tworzą tabeli, ale zostają
-  tekstem elementu nadrzędnego.
-- **Ramki pytanie–odpowiedź** w regulaminach dla firm: pytanie z lewej kolumny ramki bywa wplecione w tekst
-  elementu listy z prawej.
-- **Odwołanie „Rozdział I.” na początku zawiniętego wiersza** bywa uznane za nagłówek rozdziału (regulamin
-  zintegrowanego rachunku).
 - **Obrazy** nie są odczytywane (brak OCR), tylko zgłaszane (`IMG001`).
 - **Nagłówek wciągnięty do tabeli:** w regulaminie kart dla firm (część II, rozdz. 3) nagłówek obok ramek „etap”
   trafia do tabeli.

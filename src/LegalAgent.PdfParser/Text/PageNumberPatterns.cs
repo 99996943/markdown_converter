@@ -38,6 +38,21 @@ internal static partial class PageNumberPatterns
     }
 
     /// <summary>
+    /// Returns <c>true</c> when the whole <paramref name="text"/> is a bare <c>N/M</c> pair of at most three digits
+    /// each (spec 008, FR-600), e.g. <c>3/36</c> or <c>3 / 36</c>.
+    /// </summary>
+    public static bool TryParseOfTotal(string text, out int number, out int total)
+    {
+        ArgumentNullException.ThrowIfNull(text);
+        number = total = 0;
+
+        Match match = OfTotal().Match(text.Trim());
+        return match.Success
+            && int.TryParse(match.Groups["n"].ValueSpan, NumberStyles.None, CultureInfo.InvariantCulture, out number)
+            && int.TryParse(match.Groups["m"].ValueSpan, NumberStyles.None, CultureInfo.InvariantCulture, out total);
+    }
+
+    /// <summary>
     /// Most frequent difference <c>printed - physical</c>; ties are broken by the smallest absolute offset,
     /// then the smallest value. Returns <c>null</c> when there are no observations.
     /// </summary>
@@ -85,6 +100,9 @@ internal static partial class PageNumberPatterns
         @"^(?:(?<n>\d{1,3})|[-–—]\s*(?<n>\d{1,4})\s*[-–—]|(?<n>\d{1,4})\s*/\s*\d{1,4}|strona\s+(?<n>\d{1,4})(?:\s+z\s+\d{1,4})?|str\.\s*(?<n>\d{1,4})|s\.\s*(?<n>\d{1,4})(?:\s*/\s*\d{1,4})?)$",
         RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)]
     private static partial Regex Arabic();
+
+    [GeneratedRegex(@"^(?<n>\d{1,3})\s*/\s*(?<m>\d{1,3})$", RegexOptions.CultureInvariant)]
+    private static partial Regex OfTotal();
 
     [GeneratedRegex(
         @"^(?=[ivxlcdm])m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3})$",

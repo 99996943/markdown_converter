@@ -63,7 +63,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
             return;
         }
 
-        (double bodySize, bool bodyBold) = BodyStyleOf(entries);
+        (double bodySize, bool bodyBold) = BodyStyleOf(RunningTextLines(context));
         double leading = context.BodyStyle?.Leading is > 0 and var l ? l : bodySize * 1.2;
         Analyse(context, entries, options, bodySize, bodyBold, leading);
 
@@ -121,12 +121,20 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
         return entries;
     }
 
-    private static (double Size, bool Bold) BodyStyleOf(List<Entry> entries)
+    /// <summary>
+    /// Lines of running text: unclaimed lines (heading candidates) and list items with their continuations. The body
+    /// style is measured on all of them, so that it does not hinge on how much of the text lists happen to claim
+    /// (spec 008, T010a: a document whose text is mostly lists has its headings as a large share of unclaimed lines).
+    /// </summary>
+    private static IEnumerable<LayoutLine> RunningTextLines(PipelineContext context) =>
+        context.Pages.SelectMany(p => p.Lines).Where(l => l.Role is LineRole.Unknown or LineRole.ListItem or LineRole.ListContinuation);
+
+    private static (double Size, bool Bold) BodyStyleOf(IEnumerable<LayoutLine> lines)
     {
         var counts = new SortedDictionary<(double Size, bool Bold), int>();
-        foreach (Entry entry in entries)
+        foreach (LayoutLine line in lines)
         {
-            foreach (LayoutWord word in entry.Line.Words)
+            foreach (LayoutWord word in line.Words)
             {
                 foreach (LayoutGlyph glyph in word.Glyphs)
                 {
@@ -188,7 +196,8 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
 
             // FR-162: a unit designation at the start of a wrapped line of running text (the line above, at the body
             // leading and in the same style, fills the column and ends mid-sentence; the text goes on in lowercase) is
-            // a word of that sentence, not a unit.
+            // a word of that sentence, not a unit. Spec 008 (FR-610): so is a designation on a line that continues the
+            // line above by spacing, style and alignment (ContinuationLine), whatever follows it.
             // Spec 007 (FR-540): an entry of a table of contents („Rozdział 1. Postanowienia ogólne ......… 3”) names a
             // section printed further on; it is not a heading itself.
             bool contentsEntry = ContentsEntry().IsMatch(entry.Text);
@@ -197,6 +206,7 @@ public sealed partial class HeadingDetectionStage : IPipelineStage
                 && !contentsEntry
                 && LegalUnitPatterns.TryMatch(entry.Text, out LegalUnitMatch? match)
                 && !(ContinuesSentence(entry, words, width) && match.Rest.Length > 0 && char.IsLower(match.Rest[0]))
+                && !ContinuationLine.Continues(line, entry.Previous, leading, entry.Centered)
                 && (!match.Bare || IsSetApart(entry, options)))
             {
                 entry.Legal = match;

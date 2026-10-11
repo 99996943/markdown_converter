@@ -1,5 +1,6 @@
 using System.Globalization;
 using LegalAgent.PdfParser.Layout;
+using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Pipeline;
 
 namespace LegalAgent.PdfParser.Stages;
@@ -21,7 +22,10 @@ public sealed class StepSequenceStage : IPipelineStage
     private const double MinBoxHeight = 8;
     private const double HeaderGapFactor = 4;
     private const double HeaderLineGapFactor = 1.5;
+    private const double FlowGapFactor = 1.5;
+    private const double RejoinGapFactor = 2;
     private const int MinBoxes = 2;
+    private const double MinBoldShare = 0.8;
 
     /// <inheritdoc />
     public int Order => StageOrder.StepSequence;
@@ -35,13 +39,12 @@ public sealed class StepSequenceStage : IPipelineStage
             return;
         }
 
-        List<StepBox> boxes = context.Pages
-            .Where(p => p.Skipped is null)
-            .SelectMany(FindBoxes)
-            .ToList();
+        List<LayoutPage> pages = context.Pages.Where(p => p.Skipped is null).ToList();
+        MarkConnectors(context, pages.SelectMany(p => FindAreas(p).Select(a => (Page: p, Area: a))).ToList());
+        List<StepBox> boxes = pages.SelectMany(FindBoxes).ToList();
 
         int schemeIndex = 0;
-        foreach (List<StepBox> scheme in GroupIntoSchemes(context, boxes).Where(s => s.Count >= MinBoxes))
+        foreach (List<StepBox> scheme in GroupIntoSchemes(context, boxes).Where(s => s.Count >= MinBoxes || (s.Count == 1 && IsGuardedFrame(s[0]))))
         {
             context.CancellationToken.ThrowIfCancellationRequested();
             Apply(scheme, schemeIndex++);
@@ -53,20 +56,191 @@ public sealed class StepSequenceStage : IPipelineStage
         }
     }
 
-    /// <summary>Shaded boxes of a page with text to their right, with the lines they own.</summary>
-    private static List<StepBox> FindBoxes(LayoutPage page)
+    /// <summary>
+    /// Spec 008 (FR-633): a single box is a frame only when it holds a name of at least 80% bold characters (the box is
+    /// narrow and shaded by <see cref="FindAreas"/>, and has text to its right by <see cref="FindBoxes"/>) and no ruling
+    /// crosses its band — the cells of a ruled data table are not frames.
+    /// </summary>
+    private static bool IsGuardedFrame(StepBox box)
+    {
+        List<LayoutWord> name = box.Lines.SelectMany(l => l.Words).Where(w => w.Box.CenterX < box.Area.Right).ToList();
+        int letters = name.Sum(w => w.Text.Length);
+        int bold = name.Where(w => w.Style.HasFlag(TextStyle.Bold)).Sum(w => w.Text.Length);
+        double top = box.Area.Top - EdgeTolerance;
+        double bottom = box.Area.Bottom + EdgeTolerance;
+        return letters > 0
+            && bold >= MinBoldShare * letters
+            && !box.Page.Rulings.Any(r => Math.Min(r.Y1, r.Y2) < bottom && Math.Max(r.Y1, r.Y2) > top);
+    }
+
+    /// <summary>Narrow shaded areas of a page not nested in another one, top to bottom: the candidate boxes.</summary>
+    private static List<Rect> FindAreas(LayoutPage page)
     {
         List<Rect> areas = page.FilledAreas
             .Where(a => a.Width <= MaxBoxWidthRatio * page.Width && a.Height >= MinBoxHeight)
             .Distinct()
             .ToList();
-        List<Rect> outer = areas.Where(a => !areas.Any(o => o != a && Contains(o, a))).OrderBy(a => a.Top).ToList();
+        return areas.Where(a => !areas.Any(o => o != a && Contains(o, a))).OrderBy(a => a.Top).ToList();
+    }
+
+    /// <summary>
+    /// Connectors (spec 008 FR-635): between two consecutive boxes of one column — on one page, or below the last box of
+    /// a page and above the first box of the next — a line made only of characters without letters or digits (an arrow
+    /// set in a symbol font) within the column of the boxes becomes an artifact, so it neither ends the scheme nor turns
+    /// into a step name. Such a glyph sharing a line with explanation text to the right of the box is split off.
+    /// </summary>
+    private static void MarkConnectors(PipelineContext context, List<(LayoutPage Page, Rect Area)> areas)
+    {
+        for (int i = 0; i + 1 < areas.Count; i++)
+        {
+            (LayoutPage page, Rect area) = areas[i];
+            (LayoutPage nextPage, Rect next) = areas[i + 1];
+            if (Math.Abs(area.Left - next.Left) > EdgeTolerance || Math.Abs(area.Right - next.Right) > EdgeTolerance)
+            {
+                continue;
+            }
+
+            if (page == nextPage)
+            {
+                MarkConnectors(page, area, area.Top - 1, next.Bottom + 1);
+            }
+            else if (context.Pages.IndexOf(nextPage) == context.Pages.IndexOf(page) + 1)
+            {
+                MarkConnectors(page, area, area.Top - 1, double.MaxValue);
+                MarkConnectors(nextPage, next, double.MinValue, next.Bottom + 1);
+            }
+        }
+    }
+
+    private static void MarkConnectors(LayoutPage page, Rect column, double top, double bottom)
+    {
+        double left = column.Left - EdgeTolerance;
+        double right = column.Right + EdgeTolerance;
+        for (int index = 0; index < page.Lines.Count; index++)
+        {
+            LayoutLine line = page.Lines[index];
+            if (line.Role != LineRole.Unknown || line.Words.Count == 0 || line.Box.CenterY < top || line.Box.CenterY > bottom)
+            {
+                continue;
+            }
+
+            List<LayoutWord> glyphs = line.Words.Where(w => w.Box.CenterX < column.Right).ToList();
+            if (glyphs.Count == 0 || !glyphs.All(IsSymbol) || glyphs.Any(w => w.Box.Left < left || w.Box.Right > right))
+            {
+                continue;
+            }
+
+            if (glyphs.Count == line.Words.Count)
+            {
+                line.Role = LineRole.Artifact;
+                continue;
+            }
+
+            LayoutLine connector = LineSlicer.Slice(line, glyphs);
+            connector.Role = LineRole.Artifact;
+            List<LayoutWord> rest = line.Words.Where(w => w.Box.CenterX >= column.Right).ToList();
+            LayoutLine text = LineSlicer.Slice(line, rest);
+            text.Baseline = Baseline(rest, line.Baseline);
+            page.Lines[index] = connector;
+
+            // The tall glyph may have pulled only the first words of a line into its own line (T040a): rejoin the rest.
+            int partner = FindLineRest(page, text);
+            if (partner >= 0)
+            {
+                text = Join(text, page.Lines[partner]);
+                page.Lines.RemoveAt(partner);
+                if (partner < index)
+                {
+                    index--;
+                }
+            }
+
+            page.Lines.Insert(++index, text);
+        }
+    }
+
+    /// <summary>
+    /// The index of an unclassified line on the same baseline right beside <paramref name="part"/> — within a word or
+    /// label gap (up to twice the taller part's height; a label of digits is short) — or -1.
+    /// </summary>
+    private static int FindLineRest(LayoutPage page, LayoutLine part)
+    {
+        int found = -1;
+        double nearest = double.MaxValue;
+        for (int i = 0; i < page.Lines.Count; i++)
+        {
+            LayoutLine line = page.Lines[i];
+            if (line.Role != LineRole.Unknown || line.Words.Count == 0 || Math.Abs(line.Baseline - part.Baseline) > 1)
+            {
+                continue;
+            }
+
+            double gap = Math.Max(line.Box.Left - part.Box.Right, part.Box.Left - line.Box.Right);
+            if (gap >= 0 && gap <= RejoinGapFactor * Math.Max(part.Box.Height, line.Box.Height) && gap < nearest)
+            {
+                found = i;
+                nearest = gap;
+            }
+        }
+
+        return found;
+    }
+
+    /// <summary>One line of two parts of a visual line; the segments that meet become one.</summary>
+    private static LayoutLine Join(LayoutLine a, LayoutLine b)
+    {
+        (LayoutLine left, LayoutLine right) = a.Box.Left <= b.Box.Left ? (a, b) : (b, a);
+        var line = new LayoutLine([.. left.Words, .. right.Words], left.Box.Union(right.Box), a.Baseline) { Zone = a.Zone };
+        List<LineSegment> segments = [.. left.Segments, .. right.Segments];
+        if (left.Segments.Count > 0 && right.Segments.Count > 0)
+        {
+            LineSegment last = left.Segments[^1];
+            LineSegment first = right.Segments[0];
+            segments.RemoveAt(left.Segments.Count);
+            segments[left.Segments.Count - 1] = new LineSegment([.. last.Words, .. first.Words], last.Box.Union(first.Box));
+        }
+
+        foreach (LineSegment segment in segments)
+        {
+            line.Segments.Add(segment);
+        }
+
+        foreach (KeyValuePair<string, string> annotation in left.Annotations.Concat(right.Annotations))
+        {
+            line.Annotations[annotation.Key] = annotation.Value;
+        }
+
+        return line;
+    }
+
+    /// <summary>True for a word without letters and digits (an arrow or another symbol-font glyph).</summary>
+    private static bool IsSymbol(LayoutWord word) => !word.Text.Any(char.IsLetterOrDigit);
+
+    /// <summary>The baseline most glyphs of the words sit on (a part split off a line merged with a taller glyph).</summary>
+    private static double Baseline(IReadOnlyList<LayoutWord> words, double fallback)
+    {
+        List<double> baselines = words.SelectMany(w => w.Glyphs).Select(g => Math.Round(g.Baseline, 1)).ToList();
+        return baselines.Count == 0
+            ? fallback
+            : baselines.GroupBy(b => b).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key;
+    }
+
+    /// <summary>Shaded boxes of a page with text to their right, with the lines they own.</summary>
+    private static List<StepBox> FindBoxes(LayoutPage page)
+    {
+        List<Rect> outer = FindAreas(page);
         List<LayoutLine> lines = page.Lines.Where(l => l.Role == LineRole.Unknown && l.Words.Count > 0).ToList();
 
         List<StepBox> boxes = outer
             .Select(area => new StepBox(page, area, lines.Where(l => l.Box.CenterY >= area.Top - 1 && l.Box.CenterY <= area.Bottom + 1).ToList()))
-            .Where(b => b.Lines.Any(l => l.Words.Any(w => w.Box.CenterX >= b.Area.Right)))
             .ToList();
+        for (int i = 0; i < boxes.Count; i++)
+        {
+            double end = i + 1 < boxes.Count ? boxes[i + 1].Area.Top - 1 : double.MaxValue;
+            boxes[i].Lines.AddRange(FlowBelow(lines, boxes[i], end));
+        }
+
+        boxes = boxes.Where(b => b.Lines.Any(l => l.Words.Any(w => w.Box.CenterX >= b.Area.Right))).ToList();
         var owned = new HashSet<LayoutLine>(boxes.SelectMany(b => b.Lines), ReferenceEqualityComparer.Instance);
         foreach (StepBox box in boxes)
         {
@@ -74,6 +248,30 @@ public sealed class StepSequenceStage : IPipelineStage
         }
 
         return boxes;
+    }
+
+    /// <summary>
+    /// Spec 008 (FR-632): the explanation running on below the box — the lines below it lying wholly right of its edge,
+    /// each closely below the previous one (gap ≤ 1.5 × line height), up to the next box, a line reaching left of the
+    /// edge or a wider gap. Below an empty box (a frame broken by a page boundary) this is the whole explanation.
+    /// </summary>
+    private static List<LayoutLine> FlowBelow(List<LayoutLine> lines, StepBox box, double end)
+    {
+        var flow = new List<LayoutLine>();
+        double previous = box.Lines.Select(l => l.Box.Bottom).Append(box.Area.Bottom).Max();
+        foreach (LayoutLine line in lines.Where(l => l.Box.CenterY > box.Area.Bottom + 1 && l.Box.CenterY < end).OrderBy(l => l.Box.Top))
+        {
+            if (line.Box.Top - previous > FlowGapFactor * line.Box.Height
+                || line.Words.Any(w => w.Box.Left < box.Area.Right - EdgeTolerance))
+            {
+                break;
+            }
+
+            flow.Add(line);
+            previous = line.Box.Bottom;
+        }
+
+        return flow;
     }
 
     /// <summary>
@@ -89,6 +287,12 @@ public sealed class StepSequenceStage : IPipelineStage
         bool complete = false;
         foreach (LayoutLine line in candidates.Where(l => l.Box.Bottom <= box.Top + 1).OrderByDescending(l => l.Box.Bottom))
         {
+            // Spec 008 (FR-634): column names are printed wholly bold; a plain line above the box is text.
+            if (!line.Words.All(w => w.Style.HasFlag(TextStyle.Bold)))
+            {
+                break;
+            }
+
             if (complete)
             {
                 // A name centred beside a wrapped one: the line above the wrapped name overlaps the collected row.

@@ -84,4 +84,26 @@ public sealed class ListsIntegrationTests
         ListBlock bullets = Assert.IsType<ListBlock>(document.Sections[1].Blocks[1]);
         Assert.All(bullets.Items, i => Assert.Equal(("•", ListLabelKind.Bullet), (i.Label, i.LabelKind)));
     }
+
+    /// <summary>
+    /// Spec 008 (US1, T010b) — the text column of a page is measured on running text including list items: a
+    /// sentence-ending line well short of the wide list lines ends its paragraph even when it is the widest unclaimed
+    /// line on the page (formerly only a page footer reaching the right margin kept the column wide).
+    /// </summary>
+    [Fact]
+    public async Task Short_sentence_ending_line_ends_its_paragraph_when_only_list_lines_are_wide()
+    {
+        var builder = new SyntheticPdfBuilder();
+        builder.Page()
+            .Text(Margin, 80, "Limit dzienny wynosi 3 przelewy. Nie możesz go zmienić.")
+            .Text(Margin, 94, "Limity transakcji")
+            .Text(Margin, 120, "1) przelewy w serwisie internetowym realizujemy do wysokości limitu dziennego ustalonego w umowie,")
+            .Text(Margin, 134, "2) przelewy w aplikacji mobilnej realizujemy do wysokości limitu dziennego ustalonego w aplikacji,")
+            .Text(Margin, 148, "3) przelewy natychmiastowe realizujemy do wysokości limitu ustalonego dla każdego z tych kanałów.");
+
+        using var stream = new MemoryStream(builder.Build());
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.Contains("Nie możesz go zmienić.\n\nLimity transakcji", result.Markdown, StringComparison.Ordinal);
+    }
 }
