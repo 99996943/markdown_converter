@@ -333,4 +333,6 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   pięciu regulaminach kredytowych (gpt-4.1-mini) kończyły się kodem 7 w kroku wyboru (5–6 z 10 po limicie). Pozycje
   scalone z kilku dokumentów liczą się teraz do limitu jednego dokumentu, problem limitu wymienia dokumenty z
   miejscem, komunikat wyboru opisuje regułę (red/green 8f89318, 2435dd7; prompt 14ced6e). Pełny zestaw zielony.
-  Do sprawdzenia: ponowny przebieg właściciela na tym samym zestawie po przebudowie `publish/`.
+  Przebieg właściciela po przebudowie `publish/` (ten sam zestaw, gpt-4.1-mini): 10/10 bez poprawki. 9 z 10
+  pytań łączy kilka regulaminów („kredyt gotówkowy, odnawialny i samochodowy”) — to potwierdza przyczynę; przy
+  podobnych dokumentach FAQ ma charakter porównawczy.
