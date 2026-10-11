@@ -144,26 +144,26 @@ i zwykłe liczby bez zmian.
 **Independent Test**: replika ostatniej strony (4 wiersze 6,7 pt co 7 pt od x ≈ 175, logo 22,7 pt od x ≈ 40 na linii
 bazowej ostatniego wiersza) bez przeplecionych liter; indeksy i odnośniki przy słowach bez zmian.
 
-- [ ] T013 [P] [US3] Testy etapu (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/LineAssemblyStageTests.cs`:
+- [X] T013 [P] [US3] Testy etapu (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/LineAssemblyStageTests.cs`:
   logo 22,7 pt + cztery wiersze 6,7 pt (geometria z research R3) → pięć wierszy: każdy wiersz stopki pełny
   („Gospodarczy …”, „podatkowej …”, „01.01.2022 r. wynosi …”), logo osobno; ochrona (zielone także przed zmianą):
   indeks „¹” 4 pt tuż po „66” w wierszu 8 pt, odnośnik „***)” i „123)” 5 pt tuż po słowie w wierszu 8 pt, nagłówek
   14 pt i tekst 7 pt na wspólnej linii bazowej oddzielone zwykłą spacją — wynik jak dotąd (jeden wiersz)
-- [ ] T014 [P] [US3] Replika strony (red) w `tests/LegalAgent.PdfParser.Tests/Integration/CorpusLayoutsIntegrationTests.cs`:
+- [X] T014 [P] [US3] Replika strony (red) w `tests/LegalAgent.PdfParser.Tests/Integration/CorpusLayoutsIntegrationTests.cs`:
   ostatnia strona z treścią i stopką jak w T013 (neutralne nazwy: „Bank.pl”, „Bank S.A., ul. Przykładowa 1 …”);
   Markdown zawiera cztery wiersze stopki jako ciągły tekst w kolejności PDF, żadne słowo nie jest przeplecione,
   napis logo jako osobny fragment
-- [ ] T015 [US3] Warunek (green T013–T014) w `src/LegalAgent.PdfParser/Stages/LineAssemblyStage.cs` według
+- [X] T015 [US3] (wycofane w T017, FR-661) Warunek (green T013–T014) w `src/LegalAgent.PdfParser/Stages/LineAssemblyStage.cs` według
   `data-model.md`: przed `GroupIntoLines` wyznacz ciągi tekstu własnego (glify bez białych znaków, „jednego rozmiaru
   (± 0,1 pt), na wspólnej linii bazowej (`BaselineToleranceRatio` × rozmiar)”, przerwy ≤ `NearGlyphEm` × własny
   rozmiar, „ciąg ma ≥ 4 glify”, stała `OwnLineMinGlyphs = 4`); w `LineBuilder.Accepts` glif ciągu mniejszy niż
   `MarkerSizeRatio` × zarodek i dalej niż `NearGlyphEm` × mniejszy rozmiar od glifów wiersza → `false` przed obiema
   ścieżkami. Deterministycznie; `StepSequenceStage` (T040a, `RejoinGapFactor`) bez zmian
-- [ ] T016 [US3] Pełny zestaw (FR-673) i decyzja FR-661: dopuszczalne różnice tylko w stopkach corp-1, 2, 3, 5, 6 i
+- [X] T016 [US3] Pełny zestaw (FR-673) i decyzja FR-661: dopuszczalne różnice tylko w stopkach corp-1, 2, 3, 5, 6 i
   (bez pogorszenia miar) w schematach firm-2, 5, 6; `Corpus/acts`, `Corpus/banking`, goldeny fragmentów, korpus
   syntetyczny, ind-*, reg*, regulamin-pdp bez zmian; `CorpusFull` bez spadku. Spełnione → zaktualizuj prywatne
   goldeny dla firm, bramka liczb zielona, opis w handoffie. Niespełnione → T017
-- [ ] T017 [US3] Tylko jeśli T016 wykazało ryzyko (FR-661): wycofaj T015 (testy T013/T014 oznacz `Skip` z odwołaniem
+- [X] T017 [US3] Tylko jeśli T016 wykazało ryzyko (FR-661): wycofaj T015 (testy T013/T014 oznacz `Skip` z odwołaniem
   do „Znanych ograniczeń”, ochrona zostaje aktywna), dopisz do `tests/LegalAgent.PdfParser.Tests/Corpus/private/number-check.txt`
   wyjątek corp-2 z liczbami przeplecionej daty i komentarzem, opisz zjawisko w `src/LegalAgent.PdfParser/README.md`
   („Znane ograniczenia”) i uzasadnienie w handoffie

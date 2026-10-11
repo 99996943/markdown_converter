@@ -562,7 +562,7 @@ public sealed class LineAssemblyStageTests
     /// Spec 009 (US3, research R3): the last page of a corporate regulation — a 22.7 pt logo at x 39.7 on the baseline of the
     /// last of four 6.7 pt footer lines starting at x 175.5, 7 pt apart.
     /// </summary>
-    [Fact]
+    [Fact(Skip = "Spec 009 T017: rolled back (FR-661) — the rule changed footnotes and tables of Corpus/acts; README, Znane ograniczenia")]
     public void FooterBesideALargeLogo_KeepsItsLinesWhole()
     {
         var glyphs = new List<LayoutGlyph>();

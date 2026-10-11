@@ -258,3 +258,8 @@ Zasady:
 - **Obrazy** nie są odczytywane (brak OCR), tylko zgłaszane (`IMG001`).
 - **Nagłówek wciągnięty do tabeli:** w regulaminie kart dla firm (część II, rozdz. 3) nagłówek obok ramek „etap”
   trafia do tabeli.
+- **Stopka obok dużego logo:** w regulaminach korporacyjnych banku ostatnia strona ma cztery wiersze drobnej stopki
+  (6,7 pt) obok logo 22,7 pt. Pierwsze słowa wierszy 2–4 trafiają do wiersza logo litera po literze („Bank.pl
+  Gp0oo1sd…”), a data „01.01.2022” rozpada się na cyfry. Składanie wierszy (`LineAssemblyStage`) przyjmuje małe glify
+  w pionowym zasięgu dużego wiersza jako indeksy i odnośniki. Próba oddzielenia ciągów drobnego tekstu (spec 009, T015)
+  zmieniała przypisy i tabele w aktach prawnych, więc została wycofana (FR-661).

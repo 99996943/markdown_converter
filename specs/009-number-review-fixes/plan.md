@@ -187,6 +187,18 @@ parsera, prywatne listy obok PDF-ów.
     indeksu po myślniku zostaje cyfrą (ogon nie zaczyna się od „art.”); „art. 166¹¹²)” to w PDF odnośnik przypisu
     „112)” (`[^112]` istnieje), nie indeks artykułu — wcześniej sklejony „166112)”, teraz zapisany indeksem; ta sama
     klasa co odnośniki sklejone (kandydat spec 010).
+- 2026-10-11, US3 (T013–T017): testy red 8c6bb48 (stopka obok logo — etap i replika strony; ochrona: indeks „¹” po
+  „66”, „***)”, „123)” przy słowie, tekst 7 pt obok nagłówka 14 pt na wspólnej linii bazowej — zielone przed i po).
+  T015 według data-model (ciągi ≥ 4 glifów jednego rozmiaru, odrzucenie w `LineBuilder.Accepts`) dawało zielone
+  testy, ale pełny zestaw (T016) pokazał różnice w `Corpus/acts`: kredyt-konsumencki (załącznik — formularz
+  informacyjny: wiersze tabeli rozbite, nagłówek „Wybór prawa właściwego” zamieniony w akapit) i obwieszczenie-msz
+  (przypisy „\*\*\*)”, „\*\*\*\*)” scalone z poprzednim). Zawężenie (reguła tylko na ścieżce nakładania pionowego, bez
+  tolerancji linii bazowej) — te same różnice w aktach, a stopka i tak niepełna. **Kryterium FR-661 niespełnione →
+  T017**: zmiana wycofana (kod `LineAssemblyStage` bez zmian), testy stopki `Skip` z odwołaniem do „Znanych
+  ograniczeń” (ochrona aktywna), wyjątek corp-2 `0,0,0,1,1,2,2,2` w `number-check.txt`, opis w README. Pełny zestaw
+  z prywatnym korpusem zielony (2184, 9 pominiętych), bramka liczb zielona. Kandydat na spec 010: rozplatanie stopki
+  w późniejszym etapie (np. wiersz z dużym napisem i ≥ 2 liniami bazowymi drobnego tekstu) zamiast w rdzeniu
+  składania wierszy.
 
 ## Complexity Tracking
 

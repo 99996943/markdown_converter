@@ -1897,7 +1897,7 @@ public sealed class CorpusLayoutsIntegrationTests
     /// left on the baseline of the last of four 6.7 pt footer lines. Today the first words of footer lines 2–4 are pulled
     /// into the logo's line letter by letter.
     /// </summary>
-    [Fact]
+    [Fact(Skip = "Spec 009 T017: rolled back (FR-661) — the rule changed footnotes and tables of Corpus/acts; README, Znane ograniczenia")]
     public async Task FooterBesideALargeLogo_KeepsItsLinesWhole()
     {
         var b = new SyntheticPdfBuilder().Page();
