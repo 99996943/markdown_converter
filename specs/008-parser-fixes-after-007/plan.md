@@ -309,6 +309,18 @@ bez zmian kodu (korpus tylko odświeżony: wersja w manifeście). `LegalAgent.Fa
   kolumny limitów, więc wiersze PDF przeplatają kawałki komórek (TBL001); (3) podtytuł „obowiązują od 6 listopada
   2025 r.” jest nagłówkiem `##`, więc cały dokument to jedna jednostka. Skutek: odpowiedź FAQ o limitach błędna
   (kwoty 150.000/230.000 nie istnieją w PDF), 4 z 10 kandydatów odrzuconych.
+- 2026-10-11 (przegląd liczb): właściciel wyłączył z zestawów FAQ dokumenty niebędące regulaminami (limity firm-1,
+  wniosek corp-4) i dodał „Regulamin faktoringu dla firm” oraz „Świadczenie Klientom przez mBank S.A. usług
+  informacyjnych” — oba dodane do prywatnego korpusu jako `mbank-firm-6`, `mbank-corp-6` z goldenami (przejrzane
+  przez wykonawcę; prywatny korpus 21 dokumentów, zielony). Sonda w scratchpadzie (warstwa tekstowa PdfPig vs
+  Markdown bieżącego parsera) na 15 regulaminach: liczby brakujące w Markdownie to wyłącznie usunięte numery stron
+  „N/M” (zgodne z raportem artefaktów); przypis w indeksie górnym sklejony z liczbą — 0 (tylko w firm-1, poza
+  zestawem). Znalezione: (1) **corp-5 s. 8 „art. 66¹ § 1 … art. 68²” → „art. 661 … art. 682”** — zamiana na indeks
+  górny w `TextNormalizationStage.LegalNumberTail` działa tylko po „Art.” wielką literą i „§” (`§ 7¹` w corp-1
+  poprawne); do naprawy (red/green, golden corp-5); (2) stopka z danymi banku (szablon mBanku, ostatnia strona) —
+  dwa nakładające się wiersze przeplecione literami: corp-2 „G0p1oo.0ds1pa.2tok0do2aw2r cerz.j y”, corp-6
+  „wXidIgeII nsttyafinkua ncjai”; kwota kapitału zachowana, treść regulaminu nienaruszona — kosmetyka, kandydat do
+  „Znanych ograniczeń”.
 
 ## Complexity Tracking
 
