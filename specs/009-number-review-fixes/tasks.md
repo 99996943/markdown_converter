@@ -178,27 +178,27 @@ bazowej ostatniego wiersza) bez przeplecionych liter; indeksy i odnośniki przy 
 
 **Independent Test**: `quickstart.md` §1–§4 zielone; `verify` czysty; handoff kompletny.
 
-- [ ] T018 [US4] `Directory.Build.props`: `<Version>` 1.2.0 → 1.2.1
-- [ ] T019 [US4] `dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- refresh`, potem `verify`; sprawdź diff
+- [X] T018 [US4] `Directory.Build.props`: `<Version>` 1.2.0 → 1.2.1
+- [X] T019 [US4] `dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- refresh`, potem `verify`; sprawdź diff
   `corpus/`: manifest (wersja 1.2.1) i `corpus/akty/*.md`, `*.chunks.jsonl` wyłącznie w wąskiej zgodzie (oczekiwane
   33 miejsca w 7 aktach); każda inna zmiana `corpus/` — stop i pytanie
-- [ ] T020 [US4] Pełny zestaw: `dotnet test LegalAgent.slnx --filter "Category!=Performance"`, prywatny korpus z
+- [X] T020 [US4] Pełny zestaw: `dotnet test LegalAgent.slnx --filter "Category!=Performance"`, prywatny korpus z
   raportem, `LEGALAGENT_CORPUS_FULL=1` (`CorpusFull`), testy wydajności (`Category=Performance`, SC-007); porównanie
   zbiorów słów vs `baseline-009` — zmiany tylko w corp-5 i stopkach (SC-105)
-- [ ] T021 [P] [US4] `src/LegalAgent.PdfParser/README.md`: indeks górny po „art.”, stopka z logo (US3), miara liczb
+- [X] T021 [P] [US4] `src/LegalAgent.PdfParser/README.md`: indeks górny po „art.”, stopka z logo (US3), miara liczb
   i `number-check.txt` (testy); „Znane ograniczenia” (FR-676): tabela limitów firm-1 (4 stałe kolumny z komórkami
   wielowierszowymi na różnych liniach bazowych, TBL001, przeplatanie komórek), znaczniki przypisów w indeksie górnym
   przed liczbą („¹50.000” → „150.000”), podtytuł „obowiązują od …” jako nagłówek, wiersze strony tytułowej jako
   nagłówki („## Warszawa, Listopad 2020”, „## mBank.pl” w corp-2 i corp-6 — opisane bez nazw banków, jeśli README
   jest publiczne), niewykryty tytuł formularza (corp-4)
-- [ ] T022 [P] [US4] `CLAUDE.md`: zmiany spec 009 (wzorzec „art.” w `TextNormalization`, ciągi tekstu własnego w
+- [X] T022 [P] [US4] `CLAUDE.md`: zmiany spec 009 (wzorzec „art.” w `TextNormalization`, ciągi tekstu własnego w
   `LineAssembly`, `NumberCheck` i `number-check.txt` w opisie zmiennych/testów prywatnego korpusu, `baseline-009`)
-- [ ] T023 [US4] Handoff `specs/009-number-review-fixes/plan.md` („Stan prac i przekazanie”): tabela miar przed/po
+- [X] T023 [US4] Handoff `specs/009-number-review-fixes/plan.md` („Stan prac i przekazanie”): tabela miar przed/po
   (liczby + / − dla każdego dokumentu z niezerową miarą, przeplecione wiersze 5 → 0), klasyfikacja liczb brakujących
   po zmianach (SC-101), lista zmienionych goldenów z
   uzasadnieniem (corp-5, stopki corp, akty w wąskiej zgodzie z liczbą miejsc), wynik researchu R3, decyzja T016/T017;
   zaktualizuj `tasks.md` (`[X]`)
-- [ ] T024 [US4] Przebuduj `publish/` jak w spec 007/008 (polecenie z handoffu spec 008) i sprawdź, że exe raportuje
+- [X] T024 [US4] Przebuduj `publish/` jak w spec 007/008 (polecenie z handoffu spec 008) i sprawdź, że exe raportuje
   wersję 1.2.1
 
 ---

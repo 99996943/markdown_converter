@@ -199,6 +199,33 @@ parsera, prywatne listy obok PDF-ów.
   z prywatnym korpusem zielony (2184, 9 pominiętych), bramka liczb zielona. Kandydat na spec 010: rozplatanie stopki
   w późniejszym etapie (np. wiersz z dużym napisem i ≥ 2 liniami bazowymi drobnego tekstu) zamiast w rdzeniu
   składania wierszy.
+- 2026-10-11, US4 (T018–T024) — **spec zakończona**:
+  - Wersja 1.2.1 (`Directory.Build.props`; w `corpus/manifest.json` `parserVersion` i ręcznie `generatorVersion`).
+    `refresh` zmienił wyłącznie 7 aktów w `corpus/akty` (`*.md`, `*.chunks.jsonl`) i manifest: 31 cyfr zamienionych
+    na indeks (ochrona-danych 6, prawa-konsumenta 4, kredyt-konsumencki 1, prawo-bankowe 7, usługi-płatnicze 3,
+    aml 3, kredyt-hipoteczny 7; research liczył 33 razem z dwoma „Art. 22²/22³” w ochronie danych, które były już
+    poprawne). Po cofnięciu indeksów i usunięciu `[^n]` wiersze identyczne (skrypt multizbioru). `verify` czysty
+    (172c232).
+  - Pełny zestaw z `LEGALAGENT_CORPUS_FULL=1`, prywatnym korpusem i raportem: 2184, 0 niepowodzeń, 2 pominięte;
+    `Category=Performance` osobno 4/4. Słowa vs `baseline-009` (SC-105): zmieniony tylko golden corp-5.
+  - **Miary przed/po** (+ nadmiarowe / − brakujące):
+
+    | Dokument | Przed | Po | Uwagi |
+    |---|---|---|---|
+    | corp-5 | 2 / 2 (661, 682 / 66, 68) | 0 / 0 | US1 |
+    | corp-2 | 8 / 1 | 8 / 1 | stopka (US3 wycofane), wyjątek w `number-check.txt` |
+    | firm-1 | 6 / 6 | 6 / 6 | poza listą (tabela limitów, „Znane ograniczenia”) |
+    | ind-2, ind-4 | 1 / 0 | 1 / 0 | scalone definicje przypisów, dopuszczone |
+    | reg1, regulamin-pdp | 1 / 0 | 1 / 0 | poza listą |
+
+    Przeplecione wiersze stopki: 5 dokumentów corp przed i po (wycofanie FR-661). Brakujące po zmianach (SC-101):
+    tylko corp-2 „01.01.2022” (stopka).
+  - **Zmienione goldeny**: prywatny corp-5 (2 miejsca); `Corpus/acts` 4 akty (15 cyfr) i golden fragmentów
+    ochrona-danych — w wąskiej zgodzie właściciela; `Corpus/banking`, pozostałe prywatne, syntetyczne — bez zmian.
+  - README („Znane ograniczenia”, kontrola liczb) i CLAUDE.md zaktualizowane (f08dcfb, pisał Sonnet, przejrzane).
+    `publish/` (lib, nuget 1.2.1, exe) przebudowany z f08dcfb; exe i dll raportują 1.2.1 (exe nieuruchamiany).
+  - Gałąź niewypchnięta. Kandydaci na spec 010: odnośniki przypisów sklejone ze słowem / po numerze artykułu,
+    scalone definicje przypisów, stopka obok logo w późniejszym etapie, tabela limitów firm-1.
 
 ## Complexity Tracking
 
