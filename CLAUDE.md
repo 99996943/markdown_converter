@@ -78,6 +78,12 @@ scripts/azure/create-openai.sh [--model gpt-5.4-mini --model-version 2026-03-17]
 Environment variables used by the tests:
 - **`UPDATE_GOLDEN=1`**: rewrites `*.expected.md` goldens and the chunk goldens `tests/LegalAgent.Chunking.Tests/Golden/*.chunks.jsonl`. On a mismatch, tests write `*.actual.md` / `*.actual.jsonl` (git-ignored).
 - **`LEGALAGENT_PRIVATE_CORPUS=<dir>`**: runs the owner's private bank PDFs against their goldens. These files are not in git. Locally the directory is `tests/LegalAgent.PdfParser.Tests/Corpus/private`.
+  The path must be absolute (a relative path reports a missing directory). These tests also run a number check
+  (`tests/LegalAgent.PdfParser.Tests/Fixtures/NumberCheck.cs`: numbers of the PDF text layer vs the Markdown; report
+  columns `Liczby +`, `Liczby −`, `Odnośniki sklejone`) and the gate `RegulationNumbers_HaveNoExcess`. The gate reads
+  `number-check.txt` in the private directory (one document name per line, optional `;n,n` allowed excess numbers,
+  `#` comments) and skips without it. `baseline-009/` there holds the goldens from before spec 009 for word-set
+  comparison.
 - **`LEGALAGENT_CORPUS_FULL=1`**: enables the `CorpusFull` category, which runs metrics over the whole committed corpus and checks that its Markdown is up to date. Plain `dotnet test` only checks a fixed sample.
 - **`LEGALAGENT_CORPUS_REPORT`**: writes per-document measurement tables.
 
@@ -103,6 +109,12 @@ Spec 008 additions:
   pulled into its own line), assigns lines running on below a box to that box (step index, column right), requires
   a wholly bold column-name row, and accepts a single box only behind a guard (bold name, text to the right, no
   ruling in its band). `BlockAssembly` groups step lines by their step index/number annotations.
+
+Spec 009 additions (parser 1.2.1):
+- `TextNormalization` converts raised small digits after lower-case `art. N` too (pattern `LegalNumberTail` =
+  `(?:(?<!\p{L})[Aa]rt\.|§)\s*\d+[a-z]*[⁰¹²³⁴-⁹]*$`), never after a word ending in „art.” like „kart.”.
+- A line-assembly rule separating small footer text from a large logo (own-text runs) was tried and rolled back: it
+  changed act footnotes and tables (FR-661). The footer interleaved with a large logo is a known limitation (README).
 
 A later stage usually skips lines that an earlier stage claimed. For example, `TableDetection` and `ReadingOrder` skip lines annotated as belonging to a table-document. When you change one stage, check how the downstream stages read those annotations.
 

@@ -73,7 +73,7 @@ Późniejszy etap zwykle pomija wiersze, które wcześniejszy już „zajął”
 | Kolejność | Etap | Co robi |
 |---|---|---|
 | 100 | `PageExtractionStage` | Czyta litery, linie siatki (rulings) i obecność obrazów. Odrzuca tekst obrócony i niewidoczny. Strona bez warstwy tekstowej jest pomijana. |
-| 200 | `TextNormalizationStage` | Rozwija ligatury, zamienia specjalne spacje, scala znaki łączące i normalizuje do NFC (nigdy NFKC). Podniesione cyfry po `Art. N`/`§ N` zamienia na indeks górny („§ 5¹”). |
+| 200 | `TextNormalizationStage` | Rozwija ligatury, zamienia specjalne spacje, scala znaki łączące i normalizuje do NFC (nigdy NFKC). Podniesione małe cyfry po `art. N` (także małą literą), `Art. N` i `§ N` zamienia na znaki indeksu górnego („art. 66¹”, „§ 5¹”), ale nigdy po wyrazie kończącym się na „art.” (np. „kart.”). |
 | 300 | `LineAssemblyStage` | Składa litery w słowa i wiersze wizualne. Duże odstępy poziome dzielą wiersz na segmenty (przyszłe komórki tabel). Wyznacza strefy marginesów, styl tekstu głównego i kolumnę adnotacji bocznych. |
 | 400 | `ArtifactRemovalStage` | Usuwa nagłówki i stopki powtarzające się na stronach oraz numery stron ze stref marginesów (także stopki „N/M” tuż nad strefą). Zapisuje je w raporcie. |
 | 500 | `FootnoteDetectionStage` | Odnośniki to mniejsze, podniesione znaki. Definicje to drobny tekst pod kreską separatora na dole strony, także kontynuowany na kolejnej stronie. |
@@ -242,6 +242,14 @@ Zasady:
   `LayoutFactory`, `TableSheet`, generator syntetycznych PDF-ów).
 - **Prywatny korpus:** `LEGALAGENT_PRIVATE_CORPUS=<katalog>` uruchamia prywatne PDF-y właściciela z ich goldenami.
   Trzeba to zrobić przed każdym commitem zmieniającym parser.
+- **Kontrola liczb** (spec 009): raport prywatnego korpusu (`LEGALAGENT_CORPUS_REPORT`) ma kolumny:
+  - `Liczby +` — liczby częstsze w Markdown niż w warstwie tekstowej PDF-u (nadmiar);
+  - `Liczby −` — liczby brakujące w Markdown;
+  - `Odnośniki sklejone` — liczba przyklejona do litery, której wartość w PDF-ie jest indeksem górnym, czyli
+    niewykryty odnośnik przypisu; liczona osobno.
+- **`RegulationNumbers_HaveNoExcess`** czyta `number-check.txt` z katalogu prywatnego korpusu: jedna nazwa dokumentu
+  w wierszu, opcjonalnie `;n,n,…` z dopuszczalnymi liczbami nadmiarowymi, `#` zaczyna komentarz. Bez tego pliku
+  test jest pomijany.
 - **Korpus syntetycznego banku** (`corpus/`): po zmianie parsera uruchom `LegalAgent.Corpus.Cli refresh`, a potem
   `verify` (to robi CI).
 
@@ -253,7 +261,9 @@ Zasady:
   typograficzny („## waluta transakcji kurs referencyjny…”). Zakończenie schematu kroków bywa nagłówkiem
   („## i… już dziecko może korzystać z karty”).
 - **Przypisy w niektórych bankowych PDF-ach:** trafiają do jednego bloku razem z numerami stron, a znak odnośnika
-  zostaje przyklejony do słowa („bilansujący2”).
+  zostaje przyklejony do słowa („bilansujący2”). Odnośniki niewykryte przez parser zostają sklejone ze słowem także
+  jako lista („BLIK9,10”), a etykiety definicji przypisów bez „)” bywają scalone w jedną definicję `[^1]`.
+  Kandydat na spec 010.
 - **Spis treści** zostaje w treści jako lista lub akapit z kropkami prowadzącymi (jego wpisy nie są już nagłówkami).
 - **Obrazy** nie są odczytywane (brak OCR), tylko zgłaszane (`IMG001`).
 - **Nagłówek wciągnięty do tabeli:** w regulaminie kart dla firm (część II, rozdz. 3) nagłówek obok ramek „etap”
@@ -263,3 +273,12 @@ Zasady:
   Gp0oo1sd…”), a data „01.01.2022” rozpada się na cyfry. Składanie wierszy (`LineAssemblyStage`) przyjmuje małe glify
   w pionowym zasięgu dużego wiersza jako indeksy i odnośniki. Próba oddzielenia ciągów drobnego tekstu (spec 009, T015)
   zmieniała przypisy i tabele w aktach prawnych, więc została wycofana (FR-661).
+- **Tabela limitów w regulaminie dla firm:** 4 stałe kolumny z komórkami wielowierszowymi na różnych liniach
+  bazowych kończą jako tabela zastępcza (`TBL001`), a treść komórek się przeplata (FR-676).
+- **Znacznik przypisu w indeksie górnym przed liczbą** jest doklejany do liczby („¹50.000” daje „150.000”).
+- **Podtytuły i strona tytułowa jako nagłówki:** podtytuł „obowiązują od …” bywa nagłówkiem, podobnie wiersze strony
+  tytułowej („## Warszawa, Listopad 2020”, napis logo banku).
+- **Niewykryty tytuł formularza:** formularz wewnątrz regulaminu korporacyjnego nie dostaje tytułu.
+- **Zakres artykułów z indeksem** („art. 720²–720⁵”): zamieniany jest tylko pierwszy indeks, druga cyfra po myślniku
+  zostaje doklejona („720²–7205”). Odnośnik przypisu tuż po numerze artykułu („art. 166¹¹²)”, w PDF odnośnik
+  „112)”) jest zapisywany indeksem górnym.
