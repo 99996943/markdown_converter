@@ -168,6 +168,10 @@ parsera, prywatne listy obok PDF-ów.
   - **Klasyfikacja brakujących (SC-101)** w regulaminach z listy: corp-2 „01.01.2022” — data rozbita przeplecionymi
     literami stopki (US3); corp-5 „66”, „68” — sklejone z indeksem (US1). Innych brakujących nie ma; utraty tekstu brak.
   - Bramka `RegulationNumbers_HaveNoExcess` czerwona dokładnie na corp-2 i corp-5 (commit red 48735e6).
+- 2026-10-11, przerwa po fazie 3: testy US1 T009 (etap) i T010 (replika s. 8 corp-5) zatwierdzone jako red (9ae9356;
+  replika daje dziś „art. 66[^1] § 1 do § 3 oraz art. 682”). **Następny krok**: T011 (wzorzec `LegalNumberTail` w
+  `TextNormalizationStage`), potem T012 (goldeny w wąskiej zgodzie). Prywatny korpus wymaga bezwzględnej ścieżki
+  `LEGALAGENT_PRIVATE_CORPUS=C:/GIT/markdown_converter/tests/LegalAgent.PdfParser.Tests/Corpus/private`.
 
 ## Complexity Tracking
 

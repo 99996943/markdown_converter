@@ -113,12 +113,12 @@ mbank-b;0,0
 **Independent Test**: replika s. 8 corp-5 daje „art. 66¹ § 1 do § 3 oraz art. 68²”; „Art.”, „§”, przypisy po słowach
 i zwykłe liczby bez zmian.
 
-- [ ] T009 [P] [US1] Testy etapu (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/TextNormalizationStageTests.cs`:
+- [X] T009 [P] [US1] Testy etapu (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/TextNormalizationStageTests.cs`:
   „art. 66” + podniesiona mała „1” → „¹”; „art. 68” + „2” → „²”; wielocyfrowy „art. 479” + „1”, „1”, „5” → „¹¹⁵”;
   „Art. 5” + „2” i „§ 7” + „1” jak dotąd; „kart. 5” + mała podniesiona „1” → cyfra bez zmian (lookbehind
   `(?<!\p{L})`); „art. 66” + „1” tej samej wielkości → „1”; „umowy” + mała podniesiona „3” → „3” (dla
   `FootnoteDetection`)
-- [ ] T010 [P] [US1] Replika strony (red) w `tests/LegalAgent.PdfParser.Tests/Integration/CorpusLayoutsIntegrationTests.cs`:
+- [X] T010 [P] [US1] Replika strony (red) w `tests/LegalAgent.PdfParser.Tests/Integration/CorpusLayoutsIntegrationTests.cs`:
   tekst 8 pt „… postanowień art. 66¹ § 1 do § 3 oraz art. 68² Kodeksu cywilnego …” (cyfry indeksu 4 pt, podniesione),
   na tej samej stronie przypis „1) …” na dole i odnośnik „¹” po słowie w treści; Markdown zawiera
   „art. 66¹ § 1 do § 3 oraz art. 68²”, odnośnik po słowie jako `[^1]`, brak „661”, „682”
