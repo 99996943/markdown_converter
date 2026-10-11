@@ -61,6 +61,24 @@ public sealed class NumberCheckTests
         Assert.Equal(Bag(("66", 1)), numbers);
     }
 
+    /// <summary>
+    /// T007 (private corp-3 last page): small footer text far to the right of a large logo is raised above the logo's
+    /// baseline, but it is not a superscript of the logo — its digits are numbers.
+    /// </summary>
+    [Fact]
+    public async Task FromPdf_SmallRaisedDigitFarFromThePreviousLetter_IsANumber()
+    {
+        byte[] pdf = new SyntheticPdfBuilder().Page()
+            .Text(Left, Top, "Zwykły tekst strony bez liczb.", Size)
+            .Text(40, 780, "Bank.pl", 22.7, bold: true)
+            .Text(175, 772, "2. wiersz stopki z danymi banku", 6.7)
+            .Build();
+
+        IReadOnlyDictionary<string, int>? numbers = NumberCheck.FromPdf(pdf, await ReportAsync(pdf));
+
+        Assert.Equal(Bag(("2", 1)), numbers);
+    }
+
     [Fact]
     public async Task Compare_SuperscriptInMarkdown_HasNoDifferences()
     {
