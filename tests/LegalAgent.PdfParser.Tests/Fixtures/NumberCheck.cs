@@ -33,6 +33,9 @@ public static partial class NumberCheck
     private const double MaxSuperscriptSizeRatio = 0.8;
     private const double MinRaiseRatio = 0.15;
 
+    /// <summary>Maximum advance gap (in ems of the reference letter) between a superscript digit and the letter before it.</summary>
+    private const double MaxSuperscriptGapEm = 0.5;
+
     /// <summary>Numbers of <paramref name="markdown"/> without page markers, footnote labels and escapes.</summary>
     public static IReadOnlyDictionary<string, int> FromMarkdown(string markdown)
     {
@@ -142,6 +145,7 @@ public static partial class NumberCheck
         var tokens = new List<Token>();
         var text = new System.Text.StringBuilder();
         Letter? previous = null;
+        Letter? lastInk = null;
         Letter? reference = null;
         bool currentSuperscript = false;
         double x = 0, baseline = 0, size = 0;
@@ -164,7 +168,7 @@ public static partial class NumberCheck
                 continue;
             }
 
-            bool superscript = reference is not null && IsRaisedSmallDigit(letter, reference);
+            bool superscript = reference is not null && lastInk is not null && IsRaisedSmallDigit(letter, reference, lastInk);
             if (previous is not null && (superscript != currentSuperscript || Breaks(previous, letter)))
             {
                 Flush();
@@ -180,6 +184,7 @@ public static partial class NumberCheck
 
             text.Append(letter.Value);
             previous = letter;
+            lastInk = letter;
             if (!superscript)
             {
                 reference = letter;
@@ -198,9 +203,14 @@ public static partial class NumberCheck
             || Math.Abs(letter.StartBaseLine.Y - previous.StartBaseLine.Y) > BaselineShiftRatio * em;
     }
 
-    /// <summary>The parser's superscript rule (<c>TextNormalizationStage</c>): one small digit raised above the previous full letter.</summary>
-    private static bool IsRaisedSmallDigit(Letter letter, Letter reference) =>
+    /// <summary>
+    /// The parser's superscript rule (<c>TextNormalizationStage</c>): one small digit raised above the previous full
+    /// letter, set right after the letter before it (<paramref name="lastInk"/>, which may be a superscript digit) —
+    /// small text far to the side of a large logo is not its superscript.
+    /// </summary>
+    private static bool IsRaisedSmallDigit(Letter letter, Letter reference, Letter lastInk) =>
         letter.Value.Length == 1
+        && Math.Abs(letter.StartBaseLine.X - lastInk.EndBaseLine.X) <= MaxSuperscriptGapEm * reference.PointSize
         && letter.Value[0] is >= '0' and <= '9'
         && letter.PointSize <= reference.PointSize * MaxSuperscriptSizeRatio
         && letter.StartBaseLine.Y >= reference.StartBaseLine.Y + (reference.PointSize * MinRaiseRatio);
