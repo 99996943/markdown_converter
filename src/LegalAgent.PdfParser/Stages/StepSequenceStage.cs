@@ -23,6 +23,7 @@ public sealed class StepSequenceStage : IPipelineStage
     private const double HeaderGapFactor = 4;
     private const double HeaderLineGapFactor = 1.5;
     private const double FlowGapFactor = 1.5;
+    private const double RejoinGapFactor = 2;
     private const int MinBoxes = 2;
     private const double MinBoldShare = 0.8;
 
@@ -158,11 +159,14 @@ public sealed class StepSequenceStage : IPipelineStage
         }
     }
 
-    /// <summary>The index of an unclassified line on the same baseline right beside <paramref name="part"/>, or -1.</summary>
+    /// <summary>
+    /// The index of an unclassified line on the same baseline right beside <paramref name="part"/> — within a word or
+    /// label gap (up to twice the taller part's height; a label of digits is short) — or -1.
+    /// </summary>
     private static int FindLineRest(LayoutPage page, LayoutLine part)
     {
         int found = -1;
-        double nearest = part.Box.Height;
+        double nearest = double.MaxValue;
         for (int i = 0; i < page.Lines.Count; i++)
         {
             LayoutLine line = page.Lines[i];
@@ -172,7 +176,7 @@ public sealed class StepSequenceStage : IPipelineStage
             }
 
             double gap = Math.Max(line.Box.Left - part.Box.Right, part.Box.Left - line.Box.Right);
-            if (gap >= 0 && gap <= nearest)
+            if (gap >= 0 && gap <= RejoinGapFactor * Math.Max(part.Box.Height, line.Box.Height) && gap < nearest)
             {
                 found = i;
                 nearest = gap;

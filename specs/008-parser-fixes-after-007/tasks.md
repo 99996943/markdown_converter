@@ -253,7 +253,7 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
 - [X] T040b [US4] Ponowne łączenie części wiersza po odcięciu łącznika w `StepSequenceStage.cs` — green T040a i T032
 - [X] T040c [US4] Test (red): strzałka wciąga etykietę „3.” (wiersz cyfr 6 pt), tekst punktu na tej samej linii
   bazowej po odstępie etykiety ≈ 8 pt — łączy się z etykietą (firm-2 s. 5, „3. Możemy poprosić…”)
-- [ ] T040d [US4] Próg łączenia: odstęp etykiety (do 2 × wysokość wyższej części) w `StepSequenceStage.cs` — green T040c
+- [X] T040d [US4] Próg łączenia: odstęp etykiety (do 2 × wysokość wyższej części) w `StepSequenceStage.cs` — green T040c
 - [ ] T041 [US4] Pełna kontrola FR-643; goldeny firm-2, firm-4, firm-5: ramki jako akapit + treść, odzyskany punkt
   „3. Możemy poprosić…” w firm-2 (jedyne nowe słowa w porównaniu zbiorów), znikają tylko znaki strzałek; ind-1, ind-2,
   firm-3 (schematy już poprawne) bez zmian — każda zmiana w ind-*: stop i pytanie; `verify` (układ `StepSchemeLayout`)
