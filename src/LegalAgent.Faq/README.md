@@ -40,6 +40,7 @@ Opcje (`FaqGeneratorOptions`):
 | `ItemCount` | 10 | liczba pozycji FAQ |
 | `MaxItemsPerDocument` | 3 | najwyżej tyle pozycji z jednego dokumentu (podnoszone, gdy dokumentów jest mało) |
 | `MinItemsPerDocument` | 1 | co najmniej tyle pozycji z każdego dokumentu (pomijane, gdy się nie da) |
+| `MergeDocuments` | false | czy pozycja może łączyć kandydatów różnych dokumentów (T067q) |
 | `MaxDocumentTokens` | 100 000 | szacowany limit tokenów jednego dokumentu (`FaqInputTooLongException`) |
 | `CharactersPerToken` | 3,0 | przelicznik do szacunku tokenów |
 
@@ -80,7 +81,8 @@ Kandydaci dostają identyfikatory `D2-K1`, `D2-K2`, … w kolejności odpowiedzi
 ### 3. Krok wyboru
 
 Model dostaje listę dokumentów i wszystkich kandydatów (bez tekstów dokumentów) i zwraca **uszeregowaną pulę** od
-N do N+5 pytań — od najważniejszego dla klienta. Może łączyć kandydatów o tę samą sprawę i przeredagowywać, ale
+N do N+5 pytań — od najważniejszego dla klienta. Może łączyć kandydatów o tę samą sprawę z jednego dokumentu
+(z `MergeDocuments` także z różnych dokumentów) i przeredagowywać, ale
 nie dodawać faktów; dla każdej pozycji podaje `basedOn` — identyfikatory kandydatów, z których korzysta.
 **Źródeł nie podaje** — liczy je kod.
 
@@ -140,14 +142,17 @@ Odpowiedź jest odrzucana dopiero wtedy, gdy z dokumentu nie zostanie żaden kan
 
 Pozycja puli jest **pomijana z ostrzeżeniem** (`SelectionItemSkipped`), gdy ma puste pytanie lub odpowiedź,
 powtarza pytanie wcześniejszej pozycji, ma puste `basedOn`, wskazuje nieistniejącego kandydata albo zawiera
-liczbę, której nie ma w odpowiedziach ani cytatach jej kandydatów `basedOn`.
+liczbę, której nie ma w odpowiedziach ani cytatach jej kandydatów `basedOn`. Bez `MergeDocuments` pomijana jest też
+pozycja z kandydatami różnych dokumentów („pozycja 3: łączy kandydatów różnych dokumentów (D1, D3)”) — przy
+regulaminach różnych produktów połączona odpowiedź przypisywała warunki jednego produktu innym (T067q).
 
 Z poprawnych pozycji kod wybiera N:
 
 1. dla każdego dokumentu (D1…Dn) jego najwyżej oceniona pozycja — aż do `MinItemsPerDocument`;
 2. potem kolejne pozycje w kolejności modelu, o ile mieszczą się w `MaxItemsPerDocument` — pozycja liczy się do
    minimum każdego dokumentu swoich kandydatów, ale do limitu tylko jednego z nich (tego, który ma najmniej
-   pozycji), żeby pytania scalone z podobnych regulaminów nie wyczerpały wszystkich limitów (T067p);
+   pozycji), żeby pytania scalone z podobnych regulaminów nie wyczerpały wszystkich limitów (T067p; ma znaczenie
+   tylko z `MergeDocuments`);
 3. wynik zostaje w kolejności modelu i jest numerowany 1…N.
 
 **Źródła** pozycji to dokument i jednostka każdego kandydata `basedOn` (już sprawdzone w kroku kandydatów), bez

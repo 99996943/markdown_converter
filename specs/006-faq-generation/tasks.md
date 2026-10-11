@@ -650,6 +650,16 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
   wymienia dokumenty z miejscem („…; brakujące pozycje mogą pochodzić tylko z dokumentów: D2, D4”); komunikat
   wyboru opisuje regułę.
 
+- [X] T067q Sprawdzenie FAQ z jedenastego przebiegu (10/10 po T067p): 9 z 10 pytań łączyło kilka regulaminów i dwa
+  miały błędy treści — warunki wnioskodawcy z kredytu gotówkowego i odnawialnego przypisane samochodowemu (jego
+  regulamin ich nie ma) oraz „maksymalne oprocentowanie to WIBOR 1M + 16 p.p.” (w regulaminie: niższa z wartości
+  odsetki maksymalne / WIBOR 1M + 16 p.p., tylko dla kredytów ze zmienną marżą). Łączenie między dokumentami
+  (FR-421 „może je … połączyć”, przykład „np. z różnych dokumentów” z T067c) służyło unikaniu powtórzeń przy
+  dokumentach o jednym produkcie; przy regulaminach różnych produktów szkodzi. Decyzja właściciela: domyślnie
+  łączenie tylko w obrębie dokumentu — komunikat wyboru tak mówi, a pozycja z kandydatami różnych dokumentów jest
+  pomijana z ostrzeżeniem; opcja `FaqGeneratorOptions.MergeDocuments` (domyślnie false) przywraca dawne zachowanie
+  razem z T067p.
+
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
   `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.
