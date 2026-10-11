@@ -270,10 +270,10 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
 - [X] T042 [US5] `<Version>` 1.1.0 → 1.2.0 w `Directory.Build.props`; `dotnet run --project src/LegalAgent.Corpus.Cli
   -c Release -- refresh` i `verify` — `corpus/manifest.json` zapisuje 1.2.0, poza tym bez zmian w `corpus/`; commit
   wersji i manifestu
-- [ ] T043 [P] [US5] README parsera `src/LegalAgent.PdfParser/README.md`: wyliczenia „a.”/„i.”, ramki schematów ze
+- [X] T043 [P] [US5] README parsera `src/LegalAgent.PdfParser/README.md`: wyliczenia „a.”/„i.”, ramki schematów ze
   strzałkami-znakami i treścią poniżej pola, wiersz kontynuacji z oznaczeniem jednostki, zaktualizowane znane
   ograniczenia (łączenie oznaczenia i tytułu kropką — `HeadingDetectionStage`, poza zakresem)
-- [ ] T044 [P] [US5] `CLAUDE.md`: w opisie komunikacji etapów — `StepSequence` (łączniki-glify, przelew treści poniżej
+- [X] T044 [P] [US5] `CLAUDE.md`: w opisie komunikacji etapów — `StepSequence` (łączniki-glify, przelew treści poniżej
   pola, pojedyncze pole) i stopki „N/M” w `ArtifactRemoval`; bez zmian w innych sekcjach
 - [ ] T045 [US5] Testy wydajności `dotnet test LegalAgent.slnx --filter "Category=Performance"` zielone (SC-007)
 - [ ] T046 [US5] Handoff w `specs/008-parser-fixes-after-007/plan.md`: tabela miar przed/po (akapity „N/M”, fałszywe
