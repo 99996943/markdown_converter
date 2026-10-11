@@ -1918,7 +1918,7 @@ Umarzanie utraconych dokumentów zawarcia umowy rachunku oszczędnościowego, ra
       - – opłaty od środków spożywczych oraz dodatkowej opłaty,
       - – zryczałtowanego podatku od wartości sprzedanej produkcji oraz odsetek za zwłokę w podatku od wartości sprzedanej produkcji,
       - – podatku tonażowego oraz odsetek za zwłokę w podatku tonażowym,
-      - – opłaty, o której mowa w art. 92 ust. 11 ustawy z dnia 26 października 1982 r. o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi (Dz. U. z 2023 r. poz. 2151), dodatkowej opłaty, o której mowa w art. 92 ust. 21 tej ustawy, oraz odsetek za zwłokę od tych opłat,
+      - – opłaty, o której mowa w art. 9² ust. 11 ustawy z dnia 26 października 1982 r. o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi (Dz. U. z 2023 r. poz. 2151), dodatkowej opłaty, o której mowa w art. 9² ust. 21 tej ustawy, oraz odsetek za zwłokę od tych opłat,
     - b\) należności z tytułu składek, o których mowa w art. 24 ust. 2 ustawy z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych (Dz. U. z 2024 r. poz. 497, 863 i 1243), oraz należności z tytułu składek, o których mowa w art. 32 tej ustawy, do poboru których obowiązany jest Zakład Ubezpieczeń Społecznych,
     - c\) należności z tytułu składek na ubezpieczenie społeczne rolników, o których mowa w ustawie z dnia 20 grudnia 1990 r. o ubezpieczeniu społecznym rolników (Dz. U. z 2024 r. poz. 90 i 1243), oraz należności z tytułu składek na ubezpieczenie zdrowotne, o których mowa w ustawie z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych (Dz. U. z 2024 r. poz. 146, 858 i 1222), do poboru których obowiązana jest Kasa Rolniczego Ubezpieczenia Społecznego;
   <!-- page: 58 -->
@@ -2227,7 +2227,7 @@ Przepisy ustawy stosuje się do umów kredytu i pożyczki pieniężnej, zawieran
 
 ### Art. 78b.
 
-Przepisów art. 7202–7205 Kodeksu cywilnego nie stosuje się do umowy kredytu i pożyczki pieniężnej udzielanej przez bank.
+Przepisów art. 720²–7205 Kodeksu cywilnego nie stosuje się do umowy kredytu i pożyczki pieniężnej udzielanej przez bank.
 
 ### Art. 79.
 
@@ -2793,7 +2793,7 @@ Bank może zawrzeć umowę o kredytowy instrument pochodny lub inną umowę niż
     <!-- page: 84 -->
     - c\) sądu lub prokuratora w związku z wykonaniem wniosku o udzielenie pomocy prawnej, pochodzącego z państwa obcego, które na mocy ratyfikowanej umowy międzynarodowej wiążącej Rzeczpospolitą Polską ma prawo występować o udzielenie informacji objętych tajemnicą bankową,
     - d\) sądu w związku z prowadzonym postępowaniem spadkowym lub o podział majątku między małżonkami albo prowadzoną przeciwko osobie fizycznej będącej stroną umowy sprawą o alimenty lub o rentę o charakterze alimentacyjnym,
-    - da\) sądu w związku z prowadzonym postępowaniem w sprawach własności intelektualnej, jeżeli jest to niezbędne do określenia źródła lub zakresu naruszenia praw własności intelektualnej, w zakresie, o którym mowa w art. 479115 § 2 ustawy z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego,
+    - da\) sądu w związku z prowadzonym postępowaniem w sprawach własności intelektualnej, jeżeli jest to niezbędne do określenia źródła lub zakresu naruszenia praw własności intelektualnej, w zakresie, o którym mowa w art. 479¹¹⁵ § 2 ustawy z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego,
     - e\) Szefa Krajowej Administracji Skarbowej, naczelnika urzędu celno-skarbowego albo naczelnika urzędu skarbowego na zasadach i w trybie określonych w przepisach ustawy z dnia 16 listopada 2016 r. o Krajowej Administracji Skarbowej:
       - – w związku z toczącym się postępowaniem karnym lub postępowaniem w sprawach o przestępstwa skarbowe przeciwko osobie fizycznej będącej stroną umowy zawartej z bankiem,
       - – w związku z toczącym się postępowaniem karnym lub postępowaniem w sprawach o przestępstwa skarbowe popełnione w zakresie działalności osoby prawnej lub jednostki organizacyjnej niemającej osobowości prawnej, która jest posiadaczem rachunku,
@@ -3266,7 +3266,7 @@ Banki są obowiązane posiadać fundusze własne w rozumieniu art. 4 ust. 1 pkt 
 - 1\. Umowa pożyczki podporządkowanej, o której mowa w art. 127a ust. 1, może być zawarta wyłącznie z podmiotami wymienionymi w art. 3 pkt 39b lit. a–m ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami finansowymi, w formie pisemnej pod rygorem nieważności.
 - 2\. W umowie pożyczki podporządkowanej określa się ryzyko związane z możliwością wystąpienia zdarzenia inicjującego, o którym mowa w art. 54 ust. 1 rozporządzenia nr 575/2013, oraz ryzyko dokonania umorzenia w formie odpisu trwałego albo odpisu tymczasowego, obniżających w całości albo w części kwotę tej pożyczki, a także ryzyko umorzenia odsetek albo części odsetek z tytułu tej pożyczki.
 - 3\. Udzielającemu pożyczki podporządkowanej nie przysługuje prawo wypowiedzenia umowy pożyczki podporządkowanej ani odstąpienia od tej umowy.
-- 4\. Umowa pożyczki podporządkowanej uprawnia udzielającego pożyczki podporządkowanej do otrzymywania przez czas nieoznaczony odsetek od kwoty udzielonej pożyczki podporządkowanej. Przepisów art. 359 § 2¹–23, art. 3651 i art. 395 Kodeksu cywilnego nie stosuje się.
+- 4\. Umowa pożyczki podporządkowanej uprawnia udzielającego pożyczki podporządkowanej do otrzymywania przez czas nieoznaczony odsetek od kwoty udzielonej pożyczki podporządkowanej. Przepisów art. 359 § 2¹–23, art. 365¹ i art. 395 Kodeksu cywilnego nie stosuje się.
 - 5\. Wierzytelność wynikająca z umowy pożyczki podporządkowanej może być przedmiotem przeniesienia wyłącznie między podmiotami wymienionymi w art. 3 pkt 39b lit. a–m ustawy z dnia 29 lipca 2005 r. o obrocie instrumentami finansowymi.
 
 ### Art. 127c.

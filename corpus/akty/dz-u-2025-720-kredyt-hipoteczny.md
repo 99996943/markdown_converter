@@ -82,7 +82,7 @@ Ustawy nie stosuje się do:
 
 Użyte w ustawie określenia oznaczają:
 
-- 1\) agent – przedsiębiorcę w rozumieniu art. 431 ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny (Dz. U. z 2024 r. poz. 1061 i 1237), wykonującego czynności pośrednictwa kredytu hipotecznego, występującego w imieniu i na rzecz wyłącznie jednego pośrednika kredytu hipotecznego;
+- 1\) agent – przedsiębiorcę w rozumieniu art. 43¹ ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny (Dz. U. z 2024 r. poz. 1061 i 1237), wykonującego czynności pośrednictwa kredytu hipotecznego, występującego w imieniu i na rzecz wyłącznie jednego pośrednika kredytu hipotecznego;
 - 2\) bazy danych – zbiory danych prowadzone dla celów oceny zdolności kredytowej przez instytucje, o których mowa w art. 105 ust. 4 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe, oraz biura informacji gospodarczej, o których mowa w ustawie z dnia 9 kwietnia 2010 r. o udostępnianiu informacji gospodarczych i wymianie danych gospodarczych (Dz. U. z 2025 r. poz. 85);
 - 3\) całkowita kwota do zapłaty przez konsumenta – sumę całkowitego kosztu kredytu hipotecznego i całkowitej kwoty kredytu hipotecznego;
 - 4\) całkowita kwota kredytu hipotecznego – maksymalną kwotę wszystkich środków pieniężnych nieobejmujących kredytowanych kosztów kredytu hipotecznego, które kredytodawca udostępnia konsumentowi na podstawie umowy o kredyt hipoteczny, a w przypadku umowy o kredyt hipoteczny, dla której nie przewidziano tej maksymalnej kwoty – sumę wszystkich środków pieniężnych nieobejmujących kredytowanych kosztów kredytu hipotecznego, które kredytodawca udostępnia konsumentowi na podstawie umowy o kredyt hipoteczny;
@@ -93,7 +93,7 @@ Użyte w ustawie określenia oznaczają:
   – z wyjątkiem kosztów opłat notarialnych i opłat sądowych ponoszonych przez konsumenta;
 
 - 6\) goszczące państwo członkowskie – państwo członkowskie inne niż macierzyste państwo członkowskie, w którym kredytodawca lub pośrednik kredytowy ma oddział lub świadczy usługi w zakresie kredytu hipotecznego;
-- 7\) konsument – konsumenta w rozumieniu art. 221 ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny;
+- 7\) konsument – konsumenta w rozumieniu art. 22¹ ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny;
 - 8\) kredytodawca:
   - a\) bank krajowy w rozumieniu art. 4 ust. 1 pkt 1 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe,
   - b\) oddział banku zagranicznego w rozumieniu art. 4 ust. 1 pkt 20 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe,
@@ -114,7 +114,7 @@ Użyte w ustawie określenia oznaczają:
   - c\) osobę fizyczną, która bezpośrednio zarządza osobami, o których mowa w lit. a lub b, lub sprawuje bezpośredni nadzór nad tymi osobami,
   - d\) osobę fizyczną, która świadczy usługi na rzecz kredytodawcy, pośrednika kredytu hipotecznego lub agenta, wykonując czynności, o których mowa w lit. a lub b, na podstawie umowy cywilnoprawnej;
 - 14\) pośrednictwo kredytu hipotecznego – wykonywanie czynności, o których mowa w pkt 15;
-- 15\) pośrednik kredytu hipotecznego – przedsiębiorcę w rozumieniu art. 431 ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny, niebędącego kredytodawcą, który w ramach wykonywanej działalności gospodarczej lub zawodowej, za wynagrodzeniem w formie pieniężnej lub innej uzgodnionej formie korzyści finansowej:
+- 15\) pośrednik kredytu hipotecznego – przedsiębiorcę w rozumieniu art. 43¹ ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny, niebędącego kredytodawcą, który w ramach wykonywanej działalności gospodarczej lub zawodowej, za wynagrodzeniem w formie pieniężnej lub innej uzgodnionej formie korzyści finansowej:
   - a\) przedstawia lub oferuje konsumentom umowy o kredyt hipoteczny, lub
   - b\) udziela konsumentom pomocy, podejmując prace przygotowawcze lub inne przedumowne działania administracyjne inne niż wymienione w lit. a, polegające na obsłudze dokumentów, w związku z umowami o kredyt hipoteczny, lub
   - c\) zawiera z konsumentami umowy o kredyt hipoteczny w imieniu kredytodawcy;
@@ -988,15 +988,15 @@ Osoby, które w dniu wejścia w życie ustawy wykonują czynności związane z d
 
 ### Art. 89.
 
-- 1\. Instytucje pożyczkowe prowadzące w dniu wejścia w życie ustawy działalność gospodarczą w zakresie udzielania lub dawania przyrzeczenia udzielenia kredytu konsumenckiego mogą kontynuować tę działalność bez spełnienia wymogu uzyskania wpisu do rejestru instytucji pożyczkowych, o którym mowa w art. 59aa ustawy zmienianej w art. 826), nie dłużej jednak niż przez okres 6 miesięcy od dnia wejścia w życie ustawy.
-- 2\. Podmiot określony w ust. 1, który w terminie 6 miesięcy od dnia wejścia w życie ustawy złoży wniosek o wpis do rejestru instytucji pożyczkowych, o którym mowa w art. 59aa ustawy zmienianej w art. 826), może kontynuować działalność, o której mowa w ust. 1, bez wpisu do tego rejestru do dnia rozpatrzenia tego wniosku.
-- 3\. Do wniosków, o których mowa w ust. 2, nie stosuje się art. 59ac ust. 4 ustawy zmienianej w art. 826). Wnioski te są rozpatrywane w terminie 6 miesięcy od dnia ich złożenia lub uzupełnienia.
+- 1\. Instytucje pożyczkowe prowadzące w dniu wejścia w życie ustawy działalność gospodarczą w zakresie udzielania lub dawania przyrzeczenia udzielenia kredytu konsumenckiego mogą kontynuować tę działalność bez spełnienia wymogu uzyskania wpisu do rejestru instytucji pożyczkowych, o którym mowa w art. 59aa ustawy zmienianej w art. 82⁶), nie dłużej jednak niż przez okres 6 miesięcy od dnia wejścia w życie ustawy.
+- 2\. Podmiot określony w ust. 1, który w terminie 6 miesięcy od dnia wejścia w życie ustawy złoży wniosek o wpis do rejestru instytucji pożyczkowych, o którym mowa w art. 59aa ustawy zmienianej w art. 82⁶), może kontynuować działalność, o której mowa w ust. 1, bez wpisu do tego rejestru do dnia rozpatrzenia tego wniosku.
+- 3\. Do wniosków, o których mowa w ust. 2, nie stosuje się art. 59ac ust. 4 ustawy zmienianej w art. 82⁶). Wnioski te są rozpatrywane w terminie 6 miesięcy od dnia ich złożenia lub uzupełnienia.
 
 ### Art. 90.
 
 - 1\. Pośrednicy kredytowi prowadzący w dniu wejścia w życie ustawy działalność gospodarczą w zakresie świadczenia usług związanych z kredytem konsumenckim mogą kontynuować tę działalność bez spełnienia wymogu uzyskania wpisu do rejestru pośredników kredytowych, nie dłużej jednak niż przez okres 6 miesięcy od dnia wejścia w życie ustawy.
 - 2\. Podmiot określony w ust. 1, który w terminie 6 miesięcy od dnia wejścia w życie ustawy złoży wniosek o wpis do rejestru pośredników kredytowych, może kontynuować działalność, o której mowa w ust. 1, bez wpisu do tego rejestru do dnia rozpatrzenia wniosku o wpis do rejestru pośredników kredytowych.
-- 3\. Do wniosków, o których mowa w ust. 2, nie stosuje się art. 59db ust. 4 ustawy zmienianej w art. 826). Wnioski te są rozpatrywane w terminie 6 miesięcy od dnia ich złożenia lub uzupełnienia.
+- 3\. Do wniosków, o których mowa w ust. 2, nie stosuje się art. 59db ust. 4 ustawy zmienianej w art. 82⁶). Wnioski te są rozpatrywane w terminie 6 miesięcy od dnia ich złożenia lub uzupełnienia.
 
 ### Art. 91.
 

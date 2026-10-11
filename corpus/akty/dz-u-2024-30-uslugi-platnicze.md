@@ -3916,7 +3916,7 @@ Zgoda na polecenie zapłaty, o której mowa w art. 63d ust. 2 pkt 2 ustawy z dni
 
 ### Art. 179.
 
-Przepis art. 19 ust. 4 ustawy zmienianej w art. 166112), w brzmieniu nadanym niniejszą ustawą, stosuje się do należności, których termin płatności upływa po dniu wejścia w życie niniejszej ustawy.
+Przepis art. 19 ust. 4 ustawy zmienianej w art. 166¹¹²), w brzmieniu nadanym niniejszą ustawą, stosuje się do należności, których termin płatności upływa po dniu wejścia w życie niniejszej ustawy.
 
 ### Art. 179a.
 

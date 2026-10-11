@@ -11,7 +11,17 @@ namespace LegalAgent.PdfParser.Tests.Fixtures;
 /// <param name="ParagraphText">Paragraph designations „§ N” (optionally bold, with a title) outside headings.</param>
 /// <param name="TocHeadings">Headings ending with leader dots and a page number.</param>
 /// <param name="PageFooters">Page numbers „N/M” outside tables.</param>
-public sealed record LayoutMeasures(int Tbl001, int PipeRows, int LooseLabelRows, int ParagraphText, int TocHeadings, int PageFooters);
+/// <param name="NumbersExcess">Sum of multiplicities of numbers only in the Markdown, against the PDF text layer (spec 009).</param>
+/// <param name="NumbersMissing">Sum of multiplicities of numbers only in the PDF text layer (spec 009).</param>
+public sealed record LayoutMeasures(
+    int Tbl001,
+    int PipeRows,
+    int LooseLabelRows,
+    int ParagraphText,
+    int TocHeadings,
+    int PageFooters,
+    int NumbersExcess = 0,
+    int NumbersMissing = 0);
 
 /// <summary>Difference of two collections: entries only in the first (<paramref name="Lost"/>) and only in the second (<paramref name="New"/>).</summary>
 public sealed record SetDiff(IReadOnlyList<string> Lost, IReadOnlyList<string> New);
@@ -23,6 +33,18 @@ public static partial class LayoutMetrics
 
     /// <summary>Measures <paramref name="markdown"/> with the warnings of <paramref name="report"/>.</summary>
     public static LayoutMeasures Measure(string markdown, ConversionReport report) => Measure(markdown, report.Warnings);
+
+    /// <summary>Measures <paramref name="markdown"/> and compares its numbers with the PDF at <paramref name="pdfPath"/> (spec 009).</summary>
+    public static LayoutMeasures Measure(string markdown, ConversionReport report, string pdfPath) =>
+        Measure(markdown, report, NumberCheck.Compare(markdown, pdfPath, report));
+
+    /// <summary>Measures <paramref name="markdown"/> and takes the number measures from an already computed <paramref name="numbers"/>.</summary>
+    public static LayoutMeasures Measure(string markdown, ConversionReport report, NumberDiff numbers) =>
+        Measure(markdown, report) with
+        {
+            NumbersExcess = numbers.Skipped is null ? numbers.Excess.Values.Sum() : 0,
+            NumbersMissing = numbers.Skipped is null ? numbers.Missing.Values.Sum() : 0,
+        };
 
     /// <summary>Measures <paramref name="markdown"/> with <paramref name="warnings"/>.</summary>
     public static LayoutMeasures Measure(string markdown, IReadOnlyList<ConversionWarning> warnings)
