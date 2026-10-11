@@ -503,6 +503,40 @@ public sealed class StepSequenceStageTests
         Assert.True(joined.Annotations.ContainsKey(LayoutAnnotations.StepIndex));
     }
 
+    /// <summary>
+    /// T040c — the firm terms page 5: the arrow pulls the label „3.” of an item into its line; the text of the item lies
+    /// on the label's baseline after a label gap (≈ 8 pt, wider than the short label line is tall) and still rejoins it.
+    /// </summary>
+    [Fact]
+    public void LabelSplitOffAnArrow_RejoinsItsTextAfterTheLabelGap()
+    {
+        // A label of digits has no descenders: its line is 6 pt tall, shorter than the label gap.
+        LayoutLine arrow = Line(Arrow, 127, 137, 13);
+        LayoutLine label = Line("3.", TextLeft, 143.8, 6);
+        var merged = new LayoutLine([.. arrow.Words, .. label.Words], arrow.Box.Union(label.Box), label.Baseline);
+        merged.Segments.Add(arrow.Segments[0]);
+        merged.Segments.Add(label.Segments[0]);
+        LayoutPage page = PageWith(
+            1,
+            [
+                Row(117, ("Pierwszy krok", TitleLeft), ("1. Pierwszy punkt.", TextLeft)),
+                Line("2. Drugi punkt.", TextLeft, 129),
+                merged,
+                Line("Możemy poprosić o dokumenty", TextLeft + TextWidth("3.") + 8, 141),
+                Line("potwierdzające dane.", TextLeft + TextWidth("3.") + 8, 153),
+                Row(177, ("Drugi krok", TitleLeft), ("Opis drugiego kroku.", TextLeft)),
+            ],
+            Box(114, 140),
+            Box(174, 190));
+
+        Run(Context([page]));
+
+        Assert.Equal(
+            ["Pierwszy krok", "1. Pierwszy punkt.", "2. Drugi punkt.", "3. Możemy poprosić o dokumenty", "potwierdzające dane.",
+                "Drugi krok", "Opis drugiego kroku."],
+            Texts(page));
+    }
+
     public static TheoryData<string> SingleBoxes() =>
         ["guarded", "plain name", "wide box", "ruling in the band", "nothing to the right", "no name in the box"];
 
