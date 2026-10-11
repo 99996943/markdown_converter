@@ -89,9 +89,10 @@ public sealed class NumberCheckTests
     [Fact]
     public async Task Compare_WithoutTextLayer_IsSkipped()
     {
+        // The parser rejects a PDF without text (PdfNoTextException), so the report comes from another document.
         byte[] pdf = new SyntheticPdfBuilder().Page().FilledRect(72, 100, 200, 50).Build();
 
-        NumberDiff diff = NumberCheck.Compare("", pdf, await ReportAsync(pdf));
+        NumberDiff diff = NumberCheck.Compare("", pdf, await ReportAsync(ArticleWithSuperscript()));
 
         Assert.False(string.IsNullOrEmpty(diff.Skipped));
         Assert.Empty(diff.Excess);
