@@ -241,11 +241,11 @@ nagłówków; jedna fraza na wspólnej linii bazowej z tekstem po prawej, jedna 
   (istniejący przypadek FR-067)
 - [X] T038 [US4] `FindHeader` przyjmuje tylko wiersz w całości pogrubiony w `StepSequenceStage.cs` — green T037
   (koniec utraty tekstu, FR-634)
-- [ ] T039 [P] [US4] Testy (red) w tym samym pliku: pojedyncze pole spełniające osłonę („wypełnienie niebiałe,
+- [X] T039 [P] [US4] Testy (red) w tym samym pliku: pojedyncze pole spełniające osłonę („wypełnienie niebiałe,
   szerokość < 50% strony, brak linii w pasie pola; tekst w polu ≥ 80% pogrubionych znaków”) → schemat z jedną ramką;
   pole niespełniające któregokolwiek warunku (białe, szerokie, niepogrubiony tekst, linie w pasie) → bez schematu; pole bez
   treści po prawej albo bez tekstu w polu → zwykły tekst, bez schematu
-- [ ] T040 [US4] Osłona pola i pojedyncze pole (wyjątek od `MinBoxes` tylko przy spełnionej osłonie) w
+- [X] T040 [US4] Osłona pola i pojedyncze pole (wyjątek od `MinBoxes` tylko przy spełnionej osłonie) w
   `StepSequenceStage.cs` — green T039
 - [ ] T041 [US4] Pełna kontrola FR-643; goldeny firm-2, firm-4, firm-5: ramki jako akapit + treść, odzyskany punkt
   „3. Możemy poprosić…” w firm-2 (jedyne nowe słowa w porównaniu zbiorów), znikają tylko znaki strzałek; ind-1, ind-2,

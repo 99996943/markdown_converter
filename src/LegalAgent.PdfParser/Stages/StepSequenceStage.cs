@@ -24,6 +24,7 @@ public sealed class StepSequenceStage : IPipelineStage
     private const double HeaderLineGapFactor = 1.5;
     private const double FlowGapFactor = 1.5;
     private const int MinBoxes = 2;
+    private const double MinBoldShare = 0.8;
 
     /// <inheritdoc />
     public int Order => StageOrder.StepSequence;
@@ -42,7 +43,7 @@ public sealed class StepSequenceStage : IPipelineStage
         List<StepBox> boxes = pages.SelectMany(FindBoxes).ToList();
 
         int schemeIndex = 0;
-        foreach (List<StepBox> scheme in GroupIntoSchemes(context, boxes).Where(s => s.Count >= MinBoxes))
+        foreach (List<StepBox> scheme in GroupIntoSchemes(context, boxes).Where(s => s.Count >= MinBoxes || (s.Count == 1 && IsGuardedFrame(s[0]))))
         {
             context.CancellationToken.ThrowIfCancellationRequested();
             Apply(scheme, schemeIndex++);
@@ -52,6 +53,23 @@ public sealed class StepSequenceStage : IPipelineStage
         {
             Rewrite(page, boxes.Where(b => b.Page == page && b.SchemeIndex is not null).ToList());
         }
+    }
+
+    /// <summary>
+    /// Spec 008 (FR-633): a single box is a frame only when it holds a name of at least 80% bold characters (the box is
+    /// narrow and shaded by <see cref="FindAreas"/>, and has text to its right by <see cref="FindBoxes"/>) and no ruling
+    /// crosses its band — the cells of a ruled data table are not frames.
+    /// </summary>
+    private static bool IsGuardedFrame(StepBox box)
+    {
+        List<LayoutWord> name = box.Lines.SelectMany(l => l.Words).Where(w => w.Box.CenterX < box.Area.Right).ToList();
+        int letters = name.Sum(w => w.Text.Length);
+        int bold = name.Where(w => w.Style.HasFlag(TextStyle.Bold)).Sum(w => w.Text.Length);
+        double top = box.Area.Top - EdgeTolerance;
+        double bottom = box.Area.Bottom + EdgeTolerance;
+        return letters > 0
+            && bold >= MinBoldShare * letters
+            && !box.Page.Rulings.Any(r => Math.Min(r.Y1, r.Y2) < bottom && Math.Max(r.Y1, r.Y2) > top);
     }
 
     /// <summary>Narrow shaded areas of a page not nested in another one, top to bottom: the candidate boxes.</summary>
