@@ -122,10 +122,10 @@ i zwykłe liczby bez zmian.
   tekst 8 pt „… postanowień art. 66¹ § 1 do § 3 oraz art. 68² Kodeksu cywilnego …” (cyfry indeksu 4 pt, podniesione),
   na tej samej stronie przypis „1) …” na dole i odnośnik „¹” po słowie w treści; Markdown zawiera
   „art. 66¹ § 1 do § 3 oraz art. 68²”, odnośnik po słowie jako `[^1]`, brak „661”, „682”
-- [ ] T011 [US1] Wzorzec (green T009–T010) w `src/LegalAgent.PdfParser/Stages/TextNormalizationStage.cs`:
+- [X] T011 [US1] Wzorzec (green T009–T010) w `src/LegalAgent.PdfParser/Stages/TextNormalizationStage.cs`:
   `LegalNumberTail` = `(?:(?<!\p{L})[Aa]rt\.|§)\s*\d+[a-z]*[⁰¹²³⁴-⁹]*$`; zaktualizuj komentarz klasy („after art./Art. N
   / § N”). Kryteria rozmiaru i podniesienia bez zmian
-- [ ] T012 [US1] Goldeny: uruchom pełny zestaw (FR-673) z `UPDATE_GOLDEN=1` dla `Corpus/acts` i
+- [X] T012 [US1] Goldeny: uruchom pełny zestaw (FR-673) z `UPDATE_GOLDEN=1` dla `Corpus/acts` i
   `tests/LegalAgent.Chunking.Tests` (golden ochrona-danych); prywatny korpus: przejrzyj diff corp-5 (tylko „661”,
   „682” → „66¹”, „68²”) i zaktualizuj golden; sprawdź skryptem, że każda zmieniona linia w
   `tests/LegalAgent.PdfParser.Tests/Corpus/acts/*.expected.md` i w goldenie fragmentów mieści się w wąskiej zgodzie

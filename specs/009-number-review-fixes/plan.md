@@ -172,6 +172,21 @@ parsera, prywatne listy obok PDF-ów.
   replika daje dziś „art. 66[^1] § 1 do § 3 oraz art. 682”). **Następny krok**: T011 (wzorzec `LegalNumberTail` w
   `TextNormalizationStage`), potem T012 (goldeny w wąskiej zgodzie). Prywatny korpus wymaga bezwzględnej ścieżki
   `LEGALAGENT_PRIVATE_CORPUS=C:/GIT/markdown_converter/tests/LegalAgent.PdfParser.Tests/Corpus/private`.
+- 2026-10-11, US1 (T011–T012): `LegalNumberTail` = `(?:(?<!\p{L})[Aa]rt\.|§)\s*\d+[a-z]*[⁰¹²³⁴-⁹]*$` (eda7728);
+  goldeny w wąskiej zgodzie (356f89f). Liczby miejsc (cyfry indeksu) zgodne z research: prawa-konsumenta 4
+  („art. 385⁵, art. 556⁴, art. 556⁵ i art. 576⁵” — dwa fałszywe `[^2]` znikają, przypisy dalej przenumerowane),
+  kredyt-konsumencki 1 („art. 720²”), prawo-bankowe 7 („art. 9²” ×2, „720²”, „479¹¹⁵”, „365¹”), usługi-płatnicze 3
+  („art. 166¹¹²)”). Golden fragmentów ochrona-danych: „art. 22¹”, „22²” ×2, „22³”, „77⁵”, „23¹” (8 cyfr); znikają
+  fałszywe `[^2]`–`[^4]`, więc definicje, które zagarniały, wracają do właściwego odnośnika (Art. 5a) albo są
+  nieprzypisane (`[^14]` „Niniejsza ustawa … wdraża …”); preambuła krótsza → 21 zamiast 22 części, przesunięte
+  identyfikatory. Sprawdzone skryptem: po cofnięciu indeksów na cyfry i usunięciu `[^n]` multizbiór wierszy Markdown
+  (4 akty + ochrona-danych) jest równy dawnemu z dokładnością do fałszywych `[^n]`. Prywatny corp-5: tylko
+  „66¹”, „68²” (golden zaktualizowany, poza git); `Corpus/banking` i pozostałe prywatne goldeny bez zmian.
+  Bramka liczb czerwona już tylko na corp-2 (`0×3, 1×2, 2×3`). `corpus/akty` odświeżane w T019.
+  - Ograniczenia zauważone przy przeglądzie (do „Znanych ograniczeń”): zakres „art. 720²–7205” — druga cyfra
+    indeksu po myślniku zostaje cyfrą (ogon nie zaczyna się od „art.”); „art. 166¹¹²)” to w PDF odnośnik przypisu
+    „112)” (`[^112]` istnieje), nie indeks artykułu — wcześniej sklejony „166112)”, teraz zapisany indeksem; ta sama
+    klasa co odnośniki sklejone (kandydat spec 010).
 
 ## Complexity Tracking
 
