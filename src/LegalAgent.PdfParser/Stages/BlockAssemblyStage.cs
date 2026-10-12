@@ -718,7 +718,8 @@ public sealed class BlockAssemblyStage : IPipelineStage
 
     /// <summary>
     /// Builds text runs; a separating space belongs to the run before it and never touches a page break. A footnote
-    /// reference is glued to the preceding word; the space after it opens the next run.
+    /// reference is glued to the preceding word; the space after it opens the next run. A reference standing before its
+    /// word (spec 010) is glued to that word instead.
     /// </summary>
     private sealed class InlineAccumulator
     {
@@ -732,9 +733,15 @@ public sealed class BlockAssemblyStage : IPipelineStage
         {
             if (word.FootnoteId is int id)
             {
+                // Spec 010: a reference standing before its word („³kurs”) takes the space before it and none after.
+                if (word.ReferencesNextWord && _hasRun && !glue)
+                {
+                    _text.Append(' ');
+                }
+
                 FlushRun();
                 _inlines.Add(new FootnoteRef(id));
-                _spaceAfterReference = true;
+                _spaceAfterReference = !word.ReferencesNextWord;
                 return;
             }
 

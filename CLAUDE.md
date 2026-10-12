@@ -83,7 +83,7 @@ Environment variables used by the tests:
   columns `Liczby +`, `Liczby −`, `Odnośniki sklejone`) and the gate `RegulationNumbers_HaveNoExcess`. The gate reads
   `number-check.txt` in the private directory (one document name per line, optional `;n,n` allowed excess numbers,
   `#` comments) and skips without it. `baseline-009/` there holds the goldens from before spec 009 for word-set
-  comparison.
+  comparison; spec 010 uses `baseline-010/` for it.
 - **`LEGALAGENT_CORPUS_FULL=1`**: enables the `CorpusFull` category, which runs metrics over the whole committed corpus and checks that its Markdown is up to date. Plain `dotnet test` only checks a fixed sample.
 - **`LEGALAGENT_CORPUS_REPORT`**: writes per-document measurement tables.
 
@@ -116,6 +116,25 @@ Spec 009 additions (parser 1.2.1):
 - A line-assembly rule separating small footer text from a large logo (own-text runs) was tried and rolled back: it
   changed act footnotes and tables (FR-661). The footer interleaved with a large logo is a known limitation (README).
 
+Spec 010 additions (parser 1.3.0):
+- `RuledTableGrid` builds rows, columns and cells (with column/row spans) from rulings; `TableDetection.FromRuledGrid`
+  places each line's words in the cell of their centre and baseline (segments split at a column border only at a gap
+  wider than 1.25× the median space); used when a region lies in a grid (`Grid.Around`).
+- `GrowRegion` joins lines in the same or adjacent ruled band whatever their gap (`Grid.Connects`); `Grid.Crosses`
+  tolerates breaks of up to 1 pt in a vertical drawn in pieces.
+- Model: `TableCell.RowSpan` / `ContinuesAbove` (merged cells; continuation cells share the inlines),
+  `TableBlock.HeaderGroup` (group row; `IsGroupedHeader`: group text bold, every column name starts with a bold line).
+  The renderer repeats merged text in every row and prefixes group text to the column names. `DocumentBuildStage`
+  renumbers footnote references inside tables (header group, header, rows).
+- `Table.Append` (merge across pages) skips a repeated header and lets `RowDraft.TakeContinuation` append a first row
+  with text in exactly one column to the cell above (grid rows only, never a section row);
+  `StartsAtPageEnd`/`ContinuesFromPreviousPage` count aligned rows of the other page (`AlignedRows`).
+- `FootnoteDetection`: leading references (`LayoutWord.ReferencesNextWord`), references inside table cells, footnote
+  area under a rule in body size when the first line has a referenced label, bare-number labels below a rule, and a
+  raised label set as a line of its own (`LoneLabel`).
+- `NumberCheck.Compare(..., LegalDocument)` does not count footnote labels as missing nor repeats of merged
+  cells/header groups as excess. Private-corpus word-set baseline is `baseline-010/`.
+
 A later stage usually skips lines that an earlier stage claimed. For example, `TableDetection` and `ReadingOrder` skip lines annotated as belonging to a table-document. When you change one stage, check how the downstream stages read those annotations.
 
 **Text extraction is custom.** The parser does not use PdfPig's `DocumentLayoutAnalysis`; the reasons are in `specs/001-legal-pdf-parser/research.md` R3. Words, lines, segments, columns, tables and headings are all built from letters, rulings and images. This keeps per-letter style (`**bold**` fragments) and keeps wide gaps as table-cell boundaries.
@@ -127,7 +146,7 @@ A later stage usually skips lines that an earlier stage claimed. For example, `T
 
 `AssignLevels` gives structural kinds consecutive levels from 2, puts units one level below the deepest structural kind, and caps typographic levels. The resulting level hierarchy is a contract invariant (no gaps).
 
-**Rendering.** `Rendering/` turns the section tree into CommonMark + GFM. The output contract is `specs/001-legal-pdf-parser/contracts/markdown-output.md`, plus the addenda in spec 002, spec 007 and spec 008 (contract 1.3.0: slash labels `- 1/`, bare `§ N` units, glossary items `- 1/ **termin** definicja`, letter and Roman dot labels `- a\.`, `- ii\.` in a consistent sequence). It covers page markers `<!-- page: N -->`, footnotes `[^n]`, escaped list labels (`- 1\)`), GFM tables, and a fallback table format (`a \| b`) with warning TBL001.
+**Rendering.** `Rendering/` turns the section tree into CommonMark + GFM. The output contract is `specs/001-legal-pdf-parser/contracts/markdown-output.md`, plus the addenda in spec 002, spec 007 and spec 008 (contract 1.3.0: slash labels `- 1/`, bare `§ N` units, glossary items `- 1/ **termin** definicja`, letter and Roman dot labels `- a\.`, `- ii\.` in a consistent sequence). Spec 010 adds contract 1.4.0 (merged cells repeated in every row, header group, `RowSpan`/`ContinuesAbove`/`HeaderGroup`). It covers page markers `<!-- page: N -->`, footnotes `[^n]`, escaped list labels (`- 1\)`), GFM tables, and a fallback table format (`a \| b`) with warning TBL001.
 
 **Output must contain only text from the PDF.** Never synthesize words such as labels or „Krok N:”. Structure is expressed only through Markdown formatting.
 
@@ -140,7 +159,8 @@ structure heuristics of its own — structure errors are fixed in the parser.
 - `UnitSplitter`: units longer than `MaxChunkLength` (default 2000) are split into atoms (paragraph, table row, list
   item with nested items as separate atoms, unreferenced footnote) packed greedily; every part starts with the unit
   heading, table parts with the header row. `FragmentRenderer` renders each part through the parser's
-  `MarkdownRenderer` without page markers; `PageTracker` gives part pages (`TableRow.Page` from the parser).
+  `MarkdownRenderer` without page markers; `PageTracker` gives part pages (`TableRow.Page` from the parser). Merged-cell continuation cells carry the merged
+  text, so every table part keeps the group label even when it starts inside a group (spec 010).
 - `UnitKeyBuilder`: `unitKey` = designation shared by versions + shortest unique segment path (`BP/REG/06 | § 30`),
   so the same unit has the same key in every version; `ChunkIdBuilder`: `<docId>_<hash16(unitKey)>_<part>`.
 - Metadata values meant for the model are English (`type` = regulation/tariff/procedure/act, `status` =

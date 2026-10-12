@@ -30,8 +30,20 @@ public sealed class TableDetectionStage : IPipelineStage
     private const int MinBandSupport = 2;
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
+
+    /// <summary>Largest break (in points) between two pieces of one vertical ruling.</summary>
+    private const double VerticalBreakSlack = 1;
     private const double MinCellGapEm = 1.0;
     private const string LeaderDots = "....";
+
+    /// <summary>
+    /// Spec 010: a column border separates two cells of one segment only in a gap this many times wider than the other word
+    /// spaces of the segment (cell padding on both sides of the ruling); in an ordinary space it is text running over it.
+    /// </summary>
+    private const double GridSplitGapRatio = 1.25;
+
+    /// <summary>Spec 010: a word set right at a column ruling may reach this far (points) over it with its glyph box.</summary>
+    private const double GridBorderTouch = 2;
 
     /// <summary>Widest gap between a hanging „1.”, „1/”, „a/” label and its text (corporate regulations: 0.9–1.5 em).</summary>
     private const double MaxHangingLabelGapEm = 2.0;
@@ -244,6 +256,12 @@ public sealed class TableDetectionStage : IPipelineStage
             .ToList();
 
         var tables = new List<Table>();
+        if (flow.Count == 0)
+        {
+            return tables;
+        }
+
+        var pageGrid = new Grid(options.UseRulingLines ? rulings : [], flow);
         int start = 0;
         int free = 0;
         while (start < flow.Count)
@@ -254,7 +272,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 continue;
             }
 
-            List<Row> region = GrowRegion(context, flow, start);
+            List<Row> region = GrowRegion(context, flow, start, pageGrid);
             Table? table = Build(context, page, rulings, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
             if (table is null)
             {
@@ -274,7 +292,7 @@ public sealed class TableDetectionStage : IPipelineStage
     /// A bold column-name row and a few rows ending the page, with the same column-name row repeated at the top of the
     /// next page: the start of a table that continues there, however few rows fit.
     /// </summary>
-    private static bool StartsAtPageEnd(PipelineContext context, LayoutPage page, List<Row> region)
+    private static bool StartsAtPageEnd(PipelineContext context, LayoutPage page, List<Row> region, double tolerance)
     {
         Row header = region[0];
         if (!header.IsMulti || !header.IsAllBold
@@ -285,24 +303,78 @@ public sealed class TableDetectionStage : IPipelineStage
 
         LayoutLine? next = context.Pages.FirstOrDefault(p => p.Number == page.Number + 1)?.Lines
             .FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0);
-        return next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal);
+        if (next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal))
+        {
+            return true;
+        }
+
+        // Spec 010 (FR-741): the rows go on at the top of the next page in the same columns, without a repeated header —
+        // the row threshold counts both parts.
+        int rows = region.Count(r => r.IsMulti) + AlignedRows(context, page.Number + 1, region, fromTop: true, tolerance).Count;
+        return rows >= context.Options.Tables.MinRows;
     }
 
     /// <summary>
     /// The first lines of a page: a bold column-name row that the previous page also has, and a few rows — the end of a
     /// table continued from there, however few rows remain.
     /// </summary>
-    private static bool ContinuesFromPreviousPage(PipelineContext context, LayoutPage page, List<Row> region)
+    private static bool ContinuesFromPreviousPage(PipelineContext context, LayoutPage page, List<Row> region, double tolerance)
     {
         Row header = region[0];
-        if (!header.IsMulti || !header.IsAllBold
+        if (!header.IsMulti
             || !ReferenceEquals(page.Lines.FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0), header.Line))
         {
             return false;
         }
 
         LayoutPage? previous = context.Pages.FirstOrDefault(p => p.Number == page.Number - 1);
-        return previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal));
+        if (header.IsAllBold && previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal)))
+        {
+            return true;
+        }
+
+        // Spec 010 (FR-741): the previous page ends with a bold column-name row and rows in the same columns.
+        List<Row> before = AlignedRows(context, page.Number - 1, region, fromTop: false, tolerance);
+        return before.Count >= 2
+            && before[^1].IsAllBold
+            && region.Count(r => r.IsMulti) + before.Count >= context.Options.Tables.MinRows;
+    }
+
+    /// <summary>
+    /// Spec 010 (FR-741): the multi-cell lines opening (<paramref name="fromTop"/>) or ending page <paramref name="number"/>
+    /// with as many cells as the rows of <paramref name="region"/>, each starting in one of their columns; ordered from the
+    /// page edge inwards.
+    /// </summary>
+    private static List<Row> AlignedRows(PipelineContext context, int number, List<Row> region, bool fromTop, double tolerance)
+    {
+        var result = new List<Row>();
+        LayoutPage? other = context.Pages.FirstOrDefault(p => p.Number == number);
+        List<Row> rows = region.Where(r => r.IsMulti).ToList();
+        if (other is null || rows.Count == 0)
+        {
+            return result;
+        }
+
+        double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * other.Width;
+        List<double> lefts = rows.SelectMany(r => r.Cells.Select(c => c.Box.Left)).ToList();
+        List<LayoutLine> lines = other.Lines.Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0).ToList();
+        if (!fromTop)
+        {
+            lines.Reverse();
+        }
+
+        foreach (LayoutLine line in lines)
+        {
+            var row = new Row(line, CellsOf(line), wideCell);
+            if (!row.IsMulti || row.Cells.Count != rows[0].Cells.Count || !row.Cells.All(c => lefts.Any(x => Math.Abs(x - c.Box.Left) <= tolerance)))
+            {
+                break;
+            }
+
+            result.Add(row);
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -366,15 +438,19 @@ public sealed class TableDetectionStage : IPipelineStage
             && text.Box.Left - label.Box.Right <= MaxHangingLabelGapEm * size;
     }
 
-    /// <summary>Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>).</summary>
-    private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start)
+    /// <summary>
+    /// Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>); spec 010:
+    /// inside one ruled grid any gap is (tall rows of a matrix).
+    /// </summary>
+    private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start, Grid grid)
     {
         double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * flow[start].Line.Box.Height;
         var region = new List<Row> { flow[start] };
         for (int i = start + 1; i < flow.Count; i++)
         {
             double gap = flow[i].Line.Baseline - region[^1].Line.Baseline;
-            if (gap <= 0 || gap > MaxRowGapInLeadings * leading)
+            bool sameGrid = gap > 0 && grid.Connects(region[^1].Line.Box.CenterY, flow[i].Line.Box.CenterY);
+            if (!sameGrid && (gap <= 0 || gap > MaxRowGapInLeadings * leading))
             {
                 break;
             }
@@ -428,14 +504,14 @@ public sealed class TableDetectionStage : IPipelineStage
 
         // Likewise a gridless table starts at its bold column-name row: multi-cell lines above it (numbered clauses
         // with a hanging indent) are running text, so the seed moves on to the header.
-        if (!region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
+        if (!grid.Contains(region[0].Line.Box.CenterY) && !region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
         {
             return null;
         }
 
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
-        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && (StartsAtPageEnd(context, page, region) || ContinuesFromPreviousPage(context, page, region))))
+        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && (StartsAtPageEnd(context, page, region, tolerance) || ContinuesFromPreviousPage(context, page, region, tolerance))))
         {
             return null;
         }
@@ -455,7 +531,9 @@ public sealed class TableDetectionStage : IPipelineStage
                 || row.IsAllBold
                 || region[0].Cells.Count < 2
                 || row.Cells[^1].Box.Right <= region[0].Cells[1].Box.Left;
-            if (row.IsMulti || gap <= 0 || !belongs || !headerLine || (!seedInGrid && IsUnitLine(row)))
+            // Spec 010: in a ruled grid a multi-cell line above the seed is a line of the same header cells.
+            bool sameGrid = seedInGrid && grid.Connects(row.Line.Box.CenterY, region[0].Line.Box.CenterY);
+            if ((row.IsMulti && !sameGrid) || gap <= 0 || !belongs || !headerLine || (!seedInGrid && IsUnitLine(row)))
             {
                 break;
             }
@@ -466,6 +544,14 @@ public sealed class TableDetectionStage : IPipelineStage
         // Inside a ruled grid the rulings make the rows: a line whose cells start in the table's columns is a row even when
         // they happen to be spaced like the words of a justified line.
         bool gridRegion = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
+
+        // Spec 010 (research R1): a region inside a grid with column rulings takes its columns and cells from the rulings —
+        // centred names and values belong to the band of their centre, whatever their left edges.
+        if (gridRegion && grid.Around(region) is { } bounds && FromRuledGrid(page, rulings, region, bounds, exceptions) is { } ruledTable)
+        {
+            return ruledTable;
+        }
+
         List<Row> rowsOfCells = region.Where(r => r.IsMulti).ToList();
         List<Row> multi = region.Where(r => r.IsMulti || (gridRegion && IsAligned(r, rowsOfCells, tolerance))).ToList();
 
@@ -581,6 +667,148 @@ public sealed class TableDetectionStage : IPipelineStage
 
         return table;
     }
+
+    /// <summary>
+    /// Spec 010: the table of a region in a ruled grid built from <see cref="RuledTableGrid"/> — every word goes to the cell
+    /// of its centre and baseline; null when the rulings make no consistent grid or a word lies outside it.
+    /// </summary>
+    private static Table? FromRuledGrid(LayoutPage page, IEnumerable<Segment> rulings, List<Row> region, (double Top, double Bottom) bounds, string[] exceptions)
+    {
+        if (RuledTableGrid.TryBuild(rulings, bounds.Top, bounds.Bottom) is not { ColumnCount: >= 2 } grid)
+        {
+            return null;
+        }
+
+        var pieces = new List<(RuledTableGrid.GridCell Cell, LineSegment Segment)>();
+        foreach (Row row in region)
+        {
+            var byCell = new List<(RuledTableGrid.GridCell Cell, List<LayoutWord> Words)>();
+            foreach (List<LayoutWord> part in GridParts(row.Line, grid))
+            {
+                if (grid.Locate(BoxOf(part), row.Line.Baseline) is not { } unit)
+                {
+                    return null;
+                }
+
+                // A section row across the whole box keeps its text in the band of its centre, as a row of one cell.
+                RuledTableGrid.GridCell cell = grid.CellAt(unit.Row, unit.Column);
+                if (cell.ColumnSpan == grid.ColumnCount)
+                {
+                    cell = cell with { Column = unit.Column, ColumnSpan = 1 };
+                }
+
+                int index = byCell.FindIndex(p => p.Cell == cell);
+                if (index < 0)
+                {
+                    byCell.Add((cell, part));
+                }
+                else
+                {
+                    byCell[index].Words.AddRange(part);
+                }
+            }
+
+            pieces.AddRange(byCell.Select(p => (p.Cell, new LineSegment(p.Words, BoxOf(p.Words)))));
+        }
+
+        var bands = Enumerable.Range(0, grid.ColumnCount).Select(c => new ColumnBand(grid.Columns[c], grid.Columns[c + 1])).ToList();
+        var table = new Table(page.Number, bands, exceptions);
+        foreach (Row row in region)
+        {
+            table.Lines.Add(row.Line);
+        }
+
+        // Spec 010 (research R4): a bold group row over some column names becomes the header group; cells it shares with
+        // the column-name row below (merged down over both) belong to the column names.
+        bool grouped = IsGroupedHeader(grid, pieces);
+        var group = new List<GridPiece>();
+        var cells = new List<GridPiece>();
+        foreach ((RuledTableGrid.GridCell cell, LineSegment segment) in pieces)
+        {
+            if (grouped && cell.Row == 0 && cell.RowSpan == 1)
+            {
+                group.Add(new GridPiece(0, 1, cell.Column, cell.ColumnSpan, segment));
+            }
+            else if (grouped && cell.Row == 0)
+            {
+                // Merged down from the group row into the column names: a column name of its own.
+                cells.Add(new GridPiece(1, 1, cell.Column, cell.ColumnSpan, segment));
+            }
+            else
+            {
+                bool section = grid.CellAt(cell.Row, cell.Column).ColumnSpan == grid.ColumnCount;
+                cells.Add(new GridPiece(cell.Row, cell.RowSpan, cell.Column, cell.ColumnSpan, segment, section));
+            }
+        }
+
+        table.AddGridRows(cells, group);
+        return table;
+    }
+
+    /// <summary>
+    /// The words of one line in one grid cell: the cell's first row, rows, first column and columns; <paramref name="Section"/>
+    /// when the cell runs across the whole box (a section row kept in the column of its centre).
+    /// </summary>
+    private sealed record GridPiece(int Row, int RowSpan, int Column, int Span, LineSegment Segment, bool Section = false);
+
+    /// <summary>
+    /// The first grid row holds a cell spanning some but not all columns and otherwise only cells merged down into the
+    /// second row, the group text is bold and every column name starts with a bold line (a plain explanation may follow):
+    /// a group row above the column names (firm-3, firm-5).
+    /// </summary>
+    private static bool IsGroupedHeader(RuledTableGrid grid, List<(RuledTableGrid.GridCell Cell, LineSegment Segment)> pieces)
+    {
+        static bool Bold(LineSegment segment) => segment.Words.Where(w => w.FootnoteId is null).All(w => w.Style.HasFlag(TextStyle.Bold));
+        List<RuledTableGrid.GridCell> first = grid.Cells.Where(c => c.Row == 0).ToList();
+        bool IsGroup((RuledTableGrid.GridCell Cell, LineSegment Segment) p) => p.Cell.Row == 0 && p.Cell.RowSpan == 1;
+        return grid.RowCount >= 3
+            && first.Any(c => c.RowSpan == 1 && c.ColumnSpan > 1 && c.ColumnSpan < grid.ColumnCount)
+            && first.All(c => (c.RowSpan == 1 && c.ColumnSpan > 1) || c.RowSpan >= 2)
+            && pieces.Any(IsGroup)
+            && pieces.Any(p => p.Cell.Row == 1)
+            && pieces.Where(IsGroup).All(p => Bold(p.Segment))
+            && pieces.Where(p => p.Cell.Row <= 1 && !IsGroup(p)).GroupBy(p => p.Cell).All(g => Bold(g.First().Segment));
+    }
+
+    /// <summary>
+    /// The words of a line in pieces placed by their centre: its segments, split where a column border lies in a gap
+    /// between two words wider than the median other space (<see cref="GridSplitGapRatio"/>) and the words fall into
+    /// different cells; text running over a border from one cell, or across a row without the border, stays whole.
+    /// </summary>
+    private static List<List<LayoutWord>> GridParts(LayoutLine line, RuledTableGrid grid)
+    {
+        IEnumerable<IReadOnlyList<LayoutWord>> segments = line.Segments.Count > 0 ? line.Segments.Select(s => s.Words) : [line.Words];
+        var parts = new List<List<LayoutWord>>();
+        foreach (IReadOnlyList<LayoutWord> words in segments.Where(w => w.Count > 0))
+        {
+            List<double> gaps = words.Zip(words.Skip(1), (a, b) => b.Box.Left - a.Box.Right).ToList();
+            var part = new List<LayoutWord> { words[0] };
+            for (int i = 1; i < words.Count; i++)
+            {
+                double gapStart = words[i - 1].Box.Right;
+                double gapEnd = words[i].Box.Left;
+                List<double> others = gaps.Where((_, k) => k != i - 1).Order().ToList();
+                double space = others.Count > 0 ? others[others.Count / 2] : 0;
+                if (gapEnd - gapStart > GridSplitGapRatio * space && grid.Columns.Any(x => x > gapStart - GridBorderTouch && x < gapEnd + GridBorderTouch)
+                    && CellOf(grid, words[i - 1], line.Baseline) != CellOf(grid, words[i], line.Baseline))
+                {
+                    parts.Add(part);
+                    part = [];
+                }
+
+                part.Add(words[i]);
+            }
+
+            parts.Add(part);
+        }
+
+        return parts;
+    }
+
+    private static RuledTableGrid.GridCell? CellOf(RuledTableGrid grid, LayoutWord word, double baseline) =>
+        grid.Locate(word.Box, baseline) is { } unit ? grid.CellAt(unit.Row, unit.Column) : null;
+
+    private static Rect BoxOf(List<LayoutWord> words) => words.Skip(1).Aggregate(words[0].Box, (box, w) => box.Union(w.Box));
 
     /// <summary>
     /// Rows whose cells are all lone list labels („1.”, „a)”, „1/”) but the last: numbered paragraphs with a hanging
@@ -804,11 +1032,44 @@ public sealed class TableDetectionStage : IPipelineStage
         /// <summary>Index of the band between horizontal borders that <paramref name="y"/> falls into.</summary>
         public int RowIndex(double y) => _borders.Count(b => b <= y);
 
+        /// <summary>The borders above the first and below the last line of <paramref name="region"/>; null outside the grid.</summary>
+        public (double Top, double Bottom)? Around(List<Row> region)
+        {
+            int first = _borders.Count(b => b <= region[0].Line.Box.CenterY);
+            int last = _borders.Count(b => b <= region[^1].Line.Box.CenterY);
+            return first == 0 || last >= _borders.Count ? null : (_borders[first - 1], _borders[last]);
+        }
+
         /// <summary>Number of distinct grid rows the lines of <paramref name="region"/> fall into.</summary>
         public int Rows(List<Row> region) =>
             region.Select(r => r.Line.Box.CenterY).Where(Contains).Select(y => _borders.Count(b => b <= y)).Distinct().Count();
 
         public bool Contains(double y) => Middle(y) is double middle && _verticals.Any(v => Crosses(v, middle));
+
+        /// <summary>
+        /// Spec 010: <paramref name="from"/> and <paramref name="to"/> lie in one ruled band or in two adjacent ones — not
+        /// across an empty band (a spacer row between two tables of a form).
+        /// </summary>
+        public bool Connects(double from, double to)
+        {
+            int first = RowIndex(from);
+            int last = RowIndex(to);
+            if (first == 0 || last >= _borders.Count || last - first > 1)
+            {
+                return false;
+            }
+
+            for (int k = first; k <= last; k++)
+            {
+                double middle = (_borders[k - 1] + _borders[k]) / 2;
+                if (!_verticals.Any(v => Crosses(v, middle)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
         /// <summary>The grid row holding <paramref name="y"/> has its outer borders only — one cell across the box.</summary>
         public bool Spans(double y)
@@ -822,7 +1083,12 @@ public sealed class TableDetectionStage : IPipelineStage
             return xs.Count > 0 && xs.All(x => x - xs.Min() <= RulingSlack || xs.Max() - x <= RulingSlack);
         }
 
-        private static bool Crosses(Segment vertical, double y) => Math.Min(vertical.Y1, vertical.Y2) <= y && Math.Max(vertical.Y1, vertical.Y2) >= y;
+        /// <summary>
+        /// Spec 010: within <see cref="VerticalBreakSlack"/> of its ends — a vertical drawn in pieces breaks where an inner
+        /// ruling of one column meets it, which may be the middle of a band (firm-5 p. 12).
+        /// </summary>
+        private static bool Crosses(Segment vertical, double y) =>
+            Math.Min(vertical.Y1, vertical.Y2) - VerticalBreakSlack <= y && Math.Max(vertical.Y1, vertical.Y2) + VerticalBreakSlack >= y;
 
         /// <summary>The middle of the grid row (band between horizontal borders) holding <paramref name="y"/>; null outside.</summary>
         private double? Middle(double y)
@@ -952,6 +1218,7 @@ public sealed class TableDetectionStage : IPipelineStage
     private sealed class Table(int page, IReadOnlyList<ColumnBand> bands, string[] exceptions)
     {
         private readonly List<RowDraft> _rows = [];
+        private RowDraft? _group;
 
         public int FirstPage { get; } = page;
 
@@ -976,6 +1243,44 @@ public sealed class TableDetectionStage : IPipelineStage
             }
         }
 
+        /// <summary>
+        /// Spec 010: rows of a ruled grid — each piece is the words of one line in one cell, given in line order; a cell's
+        /// text goes to the row it starts in, and a cell merged over several rows (R2) is continued in each of them.
+        /// </summary>
+        public void AddGridRows(List<GridPiece> pieces, List<GridPiece> group)
+        {
+            if (group.Count > 0)
+            {
+                _group = new RowDraft(Bands.Count, FirstPage);
+                foreach (GridPiece piece in group)
+                {
+                    _group.Add(piece.Column, piece.Span, piece.Segment, exceptions);
+                }
+            }
+
+            var drafts = new SortedDictionary<int, RowDraft>();
+            RowDraft Draft(int row) => drafts.TryGetValue(row, out RowDraft? draft) ? draft : drafts[row] = new RowDraft(Bands.Count, FirstPage);
+            foreach (GridPiece piece in pieces)
+            {
+                RowDraft draft = Draft(piece.Row);
+                draft.Add(piece.Column, piece.Span, piece.Segment, exceptions);
+                draft.IsGridRow = true;
+                draft.IsSection |= piece.Section;
+            }
+
+            foreach (GridPiece merged in pieces.Where(p => p.RowSpan > 1).DistinctBy(p => (p.Row, p.Column)))
+            {
+                RowDraft start = Draft(merged.Row);
+                start.SetRowSpan(merged.Column, merged.RowSpan);
+                for (int k = 1; k < merged.RowSpan; k++)
+                {
+                    Draft(merged.Row + k).ContinueFrom(merged.Column, start);
+                }
+            }
+
+            _rows.AddRange(drafts.Values);
+        }
+
         public void AddVisualRow(Row row)
         {
             var draft = new RowDraft(row.Cells.Count, FirstPage);
@@ -995,6 +1300,12 @@ public sealed class TableDetectionStage : IPipelineStage
                 rows = rows.Skip(1).ToList();
             }
 
+            // Spec 010 (FR-743): a cell cut at the page end goes on in the first row of the next part.
+            if (rows.Count > 0 && _rows.Count > 0 && _rows[^1].TakeContinuation(rows[0], exceptions))
+            {
+                rows = rows.Skip(1).ToList();
+            }
+
             _rows.AddRange(rows);
             Lines.AddRange(next.Lines);
             LastPage = next.LastPage;
@@ -1004,13 +1315,29 @@ public sealed class TableDetectionStage : IPipelineStage
         {
             int columns = IsFallback ? _rows.Max(r => r.Columns) : Bands.Count;
             List<TableRow> rows = _rows.Select(r => r.ToRow(columns, IsFallback)).ToList();
-            TableRow? header = _rows.Count > 1 && _rows[0].AllBold ? rows[0] : null;
+            // Under a header group the column-name row is the header even when a name has a plain explanation line.
+            TableRow? header = _rows.Count > 1 && (_rows[0].AllBold || _group is not null) ? rows[0] : null;
+            if (header is not null && header.Cells.Any(c => c.RowSpan > 1))
+            {
+                // A column name is never merged into the rows below it: they keep the cell empty.
+                List<IReadOnlyList<Inline>> merged = header.Cells.Where(c => c.RowSpan > 1).Select(c => c.Inlines).ToList();
+                rows[0] = header = header with { Cells = header.Cells.Select(c => c with { RowSpan = 1 }).ToList() };
+                for (int r = 1; r < rows.Count; r++)
+                {
+                    rows[r] = rows[r] with
+                    {
+                        Cells = rows[r].Cells.Select(c => c.ContinuesAbove && merged.Any(m => ReferenceEquals(m, c.Inlines)) ? new TableCell([], c.ColumnSpan) : c).ToList(),
+                    };
+                }
+            }
+
             return new TableBlock(
                 new PageRange(FirstPage, LastPage),
                 header,
                 header is null ? rows : rows.Skip(1).ToList(),
                 columns,
-                IsFallback);
+                IsFallback,
+                header is not null && !IsFallback ? _group?.ToRow(columns, fallback: false) : null);
         }
     }
 
@@ -1020,13 +1347,73 @@ public sealed class TableDetectionStage : IPipelineStage
         private readonly List<Token>[] _tokens = Enumerable.Range(0, columns).Select(_ => new List<Token>()).ToArray();
         private readonly string?[] _lastLine = new string?[columns];
         private readonly int[] _spans = Enumerable.Repeat(1, columns).ToArray();
+        private readonly int[] _rowSpans = Enumerable.Repeat(1, columns).ToArray();
+        private readonly RowDraft?[] _continues = new RowDraft?[columns];
+        private readonly List<Inline>?[] _inlines = new List<Inline>?[columns];
 
         public int Columns => columns;
+
+        /// <summary>Spec 010: the row comes from a ruled grid (<see cref="Table.AddGridRows"/>).</summary>
+        public bool IsGridRow { get; set; }
+
+        /// <summary>Spec 010: the row is a cell across the whole ruled box (a section row).</summary>
+        public bool IsSection { get; set; }
+
+        /// <summary>Spec 010: the cell starting in <paramref name="column"/> is merged over <paramref name="rows"/> rows.</summary>
+        public void SetRowSpan(int column, int rows) => _rowSpans[column] = rows;
+
+        /// <summary>Spec 010: <paramref name="column"/> continues the merged cell of <paramref name="source"/>.</summary>
+        public void ContinueFrom(int column, RowDraft source) => _continues[column] = source;
+
+        /// <summary>Inlines of the cell starting in <paramref name="column"/>, built once (continuations share them).</summary>
+        private List<Inline> InlinesOf(int column) => _inlines[column] ??= Inlines(_tokens[column]);
 
         public bool AllBold => _tokens.Any(t => t.Count > 0) && _tokens.All(t => t.All(w => w.Style.HasFlag(TextStyle.Bold)));
 
         /// <summary>Row text per column, used to recognise a header repeated on the next page.</summary>
-        public string Key => string.Join("|", _tokens.Select(t => string.Join(' ', t.Select(w => w.Text))));
+        public string Key => string.Join("|", _tokens.Select(t => string.Join(' ', t.Where(w => w.FootnoteId is null).Select(w => w.Text))));
+
+        /// <summary>
+        /// Spec 010 (FR-743): <paramref name="next"/> — the first row of a table's part on the next page — holds text in
+        /// exactly one column, which this row fills: the text goes on in that cell (in the merged cell this row continues)
+        /// and true is returned. A row with text in two or more columns is a row of its own.
+        /// </summary>
+        public bool TakeContinuation(RowDraft next, string[] exceptions)
+        {
+            if (next.Columns != columns || !IsGridRow || !next.IsGridRow || next.IsSection)
+            {
+                return false;
+            }
+
+            List<int> filled = Enumerable.Range(0, columns).Where(c => next._tokens[c].Count > 0).ToList();
+            if (filled.Count != 1 || next._rowSpans[filled[0]] > 1)
+            {
+                return false;
+            }
+
+            int column = filled[0];
+            RowDraft target = _continues[column] ?? this;
+            List<Token> tokens = target._tokens[column];
+            if (tokens.Count == 0)
+            {
+                return false;
+            }
+
+            List<Token> more = next._tokens[column];
+            HyphenJoin join = target._lastLine[column] is { } previous
+                ? Hyphenation.Decide(previous, string.Join(' ', more.Select(t => t.Text)), exceptions)
+                : HyphenJoin.None;
+            if (join == HyphenJoin.Remove && tokens[^1].Text.EndsWith('-'))
+            {
+                tokens[^1] = tokens[^1] with { Text = tokens[^1].Text[..^1] };
+            }
+
+            tokens.Add(more[0] with { Glue = join != HyphenJoin.None });
+            tokens.AddRange(more.Skip(1));
+            target._lastLine[column] = next._lastLine[column];
+            target._inlines[column] = null;
+            return true;
+        }
 
         /// <summary>Adds a cell segment; a cell continued on a further line is joined with hyphenation rules (FR-012).</summary>
         public void Add(int column, int span, LineSegment cell, string[] exceptions)
@@ -1047,7 +1434,8 @@ public sealed class TableDetectionStage : IPipelineStage
 
             for (int i = 0; i < cell.Words.Count; i++)
             {
-                tokens.Add(new Token(cell.Words[i].Text, cell.Words[i].Style, Glue: i == 0 && glue));
+                LayoutWord word = cell.Words[i];
+                tokens.Add(new Token(word.Text, word.Style, Glue: i == 0 && glue, word.FootnoteId, word.ReferencesNextWord));
             }
 
             _lastLine[column] = cell.Text;
@@ -1059,6 +1447,14 @@ public sealed class TableDetectionStage : IPipelineStage
             int c = 0;
             while (c < Math.Min(columns, tableColumns))
             {
+                if (!fallback && _continues[c] is { } source)
+                {
+                    int covered = Math.Min(source._spans[c], tableColumns - c);
+                    cells.Add(new TableCell(source.InlinesOf(c), covered, ContinuesAbove: true));
+                    c += covered;
+                    continue;
+                }
+
                 int span = fallback ? 1 : _spans[c];
 
                 // Text in a column the span would cover is never hidden (FR-066): the span stops before it.
@@ -1071,7 +1467,7 @@ public sealed class TableDetectionStage : IPipelineStage
                     }
                 }
 
-                cells.Add(new TableCell(Inlines(_tokens[c]), span));
+                cells.Add(new TableCell(InlinesOf(c), span, fallback ? 1 : _rowSpans[c]));
                 c += span;
             }
 
@@ -1083,16 +1479,39 @@ public sealed class TableDetectionStage : IPipelineStage
             return new TableRow(cells) { Page = page };
         }
 
-        /// <summary>Text runs of a cell; a separating space belongs to the run before it.</summary>
+        /// <summary>
+        /// Text runs of a cell; a separating space belongs to the run before it. Spec 010: a footnote reference is glued to
+        /// the word before it — or, standing before its word („³kurs”), to the word after it — as in running text.
+        /// </summary>
         private static List<Inline> Inlines(List<Token> tokens)
         {
             var inlines = new List<Inline>();
             var text = new StringBuilder();
             TextStyle style = TextStyle.None;
+            Token? reference = null;
             for (int i = 0; i < tokens.Count; i++)
             {
                 Token token = tokens[i];
-                string separator = i == 0 || token.Glue ? string.Empty : " ";
+                if (token.FootnoteId is int id)
+                {
+                    if (token.ReferencesNextWord && text.Length > 0 && !token.Glue)
+                    {
+                        text.Append(' ');
+                    }
+
+                    if (text.Length > 0)
+                    {
+                        inlines.Add(new TextRun(text.ToString(), style));
+                        text.Clear();
+                    }
+
+                    inlines.Add(new FootnoteRef(id));
+                    reference = token;
+                    continue;
+                }
+
+                string separator = i == 0 || token.Glue || reference is { ReferencesNextWord: true } ? string.Empty : " ";
+                reference = null;
                 if (text.Length > 0 && token.Style != style)
                 {
                     inlines.Add(new TextRun(text.Append(separator).ToString(), style));
@@ -1112,6 +1531,6 @@ public sealed class TableDetectionStage : IPipelineStage
             return inlines;
         }
 
-        private sealed record Token(string Text, TextStyle Style, bool Glue);
+        private sealed record Token(string Text, TextStyle Style, bool Glue, int? FootnoteId = null, bool ReferencesNextWord = false);
     }
 }

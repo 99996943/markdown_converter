@@ -30,6 +30,29 @@ public sealed class SplitTablesTests
         Assert.All(chunks, c => Assert.Empty(c.ListLabels));
     }
 
+    /// <summary>
+    /// Spec 010 (T022): a merged cell over four rows prints its text in every row, so a part starting in the middle of the
+    /// group keeps the group's label — without any change to the chunker.
+    /// </summary>
+    [Fact]
+    public async Task ChunkAsync_PartStartingInsideAMergedCell_KeepsItsText()
+    {
+        string[] t = [.. Enumerable.Range(1, 4).Select(i => Words(i, 60))];
+        Inline[] label = [Text("przelew SWIFT")];
+        TableRow[] rows =
+        [
+            new([new TableCell(label, RowSpan: 4), new TableCell([Text(t[0])])]),
+            .. t.Skip(1).Select(x => new TableRow([new TableCell(label, ContinuesAbove: true), new TableCell([Text(x)])])),
+        ];
+        TableBlock table = Table(1, 1, Row("Usługa", "Stawka"), rows);
+
+        IReadOnlyList<Model.Chunk> chunks = await Chunk(Document(null, null, Paragraph(4, 1, 1, table)));
+
+        Assert.True(chunks.Count >= 2);
+        Assert.All(chunks.Skip(1), c => Assert.StartsWith($"### § 4.\n\n{Header}\n| przelew SWIFT | ", c.Content, StringComparison.Ordinal));
+        Assert.Equal(4, chunks.Sum(c => c.Content.Split('\n').Count(l => l.StartsWith("| przelew SWIFT | ", StringComparison.Ordinal))));
+    }
+
     [Fact]
     public async Task ChunkAsync_TableWithoutHeaderRowRepeatsNothing()
     {

@@ -175,8 +175,33 @@ public sealed class DocumentBuildStage : IPipelineStage
                 })
                 .ToArray(),
         },
+        TableBlock table when InlinesOf(table).Any(i => i is FootnoteRef) => Renumber(table, numbers),
         _ => block,
     };
+
+    /// <summary>
+    /// Spec 010: footnote references inside table cells; the cells continuing a merged cell keep sharing its inlines.
+    /// </summary>
+    private static TableBlock Renumber(TableBlock table, Dictionary<int, int> numbers)
+    {
+        var renumbered = new Dictionary<IReadOnlyList<Inline>, Inline[]>(ReferenceEqualityComparer.Instance);
+        TableRow Row(TableRow row) => row with
+        {
+            Cells = row.Cells
+                .Select(c => c with
+                {
+                    Inlines = renumbered.TryGetValue(c.Inlines, out Inline[]? done) ? done : renumbered[c.Inlines] = Renumber(c.Inlines, numbers),
+                })
+                .ToArray(),
+        };
+
+        return table with
+        {
+            Header = table.Header is null ? null : Row(table.Header),
+            HeaderGroup = table.HeaderGroup is null ? null : Row(table.HeaderGroup),
+            Rows = table.Rows.Select(Row).ToArray(),
+        };
+    }
 
     private static Inline[] Renumber(IReadOnlyList<Inline> inlines, Dictionary<int, int> numbers) => inlines
         .Where(i => i is not FootnoteRef r || numbers.ContainsKey(r.FootnoteNumber))
@@ -188,7 +213,7 @@ public sealed class DocumentBuildStage : IPipelineStage
     {
         ParagraphBlock paragraph => paragraph.Inlines,
         ListBlock list => list.Items.SelectMany(i => i.Inlines.Concat(i.Children.SelectMany(InlinesOf))),
-        TableBlock table => (table.Header?.Cells ?? []).Concat(table.Rows.SelectMany(r => r.Cells)).SelectMany(c => c.Inlines),
+        TableBlock table => (table.HeaderGroup?.Cells ?? []).Concat(table.Header?.Cells ?? []).Concat(table.Rows.SelectMany(r => r.Cells)).SelectMany(c => c.Inlines),
         _ => [],
     };
 

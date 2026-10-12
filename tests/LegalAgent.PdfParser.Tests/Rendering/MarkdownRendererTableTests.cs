@@ -32,6 +32,56 @@ public sealed class MarkdownRendererTableTests
         Assert.Equal("| Usługa | Opłata |\n| --- | --- |\n| Rachunek | 0 zł |\n| Karta | 5 zł |\n", md);
     }
 
+    /// <summary>
+    /// Spec 010 (owner's decision): the text of a group row stands at the start of every column name it covers; a
+    /// column without a group keeps its name.
+    /// </summary>
+    [Fact]
+    public void Render_HeaderGroup_PrefixesTheColumnNamesItCovers()
+    {
+        var group = new TableRow([new TableCell([]), C("Gdzie można zrobić?", span: 3)]);
+        TableBlock table = Table(1, 1, R("Co można zrobić?", "serwis transakcyjny", "BOK", "placówka"), 4, false, R("zmienić limit", "TAK", "TAK", "NIE"))
+            with { HeaderGroup = group };
+
+        string md = Render(false, table);
+
+        Assert.Equal(
+            "| Co można zrobić? | Gdzie można zrobić? serwis transakcyjny | Gdzie można zrobić? BOK | Gdzie można zrobić? placówka |\n"
+            + "| --- | --- | --- | --- |\n| zmienić limit | TAK | TAK | NIE |\n",
+            md);
+    }
+
+    [Fact]
+    public void Render_FallbackTable_IgnoresTheHeaderGroup()
+    {
+        var group = new TableRow([C("Grupa", span: 2)]);
+        TableBlock table = Table(1, 1, R("A", "B"), 2, true, R("c", "d")) with { HeaderGroup = group };
+
+        string md = Render(false, table);
+
+        Assert.Equal("A \\| B\n\nc \\| d\n", md);
+    }
+
+    /// <summary>Spec 010 (owner's decision): the text of a vertically merged cell is printed in every row it covers.</summary>
+    [Fact]
+    public void Render_MergedCell_RepeatsItsTextInEveryRow()
+    {
+        Inline[] label = [new TextRun("przelew SWIFT")];
+        TableRow[] rows =
+        [
+            new([new TableCell(label, RowSpan: 3), C("do 10 000 zł")]),
+            new([new TableCell(label, ContinuesAbove: true), C("powyżej 10 000 zł")]),
+            new([new TableCell(label, ContinuesAbove: true), C("w euro")]),
+        ];
+
+        string md = Render(false, Table(1, 1, R("Przelew", "Kurs"), 2, false, rows));
+
+        Assert.Equal(
+            "| Przelew | Kurs |\n| --- | --- |\n| przelew SWIFT | do 10 000 zł |\n| przelew SWIFT | powyżej 10 000 zł |\n| przelew SWIFT | w euro |\n",
+            md);
+        Assert.All(rows, r => Assert.Equal(2, r.Cells.Sum(c => c.ColumnSpan)));
+    }
+
     [Fact]
     public void Render_TableWithoutHeaderUsesFirstRowAsHeader()
     {

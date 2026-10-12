@@ -1035,13 +1035,13 @@ Ustawa wchodzi w życie po upływie 3 miesięcy od dnia ogłoszenia7), z wyjątk
 - 1\) art. 82 pkt 6 i 7, które wchodzą w życie po upływie 6 miesięcy od dnia ogłoszenia;
 - 2\) art. 4 pkt 28, art. 10 ust. 1 pkt 5, art. 31 ust. 1, art. 32 i art. 91, które wchodzą w życie z dniem 1 lipca 2018 r. <!-- page: 32 --> Załączniki do ustawy z dnia 23 marca 2017 r. (Dz. U. z 2025 r. poz. 720)
 
-[^7]: Ustawa została ogłoszona w dniu 21 kwietnia 2017 r. 1 Niniejszy dokument został przygotowany w oparciu o dostarczone dotychczas przez Państwa informacje, z uwzględnieniem aktualnej sytuacji na rynku finansowym.
+[^7]: Ustawa została ogłoszona w dniu 21 kwietnia 2017 r.
 
 ## Załącznik nr 1
 
 ## WZÓR
 
-## FORMULARZ INFORMACYJNY DOTYCZĄCY KREDYTU HIPOTECZNEGO1
+## FORMULARZ INFORMACYJNY DOTYCZĄCY KREDYTU HIPOTECZNEGO
 
 **Tekst niniejszego wzoru umieszcza się w identycznym brzmieniu w formularzu informacyjnym. Objaśnienia w nawiasach kwadratowych zastępuje się odpowiednimi informacjami. Instrukcje dla kredytodawcy lub, w odpowiednich przypadkach, pośrednika kredytu hipotecznego dotyczące wypełniania formularza są zawarte w instrukcji do wypełnienia formularza informacyjnego. Tam, gdzie widnieje oznaczenie „w odpowiednich przypadkach”, kredytodawca wypełnia odpowiednie pole, jeśli odnośna informacja dotyczy danej umowy o kredyt hipoteczny. Jeżeli informacja taka nie dotyczy danej umowy o kredyt hipoteczny, kredytodawca usuwa daną informację lub całą część (np. w przypadkach gdy część ta nie ma zastosowania). W przypadku usunięcia całej części odpowiednio zmienia się numerację pozycji formularza informacyjnego.**
 
@@ -1064,6 +1064,8 @@ Podane poniżej informacje (w odpowiednich przypadkach), z wyjątkiem stopy opro
 \[Nazwa\] \[Numer telefonu\] \[Adres\] (Ewentualnie) \[Adres e-mail\] (Ewentualnie) \[Numer faksu\] (Ewentualnie) \[Strona internetowa\] <!-- page: 33 --> (Ewentualnie) \[Osoba wyznaczona do kontaktów/punkt kontaktowy\] (W odpowiednich przypadkach \[informacje, czy są zapewniane usługi doradcze\]) \[Po przeprowadzeniu oceny Państwa potrzeb oraz okoliczności możemy zalecić zaciągnięcie tego kredytu hipotecznego./Nie zalecamy Państwu tego konkretnego rodzaju kredytu hipotecznego. Jednak w oparciu o Państwa odpowiedzi na niektóre pytania podajemy informacje na temat tego kredytu hipotecznego, tak by mogli Państwo sami podjąć decyzję.\]
 
 \[Wynagrodzenie\]
+
+[^8]: Niniejszy dokument został przygotowany w oparciu o dostarczone dotychczas przez Państwa informacje, z uwzględnieniem aktualnej sytuacji na rynku finansowym.
 
 ## 3. Główne cechy kredytu hipotecznego
 
