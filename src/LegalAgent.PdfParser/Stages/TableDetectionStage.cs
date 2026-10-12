@@ -253,6 +253,12 @@ public sealed class TableDetectionStage : IPipelineStage
             .ToList();
 
         var tables = new List<Table>();
+        if (flow.Count == 0)
+        {
+            return tables;
+        }
+
+        var pageGrid = new Grid(options.UseRulingLines ? rulings : [], flow);
         int start = 0;
         int free = 0;
         while (start < flow.Count)
@@ -263,7 +269,7 @@ public sealed class TableDetectionStage : IPipelineStage
                 continue;
             }
 
-            List<Row> region = GrowRegion(context, flow, start);
+            List<Row> region = GrowRegion(context, flow, start, pageGrid);
             Table? table = Build(context, page, rulings, region, flow.GetRange(free, start - free), gutter, tolerance, hyphenationExceptions);
             if (table is null)
             {
@@ -375,15 +381,19 @@ public sealed class TableDetectionStage : IPipelineStage
             && text.Box.Left - label.Box.Right <= MaxHangingLabelGapEm * size;
     }
 
-    /// <summary>Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>).</summary>
-    private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start)
+    /// <summary>
+    /// Lines from the seed while the gaps stay table-like (trailing lines are settled by <see cref="Build"/>); spec 010:
+    /// inside one ruled grid any gap is (tall rows of a matrix).
+    /// </summary>
+    private static List<Row> GrowRegion(PipelineContext context, List<Row> flow, int start, Grid grid)
     {
         double leading = context.BodyStyle?.Leading is > 0 and double l ? l : 1.2 * flow[start].Line.Box.Height;
         var region = new List<Row> { flow[start] };
         for (int i = start + 1; i < flow.Count; i++)
         {
             double gap = flow[i].Line.Baseline - region[^1].Line.Baseline;
-            if (gap <= 0 || gap > MaxRowGapInLeadings * leading)
+            bool sameGrid = gap > 0 && grid.Connects(region[^1].Line.Box.CenterY, flow[i].Line.Box.CenterY);
+            if (!sameGrid && (gap <= 0 || gap > MaxRowGapInLeadings * leading))
             {
                 break;
             }
@@ -437,7 +447,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         // Likewise a gridless table starts at its bold column-name row: multi-cell lines above it (numbered clauses
         // with a hanging indent) are running text, so the seed moves on to the header.
-        if (!region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
+        if (!grid.Contains(region[0].Line.Box.CenterY) && !region[0].IsAllBold && region.Skip(1).Any(r => r.IsMulti && r.IsAllBold))
         {
             return null;
         }
@@ -464,7 +474,9 @@ public sealed class TableDetectionStage : IPipelineStage
                 || row.IsAllBold
                 || region[0].Cells.Count < 2
                 || row.Cells[^1].Box.Right <= region[0].Cells[1].Box.Left;
-            if (row.IsMulti || gap <= 0 || !belongs || !headerLine || (!seedInGrid && IsUnitLine(row)))
+            // Spec 010: in a ruled grid a multi-cell line above the seed is a line of the same header cells.
+            bool sameGrid = seedInGrid && grid.Connects(row.Line.Box.CenterY, region[0].Line.Box.CenterY);
+            if ((row.IsMulti && !sameGrid) || gap <= 0 || !belongs || !headerLine || (!seedInGrid && IsUnitLine(row)))
             {
                 break;
             }
@@ -971,6 +983,31 @@ public sealed class TableDetectionStage : IPipelineStage
             region.Select(r => r.Line.Box.CenterY).Where(Contains).Select(y => _borders.Count(b => b <= y)).Distinct().Count();
 
         public bool Contains(double y) => Middle(y) is double middle && _verticals.Any(v => Crosses(v, middle));
+
+        /// <summary>
+        /// Spec 010: <paramref name="from"/> and <paramref name="to"/> lie in one ruled band or in two adjacent ones — not
+        /// across an empty band (a spacer row between two tables of a form).
+        /// </summary>
+        public bool Connects(double from, double to)
+        {
+            int first = RowIndex(from);
+            int last = RowIndex(to);
+            if (first == 0 || last >= _borders.Count || last - first > 1)
+            {
+                return false;
+            }
+
+            for (int k = first; k <= last; k++)
+            {
+                double middle = (_borders[k - 1] + _borders[k]) / 2;
+                if (!_verticals.Any(v => Crosses(v, middle)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
         /// <summary>The grid row holding <paramref name="y"/> has its outer borders only — one cell across the box.</summary>
         public bool Spans(double y)
