@@ -64,7 +64,9 @@ internal static class FootnoteSelector
                 break;
 
             case TableBlock table:
-                foreach (TableRow row in table.Header is null ? table.Rows : [table.Header, .. table.Rows])
+                // Spec 010: the header group row is repeated with the header in every part of the table.
+                IEnumerable<TableRow> heading = new[] { table.HeaderGroup, table.Header }.OfType<TableRow>();
+                foreach (TableRow row in heading.Concat(table.Rows))
                 {
                     foreach (TableCell cell in row.Cells)
                     {
