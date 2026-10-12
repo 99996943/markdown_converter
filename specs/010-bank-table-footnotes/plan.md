@@ -290,6 +290,35 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     (3 wiersze) w każdym wierszu grupy; podobnie inne tabele firm-5 (przelew SWIFT/SEPA, waluta obca) i firm-1 (BLIK).
     corp-1: tabela tagów SWIFT (T10, poza zakresem) — komórki scalone powtarzane w objętych wierszach, **zatwierdzone
     przez właściciela**. Liczby bez zmian (bramka zielona). Pełny zestaw: 2218 testów, 0 niepowodzeń; `verify` czysty.
+- 2026-10-12, Phase 6 / US4 macierz czynności (T027–T029, T028a):
+  - Uwaga do nazw: „firm-1 s. 16–17” z PRZYPADKI.md to w prywatnym korpusie **firm-2** s. 16–17.
+  - T027: repliki (a) ind-4 s. 42–43 (wiersze blisko, powtórzony nagłówek) — zielona bez zmian kodu (regresja, K1);
+    (b) firm-2 s. 16–17 (wiersze co 25 pt > 2,5 interlinii, nagłówek 3-liniowy w kolumnie 2, „TAK/TAK⁵”, ciąg dalszy
+    na s. 17 bez powtórzonego nagłówka) — czerwona.
+  - T028: `GrowRegion` dołącza linie w tym samym lub sąsiednim paśmie siatki (`Grid.Connects`) bez względu na odstęp;
+    pusty pasek siatki (wiersz odstępu między dwiema tabelami formularza, akt dz-u-2024-1497 s. 27) nadal rozdziela
+    tabele — pierwsza wersja bez warunku sąsiedztwa sklejała je (golden aktu, wycofane). W `Build` linie wieloczęściowe
+    nad ziarnem w tej samej siatce należą do nagłówka, a reguła „tabela bez siatki zaczyna się od pogrubionego
+    nagłówka” nie dotyczy siatki. Osobna para red/green: wiersz grupujący nad nazwami kolumn, które zaczynają się
+    pogrubioną linią, a dalej mają objaśnienie zwykłym krojem (firm-5 s. 22 „(nasza strona internetowa/ aplikacja
+    mobilna)”) → `HeaderGroup`; nagłówek tabeli z grupą jest nagłówkiem także bez pełnego pogrubienia.
+  - T028a (dodane): etykieta definicji przypisu podniesiona i złożona jako osobna linia nachodząca na linię tekstu
+    (firm-5 s. 22–23 „13”, „14”, „19”) jest etykietą tej linii (`LoneLabel`) — odnośniki „TAK13”, „TAK14”, „BLIK19”,
+    „BLIK1” (słownik s. 3) stają się `[^n]`, definicje nie są doklejane do poprzednich. Stopka banku doklejona do
+    ostatniego przypisu strony (wcześniej do innego) — znane ograniczenie (stopka przeplatana).
+  - Goldeny prywatne (wąska zgoda FR-755, tylko tabele i przypisy): firm-2 — macierz s. 16–17 jedną tabelą z nagłówkiem
+    „**serwis transakcyjny** (na naszej stronie internetowej lub w aplikacji mobilnej)” zamiast `###` i akapitów;
+    firm-5 — macierz s. 22–23 jedną tabelą (wcześniej `###`, 3 tabele i akapity) z wierszem grupującym „Gdzie możesz
+    to zrobić?” przed nazwami kolumn, przypisy jw. `Corpus/acts`, `Corpus/banking`, `corpus/` bez zmian.
+  - downloads-1…5: TBL001 0, `###` 0; downloads-1 — tabela definicji s. 2–3 jedną tabelą (wcześniej akapity i
+    powtórzony nagłówek), komórka „Gdzie sprawdzisz…” urwana w dwóch wierszach siatki powtarza etykietę scalenia
+    (do T033); downloads-2…5 bez zmian.
+  - T029: macierz bez linii daje format zapasowy (linie nagłówka o różnej liczbie komórek, wiersze wartości osobno
+    od linii kolumny 1). Wiersze trzeba by wyznaczać z symetrii linii kolumny 1 wokół linii wartości — heurystyka
+    ryzykowna dla taryf i słowników bez siatki, a sonda T013a nie znalazła prawdziwej macierzy bez linii. Test
+    `Skip` z odwołaniem do „Znanych ograniczeń” (README w T039).
+  - SC-113: ind-4, ind-2, firm-2, firm-5, downloads-3, downloads-5 — 0 linii TBL001 i 0 wierszy macierzy jako akapity.
+    Pełny zestaw: 2223 testy, 0 niepowodzeń, 1 pominięty (T029) + dotychczasowe pominięcia; `CorpusFull` zielony.
 
 ## Complexity Tracking
 

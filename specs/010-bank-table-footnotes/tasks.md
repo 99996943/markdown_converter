@@ -237,18 +237,20 @@ etykietę.
 **Independent Test**: replika macierzy z liniami przez dwie strony (1. kolumna 2–6 linii, wartości wyśrodkowane w
 pionie, nagłówek 3-liniowy, odnośniki „TAK/TAK⁵”) → jedna tabela, liczba wierszy jak w PDF.
 
-- [ ] T027 [US4] Repliki (red) w `BankTablesIntegrationTests.cs`: (a) jak ind-4 s. 42–43 — linie pionowe 45,1 /
+- [X] T027 [US4] Repliki (red) w `BankTablesIntegrationTests.cs`: (a) jak ind-4 s. 42–43 — linie pionowe 45,1 /
   187,0 / 280,5 / 374,1 / 464,9 / 555,6, tekst 11 pt, interlinia 15,4, wiersze z 1, 2, 3, 6 liniami w kolumnie 1,
   wartości „Tak”/„Nie” na linii bazowej równej średniej linii kolumny 1 (przy nieparzystej liczbie linii wspólna linia
   bazowa ze środkową linią kolumny 1), tabela ciągnie się na drugą stronę z powtórzonym nagłówkiem; (b) jak firm-1
   s. 16 — 4 kolumny, nagłówek „serwis transakcyjny (…)” w 3 liniach wyższy niż wiersze, wartości „TAK/TAK⁵” z
   definicją pod kreską. Oczekiwane: jedna tabela GFM, 0 linii TBL001, 0 akapitów z wierszy, `TAK/TAK[^n]`.
   Repliki dodatkowe według sondy T013a; macierz z SC-113, która okazała się bez linii, przechodzi do T029 (P3)
-- [ ] T028 [US4] Poprawki w `TableDetectionStage` potrzebne, by T027 przeszedł po siatce z Phase 4–5 (np. obszar
+- [X] T028 [US4] Poprawki w `TableDetectionStage` potrzebne, by T027 przeszedł po siatce z Phase 4–5 (np. obszar
   tabeli obejmuje nagłówek wyższy niż wiersze — `GrowRegion`/linie nad ziarnem; łączenie przez strony części z
   siatką — `SameColumns` na pasmach z siatki); T027 zielony. Pełny zestaw; goldeny według FR-755 (oczekiwane: ind-1,
   ind-2, ind-4, firm-1, firm-5)
-- [ ] T029 [US4] Replika wariantu bez linii (P3, red) w `BankTablesIntegrationTests.cs` (ta sama macierz bez linii,
+- [X] T028a [US4] (dodane) Etykieta definicji przypisu złożona jako osobna, podniesiona linia nachodząca na linię
+  tekstu (firm-5 s. 22–23) jest etykietą tej linii (`FootnoteDetectionStage.LoneLabel`); para red/green
+- [X] T029 [US4] Replika wariantu bez linii (P3, red) w `BankTablesIntegrationTests.cs` (ta sama macierz bez linii,
   odstęp międzywierszowy / interlinia 1,29); próba w ścieżce bez siatki (kolumny z wierszy danych, linie nagłówka
   według środka x, nowy wiersz przy linii z wartościami w kolumnach 2…k); jeśli pogarsza taryfy korpusu
   syntetycznego (`CorpusFull`), słowniki lub inne goldeny — test `Skip` z odwołaniem do „Znanych ograniczeń” i wpis
