@@ -80,6 +80,21 @@ public sealed class FootnoteSelectionTests
         Assert.EndsWith("[^2]: Do stawki.", chunks[1].Content, StringComparison.Ordinal);
     }
 
+    /// <summary>Spec 010: every part of a split table repeats the header group, so it carries the group's footnote.</summary>
+    [Fact]
+    public async Task ChunkAsync_ReferenceInTheHeaderGroupGoesWithEveryTablePart()
+    {
+        string[] t = [.. Enumerable.Range(1, 2).Select(i => Words(i, 70))];
+        var group = new TableRow([new TableCell([]), new TableCell([Text("Gdzie"), Ref(3)])]);
+        TableBlock table = new TableBlock(new PageRange(1, 1), Row("Usługa", "Stawka"), [.. t.Select(x => Row(x, "5,00 zł"))], 2, false) with { HeaderGroup = group };
+        Section unit = Section(3, SectionKind.Paragraph, "§ 6", "§ 6.", 1, 1, [table], [Footnote(3, "Do grupy.")]);
+
+        IReadOnlyList<Model.Chunk> chunks = await Chunk(Document(null, null, unit));
+
+        Assert.Equal(2, chunks.Count);
+        Assert.All(chunks, c => Assert.EndsWith("[^3]: Do grupy.", c.Content, StringComparison.Ordinal));
+    }
+
     [Fact]
     public async Task ChunkAsync_FootnoteLengthCountsTowardsTheLimit()
     {
