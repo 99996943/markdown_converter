@@ -627,4 +627,36 @@ public sealed class TableDetectionStageTests
         Assert.All(tariff, l => Assert.Equal(LineRole.Table, l.Role));
         Assert.All(page.Lines.Except(tariff), l => Assert.NotEqual(LineRole.Table, l.Role));
     }
+
+    /// <summary>The word <paramref name="text"/> of <paramref name="line"/> as a footnote reference (spec 010).</summary>
+    private static LayoutLine Reference(LayoutLine line, string text, int id, bool beforeWord = false)
+    {
+        LayoutWord Mark(LayoutWord w) => w.Text == text ? w with { FootnoteId = id, ReferencesNextWord = beforeWord } : w;
+        var rebuilt = new LayoutLine(line.Words.Select(Mark).ToList(), line.Box, line.Baseline);
+        foreach (LineSegment segment in line.Segments)
+        {
+            rebuilt.Segments.Add(new LineSegment(segment.Words.Select(Mark).ToList(), segment.Box));
+        }
+
+        return rebuilt;
+    }
+
+    [Fact]
+    public void FootnoteReferencesInCells_BecomeFootnoteRefsGluedToTheirWords()
+    {
+        // Spec 010 (T12): „Tak⁴”, „³kurs” and a reference in a column name are kept as references inside the cells.
+        LayoutLine[] tariff = Tariff();
+        tariff[0] = Reference(Styled(100, TextStyle.Bold, ("Usluga", C1), ("Oplata 5", C2), ("Czestotliwosc", C3)), "5", 5);
+        tariff[1] = Reference(Row(120, ("3 Prowadzenie rachunku", C1), ("0,00 zl", C2), ("miesiecznie", C3)), "3", 3, beforeWord: true);
+        tariff[2] = Reference(Row(140, ("Przelew natychmiastowy", C1), ("1,5% 4", C2), ("za transakcje", C3)), "4", 4);
+
+        TableBlock table = SingleTable(Run(LayoutFactory.Page(1, tariff)));
+
+        Assert.False(table.IsFallback);
+        Assert.Equal(3, table.ColumnCount);
+        Assert.Equal([new TextRun("Oplata", TextStyle.Bold), new FootnoteRef(5)], table.Header!.Cells[1].Inlines);
+        Assert.Equal([new FootnoteRef(3), new TextRun("Prowadzenie rachunku")], table.Rows[0].Cells[0].Inlines);
+        Assert.Equal([new TextRun("1,5%"), new FootnoteRef(4)], table.Rows[1].Cells[1].Inlines);
+        Assert.All(table.Rows, r => Assert.Equal(3, r.Cells.Count));
+    }
 }

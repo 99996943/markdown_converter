@@ -78,4 +78,67 @@ public sealed class BankTablesIntegrationTests
         Assert.Contains("art. 5¹ ustawy", markdown, StringComparison.Ordinal);
         Assert.Contains("1\\) pierwszy punkt listy", markdown, StringComparison.Ordinal);
     }
+
+    [Fact]
+    public async Task FootnoteReferencesInARuledTable_StayInTheirCells()
+    {
+        // T12 (firm-5 p. 13, firm-1 p. 16): „Tak⁴”, „TAK/TAK⁵”, „³kurs z momentu…” in cells and a reference in a column
+        // name; definitions below a short rule at the body size.
+        SyntheticPdfBuilder page = new SyntheticPdfBuilder().Page().Text(Left, 70, "Regulamin rachunków", 14, bold: true);
+        double y = 100;
+        for (int i = 0; i < 6; i++, y += 10)
+        {
+            page.Text(Left, y, "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank dla klientów.", Body);
+        }
+
+        double[] xs = [59.3, 201.1, 378.3, 555.5];
+        double[] borders = [250, 270, 290, 310, 330];
+        foreach (double border in borders)
+        {
+            for (int c = 0; c + 1 < xs.Length; c++)
+            {
+                page.HLine(xs[c] + 0.2, xs[c + 1] - 0.2, border);
+            }
+        }
+
+        foreach (double x in xs)
+        {
+            page.VLine(x, borders[0], borders[^1]);
+        }
+
+        page.Text(64, 263, "Czynność", Body, bold: true);
+        page.Text(206, 263, "Serwis transakcyjny", Body, bold: true)
+            .Text(206 + SyntheticPdfBuilder.TextWidth("Serwis transakcyjny", Body, bold: true), 263 - Raise, "6", Marker, bold: true);
+        page.Text(383, 263, "Placówka", Body, bold: true);
+        page.Text(64, 283, "Przelew krajowy", Body);
+        TrailingMarker(page, 206, 283, "Tak", "4");
+        page.Text(383, 283, "Tak", Body);
+        page.Text(64, 303, "Zmiana typu rachunku", Body);
+        TrailingMarker(page, 206, 303, "TAK/TAK", "5");
+        page.Text(383, 303, "NIE", Body);
+        page.Text(64, 323, "Przewalutowanie", Body);
+        LeadingMarker(page, 206, 323, string.Empty, "3", "kurs z momentu transakcji");
+        page.Text(383, 323, "Tak", Body);
+
+        page.HLine(39.7, 183.7, 740);
+        page.Text(Left, 755 - Raise, "3", Marker).Text(Left + SyntheticPdfBuilder.TextWidth("3", Marker), 755, " Zapis obowiązuje od 26.08.2026 r.", Body);
+        page.Text(Left, 765 - Raise, "4", Marker).Text(Left + SyntheticPdfBuilder.TextWidth("4", Marker), 765, " Dotyczy przelewów w złotych.", Body);
+        page.Text(Left, 775, "5 Zmiana na wniosek klienta.", Body);
+        page.Text(Left, 785, "6 Nasza strona internetowa.", Body);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(1, markdown.Split('\n').Count(l => l.StartsWith("| ---", StringComparison.Ordinal)));
+        // References are numbered in reading order: the column name first, then the rows.
+        Assert.Contains("| **Serwis transakcyjny**[^1] |", markdown, StringComparison.Ordinal);
+        Assert.Contains("| Tak[^2] | Tak |", markdown, StringComparison.Ordinal);
+        Assert.Contains("| TAK/TAK[^3] | NIE |", markdown, StringComparison.Ordinal);
+        Assert.Contains("| [^4]kurs z momentu transakcji | Tak |", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^1]: Nasza strona internetowa.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^2]: Dotyczy przelewów w złotych.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^3]: Zmiana na wniosek klienta.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^4]: Zapis obowiązuje od 26.08.2026 r.", markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("[^0]", markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("[^5]", markdown, StringComparison.Ordinal);
+    }
 }
