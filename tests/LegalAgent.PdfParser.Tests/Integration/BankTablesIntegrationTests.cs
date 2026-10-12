@@ -269,7 +269,7 @@ public sealed class BankTablesIntegrationTests
     /// A matrix like firm-3 p. 8: a group row „Gdzie można zrobić?” over columns 2–4 (one ruling piece across them, no inner
     /// verticals in its row, the line under it over columns 2–4 only), the first column's name spanning both header rows.
     /// </summary>
-    private static SyntheticPdfBuilder GroupedMatrix(SyntheticPdfBuilder page, bool groupReference)
+    private static SyntheticPdfBuilder GroupedMatrix(SyntheticPdfBuilder page, bool groupReference, bool plainLine = false)
     {
         double[] xs = [59.2, 215.2, 328.6, 442.1, 555.5];
         page.HLine(59.4, 215.0, 300).HLine(215.4, 555.2, 300);
@@ -293,7 +293,7 @@ public sealed class BankTablesIntegrationTests
         }
 
         Centred(page, xs[1], xs[2], 324, "serwis", Body, bold: true);
-        Centred(page, xs[1], xs[2], 334, "transakcyjny", Body, bold: true);
+        Centred(page, xs[1], xs[2], 334, plainLine ? "(strona www)" : "transakcyjny", Body, bold: !plainLine);
         Centred(page, xs[2], xs[3], 329, "BOK", Body, bold: true);
         Centred(page, xs[3], xs[4], 329, "placówka", Body, bold: true);
         page.Text(64, 353, "zmienić limit", Body);
@@ -326,6 +326,22 @@ public sealed class BankTablesIntegrationTests
         Assert.Equal(
             [
                 "| **Co można zrobić?** | **Gdzie można zrobić?** **serwis transakcyjny** | **Gdzie można zrobić?** **BOK** | **Gdzie można zrobić?** **placówka** |",
+                "| --- | --- | --- | --- |",
+                "| zmienić limit | TAK | TAK | NIE |",
+                "| zastrzec kartę | TAK | TAK | TAK |",
+            ],
+            TableLines(markdown));
+    }
+
+    [Fact]
+    public async Task GroupRowAboveColumnNamesWithAPlainLine_PrefixesTheNamesOfTheColumnsItSpans()
+    {
+        // firm-5 p. 22: under the bold name „serwis” a plain explanation „(strona www)”.
+        string markdown = await ConvertAsync(GroupedMatrix(BodyPage("Regulamin faktoringu"), groupReference: false, plainLine: true).Build());
+
+        Assert.Equal(
+            [
+                "| **Co można zrobić?** | **Gdzie można zrobić?** **serwis** (strona www) | **Gdzie można zrobić?** **BOK** | **Gdzie można zrobić?** **placówka** |",
                 "| --- | --- | --- | --- |",
                 "| zmienić limit | TAK | TAK | NIE |",
                 "| zastrzec kartę | TAK | TAK | TAK |",
