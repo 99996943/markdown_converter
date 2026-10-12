@@ -277,6 +277,19 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     tabele GFM 7/3/3/2/7 (downloads-4: części tabeli połączone przez strony). downloads-2 s. 21 — macierz Private
     Banking ma 6 kolumn (z „oddział”) i tak jest wyprowadzana.
   - Pełny zestaw: 2213 testów, 0 niepowodzeń; `verify` czysty.
+- 2026-10-12, Phase 5 / US1 scalone wiersze (T020–T026):
+  - T020–T021: `TableCell(Inlines, ColumnSpan, RowSpan = 1, ContinuesAbove = false)`; renderer bez zmian (test jako
+    regresja, K1). T022: test chunkera (część od środka grupy ma etykietę) — regresja bez zmian kodu.
+  - T023–T024: komórka siatki bez linii na granicy wiersza w swoim paśmie (przy linii w innym) → `RowSpan` w pierwszym
+    wierszu i komórki `ContinuesAbove` z tą samą listą inline'ów w kolejnych (`RowDraft.SetRowSpan`/`ContinueFrom`);
+    nazwa kolumny nigdy nie jest scalana w dół (wiersze pod nią dostają pustą komórkę); `DocumentBuildStage` przy
+    przenumerowaniu odnośników zachowuje wspólną listę.
+  - T025–T026: `NumberCheck` z dokumentem odejmuje liczby komórek `ContinuesAbove` i komórek `HeaderGroup`
+    × (objęte kolumny − 1) (FR-758). Porównanie słów w raporcie działa na zbiorach — powtórzenia go nie zmieniają.
+  - SC-110: firm-5 s. 13 — etykiety „przelew wychodzący SWIFT” (3 wiersze) i „przelew wychodzący (wewnętrzny)”
+    (3 wiersze) w każdym wierszu grupy; podobnie inne tabele firm-5 (przelew SWIFT/SEPA, waluta obca) i firm-1 (BLIK).
+    corp-1: tabela tagów SWIFT (T10, poza zakresem) — komórki scalone powtarzane w objętych wierszach, **zatwierdzone
+    przez właściciela**. Liczby bez zmian (bramka zielona). Pełny zestaw: 2218 testów, 0 niepowodzeń; `verify` czysty.
 
 ## Complexity Tracking
 

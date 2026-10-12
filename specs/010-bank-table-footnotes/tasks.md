@@ -197,30 +197,30 @@ bez fałszywych nadmiarowych.
 → 8 wierszy z etykietą grupy w każdym; model: `RowSpan` = 3 i kontynuacje; część chunkera od środka grupy ma
 etykietę.
 
-- [ ] T020 [P] [US1] Testy (red) w `MarkdownRendererTableTests.cs`: wiersze z komórką `RowSpan` = 3 i dwiema
+- [X] T020 [P] [US1] Testy (red) w `MarkdownRendererTableTests.cs`: wiersze z komórką `RowSpan` = 3 i dwiema
   `ContinuesAbove` (te same inline'y) → tekst w każdym z trzech wierszy; niezmiennik suma `ColumnSpan` =
   `ColumnCount` w każdym wierszu
-- [ ] T021 [US1] Dodaj do `src/LegalAgent.PdfParser/Model/TableCell.cs` parametry `int RowSpan = 1` i
+- [X] T021 [US1] Dodaj do `src/LegalAgent.PdfParser/Model/TableCell.cs` parametry `int RowSpan = 1` i
   `bool ContinuesAbove = false` (dokumentacja z data-model: „`RowSpan` ≥ 1; > 1 tylko w pierwszym objętym wierszu”,
   „`ContinuesAbove` true tylko w wierszach 2…`RowSpan` grupy; komórka ma `RowSpan` = 1 i ten sam `ColumnSpan` co
   początkowa”, „komórka nagłówka nigdy nie ma `RowSpan` > 1 ani `ContinuesAbove`”) i rozszerz komentarz niezmiennika w
   `src/LegalAgent.PdfParser/Model/TableRow.cs`; T020 zielony (renderer bez zmian logiki)
-- [ ] T022 [P] [US1] Test (red lub regresji) w `tests/LegalAgent.Chunking.Tests/Unit/SplitTablesTests.cs`: tabela
+- [X] T022 [P] [US1] Test (red lub regresji) w `tests/LegalAgent.Chunking.Tests/Unit/SplitTablesTests.cs`: tabela
   ze scaleniem przez 4 wiersze, `MaxChunkLength` dzieli ją w środku grupy → każda część ma tekst scalonej komórki w
   każdym wierszu (bez zmian kodu chunkera). Jeśli test przechodzi od razu po T021 bez zmian kodu — commit samego
   testu jako regresji z adnotacją w handoffie; jeśli wymaga zmian kodu — para commitów red/green
-- [ ] T023 [US1] Replika (red) w `BankTablesIntegrationTests.cs` jak firm-5 s. 13: linie pionowe 59,3 / 201,1 /
+- [X] T023 [US1] Replika (red) w `BankTablesIntegrationTests.cs` jak firm-5 s. 13: linie pionowe 59,3 / 201,1 /
   555,6 przerywane na każdej linii kolumny 2; odcinki poziome kolumny 1 (59,5–200,8) tylko na granicach grup,
   kolumny 2 (201,3–555,3) pod każdym wierszem; etykieta grupy A w jednej linii na środku grupy, B w dwóch liniach
   dzielących linie bazowe z wierszem grupy; tekst 8 pt; oczekiwane: każdy wiersz z etykietą grupy, model `RowSpan`
   i kontynuacje; wariant: tabela z linią pod każdym wierszem we wszystkich kolumnach → bez scaleń
-- [ ] T024 [US1] Scalenia w siatce (`RuledTableGrid` + `TableDetectionStage`): komórka pasma bez linii na granicy
+- [X] T024 [US1] Scalenia w siatce (`RuledTableGrid` + `TableDetectionStage`): komórka pasma bez linii na granicy
   przy linii w innym paśmie obejmuje oba wiersze, tekst komórki z wszystkich linii jej obszaru w kolejności linii
   bazowych; `RowDraft` → `TableCell` z `RowSpan` i kontynuacjami (ta sama lista inline'ów); T023 zielony
-- [ ] T025 [US1] Test (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/NumberCheckTests.cs`: syntetyczny PDF
+- [X] T025 [US1] Test (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/NumberCheckTests.cs`: syntetyczny PDF
   z liczbą w scalonej komórce („do 10 000 zł” przez 3 wiersze) → z dokumentem 0 nadmiarowych, bez dokumentu —
   nadmiarowe; analogicznie liczba w `HeaderGroup`
-- [ ] T026 [US1] `Compare(..., LegalDocument? document = null)` w
+- [X] T026 [US1] `Compare(..., LegalDocument? document = null)` w
   `tests/LegalAgent.PdfParser.Tests/Fixtures/NumberCheck.cs` (odejmowanie liczb z komórek `ContinuesAbove` i z komórek
   `HeaderGroup` × (objęte kolumny − 1)); `PrivateCorpusTests.cs` przekazuje `Result.Document`; porównanie słów w
   raporcie odejmuje tak samo słowa z powtórzeń; T025 zielony. Pełny zestaw z prywatnym korpusem; goldeny według
