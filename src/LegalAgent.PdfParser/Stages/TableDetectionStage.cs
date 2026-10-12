@@ -692,20 +692,21 @@ public sealed class TableDetectionStage : IPipelineStage
 
     /// <summary>
     /// The first grid row holds a cell spanning some but not all columns and otherwise only cells merged down into the
-    /// second row, and the text of both rows is bold: a group row above the column names (firm-3, firm-5).
+    /// second row, the group text is bold and every column name starts with a bold line (a plain explanation may follow):
+    /// a group row above the column names (firm-3, firm-5).
     /// </summary>
     private static bool IsGroupedHeader(RuledTableGrid grid, List<(RuledTableGrid.GridCell Cell, LineSegment Segment)> pieces)
     {
+        static bool Bold(LineSegment segment) => segment.Words.Where(w => w.FootnoteId is null).All(w => w.Style.HasFlag(TextStyle.Bold));
         List<RuledTableGrid.GridCell> first = grid.Cells.Where(c => c.Row == 0).ToList();
+        bool IsGroup((RuledTableGrid.GridCell Cell, LineSegment Segment) p) => p.Cell.Row == 0 && p.Cell.RowSpan == 1;
         return grid.RowCount >= 3
             && first.Any(c => c.RowSpan == 1 && c.ColumnSpan > 1 && c.ColumnSpan < grid.ColumnCount)
             && first.All(c => (c.RowSpan == 1 && c.ColumnSpan > 1) || c.RowSpan >= 2)
-            && pieces.Any(p => p.Cell.Row == 0 && p.Cell.RowSpan == 1)
+            && pieces.Any(IsGroup)
             && pieces.Any(p => p.Cell.Row == 1)
-            && pieces.Where(p => p.Cell.Row <= 1)
-                .SelectMany(p => p.Segment.Words)
-                .Where(w => w.FootnoteId is null)
-                .All(w => w.Style.HasFlag(TextStyle.Bold));
+            && pieces.Where(IsGroup).All(p => Bold(p.Segment))
+            && pieces.Where(p => p.Cell.Row <= 1 && !IsGroup(p)).GroupBy(p => p.Cell).All(g => Bold(g.First().Segment));
     }
 
     /// <summary>
@@ -1239,7 +1240,8 @@ public sealed class TableDetectionStage : IPipelineStage
         {
             int columns = IsFallback ? _rows.Max(r => r.Columns) : Bands.Count;
             List<TableRow> rows = _rows.Select(r => r.ToRow(columns, IsFallback)).ToList();
-            TableRow? header = _rows.Count > 1 && _rows[0].AllBold ? rows[0] : null;
+            // Under a header group the column-name row is the header even when a name has a plain explanation line.
+            TableRow? header = _rows.Count > 1 && (_rows[0].AllBold || _group is not null) ? rows[0] : null;
             if (header is not null && header.Cells.Any(c => c.RowSpan > 1))
             {
                 // A column name is never merged into the rows below it: they keep the cell empty.
