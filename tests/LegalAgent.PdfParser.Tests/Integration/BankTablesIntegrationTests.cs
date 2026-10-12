@@ -743,6 +743,55 @@ public sealed class BankTablesIntegrationTests
             TableLines(markdown));
     }
 
+    /// <summary>The account table of ind-2 p. 6–7: bold names, centred values in columns 2–3, rows 19.9 pt high.</summary>
+    private static void AccountRows(SyntheticPdfBuilder page, double top, string[][] rows)
+    {
+        double[] xs = [43.7, 325.6, 438.4, 551.3];
+        Grid(page, xs, [.. Enumerable.Range(0, rows.Length + 2).Select(i => top + (i * 19.9))]);
+        page.Text(48, top + 14, "rodzaj rachunku", 11, bold: true);
+        Centred(page, xs[1], xs[2], top + 14, "umowa", 11, bold: true);
+        Centred(page, xs[2], xs[3], top + 14, "dyspozycja", 11, bold: true);
+        for (int r = 0; r < rows.Length; r++)
+        {
+            double baseline = top + ((r + 1) * 19.9) + 14;
+            page.Text(48, baseline, rows[r][0], 11);
+            Centred(page, xs[1], xs[2], baseline, rows[r][1], 11);
+            Centred(page, xs[2], xs[3], baseline, rows[r][2], 11);
+        }
+    }
+
+    [Fact]
+    public async Task TableStartingAtThePageEnd_WithItsHeaderRepeatedOnTheNextPage_IsOneTable()
+    {
+        // T5 (ind-2 p. 6–7): the header and one row end page 6; page 7 repeats the header above four rows.
+        var page = new SyntheticPdfBuilder().Page().Text(Left, 70, "Regulamin rachunków", 14, bold: true);
+        for (int i = 0; i < 40; i++)
+        {
+            page.Text(Left, 100 + (i * 14), "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank dla klientów.", 11);
+        }
+
+        page.Text(Left, 680, "4. Jak możesz otworzyć rachunek?", 11, bold: true);
+        AccountRows(page, 700, [["pierwszy rachunek indywidualny", "Tak", "Nie"]]);
+        page.Page();
+        AccountRows(page, 60, [["kolejny rachunek indywidualny", "Nie", "Tak"], ["pierwszy rachunek wspólny", "Tak", "Nie"], ["kolejny rachunek wspólny z tą samą osobą", "Nie", "Tak"], ["kolejny rachunek wspólny, ale pierwszy z tą osobą", "Tak", "Nie"]]);
+        page.Text(Left, 200, "Rachunek otworzymy w dniu zawarcia umowy lub złożenia dyspozycji.", 11);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        string[] table =
+        [
+            "| **rodzaj rachunku** | **umowa** | **dyspozycja** |",
+            "| --- | --- | --- |",
+            "| pierwszy rachunek indywidualny | Tak | Nie |",
+            "| kolejny rachunek indywidualny | Nie | Tak |",
+            "| pierwszy rachunek wspólny | Tak | Nie |",
+            "| kolejny rachunek wspólny z tą samą osobą | Nie | Tak |",
+            "| kolejny rachunek wspólny, ale pierwszy z tą osobą | Tak | Nie |",
+        ];
+        Assert.Equal(table, TableLines(markdown));
+        Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
+    }
+
     private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
     {
         IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
