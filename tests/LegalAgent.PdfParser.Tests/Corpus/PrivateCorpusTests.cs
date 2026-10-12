@@ -131,7 +131,7 @@ public sealed class PrivateCorpusTests
         IReadOnlyList<Converted> documents = await ConvertAllAsync(directory);
         var diffs = documents.ToDictionary(
             d => Path.GetFileNameWithoutExtension(d.Name),
-            d => NumberCheck.Compare(d.Result.Markdown, d.Path, d.Result.Report),
+            d => NumberCheck.Compare(d.Result.Markdown, d.Path, d.Result.Report, d.Result.Document),
             StringComparer.Ordinal);
 
         IReadOnlyList<string> failures = RegulationGate.Evaluate(await File.ReadAllTextAsync(list, TestContext.Current.CancellationToken), diffs);
@@ -185,7 +185,7 @@ public sealed class PrivateCorpusTests
         foreach (Converted document in documents)
         {
             string markdown = document.Result.Markdown;
-            NumberDiff numbers = NumberCheck.Compare(markdown, document.Path, document.Result.Report);
+            NumberDiff numbers = NumberCheck.Compare(markdown, document.Path, document.Result.Report, document.Result.Document);
             LayoutMeasures m = LayoutMetrics.Measure(markdown, document.Result.Report, numbers);
             if (m.NumbersExcess + m.NumbersMissing > 0)
             {
@@ -218,7 +218,7 @@ public sealed class PrivateCorpusTests
 
         if (Directory.Exists(baselineDirectory))
         {
-            table.Append("\n## Zbiory słów i nagłówki jednostek vs baseline-009\n\n");
+            table.Append("\n## Zbiory słów i nagłówki jednostek vs " + BaselineDirectory + "\n\n");
             table.Append("| Dokument | Utracone słowa | Nowe słowa | Nagłówki jednostek: utracone | Nagłówki jednostek: nowe |\n|---|---|---|---|---|\n");
             var details = new StringBuilder();
             foreach (Converted document in documents)

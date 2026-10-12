@@ -111,6 +111,10 @@ public static partial class NumberCheck
         }
 
         Dictionary<string, int> missing = Subtract(fromPdf.Numbers, fromMarkdown);
+        if (document is not null)
+        {
+            missing = Subtract(missing, FootnoteLabels(markdown, document));
+        }
 
         return new NumberDiff(
             excess,
