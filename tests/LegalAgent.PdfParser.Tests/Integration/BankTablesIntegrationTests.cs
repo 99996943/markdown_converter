@@ -943,6 +943,77 @@ public sealed class BankTablesIntegrationTests
             TableLines(markdown));
     }
 
+    [Fact]
+    public async Task SmallTableWithoutRulingsAndShortCells_IsATable()
+    {
+        // T5 (FR-741): three columns without rulings, a bold header and three rows of short cells, values centred.
+        double[] xs = [43.7, 325.6, 438.4, 551.3];
+        SyntheticPdfBuilder page = BodyPage("Regulamin rachunków");
+        page.Text(Left, 170, "Rachunek otworzymy na podstawie umowy albo dyspozycji, zależnie od rodzaju rachunku, który wybierzesz:", Body);
+        page.Text(48, 190, "rodzaj rachunku", Body, bold: true);
+        Centred(page, xs[1], xs[2], 190, "umowa", Body, bold: true);
+        Centred(page, xs[2], xs[3], 190, "dyspozycja", Body, bold: true);
+        string[][] rows = [["pierwszy rachunek indywidualny", "Tak", "Nie"], ["kolejny rachunek indywidualny", "Nie", "Tak"], ["pierwszy rachunek wspólny", "Tak", "Nie"]];
+        for (int r = 0; r < rows.Length; r++)
+        {
+            page.Text(48, 210 + (r * 20), rows[r][0], Body);
+            Centred(page, xs[1], xs[2], 210 + (r * 20), rows[r][1], Body);
+            Centred(page, xs[2], xs[3], 210 + (r * 20), rows[r][2], Body);
+        }
+
+        page.Text(Left, 290, "Rachunek otworzymy w dniu zawarcia umowy lub złożenia dyspozycji.", Body);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(
+            [
+                "| **rodzaj rachunku** | **umowa** | **dyspozycja** |",
+                "| --- | --- | --- |",
+                "| pierwszy rachunek indywidualny | Tak | Nie |",
+                "| kolejny rachunek indywidualny | Nie | Tak |",
+                "| pierwszy rachunek wspólny | Tak | Nie |",
+            ],
+            TableLines(markdown));
+    }
+
+    [Fact]
+    public async Task SmallTableWithoutRulingsSplitOverTwoPages_IsOneTable()
+    {
+        // FR-741: the header and one row end page 1, two rows open page 2 — the row threshold counts both parts.
+        double[] xs = [43.7, 325.6, 438.4, 551.3];
+        void Row(SyntheticPdfBuilder p, double y, string[] cells, bool bold = false)
+        {
+            p.Text(48, y, cells[0], Body, bold);
+            Centred(p, xs[1], xs[2], y, cells[1], Body, bold);
+            Centred(p, xs[2], xs[3], y, cells[2], Body, bold);
+        }
+
+        SyntheticPdfBuilder page = BodyPage("Regulamin rachunków");
+        for (int i = 0; i < 55; i++)
+        {
+            page.Text(Left, 170 + (i * 10), "Rachunek otworzymy na podstawie umowy albo dyspozycji, zależnie od rodzaju rachunku.", Body);
+        }
+
+        Row(page, 740, ["rodzaj rachunku", "umowa", "dyspozycja"], bold: true);
+        Row(page, 760, ["pierwszy rachunek indywidualny", "Tak", "Nie"]);
+        page.Page();
+        Row(page, 60, ["kolejny rachunek indywidualny", "Nie", "Tak"]);
+        Row(page, 80, ["pierwszy rachunek wspólny", "Tak", "Nie"]);
+        page.Text(Left, 110, "Rachunek otworzymy w dniu zawarcia umowy lub złożenia dyspozycji, zależnie od rodzaju rachunku.", Body);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(
+            [
+                "| **rodzaj rachunku** | **umowa** | **dyspozycja** |",
+                "| --- | --- | --- |",
+                "| pierwszy rachunek indywidualny | Tak | Nie |",
+                "| kolejny rachunek indywidualny | Nie | Tak |",
+                "| pierwszy rachunek wspólny | Tak | Nie |",
+            ],
+            TableLines(markdown));
+    }
+
     private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
     {
         IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
