@@ -896,6 +896,53 @@ public sealed class BankTablesIntegrationTests
         Assert.Contains("Dla transakcji przychodzących stosujemy kursy wskazane w tabeli:", markdown, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public async Task SectionRowAcrossTheBoxAtTheTopOfTheNextPage_StaysARowOfItsOwn()
+    {
+        // Guard (MSZ act): a row ruled as one cell across the box opens page 2 — it is not the rest of the cell above.
+        double[] xs = [59.3, 201.1, 378.3, 555.5];
+        SyntheticPdfBuilder page = BodyPage("Obwieszczenie");
+        for (int i = 0; i < 50; i++)
+        {
+            page.Text(Left, 170 + (i * 10), "Wysokość opłat konsularnych określa tabela stanowiąca załącznik do obwieszczenia.", Body);
+        }
+
+        RateRows(page, 700, header: true, [["6.10", "Sporządzenie odpisu", "50"], ["6.11", "Poświadczenie tłumaczenia", "40"]]);
+        page.Page();
+        page.HLine(59.5, 555.3, 60).HLine(59.5, 555.3, 80).VLine(59.3, 60, 80).VLine(555.5, 60, 80);
+        Centred(page, xs[0], xs[3], 74, "VII. Czynności w sprawach stanu cywilnego", Body);
+        RateRows(page, 80, header: false, [["7.1", "Przyjęcie oświadczenia", "60"], ["7.2", "Sporządzenie aktu", "70"], ["7.3", "Wydanie zaświadczenia", "30"]]);
+        page.Text(Left, 190, "Opłaty pobiera się w walucie państwa przyjmującego.", Body);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        string[] rows = TableLines(markdown);
+        Assert.Contains("| 6.11 | Poświadczenie tłumaczenia | 40 |", rows);
+        Assert.Contains(rows, r => r.Contains("VII. Czynności w sprawach stanu cywilnego", StringComparison.Ordinal) && !r.Contains("6.11", StringComparison.Ordinal));
+        Assert.Contains("| 7.1 | Przyjęcie oświadczenia | 60 |", rows);
+    }
+
+    [Fact]
+    public async Task GroupedHeaderRepeatedOnTheNextPage_IsSkipped()
+    {
+        // T018 variant over two pages: the matrix with a group row ends page 1 and goes on below the same two header rows.
+        SyntheticPdfBuilder page = GroupedMatrix(BodyPage("Regulamin faktoringu"), groupReference: false);
+        GroupedMatrix(page.Page(), groupReference: false);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(
+            [
+                "| **Co można zrobić?** | **Gdzie można zrobić?** **serwis transakcyjny** | **Gdzie można zrobić?** **BOK** | **Gdzie można zrobić?** **placówka** |",
+                "| --- | --- | --- | --- |",
+                "| zmienić limit | TAK | TAK | NIE |",
+                "| zastrzec kartę | TAK | TAK | TAK |",
+                "| zmienić limit | TAK | TAK | NIE |",
+                "| zastrzec kartę | TAK | TAK | TAK |",
+            ],
+            TableLines(markdown));
+    }
+
     private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
     {
         IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
