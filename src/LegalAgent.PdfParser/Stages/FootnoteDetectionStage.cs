@@ -13,7 +13,8 @@ namespace LegalAgent.PdfParser.Stages;
 /// <remarks>
 /// <para>
 /// A reference marker is a run of smaller, raised glyphs (e.g. a superscript <c>1)</c>), possibly glued to the end of
-/// a word; it is split off into its own word carrying <see cref="LayoutWord.FootnoteId"/>.
+/// a word — or, spec 010, to the start of one („³kurs”); it is split off into its own word carrying
+/// <see cref="LayoutWord.FootnoteId"/>.
 /// </para>
 /// <para>
 /// The footnote area of a page is either everything below a short horizontal separator rule in the lower part of the
@@ -21,6 +22,12 @@ namespace LegalAgent.PdfParser.Stages;
 /// of the page whose first line starts with a label referenced on that page. Lines of the area get
 /// <see cref="LineRole.Footnote"/>; a labelled line starts a definition, an unlabelled line continues the previous
 /// one, also across pages. Definitions without any reference are marked orphan and reported (FTN001).
+/// </para>
+/// <para>
+/// Spec 010 (T12): a label is also a run of smaller, raised digits opening the line, with or without a space; below a
+/// rule a bare number followed by a space („8 Dotyczy…”) is a label when that number is referenced on the page. Below a
+/// rule the definitions may be set as large as the body text when the first line opens with such a label. Raised
+/// labels opening the lines below a rule are never references.
 /// </para>
 /// </remarks>
 public sealed partial class FootnoteDetectionStage : IPipelineStage
@@ -48,7 +55,7 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
         foreach (LayoutPage page in context.Pages)
         {
             context.CancellationToken.ThrowIfCancellationRequested();
-            markers[page] = FindMarkers(page);
+            markers[page] = FindMarkers(page, BelowFirstRule(page));
         }
 
         string[] exceptions = context.Options.Normalization.HyphenationExceptions.ToArray();
@@ -59,10 +66,11 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
             context.CancellationToken.ThrowIfCancellationRequested();
 
             HashSet<string> referenced = markers[page].Select(m => Key(m.Label)).ToHashSet(StringComparer.Ordinal);
-            foreach (LayoutLine line in FootnoteArea(page, body.FontSize * options.MaxSizeRatio, referenced))
+            (List<LayoutLine> area, bool belowRule) = FootnoteArea(page, body.FontSize * options.MaxSizeRatio, body.FontSize, referenced);
+            foreach (LayoutLine line in area)
             {
                 line.Role = LineRole.Footnote;
-                last = AddLine(context, page, line, last, texts, exceptions);
+                last = AddLine(context, page, line, Label(line, belowRule, referenced), last, texts, exceptions);
             }
         }
 
@@ -90,8 +98,11 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
         }
     }
 
-    /// <summary>Finds raised small-glyph runs at the end of words in ordinary lines.</summary>
-    private static List<Marker> FindMarkers(LayoutPage page)
+    /// <summary>
+    /// Finds raised small-glyph runs at the end of words in ordinary lines, or at the start of a word before a full-size
+    /// letter or digit. A raised run opening a line below a rule labels a definition, not a reference.
+    /// </summary>
+    private static List<Marker> FindMarkers(LayoutPage page, HashSet<LayoutLine> belowRule)
     {
         var result = new List<Marker>();
         foreach (LayoutLine line in page.Lines.Where(l => l.Role == LineRole.Unknown))
@@ -101,29 +112,61 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
             {
                 IReadOnlyList<LayoutGlyph> glyphs = line.Words[w].Glyphs;
                 double baseline = SegmentBaseline(line, line.Words[w], lineSize);
+                bool Raised(LayoutGlyph g) => g.PointSize <= MarkerSizeRatio * lineSize && baseline - g.Baseline >= MarkerRaiseEm * lineSize;
+                if (w == 0 && glyphs.Count > 0 && Raised(glyphs[0]) && belowRule.Contains(line))
+                {
+                    continue;
+                }
                 int start = glyphs.Count;
-                while (start > 0
-                    && glyphs[start - 1].PointSize <= MarkerSizeRatio * lineSize
-                    && baseline - glyphs[start - 1].Baseline >= MarkerRaiseEm * lineSize)
+                while (start > 0 && Raised(glyphs[start - 1]))
                 {
                     start--;
                 }
 
-                if (start == glyphs.Count)
+                if (start < glyphs.Count)
                 {
+                    string label = string.Concat(glyphs.Skip(start).Select(g => g.Text));
+                    if (MarkerLabel().IsMatch(label))
+                    {
+                        result.Add(new Marker(line, w, start, glyphs.Count, label));
+                    }
+
                     continue;
                 }
 
-                string label = string.Concat(glyphs.Skip(start).Select(g => g.Text));
-                if (MarkerLabel().IsMatch(label))
+                int end = 0;
+                while (end < glyphs.Count && Raised(glyphs[end]))
                 {
-                    result.Add(new Marker(line, w, start, label));
+                    end++;
+                }
+
+                if (end > 0 && end < glyphs.Count && glyphs[end].Text.Length > 0 && char.IsLetterOrDigit(glyphs[end].Text[0]))
+                {
+                    string label = string.Concat(glyphs.Take(end).Select(g => g.Text));
+                    if (LeadingMarkerLabel().IsMatch(label))
+                    {
+                        result.Add(new Marker(line, w, 0, end, label));
+                    }
                 }
             }
         }
 
         return result;
     }
+
+    /// <summary>The lines below the topmost short rule in the lower part of the page (a candidate footnote area).</summary>
+    private static HashSet<LayoutLine> BelowFirstRule(LayoutPage page)
+    {
+        List<Segment> rules = Rules(page).ToList();
+        return rules.Count > 0
+            ? page.Lines.Where(l => l.Role == LineRole.Unknown && l.Box.Top > rules[0].Y1).ToHashSet<LayoutLine>(ReferenceEqualityComparer.Instance)
+            : [];
+    }
+
+    private static IEnumerable<Segment> Rules(LayoutPage page) =>
+        page.Rulings
+            .Where(r => r.IsHorizontal && r.Y1 >= RulingMinYRatio * page.Height && r.Length <= RulingMaxWidthRatio * page.Width)
+            .OrderBy(r => r.Y1);
 
     /// <summary>
     /// The baseline of the text around <paramref name="word"/>: of its segment's full-size glyphs. A line merged from
@@ -141,19 +184,22 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
         return baselines.Count > 0 ? baselines[baselines.Count / 2] : line.Baseline;
     }
 
-    private static List<LayoutLine> FootnoteArea(LayoutPage page, double maxSize, HashSet<string> referenced)
+    /// <summary>
+    /// The footnote area of a page and whether it lies below a rule. Below a rule the lines are small, or — spec 010 — no
+    /// larger than the body text when the first opens with a label referenced on the page.
+    /// </summary>
+    private static (List<LayoutLine> Lines, bool BelowRule) FootnoteArea(LayoutPage page, double maxSize, double bodySize, HashSet<string> referenced)
     {
         List<LayoutLine> lines = page.Lines.Where(l => l.Role == LineRole.Unknown).ToList();
 
-        IEnumerable<Segment> rules = page.Rulings
-            .Where(r => r.IsHorizontal && r.Y1 >= RulingMinYRatio * page.Height && r.Length <= RulingMaxWidthRatio * page.Width)
-            .OrderBy(r => r.Y1);
-        foreach (Segment rule in rules)
+        foreach (Segment rule in Rules(page))
         {
             List<LayoutLine> below = lines.Where(l => l.Box.Top > rule.Y1).ToList();
-            if (below.Count > 0 && below.All(l => SizeOf(l) <= maxSize))
+            if (below.Count > 0
+                && (below.All(l => SizeOf(l) <= maxSize)
+                    || (below.All(l => SizeOf(l) <= bodySize) && Label(below[0], belowRule: true, referenced) is { } first && referenced.Contains(Key(first.Label)))))
             {
-                return below;
+                return (below, true);
             }
         }
 
@@ -164,26 +210,60 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
         }
 
         return block.Count > 0
-            && DefinitionLabel().Match(block[0].Text) is { Success: true } first
-            && referenced.Contains(Key(first.Groups["label"].Value))
-                ? block
-                : [];
+            && Label(block[0], belowRule: false, referenced) is { } label
+            && referenced.Contains(Key(label.Label))
+                ? (block, false)
+                : ([], false);
+    }
+
+    /// <summary>
+    /// The label opening a definition line and the text after it: „1)”, „*)”; raised smaller digits; below a rule a bare
+    /// number followed by a space, when it is referenced on the page.
+    /// </summary>
+    private static DefinitionStart? Label(LayoutLine line, bool belowRule, HashSet<string> referenced)
+    {
+        if (DefinitionLabel().Match(line.Text) is { Success: true } match)
+        {
+            return new DefinitionStart(match.Groups["label"].Value, match.Groups["text"].Value.Trim());
+        }
+
+        if (line.Words.Count > 0)
+        {
+            double lineSize = line.Words.SelectMany(w => w.Glyphs).Select(g => g.PointSize).DefaultIfEmpty(0).Max();
+            IReadOnlyList<LayoutGlyph> glyphs = line.Words[0].Glyphs;
+            double baseline = SegmentBaseline(line, line.Words[0], lineSize);
+            int end = 0;
+            while (end < glyphs.Count && glyphs[end].PointSize <= MarkerSizeRatio * lineSize && baseline - glyphs[end].Baseline >= MarkerRaiseEm * lineSize)
+            {
+                end++;
+            }
+
+            string raised = string.Concat(glyphs.Take(end).Select(g => g.Text));
+            if (end > 0 && LeadingMarkerLabel().IsMatch(raised) && line.Text.StartsWith(raised, StringComparison.Ordinal) && line.Text.Length > raised.Length)
+            {
+                return new DefinitionStart(raised, line.Text[raised.Length..].Trim());
+            }
+        }
+
+        return belowRule && BareLabel().Match(line.Text) is { Success: true } bare && referenced.Contains(bare.Groups["label"].Value)
+            ? new DefinitionStart(bare.Groups["label"].Value, bare.Groups["text"].Value.Trim())
+            : null;
     }
 
     private static FootnoteDraft AddLine(
         PipelineContext context,
         LayoutPage page,
         LayoutLine line,
+        DefinitionStart? labelled,
         FootnoteDraft? last,
         Dictionary<FootnoteDraft, StringBuilder> texts,
         string[] exceptions)
     {
-        Match labelled = DefinitionLabel().Match(line.Text);
-        if (labelled.Success || last is null)
+        if (labelled is not null || last is null)
         {
-            var draft = new FootnoteDraft(context.Footnotes.Count, labelled.Success ? labelled.Groups["label"].Value : string.Empty, page.Number);
+            var draft = new FootnoteDraft(context.Footnotes.Count, labelled?.Label ?? string.Empty, page.Number);
             context.Footnotes.Add(draft);
-            texts[draft] = new StringBuilder(labelled.Success ? labelled.Groups["text"].Value.Trim() : line.Text.Trim());
+            texts[draft] = new StringBuilder(labelled?.Text ?? line.Text.Trim());
             return draft;
         }
 
@@ -231,7 +311,13 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
                 parts.Add(MakeWord(glyphs[..marker.GlyphStart], word.Style));
             }
 
-            parts.Add(MakeWord(glyphs[marker.GlyphStart..], word.Style) with { FootnoteId = draft.Id });
+            bool leading = marker.GlyphEnd < glyphs.Count;
+            parts.Add(MakeWord(glyphs[marker.GlyphStart..marker.GlyphEnd], word.Style) with { FootnoteId = draft.Id, ReferencesNextWord = leading });
+            if (leading)
+            {
+                parts.Add(MakeWord(glyphs[marker.GlyphEnd..], word.Style));
+            }
+
             replacement[word] = parts;
         }
 
@@ -285,5 +371,20 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
     [GeneratedRegex(@"^(?<label>\d{1,3}\)|\*{1,3}\)?)\s+(?<text>\S.*)$", RegexOptions.CultureInvariant)]
     private static partial Regex DefinitionLabel();
 
-    private sealed record Marker(LayoutLine Line, int WordIndex, int GlyphStart, string Label);
+    /// <summary>Spec 010: digits raised before a word („³kurs”) or opening a definition („³ Zapis…”).</summary>
+    [GeneratedRegex(@"^\d{1,3}$", RegexOptions.CultureInvariant)]
+    private static partial Regex LeadingMarkerLabel();
+
+    /// <summary>Spec 010: a bare number and a space opening a definition below a rule („8 Dotyczy…”).</summary>
+    [GeneratedRegex(@"^(?<label>\d{1,3})\s+(?<text>\S.*)$", RegexOptions.CultureInvariant)]
+    private static partial Regex BareLabel();
+
+    /// <param name="Line">Line of the marker.</param>
+    /// <param name="WordIndex">Word holding the marker.</param>
+    /// <param name="GlyphStart">First glyph of the marker in the word.</param>
+    /// <param name="GlyphEnd">Glyph after the marker: the word's end, or the start of the word it stands before.</param>
+    /// <param name="Label">Marker text.</param>
+    private sealed record Marker(LayoutLine Line, int WordIndex, int GlyphStart, int GlyphEnd, string Label);
+
+    private sealed record DefinitionStart(string Label, string Text);
 }
