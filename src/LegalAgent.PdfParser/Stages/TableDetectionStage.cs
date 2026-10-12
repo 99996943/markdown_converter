@@ -649,8 +649,43 @@ public sealed class TableDetectionStage : IPipelineStage
             table.Lines.Add(row.Line);
         }
 
-        table.AddGridRows(pieces.Select(p => (p.Cell.Row, p.Cell.Column, p.Cell.ColumnSpan, p.Segment)).ToList());
+        // Spec 010 (research R4): a bold group row over some column names becomes the header group; cells it shares with
+        // the column-name row below (merged down over both) belong to the column names.
+        bool grouped = IsGroupedHeader(grid, pieces);
+        var group = new List<(int Row, int Column, int Span, LineSegment Segment)>();
+        var cells = new List<(int Row, int Column, int Span, LineSegment Segment)>();
+        foreach ((RuledTableGrid.GridCell cell, LineSegment segment) in pieces)
+        {
+            if (grouped && cell.Row == 0 && cell.RowSpan == 1)
+            {
+                group.Add((0, cell.Column, cell.ColumnSpan, segment));
+            }
+            else
+            {
+                cells.Add((grouped && cell.Row == 0 ? 1 : cell.Row, cell.Column, cell.ColumnSpan, segment));
+            }
+        }
+
+        table.AddGridRows(cells, group);
         return table;
+    }
+
+    /// <summary>
+    /// The first grid row holds a cell spanning some but not all columns and otherwise only cells merged down into the
+    /// second row, and the text of both rows is bold: a group row above the column names (firm-3, firm-5).
+    /// </summary>
+    private static bool IsGroupedHeader(RuledTableGrid grid, List<(RuledTableGrid.GridCell Cell, LineSegment Segment)> pieces)
+    {
+        List<RuledTableGrid.GridCell> first = grid.Cells.Where(c => c.Row == 0).ToList();
+        return grid.RowCount >= 3
+            && first.Any(c => c.RowSpan == 1 && c.ColumnSpan > 1 && c.ColumnSpan < grid.ColumnCount)
+            && first.All(c => (c.RowSpan == 1 && c.ColumnSpan > 1) || c.RowSpan >= 2)
+            && pieces.Any(p => p.Cell.Row == 0 && p.Cell.RowSpan == 1)
+            && pieces.Any(p => p.Cell.Row == 1)
+            && pieces.Where(p => p.Cell.Row <= 1)
+                .SelectMany(p => p.Segment.Words)
+                .Where(w => w.FootnoteId is null)
+                .All(w => w.Style.HasFlag(TextStyle.Bold));
     }
 
     /// <summary>
@@ -1071,6 +1106,7 @@ public sealed class TableDetectionStage : IPipelineStage
     private sealed class Table(int page, IReadOnlyList<ColumnBand> bands, string[] exceptions)
     {
         private readonly List<RowDraft> _rows = [];
+        private RowDraft? _group;
 
         public int FirstPage { get; } = page;
 
@@ -1099,8 +1135,17 @@ public sealed class TableDetectionStage : IPipelineStage
         /// Spec 010: rows of a ruled grid — each piece is the words of one line in one cell, given in line order; a cell's
         /// text goes to the row it starts in.
         /// </summary>
-        public void AddGridRows(List<(int Row, int Column, int Span, LineSegment Segment)> pieces)
+        public void AddGridRows(List<(int Row, int Column, int Span, LineSegment Segment)> pieces, List<(int Row, int Column, int Span, LineSegment Segment)> group)
         {
+            if (group.Count > 0)
+            {
+                _group = new RowDraft(Bands.Count, FirstPage);
+                foreach ((int _, int column, int span, LineSegment segment) in group)
+                {
+                    _group.Add(column, span, segment, exceptions);
+                }
+            }
+
             var drafts = new SortedDictionary<int, RowDraft>();
             foreach ((int row, int column, int span, LineSegment segment) in pieces)
             {
@@ -1149,7 +1194,8 @@ public sealed class TableDetectionStage : IPipelineStage
                 header,
                 header is null ? rows : rows.Skip(1).ToList(),
                 columns,
-                IsFallback);
+                IsFallback,
+                header is not null && !IsFallback ? _group?.ToRow(columns, fallback: false) : null);
         }
     }
 

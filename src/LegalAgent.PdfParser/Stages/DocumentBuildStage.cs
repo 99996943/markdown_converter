@@ -178,6 +178,7 @@ public sealed class DocumentBuildStage : IPipelineStage
         TableBlock table when InlinesOf(table).Any(i => i is FootnoteRef) => table with
         {
             Header = table.Header is null ? null : Renumber(table.Header, numbers),
+            HeaderGroup = table.HeaderGroup is null ? null : Renumber(table.HeaderGroup, numbers),
             Rows = table.Rows.Select(r => Renumber(r, numbers)).ToArray(),
         },
         _ => block,
@@ -199,7 +200,7 @@ public sealed class DocumentBuildStage : IPipelineStage
     {
         ParagraphBlock paragraph => paragraph.Inlines,
         ListBlock list => list.Items.SelectMany(i => i.Inlines.Concat(i.Children.SelectMany(InlinesOf))),
-        TableBlock table => (table.Header?.Cells ?? []).Concat(table.Rows.SelectMany(r => r.Cells)).SelectMany(c => c.Inlines),
+        TableBlock table => (table.HeaderGroup?.Cells ?? []).Concat(table.Header?.Cells ?? []).Concat(table.Rows.SelectMany(r => r.Cells)).SelectMany(c => c.Inlines),
         _ => [],
     };
 
