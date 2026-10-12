@@ -264,4 +264,84 @@ public sealed class BankTablesIntegrationTests
             ],
             TableLines(markdown));
     }
+
+    /// <summary>
+    /// A matrix like firm-3 p. 8: a group row „Gdzie można zrobić?” over columns 2–4 (one ruling piece across them, no inner
+    /// verticals in its row, the line under it over columns 2–4 only), the first column's name spanning both header rows.
+    /// </summary>
+    private static SyntheticPdfBuilder GroupedMatrix(SyntheticPdfBuilder page, bool groupReference)
+    {
+        double[] xs = [59.2, 215.2, 328.6, 442.1, 555.5];
+        page.HLine(59.4, 215.0, 300).HLine(215.4, 555.2, 300);
+        page.HLine(215.4, 328.4, 312).HLine(328.8, 441.9, 312).HLine(442.3, 555.3, 312);
+        foreach (double y in new double[] { 340, 360, 380 })
+        {
+            for (int c = 0; c + 1 < xs.Length; c++)
+            {
+                page.HLine(xs[c] + 0.2, xs[c + 1] - 0.2, y);
+            }
+        }
+
+        page.VLine(59.2, 300, 380).VLine(215.2, 300, 380).VLine(555.5, 300, 380).VLine(328.6, 312, 380).VLine(442.1, 312, 380);
+        Centred(page, xs[0], xs[1], 323, "Co można zrobić?", Body, bold: true);
+        string group = "Gdzie można zrobić?";
+        double groupLeft = ((xs[1] + xs[4]) / 2) - (SyntheticPdfBuilder.TextWidth(group, Body, bold: true) / 2);
+        page.Text(groupLeft, 309, group, Body, bold: true);
+        if (groupReference)
+        {
+            page.Text(groupLeft + SyntheticPdfBuilder.TextWidth(group, Body, bold: true), 309 - Raise, "7", Marker, bold: true);
+        }
+
+        Centred(page, xs[1], xs[2], 324, "serwis", Body, bold: true);
+        Centred(page, xs[1], xs[2], 334, "transakcyjny", Body, bold: true);
+        Centred(page, xs[2], xs[3], 329, "BOK", Body, bold: true);
+        Centred(page, xs[3], xs[4], 329, "placówka", Body, bold: true);
+        page.Text(64, 353, "zmienić limit", Body);
+        Centred(page, xs[1], xs[2], 353, "TAK", Body);
+        Centred(page, xs[2], xs[3], 353, "TAK", Body);
+        Centred(page, xs[3], xs[4], 353, "NIE", Body);
+        page.Text(64, 373, "zastrzec kartę", Body);
+        Centred(page, xs[1], xs[2], 373, "TAK", Body);
+        Centred(page, xs[2], xs[3], 373, "TAK", Body);
+        Centred(page, xs[3], xs[4], 373, "TAK", Body);
+        return page;
+    }
+
+    private static SyntheticPdfBuilder BodyPage(string title)
+    {
+        SyntheticPdfBuilder page = new SyntheticPdfBuilder().Page().Text(Left, 70, title, 14, bold: true);
+        for (int i = 0; i < 6; i++)
+        {
+            page.Text(Left, 100 + (i * 10), "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank dla klientów.", Body);
+        }
+
+        return page;
+    }
+
+    [Fact]
+    public async Task GroupRowAboveColumnNames_PrefixesTheNamesOfTheColumnsItSpans()
+    {
+        string markdown = await ConvertAsync(GroupedMatrix(BodyPage("Regulamin faktoringu"), groupReference: false).Build());
+
+        Assert.Equal(
+            [
+                "| **Co można zrobić?** | **Gdzie można zrobić?** **serwis transakcyjny** | **Gdzie można zrobić?** **BOK** | **Gdzie można zrobić?** **placówka** |",
+                "| --- | --- | --- | --- |",
+                "| zmienić limit | TAK | TAK | NIE |",
+                "| zastrzec kartę | TAK | TAK | TAK |",
+            ],
+            TableLines(markdown));
+    }
+
+    [Fact]
+    public async Task ReferenceInTheGroupRow_IsAFootnoteOfTheColumnNames()
+    {
+        SyntheticPdfBuilder page = GroupedMatrix(BodyPage("Regulamin faktoringu"), groupReference: true);
+        page.HLine(39.7, 183.7, 740).Text(Left, 755, "7 Dotyczy klientów firmowych.", Body);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.StartsWith("| **Co można zrobić?** | **Gdzie można zrobić?**[^1] **serwis transakcyjny** |", TableLines(markdown)[0], StringComparison.Ordinal);
+        Assert.Contains("[^1]: Dotyczy klientów firmowych.", markdown, StringComparison.Ordinal);
+    }
 }
