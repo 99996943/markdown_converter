@@ -33,6 +33,15 @@ public sealed class TableDetectionStage : IPipelineStage
     private const double MinCellGapEm = 1.0;
     private const string LeaderDots = "....";
 
+    /// <summary>
+    /// Spec 010: a column border separates two cells of one segment only in a gap this many times wider than the other word
+    /// spaces of the segment (cell padding on both sides of the ruling); in an ordinary space it is text running over it.
+    /// </summary>
+    private const double GridSplitGapRatio = 1.25;
+
+    /// <summary>Spec 010: a word set right at a column ruling may reach this far (points) over it with its glyph box.</summary>
+    private const double GridBorderTouch = 2;
+
     /// <summary>Widest gap between a hanging „1.”, „1/”, „a/” label and its text (corporate regulations: 0.9–1.5 em).</summary>
     private const double MaxHangingLabelGapEm = 2.0;
     private const double JustifiedGapSpread = 0.2;
@@ -466,6 +475,14 @@ public sealed class TableDetectionStage : IPipelineStage
         // Inside a ruled grid the rulings make the rows: a line whose cells start in the table's columns is a row even when
         // they happen to be spaced like the words of a justified line.
         bool gridRegion = grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
+
+        // Spec 010 (research R1): a region inside a grid with column rulings takes its columns and cells from the rulings —
+        // centred names and values belong to the band of their centre, whatever their left edges.
+        if (gridRegion && grid.Around(region) is { } bounds && FromRuledGrid(page, rulings, region, bounds, exceptions) is { } ruledTable)
+        {
+            return ruledTable;
+        }
+
         List<Row> rowsOfCells = region.Where(r => r.IsMulti).ToList();
         List<Row> multi = region.Where(r => r.IsMulti || (gridRegion && IsAligned(r, rowsOfCells, tolerance))).ToList();
 
@@ -581,6 +598,100 @@ public sealed class TableDetectionStage : IPipelineStage
 
         return table;
     }
+
+    /// <summary>
+    /// Spec 010: the table of a region in a ruled grid built from <see cref="RuledTableGrid"/> — every word goes to the cell
+    /// of its centre and baseline; null when the rulings make no consistent grid or a word lies outside it.
+    /// </summary>
+    private static Table? FromRuledGrid(LayoutPage page, IEnumerable<Segment> rulings, List<Row> region, (double Top, double Bottom) bounds, string[] exceptions)
+    {
+        if (RuledTableGrid.TryBuild(rulings, bounds.Top, bounds.Bottom) is not { ColumnCount: >= 2 } grid)
+        {
+            return null;
+        }
+
+        var pieces = new List<(RuledTableGrid.GridCell Cell, LineSegment Segment)>();
+        foreach (Row row in region)
+        {
+            var byCell = new List<(RuledTableGrid.GridCell Cell, List<LayoutWord> Words)>();
+            foreach (List<LayoutWord> part in GridParts(row.Line, grid))
+            {
+                if (grid.Locate(BoxOf(part), row.Line.Baseline) is not { } unit)
+                {
+                    return null;
+                }
+
+                // A section row across the whole box keeps its text in the band of its centre, as a row of one cell.
+                RuledTableGrid.GridCell cell = grid.CellAt(unit.Row, unit.Column);
+                if (cell.ColumnSpan == grid.ColumnCount)
+                {
+                    cell = cell with { Column = unit.Column, ColumnSpan = 1 };
+                }
+
+                int index = byCell.FindIndex(p => p.Cell == cell);
+                if (index < 0)
+                {
+                    byCell.Add((cell, part));
+                }
+                else
+                {
+                    byCell[index].Words.AddRange(part);
+                }
+            }
+
+            pieces.AddRange(byCell.Select(p => (p.Cell, new LineSegment(p.Words, BoxOf(p.Words)))));
+        }
+
+        var bands = Enumerable.Range(0, grid.ColumnCount).Select(c => new ColumnBand(grid.Columns[c], grid.Columns[c + 1])).ToList();
+        var table = new Table(page.Number, bands, exceptions);
+        foreach (Row row in region)
+        {
+            table.Lines.Add(row.Line);
+        }
+
+        table.AddGridRows(pieces.Select(p => (p.Cell.Row, p.Cell.Column, p.Cell.ColumnSpan, p.Segment)).ToList());
+        return table;
+    }
+
+    /// <summary>
+    /// The words of a line in pieces placed by their centre: its segments, split where a column border lies in a gap
+    /// between two words wider than the median other space (<see cref="GridSplitGapRatio"/>) and the words fall into
+    /// different cells; text running over a border from one cell, or across a row without the border, stays whole.
+    /// </summary>
+    private static List<List<LayoutWord>> GridParts(LayoutLine line, RuledTableGrid grid)
+    {
+        IEnumerable<IReadOnlyList<LayoutWord>> segments = line.Segments.Count > 0 ? line.Segments.Select(s => s.Words) : [line.Words];
+        var parts = new List<List<LayoutWord>>();
+        foreach (IReadOnlyList<LayoutWord> words in segments.Where(w => w.Count > 0))
+        {
+            List<double> gaps = words.Zip(words.Skip(1), (a, b) => b.Box.Left - a.Box.Right).ToList();
+            var part = new List<LayoutWord> { words[0] };
+            for (int i = 1; i < words.Count; i++)
+            {
+                double gapStart = words[i - 1].Box.Right;
+                double gapEnd = words[i].Box.Left;
+                List<double> others = gaps.Where((_, k) => k != i - 1).Order().ToList();
+                double space = others.Count > 0 ? others[others.Count / 2] : 0;
+                if (gapEnd - gapStart > GridSplitGapRatio * space && grid.Columns.Any(x => x > gapStart - GridBorderTouch && x < gapEnd + GridBorderTouch)
+                    && CellOf(grid, words[i - 1], line.Baseline) != CellOf(grid, words[i], line.Baseline))
+                {
+                    parts.Add(part);
+                    part = [];
+                }
+
+                part.Add(words[i]);
+            }
+
+            parts.Add(part);
+        }
+
+        return parts;
+    }
+
+    private static RuledTableGrid.GridCell? CellOf(RuledTableGrid grid, LayoutWord word, double baseline) =>
+        grid.Locate(word.Box, baseline) is { } unit ? grid.CellAt(unit.Row, unit.Column) : null;
+
+    private static Rect BoxOf(List<LayoutWord> words) => words.Skip(1).Aggregate(words[0].Box, (box, w) => box.Union(w.Box));
 
     /// <summary>
     /// Rows whose cells are all lone list labels („1.”, „a)”, „1/”) but the last: numbered paragraphs with a hanging
@@ -804,6 +915,14 @@ public sealed class TableDetectionStage : IPipelineStage
         /// <summary>Index of the band between horizontal borders that <paramref name="y"/> falls into.</summary>
         public int RowIndex(double y) => _borders.Count(b => b <= y);
 
+        /// <summary>The borders above the first and below the last line of <paramref name="region"/>; null outside the grid.</summary>
+        public (double Top, double Bottom)? Around(List<Row> region)
+        {
+            int first = _borders.Count(b => b <= region[0].Line.Box.CenterY);
+            int last = _borders.Count(b => b <= region[^1].Line.Box.CenterY);
+            return first == 0 || last >= _borders.Count ? null : (_borders[first - 1], _borders[last]);
+        }
+
         /// <summary>Number of distinct grid rows the lines of <paramref name="region"/> fall into.</summary>
         public int Rows(List<Row> region) =>
             region.Select(r => r.Line.Box.CenterY).Where(Contains).Select(y => _borders.Count(b => b <= y)).Distinct().Count();
@@ -974,6 +1093,26 @@ public sealed class TableDetectionStage : IPipelineStage
                 int span = Math.Max(1, ColumnClustering.Span(Bands, cell.Box.Left, cell.Box.Right, tolerance));
                 draft.Add(column, span, cell, exceptions);
             }
+        }
+
+        /// <summary>
+        /// Spec 010: rows of a ruled grid — each piece is the words of one line in one cell, given in line order; a cell's
+        /// text goes to the row it starts in.
+        /// </summary>
+        public void AddGridRows(List<(int Row, int Column, int Span, LineSegment Segment)> pieces)
+        {
+            var drafts = new SortedDictionary<int, RowDraft>();
+            foreach ((int row, int column, int span, LineSegment segment) in pieces)
+            {
+                if (!drafts.TryGetValue(row, out RowDraft? draft))
+                {
+                    drafts[row] = draft = new RowDraft(Bands.Count, FirstPage);
+                }
+
+                draft.Add(column, span, segment, exceptions);
+            }
+
+            _rows.AddRange(drafts.Values);
         }
 
         public void AddVisualRow(Row row)
