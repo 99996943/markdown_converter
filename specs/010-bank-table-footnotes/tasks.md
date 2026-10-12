@@ -299,28 +299,28 @@ pionie, nagłówek 3-liniowy, odnośniki „TAK/TAK⁵”) → jedna tabela, lic
 
 **Purpose**: wersja, kontrakt, korpus syntetyczny, dokumentacja, publish/.
 
-- [ ] T035 [US6] Wersja 1.3.0 w `Directory.Build.props`; `refresh` (aktualizuje `parserVersion` w
+- [X] T035 [US6] Wersja 1.3.0 w `Directory.Build.props`; `refresh` (aktualizuje `parserVersion` w
   `corpus/manifest.json`; `generatorVersion` ręcznie na 1.3.0); `verify` czysty; każda zmiana `corpus/` poza
   manifestem — stop i pytanie (FR-755)
-- [ ] T036 [US6] Pełny zestaw z `LEGALAGENT_CORPUS_FULL=1`, prywatnym korpusem i raportem oraz osobno
+- [X] T036 [US6] Pełny zestaw z `LEGALAGENT_CORPUS_FULL=1`, prywatnym korpusem i raportem oraz osobno
   `dotnet test LegalAgent.slnx --filter "Category=Performance"` (SC-007 bez regresji); porównanie słów vs
   `baseline-010` (quickstart §3, SC-115) — wynik w handoffie
-- [ ] T037 [US6] Przegląd przypadków na prawdziwych dokumentach (quickstart §4): tabela przed/po dla SC-110…SC-114
+- [X] T037 [US6] Przegląd przypadków na prawdziwych dokumentach (quickstart §4): tabela przed/po dla SC-110…SC-114
   (firm-5, firm-1, firm-3, ind-2, ind-4, downloads-1…5) w handoffie `plan.md`, z listą zmienionych goldenów i
   uzasadnieniem; treści prywatne tylko w skrócie
-- [ ] T038 [P] [US6] Kontrakt: odnośnik z `specs/001-legal-pdf-parser/contracts/markdown-output.md` (lub
+- [X] T038 [P] [US6] Kontrakt: odnośnik z `specs/001-legal-pdf-parser/contracts/markdown-output.md` (lub
   `specs/001-legal-pdf-parser/data-model.md`, sekcja tabel) do uzupełnienia
   `specs/010-bank-table-footnotes/contracts/markdown-output.md` (1.4.0) i opis pól `RowSpan`, `ContinuesAbove`,
   `HeaderGroup`
-- [ ] T039 [P] [US6] README parsera `src/LegalAgent.PdfParser/README.md`: zmiany 1.3.0 (siatka tabel z liniami,
+- [X] T039 [P] [US6] README parsera `src/LegalAgent.PdfParser/README.md`: zmiany 1.3.0 (siatka tabel z liniami,
   scalenia, wiersz grupujący, przypisy przed słowem / w komórkach / pod kreską) i „Znane ograniczenia”: T7, T8, T10,
   odnośniki z przecinkiem („BLIK⁹,¹⁰”), „art. 166¹¹²)”, warianty bez linii i inne niezrobione przypadki z
   uzasadnieniem (FR-757)
-- [ ] T040 [P] [US6] `CLAUDE.md`: w „Parser architecture” akapit „Spec 010 additions” (`RuledTableGrid`, `RowSpan`/
+- [X] T040 [P] [US6] `CLAUDE.md`: w „Parser architecture” akapit „Spec 010 additions” (`RuledTableGrid`, `RowSpan`/
   `ContinuesAbove`, `HeaderGroup`, przypisy), wersja 1.3.0; w „Chunking architecture” zdanie o komórkach-kontynuacjach
-- [ ] T041 [US6] Przebuduj `publish/` (biblioteka, pakiet NuGet 1.3.0, exe generatora FAQ) i uruchom konwersję
+- [X] T041 [US6] Przebuduj `publish/` (biblioteka, pakiet NuGet 1.3.0, exe generatora FAQ) i uruchom konwersję
   regulaminów z `publish/mBank.FaqGenerator-win-x64` bez błędów (SC-117); wynik w handoffie
-- [ ] T042 [US6] Handoff końcowy w `specs/010-bank-table-footnotes/plan.md` („Stan prac i przekazanie”): miary
+- [X] T042 [US6] Handoff końcowy w `specs/010-bank-table-footnotes/plan.md` („Stan prac i przekazanie”): miary
   przed/po, zmienione goldeny, decyzje właściciela, ograniczenia, kandydaci na następną spec; zaktualizuj
   `tasks.md` (zadania [X]); gałąź niewypchnięta, chyba że właściciel poprosi
 

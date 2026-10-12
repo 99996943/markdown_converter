@@ -346,6 +346,36 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     („budynek mieszkalny jednorodzinny”) dokończona; downloads-1…5 TBL001 0. Komórka downloads-1 „Gdzie sprawdzisz…”
     rozdzielona linią wewnątrz strony (nie przez stronę) nadal powtarza etykietę scalenia — zgodnie z T024.
   - Pełny zestaw: 2233 testy, 0 niepowodzeń (pominięte: T029 i dotychczasowe); `CorpusFull` zielony, `corpus/` bez zmian.
+- 2026-10-12, Phase 8 / US6 (T035–T042) — **stan końcowy spec 010**:
+  - T035: wersja 1.3.0 (`Directory.Build.props`), `refresh` + `generatorVersion` ręcznie → `corpus/manifest.json`
+    (tylko wersje); `verify` czysty; żadnych innych zmian `corpus/`.
+  - T036: pełny zestaw z `LEGALAGENT_CORPUS_FULL=1`, prywatnym korpusem i raportem — 2233 testy, 0 niepowodzeń,
+    3 pominięte (T029 i dotychczasowe); `Category=Performance` osobno — zielone (SC-007). Słowa vs `baseline-010`
+    (SC-115): w raporcie wszystkie „utracone słowa” to rozklejone odnośniki („tak5”, „blik11”, „3kurs”,
+    „walutowej1”); porównanie zbiorów po normalizacji sklejonych cyfr — 0 utraconych słów, 0 nowych (artefakty
+    tokenizacji „taryfa?3”, „BLIK9,10”). firm-1: dawne „150.000 zł” było sklejeniem — w PDF stoi odnośnik ¹ (5 pt,
+    podniesiony) przed „50.000 zł”, teraz `[^1]50.000 zł` z definicją „Zapis obowiązuje do 13.01.2026 r. włącznie”;
+    „zł/²30.000” (odnośnik w środku słowa po ukośniku) zostaje sklejony — znane ograniczenie.
+  - T037 miary prywatne przed (1.2.3, `metrics-baseline`) / po (1.3.0): TBL001 27 → 1 (corp-1, tabela tagów SWIFT,
+    T10 poza zakresem); wiersze formatu zapasowego „ \| ” 345 → 2; „Odnośniki sklejone” 83 → 7 (firm-3 1, firm-5 2,
+    ind-4 4 — odnośniki z przecinkiem i w środku słowa); liczby firm-1 +6/−6 → +5/−4, pozostałe bez zmian.
+    SC-110 (firm-5 s. 13 scalenia), SC-111 (przypisy firm-5, firm-2, downloads-3, ind-*), SC-112 (nagłówki
+    wieloliniowe, downloads-2, firm-6), SC-113 (macierze ind-4, ind-2, firm-2, firm-5), SC-114 (firm-5 s. 12–13, ind-2
+    s. 6–7, ind-4 s. 13, downloads-5 s. 8) — spełnione; szczegóły w wpisach faz powyżej. Zmienione goldeny prywatne:
+    corp-1, firm-1, firm-2, firm-3, firm-5, firm-6, ind-1, ind-2, ind-4, reg1, regulamin-pdp (tylko tabele i
+    przypisy; reg1/regulamin-pdp i corp-1 SWIFT — zgody właściciela); `corpus/akty/dz-u-2025-720` (zgoda);
+    `Corpus/acts`, `Corpus/banking` bez zmian.
+  - T038–T040: odnośnik do kontraktu 1.4.0 w spec 001, README parsera (sekcja 1.3.0 i „Znane ograniczenia”: T7, T8,
+    T10, odnośniki z przecinkiem i po ukośniku, „art. 166¹¹²)”, macierze bez linii, powtórzona etykieta scalenia
+    w komórce dzielonej linią, stopka doklejona do przypisu), `CLAUDE.md` „Spec 010 additions”.
+  - T041: `publish/` przebudowane z 8829674 — `lib/` (5 bibliotek), `nuget/` 1.3.0, `LegalAgent.PdfParser/lib`,
+    `LegalAgent.Chunking/lib`, exe generatora FAQ (single-file, win-x64; `appsettings*.json` w `publish/` bez zmian);
+    konwersja 20 regulaminów z `publish/mBank.FaqGenerator-win-x64/{corp,firm,ind,downloads}` CLI 1.3.0 — 0 błędów,
+    `.md` zaktualizowane (exe nie był uruchamiany — FAQ wymaga Azure; pliki `faq/` bez zmian).
+  - Kandydaci na następną spec: odnośniki z przecinkiem i w środku słowa; macierze bez linii (T029); tabela tagów
+    SWIFT (T10); kolejne definicje przypisów w jednej linii („[^4]: … 7 Zapis … 8 …” w firm-1); stopka banku
+    przeplatana z przypisami.
+  - Gałąź `010-bank-table-footnotes` niewypchnięta (zgodnie z regułą); sonda `Scratch/ReachProbe.cs` usunięta.
 
 ## Complexity Tracking
 
