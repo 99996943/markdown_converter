@@ -67,9 +67,19 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
 
             HashSet<string> referenced = markers[page].Select(m => Key(m.Label)).ToHashSet(StringComparer.Ordinal);
             (List<LayoutLine> area, bool belowRule) = FootnoteArea(page, body.FontSize * options.MaxSizeRatio, body.FontSize, referenced);
-            foreach (LayoutLine line in area)
+            for (int i = 0; i < area.Count; i++)
             {
+                LayoutLine line = area[i];
                 line.Role = LineRole.Footnote;
+
+                // Spec 010 (firm-5): a raised label set as a line of its own, overlapping the definition text beside it.
+                if (i + 1 < area.Count && LoneLabel(line, area[i + 1], referenced) is { } label)
+                {
+                    area[++i].Role = LineRole.Footnote;
+                    last = AddLine(context, page, area[i], new DefinitionStart(label, area[i].Text.Trim()), last, texts, exceptions);
+                    continue;
+                }
+
                 last = AddLine(context, page, line, Label(line, belowRule, referenced), last, texts, exceptions);
             }
         }
@@ -249,6 +259,16 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
             ? new DefinitionStart(bare.Groups["label"].Value, bare.Groups["text"].Value.Trim())
             : null;
     }
+
+    /// <summary>A line holding only a label referenced on the page whose box overlaps the next line: that line's label.</summary>
+    private static string? LoneLabel(LayoutLine line, LayoutLine next, HashSet<string> referenced) =>
+        line.Words.Count == 1
+        && LeadingMarkerLabel().IsMatch(line.Words[0].Text)
+        && referenced.Contains(Key(line.Words[0].Text))
+        && next.Box.Top < line.Box.Bottom
+        && next.Words.Count > 0
+            ? line.Words[0].Text
+            : null;
 
     private static FootnoteDraft AddLine(
         PipelineContext context,
