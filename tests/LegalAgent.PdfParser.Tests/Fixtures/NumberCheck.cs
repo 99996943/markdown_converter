@@ -75,11 +75,17 @@ public static partial class NumberCheck
     /// <remarks>
     /// As <see cref="Compare(string, byte[], ConversionReport)"/>. Spec 010 (T013b): with <paramref name="document"/>,
     /// the digits of the original labels of its footnotes are not missing up to one per definition and one per
-    /// <c>[^n]</c> reference — the parser prints them as footnote markers.
+    /// <c>[^n]</c> reference — the parser prints them as footnote markers; (T026) the numbers of merged cells and header
+    /// groups repeated by the renderer count once.
     /// </remarks>
     public static NumberDiff Compare(string markdown, byte[] pdf, ConversionReport report, LegalDocument? document)
     {
         IReadOnlyDictionary<string, int> fromMarkdown = FromMarkdown(markdown);
+        if (document is not null)
+        {
+            fromMarkdown = Subtract(fromMarkdown, Repeats(document));
+        }
+
         PdfNumbers? fromPdf = ReadPdf(pdf, report);
         if (fromPdf is null)
         {
@@ -124,6 +130,35 @@ public static partial class NumberCheck
             null,
             references);
     }
+
+    /// <summary>
+    /// Spec 010 (FR-758): numbers the renderer prints more than once — the text of every cell continuing a merged cell and
+    /// of a header group cell once per further column it spans.
+    /// </summary>
+    private static Dictionary<string, int> Repeats(LegalDocument document)
+    {
+        IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
+        var repeats = new Dictionary<string, int>(StringComparer.Ordinal);
+        foreach (TableBlock table in document.Preamble.Concat(document.Sections.SelectMany(Of)).OfType<TableBlock>().Where(t => !t.IsFallback))
+        {
+            foreach (TableCell cell in table.Rows.SelectMany(r => r.Cells).Where(c => c.ContinuesAbove))
+            {
+                AddNumbers(repeats, CellText(cell));
+            }
+
+            foreach (TableCell cell in table.HeaderGroup?.Cells ?? [])
+            {
+                for (int k = 1; k < cell.ColumnSpan; k++)
+                {
+                    AddNumbers(repeats, CellText(cell));
+                }
+            }
+        }
+
+        return repeats;
+    }
+
+    private static string CellText(TableCell cell) => string.Join(' ', cell.Inlines.OfType<TextRun>().Select(r => r.Text));
 
     /// <summary>Numeric original labels of the document's footnotes: one per definition and one per reference.</summary>
     private static Dictionary<string, int> FootnoteLabels(string markdown, LegalDocument document)
