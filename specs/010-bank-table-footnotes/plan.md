@@ -164,6 +164,43 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
   scalenia, FR-743 doklejanie tylko przy tekście w jednej kolumnie, FR-742 z wierszem grupującym, FR-710 definicja na
   tej samej albo dalszej stronie, progi kreski w FR-712, SC-112 z „Znanymi ograniczeniami”, sonda T013a dla
   niezbadanych tabel T3/T1, drobne w T002, T011, T012, T018, T022, T030). Następny krok: `/speckit-implement` od T001.
+- 2026-10-12, implementacja Phase 1–2 (T001–T006):
+  - T001: `baseline-010/` = 21 goldenów prywatnych (1.2.3); pełny zestaw z prywatnym korpusem, `CorpusFull` i raportem
+    zielony na starcie (2188 testów, 0 niepowodzeń, 2 pominięte znane).
+  - T003, pomiar wyjściowy (prywatne; tabele / z liniami pionowymi / TBL001 z sondy T004; TBL001, wiersze „ \| ”,
+    Liczby +/−, Odnośniki sklejone z raportu):
+
+    | Dokument | Tabele | Z liniami | TBL001 | Wiersze „ \| ” | Liczby + | Liczby − | Odnośniki sklejone |
+    |---|---|---|---|---|---|---|---|
+    | corp-1 | 8 | 6 | 4 | 19 | 0 | 0 | 0 |
+    | corp-2 | 0 | 0 | 0 | 0 | 8 | 1 | 0 |
+    | corp-5 | 6 | 4 | 0 | 0 | 0 | 0 | 1 |
+    | firm-1 | 6 | 6 | 3 | 76 | 6 | 6 | 0 |
+    | firm-2 | 5 | 5 | 0 | 0 | 0 | 0 | 4 |
+    | firm-3 | 10 | 10 | 0 | 0 | 0 | 0 | 9 |
+    | firm-4 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+    | firm-5 | 15 | 15 | 1 | 2 | 0 | 0 | 11 |
+    | firm-6 | 2 | 2 | 0 | 0 | 0 | 0 | 1 |
+    | ind-1 | 9 | 9 | 0 | 0 | 0 | 0 | 15 |
+    | ind-2 | 11 | 11 | 7 | 62 | 1 | 0 | 7 |
+    | ind-3 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+    | ind-4 | 16 | 16 | 6 | 82 | 1 | 0 | 17 |
+    | ind-5 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+    | reg1 / regulamin-pdp | 13 | 13 | 3 | 52 | 1 | 0 | 9 |
+    | reg2 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+    | corp-3, corp-4, corp-6, reg3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+    downloads-1…5 (konwersja CLI do katalogu tymczasowego): tabele GFM 7 / 3 / 2 / 3 / 6, TBL001 0 / 0 / 1 / 0 / 2,
+    wiersze „ \| ” 0 / 0 / 15 / 0 / 31, definicje przypisów 0 / 1 / 1 / 1 / 0.
+  - T004, sonda zasięgu (test tymczasowy, nie zacommitowany): (b) słowa z `FootnoteId` w liniach tabel — **0** we
+    wszystkich korpusach (acts, banking, `corpus/`, prywatny), więc przenoszenie `FootnoteId` w `RowDraft` (T013) nie
+    zmienia samo goldenów chronionych. (a) tabele z ≥ 3 liniami pionowymi w obszarze: akt MSZ (2), banking
+    `taryfa-z-siatka` (2) i `regulamin-z-tabela-definicji` (1), w `corpus/` prawie wszystkie taryfy, procedury i
+    regulaminy (1–8 tabel na dokument), w prywatnym korpusie prawie wszystkie tabele. **Ryzyko**: wpięcie siatki
+    (T015) dotyczy goldenów chronionych — ścieżka siatki musi dawać dla prostych pełnych siatek ten sam wynik; każda
+    zmiana acts/banking/`corpus/` → stop i pytanie (FR-755).
+  - T005–T006: `RuledTableGrid` (kolumny z linii pionowych w ≥ 2 wierszach, granice wierszy z odcinków ≥ 80% pasma,
+    scalenia pionowe i poziome przez union-find, `Locate` po środku x i linii bazowej), 6 testów, jeszcze niewpięty.
 
 ## Complexity Tracking
 

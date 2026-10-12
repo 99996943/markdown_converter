@@ -35,15 +35,15 @@ Kod, komentarze i commity po angielsku; spec, handoff i README po polsku.
 
 ## Phase 1: Setup (punkt odniesienia)
 
-- [ ] T001 Skopiuj bieżące goldeny `tests/LegalAgent.PdfParser.Tests/Corpus/private/*.expected.md` (stan po PR #13,
+- [X] T001 Skopiuj bieżące goldeny `tests/LegalAgent.PdfParser.Tests/Corpus/private/*.expected.md` (stan po PR #13,
   wersja 1.2.3) do nieśledzonego `tests/LegalAgent.PdfParser.Tests/Corpus/private/baseline-010/`; sprawdź
   `git status`, że nic z `Corpus/private` nie jest śledzone, i że pełny zestaw z prywatnym korpusem jest zielony na
   starcie
-- [ ] T002 W `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs` ustaw stałą `BaselineDirectory` na
+- [X] T002 W `tests/LegalAgent.PdfParser.Tests/Corpus/PrivateCorpusTests.cs` ustaw stałą `BaselineDirectory` na
   `"baseline-010"` (dziś `"baseline-009"`, ok. linii 32) i popraw komentarz dokumentujący w liniach ok. 19–23
   (dziś wymienia `baseline-008`/`baseline-009`) — porównanie zbiorów słów i nagłówków jednostek względem
   `baseline-010`; commit pomocniczy testów
-- [ ] T003 Pomiar wyjściowy w handoffie `specs/010-bank-table-footnotes/plan.md` („Stan prac i przekazanie”): dla
+- [X] T003 Pomiar wyjściowy w handoffie `specs/010-bank-table-footnotes/plan.md` („Stan prac i przekazanie”): dla
   każdego dokumentu prywatnego kolumny `Liczby +`, `Liczby −`, `Odnośniki sklejone`, liczba tabel i tabel TBL001 z
   raportu; dla downloads-1…5 (`publish/mBank.FaqGenerator-win-x64/downloads/`) stan przypadków z quickstart §4
   (konwersja CLI do katalogu tymczasowego, bez kopiowania treści do repozytorium)
@@ -54,13 +54,13 @@ Kod, komentarze i commity po angielsku; spec, handoff i README po polsku.
 
 **Purpose**: ocena ryzyka dla goldenów chronionych (research R8) i pomocnik siatki używany przez US1, US3, US4, US5.
 
-- [ ] T004 Sonda zasięgu (test diagnostyczny pomijany domyślnie albo skrypt w `tests/LegalAgent.PdfParser.Tests/Scratch/`):
+- [X] T004 Sonda zasięgu (test diagnostyczny pomijany domyślnie albo skrypt w `tests/LegalAgent.PdfParser.Tests/Scratch/`):
   policz w `Corpus/acts`, `Corpus/banking`, korpusie syntetycznym (`corpus/`) i prywatnym korpusie (a) tabele, dla
   których `Grid` znajduje siatkę z liniami pionowymi (kandydaci na `RuledTableGrid`), (b) słowa z `FootnoteId`
   wewnątrz linii tabel (`LineRole.Table`), których odnośnik ginie dziś w `RowDraft.Add`
   (`src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs` ok. 1053); wynik (dokumenty, liczby) w handoffie. Jeśli
   (a) lub (b) dotyczy goldenów chronionych — zanotuj w handoffie, że odpowiednie kroki zakończą się pytaniem
-- [ ] T005 [P] Testy (red) w nowym `tests/LegalAgent.PdfParser.Tests/Unit/Stages/RuledTableGridTests.cs` dla
+- [X] T005 [P] Testy (red) w nowym `tests/LegalAgent.PdfParser.Tests/Unit/Stages/RuledTableGridTests.cs` dla
   `RuledTableGrid` (data-model): kolumny = x linii pionowych występujących w ≥ 2 wierszach siatki, łączone z
   tolerancją 3 pt (odcinki przerywane na każdym wierszu jak w firm-5); granice wierszy = suma y odcinków poziomych
   pokrywających ≥ 80% szerokości pasma; `HasBoundary(column, boundary)` false dla kolumny bez odcinka (scalenie);
@@ -68,7 +68,7 @@ Kod, komentarze i commity po angielsku; spec, handoff i README po polsku.
   firm-3: 215,4–555,2 przez 3 kolumny); `Locate(word)` według środka x i linii bazowej (słowo wyśrodkowane, którego
   lewa krawędź leży w sąsiednim paśmie, trafia do pasma swojego środka); siatka niespójna (linie pionowe tylko w
   jednym wierszu) → brak siatki
-- [ ] T006 Zaimplementuj `src/LegalAgent.PdfParser/Stages/RuledTableGrid.cs` (internal, stałe progi z komentarzem:
+- [X] T006 Zaimplementuj `src/LegalAgent.PdfParser/Stages/RuledTableGrid.cs` (internal, stałe progi z komentarzem:
   3 pt, 80%, ≥ 2 wiersze) tak, by T005 przechodził; bez wpięcia w `TableDetectionStage` (brak zmiany zachowania —
   commit green bez zmian goldenów)
 
