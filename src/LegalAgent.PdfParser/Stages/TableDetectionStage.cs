@@ -652,23 +652,31 @@ public sealed class TableDetectionStage : IPipelineStage
         // Spec 010 (research R4): a bold group row over some column names becomes the header group; cells it shares with
         // the column-name row below (merged down over both) belong to the column names.
         bool grouped = IsGroupedHeader(grid, pieces);
-        var group = new List<(int Row, int Column, int Span, LineSegment Segment)>();
-        var cells = new List<(int Row, int Column, int Span, LineSegment Segment)>();
+        var group = new List<GridPiece>();
+        var cells = new List<GridPiece>();
         foreach ((RuledTableGrid.GridCell cell, LineSegment segment) in pieces)
         {
             if (grouped && cell.Row == 0 && cell.RowSpan == 1)
             {
-                group.Add((0, cell.Column, cell.ColumnSpan, segment));
+                group.Add(new GridPiece(0, 1, cell.Column, cell.ColumnSpan, segment));
+            }
+            else if (grouped && cell.Row == 0)
+            {
+                // Merged down from the group row into the column names: a column name of its own.
+                cells.Add(new GridPiece(1, 1, cell.Column, cell.ColumnSpan, segment));
             }
             else
             {
-                cells.Add((grouped && cell.Row == 0 ? 1 : cell.Row, cell.Column, cell.ColumnSpan, segment));
+                cells.Add(new GridPiece(cell.Row, cell.RowSpan, cell.Column, cell.ColumnSpan, segment));
             }
         }
 
         table.AddGridRows(cells, group);
         return table;
     }
+
+    /// <summary>The words of one line in one grid cell: the cell's first row, rows, first column and columns.</summary>
+    private sealed record GridPiece(int Row, int RowSpan, int Column, int Span, LineSegment Segment);
 
     /// <summary>
     /// The first grid row holds a cell spanning some but not all columns and otherwise only cells merged down into the
@@ -1133,28 +1141,34 @@ public sealed class TableDetectionStage : IPipelineStage
 
         /// <summary>
         /// Spec 010: rows of a ruled grid — each piece is the words of one line in one cell, given in line order; a cell's
-        /// text goes to the row it starts in.
+        /// text goes to the row it starts in, and a cell merged over several rows (R2) is continued in each of them.
         /// </summary>
-        public void AddGridRows(List<(int Row, int Column, int Span, LineSegment Segment)> pieces, List<(int Row, int Column, int Span, LineSegment Segment)> group)
+        public void AddGridRows(List<GridPiece> pieces, List<GridPiece> group)
         {
             if (group.Count > 0)
             {
                 _group = new RowDraft(Bands.Count, FirstPage);
-                foreach ((int _, int column, int span, LineSegment segment) in group)
+                foreach (GridPiece piece in group)
                 {
-                    _group.Add(column, span, segment, exceptions);
+                    _group.Add(piece.Column, piece.Span, piece.Segment, exceptions);
                 }
             }
 
             var drafts = new SortedDictionary<int, RowDraft>();
-            foreach ((int row, int column, int span, LineSegment segment) in pieces)
+            RowDraft Draft(int row) => drafts.TryGetValue(row, out RowDraft? draft) ? draft : drafts[row] = new RowDraft(Bands.Count, FirstPage);
+            foreach (GridPiece piece in pieces)
             {
-                if (!drafts.TryGetValue(row, out RowDraft? draft))
-                {
-                    drafts[row] = draft = new RowDraft(Bands.Count, FirstPage);
-                }
+                Draft(piece.Row).Add(piece.Column, piece.Span, piece.Segment, exceptions);
+            }
 
-                draft.Add(column, span, segment, exceptions);
+            foreach (GridPiece merged in pieces.Where(p => p.RowSpan > 1).DistinctBy(p => (p.Row, p.Column)))
+            {
+                RowDraft start = Draft(merged.Row);
+                start.SetRowSpan(merged.Column, merged.RowSpan);
+                for (int k = 1; k < merged.RowSpan; k++)
+                {
+                    Draft(merged.Row + k).ContinueFrom(merged.Column, start);
+                }
             }
 
             _rows.AddRange(drafts.Values);
@@ -1189,6 +1203,20 @@ public sealed class TableDetectionStage : IPipelineStage
             int columns = IsFallback ? _rows.Max(r => r.Columns) : Bands.Count;
             List<TableRow> rows = _rows.Select(r => r.ToRow(columns, IsFallback)).ToList();
             TableRow? header = _rows.Count > 1 && _rows[0].AllBold ? rows[0] : null;
+            if (header is not null && header.Cells.Any(c => c.RowSpan > 1))
+            {
+                // A column name is never merged into the rows below it: they keep the cell empty.
+                List<IReadOnlyList<Inline>> merged = header.Cells.Where(c => c.RowSpan > 1).Select(c => c.Inlines).ToList();
+                rows[0] = header = header with { Cells = header.Cells.Select(c => c with { RowSpan = 1 }).ToList() };
+                for (int r = 1; r < rows.Count; r++)
+                {
+                    rows[r] = rows[r] with
+                    {
+                        Cells = rows[r].Cells.Select(c => c.ContinuesAbove && merged.Any(m => ReferenceEquals(m, c.Inlines)) ? new TableCell([], c.ColumnSpan) : c).ToList(),
+                    };
+                }
+            }
+
             return new TableBlock(
                 new PageRange(FirstPage, LastPage),
                 header,
@@ -1205,8 +1233,20 @@ public sealed class TableDetectionStage : IPipelineStage
         private readonly List<Token>[] _tokens = Enumerable.Range(0, columns).Select(_ => new List<Token>()).ToArray();
         private readonly string?[] _lastLine = new string?[columns];
         private readonly int[] _spans = Enumerable.Repeat(1, columns).ToArray();
+        private readonly int[] _rowSpans = Enumerable.Repeat(1, columns).ToArray();
+        private readonly RowDraft?[] _continues = new RowDraft?[columns];
+        private readonly List<Inline>?[] _inlines = new List<Inline>?[columns];
 
         public int Columns => columns;
+
+        /// <summary>Spec 010: the cell starting in <paramref name="column"/> is merged over <paramref name="rows"/> rows.</summary>
+        public void SetRowSpan(int column, int rows) => _rowSpans[column] = rows;
+
+        /// <summary>Spec 010: <paramref name="column"/> continues the merged cell of <paramref name="source"/>.</summary>
+        public void ContinueFrom(int column, RowDraft source) => _continues[column] = source;
+
+        /// <summary>Inlines of the cell starting in <paramref name="column"/>, built once (continuations share them).</summary>
+        private List<Inline> InlinesOf(int column) => _inlines[column] ??= Inlines(_tokens[column]);
 
         public bool AllBold => _tokens.Any(t => t.Count > 0) && _tokens.All(t => t.All(w => w.Style.HasFlag(TextStyle.Bold)));
 
@@ -1245,6 +1285,14 @@ public sealed class TableDetectionStage : IPipelineStage
             int c = 0;
             while (c < Math.Min(columns, tableColumns))
             {
+                if (!fallback && _continues[c] is { } source)
+                {
+                    int covered = Math.Min(source._spans[c], tableColumns - c);
+                    cells.Add(new TableCell(source.InlinesOf(c), covered, ContinuesAbove: true));
+                    c += covered;
+                    continue;
+                }
+
                 int span = fallback ? 1 : _spans[c];
 
                 // Text in a column the span would cover is never hidden (FR-066): the span stops before it.
@@ -1257,7 +1305,7 @@ public sealed class TableDetectionStage : IPipelineStage
                     }
                 }
 
-                cells.Add(new TableCell(Inlines(_tokens[c]), span));
+                cells.Add(new TableCell(InlinesOf(c), span, fallback ? 1 : _rowSpans[c]));
                 c += span;
             }
 

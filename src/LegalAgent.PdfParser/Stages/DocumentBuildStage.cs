@@ -175,20 +175,33 @@ public sealed class DocumentBuildStage : IPipelineStage
                 })
                 .ToArray(),
         },
-        TableBlock table when InlinesOf(table).Any(i => i is FootnoteRef) => table with
-        {
-            Header = table.Header is null ? null : Renumber(table.Header, numbers),
-            HeaderGroup = table.HeaderGroup is null ? null : Renumber(table.HeaderGroup, numbers),
-            Rows = table.Rows.Select(r => Renumber(r, numbers)).ToArray(),
-        },
+        TableBlock table when InlinesOf(table).Any(i => i is FootnoteRef) => Renumber(table, numbers),
         _ => block,
     };
 
-    /// <summary>Spec 010: footnote references inside table cells.</summary>
-    private static TableRow Renumber(TableRow row, Dictionary<int, int> numbers) => row with
+    /// <summary>
+    /// Spec 010: footnote references inside table cells; the cells continuing a merged cell keep sharing its inlines.
+    /// </summary>
+    private static TableBlock Renumber(TableBlock table, Dictionary<int, int> numbers)
     {
-        Cells = row.Cells.Select(c => c with { Inlines = Renumber(c.Inlines, numbers) }).ToArray(),
-    };
+        var renumbered = new Dictionary<IReadOnlyList<Inline>, Inline[]>(ReferenceEqualityComparer.Instance);
+        TableRow Row(TableRow row) => row with
+        {
+            Cells = row.Cells
+                .Select(c => c with
+                {
+                    Inlines = renumbered.TryGetValue(c.Inlines, out Inline[]? done) ? done : renumbered[c.Inlines] = Renumber(c.Inlines, numbers),
+                })
+                .ToArray(),
+        };
+
+        return table with
+        {
+            Header = table.Header is null ? null : Row(table.Header),
+            HeaderGroup = table.HeaderGroup is null ? null : Row(table.HeaderGroup),
+            Rows = table.Rows.Select(Row).ToArray(),
+        };
+    }
 
     private static Inline[] Renumber(IReadOnlyList<Inline> inlines, Dictionary<int, int> numbers) => inlines
         .Where(i => i is not FootnoteRef r || numbers.ContainsKey(r.FootnoteNumber))
