@@ -437,6 +437,199 @@ public sealed class BankTablesIntegrationTests
         Assert.All(table.Rows.SelectMany(r => r.Cells), c => Assert.Equal((1, false), (c.RowSpan, c.ContinuesAbove)));
     }
 
+    /// <summary>
+    /// Row of an action matrix: the first column's lines from <paramref name="top"/> at <paramref name="leading"/>, the values
+    /// centred in columns 2…k on the mean baseline of those lines.
+    /// </summary>
+    private static double MatrixRow(SyntheticPdfBuilder page, double[] xs, double top, double leading, double size, string[] names, string[] values)
+    {
+        for (int i = 0; i < names.Length; i++)
+        {
+            page.Text(xs[0] + 5, top + (i * leading), names[i], size);
+        }
+
+        double baseline = top + ((names.Length - 1) * leading / 2);
+        for (int c = 0; c < values.Length; c++)
+        {
+            Centred(page, xs[c + 1], xs[c + 2], baseline, values[c], size);
+        }
+
+        return baseline;
+    }
+
+    /// <summary>The header of the ind-4 matrix: two-line bold names over a plain third line in columns 2–3.</summary>
+    private static void ChannelHeader(SyntheticPdfBuilder page, double[] xs, double top)
+    {
+        page.Text(xs[0] + 5, top + 15.4, "Co i gdzie możesz zrobić.", 11, bold: true);
+        Centred(page, xs[1], xs[2], top, "serwis", 11, bold: true);
+        Centred(page, xs[1], xs[2], top + 15.4, "transakcyjny", 11, bold: true);
+        Centred(page, xs[1], xs[2], top + 30.8, "(strona www)", 11);
+        Centred(page, xs[2], xs[3], top, "serwis", 11, bold: true);
+        Centred(page, xs[2], xs[3], top + 15.4, "transakcyjny", 11, bold: true);
+        Centred(page, xs[2], xs[3], top + 30.8, "aplikacja", 11);
+        Centred(page, xs[3], xs[4], top + 15.4, "BOK", 11, bold: true);
+        Centred(page, xs[4], xs[5], top + 15.4, "placówka", 11, bold: true);
+    }
+
+    [Fact]
+    public async Task ActionMatrixWithMultiLineFirstColumn_OverTwoPages_IsOneTable()
+    {
+        // T1 (ind-4 p. 42–43): five ruled columns, 11 pt text at a 15.4 pt interline, first-column cells of 1, 2, 3 and 6
+        // lines with the values on their mean baseline; the table goes on to the next page under a repeated header.
+        double[] xs = [45.1, 187.0, 280.5, 374.1, 464.9, 555.6];
+        var page = new SyntheticPdfBuilder().Page().Text(Left, 70, "Regulamin rachunku", 14, bold: true);
+        for (int i = 0; i < 6; i++)
+        {
+            page.Text(Left, 100 + (i * 14), "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank dla klientów.", 11);
+        }
+
+        Grid(page, xs, [420, 475, 500, 540, 595, 700]);
+        ChannelHeader(page, xs, 435);
+        MatrixRow(page, xs, 492, 15.4, 11, ["wykonać przelew"], ["Tak", "Tak", "Tak", "Tak"]);
+        MatrixRow(page, xs, 515, 15.4, 11, ["zdefiniować lub", "zmodyfikować przelew"], ["Tak", "Nie", "Tak", "Tak"]);
+        MatrixRow(page, xs, 556, 15.4, 11, ["zablokować możliwość", "zmiany limitu w serwisie", "transakcyjnym"], ["Tak", "Nie", "Tak", "Tak"]);
+        MatrixRow(page, xs, 611, 15.4, 11, ["odwołać zlecenie", "płatnicze z datą", "przyszłą, gdy transakcję", "inicjuje dostawca", "trzeci w imieniu", "klienta banku"], ["Tak", "Nie", "Nie", "Nie"]);
+
+        page.Page();
+        Grid(page, xs, [60, 115, 140, 180]);
+        ChannelHeader(page, xs, 75);
+        MatrixRow(page, xs, 132, 15.4, 11, ["wpłacić gotówkę"], ["Nie", "Nie", "Nie", "Tak"]);
+        MatrixRow(page, xs, 155, 15.4, 11, ["zawiesić lub wznowić", "zlecenie stałe"], ["Tak", "Nie", "Tak", "Tak"]);
+        page.Text(Left, 210, "Postanowienia końcowe stosuje się do wszystkich rachunków prowadzonych przez bank.", 11);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        string[] table =
+        [
+            "| **Co i gdzie możesz zrobić.** | **serwis transakcyjny** (strona www) | **serwis transakcyjny** aplikacja | **BOK** | **placówka** |",
+            "| --- | --- | --- | --- | --- |",
+            "| wykonać przelew | Tak | Tak | Tak | Tak |",
+            "| zdefiniować lub zmodyfikować przelew | Tak | Nie | Tak | Tak |",
+            "| zablokować możliwość zmiany limitu w serwisie transakcyjnym | Tak | Nie | Tak | Tak |",
+            "| odwołać zlecenie płatnicze z datą przyszłą, gdy transakcję inicjuje dostawca trzeci w imieniu klienta banku | Tak | Nie | Nie | Nie |",
+            "| wpłacić gotówkę | Nie | Nie | Nie | Tak |",
+            "| zawiesić lub wznowić zlecenie stałe | Tak | Nie | Tak | Tak |",
+        ];
+        Assert.Equal(table, TableLines(markdown));
+        Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", markdown, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// T2 (firm-2 p. 16–17): four ruled columns, rows 25 pt apart (more than 2.5 leadings of the 8 pt body text); the header
+    /// row holds three centred lines in column 2 — a bold name over a plain explanation — beside bold names in the others,
+    /// the first column's name and „placówka” on the baseline of a line of column 2; values „TAK/TAK⁵” with definitions
+    /// under a short rule; the table goes on to the next page without a repeated header, a three-line row first.
+    /// </summary>
+    private static byte[] ActionMatrix()
+    {
+        double[] xs = [59.5, 215.4, 328.8, 442.2, 555.6];
+        SyntheticPdfBuilder page = BodyPage("Regulamin rachunku firmowego");
+        page.Text(Left, 370, "23. Lista czynności, które możesz wykonać", Body, bold: true);
+        page.Text(Left, 386, "Sprawdź, co możesz zrobić, gdy korzystasz z różnych sposobów dostępu.", Body);
+        var borders = new List<double> { 402, 442.6 };
+        for (int r = 0; r < 8; r++)
+        {
+            borders.Add(borders[^1] + (r == 6 ? 30.5 : 25.2));
+        }
+
+        Grid(page, xs, [.. borders]);
+        Centred(page, xs[1], xs[2], 410.2, "serwis transakcyjny", Body, bold: true);
+        Centred(page, xs[1], xs[2], 419.7, "(na naszej stronie", Body);
+        Centred(page, xs[1], xs[2], 430.3, "internetowej lub w", Body);
+        Centred(page, xs[1], xs[2], 440.2, "aplikacji mobilnej)", Body);
+        Centred(page, xs[0], xs[1], 425.2, "co chcesz zrobić?", Body, bold: true);
+        Centred(page, xs[2], xs[3], 419.7, "BOK", Body, bold: true);
+        Centred(page, xs[3], xs[4], 425.2, "placówka", Body, bold: true);
+        (string Name, string Value, string Marker)[] rows =
+        [
+            ("złożyć wniosek o rachunek", "TAK", ""),
+            ("zmienić typ rachunku", "TAK/TAK", "5"),
+            ("przekształcić rachunek", "TAK/NIE", ""),
+            ("ustanowić pełnomocnika", "TAK/TAK", "6"),
+            ("uruchomić powiadomienia sms", "TAK/NIE", ""),
+            ("uruchomić powiadomienia e-mail", "TAK/NIE", ""),
+            ("", "TAK/NIE", ""),
+            ("uruchomić raporty MT 940", "TAK/NIE", ""),
+        ];
+        for (int r = 0; r < rows.Length; r++)
+        {
+            double baseline = borders[r + 1] + 15;
+            if (r == 6)
+            {
+                page.Text(65.3, baseline - 9, "zawiesić/ustanowić i zmienić", Body).Text(65.3, baseline, "parametry/odwołać", Body)
+                    .Text(65.3, baseline + 10.7, "powiadomienia sms/e-mail", Body);
+            }
+            else
+            {
+                page.Text(65.3, baseline, rows[r].Name, Body);
+            }
+
+            if (rows[r].Marker.Length > 0)
+            {
+                double width = SyntheticPdfBuilder.TextWidth(rows[r].Value, Body);
+                double start = ((xs[1] + xs[2]) / 2) - (width / 2);
+                TrailingMarker(page, start, baseline, rows[r].Value, rows[r].Marker);
+            }
+            else
+            {
+                Centred(page, xs[1], xs[2], baseline, rows[r].Value, Body);
+            }
+
+            Centred(Centred(page, xs[2], xs[3], baseline, "TAK", Body), xs[3], xs[4], baseline, "TAK", Body);
+        }
+
+        page.HLine(39.7, 183.7, 744);
+        page.Text(40, 771.4, "5 O wprowadzeniu tego rozwiązania bank poinformuje na swojej stronie internetowej.", 6);
+        page.Text(40, 778.7, "6 Rozwiązanie dotyczy wybranych rodzajów pełnomocnictw.", 6);
+
+        page.Page();
+        Grid(page, xs, [81.7, 106.9, 132.0, 157.2]);
+        page.Text(65.3, 92.4, "złożyć wniosek o dopuszczalne", Body).Text(65.3, 102.4, "saldo debetowe", Body);
+        TrailingMarker(page, ((xs[1] + xs[2]) / 2) - (SyntheticPdfBuilder.TextWidth("TAK/TAK", Body) / 2), 96.9, "TAK/TAK", "7");
+        Centred(Centred(page, xs[2], xs[3], 96.9, "TAK", Body), xs[3], xs[4], 96.9, "TAK", Body);
+        foreach ((string name, double baseline) in new[] { ("wypowiedzieć umowę", 121.9), ("wycofać wypowiedzenie umowy", 147.1) })
+        {
+            page.Text(65.3, baseline, name, Body);
+            Centred(page, xs[1], xs[2], baseline, "TAK/NIE", Body);
+            Centred(Centred(page, xs[2], xs[3], baseline, "TAK", Body), xs[3], xs[4], baseline, "TAK", Body);
+        }
+
+        page.Text(Left, 173.5, "24. Postanowienia końcowe", Body, bold: true);
+        page.Text(Left, 189.7, "Spory między nami mogą być rozstrzygane polubownie lub przez właściwy sąd powszechny.", Body);
+        page.HLine(39.7, 183.7, 744);
+        page.Text(40, 771.4, "7 Dotyczy wybranych scenariuszy wnioskowania.", 6);
+        return page.Build();
+    }
+
+    [Fact]
+    public async Task ActionMatrixWithRowsFarApartAndATallHeader_OverTwoPages_IsOneTable()
+    {
+        string markdown = await ConvertAsync(ActionMatrix());
+
+        string[] table =
+        [
+            "| **co chcesz zrobić?** | **serwis transakcyjny** (na naszej stronie internetowej lub w aplikacji mobilnej) | **BOK** | **placówka** |",
+            "| --- | --- | --- | --- |",
+            "| złożyć wniosek o rachunek | TAK | TAK | TAK |",
+            "| zmienić typ rachunku | TAK/TAK[^1] | TAK | TAK |",
+            "| przekształcić rachunek | TAK/NIE | TAK | TAK |",
+            "| ustanowić pełnomocnika | TAK/TAK[^2] | TAK | TAK |",
+            "| uruchomić powiadomienia sms | TAK/NIE | TAK | TAK |",
+            "| uruchomić powiadomienia e-mail | TAK/NIE | TAK | TAK |",
+            "| zawiesić/ustanowić i zmienić parametry/odwołać powiadomienia sms/e-mail | TAK/NIE | TAK | TAK |",
+            "| uruchomić raporty MT 940 | TAK/NIE | TAK | TAK |",
+            "| złożyć wniosek o dopuszczalne saldo debetowe | TAK/TAK[^3] | TAK | TAK |",
+            "| wypowiedzieć umowę | TAK/NIE | TAK | TAK |",
+            "| wycofać wypowiedzenie umowy | TAK/NIE | TAK | TAK |",
+        ];
+        Assert.Equal(table, TableLines(markdown));
+        Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain("###", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^1]: O wprowadzeniu tego rozwiązania bank poinformuje na swojej stronie internetowej.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^3]: Dotyczy wybranych scenariuszy wnioskowania.", markdown, StringComparison.Ordinal);
+    }
+
     private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
     {
         IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
