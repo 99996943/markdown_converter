@@ -62,6 +62,26 @@ public sealed class MarkdownRendererTableTests
         Assert.Equal("A \\| B\n\nc \\| d\n", md);
     }
 
+    /// <summary>Spec 010 (owner's decision): the text of a vertically merged cell is printed in every row it covers.</summary>
+    [Fact]
+    public void Render_MergedCell_RepeatsItsTextInEveryRow()
+    {
+        Inline[] label = [new TextRun("przelew SWIFT")];
+        TableRow[] rows =
+        [
+            new([new TableCell(label, RowSpan: 3), C("do 10 000 zł")]),
+            new([new TableCell(label, ContinuesAbove: true), C("powyżej 10 000 zł")]),
+            new([new TableCell(label, ContinuesAbove: true), C("w euro")]),
+        ];
+
+        string md = Render(false, Table(1, 1, R("Przelew", "Kurs"), 2, false, rows));
+
+        Assert.Equal(
+            "| Przelew | Kurs |\n| --- | --- |\n| przelew SWIFT | do 10 000 zł |\n| przelew SWIFT | powyżej 10 000 zł |\n| przelew SWIFT | w euro |\n",
+            md);
+        Assert.All(rows, r => Assert.Equal(2, r.Cells.Sum(c => c.ColumnSpan)));
+    }
+
     [Fact]
     public void Render_TableWithoutHeaderUsesFirstRowAsHeader()
     {
