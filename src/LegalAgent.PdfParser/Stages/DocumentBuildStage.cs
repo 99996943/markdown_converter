@@ -175,7 +175,18 @@ public sealed class DocumentBuildStage : IPipelineStage
                 })
                 .ToArray(),
         },
+        TableBlock table when InlinesOf(table).Any(i => i is FootnoteRef) => table with
+        {
+            Header = table.Header is null ? null : Renumber(table.Header, numbers),
+            Rows = table.Rows.Select(r => Renumber(r, numbers)).ToArray(),
+        },
         _ => block,
+    };
+
+    /// <summary>Spec 010: footnote references inside table cells.</summary>
+    private static TableRow Renumber(TableRow row, Dictionary<int, int> numbers) => row with
+    {
+        Cells = row.Cells.Select(c => c with { Inlines = Renumber(c.Inlines, numbers) }).ToArray(),
     };
 
     private static Inline[] Renumber(IReadOnlyList<Inline> inlines, Dictionary<int, int> numbers) => inlines

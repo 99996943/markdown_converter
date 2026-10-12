@@ -1026,7 +1026,7 @@ public sealed class TableDetectionStage : IPipelineStage
         public bool AllBold => _tokens.Any(t => t.Count > 0) && _tokens.All(t => t.All(w => w.Style.HasFlag(TextStyle.Bold)));
 
         /// <summary>Row text per column, used to recognise a header repeated on the next page.</summary>
-        public string Key => string.Join("|", _tokens.Select(t => string.Join(' ', t.Select(w => w.Text))));
+        public string Key => string.Join("|", _tokens.Select(t => string.Join(' ', t.Where(w => w.FootnoteId is null).Select(w => w.Text))));
 
         /// <summary>Adds a cell segment; a cell continued on a further line is joined with hyphenation rules (FR-012).</summary>
         public void Add(int column, int span, LineSegment cell, string[] exceptions)
@@ -1047,7 +1047,8 @@ public sealed class TableDetectionStage : IPipelineStage
 
             for (int i = 0; i < cell.Words.Count; i++)
             {
-                tokens.Add(new Token(cell.Words[i].Text, cell.Words[i].Style, Glue: i == 0 && glue));
+                LayoutWord word = cell.Words[i];
+                tokens.Add(new Token(word.Text, word.Style, Glue: i == 0 && glue, word.FootnoteId, word.ReferencesNextWord));
             }
 
             _lastLine[column] = cell.Text;
@@ -1083,16 +1084,39 @@ public sealed class TableDetectionStage : IPipelineStage
             return new TableRow(cells) { Page = page };
         }
 
-        /// <summary>Text runs of a cell; a separating space belongs to the run before it.</summary>
+        /// <summary>
+        /// Text runs of a cell; a separating space belongs to the run before it. Spec 010: a footnote reference is glued to
+        /// the word before it — or, standing before its word („³kurs”), to the word after it — as in running text.
+        /// </summary>
         private static List<Inline> Inlines(List<Token> tokens)
         {
             var inlines = new List<Inline>();
             var text = new StringBuilder();
             TextStyle style = TextStyle.None;
+            Token? reference = null;
             for (int i = 0; i < tokens.Count; i++)
             {
                 Token token = tokens[i];
-                string separator = i == 0 || token.Glue ? string.Empty : " ";
+                if (token.FootnoteId is int id)
+                {
+                    if (token.ReferencesNextWord && text.Length > 0 && !token.Glue)
+                    {
+                        text.Append(' ');
+                    }
+
+                    if (text.Length > 0)
+                    {
+                        inlines.Add(new TextRun(text.ToString(), style));
+                        text.Clear();
+                    }
+
+                    inlines.Add(new FootnoteRef(id));
+                    reference = token;
+                    continue;
+                }
+
+                string separator = i == 0 || token.Glue || reference is { ReferencesNextWord: true } ? string.Empty : " ";
+                reference = null;
                 if (text.Length > 0 && token.Style != style)
                 {
                     inlines.Add(new TextRun(text.Append(separator).ToString(), style));
@@ -1112,6 +1136,6 @@ public sealed class TableDetectionStage : IPipelineStage
             return inlines;
         }
 
-        private sealed record Token(string Text, TextStyle Style, bool Glue);
+        private sealed record Token(string Text, TextStyle Style, bool Glue, int? FootnoteId = null, bool ReferencesNextWord = false);
     }
 }
