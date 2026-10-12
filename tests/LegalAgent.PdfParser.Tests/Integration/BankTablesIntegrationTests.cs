@@ -344,4 +344,102 @@ public sealed class BankTablesIntegrationTests
         Assert.StartsWith("| **Co można zrobić?** | **Gdzie można zrobić?**[^1] **serwis transakcyjny** |", TableLines(markdown)[0], StringComparison.Ordinal);
         Assert.Contains("[^1]: Dotyczy klientów firmowych.", markdown, StringComparison.Ordinal);
     }
+
+    /// <summary>
+    /// T11 (firm-5 p. 13): two ruled columns, verticals broken at every ruling of column 2; column 1 ruled only at group
+    /// borders (groups of 3, 2 and 1 rows), column 2 under every row. Label A is one line in the middle of its group,
+    /// label B two lines sharing baselines with the rows. With <paramref name="everyRow"/> both columns are ruled under
+    /// every row and every row has its own label.
+    /// </summary>
+    private static byte[] MergedRows(bool everyRow)
+    {
+        double[] xs = [59.3, 201.1, 555.6];
+        double[] borders = [300, 315, 335, 355, 375, 395, 415, 435];
+        double[] groupBorders = everyRow ? borders : [300, 315, 375, 415, 435];
+        SyntheticPdfBuilder page = BodyPage("Regulamin usług płatniczych");
+        foreach (double y in groupBorders)
+        {
+            page.HLine(59.5, 200.8, y);
+        }
+
+        foreach (double y in borders)
+        {
+            page.HLine(201.3, 555.3, y);
+        }
+
+        for (int r = 0; r + 1 < borders.Length; r++)
+        {
+            foreach (double x in xs)
+            {
+                page.VLine(x, borders[r], borders[r + 1]);
+            }
+        }
+
+        page.Text(64, 310, "Rodzaj przelewu", Body, bold: true).Text(206, 310, "Kurs", Body, bold: true);
+        string[] values = ["do 10 000 zł", "powyżej 10 000 zł", "w euro", "kurs kupna", "kurs sprzedaży", "kurs średni"];
+        double[] baselines = [328, 348, 368, 388, 408, 428];
+        for (int r = 0; r < values.Length; r++)
+        {
+            page.Text(206, baselines[r], values[r], Body);
+        }
+
+        if (everyRow)
+        {
+            string[] labels = ["przelew SWIFT", "przelew SWIFT", "przelew SWIFT", "przelew wewnętrzny", "przelew wewnętrzny", "przelew SEPA"];
+            for (int r = 0; r < labels.Length; r++)
+            {
+                page.Text(64, baselines[r], labels[r], Body);
+            }
+        }
+        else
+        {
+            page.Text(64, 348, "przelew SWIFT", Body);
+            page.Text(64, 388, "przelew", Body).Text(64, 408, "wewnętrzny", Body);
+            page.Text(64, 428, "przelew SEPA", Body);
+        }
+
+        return page.Build();
+    }
+
+    private static readonly string[] MergedRowsTable =
+    [
+        "| **Rodzaj przelewu** | **Kurs** |",
+        "| --- | --- |",
+        "| przelew SWIFT | do 10 000 zł |",
+        "| przelew SWIFT | powyżej 10 000 zł |",
+        "| przelew SWIFT | w euro |",
+        "| przelew wewnętrzny | kurs kupna |",
+        "| przelew wewnętrzny | kurs sprzedaży |",
+        "| przelew SEPA | kurs średni |",
+    ];
+
+    [Fact]
+    public async Task CellRuledOnlyAtGroupBorders_IsMerged_AndItsTextIsInEveryRow()
+    {
+        using var stream = new MemoryStream(MergedRows(everyRow: false));
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.Equal(MergedRowsTable, TableLines(result.Markdown));
+        TableBlock table = Assert.Single(Blocks(result.Document).OfType<TableBlock>());
+        Assert.Equal([3, 1, 1, 2, 1, 1], table.Rows.Select(r => r.Cells[0].RowSpan));
+        Assert.Equal([false, true, true, false, true, false], table.Rows.Select(r => r.Cells[0].ContinuesAbove));
+        Assert.Same(table.Rows[0].Cells[0].Inlines, table.Rows[2].Cells[0].Inlines);
+    }
+
+    [Fact]
+    public async Task CellsRuledUnderEveryRow_AreNotMerged()
+    {
+        using var stream = new MemoryStream(MergedRows(everyRow: true));
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.Equal(MergedRowsTable, TableLines(result.Markdown));
+        TableBlock table = Assert.Single(Blocks(result.Document).OfType<TableBlock>());
+        Assert.All(table.Rows.SelectMany(r => r.Cells), c => Assert.Equal((1, false), (c.RowSpan, c.ContinuesAbove)));
+    }
+
+    private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
+    {
+        IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
+        return document.Preamble.Concat(document.Sections.SelectMany(Of));
+    }
 }
