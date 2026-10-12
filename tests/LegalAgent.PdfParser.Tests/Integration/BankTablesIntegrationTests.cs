@@ -80,6 +80,26 @@ public sealed class BankTablesIntegrationTests
     }
 
     [Fact]
+    public async Task DefinitionWhoseRaisedLabelStandsOnALineOfItsOwn_IsAFootnote()
+    {
+        // firm-5 p. 22–23: under the rule each label („13”, 5 pt) is raised above its 7 pt definition text and set as a
+        // line of its own, overlapping the text line.
+        SyntheticPdfBuilder page = BodyPage("Regulamin rachunku firmowego");
+        TrailingMarker(page, Left, 180, "Przelew natychmiastowy wykonasz w serwisie: TAK", "13");
+        TrailingMarker(page, Left, 192, "Przelew zagraniczny wykonasz w placówce: TAK", "14");
+        page.HLine(39.7, 183.7, 740);
+        page.Text(49.8, 755.6, "Przelew z użyciem mechanizmu podzielonej płatności jest niedostępny.", 7).Text(40.4, 751.6, "13", Marker);
+        page.Text(49.8, 765.5, "Nie dotyczy przelewów do krajów trzecich wysokiego ryzyka.", 7).Text(40.4, 761.5, "14", Marker);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Contains("Przelew natychmiastowy wykonasz w serwisie: TAK[^1]", markdown, StringComparison.Ordinal);
+        Assert.Contains("Przelew zagraniczny wykonasz w placówce: TAK[^2]", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^1]: Przelew z użyciem mechanizmu podzielonej płatności jest niedostępny.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^2]: Nie dotyczy przelewów do krajów trzecich wysokiego ryzyka.", markdown, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public async Task FootnoteReferencesInARuledTable_StayInTheirCells()
     {
         // T12 (firm-5 p. 13, firm-1 p. 16): „Tak⁴”, „TAK/TAK⁵”, „³kurs z momentu…” in cells and a reference in a column
