@@ -141,4 +141,127 @@ public sealed class BankTablesIntegrationTests
         Assert.DoesNotContain("[^0]", markdown, StringComparison.Ordinal);
         Assert.DoesNotContain("[^5]", markdown, StringComparison.Ordinal);
     }
+
+    /// <summary>Text centred between two column borders.</summary>
+    private static SyntheticPdfBuilder Centred(SyntheticPdfBuilder page, double left, double right, double y, string text, double size, bool bold = false) =>
+        page.Text(((left + right) / 2) - (SyntheticPdfBuilder.TextWidth(text, size, bold) / 2), y, text, size, bold);
+
+    /// <summary>Horizontal borders drawn piece by piece per column and verticals between the first and last border.</summary>
+    private static SyntheticPdfBuilder Grid(SyntheticPdfBuilder page, double[] xs, double[] borders)
+    {
+        foreach (double border in borders)
+        {
+            for (int c = 0; c + 1 < xs.Length; c++)
+            {
+                page.HLine(xs[c] + 0.2, xs[c + 1] - 0.2, border);
+            }
+        }
+
+        foreach (double x in xs)
+        {
+            page.VLine(x, borders[0], borders[^1]);
+        }
+
+        return page;
+    }
+
+    private static string[] TableLines(string markdown) => markdown.Split('\n').Where(l => l.StartsWith('|')).ToArray();
+
+    [Fact]
+    public async Task RuledTableWithCentredMultiLineColumnNames_HasOneColumnPerBand()
+    {
+        // T3 (downloads-2 p. 20): five ruled columns, column names in bold 11 pt centred on two to four lines, the first
+        // column's name on the baseline of the second line of the others; values centred, one on two lines.
+        double[] xs = [45.7, 185.4, 278.9, 372.3, 463.1, 555.5];
+        SyntheticPdfBuilder page = new SyntheticPdfBuilder().Page().Text(Left, 70, "Regulamin kredytu", 14, bold: true);
+        for (int i = 0; i < 6; i++)
+        {
+            page.Text(Left, 100 + (i * 14), "Postanowienia regulaminu stosuje się do kredytów udzielanych przez bank klientom.", 11);
+        }
+
+        double[] borders = [200, 262, 292, 322, 362, 392];
+        Grid(page, xs, borders);
+        page.Text(50, 232, "Co i gdzie możesz zrobić", 11, bold: true);
+        Centred(page, xs[1], xs[2], 217, "serwis", 11, bold: true);
+        Centred(page, xs[1], xs[2], 232, "transakcyjny", 11, bold: true);
+        Centred(page, xs[1], xs[2], 245, "(nasza strona", 11);
+        Centred(page, xs[1], xs[2], 258, "internetowa)", 11);
+        Centred(page, xs[2], xs[3], 225, "aplikacja", 11, bold: true);
+        Centred(page, xs[2], xs[3], 240, "mobilna", 11, bold: true);
+        Centred(page, xs[3], xs[4], 232, "BOK", 11, bold: true);
+        Centred(page, xs[4], xs[5], 232, "placówka", 11, bold: true);
+
+        string[][] rows =
+        [
+            ["zmienić limit karty", "TAK", "TAK", "NIE", "TAK"],
+            ["zastrzec kartę", "TAK", "TAK", "TAK", "TAK"],
+        ];
+        double[] baselines = [281, 311];
+        for (int r = 0; r < rows.Length; r++)
+        {
+            page.Text(50, baselines[r], rows[r][0], 11);
+            for (int c = 1; c < 5; c++)
+            {
+                Centred(page, xs[c], xs[c + 1], baselines[r], rows[r][c], 11);
+            }
+        }
+
+        page.Text(50, 346, "spłacić kredyt", 11);
+        Centred(page, xs[1], xs[2], 346, "TAK", 11);
+        Centred(page, xs[2], xs[3], 346, "NIE", 11);
+        Centred(page, xs[3], xs[4], 340, "TAK (na życzenie", 11);
+        Centred(page, xs[3], xs[4], 353, "Klienta)", 11);
+        Centred(page, xs[4], xs[5], 346, "TAK", 11);
+        page.Text(50, 381, "zmienić dane", 11);
+        for (int c = 1; c < 5; c++)
+        {
+            Centred(page, xs[c], xs[c + 1], 381, c == 3 ? "NIE" : "TAK", 11);
+        }
+
+        string markdown = await ConvertAsync(page.Build());
+
+        string[] table = TableLines(markdown);
+        Assert.Equal(
+            [
+                "| **Co i gdzie możesz zrobić** | **serwis transakcyjny** (nasza strona internetowa) | **aplikacja mobilna** | **BOK** | **placówka** |",
+                "| --- | --- | --- | --- | --- |",
+                "| zmienić limit karty | TAK | TAK | NIE | TAK |",
+                "| zastrzec kartę | TAK | TAK | TAK | TAK |",
+                "| spłacić kredyt | TAK | NIE | TAK (na życzenie Klienta) | TAK |",
+                "| zmienić dane | TAK | TAK | NIE | TAK |",
+            ],
+            table);
+        Assert.DoesNotContain(" \\| ", markdown, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task RuledTariffWhoseNamesAndValuesShareTheirLeftEdges_IsUnchanged()
+    {
+        // Guard: a ruled fee table with left-aligned names and values keeps its rows and columns.
+        double[] xs = [68, 295, 415, 540];
+        SyntheticPdfBuilder page = new SyntheticPdfBuilder().Page().Text(72, 80, "Taryfa opłat", 14, bold: true);
+        for (int i = 0; i < 4; i++)
+        {
+            page.Text(72, 100 + (i * 14), "Opłaty pobiera się z rachunku klienta w terminach wskazanych w tabeli.", 11);
+        }
+
+        Grid(page, xs, [170, 190, 210, 242, 262]);
+        page.Text(72, 184, "Usługa", 11, bold: true).Text(300, 184, "Opłata", 11, bold: true).Text(420, 184, "Częstotliwość", 11, bold: true);
+        page.Text(72, 204, "Prowadzenie rachunku", 11).Text(300, 204, "0,00 zł", 11).Text(420, 204, "miesięcznie", 11);
+        page.Text(72, 224, "Przelew natychmiastowy", 11).Text(300, 224, "1,5%", 11).Text(420, 224, "za transakcję", 11);
+        page.Text(72, 236, "w bankowości internetowej", 11);
+        page.Text(72, 256, "Wypłata z bankomatu", 11).Text(300, 256, "min. 10 zł", 11).Text(420, 256, "jednorazowo", 11);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(
+            [
+                "| **Usługa** | **Opłata** | **Częstotliwość** |",
+                "| --- | --- | --- |",
+                "| Prowadzenie rachunku | 0,00 zł | miesięcznie |",
+                "| Przelew natychmiastowy w bankowości internetowej | 1,5% | za transakcję |",
+                "| Wypłata z bankomatu | min. 10 zł | jednorazowo |",
+            ],
+            TableLines(markdown));
+    }
 }
