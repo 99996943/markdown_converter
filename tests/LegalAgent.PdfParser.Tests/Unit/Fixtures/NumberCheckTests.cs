@@ -90,6 +90,39 @@ public sealed class NumberCheckTests
         Assert.Equal(2, diff.GluedReferences);
     }
 
+    /// <summary>
+    /// Spec 010 (T013b): with the document, the digits of footnote labels and references the parser turned into
+    /// <c>[^n]</c> („³kurs”, a plain label „8 Dotyczy…”) are not missing numbers; without it they are.
+    /// </summary>
+    [Fact]
+    public async Task Compare_WithTheDocument_FootnoteLabelsAreNotMissing()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        for (int i = 0; i < 5; i++)
+        {
+            b.Text(Left, Top + (i * 12), "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank.", Size);
+        }
+
+        double x = Left + SyntheticPdfBuilder.TextWidth("Stosujemy ", Size);
+        b.Text(Left, Top + 60, "Stosujemy ", Size).Text(x, Top + 57, "3", 5).Text(x + SyntheticPdfBuilder.TextWidth("3", 5), Top + 60, "kurs z momentu transakcji.", Size);
+        x = Left + SyntheticPdfBuilder.TextWidth("Przelew natychmiastowy Tak", Size);
+        b.Text(Left, Top + 72, "Przelew natychmiastowy Tak", Size).Text(x, Top + 69, "8", 5);
+        b.HLine(40, 184, 740);
+        b.Text(Left, 755 - 3, "3", 5).Text(Left + SyntheticPdfBuilder.TextWidth("3", 5), 755, " Zapis obowiązuje od 1.09.2026 r.", Size);
+        b.Text(Left, 765, "8 Dotyczy przelewów w złotych.", Size);
+        byte[] pdf = b.Build();
+        using var stream = new MemoryStream(pdf);
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, new PdfConversionRequest(), TestContext.Current.CancellationToken);
+        Assert.Contains("[^2]: Dotyczy przelewów w złotych.", result.Markdown, StringComparison.Ordinal);
+
+        NumberDiff without = NumberCheck.Compare(result.Markdown, pdf, result.Report);
+        NumberDiff with = NumberCheck.Compare(result.Markdown, pdf, result.Report, result.Document);
+
+        Assert.NotEmpty(without.Missing);
+        Assert.Empty(with.Missing);
+        Assert.Empty(with.Excess);
+    }
+
     [Fact]
     public async Task FromPdf_SeparatesSuperscriptDigits_AndSkipsRemovedPageNumbers()
     {

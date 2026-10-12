@@ -56,7 +56,7 @@ public static partial class NumberCheck
 
     /// <summary>Compares the numbers of <paramref name="markdown"/> with the PDF at <paramref name="pdfPath"/>.</summary>
     public static NumberDiff Compare(string markdown, string pdfPath, ConversionReport report) =>
-        Compare(markdown, File.ReadAllBytes(pdfPath), report);
+        Compare(markdown, File.ReadAllBytes(pdfPath), report, null);
 
     /// <summary>Compares the numbers of <paramref name="markdown"/> with <paramref name="pdf"/>.</summary>
     /// <remarks>
@@ -65,7 +65,19 @@ public static partial class NumberCheck
     /// it is counted in <see cref="NumberDiff.GluedReferences"/>, not as excess. Glued full-size numbers („CO2”, „MT940”)
     /// match the PDF anyway, and a superscript glued to a number („661”, „150.000”) stays excess.
     /// </remarks>
-    public static NumberDiff Compare(string markdown, byte[] pdf, ConversionReport report)
+    public static NumberDiff Compare(string markdown, byte[] pdf, ConversionReport report) => Compare(markdown, pdf, report, null);
+
+    /// <summary>Spec 010 (T013b): as <see cref="Compare(string, byte[], ConversionReport, LegalDocument?)"/>.</summary>
+    public static NumberDiff Compare(string markdown, string pdfPath, ConversionReport report, LegalDocument? document) =>
+        Compare(markdown, File.ReadAllBytes(pdfPath), report, document);
+
+    /// <summary>Compares the numbers of <paramref name="markdown"/> with <paramref name="pdf"/>.</summary>
+    /// <remarks>
+    /// As <see cref="Compare(string, byte[], ConversionReport)"/>. Spec 010 (T013b): with <paramref name="document"/>,
+    /// the digits of the original labels of its footnotes are not missing up to one per definition and one per
+    /// <c>[^n]</c> reference — the parser prints them as footnote markers.
+    /// </remarks>
+    public static NumberDiff Compare(string markdown, byte[] pdf, ConversionReport report, LegalDocument? document)
     {
         IReadOnlyDictionary<string, int> fromMarkdown = FromMarkdown(markdown);
         PdfNumbers? fromPdf = ReadPdf(pdf, report);
@@ -98,13 +110,43 @@ public static partial class NumberCheck
             }
         }
 
+        Dictionary<string, int> missing = Subtract(fromPdf.Numbers, fromMarkdown);
+
         return new NumberDiff(
             excess,
-            Subtract(fromPdf.Numbers, fromMarkdown),
+            missing,
             fromPdf.Numbers.Values.Sum(),
             fromMarkdown.Values.Sum(),
             null,
             references);
+    }
+
+    /// <summary>Numeric original labels of the document's footnotes: one per definition and one per reference.</summary>
+    private static Dictionary<string, int> FootnoteLabels(string markdown, LegalDocument document)
+    {
+        IEnumerable<Footnote> Of(Section section) => section.Footnotes.Concat(section.Children.SelectMany(Of));
+        Dictionary<int, string> labels = document.PreambleFootnotes.Concat(document.Sections.SelectMany(Of))
+            .ToDictionary(f => f.Number, f => f.OriginalLabel.TrimEnd(')'));
+        var allowed = new Dictionary<string, int>(StringComparer.Ordinal);
+        void Add(int number)
+        {
+            if (labels.TryGetValue(number, out string? label) && label.Length > 0 && label.All(char.IsAsciiDigit))
+            {
+                allowed[label] = allowed.GetValueOrDefault(label) + 1;
+            }
+        }
+
+        foreach (int number in labels.Keys)
+        {
+            Add(number);
+        }
+
+        foreach (Match m in NumberedReference().Matches(markdown))
+        {
+            Add(int.Parse(m.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture));
+        }
+
+        return allowed;
     }
 
     private static string Clean(string markdown)
@@ -315,6 +357,9 @@ public static partial class NumberCheck
 
     [GeneratedRegex(@"\[\^[^\]]+\]", RegexOptions.CultureInvariant)]
     private static partial Regex FootnoteReference();
+
+    [GeneratedRegex(@"\[\^(\d+)\](?!:)", RegexOptions.CultureInvariant)]
+    private static partial Regex NumberedReference();
 }
 
 /// <summary>
