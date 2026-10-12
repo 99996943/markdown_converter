@@ -144,6 +144,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
             else
             {
                 int columns = Math.Max(table.ColumnCount, 1);
+                List<string> groups = table.Header is not null && table.HeaderGroup is { } group ? Columns(group, state) : [];
                 var lines = new List<string>();
                 for (int i = 0; i < rows.Count; i++)
                 {
@@ -162,6 +163,15 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                         cells.Add(string.Empty);
                     }
 
+                    // Spec 010: the group row's text stands at the start of every column name it covers.
+                    for (int c = 0; i == 0 && c < Math.Min(groups.Count, cells.Count); c++)
+                    {
+                        if (groups[c].Length > 0)
+                        {
+                            cells[c] = cells[c].Length > 0 ? groups[c] + " " + cells[c] : groups[c];
+                        }
+                    }
+
                     lines.Add(("| " + string.Join(" | ", cells) + " |").TrimEnd());
                     if (i == 0)
                     {
@@ -175,6 +185,19 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
 
         // No markers are written inside the table: the next block on a later page gets its own marker.
         state.CurrentPage = Math.Max(state.CurrentPage, table.Pages.First);
+    }
+
+    /// <summary>The rendered text of a row per column: a cell spanning several columns repeats its text in each.</summary>
+    private static List<string> Columns(TableRow row, State state)
+    {
+        var columns = new List<string>();
+        foreach (TableCell cell in row.Cells)
+        {
+            string text = RenderInlines(cell.Inlines, state, trackPages: false, inTable: true, lineStartEscape: false);
+            columns.AddRange(Enumerable.Repeat(text, Math.Max(cell.ColumnSpan, 1)));
+        }
+
+        return columns;
     }
 
     private static void RenderListItems(IReadOnlyList<ListItem> items, int depth, List<string> lines, State state)
