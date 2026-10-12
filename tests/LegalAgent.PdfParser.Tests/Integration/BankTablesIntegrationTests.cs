@@ -792,6 +792,110 @@ public sealed class BankTablesIntegrationTests
         Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// Rate table of ind-4 p. 12–13 from <paramref name="top"/>: the bold header (unless <paramref name="header"/> is
+    /// false), then one ruled row per entry; a cell's lines are split at „|” and set 10 pt apart.
+    /// </summary>
+    private static double RateRows(SyntheticPdfBuilder page, double top, bool header, string[][] rows)
+    {
+        double[] xs = [59.3, 201.1, 378.3, 555.5];
+        var borders = new List<double> { top };
+        double y = top;
+        if (header)
+        {
+            page.Text(64, y + 14, "waluta rachunku", Body, bold: true).Text(206, y + 14, "waluta transakcji", Body, bold: true)
+                .Text(383, y + 14, "kurs referencyjny", Body, bold: true);
+            borders.Add(y += 20);
+        }
+
+        foreach (string[] row in rows)
+        {
+            int lines = row.Max(c => c.Split('|').Length);
+            for (int c = 0; c < 3; c++)
+            {
+                string[] parts = row[c].Length == 0 ? [] : row[c].Split('|');
+                for (int l = 0; l < parts.Length; l++)
+                {
+                    page.Text(xs[c] + 5, y + 14 + (l * 10), parts[l], Body);
+                }
+            }
+
+            borders.Add(y += 8 + (lines * 10));
+        }
+
+        Grid(page, xs, [.. borders]);
+        return y;
+    }
+
+    private static SyntheticPdfBuilder RatesOverTwoPages(string[] firstRowOnPage2)
+    {
+        SyntheticPdfBuilder page = BodyPage("Regulamin rachunku");
+        for (int i = 0; i < 50; i++)
+        {
+            page.Text(Left, 170 + (i * 10), "Kursy referencyjne stosowane przy przewalutowaniu znajdziesz w tabeli kursowej banku.", Body);
+        }
+
+        RateRows(page, 700, header: true, [["złoty polski", "waluta obca", "kurs kupna"], ["waluta obca", "inna waluta obca", "kurs crossowy, czyli:"]]);
+        page.Page();
+        double bottom = RateRows(page, 60, header: true, [firstRowOnPage2]);
+        page.Text(Left, bottom + 30, "12. Kiedy nie przyjmiemy zlecenia płatniczego?", 11, bold: true);
+        page.Text(Left, bottom + 50, "Nie przyjmiemy zlecenia płatniczego, jeśli nie ma na rachunku środków na jego wykonanie.", Body);
+        return page;
+    }
+
+    [Fact]
+    public async Task CellCutAtThePageEnd_GoesOnInItsColumnBelowTheRepeatedHeader_IsCompleted()
+    {
+        // T6 (ind-4 p. 12→13): the last row of page 12 ends with „…, czyli:”; page 13 repeats the header, then a row whose
+        // columns 1–2 are empty and column 3 holds the bullets.
+        string markdown = await ConvertAsync(RatesOverTwoPages(["", "", "• najpierw na złote polskie,|• następnie na walutę obcą."]).Build());
+
+        string[] table =
+        [
+            "| **waluta rachunku** | **waluta transakcji** | **kurs referencyjny** |",
+            "| --- | --- | --- |",
+            "| złoty polski | waluta obca | kurs kupna |",
+            "| waluta obca | inna waluta obca | kurs crossowy, czyli: • najpierw na złote polskie, • następnie na walutę obcą. |",
+        ];
+        Assert.Equal(table, TableLines(markdown));
+        Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
+        Assert.Contains("## 12. Kiedy nie przyjmiemy zlecenia płatniczego?", markdown, StringComparison.Ordinal);
+        Assert.Single(markdown.Split('\n'), l => l.StartsWith("## ", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task FirstRowOnTheNextPageWithTextInTwoColumns_IsARowOfItsOwn()
+    {
+        // FR-743 guard: an empty first column alone is not a continuation — text in columns 2 and 3 makes a row.
+        string markdown = await ConvertAsync(RatesOverTwoPages(["", "inna waluta obca", "kurs średni"]).Build());
+
+        Assert.Equal(
+            [
+                "| **waluta rachunku** | **waluta transakcji** | **kurs referencyjny** |",
+                "| --- | --- | --- |",
+                "| złoty polski | waluta obca | kurs kupna |",
+                "| waluta obca | inna waluta obca | kurs crossowy, czyli: |",
+                "|  | inna waluta obca | kurs średni |",
+            ],
+            TableLines(markdown));
+    }
+
+    [Fact]
+    public async Task SameHeaderAfterAParagraph_StartsANewTable()
+    {
+        // FR-742 guard: a header equal to the previous table's, but below a paragraph and not at the page start, is the
+        // header of a new table.
+        SyntheticPdfBuilder page = BodyPage("Regulamin rachunku");
+        double bottom = RateRows(page, 180, header: true, [["złoty polski", "waluta obca", "kurs kupna"], ["waluta obca", "złoty polski", "kurs sprzedaży"]]);
+        page.Text(Left, bottom + 20, "Dla transakcji przychodzących stosujemy kursy wskazane w tabeli:", Body);
+        RateRows(page, bottom + 30, header: true, [["złoty polski", "waluta obca", "kurs sprzedaży"], ["waluta obca", "złoty polski", "kurs kupna"]]);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(2, TableLines(markdown).Count(l => l == "| **waluta rachunku** | **waluta transakcji** | **kurs referencyjny** |"));
+        Assert.Contains("Dla transakcji przychodzących stosujemy kursy wskazane w tabeli:", markdown, StringComparison.Ordinal);
+    }
+
     private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
     {
         IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
