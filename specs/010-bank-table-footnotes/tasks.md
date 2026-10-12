@@ -85,7 +85,7 @@ tekstu głównego i etykietach gołą cyfrą jako `[^n]:`, koniec zlepiania defi
 etykietami podniesionymi i zwykłymi) daje `[^n]kurs`, `Tak[^n]`, `TAK/TAK[^n]` i definicje `[^n]:`; zwykłe liczby i
 „art. 5¹” bez zmian.
 
-- [ ] T007 [US2] Testy etapu (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/FootnoteDetectionStageTests.cs`:
+- [X] T007 [US2] Testy etapu (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/FootnoteDetectionStageTests.cs`:
   (a) kreska krótka przy dolnym marginesie, pod nią linie tego samego rozmiaru co tekst główny zaczynające się od
   podniesionych etykiet „³”, „⁴” i zwykłych „8 ”, „9 ” z odnośnikami na stronie → definicje z kluczami 3, 4, 8, 9;
   (b) etykieta podniesiona przyklejona do tekstu („³Zapis…”) → etykieta; (c) kilka linii z etykietami, z których
@@ -97,15 +97,15 @@ etykietami podniesionymi i zwykłymi) daje `[^n]kurs`, `Tak[^n]`, `TAK/TAK[^n]` 
   podniesiona cyfra na początku słowa bez definicji na stronie → bez zmian; podniesione etykiety na początku linii
   obszaru nie są odnośnikami; „art. 5¹” (po `TextNormalization`) i kwoty/daty pełnego rozmiaru → bez zmian;
   dotychczasowe przypadki („1)” pod kreską małą czcionką, „***)”) → jak dotąd
-- [ ] T008 [P] [US2] Test (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/BlockAssemblyStageTests.cs`:
+- [X] T008 [P] [US2] Test (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/BlockAssemblyStageTests.cs`:
   słowo-odnośnik przed słowem daje `FootnoteRef` przed tekstem bez spacji (renderowane `[^1]kurs`), odnośnik po
   słowie — jak dotąd (`umowy[^1]`)
-- [ ] T009 [US2] Replika (red) w nowym `tests/LegalAgent.PdfParser.Tests/Integration/BankTablesIntegrationTests.cs`:
+- [X] T009 [US2] Replika (red) w nowym `tests/LegalAgent.PdfParser.Tests/Integration/BankTablesIntegrationTests.cs`:
   strona akapitów 8 pt z odnośnikiem przed słowem i na końcu słowa, kreska x 39,7–183,7 przy dolnym marginesie,
   definicje 8 pt z etykietami ³ ⁴ (5 pt, podniesione) i 8, 9 (zwykłe), na stronie także „1 000,00 zł”,
   „26.08.2026 r.”, lista „1)”, „2)”, „art. 5¹”; Markdown z `[^n]` w miejscach odnośników, definicjami `[^n]:` w
   istniejącym formacie, zwykłymi liczbami bez zmian (bez tabeli — komórki w T012)
-- [ ] T010 [US2] Zaimplementuj w `src/LegalAgent.PdfParser/Stages/FootnoteDetectionStage.cs` (research R5 pkt 1–4,
+- [X] T010 [US2] Zaimplementuj w `src/LegalAgent.PdfParser/Stages/FootnoteDetectionStage.cs` (research R5 pkt 1–4,
   data-model „FootnoteDraft”): obszar kandydacki pod kreską wyznaczany przed `FindMarkers`; etykieta geometryczna
   (małe podniesione cyfry na początku linii obszaru, z odstępem lub bez) i goła cyfra `\d{1,3}` ze spacją tylko pod
   kreską i dla kluczy z odnośnikami na stronie; ścieżka z kreską przyjmuje linie większe niż `MaxSizeRatio`, gdy
@@ -117,17 +117,21 @@ etykietami podniesionymi i zwykłymi) daje `[^n]kurs`, `Tak[^n]`, `TAK/TAK[^n]` 
   goldeny według FR-755 (oczekiwane: prywatne firm-1, firm-5, ind-2, ind-4, ind-1, corp-5 i inne z kolumną
   „Odnośniki sklejone” > 0 — tylko przypisy; dopuszczenia w `number-check.txt` dla scalonych definicji ind-2 „3” i
   ind-4 „1” usuń, jeśli przestały być potrzebne)
-- [ ] T011 [US2] Aktualizacja prywatnych goldenów (pliki poza git, bez commita) i wpis w handoffie: tabela
+- [X] T011 [US2] Aktualizacja prywatnych goldenów (pliki poza git, bez commita) i wpis w handoffie: tabela
   „Odnośniki sklejone” przed/po, przykłady zmian, wynik porównania słów; goldeny chronione — stop i pytanie
-- [ ] T012 [US2] Test (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/TableDetectionStageTests.cs` i replika
+- [X] T012 [US2] Test (red) w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/TableDetectionStageTests.cs` i replika
   w `BankTablesIntegrationTests.cs` (tabela z liniami 8 pt, komórki „Tak⁴”, „TAK/TAK⁵”, „³kurs z momentu…”,
   definicje pod kreską): w komórkach `FootnoteRef` (`Tak[^n]`, `TAK/TAK[^n]`, `[^n]kurs …`), definicje przypisane,
   numeracja kolejna; słowo-odnośnik nie tworzy osobnej komórki ani etykiety w `CellsOf`; wariant z odnośnikiem w
   komórce nagłówka tabeli (`Header`) → `[^n]` w nagłówku GFM i definicja przypisana (wariant z `HeaderGroup` w T018)
-- [ ] T013 [US2] Zaimplementuj przenoszenie `FootnoteId` w `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs`
+- [X] T013 [US2] Zaimplementuj przenoszenie `FootnoteId` w `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs`
   (`Token`, `RowDraft.Add`, `RowDraft.Inlines` — `FootnoteRef` przyklejony do sąsiedniego słowa jak w PDF); T012
   zielony. Pełny zestaw; jeśli zmieniają się `Corpus/acts`, `Corpus/banking` lub `corpus/` (sonda T004) — stop i
   pytanie z diffem przed commitem green
+
+- [X] T013b [US2] (dodane w implementacji) `NumberCheck.Compare(..., LegalDocument?)`: cyfry oryginalnych etykiet
+  przypisów (jedna na definicję, jedna na odnośnik `[^n]`) nie są „brakujące”; test w
+  `tests/LegalAgent.PdfParser.Tests/Unit/Fixtures/NumberCheckTests.cs`, `PrivateCorpusTests` przekazuje dokument
 
 **Checkpoint**: przypisy T12 poprawne w tekście; w komórkach tabel — po zgodzie na ewentualne goldeny chronione.
 

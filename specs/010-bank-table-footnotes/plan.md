@@ -201,6 +201,44 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     zmiana acts/banking/`corpus/` → stop i pytanie (FR-755).
   - T005–T006: `RuledTableGrid` (kolumny z linii pionowych w ≥ 2 wierszach, granice wierszy z odcinków ≥ 80% pasma,
     scalenia pionowe i poziome przez union-find, `Locate` po środku x i linii bazowej), 6 testów, jeszcze niewpięty.
+- 2026-10-12, Phase 3 / US2 przypisy (T007–T013, T013b), parser bez zmiany wersji:
+  - `FootnoteDetectionStage`: odnośnik także na początku słowa (`LayoutWord.ReferencesNextWord`, renderowane
+    `[^n]kurs`); etykieta definicji z małych podniesionych cyfr (z odstępem lub bez) i — tylko pod kreską, dla numerów z
+    odnośnikiem na stronie — goła cyfra ze spacją; obszar pod kreską przy rozmiarze tekstu głównego, gdy pierwsza linia
+    ma taką etykietę; podniesiona etykieta na początku linii pod kreską nie jest odnośnikiem (pierwotnie pomijane było
+    całe pierwsze słowo — psuło to jednowyrazową linię „podatkowego.⁴” w `corpus/zatrute/…/ZAT-REG-FAL-01`, zawężone
+    przed commitem). `TableDetectionStage`: `Token` przenosi `FootnoteId`, komórki emitują `FootnoteRef`;
+    `DocumentBuildStage` przenumerowuje odnośniki w tabelach (bez tego wychodziło `[^0]`).
+  - T013b (nowe, poza planem): `NumberCheck.Compare(..., LegalDocument?)` — cyfry oryginalnych etykiet przypisów
+    (jedna na definicję i jedna na odnośnik `[^n]`) nie są „brakujące”; bez tego „Liczby −” rosły sztucznie (np. ind-1
+    0 → 17), bo etykiety „8 Dotyczy…” i odnośniki przed słowem są w PDF zwykłymi liczbami. To część T026 zrobiona
+    wcześniej (dokument przekazywany już w `PrivateCorpusTests`).
+  - Goldeny chronione: `corpus/akty/dz-u-2025-720-kredyt-hipoteczny` (przypis „1 Niniejszy dokument…” odklejony od
+    przypisu 7 → osobny `[^8]`) i prywatne reg1 / regulamin-pdp — **zatwierdzone przez właściciela** (FR-755).
+    `Corpus/acts`, `Corpus/banking`, goldeny fragmentów — bez zmian.
+  - Goldeny prywatne zaktualizowane (wąska zgoda): corp-5, firm-1, firm-2, firm-3, firm-5, firm-6, ind-1, ind-2, ind-4
+    (+ reg1, regulamin-pdp za zgodą). Zmiany wyłącznie w przypisach: definicje dotąd sklejone w jeden `[^1]` (etykiety
+    gołą cyfrą) rozdzielone, odnośniki „3kurs”, „Tak4”, „TAK/TAK5”, „BLIK8”, „taryfa?6” → `[^n]` (także w komórkach
+    tabel i — jak dotąd — usuwane z tekstu nagłówków). Porównanie słów vs `baseline-010`: utracone wyłącznie tokeny
+    sklejone z cyfrą i etykiety definicji (po normalizacji sklejonych cyfr: brak innych różnic). Miary przed → po:
+
+    | Dokument | Liczby + | Liczby − | Odnośniki sklejone |
+    |---|---|---|---|
+    | corp-5 | 0 → 0 | 0 → 0 | 1 → 0 |
+    | firm-1 | 6 → 5 | 6 → 4 | 0 → 0 |
+    | firm-2 | 0 → 0 | 0 → 0 | 4 → 0 |
+    | firm-3 | 0 → 0 | 0 → 0 | 9 → 1 |
+    | firm-5 | 0 → 0 | 0 → 0 | 11 → 6 |
+    | firm-6 | 0 → 0 | 0 → 0 | 1 → 0 |
+    | ind-1 | 0 → 0 | 0 → 0 | 15 → 0 |
+    | ind-2 | 1 → 0 | 0 → 0 | 7 → 0 |
+    | ind-4 | 1 → 0 | 0 → 0 | 17 → 4 |
+    | reg1 / regulamin-pdp | 1 → 0 | 0 → 0 | 9 → 0 |
+
+    W `number-check.txt` usunięte dopuszczenia ind-2 „3” i ind-4 „1” (bramka zielona bez nich). Pozostałe sklejone:
+    „BLIK9,10” → „BLIK9,[^n]” (odnośnik z przecinkiem — poza zakresem, „Znane ograniczenia”), część firm-5/ind-4
+    (odnośniki w komórkach tabel bez siatki lub definicje bez etykiety — do sprawdzenia po Phase 4–6).
+  - Pełny zestaw z prywatnym korpusem i `CorpusFull`: 2205 testów, 0 niepowodzeń; `verify` czysty.
 
 ## Complexity Tracking
 
