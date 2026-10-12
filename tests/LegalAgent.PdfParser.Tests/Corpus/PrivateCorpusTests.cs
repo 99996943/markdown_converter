@@ -21,6 +21,7 @@ namespace LegalAgent.PdfParser.Tests.Corpus;
 /// layer, <see cref="NumberCheck"/>) and „Odnośniki sklejone” (digits glued to a word — footnote references the parser did
 /// not link, a known limitation not counted as numbers), a section lists the numbers per document, and the word-set baseline is
 /// <c>baseline-009/*.expected.md</c>.
+/// Spec 010 (T002): the word-set and unit-heading baseline is <c>baseline-010/*.expected.md</c> (goldens of parser 1.2.3).
 /// </remarks>
 public sealed class PrivateCorpusTests
 {
@@ -29,7 +30,7 @@ public sealed class PrivateCorpusTests
     private const string LabelLayoutList = "layout-labels.txt";
     private const string NumberCheckList = "number-check.txt";
     private const string FramePhrases = "frame-phrases.txt";
-    private const string BaselineDirectory = "baseline-009";
+    private const string BaselineDirectory = "baseline-010";
 
     private static readonly Dictionary<string, Task<IReadOnlyList<Converted>>> Conversions = new(StringComparer.Ordinal);
 
