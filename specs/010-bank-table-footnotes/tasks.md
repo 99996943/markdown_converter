@@ -159,7 +159,7 @@ w jednej komórce, każda wartość pod swoim nagłówkiem; wariant z „Gdzie m
   Klienta)”; oczekiwane: 5 kolumn, `**serwis transakcyjny** nasza strona internetowa` w jednej komórce, 0 pustych
   kolumn, wartości pod nagłówkami jak w PDF; (b) taryfa z siatką, w której nagłówek i dane mają te same granice →
   wynik jak dotąd (test ochronny, zielony przed i po)
-- [ ] T015 [US3] Wepnij `RuledTableGrid` w `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs` (`Build`): gdy
+- [X] T015 [US3] Wepnij `RuledTableGrid` w `src/LegalAgent.PdfParser/Stages/TableDetectionStage.cs` (`Build`): gdy
   `Grid` znajduje spójną siatkę z liniami pionowymi, pasma kolumn z siatki zamiast `ColumnClustering.ClusterLefts`,
   słowa przypisywane do komórek przez `Locate` (słowo po słowie, nie całe linie), komórki → `RowDraft` (jeszcze bez
   scaleń pionowych — kolumna bez linii na granicy dalej daje osobne wiersze z pustą komórką, jak dziś), bez TBL001

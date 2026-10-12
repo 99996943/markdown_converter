@@ -249,6 +249,22 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
   nad nimi, linie pionowe 399,5 i 477,5 zaczynają się pod grupą, kolumna 1 scalona przez oba wiersze nagłówka; s. 23
   bez powtórzonego nagłówka). Wariantów bez linii w zakresie przypadków nie ma: repliki P3 bez linii w T014 zbędne,
   T029 pozostaje próbą na syntetycznej macierzy bez linii.
+- 2026-10-12, Phase 4 / US3 (T014–T017): `HeaderGroup` w modelu i rendererze (T016–T017, bez zmian goldenów);
+  T014 repliki (downloads-2 s. 20 + test ochronny taryfy z siatką); T015 — `TableDetectionStage.FromRuledGrid`: region
+  w siatce z liniami pionowymi (`Grid.Around` daje granice nad pierwszą i pod ostatnią linią) budowany z
+  `RuledTableGrid`; słowa linii przypisywane fragmentami (segmenty linii dzielone na granicy kolumny tylko w odstępie
+  ≥ 1,25 × mediana pozostałych spacji segmentu, z tolerancją 2 pt na glif dotykający linii, i tylko między różnymi
+  komórkami siatki) według środka fragmentu; wiersz sekcji przez całą szerokość — kolumna środka tekstu (jak dotąd
+  w akcie MSZ); tekst komórki scalonej idzie do jej pierwszego wiersza (scalenia pionowe — T024). Próby po drodze:
+  przypisanie słowo po słowie rozbijało tekst wychodzący poza linię (lista kontrolna spec 007) i tytuły sekcji;
+  sam segment według środka sklejał nagłówki firm-3 (odstęp 6,8 pt przy medianie 4,8 pt).
+  - Goldeny: acts, banking, `corpus/` bez zmian; prywatne zaktualizowane — TBL001 corp-1 4→1, firm-1 3→0, firm-5 1→0,
+    ind-2 7→0, ind-4 6→0, reg1/regulamin-pdp 3→0; wiersze „ \| ” 19→2, 76→0, 2→0, 62→0, 82→0, 52→0; liczby bez
+    zmian. Porównanie słów vs stan po US2: utracone wyłącznie słowa powtórzonych nagłówków tabel na kolejnych
+    stronach (ind-2 70, ind-4 84, reg1 41, firm-3 7), nowych słów brak. reg1/regulamin-pdp — diff pokazany i
+    **zatwierdzony przez właściciela**. Znane resztki: wiersze z pustymi kolumnami 2…k na początku strony (komórka
+    urwana na końcu strony — T033), jeden wiersz tabeli limitów ze znakami ✓ w firm-1 (s. 3) nadal niedoskonały.
+  - Pełny zestaw: 2210 testów, 0 niepowodzeń; `verify` czysty.
 
 ## Complexity Tracking
 
