@@ -682,7 +682,8 @@ public sealed class TableDetectionStage : IPipelineStage
             }
             else
             {
-                cells.Add(new GridPiece(cell.Row, cell.RowSpan, cell.Column, cell.ColumnSpan, segment));
+                bool section = grid.CellAt(cell.Row, cell.Column).ColumnSpan == grid.ColumnCount;
+                cells.Add(new GridPiece(cell.Row, cell.RowSpan, cell.Column, cell.ColumnSpan, segment, section));
             }
         }
 
@@ -690,8 +691,11 @@ public sealed class TableDetectionStage : IPipelineStage
         return table;
     }
 
-    /// <summary>The words of one line in one grid cell: the cell's first row, rows, first column and columns.</summary>
-    private sealed record GridPiece(int Row, int RowSpan, int Column, int Span, LineSegment Segment);
+    /// <summary>
+    /// The words of one line in one grid cell: the cell's first row, rows, first column and columns; <paramref name="Section"/>
+    /// when the cell runs across the whole box (a section row kept in the column of its centre).
+    /// </summary>
+    private sealed record GridPiece(int Row, int RowSpan, int Column, int Span, LineSegment Segment, bool Section = false);
 
     /// <summary>
     /// The first grid row holds a cell spanning some but not all columns and otherwise only cells merged down into the
@@ -1204,7 +1208,10 @@ public sealed class TableDetectionStage : IPipelineStage
             RowDraft Draft(int row) => drafts.TryGetValue(row, out RowDraft? draft) ? draft : drafts[row] = new RowDraft(Bands.Count, FirstPage);
             foreach (GridPiece piece in pieces)
             {
-                Draft(piece.Row).Add(piece.Column, piece.Span, piece.Segment, exceptions);
+                RowDraft draft = Draft(piece.Row);
+                draft.Add(piece.Column, piece.Span, piece.Segment, exceptions);
+                draft.IsGridRow = true;
+                draft.IsSection |= piece.Section;
             }
 
             foreach (GridPiece merged in pieces.Where(p => p.RowSpan > 1).DistinctBy(p => (p.Row, p.Column)))
@@ -1235,6 +1242,12 @@ public sealed class TableDetectionStage : IPipelineStage
         {
             List<RowDraft> rows = next._rows;
             if (rows.Count > 0 && _rows.Count > 0 && rows[0].Key == _rows[0].Key)
+            {
+                rows = rows.Skip(1).ToList();
+            }
+
+            // Spec 010 (FR-743): a cell cut at the page end goes on in the first row of the next part.
+            if (rows.Count > 0 && _rows.Count > 0 && _rows[^1].TakeContinuation(rows[0], exceptions))
             {
                 rows = rows.Skip(1).ToList();
             }
@@ -1286,6 +1299,12 @@ public sealed class TableDetectionStage : IPipelineStage
 
         public int Columns => columns;
 
+        /// <summary>Spec 010: the row comes from a ruled grid (<see cref="Table.AddGridRows"/>).</summary>
+        public bool IsGridRow { get; set; }
+
+        /// <summary>Spec 010: the row is a cell across the whole ruled box (a section row).</summary>
+        public bool IsSection { get; set; }
+
         /// <summary>Spec 010: the cell starting in <paramref name="column"/> is merged over <paramref name="rows"/> rows.</summary>
         public void SetRowSpan(int column, int rows) => _rowSpans[column] = rows;
 
@@ -1299,6 +1318,48 @@ public sealed class TableDetectionStage : IPipelineStage
 
         /// <summary>Row text per column, used to recognise a header repeated on the next page.</summary>
         public string Key => string.Join("|", _tokens.Select(t => string.Join(' ', t.Where(w => w.FootnoteId is null).Select(w => w.Text))));
+
+        /// <summary>
+        /// Spec 010 (FR-743): <paramref name="next"/> — the first row of a table's part on the next page — holds text in
+        /// exactly one column, which this row fills: the text goes on in that cell (in the merged cell this row continues)
+        /// and true is returned. A row with text in two or more columns is a row of its own.
+        /// </summary>
+        public bool TakeContinuation(RowDraft next, string[] exceptions)
+        {
+            if (next.Columns != columns || !IsGridRow || !next.IsGridRow || next.IsSection)
+            {
+                return false;
+            }
+
+            List<int> filled = Enumerable.Range(0, columns).Where(c => next._tokens[c].Count > 0).ToList();
+            if (filled.Count != 1 || next._rowSpans[filled[0]] > 1)
+            {
+                return false;
+            }
+
+            int column = filled[0];
+            RowDraft target = _continues[column] ?? this;
+            List<Token> tokens = target._tokens[column];
+            if (tokens.Count == 0)
+            {
+                return false;
+            }
+
+            List<Token> more = next._tokens[column];
+            HyphenJoin join = target._lastLine[column] is { } previous
+                ? Hyphenation.Decide(previous, string.Join(' ', more.Select(t => t.Text)), exceptions)
+                : HyphenJoin.None;
+            if (join == HyphenJoin.Remove && tokens[^1].Text.EndsWith('-'))
+            {
+                tokens[^1] = tokens[^1] with { Text = tokens[^1].Text[..^1] };
+            }
+
+            tokens.Add(more[0] with { Glue = join != HyphenJoin.None });
+            tokens.AddRange(more.Skip(1));
+            target._lastLine[column] = next._lastLine[column];
+            target._inlines[column] = null;
+            return true;
+        }
 
         /// <summary>Adds a cell segment; a cell continued on a further line is joined with hyphenation rules (FR-012).</summary>
         public void Add(int column, int span, LineSegment cell, string[] exceptions)
