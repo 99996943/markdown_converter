@@ -510,6 +510,28 @@ public sealed class BlockAssemblyStageTests
             block.Inlines.ToArray());
     }
 
+    [Fact]
+    public void Execute_ReferenceBeforeAWord_IsGluedToTheWordAfterIt()
+    {
+        // Spec 010 (T12): „³kurs” — the space goes before the reference, none after it.
+        PipelineContext context = RunPrepared(
+            c =>
+            {
+                LayoutPage page = c.Pages[0];
+                LayoutLine line = page.Lines[0];
+                List<LayoutWord> words = [.. line.Words];
+                words[1] = words[1] with { FootnoteId = 3, ReferencesNextWord = true };
+                words[^1] = words[^1] with { FootnoteId = 4 };
+                page.Lines[0] = new LayoutLine(words, line.Box, line.Baseline);
+            },
+            new PageSketch().Line("Stosujemy 3 kurs z momentu umowy 4", 50, 100));
+
+        LayoutBlock block = Assert.Single(context.Blocks);
+        Assert.Equal(
+            [new TextRun("Stosujemy "), new FootnoteRef(3), new TextRun("kurs z momentu umowy"), new FootnoteRef(4)],
+            block.Inlines.ToArray());
+    }
+
     // ---------------------------------------------------------------- table-document content (spec 002, R9)
 
     private const double ContentLeft = 186;

@@ -14,4 +14,10 @@ public sealed record LayoutWord(IReadOnlyList<LayoutGlyph> Glyphs, Rect Box, str
     /// set by footnote detection.
     /// </summary>
     public int? FootnoteId { get; init; }
+
+    /// <summary>
+    /// Spec 010: the reference marker stands before the word it belongs to, without a space („³kurs”); set by footnote
+    /// detection together with <see cref="FootnoteId"/>.
+    /// </summary>
+    public bool ReferencesNextWord { get; init; }
 }

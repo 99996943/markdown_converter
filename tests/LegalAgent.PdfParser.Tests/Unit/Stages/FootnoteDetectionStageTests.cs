@@ -24,6 +24,29 @@ public sealed class FootnoteDetectionStageTests
         return sketch;
     }
 
+    private static double Width(string text, double size) => text.Sum(c => c == ' ' ? 0.26 * size : 0.5 * size);
+
+    /// <summary>
+    /// Spec 010: a raised, smaller marker glued to the start of the word after <paramref name="before"/> („³kurs”);
+    /// <paramref name="before"/> ends with a space.
+    /// </summary>
+    private static PageSketch WithLeadingReference(PageSketch sketch, string before, string marker, string after, double baseline)
+    {
+        sketch.Line(before, X, baseline, Body);
+        double start = X + Width(before, Body);
+        sketch.Line(marker, start, baseline - 4, 6);
+        sketch.Line(after, start + Width(marker, 6), baseline, Body);
+        return sketch;
+    }
+
+    /// <summary>A definition line opening with a raised, smaller label; <paramref name="text"/> starts with a space or not.</summary>
+    private static PageSketch RaisedLabel(PageSketch sketch, string label, string text, double baseline, double size = Body)
+    {
+        sketch.Line(label, X, baseline - (0.4 * size), 0.6 * size);
+        sketch.Line(text, X + Width(label, 0.6 * size), baseline, size);
+        return sketch;
+    }
+
     private static PageSketch BodyLines(PageSketch sketch, double from, int count)
     {
         for (int i = 0; i < count; i++)
@@ -169,6 +192,117 @@ public sealed class FootnoteDetectionStageTests
         Assert.Equal(1, draft.Page);
         Assert.Equal("Przypis, który zaczyna się na pierwszej stronie i kończy na drugiej stronie dokumentu.", Text(draft));
         Assert.Equal(LineRole.Footnote, LineStarting(context, "kończy").Role);
+    }
+
+    [Fact]
+    public void DefinitionsAtBodySizeBelowARule_WithRaisedAndBareLabels_AreSeparateFootnotes()
+    {
+        // Spec 010 (T12, firm-5 p. 13): the definitions under a short rule are set as large as the body text; labels
+        // ³ and ⁴ are raised and smaller (with or without a space after them), 8 and 9 are plain digits on the baseline.
+        PageSketch page = BodyLines(new PageSketch(), 100, 5);
+        WithReference(page, "Zmiana umowy", "3", 180);
+        WithLeadingReference(page, "Kursy wymiany: ", "4", "kurs z momentu transakcji.", 194);
+        WithReference(page, "Przelew natychmiastowy Tak", "8", 208);
+        WithReference(page, "Opłata za prowadzenie", "9", 222);
+        page.Line("Zgodnie z art. 5¹ ustawy kwota wynosi 1 000,00 zł od 26.08.2026 r.", X, 236, Body);
+        page.Page.Rulings.Add(new Segment(40, 740, 184, 740));
+        RaisedLabel(page, "3", " Zapis obowiązuje od 26.08.2026 r.", 755);
+        RaisedLabel(page, "4", "Kurs ogłaszany w tabeli kursów.", 767);
+        page.Line("8 Dotyczy rachunków prowadzonych w złotych", X, 779, Body);
+        page.Line("i w walutach obcych.", X, 791, Body);
+        page.Line("9 Opłata pobierana miesięcznie.", X, 803, Body);
+
+        PipelineContext context = Run(page);
+
+        Assert.Equal(["3", "4", "8", "9"], context.Footnotes.Select(f => f.Label));
+        Assert.Equal(
+            ["Zapis obowiązuje od 26.08.2026 r.", "Kurs ogłaszany w tabeli kursów.", "Dotyczy rachunków prowadzonych w złotych i w walutach obcych.", "Opłata pobierana miesięcznie."],
+            context.Footnotes.Select(Text));
+        Assert.All(context.Footnotes, f => Assert.False(f.IsOrphan));
+        Assert.Equal(LineRole.Footnote, LineStarting(context, "8 Dotyczy").Role);
+        Assert.Equal(LineRole.Footnote, LineStarting(context, "i w walutach").Role);
+
+        // The raised labels opening definition lines are no references.
+        Assert.All(
+            context.Pages[0].Lines.Where(l => l.Role == LineRole.Footnote).SelectMany(l => l.Words),
+            w => Assert.Null(w.FootnoteId));
+
+        LayoutLine leading = LineStarting(context, "Kursy wymiany:");
+        int marker = leading.Words.ToList().FindIndex(w => w.FootnoteId is not null);
+        Assert.Equal("4", leading.Words[marker].Text);
+        Assert.True(leading.Words[marker].ReferencesNextWord);
+        Assert.Equal(context.Footnotes[1].Id, leading.Words[marker].FootnoteId);
+        Assert.Equal("kurs", leading.Words[marker + 1].Text);
+        Assert.Null(leading.Words[marker + 1].FootnoteId);
+        Assert.False(LineStarting(context, "Zmiana umowy").Words[^1].ReferencesNextWord);
+        Assert.Equal(context.Footnotes[2].Id, LineStarting(context, "Przelew").Words[^1].FootnoteId);
+
+        // Full-size numbers and the raised digit after „art. 5” stay text.
+        Assert.All(LineStarting(context, "Zgodnie z art.").Words, w => Assert.Null(w.FootnoteId));
+    }
+
+    [Fact]
+    public void BareDigitLabelsBelowARule_StartSeparateDefinitions_InsteadOfOneUnlabelledFootnote()
+    {
+        // firm-1: small-font definitions „1 obowiązuje…”, „5 O wprowadzeniu…” were glued into one footnote with an empty label.
+        PageSketch page = BodyLines(new PageSketch(), 100, 5);
+        WithReference(page, "Tabela opłat", "1", 180);
+        WithReference(page, "Nowa opłata", "5", 194);
+        page.Page.Rulings.Add(new Segment(X, 750, X + 120, 750));
+        page.Line("1 obowiązuje od 3.12.2024 r.", X, 765, Note);
+        page.Line("5 O wprowadzeniu opłaty decyduje bank.", X, 775, Note);
+
+        PipelineContext context = Run(page);
+
+        Assert.Equal(["1", "5"], context.Footnotes.Select(f => f.Label));
+        Assert.Equal(["obowiązuje od 3.12.2024 r.", "O wprowadzeniu opłaty decyduje bank."], context.Footnotes.Select(Text));
+    }
+
+    [Fact]
+    public void LeadingReference_LinksToADefinitionOnTheNextPage()
+    {
+        PageSketch first = BodyLines(new PageSketch(1), 100, 5);
+        WithLeadingReference(first, "Stosujemy ", "3", "kurs z momentu transakcji.", 180);
+
+        PageSketch second = BodyLines(new PageSketch(2), 100, 5);
+        second.Page.Rulings.Add(new Segment(X, 760, X + 120, 760));
+        second.Line("3) Definicja na następnej stronie.", X, 775, Note);
+
+        PipelineContext context = Run(first, second);
+
+        FootnoteDraft draft = Assert.Single(context.Footnotes);
+        Assert.False(draft.IsOrphan);
+        LayoutWord marker = Assert.Single(LineStarting(context, "Stosujemy").Words, w => w.FootnoteId is not null);
+        Assert.Equal((draft.Id, true), (marker.FootnoteId!.Value, marker.ReferencesNextWord));
+    }
+
+    [Fact]
+    public void LeadingRaisedDigit_WithoutAnyDefinition_StaysPartOfTheWord()
+    {
+        PageSketch page = BodyLines(new PageSketch(), 100, 5);
+        WithLeadingReference(page, "Stosujemy ", "5", "kurs z momentu transakcji.", 180);
+
+        PipelineContext context = Run(page);
+
+        Assert.Empty(context.Footnotes);
+        LayoutLine line = LineStarting(context, "Stosujemy");
+        Assert.All(line.Words, w => Assert.Null(w.FootnoteId));
+        Assert.Contains(line.Words, w => w.Text == "5kurs");
+    }
+
+    [Fact]
+    public void BodySizeTextBelowARule_WithoutLabelsOfReferences_IsNoFootnoteArea()
+    {
+        PageSketch page = BodyLines(new PageSketch(), 100, 5);
+        WithReference(page, "Odwołanie", "3", 180);
+        page.Page.Rulings.Add(new Segment(X, 740, X + 120, 740));
+        page.Line("Zwykły akapit pod krótką kreską na dole strony.", X, 755, Body);
+        page.Line("5 sztuk dokumentów należy złożyć w placówce.", X, 767, Body);
+
+        PipelineContext context = Run(page);
+
+        Assert.Empty(context.Footnotes);
+        Assert.DoesNotContain(context.Pages[0].Lines, l => l.Role == LineRole.Footnote);
     }
 
     [Fact]
