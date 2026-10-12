@@ -35,6 +35,17 @@ treści własnej i podsekcjach — dla Art./§ (liście) oznacza to koniec artyk
 | Schemat kroków (FR-067) | dla każdego kroku pogrubiony akapit z oryginalną nazwą kroku (`ParagraphBlock`, bez dopisanego tekstu), po nim wyjaśnienie jako zwykłe akapity i listy; wiersz nazw kolumn pominięty; bez tabeli i bez nagłówka `#` | `**Składasz wniosek**` |
 | `SkippedPageBlock` | `<!-- page N skipped: no-text-layer -->` / `<!-- page N skipped: read-error -->` | |
 
+## Uzupełnienia kontraktu
+
+Kolejne specyfikacje rozszerzają ten kontrakt we własnych uzupełnieniach. Najnowsze:
+`specs/010-bank-table-footnotes/contracts/markdown-output.md` — **wersja kontraktu 1.4.0** (MINOR):
+- nowe pola modelu: `TableCell.RowSpan` (liczba wierszy komórki połączonej pionowo, w jej pierwszym wierszu),
+  `TableCell.ContinuesAbove` (prawda w kolejnych wierszach połączenia; te same inliny co pierwsza komórka),
+  `TableBlock.HeaderGroup` (opcjonalny wiersz nad nazwami kolumn: komórka grupy obejmuje kilka kolumn);
+- tabela GFM powtarza tekst komórki połączonej w każdym wierszu, który obejmuje; tekst grupy nagłówka jest
+  drukowany przed każdą nazwą kolumny, którą obejmuje, np. `**Gdzie można zrobić?** **BOK**`;
+- odnośnik przypisu przed wyrazem jest renderowany w miejscu jako `[^n]`.
+
 ## Ucieczka znaków w tekście
 
 W `TextRun` escapowane są: `\ * _ [ ] < > `` ` `` oraz `|` wewnątrz tabel. Na początku linii

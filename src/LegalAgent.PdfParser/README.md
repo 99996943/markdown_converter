@@ -209,6 +209,30 @@ Wynik:
 
 Nagłówek i stopka trafiają do `Report.RemovedArtifacts`, nie do treści.
 
+## Wersja 1.3.0: tabele i przypisy bankowe (spec 010)
+
+Kontrakt Markdown 1.4.0 (`specs/010-bank-table-footnotes/contracts/markdown-output.md`).
+
+- **Tabele z liniami siatki:**
+  - kolumny i komórki wynikają z siatki linii (`RuledTableGrid`);
+  - wielowierszowe nazwy kolumn i wartości wyśrodkowane trafiają do kolumny swojego środka;
+  - nagłówek z kilku wierszy tekstu to jedna komórka;
+  - obszar tabeli rośnie przez wysokie wiersze jednej siatki (pusty pas między liniami nadal rozdziela dwie tabele);
+  - pionowa linia przerwana do 1 pt nadal się liczy.
+- **Komórki połączone pionowo** (`TableCell.RowSpan` / `ContinuesAbove`): tekst jest powtórzony w każdym wierszu,
+  który komórka obejmuje, także we fragmentach chunkera.
+- **Wiersz grupy nad nazwami kolumn** (`TableBlock.HeaderGroup`): tekst komórki grupy jest drukowany przed każdą nazwą
+  kolumny, którą obejmuje.
+- **Tabele przez strony:**
+  - powtórzony nagłówek (także wiersz grupy) jest pomijany;
+  - komórka przecięta końcem strony ciągnie się w pierwszym wierszu następnej strony, gdy ten wiersz ma tekst w
+    dokładnie jednej kolumnie (tylko wiersze siatki, nigdy wiersz sekcji na całą szerokość ramki);
+  - mała tabela bez linii podzielona na dwie strony liczy wiersze obu części.
+- **Przypisy:**
+  - odnośnik przed wyrazem („³kurs” daje `[^n]kurs`) i w komórkach tabel („Tak⁴” daje `Tak[^n]`);
+  - definicje pod krótką kreską w rozmiarze tekstu głównego, z etykietą będącą samą liczbą, także gdy podniesiona
+    etykieta jest osobnym wierszem.
+
 ## Ostrzeżenia i raport
 
 | Kod | Znaczenie |
@@ -260,10 +284,9 @@ Zasady:
 - **Wiersze tabel jako nagłówki:** pogrubiony wiersz tabeli bez siatki, np. nagłówek kolumn, bywa uznany za nagłówek
   typograficzny („## waluta transakcji kurs referencyjny…”). Zakończenie schematu kroków bywa nagłówkiem
   („## i… już dziecko może korzystać z karty”).
-- **Przypisy w niektórych bankowych PDF-ach:** trafiają do jednego bloku razem z numerami stron, a znak odnośnika
-  zostaje przyklejony do słowa („bilansujący2”). Odnośniki niewykryte przez parser zostają sklejone ze słowem także
-  jako lista („BLIK9,10”), a etykiety definicji przypisów bez „)” bywają scalone w jedną definicję `[^1]`.
-  Kandydat na spec 010.
+- **Przypisy w niektórych bankowych PDF-ach:** od 1.3.0 odnośniki przed słowem, w komórkach tabel i definicje pod
+  kreską z gołą etykietą są rozpoznawane (spec 010). Nadal sklejone zostają odnośniki z przecinkiem i w środku słowa
+  (zob. niżej), a kolejne definicje w jednej linii bywają scalone w jedną definicję.
 - **Spis treści** zostaje w treści jako lista lub akapit z kropkami prowadzącymi (jego wpisy nie są już nagłówkami).
 - **Obrazy** nie są odczytywane (brak OCR), tylko zgłaszane (`IMG001`).
 - **Nagłówek wciągnięty do tabeli:** w regulaminie kart dla firm (część II, rozdz. 3) nagłówek obok ramek „etap”
@@ -282,3 +305,19 @@ Zasady:
 - **Zakres artykułów z indeksem** („art. 720²–720⁵”): zamieniany jest tylko pierwszy indeks, druga cyfra po myślniku
   zostaje doklejona („720²–7205”). Odnośnik przypisu tuż po numerze artykułu („art. 166¹¹²)”, w PDF odnośnik
   „112)”) jest zapisywany indeksem górnym.
+- **Układy T7 i T8 z porównania (spec 010)** — poza zakresem: inne złożone układy tabel z porównania nie zostały
+  odtworzone.
+- **Wielopoziomowy nagłówek tabeli (T10)**, np. tabela znaczników SWIFT: rozpoznawany tylko częściowo; jedna tabela
+  może nadal trafić do formatu zastępczego (`TBL001`).
+- **Odnośniki z przecinkiem** („BLIK⁹,¹⁰”): jako odnośnik rozpoznawana jest tylko ostatnia liczba, pierwsza zostaje
+  sklejona („BLIK9,[^n]”).
+- **Odnośnik w środku wyrazu po ukośniku** („zł/²30.000”) zostaje sklejony.
+- **„art. 166¹¹²)”:** cyfry indeksu górnego po numerze artykułu, po których następuje nawias zamykający, nie są
+  rozdzielane.
+- **Macierze działań i podobne tabele bez linii siatki** (wiersze rozpoznawalne tylko po wyśrodkowaniu pionowym
+  wartości względem wielowierszowych komórek pierwszej kolumny) trafiają do formatu zastępczego. Każda znaleziona w
+  korpusie macierz ma linie siatki (spec 010, T029).
+- **Komórka podzielona linią wewnątrz strony w grupie połączonej** powtarza etykietę połączenia w każdej części
+  (skutek reguły komórek połączonych).
+- **Stopka z adresem banku przeplatana z przypisami** bywa doklejona do ostatniego przypisu strony (znane od 1.2.x,
+  patrz też „Stopka obok dużego logo”).
