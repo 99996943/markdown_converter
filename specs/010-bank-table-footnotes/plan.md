@@ -265,6 +265,18 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     **zatwierdzony przez właściciela**. Znane resztki: wiersze z pustymi kolumnami 2…k na początku strony (komórka
     urwana na końcu strony — T033), jeden wiersz tabeli limitów ze znakami ✓ w firm-1 (s. 3) nadal niedoskonały.
   - Pełny zestaw: 2210 testów, 0 niepowodzeń; `verify` czysty.
+- 2026-10-12, T018–T019: wiersz grupujący — pierwszy wiersz siatki z komórką przez część kolumn i pozostałymi
+  komórkami scalonymi w dół z wierszem nazw kolumn, tekst obu wierszy pogrubiony → `HeaderGroup`; komórki scalone w dół
+  należą do nazw kolumn. `DocumentBuildStage` numeruje odnośniki w `HeaderGroup`, `FootnoteSelector` chunkera dołącza
+  ich definicje do każdej części tabeli (test w `FootnoteSelectionTests`). Prywatnie zmienił się tylko firm-6 (macierz
+  „Co można zrobić? / Gdzie można zrobić?” — przypadek opisany w research jako „firm-3 s. 8”). Macierz firm-5 s. 22–23
+  (grupa „Gdzie możesz to zrobić?”) nadal zła: wysoki nagłówek poza regionem (staje się `###`), s. 23 rozsypana —
+  zakres T027–T028. Wariant z wierszem grupującym przez dwie strony dopisany zostanie do T032/T033 (łączenie).
+  - Punkt kontrolny Phase 4 (downloads-1…5, CLI do katalogu tymczasowego): TBL001 0/0/0/0/0 (było 0/0/1/0/2), wiersze
+    „ \| ” 0 wszędzie (było 15 w downloads-3 i 31 w downloads-5), definicje przypisów 0/25/20/3/0 (było 0/1/1/1/0),
+    tabele GFM 7/3/3/2/7 (downloads-4: części tabeli połączone przez strony). downloads-2 s. 21 — macierz Private
+    Banking ma 6 kolumn (z „oddział”) i tak jest wyprowadzana.
+  - Pełny zestaw: 2213 testów, 0 niepowodzeń; `verify` czysty.
 
 ## Complexity Tracking
 

@@ -174,13 +174,13 @@ w jednej komórce, każda wartość pod swoim nagłówkiem; wariant z „Gdzie m
   `src/LegalAgent.PdfParser/Model/ContentBlock.cs` (dokumentacja: „tylko gdy `Header` ≠ null i `IsFallback` = false;
   suma `ColumnSpan` = `ColumnCount`; komórki z pustymi `Inlines` oznaczają kolumny bez grupy”) i renderowanie w
   `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` (tekst grupy + spacja + nagłówek kolumny); T016 zielony
-- [ ] T018 [US3] Replika (red) w `BankTablesIntegrationTests.cs` jak firm-3 s. 8: linie pionowe 59,2 / 215,2 / 328,6 /
+- [X] T018 [US3] Replika (red) w `BankTablesIntegrationTests.cs` jak firm-3 s. 8: linie pionowe 59,2 / 215,2 / 328,6 /
   442,1 / 555,5 (w paśmie wiersza grupującego tylko 59,2 / 215,2 / 555,5), odcinek 215,4–555,2 nad grupą, linia
   pod grupą tylko nad kolumnami 2–4, „Co można zrobić?” w kolumnie 1 przez oba wiersze nagłówka; oczekiwany nagłówek
   z tekstem grupy w kolumnach 2–4, 4 kolumny, dane pod właściwymi nagłówkami; wariant: tabela z wierszem
   grupującym przechodzi na drugą stronę z powtórzonym wierszem grupującym i nagłówkiem → jedna tabela, nagłówek
   raz (część dotycząca łączenia może pozostać czerwona do T033); wariant z odnośnikiem w komórce wiersza grupującego
-- [ ] T019 [US3] Rozpoznawanie wiersza grupującego w `TableDetectionStage` (research R4): wiersz siatki nad
+- [X] T019 [US3] Rozpoznawanie wiersza grupującego w `TableDetectionStage` (research R4): wiersz siatki nad
   nagłówkiem z komórkami obejmującymi kilka pasm, przy kolumnach scalonych pionowo z nagłówkiem → `HeaderGroup`;
   T018 zielony. Pełny zestaw; goldeny według FR-755 (oczekiwane: firm-3 i inne macierze z grupą)
 
