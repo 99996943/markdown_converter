@@ -693,6 +693,56 @@ public sealed class BankTablesIntegrationTests
         Assert.Contains("[^3]: Dotyczy wybranych scenariuszy wnioskowania.", markdown, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public async Task RowWhoseMiddleCellHoldsTwoRuledParagraphs_DoesNotBreakTheTable()
+    {
+        // T4 (firm-5 p. 12): three ruled columns; in one row column 2 holds two paragraphs ruled apart, columns 1 and 3 one
+        // line each; every vertical is broken at that ruling, so the middle of the row falls into the break.
+        double[] xs = [59.3, 201.1, 378.3, 555.6];
+        SyntheticPdfBuilder page = BodyPage("Regulamin usług płatniczych");
+        double[] borders = [300, 320, 345.9, 366.4, 386.9, 412];
+        foreach (double y in borders)
+        {
+            bool inner = y == 366.4;
+            for (int c = 0; c + 1 < xs.Length; c++)
+            {
+                if (!inner || c == 1)
+                {
+                    page.HLine(xs[c] + 0.2, xs[c + 1] - 0.2, y);
+                }
+            }
+        }
+
+        for (int r = 0; r + 1 < borders.Length; r++)
+        {
+            foreach (double x in xs)
+            {
+                page.VLine(x, borders[r] + 0.3, borders[r + 1] - 0.2);
+            }
+        }
+
+        page.Text(64, 313, "rodzaj przelewu", Body, bold: true).Text(206, 313, "kiedy przyjmujemy przelewy?", Body, bold: true)
+            .Text(384, 313, "kiedy obciążymy rachunek?", Body, bold: true);
+        page.Text(65.4, 333, "przelew w złotych polskich", Body).Text(207, 333, "przez całą dobę", Body).Text(384, 333, "natychmiast", Body);
+        page.Text(206.2, 354.2, "jeśli nie wymaga przewalutowania –", Body).Text(207.2, 364.3, "przez całą dobę", Body);
+        page.Text(65.4, 369.6, "przelew walutowy wewnętrzny", Body).Text(384.4, 369.6, "natychmiast", Body);
+        page.Text(206.2, 374.7, "jeśli wymaga przewalutowania –", Body).Text(206.8, 384.8, "w godzinach 8.00-19.30", Body);
+        page.Text(65.4, 402, "przelew SWIFT", Body).Text(207, 402, "w godzinach 8.00-13.00", Body).Text(384, 402, "w tym samym dniu roboczym dla transakcji", Body);
+
+        string markdown = await ConvertAsync(page.Build());
+
+        Assert.Equal(
+            [
+                "| **rodzaj przelewu** | **kiedy przyjmujemy przelewy?** | **kiedy obciążymy rachunek?** |",
+                "| --- | --- | --- |",
+                "| przelew w złotych polskich | przez całą dobę | natychmiast |",
+                "| przelew walutowy wewnętrzny | jeśli nie wymaga przewalutowania – przez całą dobę | natychmiast |",
+                "| przelew walutowy wewnętrzny | jeśli wymaga przewalutowania – w godzinach 8.00-19.30 | natychmiast |",
+                "| przelew SWIFT | w godzinach 8.00-13.00 | w tym samym dniu roboczym dla transakcji |",
+            ],
+            TableLines(markdown));
+    }
+
     private static IEnumerable<ContentBlock> Blocks(LegalDocument document)
     {
         IEnumerable<ContentBlock> Of(Section section) => section.Blocks.Concat(section.Children.SelectMany(Of));
