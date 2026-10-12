@@ -319,6 +319,33 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     `Skip` z odwołaniem do „Znanych ograniczeń” (README w T039).
   - SC-113: ind-4, ind-2, firm-2, firm-5, downloads-3, downloads-5 — 0 linii TBL001 i 0 wierszy macierzy jako akapity.
     Pełny zestaw: 2223 testy, 0 niepowodzeń, 1 pominięty (T029) + dotychczasowe pominięcia; `CorpusFull` zielony.
+- 2026-10-12, Phase 7 / US5 (T030–T034):
+  - T030 (firm-5 s. 12, geometria sondą: tabela **z liniami**): w wierszu z dwoma akapitami kolumny 2 rozdzielonymi linią
+    tylko w tej kolumnie linie pionowe są przerwane na jej wysokości (np. 407,2 → 407,7), a środek pasma `Grid` (linia
+    wewnętrzna ma < 40% szerokości obszaru, więc nie jest granicą) wypada w przerwie → `Grid.Contains` false i tabela
+    pękała na akapity. Poprawka: `Grid.Crosses` z tolerancją `VerticalBreakSlack` = 1 pt. Wiersz daje dwa wiersze GFM
+    z kolumnami 1 i 3 scalonymi (powtórzone, jak T024). Goldeny prywatne (FR-755): firm-5 — tabela wypłat i dwie tabele
+    przelewów kompletne; firm-1 — wiersz limitów „przelewy ekspresowe” tabelą zamiast akapitów.
+  - T031 (ind-2 s. 6–7): replika zielona bez zmian kodu (regresja, K1) — powtórzony nagłówek był już pomijany.
+  - T032 (ind-4 s. 12→13): replika czerwona (lista punktów z s. 13 jako wiersz `|  |  | • …`); testy ochronne
+    (tekst w dwóch kolumnach → osobny wiersz; ten sam nagłówek po akapicie → nowa tabela) zielone od razu.
+  - T033: `Table.Append` po pominięciu powtórzonego nagłówka wywołuje `RowDraft.TakeContinuation` — pierwszy wiersz
+    części z następnej strony z tekstem w dokładnie jednej kolumnie, niepustej w ostatnim wierszu poprzedniej części
+    (lub w komórce scalonej, którą ten wiersz kontynuuje), jest doklejany z regułami dzielenia wyrazów. Tylko wiersze
+    siatki (`IsGridRow`) i nie wiersz przez całą szerokość (`IsSection`) — pierwsza wersja doklejała wiersz sekcji
+    „VII. Czynności w sprawach stanu cywilnego” aktu MSZ (golden chroniony; wycofane przed commitem). Testy ochronne
+    (wiersz sekcji na górze strony; nagłówek z grupą powtórzony na kolejnej stronie — wariant T018) jako regresja.
+    Goldeny: firm-5, ind-4 (FR-755: „kurs crossowy, czyli:”, „dostawca trzeci”, „przelew w złotych polskich”, „taryfa”,
+    „odwołanie zgody”, „zwrot kwoty…”) oraz reg1 i regulamin-pdp (po 3 miejsca: „(inny niż przelew ekspresowy…)”,
+    „zawieszenie realizacji…”, „zmienić limit przelewów…”) — **zatwierdzone przez właściciela** po pokazaniu diffu.
+  - T034: mała tabela bez linii na jednej stronie — zielona bez zmian (regresja); podzielona przez strony bez
+    powtórzonego nagłówka (nagłówek + 1 wiersz / 2 wiersze) — czerwona. `StartsAtPageEnd`/`ContinuesFromPreviousPage`
+    liczą także wiersze drugiej części w tych samych kolumnach (`AlignedRows`, ta sama liczba komórek, lewe krawędzie
+    w tolerancji kolumn); po stronie poprzedniej wymagany pogrubiony nagłówek. Goldeny bez zmian.
+  - SC-114: firm-5 s. 12–13, ind-2 s. 6–7, ind-4 s. 13 — kompletne tabele bez fałszywych `##`; downloads-5 s. 8
+    („budynek mieszkalny jednorodzinny”) dokończona; downloads-1…5 TBL001 0. Komórka downloads-1 „Gdzie sprawdzisz…”
+    rozdzielona linią wewnątrz strony (nie przez stronę) nadal powtarza etykietę scalenia — zgodnie z T024.
+  - Pełny zestaw: 2233 testy, 0 niepowodzeń (pominięte: T029 i dotychczasowe); `CorpusFull` zielony, `corpus/` bez zmian.
 
 ## Complexity Tracking
 

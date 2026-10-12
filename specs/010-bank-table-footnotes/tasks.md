@@ -266,28 +266,28 @@ pionie, nagłówek 3-liniowy, odnośniki „TAK/TAK⁵”) → jedna tabela, lic
 
 **Independent Test**: trzy repliki (T4, T5, T6) dają kompletne tabele bez fałszywych `##`.
 
-- [ ] T030 [P] [US5] Replika T4 (red lub regresji) w `BankTablesIntegrationTests.cs`: 3 kolumny z liniami, wiersz,
+- [X] T030 [P] [US5] Replika T4 (red lub regresji) w `BankTablesIntegrationTests.cs`: 3 kolumny z liniami, wiersz,
   w którym kolumna 2 ma dwa akapity („jeśli nie wymaga…” / „jeśli wymaga…”), kolumny 1 i 3 jedną linię wyśrodkowaną,
   dalsze wiersze → jedna tabela; jeśli zielony po Phase 4–5 bez zmian kodu — commit samego testu jako regresji z
   adnotacją, jeśli wymaga kodu — para red/green; najpierw
   sprawdź geometrię firm-5 s. 12–13 sondą (z liniami czy bez) i zapisz w handoffie
-- [ ] T031 [P] [US5] Replika T5 (red) w `BankTablesIntegrationTests.cs` jak ind-2 s. 6–7: linie pionowe 43,7 /
+- [X] T031 [P] [US5] Replika T5 (red) w `BankTablesIntegrationTests.cs` jak ind-2 s. 6–7: linie pionowe 43,7 /
   325,6 / 438,4 / 551,3, wiersze 19,9 pt, 11 pt, kolumny 2–3 wyśrodkowane; s. 6 nagłówek + 1 wiersz na dole strony,
   s. 7 nagłówek powtórzony + 4 wiersze → jedna tabela GFM 3-kolumnowa, 5 wierszy danych, nagłówek raz
-- [ ] T032 [P] [US5] Replika T6 (red) w `BankTablesIntegrationTests.cs` jak ind-4 s. 12→13: linie pionowe 59,3 /
+- [X] T032 [P] [US5] Replika T6 (red) w `BankTablesIntegrationTests.cs` jak ind-4 s. 12→13: linie pionowe 59,3 /
   201,1 / 378,3 / 555,5; s. 12 tabela kończy się wierszem z komórką kolumny 3 „…, czyli:” zamkniętym linią; s. 13
   nagłówek powtórzony (te same teksty i x), potem wiersz z pustymi kolumnami 1–2 i listą punktowaną w kolumnie 3 →
   jedna tabela, 0 nagłówków `##`, lista doklejona do komórki „…, czyli:”; testy ochronne: ta sama treść nagłówka w
   nowej tabeli po akapicie (nie na początku strony) → osobna tabela; na s. 13 pierwszy wiersz z pustą kolumną 1 i
   tekstem w kolumnach 2 i 3 → osobny wiersz z pustą 1. kolumną, nie doklejenie (FR-743)
-- [ ] T033 [US5] Zaimplementuj w `TableDetectionStage` (research R6): `Append` pomija pierwszy wiersz, gdy teksty
+- [X] T033 [US5] Zaimplementuj w `TableDetectionStage` (research R6): `Append` pomija pierwszy wiersz, gdy teksty
   komórek po normalizacji białych znaków są równe nagłówkowi (porównanie obejmuje `HeaderGroup` i `Header`; pominięte
   oba — FR-742); warunek łączenia „2+ wiersze” liczy wiersze obu części; kontynuacja komórki — pierwszy wiersz danych
   części z następnej strony z tekstem w dokładnie jednej kolumnie (pozostałe puste), niepustej w ostatnim wierszu
   poprzedniej części → doklejony do tej komórki (aktualizacja wszystkich komórek grupy scalenia, data-model
   „Przejścia stanu”); wiersz z tekstem w ≥ 2 kolumnach — zwykły wiersz; T030–T032 i wariant łączenia z T018 zielone. Pełny zestaw; goldeny według
   FR-755 (oczekiwane: ind-2, ind-4)
-- [ ] T034 [US5] Mała tabela bez linii (P3, FR-741): replika (red) 3×4 bez linii z krótkimi komórkami; próg wierszy
+- [X] T034 [US5] Mała tabela bez linii (P3, FR-741): replika (red) 3×4 bez linii z krótkimi komórkami; próg wierszy
   dla tabel bez siatki liczony przez strony; jeśli pogarsza słowniki (spec 007), listy etykiet lub taryfy — `Skip` i
   „Znane ograniczenia”
 
