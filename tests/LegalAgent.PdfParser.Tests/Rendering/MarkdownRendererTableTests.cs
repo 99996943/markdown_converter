@@ -32,6 +32,36 @@ public sealed class MarkdownRendererTableTests
         Assert.Equal("| Usługa | Opłata |\n| --- | --- |\n| Rachunek | 0 zł |\n| Karta | 5 zł |\n", md);
     }
 
+    /// <summary>
+    /// Spec 010 (owner's decision): the text of a group row stands at the start of every column name it covers; a
+    /// column without a group keeps its name.
+    /// </summary>
+    [Fact]
+    public void Render_HeaderGroup_PrefixesTheColumnNamesItCovers()
+    {
+        var group = new TableRow([new TableCell([]), C("Gdzie można zrobić?", span: 3)]);
+        TableBlock table = Table(1, 1, R("Co można zrobić?", "serwis transakcyjny", "BOK", "placówka"), 4, false, R("zmienić limit", "TAK", "TAK", "NIE"))
+            with { HeaderGroup = group };
+
+        string md = Render(false, table);
+
+        Assert.Equal(
+            "| Co można zrobić? | Gdzie można zrobić? serwis transakcyjny | Gdzie można zrobić? BOK | Gdzie można zrobić? placówka |\n"
+            + "| --- | --- | --- | --- |\n| zmienić limit | TAK | TAK | NIE |\n",
+            md);
+    }
+
+    [Fact]
+    public void Render_FallbackTable_IgnoresTheHeaderGroup()
+    {
+        var group = new TableRow([C("Grupa", span: 2)]);
+        TableBlock table = Table(1, 1, R("A", "B"), 2, true, R("c", "d")) with { HeaderGroup = group };
+
+        string md = Render(false, table);
+
+        Assert.Equal("A \\| B\n\nc \\| d\n", md);
+    }
+
     [Fact]
     public void Render_TableWithoutHeaderUsesFirstRowAsHeader()
     {

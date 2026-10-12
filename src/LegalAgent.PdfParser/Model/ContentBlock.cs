@@ -37,12 +37,18 @@ public sealed record ListBlock(PageRange Pages, IReadOnlyList<ListItem> Items) :
 /// <param name="Rows">Body rows.</param>
 /// <param name="ColumnCount">Number of columns.</param>
 /// <param name="IsFallback">True when the grid was ambiguous and the table is rendered as separated lines.</param>
+/// <param name="HeaderGroup">
+/// Spec 010: a group row above the column names (e.g. „Gdzie można zrobić?” over columns 2–4); only when
+/// <paramref name="Header"/> is not null and <paramref name="IsFallback"/> is false. The sum of its column spans equals
+/// <paramref name="ColumnCount"/>; cells with empty inlines mark columns without a group.
+/// </param>
 public sealed record TableBlock(
     PageRange Pages,
     TableRow? Header,
     IReadOnlyList<TableRow> Rows,
     int ColumnCount,
-    bool IsFallback) : ContentBlock(Pages);
+    bool IsFallback,
+    TableRow? HeaderGroup = null) : ContentBlock(Pages);
 
 /// <summary>Placeholder for a page that was not converted.</summary>
 /// <param name="Pages">The skipped page.</param>
