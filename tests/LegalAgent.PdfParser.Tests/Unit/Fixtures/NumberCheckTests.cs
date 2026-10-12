@@ -123,6 +123,60 @@ public sealed class NumberCheckTests
         Assert.Empty(with.Excess);
     }
 
+    /// <summary>
+    /// Spec 010 (T025, FR-758): the text of a merged cell printed in every row it covers, and of a header group printed
+    /// before every column name it spans, is counted once — with the document; without it the repeats are excess.
+    /// </summary>
+    [Fact]
+    public async Task Compare_WithTheDocument_RepeatsOfMergedCellsAndHeaderGroupsAreNotExcess()
+    {
+        var b = new SyntheticPdfBuilder().Page();
+        for (int i = 0; i < 5; i++)
+        {
+            b.Text(Left, Top + (i * 12), "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank.", Size);
+        }
+
+        // A group row „Kanały 2026” over columns 2–3 and a first-column cell „limit 500 zł” merged over three rows.
+        double[] xs = [60, 200, 330, 460];
+        b.HLine(60.2, 199.8, 200).HLine(200.2, 459.8, 200).HLine(200.2, 329.8, 212).HLine(330.2, 459.8, 212);
+        foreach (double y in new double[] { 230, 250, 270, 290 })
+        {
+            b.HLine(200.2, 329.8, y).HLine(330.2, 459.8, y);
+        }
+
+        b.HLine(60.2, 199.8, 230).HLine(60.2, 199.8, 290);
+        foreach ((double top, double bottom) in new[] { (212.0, 230.0), (230.0, 250.0), (250.0, 270.0), (270.0, 290.0) })
+        {
+            foreach (double x in xs)
+            {
+                b.VLine(x, top, bottom);
+            }
+        }
+
+        b.VLine(60, 200, 212).VLine(200, 200, 212).VLine(460, 200, 212);
+        b.Text(65, 220, "Usługa", Size, bold: true).Text(240, 209, "Kanały 2026", Size, bold: true);
+        b.Text(205, 225, "serwis", Size, bold: true).Text(335, 225, "placówka", Size, bold: true);
+        b.Text(65, 263, "limit 500 zł", Size);
+        string[][] values = [["TAK", "NIE"], ["NIE", "TAK"], ["TAK", "TAK"]];
+        for (int r = 0; r < 3; r++)
+        {
+            b.Text(205, 243 + (r * 20), values[r][0], Size).Text(335, 243 + (r * 20), values[r][1], Size);
+        }
+
+        byte[] pdf = b.Build();
+        using var stream = new MemoryStream(pdf);
+        PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, new PdfConversionRequest(), TestContext.Current.CancellationToken);
+        Assert.Contains("| limit 500 zł | NIE | TAK |", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("**Kanały 2026** **placówka**", result.Markdown, StringComparison.Ordinal);
+
+        NumberDiff without = NumberCheck.Compare(result.Markdown, pdf, result.Report);
+        NumberDiff with = NumberCheck.Compare(result.Markdown, pdf, result.Report, result.Document);
+
+        Assert.Equal(Bag(("500", 2), ("2026", 1)), without.Excess);
+        Assert.Empty(with.Excess);
+        Assert.Empty(with.Missing);
+    }
+
     [Fact]
     public async Task FromPdf_SeparatesSuperscriptDigits_AndSkipsRemovedPageNumbers()
     {
