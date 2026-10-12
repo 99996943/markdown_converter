@@ -292,7 +292,7 @@ public sealed class TableDetectionStage : IPipelineStage
     /// A bold column-name row and a few rows ending the page, with the same column-name row repeated at the top of the
     /// next page: the start of a table that continues there, however few rows fit.
     /// </summary>
-    private static bool StartsAtPageEnd(PipelineContext context, LayoutPage page, List<Row> region)
+    private static bool StartsAtPageEnd(PipelineContext context, LayoutPage page, List<Row> region, double tolerance)
     {
         Row header = region[0];
         if (!header.IsMulti || !header.IsAllBold
@@ -303,24 +303,78 @@ public sealed class TableDetectionStage : IPipelineStage
 
         LayoutLine? next = context.Pages.FirstOrDefault(p => p.Number == page.Number + 1)?.Lines
             .FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0);
-        return next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal);
+        if (next is not null && string.Equals(next.Text, header.Line.Text, StringComparison.Ordinal))
+        {
+            return true;
+        }
+
+        // Spec 010 (FR-741): the rows go on at the top of the next page in the same columns, without a repeated header —
+        // the row threshold counts both parts.
+        int rows = region.Count(r => r.IsMulti) + AlignedRows(context, page.Number + 1, region, fromTop: true, tolerance).Count;
+        return rows >= context.Options.Tables.MinRows;
     }
 
     /// <summary>
     /// The first lines of a page: a bold column-name row that the previous page also has, and a few rows — the end of a
     /// table continued from there, however few rows remain.
     /// </summary>
-    private static bool ContinuesFromPreviousPage(PipelineContext context, LayoutPage page, List<Row> region)
+    private static bool ContinuesFromPreviousPage(PipelineContext context, LayoutPage page, List<Row> region, double tolerance)
     {
         Row header = region[0];
-        if (!header.IsMulti || !header.IsAllBold
+        if (!header.IsMulti
             || !ReferenceEquals(page.Lines.FirstOrDefault(l => l.Role == LineRole.Unknown && l.Segments.Count > 0), header.Line))
         {
             return false;
         }
 
         LayoutPage? previous = context.Pages.FirstOrDefault(p => p.Number == page.Number - 1);
-        return previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal));
+        if (header.IsAllBold && previous is not null && previous.Lines.Any(l => string.Equals(l.Text, header.Line.Text, StringComparison.Ordinal)))
+        {
+            return true;
+        }
+
+        // Spec 010 (FR-741): the previous page ends with a bold column-name row and rows in the same columns.
+        List<Row> before = AlignedRows(context, page.Number - 1, region, fromTop: false, tolerance);
+        return before.Count >= 2
+            && before[^1].IsAllBold
+            && region.Count(r => r.IsMulti) + before.Count >= context.Options.Tables.MinRows;
+    }
+
+    /// <summary>
+    /// Spec 010 (FR-741): the multi-cell lines opening (<paramref name="fromTop"/>) or ending page <paramref name="number"/>
+    /// with as many cells as the rows of <paramref name="region"/>, each starting in one of their columns; ordered from the
+    /// page edge inwards.
+    /// </summary>
+    private static List<Row> AlignedRows(PipelineContext context, int number, List<Row> region, bool fromTop, double tolerance)
+    {
+        var result = new List<Row>();
+        LayoutPage? other = context.Pages.FirstOrDefault(p => p.Number == number);
+        List<Row> rows = region.Where(r => r.IsMulti).ToList();
+        if (other is null || rows.Count == 0)
+        {
+            return result;
+        }
+
+        double wideCell = context.Options.Layout.ColumnMinLineWidthRatio * other.Width;
+        List<double> lefts = rows.SelectMany(r => r.Cells.Select(c => c.Box.Left)).ToList();
+        List<LayoutLine> lines = other.Lines.Where(l => l.Role == LineRole.Unknown && l.Segments.Count > 0).ToList();
+        if (!fromTop)
+        {
+            lines.Reverse();
+        }
+
+        foreach (LayoutLine line in lines)
+        {
+            var row = new Row(line, CellsOf(line), wideCell);
+            if (!row.IsMulti || row.Cells.Count != rows[0].Cells.Count || !row.Cells.All(c => lefts.Any(x => Math.Abs(x - c.Box.Left) <= tolerance)))
+            {
+                break;
+            }
+
+            result.Add(row);
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -457,7 +511,7 @@ public sealed class TableDetectionStage : IPipelineStage
 
         int multiCount = region.Count(r => r.IsMulti);
         bool ruledFragment = multiCount >= 1 && grid.Rows(region) >= 2 && region.All(r => grid.Contains(r.Line.Box.CenterY));
-        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && (StartsAtPageEnd(context, page, region) || ContinuesFromPreviousPage(context, page, region))))
+        if (multiCount < options.MinRows && !ruledFragment && !(multiCount >= 2 && (StartsAtPageEnd(context, page, region, tolerance) || ContinuesFromPreviousPage(context, page, region, tolerance))))
         {
             return null;
         }
