@@ -239,6 +239,16 @@ src/LegalAgent.PdfParser/README.md, CLAUDE.md          # dokumentacja
     „BLIK9,10” → „BLIK9,[^n]” (odnośnik z przecinkiem — poza zakresem, „Znane ograniczenia”), część firm-5/ind-4
     (odnośniki w komórkach tabel bez siatki lub definicje bez etykiety — do sprawdzenia po Phase 4–6).
   - Pełny zestaw z prywatnym korpusem i `CorpusFull`: 2205 testów, 0 niepowodzeń; `verify` czysty.
+- 2026-10-12, T013a (sonda geometrii, PdfPig w katalogu tymczasowym): **wszystkie badane tabele są w pełni z liniami**
+  — downloads-3 s. 17–18 (5 kolumn, linie pionowe 59,0/204,5/288/371/456/555,5; nagłówek 11 pt w 5 liniach, powtórzony
+  na s. 18 ze zmienionym tekstem kolumny 1; wartości wyśrodkowane, odnośniki 7 pt +4 pt „Tak¹³”), downloads-4 s. 16–17
+  (5 kolumn, 42,5/184,5/275/365,5/459,5/553; nagłówek powtórzony), downloads-5 s. 6–8 (5 kolumn 36/142,5/241,5/355/
+  454,5/559, przez 3 strony, nagłówek powtórzony; etykiety kolumny 1 do 7 linii) i s. 26–27 (5 kolumn 36/168/288/376/
+  464/559, nagłówek 7 linii; etykiety kolumny 1 zaczynają się dokładnie na linii pionowej x 36), firm-5 s. 22–23
+  (4 kolumny 45/286/399,5/477,5/555,5; wiersz grupujący „Gdzie możesz zrobić?” nad kolumnami 2–4 — linia 475,5 tylko
+  nad nimi, linie pionowe 399,5 i 477,5 zaczynają się pod grupą, kolumna 1 scalona przez oba wiersze nagłówka; s. 23
+  bez powtórzonego nagłówka). Wariantów bez linii w zakresie przypadków nie ma: repliki P3 bez linii w T014 zbędne,
+  T029 pozostaje próbą na syntetycznej macierzy bez linii.
 
 ## Complexity Tracking
 

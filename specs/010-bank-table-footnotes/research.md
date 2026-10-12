@@ -32,7 +32,9 @@ siatkę (linie poziome i pionowe przecinające pasmo):
 - **komórka przez kilka kolumn**: odcinek linii poziomej nad komórką, który ciągnie się przez kilka pasm bez linii
   pionowej w tym wierszu, daje `ColumnSpan` (wiersz grupujący firm-3).
 Tabele bez siatki (bez linii pionowych) — dotychczasowa ścieżka bez zmian. Niezbadane jeszcze tabele T3/T1
-(downloads-3, 4, 5, firm-5 s. 22–23) sprawdza sonda T013a przed wpięciem siatki. Wariant bez linii (US4 scen. 2, małe
+(downloads-3, 4, 5, firm-5 s. 22–23) sprawdza sonda T013a przed wpięciem siatki. **Wynik T013a**: wszystkie w pełni z liniami
+(downloads-3/4/5: 5 kolumn, wartości wyśrodkowane, nagłówki 5–7 linii powtórzone na kolejnych stronach; firm-5 s. 22:
+4 kolumny z wierszem grupującym nad kolumnami 2–4 jak firm-3). Wariant bez linii (US4 scen. 2, małe
 tabele bez linii z FR-741) jest P3: po ścieżce z liniami próba „kolumny z wierszy danych, nagłówek wg środka x” w
 klastrowaniu; jeśli pogorszy taryfy korpusu syntetycznego lub słowniki — „Znane ograniczenia”.
 

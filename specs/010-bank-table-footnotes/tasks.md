@@ -135,7 +135,7 @@ etykietami podniesionymi i zwykłymi) daje `[^n]kurs`, `Tak[^n]`, `TAK/TAK[^n]` 
 
 **Checkpoint**: przypisy T12 poprawne w tekście; w komórkach tabel — po zgodzie na ewentualne goldeny chronione.
 
-- [ ] T013a [US3] Sonda geometrii (skrypt w katalogu tymczasowym sesji, poza repozytorium; treści prywatne tylko w
+- [X] T013a [US3] Sonda geometrii (skrypt w katalogu tymczasowym sesji, poza repozytorium; treści prywatne tylko w
   skrócie) tabel T3 i T1 spoza research: downloads-3 s. 17–18, downloads-4 s. 16–17, downloads-5 s. 6–8 i 26–27,
   firm-5 s. 22–23. Dla każdej tabeli: linie pionowe (x, czy powtarzają się w wierszach), odcinki poziome, środki x
   linii nagłówka względem danych. Wynik (z liniami / bez linii) zapisz w handoffie `plan.md` i w `research.md` (R1).
@@ -153,7 +153,7 @@ pustych kolumn; wiersz grupujący na początku objętych nagłówków.
 „transakcyjny” / „(nasza strona internetowa)”), dane „TAK”, „NIE”, „TAK (na życzenie Klienta)” → 5 kolumn, nagłówek
 w jednej komórce, każda wartość pod swoim nagłówkiem; wariant z „Gdzie można zrobić?” nad kolumnami 2–4.
 
-- [ ] T014 [US3] Repliki (red) w `BankTablesIntegrationTests.cs`: (a) jak downloads-2 s. 20 — linie pionowe 45,7 /
+- [X] T014 [US3] Repliki (red) w `BankTablesIntegrationTests.cs`: (a) jak downloads-2 s. 20 — linie pionowe 45,7 /
   185,4 / 278,9 / 372,3 / 463,1 / 555,5, nagłówek 11 pt pogrubiony w 2–4 liniach wyśrodkowanych (środek x ≈ 232),
   „Co i gdzie możesz zrobić” na wspólnej linii bazowej z „transakcyjny”, dane wyśrodkowane, w tym „TAK (na życzenie
   Klienta)”; oczekiwane: 5 kolumn, `**serwis transakcyjny** nasza strona internetowa` w jednej komórce, 0 pustych
@@ -165,12 +165,12 @@ w jednej komórce, każda wartość pod swoim nagłówkiem; wariant z „Gdzie m
   scaleń pionowych — kolumna bez linii na granicy dalej daje osobne wiersze z pustą komórką, jak dziś), bez TBL001
   dla tabel z siatką; siatka niespójna → dotychczasowa ścieżka. T014 zielony. Pełny zestaw; goldeny prywatne według
   FR-755; zmiany `Corpus/acts`/`Corpus/banking`/`corpus/` — stop i pytanie
-- [ ] T016 [P] [US3] Testy (red) modelu i renderera w
+- [X] T016 [P] [US3] Testy (red) modelu i renderera w
   `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererTableTests.cs`: `TableBlock` z `HeaderGroup`
   („Gdzie można zrobić?” z `ColumnSpan` = 3 nad kolumnami 2–4, pusta komórka nad kolumną 1) → nagłówek GFM
   `| Co można zrobić? | Gdzie można zrobić? serwis … | Gdzie można zrobić? BOK | Gdzie można zrobić? placówka |`;
   bez `HeaderGroup` — jak dotąd; format zapasowy ignoruje `HeaderGroup`
-- [ ] T017 [US3] Dodaj `TableRow? HeaderGroup = null` na końcu `TableBlock` w
+- [X] T017 [US3] Dodaj `TableRow? HeaderGroup = null` na końcu `TableBlock` w
   `src/LegalAgent.PdfParser/Model/ContentBlock.cs` (dokumentacja: „tylko gdy `Header` ≠ null i `IsFallback` = false;
   suma `ColumnSpan` = `ColumnCount`; komórki z pustymi `Inlines` oznaczają kolumny bez grupy”) i renderowanie w
   `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs` (tekst grupy + spacja + nagłówek kolumny); T016 zielony
