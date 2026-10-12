@@ -30,6 +30,9 @@ public sealed class TableDetectionStage : IPipelineStage
     private const int MinBandSupport = 2;
     private const double RulingSpanRatio = 0.4;
     private const double RulingSlack = 3;
+
+    /// <summary>Largest break (in points) between two pieces of one vertical ruling.</summary>
+    private const double VerticalBreakSlack = 1;
     private const double MinCellGapEm = 1.0;
     private const string LeaderDots = "....";
 
@@ -1022,7 +1025,12 @@ public sealed class TableDetectionStage : IPipelineStage
             return xs.Count > 0 && xs.All(x => x - xs.Min() <= RulingSlack || xs.Max() - x <= RulingSlack);
         }
 
-        private static bool Crosses(Segment vertical, double y) => Math.Min(vertical.Y1, vertical.Y2) <= y && Math.Max(vertical.Y1, vertical.Y2) >= y;
+        /// <summary>
+        /// Spec 010: within <see cref="VerticalBreakSlack"/> of its ends — a vertical drawn in pieces breaks where an inner
+        /// ruling of one column meets it, which may be the middle of a band (firm-5 p. 12).
+        /// </summary>
+        private static bool Crosses(Segment vertical, double y) =>
+            Math.Min(vertical.Y1, vertical.Y2) - VerticalBreakSlack <= y && Math.Max(vertical.Y1, vertical.Y2) + VerticalBreakSlack >= y;
 
         /// <summary>The middle of the grid row (band between horizontal borders) holding <paramref name="y"/>; null outside.</summary>
         private double? Middle(double y)
