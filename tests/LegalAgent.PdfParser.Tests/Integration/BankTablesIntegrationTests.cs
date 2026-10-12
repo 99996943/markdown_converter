@@ -507,19 +507,29 @@ public sealed class BankTablesIntegrationTests
         Centred(page, xs[4], xs[5], top + 15.4, "placówka", 11, bold: true);
     }
 
-    [Fact]
-    public async Task ActionMatrixWithMultiLineFirstColumn_OverTwoPages_IsOneTable()
+    /// <summary>
+    /// T1 (ind-4 p. 42–43): five columns, 11 pt text at a 15.4 pt interline, first-column cells of 1, 2, 3 and 6 lines with
+    /// the values on their mean baseline; the table goes on to the next page under a repeated header. With
+    /// <paramref name="ruled"/> false the same matrix has no rulings.
+    /// </summary>
+    private static byte[] ChannelMatrix(bool ruled)
     {
-        // T1 (ind-4 p. 42–43): five ruled columns, 11 pt text at a 15.4 pt interline, first-column cells of 1, 2, 3 and 6
-        // lines with the values on their mean baseline; the table goes on to the next page under a repeated header.
         double[] xs = [45.1, 187.0, 280.5, 374.1, 464.9, 555.6];
+        void Rules(SyntheticPdfBuilder page, double[] borders)
+        {
+            if (ruled)
+            {
+                Grid(page, xs, borders);
+            }
+        }
+
         var page = new SyntheticPdfBuilder().Page().Text(Left, 70, "Regulamin rachunku", 14, bold: true);
         for (int i = 0; i < 6; i++)
         {
             page.Text(Left, 100 + (i * 14), "Postanowienia regulaminu stosuje się do rachunków prowadzonych przez bank dla klientów.", 11);
         }
 
-        Grid(page, xs, [420, 475, 500, 540, 595, 700]);
+        Rules(page, [420, 475, 500, 540, 595, 700]);
         ChannelHeader(page, xs, 435);
         MatrixRow(page, xs, 492, 15.4, 11, ["wykonać przelew"], ["Tak", "Tak", "Tak", "Tak"]);
         MatrixRow(page, xs, 515, 15.4, 11, ["zdefiniować lub", "zmodyfikować przelew"], ["Tak", "Nie", "Tak", "Tak"]);
@@ -527,15 +537,15 @@ public sealed class BankTablesIntegrationTests
         MatrixRow(page, xs, 611, 15.4, 11, ["odwołać zlecenie", "płatnicze z datą", "przyszłą, gdy transakcję", "inicjuje dostawca", "trzeci w imieniu", "klienta banku"], ["Tak", "Nie", "Nie", "Nie"]);
 
         page.Page();
-        Grid(page, xs, [60, 115, 140, 180]);
+        Rules(page, [60, 115, 140, 180]);
         ChannelHeader(page, xs, 75);
         MatrixRow(page, xs, 132, 15.4, 11, ["wpłacić gotówkę"], ["Nie", "Nie", "Nie", "Tak"]);
         MatrixRow(page, xs, 155, 15.4, 11, ["zawiesić lub wznowić", "zlecenie stałe"], ["Tak", "Nie", "Tak", "Tak"]);
         page.Text(Left, 210, "Postanowienia końcowe stosuje się do wszystkich rachunków prowadzonych przez bank.", 11);
+        return page.Build();
+    }
 
-        string markdown = await ConvertAsync(page.Build());
-
-        string[] table =
+    private static readonly string[] ChannelMatrixTable =
         [
             "| **Co i gdzie możesz zrobić.** | **serwis transakcyjny** (strona www) | **serwis transakcyjny** aplikacja | **BOK** | **placówka** |",
             "| --- | --- | --- | --- | --- |",
@@ -546,8 +556,24 @@ public sealed class BankTablesIntegrationTests
             "| wpłacić gotówkę | Nie | Nie | Nie | Tak |",
             "| zawiesić lub wznowić zlecenie stałe | Tak | Nie | Tak | Tak |",
         ];
-        Assert.Equal(table, TableLines(markdown));
-        Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
+
+    [Fact]
+    public async Task ActionMatrixWithMultiLineFirstColumn_OverTwoPages_IsOneTable()
+    {
+        string markdown = await ConvertAsync(ChannelMatrix(ruled: true));
+
+        Assert.Equal(ChannelMatrixTable, TableLines(markdown));
+        Assert.Contains(string.Join('\n', ChannelMatrixTable), markdown, StringComparison.Ordinal);
+        Assert.DoesNotContain(" \\| ", markdown, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task ActionMatrixWithoutRulings_OverTwoPages_IsOneTable()
+    {
+        // T029 (P3): the same matrix without rulings.
+        string markdown = await ConvertAsync(ChannelMatrix(ruled: false));
+
+        Assert.Equal(ChannelMatrixTable, TableLines(markdown));
         Assert.DoesNotContain(" \\| ", markdown, StringComparison.Ordinal);
     }
 
