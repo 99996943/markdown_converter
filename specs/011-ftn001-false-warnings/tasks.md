@@ -176,11 +176,11 @@ SC-123, SC-125).
   - FTN001 counts of acts are pinned in `GoldenTests`.
 - [X] T015 Commit dokumentacji (T013, T014 i artefakty `specs/011-ftn001-false-warnings/`):
   `docs: FTN001 meaning, known footnote limitations, parser README 1.3.1 (spec 011 T013-T015)`.
-- [ ] T016 Przebuduj `publish/` jak w spec 010 T041 (biblioteki `lib/`, pakiet NuGet 1.3.1, `LegalAgent.PdfParser/lib`,
+- [X] T016 Przebuduj `publish/` jak w spec 010 T041 (biblioteki `lib/`, pakiet NuGet 1.3.1, `LegalAgent.PdfParser/lib`,
   `LegalAgent.Chunking/lib`, exe generatora FAQ single-file win-x64; `appsettings*.json` bez zmian). Uruchom
   konwersję regulaminów z `publish/mBank.FaqGenerator-win-x64/{corp,firm,ind,downloads}` nowym CLI (0 błędów, FTN001
   jak w T011). Zapisz w handoffie. `publish/` jest poza gitem.
-- [ ] T017 Handoff końcowy w `specs/011-ftn001-false-warnings/plan.md` („Stan prac i przekazanie”: pomiary T001/T011,
+- [X] T017 Handoff końcowy w `specs/011-ftn001-false-warnings/plan.md` („Stan prac i przekazanie”: pomiary T001/T011,
   commity, decyzje, otwarte sprawy: rozpoznawanie odnośników z interpunkcją jako kandydat na osobny spec) i `[X]` w
   tym pliku. Commit `docs: spec 011 handoff (T017)`. Push gałęzi `011-ftn001-false-warnings` po potwierdzeniu
   właściciela; PR tworzy właściciel.

@@ -200,6 +200,27 @@ istniejącym `BankTablesIntegrationTests`, jeśli tam są już pomocniki przypis
 | banking | regulamin-promocji-tabela | 0 | 0 | 0 | 0 | `BC0481E54E6C` | = |
 | banking | regulamin-z-tabela-definicji | 0 | 0 | 0 | 0 | `F859F2A03622` | = |
 
+- 2026-10-13, faza 6:
+  - **T012** `6aea9f8`: wersja 1.3.1. `refresh` zmienia tylko `parserVersion`, a `verify` wtedy pada
+    (`generatorVersion` w manifeście odtwarzanym w pamięci to też 1.3.1, bo wersję ma cały `Directory.Build.props`).
+    Dlatego uruchomiony `generate`: 76 dokumentów, 0 usuniętych plików, `verify` zgodny; w `corpus/` zmienia się tylko
+    `parserVersion` i `generatorVersion` w `manifest.json` (jak w spec 010 T035).
+  - **T013–T015** `6283931`: README parsera (sekcja 1.3.1, FTN001 w „Ostrzeżenia i raport”, punkt „Nierozpoznane
+    odnośniki przypisów” i punkt o punktach listy w przypisie w „Znanych ograniczeniach”), CLAUDE.md („Spec 011
+    additions”), artefakty spec 011.
+  - **T016**: `publish/` przebudowane z `6283931`: `lib/` (5 bibliotek), `nuget/` 1.3.1 (5 pakietów),
+    `LegalAgent.PdfParser/lib`, `LegalAgent.Chunking/lib` (wersja DLL 1.3.1), exe generatora FAQ jak dotąd:
+    single-file, win-x64, self-contained, skompresowany (`-p:EnableCompressionInSingleFile=true`, 41 MB);
+    `appsettings*.json` bez zmian, `--help` działa. Konwersja 20 regulaminów z
+    `publish/mBank.FaqGenerator-win-x64/{corp,firm,ind,downloads}` CLI 1.3.1: 0 błędów, `.md` bajt w bajt jak
+    poprzednie. FTN001: firm-3 1, ind-2 1, ind-4 7, pozostałe 0, czyli tyle samo co w T011 (firm-1 nie ma w
+    `publish/`). Exe nie uruchamiany (FAQ wymaga Azure).
+  - **T017**: sonda `Scratch/Ftn001Measure.cs` usunięta z repozytorium (kopia w scratchpadzie sesji), worktree
+    diagnostyczne (`wt123`, `wt130`) usunięte.
+  - Otwarte: rozpoznawanie odnośników z pełnowymiarową interpunkcją, list odnośników, odnośników w środku słowa i
+    złożonych do sąsiedniej linii (klasy K1/K2) jako kandydat na osobną spec. Zmieni goldeny 6 aktów i reg1, pdp,
+    ind-4 i obniży liczby FTN001 w bramce `GoldenTests`. Punkty listy w przypisie (K3) to też kandydat.
+  - Gałąź `011-ftn001-false-warnings` niewypchnięta: push po potwierdzeniu właściciela; PR tworzy właściciel.
 
 ## Complexity Tracking
 
