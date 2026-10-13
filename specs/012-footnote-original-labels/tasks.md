@@ -224,18 +224,18 @@ kolejności 7, 21, 22, 25.
   manifest ma `generatorVersion`), potem `verify`. W `git diff corpus/` zmieniają się tylko identyfikatory `[^…]` w
   `*.md`/`*.chunks.jsonl` i wersje w `corpus/manifest.json` — sprawdzić skryptem z T002. Commit
   `chore: parser version 1.4.0 and corpus (spec 012 T021)`.
-- [ ] T022 [P] `src/LegalAgent.PdfParser/README.md`: sekcja „Wersja 1.4.0: etykiety przypisów z PDF-u (spec 012)” —
+- [X] T022 [P] `src/LegalAgent.PdfParser/README.md`: sekcja „Wersja 1.4.0: etykiety przypisów z PDF-u (spec 012)” —
   kontrakt Markdown 2.0.0 (zmiana niezgodna: identyfikator to etykieta, nie numer ciągły), dopisek `-k` dla
   powtórzeń z przykładem `[^1)]`/`[^1)-2]`, identyfikator zastępczy; wiersz `FTN002_FootnoteWithoutLabel` w tabeli
   ostrzeżeń (obok `FTN001`, linia ~255); nowe właściwości `Footnote.Identifier`, `FootnoteRef.Identifier`
   (zgodność: pusty → `Number`); uwaga, że podgląd GFM może pokazywać własną numerację.
-- [ ] T023 [P] Kontrakt: w `specs/001-legal-pdf-parser/contracts/markdown-output.md` przy regule numeracji przypisów
+- [X] T023 [P] Kontrakt: w `specs/001-legal-pdf-parser/contracts/markdown-output.md` przy regule numeracji przypisów
   odsyłacz „zastąpione w 2.0.0 — `specs/012-footnote-original-labels/contracts/markdown-output.md`”; nie zmieniać
   treści pozostałych reguł.
-- [ ] T024 [P] `CLAUDE.md`: w „Rendering” `footnotes [^n]` → identyfikatory z etykiet PDF-u (kontrakt 2.0.0);
+- [X] T024 [P] `CLAUDE.md`: w „Rendering” `footnotes [^n]` → identyfikatory z etykiet PDF-u (kontrakt 2.0.0);
   sekcja „Spec 012 additions (parser 1.4.0)”: `DocumentBuildStage.AssignIdentifiers`, reguła dopisku i
   zastępczego, FTN002, `Identifier` w modelu, chunker bez zmian, `NumberCheck` po identyfikatorach.
-- [ ] T025 Pełna weryfikacja: `dotnet test LegalAgent.slnx --filter "Category!=Performance"` (0 niepowodzeń, podać
+- [X] T025 Pełna weryfikacja: `dotnet test LegalAgent.slnx --filter "Category!=Performance"` (0 niepowodzeń, podać
   liczbę testów); prywatny korpus z `LEGALAGENT_PRIVATE_CORPUS` (bezwzględna ścieżka) zielony, w tym
   `RegulationNumbers_HaveNoExcess` bez zmian `number-check.txt`; FTN001 aktów 2, 5, 24, 10, 6, 11 (bramka spec 011);
   dokument z przykładu (quickstart 4) w scratchpadzie. Commit dokumentacji T022–T024:

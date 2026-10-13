@@ -22,8 +22,8 @@ treści własnej i podsekcjach — dla Art./§ (liście) oznacza to koniec artyk
 | `Section` | `#` × `Level` + spacja + `HeadingText` | `### Art. 5.` |
 | `ParagraphBlock` | inliny w jednej linii (bez twardych łamań) | `Bank pobiera opłatę …` |
 | `TextRun` Bold / Italic / oba | `**t**` / `*t*` / `***t***` (białe znaki na brzegach wyjęte poza znaczniki) | `**zmiana**` |
-| `FootnoteRef` | `[^n]` | `ustawa[^1]` |
-| `Footnote` | `[^n]: treść` | `[^1]: Niniejsza ustawa wdraża …` |
+| `FootnoteRef` | `[^n]` (zastąpione w 2.0.0 — `specs/012-footnote-original-labels/contracts/markdown-output.md`: identyfikator z etykiety PDF-u) | `ustawa[^1]` |
+| `Footnote` | `[^n]: treść` (zastąpione w 2.0.0, jw.) | `[^1]: Niniejsza ustawa wdraża …` |
 | `PageBreak` (opcja `PageMarkers`) | `<!-- page: N -->`; na początku bloku — osobna linia przed blokiem; wewnątrz akapitu/pozycji — wstawiony między słowami ze spacjami | `… zawarcia <!-- page: 5 --> umowy …` |
 | `ListItem` | `- ` + oznaczenie z ucieczką + spacja + treść; poziom zagnieżdżenia = 2 spacje wcięcia | `- 1\) definicja` / `  - a\) lit.` |
 | `ListItem` z `Bullet` | `- ` + treść (znak punktora pominięty) | `- karta debetowa` |

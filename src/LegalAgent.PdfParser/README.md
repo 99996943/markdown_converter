@@ -110,7 +110,8 @@ tabel na osobne bloki.
      strony. Wiersz musi być najniższy (najwyższy) na stronie i zawierać wyłącznie „N/M”; „1/2 kwoty” czy „nr 12/2024”
      w treści zostają.
 4. **Przypisy.** Odnośnik przyklejony do słowa jest odcinany i dostaje identyfikator. Definicja trafia do sekcji,
-   która pierwsza się do niej odwołuje. Numeracja `[^n]` jest globalna, w kolejności pierwszego odwołania.
+   która pierwsza się do niej odwołuje. Od 1.4.0 identyfikatorem jest etykieta z PDF-u (`[^21]`, `[^1)]`); definicje
+   stoją w kolejności pierwszego odwołania, przypisy bez odnośnika po nich w kolejności stron.
 5. **Tabele.**
    - Tabela powstaje, gdy co najmniej `MinRows` (3) wierszy ma po kilka komórek wyrównanych do wspólnych pasów
      kolumn (albo gdy jest siatka linii). Powstaje wtedy tabela GFM.
@@ -229,7 +230,7 @@ Kontrakt Markdown 1.4.0 (`specs/010-bank-table-footnotes/contracts/markdown-outp
     dokładnie jednej kolumnie (tylko wiersze siatki, nigdy wiersz sekcji na całą szerokość ramki);
   - mała tabela bez linii podzielona na dwie strony liczy wiersze obu części.
 - **Przypisy:**
-  - odnośnik przed wyrazem („³kurs” daje `[^n]kurs`) i w komórkach tabel („Tak⁴” daje `Tak[^n]`);
+  - odnośnik przed wyrazem („³kurs” daje `[^3]kurs`) i w komórkach tabel („Tak⁴” daje `Tak[^4]`);
   - definicje pod krótką kreską w rozmiarze tekstu głównego, z etykietą będącą samą liczbą, także gdy podniesiona
     etykieta jest osobnym wierszem.
 
@@ -243,6 +244,25 @@ Kontrakt: `specs/011-ftn001-false-warnings/contracts/conversion-report.md`. Zmia
   `FTN001`.
 - Ostrzeżeń `FTN001` może być więcej niż w 1.2.3: wcześniej etykieta definicji maskowała brak odnośnika.
 
+## Wersja 1.4.0: etykiety przypisów z PDF-u (spec 012)
+
+Kontrakt Markdown 2.0.0: `specs/012-footnote-original-labels/contracts/markdown-output.md`. Zmiana formatu jest
+niezgodna wstecz (MAJOR kontraktu): identyfikator przypisu to etykieta wydrukowana w PDF-ie, a nie numer kolejny
+nadany przez parser. API biblioteki rozszerzone addytywnie (MINOR).
+
+- Identyfikator to etykieta dosłownie: „²¹” daje `TAK[^21]` i `[^21]:`, „¹⁾” daje `[^1)]`, „*)” daje `[^*)]`.
+- Etykieta powtórzona w dokumencie (np. dwie serie „1)” w tekście jednolitym i obwieszczeniu) dostaje od drugiego
+  wystąpienia w kolejności stron dopisek numeru wystąpienia: `[^1)]`, `[^1)-2]`. Dopisek nigdy nie daje identyfikatora
+  równego innej etykiecie dokumentu (wtedy `-3` itd.).
+- Etykieta, której GFM nie przyjmie (pusta, ze spacją, tabulatorem, `[` lub `]`), dostaje numer zastępczy (numer
+  przypisu albo kolejny wolny) i ostrzeżenie `FTN002_FootnoteWithoutLabel`.
+- Model: `Footnote.Identifier` i `FootnoteRef.Identifier` (właściwości `init`). Gdy są puste (model zbudowany przez
+  klienta biblioteki), renderer pisze `Number` / `FootnoteNumber` jak w 1.x. `Number` zostaje numerem kolejnym.
+- Miejsce i kolejność definicji bez zmian względem 1.3.1; chunker bez zmian kodu. Dłuższe identyfikatory zmieniają
+  długość części chunków, więc część bliska limitowi `MaxChunkLength` może podzielić się inaczej.
+- Podgląd GFM (GitHub, cmark-gfm) łączy odnośniki z definicjami, ale w tekście wyświetla własne numery 1, 2, 3…
+  zamiast etykiet; etykieta jest w źródle Markdownu i w adresie kotwicy.
+
 ## Ostrzeżenia i raport
 
 | Kod | Znaczenie |
@@ -253,6 +273,7 @@ Kontrakt: `specs/011-ftn001-false-warnings/contracts/conversion-report.md`. Zmia
 | `IMG001_ImagesIgnored` | Na stronie są obrazy; ich treść nie jest odczytywana. |
 | `TBL001_AmbiguousGrid` | Tabela bez jednoznacznej siatki kolumn, zapisana wierszami z separatorem ` \| `. |
 | `FTN001_OrphanFootnote` | Do definicji przypisu nie prowadzi żaden rozpoznany odnośnik w tekście. Odnośnik może istnieć w PDF-ie w postaci, której parser nie rozpoznaje (zob. „Znane ograniczenia”). Etykieta otwierająca samą definicję nigdy nie jest odnośnikiem. |
+| `FTN002_FootnoteWithoutLabel` | Przypis bez etykiety nadającej się na identyfikator Markdownu (pusta, ze spacją, tabulatorem, `[` lub `]`) dostał identyfikator zastępczy (spec 012). |
 
 `ConversionReport` zawiera też:
 - liczbę stron i pominięte strony;
@@ -327,6 +348,9 @@ Zasady:
   - odnośnik w środku wyrazu po ukośniku („zł/²30.000”);
   - odnośnik złożony do sąsiedniej linii (np. linii tabeli), więc niepodniesiony względem własnej linii.
 - **Punkty „1)”, „2)” wewnątrz przypisu pod kreską** stają się osobnymi definicjami, każda z `FTN001`.
+- **Definicja z etykietą-liczbą pod kreską bez odnośnika** (nieuniesiona etykieta „25”, do której nic w tekście
+  nie prowadzi) nie jest rozpoznawana jako przypis, bo etykiety pod kreską są przyjmowane tylko wtedy, gdy pierwszy
+  wiersz obszaru ma rozpoznany odnośnik albo etykieta jest podniesiona (spec 012, T016).
 - **„art. 166¹¹²)”:** cyfry indeksu górnego po numerze artykułu, po których następuje nawias zamykający, nie są
   rozdzielane.
 - **Macierze działań i podobne tabele bez linii siatki** (wiersze rozpoznawalne tylko po wyśrodkowaniu pionowym
