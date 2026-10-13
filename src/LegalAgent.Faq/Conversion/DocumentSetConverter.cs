@@ -89,7 +89,10 @@ public sealed class DocumentSetConverter
                 result.Markdown,
                 UnitExtractor.FromDocument(result.Document),
                 result.Report.PageCount,
-                result.Report.Warnings);
+                result.Report.Warnings)
+            {
+                UnitLocations = UnitExtractor.Locate(result.Document, result.Markdown),
+            };
             documents.Add(document);
             progress?.Report(new ConversionEvent(source.Index, pdfName, ConversionEventKind.Converted, document, null));
         }

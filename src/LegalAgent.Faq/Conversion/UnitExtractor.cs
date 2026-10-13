@@ -25,7 +25,38 @@ public static class UnitExtractor
     /// <param name="document">The parsed document.</param>
     /// <param name="markdown">The Markdown rendered from <paramref name="document"/>.</param>
     /// <returns>One location per unit.</returns>
-    public static IReadOnlyList<FaqUnitLocation> Locate(LegalDocument document, string markdown) => throw new NotImplementedException();
+    public static IReadOnlyList<FaqUnitLocation> Locate(LegalDocument document, string markdown)
+    {
+        ArgumentNullException.ThrowIfNull(document);
+        ArgumentNullException.ThrowIfNull(markdown);
+        var locations = new List<FaqUnitLocation>();
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        foreach (Section section in PreOrder(document.Sections))
+        {
+            foreach (string? unit in new[] { section.Designation, section.HeadingText })
+            {
+                if (!string.IsNullOrWhiteSpace(unit) && seen.Add(unit))
+                {
+                    locations.Add(new FaqUnitLocation(unit, section.Pages.First, null));
+                }
+            }
+        }
+
+        return locations;
+    }
+
+    /// <summary>Sections in rendering order: each section, then its subsections.</summary>
+    private static IEnumerable<Section> PreOrder(IReadOnlyList<Section> sections)
+    {
+        foreach (Section section in sections)
+        {
+            yield return section;
+            foreach (Section child in PreOrder(section.Children))
+            {
+                yield return child;
+            }
+        }
+    }
 
     private static void Collect(IReadOnlyList<Section> sections, List<string> units, HashSet<string> seen)
     {

@@ -42,7 +42,10 @@ internal static class FaqStage
                 string.IsNullOrWhiteSpace(d.Title) ? d.MarkdownFileName : d.Title,
                 d.Address,
                 d.Markdown,
-                d.Units)),
+                d.Units)
+            {
+                UnitLocations = d.UnitLocations,
+            }),
         ];
         try
         {

@@ -86,9 +86,26 @@ public static class FaqMarkdownRenderer
         IEnumerable<string> parts = sources.Select(source =>
         {
             FaqSourceDocument document = documents[source.DocumentId];
-            string link = $"[{document.Name}]({document.Resource.OriginalString})";
-            return source.Unit is { Length: > 0 } unit ? $"{link}, {unit}" : link;
+            if (source.Unit is not { Length: > 0 } unit)
+            {
+                return $"[{document.Name}]({document.Resource.OriginalString})";
+            }
+
+            FaqUnitLocation? location = Locate(unit, document);
+            string address = document.Resource.OriginalString;
+            if (location?.Page is { } page && !address.Contains('#', StringComparison.Ordinal))
+            {
+                address += string.Create(CultureInfo.InvariantCulture, $"#page={page}");
+            }
+
+            return $"[{document.Name}]({address}), {unit}";
         });
         return (sources.Count == 1 ? "Źródło: " : "Źródła: ") + string.Join("; ", parts);
     }
+
+    /// <summary>The location of the listed unit the cited unit matches (spec 013), or <c>null</c>.</summary>
+    private static FaqUnitLocation? Locate(string unit, FaqSourceDocument document) =>
+        UnitMatcher.Find(unit, document.UnitLocations.Select(l => l.Unit)) is { } listed
+            ? document.UnitLocations.First(l => string.Equals(l.Unit, listed, StringComparison.Ordinal))
+            : null;
 }

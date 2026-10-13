@@ -99,7 +99,11 @@ public sealed class FaqGenerator
         CheckInput(documents, options);
         FaqSourceDocument[] sources =
         [
-            .. documents.Select((d, i) => new FaqSourceDocument(string.Create(CultureInfo.InvariantCulture, $"D{i + 1}"), d.Name, d.Resource)),
+            .. documents.Select((d, i) => new FaqSourceDocument(string.Create(CultureInfo.InvariantCulture, $"D{i + 1}"), d.Name, d.Resource)
+            {
+                UnitLocations = d.UnitLocations,
+                MarkdownLink = d.MarkdownLink,
+            }),
         ];
 
         var candidates = new List<FaqCandidate>();

@@ -93,19 +93,19 @@ link nazwy kończy się `#page=2`; źródło bez jednostki → link bez `#page`.
 
 ### Implementation for User Story 1 (green)
 
-- [ ] T008 [US1] `UnitMatcher.Find` w `src/LegalAgent.Faq/UnitMatcher.cs`: ta sama normalizacja co `Matches`, zwraca
+- [X] T008 [US1] `UnitMatcher.Find` w `src/LegalAgent.Faq/UnitMatcher.cs`: ta sama normalizacja co `Matches`, zwraca
   pierwszą w kolejności pozycję, dla której `StartsWithUnit` (pozycja albo jej numer nagłówka) jest prawdziwe;
   `Matches` przepisane na `Find(...) is not null` (bez zmiany zachowania).
-- [ ] T009 [US1] `UnitExtractor.Locate` w `src/LegalAgent.Faq/Conversion/UnitExtractor.cs`: przejście po sekcjach w
+- [X] T009 [US1] `UnitExtractor.Locate` w `src/LegalAgent.Faq/Conversion/UnitExtractor.cs`: przejście po sekcjach w
   kolejności `Collect` (oznaczenie, tekst nagłówka, dzieci), pozycja dla pierwszego wystąpienia jednostki ze stroną
   `Section.Pages.First`; `Anchor` na razie `null` (US2). `DocumentSetConverter` (`src/LegalAgent.Faq/Conversion/DocumentSetConverter.cs`)
   ustawia `ConvertedDocument.UnitLocations = UnitExtractor.Locate(document, markdown)`.
-- [ ] T010 [US1] `src/LegalAgent.Faq/FaqGenerator.cs`: `FaqSourceDocument` z `UnitLocations` i `MarkdownLink` wejścia.
+- [X] T010 [US1] `src/LegalAgent.Faq/FaqGenerator.cs`: `FaqSourceDocument` z `UnitLocations` i `MarkdownLink` wejścia.
   `src/LegalAgent.Faq/FaqMarkdownRenderer.cs` (`Sources`): położenie przez `UnitMatcher.Find(unit,
   document.UnitLocations.Select(l => l.Unit))`; nazwa `[Name](Resource#page=N)` gdy `Page` znane i adres bez `#`
   (`Resource.OriginalString`), inaczej jak dziś. `src/mBank.FaqGenerator/FaqStage.cs`: `FaqDocumentInput` z
   `UnitLocations = d.UnitLocations` (bez `MarkdownLink` — US2).
-- [ ] T011 [US1] Testy T003–T006 zielone; pełny `dotnet test LegalAgent.slnx --filter "Category!=Performance"`
+- [X] T011 [US1] Testy T003–T006 zielone; pełny `dotnet test LegalAgent.slnx --filter "Category!=Performance"`
   zielony (golden `faq.expected.md` bez zmian). Commit green (T008–T010):
   `feat: FAQ source names link to the PDF page of the unit (green, spec 013 T008-T010)`.
 
