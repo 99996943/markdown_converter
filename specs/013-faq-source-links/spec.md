@@ -30,6 +30,10 @@ Numeracja wymagań: FR-1000…, SC-140….
 
 - Q: Jaki rodzaj linku? → A: wariant 3 — link do strony PDF-u (`…pdf#page=N`) i link do nagłówka sekcji w Markdownie
   dokumentu (`../downloads/<nazwa>.md#kotwica`).
+- Q: Który element wiersza źródła prowadzi do strony PDF-u, a który do nagłówka Markdownu? → A: nazwa dokumentu →
+  PDF z `#page=N`, jednostka → nagłówek w Markdownie dokumentu.
+- Q: Czy śledzony `faq/FAQ_mBank.md` ma linki do Markdownów z `downloads/` (poza gitem)? → A: tak, zawsze, bez
+  przełącznika; ograniczenie (na GitHubie link do Markdownu nie działa) opisane w README i kontrakcie FAQ.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -73,21 +77,25 @@ przewinięty do nagłówka tej sekcji.
 ### Edge Cases
 
 - Jednostki nie da się przypisać do sekcji (model podał pusty tekst): wiersz źródła jak dziś, bez nowych linków.
+- Jednostka bez własnego nagłówka nie występuje: lista „Jednostki dokumentu” powstaje z oznaczeń i nagłówków sekcji, a
+  jednostka spoza listy jest odrzucana (spec 006 `model-exchange.md`, `UnitMatcher`). Jeśli mimo to sekcja nie ma
+  nagłówka w Markdownie, obowiązuje FR-1003 (bez linku do Markdownu, link do strony PDF-u zostaje).
 - Nagłówek z polskimi literami, kropkami, „§”, cudzysłowami, pogrubieniem lub ucieczkami Markdownu: kotwica liczona
   jak w podglądzie GitHub/VS Code (z tekstu nagłówka po usunięciu formatowania).
 - Powtórzone nagłówki w jednym Markdownie: kotwica z dopiskiem `-1`, `-2` jak w podglądzie GitHub.
 - Katalog FAQ i katalog pobranych dokumentów są w różnych miejscach (`--faq-output`, `--output`): ścieżka względna
   liczona między nimi; gdy nie da się jej zbudować (inne dyski), link do Markdownu pomijany.
-- W repozytorium `faq/FAQ_mBank.md` jest śledzony, a `downloads/` nie: linki do Markdownu działają lokalnie po
-  pobraniu dokumentów; link do strony PDF-u działa zawsze.
+- W repozytorium `faq/FAQ_mBank.md` jest śledzony, a `downloads/` nie: linki do Markdownu są zapisywane zawsze (bez
+  przełącznika) i działają lokalnie po pobraniu dokumentów, na GitHubie nie; link do strony PDF-u działa zawsze.
+  Ograniczenie MUST być opisane w README aplikacji i w kontrakcie pliku FAQ.
 - Strona sekcji nieznana (sekcja bez stron): link do PDF-u bez `#page`.
 
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
 
-- **FR-1000**: Dla źródła z jednostką link do dokumentu MUST zawierać numer strony PDF-u, na której zaczyna się sekcja
-  tej jednostki (`#page=N`, parametr otwarcia PDF-u w przeglądarkach).
+- **FR-1000**: Dla źródła z jednostką link na nazwie dokumentu MUST prowadzić do PDF-u z numerem strony, na której
+  zaczyna się sekcja tej jednostki (`#page=N`, parametr otwarcia PDF-u w przeglądarkach).
 - **FR-1001**: Jednostka w wierszu źródła MUST być linkiem do nagłówka tej sekcji w Markdownie dokumentu zapisanym
   przez aplikację; ścieżka MUST być względna od pliku FAQ.
 - **FR-1002**: Kotwica MUST być taka, jaką generuje podgląd GitHub dla tego nagłówka (także dla powtórzonych
@@ -127,6 +135,6 @@ przewinięty do nagłówka tej sekcji.
 - Kotwice liczone według algorytmu GitHub (`github-slugger`): małe litery, usunięcie znaków spoza liter, cyfr, spacji,
   `-` i `_`, spacje → `-`, powtórzenia `-1`, `-2`; VS Code używa tego samego algorytmu.
 - Numer strony to numer strony fizycznej PDF-u (1 = pierwsza strona pliku), jak w znacznikach `<!-- page: N -->`.
-- Format linku do jednostki: `[<Name>](<pdf>#page=N), [<jednostka>](<ścieżka.md>#kotwica)`; dokładna postać w
-  kontrakcie planu.
+- Format wiersza źródła (Clarifications): `[<Name>](<pdf>#page=N), [<jednostka>](<ścieżka.md>#kotwica)`; dokładna
+  postać w kontrakcie planu.
 - Spec 012 (identyfikatory przypisów) nie wpływa na nagłówki ani strony — specyfikacje są niezależne.
