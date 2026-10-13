@@ -26,7 +26,7 @@ katalogu głównego i `src/LegalAgent.PdfParser.Cli/Properties/`); trailer
 
 ## Phase 1: Setup
 
-- [ ] T001 Punkt odniesienia SC-143: golden renderera `faq.expected.md` w `tests/LegalAgent.Faq.Tests` (ścieżka z
+- [X] T001 Punkt odniesienia SC-143: golden renderera `faq.expected.md` w `tests/LegalAgent.Faq.Tests` (ścieżka z
   `GoldenFile.PathOf`) — dla dokumentów bez położeń MUST zostać bez zmian w całej spec. Skopiować go do scratchpadu
   (poza repozytorium) jako `faq-1.4.0.md` i zanotować liczbę testów `tests/LegalAgent.Faq.Tests` i
   `tests/mBank.FaqGenerator.Tests` przed zmianami. Bez zmian w kodzie.
@@ -37,7 +37,7 @@ katalogu głównego i `src/LegalAgent.PdfParser.Cli/Properties/`); trailer
 
 **Cel**: testy red muszą się kompilować.
 
-- [ ] T002 Nowy rekord `src/LegalAgent.Faq/Model/FaqUnitLocation.cs`: `public sealed record FaqUnitLocation(string Unit,
+- [X] T002 Nowy rekord `src/LegalAgent.Faq/Model/FaqUnitLocation.cs`: `public sealed record FaqUnitLocation(string Unit,
   int? Page, string? Anchor)` z komentarzami XML z data-model.md („`Page`: strona PDF-u, na której zaczyna się sekcja
   jednostki; `null` gdy nieznana”, „`Anchor`: kotwica nagłówka sekcji w Markdownie dokumentu (bez `#`); `null` gdy nie
   da się jej wyliczyć”). Właściwości `init` z wartościami domyślnymi, nieczytane: `ConvertedDocument.UnitLocations`
@@ -65,29 +65,29 @@ link nazwy kończy się `#page=2`; źródło bez jednostki → link bez `#page`.
 
 ### Tests for User Story 1 (red)
 
-- [ ] T003 [P] [US1] `tests/LegalAgent.Faq.Tests/UnitMatcherTests.cs`: testy `Find` — równa pozycja listy („§ 12” →
+- [X] T003 [P] [US1] `tests/LegalAgent.Faq.Tests/UnitMatcherTests.cs`: testy `Find` — równa pozycja listy („§ 12” →
   „§ 12”), dłuższa („§ 12 ust. 3” → „§ 12”), numer nagłówka („6” → „6. Jakie rachunki prowadzimy?”), normalizacja
   (NBSP, kropka na końcu, wielkość liter), pierwsza w kolejności przy kilku pasujących, brak → `null`, pusty tekst →
   `null`; spójność: dla każdego przypadku `Find(...) != null` ⇔ `Matches(...)`.
-- [ ] T004 [P] [US1] Nowy `tests/LegalAgent.Faq.Tests/Conversion/UnitExtractorTests.cs` i fabryka wielostronicowa w
+- [X] T004 [P] [US1] Nowy `tests/LegalAgent.Faq.Tests/Conversion/UnitExtractorTests.cs` i fabryka wielostronicowa w
   `tests/LegalAgent.Faq.Tests/Fakes/TestPdfs.cs` (np. `RegulationOnPages(seed)`: „Rozdział 1.” i „§ 1.” na stronie 1,
   „§ 2.” na stronie 2, „§ 3.” na stronie 3, `SyntheticPdfBuilder`): `Locate(document, markdown)` daje jedną pozycję na
   jednostkę w kolejności `FromDocument` (`Unit` równe pozycji listy) ze stroną początku sekcji (1, 1, 2, 3; oznaczenie
   i tekst nagłówka tej samej sekcji mają tę samą stronę). Model z `PdfMarkdownConverter` na PDF-ie z fabryki.
-- [ ] T005 [P] [US1] `tests/LegalAgent.Faq.Tests/RendererTests.cs`: nowe testy (golden `faq.expected.md` bez zmian —
+- [X] T005 [P] [US1] `tests/LegalAgent.Faq.Tests/RendererTests.cs`: nowe testy (golden `faq.expected.md` bez zmian —
   dokumenty bez położeń dają wiersz jak dziś, SC-143): (a) dokument z `UnitLocations` [„§ 12”, strona 7] i źródło
   „§ 12” → `Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), § 12`; (b) jednostka „§ 12 ust. 3” → ta sama
   strona, tekst „§ 12 ust. 3”; (c) źródło bez jednostki → `[Regulamin A](https://example.test/pdf/a.pdf)`;
   (d) jednostka spoza listy położeń → bez `#page`; (e) `Page` = `null` → bez `#page`; (f) adres z fragmentem
   (`…a.pdf#x`) → bez dopisanego `#page`; (g) dwa źródła → oba z własną stroną, separator `; ` bez zmian;
   (h) front matter `resource` bez `#page` (FR-1005).
-- [ ] T006 [P] [US1] `tests/LegalAgent.Faq.Tests/FaqGeneratorTests.cs`: `FaqResult.Documents` niesie
+- [X] T006 [P] [US1] `tests/LegalAgent.Faq.Tests/FaqGeneratorTests.cs`: `FaqResult.Documents` niesie
   `UnitLocations` i `MarkdownLink` z `FaqDocumentInput` (D1…Dn w kolejności wejścia); `DocumentSetConverterTests`
   (`tests/LegalAgent.Faq.Tests/Conversion/DocumentSetConverterTests.cs`): `ConvertedDocument.UnitLocations` wypełnione
   (liczba = liczba `Units`, strony > 0); test aplikacji w `tests/mBank.FaqGenerator.Tests/FaqFlowTests.cs` (przebieg
   `AppHarness` z fałszywym modelem i PDF-em z fabryki wielostronicowej z T004 jako odpowiedzią `FakeHttpHandler`):
   każde źródło z jednostką w zapisanym FAQ ma link nazwy z `#page=N` równym stronie sekcji; front matter bez `#page`.
-- [ ] T007 [US1] Uruchomić `dotnet test tests/LegalAgent.Faq.Tests` (klasy z T003–T006): nowe testy padają z właściwego
+- [X] T007 [US1] Uruchomić `dotnet test tests/LegalAgent.Faq.Tests` (klasy z T003–T006): nowe testy padają z właściwego
   powodu (`NotImplementedException`, brak `#page`), stare przechodzą. Commit red (T002–T006):
   `test: FAQ source links to the PDF page (red, spec 013 T002-T006)`.
 

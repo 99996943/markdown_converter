@@ -87,6 +87,28 @@ public sealed class FaqGeneratorTests
     }
 
     [Fact]
+    public async Task Generate_DocumentsCarryUnitLocationsAndMarkdownLink()
+    {
+        ScriptValidRun();
+        FaqDocumentInput[] documents =
+        [
+            .. Documents().Select((d, i) => d with
+            {
+                UnitLocations = [new FaqUnitLocation("§ 1", i + 1, Invariant($"-1-d{i + 1}"))],
+                MarkdownLink = Invariant($"../downloads/reg-{i + 1}.md"),
+            }),
+        ];
+
+        FaqResult result = await Generator().GenerateAsync(documents, cancellationToken: Ct);
+
+        for (int i = 0; i < 5; i++)
+        {
+            Assert.Same(documents[i].UnitLocations, result.Documents[i].UnitLocations);
+            Assert.Equal(documents[i].MarkdownLink, result.Documents[i].MarkdownLink);
+        }
+    }
+
+    [Fact]
     public async Task Generate_ReportsProgressInOrder()
     {
         ScriptValidRun();

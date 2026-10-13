@@ -62,6 +62,18 @@ public sealed class DocumentSetConverterTests : IDisposable
     }
 
     [Fact]
+    public async Task ConvertAll_LocatesUnits()
+    {
+        ConversionRun run = await new DocumentSetConverter(Parser).ConvertAllAsync(WriteFive(), cancellationToken: Ct);
+
+        Assert.All(run.Documents, document =>
+        {
+            Assert.Equal(document.Units, document.UnitLocations.Select(l => l.Unit));
+            Assert.All(document.UnitLocations, l => Assert.InRange(l.Page ?? 0, 1, document.PageCount));
+        });
+    }
+
+    [Fact]
     public async Task ConvertAll_ReportsEventsInIndexOrder()
     {
         var events = new List<ConversionEvent>();

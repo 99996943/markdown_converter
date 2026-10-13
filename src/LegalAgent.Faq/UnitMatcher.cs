@@ -35,6 +35,12 @@ public static partial class UnitMatcher
         return false;
     }
 
+    /// <summary>The first unit of <paramref name="units"/> that <paramref name="cited"/> matches (see <see cref="Matches"/>), or <c>null</c>.</summary>
+    /// <param name="cited">Unit cited by the model, e.g. „§ 12 ust. 3”.</param>
+    /// <param name="units">Units of the document, in document order.</param>
+    /// <returns>The matched unit as listed, or <c>null</c>.</returns>
+    public static string? Find(string cited, IEnumerable<string> units) => throw new NotImplementedException();
+
     private static bool StartsWithUnit(string cited, string unit) =>
         unit.Length > 0
         && cited.StartsWith(unit, StringComparison.Ordinal)

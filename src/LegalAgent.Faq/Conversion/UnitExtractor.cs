@@ -1,3 +1,4 @@
+using LegalAgent.Faq.Model;
 using LegalAgent.PdfParser.Model;
 
 namespace LegalAgent.Faq.Conversion;
@@ -16,6 +17,15 @@ public static class UnitExtractor
         Collect(document.Sections, units, seen);
         return units;
     }
+
+    /// <summary>
+    /// Where each unit of <see cref="FromDocument"/> starts, in the same order: the first page of its section and the
+    /// anchor of the section heading in <paramref name="markdown"/>.
+    /// </summary>
+    /// <param name="document">The parsed document.</param>
+    /// <param name="markdown">The Markdown rendered from <paramref name="document"/>.</param>
+    /// <returns>One location per unit.</returns>
+    public static IReadOnlyList<FaqUnitLocation> Locate(LegalDocument document, string markdown) => throw new NotImplementedException();
 
     private static void Collect(IReadOnlyList<Section> sections, List<string> units, HashSet<string> seen)
     {
