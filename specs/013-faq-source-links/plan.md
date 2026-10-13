@@ -117,6 +117,28 @@ tests/mBank.FaqGenerator.Tests/        # przebieg z fałszywym modelem: linki i 
 - 2026-10-13: spec (wariant 3), clarify (nazwa → `#page`, jednostka → nagłówek; linki do Markdownu zawsze), plan z
   research R1–R7. Algorytm kotwic sprawdzony w źródłach VS Code (`githubSlugifier` = `github-slugger`). Następny
   krok: `/speckit-tasks`. Tasks: 26 zadań (T001–T026), następny krok `/speckit-implement`.
+- 2026-10-13: implementacja T001–T026 (wersja 1.5.0). Commity: `46e8cb9` red US1, `57cab2a` green US1, `e023533` red
+  US2, `f1d4b42` green US2, `8121dc9` wersja, manifest korpusu, dokumentacja.
+  - Punkt odniesienia (T001): 177 testów `LegalAgent.Faq.Tests`, 150 `mBank.FaqGenerator.Tests`; po zmianach 234 i 157.
+    Golden `faq.expected.md` bez zmian (SC-143 dla dokumentów bez położeń).
+  - T006/T011: przebieg aplikacji z fałszywym modelem i trzystronicowymi regulaminami — 10/10 źródeł z `#page=3`
+    (sekcja „§ 3.” na stronie 3), front matter bez `#page`. Pełny zestaw: 2293 testy, 0 niepowodzeń.
+  - T015/T020: 10/10 źródeł z linkiem `../downloads/reg-N.md#-3`, kotwica ∈ `MarkdownAnchors.ForDocument` zapisanego
+    pliku (SC-140, SC-141); `--faq-output` w `wyniki/faq` → `../../downloads/`; inny dysk → `null` (test tylko na
+    Windows). `Locate` daje kotwice dla wszystkich jednostek na 3 aktach z `Corpus/acts` i dokumentach-tabelach
+    REG-01, REG-05 z korpusu (liczba nagłówków sekcji = liczba sekcji). Test FR-1006 (`LibraryIndependenceTests`)
+    zielony od razu, zgodnie z planem. Pełny zestaw: 2327 testów, 0 niepowodzeń; z `LEGALAGENT_PRIVATE_CORPUS`:
+    2331, 0 niepowodzeń, 10 pominiętych.
+  - T023: `generate` i `verify` korpusu — zmienia się tylko wersja w `corpus/manifest.json`.
+  - T024 (bez Azure): 5 prawdziwych regulaminów z `publish/mBank.FaqGenerator-win-x64/downloads` — 99 jednostek, każda
+    ze stroną w 1…liczba stron i kotwicą istniejącego nagłówka (SC-141), 0 problemów; Markdown 1.5.0 identyczny z
+    plikami `.md` na dysku. **Do zrobienia przez właściciela**: prawdziwy przebieg FAQ (quickstart 3) i SC-142
+    (10 pytań: klik w nazwę otwiera PDF na stronie jednostki, klik w jednostkę przewija Markdown do nagłówka). Nowy
+    `faq/FAQ_mBank.md` commitować dopiero po tym przebiegu i zgodzie właściciela.
+  - T025: `publish/lib/*`, `publish/LegalAgent.PdfParser/lib`, `publish/LegalAgent.Chunking/lib`, NuGet 1.5.0 tylko
+    lokalnie w `publish/nuget/`, `mBank.FaqGenerator.exe` 1.5.0 (self-contained, single-file, skompresowany);
+    `downloads/`, `faq/`, `appsettings*.json` bez zmian.
+  - Push i PR (baza `012-footnote-original-labels`, dopóki 012 nie jest scalona) po potwierdzeniu właściciela.
 
 ## Complexity Tracking
 

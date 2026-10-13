@@ -194,16 +194,16 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
   i `verify` (zmienia się tylko wersja w `corpus/manifest.json` — sprawdzić `git diff --stat corpus`); pełny zestaw
   testów z `LEGALAGENT_PRIVATE_CORPUS` (bezwzględna ścieżka) zielony. Commit
   `chore: version 1.5.0, corpus manifest, docs for FAQ source links (spec 013 T021-T023)`.
-- [ ] T024 Weryfikacja na prawdziwych dokumentach: bez Azure — konwersja pobranych regulaminów z
+- [X] T024 Weryfikacja na prawdziwych dokumentach: bez Azure — konwersja pobranych regulaminów z
   `publish/mBank.FaqGenerator-win-x64/downloads` przez `DocumentSetConverter` w teście jednorazowym w scratchpadzie
   (albo `convert` CLI + `Locate`) i SC-141 dla wszystkich jednostek: każda kotwica ∈ nagłówki Markdownu, każda strona
   ∈ 1…liczba stron. Prawdziwy przebieg FAQ (Azure, klucz) i SC-142 (10 pytań: strona `#page` = strona nagłówka w PDF-ie)
   wykonuje właściciel — przygotować polecenie z quickstart 3; nowy `faq/FAQ_mBank.md` commitować tylko po jego
   przebiegu i zgodzie.
-- [ ] T025 `publish/` jak w spec 012 T026 (NuGet 1.5.0 lokalnie w `publish/nuget/`, `publish/lib/*`,
+- [X] T025 `publish/` jak w spec 012 T026 (NuGet 1.5.0 lokalnie w `publish/nuget/`, `publish/lib/*`,
   `mBank.FaqGenerator.exe` self-contained single-file skompresowany; bez ruszania `downloads/`, `faq/`,
   `appsettings*.json`). Usunąć pliki tymczasowe z repozytorium.
-- [ ] T026 Handoff: `specs/013-faq-source-links/plan.md` „Stan prac i przekazanie” (wyniki T006, T011, T015, T020, T024,
+- [X] T026 Handoff: `specs/013-faq-source-links/plan.md` „Stan prac i przekazanie” (wyniki T006, T011, T015, T020, T024,
   liczba testów), wszystkie zadania `[X]`; pamięć projektu. Commit `docs: spec 013 handoff (T026)`. Push i opis PR
   po potwierdzeniu właściciela (PR z bazą `012-footnote-original-labels`, dopóki 012 nie jest scalona).
 
