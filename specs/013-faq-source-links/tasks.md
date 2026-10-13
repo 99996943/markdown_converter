@@ -26,10 +26,10 @@ katalogu głównego i `src/LegalAgent.PdfParser.Cli/Properties/`); trailer
 
 ## Phase 1: Setup
 
-- [ ] T001 Punkt odniesienia: zapisać w scratchpadzie (poza repozytorium) wynik `FaqMarkdownRenderer` dla danych
-  `tests/LegalAgent.Faq.Tests/RendererTests.cs` (golden `faq.expected.md` już jest) oraz FAQ z przebiegu aplikacji w
-  `tests/mBank.FaqGenerator.Tests/FaqFlowTests.cs` (plik z katalogu testu) — do porównania SC-143 (różnice wyłącznie
-  w adresach linków). Bez zmian w kodzie.
+- [ ] T001 Punkt odniesienia SC-143: golden renderera `faq.expected.md` w `tests/LegalAgent.Faq.Tests` (ścieżka z
+  `GoldenFile.PathOf`) — dla dokumentów bez położeń MUST zostać bez zmian w całej spec. Skopiować go do scratchpadu
+  (poza repozytorium) jako `faq-1.4.0.md` i zanotować liczbę testów `tests/LegalAgent.Faq.Tests` i
+  `tests/mBank.FaqGenerator.Tests` przed zmianami. Bez zmian w kodzie.
 
 ---
 
@@ -47,7 +47,7 @@ katalogu głównego i `src/LegalAgent.PdfParser.Cli/Properties/`); trailer
   szkielety metod rzucające `NotImplementedException`: `MarkdownAnchors.Slug(string)` i
   `MarkdownAnchors.ForDocument(string)` w nowym `src/LegalAgent.Faq/MarkdownAnchors.cs` (public static class),
   `UnitExtractor.Locate(LegalDocument, string)` w `src/LegalAgent.Faq/Conversion/UnitExtractor.cs`,
-  `UnitMatcher.Find(string, IEnumerable<string>)` w `src/LegalAgent.Faq/UnitMatcher.cs`. Build bez ostrzeżeń, stare
+  `UnitMatcher.Find(string cited, IEnumerable<string> units)` (zwraca `string?`) w `src/LegalAgent.Faq/UnitMatcher.cs`. Build bez ostrzeżeń, stare
   testy zielone. Commit razem z testami red US1 (T007). **Uzasadnienie odstępstwa od konstytucji I**: bez tych typów
   testy red się nie kompilują; zadanie nie zmienia zachowania i trafia do commitu red (jak spec 012 T003).
 
@@ -135,7 +135,10 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
   sekcji (oznaczenie i tekst nagłówka tej samej sekcji → ta sama kotwica); dwie sekcje o tym samym nagłówku → druga
   z dopiskiem `-1`, a jednostka (pierwsze wystąpienie) wskazuje pierwszą; Markdown z inną liczbą nagłówków sekcji niż
   sekcji (np. dopisany nagłówek) → wszystkie `Anchor` = `null`, strony zostają; SC-141: każda kotwica z `Locate` należy
-  do `MarkdownAnchors.ForDocument(markdown)`.
+  do `MarkdownAnchors.ForDocument(markdown)`. Dodatkowo (U2 z analizy): na aktach
+  `tests/LegalAgent.PdfParser.Tests/Corpus/acts/*.pdf` (ścieżka przez `CallerFilePath`) i, jeśli dostępny z tego
+  projektu testów, na syntetycznym dokumencie-tabeli — liczba nagłówków sekcji w Markdownie (bez tytułu) = liczba
+  sekcji, czyli fallback z T018 nie wyłącza kotwic.
 - [ ] T014 [P] [US2] `tests/LegalAgent.Faq.Tests/RendererTests.cs`: `MarkdownLink` = `../downloads/a.md`, położenie
   „§ 12” z `Anchor` `-12-opłaty` → `Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), [§ 12](../downloads/a.md#-12-opłaty)`;
   tekst jednostki z `[`/`]` → `\[`, `\]`; `MarkdownLink` = `null` albo `Anchor` = `null` → jednostka zwykłym tekstem;
@@ -143,10 +146,12 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
 - [ ] T015 [P] [US2] Testy aplikacji w `tests/mBank.FaqGenerator.Tests/FaqFlowTests.cs`: (a) domyślne katalogi
   (`downloads`, `faq`) → link jednostki `../downloads/<plik>.md#kotwica`, kotwica ∈ `MarkdownAnchors.ForDocument` tego
   pliku (SC-141), 100% źródeł z jednostką ma oba linki (SC-140); (b) `--output` i `--faq-output` w różnych katalogach
-  → ścieżka względna między nimi, segmenty z `Uri.EscapeDataString` (nazwa pliku ze spacją w teście); (c) ścieżka
-  względna niemożliwa (`Path.GetRelativePath` zwraca ścieżkę bezwzględną — test z wymuszonym innym korzeniem tylko na
-  Windows, `Assert.SkipUnless(OperatingSystem.IsWindows())`, albo test jednostkowy funkcji ścieżki) → bez linku do
-  Markdownu, link `#page` zostaje, FAQ zapisane, kod 0.
+  → ścieżka względna między nimi. Nowy `tests/mBank.FaqGenerator.Tests/MarkdownLinkTests.cs` dla
+  `FaqStage.MarkdownLink(string faqDirectory, string markdownPath)` (`internal static`, zwraca `string?`; sprawdzić
+  `InternalsVisibleTo`, inaczej dodać): na każdym systemie — katalogi rodzeństwa → `../downloads/a.md`; nazwa ze
+  spacją i nawiasem → segment `regulamin%20%28a%29.md`; FAQ głębiej → `../../downloads/a.md`; tylko na Windows
+  (`Assert.SkipUnless(OperatingSystem.IsWindows(), …)`) — `C:\faq` i `D:\dl\a.md` → `null` (FR-1003: bez linku do
+  Markdownu, link `#page` zostaje).
 - [ ] T016 [US2] Uruchomić testy T012–T015: padają z właściwego powodu (`NotImplementedException` w `Slug`/`ForDocument`,
   brak linku jednostki). Commit red: `test: FAQ unit links to the Markdown heading (red, spec 013 T012-T015)`.
 
@@ -161,12 +166,16 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
   renderowania (pre-order) ↔ k-ty nagłówek sekcji; niezgodna liczba → `Anchor` = `null` wszędzie.
 - [ ] T019 [US2] `src/LegalAgent.Faq/FaqMarkdownRenderer.cs`: jednostka `[u](MarkdownLink#Anchor)` z ucieczką `[`/`]`,
   gdy `MarkdownLink` i `Anchor` znane, inaczej jak dziś. `src/mBank.FaqGenerator/FaqStage.cs` i
-  `src/mBank.FaqGenerator/Program.cs`: przekazać katalog pobranych plików do `FaqStage.RunAsync`; `MarkdownLink` =
-  `Path.GetRelativePath(faqDirectory, Path.Combine(downloads, d.MarkdownFileName))`, gdy wynik nie jest ścieżką
-  bezwzględną: segmenty po `Path.DirectorySeparatorChar`/`AltDirectorySeparatorChar` złączone `/`, każdy przez
-  `Uri.EscapeDataString` (`..` bez zmian); inaczej `null`.
+  `src/mBank.FaqGenerator/Program.cs`: przekazać katalog pobranych plików do `FaqStage.RunAsync`; nowa
+  `internal static string? MarkdownLink(string faqDirectory, string markdownPath)` = `Path.GetRelativePath(...)`, gdy
+  wynik nie jest ścieżką bezwzględną (`Path.IsPathRooted`): segmenty po `Path.DirectorySeparatorChar` /
+  `AltDirectorySeparatorChar` złączone `/`, każdy przez `Uri.EscapeDataString` (`..` bez zmian); inaczej `null`.
+  `FaqDocumentInput.MarkdownLink` = `MarkdownLink(faqDirectory, Path.Combine(downloads, d.MarkdownFileName))`.
 - [ ] T020 [US2] Testy T012–T015 zielone; pełny `dotnet test LegalAgent.slnx --filter "Category!=Performance"` zielony
-  (golden `faq.expected.md` bez zmian).
+  (golden `faq.expected.md` bez zmian). FR-1006 (C1 z analizy): nowy test regresji
+  `tests/LegalAgent.Faq.Tests/LibraryIndependenceTests.cs` — pliki `src/LegalAgent.Faq/**/*.cs` (ścieżka przez
+  `CallerFilePath`, bez `bin/`, `obj/`) nie zawierają „mbank” (bez względu na wielkość liter), „downloads” ani
+  literału `http://`/`https://` poza komentarzami `///`; zielony od razu (odnotować w handoffie), w tym samym commicie.
   Commit green: `feat: FAQ units link to the heading in the document Markdown (green, spec 013 T017-T019)`.
 
 **Checkpoint**: US1 i US2 działają; FAQ z obu linkami.

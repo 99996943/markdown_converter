@@ -114,8 +114,8 @@ przewinięty do nagłówka tej sekcji.
 
 - **Jednostka dokumentu**: tekst cytowany przez model (oznaczenie albo nagłówek sekcji) + strona początku sekcji +
   kotwica nagłówka w Markdownie dokumentu.
-- **Źródło odpowiedzi** (`FaqSource`): dokument i jednostka; wiersz źródła dostaje adres strony PDF-u i adres
-  nagłówka.
+- **Źródło odpowiedzi** (`FaqSource`): dokument i jednostka, bez zmian; położenia jednostek i adres Markdownu należą
+  do dokumentu źródłowego (`FaqSourceDocument`), a wiersz źródła dostaje z nich adres strony PDF-u i adres nagłówka.
 
 ## Success Criteria *(mandatory)*
 
@@ -126,14 +126,16 @@ przewinięty do nagłówka tej sekcji.
   (sprawdzone automatycznie: kotwica ∈ kotwice Markdownu dokumentu).
 - **SC-142**: Strona z `#page=N` to strona, na której w PDF-ie stoi nagłówek jednostki (sprawdzone ręcznie na 10
   pytaniach jednego przebiegu).
-- **SC-143**: Plik FAQ różni się od dzisiejszego wyłącznie adresami linków w wierszach źródeł.
+- **SC-143**: Plik FAQ różni się od dzisiejszego wyłącznie adresami linków w wierszach źródeł (widoczny tekst bez
+  zmian; ucieczki `\[`, `\]` w tekście linku jednostki dopuszczalne).
 
 ## Assumptions
 
 - `#page=N` obsługują przeglądarki z wbudowanym podglądem PDF (Chrome, Edge, Firefox) — standard parametrów otwarcia
   PDF; inne przeglądarki otworzą dokument od początku.
-- Kotwice liczone według algorytmu GitHub (`github-slugger`): małe litery, usunięcie znaków spoza liter, cyfr, spacji,
-  `-` i `_`, spacje → `-`, powtórzenia `-1`, `-2`; VS Code używa tego samego algorytmu.
+- Kotwice liczone według algorytmu GitHub (`github-slugger`): małe litery, usunięcie znaków spoza liter, cyfr
+  dziesiętnych (indeksy górne „¹²³” są usuwane), spacji, `-` i `_`, spacje → `-`, powtórzenia `-1`, `-2`; VS Code
+  używa tego samego algorytmu (sprawdzone w jego źródłach, research R3).
 - Numer strony to numer strony fizycznej PDF-u (1 = pierwsza strona pliku), jak w znacznikach `<!-- page: N -->`.
 - Format wiersza źródła (Clarifications): `[<Name>](<pdf>#page=N), [<jednostka>](<ścieżka.md>#kotwica)`; dokładna
   postać w kontrakcie planu.

@@ -41,7 +41,7 @@ Wszystkie zmiany addytywne (nowe typy, nowe opcjonalne właściwości `init`); i
 
 ## UnitMatcher (rozszerzony)
 
-- Nowe `Find(string cited, IReadOnlyList<string> units)` → pierwsza w kolejności pasująca pozycja listy albo `null`
+- Nowe `Find(string cited, IEnumerable<string> units)` → pierwsza w kolejności pasująca pozycja listy albo `null`
   (R2); renderer woła je z `UnitLocations.Select(l => l.Unit)`.
 
 ## Wiersz źródła (FaqMarkdownRenderer)
