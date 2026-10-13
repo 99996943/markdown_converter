@@ -116,7 +116,7 @@ tests/mBank.FaqGenerator.Tests/        # przebieg z fałszywym modelem: linki i 
 
 - 2026-10-13: spec (wariant 3), clarify (nazwa → `#page`, jednostka → nagłówek; linki do Markdownu zawsze), plan z
   research R1–R7. Algorytm kotwic sprawdzony w źródłach VS Code (`githubSlugifier` = `github-slugger`). Następny
-  krok: `/speckit-tasks`.
+  krok: `/speckit-tasks`. Tasks: 26 zadań (T001–T026), następny krok `/speckit-implement`.
 
 ## Complexity Tracking
 
