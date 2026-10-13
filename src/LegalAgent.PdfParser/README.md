@@ -233,6 +233,16 @@ Kontrakt Markdown 1.4.0 (`specs/010-bank-table-footnotes/contracts/markdown-outp
   - definicje pod krótką kreską w rozmiarze tekstu głównego, z etykietą będącą samą liczbą, także gdy podniesiona
     etykieta jest osobnym wierszem.
 
+## Wersja 1.3.1: ostrzeżenia FTN001 (spec 011)
+
+Kontrakt: `specs/011-ftn001-false-warnings/contracts/conversion-report.md`. Zmiana PATCH, API publiczne bez zmian.
+
+- Podniesiona etykieta otwierająca linię definicji przypisu nigdy nie jest odnośnikiem do własnej definicji, także na
+  stronach bez kreski nad obszarem przypisów (od 1.3.0 tylko pod kreską).
+- Markdown i chunki bez zmian; zmienia się tylko raport: definicja, do której parser nie rozpoznał odnośnika, daje
+  `FTN001`.
+- Ostrzeżeń `FTN001` może być więcej niż w 1.2.3: wcześniej etykieta definicji maskowała brak odnośnika.
+
 ## Ostrzeżenia i raport
 
 | Kod | Znaczenie |
@@ -242,7 +252,7 @@ Kontrakt Markdown 1.4.0 (`specs/010-bank-table-footnotes/contracts/markdown-outp
 | `TXT001_UnmappedGlyphs` | Znaki bez odwzorowania Unicode na stronie. |
 | `IMG001_ImagesIgnored` | Na stronie są obrazy; ich treść nie jest odczytywana. |
 | `TBL001_AmbiguousGrid` | Tabela bez jednoznacznej siatki kolumn, zapisana wierszami z separatorem ` \| `. |
-| `FTN001_OrphanFootnote` | Definicja przypisu bez odnośnika w tekście. |
+| `FTN001_OrphanFootnote` | Do definicji przypisu nie prowadzi żaden rozpoznany odnośnik w tekście. Odnośnik może istnieć w PDF-ie w postaci, której parser nie rozpoznaje (zob. „Znane ograniczenia”). Etykieta otwierająca samą definicję nigdy nie jest odnośnikiem. |
 
 `ConversionReport` zawiera też:
 - liczbę stron i pominięte strony;
@@ -309,9 +319,14 @@ Zasady:
   odtworzone.
 - **Wielopoziomowy nagłówek tabeli (T10)**, np. tabela znaczników SWIFT: rozpoznawany tylko częściowo; jedna tabela
   może nadal trafić do formatu zastępczego (`TBL001`).
-- **Odnośniki z przecinkiem** („BLIK⁹,¹⁰”): jako odnośnik rozpoznawana jest tylko ostatnia liczba, pierwsza zostaje
-  sklejona („BLIK9,[^n]”).
-- **Odnośnik w środku wyrazu po ukośniku** („zł/²30.000”) zostaje sklejony.
+- **Nierozpoznane odnośniki przypisów** (spec 011). Każdy z przypadków daje `FTN001` przy definicji, a znacznik
+  zostaje sklejony z tekstem:
+  - odnośnik z pełnowymiarową interpunkcją za nim („zm.¹⁾)”, „BLIK²,”);
+  - lista odnośników („BLIK⁹,¹⁰”): jako odnośnik rozpoznawana jest tylko ostatnia liczba, pierwsza zostaje sklejona
+    („BLIK9,[^n]”);
+  - odnośnik w środku wyrazu po ukośniku („zł/²30.000”);
+  - odnośnik złożony do sąsiedniej linii (np. linii tabeli), więc niepodniesiony względem własnej linii.
+- **Punkty „1)”, „2)” wewnątrz przypisu pod kreską** stają się osobnymi definicjami, każda z `FTN001`.
 - **„art. 166¹¹²)”:** cyfry indeksu górnego po numerze artykułu, po których następuje nawias zamykający, nie są
   rozdzielane.
 - **Macierze działań i podobne tabele bez linii siatki** (wiersze rozpoznawalne tylko po wyśrodkowaniu pionowym
