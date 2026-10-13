@@ -177,14 +177,14 @@ po nich w kolejności stron (FR-905, FR-906). Research R2: kod 1.3.1 już to spe
 **Independent Test**: replika z odnośnikiem „⁷” w akapicie nad tabelą z „²¹”, „²²” i sierotą „25” → definicje w
 kolejności 7, 21, 22, 25.
 
-- [ ] T016 [US2] W `tests/LegalAgent.PdfParser.Tests/Integration/FootnoteLabelsIntegrationTests.cs` test kolejności:
+- [X] T016 [US2] W `tests/LegalAgent.PdfParser.Tests/Integration/FootnoteLabelsIntegrationTests.cs` test kolejności:
   akapit z „⁷” przed tabelą z „TAK²¹”, „TAK²²”, przypis „25” bez odnośnika na tej samej stronie i przypis-sierota
   „26” na następnej → definicje w Markdownie w kolejności `[^7]:`, `[^21]:`, `[^22]:`, `[^25]:`, `[^26]:`, w tej
   samej sekcji co w 1.3.1 (najgłębsza sekcja otwarta na stronie). Uruchomić: oczekiwane zielone od razu → commit
   `test: footnote definitions follow reading order (spec 012 T016)`. Jeśli pada: commit red, poprawka w
   `NumberFootnotes` (`DocumentBuildStage.cs`) jako osobny commit green (T016a/T016b) i ponowny raport goldenów (T013)
   przed jakąkolwiek zmianą goldenów.
-- [ ] T017 [US2] Sprawdzić SC-132 na wszystkich dokumentach z T013 (skrypt z T002 albo jednorazowy w scratchpadzie):
+- [X] T017 [US2] Sprawdzić SC-132 na wszystkich dokumentach z T013 (skrypt z T002 albo jednorazowy w scratchpadzie):
   w każdej sekcji definicje stoją w kolejności pierwszego odnośnika, sieroty po nich w kolejności stron; wynik do
   handoffu.
 

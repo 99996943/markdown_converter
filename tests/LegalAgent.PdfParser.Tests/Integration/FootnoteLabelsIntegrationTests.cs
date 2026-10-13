@@ -189,6 +189,52 @@ public sealed partial class FootnoteLabelsIntegrationTests
         Assert.Equal(0, Warnings(result, "FTN002_FootnoteWithoutLabel"));
     }
 
+    [Fact]
+    public async Task Definitions_FollowTheFirstReference_ThenOrphansInPageOrder()
+    {
+        // US2 (FR-905): „⁷” in a paragraph above a table with „TAK²¹”, „TAK²²”; „25” without a reference on the same page
+        // and „26” without a reference on the next page, both with a raised label (bare orphan labels are not detected).
+        SyntheticPdfBuilder page = new SyntheticPdfBuilder().Page().Text(Left, 70, "Regulamin kredytu", 14, bold: true);
+        for (int i = 0; i < 6; i++)
+        {
+            page.Text(Left, 100 + (i * 10), "Postanowienia regulaminu stosuje się do kredytów udzielanych przez bank klientom.", Body);
+        }
+
+        TrailingMarker(page, Left, 170, "Kredyt spłacasz w ratach miesięcznych w terminach podanych w umowie", "7");
+        double[] xs = [59.5, 300, 555.6];
+        double[] borders = [200, 225.2, 250.4, 275.6];
+        Grid(page, xs, borders);
+        Centred(page, xs[0], xs[1], 215, "co chcesz zrobić?", bold: true);
+        Centred(page, xs[1], xs[2], 215, "serwis transakcyjny", bold: true);
+        string[] names = ["złożyć wniosek o kredyt", "zmienić termin spłaty raty"];
+        for (int r = 0; r < names.Length; r++)
+        {
+            double baseline = borders[r + 1] + 15;
+            page.Text(65.3, baseline, names[r], Body);
+            double start = ((xs[1] + xs[2]) / 2) - (SyntheticPdfBuilder.TextWidth("TAK", Body) / 2);
+            TrailingMarker(page, start, baseline, "TAK", (21 + r).ToString(System.Globalization.CultureInfo.InvariantCulture));
+        }
+
+        page.HLine(39.7, 183.7, 744);
+        page.Text(40, 752, "7 Harmonogram spłaty doręczamy razem z umową.", 6);
+        page.Text(40, 759.3, "21 O dacie wprowadzenia tej funkcjonalności poinformujemy na naszej stronie internetowej.", 6);
+        page.Text(40, 766.6, "22 Dotyczy kredytów w złotych.", 6);
+        page.Text(40, 771.9, "25", 4).Text(40 + SyntheticPdfBuilder.TextWidth("25", 4), 773.9, " Opłaty określa taryfa.", 6);
+
+        page.Page();
+        for (int i = 0; i < 6; i++)
+        {
+            page.Text(Left, 100 + (i * 10), "Postanowienia regulaminu stosuje się do kredytów udzielanych przez bank klientom.", Body);
+        }
+
+        page.HLine(39.7, 183.7, 744);
+        page.Text(40, 750, "26", 4).Text(40 + SyntheticPdfBuilder.TextWidth("26", 4), 752, " Regulamin obowiązuje od dnia ogłoszenia.", 6);
+
+        PdfConversionResult result = await ConvertAsync(page.Build());
+
+        Assert.Equal(["7", "21", "22", "25", "26"], Definitions(Markdown(result)));
+    }
+
     [GeneratedRegex(@"\[\^([^\]\s]+)\](?!:)", RegexOptions.CultureInvariant)]
     private static partial Regex Reference();
 
