@@ -75,12 +75,12 @@ Ustawa określa:
 
 ### Art. 2.
 
-- 1\. [^1] Ustawę stosuje się także do umów o kredyt konsumencki, który spółdzielcza kasa oszczędnościowo-kredytowa w zakresie swojej działalności udziela lub daje przyrzeczenie udzielenia swojemu członkowi.
-- 2\. (uchylony)[^2]
+- 1\. [^2)] Ustawę stosuje się także do umów o kredyt konsumencki, który spółdzielcza kasa oszczędnościowo-kredytowa w zakresie swojej działalności udziela lub daje przyrzeczenie udzielenia swojemu członkowi.
+- 2\. (uchylony)[^3)]
 
-[^1]: Oznaczenie ust. 1 nadane przez art. 53 pkt 1 ustawy z dnia 14 kwietnia 2023 r. o konsumenckiej pożyczce lombardowej (Dz. U. poz. 1285), która weszła w życie z dniem 7 stycznia 2024 r.
+[^2)]: Oznaczenie ust. 1 nadane przez art. 53 pkt 1 ustawy z dnia 14 kwietnia 2023 r. o konsumenckiej pożyczce lombardowej (Dz. U. poz. 1285), która weszła w życie z dniem 7 stycznia 2024 r.
 
-[^2]: Dodany przez art. 53 pkt 1 ustawy, o której mowa w odnośniku 2; uchylony przez art. 2 ustawy z dnia 20 marca 2024 r. o zmianie ustawy – Kodeks cywilny, ustawy o kredycie konsumenckim oraz ustawy o konsumenckiej pożyczce lombardowej (Dz. U. poz. 653), która weszła w życie z dniem 29 kwietnia 2024 r.
+[^3)]: Dodany przez art. 53 pkt 1 ustawy, o której mowa w odnośniku 2; uchylony przez art. 2 ustawy z dnia 20 marca 2024 r. o zmianie ustawy – Kodeks cywilny, ustawy o kredycie konsumenckim oraz ustawy o konsumenckiej pożyczce lombardowej (Dz. U. poz. 653), która weszła w życie z dniem 29 kwietnia 2024 r.
 
 ### Art. 3.
 
@@ -105,7 +105,7 @@ Ustawa określa:
   - 5\) o kredyt udzielany wyłącznie pracownikom zatrudnionym u danego pracodawcy w ramach działalności dodatkowej, w której pracownik nie jest zobowiązany do zapłaty oprocentowania lub jest zobowiązany do zapłaty rzeczywistej rocznej stopy oprocentowania niższej od powszechnie stosowanych na rynku;
   - 6\) (uchylony)
   - 7\) odwróconego kredytu hipotecznego zawartych na podstawie ustawy z dnia 23 października 2014 r. o odwróconym kredycie hipotecznym (Dz. U. z 2023 r. poz. 152);
-  - 8\) [^3] konsumenckiej pożyczki lombardowej, o których mowa w ustawie z dnia 14 kwietnia 2023 r. o konsumenckiej pożyczce lombardowej (Dz. U. z 2024 r. poz. 1111).
+  - 8\) [^4)] konsumenckiej pożyczki lombardowej, o których mowa w ustawie z dnia 14 kwietnia 2023 r. o konsumenckiej pożyczce lombardowej (Dz. U. z 2024 r. poz. 1111).
 - 2\. W zakresie:
   - 1\) (uchylony)
   - 2\) umów o kredyt w rachunku oszczędnościowo-rozliczeniowym konsumenta, który jest spłacany przez konsumenta w terminie do jednego miesiąca stosuje się art. 17 ust. 4;
@@ -116,9 +116,9 @@ Ustawa określa:
 - 3\. Do umów o kredyt konsumencki nie stosuje się przepisów rozdziału I działu IV tytułu XI księgi trzeciej ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny (Dz. U. z 2024 r. poz. 1061 i 1237).
 - 4\. Ustawę stosuje się do umów leasingu i najmu, jeżeli umowa odrębna od tych umów przewiduje obowiązek nabycia przedmiotu umowy, uzależniając go od żądania kredytodawcy.
 
-[^3]: Dodany przez art. 53 pkt 2 ustawy, o której mowa w odnośniku 2.
+[^4)]: Dodany przez art. 53 pkt 2 ustawy, o której mowa w odnośniku 2.
 
-[^7]: Niniejsza ustawa dokonuje w zakresie swojej regulacji wdrożenia dyrektywy 2008/48/WE Parlamentu Europejskiego i Rady z dnia 23 kwietnia 2008 r. w sprawie umów o kredyt konsumencki oraz uchylającej dyrektywę Rady 87/102/EWG (Dz. Urz. UE L 133 z 22.05.2008, str. 66).
+[^1)]: Niniejsza ustawa dokonuje w zakresie swojej regulacji wdrożenia dyrektywy 2008/48/WE Parlamentu Europejskiego i Rady z dnia 23 kwietnia 2008 r. w sprawie umów o kredyt konsumencki oraz uchylającej dyrektywę Rady 87/102/EWG (Dz. Urz. UE L 133 z 22.05.2008, str. 66).
 
 ### Art. 5.
 
@@ -159,7 +159,7 @@ Użyte w ustawie określenia oznaczają:
 - 16\) ocena zdolności kredytowej – ocena zdolności konsumenta do spłaty zaciągniętego kredytu wraz z odsetkami, w terminach określonych w umowie o kredyt konsumencki, dokonywana przez kredytodawcę;
 - 17\) trwały nośnik – materiał lub urządzenie służące do przechowywania i odczytywania informacji przekazywanych konsumentowi w związku z umową o kredyt, przez czas odpowiedni do celów jakim informacje te służą oraz pozwalające na odtworzenie tych informacji w niezmienionej postaci.
 
-[^8]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 338 z 17.12.2008, str. 10, 17, 21 i 25, Dz. Urz. UE L 339 z 18.12.2008, str. 3, Dz. Urz. UE L 17 z 22.01.2009, str. 23, Dz. Urz. UE L 21 z 24.01.2009, str. 10 i 16, Dz. Urz. UE L 80 z 26.03.2009, str. 5, Dz. Urz. UE L 139 z 05.06.2009, str. 6, Dz. Urz. UE L 149 z 12.06.2009, str. 6 i 22, Dz. Urz. UE L 191 z 23.07.2009, str. 5, Dz. Urz. UE L 239 z 10.09.2009, str. 48, Dz. Urz. UE L 244 z 16.09.2009, str. 6, Dz. Urz. UE L 311 z 26.11.2009, str. 6, Dz. Urz. UE L 312 z 27.11.2009, str. 8, Dz. Urz. UE L 314 z 01.12.2009, str. 15, 21 i 43, Dz. Urz. UE L 347 z 24.12.2009, str. 23, Dz. Urz. UE L 77 z 24.03.2010, str. 33 i 42, Dz. Urz. UE L 157 z 24.06.2010, str. 3, Dz. Urz. UE L 166 z 01.07.2010, str. 6, Dz. Urz. UE L 186 z 20.07.2010, str. 1 i 10, Dz. Urz. UE L 193 z 24.07.2010, str. 1, Dz. Urz. UE L 46 z 19.02.2011, str. 1, Dz. Urz. UE L 305 z 23.11.2011, str. 16, Dz. Urz. UE L 146 z 06.06.2012, str. 1, Dz. Urz. UE L 360 z 29.12.2012, str. 1, 78 i 145, Dz. Urz. UE L 61 z 05.03.2013, str. 6, Dz. Urz. UE L 90 z 28.03.2013, str. 78, Dz. Urz. UE L 95 z 05.04.2013, str. 9, Dz. Urz. UE L 312 z 21.11.2013, str. 1, Dz. Urz. UE L 346 z 20.12.2013, str. 38 i 42, Dz. Urz. UE L 175 z 14.06.2014, str. 9, Dz. Urz. UE L 365 z 19.12.2014, str. 120, Dz. Urz. UE L 5 z 09.01.2015, str. 1 i 11, Dz. Urz. UE L 306 z 24.11.2015, str. 7, Dz. Urz. UE L 307 z 25.11.2015, str. 11, Dz. Urz. UE L 317 z 03.12.2015, str. 19, Dz. Urz. UE L 330 z 16.12.2015, str. 20, Dz. Urz. UE L 333 z 19.12.2015, str. 97, Dz. Urz. UE L 336 z 23.12.2015, str. 49, Dz. Urz. UE L 257 z 23.09.2016, str. 1, Dz. Urz. UE L 295 z 29.10.2016, str. 19, Dz. Urz. UE L 323 z 29.11.2016, str. 1, Dz. Urz. UE L 291 z 09.11.2017, str. 1, 63, 72, 84 i 89, Dz. Urz. UE L 34 z 08.02.2018, str. 1, Dz. Urz. UE L 55 z 27.02.2018, str. 21, Dz. Urz. UE L 72 z 15.03.2018, str. 13, Dz. Urz. UE L 82 z 26.03.2018, str. 3, Dz. Urz. UE L 87 z 03.04.2018, str. 3, Dz. Urz. UE L 265 z 24.10.2018, str. 3, Dz. Urz. UE L 39 z 11.02.2019, str. 1, Dz. Urz. UE L 72 z 14.03.2019, str. 6, Dz. Urz. UE L 73 z 15.03.2019, str. 93, Dz. Urz. UE L 316 z 06.12.2019, str. 10, Dz. Urz. UE L 318 z 10.12.2019, str. 74, Dz. Urz. UE L 12 z 16.01.2020, str. 5, Dz. Urz. UE L 127 z 22.04.2020, str. 13, Dz. Urz. UE L 331 z 12.10.2020, str. 20, Dz. Urz. UE L 425 z 16.12.2020, str. 10, Dz. Urz. UE L 11 z 14.01.2021, str. 7, Dz. Urz. UE L 234 z 02.07.2021, str. 90 oraz Dz. Urz. UE L 305 z 31.08.2021, str. 17.
+[^5)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 338 z 17.12.2008, str. 10, 17, 21 i 25, Dz. Urz. UE L 339 z 18.12.2008, str. 3, Dz. Urz. UE L 17 z 22.01.2009, str. 23, Dz. Urz. UE L 21 z 24.01.2009, str. 10 i 16, Dz. Urz. UE L 80 z 26.03.2009, str. 5, Dz. Urz. UE L 139 z 05.06.2009, str. 6, Dz. Urz. UE L 149 z 12.06.2009, str. 6 i 22, Dz. Urz. UE L 191 z 23.07.2009, str. 5, Dz. Urz. UE L 239 z 10.09.2009, str. 48, Dz. Urz. UE L 244 z 16.09.2009, str. 6, Dz. Urz. UE L 311 z 26.11.2009, str. 6, Dz. Urz. UE L 312 z 27.11.2009, str. 8, Dz. Urz. UE L 314 z 01.12.2009, str. 15, 21 i 43, Dz. Urz. UE L 347 z 24.12.2009, str. 23, Dz. Urz. UE L 77 z 24.03.2010, str. 33 i 42, Dz. Urz. UE L 157 z 24.06.2010, str. 3, Dz. Urz. UE L 166 z 01.07.2010, str. 6, Dz. Urz. UE L 186 z 20.07.2010, str. 1 i 10, Dz. Urz. UE L 193 z 24.07.2010, str. 1, Dz. Urz. UE L 46 z 19.02.2011, str. 1, Dz. Urz. UE L 305 z 23.11.2011, str. 16, Dz. Urz. UE L 146 z 06.06.2012, str. 1, Dz. Urz. UE L 360 z 29.12.2012, str. 1, 78 i 145, Dz. Urz. UE L 61 z 05.03.2013, str. 6, Dz. Urz. UE L 90 z 28.03.2013, str. 78, Dz. Urz. UE L 95 z 05.04.2013, str. 9, Dz. Urz. UE L 312 z 21.11.2013, str. 1, Dz. Urz. UE L 346 z 20.12.2013, str. 38 i 42, Dz. Urz. UE L 175 z 14.06.2014, str. 9, Dz. Urz. UE L 365 z 19.12.2014, str. 120, Dz. Urz. UE L 5 z 09.01.2015, str. 1 i 11, Dz. Urz. UE L 306 z 24.11.2015, str. 7, Dz. Urz. UE L 307 z 25.11.2015, str. 11, Dz. Urz. UE L 317 z 03.12.2015, str. 19, Dz. Urz. UE L 330 z 16.12.2015, str. 20, Dz. Urz. UE L 333 z 19.12.2015, str. 97, Dz. Urz. UE L 336 z 23.12.2015, str. 49, Dz. Urz. UE L 257 z 23.09.2016, str. 1, Dz. Urz. UE L 295 z 29.10.2016, str. 19, Dz. Urz. UE L 323 z 29.11.2016, str. 1, Dz. Urz. UE L 291 z 09.11.2017, str. 1, 63, 72, 84 i 89, Dz. Urz. UE L 34 z 08.02.2018, str. 1, Dz. Urz. UE L 55 z 27.02.2018, str. 21, Dz. Urz. UE L 72 z 15.03.2018, str. 13, Dz. Urz. UE L 82 z 26.03.2018, str. 3, Dz. Urz. UE L 87 z 03.04.2018, str. 3, Dz. Urz. UE L 265 z 24.10.2018, str. 3, Dz. Urz. UE L 39 z 11.02.2019, str. 1, Dz. Urz. UE L 72 z 14.03.2019, str. 6, Dz. Urz. UE L 73 z 15.03.2019, str. 93, Dz. Urz. UE L 316 z 06.12.2019, str. 10, Dz. Urz. UE L 318 z 10.12.2019, str. 74, Dz. Urz. UE L 12 z 16.01.2020, str. 5, Dz. Urz. UE L 127 z 22.04.2020, str. 13, Dz. Urz. UE L 331 z 12.10.2020, str. 20, Dz. Urz. UE L 425 z 16.12.2020, str. 10, Dz. Urz. UE L 11 z 14.01.2021, str. 7, Dz. Urz. UE L 234 z 02.07.2021, str. 90 oraz Dz. Urz. UE L 305 z 31.08.2021, str. 17.
 
 ### Art. 6.
 
@@ -184,7 +184,7 @@ Wartość kwoty kredytu konsumenckiego udzielanego w walucie innej niż waluta p
   - 2\) informację, czy pośrednik kredytowy współpracuje z kredytodawcami.
 - 5\. W przypadku gdy pośrednik kredytowy współpracuje z kredytodawcami należy przekazać konsumentowi informację o nazwach kredytodawców, z którymi pośrednik ten współpracuje.
 
-[^9]: Ustawa utraciła moc z dniem 25 grudnia 2014 r. na podstawie art. 52 pkt 1 ustawy z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. poz. 827), która weszła w życie z dniem 25 grudnia 2014 r.
+[^6)]: Ustawa utraciła moc z dniem 25 grudnia 2014 r. na podstawie art. 52 pkt 1 ustawy z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. poz. 827), która weszła w życie z dniem 25 grudnia 2014 r.
 
 ### Art. 7a.
 
@@ -226,7 +226,7 @@ Informacje, o których mowa w art. 7, podaje się konsumentowi w sposób co najm
 
 ### Art. 9b.
 
-[^4] 1. Kredytodawca przed zawarciem umowy o kredyt konsumencki oraz przed zmianą tej umowy, w wyniku której następuje zwiększenie zadłużenia, weryfikuje w sposób, o którym mowa w art. 23j lub art. 23m ustawy z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2024 r. poz. 736 i 854), w rejestrze zastrzeżeń numerów PESEL, o którym mowa w art. 23a tej ustawy, zwanym dalej „rejestrem zastrzeżeń numerów PESEL”, czy numer PESEL konsumenta jest zastrzeżony.
+[^7)] 1. Kredytodawca przed zawarciem umowy o kredyt konsumencki oraz przed zmianą tej umowy, w wyniku której następuje zwiększenie zadłużenia, weryfikuje w sposób, o którym mowa w art. 23j lub art. 23m ustawy z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2024 r. poz. 736 i 854), w rejestrze zastrzeżeń numerów PESEL, o którym mowa w art. 23a tej ustawy, zwanym dalej „rejestrem zastrzeżeń numerów PESEL”, czy numer PESEL konsumenta jest zastrzeżony.
 
 - 2\. Kredytodawca nie może domagać się od konsumenta i jego następców prawnych zaspokojenia roszczenia z tytułu zawarcia umowy o kredyt konsumencki ani zbyć wierzytelności powstałej z tej umowy, jeżeli w chwili zawarcia umowy, z której wynika dochodzone roszczenie, numer PESEL konsumenta był zastrzeżony w rejestrze zastrzeżeń numerów PESEL.
 - 3\. Przepisów ust. 1 i 2 nie stosuje się, jeżeli łącznie są spełnione następujące warunki:
@@ -244,14 +244,14 @@ Informacje, o których mowa w art. 7, podaje się konsumentowi w sposób co najm
   - 2\) zawrzeć umowę z zachowaniem należytej staranności przy weryfikacji tożsamości konsumenta i udokumentować dokonanie tej weryfikacji.
 - 6\. W przypadku, o którym mowa w ust. 5 pkt 2, jeżeli umowa została zawarta w trakcie trwania niedostępności systemu teleinformatycznego, w którym prowadzony jest rejestr zastrzeżeń numerów PESEL, innej niż wymieniona w art. 23c ust. 5 ustawy z dnia 24 września 2010 r. o ewidencji ludności, trwającej dłużej niż 15 minut, nie stosuje się przepisu ust. 2.
 
-[^4]: Dodany przez art. 9 ustawy z dnia 7 lipca 2023 r. o zmianie niektórych ustaw w celu ograniczania niektórych skutków kradzieży tożsamości (Dz. U. poz. 1394); wszedł w życie z dniem 1 czerwca 2024 r.
+[^7)]: Dodany przez art. 9 ustawy z dnia 7 lipca 2023 r. o zmianie niektórych ustaw w celu ograniczania niektórych skutków kradzieży tożsamości (Dz. U. poz. 1394); wszedł w życie z dniem 1 czerwca 2024 r.
 
 ### Art. 10.
 
 - 1\. Jeżeli kredytodawca odmówi konsumentowi udzielenia kredytu konsumenckiego na podstawie informacji zawartych w bazie danych lub zbiorze danych kredytodawcy, kredytodawca niezwłocznie przekazuje konsumentowi bezpłatną informację o wynikach tego sprawdzenia oraz wskazuje bazę danych, w której tego sprawdzenia dokonano.
-- 2\. [^5] Jeżeli kredytodawca odmówi konsumentowi udzielenia kredytu konsumenckiego, przepisy art. 70a ust. 1–2 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe stosuje się odpowiednio.
+- 2\. [^8)] Jeżeli kredytodawca odmówi konsumentowi udzielenia kredytu konsumenckiego, przepisy art. 70a ust. 1–2 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe stosuje się odpowiednio.
 
-[^5]: W brzmieniu ustalonym przez art. 22 ustawy z dnia 16 sierpnia 2023 r. o zmianie niektórych ustaw w związku z zapewnieniem rozwoju rynku finansowego oraz ochrony inwestorów na tym rynku (Dz. U. poz. 1723), która weszła w życie z dniem 29 września 2023 r.
+[^8)]: W brzmieniu ustalonym przez art. 22 ustawy z dnia 16 sierpnia 2023 r. o zmianie niektórych ustaw w związku z zapewnieniem rozwoju rynku finansowego oraz ochrony inwestorów na tym rynku (Dz. U. poz. 1723), która weszła w życie z dniem 29 września 2023 r.
 
 ### Art. 11.
 
@@ -798,7 +798,7 @@ Rozdział 5aa
 - 2\. Wniosek o zmianę wpisu w rejestrze oraz wniosek o wykreślenie wpisu z rejestru podlegają opłacie w wysokości 200 zł.
 - 3\. Koszty prowadzenia rejestru są pokrywane z opłat, o których mowa w ust. 1 i 2.
 
-[^10]: Obecnie Centralnej Ewidencji i Informacji o Działalności Gospodarczej określonej w ustawie z dnia 6 marca 2018 r. o Centralnej Ewidencji i Informacji o Działalności Gospodarczej i Punkcie Informacji dla Przedsiębiorcy (Dz. U. z 2022 r. poz. 541), która weszła w życie z dniem 30 kwietnia 2018 r., na podstawie art. 202 ust. 2 ustawy z dnia 6 marca 2018 r. – Przepisy wprowadzające ustawę – Prawo przedsiębiorców oraz inne ustawy dotyczące działalności gospodarczej (Dz. U. poz. 650), która weszła w życie z dniem 30 kwietnia 2018 r.
+[^9)]: Obecnie Centralnej Ewidencji i Informacji o Działalności Gospodarczej określonej w ustawie z dnia 6 marca 2018 r. o Centralnej Ewidencji i Informacji o Działalności Gospodarczej i Punkcie Informacji dla Przedsiębiorcy (Dz. U. z 2022 r. poz. 541), która weszła w życie z dniem 30 kwietnia 2018 r., na podstawie art. 202 ust. 2 ustawy z dnia 6 marca 2018 r. – Przepisy wprowadzające ustawę – Prawo przedsiębiorców oraz inne ustawy dotyczące działalności gospodarczej (Dz. U. poz. 650), która weszła w życie z dniem 30 kwietnia 2018 r.
 
 <!-- page: 23 -->
 ### Art. 59dd.
@@ -895,7 +895,7 @@ Komisja Nadzoru Finansowego oraz osoby wykonujące czynności nadzoru nie ponosz
 
 ### Art. 59do.
 
-[^6] 1. Instytucje pożyczkowe są obowiązane do wnoszenia rocznych wpłat na pokrycie kosztów nadzoru w kwocie nie wyższej niż 0,5 % sumy przychodów uzyskanych z działalności w zakresie udzielania kredytu konsumenckiego za poprzedzający rok obrotowy i nie mniejszej niż równowartość w złotych 5000 euro, przeliczonej przy zastosowaniu średniego kursu euro ogłaszanego przez Narodowy Bank Polski na ostatni dzień roboczy roku poprzedzającego rok kalendarzowy, w którym powstało zobowiązanie.
+[^10)] 1. Instytucje pożyczkowe są obowiązane do wnoszenia rocznych wpłat na pokrycie kosztów nadzoru w kwocie nie wyższej niż 0,5 % sumy przychodów uzyskanych z działalności w zakresie udzielania kredytu konsumenckiego za poprzedzający rok obrotowy i nie mniejszej niż równowartość w złotych 5000 euro, przeliczonej przy zastosowaniu średniego kursu euro ogłaszanego przez Narodowy Bank Polski na ostatni dzień roboczy roku poprzedzającego rok kalendarzowy, w którym powstało zobowiązanie.
 
 - 2\. Instytucje pożyczkowe przekazują Urzędowi Komisji Nadzoru Finansowego deklaracje o wysokości należnej wpłaty na pokrycie kosztów nadzoru. Przepis art. 59dg ust. 2 stosuje się odpowiednio.
 - 3\. Prezes Rady Ministrów określi, w drodze rozporządzenia:
@@ -905,7 +905,7 @@ Komisja Nadzoru Finansowego oraz osoby wykonujące czynności nadzoru nie ponosz
 
   – mając na względzie, aby wysokość wpłat na pokrycie kosztów nadzoru nie wpływała w istotny sposób na zwiększenie kosztów działalności podmiotów obowiązanych do ich uiszczenia, konieczność zapewnienia skuteczności sprawowanego nadzoru oraz możliwość składania deklaracji o wysokości należnej wpłaty na pokrycie kosztów nadzoru w postaci dokumentu elektronicznego w rozumieniu art. 3 pkt 2 ustawy z dnia 17 lutego 2005 r. o informatyzacji działalności podmiotów realizujących zadania publiczne.
 
-[^6]: Dodany przez art. 7 pkt 13 ustawy z dnia 6 października 2022 r. o zmianie ustaw w celu przeciwdziałania lichwie (Dz. U. poz. 2339 oraz z 2023 r. poz. 1723); wszedł w życie z dniem 1 stycznia 2024 r.
+[^10)]: Dodany przez art. 7 pkt 13 ustawy z dnia 6 października 2022 r. o zmianie ustaw w celu przeciwdziałania lichwie (Dz. U. poz. 2339 oraz z 2023 r. poz. 1723); wszedł w życie z dniem 1 stycznia 2024 r.
 
 ### Art. 59dp.
 
@@ -967,9 +967,9 @@ Ustawa wchodzi w życie po upływie 6 miesięcy od dnia ogłoszenia12).
 <!-- page: 27 -->
 Załączniki do ustawy z dnia 12 maja 2011 r. (Dz. U. z 2024 r. poz. 1497)
 
-[^11]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2003 r. poz. 1030, z 2004 r. poz. 959 i 1693, z 2005 r. poz. 1316 oraz z 2011 r. poz. 432 i 984.
+[^11)]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2003 r. poz. 1030, z 2004 r. poz. 959 i 1693, z 2005 r. poz. 1316 oraz z 2011 r. poz. 432 i 984.
 
-[^12]: Ustawa została ogłoszona w dniu 17 czerwca 2011 r. Adres strony internetowej: (informacja ta ma charakter opcjonalny) 2. Opis głównych cech kredytu Rodzaj kredytu Całkowita kwota kredytu Maksymalna kwota/suma (jeżeli nie przewidziano maksymalnej kwoty) wszystkich środków pieniężnych, które zostaną Panu/Pani udostępnione Terminy i sposób wypłaty kredytu W jaki sposób i w jakim terminie otrzyma Pan/Pani środki pieniężne Czas obowiązywania umowy Zasady i terminy spłaty kredytu – będzie Pan/Pani musiał/a dokonać spłaty na następujących warunkach: – kwota, liczba i częstotliwość płatności rat kredytu konsumenckiego: – odsetki lub opłaty będą podlegać spłacie w następujący sposób: Koszty, które zobowiązany/a będzie Pan/Pani ponieść w związku z umową o kredyt\* Koszty prowadzenia jednego lub kilku rachunków w celu dokonywania wpłat i wypłat środków pieniężnych\* Koszty korzystania z instrumentów płatniczych (np. karty kredytowej)\* Inne koszty, które konsument jest zobowiązany ponieść w związku z umową\* Warunki, na jakich koszty związane z umową o kredyt mogą ulegać zmianie\* Opłaty notarialne\* Adres: (siedziba) Numer telefonu: (informacja ta ma charakter opcjonalny) Adres poczty elektronicznej: (informacja ta ma charakter opcjonalny) Numer faksu: (informacja ta ma charakter opcjonalny) Adres strony internetowej:\* (informacja ta ma charakter opcjonalny) Rejestr\* (Wskazanie organu, który zarejestrował działalność kredytodawcy wraz z podaniem numeru w tym rejestrze) Organ nadzoru\* 2. Opis głównych cech kredytu Rodzaj kredytu Całkowita kwota kredytu Maksymalna kwota/suma (jeżeli nie przewidziano maksymalnej kwoty) wszystkich środków pieniężnych, które zostaną Panu/Pani udostępnione Czas obowiązywania umowy Prawo kredytodawcy do żądania spłaty kredytu w dowolnym momencie\* Będzie można żądać od Pana/Pani, w dowolnym momencie, spłaty pełnej kwoty kredytu 3. Koszty kredytu Stopa oprocentowania kredytu oraz warunki jej zmiany – stopa oprocentowania kredytu: – stopa stała lub zmienna z podaniem stopy referencyjnej mającej zastosowanie do pierwotnej stopy oprocentowania: a) dane kredytodawcy identyfikacyjne: Kredytodawca/w stosownych przypadkach Dane (Adres, z którego ma korzystać konsument) przedstawiciel kredytodawcy w państwie członkow- \* skim, w którym Pani/Pan mieszka: Adres: (siedziba) Numer telefonu: (informacja ta ma charakter opcjonalny) Adres poczty elektronicznej: (informacja ta ma charakter opcjonalny) Numer faksu: (informacja ta ma charakter opcjonalny) Adres strony internetowej: (informacja ta ma charakter opcjonalny) Rejestr\* (Wskazanie organu, który zarejestrował działalność kredytodawcy wraz z podaniem numeru w tym rejestrze) Organ nadzoru\*
+[^12)]: Ustawa została ogłoszona w dniu 17 czerwca 2011 r. Adres strony internetowej: (informacja ta ma charakter opcjonalny) 2. Opis głównych cech kredytu Rodzaj kredytu Całkowita kwota kredytu Maksymalna kwota/suma (jeżeli nie przewidziano maksymalnej kwoty) wszystkich środków pieniężnych, które zostaną Panu/Pani udostępnione Terminy i sposób wypłaty kredytu W jaki sposób i w jakim terminie otrzyma Pan/Pani środki pieniężne Czas obowiązywania umowy Zasady i terminy spłaty kredytu – będzie Pan/Pani musiał/a dokonać spłaty na następujących warunkach: – kwota, liczba i częstotliwość płatności rat kredytu konsumenckiego: – odsetki lub opłaty będą podlegać spłacie w następujący sposób: Koszty, które zobowiązany/a będzie Pan/Pani ponieść w związku z umową o kredyt\* Koszty prowadzenia jednego lub kilku rachunków w celu dokonywania wpłat i wypłat środków pieniężnych\* Koszty korzystania z instrumentów płatniczych (np. karty kredytowej)\* Inne koszty, które konsument jest zobowiązany ponieść w związku z umową\* Warunki, na jakich koszty związane z umową o kredyt mogą ulegać zmianie\* Opłaty notarialne\* Adres: (siedziba) Numer telefonu: (informacja ta ma charakter opcjonalny) Adres poczty elektronicznej: (informacja ta ma charakter opcjonalny) Numer faksu: (informacja ta ma charakter opcjonalny) Adres strony internetowej:\* (informacja ta ma charakter opcjonalny) Rejestr\* (Wskazanie organu, który zarejestrował działalność kredytodawcy wraz z podaniem numeru w tym rejestrze) Organ nadzoru\* 2. Opis głównych cech kredytu Rodzaj kredytu Całkowita kwota kredytu Maksymalna kwota/suma (jeżeli nie przewidziano maksymalnej kwoty) wszystkich środków pieniężnych, które zostaną Panu/Pani udostępnione Czas obowiązywania umowy Prawo kredytodawcy do żądania spłaty kredytu w dowolnym momencie\* Będzie można żądać od Pana/Pani, w dowolnym momencie, spłaty pełnej kwoty kredytu 3. Koszty kredytu Stopa oprocentowania kredytu oraz warunki jej zmiany – stopa oprocentowania kredytu: – stopa stała lub zmienna z podaniem stopy referencyjnej mającej zastosowanie do pierwotnej stopy oprocentowania: a) dane kredytodawcy identyfikacyjne: Kredytodawca/w stosownych przypadkach Dane (Adres, z którego ma korzystać konsument) przedstawiciel kredytodawcy w państwie członkow- \* skim, w którym Pani/Pan mieszka: Adres: (siedziba) Numer telefonu: (informacja ta ma charakter opcjonalny) Adres poczty elektronicznej: (informacja ta ma charakter opcjonalny) Numer faksu: (informacja ta ma charakter opcjonalny) Adres strony internetowej: (informacja ta ma charakter opcjonalny) Rejestr\* (Wskazanie organu, który zarejestrował działalność kredytodawcy wraz z podaniem numeru w tym rejestrze) Organ nadzoru\*
 
 ## Załącznik nr 1
 

@@ -12,7 +12,7 @@ Poz. 1298
 - 1\. Na podstawie art. 16 ust. 3 ustawy z dnia 20 lipca 2000 r. o ogłaszaniu aktów normatywnych i niektórych innych aktów prawnych (Dz. U. z 2019 r. poz. 1461 oraz z 2026 r. poz. 912) ogłasza się w załączniku do niniejszego obwieszczenia jednolity tekst rozporządzenia Ministra Spraw Zagranicznych z dnia 18 grudnia 2015 r. w sprawie opłat konsularnych (Dz. U. z 2025 r. poz. 76), z uwzględnieniem zmian wprowadzonych rozporządzeniem Ministra Spraw Zagranicznych z dnia 29 października 2025 r. zmieniającym rozporządzenie w sprawie opłat konsularnych (Dz. U. poz. 1523).
 - 2\. Podany w załączniku do niniejszego obwieszczenia tekst jednolity rozporządzenia nie obejmuje odnośnika nr 2 oraz § 2 rozporządzenia Ministra Spraw Zagranicznych z dnia 29 października 2025 r. zmieniającego rozporządzenie w sprawie opłat konsularnych (Dz. U. poz. 1523), które stanowią:
 
-„[^1] Niniejsze rozporządzenie w zakresie swojej regulacji wdraża dyrektywę Rady (UE) 2019/997 z dnia 18 czerwca
+„[^2)] Niniejsze rozporządzenie w zakresie swojej regulacji wdraża dyrektywę Rady (UE) 2019/997 z dnia 18 czerwca
 
 2019 r. ustanawiającą unijny tymczasowy dokument podróży oraz uchylającą decyzję 96/409/WPZiB (Dz. Urz. UE L 163 z 20.06.2019, str. 1 oraz Dz. Urz. UE L 2024/1986 z 16.07.2024).”
 
@@ -23,9 +23,9 @@ Minister Spraw Zagranicznych: *R. Sikorski*
 <!-- page: 2 -->
 Załącznik do obwieszczenia Ministra Spraw Zagranicznych z dnia 15 września 2026 r. (Dz. U. poz. 1298)
 
-[^1]: Niniejsze rozporządzenie w zakresie swojej regulacji wdraża dyrektywę Rady (UE) 2019/997 z dnia 18 czerwca 2019 r. ustanawiającą unijny tymczasowy dokument podróży oraz uchylającą decyzję 96/409/WPZiB (Dz. Urz. UE L 163 z 20.06.2019, str. 1 oraz Dz. Urz. UE L 2024/1986 z 16.07.2024).
+[^2)]: Niniejsze rozporządzenie w zakresie swojej regulacji wdraża dyrektywę Rady (UE) 2019/997 z dnia 18 czerwca 2019 r. ustanawiającą unijny tymczasowy dokument podróży oraz uchylającą decyzję 96/409/WPZiB (Dz. Urz. UE L 163 z 20.06.2019, str. 1 oraz Dz. Urz. UE L 2024/1986 z 16.07.2024).
 
-[^4]: Minister Spraw Zagranicznych kieruje działem administracji rządowej – sprawy zagraniczne, na podstawie § 1 ust. 2 pkt 2 rozporządzenia Prezesa Rady Ministrów z dnia 25 lipca 2025 r. w sprawie szczegółowego zakresu działania Ministra Spraw Zagranicznych (Dz. U. poz. 993).
+[^1)]: Minister Spraw Zagranicznych kieruje działem administracji rządowej – sprawy zagraniczne, na podstawie § 1 ust. 2 pkt 2 rozporządzenia Prezesa Rady Ministrów z dnia 25 lipca 2025 r. w sprawie szczegółowego zakresu działania Ministra Spraw Zagranicznych (Dz. U. poz. 993).
 
 ## ROZPORZĄDZENIE MINISTRA SPRAW ZAGRANICZNYCH z dnia 18 grudnia 2015 r. w sprawie opłat konsularnych
 
@@ -58,7 +58,7 @@ Wysokość opłat konsularnych przeliczonych na walutę, w której są pobierane
 <!-- page: 3 -->
 - 4\. Konsul upowszechnia informację o udostępnionych sposobach wnoszenia opłaty konsularnej i przedpłaty na poczet wydatków ponoszonych przez konsula w sposób umożliwiający zapoznanie się z tą informacją przez wszystkich zainteresowanych.
 
-[^5]: Na dzień ogłoszenia obwieszczenia w Dzienniku Ustaw Rzeczypospolitej Polskiej działem administracji rządowej – sprawy zagraniczne kieruje Minister Spraw Zagranicznych, na podstawie § 1 ust. 2 pkt 2 rozporządzenia Prezesa Rady Ministrów z dnia 25 lipca 2025 r. w sprawie szczegółowego zakresu działania Ministra Spraw Zagranicznych (Dz. U. poz. 993). I) Odnośnik nr 2 dodany do tytułu rozporządzenia przez § 1 pkt 1 rozporządzenia Ministra Spraw Zagranicznych z dnia 29 października 2025 r. zmieniającego rozporządzenie w sprawie opłat konsularnych (Dz. U. poz. 1523), które weszło w życie z dniem 9 grudnia 2025 r.
+[^1)-2]: Na dzień ogłoszenia obwieszczenia w Dzienniku Ustaw Rzeczypospolitej Polskiej działem administracji rządowej – sprawy zagraniczne kieruje Minister Spraw Zagranicznych, na podstawie § 1 ust. 2 pkt 2 rozporządzenia Prezesa Rady Ministrów z dnia 25 lipca 2025 r. w sprawie szczegółowego zakresu działania Ministra Spraw Zagranicznych (Dz. U. poz. 993). I) Odnośnik nr 2 dodany do tytułu rozporządzenia przez § 1 pkt 1 rozporządzenia Ministra Spraw Zagranicznych z dnia 29 października 2025 r. zmieniającego rozporządzenie w sprawie opłat konsularnych (Dz. U. poz. 1523), które weszło w życie z dniem 9 grudnia 2025 r.
 
 ## § 6.
 
@@ -76,14 +76,14 @@ Do spraw wszczętych i niezakończonych przed dniem wejścia w życie rozporząd
 
 ## § 9.
 
-Rozporządzenie wchodzi w życie z dniem 1 stycznia 2016 r.[^2]
+Rozporządzenie wchodzi w życie z dniem 1 stycznia 2016 r.[^3)]
 
 <!-- page: 4 -->
-Załącznik do rozporządzenia Ministra Spraw Zagranicznych z dnia 18 grudnia 2015 r. (Dz. U. z 2026 r. poz. 1298)[^3]
+Załącznik do rozporządzenia Ministra Spraw Zagranicznych z dnia 18 grudnia 2015 r. (Dz. U. z 2026 r. poz. 1298)[^4)]
 
-[^2]: Niniejsze rozporządzenie było poprzedzone rozporządzeniem Ministra Spraw Zagranicznych z dnia 23 kwietnia 2013 r. w sprawie opłat konsularnych (Dz. U. poz. 522), które utraciło moc z dniem wejścia w życie niniejszego rozporządzenia na podstawie art. 151 ustawy z dnia 25 czerwca 2015 r. – Prawo konsularne (Dz. U. poz. 1274).
+[^3)]: Niniejsze rozporządzenie było poprzedzone rozporządzeniem Ministra Spraw Zagranicznych z dnia 23 kwietnia 2013 r. w sprawie opłat konsularnych (Dz. U. poz. 522), które utraciło moc z dniem wejścia w życie niniejszego rozporządzenia na podstawie art. 151 ustawy z dnia 25 czerwca 2015 r. – Prawo konsularne (Dz. U. poz. 1274).
 
-[^3]: W brzmieniu ustalonym przez § 1 pkt 2 rozporządzenia Ministra Spraw Zagranicznych z dnia 29 października 2025 r. zmieniającego rozporządzenie w sprawie opłat konsularnych (Dz. U. poz. 1523), które weszło w życie z dniem 9 grudnia 2025 r.
+[^4)]: W brzmieniu ustalonym przez § 1 pkt 2 rozporządzenia Ministra Spraw Zagranicznych z dnia 29 października 2025 r. zmieniającego rozporządzenie w sprawie opłat konsularnych (Dz. U. poz. 1523), które weszło w życie z dniem 9 grudnia 2025 r.
 
 ## TARYFA OPŁAT KONSULARNYCH
 
@@ -156,11 +156,11 @@ Załącznik do rozporządzenia Ministra Spraw Zagranicznych z dnia 18 grudnia 20
 | 9.01 | Wykonanie, na wniosek strony, czynności poza lokalem urzędu konsularnego – za każde rozpoczęte 8 godzin, włącznie z czasem na dojazd i powrót do urzędu | 90 |
 | 9.02 | Wykonanie w trybie pilnym czynności wymienionej w taryfie | 30 |
 
-[^6]: Za czynności konsularne wykonywane w ramach opracowywania dokumentacji nie pobiera się dodatkowych opłat, z wyjątkiem opłat za sporządzenie i poświadczenie lub sprawdzenie i poświadczenie tłumaczenia (poz. 6.08, 6.09, 6.10 i 6.11 taryfy opłat konsularnych).
+[^*)]: Za czynności konsularne wykonywane w ramach opracowywania dokumentacji nie pobiera się dodatkowych opłat, z wyjątkiem opłat za sporządzenie i poświadczenie lub sprawdzenie i poświadczenie tłumaczenia (poz. 6.08, 6.09, 6.10 i 6.11 taryfy opłat konsularnych).
 
-[^7]: Przy obliczaniu wysokości należnej opłaty konsularnej objętość dokumentu ustala się w sposób przewidziany w przepisach w sprawie wynagrodzenia za czynności tłumacza przysięgłego.
+[^**)]: Przy obliczaniu wysokości należnej opłaty konsularnej objętość dokumentu ustala się w sposób przewidziany w przepisach w sprawie wynagrodzenia za czynności tłumacza przysięgłego.
 
-[^8]: Wraz z ewentualnym uzyskaniem legalizacji. \*\*\*\*) Opłaty za szczególny sposób wykonania czynności pobiera się niezależnie od opłat za wykonywaną czynność konsularną oraz od zwrotu poniesionych wydatków.
+[^***)]: Wraz z ewentualnym uzyskaniem legalizacji. \*\*\*\*) Opłaty za szczególny sposób wykonania czynności pobiera się niezależnie od opłat za wykonywaną czynność konsularną oraz od zwrotu poniesionych wydatków.
 
 <!-- page: 7 -->
 ## II. Obowiązująca od dnia 1 stycznia 2026 r.
@@ -234,8 +234,8 @@ Załącznik do rozporządzenia Ministra Spraw Zagranicznych z dnia 18 grudnia 20
 | 9.01 | Wykonanie, na wniosek strony, czynności poza lokalem urzędu konsularnego – za każde rozpoczęte 8 godzin, włącznie z czasem na dojazd i powrót do urzędu | 110 |
 | 9.02 | Wykonanie w trybie pilnym czynności wymienionej w taryfie | 40 |
 
-[^9]: Za czynności konsularne wykonywane w ramach opracowywania dokumentacji nie pobiera się dodatkowych opłat, z wyjątkiem opłat za sporządzenie i poświadczenie lub sprawdzenie i poświadczenie tłumaczenia (poz. 6.08, 6.09, 6.10 i 6.11 taryfy opłat konsularnych).
+[^*)-2]: Za czynności konsularne wykonywane w ramach opracowywania dokumentacji nie pobiera się dodatkowych opłat, z wyjątkiem opłat za sporządzenie i poświadczenie lub sprawdzenie i poświadczenie tłumaczenia (poz. 6.08, 6.09, 6.10 i 6.11 taryfy opłat konsularnych).
 
-[^10]: Przy obliczaniu wysokości należnej opłaty konsularnej objętość dokumentu ustala się w sposób przewidziany w przepisach w sprawie wynagrodzenia za czynności tłumacza przysięgłego.
+[^**)-2]: Przy obliczaniu wysokości należnej opłaty konsularnej objętość dokumentu ustala się w sposób przewidziany w przepisach w sprawie wynagrodzenia za czynności tłumacza przysięgłego.
 
-[^11]: Wraz z ewentualnym uzyskaniem legalizacji. \*\*\*\*) Opłaty za szczególny sposób wykonania czynności pobiera się niezależnie od opłat za wykonywaną czynność konsularną oraz od zwrotu poniesionych wydatków.
+[^***)-2]: Wraz z ewentualnym uzyskaniem legalizacji. \*\*\*\*) Opłaty za szczególny sposób wykonania czynności pobiera się niezależnie od opłat za wykonywaną czynność konsularną oraz od zwrotu poniesionych wydatków.

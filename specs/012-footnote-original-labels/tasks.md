@@ -143,7 +143,7 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
 
 ### Raport goldenów i akceptacja (FR-908, FR-163)
 
-- [ ] T013 [US1] Raport różnic skryptem z T002 dla: każdej pary `*.expected.md`/`*.actual.md` parsera, goldenów
+- [X] T013 [US1] Raport różnic skryptem z T002 dla: każdej pary `*.expected.md`/`*.actual.md` parsera, goldenów
   chunków `tests/LegalAgent.Chunking.Tests/Golden/*.chunks.jsonl`/`*.actual.jsonl`, prywatnego korpusu (z
   `LEGALAGENT_PRIVATE_CORPUS` ustawionym na ścieżkę bezwzględną) oraz plików z `baseline-012/` przekonwertowanych
   ponownie (downloads, katalog główny). Oczekiwane: diff po normalizacji pusty wszędzie (SC-133); liczby odnośników,
@@ -151,10 +151,15 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
   obwieszczenie-msz, identyfikator zastępczy i `FTN002` tylko w `Corpus/banking/regulamin-rachunku` (SC-134);
   w regulaminie kredytu gotówkowego z `downloads` tabela s. 21 ma odnośniki 21–24 (quickstart 4). Każde odstępstwo:
   zatrzymać, opisać i naprawić przed pokazaniem właścicielowi (nowe zadanie T013x).
-- [ ] T014 [US1] **STOP — akceptacja właściciela.** Przedstawić raport T013 po polsku: lista zmienionych goldenów
+- [X] T013a [US1] Odstępstwo od SC-133 w chunkach (wynik T013): Markdown wszystkich 34 dokumentów po normalizacji
+  identyczny, ale chunki mają dłuższe identyfikatory (`[^1)]` zamiast `[^1]`), więc zmienia się pole `length`, a części
+  bliskie limitowi 2000 znaków dzielą się inaczej: REG-06 § 2 (1999 → 2001 znaków: 1 → 2 części), uslugi-platnicze
+  Art. 132e (granica części 2/3), prywatny ind-4 „35. Lista czynności…” (granice części 2–4). Reguła chunkera bez
+  zmian; do decyzji właściciela w T014.
+- [X] T014 [US1] **STOP — akceptacja właściciela.** Przedstawić raport T013 po polsku: lista zmienionych goldenów
   (parser publiczny, prywatny, chunki), przykładowe fragmenty przed/po (akt z dopiskiem, regulamin z tabelą,
   dokument z `FTN002`), wynik normalizacji. Nie uruchamiać `UPDATE_GOLDEN` bez wyraźnej zgody.
-- [ ] T015 [US1] Po zgodzie: `UPDATE_GOLDEN=1 dotnet test tests/LegalAgent.PdfParser.Tests` (także z
+- [X] T015 [US1] Po zgodzie: `UPDATE_GOLDEN=1 dotnet test tests/LegalAgent.PdfParser.Tests` (także z
   `LEGALAGENT_PRIVATE_CORPUS` — prywatne goldeny poza gitem) i `UPDATE_GOLDEN=1 dotnet test tests/LegalAgent.Chunking.Tests`;
   usunąć pozostałe `*.actual.*`; pełny zestaw zielony. Commit tylko śledzonych goldenów (`git status` → jawne
   ścieżki `tests/LegalAgent.PdfParser.Tests/Corpus/**/*.expected.md`, `tests/LegalAgent.Chunking.Tests/Golden/*.chunks.jsonl`):
