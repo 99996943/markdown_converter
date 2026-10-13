@@ -61,6 +61,25 @@ adresy ──► pobieranie 5/5 ──► konwersja 5/5 ──► kontrola rozmi
 7. **Zapis** — `FAQ_mBank.md` w katalogu `Faq:OutputDirectory` (domyślnie `faq`), atomowo; gdy generowanie się
    nie uda, poprzedni plik zostaje bez zmian.
 
+### Wiersz źródeł w pliku FAQ
+
+Nazwa dokumentu prowadzi do PDF-u na stronę, na której zaczyna się sekcja jednostki, a jednostka — do nagłówka tej
+sekcji w `<nazwa>.md` zapisanym obok PDF-u (ścieżka względna od pliku FAQ):
+
+```text
+Źródło: [Regulamin usług gotówkowych](https://bank.example/regulamin.pdf#page=12), [§ 26](../downloads/regulamin.md#-26-wpłaty)
+```
+
+Ograniczenia:
+
+- śledzony plik `faq/FAQ_mBank.md` linkuje do `downloads/*.md`, a te nie są w git (to prawdziwe dokumenty banku): na
+  GitHubie link do nagłówka prowadzi do nieistniejącego pliku; lokalnie (VS Code, przeglądarka plików) działa po
+  pobraniu dokumentów. Link do strony PDF-u działa zawsze;
+- `#page=N` obsługują podglądy PDF w Chrome, Edge i Firefox; inne przeglądarki otwierają pierwszą stronę;
+- bez linku zostaje jednostka jako zwykły tekst, gdy nie ma ścieżki względnej (np. inny dysk) albo kotwica jest nieznana.
+
+Kontrakt: `specs/013-faq-source-links/contracts/faq-file-links.md`.
+
 Konsola pokazuje postęp każdego etapu, a w etapie FAQ także rozmiar i zużycie tokenów każdego zapytania oraz
 ostrzeżenia weryfikacji, np.:
 

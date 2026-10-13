@@ -184,13 +184,13 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
 
 ## Phase 5: Polish & Cross-Cutting Concerns
 
-- [ ] T021 [P] Kontrakt: w `specs/006-faq-generation/contracts/faq-file.md` przy „Wiersz źródeł” odsyłacz „od 1.5.0
+- [X] T021 [P] Kontrakt: w `specs/006-faq-generation/contracts/faq-file.md` przy „Wiersz źródeł” odsyłacz „od 1.5.0
   linki ze stroną i nagłówkiem — `specs/013-faq-source-links/contracts/faq-file-links.md`”; reszta bez zmian.
-- [ ] T022 [P] `src/LegalAgent.Faq/README.md` (API: `FaqUnitLocation`, `UnitExtractor.Locate`, `UnitMatcher.Find`,
+- [X] T022 [P] `src/LegalAgent.Faq/README.md` (API: `FaqUnitLocation`, `UnitExtractor.Locate`, `UnitMatcher.Find`,
   `MarkdownAnchors`, `FaqDocumentInput.UnitLocations`/`MarkdownLink`, sekcja wersji 1.5.0) i `src/mBank.FaqGenerator/README.md`
   (format wiersza źródła z przykładem; ograniczenie: w repozytorium linki do `downloads/*.md` działają lokalnie, nie
   na GitHubie; `#page=N` w Chrome/Edge/Firefox); `CLAUDE.md` (opis `LegalAgent.Faq`: linki źródeł, `MarkdownAnchors`).
-- [ ] T023 Wersja 1.5.0 w `Directory.Build.props`; `dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- generate`
+- [X] T023 Wersja 1.5.0 w `Directory.Build.props`; `dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- generate`
   i `verify` (zmienia się tylko wersja w `corpus/manifest.json` — sprawdzić `git diff --stat corpus`); pełny zestaw
   testów z `LEGALAGENT_PRIVATE_CORPUS` (bezwzględna ścieżka) zielony. Commit
   `chore: version 1.5.0, corpus manifest, docs for FAQ source links (spec 013 T021-T023)`.

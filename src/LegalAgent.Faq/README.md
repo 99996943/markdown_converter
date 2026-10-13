@@ -19,7 +19,11 @@ ConversionRun run = await converter.ConvertAllAsync(sources, progress, ct);
 FaqDocumentInput[] documents =
 [
     .. run.Documents.Select(d => new FaqDocumentInput(
-        string.IsNullOrWhiteSpace(d.Title) ? d.MarkdownFileName : d.Title, d.Address, d.Markdown, d.Units)),
+        string.IsNullOrWhiteSpace(d.Title) ? d.MarkdownFileName : d.Title, d.Address, d.Markdown, d.Units)
+    {
+        UnitLocations = d.UnitLocations,                  // strona PDF i kotwica nagłówka każdej jednostki
+        MarkdownLink = "../downloads/" + Uri.EscapeDataString(d.MarkdownFileName), // adres .md względem pliku FAQ (albo null)
+    }),
 ];
 FaqGenerator.CheckInput(documents, options);   // rozmiar dokumentów — przed pytaniem o klucz
 
@@ -93,6 +97,39 @@ Ostateczne N pozycji wybiera kod (model nie umie wiarygodnie trafić w dokładne
 `FaqMarkdownRenderer` składa plik: nagłówek YAML (typ, tytuł, opis, adresy dokumentów, czas, model, wdrożenie) i
 pozycje `## pytanie`, odpowiedź, „Źródło: [nazwa dokumentu](adres), jednostka”. Kontrakt:
 `specs/006-faq-generation/contracts/faq-file.md`.
+
+#### Linki w wierszu źródeł (od wersji 1.5.0, spec 013)
+
+Nazwa dokumentu prowadzi do PDF-u na stronę, na której zaczyna się sekcja jednostki, a jednostka — do nagłówka tej
+sekcji w Markdownie dokumentu:
+
+```text
+Źródło: [Regulamin usług gotówkowych](https://bank.example/regulamin.pdf#page=12), [§ 26](../downloads/regulamin.md#-26-wpłaty)
+```
+
+Widoczny tekst wiersza się nie zmienia. Bez linku zostaje wiersz jak dotąd: gdy jednostki nie ma na liście dokumentu,
+strona jest nieznana albo adres ma już fragment `#` (nazwa bez `#page`), a także gdy kotwica jest nieznana albo
+aplikacja nie podała `MarkdownLink` (jednostka jako zwykły tekst). Front matter `resource` nigdy nie ma `#page`.
+Kontrakt: `specs/013-faq-source-links/contracts/faq-file-links.md`.
+
+Nowe elementy publicznego API (wszystkie dodatkowe):
+
+| Element | Rola |
+|---|---|
+| `FaqUnitLocation(Unit, Page, Anchor)` | jednostka dokumentu, pierwsza strona jej sekcji (1 = pierwsza strona PDF-u) i kotwica nagłówka |
+| `UnitExtractor.Locate(document, markdown)` | lista `FaqUnitLocation` w kolejności dokumentu; te same jednostki co `FromDocument` |
+| `UnitMatcher.Find(cited, units)` | jednostka z listy, do której pasuje tekst modelu (`Matches` jest nad nim zbudowane) |
+| `MarkdownAnchors.Slug(text)`, `ForDocument(markdown)` | kotwice nagłówków jak w GitHub i VS Code (`github-slugger`); `ForDocument` numeruje powtórzenia `-1`, `-2`… |
+| `ConvertedDocument.UnitLocations` | wynik `Locate` dla przekonwertowanego dokumentu |
+| `FaqDocumentInput.UnitLocations`, `.MarkdownLink` | wejście generatora; `MarkdownLink` to ścieżka do `<nazwa>.md` względem pliku FAQ (separator `/`, segmenty kodowane procentowo) albo `null` |
+| `FaqSourceDocument.UnitLocations`, `.MarkdownLink` | to samo w `FaqResult`, z którego `FaqMarkdownRenderer` składa wiersz |
+
+Biblioteka nie zna nazwy „downloads” ani hosta — adres Markdownu liczy aplikacja.
+
+#### Zmiany wersji
+
+- **1.5.0** (MINOR, tylko dodatki): linki w wierszu źródeł FAQ i API wyżej. Istniejące konstruktory i właściwości bez
+  zmian; bez `UnitLocations` i `MarkdownLink` plik FAQ jest taki jak w 1.4.x.
 
 ## Weryfikacja propozycji modelu
 
