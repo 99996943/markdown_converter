@@ -160,33 +160,39 @@ public static partial class NumberCheck
 
     private static string CellText(TableCell cell) => string.Join(' ', cell.Inlines.OfType<TextRun>().Select(r => r.Text));
 
-    /// <summary>Numeric original labels of the document's footnotes: one per definition and one per reference.</summary>
+    /// <summary>
+    /// Numeric original labels of the document's footnotes: one per definition and one per reference. Spec 012: the
+    /// Markdown identifier is the label (<c>[^21]</c>, <c>[^1)-2]</c>), so references are matched by identifier.
+    /// </summary>
     private static Dictionary<string, int> FootnoteLabels(string markdown, LegalDocument document)
     {
         IEnumerable<Footnote> Of(Section section) => section.Footnotes.Concat(section.Children.SelectMany(Of));
-        Dictionary<int, string> labels = document.PreambleFootnotes.Concat(document.Sections.SelectMany(Of))
-            .ToDictionary(f => f.Number, f => f.OriginalLabel.TrimEnd(')'));
+        Dictionary<string, string> labels = document.PreambleFootnotes.Concat(document.Sections.SelectMany(Of))
+            .ToDictionary(Identifier, f => f.OriginalLabel.TrimEnd(')'), StringComparer.Ordinal);
         var allowed = new Dictionary<string, int>(StringComparer.Ordinal);
-        void Add(int number)
+        void Add(string identifier)
         {
-            if (labels.TryGetValue(number, out string? label) && label.Length > 0 && label.All(char.IsAsciiDigit))
+            if (labels.TryGetValue(identifier, out string? label) && label.Length > 0 && label.All(char.IsAsciiDigit))
             {
                 allowed[label] = allowed.GetValueOrDefault(label) + 1;
             }
         }
 
-        foreach (int number in labels.Keys)
+        foreach (string identifier in labels.Keys)
         {
-            Add(number);
+            Add(identifier);
         }
 
-        foreach (Match m in NumberedReference().Matches(markdown))
+        foreach (Match m in IdentifiedReference().Matches(markdown))
         {
-            Add(int.Parse(m.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture));
+            Add(m.Groups[1].Value);
         }
 
         return allowed;
     }
+
+    private static string Identifier(Footnote footnote) =>
+        footnote.Identifier.Length > 0 ? footnote.Identifier : footnote.Number.ToString(System.Globalization.CultureInfo.InvariantCulture);
 
     private static string Clean(string markdown)
     {
@@ -397,8 +403,8 @@ public static partial class NumberCheck
     [GeneratedRegex(@"\[\^[^\]]+\]", RegexOptions.CultureInvariant)]
     private static partial Regex FootnoteReference();
 
-    [GeneratedRegex(@"\[\^(\d+)\](?!:)", RegexOptions.CultureInvariant)]
-    private static partial Regex NumberedReference();
+    [GeneratedRegex(@"\[\^([^\]\s]+)\](?!:)", RegexOptions.CultureInvariant)]
+    private static partial Regex IdentifiedReference();
 }
 
 /// <summary>

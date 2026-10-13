@@ -51,7 +51,7 @@ internal static class QualityMetrics
 
     private static readonly char[] TrimChars = ['.', ',', ';', ':', '!', '?', '(', ')', '„', '”', '"', '\''];
     private static readonly Regex PageMarker = new(@"<!--\s*page:\s*\d+\s*-->", RegexOptions.CultureInvariant);
-    private static readonly Regex FootnoteMark = new(@"\[\^\d+\]:?", RegexOptions.CultureInvariant);
+    private static readonly Regex FootnoteMark = new(@"\[\^[^\]\s]+\]:?", RegexOptions.CultureInvariant);
     private static readonly Regex Emphasis = new(@"(?<!\\)\*+", RegexOptions.CultureInvariant);
     private static readonly Regex UnescapedPipe = new(@"(?<!\\)\|", RegexOptions.CultureInvariant);
     private static readonly Regex Escape = new(@"\\(.)", RegexOptions.CultureInvariant | RegexOptions.Singleline);

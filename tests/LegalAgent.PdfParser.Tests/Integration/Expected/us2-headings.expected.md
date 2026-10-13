@@ -11,9 +11,9 @@ Ustawa określa zasady świadczenia usług testowych przez dostawców usług ora
 
 #### Art. 2.
 
-Ustawy nie stosuje się do usług świadczonych nieodpłatnie przez organy administracji publicznej.[^1]
+Ustawy nie stosuje się do usług świadczonych nieodpłatnie przez organy administracji publicznej.[^1)]
 
-[^1]: Niniejsza ustawa wdraża dyrektywę Parlamentu Europejskiego i Rady (UE) 2026/1.
+[^1)]: Niniejsza ustawa wdraża dyrektywę Parlamentu Europejskiego i Rady (UE) 2026/1.
 
 ### Rozdział 2. Definicje
 

@@ -1245,8 +1245,8 @@ public sealed class CorpusLayoutsIntegrationTests
         }
 
         Assert.DoesNotContain("Bank.6", md, StringComparison.Ordinal);
-        Assert.Contains("ryzyka przez Bank.[^1]", md, StringComparison.Ordinal);
-        Assert.Contains("[^1]: Limity zdefiniowane", md, StringComparison.Ordinal);
+        Assert.Contains("ryzyka przez Bank.[^6)]", md, StringComparison.Ordinal);
+        Assert.Contains("[^6)]: Limity zdefiniowane", md, StringComparison.Ordinal);
     }
 
     /// <summary>
@@ -1276,8 +1276,8 @@ public sealed class CorpusLayoutsIntegrationTests
             await File.WriteAllTextAsync(Path.Combine(probe, "t087j.md"), md, TestContext.Current.CancellationToken);
         }
 
-        Assert.Contains("opłat i prowizji.[^1]", md, StringComparison.Ordinal);
-        Assert.Contains("[^1]: Taryfa jest dostępna", md, StringComparison.Ordinal);
+        Assert.Contains("opłat i prowizji.[^4)]", md, StringComparison.Ordinal);
+        Assert.Contains("[^4)]: Taryfa jest dostępna", md, StringComparison.Ordinal);
     }
 
     /// <summary>
@@ -1880,8 +1880,8 @@ public sealed class CorpusLayoutsIntegrationTests
         Assert.Contains("art. 66¹ § 1 do § 3 oraz art. 68² Kodeksu cywilnego.", md, StringComparison.Ordinal);
         Assert.DoesNotContain("661", md, StringComparison.Ordinal);
         Assert.DoesNotContain("682", md, StringComparison.Ordinal);
-        Assert.Contains("Postanowienia umowy[^1] obowiązują", md, StringComparison.Ordinal);
-        Assert.Contains("[^1]: Umowa zawierana", md, StringComparison.Ordinal);
+        Assert.Contains("Postanowienia umowy[^1)] obowiązują", md, StringComparison.Ordinal);
+        Assert.Contains("[^1)]: Umowa zawierana", md, StringComparison.Ordinal);
     }
 
     private static readonly string[] BankFooter =

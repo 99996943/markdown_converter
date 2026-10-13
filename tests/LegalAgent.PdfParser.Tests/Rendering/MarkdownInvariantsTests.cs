@@ -61,12 +61,11 @@ public sealed partial class MarkdownInvariantsTests
         Assert.EndsWith("\n", markdown, StringComparison.Ordinal);
         Assert.False(markdown.EndsWith("\n\n", StringComparison.Ordinal));
 
-        // 3. Every [^n] has exactly one definition, numbering is continuous from 1.
-        int[] definitions = lines.Select(l => FootnoteDefinition().Match(l)).Where(m => m.Success)
-            .Select(m => int.Parse(m.Groups[1].Value, CultureInfo.InvariantCulture)).ToArray();
-        int[] references = FootnoteReference().Matches(markdown)
-            .Select(m => int.Parse(m.Groups[1].Value, CultureInfo.InvariantCulture)).Distinct().ToArray();
-        Assert.Equal(Enumerable.Range(1, definitions.Length), definitions.Order());
+        // 3. Every [^id] has exactly one definition (contract 2.0.0, spec 012: identifiers are the PDF labels).
+        string[] definitions = lines.Select(l => FootnoteDefinition().Match(l)).Where(m => m.Success)
+            .Select(m => m.Groups[1].Value).ToArray();
+        string[] references = FootnoteReference().Matches(markdown).Select(m => m.Groups[1].Value).Distinct().ToArray();
+        Assert.Equal(definitions.Length, definitions.Distinct(StringComparer.Ordinal).Count());
         Assert.All(references, r => Assert.Contains(r, definitions));
 
         // 4. A heading level grows by at most one relative to the previous heading.
@@ -118,10 +117,10 @@ public sealed partial class MarkdownInvariantsTests
     [GeneratedRegex(@"^(Art\.|§|Rozdział|Dział|Tytuł|Księga|Część|Oddział)\s", RegexOptions.CultureInvariant)]
     private static partial Regex EditorialUnit();
 
-    [GeneratedRegex(@"^\[\^(\d+)\]: ", RegexOptions.CultureInvariant)]
+    [GeneratedRegex(@"^\[\^([^\]\s]+)\]: ", RegexOptions.CultureInvariant)]
     private static partial Regex FootnoteDefinition();
 
-    [GeneratedRegex(@"\[\^(\d+)\](?!:)", RegexOptions.CultureInvariant)]
+    [GeneratedRegex(@"\[\^([^\]\s]+)\](?!:)", RegexOptions.CultureInvariant)]
     private static partial Regex FootnoteReference();
 
     [GeneratedRegex(@"^(#{1,6}) ", RegexOptions.CultureInvariant)]

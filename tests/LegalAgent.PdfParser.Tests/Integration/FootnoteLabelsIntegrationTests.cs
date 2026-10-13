@@ -151,7 +151,7 @@ public sealed partial class FootnoteLabelsIntegrationTests
         Assert.Contains("| spłacić kredyt przed terminem | TAK[^23] |", markdown, StringComparison.Ordinal);
         Assert.Contains("| wypowiedzieć umowę | TAK[^24] |", markdown, StringComparison.Ordinal);
         Assert.Contains("[^21]: O dacie wprowadzenia tej funkcjonalności poinformujemy na naszej stronie internetowej.", markdown, StringComparison.Ordinal);
-        Assert.Equal(["7", "21", "22", "23", "24"], References(markdown).Order());
+        Assert.Equal(["7", "21", "22", "23", "24"], References(markdown));
         Assert.Equal(["7", "21", "22", "23", "24"], Definitions(markdown));
         Assert.DoesNotContain("[^1]", markdown, StringComparison.Ordinal);
         Assert.Equal(0, Warnings(result, "FTN001_OrphanFootnote"));

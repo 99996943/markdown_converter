@@ -50,16 +50,16 @@ public sealed class FootnoteWarningsIntegrationTests
 
         using var stream = new MemoryStream(page.Build());
         PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, cancellationToken: TestContext.Current.CancellationToken);
-        // The Markdown of parser 1.3.0: only the report changes (FR-807). „2)” and „3)” stay glued to their words.
+        // The Markdown of parser 1.3.0 (identifiers: spec 012): only the report changes (FR-807). „2)” and „3)” stay glued to their words.
         string paragraph = string.Concat(Enumerable.Repeat("Przepisy ustawy stosuje się do pracowników zatrudnionych w urzędach administracji. ", 6));
         Assert.Equal(
             "<!-- page: 1 -->\n## Art. 12.\n\n" + paragraph
             + "Termin określa się w drodze ogłoszenia2), a jego treść podaje się do wiadomości. "
             + "Zmiany wprowadza się na zasadach ogólnych3), jeżeli ustawa nie stanowi inaczej. "
-            + "Przepis stosuje się odpowiednio do członków korpusu[^1] Pozostałe sprawy reguluje statut urzędu.\n\n"
-            + "[^1]: Dotyczy członków korpusu służby.\n\n"
-            + "[^2]: Zmiany tekstu jednolitego zostały ogłoszone w dzienniku urzędowym.\n\n"
-            + "[^3]: Przepis wprowadzony nowelizacją ustawy.\n",
+            + "Przepis stosuje się odpowiednio do członków korpusu[^8)] Pozostałe sprawy reguluje statut urzędu.\n\n"
+            + "[^8)]: Dotyczy członków korpusu służby.\n\n"
+            + "[^2)]: Zmiany tekstu jednolitego zostały ogłoszone w dzienniku urzędowym.\n\n"
+            + "[^3)]: Przepis wprowadzony nowelizacją ustawy.\n",
             result.Markdown.Replace("\r\n", "\n", StringComparison.Ordinal));
 
         ConversionWarning[] orphans = [.. result.Report.Warnings.Where(w => w.Code == "FTN001_OrphanFootnote")];

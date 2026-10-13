@@ -113,7 +113,7 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
 
 ### Implementation for User Story 1 (green)
 
-- [ ] T008 [US1] `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs`: po `NumberFootnotes` (linia ~71) nowa
+- [X] T008 [US1] `src/LegalAgent.PdfParser/Stages/DocumentBuildStage.cs`: po `NumberFootnotes` (linia ~71) nowa
   funkcja `AssignIdentifiers` zwracająca mapę id szkicu → identyfikator według reguły z `data-model.md`: kandydaci
   w kolejności (`Page`, id szkicu); etykieta pusta lub ze spacją/tabulatorem/`[`/`]` → zastępczy `Number`
   (przy kolizji z etykietą kolejny wolny numer) i `context.Report.AddWarning("FTN002_FootnoteWithoutLabel", page,
@@ -124,19 +124,19 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
   — dotyczy też tabel (`Renumber(TableBlock, …)`, grupa nagłówka, nagłówek, wiersze, współdzielone inline'y komórek
   kontynuacji) i przypisów preambuły. Etykieta „²¹” jest już w `OriginalLabel` jako „21” (sprawdzić w teście (1)
   T004; jeśli nie, zamiana cyfr górnych w tej funkcji).
-- [ ] T009 [US1] `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs`: `RenderFootnotes` (linia ~73) i odnośnik
+- [X] T009 [US1] `src/LegalAgent.PdfParser/Rendering/MarkdownRenderer.cs`: `RenderFootnotes` (linia ~73) i odnośnik
   (linia ~303) piszą `Identifier`, a gdy pusty — `Number`/`FootnoteNumber` (jedna prywatna funkcja dla obu miejsc).
   Bez ucieczek znaków w identyfikatorze (research R3).
-- [ ] T010 [US1] `tests/LegalAgent.PdfParser.Tests/Fixtures/NumberCheck.cs`: wzorzec odnośnika sklejonego
+- [X] T010 [US1] `tests/LegalAgent.PdfParser.Tests/Fixtures/NumberCheck.cs`: wzorzec odnośnika sklejonego
   (`\[\^(\d+)\](?!:)`, linia ~400) i `FootnoteLabels` (linia ~164, dziś po `Footnote.Number`) przestawić na
   identyfikatory (`[^1)-2]`, `[^*)]`, `[^21]`): cyfry etykiety i dopisku `-k` nie liczą się jako nadmiar (`Liczby +`)
   ani brak (`Liczby −`). `FootnoteDefinition`/`FootnoteReference` (`\[\^[^\]]+\]`) już obejmują nowe postacie —
   potwierdzić testem w `tests/LegalAgent.PdfParser.Tests/Unit/…/NumberCheckTests.cs` (jeśli istnieje; inaczej
   asercja w T006). `number-check.txt` bez zmian.
-- [ ] T011 [US1] Kod ostrzeżenia `FTN002_FootnoteWithoutLabel`: sprawdzić, czy kody są gdzieś wyliczone (stałe,
+- [X] T011 [US1] Kod ostrzeżenia `FTN002_FootnoteWithoutLabel`: sprawdzić, czy kody są gdzieś wyliczone (stałe,
   testy `Unit/Pipeline/ConversionReportTests.cs`, kontrakt raportu w `specs/001-legal-pdf-parser/contracts/`) i dopisać
   tam nowy kod; kod wyjścia CLI bez zmian (konstytucja IV).
-- [ ] T012 [US1] Testy T004–T006a zielone; `dotnet test LegalAgent.slnx --filter "Category!=Performance"`: padają
+- [X] T012 [US1] Testy T004–T006a zielone; `dotnet test LegalAgent.slnx --filter "Category!=Performance"`: padają
   tylko goldeny parsera (`*.expected.md` → `*.actual.md`) i goldeny chunków (`*.actual.jsonl`), nic innego; bramka
   FTN001 `GoldenTests.Act_OrphanFootnoteWarnings_MatchExpectedCount` zielona (FR-909). Commit green tylko z kodem
   (`src/…`, `NumberCheck.cs`), bez goldenów: `feat: footnote identifiers are the PDF labels (green, spec 012 T008-T011)`.

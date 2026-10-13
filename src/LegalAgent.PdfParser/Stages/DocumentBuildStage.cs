@@ -1,3 +1,4 @@
+using System.Globalization;
 using LegalAgent.PdfParser.Layout;
 using LegalAgent.PdfParser.Model;
 using LegalAgent.PdfParser.Pipeline;
@@ -68,16 +69,77 @@ public sealed class DocumentBuildStage : IPipelineStage
             Current().Blocks.Add(SkippedBlock(skipped.Dequeue()));
         }
 
-        Dictionary<int, int> numbers = NumberFootnotes(context, root);
+        Dictionary<int, int> drafts = NumberFootnotes(context, root);
+        Dictionary<int, string> identifiers = AssignIdentifiers(context, drafts);
+        var numbers = new FootnoteNumbers(drafts, identifiers);
 
         var paths = new List<string>();
         context.Document = new LegalDocument(
             context.Source,
             title,
             root.Blocks.Select(b => Renumber(b, numbers)).ToArray(),
-            root.Footnotes.OrderBy(f => f.Number).ToArray(),
+            Identify(root.Footnotes, identifiers),
             root.Children.Select(c => Build(c, paths, numbers, context.Report)).ToArray());
     }
+
+    /// <summary>Global footnote numbers by draft id, and Markdown identifiers by global number.</summary>
+    private sealed record FootnoteNumbers(Dictionary<int, int> ByDraft, Dictionary<int, string> Identifiers);
+
+    /// <summary>
+    /// Spec 012 (FR-900–FR-904): the Markdown identifier of every footnote, by global number. It is the PDF label; a
+    /// label repeated in the document gets the suffix <c>-k</c> from its second occurrence in page order (then draft
+    /// order), k growing while the identifier is taken; a label Markdown cannot carry (empty, with a space, a tab, „[”
+    /// or „]”) gets a substitute — the footnote's number, or the next number no label takes — and the warning FTN002.
+    /// </summary>
+    private static Dictionary<int, string> AssignIdentifiers(PipelineContext context, Dictionary<int, int> numbers)
+    {
+        FootnoteDraft[] ordered = [.. context.Footnotes.Where(d => numbers.ContainsKey(d.Id)).OrderBy(d => d.Page).ThenBy(d => d.Id)];
+        var taken = new HashSet<string>(ordered.Where(d => Usable(d.Label)).Select(d => d.Label), StringComparer.Ordinal);
+        var identifiers = new Dictionary<int, string>();
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (FootnoteDraft draft in ordered.Where(d => Usable(d.Label)))
+        {
+            string identifier = draft.Label;
+            if (!seen.Add(draft.Label))
+            {
+                int k = 2;
+                while (taken.Contains(identifier = string.Create(CultureInfo.InvariantCulture, $"{draft.Label}-{k}")))
+                {
+                    k++;
+                }
+
+                taken.Add(identifier);
+            }
+
+            identifiers[numbers[draft.Id]] = identifier;
+        }
+
+        foreach (FootnoteDraft draft in ordered.Where(d => !Usable(d.Label)).OrderBy(d => numbers[d.Id]))
+        {
+            int candidate = numbers[draft.Id];
+            while (taken.Contains(candidate.ToString(CultureInfo.InvariantCulture)))
+            {
+                candidate++;
+            }
+
+            string identifier = candidate.ToString(CultureInfo.InvariantCulture);
+            taken.Add(identifier);
+            identifiers[numbers[draft.Id]] = identifier;
+            context.Report.AddWarning(
+                "FTN002_FootnoteWithoutLabel",
+                draft.Page,
+                $"Przypis bez etykiety na stronie {draft.Page} dostał identyfikator zastępczy „{identifier}”.");
+        }
+
+        return identifiers;
+    }
+
+    /// <summary>A label GFM accepts as a footnote identifier (research R3).</summary>
+    private static bool Usable(string label) => label.Length > 0 && label.IndexOfAny([' ', '	', '[', ']']) < 0;
+
+    private static Footnote[] Identify(IEnumerable<Footnote> footnotes, Dictionary<int, string> identifiers) =>
+        footnotes.OrderBy(f => f.Number).Select(f => f with { Identifier = identifiers[f.Number] }).ToArray();
 
     /// <summary>
     /// Assigns global numbers by the first reference in document order and attaches each definition to the section
@@ -130,7 +192,7 @@ public sealed class DocumentBuildStage : IPipelineStage
     private static Footnote ToFootnote(FootnoteDraft draft, int number) =>
         new(number, draft.Label, draft.Inlines.ToArray(), draft.Page, draft.IsOrphan);
 
-    private static Section Build(SectionBuilder builder, List<string> parentPath, Dictionary<int, int> numbers, ReportBuilder report)
+    private static Section Build(SectionBuilder builder, List<string> parentPath, FootnoteNumbers numbers, ReportBuilder report)
     {
         HeadingInfo heading = builder.Heading!;
         List<string> path = [.. parentPath, heading.Text];
@@ -154,12 +216,12 @@ public sealed class DocumentBuildStage : IPipelineStage
             path,
             new PageRange(builder.FirstPage, last),
             blocks,
-            builder.Footnotes.OrderBy(f => f.Number).ToArray(),
+            Identify(builder.Footnotes, numbers.Identifiers),
             children);
     }
 
-    /// <summary>Replaces draft identifiers in footnote references with global numbers.</summary>
-    private static ContentBlock Renumber(ContentBlock block, Dictionary<int, int> numbers) => block switch
+    /// <summary>Replaces draft identifiers in footnote references with global numbers and Markdown identifiers.</summary>
+    private static ContentBlock Renumber(ContentBlock block, FootnoteNumbers numbers) => block switch
     {
         ParagraphBlock paragraph when paragraph.Inlines.Any(i => i is FootnoteRef) => paragraph with
         {
@@ -182,7 +244,7 @@ public sealed class DocumentBuildStage : IPipelineStage
     /// <summary>
     /// Spec 010: footnote references inside table cells; the cells continuing a merged cell keep sharing its inlines.
     /// </summary>
-    private static TableBlock Renumber(TableBlock table, Dictionary<int, int> numbers)
+    private static TableBlock Renumber(TableBlock table, FootnoteNumbers numbers)
     {
         var renumbered = new Dictionary<IReadOnlyList<Inline>, Inline[]>(ReferenceEqualityComparer.Instance);
         TableRow Row(TableRow row) => row with
@@ -203,10 +265,13 @@ public sealed class DocumentBuildStage : IPipelineStage
         };
     }
 
-    private static Inline[] Renumber(IReadOnlyList<Inline> inlines, Dictionary<int, int> numbers) => inlines
-        .Where(i => i is not FootnoteRef r || numbers.ContainsKey(r.FootnoteNumber))
-        .Select(i => i is FootnoteRef r ? new FootnoteRef(numbers[r.FootnoteNumber]) : i)
+    private static Inline[] Renumber(IReadOnlyList<Inline> inlines, FootnoteNumbers numbers) => inlines
+        .Where(i => i is not FootnoteRef r || numbers.ByDraft.ContainsKey(r.FootnoteNumber))
+        .Select(i => i is FootnoteRef r ? Reference(numbers.ByDraft[r.FootnoteNumber], numbers) : i)
         .ToArray();
+
+    private static FootnoteRef Reference(int number, FootnoteNumbers numbers) =>
+        new(number) { Identifier = numbers.Identifiers[number] };
 
     /// <summary>Inline content of a block in reading order, including nested list items and common parts.</summary>
     private static IEnumerable<Inline> InlinesOf(ContentBlock block) => block switch

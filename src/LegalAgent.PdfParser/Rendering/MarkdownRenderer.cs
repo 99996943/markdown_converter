@@ -71,10 +71,16 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
     {
         foreach (Footnote footnote in footnotes)
         {
-            string number = footnote.Number.ToString(CultureInfo.InvariantCulture);
-            state.Chunks.Add($"[^{number}]: " + RenderInlines(footnote.Inlines, state, trackPages: false));
+            state.Chunks.Add($"[^{Identifier(footnote.Identifier, footnote.Number)}]: " + RenderInlines(footnote.Inlines, state, trackPages: false));
         }
     }
+
+    /// <summary>
+    /// Spec 012: the footnote identifier as printed in the PDF (contract 2.0.0), written without escaping (research R3);
+    /// the number when the model carries no identifier (a model built by a library client).
+    /// </summary>
+    private static string Identifier(string identifier, int number) =>
+        identifier.Length > 0 ? identifier : number.ToString(CultureInfo.InvariantCulture);
 
     private static void RenderBlocks(IReadOnlyList<ContentBlock> blocks, State state)
     {
@@ -300,7 +306,7 @@ public sealed partial class MarkdownRenderer : IMarkdownRenderer
                     break;
 
                 case FootnoteRef reference:
-                    sb.Append(string.Create(CultureInfo.InvariantCulture, $"[^{reference.FootnoteNumber}]"));
+                    sb.Append("[^").Append(Identifier(reference.Identifier, reference.FootnoteNumber)).Append(']');
                     break;
 
                 case PageBreak pageBreak:
