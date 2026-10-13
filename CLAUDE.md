@@ -135,6 +135,15 @@ Spec 010 additions (parser 1.3.0):
 - `NumberCheck.Compare(..., LegalDocument)` does not count footnote labels as missing nor repeats of merged
   cells/header groups as excess. Private-corpus word-set baseline is `baseline-010/`.
 
+Spec 011 additions (parser 1.3.1):
+- a raised label opening a footnote line never links a definition (`FootnoteDetectionStage.IsDefinitionLabel`, skipped
+  when linking markers), with or without a rule — so a definition whose reference is not recognised (e.g. a marker
+  followed by full-size punctuation, „zm.¹⁾)”) is reported FTN001 instead of linking itself;
+- the label still counts in the `referenced` set used to find the footnote area and labels, so the Markdown is
+  unchanged;
+- FTN001 counts of every act in `Corpus/acts` are pinned in `GoldenTests.Act_OrphanFootnoteWarnings_MatchExpectedCount`
+  (a new act needs a count; a changed count goes into the spec handoff).
+
 A later stage usually skips lines that an earlier stage claimed. For example, `TableDetection` and `ReadingOrder` skip lines annotated as belonging to a table-document. When you change one stage, check how the downstream stages read those annotations.
 
 **Text extraction is custom.** The parser does not use PdfPig's `DocumentLayoutAnalysis`; the reasons are in `specs/001-legal-pdf-parser/research.md` R3. Words, lines, segments, columns, tables and headings are all built from letters, rulings and images. This keeps per-letter style (`**bold**` fragments) and keeps wide gaps as table-cell boundaries.

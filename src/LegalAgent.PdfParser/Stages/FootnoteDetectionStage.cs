@@ -29,6 +29,10 @@ namespace LegalAgent.PdfParser.Stages;
 /// rule the definitions may be set as large as the body text when the first line opens with such a label. Raised
 /// labels opening the lines below a rule are never references.
 /// </para>
+/// <para>
+/// Spec 011: a raised label opening a footnote line never links a definition, with or without a rule, so a definition
+/// whose reference is not recognised in the text is reported as orphan instead of linking itself.
+/// </para>
 /// </remarks>
 public sealed partial class FootnoteDetectionStage : IPipelineStage
 {
@@ -92,7 +96,7 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
         var used = new HashSet<FootnoteDraft>(ReferenceEqualityComparer.Instance);
         foreach (LayoutPage page in context.Pages)
         {
-            foreach (IGrouping<LayoutLine, Marker> byLine in markers[page].GroupBy(m => m.Line))
+            foreach (IGrouping<LayoutLine, Marker> byLine in markers[page].Where(m => !IsDefinitionLabel(m)).GroupBy(m => m.Line))
             {
                 LinkMarkers(context, page, byLine.Key, byLine.ToList(), used);
             }
@@ -398,6 +402,13 @@ public sealed partial class FootnoteDetectionStage : IPipelineStage
     /// <summary>Spec 010: a bare number and a space opening a definition below a rule („8 Dotyczy…”).</summary>
     [GeneratedRegex(@"^(?<label>\d{1,3})\s+(?<text>\S.*)$", RegexOptions.CultureInvariant)]
     private static partial Regex BareLabel();
+
+    /// <summary>
+    /// Spec 011: a marker opening a footnote line is the label of that line's definition, never a reference — with or
+    /// without a rule. It still counts as referenced for finding the footnote area; only linking skips it.
+    /// </summary>
+    private static bool IsDefinitionLabel(Marker marker) =>
+        marker.Line.Role == LineRole.Footnote && marker.WordIndex == 0 && marker.GlyphStart == 0;
 
     /// <param name="Line">Line of the marker.</param>
     /// <param name="WordIndex">Word holding the marker.</param>
