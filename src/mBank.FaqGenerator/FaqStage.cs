@@ -22,13 +22,25 @@ internal static class FaqStage
     /// Address of <paramref name="markdownPath"/> relative to <paramref name="faqDirectory"/>: segments joined by
     /// <c>/</c> and percent-encoded; <c>null</c> when there is no relative path (another drive).
     /// </summary>
-    internal static string? MarkdownLink(string faqDirectory, string markdownPath) => throw new NotImplementedException();
+    internal static string? MarkdownLink(string faqDirectory, string markdownPath)
+    {
+        string relative = Path.GetRelativePath(faqDirectory, markdownPath);
+        if (Path.IsPathRooted(relative))
+        {
+            return null;
+        }
 
-    /// <summary>Runs the stage for converted documents.</summary>
+        return string.Join(
+            '/',
+            relative.Split([Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar]).Select(s => s == ".." ? s : Uri.EscapeDataString(s)));
+    }
+
+    /// <summary>Runs the stage for converted documents whose Markdown files are in <paramref name="downloadDirectory"/>.</summary>
     /// <returns>Exit code.</returns>
     public static async Task<int> RunAsync(
         IReadOnlyList<ConvertedDocument> documents,
         AppConfiguration configuration,
+        string downloadDirectory,
         string faqDirectory,
         IKeyInput keys,
         TextWriter stdout,
@@ -51,6 +63,7 @@ internal static class FaqStage
                 d.Units)
             {
                 UnitLocations = d.UnitLocations,
+                MarkdownLink = MarkdownLink(faqDirectory, Path.Combine(downloadDirectory, d.MarkdownFileName)),
             }),
         ];
         try

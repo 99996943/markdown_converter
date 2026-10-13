@@ -29,20 +29,33 @@ public static class UnitExtractor
     {
         ArgumentNullException.ThrowIfNull(document);
         ArgumentNullException.ThrowIfNull(markdown);
+        Section[] sections = [.. PreOrder(document.Sections)];
+        IReadOnlyList<string>? anchors = SectionAnchors(document, markdown, sections.Length);
         var locations = new List<FaqUnitLocation>();
         var seen = new HashSet<string>(StringComparer.Ordinal);
-        foreach (Section section in PreOrder(document.Sections))
+        for (int k = 0; k < sections.Length; k++)
         {
-            foreach (string? unit in new[] { section.Designation, section.HeadingText })
+            foreach (string? unit in new[] { sections[k].Designation, sections[k].HeadingText })
             {
                 if (!string.IsNullOrWhiteSpace(unit) && seen.Add(unit))
                 {
-                    locations.Add(new FaqUnitLocation(unit, section.Pages.First, null));
+                    locations.Add(new FaqUnitLocation(unit, sections[k].Pages.First, anchors?[k]));
                 }
             }
         }
 
         return locations;
+    }
+
+    /// <summary>
+    /// Anchors of the section headings (all headings but the title) in rendering order; <c>null</c> when their number
+    /// differs from the number of sections, so no anchor can point at a wrong heading.
+    /// </summary>
+    private static IReadOnlyList<string>? SectionAnchors(LegalDocument document, string markdown, int sectionCount)
+    {
+        IReadOnlyList<string> anchors = MarkdownAnchors.ForDocument(markdown);
+        int skip = string.IsNullOrWhiteSpace(document.Title) ? 0 : 1;
+        return anchors.Count - skip == sectionCount ? [.. anchors.Skip(skip)] : null;
     }
 
     /// <summary>Sections in rendering order: each section, then its subsections.</summary>

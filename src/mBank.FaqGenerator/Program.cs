@@ -182,6 +182,7 @@ public static class Program
         return await FaqStage.RunAsync(
             conversion.Documents,
             configuration,
+            downloads,
             faqDirectory,
             host.KeyInput ?? new ConsoleKeyInput(stdin),
             stdout,
