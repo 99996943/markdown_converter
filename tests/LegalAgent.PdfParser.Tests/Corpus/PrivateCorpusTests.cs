@@ -68,6 +68,18 @@ public sealed class PrivateCorpusTests
         }
     }
 
+    /// <summary>Spec 012 SC-130: footnote identifiers of the private documents are their PDF labels.</summary>
+    [Fact]
+    public async Task PrivateDocuments_FootnoteIdentifiers_AreThePdfLabels()
+    {
+        IReadOnlyList<Converted> documents = await ConvertAllAsync(RequireDirectory());
+
+        foreach (Converted document in documents)
+        {
+            GoldenTests.AssertFootnoteIdentifiers(document.Result);
+        }
+    }
+
     /// <summary>SC-080, SC-081 — hanging-label documents: TBL001 and fallback rows within limits, no „§ N” as text.</summary>
     [Fact]
     [Trait("Category", "Layout007")]

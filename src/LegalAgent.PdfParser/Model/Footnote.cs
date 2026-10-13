@@ -6,4 +6,12 @@ namespace LegalAgent.PdfParser.Model;
 /// <param name="Inlines">Footnote content.</param>
 /// <param name="Page">Source page of the definition.</param>
 /// <param name="IsOrphan">True when no reference to the footnote was found.</param>
-public sealed record Footnote(int Number, string OriginalLabel, IReadOnlyList<Inline> Inlines, int Page, bool IsOrphan);
+public sealed record Footnote(int Number, string OriginalLabel, IReadOnlyList<Inline> Inlines, int Page, bool IsOrphan)
+{
+    /// <summary>
+    /// Spec 012: the Markdown identifier (<c>[^Identifier]</c>) — the PDF label, the label with an occurrence suffix
+    /// <c>-k</c> when it repeats in the document, or a substitute number for a label Markdown cannot carry. Empty means
+    /// the renderer writes <see cref="Number"/> (a model built by a library client).
+    /// </summary>
+    public string Identifier { get; init; } = "";
+}

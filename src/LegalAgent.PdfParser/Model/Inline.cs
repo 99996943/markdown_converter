@@ -30,7 +30,14 @@ public sealed record TextRun(string Text, TextStyle Style = TextStyle.None) : In
 
 /// <summary>Reference to a footnote definition.</summary>
 /// <param name="FootnoteNumber">Document-wide footnote number.</param>
-public sealed record FootnoteRef(int FootnoteNumber) : Inline;
+public sealed record FootnoteRef(int FootnoteNumber) : Inline
+{
+    /// <summary>
+    /// Spec 012: <see cref="Footnote.Identifier"/> of the footnote the reference points to; empty means the renderer
+    /// writes <see cref="FootnoteNumber"/>.
+    /// </summary>
+    public string Identifier { get; init; } = "";
+}
 
 /// <summary>Marks the point where the source switches to another page.</summary>
 /// <param name="PageNumber">The page that starts here (1-based).</param>

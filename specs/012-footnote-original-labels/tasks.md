@@ -27,14 +27,14 @@ prywatnych plików z katalogu głównego i `src/LegalAgent.PdfParser.Cli/Propert
 
 **Cel**: zapis stanu 1.3.1, z którym porównuje się SC-131 i SC-133, i skrypt normalizacji identyfikatorów.
 
-- [ ] T001 Pomiar 1.3.1 (przed jakąkolwiek zmianą kodu, gałąź na `5480789` lub późniejszym commicie bez zmian w
+- [X] T001 Pomiar 1.3.1 (przed jakąkolwiek zmianą kodu, gałąź na `5480789` lub późniejszym commicie bez zmian w
   `src/`): skonwertować CLI (`convert … --report …`, Release) wszystkie dokumenty z przypisami — `tests/LegalAgent.PdfParser.Tests/Corpus/acts/*.pdf`,
   `tests/LegalAgent.PdfParser.Tests/Corpus/banking/*.pdf`, prywatny korpus `tests/LegalAgent.PdfParser.Tests/Corpus/private/*.pdf`,
   `publish/mBank.FaqGenerator-win-x64/downloads/*.pdf` i dwa prywatne PDF-y z katalogu głównego — oraz `chunk` dla
   tych samych plików, do katalogu scratchpada `baseline-012/` (poza repozytorium). Dla każdego dokumentu zapisać
   w `baseline-012/counts.csv`: liczbę odnośników `[^…]` (bez `:`), liczbę definicji `[^…]:`, liczbę `FTN001_OrphanFootnote`
   z raportu.
-- [ ] T002 Skrypt porównania w scratchpadzie (`compare-footnotes.py` lub `.ps1`, nie w repozytorium), wywoływany jako
+- [X] T002 Skrypt porównania w scratchpadzie (`compare-footnotes.py` lub `.ps1`, nie w repozytorium), wywoływany jako
   `compare <stary.md> <nowy.md>`: (a) zamienia każdy `[^X]` i `[^X]:` na `[^#]` w obu plikach i wypisuje diff (SC-133:
   ma być pusty); (b) paruje identyfikatory w kolejności wystąpień i sprawdza, że odwzorowanie stary numer → nowy
   identyfikator jest bijekcją w obrębie dokumentu (ten sam przypis zawsze ma ten sam identyfikator); (c) wypisuje
@@ -48,7 +48,7 @@ prywatnych plików z katalogu głównego i `src/LegalAgent.PdfParser.Cli/Propert
 
 **Cel**: testy red muszą się kompilować, więc nowe właściwości modelu powstają przed nimi, puste i nieużywane.
 
-- [ ] T003 Dodać do `src/LegalAgent.PdfParser/Model/Footnote.cs` właściwość `public string Identifier { get; init; } = "";`
+- [X] T003 Dodać do `src/LegalAgent.PdfParser/Model/Footnote.cs` właściwość `public string Identifier { get; init; } = "";`
   w ciele rekordu (rekord pozycyjny zostaje, konstruktor bez zmian), z komentarzem XML: identyfikator Markdownu
   przypisu (`[^Identifier]`), etykieta z PDF-u albo etykieta z dopiskiem `-k` albo numer zastępczy; pusty = renderer
   używa `Number`. To samo w `src/LegalAgent.PdfParser/Model/Inline.cs` dla `FootnoteRef` („identyfikator przypisu, na
@@ -72,7 +72,7 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
 
 ### Tests for User Story 1 (red)
 
-- [ ] T004 [P] [US1] Testy reguły identyfikatora w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/DocumentBuildStageTests.cs`
+- [X] T004 [P] [US1] Testy reguły identyfikatora w `tests/LegalAgent.PdfParser.Tests/Unit/Stages/DocumentBuildStageTests.cs`
   (model zbudowany na `PipelineContext` jak w istniejących testach tej klasy), każdy osobną metodą `[Fact]`:
   (1) etykiety „21”, „22” → `Footnote.Identifier` „21”, „22” i `FootnoteRef.Identifier` odnośników takie same;
   (2) etykieta „1)” dwa razy (strony 1 i 3) → „1)” dla definicji ze strony 1, „1)-2” dla strony 3, a każdy odnośnik
@@ -87,24 +87,24 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
   definicji bez zmian względem 1.3.1; (10) brak `FTN002` gdy wszystkie przypisy mają etykiety; (11) dwa odnośniki
   (akapit i komórka tabeli) do jednego przypisu „21” → oba mają `Identifier` „21”, jedna definicja; (12) etykiety
   „1)” i „1” w jednym dokumencie (spec 011 K3) → identyfikatory „1)” i „1”, bez dopisku.
-- [ ] T005 [P] [US1] Testy renderera w nowym pliku `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererFootnoteTests.cs`
+- [X] T005 [P] [US1] Testy renderera w nowym pliku `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererFootnoteTests.cs`
   (model zbudowany ręcznie): `Identifier` „21” → `TAK[^21]` i `[^21]: …`; „*)” → `ustawy[^*)]` i `[^*)]: …` bez
   ucieczki i bez wyróżnienia; „1)-2” → `[^1)-2]`; `Identifier` pusty (klient biblioteki 1.x) → `[^{Number}]` w
   odnośniku i definicji; odnośnik w komórce tabeli GFM → `[^21]`.
-- [ ] T006 [P] [US1] Repliki w nowym pliku `tests/LegalAgent.PdfParser.Tests/Integration/FootnoteLabelsIntegrationTests.cs`
+- [X] T006 [P] [US1] Repliki w nowym pliku `tests/LegalAgent.PdfParser.Tests/Integration/FootnoteLabelsIntegrationTests.cs`
   (`SyntheticPdfBuilder`/`TableSheet` z `Fixtures/`, wzorem `FootnoteWarningsIntegrationTests.cs`; treść wymyślona,
   bez tekstu dokumentów prywatnych, bez nazw prawdziwych banków): (a) regulamin — akapit z odnośnikiem „⁷”, tabela z
   rulingami z „TAK²¹”…„TAK²⁴”, kreska i definicje „7”, „21”…„24” w stopce → Markdown zawiera dokładnie identyfikatory
   7, 21, 22, 23, 24 (zbiór odnośników = zbiór definicji), żadnego `[^1]`; (b) akt z dwiema seriami „¹⁾”, „²⁾” na
   stronach 1 i 2 → `[^1)]`, `[^2)]`, `[^1)-2]`, `[^2)-2]`, odnośniki z każdej strony do swojej serii; (c) przypis
   „*)” → `[^*)]`; (d) w każdym przypadku liczba `FTN001_OrphanFootnote` jak przed zmianą (asercja liczby) i 0 `FTN002`.
-- [ ] T006a [P] [US1] Niezmiennik SC-130 w `tests/LegalAgent.PdfParser.Tests/Corpus/GoldenTests.cs`, uruchamiany na
+- [X] T006a [P] [US1] Niezmiennik SC-130 w `tests/LegalAgent.PdfParser.Tests/Corpus/GoldenTests.cs`, uruchamiany na
   wszystkich dokumentach goldenów (akty, `banking`, prywatny korpus z `LEGALAGENT_PRIVATE_CORPUS`): dla każdego
   `Footnote` dokumentu (sekcje i preambuła) `Identifier` == `OriginalLabel`, albo `OriginalLabel + "-k"` (k ≥ 2,
   tylko gdy etykieta powtarza się w dokumencie), albo — tylko dla etykiety pustej lub ze spacją, tabulatorem, `[`,
   `]` — numer zastępczy z ostrzeżeniem `FTN002_FootnoteWithoutLabel` na stronie przypisu; identyfikatory unikalne
   w dokumencie; każdy `FootnoteRef.Identifier` ma definicję.
-- [ ] T007 [US1] Uruchomić `dotnet test tests/LegalAgent.PdfParser.Tests -- --filter-class "*DocumentBuildStageTests"`,
+- [X] T007 [US1] Uruchomić `dotnet test tests/LegalAgent.PdfParser.Tests -- --filter-class "*DocumentBuildStageTests"`,
   `--filter-class "*MarkdownRendererFootnoteTests"`, `--filter-class "*FootnoteLabelsIntegrationTests"`,
   `--filter-method "*FootnoteIdentifiers*"` (T006a): nowe testy
   padają z właściwego powodu (identyfikator pusty / `[^1]` zamiast `[^21]`), stare przechodzą; test (10) z T004 i
