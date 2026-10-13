@@ -192,7 +192,7 @@ public sealed class BlockAssemblyListTests
 
         ListBlock built = Assert.IsType<ListBlock>(Assert.Single(context.Document!.Preamble));
         ListBlock builtNested = Assert.IsType<ListBlock>(Assert.Single(built.Items[0].Children));
-        Assert.Equal(new FootnoteRef(1), builtNested.Items[0].Inlines[1]);
+        Assert.Equal(new FootnoteRef(1) { Identifier = "1)" }, builtNested.Items[0].Inlines[1]);
         Footnote footnote = Assert.Single(context.Document.PreambleFootnotes);
         Assert.Equal(1, footnote.Number);
         Assert.Equal(1, context.Report.ListCount);

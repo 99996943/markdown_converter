@@ -11,11 +11,11 @@ BP/REG/07 Wersja 1 Obowiązuje od 1 maja 2024 r. do 30 kwietnia 2026 r.
 ### § 1.
 
 - 1\. Regulamin reguluje zasady korzystania z usług bankowości elektronicznej oraz z aplikacji mobilnej „Bank Przykładowy Mobile” udostępnianych przez Bank Przykładowy S.A. (zwany dalej „Bankiem”) osobom fizycznym niebędącym przedsiębiorcami, a także prawa i obowiązki stron w tym zakresie.
-- 2\. Bankowość elektroniczna umożliwia Klientowi między innymi dostęp do informacji o produktach, składanie dyspozycji dotyczących rachunku płatniczego, zawieranie umów na odległość oraz kontakt z Bankiem, z zachowaniem wymogów bezpieczeństwa opisanych w Regulaminie.[^1]
+- 2\. Bankowość elektroniczna umożliwia Klientowi między innymi dostęp do informacji o produktach, składanie dyspozycji dotyczących rachunku płatniczego, zawieranie umów na odległość oraz kontakt z Bankiem, z zachowaniem wymogów bezpieczeństwa opisanych w Regulaminie.[^1)]
 - 3\. W sprawach nieuregulowanych w Regulaminie mają zastosowanie postanowienia umowy rachunku lub innego produktu, którego dotyczy dyspozycja, oraz przepisy prawa, w tym ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
 - 4\. Regulamin jest udostępniany Klientowi przed zawarciem umowy o korzystanie z bankowości elektronicznej na trwałym nośniku, w placówkach Banku oraz na stronie https://bank.example. Klient ma prawo w każdym czasie zażądać jego bezpłatnego odpisu.
 
-[^1]: Szczegółowy zakres funkcji dostępnych w poszczególnych kanałach jest podawany na stronie https://online.bank.example i w aplikacji mobilnej; Bank może go rozszerzać bez zmiany Regulaminu.
+[^1)]: Szczegółowy zakres funkcji dostępnych w poszczególnych kanałach jest podawany na stronie https://online.bank.example i w aplikacji mobilnej; Bank może go rozszerzać bez zmiany Regulaminu.
 
 ### § 2.
 
@@ -56,10 +56,10 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
   - 1\) w placówce Banku, przez podpisanie wniosku na formularzu udostępnionym przez pracownika;
   - 2\) w trakcie zawierania umowy rachunku, jako jeden z elementów tej umowy;
   - 3\) na odległość, za pośrednictwem strony internetowej Banku, po pozytywnej weryfikacji tożsamości Klienta.
-- 2\. Umowa jest zawierana na czas nieokreślony. Wygaśnięcie lub rozwiązanie umowy rachunku powoduje równoczesne wygaśnięcie umowy o korzystanie z bankowości elektronicznej w zakresie tego rachunku.[^2]
+- 2\. Umowa jest zawierana na czas nieokreślony. Wygaśnięcie lub rozwiązanie umowy rachunku powoduje równoczesne wygaśnięcie umowy o korzystanie z bankowości elektronicznej w zakresie tego rachunku.[^2)]
 - 3\. Klient może odstąpić od umowy zawartej na odległość bez podania przyczyny w terminie 14 dni od dnia jej zawarcia, składając Bankowi oświadczenie na trwałym nośniku albo w bankowości elektronicznej.
 
-[^2]: W przypadku rachunku wspólnego umowa o korzystanie z bankowości elektronicznej jest zawierana z każdym ze współposiadaczy odrębnie, a rozwiązanie jej przez jednego z nich nie wpływa na dostęp pozostałych.
+[^2)]: W przypadku rachunku wspólnego umowa o korzystanie z bankowości elektronicznej jest zawierana z każdym ze współposiadaczy odrębnie, a rozwiązanie jej przez jednego z nich nie wpływa na dostęp pozostałych.
 
 <!-- page: 4 -->
 ### § 5.
@@ -101,10 +101,10 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
     - a\) kod potwierdzający jest ważny 120 sekund;
     - b\) numer telefonu musi być zgodny z numerem zapisanym w danych Klienta w Banku;
     - c\) zmiana numeru wymaga ponownej weryfikacji tożsamości Klienta.
-- 2\. Hasło tymczasowe i kod aktywacyjny do aplikacji mobilnej są ważne przez 7 dni od dnia ich przekazania. Po upływie tego terminu Klient powinien zamówić nowy kod w placówce, na Infolinii lub w serwisie internetowym; wydanie nowego kodu aktywacyjnego jest usługą opłacaną zgodnie z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A.[^3]
+- 2\. Hasło tymczasowe i kod aktywacyjny do aplikacji mobilnej są ważne przez 7 dni od dnia ich przekazania. Po upływie tego terminu Klient powinien zamówić nowy kod w placówce, na Infolinii lub w serwisie internetowym; wydanie nowego kodu aktywacyjnego jest usługą opłacaną zgodnie z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A.[^3)]
 - 3\. Bank może odmówić aktywacji dostępu, jeżeli dane Klienta nie zostały zweryfikowane albo zachodzi podejrzenie, że dostęp miałby zostać wykorzystany niezgodnie z prawem.
 
-[^3]: Aktualna opłata za wydanie nowego kodu aktywacyjnego wynosi 10,00 zł; pierwszy kod aktywacyjny wydawany jest nieodpłatnie.
+[^3)]: Aktualna opłata za wydanie nowego kodu aktywacyjnego wynosi 10,00 zł; pierwszy kod aktywacyjny wydawany jest nieodpłatnie.
 
 ### § 9.
 
@@ -177,9 +177,9 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
     - b\) zmienia dane kontaktowe, Hasło lub limity;
     - c\) dodaje lub usuwa urządzenie zaufane.
 - 2\. Silne uwierzytelnianie opiera się na co najmniej dwóch z trzech elementów: wiedzy (Hasło lub kod PIN aplikacji), posiadania (urządzenie zaufane lub kod SMS) i cechy użytkownika (biometria). Elementy te są od siebie niezależne w taki sposób, że naruszenie jednego nie osłabia wiarygodności pozostałych.
-- 3\. Bank może zwolnić dyspozycję z silnego uwierzytelniania w przypadkach dopuszczonych przepisami, w szczególności dla płatności niskokwotowych do wysokości 250,00 zł lub przelewów na rachunki z listy zaufanych odbiorców.[^4] Bank zastrzega sobie prawo żądania silnego uwierzytelnienia także w tych przypadkach.
+- 3\. Bank może zwolnić dyspozycję z silnego uwierzytelniania w przypadkach dopuszczonych przepisami, w szczególności dla płatności niskokwotowych do wysokości 250,00 zł lub przelewów na rachunki z listy zaufanych odbiorców.[^4)] Bank zastrzega sobie prawo żądania silnego uwierzytelnienia także w tych przypadkach.
 
-[^4]: Zasady silnego uwierzytelniania i jego wyłączeń wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30) oraz przepisów wykonawczych Unii Europejskiej; Bank ocenia ryzyko każdej operacji indywidualnie.
+[^4)]: Zasady silnego uwierzytelniania i jego wyłączeń wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30) oraz przepisów wykonawczych Unii Europejskiej; Bank ocenia ryzyko każdej operacji indywidualnie.
 
 ### § 16.
 
@@ -209,13 +209,13 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 ### § 19.
 
 - 1\. Urządzeniem zaufanym staje się urządzenie mobilne, na którym Klient aktywował aplikację mobilną i które zostało zarejestrowane w systemie Banku. Klient może powiązać ze swoim profilem nie więcej niż pięć urządzeń zaufanych jednocześnie.
-- 2\. Zarządzanie listą urządzeń zaufanych jest możliwe w aplikacji mobilnej i w serwisie internetowym. Dodanie nowego urządzenia wymaga silnego uwierzytelnienia na dotychczasowym urządzeniu zaufanym, a w razie jego braku — weryfikacji w placówce Banku albo na Infolinii.[^5]
+- 2\. Zarządzanie listą urządzeń zaufanych jest możliwe w aplikacji mobilnej i w serwisie internetowym. Dodanie nowego urządzenia wymaga silnego uwierzytelnienia na dotychczasowym urządzeniu zaufanym, a w razie jego braku — weryfikacji w placówce Banku albo na Infolinii.[^5)]
 - 3\. Klient jest obowiązany niezwłocznie usunąć urządzenie z listy zaufanych, jeżeli:
   - 1\) urządzenie zostało utracone, skradzione lub zbyte;
   - 2\) istnieje podejrzenie, że niepowołana osoba uzyskała do niego dostęp;
   - 3\) urządzenie nie jest już używane w celu korzystania z bankowości elektronicznej.
 
-[^5]: Informacja o dodaniu nowego urządzenia zaufanego jest zawsze przekazywana Klientowi w formie powiadomienia na pozostałe urządzenia oraz wiadomością SMS.
+[^5)]: Informacja o dodaniu nowego urządzenia zaufanego jest zawsze przekazywana Klientowi w formie powiadomienia na pozostałe urządzenia oraz wiadomością SMS.
 
 ### § 20.
 
@@ -260,18 +260,18 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 | Przelew do nowego odbiorcy | 3 000,00 zł |
 | Płatności mobilne — limit dzienny | 5 000,00 zł |
 
-- 2\. Klient ma możliwość zmiany limity w granicach od 100,00 zł do 100 000,00 zł. Zwiększenie limitu wymaga silnego uwierzytelnienia i może zostać poddane ocenie ryzyka przez Bank; zmiana limitu w placówce jest czynnością opłacaną zgodnie z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A.[^6]
+- 2\. Klient ma możliwość zmiany limity w granicach od 100,00 zł do 100 000,00 zł. Zwiększenie limitu wymaga silnego uwierzytelnienia i może zostać poddane ocenie ryzyka przez Bank; zmiana limitu w placówce jest czynnością opłacaną zgodnie z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A.[^6)]
 - 3\. Bank ma prawo czasowo obniżyć limity ze względów bezpieczeństwa, w szczególności w razie podejrzenia nieuprawnionego dostępu. O obniżeniu limitów Bank informuje Klienta niezwłocznie, o ile nie stoją temu na przeszkodzie względy bezpieczeństwa.
 
-[^6]: Opłata za zmianę limitu w placówce wynosi 5,00 zł; zmiana limitu w bankowości elektronicznej nie podlega opłacie.
+[^6)]: Opłata za zmianę limitu w placówce wynosi 5,00 zł; zmiana limitu w bankowości elektronicznej nie podlega opłacie.
 
 ### § 24.
 
 - 1\. Godziną graniczną dla przelewów krajowych składanych w bankowości elektronicznej jest 15:00 w dniu roboczym. Przelewy złożone i autoryzowane do tej godziny są przekazywane do realizacji w tym samym dniu roboczym; przelewy złożone po tej godzinie — w następnym dniu roboczym.
-- 2\. Przelewy natychmiastowe są realizowane przez całą dobę, we wszystkie dni roku, o ile bank odbiorcy uczestniczy w takim systemie rozliczeń. Za przelew natychmiastowy Bank pobiera opłatę zgodną z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A., w wysokości 4,00 zł.[^7]
+- 2\. Przelewy natychmiastowe są realizowane przez całą dobę, we wszystkie dni roku, o ile bank odbiorcy uczestniczy w takim systemie rozliczeń. Za przelew natychmiastowy Bank pobiera opłatę zgodną z Taryfa opłat za usługi bankowości elektronicznej i mobilnej Bank Przykładowy S.A., w wysokości 4,00 zł.[^7)]
 - 3\. Jeżeli przelew natychmiastowy nie może zostać wykonany z przyczyn leżących po stronie odbiorcy lub systemu rozliczeniowego, Bank informuje Klienta o jego odrzuceniu i przywraca środki do dyspozycji Klienta niezwłocznie, nie później niż w terminie wskazanym w umowie rachunku.
 
-[^7]: Limit pojedynczego przelewu natychmiastowego wynosi 30 000,00 zł i może być obniżony przez Klienta w ustawieniach limitów.
+[^7)]: Limit pojedynczego przelewu natychmiastowego wynosi 30 000,00 zł i może być obniżony przez Klienta w ustawieniach limitów.
 
 ### § 25.
 
@@ -336,9 +336,9 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
   - 2\) rozmów telefonicznych, w których rozmówca przedstawia się jako pracownik Banku i prosi o instalację oprogramowania do zdalnego dostępu lub o podanie kodów;
   - 3\) próśb o wykonanie przelewu na rzekomo „bezpieczny” rachunek;
   - 4\) wezwań do pilnego potwierdzenia dyspozycji, której Klient nie składał.
-- 3\. W razie podejrzenia oszustwa Klient powinien przerwać rozmowę lub korzystanie ze strony, niezwłocznie skontaktować się z Bankiem pod numerem 800 000 002 i — w razie potrzeby — zawiadomić organy ścigania. Aktualne ostrzeżenia Bank publikuje na stronie https://bank.example oraz w serwisie internetowym.[^8]
+- 3\. W razie podejrzenia oszustwa Klient powinien przerwać rozmowę lub korzystanie ze strony, niezwłocznie skontaktować się z Bankiem pod numerem 800 000 002 i — w razie potrzeby — zawiadomić organy ścigania. Aktualne ostrzeżenia Bank publikuje na stronie https://bank.example oraz w serwisie internetowym.[^8)]
 
-[^8]: Bank nie ponosi odpowiedzialności za skutki przekazania danych uwierzytelniających osobie trzeciej, jeżeli do ich ujawnienia doszło z winy Klienta, na zasadach określonych w ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
+[^8)]: Bank nie ponosi odpowiedzialności za skutki przekazania danych uwierzytelniających osobie trzeciej, jeżeli do ich ujawnienia doszło z winy Klienta, na zasadach określonych w ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
 
 ### § 31.
 
@@ -376,10 +376,10 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
   - 3\) Klient naruszył postanowienia Regulaminu w sposób zagrażający bezpieczeństwu;
   - 4\) Bank został zobowiązany do tego przez przepisy prawa lub orzeczenie właściwego organu;
   - 5\) dostęp nie był używany przez okres dłuższy niż 180 dni.
-- 2\. O zablokowaniu dostępu Bank informuje Klienta przed zablokowaniem, a jeżeli nie jest to możliwe — niezwłocznie po jego dokonaniu, chyba że przekazanie takiej informacji byłoby nieuzasadnione ze względów bezpieczeństwa lub zakazane przepisami prawa.[^9]
+- 2\. O zablokowaniu dostępu Bank informuje Klienta przed zablokowaniem, a jeżeli nie jest to możliwe — niezwłocznie po jego dokonaniu, chyba że przekazanie takiej informacji byłoby nieuzasadnione ze względów bezpieczeństwa lub zakazane przepisami prawa.[^9)]
 - 3\. Bank odblokowuje dostęp niezwłocznie po ustaniu przyczyny blokady. Blokada nie wpływa na prawa Klienta do rachunku i środków na nim zgromadzonych.
 
-[^9]: Przesłanki blokady instrumentu płatniczego wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); Bank dokumentuje decyzję o blokadzie wraz z jej uzasadnieniem.
+[^9)]: Przesłanki blokady instrumentu płatniczego wynikają z ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); Bank dokumentuje decyzję o blokadzie wraz z jej uzasadnieniem.
 
 ### § 35.
 
@@ -416,9 +416,9 @@ Ponadto, na potrzeby stosowania Regulaminu, użyte w nim określenia oznaczają:
 
 - 1\. Klient jest zobowiązany do niezwłocznego zawiadomienia Banku o stwierdzonym nieautoryzowanym, niewykonanym lub nienależycie wykonanym zleceniu płatniczym, nie później jednak niż w terminie 13 miesięcy od dnia obciążenia rachunku.
 - 2\. W przypadku nieautoryzowanej transakcji Bank zwraca Klientowi kwotę transakcji do końca następnego dnia roboczego po stwierdzeniu transakcji albo po otrzymaniu zgłoszenia, z wyjątkiem sytuacji, gdy Bank ma uzasadnione i należycie udokumentowane podstawy do podejrzewania oszustwa i powiadomi o tym organy ścigania.
-- 3\. Klient odpowiada za nieautoryzowane transakcje do kwoty stanowiącej równowartość 50 euro, jeżeli transakcja jest skutkiem posłużenia się utraconym lub skradzionym <!-- page: 17 --> instrumentem płatniczym albo jego przywłaszczenia. Klient odpowiada w pełnej wysokości, jeżeli doprowadził do nieautoryzowanej transakcji umyślnie albo w wyniku rażącego niedbalstwa, w szczególności przez naruszenie obowiązków określonych w Regulaminie.[^10]
+- 3\. Klient odpowiada za nieautoryzowane transakcje do kwoty stanowiącej równowartość 50 euro, jeżeli transakcja jest skutkiem posłużenia się utraconym lub skradzionym <!-- page: 17 --> instrumentem płatniczym albo jego przywłaszczenia. Klient odpowiada w pełnej wysokości, jeżeli doprowadził do nieautoryzowanej transakcji umyślnie albo w wyniku rażącego niedbalstwa, w szczególności przez naruszenie obowiązków określonych w Regulaminie.[^10)]
 
-[^10]: Zasady odpowiedzialności za nieautoryzowane transakcje płatnicze określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); ocena, czy doszło do rażącego niedbalstwa, uwzględnia okoliczności konkretnego przypadku.
+[^10)]: Zasady odpowiedzialności za nieautoryzowane transakcje płatnicze określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30); ocena, czy doszło do rażącego niedbalstwa, uwzględnia okoliczności konkretnego przypadku.
 
 ### § 39.
 

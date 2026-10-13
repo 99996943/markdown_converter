@@ -406,7 +406,7 @@ Przy zamykaniu rachunku firmowego dodatkowo:
 - 2\) weryfikuje się, czy do rachunku nie są przypisane rachunki pomocnicze, rachunki VAT, rachunki powiernicze lub zabezpieczenia umów kredytowych, które wymagają osobnego rozliczenia;
 - 3\) przed zamknięciem rachunku należy rozliczyć potrącenia na rzecz Banku, zawiadamiając Posiadacza o potrąceniu w terminie 3 dni;
 - 4\) pozostałe saldo wypłaca się w terminie 14 dni od dnia rozwiązania umowy wyłącznie przelewem na rachunek Posiadacza prowadzony w Banku lub w innym banku, z zastrzeżeniem odstępstw w razie likwidacji;
-- 5\) opłata za zamknięcie wynosi 50,00 zł i jest pobierana z salda rachunku w dniu zamknięcia; opłaty nie pobiera się, jeżeli zamknięcie następuje z inicjatywy Banku.[^1]
+- 5\) opłata za zamknięcie wynosi 50,00 zł i jest pobierana z salda rachunku w dniu zamknięcia; opłaty nie pobiera się, jeżeli zamknięcie następuje z inicjatywy Banku.[^1)]
 
 Przy zamknięciu rachunku firmowego w ciągu pierwszych sześciu miesięcy od jego otwarcia „Departament Operacji” ocenia, czy w grę nie wchodzi nadużycie warunków promocji; w razie potwierdzenia dodatkowo pobiera się opłatę za zamknięcie przed upływem okresu minimalnego wynoszącą 100,00 zł, o ile umowa to przewiduje.
 
@@ -422,7 +422,7 @@ Wykreślenie przedsiębiorcy z rejestru, jego likwidacja lub śmierć prowadząc
 
 W przypadku kredytu z promocyjną marżą uzależnioną od utrzymywania rachunku i wpływów na rachunek pracownik informuje Klienta, że zamknięcie rachunku może skutkować podwyższeniem oprocentowania lub utratą ulgi na warunkach opisanych w umowie kredytu (zob. także ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497) i ustawa z dnia 23 marca 2017 r. o kredycie hipotecznym oraz o nadzorze nad pośrednikami kredytu hipotecznego i agentami (Dz. U. 2025 poz. 720)). Informację doręcza się na piśmie, a Klient potwierdza zapoznanie z nią własnoręcznym podpisem lub w bankowości elektronicznej.
 
-[^1]: Dokument pozostaje w mocy; nowsze wersje, jeżeli zostaną opublikowane, nie uchylają niniejszej.
+[^1)]: Dokument pozostaje w mocy; nowsze wersje, jeżeli zostaną opublikowane, nie uchylają niniejszej.
 
 ## 11. Kontrola i nadzór
 

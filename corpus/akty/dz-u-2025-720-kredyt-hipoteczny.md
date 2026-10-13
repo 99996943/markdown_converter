@@ -76,7 +76,7 @@ Ustawy nie stosuje się do:
 
   – o ile spełnia warunki określone w ust. 1.
 
-[^4]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę Parlamentu Europejskiego i Rady 2014/17/UE z dnia 4 lutego 2014 r. w sprawie konsumenckich umów o kredyt związanych z nieruchomościami mieszkalnymi i zmieniającą dyrektywy 2008/48/WE i 2013/36/UE oraz rozporządzenie (UE) nr 1093/2010 (Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 246 z 23.09.2015, str. 11 oraz Dz. Urz. UE L 171 z 29.06.2016, str. 1).
+[^1)]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę Parlamentu Europejskiego i Rady 2014/17/UE z dnia 4 lutego 2014 r. w sprawie konsumenckich umów o kredyt związanych z nieruchomościami mieszkalnymi i zmieniającą dyrektywy 2008/48/WE i 2013/36/UE oraz rozporządzenie (UE) nr 1093/2010 (Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 246 z 23.09.2015, str. 11 oraz Dz. Urz. UE L 171 z 29.06.2016, str. 1).
 
 ### Art. 4.
 
@@ -215,14 +215,14 @@ Działalność gospodarcza, której przedmiotem jest udzielanie lub dawanie przy
   - 15\) w przypadku gdy umowa o kredyt hipoteczny dotyczy kredytu hipotecznego objętego wsparciem udzielanym ze środków publicznych – wskazanie warunków, kryteriów i ograniczeń oraz wymaganych dokumentów związanych z otrzymaniem takiego wsparcia.
 <!-- page: 8 -->
 - 2\. Kredytodawca, pośrednik kredytu hipotecznego ani agent nie mogą pobierać opłat od konsumenta za przekazywanie informacji w związku z obowiązkami informacyjnymi określonymi w ustawie.
-- 3\. [^1] Kredytodawca nie później niż na 30 dni przed zmianą postanowień umowy o kredyt hipoteczny przekazuje konsumentowi na trwałym nośniku:
+- 3\. [^2)] Kredytodawca nie później niż na 30 dni przed zmianą postanowień umowy o kredyt hipoteczny przekazuje konsumentowi na trwałym nośniku:
   - 1\) przejrzysty opis proponowanych zmian, w tym zmian wymagających uzyskania zgody konsumenta, lub zmian wprowadzonych z mocy prawa, wraz z harmonogramem ich wdrożenia;
   - 2\) informację o przysługującej konsumentowi możliwości złożenia reklamacji do kredytodawcy, a w przypadku nieuwzględnienia jego roszczeń – złożenia wniosku o rozpatrzenie sprawy do Rzecznika Finansowego zgodnie z ustawą z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. z 2024 r. poz. 1109 oraz z 2025 r. poz. 146), wraz ze wskazaniem adresu, na który należy złożyć ten wniosek, a także informację o możliwości skierowania roszczeń na drogę sądową lub możliwości pozasądowego rozwiązywania sporów.
-- 4\. [^1] Termin, o którym mowa w ust. 3, nie musi być zachowany, jeżeli zmiany postanowień umowy o kredyt hipoteczny wprowadzane są na wniosek konsumenta lub konsument wyraził zgodę na przekazanie informacji, o których mowa w ust. 3, bez zachowania tego terminu.
-- 5\. [^1] W przypadku, o którym mowa w ust. 4, przekazanie informacji, o których mowa w ust. 3, następuje przed zmianą postanowień umowy o kredyt hipoteczny.
-- 6\. [^1] W przypadku, o którym mowa w art. 31, przepisów ust. 3–5 nie stosuje się.
+- 4\. [^2)] Termin, o którym mowa w ust. 3, nie musi być zachowany, jeżeli zmiany postanowień umowy o kredyt hipoteczny wprowadzane są na wniosek konsumenta lub konsument wyraził zgodę na przekazanie informacji, o których mowa w ust. 3, bez zachowania tego terminu.
+- 5\. [^2)] W przypadku, o którym mowa w ust. 4, przekazanie informacji, o których mowa w ust. 3, następuje przed zmianą postanowień umowy o kredyt hipoteczny.
+- 6\. [^2)] W przypadku, o którym mowa w art. 31, przepisów ust. 3–5 nie stosuje się.
 
-[^1]: Dodany przez art. 68 ustawy z dnia 20 grudnia 2024 r. o podmiotach obsługujących kredyty i nabywcach kredytów (Dz. U. z 2025 r. poz. 146); wszedł w życie z dniem 5 kwietnia 2025 r.
+[^2)]: Dodany przez art. 68 ustawy z dnia 20 grudnia 2024 r. o podmiotach obsługujących kredyty i nabywcach kredytów (Dz. U. z 2025 r. poz. 146); wszedł w życie z dniem 5 kwietnia 2025 r.
 
 ### Art. 11.
 
@@ -492,9 +492,9 @@ W przypadku gdy łączna wysokość opłat z tytułu zaległości w spłacie kre
 
 ### Art. 41.
 
-W przypadku kredytów hipotecznych, dla których uzgodniono stałą stopę oprocentowania kredytu hipotecznego w danym okresie, przepisów art. 359 § 2¹–2[^2] ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny o odsetkach maksymalnych nie stosuje się w tym okresie, jednakże kredytodawca jest obowiązany przestrzegać tych przepisów w chwili ustalania wysokości odsetek oraz zawierania umowy o kredyt hipoteczny.
+W przypadku kredytów hipotecznych, dla których uzgodniono stałą stopę oprocentowania kredytu hipotecznego w danym okresie, przepisów art. 359 § 2¹–2[^3)] ustawy z dnia 23 kwietnia 1964 r. – Kodeks cywilny o odsetkach maksymalnych nie stosuje się w tym okresie, jednakże kredytodawca jest obowiązany przestrzegać tych przepisów w chwili ustalania wysokości odsetek oraz zawierania umowy o kredyt hipoteczny.
 
-[^2]: Dodany przez art. 9 pkt 1 ustawy z dnia 6 października 2022 r. o zmianie ustaw w celu przeciwdziałania lichwie (Dz. U. poz. 2339), która weszła w życie z dniem 18 maja 2023 r.
+[^3)]: Dodany przez art. 9 pkt 1 ustawy z dnia 6 października 2022 r. o zmianie ustaw w celu przeciwdziałania lichwie (Dz. U. poz. 2339), która weszła w życie z dniem 18 maja 2023 r.
 
 ## Rozdział 6. Odstąpienie od umowy o kredyt hipoteczny przez konsumenta
 
@@ -769,7 +769,7 @@ Przepisów art. 48–51, art. 55 oraz art. 57 nie stosuje się do działalności
     - c\) NIP,
     - d\) numer wpisu do ewidencji działalności gospodarczej,
     - e\) firmę, pod którą wykonuje działalność gospodarczą;
-  - 3\) [^2] wzmiankę o wykreśleniu z rejestru pośredników kredytowych.
+  - 3\) [^3)] wzmiankę o wykreśleniu z rejestru pośredników kredytowych.
 <!-- page: 24 -->
 - 4\. Dział drugi rejestru pośredników kredytowych zawiera w odniesieniu do pośredników kredytowych w rozumieniu art. 5 pkt 3 ustawy z dnia 12 maja 2011 r. o kredycie konsumenckim niebędących osobami fizycznymi:
   - 1\) numer wpisu do rejestru pośredników kredytowych;
@@ -779,9 +779,9 @@ Przepisów art. 48–51, art. 55 oraz art. 57 nie stosuje się do działalności
     - c\) NIP,
     - d\) numer w rejestrze przedsiębiorców;
   - 3\) wykaz wspólników lub członków zarządu zawierający dane określone w ust. 3 pkt 2 lit. a i c;
-  - 4\) [^3] wzmiankę o wykreśleniu z rejestru pośredników kredytowych.
+  - 4\) [^4)] wzmiankę o wykreśleniu z rejestru pośredników kredytowych.
 
-[^3]: Dodany przez art. 9 pkt 2 ustawy, o której mowa w odnośniku 3.
+[^4)]: Dodany przez art. 9 pkt 2 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 64.
 
@@ -865,7 +865,7 @@ W przypadku wykreślenia pośrednika kredytu hipotecznego lub agenta z rejestru 
   - 2\) żądanie udzielenia informacji dotyczy tych samych naruszeń przepisów prawa obowiązujących w innym niż Rzeczpospolita Polska państwie członkowskim przez ten sam podmiot, co do których na terytorium Rzeczypospolitej Polskiej toczy się już postępowanie sądowe lub administracyjne albo wydany został prawomocny wyrok lub została wydana przez Komisję Nadzoru Finansowego ostateczna decyzja administracyjna.
 - 7\. W przypadku odmowy przekazania informacji, o której mowa w ust. 6, Komisja Nadzoru Finansowego w terminie 30 dni od dnia otrzymania żądania powiadamia o odmowie właściwy organ nadzorczy, który zwrócił się z żądaniem.
 
-[^5]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 287 z 29.10.2013, str. 5, Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 173 z 12.06.2014, str. 190, Dz. Urz. UE L 225 z 30.07.2014, str. 1 oraz Dz. Urz. UE L 337 z 23.12.2015, str. 35.
+[^5)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 287 z 29.10.2013, str. 5, Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 173 z 12.06.2014, str. 190, Dz. Urz. UE L 225 z 30.07.2014, str. 1 oraz Dz. Urz. UE L 337 z 23.12.2015, str. 35.
 
 ### Art. 71.
 
@@ -1006,7 +1006,7 @@ Przepisy art. 4 pkt 28, art. 10 ust. 1 pkt 5, art. 31 ust. 1 i art. 32 stosuje s
 
 Tworzy się Komisję Egzaminacyjną dla Pośredników Kredytu Hipotecznego.
 
-[^6]: Artykuł 82 zawiera zmiany do ustawy z dnia 12 maja 2011 r. o kredycie konsumenckim.
+[^6)]: Artykuł 82 zawiera zmiany do ustawy z dnia 12 maja 2011 r. o kredycie konsumenckim.
 
 <!-- page: 31 -->
 ### Art. 93.
@@ -1035,7 +1035,7 @@ Ustawa wchodzi w życie po upływie 3 miesięcy od dnia ogłoszenia7), z wyjątk
 - 1\) art. 82 pkt 6 i 7, które wchodzą w życie po upływie 6 miesięcy od dnia ogłoszenia;
 - 2\) art. 4 pkt 28, art. 10 ust. 1 pkt 5, art. 31 ust. 1, art. 32 i art. 91, które wchodzą w życie z dniem 1 lipca 2018 r. <!-- page: 32 --> Załączniki do ustawy z dnia 23 marca 2017 r. (Dz. U. z 2025 r. poz. 720)
 
-[^7]: Ustawa została ogłoszona w dniu 21 kwietnia 2017 r.
+[^7)]: Ustawa została ogłoszona w dniu 21 kwietnia 2017 r.
 
 ## Załącznik nr 1
 
@@ -1065,7 +1065,7 @@ Podane poniżej informacje (w odpowiednich przypadkach), z wyjątkiem stopy opro
 
 \[Wynagrodzenie\]
 
-[^8]: Niniejszy dokument został przygotowany w oparciu o dostarczone dotychczas przez Państwa informacje, z uwzględnieniem aktualnej sytuacji na rynku finansowym.
+[^1]: Niniejszy dokument został przygotowany w oparciu o dostarczone dotychczas przez Państwa informacje, z uwzględnieniem aktualnej sytuacji na rynku finansowym.
 
 ## 3. Główne cechy kredytu hipotecznego
 

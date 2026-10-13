@@ -144,6 +144,18 @@ Spec 011 additions (parser 1.3.1):
 - FTN001 counts of every act in `Corpus/acts` are pinned in `GoldenTests.Act_OrphanFootnoteWarnings_MatchExpectedCount`
   (a new act needs a count; a changed count goes into the spec handoff).
 
+Spec 012 additions (parser 1.4.0, Markdown contract 2.0.0):
+- footnote identifiers are the PDF labels: `DocumentBuildStage.AssignIdentifiers` (after `NumberFootnotes`) sets
+  `Footnote.Identifier` / `FootnoteRef.Identifier` — the label verbatim (`[^21]`, `[^1)]`, `[^*)]`), a suffix `-k` from
+  the second occurrence of a repeated label in page order then draft order (never equal to another label), and for a
+  label GFM cannot carry (empty, space, tab, `[`, `]`) a substitute number with warning `FTN002_FootnoteWithoutLabel`;
+- `Number` stays the sequence number (definition order, chunker selection); the renderer writes `Identifier`, or the
+  number when it is empty; the chunker has no code change, but longer identifiers can move part boundaries near
+  `MaxChunkLength`;
+- `NumberCheck`, `MarkdownInvariantsTests` (invariant 3: unique definitions, every reference defined) and the corpus
+  `QualityMetrics` match identifiers `[^…]`, not digits; `GoldenTests.AssertFootnoteIdentifiers` checks the identifier
+  rule on every golden document (public and private).
+
 A later stage usually skips lines that an earlier stage claimed. For example, `TableDetection` and `ReadingOrder` skip lines annotated as belonging to a table-document. When you change one stage, check how the downstream stages read those annotations.
 
 **Text extraction is custom.** The parser does not use PdfPig's `DocumentLayoutAnalysis`; the reasons are in `specs/001-legal-pdf-parser/research.md` R3. Words, lines, segments, columns, tables and headings are all built from letters, rulings and images. This keeps per-letter style (`**bold**` fragments) and keeps wide gaps as table-cell boundaries.
@@ -155,7 +167,7 @@ A later stage usually skips lines that an earlier stage claimed. For example, `T
 
 `AssignLevels` gives structural kinds consecutive levels from 2, puts units one level below the deepest structural kind, and caps typographic levels. The resulting level hierarchy is a contract invariant (no gaps).
 
-**Rendering.** `Rendering/` turns the section tree into CommonMark + GFM. The output contract is `specs/001-legal-pdf-parser/contracts/markdown-output.md`, plus the addenda in spec 002, spec 007 and spec 008 (contract 1.3.0: slash labels `- 1/`, bare `§ N` units, glossary items `- 1/ **termin** definicja`, letter and Roman dot labels `- a\.`, `- ii\.` in a consistent sequence). Spec 010 adds contract 1.4.0 (merged cells repeated in every row, header group, `RowSpan`/`ContinuesAbove`/`HeaderGroup`). It covers page markers `<!-- page: N -->`, footnotes `[^n]`, escaped list labels (`- 1\)`), GFM tables, and a fallback table format (`a \| b`) with warning TBL001.
+**Rendering.** `Rendering/` turns the section tree into CommonMark + GFM. The output contract is `specs/001-legal-pdf-parser/contracts/markdown-output.md`, plus the addenda in spec 002, spec 007 and spec 008 (contract 1.3.0: slash labels `- 1/`, bare `§ N` units, glossary items `- 1/ **termin** definicja`, letter and Roman dot labels `- a\.`, `- ii\.` in a consistent sequence). Spec 010 adds contract 1.4.0 (merged cells repeated in every row, header group, `RowSpan`/`ContinuesAbove`/`HeaderGroup`). It covers page markers `<!-- page: N -->`, footnotes (identifiers from the PDF labels since spec 012, contract 2.0.0: `[^21]`, `[^1)]`, `[^1)-2]`), escaped list labels (`- 1\)`), GFM tables, and a fallback table format (`a \| b`) with warning TBL001.
 
 **Output must contain only text from the PDF.** Never synthesize words such as labels or „Krok N:”. Structure is expressed only through Markdown formatting.
 

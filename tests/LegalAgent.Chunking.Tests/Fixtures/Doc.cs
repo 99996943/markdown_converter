@@ -15,6 +15,9 @@ public static class Doc
     /// <summary>A footnote reference.</summary>
     public static FootnoteRef Ref(int number) => new(number);
 
+    /// <summary>A footnote reference that carries the PDF label as its identifier.</summary>
+    public static FootnoteRef Ref(int number, string identifier) => new(number) { Identifier = identifier };
+
     /// <summary>A page break before the following text.</summary>
     public static PageBreak Break(int page) => new(page);
 
@@ -47,8 +50,8 @@ public static class Doc
         new(new PageRange(first, last), null, rows, rows[0].Cells.Count, IsFallback: true);
 
     /// <summary>A footnote definition.</summary>
-    public static Footnote Footnote(int number, string text, int page = 1) =>
-        new(number, number.ToString(System.Globalization.CultureInfo.InvariantCulture), [Text(text)], page, IsOrphan: false);
+    public static Footnote Footnote(int number, string text, int page = 1, string identifier = "") =>
+        new(number, number.ToString(System.Globalization.CultureInfo.InvariantCulture), [Text(text)], page, IsOrphan: false) { Identifier = identifier };
 
     /// <summary>A section; <paramref name="heading"/> is the full heading text.</summary>
     public static Section Section(

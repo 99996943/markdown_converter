@@ -170,37 +170,37 @@ Wyrazy „bank” lub „kasa” mogą być używane w nazwie oraz dla określen
 - 3\. Przepisy ustawy dotyczące państw członkowskich stosuje się również do państw trzecich, ale należących do Europejskiego Obszaru Gospodarczego.
 - 4\. Bank krajowy i bank zagraniczny są instytucją, o której mowa w art. 4 ust. 1 pkt 1 rozporządzenia nr 575/2013.
 
-[^2]: Niniejsza ustawa dokonuje w zakresie swojej regulacji wdrożenia następujących dyrektyw Wspólnot Europejskich:
+[^1)]: Niniejsza ustawa dokonuje w zakresie swojej regulacji wdrożenia następujących dyrektyw Wspólnot Europejskich:
 
-[^3]: dyrektywy 97/5/WE z dnia 27 stycznia 1997 r. w sprawie transgranicznych przelewów bankowych (Dz. Urz. WE L 43 z 14.02.1997);
+[^1)-2]: dyrektywy 97/5/WE z dnia 27 stycznia 1997 r. w sprawie transgranicznych przelewów bankowych (Dz. Urz. WE L 43 z 14.02.1997);
 
-[^4]: dyrektywy 98/26/EWG z dnia 19 maja 1998 r. w sprawie zamknięcia rozliczeń w systemach płatności i rozrachunku papierów wartościowych (Dz. Urz. WE L 166 z 11.06.1998);
+[^2)]: dyrektywy 98/26/EWG z dnia 19 maja 1998 r. w sprawie zamknięcia rozliczeń w systemach płatności i rozrachunku papierów wartościowych (Dz. Urz. WE L 166 z 11.06.1998);
 
-[^5]: dyrektywy 1999/93/WE z dnia 13 grudnia 1999 r. w sprawie wspólnotowych ram w zakresie podpisów elektronicznych (Dz. Urz. WE L 13 z 19.01.2000);
+[^3)]: dyrektywy 1999/93/WE z dnia 13 grudnia 1999 r. w sprawie wspólnotowych ram w zakresie podpisów elektronicznych (Dz. Urz. WE L 13 z 19.01.2000);
 
-[^6]: dyrektywy 2000/12/WE z dnia 10 marca 2000 r. odnoszącej się do podejmowania i prowadzenia działalności przez instytucje kredytowe (Dz. Urz. WE L 126 z 26.05.2000);
+[^4)]: dyrektywy 2000/12/WE z dnia 10 marca 2000 r. odnoszącej się do podejmowania i prowadzenia działalności przez instytucje kredytowe (Dz. Urz. WE L 126 z 26.05.2000);
 
-[^7]: dyrektywy 2000/28/WE z dnia 18 września 2000 r. zmieniającej dyrektywę 2000/12/WE odnoszącą się do podejmowania i prowadzenia działalności gospodarczej przez instytucje kredytowe (Dz. Urz. WE L 275 z 27.10.2000);
+[^5)]: dyrektywy 2000/28/WE z dnia 18 września 2000 r. zmieniającej dyrektywę 2000/12/WE odnoszącą się do podejmowania i prowadzenia działalności gospodarczej przez instytucje kredytowe (Dz. Urz. WE L 275 z 27.10.2000);
 
-[^8]: dyrektywy 2000/46/WE z dnia 18 września 2000 r. w sprawie podejmowania i prowadzenia działalności przez instytucje pieniądza elektronicznego oraz nadzoru ostrożnościowego nad ich działalnością (Dz. Urz. WE L 275 z 27.10.2000);
+[^6)]: dyrektywy 2000/46/WE z dnia 18 września 2000 r. w sprawie podejmowania i prowadzenia działalności przez instytucje pieniądza elektronicznego oraz nadzoru ostrożnościowego nad ich działalnością (Dz. Urz. WE L 275 z 27.10.2000);
 
-[^9]: dyrektywy 2001/24/WE z dnia 4 kwietnia 2001 r. w sprawie reorganizacji i likwidacji instytucji kredytowych (Dz. Urz. WE L 125 z 05.05.2001). Dane dotyczące ogłoszenia aktów prawa Unii Europejskiej, zamieszczone w niniejszej ustawie – z dniem uzyskania przez Rzeczpospolitą Polską członkostwa w Unii Europejskiej – dotyczą ogłoszenia tych aktów w Dzienniku Urzędowym Unii Europejskiej – wydanie specjalne.
+[^7)]: dyrektywy 2001/24/WE z dnia 4 kwietnia 2001 r. w sprawie reorganizacji i likwidacji instytucji kredytowych (Dz. Urz. WE L 125 z 05.05.2001). Dane dotyczące ogłoszenia aktów prawa Unii Europejskiej, zamieszczone w niniejszej ustawie – z dniem uzyskania przez Rzeczpospolitą Polską członkostwa w Unii Europejskiej – dotyczą ogłoszenia tych aktów w Dzienniku Urzędowym Unii Europejskiej – wydanie specjalne.
 
-[^10]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 154 z 19.06.2015, str. 1.
+[^2)-2]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 154 z 19.06.2015, str. 1.
 
-[^11]: Zmiany wymienionej dyrektywy zostały ogłoszone w Dz. Urz. UE L 208 z 02.08.2013, str. 73, Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 173 z 12.06.2014, str. 190, Dz. Urz. UE L 337 z 23.12.2015, str. 35, Dz. Urz. UE L 20 z 25.01.2017, str. 1, Dz. Urz. UE L 156 z 19.06.2018, str. 43, Dz. Urz. UE L 150 z 07.06.2019, str. 253, Dz. Urz. UE L 314 z 05.12.2019, str. 64, Dz. Urz. UE L 203 z 26.06.2020, str. 95, Dz. Urz. UE L 212 z 03.07.2020, str. 20 oraz Dz. Urz. UE L 68 z 26.02.2021, str. 14.
+[^3)-2]: Zmiany wymienionej dyrektywy zostały ogłoszone w Dz. Urz. UE L 208 z 02.08.2013, str. 73, Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 173 z 12.06.2014, str. 190, Dz. Urz. UE L 337 z 23.12.2015, str. 35, Dz. Urz. UE L 20 z 25.01.2017, str. 1, Dz. Urz. UE L 156 z 19.06.2018, str. 43, Dz. Urz. UE L 150 z 07.06.2019, str. 253, Dz. Urz. UE L 314 z 05.12.2019, str. 64, Dz. Urz. UE L 203 z 26.06.2020, str. 95, Dz. Urz. UE L 212 z 03.07.2020, str. 20 oraz Dz. Urz. UE L 68 z 26.02.2021, str. 14.
 
-[^12]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 208 z 02.08.2013, str. 68, Dz. Urz. UE L 321 z 30.11.2013, str. 6, Dz. Urz. UE L 11 z 17.01.2015, str. 37, Dz. Urz. UE L 171 z 29.06.2016, str. 153, Dz. Urz. UE L 20 z 25.01.2017, str. 4, Dz. Urz. UE L 310 z 25.11.2017, str. 1, Dz. Urz. UE L 345 z 27.12.2017, str. 27, Dz. Urz. UE L 347 z 28.12.2017, str. 1, Dz. Urz. UE L 111 z 25.04.2019, str. 4, Dz. Urz. UE L 150 z 07.06.2019, str. 1, Dz. Urz. UE L 183 z 09.07.2019, str. 14, Dz. Urz. UE L 314 z 05.12.2019, str. 1, Dz. Urz. UE L 328 z 18.12.2019, str. 1, Dz. Urz. UE L 204 z 26.06.2020, str. 4, Dz. Urz. UE L 84 z 11.03.2021, str. 1 oraz Dz. Urz. UE L 116 z 06.04.2021, str. 25.
+[^4)-2]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 208 z 02.08.2013, str. 68, Dz. Urz. UE L 321 z 30.11.2013, str. 6, Dz. Urz. UE L 11 z 17.01.2015, str. 37, Dz. Urz. UE L 171 z 29.06.2016, str. 153, Dz. Urz. UE L 20 z 25.01.2017, str. 4, Dz. Urz. UE L 310 z 25.11.2017, str. 1, Dz. Urz. UE L 345 z 27.12.2017, str. 27, Dz. Urz. UE L 347 z 28.12.2017, str. 1, Dz. Urz. UE L 111 z 25.04.2019, str. 4, Dz. Urz. UE L 150 z 07.06.2019, str. 1, Dz. Urz. UE L 183 z 09.07.2019, str. 14, Dz. Urz. UE L 314 z 05.12.2019, str. 1, Dz. Urz. UE L 328 z 18.12.2019, str. 1, Dz. Urz. UE L 204 z 26.06.2020, str. 4, Dz. Urz. UE L 84 z 11.03.2021, str. 1 oraz Dz. Urz. UE L 116 z 06.04.2021, str. 25.
 
-[^13]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 171 z 29.06.2016, str. 1, Dz. Urz. UE L 175 z 30.06.2016, str. 1 oraz Dz. Urz. UE L 287 z 21.10.2016, str. 320.
+[^5)-2]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 171 z 29.06.2016, str. 1, Dz. Urz. UE L 175 z 30.06.2016, str. 1 oraz Dz. Urz. UE L 287 z 21.10.2016, str. 320.
 
-[^14]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 174 z 01.07.2011, str. 1, Dz. Urz. UE L 105 z 08.04.2014, str. 1 oraz Dz. Urz. UE L 153 z 22.05.2014, str. 1.
+[^6)-2]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 174 z 01.07.2011, str. 1, Dz. Urz. UE L 105 z 08.04.2014, str. 1 oraz Dz. Urz. UE L 153 z 22.05.2014, str. 1.
 
-[^15]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 195 z 19.06.2020, str. 119.
+[^7)-2]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 195 z 19.06.2020, str. 119.
 
-[^16]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 20 z 24.01.2020, str. 26 oraz Dz. Urz. UE L 405 z 02.12.2020, str. 79.
+[^8)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 20 z 24.01.2020, str. 26 oraz Dz. Urz. UE L 405 z 02.12.2020, str. 79.
 
-[^17]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 127 z 23.05.2018, str. 2.
+[^9)]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 127 z 23.05.2018, str. 2.
 
 ### Art. 4a.
 
@@ -1721,7 +1721,7 @@ W przypadku gdy instytucja kredytowa prowadząca działalność na terytorium Rz
 
 Rachunek bankowy, z wyjątkiem rachunku rodzinnego, może być prowadzony dla kilku osób fizycznych, kilku jednostek samorządu terytorialnego, stron umowy o współpracy w rozumieniu ustawy z dnia 9 czerwca 2011 r. – Prawo geologiczne i górnicze (Dz. U. z 2024 r. poz. 1290) albo kilku dobrowolnych funduszy emerytalnych będących funduszami zdefiniowanej daty w rozumieniu ustawy z dnia 4 października 2018 r. o pracowniczych planach kapitałowych (Dz. U. z 2024 r. poz. 427) zarządzanymi przez jedno powszechne towarzystwo emerytalne – rachunek wspólny.
 
-[^18]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2023 r. poz. 1429, 1606, 1615, 1667, 1860 i 2760 oraz z 2024 r. poz. 858, 859, 863, 1222 i 1237.
+[^10)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2023 r. poz. 1429, 1606, 1615, 1667, 1860 i 2760 oraz z 2024 r. poz. 858, 859, 863, 1222 i 1237.
 
 <!-- page: 52 -->
 ### Art. 51a.
@@ -1788,7 +1788,7 @@ W przypadku rachunku wspólnego prowadzonego dla osób fizycznych, o ile umowa r
 
 Środki pieniężne znajdujące się na rachunku będącym przedmiotem blokady rachunku podmiotu kwalifikowanego w rozumieniu art. 119zg pkt 2 ustawy z dnia 29 sierpnia 1997 r. – Ordynacja podatkowa (Dz. U. z 2023 r. poz. 2383 i 2760 oraz z 2024 r. poz. 879) nie podlegają zajęciu na podstawie sądowego lub administracyjnego tytułu wykonawczego poza wyjątkami określonymi w przepisach o postępowaniu egzekucyjnym.
 
-[^19]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2024 r. poz. 232, 834, 854, 858, 1089 i 1222.
+[^11)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2024 r. poz. 232, 834, 854, 858, 1089 i 1222.
 
 <!-- page: 54 -->
 ### Art. 55.
@@ -1948,7 +1948,7 @@ Umarzanie utraconych dokumentów zawarcia umowy rachunku oszczędnościowego, ra
 - 4\. W przypadku naliczenia odsetek od środków zgromadzonych na rachunku VAT bank bez odrębnej dyspozycji posiadacza rachunku VAT uznaje kwotą tych odsetek rachunek rozliczeniowy, dla którego jest prowadzony rachunek VAT. W przypadku gdy rachunek VAT jest prowadzony dla kilku rachunków rozliczeniowych, bank uznaje rachunek rozliczeniowy wskazany przez posiadacza tych rachunków.
 - 5\. Przepisów ust. 2 pkt 1 i 3–6a nie stosuje się, jeżeli rachunek odbiorcy jest prowadzony przez instytucję kredytową lub bank zagraniczny, które nie działają na terytorium Rzeczypospolitej Polskiej w formie oddziału.
 
-[^20]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2023 r. poz. 1273, 1407, 1429, 1641, 1693 i 1872 oraz z 2024 r. poz. 858 i 1089.
+[^12)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2023 r. poz. 1273, 1407, 1429, 1641, 1693 i 1872 oraz z 2024 r. poz. 858 i 1089.
 
 ### Art. 62c.
 
@@ -2801,7 +2801,7 @@ Bank może zawrzeć umowę o kredytowy instrument pochodny lub inną umowę niż
       - – w związku z wszczętą kontrolą celno-skarbową, kontrolą podatkową albo toczącym się postępowaniem podatkowym albo czynnościami audytowymi, o których mowa w art. 99a pkt 2 ustawy z dnia 16 listopada 2016 r. o Krajowej Administracji Skarbowej,
       - – w związku z prowadzonymi czynnościami analitycznymi, o których mowa w art. 49a lub art. 49aa ust. 1 ustawy z dnia 16 listopada 2016 r. o Krajowej Administracji Skarbowej,
       - – w związku z wnioskiem o informacje złożonym na podstawie art. 7 ust. 3a rozporządzenia Parlamentu Europejskiego i Rady (UE, Euratom) nr 883/2013 z dnia 11 września 2013 r. dotyczącego dochodzeń prowadzonych przez Europejski Urząd ds. Zwalczania Nadużyć Finansowych (OLAF) oraz uchylającego rozporządzenie (WE) nr 1073/1999 Parlamentu Europejskiego i Rady i rozporządzenie Rady (Euratom) nr 1074/1999 (Dz. Urz. UE L 248 z 18.09.2013, str. 1, z późn. zm.14)),
-    - ea\) [^1] ministra właściwego do spraw finansów publicznych i Szefa Krajowej Administracji Skarbowej w zakresie określonym w przepisach ustawy z dnia 9 marca 2017 r. o wymianie informacji podatkowych z innymi państwami (Dz. U. z 2023 r. poz. 241 oraz z 2024 r. poz. 879),
+    - ea\) [^15)] ministra właściwego do spraw finansów publicznych i Szefa Krajowej Administracji Skarbowej w zakresie określonym w przepisach ustawy z dnia 9 marca 2017 r. o wymianie informacji podatkowych z innymi państwami (Dz. U. z 2023 r. poz. 241 oraz z 2024 r. poz. 879),
     - f\) Prezesa Najwyższej Izby Kontroli w zakresie niezbędnym do przeprowadzenia postępowania kontrolnego określonego w ustawie z dnia 23 grudnia 1994 r. o Najwyższej Izbie Kontroli (Dz. U. z 2022 r. poz. 623),
     - g\) (uchylona)
     - h\) Bankowego Funduszu Gwarancyjnego w zakresie określonym ustawą z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozytów oraz przymusowej restrukturyzacji oraz upoważnionych pracowników Bankowego Funduszu Gwarancyjnego w zakresie określonym upoważnieniem,
@@ -2913,13 +2913,13 @@ podarczej działającym na podstawie ustawy z dnia 9 kwietnia 2010 r. o udostęp
 - 6\. Bank nie ponosi odpowiedzialności za szkodę wynikającą z ujawnienia tajemnicy bankowej przez osoby i instytucje upoważnione przez ustawę do żądania od banków udzielania informacji stanowiących tajemnicę bankową.
 - 7\. Minister właściwy do spraw instytucji finansowych, po zasięgnięciu opinii Komisji Nadzoru Finansowego, określi, w drodze rozporządzenia, szczegółowy zakres danych podlegających wymianie, o których mowa w ust. 4h, uwzględniając właściwą ochronę praw osób, których informacje dotyczą, oraz zapewnienie możliwości dokonania oceny zdolności kredytowej konsumenta i analizy ryzyka kredytowego.
 
-[^1]: Dodana przez art. 3 ustawy z dnia 23 maja 2024 r. o zmianie ustawy o wymianie informacji podatkowych z innymi państwami oraz niektórych innych ustaw (Dz. U. poz. 879), która weszła w życie z dniem 1 lipca 2024 r.
+[^15)]: Dodana przez art. 3 ustawy z dnia 23 maja 2024 r. o zmianie ustawy o wymianie informacji podatkowych z innymi państwami oraz niektórych innych ustaw (Dz. U. poz. 879), która weszła w życie z dniem 1 lipca 2024 r.
 
-[^21]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2023 r. poz. 556, 588, 641, 658, 760, 996, 1059, 1193, 1195, 1234, 1598, 1723 i 1860 oraz z 2024 r. poz. 850, 863, 879 i 1222.
+[^13)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2023 r. poz. 556, 588, 641, 658, 760, 996, 1059, 1193, 1195, 1234, 1598, 1723 i 1860 oraz z 2024 r. poz. 850, 863, 879 i 1222.
 
-[^22]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 317 z 23.11.2016, str. 1 oraz Dz. Urz. UE L 437 z 28.12.2020, str. 49.
+[^14)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 317 z 23.11.2016, str. 1 oraz Dz. Urz. UE L 437 z 28.12.2020, str. 49.
 
-[^23]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 137 z 24.05.2017, str. 41, Dz. Urz. UE L 317 z 09.12.2019, str. 17, Dz. Urz. UE L 334 z 27.12.2019, str. 1, Dz. Urz. UE L 49 z 12.02.2021, str. 6 oraz Dz. Urz. UE L 333 z 27.12.2022, str. 1.
+[^16)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 137 z 24.05.2017, str. 41, Dz. Urz. UE L 317 z 09.12.2019, str. 17, Dz. Urz. UE L 334 z 27.12.2019, str. 1, Dz. Urz. UE L 49 z 12.02.2021, str. 6 oraz Dz. Urz. UE L 333 z 27.12.2022, str. 1.
 
 ### Art. 105a.
 
@@ -4182,7 +4182,7 @@ wystąpienia niekorzystnych zmian na rynkach, potencjalnie zagrażających płyn
 - 8\. Komisja Nadzoru Finansowego monitoruje spełnianie przez finansową spółkę holdingową i finansową spółkę holdingową o działalności mieszanej warunków, o których mowa w art. 48r ust. 1 albo art. 48s ust. 1.
 - 9\. Finansowa spółka holdingowa i finansowa spółka holdingowa o działalności mieszanej przekazują, na żądanie Komisji Nadzoru Finansowego, informacje niezbędne do monitorowania spełniania warunków, o których mowa w art. 48r ust. 1 albo art. 48s ust. 1.
 
-[^24]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 153 z 22.05.2014, str. 1, Dz. Urz. UE L 105 z 08.04.2014, str. 1 oraz Dz. Urz. UE L 334 z 27.12.2019, str. 1.
+[^17)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 153 z 22.05.2014, str. 1, Dz. Urz. UE L 105 z 08.04.2014, str. 1 oraz Dz. Urz. UE L 334 z 27.12.2019, str. 1.
 
 ### Art. 141h.
 
@@ -4408,7 +4408,7 @@ Bank ogłasza w sposób ogólnie dostępny, zgodnie z art. 431–434 rozporządz
 - 7\. W okresie realizacji planu naprawy zysk osiągany przez bank jest przeznaczany w pierwszej kolejności na pokrycie strat, a następnie na zwiększenie funduszy własnych banku.
 - 8\. W przypadku wydania decyzji, o której mowa w ust. 3, Komisja Nadzoru Finansowego niezwłocznie powiadamia Bankowy Fundusz Gwarancyjny.
 
-[^25]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 28 z 04.02.2016, str. 18 oraz Dz. Urz. UE L 271 z 30.10.2018, str. 10.
+[^18)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 28 z 04.02.2016, str. 18 oraz Dz. Urz. UE L 271 z 30.10.2018, str. 10.
 
 ### Art. 142a.
 
@@ -4885,4 +4885,4 @@ Traci moc ustawa z dnia 31 stycznia 1989 r. – Prawo bankowe (Dz. U. z 1992 r. 
 
 Ustawa wchodzi w życie z dniem 1 stycznia 1998 r.
 
-[^26]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 1993 r. poz. 29, 127 i 646, z 1994 r. poz. 369 i 591, z 1995 r. poz. 18 i 654, z 1996 r. poz. 61, 357, 406, 496 i 703 oraz z 1997 r. poz. 117, 119, 449, 554, 769, 770 i 926.
+[^19)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 1993 r. poz. 29, 127 i 646, z 1994 r. poz. 369 i 591, z 1995 r. poz. 18 i 654, z 1996 r. poz. 61, 357, 406, 496 i 703 oraz z 1997 r. poz. 117, 119, 449, 554, 769, 770 i 926.

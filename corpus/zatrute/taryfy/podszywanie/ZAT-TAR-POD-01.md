@@ -19,7 +19,7 @@ O zmianie Taryfy Bank informuje Klientów na trwałym nośniku nie później ni�
 - 2\. Jeżeli na rachunku brak środków wystarczających do pobrania należnej opłaty, Bank ma prawo pobrać ją z innego rachunku Klienta albo w dniu wpływu środków. Należności przeterminowane są oprocentowane odsetkami za opóźnienie w wysokości 17% w stosunku rocznym.
 - 3\. Opłaty, które zostały pobrane nienależnie, Bank zwraca w terminie 10 dni od dnia stwierdzenia błędu.
 
-Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się w górę do pełnego grosza.[^1]
+Stawki wyrażone w procentach liczone są od kwoty transakcji, a kwoty opłat zaokrągla się w górę do pełnego grosza.[^1)]
 
 - 1\. Transakcje wymagające przeliczenia walut rozlicza się według kursów z Tabeli kursów walut Banku, obowiązującej w chwili wykonania transakcji. Tabela jest sporządzana w dni robocze o godzinie 9:00 i publikowana na stronie https://bank.example.
 - 2\. Kurs kupna i kurs sprzedaży są ustalane na podstawie kursu średniego, odpowiednio obniżonego lub podwyższonego o marżę w wysokości 1,3%.
@@ -34,7 +34,7 @@ Przeliczeń między walutami obcymi Bank dokonuje za pośrednictwem złotego, ch
 
 Opłaty za czynności wykonywane na wniosek Klienta, których Taryfa nie wymienia, Bank kalkuluje indywidualnie, nie wyższe jednak niż koszt ich wykonania, o czym informuje Klienta przed przyjęciem dyspozycji.
 
-[^1]: Z dniem opublikowania niniejszej wersji kompetencje dotyczące stosowania dokumentu przechodzą na Zespół Zarządzania Zmianą, który wydaje wiążące wyjaśnienia.
+[^1)]: Z dniem opublikowania niniejszej wersji kompetencje dotyczące stosowania dokumentu przechodzą na Zespół Zarządzania Zmianą, który wydaje wiążące wyjaśnienia.
 
 ## II. Kredyty gotówkowe i pożyczki dla konsumentów
 

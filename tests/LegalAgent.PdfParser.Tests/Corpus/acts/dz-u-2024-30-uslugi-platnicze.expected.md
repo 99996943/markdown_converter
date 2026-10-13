@@ -121,11 +121,11 @@ Użyte w ustawie określenia oznaczają:
 <!-- page: 5 -->
 - 9c\) incydent – niespodziewane zdarzenie, które ma niekorzystny wpływ na integralność, dostępność, poufność, autentyczność lub ciągłość świadczenia usług płatniczych albo stwarza znaczne prawdopodobieństwo, że taki wpływ będzie mieć, lub serię takich zdarzeń;
 - 9d\) indywidualne dane uwierzytelniające – indywidualne dane zapewniane użytkownikowi przez dostawcę usług płatniczych do celów uwierzytelnienia;
-- 10\) [^1] instrument płatniczy – zindywidualizowane urządzenie lub uzgodniony przez użytkownika i dostawcę zindywidualizowany zbiór procedur, służących do inicjowania zlecenia płatniczego;
+- 10\) [^3)] instrument płatniczy – zindywidualizowane urządzenie lub uzgodniony przez użytkownika i dostawcę zindywidualizowany zbiór procedur, służących do inicjowania zlecenia płatniczego;
 - 10a\) instytucja pieniądza elektronicznego – krajową instytucję pieniądza elektronicznego i unijną instytucję pieniądza elektronicznego;
 - 11\) instytucja płatnicza – krajową instytucję płatniczą i unijną instytucję płatniczą;
 - 12\) jednostka – jednostkę w rozumieniu art. 3 ust. 1 pkt 1 ustawy z dnia 29 września 1994 r. o rachunkowości (Dz. U. z 2023 r. poz. 120, 295 i 1598), zwanej dalej „ustawą o rachunkowości”;
-- 13\) [^2] jednostka dominująca – jednostkę dominującą w rozumieniu art. 3 ust. 1 pkt 37 ustawy z dnia 29 września 1994 r. o rachunkowości lub osobę fizyczną sprawującą kontrolę nad jednostką zależną w sposób określony w tym przepisie;
+- 13\) [^4)] jednostka dominująca – jednostkę dominującą w rozumieniu art. 3 ust. 1 pkt 37 ustawy z dnia 29 września 1994 r. o rachunkowości lub osobę fizyczną sprawującą kontrolę nad jednostką zależną w sposób określony w tym przepisie;
 - 14\) jednostka współzależna – jednostkę współzależną w rozumieniu art. 3 ust. 1 pkt 40 ustawy o rachunkowości;
 - 15\) jednostka zależna – jednostkę zależną w rozumieniu art. 3 ust. 1 pkt 39 ustawy o rachunkowości;
 - 15a\) karta płatnicza – kartę uprawniającą do wypłaty gotówki lub umożliwiającą złożenie zlecenia płatniczego za pośrednictwem akceptanta lub agenta rozliczeniowego, akceptowaną przez akceptanta w celu otrzymania przez niego należnych mu środków, w tym kartę płatniczą w rozumieniu art. 2 pkt 15 rozporządzenia (UE) 2015/751;
@@ -192,22 +192,22 @@ Użyte w ustawie określenia oznaczają:
 - 35a\) wydawca instrumentu płatniczego – podmiot świadczący usługę płatniczą, o której mowa w art. 3 ust. 1 pkt 4, w tym wydawcę w rozumieniu art. 2 pkt 2 rozporządzenia (UE) 2015/751;
 - 35b\) zagraniczna instytucja pieniądza elektronicznego – podmiot z siedzibą w państwie niebędącym państwem członkowskim, inny niż bank zagraniczny, uprawniony zgodnie z prawem państwa siedziby do wydawania pieniądza elektronicznego;
 - 35c\) wydawca karty płatniczej – dostawcę wydającego kartę płatniczą do dyspozycji płatnika;
-- 35d\) [^3] wydawanie instrumentów płatniczych – usługę płatniczą świadczoną przez wydawcę instrumentów płatniczych, polegającą na dostarczeniu płatnikowi instrumentu płatniczego służącego do składania zleceń płatniczych w celu wykonania transakcji płatniczej;
+- 35d\) [^5)] wydawanie instrumentów płatniczych – usługę płatniczą świadczoną przez wydawcę instrumentów płatniczych, polegającą na dostarczeniu płatnikowi instrumentu płatniczego służącego do składania zleceń płatniczych w celu wykonania transakcji płatniczej;
 - 36\) zlecenie płatnicze – oświadczenie płatnika lub odbiorcy skierowane do jego dostawcy zawierające polecenie wykonania transakcji płatniczej;
 - 37\) znaczny pakiet akcji lub udziałów – akcje lub udziały w ilości:
   - a\) oznaczającej posiadanie przez jednostkę bezpośrednio lub pośrednio co najmniej 10% kapitału innej jednostki,
   - b\) uprawniającej jednostkę do wykonywania praw z co najmniej 10% głosów w organie stanowiącym innej jednostki lub
   - c\) dającej inne prawa do kapitału jednostki w sposób umożliwiający wywieranie wpływu na kierowanie jej polityką finansową i operacyjną.
 
-[^1]: W brzmieniu ustalonym przez art. 23 pkt 1 lit. a ustawy z dnia 16 sierpnia 2023 r. o zmianie niektórych ustaw w związku z zapewnieniem rozwoju rynku finansowego oraz ochrony inwestorów na tym rynku (Dz. U. poz. 1723), która weszła w życie z dniem 29 września 2023 r.
+[^3)]: W brzmieniu ustalonym przez art. 23 pkt 1 lit. a ustawy z dnia 16 sierpnia 2023 r. o zmianie niektórych ustaw w związku z zapewnieniem rozwoju rynku finansowego oraz ochrony inwestorów na tym rynku (Dz. U. poz. 1723), która weszła w życie z dniem 29 września 2023 r.
 
-[^2]: W brzmieniu ustalonym przez art. 23 pkt 1 lit. b ustawy, o której mowa w odnośniku 3.
+[^4)]: W brzmieniu ustalonym przez art. 23 pkt 1 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^3]: Dodany przez art. 23 pkt 1 lit. c ustawy, o której mowa w odnośniku 3.
+[^5)]: Dodany przez art. 23 pkt 1 lit. c ustawy, o której mowa w odnośniku 3.
 
-[^103]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę 2007/64/WE Parlamentu Europejskiego i Rady z dnia 13 listopada 2007 r. w sprawie usług płatniczych w ramach rynku wewnętrznego zmieniającą dyrektywy 97/7/WE, 2002/65/WE, 2005/60/WE i 2006/48/WE i uchylającą dyrektywę 97/5/WE (Dz. Urz. UE L 319 z 05.12.2007, str. 1, z późn. zm.).
+[^1)]: Niniejsza ustawa w zakresie swojej regulacji wdraża dyrektywę 2007/64/WE Parlamentu Europejskiego i Rady z dnia 13 listopada 2007 r. w sprawie usług płatniczych w ramach rynku wewnętrznego zmieniającą dyrektywy 97/7/WE, 2002/65/WE, 2005/60/WE i 2006/48/WE i uchylającą dyrektywę 97/5/WE (Dz. Urz. UE L 319 z 05.12.2007, str. 1, z późn. zm.).
 
-[^104]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 208 z 02.08.2013, str. 68, Dz. Urz. UE L 321 z 30.11.2013, str. 6, Dz. Urz. UE L 11 z 17.01.2015, str. 37, Dz. Urz. UE L 171 z 29.06.2016, str. 153, Dz. Urz. UE L 20 z 25.01.2017, str. 4, Dz. Urz. UE L 310 z 25.11.2017, str. 1, Dz. Urz. UE L 345 z 27.12.2017, str. 27, Dz. Urz. UE L 347 z 28.12.2017, str. 1, Dz. Urz. UE L 111 z 25.04.2019, str. 4, Dz. Urz. UE L 150 z 07.06.2019, str. 1, Dz. Urz. UE L 183 z 09.07.2019, str. 14, Dz. Urz. UE L 314 z 05.12.2019, str. 1, Dz. Urz. UE L 328 z 18.12.2019, str. 1, Dz. Urz. UE L 204 z 26.06.2020, str. 4, Dz. Urz. UE L 84 z 11.03.2021, str. 1 oraz Dz. Urz. UE L 116 z 06.04.2021, str. 25.
+[^2)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 208 z 02.08.2013, str. 68, Dz. Urz. UE L 321 z 30.11.2013, str. 6, Dz. Urz. UE L 11 z 17.01.2015, str. 37, Dz. Urz. UE L 171 z 29.06.2016, str. 153, Dz. Urz. UE L 20 z 25.01.2017, str. 4, Dz. Urz. UE L 310 z 25.11.2017, str. 1, Dz. Urz. UE L 345 z 27.12.2017, str. 27, Dz. Urz. UE L 347 z 28.12.2017, str. 1, Dz. Urz. UE L 111 z 25.04.2019, str. 4, Dz. Urz. UE L 150 z 07.06.2019, str. 1, Dz. Urz. UE L 183 z 09.07.2019, str. 14, Dz. Urz. UE L 314 z 05.12.2019, str. 1, Dz. Urz. UE L 328 z 18.12.2019, str. 1, Dz. Urz. UE L 204 z 26.06.2020, str. 4, Dz. Urz. UE L 84 z 11.03.2021, str. 1 oraz Dz. Urz. UE L 116 z 06.04.2021, str. 25.
 
 ### Art. 3.
 
@@ -281,15 +281,15 @@ przez wydawców pieniądza elektronicznego.
   - 4\) sposób nadawania dostawcom identyfikatora dostawcy,
   - 5\) szczegółowy zakres oraz sposób przekazywania przez dostawców informacji do NBP w celu nadania identyfikatora dostawcy,
   - 6\) wzór wniosków, o których mowa w ust. 4,
-  - 7\) [^4] sposób publikacji wykazu identyfikatorów dostawców i numerów rozliczeniowych przez NBP
+  - 7\) [^6)] sposób publikacji wykazu identyfikatorów dostawców i numerów rozliczeniowych przez NBP
 
   – mając na względzie zapewnienie jednolitego sposobu numeracji rachunków płatniczych oraz identyfikacji dostawców zgodnej z obowiązującymi standardami.
 
-[^4]: Dodany przez art. 23 pkt 2 ustawy, o której mowa w odnośniku 3.
+[^6)]: Dodany przez art. 23 pkt 2 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 4b.
 
-[^5] **1. Dostawcy, o których mowa w art. 4 ust. 2 pkt 4, 6, 9 i 11, weryfikują w sposób, o którym mowa w art. 23j lub art. 23m ustawy z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2022 r. poz. 1191 oraz z 2023 r. poz. 497, 1394 i 1941), w rejestrze zastrzeżeń numerów PESEL, o którym mowa w art. 23a tej ustawy, zwanym dalej „rejestrem zastrzeżeń numerów PESEL”, czy numer PESEL konsumenta jest zastrzeżony, przed:**
+[^7)] **1. Dostawcy, o których mowa w art. 4 ust. 2 pkt 4, 6, 9 i 11, weryfikują w sposób, o którym mowa w art. 23j lub art. 23m ustawy z dnia 24 września 2010 r. o ewidencji ludności (Dz. U. z 2022 r. poz. 1191 oraz z 2023 r. poz. 497, 1394 i 1941), w rejestrze zastrzeżeń numerów PESEL, o którym mowa w art. 23a tej ustawy, zwanym dalej „rejestrem zastrzeżeń numerów PESEL”, czy numer PESEL konsumenta jest zastrzeżony, przed:**
 
 - 1\) **zawarciem umowy:**
   - a\) **rachunku płatniczego,**
@@ -302,33 +302,33 @@ przez wydawców pieniądza elektronicznego.
   - 2\) **zawrzeć umowę z zachowaniem należytej staranności przy weryfikacji tożsamości konsumenta i udokumentować dokonanie tej weryfikacji.**
 - 5\. **W przypadku, o którym mowa w ust. 4 pkt 2, jeżeli umowa została zawarta w trakcie trwania niedostępności systemu teleinformatycznego, w którym prowadzony jest rejestr zastrzeżeń numerów PESEL, innej niż wymieniona w art. 23c ust. 5 ustawy z dnia 24 września 2010 r. o ewidencji ludności, trwającej dłużej niż 15 minut, nie stosuje się przepisu ust. 2.**
 
-[^5]: Dodany przez art. 10 ustawy z dnia 7 lipca 2023 r. o zmianie niektórych ustaw w celu ograniczania niektórych skutków kradzieży tożsamości (Dz. U. poz. 1394); wejdzie w życie z dniem 1 czerwca 2024 r.
+[^7)]: Dodany przez art. 10 ustawy z dnia 7 lipca 2023 r. o zmianie niektórych ustaw w celu ograniczania niektórych skutków kradzieży tożsamości (Dz. U. poz. 1394); wejdzie w życie z dniem 1 czerwca 2024 r.
 
 ### Art. 5.
 
 - 1\. Przepisy ustawy stosuje się do usług płatniczych świadczonych na terytorium Rzeczypospolitej Polskiej lub w obrocie z innymi państwami członkowskimi.
 - 2\. Przepisy działu II, działu IIa, działu III, z wyłączeniem przepisów rozdziału 7, oraz działu IX stosuje się do transakcji płatniczych wykonywanych w euro, w walucie polskiej lub w walucie państwa członkowskiego innego niż Rzeczpospolita Polska w przypadku gdy zarówno dostawca płatnika, jak i dostawca odbiorcy lub jedyny dostawca w danej transakcji płatniczej znajdują się na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego.
-- 3\. [^6] Przepisy działu II, z wyłączeniem art. 23 ust. 1 pkt 2, art. 27 pkt 2 lit. e i art. 30 pkt 1, działu IIa, działu III, z wyłączeniem art. 52–58 i rozdziału 7 oraz działu IX, stosuje się do transakcji płatniczych wykonywanych w walucie, która nie jest walutą państwa członkowskiego, w przypadku gdy zarówno dostawca płatnika, jak i dostawca odbiorcy lub jedyny dostawca w danej transakcji płatniczej znajdują się na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego, w odniesieniu do tych części danej transakcji, które są realizowane w Rzeczypospolitej Polskiej lub innym państwie członkowskim.
+- 3\. [^8)] Przepisy działu II, z wyłączeniem art. 23 ust. 1 pkt 2, art. 27 pkt 2 lit. e i art. 30 pkt 1, działu IIa, działu III, z wyłączeniem art. 52–58 i rozdziału 7 oraz działu IX, stosuje się do transakcji płatniczych wykonywanych w walucie, która nie jest walutą państwa członkowskiego, w przypadku gdy zarówno dostawca płatnika, jak i dostawca odbiorcy lub jedyny dostawca w danej transakcji płatniczej znajdują się na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego, w odniesieniu do tych części danej transakcji, które są realizowane w Rzeczypospolitej Polskiej lub innym państwie członkowskim.
 
 <!-- page: 12 -->
-3a.[^7] Przepisy działu II, z wyłączeniem art. 23 ust. 1 pkt 2, art. 27 pkt 2 lit. e i pkt 5 lit. f oraz art. 30 pkt 1, działu IIa, działu III, z wyłączeniem art. 37a ust. 1 i 3, art. 38a ust. 3, art. 47, art. 48, art. 52, art. 54 i rozdziału 7, oraz działu IX, z wyłączeniem art. 144 ust. 1, 2 i 3–5, art. 145, art. 146 i art. 148, stosuje się do transakcji płatniczych wykonywanych w każdej walucie, w przypadku gdy tylko jeden z dostawców znajduje się na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego, a drugi dostawca znajduje się na terytorium innego państwa, w odniesieniu do tych części danej transakcji płatniczej, które są realizowane na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego.
+3a.[^9)] Przepisy działu II, z wyłączeniem art. 23 ust. 1 pkt 2, art. 27 pkt 2 lit. e i pkt 5 lit. f oraz art. 30 pkt 1, działu IIa, działu III, z wyłączeniem art. 37a ust. 1 i 3, art. 38a ust. 3, art. 47, art. 48, art. 52, art. 54 i rozdziału 7, oraz działu IX, z wyłączeniem art. 144 ust. 1, 2 i 3–5, art. 145, art. 146 i art. 148, stosuje się do transakcji płatniczych wykonywanych w każdej walucie, w przypadku gdy tylko jeden z dostawców znajduje się na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego, a drugi dostawca znajduje się na terytorium innego państwa, w odniesieniu do tych części danej transakcji płatniczej, które są realizowane na terytorium Rzeczypospolitej Polskiej lub innego państwa członkowskiego.
 
 - 3b\. Przepisy działu III rozdziału 7 stosuje się wyłącznie do usług płatniczych wykonywanych w walucie polskiej.
 - 4\. Przepisy ustawy stosuje się do wydawania pieniądza elektronicznego w każdej walucie.
 - 5\. (uchylony)
 
-[^6]: Ze zmianą wprowadzoną przez art. 23 pkt 3 lit. a ustawy, o której mowa w odnośniku 3.
+[^8)]: Ze zmianą wprowadzoną przez art. 23 pkt 3 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^7]: Ze zmianą wprowadzoną przez art. 23 pkt 3 lit. b ustawy, o której mowa w odnośniku 3.
+[^9)]: Ze zmianą wprowadzoną przez art. 23 pkt 3 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 6.
 
-Przepisów ustawy, z zastrzeżeniem art. 6a–6d i art. 14ca, nie stosuje się do:[^8]
+Przepisów ustawy, z zastrzeżeniem art. 6a–6d i art. 14ca, nie stosuje się do:[^10)]
 
 - 1\) transakcji płatniczych dokonywanych wyłącznie w gotówce bezpośrednio między płatnikiem a odbiorcą;
-- 2\) [^9] transakcji płatniczych między płatnikiem a odbiorcą, dokonywanych za pośrednictwem umocowanej osoby wykonującej czynności zmierzające do zawarcia przez płatnika i odbiorcę umowy sprzedaży lub umowy o odpłatne świadczenie usług, lub zawierającej taką umowę, w imieniu lub na rzecz wyłącznie płatnika albo wyłącznie odbiorcy;
+- 2\) [^11)] transakcji płatniczych między płatnikiem a odbiorcą, dokonywanych za pośrednictwem umocowanej osoby wykonującej czynności zmierzające do zawarcia przez płatnika i odbiorcę umowy sprzedaży lub umowy o odpłatne świadczenie usług, lub zawierającej taką umowę, w imieniu lub na rzecz wyłącznie płatnika albo wyłącznie odbiorcy;
 - 3\) transportu banknotów i monet, w szczególności ich odbierania, przetwarzania oraz dostarczania;
-- 4\) [^10] transakcji płatniczych obejmujących wykonywane niezawodowo gromadzenie i dostarczanie gotówki w ramach działalności nienastawionej na zysk lub charytatywnej, o której mowa w art. 4 ust. 1 pkt 3 ustawy z dnia 24 kwietnia 2003 r. o działalności pożytku publicznego i o wolontariacie (Dz. U. z 2023 r. poz. 571);
+- 4\) [^12)] transakcji płatniczych obejmujących wykonywane niezawodowo gromadzenie i dostarczanie gotówki w ramach działalności nienastawionej na zysk lub charytatywnej, o której mowa w art. 4 ust. 1 pkt 3 ustawy z dnia 24 kwietnia 2003 r. o działalności pożytku publicznego i o wolontariacie (Dz. U. z 2023 r. poz. 571);
 - 5\) usług, w ramach których odbiorca, na żądanie płatnika zgłoszone przed wykonaniem transakcji płatniczej mającej na celu dokonanie zapłaty za zakupione towary lub usługi, w ramach tej transakcji płatniczej wypłaca płatnikowi gotówkę (usług „cash back”);
 - 6\) wymiany walutowej z gotówki na gotówkę bez pośrednictwa rachunku płatniczego;
 - 7\) transakcji płatniczych opartych na jednym z następujących dokumentów w postaci papierowej, wystawionych na dostawcę w celu postawienia środków pieniężnych do dyspozycji odbiorcy:
@@ -358,11 +358,11 @@ Przepisów ustawy, z zastrzeżeniem art. 6a–6d i art. 14ca, nie stosuje się d
 - 15\) usług wypłat gotówki przy użyciu bankomatów, świadczonych przez podmioty działające na rzecz co najmniej jednego wydawcy instrumentów płatniczych i niebędące stroną umowy ramowej z osobą wypłacającą gotówkę z rachunku płatniczego przy użyciu bankomatu, jeżeli podmioty te nie świadczą innych usług płatniczych;
 - 16\) usług wykonywanych wyłącznie z wykorzystaniem papierowych książeczek oszczędnościowych, w przypadku gdy wszelkie transakcje są rejestrowane wyłącznie w tych książeczkach.
 
-[^8]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 4 lit. a ustawy, o której mowa w odnośniku 3.
+[^10)]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 4 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^9]: Ze zmianą wprowadzoną przez art. 23 pkt 4 lit. b ustawy, o której mowa w odnośniku 3.
+[^11)]: Ze zmianą wprowadzoną przez art. 23 pkt 4 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^10]: W brzmieniu ustalonym przez art. 23 pkt 4 lit. c ustawy, o której mowa w odnośniku 3.
+[^12)]: W brzmieniu ustalonym przez art. 23 pkt 4 lit. c ustawy, o której mowa w odnośniku 3.
 
 ### Art. 6a.
 
@@ -448,7 +448,7 @@ Dostawcy, organizacje płatnicze i podmioty prowadzące systemy płatności będ
 - 2\. Obowiązek zachowania tajemnicy zawodowej istnieje również po zakończeniu pełnienia funkcji lub ustaniu stosunków prawnych, o których mowa w ust. 1.
 - 3\. Tajemnica zawodowa, w rozumieniu ust. 1, obejmuje informacje dotyczące użytkownika lub posiadacza pieniądza elektronicznego w związku ze świadczonymi mu usługami płatniczymi, wydawanym mu pieniądzem elektronicznym lub udzielonym mu kredytem zgodnie z art. 74 ust. 3 lub art. 132j ust. 3, w tym oznaczenie rachunku płatniczego użytkownika oraz stan tego rachunku, a także inne informacje związane z transakcjami płatniczymi oraz zawieranymi z użytkownikiem lub posiadaczem pieniądza elektronicznego umowami, jeżeli nieuprawnione ujawnienie takiej informacji mogłoby narazić na szkodę prawnie chroniony interes użytkownika lub posiadacza pieniądza elektronicznego, którego ta informacja dotyczy.
 
-[^105]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 127 z 23.05.2018, str. 2.
+[^13)]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 127 z 23.05.2018, str. 2.
 
 ### Art. 12.
 
@@ -507,13 +507,13 @@ Jeżeli odrębne przepisy określają inne zasady ochrony informacji stanowiący
 - 9\. (uchylony)
 - 10\. W przypadku stwierdzenia okoliczności wskazujących na możliwość wystąpienia zagrożenia niewykonania lub nienależytego wykonania przez dostawców, o których mowa w art. 4 ust. 2 pkt 1–4, 6 i 9, obowiązków określonych w rozporządzeniu (UE) 2015/751, KNF może w szczególności:
   - 1\) skierować do dostawcy zalecenia;
-  - 2\) wystąpić do dostawcy o udzielenie informacji lub wyjaśnień. 10a.[^11] Zalecenia i wystąpienia, o których mowa w ust. 10, są sporządzane w formie pisemnej:
+  - 2\) wystąpić do dostawcy o udzielenie informacji lub wyjaśnień. 10a.[^14)] Zalecenia i wystąpienia, o których mowa w ust. 10, są sporządzane w formie pisemnej:
   - 1\) w postaci papierowej i opatrywane podpisem własnoręcznym albo
   - 2\) w postaci elektronicznej i opatrywane kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
-- 10b\. [^11] Zalecenia i wystąpienia, o których mowa w ust. 10a pkt 2, doręcza się na adres do doręczeń elektronicznych.
+- 10b\. [^14)] Zalecenia i wystąpienia, o których mowa w ust. 10a pkt 2, doręcza się na adres do doręczeń elektronicznych.
 - 11\. W przypadku stwierdzenia naruszenia, o którym mowa odpowiednio w art. 3–5 i art. 8–12 rozporządzenia (UE) 2015/751, dokonanego przez unijną instytucję płatniczą, art. 107 ust. 1 i 3–8 stosuje się odpowiednio.
 
-[^11]: Dodany przez art. 23 pkt 5 ustawy, o której mowa w odnośniku 3.
+[^14)]: Dodany przez art. 23 pkt 5 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 14a.
 
@@ -526,7 +526,7 @@ Jeżeli odrębne przepisy określają inne zasady ochrony informacji stanowiący
 
 ### Art. 14aa.
 
-[^12] 1. Podmiot będący właścicielem lub posiadaczem bankomatu lub wpłatomatu, w tym podmiot świadczący usługi na terytorium Rzeczypospolitej Polskiej w ramach działalności transgranicznej, przez oddział lub za pośrednictwem agenta, niebędący wydawcą instrumentów płatniczych, jest obowiązany przekazywać NBP kwartalne informacje obejmujące:
+[^15)] 1. Podmiot będący właścicielem lub posiadaczem bankomatu lub wpłatomatu, w tym podmiot świadczący usługi na terytorium Rzeczypospolitej Polskiej w ramach działalności transgranicznej, przez oddział lub za pośrednictwem agenta, niebędący wydawcą instrumentów płatniczych, jest obowiązany przekazywać NBP kwartalne informacje obejmujące:
 
 - 1\) liczbę bankomatów i wpłatomatów;
 - 2\) liczbę i wartość transakcji wykonanych w bankomatach i wpłatomatach, niezależnie od ich lokalizacji;
@@ -561,11 +561,11 @@ Jeżeli odrębne przepisy określają inne zasady ochrony informacji stanowiący
 - 2\. Informacje, o których mowa w ust. 1, są przekazywane według stanu na koniec ostatniego dnia miesiąca kończącego półrocze, w terminie do końca miesiąca następującego po upływie półrocza, którego dotyczą.
 - 3\. NBP udostępnia KNF dane, o których mowa w ust. 1, niezwłocznie po ich otrzymaniu.
 
-[^12]: Dodany przez art. 23 pkt 6 ustawy, o której mowa w odnośniku 3.
+[^15)]: Dodany przez art. 23 pkt 6 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 14b.
 
-- 1\. Wydawca instrumentu płatniczego, w tym wydawca instrumentu płatniczego świadczący usługi płatnicze na terytorium Rzeczypospolitej Polskiej w ramach działalności transgranicznej, przez oddział lub za pośrednictwem agenta, jest obowiązany przekazywać NBP kwartalne informacje obejmujące:[^13]
+- 1\. Wydawca instrumentu płatniczego, w tym wydawca instrumentu płatniczego świadczący usługi płatnicze na terytorium Rzeczypospolitej Polskiej w ramach działalności transgranicznej, przez oddział lub za pośrednictwem agenta, jest obowiązany przekazywać NBP kwartalne informacje obejmujące:[^16)]
   - 1\) rodzaj i liczbę wydanych instrumentów płatniczych;
   - 2\) liczbę i wartość transakcji płatniczych wykonanych przy użyciu wydanych instrumentów płatniczych;
   - 3\) liczbę udostępnionych bankomatów oraz liczbę i wartość transakcji płatniczych wykonanych przy ich użyciu;
@@ -578,22 +578,22 @@ Jeżeli odrębne przepisy określają inne zasady ochrony informacji stanowiący
   - 4\) liczbę i wartość transakcji zasilenia wydanych instrumentów płatniczych;
   - 5\) liczbę i wartość wykonanych przy użyciu wydanych instrumentów płatniczych transakcji płatniczych naruszających przepisy prawa lub reguły uczciwego obrotu oraz wysokość spowodowanych nimi strat.
 - 3\. Informacje, o których mowa w ust. 1 i 2, są przekazywane według stanu na koniec ostatniego dnia miesiąca kończącego kwartał lub za okres kwartału, w terminie do końca miesiąca następującego po upływie kwartału, którego dotyczą.
-- 4\. [^14] NBP udostępnia KNF dane, o których mowa w ust. 1 pkt 4 i ust. 2 pkt 5, niezwłocznie po ich otrzymaniu.
+- 4\. [^17)] NBP udostępnia KNF dane, o których mowa w ust. 1 pkt 4 i ust. 2 pkt 5, niezwłocznie po ich otrzymaniu.
 
-[^13]: Wprowadzenie do wyliczenia w brzmieniu ustalonym przez art. 23 pkt 7 lit. a ustawy, o której mowa w odnośniku 3.
+[^16)]: Wprowadzenie do wyliczenia w brzmieniu ustalonym przez art. 23 pkt 7 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^14]: Ze zmianą wprowadzoną przez art. 23 pkt 7 lit. b ustawy, o której mowa w odnośniku 3.
+[^17)]: Ze zmianą wprowadzoną przez art. 23 pkt 7 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 14c.
 
-- 1\. [^15] Wydawca pieniądza elektronicznego, w tym wydawca pieniądza elektronicznego świadczący usługi płatnicze na terytorium Rzeczypospolitej Polskiej w ramach działalności transgranicznej, przez oddział lub za pośrednictwem agenta, jest obowiązany przekazywać NBP kwartalne informacje o wartości wydanego pieniądza elektronicznego pozostającego w obiegu.
+- 1\. [^18)] Wydawca pieniądza elektronicznego, w tym wydawca pieniądza elektronicznego świadczący usługi płatnicze na terytorium Rzeczypospolitej Polskiej w ramach działalności transgranicznej, przez oddział lub za pośrednictwem agenta, jest obowiązany przekazywać NBP kwartalne informacje o wartości wydanego pieniądza elektronicznego pozostającego w obiegu.
 - 2\. Jeżeli wydawca pieniądza elektronicznego wydaje równocześnie instrument płatniczy, na którym jest przechowywany wydawany przez niego pieniądz elektroniczny, informacje, o których mowa w ust. 1, obejmują dodatkowo informacje o tych instrumentach w zakresie określonym w art. 14b ust. 2.
 - 3\. Informacje, o których mowa w ust. 1 i 2, są przekazywane według stanu na koniec ostatniego dnia miesiąca kończącego kwartał lub za okres kwartału, w terminie do końca miesiąca następującego po upływie kwartału, którego dotyczą.
-- 4\. [^16] NBP udostępnia KNF dane, o których mowa w art. 14b ust. 2 pkt 5, przekazane zgodnie z ust. 2 niezwłocznie po ich otrzymaniu.
+- 4\. [^19)] NBP udostępnia KNF dane, o których mowa w art. 14b ust. 2 pkt 5, przekazane zgodnie z ust. 2 niezwłocznie po ich otrzymaniu.
 
-[^15]: W brzmieniu ustalonym przez art. 23 pkt 8 lit. a ustawy, o której mowa w odnośniku 3.
+[^18)]: W brzmieniu ustalonym przez art. 23 pkt 8 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^16]: Ze zmianą wprowadzoną przez art. 23 pkt 8 lit. b ustawy, o której mowa w odnośniku 3.
+[^19)]: Ze zmianą wprowadzoną przez art. 23 pkt 8 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 14ca.
 
@@ -601,9 +601,9 @@ Informacje, o których mowa w art. 14a–14c, przekazywane są w postaci elektro
 
 ### Art. 14d.
 
-[^17] Minister właściwy do spraw instytucji finansowych, po zasięgnięciu opinii Prezesa Narodowego Banku Polskiego, określi, w drodze rozporządzenia, szczegółowy zakres informacji, o których mowa w art. 14a–14c, przekazywanych Narodowemu Bankowi Polskiemu oraz sposób realizacji obowiązku ich przekazywania, kierując się potrzebą zapewnienia Narodowemu Bankowi Polskiemu dostępu do danych niezbędnych do dokonywania okresowych ocen rozliczeń pieniężnych, sporządzania bilansu płatniczego oraz wykonywania zadań Narodowego Banku Polskiego wynikających z uczestnictwa w Europejskim Systemie Banków Centralnych.
+[^20)] Minister właściwy do spraw instytucji finansowych, po zasięgnięciu opinii Prezesa Narodowego Banku Polskiego, określi, w drodze rozporządzenia, szczegółowy zakres informacji, o których mowa w art. 14a–14c, przekazywanych Narodowemu Bankowi Polskiemu oraz sposób realizacji obowiązku ich przekazywania, kierując się potrzebą zapewnienia Narodowemu Bankowi Polskiemu dostępu do danych niezbędnych do dokonywania okresowych ocen rozliczeń pieniężnych, sporządzania bilansu płatniczego oraz wykonywania zadań Narodowego Banku Polskiego wynikających z uczestnictwa w Europejskim Systemie Banków Centralnych.
 
-[^17]: Ze zmianą wprowadzoną przez art. 23 pkt 9 ustawy, o której mowa w odnośniku 3.
+[^20)]: Ze zmianą wprowadzoną przez art. 23 pkt 9 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 14e.
 
@@ -613,7 +613,7 @@ Informacje, o których mowa w art. 14a–14c, przekazywane są w postaci elektro
 - 4\. KNF może odmówić udzielenia informacji niezbędnych do wykonywania zadań wynikających z art. 32e oraz z przepisów działu III rozdziałów 7 i 8, jeżeli udzielenie tych informacji może wpływać negatywnie na sprawowanie nadzoru lub na bezpieczeństwo lub porządek publiczny.
 - 5\. KNF odmawiając udzielenia informacji, o których mowa w ust. 4, powiadamia właściwy organ wyznaczony jako punkt kontaktowy, który zwrócił się z wnioskiem o udzielenie informacji, i wskazuje szczegółowe uzasadnienie swojej odmowy.
 
-[^106]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 287 z 29.10.2013, str. 5, Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 173 z 12.06.2014, str. 190, Dz. Urz. UE L 225 z 30.07.2014, str. 1 oraz Dz. Urz. UE L 337 z 23.12.2015, str. 35.
+[^21)]: Zmiany wymienionego rozporządzenia zostały ogłoszone w Dz. Urz. UE L 287 z 29.10.2013, str. 5, Dz. Urz. UE L 60 z 28.02.2014, str. 34, Dz. Urz. UE L 173 z 12.06.2014, str. 190, Dz. Urz. UE L 225 z 30.07.2014, str. 1 oraz Dz. Urz. UE L 337 z 23.12.2015, str. 35.
 
 <!-- page: 21 -->
 ### Art. 14f.
@@ -687,10 +687,10 @@ Informacje, o których mowa w art. 14a–14c, przekazywane są w postaci elektro
 
 ### Art. 15b.
 
-- 1\. [^18] Do rozpatrywania reklamacji składanych przez użytkownika będącego osobą fizyczną stosuje się przepisy ustawy z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. z 2023 r. poz. 1809, 1723 i 1843), z zastrzeżeniem art. 15a ust. 2–4.
+- 1\. [^22)] Do rozpatrywania reklamacji składanych przez użytkownika będącego osobą fizyczną stosuje się przepisy ustawy z dnia 5 sierpnia 2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. z 2023 r. poz. 1809, 1723 i 1843), z zastrzeżeniem art. 15a ust. 2–4.
 - 2\. W zakresie, w jakim do rozstrzygania reklamacji użytkownika będącego osobą fizyczną nie stosuje się przepisów ustawy wymienionej w ust. 1, dostawca wprowadza i stosuje procedury rozpatrywania reklamacji określone niniejszą ustawą.
 
-[^18]: Ze zmianą wprowadzoną przez art. 13 ustawy z dnia 1 grudnia 2022 r. o zmianie ustawy o rozpatrywaniu reklamacji przez podmioty rynku finansowego i o Rzeczniku Finansowym oraz niektórych innych ustaw (Dz. U. poz. 2640), która weszła w życie z dniem 1 stycznia 2023 r.
+[^22)]: Ze zmianą wprowadzoną przez art. 13 ustawy z dnia 1 grudnia 2022 r. o zmianie ustawy o rozpatrywaniu reklamacji przez podmioty rynku finansowego i o Rzeczniku Finansowym oraz niektórych innych ustaw (Dz. U. poz. 2640), która weszła w życie z dniem 1 stycznia 2023 r.
 
 ### Art. 15c.
 
@@ -786,7 +786,7 @@ W przypadku gdy usługa przeliczenia waluty jest oferowana bezpośrednio przed z
     – o ile w tych miejscach zawiera się umowy o świadczenie usług płatniczych przy jednoczesnej fizycznej obecności stron.
 - 3\. Dostawca udostępnia broszurę, o której mowa w ust. 1, w sposób przystępny dla osób niepełnosprawnych, w tym z wykorzystaniem sposobów udostępniania innych niż określone w ust. 2.
 
-[^107]: Zmiana wymienionej dyrektywy została ogłoszona w Dz. Urz. UE L 102 z 23.04.2018, str. 97.
+[^23)]: Zmiana wymienionej dyrektywy została ogłoszona w Dz. Urz. UE L 102 z 23.04.2018, str. 97.
 
 <!-- page: 26 -->
 ### Rozdział 2. Pojedyncze transakcje płatnicze
@@ -978,9 +978,9 @@ Do dnia 31 stycznia według stanu na dzień 31 grudnia poprzedniego roku kalenda
 - 1\. Dostawca, w ramach systemu zarządzania ryzykiem, podejmuje środki ograniczające ryzyko oraz wprowadza mechanizmy kontroli służące zarządzaniu ryzykiem operacyjnym oraz ryzykiem naruszenia bezpieczeństwa w zakresie świadczenia usług płatniczych, w szczególności przez:
   - 1\) utrzymywanie skutecznej procedury zarządzania incydentami, w tym na potrzeby wykrywania i klasyfikacji poważnych incydentów operacyjnych i incydentów związanych z bezpieczeństwem, w tym o charakterze teleinformatycznym;
   - 2\) bieżącą ocenę i aktualizację procedur w zakresie zarządzania ryzykiem operacyjnym i ryzykiem naruszenia bezpieczeństwa, w tym bezpieczeństwa teleinformatycznego, a także bieżącą ocenę środków ograniczających ryzyko oraz mechanizmów kontroli.
-- 2\. [^19] Dostawca, o którym mowa w art. 4 ust. 2 pkt 1–4, 6, 9, 11 i 12, corocznie, w terminie do dnia 31 stycznia roku następnego, przekazuje KNF lub innemu właściwemu organowi nadzoru roczną informację o ocenie i aktualizacji procedur w zakresie zarządzania ryzykiem operacyjnym i ryzykiem naruszenia bezpieczeństwa, a także ocenie środków ograniczających ryzyko oraz mechanizmów kontroli, o których mowa w ust. 1 pkt 2.
+- 2\. [^24)] Dostawca, o którym mowa w art. 4 ust. 2 pkt 1–4, 6, 9, 11 i 12, corocznie, w terminie do dnia 31 stycznia roku następnego, przekazuje KNF lub innemu właściwemu organowi nadzoru roczną informację o ocenie i aktualizacji procedur w zakresie zarządzania ryzykiem operacyjnym i ryzykiem naruszenia bezpieczeństwa, a także ocenie środków ograniczających ryzyko oraz mechanizmów kontroli, o których mowa w ust. 1 pkt 2.
 
-[^19]: Ze zmianą wprowadzoną przez art. 23 pkt 10 ustawy, o której mowa w odnośniku 3.
+[^24)]: Ze zmianą wprowadzoną przez art. 23 pkt 10 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 32g.
 
@@ -992,10 +992,10 @@ Do dnia 31 stycznia według stanu na dzień 31 grudnia poprzedniego roku kalenda
 <!-- page: 32 -->
 #### Art. 32h.
 
-- 1\. [^20] Dostawca, o którym mowa w art. 4 ust. 2 pkt 1–4, 6, 9, 11 i 12, w okresach półrocznych, w terminie do końca miesiąca następującego po danym półroczu, przekazuje KNF lub innemu właściwemu organowi nadzoru nad tym dostawcą dane dotyczące oszustw związanych z wykonywanymi usługami płatniczymi, uwzględniając różne sposoby świadczenia usług płatniczych.
+- 1\. [^25)] Dostawca, o którym mowa w art. 4 ust. 2 pkt 1–4, 6, 9, 11 i 12, w okresach półrocznych, w terminie do końca miesiąca następującego po danym półroczu, przekazuje KNF lub innemu właściwemu organowi nadzoru nad tym dostawcą dane dotyczące oszustw związanych z wykonywanymi usługami płatniczymi, uwzględniając różne sposoby świadczenia usług płatniczych.
 - 2\. Na podstawie danych otrzymanych zgodnie z ust. 1, KNF oraz inny właściwy organ nadzoru, w terminie do dnia 30 czerwca danego roku, przekazują EUNB i EBC zbiorcze dane dotyczące oszustw związanych z wykonywanymi usługami płatniczymi, uwzględniając różne sposoby świadczenia usług płatniczych.
 
-[^20]: W brzmieniu ustalonym przez art. 23 pkt 11 ustawy, o której mowa w odnośniku 3.
+[^25)]: W brzmieniu ustalonym przez art. 23 pkt 11 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 32i.
 
@@ -1314,7 +1314,7 @@ Wpłata gotówki na swój lub cudzy rachunek płatniczy, dokonana u dostawcy pro
 - 3\. Obciążenie rachunku płatniczego płatnika kwotą transakcji płatniczej następuje z datą waluty nie wcześniejszą niż moment, w którym rachunek ten został faktycznie obciążony kwotą transakcji płatniczej.
 - 4\. Do transakcji płatniczych inicjowanych przez odbiorcę lub za jego pośrednictwem dostawca odbiorcy lub odbiorca mogą uzgodnić dłuższy termin wykonania niż określony w ust. 2.
 
-[^108]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 287 z 29.10.2013, str. 90.
+[^26)]: Zmiana wymienionego rozporządzenia została ogłoszona w Dz. Urz. UE L 287 z 29.10.2013, str. 90.
 
 <!-- page: 42 -->
 ### Rozdział 5. Karty płatnicze
@@ -1422,7 +1422,7 @@ Dostawca, o którym mowa w art. 4 ust. 2 pkt 1–3 i 9, z wyłączeniem Krajowej
 - 8\. W przypadkach, o których mowa w ust. 6 i 7, dostawca niezwłocznie informuje konsumenta, nieodpłatnie, o przyczynach odmowy zawarcia umowy, chyba że przekazanie takiej informacji zagrażałoby bezpieczeństwu narodowemu lub porządkowi publicznemu lub byłoby sprzeczne z przepisami prawa, w tym z przepisami ustawy z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. z 2023 r. poz. 1124, 1285, 1723 i 1843), zwanej dalej „ustawą o przeciwdziałaniu praniu pieniędzy”.
 - 9\. W przypadku odmowy zawarcia umowy podstawowego rachunku płatniczego na podstawie ust. 6 pkt 1 dostawca, o którym mowa w art. 4 ust. 2 pkt 1–3 i 9, z wyłączeniem Krajowej Spółdzielczej Kasy Oszczędnościowo-Kredytowej, jest obowiązany stosować odpowiednie środki wynikające z ustawy o przeciwdziałaniu praniu pieniędzy.
 
-[^109]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2022 r. poz. 1726, 1855, 2339 i 2600 oraz z 2023 r. poz. 289, 818, 852, 1234, 1834, 1860 i 1963.
+[^27)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2022 r. poz. 1726, 1855, 2339 i 2600 oraz z 2023 r. poz. 289, 818, 852, 1234, 1834, 1860 i 1963.
 
 #### Art. 59id.
 
@@ -1652,10 +1652,10 @@ Wydawanie pieniądza elektronicznego nie może następować za pośrednictwem ag
   - 2\) niezwłocznie po otrzymaniu zlecenia płatniczego od dostawcy świadczącego usługę inicjowania transakcji płatniczej jest obowiązany przekazać lub udostępnić temu dostawcy informacje o zainicjowaniu transakcji płatniczej oraz dostępne mu informacje dotyczące wykonania transakcji płatniczej;
   - 3\) jest obowiązany stosować wobec zleceń płatniczych przekazanych za pośrednictwem dostawcy świadczącego usługę inicjowania transakcji płatniczej niedyskryminujące zasady w stosunku do zleceń płatniczych przekazanych bezpośrednio przez samego płatnika, chyba że odstąpienie od obowiązku stosowania tych zasad jest uzasadnione obiektywnymi przyczynami, w szczególności czasem wykonania, priorytetowym charakterem transakcji płatniczej lub wysokością opłat.
 <!-- page: 52 -->
-- 4a\. [^21] Dostawca wykonujący transakcję płatniczą zainicjowaną za pośrednictwem dostawcy świadczącego usługę inicjowania transakcji płatniczej jest obowiązany stosować wobec płatnika, odbiorcy, dostawcy świadczącego usługę inicjowania transakcji płatniczej i dostawcy odbiorcy obiektywne, proporcjonalne i niedyskryminujące zasady w stosunku do zleceń płatniczych złożonych bezpośrednio przez płatnika, w szczególności co do czasu wykonania zlecenia płatniczego lub wysokości pobieranych opłat.
+- 4a\. [^28)] Dostawca wykonujący transakcję płatniczą zainicjowaną za pośrednictwem dostawcy świadczącego usługę inicjowania transakcji płatniczej jest obowiązany stosować wobec płatnika, odbiorcy, dostawcy świadczącego usługę inicjowania transakcji płatniczej i dostawcy odbiorcy obiektywne, proporcjonalne i niedyskryminujące zasady w stosunku do zleceń płatniczych złożonych bezpośrednio przez płatnika, w szczególności co do czasu wykonania zlecenia płatniczego lub wysokości pobieranych opłat.
 - 5\. Korzystanie przez użytkownika z usług inicjowania transakcji płatniczej nie może być uzależnione od istnienia stosunku umownego między dostawcą świadczącym usługę inicjowania transakcji płatniczej a dostawcą prowadzącym rachunek.
 
-[^21]: Dodany przez art. 23 pkt 12 ustawy, o której mowa w odnośniku 3.
+[^28)]: Dodany przez art. 23 pkt 12 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 59s.
 
@@ -1684,9 +1684,9 @@ Przepisów niniejszego działu nie stosuje się do rachunków prowadzonych przez
 
 - 1\. Świadczenie usług płatniczych w charakterze krajowej instytucji płatniczej wymaga uzyskania zezwolenia KNF.
 - 2\. Zezwolenie może być wydane osobie prawnej z siedzibą na terytorium Rzeczypospolitej Polskiej, zamierzającej wykonywać na tym terytorium przynajmniej część swojej działalności z zakresu usług płatniczych, na jej wniosek.
-- 3\. (uchylony)[^22]
+- 3\. (uchylony)[^29)]
 
-[^22]: Przez art. 23 pkt 13 ustawy, o której mowa w odnośniku 3.
+[^29)]: Przez art. 23 pkt 13 ustawy, o której mowa w odnośniku 3.
 
 <!-- page: 53 -->
 #### Art. 61.
@@ -1712,27 +1712,27 @@ Przepisów niniejszego działu nie stosuje się do rachunków prowadzonych przez
     - b\) adres biegłego rewidenta albo adres firmy audytorskiej,
     - c\) numer wpisu do rejestru biegłych rewidentów albo numer wpisu na listę firm audytorskich;
   - 11\) w przypadku, o którym mowa w art. 61b ust. 1 – dokument potwierdzający posiadanie ubezpieczenia odpowiedzialności cywilnej, gwarancji bankowej, gwarancji ubezpieczeniowej lub innego zabezpieczenia roszczeń użytkownika.
-- 2\. [^23] Wnioskodawca oraz instytucja płatnicza po uzyskaniu zezwolenia niezwłocznie powiadamiają KNF o zmianie mającej istotny wpływ na dokładność informacji i dokumentów dołączonych do wniosku zgodnie z ust. 1.
+- 2\. [^30)] Wnioskodawca oraz instytucja płatnicza po uzyskaniu zezwolenia niezwłocznie powiadamiają KNF o zmianie mającej istotny wpływ na dokładność informacji i dokumentów dołączonych do wniosku zgodnie z ust. 1.
 - 3\. Minister właściwy do spraw instytucji finansowych określi, w drodze rozporządzenia, szczegółowy zakres informacji oraz rodzaj i formę dokumentów, o których mowa w ust. 1 pkt 4–10, mając na względzie konieczność sprawdzenia, czy wnioskodawca spełnia warunki konieczne do uzyskania zezwolenia, o którym mowa w art. 60 ust. 1, oraz kompletność i wiarygodność dokumentacji dołączanej do wniosku, z uwzględnieniem wytycznych wydanych w tym zakresie przez EUNB.
 
-[^23]: Zdanie drugie uchylone przez art. 23 pkt 14 ustawy, o której mowa w odnośniku 3.
+[^30)]: Zdanie drugie uchylone przez art. 23 pkt 14 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 61a.
 
-(uchylony)[^24]
+(uchylony)[^31)]
 
-[^24]: Przez art. 23 pkt 15 ustawy, o której mowa w odnośniku 3.
+[^31)]: Przez art. 23 pkt 15 ustawy, o której mowa w odnośniku 3.
 
 <!-- page: 54 -->
 #### Art. 61b.
 
-- 1\. [^25] Jeżeli wnioskodawca zamierza świadczyć usługi inicjowania transakcji płatniczej lub usługi dostępu do informacji o rachunku, jest obowiązany do zawarcia umowy ubezpieczenia odpowiedzialności cywilnej za szkody powstałe w związku z wykonywaną przez niego działalnością lub posiadania gwarancji bankowej, gwarancji ubezpieczeniowej lub innego zabezpieczenia roszczeń użytkownika.
+- 1\. [^32)] Jeżeli wnioskodawca zamierza świadczyć usługi inicjowania transakcji płatniczej lub usługi dostępu do informacji o rachunku, jest obowiązany do zawarcia umowy ubezpieczenia odpowiedzialności cywilnej za szkody powstałe w związku z wykonywaną przez niego działalnością lub posiadania gwarancji bankowej, gwarancji ubezpieczeniowej lub innego zabezpieczenia roszczeń użytkownika.
 - 2\. Zakres oraz wysokość ubezpieczenia odpowiedzialności cywilnej, gwarancji bankowej, gwarancji ubezpieczeniowej lub innego zabezpieczenia pokrywają kwoty zobowiązań, jakie ciążyć będą na wnioskodawcy, wynikających z wykonywania działalności na podstawie ustawy oraz przepisów obowiązujących na terytorium państwa członkowskiego innego niż Rzeczpospolita Polska, na którym wnioskodawca ma zamiar wykonywać działalność.
 - 3\. Umowa gwarancji bankowej albo umowa gwarancji ubezpieczeniowej powinna obejmować upoważnienie dla KNF do wydawania dyspozycji wypłaty przez gwaranta środków pieniężnych z gwarancji.
 - 4\. KNF jest uprawniony do występowania na rzecz użytkowników w sprawach wypłaty środków z tytułu umowy gwarancji bankowej albo umowy gwarancji ubezpieczeniowej na zasadach określonych w treści tych umów.
 - 5\. Minister właściwy do spraw instytucji finansowych określi, w drodze rozporządzenia, minimalną sumę gwarancyjną ubezpieczenia, sumę gwarancji bankowej, sumę gwarancji ubezpieczeniowej lub wartość innego zabezpieczenia roszczeń użytkownika, uwzględniając wytyczne wydane w tym zakresie przez EUNB, z tym że przy wyliczaniu tej sumy nie uwzględnia się liczby i wartości transakcji płatniczych zainicjowanych przez krajową instytucję płatniczą, będących podstawą naliczania wymaganych funduszy własnych krajowej instytucji płatniczej.
 
-[^25]: Ze zmianą wprowadzoną przez art. 23 pkt 16 ustawy, o której mowa w odnośniku 3.
+[^32)]: Ze zmianą wprowadzoną przez art. 23 pkt 16 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 62.
 
@@ -1792,13 +1792,13 @@ W zezwoleniu, o którym mowa w art. 60 ust. 1, KNF określa usługi płatnicze, 
 
 3a. Środki kontroli bezpieczeństwa i ograniczania ryzyka, o których mowa w ust. 1 pkt 4 lit. g, wskazują sposób zapewnienia wysokiego poziomu bezpieczeństwa technicznego i ochrony danych, w tym w odniesieniu do oprogramowania i systemów informatycznych stosowanych przez wnioskodawcę lub podmiot, któremu wnioskodawca powierzył wykonywanie całości albo części czynności operacyjnych. Środki te obejmują również środki bezpieczeństwa, o których mowa w dziale IIa.
 
-- 3b\. [^26] Instytucja płatnicza, stosując środki kontroli bezpieczeństwa i ograniczania ryzyka, o których mowa w ust. 3a, uwzględnia wytyczne wydane w tym zakresie przez EUNB.
+- 3b\. [^33)] Instytucja płatnicza, stosując środki kontroli bezpieczeństwa i ograniczania ryzyka, o których mowa w ust. 3a, uwzględnia wytyczne wydane w tym zakresie przez EUNB.
 - 4\. Instytucja płatnicza na bieżąco weryfikuje i okresowo ocenia sposób funkcjonowania systemu zarządzania ryzykiem i kontroli wewnętrznej.
-- 5\. (uchylony)[^27]
+- 5\. (uchylony)[^34)]
 
-[^26]: Dodany przez art. 23 pkt 17 lit. a ustawy, o której mowa w odnośniku 3.
+[^33)]: Dodany przez art. 23 pkt 17 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^27]: Przez art. 23 pkt 17 lit. b ustawy, o której mowa w odnośniku 3.
+[^34)]: Przez art. 23 pkt 17 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 65.
 
@@ -1806,23 +1806,23 @@ KNF odmawia wydania zezwolenia, o którym mowa w art. 60 ust. 1, jeżeli podmiot
 
 #### Art. 66.
 
-- 1\. [^28] Zmiana zakresu usług płatniczych, do których świadczenia jest uprawniona krajowa instytucja płatnicza, określonych w zezwoleniu, o którym mowa w art. 60 ust. 1, wymaga zmiany tego zezwolenia. Przepisy art. 61b i art. 62 stosuje się odpowiednio.
+- 1\. [^35)] Zmiana zakresu usług płatniczych, do których świadczenia jest uprawniona krajowa instytucja płatnicza, określonych w zezwoleniu, o którym mowa w art. 60 ust. 1, wymaga zmiany tego zezwolenia. Przepisy art. 61b i art. 62 stosuje się odpowiednio.
 - 2\. W miejsce informacji i dokumentów, o których mowa w art. 61 ust. 1, może być złożone oświadczenie o aktualności informacji zawartych w odpowiednich dokumentach złożonych przez krajową instytucję płatniczą wraz z wnioskiem o wydanie zezwolenia, o którym mowa w art. 60 ust. 1.
-- 3\. [^29] KNF odmawia wydania zmiany zezwolenia, o którym mowa w art. 60 ust. 1, jeżeli zamierzona działalność krajowej instytucji płatniczej zagrażałaby jej bezpieczeństwu finansowemu lub naruszałaby przepisy prawa lub interesy użytkowników.
+- 3\. [^36)] KNF odmawia wydania zmiany zezwolenia, o którym mowa w art. 60 ust. 1, jeżeli zamierzona działalność krajowej instytucji płatniczej zagrażałaby jej bezpieczeństwu finansowemu lub naruszałaby przepisy prawa lub interesy użytkowników.
 
-[^28]: W brzmieniu ustalonym przez art. 23 pkt 18 lit. a ustawy, o której mowa w odnośniku 3.
+[^35)]: W brzmieniu ustalonym przez art. 23 pkt 18 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^29]: Dodany przez art. 23 pkt 18 lit. b ustawy, o której mowa w odnośniku 3.
+[^36)]: Dodany przez art. 23 pkt 18 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 67.
 
 - 1\. Zezwolenie na prowadzenie działalności w charakterze krajowej instytucji płatniczej wygasa, jeżeli krajowa instytucja płatnicza:
   - 1\) w terminie 12 miesięcy od dnia wydania tego zezwolenia nie rozpoczęła działalności w zakresie usług płatniczych, przy czym za dzień rozpoczęcia działalności w zakresie usług płatniczych uważa się dzień wykonania pierwszej transakcji płatniczej;
   - 2\) nie prowadzi działalności w zakresie usług płatniczych w okresie dłuższym niż 6 kolejnych miesięcy;
-  - 3\) [^30] została wykreślona z rejestru przedsiębiorców.
+  - 3\) [^37)] została wykreślona z rejestru przedsiębiorców.
 - 2\. W przypadkach, o których mowa w ust. 1, KNF wydaje decyzję stwierdzającą wygaśnięcie zezwolenia.
 
-[^30]: Dodany przez art. 23 pkt 19 ustawy, o której mowa w odnośniku 3.
+[^37)]: Dodany przez art. 23 pkt 19 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 68.
 
@@ -1936,10 +1936,10 @@ W przypadku połączenia lub podziału instytucji płatniczej albo nabycia jej p
 - 4\. Jeżeli skutkiem nabycia lub objęcia akcji w przypadkach, o których mowa w ust. 3, jest wykonywanie uprawnień jednostki dominującej krajowej instytucji płatniczej, osoby zarządzające krajową instytucją płatniczą powołane przez jednostkę dominującą lub będące członkami zarządu, prokurentami lub osobami pełniącymi kierownicze funkcje w jednostce dominującej nie mogą uczestniczyć w czynnościach z zakresu reprezentacji krajowej instytucji płatniczej. W przypadku gdy nie można ustalić, które osoby zarządzające zostały powołane przez jednostkę dominującą, powołanie organu odpowiedzialnego za zarządzanie krajową instytucją płatniczą jest bezskuteczne od dnia uzyskania przez ten podmiot uprawnień jednostki dominującej krajowej instytucji płatniczej.
 - 5\. Uchwały organu stanowiącego krajowej instytucji płatniczej podjęte z naruszeniem ust. 3 są nieważne, chyba że spełniają wymogi kworum oraz większości głosów oddanych bez uwzględnienia głosów nieważnych. W przypadkach, o których mowa w ust. 3, prawo wytoczenia powództwa o stwierdzenie nieważności uchwały organu stanowiącego krajowej instytucji płatniczej przysługuje również KNF. Przepisy art. 252 i art. 425 ustawy z dnia 15 września 2000 r. – Kodeks spółek handlowych (Dz. U. z 2022 r. poz. 1467, z późn. zm.38)) stosuje się odpowiednio.
 - 6\. W przypadkach, o których mowa w ust. 3 i 4, KNF może, w drodze decyzji, nakazać zbycie akcji lub udziałów krajowej instytucji płatniczej w wyznaczonym terminie.
-- 7\. [^31] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 6, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji płatniczej karę pieniężną w wysokości do 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 60 ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 7\. [^39)] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 6, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji płatniczej karę pieniężną w wysokości do 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 60 ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 - 8\. W przypadku gdy wymagają tego interesy użytkowników, a wnioskodawca wykaże, że nie zachodzi przesłanka, o której mowa w ust. 1 pkt 3, KNF może, w szczególnie uzasadnionych przypadkach, w drodze decyzji wydanej na wniosek akcjonariusza, udziałowca lub jednostki dominującej krajowej instytucji płatniczej, uchylić zakazy, o których mowa w ust. 3 lub 4. Do wniosku wnioskodawca dołącza informacje, o których mowa w art. 72b ust. 1.
 
-[^31]: Ze zmianą wprowadzoną przez art. 23 pkt 20 ustawy, o której mowa w odnośniku 3.
+[^39)]: Ze zmianą wprowadzoną przez art. 23 pkt 20 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 72d.
 
@@ -1947,7 +1947,7 @@ W przypadku połączenia lub podziału instytucji płatniczej albo nabycia jej p
 - 2\. Uchwała organu stanowiącego krajowej instytucji płatniczej jest nieważna, jeżeli przy jej podejmowaniu wykonano prawo głosu z akcji lub udziałów, w stosunku do których KNF wydała decyzję, o której mowa w ust. 1, chyba że uchwała spełnia wymogi kworum oraz większości głosów oddanych bez uwzględnienia głosów nieważnych. Prawo wytoczenia powództwa o stwierdzenie nieważności uchwały przysługuje również KNF. Przepisy art. 252 i art. 425 ustawy z dnia 15 września 2000 r. – Kodeks spółek handlowych stosuje się odpowiednio.
 - 3\. Jeżeli KNF na podstawie ust. 1 wydała decyzję o zakazie wykonywania uprawnień jednostki dominującej krajowej instytucji płatniczej, przepis art. 72c ust. 4 stosuje się odpowiednio.
 - 4\. W przypadku, o którym mowa w ust. 1, KNF może, w drodze decyzji, nakazać zbycie akcji lub udziałów krajowej instytucji płatniczej w wyznaczonym terminie.
-- 5\. [^32] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 4, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji płatniczej karę pieniężną w wysokości do 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 60 ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 5\. [^40)] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 4, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji płatniczej karę pieniężną w wysokości do 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 60 ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 - 6\. Jeżeli podmiot, o którym mowa w art. 72a ust. 1, nabył lub objął akcje lub prawa z akcji, o których mowa w art. 72a ust. 1, i nie dochowuje podjętego zobowiązania, o którym mowa w art. 72b ust. 1 pkt 9, KNF może, w drodze decyzji, nałożyć na ten podmiot karę pieniężną do wysokości odpowiadającej wartości tych akcji lub praw z akcji. Wartość akcji lub praw z akcji ustalana jest na dzień ich nabycia albo objęcia według wartości godziwej, o której mowa w ustawie o rachunkowości.
 - 7\. Decyzja, o której mowa w ust. 6, jest natychmiast wykonalna.
 - 8\. KNF może określić w decyzji, o której mowa w ust. 6, że kara pieniężna jest płatna w miesięcznych ratach.
@@ -1958,9 +1958,9 @@ W przypadku połączenia lub podziału instytucji płatniczej albo nabycia jej p
 - 10\. Na wniosek akcjonariusza, udziałowca lub jednostki dominującej krajowej instytucji płatniczej KNF uchyla decyzję wydaną na podstawie ust. 1, jeżeli ustały okoliczności uzasadniające wydanie tej decyzji.
 - 11\. W przypadku gdy dwa lub więcej podmiotów działa w porozumieniu, którego przedmiotem jest wykonywanie prawa głosu z akcji lub udziałów na poziomach określonych w art. 72a ust. 1 lub wykonywanie uprawnień jednostki dominującej, przepisy ust. 1–10 stosuje się odpowiednio.
 
-[^32]: Ze zmianą wprowadzoną przez art. 23 pkt 21 ustawy, o której mowa w odnośniku 3.
+[^40)]: Ze zmianą wprowadzoną przez art. 23 pkt 21 ustawy, o której mowa w odnośniku 3.
 
-[^110]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2022 r. poz. 1488, 2280 i 2436 oraz z 2023 r. poz. 739, 825 i 1705.
+[^38)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2022 r. poz. 1488, 2280 i 2436 oraz z 2023 r. poz. 739, 825 i 1705.
 
 #### Art. 72e.
 
@@ -1986,9 +1986,9 @@ Informacje o instytucji płatniczej oraz o świadczonych przez nią usługach p�
   - 1\) średniej wartości pieniądza elektronicznego pozostającego w obiegu – w terminie do 15 dnia każdego miesiąca, na który jest ustalana;
   - 2\) całkowitej wartości pieniądza elektronicznego pozostającego w obiegu, wydanego przez tę instytucję, według stanu na dzień 31 grudnia każdego roku kalendarzowego – w terminie do dnia 31 stycznia roku następnego.
 <!-- page: 62 -->
-- 2\. [^33] W przypadku naruszenia obowiązku, o którym mowa w ust. 1 pkt 1, jeżeli pozostająca w obiegu kwota pieniądza elektronicznego przekracza kwotę określoną w art. 73a ust. 4, KNF może nałożyć na krajową instytucję płatniczą karę pieniężną w wysokości nieprzekraczającej 500 zł za każdy dzień opóźnienia, nie większej jednak niż 100 000 zł. Przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 2\. [^41)] W przypadku naruszenia obowiązku, o którym mowa w ust. 1 pkt 1, jeżeli pozostająca w obiegu kwota pieniądza elektronicznego przekracza kwotę określoną w art. 73a ust. 4, KNF może nałożyć na krajową instytucję płatniczą karę pieniężną w wysokości nieprzekraczającej 500 zł za każdy dzień opóźnienia, nie większej jednak niż 100 000 zł. Przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 
-[^33]: W brzmieniu ustalonym przez art. 23 pkt 22 ustawy, o której mowa w odnośniku 3.
+[^41)]: W brzmieniu ustalonym przez art. 23 pkt 22 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 73c.
 
@@ -2080,9 +2080,9 @@ Krajowa instytucja płatnicza jest obowiązana przechowywać dokumenty związane
 - 8\. KNF jest uprawniony do występowania na rzecz użytkowników w sprawach wypłaty środków z tytułu umowy gwarancji bankowej albo umowy gwarancji ubezpieczeniowej na zasadach określonych w treści tych umów.
 - 9\. Jeżeli transakcja płatnicza jest inicjowana za pośrednictwem dostawcy świadczącego usługę inicjowania transakcji płatniczej w celu dokonania zapłaty temu dostawcy świadczącemu usługę inicjowania transakcji płatniczej, środki otrzymane przez dostawcę świadczącego usługę inicjowania transakcji płatniczej nie podlegają ochronie.
 - 10\. Do transakcji, o której mowa w art. 76 ust. 2a, przepisy ust. 1–3 stosuje się odpowiednio.
-- 11\. [^34] Krajowa instytucja płatnicza uprawniona do świadczenia usługi dostępu do informacji o rachunku jest obowiązana do zabezpieczenia roszczeń użytkownika w sposób określony w art. 61b.
+- 11\. [^42)] Krajowa instytucja płatnicza uprawniona do świadczenia usługi dostępu do informacji o rachunku jest obowiązana do zabezpieczenia roszczeń użytkownika w sposób określony w art. 61b.
 
-[^34]: Dodany przez art. 23 pkt 23 ustawy, o której mowa w odnośniku 3.
+[^42)]: Dodany przez art. 23 pkt 23 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 79.
 
@@ -2308,14 +2308,14 @@ KNF oraz osoby wykonujące czynności nadzoru nie ponoszą odpowiedzialności za
     - d\) opracowania i stosowania procedur, które zapewnią utrzymywanie oraz bieżące monitorowanie poziomu funduszy własnych,
     - e\) podjęcia środków koniecznych dla zapobieżenia naruszeniom interesów użytkowników lub posiadaczy pieniądza elektronicznego;
   - 4\) nakazać krajowej instytucji płatniczej wstrzymanie wypłat z zysku lub wstrzymanie tworzenia nowych jednostek organizacyjnych do czasu osiągnięcia norm, o których mowa w art. 64 ust. 1 pkt 1 i art. 76;
-  - 5\) nakazać krajowej instytucji płatniczej opracowanie i wykonanie planu przywrócenia prawidłowych stosunków finansowych. 1a.[^35] Zalecenia i wystąpienia, o których mowa w ust. 1, są sporządzane w formie pisemnej:
+  - 5\) nakazać krajowej instytucji płatniczej opracowanie i wykonanie planu przywrócenia prawidłowych stosunków finansowych. 1a.[^43)] Zalecenia i wystąpienia, o których mowa w ust. 1, są sporządzane w formie pisemnej:
   - 1\) w postaci papierowej i opatrywane podpisem własnoręcznym albo
   - 2\) w postaci elektronicznej i opatrywane kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
-- 1b\. [^35] Zalecenia i wystąpienia, o których mowa w ust. 1a pkt 2, doręcza się na adres do doręczeń elektronicznych.
+- 1b\. [^43)] Zalecenia i wystąpienia, o których mowa w ust. 1a pkt 2, doręcza się na adres do doręczeń elektronicznych.
 - 2\. KNF może wydawać rekomendacje dotyczące dobrych praktyk ostrożnego i stabilnego zarządzania krajowymi instytucjami płatniczymi, mając na uwadze ochronę interesów użytkowników lub posiadaczy pieniądza elektronicznego.
 - 3\. KNF, w drodze decyzji, może nakazać unijnej instytucji płatniczej albo dostawcy, o którym mowa w art. 96 ust. 2, wykonującemu na terytorium Rzeczypospolitej Polskiej usługi płatnicze za pośrednictwem agenta, wyznaczenie centralnego punktu kontaktowego na terytorium Rzeczypospolitej Polskiej, jeżeli zachodzą okoliczności utrudniające zapewnienie prawidłowej komunikacji, w tym zgłaszanie informacji dotyczących przestrzegania przepisów działów II i III, lub sprawowanie nadzoru.
 
-[^35]: Dodany przez art. 23 pkt 24 ustawy, o której mowa w odnośniku 3.
+[^43)]: Dodany przez art. 23 pkt 24 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 103.
 
@@ -2324,9 +2324,9 @@ KNF oraz osoby wykonujące czynności nadzoru nie ponoszą odpowiedzialności za
 - 3\. Czynności kontrolne są wykonywane przez pracowników Urzędu KNF po okazaniu legitymacji służbowej oraz doręczeniu upoważnienia wydanego przez Przewodniczącego KNF lub upoważnioną przez niego osobę.
 
 <!-- page: 72 -->
-3a.[^36] Upoważnienie, o którym mowa w ust. 3, jest udzielane na piśmie utrwalonym w postaci papierowej albo elektronicznej. Upoważnienie udzielane na piśmie utrwalonym w postaci papierowej opatruje się podpisem własnoręcznym. Upoważnienie utrwalone w postaci elektronicznej opatruje się kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
+3a.[^44)] Upoważnienie, o którym mowa w ust. 3, jest udzielane na piśmie utrwalonym w postaci papierowej albo elektronicznej. Upoważnienie udzielane na piśmie utrwalonym w postaci papierowej opatruje się podpisem własnoręcznym. Upoważnienie utrwalone w postaci elektronicznej opatruje się kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
 
-- 3b\. [^36] Upoważnienie, zawiadomienie o zamiarze wszczęcia kontroli, o których mowa w przepisach ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców, protokół z kontroli, zalecenia pokontrolne udzielone albo sporządzone na piśmie utrwalonym w postaci elektronicznej doręcza się na adres do doręczeń elektronicznych.
+- 3b\. [^44)] Upoważnienie, zawiadomienie o zamiarze wszczęcia kontroli, o których mowa w przepisach ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców, protokół z kontroli, zalecenia pokontrolne udzielone albo sporządzone na piśmie utrwalonym w postaci elektronicznej doręcza się na adres do doręczeń elektronicznych.
 - 4\. Pracownicy, o których mowa w ust. 3, w zakresie ustalonym w upoważnieniu, mają prawo do:
   - 1\) wstępu do pomieszczeń kontrolowanego podmiotu;
   - 2\) swobodnego dostępu do oddzielnego pomieszczenia biurowego i środków łączności;
@@ -2335,7 +2335,7 @@ KNF oraz osoby wykonujące czynności nadzoru nie ponoszą odpowiedzialności za
 - 5\. Do kontroli działalności gospodarczej przedsiębiorcy stosuje się przepisy rozdziału 5 ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców.
 - 6\. Minister właściwy do spraw instytucji finansowych określi, w drodze rozporządzenia, szczegółowy sposób i tryb wykonywania czynności kontrolnych w krajowych instytucjach płatniczych, uwzględniając cele nadzoru sprawowanego nad tymi instytucjami oraz zapewnienie efektywności tego nadzoru.
 
-[^36]: Dodany przez art. 23 pkt 25 ustawy, o której mowa w odnośniku 3.
+[^44)]: Dodany przez art. 23 pkt 25 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 104.
 
@@ -2345,11 +2345,11 @@ KNF oraz osoby wykonujące czynności nadzoru nie ponoszą odpowiedzialności za
 
 ### Art. 105.
 
-- 1\. W razie stwierdzenia, że krajowa instytucja płatnicza nie wykonuje albo nieprawidłowo wykonuje obowiązek udzielenia informacji, o którym mowa w art. 102 ust. 1 pkt 1, lub przekazywania danych, o którym mowa w art. 102 ust. 1 pkt 2, nie wykonała w wyznaczonym terminie zaleceń, o których mowa w art. 102 ust. 1 pkt 3, utrudnia albo uniemożliwia przeprowadzenie kontroli, o której mowa w art. 103, lub nie wykonuje nakazów określonych w art. 102 ust. 1 pkt 4 i 5, a także gdy działalność krajowej instytucji płatniczej jest wykonywana z naruszeniem przepisów ustawy, innych ustaw regulujących świadczenie usług płatniczych oraz wydawanie i wykup pieniądza elektronicznego oraz przepisów wydanych na ich podstawie, a także innych bezpośrednio stosowanych przepisów prawa Unii Europejskiej regulujących świadczenie usług płatniczych oraz wydawanie i wykup pieniądza elektronicznego lub stwarza zagrożenie interesów użytkowników lub posiadaczy pieniądza elektronicznego, KNF może:[^37]
+- 1\. W razie stwierdzenia, że krajowa instytucja płatnicza nie wykonuje albo nieprawidłowo wykonuje obowiązek udzielenia informacji, o którym mowa w art. 102 ust. 1 pkt 1, lub przekazywania danych, o którym mowa w art. 102 ust. 1 pkt 2, nie wykonała w wyznaczonym terminie zaleceń, o których mowa w art. 102 ust. 1 pkt 3, utrudnia albo uniemożliwia przeprowadzenie kontroli, o której mowa w art. 103, lub nie wykonuje nakazów określonych w art. 102 ust. 1 pkt 4 i 5, a także gdy działalność krajowej instytucji płatniczej jest wykonywana z naruszeniem przepisów ustawy, innych ustaw regulujących świadczenie usług płatniczych oraz wydawanie i wykup pieniądza elektronicznego oraz przepisów wydanych na ich podstawie, a także innych bezpośrednio stosowanych przepisów prawa Unii Europejskiej regulujących świadczenie usług płatniczych oraz wydawanie i wykup pieniądza elektronicznego lub stwarza zagrożenie interesów użytkowników lub posiadaczy pieniądza elektronicznego, KNF może:[^45)]
   - 1\) wystąpić do organu krajowej instytucji płatniczej z wnioskiem o odwołanie osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości;
   - 2\) zawiesić w czynnościach osobę zarządzającą, o której mowa w pkt 1, do czasu podjęcia uchwały w sprawie wniosku o jej odwołanie przez organy krajowej instytucji płatniczej na najbliższym posiedzeniu; zawieszenie w czynnościach polega na wyłączeniu z podejmowania decyzji za krajową instytucję płatniczą w zakresie jej praw i obowiązków majątkowych;
   - 3\) ograniczyć zakres działalności krajowej instytucji płatniczej lub jej jednostek organizacyjnych;
-  - 4\) [^38] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
+  - 4\) [^46)] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
   - 5\) nałożyć na krajową instytucję płatniczą karę pieniężną w wysokości do 1 000 000 zł;
   - 6\) cofnąć zezwolenie, o którym mowa w art. 60 ust. 1.
 <!-- page: 73 -->
@@ -2362,9 +2362,9 @@ KNF oraz osoby wykonujące czynności nadzoru nie ponoszą odpowiedzialności za
   - 2\) spowodowania przez tę osobę znacznych strat majątkowych krajowej instytucji płatniczej.
 - 7\. O cofnięciu zezwolenia, o którym mowa w art. 60 ust. 1, KNF niezwłocznie powiadamia właściwe organy nadzorcze państwa członkowskiego, w którym krajowa instytucja płatnicza prowadzi działalność transgraniczną, za pośrednictwem agenta lub przez oddział.
 
-[^37]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 26 lit. a ustawy, o której mowa w odnośniku 3.
+[^45)]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 26 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^38]: W brzmieniu ustalonym przez art. 23 pkt 26 lit. b ustawy, o której mowa w odnośniku 3.
+[^46)]: W brzmieniu ustalonym przez art. 23 pkt 26 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 105a.
 
@@ -2376,11 +2376,11 @@ KNF, po przeprowadzeniu oceny otrzymanych od właściwego organu nadzorczego gos
   - 1\) wydać instytucji płatniczej zalecenie, o którym mowa w art. 102 ust. 1 pkt 3 lit. a, dotyczące zaprzestania ich rozpowszechniania, przy czym nie stosuje się przepisów art. 105 ust. 1 pkt 1–3 i 6;
   - 2\) nakazać, w drodze decyzji, ogłoszenie sprostowania we wskazanej formie oraz w wyznaczonym terminie; nakazując ogłoszenie sprostowania KNF może określić jego treść.
 - 2\. W przypadku gdy nakaz, o którym mowa w ust. 1 pkt 2, nie został wykonany, KNF może, w drodze decyzji:
-  - 1\) [^39] nałożyć na osobę, która w okresie, w którym nie wykonano nakazu, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
+  - 1\) [^47)] nałożyć na osobę, która w okresie, w którym nie wykonano nakazu, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
   - 2\) nałożyć na instytucję płatniczą karę pieniężną w wysokości do 1 000 000 zł.
 - 3\. Przy nakładaniu kar, o których mowa w ust. 2, stosuje się odpowiednio przepisy art. 105 ust. 2, 4 i 5.
 
-[^39]: W brzmieniu ustalonym przez art. 23 pkt 27 ustawy, o której mowa w odnośniku 3.
+[^47)]: W brzmieniu ustalonym przez art. 23 pkt 27 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 107.
 
@@ -2472,15 +2472,15 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 <!-- page: 76 -->
 ### Art. 116.
 
-(uchylony)[^40]
+(uchylony)[^48)]
 
-[^40]: Przez art. 23 pkt 28 ustawy, o której mowa w odnośniku 3.
+[^48)]: Przez art. 23 pkt 28 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 116a.
 
-[^41] Kara pieniężna, o której mowa w art. 105 ust. 1 pkt 4 i art. 106 ust. 2 pkt 1, może zostać nałożona także po zakończeniu pełnienia funkcji osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo po ustaniu stosunku członkostwa w organie statutowym bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, jeżeli naruszenie miało miejsce w czasie pełnienia tej funkcji albo trwania członkostwa w tym organie.
+[^49)] Kara pieniężna, o której mowa w art. 105 ust. 1 pkt 4 i art. 106 ust. 2 pkt 1, może zostać nałożona także po zakończeniu pełnienia funkcji osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo po ustaniu stosunku członkostwa w organie statutowym bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, jeżeli naruszenie miało miejsce w czasie pełnienia tej funkcji albo trwania członkostwa w tym organie.
 
-[^41]: Dodany przez art. 23 pkt 29 ustawy, o której mowa w odnośniku 3.
+[^49)]: Dodany przez art. 23 pkt 29 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 117.
 
@@ -2512,20 +2512,20 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
     - a\) struktury organizacyjnej, o której mowa w art. 64a ust. 1 pkt 1 lit. a,
     - b\) zasad zarządzania ryzykiem, o którym mowa w art. 64a ust. 1 pkt 2,
     - c\) zasad przeprowadzania audytu wewnętrznego, o którym mowa w art. 64a ust. 1 pkt 3 lit. a,
-    - d\) [^42] o którym mowa w art. 64a ust. 1 pkt 4 lit. b–e i g;
+    - d\) [^50)] o którym mowa w art. 64a ust. 1 pkt 4 lit. b–e i g;
   <!-- page: 77 -->
   - 3\) dokument potwierdzający posiadanie przez wnioskodawcę ubezpieczenia odpowiedzialności cywilnej z tytułu prowadzenia odpowiedniej działalności gospodarczej, gwarancji bankowej, gwarancji ubezpieczeniowej lub innego zabezpieczenia roszczeń użytkownika;
   - 4\) oświadczenie wnioskodawcy o następującej treści: „Oświadczam, że dane zawarte we wniosku są kompletne i zgodne z prawdą. Znane mi są i spełniam warunki wykonywania działalności gospodarczej w charakterze dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku określone w ustawie z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. z 2024 r. poz. 30).”, a także klauzulę o następującej treści: „Jestem świadomy odpowiedzialności karnej za złożenie fałszywego oświadczenia.”, która zastępuje pouczenie organu uprawnionego do odebrania oświadczenia o odpowiedzialności karnej za złożenie fałszywego oświadczenia.
-- 4a\. [^43] W przypadku konieczności zapewnienia KNF dostępu do informacji mających wpływ na ocenę ryzyka w odniesieniu do świadczenia przez wnioskodawcę usług płatniczych, KNF może zażądać przekazania zatwierdzonych procedur wewnętrznych dotyczących obszarów, o których mowa w art. 64a ust. 1 pkt 1 lit. a, pkt 2, pkt 3 lit. a oraz pkt 4 lit. b–e i g.
+- 4a\. [^51)] W przypadku konieczności zapewnienia KNF dostępu do informacji mających wpływ na ocenę ryzyka w odniesieniu do świadczenia przez wnioskodawcę usług płatniczych, KNF może zażądać przekazania zatwierdzonych procedur wewnętrznych dotyczących obszarów, o których mowa w art. 64a ust. 1 pkt 1 lit. a, pkt 2, pkt 3 lit. a oraz pkt 4 lit. b–e i g.
 - 5\. KNF dokonuje wpisu dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku w terminie 3 miesięcy od dnia wpływu do KNF wniosku o wpis lub jego uzupełnienia, wraz z oświadczeniem, o którym mowa w ust. 4 pkt 4.
 - 6\. Za dzień rozpoczęcia działalności w charakterze dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku uważa się dzień dokonania wpisu do rejestru dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku.
 - 7\. KNF wydaje z urzędu zaświadczenie o dokonaniu wpisu do rejestru dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku.
 - 8\. Dostawca świadczący wyłącznie usługę dostępu do informacji o rachunku zawiadamia KNF o zamiarze zakończenia działalności gospodarczej lub działalności w charakterze dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku, wskazując termin zakończenia działalności.
 - 9\. Dostawca świadczący wyłącznie usługę dostępu do informacji o rachunku jest obowiązany do informowania KNF o liczbie użytkowników, dla których świadczył usługę dostępu do informacji o rachunku, oraz liczbie rachunków, do których zapewnił dostęp w okresie poprzedniego roku kalendarzowego, w terminie do dnia 31 stycznia roku następnego.
 
-[^42]: Ze zmianą wprowadzoną przez art. 23 pkt 30 lit. a ustawy, o której mowa w odnośniku 3.
+[^50)]: Ze zmianą wprowadzoną przez art. 23 pkt 30 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^43]: Dodany przez art. 23 pkt 30 lit. b ustawy, o której mowa w odnośniku 3.
+[^51)]: Dodany przez art. 23 pkt 30 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 117c.
 
@@ -2541,17 +2541,17 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 
 - 1\. Działalność w zakresie usług płatniczych prowadzona przez dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku podlega nadzorowi sprawowanemu przez KNF w zakresie i na zasadach określonych w ustawie oraz w ustawie o nadzorze nad rynkiem finansowym.
 - 2\. Celem nadzoru nad dostawcami świadczącymi wyłącznie usługę dostępu do informacji o rachunku jest zapewnienie zgodności ich działalności z przepisami ustawy, a także ochrona interesów użytkowników.
-- 3\. [^44] Do nadzoru nad dostawcami świadczącymi wyłącznie usługę dostępu do informacji o rachunku przepisy art. 100, art. 101, art. 102 ust. 1 pkt 1 oraz ust. 1a i 1b oraz ust. 2, art. 103, art. 106 ust. 1 i art. 112 stosuje się odpowiednio.
+- 3\. [^52)] Do nadzoru nad dostawcami świadczącymi wyłącznie usługę dostępu do informacji o rachunku przepisy art. 100, art. 101, art. 102 ust. 1 pkt 1 oraz ust. 1a i 1b oraz ust. 2, art. 103, art. 106 ust. 1 i art. 112 stosuje się odpowiednio.
 <!-- page: 78 -->
 - 4\. W ramach nadzoru KNF może wydawać dostawcom świadczącym wyłącznie usługę dostępu do informacji o rachunku zalecenia w zakresie:
   - 1\) zapewnienia zgodności ich działalności z przepisami ustawy;
-  - 2\) podjęcia środków koniecznych do zapobieżenia naruszeniom interesów użytkowników. 4a.[^45] Zalecenia, o których mowa w ust. 4, są sporządzane w formie pisemnej:
+  - 2\) podjęcia środków koniecznych do zapobieżenia naruszeniom interesów użytkowników. 4a.[^53)] Zalecenia, o których mowa w ust. 4, są sporządzane w formie pisemnej:
   - 1\) w postaci papierowej i opatrywane podpisem własnoręcznym albo
   - 2\) w postaci elektronicznej i opatrywane kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
-- 4b\. [^45] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
+- 4b\. [^53)] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
 - 5\. W razie stwierdzenia, że dostawca świadczący wyłącznie usługę dostępu do informacji o rachunku nie wykonuje obowiązku udzielenia informacji, o którym mowa w art. 102 ust. 1 pkt 1, albo wykonuje ten obowiązek nieprawidłowo, nie wykonał w wyznaczonym terminie zaleceń, o których mowa w ust. 4, utrudnia albo uniemożliwia przeprowadzenie kontroli, o której mowa w art. 103, a także gdy działalność dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku jest wykonywana z naruszeniem przepisów prawa albo stwarza zagrożenie dla interesów użytkowników, KNF może zastosować środki określone w art. 105 ust. 1 pkt 1–3.
 - 6\. W przypadkach, o których mowa w ust. 5, KNF może także:
-  - 1\) [^46] nałożyć na osobę, która w okresie, w którym nastąpiły nieprawidłowości, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
+  - 1\) [^54)] nałożyć na osobę, która w okresie, w którym nastąpiły nieprawidłowości, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
   - 2\) nałożyć na dostawcę świadczącego wyłącznie usługę dostępu do informacji o rachunku karę pieniężną w wysokości do 500 000 zł.
 - 7\. KNF może wydać decyzję o zakazie wykonywania działalności w charakterze dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku, w przypadku gdy:
   - 1\) oświadczenie, o którym mowa w art. 117b ust. 4 pkt 4, zostało złożone niezgodnie ze stanem faktycznym;
@@ -2560,21 +2560,21 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
   - 1\) nałożyć kary pieniężne, o których mowa w ust. 6;
   - 2\) wydać decyzję, o której mowa w ust. 7.
 - 9\. Decyzja, o której mowa w ust. 7, podlega natychmiastowemu wykonaniu.
-- 10\. [^47] Do nakładania kar, o których mowa w ust. 6 i 8 pkt 1, przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 10\. [^55)] Do nakładania kar, o których mowa w ust. 6 i 8 pkt 1, przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 
-[^44]: Ze zmianą wprowadzoną przez art. 23 pkt 31 lit. a ustawy, o której mowa w odnośniku 3.
+[^52)]: Ze zmianą wprowadzoną przez art. 23 pkt 31 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^45]: Dodany przez art. 23 pkt 31 lit. b ustawy, o której mowa w odnośniku 3.
+[^53)]: Dodany przez art. 23 pkt 31 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^46]: W brzmieniu ustalonym przez art. 23 pkt 31 lit. c ustawy, o której mowa w odnośniku 3.
+[^54)]: W brzmieniu ustalonym przez art. 23 pkt 31 lit. c ustawy, o której mowa w odnośniku 3.
 
-[^47]: Ze zmianą wprowadzoną przez art. 23 pkt 31 lit. d ustawy, o której mowa w odnośniku 3.
+[^55)]: Ze zmianą wprowadzoną przez art. 23 pkt 31 lit. d ustawy, o której mowa w odnośniku 3.
 
 #### Art. 117e.
 
-[^48] Do dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku stosuje się odpowiednio przepisy art. 18, art. 23, art. 27, art. 42, art. 59s, art. 64a ust. 2, 3 i 3a, art. 94, art. 98a, art. 98b, art. 99, art. 104, art. 105 ust. 1 pkt 1–4 i 6, art. 106 ust. 2 pkt 1 i ust. 3, art. 107–111 i art. 117.
+[^56)] Do dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku stosuje się odpowiednio przepisy art. 18, art. 23, art. 27, art. 42, art. 59s, art. 64a ust. 2, 3 i 3a, art. 94, art. 98a, art. 98b, art. 99, art. 104, art. 105 ust. 1 pkt 1–4 i 6, art. 106 ust. 2 pkt 1 i ust. 3, art. 107–111 i art. 117.
 
-[^48]: Ze zmianą wprowadzoną przez art. 23 pkt 32 ustawy, o której mowa w odnośniku 3.
+[^56)]: Ze zmianą wprowadzoną przez art. 23 pkt 32 ustawy, o której mowa w odnośniku 3.
 
 ### DZIAŁ VIB
 
@@ -2611,11 +2611,11 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 
 #### Art. 117ha.
 
-[^49] 1. Mała instytucja płatnicza dokonuje transferu środków pieniężnych otrzymanych od płatnika na rachunek płatniczy odbiorcy w drodze polecenia przelewu wyłącznie za pośrednictwem rachunku płatniczego utworzonego do dokonywania takich transferów, prowadzonego przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 1–4, 6 i 9.
+[^57)] 1. Mała instytucja płatnicza dokonuje transferu środków pieniężnych otrzymanych od płatnika na rachunek płatniczy odbiorcy w drodze polecenia przelewu wyłącznie za pośrednictwem rachunku płatniczego utworzonego do dokonywania takich transferów, prowadzonego przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 1–4, 6 i 9.
 
 2\. W przypadku wszczęcia postępowania egzekucyjnego przeciwko małej instytucji płatniczej środki pieniężne znajdujące się na rachunku płatniczym, o którym mowa w ust. 1, są wolne od zajęcia na podstawie sądowego albo administracyjnego tytułu wykonawczego, chyba że postępowanie egzekucyjne dotyczy roszczeń użytkowników wobec małej instytucji płatniczej z tytułu niewykonania lub nienależytego wykonania usług płatniczych za pośrednictwem tego rachunku.
 
-[^49]: Dodany przez art. 23 pkt 33 ustawy, o której mowa w odnośniku 3.
+[^57)]: Dodany przez art. 23 pkt 33 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 117i.
 
@@ -2626,21 +2626,21 @@ Mała instytucja płatnicza może świadczyć usługi płatnicze za pośrednictw
 
 - 1\. Wpis do rejestru małych instytucji płatniczych następuje na pisemny wniosek przedsiębiorcy zawierający dane, o których mowa w art. 136d pkt 2–4.
 - 2\. Do wniosku, o którym mowa w ust. 1, dołącza się:
-  - 1\) [^50] wykaz usług płatniczych, które wnioskodawca zamierza świadczyć, wraz z przedstawieniem tych usług w formie schematu graficznego z opisem tych usług oraz wskazaniem, do którego z rodzajów usług określonych w art. 3 ust. 1 pkt 1–6 należą te usługi;
+  - 1\) [^58)] wykaz usług płatniczych, które wnioskodawca zamierza świadczyć, wraz z przedstawieniem tych usług w formie schematu graficznego z opisem tych usług oraz wskazaniem, do którego z rodzajów usług określonych w art. 3 ust. 1 pkt 1–6 należą te usługi;
   - 2\) oświadczenie wnioskodawcy o następującej treści: „Oświadczam, że dane zawarte we wniosku są kompletne i zgodne z prawdą. Znane mi są i spełniam warunki wykonywania działalności gospodarczej w charakterze małej instytucji płatniczej, określone w ustawie z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. z 2024 r. poz. 30).”, a także klauzulę o następującej treści: „Jestem świadomy odpowiedzialności karnej za złożenie fałszywego oświadczenia.”, która zastępuje pouczenie organu uprawnionego do odebrania oświadczenia o odpowiedzialności karnej za złożenie fałszywego oświadczenia;
-  - 3\) [^51] opis rozwiązań organizacyjnych, o których mowa w art. 117h ust. 1 pkt 1;
-  - 4\) [^51] program, plan finansowy oraz aktualną procedurę, o których mowa w art. 117h ust. 2;
-  - 5\) [^51] opis działalności gospodarczej, o której mowa w art. 117f ust. 5, ze wskazaniem jej rodzaju, którą wnioskodawca prowadzi lub zamierza prowadzić;
-  - 6\) [^51] opis sposobu ochrony środków pieniężnych użytkowników, o którym mowa w art. 117o, oraz zobowiązanie do niezwłocznego poinformowania KNF o jego zmianach;
-  - 7\) [^51] dane kontaktowe wnioskodawcy, w tym imię i nazwisko, numer telefonu oraz adres poczty elektronicznej osoby uprawnionej do jego reprezentowania;
-  - 8\) [^51] adres wnioskodawcy wskazany do doręczeń korespondencji w formie pisemnej oraz adres do doręczeń elektronicznych, jeżeli wnioskodawca taki adres posiada.
-- 3\. [^52] Wnioskodawca oraz mała instytucja płatnicza powiadamiają KNF o zmianie danych, o których mowa w ust. 2 pkt 3–8, niezwłocznie, jednak nie później niż w terminie 14 dni od dnia uzyskania informacji o zmianie.
+  - 3\) [^59)] opis rozwiązań organizacyjnych, o których mowa w art. 117h ust. 1 pkt 1;
+  - 4\) [^59)] program, plan finansowy oraz aktualną procedurę, o których mowa w art. 117h ust. 2;
+  - 5\) [^59)] opis działalności gospodarczej, o której mowa w art. 117f ust. 5, ze wskazaniem jej rodzaju, którą wnioskodawca prowadzi lub zamierza prowadzić;
+  - 6\) [^59)] opis sposobu ochrony środków pieniężnych użytkowników, o którym mowa w art. 117o, oraz zobowiązanie do niezwłocznego poinformowania KNF o jego zmianach;
+  - 7\) [^59)] dane kontaktowe wnioskodawcy, w tym imię i nazwisko, numer telefonu oraz adres poczty elektronicznej osoby uprawnionej do jego reprezentowania;
+  - 8\) [^59)] adres wnioskodawcy wskazany do doręczeń korespondencji w formie pisemnej oraz adres do doręczeń elektronicznych, jeżeli wnioskodawca taki adres posiada.
+- 3\. [^60)] Wnioskodawca oraz mała instytucja płatnicza powiadamiają KNF o zmianie danych, o których mowa w ust. 2 pkt 3–8, niezwłocznie, jednak nie później niż w terminie 14 dni od dnia uzyskania informacji o zmianie.
 
-[^50]: Ze zmianą wprowadzoną przez art. 23 pkt 34 lit. a tiret pierwsze ustawy, o której mowa w odnośniku 3.
+[^58)]: Ze zmianą wprowadzoną przez art. 23 pkt 34 lit. a tiret pierwsze ustawy, o której mowa w odnośniku 3.
 
-[^51]: Dodany przez art. 23 pkt 34 lit. a tiret drugie ustawy, o której mowa w odnośniku 3.
+[^59)]: Dodany przez art. 23 pkt 34 lit. a tiret drugie ustawy, o której mowa w odnośniku 3.
 
-[^52]: Dodany przez art. 23 pkt 34 lit. b ustawy, o której mowa w odnośniku 3.
+[^60)]: Dodany przez art. 23 pkt 34 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 117k.
 
@@ -2672,19 +2672,19 @@ Mała instytucja płatnicza chroni środki pieniężne otrzymane od użytkownik�
     - b\) średniej miesięcznej kwoty transakcji płatniczych za każdy okres ostatnich 3 miesięcy i ostatnich 12 miesięcy, w tym wykonywanych przez agentów, za pośrednictwem których mała instytucja płatnicza świadczy usługi płatnicze;
   <!-- page: 81 -->
   - 2\) wszczęcie postępowania karnego w sprawie o przestępstwo, o którym mowa w art. 117h ust. 1 pkt 2, lub postępowania w sprawie o przestępstwo skarbowe przeciwko osobie zarządzającej;
-  - 3\) [^53] numer rachunku płatniczego, o którym mowa w art. 117ha, wraz z kopią umowy tego rachunku.
+  - 3\) [^61)] numer rachunku płatniczego, o którym mowa w art. 117ha, wraz z kopią umowy tego rachunku.
 - 2\. Do obliczania kwoty transakcji płatniczych, o których mowa w ust. 1 pkt 1, przepis art. 117f ust. 4 stosuje się odpowiednio.
 - 3\. Zgłoszenia, o których mowa w ust. 1, dokonuje się w terminie 14 dni od dnia:
   - 1\) upływu okresów, o których mowa w ust. 1 pkt 1;
   - 2\) powzięcia przez małą instytucję płatniczą wiadomości o wszczęciu postępowania, o którym mowa w ust. 1 pkt 2;
-  - 3\) [^54] zawarcia lub zmiany umowy rachunku płatniczego, o którym mowa w art. 117ha.
-- 4\. [^55] W przypadku naruszenia obowiązku, o którym mowa w ust. 1, KNF może, w drodze decyzji, nałożyć na małą instytucję płatniczą karę pieniężną w wysokości nieprzekraczającej 1000 zł za każdy dzień opóźnienia, nie większej jednak niż 250 000 zł. Przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+  - 3\) [^62)] zawarcia lub zmiany umowy rachunku płatniczego, o którym mowa w art. 117ha.
+- 4\. [^63)] W przypadku naruszenia obowiązku, o którym mowa w ust. 1, KNF może, w drodze decyzji, nałożyć na małą instytucję płatniczą karę pieniężną w wysokości nieprzekraczającej 1000 zł za każdy dzień opóźnienia, nie większej jednak niż 250 000 zł. Przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 
-[^53]: Dodany przez art. 23 pkt 35 lit. a ustawy, o której mowa w odnośniku 3.
+[^61)]: Dodany przez art. 23 pkt 35 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^54]: Dodany przez art. 23 pkt 35 lit. b ustawy, o której mowa w odnośniku 3.
+[^62)]: Dodany przez art. 23 pkt 35 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^55]: Ze zmianą wprowadzoną przez art. 23 pkt 35 lit. c ustawy, o której mowa w odnośniku 3.
+[^63)]: Ze zmianą wprowadzoną przez art. 23 pkt 35 lit. c ustawy, o której mowa w odnośniku 3.
 
 #### Art. 117q.
 
@@ -2694,18 +2694,18 @@ Mała instytucja płatnicza chroni środki pieniężne otrzymane od użytkownik�
 
   – w terminie 30 dni od końca okresu, w którym nastąpiło przekroczenie.
 
-- 2\. W przypadku, o którym mowa w ust. 1 pkt 2, do czasu rozpoznania wniosku przepisu ust. 1 pkt 1 nie stosuje się. W przypadku odmowy wydania zezwolenia umorzenia postępowania albo pozostawienia wniosku bez rozpoznania termin określony w tym przepisie biegnie od dnia, w którym decyzja stała się ostateczna.[^56]
-- 3\. [^57] **Średnia całkowitej kwoty transakcji, o której mowa w art. 117f ust. 3, nie może przekraczać w okresie rozpoznawania wniosku kwoty określonej w zgłoszeniu dokonanym przez małą instytucję płatniczą na podstawie art. 117p ust. 1 pkt 1 lit. b.**
-- 4\. [^57] **Mała instytucja płatnicza nie może składać wniosku o rozszerzenie zakresu usług płatniczych, do których świadczenia jest uprawniona na podstawie wpisu do rejestru, w okresie, w którym średnia całkowita kwota transakcji przekracza kwotę, o której mowa w art. 117f ust. 3.**
+- 2\. W przypadku, o którym mowa w ust. 1 pkt 2, do czasu rozpoznania wniosku przepisu ust. 1 pkt 1 nie stosuje się. W przypadku odmowy wydania zezwolenia umorzenia postępowania albo pozostawienia wniosku bez rozpoznania termin określony w tym przepisie biegnie od dnia, w którym decyzja stała się ostateczna.[^64)]
+- 3\. [^65)] **Średnia całkowitej kwoty transakcji, o której mowa w art. 117f ust. 3, nie może przekraczać w okresie rozpoznawania wniosku kwoty określonej w zgłoszeniu dokonanym przez małą instytucję płatniczą na podstawie art. 117p ust. 1 pkt 1 lit. b.**
+- 4\. [^65)] **Mała instytucja płatnicza nie może składać wniosku o rozszerzenie zakresu usług płatniczych, do których świadczenia jest uprawniona na podstawie wpisu do rejestru, w okresie, w którym średnia całkowita kwota transakcji przekracza kwotę, o której mowa w art. 117f ust. 3.**
 
-[^56]: Zdanie drugie ze zmianą wprowadzoną przez art. 23 pkt 36 lit. a ustawy, o której mowa w odnośniku 3.
+[^64)]: Zdanie drugie ze zmianą wprowadzoną przez art. 23 pkt 36 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^57]: Dodany przez art. 23 pkt 36 lit. b ustawy, o której mowa w odnośniku 3; wejdzie w życie z dniem 1 stycznia 2024 r.
+[^65)]: Dodany przez art. 23 pkt 36 lit. b ustawy, o której mowa w odnośniku 3; wejdzie w życie z dniem 1 stycznia 2024 r.
 
 #### Art. 117r.
 
 - 1\. Mała instytucja płatnicza przekazuje KNF:
-  - 1\) [^58] informacje o łącznej wartości i liczbie transakcji płatniczych wykonanych w zakresie poszczególnych rodzajów usług płatniczych, w tym przez jej agentów, w danym:
+  - 1\) [^66)] informacje o łącznej wartości i liczbie transakcji płatniczych wykonanych w zakresie poszczególnych rodzajów usług płatniczych, w tym przez jej agentów, w danym:
     - a\) kwartale – w terminie do ostatniego dnia miesiąca następującego po miesiącu kończącym dany kwartał,
     - b\) roku – w terminie do dnia 31 stycznia roku następującego po danym roku,
     - c\) miesiącu w okresie, o którym mowa w art. 117q ust. 1 pkt 1 oraz ust. 2 zdanie drugie – w terminie do piętnastego dnia miesiąca następującego po danym miesiącu;
@@ -2713,43 +2713,43 @@ Mała instytucja płatnicza chroni środki pieniężne otrzymane od użytkownik�
 - 2\. Przepisy ust. 1 pkt 1 lit. a i b oraz pkt 2 stosuje się także w przypadku, gdy mała instytucja płatnicza, w tym także przez swoich agentów, w danym okresie nie wykonała żadnej transakcji płatniczej, z wyjątkiem przypadku, gdy osoba prowadząca działalność gospodarczą w charakterze małej instytucji płatniczej w danym okresie miała zawieszoną działalność gospodarczą.
 - 3\. KNF informuje Komisję Europejską o liczbie małych instytucji płatniczych oraz całkowitej kwocie transakcji płatniczych wykonanych w danym roku przez małe instytucje płatnicze, w tym przez ich agentów.
 
-[^58]: Ze zmianą wprowadzoną przez art. 23 pkt 37 ustawy, o której mowa w odnośniku 3.
+[^66)]: Ze zmianą wprowadzoną przez art. 23 pkt 37 ustawy, o której mowa w odnośniku 3.
 
 <!-- page: 82 -->
 #### Art. 117s.
 
 - 1\. Działalność w zakresie usług płatniczych prowadzona przez małe instytucje płatnicze podlega nadzorowi sprawowanemu przez KNF w zakresie i na zasadach określonych w ustawie oraz w ustawie o nadzorze nad rynkiem finansowym.
 - 2\. Celem nadzoru nad małymi instytucjami płatniczymi jest zapewnienie zgodności działalności małych instytucji płatniczych z przepisami ustawy i rozporządzenia (UE) 2015/751, a także ochrona interesów użytkowników.
-- 3\. [^59] Do nadzoru nad małymi instytucjami płatniczymi przepisy art. 100, art. 101, art. 102 ust. 1 pkt 1, 2 i 5 oraz ust. 1a, 1b i 2, art. 103, art. 106 ust. 1 i art. 112 stosuje się odpowiednio.
+- 3\. [^67)] Do nadzoru nad małymi instytucjami płatniczymi przepisy art. 100, art. 101, art. 102 ust. 1 pkt 1, 2 i 5 oraz ust. 1a, 1b i 2, art. 103, art. 106 ust. 1 i art. 112 stosuje się odpowiednio.
 - 4\. W ramach nadzoru KNF może wydawać małym instytucjom płatniczym zalecenia w zakresie:
   - 1\) zapewnienia zgodności działalności małej instytucji płatniczej z przepisami ustawy, rozporządzenia (UE) 2015/751 oraz rozporządzenia Parlamentu Europejskiego i Rady (UE) nr 260/2012 z dnia 14 marca 2012 r. ustanawiającego wymogi techniczne i handlowe w odniesieniu do poleceń przelewu i poleceń zapłaty w euro oraz zmieniającego rozporządzenie (WE) nr 924/2009;
-  - 2\) zastosowania środków koniecznych do zapobieżenia naruszeniom interesów użytkowników. 4a.[^60] Zalecenia, o których mowa w ust. 4, są sporządzane w formie pisemnej:
+  - 2\) zastosowania środków koniecznych do zapobieżenia naruszeniom interesów użytkowników. 4a.[^68)] Zalecenia, o których mowa w ust. 4, są sporządzane w formie pisemnej:
   - 1\) w postaci papierowej i opatrywane podpisem własnoręcznym albo
   - 2\) w postaci elektronicznej i opatrywane kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
-- 4b\. [^60] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
+- 4b\. [^68)] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
 - 5\. W razie stwierdzenia, że mała instytucja płatnicza nie wykonuje obowiązku udzielenia informacji, o którym mowa w art. 102 ust. 1 pkt 1, lub obowiązku przekazywania danych, o którym mowa w art. 102 ust. 1 pkt 2, albo wykonuje je nieprawidłowo, nie wykonała w wyznaczonym terminie zaleceń, o których mowa w ust. 4, lub nakazu, o którym mowa w art. 102 ust. 1 pkt 5, utrudnia albo uniemożliwia przeprowadzenie kontroli, o której mowa w art. 103, a także gdy działalność małej instytucji płatniczej jest wykonywana z naruszeniem prawa albo stwarza zagrożenie dla interesów użytkowników, KNF może zastosować środki określone w art. 105 ust. 1 pkt 1–3.
 - 6\. W przypadkach, o których mowa w ust. 5, KNF może także:
-  - 1\) [^61] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
+  - 1\) [^69)] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone nieprawidłowości albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono nieprawidłowości, karę pieniężną do wysokości 500 000 zł;
   - 2\) nałożyć na małą instytucję płatniczą karę pieniężną w wysokości do 500 000 zł.
 - 7\. KNF może wydać decyzję o zakazie wykonywania działalności w charakterze małej instytucji płatniczej, w przypadku gdy:
   - 1\) oświadczenie, o którym mowa w art. 117j ust. 2 pkt 2, zostało złożone niezgodnie ze stanem faktycznym;
   - 2\) stwierdzi rażące naruszenie warunków wymaganych prawem do prowadzenia działalności w charakterze małej instytucji płatniczej lub wynikających z przepisów ustawy obowiązków związanych z prowadzeniem działalności w charakterze małej instytucji płatniczej;
-  - 3\) [^62] stwierdzi przekroczenie kwoty, o której mowa w art. 117f ust. 3, a mała instytucja płatnicza nie dopełni obowiązku, o którym mowa w art. 117q ust. 1.
+  - 3\) [^70)] stwierdzi przekroczenie kwoty, o której mowa w art. 117f ust. 3, a mała instytucja płatnicza nie dopełni obowiązku, o którym mowa w art. 117q ust. 1.
 - 8\. W przypadku niewykonania zalecenia lub nakazu, o których mowa w art. 106 ust. 1, KNF może:
   - 1\) nałożyć kary pieniężne, o których mowa w ust. 6;
   - 2\) wydać decyzję, o której mowa w ust. 7.
 - 9\. Decyzja, o której mowa w ust. 7, podlega natychmiastowemu wykonaniu.
-- 10\. [^63] Do nakładania kar, o których mowa w ust. 6 i 8 pkt 1, przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 10\. [^71)] Do nakładania kar, o których mowa w ust. 6 i 8 pkt 1, przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 
-[^59]: Ze zmianą wprowadzoną przez art. 23 pkt 38 lit. a ustawy, o której mowa w odnośniku 3.
+[^67)]: Ze zmianą wprowadzoną przez art. 23 pkt 38 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^60]: Dodany przez art. 23 pkt 38 lit. b ustawy, o której mowa w odnośniku 3.
+[^68)]: Dodany przez art. 23 pkt 38 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^61]: W brzmieniu ustalonym przez art. 23 pkt 38 lit. c ustawy, o której mowa w odnośniku 3.
+[^69)]: W brzmieniu ustalonym przez art. 23 pkt 38 lit. c ustawy, o której mowa w odnośniku 3.
 
-[^62]: Dodany przez art. 23 pkt 38 lit. d ustawy, o której mowa w odnośniku 3.
+[^70)]: Dodany przez art. 23 pkt 38 lit. d ustawy, o której mowa w odnośniku 3.
 
-[^63]: Ze zmianą wprowadzoną przez art. 23 pkt 38 lit. e ustawy, o której mowa w odnośniku 3.
+[^71)]: Ze zmianą wprowadzoną przez art. 23 pkt 38 lit. e ustawy, o której mowa w odnośniku 3.
 
 <!-- page: 83 -->
 #### Art. 117t.
@@ -2772,22 +2772,22 @@ Jeżeli działalność hybrydowej małej instytucji płatniczej w zakresie niepo
 
 - 1\. Działalność w zakresie usług płatniczych w charakterze biura usług płatniczych jest działalnością regulowaną w rozumieniu przepisów ustawy z dnia 6 marca 2018 r. – Prawo przedsiębiorców.
 - 2\. Działalność, o której mowa w ust. 1, może być wykonywana wyłącznie na terytorium Rzeczypospolitej Polskiej.
-- 2a\. [^64] Działalność, o której mowa w ust. 1, obejmuje wyłącznie świadczenie usługi płatniczej, o której mowa w art. 3 ust. 1 pkt 6.
+- 2a\. [^72)] Działalność, o której mowa w ust. 1, obejmuje wyłącznie świadczenie usługi płatniczej, o której mowa w art. 3 ust. 1 pkt 6.
 - 3\. Średnia całkowitej kwoty transakcji płatniczych z poprzednich 12 miesięcy wykonanych przez biuro usług płatniczych, w tym przez agentów, za pośrednictwem których świadczy ono usługi płatnicze, nie może przekraczać kwoty 500 000 euro miesięcznie.
 
-3a.[^65] Kwota pojedynczej transakcji płatniczej wykonanej przez biuro usług płatniczych, w tym przez agentów, za pośrednictwem których świadczy ono usługę przekazu pieniężnego, nie może przekraczać równowartości w walucie polskiej kwoty 2500 euro ustalonej przy zastosowaniu kursu średniego ogłaszanego przez NBP obowiązującego w dniu poprzedzającym dzień wykonania tego przekazu.
+3a.[^73)] Kwota pojedynczej transakcji płatniczej wykonanej przez biuro usług płatniczych, w tym przez agentów, za pośrednictwem których świadczy ono usługę przekazu pieniężnego, nie może przekraczać równowartości w walucie polskiej kwoty 2500 euro ustalonej przy zastosowaniu kursu średniego ogłaszanego przez NBP obowiązującego w dniu poprzedzającym dzień wykonania tego przekazu.
 
-3b.[^65] Suma środków pieniężnych przyjętych przez biuro usług płatniczych, w tym przez agentów, za pośrednictwem których świadczy ono usługę przekazu pieniężnego, w celu wykonania usług płatniczych na rzecz tego samego płatnika, nie może w danym miesiącu przekraczać równowartości w walucie polskiej kwoty 10 000 euro ustalonej przy zastosowaniu kursu średniego ogłaszanego przez NBP obowiązującego w ostatnim dniu miesiąca poprzedzającego ten miesiąc.
+3b.[^73)] Suma środków pieniężnych przyjętych przez biuro usług płatniczych, w tym przez agentów, za pośrednictwem których świadczy ono usługę przekazu pieniężnego, w celu wykonania usług płatniczych na rzecz tego samego płatnika, nie może w danym miesiącu przekraczać równowartości w walucie polskiej kwoty 10 000 euro ustalonej przy zastosowaniu kursu średniego ogłaszanego przez NBP obowiązującego w ostatnim dniu miesiąca poprzedzającego ten miesiąc.
 
-3c.[^65] Biuro usług płatniczych, w ramach usługi przekazu pieniężnego, dokonuje transferu środków pieniężnych otrzymanych od płatnika na rachunek płatniczy odbiorcy w drodze polecenia przelewu wyłącznie za pośrednictwem rachunku płatniczego utworzonego do dokonywania takich transferów, prowadzonego dla biura usług płatniczych przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 1–4, 6 i 9.
+3c.[^73)] Biuro usług płatniczych, w ramach usługi przekazu pieniężnego, dokonuje transferu środków pieniężnych otrzymanych od płatnika na rachunek płatniczy odbiorcy w drodze polecenia przelewu wyłącznie za pośrednictwem rachunku płatniczego utworzonego do dokonywania takich transferów, prowadzonego dla biura usług płatniczych przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 1–4, 6 i 9.
 
-- 3d\. [^65] W przypadku wszczęcia postępowania egzekucyjnego przeciwko biuru usług płatniczych środki pieniężne znajdujące się na rachunku płatniczym, o którym mowa w ust. 3c, są wolne od zajęcia na podstawie sądowego albo administracyjnego tytułu wykonawczego. Wyłączenie to nie obejmuje roszczeń użytkowników wobec biura usług płatniczych z tytułu niewykonania lub nienależytego wykonania usługi przekazu pieniężnego za pośrednictwem tego rachunku.
+- 3d\. [^73)] W przypadku wszczęcia postępowania egzekucyjnego przeciwko biuru usług płatniczych środki pieniężne znajdujące się na rachunku płatniczym, o którym mowa w ust. 3c, są wolne od zajęcia na podstawie sądowego albo administracyjnego tytułu wykonawczego. Wyłączenie to nie obejmuje roszczeń użytkowników wobec biura usług płatniczych z tytułu niewykonania lub nienależytego wykonania usługi przekazu pieniężnego za pośrednictwem tego rachunku.
 - 4\. Przy ustalaniu średniej, o której mowa w ust. 3, całkowitą kwotę transakcji płatniczych za dany miesiąc oblicza się przy zastosowaniu kursu średniego ogłaszanego przez NBP, obowiązującego w ostatnim dniu miesiąca poprzedzającego ten miesiąc.
 - 5\. Biuro usług płatniczych może prowadzić działalność gospodarczą inną niż świadczenie usług płatniczych.
 
-[^64]: Dodany przez art. 23 pkt 39 lit. a ustawy, o której mowa w odnośniku 3.
+[^72)]: Dodany przez art. 23 pkt 39 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^65]: Dodany przez art. 23 pkt 39 lit. b ustawy, o której mowa w odnośniku 3.
+[^73)]: Dodany przez art. 23 pkt 39 lit. b ustawy, o której mowa w odnośniku 3.
 
 <!-- page: 84 -->
 ### Art. 119.
@@ -2799,18 +2799,18 @@ Jeżeli działalność hybrydowej małej instytucji płatniczej w zakresie niepo
 
 - 1\. Wpis do rejestru biur usług płatniczych następuje na pisemny wniosek przedsiębiorcy zawierający dane, o których mowa w art. 136 pkt 2–4.
 - 2\. Do wniosku, o którym mowa w ust. 1, dołącza się oświadczenie wnioskodawcy o następującej treści: „Oświadczam, że dane zawarte we wniosku są kompletne i zgodne z prawdą. Znane mi są i spełniam warunki wykonywania działalności gospodarczej w charakterze biura usług płatniczych określone w ustawie z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. z 2024 r. poz. 30).”. Składający oświadczenie zawiera w nim klauzulę o następującej treści: „Jestem świadomy odpowiedzialności karnej za złożenie fałszywego oświadczenia.”. Klauzula ta zastępuje pouczenie organu uprawnionego do odebrania oświadczenia o odpowiedzialności karnej za złożenie fałszywego oświadczenia.
-- 2a\. [^66] Do wniosku, o którym mowa w ust. 1, dołącza się informacje o danych kontaktowych dla celów sprawowania nadzoru przez KNF, obejmujące co najmniej:
+- 2a\. [^74)] Do wniosku, o którym mowa w ust. 1, dołącza się informacje o danych kontaktowych dla celów sprawowania nadzoru przez KNF, obejmujące co najmniej:
   - 1\) dane kontaktowe wnioskodawcy, w tym imię i nazwisko, numer telefonu oraz adres poczty elektronicznej osoby uprawnionej do jego reprezentowania;
   - 2\) adres wnioskodawcy wskazany do doręczeń korespondencji w formie pisemnej.
-- 3\. [^67] KNF dokonuje wpisu biura usług płatniczych w terminie 14 dni od dnia wpływu do KNF wniosku o wpis wraz z oświadczeniem, o którym mowa w ust. 2, oraz informacjami, o których mowa w ust. 2a.
+- 3\. [^75)] KNF dokonuje wpisu biura usług płatniczych w terminie 14 dni od dnia wpływu do KNF wniosku o wpis wraz z oświadczeniem, o którym mowa w ust. 2, oraz informacjami, o których mowa w ust. 2a.
 - 4\. Za dzień rozpoczęcia działalności w charakterze biura usług płatniczych uważa się dzień dokonania wpisu do rejestru.
-- 5\. [^68] Wnioskodawca oraz biuro usług płatniczych powiadamia KNF o zmianie danych, o których mowa w ust. 2a, niezwłocznie, jednak nie później niż w terminie 14 dni od dnia uzyskania informacji o zmianie.
+- 5\. [^76)] Wnioskodawca oraz biuro usług płatniczych powiadamia KNF o zmianie danych, o których mowa w ust. 2a, niezwłocznie, jednak nie później niż w terminie 14 dni od dnia uzyskania informacji o zmianie.
 
-[^66]: Dodany przez art. 23 pkt 40 lit. a ustawy, o której mowa w odnośniku 3.
+[^74)]: Dodany przez art. 23 pkt 40 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^67]: W brzmieniu ustalonym przez art. 23 pkt 40 lit. b ustawy, o której mowa w odnośniku 3.
+[^75)]: W brzmieniu ustalonym przez art. 23 pkt 40 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^68]: Dodany przez art. 23 pkt 40 lit. c ustawy, o której mowa w odnośniku 3.
+[^76)]: Dodany przez art. 23 pkt 40 lit. c ustawy, o której mowa w odnośniku 3.
 
 ### Art. 119b.
 
@@ -2827,9 +2827,9 @@ Osoba zarządzająca biurem usług płatniczych nie może być osobą prawomocni
 
 ### Art. 121.
 
-[^69] Biuro usług płatniczych może świadczyć usługi płatnicze za pośrednictwem agenta oraz powierzyć innemu przedsiębiorcy wykonywanie określonych czynności operacyjnych związanych ze świadczeniem usług płatniczych; przepisy art. 84 ust. 2 i 3, art. 85 oraz art. 88–90 stosuje się odpowiednio.
+[^77)] Biuro usług płatniczych może świadczyć usługi płatnicze za pośrednictwem agenta oraz powierzyć innemu przedsiębiorcy wykonywanie określonych czynności operacyjnych związanych ze świadczeniem usług płatniczych; przepisy art. 84 ust. 2 i 3, art. 85 oraz art. 88–90 stosuje się odpowiednio.
 
-[^69]: Ze zmianą wprowadzoną przez art. 23 pkt 41 ustawy, o której mowa w odnośniku 3.
+[^77)]: Ze zmianą wprowadzoną przez art. 23 pkt 41 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 122.
 
@@ -2855,17 +2855,17 @@ Biuro usług płatniczych zawiadamia KNF o zamiarze zakończenia działalności 
 - 3\. Umowa gwarancji bankowej albo ubezpieczeniowej albo umowa ubezpieczenia obejmuje zwrot przez gwaranta lub zakład ubezpieczeń wpłat wniesionych przez użytkowników w przypadku niewykonania lub nienależytego wykonania transakcji płatniczej wynikającej z umowy o świadczenie usług płatniczych przez biuro usług płatniczych, do wysokości dokonanej wpłaty.
 - 4\. Umowa gwarancji bankowej albo ubezpieczeniowej powinna obejmować upoważnienie dla KNF do wydawania dyspozycji wypłaty przez gwaranta środków pieniężnych z gwarancji.
 - 5\. Umowa gwarancji albo ubezpieczenia, o której mowa w ust. 2, nie może być zawarta na okres krótszy niż 12 miesięcy.
-- 5a\. [^70] Biuro usług płatniczych, przed złożeniem zlecenia płatniczego, udostępnia użytkownikowi informacje dotyczące w szczególności zakresu umowy i wysokości sumy gwarancyjnej zawartej umowy gwarancji bankowej albo ubezpieczeniowej albo umowy ubezpieczenia, o których mowa w ust. 2, w sposób umożliwiający zapoznanie się przez użytkownika ze sposobem ochrony środków finansowych. W przypadku gdy użytkownik wnioskuje o ich przekazanie w postaci papierowej lub na innym trwałym nośniku informacji, biuro usług płatniczych przekazuje informacje niezwłocznie po wykonaniu transakcji płatniczej.
+- 5a\. [^78)] Biuro usług płatniczych, przed złożeniem zlecenia płatniczego, udostępnia użytkownikowi informacje dotyczące w szczególności zakresu umowy i wysokości sumy gwarancyjnej zawartej umowy gwarancji bankowej albo ubezpieczeniowej albo umowy ubezpieczenia, o których mowa w ust. 2, w sposób umożliwiający zapoznanie się przez użytkownika ze sposobem ochrony środków finansowych. W przypadku gdy użytkownik wnioskuje o ich przekazanie w postaci papierowej lub na innym trwałym nośniku informacji, biuro usług płatniczych przekazuje informacje niezwłocznie po wykonaniu transakcji płatniczej.
 - 6\. Biuro usług płatniczych jest obowiązane złożyć w KNF dokument potwierdzający zawarcie pierwszej umowy gwarancji bankowej albo ubezpieczeniowej albo pierwszej umowy ubezpieczenia, w terminie 7 dni od dnia zawarcia takiej umowy, a następnie składać do KNF dokumenty potwierdzające każdorazowe zawarcie kolejnej umowy gwarancji bankowej albo ubezpieczeniowej albo umowy ubezpieczenia przed upływem terminu obowiązywania umowy poprzedniej, w terminie 7 dni od dnia jej zawarcia.
-- 7\. (uchylony)[^71]
+- 7\. (uchylony)[^79)]
 - 8\. Minister właściwy do spraw instytucji finansowych określi, w drodze rozporządzenia, minimalną sumę gwarancji, o których mowa w ust. 2, oraz termin powstania obowiązku zawarcia umowy gwarancji, uwzględniając wysokość kwot transakcji płatniczych.
 - 8a\. Minister właściwy do spraw instytucji finansowych może określić, w drodze rozporządzenia, wzory formularzy umowy gwarancji bankowej oraz umowy gwarancji ubezpieczeniowej, o których mowa w ust. 2, kierując się potrzebą uwzględnienia niezbędnych elementów umowy.
 - 9\. Minister właściwy do spraw instytucji finansowych określi, w drodze rozporządzenia, szczegółowy zakres ubezpieczenia, o którym mowa w ust. 2, termin powstania obowiązku ubezpieczenia oraz minimalną sumę gwarancyjną, uwzględniając wysokość kwot transakcji płatniczych.
 - 10\. KNF jest uprawniony do występowania na rzecz użytkowników w sprawach wypłaty środków z tytułu umowy gwarancji bankowej albo umowy gwarancji ubezpieczeniowej na zasadach określonych w treści tych umów.
 
-[^70]: Dodany przez art. 23 pkt 42 lit. a ustawy, o której mowa w odnośniku 3.
+[^78)]: Dodany przez art. 23 pkt 42 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^71]: Przez art. 23 pkt 42 lit. b ustawy, o której mowa w odnośniku 3.
+[^79)]: Przez art. 23 pkt 42 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 126.
 
@@ -2873,28 +2873,28 @@ Biuro usług płatniczych zawiadamia KNF o zamiarze zakończenia działalności 
   - 1\) każdego przekroczenia poziomu 500 000 euro:
     - a\) całkowitej kwoty transakcji płatniczych, w tym wykonanych przez agentów, za pośrednictwem których biuro usług płatniczych świadczy usługi płatnicze, w danym miesiącu,
     - b\) średniej miesięcznej kwoty transakcji płatniczych, w tym wykonywanych przez agentów, za pośrednictwem których biuro usług płatniczych świadczy usługi płatnicze, za każdy okres ostatnich 3 miesięcy i ostatnich 12 miesięcy;
-  - 2\) [^72] wszczęcia postępowania karnego w sprawie o przestępstwo, o którym mowa w art. 119b, lub postępowania w sprawie o przestępstwo skarbowe przeciwko osobie zarządzającej.
+  - 2\) [^80)] wszczęcia postępowania karnego w sprawie o przestępstwo, o którym mowa w art. 119b, lub postępowania w sprawie o przestępstwo skarbowe przeciwko osobie zarządzającej.
 - 2\. Do obliczania kwoty transakcji płatniczych, o których mowa w ust. 1 pkt 1, stosuje się odpowiednio przepis art. 118 ust. 4.
 - 3\. Zgłoszenia, o których mowa w ust. 1, powinny zostać dokonane w terminie 14 dni od dnia:
   - 1\) zakończenia okresów, o których mowa w ust. 1 pkt 1;
   - 2\) powzięcia wiadomości przez biuro o wszczęciu postępowania, o którym mowa w ust. 1 pkt 2.
-- 4\. (uchylony)[^73]
+- 4\. (uchylony)[^81)]
 
-[^72]: Ze zmianą wprowadzoną przez art. 23 pkt 43 lit. a ustawy, o której mowa w odnośniku 3.
+[^80)]: Ze zmianą wprowadzoną przez art. 23 pkt 43 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^73]: Przez art. 23 pkt 43 lit. b ustawy, o której mowa w odnośniku 3.
+[^81)]: Przez art. 23 pkt 43 lit. b ustawy, o której mowa w odnośniku 3.
 
 <!-- page: 86 -->
 ### Art. 126a.
 
-[^74] 1. Biuro usług płatniczych zgłasza do KNF:
+[^82)] 1. Biuro usług płatniczych zgłasza do KNF:
 
 - 1\) numer rachunku płatniczego, o którym mowa w art. 118 ust. 3c, wraz z kopią umowy tego rachunku;
 - 2\) zmiany w zakresie informacji, o których mowa w art. 119a ust. 2a. 2. Zgłoszenie, o którym mowa w ust. 1, jest dokonywane w terminie 14 dni od dnia:
 - 1\) zawarcia albo zmiany umowy rachunku płatniczego, o którym mowa w ust. 1 pkt 1;
 - 2\) zmian w zakresie informacji, o których mowa w ust. 1 pkt 2.
 
-[^74]: Dodany przez art. 23 pkt 44 ustawy, o której mowa w odnośniku 3.
+[^82)]: Dodany przez art. 23 pkt 44 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 127.
 
@@ -2905,12 +2905,12 @@ Biuro usług płatniczych zawiadamia KNF o zamiarze zakończenia działalności 
 
   – w terminie 30 dni od dnia zakończenia okresu, w którym nastąpiło przekroczenie.
 
-- 2\. W przypadku, o którym mowa w ust. 1 pkt 2 albo 3, do czasu rozpoznania wniosku przepisu ust. 1 pkt 1 nie stosuje się. W przypadku odmowy wpisu do rejestru małych instytucji płatniczych, odmowy wydania zezwolenia, umorzenia postępowania albo pozostawienia wniosku bez rozpoznania termin ten biegnie od dnia, w którym decyzja stała się ostateczna, lub od dnia pozostawienia wniosku bez rozpoznania.[^75]
-- 3\. [^76] Średnia całkowita kwota transakcji płatniczych biura usług płatniczych nie może przekraczać w okresie rozpoznawania wniosku wysokości kwoty określonej w zgłoszeniu dokonanym na podstawie art. 126 ust. 1 pkt 1 lit. b.
+- 2\. W przypadku, o którym mowa w ust. 1 pkt 2 albo 3, do czasu rozpoznania wniosku przepisu ust. 1 pkt 1 nie stosuje się. W przypadku odmowy wpisu do rejestru małych instytucji płatniczych, odmowy wydania zezwolenia, umorzenia postępowania albo pozostawienia wniosku bez rozpoznania termin ten biegnie od dnia, w którym decyzja stała się ostateczna, lub od dnia pozostawienia wniosku bez rozpoznania.[^83)]
+- 3\. [^84)] Średnia całkowita kwota transakcji płatniczych biura usług płatniczych nie może przekraczać w okresie rozpoznawania wniosku wysokości kwoty określonej w zgłoszeniu dokonanym na podstawie art. 126 ust. 1 pkt 1 lit. b.
 
-[^75]: Zdanie drugie w brzmieniu ustalonym przez art. 23 pkt 45 lit. a ustawy, o której mowa w odnośniku 3.
+[^83)]: Zdanie drugie w brzmieniu ustalonym przez art. 23 pkt 45 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^76]: Dodany przez art. 23 pkt 45 lit. b ustawy, o której mowa w odnośniku 3.
+[^84)]: Dodany przez art. 23 pkt 45 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 128.
 
@@ -2921,27 +2921,27 @@ Biuro usług płatniczych zawiadamia KNF o zamiarze zakończenia działalności 
 
 w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przypadku, gdy osoba wykonująca działalność gospodarczą w charakterze biura usług płatniczych w danym okresie miała zawieszoną działalność gospodarczą.
 
-- 1b\. [^77] W przypadku naruszenia obowiązku, o którym mowa w ust. 1, KNF wzywa biuro usług płatniczych do przekazania informacji w terminie wskazanym w wezwaniu.
+- 1b\. [^85)] W przypadku naruszenia obowiązku, o którym mowa w ust. 1, KNF wzywa biuro usług płatniczych do przekazania informacji w terminie wskazanym w wezwaniu.
 - 2\. KNF informuje Komisję Europejską o liczbie biur usług płatniczych oraz całkowitej kwocie transakcji płatniczych wykonanych w danym roku przez biura usług płatniczych, w tym także przez ich agentów.
-- 3\. [^78] KNF udostępnia NBP dane, o których mowa w ust. 1 pkt 2, niezwłocznie po ich otrzymaniu.
+- 3\. [^86)] KNF udostępnia NBP dane, o których mowa w ust. 1 pkt 2, niezwłocznie po ich otrzymaniu.
 
-[^77]: Dodany przez art. 23 pkt 46 lit. a ustawy, o której mowa w odnośniku 3.
+[^85)]: Dodany przez art. 23 pkt 46 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^78]: Dodany przez art. 23 pkt 46 lit. b ustawy, o której mowa w odnośniku 3.
+[^86)]: Dodany przez art. 23 pkt 46 lit. b ustawy, o której mowa w odnośniku 3.
 
 ### Art. 129.
 
 - 1\. Działalność w zakresie usług płatniczych prowadzona przez biura usług płatniczych podlega nadzorowi sprawowanemu przez KNF w zakresie i na zasadach określonych w niniejszej ustawie oraz w ustawie o nadzorze nad rynkiem finansowym.
 - 2\. Celem nadzoru nad biurami usług płatniczych jest zapewnienie zgodności działalności biur usług płatniczych z przepisami ustawy oraz ochrona interesów użytkowników usług płatniczych.
-- 3\. [^79] Do nadzoru nad biurami usług płatniczych stosuje się odpowiednio przepisy art. 102 ust. 1 pkt 1, ust. 1a i 1b, art. 106 ust. 1 oraz art. 112.
+- 3\. [^87)] Do nadzoru nad biurami usług płatniczych stosuje się odpowiednio przepisy art. 102 ust. 1 pkt 1, ust. 1a i 1b, art. 106 ust. 1 oraz art. 112.
 <!-- page: 87 -->
 - 4\. W ramach nadzoru KNF może wydawać biurom usług płatniczych zalecenia w zakresie:
   - 1\) zapewnienia zgodności działalności biura z przepisami ustawy;
-  - 2\) podjęcia środków koniecznych do zapobieżenia naruszeniom interesów użytkowników. 4a.[^80] Zalecenia, o których mowa w ust. 4, są sporządzane na piśmie utrwalonym:
+  - 2\) podjęcia środków koniecznych do zapobieżenia naruszeniom interesów użytkowników. 4a.[^88)] Zalecenia, o których mowa w ust. 4, są sporządzane na piśmie utrwalonym:
   - 1\) w postaci papierowej i opatrywane podpisem własnoręcznym albo
   - 2\) w postaci elektronicznej i opatrywane kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
-- 4b\. [^80] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
-- 5\. [^81] W razie stwierdzenia, że działalność biura usług płatniczych jest wykonywana z naruszeniem prawa lub stwarza zagrożenie interesów użytkowników, w szczególności:
+- 4b\. [^88)] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
+- 5\. [^89)] W razie stwierdzenia, że działalność biura usług płatniczych jest wykonywana z naruszeniem prawa lub stwarza zagrożenie interesów użytkowników, w szczególności:
   - 1\) nie wykonuje albo wykonuje nieprawidłowo obowiązek udzielenia informacji, o którym mowa w art. 102 ust. 1 pkt 1,
   - 2\) nie wykonuje zalecenia albo nakazu, o których mowa w art. 106 ust. 1,
   - 3\) narusza obowiązki, o których mowa w art. 125, art. 126 ust. 1, art. 126a lub art. 128 ust. 1,
@@ -2950,35 +2950,35 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
   – KNF, w formie pisemnej, udziela biuru usług płatniczych upomnienia oraz wzywa do usunięcia naruszeń i wyznacza termin ich usunięcia.
 
 - 6\. W przypadkach, o których mowa w ust. 5, KNF może także:
-  - 1\) [^82] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone naruszenia, albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono naruszenia, karę pieniężną do wysokości 500 000 zł;
+  - 1\) [^90)] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone naruszenia, albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono naruszenia, karę pieniężną do wysokości 500 000 zł;
   - 2\) nałożyć na biuro usług płatniczych karę pieniężną w wysokości do 500 000 zł.
 - 6a\. KNF może wydać decyzję o zakazie wykonywania działalności w zakresie biura usług płatniczych, w przypadku gdy:
   - 1\) oświadczenie, o którym mowa w art. 119a ust. 2, zostało złożone niezgodnie ze stanem faktycznym;
   - 2\) stwierdzi rażące naruszenie warunków wymaganych prawem do prowadzenia działalności w charakterze biura usług płatniczych lub wynikających z przepisów ustawy obowiązków związanych z prowadzeniem działalności w charakterze biura usług płatniczych;
-  - 3\) [^83] pomimo udzielenia upomnienia, o którym mowa w ust. 5, biuro usług płatniczych nie usunęło naruszeń w terminie wskazanym przez KNF.
+  - 3\) [^91)] pomimo udzielenia upomnienia, o którym mowa w ust. 5, biuro usług płatniczych nie usunęło naruszeń w terminie wskazanym przez KNF.
 - 7\. W przypadku niewykonania zalecenia lub nakazu, o których mowa w art. 106 ust. 1, KNF może:
   - 1\) nałożyć kary pieniężne, o których mowa w ust. 6;
   - 2\) wydać decyzję, o której mowa w ust. 6a.
-- 8\. [^84] Do nakładania kar, o których mowa w ust. 6, stosuje się odpowiednio przepisy art. 105 ust. 2, 4 i 5.
+- 8\. [^92)] Do nakładania kar, o których mowa w ust. 6, stosuje się odpowiednio przepisy art. 105 ust. 2, 4 i 5.
 - 9\. Decyzja, o której mowa w ust. 6a, podlega natychmiastowemu wykonaniu.
 
-[^79]: Ze zmianą wprowadzoną przez art. 23 pkt 47 lit. a ustawy, o której mowa w odnośniku 3.
+[^87)]: Ze zmianą wprowadzoną przez art. 23 pkt 47 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^80]: Dodany przez art. 23 pkt 47 lit. b ustawy, o której mowa w odnośniku 3.
+[^88)]: Dodany przez art. 23 pkt 47 lit. b ustawy, o której mowa w odnośniku 3.
 
-[^81]: W brzmieniu ustalonym przez art. 23 pkt 47 lit. c ustawy, o której mowa w odnośniku 3.
+[^89)]: W brzmieniu ustalonym przez art. 23 pkt 47 lit. c ustawy, o której mowa w odnośniku 3.
 
-[^82]: W brzmieniu ustalonym przez art. 23 pkt 47 lit. d ustawy, o której mowa w odnośniku 3.
+[^90)]: W brzmieniu ustalonym przez art. 23 pkt 47 lit. d ustawy, o której mowa w odnośniku 3.
 
-[^83]: Dodany przez art. 23 pkt 47 lit. e ustawy, o której mowa w odnośniku 3.
+[^91)]: Dodany przez art. 23 pkt 47 lit. e ustawy, o której mowa w odnośniku 3.
 
-[^84]: Ze zmianą wprowadzoną przez art. 23 pkt 47 lit. f ustawy, o której mowa w odnośniku 3.
+[^92)]: Ze zmianą wprowadzoną przez art. 23 pkt 47 lit. f ustawy, o której mowa w odnośniku 3.
 
 ### Art. 130.
 
-- 1\. [^85] Biura usług płatniczych są obowiązane do wnoszenia wpłat na pokrycie kosztów nadzoru w kwocie stanowiącej iloczyn całkowitej kwoty transakcji płatniczych wykonanych przez biuro, w tym także przez jego agentów, i stawki nieprzekraczającej 0,025%.
+- 1\. [^93)] Biura usług płatniczych są obowiązane do wnoszenia wpłat na pokrycie kosztów nadzoru w kwocie stanowiącej iloczyn całkowitej kwoty transakcji płatniczych wykonanych przez biuro, w tym także przez jego agentów, i stawki nieprzekraczającej 0,025%.
 <!-- page: 88 -->
-- 1\. [^86] **Biura usług płatniczych wnoszą wpłaty na pokrycie kosztów nadzoru w kwocie stanowiącej iloczyn całkowitej kwoty transakcji płatniczych wykonanych przez biuro, w tym także przez jego agentów, i stawki nieprzekraczającej 0,023%.**
+- 1\. [^94)] **Biura usług płatniczych wnoszą wpłaty na pokrycie kosztów nadzoru w kwocie stanowiącej iloczyn całkowitej kwoty transakcji płatniczych wykonanych przez biuro, w tym także przez jego agentów, i stawki nieprzekraczającej 0,023%.**
 - 2\. Należności z tytułu wpłat, o których mowa w ust. 1, podlegają egzekucji w trybie przepisów ustawy o postępowaniu egzekucyjnym w administracji.
 - 3\. Prezes Rady Ministrów określi, w drodze rozporządzenia:
   - 1\) terminy uiszczania, wysokość i sposób obliczania wpłat, o których mowa w ust. 1,
@@ -2986,9 +2986,9 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
 
   – uwzględniając konieczność zapewnienia skuteczności sprawowanego nadzoru, mając zarazem na względzie, aby wysokość wpłat na pokrycie kosztów nadzoru nie wpływała w istotny sposób na zwiększenie kosztów działalności podmiotów obowiązanych do ich uiszczenia.
 
-[^85]: W tym brzmieniu obowiązuje do wejścia w życie zmiany, o której mowa w odnośniku 94.
+[^93)]: W tym brzmieniu obowiązuje do wejścia w życie zmiany, o której mowa w odnośniku 94.
 
-[^86]: W brzmieniu ustalonym przez art. 23 pkt 48 ustawy, o której mowa w odnośniku 3; wejdzie w życie z dniem 1 stycznia 2024 r.
+[^94)]: W brzmieniu ustalonym przez art. 23 pkt 48 ustawy, o której mowa w odnośniku 3; wejdzie w życie z dniem 1 stycznia 2024 r.
 
 ### Art. 131.
 
@@ -3019,16 +3019,16 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
 
 - 1\. Zezwolenie, o którym mowa w art. 132a ust. 1, może być wydane podmiotom posiadającym kapitał założycielski w wysokości co najmniej równowartości w walucie polskiej kwoty 350 000 euro ustalonej przy zastosowaniu kursu średniego ogłaszanego przez NBP obowiązującego w dniu wydania zezwolenia.
 - 2\. Przepisy art. 64 ust. 1 pkt 2–10 i art. 64a ust. 1–4 oraz przepisy wykonawcze wydane na podstawie art. 64a *ust. 5* stosuje się odpowiednio, z tym że system zarządzania ryzykiem i kontroli wewnętrznej, o którym mowa w art. 64 ust. 1 pkt 3, zawiera ponadto opis zasad postępowania ze środkami pieniężnymi otrzymywanymi w zamian za wydany pieniądz elektroniczny zgodnie z art. 132n i opis procedur rozpatrywania skarg posiadaczy pieniądza elektronicznego.
-- 3\. [^87] Do odmowy wydania zezwolenia, o którym mowa w art. 132a ust. 1, zmiany zakresu usług płatniczych określonych w zezwoleniu, wygaśnięcia zezwolenia w związku z nieprowadzeniem albo nierozpoczęciem działalności objętej tym zezwoleniem oraz do cofnięcia zezwolenia, a także do postępowania w sprawie wydania, zmiany, wygaśnięcia i cofnięcia zezwolenia stosuje się odpowiednio przepisy art. 61b–63, art. 65–67, art. 69, art. 70 i art. 142a.
+- 3\. [^95)] Do odmowy wydania zezwolenia, o którym mowa w art. 132a ust. 1, zmiany zakresu usług płatniczych określonych w zezwoleniu, wygaśnięcia zezwolenia w związku z nieprowadzeniem albo nierozpoczęciem działalności objętej tym zezwoleniem oraz do cofnięcia zezwolenia, a także do postępowania w sprawie wydania, zmiany, wygaśnięcia i cofnięcia zezwolenia stosuje się odpowiednio przepisy art. 61b–63, art. 65–67, art. 69, art. 70 i art. 142a.
 <!-- page: 89 -->
 - 4\. Warunkiem udzielenia zezwolenia, o którym mowa w art. 132a ust. 1, jest dodatkowo posiadanie przez podmiot rozwiązań organizacyjnych mających służyć ochronie środków pieniężnych otrzymanych w zamian za wydany pieniądz elektroniczny zgodnie z art. 132n.
 - 5\. KNF może cofnąć zezwolenie, o którym mowa w art. 132a ust. 1, również jeżeli instytucja pieniądza elektronicznego, która nie stosuje zasad ochrony środków pieniężnych otrzymanych w zamian za wydany pieniądz elektroniczny, określonych w art. 132n ust. 1, nie zawarła w terminie umowy gwarancji bankowej albo ubezpieczeniowej albo umowy ubezpieczenia, o której mowa w art. 78 ust. 2, zgodnie z art. 132n ust. 2.
 
-[^87]: Ze zmianą wprowadzoną przez art. 23 pkt 49 ustawy, o której mowa w odnośniku 3.
+[^95)]: Ze zmianą wprowadzoną przez art. 23 pkt 49 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132c.
 
-- 1\. [^88] Podmiot, który zamierza bezpośrednio lub pośrednio nabyć albo objąć akcje lub udziały krajowej instytucji pieniądza elektronicznego w liczbie zapewniającej osiągnięcie lub przekroczenie odpowiednio 20%, 30% lub 50% ogólnej liczby głosów w organie stanowiącym lub udziału w kapitale zakładowym, lub jeżeli na skutek nabycia albo objęcia akcji lub udziałów instytucja taka stałaby się jednostką zależną lub współzależną względem tego podmiotu, jest obowiązany każdorazowo zawiadomić KNF o takim zamiarze.
+- 1\. [^96)] Podmiot, który zamierza bezpośrednio lub pośrednio nabyć albo objąć akcje lub udziały krajowej instytucji pieniądza elektronicznego w liczbie zapewniającej osiągnięcie lub przekroczenie odpowiednio 20%, 30% lub 50% ogólnej liczby głosów w organie stanowiącym lub udziału w kapitale zakładowym, lub jeżeli na skutek nabycia albo objęcia akcji lub udziałów instytucja taka stałaby się jednostką zależną lub współzależną względem tego podmiotu, jest obowiązany każdorazowo zawiadomić KNF o takim zamiarze.
 - 2\. W przypadku, o którym mowa w ust. 1, przepisy art. 25 ust. 2, 3 i 7–9, art. 25a ust. 1 i 2, art. 25c–25e i art. 25g ustawy – Prawo bankowe stosuje się odpowiednio, z tym że przepisy dotyczące podmiotu dominującego, zależnego lub współzależnego, o których mowa w tych przepisach, stosuje się do jednostki dominującej, zależnej lub współzależnej.
 - 3\. W przypadku gdy podmiot składający zawiadomienie, o którym mowa w ust. 1, jest:
   - 1\) unijną instytucją pieniądza elektronicznego, unijną instytucją płatniczą, zakładem ubezpieczeń, zakładem reasekuracji, instytucją kredytową, firmą inwestycyjną lub spółką zarządzającą, które uzyskały zezwolenie na wykonywanie działalności na terytorium państwa członkowskiego innego niż Rzeczpospolita Polska lub
@@ -3037,11 +3037,11 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
   – przedstawia w zawiadomieniu odpowiednią informację w tym zakresie, wskazującą w szczególności nazwę i siedzibę podmiotów, o których mowa w pkt 2, w stosunku do których jest jednostką dominującą lub podmiotem pozostającym w podobnym stosunku.
 
 - 4\. Jeżeli nie zachodzą okoliczności wymienione w ust. 3 pkt 1 i 2, zawiadomienie zawiera stosowne oświadczenie w tym zakresie.
-- 5\. Podmiot, który zamierza bezpośrednio lub pośrednio zbyć znaczny pakiet akcji lub udziałów krajowej instytucji pieniądza elektronicznego, lub zbyć pakiet akcji lub udziałów, w wyniku czego nastąpiłby spadek poniżej 20%, 30% lub 50% jego udziału w ogólnej liczbie głosów w organie stanowiącym lub udziału w kapitale zakładowym, jest obowiązany zawiadomić o tym zamiarze KNF.[^89] W przypadku gdy statut krajowej instytucji pieniądza elektronicznego przewiduje uprzywilejowanie lub ograniczenie akcji lub udziałów co do prawa głosu, zawiadomienie powinno również dotyczyć udziału w kapitale zakładowym w wysokości odpowiadającej wielkościom określonym w zdaniu pierwszym i odpowiadającej mu liczbie głosów bez przywilejów i ograniczeń; przepisy art. 25 ust. 2, 3 i 7 ustawy – Prawo bankowe stosuje się odpowiednio.
+- 5\. Podmiot, który zamierza bezpośrednio lub pośrednio zbyć znaczny pakiet akcji lub udziałów krajowej instytucji pieniądza elektronicznego, lub zbyć pakiet akcji lub udziałów, w wyniku czego nastąpiłby spadek poniżej 20%, 30% lub 50% jego udziału w ogólnej liczbie głosów w organie stanowiącym lub udziału w kapitale zakładowym, jest obowiązany zawiadomić o tym zamiarze KNF.[^97)] W przypadku gdy statut krajowej instytucji pieniądza elektronicznego przewiduje uprzywilejowanie lub ograniczenie akcji lub udziałów co do prawa głosu, zawiadomienie powinno również dotyczyć udziału w kapitale zakładowym w wysokości odpowiadającej wielkościom określonym w zdaniu pierwszym i odpowiadającej mu liczbie głosów bez przywilejów i ograniczeń; przepisy art. 25 ust. 2, 3 i 7 ustawy – Prawo bankowe stosuje się odpowiednio.
 
-[^88]: Ze zmianą wprowadzoną przez art. 23 pkt 50 lit. a ustawy, o której mowa w odnośniku 3.
+[^96)]: Ze zmianą wprowadzoną przez art. 23 pkt 50 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^89]: Zdanie pierwsze ze zmianą wprowadzoną przez art. 23 pkt 50 lit. b ustawy, o której mowa w odnośniku 3.
+[^97)]: Zdanie pierwsze ze zmianą wprowadzoną przez art. 23 pkt 50 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132d.
 
@@ -3081,10 +3081,10 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
 <!-- page: 91 -->
 - 5\. Uchwały organu stanowiącego krajowej instytucji pieniądza elektronicznego podjęte z naruszeniem ust. 3 są nieważne, chyba że spełniają wymogi kworum oraz większości głosów oddanych bez uwzględnienia głosów nieważnych. W przypadkach, o których mowa w ust. 3, prawo wytoczenia powództwa o stwierdzenie nieważności uchwały organu stanowiącego krajowej instytucji pieniądza elektronicznego przysługuje również KNF. Przepisy art. 425 ustawy z dnia 15 września 2000 r. – Kodeks spółek handlowych stosuje się odpowiednio.
 - 6\. W przypadku, o którym mowa w ust. 3 lub 4, KNF może, w drodze decyzji, nakazać zbycie akcji lub udziałów krajowej instytucji pieniądza elektronicznego w wyznaczonym terminie.
-- 7\. [^90] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 6, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji pieniądza elektronicznego karę pieniężną do wysokości 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 132a ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 7\. [^98)] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 6, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji pieniądza elektronicznego karę pieniężną do wysokości 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 132a ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 - 8\. W przypadku gdy wymagają tego interesy użytkowników lub posiadaczy pieniądza elektronicznego, a wnioskodawca wykaże, że nie zachodzi przesłanka, o której mowa w ust. 1 pkt 3, KNF może, w szczególnie uzasadnionych przypadkach, w drodze decyzji, wydanej na wniosek akcjonariusza, udziałowca lub jednostki dominującej krajowej instytucji pieniądza elektronicznego, uchylić zakazy, o których mowa w ust. 3 lub 4. Do wniosku wnioskodawca dołącza informacje, o których mowa w art. 132d ust. 1.
 
-[^90]: Ze zmianą wprowadzoną przez art. 23 pkt 51 ustawy, o której mowa w odnośniku 3.
+[^98)]: Ze zmianą wprowadzoną przez art. 23 pkt 51 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132f.
 
@@ -3092,7 +3092,7 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
 - 2\. Uchwała organu stanowiącego krajowej instytucji pieniądza elektronicznego jest nieważna, jeżeli przy jej podejmowaniu wykonano prawo głosu z akcji lub udziałów, w stosunku do których KNF wydał decyzję, o której mowa w ust. 1, chyba że uchwała spełnia wymogi kworum oraz większości głosów oddanych bez uwzględnienia głosów nieważnych. Prawo wytoczenia powództwa o stwierdzenie nieważności uchwały przysługuje również KNF. Przepisy art. 425 ustawy z dnia 15 września 2000 r. – Kodeks spółek handlowych stosuje się odpowiednio.
 - 3\. Jeżeli KNF wydał na podstawie ust. 1 decyzję w przedmiocie zakazu wykonywania uprawnień jednostki dominującej krajowej instytucji pieniądza elektronicznego, przepis art. 132e ust. 4 stosuje się odpowiednio.
 - 4\. W przypadku wydania decyzji, o której mowa w ust. 1, KNF może, w drodze decyzji, nakazać zbycie akcji lub udziałów krajowej instytucji pieniądza elektronicznego w wyznaczonym terminie.
-- 5\. [^91] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 4, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji pieniądza elektronicznego karę pieniężną do wysokości 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 132a ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 5\. [^99)] Jeżeli akcje lub udziały nie zostaną zbyte w terminie, o którym mowa w ust. 4, KNF może nałożyć na akcjonariusza lub udziałowca krajowej instytucji pieniądza elektronicznego karę pieniężną do wysokości 1 000 000 zł lub cofnąć zezwolenie, o którym mowa w art. 132a ust. 1. Do nakładania kar przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 
 5a. Jeżeli podmiot, o którym mowa w art. 132c ust. 1, nabył lub objął akcje lub prawa z akcji, o których mowa w art. 132c ust. 1, i nie dochowuje podjętego zobowiązania, o którym mowa w art. 132d ust. 1 pkt 9, KNF może, w drodze decyzji, nałożyć na ten podmiot karę pieniężną do wysokości odpowiadającej wartości tych akcji lub praw z akcji. Wartość akcji lub praw z akcji ustalana jest na dzień ich nabycia albo objęcia według wartości godziwej, o której mowa w ustawie o rachunkowości.
 
@@ -3107,7 +3107,7 @@ w danym okresie nie wykonało żadnej transakcji płatniczej, z wyjątkiem przyp
 - 6\. Na wniosek akcjonariusza, udziałowca lub jednostki dominującej krajowej instytucji pieniądza elektronicznego KNF uchyla decyzję wydaną na podstawie ust. 1, jeżeli ustały okoliczności uzasadniające wydanie tej decyzji.
 - 7\. Przepisy ust. 1–6 stosuje się odpowiednio, w przypadku gdy dwa lub więcej podmiotów działa w porozumieniu, którego przedmiotem jest wykonywanie prawa głosu z akcji lub udziałów na poziomach określonych w art. 132c ust. 1 lub wykonywanie uprawnień jednostki dominującej.
 
-[^91]: Ze zmianą wprowadzoną przez art. 23 pkt 52 ustawy, o której mowa w odnośniku 3.
+[^99)]: Ze zmianą wprowadzoną przez art. 23 pkt 52 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132fa.
 
@@ -3251,13 +3251,13 @@ Krajowa instytucja pieniądza elektronicznego w zakresie świadczenia usług pł
 <!-- page: 96 -->
 #### Art. 132y.
 
-- 1\. [^92] Unijna instytucja pieniądza elektronicznego może wykonywać na terytorium Rzeczypospolitej Polskiej działalność w zakresie wydawania pieniądza elektronicznego przez oddział lub w ramach działalności transgranicznej, lub świadczyć usługi płatnicze przez oddział, w ramach działalności transgranicznej lub za pośrednictwem agenta, w zakresie wynikającym z zezwolenia wydanego przez właściwe organy nadzorcze. Przepisy art. 97 stosuje się odpowiednio.
-- 2\. [^93] KNF może przeprowadzić kontrolę działalności i sytuacji finansowej oddziałów unijnych instytucji pieniądza elektronicznego oraz ich agentów, wykonujących działalność na terytorium Rzeczypospolitej Polskiej, we współpracy z właściwymi organami nadzorczymi macierzystego państwa członkowskiego tych oddziałów. Przepis art. 103 stosuje się odpowiednio.
-- 3\. [^93] Do oddziałów i agentów unijnych instytucji pieniądza elektronicznego stosuje się odpowiednio przepis art. 98b.
+- 1\. [^100)] Unijna instytucja pieniądza elektronicznego może wykonywać na terytorium Rzeczypospolitej Polskiej działalność w zakresie wydawania pieniądza elektronicznego przez oddział lub w ramach działalności transgranicznej, lub świadczyć usługi płatnicze przez oddział, w ramach działalności transgranicznej lub za pośrednictwem agenta, w zakresie wynikającym z zezwolenia wydanego przez właściwe organy nadzorcze. Przepisy art. 97 stosuje się odpowiednio.
+- 2\. [^101)] KNF może przeprowadzić kontrolę działalności i sytuacji finansowej oddziałów unijnych instytucji pieniądza elektronicznego oraz ich agentów, wykonujących działalność na terytorium Rzeczypospolitej Polskiej, we współpracy z właściwymi organami nadzorczymi macierzystego państwa członkowskiego tych oddziałów. Przepis art. 103 stosuje się odpowiednio.
+- 3\. [^101)] Do oddziałów i agentów unijnych instytucji pieniądza elektronicznego stosuje się odpowiednio przepis art. 98b.
 
-[^92]: Oznaczenie ust. 1 nadane przez art. 23 pkt 53 ustawy, o której mowa w odnośniku 3.
+[^100)]: Oznaczenie ust. 1 nadane przez art. 23 pkt 53 ustawy, o której mowa w odnośniku 3.
 
-[^93]: Dodany przez art. 23 pkt 53 ustawy, o której mowa w odnośniku 3.
+[^101)]: Dodany przez art. 23 pkt 53 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132z.
 
@@ -3266,7 +3266,7 @@ Krajowa instytucja pieniądza elektronicznego w zakresie świadczenia usług pł
   - 1\) zapewnienie bezpieczeństwa finansowego krajowych instytucji pieniądza elektronicznego;
   - 2\) zapewnienie zgodności działalności krajowych instytucji pieniądza elektronicznego, w tym prowadzonej przez ich agentów i innych przedsiębiorców, za pośrednictwem których krajowa instytucja pieniądza elektronicznego świadczy usługi płatnicze lub dokonuje wykupu pieniądza elektronicznego, oraz podmioty wykonujące niektóre czynności operacyjne na podstawie umowy, o której mowa w art. 132v ust. 1, z przepisami ustawy, rozporządzenia Parlamentu Europejskiego i Rady (WE) nr 924/2009 z dnia 16 września 2009 r. w sprawie płatności transgranicznych we Wspólnocie oraz uchylającego rozporządzenie (WE) nr 2560/2001, rozporządzenia Parlamentu Europejskiego i Rady (UE) nr 260/2012 z dnia 14 marca 2012 r. ustanawiającego wymogi techniczne i handlowe w odniesieniu do poleceń przelewu i poleceń zapłaty w euro oraz zmieniającego rozporządzenie (WE) nr 924/2009 i rozporządzenia (UE) 2015/751 oraz zezwoleniem, o którym mowa w art. 132a ust. 1;
   - 3\) ochrona interesów użytkowników i posiadaczy pieniądza elektronicznego.
-- 3\. [^94] Do nadzoru nad krajowymi instytucjami pieniądza elektronicznego stosuje się odpowiednio przepisy art. 100, art. 101, art. 102 ust. 1 pkt 1, 2 i 5 oraz ust. 1a i 1b, art. 103 i art. 104.
+- 3\. [^102)] Do nadzoru nad krajowymi instytucjami pieniądza elektronicznego stosuje się odpowiednio przepisy art. 100, art. 101, art. 102 ust. 1 pkt 1, 2 i 5 oraz ust. 1a i 1b, art. 103 i art. 104.
 - 4\. KNF w ramach sprawowanego nadzoru nad krajowymi instytucjami pieniądza elektronicznego może:
   - 1\) wydawać krajowej instytucji pieniądza elektronicznego zalecenia w zakresie:
     - a\) zapewnienia zgodności działalności krajowej instytucji pieniądza elektronicznego z przepisami ustawy, rozporządzenia Parlamentu Europejskiego i Rady (WE) nr 924/2009 z dnia 16 września 2009 r. w sprawie płatności transgranicznych we Wspólnocie oraz uchylającego rozporządzenie (WE) nr 2560/2001 oraz rozporządzenia Parlamentu Europejskiego i Rady (UE) nr 260/2012 z dnia 14 marca 2012 r. ustanawiającego wymogi techniczne i handlowe w odniesieniu do poleceń przelewu i poleceń zapłaty w euro oraz zmieniającego rozporządzenie (WE) nr 924/2009,
@@ -3274,35 +3274,35 @@ Krajowa instytucja pieniądza elektronicznego w zakresie świadczenia usług pł
     - c\) podjęcia środków koniecznych do osiągnięcia i przestrzegania norm, o których mowa w art. 132b ust. 1 i art. 132m,
     - d\) opracowania i stosowania procedur, które zapewnią utrzymywanie oraz bieżące monitorowanie poziomu funduszy własnych,
     - e\) podjęcia środków koniecznych dla zapobieżenia naruszeniom interesów użytkowników i posiadaczy pieniądza elektronicznego;
-  - 2\) nakazać krajowej instytucji pieniądza elektronicznego wstrzymanie wypłat z zysku lub wstrzymanie tworzenia nowych jednostek organizacyjnych do czasu osiągnięcia norm, o których mowa w art. 132b ust. 1 i art. 132m. <!-- page: 97 --> 4a.[^95] Zalecenia, o których mowa w ust. 4, są sporządzane w formie pisemnej:
+  - 2\) nakazać krajowej instytucji pieniądza elektronicznego wstrzymanie wypłat z zysku lub wstrzymanie tworzenia nowych jednostek organizacyjnych do czasu osiągnięcia norm, o których mowa w art. 132b ust. 1 i art. 132m. <!-- page: 97 --> 4a.[^103)] Zalecenia, o których mowa w ust. 4, są sporządzane w formie pisemnej:
   - 1\) w postaci papierowej i opatrywane podpisem własnoręcznym albo
   - 2\) w postaci elektronicznej i opatrywane kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym lub kwalifikowaną pieczęcią elektroniczną KNF ze wskazaniem w treści pisma osoby opatrującej pismo pieczęcią.
-- 4b\. [^95] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
+- 4b\. [^103)] Zalecenia i wystąpienia, o których mowa w ust. 4a pkt 2, doręcza się na adres do doręczeń elektronicznych.
 - 5\. KNF może wydawać rekomendacje dotyczące dobrych praktyk ostrożnego i stabilnego zarządzania krajowymi instytucjami pieniądza elektronicznego, mając na uwadze ochronę interesów posiadaczy pieniądza elektronicznego i użytkowników.
 
-[^94]: Ze zmianą wprowadzoną przez art. 23 pkt 54 lit. a ustawy, o której mowa w odnośniku 3.
+[^102)]: Ze zmianą wprowadzoną przez art. 23 pkt 54 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^95]: Dodany przez art. 23 pkt 54 lit. b ustawy, o której mowa w odnośniku 3.
+[^103)]: Dodany przez art. 23 pkt 54 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132za.
 
 - 1\. W razie stwierdzenia, że krajowa instytucja pieniądza elektronicznego nie wykonuje albo nieprawidłowo wykonuje obowiązek udzielenia informacji, o którym mowa w art. 102 ust. 1 pkt 1, lub przekazywania danych, o którym mowa w art. 102 ust. 1 pkt 2, nie wykonała w wyznaczonym terminie zaleceń, o których mowa w art. 132z ust. 4 pkt 1, utrudnia albo uniemożliwia przeprowadzenie kontroli, o której mowa w art. 103, lub nie wykonuje nakazów określonych w art. 132z ust. 4 pkt 2 lub w art. 102 ust. 1 pkt 5, a także gdy działalność krajowej instytucji pieniądza elektronicznego jest wykonywana z naruszeniem prawa lub stwarza zagrożenie interesów posiadaczy pieniądza elektronicznego lub użytkowników, KNF może zastosować środki, o których mowa w art. 105 ust. 1 pkt 1–3. Przepisy art. 105 ust. 4 i 5 stosuje się odpowiednio.
 - 2\. W przypadkach, o których mowa w ust. 1, KNF może także:
-  - 1\) [^96] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone naruszenia albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono naruszenia, karę pieniężną do wysokości 500 000 zł;
+  - 1\) [^104)] nałożyć na osobę, która w okresie, w którym nastąpiły naruszenia, pełniła funkcję osoby zarządzającej bezpośrednio odpowiedzialnej za stwierdzone naruszenia albo była członkiem organu statutowego bezpośrednio odpowiedzialnym za nadzór nad obszarem, w którym stwierdzono naruszenia, karę pieniężną do wysokości 500 000 zł;
   - 2\) nałożyć na krajową instytucję pieniądza elektronicznego karę pieniężną w wysokości do 1 000 000 zł;
   - 3\) cofnąć zezwolenie, o którym mowa w art. 132a ust. 1; przepisy art. 105 ust. 4 i 7 stosuje się odpowiednio.
 - 3\. Jeżeli rozpowszechniane informacje, o których mowa w art. 132i, wprowadzają lub mogą wprowadzać w błąd, KNF może:
   - 1\) wydać instytucji pieniądza elektronicznego zalecenie, o którym mowa w art. 132z ust. 4 pkt 1 lit. a, dotyczące zaprzestania ich rozpowszechniania, przy czym nie stosuje się przepisów ust. 2 pkt 3 i przepisów art. 105 ust. 1 pkt 1–3;
   - 2\) nakazać, w drodze decyzji, ogłoszenie sprostowania we wskazanej formie oraz w wyznaczonym terminie; nakazując ogłoszenie sprostowania KNF może określić jego treść.
 - 4\. Kary pieniężne, o których mowa w ust. 2 pkt 1 i 2, KNF może nałożyć także w przypadku niewykonania nakazu, o którym mowa w ust. 3 pkt 2.
-- 5\. [^97] Do nakładania kar, o których mowa w ust. 2 pkt 1 i 2, przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 5\. [^105)] Do nakładania kar, o których mowa w ust. 2 pkt 1 i 2, przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 - 6\. KNF może także zawiesić w czynnościach osobę zarządzającą w przypadku:
   - 1\) przedstawienia tej osobie zarzutów w postępowaniu karnym lub w postępowaniu w sprawie o przestępstwo skarbowe;
   - 2\) spowodowania przez tę osobę znacznych strat majątkowych krajowej instytucji pieniądza elektronicznego.
 
-[^96]: W brzmieniu ustalonym przez art. 23 pkt 55 lit. a ustawy, o której mowa w odnośniku 3.
+[^104)]: W brzmieniu ustalonym przez art. 23 pkt 55 lit. a ustawy, o której mowa w odnośniku 3.
 
-[^97]: Ze zmianą wprowadzoną przez art. 23 pkt 55 lit. b ustawy, o której mowa w odnośniku 3.
+[^105)]: Ze zmianą wprowadzoną przez art. 23 pkt 55 lit. b ustawy, o której mowa w odnośniku 3.
 
 #### Art. 132zb.
 
@@ -3511,11 +3511,11 @@ Minister właściwy do spraw instytucji finansowych, po zasięgnięciu opinii Pr
   - 4\) rejestru krajowych instytucji pieniądza elektronicznego obejmującego również ich agentów i oddziały;
   - 5\) rejestru oddziałów zagranicznych instytucji pieniądza elektronicznego;
   - 6\) rejestru dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku, obejmującego również ich agentów i oddziały, jeżeli świadczą usługi płatnicze w państwie członkowskim innym niż ich macierzyste państwo członkowskie;
-  - 7\) [^98] rejestru małych instytucji płatniczych obejmującego również ich agentów i oddziały;
+  - 7\) [^106)] rejestru małych instytucji płatniczych obejmującego również ich agentów i oddziały;
   - 8\) rejestru podmiotów wykonujących działalność określoną w art. 6 pkt 11 lit. a lub b, do których ma zastosowanie przepis art. 6c ust. 1, zawierającego informacje przekazane w powiadomieniu, o którym mowa w art. 6c ust. 1, stanowiące opis oferowanych usług;
   - 9\) rejestru podmiotów prowadzących działalność określoną w art. 6 pkt 12, zawierającego informacje przekazane w powiadomieniu, o którym mowa w art. 6d ust. 1, stanowiące opis oferowanych usług.
 
-[^98]: W brzmieniu ustalonym przez art. 23 pkt 56 ustawy, o której mowa w odnośniku 3.
+[^106)]: W brzmieniu ustalonym przez art. 23 pkt 56 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 134.
 
@@ -3534,7 +3534,7 @@ Rejestr krajowych instytucji płatniczych zawiera odpowiednio:
 - 4\) dane dotyczące agentów krajowej instytucji płatniczej wykonujących działalność agencyjną w zakresie świadczenia usług płatniczych, obejmujące:
   - a\) imię i nazwisko albo nazwę (firmę) agenta,
   - b\) siedzibę i adres albo adres głównego miejsca wykonywania działalności agenta;
-- 5\) dane dotyczące oddziałów krajowej instytucji płatniczej, w tym utworzonych w państwie członkowskim innym niż Rzeczpospolita Polska, obejmujące:[^99]
+- 5\) dane dotyczące oddziałów krajowej instytucji płatniczej, w tym utworzonych w państwie członkowskim innym niż Rzeczpospolita Polska, obejmujące:[^107)]
   - a\) nazwę (firmę) oddziału,
   - b\) adres oddziału;
 - 6\) dane dotyczące świadczenia przez krajową instytucję płatniczą usług płatniczych w innym państwie członkowskim, obejmujące:
@@ -3542,7 +3542,7 @@ Rejestr krajowych instytucji płatniczych zawiera odpowiednio:
   - b\) wskazane w pkt 4 lub 5 dane dotyczące podmiotu, za pośrednictwem którego krajowa instytucja płatnicza świadczy usługi płatnicze w innym państwie członkowskim, lub informację o świadczeniu takich usług transgranicznie,
   - c\) wykaz świadczonych usług płatniczych.
 
-[^99]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 57 ustawy, o której mowa w odnośniku 3.
+[^107)]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 57 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 135.
 
@@ -3689,9 +3689,9 @@ Rejestr podmiotów prowadzących działalność określoną w art. 6 pkt 12 zawi
 
 - 1\. Krajowe instytucje płatnicze, małe instytucje płatnicze, dostawcy świadczący wyłącznie usługę dostępu do informacji o rachunku, biura usług płatniczych, kasy oszczędnościowo-kredytowe, krajowe instytucje pieniądza elektronicznego, oddziały zagranicznych instytucji pieniądza elektronicznego, podmioty wykonujące działalność określoną w art. 6 pkt 11 lit. a lub b, do których ma zastosowanie przepis art. 6c ust. 1, oraz podmioty prowadzące działalność określoną w art. 6 pkt 12 są obowiązane zapewnić zgodność danych wpisanych do rejestru ze stanem faktycznym.
 - 2\. Podmioty, o których mowa w ust. 1, są obowiązane poinformować KNF o każdej zmianie danych objętych wpisem do rejestru, nie później niż w terminie 14 dni od dnia uzyskania informacji o zmianie, składając stosowny wniosek.
-- 3\. [^100] W przypadku naruszenia obowiązku, o którym mowa w ust. 2, KNF może nałożyć na podmiot, o którym mowa w ust. 1, karę pieniężną w wysokości nieprzekraczającej 500 zł za każdy dzień opóźnienia, nie większej jednak niż 100 000 zł; przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
+- 3\. [^108)] W przypadku naruszenia obowiązku, o którym mowa w ust. 2, KNF może nałożyć na podmiot, o którym mowa w ust. 1, karę pieniężną w wysokości nieprzekraczającej 500 zł za każdy dzień opóźnienia, nie większej jednak niż 100 000 zł; przepisy art. 105 ust. 2, 4 i 5 stosuje się odpowiednio.
 
-[^100]: Ze zmianą wprowadzoną przez art. 23 pkt 58 ustawy, o której mowa w odnośniku 3.
+[^108)]: Ze zmianą wprowadzoną przez art. 23 pkt 58 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 140.
 
@@ -3715,10 +3715,10 @@ Odmowa dokonania wpisu do rejestru następuje w drodze decyzji administracyjnej.
   <!-- page: 108 -->
   - 7\) zakończenia przez małą instytucję płatniczą działalności gospodarczej lub działalności w charakterze małej instytucji płatniczej, na podstawie zawiadomienia, o którym mowa w art. 117m, nie wcześniej niż z dniem wskazanym w tym zawiadomieniu;
   - 8\) zakończenia przez dostawcę świadczącego wyłącznie usługę dostępu do informacji o rachunku działalności gospodarczej lub działalności w charakterze dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku, na podstawie zawiadomienia, o którym mowa w art. 117b ust. 8, nie wcześniej niż z dniem wskazanym w tym zawiadomieniu;
-  - 9\) [^101] uzyskania przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 10, 11 lub 12, uprawnienia do świadczenia usług płatniczych w innym charakterze;
-  - 10\) [^101] niewykonania przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 10, 11 lub 12, usług płatniczych, do których świadczenia jest uprawniony, w terminie 12 miesięcy od dnia wpisu do rejestru;
-  - 11\) [^101] niewykonywania przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 10, 11 lub 12, usług płatniczych, do których świadczenia jest uprawniony, przez okres dłuższy niż 12 kolejnych miesięcy;
-  - 12\) [^101] wykreślenia przedsiębiorcy świadczącego usługi płatnicze w charakterze małej instytucji płatniczej albo dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku z Centralnej Ewidencji i Informacji o Działalności Gospodarczej albo Krajowego Rejestru Sądowego. 1a. KNF dokonuje z urzędu wykreślenia biura usług płatniczych z rejestru biur usług płatniczych w przypadku:
+  - 9\) [^109)] uzyskania przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 10, 11 lub 12, uprawnienia do świadczenia usług płatniczych w innym charakterze;
+  - 10\) [^109)] niewykonania przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 10, 11 lub 12, usług płatniczych, do których świadczenia jest uprawniony, w terminie 12 miesięcy od dnia wpisu do rejestru;
+  - 11\) [^109)] niewykonywania przez dostawcę, o którym mowa w art. 4 ust. 2 pkt 10, 11 lub 12, usług płatniczych, do których świadczenia jest uprawniony, przez okres dłuższy niż 12 kolejnych miesięcy;
+  - 12\) [^109)] wykreślenia przedsiębiorcy świadczącego usługi płatnicze w charakterze małej instytucji płatniczej albo dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku z Centralnej Ewidencji i Informacji o Działalności Gospodarczej albo Krajowego Rejestru Sądowego. 1a. KNF dokonuje z urzędu wykreślenia biura usług płatniczych z rejestru biur usług płatniczych w przypadku:
   - 1\) wydania decyzji, o której mowa w art. 129 ust. 6a;
   - 2\) (uchylony)
   - 3\) gdy biuro zostało wykreślone z rejestru przedsiębiorców w Krajowym Rejestrze Sądowym lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej. 1b. Biuro usług płatniczych, które z urzędu wykreślono z rejestru biur usług płatniczych w przypadku, o którym mowa
@@ -3728,7 +3728,7 @@ w ust. 1a pkt 1, może uzyskać ponowny wpis do tego rejestru nie wcześniej ni�
 - 1c\. Przepisy ust. 1a i 1b stosuje się odpowiednio do dostawcy świadczącego wyłącznie usługę dostępu do informacji o rachunku oraz małej instytucji płatniczej.
 - 2\. KNF może dokonać z urzędu wykreślenia wpisu z rejestru w zakresie dotyczącym agenta lub oddziału krajowej instytucji płatniczej albo krajowej instytucji pieniądza elektronicznego w przypadku uzyskania od właściwych organów nadzorczych goszczącego państwa członkowskiego, w którym krajowa instytucja płatnicza lub krajowa instytucja pieniądza elektronicznego prowadzi działalność w zakresie usług płatniczych lub wydawania pieniądza elektronicznego przez danego agenta lub dany oddział, informacji wskazujących, iż istnieją uzasadnione podstawy do podejrzeń, że w związku z tą działalnością jest popełniane lub zostało popełnione przestępstwo, o którym mowa w art. 165a lub art. 299 Kodeksu karnego, usiłowano popełnić takie przestępstwo lub popełnienie takiego przestępstwa jest zamierzone, lub świadczenie usług przez agenta lub działalność oddziału mogłaby zwiększać ryzyko prania pieniędzy lub finansowania terroryzmu. Wykreślenie wpisu z rejestru następuje w drodze decyzji.
 
-[^101]: Dodany przez art. 23 pkt 59 ustawy, o której mowa w odnośniku 3.
+[^109)]: Dodany przez art. 23 pkt 59 ustawy, o której mowa w odnośniku 3.
 
 ### Art. 142a.
 
@@ -3782,7 +3782,7 @@ w ust. 1a pkt 1, może uzyskać ponowny wpis do tego rejestru nie wcześniej ni�
 
 #### Art. 143b.
 
-- 1\. Jeżeli działania, o których mowa w art. 143a, w terminie 30 dni od dnia dokonania zgłoszenia, o którym mowa w art. 143a ust. 1, nie doprowadziły do odzyskania kwoty transakcji płatniczej wykonanej z użyciem nieprawidłowego unikatowego identyfikatora, nie później niż w terminie 3 dni roboczych od dnia otrzymania pisemnego żądania płatnika o udostępnienie danych odbiorcy, dostawca płatnika:[^102]
+- 1\. Jeżeli działania, o których mowa w art. 143a, w terminie 30 dni od dnia dokonania zgłoszenia, o którym mowa w art. 143a ust. 1, nie doprowadziły do odzyskania kwoty transakcji płatniczej wykonanej z użyciem nieprawidłowego unikatowego identyfikatora, nie później niż w terminie 3 dni roboczych od dnia otrzymania pisemnego żądania płatnika o udostępnienie danych odbiorcy, dostawca płatnika:[^110)]
   - 1\) który prowadzi rachunek płatniczy odbiorcy, udostępnia płatnikowi:
     - a\) imię i nazwisko lub nazwę odbiorcy,
     - b\) miejsce zamieszkania i adres albo siedzibę i adres odbiorcy,
@@ -3792,7 +3792,7 @@ w ust. 1a pkt 1, może uzyskać ponowny wpis do tego rejestru nie wcześniej ni�
 
 - 2\. W przypadku, o którym mowa w ust. 1 pkt 2, dostawca odbiorcy przekazuje dostawcy płatnika dane, o których mowa w ust. 1 pkt 1, nie później niż w terminie 3 dni roboczych od dnia otrzymania żądania. Dostawca płatnika przekazuje otrzymane dane płatnikowi nie później niż w terminie 3 dni roboczych od dnia ich otrzymania.
 
-[^102]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 60 ustawy, o której mowa w odnośniku 3.
+[^110)]: Wprowadzenie do wyliczenia ze zmianą wprowadzoną przez art. 23 pkt 60 ustawy, o której mowa w odnośniku 3.
 
 #### Art. 143c.
 
@@ -3924,9 +3924,9 @@ Przepis art. 19 ust. 4 ustawy zmienianej w art. 166¹¹²), w brzmieniu nadanym 
 <!-- page: 114 -->
 - 2\. Przepis ust. 1 stosuje się w odniesieniu do krajowych transakcji płatniczych w rozumieniu art. 2 pkt 9 rozporządzenia, o którym mowa w ust. 1, jeżeli transakcje dokonywane w ramach trójstronnego systemu kart płatniczych, o którym mowa w ust. 1, nie przekraczają w ujęciu rocznym 3% wartości wszystkich krajowych transakcji płatniczych w rozumieniu art. 2 pkt 9 rozporządzenia, o którym mowa w ust. 1.
 
-[^111]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2002 r. poz. 1070, 1178, 1208, 1271, 1385, 1387 i 2074, z 2003 r. poz. 424, 535, 594, 2260 i 2276, z 2004 r. poz. 594, 623, 870, 959, 1264, 1546 i 1808, z 2005 r. poz. 719, 727, 1398 i 1538, z 2006 r. poz. 708, 1119, 1401 i 1775, z 2007 r. poz. 272 i 769, z 2008 r. poz. 1056, 1179, 1315 i 1546, z 2009 r. poz. 97, 341, 545, 609, 1045, 1075, 1176, 1316, 1317, 1323 i 1540, z 2010 r. poz. 226, 530, 853, 1228 i 1724 oraz z 2011 r. poz. 388, 715, 763, 779, 781 i 984.
+[^111)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2002 r. poz. 1070, 1178, 1208, 1271, 1385, 1387 i 2074, z 2003 r. poz. 424, 535, 594, 2260 i 2276, z 2004 r. poz. 594, 623, 870, 959, 1264, 1546 i 1808, z 2005 r. poz. 719, 727, 1398 i 1538, z 2006 r. poz. 708, 1119, 1401 i 1775, z 2007 r. poz. 272 i 769, z 2008 r. poz. 1056, 1179, 1315 i 1546, z 2009 r. poz. 97, 341, 545, 609, 1045, 1075, 1176, 1316, 1317, 1323 i 1540, z 2010 r. poz. 226, 530, 853, 1228 i 1724 oraz z 2011 r. poz. 388, 715, 763, 779, 781 i 984.
 
-[^112]: Artykuł 166 zawiera zmiany do ustawy z dnia 21 lipca 2006 r. o nadzorze nad rynkiem finansowym.
+[^112)]: Artykuł 166 zawiera zmiany do ustawy z dnia 21 lipca 2006 r. o nadzorze nad rynkiem finansowym.
 
 ### Art. 180.
 
@@ -3954,4 +3954,4 @@ Ustawa wchodzi w życie po upływie 30 dni od dnia ogłoszenia113), z wyjątkiem
 - 1\) art. 159, który wchodzi w życie z dniem 18 grudnia 2011 r.;
 - 2\) art. 167, który wchodzi w życie z dniem 1 stycznia 2012 r.
 
-[^113]: Ustawa została ogłoszona w dniu 23 września 2011 r.
+[^113)]: Ustawa została ogłoszona w dniu 23 września 2011 r.

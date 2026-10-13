@@ -124,7 +124,7 @@ Reguła: `Sum(ColumnSpan) == ColumnCount` w tabelach nie-fallback; scalenia pozi
 | `HeadingCounts` | `IReadOnlyDictionary<int,int>` | poziom → liczba (klucze rosnąco). |
 | `ListCount`, `TableCount`, `FallbackTableCount`, `FootnoteCount` | `int` | |
 | `DroppedTextCount` | `int` | Litery pominięte jako obrócone/niewidoczne (FR-013). |
-| `Warnings` | `IReadOnlyList<ConversionWarning>` | `{ Code, PageNumber?, Message }`; kody stabilne (np. `PDF001_NoTextLayer`, `TBL001_AmbiguousGrid`, `FTN001_OrphanFootnote`, `TXT001_UnmappedGlyphs`, `IMG001_ImagesIgnored`). |
+| `Warnings` | `IReadOnlyList<ConversionWarning>` | `{ Code, PageNumber?, Message }`; kody stabilne (np. `PDF001_NoTextLayer`, `TBL001_AmbiguousGrid`, `FTN001_OrphanFootnote`, `FTN002_FootnoteWithoutLabel` (spec 012), `TXT001_UnmappedGlyphs`, `IMG001_ImagesIgnored`). |
 | `Elapsed` | `TimeSpan` | Czas konwersji — jedyne pole niedeterministyczne. |
 
 ---

@@ -27,10 +27,10 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Regulamin określa zasady otwierania, prowadzenia i zamykania przez Bank Przykładowy S.A. rachunków osobistych dla konsumentów, zwanych dalej „rachunkami”, a także zasady wykonywania na ich rzecz i z ich udziałem krajowych i zagranicznych operacji płatniczych.
 - 2\. Regulamin stanowi integralną część umowy rachunku i jest wiążący dla Klienta od chwili jej zawarcia. Postanowienia umowy odmienne od Regulaminu mają pierwszeństwo, o ile nie naruszają bezwzględnie obowiązujących przepisów prawa.
 - 3\. Działalność Banku podlega nadzorowi przez Komisję Nadzoru Finansowego. Podstawę prowadzenia rachunków stanowi ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646), a zasady świadczenia usług płatniczych określa ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
-- 4\. Wysokość opłat i prowizji za czynności związane z prowadzeniem rachunku określa Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.[^1] Taryfa jest udostępniana Klientowi przed zawarciem umowy oraz dostępna w placówkach i na stronie https://bank.example.
+- 4\. Wysokość opłat i prowizji za czynności związane z prowadzeniem rachunku określa Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.[^1)] Taryfa jest udostępniana Klientowi przed zawarciem umowy oraz dostępna w placówkach i na stronie https://bank.example.
 - 5\. Ilekroć w Regulaminie jest mowa o Posiadaczu, rozumie się przez to Klienta, który <!-- page: 3 --> zawarł z Bankiem umowę rachunku. Regulamin nie dotyczy rachunków prowadzonych dla przedsiębiorców, rachunków lokat terminowych ani rachunków prowadzonych w ramach odrębnych programów, dla których Bank wydał odrębne regulaminy.
 
-[^1]: Opłaty wymienione w Taryfie są pobierane wyłącznie za czynności, które Klient zlecił lub z których skorzystał, chyba że umowa lub Regulamin stanowią inaczej.
+[^1)]: Opłaty wymienione w Taryfie są pobierane wyłącznie za czynności, które Klient zlecił lub z których skorzystał, chyba że umowa lub Regulamin stanowią inaczej.
 
 ### § 3.
 
@@ -190,9 +190,9 @@ Użyte w Regulaminie określenia oznaczają:
     - a\) kodem wygenerowanym w aplikacji mobilnej;
     - b\) kodem jednorazowym przesłanym na zarejestrowany numer telefonu;
   - 3\) używając karty debetowej wraz z PIN lub w sposób zbliżeniowy.
-- 4\. Przelew krajowy zewnętrzny złożony w placówce podlega opłacie 8,00 zł, a przelew natychmiastowy — opłacie 3,50 zł.[^2]
+- 4\. Przelew krajowy zewnętrzny złożony w placówce podlega opłacie 8,00 zł, a przelew natychmiastowy — opłacie 3,50 zł.[^2)]
 
-[^2]: Szczegółowe stawki oraz zwolnienia z opłat dla poszczególnych kanałów składania zleceń określa Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.
+[^2)]: Szczegółowe stawki oraz zwolnienia z opłat dla poszczególnych kanałów składania zleceń określa Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych.
 
 ### § 21.
 
@@ -241,7 +241,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 26.
 
 - 1\. Za czynności związane z prowadzeniem rachunku Bank pobiera opłaty i prowizje w wysokości określonej w dokumencie: Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych. Aktualna Taryfa jest udostępniona na stronie https://bank.example, w placówkach oraz w bankowości elektronicznej.
-- 2\. Za prowadzenie rachunku Bank pobiera miesięczną opłatę w wysokości 9,00 zł. Opłata jest pobierana z dołu z rachunku, a w razie braku wystarczających środków — jako zadłużenie na rachunku.[^3]
+- 2\. Za prowadzenie rachunku Bank pobiera miesięczną opłatę w wysokości 9,00 zł. Opłata jest pobierana z dołu z rachunku, a w razie braku wystarczających środków — jako zadłużenie na rachunku.[^3)]
 - 3\. Pozostałe opłaty związane z rachunkiem obejmują w szczególności:
   - 1\) zlecenie stałe — 3,00 zł za każde wykonanie;
   - 2\) polecenie zapłaty — 2,00 zł za każde wykonanie;
@@ -251,7 +251,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 4\. Bank pobiera opłaty w dniu wykonania czynności albo w dniu wskazanym w Taryfie, obciążając rachunek. Jeżeli czynność, za którą pobrano opłatę, nie została wykonana z przyczyn leżących po stronie Banku, Bank zwraca opłatę w terminie 10 dni.
 - 5\. Bank nie może pobierać opłat za czynności, których wykonanie jest obowiązkiem Banku wynikającym z przepisów prawa, w szczególności za udzielanie informacji o operacjach płatniczych w zakresie wymaganym ustawą oraz za przyjęcie reklamacji.
 
-[^3]: Stawka opłaty za prowadzenie rachunku jest podawana w dokumencie: Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych; w przypadku różnicy między Regulaminem a Taryfą co do stawek pierwszeństwo ma Taryfa.
+[^3)]: Stawka opłaty za prowadzenie rachunku jest podawana w dokumencie: Taryfa opłat i prowizji Bank Przykładowy S.A. za rachunki osobiste i usługi dla klientów indywidualnych; w przypadku różnicy między Regulaminem a Taryfą co do stawek pierwszeństwo ma Taryfa.
 
 ### § 27.
 
@@ -406,14 +406,14 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 44.
 
-- 1\. Bank odpowiada za wykonanie nieautoryzowanej transakcji płatniczej, z zastrzeżeniem ust. 3 i 4. W razie wystąpienia takiej transakcji Bank bez zbędnej zwłoki przywraca obciążony rachunek do stanu, jaki istniałby, gdyby transakcja nie miała miejsca, nie później niż do końca następnego dnia roboczego po stwierdzeniu nieautoryzowanej transakcji lub otrzymaniu zgłoszenia.[^4]
+- 1\. Bank odpowiada za wykonanie nieautoryzowanej transakcji płatniczej, z zastrzeżeniem ust. 3 i 4. W razie wystąpienia takiej transakcji Bank bez zbędnej zwłoki przywraca obciążony rachunek do stanu, jaki istniałby, gdyby transakcja nie miała miejsca, nie później niż do końca następnego dnia roboczego po stwierdzeniu nieautoryzowanej transakcji lub otrzymaniu zgłoszenia.[^4)]
 - 2\. Klient zgłasza nieautoryzowane, niewykonane lub nienależycie wykonane transakcje niezwłocznie po ich stwierdzeniu, nie później niż w terminie 13 miesięcy od dnia obciążenia rachunku lub dnia, w którym transakcja miała być wykonana.
 - 3\. Klient odpowiada za nieautoryzowane transakcje płatnicze do kwoty stanowiącej równowartość 50 euro w przypadku, gdy transakcja jest skutkiem:
   - 1\) posłużenia się utraconym lub skradzionym instrumentem płatniczym;
   - 2\) przywłaszczenia instrumentu płatniczego.
 - 4\. Klient ponosi pełną odpowiedzialność za nieautoryzowane transakcje, jeżeli doprowadził do nich umyślnie albo w wyniku umyślnego lub będącego skutkiem rażącego niedbalstwa naruszenia obowiązków w zakresie ochrony danych uwierzytelniających i zgłaszania utraty instrumentu płatniczego, określonych w poprzednim paragrafie. Bank nie ponosi odpowiedzialności za szkody wynikłe z okoliczności o charakterze siły wyższej.
 
-[^4]: Zasady odpowiedzialności Banku i Klienta za nieautoryzowane transakcje wynikają z przepisów (zob. ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30)) i nie mogą być w umowie ukształtowane na niekorzyść konsumenta.
+[^4)]: Zasady odpowiedzialności Banku i Klienta za nieautoryzowane transakcje wynikają z przepisów (zob. ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30)) i nie mogą być w umowie ukształtowane na niekorzyść konsumenta.
 
 ### § 45.
 

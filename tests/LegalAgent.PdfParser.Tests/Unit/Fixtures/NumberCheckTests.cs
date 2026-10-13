@@ -113,7 +113,7 @@ public sealed class NumberCheckTests
         byte[] pdf = b.Build();
         using var stream = new MemoryStream(pdf);
         PdfConversionResult result = await PdfMarkdownConverter.CreateDefault().ConvertAsync(stream, new PdfConversionRequest(), TestContext.Current.CancellationToken);
-        Assert.Contains("[^2]: Dotyczy przelewów w złotych.", result.Markdown, StringComparison.Ordinal);
+        Assert.Contains("[^8]: Dotyczy przelewów w złotych.", result.Markdown, StringComparison.Ordinal);
 
         NumberDiff without = NumberCheck.Compare(result.Markdown, pdf, result.Report);
         NumberDiff with = NumberCheck.Compare(result.Markdown, pdf, result.Report, result.Document);

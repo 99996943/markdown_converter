@@ -359,7 +359,7 @@ przepisów o usługach płatniczych, oraz gdy zadłużenie ponad limit zostanie 
 <!-- page: 15 -->
 ## V. Kredyty dla przedsiębiorców
 
-Niniejsza sekcja dotyczy kredytów obrotowych, inwestycyjnych, linii kredytowych i kredytów w rachunku bieżącym oferowanych przedsiębiorcom, w tym osobom fizycznym prowadzącym działalność gospodarczą. Stawki ustalone w umowie z przedsiębiorcą mogą niższe od stawek Taryfy; Taryfa stanowi stawki maksymalne.[^1] Prowizję przygotowawczą Bank pobiera od kwoty kredytu, nie mniej niż 500,00 zł, w dniu zawarcia umowy lub uruchomienia kredytu — zgodnie z umową. Opłata za rozpatrzenie wniosku wynosi 300,00 zł i nie jest zwracana w razie negatywnej decyzji kredytowej.
+Niniejsza sekcja dotyczy kredytów obrotowych, inwestycyjnych, linii kredytowych i kredytów w rachunku bieżącym oferowanych przedsiębiorcom, w tym osobom fizycznym prowadzącym działalność gospodarczą. Stawki ustalone w umowie z przedsiębiorcą mogą niższe od stawek Taryfy; Taryfa stanowi stawki maksymalne.[^1)] Prowizję przygotowawczą Bank pobiera od kwoty kredytu, nie mniej niż 500,00 zł, w dniu zawarcia umowy lub uruchomienia kredytu — zgodnie z umową. Opłata za rozpatrzenie wniosku wynosi 300,00 zł i nie jest zwracana w razie negatywnej decyzji kredytowej.
 
 | **Lp.** | **Wyszczególnienie czynności** | **Tryb pobierania** | **Stawka** |
 | --- | --- | --- | --- |
@@ -458,7 +458,7 @@ przekazywania Bankowi sprawozdań w ustalonych terminach.
 
 przedterminowej spłaty dokonanej w ostatnich 3 miesiącach przed końcem okresu kredytowania.
 
-[^1]: Dokument pozostaje w mocy; nowsze wersje, jeżeli zostaną opublikowane, nie uchylają niniejszej.
+[^1)]: Dokument pozostaje w mocy; nowsze wersje, jeżeli zostaną opublikowane, nie uchylają niniejszej.
 
 ## VI. Czynności pozaumowne i aneksy
 

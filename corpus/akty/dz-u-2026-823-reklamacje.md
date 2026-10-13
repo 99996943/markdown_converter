@@ -52,10 +52,10 @@ Użyte w ustawie określenia oznaczają:
   - f\) osobę uprawnioną w rozumieniu art. 2 pkt 6 ustawy z dnia 7 lipca 2023 r. o ogólnoeuropejskim indywidualnym produkcie emerytalnym (Dz. U. poz. 1843),
   <!-- page: 3 -->
   - g\) oszczędzającego w rozumieniu art. 2 pkt 7 ustawy z dnia 7 lipca 2023 r. o ogólnoeuropejskim indywidualnym produkcie emerytalnym,
-  - h\) [^1] będącego osobą fizyczną kredytobiorcę zobowiązanego do spłaty wierzytelności przysługującej nabywcy kredytu w rozumieniu art. 3 ust. 1 pkt 12 ustawy z dnia 20 grudnia 2024 r. o podmiotach obsługujących kredyty i nabywcach kredytów (Dz. U. z 2025 r. poz. 146), zwanej dalej „ustawą o obsługujących kredyty”,
-  - i\) [^1] będącego osobą fizyczną kredytobiorcę, w przypadku gdy nabywca kredytu, o którym mowa w lit. h, wyznaczył przedstawiciela, o którym mowa w art. 24 ustawy o obsługujących kredyty,
-  - j\) [^1] będącego osobą fizyczną kredytobiorcę, którego zobowiązanie z tytułu umowy o kredyt w rozumieniu art. 3 ust. 1 pkt 19 ustawy o obsługujących kredyty jest obsługiwane przez podmiot obsługujący kredyty w rozumieniu art. 3 ust. 1 pkt 17 ustawy o obsługujących kredyty,
-  - k\) [^1] będącego osobą fizyczną kredytobiorcę, którego zobowiązanie z tytułu umowy o kredyt w rozumieniu art. 3 ust. 1 pkt 19 ustawy o obsługujących kredyty jest obsługiwane przez dostawcę usług obsługi kredytów w rozumieniu art. 3 ust. 1 pkt 2 ustawy o obsługujących kredyty;
+  - h\) [^2)] będącego osobą fizyczną kredytobiorcę zobowiązanego do spłaty wierzytelności przysługującej nabywcy kredytu w rozumieniu art. 3 ust. 1 pkt 12 ustawy z dnia 20 grudnia 2024 r. o podmiotach obsługujących kredyty i nabywcach kredytów (Dz. U. z 2025 r. poz. 146), zwanej dalej „ustawą o obsługujących kredyty”,
+  - i\) [^2)] będącego osobą fizyczną kredytobiorcę, w przypadku gdy nabywca kredytu, o którym mowa w lit. h, wyznaczył przedstawiciela, o którym mowa w art. 24 ustawy o obsługujących kredyty,
+  - j\) [^2)] będącego osobą fizyczną kredytobiorcę, którego zobowiązanie z tytułu umowy o kredyt w rozumieniu art. 3 ust. 1 pkt 19 ustawy o obsługujących kredyty jest obsługiwane przez podmiot obsługujący kredyty w rozumieniu art. 3 ust. 1 pkt 17 ustawy o obsługujących kredyty,
+  - k\) [^2)] będącego osobą fizyczną kredytobiorcę, którego zobowiązanie z tytułu umowy o kredyt w rozumieniu art. 3 ust. 1 pkt 19 ustawy o obsługujących kredyty jest obsługiwane przez dostawcę usług obsługi kredytów w rozumieniu art. 3 ust. 1 pkt 2 ustawy o obsługujących kredyty;
 - 2\) reklamacja – wystąpienie skierowane do podmiotu rynku finansowego przez jego klienta, w którym klient zgłasza zastrzeżenia dotyczące usług świadczonych przez podmiot rynku finansowego;
 - 3\) podmiot rynku finansowego:
   - a\) instytucję płatniczą, małą instytucję płatniczą, dostawcę świadczącego usługę dostępu do informacji o rachunku, dostawcę świadczącego wyłącznie usługę dostępu do informacji o rachunku, biuro usług płatniczych, instytucję pieniądza elektronicznego i oddział zagranicznej instytucji pieniądza elektronicznego w rozumieniu ustawy z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. z 2026 r. poz. 623),
@@ -73,36 +73,36 @@ Użyte w ustawie określenia oznaczają:
   - m\) dostawcę usług finansowania społecznościowego, o którym mowa w art. 2 ust. 1 lit. e rozporządzenia 2020/1503,
   <!-- page: 4 -->
   - n\) przedsiębiorcę wykonującego działalność lombardową, o którym mowa w ustawie z dnia 14 kwietnia 2023 r. o konsumenckiej pożyczce lombardowej,
-  - na\) [^2] dostawcę OIPE w rozumieniu art. 2 pkt 15 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2019/1238 z dnia 20 czerwca 2019 r. w sprawie ogólnoeuropejskiego indywidualnego produktu emerytalnego (OIPE) (Dz. Urz. UE L 198 z 25.07.2019, str. 1),
+  - na\) [^4)] dostawcę OIPE w rozumieniu art. 2 pkt 15 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2019/1238 z dnia 20 czerwca 2019 r. w sprawie ogólnoeuropejskiego indywidualnego produktu emerytalnego (OIPE) (Dz. Urz. UE L 198 z 25.07.2019, str. 1),
   - o\) dystrybutora OIPE w rozumieniu art. 2 pkt 16 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2019/1238 z dnia 20 czerwca 2019 r. w sprawie ogólnoeuropejskiego indywidualnego produktu emerytalnego (OIPE),
-  - p\) [^3] podmiot obsługujący kredyty w rozumieniu art. 3 ust. 1 pkt 17 ustawy o obsługujących kredyty,
-  - q\) [^3] nabywcę kredytu w rozumieniu art. 3 ust. 1 pkt 12 ustawy o obsługujących kredyty oraz przedstawiciela, o którym mowa w art. 24 tej ustawy,
-  - r\) [^3] dostawcę usług obsługi kredytów w rozumieniu art. 3 ust. 1 pkt 2 ustawy o obsługujących kredyty;
+  - p\) [^5)] podmiot obsługujący kredyty w rozumieniu art. 3 ust. 1 pkt 17 ustawy o obsługujących kredyty,
+  - q\) [^5)] nabywcę kredytu w rozumieniu art. 3 ust. 1 pkt 12 ustawy o obsługujących kredyty oraz przedstawiciela, o którym mowa w art. 24 tej ustawy,
+  - r\) [^5)] dostawcę usług obsługi kredytów w rozumieniu art. 3 ust. 1 pkt 2 ustawy o obsługujących kredyty;
 - 4\) trwały nośnik informacji – trwały nośnik informacji w rozumieniu ustawy z dnia 19 sierpnia 2011 r. o usługach płatniczych;
 - 5\) rozporządzenie 2020/1503 – rozporządzenie Parlamentu Europejskiego i Rady (UE) 2020/1503 z dnia 7 października 2020 r. w sprawie europejskich dostawców usług finansowania społecznościowego dla przedsięwzięć gospodarczych oraz zmieniające rozporządzenie (UE) 2017/1129 i dyrektywę (UE) 2019/1937 (Dz. Urz. UE L 347 z 20.10.2020, str. 1).
 
-[^1]: Dodana przez art. 64 pkt 1 lit. a ustawy z dnia 20 grudnia 2024 r. o podmiotach obsługujących kredyty i nabywcach kredytów (Dz. U. z 2025 r. poz. 146), która weszła w życie z dniem 19 lutego 2025 r.
+[^2)]: Dodana przez art. 64 pkt 1 lit. a ustawy z dnia 20 grudnia 2024 r. o podmiotach obsługujących kredyty i nabywcach kredytów (Dz. U. z 2025 r. poz. 146), która weszła w życie z dniem 19 lutego 2025 r.
 
-[^2]: Oznaczeniu lit. n dodanej ustawą z dnia 7 lipca 2023 r. o ogólnoeuropejskim indywidualnym produkcie emerytalnym (Dz. U. poz. 1843) nadaje się oznaczenie lit. na zgodnie z art. 64 pkt 1 lit. b tiret pierwsze ustawy, o której mowa w odnośniku 2.
+[^4)]: Oznaczeniu lit. n dodanej ustawą z dnia 7 lipca 2023 r. o ogólnoeuropejskim indywidualnym produkcie emerytalnym (Dz. U. poz. 1843) nadaje się oznaczenie lit. na zgodnie z art. 64 pkt 1 lit. b tiret pierwsze ustawy, o której mowa w odnośniku 2.
 
-[^3]: Dodana przez art. 64 pkt 1 lit. b tiret drugie ustawy, o której mowa w odnośniku 2.
+[^5)]: Dodana przez art. 64 pkt 1 lit. b tiret drugie ustawy, o której mowa w odnośniku 2.
 
-[^9]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2025 r. poz. 1019, 1174, 1175, 1176, 1669, 1809 i 1843.
+[^1)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2025 r. poz. 1019, 1174, 1175, 1176, 1669, 1809 i 1843.
 
-[^10]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2024 r. poz. 1863, z 2025 r. poz. 146, 820, 923, 1014, 1069, 1216 i 1556 oraz z 2026 r. poz. 176, 340, 484 i 644.
+[^3)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2024 r. poz. 1863, z 2025 r. poz. 146, 820, 923, 1014, 1069, 1216 i 1556 oraz z 2026 r. poz. 176, 340, 484 i 644.
 
 ## Rozdział 2. Rozpatrywanie reklamacji przez podmioty rynku finansowego
 
 ### Art. 3.
 
 - 1\. Reklamacja może być złożona w każdej jednostce podmiotu rynku finansowego obsługującej klientów.
-- 2\. [^4] Reklamacja może być złożona:
+- 2\. [^6)] Reklamacja może być złożona:
   - 1\) na piśmie:
     - a\) w postaci papierowej – osobiście w jednostce, o której mowa w ust. 1, albo wysłana przesyłką pocztową w rozumieniu art. 3 pkt 21 ustawy z dnia 23 listopada 2012 r. – Prawo pocztowe (Dz. U. z 2026 r. poz. 558), albo nadana w placówce podmiotu zajmującego się doręczaniem korespondencji na terenie Unii Europejskiej, albo
     - b\) w postaci elektronicznej – z wykorzystaniem środka komunikacji elektronicznej albo wysłana na adres do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 ustawy z dnia 18 listopada 2020 r. o doręczeniach elektronicznych (Dz. U. z 2026 r. poz. 3 i 507), wpisany do bazy adresów elektronicznych, o której mowa w art. 25 tej ustawy;
   - 2\) ustnie – telefonicznie albo osobiście do protokołu podczas wizyty klienta w jednostce, o której mowa w ust. 1.
 
-[^4]: W brzmieniu ustalonym przez art. 1 pkt 1 ustawy z dnia 17 października 2025 r. o zmianie ustawy o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. poz. 1545), która weszła w życie z dniem 13 lutego 2026 r.
+[^6)]: W brzmieniu ustalonym przez art. 1 pkt 1 ustawy z dnia 17 października 2025 r. o zmianie ustawy o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej (Dz. U. poz. 1545), która weszła w życie z dniem 13 lutego 2026 r.
 
 ### Art. 4.
 
@@ -115,7 +115,7 @@ Użyte w ustawie określenia oznaczają:
 <!-- page: 5 -->
 ### Art. 5.
 
-[^5] 1. Po złożeniu przez klienta reklamacji zgodnie z wymogami, o których mowa w art. 4 ust. 1 pkt 1, podmiot rynku finansowego rozpatruje reklamację i udziela klientowi odpowiedzi na piśmie:
+[^7)] 1. Po złożeniu przez klienta reklamacji zgodnie z wymogami, o których mowa w art. 4 ust. 1 pkt 1, podmiot rynku finansowego rozpatruje reklamację i udziela klientowi odpowiedzi na piśmie:
 
 - 1\) w postaci elektronicznej – w przypadku gdy reklamacja została złożona przez klienta na piśmie w postaci elektronicznej, chyba że klient wniósł o udzielenie odpowiedzi na piśmie w postaci papierowej;
 - 2\) w postaci papierowej – w przypadku gdy reklamacja została złożona przez klienta na piśmie w postaci papierowej, chyba że klient wniósł o udzielenie odpowiedzi na piśmie w postaci elektronicznej;
@@ -123,7 +123,7 @@ Użyte w ustawie określenia oznaczają:
 - 1\) z wykorzystaniem środka komunikacji elektronicznej, za pomocą którego klient złożył reklamację, albo innego wskazanego przez klienta środka komunikacji elektronicznej – w przypadku gdy reklamacja została złożona przez klienta z wykorzystaniem środka komunikacji elektronicznej;
 - 2\) na adres klienta do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 ustawy z dnia 18 listopada 2020 r. o doręczeniach elektronicznych, wpisany do bazy adresów elektronicznych, o której mowa w art. 25 tej ustawy – w przypadku gdy reklamacja została wysłana przez klienta na adres do doręczeń elektronicznych.
 
-[^5]: W brzmieniu ustalonym przez art. 1 pkt 2 ustawy, o której mowa w odnośniku 6.
+[^7)]: W brzmieniu ustalonym przez art. 1 pkt 2 ustawy, o której mowa w odnośniku 6.
 
 ### Art. 6.
 
@@ -271,7 +271,7 @@ Odwołanie Rzecznika przed upływem kadencji może nastąpić wyłącznie z powo
 
   - 12\) wartości średniorocznej sumy aktywów za rok poprzedzający o 2 lata rok, za który opłata jest należna, i stawki 0,025 % – w przypadku instytucji pożyczkowej, przy czym sumę aktywów stanowi wartość bilansowa aktywów obejmujących wyłącznie wierzytelności danej instytucji pożyczkowej z tytułu umów, do których stosuje się przepisy ustawy z dnia 12 maja 2011 r. o kredycie konsumenckim;
   - 13\) średniej wartości przychodów z tytułu świadczenia usług finansowania społecznościowego, o których mowa w art. 2 ust. 1 lit. a rozporządzenia 2020/1503, w roku poprzedzającym o 2 lata rok, za który opłata jest należna, i stawki 0,025 % – w przypadku dostawcy usług finansowania społecznościowego;
-  - 14\) [^6] wartości przychodów z tytułu działalności w zakresie obsługi kredytów, o której mowa w art. 3 ust. 1 pkt 3 ustawy o obsługujących kredyty, w roku poprzedzającym o 2 lata rok, za który opłata jest należna, i stawki 0,025 % – w przypadku podmiotu obsługującego kredyty w rozumieniu art. 3 ust. 1 pkt 17 ustawy o obsługujących kredyty.
+  - 14\) [^8)] wartości przychodów z tytułu działalności w zakresie obsługi kredytów, o której mowa w art. 3 ust. 1 pkt 3 ustawy o obsługujących kredyty, w roku poprzedzającym o 2 lata rok, za który opłata jest należna, i stawki 0,025 % – w przypadku podmiotu obsługującego kredyty w rozumieniu art. 3 ust. 1 pkt 17 ustawy o obsługujących kredyty.
 - 2\. W przypadku zagranicznych firm inwestycyjnych oraz zagranicznych osób prawnych z siedzibą na terytorium państwa należącego do Organizacji Współpracy Gospodarczej i Rozwoju lub do Światowej Organizacji Handlu, innego niż państwo członkowskie Unii Europejskiej lub państwo członkowskie Europejskiego Porozumienia o Wolnym Handlu (EFTA) – stron umowy o Europejskim Obszarze Gospodarczym, wartość przychodów ogółem oblicza się z działalności maklerskiej prowadzonej przez te podmioty na terytorium Rzeczypospolitej Polskiej.
 <!-- page: 9 -->
 - 3\. W przypadku firmy inwestycyjnej będącej bankiem prowadzącym działalność maklerską wysokość opłaty na finansowanie działalności Rzecznika i jego Biura za dany rok oblicza się na zasadach określonych odpowiednio w ust. 1 pkt 7.
@@ -287,7 +287,7 @@ Odwołanie Rzecznika przed upływem kadencji może nastąpić wyłącznie z powo
 - 11\. Opłata na finansowanie działalności Rzecznika i jego Biura podlega egzekucji w trybie przepisów o postępowaniu egzekucyjnym w administracji.
 - 12\. Minister właściwy do spraw instytucji finansowych określi, w drodze rozporządzenia, szczegółowy zakres danych podmiotu rynku finansowego i informacji, które należy zawrzeć w deklaracji, o której mowa w ust. 7, sposób jej sporządzenia oraz nadawania dostępu do systemu teleinformatycznego, o którym mowa w ust. 7 pkt 1, mając na uwadze potrzebę zapewnienia sprawności i skuteczności działania Rzecznika i jego Biura, bezpiecznego przekazania tej deklaracji drogą elektroniczną, poprawności danych zawartych w tej deklaracji oraz zapewnienia skutecznej egzekucji opłaty na finansowanie Rzecznika i jego Biura.
 
-[^6]: Dodany przez art. 64 pkt 3 ustawy, o której mowa w odnośniku 2.
+[^8)]: Dodany przez art. 64 pkt 3 ustawy, o której mowa w odnośniku 2.
 
 ### Art. 20a.
 
@@ -302,14 +302,14 @@ Odwołanie Rzecznika przed upływem kadencji może nastąpić wyłącznie z powo
   <!-- page: 10 -->
   - 8\) wartości przychodów firm inwestycyjnych;
   - 9\) średniej wartości przychodów dostawcy usług finansowania społecznościowego z tytułu świadczenia usług finansowania społecznościowego, o których mowa w art. 2 ust. 1 lit. a rozporządzenia 2020/1503, wyliczonej na podstawie wartości ustalonych na ostatni dzień każdego miesiąca danego roku;
-  - 10\) [^7] wartości przychodów uzyskanych z działalności w zakresie obsługi kredytów, o której mowa w art. 3 ust. 1 pkt 3 ustawy o obsługujących kredyty.
+  - 10\) [^9)] wartości przychodów uzyskanych z działalności w zakresie obsługi kredytów, o której mowa w art. 3 ust. 1 pkt 3 ustawy o obsługujących kredyty.
 - 2\. Przewodniczący Komisji Nadzoru Finansowego przekazuje Rzecznikowi, w postaci dokumentu elektronicznego, dane, o których mowa w ust. 1, w terminie 30 dni od dnia otrzymania wystąpienia Rzecznika o przekazanie tych danych. W przypadku braku tych danych Przewodniczący Komisji Nadzoru Finansowego informuje Rzecznika o przewidywanym terminie ich otrzymania, a po ich otrzymaniu przekazuje je w terminie 14 dni od dnia ich otrzymania.
 - 3\. Wysokość składek przypisanych brutto zebranych przez zagraniczne zakłady ubezpieczeń z tytułu umów ubezpieczenia zawartych w związku z wykonywaniem działalności ubezpieczeniowej na terytorium Rzeczypospolitej Polskiej ustala się na podstawie informacji otrzymanych od zagranicznych zakładów ubezpieczeń.
 - 4\. Wartość przychodów z działalności maklerskiej prowadzonej na terytorium Rzeczypospolitej Polskiej przez zagraniczne firmy inwestycyjne oraz zagraniczne osoby prawne z siedzibą na terytorium państwa należącego do Organizacji Współpracy Gospodarczej i Rozwoju lub do Światowej Organizacji Handlu, innego niż państwo członkowskie Unii Europejskiej lub państwo członkowskie Europejskiego Porozumienia o Wolnym Handlu (EFTA) – stron umowy o Europejskim Obszarze Gospodarczym, ustala się na podstawie informacji otrzymanych od tych podmiotów.
 - 5\. Wysokość średniej rocznej sumy aktywów instytucji pożyczkowych, wyliczonej na podstawie wartości ustalonych na ostatni dzień każdego miesiąca danego roku, ustala się na podstawie informacji otrzymanych od instytucji pożyczkowych.
 - 6\. Średnią wartość przychodów ogółem dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku ustala się na podstawie informacji otrzymanych od dostawców świadczących wyłącznie usługę dostępu do informacji o rachunku.
 
-[^7]: Dodany przez art. 64 pkt 4 ustawy, o której mowa w odnośniku 2.
+[^9)]: Dodany przez art. 64 pkt 4 ustawy, o której mowa w odnośniku 2.
 
 ### Art. 20b.
 
@@ -368,7 +368,7 @@ Rzecznik nie może:
 <!-- page: 12 -->
 - 3\. Rzecznik, podejmując czynność, bada, czy wskutek działania lub zaniechania podmiotu rynku finansowego nie nastąpiło naruszenie praw lub interesów klienta.
 
-[^11]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2024 r. poz. 1871 i 1897, z 2025 r. poz. 619, 620, 621, 622, 1162, 1794, 1837 i 1864 oraz z 2026 r. poz. 187, 203, 328, 370, 635 i 637.
+[^10)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2024 r. poz. 1871 i 1897, z 2025 r. poz. 619, 620, 621, 622, 1162, 1794, 1837 i 1864 oraz z 2026 r. poz. 187, 203, 328, 370, 635 i 637.
 
 ### Art. 25.
 
@@ -550,7 +550,7 @@ Minister właściwy do spraw instytucji finansowych określi, w drodze rozporzą
 
 Przychodami Funduszu są wpływy z tytułu:
 
-- 1\) [^8] kar pieniężnych nakładanych przez Komisję Nadzoru Finansowego na podstawie ustaw, o których mowa w art. 1 ust. 2 ustawy z dnia 21 lipca 2006 r. o nadzorze nad rynkiem finansowym (Dz. U. z 2025 r. poz. 640 i 1069 oraz z 2026 r. poz. 252 i 644), oraz art. 3c ust. 1 pkt 5, art. 3g ust. 1 pkt 7, art. 3h ust. 2 pkt 2, art. 3ha ust. 1 pkt 2, art. 3s ust. 1, art. 11c ust. 7, art. 18u, art. 18zm ust. 1 pkt 3 oraz art. 18zz ust. 1 pkt 2 i 3 oraz ust. 2 tej ustawy, z wyjątkiem kar pieniężnych nakładanych przez Komisję Nadzoru Finansowego na podstawie art. 138 ust. 3 pkt 3a i art. 141 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe oraz art. 72 ustawy z dnia 5 listopada 2009 r. o spółdzielczych kasach oszczędnościowo-kredytowych;
+- 1\) [^11)] kar pieniężnych nakładanych przez Komisję Nadzoru Finansowego na podstawie ustaw, o których mowa w art. 1 ust. 2 ustawy z dnia 21 lipca 2006 r. o nadzorze nad rynkiem finansowym (Dz. U. z 2025 r. poz. 640 i 1069 oraz z 2026 r. poz. 252 i 644), oraz art. 3c ust. 1 pkt 5, art. 3g ust. 1 pkt 7, art. 3h ust. 2 pkt 2, art. 3ha ust. 1 pkt 2, art. 3s ust. 1, art. 11c ust. 7, art. 18u, art. 18zm ust. 1 pkt 3 oraz art. 18zz ust. 1 pkt 2 i 3 oraz ust. 2 tej ustawy, z wyjątkiem kar pieniężnych nakładanych przez Komisję Nadzoru Finansowego na podstawie art. 138 ust. 3 pkt 3a i art. 141 ustawy z dnia 29 sierpnia 1997 r. – Prawo bankowe oraz art. 72 ustawy z dnia 5 listopada 2009 r. o spółdzielczych kasach oszczędnościowo-kredytowych;
 <!-- page: 16 -->
 - 2\) kar pieniężnych, o których mowa w art. 112 ust. 2 ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dz. U. z 2025 r. poz. 1714);
 - 3\) kar pieniężnych, o których mowa w art. 159 ust. 5a, art. 183 ust. 4a i art. 193 ustawy z dnia 11 maja 2017 r. o biegłych rewidentach, firmach audytorskich oraz nadzorze publicznym (Dz. U. z 2025 r. poz. 1891 oraz z 2026 r. poz. 640 i 644);
@@ -558,7 +558,7 @@ Przychodami Funduszu są wpływy z tytułu:
 - 5\) odsetek;
 - 6\) innych źródeł.
 
-[^8]: W brzmieniu ustalonym przez art. 12 ustawy z dnia 25 czerwca 2025 r. o zmianie niektórych ustaw w związku z zapewnieniem operacyjnej odporności cyfrowej sektora finansowego oraz emitowaniem europejskich zielonych obligacji (Dz. U. poz. 1069), która weszła w życie z dniem 7 sierpnia 2025 r.
+[^11)]: W brzmieniu ustalonym przez art. 12 ustawy z dnia 25 czerwca 2025 r. o zmianie niektórych ustaw w związku z zapewnieniem operacyjnej odporności cyfrowej sektora finansowego oraz emitowaniem europejskich zielonych obligacji (Dz. U. poz. 1069), która weszła w życie z dniem 7 sierpnia 2025 r.
 
 ### Art. 43h.
 
@@ -693,4 +693,4 @@ Ustawa wchodzi w życie po upływie 30 dni od dnia ogłoszenia12), z wyjątkiem:
 - 1\) art. 62, który wchodzi w życie z dniem następującym po dniu ogłoszenia;
 - 2\) rozdziału 4, który wchodzi w życie z dniem 1 stycznia 2016 r.
 
-[^12]: Ustawa została ogłoszona w dniu 10 września 2015 r.
+[^12)]: Ustawa została ogłoszona w dniu 10 września 2015 r.

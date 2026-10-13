@@ -18,9 +18,9 @@ Zatwierdzenie dodatkowe: Komitet Sterujący ds. Zmian, protokół nr 21/2026.
   - 1\) rachunków rozliczeniowych służących do dokonywania rozliczeń pieniężnych, które prowadzone są na podstawie odrębnego regulaminu;
   - 2\) lokat zakładanych przez przedsiębiorców i inne podmioty niebędące konsumentami;
   - 3\) produktów inwestycyjnych i ubezpieczeniowych, nawet jeżeli są oferowane łącznie z lokatą.
-- 4\. Szczegółowy wykaz opłat i prowizji związanych z rachunkiem oszczędnościowym i lokatą określa „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”, dostępna w placówkach Banku i na stronie https://bank.example.[^1]
+- 4\. Szczegółowy wykaz opłat i prowizji związanych z rachunkiem oszczędnościowym i lokatą określa „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”, dostępna w placówkach Banku i na stronie https://bank.example.[^1)]
 
-[^1]: Taryfa stanowi odrębny dokument, który Bank doręcza Klientowi przed zawarciem umowy na trwałym nośniku; w przypadku różnic między Regulaminem a umową pierwszeństwo mają postanowienia umowy.
+[^1)]: Taryfa stanowi odrębny dokument, który Bank doręcza Klientowi przed zawarciem umowy na trwałym nośniku; w przypadku różnic między Regulaminem a umową pierwszeństwo mają postanowienia umowy.
 
 ### § 2.
 
@@ -44,13 +44,13 @@ Użyte w Regulaminie określenia oznaczają:
   - 1\) w oddziale Banku, w formie pisemnej;
   - 2\) za pośrednictwem bankowości elektronicznej, w formie elektronicznej, z wykorzystaniem środków uwierzytelnienia udostępnionych Klientowi;
   - 3\) telefonicznie, za pośrednictwem Infolinii, pod numerem 800 000 001, jeżeli Klient posiada już w Banku rachunek, a rozmowa kończy się potwierdzeniem warunków na trwałym nośniku.
-- 2\. Przed zawarciem umowy Bank przekazuje Klientowi na trwałym nośniku Regulamin, „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty” oraz formularz informacyjny dla deponenta, o którym mowa w § 41. Potwierdzenie zawarcia umowy Bank doręcza Klientowi w terminie 5 dni od jej zawarcia.[^2]
-- 3\. Klient będący konsumentem, który zawarł umowę na odległość, może od niej odstąpić bez podania przyczyny w terminie 21 dni od dnia jej zawarcia lub od dnia otrzymania postanowień umowy, jeżeli nastąpiło to później. Do zachowania terminu wystarcza wysłanie oświadczenia przed jego upływem.[^3]
+- 2\. Przed zawarciem umowy Bank przekazuje Klientowi na trwałym nośniku Regulamin, „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty” oraz formularz informacyjny dla deponenta, o którym mowa w § 41. Potwierdzenie zawarcia umowy Bank doręcza Klientowi w terminie 5 dni od jej zawarcia.[^2)]
+- 3\. Klient będący konsumentem, który zawarł umowę na odległość, może od niej odstąpić bez podania przyczyny w terminie 21 dni od dnia jej zawarcia lub od dnia otrzymania postanowień umowy, jeżeli nastąpiło to później. Do zachowania terminu wystarcza wysłanie oświadczenia przed jego upływem.[^3)]
 - 4\. Umowa lokaty terminowej może zostać zawarta wyłącznie na okres wskazany w ofercie Banku obowiązującej w dniu jej zawarcia. Bank może odmówić zawarcia umowy z ważnych przyczyn, w szczególności gdy Klient nie przedstawi dokumentów wymaganych przez przepisy o przeciwdziałaniu praniu pieniędzy, w szczególności: ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
 
-[^2]: Za wydanie dodatkowego potwierdzenia lub duplikatu umowy Bank może pobrać opłatę w wysokości 35,00 zł, zgodnie z „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”.
+[^2)]: Za wydanie dodatkowego potwierdzenia lub duplikatu umowy Bank może pobrać opłatę w wysokości 35,00 zł, zgodnie z „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”.
 
-[^3]: W razie odstąpienia od umowy lokaty Bank zwraca środki wraz z odsetkami naliczonymi do dnia odstąpienia, z zastrzeżeniem potrącenia podatku, o którym mowa w rozdziale o podatku od odsetek.
+[^3)]: W razie odstąpienia od umowy lokaty Bank zwraca środki wraz z odsetkami naliczonymi do dnia odstąpienia, z zastrzeżeniem potrącenia podatku, o którym mowa w rozdziale o podatku od odsetek.
 
 ### § 4.
 
@@ -101,9 +101,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 1\) przelewem z rachunku prowadzonego w Banku lub w innym banku krajowym;
   - 2\) gotówką w placówce Banku, z uwzględnieniem opłaty, o której mowa w „Taryfa opłat i prowizji oraz tabela oprocentowania Bank Przykładowy S.A. — rachunki oszczędnościowe i lokaty”;
   - 3\) w ramach zlecenia stałego, ustanowionego w bankowości elektronicznej lub w placówce.
-- 4\. Środki zgromadzone na rachunku oprocentowane są według zmiennej stopy procentowej, wynoszącej w dniu wejścia Regulaminu w życie 3% w stosunku rocznym. W okresach promocyjnych ogłaszanych przez Bank stawka może wynosić 5%, o ile Klient spełni warunki promocji.[^4]
+- 4\. Środki zgromadzone na rachunku oprocentowane są według zmiennej stopy procentowej, wynoszącej w dniu wejścia Regulaminu w życie 3% w stosunku rocznym. W okresach promocyjnych ogłaszanych przez Bank stawka może wynosić 5%, o ile Klient spełni warunki promocji.[^4)]
 
-[^4]: Warunki promocji, w tym okres jej trwania oraz limit środków objętych podwyższonym oprocentowaniem, określa Bank w odrębnym komunikacie dostępnym na stronie https://bank.example.
+[^4)]: Warunki promocji, w tym okres jej trwania oraz limit środków objętych podwyższonym oprocentowaniem, określa Bank w odrębnym komunikacie dostępnym na stronie https://bank.example.
 
 <!-- page: 6 -->
 ### § 10.
@@ -121,13 +121,13 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Jeżeli przez okres 365 dni na rachunku oszczędnościowym nie wystąpiła żadna operacja zainicjowana przez Klienta, a saldo rachunku wynosi zero, Bank może rozwiązać umowę za wypowiedzeniem, informując o tym Klienta na trwałym nośniku.
 - 2\. Za operację zainicjowaną przez Klienta nie uważa się kapitalizacji odsetek, pobrania opłat ani podatku.
-- 3\. Klient może w każdym czasie wypowiedzieć umowę rachunku oszczędnościowego z zachowaniem terminu wypowiedzenia wynoszącego 21 dni. Bank może wypowiedzieć umowę z ważnych powodów, z zachowaniem terminu 90 dni, do których zalicza się w szczególności:[^5]
+- 3\. Klient może w każdym czasie wypowiedzieć umowę rachunku oszczędnościowego z zachowaniem terminu wypowiedzenia wynoszącego 21 dni. Bank może wypowiedzieć umowę z ważnych powodów, z zachowaniem terminu 90 dni, do których zalicza się w szczególności:[^5)]
   - 1\) podanie przez Klienta nieprawdziwych danych przy zawarciu umowy;
   - 2\) wykorzystywanie rachunku w sposób sprzeczny z prawem lub z Regulaminem;
   - 3\) brak możliwości zastosowania środków bezpieczeństwa finansowego wymaganych przepisami.
 - 4\. Z dniem rozwiązania umowy Bank wypłaca saldo rachunku wraz z naliczonymi odsetkami, pomniejszone o należny podatek, na wskazany przez Klienta rachunek bankowy albo w placówce Banku.
 
-[^5]: Wypowiedzenie umowy przez Bank następuje w formie pisemnej lub na innym trwałym nośniku i zawiera wskazanie przyczyny wypowiedzenia.
+[^5)]: Wypowiedzenie umowy przez Bank następuje w formie pisemnej lub na innym trwałym nośniku i zawiera wskazanie przyczyny wypowiedzenia.
 
 ### § 12.
 
@@ -199,11 +199,11 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. W dniu zapadalności lokaty Bank postępuje zgodnie z dyspozycją złożoną przez Klienta przy zakładaniu lokaty lub w trakcie jej trwania. Klient może wskazać, że środki wraz z odsetkami mają zostać:
   - 1\) przekazane na rachunek wskazany przez Klienta;
   - 2\) przeznaczone na założenie nowej lokaty na taki sam okres (automatyczne odnowienie), przy czym odnowiona może zostać kwota wraz z odsetkami albo sama kwota pierwotna.
-- 2\. W razie automatycznego odnowienia lokata jest oprocentowana według stawki obowiązującej w dniu odnowienia dla danego okresu, zgodnie z tabelą oprocentowania dostępną w placówkach i na stronie https://bank.example. Jeżeli oferta dla danego okresu została wycofana, lokata zostaje odnowiona na okres najbliższy, a jeżeli to niemożliwe — środki przekazuje się na rachunek oszczędnościowy Klienta, oprocentowany według stawki 1,2% w skali roku.[^6]
+- 2\. W razie automatycznego odnowienia lokata jest oprocentowana według stawki obowiązującej w dniu odnowienia dla danego okresu, zgodnie z tabelą oprocentowania dostępną w placówkach i na stronie https://bank.example. Jeżeli oferta dla danego okresu została wycofana, lokata zostaje odnowiona na okres najbliższy, a jeżeli to niemożliwe — środki przekazuje się na rachunek oszczędnościowy Klienta, oprocentowany według stawki 1,2% w skali roku.[^6)]
 - 3\. Klient może odwołać dyspozycję automatycznego odnowienia najpóźniej w dniu poprzedzającym zapadalność lokaty. Zmiana dyspozycji złożona w dniu zapadalności będzie wykonana w terminie 3 dni roboczych.
 - 4\. Jeżeli dzień zapadalności nie jest dniem roboczym, środki zostają udostępnione w najbliższym dniu roboczym, a odsetki za dni dzielące zapadalność od tego dnia nie są naliczane.
 
-[^6]: Stawka odnowienia dotyczy wyłącznie sytuacji, w której nie ma możliwości zawarcia nowej lokaty; w pozostałych przypadkach stosuje się oprocentowanie standardowe z tabeli oprocentowania.
+[^6)]: Stawka odnowienia dotyczy wyłącznie sytuacji, w której nie ma możliwości zawarcia nowej lokaty; w pozostałych przypadkach stosuje się oprocentowanie standardowe z tabeli oprocentowania.
 
 ### § 19.
 
@@ -251,13 +251,13 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 24.
 
 - 1\. Środki zgromadzone na lokacie terminowej oprocentowane są według stałej stopy procentowej, obowiązującej w dniu założenia lokaty i wskazanej w potwierdzeniu, przez cały okres lokaty. Stopa ta nie ulega zmianie w trakcie trwania okresu umownego, z wyjątkiem przypadków opisanych w § 26.
-- 2\. Stopa procentowa jest podawana w skali roku. Wysokość stóp procentowych dla poszczególnych okresów lokat, obowiązujących w dniu wejścia w życie Regulaminu, przedstawia § 16. Bank może ogłaszać nowe stawki dla lokat zakładanych w przyszłości, co nie wpływa na lokaty już założone.[^7]
+- 2\. Stopa procentowa jest podawana w skali roku. Wysokość stóp procentowych dla poszczególnych okresów lokat, obowiązujących w dniu wejścia w życie Regulaminu, przedstawia § 16. Bank może ogłaszać nowe stawki dla lokat zakładanych w przyszłości, co nie wpływa na lokaty już założone.[^7)]
 - 3\. Odsetki naliczane są od dnia założenia lokaty do dnia poprzedzającego dzień zapadalności, według rzeczywistej liczby dni, przy założeniu, że rok odsetkowy liczy 365 dni. Wzór naliczania odsetek jest następujący:
   - 1\) odsetki brutto = kwota lokaty × stopa procentowa × liczba dni lokaty podzielona przez liczbę dni w roku odsetkowym;
   <!-- page: 12 -->
   - 2\) odsetki netto = odsetki brutto pomniejszone o podatek obliczony zgodnie z rozdziałem o podatku od odsetek.
 
-[^7]: Aktualne tabele oprocentowania Bank publikuje w placówkach oraz na stronie https://bank.example; w razie rozbieżności wiążąca jest stawka wskazana w potwierdzeniu założenia lokaty.
+[^7)]: Aktualne tabele oprocentowania Bank publikuje w placówkach oraz na stronie https://bank.example; w razie rozbieżności wiążąca jest stawka wskazana w potwierdzeniu założenia lokaty.
 
 ### § 25.
 
@@ -322,14 +322,14 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 32.
 
-- 1\. W razie zerwania lokaty przed terminem Bank wypłaca Klientowi kwotę lokaty oraz odsetki naliczone według obniżonej stopy procentowej, wynoszącej 0,1% w skali roku, za okres od dnia założenia lokaty do dnia poprzedzającego dzień zerwania.[^8]
+- 1\. W razie zerwania lokaty przed terminem Bank wypłaca Klientowi kwotę lokaty oraz odsetki naliczone według obniżonej stopy procentowej, wynoszącej 0,1% w skali roku, za okres od dnia założenia lokaty do dnia poprzedzającego dzień zerwania.[^8)]
 - 2\. Jeżeli w wyniku zerwania lokaty wcześniej wypłacone odsetki przewyższają odsetki należne według stawki określonej w ust. 1, Bank potrąca różnicę z wypłacanej kwoty lokaty, a jeżeli kwota ta jest niewystarczająca — z innych środków Klienta w Banku, po uprzednim poinformowaniu go o tym.
-- 3\. Zerwanie lokaty w okresie pierwszych 21 dni od jej założenia, w przypadku lokaty zawartej na odległość, jest traktowane jako odstąpienie od umowy, jeżeli Klient złoży w tym zakresie oświadczenie; w takiej sytuacji odsetki naliczane są według stawki umownej do dnia odstąpienia.[^9]
+- 3\. Zerwanie lokaty w okresie pierwszych 21 dni od jej założenia, w przypadku lokaty zawartej na odległość, jest traktowane jako odstąpienie od umowy, jeżeli Klient złoży w tym zakresie oświadczenie; w takiej sytuacji odsetki naliczane są według stawki umownej do dnia odstąpienia.[^9)]
 - 4\. Zerwanie lokaty przed terminem nie wpływa na wysokość odsetek naliczonych za poprzednie, w pełni zakończone okresy odsetkowe, o ile zostały one już skapitalizowane lub wypłacone zgodnie z umową, z zastrzeżeniem ust. 2.
 
-[^8]: Przykład: przy lokacie 10 000 zł założonej na rok, zerwanej po 100 dniach, odsetki brutto wynoszą 10 000 zł × stawka za zerwanie × 100 dni podzielone przez liczbę dni w roku odsetkowym.
+[^8)]: Przykład: przy lokacie 10 000 zł założonej na rok, zerwanej po 100 dniach, odsetki brutto wynoszą 10 000 zł × stawka za zerwanie × 100 dni podzielone przez liczbę dni w roku odsetkowym.
 
-[^9]: Szczegółowe zasady odstąpienia od umowy zawartej na odległość określa ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
+[^9)]: Szczegółowe zasady odstąpienia od umowy zawartej na odległość określa ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
 
 ### § 33.
 
@@ -406,10 +406,10 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 42.
 
-- 1\. Gwarancją objęte są łącznie wszystkie środki Klienta zgromadzone w Banku, w tym na <!-- page: 18 --> rachunkach oszczędnościowych i lokatach terminowych, niezależnie od liczby rachunków. Limit gwarancji dotyczy sumy tych środków, a nie każdego rachunku z osobna.[^10]
+- 1\. Gwarancją objęte są łącznie wszystkie środki Klienta zgromadzone w Banku, w tym na <!-- page: 18 --> rachunkach oszczędnościowych i lokatach terminowych, niezależnie od liczby rachunków. Limit gwarancji dotyczy sumy tych środków, a nie każdego rachunku z osobna.[^10)]
 - 2\. W razie rachunku wspólnego środki dzieli się, jeżeli umowa nie stanowi inaczej, w równych częściach pomiędzy współposiadaczy, a limit gwarancji stosuje się odrębnie do udziału każdego z nich.
 
-[^10]: Informacje o wypłatach gwarantowanych środków ogłasza Bankowy Fundusz Gwarancyjny; Bank nie pośredniczy w ich wypłacie.
+[^10)]: Informacje o wypłatach gwarantowanych środków ogłasza Bankowy Fundusz Gwarancyjny; Bank nie pośredniczy w ich wypłacie.
 
 ## Rozdział 8. Reklamacje i pozasądowe rozstrzyganie sporów
 

@@ -348,7 +348,7 @@ Prezes Rady Ministrów określi, w drodze rozporządzenia:
 - 9\. Zadania przewidziane w ustawie dla dyrektora generalnego urzędu w urzędach, w których nie tworzy się stanowiska dyrektora generalnego urzędu, wykonują kierownicy tych urzędów.
 - 10\. Dyrektor generalny urzędu albo osoba zastępująca dyrektora generalnego urzędu, w przypadku nieobsadzenia tego stanowiska, może wydawać zarządzenia w celu realizacji zadań, o których mowa w ust. 4.
 
-[^2]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2025 r. poz. 620, 769, 794, 1165, 1173 i 1235 oraz z 2026 r. poz. 252.
+[^1)]: Zmiany tekstu jednolitego wymienionej ustawy zostały ogłoszone w Dz. U. z 2025 r. poz. 620, 769, 794, 1165, 1173 i 1235 oraz z 2026 r. poz. 252.
 
 ## Rozdział 3. Nawiązanie stosunku pracy w służbie cywilnej
 
@@ -1475,25 +1475,25 @@ Członkowi korpusu służby cywilnej, o którym mowa w art. 193 ust. 4, art. 194
 
 ### Art. 202.
 
-W okresie 10 lat od dnia wejścia w życie ustawy warunek posiadania kompetencji kierowniczych na stanowiskach, o których mowa w art. 52 <!-- page: 67 --> oraz w ustawach zmienianych w art. 135–1392), 141–1433), 145–1474), 149–1565), 1586), 1597), 161–185[^1] oraz 187–1899), uważa się za spełniony przez osoby, które:
+W okresie 10 lat od dnia wejścia w życie ustawy warunek posiadania kompetencji kierowniczych na stanowiskach, o których mowa w art. 52 <!-- page: 67 --> oraz w ustawach zmienianych w art. 135–1392), 141–1433), 145–1474), 149–1565), 1586), 1597), 161–185[^8)] oraz 187–1899), uważa się za spełniony przez osoby, które:
 
 <!-- page: 68 -->
 - 1\) uzyskały świadectwo potwierdzające kwalifikacje do pracy na wysokim stanowisku państwowym, wydane na podstawie art. 7 ust. 5 lub art. 8 ust. 7 ustawy uchylanej w art. 214;
 - 2\) w wyniku postępowania kwalifikacyjnego dla pracowników służby cywilnej ubiegających się o mianowanie w służbie cywilnej osiągnęły miejsce uprawniające do mianowania na podstawie ustawy uchylanej w art. 215.
 
-[^1]: Art. 161 zawiera zmiany do ustawy z dnia 30 czerwca 2000 r. – Prawo własności przemysłowej; art. 162 zawiera zmiany do ustawy z dnia 9 listopada 2000 r. o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości; art. 163 zawiera zmiany do ustawy z dnia 29 listopada 2000 r. – Prawo atomowe; art. 164 zawiera zmiany do ustawy z dnia 21 grudnia 2000 r. o dozorze technicznym; art. 165 zawiera zmiany do ustawy z dnia 21 grudnia 2000 r. o jakości handlowej artykułów rolno-spożywczych; art. 166 zawiera zmiany do ustawy z dnia 11 stycznia 2001 r. o substancjach i preparatach chemicznych; art. 167 zawiera zmiany do ustawy z dnia 27 kwietnia 2001 r. – Prawo ochrony środowiska; art. 168 zawiera zmiany do ustawy z dnia 11 maja 2001 r. – Prawo o miarach; art. 169 zawiera zmiany do ustawy z dnia 18 lipca 2001 r. – Prawo wodne; art. 170 zawiera zmiany do ustawy z dnia 27 lipca 2001 r. o Urzędzie Rejestracji Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych; art. 171 zawiera zmiany do ustawy z dnia 27 lipca 2001 r. o służbie zagranicznej; art. 172 zawiera zmiany do ustawy z dnia 6 września 2001 r. o transporcie drogowym; art. 173 zawiera zmiany do ustawy z dnia 6 września 2001 r. – Prawo farmaceutyczne; art. 174 zawiera zmiany do ustawy z dnia 3 lipca 2002 r. – Prawo lotnicze; art. 175 zawiera zmiany do ustawy z dnia 30 sierpnia 2002 r. o systemie oceny zgodności; art. 176 zawiera zmiany do ustawy z dnia 12 września 2002 r. o normalizacji; art. 177 zawiera zmiany do ustawy z dnia 28 marca 2003 r. o transporcie kolejowym; art. 178 zawiera zmiany do ustawy z dnia 13 czerwca 2003 r. o cudzoziemcach; art. 179 zawiera zmiany do ustawy z dnia 18 grudnia 2003 r. o ochronie roślin; art. 180 zawiera zmiany do ustawy z dnia 29 stycznia 2004 r. – Prawo zamówień publicznych; art. 181 zawiera zmiany do ustawy z dnia 29 stycznia 2004 r. o Inspekcji Weterynaryjnej; art. 182 zawiera zmiany do ustawy z dnia 11 marca 2004 r. o Agencji Rynku Rolnego i organizacji niektórych rynków rolnych; art. 183 zawiera zmiany do ustawy z dnia 16 lipca 2004 r. – Prawo telekomunikacyjne; art. 184 zawiera zmiany do ustawy z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych; art. 185 zawiera zmiany do ustawy z dnia 22 października 2004 r. o jednostkach doradztwa rolniczego.
+[^8)]: Art. 161 zawiera zmiany do ustawy z dnia 30 czerwca 2000 r. – Prawo własności przemysłowej; art. 162 zawiera zmiany do ustawy z dnia 9 listopada 2000 r. o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości; art. 163 zawiera zmiany do ustawy z dnia 29 listopada 2000 r. – Prawo atomowe; art. 164 zawiera zmiany do ustawy z dnia 21 grudnia 2000 r. o dozorze technicznym; art. 165 zawiera zmiany do ustawy z dnia 21 grudnia 2000 r. o jakości handlowej artykułów rolno-spożywczych; art. 166 zawiera zmiany do ustawy z dnia 11 stycznia 2001 r. o substancjach i preparatach chemicznych; art. 167 zawiera zmiany do ustawy z dnia 27 kwietnia 2001 r. – Prawo ochrony środowiska; art. 168 zawiera zmiany do ustawy z dnia 11 maja 2001 r. – Prawo o miarach; art. 169 zawiera zmiany do ustawy z dnia 18 lipca 2001 r. – Prawo wodne; art. 170 zawiera zmiany do ustawy z dnia 27 lipca 2001 r. o Urzędzie Rejestracji Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych; art. 171 zawiera zmiany do ustawy z dnia 27 lipca 2001 r. o służbie zagranicznej; art. 172 zawiera zmiany do ustawy z dnia 6 września 2001 r. o transporcie drogowym; art. 173 zawiera zmiany do ustawy z dnia 6 września 2001 r. – Prawo farmaceutyczne; art. 174 zawiera zmiany do ustawy z dnia 3 lipca 2002 r. – Prawo lotnicze; art. 175 zawiera zmiany do ustawy z dnia 30 sierpnia 2002 r. o systemie oceny zgodności; art. 176 zawiera zmiany do ustawy z dnia 12 września 2002 r. o normalizacji; art. 177 zawiera zmiany do ustawy z dnia 28 marca 2003 r. o transporcie kolejowym; art. 178 zawiera zmiany do ustawy z dnia 13 czerwca 2003 r. o cudzoziemcach; art. 179 zawiera zmiany do ustawy z dnia 18 grudnia 2003 r. o ochronie roślin; art. 180 zawiera zmiany do ustawy z dnia 29 stycznia 2004 r. – Prawo zamówień publicznych; art. 181 zawiera zmiany do ustawy z dnia 29 stycznia 2004 r. o Inspekcji Weterynaryjnej; art. 182 zawiera zmiany do ustawy z dnia 11 marca 2004 r. o Agencji Rynku Rolnego i organizacji niektórych rynków rolnych; art. 183 zawiera zmiany do ustawy z dnia 16 lipca 2004 r. – Prawo telekomunikacyjne; art. 184 zawiera zmiany do ustawy z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych; art. 185 zawiera zmiany do ustawy z dnia 22 października 2004 r. o jednostkach doradztwa rolniczego.
 
-[^3]: Art. 135 zawiera zmiany do ustawy z dnia 26 października 1982 r. o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi; art. 136 zawiera zmiany do ustawy z dnia 14 lipca 1983 r. o narodowym zasobie archiwalnym i archiwach; art. 137 zawiera zmiany do ustawy z dnia 14 marca 1985 r. o Państwowej Inspekcji Sanitarnej; art. 138 zawiera zmiany do ustawy z dnia 21 marca 1985 r. o drogach publicznych; art. 139 zawiera zmiany do ustawy z dnia 17 maja 1989 r. – Prawo geodezyjne i kartograficzne.
+[^2)]: Art. 135 zawiera zmiany do ustawy z dnia 26 października 1982 r. o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi; art. 136 zawiera zmiany do ustawy z dnia 14 lipca 1983 r. o narodowym zasobie archiwalnym i archiwach; art. 137 zawiera zmiany do ustawy z dnia 14 marca 1985 r. o Państwowej Inspekcji Sanitarnej; art. 138 zawiera zmiany do ustawy z dnia 21 marca 1985 r. o drogach publicznych; art. 139 zawiera zmiany do ustawy z dnia 17 maja 1989 r. – Prawo geodezyjne i kartograficzne.
 
-[^4]: Art. 141 zawiera zmiany do ustawy z dnia 20 grudnia 1990 r. o ubezpieczeniu społecznym rolników; art. 142 zawiera zmiany do ustawy z dnia 24 stycznia 1991 r. o kombatantach oraz niektórych osobach będących ofiarami represji wojennych i okresu powojennego; art. 143 zawiera zmiany do ustawy z dnia 20 lipca 1991 r. o Inspekcji Ochrony Środowiska.
+[^3)]: Art. 141 zawiera zmiany do ustawy z dnia 20 grudnia 1990 r. o ubezpieczeniu społecznym rolników; art. 142 zawiera zmiany do ustawy z dnia 24 stycznia 1991 r. o kombatantach oraz niektórych osobach będących ofiarami represji wojennych i okresu powojennego; art. 143 zawiera zmiany do ustawy z dnia 20 lipca 1991 r. o Inspekcji Ochrony Środowiska.
 
-[^5]: Art. 145 zawiera zmiany do ustawy z dnia 19 października 1991 r. o gospodarowaniu nieruchomościami rolnymi Skarbu Państwa; art. 146 zawiera zmiany do ustawy z dnia 4 lutego 1994 r. – Prawo geologiczne i górnicze; art. 147 zawiera zmiany do ustawy z dnia 7 lipca 1994 r. – Prawo budowlane.
+[^4)]: Art. 145 zawiera zmiany do ustawy z dnia 19 października 1991 r. o gospodarowaniu nieruchomościami rolnymi Skarbu Państwa; art. 146 zawiera zmiany do ustawy z dnia 4 lutego 1994 r. – Prawo geologiczne i górnicze; art. 147 zawiera zmiany do ustawy z dnia 7 lipca 1994 r. – Prawo budowlane.
 
-[^6]: Art. 149 zawiera zmiany do ustawy z dnia 22 czerwca 1995 r. o zakwaterowaniu Sił Zbrojnych Rzeczypospolitej Polskiej; art. 150 zawiera zmiany do ustawy z dnia 29 czerwca 1995 r. o statystyce publicznej; art. 151 zawiera zmiany do ustawy z dnia 30 maja 1996 r. o rezerwach państwowych; art. 152 zawiera zmiany do ustawy z dnia 30 maja 1996 r. o gospodarowaniu niektórymi składnikami mienia Skarbu Państwa oraz o Agencji Mienia Wojskowego; art. 153 zawiera zmiany do ustawy z dnia 8 sierpnia 1996 r. o Radzie Ministrów; art. 154 zawiera zmiany do ustawy z dnia 20 grudnia 1996 r. o Polskim Instytucie Spraw Międzynarodowych, art. 155 zawiera zmiany do ustawy z dnia 10 kwietnia 1997 r. – Prawo energetyczne; art. 156 zawiera zmiany do ustawy z dnia 27 sierpnia 1997 r. o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych.
+[^5)]: Art. 149 zawiera zmiany do ustawy z dnia 22 czerwca 1995 r. o zakwaterowaniu Sił Zbrojnych Rzeczypospolitej Polskiej; art. 150 zawiera zmiany do ustawy z dnia 29 czerwca 1995 r. o statystyce publicznej; art. 151 zawiera zmiany do ustawy z dnia 30 maja 1996 r. o rezerwach państwowych; art. 152 zawiera zmiany do ustawy z dnia 30 maja 1996 r. o gospodarowaniu niektórymi składnikami mienia Skarbu Państwa oraz o Agencji Mienia Wojskowego; art. 153 zawiera zmiany do ustawy z dnia 8 sierpnia 1996 r. o Radzie Ministrów; art. 154 zawiera zmiany do ustawy z dnia 20 grudnia 1996 r. o Polskim Instytucie Spraw Międzynarodowych, art. 155 zawiera zmiany do ustawy z dnia 10 kwietnia 1997 r. – Prawo energetyczne; art. 156 zawiera zmiany do ustawy z dnia 27 sierpnia 1997 r. o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych.
 
-[^7]: Art. 158 zawiera zmiany do ustawy z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych.
+[^6)]: Art. 158 zawiera zmiany do ustawy z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych.
 
-[^8]: Art. 159 zawiera zmiany do ustawy z dnia 25 czerwca 1999 r. o Polskiej Organizacji Turystycznej.
+[^7)]: Art. 159 zawiera zmiany do ustawy z dnia 25 czerwca 1999 r. o Polskiej Organizacji Turystycznej.
 
 ### Art. 203.
 
@@ -1510,7 +1510,7 @@ W okresie 1 roku od dnia wejścia w życie ustawy, przy przeprowadzaniu naboru n
 - 2\. Do ustalania wynagrodzenia zasadniczego i dodatku funkcyjnego osób, o których mowa w ust. 1, stosuje się przepisy wykonawcze wydane na podstawie art. 17 ust. 5 ustawy uchylanej w art. 214.
 - 3\. Przepisu ust. 1 nie stosuje się do osób zajmujących stanowiska kierownicze w służbie zagranicznej.
 
-[^9]: Art. 187 zawiera zmiany do ustawy z dnia 8 lipca 2005 r. o Prokuratorii Generalnej Skarbu Państwa; art. 188 zawiera zmiany do ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów; art. 189 zawiera zmiany do ustawy z dnia 9 maja 2008 r. o Agencji Restrukturyzacji i Modernizacji Rolnictwa.
+[^9)]: Art. 187 zawiera zmiany do ustawy z dnia 8 lipca 2005 r. o Prokuratorii Generalnej Skarbu Państwa; art. 188 zawiera zmiany do ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów; art. 189 zawiera zmiany do ustawy z dnia 9 maja 2008 r. o Agencji Restrukturyzacji i Modernizacji Rolnictwa.
 
 <!-- page: 69 -->
 ### Art. 206.
@@ -1563,7 +1563,7 @@ Do czasu powołania Szefa Służby Cywilnej, jednak niedłużej niż przez 3 mie
 
 Traci moc ustawa z dnia 24 sierpnia 2006 r. o państwowym zasobie kadrowym i wysokich stanowiskach państwowych (Dz. U. poz. 1217, z późn. zm.10)).
 
-[^10]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2006 r. poz. 1832, z 2007 r. poz. 96, 331, 660, 847 i 1242 oraz z 2008 r. poz. 634.
+[^10)]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2006 r. poz. 1832, z 2007 r. poz. 96, 331, 660, 847 i 1242 oraz z 2008 r. poz. 634.
 
 <!-- page: 71 -->
 ### Art. 215.
@@ -1574,6 +1574,6 @@ Traci moc ustawa z dnia 24 sierpnia 2006 r. o służbie cywilnej (Dz. U. poz. 12
 
 Ustawa wchodzi w życie po upływie 3 miesięcy od dnia ogłoszenia12), z wyjątkiem art. 7 ust. 1, art. 40–43, art. 45, art. 47–49, art. 160 i art. 186 pkt 2–6, które wchodzą w życie z dniem 1 stycznia 2010 r.
 
-[^11]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2006 r. poz. 1592 i 1832, z 2007 r. poz. 162, 847 i 1242 oraz z 2008 r. poz. 976.
+[^11)]: Zmiany wymienionej ustawy zostały ogłoszone w Dz. U. z 2006 r. poz. 1592 i 1832, z 2007 r. poz. 162, 847 i 1242 oraz z 2008 r. poz. 976.
 
-[^12]: Ustawa została ogłoszona w dniu 23 grudnia 2008 r.
+[^12)]: Ustawa została ogłoszona w dniu 23 grudnia 2008 r.

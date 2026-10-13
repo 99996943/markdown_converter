@@ -29,10 +29,10 @@ Użyte w Regulaminie określenia oznaczają:
 - 1\. Regulamin określa zasady otwierania i prowadzenia przez Bank rachunków bankowych dla przedsiębiorców, w szczególności rachunków bieżących i pomocniczych, a także zasady składania dyspozycji, rozliczeń pieniężnych, korzystania z bankowości elektronicznej oraz zawierania umów o firmowe lokaty i karty płatnicze w ramach tych rachunków.
 - 2\. Regulamin stosuje się do umów zawieranych z osobami prawnymi, jednostkami organizacyjnymi niebędącymi osobami prawnymi, którym ustawa przyznaje zdolność prawną, oraz z osobami fizycznymi prowadzącymi działalność gospodarczą lub zawodową we własnym imieniu, zwanymi dalej Posiadaczami. Rachunek firmowy nie może służyć do zaspokajania potrzeb osobistych Posiadacza będącego osobą fizyczną, które nie mają związku z prowadzoną działalnością.
 - 3\. Posiadacz nie jest konsumentem w rozumieniu przepisów o ochronie konsumentów. W zakresie dopuszczalnym przez prawo strony wyłączają w stosunku do siebie przepisów, które mogą być wyłączone w relacjach z klientami niebędącymi konsumentami; dotyczy to w szczególności przepisów o terminach i trybie zgłaszania transakcji nieautoryzowanych, opisanych w rozdziale o bankowości elektronicznej.
-- 4\. Podstawę prawną działalności Banku w zakresie objętym Regulaminem stanowią w szczególności ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. <!-- page: 3 --> 1646) oraz ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30). Opłaty i prowizje wynikają z dokumentu „Taryfa opłat i prowizji Bank Przykładowy S.A. dla przedsiębiorców i klientów instytucjonalnych”, zwanego dalej Taryfą.[^1]
+- 4\. Podstawę prawną działalności Banku w zakresie objętym Regulaminem stanowią w szczególności ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. <!-- page: 3 --> 1646) oraz ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30). Opłaty i prowizje wynikają z dokumentu „Taryfa opłat i prowizji Bank Przykładowy S.A. dla przedsiębiorców i klientów instytucjonalnych”, zwanego dalej Taryfą.[^1)]
 - 5\. W razie rozbieżności między umową a Regulaminem rozstrzygają postanowienia umowy, a w sprawach nieuregulowanych w umowie — postanowienia Regulaminu.
 
-[^1]: Taryfa jest udostępniana Posiadaczowi przed zawarciem umowy na trwałym nośniku oraz w placówkach Banku i na stronie https://bank.example. Zmiana Taryfy następuje na zasadach określonych w rozdziale o postanowieniach końcowych.
+[^1)]: Taryfa jest udostępniana Posiadaczowi przed zawarciem umowy na trwałym nośniku oraz w placówkach Banku i na stronie https://bank.example. Zmiana Taryfy następuje na zasadach określonych w rozdziale o postanowieniach końcowych.
 
 ### § 3.
 
@@ -72,10 +72,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 4\) Posiadacz lub osoba z nim powiązana:
     - a\) została wpisana na listę osób i podmiotów objętych sankcjami;
     - b\) prowadziła dotychczas rachunek w Banku niezgodnie z umową, co skutkowało jej wypowiedzeniem z winy Posiadacza.
-- 3\. O odmowie zawarcia umowy Bank informuje wnioskodawcę bez zbędnej zwłoki, nie podając przyczyn, jeżeli przepisy zakazują ich ujawnienia. Opłata za otwarcie rachunku wynosi 0,00 zł.[^2]
+- 3\. O odmowie zawarcia umowy Bank informuje wnioskodawcę bez zbędnej zwłoki, nie podając przyczyn, jeżeli przepisy zakazują ich ujawnienia. Opłata za otwarcie rachunku wynosi 0,00 zł.[^2)]
 - 4\. Umowa rachunku zawierana jest na czas nieokreślony. Rachunek jest uruchamiany po zawarciu umowy, złożeniu karty wzorów podpisów oraz zakończeniu weryfikacji dokumentów. Do tego czasu Posiadacz nie może składać dyspozycji obciążających <!-- page: 5 --> rachunek.
 
-[^2]: Posiadacz otwierający rachunek pomocniczy nie ponosi opłaty za otwarcie, o ile Taryfa nie stanowi inaczej; opłatę za prowadzenie rachunku pomocniczego ustala „Taryfa opłat i prowizji Bank Przykładowy S.A. dla przedsiębiorców i klientów instytucjonalnych”.
+[^2)]: Posiadacz otwierający rachunek pomocniczy nie ponosi opłaty za otwarcie, o ile Taryfa nie stanowi inaczej; opłatę za prowadzenie rachunku pomocniczego ustala „Taryfa opłat i prowizji Bank Przykładowy S.A. dla przedsiębiorców i klientów instytucjonalnych”.
 
 ### § 7.
 
@@ -142,10 +142,10 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Osoby uprawnione do dysponowania rachunkiem składają wzory podpisów na karcie wzorów podpisów, w obecności pracownika Banku, po okazaniu dokumentu tożsamości. Karta wzorów podpisów zawiera dane osób uprawnionych, zakres ich <!-- page: 8 --> umocowania oraz sposób składania dyspozycji, zgodny z reprezentacją Posiadacza.
 - 2\. Podpis na dyspozycji składanej w formie papierowej jest weryfikowany przez Bank przez porównanie ze wzorem podpisu. Bank może odmówić realizacji dyspozycji, jeżeli podpis nie jest zgodny ze wzorem lub budzi uzasadnione wątpliwości, i informuje o tym osobę składającą dyspozycję.
-- 3\. Zmiana karty wzorów podpisów następuje na wniosek Posiadacza złożony w placówce Banku. Do czasu przyjęcia nowej karty Bank stosuje wzory dotychczasowe. Opłata za zmianę karty wynosi 50,00 zł, a przy zmianie wynikającej z wpisu w rejestrze nie jest pobierana, jeżeli Posiadacz przedstawi odpis dokumentujący zmianę.[^3]
+- 3\. Zmiana karty wzorów podpisów następuje na wniosek Posiadacza złożony w placówce Banku. Do czasu przyjęcia nowej karty Bank stosuje wzory dotychczasowe. Opłata za zmianę karty wynosi 50,00 zł, a przy zmianie wynikającej z wpisu w rejestrze nie jest pobierana, jeżeli Posiadacz przedstawi odpis dokumentujący zmianę.[^3)]
 - 4\. Karta wzorów podpisów wraz z dyspozycją jej zmiany przechowywana jest przez Bank przez okres wymagany przepisami o archiwizacji dokumentów bankowych, nie krócej niż przez 5 lat od zakończenia stosunku umowy.
 
-[^3]: Bank ma prawo uzależnić przyjęcie nowej karty wzorów podpisów od przedstawienia aktualnego odpisu z rejestru, nie starszego niż 3 miesiące, oraz od ponownej weryfikacji tożsamości osób wskazanych w karcie.
+[^3)]: Bank ma prawo uzależnić przyjęcie nowej karty wzorów podpisów od przedstawienia aktualnego odpisu z rejestru, nie starszego niż 3 miesiące, oraz od ponownej weryfikacji tożsamości osób wskazanych w karcie.
 
 ### § 15.
 
@@ -209,10 +209,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 5\) polecenie zapłaty, zlecenie stałe oraz przelew z terminem płatności odroczonym.
 - 2\. Zlecenie przelewu powinno zawierać numeru rachunku odbiorcy w formacie NRB lub IBAN, nazwy odbiorcy, kwoty, waluty i tytułu płatności. Bank wykonuje zlecenie na podstawie unikatowego identyfikatora, to jest numeru rachunku, i nie weryfikuje zgodności tego numeru z nazwą odbiorcy, chyba że usługa weryfikacji nazwy została uruchomiona w bankowości elektronicznej.
 <!-- page: 11 -->
-- 3\. Dzienny limit przelewów z rachunku wynosi 100 000,00 zł, a limit pojedynczego przelewu w bankowości elektronicznej — 50 000,00 zł. Posiadacz może zawnioskować o zmianę limitów; Bank rozpatruje wniosek z uwzględnieniem profilu ryzyka Posiadacza i zasad bezpieczeństwa.[^4]
+- 3\. Dzienny limit przelewów z rachunku wynosi 100 000,00 zł, a limit pojedynczego przelewu w bankowości elektronicznej — 50 000,00 zł. Posiadacz może zawnioskować o zmianę limitów; Bank rozpatruje wniosek z uwzględnieniem profilu ryzyka Posiadacza i zasad bezpieczeństwa.[^4)]
 - 4\. Za przelew natychmiastowy Bank nalicza opłatę w wysokości 4,00 zł, a za przelewy zewnętrzne w złotych — 2,50 zł za przelew zlecony w bankowości elektronicznej.
 
-[^4]: Podwyższenie limitu ponad kwotę 100 000,00 zł wymaga złożenia wniosku w formie pisemnej i może być uzależnione od przedstawienia dokumentów potwierdzających charakter transakcji.
+[^4)]: Podwyższenie limitu ponad kwotę 100 000,00 zł wymaga złożenia wniosku w formie pisemnej i może być uzależnione od przedstawienia dokumentów potwierdzających charakter transakcji.
 
 ### § 22.
 
@@ -241,10 +241,10 @@ Użyte w Regulaminie określenia oznaczają:
 
 - 1\. Przelewy do urzędów skarbowych oraz organów celnych z tytułu zobowiązań podatkowych Posiadacz zleca na indywidualny rachunek podatkowy, wskazany przez organ. Zlecenie wymaga podania identyfikatora podatnika oraz symbolu formularza lub tytułu zobowiązania, zgodnie z zasadami określonymi w przepisach podatkowych.
 - 2\. Bank nie ponosi odpowiedzialności za skutki wskazania błędnego numeru rachunku podatkowego, nieprawidłowego identyfikatora lub okresu rozliczeniowego. Dniem dokonania zapłaty podatku jest dzień obciążenia rachunku Posiadacza, o ile na rachunku znajdowały się środki wystarczające na pokrycie zlecenia, a zlecenie zostało złożone przed godziną graniczną.
-- 3\. Za przelew podatkowy w bankowości elektronicznej Bank pobiera opłatę w wysokości 1,50 zł. Opłata nie jest pobierana za przelewy zlecone w złotych do Zakładu Ubezpieczeń Społecznych w ramach pakietu, o którym mowa w Taryfie, chyba że umowa przewiduje inaczej.[^5]
+- 3\. Za przelew podatkowy w bankowości elektronicznej Bank pobiera opłatę w wysokości 1,50 zł. Opłata nie jest pobierana za przelewy zlecone w złotych do Zakładu Ubezpieczeń Społecznych w ramach pakietu, o którym mowa w Taryfie, chyba że umowa przewiduje inaczej.[^5)]
 - 4\. Jeżeli zlecenie podatkowe nie może być wykonane z przyczyn leżących po stronie Banku, Bank bez zbędnej zwłoki powiadamia o tym Posiadacza oraz pokrywa uzasadnione koszty odsetek za zwłokę, jakie Posiadacz poniósł wobec organu na skutek opóźnienia Banku, po przedstawieniu dokumentów potwierdzających ich wysokość.
 
-[^5]: Szczegółowy zakres pakietu przelewów do Zakładu Ubezpieczeń Społecznych określa „Taryfa opłat i prowizji Bank Przykładowy S.A. dla przedsiębiorców i klientów instytucjonalnych”.
+[^5)]: Szczegółowy zakres pakietu przelewów do Zakładu Ubezpieczeń Społecznych określa „Taryfa opłat i prowizji Bank Przykładowy S.A. dla przedsiębiorców i klientów instytucjonalnych”.
 
 ### § 25.
 
@@ -317,9 +317,9 @@ Użyte w Regulaminie określenia oznaczają:
   <!-- page: 16 -->
   - 3\) stosowania aktualnego oprogramowania zabezpieczającego na urządzeniach, z których korzysta;
   - 4\) niezwłocznego zgłoszenia utraty lub nieuprawnionego użycia danych uwierzytelniających pod numerem 800 000 002.
-- 4\. Posiadacz, który nie jest konsumentem, zgłasza Bankowi nieautoryzowane, niewykonane lub nienależycie wykonane transakcje płatnicze niezwłocznie, nie później niż w terminie 30 dni od dnia obciążenia rachunku. Upływ terminu powoduje wygaśnięcie roszczeń wobec Banku z tego tytułu. Bank odpowiada za transakcje nieautoryzowane na zasadach określonych w umowie, a Posiadacz ponosi pełną odpowiedzialność za transakcje dokonane z jego winy umyślnej lub rażącego niedbalstwa.[^6]
+- 4\. Posiadacz, który nie jest konsumentem, zgłasza Bankowi nieautoryzowane, niewykonane lub nienależycie wykonane transakcje płatnicze niezwłocznie, nie później niż w terminie 30 dni od dnia obciążenia rachunku. Upływ terminu powoduje wygaśnięcie roszczeń wobec Banku z tego tytułu. Bank odpowiada za transakcje nieautoryzowane na zasadach określonych w umowie, a Posiadacz ponosi pełną odpowiedzialność za transakcje dokonane z jego winy umyślnej lub rażącego niedbalstwa.[^6)]
 
-[^6]: Skrócenie terminu i zasady odpowiedzialności wynikają z możliwości wyłączenia przepisów ustawy o usługach płatniczych w relacjach z podmiotami niebędącymi konsumentami; zob. ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
+[^6)]: Skrócenie terminu i zasady odpowiedzialności wynikają z możliwości wyłączenia przepisów ustawy o usługach płatniczych w relacjach z podmiotami niebędącymi konsumentami; zob. ustawa z dnia 19 sierpnia 2011 r. o usługach płatniczych (Dz. U. 2024 poz. 30).
 
 ### § 34.
 
@@ -359,10 +359,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) osobach, którym przysługuje ponad 25% udziałów lub głosów albo prawo do powoływania większości organów;
   - 3\) sposobie sprawowania kontroli oraz strukturze własności, w tym łańcuchu zależności prowadzącym do beneficjenta;
   - 4\) osobach zajmujących wyższe stanowisko kierownicze, jeżeli nie można ustalić beneficjenta rzeczywistego.
-- 3\. Posiadacz aktualizuje informacje o beneficjencie rzeczywistym w terminie 7 dni od dnia zmiany, a ponadto na każde żądanie Banku, nie rzadziej niż raz na 12 miesięcy.[^7] Bank ma prawo porównać oświadczenie Posiadacza z danymi z Centralnego Rejestru Beneficjentów Rzeczywistych.
+- 3\. Posiadacz aktualizuje informacje o beneficjencie rzeczywistym w terminie 7 dni od dnia zmiany, a ponadto na każde żądanie Banku, nie rzadziej niż raz na 12 miesięcy.[^7)] Bank ma prawo porównać oświadczenie Posiadacza z danymi z Centralnego Rejestru Beneficjentów Rzeczywistych.
 - 4\. Bank ma prawo odmówić przeprowadzenia transakcji, wstrzymać ją lub zablokować rachunek, jeżeli nie jest możliwe zastosowanie środków bezpieczeństwa finansowego albo transakcja budzi uzasadnione podejrzenia. Bank nie informuje Posiadacza o przekazaniu zawiadomienia do organu właściwego do spraw przeciwdziałania praniu pieniędzy, a w razie wstrzymania transakcji udziela informacji w zakresie dozwolonym przepisami.
 
-[^7]: Oświadczenie jest składane przez osoby uprawnione do reprezentacji Posiadacza pod rygorem odpowiedzialności za złożenie nieprawdziwych informacji, o czym Bank informuje w treści formularza.
+[^7)]: Oświadczenie jest składane przez osoby uprawnione do reprezentacji Posiadacza pod rygorem odpowiedzialności za złożenie nieprawdziwych informacji, o czym Bank informuje w treści formularza.
 
 ### § 39.
 

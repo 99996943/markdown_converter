@@ -65,15 +65,15 @@ public sealed class BankTablesIntegrationTests
 
         string markdown = await ConvertAsync(page.Build());
 
-        Assert.Contains("stosujemy [^1]kurs z momentu", markdown, StringComparison.Ordinal);
-        Assert.Contains("transakcyjnym: Tak[^2]", markdown, StringComparison.Ordinal);
-        Assert.Contains("zlecenie stałe[^3]", markdown, StringComparison.Ordinal);
-        Assert.Contains("polecenie zapłaty[^4]", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^1]: Zapis obowiązuje od 26.08.2026 r.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^2]: Dotyczy rachunków w złotych.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^3]: Dotyczy zleceń stałych.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^4]: Dotyczy polecenia zapłaty.", markdown, StringComparison.Ordinal);
-        Assert.DoesNotContain("[^5]", markdown, StringComparison.Ordinal);
+        Assert.Contains("stosujemy [^3]kurs z momentu", markdown, StringComparison.Ordinal);
+        Assert.Contains("transakcyjnym: Tak[^4]", markdown, StringComparison.Ordinal);
+        Assert.Contains("zlecenie stałe[^8]", markdown, StringComparison.Ordinal);
+        Assert.Contains("polecenie zapłaty[^9]", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^3]: Zapis obowiązuje od 26.08.2026 r.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^4]: Dotyczy rachunków w złotych.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^8]: Dotyczy zleceń stałych.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^9]: Dotyczy polecenia zapłaty.", markdown, StringComparison.Ordinal);
+        Assert.Equal(4, markdown.Split('\n').Count(l => l.StartsWith("[^", StringComparison.Ordinal) && l.Contains("]: ", StringComparison.Ordinal)));
         Assert.Contains("Opłata wynosi 1 000,00 zł i obowiązuje od 26.08.2026 r.", markdown, StringComparison.Ordinal);
         Assert.Contains("art. 5¹ ustawy", markdown, StringComparison.Ordinal);
         Assert.Contains("1\\) pierwszy punkt listy", markdown, StringComparison.Ordinal);
@@ -93,10 +93,10 @@ public sealed class BankTablesIntegrationTests
 
         string markdown = await ConvertAsync(page.Build());
 
-        Assert.Contains("Przelew natychmiastowy wykonasz w serwisie: TAK[^1]", markdown, StringComparison.Ordinal);
-        Assert.Contains("Przelew zagraniczny wykonasz w placówce: TAK[^2]", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^1]: Przelew z użyciem mechanizmu podzielonej płatności jest niedostępny.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^2]: Nie dotyczy przelewów do krajów trzecich wysokiego ryzyka.", markdown, StringComparison.Ordinal);
+        Assert.Contains("Przelew natychmiastowy wykonasz w serwisie: TAK[^13]", markdown, StringComparison.Ordinal);
+        Assert.Contains("Przelew zagraniczny wykonasz w placówce: TAK[^14]", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^13]: Przelew z użyciem mechanizmu podzielonej płatności jest niedostępny.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^14]: Nie dotyczy przelewów do krajów trzecich wysokiego ryzyka.", markdown, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -150,16 +150,15 @@ public sealed class BankTablesIntegrationTests
 
         Assert.Equal(1, markdown.Split('\n').Count(l => l.StartsWith("| ---", StringComparison.Ordinal)));
         // References are numbered in reading order: the column name first, then the rows.
-        Assert.Contains("| **Serwis transakcyjny**[^1] |", markdown, StringComparison.Ordinal);
-        Assert.Contains("| Tak[^2] | Tak |", markdown, StringComparison.Ordinal);
-        Assert.Contains("| TAK/TAK[^3] | NIE |", markdown, StringComparison.Ordinal);
-        Assert.Contains("| [^4]kurs z momentu transakcji | Tak |", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^1]: Nasza strona internetowa.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^2]: Dotyczy przelewów w złotych.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^3]: Zmiana na wniosek klienta.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^4]: Zapis obowiązuje od 26.08.2026 r.", markdown, StringComparison.Ordinal);
-        Assert.DoesNotContain("[^0]", markdown, StringComparison.Ordinal);
-        Assert.DoesNotContain("[^5]", markdown, StringComparison.Ordinal);
+        Assert.Contains("| **Serwis transakcyjny**[^6] |", markdown, StringComparison.Ordinal);
+        Assert.Contains("| Tak[^4] | Tak |", markdown, StringComparison.Ordinal);
+        Assert.Contains("| TAK/TAK[^5] | NIE |", markdown, StringComparison.Ordinal);
+        Assert.Contains("| [^3]kurs z momentu transakcji | Tak |", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^6]: Nasza strona internetowa.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^4]: Dotyczy przelewów w złotych.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^5]: Zmiana na wniosek klienta.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^3]: Zapis obowiązuje od 26.08.2026 r.", markdown, StringComparison.Ordinal);
+        Assert.Equal(4, markdown.Split('\n').Count(l => l.StartsWith("[^", StringComparison.Ordinal) && l.Contains("]: ", StringComparison.Ordinal)));
     }
 
     /// <summary>Text centred between two column borders.</summary>
@@ -377,8 +376,8 @@ public sealed class BankTablesIntegrationTests
 
         string markdown = await ConvertAsync(page.Build());
 
-        Assert.StartsWith("| **Co można zrobić?** | **Gdzie można zrobić?**[^1] **serwis transakcyjny** |", TableLines(markdown)[0], StringComparison.Ordinal);
-        Assert.Contains("[^1]: Dotyczy klientów firmowych.", markdown, StringComparison.Ordinal);
+        Assert.StartsWith("| **Co można zrobić?** | **Gdzie można zrobić?**[^7] **serwis transakcyjny** |", TableLines(markdown)[0], StringComparison.Ordinal);
+        Assert.Contains("[^7]: Dotyczy klientów firmowych.", markdown, StringComparison.Ordinal);
     }
 
     /// <summary>
@@ -675,22 +674,22 @@ public sealed class BankTablesIntegrationTests
             "| **co chcesz zrobić?** | **serwis transakcyjny** (na naszej stronie internetowej lub w aplikacji mobilnej) | **BOK** | **placówka** |",
             "| --- | --- | --- | --- |",
             "| złożyć wniosek o rachunek | TAK | TAK | TAK |",
-            "| zmienić typ rachunku | TAK/TAK[^1] | TAK | TAK |",
+            "| zmienić typ rachunku | TAK/TAK[^5] | TAK | TAK |",
             "| przekształcić rachunek | TAK/NIE | TAK | TAK |",
-            "| ustanowić pełnomocnika | TAK/TAK[^2] | TAK | TAK |",
+            "| ustanowić pełnomocnika | TAK/TAK[^6] | TAK | TAK |",
             "| uruchomić powiadomienia sms | TAK/NIE | TAK | TAK |",
             "| uruchomić powiadomienia e-mail | TAK/NIE | TAK | TAK |",
             "| zawiesić/ustanowić i zmienić parametry/odwołać powiadomienia sms/e-mail | TAK/NIE | TAK | TAK |",
             "| uruchomić raporty MT 940 | TAK/NIE | TAK | TAK |",
-            "| złożyć wniosek o dopuszczalne saldo debetowe | TAK/TAK[^3] | TAK | TAK |",
+            "| złożyć wniosek o dopuszczalne saldo debetowe | TAK/TAK[^7] | TAK | TAK |",
             "| wypowiedzieć umowę | TAK/NIE | TAK | TAK |",
             "| wycofać wypowiedzenie umowy | TAK/NIE | TAK | TAK |",
         ];
         Assert.Equal(table, TableLines(markdown));
         Assert.Contains(string.Join('\n', table), markdown, StringComparison.Ordinal);
         Assert.DoesNotContain("###", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^1]: O wprowadzeniu tego rozwiązania bank poinformuje na swojej stronie internetowej.", markdown, StringComparison.Ordinal);
-        Assert.Contains("[^3]: Dotyczy wybranych scenariuszy wnioskowania.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^5]: O wprowadzeniu tego rozwiązania bank poinformuje na swojej stronie internetowej.", markdown, StringComparison.Ordinal);
+        Assert.Contains("[^7]: Dotyczy wybranych scenariuszy wnioskowania.", markdown, StringComparison.Ordinal);
     }
 
     [Fact]

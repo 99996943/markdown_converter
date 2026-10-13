@@ -289,4 +289,206 @@ public sealed class DocumentBuildStageTests
         IReadOnlyDictionary<int, int> counts = context.Report.Build(4, TimeSpan.Zero).HeadingCounts;
         Assert.Equal([(2, 2), (3, 3)], counts.OrderBy(kv => kv.Key).Select(kv => (kv.Key, kv.Value)));
     }
+
+    // ---- Spec 012 T004: footnote identifiers are the PDF labels (FR-900–FR-904) ----
+
+    private static string[] RefIds(IEnumerable<Inline> inlines) => [.. inlines.OfType<FootnoteRef>().Select(r => r.Identifier)];
+
+    private static string[] RefIds(ContentBlock block) => RefIds(((ParagraphBlock)block).Inlines);
+
+    private static IEnumerable<Footnote> AllFootnotes(LegalDocument document)
+    {
+        static IEnumerable<Footnote> Of(Section section) => section.Footnotes.Concat(section.Children.SelectMany(Of));
+        return document.PreambleFootnotes.Concat(document.Sections.SelectMany(Of));
+    }
+
+    private static ConversionWarning[] LabelWarnings(PipelineContext context) =>
+        [.. context.Report.Build(4, TimeSpan.Zero).Warnings.Where(w => w.Code == "FTN002_FootnoteWithoutLabel")];
+
+    [Fact]
+    public void Identifiers_AreTheLabels()
+    {
+        PipelineContext context = Built(
+            [Paragraph(1, 1, new TextRun("Opłata"), new FootnoteRef(0), new TextRun(" i prowizja"), new FootnoteRef(1), new TextRun("."))],
+            [Draft(0, "21", 1, "Pierwszy."), Draft(1, "22", 1, "Drugi.")]);
+
+        LegalDocument document = context.Document!;
+        Assert.Equal(["21", "22"], RefIds(document.Preamble[0]));
+        Assert.Equal([("21", 1), ("22", 2)], document.PreambleFootnotes.Select(f => (f.Identifier, f.Number)));
+    }
+
+    [Fact]
+    public void Identifiers_RepeatedLabel_SecondOccurrenceInPageOrderGetsTheSuffix()
+    {
+        // Draft 1 („1)” on page 1) comes first in page order although its draft id is higher; draft 0 is on page 3.
+        PipelineContext context = Built(
+            [
+                Article(1, "1", level: 2), Paragraph(1, 1, new TextRun("Pierwszy"), new FootnoteRef(1), new TextRun(".")),
+                Article(3, "2", level: 2), Paragraph(3, 3, new TextRun("Drugi"), new FootnoteRef(0), new TextRun(".")),
+            ],
+            [Draft(0, "1)", 3, "Druga seria."), Draft(1, "1)", 1, "Pierwsza seria.")]);
+
+        LegalDocument document = context.Document!;
+        Assert.Equal(["1)"], RefIds(document.Sections[0].Blocks[0]));
+        Assert.Equal(["1)-2"], RefIds(document.Sections[1].Blocks[0]));
+        Footnote first = Assert.Single(document.Sections[0].Footnotes);
+        Footnote second = Assert.Single(document.Sections[1].Footnotes);
+        Assert.Equal(("1)", "1)", 1, "Pierwsza seria."), (first.Identifier, first.OriginalLabel, first.Number, Plain(first.Inlines)));
+        Assert.Equal(("1)-2", "1)", 2, "Druga seria."), (second.Identifier, second.OriginalLabel, second.Number, Plain(second.Inlines)));
+    }
+
+    [Fact]
+    public void Identifiers_RepeatedLabelOnOnePage_FollowTheDraftOrder()
+    {
+        // Draft 1 is referenced first (number 1), but on one page the draft order decides the suffix.
+        PipelineContext context = Built(
+            [Paragraph(2, 2, new TextRun("A"), new FootnoteRef(1), new TextRun(" B"), new FootnoteRef(0), new TextRun("."))],
+            [Draft(0, "1)", 2, "Zero."), Draft(1, "1)", 2, "Jeden.")]);
+
+        LegalDocument document = context.Document!;
+        Assert.Equal(["1)-2", "1)"], RefIds(document.Preamble[0]));
+        Assert.Equal([(1, "1)-2", "Jeden."), (2, "1)", "Zero.")], document.PreambleFootnotes.Select(f => (f.Number, f.Identifier, Plain(f.Inlines))));
+    }
+
+    [Fact]
+    public void Identifiers_SuffixNeverEqualsAnotherLabel()
+    {
+        PipelineContext context = Built(
+            [Paragraph(1, 3, new TextRun("A"), new FootnoteRef(0), new TextRun(" B"), new FootnoteRef(1), new TextRun(" C"), new FootnoteRef(2))],
+            [Draft(0, "1)", 1, "Jeden."), Draft(1, "1)", 2, "Dwa."), Draft(2, "1)-2", 3, "Trzy.")]);
+
+        Assert.Equal(["1)", "1)-3", "1)-2"], RefIds(context.Document!.Preamble[0]));
+        Assert.Equal(["1)", "1)-3", "1)-2"], context.Document!.PreambleFootnotes.Select(f => f.Identifier));
+    }
+
+    [Fact]
+    public void Identifiers_EmptyLabel_GetsTheNumberAndAWarning()
+    {
+        PipelineContext context = Built(
+            [Paragraph(2, 2, new TextRun("Tekst"), new FootnoteRef(0), new TextRun("."))],
+            [Draft(0, "", 2, "Bez etykiety.")]);
+
+        Assert.Equal(["1"], RefIds(context.Document!.Preamble[0]));
+        Assert.Equal("1", Assert.Single(context.Document!.PreambleFootnotes).Identifier);
+        ConversionWarning warning = Assert.Single(LabelWarnings(context));
+        Assert.Equal(2, warning.PageNumber);
+    }
+
+    [Theory]
+    [InlineData("a b")]
+    [InlineData("a\tb")]
+    [InlineData("[1")]
+    [InlineData("1]")]
+    public void Identifiers_LabelGfmCannotCarry_GetsTheNumberAndAWarning(string label)
+    {
+        PipelineContext context = Built(
+            [Paragraph(1, 1, new TextRun("Tekst"), new FootnoteRef(0), new TextRun("."))],
+            [Draft(0, label, 1, "Etykieta nie do użycia.")]);
+
+        Assert.Equal(["1"], RefIds(context.Document!.Preamble[0]));
+        Assert.Equal("1", Assert.Single(context.Document!.PreambleFootnotes).Identifier);
+        Assert.Single(LabelWarnings(context));
+    }
+
+    [Fact]
+    public void Identifiers_SubstituteNumberTakenByALabel_TakesTheNextFreeNumber()
+    {
+        // Draft 0 („2”) is number 1, draft 1 (no label) number 2 — „2” is taken by the label, so the substitute is „3”.
+        PipelineContext context = Built(
+            [Paragraph(1, 1, new TextRun("A"), new FootnoteRef(0), new TextRun(" B"), new FootnoteRef(1), new TextRun("."))],
+            [Draft(0, "2", 1, "Z etykietą."), Draft(1, "", 1, "Bez etykiety.")]);
+
+        Assert.Equal(["2", "3"], RefIds(context.Document!.Preamble[0]));
+        Assert.Equal([(1, "2"), (2, "3")], context.Document!.PreambleFootnotes.Select(f => (f.Number, f.Identifier)));
+        Assert.Single(LabelWarnings(context));
+    }
+
+    [Fact]
+    public void Identifiers_ReachTableGroupHeaderRowsAndContinuationCells()
+    {
+        Inline[] merged = [new TextRun("TAK"), new FootnoteRef(2)];
+        var table = new TableBlock(
+            new PageRange(1, 1),
+            new TableRow([new TableCell([new TextRun("czynność")]), new TableCell([new TextRun("serwis"), new FootnoteRef(1)])]),
+            [
+                new TableRow([new TableCell([new TextRun("wniosek")]), new TableCell(merged, RowSpan: 2)]),
+                new TableRow([new TableCell([new TextRun("zmiana")]), new TableCell(merged, ContinuesAbove: true)]),
+            ],
+            2,
+            false,
+            new TableRow([new TableCell([]), new TableCell([new TextRun("dostęp"), new FootnoteRef(0)])]));
+        PipelineContext context = Built(
+            [new LayoutBlock(LayoutBlockKind.Table, new PageRange(1, 1)) { Table = table }],
+            [Draft(0, "5", 1, "Grupa."), Draft(1, "6", 1, "Nagłówek."), Draft(2, "21", 1, "Wiersz.")]);
+
+        TableBlock built = Assert.IsType<TableBlock>(Assert.Single(context.Document!.Preamble));
+        Assert.Equal(["5"], RefIds(built.HeaderGroup!.Cells[1].Inlines));
+        Assert.Equal(["6"], RefIds(built.Header!.Cells[1].Inlines));
+        Assert.Equal(["21"], RefIds(built.Rows[0].Cells[1].Inlines));
+        Assert.Equal(["21"], RefIds(built.Rows[1].Cells[1].Inlines));
+        Assert.Same(built.Rows[0].Cells[1].Inlines, built.Rows[1].Cells[1].Inlines);
+    }
+
+    [Fact]
+    public void Identifiers_LeaveNumbersAndDefinitionOrderAsBefore()
+    {
+        // The same document as Execute_FootnotesAreNumberedByFirstReference_…: numbers and placement do not change.
+        PipelineContext context = Built(
+            [
+                Chapter(1, 1, "Przepisy ogólne"),
+                Article(1, "1"), Paragraph(1, 1, new TextRun("Pierwszy"), new FootnoteRef(1), new TextRun(" artykuł.")),
+                Article(2, "2"), Paragraph(2, 2, new TextRun("Drugi"), new FootnoteRef(0), new TextRun(" artykuł.")),
+            ],
+            [Draft(0, "1)", 2, "Przypis o dyrektywie."), Draft(1, "2)", 1, "Przypis o ministrze.")]);
+
+        Section chapter = context.Document!.Sections[0];
+        Assert.Equal((1, "2)"), (chapter.Children[0].Footnotes[0].Number, chapter.Children[0].Footnotes[0].Identifier));
+        Assert.Equal((2, "1)"), (chapter.Children[1].Footnotes[0].Number, chapter.Children[1].Footnotes[0].Identifier));
+        Assert.Equal([1], ((ParagraphBlock)chapter.Children[0].Blocks[0]).Inlines.OfType<FootnoteRef>().Select(r => r.FootnoteNumber));
+    }
+
+    [Fact]
+    public void Identifiers_AllLabelled_NoLabelWarning()
+    {
+        PipelineContext context = Built(
+            [Paragraph(1, 1, new TextRun("A"), new FootnoteRef(0), new TextRun("."))],
+            [Draft(0, "1)", 1, "Jeden."), Draft(1, "*)", 1, "Gwiazdka.", orphan: true)]);
+
+        Assert.Empty(LabelWarnings(context));
+        Assert.Equal(["1)", "*)"], context.Document!.PreambleFootnotes.Select(f => f.Identifier));
+    }
+
+    [Fact]
+    public void Identifiers_TwoReferencesToOneFootnote_ShareTheIdentifier()
+    {
+        var table = new TableBlock(
+            new PageRange(1, 1),
+            null,
+            [new TableRow([new TableCell([new TextRun("wniosek")]), new TableCell([new TextRun("TAK"), new FootnoteRef(0)])])],
+            2,
+            false);
+        PipelineContext context = Built(
+            [
+                Paragraph(1, 1, new TextRun("Opłata"), new FootnoteRef(0), new TextRun(".")),
+                new LayoutBlock(LayoutBlockKind.Table, new PageRange(1, 1)) { Table = table },
+            ],
+            [Draft(0, "21", 1, "Jeden przypis.")]);
+
+        LegalDocument document = context.Document!;
+        Assert.Equal(["21"], RefIds(document.Preamble[0]));
+        Assert.Equal(["21"], RefIds(((TableBlock)document.Preamble[1]).Rows[0].Cells[1].Inlines));
+        Assert.Equal("21", Assert.Single(document.PreambleFootnotes).Identifier);
+    }
+
+    [Fact]
+    public void Identifiers_LabelsWithAndWithoutParenthesis_AreDifferent()
+    {
+        PipelineContext context = Built(
+            [Paragraph(1, 1, new TextRun("A"), new FootnoteRef(0), new TextRun(" B"), new FootnoteRef(1), new TextRun("."))],
+            [Draft(0, "1)", 1, "Z nawiasem."), Draft(1, "1", 1, "Bez nawiasu.")]);
+
+        Assert.Equal(["1)", "1"], RefIds(context.Document!.Preamble[0]));
+        Assert.Equal(["1)", "1"], AllFootnotes(context.Document!).Select(f => f.Identifier));
+        Assert.Empty(LabelWarnings(context));
+    }
 }
