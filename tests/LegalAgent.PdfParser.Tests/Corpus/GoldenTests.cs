@@ -55,6 +55,51 @@ public sealed class GoldenTests
         GoldenFile.AssertMatches(result.Markdown, Path.Combine(CorpusDirectory(), "acts", name + ".expected.md"));
     }
 
+    // The counts pin the FTN001 warnings of every act (spec 011 FR-810); a changed count must be recorded in the
+    // spec handoff, never just updated.
+    private static readonly (string Name, int Expected)[] OrphanFootnoteCounts =
+    [
+        ("dz-u-2020-287-prawa-konsumenta", 2),
+        ("dz-u-2024-1497-kredyt-konsumencki", 5),
+        ("dz-u-2024-1646-prawo-bankowe", 24),
+        ("dz-u-2024-30-uslugi-platnicze", 10),
+        ("dz-u-2026-1298-obwieszczenie-msz", 6),
+        ("ustawa-o-sluzbie-cywilnej", 11),
+    ];
+
+    public static TheoryData<string, int> ActOrphanFootnoteCounts()
+    {
+        var data = new TheoryData<string, int>();
+        foreach ((string name, int expected) in OrphanFootnoteCounts)
+        {
+            data.Add(name, expected);
+        }
+
+        return data;
+    }
+
+    [Theory]
+    [MemberData(nameof(ActOrphanFootnoteCounts))]
+    public async Task Act_OrphanFootnoteWarnings_MatchExpectedCount(string name, int expected)
+    {
+        byte[] pdf = await File.ReadAllBytesAsync(Path.Combine(AppContext.BaseDirectory, "Corpus", "acts", name + ".pdf"), TestContext.Current.CancellationToken);
+
+        PdfConversionResult result = await ConvertAsync(pdf, name + ".pdf");
+
+        Assert.Equal(expected, result.Report.Warnings.Count(w => w.Code == "FTN001_OrphanFootnote"));
+    }
+
+    [Fact]
+    public void Act_OrphanFootnoteWarnings_CoverEveryAct()
+    {
+        string[] acts = Directory.GetFiles(Path.Combine(AppContext.BaseDirectory, "Corpus", "acts"), "*.pdf")
+            .Select(Path.GetFileNameWithoutExtension)
+            .Order(StringComparer.Ordinal)
+            .ToArray()!;
+
+        Assert.Equal(acts, OrphanFootnoteCounts.Select(c => c.Name).Order(StringComparer.Ordinal).ToArray());
+    }
+
     [Theory]
     [MemberData(nameof(Banking))]
     public async Task BankingDocument_MatchesGolden(string name)

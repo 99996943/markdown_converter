@@ -175,6 +175,30 @@ public sealed class FootnoteDetectionStageTests
     }
 
     [Fact]
+    public void RaisedDefinitionLabelsAtTheBottomWithoutRule_AreNoReferences_SoAnUnreferencedDefinitionIsOrphan()
+    {
+        // Spec 011 (act page without a rule): „ogłoszenia³⁾,” — a full-size comma after the marker is not recognised as
+        // a reference, so definition 3) has none; its own raised label must not count as one.
+        PageSketch page = BodyLines(new PageSketch(), 100, 5);
+        WithReference(page, "Pierwsze odwołanie", "2)", 180);
+        WithReference(page, "Drugie odwołanie", "3)", 194);
+        page.Line(", dalszy tekst zdania.", X + Width("Drugie odwołanie", Body) + Width("3)", 6), 194, Body);
+        RaisedLabel(page, "2)", " Pierwszy przypis.", 760, Note);
+        RaisedLabel(page, "3)", " Drugi przypis.", 775, Note);
+
+        PipelineContext context = Run(page);
+
+        Assert.Equal(["2)", "3)"], context.Footnotes.Select(f => f.Label));
+        Assert.Equal(["Pierwszy przypis.", "Drugi przypis."], context.Footnotes.Select(Text));
+        Assert.Equal([false, true], context.Footnotes.Select(f => f.IsOrphan));
+        Assert.Equal(context.Footnotes[0].Id, LineStarting(context, "Pierwsze").Words[^1].FootnoteId);
+        ConversionWarning warning = Assert.Single(context.Report.Build(1, TimeSpan.Zero).Warnings, w => w.Code == "FTN001_OrphanFootnote");
+        Assert.Equal(1, warning.PageNumber);
+        Assert.All(context.Pages.SelectMany(p => p.Lines).Where(l => l.Role == LineRole.Footnote).SelectMany(l => l.Words),
+            w => Assert.Null(w.FootnoteId));
+    }
+
+    [Fact]
     public void FootnoteContinuedOnTheNextPage_IsJoined()
     {
         PageSketch first = BodyLines(new PageSketch(1), 100, 5);
