@@ -48,7 +48,7 @@ Markdownie i chunkach (SC-133)
 
 | Zasada / ograniczenie | Ocena | Jak spełnione |
 |---|---|---|
-| I. Test-First / TDD | ✅ | Testy reguły identyfikatora, renderera, replik i chunkera jako commit red; potem green; goldeny osobnym commitem po akceptacji właściciela. |
+| I. Test-First / TDD | ✅ | Testy reguły identyfikatora, renderera, replik, niezmiennika SC-130 i chunkera jako commit red; potem green; goldeny osobnym commitem po akceptacji właściciela. Odstępstwo: puste właściwości `Identifier` (bez zachowania) powstają przed testami, bo bez nich testy red się nie kompilują — w tym samym commicie red (tasks T003). |
 | II. Wierność źródłu | ✅ | Usuwa z wyniku numerację parsera; wyjątki (dopisek, zastępczy) jawne w kontrakcie i raporcie (FTN002). |
 | III. Powtarzalność | ✅ | Reguła deterministyczna (kolejność stron, id szkicu); `generate`/`verify` korpusu. |
 | IV. Odporność na błędy | ✅ | Brak wywołań zewnętrznych; ostrzeżenie nie zmienia kodu wyjścia. |
@@ -107,7 +107,8 @@ corpus/                                      # generate/verify
    padają → raport diffu po normalizacji (SC-133) → **stop: akceptacja właściciela** → `UPDATE_GOLDEN=1`, commit.
 4. **US2**: test kolejności definicji (akapit przed tabelą, sieroty po stronach) — oczekiwane zielone od razu
    (research R2); jeśli nie, red/green.
-5. **US3**: chunker — test części z `[^21]`; goldeny chunków po akceptacji.
+5. **US3**: chunker — test części z `[^21]` (test regresji); goldeny chunków zmieniają się w US1, razem z goldenami
+   parsera, jedną akceptacją właściciela.
 6. **Polish**: podgląd GFM (VS Code, GitHub), wersja 1.4.0, `generate`/`verify`, README, kontrakt, CLAUDE.md,
    `publish/`, handoff.
 

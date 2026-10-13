@@ -54,7 +54,10 @@ prywatnych plików z katalogu głównego i `src/LegalAgent.PdfParser.Cli/Propert
   używa `Number`. To samo w `src/LegalAgent.PdfParser/Model/Inline.cs` dla `FootnoteRef` („identyfikator przypisu, na
   który wskazuje odnośnik”). Bez zmian w etapach i rendererze. `dotnet build LegalAgent.slnx -c Release` bez
   ostrzeżeń; sprawdzić, czy jakiś test porównuje serializację JSON modelu (`JsonDerivedType` w `Inline.cs`) — nowe
-  pole nie może zmienić istniejącego snapshotu bez odnotowania w handoffie. Commit razem z T004–T006 (red).
+  pole nie może zmienić istniejącego snapshotu bez odnotowania w handoffie. Commit razem z T004–T006a (red).
+  **Uzasadnienie odstępstwa od konstytucji I** (kod produkcyjny przed testem): bez tych właściwości testy red się nie
+  kompilują; zadanie nie zmienia zachowania (właściwości puste i nieczytane) i trafia do tego samego commitu co
+  testy, które je wymagają.
 
 **Checkpoint**: rozwiązanie się buduje, wszystkie istniejące testy przechodzą jak w 1.3.1.
 
@@ -81,7 +84,9 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
   (7) zastępczy numer zderza się z etykietą (pusta etykieta przypisu nr 2 i inny przypis z etykietą „2”) →
   zastępczy dostaje kolejny wolny numer; (8) odnośniki w tabeli — wiersz, nagłówek, grupa nagłówka i komórka
   kontynuacji (`ContinuesAbove`, współdzielone inline'y) — mają `Identifier`; (9) `Footnote.Number` i kolejność
-  definicji bez zmian względem 1.3.1; (10) brak `FTN002` gdy wszystkie przypisy mają etykiety.
+  definicji bez zmian względem 1.3.1; (10) brak `FTN002` gdy wszystkie przypisy mają etykiety; (11) dwa odnośniki
+  (akapit i komórka tabeli) do jednego przypisu „21” → oba mają `Identifier` „21”, jedna definicja; (12) etykiety
+  „1)” i „1” w jednym dokumencie (spec 011 K3) → identyfikatory „1)” i „1”, bez dopisku.
 - [ ] T005 [P] [US1] Testy renderera w nowym pliku `tests/LegalAgent.PdfParser.Tests/Rendering/MarkdownRendererFootnoteTests.cs`
   (model zbudowany ręcznie): `Identifier` „21” → `TAK[^21]` i `[^21]: …`; „*)” → `ustawy[^*)]` i `[^*)]: …` bez
   ucieczki i bez wyróżnienia; „1)-2” → `[^1)-2]`; `Identifier` pusty (klient biblioteki 1.x) → `[^{Number}]` w
@@ -93,11 +98,18 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
   7, 21, 22, 23, 24 (zbiór odnośników = zbiór definicji), żadnego `[^1]`; (b) akt z dwiema seriami „¹⁾”, „²⁾” na
   stronach 1 i 2 → `[^1)]`, `[^2)]`, `[^1)-2]`, `[^2)-2]`, odnośniki z każdej strony do swojej serii; (c) przypis
   „*)” → `[^*)]`; (d) w każdym przypadku liczba `FTN001_OrphanFootnote` jak przed zmianą (asercja liczby) i 0 `FTN002`.
+- [ ] T006a [P] [US1] Niezmiennik SC-130 w `tests/LegalAgent.PdfParser.Tests/Corpus/GoldenTests.cs`, uruchamiany na
+  wszystkich dokumentach goldenów (akty, `banking`, prywatny korpus z `LEGALAGENT_PRIVATE_CORPUS`): dla każdego
+  `Footnote` dokumentu (sekcje i preambuła) `Identifier` == `OriginalLabel`, albo `OriginalLabel + "-k"` (k ≥ 2,
+  tylko gdy etykieta powtarza się w dokumencie), albo — tylko dla etykiety pustej lub ze spacją, tabulatorem, `[`,
+  `]` — numer zastępczy z ostrzeżeniem `FTN002_FootnoteWithoutLabel` na stronie przypisu; identyfikatory unikalne
+  w dokumencie; każdy `FootnoteRef.Identifier` ma definicję.
 - [ ] T007 [US1] Uruchomić `dotnet test tests/LegalAgent.PdfParser.Tests -- --filter-class "*DocumentBuildStageTests"`,
-  `--filter-class "*MarkdownRendererFootnoteTests"`, `--filter-class "*FootnoteLabelsIntegrationTests"`: nowe testy
+  `--filter-class "*MarkdownRendererFootnoteTests"`, `--filter-class "*FootnoteLabelsIntegrationTests"`,
+  `--filter-method "*FootnoteIdentifiers*"` (T006a): nowe testy
   padają z właściwego powodu (identyfikator pusty / `[^1]` zamiast `[^21]`), stare przechodzą; test (10) z T004 i
-  „pusty `Identifier` → `Number`” z T005 mogą przechodzić od razu — odnotować. Commit red (T003–T006):
-  `test: footnote identifiers from PDF labels (red, spec 012 T003-T006)`.
+  „pusty `Identifier` → `Number`” z T005 mogą przechodzić od razu — odnotować. Commit red (T003–T006a):
+  `test: footnote identifiers from PDF labels (red, spec 012 T003-T006a)`.
 
 ### Implementation for User Story 1 (green)
 
@@ -124,7 +136,7 @@ definicje `[^7]:`, `[^21]:`…`[^24]:`, żadnego innego identyfikatora.
 - [ ] T011 [US1] Kod ostrzeżenia `FTN002_FootnoteWithoutLabel`: sprawdzić, czy kody są gdzieś wyliczone (stałe,
   testy `Unit/Pipeline/ConversionReportTests.cs`, kontrakt raportu w `specs/001-legal-pdf-parser/contracts/`) i dopisać
   tam nowy kod; kod wyjścia CLI bez zmian (konstytucja IV).
-- [ ] T012 [US1] Testy T004–T006 zielone; `dotnet test LegalAgent.slnx --filter "Category!=Performance"`: padają
+- [ ] T012 [US1] Testy T004–T006a zielone; `dotnet test LegalAgent.slnx --filter "Category!=Performance"`: padają
   tylko goldeny parsera (`*.expected.md` → `*.actual.md`) i goldeny chunków (`*.actual.jsonl`), nic innego; bramka
   FTN001 `GoldenTests.Act_OrphanFootnoteWarnings_MatchExpectedCount` zielona (FR-909). Commit green tylko z kodem
   (`src/…`, `NumberCheck.cs`), bez goldenów: `feat: footnote identifiers are the PDF labels (green, spec 012 T008-T011)`.
@@ -236,14 +248,14 @@ kolejności 7, 21, 22, 25.
 
 - **Setup (T001–T002)**: przed jakąkolwiek zmianą `src/` — T001 mierzy 1.3.1.
 - **Foundational (T003)**: przed testami red (kompilacja).
-- **US1 (T004–T015)**: red (T004–T007) → green (T008–T012) → raport (T013) → **STOP T014** → goldeny (T015).
+- **US1 (T004–T015)**: red (T004–T007, z T006a) → green (T008–T012) → raport (T013) → **STOP T014** → goldeny (T015).
 - **US2 (T016–T017)**: po T015 (goldeny zaakceptowane; ewentualna poprawka kolejności zmienia goldeny ponownie).
 - **US3 (T018–T019)**: po T009 (renderer); goldeny chunków aktualizowane razem z parserowymi w T015.
 - **Polish (T020–T027)**: po US1–US3; T021 przed T025 (wersja w manifeście), T026 po T025.
 
 ### Parallel Opportunities
 
-- T004, T005, T006 — trzy różne pliki testów (red).
+- T004, T005, T006, T006a — cztery różne pliki testów (red).
 - T018 równolegle z T016 (inne projekty testowe).
 - T022, T023, T024 — różne pliki dokumentacji.
 
@@ -253,6 +265,7 @@ kolejności 7, 21, 22, 25.
 Task: "T004 reguła identyfikatora w Unit/Stages/DocumentBuildStageTests.cs"
 Task: "T005 renderer w Rendering/MarkdownRendererFootnoteTests.cs"
 Task: "T006 repliki w Integration/FootnoteLabelsIntegrationTests.cs"
+Task: "T006a niezmiennik SC-130 w Corpus/GoldenTests.cs"
 ```
 
 ## Implementation Strategy

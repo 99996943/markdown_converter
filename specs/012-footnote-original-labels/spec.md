@@ -129,14 +129,15 @@ Aplikacja RAG dostaje chunki z tymi samymi identyfikatorami przypisów co Markdo
 - **FR-903**: Gdy ta sama etykieta występuje w dokumencie więcej niż raz, pierwsza definicja (w kolejności stron)
   MUST mieć identyfikator bez dopisku, a kolejne dopisek `-2`, `-3`… (`[^1)]`, `[^1)-2]`); odnośniki MUST wskazywać
   definicję, z którą są dziś powiązane. Dopisek nie może dać identyfikatora równego innej etykiecie dokumentu.
-- **FR-904**: Przypis bez etykiety w PDF-ie MUST dostać identyfikator zastępczy (numer kolejny w dokumencie) i
+- **FR-904**: Przypis bez etykiety w PDF-ie albo z etykietą, której nie da się zapisać w identyfikatorze GFM
+  (pusta, ze spacją, tabulatorem, `[` lub `]`), MUST dostać identyfikator zastępczy (numer kolejny w dokumencie) i
   ostrzeżenie w raporcie; to jedyny przypadek identyfikatora spoza PDF-u (poza FR-903).
 - **FR-905**: Definicje przypisów sekcji MUST stać w kolejności pierwszego odnośnika w dokumencie (akapity, listy i
   tabele w kolejności czytania); przypisy bez odnośnika po nich, w kolejności stron.
-- **FR-906**: Przypisy MUST być przypisane do tych samych sekcji co w 1.3.1 (zmienia się identyfikator i kolejność,
-  nie miejsce definicji).
+- **FR-906**: Przypisy MUST być przypisane do tych samych sekcji co w 1.3.1 (zmienia się tylko identyfikator; miejsce i
+  kolejność definicji jak w 1.3.1 — research R2).
 - **FR-907**: Chunki MUST używać tych samych identyfikatorów co Markdown dokumentu.
-- **FR-908**: Poza identyfikatorami przypisów i kolejnością definicji Markdown i chunki MUST być bez zmian; każda
+- **FR-908**: Poza identyfikatorami przypisów Markdown i chunki MUST być bez zmian; każda
   zmiana goldenów parsera i chunków MUST być pokazana właścicielowi do akceptacji przed zapisaniem (FR-163).
 - **FR-909**: Raport konwersji MUST pozostać bez zmian poza ostrzeżeniem z FR-904; liczby FTN001 aktów (bramka spec
   011) MUST się nie zmienić.
@@ -162,9 +163,9 @@ Aplikacja RAG dostaje chunki z tymi samymi identyfikatorami przypisów co Markdo
   (sprawdzone na wszystkich dokumentach korpusów publicznego i prywatnego oraz `downloads`).
 - **SC-131**: W każdym dokumencie liczba odnośników, definicji i ostrzeżeń FTN001 jest taka sama jak w 1.3.1.
 - **SC-132**: W każdej sekcji definicje przypisów stoją w kolejności pierwszego odnośnika (0 przeskoków w korpusach).
-- **SC-133**: Poza identyfikatorami i kolejnością definicji 0 różnic w Markdownie i chunkach względem 1.3.1
+- **SC-133**: Poza identyfikatorami przypisów 0 różnic w Markdownie i chunkach względem 1.3.1
   (porównanie po znormalizowaniu identyfikatorów).
-- **SC-134**: Identyfikatory zastępcze (FR-903, FR-904) występują tylko w dokumentach z powtórzoną lub brakującą
+- **SC-134**: Dopiski `-k` (FR-903) i identyfikatory zastępcze (FR-904) występują tylko w dokumentach z powtórzoną lub brakującą
   etykietą (dziś: 2 akty i 1 dokument syntetyczny).
 
 ## Assumptions
@@ -174,7 +175,8 @@ Aplikacja RAG dostaje chunki z tymi samymi identyfikatorami przypisów co Markdo
   etykieta z PDF-u jest widoczna w źródle Markdownu, które czytają aplikacja RAG i model.
 - Etykieta z indeksu górnego jest zapisywana zwykłymi cyframi („²¹” → „21”), tak jak dziś w modelu.
 - Kontrakt Markdown dostaje wersję 2.0.0 (zmiana niezgodna: znika reguła numeracji ciągłej); publiczne API
-  biblioteki się nie zmienia, wersja biblioteki 1.4.0 zgodnie z opisem właściciela.
+  biblioteki jest rozszerzone addytywnie i zgodne wstecz (nowe właściwości identyfikatora przypisu), stąd wersja
+  biblioteki 1.4.0 (MINOR), zgodnie z opisem właściciela.
 - Konsumenci w repozytorium (chunker, aplikacja FAQ) nie interpretują identyfikatorów przypisów; zmiana ich nie
   psuje poza goldenami chunków.
 - Linki z FAQ do miejsc w dokumentach to osobna spec 013 (wariant 3: strona PDF-u i nagłówek Markdownu).
