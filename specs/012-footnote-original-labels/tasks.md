@@ -219,7 +219,7 @@ kolejności 7, 21, 22, 25.
   akapicie i w komórce tabeli; sprawdzić w podglądzie Markdownu VS Code, że każdy odnośnik prowadzi do swojej
   definicji, a `*` nie daje kursywy. Podgląd na GitHubie (gist/PR) to publikacja na zewnątrz — przygotować fragment
   i poprosić właściciela o sprawdzenie w opisie PR; wynik do handoffu.
-- [ ] T021 Wersja parsera 1.4.0 w `Directory.Build.props` (właściwość wersji pakietu `LegalAgent.PdfParser`, jak w
+- [X] T021 Wersja parsera 1.4.0 w `Directory.Build.props` (właściwość wersji pakietu `LegalAgent.PdfParser`, jak w
   spec 011 T012); `dotnet run --project src/LegalAgent.Corpus.Cli -c Release -- generate` (nie samo `refresh`:
   manifest ma `generatorVersion`), potem `verify`. W `git diff corpus/` zmieniają się tylko identyfikatory `[^…]` w
   `*.md`/`*.chunks.jsonl` i wersje w `corpus/manifest.json` — sprawdzić skryptem z T002. Commit

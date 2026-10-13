@@ -41,11 +41,11 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) formularz „Europejskie ujednolicone informacje standardowe” dotyczący kredytu hipotecznego, zawierający indywidualną ofertę;
   - 3\) projekt umowy kredytu wraz z harmonogramem spłat opartym na aktualnych parametrach oprocentowania;
   - 4\) niniejszy Regulamin;
-  - 5\) taryfę opłat i prowizji, tj. dokument: „Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek” (dalej: „Taryfa”).[^1]
+  - 5\) taryfę opłat i prowizji, tj. dokument: „Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek” (dalej: „Taryfa”).[^1)]
 - 2\. Oferta Banku zawarta w formularzu informacyjnym wiąże Bank przez 14 dni od dnia jej przekazania Klientowi. Po upływie tego terminu Bank może zaktualizować ofertę, w tym marżę i opłaty, na podstawie obowiązującej wówczas Taryfy.
 - 3\. Klient ma prawo otrzymać nieodpłatnie wyjaśnienia dotyczące oferty, pozwalające ocenić, czy kredyt odpowiada jego potrzebom i sytuacji finansowej. Wyjaśnień udzielają: Departament Kredytów Hipotecznych, doradcy w placówkach, telefonicznie pod numerem 800 000 001 oraz w bankowości elektronicznej.
 
-[^1]: Taryfa jest dostępna w placówkach Banku i na stronie https://bank.example; opłaty za czynności związane z kredytem hipotecznym, w tym za wycenę i zmianę warunków umowy, podano w odrębnych pozycjach Taryfy.
+[^1)]: Taryfa jest dostępna w placówkach Banku i na stronie https://bank.example; opłaty za czynności związane z kredytem hipotecznym, w tym za wycenę i zmianę warunków umowy, podano w odrębnych pozycjach Taryfy.
 
 ### § 4.
 
@@ -136,7 +136,7 @@ Użyte w Regulaminie określenia oznaczają:
 <!-- page: 7 -->
 ### § 13.
 
-- 1\. Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta na podstawie informacji o jego dochodach, wydatkach, zobowiązaniach i historii kredytowej, w tym danych pochodzących z biur informacji gospodarczej i Biura Informacji Kredytowej.[^2]
+- 1\. Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta na podstawie informacji o jego dochodach, wydatkach, zobowiązaniach i historii kredytowej, w tym danych pochodzących z biur informacji gospodarczej i Biura Informacji Kredytowej.[^2)]
 - 2\. Przy ocenie zdolności Bank bierze pod uwagę:
   - 1\) wszystkie zobowiązania finansowe Klienta, w tym limity w rachunkach i na kartach kredytowych, bez względu na stopień ich wykorzystania;
   - 2\) koszty utrzymania gospodarstwa domowego, ustalone na podstawie liczby osób i miejsca zamieszkania;
@@ -149,7 +149,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) dochody z najmu uwzględnia się w części wskazanej w ocenie ryzyka Banku.
 - 4\. Jeżeli ocena zdolności kredytowej jest negatywna, Bank informuje o tym Klienta niezwłocznie i nieodpłatnie, wskazując informacje wykorzystane w ocenie. Na żądanie Klient może otrzymać wyniki oceny w odniesieniu do danych z baz.
 
-[^2]: Przetwarzanie danych w celu oceny zdolności kredytowej odbywa się na podstawie przepisów: ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); zasady przetwarzania danych osobowych opisano w rozdziale o ochronie danych.
+[^2)]: Przetwarzanie danych w celu oceny zdolności kredytowej odbywa się na podstawie przepisów: ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); zasady przetwarzania danych osobowych opisano w rozdziale o ochronie danych.
 
 ### § 14.
 
@@ -173,7 +173,7 @@ Użyte w Regulaminie określenia oznaczają:
 ### § 17.
 
 - 1\. Warunkiem udzielenia kredytu jest sporządzenie wyceny nieruchomości stanowiącej zabezpieczenie. Wycenę wykonuje niezależny rzeczoznawca majątkowy wskazany przez Bank z prowadzonej przez Bank listy, wybrany bez wpływu Klienta na jego wynik.
-- 2\. Za wycenę nieruchomości Bank nalicza opłatę w wysokości 600,00 zł, płatną przed rozpoczęciem wyceny.[^3] Opłata nie podlega zwrotowi, jeżeli wycena została wykonana, niezależnie od tego, czy Klient zawarł umowę kredytu.
+- 2\. Za wycenę nieruchomości Bank nalicza opłatę w wysokości 600,00 zł, płatną przed rozpoczęciem wyceny.[^3)] Opłata nie podlega zwrotowi, jeżeli wycena została wykonana, niezależnie od tego, czy Klient zawarł umowę kredytu.
 - 3\. Wartość rynkowa nieruchomości ustalona w operacie szacunkowym jest podstawą do:
   - 1\) wyliczenia wskaźnika LTV i wysokości wkładu własnego;
   - 2\) ustalenia kwoty zabezpieczenia hipotecznego;
@@ -181,7 +181,7 @@ Użyte w Regulaminie określenia oznaczają:
 - 4\. Wycena jest ważna przez 180 dni od dnia jej sporządzenia. Jeżeli umowa kredytu nie została zawarta w tym terminie, Bank ma prawo zażądać aktualizacji wyceny; opłatę za aktualizację określa Taryfa.
 - 5\. Klient może otrzymać kopię operatu szacunkowego. Jeżeli wartość nieruchomości ustalona w wycenie jest niższa niż cena nabycia, kwotę kredytu ustala się od wartości wycenionej, a różnicę pokrywa Klient ze środków własnych.
 
-[^3]: Opłata za wycenę jest wymieniona w Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek; jej wysokość jest uzależniona od rodzaju nieruchomości, a dla nieruchomości o nietypowych cechach Bank może zażądać dopłaty.
+[^3)]: Opłata za wycenę jest wymieniona w Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek; jej wysokość jest uzależniona od rodzaju nieruchomości, a dla nieruchomości o nietypowych cechach Bank może zażądać dopłaty.
 
 ### § 18.
 
@@ -339,12 +339,12 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 34.
 
-- 1\. Wskaźnikiem referencyjnym stosowanym w kredycie hipotecznym jest wskaźnik referencyjny WIR-3M, ogłaszany przez administratora wskaźnika w ostatnim dniu roboczym przed początkiem okresu zmiany oprocentowania.[^4]
+- 1\. Wskaźnikiem referencyjnym stosowanym w kredycie hipotecznym jest wskaźnik referencyjny WIR-3M, ogłaszany przez administratora wskaźnika w ostatnim dniu roboczym przed początkiem okresu zmiany oprocentowania.[^4)]
 - 2\. Oprocentowanie kredytu zmienia się nie rzadziej niż co trzy miesiące, od pierwszego dnia okresu rozliczeniowego następującego po dniu zmiany wartości wskaźnika. Zmiana wskaźnika powoduje zmianę wysokości raty lub okresu kredytowania, w sposób określony w umowie.
 - 3\. O zmianie oprocentowania Bank informuje Kredytobiorcę na trwałym nośniku w terminie 14 dni od jej wystąpienia, wskazując nową wysokość raty, saldo zadłużenia i pozostały okres spłaty.
 - 4\. Jeżeli wskaźnik referencyjny przestanie być publikowany lub jego metodologia ulegnie istotnej zmianie, Bank zastosuje wskaźnik zastępczy wskazany przez administratora, organ nadzoru lub ustawę, a w ich braku wskaźnik o najbardziej zbliżonym charakterze. Zmiana nie może zwiększyć marży ani kosztu kredytu ponad skutek wynikający z samej wymiany wskaźnika.
 
-[^4]: Aktualna wartość wskaźnika jest publikowana na stronie internetowej Banku https://bank.example oraz w placówkach; wartość z dnia zawarcia umowy podano w umowie kredytu.
+[^4)]: Aktualna wartość wskaźnika jest publikowana na stronie internetowej Banku https://bank.example oraz w placówkach; wartość z dnia zawarcia umowy podano w umowie kredytu.
 
 ### § 35.
 

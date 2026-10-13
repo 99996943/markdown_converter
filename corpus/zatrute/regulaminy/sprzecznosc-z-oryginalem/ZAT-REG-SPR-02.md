@@ -36,10 +36,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 1\) umowy o kartę kredytową wraz z załącznikami;
   - 2\) formularza informacyjnego dotyczącego kredytu konsumenckiego;
   - 3\) niniejszego Regulaminu;
-  - 4\) taryfy opłat i prowizji, tj. dokumentu: Bank Przykładowy S.A. — Taryfa opłat i prowizji <!-- page: 3 --> za karty płatnicze (zwanej dalej „Taryfą”).[^1]
+  - 4\) taryfy opłat i prowizji, tj. dokumentu: Bank Przykładowy S.A. — Taryfa opłat i prowizji <!-- page: 3 --> za karty płatnicze (zwanej dalej „Taryfą”).[^1)]
 - 2\. W razie rozbieżności między postanowieniami umowy a Regulaminem rozstrzygające są postanowienia umowy. Jeżeli umowa nie stanowi inaczej, opłaty i prowizje są pobierane w wysokości określonej w Taryfie obowiązującej w dniu ich naliczenia.
 
-[^1]: Taryfa jest dostępna w oddziałach Banku oraz na stronie https://bank.example; wysokość opłat za czynności związane z kartą kredytową podano w odrębnych pozycjach Taryfy.
+[^1)]: Taryfa jest dostępna w oddziałach Banku oraz na stronie https://bank.example; wysokość opłat za czynności związane z kartą kredytową podano w odrębnych pozycjach Taryfy.
 
 ### § 4.
 
@@ -102,10 +102,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) oświadczenia dotyczące zobowiązań finansowych, w tym:
     - a\) kredytów i pożyczek zaciągniętych w Banku i w innych instytucjach;
     - b\) poręczeń i gwarancji udzielonych osobom trzecim;
-    - c\) zobowiązań alimentacyjnych i innych <!-- page: 5 --> zobowiązań wynikających z orzeczeń.[^2]
+    - c\) zobowiązań alimentacyjnych i innych <!-- page: 5 --> zobowiązań wynikających z orzeczeń.[^2)]
 - 3\. Bank rozpatruje wniosek w terminie 10 dni od dnia złożenia kompletu dokumentów. Termin ten może zostać wydłużony, jeżeli zachodzi potrzeba uzupełnienia informacji lub weryfikacji danych w rejestrach.
 
-[^2]: Oświadczenia składa się na formularzu udostępnionym przez Bank; zatajenie prawdziwych informacji może skutkować odmową zawarcia umowy lub jej wypowiedzeniem.
+[^2)]: Oświadczenia składa się na formularzu udostępnionym przez Bank; zatajenie prawdziwych informacji może skutkować odmową zawarcia umowy lub jej wypowiedzeniem.
 
 ### § 12.
 
@@ -163,7 +163,7 @@ Użyte w Regulaminie określenia oznaczają:
 
 ### § 20.
 
-- 1\. Przed zawarciem umowy o kartę kredytową oraz przed każdym zwiększeniem limitu Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta, opierając się na informacjach uzyskanych od Klienta oraz — w niezbędnym zakresie — na danych pochodzących z baz danych, w tym z biura informacji kredytowej <!-- page: 7 --> i biur informacji gospodarczej.[^3]
+- 1\. Przed zawarciem umowy o kartę kredytową oraz przed każdym zwiększeniem limitu Bank dokonuje rzetelnej oceny zdolności kredytowej Klienta, opierając się na informacjach uzyskanych od Klienta oraz — w niezbędnym zakresie — na danych pochodzących z baz danych, w tym z biura informacji kredytowej <!-- page: 7 --> i biur informacji gospodarczej.[^3)]
 - 2\. Ocena zdolności kredytowej uwzględnia w szczególności:
   - 1\) wysokość, stabilność i źródło dochodów Klienta;
   - 2\) wysokość dotychczasowych zobowiązań i miesięcznych obciążeń z ich tytułu, w tym limitów kredytowych przyznanych w innych instytucjach, niezależnie od stopnia ich wykorzystania;
@@ -171,7 +171,7 @@ Użyte w Regulaminie określenia oznaczają:
   - 4\) historię terminowości spłat dotychczasowych zobowiązań.
 - 3\. Bank nie udziela kredytu, jeżeli wynik oceny zdolności kredytowej jest negatywny. O odmowie zawarcia umowy Bank informuje Klienta niezwłocznie i nieodpłatnie, a jeżeli odmowa wynika z wyniku zapytania do bazy danych — wskazuje tę bazę i przekazuje dane, na których oparto ocenę.
 
-[^3]: Dostęp do danych z baz danych następuje na zasadach określonych w przepisach aktu prawnego: ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); Klient jest informowany o przetwarzaniu jego danych w klauzuli informacyjnej.
+[^3)]: Dostęp do danych z baz danych następuje na zasadach określonych w przepisach aktu prawnego: ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); Klient jest informowany o przetwarzaniu jego danych w klauzuli informacyjnej.
 
 ### § 21.
 
@@ -290,9 +290,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 3\) wypłat gotówki w bankomatach i placówkach przyjmujących karty;
   - 4\) płatności za pomocą urządzeń mobilnych, po dodaniu karty do aplikacji płatniczej.
 - 2\. Dzienny limit transakcji internetowych wynosi 10 000,00 zł, a dzienny limit wypłat gotówki — 5 000,00 zł. Klient może zmienić limity w serwisie transakcyjnym, w granicach określonych przez Bank.
-- 3\. Za wypłaty gotówki Bank pobiera prowizję w wysokości 4% kwoty wypłaty, nie mniej niż <!-- page: 11 --> 10,00 zł.[^4] Od wypłat gotówki odsetki są naliczane od dnia wypłaty, bez okresu bezodsetkowego.
+- 3\. Za wypłaty gotówki Bank pobiera prowizję w wysokości 4% kwoty wypłaty, nie mniej niż <!-- page: 11 --> 10,00 zł.[^4)] Od wypłat gotówki odsetki są naliczane od dnia wypłaty, bez okresu bezodsetkowego.
 
-[^4]: Prowizja jest naliczana niezależnie od odsetek i opłat wskazanych w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze, a jej wysokość zależy od daty dokonania wypłaty.
+[^4)]: Prowizja jest naliczana niezależnie od odsetek i opłat wskazanych w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze, a jej wysokość zależy od daty dokonania wypłaty.
 
 ### § 38.
 
@@ -409,10 +409,10 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) naliczonych odsetek, opłat i prowizji za cykl rozliczeniowy;
   - 3\) kwoty przekroczenia limitu kredytowego, o ile wystąpiło;
   - 4\) wymagalnych kwot zaległych z poprzednich cykli rozliczeniowych.
-- 2\. Jeżeli saldo zadłużenia na koniec cyklu jest niższe niż 50,00 zł, minimalna kwota do zapłaty odpowiada saldu zadłużenia. Minimalna kwota do zapłaty jest podawana w zestawieniu transakcji.[^5]
+- 2\. Jeżeli saldo zadłużenia na koniec cyklu jest niższe niż 50,00 zł, minimalna kwota do zapłaty odpowiada saldu zadłużenia. Minimalna kwota do zapłaty jest podawana w zestawieniu transakcji.[^5)]
 - 3\. Spłata wyłącznie minimalnej kwoty do zapłaty powoduje utratę okresu bezodsetkowego dla transakcji bezgotówkowych w kolejnym cyklu rozliczeniowym i naliczenie odsetek od salda niespłaconego w całości, na zasadach opisanych w rozdziale o oprocentowaniu.
 
-[^5]: Spłata kwoty niższej niż minimalna kwota do zapłaty w terminie jest traktowana jako opóźnienie w spłacie zadłużenia, z konsekwencjami wskazanymi w Regulaminie i w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
+[^5)]: Spłata kwoty niższej niż minimalna kwota do zapłaty w terminie jest traktowana jako opóźnienie w spłacie zadłużenia, z konsekwencjami wskazanymi w Regulaminie i w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
 
 ### § 54.
 
@@ -553,9 +553,9 @@ Użyte w Regulaminie określenia oznaczają:
   - 2\) numer PIN lub dane karty zostały ujawnione osobie nieuprawnionej;
   - 3\) stwierdzono transakcje, których Klient nie dokonał.
 - 2\. Zgłoszenia można dokonać całodobowo, przez wszystkie dni w roku, telefonicznie pod numerem 800 000 002 (z zagranicy: +48 800 000 003), w bankowości elektronicznej lub osobiście w placówce Banku w godzinach jej otwarcia. Zgłoszenie telefoniczne Bank potwierdza na trwałym nośniku.
-- 3\. Z chwilą zgłoszenia Bank niezwłocznie blokuje kartę, a następnie — na wniosek Klienta — wydaje duplikat. Zastrzeżenie karty jest czynnością nieodwracalną; zastrzeżonej karty nie można odblokować, nawet jeśli została <!-- page: 19 --> odnaleziona.[^6]
+- 3\. Z chwilą zgłoszenia Bank niezwłocznie blokuje kartę, a następnie — na wniosek Klienta — wydaje duplikat. Zastrzeżenie karty jest czynnością nieodwracalną; zastrzeżonej karty nie można odblokować, nawet jeśli została <!-- page: 19 --> odnaleziona.[^6)]
 
-[^6]: Zastrzeżenie karty jest bezpłatne (0,00 zł); opłata za wydanie duplikatu została określona w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
+[^6)]: Zastrzeżenie karty jest bezpłatne (0,00 zł); opłata za wydanie duplikatu została określona w dokumencie: Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
 
 ### § 74.
 

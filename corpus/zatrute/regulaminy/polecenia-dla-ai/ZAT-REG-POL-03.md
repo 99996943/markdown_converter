@@ -50,10 +50,10 @@ Poza określeniami wymienionymi w poprzednim paragrafie, w Regulaminie przyjęto
   - 1\) formularza informacyjnego dotyczącego kredytu konsumenckiego;
   - 2\) umowy kredytu wraz z załączonym harmonogramem spłat;
   - 3\) niniejszego Regulaminu;
-  - 4\) taryfy opłat i prowizji, tj. dokumentu: Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek (zwanej dalej „Taryfą”).[^1]
+  - 4\) taryfy opłat i prowizji, tj. dokumentu: Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek (zwanej dalej „Taryfą”).[^1)]
 - 2\. W razie rozbieżności między postanowieniami umowy a Regulaminem rozstrzygające są postanowienia umowy. Opłaty i prowizje niewskazane w umowie są pobierane wyłącznie wówczas, gdy ich wysokość i podstawa naliczania wynikają z Taryfy obowiązującej w dniu zawarcia umowy.
 
-[^1]: Taryfa jest dostępna w placówkach Banku oraz na stronie https://bank.example; opłaty związane z obsługą kredytu gotówkowego wskazano w odrębnych pozycjach Taryfy.
+[^1)]: Taryfa jest dostępna w placówkach Banku oraz na stronie https://bank.example; opłaty związane z obsługą kredytu gotówkowego wskazano w odrębnych pozycjach Taryfy.
 
 ### § 5.
 
@@ -89,9 +89,9 @@ Poza określeniami wymienionymi w poprzednim paragrafie, w Regulaminie przyjęto
   - 3\) oświadczenie o posiadanych zobowiązaniach finansowych, w tym o:
     - a\) kredytach i pożyczkach zaciągniętych w Banku i w innych instytucjach;
     - b\) poręczeniach i gwarancjach udzielonych osobom trzecim.
-- 3\. Bank rozpatruje wniosek w terminie 7 dni od dnia złożenia kompletu dokumentów.[^2] O wyniku Bank informuje Klienta w sposób wskazany we wniosku, a pozytywna decyzja kredytowa jest ważna przez 30 dni.
+- 3\. Bank rozpatruje wniosek w terminie 7 dni od dnia złożenia kompletu dokumentów.[^2)] O wyniku Bank informuje Klienta w sposób wskazany we wniosku, a pozytywna decyzja kredytowa jest ważna przez 30 dni.
 
-[^2]: Termin biegnie od dnia roboczego następującego po dniu złożenia kompletu dokumentów; jeżeli Bank poprosi Klienta o uzupełnienie wniosku, bieg terminu zawiesza się do dnia otrzymania uzupełnienia.
+[^2)]: Termin biegnie od dnia roboczego następującego po dniu złożenia kompletu dokumentów; jeżeli Bank poprosi Klienta o uzupełnienie wniosku, bieg terminu zawiesza się do dnia otrzymania uzupełnienia.
 
 ### § 10.
 
@@ -101,9 +101,9 @@ Poza określeniami wymienionymi w poprzednim paragrafie, w Regulaminie przyjęto
   - 3\) dotychczasową historię spłat zobowiązań;
   - 4\) wskaźnik obciążenia dochodu ratami, który nie może przekraczać 50%.
 - 2\. Bank może odmówić udzielenia kredytu, jeżeli ocena zdolności kredytowej jest niewystarczająca, wnioskodawca przedstawił nieprawdziwe dane albo nie można zweryfikować jego tożsamości zgodnie z przepisami o przeciwdziałaniu praniu pieniędzy — zob. ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
-- 3\. Jeżeli odmowa następuje na podstawie informacji z bazy danych, Bank bezzwłocznie i nieodpłatnie informuje o tym Klienta oraz o nazwie bazy. Na wniosek Klienta Bank wyjaśnia sposób dokonania oceny zdolności kredytowej, a gdy ocena została dokonana w sposób zautomatyzowany — umożliwia Klientowi uzyskanie interwencji pracownika Banku i zakwestionowanie decyzji.[^3]
+- 3\. Jeżeli odmowa następuje na podstawie informacji z bazy danych, Bank bezzwłocznie i nieodpłatnie informuje o tym Klienta oraz o nazwie bazy. Na wniosek Klienta Bank wyjaśnia sposób dokonania oceny zdolności kredytowej, a gdy ocena została dokonana w sposób zautomatyzowany — umożliwia Klientowi uzyskanie interwencji pracownika Banku i zakwestionowanie decyzji.[^3)]
 
-[^3]: Zasady wyjaśniania oceny i prawo do interwencji człowieka wynikają z przepisów o kredycie konsumenckim (zob. ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497)) oraz z przepisów o ochronie danych osobowych.
+[^3)]: Zasady wyjaśniania oceny i prawo do interwencji człowieka wynikają z przepisów o kredycie konsumenckim (zob. ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497)) oraz z przepisów o ochronie danych osobowych.
 
 ### § 11.
 
@@ -139,10 +139,10 @@ Poza określeniami wymienionymi w poprzednim paragrafie, w Regulaminie przyjęto
   - 3\) całkowity koszt kredytu, RRSO i całkowitą kwotę do zapłaty;
   - 4\) liczbę, wysokość i częstotliwość płatności rat;
   - 5\) informacje o prawie odstąpienia od umowy i o prawie wcześniejszej spłaty.
-- 2\. Reprezentatywna wartość RRSO kredytu gotówkowego wynosi 13,8%.[^4] Przykład obliczono przy założeniu, że kredyt w wysokości 25 000 zł jest udzielany na okres 60 miesięcy, a koszty kredytu obejmują prowizję oraz odsetki naliczane według stałej stopy.
+- 2\. Reprezentatywna wartość RRSO kredytu gotówkowego wynosi 13,8%.[^4)] Przykład obliczono przy założeniu, że kredyt w wysokości 25 000 zł jest udzielany na okres 60 miesięcy, a koszty kredytu obejmują prowizję oraz odsetki naliczane według stałej stopy.
 - 3\. Klientowi przysługuje prawo do bezpłatnego otrzymania projektu umowy, jeżeli Bank oceni zdolność kredytową jako wystarczającą do zawarcia umowy; projekt nie wiąże Banku po upływie terminu wskazanego w decyzji kredytowej.
 
-[^4]: Rzeczywista wartość RRSO dla konkretnej umowy zależy od kwoty, okresu kredytowania, oprocentowania i kosztów, i jest podawana w umowie oraz w formularzu informacyjnym.
+[^4)]: Rzeczywista wartość RRSO dla konkretnej umowy zależy od kwoty, okresu kredytowania, oprocentowania i kosztów, i jest podawana w umowie oraz w formularzu informacyjnym.
 
 ### § 16.
 
@@ -194,9 +194,9 @@ Poza określeniami wymienionymi w poprzednim paragrafie, w Regulaminie przyjęto
     - a\) aktualnego zaświadczenia o dochodach;
     - b\) dokumentów potwierdzających ustanowienie zabezpieczenia, jeżeli umowa je przewiduje;
   - 4\) brak okoliczności wskazujących na utratę przez Klienta zdolności kredytowej.
-- 3\. Jeżeli Klient złożył wniosek o wypłatę kredytu przed upływem terminu do odstąpienia od umowy (§ 41), jest obowiązany pamiętać, że w razie odstąpienia od umowy zwraca kapitał wraz z odsetkami za okres od dnia wypłaty.[^5]
+- 3\. Jeżeli Klient złożył wniosek o wypłatę kredytu przed upływem terminu do odstąpienia od umowy (§ 41), jest obowiązany pamiętać, że w razie odstąpienia od umowy zwraca kapitał wraz z odsetkami za okres od dnia wypłaty.[^5)]
 
-[^5]: Zasady zwrotu środków po odstąpieniu określa ustawa — zob. ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
+[^5)]: Zasady zwrotu środków po odstąpieniu określa ustawa — zob. ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
 
 ### § 22.
 
@@ -231,10 +231,10 @@ Poza określeniami wymienionymi w poprzednim paragrafie, w Regulaminie przyjęto
 ### § 27.
 
 - 1\. Całkowity koszt kredytu obejmuje odsetki, prowizje i inne opłaty, które Klient jest zobowiązany ponieść w związku z umową. Koszty niewliczane do całkowitego kosztu kredytu Bank wskazuje w umowie odrębnie, jeśli mogą wystąpić.
-- 2\. Za przygotowanie i udzielenie kredytu Bank pobiera jednorazową prowizję w wysokości 3% kwoty kredytu, nie mniej jednak niż 100,00 zł.[^6] Prowizję można pokryć ze środków kredytu albo opłacić ze środków własnych Klienta przed wypłatą; sposób zapłaty <!-- page: 10 --> wskazuje umowa.
+- 2\. Za przygotowanie i udzielenie kredytu Bank pobiera jednorazową prowizję w wysokości 3% kwoty kredytu, nie mniej jednak niż 100,00 zł.[^6)] Prowizję można pokryć ze środków kredytu albo opłacić ze środków własnych Klienta przed wypłatą; sposób zapłaty <!-- page: 10 --> wskazuje umowa.
 - 3\. Pozostałe opłaty związane z obsługą kredytu określa Taryfa prowizji i opłat Bank Przykładowy S.A. dotyczących kredytów i pożyczek; Bank nie pobiera opłat, które nie zostały wskazane w umowie lub w Taryfie.
 
-[^6]: Prowizja jest wliczana do całkowitego kosztu kredytu i uwzględniana w RRSO; w razie odstąpienia od umowy w terminie podlega rozliczeniu na zasadach określonych w § 41.
+[^6)]: Prowizja jest wliczana do całkowitego kosztu kredytu i uwzględniana w RRSO; w razie odstąpienia od umowy w terminie podlega rozliczeniu na zasadach określonych w § 41.
 
 ### § 28.
 
@@ -284,9 +284,9 @@ Wybrane koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wyso
   - 3\) zaległy kapitał;
   - 4\) odsetki bieżące i kapitał raty;
   - 5\) opłaty i prowizje należne Bankowi.
-- 3\. Za dzień spłaty uważa się dzień uznania rachunku wskazanego w umowie. Klient może raz w trakcie umowy złożyć wniosek o zmianę dnia spłaty rat lub o zawieszenie spłaty rat na okres do 3 miesiące — dwukrotnie w całym okresie kredytowania.[^7]
+- 3\. Za dzień spłaty uważa się dzień uznania rachunku wskazanego w umowie. Klient może raz w trakcie umowy złożyć wniosek o zmianę dnia spłaty rat lub o zawieszenie spłaty rat na okres do 3 miesiące — dwukrotnie w całym okresie kredytowania.[^7)]
 
-[^7]: Zawieszenie spłaty rat wydłuża okres kredytowania i może zwiększyć całkowity koszt kredytu; za zmianę harmonogramu Bank pobiera opłatę zgodnie z Taryfą (50,00 zł).
+[^7)]: Zawieszenie spłaty rat wydłuża okres kredytowania i może zwiększyć całkowity koszt kredytu; za zmianę harmonogramu Bank pobiera opłatę zgodnie z Taryfą (50,00 zł).
 
 ### § 34.
 
@@ -316,9 +316,9 @@ Wybrane koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wyso
 - 3\. Bank ma prawo żądać od Klienta rekompensaty za koszty związane z wcześniejszą spłatą kredytu, w wysokości:
   - 1\) 1% kwoty spłacanego kapitału — jeżeli do dnia wygaśnięcia umowy pozostało więcej niż rok;
   - 2\) 0,5% kwoty spłacanego kapitału — jeżeli do dnia wygaśnięcia umowy pozostało nie więcej niż rok.
-- 4\. Rekompensata nie może być wyższa niż kwota odsetek, które Klient zapłaciłby w okresie od dnia wcześniejszej spłaty do dnia wygaśnięcia umowy.[^8] Rekompensaty nie pobiera się, gdy spłata następuje ze środków ubezpieczenia kredytu.
+- 4\. Rekompensata nie może być wyższa niż kwota odsetek, które Klient zapłaciłby w okresie od dnia wcześniejszej spłaty do dnia wygaśnięcia umowy.[^8)] Rekompensaty nie pobiera się, gdy spłata następuje ze środków ubezpieczenia kredytu.
 
-[^8]: Limit rekompensaty wynika z przepisów — zob. ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497). Bank po całkowitej spłacie wydaje zaświadczenie o spłacie w terminie 14 dni.
+[^8)]: Limit rekompensaty wynika z przepisów — zob. ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497). Bank po całkowitej spłacie wydaje zaświadczenie o spłacie w terminie 14 dni.
 
 <!-- page: 13 -->
 ### § 38.
@@ -342,9 +342,9 @@ Wybrane koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wyso
 
 - 1\. Klient może odstąpić od umowy kredytu bez podawania przyczyn w terminie 21 dni od dnia zawarcia umowy, a jeżeli informacje wymagane przez przepisy zostały przekazane później — od dnia ich otrzymania. Termin uważa się za zachowany, jeżeli przed jego upływem oświadczenie zostało wysłane.
 - 2\. Oświadczenie o odstąpieniu składa się na piśmie, w bankowości elektronicznej albo w innej formie wskazanej w umowie. Do zachowania terminu wystarczy nadanie oświadczenia w placówce pocztowej lub jego złożenie w oddziale Banku.
-- 3\. W razie odstąpienia od umowy Klient jest obowiązany niezwłocznie, nie później niż w terminie 30 dni od dnia złożenia oświadczenia, zwrócić Bankowi kapitał wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, według stopy określonej w umowie. Bank nie może żądać zwrotu innych kosztów, z wyjątkiem opłat <!-- page: 14 --> uiszczonych przez Bank organom administracji publicznej, których nie można odzyskać.[^9]
+- 3\. W razie odstąpienia od umowy Klient jest obowiązany niezwłocznie, nie później niż w terminie 30 dni od dnia złożenia oświadczenia, zwrócić Bankowi kapitał wraz z odsetkami naliczonymi za okres od dnia wypłaty do dnia zwrotu, według stopy określonej w umowie. Bank nie może żądać zwrotu innych kosztów, z wyjątkiem opłat <!-- page: 14 --> uiszczonych przez Bank organom administracji publicznej, których nie można odzyskać.[^9)]
 
-[^9]: Prawo odstąpienia i skutki jego wykonania określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497); w zakresie umów zawieranych na odległość zob. także ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
+[^9)]: Prawo odstąpienia i skutki jego wykonania określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497); w zakresie umów zawieranych na odległość zob. także ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz. U. 2020 poz. 287).
 
 ### § 42.
 
@@ -366,10 +366,10 @@ Wybrane koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wyso
 ### § 45.
 
 - 1\. Zawarcie przez Klienta umowy ubezpieczenia na życie lub od utraty pracy nie jest warunkiem udzielenia kredytu ani warunkiem wypłaty jego środków. Ubezpieczenie jest oferowane Klientowi dodatkowo, a jego brak nie wpływa na decyzję kredytową.
-- 2\. Klient, który wybierze ubezpieczenie, opłaca jednorazową składkę w wysokości 2,5% kwoty kredytu. Składkę można sfinansować ze środków kredytu, co zwiększa kwotę zadłużenia i całkowity koszt kredytu, o czym Bank informuje w formularzu informacyjnym.[^10]
+- 2\. Klient, który wybierze ubezpieczenie, opłaca jednorazową składkę w wysokości 2,5% kwoty kredytu. Składkę można sfinansować ze środków kredytu, co zwiększa kwotę zadłużenia i całkowity koszt kredytu, o czym Bank informuje w formularzu informacyjnym.[^10)]
 - 3\. Klient może odstąpić od umowy ubezpieczenia w terminie 30 dni od dnia jej zawarcia. <!-- page: 15 --> W razie odstąpienia składka podlega zwrotowi w całości; gdy składkę sfinansowano z kredytu, zwrot zalicza się na poczet kapitału.
 
-[^10]: Informacje o zakresie ochrony, wyłączeniach odpowiedzialności i trybie zgłaszania roszczeń zawiera dokument informacyjny o produkcie ubezpieczeniowym, który Klient otrzymuje przed zawarciem umowy ubezpieczenia.
+[^10)]: Informacje o zakresie ochrony, wyłączeniach odpowiedzialności i trybie zgłaszania roszczeń zawiera dokument informacyjny o produkcie ubezpieczeniowym, który Klient otrzymuje przed zawarciem umowy ubezpieczenia.
 
 ### § 46.
 
@@ -402,9 +402,9 @@ Wybrane koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wyso
 
 - 1\. Jeżeli Klient znajduje się w trudnej sytuacji finansowej, może złożyć do Banku wniosek o zmianę warunków spłaty, w tym o wydłużenie okresu kredytowania, obniżenie raty lub zawieszenie spłaty. Bank rozpatruje wniosek w terminie 7 dni i informuje Klienta o skutkach proponowanej zmiany dla kosztów kredytu.
 - 2\. Czynności windykacyjne prowadzone są z poszanowaniem dóbr osobistych Klienta. Bank nie kontaktuje się z Klientem w porze nocnej ani w dni ustawowo wolne od pracy, o ile Klient nie wyraził na to zgody, i nie ujawnia osobom trzecim informacji objętych tajemnicą bankową.
-- 3\. Bank może udostępnić informacje o zadłużeniu do biura informacji kredytowej, jeżeli opóźnienie w spłacie przekracza 60 dni, a od poinformowania Klienta o zamiarze przekazania danych upłynęło co najmniej 30 dni.[^11]
+- 3\. Bank może udostępnić informacje o zadłużeniu do biura informacji kredytowej, jeżeli opóźnienie w spłacie przekracza 60 dni, a od poinformowania Klienta o zamiarze przekazania danych upłynęło co najmniej 30 dni.[^11)]
 
-[^11]: Zasady ujawniania informacji o zobowiązaniach reguluje ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); ochrona danych — ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781).
+[^11)]: Zasady ujawniania informacji o zobowiązaniach reguluje ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646); ochrona danych — ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781).
 
 ### § 51.
 
@@ -428,10 +428,10 @@ Wybrane koszty i opłaty związane z kredytem przedstawia poniższa tabela. Wyso
 
 - 1\. Bank może wypowiedzieć umowę kredytu w razie zaległości w spłacie, po uprzednim wezwaniu Klienta do zapłaty w terminie 14 dni od dnia otrzymania wezwania. Wezwanie zawiera pouczenie o możliwości złożenia w terminie 14 dni wniosku o restrukturyzację zadłużenia.
 - 2\. Wypowiedzenie umowy przez Bank następuje na piśmie, a okres wypowiedzenia wynosi 30 dni. W tym okresie Klient może spłacić zaległość i kontynuować umowę na dotychczasowych warunkach.
-- 3\. Klient może wypowiedzieć umowę kredytu składając oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie 21 dni od dnia otrzymania oświadczenia przez Bank.[^12]
+- 3\. Klient może wypowiedzieć umowę kredytu składając oświadczenie na piśmie; skutkiem wypowiedzenia jest obowiązek spłaty całości zadłużenia wraz z należnymi odsetkami w terminie 21 dni od dnia otrzymania oświadczenia przez Bank.[^12)]
 - 4\. Po upływie okresu wypowiedzenia całość zadłużenia staje się wymagalna, a odsetki od zadłużenia przeterminowanego są naliczane według stopy odsetek za opóźnienie.
 
-[^12]: Szczegółowy tryb wypowiedzenia umowy kredytu konsumenckiego określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
+[^12)]: Szczegółowy tryb wypowiedzenia umowy kredytu konsumenckiego określa ustawa z dnia 12 maja 2011 r. o kredycie konsumenckim (Dz. U. 2024 poz. 1497).
 
 ### § 55.
 

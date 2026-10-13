@@ -12,10 +12,10 @@ BP/REG/01 Wersja 1 Obowiązuje od 1 listopada 2024 r. do 31 sierpnia 2026 r.
 
 - 1\. Organizatorem promocji „Karta z cashbackiem” (BP/REG/01), zwanej dalej „Promocją”, jest Bank Przykładowy S.A. z siedzibą pod adresem ul. Przykładowa 1, 00-001 Warszawa, wpisany do rejestru przedsiębiorców pod numerem KRS 0000000000, NIP 000-000-00-00, REGON 000000000, zwany dalej „Bankiem”.
 - 2\. Promocja obejmuje comiesięczny zwrot na rachunek posiadacza części kwoty płatności zrealizowanych wydaną w okresie Promocji kartą debetową, na warunkach i w granicach określonych w niniejszym Regulaminie.
-- 3\. Zasady wydawania i używania kart debetowych, w tym zasady autoryzacji transakcji, ustalania limitów i zastrzegania kart, reguluje dokument „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.”. Regulamin Promocji stanowi uzupełnienie tamtych postanowień i nie modyfikuje ich w zakresie nieobjętym Promocją.[^1]
+- 3\. Zasady wydawania i używania kart debetowych, w tym zasady autoryzacji transakcji, ustalania limitów i zastrzegania kart, reguluje dokument „Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.”. Regulamin Promocji stanowi uzupełnienie tamtych postanowień i nie modyfikuje ich w zakresie nieobjętym Promocją.[^1)]
 - 4\. Regulamin jest dostępny w placówkach Banku, w bankowości elektronicznej a także na stronie https://bank.example; na żądanie uczestnika Bank przekazuje go na trwałym nośniku.
 
-[^1]: Opłaty i prowizje związane z kartą wskazuje Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze; udział w Promocji nie zmienia ich wysokości, chyba że Regulamin stanowi inaczej.
+[^1)]: Opłaty i prowizje związane z kartą wskazuje Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze; udział w Promocji nie zmienia ich wysokości, chyba że Regulamin stanowi inaczej.
 
 ### § 2.
 
@@ -33,10 +33,10 @@ BP/REG/01 Wersja 1 Obowiązuje od 1 listopada 2024 r. do 31 sierpnia 2026 r.
 
 ### § 4.
 
-- 1\. Bank nie ma obowiązku przyjmować wniosków od osób, wobec których zachodzą przeszkody wynikające z przepisów o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu; odmowa nie wymaga uzasadnienia, jeżeli przepisy prawa ograniczają jego udzielenie.[^2]
+- 1\. Bank nie ma obowiązku przyjmować wniosków od osób, wobec których zachodzą przeszkody wynikające z przepisów o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu; odmowa nie wymaga uzasadnienia, jeżeli przepisy prawa ograniczają jego udzielenie.[^2)]
 - 2\. W związku z udziałem w Promocji Bank może zażądać od uczestnika przedstawienia dodatkowych informacji lub dokumentów, w szczególności dotyczących źródła pochodzenia środków wykorzystywanych do płatności kartą.
 
-[^2]: Zakres stosowanych środków bezpieczeństwa finansowego określa ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
+[^2)]: Zakres stosowanych środków bezpieczeństwa finansowego określa ustawa z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. 2025 poz. 644).
 
 ### § 5.
 
@@ -178,10 +178,10 @@ Na potrzeby Promocji użyte w Regulaminie określenia oznaczają:
   - 2\) uczestnik wykonał kartą co najmniej 5 płatności kwalifikowanych;
   - 3\) łączna wartość płatności kwalifikowanych nie była niższa niż 300,00 zł;
   - 4\) rachunek powiązany i karta promocyjna były w całym miesiącu rozliczeniowym czynne i niezablokowane.
-- 2\. Do wartości płatności wlicza się wyłącznie płatności rozliczone w miesiącu rozliczeniowym; płatności zrealizowane w ostatnich dniach miesiąca, a rozliczone w następnym, uwzględnia się do miesiąca rozliczenia.[^3]
+- 2\. Do wartości płatności wlicza się wyłącznie płatności rozliczone w miesiącu rozliczeniowym; płatności zrealizowane w ostatnich dniach miesiąca, a rozliczone w następnym, uwzględnia się do miesiąca rozliczenia.[^3)]
 - 3\. Warunki, o których mowa w ust. 1, ocenia Bank automatycznie; uczestnik nie składa w tym zakresie odrębnych oświadczeń.
 
-[^3]: Moment rozliczenia płatności kartą określa Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.; zwykle następuje on w terminie 3 dni od daty transakcji, a data wykonania płatności może się różnić od daty jej zaksięgowania.
+[^3)]: Moment rozliczenia płatności kartą określa Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A.; zwykle następuje on w terminie 3 dni od daty transakcji, a data wykonania płatności może się różnić od daty jej zaksięgowania.
 
 ### § 22.
 
@@ -219,9 +219,9 @@ Na potrzeby Promocji użyte w Regulaminie określenia oznaczają:
 ### § 26.
 
 - 1\. Bank informuje uczestnika o stanie spełnienia warunków w bankowości elektronicznej, w zakładce poświęconej Promocji. Informacje są aktualizowane codziennie i mają charakter orientacyjny do czasu zamknięcia miesiąca rozliczeniowego.
-- 2\. Jeżeli uczestnik wyraził zgodę na powiadomienia, Bank wysyła wiadomość o rozpoczęciu każdego miesiąca rozliczeniowego oraz o zbliżającym się końcu okresu premiowanego. Brak powiadomienia nie zwalnia uczestnika z obowiązku spełnienia warunków Promocji.[^4]
+- 2\. Jeżeli uczestnik wyraził zgodę na powiadomienia, Bank wysyła wiadomość o rozpoczęciu każdego miesiąca rozliczeniowego oraz o zbliżającym się końcu okresu premiowanego. Brak powiadomienia nie zwalnia uczestnika z obowiązku spełnienia warunków Promocji.[^4)]
 
-[^4]: Opłata za powiadomienia SMS, jeżeli uczestnik z nich korzysta, wynika z dokumentu „Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze”; powiadomienia w aplikacji mobilnej i wiadomości e-mail dotyczące Promocji są wolne od opłat.
+[^4)]: Opłata za powiadomienia SMS, jeżeli uczestnik z nich korzysta, wynika z dokumentu „Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze”; powiadomienia w aplikacji mobilnej i wiadomości e-mail dotyczące Promocji są wolne od opłat.
 
 ### § 27.
 
@@ -277,10 +277,10 @@ Na potrzeby Promocji użyte w Regulaminie określenia oznaczają:
 
 ### § 34.
 
-- 1\. Płatności dokonane w walucie innej niż złoty są uwzględniane w kwocie, którą Bank pobrał z rachunku powiązanego, po przeliczeniu według kursu stosowanego do rozliczenia transakcji kartowej.[^5]
+- 1\. Płatności dokonane w walucie innej niż złoty są uwzględniane w kwocie, którą Bank pobrał z rachunku powiązanego, po przeliczeniu według kursu stosowanego do rozliczenia transakcji kartowej.[^5)]
 - 2\. Zmiana kursu waluty po dniu transakcji nie wpływa na kwotę podstawy obliczenia Zwrotu. Opłaty z tytułu przewalutowania i prowizje za transakcje zagraniczne nie podlegają zwrotowi w ramach Promocji.
 
-[^5]: Zasady przeliczeń walutowych, w tym marżę Banku, określają Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A. oraz Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
+[^5)]: Zasady przeliczeń walutowych, w tym marżę Banku, określają Regulamin kart debetowych dla klientów indywidualnych Bank Przykładowy S.A. oraz Bank Przykładowy S.A. — Taryfa opłat i prowizji za karty płatnicze.
 
 ### § 35.
 
@@ -302,9 +302,9 @@ Na potrzeby Promocji użyte w Regulaminie określenia oznaczają:
 - 1\. Bank wypłaca Zwrot przez uznanie rachunku powiązanego, w terminie 14 dni od dnia zakończenia miesiąca rozliczeniowego, za który Zwrot przysługuje.
 - 2\. Zwrot jest wypłacany w złotych. Tytuł przelewu zawiera nazwę Promocji a także wskazanie miesiąca rozliczeniowego, co umożliwia uczestnikowi identyfikację wpływu w historii rachunku.
 - 3\. Jeżeli w dniu wypłaty rachunek powiązany jest zamknięty lub objęty wypowiedzeniem umowy, Zwrot nie jest wypłacany, z zastrzeżeniem ust. 4.
-- 4\. Gdy rachunek został zajęty na podstawie przepisów prawa, w tym tytułu wykonawczego, Zwrot wypłaca się na zasadach przewidzianych dla innych wpływów na rachunek, a środki podlegają zajęciu w takim zakresie, w jakim przepisy to przewidują.[^6]
+- 4\. Gdy rachunek został zajęty na podstawie przepisów prawa, w tym tytułu wykonawczego, Zwrot wypłaca się na zasadach przewidzianych dla innych wpływów na rachunek, a środki podlegają zajęciu w takim zakresie, w jakim przepisy to przewidują.[^6)]
 
-[^6]: Zasady zajęcia rachunku bankowego i kwoty wolne od zajęcia określają przepisy ustawy z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego oraz ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646).
+[^6)]: Zasady zajęcia rachunku bankowego i kwoty wolne od zajęcia określają przepisy ustawy z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego oraz ustawa z dnia 29 sierpnia 1997 r. – Prawo bankowe (Dz. U. 2024 poz. 1646).
 
 ### § 38.
 
@@ -510,10 +510,10 @@ Na potrzeby Promocji użyte w Regulaminie określenia oznaczają:
 ### § 66.
 
 - 1\. Administratorem danych osobowych uczestnika w związku z Promocją jest Bank. Dane przetwarzane są w celu przeprowadzenia Promocji, obliczenia i wypłaty Zwrotu, rozpatrywania reklamacji oraz wykonania obowiązków wynikających z przepisów prawa, w tym podatkowych.
-- 2\. Podstawą przetwarzania jest zawarta umowa oraz zgoda uczestnika w zakresie, w jakim Regulamin tego wymaga, a także uzasadniony interes Banku polegający na zapobieganiu nadużyciom i dochodzeniu roszczeń.[^7]
+- 2\. Podstawą przetwarzania jest zawarta umowa oraz zgoda uczestnika w zakresie, w jakim Regulamin tego wymaga, a także uzasadniony interes Banku polegający na zapobieganiu nadużyciom i dochodzeniu roszczeń.[^7)]
 - 3\. Dane o płatnościach uczestnika są wykorzystywane w ramach Promocji wyłącznie w zakresie niezbędnym do oceny spełnienia jej warunków i nie służą do tworzenia profilu uczestnika w celach marketingowych bez jego odrębnej zgody.
 
-[^7]: Zasady przetwarzania danych osobowych określa ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781) oraz przepisy rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679.
+[^7)]: Zasady przetwarzania danych osobowych określa ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2019 poz. 1781) oraz przepisy rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679.
 
 ## Postanowienia końcowe
 
