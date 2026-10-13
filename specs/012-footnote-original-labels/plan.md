@@ -118,6 +118,38 @@ corpus/                                      # generate/verify
   plan z research R1–R6. Pomiar etykiet sondą tymczasową (usunięta). Następny krok: `/speckit-tasks`.
 - Kandydat o większym zysku jakości niż ta spec: rozpoznawanie odnośników z pełnowymiarową interpunkcją (w
   regulaminie kredytu gotówkowego 17 z 25 przypisów bez odnośnika; spec 011 K1/K2).
+- 2026-10-13, implementacja T001–T027 zakończona (parser 1.4.0, kontrakt Markdown 2.0.0). Commity: `b806b01` red
+  (T003–T006a), `c7759e3` green (T008–T011), `b823c76` goldeny po akceptacji, `bae7aff` US2, `ab02de9` US3, `885e6e8`
+  wersja i korpus, `2dd20fd` dokumentacja, handoff.
+  - **T001/T013**: punkt odniesienia 1.3.1 = 34 dokumenty (6 aktów, 21 prywatnych, 5 z `downloads`, 2 z katalogu
+    głównego). Po normalizacji identyfikatorów Markdown identyczny we wszystkich (SC-133), odwzorowanie numer →
+    identyfikator bijekcją; odnośniki, definicje i FTN001 równe 1.3.1 (SC-131; akty 2, 5, 24, 10, 6, 11). Dopiski
+    tylko w prawo-bankowe (`1)-2`…`7)-2`) i obwieszczenie-msz (`1)-2`, `*)-2`, `**)-2`, `***)-2`); FTN002 w żadnym
+    z tych dokumentów, goldeny `banking` bez zmian (SC-134). Regulamin kredytu gotówkowego: tabela s. 21 ma
+    `TAK[^21]`…`TAK[^24]`, definicje `[^1]:`…`[^25]:` po kolei (quickstart 4).
+  - **T013a (zaakceptowane przez właściciela)**: dłuższe identyfikatory zmieniają pole `length` chunków i granice części
+    bliskich limitowi 2000 znaków: REG-06 § 2 (1999 → 2001, 1 → 2 części; także w kopiach zatrutych),
+    ZAT-REG-FAL-02 § 39, uslugi-platnicze Art. 132e, prywatny ind-4 „35. Lista czynności…”. FR-908 i SC-133
+    uzupełnione o ten wyjątek.
+  - **Zmienione goldeny**: 6 aktów `Corpus/acts`, prywatne goldeny z przypisami (poza gitem), chunki REG-05, REG-06,
+    dz-u-2019-1781-ochrona-danych, `Integration/Expected/us2-headings.expected.md`, 77 plików `corpus/`.
+  - **Testy dostosowane do kontraktu 2.0.0** (tylko identyfikatory): 10 testów replik i jednostkowych (BankTables,
+    CorpusLayouts, FootnoteWarnings, Headings, BlockAssemblyList, NumberCheckTests); „brak `[^5]`” zastąpione liczbą
+    definicji. Niezmiennik 3 w `MarkdownInvariantsTests` i `QualityMetrics` korpusu dopasowują `[^…]`, nie cyfry.
+  - **T016/T017**: kolejność definicji zielona od razu; SC-132 na 34 dokumentach: 184 grupy definicji, 0 naruszeń.
+    Znalezione ograniczenie (README): nieuniesiona etykieta-liczba pod kreską bez odnośnika nie jest przypisem.
+  - **T019**: chunker bez zmian kodu (`FootnoteSelector` wybiera po numerze), test regresji zielony od razu.
+  - **T020**: cmark-gfm (biblioteka GitHuba, `cmarkgfm` w scratchpadzie): `[^21]`, `[^1)]`, `[^*)]`, `[^**)]`,
+    `[^1)-2]` w akapicie i komórce tabeli łączą się z definicjami (`#fn-1)-2`), `*` bez kursywy. GitHub wyświetla w
+    tekście własne numery 1, 2, 3 (README). Podgląd w PR do sprawdzenia przez właściciela.
+  - **T025**: `dotnet test LegalAgent.slnx --filter "Category!=Performance"` z `LEGALAGENT_PRIVATE_CORPUS`: 2277
+    testów, 0 niepowodzeń, 10 pominiętych; `RegulationNumbers_HaveNoExcess` bez zmian `number-check.txt`.
+  - **T026**: `publish/` w wersji 1.4.0: NuGet 1.4.0 pięciu pakietów lokalnie w `publish/nuget/`, `publish/lib/*` i
+    `LegalAgent.{PdfParser,Chunking}/lib` odświeżone, `mBank.FaqGenerator.exe` self-contained single-file skompresowany
+    (`appsettings*.json`, `downloads/`, `faq/` bez zmian). Konwersja 20 regulaminów z `corp`, `firm`, `ind`, `downloads`:
+    0 błędów, FTN002 = 0, FTN001 jak w 1.3.1 (firm 1, ind 1 i 7, kredyt gotówkowy 17, odnawialny 8).
+  - Otwarte: push gałęzi i PR po zgodzie właściciela (gałąź stoi na 011; po scaleniu PR 011 rebase na main, potem 013
+    na 012); NuGet 1.3.1 i 1.4.0 tylko lokalnie w `publish/nuget/`.
 
 ## Complexity Tracking
 

@@ -240,10 +240,10 @@ kolejności 7, 21, 22, 25.
   `RegulationNumbers_HaveNoExcess` bez zmian `number-check.txt`; FTN001 aktów 2, 5, 24, 10, 6, 11 (bramka spec 011);
   dokument z przykładu (quickstart 4) w scratchpadzie. Commit dokumentacji T022–T024:
   `docs: footnote labels, contract 2.0.0, parser README 1.4.0 (spec 012 T022-T024)`.
-- [ ] T026 `publish/` jak w spec 011 T016: NuGet 1.4.0 tylko lokalnie w `publish/nuget/`, exe CLI self-contained,
+- [X] T026 `publish/` jak w spec 011 T016: NuGet 1.4.0 tylko lokalnie w `publish/nuget/`, exe CLI self-contained,
   single-file, `EnableCompressionInSingleFile`; aplikacja FAQ w `publish/mBank.FaqGenerator-win-x64/` bez ruszania
   `downloads/` właściciela. Usunąć `*.actual.*` i pliki tymczasowe z repozytorium (do scratchpada).
-- [ ] T027 Handoff: `specs/012-footnote-original-labels/plan.md` „Stan prac i przekazanie” (wyniki T013, T017, T020,
+- [X] T027 Handoff: `specs/012-footnote-original-labels/plan.md` „Stan prac i przekazanie” (wyniki T013, T017, T020,
   T025, lista zmienionych goldenów, liczba testów), wszystkie zadania w tym pliku oznaczone `[X]`; pamięć projektu.
   Commit `docs: spec 012 handoff (T027)`. Push i opis PR dopiero po potwierdzeniu właściciela; potem rebase 013 na 012.
 
