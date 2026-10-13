@@ -121,6 +121,65 @@ public sealed class RendererTests
         Assert.Contains("resource:\n  - \"https://example.test/pdf/a.pdf\"\n", text, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void Source_UnitWithAnchorAndMarkdownLink_UnitLinksToHeading()
+    {
+        Assert.Equal(
+            "Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), [§ 12](../downloads/a.md#-12-opłaty)",
+            SourceLine(AnchoredA(), new FaqSource("D1", "§ 12")));
+        Assert.Equal(
+            "Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), [§ 12 ust. 3](../downloads/a.md#-12-opłaty)",
+            SourceLine(AnchoredA(), new FaqSource("D1", "§ 12 ust. 3")));
+    }
+
+    [Fact]
+    public void Source_UnitWithBrackets_Escaped()
+    {
+        Assert.Equal(
+            "Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), [§ 12 \\[pkt 1\\]](../downloads/a.md#-12-opłaty)",
+            SourceLine(AnchoredA(), new FaqSource("D1", "§ 12 [pkt 1]")));
+    }
+
+    [Fact]
+    public void Source_NoMarkdownLinkOrAnchor_UnitPlainText()
+    {
+        Assert.Equal(
+            "Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), § 12",
+            SourceLine(AnchoredA() with { MarkdownLink = null }, new FaqSource("D1", "§ 12")));
+        Assert.Equal(
+            "Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), § 12",
+            SourceLine(LocatedA() with { MarkdownLink = "../downloads/a.md" }, new FaqSource("D1", "§ 12")));
+    }
+
+    [Fact]
+    public void Sources_WithoutLinks_EqualLineWithoutLocations()
+    {
+        FaqSourceDocument b = Documents[1] with
+        {
+            UnitLocations = [new FaqUnitLocation("§ 4.", 3, "-4")],
+            MarkdownLink = "../downloads/b.md",
+        };
+        var item = new FaqItem(1, "Pytanie?", "Odpowiedź.", [new FaqSource("D1", "§ 12 [pkt 1]"), new FaqSource("D2", "§ 4")], ["D1-K1", "D2-K1"]);
+
+        string linked = FaqMarkdownRenderer.Render(new FaqResult([item], [AnchoredA(), b], [], null), Header);
+        string plain = FaqMarkdownRenderer.Render(new FaqResult([item], [Documents[0], Documents[1]], [], null), Header);
+
+        Assert.Equal(StripLinks(plain), StripLinks(linked));
+    }
+
+    /// <summary>The text with every link replaced by its text, escapes of brackets removed.</summary>
+    private static string StripLinks(string text) =>
+        System.Text.RegularExpressions.Regex.Replace(text, @"\[((?:\\.|[^\]\\])*)\]\([^)]*\)", m => m.Groups[1].Value)
+            .Replace("\\[", "[", StringComparison.Ordinal)
+            .Replace("\\]", "]", StringComparison.Ordinal);
+
+    private static FaqSourceDocument AnchoredA() =>
+        Documents[0] with
+        {
+            UnitLocations = [new FaqUnitLocation("§ 1", 1, "-1-ogólne"), new FaqUnitLocation("§ 12", 7, "-12-opłaty")],
+            MarkdownLink = "../downloads/a.md",
+        };
+
     private static FaqSourceDocument LocatedA() =>
         Documents[0] with { UnitLocations = [new FaqUnitLocation("§ 1", 1, null), new FaqUnitLocation("§ 12", 7, null)] };
 

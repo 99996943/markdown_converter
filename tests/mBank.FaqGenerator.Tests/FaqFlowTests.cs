@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.RegularExpressions;
 using LegalAgent.Faq;
 using LegalAgent.Faq.Model;
 using LegalAgent.Faq.Tests.Fakes;
@@ -173,6 +174,42 @@ public sealed class FaqFlowTests : IDisposable
         Assert.All(sources, line => Assert.Matches(@"^Źródło: \[Regulamin \d\]\(https://www\.example\.test/pdf/reg-\d\.pdf#page=3\), ", line));
         Assert.DoesNotContain("#page", faq[..faq.IndexOf("\n---\n", StringComparison.Ordinal)], StringComparison.Ordinal);
     }
+
+    [Fact]
+    public async Task FullRun_UnitLinksToHeadingInDownloadedMarkdown()
+    {
+        ServeOnPages();
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        string[] sources = await SourceLinesAsync(app.FaqFile);
+        Assert.Equal(10, sources.Length);
+        foreach (string line in sources)
+        {
+            Match match = Regex.Match(line, @"^Źródło: \[Regulamin (\d)\]\([^)]*#page=3\), \[§ 3\]\(\.\./downloads/(reg-\d\.md)#([^)]+)\)$");
+            Assert.True(match.Success, line);
+            Assert.Equal(Invariant($"reg-{match.Groups[1].Value}.md"), match.Groups[2].Value);
+            string markdown = await File.ReadAllTextAsync(Path.Combine(app.OutputDirectory, match.Groups[2].Value), Ct);
+            Assert.Contains(match.Groups[3].Value, MarkdownAnchors.ForDocument(markdown));
+        }
+    }
+
+    [Fact]
+    public async Task FullRun_FaqElsewhere_RelativePathToMarkdown()
+    {
+        ServeOnPages();
+        string directory = app.Root.Combine(Path.Combine("wyniki", "faq"));
+
+        AppRun run = await app.RunAsync([.. UrlArgs(), "--faq-output", directory], "", Ct);
+
+        Assert.Equal(0, run.Code);
+        string[] sources = await SourceLinesAsync(Path.Combine(directory, "FAQ_mBank.md"));
+        Assert.All(sources, line => Assert.Contains("](../../downloads/reg-", line, StringComparison.Ordinal));
+    }
+
+    private static async Task<string[]> SourceLinesAsync(string faqFile) =>
+        [.. (await File.ReadAllTextAsync(faqFile, Ct)).Split('\n').Where(l => l.StartsWith("Źród", StringComparison.Ordinal))];
 
     /// <summary>Serves the three-page regulations and makes the model cite „§ 3” (page 3) with a quote from it.</summary>
     private void ServeOnPages()

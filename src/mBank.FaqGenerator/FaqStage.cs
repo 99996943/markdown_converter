@@ -18,6 +18,12 @@ internal static class FaqStage
 
     private static readonly UTF8Encoding Utf8NoBom = new(encoderShouldEmitUTF8Identifier: false);
 
+    /// <summary>
+    /// Address of <paramref name="markdownPath"/> relative to <paramref name="faqDirectory"/>: segments joined by
+    /// <c>/</c> and percent-encoded; <c>null</c> when there is no relative path (another drive).
+    /// </summary>
+    internal static string? MarkdownLink(string faqDirectory, string markdownPath) => throw new NotImplementedException();
+
     /// <summary>Runs the stage for converted documents.</summary>
     /// <returns>Exit code.</returns>
     public static async Task<int> RunAsync(

@@ -123,7 +123,7 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
 
 ### Tests for User Story 2 (red)
 
-- [ ] T012 [P] [US2] Nowy `tests/LegalAgent.Faq.Tests/MarkdownAnchorsTests.cs`: `Slug` — tabela przykładów policzonych
+- [X] T012 [P] [US2] Nowy `tests/LegalAgent.Faq.Tests/MarkdownAnchorsTests.cs`: `Slug` — tabela przykładów policzonych
   algorytmem VS Code (research R3: `trim`, `toLowerCase`, usunięcie znaków spoza L, M, Nd, Nl, Pc, `-`, białych znaków,
   każdy biały znak → `-`): „§ 26. Tytuł” → `-26-tytuł`; „8. Mobilna wpłata” → `8-mobilna-wpłata`; „Rozdział 1.
   Przepisy ogólne” → `rozdział-1-przepisy-ogólne`; „Art. 5¹” → `art-5`; „„Konto z premią”” → `konto-z-premią`;
@@ -131,7 +131,7 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
   `ForDocument` — nagłówki ATX `#`–`######` w kolejności, tekst bez znaczników `#`, z usuniętymi ucieczkami `\)`,
   `\.` i znacznikami `**`/`*`; powtórzenia `x`, `x-1`, `x-2`; liczony także tytuł `#`; wiersze w blokach kodu i
   wiersze zaczynające się od `#` bez spacji nie są nagłówkami.
-- [ ] T013 [P] [US2] `tests/LegalAgent.Faq.Tests/Conversion/UnitExtractorTests.cs`: `Locate` daje `Anchor` nagłówka
+- [X] T013 [P] [US2] `tests/LegalAgent.Faq.Tests/Conversion/UnitExtractorTests.cs`: `Locate` daje `Anchor` nagłówka
   sekcji (oznaczenie i tekst nagłówka tej samej sekcji → ta sama kotwica); dwie sekcje o tym samym nagłówku → druga
   z dopiskiem `-1`, a jednostka (pierwsze wystąpienie) wskazuje pierwszą; Markdown z inną liczbą nagłówków sekcji niż
   sekcji (np. dopisany nagłówek) → wszystkie `Anchor` = `null`, strony zostają; SC-141: każda kotwica z `Locate` należy
@@ -139,11 +139,11 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
   `tests/LegalAgent.PdfParser.Tests/Corpus/acts/*.pdf` (ścieżka przez `CallerFilePath`) i, jeśli dostępny z tego
   projektu testów, na syntetycznym dokumencie-tabeli — liczba nagłówków sekcji w Markdownie (bez tytułu) = liczba
   sekcji, czyli fallback z T018 nie wyłącza kotwic.
-- [ ] T014 [P] [US2] `tests/LegalAgent.Faq.Tests/RendererTests.cs`: `MarkdownLink` = `../downloads/a.md`, położenie
+- [X] T014 [P] [US2] `tests/LegalAgent.Faq.Tests/RendererTests.cs`: `MarkdownLink` = `../downloads/a.md`, położenie
   „§ 12” z `Anchor` `-12-opłaty` → `Źródło: [Regulamin A](https://example.test/pdf/a.pdf#page=7), [§ 12](../downloads/a.md#-12-opłaty)`;
   tekst jednostki z `[`/`]` → `\[`, `\]`; `MarkdownLink` = `null` albo `Anchor` = `null` → jednostka zwykłym tekstem;
   usunięcie linków (zamiana `[t](adres)` na `t`) daje wiersz identyczny z wierszem bez położeń (SC-143).
-- [ ] T015 [P] [US2] Testy aplikacji w `tests/mBank.FaqGenerator.Tests/FaqFlowTests.cs`: (a) domyślne katalogi
+- [X] T015 [P] [US2] Testy aplikacji w `tests/mBank.FaqGenerator.Tests/FaqFlowTests.cs`: (a) domyślne katalogi
   (`downloads`, `faq`) → link jednostki `../downloads/<plik>.md#kotwica`, kotwica ∈ `MarkdownAnchors.ForDocument` tego
   pliku (SC-141), 100% źródeł z jednostką ma oba linki (SC-140); (b) `--output` i `--faq-output` w różnych katalogach
   → ścieżka względna między nimi. Nowy `tests/mBank.FaqGenerator.Tests/MarkdownLinkTests.cs` dla
@@ -152,7 +152,7 @@ nagłówek o tej kotwicy istnieje w zapisanym Markdownie.
   spacją i nawiasem → segment `regulamin%20%28a%29.md`; FAQ głębiej → `../../downloads/a.md`; tylko na Windows
   (`Assert.SkipUnless(OperatingSystem.IsWindows(), …)`) — `C:\faq` i `D:\dl\a.md` → `null` (FR-1003: bez linku do
   Markdownu, link `#page` zostaje).
-- [ ] T016 [US2] Uruchomić testy T012–T015: padają z właściwego powodu (`NotImplementedException` w `Slug`/`ForDocument`,
+- [X] T016 [US2] Uruchomić testy T012–T015: padają z właściwego powodu (`NotImplementedException` w `Slug`/`ForDocument`,
   brak linku jednostki). Commit red: `test: FAQ unit links to the Markdown heading (red, spec 013 T012-T015)`.
 
 ### Implementation for User Story 2 (green)
