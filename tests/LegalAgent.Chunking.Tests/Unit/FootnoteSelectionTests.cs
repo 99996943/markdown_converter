@@ -122,6 +122,33 @@ public sealed class FootnoteSelectionTests
         Assert.DoesNotContain("[^1]", chunks[1].Content, StringComparison.Ordinal);
     }
 
+    /// <summary>Spec 012: parts render the PDF label as the footnote identifier; selection still goes by number.</summary>
+    [Fact]
+    public async Task ChunkParts_KeepThePdfFootnoteLabels()
+    {
+        string[] t = [.. Enumerable.Range(1, 3).Select(i => Words(i, 90))];
+        Section unit = Section(
+            3,
+            SectionKind.Paragraph,
+            "§ 6",
+            "§ 6.",
+            1,
+            1,
+            [Para(1, 1, Text(t[0])), Para(1, 1, Text(t[1]), Ref(1, "21")), Para(1, 1, Text(t[2]), Ref(2, "1)-2"))],
+            [Footnote(1, "Przypis dwudziesty pierwszy.", identifier: "21"), Footnote(2, "Przypis złożony.", identifier: "1)-2")]);
+
+        IReadOnlyList<Model.Chunk> chunks = await Chunk(Document(null, null, unit));
+
+        Assert.True(chunks.Count >= 3, string.Join("\n---\n", chunks.Select(c => c.Content)));
+        Assert.DoesNotContain("]:", chunks[0].Content, StringComparison.Ordinal);
+        Model.Chunk second = chunks.Single(c => c.Content.Contains("[^21]", StringComparison.Ordinal));
+        Assert.Contains("[^21]:", second.Content, StringComparison.Ordinal);
+        Assert.DoesNotContain("[^1)-2]:", second.Content, StringComparison.Ordinal);
+        Model.Chunk third = chunks.Single(c => c.Content.Contains("[^1)-2]", StringComparison.Ordinal));
+        Assert.Contains("[^1)-2]:", third.Content, StringComparison.Ordinal);
+        Assert.DoesNotContain("[^21]", third.Content, StringComparison.Ordinal);
+    }
+
     private static async Task<IReadOnlyList<Model.Chunk>> Chunk(LegalDocument document)
     {
         IDocumentChunker chunker = new ServiceCollection().AddLegalAgentChunking(o => o.MaxChunkLength = Limit).BuildServiceProvider().GetRequiredService<IDocumentChunker>();

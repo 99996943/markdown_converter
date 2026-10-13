@@ -198,10 +198,10 @@ kolejności 7, 21, 22, 25.
 
 **Independent Test**: unit podzielony na części; część z odnośnikiem zawiera `[^21]` i `[^21]:`.
 
-- [ ] T018 [P] [US3] `tests/LegalAgent.Chunking.Tests/Fixtures/Doc.cs`: przeciążenia `Ref(int number, string identifier)`
+- [X] T018 [P] [US3] `tests/LegalAgent.Chunking.Tests/Fixtures/Doc.cs`: przeciążenia `Ref(int number, string identifier)`
   i `Footnote(int number, string text, int page = 1, string identifier = "")` ustawiające `Identifier` (istniejące
   wywołania bez zmian).
-- [ ] T019 [US3] Test w `tests/LegalAgent.Chunking.Tests/Unit/FootnoteSelectionTests.cs` (lub `FragmentRendererTests.cs`,
+- [X] T019 [US3] Test w `tests/LegalAgent.Chunking.Tests/Unit/FootnoteSelectionTests.cs` (lub `FragmentRendererTests.cs`,
   gdzie dziś są testy części z przypisami): unit dłuższy niż `MaxChunkLength` z odnośnikiem do przypisu o
   identyfikatorze „21” w drugiej części → ta część zawiera `[^21]` i `[^21]:`, pierwsza nie zawiera żadnej
   definicji; przypis o identyfikatorze „1)-2” → `[^1)-2]`. Wybór definicji po `Number` bez zmian
@@ -215,7 +215,7 @@ kolejności 7, 21, 22, 25.
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T020 Podgląd GFM (research R3): plik w scratchpadzie z `[^21]`, `[^1)]`, `[^*)]`, `[^**)]`, `[^1)-2]` w
+- [X] T020 Podgląd GFM (research R3): plik w scratchpadzie z `[^21]`, `[^1)]`, `[^*)]`, `[^**)]`, `[^1)-2]` w
   akapicie i w komórce tabeli; sprawdzić w podglądzie Markdownu VS Code, że każdy odnośnik prowadzi do swojej
   definicji, a `*` nie daje kursywy. Podgląd na GitHubie (gist/PR) to publikacja na zewnątrz — przygotować fragment
   i poprosić właściciela o sprawdzenie w opisie PR; wynik do handoffu.
