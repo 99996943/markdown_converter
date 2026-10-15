@@ -1,4 +1,5 @@
 using System.Globalization;
+using LegalAgent.Globalization;
 using LegalAgent.Downloads.Model;
 
 namespace MBank.FaqGenerator;
@@ -6,7 +7,7 @@ namespace MBank.FaqGenerator;
 /// <summary>Prints progress and the summary (contracts/cli.md → „Postęp i podsumowanie”).</summary>
 internal sealed class ConsoleReport(TextWriter stdout, TextWriter stderr, int count) : IProgress<DownloadEvent>
 {
-    private static readonly CultureInfo Polish = CultureInfo.GetCultureInfo("pl-PL");
+    private static readonly CultureInfo Polish = PolishCulture.Culture;
     private readonly Lock gate = new();
 
     /// <summary>Formats a size in B, KB or MB with one decimal (pl-PL).</summary>

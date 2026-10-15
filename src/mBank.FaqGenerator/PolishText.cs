@@ -1,4 +1,5 @@
 using System.Globalization;
+using LegalAgent.Globalization;
 
 namespace MBank.FaqGenerator;
 
@@ -6,7 +7,7 @@ namespace MBank.FaqGenerator;
 internal static class PolishText
 {
     /// <summary>The pl-PL culture used for every number shown to the user.</summary>
-    public static readonly CultureInfo Culture = CultureInfo.GetCultureInfo("pl-PL");
+    public static readonly CultureInfo Culture = PolishCulture.Culture;
 
     /// <summary>The number with digit grouping (pl-PL).</summary>
     public static string Number(long value) => value.ToString("N0", Culture);

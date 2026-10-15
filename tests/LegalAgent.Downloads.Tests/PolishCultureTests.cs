@@ -23,7 +23,17 @@ public sealed class PolishCultureTests
     [Fact]
     public void Create_WithoutPolishCulture_MatchesSystemPolishCulture()
     {
-        CultureInfo system = CultureInfo.GetCultureInfo("pl-PL");
+        CultureInfo system;
+        try
+        {
+            system = CultureInfo.GetCultureInfo("pl-PL");
+        }
+        catch (CultureNotFoundException)
+        {
+            Assert.Skip("pl-PL is not available (globalization-invariant mode)");
+            return;
+        }
+
         CultureInfo fallback = PolishCulture.Create(name => throw new CultureNotFoundException(nameof(name), name, "invariant mode"));
 
         foreach (string format in Formats)

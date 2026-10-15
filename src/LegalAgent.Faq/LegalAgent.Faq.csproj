@@ -12,4 +12,7 @@
   <ItemGroup>
     <InternalsVisibleTo Include="LegalAgent.Faq.Tests" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\PolishCulture.cs" Link="Shared\PolishCulture.cs" />
+  </ItemGroup>
 </Project>

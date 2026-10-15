@@ -1,4 +1,5 @@
 using System.Globalization;
+using LegalAgent.Globalization;
 using System.Security.Cryptography;
 using LegalAgent.Downloads.Model;
 
@@ -9,7 +10,7 @@ internal sealed class SingleDownload(HttpClient httpClient, DownloadOptions opti
 {
     private const int BufferSize = 81920;
     private static readonly byte[] PdfSignature = "%PDF-"u8.ToArray();
-    private static readonly CultureInfo Polish = CultureInfo.GetCultureInfo("pl-PL");
+    private static readonly CultureInfo Polish = PolishCulture.Culture;
     private readonly HostAllowList hosts = new(options.AllowedHosts);
 
     /// <summary>Downloads the planned item into the directory; failures become results.</summary>

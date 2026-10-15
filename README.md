@@ -81,6 +81,9 @@ Potok etapów (`IPipelineStage`) stosuje heurystyki:
 
 - .NET SDK wg `global.json` (10.0.x, `rollForward: latestFeature`) oraz **runtime .NET 9.0.x GA** (`dotnet --list-runtimes` musi pokazać `Microsoft.NETCore.App 9.0.*` bez sufiksu `preview`).
 - Linux: biblioteka ICU (Alpine: `apk add icu-libs`). **Nie** ustawiaj `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1`.
+  Bez ICU (tryb invariant) aplikacja działa, a liczby w komunikatach mają format pl-PL, ale .NET nie normalizuje
+  Unicode (NFC) poza ASCII: parser nie składa liter z rozłożonymi znakami diakrytycznymi, a nazwy pobranych plików
+  mogą zostać w formie rozłożonej.
 
 ```bash
 dotnet build LegalAgent.slnx -c Release

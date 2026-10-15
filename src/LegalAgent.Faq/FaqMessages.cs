@@ -1,4 +1,5 @@
 using System.Globalization;
+using LegalAgent.Globalization;
 using LegalAgent.Faq.Model;
 
 namespace LegalAgent.Faq;
@@ -6,7 +7,7 @@ namespace LegalAgent.Faq;
 /// <summary>Polish messages of the library exceptions; numbers in pl-PL.</summary>
 internal static class FaqMessages
 {
-    private static readonly CultureInfo Polish = CultureInfo.GetCultureInfo("pl-PL");
+    private static readonly CultureInfo Polish = PolishCulture.Culture;
 
     public static string InputTooLong(string documentName, int characters, int estimatedTokens, int limit) =>
         string.Create(
