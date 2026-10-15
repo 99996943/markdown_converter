@@ -53,6 +53,8 @@ Odpowiedź modelu, jeden lub więcej akapitów, bez zmian poza przycięciem bia�
 - **Wiersz źródeł:**
   - etykieta `Źródło:` dla jednego źródła, `Źródła:` dla kilku; źródła oddzielone `; `;
   - źródło to `[<Name dokumentu>](<Resource>)`, a gdy wskazano jednostkę: `, <jednostka>`;
+  - od wersji 1.5.0 nazwa dokumentu prowadzi do strony PDF-u, a jednostka do nagłówka w Markdownie dokumentu —
+    szczegóły w `specs/013-faq-source-links/contracts/faq-file-links.md`;
   - etykieta i link to jedyny tekst dodawany przez aplikację do treści (FR-432 — formatowanie źródła, nie
     treść merytoryczna).
 - **Odstępy:** między sekcjami dokładnie jeden pusty wiersz, bez spacji na końcach wierszy.

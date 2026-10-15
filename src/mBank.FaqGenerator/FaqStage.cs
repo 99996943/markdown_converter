@@ -18,11 +18,29 @@ internal static class FaqStage
 
     private static readonly UTF8Encoding Utf8NoBom = new(encoderShouldEmitUTF8Identifier: false);
 
-    /// <summary>Runs the stage for converted documents.</summary>
+    /// <summary>
+    /// Address of <paramref name="markdownPath"/> relative to <paramref name="faqDirectory"/>: segments joined by
+    /// <c>/</c> and percent-encoded; <c>null</c> when there is no relative path (another drive).
+    /// </summary>
+    internal static string? MarkdownLink(string faqDirectory, string markdownPath)
+    {
+        string relative = Path.GetRelativePath(faqDirectory, markdownPath);
+        if (Path.IsPathRooted(relative))
+        {
+            return null;
+        }
+
+        return string.Join(
+            '/',
+            relative.Split([Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar]).Select(s => s == ".." ? s : Uri.EscapeDataString(s)));
+    }
+
+    /// <summary>Runs the stage for converted documents whose Markdown files are in <paramref name="downloadDirectory"/>.</summary>
     /// <returns>Exit code.</returns>
     public static async Task<int> RunAsync(
         IReadOnlyList<ConvertedDocument> documents,
         AppConfiguration configuration,
+        string downloadDirectory,
         string faqDirectory,
         IKeyInput keys,
         TextWriter stdout,
@@ -42,7 +60,11 @@ internal static class FaqStage
                 string.IsNullOrWhiteSpace(d.Title) ? d.MarkdownFileName : d.Title,
                 d.Address,
                 d.Markdown,
-                d.Units)),
+                d.Units)
+            {
+                UnitLocations = d.UnitLocations,
+                MarkdownLink = MarkdownLink(faqDirectory, Path.Combine(downloadDirectory, d.MarkdownFileName)),
+            }),
         ];
         try
         {

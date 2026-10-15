@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.RegularExpressions;
 using LegalAgent.Faq;
 using LegalAgent.Faq.Model;
 using LegalAgent.Faq.Tests.Fakes;
@@ -157,6 +158,88 @@ public sealed class FaqFlowTests : IDisposable
 
         Assert.Equal(2, run.Code);
         Assert.Contains("--faq-output", run.Err, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task FullRun_SourceNameLinksToPageOfUnit()
+    {
+        ServeOnPages();
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        string faq = await File.ReadAllTextAsync(app.FaqFile, Ct);
+        string[] sources = [.. faq.Split('\n').Where(l => l.StartsWith("Źród", StringComparison.Ordinal))];
+        Assert.Equal(10, sources.Length);
+        Assert.All(sources, line => Assert.Matches(@"^Źródło: \[Regulamin \d\]\(https://www\.example\.test/pdf/reg-\d\.pdf#page=3\), ", line));
+        Assert.DoesNotContain("#page", faq[..faq.IndexOf("\n---\n", StringComparison.Ordinal)], StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public async Task FullRun_UnitLinksToHeadingInDownloadedMarkdown()
+    {
+        ServeOnPages();
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        string[] sources = await SourceLinesAsync(app.FaqFile);
+        Assert.Equal(10, sources.Length);
+        foreach (string line in sources)
+        {
+            Match match = Regex.Match(line, @"^Źródło: \[Regulamin (\d)\]\([^)]*#page=3\), \[§ 3\]\(\.\./downloads/(reg-\d\.md)#([^)]+)\)$");
+            Assert.True(match.Success, line);
+            Assert.Equal(Invariant($"reg-{match.Groups[1].Value}.md"), match.Groups[2].Value);
+            string markdown = await File.ReadAllTextAsync(Path.Combine(app.OutputDirectory, match.Groups[2].Value), Ct);
+            Assert.Contains(match.Groups[3].Value, MarkdownAnchors.ForDocument(markdown));
+        }
+    }
+
+    [Fact]
+    public async Task FullRun_FaqElsewhere_RelativePathToMarkdown()
+    {
+        ServeOnPages();
+        string directory = app.Root.Combine(Path.Combine("wyniki", "faq"));
+
+        AppRun run = await app.RunAsync([.. UrlArgs(), "--faq-output", directory], "", Ct);
+
+        Assert.Equal(0, run.Code);
+        string[] sources = await SourceLinesAsync(Path.Combine(directory, "FAQ_mBank.md"));
+        Assert.All(sources, line => Assert.Contains("](../../downloads/reg-", line, StringComparison.Ordinal));
+    }
+
+    private static async Task<string[]> SourceLinesAsync(string faqFile) =>
+        [.. (await File.ReadAllTextAsync(faqFile, Ct)).Split('\n').Where(l => l.StartsWith("Źród", StringComparison.Ordinal))];
+
+    /// <summary>Serves the three-page regulations and makes the model cite „§ 3” (page 3) with a quote from it.</summary>
+    private void ServeOnPages()
+    {
+        for (int i = 0; i < Urls.Length; i++)
+        {
+            app.Http.Pdf(Urls[i], TestPdfs.RegulationOnPages(Urls[i], Invariant($"Regulamin {i + 1}")));
+        }
+
+        app.Model.Fallback = call =>
+        {
+            if (!call.User.StartsWith("Dokument D", StringComparison.Ordinal))
+            {
+                return FaqJson.ValidAnswer(call);
+            }
+
+            string id = call.User["Dokument ".Length..call.User.IndexOf(':', StringComparison.Ordinal)];
+            string quote = LineAfterHeading(call.User, "§ 3.");
+            return FaqJson.Candidates(
+                new CandidateJson(Invariant($"Jak wypowiedzieć umowę {id}?"), "W każdym czasie.", "§ 3", quote),
+                new CandidateJson(Invariant($"Kiedy można wypowiedzieć umowę {id}?"), "W każdym czasie.", "§ 3", quote));
+        };
+    }
+
+    /// <summary>The first text line after the heading ending with <paramref name="heading"/>.</summary>
+    private static string LineAfterHeading(string text, string heading)
+    {
+        string[] lines = text.Split('\n');
+        int index = Array.FindIndex(lines, l => l.StartsWith('#') && l.EndsWith(" " + heading, StringComparison.Ordinal));
+        return lines.Skip(index + 1).First(l => l.Length > 0 && !l.StartsWith("<!--", StringComparison.Ordinal));
     }
 
     private static string ExpectedFaq()

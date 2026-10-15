@@ -23,7 +23,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   redirected stdin) → `FaqGenerator` through `ChatServiceFactory` (Azure OpenAI connector, no retries, per-request
   timeout, strict JSON schema) → `faq/FAQ_mBank.md` (not git-ignored). Exit codes 5 conversion, 6 service/too long,
   7 rejected response. `scripts/azure/create-openai.sh` creates the resource group, account and deployment
-  idempotently and never reads the key.
+  idempotently and never reads the key. Spec 013: source lines link the document name to the PDF page (`#page=N`;
+  `UnitExtractor.Locate` gives the first page of each unit's section) and the unit to the heading of the document
+  Markdown (`MarkdownAnchors`, github-slugger/VS Code anchors; the app passes `FaqDocumentInput.MarkdownLink`
+  relative to the FAQ file).
 - **The API key is never configuration**: no option, no environment variable, `AzureOpenAI:ApiKey` is rejected; FAQ
   messages go through `SecretRedactor`.
 

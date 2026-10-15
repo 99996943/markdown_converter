@@ -1,3 +1,4 @@
+using LegalAgent.Faq.Model;
 using LegalAgent.PdfParser.Model;
 
 namespace LegalAgent.Faq.Conversion.Model;
@@ -27,7 +28,11 @@ public sealed record ConvertedDocument(
     string Markdown,
     IReadOnlyList<string> Units,
     int PageCount,
-    IReadOnlyList<ConversionWarning> Warnings);
+    IReadOnlyList<ConversionWarning> Warnings)
+{
+    /// <summary>Where each unit of <see cref="Units"/> starts, in the same order (spec 013).</summary>
+    public IReadOnlyList<FaqUnitLocation> UnitLocations { get; init; } = [];
+}
 
 /// <summary>A document that could not be converted.</summary>
 /// <param name="Index">Position 1…n.</param>

@@ -13,14 +13,20 @@ public static partial class UnitMatcher
     /// <param name="cited">Unit cited by the model, e.g. „§ 12 ust. 3”.</param>
     /// <param name="units">Units of the document.</param>
     /// <returns><c>true</c> when the unit exists in the document.</returns>
-    public static bool Matches(string cited, IReadOnlyCollection<string> units)
+    public static bool Matches(string cited, IReadOnlyCollection<string> units) => Find(cited, units) is not null;
+
+    /// <summary>The first unit of <paramref name="units"/> that <paramref name="cited"/> matches (see <see cref="Matches"/>), or <c>null</c>.</summary>
+    /// <param name="cited">Unit cited by the model, e.g. „§ 12 ust. 3”.</param>
+    /// <param name="units">Units of the document, in document order.</param>
+    /// <returns>The matched unit as listed, or <c>null</c>.</returns>
+    public static string? Find(string cited, IEnumerable<string> units)
     {
         ArgumentNullException.ThrowIfNull(cited);
         ArgumentNullException.ThrowIfNull(units);
         string normalized = Normalize(cited);
         if (normalized.Length == 0)
         {
-            return false;
+            return null;
         }
 
         foreach (string unit in units)
@@ -28,11 +34,11 @@ public static partial class UnitMatcher
             string candidate = Normalize(unit);
             if (StartsWithUnit(normalized, candidate) || StartsWithUnit(normalized, HeadingNumber(candidate)))
             {
-                return true;
+                return unit;
             }
         }
 
-        return false;
+        return null;
     }
 
     private static bool StartsWithUnit(string cited, string unit) =>

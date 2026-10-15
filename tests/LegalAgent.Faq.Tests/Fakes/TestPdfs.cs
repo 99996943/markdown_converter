@@ -29,6 +29,26 @@ internal static class TestPdfs
         return padded;
     }
 
+    /// <summary>
+    /// A regulation over three pages: „Rozdział 1.” and „§ 1.” on page 1, „§ 2.” on page 2, „§ 3.” on page 3 (spec 013);
+    /// <paramref name="seed"/> varies the text.
+    /// </summary>
+    public static byte[] RegulationOnPages(string seed, string title = "Regulamin rachunku") =>
+        new SyntheticPdfBuilder()
+            .Title(title)
+            .Page()
+            .Text(200, 80, title, 14, bold: true)
+            .Text(72, 130, "Rozdział 1. Postanowienia ogólne", 12, bold: true)
+            .Text(72, 160, "§ 1.", 11, bold: true)
+            .Text(72, 180, $"Regulamin określa zasady prowadzenia rachunku {seed}.")
+            .Page()
+            .Text(72, 80, "§ 2.", 11, bold: true)
+            .Text(72, 100, $"Bank pobiera opłaty zgodnie z taryfą {seed}.")
+            .Page()
+            .Text(72, 80, "§ 3.", 11, bold: true)
+            .Text(72, 100, $"Umowę można wypowiedzieć w każdym czasie {seed}.")
+            .Build();
+
     /// <summary>A PDF with one page and no text.</summary>
     public static byte[] NoText() => new SyntheticPdfBuilder().Page().FilledRect(72, 100, 100, 50).Build();
 
