@@ -79,6 +79,7 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
             FaqEventKind.SelectionStarted => $"[wybór] {Candidates(value.Count ?? 0)} — {Size(value)}…",
             FaqEventKind.SelectionCorrection => $"[wybór] odpowiedź odrzucona ({value.Detail}) — prośba o poprawkę…",
             FaqEventKind.SelectionItemSkipped => $"[wybór] pominięto {SkippedItem(value.Detail ?? string.Empty)}",
+            FaqEventKind.SelectionItemFilled => $"[wybór] uzupełniono {Filled(value.Detail ?? string.Empty)}",
             FaqEventKind.SelectionFinished => $"[wybór] {Questions(value.Count ?? 0)} ({Usage(value.Usage)})",
             _ => null,
         };
@@ -102,6 +103,10 @@ internal sealed class FaqConsoleReport(TextWriter stdout, IReadOnlyDictionary<st
     /// <summary>„pozycja 11: …” as „pozycję 11: …”.</summary>
     private static string SkippedItem(string detail) =>
         detail.StartsWith("pozycja ", StringComparison.Ordinal) ? "pozycję " + detail["pozycja ".Length..] : detail;
+
+    /// <summary>„kandydat D1-K3: …” as „kandydatem D1-K3: …”.</summary>
+    private static string Filled(string detail) =>
+        detail.StartsWith("kandydat ", StringComparison.Ordinal) ? "kandydatem " + detail["kandydat ".Length..] : detail;
 
     /// <summary>„kandydat D1-K3: …” as „kandydata D1-K3: …”.</summary>
     private static string Dropped(string detail) =>

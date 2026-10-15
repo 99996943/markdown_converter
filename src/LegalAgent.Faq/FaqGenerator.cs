@@ -144,12 +144,19 @@ public sealed class FaqGenerator
             (string correctedText, FaqUsage? correctedUsage) = await AskAsync(FaqStep.Selection, null, selectionSystem, selectionUser, correction, cancellationToken)
                 .ConfigureAwait(false);
             selectionUsage = UsageReader.Add(selectionUsage, correctedUsage, first: false);
-            result = Select(correctedText, candidates, minPerDocument, maxPerDocument);
+            result = Select(correctedText, candidates, minPerDocument, maxPerDocument, options.FillFromCandidates);
         }
 
         foreach (string skipped in result.Skipped)
         {
             progress?.Report(new FaqEvent(FaqEventKind.SelectionItemSkipped, null, 0, 0, null, null, skipped));
+        }
+
+        var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
+        foreach (string filled in result.Filled)
+        {
+            string id = filled["kandydat ".Length..filled.IndexOf(':', StringComparison.Ordinal)];
+            progress?.Report(new FaqEvent(FaqEventKind.SelectionItemFilled, candidatesById[id].DocumentId, 0, 0, null, null, filled));
         }
 
         total = UsageReader.Add(total, selectionUsage, first: false);
@@ -184,11 +191,11 @@ public sealed class FaqGenerator
 
     /// <summary>The parsed and validated selection.</summary>
     /// <exception cref="FaqResponseException">The text is not JSON of the schema or breaks the rules.</exception>
-    private SelectionResult Select(string text, IReadOnlyList<FaqCandidate> candidates, int minPerDocument, int maxPerDocument)
+    private SelectionResult Select(string text, IReadOnlyList<FaqCandidate> candidates, int minPerDocument, int maxPerDocument, bool fill = false)
     {
         Parsed<IReadOnlyList<ParsedItem>> selection = FaqResponseParser.ParseSelection(text);
         IReadOnlyList<ParsedItem> items = selection.Value ?? throw new FaqResponseException(FaqStep.Selection, null, [selection.Problem!]);
-        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount, minPerDocument, maxPerDocument, options.MergeDocuments);
+        return FaqResponseValidator.ValidateSelection(items, candidates, options.ItemCount, minPerDocument, maxPerDocument, options.MergeDocuments, fill);
     }
 
     /// <summary>
