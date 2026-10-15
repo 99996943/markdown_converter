@@ -4,6 +4,9 @@
     <RootNamespace>LegalAgent.Downloads</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Shared\PolishCulture.cs" Link="Shared\PolishCulture.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <InternalsVisibleTo Include="LegalAgent.Downloads.Tests" />
   </ItemGroup>
 </Project>
