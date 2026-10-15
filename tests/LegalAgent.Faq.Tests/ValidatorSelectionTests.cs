@@ -216,6 +216,77 @@ public sealed class ValidatorSelectionTests
         Assert.Equal(["pozycja 1: łączy kandydatów różnych dokumentów (D1, D2)"], result.Skipped);
     }
 
+    /// <summary>
+    /// T067r (owner's run, gpt-4.1-mini): after the correction the selection still left documents without items; the
+    /// program completes it with the first unused candidate of each such document.
+    /// </summary>
+    [Fact]
+    public void Fill_DocumentWithoutItems_GetsItsFirstUnusedCandidate()
+    {
+        SelectionResult result = FaqResponseValidator.ValidateSelection(
+            [Item(1, "D1-K1"), Item(2, "D2-K1"), Item(3, "D1-K2")],
+            Candidates,
+            3,
+            minPerDocument: 1,
+            maxPerDocument: 2,
+            fillFromCandidates: true);
+
+        Assert.Equal(["Pytanie końcowe 1?", "Pytanie końcowe 2?", "P4?"], result.Items.Select(i => i.Question));
+        Assert.Equal([1, 2, 3], result.Items.Select(i => i.Number));
+        FaqItem filled = result.Items[2];
+        Assert.Equal("O4.", filled.Answer);
+        Assert.Equal([new FaqSource("D3", null)], filled.Sources);
+        Assert.Equal(["D3-K1"], filled.BasedOn);
+        Assert.Equal(["kandydat D3-K1: P4?"], result.Filled);
+    }
+
+    /// <summary>T067r: items missing under the per-document maximum come from unused candidates of documents with room.</summary>
+    [Fact]
+    public void Fill_LimitLeavesTooFew_TakesCandidatesOfDocumentsWithRoom()
+    {
+        SelectionResult result = FaqResponseValidator.ValidateSelection(
+            [Item(1, "D1-K1"), Item(2, "D1-K2"), Item(3, "D1-K3"), Item(4, "D2-K1"), Item(5, "D3-K1")],
+            Candidates,
+            5,
+            minPerDocument: 1,
+            maxPerDocument: 2,
+            fillFromCandidates: true);
+
+        Assert.Equal(
+            ["Pytanie końcowe 1?", "Pytanie końcowe 2?", "Pytanie końcowe 4?", "Pytanie końcowe 5?", "P6?"],
+            result.Items.Select(i => i.Question));
+        Assert.Equal(["kandydat D2-K2: P6?"], result.Filled);
+    }
+
+    /// <summary>T067r: unused candidates are taken round-robin over the documents, in their first-step order.</summary>
+    [Fact]
+    public void Fill_TooFewItems_TakesCandidatesRoundRobin()
+    {
+        SelectionResult result = FaqResponseValidator.ValidateSelection(
+            [Item(1, "D1-K1")],
+            Candidates,
+            4,
+            fillFromCandidates: true);
+
+        Assert.Equal(["Pytanie końcowe 1?", "P2?", "P3?", "P4?"], result.Items.Select(i => i.Question));
+        Assert.Equal(["kandydat D1-K2: P2?", "kandydat D2-K1: P3?", "kandydat D3-K1: P4?"], result.Filled);
+    }
+
+    /// <summary>T067r: a candidate whose question an item already asks is not used; the document stays without items.</summary>
+    [Fact]
+    public void Fill_CandidateWithTheQuestionOfAnItem_NotUsed()
+    {
+        FaqResponseException e = Assert.Throws<FaqResponseException>(() => FaqResponseValidator.ValidateSelection(
+            [Item(1, "D1-K1"), Item(2, "D2-K1") with { Question = "P4?" }, Item(3, "D1-K2")],
+            Candidates,
+            3,
+            minPerDocument: 1,
+            maxPerDocument: 2,
+            fillFromCandidates: true));
+
+        Assert.Equal(["dokument D3: brak pozycji (co najmniej 1)"], e.Problems);
+    }
+
     private static ParsedItem Item(int i, string candidateId = "") =>
         new($"Pytanie końcowe {i}?", "Odpowiedź końcowa.", [candidateId.Length > 0 ? candidateId : i == 1 ? "D1-K1" : "D1-K2"]);
 }

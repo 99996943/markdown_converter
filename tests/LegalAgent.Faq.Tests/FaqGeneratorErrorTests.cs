@@ -77,7 +77,7 @@ public sealed class FaqGeneratorErrorTests
         string rejected = FaqJson.Selection([.. FaqJson.SelectionItems(7, 5), new ItemJson("Skąd?", "Z D9.", ["D9-K1"])]);
         chat.Respond(FaqJson.Selection(9, 5)).Respond(rejected);
 
-        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate());
+        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate(new FaqGeneratorOptions { FillFromCandidates = false }));
 
         Assert.Equal(FaqStep.Selection, e.Step);
         Assert.Equal(
@@ -143,6 +143,49 @@ public sealed class FaqGeneratorErrorTests
         Assert.Equal(
             "dokument D5: brak pozycji (co najmniej 1); po zastosowaniu limitu 3 pozycji na dokument zostają 9 z 10 pozycji; brakujące pozycje mogą pochodzić tylko z dokumentów: D2, D3, D4, D5",
             Assert.Single(events, e => e.Kind == FaqEventKind.SelectionCorrection).Detail);
+    }
+
+    /// <summary>
+    /// T067r (owner's run, gpt-4.1-mini): the corrected selection still leaves a document without items; the program
+    /// completes it from the candidates instead of rejecting it.
+    /// </summary>
+    [Fact]
+    public async Task UnbalancedAfterCorrection_FilledFromCandidates()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        chat.Respond(UnbalancedSelection()).Respond(UnbalancedSelection());
+        var events = new List<FaqEvent>();
+
+        FaqResult result = await new FaqGenerator(chat, new FaqGeneratorOptions(), (_, _) => new PromptExecutionSettings())
+            .GenerateAsync(Documents(), new SyncProgress(events), TestContext.Current.CancellationToken);
+
+        Assert.Equal(7, chat.Calls.Count);
+        Assert.Equal(10, result.Items.Count);
+        FaqItem filled = result.Items[^1];
+        Assert.Equal("Pytanie 1 o dokument D5?", filled.Question);
+        Assert.Equal(["D5-K1"], filled.BasedOn);
+        FaqEvent added = Assert.Single(events, e => e.Kind == FaqEventKind.SelectionItemFilled);
+        Assert.Equal(("D5", "kandydat D5-K1: Pytanie 1 o dokument D5?"), (added.DocumentId, added.Detail));
+        Assert.Equal(FaqEventKind.SelectionFinished, events[^1].Kind);
+    }
+
+    [Fact]
+    public async Task UnbalancedAfterCorrection_WithoutFill_Rejected()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            chat.Respond(FaqJson.Candidates(Invariant($"D{i}"), 2));
+        }
+
+        chat.Respond(UnbalancedSelection()).Respond(UnbalancedSelection());
+
+        FaqResponseException e = await Assert.ThrowsAsync<FaqResponseException>(() => Generate(new FaqGeneratorOptions { FillFromCandidates = false }));
+
+        Assert.Contains("dokument D5: brak pozycji (co najmniej 1)", e.Problems);
     }
 
     [Fact]
@@ -222,8 +265,21 @@ public sealed class FaqGeneratorErrorTests
         public void Report(FaqEvent value) => events.Add(value);
     }
 
-    private Task<FaqResult> Generate() =>
-        new FaqGenerator(chat, new FaqGeneratorOptions(), (_, _) => new PromptExecutionSettings())
+    /// <summary>Ten valid items: four of D1, two each of D2–D4, none of D5 (two candidates per document).</summary>
+    private static string UnbalancedSelection()
+    {
+        int[] documentOf = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4];
+        return FaqJson.Selection(
+        [
+            .. documentOf.Select((d, i) => new ItemJson(
+                Invariant($"Pytanie końcowe {i + 1}?"),
+                "Odpowiedź końcowa.",
+                [Invariant($"D{d}-K{(i % 2) + 1}")])),
+        ]);
+    }
+
+    private Task<FaqResult> Generate(FaqGeneratorOptions? options = null) =>
+        new FaqGenerator(chat, options ?? new FaqGeneratorOptions(), (_, _) => new PromptExecutionSettings())
             .GenerateAsync(Documents(), cancellationToken: TestContext.Current.CancellationToken);
 
     private static FaqDocumentInput[] Documents() =>

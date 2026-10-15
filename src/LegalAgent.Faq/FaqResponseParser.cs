@@ -20,7 +20,11 @@ internal sealed record ParsedItem(string Question, string Answer, IReadOnlyList<
 /// <summary>The chosen final items and the pool items skipped as invalid (T067l).</summary>
 /// <param name="Items">Chosen items, numbered 1…N in the model's order.</param>
 /// <param name="Skipped">Problems of the skipped pool items („pozycja 7: …”).</param>
-internal sealed record SelectionResult(IReadOnlyList<FaqItem> Items, IReadOnlyList<string> Skipped);
+internal sealed record SelectionResult(IReadOnlyList<FaqItem> Items, IReadOnlyList<string> Skipped)
+{
+    /// <summary>Candidates that completed the selection (T067r), „kandydat &lt;id&gt;: &lt;pytanie&gt;”, in item order.</summary>
+    public IReadOnlyList<string> Filled { get; init; } = [];
+}
 
 /// <summary>
 /// Parses the JSON responses of both steps (contracts/model-exchange.md) without trusting the service schema: the whole

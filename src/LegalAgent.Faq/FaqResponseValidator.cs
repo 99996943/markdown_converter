@@ -43,7 +43,8 @@ internal static class FaqResponseValidator
     /// order while no document exceeds <paramref name="maxPerDocument"/> (an item of several documents counts towards the
     /// maximum of one of them). The chosen items keep the model's order and are
     /// numbered 1…<paramref name="itemCount"/>; unless <paramref name="mergeDocuments"/>, an item of candidates of different
-    /// documents is skipped (T067q); their sources come from their <c>basedOn</c> candidates (T067b).
+    /// documents is skipped (T067q); their sources come from their <c>basedOn</c> candidates (T067b). With
+    /// <paramref name="fillFromCandidates"/> the unused candidates follow the model's items in the pool (T067r).
     /// </summary>
     /// <exception cref="FaqResponseException">Fewer than <paramref name="itemCount"/> items can be chosen, or a document lacks its minimum.</exception>
     public static SelectionResult ValidateSelection(
@@ -52,12 +53,13 @@ internal static class FaqResponseValidator
         int itemCount,
         int minPerDocument = 0,
         int maxPerDocument = int.MaxValue,
-        bool mergeDocuments = false)
+        bool mergeDocuments = false,
+        bool fillFromCandidates = false)
     {
         var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
         string[] documents = [.. candidates.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)];
         var questions = new Dictionary<string, int>(StringComparer.Ordinal);
-        var valid = new List<(FaqItem Item, string[] Documents)>();
+        var valid = new List<PoolItem>();
         var skipped = new List<string>();
         for (int i = 0; i < items.Count; i++)
         {
@@ -78,7 +80,12 @@ internal static class FaqResponseValidator
 
             questions[NormalizeQuestion(items[i].Question)] = position;
             var item = new FaqItem(position, items[i].Question.Trim(), items[i].Answer.Trim(), SourcesOf(basedOn), items[i].BasedOn);
-            valid.Add((item, itemDocuments));
+            valid.Add(new PoolItem(item, itemDocuments, null));
+        }
+
+        if (fillFromCandidates)
+        {
+            valid.AddRange(Unused(candidates, valid, questions));
         }
 
         var problems = new List<string>();
@@ -91,16 +98,45 @@ internal static class FaqResponseValidator
             bool[] chosen = Choose(valid, documents, itemCount, minPerDocument, maxPerDocument, problems);
             if (problems.Count == 0)
             {
-                FaqItem[] result =
-                [
-                    .. valid.Where((_, k) => chosen[k]).Select((v, k) => v.Item with { Number = k + 1 }),
-                ];
-                return new SelectionResult(result, skipped);
+                PoolItem[] taken = [.. valid.Where((_, k) => chosen[k])];
+                FaqItem[] result = [.. taken.Select((v, k) => v.Item with { Number = k + 1 })];
+                return new SelectionResult(result, skipped) { Filled = [.. taken.Select(v => v.Filled).OfType<string>()] };
             }
         }
 
         problems.AddRange(skipped);
         throw new FaqResponseException(FaqStep.Selection, null, problems);
+    }
+
+    /// <summary>
+    /// Candidates not used by any valid item (T067r), as pool items: round-robin over the documents, each in first-step
+    /// order, without questions an item already asks.
+    /// </summary>
+    private static List<PoolItem> Unused(IReadOnlyList<FaqCandidate> candidates, List<PoolItem> valid, Dictionary<string, int> questions)
+    {
+        var used = new HashSet<string>(valid.SelectMany(v => v.Item.BasedOn), StringComparer.Ordinal);
+        var asked = new HashSet<string>(questions.Keys, StringComparer.Ordinal);
+        Queue<FaqCandidate>[] documents =
+        [
+            .. candidates.Where(c => !used.Contains(c.Id))
+                .GroupBy(c => c.DocumentId, StringComparer.Ordinal)
+                .Select(g => new Queue<FaqCandidate>(g)),
+        ];
+        var unused = new List<PoolItem>();
+        while (documents.Any(d => d.Count > 0))
+        {
+            foreach (Queue<FaqCandidate> document in documents)
+            {
+                if (document.TryDequeue(out FaqCandidate? candidate) && asked.Add(NormalizeQuestion(candidate.Question)))
+                {
+                    string question = candidate.Question.Trim();
+                    var item = new FaqItem(0, question, candidate.Answer.Trim(), SourcesOf([candidate]), [candidate.Id]);
+                    unused.Add(new PoolItem(item, [candidate.DocumentId], Invariant($"kandydat {candidate.Id}: {question}")));
+                }
+            }
+        }
+
+        return unused;
     }
 
     /// <summary>Problems of one pool item; the duplicate check uses the questions of the valid items before it.</summary>
@@ -160,7 +196,7 @@ internal static class FaqResponseValidator
 
     /// <summary>Which valid items are chosen; adds a problem for every document below its minimum and when N cannot be reached.</summary>
     private static bool[] Choose(
-        List<(FaqItem Item, string[] Documents)> valid,
+        List<PoolItem> valid,
         string[] documents,
         int itemCount,
         int minPerDocument,
@@ -289,4 +325,7 @@ internal static class FaqResponseValidator
         : Invariant($"{count} pozycji");
 
     private static string Invariant(FormattableString text) => text.ToString(CultureInfo.InvariantCulture);
+
+    /// <summary>An item of the selection pool: its documents, and the candidate detail when a candidate fills it (T067r).</summary>
+    private sealed record PoolItem(FaqItem Item, string[] Documents, string? Filled);
 }
