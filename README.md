@@ -465,6 +465,16 @@ i wierszem `Źródło:` / `Źródła:` (link do dokumentu i jednostka). Kontrakt
 Treść odpowiedzi pochodzi z modelu i może się różnić między uruchomieniami (konstytucja 1.4.0, zasada III);
 poprzedni plik zostaje nienaruszony przy każdym błędzie.
 
+**Linki do sekcji Markdownu w VS Code.** Jednostka w wierszu źródła prowadzi do nagłówka w Markdownie dokumentu
+(`../downloads/<nazwa>.md#<kotwica>`). Kotwice są liczone jak na GitHubie i w serwerze Markdown VS Code, więc
+zachowują polskie litery (`#3-kto-może-wnioskować-o-kredyt-czyli-zostać-wnioskodawcą`). Podgląd Markdown VS Code
+(sprawdzone w 1.141) przy ustawieniu domyślnym `markdown.preview.openMarkdownLinks: "inPreview"` otwiera wtedy
+dokument od początku: przed wyszukaniem nagłówka koduje kotwicę (`encodeURIComponent`, `może` → `mo%C5%BCe`),
+a `id` nagłówków w podglądzie zostają niezakodowane. Dotyczy to tylko kotwic z literami spoza ASCII; kotwice bez nich
+(np. `#5-zabezpieczenia-kredytu`) przewijają poprawnie. Obejście: w ustawieniach VS Code
+`"markdown.preview.openMarkdownLinks": "inEditor"` (kliknięcie w podglądzie otwiera tekst dokumentu z kursorem na
+nagłówku) albo `Ctrl+klik` na linku w edytorze. Na GitHubie linki działają, o ile pliki z `downloads/` są obok FAQ.
+
 **Kody wyjścia:** 0 pobrano 5 z 5, przekonwertowano 5 z 5 i zapisano FAQ; 1 błąd nieoczekiwany; 2 argumenty,
 konfiguracja, adresy lub brak wejścia (adresów albo klucza); 3 nie wszystkie pliki pobrane; 4 błąd zapisu
 (katalog pobrań, Markdown, FAQ); 5 błąd konwersji; 6 błąd usługi modelu (klucz, wdrożenie, limit 429, filtr treści,

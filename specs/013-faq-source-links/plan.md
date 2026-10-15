@@ -139,6 +139,13 @@ tests/mBank.FaqGenerator.Tests/        # przebieg z fałszywym modelem: linki i 
     lokalnie w `publish/nuget/`, `mBank.FaqGenerator.exe` 1.5.0 (self-contained, single-file, skompresowany);
     `downloads/`, `faq/`, `appsettings*.json` bez zmian.
   - Push i PR (baza `012-footnote-original-labels`, dopóki 012 nie jest scalona) po potwierdzeniu właściciela.
+- 2026-10-15: przebieg FAQ właściciela (`publish/mBank.FaqGenerator-win-x64`, 5 regulaminów kredytowych): 10/10
+  kotwic ∈ nagłówki Markdownu dokumentów. SC-142 w podglądzie VS Code 1.141: kliknięcie jednostki otwiera dokument od
+  początku, gdy kotwica ma litery spoza ASCII — podgląd (`media/index.js`) porównuje `id` nagłówka z
+  `encodeURIComponent(kotwica)`, a `id` w podglądzie są niezakodowane (błąd VS Code; serwer Markdown kotwicę znajduje).
+  Generator bez zmian (kotwice ASCII zepsułyby GitHub i `Ctrl+klik`); obejście
+  `markdown.preview.openMarkdownLinks: "inEditor"` opisane w README („Generowanie FAQ” → „Wynik”). PR do `main`
+  (011 i 012 scalone).
 
 ## Complexity Tracking
 
