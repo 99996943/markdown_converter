@@ -23,6 +23,12 @@ public enum FaqEventKind
 
     /// <summary>The selection was accepted.</summary>
     SelectionFinished,
+
+    /// <summary>
+    /// A candidate completed the selection after the correction (T067r); the candidate is in Detail, the document in
+    /// DocumentId.
+    /// </summary>
+    SelectionItemFilled,
 }
 
 /// <summary>Progress of the FAQ generation.</summary>
@@ -34,7 +40,8 @@ public enum FaqEventKind
 /// <param name="Usage">Token usage of the request (Finished events); <c>null</c> when unknown.</param>
 /// <param name="Detail">
 /// Why a candidate was dropped (CandidateDropped), starting with „kandydat &lt;id&gt;:”; the problems of the rejected
-/// selection (SelectionCorrection); why a pool item was skipped (SelectionItemSkipped), starting with „pozycja N:”.
+/// selection (SelectionCorrection); why a pool item was skipped (SelectionItemSkipped), starting with „pozycja N:”; the candidate that completed the
+/// selection (SelectionItemFilled), „kandydat &lt;id&gt;: &lt;pytanie&gt;”.
 /// </param>
 public sealed record FaqEvent(
     FaqEventKind Kind,

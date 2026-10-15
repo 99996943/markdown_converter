@@ -97,12 +97,32 @@ public sealed class FaqErrorFlowTests : IDisposable
             app.Model.Respond(FaqJson.Candidates($"D{i}", 3));
         }
 
-        app.Model.Respond(FaqJson.Selection(9, 5)).Respond(FaqJson.Selection(8, 5));
+        app.Model.Respond(FaqJson.Selection(9, 5)).Respond("nie JSON");
 
         AppRun run = await AssertFailsAsync(7, "Odpowiedź modelu odrzucona (krok wyboru):");
 
         Assert.Contains("[wybór] odpowiedź odrzucona (liczba poprawnych pozycji 9, potrzeba co najmniej 10) — prośba o poprawkę…", run.Out, StringComparison.Ordinal);
-        Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):\n  - liczba poprawnych pozycji 8, potrzeba co najmniej 10\n", run.Err.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+        Assert.Contains("Odpowiedź modelu odrzucona (krok wyboru):\n  - odpowiedź nie jest poprawnym JSON-em zgodnym ze schematem", run.Err.ReplaceLineEndings("\n"), StringComparison.Ordinal);
+    }
+
+    /// <summary>T067r: a selection still short after the correction is completed from the candidates and reported.</summary>
+    [Fact]
+    public async Task ShortSelectionAfterCorrection_FilledAndPrinted()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            app.Model.Respond(FaqJson.Candidates($"D{i}", 3));
+        }
+
+        app.Model.Respond(FaqJson.Selection(9, 5)).Respond(FaqJson.Selection(9, 5));
+
+        AppRun run = await app.RunAsync(UrlArgs(), "", Ct);
+
+        Assert.Equal(0, run.Code);
+        Assert.Contains(
+            "[wybór] uzupełniono kandydatem D1-K3: Pytanie 3 o dokument D1?\n[wybór] 10 pytań",
+            run.Out.ReplaceLineEndings("\n"),
+            StringComparison.Ordinal);
     }
 
     [Fact]

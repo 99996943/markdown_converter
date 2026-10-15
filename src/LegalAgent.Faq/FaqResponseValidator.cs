@@ -52,7 +52,8 @@ internal static class FaqResponseValidator
         int itemCount,
         int minPerDocument = 0,
         int maxPerDocument = int.MaxValue,
-        bool mergeDocuments = false)
+        bool mergeDocuments = false,
+        bool fillFromCandidates = false)
     {
         var candidatesById = candidates.ToDictionary(c => c.Id, StringComparer.Ordinal);
         string[] documents = [.. candidates.Select(c => c.DocumentId).Distinct(StringComparer.Ordinal)];

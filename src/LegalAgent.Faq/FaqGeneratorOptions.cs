@@ -28,6 +28,13 @@ public sealed record FaqGeneratorOptions
     /// </summary>
     public bool MergeDocuments { get; init; }
 
+    /// <summary>
+    /// Whether the program completes a selection that still breaks the per-document limits or has too few items after the
+    /// correction (T067r, default true): the missing items are unused candidates of the documents, as the first step
+    /// gave them, round-robin over the documents. When false, such a selection is rejected.
+    /// </summary>
+    public bool FillFromCandidates { get; init; } = true;
+
     /// <summary>Maximum estimated tokens of one document, greater than 0.</summary>
     public int MaxDocumentTokens { get; init; } = 100_000;
 
