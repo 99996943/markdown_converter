@@ -131,6 +131,10 @@ Biblioteka nie zna nazwy „downloads” ani hosta — adres Markdownu liczy apl
 
 - **1.5.0** (MINOR, tylko dodatki): linki w wierszu źródeł FAQ i API wyżej. Istniejące konstruktory i właściwości bez
   zmian; bez `UnitLocations` i `MarkdownLink` plik FAQ jest taki jak w 1.4.x.
+- **1.6.0** (MINOR): `FaqGeneratorOptions.FillFromCandidates` (domyślnie true) i zdarzenie
+  `FaqEventKind.SelectionItemFilled` — po nieudanej poprawce wybór uzupełniają nieużyci kandydaci (T067r);
+  `FillFromCandidates = false` przywraca odrzucenie z 1.5.0. Liczby w komunikatach mają format pl-PL także bez ICU
+  (Linux w trybie invariant).
 
 ## Weryfikacja propozycji modelu
 
