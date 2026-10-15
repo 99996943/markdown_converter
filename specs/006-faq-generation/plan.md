@@ -342,3 +342,8 @@ Quickstart 1–3 na zbudowanej aplikacji: brak endpointu → kod 2 przed jakimko
   odnośniki przypisów w nagłówkach („3. Podstawowe informacje o kredycie1”) ze scalonymi definicjami (`FTN001`
   „Przypis „””) i fałszywe, ucięte nagłówki z ramek w regulaminie promocji. Do sprawdzenia: przebieg właściciela
   po przebudowie `publish/` i ponowny przegląd FAQ.
+- 2026-10-15, T067r (gałąź `fix/faq-selection-fill` od `main`): przebieg właściciela na pięciu regulaminach rachunków
+  i usług (gpt-4.1-mini) — kod 7, poprawka wyboru przesunęła braki z D4 na D3 i D5. Po nieudanej poprawce kod
+  uzupełnia wybór nieużytymi kandydatami (`FillFromCandidates`, domyślnie true) i zgłasza każdą taką pozycję.
+  Pierwsza odpowiedź modelu dalej przechodzi przez poprawkę jak dotąd, więc model ma pierwszeństwo. Do sprawdzenia:
+  przebieg właściciela po przebudowie `publish/`.

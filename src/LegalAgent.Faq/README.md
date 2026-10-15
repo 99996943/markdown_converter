@@ -41,6 +41,7 @@ Opcje (`FaqGeneratorOptions`):
 | `MaxItemsPerDocument` | 3 | najwyżej tyle pozycji z jednego dokumentu (podnoszone, gdy dokumentów jest mało) |
 | `MinItemsPerDocument` | 1 | co najmniej tyle pozycji z każdego dokumentu (pomijane, gdy się nie da) |
 | `MergeDocuments` | false | czy pozycja może łączyć kandydatów różnych dokumentów (T067q) |
+| `FillFromCandidates` | true | czy po nieudanej poprawce uzupełnić wybór nieużytymi kandydatami (T067r) |
 | `MaxDocumentTokens` | 100 000 | szacowany limit tokenów jednego dokumentu (`FaqInputTooLongException`) |
 | `CharactersPerToken` | 3,0 | przelicznik do szacunku tokenów |
 
@@ -160,7 +161,14 @@ powtórzeń — model nie może więc wskazać nieistniejącego paragrafu.
 
 Gdy poprawnych pozycji jest mniej niż N, dokument nie dostaje minimum albo limit nie pozwala zebrać N, biblioteka
 **raz** prosi model o poprawkę: wysyła tę samą rozmowę, odrzuconą odpowiedź i listę problemów („liczba poprawnych
-pozycji 9, potrzeba co najmniej 10”). Druga zła odpowiedź kończy generowanie (`FaqResponseException`).
+pozycji 9, potrzeba co najmniej 10”). Gdy poprawiona odpowiedź nadal nie daje N pozycji w limitach, kod
+**uzupełnia wybór kandydatami** (`FillFromCandidates`, domyślnie włączone, T067r): po pozycjach modelu dopisuje do
+puli kandydatów, których nie wskazuje żadna poprawna pozycja, na przemian z kolejnych dokumentów (każdy dokument w
+kolejności z kroku 1), bez pytań już zadanych, i ponownie wybiera N według reguł wyżej. Pozycja z kandydata ma jego
+pytanie, odpowiedź i źródło; każda jest zgłaszana zdarzeniem `SelectionItemFilled` („kandydat D5-K1: …”). Przy
+słabszych modelach (gpt-4.1-mini) poprawka często tylko przesuwała braki między dokumentami. Odpowiedź, której nie da
+się odczytać, a także wybór, którego nie uzupełnią nawet kandydaci, kończą generowanie (`FaqResponseException`); bez
+`FillFromCandidates` kończy je każda druga zła odpowiedź.
 
 ### Co nie jest sprawdzane
 

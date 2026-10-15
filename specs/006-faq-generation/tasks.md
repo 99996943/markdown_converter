@@ -660,6 +660,13 @@ zmyślonych faktów; rozkład: reklamacje 5, karty dla firm 3, rachunki 1, obsł
   pomijana z ostrzeżeniem; opcja `FaqGeneratorOptions.MergeDocuments` (domyślnie false) przywraca dawne zachowanie
   razem z T067p.
 
+- [X] T067r Przebieg właściciela (pięć regulaminów rachunków i usług, gpt-4.1-mini), kod 7 w kroku wyboru: pierwsza
+  odpowiedź bez pozycji z D4, poprawiona — bez D3 i D5, po limicie 8 z 10 pozycji. Poprawki promptu (T067i/j/l/p)
+  nie wystarczają przy słabszym modelu. Decyzja właściciela: po nieudanej poprawce kod uzupełnia wybór nieużytymi
+  kandydatami z kroku 1 (na przemian z dokumentów, w kolejności kroku 1, bez powtórzonych pytań) i wybiera N według
+  tych samych reguł; każda taka pozycja jest zgłaszana („[wybór] uzupełniono kandydatem D5-K1: …”). Opcja
+  `FaqGeneratorOptions.FillFromCandidates` (domyślnie true); bez niej dawne odrzucenie.
+
   T067e–T067g zmieniają parser — wbrew pierwotnej uwadze „Ta funkcjonalność nie zmienia parsera”. Goldeny
   parsera mogą się zmienić tylko za zgodą właściciela (FR-163); przed commitem pełny zestaw parsera z
   `LEGALAGENT_PRIVATE_CORPUS`, potem `refresh` korpusu i `verify`.
